@@ -45,9 +45,14 @@ export function trenneAenderungshistorie(text: string): { wortlaut: string; hist
 // strukturellen Aufzähler (A./I./1.) strippen, die übergeordneten Stufen als
 // Oberzeilen (Versalien-Anzeige übernimmt das CSS), die unterste Stufe als
 // eigentlichen Sachtitel. Rein Darstellung (§3).
-// Aufzähler-Lauf am Anfang eines Randtitels: einzeln («A.», «1.») ODER
-// kombiniert («II. und III.», «I. bis III.») — plus der nachfolgende Titel.
-const ENUM = '(?:[A-Za-z]{1,4}|\\d{1,3})\\.';
+// Aufzähler-Lauf am Anfang eines Randtitels: einzeln («A.», «1.», «2a.», «1bis.»)
+// ODER kombiniert («II. und III.», «I. bis III.») — plus der nachfolgende Titel.
+// Der Ziffer-Zweig deckt Misch-Aufzähler (Ziffer + Buchstabe UND/ODER lat. Suffix:
+// «2a.», «3a.», «1bis.», «5ter.») ab — sonst blieb der Aufzähler stehen (OR 128a
+// «2a. Zwanzig Jahre», StGB 355d «5ter. …» hebelte istLeererTitel aus, Gegen-
+// prüfungs-Befund 1). Suffix-Alternation identisch zu ART_INTERN (NormText) /
+// ABS_SUFFIX (unten) — bei Erweiterung SYNCHRON halten.
+const ENUM = '(?:[A-Za-z]{1,4}|\\d{1,3}(?:[a-z])?(?:bis|ter|quater|quinquies|sexies)?)\\.';
 const ENUM_RUN = new RegExp(`^(${ENUM}(?:\\s*(?:und|bis|[–-])\\s*${ENUM})*)\\s+(.*)$`);
 // Aufgehobene Artikel tragen als «Titel» nur das Auslassungszeichen «…» — das
 // ist keine echte Sachüberschrift und darf NICHT als Heading erscheinen.
@@ -94,6 +99,19 @@ export function randtitelKnoten(marginalie: string[]): { ahnen: string[]; blatt:
   // Leere Zwischenstufen («…») nie als Knoten zeigen (reine Darstellung, §3).
   const ahnen = ahnenRoh.filter((s) => !istLeererTitel(randtitelSachtitel(s)));
   return { ahnen, blatt };
+}
+
+// M11 (Verweis-Popover-Bezeichnung, W2·5b): die artikel-EIGENE Sachüberschrift
+// aus der Marginalie — das LETZTE Glied, Aufzähler (A./1./…) gestrippt. Anders
+// als randtitelKnoten.blatt, das aufzähler-tragende Blätter der Gliederung (TOC)
+// zuschlägt (blatt=null), liefert dies IMMER die Sachüberschrift des Artikels:
+// «2. Nachträge» → «Nachträge» (SchKG Art. 113, gegen die Fedlex-Konsolidierung
+// belegt). Leeres/aufgehobenes «…» → null (§7/§8: nichts fabrizieren). Reine
+// Darstellung (§3); das Popover hängt sie als «Art. N ERLASS – <Sachtitel>» an.
+export function artikelSachtitel(marginalie: string[]): string | null {
+  if (marginalie.length === 0) return null;
+  const titel = randtitelSachtitel(marginalie[marginalie.length - 1].trim());
+  return istLeererTitel(titel) ? null : titel;
 }
 
 // Absatznummern mit lat. Suffix («1bis», «2ter») wurden bei der Extraktion teils

@@ -1,53 +1,45 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
-import { createPortal, flushSync } from 'react-dom';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { naechsteInstanz, merkeTab, aktualisiereTabArtikel, tabSchluessel } from '../../lib/tabs';
-import { merkeAnker, bezugslinie } from './scrollAnker';
-import { aktiverArtikel } from '../../lib/normtext/aktuellerArtikel';
+import { flushSync } from 'react-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { aktualisiereTabArtikel } from '../../lib/tabs';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
 import { usePaneKontext } from '../../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
 import type { InternRefs } from '../../components/NormText';
 import { labelMitBereich, randtitelKnoten } from '../../lib/normtext/darstellung';
 import {
-  ladeBrowseManifest, ladeErlass, ladeErlassDatei, ladeStruktur, ladeErlassKopf, ladeKantonSystematik, ladeCurrency,
   baueGliederungsbaum, type Sektion, type StrukturMap, type ErlassKopf, type CurrencyMap,
 } from '../../lib/normtext/browse';
-import { sachgruppe, topTitel, type KantonSystematik } from '../../lib/normtext/systematik';
+import { type KantonSystematik } from '../../lib/normtext/systematik';
+import { verifizierLinkSektion } from '../../lib/normtext/verifikationslink';
 import { linienProfil } from './linienAufbau';
-import { GEBIET_LABEL } from '../../lib/normtext/register';
-import { KontextPanel } from '../../components/kontext/KontextPanel';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
-import { formatiereDatum, passtAufSuche, pfadZu, kopfOverline, grundartMeta } from './helpers';
-import { ArtikelLeser, SektionKopf, SektionBaumTOC, ErlassKopfBlock, ErlassLeserKopf } from './parts';
-import { LeserAnsichtMenu } from './LeserAnsichtMenu';
-import { InGesetzSuche } from './parts/InGesetzSuche';
+import { passtAufSuche, pfadZu, grundartMeta } from './helpers';
+import { ArtikelLeser, SektionKopf, SektionBaumTOC } from './parts';
 import { beiLeerlauf } from '../../lib/leerlauf';
 import { ladeLeitfallShard, normArtikelToken, type LeitfallShard } from '../../lib/rechtsprechung/norm-index';
 import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
 import {
   paneRoot, istAnhangToken, findeArt,
-  berechneSekPos, berechneSektionMeta,
+  berechneSekPos, berechneSektionMeta, kuratiereTocSektionen,
 } from './berechnungen';
-import { AmtlichesPdf } from './parts/AmtlichesPdf';
 import { GesetzFehlSeite } from './FehlSeite';
 import { setzeSuchHighlight } from './suchHighlight';
+import { LadeAnzeige, PdfEmbedAnsicht, LiveVerweisAnsicht } from './inhalt-ansichten';
+import { LeserVolltextInhalt } from './inhalt-volltext';
+import { useLeserDaten, useInhaltsKopfMeldung, useLeserSprungSpy } from './inhalt-hooks';
 
 // ═══ ABSCHNITT · Reine Rechenlogik ausgelagert (QS-TOK/P5, §6 Ziff. 6) ═══════
 // paneRoot/istAnhangToken/findeArt (Pane-Scoping, referenzstabil, KEIN React
 // Compiler → Modulfunktionen), sekPos/sektionMeta/sekLabelById-Ableitungen und
-// der Download-Text leben jetzt in ./berechnungen.ts. Ab hier NUR die
-// zustandsbehaftete Reader-Komponente (Hooks, Effekte, Rendering).
-
-// §15.2: Nachlauf-Fenster (in Pfadwechseln) fürs Auto-ZUklappen des TOC-Baums. Ein
-// automatisch geöffneter Zweig bleibt so lange offen, bis die Leseposition ihn um so
-// viele distinkte Pfadwechsel hinter sich gelassen hat — dann ist er sicher aus dem
-// sichtbaren TOC-Fenster gescrollt und sein Zuklappen erzeugt keinen sichtbaren Layout-
-// Shift (off-screen bzw. vom Scroll-Anchoring verschluckt). 6 ≈ mehrere TOC-Bildschirm-
-// höhen Vorlauf; deckt das Hin-und-Her (PageUp nach PageDown) verlässlich ab.
-const AUTO_ZU_NACHLAUF = 6;
+// der Download-Text leben jetzt in ./berechnungen.ts. §6.6-Split (W2·12-HYGIENE/
+// B24): die Nicht-Volltext-Ansichten (./inhalt-ansichten), die Volltext-Ansicht
+// (./inhalt-volltext) und die side-effect-reinen Effekt-Hooks (./inhalt-hooks)
+// leben jetzt in Geschwister-Dateien — verhaltensneutral, Hook-Reihenfolge und
+// Markup byte-gleich. Ab hier NUR die zustandsbehaftete Reader-Komponente
+// (Hooks, Effekte, Delegation an die Ansichts-Komponenten).
 
 export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schluessel: string }) {
   const basisPfad = `/gesetze/${ebene}/${encodeURIComponent(schluessel)}`;
@@ -297,63 +289,14 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // sonst selbst armieren.
   const tocTouchRef = useRef(0);
 
-  useEffect(() => {
-    let lebt = true;
-    void ladeBrowseManifest().then((m) => { if (lebt) setManifest(m); });
-    void ladeCurrency().then((c) => { if (lebt) setCurrency(c); });
-    void ladeStruktur(ebene, schluessel).then((s) => { if (lebt) setStruktur(s); });
-    void ladeErlassKopf(ebene, schluessel).then((k) => { if (lebt) setKopf(k); });
-    // N13: Systematik-Bäume nur für die Kanton-Lesesicht laden; fehlen sie, bleibt
-    // die Overline ohne Sachgebiet (§8 — nichts Erfundenes).
-    if (ebene === 'kanton') void ladeKantonSystematik().then((s) => { if (lebt) setKantonSys(s); });
-    void ladeErlass(schluessel).then(async (e) => {
-      if (!lebt) return;
-      if (!e) {
-        // W2·10-UI-NAV/N0b: Key case-insensitiv gegen das Register auflösen und auf
-        // die kanonische URL umleiten (/gesetze/bund/or → /gesetze/bund/OR). Nur bei
-        // EINDEUTIGEM Case-Treffer (kein Rate-Sprung); sonst ehrliche Fehlseite.
-        const m = await ladeBrowseManifest();
-        if (!lebt) return;
-        const roh = schluessel.toLowerCase();
-        const kandidaten = m?.erlasse.filter((x) => x.key.toLowerCase() === roh) ?? [];
-        if (kandidaten.length === 1) {
-          const ziel = kandidaten[0];
-          navigate(`/gesetze/${ziel.ebene}/${encodeURIComponent(ziel.key)}`, { replace: true });
-          return;
-        }
-        setFehler(true);
-        return;
-      }
-      // pdf-embed: kein Snapshot-JSON — Erlass setzen, der Reader rendert das
-      // eingebettete amtliche PDF (eintraege bleibt null).
-      if (e.status === 'pdf-embed') { setErlass(e); return; }
-      // LIVE_VERWEIS (⑧, W2·5d G3a): kein In-App-Volltext gehostet — Erlass setzen,
-      // der Reader zeigt eine ehrliche Verweiskarte (amtlicher Live-Link + Stand,
-      // §8) statt der «nicht verfügbar»-Fehlerseite. eintraege bleibt null.
-      if (e.status === 'nur-live-link') { setErlass(e); return; }
-      if (!e.datei) { setFehler(true); return; }
-      setErlass(e);
-      const datei = await ladeErlassDatei(e.datei);
-      if (!lebt) return;
-      if (!datei) { setFehler(true); return; }
-      setEintraege(datei.eintraege);
-    });
-    return () => { lebt = false; };
-  }, [ebene, schluessel]);
-
-  // Browser-Tab zeigt den Erlass: «OR (Obligationenrecht) — LexMetrik». Kurztitel
-  // = Klammer-Inhalt am Ende des Volltitels (LEGES-Konvention), sonst der Titel.
-  useEffect(() => {
-    if (!erlass || typeof document === 'undefined') return;
-    if (istSekundaer) return; // sekundäres Pane treibt den Browser-Tab-Titel nicht (B-2.5)
-    const kurz = erlass.titel.match(/\(([^)]+)\)\s*$/)?.[1] ?? erlass.titel;
-    document.title = `${erlass.kuerzel} (${kurz}) — LexMetrik`;
-  }, [erlass, istSekundaer]);
-
-  // A/A2/A3/F: Kopf melden — die Meldung selbst steht weiter unten (nach `linien`/
-  // `fussnotenAnzahl`, die der A26-Ansicht-Slot braucht; TDZ). Hier nur das Aufräumen.
-  // Beim Verlassen den Kopf räumen (Shell setzt bei Routenwechsel ohnehin zurück).
-  useEffect(() => () => meldeInhaltsKopf(null), [meldeInhaltsKopf]);
+  // §6.6-Split: Datenladung (Manifest/Currency/Struktur/Kopf/Kanton-Systematik/
+  // Erlass/Einträge, Case-Redirect N0b, pdf-embed/nur-live-link) + Browser-Tab-Titel
+  // + Kopf-Aufräumen — verhaltensneutral in ./inhalt-hooks. Drei useEffects in
+  // exakt dieser Reihenfolge wie zuvor inline (Hook-Reihenfolge erhalten).
+  useLeserDaten({
+    ebene, schluessel, navigate, erlass, istSekundaer, meldeInhaltsKopf,
+    setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setErlass, setEintraege, setFehler,
+  });
 
   // ═══ ABSCHNITT · Abgeleitete Werte (Gliederungsbaum, Linien-Profil, Sektions-
   // Positionen/-Meta/-Labels, Randtitel) — useMemo, Rechenkerne in ./berechnungen.ts ═══
@@ -361,6 +304,11 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     () => (eintraege ? baueGliederungsbaum(eintraege, struktur) : { sektionen: [], ohneGliederung: [] }),
     [eintraege, struktur],
   );
+
+  // E4/A36: kuratierter Baum NUR für die GLIEDERUNG (SektionBaumTOC) — die
+  // Lesespalte (renderSektion unten) arbeitet weiter auf dem vollen `sektionen`
+  // (§15-Treue: Inhalt/Anker/Ctrl+F/Print vollständig; reine TOC-Kuration).
+  const tocSektionen = useMemo(() => kuratiereTocSektionen(sektionen), [sektionen]);
 
 
   // W2·5d U-LINIEN (A8): das Linien-Regelwerk «wann welche Linie» leitet der Reader
@@ -382,54 +330,13 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     return n;
   }, [struktur]);
 
-  // A/A2/A3/F + A26: Kopf melden (Breadcrumb Gesetze › Ebene › Kürzel · Stand ·
-  // aktueller Artikel · «Ansicht»-Dropdown). Wird vom NÄCHSTEN Provider gefangen:
-  // Einzelansicht → Inhalts-Kopf (Shell); Split-View → der jeweilige PaneKopf.
-  // Live-Artikel kommt aus dem IntersectionObserver.
-  // A26 (David 11.7.2026): NUR die Einzelansicht (!imPane) trägt das «Ansicht»-
-  // Dropdown im immer sichtbaren Inhalts-Kopf mit — im Split-View bleibt es (ohne
-  // PaneKopf-Umbau/Stacking-Risiko) im Erlass-Kopf. `eintraege` (Volltext-Snapshot)
-  // grenzt pdf-embed/nur-live-link aus (dort wären die Optionen wirkungslos, §13 F4).
-  useEffect(() => {
-    if (!erlass) return;
-    const ebeneLabel = erlass.rechtsgebiet === 'international'
-      ? 'International'
-      : erlass.ebene === 'bund' ? 'Bund' : `Kanton ${erlass.kanton}`;
-    // Ebene-Segment klickbar → gefilterte Gesetzes-Übersicht (?ebene=/?kt=).
-    const ebeneTo = erlass.rechtsgebiet === 'international'
-      ? '/gesetze?ebene=international'
-      : erlass.ebene === 'bund' ? '/gesetze'
-        : `/gesetze?ebene=kanton&kt=${encodeURIComponent(erlass.kanton ?? '')}`;
-    // A35 (David 19.7.2026): ☰-Gliederungsknopf, den das In-Gesetz-Suchfeld im Kopf
-    // mitführt (löst die frühere `data-such-bar`-Position ab, die in der Einzelansicht
-    // entfällt). Desktop (istXl): nur als Wiedereinblender, wenn die Gliederungsspalte
-    // EINGEKLAPPT ist. Mobil: öffnet die Gliederung als Overlay-Drawer. Ohne Sektionen
-    // (flacher Erlass) kein Knopf.
-    const zeigeGliederung = !imPane && sektionen.length > 0 && (istXl ? !tocOffen : true);
-    const gliederungKnopf = zeigeGliederung ? (
-      <button type="button" aria-expanded={istXl ? tocOffen : tocAuf}
-        onClick={() => { if (istXl) setTocOffen(true); else setTocAuf((v) => !v); }}
-        title="Gliederung" aria-label="Gliederung"
-        className="shrink-0 inline-flex h-6 items-center gap-1 rounded-md border border-line px-1.5 text-micro font-medium text-ink-600 transition-colors hover:border-brass-300 hover:text-brass-700">
-        <span aria-hidden>☰</span><span className="hidden lg:inline">Gliederung</span>
-      </button>
-    ) : undefined;
-    meldeInhaltsKopf({
-      breadcrumb: [{ label: 'Gesetze', to: '/gesetze' }, { label: ebeneLabel, to: ebeneTo }, { label: erlass.kuerzel }],
-      stand: erlass.stand ? formatiereDatum(erlass.stand) : null,
-      // Hinter dem laufenden Artikel die Gesetzesabkürzung (z. B. «Art. 7 OR»).
-      artikel: aktArtikel ? `${aktArtikel} ${erlass.kuerzel}` : null,
-      ansichtSlot: !imPane && eintraege
-        ? <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />
-        : undefined,
-      // A35: das In-Gesetz-Suchfeld nur in der Einzelansicht (im Split-View trägt es
-      // weiter die pane-lokale `data-such-bar`, da dort kein InhaltsKopf existiert).
-      sucheSlot: !imPane && eintraege
-        ? <InGesetzSuche value={suche} onChange={setSuche} gliederung={gliederungKnopf} />
-        : undefined,
-    });
-  }, [erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl,
-      suche, istXl, tocOffen, tocAuf, sektionen.length]);
+  // §6.6-Split: Kopf-Meldung (Breadcrumb · Stand · Live-Artikel · Ansicht-/Such-Slot)
+  // — verhaltensneutral in ./inhalt-hooks (EIN useEffect, identische Deps). Steht
+  // NACH `linien`/`fussnotenAnzahl` (TDZ des A26-Ansicht-Slots), wie zuvor inline.
+  useInhaltsKopfMeldung({
+    erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl,
+    suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf, sektionen,
+  });
 
   // Dokument-Position (Index des ersten enthaltenen Artikels) je Sektion — EINMAL
   // bottom-up berechnet, damit renderSektion die Kinder + direkten Artikel eines
@@ -651,315 +558,25 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     return { tokenMap, basisPfad, springeZu: springeZuRef };
   }, [eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate]);
 
-  // Offen-Zustand des FLIESSTEXTS (eigener State; der TOC-Baum hat seinen eigenen
-  // `tocBaum`). renderSektion ruft mit defOpen=true → der ganze Erlass ist
-  // Fedlex-treu standardmässig aufgeklappt; jede Stufe bleibt per Toggle
-  // einklappbar. Reine Darstellung (§3).
-  const istOffen = (id: string, defOpen: boolean) => offen[id] ?? defOpen;
-  const toggle = (id: string, defOpen: boolean) => setOffen((o) => ({ ...o, [id]: !(o[id] ?? defOpen) }));
-  const oeffnePfad = (ids: string[]) => setOffen((o) => {
-    const n = { ...o }; for (const id of ids) n[id] = true; return n;
+  // §6.6-Split: der FLIESSTEXT-Offen-Zustand (istOffen/toggle) lebt jetzt in der
+  // Volltext-Ansicht (./inhalt-volltext), `oeffnePfad` im Sprung-/Spy-Hook
+  // (./inhalt-hooks) — beide arbeiten weiter auf demselben `offen`/`setOffen`.
+
+  // §6.6-Split: Hash-Sprung-Seed + geteilter Aktiv-Artikel-Beobachter (Scroll-Spy) +
+  // TOC-Mitscroll + Nutzer-Interaktions-Guard + Scroll-Anker — verhaltensneutral in
+  // ./inhalt-hooks. Acht Hooks (2 useRef + 6 useEffect) in EXAKT der bisherigen
+  // Reihenfolge; alle geteilten Refs/Setter/abgeleiteten Werte werden durchgereicht,
+  // damit tocToggle/springeZuArtikel/springeZuSektion weiter dieselben Refs treffen.
+  useLeserSprungSpy({
+    ebene, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
+    paneLocationHash: location.hash, basisPfad, offen, sucheDebounced, aktivIds, tocBaum,
+    istXl, tocOffen, artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum,
+    refs: {
+      jumpLock, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
+      tocBaumTimer, tabArtikelTimer, aktArtikelTimer, tocTouchRef,
+    },
   });
 
-  // E3/A34 (David 16.7.2026): der Seed-Sprung unten darf pro Erlass-Ladung NUR
-  // EINMAL feuern — nicht erneut, wenn die Einzelansicht in den Split-View kippt
-  // (`imPane`/`wurzel` wechseln von false→true). Sonst las der Effekt beim Pane-
-  // Öffnen erneut `window.location.hash` (= der zuvor angeklickte Artikel) und
-  // sprang das frisch weitergescrollte Gesetz-Pane auf diesen früheren Artikel
-  // zurück (Scroll-Verlust, §15 Funktions-Treue «Split-View-Pane-Zustand»). Der
-  // Wächter wird pro Erlass zurückgesetzt; spätere Hash-Wechsel trägt ohnehin der
-  // letzteNavKey-Effekt (Primär) bzw. die eigene Pane-History (A16/A17).
-  const hashSeedGetan = useRef(false);
-  useEffect(() => { hashSeedGetan.current = false; }, [ebene, schluessel]);
-
-  // Hash-Sprung: alle Vorfahren des Ziel-Artikels öffnen + scrollen.
-  // W2·5d U-POSITION/A17: auch im SEKUNDÄREN Pane an die Fundstelle springen —
-  // der ⧉-Öffner legt den Pfad MIT `#art-token` ab (NormPopover readerLink), aber
-  // die Fundstelle stand bisher nur in `window.location.hash` (= die Haupt-URL,
-  // NICHT der Pane-Pfad) und der Effekt brach für Panes ab ⇒ das Pane öffnete oben
-  // statt an der Norm. Quelle des Hashs ist im Pane die PANE-LOKALE Location
-  // (`<Routes location={loc}>` → react-router `useLocation()` liefert den Pane-Pfad),
-  // sonst wie bisher die echte Fenster-URL (Primär/Einzelansicht byte-gleich).
-  useEffect(() => {
-    if (!eintraege || !sektionen.length || typeof window === 'undefined') return;
-    // A34: nur der ERSTE inhaltsbereite Lauf sät den Sprung. Danach gesperrt —
-    // ein `imPane`/`wurzel`-Wechsel (Split-View öffnet) re-triggert den Effekt,
-    // darf aber NICHT erneut an den (alten) Hash springen. Wächter VOR dem Hash-
-    // Test setzen, damit auch ein hashloser Erststart den späteren Re-Lauf sperrt.
-    if (hashSeedGetan.current) return;
-    hashSeedGetan.current = true;
-    const hashQuelle = istSekundaer ? location.hash : window.location.hash;
-    const m = hashQuelle.match(/^#art-(.+)$/);
-    if (!m) return;
-    // Deep-Link mit Artikel-Anker → aktiven Reiter darauf melden (Live-Label).
-    // Sekundäres Pane treibt den globalen Reiter-Tracker NICHT (es ist nicht die URL).
-    if (!istSekundaer) aktualisiereTabArtikel(window.location.pathname + window.location.search + window.location.hash);
-    const token = decodeURIComponent(m[1]);
-    const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
-    window.requestAnimationFrame(() => {
-      if (ids.length) oeffnePfad(ids);
-      window.setTimeout(() => {
-        const el = findeArt(paneRoot(imPane, wurzel), token);
-        // R1: oberer Lese-Rand statt Mitte (deckt sich mit der Scroll-Spy-Bezugslinie).
-        el?.scrollIntoView({ block: 'start', behavior: 'auto' });
-        el?.classList.add('lc-ziel-blink');
-        window.setTimeout(() => el?.classList.remove('lc-ziel-blink'), 2400);
-      }, 110);
-    });
-    // location.hash bewusst NICHT in den Deps: der Effekt springt EINMAL beim
-    // Erlass-Laden an die (Pane-lokale bzw. Fenster-)Fundstelle — die Primär-
-    // Instanz führt spätere Hash-Wechsel über den letzteNavKey-Effekt nach
-    // (kein Doppel-Sprung/-Blink), das Pane öffnet an seiner Seed-Fundstelle.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [eintraege, sektionen, istSekundaer, imPane, wurzel]);
-
-  // Geteilter «aktueller-Artikel»-Beobachter (Auftrag David 26.6.2026): EIN
-  // IntersectionObserver bestimmt den Artikel, der OBEN im Viewport angeschnitten
-  // ist, und speist daraus zwei Konsumenten aus EINER Quelle — (a) die Gliederungs-
-  // Markierung + automatisches Auf-/Zuklappen des aktiven Zweigs (P9/K) UND (b) das
-  // Live-Label des aktiven Reiters «Kürzel – Art. X» (P2). IntersectionObserver
-  // statt getBoundingClientRect-Schleife wegen content-visibility:auto (Off-Screen-
-  // Artikel sind nur Platzhalter).
-  // R1 (Auftrag David 30.6.2026): NICHT mehr der mittige Artikel, sondern der
-  // ZUOBERST angeschnittene — die Bezugslinie sitzt am Sprung-Landepunkt (5rem unter
-  // dem Container-Oberrand, deckungsgleich mit `.nt-anker`), das Beobachtungs-Band
-  // liegt darum oben (rootMargin oben ~45 % statt -45%/-45%). Die Auswahl-Logik bleibt
-  // die reine, getestete Funktion aktiverArtikel — sie wählt generisch den Artikel
-  // an der Bezugslinie (§2/§3).
-  const letzterArtToken = useRef<string | null>(null);
-  useEffect(() => {
-    // C (Auftrag David 26.6.2026): auch starten, wenn der Erlass KEINE Gliederung
-    // hat (kantonale Erlasse → alle Artikel in `ohneGliederung`). Sonst lief der
-    // Beobachter nie an und «aktueller Artikel» (Reiter-Live-Label, P2) blieb
-    // bei Kanton stehen. Artikel tragen bei Bund UND Kanton id="art-<token>".
-    if ((!sektionen.length && !ohneGliederung.length) || typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') return;
-    const sichtbar = new Map<Element, IntersectionObserverEntry>();
-    let raf = 0;
-    const auswerten = () => {
-      raf = 0;
-      if (jumpLock.current) return; // während eines Klick-Sprungs nicht dazwischenfunken
-      // Bezugslinie im Viewport-Koordinatensystem (getBoundingClientRect): R1 — nicht
-      // mehr die Mitte, sondern eine Linie nahe dem oberen Lese-Rand, damit der zuoberst
-      // angeschnittene Artikel «dran» ist. Im Pane relativ zur Pane-Oberkante, sonst
-      // zum Fenster (B-2.5).
-      // KRITISCH (R1×R3): Der Klick-/Anker-Sprung landet den Artikel über die
-      // `.nt-anker`-scroll-margin (= 5rem, index.css) genau 5rem unter dem
-      // Container-Oberrand. Die Bezugslinie MUSS denselben Offset treffen, sonst
-      // markiert der Spy nach dem Sprung den Vorgänger. Darum FIXER rem-Offset (5rem
-      // + Epsilon), NICHT ein Höhen-Prozent: rem-basiert skaliert er mit der
-      // R3-Schriftskala mit und ist unabhängig von der Viewport-Höhe/vom Zoom.
-      const sc = paneRoot(imPane, wurzel);
-      const oben = sc ? sc.getBoundingClientRect().top : 0;
-      const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-      const bezug = oben + 5 * remPx + 8;
-      const rects = [...sichtbar.values()]
-        .filter((en) => en.isIntersecting)
-        .map((en) => {
-          const r = en.target.getBoundingClientRect();
-          return { token: (en.target as HTMLElement).id.replace(/^art-/, ''), top: r.top, bottom: r.bottom };
-        });
-      const token = aktiverArtikel(rects, bezug);
-      if (!token || token === letzterArtToken.current) return; // dedup: nur bei Wechsel
-      letzterArtToken.current = token;
-      // A3/F: aktuellen Artikel an den Kopf melden (Einzelansicht-Kopf ODER PaneKopf),
-      // entprellt (150 ms) → coalesct schnelle Artikelgrenzen, weniger Pane-Re-Renders.
-      // Echtes Label des Eintrags (deckt Schlusstitel «Art. 3» korrekt ab);
-      // Fallback auf die Token-Heuristik nur, falls kein Eintrag passt.
-      const artLabel = artLabelByToken.get(token) ?? `Art. ${token.replace(/_/g, '')}`;
-      if (aktArtikelTimer.current != null) window.clearTimeout(aktArtikelTimer.current);
-      aktArtikelTimer.current = window.setTimeout(() => setAktArtikel(artLabel), 150);
-      // (b) Reiter-Live-Label: ?search (Instanz-?r) erhalten, Hash = #art-token.
-      //     aktualisiereTabArtikel ist idempotent + no-op ohne passenden Reiter.
-      //     Entprellt (trailing): beim schnellen Durchscrollen sonst ein
-      //     localStorage-Write + globales TABS_EVENT pro Artikelgrenze.
-      // Sekundäres Pane treibt den globalen Reiter-Tracker NICHT (es ist nicht die URL).
-      if (!istSekundaer) {
-        const tabZiel = `${basisPfad}${window.location.search}#art-${token}`;
-        if (tabArtikelTimer.current != null) window.clearTimeout(tabArtikelTimer.current);
-        tabArtikelTimer.current = window.setTimeout(() => aktualisiereTabArtikel(tabZiel), 200);
-      }
-      // (a) Gliederung: aktiven Pfad markieren + den Zweig automatisch AUFklappen
-      //     und beim Verlassen wieder ZUklappen (K, Auftrag David 26.6.2026) —
-      //     aber nur Zweige, die der Spy selbst geöffnet hat (autoOffenRef);
-      //     manuell geöffnete bleiben offen. Der Mitscroll-Effekt hält den
-      //     aktiven Eintrag dann im TOC-Container sichtbar.
-      const ids = pfadZu(sektionen, (s) => s.artikel.some((x) => x.artikel === token)) ?? [];
-      if (!ids.length) return;
-      // F3 (RC2, Auftrag David 16.7. «Gliederung springt umher»): den (a)-Block
-      // (Markierung + Auto-Akkordeon) TRAILING entprellen (~200 ms, analog aktArtikel/
-      // tabArtikel oben). Der Timer verarbeitet stets das ZULETZT gemeldete `ids` (jeder
-      // neue Frame löscht den vorigen Timer). Wirkung: beim schnellen Durchscrollen EIN
-      // Auf/Zu statt einer dichten Reflow-Folge des Baums. Das Verhalten (Auto-Auf-/
-      // Zuklappen, Auftrag K 26.6.) bleibt — nur seine Frequenz sinkt. Der Klick-Sprung-
-      // Pfad (springeZuArtikel/springeZuSektion) setzt aktivIds/tocBaum weiterhin SOFORT
-      // und löscht diesen Timer (kein Kampf mit einem verspäteten Auto-Update).
-      if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
-      tocBaumTimer.current = window.setTimeout(() => {
-        // Wertgleichen Pfad nicht neu setzen (pfadZu liefert stets ein neues Array):
-        // sonst Re-Render + Mitscroll-Effekt bei jedem Artikel derselben Blatt-Sektion.
-        setAktivIds((prev) => prev.length === ids.length && prev.every((v, i) => v === ids[i]) ? prev : ids);
-        // Auto-Set fortschreiben (Seiteneffekt ausserhalb des State-Updaters, der rein
-        // bleibt): aufklappen, was jetzt im Pfad liegt; zuklappen NUR, was die Lese-
-        // position um AUTO_ZU_NACHLAUF Pfadwechsel hinter sich gelassen hat (§15.2: dann
-        // off-screen → Zuklapp-Reflow zählt nicht; verhindert das sichtbare Auf-/Zu-
-        // klappen beim Hin-und-Her-Scrollen, das auf 2-vCPU-CI das CLS-Budget riss).
-        const auto = autoOffenRef.current;
-        const tick = ++autoTickNowRef.current;
-        // Aktive Pfad-IDs auto-aufklappen — aber manuell geöffnete NICHT ins Auto-Set
-        // adoptieren (die bleiben dauerhaft offen) und manuell ZUgeklappte (manuellZuRef)
-        // gar nicht auto-aufklappen (explizites Einklappen des aktiven Zweigs gewinnt).
-        // Jedes Aktiv-Vorkommen (inkl. Vorfahren aus pfadZu) frischt den Nachlauf-Tick.
-        for (const id of ids) if (!manuellOffenRef.current.has(id) && !manuellZuRef.current.has(id)) { auto.add(id); autoTickRef.current.set(id, tick); }
-        // BEFUND 3 (A9-Forensik 19.7.2026): der bisherige «nur off-screen»-Wächter
-        // (BEFUND 2) prüfte auf ÜBERLAPPUNG mit dem [data-toc]-Sichtband und klappte
-        // jeden NICHT-überlappenden Ast zu — also auch Äste OBERHALB des Bandes. Genau
-        // das riss auf dem 2-vCPU-Runner das Budget: kollabiert ein Ast oberhalb der
-        // sichtbaren Zeilen, rückt der GESAMTE sichtbare Inhalt DARUNTER nach oben — ein
-        // gezählter Layout-Shift (das gemeldete li 248×195→0×0 ist ein Kind eines
-        // solchen oberhalb-Astes). §15.2-treuer Fix: einen Ast NUR zuklappen, wenn er
-        // GANZ UNTERHALB des Sichtbandes liegt (r.top ≥ contRect.bottom) — dann bewegt
-        // sein Kollaps ausschliesslich off-screen-Inhalt (der Ast selbst + alles darunter
-        // sind unsichtbar), nie eine sichtbare Zeile. Äste im Band ODER darüber bleiben
-        // offen. Das ist strikt KONSERVATIVER als zuvor (klappt eine Teilmenge der
-        // bisherigen Äste zu) → kann keinen NEUEN Shift erzeugen. Auto-Akkordeon (Auftrag
-        // K) bleibt: beim Zurück-nach-oben-Scrollen verlassene (jetzt unterhalb liegende)
-        // Äste klappen weiterhin zu; beim Weiterlesen nach unten bleiben die überholten
-        // (oberhalb liegenden) Äste ruhig offen statt sichtbar zu springen (deckt sich mit
-        // Davids Kernwunsch «Gliederung springt nicht umher», 16.7.). `getBoundingClientRect`
-        // ist reine Lese-Messung (kein Reflow-Trigger, im Timer nach dem Settle).
-        const tocCont = (paneRoot(imPane, wurzel) ?? document).querySelector('[data-toc]') as HTMLElement | null;
-        const contRect = tocCont?.getBoundingClientRect();
-        const darfZuklappen = (id: string): boolean => {
-          if (!tocCont || !contRect) return false; // kein Container/Mass ⇒ sicherheitshalber NICHT zuklappen
-          const el = tocCont.querySelector(`[data-sektion-id="${CSS.escape(id)}"]`) as HTMLElement | null;
-          if (!el) return false; // nicht gefunden ⇒ nicht zuklappen (keine Blind-Aktion)
-          const r = el.getBoundingClientRect();
-          return r.top >= contRect.bottom; // NUR wenn der Ast komplett unter dem Sichtband sitzt
-        };
-        const schliessen: string[] = [];
-        for (const id of [...auto]) {
-          if (ids.includes(id)) continue; // im aktiven Pfad → offen halten
-          if (tick - (autoTickRef.current.get(id) ?? 0) <= AUTO_ZU_NACHLAUF) continue; // noch im Nachlauf-Fenster
-          if (!darfZuklappen(id)) continue; // nur Äste GANZ UNTERHALB des Sichtbands (sonst sichtbarer Reflow)
-          auto.delete(id); autoTickRef.current.delete(id); schliessen.push(id);
-        }
-        setTocBaum((o) => {
-          let geaendert = false;
-          const n = { ...o };
-          for (const id of ids) if (!n[id] && !manuellZuRef.current.has(id)) { n[id] = true; geaendert = true; }
-          for (const id of schliessen) if (n[id]) { n[id] = false; geaendert = true; }
-          return geaendert ? n : o; // identische Referenz, wenn nichts ändert → kein Re-Render
-        });
-      }, 200);
-    };
-    const io = new IntersectionObserver((entries) => {
-      for (const en of entries) sichtbar.set(en.target, en);
-      if (!raf) raf = window.requestAnimationFrame(auswerten);
-      // R1: Beobachtungs-Band im oberen Bereich (obere ~45 % der Container-Höhe).
-      // Grosszügig genug, dass die FIXE Bezugslinie (~5rem) bei jeder Viewport-Höhe
-      // und jeder R3-Schriftskala drin liegt; aktiverArtikel wählt daraus exakt den
-      // Artikel an der Linie. Eine schmale %-Bande verfehlte die fixe Linie bei
-      // grossen Schirmen/Zoom.
-    }, { root: paneRoot(imPane, wurzel), rootMargin: '0px 0px -55% 0px', threshold: 0 });
-    // Alle aktuell gerenderten Artikel beobachten — im Pane nur die DIESES Panes
-    // (B-2.5: sonst beobachtet der Spy auch das andere Pane → falsches Live-Label).
-    // Auf-/Zuklappen (offen) und Suche (sucheDebounced) verändern die DOM-Artikelmenge
-    // → Effekt läuft über die Deps neu und beobachtet die dann sichtbaren Artikel.
-    // Rank 9: an sucheDebounced statt suche gekoppelt — der Observer-Neuaufbau (alle
-    // art--Knoten neu beobachten) läuft so nicht bei jedem Tastendruck.
-    (paneRoot(imPane, wurzel) ?? document).querySelectorAll('[id^="art-"]').forEach((el) => io.observe(el));
-    return () => {
-      io.disconnect();
-      if (raf) cancelAnimationFrame(raf);
-      if (tabArtikelTimer.current != null) window.clearTimeout(tabArtikelTimer.current);
-      if (aktArtikelTimer.current != null) window.clearTimeout(aktArtikelTimer.current);
-      if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current); // F3
-    };
-  }, [sektionen, ohneGliederung, basisPfad, offen, sucheDebounced, istSekundaer, imPane, wurzel]);
-
-  // Aktiven Eintrag im TOC sichtbar halten — sanft, nur den TOC-Container, nie die
-  // Seite scrollen. Läuft bei JEDEM Wechsel des aktiven Pfads (aktivIds) UND nach
-  // dem Aufklapp-Settle (tocBaum): so folgt die Gliederung beim Scrollen der
-  // Leseposition (P9b — vorher fehlte aktivIds in den Deps, darum scrollte der TOC
-  // beim Scrollen nicht mit). Nur scrollen, wenn der aktive Eintrag aus dem Sicht-
-  // feld des TOC-Containers gelaufen ist (sonst kein unnötiger Sprung).
-  useEffect(() => {
-    if (typeof document === 'undefined') return;
-    // Pane-gescopt: sonst trifft der globale Query ein FREMDES Pane (zwei breite
-    // Gesetz-Panes haben je ein [data-toc]) → falsches Pane scrollt (E-Regression).
-    const wurzelEl = paneRoot(imPane, wurzel);
-    const cont = (wurzelEl ?? document).querySelector('[data-toc]') as HTMLElement | null;
-    if (!cont) return;
-    // F2 (RC1b) + V1: solange der Nutzer die Gliederung aktiv durchblättert (letzte
-    // Bedienung < 1,5 s her), NICHT nachführen — er soll sich frei darin bewegen
-    // können (David 16.7. «Wenn man sich darin bewegt»). V1 (stille Wiederaufnahme):
-    // dieser Effekt läuft nur bei echtem aktivIds-/tocBaum-Wechsel; nach Ablauf des
-    // Guards führt also erst der NÄCHSTE Artikelwechsel wieder nach — keine verspätete
-    // Rückhol-Bewegung, die das Erkunden abbricht.
-    if (Date.now() - tocTouchRef.current < 1500) return;
-    const aktive = cont.querySelectorAll('[data-toc-aktiv]');
-    const el = aktive[aktive.length - 1] as HTMLElement | undefined;
-    if (!el) return;
-    const cr = cont.getBoundingClientRect();
-    const er = el.getBoundingClientRect();
-    // F1 (RC1a): minimaler Rand-NUDGE statt Zentrieren, INSTANT statt smooth. Nur so
-    // weit scrollen, dass der aktive Eintrag knapp in das 8-px-Dead-Band am jeweiligen
-    // Rand rückt (Auslöseschwelle == Zielposition → kein Re-Trigger); Delta ≈ eine
-    // Zeilenhöhe statt ½ Container (früher `- cr.height/2` = Sprünge von 289–315 px).
-    // Bewusst KEIN scrollIntoView({block:'nearest'}): das kann Ancestor/Seite mitscrollen
-    // (E-Regression, Kommentar oben «nie die Seite scrollen»). Kein `smooth`: beseitigt
-    // den Klickziel-Hazard (Buttons wandern nicht mehr unter dem Cursor weg).
-    const dOben = er.top - (cr.top + 8);
-    const dUnten = er.bottom - (cr.bottom - 8);
-    if (dOben < 0) cont.scrollTo({ top: cont.scrollTop + dOben });
-    else if (dUnten > 0) cont.scrollTo({ top: cont.scrollTop + dUnten });
-  }, [aktivIds, tocBaum, imPane, wurzel]);
-
-  // F2 (RC1b): Nutzer-Interaktions-Guard. Passive Input-Listener am [data-toc]-
-  // Container (pane-gescopt) armieren den Guard — NICHT `scroll`, sonst würde der
-  // eigene programmatische Nudge den Guard selbst auslösen. Läuft neu, sobald die
-  // TOC-Spalte erscheint/verschwindet (istXl/tocOffen/sektionen).
-  useEffect(() => {
-    if (typeof document === 'undefined') return;
-    const wurzelEl = paneRoot(imPane, wurzel);
-    const cont = (wurzelEl ?? document).querySelector('[data-toc]') as HTMLElement | null;
-    if (!cont) return;
-    const merke = () => { tocTouchRef.current = Date.now(); };
-    cont.addEventListener('wheel', merke, { passive: true });
-    cont.addEventListener('pointerdown', merke, { passive: true });
-    cont.addEventListener('touchstart', merke, { passive: true });
-    return () => {
-      cont.removeEventListener('wheel', merke);
-      cont.removeEventListener('pointerdown', merke);
-      cont.removeEventListener('touchstart', merke);
-    };
-  }, [sektionen, istXl, tocOffen, imPane, wurzel]);
-
-  // W2·5d U-POSITION/A16: laufend den Scroll-Anker dieses Reiters festhalten
-  // (oberster sichtbarer Artikel `letzterArtToken` + Offset in ihn hinein). Beim
-  // Zurück-/Reiter-Wechsel stellt App.tsx:ScrollWiederherstellung EXAKT diese Stelle
-  // wieder her — element-basiert und darum robust gegen die content-visibility-
-  // Höhenschätzung (David 5.7.: scrollTop allein ist unzuverlässig). Nur die
-  // Primär-/Einzelansicht (die Fenster-Restoration); das Pane hat eigene History.
-  // Passiver, rAF-entprellter Scroll-Listener (§15): eine getBoundingClientRect je
-  // Frame, kein setState (keine Render-Kaskade).
-  useEffect(() => {
-    if (istSekundaer || typeof window === 'undefined') return;
-    let raf = 0;
-    const erfasse = () => {
-      raf = 0;
-      const token = letzterArtToken.current;
-      if (!token) return;
-      const el = findeArt(null, token);
-      if (!el) return;
-      const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-      const offset = Math.max(0, Math.round(bezugslinie(0, remPx) - el.getBoundingClientRect().top));
-      merkeAnker(tabSchluessel(basisPfad + window.location.search), { token, offset });
-    };
-    const onScroll = () => { if (!raf) raf = window.requestAnimationFrame(erfasse); };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => { window.removeEventListener('scroll', onScroll); if (raf) window.cancelAnimationFrame(raf); };
-  }, [istSekundaer, basisPfad]);
 
   const sucheTrim = sucheDebounced.trim().toLowerCase(); // Rank 9: entprellt (nicht `suche`)
   // ═══ ABSCHNITT · In-Gesetz-Suche & Treffer ═══
@@ -1023,18 +640,6 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     setzeSuchHighlight(null, '');
   }, [sucheFeldLeer]);
 
-  // §15.2 CLS-Lade-Reservierung: solange Snapshot/Struktur/Currency async laden,
-  // reserviert min-h-screen (Token, §13) die volle Lesehöhe. Kein Inhalt wird
-  // versteckt/gekürzt (§15/2) — es ist derselbe Spinner-Platzhalter für alle
-  // Lade-Pfade (Fehler ausgenommen), damit der einwachsende React-Baum keinen
-  // grossen Sprung erzeugt.
-  const ladeAnzeige = (
-    <div className="min-h-screen py-12 text-center space-y-3">
-      <div className="scale-rule max-w-[200px] mx-auto" aria-hidden />
-      <p className="text-body-s text-ink-500">Der Erlass wird abgerufen …</p>
-    </div>
-  );
-
   if (fehler) {
     // W2·10-UI-NAV/N0b: hilfreiche Fehlseite (angefragter Key + Fuzzy-Vorschläge +
     // eingebettetes Erlass-Suchfeld) statt der nackten «nicht verfügbar»-Notiz.
@@ -1055,129 +660,44 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // löst IMMER auf (Fetch-Fehler ⇒ {}), i. d. R. lange vor dem grossen eintraege-Fetch
   // ⇒ kein LCP-Verlust, und die Kopfzeile kann den Reader nicht aufhängen.
   if (erlass && currency === null) {
-    return ladeAnzeige;
+    return <LadeAnzeige />;
   }
   // ── pdf-embed: amtliches PDF in-app (kein extrahierbarer Volltext-HTML) ──────
-  // Auftrag David 25.6.2026: statt nacktem Live-Link das amtliche Fedlex-PDF in
-  // den vollen Reader-Rahmen einbetten (Breadcrumb, Kopf, Provenienz, Download,
-  // native PDF-Suche). Fedlex setzt X-Frame-Options: DENY → Hotlink unmöglich,
-  // darum SELBST gehostet (same-origin). Wichtig: die globale DENY-Header-Politik
-  // (vercel.json) ist für /normtext/ auf SAMEORIGIN + frame-ancestors 'self'
-  // gelockert, sonst blockiert der Browser auch den eigenen PDF-iframe (Prod-only).
-  // Massgeblich bleibt die amtliche Quelle (sichtbarer Live-Link, §7/§8); Drift-
-  // Tor: check:pdf (offline Integrität + netz Drift & geltende Konsolidierung).
+  // Reine Präsentation in ./inhalt-ansichten (§6.6-Split), Markup byte-gleich.
   if (erlass && erlass.status === 'pdf-embed' && erlass.pdfPfad) {
-    return (
-      <div className="space-y-5">
-        {/* Breadcrumb trägt der Kopf (Inhalts-Kopf bzw. PaneKopf) — kein Inline-Dup.
-            G2b: EINE Kopf-Komponente (ErlassLeserKopf) — hier ohne Options-Leiste,
-            da am eingebetteten PDF Linien/Fussnoten/Verweise wirkungslos wären
-            (keine toten Steuerelemente, §13 F4). */}
-        <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]}
-          overline={`${erlass.ebene === 'bund' ? 'Staatsvertrag' : `Kanton ${erlass.kanton}`} · amtliches PDF`}
-          hinweis="Amtliches PDF — massgeblich ist die amtliche Fassung"
-          aktionen={
-            <AmtlichesPdf href={`/normtext/${erlass.pdfPfad}`} stand={erlass.stand} extern={false} dateiname={`${erlass.kuerzel}.pdf`} />
-          } />
-        {/* M5: Erlass-Kopf-Slot auch im pdf-embed-Pfad (für PDF-Erlasse ohne
-            Struktur-Sidecar bleibt kopf=null → nichts gerendert). */}
-        {kopf && <ErlassKopfBlock kopf={kopf} intern={internRefs} />}
-        {/* Eingebettetes amtliches PDF (same-origin → Browser-Viewer mit nativer
-            Suche/Zoom/Druck). iframe ist für Inline-PDF am zuverlässigsten; darunter
-            ein sichtbarer Fallback-Link für Browser ohne PDF-Viewer. */}
-        {/* ⑦ PDF-Rahmen (W2·5d G3a): der iframe-Rahmen nutzt die benannte Struktur-
-            Linie (border-rule-struktur) statt der Ad-hoc border-line — konsistent mit
-            dem Linien-Kanon (§2.2⑦). Das PDF IST die amtliche Fassung (§7/§8). */}
-        <iframe src={`/normtext/${erlass.pdfPfad}#view=FitH`} title={`${erlass.kuerzel} — amtliches PDF`}
-          className="w-full rounded-lg border border-rule-struktur bg-paper-sunken/30"
-          style={{ height: 'min(82vh, 1100px)' }} />
-        {/* Einheitliches Kontext-Panel (B3): Entscheide/Materialien/Werkzeuge zu
-            diesem Erlass am Leseende (Single Source mit dem Volltext-Reader). */}
-        <KontextPanel typ="norm" normKeys={[erlass.key]} />
-        <nav className="mt-4 border-t border-line pt-5 flex flex-wrap justify-between gap-3 text-body-s" aria-label="Weitere Erlasse">
-          <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">‹ Übersicht</Link>
-          <a href={`/normtext/${erlass.pdfPfad}`} target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">Amtliches PDF in neuem Tab öffnen ↗</a>
-        </nav>
-      </div>
-    );
+    return <PdfEmbedAnsicht erlass={erlass} currency={currency} kopf={kopf} internRefs={internRefs} />;
   }
   // ── ⑧ LIVE_VERWEIS: kein In-App-Volltext — ehrliche Verweiskarte (§8) ────────
-  // Statt der «nicht verfügbar»-Fehlerseite: prominenter amtlicher Live-Link +
-  // Stand + ehrlicher Hinweis «nicht als In-App-Volltext gehostet» (FAHRPLAN
-  // §2.2⑧, Referenz DSGVO). Massgeblich bleibt die amtliche Quelle (§7/§8). Reine
-  // Darstellung; eintraege bleibt null (darum VOR dem Lade-Guard unten).
+  // Reine Präsentation in ./inhalt-ansichten (§6.6-Split), Markup byte-gleich.
   if (erlass && erlass.status === 'nur-live-link') {
-    const verweisOverline = `${erlass.rechtsgebiet === 'international' ? 'International' : erlass.ebene === 'bund' ? 'Bund' : `Kanton ${erlass.kanton}`} · amtlicher Verweis`;
-    return (
-      <div className="space-y-5">
-        <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]}
-          overline={verweisOverline}
-          hinweis="Verweis — massgeblich ist die amtliche Fassung" />
-        <section className="max-w-reading space-y-4 rounded-lg border border-rule-struktur bg-paper-sunken/20 p-5">
-          <p className="font-serif text-body-l leading-[1.65] text-ink-700">
-            Dieser Erlass wird in LexMetrik <strong className="font-semibold">nicht als In-App-Volltext gehostet</strong>.
-            Massgeblich und vollständig ist die amtliche Fassung bei der Quelle.
-          </p>
-          {erlass.quelleUrl && (
-            <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-md border border-brass-400 px-3 py-2 text-body-s font-medium text-brass-700 no-underline hover:border-brass-500 hover:bg-brass-100/40 transition-colors">
-              <span aria-hidden>↗</span> Amtliche Fassung öffnen
-            </a>
-          )}
-          {erlass.stand && (
-            <p className="text-micro text-ink-500">Stand der zuletzt erfassten Referenz: <span className="num">{formatiereDatum(erlass.stand)}</span></p>
-          )}
-        </section>
-        {/* Einheitliches Kontext-Panel (B3) auch hier: Entscheide/Materialien/
-            Werkzeuge zu diesem Erlass (Single Source, §5). */}
-        <KontextPanel typ="norm" normKeys={[erlass.key]} />
-        <nav className="mt-4 border-t border-line pt-5 flex flex-wrap justify-between gap-3 text-body-s" aria-label="Weitere Erlasse">
-          <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">‹ Übersicht</Link>
-          {erlass.quelleUrl && <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">Amtliche Fassung in neuem Tab öffnen ↗</a>}
-        </nav>
-      </div>
-    );
+    return <LiveVerweisAnsicht erlass={erlass} currency={currency} />;
   }
   if (!erlass || !eintraege) {
     // Mindesthöhe reserviert die volle Lesehöhe, solange Snapshot/Struktur async
     // laden: ohne sie kollabiert das (bei Bund prerenderte) Volltext-Dokument auf
     // die kurze Spinner-Zeile und der einwachsende React-Baum erzeugt den grossen
     // CLS-Sprung. min-h-screen ist ein Token (§13), reserviert nur Platz, kürzt
-    // keinen Inhalt (§15/2). Derselbe `ladeAnzeige`-Platzhalter wie der Currency-Pin.
-    return ladeAnzeige;
+    // keinen Inhalt (§15/2). Derselbe `LadeAnzeige`-Platzhalter wie der Currency-Pin.
+    return <LadeAnzeige />;
   }
 
+  // §6.6-Split (W2·12-HYGIENE/B24): der Innen-Render des Volltext-Readers lebt in der
+  // reinen Präsentationskomponente ./inhalt-volltext (Markup + Handler byte-gleich).
+  // `renderSektion` (Linien-Kanon: border-guide / linien.guideEbene / data-normtext-
+  // linie) und die reader-root-Hülle (data-grundart / data-guide-auto) bleiben HIER —
+  // dort gated sie `check:linien-kanon` (READER-Liste). renderSektion wird als Prop
+  // hereingereicht; sie arbeitet weiter auf demselben `offen`/`setOffen`.
+  const istOffen = (id: string, defOpen: boolean) => offen[id] ?? defOpen;
+  const toggle = (id: string, defOpen: boolean) => setOffen((o) => ({ ...o, [id]: !(o[id] ?? defOpen) }));
   const regRef = (id: string) => (el: HTMLElement | null) => {
     if (el) sekRefs.current.set(id, el); else sekRefs.current.delete(id);
   };
   const fn = (tok: string) => struktur?.[tok]?.fussnoten;
 
-  // N13 (BS-Audit 23.6.2026): die Reader-Overline zeigte für JEDEN kantonalen
-  // Erlass stur das Einheits-Rechtsgebiet («Öffentliches Recht»). Stattdessen das
-  // echte Sachgebiet aus der amtlichen Kanton-Systematik (sachgruppe→topTitel).
-  // Nur wenn ein verifizierter Titel vorliegt — der neutrale Fallback («Bereich N»,
-  // «Ohne Systematik-Nummer») wird weggelassen (§8, nichts Geratenes). Bund bleibt
-  // beim Rechtsgebiet-Label.
-  const overlineGebiet: string | null = (() => {
-    if (erlass.ebene === 'bund') return GEBIET_LABEL[erlass.rechtsgebiet];
-    const sys = erlass.kanton ? kantonSys[erlass.kanton] : undefined;
-    if (!sys) return null;
-    const { top } = sachgruppe(sys, erlass.sr);
-    if (top === '~') return null;
-    const name = topTitel(sys, top);
-    return /^Bereich /.test(name) ? null : name;
-  })();
-
-  // W2·5d G3a: Grundart-Metadaten zur Laufzeit aus dem Register (SSoT, §5) per
-  // key — die BrowseErlass trägt sie bewusst nicht. Steuert Kopf-Label (erlassTyp),
-  // §-Zähl-Substantiv (bestimmungsEtikett, ⑥) und den grundart-abhängigen Linien-
-  // Default (data-grundart am .lc-leser-Root, K11).
+  // W2·5d G3a: Grundart-Metadaten zur Laufzeit aus dem Register (SSoT, §5) per key —
+  // steuert Kopf-Label (erlassTyp), §-Zähl-Substantiv (bestimmungsEtikett, ⑥) und den
+  // grundart-abhängigen Linien-Default (data-grundart am .lc-leser-Root, K11).
   const meta = grundartMeta(erlass.key);
-  const bestimmungsWort = meta.bestimmungsEtikett === 'paragraf' ? 'Paragraphen' : 'Artikel';
-
-  // Artikel-Bereich «Art. 1–10» + Einzelartikel-Flag je Sektion kommen aus dem
-  // `sektionMeta`-useMemo (Rank 4) — einmal bottom-up berechnet statt je Render.
-
 
   // Jede Sektionsstufe ist klappbar (Fedlex-analog); Inhalt rendert nur offen.
   // Randtitel-promotete Knoten (s.randtitel) bekommen einen ruhigen Einzug-Strich,
@@ -1185,7 +705,6 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // Ein Knoten kann seit 6b DIREKTE Artikel UND Unter-Knoten tragen (z. B.
   // «II. Handlungsfähigkeit» enthält Art. 12 direkt und die Untergruppe
   // «2. Voraussetzungen») — beide werden in Dokument-Reihenfolge gemischt.
-  // ═══ ABSCHNITT · Rendering (renderSektion, TOC-Baum, Options-Leiste, JSX-Return) ═══
   const renderSektion = (s: Sektion, defOpen: boolean, tiefe: number): ReactNode => {
     const auf = istOffen(s.id, defOpen);
     // Kinder + direkte Artikel in EINER nach Dokument-Position sortierten Liste.
@@ -1220,41 +739,23 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     const einzugCls = eingerueckt ? 'pl-einzug-mobil sm:pl-einzug' : '';
     return (
       <section key={s.id} data-normtext-linie className={`space-y-3 ${guide ? 'border-l border-guide' : ''} ${einzugCls}`}>
-        <SektionKopf s={s} refCb={regRef(s.id)} offen={auf} onToggle={() => toggle(s.id, defOpen)} bereich={sektionMeta.get(s.id)?.bereich} bereichEinzel={sektionMeta.get(s.id)?.einzel ?? false} />
+        <SektionKopf s={s} refCb={regRef(s.id)} offen={auf} onToggle={() => toggle(s.id, defOpen)} bereich={sektionMeta.get(s.id)?.bereich} bereichEinzel={sektionMeta.get(s.id)?.einzel ?? false}
+          // EID-2 (W2·5d §12): Sektions-Deep-Link zur amtlichen Fassung — nur wenn
+          // das EID-1-Sidecar eine Container-eId trägt UND der Erlass eine ELI-
+          // Quelle hat (Builder liefert sonst null ⇒ kein Link, §8).
+          amtlichUrl={verifizierLinkSektion(erlass, s.eId) ?? undefined} />
         {auf && <div className="space-y-5">{inhalt.map((x) => x.el)}</div>}
       </section>
     );
   };
 
-  // Geteilte Such-Steuerung (nur noch die Eingabe — der frühere Fussnoten-Schalter
-  // ist in die Options-Leiste unifiziert, G2b).
-  // A35 (David 16.7.2026): das Suchfeld lebt jetzt AUSSCHLIESSLICH in der STICKY
-  // Kopfzeilen-Leiste (data-such-bar, direkt unter dem Ansicht-tragenden Inhalts-
-  // Kopf) — NICHT mehr «oberhalb der Gliederung» in der TOC-Spalte. EINE Quelle,
-  // in JEDER Breite dieselbe Stelle (§5, Auftrag David «in die kopfzeile wo sich
-  // auch ansicht usw. befindet»).
-  const sucheEingabe = (
-    <input type="search" value={suche} onChange={(e) => setSuche(e.target.value)}
-      placeholder="Im Gesetz suchen …" aria-label="Im Gesetz suchen"
-      className="lc-input h-9 py-0 text-body-s flex-1 min-w-0" />
-  );
-  // E3/A34 + E5/A35: das «Ansicht»-Dropdown im SPLIT-VIEW (nur `imPane`). Es lebt in
-  // der pane-lokalen STICKY Kopfzeilen-Such-Leiste (data-such-bar) statt im
-  // wegscrollenden ErlassLeserKopf — so bleibt die Ansichtswahl beim Lesen im Pane
-  // dauerhaft erreichbar (A26-Ziel «immer sichtbar», jetzt auch für den Pane). Seit
-  // A35 ist diese Such-Leiste in JEDER Breite präsent (die frühere 2-Spalten-TOC-Sub-
-  // Bar entfiel, weil die Suche dauerhaft im Kopf sitzt), darum trägt sie das Menü
-  // einheitlich an EINER Stelle — nie zwei Menüs gleichzeitig. In der Einzelansicht
-  // (!imPane) trägt der sticky Inhalts-Kopf das Menü (A26) → hier `null`, kein Doppel.
-  const ansichtMenuPane = imPane
-    ? <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />
-    : null;
-
   // Gliederungs-Baum EINMAL beschreiben (genutzt in der xl-Spalte UND im mobilen
   // Drawer, §5 — kein doppelter onSprung). `springeZuSektion`/`tocToggle` sind
   // oben als useCallback definiert (über dem early-return, Rank 4).
   const tocBaumEl = (
-    <SektionBaumTOC sektionen={sektionen} aktivPfad={aktivIds} offen={tocBaum}
+    // A36: kuratierter Baum (tocSektionen) — Sprung-/Toggle-Handler arbeiten
+    // weiter über IDs des vollen Baums (Teilmenge, pfadZu findet sie identisch).
+    <SektionBaumTOC sektionen={tocSektionen} aktivPfad={aktivIds} offen={tocBaum}
       onToggle={tocToggle} onSprung={springeZuSektion} />
   );
 
@@ -1273,222 +774,20 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
       // PaneKopf ausserhalb des Scroll-Containers → nur die pane-lokale Such-Leiste
       // (top 0.5rem, ~3.5rem) klebt (Muster --rsp-stick, Entscheid-Leser B3).
       style={{ '--nt-stick': imPane ? '3.5rem' : 'calc(4rem + 2.25rem)' } as CSSProperties}>
-      {/* O3: flüchtige Bestätigung nach «In neuem Reiter» — zeigt zum ☰-Reiter-
-          Tracker oben rechts (aria-live für Screenreader). Fixed, überlagert nichts
-          Interaktives; verschwindet nach ~3 s bzw. bei erneutem Reiter-Öffnen. */}
-      {reiterToast && (
-        <div role="status" aria-live="polite"
-          className="fixed right-3 top-20 z-50 flex items-center gap-2 rounded-lg border border-line bg-paper-raised px-3 py-2 text-body-s text-ink-700 shadow-lg">
-          <span aria-hidden className="text-brass-700">⧉</span>
-          Im neuen Reiter geöffnet — oben unter ☰
-        </div>
-      )}
-      {/* Breadcrumb trägt seit A/F der Kopf: Einzelansicht → Inhalts-Kopf, Split-View
-          → PaneKopf. Kein zweiter Inline-Breadcrumb mehr (sonst Dopplung im Pane).
-          G2b: EINE Kopf-Komponente (ErlassLeserKopf) — dieselbe wie im pdf-embed-
-          Pfad; sie trägt die Options-Leiste (Linien/Fussnoten/Verweise). */}
-      <ErlassLeserKopf erlass={erlass} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort} currency={currency?.[erlass.key]}
-        overline={kopfOverline(erlass, meta.erlassTyp, overlineGebiet)}
-        hinweis="Snapshot — massgeblich ist die amtliche Fassung"
-        aktionen={
-          // V2 (koordinierter Kopf-PR): EIN Slot-Layout in der Reihenfolge
-          // Ansicht · Fussnoten · Download (§F2) — der Slot wird nicht mehrfach
-          // umgebaut. «In neuem Reiter» steht zwischen den Bedien- und den
-          // Download-Aktionen (Download bleibt der letzte, verankerte Punkt).
-          <>
-            {/* W2·5d U-KOPF/A4 + V2·B-1/B-2: «Ansicht»-Dropdown
-                (Linien/Fussnoten/Verweise/Entscheide + Zeitraum) — reine data-*-/
-                CSS-Toggles bzw. JS-Filter (leserOptionen.ts), global, jede Instanz
-                synchron. A26 (David 11.7.2026) verschob es in der EINZELANSICHT in
-                den immer sichtbaren Inhalts-Kopf (via ansichtSlot). E3/A34 (David
-                16.7.2026): im SPLIT-VIEW lag es hier im ErlassLeserKopf — der scrollt
-                mit dem Gesetzestext weg, sodass beim Lesen «keine Möglichkeit mehr,
-                die Ansicht zu ändern» blieb. Das Menü wandert darum in die pane-
-                lokale STICKY Such-/Gliederungs-Leiste (unten `ansichtMenuPane`),
-                die im Pane dauerhaft oben klebt — daher hier NICHT mehr gerendert. */}
-            {/* Dasselbe Gesetz zusätzlich in einem zweiten Reiter öffnen (Auftrag
-                David) — zum Vergleich zweier Stellen; die Reiter unterscheiden sich
-                im Label über den Artikel («OR – Art. 41» / «OR – Art. 97»). */}
-            <button type="button"
-              onClick={() => {
-                const ziel = naechsteInstanz(window.location.pathname + window.location.hash);
-                merkeTab(ziel, erlass.kuerzel);
-                navigate(ziel);
-                // O3: kurze Bestätigung mit Zeiger auf den Reiter-Tracker (☰ oben).
-                setReiterToast(true);
-                if (reiterToastTimer.current) window.clearTimeout(reiterToastTimer.current);
-                reiterToastTimer.current = window.setTimeout(() => setReiterToast(false), 3200);
-              }}
-              className="lc-chip hover:text-brass-700" title="Diesen Erlass zusätzlich in einem neuen Reiter öffnen">⧉ In neuem Reiter</button>
-            {/* W2·5d U-PDF/A12: Download = AMTLICHES PDF der gepinnten Fassung
-                (Bund Fedlex-Filestore / Kanton LexWork; aus erlass.pdfUrl,
-                synchron am Erlass ⇒ CLS 0, §15/2). Fehlt die amtliche PDF-URL,
-                entfällt die Aktion (nie render-eigenes PDF, §8/§10.5). */}
-            {erlass.pdfUrl && (
-              <AmtlichesPdf href={erlass.pdfUrl} stand={erlass.pdfStand ?? erlass.stand} extern />
-            )}
-          </>
-        } />
-
-      {/* M5: Erlass-Kopf (Ingress/Erlassformel bzw. materielle Präambel + Erlass-
-          datum + Kopf-Fussnoten) — Fedlex-Fundiertheits-Floor (§2), bisher verworfen. */}
-      {kopf && <ErlassKopfBlock kopf={kopf} intern={internRefs} />}
-
-      {/* A35 (David 19.7.2026): das In-Gesetz-Suchfeld ist in der EINZELansicht in den
-          Inhalts-Kopf (oben, neben «Ansicht»/Stand/✕) gewandert — die frühere full-
-          width Such-Leiste entfällt dort rückstandsfrei (kein toter Code, §Aufräumen).
-          Diese `data-such-bar` bleibt NUR im SPLIT-VIEW (`imPane`): dort gibt es keinen
-          InhaltsKopf, also trägt die pane-lokale sticky Leiste weiterhin ☰ + Suchfeld +
-          Ansicht-Menü. Sticky direkt unter der Pane-Oberkante. */}
-      {imPane && (
-        <div data-such-bar className="sticky z-[16] mb-4 rounded-lg bg-paper"
-          style={{ top: '0.5rem' }}>
-          <div className="flex items-center gap-2 rounded-lg border border-line bg-paper px-3 py-2 shadow-sm">
-            {istXl ? (
-              // ab lg (breites Pane): ☰ nur wenn die Gliederungsspalte EINGEKLAPPT ist.
-              sektionen.length > 0 && !tocOffen && (
-                <button type="button" aria-expanded={tocOffen} onClick={() => setTocOffen(true)}
-                  title="Gliederung einblenden" className="shrink-0 inline-flex items-center gap-1 rounded-md border border-line px-2 py-1 text-micro font-medium text-ink-600 hover:text-brass-700 hover:border-brass-300 transition-colors">
-                  <span aria-hidden>☰</span><span className="hidden sm:inline">Gliederung</span>
-                </button>
-              )
-            ) : (
-              // schmales Pane: ☰ öffnet die Gliederung als Overlay-Drawer.
-              sektionen.length > 0 && (
-                <button type="button" aria-expanded={tocAuf} onClick={() => setTocAuf((v) => !v)}
-                  title="Gliederung" className="shrink-0 inline-flex items-center gap-1 rounded-md border border-line px-2 py-1 text-micro font-medium text-ink-600 hover:text-brass-700 hover:border-brass-300 transition-colors">
-                  <span aria-hidden>☰</span><span className="hidden sm:inline">Gliederung</span>
-                </button>
-              )
-            )}
-            {sucheEingabe}
-            {/* Split-View-Ansicht-Menü (nur `imPane`) — an derselben Stelle rechts nach
-                der Suche, dauerhaft erreichbar während man im Pane liest. */}
-            {ansichtMenuPane && <span className="shrink-0">{ansichtMenuPane}</span>}
-          </div>
-        </div>
-      )}
-
-      {/* 2-Spalten (Gliederungs-Sidebar links, Inhalt rechts) ab lg (1024px, R2) —
-          darunter (mobil / sehr schmale Fenster) bekommt der Normtext die volle
-          Spaltenbreite, die Gliederung sitzt als einklappbarer Drawer (wie mobil).
-          So frisst die feste 16rem-TOC-Spalte erst, wenn genug Breite da ist —
-          deckungsgleich mit der App-Seitenleiste (lg). Reine Darstellung (§3). */}
-      {/* Unter xl: die GLIEDERUNG als Overlay-Drawer (analog Seitenleiste), NUR auf
-          Wunsch über den sticky ☰-Knopf geöffnet (Auftrag David 25.6.2026). A35: die
-          Suche ist NICHT mehr im Drawer — sie steht dauerhaft in der Kopfzeilen-Leiste
-          (oben). Der Drawer trägt jetzt allein den Gliederungsbaum; Sektionswahl
-          schliesst ihn (springeZuSektion). */}
-      {!istXl && tocAuf && sektionen.length > 0 && (() => {
-        // Im Pane in die Overlay-Schicht portalieren + `absolute` (vom relative-
-        // Wrapper eingefangen) → der Drawer bleibt IM Pane statt als `position:fixed`
-        // über beide Panes zu quellen (container-type fängt fixed nicht). Ausserhalb
-        // unverändert `fixed` an den Viewport (byte-gleich).
-        const ziel = (imPane && overlayWurzel?.current) || null;
-        const inPane = ziel != null;
-        const drawer = (
-          <>
-            <div className={inPane ? 'pointer-events-auto absolute inset-0 z-40 bg-ink-900/30' : `fixed inset-0 z-40 bg-ink-900/30 ${imPane ? '' : 'lg:hidden'}`}
-              onClick={() => setTocAuf(false)} aria-hidden />
-            {/* Kompakt (Wunsch David): begrenzte Höhe, fixer Kopf, NUR der
-                Gliederungsbaum scrollt darunter. In der Einzelansicht beginnt er UNTER
-                dem Inhalts-Kopf (Topbar 4rem + Kopf 2.25rem); im Pane in der Overlay-
-                Schicht ab dessen Oberkante. */}
-            <div ref={tocDrawerRef} tabIndex={-1} role="dialog" aria-modal={inPane ? undefined : true} aria-label="Gliederung"
-              className={`${inPane ? 'pointer-events-auto absolute inset-x-0 top-0 z-50 max-h-[75%]' : `fixed inset-x-0 z-50 max-h-[60vh] ${imPane ? '' : 'lg:hidden'}`} flex flex-col bg-paper-raised border-b border-line shadow-lg`}
-              style={inPane ? undefined : { top: 'calc(4rem + 2.25rem)' }}>
-              <div className="shrink-0 border-b border-line bg-paper-raised">
-                <div className="flex items-center justify-between px-4 pt-2.5 pb-2.5">
-                  <p className="lc-overline">Gliederung</p>
-                  <button type="button" onClick={() => setTocAuf(false)} className="text-micro text-ink-500 hover:text-brass-700">✕ schliessen</button>
-                </div>
-              </div>
-              <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-3 py-2 [scrollbar-width:thin]">{tocBaumEl}</div>
-            </div>
-          </>
-        );
-        return ziel ? createPortal(drawer, ziel) : drawer;
-      })()}
-
-      {/* 2-Spalten-Gliederung: ab `istXl` — im Pane container-breitenabhängig
-          (ResizeObserver), sonst viewport-xl. istXl treibt die Klassen direkt
-          (kein xl:-Prefix), damit ein BREITES Pane denselben Aufbau wie der
-          Einzelbildschirm bekommt. */}
-      <div className={istXl && sektionen.length > 0 && tocOffen ? 'grid grid-cols-[16rem_minmax(0,1fr)] gap-8' : ''}>
-        {/* TOC-Spalte (nur der Gliederungsbaum, sticky). A35: das Suchfeld lebt nicht
-            mehr hier «oberhalb der Gliederung», sondern in der Kopfzeilen-Leiste (oben).
-            Nur wenn istXl; darunter Overlay-Drawer über den sticky ☰-Knopf. */}
-        {istXl && sektionen.length > 0 && (
-          <aside
-            // A35 (David 19.7.2026): in der EINZELansicht entfiel die full-width Such-
-            // Leiste (Suchfeld jetzt IM Inhalts-Kopf) → die Gliederungsspalte klebt
-            // wieder direkt unter dem Kopf (Topbar 4rem + Inhalts-Kopf 2.25rem), ohne
-            // den früheren +3.5rem-Such-Leisten-Vorhalt. Im Pane bleibt die pane-lokale
-            // Such-Leiste (+3.5rem), also dort unverändert.
-            style={imPane
-              // Im Pane: an die SICHTBARE Pane-Höhe binden (Topbar 4rem + PaneKopf
-              // 2.25rem ab), nicht an die indefinite Grid-Zeile (calc(100%) löste
-              // gegen content-Höhe → kein interner Scroll, sticky brach).
-              ? { top: 'calc(0.5rem + 3.5rem)', maxHeight: 'calc(100dvh - 4rem - 2.25rem - 3.5rem - 1rem)' }
-              : { top: 'calc(4rem + 2.25rem)', maxHeight: 'calc(100vh - 4rem - 2.25rem - 1.5rem)' }}
-            className={`mb-0 sticky flex-col ${tocOffen ? 'flex' : 'hidden'}`}>
-            <div className="mb-2 flex items-baseline justify-between shrink-0">
-              <p className="lc-overline">Gliederung</p>
-              <button type="button" onClick={() => setTocOffen((v) => !v)} className="text-micro text-ink-500 hover:text-brass-700" title="Gliederung ein-/ausklappen">{tocOffen ? '‹ einklappen' : 'ausklappen ›'}</button>
-            </div>
-            <div data-toc className="flex-1 min-h-0 overflow-y-auto overscroll-contain pr-2 [scrollbar-width:thin]">
-              {tocBaumEl}
-            </div>
-          </aside>
-        )}
-
-        {/* Lesespalte: auf die Reader-Lese-Token-Breite `max-w-normtext` (42rem ≈
-            70–72 ch) begrenzt und STETS zentriert (mx-auto) — E6/A37 (David 16.7.2026):
-            die Norm bekommt mehr Platz bis an die Fedlex-taugliche Lesbarkeits-Decke
-            (≤ 75 ch), und die Restbreite der 2-Spalten-Zelle (istXl) verteilt sich
-            symmetrisch statt rechts als toter Steg zu bleiben — der Steg trieb den
-            «Zitat»-Link weit nach rechts (A37-Befund). Das Zeilenmass bleibt gedeckelt
-            (§13/2 Lesespalte, nie volle Fensterbreite; R2: kein arbitrary max-w). Die
-            Artikel-Kopfzeile (Art. N · Zitat/Link) UND der Fliesstext (ArtikelBody /
-            Ingress) teilen sich dieselbe Breite `max-w-normtext` → «Zitat» fluchtet
-            bündig mit der rechten Textkante statt in den Leerraum zu wandern. */}
-        <div className="group/lese mx-auto w-full max-w-normtext">
-          {/* A27 (David 12.7.2026): der Sticky Section-Kontextkopf «Titel › … ›
-              Art. N › ⧉ Zitat» ist ENTFERNT. Seit A26 (#198) trägt der immer
-              sichtbare Inhalts-Kopf (InhaltsKopf, Brotkrümel + Live-Artikel) die
-              Orientierung; der tiefe In-Erlass-Gliederungspfad war für David
-              «nicht notwendig». Die «Zitat kopieren»-Aktion bleibt vollständig
-              erhalten — sie steht (identisches baueZitat-Voll-Zitat) je Artikel in
-              der Artikelnummer-Zeile (ArtikelLeser). §15 Funktions-Treue gewahrt. */}
-          {treffer ? (
-            <div ref={trefferRef} className="space-y-4">
-              <p className="text-body-s text-ink-500"><span className="num">{treffer.length}</span> Treffer für «{sucheDebounced.trim()}»</p>
-              {treffer.map((e) => <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={struktur?.[e.artikel]?.marginalie} imTreffer onSpringe={springeZuArtikel} leitfaelle={leitfaelleFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />)}
-              {treffer.length === 0 && <p className="text-body-s text-ink-500">Kein Artikel gefunden.</p>}
-            </div>
-          ) : (
-            <div className="space-y-2">
-              {ohneGliederung.length > 0 && (
-                <div className="space-y-5 mb-6">
-                  {ohneGliederung.map((e) => <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={margAnzeige.get(e.artikel)?.teile} margBasis={margAnzeige.get(e.artikel)?.ab} leitfaelle={leitfaelleFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />)}
-                </div>
-              )}
-              {sektionen.map((s) => renderSektion(s, true, 0))}
-            </div>
-          )}
-
-          {/* Einheitliches Kontext-Panel (B3): Entscheide/Materialien/Werkzeuge zu
-              diesem Erlass am Leseende — Norm ↔ Entscheid ↔ Material ↔ Werkzeug an
-              einer Stelle (Burggraben). Lädt die Entscheide selbst (Single Source, §5). */}
-          <KontextPanel typ="norm" normKeys={[erlass.key]} />
-
-          <nav className="mt-12 border-t border-line pt-5 flex justify-between gap-4 text-body-s" aria-label="Weitere Erlasse">
-            {vorher ? <Link to={`/gesetze/${vorher.ebene}/${encodeURIComponent(vorher.key)}`} className="text-brass-700 hover:underline">‹ {vorher.kuerzel}</Link> : <span />}
-            <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">Übersicht</Link>
-            {nachher ? <Link to={`/gesetze/${nachher.ebene}/${encodeURIComponent(nachher.key)}`} className="text-brass-700 hover:underline text-right">{nachher.kuerzel} ›</Link> : <span />}
-          </nav>
-        </div>
-      </div>
+      <LeserVolltextInhalt
+        erlass={erlass} eintraege={eintraege} struktur={struktur} kopf={kopf} currency={currency}
+        vorher={vorher} nachher={nachher}
+        sektionen={sektionen} ohneGliederung={ohneGliederung} linien={linien} fussnotenAnzahl={fussnotenAnzahl}
+        meta={meta} internRefs={internRefs} margAnzeige={margAnzeige} kantonSys={kantonSys}
+        basisPfad={basisPfad} renderSektion={renderSektion}
+        imPane={imPane} istXl={istXl} overlayWurzel={overlayWurzel}
+        treffer={treffer} suche={suche} sucheDebounced={sucheDebounced} setSuche={setSuche}
+        tocBaumEl={tocBaumEl} tocOffen={tocOffen} tocAuf={tocAuf} setTocOffen={setTocOffen} setTocAuf={setTocAuf}
+        springeZuArtikel={springeZuArtikel}
+        leitfaelleFuer={leitfaelleFuer} revisionFuer={revisionFuer} historieFuer={historieFuer}
+        reiterToast={reiterToast} setReiterToast={setReiterToast} reiterToastTimerRef={reiterToastTimer}
+        tocDrawerRef={tocDrawerRef} trefferRef={trefferRef} navigate={navigate}
+      />
     </div>
   );
 }

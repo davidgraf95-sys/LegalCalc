@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "730.0",
   "titel": "Energiegesetz",
@@ -40,7 +40,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -52,7 +53,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -61,7 +63,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Ziele und Grundsätze"
+     "label": "1. Kapitel: Zweck, Ziele und Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -83,7 +86,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Kapitel: Zweck, Ziele und Grundsätze"
+     "sektion": "1. Kapitel: Zweck, Ziele und Grundsätze",
+     "kl": "A"
     }
    ]
   },
@@ -91,7 +95,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Ziele und Grundsätze"
+     "label": "1. Kapitel: Zweck, Ziele und Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -112,7 +117,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -120,7 +126,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Ziele und Grundsätze"
+     "label": "1. Kapitel: Zweck, Ziele und Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -141,7 +148,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -149,7 +157,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Ziele und Grundsätze"
+     "label": "1. Kapitel: Zweck, Ziele und Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -160,7 +169,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Ziele und Grundsätze"
+     "label": "1. Kapitel: Zweck, Ziele und Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -171,11 +181,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Energieversorgung"
+     "label": "2. Kapitel: Energieversorgung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -186,11 +198,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Energieversorgung"
+     "label": "2. Kapitel: Energieversorgung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -201,11 +215,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Energieversorgung"
+     "label": "2. Kapitel: Energieversorgung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -216,11 +232,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Energieversorgung"
+     "label": "2. Kapitel: Energieversorgung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -231,11 +249,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Energieversorgung"
+     "label": "2. Kapitel: Energieversorgung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien"
+     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -253,7 +273,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 302,
+      "l": 304
+     },
+     "kl": "V"
     },
     {
      "nr": "11",
@@ -269,7 +295,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 304,
+      "l": 304
+     },
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -285,7 +317,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 143,
+      "l": 143
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -301,7 +339,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 288,
+      "l": 288
+     },
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -317,7 +361,13 @@
       }
      ],
      "absatz": "1quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 202,
+      "l": 202
+     },
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -333,7 +383,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 265,
+      "l": 265
+     },
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -346,7 +402,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 132,
+      "l": 247
+     },
+     "kl": "V"
     },
     {
      "nr": "17",
@@ -362,7 +424,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 247,
+      "l": 247
+     },
+     "kl": "A"
     }
    ]
   },
@@ -370,11 +438,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Energieversorgung"
+     "label": "2. Kapitel: Energieversorgung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien"
+     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -385,11 +455,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Energieversorgung"
+     "label": "2. Kapitel: Energieversorgung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien"
+     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -407,7 +479,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 365,
+      "l": 416
+     },
+     "kl": "V"
     },
     {
      "nr": "19",
@@ -423,7 +501,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 416,
+      "l": 416
+     },
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -436,7 +520,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 146,
+      "l": 244
+     },
+     "kl": "V"
     },
     {
      "nr": "21",
@@ -449,7 +539,14 @@
       }
      ],
      "absatz": "2bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 80,
+      "l": 182
+     },
+     "kl": "V"
     },
     {
      "nr": "22",
@@ -465,7 +562,14 @@
       }
      ],
      "absatz": "2bis",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 84,
+      "l": 84
+     },
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -481,7 +585,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 460,
+      "l": 460
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -497,7 +607,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 272,
+      "l": 272
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -513,7 +629,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 116,
+      "l": 353
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -529,7 +651,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 186,
+      "l": 186
+     },
+     "kl": "A"
     }
    ]
   },
@@ -537,11 +665,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Energieversorgung"
+     "label": "2. Kapitel: Energieversorgung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien"
+     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -562,7 +692,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 334,
+      "l": 334
+     },
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -578,7 +714,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -594,7 +731,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -618,7 +761,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -626,11 +775,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Energieversorgung"
+     "label": "2. Kapitel: Energieversorgung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien"
+     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -648,7 +799,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 52,
+      "l": 282
+     },
+     "kl": "V"
     }
    ]
   },
@@ -656,7 +813,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Einspeisung netzgebundener Energie und Eigenverbrauch"
+     "label": "3. Kapitel: Einspeisung netzgebundener Energie und Eigenverbrauch",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -677,7 +835,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 260,
+      "l": 260
+     },
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -698,7 +862,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 332,
+      "l": 332
+     },
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -722,7 +892,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 126,
+      "l": 126
+     },
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -738,7 +914,13 @@
       }
      ],
      "absatz": "1quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 132,
+      "l": 132
+     },
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -751,7 +933,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 203,
+      "l": 225
+     },
+     "kl": "V"
     },
     {
      "nr": "42",
@@ -767,7 +955,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 225,
+      "l": 225
+     },
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -783,7 +977,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 172,
+      "l": 172
+     },
+     "kl": "A"
     }
    ]
   },
@@ -791,7 +991,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Einspeisung netzgebundener Energie und Eigenverbrauch"
+     "label": "3. Kapitel: Einspeisung netzgebundener Energie und Eigenverbrauch",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -812,7 +1013,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 416,
+      "l": 416
+     },
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -832,7 +1039,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 214,
+      "l": 214
+     },
+     "kl": "A"
     }
    ]
   },
@@ -840,7 +1053,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Einspeisung netzgebundener Energie und Eigenverbrauch"
+     "label": "3. Kapitel: Einspeisung netzgebundener Energie und Eigenverbrauch",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -861,7 +1075,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 297,
+      "l": 372
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -874,7 +1094,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 321,
+      "l": 449
+     },
+     "kl": "V"
     },
     {
      "nr": "48",
@@ -890,7 +1116,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 338,
+      "l": 449
+     },
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -906,7 +1138,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 332,
+      "l": 332
+     },
+     "kl": "A"
     }
    ]
   },
@@ -914,7 +1152,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Einspeisung netzgebundener Energie und Eigenverbrauch"
+     "label": "3. Kapitel: Einspeisung netzgebundener Energie und Eigenverbrauch",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -935,7 +1174,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -951,7 +1191,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 217,
+      "l": 217
+     },
+     "kl": "A"
     }
    ]
   },
@@ -959,7 +1205,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergütung der Einspeisung von Elektrizität aus erneuerbaren Energien (Einspeisevergütungssystem)"
+     "label": "4. Kapitel: Vergütung der Einspeisung von Elektrizität aus erneuerbaren Energien (Einspeisevergütungssystem)",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -977,7 +1224,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 147,
+      "l": 315
+     },
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -997,7 +1250,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 212,
+      "l": 212
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1005,7 +1264,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergütung der Einspeisung von Elektrizität aus erneuerbaren Energien (Einspeisevergütungssystem)"
+     "label": "4. Kapitel: Vergütung der Einspeisung von Elektrizität aus erneuerbaren Energien (Einspeisevergütungssystem)",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1016,7 +1276,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergütung der Einspeisung von Elektrizität aus erneuerbaren Energien (Einspeisevergütungssystem)"
+     "label": "4. Kapitel: Vergütung der Einspeisung von Elektrizität aus erneuerbaren Energien (Einspeisevergütungssystem)",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1027,7 +1288,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergütung der Einspeisung von Elektrizität aus erneuerbaren Energien (Einspeisevergütungssystem)"
+     "label": "4. Kapitel: Vergütung der Einspeisung von Elektrizität aus erneuerbaren Energien (Einspeisevergütungssystem)",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1038,7 +1300,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergütung der Einspeisung von Elektrizität aus erneuerbaren Energien (Einspeisevergütungssystem)"
+     "label": "4. Kapitel: Vergütung der Einspeisung von Elektrizität aus erneuerbaren Energien (Einspeisevergütungssystem)",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1049,7 +1312,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen"
+     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1074,7 +1338,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -1090,7 +1355,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 182,
+      "l": 182
+     },
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -1111,7 +1382,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen"
+     "sektion": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen",
+     "kl": "A"
     }
    ]
   },
@@ -1119,7 +1391,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen"
+     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1144,7 +1417,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1152,7 +1426,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen"
+     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1177,7 +1452,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -1193,7 +1469,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 371,
+      "l": 371
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1201,7 +1483,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen"
+     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1226,7 +1509,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1234,7 +1518,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen"
+     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1259,7 +1544,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 262,
+      "l": 262
+     },
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -1279,7 +1570,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 185,
+      "l": 185
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1287,7 +1584,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen"
+     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1312,7 +1610,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -1332,7 +1631,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 101,
+      "l": 101
+     },
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -1352,7 +1657,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 177,
+      "l": 177
+     },
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -1372,7 +1683,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 47,
+      "l": 47
+     },
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -1392,7 +1709,8 @@
       }
      ],
      "absatz": "3",
-     "item": "bbis"
+     "item": "bbis",
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -1412,7 +1730,8 @@
       }
      ],
      "absatz": "3",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -1432,7 +1751,8 @@
       }
      ],
      "absatz": "3",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -1452,7 +1772,8 @@
       }
      ],
      "absatz": "3",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     }
    ]
   },
@@ -1460,7 +1781,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Unterstützungsmassnahmen"
+     "label": "6. Kapitel: Besondere Unterstützungsmassnahmen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1485,7 +1807,8 @@
       }
      ],
      "absatz": "4",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "79",
@@ -1505,7 +1828,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1513,7 +1842,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Unterstützungsmassnahmen"
+     "label": "6. Kapitel: Besondere Unterstützungsmassnahmen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1531,7 +1861,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 63,
+      "l": 253
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1539,7 +1875,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Unterstützungsmassnahmen"
+     "label": "6. Kapitel: Besondere Unterstützungsmassnahmen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1560,7 +1897,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 136,
+      "l": 136
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1568,7 +1911,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Unterstützungsmassnahmen"
+     "label": "6. Kapitel: Besondere Unterstützungsmassnahmen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1593,7 +1937,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1601,7 +1946,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Unterstützungsmassnahmen"
+     "label": "6. Kapitel: Besondere Unterstützungsmassnahmen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1622,7 +1968,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -1636,7 +1983,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 165,
+      "l": 256
+     },
+     "kl": "V"
     },
     {
      "nr": "86",
@@ -1650,7 +2003,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 223,
+      "l": 256
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1658,11 +2017,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Netzzuschlag"
+     "label": "7. Kapitel: Netzzuschlag",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erhebung, Verwendung und Netzzuschlagsfonds"
+     "label": "1. Abschnitt: Erhebung, Verwendung und Netzzuschlagsfonds",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1687,7 +2048,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "88",
@@ -1707,7 +2069,8 @@
       }
      ],
      "absatz": "2",
-     "item": "dbis"
+     "item": "dbis",
+     "kl": "G"
     },
     {
      "nr": "89",
@@ -1723,7 +2086,8 @@
       }
      ],
      "absatz": "2",
-     "item": "dter"
+     "item": "dter",
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -1743,7 +2107,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -1763,7 +2128,8 @@
       }
      ],
      "absatz": "2",
-     "item": "hbis"
+     "item": "hbis",
+     "kl": "A"
     }
    ]
   },
@@ -1771,11 +2137,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Netzzuschlag"
+     "label": "7. Kapitel: Netzzuschlag",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erhebung, Verwendung und Netzzuschlagsfonds"
+     "label": "1. Abschnitt: Erhebung, Verwendung und Netzzuschlagsfonds",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1800,7 +2168,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "93",
@@ -1816,7 +2185,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -1832,7 +2202,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 69,
+      "l": 69
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1840,11 +2216,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Netzzuschlag"
+     "label": "7. Kapitel: Netzzuschlag",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erhebung, Verwendung und Netzzuschlagsfonds"
+     "label": "1. Abschnitt: Erhebung, Verwendung und Netzzuschlagsfonds",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1862,7 +2240,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 106,
+      "l": 136
+     },
+     "kl": "V"
     },
     {
      "nr": "96",
@@ -1878,7 +2262,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 136,
+      "l": 136
+     },
+     "kl": "A"
     },
     {
      "nr": "97",
@@ -1894,7 +2284,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 94,
+      "l": 94
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1902,11 +2298,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Netzzuschlag"
+     "label": "7. Kapitel: Netzzuschlag",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erhebung, Verwendung und Netzzuschlagsfonds"
+     "label": "1. Abschnitt: Erhebung, Verwendung und Netzzuschlagsfonds",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1927,7 +2325,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 20,
+      "l": 20
+     },
+     "kl": "A"
     },
     {
      "nr": "100",
@@ -1947,7 +2352,8 @@
       }
      ],
      "absatz": "1",
-     "item": "1"
+     "item": "1",
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -1967,7 +2373,8 @@
       }
      ],
      "absatz": "1",
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     },
     {
      "nr": "102",
@@ -1987,7 +2394,8 @@
       }
      ],
      "absatz": "1",
-     "item": "4"
+     "item": "4",
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -2003,7 +2411,8 @@
       }
      ],
      "absatz": "1",
-     "item": "5"
+     "item": "5",
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -2023,7 +2432,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 78,
+      "l": 78
+     },
+     "kl": "A"
     },
     {
      "nr": "105",
@@ -2051,7 +2466,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2059,11 +2480,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Netzzuschlag"
+     "label": "7. Kapitel: Netzzuschlag",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung"
+     "label": "2. Abschnitt: Rückerstattung",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2074,11 +2497,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Netzzuschlag"
+     "label": "7. Kapitel: Netzzuschlag",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung"
+     "label": "2. Abschnitt: Rückerstattung",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2089,11 +2514,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Netzzuschlag"
+     "label": "7. Kapitel: Netzzuschlag",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung"
+     "label": "2. Abschnitt: Rückerstattung",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2104,11 +2531,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Netzzuschlag"
+     "label": "7. Kapitel: Netzzuschlag",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung"
+     "label": "2. Abschnitt: Rückerstattung",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2119,11 +2548,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Netzzuschlag"
+     "label": "7. Kapitel: Netzzuschlag",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung"
+     "label": "2. Abschnitt: Rückerstattung",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2134,7 +2565,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Sparsame und effiziente Energienutzung"
+     "label": "8. Kapitel: Sparsame und effiziente Energienutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2155,7 +2587,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -2171,7 +2610,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -2187,7 +2632,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 380,
+      "l": 380
+     },
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -2203,7 +2654,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     },
     {
      "nr": "110",
@@ -2216,7 +2673,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 173,
+      "l": 404
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2224,7 +2687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Sparsame und effiziente Energienutzung"
+     "label": "8. Kapitel: Sparsame und effiziente Energienutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2249,7 +2713,8 @@
       }
      ],
      "absatz": "3",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "112",
@@ -2265,7 +2730,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 562,
+      "l": 562
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2273,7 +2744,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Sparsame und effiziente Energienutzung"
+     "label": "8. Kapitel: Sparsame und effiziente Energienutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2284,11 +2756,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Förderung"
+     "label": "9. Kapitel: Förderung",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -2299,11 +2773,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Förderung"
+     "label": "9. Kapitel: Förderung",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -2314,11 +2790,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Förderung"
+     "label": "9. Kapitel: Förderung",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -2329,11 +2807,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Förderung"
+     "label": "9. Kapitel: Förderung",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -2344,11 +2824,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Förderung"
+     "label": "9. Kapitel: Förderung",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung"
+     "label": "2. Abschnitt: Finanzierung",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -2366,7 +2848,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 136,
+      "l": 211
+     },
+     "kl": "V"
     },
     {
      "nr": "121",
@@ -2379,7 +2867,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 119,
+      "l": 172
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2387,11 +2881,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Förderung"
+     "label": "9. Kapitel: Förderung",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung"
+     "label": "2. Abschnitt: Finanzierung",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -2402,11 +2898,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Förderung"
+     "label": "9. Kapitel: Förderung",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung"
+     "label": "2. Abschnitt: Finanzierung",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -2431,7 +2929,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 110,
+      "l": 389
+     },
+     "kl": "A"
     },
     {
      "nr": "123",
@@ -2451,7 +2955,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 409,
+      "l": 409
+     },
+     "kl": "A"
     },
     {
      "nr": "124",
@@ -2471,7 +2981,8 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -2479,7 +2990,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Internationale Vereinbarungen"
+     "label": "10. Kapitel: Internationale Vereinbarungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": []
@@ -2488,7 +3000,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Untersuchung der Wirkungen und Datenbearbeitung"
+     "label": "11. Kapitel: Untersuchung der Wirkungen und Datenbearbeitung",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2509,7 +3022,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 270,
+      "l": 270
+     },
+     "kl": "A"
     },
     {
      "nr": "126",
@@ -2525,7 +3044,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 361,
+      "l": 361
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2533,7 +3058,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Untersuchung der Wirkungen und Datenbearbeitung"
+     "label": "11. Kapitel: Untersuchung der Wirkungen und Datenbearbeitung",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2554,7 +3080,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 221,
+      "l": 221
+     },
+     "kl": "A"
     },
     {
      "nr": "128",
@@ -2567,7 +3099,14 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 47,
+      "l": 49
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2575,7 +3114,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Untersuchung der Wirkungen und Datenbearbeitung"
+     "label": "11. Kapitel: Untersuchung der Wirkungen und Datenbearbeitung",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2596,7 +3136,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 275,
+      "l": 275
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2604,7 +3150,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Untersuchung der Wirkungen und Datenbearbeitung"
+     "label": "11. Kapitel: Untersuchung der Wirkungen und Datenbearbeitung",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2625,7 +3172,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "131",
@@ -2641,7 +3189,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 279,
+      "l": 279
+     },
+     "kl": "A"
     },
     {
      "nr": "132",
@@ -2657,7 +3211,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2665,7 +3225,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Untersuchung der Wirkungen und Datenbearbeitung"
+     "label": "11. Kapitel: Untersuchung der Wirkungen und Datenbearbeitung",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2686,7 +3247,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "134",
@@ -2702,7 +3264,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 404,
+      "l": 404
+     },
+     "kl": "A"
     },
     {
      "nr": "135",
@@ -2718,7 +3286,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 118,
+      "l": 118
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2726,7 +3300,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren"
+     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -2737,7 +3312,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren"
+     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -2755,7 +3331,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 126,
+      "l": 312
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2763,7 +3345,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren"
+     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -2788,7 +3371,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 153,
+      "l": 153
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2796,7 +3385,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren"
+     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -2807,7 +3397,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren"
+     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -2828,7 +3419,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 222,
+      "l": 564
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2836,7 +3433,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren"
+     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -2847,7 +3445,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren"
+     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -2858,7 +3457,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren"
+     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -2869,7 +3469,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren"
+     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -2880,7 +3481,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren"
+     "label": "12. Kapitel: Vollzug, Zuständigkeiten und Verfahren",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -2898,7 +3500,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 75,
+      "l": 121
+     },
+     "kl": "V"
     },
     {
      "nr": "140",
@@ -2914,7 +3522,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 121,
+      "l": 121
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2922,7 +3536,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strafbestimmungen"
+     "label": "13. Kapitel: Strafbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -2947,7 +3562,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -2955,7 +3571,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strafbestimmungen"
+     "label": "13. Kapitel: Strafbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -2973,7 +3590,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 123,
+      "l": 195
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2981,7 +3604,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Schlussbestimmungen"
+     "label": "14. Kapitel: Schlussbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -2998,7 +3622,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 148,
+      "l": 365
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3006,7 +3636,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Schlussbestimmungen"
+     "label": "14. Kapitel: Schlussbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -3031,7 +3662,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 9,
+      "l": 9
+     },
+     "kl": "A"
     },
     {
      "nr": "151",
@@ -3043,7 +3680,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 282,
+      "l": 283
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3051,7 +3694,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Schlussbestimmungen"
+     "label": "14. Kapitel: Schlussbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -3062,7 +3706,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Schlussbestimmungen"
+     "label": "14. Kapitel: Schlussbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -3073,7 +3718,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Schlussbestimmungen"
+     "label": "14. Kapitel: Schlussbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -3084,7 +3730,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Schlussbestimmungen"
+     "label": "14. Kapitel: Schlussbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -3096,7 +3743,8 @@
      "text": "BRB vom 1. Nov. 2017",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3104,11 +3752,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Energieversorgung"
+     "label": "2. Kapitel: Energieversorgung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien"
+     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3129,7 +3779,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -3142,7 +3793,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 270,
+      "l": 313
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3150,11 +3807,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Energieversorgung"
+     "label": "2. Kapitel: Energieversorgung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien"
+     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3175,7 +3834,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3183,11 +3843,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Energieversorgung"
+     "label": "2. Kapitel: Energieversorgung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien"
+     "label": "2. Abschnitt: Raumplanung und Ausbau erneuerbarer Energien",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3208,7 +3870,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -3221,7 +3884,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 181,
+      "l": 197
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3229,7 +3898,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Einspeisung netzgebundener Energie und Eigenverbrauch"
+     "label": "3. Kapitel: Einspeisung netzgebundener Energie und Eigenverbrauch",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -3250,7 +3920,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3258,7 +3929,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen"
+     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3283,7 +3955,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3291,7 +3964,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen"
+     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3316,7 +3990,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -3332,7 +4007,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 247,
+      "l": 247
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3340,7 +4021,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen"
+     "label": "5. Kapitel: Investitionsbeitrag für Photovoltaik-, Wasserkraft-, Biomasse-, Windenergie- und Geothermieanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3365,7 +4047,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -3381,7 +4064,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 258,
+      "l": 258
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3389,7 +4078,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien"
+     "label": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -3411,7 +4101,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien"
+     "sektion": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien",
+     "kl": "A"
     }
    ]
   },
@@ -3419,7 +4110,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien"
+     "label": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -3430,7 +4122,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien"
+     "label": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -3441,7 +4134,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien"
+     "label": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -3452,7 +4146,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien"
+     "label": "5a. Kapitel: Gleitende Marktprämie für die Einspeisung von Elektrizität aus erneuerbaren Energien",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -3463,7 +4158,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Ziele und Grundsätze"
+     "label": "1. Kapitel: Zweck, Ziele und Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -3484,7 +4180,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -3498,7 +4195,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 207,
+      "l": 400
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3506,7 +4209,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Unterstützungsmassnahmen"
+     "label": "6. Kapitel: Besondere Unterstützungsmassnahmen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -3531,7 +4235,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3539,11 +4244,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Netzzuschlag"
+     "label": "7. Kapitel: Netzzuschlag",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erhebung, Verwendung und Netzzuschlagsfonds"
+     "label": "1. Abschnitt: Erhebung, Verwendung und Netzzuschlagsfonds",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -3564,7 +4271,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3572,7 +4280,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Sparsame und effiziente Energienutzung"
+     "label": "8. Kapitel: Sparsame und effiziente Energienutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3605,7 +4314,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3613,7 +4323,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Sparsame und effiziente Energienutzung"
+     "label": "8. Kapitel: Sparsame und effiziente Energienutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3646,7 +4357,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3654,7 +4366,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Sparsame und effiziente Energienutzung"
+     "label": "8. Kapitel: Sparsame und effiziente Energienutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3675,7 +4388,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3683,7 +4397,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Sparsame und effiziente Energienutzung"
+     "label": "8. Kapitel: Sparsame und effiziente Energienutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3704,7 +4419,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "117",
@@ -3717,7 +4433,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 62,
+      "l": 258
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3725,11 +4447,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Förderung"
+     "label": "9. Kapitel: Förderung",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -3758,7 +4482,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "119",
@@ -3771,7 +4496,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 131,
+      "l": 132
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3779,7 +4510,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Schlussbestimmungen"
+     "label": "14. Kapitel: Schlussbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -3812,7 +4544,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "144",
@@ -3825,7 +4558,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 98,
+      "l": 272
+     },
+     "kl": "V"
     },
     {
      "nr": "145",
@@ -3838,7 +4578,14 @@
       }
      ],
      "absatz": "1",
-     "item": "3"
+     "item": "3",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 81,
+      "l": 82
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3846,7 +4593,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Schlussbestimmungen"
+     "label": "14. Kapitel: Schlussbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [],
@@ -3869,7 +4617,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -3877,7 +4626,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Schlussbestimmungen"
+     "label": "14. Kapitel: Schlussbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -3902,7 +4652,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "148",
@@ -3915,7 +4666,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 211,
+      "l": 221
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3923,7 +4681,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Schlussbestimmungen"
+     "label": "14. Kapitel: Schlussbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -3948,7 +4707,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "153",
@@ -3960,7 +4720,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 369,
+      "l": 370
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3968,7 +4734,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Schlussbestimmungen"
+     "label": "14. Kapitel: Schlussbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [],
@@ -3991,7 +4758,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -3999,7 +4767,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Schlussbestimmungen"
+     "label": "14. Kapitel: Schlussbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -4020,7 +4789,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4028,7 +4798,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Schlussbestimmungen"
+     "label": "14. Kapitel: Schlussbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -4049,7 +4820,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4057,11 +4829,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Energieversorgung"
+     "label": "2. Kapitel: Energieversorgung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4082,7 +4856,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -4095,7 +4870,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 115,
+      "l": 407
+     },
+     "kl": "V"
     }
    ]
   },

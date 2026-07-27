@@ -33,6 +33,21 @@ jobs:
     name: Wiedervorlage-Refresh · Batch-Re-Pin
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      # Zeitzone wie in ci.yml (dort mit derselben Begründung, Zeilen 79–83): die
+      # Golden-Basis ist in Europe/Zurich erzeugt, GitHub-Runner laufen in UTC.
+      # Ohne diese Zeile vergleicht der `golden:vergleich`-Schritt unten
+      # Zürich-Basiswerte gegen UTC-berechnete und meldet zwangsläufig genau die
+      # zwei zeitzonenabhängigen Fälle `kuendigung:dj1` + `kuendigung:dj10` als
+      # abweichend (die anderen 247 sind TZ-neutral).
+      #
+      # DAS WAR DIE URSACHE des einzigen Fehlschlags dieses Workflows
+      # (20.7.2026, Auftakt-Lauf) — nicht die Regenerierungs-Schritte, wie
+      # `bibliothek/register/AUDIT-TORE-2026-07-20.md` §6 vermutete und dort
+      # ausdrücklich als offen vermerkte. Am 26.7.2026 identisch reproduziert:
+      # `golden:vergleich` ohne TZ meldet exakt dieses Fallpaar, mit
+      # `TZ=Europe/Zurich` sind alle 249 Fälle byte-gleich.
+      TZ: Europe/Zurich
     permissions:
       contents: write
       pull-requests: write
@@ -92,6 +107,7 @@ jobs:
           set -euo pipefail
           npm run check:normtext
           npm run check:struktur-konsistenz
+          npm run check:verklebung
           npm run golden:vergleich
           npm run check:verfall
           npm run check:paritaet

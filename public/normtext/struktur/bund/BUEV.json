@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "141.01",
   "titel": "Verordnung über das Schweizer Bürgerrecht",
@@ -32,7 +32,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -41,7 +42,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand"
+     "label": "1. Kapitel: Gegenstand",
+     "eId": "chap_1"
     }
    ],
    "marginalie": []
@@ -50,11 +52,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen"
+     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -65,11 +69,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen"
+     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -86,7 +92,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "3",
@@ -99,7 +106,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 393,
+      "l": 514
+     },
+     "kl": "V"
     }
    ]
   },
@@ -107,11 +120,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen"
+     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -122,11 +137,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen"
+     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -137,11 +154,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen"
+     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -158,7 +177,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -166,11 +186,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen"
+     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -181,11 +203,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen"
+     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -196,11 +220,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen"
+     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "1. Abschnitt: Integrationskriterien bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -211,11 +237,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen"
+     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Weitere Voraussetzungen bei einer erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "2. Abschnitt: Weitere Voraussetzungen bei einer erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -226,11 +254,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen"
+     "label": "2. Kapitel: Integrationskriterien und weitere Voraussetzungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Weitere Voraussetzungen bei einer erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "2. Abschnitt: Weitere Voraussetzungen bei einer erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -241,11 +271,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "3. Kapitel: Verfahren bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verfahren bei einer ordentlichen Einbürgerung"
+     "label": "1. Abschnitt: Verfahren bei einer ordentlichen Einbürgerung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -256,11 +288,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "3. Kapitel: Verfahren bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verfahren bei einer ordentlichen Einbürgerung"
+     "label": "1. Abschnitt: Verfahren bei einer ordentlichen Einbürgerung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -271,11 +305,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "3. Kapitel: Verfahren bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren bei einer erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "2. Abschnitt: Verfahren bei einer erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -286,11 +322,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "3. Kapitel: Verfahren bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren bei einer erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "2. Abschnitt: Verfahren bei einer erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -301,11 +339,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufenthalt"
+     "label": "1. Abschnitt: Aufenthalt",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -316,11 +356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Erhebungsberichte"
+     "label": "2. Abschnitt: Erhebungsberichte",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -331,11 +373,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Erhebungsberichte"
+     "label": "2. Abschnitt: Erhebungsberichte",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -346,11 +390,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Erhebungsberichte"
+     "label": "2. Abschnitt: Erhebungsberichte",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -361,11 +407,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Erhebungsberichte"
+     "label": "2. Abschnitt: Erhebungsberichte",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -376,11 +424,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Mitwirkungspflicht"
+     "label": "3. Abschnitt: Mitwirkungspflicht",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": []
@@ -389,11 +439,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verfahrensfristen"
+     "label": "4. Abschnitt: Verfahrensfristen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -404,11 +456,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verfahrensfristen"
+     "label": "4. Abschnitt: Verfahrensfristen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -419,11 +473,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gebühren"
+     "label": "5. Abschnitt: Gebühren",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -441,7 +497,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 139
+     },
+     "kl": "V"
     }
    ]
   },
@@ -449,11 +511,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gebühren"
+     "label": "5. Abschnitt: Gebühren",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -470,7 +534,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -478,11 +543,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gebühren"
+     "label": "5. Abschnitt: Gebühren",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -500,7 +567,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 141,
+      "l": 224
+     },
+     "kl": "V"
     }
    ]
   },
@@ -508,11 +581,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gebühren"
+     "label": "5. Abschnitt: Gebühren",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -529,7 +604,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 213,
+      "l": 213
+     },
+     "kl": "A"
     }
    ]
   },
@@ -537,11 +618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gebühren"
+     "label": "5. Abschnitt: Gebühren",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -552,11 +635,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gebühren"
+     "label": "5. Abschnitt: Gebühren",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -567,11 +652,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Entzug"
+     "label": "6. Abschnitt: Entzug",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -588,7 +675,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 117,
+      "l": 125
+     },
+     "kl": "V"
     }
    ]
   },
@@ -596,7 +690,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -607,7 +702,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -618,11 +714,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "3. Kapitel: Verfahren bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren bei einer erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "2. Abschnitt: Verfahren bei einer erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -639,7 +737,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -647,11 +746,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "3. Kapitel: Verfahren bei einer ordentlichen Einbürgerung, erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren bei einer erleichterten Einbürgerung und Wiedereinbürgerung"
+     "label": "2. Abschnitt: Verfahren bei einer erleichterten Einbürgerung und Wiedereinbürgerung",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -668,7 +769,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

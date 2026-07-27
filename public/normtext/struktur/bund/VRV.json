@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "741.11",
   "titel": "Verkehrsregelnverordnung",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -58,7 +60,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -67,7 +70,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -84,7 +88,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     },
     {
      "nr": "5",
@@ -97,7 +102,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 156,
+      "l": 314
+     },
+     "kl": "V"
     },
     {
      "nr": "6",
@@ -109,7 +120,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 193,
+      "l": 314
+     },
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -121,7 +138,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 121,
+      "l": 121
+     },
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -133,14 +156,26 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 155,
+      "l": 155
+     },
+     "kl": "A"
     },
     {
      "nr": "9",
      "text": "Heute: Art. 74<i>a</i> Abs. 1 SSV.",
      "links": [],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 191,
+      "l": 193
+     },
+     "kl": "G"
     },
     {
      "nr": "10",
@@ -152,7 +187,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 193,
+      "l": 193
+     },
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -168,7 +209,13 @@
       }
      ],
      "absatz": "10",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 281,
+      "l": 281
+     },
+     "kl": "A"
     }
    ]
   },
@@ -176,11 +223,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -197,7 +246,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -209,7 +259,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -221,7 +272,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 153,
+      "l": 153
+     },
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -233,7 +290,14 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 35,
+      "l": 35
+     },
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -245,7 +309,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 134,
+      "l": 134
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -257,7 +327,13 @@
       }
      ],
      "absatz": "2ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 238,
+      "l": 238
+     },
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -269,7 +345,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -285,7 +367,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -293,11 +381,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -314,7 +404,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 346,
+      "l": 346
+     },
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -326,7 +422,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 89,
+      "l": 89
+     },
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -338,7 +440,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 260,
+      "l": 260
+     },
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -354,7 +462,14 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 4,
+      "it": 1,
+      "o": 355,
+      "l": 355
+     },
+     "kl": "A"
     }
    ]
   },
@@ -362,11 +477,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -383,7 +500,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 7,
+      "l": 7
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -395,7 +518,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -403,11 +532,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -424,7 +555,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -436,7 +568,14 @@
       }
      ],
      "absatz": "1",
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 10,
+      "o": 50,
+      "l": 92
+     },
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -448,7 +587,14 @@
       }
      ],
      "absatz": "1",
-     "item": "3"
+     "item": "3",
+     "pos": {
+      "b": 0,
+      "it": 12,
+      "o": 47,
+      "l": 47
+     },
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -460,7 +606,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -472,7 +619,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -484,7 +632,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 95,
+      "l": 95
+     },
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -500,7 +655,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -512,7 +673,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 197,
+      "l": 197
+     },
+     "kl": "A"
     }
    ]
   },
@@ -520,11 +687,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -541,7 +710,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "62",
@@ -553,7 +723,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 262,
+      "l": 379
+     },
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -565,7 +741,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 379,
+      "l": 379
+     },
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -577,7 +759,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 190,
+      "l": 316
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -589,7 +777,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 205,
+      "l": 205
+     },
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -601,7 +795,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 206,
+      "l": 206
+     },
+     "kl": "A"
     }
    ]
   },
@@ -609,11 +809,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -630,7 +832,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -638,11 +841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -659,7 +864,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -671,7 +877,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -683,7 +890,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 200,
+      "l": 200
+     },
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -695,7 +908,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 284,
+      "l": 365
+     },
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -707,7 +926,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 365,
+      "l": 365
+     },
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -720,7 +945,14 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 100,
+      "l": 159
+     },
+     "kl": "V"
     },
     {
      "nr": "74",
@@ -732,7 +964,14 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 159,
+      "l": 159
+     },
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -744,7 +983,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 316,
+      "l": 316
+     },
+     "kl": "A"
     }
    ]
   },
@@ -752,11 +997,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -773,7 +1020,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 183,
+      "l": 381
+     },
+     "kl": "A"
     },
     {
      "nr": "77",
@@ -785,7 +1038,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 381,
+      "l": 381
+     },
+     "kl": "A"
     }
    ]
   },
@@ -793,11 +1052,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -814,7 +1075,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 132,
+      "l": 132
+     },
+     "kl": "A"
     }
    ]
   },
@@ -822,11 +1089,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -843,7 +1112,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 204,
+      "l": 204
+     },
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -855,7 +1130,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "81",
@@ -867,7 +1143,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 113,
+      "l": 113
+     },
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -879,7 +1162,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 326,
+      "l": 326
+     },
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -891,7 +1180,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 255,
+      "l": 255
+     },
+     "kl": "A"
     }
    ]
   },
@@ -899,11 +1194,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -914,11 +1211,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -935,7 +1234,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 171,
+      "l": 171
+     },
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -947,7 +1252,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 164,
+      "l": 164
+     },
+     "kl": "A"
     },
     {
      "nr": "86",
@@ -959,7 +1270,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 205,
+      "l": 205
+     },
+     "kl": "A"
     }
    ]
   },
@@ -967,11 +1284,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -988,7 +1307,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 115,
+      "l": 115
+     },
+     "kl": "A"
     }
    ]
   },
@@ -996,11 +1321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1017,7 +1344,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "89",
@@ -1030,7 +1358,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 380,
+      "l": 380
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1038,11 +1372,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1059,7 +1395,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 214,
+      "l": 214
+     },
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -1071,7 +1413,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 144,
+      "l": 144
+     },
+     "kl": "A"
     },
     {
      "nr": "92",
@@ -1083,7 +1431,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 153,
+      "l": 153
+     },
+     "kl": "A"
     },
     {
      "nr": "93",
@@ -1095,7 +1449,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 230,
+      "l": 230
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1103,11 +1463,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1124,7 +1486,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 112,
+      "l": 112
+     },
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -1136,7 +1504,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 549,
+      "l": 549
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1144,11 +1518,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1165,7 +1541,14 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 19,
+      "l": 19
+     },
+     "kl": "A"
     },
     {
      "nr": "97",
@@ -1177,7 +1560,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -1189,7 +1573,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "99",
@@ -1201,7 +1586,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "100",
@@ -1213,7 +1599,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 269,
+      "l": 269
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1221,11 +1613,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1242,7 +1636,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -1250,11 +1645,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1271,7 +1668,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 295,
+      "l": 295
+     },
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -1283,7 +1686,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -1295,7 +1704,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1303,11 +1718,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1318,11 +1735,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1333,11 +1752,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1354,7 +1775,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "111",
@@ -1367,7 +1789,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 52,
+      "l": 94
+     },
+     "kl": "V"
     },
     {
      "nr": "112",
@@ -1379,7 +1807,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 94,
+      "l": 94
+     },
+     "kl": "A"
     },
     {
      "nr": "113",
@@ -1391,7 +1825,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 509,
+      "l": 509
+     },
+     "kl": "A"
     },
     {
      "nr": "114",
@@ -1403,7 +1843,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 109,
+      "l": 109
+     },
+     "kl": "A"
     },
     {
      "nr": "115",
@@ -1415,7 +1861,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 156,
+      "l": 156
+     },
+     "kl": "A"
     },
     {
      "nr": "116",
@@ -1427,7 +1880,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 7,
+      "l": 7
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1435,11 +1894,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1456,7 +1917,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "118",
@@ -1468,7 +1935,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 196,
+      "l": 196
+     },
+     "kl": "A"
     },
     {
      "nr": "119",
@@ -1480,7 +1953,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 309,
+      "l": 309
+     },
+     "kl": "A"
     },
     {
      "nr": "120",
@@ -1492,7 +1971,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1500,11 +1985,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1521,7 +2008,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 112,
+      "l": 112
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1529,11 +2022,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [],
@@ -1548,7 +2043,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1556,11 +2052,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1577,7 +2075,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 257,
+      "l": 257
+     },
+     "kl": "A"
     },
     {
      "nr": "124",
@@ -1589,7 +2093,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 341,
+      "l": 341
+     },
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -1601,7 +2111,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 102,
+      "l": 102
+     },
+     "kl": "A"
     },
     {
      "nr": "126",
@@ -1613,7 +2130,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1621,11 +2144,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1642,7 +2167,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 160,
+      "l": 160
+     },
+     "kl": "A"
     },
     {
      "nr": "128",
@@ -1655,7 +2186,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 173,
+      "l": 554
+     },
+     "kl": "V"
     },
     {
      "nr": "129",
@@ -1667,7 +2204,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 469,
+      "l": 554
+     },
+     "kl": "A"
     },
     {
      "nr": "130",
@@ -1679,7 +2222,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 554,
+      "l": 554
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1687,11 +2236,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1708,7 +2259,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "132",
@@ -1721,7 +2273,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 279,
+      "l": 281
+     },
+     "kl": "V"
     },
     {
      "nr": "133",
@@ -1733,7 +2291,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 281,
+      "l": 281
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1741,11 +2305,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1762,7 +2328,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "135",
@@ -1774,7 +2341,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 82,
+      "l": 82
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1782,11 +2356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1803,7 +2379,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1811,15 +2388,17 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
-    "Beleuchtung von Anhängern und geschleppten Fahrzeugensowie Verwendung von Arbeitslichtern und Suchlampen"
+    "Beleuchtung von Anhängern und geschleppten Fahrzeugen sowie Verwendung von Arbeitslichtern und Suchlampen"
    ],
    "fussnoten": [
     {
@@ -1832,7 +2411,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1840,11 +2420,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1861,7 +2443,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1869,11 +2452,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1884,11 +2469,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1905,7 +2492,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 253,
+      "l": 253
+     },
+     "kl": "A"
     },
     {
      "nr": "140",
@@ -1917,7 +2510,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     },
     {
      "nr": "141",
@@ -1929,7 +2528,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 101,
+      "l": 101
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1937,11 +2542,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1958,7 +2565,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 272,
+      "l": 272
+     },
+     "kl": "A"
     },
     {
      "nr": "143",
@@ -1970,7 +2583,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 231,
+      "l": 231
+     },
+     "kl": "A"
     },
     {
      "nr": "144",
@@ -1982,7 +2601,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 157,
+      "l": 157
+     },
+     "kl": "A"
     },
     {
      "nr": "145",
@@ -1994,7 +2619,14 @@
       }
      ],
      "absatz": "5",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 4,
+      "it": 3,
+      "o": 44,
+      "l": 44
+     },
+     "kl": "A"
     },
     {
      "nr": "146",
@@ -2010,7 +2642,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 211,
+      "l": 211
+     },
+     "kl": "A"
     },
     {
      "nr": "147",
@@ -2026,7 +2664,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 388,
+      "l": 388
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2034,11 +2678,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -2049,11 +2695,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -2070,7 +2718,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 271,
+      "l": 271
+     },
+     "kl": "A"
     },
     {
      "nr": "149",
@@ -2082,7 +2736,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "150",
@@ -2094,7 +2754,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 163,
+      "l": 163
+     },
+     "kl": "A"
     },
     {
      "nr": "151",
@@ -2107,7 +2773,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 3
+     "absatzIndex": 3,
+     "pos": {
+      "b": 3,
+      "o": 3,
+      "l": 3
+     },
+     "kl": "U"
     }
    ]
   },
@@ -2115,11 +2787,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -2136,7 +2810,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 61,
+      "l": 61
+     },
+     "kl": "A"
     },
     {
      "nr": "153",
@@ -2148,7 +2828,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 39,
+      "l": 39
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2156,11 +2842,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -2177,7 +2865,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 67,
+      "l": 67
+     },
+     "kl": "A"
     },
     {
      "nr": "155",
@@ -2189,7 +2883,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 165,
+      "l": 165
+     },
+     "kl": "A"
     },
     {
      "nr": "156",
@@ -2205,7 +2905,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 182,
+      "l": 182
+     },
+     "kl": "A"
     },
     {
      "nr": "157",
@@ -2217,7 +2923,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 347,
+      "l": 347
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2225,11 +2937,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -2246,14 +2960,26 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 126,
+      "l": 126
+     },
+     "kl": "A"
     },
     {
      "nr": "159",
      "text": "Siehe auch die SchlB am Schluss dieser V.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 126,
+      "l": 126
+     },
+     "kl": "V"
     },
     {
      "nr": "160",
@@ -2265,14 +2991,26 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 424,
+      "l": 424
+     },
+     "kl": "A"
     },
     {
      "nr": "161",
      "text": "Siehe auch die SchlB am Schluss dieser V.",
      "links": [],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 424,
+      "l": 424
+     },
+     "kl": "V"
     },
     {
      "nr": "162",
@@ -2284,7 +3022,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 237,
+      "l": 237
+     },
+     "kl": "A"
     },
     {
      "nr": "163",
@@ -2296,7 +3040,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 126,
+      "l": 126
+     },
+     "kl": "A"
     },
     {
      "nr": "164",
@@ -2308,7 +3058,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 279,
+      "l": 279
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2316,11 +3072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Fahrzeugarten"
+     "label": "5. Abschnitt: Besondere Fahrzeugarten",
+     "eId": "part_1/chap_5"
     }
    ],
    "marginalie": [
@@ -2337,7 +3095,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "170",
@@ -2349,7 +3108,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 150,
+      "l": 150
+     },
+     "kl": "A"
     },
     {
      "nr": "171",
@@ -2361,7 +3126,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 262,
+      "l": 262
+     },
+     "kl": "A"
     },
     {
      "nr": "172",
@@ -2373,7 +3144,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 239,
+      "l": 239
+     },
+     "kl": "A"
     },
     {
      "nr": "173",
@@ -2386,7 +3163,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 186,
+      "l": 233
+     },
+     "kl": "V"
     },
     {
      "nr": "174",
@@ -2398,7 +3181,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 233,
+      "l": 233
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2406,11 +3195,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Fahrzeugarten"
+     "label": "5. Abschnitt: Besondere Fahrzeugarten",
+     "eId": "part_1/chap_5"
     }
    ],
    "marginalie": [
@@ -2427,7 +3218,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "176",
@@ -2439,7 +3231,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "177",
@@ -2451,7 +3244,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 19,
+      "l": 19
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2459,11 +3259,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Fahrzeugarten"
+     "label": "5. Abschnitt: Besondere Fahrzeugarten",
+     "eId": "part_1/chap_5"
     }
    ],
    "marginalie": [],
@@ -2478,7 +3280,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2486,11 +3289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Fahrzeugarten"
+     "label": "5. Abschnitt: Besondere Fahrzeugarten",
+     "eId": "part_1/chap_5"
     }
    ],
    "marginalie": [
@@ -2507,7 +3312,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 265,
+      "l": 265
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2515,11 +3326,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fussgänger"
+     "label": "1. Abschnitt: Fussgänger",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2536,7 +3349,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 329,
+      "l": 329
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2544,11 +3363,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fussgänger"
+     "label": "1. Abschnitt: Fussgänger",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2565,7 +3386,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 261,
+      "l": 261
+     },
+     "kl": "A"
     },
     {
      "nr": "185",
@@ -2577,7 +3404,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 150,
+      "l": 150
+     },
+     "kl": "A"
     },
     {
      "nr": "186",
@@ -2589,7 +3422,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "187",
@@ -2601,7 +3440,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2609,11 +3454,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fussgänger"
+     "label": "1. Abschnitt: Fussgänger",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2630,7 +3477,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 83,
+      "l": 83
+     },
+     "kl": "A"
     },
     {
      "nr": "189",
@@ -2642,7 +3495,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "190",
@@ -2654,7 +3513,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 276,
+      "l": 276
+     },
+     "kl": "A"
     },
     {
      "nr": "191",
@@ -2666,7 +3531,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2674,11 +3545,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fussgänger"
+     "label": "1. Abschnitt: Fussgänger",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [],
@@ -2693,7 +3566,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2701,11 +3575,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten"
+     "label": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten",
+     "eId": "part_2/chap_1_a"
     }
    ],
    "marginalie": [
@@ -2722,7 +3598,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "195",
@@ -2734,7 +3611,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "193",
@@ -2747,7 +3630,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten"
+     "sektion": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten",
+     "kl": "A"
     }
    ]
   },
@@ -2755,11 +3639,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Reiter, Tiere"
+     "label": "2. Abschnitt: Reiter, Tiere",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2770,11 +3656,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Reiter, Tiere"
+     "label": "2. Abschnitt: Reiter, Tiere",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2785,11 +3673,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Reiter, Tiere"
+     "label": "2. Abschnitt: Reiter, Tiere",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2806,7 +3696,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 389,
+      "l": 389
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2814,7 +3710,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Verhalten bei Unfällen"
+     "label": "3. Teil: Verhalten bei Unfällen",
+     "eId": "part_3"
     }
    ],
    "marginalie": [
@@ -2831,7 +3728,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2839,7 +3742,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Verhalten bei Unfällen"
+     "label": "3. Teil: Verhalten bei Unfällen",
+     "eId": "part_3"
     }
    ],
    "marginalie": [
@@ -2856,7 +3760,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2864,7 +3774,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Verhalten bei Unfällen"
+     "label": "3. Teil: Verhalten bei Unfällen",
+     "eId": "part_3"
     }
    ],
    "marginalie": [
@@ -2881,7 +3792,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 236,
+      "l": 236
+     },
+     "kl": "A"
     },
     {
      "nr": "201",
@@ -2893,7 +3810,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 283,
+      "l": 283
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2901,15 +3824,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Betriebssicherheit"
+     "label": "I. Betriebssicherheit",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -2926,7 +3852,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 165,
+      "l": 165
+     },
+     "kl": "A"
     },
     {
      "nr": "203",
@@ -2938,7 +3870,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 297,
+      "l": 297
+     },
+     "kl": "A"
     },
     {
      "nr": "204",
@@ -2950,7 +3888,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 297,
+      "l": 297
+     },
+     "kl": "A"
     },
     {
      "nr": "205",
@@ -2962,7 +3906,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 321,
+      "l": 321
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2970,15 +3920,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Betriebssicherheit"
+     "label": "I. Betriebssicherheit",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -2995,7 +3948,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 192,
+      "l": 192
+     },
+     "kl": "A"
     },
     {
      "nr": "207",
@@ -3007,7 +3966,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 681,
+      "l": 681
+     },
+     "kl": "A"
     },
     {
      "nr": "208",
@@ -3019,7 +3984,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 132,
+      "l": 132
+     },
+     "kl": "A"
     },
     {
      "nr": "209",
@@ -3035,7 +4006,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "210",
@@ -3051,7 +4028,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 261,
+      "l": 261
+     },
+     "kl": "A"
     },
     {
      "nr": "211",
@@ -3064,7 +4047,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 107,
+      "l": 306
+     },
+     "kl": "V"
     },
     {
      "nr": "212",
@@ -3076,7 +4065,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 306,
+      "l": 306
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3084,15 +4079,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Betriebssicherheit"
+     "label": "I. Betriebssicherheit",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -3109,7 +4107,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3117,15 +4116,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Mitfahrende"
+     "label": "II. Mitfahrende",
+     "eId": "part_4/chap_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -3142,7 +4144,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "219",
@@ -3154,7 +4157,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "220",
@@ -3166,7 +4175,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 264,
+      "l": 264
+     },
+     "kl": "A"
     },
     {
      "nr": "221",
@@ -3178,7 +4193,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 196,
+      "l": 196
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3186,15 +4207,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Mitfahrende"
+     "label": "II. Mitfahrende",
+     "eId": "part_4/chap_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -3211,7 +4235,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "223",
@@ -3223,7 +4248,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 193,
+      "l": 193
+     },
+     "kl": "A"
     },
     {
      "nr": "224",
@@ -3235,7 +4267,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 256,
+      "l": 256
+     },
+     "kl": "A"
     },
     {
      "nr": "225",
@@ -3247,7 +4285,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 544,
+      "l": 544
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3255,15 +4299,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Mitfahrende"
+     "label": "II. Mitfahrende",
+     "eId": "part_4/chap_1/lvl_II"
     }
    ],
    "marginalie": [],
@@ -3278,7 +4325,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3286,15 +4334,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Mitfahrende"
+     "label": "II. Mitfahrende",
+     "eId": "part_4/chap_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -3311,7 +4362,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "228",
@@ -3324,7 +4376,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 54,
+      "l": 92
+     },
+     "kl": "V"
     },
     {
      "nr": "229",
@@ -3336,7 +4395,14 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 5,
+      "o": 113,
+      "l": 113
+     },
+     "kl": "A"
     },
     {
      "nr": "230",
@@ -3348,7 +4414,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 129,
+      "l": 129
+     },
+     "kl": "A"
     },
     {
      "nr": "231",
@@ -3360,7 +4432,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3368,15 +4446,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Masse und Gewichte"
+     "label": "III. Masse und Gewichte",
+     "eId": "part_4/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -3393,7 +4474,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "233",
@@ -3409,7 +4491,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "234",
@@ -3421,7 +4504,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 296,
+      "l": 361
+     },
+     "kl": "A"
     },
     {
      "nr": "235",
@@ -3433,7 +4522,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 315,
+      "l": 315
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3441,15 +4536,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Masse und Gewichte"
+     "label": "III. Masse und Gewichte",
+     "eId": "part_4/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -3466,7 +4564,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "237",
@@ -3478,7 +4577,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "238",
@@ -3490,7 +4590,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "239",
@@ -3502,7 +4603,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 185,
+      "l": 185
+     },
+     "kl": "A"
     },
     {
      "nr": "240",
@@ -3514,7 +4621,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 269,
+      "l": 269
+     },
+     "kl": "A"
     },
     {
      "nr": "241",
@@ -3527,7 +4640,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 154,
+      "l": 338
+     },
+     "kl": "V"
     },
     {
      "nr": "242",
@@ -3539,7 +4658,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 338,
+      "l": 338
+     },
+     "kl": "A"
     },
     {
      "nr": "243",
@@ -3555,7 +4680,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 330,
+      "l": 330
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3563,15 +4694,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Masse und Gewichte"
+     "label": "III. Masse und Gewichte",
+     "eId": "part_4/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -3588,7 +4722,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "247",
@@ -3601,7 +4736,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 68,
+      "l": 68
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3609,15 +4750,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Masse und Gewichte"
+     "label": "III. Masse und Gewichte",
+     "eId": "part_4/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -3634,7 +4778,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "249",
@@ -3646,7 +4791,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "250",
@@ -3658,7 +4804,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 85,
+      "l": 85
+     },
+     "kl": "A"
     },
     {
      "nr": "251",
@@ -3670,7 +4822,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "252",
@@ -3682,7 +4835,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "253",
@@ -3694,7 +4848,8 @@
       }
      ],
      "absatz": "1",
-     "item": "dbis"
+     "item": "dbis",
+     "kl": "A"
     },
     {
      "nr": "254",
@@ -3706,7 +4861,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "255",
@@ -3718,7 +4874,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "256",
@@ -3730,7 +4887,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "257",
@@ -3742,7 +4900,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 701,
+      "l": 701
+     },
+     "kl": "A"
     },
     {
      "nr": "258",
@@ -3755,7 +4919,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 114,
+      "l": 306
+     },
+     "kl": "V"
     },
     {
      "nr": "259",
@@ -3771,7 +4941,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 306,
+      "l": 306
+     },
+     "kl": "A"
     },
     {
      "nr": "260",
@@ -3787,7 +4963,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 363,
+      "l": 363
+     },
+     "kl": "A"
     },
     {
      "nr": "261",
@@ -3799,7 +4981,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "262",
@@ -3812,7 +4995,8 @@
       }
      ],
      "absatz": "2",
-     "item": "1"
+     "item": "1",
+     "kl": "V"
     },
     {
      "nr": "263",
@@ -3824,7 +5008,8 @@
       }
      ],
      "absatz": "2",
-     "item": "4"
+     "item": "4",
+     "kl": "A"
     },
     {
      "nr": "264",
@@ -3836,7 +5021,8 @@
       }
      ],
      "absatz": "2",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "265",
@@ -3848,7 +5034,14 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 7,
+      "it": 1,
+      "o": 133,
+      "l": 133
+     },
+     "kl": "A"
     },
     {
      "nr": "266",
@@ -3860,7 +5053,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 7,
+      "l": 7
+     },
+     "kl": "A"
     },
     {
      "nr": "267",
@@ -3872,7 +5071,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 10,
+      "o": 215,
+      "l": 215
+     },
+     "kl": "A"
     },
     {
      "nr": "268",
@@ -3884,7 +5089,13 @@
       }
      ],
      "absatz": "9",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 11,
+      "o": 157,
+      "l": 157
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3892,15 +5103,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "IV. Mitführen von Anhängern, Schleppen"
+     "label": "IV. Mitführen von Anhängern, Schleppen",
+     "eId": "part_4/chap_1/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3917,7 +5131,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "270",
@@ -3929,7 +5144,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "271",
@@ -3941,7 +5157,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 74,
+      "l": 74
+     },
+     "kl": "A"
     },
     {
      "nr": "272",
@@ -3953,7 +5175,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 109,
+      "l": 109
+     },
+     "kl": "A"
     },
     {
      "nr": "273",
@@ -3965,7 +5194,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 431,
+      "l": 431
+     },
+     "kl": "A"
     },
     {
      "nr": "274",
@@ -3977,7 +5212,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 223,
+      "l": 223
+     },
+     "kl": "A"
     },
     {
      "nr": "275",
@@ -3989,7 +5230,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "276",
@@ -4001,7 +5248,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 183,
+      "l": 183
+     },
+     "kl": "A"
     },
     {
      "nr": "277",
@@ -4013,7 +5266,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 195,
+      "l": 195
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4021,15 +5280,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "IV. Mitführen von Anhängern, Schleppen"
+     "label": "IV. Mitführen von Anhängern, Schleppen",
+     "eId": "part_4/chap_1/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -4044,7 +5306,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4052,15 +5315,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "IV. Mitführen von Anhängern, Schleppen"
+     "label": "IV. Mitführen von Anhängern, Schleppen",
+     "eId": "part_4/chap_1/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4077,7 +5343,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 237,
+      "l": 237
+     },
+     "kl": "A"
     },
     {
      "nr": "280",
@@ -4089,7 +5361,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 257,
+      "l": 257
+     },
+     "kl": "A"
     },
     {
      "nr": "281",
@@ -4101,7 +5379,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4109,15 +5393,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "IV. Mitführen von Anhängern, Schleppen"
+     "label": "IV. Mitführen von Anhängern, Schleppen",
+     "eId": "part_4/chap_1/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4134,7 +5421,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 133,
+      "l": 133
+     },
+     "kl": "A"
     },
     {
      "nr": "283",
@@ -4146,7 +5439,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4154,15 +5453,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "IV. Mitführen von Anhängern, Schleppen"
+     "label": "IV. Mitführen von Anhängern, Schleppen",
+     "eId": "part_4/chap_1/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4179,7 +5481,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 358,
+      "l": 358
+     },
+     "kl": "A"
     },
     {
      "nr": "285",
@@ -4191,7 +5499,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 272,
+      "l": 272
+     },
+     "kl": "A"
     },
     {
      "nr": "286",
@@ -4203,7 +5517,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 222,
+      "l": 222
+     },
+     "kl": "A"
     },
     {
      "nr": "287",
@@ -4215,7 +5535,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 120,
+      "l": 351
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4223,15 +5549,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "V. Ladung"
+     "label": "V. Ladung",
+     "eId": "part_4/chap_1/lvl_V"
     }
    ],
    "marginalie": [
@@ -4248,7 +5577,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 166,
+      "l": 166
+     },
+     "kl": "A"
     },
     {
      "nr": "289",
@@ -4260,7 +5595,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 81,
+      "l": 111
+     },
+     "kl": "A"
     },
     {
      "nr": "290",
@@ -4272,7 +5613,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "291",
@@ -4284,7 +5626,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "292",
@@ -4300,7 +5643,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "293",
@@ -4313,7 +5657,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 151,
+      "l": 201
+     },
+     "kl": "V"
     },
     {
      "nr": "294",
@@ -4325,7 +5676,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 201,
+      "l": 201
+     },
+     "kl": "A"
     },
     {
      "nr": "295",
@@ -4337,7 +5695,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 288,
+      "l": 288
+     },
+     "kl": "A"
     },
     {
      "nr": "296",
@@ -4349,7 +5713,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 220,
+      "l": 220
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4357,15 +5727,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "V. Ladung"
+     "label": "V. Ladung",
+     "eId": "part_4/chap_1/lvl_V"
     }
    ],
    "marginalie": [
@@ -4382,7 +5755,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "298",
@@ -4394,7 +5768,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 294,
+      "l": 294
+     },
+     "kl": "A"
     },
     {
      "nr": "299",
@@ -4407,7 +5787,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 80,
+      "l": 129
+     },
+     "kl": "V"
     },
     {
      "nr": "300",
@@ -4420,7 +5806,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 128,
+      "l": 129
+     },
+     "kl": "V"
     },
     {
      "nr": "301",
@@ -4432,7 +5824,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 129,
+      "l": 129
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4440,15 +5838,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "V. Ladung"
+     "label": "V. Ladung",
+     "eId": "part_4/chap_1/lvl_V"
     }
    ],
    "marginalie": [],
@@ -4463,7 +5864,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4471,15 +5873,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "VI. Besondere Fälle"
+     "label": "VI. Besondere Fälle",
+     "eId": "part_4/chap_1/lvl_VI"
     }
    ],
    "marginalie": [
@@ -4496,7 +5901,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "304",
@@ -4508,7 +5914,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "305",
@@ -4520,7 +5927,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 535,
+      "l": 535
+     },
+     "kl": "A"
     },
     {
      "nr": "306",
@@ -4532,7 +5945,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "307",
@@ -4544,7 +5958,8 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "308",
@@ -4556,7 +5971,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4564,15 +5985,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "VI. Besondere Fälle"
+     "label": "VI. Besondere Fälle",
+     "eId": "part_4/chap_1/lvl_VI"
     }
    ],
    "marginalie": [
@@ -4589,7 +6013,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "310",
@@ -4601,7 +6026,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 47,
+      "l": 47
+     },
+     "kl": "A"
     },
     {
      "nr": "311",
@@ -4613,7 +6045,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 327,
+      "l": 327
+     },
+     "kl": "A"
     },
     {
      "nr": "312",
@@ -4625,7 +6063,14 @@
       }
      ],
      "absatz": "3bis",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 34,
+      "l": 34
+     },
+     "kl": "A"
     },
     {
      "nr": "313",
@@ -4637,7 +6082,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 287,
+      "l": 287
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4645,11 +6096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -4667,7 +6120,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 128,
+      "l": 532
+     },
+     "kl": "V"
     },
     {
      "nr": "316",
@@ -4679,7 +6138,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 219,
+      "l": 532
+     },
+     "kl": "A"
     },
     {
      "nr": "317",
@@ -4691,7 +6156,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 347,
+      "l": 532
+     },
+     "kl": "A"
     },
     {
      "nr": "318",
@@ -4703,7 +6174,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 532,
+      "l": 532
+     },
+     "kl": "A"
     },
     {
      "nr": "319",
@@ -4715,7 +6192,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 180,
+      "l": 180
+     },
+     "kl": "A"
     },
     {
      "nr": "320",
@@ -4727,7 +6210,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "321",
@@ -4739,7 +6223,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "322",
@@ -4751,7 +6236,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "323",
@@ -4763,7 +6249,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "324",
@@ -4775,7 +6262,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "325",
@@ -4787,7 +6275,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "326",
@@ -4799,7 +6288,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "327",
@@ -4811,7 +6301,14 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 145,
+      "l": 145
+     },
+     "kl": "A"
     },
     {
      "nr": "328",
@@ -4827,7 +6324,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 282,
+      "l": 282
+     },
+     "kl": "A"
     },
     {
      "nr": "329",
@@ -4839,7 +6342,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4847,11 +6356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -4868,7 +6379,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 246,
+      "l": 246
+     },
+     "kl": "A"
     },
     {
      "nr": "331",
@@ -4880,7 +6397,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 155,
+      "l": 155
+     },
+     "kl": "A"
     },
     {
      "nr": "332",
@@ -4892,7 +6415,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "333",
@@ -4905,7 +6429,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 132,
+      "l": 194
+     },
+     "kl": "V"
     },
     {
      "nr": "334",
@@ -4917,7 +6448,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 194,
+      "l": 194
+     },
+     "kl": "A"
     },
     {
      "nr": "335",
@@ -4929,7 +6467,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "336",
@@ -4945,7 +6489,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 198,
+      "l": 198
+     },
+     "kl": "A"
     },
     {
      "nr": "337",
@@ -4958,7 +6508,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 217,
+      "l": 515
+     },
+     "kl": "V"
     },
     {
      "nr": "338",
@@ -4974,7 +6530,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 515,
+      "l": 515
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4982,11 +6544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -5003,7 +6567,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 95,
+      "l": 95
+     },
+     "kl": "A"
     },
     {
      "nr": "340",
@@ -5015,7 +6585,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "341",
@@ -5027,7 +6598,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "342",
@@ -5039,7 +6611,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "343",
@@ -5051,7 +6624,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "344",
@@ -5063,7 +6637,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 256,
+      "l": 256
+     },
+     "kl": "A"
     },
     {
      "nr": "345",
@@ -5075,7 +6655,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 197,
+      "l": 197
+     },
+     "kl": "A"
     },
     {
      "nr": "346",
@@ -5087,7 +6673,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5095,11 +6687,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [],
@@ -5114,7 +6708,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5122,11 +6717,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -5143,7 +6740,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "349",
@@ -5155,7 +6753,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 161,
+      "l": 161
+     },
+     "kl": "A"
     },
     {
      "nr": "350",
@@ -5167,7 +6771,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 395,
+      "l": 395
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5175,11 +6785,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [],
@@ -5194,7 +6806,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5202,11 +6815,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -5217,11 +6832,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -5238,7 +6855,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "353",
@@ -5250,7 +6873,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 332,
+      "l": 332
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5258,11 +6887,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -5279,7 +6910,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 214,
+      "l": 214
+     },
+     "kl": "A"
     },
     {
      "nr": "356",
@@ -5291,7 +6928,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "357",
@@ -5303,7 +6941,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "358",
@@ -5315,7 +6954,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 60,
+      "l": 60
+     },
+     "kl": "A"
     },
     {
      "nr": "359",
@@ -5327,7 +6972,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "360",
@@ -5343,7 +6989,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 14,
+      "l": 14
+     },
+     "kl": "A"
     },
     {
      "nr": "361",
@@ -5355,7 +7008,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 375,
+      "l": 375
+     },
+     "kl": "A"
     },
     {
      "nr": "354",
@@ -5368,7 +7027,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+     "sektion": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge",
+     "kl": "A"
     }
    ]
   },
@@ -5376,11 +7036,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -5397,7 +7059,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "363",
@@ -5409,7 +7072,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 221,
+      "l": 221
+     },
+     "kl": "A"
     },
     {
      "nr": "364",
@@ -5421,7 +7090,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 253,
+      "l": 253
+     },
+     "kl": "A"
     },
     {
      "nr": "365",
@@ -5433,7 +7108,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "366",
@@ -5445,7 +7121,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "367",
@@ -5457,7 +7134,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 94,
+      "l": 94
+     },
+     "kl": "A"
     },
     {
      "nr": "368",
@@ -5469,7 +7152,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "369",
@@ -5481,7 +7165,8 @@
       }
      ],
      "absatz": "3",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "370",
@@ -5497,7 +7182,8 @@
       }
      ],
      "absatz": "3",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     }
    ]
   },
@@ -5505,11 +7191,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -5527,7 +7215,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 137,
+      "l": 137
+     },
+     "kl": "A"
     },
     {
      "nr": "372",
@@ -5539,7 +7233,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -5547,11 +7242,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -5568,7 +7265,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5576,11 +7274,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -5597,7 +7297,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "375",
@@ -5610,7 +7311,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 275,
+      "l": 287
+     },
+     "kl": "V"
     },
     {
      "nr": "376",
@@ -5622,7 +7329,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 287,
+      "l": 287
+     },
+     "kl": "A"
     },
     {
      "nr": "377",
@@ -5634,7 +7347,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5642,11 +7361,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot"
+     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot",
+     "eId": "part_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5663,7 +7384,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "380",
@@ -5676,7 +7398,14 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 2,
+      "it": 0,
+      "o": 39,
+      "l": 41
+     },
+     "kl": "V"
     }
    ]
   },
@@ -5684,11 +7413,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot"
+     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot",
+     "eId": "part_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5705,7 +7436,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "399",
@@ -5717,7 +7449,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 288,
+      "l": 288
+     },
+     "kl": "A"
     },
     {
      "nr": "400",
@@ -5729,7 +7467,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 199,
+      "l": 199
+     },
+     "kl": "A"
     },
     {
      "nr": "401",
@@ -5741,7 +7485,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "402",
@@ -5754,7 +7499,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 2,
+      "it": 0,
+      "o": 84,
+      "l": 178
+     },
+     "kl": "V"
     },
     {
      "nr": "403",
@@ -5766,7 +7518,8 @@
       }
      ],
      "absatz": "2",
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     },
     {
      "nr": "404",
@@ -5779,7 +7532,14 @@
       }
      ],
      "absatz": "2",
-     "item": "abis"
+     "item": "abis",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 286,
+      "l": 288
+     },
+     "kl": "V"
     },
     {
      "nr": "405",
@@ -5791,7 +7551,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "406",
@@ -5803,7 +7564,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 326,
+      "l": 326
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5811,11 +7578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot"
+     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot",
+     "eId": "part_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5832,7 +7601,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 206,
+      "l": 206
+     },
+     "kl": "A"
     },
     {
      "nr": "408",
@@ -5844,7 +7619,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 83,
+      "l": 83
+     },
+     "kl": "A"
     },
     {
      "nr": "409",
@@ -5856,7 +7638,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5864,11 +7652,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sportliche Veranstaltungen"
+     "label": "2. Abschnitt: Sportliche Veranstaltungen",
+     "eId": "part_5/chap_2"
     }
    ],
    "marginalie": [],
@@ -5883,7 +7673,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5891,11 +7682,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sportliche Veranstaltungen"
+     "label": "2. Abschnitt: Sportliche Veranstaltungen",
+     "eId": "part_5/chap_2"
     }
    ],
    "marginalie": [
@@ -5916,7 +7709,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 46,
+      "l": 46
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5924,11 +7723,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafbestimmung"
+     "label": "3. Abschnitt: Strafbestimmung",
+     "eId": "part_5/chap_3"
     }
    ],
    "marginalie": [],
@@ -5944,7 +7745,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 109,
+      "l": 119
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5952,11 +7759,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "part_5/chap_4"
     }
    ],
    "marginalie": [
@@ -5973,7 +7782,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 227,
+      "l": 227
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5981,11 +7796,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "part_5/chap_4"
     }
    ],
    "marginalie": [
@@ -6006,7 +7823,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "416",
@@ -6020,7 +7838,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 129,
+      "l": 309
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6028,11 +7852,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "part_5/chap_4"
     }
    ],
    "marginalie": [
@@ -6049,7 +7875,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 119,
+      "l": 338
+     },
+     "kl": "Z"
     },
     {
      "nr": "420",
@@ -6073,14 +7905,26 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 50,
+      "l": 265
+     },
+     "kl": "Z"
     },
     {
      "nr": "421",
      "text": "[BS <b>9</b> 360]",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 194,
+      "l": 265
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -6088,7 +7932,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -6105,7 +7950,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -6119,7 +7965,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 122,
+      "l": 123
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6127,11 +7979,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -6148,7 +8002,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -6161,7 +8016,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 205,
+      "l": 216
+     },
+     "kl": "V"
     },
     {
      "nr": "107",
@@ -6173,7 +8034,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -6185,7 +8047,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -6197,7 +8060,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6205,11 +8074,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6226,7 +8097,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -6238,7 +8110,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -6251,7 +8124,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 85,
+      "l": 190
+     },
+     "kl": "V"
     },
     {
      "nr": "25",
@@ -6263,7 +8143,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 190,
+      "l": 190
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -6275,7 +8162,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 94,
+      "l": 94
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6283,11 +8177,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6308,7 +8204,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -6320,7 +8217,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 262,
+      "l": 262
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -6332,14 +8235,22 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "34",
      "text": "Richtlinie 91/671/EWG des Rates vom 16. Dezember 1991 zur Angleichung der Rechtsvorschriften der Mitgliedstaaten über die Gurtanlegepflicht in Kraftfahrzeugen mit einem Gewicht von weniger als 3,5 Tonnen, ABl. L 373 vom 31.12.1991, S. 26; zuletzt geändert durch Richtlinie 2014/37/EU, ABl. L 59 vom 28.02.2014, S. 32.",
      "links": [],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 259,
+      "l": 260
+     },
+     "kl": "V"
     },
     {
      "nr": "35",
@@ -6351,7 +8262,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -6364,7 +8276,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 227,
+      "l": 396
+     },
+     "kl": "V"
     },
     {
      "nr": "37",
@@ -6376,7 +8294,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 396,
+      "l": 396
+     },
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -6388,7 +8312,14 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 3,
+      "o": 61,
+      "l": 61
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6396,11 +8327,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6421,7 +8354,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -6433,7 +8367,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -6445,7 +8380,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -6457,7 +8393,8 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -6469,7 +8406,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 375,
+      "l": 483
+     },
+     "kl": "V"
     },
     {
      "nr": "44",
@@ -6481,7 +8424,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 391,
+      "l": 483
+     },
+     "kl": "V"
     },
     {
      "nr": "45",
@@ -6493,7 +8442,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 483,
+      "l": 483
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6501,11 +8456,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -6526,7 +8483,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6534,11 +8492,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -6555,7 +8515,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "167",
@@ -6567,7 +8528,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "168",
@@ -6579,7 +8541,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 80,
+      "l": 80
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6587,11 +8555,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Fahrzeugarten"
+     "label": "5. Abschnitt: Besondere Fahrzeugarten",
+     "eId": "part_1/chap_5"
     }
    ],
    "marginalie": [
@@ -6608,7 +8578,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "179",
@@ -6620,7 +8591,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "180",
@@ -6632,7 +8604,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 339,
+      "l": 339
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6640,11 +8618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6665,7 +8645,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -6677,7 +8658,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 24,
+      "l": 24
+     },
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -6689,7 +8677,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 318,
+      "l": 318
+     },
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -6701,7 +8695,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 157,
+      "l": 157
+     },
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -6713,7 +8713,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6721,11 +8727,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten"
+     "label": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten",
+     "eId": "part_2/chap_1_a"
     }
    ],
    "marginalie": [
@@ -6742,7 +8750,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6750,15 +8759,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs"
+     "label": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs",
+     "eId": "part_4/chap_1/lvl_I_a"
     }
    ],
    "marginalie": [
@@ -6779,7 +8791,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "214",
@@ -6792,7 +8805,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs"
+     "sektion": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs",
+     "kl": "A"
     }
    ]
   },
@@ -6800,15 +8814,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs"
+     "label": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs",
+     "eId": "part_4/chap_1/lvl_I_a"
     }
    ],
    "marginalie": [
@@ -6825,7 +8842,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6833,15 +8851,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs"
+     "label": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs",
+     "eId": "part_4/chap_1/lvl_I_a"
     }
    ],
    "marginalie": [
@@ -6858,7 +8879,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6866,15 +8888,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Masse und Gewichte"
+     "label": "III. Masse und Gewichte",
+     "eId": "part_4/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -6891,7 +8916,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "245",
@@ -6904,7 +8930,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 496,
+      "l": 496
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6912,11 +8944,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot"
+     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot",
+     "eId": "part_5/chap_1"
     }
    ],
    "marginalie": [
@@ -6933,7 +8967,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "382",
@@ -6945,7 +8980,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "383",
@@ -6957,7 +8993,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "384",
@@ -6970,7 +9007,14 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 135,
+      "l": 284
+     },
+     "kl": "V"
     },
     {
      "nr": "385",
@@ -6983,7 +9027,14 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 282,
+      "l": 284
+     },
+     "kl": "V"
     },
     {
      "nr": "386",
@@ -6995,7 +9046,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "387",
@@ -7008,7 +9060,14 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 79,
+      "l": 203
+     },
+     "kl": "V"
     },
     {
      "nr": "388",
@@ -7020,7 +9079,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "389",
@@ -7032,7 +9092,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "390",
@@ -7044,7 +9105,8 @@
       }
      ],
      "absatz": "1",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "391",
@@ -7056,7 +9118,8 @@
       }
      ],
      "absatz": "1",
-     "item": "kbis"
+     "item": "kbis",
+     "kl": "A"
     },
     {
      "nr": "392",
@@ -7068,7 +9131,8 @@
       }
      ],
      "absatz": "1",
-     "item": "l"
+     "item": "l",
+     "kl": "A"
     },
     {
      "nr": "393",
@@ -7080,7 +9144,8 @@
       }
      ],
      "absatz": "1",
-     "item": "m"
+     "item": "m",
+     "kl": "A"
     },
     {
      "nr": "394",
@@ -7093,7 +9158,14 @@
       }
      ],
      "absatz": "1",
-     "item": "m"
+     "item": "m",
+     "pos": {
+      "b": 0,
+      "it": 13,
+      "o": 131,
+      "l": 263
+     },
+     "kl": "V"
     },
     {
      "nr": "395",
@@ -7105,7 +9177,8 @@
       }
      ],
      "absatz": "1",
-     "item": "n"
+     "item": "n",
+     "kl": "A"
     },
     {
      "nr": "396",
@@ -7117,7 +9190,8 @@
       }
      ],
      "absatz": "1",
-     "item": "o"
+     "item": "o",
+     "kl": "A"
     },
     {
      "nr": "397",
@@ -7129,7 +9203,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 124,
+      "l": 124
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7137,11 +9217,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "part_5/chap_4"
     }
    ],
    "marginalie": [
@@ -7158,7 +9240,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7166,11 +9249,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "part_5/chap_4"
     }
    ],
    "marginalie": [
@@ -7187,7 +9272,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "418",
@@ -7199,7 +9285,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 157,
+      "l": 157
+     },
+     "kl": "A"
     }
    ]
   },

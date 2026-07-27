@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "814.201",
   "titel": "Gewässerschutzverordnung",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -55,7 +57,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -66,7 +69,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -83,7 +87,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     }
    ]
   },
@@ -91,11 +96,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abgrenzung zwischen verschmutztem und nicht verschmutztem Abwasser"
+     "label": "1. Abschnitt: Abgrenzung zwischen verschmutztem und nicht verschmutztem Abwasser",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -110,7 +117,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -123,7 +131,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 46,
+      "l": 256
+     },
+     "kl": "V"
     },
     {
      "nr": "6",
@@ -135,7 +150,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -147,7 +163,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -155,11 +172,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entwässerungsplanung"
+     "label": "2. Abschnitt: Entwässerungsplanung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -170,11 +189,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entwässerungsplanung"
+     "label": "2. Abschnitt: Entwässerungsplanung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -185,11 +206,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ableitung von verschmutztem Abwasser"
+     "label": "3. Abschnitt: Ableitung von verschmutztem Abwasser",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -200,11 +223,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ableitung von verschmutztem Abwasser"
+     "label": "3. Abschnitt: Ableitung von verschmutztem Abwasser",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -221,7 +246,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -229,11 +255,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ableitung von verschmutztem Abwasser"
+     "label": "3. Abschnitt: Ableitung von verschmutztem Abwasser",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -251,7 +279,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 82,
+      "l": 222
+     },
+     "kl": "V"
     }
    ]
   },
@@ -259,11 +294,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ableitung von verschmutztem Abwasser"
+     "label": "3. Abschnitt: Ableitung von verschmutztem Abwasser",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -274,11 +311,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ableitung von verschmutztem Abwasser"
+     "label": "3. Abschnitt: Ableitung von verschmutztem Abwasser",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -289,11 +328,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen"
+     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -304,11 +345,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen"
+     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -319,11 +362,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen"
+     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -334,11 +379,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen"
+     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -349,11 +396,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen"
+     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -364,11 +413,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen"
+     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -386,7 +437,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 70,
+      "l": 194
+     },
+     "kl": "V"
     },
     {
      "nr": "11",
@@ -411,7 +468,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 111,
+      "l": 194
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -419,11 +482,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Abwasserbeseitigung"
+     "label": "2. Kapitel: Abwasserbeseitigung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen"
+     "label": "4. Abschnitt: Bau und Betrieb von Abwasseranlagen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -440,7 +505,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -448,7 +519,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entsorgung von Klärschlamm"
+     "label": "3. Kapitel: Entsorgung von Klärschlamm",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -465,7 +537,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "G"
     },
     {
      "nr": "14",
@@ -478,7 +551,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 105,
+      "l": 206
+     },
+     "kl": "V"
     }
    ]
   },
@@ -486,7 +566,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entsorgung von Klärschlamm"
+     "label": "3. Kapitel: Entsorgung von Klärschlamm",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -503,7 +584,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 187,
+      "l": 187
+     },
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -515,7 +602,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -523,7 +616,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entsorgung von Klärschlamm"
+     "label": "3. Kapitel: Entsorgung von Klärschlamm",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -540,7 +634,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -552,7 +652,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -560,7 +666,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entsorgung von Klärschlamm"
+     "label": "3. Kapitel: Entsorgung von Klärschlamm",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -577,7 +684,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -589,7 +702,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -597,7 +716,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Anforderungen an Betriebe mit Nutztierhaltung"
+     "label": "4. Kapitel: Anforderungen an Betriebe mit Nutztierhaltung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -608,7 +728,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Anforderungen an Betriebe mit Nutztierhaltung"
+     "label": "4. Kapitel: Anforderungen an Betriebe mit Nutztierhaltung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -619,7 +740,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Anforderungen an Betriebe mit Nutztierhaltung"
+     "label": "4. Kapitel: Anforderungen an Betriebe mit Nutztierhaltung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -636,7 +758,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 175,
+      "l": 175
+     },
+     "kl": "A"
     }
    ]
   },
@@ -644,7 +772,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Anforderungen an Betriebe mit Nutztierhaltung"
+     "label": "4. Kapitel: Anforderungen an Betriebe mit Nutztierhaltung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -661,7 +790,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 369,
+      "l": 369
+     },
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -673,7 +808,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -685,7 +826,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "G"
     },
     {
      "nr": "25",
@@ -697,7 +839,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -709,7 +852,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "G"
     },
     {
      "nr": "27",
@@ -721,7 +865,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -733,7 +883,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 103,
+      "l": 103
+     },
+     "kl": "A"
     }
    ]
   },
@@ -741,7 +897,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Anforderungen an Betriebe mit Nutztierhaltung"
+     "label": "4. Kapitel: Anforderungen an Betriebe mit Nutztierhaltung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -758,7 +915,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -770,7 +928,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     }
    ]
   },
@@ -778,7 +942,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Planerischer Schutz der Gewässer"
+     "label": "5. Kapitel: Planerischer Schutz der Gewässer",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -795,7 +960,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -803,7 +969,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Planerischer Schutz der Gewässer"
+     "label": "5. Kapitel: Planerischer Schutz der Gewässer",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -820,7 +987,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 223,
+      "l": 223
+     },
+     "kl": "A"
     }
    ]
   },
@@ -828,7 +1001,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Planerischer Schutz der Gewässer"
+     "label": "5. Kapitel: Planerischer Schutz der Gewässer",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -839,7 +1013,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Planerischer Schutz der Gewässer"
+     "label": "5. Kapitel: Planerischer Schutz der Gewässer",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -856,7 +1031,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -868,7 +1049,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 131,
+      "l": 131
+     },
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -884,7 +1071,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "37",
@@ -896,7 +1084,8 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -908,7 +1097,8 @@
       }
      ],
      "absatz": "2",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -920,7 +1110,8 @@
       }
      ],
      "absatz": "2",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     }
    ]
   },
@@ -928,7 +1119,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Sicherung angemessener Restwassermengen"
+     "label": "6. Kapitel: Sicherung angemessener Restwassermengen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -946,7 +1138,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 157,
+      "l": 275
+     },
+     "kl": "V"
     },
     {
      "nr": "43",
@@ -959,7 +1157,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 212,
+      "l": 275
+     },
+     "kl": "V"
     }
    ]
   },
@@ -967,7 +1171,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Sicherung angemessener Restwassermengen"
+     "label": "6. Kapitel: Sicherung angemessener Restwassermengen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -984,7 +1189,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 111,
+      "l": 116
+     },
+     "kl": "A"
     }
    ]
   },
@@ -992,7 +1203,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Sicherung angemessener Restwassermengen"
+     "label": "6. Kapitel: Sicherung angemessener Restwassermengen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1009,7 +1221,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 338,
+      "l": 338
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1017,7 +1235,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Sicherung angemessener Restwassermengen"
+     "label": "6. Kapitel: Sicherung angemessener Restwassermengen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1028,7 +1247,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Sicherung angemessener Restwassermengen"
+     "label": "6. Kapitel: Sicherung angemessener Restwassermengen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1039,7 +1259,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Sicherung angemessener Restwassermengen"
+     "label": "6. Kapitel: Sicherung angemessener Restwassermengen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1050,7 +1271,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Sicherung angemessener Restwassermengen"
+     "label": "6. Kapitel: Sicherung angemessener Restwassermengen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1061,7 +1283,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Sicherung angemessener Restwassermengen"
+     "label": "6. Kapitel: Sicherung angemessener Restwassermengen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1072,7 +1295,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Sicherung angemessener Restwassermengen"
+     "label": "6. Kapitel: Sicherung angemessener Restwassermengen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1083,11 +1307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Spülung und Entleerung von Stauräumen"
+     "label": "3. Abschnitt: Spülung und Entleerung von Stauräumen",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [],
@@ -1102,7 +1328,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -1115,7 +1342,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Spülung und Entleerung von Stauräumen"
+     "sektion": "3. Abschnitt: Spülung und Entleerung von Stauräumen",
+     "kl": "A"
     }
    ]
   },
@@ -1123,11 +1351,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Geschiebehaushalt"
+     "label": "4. Abschnitt: Geschiebehaushalt",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -1138,11 +1368,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Drainagewasser aus Untertagebauten"
+     "label": "5. Abschnitt: Drainagewasser aus Untertagebauten",
+     "eId": "chap_7/sec_5"
     }
    ],
    "marginalie": [],
@@ -1157,7 +1389,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -1170,7 +1403,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Drainagewasser aus Untertagebauten"
+     "sektion": "5. Abschnitt: Drainagewasser aus Untertagebauten",
+     "kl": "A"
     }
    ]
   },
@@ -1178,7 +1412,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Vollzug"
+     "label": "8. Kapitel: Vollzug",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1195,7 +1430,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1207,7 +1443,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 283,
+      "l": 283
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1215,7 +1457,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Vollzug"
+     "label": "8. Kapitel: Vollzug",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1232,7 +1475,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -1244,7 +1488,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 217,
+      "l": 217
+     },
+     "kl": "A"
     },
     {
      "nr": "81",
@@ -1256,7 +1506,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 107,
+      "l": 107
+     },
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -1269,7 +1525,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 188,
+      "l": 421
+     },
+     "kl": "V"
     },
     {
      "nr": "83",
@@ -1282,7 +1544,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 303,
+      "l": 421
+     },
+     "kl": "V"
     },
     {
      "nr": "84",
@@ -1295,7 +1563,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 357,
+      "l": 421
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1303,7 +1577,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Vollzug"
+     "label": "8. Kapitel: Vollzug",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1314,7 +1589,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Vollzug"
+     "label": "8. Kapitel: Vollzug",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1331,7 +1607,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 185,
+      "l": 243
+     },
+     "kl": "V"
     },
     {
      "nr": "87",
@@ -1343,7 +1625,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 162,
+      "l": 162
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1351,7 +1639,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Vollzug"
+     "label": "8. Kapitel: Vollzug",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1368,7 +1657,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 295,
+      "l": 295
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1376,7 +1671,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Vollzug"
+     "label": "8. Kapitel: Vollzug",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -1391,7 +1687,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1399,7 +1696,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Vollzug"
+     "label": "8. Kapitel: Vollzug",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1416,7 +1714,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -1428,7 +1727,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 235,
+      "l": 235
+     },
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -1441,7 +1746,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 36,
+      "l": 114
+     },
+     "kl": "V"
     },
     {
      "nr": "96",
@@ -1466,7 +1778,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 31,
+      "l": 111
+     },
+     "kl": "Z"
     },
     {
      "nr": "97",
@@ -1490,7 +1809,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 34,
+      "l": 88
+     },
+     "kl": "Z"
     },
     {
      "nr": "98",
@@ -1502,7 +1828,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 133,
+      "l": 133
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1510,11 +1842,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -1531,7 +1865,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -1544,7 +1879,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Massnahmen"
+     "sektion": "1. Abschnitt: Massnahmen",
+     "kl": "A"
     }
    ]
   },
@@ -1552,11 +1888,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -1567,11 +1905,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -1582,11 +1922,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -1597,11 +1939,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -1612,11 +1956,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -1627,11 +1973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -1648,7 +1996,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1656,11 +2005,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen"
+     "label": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -1678,7 +2029,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen"
+     "sektion": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen",
+     "kl": "A"
     }
    ]
   },
@@ -1686,11 +2038,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen"
+     "label": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -1707,7 +2061,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "110",
@@ -1719,7 +2074,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 32,
+      "l": 32
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1727,11 +2089,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen"
+     "label": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -1742,7 +2106,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Inkrafttreten"
+     "label": "10. Kapitel: Inkrafttreten",
+     "eId": "chap_10"
     }
    ],
    "marginalie": []
@@ -1751,7 +2116,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Anforderungen an Betriebe mit Nutztierhaltung"
+     "label": "4. Kapitel: Anforderungen an Betriebe mit Nutztierhaltung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [],
@@ -1766,7 +2132,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1774,7 +2141,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Planerischer Schutz der Gewässer"
+     "label": "5. Kapitel: Planerischer Schutz der Gewässer",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1791,7 +2159,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -1803,7 +2172,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 196,
+      "l": 196
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1811,7 +2186,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Sicherung angemessener Restwassermengen"
+     "label": "6. Kapitel: Sicherung angemessener Restwassermengen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1828,7 +2204,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1836,11 +2213,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1857,7 +2236,14 @@
       }
      ],
      "absatz": "4",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 3,
+      "it": 3,
+      "o": 106,
+      "l": 106
+     },
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -1869,7 +2255,8 @@
       }
      ],
      "absatz": "5",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -1882,7 +2269,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "sektion": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -1895,7 +2283,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+     "sektion": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer",
+     "kl": "G"
     }
    ]
   },
@@ -1903,11 +2292,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1918,11 +2309,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1939,7 +2332,8 @@
       }
      ],
      "absatz": "1",
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -1951,7 +2345,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -1963,7 +2358,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 42,
+      "l": 42
+     },
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -1976,7 +2378,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 143,
+      "l": 281
+     },
+     "kl": "V"
     },
     {
      "nr": "55",
@@ -1988,7 +2396,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 281,
+      "l": 281
+     },
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -2001,7 +2415,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 141,
+      "l": 418
+     },
+     "kl": "V"
     },
     {
      "nr": "57",
@@ -2013,7 +2433,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 418,
+      "l": 418
+     },
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -2025,7 +2451,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 401,
+      "l": 401
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2033,11 +2465,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -2058,7 +2492,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -2071,7 +2506,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 209,
+      "l": 456
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2079,11 +2520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -2100,7 +2543,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2108,11 +2552,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -2129,7 +2575,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2137,11 +2584,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer"
+     "label": "1. Abschnitt: Gewässerraum und Revitalisierung der Gewässer",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -2158,7 +2607,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 242,
+      "l": 242
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2166,11 +2621,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schwall und Sunk"
+     "label": "2. Abschnitt: Schwall und Sunk",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2188,7 +2645,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Schwall und Sunk"
+     "sektion": "2. Abschnitt: Schwall und Sunk",
+     "kl": "A"
     }
    ]
   },
@@ -2196,11 +2654,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schwall und Sunk"
+     "label": "2. Abschnitt: Schwall und Sunk",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2211,11 +2671,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schwall und Sunk"
+     "label": "2. Abschnitt: Schwall und Sunk",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2233,7 +2695,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 181,
+      "l": 246
+     },
+     "kl": "V"
     },
     {
      "nr": "66",
@@ -2245,7 +2713,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 246,
+      "l": 246
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2253,11 +2727,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Geschiebehaushalt"
+     "label": "4. Abschnitt: Geschiebehaushalt",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -2274,7 +2750,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -2287,7 +2764,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Abschnitt: Geschiebehaushalt"
+     "sektion": "4. Abschnitt: Geschiebehaushalt",
+     "kl": "A"
     }
    ]
   },
@@ -2295,11 +2773,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Geschiebehaushalt"
+     "label": "4. Abschnitt: Geschiebehaushalt",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -2316,7 +2796,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2324,11 +2805,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungenauf Gewässer"
+     "label": "7. Kapitel: Verhinderung und Behebung anderer nachteiliger Einwirkungen auf Gewässer",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Geschiebehaushalt"
+     "label": "4. Abschnitt: Geschiebehaushalt",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -2345,7 +2828,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -2358,7 +2842,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 164,
+      "l": 223
+     },
+     "kl": "V"
     },
     {
      "nr": "74",
@@ -2370,7 +2860,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 223,
+      "l": 223
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2378,7 +2874,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Vollzug"
+     "label": "8. Kapitel: Vollzug",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2395,7 +2892,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -2403,7 +2901,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Vollzug"
+     "label": "8. Kapitel: Vollzug",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2420,7 +2919,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2428,7 +2928,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Vollzug"
+     "label": "8. Kapitel: Vollzug",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2445,7 +2946,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -2459,7 +2961,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 183,
+      "l": 225
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2467,7 +2975,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8a. Kapitel: Abwasserabgabe des Bundes"
+     "label": "8a. Kapitel: Abwasserabgabe des Bundes",
+     "eId": "chap_8_a"
     }
    ],
    "marginalie": [
@@ -2485,7 +2994,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "8a. Kapitel: Abwasserabgabe des Bundes"
+     "sektion": "8a. Kapitel: Abwasserabgabe des Bundes",
+     "kl": "A"
     }
    ]
   },
@@ -2493,7 +3003,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8a. Kapitel: Abwasserabgabe des Bundes"
+     "label": "8a. Kapitel: Abwasserabgabe des Bundes",
+     "eId": "chap_8_a"
     }
    ],
    "marginalie": [
@@ -2504,7 +3015,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8a. Kapitel: Abwasserabgabe des Bundes"
+     "label": "8a. Kapitel: Abwasserabgabe des Bundes",
+     "eId": "chap_8_a"
     }
    ],
    "marginalie": [
@@ -2521,7 +3033,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 255,
+      "l": 255
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2529,7 +3047,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8a. Kapitel: Abwasserabgabe des Bundes"
+     "label": "8a. Kapitel: Abwasserabgabe des Bundes",
+     "eId": "chap_8_a"
     }
    ],
    "marginalie": [
@@ -2540,11 +3059,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -2561,7 +3082,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2569,11 +3091,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -2590,7 +3114,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2598,11 +3123,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen"
+     "label": "1. Abschnitt: Massnahmen",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -2619,7 +3146,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     },
     {
      "nr": "106",
@@ -2632,7 +3160,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 136,
+      "l": 174
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2640,11 +3174,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen"
+     "label": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -2655,11 +3191,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen"
+     "label": "2. Abschnitt: Verfahren bei der Gewährung globaler Abgeltungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -2677,7 +3215,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 217,
+      "l": 224
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2685,11 +3229,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall"
+     "label": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -2707,7 +3253,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall"
+     "sektion": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall",
+     "kl": "A"
     }
    ]
   },
@@ -2715,11 +3262,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall"
+     "label": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -2730,11 +3279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall"
+     "label": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -2752,7 +3303,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 183,
+      "l": 184
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2760,11 +3317,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Gewährung von Bundesbeiträgen"
+     "label": "9. Kapitel: Gewährung von Bundesbeiträgen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall"
+     "label": "3. Abschnitt: Verfahren bei der Gewährung von Abgeltungen oder Finanzhilfen im Einzelfall",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "235.1",
   "titel": "Bundesgesetz über den Datenschutz",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -55,7 +57,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck und Geltungsbereich sowie Aufsichtsbehörde des Bundes"
+     "label": "1. Kapitel: Zweck und Geltungsbereich sowie Aufsichtsbehörde des Bundes",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -66,7 +69,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck und Geltungsbereich sowie Aufsichtsbehörde des Bundes"
+     "label": "1. Kapitel: Zweck und Geltungsbereich sowie Aufsichtsbehörde des Bundes",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -84,7 +88,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 134,
+      "l": 199
+     },
+     "kl": "V"
     }
    ]
   },
@@ -92,7 +103,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck und Geltungsbereich sowie Aufsichtsbehörde des Bundes"
+     "label": "1. Kapitel: Zweck und Geltungsbereich sowie Aufsichtsbehörde des Bundes",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -110,7 +122,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 74,
+      "l": 207
+     },
+     "kl": "V"
     },
     {
      "nr": "5",
@@ -123,7 +141,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 206,
+      "l": 207
+     },
+     "kl": "V"
     }
    ]
   },
@@ -131,7 +155,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck und Geltungsbereich sowie Aufsichtsbehörde des Bundes"
+     "label": "1. Kapitel: Zweck und Geltungsbereich sowie Aufsichtsbehörde des Bundes",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -142,11 +167,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Begriffe und Grundsätze"
+     "label": "1. Abschnitt: Begriffe und Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -157,11 +184,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Begriffe und Grundsätze"
+     "label": "1. Abschnitt: Begriffe und Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -172,11 +201,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Begriffe und Grundsätze"
+     "label": "1. Abschnitt: Begriffe und Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -187,11 +218,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Begriffe und Grundsätze"
+     "label": "1. Abschnitt: Begriffe und Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -202,11 +235,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Begriffe und Grundsätze"
+     "label": "1. Abschnitt: Begriffe und Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -217,11 +252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Begriffe und Grundsätze"
+     "label": "1. Abschnitt: Begriffe und Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -232,11 +269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Begriffe und Grundsätze"
+     "label": "1. Abschnitt: Begriffe und Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -247,11 +286,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Begriffe und Grundsätze"
+     "label": "1. Abschnitt: Begriffe und Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -262,11 +303,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Begriffe und Grundsätze"
+     "label": "1. Abschnitt: Begriffe und Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -277,11 +320,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung durch private Verantwortliche mit Sitz oder Wohnsitz im Ausland"
+     "label": "2. Abschnitt: Datenbearbeitung durch private Verantwortliche mit Sitz oder Wohnsitz im Ausland",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -292,11 +337,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung durch private Verantwortliche mit Sitz oder Wohnsitz im Ausland"
+     "label": "2. Abschnitt: Datenbearbeitung durch private Verantwortliche mit Sitz oder Wohnsitz im Ausland",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -307,11 +354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bekanntgabe von Personendaten ins Ausland"
+     "label": "3. Abschnitt: Bekanntgabe von Personendaten ins Ausland",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -322,11 +371,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bekanntgabe von Personendaten ins Ausland"
+     "label": "3. Abschnitt: Bekanntgabe von Personendaten ins Ausland",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -337,11 +388,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bekanntgabe von Personendaten ins Ausland"
+     "label": "3. Abschnitt: Bekanntgabe von Personendaten ins Ausland",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -352,7 +405,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Pflichten des Verantwortlichen und des Auftragsbearbeiters"
+     "label": "3. Kapitel: Pflichten des Verantwortlichen und des Auftragsbearbeiters",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -363,7 +417,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Pflichten des Verantwortlichen und des Auftragsbearbeiters"
+     "label": "3. Kapitel: Pflichten des Verantwortlichen und des Auftragsbearbeiters",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -374,7 +429,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Pflichten des Verantwortlichen und des Auftragsbearbeiters"
+     "label": "3. Kapitel: Pflichten des Verantwortlichen und des Auftragsbearbeiters",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -392,7 +448,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 260,
+      "l": 350
+     },
+     "kl": "V"
     }
    ]
   },
@@ -400,7 +462,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Pflichten des Verantwortlichen und des Auftragsbearbeiters"
+     "label": "3. Kapitel: Pflichten des Verantwortlichen und des Auftragsbearbeiters",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -411,7 +474,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Pflichten des Verantwortlichen und des Auftragsbearbeiters"
+     "label": "3. Kapitel: Pflichten des Verantwortlichen und des Auftragsbearbeiters",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -422,7 +486,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Pflichten des Verantwortlichen und des Auftragsbearbeiters"
+     "label": "3. Kapitel: Pflichten des Verantwortlichen und des Auftragsbearbeiters",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -451,7 +516,13 @@
       }
      ],
      "absatz": "5bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 346,
+      "l": 346
+     },
+     "kl": "A"
     }
    ]
   },
@@ -459,7 +530,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte der betroffenen Person"
+     "label": "4. Kapitel: Rechte der betroffenen Person",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -470,7 +542,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte der betroffenen Person"
+     "label": "4. Kapitel: Rechte der betroffenen Person",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -481,7 +554,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte der betroffenen Person"
+     "label": "4. Kapitel: Rechte der betroffenen Person",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -492,7 +566,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte der betroffenen Person"
+     "label": "4. Kapitel: Rechte der betroffenen Person",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -503,7 +578,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte der betroffenen Person"
+     "label": "4. Kapitel: Rechte der betroffenen Person",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -514,7 +590,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch private Personen"
+     "label": "5. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch private Personen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -525,7 +602,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch private Personen"
+     "label": "5. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch private Personen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -536,7 +614,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch private Personen"
+     "label": "5. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch private Personen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -554,7 +633,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 110,
+      "l": 166
+     },
+     "kl": "V"
     }
    ]
   },
@@ -562,7 +647,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane"
+     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -573,7 +659,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane"
+     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -584,7 +671,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane"
+     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -595,7 +683,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane"
+     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -613,7 +702,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 192,
+      "l": 212
+     },
+     "kl": "V"
     }
    ]
   },
@@ -621,7 +716,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane"
+     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -632,7 +728,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane"
+     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -650,7 +747,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 64,
+      "l": 166
+     },
+     "kl": "V"
     }
    ]
   },
@@ -658,7 +761,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane"
+     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -669,7 +773,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane"
+     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -680,7 +785,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane"
+     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -698,7 +804,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 40,
+      "l": 108
+     },
+     "kl": "V"
     }
    ]
   },
@@ -706,7 +818,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane"
+     "label": "6. Kapitel: Besondere Bestimmungen zur Datenbearbeitung durch Bundesorgane",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -725,7 +838,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 152,
+      "l": 380
+     },
+     "kl": "V"
     }
    ]
   },
@@ -733,11 +852,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -755,7 +876,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 155,
+      "l": 692
+     },
+     "kl": "V"
     },
     {
      "nr": "14",
@@ -775,7 +902,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 692,
+      "l": 692
+     },
+     "kl": "U"
     },
     {
      "nr": "15",
@@ -795,7 +928,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 131,
+      "l": 131
+     },
+     "kl": "A"
     }
    ]
   },
@@ -803,11 +942,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -832,7 +973,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 300,
+      "l": 300
+     },
+     "kl": "U"
     }
    ]
   },
@@ -840,11 +987,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -855,11 +1004,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -870,11 +1021,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -899,7 +1052,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 217,
+      "l": 252
+     },
+     "kl": "A"
     }
    ]
   },
@@ -907,11 +1066,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -922,11 +1083,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Untersuchung von Verstössen gegen Datenschutzvorschriften"
+     "label": "2. Abschnitt: Untersuchung von Verstössen gegen Datenschutzvorschriften",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -944,7 +1107,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 240,
+      "l": 319
+     },
+     "kl": "V"
     }
    ]
   },
@@ -952,11 +1121,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Untersuchung von Verstössen gegen Datenschutzvorschriften"
+     "label": "2. Abschnitt: Untersuchung von Verstössen gegen Datenschutzvorschriften",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -967,11 +1138,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Untersuchung von Verstössen gegen Datenschutzvorschriften"
+     "label": "2. Abschnitt: Untersuchung von Verstössen gegen Datenschutzvorschriften",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -982,11 +1155,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Untersuchung von Verstössen gegen Datenschutzvorschriften"
+     "label": "2. Abschnitt: Untersuchung von Verstössen gegen Datenschutzvorschriften",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1004,7 +1179,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 99,
+      "l": 100
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1012,11 +1193,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Untersuchung von Verstössen gegen Datenschutzvorschriften"
+     "label": "2. Abschnitt: Untersuchung von Verstössen gegen Datenschutzvorschriften",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1027,11 +1210,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Amtshilfe"
+     "label": "3. Abschnitt: Amtshilfe",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -1042,11 +1227,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Amtshilfe"
+     "label": "3. Abschnitt: Amtshilfe",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -1057,11 +1244,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Andere Aufgaben des EDÖB"
+     "label": "4. Abschnitt: Andere Aufgaben des EDÖB",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -1072,11 +1261,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Andere Aufgaben des EDÖB"
+     "label": "4. Abschnitt: Andere Aufgaben des EDÖB",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -1093,7 +1284,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 117,
+      "l": 117
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1101,11 +1298,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Andere Aufgaben des EDÖB"
+     "label": "4. Abschnitt: Andere Aufgaben des EDÖB",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -1123,7 +1322,14 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 70,
+      "l": 124
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1131,11 +1337,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gebühren"
+     "label": "5. Abschnitt: Gebühren",
+     "eId": "chap_7/sec_5"
     }
    ],
    "marginalie": []
@@ -1144,7 +1352,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1155,7 +1364,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1166,7 +1376,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1177,7 +1388,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1188,7 +1400,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1206,7 +1419,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 103,
+      "l": 153
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1214,7 +1433,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1225,7 +1445,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1236,7 +1457,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Abschluss von Staatsverträgen"
+     "label": "9. Kapitel: Abschluss von Staatsverträgen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": []
@@ -1245,7 +1467,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1256,7 +1479,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1267,7 +1491,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1278,7 +1503,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1297,7 +1523,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 425,
+      "l": 543
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1305,7 +1537,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1330,7 +1563,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 237,
+      "l": 237
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1338,7 +1577,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1349,7 +1589,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1361,7 +1602,8 @@
      "text": "BRB vom 31. Aug. 2022",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1369,11 +1611,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1398,7 +1642,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1406,11 +1651,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter"
+     "label": "7. Kapitel: Eidgenössischer Datenschutz- und Öffentlichkeitsbeauftragter",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1435,7 +1682,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1443,7 +1691,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1468,7 +1717,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

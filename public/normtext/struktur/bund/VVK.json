@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "832.105",
   "titel": "Verordnung über die Versichertenkarte für die obligatorische Krankenpflegeversicherung",
@@ -32,7 +32,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -41,7 +42,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Grundsatz"
+     "label": "1. Abschnitt: Grundsatz",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [],
@@ -56,7 +58,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 66,
+      "l": 170
+     },
+     "kl": "V"
     },
     {
      "nr": "3",
@@ -68,7 +76,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 310,
+      "l": 310
+     },
+     "kl": "A"
     }
    ]
   },
@@ -76,7 +90,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Technische Anforderungen"
+     "label": "2. Abschnitt: Technische Anforderungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": []
@@ -85,7 +100,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Daten für die Rechnungstellung"
+     "label": "3. Abschnitt: Daten für die Rechnungstellung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -102,7 +118,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -110,7 +127,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Daten für die Rechnungstellung"
+     "label": "3. Abschnitt: Daten für die Rechnungstellung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -121,7 +139,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Daten für die Rechnungstellung"
+     "label": "3. Abschnitt: Daten für die Rechnungstellung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -138,7 +157,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -150,7 +170,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 141,
+      "l": 198
+     },
+     "kl": "V"
     },
     {
      "nr": "7",
@@ -162,7 +188,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 170,
+      "l": 287
+     },
+     "kl": "V"
     }
    ]
   },
@@ -170,7 +202,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Daten nach Artikel 42a Absatz 4 KVG"
+     "label": "4. Abschnitt: Daten nach Artikel 42a Absatz 4 KVG",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -181,7 +214,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Daten nach Artikel 42a Absatz 4 KVG"
+     "label": "4. Abschnitt: Daten nach Artikel 42a Absatz 4 KVG",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -192,7 +226,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Daten nach Artikel 42a Absatz 4 KVG"
+     "label": "4. Abschnitt: Daten nach Artikel 42a Absatz 4 KVG",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -203,7 +238,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Rechte und Pflichten"
+     "label": "5. Abschnitt: Rechte und Pflichten",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -214,7 +250,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Rechte und Pflichten"
+     "label": "5. Abschnitt: Rechte und Pflichten",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -225,7 +262,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Rechte und Pflichten"
+     "label": "5. Abschnitt: Rechte und Pflichten",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -236,7 +274,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Rechte und Pflichten"
+     "label": "5. Abschnitt: Rechte und Pflichten",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -247,7 +286,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Rechte und Pflichten"
+     "label": "5. Abschnitt: Rechte und Pflichten",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -258,7 +298,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Rechnungstellung"
+     "label": "6. Abschnitt: Rechnungstellung",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -269,7 +310,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Rechnungstellung"
+     "label": "6. Abschnitt: Rechnungstellung",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -280,7 +322,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Kantonale Modellversuche"
+     "label": "7. Abschnitt: Kantonale Modellversuche",
+     "eId": "sec_7"
     }
    ],
    "marginalie": []
@@ -289,7 +332,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Technische Standards"
+     "label": "8. Abschnitt: Technische Standards",
+     "eId": "sec_8"
     }
    ],
    "marginalie": []
@@ -298,7 +342,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -316,7 +361,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -324,7 +375,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [],
@@ -339,7 +391,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -347,7 +400,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -364,7 +418,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 59,
+      "l": 168
+     },
+     "kl": "Z"
     },
     {
      "nr": "12",
@@ -376,7 +436,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 44,
+      "l": 44
+     },
+     "kl": "A"
     }
    ]
   },
@@ -384,7 +450,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -401,7 +468,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

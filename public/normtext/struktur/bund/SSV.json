@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "741.21",
   "titel": "Signalisationsverordnung",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -59,7 +61,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -68,7 +71,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Begriffe und Geltungsbereich"
+     "label": "1. Kapitel: Begriffe und Geltungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -85,7 +89,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 202,
+      "l": 202
+     },
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -97,7 +107,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "U"
     },
     {
      "nr": "6",
@@ -109,7 +120,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     },
     {
      "nr": "7",
@@ -121,7 +133,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -133,7 +146,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -146,7 +160,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -159,7 +174,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "11",
@@ -172,7 +188,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "12",
@@ -184,7 +201,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -197,7 +215,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "14",
@@ -209,7 +228,8 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -222,7 +242,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "16",
@@ -234,7 +255,8 @@
       }
      ],
      "absatz": "2",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -247,7 +269,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "18",
@@ -259,7 +282,13 @@
       }
      ],
      "absatz": "9",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 209,
+      "l": 209
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -271,7 +300,13 @@
       }
      ],
      "absatz": "10",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 10,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -279,7 +314,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Begriffe und Geltungsbereich"
+     "label": "1. Kapitel: Begriffe und Geltungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -296,7 +332,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 57,
+      "l": 57
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -308,7 +350,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 268,
+      "l": 268
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -320,7 +368,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 300,
+      "l": 300
+     },
+     "kl": "A"
     }
    ]
   },
@@ -328,11 +382,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -347,7 +403,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 206,
+      "l": 206
+     },
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -359,7 +421,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -367,11 +430,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -382,11 +447,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -397,11 +464,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -418,7 +487,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -426,11 +501,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -441,11 +518,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -456,11 +535,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -471,11 +552,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -492,7 +575,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 165,
+      "l": 165
+     },
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -504,7 +593,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -516,7 +611,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 125,
+      "l": 125
+     },
+     "kl": "A"
     }
    ]
   },
@@ -524,11 +625,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übrige Gefahren"
+     "label": "3. Abschnitt: Übrige Gefahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -545,7 +648,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -557,7 +661,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 264,
+      "l": 264
+     },
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -569,7 +679,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 172,
+      "l": 172
+     },
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -585,7 +701,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 193,
+      "l": 193
+     },
+     "kl": "A"
     }
    ]
   },
@@ -593,11 +715,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übrige Gefahren"
+     "label": "3. Abschnitt: Übrige Gefahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -614,7 +738,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 9,
+      "l": 72
+     },
+     "kl": "A"
     }
    ]
   },
@@ -622,11 +752,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übrige Gefahren"
+     "label": "3. Abschnitt: Übrige Gefahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -643,7 +775,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -651,11 +784,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übrige Gefahren"
+     "label": "3. Abschnitt: Übrige Gefahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -672,7 +807,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -684,7 +820,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 446,
+      "l": 446
+     },
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -696,7 +838,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 116,
+      "l": 116
+     },
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -708,7 +856,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 157,
+      "l": 157
+     },
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -720,7 +874,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 160,
+      "l": 160
+     },
+     "kl": "A"
     }
    ]
   },
@@ -728,11 +888,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übrige Gefahren"
+     "label": "3. Abschnitt: Übrige Gefahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -749,7 +911,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 286,
+      "l": 286
+     },
+     "kl": "A"
     }
    ]
   },
@@ -757,11 +925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -778,7 +948,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 451,
+      "l": 451
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -791,7 +967,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 744,
+      "l": 746
+     },
+     "kl": "V"
     },
     {
      "nr": "47",
@@ -803,7 +985,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 746,
+      "l": 746
+     },
+     "kl": "A"
     }
    ]
   },
@@ -811,11 +999,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -832,7 +1022,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 207,
+      "l": 207
+     },
+     "kl": "A"
     }
    ]
   },
@@ -840,11 +1036,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen"
+     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -861,7 +1059,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 219,
+      "l": 219
+     },
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -873,7 +1077,14 @@
       }
      ],
      "absatz": "4",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 3,
+      "it": 6,
+      "o": 75,
+      "l": 75
+     },
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -885,7 +1096,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 339,
+      "l": 339
+     },
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -897,7 +1114,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -905,11 +1128,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen"
+     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -926,7 +1151,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -938,7 +1164,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -950,7 +1177,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -962,7 +1190,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -974,7 +1203,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -986,7 +1216,8 @@
       }
      ],
      "absatz": "1",
-     "item": "fbis"
+     "item": "fbis",
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -998,7 +1229,14 @@
       }
      ],
      "absatz": "1",
-     "item": "fbis"
+     "item": "fbis",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 172,
+      "l": 352
+     },
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -1010,7 +1248,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -1023,7 +1262,14 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 101,
+      "l": 369
+     },
+     "kl": "V"
     },
     {
      "nr": "62",
@@ -1035,7 +1281,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -1048,7 +1295,14 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 0,
+      "it": 8,
+      "o": 135,
+      "l": 150
+     },
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -1060,7 +1314,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 123,
+      "l": 123
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1072,7 +1332,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 236,
+      "l": 236
+     },
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -1084,7 +1350,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 110,
+      "l": 110
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1092,11 +1364,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen"
+     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1114,7 +1388,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 294,
+      "l": 296
+     },
+     "kl": "V"
     },
     {
      "nr": "68",
@@ -1126,7 +1406,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 296,
+      "l": 296
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1134,11 +1420,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen"
+     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1156,7 +1444,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 262,
+      "l": 263
+     },
+     "kl": "V"
     },
     {
      "nr": "70",
@@ -1168,7 +1462,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 263,
+      "l": 263
+     },
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -1180,7 +1480,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 337,
+      "l": 337
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1188,11 +1494,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1209,7 +1517,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 430,
+      "l": 430
+     },
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -1222,7 +1536,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 87,
+      "l": 456
+     },
+     "kl": "V"
     },
     {
      "nr": "74",
@@ -1234,7 +1554,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 456,
+      "l": 456
+     },
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -1246,7 +1572,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 291,
+      "l": 291
+     },
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -1258,7 +1590,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 103,
+      "l": 103
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1266,11 +1604,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1281,11 +1621,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1302,7 +1644,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 222,
+      "l": 222
+     },
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -1314,7 +1662,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 230,
+      "l": 230
+     },
+     "kl": "A"
     },
     {
      "nr": "86",
@@ -1330,7 +1684,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 425,
+      "l": 425
+     },
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -1346,7 +1706,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 265,
+      "l": 265
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1354,11 +1720,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1375,7 +1743,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 190,
+      "l": 190
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1383,11 +1757,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1404,7 +1780,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 219,
+      "l": 219
+     },
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -1417,7 +1799,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 293,
+      "l": 358
+     },
+     "kl": "V"
     },
     {
      "nr": "91",
@@ -1429,7 +1817,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 295,
+      "l": 358
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1437,11 +1831,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1452,11 +1848,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1473,7 +1871,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1481,11 +1885,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1502,7 +1908,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 428,
+      "l": 428
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1510,11 +1922,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1532,7 +1946,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 327,
+      "l": 329
+     },
+     "kl": "V"
     },
     {
      "nr": "95",
@@ -1544,7 +1964,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 115,
+      "l": 115
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1552,11 +1978,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1573,7 +2001,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1581,11 +2015,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1602,7 +2038,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 298,
+      "l": 298
+     },
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -1614,7 +2056,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 373,
+      "l": 373
+     },
+     "kl": "A"
     },
     {
      "nr": "99",
@@ -1626,7 +2074,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 102,
+      "l": 102
+     },
+     "kl": "A"
     },
     {
      "nr": "100",
@@ -1642,7 +2096,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1650,11 +2110,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Wege, Busfahrbahnen, Bus-Streifen"
+     "label": "4. Abschnitt: Besondere Wege, Busfahrbahnen, Bus-Streifen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1671,7 +2133,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 344,
+      "l": 344
+     },
+     "kl": "A"
     },
     {
      "nr": "102",
@@ -1683,7 +2151,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 411,
+      "l": 411
+     },
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -1695,7 +2169,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1023,
+      "l": 1023
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1703,11 +2183,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Wege, Busfahrbahnen, Bus-Streifen"
+     "label": "4. Abschnitt: Besondere Wege, Busfahrbahnen, Bus-Streifen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1724,7 +2206,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 216,
+      "l": 216
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1732,7 +2220,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1743,7 +2232,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1760,7 +2250,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 142,
+      "l": 226
+     },
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -1772,7 +2268,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 180,
+      "l": 180
+     },
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -1785,7 +2287,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 250,
+      "l": 264
+     },
+     "kl": "V"
     },
     {
      "nr": "108",
@@ -1797,7 +2305,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 432,
+      "l": 432
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1805,7 +2319,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1823,7 +2338,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 291,
+      "l": 293
+     },
+     "kl": "V"
     },
     {
      "nr": "110",
@@ -1835,7 +2356,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 174,
+      "l": 174
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1843,7 +2370,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1860,7 +2388,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 325,
+      "l": 325
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1868,7 +2402,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1885,7 +2420,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 305,
+      "l": 305
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1893,7 +2434,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1904,7 +2446,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [],
@@ -1919,7 +2462,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1927,7 +2471,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1938,7 +2483,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [],
@@ -1953,7 +2499,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1961,11 +2508,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1976,11 +2525,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1998,7 +2549,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 133,
+      "l": 494
+     },
+     "kl": "V"
     },
     {
      "nr": "116",
@@ -2010,7 +2567,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 314,
+      "l": 314
+     },
+     "kl": "A"
     },
     {
      "nr": "117",
@@ -2023,7 +2586,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 184,
+      "l": 373
+     },
+     "kl": "V"
     },
     {
      "nr": "118",
@@ -2035,7 +2604,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 373,
+      "l": 373
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2043,11 +2618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2065,7 +2642,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 131,
+      "l": 205
+     },
+     "kl": "V"
     },
     {
      "nr": "120",
@@ -2077,7 +2660,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 205,
+      "l": 205
+     },
+     "kl": "A"
     },
     {
      "nr": "121",
@@ -2089,7 +2678,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 298,
+      "l": 298
+     },
+     "kl": "A"
     },
     {
      "nr": "122",
@@ -2101,7 +2696,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 271,
+      "l": 271
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2109,11 +2710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2130,7 +2733,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 499,
+      "l": 499
+     },
+     "kl": "A"
     },
     {
      "nr": "124",
@@ -2143,7 +2752,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 172,
+      "l": 409
+     },
+     "kl": "V"
     },
     {
      "nr": "125",
@@ -2155,7 +2770,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 229,
+      "l": 229
+     },
+     "kl": "A"
     },
     {
      "nr": "126",
@@ -2167,7 +2788,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 202,
+      "l": 202
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2175,11 +2802,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2196,7 +2825,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2204,11 +2834,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2225,7 +2857,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 514,
+      "l": 514
+     },
+     "kl": "A"
     },
     {
      "nr": "132",
@@ -2237,7 +2875,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 321,
+      "l": 321
+     },
+     "kl": "A"
     },
     {
      "nr": "133",
@@ -2249,7 +2893,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 314,
+      "l": 314
+     },
+     "kl": "A"
     },
     {
      "nr": "134",
@@ -2261,7 +2911,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2269,11 +2925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2284,11 +2942,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2305,7 +2965,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "136",
@@ -2317,7 +2983,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2325,11 +2997,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2346,7 +3020,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 297,
+      "l": 297
+     },
+     "kl": "A"
     },
     {
      "nr": "138",
@@ -2358,7 +3038,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 70,
+      "l": 70
+     },
+     "kl": "A"
     },
     {
      "nr": "139",
@@ -2370,7 +3057,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 171,
+      "l": 171
+     },
+     "kl": "A"
     },
     {
      "nr": "140",
@@ -2382,7 +3075,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 218,
+      "l": 218
+     },
+     "kl": "A"
     },
     {
      "nr": "141",
@@ -2394,7 +3093,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "142",
@@ -2406,7 +3111,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2414,11 +3125,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2435,7 +3148,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 521,
+      "l": 521
+     },
+     "kl": "A"
     },
     {
      "nr": "144",
@@ -2447,7 +3166,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2455,11 +3180,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2476,7 +3203,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 275,
+      "l": 275
+     },
+     "kl": "A"
     },
     {
      "nr": "146",
@@ -2488,7 +3221,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 206,
+      "l": 206
+     },
+     "kl": "A"
     },
     {
      "nr": "147",
@@ -2500,7 +3239,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 429,
+      "l": 429
+     },
+     "kl": "A"
     },
     {
      "nr": "148",
@@ -2512,7 +3257,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "149",
@@ -2524,7 +3275,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "150",
@@ -2536,7 +3293,13 @@
       }
      ],
      "absatz": "9",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 303,
+      "l": 303
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2544,11 +3307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2565,7 +3330,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "156",
@@ -2581,7 +3347,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 304,
+      "l": 304
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2589,11 +3361,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2610,7 +3384,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "158",
@@ -2623,7 +3398,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 263,
+      "l": 264
+     },
+     "kl": "V"
     },
     {
      "nr": "159",
@@ -2639,7 +3420,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 254,
+      "l": 266
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -2647,11 +3434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationshinweise"
+     "label": "3. Abschnitt: Informationshinweise",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2668,7 +3457,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 48,
+      "l": 48
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2676,11 +3472,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationshinweise"
+     "label": "3. Abschnitt: Informationshinweise",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2691,11 +3489,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationshinweise"
+     "label": "3. Abschnitt: Informationshinweise",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2712,7 +3512,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "162",
@@ -2724,7 +3525,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 244,
+      "l": 244
+     },
+     "kl": "A"
     },
     {
      "nr": "163",
@@ -2736,7 +3543,13 @@
       }
      ],
      "absatz": "2ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 130,
+      "l": 130
+     },
+     "kl": "A"
     },
     {
      "nr": "164",
@@ -2748,7 +3561,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 164,
+      "l": 164
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2756,11 +3575,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationshinweise"
+     "label": "3. Abschnitt: Informationshinweise",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [],
@@ -2775,7 +3596,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2783,11 +3605,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationshinweise"
+     "label": "3. Abschnitt: Informationshinweise",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2804,7 +3628,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2812,11 +3637,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationshinweise"
+     "label": "3. Abschnitt: Informationshinweise",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2833,7 +3660,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2841,7 +3669,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ergänzende Angaben zu Signalen"
+     "label": "6. Kapitel: Ergänzende Angaben zu Signalen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2858,7 +3687,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 333,
+      "l": 333
+     },
+     "kl": "A"
     },
     {
      "nr": "169",
@@ -2870,7 +3705,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 65,
+      "l": 65
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2878,7 +3719,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ergänzende Angaben zu Signalen"
+     "label": "6. Kapitel: Ergänzende Angaben zu Signalen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2895,7 +3737,14 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 4,
+      "it": 1,
+      "o": 198,
+      "l": 198
+     },
+     "kl": "A"
     },
     {
      "nr": "171",
@@ -2907,7 +3756,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 122,
+      "l": 122
+     },
+     "kl": "A"
     },
     {
      "nr": "172",
@@ -2920,7 +3775,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 6
+     "absatzIndex": 6,
+     "pos": {
+      "b": 6,
+      "o": 139,
+      "l": 139
+     },
+     "kl": "A"
     },
     {
      "nr": "173",
@@ -2932,7 +3793,13 @@
       }
      ],
      "absatz": "6ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 201,
+      "l": 201
+     },
+     "kl": "A"
     },
     {
      "nr": "174",
@@ -2948,7 +3815,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 114,
+      "l": 114
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2956,7 +3829,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ergänzende Angaben zu Signalen"
+     "label": "6. Kapitel: Ergänzende Angaben zu Signalen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2973,7 +3847,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "177",
@@ -2985,7 +3860,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 202,
+      "l": 489
+     },
+     "kl": "A"
     },
     {
      "nr": "178",
@@ -2997,7 +3878,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 170,
+      "l": 170
+     },
+     "kl": "A"
     },
     {
      "nr": "179",
@@ -3009,7 +3896,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 420,
+      "l": 420
+     },
+     "kl": "A"
     },
     {
      "nr": "180",
@@ -3025,7 +3918,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "181",
@@ -3037,7 +3936,13 @@
       }
      ],
      "absatz": "9",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 237,
+      "l": 237
+     },
+     "kl": "A"
     },
     {
      "nr": "182",
@@ -3050,7 +3955,13 @@
       }
      ],
      "absatz": "10",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 251,
+      "l": 320
+     },
+     "kl": "V"
     },
     {
      "nr": "183",
@@ -3062,7 +3973,13 @@
       }
      ],
      "absatz": "10",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 320,
+      "l": 320
+     },
+     "kl": "A"
     },
     {
      "nr": "184",
@@ -3074,7 +3991,13 @@
       }
      ],
      "absatz": "11",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 10,
+      "o": 133,
+      "l": 133
+     },
+     "kl": "A"
     },
     {
      "nr": "185",
@@ -3090,7 +4013,13 @@
       }
      ],
      "absatz": "12",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 11,
+      "o": 218,
+      "l": 218
+     },
+     "kl": "A"
     },
     {
      "nr": "186",
@@ -3102,7 +4031,13 @@
       }
      ],
      "absatz": "13",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 12,
+      "o": 300,
+      "l": 300
+     },
+     "kl": "A"
     },
     {
      "nr": "187",
@@ -3114,7 +4049,13 @@
       }
      ],
      "absatz": "14",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 13,
+      "o": 198,
+      "l": 198
+     },
+     "kl": "A"
     },
     {
      "nr": "188",
@@ -3126,7 +4067,13 @@
       }
      ],
      "absatz": "15",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 15,
+      "o": 427,
+      "l": 427
+     },
+     "kl": "A"
     },
     {
      "nr": "189",
@@ -3138,7 +4085,13 @@
       }
      ],
      "absatz": "16",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 16,
+      "o": 383,
+      "l": 383
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3146,7 +4099,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zeichen und Weisungen der Polizei"
+     "label": "7. Kapitel: Zeichen und Weisungen der Polizei",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3163,7 +4117,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 373,
+      "l": 373
+     },
+     "kl": "A"
     },
     {
      "nr": "191",
@@ -3175,7 +4135,8 @@
       }
      ],
      "absatz": "5",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "192",
@@ -3187,7 +4148,8 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -3195,7 +4157,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zeichen und Weisungen der Polizei"
+     "label": "7. Kapitel: Zeichen und Weisungen der Polizei",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3212,7 +4175,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "194",
@@ -3224,7 +4188,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "195",
@@ -3237,7 +4202,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 166,
+      "l": 253
+     },
+     "kl": "V"
     },
     {
      "nr": "196",
@@ -3250,7 +4222,14 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 96,
+      "l": 98
+     },
+     "kl": "V"
     },
     {
      "nr": "197",
@@ -3266,7 +4245,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "198",
@@ -3278,7 +4258,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "199",
@@ -3290,7 +4271,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 382,
+      "l": 382
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3298,7 +4285,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen"
+     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3315,7 +4303,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 95,
+      "l": 95
+     },
+     "kl": "A"
     },
     {
      "nr": "202",
@@ -3327,7 +4321,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 206,
+      "l": 206
+     },
+     "kl": "A"
     },
     {
      "nr": "203",
@@ -3340,7 +4340,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 225,
+      "l": 227
+     },
+     "kl": "V"
     },
     {
      "nr": "204",
@@ -3352,7 +4358,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 227,
+      "l": 227
+     },
+     "kl": "A"
     },
     {
      "nr": "205",
@@ -3364,7 +4376,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 301,
+      "l": 301
+     },
+     "kl": "A"
     },
     {
      "nr": "206",
@@ -3376,7 +4394,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 322,
+      "l": 322
+     },
+     "kl": "A"
     },
     {
      "nr": "207",
@@ -3388,7 +4412,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     },
     {
      "nr": "200",
@@ -3401,7 +4431,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen"
+     "sektion": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen",
+     "kl": "A"
     }
    ]
   },
@@ -3409,7 +4440,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen"
+     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3426,7 +4458,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "209",
@@ -3438,7 +4476,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 216,
+      "l": 216
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3446,7 +4491,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen"
+     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3463,7 +4509,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "212",
@@ -3475,7 +4522,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "213",
@@ -3487,7 +4535,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "214",
@@ -3499,7 +4548,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 222,
+      "l": 222
+     },
+     "kl": "A"
     },
     {
      "nr": "215",
@@ -3511,7 +4566,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 277,
+      "l": 277
+     },
+     "kl": "A"
     },
     {
      "nr": "216",
@@ -3523,7 +4584,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 293,
+      "l": 293
+     },
+     "kl": "A"
     },
     {
      "nr": "217",
@@ -3535,7 +4602,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 371,
+      "l": 371
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3543,7 +4616,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen"
+     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3560,7 +4634,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 195,
+      "l": 195
+     },
+     "kl": "A"
     },
     {
      "nr": "219",
@@ -3572,7 +4652,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 120,
+      "l": 120
+     },
+     "kl": "A"
     },
     {
      "nr": "220",
@@ -3584,7 +4671,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "221",
@@ -3596,7 +4684,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 111,
+      "l": 111
+     },
+     "kl": "A"
     },
     {
      "nr": "222",
@@ -3608,7 +4703,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 556,
+      "l": 556
+     },
+     "kl": "A"
     },
     {
      "nr": "223",
@@ -3620,7 +4721,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 263,
+      "l": 263
+     },
+     "kl": "A"
     },
     {
      "nr": "224",
@@ -3632,7 +4739,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 347,
+      "l": 347
+     },
+     "kl": "A"
     },
     {
      "nr": "225",
@@ -3648,7 +4761,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 426,
+      "l": 426
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3656,7 +4775,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3673,7 +4793,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 491,
+      "l": 491
+     },
+     "kl": "A"
     },
     {
      "nr": "227",
@@ -3685,7 +4811,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 214,
+      "l": 214
+     },
+     "kl": "G"
     },
     {
      "nr": "228",
@@ -3697,7 +4829,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 219,
+      "l": 219
+     },
+     "kl": "A"
     },
     {
      "nr": "229",
@@ -3709,7 +4847,13 @@
       }
      ],
      "absatz": "1quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 293,
+      "l": 293
+     },
+     "kl": "A"
     },
     {
      "nr": "230",
@@ -3721,7 +4865,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 423,
+      "l": 423
+     },
+     "kl": "A"
     },
     {
      "nr": "231",
@@ -3733,7 +4883,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 300,
+      "l": 300
+     },
+     "kl": "A"
     },
     {
      "nr": "232",
@@ -3745,7 +4901,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3753,7 +4915,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3770,7 +4933,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 205,
+      "l": 205
+     },
+     "kl": "A"
     },
     {
      "nr": "238",
@@ -3782,7 +4951,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 17,
+      "l": 17
+     },
+     "kl": "A"
     },
     {
      "nr": "239",
@@ -3794,7 +4970,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 241,
+      "l": 241
+     },
+     "kl": "A"
     },
     {
      "nr": "240",
@@ -3806,7 +4988,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 103,
+      "l": 166
+     },
+     "kl": "A"
     },
     {
      "nr": "241",
@@ -3818,7 +5006,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 390,
+      "l": 390
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3826,7 +5020,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3843,7 +5038,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "243",
@@ -3855,7 +5051,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 301,
+      "l": 301
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3863,7 +5065,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3880,7 +5083,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 251,
+      "l": 321
+     },
+     "kl": "A"
     },
     {
      "nr": "255",
@@ -3892,7 +5101,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 201,
+      "l": 272
+     },
+     "kl": "A"
     },
     {
      "nr": "256",
@@ -3904,7 +5119,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 465,
+      "l": 465
+     },
+     "kl": "A"
     },
     {
      "nr": "257",
@@ -3920,7 +5141,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 201,
+      "l": 201
+     },
+     "kl": "A"
     },
     {
      "nr": "258",
@@ -3932,7 +5159,14 @@
       }
      ],
      "absatz": "7",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 6,
+      "it": 1,
+      "o": 55,
+      "l": 55
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3940,7 +5174,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3957,7 +5192,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "260",
@@ -3969,7 +5205,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 147,
+      "l": 147
+     },
+     "kl": "A"
     },
     {
      "nr": "261",
@@ -3982,7 +5224,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 137,
+      "l": 139
+     },
+     "kl": "V"
     },
     {
      "nr": "262",
@@ -3994,7 +5243,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -4002,7 +5252,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4019,7 +5270,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 142,
+      "l": 142
+     },
+     "kl": "A"
     },
     {
      "nr": "264",
@@ -4031,7 +5288,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 503,
+      "l": 503
+     },
+     "kl": "A"
     },
     {
      "nr": "265",
@@ -4044,7 +5307,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 48,
+      "l": 166
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4052,7 +5321,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4063,7 +5333,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4080,7 +5351,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "267",
@@ -4092,7 +5364,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 182,
+      "l": 182
+     },
+     "kl": "A"
     },
     {
      "nr": "268",
@@ -4104,7 +5382,8 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "269",
@@ -4116,7 +5395,8 @@
       }
      ],
      "absatz": "4",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "270",
@@ -4128,7 +5408,8 @@
       }
      ],
      "absatz": "4",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     }
    ]
   },
@@ -4136,7 +5417,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken"
+     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4153,7 +5435,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4161,7 +5444,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken"
+     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4178,7 +5462,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 131,
+      "l": 131
+     },
+     "kl": "A"
     },
     {
      "nr": "275",
@@ -4190,7 +5480,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 249,
+      "l": 249
+     },
+     "kl": "A"
     },
     {
      "nr": "276",
@@ -4202,7 +5498,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 48,
+      "l": 48
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4210,7 +5512,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken"
+     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4227,7 +5530,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4235,7 +5539,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken"
+     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4252,7 +5557,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 143,
+      "l": 143
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4260,7 +5571,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4277,7 +5589,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 284,
+      "l": 284
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4285,7 +5603,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4296,7 +5615,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4313,7 +5633,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 111,
+      "l": 111
+     },
+     "kl": "A"
     },
     {
      "nr": "281",
@@ -4325,7 +5651,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 392,
+      "l": 392
+     },
+     "kl": "A"
     },
     {
      "nr": "282",
@@ -4337,7 +5669,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 348,
+      "l": 348
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4345,7 +5683,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4362,7 +5701,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "284",
@@ -4374,7 +5714,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 92,
+      "l": 92
+     },
+     "kl": "A"
     },
     {
      "nr": "285",
@@ -4386,7 +5732,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 263,
+      "l": 263
+     },
+     "kl": "A"
     },
     {
      "nr": "286",
@@ -4398,7 +5750,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 311,
+      "l": 311
+     },
+     "kl": "A"
     },
     {
      "nr": "287",
@@ -4411,7 +5769,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 4
+     "absatzIndex": 4,
+     "pos": {
+      "b": 4,
+      "o": 104,
+      "l": 104
+     },
+     "kl": "A"
     },
     {
      "nr": "288",
@@ -4423,7 +5787,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 397,
+      "l": 397
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4431,7 +5801,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4448,7 +5819,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4456,7 +5833,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4473,7 +5851,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4481,7 +5860,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4498,7 +5878,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 224,
+      "l": 224
+     },
+     "kl": "A"
     },
     {
      "nr": "296",
@@ -4510,7 +5896,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 143,
+      "l": 143
+     },
+     "kl": "A"
     },
     {
      "nr": "297",
@@ -4522,7 +5914,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 100,
+      "l": 100
+     },
+     "kl": "A"
     },
     {
      "nr": "298",
@@ -4534,7 +5932,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 151,
+      "l": 151
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4542,7 +5946,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [],
@@ -4557,7 +5962,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4565,7 +5971,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Bahnübergänge"
+     "label": "12. Kapitel: Bahnübergänge",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -4582,7 +5989,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "301",
@@ -4594,7 +6002,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -4602,7 +6011,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Bahnübergänge"
+     "label": "12. Kapitel: Bahnübergänge",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -4619,7 +6029,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "303",
@@ -4631,7 +6042,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 378,
+      "l": 378
+     },
+     "kl": "A"
     },
     {
      "nr": "304",
@@ -4643,7 +6060,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "305",
@@ -4655,7 +6078,14 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 47,
+      "l": 47
+     },
+     "kl": "A"
     },
     {
      "nr": "306",
@@ -4667,7 +6097,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4675,7 +6111,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Bahnübergänge"
+     "label": "12. Kapitel: Bahnübergänge",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [],
@@ -4690,7 +6127,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4698,7 +6136,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strassenreklamen"
+     "label": "13. Kapitel: Strassenreklamen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4715,7 +6154,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4723,7 +6163,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strassenreklamen"
+     "label": "13. Kapitel: Strassenreklamen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4740,7 +6181,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "310",
@@ -4752,7 +6194,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -4760,7 +6203,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strassenreklamen"
+     "label": "13. Kapitel: Strassenreklamen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4777,7 +6221,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "312",
@@ -4789,7 +6234,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "U"
     }
    ]
   },
@@ -4797,7 +6243,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strassenreklamen"
+     "label": "13. Kapitel: Strassenreklamen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4814,7 +6261,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "314",
@@ -4826,7 +6274,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 119,
+      "l": 119
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4834,7 +6289,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strassenreklamen"
+     "label": "13. Kapitel: Strassenreklamen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4851,7 +6307,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "316",
@@ -4863,7 +6320,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 302,
+      "l": 302
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4871,7 +6334,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strassenreklamen"
+     "label": "13. Kapitel: Strassenreklamen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4888,7 +6352,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4896,7 +6361,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -4913,7 +6379,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 74,
+      "l": 74
+     },
+     "kl": "A"
     },
     {
      "nr": "319",
@@ -4925,7 +6397,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 170,
+      "l": 170
+     },
+     "kl": "A"
     },
     {
      "nr": "320",
@@ -4941,7 +6419,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "321",
@@ -4953,7 +6437,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 234,
+      "l": 234
+     },
+     "kl": "A"
     },
     {
      "nr": "322",
@@ -4965,7 +6455,8 @@
       }
      ],
      "absatz": "7",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "323",
@@ -4977,7 +6468,13 @@
       }
      ],
      "absatz": "7bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 99,
+      "l": 99
+     },
+     "kl": "A"
     },
     {
      "nr": "324",
@@ -4989,7 +6486,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 10,
+      "o": 166,
+      "l": 327
+     },
+     "kl": "A"
     },
     {
      "nr": "325",
@@ -5005,7 +6508,13 @@
       }
      ],
      "absatz": "9",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 11,
+      "o": 451,
+      "l": 451
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5013,7 +6522,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -5030,7 +6540,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 473,
+      "l": 473
+     },
+     "kl": "A"
     },
     {
      "nr": "327",
@@ -5042,7 +6558,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 463,
+      "l": 463
+     },
+     "kl": "A"
     },
     {
      "nr": "328",
@@ -5058,7 +6580,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 143,
+      "l": 143
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5066,7 +6594,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -5083,7 +6612,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 325,
+      "l": 325
+     },
+     "kl": "A"
     },
     {
      "nr": "330",
@@ -5095,7 +6630,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 325,
+      "l": 325
+     },
+     "kl": "A"
     },
     {
      "nr": "331",
@@ -5111,7 +6652,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 783,
+      "l": 783
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5119,7 +6666,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -5137,7 +6685,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 225,
+      "l": 527
+     },
+     "kl": "V"
     },
     {
      "nr": "335",
@@ -5149,7 +6703,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 527,
+      "l": 527
+     },
+     "kl": "A"
     },
     {
      "nr": "336",
@@ -5161,7 +6721,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 389,
+      "l": 389
+     },
+     "kl": "A"
     },
     {
      "nr": "337",
@@ -5173,7 +6739,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 520,
+      "l": 520
+     },
+     "kl": "A"
     },
     {
      "nr": "338",
@@ -5185,7 +6757,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 228,
+      "l": 228
+     },
+     "kl": "A"
     },
     {
      "nr": "339",
@@ -5197,7 +6775,8 @@
       }
      ],
      "absatz": "5",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "340",
@@ -5209,7 +6788,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 239,
+      "l": 239
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5217,7 +6802,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -5234,7 +6820,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 308,
+      "l": 308
+     },
+     "kl": "A"
     },
     {
      "nr": "342",
@@ -5246,7 +6838,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5254,7 +6852,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -5271,7 +6870,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "344",
@@ -5283,7 +6883,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "345",
@@ -5295,7 +6896,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "346",
@@ -5308,7 +6910,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 382,
+      "l": 430
+     },
+     "kl": "V"
     },
     {
      "nr": "347",
@@ -5320,7 +6929,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5328,7 +6943,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5345,7 +6961,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 73,
+      "l": 73
+     },
+     "kl": "A"
     },
     {
      "nr": "349",
@@ -5357,7 +6980,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 111,
+      "l": 111
+     },
+     "kl": "A"
     },
     {
      "nr": "350",
@@ -5369,7 +6998,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 207,
+      "l": 207
+     },
+     "kl": "A"
     },
     {
      "nr": "351",
@@ -5381,7 +7016,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 80,
+      "l": 80
+     },
+     "kl": "A"
     },
     {
      "nr": "352",
@@ -5394,7 +7035,14 @@
       }
      ],
      "absatz": "3",
-     "item": "5"
+     "item": "5",
+     "pos": {
+      "b": 4,
+      "it": 6,
+      "o": 120,
+      "l": 121
+     },
+     "kl": "V"
     },
     {
      "nr": "353",
@@ -5406,7 +7054,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 4,
+      "it": 15,
+      "o": 73,
+      "l": 73
+     },
+     "kl": "A"
     },
     {
      "nr": "354",
@@ -5418,7 +7073,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 198,
+      "l": 198
+     },
+     "kl": "A"
     },
     {
      "nr": "355",
@@ -5430,7 +7091,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 161,
+      "l": 161
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5438,7 +7105,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5456,7 +7124,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 296,
+      "l": 307
+     },
+     "kl": "V"
     },
     {
      "nr": "357",
@@ -5468,7 +7142,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 307,
+      "l": 307
+     },
+     "kl": "A"
     },
     {
      "nr": "358",
@@ -5480,7 +7160,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "G"
     },
     {
      "nr": "359",
@@ -5492,7 +7173,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "360",
@@ -5504,7 +7186,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 182,
+      "l": 182
+     },
+     "kl": "A"
     },
     {
      "nr": "361",
@@ -5516,7 +7205,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 218,
+      "l": 218
+     },
+     "kl": "G"
     },
     {
      "nr": "362",
@@ -5528,7 +7223,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 328,
+      "l": 328
+     },
+     "kl": "A"
     },
     {
      "nr": "363",
@@ -5540,7 +7241,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     },
     {
      "nr": "364",
@@ -5552,7 +7259,8 @@
       }
      ],
      "absatz": "5",
-     "item": "a"
+     "item": "a",
+     "kl": "G"
     },
     {
      "nr": "365",
@@ -5564,7 +7272,8 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "kl": "G"
     },
     {
      "nr": "366",
@@ -5576,7 +7285,8 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "kl": "G"
     },
     {
      "nr": "367",
@@ -5588,7 +7298,8 @@
       }
      ],
      "absatz": "5",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "368",
@@ -5604,7 +7315,8 @@
       }
      ],
      "absatz": "5",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "369",
@@ -5616,7 +7328,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 214,
+      "l": 214
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5624,7 +7342,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5641,7 +7360,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 259,
+      "l": 259
+     },
+     "kl": "A"
     },
     {
      "nr": "371",
@@ -5653,7 +7378,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 322,
+      "l": 322
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5661,7 +7392,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5678,7 +7410,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 484,
+      "l": 484
+     },
+     "kl": "A"
     },
     {
      "nr": "373",
@@ -5690,7 +7428,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 117,
+      "l": 117
+     },
+     "kl": "A"
     },
     {
      "nr": "374",
@@ -5703,7 +7447,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 86,
+      "l": 161
+     },
+     "kl": "V"
     },
     {
      "nr": "375",
@@ -5715,7 +7465,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5723,7 +7479,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5740,7 +7497,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "377",
@@ -5752,7 +7510,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "378",
@@ -5764,7 +7528,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 319,
+      "l": 396
+     },
+     "kl": "A"
     },
     {
      "nr": "379",
@@ -5776,7 +7546,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 396,
+      "l": 396
+     },
+     "kl": "A"
     },
     {
      "nr": "380",
@@ -5788,7 +7564,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 160,
+      "l": 160
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5796,7 +7578,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5807,7 +7590,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5824,7 +7608,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 154
+     },
+     "kl": "A"
     },
     {
      "nr": "382",
@@ -5836,7 +7626,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5844,7 +7640,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -5861,7 +7658,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "384",
@@ -5873,7 +7671,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 9,
+      "l": 29
+     },
+     "kl": "A"
     },
     {
      "nr": "385",
@@ -5885,7 +7689,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -5893,7 +7698,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -5910,7 +7716,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5918,7 +7725,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -5952,7 +7760,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 34,
+      "l": 82
+     },
+     "kl": "Z"
     },
     {
      "nr": "389",
@@ -5965,7 +7779,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 11,
+      "l": 11
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5973,7 +7793,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -5984,7 +7805,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -5995,7 +7817,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -6012,7 +7835,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "333",
@@ -6024,7 +7848,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 224,
+      "l": 224
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6032,7 +7862,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [],
@@ -6051,7 +7882,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6059,7 +7891,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -6076,7 +7909,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6084,7 +7918,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -6101,7 +7936,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6109,7 +7945,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -6126,7 +7963,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6134,7 +7972,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -6151,7 +7990,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6159,7 +7999,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -6176,7 +8017,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6184,11 +8026,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6205,7 +8049,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6213,11 +8058,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6234,7 +8081,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "79",
@@ -6246,7 +8094,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 315,
+      "l": 315
+     },
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -6258,7 +8112,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 203,
+      "l": 203
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6266,11 +8126,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6287,7 +8149,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -6299,7 +8162,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 286,
+      "l": 286
+     },
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -6311,7 +8180,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 203,
+      "l": 203
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6319,7 +8194,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Begriffe und Geltungsbereich"
+     "label": "1. Kapitel: Begriffe und Geltungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -6340,7 +8216,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -6352,7 +8229,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 209,
+      "l": 209
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -6364,7 +8247,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 157,
+      "l": 157
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -6376,7 +8265,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 238,
+      "l": 238
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6384,11 +8279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -6405,7 +8302,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "129",
@@ -6417,7 +8315,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 373,
+      "l": 373
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6425,11 +8329,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -6446,7 +8352,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6454,11 +8361,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -6479,7 +8388,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6487,11 +8397,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -6508,7 +8420,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "153",
@@ -6521,7 +8434,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 51,
+      "l": 149
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6529,11 +8448,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -6550,7 +8471,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6558,7 +8480,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ergänzende Angaben zu Signalen"
+     "label": "6. Kapitel: Ergänzende Angaben zu Signalen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -6575,7 +8498,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6583,7 +8507,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen"
+     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -6600,7 +8525,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6608,7 +8534,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -6625,7 +8552,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "234",
@@ -6637,7 +8565,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 366,
+      "l": 366
+     },
+     "kl": "A"
     },
     {
      "nr": "235",
@@ -6649,7 +8583,14 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 192,
+      "l": 192
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6657,7 +8598,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -6674,7 +8616,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6682,7 +8625,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -6699,7 +8643,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "245",
@@ -6711,7 +8656,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 337,
+      "l": 337
+     },
+     "kl": "A"
     },
     {
      "nr": "246",
@@ -6723,7 +8674,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "247",
@@ -6735,7 +8692,8 @@
       }
      ],
      "absatz": "7",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "248",
@@ -6747,7 +8705,8 @@
       }
      ],
      "absatz": "7",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "249",
@@ -6759,7 +8718,8 @@
       }
      ],
      "absatz": "7",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "250",
@@ -6771,7 +8731,8 @@
       }
      ],
      "absatz": "7",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "251",
@@ -6783,7 +8744,8 @@
       }
      ],
      "absatz": "7",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "252",
@@ -6795,7 +8757,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 167,
+      "l": 167
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6803,7 +8771,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -6820,7 +8789,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6828,7 +8798,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -6845,7 +8816,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "272",
@@ -6857,7 +8829,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 539,
+      "l": 539
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6865,7 +8843,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -6882,7 +8861,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6890,7 +8870,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -6907,7 +8888,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6915,7 +8897,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -6932,7 +8915,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6940,7 +8924,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -6957,7 +8942,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

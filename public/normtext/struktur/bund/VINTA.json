@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "142.205",
   "titel": "Verordnung über die Integration von Ausländerinnen und Ausländern",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -47,7 +48,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -56,7 +58,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -67,7 +70,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -78,7 +82,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden"
+     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -89,7 +94,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden"
+     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -100,7 +106,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden"
+     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -111,7 +118,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden"
+     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -122,7 +130,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden"
+     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -133,7 +142,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden"
+     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -144,7 +154,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden"
+     "label": "2. Abschnitt: Aufgaben des Bundes, der Kantone und der Gemeinden",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -162,7 +173,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -170,7 +182,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Integrationserfordernisse für Ausländerinnen und Ausländer"
+     "label": "3. Abschnitt: Integrationserfordernisse für Ausländerinnen und Ausländer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [],
@@ -185,7 +198,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 316,
+      "l": 316
+     },
+     "kl": "A"
     }
    ]
   },
@@ -193,7 +212,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration"
+     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -204,7 +224,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration"
+     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -215,7 +236,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration"
+     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -226,7 +248,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration"
+     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -244,7 +267,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 190,
+      "l": 268
+     },
+     "kl": "V"
     },
     {
      "nr": "6",
@@ -256,7 +285,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 423,
+      "l": 423
+     },
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -268,7 +303,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 132,
+      "l": 132
+     },
+     "kl": "A"
     }
    ]
   },
@@ -276,7 +317,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration"
+     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -293,7 +335,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -305,7 +348,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 366,
+      "l": 366
+     },
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -318,7 +367,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 368,
+      "l": 376
+     },
+     "kl": "V"
     }
    ]
   },
@@ -326,7 +381,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration"
+     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -344,7 +400,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 94,
+      "l": 213
+     },
+     "kl": "V"
     }
    ]
   },
@@ -352,7 +414,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration"
+     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -369,7 +432,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 243,
+      "l": 243
+     },
+     "kl": "A"
     }
    ]
   },
@@ -377,7 +446,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration"
+     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -395,7 +465,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 199,
+      "l": 200
+     },
+     "kl": "V"
     }
    ]
   },
@@ -403,7 +479,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration"
+     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -414,7 +491,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration"
+     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -425,7 +503,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration"
+     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -436,7 +515,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Eidgenössische Migrationskommission"
+     "label": "5. Abschnitt: Eidgenössische Migrationskommission",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -447,7 +527,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Eidgenössische Migrationskommission"
+     "label": "5. Abschnitt: Eidgenössische Migrationskommission",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -458,7 +539,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Eidgenössische Migrationskommission"
+     "label": "5. Abschnitt: Eidgenössische Migrationskommission",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -469,7 +551,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Eidgenössische Migrationskommission"
+     "label": "5. Abschnitt: Eidgenössische Migrationskommission",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -480,7 +563,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Eidgenössische Migrationskommission"
+     "label": "5. Abschnitt: Eidgenössische Migrationskommission",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -491,7 +575,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Eidgenössische Migrationskommission"
+     "label": "5. Abschnitt: Eidgenössische Migrationskommission",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -502,7 +587,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Eidgenössische Migrationskommission"
+     "label": "5. Abschnitt: Eidgenössische Migrationskommission",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -513,7 +599,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Eidgenössische Migrationskommission"
+     "label": "5. Abschnitt: Eidgenössische Migrationskommission",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -524,7 +611,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -554,7 +642,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 35,
+      "l": 107
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -562,7 +656,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -573,7 +668,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration"
+     "label": "4. Abschnitt: Finanzielle Beiträge zur Förderung der Integration",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -590,7 +686,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -598,7 +695,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -615,7 +713,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "232.12",
   "titel": "Bundesgesetz über den Schutz von Design",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -51,7 +52,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "3",
@@ -63,7 +65,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -72,11 +75,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Schutzgegenstand und Schutzvoraussetzungen"
+     "label": "1. Abschnitt: Schutzgegenstand und Schutzvoraussetzungen",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -87,11 +92,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Schutzgegenstand und Schutzvoraussetzungen"
+     "label": "1. Abschnitt: Schutzgegenstand und Schutzvoraussetzungen",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -102,11 +109,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Schutzgegenstand und Schutzvoraussetzungen"
+     "label": "1. Abschnitt: Schutzgegenstand und Schutzvoraussetzungen",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -117,11 +126,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Schutzgegenstand und Schutzvoraussetzungen"
+     "label": "1. Abschnitt: Schutzgegenstand und Schutzvoraussetzungen",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -132,11 +143,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bestand des Designrechts"
+     "label": "2. Abschnitt: Bestand des Designrechts",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -147,11 +160,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bestand des Designrechts"
+     "label": "2. Abschnitt: Bestand des Designrechts",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -162,11 +177,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bestand des Designrechts"
+     "label": "2. Abschnitt: Bestand des Designrechts",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -177,11 +194,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schutzbereich und Wirkung"
+     "label": "3. Abschnitt: Schutzbereich und Wirkung",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -192,11 +211,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schutzbereich und Wirkung"
+     "label": "3. Abschnitt: Schutzbereich und Wirkung",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -217,7 +238,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 147,
+      "l": 147
+     },
+     "kl": "A"
     }
    ]
   },
@@ -225,11 +252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schutzbereich und Wirkung"
+     "label": "3. Abschnitt: Schutzbereich und Wirkung",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -240,11 +269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schutzbereich und Wirkung"
+     "label": "3. Abschnitt: Schutzbereich und Wirkung",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -255,11 +286,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schutzbereich und Wirkung"
+     "label": "3. Abschnitt: Schutzbereich und Wirkung",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -270,11 +303,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schutzbereich und Wirkung"
+     "label": "3. Abschnitt: Schutzbereich und Wirkung",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -285,11 +320,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schutzbereich und Wirkung"
+     "label": "3. Abschnitt: Schutzbereich und Wirkung",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -300,11 +337,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schutzbereich und Wirkung"
+     "label": "3. Abschnitt: Schutzbereich und Wirkung",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -315,11 +354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schutzbereich und Wirkung"
+     "label": "3. Abschnitt: Schutzbereich und Wirkung",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -330,11 +371,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schutzbereich und Wirkung"
+     "label": "3. Abschnitt: Schutzbereich und Wirkung",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -345,11 +388,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Vertretung"
+     "label": "4. Abschnitt: Vertretung",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [],
@@ -368,7 +413,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -376,11 +422,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Hinterlegung"
+     "label": "1. Abschnitt: Hinterlegung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -401,7 +449,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -417,7 +471,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 18,
+      "l": 108
+     },
+     "kl": "A"
     }
    ]
   },
@@ -425,11 +485,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Hinterlegung"
+     "label": "1. Abschnitt: Hinterlegung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -447,7 +509,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 62,
+      "l": 234
+     },
+     "kl": "V"
     }
    ]
   },
@@ -455,11 +523,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Hinterlegung"
+     "label": "1. Abschnitt: Hinterlegung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -470,11 +540,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Priorität"
+     "label": "2. Abschnitt: Priorität",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -507,7 +579,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 488
+     },
+     "kl": "V"
     }
    ]
   },
@@ -515,11 +593,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Priorität"
+     "label": "2. Abschnitt: Priorität",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -530,11 +610,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -556,7 +638,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
+     "sektion": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr",
+     "kl": "A"
     }
    ]
   },
@@ -564,11 +647,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -579,11 +664,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -594,11 +681,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -609,11 +698,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -624,11 +715,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -647,7 +740,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 248,
+      "l": 441
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -655,11 +754,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Gebühren"
+     "label": "4. Abschnitt: Gebühren",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [],
@@ -716,7 +817,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 215,
+      "l": 227
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -724,11 +831,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Weiterbehandlung bei Fristversäumnis"
+     "label": "1. Abschnitt: Weiterbehandlung bei Fristversäumnis",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -747,7 +856,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 165,
+      "l": 165
+     },
+     "kl": "A"
     }
    ]
   },
@@ -755,11 +870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -782,7 +899,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -790,11 +908,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zivilrechtlicher Schutz"
+     "label": "3. Abschnitt: Zivilrechtlicher Schutz",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -805,11 +925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zivilrechtlicher Schutz"
+     "label": "3. Abschnitt: Zivilrechtlicher Schutz",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -820,11 +942,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zivilrechtlicher Schutz"
+     "label": "3. Abschnitt: Zivilrechtlicher Schutz",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -842,7 +966,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 57,
+      "l": 196
+     },
+     "kl": "V"
     }
    ]
   },
@@ -850,11 +980,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zivilrechtlicher Schutz"
+     "label": "3. Abschnitt: Zivilrechtlicher Schutz",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -872,7 +1004,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 63,
+      "l": 212
+     },
+     "kl": "A"
     }
    ]
   },
@@ -880,11 +1018,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zivilrechtlicher Schutz"
+     "label": "3. Abschnitt: Zivilrechtlicher Schutz",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -903,7 +1043,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -911,11 +1052,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zivilrechtlicher Schutz"
+     "label": "3. Abschnitt: Zivilrechtlicher Schutz",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -936,7 +1079,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -944,11 +1088,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zivilrechtlicher Schutz"
+     "label": "3. Abschnitt: Zivilrechtlicher Schutz",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -959,11 +1105,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zivilrechtlicher Schutz"
+     "label": "3. Abschnitt: Zivilrechtlicher Schutz",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -984,7 +1132,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -992,11 +1141,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Strafrechtlicher Schutz"
+     "label": "4. Abschnitt: Strafrechtlicher Schutz",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1017,7 +1168,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 171,
+      "l": 171
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -1033,7 +1190,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 127,
+      "l": 127
+     },
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -1049,7 +1212,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 127,
+      "l": 127
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1057,11 +1226,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Strafrechtlicher Schutz"
+     "label": "4. Abschnitt: Strafrechtlicher Schutz",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1080,7 +1251,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 151,
+      "l": 183
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1088,11 +1265,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Strafrechtlicher Schutz"
+     "label": "4. Abschnitt: Strafrechtlicher Schutz",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1103,11 +1282,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Strafrechtlicher Schutz"
+     "label": "4. Abschnitt: Strafrechtlicher Schutz",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1118,11 +1299,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Strafrechtlicher Schutz"
+     "label": "4. Abschnitt: Strafrechtlicher Schutz",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1133,11 +1316,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1158,7 +1343,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -1175,7 +1361,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "sektion": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "kl": "A"
     }
    ]
   },
@@ -1183,11 +1370,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1208,7 +1397,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1216,11 +1406,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1241,7 +1433,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1249,11 +1442,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1274,7 +1469,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1282,7 +1478,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1293,7 +1490,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1304,7 +1502,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1315,7 +1514,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1327,7 +1527,8 @@
      "text": "BRB vom 8. März 2002",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1335,11 +1536,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1360,7 +1563,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1368,11 +1572,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Strafrechtlicher Schutz"
+     "label": "4. Abschnitt: Strafrechtlicher Schutz",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1393,7 +1599,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1401,11 +1608,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1426,7 +1635,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -1438,7 +1648,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 56,
+      "l": 215
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1446,11 +1662,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1471,7 +1689,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1479,11 +1698,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1504,7 +1725,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -1520,7 +1742,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -1536,7 +1759,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -1552,7 +1781,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1560,11 +1795,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1585,14 +1822,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "38",
      "text": "Heute: Art. 48 Abs. 3 und 4.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 213,
+      "l": 235
+     },
+     "kl": "G"
     }
    ]
   },
@@ -1600,11 +1844,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1625,7 +1871,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1633,11 +1880,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1658,7 +1907,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1666,11 +1916,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1691,7 +1943,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1699,11 +1952,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rechtsschutz"
+     "label": "3. Kapitel: Rechtsschutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1724,7 +1979,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

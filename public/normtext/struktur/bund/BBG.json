@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "412.10",
   "titel": "Bundesgesetz über die Berufsbildung",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -45,7 +46,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -54,7 +56,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -65,7 +68,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -76,7 +80,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -105,7 +110,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -113,7 +119,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -124,7 +131,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -135,7 +143,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -146,7 +155,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -157,7 +167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -168,7 +179,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -179,7 +191,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -190,7 +203,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -201,11 +215,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -216,11 +232,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -231,11 +249,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -252,7 +272,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 171,
+      "l": 266
+     },
+     "kl": "V"
     }
    ]
   },
@@ -260,11 +286,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Struktur"
+     "label": "2. Abschnitt: Struktur",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -281,7 +309,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 81,
+      "l": 82
+     },
+     "kl": "V"
     },
     {
      "nr": "6",
@@ -297,7 +331,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 82,
+      "l": 82
+     },
+     "kl": "A"
     }
    ]
   },
@@ -305,11 +345,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Struktur"
+     "label": "2. Abschnitt: Struktur",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -320,11 +362,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Struktur"
+     "label": "2. Abschnitt: Struktur",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -335,11 +379,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Struktur"
+     "label": "2. Abschnitt: Struktur",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -350,11 +396,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Struktur"
+     "label": "2. Abschnitt: Struktur",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -371,7 +419,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 66,
+      "l": 234
+     },
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -395,7 +449,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -403,11 +463,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anbieter"
+     "label": "3. Abschnitt: Anbieter",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -418,11 +480,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anbieter"
+     "label": "3. Abschnitt: Anbieter",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -433,11 +497,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anbieter"
+     "label": "3. Abschnitt: Anbieter",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -448,11 +514,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anbieter"
+     "label": "3. Abschnitt: Anbieter",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -463,11 +531,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Aufsicht"
+     "label": "4. Abschnitt: Aufsicht",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": []
@@ -476,11 +546,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Berufliche Grundbildung"
+     "label": "2. Kapitel: Berufliche Grundbildung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Eidgenössische Berufsmaturität"
+     "label": "5. Abschnitt: Eidgenössische Berufsmaturität",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": []
@@ -489,7 +561,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Höhere Berufsbildung"
+     "label": "3. Kapitel: Höhere Berufsbildung",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -500,7 +573,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Höhere Berufsbildung"
+     "label": "3. Kapitel: Höhere Berufsbildung",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -511,7 +585,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Höhere Berufsbildung"
+     "label": "3. Kapitel: Höhere Berufsbildung",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -528,7 +603,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 382,
+      "l": 413
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -544,7 +625,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 413,
+      "l": 413
+     },
+     "kl": "A"
     }
    ]
   },
@@ -552,7 +639,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Höhere Berufsbildung"
+     "label": "3. Kapitel: Höhere Berufsbildung",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -569,7 +657,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 74,
+      "l": 356
+     },
+     "kl": "A"
     }
    ]
   },
@@ -577,7 +671,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Berufsorientierte Weiterbildung"
+     "label": "4. Kapitel: Berufsorientierte Weiterbildung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -588,7 +683,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Berufsorientierte Weiterbildung"
+     "label": "4. Kapitel: Berufsorientierte Weiterbildung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -599,7 +695,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Berufsorientierte Weiterbildung"
+     "label": "4. Kapitel: Berufsorientierte Weiterbildung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -616,7 +713,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 167,
+      "l": 189
+     },
+     "kl": "V"
     }
    ]
   },
@@ -624,11 +727,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel"
+     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -639,11 +744,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel"
+     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -654,11 +761,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel"
+     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -669,11 +778,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel"
+     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -684,11 +795,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel"
+     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berufliche Grundbildung"
+     "label": "2. Abschnitt: Berufliche Grundbildung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -699,11 +812,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel"
+     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berufliche Grundbildung"
+     "label": "2. Abschnitt: Berufliche Grundbildung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -714,11 +829,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel"
+     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berufliche Grundbildung"
+     "label": "2. Abschnitt: Berufliche Grundbildung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -739,7 +856,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -747,11 +870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel"
+     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berufliche Grundbildung"
+     "label": "2. Abschnitt: Berufliche Grundbildung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -762,11 +887,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel"
+     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berufliche Grundbildung"
+     "label": "2. Abschnitt: Berufliche Grundbildung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -777,11 +904,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel"
+     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Höhere Berufsbildung"
+     "label": "3. Abschnitt: Höhere Berufsbildung",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -792,11 +921,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel"
+     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Höhere Berufsbildung"
+     "label": "3. Abschnitt: Höhere Berufsbildung",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -807,11 +938,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel"
+     "label": "5. Kapitel: Qualifikationsverfahren, Ausweise und Titel",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Höhere Berufsbildung"
+     "label": "3. Abschnitt: Höhere Berufsbildung",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -822,7 +955,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bildung von Berufsbildungsverantwortlichen"
+     "label": "6. Kapitel: Bildung von Berufsbildungsverantwortlichen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -833,7 +967,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bildung von Berufsbildungsverantwortlichen"
+     "label": "6. Kapitel: Bildung von Berufsbildungsverantwortlichen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -844,7 +979,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bildung von Berufsbildungsverantwortlichen"
+     "label": "6. Kapitel: Bildung von Berufsbildungsverantwortlichen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -855,7 +991,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bildung von Berufsbildungsverantwortlichen"
+     "label": "6. Kapitel: Bildung von Berufsbildungsverantwortlichen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -876,7 +1013,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -888,7 +1026,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 163,
+      "l": 173
+     },
+     "kl": "V"
     }
    ]
   },
@@ -896,7 +1040,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Berufs-, Studien- und Laufbahnberatung"
+     "label": "7. Kapitel: Berufs-, Studien- und Laufbahnberatung",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -907,7 +1052,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Berufs-, Studien- und Laufbahnberatung"
+     "label": "7. Kapitel: Berufs-, Studien- und Laufbahnberatung",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -918,7 +1064,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Berufs-, Studien- und Laufbahnberatung"
+     "label": "7. Kapitel: Berufs-, Studien- und Laufbahnberatung",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -935,7 +1082,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 167,
+      "l": 168
+     },
+     "kl": "V"
     }
    ]
   },
@@ -943,11 +1096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds"
+     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung"
+     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -968,7 +1123,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -976,11 +1132,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds"
+     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung"
+     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1001,7 +1159,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 331,
+      "l": 331
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1009,11 +1173,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds"
+     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung"
+     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1024,11 +1190,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds"
+     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung"
+     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1039,11 +1207,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds"
+     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung"
+     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1054,11 +1224,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds"
+     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung"
+     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1069,11 +1241,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds"
+     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung"
+     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1084,11 +1258,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds"
+     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung"
+     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1109,7 +1285,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -1125,7 +1302,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -1141,7 +1319,8 @@
       }
      ],
      "absatz": "1",
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -1157,7 +1336,8 @@
       }
      ],
      "absatz": "1",
-     "item": "ater"
+     "item": "ater",
+     "kl": "A"
     }
    ]
   },
@@ -1165,11 +1345,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds"
+     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berufsbildungsfonds"
+     "label": "2. Abschnitt: Berufsbildungsfonds",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [],
@@ -1188,7 +1370,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 179,
+      "l": 179
+     },
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -1200,7 +1388,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 280,
+      "l": 347
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1208,11 +1402,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug"
+     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rechtsmittel"
+     "label": "1. Abschnitt: Rechtsmittel",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [],
@@ -1235,7 +1431,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -1255,7 +1452,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -1263,11 +1461,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug"
+     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Strafbestimmungen"
+     "label": "2. Abschnitt: Strafbestimmungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -1278,11 +1478,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug"
+     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Strafbestimmungen"
+     "label": "2. Abschnitt: Strafbestimmungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -1299,7 +1501,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 62,
+      "l": 115
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1307,11 +1515,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug"
+     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Strafbestimmungen"
+     "label": "2. Abschnitt: Strafbestimmungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -1322,11 +1532,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug"
+     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Vollzug"
+     "label": "3. Abschnitt: Vollzug",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -1337,11 +1549,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug"
+     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Vollzug"
+     "label": "3. Abschnitt: Vollzug",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -1352,11 +1566,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug"
+     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Vollzug"
+     "label": "3. Abschnitt: Vollzug",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -1378,7 +1594,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 151,
+      "l": 151
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1386,11 +1608,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug"
+     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Vollzug"
+     "label": "3. Abschnitt: Vollzug",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -1411,7 +1635,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -1427,7 +1652,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1435,7 +1666,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1446,7 +1678,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1457,7 +1690,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1469,7 +1703,8 @@
      "text": "BRB vom 19. Nov. 2003",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1477,7 +1712,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bildung von Berufsbildungsverantwortlichen"
+     "label": "6. Kapitel: Bildung von Berufsbildungsverantwortlichen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -1504,7 +1740,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1512,11 +1749,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds"
+     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung"
+     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1537,7 +1776,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1545,11 +1785,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds"
+     "label": "8. Kapitel: Beteiligung des Bundes an den Kosten der Berufsbildung; Berufsbildungsfonds",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung"
+     "label": "1. Abschnitt: Beteiligung des Bundes an den Kosten der Berufsbildung",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1570,7 +1812,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -1586,7 +1829,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -1594,11 +1838,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug"
+     "label": "9. Kapitel: Rechtsmittel, Strafbestimmungen, Vollzug",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Vollzug"
+     "label": "3. Abschnitt: Vollzug",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [],
@@ -1617,7 +1863,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1625,7 +1872,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1646,7 +1894,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

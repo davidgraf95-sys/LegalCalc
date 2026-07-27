@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "211.412.11",
   "titel": "Bundesgesetz über das bäuerliche Bodenrecht",
@@ -48,7 +48,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "2",
@@ -60,7 +61,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "3",
@@ -72,7 +74,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -81,15 +84,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zweck, Gegenstand und Geltungsbereich"
+     "label": "1. Kapitel: Zweck, Gegenstand und Geltungsbereich",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Gegenstand"
+     "label": "1. Abschnitt: Zweck und Gegenstand",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": []
@@ -98,15 +104,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zweck, Gegenstand und Geltungsbereich"
+     "label": "1. Kapitel: Zweck, Gegenstand und Geltungsbereich",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Geltungsbereich"
+     "label": "2. Abschnitt: Geltungsbereich",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -123,7 +132,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 87,
+      "l": 99
+     },
+     "kl": "V"
     },
     {
      "nr": "5",
@@ -139,7 +155,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 56,
+      "l": 56
+     },
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -155,7 +178,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 153,
+      "l": 153
+     },
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -175,7 +204,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 217,
+      "l": 217
+     },
+     "kl": "A"
     }
    ]
   },
@@ -183,15 +218,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zweck, Gegenstand und Geltungsbereich"
+     "label": "1. Kapitel: Zweck, Gegenstand und Geltungsbereich",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Geltungsbereich"
+     "label": "2. Abschnitt: Geltungsbereich",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -216,7 +254,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 107,
+      "l": 107
+     },
+     "kl": "A"
     }
    ]
   },
@@ -224,15 +268,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zweck, Gegenstand und Geltungsbereich"
+     "label": "1. Kapitel: Zweck, Gegenstand und Geltungsbereich",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Geltungsbereich"
+     "label": "2. Abschnitt: Geltungsbereich",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -243,15 +290,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zweck, Gegenstand und Geltungsbereich"
+     "label": "1. Kapitel: Zweck, Gegenstand und Geltungsbereich",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Geltungsbereich"
+     "label": "2. Abschnitt: Geltungsbereich",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -276,7 +326,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -284,11 +335,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Begriffe"
+     "label": "2. Kapitel: Begriffe",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -299,11 +352,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Begriffe"
+     "label": "2. Kapitel: Begriffe",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -324,7 +379,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 418,
+      "l": 418
+     },
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -344,7 +405,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 236,
+      "l": 236
+     },
+     "kl": "A"
     }
    ]
   },
@@ -352,11 +419,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Begriffe"
+     "label": "2. Kapitel: Begriffe",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -377,7 +446,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -389,7 +459,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 202,
+      "l": 316
+     },
+     "kl": "V"
     }
    ]
   },
@@ -397,11 +474,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Begriffe"
+     "label": "2. Kapitel: Begriffe",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -422,7 +501,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 173,
+      "l": 173
+     },
+     "kl": "A"
     }
    ]
   },
@@ -430,11 +515,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Begriffe"
+     "label": "2. Kapitel: Begriffe",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -463,7 +550,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 196,
+      "l": 196
+     },
+     "kl": "A"
     }
    ]
   },
@@ -471,15 +564,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -490,15 +586,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -519,7 +618,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 49,
+      "l": 242
+     },
+     "kl": "A"
     }
    ]
   },
@@ -527,15 +632,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -546,15 +654,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -565,15 +676,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -584,15 +698,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -611,7 +728,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -619,15 +737,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -638,15 +759,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -657,15 +781,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -676,15 +803,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -695,15 +825,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -714,15 +847,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -741,7 +877,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -749,15 +886,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -768,15 +908,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -787,15 +930,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Kaufsrecht von Verwandten"
+     "label": "2. Abschnitt: Kaufsrecht von Verwandten",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -806,15 +952,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Kaufsrecht von Verwandten"
+     "label": "2. Abschnitt: Kaufsrecht von Verwandten",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -835,7 +984,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -843,15 +999,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Kaufsrecht von Verwandten"
+     "label": "2. Abschnitt: Kaufsrecht von Verwandten",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -862,15 +1021,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Gewinnanspruch der Miterben"
+     "label": "3. Abschnitt: Gewinnanspruch der Miterben",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -881,15 +1043,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Gewinnanspruch der Miterben"
+     "label": "3. Abschnitt: Gewinnanspruch der Miterben",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -910,7 +1075,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -918,15 +1084,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Gewinnanspruch der Miterben"
+     "label": "3. Abschnitt: Gewinnanspruch der Miterben",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -937,15 +1106,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Gewinnanspruch der Miterben"
+     "label": "3. Abschnitt: Gewinnanspruch der Miterben",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -956,15 +1128,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Gewinnanspruch der Miterben"
+     "label": "3. Abschnitt: Gewinnanspruch der Miterben",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -975,15 +1150,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Gewinnanspruch der Miterben"
+     "label": "3. Abschnitt: Gewinnanspruch der Miterben",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -994,15 +1172,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Gewinnanspruch der Miterben"
+     "label": "3. Abschnitt: Gewinnanspruch der Miterben",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1019,7 +1200,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 258,
+      "l": 310
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1027,15 +1214,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erbteilung"
+     "label": "1. Kapitel: Erbteilung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Gewinnanspruch der Miterben"
+     "label": "3. Abschnitt: Gewinnanspruch der Miterben",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1046,11 +1236,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufhebung von vertraglich begründetem gemeinschaftlichem Eigentum"
+     "label": "2. Kapitel: Aufhebung von vertraglich begründetem gemeinschaftlichem Eigentum",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1067,7 +1259,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 60,
+      "l": 73
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1075,11 +1273,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufhebung von vertraglich begründetem gemeinschaftlichem Eigentum"
+     "label": "2. Kapitel: Aufhebung von vertraglich begründetem gemeinschaftlichem Eigentum",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1100,7 +1300,14 @@
       }
      ],
      "absatz": "1",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 114,
+      "l": 114
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -1112,7 +1319,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 149,
+      "l": 197
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1120,11 +1333,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufhebung von vertraglich begründetem gemeinschaftlichem Eigentum"
+     "label": "2. Kapitel: Aufhebung von vertraglich begründetem gemeinschaftlichem Eigentum",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1135,11 +1350,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufhebung von vertraglich begründetem gemeinschaftlichem Eigentum"
+     "label": "2. Kapitel: Aufhebung von vertraglich begründetem gemeinschaftlichem Eigentum",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1150,15 +1367,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Verfügungsbeschränkungen bei Veräusserungen"
+     "label": "1. Abschnitt: Allgemeine Verfügungsbeschränkungen bei Veräusserungen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1175,7 +1395,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 57,
+      "l": 70
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1183,15 +1409,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Verfügungsbeschränkungen bei Veräusserungen"
+     "label": "1. Abschnitt: Allgemeine Verfügungsbeschränkungen bei Veräusserungen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1208,7 +1437,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 282,
+      "l": 402
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1216,15 +1451,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Vorkaufsrecht der Verwandten"
+     "label": "2. Abschnitt: Vorkaufsrecht der Verwandten",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1235,15 +1473,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Vorkaufsrecht der Verwandten"
+     "label": "2. Abschnitt: Vorkaufsrecht der Verwandten",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1254,15 +1495,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Vorkaufsrecht der Verwandten"
+     "label": "2. Abschnitt: Vorkaufsrecht der Verwandten",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1273,15 +1517,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Vorkaufsrecht der Verwandten"
+     "label": "2. Abschnitt: Vorkaufsrecht der Verwandten",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1292,15 +1539,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Vorkaufsrecht der Verwandten"
+     "label": "2. Abschnitt: Vorkaufsrecht der Verwandten",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1311,15 +1561,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Vorkaufsrecht des Pächters"
+     "label": "3. Abschnitt: Vorkaufsrecht des Pächters",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1336,7 +1589,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 94,
+      "l": 145
+     },
+     "kl": "V"
     },
     {
      "nr": "29",
@@ -1352,7 +1612,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 115,
+      "l": 115
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1360,15 +1626,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Vorkaufsrecht des Pächters"
+     "label": "3. Abschnitt: Vorkaufsrecht des Pächters",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1389,7 +1658,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1397,15 +1667,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Vorkaufsrecht an Miteigentumsanteilen"
+     "label": "4. Abschnitt: Vorkaufsrecht an Miteigentumsanteilen",
+     "eId": "tit_2/chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -1420,7 +1693,14 @@
       }
      ],
      "absatz": "1",
-     "item": "3"
+     "item": "3",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 47,
+      "l": 48
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1428,15 +1708,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen zu den bundesrechtlichen Vorkaufsrechten"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen zu den bundesrechtlichen Vorkaufsrechten",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [],
@@ -1455,7 +1738,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1463,15 +1747,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen zu den bundesrechtlichen Vorkaufsrechten"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen zu den bundesrechtlichen Vorkaufsrechten",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1482,15 +1769,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen zu den bundesrechtlichen Vorkaufsrechten"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen zu den bundesrechtlichen Vorkaufsrechten",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1501,15 +1791,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen zu den bundesrechtlichen Vorkaufsrechten"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen zu den bundesrechtlichen Vorkaufsrechten",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1520,15 +1813,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen zu den bundesrechtlichen Vorkaufsrechten"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen zu den bundesrechtlichen Vorkaufsrechten",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1539,15 +1835,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen zu den bundesrechtlichen Vorkaufsrechten"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen zu den bundesrechtlichen Vorkaufsrechten",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1558,15 +1857,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Kantonale Vorkaufsrechte"
+     "label": "6. Abschnitt: Kantonale Vorkaufsrechte",
+     "eId": "tit_2/chap_3/sec_6"
     }
    ],
    "marginalie": []
@@ -1575,15 +1877,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Titel: Privatrechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veräusserungsverträge"
+     "label": "3. Kapitel: Veräusserungsverträge",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Grenzverbesserungen"
+     "label": "7. Abschnitt: Grenzverbesserungen",
+     "eId": "tit_2/chap_3/sec_7"
     }
    ],
    "marginalie": []
@@ -1592,11 +1897,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Realteilung landwirtschaftlicher Gewerbe und Zerstückelung landwirtschaftlicher Grundstücke"
+     "label": "1. Kapitel: Realteilung landwirtschaftlicher Gewerbe und Zerstückelung landwirtschaftlicher Grundstücke",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1617,7 +1924,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 224,
+      "l": 224
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1625,11 +1938,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Realteilung landwirtschaftlicher Gewerbe und Zerstückelung landwirtschaftlicher Grundstücke"
+     "label": "1. Kapitel: Realteilung landwirtschaftlicher Gewerbe und Zerstückelung landwirtschaftlicher Grundstücke",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1640,11 +1955,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Realteilung landwirtschaftlicher Gewerbe und Zerstückelung landwirtschaftlicher Grundstücke"
+     "label": "1. Kapitel: Realteilung landwirtschaftlicher Gewerbe und Zerstückelung landwirtschaftlicher Grundstücke",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1665,7 +1982,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 103,
+      "l": 103
+     },
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -1681,7 +2004,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -1697,7 +2027,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "37",
@@ -1713,7 +2044,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -1725,7 +2057,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 428,
+      "l": 453
+     },
+     "kl": "V"
     },
     {
      "nr": "39",
@@ -1749,7 +2088,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -1765,7 +2105,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -1781,7 +2122,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -1797,7 +2139,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -1813,7 +2156,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 103,
+      "l": 103
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1821,11 +2171,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1836,11 +2188,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1861,7 +2215,8 @@
       }
      ],
      "absatz": null,
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -1877,7 +2232,8 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -1889,7 +2245,14 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 96,
+      "l": 282
+     },
+     "kl": "V"
     },
     {
      "nr": "47",
@@ -1909,7 +2272,8 @@
       }
      ],
      "absatz": null,
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     }
    ]
   },
@@ -1917,11 +2281,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1942,7 +2308,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -1958,7 +2331,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 173,
+      "l": 173
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1966,11 +2345,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1991,7 +2372,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -2003,7 +2385,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 117,
+      "l": 180
+     },
+     "kl": "V"
     },
     {
      "nr": "52",
@@ -2019,7 +2408,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     }
    ]
   },
@@ -2027,11 +2417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2042,11 +2434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2067,7 +2461,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 91,
+      "l": 91
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2075,11 +2475,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2090,11 +2492,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [],
@@ -2113,7 +2517,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2121,11 +2526,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "2. Kapitel: Erwerb von landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2136,11 +2543,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zivil- und verwaltungsrechtliche Folgen"
+     "label": "3. Kapitel: Zivil- und verwaltungsrechtliche Folgen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2151,11 +2560,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zivil- und verwaltungsrechtliche Folgen"
+     "label": "3. Kapitel: Zivil- und verwaltungsrechtliche Folgen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2166,11 +2577,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken"
+     "label": "3. Titel: Öffentlich-rechtliche Beschränkungen des Verkehrs mit landwirtschaftlichen Gewerben und Grundstücken",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zivil- und verwaltungsrechtliche Folgen"
+     "label": "3. Kapitel: Zivil- und verwaltungsrechtliche Folgen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2187,7 +2600,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 114,
+      "l": 251
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2195,7 +2614,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung"
+     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2216,7 +2636,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 267,
+      "l": 267
+     },
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -2232,7 +2658,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 234,
+      "l": 234
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2240,7 +2672,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung"
+     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2257,7 +2690,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 108,
+      "l": 244
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2265,7 +2704,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung"
+     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2282,7 +2722,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 67,
+      "l": 158
+     },
+     "kl": "V"
     },
     {
      "nr": "60",
@@ -2298,7 +2745,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -2310,7 +2758,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 98,
+      "l": 157
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2318,7 +2773,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung"
+     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2329,7 +2785,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung"
+     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2340,7 +2797,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung"
+     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2357,7 +2815,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 91,
+      "l": 570
+     },
+     "kl": "V"
     },
     {
      "nr": "63",
@@ -2373,7 +2837,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 570,
+      "l": 570
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2381,7 +2851,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung"
+     "label": "4. Titel: Massnahmen zur Verhütung der Überschuldung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2392,15 +2863,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahren, Rechtsschutz"
+     "label": "5. Titel: Verfahren, Rechtsschutz",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensvorschriften"
+     "label": "1. Kapitel: Verfahrensvorschriften",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2411,15 +2885,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahren, Rechtsschutz"
+     "label": "5. Titel: Verfahren, Rechtsschutz",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensvorschriften"
+     "label": "1. Kapitel: Verfahrensvorschriften",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2430,15 +2907,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahren, Rechtsschutz"
+     "label": "5. Titel: Verfahren, Rechtsschutz",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensvorschriften"
+     "label": "1. Kapitel: Verfahrensvorschriften",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -2453,7 +2933,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2461,15 +2942,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahren, Rechtsschutz"
+     "label": "5. Titel: Verfahren, Rechtsschutz",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensvorschriften"
+     "label": "1. Kapitel: Verfahrensvorschriften",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2480,15 +2964,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahren, Rechtsschutz"
+     "label": "5. Titel: Verfahren, Rechtsschutz",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensvorschriften"
+     "label": "1. Kapitel: Verfahrensvorschriften",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2499,15 +2986,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahren, Rechtsschutz"
+     "label": "5. Titel: Verfahren, Rechtsschutz",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensvorschriften"
+     "label": "1. Kapitel: Verfahrensvorschriften",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2525,7 +3015,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 121,
+      "l": 362
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2533,15 +3029,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahren, Rechtsschutz"
+     "label": "5. Titel: Verfahren, Rechtsschutz",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensvorschriften"
+     "label": "1. Kapitel: Verfahrensvorschriften",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Besondere Bestimmungen"
+     "label": "2. Abschnitt: Besondere Bestimmungen",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2552,15 +3051,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahren, Rechtsschutz"
+     "label": "5. Titel: Verfahren, Rechtsschutz",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensvorschriften"
+     "label": "1. Kapitel: Verfahrensvorschriften",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Besondere Bestimmungen"
+     "label": "2. Abschnitt: Besondere Bestimmungen",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2581,7 +3083,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -2597,7 +3105,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 283,
+      "l": 283
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2605,11 +3119,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahren, Rechtsschutz"
+     "label": "5. Titel: Verfahren, Rechtsschutz",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechtsschutz"
+     "label": "2. Kapitel: Rechtsschutz",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [],
@@ -2628,7 +3144,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -2644,7 +3161,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 103,
+      "l": 103
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2652,11 +3175,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahren, Rechtsschutz"
+     "label": "5. Titel: Verfahren, Rechtsschutz",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechtsschutz"
+     "label": "2. Kapitel: Rechtsschutz",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -2677,7 +3202,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -2690,7 +3216,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 186,
+      "l": 187
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2698,11 +3230,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -2723,7 +3257,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 142,
+      "l": 142
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2731,11 +3271,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -2756,7 +3298,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2764,11 +3312,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Änderung und Aufhebung von Bundesrecht"
+     "label": "2. Kapitel: Änderung und Aufhebung von Bundesrecht",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -2786,7 +3336,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2794,11 +3350,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Änderung und Aufhebung von Bundesrecht"
+     "label": "2. Kapitel: Änderung und Aufhebung von Bundesrecht",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -2827,7 +3385,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 34,
+      "l": 84
+     },
+     "kl": "Z"
     },
     {
      "nr": "76",
@@ -2847,7 +3412,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 38,
+      "l": 92
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -2855,11 +3427,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsrecht"
+     "label": "3. Kapitel: Übergangsrecht",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -2870,11 +3444,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsrecht"
+     "label": "3. Kapitel: Übergangsrecht",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -2885,11 +3461,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Referendum und Inkrafttreten"
+     "label": "4. Kapitel: Referendum und Inkrafttreten",
+     "eId": "tit_6/chap_4"
     }
    ],
    "marginalie": [],
@@ -2899,7 +3477,8 @@
      "text": "BRB vom 3. Febr. 1993",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2907,11 +3486,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Begriffe"
+     "label": "2. Kapitel: Begriffe",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -2932,7 +3513,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2940,11 +3522,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsrecht"
+     "label": "3. Kapitel: Übergangsrecht",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -2965,7 +3549,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2973,11 +3558,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsrecht"
+     "label": "3. Kapitel: Übergangsrecht",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -2998,7 +3585,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "364.3",
   "titel": "Verordnung über die Anwendung polizeilichen Zwangs und polizeilicher Massnahmen im Zuständigkeitsbereich des Bundes",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -58,7 +60,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -67,7 +70,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand und Geltungsbereich"
+     "label": "1. Kapitel: Gegenstand und Geltungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": []
@@ -76,11 +80,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufgabenbezogener Einsatz von Zwangsmitteln"
+     "label": "1. Abschnitt: Aufgabenbezogener Einsatz von Zwangsmitteln",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -91,11 +97,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufgabenbezogener Einsatz von Zwangsmitteln"
+     "label": "1. Abschnitt: Aufgabenbezogener Einsatz von Zwangsmitteln",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -106,11 +114,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufgabenbezogener Einsatz von Zwangsmitteln"
+     "label": "1. Abschnitt: Aufgabenbezogener Einsatz von Zwangsmitteln",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -121,11 +131,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufgabenbezogener Einsatz von Zwangsmitteln"
+     "label": "1. Abschnitt: Aufgabenbezogener Einsatz von Zwangsmitteln",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -136,11 +148,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Hilfsmittel"
+     "label": "2. Abschnitt: Hilfsmittel",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": []
@@ -149,11 +163,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Waffen und Munition"
+     "label": "3. Abschnitt: Waffen und Munition",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -164,11 +180,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Waffen und Munition"
+     "label": "3. Abschnitt: Waffen und Munition",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -186,7 +204,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 126,
+      "l": 145
+     },
+     "kl": "V"
     }
    ]
   },
@@ -194,11 +218,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Waffen und Munition"
+     "label": "3. Abschnitt: Waffen und Munition",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -209,11 +235,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Waffen und Munition"
+     "label": "3. Abschnitt: Waffen und Munition",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -224,11 +252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Waffen und Munition"
+     "label": "3. Abschnitt: Waffen und Munition",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -239,11 +269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Waffen und Munition"
+     "label": "3. Abschnitt: Waffen und Munition",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -254,11 +286,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Prüfung der Einsatztauglichkeit und Beschaffung von Zwangsmitteln"
+     "label": "4. Abschnitt: Prüfung der Einsatztauglichkeit und Beschaffung von Zwangsmitteln",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -269,11 +303,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Prüfung der Einsatztauglichkeit und Beschaffung von Zwangsmitteln"
+     "label": "4. Abschnitt: Prüfung der Einsatztauglichkeit und Beschaffung von Zwangsmitteln",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -284,11 +320,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -299,11 +337,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -314,11 +354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -329,11 +371,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -344,11 +388,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -359,11 +405,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -374,11 +422,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -389,11 +439,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -404,11 +456,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -419,26 +473,30 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
-    "Besondere Bestimmungen für den Transport von Kindernund Frauen"
+    "Besondere Bestimmungen für den Transport von Kindern und Frauen"
    ]
   },
   "25": {
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen für Transporte im Inland"
+     "label": "2. Abschnitt: Besondere Bestimmungen für Transporte im Inland",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -449,11 +507,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen für Transporte im Inland"
+     "label": "2. Abschnitt: Besondere Bestimmungen für Transporte im Inland",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -464,11 +524,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen für Rückführungen auf dem Luftweg"
+     "label": "3. Abschnitt: Besondere Bestimmungen für Rückführungen auf dem Luftweg",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -485,7 +547,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 63,
+      "l": 184
+     },
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -497,7 +565,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 163,
+      "l": 259
+     },
+     "kl": "V"
     },
     {
      "nr": "8",
@@ -509,7 +583,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 259,
+      "l": 259
+     },
+     "kl": "A"
     }
    ]
   },
@@ -517,11 +597,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen für Rückführungen auf dem Luftweg"
+     "label": "3. Abschnitt: Besondere Bestimmungen für Rückführungen auf dem Luftweg",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -532,11 +614,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen für Rückführungen auf dem Luftweg"
+     "label": "3. Abschnitt: Besondere Bestimmungen für Rückführungen auf dem Luftweg",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -547,11 +631,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen für Rückführungen auf dem Luftweg"
+     "label": "3. Abschnitt: Besondere Bestimmungen für Rückführungen auf dem Luftweg",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -562,11 +648,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen"
+     "label": "3. Kapitel: Transport von Personen, die Freiheitsbeschränkungen unterstehen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen für Rückführungen auf dem Luftweg"
+     "label": "3. Abschnitt: Besondere Bestimmungen für Rückführungen auf dem Luftweg",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -577,7 +665,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Ausbildung"
+     "label": "4. Kapitel: Ausbildung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -588,7 +677,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Ausbildung"
+     "label": "4. Kapitel: Ausbildung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -599,7 +689,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Ausbildung"
+     "label": "4. Kapitel: Ausbildung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -610,11 +701,12 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Ausbildung"
+     "label": "4. Kapitel: Ausbildung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
-    "Anforderungen an die Ausbildung des Personalsprivater Sicherheitsunternehmen"
+    "Anforderungen an die Ausbildung des Personals privater Sicherheitsunternehmen"
    ],
    "fussnoten": [
     {
@@ -627,7 +719,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -639,7 +732,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 236,
+      "l": 293
+     },
+     "kl": "V"
     },
     {
      "nr": "11",
@@ -651,7 +750,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 293,
+      "l": 293
+     },
+     "kl": "A"
     }
    ]
   },
@@ -659,7 +764,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -670,7 +776,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -681,7 +788,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -692,7 +800,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -703,11 +812,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zwangsmittel"
+     "label": "2. Kapitel: Zwangsmittel",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufgabenbezogener Einsatz von Zwangsmitteln"
+     "label": "1. Abschnitt: Aufgabenbezogener Einsatz von Zwangsmitteln",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -724,7 +835,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

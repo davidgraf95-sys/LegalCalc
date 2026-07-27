@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-10",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "822.113",
   "titel": "Verordnung 3 zum Arbeitsgesetz (ArGV 3)",
@@ -32,7 +32,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -44,7 +45,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -53,7 +55,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -70,7 +73,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 114,
+      "l": 131
+     },
+     "kl": "A"
     },
     {
      "nr": "4",
@@ -82,7 +91,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 213,
+      "l": 214
+     },
+     "kl": "V"
     }
    ]
   },
@@ -90,7 +105,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -107,7 +123,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 217,
+      "l": 217
+     },
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -119,7 +141,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -127,7 +150,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -144,7 +168,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 296,
+      "l": 296
+     },
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -156,7 +186,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 176,
+      "l": 176
+     },
+     "kl": "A"
     }
    ]
   },
@@ -164,7 +200,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -181,7 +218,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -189,7 +227,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -206,7 +245,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 527,
+      "l": 527
+     },
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -218,7 +263,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 100,
+      "l": 100
+     },
+     "kl": "A"
     }
    ]
   },
@@ -226,7 +277,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -243,7 +295,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -251,7 +304,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -268,7 +322,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 157,
+      "l": 157
+     },
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -280,7 +340,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 147,
+      "l": 251
+     },
+     "kl": "V"
     },
     {
      "nr": "15",
@@ -292,7 +358,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -300,7 +372,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -317,7 +390,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 45,
+      "l": 45
+     },
+     "kl": "A"
     }
    ]
   },
@@ -325,7 +405,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -336,7 +417,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -353,7 +435,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 230,
+      "l": 230
+     },
+     "kl": "A"
     }
    ]
   },
@@ -361,11 +449,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gebäude und Räume"
+     "label": "1. Abschnitt: Gebäude und Räume",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -376,11 +466,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gebäude und Räume"
+     "label": "1. Abschnitt: Gebäude und Räume",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -391,11 +483,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gebäude und Räume"
+     "label": "1. Abschnitt: Gebäude und Räume",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -406,11 +500,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gebäude und Räume"
+     "label": "1. Abschnitt: Gebäude und Räume",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -421,11 +517,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -442,7 +540,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -454,7 +553,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 165,
+      "l": 165
+     },
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -467,7 +572,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+     "sektion": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen",
+     "kl": "A"
     }
    ]
   },
@@ -475,11 +581,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -490,11 +598,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -511,7 +621,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 114,
+      "l": 114
+     },
+     "kl": "A"
     }
    ]
   },
@@ -519,11 +635,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -534,11 +652,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -553,7 +673,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -561,11 +682,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -576,11 +699,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -591,11 +716,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen"
+     "label": "2. Abschnitt: Beleuchtung, Raumklima, Lärm und Vibrationen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -612,7 +739,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -624,7 +752,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 57,
+      "l": 57
+     },
+     "kl": "A"
     }
    ]
   },
@@ -632,11 +766,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Arbeitsplätze"
+     "label": "3. Abschnitt: Arbeitsplätze",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -653,7 +789,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -661,11 +798,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Arbeitsplätze"
+     "label": "3. Abschnitt: Arbeitsplätze",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -676,11 +815,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Lasten"
+     "label": "4. Abschnitt: Lasten",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [],
@@ -695,7 +836,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -703,11 +845,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Überwachung der Arbeitnehmer"
+     "label": "5. Abschnitt: Überwachung der Arbeitnehmer",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": []
@@ -716,11 +860,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Persönliche Schutzausrüstung und Arbeitskleidung"
+     "label": "6. Abschnitt: Persönliche Schutzausrüstung und Arbeitskleidung",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -737,7 +883,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 343,
+      "l": 343
+     },
+     "kl": "A"
     }
    ]
   },
@@ -745,11 +897,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Persönliche Schutzausrüstung und Arbeitskleidung"
+     "label": "6. Abschnitt: Persönliche Schutzausrüstung und Arbeitskleidung",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -760,11 +914,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe"
+     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -775,11 +931,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe"
+     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -790,11 +948,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe"
+     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -805,11 +965,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe"
+     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -820,11 +982,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe"
+     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -835,11 +999,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe"
+     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -850,11 +1016,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe"
+     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -865,11 +1033,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe"
+     "label": "7. Abschnitt: Garderoben, Waschanlagen, Toiletten, Ess- und Aufenthaltsräume, Erste Hilfe",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -880,11 +1050,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Instandhaltung und Reinigung"
+     "label": "8. Abschnitt: Instandhaltung und Reinigung",
+     "eId": "chap_2/sec_8"
     }
    ],
    "marginalie": [],
@@ -900,7 +1072,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "8. Abschnitt: Instandhaltung und Reinigung"
+     "sektion": "8. Abschnitt: Instandhaltung und Reinigung",
+     "kl": "A"
     }
    ]
   },
@@ -908,7 +1081,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schlussbestimmungen"
+     "label": "3. Kapitel: Schlussbestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -925,7 +1099,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 43,
+      "l": 119
+     },
+     "kl": "A"
     }
    ]
   },
@@ -933,7 +1113,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schlussbestimmungen"
+     "label": "3. Kapitel: Schlussbestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -950,7 +1131,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 142,
+      "l": 142
+     },
+     "kl": "A"
     }
    ]
   },
@@ -958,7 +1145,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schlussbestimmungen"
+     "label": "3. Kapitel: Schlussbestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -973,7 +1161,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -981,7 +1170,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schlussbestimmungen"
+     "label": "3. Kapitel: Schlussbestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1002,7 +1192,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 36,
+      "l": 140
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1010,11 +1206,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes"
+     "label": "2. Kapitel: Besondere Anforderungen des Gesundheitsschutzes",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Sorgfältiger Umgang mit Chemikalien"
+     "label": "3a. Abschnitt: Sorgfältiger Umgang mit Chemikalien",
+     "eId": "chap_2/sec_3_a"
     }
    ],
    "marginalie": [],
@@ -1029,7 +1227,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 144,
+      "l": 436
+     },
+     "kl": "V"
     },
     {
      "nr": "28",
@@ -1041,7 +1245,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 382,
+      "l": 436
+     },
+     "kl": "V"
     },
     {
      "nr": "26",
@@ -1054,7 +1264,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Abschnitt: Sorgfältiger Umgang mit Chemikalien"
+     "sektion": "3a. Abschnitt: Sorgfältiger Umgang mit Chemikalien",
+     "kl": "A"
     }
    ]
   }

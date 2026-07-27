@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "173.320.2",
   "titel": "Reglement über die Kosten und Entschädigungen vor dem Bundesverwaltungsgericht",
@@ -32,7 +32,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -41,7 +42,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Kosten"
+     "label": "1. Kapitel: Kosten",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -52,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Kosten"
+     "label": "1. Kapitel: Kosten",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -69,7 +72,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 227,
+      "l": 227
+     },
+     "kl": "A"
     }
    ]
   },
@@ -77,7 +86,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Kosten"
+     "label": "1. Kapitel: Kosten",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -88,7 +98,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Kosten"
+     "label": "1. Kapitel: Kosten",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -105,7 +116,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -113,7 +125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Kosten"
+     "label": "1. Kapitel: Kosten",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -124,7 +137,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Kosten"
+     "label": "1. Kapitel: Kosten",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -142,7 +156,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 144,
+      "l": 231
+     },
+     "kl": "V"
     },
     {
      "nr": "5",
@@ -154,7 +174,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -162,11 +183,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen"
+     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -183,7 +206,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 36,
+      "l": 36
+     },
+     "kl": "A"
     }
    ]
   },
@@ -191,11 +220,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen"
+     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -212,7 +243,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -220,11 +252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen"
+     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -241,7 +275,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -253,7 +288,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -261,11 +297,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen"
+     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -276,11 +314,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen"
+     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -297,7 +337,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -309,7 +350,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 267,
+      "l": 297
+     },
+     "kl": "V"
     }
    ]
   },
@@ -317,11 +364,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen"
+     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -338,7 +387,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -346,11 +396,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen"
+     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -367,7 +419,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -375,11 +428,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen"
+     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -390,11 +445,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen"
+     "label": "1. Abschnitt: Entschädigungen an Parteien und amtliche Vertreter und Vertreterinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -405,11 +462,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entschädigungen an Zeugen und Zeuginnen sowie Auskunftspersonen"
+     "label": "2. Abschnitt: Entschädigungen an Zeugen und Zeuginnen sowie Auskunftspersonen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -420,11 +479,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entschädigungen an Zeugen und Zeuginnen sowie Auskunftspersonen"
+     "label": "2. Abschnitt: Entschädigungen an Zeugen und Zeuginnen sowie Auskunftspersonen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -435,11 +496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entschädigungen an Zeugen und Zeuginnen sowie Auskunftspersonen"
+     "label": "2. Abschnitt: Entschädigungen an Zeugen und Zeuginnen sowie Auskunftspersonen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -456,7 +519,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 70,
+      "l": 70
+     },
+     "kl": "A"
     }
    ]
   },
@@ -464,11 +533,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entschädigungen an Zeugen und Zeuginnen sowie Auskunftspersonen"
+     "label": "2. Abschnitt: Entschädigungen an Zeugen und Zeuginnen sowie Auskunftspersonen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -479,11 +550,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Entschädigung an Sachverständige, Dolmetscher und Dolmetscherinnen sowie Übersetzer und Übersetzerinnen"
+     "label": "3. Abschnitt: Entschädigung an Sachverständige, Dolmetscher und Dolmetscherinnen sowie Übersetzer und Übersetzerinnen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -494,11 +567,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigungen"
+     "label": "2. Kapitel: Entschädigungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Entschädigung an Sachverständige, Dolmetscher und Dolmetscherinnen sowie Übersetzer und Übersetzerinnen"
+     "label": "3. Abschnitt: Entschädigung an Sachverständige, Dolmetscher und Dolmetscherinnen sowie Übersetzer und Übersetzerinnen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -509,7 +584,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schlussbestimmungen"
+     "label": "3. Kapitel: Schlussbestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -527,7 +603,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 35,
+      "l": 117
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -535,7 +617,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schlussbestimmungen"
+     "label": "3. Kapitel: Schlussbestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -546,7 +629,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Kosten"
+     "label": "1. Kapitel: Kosten",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -563,7 +647,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "161.1",
   "titel": "Bundesgesetz über die politischen Rechte",
@@ -38,7 +38,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -51,7 +52,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -67,7 +69,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "4",
@@ -79,7 +82,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -88,7 +92,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Stimmrecht und Stimmabgabe"
+     "label": "1. Titel: Stimmrecht und Stimmabgabe",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [],
@@ -107,7 +112,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -115,7 +121,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Stimmrecht und Stimmabgabe"
+     "label": "1. Titel: Stimmrecht und Stimmabgabe",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -136,7 +143,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -144,7 +152,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Stimmrecht und Stimmabgabe"
+     "label": "1. Titel: Stimmrecht und Stimmabgabe",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -165,7 +174,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 165,
+      "l": 165
+     },
+     "kl": "A"
     }
    ]
   },
@@ -173,7 +188,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Stimmrecht und Stimmabgabe"
+     "label": "1. Titel: Stimmrecht und Stimmabgabe",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -184,7 +200,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Stimmrecht und Stimmabgabe"
+     "label": "1. Titel: Stimmrecht und Stimmabgabe",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -205,7 +222,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 168,
+      "l": 168
+     },
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -221,7 +244,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 85,
+      "l": 176
+     },
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -237,7 +266,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 176,
+      "l": 176
+     },
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -253,7 +288,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 7,
+      "l": 7
+     },
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -269,7 +310,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 295,
+      "l": 295
+     },
+     "kl": "A"
     }
    ]
   },
@@ -277,7 +324,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Stimmrecht und Stimmabgabe"
+     "label": "1. Titel: Stimmrecht und Stimmabgabe",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -288,7 +336,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Stimmrecht und Stimmabgabe"
+     "label": "1. Titel: Stimmrecht und Stimmabgabe",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -299,7 +348,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Stimmrecht und Stimmabgabe"
+     "label": "1. Titel: Stimmrecht und Stimmabgabe",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -320,7 +370,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 120,
+      "l": 120
+     },
+     "kl": "A"
     }
    ]
   },
@@ -328,7 +384,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Stimmrecht und Stimmabgabe"
+     "label": "1. Titel: Stimmrecht und Stimmabgabe",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [],
@@ -347,7 +404,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -355,7 +413,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Abstimmungen"
+     "label": "2. Titel: Abstimmungen",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -376,7 +435,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 311,
+      "l": 311
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -392,7 +457,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 217,
+      "l": 217
+     },
+     "kl": "A"
     }
    ]
   },
@@ -400,7 +471,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Abstimmungen"
+     "label": "2. Titel: Abstimmungen",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -421,7 +493,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -437,7 +510,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 800,
+      "l": 800
+     },
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -453,7 +532,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 158,
+      "l": 455
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -469,7 +554,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 455,
+      "l": 455
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -485,7 +576,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 455,
+      "l": 455
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -501,7 +598,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 220,
+      "l": 220
+     },
+     "kl": "A"
     }
    ]
   },
@@ -509,7 +612,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Abstimmungen"
+     "label": "2. Titel: Abstimmungen",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -530,7 +634,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -546,7 +651,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 12,
+      "l": 161
+     },
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -562,7 +673,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 161,
+      "l": 161
+     },
+     "kl": "A"
     }
    ]
   },
@@ -570,7 +687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Abstimmungen"
+     "label": "2. Titel: Abstimmungen",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -591,7 +709,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -607,7 +726,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 132,
+      "l": 132
+     },
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -623,7 +748,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 216,
+      "l": 216
+     },
+     "kl": "A"
     }
    ]
   },
@@ -631,7 +762,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Abstimmungen"
+     "label": "2. Titel: Abstimmungen",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -652,7 +784,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 279,
+      "l": 279
+     },
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -668,7 +806,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 310,
+      "l": 310
+     },
+     "kl": "A"
     }
    ]
   },
@@ -676,7 +820,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Abstimmungen"
+     "label": "2. Titel: Abstimmungen",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -701,7 +846,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 210,
+      "l": 210
+     },
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -717,7 +868,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 380,
+      "l": 380
+     },
+     "kl": "A"
     }
    ]
   },
@@ -725,11 +882,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -750,7 +909,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -763,7 +923,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 225,
+      "l": 336
+     },
+     "kl": "V"
     }
    ]
   },
@@ -771,11 +937,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -796,7 +964,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -813,7 +982,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 88,
+      "l": 88
+     },
+     "kl": "A"
     }
    ]
   },
@@ -821,11 +996,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [],
@@ -848,7 +1025,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -856,11 +1034,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -881,7 +1061,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 137,
+      "l": 137
+     },
+     "kl": "A"
     }
    ]
   },
@@ -889,11 +1075,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -904,15 +1092,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -933,7 +1124,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -949,7 +1141,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 185,
+      "l": 185
+     },
+     "kl": "A"
     }
    ]
   },
@@ -957,15 +1155,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -986,7 +1187,14 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 10,
+      "l": 10
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -1002,7 +1210,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 137,
+      "l": 137
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1010,15 +1224,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1040,7 +1257,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 301,
+      "l": 301
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1048,15 +1271,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1077,7 +1303,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -1093,7 +1320,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 39,
+      "l": 39
+     },
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -1117,7 +1351,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 391,
+      "l": 391
+     },
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -1133,7 +1373,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 181,
+      "l": 181
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1141,15 +1387,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1160,15 +1409,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1179,15 +1431,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1208,7 +1463,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1216,15 +1472,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -1243,7 +1502,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1251,15 +1511,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1280,7 +1543,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 301,
+      "l": 301
+     },
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -1296,7 +1565,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 280,
+      "l": 411
+     },
+     "kl": "U"
     },
     {
      "nr": "57",
@@ -1312,7 +1587,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 292,
+      "l": 292
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1320,15 +1601,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1339,15 +1623,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1368,7 +1655,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1376,15 +1664,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1405,7 +1696,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -1429,7 +1721,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 180,
+      "l": 180
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1437,15 +1735,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1466,7 +1767,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 239,
+      "l": 239
+     },
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -1482,7 +1789,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1490,15 +1803,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse"
+     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1519,7 +1835,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1527,15 +1844,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse"
+     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1546,15 +1866,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse"
+     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1575,7 +1898,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1583,15 +1907,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse"
+     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1612,7 +1939,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 244,
+      "l": 244
+     },
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -1628,7 +1961,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 157,
+      "l": 301
+     },
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -1644,7 +1983,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 301,
+      "l": 301
+     },
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -1660,7 +2005,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 72,
+      "l": 72
+     },
+     "kl": "U"
     }
    ]
   },
@@ -1668,15 +2019,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse"
+     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1697,7 +2051,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -1713,7 +2068,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 139,
+      "l": 139
+     },
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -1729,7 +2091,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 199,
+      "l": 199
+     },
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -1745,7 +2113,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 149,
+      "l": 149
+     },
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -1761,7 +2135,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 161,
+      "l": 161
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1769,15 +2149,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse"
+     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1798,7 +2181,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -1814,7 +2198,8 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -1822,15 +2207,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse"
+     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1851,7 +2239,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1867,7 +2256,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 177,
+      "l": 177
+     },
+     "kl": "A"
     },
     {
      "nr": "79",
@@ -1883,7 +2278,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1891,15 +2292,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse"
+     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1920,7 +2324,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1928,15 +2333,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse"
+     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1957,7 +2365,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 143,
+      "l": 143
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1965,15 +2379,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse"
+     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1984,15 +2401,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse"
+     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2003,15 +2423,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse"
+     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2032,7 +2455,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2040,15 +2464,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse"
+     "label": "2. Abschnitt: Wahlakt und Ermittlung der Ergebnisse",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2069,7 +2496,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 104,
+      "l": 104
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2077,11 +2510,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Mehrheitswahl"
+     "label": "3. Kapitel: Mehrheitswahl",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2102,7 +2537,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 10,
+      "l": 10
+     },
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -2126,7 +2568,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 199,
+      "l": 199
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2134,11 +2582,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Mehrheitswahl"
+     "label": "3. Kapitel: Mehrheitswahl",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2159,7 +2609,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2167,11 +2618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Mehrheitswahl"
+     "label": "3. Kapitel: Mehrheitswahl",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2192,7 +2645,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "88",
@@ -2208,7 +2662,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 148,
+      "l": 148
+     },
+     "kl": "A"
     },
     {
      "nr": "89",
@@ -2224,7 +2684,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 161,
+      "l": 161
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2232,11 +2698,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Mehrheitswahl"
+     "label": "3. Kapitel: Mehrheitswahl",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2257,7 +2725,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2265,11 +2734,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Mehrheitswahl"
+     "label": "3. Kapitel: Mehrheitswahl",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2290,7 +2761,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2298,11 +2770,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Veröffentlichung der Ergebnisse und Wahlprüfung"
+     "label": "4. Kapitel: Veröffentlichung der Ergebnisse und Wahlprüfung",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2323,7 +2797,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 222,
+      "l": 222
+     },
+     "kl": "A"
     },
     {
      "nr": "93",
@@ -2339,7 +2819,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 107,
+      "l": 184
+     },
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -2355,7 +2841,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 184,
+      "l": 184
+     },
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -2371,7 +2863,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 248,
+      "l": 248
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2379,11 +2877,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Veröffentlichung der Ergebnisse und Wahlprüfung"
+     "label": "4. Kapitel: Veröffentlichung der Ergebnisse und Wahlprüfung",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2404,7 +2904,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 354,
+      "l": 354
+     },
+     "kl": "A"
     },
     {
      "nr": "97",
@@ -2420,7 +2926,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 168,
+      "l": 168
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2428,11 +2940,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Änderungen während der Amtsdauer"
+     "label": "5. Kapitel: Änderungen während der Amtsdauer",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -2443,11 +2957,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Änderungen während der Amtsdauer"
+     "label": "5. Kapitel: Änderungen während der Amtsdauer",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -2458,11 +2974,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Änderungen während der Amtsdauer"
+     "label": "5. Kapitel: Änderungen während der Amtsdauer",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -2483,7 +3001,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 347,
+      "l": 347
+     },
+     "kl": "A"
     },
     {
      "nr": "99",
@@ -2499,7 +3023,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 173,
+      "l": 173
+     },
+     "kl": "A"
     },
     {
      "nr": "100",
@@ -2515,7 +3045,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 71,
+      "l": 230
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2523,11 +3059,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Änderungen während der Amtsdauer"
+     "label": "5. Kapitel: Änderungen während der Amtsdauer",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -2548,7 +3086,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2556,11 +3095,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Obligatorisches Referendum"
+     "label": "1. Kapitel: Obligatorisches Referendum",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2582,7 +3123,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Titel: Referendum"
+     "sektion": "4. Titel: Referendum",
+     "kl": "U"
     }
    ]
   },
@@ -2590,15 +3132,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_4/chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -2617,7 +3162,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -2634,7 +3180,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Allgemeines"
+     "sektion": "1. Abschnitt: Allgemeines",
+     "kl": "A"
     }
    ]
   },
@@ -2642,15 +3189,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Volksreferendum"
+     "label": "2. Abschnitt: Volksreferendum",
+     "eId": "tit_4/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2671,7 +3221,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 150,
+      "l": 150
+     },
+     "kl": "A"
     },
     {
      "nr": "110",
@@ -2687,7 +3243,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "111",
@@ -2700,7 +3257,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 149,
+      "l": 242
+     },
+     "kl": "V"
     },
     {
      "nr": "112",
@@ -2716,7 +3280,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 284,
+      "l": 284
+     },
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -2733,7 +3303,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Volksreferendum"
+     "sektion": "2. Abschnitt: Volksreferendum",
+     "kl": "A"
     }
    ]
   },
@@ -2741,15 +3312,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Volksreferendum"
+     "label": "2. Abschnitt: Volksreferendum",
+     "eId": "tit_4/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2770,7 +3344,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 184,
+      "l": 184
+     },
+     "kl": "A"
     },
     {
      "nr": "115",
@@ -2786,7 +3366,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 284,
+      "l": 284
+     },
+     "kl": "A"
     },
     {
      "nr": "116",
@@ -2802,7 +3388,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2810,15 +3402,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Volksreferendum"
+     "label": "2. Abschnitt: Volksreferendum",
+     "eId": "tit_4/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2839,7 +3434,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 200,
+      "l": 200
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2847,15 +3448,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Volksreferendum"
+     "label": "2. Abschnitt: Volksreferendum",
+     "eId": "tit_4/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2866,15 +3470,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Volksreferendum"
+     "label": "2. Abschnitt: Volksreferendum",
+     "eId": "tit_4/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2895,7 +3502,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "119",
@@ -2911,7 +3519,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2919,15 +3533,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Volksreferendum"
+     "label": "2. Abschnitt: Volksreferendum",
+     "eId": "tit_4/chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -2946,7 +3563,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2954,15 +3572,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Volksreferendum"
+     "label": "2. Abschnitt: Volksreferendum",
+     "eId": "tit_4/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2983,7 +3604,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 411,
+      "l": 411
+     },
+     "kl": "A"
     },
     {
      "nr": "122",
@@ -2999,7 +3626,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "123",
@@ -3015,7 +3643,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "124",
@@ -3031,7 +3660,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 170,
+      "l": 170
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3039,15 +3674,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Kantonsreferendum"
+     "label": "3. Abschnitt: Kantonsreferendum",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -3068,7 +3706,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -3085,7 +3724,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Kantonsreferendum"
+     "sektion": "3. Abschnitt: Kantonsreferendum",
+     "kl": "A"
     }
    ]
   },
@@ -3093,7 +3733,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Volksinitiative"
+     "label": "5. Titel: Volksinitiative",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -3114,7 +3755,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 147,
+      "l": 147
+     },
+     "kl": "A"
     },
     {
      "nr": "132",
@@ -3130,7 +3777,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "133",
@@ -3150,7 +3798,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "134",
@@ -3166,7 +3815,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "135",
@@ -3179,7 +3829,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 132,
+      "l": 225
+     },
+     "kl": "V"
     },
     {
      "nr": "136",
@@ -3195,7 +3852,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "137",
@@ -3211,7 +3869,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 51,
+      "l": 51
+     },
+     "kl": "A"
     },
     {
      "nr": "130",
@@ -3228,7 +3892,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Titel: Volksinitiative"
+     "sektion": "5. Titel: Volksinitiative",
+     "kl": "U"
     }
    ]
   },
@@ -3236,7 +3901,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Volksinitiative"
+     "label": "5. Titel: Volksinitiative",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -3257,7 +3923,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 176,
+      "l": 176
+     },
+     "kl": "A"
     },
     {
      "nr": "139",
@@ -3273,7 +3945,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 95,
+      "l": 95
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3281,7 +3959,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Volksinitiative"
+     "label": "5. Titel: Volksinitiative",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -3302,7 +3981,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3310,7 +3990,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Volksinitiative"
+     "label": "5. Titel: Volksinitiative",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -3321,7 +4002,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Volksinitiative"
+     "label": "5. Titel: Volksinitiative",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -3342,7 +4024,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 411,
+      "l": 411
+     },
+     "kl": "A"
     },
     {
      "nr": "143",
@@ -3358,7 +4046,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 83,
+      "l": 83
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3366,7 +4061,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Volksinitiative"
+     "label": "5. Titel: Volksinitiative",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -3387,7 +4083,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3395,7 +4092,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Volksinitiative"
+     "label": "5. Titel: Volksinitiative",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [],
@@ -3418,7 +4116,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3426,7 +4125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Volksinitiative"
+     "label": "5. Titel: Volksinitiative",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -3447,7 +4147,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "148",
@@ -3463,7 +4164,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 386,
+      "l": 386
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3471,7 +4178,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Volksinitiative"
+     "label": "5. Titel: Volksinitiative",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -3492,7 +4200,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "153",
@@ -3512,7 +4221,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3520,7 +4230,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Rechtspflege"
+     "label": "6. Titel: Rechtspflege",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3541,7 +4252,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "158",
@@ -3557,7 +4269,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "159",
@@ -3573,7 +4286,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 202,
+      "l": 202
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3581,7 +4300,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Rechtspflege"
+     "label": "6. Titel: Rechtspflege",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3602,7 +4322,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3610,7 +4336,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Rechtspflege"
+     "label": "6. Titel: Rechtspflege",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3631,7 +4358,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 258,
+      "l": 258
+     },
+     "kl": "A"
     },
     {
      "nr": "162",
@@ -3644,7 +4377,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 174,
+      "l": 216
+     },
+     "kl": "V"
     },
     {
      "nr": "163",
@@ -3660,7 +4399,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 216,
+      "l": 216
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3668,7 +4413,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Rechtspflege"
+     "label": "6. Titel: Rechtspflege",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3693,7 +4439,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "165",
@@ -3706,7 +4453,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 121,
+      "l": 167
+     },
+     "kl": "V"
     },
     {
      "nr": "166",
@@ -3722,7 +4475,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 415,
+      "l": 415
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3730,7 +4489,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Gemeinsame Bestimmungen"
+     "label": "7. Titel: Gemeinsame Bestimmungen",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -3973,7 +4733,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 181,
+      "l": 182
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3981,7 +4747,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Gemeinsame Bestimmungen"
+     "label": "7. Titel: Gemeinsame Bestimmungen",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -4002,7 +4769,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     },
     {
      "nr": "170",
@@ -4018,7 +4791,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 96,
+      "l": 96
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4026,7 +4805,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Gemeinsame Bestimmungen"
+     "label": "7. Titel: Gemeinsame Bestimmungen",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [],
@@ -4049,7 +4829,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4057,7 +4838,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Gemeinsame Bestimmungen"
+     "label": "7. Titel: Gemeinsame Bestimmungen",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -4082,7 +4864,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "173",
@@ -4095,7 +4878,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 113,
+      "l": 114
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4103,7 +4892,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Gemeinsame Bestimmungen"
+     "label": "7. Titel: Gemeinsame Bestimmungen",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -4124,7 +4914,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 72,
+      "l": 72
+     },
+     "kl": "A"
     },
     {
      "nr": "175",
@@ -4140,7 +4937,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 115,
+      "l": 115
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4148,11 +4951,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Änderung und Aufhebung bisherigen Rechts"
+     "label": "1. Kapitel: Änderung und Aufhebung bisherigen Rechts",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [
@@ -4170,7 +4975,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4178,11 +4989,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Änderung und Aufhebung bisherigen Rechts"
+     "label": "1. Kapitel: Änderung und Aufhebung bisherigen Rechts",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [
@@ -4207,7 +5020,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 34,
+      "l": 90
+     },
+     "kl": "Z"
     },
     {
      "nr": "178",
@@ -4219,7 +5039,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 34,
+      "l": 102
+     },
+     "kl": "Z"
     },
     {
      "nr": "179",
@@ -4231,7 +5058,14 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 34,
+      "l": 126
+     },
+     "kl": "Z"
     },
     {
      "nr": "180",
@@ -4243,7 +5077,14 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 34,
+      "l": 134
+     },
+     "kl": "Z"
     },
     {
      "nr": "181",
@@ -4255,7 +5096,14 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 33,
+      "l": 107
+     },
+     "kl": "Z"
     },
     {
      "nr": "182",
@@ -4271,7 +5119,14 @@
       }
      ],
      "absatz": null,
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 37,
+      "l": 76
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -4279,11 +5134,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsrecht, Vollzug und Inkrafttreten"
+     "label": "2. Kapitel: Übergangsrecht, Vollzug und Inkrafttreten",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -4304,7 +5161,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "184",
@@ -4328,7 +5191,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4336,11 +5205,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsrecht, Vollzug und Inkrafttreten"
+     "label": "2. Kapitel: Übergangsrecht, Vollzug und Inkrafttreten",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -4361,7 +5232,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 94,
+      "l": 194
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4369,11 +5246,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsrecht, Vollzug und Inkrafttreten"
+     "label": "2. Kapitel: Übergangsrecht, Vollzug und Inkrafttreten",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -4385,7 +5264,8 @@
      "text": "BRB vom 24. Mai 1978",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4393,7 +5273,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Abstimmungen"
+     "label": "2. Titel: Abstimmungen",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -4418,7 +5299,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4426,11 +5308,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [],
@@ -4457,7 +5341,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4465,15 +5350,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Wahl des Nationalrats"
+     "label": "3. Titel: Wahl des Nationalrats",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhältniswahl"
+     "label": "2. Kapitel: Verhältniswahl",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vorschlag"
+     "label": "1. Abschnitt: Vorschlag",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4494,7 +5382,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4502,15 +5391,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_4/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4531,7 +5423,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4539,15 +5432,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_4/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4568,7 +5464,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4576,15 +5473,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_4/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4605,7 +5505,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4613,15 +5514,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Volksreferendum"
+     "label": "2. Abschnitt: Volksreferendum",
+     "eId": "tit_4/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4642,7 +5546,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4650,15 +5555,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Kantonsreferendum"
+     "label": "3. Abschnitt: Kantonsreferendum",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4679,7 +5587,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4687,15 +5596,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Referendum"
+     "label": "4. Titel: Referendum",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Fakultatives Referendum"
+     "label": "2. Kapitel: Fakultatives Referendum",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Kantonsreferendum"
+     "label": "3. Abschnitt: Kantonsreferendum",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4716,7 +5628,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "129",
@@ -4732,7 +5645,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 141,
+      "l": 141
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4740,7 +5659,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Volksinitiative"
+     "label": "5. Titel: Volksinitiative",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4761,7 +5681,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4769,7 +5690,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Volksinitiative"
+     "label": "5. Titel: Volksinitiative",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4794,7 +5716,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4802,7 +5725,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Volksinitiative"
+     "label": "5. Titel: Volksinitiative",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4827,7 +5751,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "150",
@@ -4843,7 +5768,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 182,
+      "l": 182
+     },
+     "kl": "A"
     },
     {
      "nr": "151",
@@ -4856,7 +5787,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 192,
+      "l": 193
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4864,7 +5801,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Titel: Parteienregister"
+     "label": "5a. Titel: Parteienregister",
+     "eId": "tit_5_a"
     }
    ],
    "marginalie": [],
@@ -4880,7 +5818,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 77,
+      "l": 91
+     },
+     "kl": "V"
     },
     {
      "nr": "154",
@@ -4897,7 +5842,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5a. Titel: Parteienregister"
+     "sektion": "5a. Titel: Parteienregister",
+     "kl": "A"
     }
    ]
   },
@@ -4905,7 +5851,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5b. Titel: Transparenz bei der Politikfinanzierung"
+     "label": "5b. Titel: Transparenz bei der Politikfinanzierung",
+     "eId": "tit_5_b"
     }
    ],
    "marginalie": [
@@ -4931,7 +5878,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5b. Titel: Transparenz bei der Politikfinanzierung"
+     "sektion": "5b. Titel: Transparenz bei der Politikfinanzierung",
+     "kl": "A"
     }
    ]
   },
@@ -4939,7 +5887,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5b. Titel: Transparenz bei der Politikfinanzierung"
+     "label": "5b. Titel: Transparenz bei der Politikfinanzierung",
+     "eId": "tit_5_b"
     }
    ],
    "marginalie": [
@@ -4950,7 +5899,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5b. Titel: Transparenz bei der Politikfinanzierung"
+     "label": "5b. Titel: Transparenz bei der Politikfinanzierung",
+     "eId": "tit_5_b"
     }
    ],
    "marginalie": [
@@ -4961,7 +5911,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5b. Titel: Transparenz bei der Politikfinanzierung"
+     "label": "5b. Titel: Transparenz bei der Politikfinanzierung",
+     "eId": "tit_5_b"
     }
    ],
    "marginalie": [
@@ -4972,7 +5923,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5b. Titel: Transparenz bei der Politikfinanzierung"
+     "label": "5b. Titel: Transparenz bei der Politikfinanzierung",
+     "eId": "tit_5_b"
     }
    ],
    "marginalie": [
@@ -4983,7 +5935,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5b. Titel: Transparenz bei der Politikfinanzierung"
+     "label": "5b. Titel: Transparenz bei der Politikfinanzierung",
+     "eId": "tit_5_b"
     }
    ],
    "marginalie": [
@@ -4994,7 +5947,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5b. Titel: Transparenz bei der Politikfinanzierung"
+     "label": "5b. Titel: Transparenz bei der Politikfinanzierung",
+     "eId": "tit_5_b"
     }
    ],
    "marginalie": [
@@ -5005,7 +5959,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5b. Titel: Transparenz bei der Politikfinanzierung"
+     "label": "5b. Titel: Transparenz bei der Politikfinanzierung",
+     "eId": "tit_5_b"
     }
    ],
    "marginalie": [
@@ -5016,7 +5971,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5b. Titel: Transparenz bei der Politikfinanzierung"
+     "label": "5b. Titel: Transparenz bei der Politikfinanzierung",
+     "eId": "tit_5_b"
     }
    ],
    "marginalie": [
@@ -5027,7 +5983,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5b. Titel: Transparenz bei der Politikfinanzierung"
+     "label": "5b. Titel: Transparenz bei der Politikfinanzierung",
+     "eId": "tit_5_b"
     }
    ],
    "marginalie": [
@@ -5038,7 +5995,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Rechtspflege"
+     "label": "6. Titel: Rechtspflege",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [],
@@ -5061,7 +6019,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5069,7 +6028,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Stimmrecht und Stimmabgabe"
+     "label": "1. Titel: Stimmrecht und Stimmabgabe",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -5090,7 +6050,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -5106,7 +6067,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 409,
+      "l": 409
+     },
+     "kl": "U"
     },
     {
      "nr": "16",
@@ -5122,7 +6089,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5130,11 +6103,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsrecht, Vollzug und Inkrafttreten"
+     "label": "2. Kapitel: Übergangsrecht, Vollzug und Inkrafttreten",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -5159,7 +6134,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

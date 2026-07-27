@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "951.131",
   "titel": "Verordnung zum Bundesgesetz über die Schweizerische Nationalbank",
@@ -28,7 +28,8 @@
     "text": "Seit 1. Jan. 2016: Art. 20 Abs. 5.",
     "links": [],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "U"
    },
    {
     "nr": "2",
@@ -40,7 +41,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -49,7 +51,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -66,7 +69,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -74,7 +78,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -91,7 +96,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 124,
+      "l": 133
+     },
+     "kl": "V"
     },
     {
      "nr": "5",
@@ -103,7 +115,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -115,7 +128,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 103,
+      "l": 104
+     },
+     "kl": "V"
     },
     {
      "nr": "7",
@@ -127,7 +147,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -139,7 +160,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -151,7 +173,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 152,
+      "l": 153
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -163,7 +192,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -175,7 +205,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 110,
+      "l": 111
+     },
+     "kl": "V"
     },
     {
      "nr": "12",
@@ -187,7 +224,14 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 122,
+      "l": 276
+     },
+     "kl": "V"
     },
     {
      "nr": "13",
@@ -199,7 +243,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -211,7 +256,14 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 207,
+      "l": 218
+     },
+     "kl": "V"
     },
     {
      "nr": "15",
@@ -223,7 +275,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -235,7 +288,8 @@
       }
      ],
      "absatz": "1",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -251,7 +305,8 @@
       }
      ],
      "absatz": "1",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -267,7 +322,8 @@
       }
      ],
      "absatz": "1",
-     "item": "l"
+     "item": "l",
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -283,7 +339,8 @@
       }
      ],
      "absatz": "1",
-     "item": "m"
+     "item": "m",
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -299,7 +356,8 @@
       }
      ],
      "absatz": "1",
-     "item": "n"
+     "item": "n",
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -311,7 +369,8 @@
       }
      ],
      "absatz": "1",
-     "item": "o"
+     "item": "o",
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -323,7 +382,8 @@
       }
      ],
      "absatz": "1",
-     "item": "p"
+     "item": "p",
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -339,7 +399,8 @@
       }
      ],
      "absatz": "1",
-     "item": "q"
+     "item": "q",
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -351,7 +412,14 @@
       }
      ],
      "absatz": "1",
-     "item": "q"
+     "item": "q",
+     "pos": {
+      "b": 0,
+      "it": 16,
+      "o": 100,
+      "l": 101
+     },
+     "kl": "V"
     },
     {
      "nr": "25",
@@ -363,7 +431,8 @@
       }
      ],
      "absatz": "1",
-     "item": "r"
+     "item": "r",
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -375,7 +444,8 @@
       }
      ],
      "absatz": "1",
-     "item": "s"
+     "item": "s",
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -387,7 +457,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 122,
+      "l": 155
+     },
+     "kl": "V"
     },
     {
      "nr": "28",
@@ -399,7 +475,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 155,
+      "l": 155
+     },
+     "kl": "A"
     }
    ]
   },
@@ -407,11 +489,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Statistische Erhebungen"
+     "label": "2. Kapitel: Statistische Erhebungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geltungsbereich"
+     "label": "1. Abschnitt: Geltungsbereich",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -428,7 +512,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -436,11 +521,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Statistische Erhebungen"
+     "label": "2. Kapitel: Statistische Erhebungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geltungsbereich"
+     "label": "1. Abschnitt: Geltungsbereich",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -451,11 +538,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Statistische Erhebungen"
+     "label": "2. Kapitel: Statistische Erhebungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geltungsbereich"
+     "label": "1. Abschnitt: Geltungsbereich",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -472,7 +561,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -480,11 +575,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Statistische Erhebungen"
+     "label": "2. Kapitel: Statistische Erhebungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geltungsbereich"
+     "label": "1. Abschnitt: Geltungsbereich",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -495,11 +592,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Statistische Erhebungen"
+     "label": "2. Kapitel: Statistische Erhebungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geltungsbereich"
+     "label": "1. Abschnitt: Geltungsbereich",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -510,11 +609,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Statistische Erhebungen"
+     "label": "2. Kapitel: Statistische Erhebungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Durchführung der Erhebungen"
+     "label": "2. Abschnitt: Durchführung der Erhebungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -525,11 +626,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Statistische Erhebungen"
+     "label": "2. Kapitel: Statistische Erhebungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Durchführung der Erhebungen"
+     "label": "2. Abschnitt: Durchführung der Erhebungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -550,7 +653,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 186,
+      "l": 203
+     },
+     "kl": "V"
     }
    ]
   },
@@ -558,11 +667,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Statistische Erhebungen"
+     "label": "2. Kapitel: Statistische Erhebungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Durchführung der Erhebungen"
+     "label": "2. Abschnitt: Durchführung der Erhebungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -573,11 +684,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Statistische Erhebungen"
+     "label": "2. Kapitel: Statistische Erhebungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Durchführung der Erhebungen"
+     "label": "2. Abschnitt: Durchführung der Erhebungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -594,7 +707,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 140,
+      "l": 163
+     },
+     "kl": "V"
     }
    ]
   },
@@ -602,7 +721,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Mindestreserven"
+     "label": "3. Kapitel: Mindestreserven",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -613,7 +733,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Mindestreserven"
+     "label": "3. Kapitel: Mindestreserven",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -624,7 +745,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Mindestreserven"
+     "label": "3. Kapitel: Mindestreserven",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -641,7 +763,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -653,7 +776,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -665,7 +789,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -677,7 +802,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "37",
@@ -689,7 +820,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 112,
+      "l": 113
+     },
+     "kl": "V"
     },
     {
      "nr": "38",
@@ -701,7 +838,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 113,
+      "l": 113
+     },
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -713,7 +856,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     }
    ]
   },
@@ -721,7 +870,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Mindestreserven"
+     "label": "3. Kapitel: Mindestreserven",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -738,7 +888,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 186,
+      "l": 186
+     },
+     "kl": "A"
     }
    ]
   },
@@ -746,7 +902,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Mindestreserven"
+     "label": "3. Kapitel: Mindestreserven",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -757,7 +914,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Mindestreserven"
+     "label": "3. Kapitel: Mindestreserven",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -774,7 +932,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 485,
+      "l": 485
+     },
+     "kl": "A"
     }
    ]
   },
@@ -782,11 +946,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse"
+     "label": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -804,7 +970,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "sektion": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -817,7 +984,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse"
+     "sektion": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse",
+     "kl": "A"
     }
    ]
   },
@@ -825,11 +993,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse"
+     "label": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -846,7 +1016,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 159,
+      "l": 181
+     },
+     "kl": "V"
     }
    ]
   },
@@ -854,11 +1030,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse"
+     "label": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -876,7 +1054,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 184,
+      "l": 245
+     },
+     "kl": "V"
     }
    ]
   },
@@ -884,11 +1068,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -905,7 +1091,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 7,
+      "l": 7
+     },
+     "kl": "A"
     }
    ]
   },
@@ -913,11 +1105,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -928,11 +1122,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -943,11 +1139,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -958,11 +1156,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -973,11 +1173,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -994,7 +1196,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 250,
+      "l": 250
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1002,11 +1210,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1017,11 +1227,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1038,7 +1250,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 202,
+      "l": 213
+     },
+     "kl": "V"
     },
     {
      "nr": "64",
@@ -1050,7 +1268,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 213,
+      "l": 213
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1062,7 +1286,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 214,
+      "l": 214
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1070,11 +1300,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1085,11 +1317,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1106,7 +1340,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 277,
+      "l": 277
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1114,11 +1354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1129,11 +1371,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1144,11 +1388,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1165,7 +1411,14 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1173,11 +1426,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
+     "label": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1194,7 +1449,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -1207,7 +1463,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
+     "sektion": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen",
+     "kl": "A"
     }
    ]
   },
@@ -1215,11 +1472,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
+     "label": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1236,7 +1495,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -1248,7 +1508,8 @@
       }
      ],
      "absatz": "1",
-     "item": "n"
+     "item": "n",
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -1260,7 +1521,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -1268,11 +1530,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
+     "label": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1289,7 +1553,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -1301,7 +1566,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 206,
+      "l": 206
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1309,11 +1580,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
+     "label": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1330,7 +1603,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1342,7 +1616,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 297,
+      "l": 334
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1350,11 +1630,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
+     "label": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [],
@@ -1369,7 +1651,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1377,7 +1660,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Kontrolle"
+     "label": "5. Kapitel: Kontrolle",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -1392,7 +1676,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "81",
@@ -1404,7 +1689,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 128,
+      "l": 307
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1412,7 +1703,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1429,7 +1721,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -1441,7 +1734,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 303,
+      "l": 406
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1449,7 +1748,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1460,11 +1760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse"
+     "label": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": []
@@ -1473,11 +1775,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1494,7 +1798,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -1506,7 +1811,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 151,
+      "l": 215
+     },
+     "kl": "V"
     },
     {
      "nr": "46",
@@ -1519,7 +1830,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "sektion": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -1532,7 +1844,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "sektion": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "kl": "A"
     }
    ]
   },
@@ -1540,11 +1853,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1561,7 +1876,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1569,11 +1890,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1590,7 +1913,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 7,
+      "l": 7
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1598,11 +1927,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1619,7 +1950,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -1631,7 +1963,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     }
    ]
   },
@@ -1639,11 +1972,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1654,11 +1989,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -1673,7 +2010,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1681,11 +2019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1702,7 +2042,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 29,
+      "l": 29
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1710,11 +2057,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1731,7 +2080,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1739,11 +2089,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1760,7 +2112,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1768,11 +2121,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1789,7 +2144,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 272,
+      "l": 272
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1797,11 +2158,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1812,11 +2175,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1833,7 +2198,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 499,
+      "l": 499
+     },
+     "kl": "A"
     },
     {
      "nr": "62",
@@ -1845,7 +2216,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 465,
+      "l": 465
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1853,11 +2230,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1868,11 +2247,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1889,7 +2270,8 @@
       }
      ],
      "absatz": "3",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     }
    ]
   },
@@ -1897,11 +2279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1912,11 +2296,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1927,11 +2313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "label": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1948,7 +2336,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-10",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "170.32",
   "titel": "Bundesgesetz über die Verantwortlichkeit des Bundes sowie seiner Behördemitglieder und Beamten",
@@ -38,7 +38,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "U"
    },
    {
     "nr": "2",
@@ -50,7 +51,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -70,7 +72,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "4",
@@ -82,7 +85,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -91,7 +95,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Abschnitt: Geltungsbereich"
+     "label": "I. Abschnitt: Geltungsbereich",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [],
@@ -114,7 +119,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -130,7 +142,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -146,7 +159,8 @@
       }
      ],
      "absatz": "1",
-     "item": "cbis"
+     "item": "cbis",
+     "kl": "A"
     }
    ]
   },
@@ -154,7 +168,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Abschnitt: Geltungsbereich"
+     "label": "I. Abschnitt: Geltungsbereich",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [],
@@ -177,7 +192,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 182,
+      "l": 182
+     },
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -213,7 +234,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 72,
+      "l": 166
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -221,7 +248,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -230,7 +258,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [],
@@ -245,7 +274,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -253,7 +283,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [],
@@ -268,7 +299,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 226,
+      "l": 226
+     },
+     "kl": "A"
     }
    ]
   },
@@ -276,7 +313,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [],
@@ -291,7 +329,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 263,
+      "l": 263
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -307,7 +351,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 246,
+      "l": 246
+     },
+     "kl": "A"
     }
    ]
   },
@@ -315,7 +365,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -324,7 +375,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -333,7 +385,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [],
@@ -348,7 +401,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 112,
+      "l": 201
+     },
+     "kl": "V"
     }
    ]
   },
@@ -356,7 +415,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [],
@@ -379,7 +439,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -395,7 +456,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 202,
+      "l": 202
+     },
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -407,7 +474,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 258,
+      "l": 457
+     },
+     "kl": "V"
     },
     {
      "nr": "18",
@@ -423,7 +496,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 259,
+      "l": 457
+     },
+     "kl": "A"
     }
    ]
   },
@@ -431,7 +510,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -440,7 +520,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -449,7 +530,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit"
+     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -464,7 +546,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 120,
+      "l": 186
+     },
+     "kl": "V"
     },
     {
      "nr": "20",
@@ -488,7 +576,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 174,
+      "l": 186
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -496,7 +590,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit"
+     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -519,7 +614,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -531,7 +627,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 114,
+      "l": 212
+     },
+     "kl": "V"
     }
    ]
   },
@@ -539,7 +641,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit"
+     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -558,7 +661,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -574,7 +678,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -590,7 +695,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 107,
+      "l": 107
+     },
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -606,7 +718,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 244,
+      "l": 291
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -622,7 +740,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 287,
+      "l": 287
+     },
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -646,7 +770,13 @@
       }
      ],
      "absatz": "5bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 95,
+      "l": 95
+     },
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -662,7 +792,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -670,7 +806,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit"
+     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -685,7 +822,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 292,
+      "l": 317
+     },
+     "kl": "V"
     }
    ]
   },
@@ -693,7 +836,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Abschnitt: Die disziplinarische Verantwortlichkeit"
+     "label": "IV. Abschnitt: Die disziplinarische Verantwortlichkeit",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -702,7 +846,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Abschnitt: Die disziplinarische Verantwortlichkeit"
+     "label": "IV. Abschnitt: Die disziplinarische Verantwortlichkeit",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -711,7 +856,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Abschnitt: Die Verantwortlichkeit der mit Aufgaben des Bundes betrauten besonderen Organisationen und ihres Personals"
+     "label": "V. Abschnitt: Die Verantwortlichkeit der mit Aufgaben des Bundes betrauten besonderen Organisationen und ihres Personals",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [],
@@ -734,7 +880,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 179,
+      "l": 179
+     },
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -758,7 +910,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 278,
+      "l": 278
+     },
+     "kl": "A"
     }
    ]
   },
@@ -766,7 +924,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Abschnitt: Verjährung und Verwirkung"
+     "label": "VI. Abschnitt: Verjährung und Verwirkung",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [],
@@ -781,7 +940,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 94,
+      "l": 127
+     },
+     "kl": "V"
     },
     {
      "nr": "45",
@@ -797,7 +962,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 127,
+      "l": 127
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -813,7 +984,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 199,
+      "l": 199
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -833,7 +1010,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 229,
+      "l": 229
+     },
+     "kl": "A"
     }
    ]
   },
@@ -841,7 +1024,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Abschnitt: Verjährung und Verwirkung"
+     "label": "VI. Abschnitt: Verjährung und Verwirkung",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [],
@@ -860,7 +1044,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -868,7 +1053,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Abschnitt: Verjährung und Verwirkung"
+     "label": "VI. Abschnitt: Verjährung und Verwirkung",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -877,7 +1063,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Abschnitt: Verjährung und Verwirkung"
+     "label": "VI. Abschnitt: Verjährung und Verwirkung",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [],
@@ -896,7 +1083,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -904,7 +1092,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -913,7 +1102,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -922,7 +1112,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -931,7 +1122,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": [],
@@ -941,7 +1133,14 @@
      "text": "[BS <b>1</b> 462]",
      "links": [],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 37,
+      "l": 107
+     },
+     "kl": "Z"
     },
     {
      "nr": "51",
@@ -957,7 +1156,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 47,
+      "l": 88
+     },
+     "kl": "Z"
     },
     {
      "nr": "52",
@@ -997,14 +1203,22 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 62,
+      "l": 107
+     },
+     "kl": "Z"
     },
     {
      "nr": "53",
      "text": "BRB vom 18. Juli 1958",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1012,7 +1226,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit"
+     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -1031,7 +1246,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -1043,7 +1259,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 192,
+      "l": 446
+     },
+     "kl": "V"
     },
     {
      "nr": "25",
@@ -1059,7 +1281,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 269,
+      "l": 446
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -1079,7 +1307,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 256,
+      "l": 256
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -1099,7 +1333,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 544,
+      "l": 544
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1107,7 +1347,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit"
+     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -1138,7 +1379,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1146,7 +1388,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten"
+     "label": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten",
+     "eId": "chap_V_a"
     }
    ],
    "marginalie": [],
@@ -1165,7 +1408,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 252,
+      "l": 252
+     },
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -1181,7 +1430,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 1,
+      "it": 7,
+      "o": 8,
+      "l": 8
+     },
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -1202,7 +1458,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten"
+     "sektion": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten",
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -1219,7 +1476,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten"
+     "sektion": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten",
+     "kl": "A"
     }
    ]
   },
@@ -1227,7 +1485,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten"
+     "label": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten",
+     "eId": "chap_V_a"
     }
    ],
    "marginalie": [],
@@ -1246,7 +1505,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1254,7 +1514,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten"
+     "label": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten",
+     "eId": "chap_V_a"
     }
    ],
    "marginalie": []

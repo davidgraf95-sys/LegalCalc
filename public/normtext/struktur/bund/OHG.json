@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "312.5",
   "titel": "Bundesgesetz über die Hilfe an Opfer von Straftaten",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -55,7 +57,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -66,7 +69,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -87,7 +91,14 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -95,7 +106,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -106,7 +118,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -117,7 +130,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -128,7 +142,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -146,21 +161,39 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 311,
+      "l": 417
+     },
+     "kl": "V"
     },
     {
      "nr": "5",
      "text": "Siehe Art. 49 (Koordination mit dem ELG)",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 417,
+      "l": 417
+     },
+     "kl": "V"
     },
     {
      "nr": "6",
      "text": "Siehe Art. 49 (Koordination mit dem ELG)",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 164,
+      "l": 164
+     },
+     "kl": "V"
     }
    ]
   },
@@ -168,7 +201,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -179,7 +213,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -200,7 +235,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -208,11 +244,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Leistungen der Beratungsstellen"
+     "label": "2. Kapitel: Leistungen der Beratungsstellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beratungsstellen"
+     "label": "1. Abschnitt: Beratungsstellen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -223,11 +261,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Leistungen der Beratungsstellen"
+     "label": "2. Kapitel: Leistungen der Beratungsstellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beratungsstellen"
+     "label": "1. Abschnitt: Beratungsstellen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -238,11 +278,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Leistungen der Beratungsstellen"
+     "label": "2. Kapitel: Leistungen der Beratungsstellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beratungsstellen"
+     "label": "1. Abschnitt: Beratungsstellen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -260,7 +302,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 258,
+      "l": 259
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -276,7 +324,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 259,
+      "l": 259
+     },
+     "kl": "U"
     },
     {
      "nr": "11",
@@ -292,7 +346,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 293,
+      "l": 293
+     },
+     "kl": "A"
     }
    ]
   },
@@ -300,11 +360,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Leistungen der Beratungsstellen"
+     "label": "2. Kapitel: Leistungen der Beratungsstellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Hilfe der Beratungsstellen und Kostenbeiträge"
+     "label": "2. Abschnitt: Hilfe der Beratungsstellen und Kostenbeiträge",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -325,7 +387,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 139,
+      "l": 139
+     },
+     "kl": "A"
     }
    ]
   },
@@ -333,11 +401,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Leistungen der Beratungsstellen"
+     "label": "2. Kapitel: Leistungen der Beratungsstellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Hilfe der Beratungsstellen und Kostenbeiträge"
+     "label": "2. Abschnitt: Hilfe der Beratungsstellen und Kostenbeiträge",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -348,11 +418,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Leistungen der Beratungsstellen"
+     "label": "2. Kapitel: Leistungen der Beratungsstellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Hilfe der Beratungsstellen und Kostenbeiträge"
+     "label": "2. Abschnitt: Hilfe der Beratungsstellen und Kostenbeiträge",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -363,11 +435,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Leistungen der Beratungsstellen"
+     "label": "2. Kapitel: Leistungen der Beratungsstellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Hilfe der Beratungsstellen und Kostenbeiträge"
+     "label": "2. Abschnitt: Hilfe der Beratungsstellen und Kostenbeiträge",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -378,11 +452,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Leistungen der Beratungsstellen"
+     "label": "2. Kapitel: Leistungen der Beratungsstellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Hilfe der Beratungsstellen und Kostenbeiträge"
+     "label": "2. Abschnitt: Hilfe der Beratungsstellen und Kostenbeiträge",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -394,7 +470,8 @@
      "text": "Siehe Art. 49 (Koordination mit dem ELG)",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     }
    ]
   },
@@ -402,11 +479,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Leistungen der Beratungsstellen"
+     "label": "2. Kapitel: Leistungen der Beratungsstellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Straftat im Ausland"
+     "label": "3. Abschnitt: Straftat im Ausland",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": []
@@ -415,11 +494,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Leistungen der Beratungsstellen"
+     "label": "2. Kapitel: Leistungen der Beratungsstellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Kostenverteilung zwischen den Kantonen"
+     "label": "4. Abschnitt: Kostenverteilung zwischen den Kantonen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": []
@@ -428,11 +509,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton"
+     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entschädigung"
+     "label": "1. Abschnitt: Entschädigung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -450,7 +533,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 131,
+      "l": 184
+     },
+     "kl": "V"
     }
    ]
   },
@@ -458,11 +547,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton"
+     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entschädigung"
+     "label": "1. Abschnitt: Entschädigung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -474,7 +565,14 @@
      "text": "Siehe Art. 49 (Koordination mit dem ELG)",
      "links": [],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 222,
+      "l": 222
+     },
+     "kl": "V"
     },
     {
      "nr": "16",
@@ -486,7 +584,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     }
    ]
   },
@@ -494,11 +598,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton"
+     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entschädigung"
+     "label": "1. Abschnitt: Entschädigung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -509,11 +615,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton"
+     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Genugtuung"
+     "label": "2. Abschnitt: Genugtuung",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -531,7 +639,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 167,
+      "l": 194
+     },
+     "kl": "V"
     }
    ]
   },
@@ -539,11 +653,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton"
+     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Genugtuung"
+     "label": "2. Abschnitt: Genugtuung",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -560,7 +676,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 30,
+      "l": 30
+     },
+     "kl": "A"
     }
    ]
   },
@@ -568,11 +691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton"
+     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -583,11 +708,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton"
+     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -605,7 +732,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 61,
+      "l": 129
+     },
+     "kl": "V"
     },
     {
      "nr": "20",
@@ -618,7 +752,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 128,
+      "l": 129
+     },
+     "kl": "V"
     }
    ]
   },
@@ -626,11 +767,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton"
+     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -641,26 +784,30 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton"
+     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
-    "Herabsetzung oder Ausschluss der Entschädigungund der Genugtuung"
+    "Herabsetzung oder Ausschluss der Entschädigung und der Genugtuung"
    ]
   },
   "28": {
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton"
+     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -671,11 +818,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton"
+     "label": "3. Kapitel: Entschädigung und Genugtuung durch den Kanton",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -686,7 +835,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Befreiung von Verfahrenskosten"
+     "label": "4. Kapitel: Befreiung von Verfahrenskosten",
+     "eId": "chap_4"
     }
    ],
    "marginalie": []
@@ -695,7 +845,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Finanzielle Leistungen und Aufgaben des Bundes"
+     "label": "5. Kapitel: Finanzielle Leistungen und Aufgaben des Bundes",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -706,7 +857,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Finanzielle Leistungen und Aufgaben des Bundes"
+     "label": "5. Kapitel: Finanzielle Leistungen und Aufgaben des Bundes",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -717,7 +869,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Finanzielle Leistungen und Aufgaben des Bundes"
+     "label": "5. Kapitel: Finanzielle Leistungen und Aufgaben des Bundes",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -728,7 +881,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -746,7 +900,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 246,
+      "l": 339
+     },
+     "kl": "V"
     }
    ]
   },
@@ -754,7 +914,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -784,7 +945,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 40,
+      "l": 57
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -792,7 +959,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -803,7 +971,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -814,7 +983,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -832,14 +1002,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "25",
      "text": "Das ELG trat am 1. Jan. 2008 in Kraft.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -847,7 +1019,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -859,7 +1032,8 @@
      "text": "BRB vom 27. Febr. 2008",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -867,7 +1041,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: …"
+     "label": "6. Kapitel: …",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -886,7 +1061,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -894,7 +1070,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -915,7 +1092,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

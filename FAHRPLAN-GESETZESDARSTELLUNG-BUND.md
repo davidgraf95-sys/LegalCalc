@@ -134,15 +134,20 @@ Abweichungen nur (a) inhaltsgetrieben und (b) generations-/jahrgangsbedingt.
   `ArtikelBody.tsx`/Reader. **Gate:** visuell (ZGB/OR-Parität) + Toggle-Test.
 
 ### M4 · Suche + Gliederung responsiv überarbeiten — Batch C
-- [ ] **Root-Cause:** auf schmalem Viewport verdeckt die Gliederung das Suchfeld / die gefundenen
-  Artikel. **Soll:** Zusammenspiel **Suche ↔ Gliederung ↔ Normtext je Breakpoint** neu durchdenken
-  (Overlay/Drawer-Verhalten mobil). **Datei:** Reader-Shell / Such-/Gliederungs-Komponenten.
-  **Gate:** Playwright-Breakpoints (Bash, nicht MCP). *Symptom-Beleg:* Screenshot 10:14:31.
+- [x] **FAKTISCH ERLEDIGT durch W2·5d — Nachmessung 24.7.2026 (ROADMAP-Auflage «erst verifizieren»):**
+  am heutigen Reader (Dev-Server, OR) mobil 375×812 empirisch geprüft: Gliederung öffnet als
+  **Drawer mit explizitem «✕ schliessen»**, Suche kollabiert zum Lupe-Icon in der Kopfzeile und
+  expandiert auf Klick zum **vollbreiten Feld** — kein Überdecken von Suchfeld oder Treffern mehr.
+  Ursprüngliches Symptom (Screenshot 10:14:31) nicht mehr reproduzierbar. *(Ursprünglicher
+  Root-Cause: auf schmalem Viewport verdeckte die Gliederung das Suchfeld / die gefundenen
+  Artikel; Soll war Overlay/Drawer-Verhalten mobil.)*
 
 ### M5 · Gliederung + Suche kompakt zum Header — Batch C
-- [ ] **Root-Cause:** Abstand/Ausrichtung lose, schliessen nicht kompakt an den Header an.
-  **Soll:** bündig/kompakt zum Header. **Datei:** Reader-Layout. **Gate:** visuell. (Regel →
-  `DESIGN-REGLEMENT-NORMTEXT.md`.)
+- [x] **FAKTISCH ERLEDIGT durch W2·5d (PR #284 A35 + PR #301 Suchfeld in Kopfzeile) — Nachmessung
+  24.7.2026:** e2e `leser-suche-a35-a40-a41.e2e.ts` («Suchfeld sitzt OBEN im Inhalts-Kopf, NICHT in
+  einer eigenen Leiste oder der Gliederungsspalte») grün im 29/29-Lauf der B24-Verifikation;
+  Sichtprüfung Desktop bestätigt Suchfeld + Gliederungs-/Ansicht-Kontrollen in der Kopfzeile.
+  *(Ursprünglicher Root-Cause: Abstand/Ausrichtung lose, nicht kompakt zum Header.)*
 
 ### M6 · Verweis Art. 89a Abs. 6 ZGB → BVG korrekt auflösen — Batch A + D
 - [x] **Batch-A-Teil ERLEDIGT + GEGATED 30.6.2026** (Branch `feat/normtext-tabellen-kanonisch`). **Befund
@@ -156,18 +161,28 @@ Abweichungen nur (a) inhaltsgetrieben und (b) generations-/jahrgangsbedingt.
   über 218 Bund-Dateien**: 14 Treffer, alle entweder echte Anwendbarkeits-Chapeaus (ELG/EOG/IVG→AHVG, BANKV→OR,
   FAMZG→ATSG, ZGB→BVG) oder harmlos (0 verlinkbare Item-Refs) → **kein legitimer Self-Link fälschlich
   unterdrückt**. Selbst ein Fehl-Treffer degradiert nur (Link→Text), nie ein falscher Link.
-- [ ] **OFFEN: Batch-D-Teil** — die Items zum Fremdgesetz tatsächlich AUFLÖSEN (Popup/Link «Art. 52 → BVG»
-  via Chapeau-Kontext + `data-rs` der Chapeau-Fussnote). Gehört zum Verweis-Popup (`FAHRPLAN-GESETZESTEXT-POPUP.md`),
-  Batch D.
+- [x] **Batch-D-Teil GEBAUT 24.7.2026 (mit M11, PR #342):** bare Chapeau-Items (ZGB 89a
+  Abs. 6/7 «Art. 52» …) lösen deterministisch aufs Fremdgesetz (BVG) auf —
+  `chapeauZielFremdgesetz()` (lib/fedlex.ts) mit **Adjazenz** (Kürzel = unmittelbares
+  Objekt von «Bestimmungen des/der»), **Katalog-Signal** (nie Bedingungssätze «…, wenn:»)
+  und **Eindeutigkeit**; sonst null (§1: lieber kein Link als ein falscher). Korpus-Abnahme
+  als Enumerations-Test: 10 Blöcke lösen korrekt (AHVG×4, BVG×2, OR, ZPO, JStG→StGB,
+  JStPO→StPO), FAMZG-25 + BS-510.100-§54 bewusst null. Auflösung über die bestehende
+  NormChip-Kette (§5); Nicht-Korpus-Ziele behalten den Fedlex-Deep-Link (§8).
 
 ### M7 · Nach Suche abgeschnittenes Gesetz — Batch C
-- [ ] **Root-Cause:** Sprung-/Scroll-Position nach Suche; Sticky-Header verdeckt den Treffer, Text
-  wirkt oben abgeschnitten (Geistertext). **Soll:** korrektes Scroll-Offset unter den Sticky-Header.
-  **Datei:** Reader-Scroll/Such-Logik. **Gate:** Repro-Test (Screenshot 10:14:31).
+- [x] **FAKTISCH ERLEDIGT durch W2·5d-Sprunglogik — Nachmessung 24.7.2026:** Scroll-Offset ist
+  gebaut und getestet: `.nt-anker`-scroll-margin **5rem unter dem Sticky-Header** (`index.css`,
+  dokumentiert in `scrollAnker.ts` + Sprung-Kommentar R1 in `gesetz-leser/inhalt.tsx`), Sprünge
+  via `block:'start'` + scroll-margin; e2e-Deckung über `leser-suche-a35-a40-a41` +
+  `leser-position-u` (grün). Kein Geistertext/Abschneiden am heutigen Reader reproduzierbar.
+  *(Ursprünglicher Root-Cause: Sticky-Header verdeckte den Treffer nach dem Such-Sprung.)*
 
 ### M8 · Suchbegriff im Normtext hervorheben — Batch C
-- [ ] **Root-Cause:** Treffer wird nicht markiert. **Soll:** gesuchtes Wort im Normtext hervorheben.
-  **Datei:** Such-/Reader-Render. **Gate:** Test (Markup-Highlight bei Suche).
+- [x] **FAKTISCH ERLEDIGT durch W2·5d (PR #284 A40 Treffer-Highlight) — Nachmessung 24.7.2026:**
+  `gesetz-leser/suchHighlight.ts` (CSS Custom Highlight API) + e2e «‹Vertrag› im OR wird im
+  Treffertext gehighlighted» grün (29/29-Lauf B24); Sichtprüfung: Suche «Kündigung» im OR zeigt
+  69 Treffer mit markiertem Begriff. *(Ursprünglicher Root-Cause: Treffer wurde nicht markiert.)*
 
 ### M9 · Aufgehobene Artikel auf gleicher Ebene — Batch B (Render)
 - [x] **GEBAUT + GEGATED 30.6.2026** (Branch `feat/normtext-tabellen-kanonisch`): in `gesetz-leser/parts.tsx`
@@ -200,14 +215,50 @@ Abweichungen nur (a) inhaltsgetrieben und (b) generations-/jahrgangsbedingt.
   quer in `FAHRPLAN-TARIF-TABELLEN-STUFE2.md`.**
 
 ### M11 · Verweis-Popup (Norm-Vorschau) + Artikel-Bezeichnung — Batch D
-- [ ] **Quelle:** Popover-Infra besteht (`FAHRPLAN-GESETZESTEXT-POPUP.md`); `data-rs`/ELI + `<h6>`-Sachtitel.
+- [x] **GEBAUT + GEGENGEPRÜFT (3 Runden) + GEMERGT 24.7.2026** (Worktree `lm-m11`, **PR #342**,
+  Squash `a9c24f15`). (a) In-Reader-Popover trägt die Artikel-Bezeichnung im Kopf —
+  Testfall erfüllt: GebV SchKG Art. 24 → Popover **«Art. 113 SchKG – Nachträge»**
+  (Sachtitel via `artikelSachtitel()` aus dem Struktur-Sidecar, lazy §15, opt-in-Prop
+  byte-gleich ohne). (b) M6-Batch-D miterledigt (s. dort). ENUM-Aufzähler-Strip deckt
+  Misch-Aufzähler («2a./1bis./5ter.») — deklarierte Folge (§6.3, R3-Pin-Test): ~59
+  Bund-Artikel folgen im Reader-TOC jetzt der dokumentierten Aufzähler-Regel (28.6.).
+  **Gegenprüfung:** R2 widerlegte (ENUM-Lücke + FAMZG-Fehlziel + Bedingungssatz-
+  False-Positive) → Nachfix mit Korpus-Enumeration → R3 bestanden (49-Block-Enumeration,
+  0 Fehl-/0 Verlust-Auflösungen). Register-Hash `d57eb5ba`. Gate voll grün, e2e 18/18,
+  Sichtprüfung am Dev-Server (Popover-Inhalt/Position DOM-verifiziert; Hinweis: Browser-
+  Pane-Screenshots bei tiefem Scroll schwarz = Capture-Artefakt des Tools, nicht der App).
+  *Ursprüngliche Quelle:* Popover-Infra (`FAHRPLAN-GESETZESTEXT-POPUP.md`); `data-rs`/ELI + `<h6>`-Sachtitel.
   **Soll:** (a) bei einem gesetzesübergreifenden Verweis erscheint ein **Popup mit Norm-Vorschau**
   (Testfall: Art. 24 GebV SchKG → Art. 112/113 SchKG); (b) die Vorschau enthält die **Artikel-Bezeichnung**,
   z. B. **«Art. 113 SchKG – Nachträge»** (Sachtitel aus `<h6>`/Section). **Datei:** Popover-Pfad +
   Resolver (teilt M6). **Gate:** Test (Popup entsteht; Titel enthält Sachüberschrift).
 
 ### M12 · Randtitel-Leerzeichen-Verklebung (Struktur-Generator) — Batch A *(§14-Intake 24.7.2026)*
-- [ ] **Befund (verifiziert 24.7.2026, live + Daten):** `/gesetze/bund/OR#art-10` zeigt «III. Beginn
+- [x] **GEBAUT + GEGENGEPRÜFT + GEMERGT 24.7.2026** (Worktree `lm-m12`, **PR #340**, Squash
+  `c872e4a9`). Umfang grösser als der Intake-Befund: DREI Naht-Mechanismen derselben Klasse
+  (`<br>`-Umbruch · `<b>/<i>`-Whitespace-Spacer · Zeilenumbruch-Trennstrich) plus der
+  vorbestehende `<b>/<i>`-**Inhalts**-Strip in `artikelSachtitel()` (frass echten Titeltext:
+  «(Insurance Wrapper)» → «( )», «Cyberspezialistinnen» → «Cyber pezialistinnen»). Fix L0 am
+  Join: `loeseTrennung()` (Silbentrennung zusammenfügen · hängendes Divis vor Konjunktion/
+  Präposition erhalten · Kompositum vor Grossbuchstabe mit Divis) + `biErsetzung()`
+  (Nummer/Bereich/Ordinal/Ziffern-Suffix/Spacer strippen, echten Inhalt behalten). Neues Tor
+  **`check:verklebung`** (Klassen A klein-GROSS-Naht · B Divis-Riss · C leeres Klammerpaar;
+  in `check:seriell` + `fedlex-frische.yml`; Sabotage-Proben 64/21 rot gezeigt, danach 1416
+  Sidecars/145 632 Titel grün). 231 Bund-Sidecars + `daten-manifest.json` regeneriert
+  (deklarierte §6.3-Korrektur; Differ-Beweis: nur Leerzeichen-Einfügung/Silbentrennungs-
+  Zusammenfügung/Titeltext-Wiederherstellung). **Gegenprüfung: 2 unabhängige Opus-Durchgänge**
+  — R1 widerlegte (Silbentrennungs-Riss + Inhaltsverlust ⇒ Nachfix mit voller Korpus-
+  Enumeration), R2 bestanden (eigene Enumeration 0 Fehlmerge, 10+ Soll-vor-Ist-Stichproben,
+  bis/ter-Randfälle, Tor-Sabotage); Register-Quittung Hash `ce06aa72`, `check:merge-schutz`
+  grün. Der Such-Index zieht als gitignorierte Build-Projektion automatisch nach.
+- [x] **Folge-Härtung GEBAUT + GEGENGEPRÜFT + GEMERGT 25.7.2026** (**PR #343**, Squash
+  `e3622991`): HAENGEND-Listen (Extraktor + Tor, byte-synchron) um wie/samt/je/pro/per/
+  statt/anstatt/trotz/ab/wider/als/noch/nebst erweitert — **kalibriert je Wort** (Nutzen vs.
+  End-Silben-Risiko): «gen» bewusst NICHT gelistet (häufigste End-Silbe, Korpus-Beleg
+  «Motorwa- gen»; Regressionswächter-Test). No-op-Beweis: base-vs-hardened byte-identisch
+  über 26 206 Korpus-Zeilen; als/noch je 7 legitime Treffer. 2 Prüf-Durchgänge (Haupt +
+  Delta), Register-Hash `e964599c`. Trade-off §8-ehrlich am HAENGEND-Kommentar dokumentiert.
+  *Ursprünglicher Befund-Wortlaut (Intake):* `/gesetze/bund/OR#art-10` zeigte «III. Beginn
   der Wirkung**eneines** unter**Abwesenden**geschlossenen Vertrages» statt «… Wirkungen eines unter
   Abwesenden geschlossenen …». Der Defekt liegt in den **Daten, nicht im Render**:
   `public/normtext/struktur/bund/OR.json` enthält den verklebten Titel wörtlich; die

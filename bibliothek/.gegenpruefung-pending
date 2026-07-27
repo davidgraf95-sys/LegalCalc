@@ -1,9 +1,15 @@
 {
-  "hash": "cdc6fd57ada6104c919ad3aa7cc71d8bac1ec1d4a7256410bb783a092571d215",
+  "hash": "deba270996b65f45c5ec6cdc1e27dd3efcd1ec5404771ef02456e714a0d85d22",
   "verdikt": "bestanden",
-  "quellePin": "CI-Lauf 29757068566 (workflow_dispatch, turso-sync.yml) — gemessene Laufzeit 32.8 min, Entscheid-Phase 1336.5 s bei 4 Zeilen/s",
-  "datum": "2026-07-20",
+  "quellePin": "fedlex dbg 20260101 · sthg 20250101 · rbue 20240606 · hzue 20230612 · vvv 20260101 (HTML-Pins + amtliche PDF-Manifestationen)",
+  "datum": "2026-07-26",
   "dateien": [
-    "scripts/datenhaltung/turso-sync.ts"
+    "daten-manifest.json",
+    "public/normtext/bund/DBG.json",
+    "public/normtext/bund/HZUE.json",
+    "public/normtext/bund/RBUE.json",
+    "public/normtext/bund/STHG.json",
+    "public/normtext/bund/VVV.json",
+    "scripts/normtext/extrahiere-fedlex.ts"
   ]
 }

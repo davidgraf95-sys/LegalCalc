@@ -436,6 +436,81 @@ export function erkenneGenitivGesetz(name: string): FedlexGesetz | null {
   return GENITIV_BY_NAME.get(name.replace(/­/g, '').trim()) ?? null;
 }
 
+// ─── M6-D (W2·5b): Zielgesetz eines Fremdgesetz-Chapeaus deterministisch ──────
+//
+// Ein Chapeau erklärt die Bestimmungen eines FREMDEN Gesetzes für anwendbar
+// («… gelten … die folgenden Bestimmungen des … (BVG) über:»); die nachfolgenden
+// Aufzählungs-Items zitieren dann BLOSSE Fremd-Artikel («… (Art. 52)»), die auf
+// JENES Gesetz zeigen — nicht auf den eigenen Erlass (ZGB 89a Abs. 6/7 → BVG).
+// Liefert das eindeutige Fremdgesetz, damit die Render-Schicht die Items dorthin
+// auflöst. §1-Grenze (lieber KEIN Ziel als ein falsches) — DREI kumulative Tore
+// (gegen die quell-belegten Gegenprüfungs-Befunde kalibriert, Korpus-Test):
+//   (a) ADJAZENZ (Befund 2): das Ziel ist das UNMITTELBARE Objekt von «Bestimmungen
+//       des/der» — erstes Wort-Token ODER «(…KÜRZEL)»-Appositiv des direkt
+//       folgenden Gesetznamens. Ein Kürzel in einem Qualifikator («… vom ATSG …»)
+//       zählt NICHT (FAMZG 25 «Bestimmungen der AHV-Gesetzgebung … vom ATSG» ⇒ null).
+//   (b) EINDEUTIGKEIT (§1): genau EIN Register-Gesetz im Objekt («des OR und des
+//       StGB» ⇒ mehrdeutig ⇒ null).
+//   (c) KATALOG-SIGNAL (Befund 3): das Objekt endet auf ein Provision-Listen-Signal
+//       («über:», «… Anwendung:», «… (nicht) anwendbar:», «… folgenden:»), NICHT auf
+//       einen Bedingungssatz (BS-510.100 §54 «… verwertet werden, wenn:» ⇒ null).
+// Kürzel-Erkennung mit Wortgrenze je FEDLEX-Key (Identitäts-Treffer, §7/§0.2) — die
+// negative Nachschau trennt Teilkürzel (StG in StGB) sauber.
+const KANON = (s: string): string => s.toUpperCase().replace(/[^A-ZÄÖÜ0-9]/g, '');
+
+function adjazentesFremdgesetz(objekt: string): FedlexGesetz | null {
+  const first = objekt.match(/^\s*([A-Za-zÀ-ÿ][0-9A-Za-zÀ-ÿ.­-]*)/);
+  if (first) {
+    const g = erkenneFedlexGesetz(first[1]) ?? erkenneGenitivGesetz(first[1]);
+    if (g) return g;
+  }
+  const paren = objekt.match(/\(([^)]*)\)/);
+  if (paren) {
+    const g = erkenneFedlexGesetz(paren[1]);
+    if (g) return g;
+  }
+  return null;
+}
+
+export function chapeauZielFremdgesetz(chapeau: string, eigenesKuerzel?: string): FedlexGesetz | null {
+  const t = chapeau.trim();
+  if (!/:\s*$/.test(t)) return null; // kein Aufzählungs-Chapeau
+  // Objekt = alles NACH dem LETZTEN «Bestimmungen des/der».
+  const m = t.match(/^[\s\S]*\bBestimmungen\s+(?:des|der)\s+([\s\S]*)$/);
+  if (!m) return null;
+  const objekt = m[1];
+  const eigen = KANON(eigenesKuerzel ?? '');
+
+  // (a) Adjazenz.
+  const ziel = adjazentesFremdgesetz(objekt);
+  if (!ziel || KANON(ziel) === eigen) return null;
+
+  // (b) Eindeutigkeit: genau EIN Register-Gesetz (bare Kürzel + ausgeschriebener
+  //     Genitiv) im Objekt, und das ist das adjazente Ziel.
+  const gesetze = new Set<FedlexGesetz>();
+  for (const g of Object.keys(FEDLEX) as FedlexGesetz[]) {
+    if (KANON(g) === eigen) continue;
+    const esc = g.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (new RegExp(`(?:^|[^0-9A-Za-zÀ-ÿ])${esc}(?![0-9A-Za-zÀ-ÿ])`).test(objekt)) gesetze.add(g);
+  }
+  for (const [name, g] of GENITIV_GESETZ) {
+    if (KANON(g) === eigen) continue;
+    const esc = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (new RegExp(`(?:^|[^A-Za-zÀ-ÿ])${esc}(?![A-Za-zÀ-ÿ])`).test(objekt)) gesetze.add(g);
+  }
+  if (/(?:^|[^0-9A-Za-zÀ-ÿ])GebV\s+SchKG(?![0-9A-Za-zÀ-ÿ])/.test(objekt)) {
+    gesetze.delete('SchKG');
+    gesetze.add('GebVSchKG');
+  }
+  if (gesetze.size !== 1 || !gesetze.has(ziel)) return null;
+
+  // (c) Katalog-Signal (kein Bedingungssatz).
+  const ohneKolon = objekt.replace(/\s*:\s*$/, '');
+  if (!/(?:über|Anwendung|anwendbar|folgende[nrs]?|genannten|aufgeführten|nachstehenden)\s*$/i.test(ohneKolon)) return null;
+
+  return ziel;
+}
+
 // Direktlink aus einem Normverweis-Text, z. B. 'Art. 335c Abs. 1 OR' →
 // OR-Basis + #art_335_c. Absatz-/Ziffer-Angaben ändern den Anker nicht;
 // massgeblich ist der führende Artikel.

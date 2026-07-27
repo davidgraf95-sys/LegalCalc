@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "831.201",
   "titel": "Verordnung über die Invalidenversicherung",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -58,7 +60,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -70,7 +73,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -79,7 +83,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen und die Beiträge"
+     "label": "Erster Abschnitt: Die versicherten Personen und die Beiträge",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -97,7 +102,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 99,
+      "l": 287
+     },
+     "kl": "V"
     },
     {
      "nr": "6",
@@ -110,7 +121,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 153,
+      "l": 287
+     },
+     "kl": "U"
     }
    ]
   },
@@ -118,11 +135,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -139,7 +158,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -152,7 +172,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Abis. Medizinische Massnahmen"
+     "sektion": "Abis. Medizinische Massnahmen",
+     "kl": "A"
     }
    ]
   },
@@ -160,11 +181,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -181,7 +204,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -189,11 +213,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [],
@@ -208,7 +234,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -216,11 +243,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -237,7 +266,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -249,7 +279,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 79,
+      "l": 86
+     },
+     "kl": "V"
     }
    ]
   },
@@ -257,11 +294,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -278,7 +317,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -290,7 +330,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 284,
+      "l": 284
+     },
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -302,7 +348,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 205,
+      "l": 205
+     },
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -314,7 +366,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 310,
+      "l": 310
+     },
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -326,7 +384,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 164,
+      "l": 164
+     },
+     "kl": "A"
     },
     {
      "nr": "62",
@@ -338,7 +402,14 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 4,
+      "it": 1,
+      "o": 120,
+      "l": 120
+     },
+     "kl": "A"
     }
    ]
   },
@@ -346,11 +417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -367,7 +440,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 198,
+      "l": 198
+     },
+     "kl": "A"
     }
    ]
   },
@@ -375,11 +454,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "C. …"
+     "label": "C. …",
+     "eId": "chap_2/lvl_C"
     }
    ],
    "marginalie": [],
@@ -394,7 +475,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -402,11 +484,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilfsmittel"
+     "label": "D. Die Hilfsmittel",
+     "eId": "chap_2/lvl_D"
     }
    ],
    "marginalie": [
@@ -423,7 +507,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -435,7 +520,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 110,
+      "l": 158
+     },
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -447,7 +538,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 158,
+      "l": 158
+     },
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -459,7 +556,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -471,7 +569,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "77",
@@ -483,7 +582,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -495,7 +595,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 20,
+      "l": 33
+     },
+     "kl": "A"
     },
     {
      "nr": "79",
@@ -507,7 +613,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 100,
+      "l": 100
+     },
+     "kl": "A"
     }
    ]
   },
@@ -515,11 +628,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -536,7 +651,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -544,11 +660,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -565,7 +683,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 172,
+      "l": 172
+     },
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -577,7 +701,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 104,
+      "l": 104
+     },
+     "kl": "A"
     },
     {
      "nr": "88",
@@ -589,7 +719,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 150,
+      "l": 150
+     },
+     "kl": "A"
     }
    ]
   },
@@ -597,11 +733,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -618,7 +756,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -626,11 +765,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [],
@@ -645,7 +786,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -653,11 +795,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -674,7 +818,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "105",
@@ -686,7 +831,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -698,7 +849,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 216,
+      "l": 216
+     },
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -710,7 +867,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 34,
+      "l": 35
+     },
+     "kl": "V"
     },
     {
      "nr": "108",
@@ -722,7 +886,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -734,7 +899,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "110",
@@ -746,7 +912,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "111",
@@ -758,7 +925,8 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "112",
@@ -770,7 +938,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 302,
+      "l": 302
+     },
+     "kl": "A"
     }
    ]
   },
@@ -778,11 +952,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -799,7 +975,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "134",
@@ -811,7 +988,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 35,
+      "l": 100
+     },
+     "kl": "V"
     },
     {
      "nr": "135",
@@ -823,7 +1006,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 84,
+      "l": 85
+     },
+     "kl": "V"
     },
     {
      "nr": "136",
@@ -835,7 +1025,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 308,
+      "l": 309
+     },
+     "kl": "V"
     }
    ]
   },
@@ -843,11 +1039,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "F. Verschiedene Bestimmungen"
+     "label": "F. Verschiedene Bestimmungen",
+     "eId": "chap_2/lvl_F"
     }
    ],
    "marginalie": [],
@@ -862,7 +1060,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -870,11 +1069,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "G. Wahlrecht, Zusammenarbeit und Tarife"
+     "label": "G. Wahlrecht, Zusammenarbeit und Tarife",
+     "eId": "chap_2/lvl_G"
     }
    ],
    "marginalie": [
@@ -891,7 +1092,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "149",
@@ -903,7 +1105,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 89,
+      "l": 89
+     },
+     "kl": "A"
     },
     {
      "nr": "150",
@@ -915,7 +1123,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 428,
+      "l": 428
+     },
+     "kl": "A"
     },
     {
      "nr": "147",
@@ -928,7 +1142,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "G. Wahlrecht, Zusammenarbeit und Tarife"
+     "sektion": "G. Wahlrecht, Zusammenarbeit und Tarife",
+     "kl": "A"
     }
    ]
   },
@@ -936,15 +1151,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Bemessung des Invaliditätsgrades"
+     "label": "I. Bemessung des Invaliditätsgrades",
+     "eId": "chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -961,7 +1179,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "164",
@@ -973,7 +1192,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 126,
+      "l": 171
+     },
+     "kl": "V"
     },
     {
      "nr": "165",
@@ -985,7 +1210,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 67,
+      "l": 108
+     },
+     "kl": "V"
     }
    ]
   },
@@ -993,15 +1225,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Bemessung des Invaliditätsgrades"
+     "label": "I. Bemessung des Invaliditätsgrades",
+     "eId": "chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -1018,7 +1253,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1026,15 +1262,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Bemessung des Invaliditätsgrades"
+     "label": "I. Bemessung des Invaliditätsgrades",
+     "eId": "chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -1051,7 +1290,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "170",
@@ -1063,7 +1303,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "171",
@@ -1075,7 +1316,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1083,15 +1330,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Verschiedene Bestimmungen"
+     "label": "II. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -1108,7 +1358,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "174",
@@ -1120,7 +1376,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "175",
@@ -1132,7 +1394,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 264,
+      "l": 264
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1140,15 +1408,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Verschiedene Bestimmungen"
+     "label": "II. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [],
@@ -1167,7 +1438,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1175,15 +1447,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Übergangsleistung"
+     "label": "III. Übergangsleistung",
+     "eId": "chap_3/lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -1200,7 +1475,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "182",
@@ -1213,7 +1489,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "III. Übergangsleistung"
+     "sektion": "III. Übergangsleistung",
+     "kl": "A"
     }
    ]
   },
@@ -1221,15 +1498,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Übergangsleistung"
+     "label": "III. Übergangsleistung",
+     "eId": "chap_3/lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -1246,7 +1526,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1254,11 +1535,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -1275,7 +1558,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "187",
@@ -1287,7 +1571,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 25,
+      "l": 192
+     },
+     "kl": "V"
     },
     {
      "nr": "188",
@@ -1299,7 +1589,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 192,
+      "l": 192
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1307,11 +1603,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [],
@@ -1326,7 +1624,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1334,11 +1633,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "C. Die ausserordentlichen Renten"
+     "label": "C. Die ausserordentlichen Renten",
+     "eId": "chap_3/lvl_C"
     }
    ],
    "marginalie": [],
@@ -1353,7 +1654,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "198",
@@ -1366,7 +1668,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 104,
+      "l": 116
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1374,11 +1682,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -1395,7 +1705,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "200",
@@ -1407,7 +1718,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "201",
@@ -1419,7 +1731,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 272,
+      "l": 272
+     },
+     "kl": "A"
     },
     {
      "nr": "202",
@@ -1431,7 +1749,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1439,11 +1763,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -1460,7 +1786,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "212",
@@ -1472,7 +1799,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "213",
@@ -1484,7 +1817,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 359,
+      "l": 359
+     },
+     "kl": "A"
     },
     {
      "nr": "214",
@@ -1496,7 +1835,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1504,11 +1849,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -1525,7 +1872,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1533,11 +1881,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -1554,7 +1904,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "217",
@@ -1566,7 +1917,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 256,
+      "l": 256
+     },
+     "kl": "A"
     },
     {
      "nr": "218",
@@ -1578,7 +1935,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 325,
+      "l": 326
+     },
+     "kl": "V"
     },
     {
      "nr": "219",
@@ -1590,7 +1953,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 326,
+      "l": 326
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1598,11 +1967,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -1619,7 +1990,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1627,15 +1999,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. Die IV‑Stellen"
+     "label": "A. Die IV‑Stellen",
+     "eId": "chap_4/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Zuständigkeit"
+     "label": "I. Zuständigkeit",
+     "eId": "chap_4/lvl_A/lvl_I"
     }
    ],
    "marginalie": [],
@@ -1650,7 +2025,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "242",
@@ -1662,7 +2038,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 467,
+      "l": 467
+     },
+     "kl": "A"
     },
     {
      "nr": "243",
@@ -1674,7 +2056,13 @@
       }
      ],
      "absatz": "2ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 337,
+      "l": 337
+     },
+     "kl": "A"
     },
     {
      "nr": "244",
@@ -1686,7 +2074,13 @@
       }
      ],
      "absatz": "2quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 199,
+      "l": 199
+     },
+     "kl": "A"
     },
     {
      "nr": "245",
@@ -1698,7 +2092,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 134,
+      "l": 134
+     },
+     "kl": "A"
     },
     {
      "nr": "240",
@@ -1711,7 +2111,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "A. Die IV‑Stellen"
+     "sektion": "A. Die IV‑Stellen",
+     "kl": "A"
     }
    ]
   },
@@ -1719,15 +2120,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. Die IV‑Stellen"
+     "label": "A. Die IV‑Stellen",
+     "eId": "chap_4/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Aufgaben"
+     "label": "II. Aufgaben",
+     "eId": "chap_4/lvl_A/lvl_II"
     }
    ],
    "marginalie": [],
@@ -1742,7 +2146,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 113,
+      "l": 113
+     },
+     "kl": "A"
     },
     {
      "nr": "247",
@@ -1754,7 +2164,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "248",
@@ -1766,7 +2177,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "249",
@@ -1778,7 +2190,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "250",
@@ -1790,7 +2203,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "251",
@@ -1802,7 +2216,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "252",
@@ -1818,7 +2233,8 @@
       }
      ],
      "absatz": "1",
-     "item": "fbis"
+     "item": "fbis",
+     "kl": "A"
     },
     {
      "nr": "253",
@@ -1830,7 +2246,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "254",
@@ -1842,7 +2259,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "255",
@@ -1858,7 +2276,8 @@
       }
      ],
      "absatz": "1",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "256",
@@ -1870,7 +2289,14 @@
       }
      ],
      "absatz": "1",
-     "item": "k"
+     "item": "k",
+     "pos": {
+      "b": 0,
+      "it": 9,
+      "o": 153,
+      "l": 248
+     },
+     "kl": "V"
     },
     {
      "nr": "257",
@@ -1886,7 +2312,8 @@
       }
      ],
      "absatz": "1",
-     "item": "l"
+     "item": "l",
+     "kl": "A"
     },
     {
      "nr": "258",
@@ -1898,7 +2325,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "259",
@@ -1910,7 +2343,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1918,15 +2357,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. Die IV‑Stellen"
+     "label": "A. Die IV‑Stellen",
+     "eId": "chap_4/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Finanzielles"
+     "label": "III. Finanzielles",
+     "eId": "chap_4/lvl_A/lvl_III"
     }
    ],
    "marginalie": []
@@ -1935,15 +2377,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. Die IV‑Stellen"
+     "label": "A. Die IV‑Stellen",
+     "eId": "chap_4/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. IV-Stelle für Versicherte im Ausland"
+     "label": "IV. IV-Stelle für Versicherte im Ausland",
+     "eId": "chap_4/lvl_A/lvl_IV"
     }
    ],
    "marginalie": []
@@ -1952,11 +2397,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Ausgleichskassen"
+     "label": "B. Die Ausgleichskassen",
+     "eId": "chap_4/lvl_B"
     }
    ],
    "marginalie": [
@@ -1973,7 +2420,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "264",
@@ -1986,7 +2434,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 177,
+      "l": 199
+     },
+     "kl": "V"
     },
     {
      "nr": "262",
@@ -1999,7 +2453,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "B. Die Ausgleichskassen"
+     "sektion": "B. Die Ausgleichskassen",
+     "kl": "A"
     }
    ]
   },
@@ -2007,11 +2462,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Ausgleichskassen"
+     "label": "B. Die Ausgleichskassen",
+     "eId": "chap_4/lvl_B"
     }
    ],
    "marginalie": [],
@@ -2026,7 +2483,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2034,11 +2492,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Ausgleichskassen"
+     "label": "B. Die Ausgleichskassen",
+     "eId": "chap_4/lvl_B"
     }
    ],
    "marginalie": [
@@ -2049,11 +2509,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "C. Regionale ärztliche Dienste"
+     "label": "C. Regionale ärztliche Dienste",
+     "eId": "chap_4/lvl_C"
     }
    ],
    "marginalie": [
@@ -2070,7 +2532,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "268",
@@ -2082,7 +2545,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 98,
+      "l": 98
+     },
+     "kl": "A"
     },
     {
      "nr": "266",
@@ -2095,7 +2564,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "C. Regionale ärztliche Dienste"
+     "sektion": "C. Regionale ärztliche Dienste",
+     "kl": "A"
     }
    ]
   },
@@ -2103,11 +2573,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "C. Regionale ärztliche Dienste"
+     "label": "C. Regionale ärztliche Dienste",
+     "eId": "chap_4/lvl_C"
     }
    ],
    "marginalie": [
@@ -2124,7 +2596,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2132,11 +2605,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "C. Regionale ärztliche Dienste"
+     "label": "C. Regionale ärztliche Dienste",
+     "eId": "chap_4/lvl_C"
     }
    ],
    "marginalie": [
@@ -2153,7 +2628,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "271",
@@ -2165,7 +2641,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 364,
+      "l": 364
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2173,11 +2655,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2194,7 +2678,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "272",
@@ -2207,7 +2692,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "D. Aufsicht"
+     "sektion": "D. Aufsicht",
+     "kl": "A"
     }
    ]
   },
@@ -2215,11 +2701,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2236,7 +2724,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2244,11 +2733,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2265,7 +2756,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "276",
@@ -2277,7 +2769,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 334,
+      "l": 334
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2285,11 +2783,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2306,7 +2806,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "278",
@@ -2318,7 +2819,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 72,
+      "l": 72
+     },
+     "kl": "A"
     },
     {
      "nr": "279",
@@ -2330,7 +2837,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 356,
+      "l": 356
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2338,11 +2851,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2359,7 +2874,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "281",
@@ -2371,7 +2887,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 125,
+      "l": 147
+     },
+     "kl": "V"
     },
     {
      "nr": "282",
@@ -2383,7 +2905,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 147,
+      "l": 147
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2391,11 +2919,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2412,7 +2942,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "284",
@@ -2424,7 +2955,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 136,
+      "l": 136
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2432,11 +2969,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2453,7 +2992,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2461,11 +3001,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2482,7 +3024,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2490,11 +3033,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Die Anmeldung"
+     "label": "A. Die Anmeldung",
+     "eId": "chap_5/lvl_A"
     }
    ],
    "marginalie": [
@@ -2511,7 +3056,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 102,
+      "l": 102
+     },
+     "kl": "A"
     },
     {
      "nr": "289",
@@ -2523,7 +3074,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 155,
+      "l": 155
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2531,11 +3088,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Die Anmeldung"
+     "label": "A. Die Anmeldung",
+     "eId": "chap_5/lvl_A"
     }
    ],
    "marginalie": [
@@ -2556,7 +3115,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "291",
@@ -2572,7 +3132,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 338,
+      "l": 338
+     },
+     "kl": "A"
     },
     {
      "nr": "292",
@@ -2584,7 +3150,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 161,
+      "l": 161
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2592,11 +3164,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Die Anmeldung"
+     "label": "A. Die Anmeldung",
+     "eId": "chap_5/lvl_A"
     }
    ],
    "marginalie": [
@@ -2613,7 +3187,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2621,11 +3196,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Die Anmeldung"
+     "label": "A. Die Anmeldung",
+     "eId": "chap_5/lvl_A"
     }
    ],
    "marginalie": [
@@ -2642,7 +3219,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2650,11 +3228,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [
@@ -2671,7 +3251,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "296",
@@ -2683,7 +3264,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 477,
+      "l": 477
+     },
+     "kl": "A"
     },
     {
      "nr": "297",
@@ -2695,7 +3282,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 136,
+      "l": 136
+     },
+     "kl": "A"
     },
     {
      "nr": "298",
@@ -2707,7 +3300,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2715,11 +3314,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [],
@@ -2734,7 +3335,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2742,11 +3344,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [],
@@ -2761,7 +3365,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2769,11 +3374,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [],
@@ -2788,7 +3395,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2796,11 +3404,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [],
@@ -2815,7 +3425,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2823,11 +3434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -2844,7 +3457,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "315",
@@ -2856,7 +3470,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2864,11 +3484,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [],
@@ -2883,7 +3505,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2891,11 +3514,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -2912,7 +3537,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "326",
@@ -2924,7 +3550,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 43,
+      "l": 43
+     },
+     "kl": "A"
     },
     {
      "nr": "327",
@@ -2936,7 +3568,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "328",
@@ -2948,7 +3581,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "329",
@@ -2960,7 +3594,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "330",
@@ -2972,7 +3607,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "331",
@@ -2984,7 +3620,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "332",
@@ -2996,7 +3633,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "333",
@@ -3012,7 +3650,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "334",
@@ -3024,7 +3663,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 121,
+      "l": 133
+     },
+     "kl": "V"
     },
     {
      "nr": "335",
@@ -3036,7 +3681,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 133,
+      "l": 133
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3044,11 +3695,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -3065,7 +3718,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3073,15 +3727,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -3098,7 +3755,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "339",
@@ -3110,7 +3768,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 300,
+      "l": 300
+     },
+     "kl": "A"
     },
     {
      "nr": "340",
@@ -3122,7 +3786,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "341",
@@ -3134,7 +3804,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "342",
@@ -3146,7 +3822,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 168,
+      "l": 168
+     },
+     "kl": "A"
     },
     {
      "nr": "343",
@@ -3162,7 +3844,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 176,
+      "l": 176
+     },
+     "kl": "A"
     },
     {
      "nr": "337",
@@ -3175,7 +3863,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "D. Die Ausrichtung der Leistungen"
+     "sektion": "D. Die Ausrichtung der Leistungen",
+     "kl": "A"
     }
    ]
   },
@@ -3183,15 +3872,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -3208,7 +3900,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "345",
@@ -3220,7 +3913,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 282,
+      "l": 282
+     },
+     "kl": "A"
     },
     {
      "nr": "346",
@@ -3232,7 +3931,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 147,
+      "l": 147
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3240,15 +3945,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "II. Taggelder"
+     "label": "II. Taggelder",
+     "eId": "chap_5/lvl_D/lvl_II"
     }
    ],
    "marginalie": [
@@ -3265,7 +3973,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 179,
+      "l": 282
+     },
+     "kl": "V"
     },
     {
      "nr": "358",
@@ -3277,7 +3991,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 180,
+      "l": 282
+     },
+     "kl": "A"
     },
     {
      "nr": "359",
@@ -3289,7 +4009,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 282,
+      "l": 282
+     },
+     "kl": "A"
     },
     {
      "nr": "360",
@@ -3301,7 +4027,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 103,
+      "l": 103
+     },
+     "kl": "A"
     },
     {
      "nr": "361",
@@ -3313,7 +4046,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 139,
+      "l": 139
+     },
+     "kl": "A"
     },
     {
      "nr": "362",
@@ -3325,7 +4064,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3333,15 +4078,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "II. Taggelder"
+     "label": "II. Taggelder",
+     "eId": "chap_5/lvl_D/lvl_II"
     }
    ],
    "marginalie": [
@@ -3358,7 +4106,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "364",
@@ -3370,7 +4119,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 548,
+      "l": 548
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3378,15 +4133,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "III. Renten, Hilflosenentschädigung und Assistenzbeitrag"
+     "label": "III. Renten, Hilflosenentschädigung und Assistenzbeitrag",
+     "eId": "chap_5/lvl_D/lvl_III"
     }
    ],
    "marginalie": [
@@ -3403,7 +4161,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "371",
@@ -3415,7 +4174,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 127,
+      "l": 139
+     },
+     "kl": "V"
     },
     {
      "nr": "372",
@@ -3427,7 +4192,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 264,
+      "l": 264
+     },
+     "kl": "A"
     },
     {
      "nr": "369",
@@ -3440,7 +4211,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "III. Renten, Hilflosenentschädigung und Assistenzbeitrag"
+     "sektion": "III. Renten, Hilflosenentschädigung und Assistenzbeitrag",
+     "kl": "A"
     }
    ]
   },
@@ -3448,15 +4220,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "III. Renten, Hilflosenentschädigung und Assistenzbeitrag"
+     "label": "III. Renten, Hilflosenentschädigung und Assistenzbeitrag",
+     "eId": "chap_5/lvl_D/lvl_III"
     }
    ],
    "marginalie": [
@@ -3473,7 +4248,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 15,
+      "l": 97
+     },
+     "kl": "V"
     },
     {
      "nr": "374",
@@ -3485,7 +4266,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 97,
+      "l": 97
+     },
+     "kl": "A"
     },
     {
      "nr": "375",
@@ -3497,7 +4284,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3505,15 +4298,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "IV. Gemeinsame Bestimmungen"
+     "label": "IV. Gemeinsame Bestimmungen",
+     "eId": "chap_5/lvl_D/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -3528,7 +4324,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3536,15 +4333,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "IV. Gemeinsame Bestimmungen"
+     "label": "IV. Gemeinsame Bestimmungen",
+     "eId": "chap_5/lvl_D/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3561,7 +4361,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "378",
@@ -3573,7 +4379,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 301,
+      "l": 301
+     },
+     "kl": "A"
     },
     {
      "nr": "379",
@@ -3589,7 +4401,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 92,
+      "l": 92
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3597,11 +4415,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "Dbis. …"
+     "label": "Dbis. …",
+     "eId": "chap_5/lvl_D_bis"
     }
    ],
    "marginalie": [],
@@ -3616,7 +4436,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "383",
@@ -3633,7 +4454,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Dbis. …"
+     "sektion": "Dbis. …",
+     "kl": "A"
     }
    ]
   },
@@ -3641,11 +4463,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages"
+     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages",
+     "eId": "chap_5/lvl_E"
     }
    ],
    "marginalie": [
@@ -3662,7 +4486,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3670,11 +4495,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages"
+     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages",
+     "eId": "chap_5/lvl_E"
     }
    ],
    "marginalie": [
@@ -3691,7 +4518,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 204,
+      "l": 204
+     },
+     "kl": "A"
     },
     {
      "nr": "390",
@@ -3703,7 +4536,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "391",
@@ -3715,7 +4554,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 434,
+      "l": 434
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3723,7 +4568,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3740,7 +4586,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "409",
@@ -3753,7 +4600,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 167,
+      "l": 189
+     },
+     "kl": "V"
     },
     {
      "nr": "407",
@@ -3766,7 +4619,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "sektion": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -3774,7 +4628,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3791,7 +4646,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "416",
@@ -3803,7 +4659,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 282,
+      "l": 282
+     },
+     "kl": "A"
     },
     {
      "nr": "417",
@@ -3815,7 +4677,14 @@
       }
      ],
      "absatz": "2bis",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 28,
+      "l": 28
+     },
+     "kl": "A"
     },
     {
      "nr": "418",
@@ -3827,7 +4696,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 237,
+      "l": 237
+     },
+     "kl": "A"
     },
     {
      "nr": "419",
@@ -3839,7 +4714,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3847,7 +4723,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3864,7 +4741,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "422",
@@ -3876,7 +4754,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 359,
+      "l": 364
+     },
+     "kl": "V"
     },
     {
      "nr": "423",
@@ -3888,7 +4772,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 364,
+      "l": 364
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3896,7 +4786,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -3911,7 +4802,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3919,7 +4811,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -3934,7 +4827,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3942,7 +4836,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3963,7 +4858,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3971,7 +4867,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3992,7 +4889,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4000,7 +4898,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -4021,7 +4920,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "437",
@@ -4033,7 +4933,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 179,
+      "l": 238
+     },
+     "kl": "V"
     },
     {
      "nr": "438",
@@ -4045,7 +4952,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 237,
+      "l": 238
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4053,7 +4967,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4068,7 +4983,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4076,7 +4992,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4093,7 +5010,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "452",
@@ -4105,7 +5023,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 111,
+      "l": 360
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4113,7 +5037,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4128,7 +5053,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4136,7 +5062,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4153,7 +5080,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "464",
@@ -4165,7 +5093,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 496,
+      "l": 496
+     },
+     "kl": "A"
     },
     {
      "nr": "465",
@@ -4177,7 +5111,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 130,
+      "l": 130
+     },
+     "kl": "A"
     },
     {
      "nr": "466",
@@ -4189,7 +5129,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 311,
+      "l": 311
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4197,7 +5143,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -4212,7 +5159,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "468",
@@ -4225,7 +5173,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "sektion": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -4233,7 +5182,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -4248,7 +5198,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4256,7 +5207,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4273,7 +5225,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "472",
@@ -4289,7 +5247,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 73,
+      "l": 73
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4297,7 +5261,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4316,7 +5281,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4324,7 +5290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4343,7 +5310,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4351,7 +5319,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4366,7 +5335,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4374,7 +5344,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4393,7 +5364,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4401,7 +5373,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4420,7 +5393,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4428,7 +5402,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4445,7 +5420,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     },
     {
      "nr": "454",
@@ -4457,7 +5433,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "455",
@@ -4473,7 +5450,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "456",
@@ -4485,7 +5463,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 116,
+      "l": 116
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4493,7 +5477,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4514,7 +5499,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     },
     {
      "nr": "459",
@@ -4526,7 +5512,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 384,
+      "l": 384
+     },
+     "kl": "A"
     },
     {
      "nr": "460",
@@ -4538,7 +5530,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4546,7 +5544,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4563,7 +5562,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -4571,7 +5571,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4590,7 +5591,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4598,7 +5600,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4613,7 +5616,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4621,11 +5625,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilfsmittel"
+     "label": "D. Die Hilfsmittel",
+     "eId": "chap_2/lvl_D"
     }
    ],
    "marginalie": [
@@ -4646,7 +5652,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4654,11 +5661,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilfsmittel"
+     "label": "D. Die Hilfsmittel",
+     "eId": "chap_2/lvl_D"
     }
    ],
    "marginalie": [
@@ -4675,7 +5684,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4683,11 +5693,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilfsmittel"
+     "label": "D. Die Hilfsmittel",
+     "eId": "chap_2/lvl_D"
     }
    ],
    "marginalie": [
@@ -4708,7 +5720,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4716,11 +5729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilfsmittel"
+     "label": "D. Die Hilfsmittel",
+     "eId": "chap_2/lvl_D"
     }
    ],
    "marginalie": [],
@@ -4735,7 +5750,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4743,11 +5759,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -4768,7 +5786,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4776,7 +5795,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen und die Beiträge"
+     "label": "Erster Abschnitt: Die versicherten Personen und die Beiträge",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -4797,7 +5817,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -4809,7 +5830,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 63,
+      "l": 102
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4817,11 +5844,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Drohende Invalidität"
+     "label": "A. Drohende Invalidität",
+     "eId": "chap_2/lvl_A"
     }
    ],
    "marginalie": [],
@@ -4837,7 +5866,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Zweiter Abschnitt: Eingliederung"
+     "sektion": "Zweiter Abschnitt: Eingliederung",
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -4850,7 +5880,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "A. Drohende Invalidität"
+     "sektion": "A. Drohende Invalidität",
+     "kl": "A"
     }
    ]
   },
@@ -4858,7 +5889,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt b: Massnahmen der Frühintervention"
+     "label": "Erster Abschnitt b: Massnahmen der Frühintervention",
+     "eId": "chap_1_b"
     }
    ],
    "marginalie": [
@@ -4869,7 +5901,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Früherfassung"
+     "label": "Erster Abschnitt a: Früherfassung",
+     "eId": "chap_1_a"
     }
    ],
    "marginalie": [
@@ -4880,7 +5913,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Früherfassung"
+     "label": "Erster Abschnitt a: Früherfassung",
+     "eId": "chap_1_a"
     }
    ],
    "marginalie": [],
@@ -4895,7 +5929,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4903,7 +5938,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt b: Massnahmen der Frühintervention"
+     "label": "Erster Abschnitt b: Massnahmen der Frühintervention",
+     "eId": "chap_1_b"
     }
    ],
    "marginalie": [
@@ -4920,7 +5956,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 104,
+      "l": 115
+     },
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -4932,7 +5975,14 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 103,
+      "l": 142
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4940,7 +5990,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt b: Massnahmen der Frühintervention"
+     "label": "Erster Abschnitt b: Massnahmen der Frühintervention",
+     "eId": "chap_1_b"
     }
    ],
    "marginalie": [
@@ -4957,7 +6008,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 253,
+      "l": 253
+     },
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -4970,7 +6027,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Erster Abschnitt b: Massnahmen der Frühintervention"
+     "sektion": "Erster Abschnitt b: Massnahmen der Frühintervention",
+     "kl": "A"
     }
    ]
   },
@@ -4978,7 +6036,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Früherfassung"
+     "label": "Erster Abschnitt a: Früherfassung",
+     "eId": "chap_1_a"
     }
    ],
    "marginalie": [
@@ -4995,7 +6054,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 166,
+      "l": 166
+     },
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -5008,7 +6073,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Erster Abschnitt a: Früherfassung"
+     "sektion": "Erster Abschnitt a: Früherfassung",
+     "kl": "A"
     }
    ]
   },
@@ -5016,11 +6082,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [],
@@ -5039,7 +6107,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5047,11 +6116,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5076,7 +6147,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -5088,7 +6160,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 367,
+      "l": 367
+     },
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -5100,7 +6178,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 77,
+      "l": 77
+     },
+     "kl": "A"
     },
     {
      "nr": "96",
@@ -5112,7 +6197,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "97",
@@ -5124,7 +6215,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -5136,7 +6233,14 @@
       }
      ],
      "absatz": "6",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 5,
+      "it": 0,
+      "o": 106,
+      "l": 171
+     },
+     "kl": "V"
     },
     {
      "nr": "99",
@@ -5148,7 +6252,14 @@
       }
      ],
      "absatz": "6",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 5,
+      "it": 1,
+      "o": 131,
+      "l": 131
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5156,11 +6267,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5181,7 +6294,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -5194,7 +6308,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 50,
+      "l": 105
+     },
+     "kl": "V"
     }
    ]
   },
@@ -5202,11 +6322,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5223,7 +6345,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -5235,7 +6358,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5243,11 +6372,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5268,7 +6399,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5276,11 +6408,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5301,7 +6435,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "114",
@@ -5313,7 +6448,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 320,
+      "l": 320
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5321,11 +6462,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5346,7 +6489,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5354,15 +6498,17 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
-    "Abzug bei Unterkunft und Verpflegung auf Kostender Invalidenversicherung"
+    "Abzug bei Unterkunft und Verpflegung auf Kosten der Invalidenversicherung"
    ],
    "fussnoten": [
     {
@@ -5379,7 +6525,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "130",
@@ -5391,7 +6538,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 379,
+      "l": 379
+     },
+     "kl": "G"
     },
     {
      "nr": "131",
@@ -5403,7 +6556,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 78,
+      "l": 78
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5411,11 +6570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5436,7 +6597,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "117",
@@ -5448,7 +6610,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 210,
+      "l": 226
+     },
+     "kl": "V"
     },
     {
      "nr": "118",
@@ -5460,7 +6628,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 226,
+      "l": 226
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5468,11 +6642,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5493,7 +6669,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5501,11 +6678,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5526,7 +6705,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "122",
@@ -5538,7 +6718,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 288,
+      "l": 288
+     },
+     "kl": "A"
     },
     {
      "nr": "123",
@@ -5550,7 +6736,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 271,
+      "l": 362
+     },
+     "kl": "V"
     },
     {
      "nr": "124",
@@ -5562,7 +6754,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 362,
+      "l": 362
+     },
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -5574,7 +6772,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 270,
+      "l": 271
+     },
+     "kl": "V"
     },
     {
      "nr": "126",
@@ -5590,7 +6794,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 271,
+      "l": 271
+     },
+     "kl": "A"
     },
     {
      "nr": "127",
@@ -5602,7 +6812,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 90,
+      "l": 268
+     },
+     "kl": "V"
     },
     {
      "nr": "128",
@@ -5614,7 +6830,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 268,
+      "l": 268
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5622,11 +6844,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5647,7 +6871,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5655,11 +6880,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5680,7 +6907,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5688,11 +6916,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [],
@@ -5711,7 +6941,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5719,11 +6950,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "F. Verschiedene Bestimmungen"
+     "label": "F. Verschiedene Bestimmungen",
+     "eId": "chap_2/lvl_F"
     }
    ],
    "marginalie": [
@@ -5744,7 +6977,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "139",
@@ -5752,7 +6986,8 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "sektion": "F. Verschiedene Bestimmungen"
+     "sektion": "F. Verschiedene Bestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -5760,11 +6995,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "F. Verschiedene Bestimmungen"
+     "label": "F. Verschiedene Bestimmungen",
+     "eId": "chap_2/lvl_F"
     }
    ],
    "marginalie": [
@@ -5781,7 +7018,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "142",
@@ -5793,7 +7031,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 190,
+      "l": 190
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5801,11 +7045,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [],
@@ -5824,7 +7070,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5832,11 +7079,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "F. Verschiedene Bestimmungen"
+     "label": "F. Verschiedene Bestimmungen",
+     "eId": "chap_2/lvl_F"
     }
    ],
    "marginalie": [
@@ -5857,7 +7106,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5865,11 +7115,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "F. Verschiedene Bestimmungen"
+     "label": "F. Verschiedene Bestimmungen",
+     "eId": "chap_2/lvl_F"
     }
    ],
    "marginalie": [
@@ -5886,7 +7138,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "146",
@@ -5898,7 +7151,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 286,
+      "l": 286
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5906,11 +7165,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "G. Wahlrecht, Zusammenarbeit und Tarife"
+     "label": "G. Wahlrecht, Zusammenarbeit und Tarife",
+     "eId": "chap_2/lvl_G"
     }
    ],
    "marginalie": [
@@ -5927,7 +7188,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "152",
@@ -5939,7 +7201,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 130,
+      "l": 152
+     },
+     "kl": "V"
     },
     {
      "nr": "153",
@@ -5951,7 +7219,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 193,
+      "l": 215
+     },
+     "kl": "V"
     },
     {
      "nr": "154",
@@ -5963,7 +7237,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 215,
+      "l": 215
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5971,11 +7251,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "G. Wahlrecht, Zusammenarbeit und Tarife"
+     "label": "G. Wahlrecht, Zusammenarbeit und Tarife",
+     "eId": "chap_2/lvl_G"
     }
    ],
    "marginalie": [
@@ -5992,7 +7274,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6000,11 +7283,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "G. Wahlrecht, Zusammenarbeit und Tarife"
+     "label": "G. Wahlrecht, Zusammenarbeit und Tarife",
+     "eId": "chap_2/lvl_G"
     }
    ],
    "marginalie": [
@@ -6021,7 +7306,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6029,15 +7315,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Bemessung des Invaliditätsgrades"
+     "label": "I. Bemessung des Invaliditätsgrades",
+     "eId": "chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -6054,7 +7343,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "160",
@@ -6067,7 +7357,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "sektion": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "kl": "A"
     },
     {
      "nr": "161",
@@ -6080,7 +7371,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "I. Bemessung des Invaliditätsgrades"
+     "sektion": "I. Bemessung des Invaliditätsgrades",
+     "kl": "A"
     }
    ]
   },
@@ -6088,11 +7380,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "G. Wahlrecht, Zusammenarbeit und Tarife"
+     "label": "G. Wahlrecht, Zusammenarbeit und Tarife",
+     "eId": "chap_2/lvl_G"
     }
    ],
    "marginalie": [
@@ -6109,7 +7403,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6117,11 +7412,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "G. Wahlrecht, Zusammenarbeit und Tarife"
+     "label": "G. Wahlrecht, Zusammenarbeit und Tarife",
+     "eId": "chap_2/lvl_G"
     }
    ],
    "marginalie": [
@@ -6138,7 +7435,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "156",
@@ -6150,7 +7448,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 202,
+      "l": 213
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6158,15 +7462,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Bemessung des Invaliditätsgrades"
+     "label": "I. Bemessung des Invaliditätsgrades",
+     "eId": "chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -6187,7 +7494,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "168",
@@ -6199,7 +7507,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 317,
+      "l": 317
+     },
+     "kl": "G"
     }
    ]
   },
@@ -6207,15 +7521,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Bemessung des Invaliditätsgrades"
+     "label": "I. Bemessung des Invaliditätsgrades",
+     "eId": "chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -6236,7 +7553,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6244,15 +7562,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Verschiedene Bestimmungen"
+     "label": "II. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [],
@@ -6271,7 +7592,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6279,15 +7601,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Verschiedene Bestimmungen"
+     "label": "II. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -6308,7 +7633,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6316,15 +7642,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Verschiedene Bestimmungen"
+     "label": "II. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -6345,7 +7674,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "181",
@@ -6358,7 +7688,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 93,
+      "l": 160
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6366,15 +7702,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Verschiedene Bestimmungen"
+     "label": "II. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -6391,7 +7730,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6399,11 +7739,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -6420,7 +7762,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6428,11 +7771,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -6449,7 +7794,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6457,15 +7803,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Übergangsleistung"
+     "label": "III. Übergangsleistung",
+     "eId": "chap_3/lvl_A/lvl_III"
     }
    ],
    "marginalie": [],
@@ -6484,7 +7833,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6492,11 +7842,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -6517,7 +7869,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "190",
@@ -6530,7 +7883,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 444,
+      "l": 455
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6538,11 +7897,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -6563,7 +7924,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "193",
@@ -6575,7 +7937,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 88,
+      "l": 89
+     },
+     "kl": "V"
     },
     {
      "nr": "194",
@@ -6587,7 +7955,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 176,
+      "l": 176
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6595,11 +7969,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -6616,7 +7992,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "196",
@@ -6628,7 +8005,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 26,
+      "l": 42
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6636,11 +8019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -6657,7 +8042,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "204",
@@ -6669,7 +8055,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 275,
+      "l": 275
+     },
+     "kl": "A"
     },
     {
      "nr": "205",
@@ -6681,7 +8073,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 308,
+      "l": 308
+     },
+     "kl": "A"
     },
     {
      "nr": "206",
@@ -6693,7 +8091,13 @@
       }
      ],
      "absatz": "2ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 139,
+      "l": 139
+     },
+     "kl": "A"
     },
     {
      "nr": "207",
@@ -6705,7 +8109,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 160,
+      "l": 160
+     },
+     "kl": "A"
     },
     {
      "nr": "208",
@@ -6717,7 +8127,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6725,11 +8141,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -6746,7 +8164,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "210",
@@ -6758,7 +8177,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 86,
+      "l": 263
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6766,11 +8191,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6787,7 +8214,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 113,
+      "l": 175
+     },
+     "kl": "A"
     },
     {
      "nr": "221",
@@ -6800,7 +8234,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "E. Der Assistenzbeitrag"
+     "sektion": "E. Der Assistenzbeitrag",
+     "kl": "G"
     }
    ]
   },
@@ -6808,11 +8243,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6823,11 +8260,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6838,11 +8277,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6853,15 +8294,17 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
-    "Bestimmung desanerkannten Hilfebedarfs"
+    "Bestimmung des anerkannten Hilfebedarfs"
    ],
    "fussnoten": [
     {
@@ -6874,7 +8317,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6882,11 +8331,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6903,7 +8354,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "225",
@@ -6915,7 +8367,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 108,
+      "l": 130
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6923,11 +8381,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6938,11 +8398,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6959,7 +8421,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 232,
+      "l": 424
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6967,11 +8435,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6988,7 +8458,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 161,
+      "l": 161
+     },
+     "kl": "A"
     },
     {
      "nr": "228",
@@ -7000,7 +8476,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 202,
+      "l": 202
+     },
+     "kl": "A"
     },
     {
      "nr": "229",
@@ -7012,7 +8494,13 @@
       }
      ],
      "absatz": "2ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 286,
+      "l": 286
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7020,11 +8508,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -7041,7 +8531,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "231",
@@ -7053,7 +8544,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 273,
+      "l": 273
+     },
+     "kl": "A"
     },
     {
      "nr": "232",
@@ -7065,7 +8562,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 83,
+      "l": 83
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7073,11 +8576,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "F. Das Verhältnis zur Unfallversicherung und zur Militärversicherung"
+     "label": "F. Das Verhältnis zur Unfallversicherung und zur Militärversicherung",
+     "eId": "chap_3/lvl_F"
     }
    ],
    "marginalie": [],
@@ -7087,7 +8592,8 @@
      "text": "Ursprünglich: Art. 39.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "236",
@@ -7099,7 +8605,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 361,
+      "l": 361
+     },
+     "kl": "A"
     },
     {
      "nr": "237",
@@ -7111,7 +8623,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 436,
+      "l": 436
+     },
+     "kl": "A"
     },
     {
      "nr": "238",
@@ -7123,7 +8641,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 168,
+      "l": 168
+     },
+     "kl": "A"
     },
     {
      "nr": "233",
@@ -7136,7 +8660,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "F. Das Verhältnis zur Unfallversicherung und zur Militärversicherung"
+     "sektion": "F. Das Verhältnis zur Unfallversicherung und zur Militärversicherung",
+     "kl": "A"
     },
     {
      "nr": "234",
@@ -7149,7 +8674,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "F. Das Verhältnis zur Unfallversicherung und zur Militärversicherung"
+     "sektion": "F. Das Verhältnis zur Unfallversicherung und zur Militärversicherung",
+     "kl": "A"
     }
    ]
   },
@@ -7157,11 +8683,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "F. Das Verhältnis zur Unfallversicherung und zur Militärversicherung"
+     "label": "F. Das Verhältnis zur Unfallversicherung und zur Militärversicherung",
+     "eId": "chap_3/lvl_F"
     }
    ],
    "marginalie": [],
@@ -7180,7 +8708,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7188,11 +8717,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7213,7 +8744,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7221,11 +8753,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7242,7 +8776,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -7254,7 +8789,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 110,
+      "l": 243
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7262,11 +8803,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7287,7 +8830,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -7299,7 +8843,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 53,
+      "l": 107
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7307,11 +8857,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7328,7 +8880,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7336,11 +8889,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [],
@@ -7359,7 +8914,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7367,11 +8923,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7388,7 +8946,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7396,11 +8955,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7417,7 +8978,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -7429,7 +8991,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 155,
+      "l": 262
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7437,11 +9006,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7458,7 +9029,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -7470,7 +9042,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 149,
+      "l": 318
+     },
+     "kl": "V"
     },
     {
      "nr": "29",
@@ -7482,7 +9060,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 62,
+      "l": 214
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7490,11 +9074,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7515,7 +9101,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7523,15 +9110,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. Die IV‑Stellen"
+     "label": "A. Die IV‑Stellen",
+     "eId": "chap_4/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Aufgaben"
+     "label": "II. Aufgaben",
+     "eId": "chap_4/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -7548,7 +9138,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7556,15 +9147,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. Die IV‑Stellen"
+     "label": "A. Die IV‑Stellen",
+     "eId": "chap_4/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Aufgaben"
+     "label": "II. Aufgaben",
+     "eId": "chap_4/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -7581,7 +9175,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7589,11 +9184,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -7610,7 +9207,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7618,11 +9216,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [],
@@ -7641,7 +9241,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7649,11 +9250,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung",
+     "eId": "chap_2/lvl_A_ter"
     }
    ],
    "marginalie": [
@@ -7670,7 +9273,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7678,11 +9282,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung",
+     "eId": "chap_2/lvl_A_ter"
     }
    ],
    "marginalie": [
@@ -7699,7 +9305,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 150,
+      "l": 150
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7707,11 +9319,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung",
+     "eId": "chap_2/lvl_A_ter"
     }
    ],
    "marginalie": [
@@ -7728,7 +9342,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 194,
+      "l": 194
+     },
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -7741,7 +9361,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "sektion": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung",
+     "kl": "A"
     }
    ]
   },
@@ -7749,11 +9370,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung",
+     "eId": "chap_2/lvl_A_ter"
     }
    ],
    "marginalie": [
@@ -7770,7 +9393,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7778,11 +9402,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung",
+     "eId": "chap_2/lvl_A_ter"
     }
    ],
    "marginalie": [],
@@ -7797,7 +9423,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7805,11 +9432,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung",
+     "eId": "chap_2/lvl_A_ter"
     }
    ],
    "marginalie": [
@@ -7826,7 +9455,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 151,
+      "l": 151
+     },
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -7838,7 +9473,8 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -7850,7 +9486,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -7862,7 +9504,14 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 4,
+      "it": 1,
+      "o": 82,
+      "l": 82
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -7874,7 +9523,14 @@
       }
      ],
      "absatz": "6",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 5,
+      "it": 1,
+      "o": 69,
+      "l": 69
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7882,11 +9538,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7903,7 +9561,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7911,11 +9570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [],
@@ -7930,7 +9591,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7938,11 +9600,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -7963,7 +9627,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -7975,7 +9640,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 175,
+      "l": 248
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7983,11 +9655,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -8004,7 +9678,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8012,11 +9687,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -8037,7 +9714,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8045,11 +9723,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -8066,7 +9746,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8074,11 +9755,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -8095,7 +9778,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8103,11 +9787,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -8128,7 +9814,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -8140,7 +9827,8 @@
       }
      ],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -8152,7 +9840,14 @@
       }
      ],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 3,
+      "it": 0,
+      "o": 83,
+      "l": 99
+     },
+     "kl": "V"
     }
    ]
   },
@@ -8160,11 +9855,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [
@@ -8185,7 +9882,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "303",
@@ -8197,7 +9895,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "304",
@@ -8209,7 +9908,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 211,
+      "l": 211
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8217,11 +9922,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [
@@ -8238,7 +9945,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8246,11 +9954,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -8271,7 +9981,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "309",
@@ -8283,7 +9994,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 161,
+      "l": 161
+     },
+     "kl": "A"
     },
     {
      "nr": "310",
@@ -8295,7 +10012,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "311",
@@ -8307,7 +10025,14 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 125,
+      "l": 206
+     },
+     "kl": "V"
     },
     {
      "nr": "307",
@@ -8320,7 +10045,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "C. Festsetzung der Leistungen"
+     "sektion": "C. Festsetzung der Leistungen",
+     "kl": "A"
     }
    ]
   },
@@ -8328,11 +10054,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -8349,7 +10077,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "313",
@@ -8361,7 +10090,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8369,11 +10104,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [],
@@ -8388,7 +10125,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8396,11 +10134,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -8421,7 +10161,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "323",
@@ -8433,7 +10174,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 306,
+      "l": 306
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8441,11 +10188,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -8466,7 +10215,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "318",
@@ -8479,7 +10229,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 273,
+      "l": 273
+     },
+     "kl": "A"
     },
     {
      "nr": "319",
@@ -8491,7 +10247,8 @@
       }
      ],
      "absatz": null,
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     },
     {
      "nr": "320",
@@ -8503,7 +10260,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "321",
@@ -8515,7 +10273,8 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     }
    ]
   },
@@ -8523,15 +10282,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -8552,7 +10314,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8560,15 +10323,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -8589,7 +10355,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "351",
@@ -8601,7 +10368,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 366,
+      "l": 376
+     },
+     "kl": "V"
     },
     {
      "nr": "352",
@@ -8613,7 +10386,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 210,
+      "l": 223
+     },
+     "kl": "V"
     },
     {
      "nr": "353",
@@ -8625,7 +10404,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 223,
+      "l": 223
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8633,15 +10418,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -8658,7 +10446,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "355",
@@ -8671,7 +10460,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 93,
+      "l": 104
+     },
+     "kl": "V"
     }
    ]
   },
@@ -8679,15 +10474,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -8704,7 +10502,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8712,15 +10511,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -8737,7 +10539,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "349",
@@ -8749,7 +10552,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "U"
     }
    ]
   },
@@ -8757,15 +10561,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "II. Taggelder"
+     "label": "II. Taggelder",
+     "eId": "chap_5/lvl_D/lvl_II"
     }
    ],
    "marginalie": [
@@ -8786,7 +10593,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "366",
@@ -8798,7 +10606,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 218,
+      "l": 395
+     },
+     "kl": "V"
     },
     {
      "nr": "367",
@@ -8810,7 +10624,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 395,
+      "l": 395
+     },
+     "kl": "A"
     },
     {
      "nr": "368",
@@ -8822,7 +10642,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 73,
+      "l": 73
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8830,15 +10656,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "IV. Gemeinsame Bestimmungen"
+     "label": "IV. Gemeinsame Bestimmungen",
+     "eId": "chap_5/lvl_D/lvl_IV"
     }
    ],
    "marginalie": [
@@ -8855,7 +10684,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "381",
@@ -8867,7 +10697,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 451,
+      "l": 636
+     },
+     "kl": "V"
     },
     {
      "nr": "382",
@@ -8879,7 +10715,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 636,
+      "l": 636
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8887,11 +10729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "Dbis. …"
+     "label": "Dbis. …",
+     "eId": "chap_5/lvl_D_bis"
     }
    ],
    "marginalie": [],
@@ -8910,7 +10754,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8918,11 +10763,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages"
+     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages",
+     "eId": "chap_5/lvl_E"
     }
    ],
    "marginalie": [
@@ -8939,7 +10786,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "386",
@@ -8952,7 +10800,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages"
+     "sektion": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages",
+     "kl": "A"
     }
    ]
   },
@@ -8960,11 +10809,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages"
+     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages",
+     "eId": "chap_5/lvl_E"
     }
    ],
    "marginalie": [
@@ -8985,7 +10836,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8993,11 +10845,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages"
+     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages",
+     "eId": "chap_5/lvl_E"
     }
    ],
    "marginalie": [
@@ -9018,7 +10872,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "394",
@@ -9030,7 +10885,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 99,
+      "l": 99
+     },
+     "kl": "A"
     },
     {
      "nr": "395",
@@ -9042,7 +10903,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 165,
+      "l": 165
+     },
+     "kl": "A"
     },
     {
      "nr": "396",
@@ -9054,7 +10922,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 107,
+      "l": 107
+     },
+     "kl": "A"
     },
     {
      "nr": "397",
@@ -9066,7 +10940,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "398",
@@ -9078,7 +10953,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -9086,7 +10962,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG"
+     "label": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [
@@ -9103,7 +10980,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 90,
+      "l": 143
+     },
+     "kl": "V"
     }
    ]
   },
@@ -9111,7 +10994,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung"
+     "label": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -9128,7 +11012,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9136,7 +11021,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung"
+     "label": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -9151,7 +11037,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9159,7 +11046,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG"
+     "label": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [
@@ -9176,7 +11064,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 259,
+      "l": 267
+     },
+     "kl": "V"
     }
    ]
   },
@@ -9184,7 +11078,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG"
+     "label": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [
@@ -9202,7 +11097,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 115,
+      "l": 166
+     },
+     "kl": "V"
     },
     {
      "nr": "403",
@@ -9215,7 +11116,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG"
+     "sektion": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG",
+     "kl": "A"
     }
    ]
   },
@@ -9223,7 +11125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung"
+     "label": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -9240,7 +11143,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "399",
@@ -9253,7 +11157,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung"
+     "sektion": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung",
+     "kl": "A"
     }
    ]
   },
@@ -9261,7 +11166,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -9280,7 +11186,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9288,7 +11195,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9313,7 +11221,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "412",
@@ -9325,7 +11234,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "413",
@@ -9337,7 +11247,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 94,
+      "l": 94
+     },
+     "kl": "A"
     },
     {
      "nr": "414",
@@ -9349,7 +11265,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 88,
+      "l": 88
+     },
+     "kl": "A"
     }
    ]
   },
@@ -9357,11 +11279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "C. …"
+     "label": "C. …",
+     "eId": "chap_2/lvl_C"
     }
    ],
    "marginalie": [],
@@ -9376,7 +11300,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9384,7 +11309,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9401,7 +11327,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9409,7 +11336,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -9428,7 +11356,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9436,7 +11365,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -9455,7 +11385,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9463,7 +11394,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -9478,7 +11410,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9486,7 +11419,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9503,7 +11437,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9511,7 +11446,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9528,7 +11464,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "433",
@@ -9540,7 +11477,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 175,
+      "l": 337
+     },
+     "kl": "V"
     },
     {
      "nr": "434",
@@ -9552,7 +11495,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 292,
+      "l": 333
+     },
+     "kl": "V"
     }
    ]
   },
@@ -9560,7 +11509,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9577,7 +11527,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9585,7 +11536,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9602,7 +11554,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9610,7 +11563,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9627,7 +11581,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "442",
@@ -9639,7 +11594,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 195,
+      "l": 209
+     },
+     "kl": "V"
     }
    ]
   },
@@ -9647,7 +11608,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9664,7 +11626,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9672,7 +11635,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -9687,7 +11651,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "443",
@@ -9700,7 +11665,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "sektion": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "kl": "A"
     }
    ]
   }

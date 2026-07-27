@@ -41,7 +41,7 @@ riskiert verifizierte Kantons-Snapshots).
 **1 — ELI + geltende Konsolidierung auflösen.** `npm run fedlex:eli -- <SR-Nr>`
 fragt den amtlichen Fedlex-SPARQL-Endpoint. *Warum zuerst:* «geltend» ist die
 grösste `dateApplicability` ≤ heute — künftige, noch nicht in Kraft stehende
-Fassungen werden NICHT gepinnt (`CLAUDE.md` §7 Build-Regel 3; die Funktion
+Fassungen werden NICHT gepinnt (§7 Build-Regel 3 — in `SKILL.md`; die Funktion
 `loese()` in `scripts/fedlex-eli-aufloesen.ts`). Ohne die richtige Konsolidierung extrahiert alles
 Folgende die falsche Fassung.
 
@@ -104,8 +104,8 @@ nicht in der UI.
 `check:normtext`, `check:suchindex`, `gate` (Befehlskette in
 `tools/normtext-pipeline.md`). «aufgehoben»/Geltung wird auf **Snapshot-Ebene**
 behandelt, nicht im Register (der Status «aufgehoben» bleibt sichtbar, die
-Zitatzeile erscheint auf Klick). **DoD ist mehr als grüne Tore** (`CLAUDE.md`
-§14.4/§14.5):
+Zitatzeile erscheint auf Klick). **DoD ist mehr als grüne Tore** (§14.4/§14.5 —
+Skill `auftrag`, Ziff. 4/5):
 - Pflicht-Gegenprüfung gelaufen — eine Bund-Neu-Extraktion (`public/normtext/**/*.json`,
   `scripts/normtext-snapshot.ts`, `scripts/fedlex-*`) ist ein Risiko-Pfad, die
   adversariale Gegenprüfung ist verpflichtend, nicht auf Abruf; das Tor
@@ -178,12 +178,13 @@ Quelle in:
 - **Tier A-struktur** — LexWork/clex-API liefert strukturierten Text →
   `adapter-lexwork`. Höchste Treue.
 - **Tier B-pdf** — amtliches PDF, layout-extrahierbar → `adapter-pdf` (pdfjs,
-  Body-Spalten-x, `CLAUDE.md` §7 Build-Regel + `bibliothek/normen/`-Profil).
+  Body-Spalten-x, §7 Build-Regeln in `SKILL.md` + `bibliothek/normen/`-Profil).
 - **Tier C-pdf-embed** — keine verlässliche Extraktion möglich → das amtliche
   Original einbetten (das Angezeigte IST die amtliche Fassung, §8, kein
   Extraktionsrisiko).
 
-Adapter-Priorität: **LexWork → HTM → HTML → PDF → Live-Link** (`CLAUDE.md` §7).
+Adapter-Priorität: **LexWork → HTM → HTML → PDF → Live-Link** (§7 Quell-Wahl, in
+`SKILL.md`).
 *Warum:* je strukturierter die Quelle, desto treuer die Extraktion und desto
 kleiner das Render-Risiko (Tabellen-Drop, Spaltenmerge).
 

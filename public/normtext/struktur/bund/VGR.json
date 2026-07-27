@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "173.320.1",
   "titel": "Geschäftsreglement für das Bundesverwaltungsgericht",
@@ -32,7 +32,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -41,11 +42,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesamtgericht"
+     "label": "1. Abschnitt: Gesamtgericht",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -62,7 +65,8 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     }
    ]
   },
@@ -70,11 +74,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesamtgericht"
+     "label": "1. Abschnitt: Gesamtgericht",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -89,7 +95,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -97,11 +104,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesamtgericht"
+     "label": "1. Abschnitt: Gesamtgericht",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -112,11 +121,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesamtgericht"
+     "label": "1. Abschnitt: Gesamtgericht",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -127,11 +138,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesamtgericht"
+     "label": "1. Abschnitt: Gesamtgericht",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -142,11 +155,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesamtgericht"
+     "label": "1. Abschnitt: Gesamtgericht",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -163,7 +178,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -171,11 +187,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesamtgericht"
+     "label": "1. Abschnitt: Gesamtgericht",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -190,7 +208,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -198,11 +217,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesamtgericht"
+     "label": "1. Abschnitt: Gesamtgericht",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -213,11 +234,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesamtgericht"
+     "label": "1. Abschnitt: Gesamtgericht",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -234,7 +257,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 121,
+      "l": 121
+     },
+     "kl": "A"
     }
    ]
   },
@@ -242,11 +271,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Präsidium"
+     "label": "2. Abschnitt: Präsidium",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": []
@@ -255,11 +286,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwaltungskommission"
+     "label": "3. Abschnitt: Verwaltungskommission",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -270,11 +303,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwaltungskommission"
+     "label": "3. Abschnitt: Verwaltungskommission",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -285,11 +320,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwaltungskommission"
+     "label": "3. Abschnitt: Verwaltungskommission",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -300,11 +337,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Präsidentenkonferenz"
+     "label": "4. Abschnitt: Präsidentenkonferenz",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": []
@@ -313,11 +352,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Generalsekretariat"
+     "label": "5. Abschnitt: Generalsekretariat",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [],
@@ -332,7 +373,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 459,
+      "l": 459
+     },
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -344,7 +391,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 97,
+      "l": 131
+     },
+     "kl": "V"
     }
    ]
   },
@@ -352,11 +406,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Schlichtungsbehörden"
+     "label": "6. Abschnitt: Schlichtungsbehörden",
+     "eId": "chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -373,7 +429,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -385,7 +442,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 225,
+      "l": 225
+     },
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -398,7 +461,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6. Abschnitt: Schlichtungsbehörden"
+     "sektion": "6. Abschnitt: Schlichtungsbehörden",
+     "kl": "A"
     }
    ]
   },
@@ -406,11 +470,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Unterschriften"
+     "label": "7. Abschnitt: Unterschriften",
+     "eId": "chap_1/sec_7"
     }
    ],
    "marginalie": [],
@@ -425,7 +491,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 174,
+      "l": 174
+     },
+     "kl": "A"
     }
    ]
   },
@@ -433,11 +505,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abteilungen"
+     "label": "1. Abschnitt: Abteilungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -454,7 +528,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 59,
+      "l": 59
+     },
+     "kl": "A"
     }
    ]
   },
@@ -462,11 +542,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abteilungen"
+     "label": "1. Abschnitt: Abteilungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -477,11 +559,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abteilungen"
+     "label": "1. Abschnitt: Abteilungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -492,11 +576,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abteilungen"
+     "label": "1. Abschnitt: Abteilungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -507,11 +593,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abteilungen"
+     "label": "1. Abschnitt: Abteilungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -528,7 +616,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -540,7 +629,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 144,
+      "l": 144
+     },
+     "kl": "A"
     }
    ]
   },
@@ -548,11 +643,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abteilungen"
+     "label": "1. Abschnitt: Abteilungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -569,7 +666,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 208,
+      "l": 209
+     },
+     "kl": "V"
     },
     {
      "nr": "21",
@@ -581,7 +684,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 209,
+      "l": 209
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -593,7 +702,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 267,
+      "l": 267
+     },
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -605,7 +720,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 123,
+      "l": 123
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -617,7 +738,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 111,
+      "l": 111
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -629,7 +756,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 114,
+      "l": 114
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -641,7 +774,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 63,
+      "l": 63
+     },
+     "kl": "A"
     }
    ]
   },
@@ -649,11 +788,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abteilungen"
+     "label": "1. Abschnitt: Abteilungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -664,11 +805,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kammern"
+     "label": "2. Abschnitt: Kammern",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -679,11 +822,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kammern"
+     "label": "2. Abschnitt: Kammern",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -700,7 +845,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -708,11 +854,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Richter und Richterinnen"
+     "label": "3. Abschnitt: Richter und Richterinnen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -723,11 +871,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Richter und Richterinnen"
+     "label": "3. Abschnitt: Richter und Richterinnen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -744,7 +894,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 338,
+      "l": 338
+     },
+     "kl": "A"
     }
    ]
   },
@@ -752,11 +908,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Gerichtsschreiber und Gerichtsschreiberinnen"
+     "label": "4. Abschnitt: Gerichtsschreiber und Gerichtsschreiberinnen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -767,11 +925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Gerichtsschreiber und Gerichtsschreiberinnen"
+     "label": "4. Abschnitt: Gerichtsschreiber und Gerichtsschreiberinnen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -782,7 +942,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren"
+     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -799,7 +960,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -807,7 +969,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren"
+     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -824,7 +987,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 108,
+      "l": 108
+     },
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -836,7 +1005,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -848,7 +1018,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -864,7 +1035,14 @@
       }
      ],
      "absatz": "3bis",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 107,
+      "l": 107
+     },
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -876,7 +1054,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -888,7 +1072,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 180,
+      "l": 180
+     },
+     "kl": "A"
     }
    ]
   },
@@ -896,7 +1086,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren"
+     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -907,7 +1098,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren"
+     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -918,7 +1110,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren"
+     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -929,7 +1122,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren"
+     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -940,7 +1134,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren"
+     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -951,7 +1146,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -968,7 +1164,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 44,
+      "l": 94
+     },
+     "kl": "Z"
     },
     {
      "nr": "42",
@@ -980,7 +1182,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -988,7 +1196,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1006,7 +1215,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 163,
+      "l": 294
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1014,7 +1229,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1025,7 +1241,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1042,7 +1259,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 127,
+      "l": 195
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1050,7 +1273,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1061,11 +1285,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4a. Abschnitt: Abteilungspräsidium"
+     "label": "4a. Abschnitt: Abteilungspräsidium",
+     "eId": "chap_1/sec_4_a"
     }
    ],
    "marginalie": [],
@@ -1081,7 +1307,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4a. Abschnitt: Abteilungspräsidium"
+     "sektion": "4a. Abschnitt: Abteilungspräsidium",
+     "kl": "A"
     }
    ]
   },
@@ -1089,11 +1316,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Organe"
+     "label": "1. Kapitel: Organe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Schlichtungsbehörden"
+     "label": "6. Abschnitt: Schlichtungsbehörden",
+     "eId": "chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1110,7 +1339,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -1122,7 +1352,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 77,
+      "l": 460
+     },
+     "kl": "V"
     },
     {
      "nr": "15",
@@ -1134,7 +1370,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 76,
+      "l": 159
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1142,11 +1384,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation der Rechtsprechung"
+     "label": "2. Kapitel: Organisation der Rechtsprechung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kammern"
+     "label": "2. Abschnitt: Kammern",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1163,7 +1407,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1171,7 +1416,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren"
+     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1188,7 +1434,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -1200,7 +1447,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 120,
+      "l": 179
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1208,7 +1461,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren"
+     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1225,7 +1479,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1233,7 +1488,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren"
+     "label": "3. Kapitel: Geschäftsabwicklung und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1250,7 +1506,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1258,7 +1515,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1275,7 +1533,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

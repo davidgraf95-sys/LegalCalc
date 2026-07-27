@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "741.31",
   "titel": "Verkehrsversicherungsverordnung",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -58,7 +60,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -67,7 +70,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     }
    ],
    "marginalie": [
@@ -84,7 +88,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     },
     {
      "nr": "5",
@@ -96,7 +101,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 177,
+      "l": 177
+     },
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -109,7 +120,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 63,
+      "l": 118
+     },
+     "kl": "V"
     }
    ]
   },
@@ -117,7 +134,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     }
    ],
    "marginalie": [
@@ -128,15 +146,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "eId": "part_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Versicherungsnachweis"
+     "label": "I. Versicherungsnachweis",
+     "eId": "part_2/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -157,7 +178,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -170,7 +192,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "sektion": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -178,15 +201,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "eId": "part_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Versicherungsnachweis"
+     "label": "I. Versicherungsnachweis",
+     "eId": "part_2/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -203,7 +229,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 246,
+      "l": 246
+     },
+     "kl": "A"
     }
    ]
   },
@@ -211,15 +243,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "eId": "part_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Versicherungsnachweis"
+     "label": "I. Versicherungsnachweis",
+     "eId": "part_2/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -236,7 +271,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -248,7 +284,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 38,
+      "l": 179
+     },
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -260,7 +302,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 179,
+      "l": 179
+     },
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -272,7 +320,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 236,
+      "l": 236
+     },
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -284,7 +338,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 219,
+      "l": 219
+     },
+     "kl": "A"
     }
    ]
   },
@@ -292,15 +352,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "eId": "part_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Versicherungsnachweis"
+     "label": "I. Versicherungsnachweis",
+     "eId": "part_2/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -317,7 +380,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 121,
+      "l": 121
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -329,7 +398,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -337,15 +412,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "eId": "part_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Aussetzen und Aufhören der Versicherung"
+     "label": "II. Aussetzen und Aufhören der Versicherung",
+     "eId": "part_2/chap_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -362,7 +440,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 104,
+      "l": 104
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -374,7 +458,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 264,
+      "l": 264
+     },
+     "kl": "A"
     }
    ]
   },
@@ -382,15 +472,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "eId": "part_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Aussetzen und Aufhören der Versicherung"
+     "label": "II. Aussetzen und Aufhören der Versicherung",
+     "eId": "part_2/chap_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -407,7 +500,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 329,
+      "l": 329
+     },
+     "kl": "A"
     }
    ]
   },
@@ -415,15 +514,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "eId": "part_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung"
+     "label": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung",
+     "eId": "part_2/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -440,7 +542,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 217,
+      "l": 217
+     },
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -453,7 +561,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 89,
+      "l": 164
+     },
+     "kl": "V"
     },
     {
      "nr": "29",
@@ -465,7 +579,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 164,
+      "l": 164
+     },
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -477,7 +597,8 @@
       }
      ],
      "absatz": "4",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -489,7 +610,8 @@
       }
      ],
      "absatz": "4",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -501,7 +623,14 @@
       }
      ],
      "absatz": "4",
-     "item": "m"
+     "item": "m",
+     "pos": {
+      "b": 3,
+      "it": 11,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -513,7 +642,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 242,
+      "l": 242
+     },
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -526,7 +661,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 400,
+      "l": 599
+     },
+     "kl": "V"
     },
     {
      "nr": "35",
@@ -539,7 +680,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 598,
+      "l": 599
+     },
+     "kl": "V"
     },
     {
      "nr": "36",
@@ -551,7 +698,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 599,
+      "l": 599
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -564,7 +717,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung"
+     "sektion": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung",
+     "kl": "A"
     }
    ]
   },
@@ -572,15 +726,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "eId": "part_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung"
+     "label": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung",
+     "eId": "part_2/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -597,7 +754,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 55,
+      "l": 55
+     },
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -613,7 +776,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -621,15 +790,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "I. Erhöhte Risiken"
+     "label": "I. Erhöhte Risiken",
+     "eId": "part_2/chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -646,7 +818,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 362,
+      "l": 362
+     },
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -658,7 +836,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 200,
+      "l": 200
+     },
+     "kl": "A"
     }
    ]
   },
@@ -666,15 +850,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "I. Erhöhte Risiken"
+     "label": "I. Erhöhte Risiken",
+     "eId": "part_2/chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -691,7 +878,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 193,
+      "l": 356
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -703,7 +896,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 356,
+      "l": 356
+     },
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -715,7 +914,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 191,
+      "l": 209
+     },
+     "kl": "A"
     }
    ]
   },
@@ -723,15 +928,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "II. Wechsel-Kontrollschilder"
+     "label": "II. Wechsel-Kontrollschilder",
+     "eId": "part_2/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -748,7 +956,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 370,
+      "l": 370
+     },
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -760,7 +974,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 195,
+      "l": 195
+     },
+     "kl": "A"
     }
    ]
   },
@@ -768,15 +988,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "II. Wechsel-Kontrollschilder"
+     "label": "II. Wechsel-Kontrollschilder",
+     "eId": "part_2/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -787,15 +1010,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "II. Wechsel-Kontrollschilder"
+     "label": "II. Wechsel-Kontrollschilder",
+     "eId": "part_2/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -806,15 +1032,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "III. Provisorische Immatrikulation"
+     "label": "III. Provisorische Immatrikulation",
+     "eId": "part_2/chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -831,7 +1060,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 137,
+      "l": 137
+     },
+     "kl": "A"
     }
    ]
   },
@@ -839,15 +1074,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "III. Provisorische Immatrikulation"
+     "label": "III. Provisorische Immatrikulation",
+     "eId": "part_2/chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -859,7 +1097,13 @@
      "text": "Heute: Art. 44",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 426,
+      "l": 445
+     },
+     "kl": "G"
     },
     {
      "nr": "53",
@@ -871,7 +1115,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 445,
+      "l": 445
+     },
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -883,7 +1133,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 236,
+      "l": 236
+     },
+     "kl": "A"
     }
    ]
   },
@@ -891,15 +1147,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "III. Provisorische Immatrikulation"
+     "label": "III. Provisorische Immatrikulation",
+     "eId": "part_2/chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -916,7 +1175,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 447
+     },
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -928,7 +1193,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 187,
+      "l": 187
+     },
+     "kl": "A"
     }
    ]
   },
@@ -936,15 +1207,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "III. Provisorische Immatrikulation"
+     "label": "III. Provisorische Immatrikulation",
+     "eId": "part_2/chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -961,7 +1235,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 103,
+      "l": 103
+     },
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -973,7 +1253,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -985,7 +1271,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -993,15 +1285,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "IV. Tagesausweise"
+     "label": "IV. Tagesausweise",
+     "eId": "part_2/chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1018,7 +1313,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1026,15 +1322,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "IV. Tagesausweise"
+     "label": "IV. Tagesausweise",
+     "eId": "part_2/chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1051,7 +1350,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 224,
+      "l": 224
+     },
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -1063,7 +1368,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 141,
+      "l": 141
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1071,15 +1382,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "V. Kollektiv-Fahrzeugausweise"
+     "label": "V. Kollektiv-Fahrzeugausweise",
+     "eId": "part_2/chap_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -1096,7 +1410,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1108,7 +1423,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 30,
+      "l": 46
+     },
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -1120,7 +1442,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 63,
+      "l": 63
+     },
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -1136,7 +1464,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -1152,7 +1481,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -1164,7 +1494,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -1176,7 +1507,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -1188,7 +1520,14 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 131,
+      "l": 131
+     },
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -1200,7 +1539,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 128,
+      "l": 128
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1208,15 +1553,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "V. Kollektiv-Fahrzeugausweise"
+     "label": "V. Kollektiv-Fahrzeugausweise",
+     "eId": "part_2/chap_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -1233,7 +1581,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -1245,7 +1594,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 281,
+      "l": 281
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1253,15 +1608,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "V. Kollektiv-Fahrzeugausweise"
+     "label": "V. Kollektiv-Fahrzeugausweise",
+     "eId": "part_2/chap_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -1278,7 +1636,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1291,7 +1650,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 107,
+      "l": 189
+     },
+     "kl": "V"
     },
     {
      "nr": "79",
@@ -1303,7 +1668,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -1316,7 +1687,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 173,
+      "l": 422
+     },
+     "kl": "V"
     },
     {
      "nr": "81",
@@ -1328,7 +1705,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 422,
+      "l": 422
+     },
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -1340,7 +1723,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 402,
+      "l": 519
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1348,15 +1737,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "V. Kollektiv-Fahrzeugausweise"
+     "label": "V. Kollektiv-Fahrzeugausweise",
+     "eId": "part_2/chap_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -1373,7 +1765,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "84",
@@ -1385,7 +1778,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 247,
+      "l": 247
+     },
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -1397,7 +1796,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 198,
+      "l": 198
+     },
+     "kl": "A"
     },
     {
      "nr": "86",
@@ -1409,7 +1815,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 211,
+      "l": 211
+     },
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -1421,7 +1833,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 394,
+      "l": 394
+     },
+     "kl": "A"
     },
     {
      "nr": "88",
@@ -1433,7 +1851,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1441,15 +1865,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "V. Kollektiv-Fahrzeugausweise"
+     "label": "V. Kollektiv-Fahrzeugausweise",
+     "eId": "part_2/chap_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -1466,7 +1893,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 181,
+      "l": 181
+     },
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -1478,7 +1911,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 38,
+      "l": 182
+     },
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -1490,7 +1929,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 182,
+      "l": 182
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1498,15 +1943,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen"
+     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen",
+     "eId": "part_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "I. Unternehmungen des Motorfahrzeuggewerbes"
+     "label": "I. Unternehmungen des Motorfahrzeuggewerbes",
+     "eId": "part_2/chap_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -1523,7 +1971,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 262,
+      "l": 262
+     },
+     "kl": "A"
     },
     {
      "nr": "93",
@@ -1535,7 +1989,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 280,
+      "l": 280
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1543,15 +2003,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen"
+     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen",
+     "eId": "part_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "I. Unternehmungen des Motorfahrzeuggewerbes"
+     "label": "I. Unternehmungen des Motorfahrzeuggewerbes",
+     "eId": "part_2/chap_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -1562,15 +2025,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen"
+     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen",
+     "eId": "part_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "I. Unternehmungen des Motorfahrzeuggewerbes"
+     "label": "I. Unternehmungen des Motorfahrzeuggewerbes",
+     "eId": "part_2/chap_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -1587,7 +2053,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -1600,7 +2067,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 349,
+      "l": 453
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1608,15 +2081,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen"
+     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen",
+     "eId": "part_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "II. Rennen"
+     "label": "II. Rennen",
+     "eId": "part_2/chap_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -1627,15 +2103,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen"
+     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen",
+     "eId": "part_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "II. Rennen"
+     "label": "II. Rennen",
+     "eId": "part_2/chap_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -1652,7 +2131,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 297,
+      "l": 297
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1660,15 +2145,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen"
+     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen",
+     "eId": "part_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "III. Besondere Fälle"
+     "label": "III. Besondere Fälle",
+     "eId": "part_2/chap_3/lvl_III"
     }
    ],
    "marginalie": [
@@ -1685,7 +2173,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -1697,7 +2186,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 74,
+      "l": 74
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1705,15 +2201,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen"
+     "label": "3. Abschnitt: Haftpflichtversicherung für Unternehmungen und Veranstaltungen",
+     "eId": "part_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "III. Besondere Fälle"
+     "label": "III. Besondere Fälle",
+     "eId": "part_2/chap_3/lvl_III"
     }
    ],
    "marginalie": [
@@ -1724,11 +2223,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit"
+     "label": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "I. Motorfahrräder"
+     "label": "I. Motorfahrräder",
+     "eId": "part_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -1747,7 +2248,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 58,
+      "l": 59
+     },
+     "kl": "V"
     },
     {
      "nr": "99",
@@ -1760,7 +2267,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit"
+     "sektion": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit",
+     "kl": "A"
     }
    ]
   },
@@ -1768,11 +2276,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit"
+     "label": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "I. Motorfahrräder"
+     "label": "I. Motorfahrräder",
+     "eId": "part_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -1783,11 +2293,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit"
+     "label": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "I. Motorfahrräder"
+     "label": "I. Motorfahrräder",
+     "eId": "part_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -1798,11 +2310,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit"
+     "label": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "I. Motorfahrräder"
+     "label": "I. Motorfahrräder",
+     "eId": "part_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -1813,11 +2327,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit"
+     "label": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "II. Motorhandwagen, Motoreinachser, Leicht-Motorfahrräder, Rollstühle"
+     "label": "II. Motorhandwagen, Motoreinachser, Leicht-Motorfahrräder, Rollstühle",
+     "eId": "part_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -1835,7 +2351,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 33,
+      "l": 34
+     },
+     "kl": "V"
     },
     {
      "nr": "101",
@@ -1848,7 +2370,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "II. Motorhandwagen, Motoreinachser, Leicht-Motorfahrräder, Rollstühle"
+     "sektion": "II. Motorhandwagen, Motoreinachser, Leicht-Motorfahrräder, Rollstühle",
+     "kl": "A"
     }
    ]
   },
@@ -1856,15 +2379,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Ausländische Motorfahrzeuge und Anhänger"
+     "label": "I. Ausländische Motorfahrzeuge und Anhänger",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -1881,7 +2407,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -1893,7 +2420,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 199,
+      "l": 199
+     },
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -1905,7 +2438,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 141,
+      "l": 141
+     },
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -1918,7 +2457,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "sektion": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -1931,7 +2471,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "sektion": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "kl": "A"
     },
     {
      "nr": "105",
@@ -1944,7 +2485,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Nationales Versicherungsbüro"
+     "sektion": "1. Abschnitt: Nationales Versicherungsbüro",
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -1957,7 +2499,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "I. Ausländische Motorfahrzeuge und Anhänger"
+     "sektion": "I. Ausländische Motorfahrzeuge und Anhänger",
+     "kl": "A"
     }
    ]
   },
@@ -1965,15 +2508,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Ausländische Motorfahrzeuge und Anhänger"
+     "label": "I. Ausländische Motorfahrzeuge und Anhänger",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -1990,7 +2536,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 192,
+      "l": 192
+     },
+     "kl": "A"
     },
     {
      "nr": "111",
@@ -2002,7 +2554,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2010,15 +2569,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Ausländische Motorfahrzeuge und Anhänger"
+     "label": "I. Ausländische Motorfahrzeuge und Anhänger",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -2035,7 +2597,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2043,15 +2606,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Ausländische Motorfahrzeuge und Anhänger"
+     "label": "I. Ausländische Motorfahrzeuge und Anhänger",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -2068,7 +2634,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 198,
+      "l": 198
+     },
+     "kl": "A"
     },
     {
      "nr": "114",
@@ -2080,7 +2652,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 172,
+      "l": 172
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2088,15 +2666,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Ausländische Motorfahrzeuge und Anhänger"
+     "label": "I. Ausländische Motorfahrzeuge und Anhänger",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -2113,7 +2694,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2121,15 +2703,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Ausländische Motorfahrzeuge und Anhänger"
+     "label": "I. Ausländische Motorfahrzeuge und Anhänger",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -2140,15 +2725,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Ausländische Motorfahrzeuge und Anhänger"
+     "label": "I. Ausländische Motorfahrzeuge und Anhänger",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -2165,7 +2753,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 251,
+      "l": 251
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2173,15 +2767,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Ausländische Motorfahrzeuge und Anhänger"
+     "label": "I. Ausländische Motorfahrzeuge und Anhänger",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -2192,15 +2789,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Ausländische Motorfahrzeuge und Anhänger"
+     "label": "I. Ausländische Motorfahrzeuge und Anhänger",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -2217,7 +2817,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2225,15 +2826,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Ausländische Motorfahrzeuge und Anhänger"
+     "label": "I. Ausländische Motorfahrzeuge und Anhänger",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -2250,7 +2854,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 325,
+      "l": 325
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2258,15 +2868,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Ausländische Motorfahrzeuge und Anhänger"
+     "label": "I. Ausländische Motorfahrzeuge und Anhänger",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -2277,15 +2890,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Nationaler Garantiefonds"
+     "label": "2. Abschnitt: Nationaler Garantiefonds",
+     "eId": "part_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "I. …"
+     "label": "I. …",
+     "eId": "part_4/chap_2/lvl_I"
     }
    ],
    "marginalie": [],
@@ -2300,7 +2916,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "123",
@@ -2313,7 +2930,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Nationaler Garantiefonds"
+     "sektion": "2. Abschnitt: Nationaler Garantiefonds",
+     "kl": "A"
     },
     {
      "nr": "124",
@@ -2330,7 +2948,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "I. …"
+     "sektion": "I. …",
+     "kl": "A"
     }
    ]
   },
@@ -2338,15 +2957,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Nationaler Garantiefonds"
+     "label": "2. Abschnitt: Nationaler Garantiefonds",
+     "eId": "part_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "I. …"
+     "label": "I. …",
+     "eId": "part_4/chap_2/lvl_I"
     }
    ],
    "marginalie": [],
@@ -2361,7 +2983,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2369,15 +2992,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Nationaler Garantiefonds"
+     "label": "2. Abschnitt: Nationaler Garantiefonds",
+     "eId": "part_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
+     "label": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte",
+     "eId": "part_4/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2394,7 +3020,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 107,
+      "l": 107
+     },
+     "kl": "A"
     },
     {
      "nr": "129",
@@ -2406,7 +3038,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "130",
@@ -2418,7 +3051,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 193,
+      "l": 306
+     },
+     "kl": "A"
     },
     {
      "nr": "131",
@@ -2430,7 +3069,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 306,
+      "l": 306
+     },
+     "kl": "A"
     },
     {
      "nr": "132",
@@ -2446,7 +3091,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     },
     {
      "nr": "127",
@@ -2463,7 +3114,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
+     "sektion": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte",
+     "kl": "A"
     }
    ]
   },
@@ -2471,15 +3123,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Nationaler Garantiefonds"
+     "label": "2. Abschnitt: Nationaler Garantiefonds",
+     "eId": "part_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
+     "label": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte",
+     "eId": "part_4/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2496,7 +3151,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "134",
@@ -2508,7 +3164,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 258,
+      "l": 258
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2516,15 +3178,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Nationaler Garantiefonds"
+     "label": "2. Abschnitt: Nationaler Garantiefonds",
+     "eId": "part_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
+     "label": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte",
+     "eId": "part_4/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2541,7 +3206,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "137",
@@ -2553,7 +3219,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 254,
+      "l": 254
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2561,11 +3233,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -2582,7 +3256,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "143",
@@ -2595,7 +3270,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+     "sektion": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds",
+     "kl": "A"
     }
    ]
   },
@@ -2603,11 +3279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -2624,7 +3302,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2632,11 +3311,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [],
@@ -2651,7 +3332,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2659,11 +3341,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -2680,7 +3364,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2688,11 +3373,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -2709,7 +3396,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2717,7 +3405,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Strafbestimmungen"
+     "label": "5. Teil: Strafbestimmungen",
+     "eId": "part_5"
     }
    ],
    "marginalie": [],
@@ -2733,7 +3422,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 14,
+      "l": 24
+     },
+     "kl": "A"
     },
     {
      "nr": "155",
@@ -2746,7 +3441,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 24,
+      "l": 24
+     },
+     "kl": "A"
     },
     {
      "nr": "156",
@@ -2759,7 +3460,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 378,
+      "l": 532
+     },
+     "kl": "U"
     },
     {
      "nr": "157",
@@ -2772,7 +3479,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 532,
+      "l": 532
+     },
+     "kl": "U"
     },
     {
      "nr": "158",
@@ -2785,7 +3498,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 4
+     "absatzIndex": 4,
+     "pos": {
+      "b": 4,
+      "o": 4,
+      "l": 4
+     },
+     "kl": "A"
     },
     {
      "nr": "159",
@@ -2798,7 +3517,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 6
+     "absatzIndex": 6,
+     "pos": {
+      "b": 6,
+      "o": 497,
+      "l": 497
+     },
+     "kl": "A"
     },
     {
      "nr": "160",
@@ -2811,7 +3536,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 6
+     "absatzIndex": 6,
+     "pos": {
+      "b": 6,
+      "o": 497,
+      "l": 497
+     },
+     "kl": "A"
     },
     {
      "nr": "153",
@@ -2819,7 +3550,8 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "sektion": "5. Teil: Strafbestimmungen"
+     "sektion": "5. Teil: Strafbestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -2827,11 +3559,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Teil: Schlussbestimmungen"
+     "label": "6. Teil: Schlussbestimmungen",
+     "eId": "part_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Inkrafttreten"
+     "label": "1. Abschnitt: Inkrafttreten",
+     "eId": "part_6/chap_1"
     }
    ],
    "marginalie": [],
@@ -2846,7 +3580,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "161",
@@ -2854,7 +3589,8 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "sektion": "6. Teil: Schlussbestimmungen"
+     "sektion": "6. Teil: Schlussbestimmungen",
+     "kl": "A"
     },
     {
      "nr": "162",
@@ -2867,7 +3603,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6. Teil: Schlussbestimmungen"
+     "sektion": "6. Teil: Schlussbestimmungen",
+     "kl": "A"
     },
     {
      "nr": "163",
@@ -2880,7 +3617,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Inkrafttreten"
+     "sektion": "1. Abschnitt: Inkrafttreten",
+     "kl": "A"
     }
    ]
   },
@@ -2888,11 +3626,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Teil: Schlussbestimmungen"
+     "label": "6. Teil: Schlussbestimmungen",
+     "eId": "part_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Inkrafttreten"
+     "label": "1. Abschnitt: Inkrafttreten",
+     "eId": "part_6/chap_1"
     }
    ],
    "marginalie": [],
@@ -2907,7 +3647,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2915,11 +3656,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Teil: Schlussbestimmungen"
+     "label": "6. Teil: Schlussbestimmungen",
+     "eId": "part_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmen, Weisungen"
+     "label": "2. Abschnitt: Ausnahmen, Weisungen",
+     "eId": "part_6/chap_2"
     }
    ],
    "marginalie": [],
@@ -2938,7 +3681,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2946,15 +3690,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "eId": "part_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung"
+     "label": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung",
+     "eId": "part_2/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -2971,7 +3718,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2979,15 +3727,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "eId": "part_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung"
+     "label": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung",
+     "eId": "part_2/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -3004,7 +3755,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -3016,7 +3768,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -3029,7 +3782,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 121,
+      "l": 384
+     },
+     "kl": "V"
     },
     {
      "nr": "43",
@@ -3041,7 +3801,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 308,
+      "l": 308
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3049,15 +3815,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "IV. Tagesausweise"
+     "label": "IV. Tagesausweise",
+     "eId": "part_2/chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3074,7 +3843,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3082,15 +3852,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Verhältnisse"
+     "label": "2. Abschnitt: Besondere Verhältnisse",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "V. Kollektiv-Fahrzeugausweise"
+     "label": "V. Kollektiv-Fahrzeugausweise",
+     "eId": "part_2/chap_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -3107,7 +3880,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -3119,7 +3893,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 401,
+      "l": 401
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3127,15 +3907,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "eId": "part_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Versicherungsnachweis"
+     "label": "I. Versicherungsnachweis",
+     "eId": "part_2/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -3152,7 +3935,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -3164,7 +3948,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 100,
+      "l": 100
+     },
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -3176,7 +3966,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 9,
+      "l": 110
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3184,15 +3980,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Auskunftsstelle"
+     "label": "II. Auskunftsstelle",
+     "eId": "part_4/chap_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -3209,7 +4008,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "121",
@@ -3221,7 +4021,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 111,
+      "l": 111
+     },
+     "kl": "A"
     },
     {
      "nr": "119",
@@ -3234,7 +4040,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "II. Auskunftsstelle"
+     "sektion": "II. Auskunftsstelle",
+     "kl": "A"
     }
    ]
   },
@@ -3242,15 +4049,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Auskunftsstelle"
+     "label": "II. Auskunftsstelle",
+     "eId": "part_4/chap_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -3261,15 +4071,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Auskunftsstelle"
+     "label": "II. Auskunftsstelle",
+     "eId": "part_4/chap_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -3280,15 +4093,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nationales Versicherungsbüro"
+     "label": "1. Abschnitt: Nationales Versicherungsbüro",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Auskunftsstelle"
+     "label": "II. Auskunftsstelle",
+     "eId": "part_4/chap_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -3306,7 +4122,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 60,
+      "l": 128
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3314,15 +4136,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Nationaler Garantiefonds"
+     "label": "2. Abschnitt: Nationaler Garantiefonds",
+     "eId": "part_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
+     "label": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte",
+     "eId": "part_4/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -3339,7 +4164,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3347,15 +4173,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Nationaler Garantiefonds"
+     "label": "2. Abschnitt: Nationaler Garantiefonds",
+     "eId": "part_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "III. Entschädigungsstelle"
+     "label": "III. Entschädigungsstelle",
+     "eId": "part_4/chap_2/lvl_III"
     }
    ],
    "marginalie": [],
@@ -3371,7 +4200,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "III. Entschädigungsstelle"
+     "sektion": "III. Entschädigungsstelle",
+     "kl": "A"
     }
    ]
   },
@@ -3379,15 +4209,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Nationaler Garantiefonds"
+     "label": "2. Abschnitt: Nationaler Garantiefonds",
+     "eId": "part_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "IV. Sanierung und Konkurs des Versicherers"
+     "label": "IV. Sanierung und Konkurs des Versicherers",
+     "eId": "part_4/chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3405,7 +4238,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 114,
+      "l": 353
+     },
+     "kl": "V"
     },
     {
      "nr": "139",
@@ -3422,7 +4261,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "IV. Sanierung und Konkurs des Versicherers"
+     "sektion": "IV. Sanierung und Konkurs des Versicherers",
+     "kl": "A"
     }
    ]
   },
@@ -3430,15 +4270,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Nationaler Garantiefonds"
+     "label": "2. Abschnitt: Nationaler Garantiefonds",
+     "eId": "part_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "IV. Sanierung und Konkurs des Versicherers"
+     "label": "IV. Sanierung und Konkurs des Versicherers",
+     "eId": "part_4/chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3456,7 +4299,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 110,
+      "l": 118
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3464,15 +4314,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Nationaler Garantiefonds"
+     "label": "2. Abschnitt: Nationaler Garantiefonds",
+     "eId": "part_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "IV. Sanierung und Konkurs des Versicherers"
+     "label": "IV. Sanierung und Konkurs des Versicherers",
+     "eId": "part_4/chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3483,15 +4336,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Nationaler Garantiefonds"
+     "label": "2. Abschnitt: Nationaler Garantiefonds",
+     "eId": "part_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "V. Ausländische radsportliche Veranstaltungen"
+     "label": "V. Ausländische radsportliche Veranstaltungen",
+     "eId": "part_4/chap_2/lvl_V"
     }
    ],
    "marginalie": [],
@@ -3507,7 +4363,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "V. Ausländische radsportliche Veranstaltungen"
+     "sektion": "V. Ausländische radsportliche Veranstaltungen",
+     "kl": "A"
     }
    ]
   },
@@ -3515,11 +4372,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3536,7 +4395,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3544,11 +4404,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [],
@@ -3563,7 +4425,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3571,11 +4434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "label": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3592,7 +4457,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "152",
@@ -3606,7 +4472,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 236,
+      "l": 293
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3614,11 +4486,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Teil: Schlussbestimmungen"
+     "label": "6. Teil: Schlussbestimmungen",
+     "eId": "part_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Inkrafttreten"
+     "label": "1. Abschnitt: Inkrafttreten",
+     "eId": "part_6/chap_1"
     }
    ],
    "marginalie": [],
@@ -3633,7 +4507,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3641,11 +4516,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Teil: Schlussbestimmungen"
+     "label": "6. Teil: Schlussbestimmungen",
+     "eId": "part_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Inkrafttreten"
+     "label": "1. Abschnitt: Inkrafttreten",
+     "eId": "part_6/chap_1"
     }
    ],
    "marginalie": [],
@@ -3660,7 +4537,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3668,11 +4546,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Teil: Schlussbestimmungen"
+     "label": "6. Teil: Schlussbestimmungen",
+     "eId": "part_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmen, Weisungen"
+     "label": "2. Abschnitt: Ausnahmen, Weisungen",
+     "eId": "part_6/chap_2"
     }
    ],
    "marginalie": [],
@@ -3691,7 +4571,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "170",
@@ -3703,7 +4584,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "168",
@@ -3716,7 +4598,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Ausnahmen, Weisungen"
+     "sektion": "2. Abschnitt: Ausnahmen, Weisungen",
+     "kl": "A"
     }
    ]
   },
@@ -3724,11 +4607,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Teil: Schlussbestimmungen"
+     "label": "6. Teil: Schlussbestimmungen",
+     "eId": "part_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmen, Weisungen"
+     "label": "2. Abschnitt: Ausnahmen, Weisungen",
+     "eId": "part_6/chap_2"
     }
    ],
    "marginalie": [],
@@ -3747,7 +4632,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3755,15 +4641,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge"
+     "label": "2. Teil: Haftpflichtversicherung der Motorfahrzeuge",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "eId": "part_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Aussetzen und Aufhören der Versicherung"
+     "label": "II. Aussetzen und Aufhören der Versicherung",
+     "eId": "part_2/chap_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -3780,7 +4669,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -3792,7 +4682,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 187,
+      "l": 187
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -3804,7 +4700,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 342,
+      "l": 342
+     },
+     "kl": "A"
     }
    ]
   },

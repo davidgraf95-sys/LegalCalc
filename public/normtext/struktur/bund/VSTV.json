@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "642.211",
   "titel": "Verordnung über die Verrechnungssteuer",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -45,7 +46,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -57,7 +59,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -66,11 +69,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -87,7 +92,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 324,
+      "l": 324
+     },
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -99,7 +110,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 55,
+      "l": 55
+     },
+     "kl": "A"
     }
    ]
   },
@@ -107,11 +124,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -129,7 +148,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 8,
+      "l": 459
+     },
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -141,7 +166,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 350,
+      "l": 459
+     },
+     "kl": "A"
     }
    ]
   },
@@ -149,11 +180,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -165,11 +198,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -181,11 +216,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -197,11 +234,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -219,7 +258,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 245,
+      "l": 245
+     },
+     "kl": "A"
     }
    ]
   },
@@ -227,11 +272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -243,11 +290,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -259,11 +308,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -282,7 +333,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 660,
+      "l": 660
+     },
+     "kl": "A"
     }
    ]
   },
@@ -290,11 +347,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -313,7 +372,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 117,
+      "l": 129
+     },
+     "kl": "V"
     },
     {
      "nr": "11",
@@ -325,7 +390,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 129,
+      "l": 129
+     },
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -337,7 +408,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -345,11 +422,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -367,7 +446,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 130,
+      "l": 292
+     },
+     "kl": "V"
     },
     {
      "nr": "14",
@@ -379,7 +464,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 292,
+      "l": 292
+     },
+     "kl": "A"
     }
    ]
   },
@@ -387,11 +478,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -408,7 +501,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -416,11 +510,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -431,15 +527,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben"
+     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben",
+     "eId": "tit_1/chap_2/lvl_A"
     }
    ],
    "marginalie": [
@@ -457,7 +556,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "G"
     }
    ]
   },
@@ -465,15 +570,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben"
+     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben",
+     "eId": "tit_1/chap_2/lvl_A"
     }
    ],
    "marginalie": [
@@ -485,15 +593,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben"
+     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben",
+     "eId": "tit_1/chap_2/lvl_A"
     }
    ],
    "marginalie": [
@@ -511,7 +622,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -519,15 +631,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben"
+     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben",
+     "eId": "tit_1/chap_2/lvl_A"
     }
    ],
    "marginalie": [
@@ -544,7 +659,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 295,
+      "l": 295
+     },
+     "kl": "A"
     }
    ]
   },
@@ -552,15 +673,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben"
+     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben",
+     "eId": "tit_1/chap_2/lvl_A"
     }
    ],
    "marginalie": [
@@ -572,20 +696,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben"
+     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben",
+     "eId": "tit_1/chap_2/lvl_A"
     }
    ],
    "marginalie": [
     "III. Steuerabrechnung",
-    "2. Kassenobli- gationen u.dgl.; Kundenguthaben"
+    "2. Kassenobligationen u.dgl.; Kundenguthaben"
    ],
    "fussnoten": [
     {
@@ -598,7 +725,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -610,7 +738,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 506,
+      "l": 506
+     },
+     "kl": "A"
     }
    ]
   },
@@ -618,15 +752,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
+     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen",
+     "eId": "tit_1/chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -643,7 +780,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 505,
+      "l": 505
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -655,7 +798,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 484,
+      "l": 484
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -667,7 +816,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -680,7 +835,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
+     "sektion": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen",
+     "kl": "A"
     }
    ]
   },
@@ -688,15 +844,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
+     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen",
+     "eId": "tit_1/chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -715,7 +874,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 81,
+      "l": 260
+     },
+     "kl": "V"
     },
     {
      "nr": "29",
@@ -727,7 +893,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 168,
+      "l": 260
+     },
+     "kl": "V"
     },
     {
      "nr": "30",
@@ -739,7 +912,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 118,
+      "l": 118
+     },
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -751,7 +931,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 78,
+      "l": 78
+     },
+     "kl": "A"
     }
    ]
   },
@@ -759,15 +945,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
+     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen",
+     "eId": "tit_1/chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -786,7 +975,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 122,
+      "l": 174
+     },
+     "kl": "V"
     },
     {
      "nr": "33",
@@ -798,7 +993,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 174,
+      "l": 174
+     },
+     "kl": "A"
     }
    ]
   },
@@ -806,15 +1007,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
+     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen",
+     "eId": "tit_1/chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -832,7 +1036,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 532,
+      "l": 532
+     },
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -844,7 +1054,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 148,
+      "l": 148
+     },
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -857,7 +1073,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 5,
+      "l": 5
+     },
+     "kl": "A"
     }
    ]
   },
@@ -865,15 +1087,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
+     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen",
+     "eId": "tit_1/chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -885,15 +1110,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
+     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen",
+     "eId": "tit_1/chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -912,7 +1140,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Gesuch; Bewilligung"
+     "sektion": "3. Gesuch; Bewilligung",
+     "kl": "A"
     }
    ]
   },
@@ -920,15 +1149,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
+     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen",
+     "eId": "tit_1/chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -947,7 +1179,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Meldung; nachträgliche Einforderung der Steuer"
+     "sektion": "4. Meldung; nachträgliche Einforderung der Steuer",
+     "kl": "A"
     }
    ]
   },
@@ -955,15 +1188,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
+     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen",
+     "eId": "tit_1/chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -974,15 +1210,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
+     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen",
+     "eId": "tit_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1000,7 +1239,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -1012,7 +1252,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 390,
+      "l": 390
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -1024,7 +1270,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 352,
+      "l": 352
+     },
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -1037,7 +1289,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
+     "sektion": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen",
+     "kl": "A"
     }
    ]
   },
@@ -1045,15 +1298,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
+     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen",
+     "eId": "tit_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1065,15 +1321,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
+     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen",
+     "eId": "tit_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1091,7 +1350,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -1104,7 +1369,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Fondsleitung und Depotbank"
+     "sektion": "3. Fondsleitung und Depotbank",
+     "kl": "A"
     }
    ]
   },
@@ -1112,15 +1378,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
+     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen",
+     "eId": "tit_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1137,7 +1406,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 159,
+      "l": 159
+     },
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -1149,7 +1424,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 427,
+      "l": 427
+     },
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -1161,7 +1442,14 @@
       }
      ],
      "absatz": "2bis",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 91,
+      "l": 91
+     },
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -1173,7 +1461,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 206,
+      "l": 206
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1181,15 +1475,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
+     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen",
+     "eId": "tit_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1207,7 +1504,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 190,
+      "l": 210
+     },
+     "kl": "V"
     },
     {
      "nr": "54",
@@ -1219,7 +1522,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 210,
+      "l": 210
+     },
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -1231,7 +1540,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 313,
+      "l": 313
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1239,15 +1554,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
+     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen",
+     "eId": "tit_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1265,7 +1583,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 133,
+      "l": 133
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1273,15 +1597,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
+     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen",
+     "eId": "tit_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1299,7 +1626,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 234,
+      "l": 234
+     },
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -1312,7 +1645,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "IV. Nichterhebung der Steuer gegen Domizilerklärung"
+     "sektion": "IV. Nichterhebung der Steuer gegen Domizilerklärung",
+     "kl": "A"
     }
    ]
   },
@@ -1320,15 +1654,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
+     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen",
+     "eId": "tit_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1340,15 +1677,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
+     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen",
+     "eId": "tit_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1367,7 +1707,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 55,
+      "l": 56
+     },
+     "kl": "V"
     },
     {
      "nr": "60",
@@ -1379,7 +1726,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -1391,7 +1739,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 88,
+      "l": 97
+     },
+     "kl": "V"
     },
     {
      "nr": "62",
@@ -1403,7 +1758,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -1415,7 +1771,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -1427,7 +1784,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 51,
+      "l": 51
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1439,7 +1803,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 66,
+      "l": 66
+     },
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -1451,7 +1821,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 217,
+      "l": 217
+     },
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -1463,7 +1839,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 136,
+      "l": 136
+     },
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -1475,7 +1857,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1483,15 +1871,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
+     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen",
+     "eId": "tit_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1510,7 +1901,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1518,15 +1910,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
+     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen",
+     "eId": "tit_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1538,11 +1933,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
+     "label": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1561,7 +1958,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 134,
+      "l": 272
+     },
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -1573,7 +1976,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 272,
+      "l": 272
+     },
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -1585,7 +1994,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -1598,7 +2013,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "a. Geldgewinne"
+     "sektion": "a. Geldgewinne",
+     "kl": "A"
     }
    ]
   },
@@ -1606,11 +2022,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
+     "label": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1621,11 +2039,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen"
+     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1637,11 +2057,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen"
+     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1653,27 +2075,31 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen"
+     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
     "I. Gegenstand der Steuer",
-    "3. Gruppenversicherung u.dgl.; Stellenwechsel versi- cherter Arbeitnehmer"
+    "3. Gruppenversicherung u.dgl.; Stellenwechsel versicherter Arbeitnehmer"
    ]
   },
   "46": {
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen"
+     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1684,11 +2110,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen"
+     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1706,7 +2134,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 114,
+      "l": 169
+     },
+     "kl": "V"
     },
     {
      "nr": "81",
@@ -1718,7 +2152,14 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "it": 4,
+      "o": 42,
+      "l": 42
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1726,11 +2167,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen"
+     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1742,11 +2185,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen"
+     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1758,11 +2203,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen"
+     "label": "Vierter Abschnitt: Steuer auf Versicherungsleistungen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1774,11 +2221,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Anspruchsberechtigung"
+     "label": "Erster Abschnitt: Anspruchsberechtigung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1790,11 +2239,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Anspruchsberechtigung"
+     "label": "Erster Abschnitt: Anspruchsberechtigung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1812,7 +2263,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1820,27 +2277,31 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Anspruchsberechtigung"
+     "label": "Erster Abschnitt: Anspruchsberechtigung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
     "I. Berechtigte",
-    "3. Versicherungskassen und Fürsorgeein- richtungen"
+    "3. Versicherungskassen und Fürsorgeeinrichtungen"
    ]
   },
   "54": {
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Anspruchsberechtigung"
+     "label": "Erster Abschnitt: Anspruchsberechtigung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1858,7 +2319,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 285,
+      "l": 285
+     },
+     "kl": "A"
     },
     {
      "nr": "84",
@@ -1870,7 +2337,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 349,
+      "l": 349
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1878,16 +2351,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Anspruchsberechtigung"
+     "label": "Erster Abschnitt: Anspruchsberechtigung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
     "I. Berechtigte",
-    "5. Personenver- einigungen und Vermögensmassen ohne Rechts- persönlichkeit"
+    "5. Personenvereinigungen und Vermögensmassen ohne Rechtspersönlichkeit"
    ],
    "fussnoten": [
     {
@@ -1900,7 +2375,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "86",
@@ -1912,7 +2388,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 118,
+      "l": 586
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1920,11 +2403,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Anspruchsberechtigung"
+     "label": "Erster Abschnitt: Anspruchsberechtigung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1942,7 +2427,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 41,
+      "l": 259
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1950,11 +2441,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Anspruchsberechtigung"
+     "label": "Erster Abschnitt: Anspruchsberechtigung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1972,7 +2465,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1980,11 +2474,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Anspruchsberechtigung"
+     "label": "Erster Abschnitt: Anspruchsberechtigung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2003,7 +2499,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 236,
+      "l": 236
+     },
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -2015,7 +2517,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 254,
+      "l": 320
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2023,11 +2531,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Anspruchsberechtigung"
+     "label": "Erster Abschnitt: Anspruchsberechtigung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2046,7 +2556,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2054,11 +2565,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Anspruchsberechtigung"
+     "label": "Erster Abschnitt: Anspruchsberechtigung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2076,7 +2589,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 760,
+      "l": 760
+     },
+     "kl": "A"
     },
     {
      "nr": "92",
@@ -2089,7 +2608,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Mehrheit von Anspruchsberechtigten (Investment- Klub, Geldspiele, Lotterien und Geschicklichkeitsspiele zur Verkaufsförderung, Versicherungsleistung)"
+     "sektion": "4. Mehrheit von Anspruchsberechtigten (Investment- Klub, Geldspiele, Lotterien und Geschicklichkeitsspiele zur Verkaufsförderung, Versicherungsleistung)",
+     "kl": "A"
     }
    ]
   },
@@ -2097,11 +2617,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Anspruchsberechtigung"
+     "label": "Erster Abschnitt: Anspruchsberechtigung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2113,11 +2635,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Anspruchsberechtigung"
+     "label": "Erster Abschnitt: Anspruchsberechtigung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2129,11 +2653,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Rückerstattung durch den Bund"
+     "label": "Zweiter Abschnitt: Rückerstattung durch den Bund",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2144,11 +2670,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Rückerstattung durch den Bund"
+     "label": "Zweiter Abschnitt: Rückerstattung durch den Bund",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2159,11 +2687,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Rückerstattung durch den Bund"
+     "label": "Zweiter Abschnitt: Rückerstattung durch den Bund",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2181,7 +2711,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -2194,7 +2730,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Voraussetzungen und Verfahren"
+     "sektion": "1. Voraussetzungen und Verfahren",
+     "kl": "A"
     }
    ]
   },
@@ -2202,11 +2739,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Rückerstattung durch den Kanton"
+     "label": "Dritter Abschnitt: Rückerstattung durch den Kanton",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -2224,7 +2763,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 60,
+      "l": 60
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2232,11 +2777,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Rückerstattung durch den Kanton"
+     "label": "Dritter Abschnitt: Rückerstattung durch den Kanton",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -2248,11 +2795,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Rückerstattung durch den Kanton"
+     "label": "Dritter Abschnitt: Rückerstattung durch den Kanton",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -2270,7 +2819,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 156,
+      "l": 156
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2278,11 +2834,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Rückerstattung durch den Kanton"
+     "label": "Dritter Abschnitt: Rückerstattung durch den Kanton",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -2300,7 +2858,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2308,7 +2867,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Schlussbestimmung"
+     "label": "Dritter Titel: Schlussbestimmung",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -2320,21 +2880,39 @@
      "text": "BS <b>6</b> 338]",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 126,
+      "l": 336
+     },
+     "kl": "Z"
     },
     {
      "nr": "101",
      "text": "[BS <b>6</b> 341]",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 151,
+      "l": 336
+     },
+     "kl": "Z"
     },
     {
      "nr": "102",
      "text": "[BS <b>6</b> 343]",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 178,
+      "l": 336
+     },
+     "kl": "Z"
     },
     {
      "nr": "103",
@@ -2346,14 +2924,26 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 212,
+      "l": 336
+     },
+     "kl": "Z"
     },
     {
      "nr": "104",
      "text": "[BS <b>6</b> 348]",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 266,
+      "l": 336
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -2361,15 +2951,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben"
+     "label": "A. Steuer auf dem Ertrag von Obligationen und Kundenguthaben",
+     "eId": "tit_1/chap_2/lvl_A"
     }
    ],
    "marginalie": [
@@ -2387,7 +2980,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -2399,7 +2993,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 177,
+      "l": 177
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -2411,7 +3011,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 207,
+      "l": 207
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2419,15 +3026,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
+     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen",
+     "eId": "tit_1/chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2445,7 +3055,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -2453,20 +3064,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen"
+     "label": "B. Steuer auf dem Ertrag von Aktien, Stammanteilen an Gesellschaften mit beschränkter Haftung, Genossenschaftsanteilen, Beteiligungsscheinen von Genossenschaftsbanken und Genussscheinen",
+     "eId": "tit_1/chap_2/lvl_B"
     }
    ],
    "marginalie": [
     "III. Meldung statt Steuerentrichtung",
-    "5. Meldung statt Steuerentrichtung für Di- videnden im Konzernverhältnis"
+    "5. Meldung statt Steuerentrichtung für Dividenden im Konzernverhältnis"
    ],
    "fussnoten": [
     {
@@ -2479,7 +3093,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -2491,7 +3106,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 359,
+      "l": 359
+     },
+     "kl": "G"
     },
     {
      "nr": "42",
@@ -2503,7 +3124,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 252,
+      "l": 252
+     },
+     "kl": "G"
     }
    ]
   },
@@ -2511,15 +3138,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen"
+     "label": "Zweiter Abschnitt: Steuer auf Kapitalerträgen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen"
+     "label": "C. Steuer auf dem Ertrag von Anteilen an kollektiven Kapitalanlagen",
+     "eId": "tit_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -2536,7 +3166,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2544,11 +3175,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
+     "label": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -2565,7 +3198,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -2578,7 +3212,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
+     "sektion": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)",
+     "kl": "A"
     }
    ]
   },
@@ -2586,11 +3221,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
+     "label": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -2613,7 +3250,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2621,11 +3259,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
+     "label": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -2648,7 +3288,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2656,11 +3297,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Steuererhebung"
+     "label": "Erster Titel: Steuererhebung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)"
+     "label": "Dritter Abschnitt: Steuer auf Gewinnen aus Geldspielen sowie Lotterien und Geschicklichkeitsspielen zur Verkaufsförderung (Art. 6 VStG)",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -2683,7 +3326,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2691,11 +3335,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuerrückerstattung"
+     "label": "Zweiter Titel: Steuerrückerstattung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Rückerstattung durch den Bund"
+     "label": "Zweiter Abschnitt: Rückerstattung durch den Bund",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2713,7 +3359,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

@@ -106,6 +106,29 @@ export function berechneSekLabelById(sektionen: Sektion[]): Map<string, string> 
   return map;
 }
 
+// ─── E4/A36 (David 16.7.2026): TOC-Kuration — Anhangs-Wortlaute aus der Gliederung ───
+//
+// Der ZGB-Schlusstitel-Anhang «Wortlaut der früheren Bestimmungen des sechsten
+// Titels» (M13-disp-Division, Token `disp_u2_art_*`) bläht den TOC-Baum mit dem
+// AUFGEHOBENEN Alt-Güterrecht auf, obwohl er nur historisches Übergangsrecht
+// dokumentiert. Er wird NUR aus der GLIEDERUNG (SektionBaumTOC) genommen —
+// render-seitiger Filter in der Darstellungsschicht (§3), Sidecar/Generator
+// unberührt. §15-Treue: die Lesespalte rendert weiterhin den UNGEFILTERTEN Baum
+// (renderSektion in inhalt.tsx) — Inhalt, `#art-disp_*`-Anker, Ctrl+F und Print
+// bleiben vollständig; reine TOC-Kuration, kein Substanz-Drop.
+//
+// Kriterium: Identitäts-Treffer auf das EXAKTE Top-Level-Label (§7, keine
+// Substring-/Heuristik-Erkennung) — deterministisch, eng, kommentiert. Weitere
+// Kurations-Kandidaten kommen nur nach ausdrücklichem Auftrag in diese Liste.
+const TOC_KURATIERTE_LABELS = new Set([
+  'Wortlaut der früheren Bestimmungen des sechsten Titels', // ZGB (A36)
+]);
+export function kuratiereTocSektionen(sektionen: Sektion[]): Sektion[] {
+  const toc = sektionen.filter((s) => !TOC_KURATIERTE_LABELS.has(s.label));
+  // Ohne Treffer DIESELBE Referenz zurück (memo-/React.memo-stabil, §15/4).
+  return toc.length === sektionen.length ? sektionen : toc;
+}
+
 // ─── W2·5d U-POSITION (A2): per-Artikel-Höhenschätzung ──────────────────────
 //
 // Wurzel des Scrollbalken-Bugs (David 5.7.2026): die Artikel-Knoten tragen
@@ -161,4 +184,59 @@ export function schaetzeArtikelHoehe(e: NormSnapshot): number {
     if (b.mehrspaltig) h += (b.mehrspaltig.zeilen.length + 1) * 30 + 14;             // Mehrspalten-Tabelle inkl. Kopf
   }
   return Math.max(120, Math.round(h));
+}
+
+// ─── W2·5i-HIST-ANSICHT: Chronologie der Änderungsvermerke ────────────────────
+//
+// Ansicht «Änderungshistorie: als Chronologie» zeigt die als Änderungsvermerk
+// klassifizierten Fussnoten EINES Artikels nicht als nummerierten Apparat, sondern
+// zeitlich geordnet. Das ist reine Darstellung (§3): keine neue Datenquelle, kein
+// eigener Parser — die Fussnoten sind die schon geladenen Sidecar-Fussnoten, das
+// Datum kommt aus dem BESTEHENDEN Revisions-Extrakt (§5). Hier lebt allein die
+// REIHUNG, und die ist deterministisch und total geordnet (§2):
+//
+//   1. aufsteigend nach ISO-Datum (lexikografischer String-Vergleich — kein
+//      `new Date`, keine Zeitzone),
+//   2. UNDATIERTE immer ans Ende (nie zwischen datierte gemischt),
+//   3. bei gleichem Datum UND unter den Undatierten: nach Fussnoten-Nummer
+//      (numerisch, dann Buchstaben-Suffix «95a»).
+//
+// Punkt 3 ist der Grund, warum die Reihung hier und nicht inline in der Komponente
+// steht: ohne Schlussschlüssel entschiede die Eingabe-Reihenfolge, und die Ordnung
+// wäre nur so stabil wie die Sidecar-Sortierung. Als reine Funktion ist sie direkt
+// prüfbar (src/tests/hist-chronologie.test.ts).
+export interface ChronoFussnote { nr: string; kl?: string; text?: string }
+export interface ChronoEintrag<T extends ChronoFussnote> { fn: T; iso: string | null }
+
+/** Fussnoten-Nummer → Sortierschlüssel [Zahl, Suffix]; unparsbar ⇒ ans Ende. */
+export function fnNrSortKey(nr: string | undefined): [number, string] {
+  const m = /^(\d+)([a-z]*)$/i.exec((nr ?? '').trim());
+  return m ? [parseInt(m[1], 10), m[2].toLowerCase()] : [Number.POSITIVE_INFINITY, nr ?? ''];
+}
+
+/**
+ * Änderungsvermerke (`kl === 'A'`) eines Artikels → chronologisch geordnete Liste.
+ * `datumVon` liefert das ISO-Datum einer Fussnote (injiziert, damit die Reihung
+ * ohne den Revisions-Extrakt prüfbar bleibt und der Extrakt EINE Quelle bleibt).
+ *
+ * Bewusst NUR 'A': V/G/Z/U und Fussnoten ohne Klasse gehören nicht in die
+ * Chronologie — sie bleiben im regulären Apparat und in jeder Ansicht sichtbar
+ * (H0-Auflage 1). Keine Fussnote steht je NUR in der Chronologie.
+ */
+export function baueChronologie<T extends ChronoFussnote>(
+  fussnoten: readonly T[],
+  datumVon: (text: string) => string | null,
+): Array<ChronoEintrag<T>> {
+  return fussnoten
+    .filter((f) => f.kl === 'A')
+    .map((fn) => ({ fn, iso: datumVon(fn.text ?? '') }))
+    .sort((a, b) => {
+      if (a.iso !== b.iso) {
+        if (a.iso == null) return 1;      // undatiert immer ans Ende
+        if (b.iso == null) return -1;
+        return a.iso < b.iso ? -1 : 1;
+      }
+      const ka = fnNrSortKey(a.fn.nr), kb = fnNrSortKey(b.fn.nr);
+      return ka[0] - kb[0] || ka[1].localeCompare(kb[1]);
+    });
 }

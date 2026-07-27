@@ -15,11 +15,13 @@ import {
 } from '../../../lib/verzahnung/artikel-revisionen';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
+import { verifizierLinkArtikel } from '../../../lib/normtext/verifikationslink';
 import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
 import { ArtikelHistorieZeile } from './ArtikelHistorie';
+import { extrahiereFussnotenRevision, kanonArtikelToken } from '../../../lib/verzahnung/revisionen-extrakt';
 import { margStufeStil, fnTextMitLinks, baueZitat, margLabel } from '../helpers';
-import { zitatMitAusweis, heuteIso } from '../../../lib/format';
-import { schaetzeArtikelHoehe } from '../berechnungen';
+import { zitatMitAusweis, heuteIso, fmtDatumLang } from '../../../lib/format';
+import { schaetzeArtikelHoehe, baueChronologie, fnNrSortKey } from '../berechnungen';
 import { setzeZeitraum, useLeitfallZeitraum } from '../leserOptionen';
 import { filtereLeitfaelleNachZeitraum, zeitraumLabel } from '../leitfallFilter';
 
@@ -173,6 +175,10 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   const zitat = `${label} ${erlass.kuerzel}`;
   // VOLL-Zitat (W2·5d G2b) für die Kopier-Aktion: Fundstelle + SR + Stand (§7 a–d).
   const zitatVoll = baueZitat(erlass, label);
+  // EID-2 (W2·5d §12): Verifizier-Deep-Link «amtliche Fassung an genau dieser
+  // Stelle» — die per-Artikel-ELI-URL des Snapshots (quelleUrl#art_…), validiert
+  // im Builder (§5-SSoT; Kanton/aufgehoben/Synthese-Suffix ⇒ null = KEIN Link, §8).
+  const amtlich = verifizierLinkArtikel(e, erlass);
   // Vollständig aufgehobener Artikel → dezent + standardmässig eingeklappt
   // (Auftrag David: «nicht so präsent», aufklappbar über den ▾/▸-Toggle).
   const ganzAufgehoben = artikelGanzAufgehoben(e.bloecke);
@@ -193,12 +199,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // und gehört im Apparat VOR die artikel-eigenen. Darum hier für die DARSTELLUNG
   // stabil nach numerischer Nr (+ Buchstaben-Suffix «95a») sortieren; leere/nicht-
   // parsbare Nr behalten stabil ihre Lage. Reine Darstellung — Sidecar/Daten unberührt.
-  const fnNrKey = (nr: string): [number, string] => {
-    const m = /^(\d+)([a-z]*)$/i.exec((nr ?? '').trim());
-    return m ? [parseInt(m[1], 10), m[2].toLowerCase()] : [Number.POSITIVE_INFINITY, nr ?? ''];
-  };
+  // W2·5i: der Nummern-Sortierschlüssel steht als `fnNrSortKey` in ./berechnungen
+  // (identische Implementierung, dort auch von der Chronologie-Reihung genutzt) —
+  // die frühere lokale Kopie ist entfallen, damit die Anzeige-Ordnung der
+  // Fussnoten nicht an zwei Stellen definiert ist (§5).
   const fussAnzeige: Fussnote[] = [...fussAnzeigeRoh].sort((a, b) => {
-    const ka = fnNrKey(a.nr), kb = fnNrKey(b.nr);
+    const ka = fnNrSortKey(a.nr), kb = fnNrSortKey(b.nr);
     return ka[0] - kb[0] || ka[1].localeCompare(kb[1]);
   });
   const [artOffen, setArtOffen] = useState(!ganzAufgehoben); // einzelner Artikel ein-/ausklappbar; aufgehoben → zu
@@ -216,9 +222,74 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // G11: Marker für section-heading-Fussnoten je Überschrift-Label — landen NICHT
   // mehr anonym auf Artikelebene, sondern an der passenden Randtitel-/Sektions-Zeile.
   const fnProSektion: Record<string, string[]> = {};
+  // FN-5/M14: wortgenau positionierbare Marker (Sidecar-`pos`) je Block bzw.
+  // Item (Schlüssel «<blockIndex>|<itemIndex>»). NUR wenn der Drift-Riegel hält
+  // (pos.l === aktuelle Textlänge, Offset im Bereich) — sonst fällt der Marker
+  // auf die bisherigen Block-Ende-Pfade zurück (§1: nie eine geratene Position).
+  const fnInlineAbsatz: Record<number, Array<{ nr: string; o: number }>> = {};
+  const fnInlineItem: Record<string, Array<{ nr: string; o: number }>> = {};
+  // W2·5i-HIST-ANSICHT: Fussnoten-Nr → build-seitige Klasse (`kl`). EINE Abbildung
+  // für alle Marker-Pfade (ArtikelBody-Prop) und den Apparat hier. Fehlt `kl`
+  // (Kanton-Sidecars, Extraktions-Fallback aus dem Wortlaut-Block), bleibt der
+  // Eintrag leer → kein data-fn-klasse → in JEDER Ansicht sichtbar (§8).
+  const fnKlasse: Record<string, string> = {};
+  for (const f of fussAnzeige) if (f.nr && f.kl) fnKlasse[f.nr] = f.kl;
+  // W2·5i: Chronologie-Reihung der ÄNDERUNGSVERMERKE dieses Artikels. Keine neue
+  // Datenquelle und kein neuer Parser — reiner Render über `fussAnzeige` (die
+  // Sidecar-Fussnoten, die sowieso schon geladen sind) mit dem BESTEHENDEN
+  // Datums-Extraktor aus dem Revisions-Extrakt (§5: das «in Kraft seit …»-Muster,
+  // das Datums-Fenster und der deutsche Monats-Parser leben genau dort, nicht hier).
+  // Die Reihenfolge-Regel selbst steht als reine, geprüfte Funktion in
+  // ./berechnungen (baueChronologie) — hier bleibt nur der Aufruf.
+  const chronologie = baueChronologie<Fussnote>(
+    fussAnzeige,
+    // `hostToken` MUSS mit (PR #376, Fremd-Adressierungs-Wächter): eine Klausel
+    // wie «… Art. 40c in Kraft vom 1. Jan. 2025 …» in der Gliederungstitel-
+    // Fussnote von AHVG Art. 39 datiert Art. 40c, NICHT den Host. Ohne den Token
+    // verwürfe der Wächter solche Klauseln konservativ ganz — die Chronologie
+    // zeigte dann «ohne Datum», obwohl das Datum bekannt ist. Mit dem Token
+    // stimmt sie mit den Revisions-Shards überein (EINE Wahrheit, §5).
+    (text) => extrahiereFussnotenRevision(text, kanonArtikelToken(e.artikel))?.iso ?? null,
+  );
   for (const f of fussAnzeige) {
     if (!f.nr) continue;
     if (f.sektion) { (fnProSektion[f.sektion] ??= []).push(f.nr); continue; }
+    const p = f.pos;
+    if (p != null && p.b >= 0 && p.b < e.bloecke.length) {
+      const blk = e.bloecke[p.b];
+      // B1-Riegel (Gegenprüfungs-Befund 26.7.): eine pos darf nur inline
+      // routen, wenn ArtikelBody für die Zielstelle wirklich einen Marker-Slot
+      // rendert — sonst wird der Marker ersatzlos verschluckt. Spiegelbildlich
+      // zu ArtikelBody, seit PR #372 (Bild-Blöcke rendern ihre items über die
+      // geteilte itemListe) nach Slot getrennt:
+      // - titel-Block (`titel !== undefined`; Gegenprüfung R2: `== null`
+      //   liesse `titel: null` durch): rendert weder Text noch items → JEDE
+      //   pos verwerfen, Legacy-Fallback unten.
+      // - Bild-/Kachel-Block: Item-Slot existiert (itemListe), Text-<p>
+      //   weiterhin nicht → Item-pos inline erlaubt (DBG 22 fn57, STHG 7
+      //   fn27: <dl> am Formelbild), Absatz-pos verwerfen.
+      // - Prosa-Block: beide Slots wie bisher.
+      const bb = blk as { bild?: unknown; bildKacheln?: unknown[]; titel?: unknown };
+      const istTitel = bb.titel !== undefined;
+      const istBild = Boolean(bb.bild) || Boolean(bb.bildKacheln && bb.bildKacheln.length > 0);
+      const itemSlotDa = !istTitel;
+      const textSlotDa = !istTitel && !istBild;
+      if (p.it != null && !itemSlotDa) {
+        // pos verwerfen → Legacy-Routing unten (Marker am sichtbaren Block).
+      } else if (p.it == null && !textSlotDa) {
+        // pos verwerfen → Legacy-Routing unten (Marker am sichtbaren Block).
+      } else if (p.it != null) {
+        const its = blk.items ?? [];
+        const zt = p.it >= 0 && p.it < its.length ? its[p.it].text : null;
+        if (zt != null && p.l === zt.length && p.o >= 0 && p.o <= zt.length) {
+          (fnInlineItem[`${p.b}|${p.it}`] ??= []).push({ nr: f.nr, o: p.o });
+          continue;
+        }
+      } else if (blk.text && p.l === blk.text.length && p.o >= 0 && p.o <= blk.text.length) {
+        (fnInlineAbsatz[p.b] ??= []).push({ nr: f.nr, o: p.o });
+        continue;
+      }
+    }
     let idx = f.absatz != null ? e.bloecke.findIndex((b) => b.absatz === f.absatz) : -1;
     // A31a: Marker in einem absatzlosen Fliesstext-Absatz (fn 667 in ZGB 798a) → am
     // Ende SEINES Blocks (0-basierter Index vom Extraktor) statt auf der Artikelebene.
@@ -244,9 +315,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // Artikelnummer (kein Abstand). Darum KEIN `ml-0.5` mehr und der Marker sitzt im
   // selben Inline-Kontext wie das «Art. N»-Label (unten in whitespace-nowrap
   // gewickelt), nicht als eigenes flex-Kind mit gap-x-2.
+  // W2·5i: `data-fn-klasse` sitzt am PER-NR-Wrapper, nicht (nur) am FnRef — sonst
+  // bliebe beim Ausblenden eines A-Markers dessen Trenn-Komma stehen. Der Wrapper
+  // trägt Komma UND Marker, verschwindet also als Ganzes.
   const fnMarker = artOffen && fnArtikelEbene.length > 0
     ? <span data-fn-marker>{fnArtikelEbene.map((nr, i) => (
-        <span key={nr}>{i > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
+        <span key={nr} data-fn-klasse={fnKlasse[nr]}>{i > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
       ))}</span>
     : null;
   // VERWEISE: im Artikel genannte, auflösbare (Bund-)Normverweise als Chips am
@@ -324,7 +398,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                       A31: Wort-Verbinder (U+2060) klebt den Marker DIREKT an die
                       Marginalie (kein Abstand, kein Umbruch auf eine eigene Zeile). */}
                   {artOffen && fnProSektion[m]?.map((nr, j) => (
-                    <span key={nr} data-fn-marker>{WJ}{j > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
+                    <span key={nr} data-fn-marker data-fn-klasse={fnKlasse[nr]}>{WJ}{j > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
                   ))}
                 </div>
               ))}
@@ -374,6 +448,15 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               <span className="ml-auto flex shrink-0 gap-3 opacity-0 transition-opacity focus-within:opacity-100 group-hover:opacity-100 [@media(hover:none)]:opacity-100">
                 <button type="button" onClick={() => kopiere('zitat')} className="text-micro text-ink-500 hover:text-brass-700" aria-label={`Zitat kopieren: ${zitatVoll}`}>{kopiert === 'zitat' ? '✓ kopiert' : 'Zitat'}</button>
                 <button type="button" onClick={() => kopiere('link')} className="text-micro text-ink-500 hover:text-brass-700" aria-label="Permalink kopieren">{kopiert === 'link' ? '✓' : 'Link'}</button>
+                {/* EID-2: Outbound zur amtlichen Fassung AN DIESER STELLE (ELI-Form,
+                    target/rel wie die bestehenden amtlichen Links, §12.4). Stil =
+                    dieselbe dezente Aktions-Stimme wie Zitat/Link daneben (§13). */}
+                {amtlich && (
+                  <a href={amtlich} target="_blank" rel="noopener noreferrer"
+                    className="text-micro text-ink-500 hover:text-brass-700 no-underline whitespace-nowrap"
+                    aria-label={`Amtliche Fassung von ${zitat} auf Fedlex öffnen (neues Fenster)`}
+                    title="Amtliche Fassung an genau dieser Stelle (Fedlex)">amtliche Fassung ↗</a>
+                )}
               </span>
             )}
             {/* Amtliche Aufhebungsnotiz (eigene Zeile, dezent eingerückt) — M2: erst
@@ -404,6 +487,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           <ArtikelBody bloecke={e.bloecke} artikel={e.artikel} passus={{ absatz: null }} autolink
             zitierKontext={{ artikelLabel: label, kuerzel: erlass.kuerzel, fassung: erlass.stand, permalinkBasis: `${basisPfad}#art-${e.artikel}` }}
             fnProAbsatz={fnProAbsatz} fnProItem={fnProItem}
+            fnInlineAbsatz={fnInlineAbsatz} fnInlineItem={fnInlineItem}
+            fnKlasse={fnKlasse}
             intern={intern}
             className="space-y-3.5 font-serif text-body-l leading-[1.65] text-ink-800" />
           {/* VERWEISE: auflösbare Normverweise des Artikels als Chips (Referenz David). */}
@@ -436,7 +521,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           {fussAnzeige.length > 0 && (
             <div data-fn-apparat className="mt-3 border-t border-rule-artikel pt-2 space-y-1">
               {fussAnzeige.map((fn, i) => (
-                <p key={i} id={fn.nr ? `fn-${e.artikel}-${fn.nr}` : undefined} className="nt-anker text-xs leading-normal text-ink-500 target:bg-brass-100">
+                <p key={i} id={fn.nr ? `fn-${e.artikel}-${fn.nr}` : undefined} data-fn-klasse={fn.kl}
+                  className="nt-anker text-xs leading-normal text-ink-500 target:bg-brass-100">
                   {/* WCAG-AA (§13): Fussnoten-Nummer ist semantischer Text (kein aria-hidden),
                       darum ink-500 statt ink-300 — ink-300 ist ein Deko-Token (~2.3:1, axe serious).
                       ink-500 ≥4.8:1 hell / ≥5.2:1 dunkel auf allen Reader-Flächen, deckt den
@@ -447,6 +533,34 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 </p>
               ))}
             </div>
+          )}
+          {/* W2·5i-HIST-ANSICHT: dieselben Änderungsvermerke, chronologisch geordnet.
+              Liegt IMMER im DOM (wie Apparat und Leitfall-Zeilen) und wird allein per
+              `data-histansicht`-CSS ein-/ausgeblendet: das Umschalten ist damit ein
+              reiner Attribut-Wechsel am <html> — kein React-Re-Render der Artikelliste
+              (§15) und kein Nachladen. Mengenmässig sind das die A-Fussnoten GENAU
+              DIESES Artikels (im Schnitt ~0.7 je Artikel), also keine relevante
+              DOM-Last; sichtbar ist zu jedem Zeitpunkt nur EINE der beiden Listen. */}
+          {chronologie.length > 0 && (
+            <ol data-hist-chrono className="mt-3 border-t border-rule-artikel pt-2 space-y-1">
+              {chronologie.map((fn, i) => (
+                <li key={i} className="text-xs leading-normal text-ink-500">
+                  {/* Gegenprüfungs-Befund B4 (26.7.2026): die Fussnoten-NUMMER gehört
+                      auch in die Chronologie-Zeile. Ohne sie ist der Marker im Wortlaut
+                      (¹¹⁶) keinem Eintrag mehr zuzuordnen — der Leser sieht eine
+                      Datumsliste ohne Anschluss an den Text. Gleiche Darstellung wie im
+                      Apparat (`num`, ink-500), damit die Zuordnung optisch trägt. */}
+                  {fn.fn.nr && <span className="num mr-1 text-ink-500">{fn.fn.nr}</span>}
+                  {/* Das Datum ist der SORTIERSCHLÜSSEL — es sichtbar zu machen ist
+                      §8-Ehrlichkeit: der Leser sieht, wonach geordnet wurde, und dass
+                      undatierte Vermerke am Ende stehen (kein stilles Rateergebnis). */}
+                  <span data-hist-datum={fn.iso ?? ''} className="num mr-1.5 tabular-nums text-ink-600">
+                    {fn.iso ? fmtDatumLang(fn.iso) : 'ohne Datum'}
+                  </span>
+                  {fnTextMitLinks(fn.fn)}
+                </li>
+              ))}
+            </ol>
           )}
         </div>
         )}

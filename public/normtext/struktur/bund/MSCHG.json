@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "232.11",
   "titel": "Bundesgesetz über den Schutz von Marken und Herkunftsangaben",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -51,7 +52,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "3",
@@ -63,7 +65,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -72,15 +75,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Schutz der Marken"
+     "label": "1. Abschnitt: Schutz der Marken",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -91,15 +97,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Schutz der Marken"
+     "label": "1. Abschnitt: Schutz der Marken",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -110,15 +119,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Schutz der Marken"
+     "label": "1. Abschnitt: Schutz der Marken",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -151,7 +163,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 157,
+      "l": 265
+     },
+     "kl": "V"
     }
    ]
   },
@@ -159,15 +178,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Schutz der Marken"
+     "label": "1. Abschnitt: Schutz der Marken",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -178,15 +200,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Entstehung des Markenrechts; Priorität"
+     "label": "2. Abschnitt: Entstehung des Markenrechts; Priorität",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -197,15 +222,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Entstehung des Markenrechts; Priorität"
+     "label": "2. Abschnitt: Entstehung des Markenrechts; Priorität",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -216,15 +244,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Entstehung des Markenrechts; Priorität"
+     "label": "2. Abschnitt: Entstehung des Markenrechts; Priorität",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -257,7 +288,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 87,
+      "l": 418
+     },
+     "kl": "V"
     }
    ]
   },
@@ -265,15 +302,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Entstehung des Markenrechts; Priorität"
+     "label": "2. Abschnitt: Entstehung des Markenrechts; Priorität",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -292,7 +332,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 176,
+      "l": 450
+     },
+     "kl": "V"
     },
     {
      "nr": "7",
@@ -321,7 +367,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 271,
+      "l": 450
+     },
+     "kl": "V"
     }
    ]
   },
@@ -329,15 +381,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Entstehung des Markenrechts; Priorität"
+     "label": "2. Abschnitt: Entstehung des Markenrechts; Priorität",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -370,7 +425,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 55,
+      "l": 261
+     },
+     "kl": "V"
     },
     {
      "nr": "9",
@@ -386,7 +447,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 261,
+      "l": 261
+     },
+     "kl": "A"
     }
    ]
   },
@@ -394,15 +461,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bestand des Markenrechts"
+     "label": "3. Abschnitt: Bestand des Markenrechts",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -423,7 +493,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 159,
+      "l": 159
+     },
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -439,7 +515,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -455,7 +537,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -463,15 +551,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bestand des Markenrechts"
+     "label": "3. Abschnitt: Bestand des Markenrechts",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -482,15 +573,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bestand des Markenrechts"
+     "label": "3. Abschnitt: Bestand des Markenrechts",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -501,15 +595,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Inhalt des Markenrechts"
+     "label": "4. Abschnitt: Inhalt des Markenrechts",
+     "eId": "tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -530,7 +627,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 54,
+      "l": 54
+     },
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -546,7 +650,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 177,
+      "l": 177
+     },
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -562,7 +672,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 113,
+      "l": 113
+     },
+     "kl": "A"
     }
    ]
   },
@@ -570,15 +686,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Inhalt des Markenrechts"
+     "label": "4. Abschnitt: Inhalt des Markenrechts",
+     "eId": "tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -589,15 +708,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Inhalt des Markenrechts"
+     "label": "4. Abschnitt: Inhalt des Markenrechts",
+     "eId": "tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -608,15 +730,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Inhalt des Markenrechts"
+     "label": "4. Abschnitt: Inhalt des Markenrechts",
+     "eId": "tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -627,15 +752,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Änderungen im Markenrecht"
+     "label": "5. Abschnitt: Änderungen im Markenrecht",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -646,15 +774,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Änderungen im Markenrecht"
+     "label": "5. Abschnitt: Änderungen im Markenrecht",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -665,15 +796,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Änderungen im Markenrecht"
+     "label": "5. Abschnitt: Änderungen im Markenrecht",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -684,15 +818,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Völkerrechtliche Verträge"
+     "label": "6. Abschnitt: Völkerrechtliche Verträge",
+     "eId": "tit_1/chap_1/sec_6"
     }
    ],
    "marginalie": [],
@@ -711,7 +848,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -719,11 +862,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Garantiemarke und Kollektivmarke"
+     "label": "2. Kapitel: Garantiemarke und Kollektivmarke",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -734,11 +879,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Garantiemarke und Kollektivmarke"
+     "label": "2. Kapitel: Garantiemarke und Kollektivmarke",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -749,11 +896,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Garantiemarke und Kollektivmarke"
+     "label": "2. Kapitel: Garantiemarke und Kollektivmarke",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -774,7 +923,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 64,
+      "l": 118
+     },
+     "kl": "A"
     }
    ]
   },
@@ -782,11 +937,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Garantiemarke und Kollektivmarke"
+     "label": "2. Kapitel: Garantiemarke und Kollektivmarke",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -797,11 +954,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Garantiemarke und Kollektivmarke"
+     "label": "2. Kapitel: Garantiemarke und Kollektivmarke",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -812,11 +971,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Garantiemarke und Kollektivmarke"
+     "label": "2. Kapitel: Garantiemarke und Kollektivmarke",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -827,11 +988,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Garantiemarke und Kollektivmarke"
+     "label": "2. Kapitel: Garantiemarke und Kollektivmarke",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -842,15 +1005,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -871,7 +1037,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 93,
+      "l": 93
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -887,7 +1059,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -895,15 +1073,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -914,15 +1095,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -943,7 +1127,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -951,15 +1136,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Widerspruchsverfahren"
+     "label": "2. Abschnitt: Widerspruchsverfahren",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -980,7 +1168,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 82,
+      "l": 82
+     },
+     "kl": "A"
     }
    ]
   },
@@ -988,15 +1182,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Widerspruchsverfahren"
+     "label": "2. Abschnitt: Widerspruchsverfahren",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1007,15 +1204,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Widerspruchsverfahren"
+     "label": "2. Abschnitt: Widerspruchsverfahren",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1026,15 +1226,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Widerspruchsverfahren"
+     "label": "2. Abschnitt: Widerspruchsverfahren",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1045,15 +1248,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Löschung der Eintragung"
+     "label": "3. Abschnitt: Löschung der Eintragung",
+     "eId": "tit_1/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1074,7 +1280,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -1090,7 +1297,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -1106,7 +1314,8 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -1114,15 +1323,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: …"
+     "label": "4. Abschnitt: …",
+     "eId": "tit_1/chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -1141,7 +1353,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1149,15 +1362,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr"
+     "label": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr",
+     "eId": "tit_1/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1179,7 +1395,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr"
+     "sektion": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr",
+     "kl": "A"
     }
    ]
   },
@@ -1187,15 +1404,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr"
+     "label": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr",
+     "eId": "tit_1/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1216,7 +1436,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 39,
+      "l": 39
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1224,15 +1450,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr"
+     "label": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr",
+     "eId": "tit_1/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1243,15 +1472,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr"
+     "label": "5. Abschnitt: Register, Veröffentlichungen und elektronischer Behördenverkehr",
+     "eId": "tit_1/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1272,7 +1504,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1280,15 +1513,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Weiterbehandlung bei Fristversäumnis"
+     "label": "6. Abschnitt: Weiterbehandlung bei Fristversäumnis",
+     "eId": "tit_1/chap_3/sec_6"
     }
    ],
    "marginalie": [],
@@ -1304,7 +1540,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 233,
+      "l": 264
+     },
+     "kl": "V"
     },
     {
      "nr": "39",
@@ -1320,7 +1562,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 264,
+      "l": 264
+     },
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -1336,7 +1584,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 371,
+      "l": 371
+     },
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -1352,7 +1606,8 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -1368,7 +1623,8 @@
       }
      ],
      "absatz": "4",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -1376,15 +1632,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Vertretung"
+     "label": "7. Abschnitt: Vertretung",
+     "eId": "tit_1/chap_3/sec_7"
     }
    ],
    "marginalie": [],
@@ -1403,7 +1662,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1411,15 +1671,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Gebühren"
+     "label": "8. Abschnitt: Gebühren",
+     "eId": "tit_1/chap_3/sec_8"
     }
    ],
    "marginalie": [],
@@ -1438,7 +1701,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1446,11 +1715,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Internationale Markenregistrierung"
+     "label": "4. Kapitel: Internationale Markenregistrierung",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1468,7 +1739,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 99,
+      "l": 390
+     },
+     "kl": "V"
     },
     {
      "nr": "47",
@@ -1481,7 +1758,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 210,
+      "l": 390
+     },
+     "kl": "V"
     },
     {
      "nr": "45",
@@ -1498,7 +1781,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Kapitel: Internationale Markenregistrierung"
+     "sektion": "4. Kapitel: Internationale Markenregistrierung",
+     "kl": "A"
     }
    ]
   },
@@ -1506,11 +1790,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Internationale Markenregistrierung"
+     "label": "4. Kapitel: Internationale Markenregistrierung",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1528,7 +1814,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 137,
+      "l": 194
+     },
+     "kl": "V"
     },
     {
      "nr": "49",
@@ -1541,7 +1834,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 189,
+      "l": 194
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1549,11 +1849,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Internationale Markenregistrierung"
+     "label": "4. Kapitel: Internationale Markenregistrierung",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1564,11 +1866,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1589,7 +1893,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -1605,7 +1910,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 221,
+      "l": 221
+     },
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -1621,7 +1932,13 @@
       }
      ],
      "absatz": "3ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 212,
+      "l": 212
+     },
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -1638,7 +1955,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "sektion": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -1655,7 +1973,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Kapitel: Allgemeine Bestimmungen"
+     "sektion": "1. Kapitel: Allgemeine Bestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -1663,11 +1982,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1688,7 +2009,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1696,11 +2018,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1721,7 +2045,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1729,11 +2054,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1754,7 +2081,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1762,11 +2090,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Internationale Registrierung von geografischen Angaben"
+     "label": "3. Kapitel: Internationale Registrierung von geografischen Angaben",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": []
@@ -1775,11 +2105,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zivilrechtlicher Schutz"
+     "label": "1. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1790,11 +2122,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zivilrechtlicher Schutz"
+     "label": "1. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1815,7 +2149,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 315,
+      "l": 315
+     },
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -1831,7 +2171,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 48,
+      "l": 48
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1839,11 +2185,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zivilrechtlicher Schutz"
+     "label": "1. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1864,7 +2212,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1872,11 +2221,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zivilrechtlicher Schutz"
+     "label": "1. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1897,7 +2248,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1910,7 +2262,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 57,
+      "l": 196
+     },
+     "kl": "V"
     },
     {
      "nr": "79",
@@ -1926,7 +2284,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 236,
+      "l": 236
+     },
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -1942,7 +2306,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 315,
+      "l": 315
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1950,11 +2320,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zivilrechtlicher Schutz"
+     "label": "1. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1975,7 +2347,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1983,11 +2356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zivilrechtlicher Schutz"
+     "label": "1. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2008,7 +2383,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 230,
+      "l": 230
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2016,11 +2397,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zivilrechtlicher Schutz"
+     "label": "1. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [],
@@ -2039,7 +2422,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2047,11 +2431,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zivilrechtlicher Schutz"
+     "label": "1. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2072,7 +2458,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2080,11 +2467,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zivilrechtlicher Schutz"
+     "label": "1. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2095,11 +2484,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Strafbestimmungen"
+     "label": "2. Kapitel: Strafbestimmungen",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2120,7 +2511,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "86",
@@ -2136,7 +2528,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -2152,7 +2545,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2160,11 +2559,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Strafbestimmungen"
+     "label": "2. Kapitel: Strafbestimmungen",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2185,7 +2586,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 99,
+      "l": 99
+     },
+     "kl": "A"
     },
     {
      "nr": "89",
@@ -2201,7 +2608,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -2217,7 +2630,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -2233,7 +2652,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2241,15 +2666,17 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Strafbestimmungen"
+     "label": "2. Kapitel: Strafbestimmungen",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
-    "Reglementswidriger Gebrauch einer Garantie-oder Kollektivmarke"
+    "Reglementswidriger Gebrauch einer Garantie- oder Kollektivmarke"
    ],
    "fussnoten": [
     {
@@ -2266,7 +2693,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 184,
+      "l": 184
+     },
+     "kl": "A"
     },
     {
      "nr": "93",
@@ -2282,7 +2715,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -2298,7 +2737,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2306,11 +2751,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Strafbestimmungen"
+     "label": "2. Kapitel: Strafbestimmungen",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2331,7 +2778,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "96",
@@ -2347,7 +2795,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 104,
+      "l": 104
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2355,11 +2809,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Strafbestimmungen"
+     "label": "2. Kapitel: Strafbestimmungen",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2370,11 +2826,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Strafbestimmungen"
+     "label": "2. Kapitel: Strafbestimmungen",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2385,11 +2843,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Strafbestimmungen"
+     "label": "2. Kapitel: Strafbestimmungen",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2408,7 +2868,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 168,
+      "l": 169
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2416,11 +2882,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Strafbestimmungen"
+     "label": "2. Kapitel: Strafbestimmungen",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2441,7 +2909,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "100",
@@ -2455,7 +2924,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 32,
+      "l": 191
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2463,11 +2938,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Strafbestimmungen"
+     "label": "2. Kapitel: Strafbestimmungen",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2478,11 +2955,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2503,7 +2982,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -2520,7 +3000,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "sektion": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "kl": "A"
     }
    ]
   },
@@ -2528,11 +3009,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2553,7 +3036,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2561,11 +3045,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2586,7 +3072,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2594,11 +3081,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Schlussbestimmungen"
+     "label": "4. Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": []
@@ -2607,11 +3096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Schlussbestimmungen"
+     "label": "4. Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufhebung und Änderung von Bundesrecht"
+     "label": "2. Kapitel: Aufhebung und Änderung von Bundesrecht",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2637,7 +3128,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 39,
+      "l": 290
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -2645,11 +3142,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Schlussbestimmungen"
+     "label": "4. Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufhebung und Änderung von Bundesrecht"
+     "label": "2. Kapitel: Aufhebung und Änderung von Bundesrecht",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2667,7 +3166,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 11,
+      "l": 11
+     },
+     "kl": "U"
     },
     {
      "nr": "121",
@@ -2697,7 +3202,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 174,
+      "l": 319
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -2705,11 +3216,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Schlussbestimmungen"
+     "label": "4. Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -2720,11 +3233,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Schlussbestimmungen"
+     "label": "4. Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -2735,11 +3250,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Schlussbestimmungen"
+     "label": "4. Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -2760,7 +3277,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2768,11 +3291,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Schlussbestimmungen"
+     "label": "4. Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Referendum und Inkrafttreten"
+     "label": "4. Kapitel: Referendum und Inkrafttreten",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [],
@@ -2782,7 +3307,8 @@
      "text": "BRB vom 23. Dez. 1992",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -2794,7 +3320,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -2802,15 +3329,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Änderungen im Markenrecht"
+     "label": "5. Abschnitt: Änderungen im Markenrecht",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2831,7 +3361,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -2847,7 +3378,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 98,
+      "l": 98
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2855,11 +3392,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Geografische Marke"
+     "label": "2a. Kapitel: Geografische Marke",
+     "eId": "tit_1/chap_2_a"
     }
    ],
    "marginalie": [
@@ -2880,7 +3419,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -2893,7 +3433,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 71,
+      "l": 240
+     },
+     "kl": "V"
     },
     {
      "nr": "20",
@@ -2910,7 +3457,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2a. Kapitel: Geografische Marke"
+     "sektion": "2a. Kapitel: Geografische Marke",
+     "kl": "A"
     }
    ]
   },
@@ -2918,11 +3466,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Geografische Marke"
+     "label": "2a. Kapitel: Geografische Marke",
+     "eId": "tit_1/chap_2_a"
     }
    ],
    "marginalie": [
@@ -2940,7 +3490,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 189,
+      "l": 295
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2948,11 +3505,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Geografische Marke"
+     "label": "2a. Kapitel: Geografische Marke",
+     "eId": "tit_1/chap_2_a"
     }
    ],
    "marginalie": [
@@ -2963,11 +3522,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Geografische Marke"
+     "label": "2a. Kapitel: Geografische Marke",
+     "eId": "tit_1/chap_2_a"
     }
    ],
    "marginalie": [
@@ -2978,11 +3539,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Geografische Marke"
+     "label": "2a. Kapitel: Geografische Marke",
+     "eId": "tit_1/chap_2_a"
     }
    ],
    "marginalie": [
@@ -2993,15 +3556,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Löschung der Eintragung"
+     "label": "3. Abschnitt: Löschung der Eintragung",
+     "eId": "tit_1/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3022,7 +3588,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3030,15 +3597,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Löschung der Eintragung"
+     "label": "3. Abschnitt: Löschung der Eintragung",
+     "eId": "tit_1/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3059,7 +3629,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3067,15 +3638,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eintragung der Marken"
+     "label": "3. Kapitel: Eintragung der Marken",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Löschung der Eintragung"
+     "label": "3. Abschnitt: Löschung der Eintragung",
+     "eId": "tit_1/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3096,7 +3670,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3104,26 +3679,30 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Marken"
+     "label": "1. Titel: Marken",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Internationale Markenregistrierung"
+     "label": "4. Kapitel: Internationale Markenregistrierung",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
-    "Umwandlung einer internationalen Registrierung in ein nationalesEintragungsgesuch"
+    "Umwandlung einer internationalen Registrierung in ein nationales Eintragungsgesuch"
    ]
   },
   "48_a": {
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -3144,7 +3723,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3152,11 +3732,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -3177,7 +3759,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -3242,7 +3825,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 96,
+      "l": 231
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3250,11 +3839,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -3275,7 +3866,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3283,11 +3875,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -3308,7 +3902,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -3321,7 +3916,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 84,
+      "l": 108
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3329,11 +3931,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -3354,7 +3958,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3362,11 +3967,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -3378,7 +3985,8 @@
      "text": "Ursprünglich Art. 51.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3386,11 +3994,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Registrierung von geografischen Angaben"
+     "label": "2. Kapitel: Registrierung von geografischen Angaben",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [],
@@ -3409,7 +4019,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -3426,7 +4037,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Kapitel: Registrierung von geografischen Angaben"
+     "sektion": "2. Kapitel: Registrierung von geografischen Angaben",
+     "kl": "A"
     }
    ]
   },
@@ -3434,11 +4046,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Internationale Registrierung von geografischen Angaben"
+     "label": "3. Kapitel: Internationale Registrierung von geografischen Angaben",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3456,7 +4070,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 136,
+      "l": 274
+     },
+     "kl": "V"
     },
     {
      "nr": "68",
@@ -3473,7 +4093,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Kapitel: Internationale Registrierung von geografischen Angaben"
+     "sektion": "3. Kapitel: Internationale Registrierung von geografischen Angaben",
+     "kl": "A"
     }
    ]
   },
@@ -3481,11 +4102,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Internationale Registrierung von geografischen Angaben"
+     "label": "3. Kapitel: Internationale Registrierung von geografischen Angaben",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3503,7 +4126,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 94,
+      "l": 335
+     },
+     "kl": "V"
     },
     {
      "nr": "71",
@@ -3516,7 +4146,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 118,
+      "l": 300
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3524,11 +4161,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Internationale Registrierung von geografischen Angaben"
+     "label": "3. Kapitel: Internationale Registrierung von geografischen Angaben",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3546,7 +4185,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 100,
+      "l": 101
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3554,11 +4200,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Herkunftsangaben und geografische Angaben"
+     "label": "2. Titel: Herkunftsangaben und geografische Angaben",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Internationale Registrierung von geografischen Angaben"
+     "label": "3. Kapitel: Internationale Registrierung von geografischen Angaben",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3569,11 +4217,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zivilrechtlicher Schutz"
+     "label": "1. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -3594,7 +4244,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3602,11 +4253,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Strafbestimmungen"
+     "label": "2. Kapitel: Strafbestimmungen",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -3627,7 +4280,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3635,11 +4289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3660,7 +4316,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -3672,7 +4329,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 49,
+      "l": 216
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3680,11 +4343,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3705,7 +4370,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3713,11 +4379,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3738,7 +4406,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -3754,7 +4423,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "110",
@@ -3770,7 +4440,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "111",
@@ -3786,7 +4462,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3794,11 +4476,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3819,14 +4503,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "113",
      "text": "Heute: Art. 72 Abs. 3 und 4.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 152,
+      "l": 174
+     },
+     "kl": "G"
     }
    ]
   },
@@ -3834,11 +4525,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3859,7 +4552,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3867,11 +4561,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3892,7 +4588,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3900,11 +4597,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3925,7 +4624,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3933,11 +4633,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3958,7 +4660,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3966,11 +4669,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsschutz"
+     "label": "3. Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3991,7 +4696,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3999,11 +4705,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Schlussbestimmungen"
+     "label": "4. Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -4024,7 +4732,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

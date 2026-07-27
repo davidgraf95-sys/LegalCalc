@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.211.232.1",
   "titel": "Übereinkommen über den internationalen Schutz von Erwachsenen",
@@ -41,7 +41,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -50,7 +51,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I Anwendungsbereich des Übereinkommens"
+     "label": "Kapitel I Anwendungsbereich des Übereinkommens",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -59,7 +61,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I Anwendungsbereich des Übereinkommens"
+     "label": "Kapitel I Anwendungsbereich des Übereinkommens",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -68,7 +71,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I Anwendungsbereich des Übereinkommens"
+     "label": "Kapitel I Anwendungsbereich des Übereinkommens",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [],
@@ -78,7 +82,14 @@
      "text": "Deutschland (DE), Österreich (AT): Pflegschaft",
      "links": [],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 37,
+      "l": 70
+     },
+     "kl": "U"
     }
    ]
   },
@@ -86,7 +97,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I Anwendungsbereich des Übereinkommens"
+     "label": "Kapitel I Anwendungsbereich des Übereinkommens",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -95,7 +107,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II Zuständigkeit"
+     "label": "Kapitel II Zuständigkeit",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -104,7 +117,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II Zuständigkeit"
+     "label": "Kapitel II Zuständigkeit",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -113,7 +127,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II Zuständigkeit"
+     "label": "Kapitel II Zuständigkeit",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -122,7 +137,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II Zuständigkeit"
+     "label": "Kapitel II Zuständigkeit",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -131,7 +147,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II Zuständigkeit"
+     "label": "Kapitel II Zuständigkeit",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -140,7 +157,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II Zuständigkeit"
+     "label": "Kapitel II Zuständigkeit",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -149,7 +167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II Zuständigkeit"
+     "label": "Kapitel II Zuständigkeit",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -158,7 +177,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II Zuständigkeit"
+     "label": "Kapitel II Zuständigkeit",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -167,7 +187,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Anzuwendendes Recht"
+     "label": "Kapitel III Anzuwendendes Recht",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -176,7 +197,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Anzuwendendes Recht"
+     "label": "Kapitel III Anzuwendendes Recht",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -185,7 +207,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Anzuwendendes Recht"
+     "label": "Kapitel III Anzuwendendes Recht",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -194,7 +217,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Anzuwendendes Recht"
+     "label": "Kapitel III Anzuwendendes Recht",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -203,7 +227,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Anzuwendendes Recht"
+     "label": "Kapitel III Anzuwendendes Recht",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -212,7 +237,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Anzuwendendes Recht"
+     "label": "Kapitel III Anzuwendendes Recht",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -221,7 +247,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Anzuwendendes Recht"
+     "label": "Kapitel III Anzuwendendes Recht",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -230,7 +257,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Anzuwendendes Recht"
+     "label": "Kapitel III Anzuwendendes Recht",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -239,7 +267,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Anzuwendendes Recht"
+     "label": "Kapitel III Anzuwendendes Recht",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -248,7 +277,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Anerkennung und Vollstreckung"
+     "label": "Kapitel IV Anerkennung und Vollstreckung",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -257,7 +287,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Anerkennung und Vollstreckung"
+     "label": "Kapitel IV Anerkennung und Vollstreckung",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -266,7 +297,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Anerkennung und Vollstreckung"
+     "label": "Kapitel IV Anerkennung und Vollstreckung",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -275,7 +307,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Anerkennung und Vollstreckung"
+     "label": "Kapitel IV Anerkennung und Vollstreckung",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -284,7 +317,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Anerkennung und Vollstreckung"
+     "label": "Kapitel IV Anerkennung und Vollstreckung",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -293,7 +327,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Anerkennung und Vollstreckung"
+     "label": "Kapitel IV Anerkennung und Vollstreckung",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -302,7 +337,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Zusammenarbeit"
+     "label": "Kapitel V Zusammenarbeit",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -311,7 +347,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Zusammenarbeit"
+     "label": "Kapitel V Zusammenarbeit",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -320,7 +357,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Zusammenarbeit"
+     "label": "Kapitel V Zusammenarbeit",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -329,7 +367,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Zusammenarbeit"
+     "label": "Kapitel V Zusammenarbeit",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -338,7 +377,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Zusammenarbeit"
+     "label": "Kapitel V Zusammenarbeit",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -347,7 +387,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Zusammenarbeit"
+     "label": "Kapitel V Zusammenarbeit",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -356,7 +397,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Zusammenarbeit"
+     "label": "Kapitel V Zusammenarbeit",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -365,7 +407,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Zusammenarbeit"
+     "label": "Kapitel V Zusammenarbeit",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -374,7 +417,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Zusammenarbeit"
+     "label": "Kapitel V Zusammenarbeit",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -383,7 +427,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Zusammenarbeit"
+     "label": "Kapitel V Zusammenarbeit",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [],
@@ -394,7 +439,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 262,
+      "l": 300
+     },
+     "kl": "U"
     }
    ]
   },
@@ -402,7 +453,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -411,7 +463,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -420,7 +473,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -429,7 +483,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [],
@@ -440,7 +495,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 104,
+      "l": 146
+     },
+     "kl": "U"
     }
    ]
   },
@@ -448,7 +509,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -457,7 +519,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -466,7 +529,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -475,7 +539,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -484,7 +549,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -493,7 +559,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -502,7 +569,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -511,7 +579,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -520,7 +589,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -529,7 +599,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -538,7 +609,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Allgemeine Bestimmungen"
+     "label": "Kapitel VI Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -547,7 +619,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII Schlussbestimmungen"
+     "label": "Kapitel VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -556,7 +629,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII Schlussbestimmungen"
+     "label": "Kapitel VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -565,7 +639,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII Schlussbestimmungen"
+     "label": "Kapitel VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -574,7 +649,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII Schlussbestimmungen"
+     "label": "Kapitel VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -583,7 +659,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII Schlussbestimmungen"
+     "label": "Kapitel VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -592,7 +669,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII Schlussbestimmungen"
+     "label": "Kapitel VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -601,7 +679,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII Schlussbestimmungen"
+     "label": "Kapitel VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []

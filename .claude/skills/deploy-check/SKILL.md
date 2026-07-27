@@ -3,11 +3,16 @@ name: deploy-check
 description: Verwenden, wenn David Push/Deploy/Live-Gang von LexMetrik verlangt, ein Merge nach main ansteht (main wird automatisch auf Prod ausgeliefert) oder ein Release-Stand geprüft werden soll.
 ---
 
-# Deploy-Check LexMetrik (§9 CLAUDE.md — «Weg 1», Stand 3.7.2026)
+# Deploy-Check LexMetrik (§9 — «Weg 1», Stand 25.7.2026)
 
-**Arbiter ist §9 CLAUDE.md in der jeweils aktuellen Fassung.** Dieser Skill ist
-Ausführungshilfe, kein Ersatz fürs Lesen von §9 — bei jedem Widerspruch gewinnt
-der aktuelle §9-Text.
+**Dieser Skill IST §9.** Seit dem A4-Umzug (25.7.2026) steht die
+Deploy-Disziplin hier, nicht mehr im Reglement; `CLAUDE.md` §9 trägt nur noch
+den Kern in drei Sätzen und zeigt hierher. Bei einem Widerspruch zwischen
+diesem Skill und einer älteren §9-Erinnerung gewinnt **dieser Text** — wer sich
+an einen ausführlichen §9 in `CLAUDE.md` erinnert, erinnert einen Altstand.
+
+Unverändert übergeordnet bleiben die Invarianten in `CLAUDE.md`, insbesondere
+§1 (Korrektheit), §6 (Verhaltensneutralität, Golden) und §8 (Ehrlichkeit).
 
 **Kernmodell (Weg 1):** Vercel liefert `main` automatisch auf Prod aus.
 **Der Merge nach `main` IST der Deploy.** Es gibt keinen separaten
@@ -102,8 +107,33 @@ Prod-Deploy raced mit dem Git-Deploy: der langsamere Build überschreibt den
 korrekten, und wenn lokal HEAD ≠ `origin/main` (Parallel-Session-Commits),
 geht ein ANDERER Commit live als der gemergte.
 
-**Bewusste Grenze (§9):** nichts mergen, was Tore rot lässt oder nicht doppelt
+**Bewusste Grenze:** nichts mergen, was Tore rot lässt oder nicht doppelt
 verifiziert ist. Rot = Stopp, kein «mergen und nachbessern».
+
+### Auto-Merge ist auf Risiko-Pfaden gesperrt
+
+Auf Risiko-Pfaden (Extraktion, Rechnen, Norm-Tarif — Definition über
+`istRisikoPfad()` in `scripts/gegenpruefung/kern.ts`) wird **erst nach
+vorliegendem Gegenprüfungs-Verdikt** gemergt. `--auto` ist dort **ganz
+gesperrt**: Es prüft nur den Stand beim Aktivieren, nicht den beim Mergen.
+
+Das Verdikt braucht eine prüfbare Form **und** einen Zuwachs im committeten
+Gegenprüfungs-Register. Ein Trailer allein ist eine Behauptung über eine
+Prüfung, kein Nachweis.
+
+Maschinelle Rückendeckung, dreifach:
+
+- `check:merge-schutz` als dedizierter CI-Job «Merge-Schutz
+  (Required-Kontext)», gesetzt als **Required Check** in den Branch-Regeln —
+  ein entfernter Job hinterlässt einen «expected»-Block.
+- derselbe Check im Hook `tor-schutz.py` vor jedem Merge-Kommando (erste
+  Verteidigungslinie, lokal).
+- `check:gegenpruefung` blockiert `npm run gate`, bis für den Diff ein
+  `bestanden`-Nachweis vorliegt.
+
+**Vorfall, der das erzwungen hat:** PR #309 — elf erfundene Amtsträger:innen
+gingen rund eine Stunde auf Prod, weil der Verweis auf die Gegenprüfung beim
+Abarbeiten der Liste übersprungen wurde.
 
 **Einzige Ausnahme — manueller Deploy.** Nur wenn GENAU EINES dieser zwei
 beobachtbaren Prädikate erfüllt ist (oder beide):
@@ -123,13 +153,14 @@ Arbeitsverzeichnis.
 
 | Ausrede | Realität |
 |---|---|
-| «Der Skill ist die operative Form von §9 — CLAUDE.md muss ich nicht erneut lesen.» | §9 ist der Arbiter, der Skill nur Ausführungshilfe. Bei Widerspruch gewinnt der aktuelle §9-Text — genau so wurde dieser Skill schon einmal veraltet befolgt. |
-| «§9 nennt selbst ‹Prod: npx vercel --prod› — der Handschritt ist gedeckt.» | Diese alte Prod-Zeile wurde am 17.7.2026 aus §9 gestrichen; Weg 1 «Merge = Deploy» ist der einzige verbindliche Pfad. Wer sich an ‹npx vercel --prod› erinnert, erinnert einen Altstand. |
+| «In `CLAUDE.md` §9 steht der ausführliche Deploy-Ablauf — ich halte mich daran.» | Seit 25.7.2026 steht dort nur noch der Kern plus ein Zeiger hierher. Wer einen ausführlichen §9 erinnert, erinnert einen Altstand. Dieser Skill ist der Text. |
+| «§9 nennt selbst ‹Prod: npx vercel --prod› — der Handschritt ist gedeckt.» | Diese alte Prod-Zeile wurde am 17.7.2026 gestrichen; Weg 1 «Merge = Deploy» ist der einzige verbindliche Pfad. Wer sich an ‹npx vercel --prod› erinnert, erinnert einen Altstand. |
+| «Die Gegenprüfung lief, ich habe den Trailer gesetzt — `--auto` kann scharf.» | Auf Risiko-Pfaden ist `--auto` ganz gesperrt, und ein Trailer ohne Registerzuwachs ist eine Behauptung, kein Nachweis. Vorfall PR #309. |
 | «Doppelt hält besser — ein zusätzlicher vercel --prod aus sauberem Worktree schadet nicht.» | Doppel-Deploy = Race. Der langsamere Build überschreibt den korrekten; bei HEAD ≠ origin/main geht ein falscher Commit live. |
 | «Die GitHub-CI ist grün — das ersetzt die lokalen Tore, ich kann --auto schon mal setzen.» | Grüne CI ist Merge-Voraussetzung, nicht Ersatz für Schritte 0–2. `--auto` vor Abschluss von 0–2 = unkontrollierter Prod-Deploy bei nächstem grünen CI-Lauf. |
 | «David hat nur den Deploy verlangt, den Push nicht wörtlich — also Push einzeln bestätigen lassen.» | Push ist stehend freigegeben (2.7.2026); die Einzel-Nachfrage ist abgeschafft. «Bring das auf Prod» deckt Push + Merge. |
 | «Der /tmp-Worktree schützt vor dem Hochladen von untracked Ballast.» | Der Git-Deploy baut nur Committetes — untracked erreicht Vercel gar nicht. Die echte Gefahr ist versehentliches Committen (Schritt 0.3). |
-| «Nur ein flakiger Test rot / fast grün — mergen und nachbessern.» | §9-Grenze: nichts mergen, was Tore rot lässt oder nicht doppelt verifiziert ist. |
+| «Nur ein flakiger Test rot / fast grün — mergen und nachbessern.» | Bewusste Grenze (oben, Schritt 3): nichts mergen, was Tore rot lässt oder nicht doppelt verifiziert ist. |
 
 ### Red Flags — STOP
 
@@ -164,4 +195,5 @@ Geist verletzen.
    bleibt manuell, bis ein CI-Chrome verdrahtet ist.
 5. Aufräumen: gemergten Branch + zugehörigen Worktree entfernen
    (Daueranweisung 30.6.).
-6. STRUKTUR.md / HANDLUNGSPLAN.md spiegeln (deployter Stand, Commit-Hash).
+6. STRUKTUR.md / ROADMAP.md spiegeln (deployter Stand, Commit-Hash) —
+   STRUKTUR-Pflicht: Skill `auftrag`, Ziff. 4a.

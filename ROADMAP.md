@@ -269,22 +269,10 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
 - **Gesetze-Currency & Coverage** *(QS-CURRENCY, `[OF]`, neu 4.7.2026 — Fedlex-Portfolio Paket 1)*.
   <!-- @meta id: QS-CURRENCY · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-cache.sh, public/normtext/register.json] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-FEDLEX-PORTFOLIO.md -->
   Kein Bund-Erlass wird veraltet ausgeliefert, keine Currency-Lücke bleibt strukturell
-  unsichtbar. Detailquelle **`FAHRPLAN-FEDLEX-PORTFOLIO.md`** (Paket 1, P1-a…d). **Stand 5.7.2026:
-  P1-a + P1-b gebaut (dieser PR) — Paket 1 damit komplett (P1-c/d schon in main, PR #142).**
-  **P1-b (Monitoring dicht):** Regex-Fix `fedlex-pins.ts` `[a-z_]+`→`[a-z0-9_]+` (11 parser-blinde
-  Ziffern-Pins jetzt überwacht, 207→218) + Parser-Selbsttest + Coverage-Assertion (kein gehosteter
-  Bund-Volltext ohne Pin, rot bei Verstoss) + PDF-Embed-Pins (EMRK/NYÜ) ins `check:fedlex-versionen`.
-  **P1-a (Datenlauf):** 18 überholte Snapshots + 2 PDF-Embeds auf die geltende Fassung gehoben
-  (html-N SPARQL-kanonisch via isExemplifiedBy; klv/vrv=8, ssv=14; Artikel-Diff +85, 9 eId-Renames
-  1:1, 0 Verlust); `check:fedlex-versionen` **Exit 0 (0 stale)**. Nebenbei zwei Mechanik-Bugs gefixt
-  (Golden-`--erlass`-Merge behielt Phantom-Keys; check:pdf-netz notation-Join-Partial-Result).
-  Gegenprüfung bestanden. Trailer `Roadmap: QS-CURRENCY`. **Status: `[✓]` (Paket 1 abgeschlossen).**
-  **Etikett-Korrektur 20.7.2026:** Der Schritt stand trotz dieses `[✓]` noch auf `wip` ⇒ jetzt **`done`**.
-  Geprüft, dass der Schritt-Umfang wirklich nur **Paket 1** ist: `FAHRPLAN-FEDLEX-PORTFOLIO.md` ordnet die
-  Pakete 2/5/3/4 fremden IDs zu (`W2·6`, `W2·6-REV`, `W3·11`, `W3·13`), `W2·14-SIGNAL` hängt nur lose daran —
-  es bleibt also kein Rest unter diesem Etikett liegen. Die laufende **Korpus-Pflege** (`check:fedlex-versionen`,
-  Wiedervorlage-Läufe, z. B. `5b676c3b`) läuft als Automatik weiter und ist **kein** offener Bau-Schritt;
-  die Gesundheit dieser Automatik wird neu von **`QS-AUTOMATIK`** überwacht (dort ist `fedlex-frische.yml` rot).
+  unsichtbar. Detailquelle **`FAHRPLAN-FEDLEX-PORTFOLIO.md`** (Paket 1, P1-a…d). **Paket 1
+  komplett 5.7.2026 (P1-a–d, Gegenprüfung bestanden); Etikett-Korrektur 20.7.2026 ⇒ `done`,
+  kein Rest unter diesem Etikett.** Laufende Korpus-Pflege läuft als Automatik weiter (Gesundheit
+  überwacht `QS-AUTOMATIK`). Wortlaut → `ROADMAP-CHRONIK.md` → QS-CURRENCY (26.7.2026).
 - **Geräte-Last / Performance** *(QS-PERF, `[OF]`, neu 30.6.2026 — Leitprinzip 7 + CLAUDE.md §15)*.
   **§14-Intake 20.7.2026 (David):** TBT-Budget `/gesetze/bund/OR` (#28) — VOR jeder Feature-Zuschreibung Nullprobe + Streuung (Dispatch §0 Ziff. 3): das Budget ist der einzige Job mit Rot im Sample, die Rausch-Rotquote allein erklärt den Grossteil. Lighthouse-Median n≥3 statt Einzelwert gehört in `scripts/perf/` (Worktree `lm-ci`).
   **§14-Intake 24.7.2026 (David, «ja nimm den pfad-filter als intake auf»): CI-Pfad-Filter für
@@ -334,6 +322,56 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
     ausgeschlossen — jeder Lauf ist kalt. Vermutung, ungeprüft: Lighthouse wählt je nach Timing ein
     anderes LCP-Element. Der Deckel 13500 liegt ~16 % über dem hohen Modus und ist damit sicher;
     bevor er verschärft wird, muss die Bimodalität verstanden sein (sonst deckelt man sie nur weg, §8).
+  - [x] **Bimodaler ~48-s-Stall in der ersten gedrosselten Such-Interaktion — AUFGEKLÄRT + BEHOBEN**
+    *(26.7.2026, `bibliothek/betrieb/e2e-flake-forensik-2026-07-26.md` §3, PR #382)*. `norm-sprung`
+    A9 war als 2-vCPU-Flake gemeldet; gemessen war es ein **Messfehler des Tests**: der Warmlauf
+    wartete auf den «Sprung»-Treffer, der aus Register/Parser deterministisch berechnet wird und
+    schon steht, **während der Artikel-Suchindex noch aufgebaut wird**. Nach dem Erscheinen von
+    «Sprung» waren gemessen noch **11 586 – 14 484 ms** Ladearbeit offen; diese Restlast fiel in die
+    GEDROSSELTE Messphase und erschien dort ×4 als ~48-s-Stall — streng bimodal, weil es ein Rennen
+    zwischen Einmal-Load und Query-Reset ist (zwei Zustände, kein Kontinuum). Auf dem Runner riss das
+    alle drei Versuche (PR #382 Shard 7/8). **Fix:** der Warmlauf wartet jetzt auf den Ladezustand,
+    den er zu erreichen behauptet — Ergebnis-Kopfzeile sichtbar UND Vorbehalt «wird noch ergänzt»
+    weg (letzteres deckt die gestaffelte 2. Aufbaustufe, die `unvollstaendig` statt `laedt` setzt und
+    von `allesGeladen` NICHT erfasst wird). **Deckel byte-gleich** (12 000/15 000 ms), Latte löst
+    jetzt in 0.36–0.54 s statt im Münzwurf auf, Spec 44/44 grün bei `--retries=0`. Die Pfeil-Latte
+    (`aria-activedescendant`), vorher bei 56–99 % ihres Budgets, ist damit ebenfalls entlastet und
+    braucht **keine** Kalibrierung.
+  - [ ] **Der Artikel-Suchindex kostet ~28.5 s Main-Thread-Aufbau — struktureller Perf-Posten**
+    *(neuer Befund 26.7.2026, Messung durch delegierte Analyse; Dossier ebd. §3.5)*. Der Fix oben
+    korrigiert die MESSUNG, nicht die Ladekosten. Gemessen auf 4 vCPU @2.1 GHz, un-gedrosselt:
+    `ergaenze('bund')` **13 480 ms als EIN einziger, nicht unterbrechbarer Task**
+    (`src/lib/suche/artikelVolltext.ts:308`, via `:249–253` ohne Yield) +
+    `ergaenzeGestaffelt('kanton')` **15 023 ms in 16 Häppchen à 324–1 386 ms** (`:320–328`).
+    Un-gedrosselt liegen die Häppchen schon über dem 200-ms-Reaktionsanspruch, unter 4× Drossel bei
+    1.3–5.5 s je Block — die Zusicherung «Tippen/Scrollen bleibt flüssig» (`:112–113`) ist damit
+    **nicht eingehalten**. **Hebel (gehört zu Strang c):** Aufbau in einen Worker, oder den Index
+    build-time serialisieren (FlexSearch `export()`/`import()` — steht in Strang c schon als
+    Audit-1-B4). **Nicht ermittelt:** ob im langsamen Modus Stufe 1 oder Stufe 2 im Drossel-Fenster
+    lag (13.5 vs. 15.0 s passen beide numerisch) — das entscheidet nur ein Chromium-Trace mit
+    Long-Task-Attribution.
+  - [ ] **§8-Auskunftslücke im Fehlerpfad der Artikel-Suche** *(neuer Befund 26.7.2026, ebd.)*.
+    `src/components/suche/useUniversalSuche.ts:88` fängt einen gescheiterten Index-Load mit
+    `.catch(() => setArtikelSuche({ suche: () => [], fehlendeEbenen: [] }))` ab. Wegen
+    `fehlendeEbenen: []` ist `unvollstaendig` falsy (`src/lib/universalSuche.ts:292`) ⇒ die
+    Oberfläche meldet «0 Artikel, fertig durchsucht», obwohl **nichts** indexiert wurde. Genau der
+    Fehlschluss, gegen den `artikelVolltext.ts:30–34` und `src/tests/suche/gestaffelterIndex.test.ts`
+    argumentieren — im Fehlerfall aber nicht abgedeckt. **Zweiter Defekt am selben Pfad:**
+    `artikelVolltext.ts:60` räumt `ladePromise` bei Rejection nicht (ein Netz-Blip auf 46 MB
+    degradiert die Suche bis zum Reload permanent) — die repo-eigene Regel O-1.7 in
+    `src/lib/normtext/laden.ts:44–52` macht es ausdrücklich anders. Klein, eigener Commit.
+  - [ ] **«~4 MB Artikel-Index» ist in ~10 Kommentaren falsch — real 45.7 MiB**
+    *(Befund 26.7.2026, ebd.)*. `public/such-index/artikel.json` = 47 964 020 Bytes, 54 444 Einträge
+    (~9.7 MB gzip, so auch in `scripts/check-perf-budget.ts:92` beziffert). Die Zahl «~4 MB» steht
+    u. a. in `src/components/suche/useUniversalSuche.ts:128,131`, `e2e/norm-sprung.e2e.ts` und
+    `e2e/gesetze-ia-v2-walks.e2e.ts:18,45`. Sie hat die Flake-Suche in die falsche Grössenordnung
+    gelenkt (§5: eine Zahl, zehnfach kopiert und nirgends nachgeführt). Reine Kommentar-Korrektur.
+  - [ ] **Dauer-rAF-Sampler in `e2e/helpers/cls.ts` ohne Abschalt-Bedingung** *(Nebenbefund 26.7.2026,
+    Dossier ebd.)*. `clsBeobachtenInstallieren` startet eine unbegrenzte `requestAnimationFrame`-Schleife,
+    die pro Frame `getBoundingClientRect()` auf 13 Elementen aufruft (erzwungenes Layout je Frame) und
+    bis Test-Ende läuft. Als Wachser-Diagnose gebaut (19.7.), belastet sie jede gedrosselte Messung nach
+    ihrer Installation. **Nicht** Ursache des Stalls oben (gegengemessen), aber ein eigener
+    Prüf-Genauigkeits-Posten: eine Abschalt-Bedingung nach dem Auslesen wäre verlustfrei.
   - [ ] **e2e-Shard-Balance gegen GEMESSENE CI-Dauern packen** *(vorbereitet 20.7.2026; CI-Messwerte
     da 21.7.2026 — geparkt, gekoppelt an Davids Merge-Queue-Entscheid)*.
     Die Gruppen in `e2e/shard-gruppen.json` sind gegen LOKALE Dauern gepackt (Spread <0.1 %), die
@@ -519,7 +557,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > Reihenfolge nach Praxis-Hebel × Machbarkeit ohne Fachzeit × Abhängigkeiten. Alles `[OF]`, sofern
 > nicht vermerkt. Details + Bau-Auflagen je Werkzeug: «Funktions-Katalog» unten + jeweilige `FAHRPLAN-*.md`.
 
-<!-- @queue: QS-TOK, W2·12-HYGIENE, W2·5b, W2·5d, W2·5h-GESETZ-UI, W2·5i-HIST-ANSICHT, W2·13-KANTONE, W2·7-BEZUG, W2·6b-MAT-FINMA -->
+<!-- @queue: QS-TOK, W2·5d, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·7-BEZUG, W2·6b-MAT-FINMA -->
 <!-- ^ SSoT der Bau-Reihenfolge (Einbau 24.7.2026): plan:next wertet die @queue VOR der
      Dokumentreihenfolge aus; Integrität erzwingt check:plan Regel 8 (tote/erledigte IDs rot,
      Prosa-«OBERSTER» muss dem Queue-Kopf entsprechen). Priorität ändern = NUR diese Zeile
@@ -540,6 +578,12 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > 10.7.2026, Pakete P0–P5). **Start = P0/T2 Token-Baseline (Messung zuerst)**, dann Pakete in
 > Plan-Reihenfolge. Die Feature-Reihenfolge danach steht in der **`@queue`-Zeile oben** (SSoT);
 > abgelöste Fassung wörtlich → `ROADMAP-CHRONIK.md` → Steuerungs-Prosa (24.7.2026).
+> **Stand 24.7.2026 (Nachmessung, Session III): autonomer Bau-Rest LEER** — T1/T2/T3/T5/T6/T7/
+> T9/T15/T17/T18/T19 + Dispatch-Template + `map`/`zeige`/`fahrplan` sind gebaut (Belege:
+> FAHRPLAN §Stand + Repo-Nachmessung); die verbleibenden Posten laufen NUR mit separatem Go
+> David (§8 Ziff. 4: T10 · T12-Stufe-2 · T14 · T16 · T20-je-Einsatz) bzw. sind als
+> unwirtschaftlich zurückgestellt (T13-Rest auf Risikopfaden). Eine Bau-Session ohne dieses
+> Go nimmt direkt den nächsten Queue-Schritt.
 
 > **■ Fokus-Dekret 24.7.2026 (David, §14-Intake — 14 Anmerkungen, präzisiert die
 > Feature-Reihenfolge oben): die Gesetzesdarstellung steht im Vordergrund.** Reihenfolge:
@@ -633,61 +677,35 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 
 ### Welle 2 — Griff (Auffindbarkeit) + Konsultieren + mehr Klingen
 
-- [ ] **5 · Auffindbarkeits-Schicht** *(ein Index → mehrere Oberflächen)*. **Zweiachsiger Einstieg
-  <!-- @meta id: W2·5 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
+- [x] **5 · Auffindbarkeits-Schicht** *(ein Index → mehrere Oberflächen)*. **Zweiachsiger Einstieg
+  <!-- @meta id: W2·5 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
   (Rechtsgebiet × Aufgabe)** ✅ **28.6.2026** (gegated, deployt 2.7.) · **Globale Artikel-
-  Volltextsuche** ✅ **28.6.2026** (FlexSearch, 24 183 Bund-Artikel, build-time-Index, lazy).
-  Wortlaut → `ROADMAP-CHRONIK.md` → W2·5 (22.7.2026).
-  **Offen:** Kanton-Volltext im Index nachziehen · ~~Startseiten-Modul-Rahmen~~ → **wird in W2·5c
-  gebaut** (Modul-Registry, `FAHRPLAN-STARTSEITE-V3.md` §4 — FUNDAMENT-Vorleistung).
-  **Status-Korrektur 20.7.2026: `wip` → `ready`.** Der Restposten ist gemessen, nicht geschätzt:
-  `scripts/such-index-generieren.ts` baut ausschliesslich `public/such-index/artikel-bund.json` aus
-  `public/normtext/bund` (`ebene: 'bund'` hartcodiert) — der Kanton-Volltext fehlt im Index also belegt.
-  Seit dem 10.7. kein Commit mit `Roadmap: W2·5`, kein Worktree, kein offener PR ⇒ es baut niemand daran.
+  Volltextsuche** ✅ **28.6.2026** (FlexSearch, build-time-Index, lazy) · **Kanton-Volltext im
+  Index** ✅ **25.7.2026** (PR #365 — 54 444 Artikel: Bund 25 389 + Kanton 29 055 aus 26 Kantonen;
+  Ebene ist Generator-Parameter statt Literal, Treffer nennt seinen Kanton, Recall je Ebene getrennt).
+  Wortlaut → `ROADMAP-CHRONIK.md` → W2·5 (22.7. + 25.7.2026).
+  **ABGESCHLOSSEN 25.7.2026.** ~~Startseiten-Modul-Rahmen~~ → **wird in W2·5c gebaut**
+  (Modul-Registry, `FAHRPLAN-STARTSEITE-V3.md` §4 — FUNDAMENT-Vorleistung), gehörte nie hierher.
   **Zur Klarstellung (Befund 20.7.):** `W2·5b`/`5c`/`5d`/`5g`/`5h` sind **keine Kinder** dieses Schritts —
   `scripts/plan/*` kennt kein Eltern-/Kind-Konzept, jeder trägt eigenes `@meta` mit eigenem Status. Es ist
-  eine **Nummern-Familie, keine Hierarchie**; W2·5 ist selbsttragend und wird eigenständig abgeschlossen.
-- [ ] **5b · Reader-Darstellung Bund** *(GESETZESDARSTELLUNG-BUND, `[OF]`, eigener Worktree)* —
-  <!-- @meta id: W2·5b · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/inhalt.tsx, src/pages/gesetz-leser/parts.tsx, src/components/normtext/ArtikelBody.tsx, scripts/normtext, public/normtext/struktur, scripts/such-index-generieren.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZESDARSTELLUNG-BUND.md -->
-  **Status-Korrektur 20.7.2026: `wip(reader-wt)` → `ready`.** Der Marker zeigte auf einen Worktree, den es
-  **nicht mehr gibt** (`git worktree list` kennt nur LexMetrik/lm-ci/lm-fundament/lm-planintake; kein Branch
-  `*w25b*`/`*reader*`). Der Restblock ist gelandet: **PR #156, Merge-Commit `9b0f9e48` (5.7.2026)**.
-  **Vor einem Bau-Start zwingend nachmessen (§8, nicht abhaken ohne Beleg):** `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md`
-  führt Batch C (M4 Suche/Gliederung responsiv · M5 kompakt zum Header · M7 Scroll-Offset nach Suche ·
-  M8 Treffer-Highlight) und Batch D (M11 Verweis-Popup + Artikel-Bezeichnung · M6-Renderteil) noch unabgehakt —
-  **M5 und M8 sind aber vermutlich durch W2·5d-Arbeit faktisch erledigt** (PR #284 «A35 Suche in Kopfzeile +
-  A40 Highlight», PR #301 «Suchfeld in die Kopfzeile»), ohne dass die Fahrplan-Checkboxen nachgezogen wurden.
-  Erst am heutigen Reader verifizieren, dann bauen — sonst wird zweimal dasselbe gebaut.
-  konsolidierter QA-Sweep der **Bund-Gesetzesdarstellung** (29.6.2026): 11 Defekt-/Ausbau-Punkte
-  (Präambel-Fussnoten · Fussnoten einheitlich erst auf Klick · Randtitel-/Gruppierungslinien je
-  Gesetz + Umschalter · Suche↔Gliederung responsiv + kompakt zum Header · Verweis ZGB→BVG via
-  ELI/`data-rs` · Treffer-Highlight · Sprung-Offset nach Suche · aufgehobene Artikel bündig ·
-  **Tabellen-Regelwerk T-A…T-F seitenweit** · Verweis-Popup + Artikel-Bezeichnung) unter der
-  **Leitlinie L0** «Extraktor strukturerhaltend härten statt pro Gesetz patchen» (Fedlex-HTML
-  empirisch einheitlich, verifiziert 29.6.). **Plan = `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md`**
-  (4 Batches: A Extraktor/Pipeline konfliktfrei zuerst → B Render zuletzt, **Split-View-Konflikt auf
-  `ArtikelBody.tsx`** abstimmen → C Suche/Layout → D Popover). **Auflagen:** zuerst nur Bund;
-  **Renderer abwärtskompatibel** (Kanton-Altdaten nicht brechen); golden byte-gleich + §6.3;
-  neuer `check:tabellen`-Validator. Tabellen-Detail quer in `FAHRPLAN-TARIF-TABELLEN-STUFE2.md`,
-  Layout/a11y in `DESIGN-REGLEMENT-NORMTEXT.md`, Popover in `FAHRPLAN-GESETZESTEXT-POPUP.md`.
-  - **Gebaut (✅; Wortlaut → `ROADMAP-CHRONIK.md` → W2·5b, 22.7.2026):** Bündel R (Scroll-Spy/
-    Gliederung/A−A+, PR #59, prod 30.6.) · Bündel N (N1 zerrissene Artikelnummern am Extraktor +
-    N2 Self-Link-Unterdrückung + Tor `check:invarianten`, deployt 2.7.) · Phase-1-Fundament-Batch
-    P1/P2/P4/P5 (Spec 2.7.) · N3 `he`-Entities (0-Byte-Diff) · **W2·5b-Restblock komplett 5.7.**
-    (P3 Drop-Klassen-Inventur + Tor `check:p-klassen` · linkedom-POC gemessen → KEINE Migration ·
-    SVG-style-Leak; QS-GP-Quittungen). Spec-Heimat unverändert (s. oben).
-  - [ ] **M12 · Randtitel-Leerzeichen-Verklebung** *(§14-Intake 24.7.2026, David; Fokus-Dekret-
-    Priorität)*: Struktur-Generator verklebt mehrteilige Randtitel («Beginn der Wirkung**eneines**
-    unter**Abwesenden**geschlossenen …», OR Art. 10). Datenfehler, nicht Render:
-    `public/normtext/struktur/bund/*.json` (≥8 Erlasse belegt) + vererbt in
-    `public/such-index/artikel-bund.json`; Artikel-`bloecke` sauber; Dunkelziffer korpusweit messen.
-    Generator-Fix am Join (L0) + Regeneration Struktur/Such-Index + Verklebungs-Tor mit
-    Sabotage-Probe (§6.7); Extraktion ⇒ `check:gegenpruefung`. Detail + Befund:
-    `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` M12.
+  eine **Nummern-Familie, keine Hierarchie**; W2·5 ist selbsttragend und wurde eigenständig abgeschlossen.
+- [x] **5b · Reader-Darstellung Bund** *(GESETZESDARSTELLUNG-BUND, `[OF]`)* —
+  <!-- @meta id: W2·5b · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZESDARSTELLUNG-BUND.md -->
+  **ABGESCHLOSSEN 25.7.2026** — alle Einheiten M1–M12 des QA-Sweeps ✅ (zuletzt M12 PR #340 · M11+M6-D PR #342 · HAENGEND-Folge-Härtung PR #343). Wortlaut (inkl. QA-Sweep-Spec, Status-Korrektur 20.7., Nachmess-Warnung Batch C/D) → `ROADMAP-CHRONIK.md` → W2·5b (26.7.2026); Tabellen-Detail quer in `FAHRPLAN-TARIF-TABELLEN-STUFE2.md`, Popover in `FAHRPLAN-GESETZESTEXT-POPUP.md`.
+  - [x] **M12 · Randtitel-Leerzeichen-Verklebung** — **✅ GEBAUT + GEGENGEPRÜFT + GEMERGT
+    24./25.7.2026** (PR #340 `c872e4a9` + Folge-Härtung PR #343 `e3622991`): Generator-Fix am
+    Join (`loeseTrennung`/`biErsetzung`), Tor `check:verklebung` (Sabotage rot gezeigt),
+    231 Sidecars regeneriert, 2+2 Opus-Gegenprüfungs-Durchgänge (Register `ce06aa72`/`e964599c`).
+    Dieser Marker stand stale auf offen (Etikett-Korrektur 26.7.); Wortlaut + Beweise:
+    `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` §M12.
 - [x] **5c · Startseite V3 + Branding I2** *(STARTSEITE-V3, done)* — ✅ GEBAUT 3.7.2026 (Bausequenz S1–S5 komplett, PRs #106/#107/#108/#111 + S5 Brass-Hero) + Zuletzt-Tracker. **Rest offen (kein Blocker):** Wash-Ton-Veto `bg-surface`-Fallback in `Hero.tsx`. Spec `FAHRPLAN-STARTSEITE-V3.md`. Trailer `Roadmap: W2·5c`. **Chronik:** `ROADMAP-CHRONIK.md` → W2·5c.
   <!-- @meta id: W2·5c · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/Startseite.tsx, src/components/start, src/lib/navigation.ts, src/lib/seo.ts, index.html, tailwind.config.js, src/components/layout/Topbar.tsx, scripts/prerender.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-STARTSEITE-V3.md -->
 - [ ] **5d · Gesetzes-UX & Darstellungs-Reglement** *(GESETZES-UX, `[OF]`, eigener Worktree; Auftrag David 4.7.)*:
   **§14-Intake 20.7.2026 (David):** Fassungshistorie im Ansicht-Menü an-/abwählbar (#27).
+  **Stand 26.7.2026 (Nachmessung):** G0–G6, A1–A18, A19–A25 (ohne zurückgezogenes L-3/A28),
+  E-Reihe A29–A40 E1–E7, §11 IA-1–IA-7, EID-1/EID-2 und FN-5/M14 sind gebaut — **offener
+  Rest = EID-3** (Folge-Härtungen; Teil-Grenze: A27-Revival bleibt per Rückzug David 12.7.
+  ausgeschlossen) sowie die im Fahrplan geführten Härtungs-/Politur-Posten.
   <!-- @meta id: W2·5d · status: ready · of: ja · blocker: null · dep: [W2·5c] · kollision: [src/pages/gesetz-leser/parts.tsx, src/pages/gesetz-leser/inhalt.tsx, src/components/normtext/ArtikelBody.tsx, src/lib/normtext/register.ts, src/components/suche, scripts/normtext] · seq-hart: [QS-PERF(ArtikelBody.tsx)] · seq-weich: [W2·5b-L0(scripts/normtext, nur U-PDF)] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZES-UX.md -->
   UX/Lesbarkeit des Gesetz-Lesers auf State-of-the-Art heben (Fedlex =
   Mindestlatte). **EINE Linien-Sprache** (3 benannte Rollen `--guide-gliederung`/
@@ -718,52 +736,29 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   ausstehend):** eingeordnet in `FAHRPLAN-GESETZES-UX.md` §10.8; Spec-Heimat
   `FAHRPLAN-GESETZESDARSTELLUNG-V2.md`; Wortlaut
   `docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-10.md`. Offene Schritte:
-  - [x] **A19** (FN-1+FN-2 +Drop-Fix `disp_*`): **✅ GEBAUT 10.7.2026 (Bau-Go David «go
-    zu allem», `feat/v2-fn1-fn2`).** VZG-Alt-Form-Fussnoten erhalten nr (873 nr='' → echt,
-    22 Erlasse), Präambel-`fnNrs` erfasst. **Abweichung (§7): Drop-Fix breiter als geplant** —
-    recovert die verworfenen Schlusstitel-Fussnoten (`disp_uN/art_*`) korpusweit (227 recovert,
-    u.a. OR/ZGB); «OR/ZGB byte-gleich» galt NICHT, stattdessen strukturell nicht-regressions-
-    bewiesen (nur additiv, 0 Verlust). Gegenprüfung gegen Fedlex bestanden; Detail V2 §2 F1. V2 §2 F1.
+  - [x] **A19** (FN-1+FN-2 + Drop-Fix `disp_*`) — **✅ GEBAUT 10.7.2026** (`feat/v2-fn1-fn2`). Wortlaut → `ROADMAP-CHRONIK.md` → W2·5d/A19–A25 (26.7.2026). V2 §2 F1.
   - [x] **A20** (FN-3): Präambel-Fussnoten inline (nach U-VERWEIS-Merge). V2 §2 F1.
     **✅ GEBAUT 12.7.2026 (`feat/v2-fn3`, PR #212).** Detail §10.8.
-  - [ ] **A21** (FN-4): Absatz-Zuordnung Alt-Form (bündelt mit A19-Regen). V2 §2 F1.
-    **Bau-Go David ausstehend.**
-  - [~] **A22** (K-1+K-2): Kopf nützlicher + Fussnoten-Anwahl (koordinierter Kopf-PR
-    mit U-PDF, nach U-VERWEIS). V2 §2 F2. **K-2 ✅ GEBAUT 11.7.2026 (`feat/v2-kopf-pr`,
-    PR #194) — Fussnoten-Chip. K-1 («in Kraft seit» / SPARQL-Datenteil) weiterhin offen.**
-    Detail §10.8.
-  - [x] **A23** (B-1+B-2): BGE Ab-/Anwahl + Zeitfilter in Rubrik-Ansicht, Kappung
-    `LEITFAELLE_SICHTBAR` 5→10 (überstimmt §3.1-«3 Toggles»; nach U-VERWEIS).
-    V2 §2 F3. **✅ GEBAUT 11.7.2026 (`feat/v2-kopf-pr`, PR #194).** Detail §10.8.
+  - [x] **A21** (FN-4) — **✅ ERLEDIGT OHNE BAU 25.7.2026** (PR #354; e2e-Wächter `fussnote-absatz-altform`). Wortlaut → `ROADMAP-CHRONIK.md` → W2·5d/A19–A25 (26.7.2026). V2 §2 F1.
+  - [x] **A22** (K-1+K-2) — **K-2 ✅ GEBAUT 11.7.2026** (`feat/v2-kopf-pr`, PR #194) · **K-1 ✅ GEBAUT 12.7.2026** (`feat/v2-k1`, PR #213, `9e7e505b`). Wortlaut → `ROADMAP-CHRONIK.md` → W2·5d/A19–A25 (26.7.2026). V2 §2 F2.
+  - [x] **A23** (B-1+B-2) — **✅ GEBAUT 11.7.2026** (`feat/v2-kopf-pr`, PR #194). Wortlaut → `ROADMAP-CHRONIK.md` → W2·5d/A19–A25 (26.7.2026). V2 §2 F3.
   - [~] **A24** (L-1+L-2+L-3): Linien-Reparatur, Auto-Default-Umkehr ZGB/OR (Umkehr
     #161, David freigegeben); L-4 entfällt. V2 §2 F4.
-    - [x] **L-1+L-2 ✅ GEBAUT 11.7.2026 (feat/v2-l1-l2):** Einzug-Cap 3→5 + Mobil-
-      Token `einzug-mobil` (0.75rem statt Kollaps auf 0; `data-linien=aus` kollabiert
-      weiter alle Ebenen) + Guide-Ton 10 %/14 % → 18 %/24 % (= `--line-strong`).
-      Golden byte-gleich (reine Reader-CSS/TS, kein Snapshot); `check:linien-kanon`
-      GRÜN unverändert (Aufbau-Regelwerk/Referenz-Verdikte unberührt). Playwright-
-      Beleg Light+Dark, Desktop+Mobil@390: Guide 0.18/0.24 gemessen; ZGB indentet
-      neu Ebene 1–5 (6–7 gekappt); Mobil-Einzug 12px; CLS 0 (padding/border). V2 §2 F4.
+    - [x] **L-1+L-2 ✅ GEBAUT 11.7.2026** (`feat/v2-l1-l2`). Wortlaut → `ROADMAP-CHRONIK.md` → W2·5d/A19–A25 (26.7.2026). V2 §2 F4.
     - [ ] **L-3** (Auto-Default-Umkehr): weiterhin **hinter David/Council-Gate** —
       NICHT in feat/v2-l1-l2 gebaut. V2 §2 F4.
   - **A25** (C-1+C-2+C-3): Farbe nur Referenzschicht (Chips/Badges/Kopf),
     Normtext-Körper farbfrei. V2 §2 F5. Bau-Go David 10.7. «go zu allem».
-    - [x] **C-1 ✅ (10.7.2026, feat/v2-c1-kantenchip):** KantenChip `kategorie`-Prop
-      (Norm=brass byte-identisch / Entscheid=slate-Tick+Hover), ↻ Revision→warn-700
-      (★ bleibt brass), slate-Doppelbelegung aufgelöst → DESIGN-REGLEMENT-NORMTEXT
-      §4b-B (Farb-Wörterbuch). Golden byte-gleich, Kontrast als Gate gemessen, CLS 0.
-    - [x] **C-2 ✅ (11.7.2026, feat/v2-c2, #201):** Overline-Farbpunkte Leitfälle/
-      Verweise (`lc-punkt`/`lc-punkt-entscheid`) + Currency-Chip-Tonung
-      (`lc-chip-geltend` sage «geltend geprüft (maschinell)» / `lc-chip-vorbehalt`
-      warn «nächste Fassung ab»). Kontrast gemessen, golden byte-gleich, CLS 0.
-    - [x] **C-3 ✅ (11.7.2026, feat/v2-c3) — Farb-Wörterbuch KOMPLETT:**
-      Materialien-Familie sage (`lc-punkt-material` + `punkt`-Prop an KontextGruppe:
-      Materialien/Norm/Entscheid-Gruppen tragen ihren Familien-Punkt) + NormChip-
-      Verweisfarbe (`hover:border-brass-400`, brass-Hover-Familie vereinheitlicht).
-      Kontrast gemessen (sage 4.48/3.84 ≥3:1), golden byte-gleich, CLS 0. V2 §2 F5,
-      DESIGN-REGLEMENT §4b-B Abschluss.
-  - [ ] **DEFER FN-5/M14** wortgenaue Marker: hinter QS-PERF/U-POSITION, separates
-    David-Go (Entscheid 10.7.). V2 §2 F1.
+    - [x] **C-1 ✅ 10.7.2026 · C-2 ✅ 11.7.2026 (#201) · C-3 ✅ 11.7.2026 — Farb-Wörterbuch KOMPLETT** (DESIGN-REGLEMENT §4b-B Abschluss). Wortlaut → `ROADMAP-CHRONIK.md` → W2·5d/A19–A25 (26.7.2026). V2 §2 F5.
+  - [x] **FN-5/M14** wortgenaue Fussnoten-Marker — **✅ GEBAUT 26.7.2026** als
+    SIDECAR-Variante nach M14-Spec (`FAHRPLAN-NORMTEXT-DARSTELLUNG.md` §M14) statt
+    Haupt-Snapshot-Diff: Snapshots byte-unverändert (§7-Abweichung von der hier
+    früher angenommenen Snapshot-Diff-Mechanik offengelegt). `pos{b,it,o,l}` je
+    Marker im Struktur-Sidecar, 16'894 Marker wortgenau (97.7 % der text-verorteten;
+    `<dt>`-Marken/Kopf/Sektion ausgewiesen ohne Textstelle), Differ-Beweis nur
+    erzeugt+pos, Gegenprüfung, Wächter `e2e/fn5-wortposition.e2e.ts` + Unit-Negativfälle.
+    Dossier `bibliothek/normen/fn5-wortgenaue-marker-2026-07-26.md`; Bau-Auftrags-
+    Wortlaut → `ROADMAP-CHRONIK.md` → W2·5d/FN-5 (26.7.2026). V2 §2 F1.
 
   **Nachzug-Welle A29–A40 (David 16.7.2026 — BAU-GO in derselben Session: «run till
   dry» + «und dann wie immer alles mit opus bauen»):** eingeordnet in
@@ -815,17 +810,8 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   (Fedlex-P1a/b + Freigabe). Verworfen mit Grund (Command-Palette [A5-Entscheid],
   Normtext-Virtualisierung [§15.1], Minimap, Scroll-Hash-Sync u. a.).
   Detail: **[`FAHRPLAN-UI-NAVIGATION.md`](FAHRPLAN-UI-NAVIGATION.md)**. Trailer `Roadmap: W2·10-UI-NAV`.
-  **Teillieferung 12.7.2026 (`fix/suche-aktivindex-race`):** Such-Dropdown-Race
-  gegen die deferred Artikelgruppe (#183/§15.3) an der Wurzel geschlossen — die
-  Pfeil-Auswahl folgt jetzt einem STABILEN Treffer-Key (`src/components/suche/trefferAuswahl.ts`,
-  geteilt von HeaderSuche + Hero) statt einem Positions-Index; nachwachsende
-  Treffer verschieben das Enter-Ziel nicht mehr (empirisch war Enter auf
-  SCHKG#art-257 statt OR#art-257_d gelandet). Deterministischer Repro-Test +
-  10×-Drossel-Beweis grün; die #210-A9-Reset-Härtung bleibt als Redundanz.
-  **Stand 11.7.:** Einheit **N0 (Quick-Win-Paket, N0a–N0d) ✅ gebaut+belegt** (Opus, Playwright
-  Desktop+Mobil): tote Rückwege · Erlass-Key-case-insensitiv+hilfreiche Fehlseite · Anker-`--nt-stick` ·
-  Kleinposten (Ergebnis-FAB-IO · Rechner-Filter · Streitwert-Leerzustand · Entwurf-Legende-Popover ·
-  Entscheid-`?ansicht=` · «In neuem Reiter»-Toast+☰-Tooltip). Rest der Kette (Suche S1–S6 …) offen.
+  **Teillieferung 12.7.2026 (`fix/suche-aktivindex-race`):** Such-Dropdown-Race gegen die deferred Artikelgruppe an der Wurzel geschlossen (stabiler Treffer-Key `trefferAuswahl.ts`). Wortlaut → `ROADMAP-CHRONIK.md` → W2·10-UI-NAV (26.7.2026).
+  **Stand 11.7.:** Einheit **N0 (Quick-Win-Paket, N0a–N0d) ✅ gebaut+belegt**; Rest der Kette (Suche S1–S6 …) offen. Wortlaut → `ROADMAP-CHRONIK.md` → W2·10-UI-NAV (26.7.2026).
   **Mess-Werkzeug 16.7. (advisory, kein Gate):** `npm run eval:suche` (`scripts/suche-eval.ts` +
   Gold `scripts/suche-eval-gold.json`, 69 verifizierte Paare) misst die ECHTE Produkt-Suche
   deterministisch/LLM-frei (Recall@1/5/10·MRR·NDCG@10 je Klasse) — ruft die Produktions-Pipeline
@@ -910,34 +896,15 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   gesamthaft (Ordnung/Responsive/§13 F) · K7 «Ansicht ▾» als Personalisierungs-Zentrum (Kanton u. a.;
   Andockpunkt für `W2·7-BEZUG`-Facetten-Filter). Prior-Art (M4/M5/M7/M8, U-SUCHE/U-KOPF, PRs
   #284/#301) erst nachmessen, dann Delta bauen. Detail: `FAHRPLAN-GESETZES-UX.md` §15.
-- [ ] **5i-HIST-ANSICHT · Fassungshistorie an-/abwählbar + Fussnoten von Änderungsvermerken trennen**
-  <!-- @meta id: W2·5i-HIST-ANSICHT · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/LeserAnsichtMenu.tsx, src/components/normtext/ArtikelBody.tsx, src/pages/gesetz-leser/inhalt.tsx, public/normtext/historie] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
-  *(§14-Intake 20.7.2026, David — Queue-Platz 4 · Darstellung + Datenklassifikation, kein Rechtsinhalt)*.
-  **Der Befund, der den Schritt trägt (gemessen, nicht geschätzt):** im OR sind **778 von 933 Fussnoten
-  Änderungsvermerke** und nur **77 echte Verweise**. Die Fussnoten-Spalte ist damit zu ~83 % Fassungs-
-  historie, die als «Fussnote» getarnt den Lesefluss trägt — wer Fussnoten abschaltet, verliert die
-  echten Verweise mit; wer sie anlässt, liest überwiegend Revisionsprosa.
-  **Bau-Vorschlag:** dreiwertige Auswahl **«Änderungshistorie: aus / als Fussnoten / als Chronologie»**
-  im bestehenden **«Ansicht ▾»-Menü** (`src/pages/gesetz-leser/LeserAnsichtMenu.tsx` hat Persistenz **und** Pre-Paint-Mechanik
-  schon — dort einklinken, kein neues Menü), **Verweis-Fussnoten unabhängig davon** schaltbar. Löst
-  nebenbei das bekannte Leerraum-Residuum.
-  **ZWINGENDE VORSTUFE H0 — Trennbarkeit MESSEN, bevor irgendetwas gebaut wird (§8):** die 778/77-Zahl
-  belegt, *dass* es zwei Klassen gibt, **nicht**, dass sie maschinell **sauber trennbar** sind. Vor dem Bau
-  ist korpusweit (nicht nur am OR — Leitplanke «nie aus einem Beispiel aufs Ganze») zu erheben, mit welcher
-  Präzision/Recall die Klassifikation Änderungsvermerk ↔ Verweis gelingt und **wie die Grauzone aussieht**
-  (Fussnoten, die beides tun). Ergebnis ist ein Verdikt mit Zahlen; fällt es schlecht aus, wird der
-  Umschalter **nicht** gebaut (eine Ansicht, die 5 % der Fussnoten falsch einordnet, verliert Normtext-
-  Information und verstösst gegen §15-Funktions-Treue). **Erst H0, dann H1 (UI).**
-  **Fassungs-Fundament (§14-Intake 20.7., David — gilt über diesen Schritt hinaus):** Dieser Schritt ist die
-  erste aktive Fläche, an der es greift — darum hier verankert statt im geparkten `W2·5g-ZEIT`:
-  **(i)** Fassungs-Schlüssel (`fassungsToken`/`stand`/`sha`) **durchgängig** mitführen, auch wo heute nur die
-  geltende Fassung gezeigt wird · **(ii)** Anker **fassungsstabil** halten (`#art-` darf nicht kippen, wenn
-  später eine zweite Fassung danebentritt) · **(iii)** §8 «nicht geltendes Recht» **unmissverständlich**
-  auszeichnen. Das ist **kein eigener Bau-Schritt**, sondern eine Auflage an **jede** Normtext-Arbeit;
-  Begründung und Detail: `FAHRPLAN-GESETZESDARSTELLUNG-V2.md` §7.
-  **DoD:** H0-Verdikt mit Korpus-Zahlen **vor** H1 · `check:normtext`/`check:historie` · golden byte-gleich
-  (§6/§15 — kein Fussnoten-Verlust in KEINER der drei Ansichten) · axe · `check:perf-budget`.
-  Trailer `Roadmap: W2·5i-HIST-ANSICHT`.
+- [x] **5i-HIST-ANSICHT · Fassungshistorie an-/abwählbar** — **✅ GEBAUT + GEMERGT 26.7.2026**
+  <!-- @meta id: W2·5i-HIST-ANSICHT · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
+  (PR #375, Squash `de8f294a`): H0-Verdikt BESTANDEN (25.7.) → H1 dreiwertige Ansicht
+  «Änderungshistorie: aus / als Fussnoten / als Chronologie», Klassifikation `kl` build-seitig
+  (227 Bund-Sidecars; nur Klasse A dämpfbar, Auflage 1 strukturell erzwungen), 4 Gegenprüfungs-
+  Runden (B1 Befristungen + B3 Fristenlauf gefixt, 62 A→G). **Offen bei David:** fachliche
+  Abnahme + ZITAT-Entscheid (Auflage 5; gebaut = Empfehlung «sichtbar») + D1–D3 (niedrig).
+  Wortlaut → `ROADMAP-CHRONIK.md` → W2·5i-HIST-ANSICHT (26.7.2026); Dossier
+  `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`. Trailer `Roadmap: W2·5i-HIST-ANSICHT`.
 - [d] **5j-TABELLEN · Tabellen in Gesetzen lesbar machen** *(§14-Intake 20.7.2026, David: **ausdrücklich «später»**)*
   <!-- @meta id: W2·5j-TABELLEN · status: parked · of: ja · blocker: david-spaeter-tabellen · dep: [] · kollision: [src/components/normtext/ArtikelBody.tsx, src/pages/gesetz-leser/inhalt.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZES-UX.md -->
   Beispiel `/gesetze/kanton/BS-154.810#art-29`. **Datenlage erhoben — die Daten sind GUT:** strukturiert als
@@ -971,28 +938,14 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
     (Facetten/Sprachfilter-Vorbereitung). Live-Adapter §4-blockiert → geparkt. §14-gebündelt (Phase 0):
     führende Detailquelle für Live-/Volltextsuche (`livesuche.ts`, P1–P6) = `FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md`;
     nicht doppelt planen (BGE-Darstellung-Teil B ist Verweis).
-    - [x] **Kanton BS: Rechtsprechungs-Vollimport seit 2022 (amtliches Portal)** *(BS-Tranche
-      des P3+-Slices, FAHRPLAN-RECHTSPRECHUNG §10; Direktauftrag David 19.7.2026 — zieht die
-      erste Kanton-Tranche VOR die E5-Slot-Kette; committete `public/`-Projektion, DB-Angleichung
-      = Folge-Einheit F4 in E5)*: ~3'765 Dokumente (2022–2026, inkl. 42 datumlose) aller 4
-      BS-Instanzen von `rechtsprechung.gerichte.bs.ch` (Findinfo/Omnis, GET-only-CGI); Pipeline
-      `scripts/rechtsprechung/bs-*` (`npm run entscheide:bs`, resumierbar, golden raw), Count-Gates
-      Portal==Inventar==Snapshots + entscheidsuche-Untergrenze, Latin-1/Windows-1252-Fidelity,
-      neues Offline-Tor **`check:bs-entscheide`** in der Gate-Kette, `BUDGET_MB` 200→1024 (David
-      19.7.2026). Detail: `FAHRPLAN-KANTONALE-ENTSCHEIDE.md` §7a + Dossier
-      `bibliothek/register/BS-RECHTSPRECHUNG-QUELLE-2026-07.md`. Trailer `Roadmap: W2·6-BS`.
+    - [x] **Kanton BS: Rechtsprechungs-Vollimport seit 2022 (amtliches Portal)** *(Direktauftrag David 19.7.2026)* — ✅; ~3'765 Dokumente (2022–2026) aller 4 BS-Instanzen, Tor `check:bs-entscheide`. Wortlaut → `ROADMAP-CHRONIK.md` → W2·6-BS (26.7.2026). Trailer `Roadmap: W2·6-BS`.
     - [~] **Richter-/Spruchkörper-Filter — Fundament** *(`R-RICHTER`, Direktauftrag David 20.7.2026;
       gebündelt mit der BS-Tranche darüber: dieselbe Pipeline, dasselbe Datenasset — kein
       Parallel-Schritt, §14.2)*: der amtliche Spruchkörper wird aus dem Rubrum extrahiert und
       korpusweit zu Kanon-Slugs normalisiert, damit die Rechtsprechung nach Richter:in filterbar
-      wird. **Block A (Daten/Risiko, erledigt):** Schnitt `scripts/rechtsprechung/bs-besetzung.ts`
-      (BS-Deckblatt + Signatur, Re-Parse der 3765 aus dem Roh-Golden **ohne Re-Crawl**), reiner
-      Parser/Kanon `src/lib/rechtsprechung/besetzung.ts` (deterministisch, §2), Projektion
-      `BrowseEntscheid.richter[{s,r}]` + neues `public/rechtsprechung/richter.json`
-      (Slug → Anzeigename + Trefferzahl), neues Tor **`check:besetzung`** in der Gate-Kette
-      (Leak/Konsistenz/Determinismus hart, Abdeckung mit Schwelle, Kollisions-Report).
-      Abdeckung BS 98.6 % · Bund 96.1 %, 511 Slugs (208 Richter:innen, 303 Gerichtsschreiber:innen),
-      **Anonymisierungs-Leak-Scan korpusweit 0**. `abschnitte`/`sha` byte-unverändert (§6).
+      wird. **Block A (Daten/Risiko) ✅ erledigt 20.7.2026** — Extraktion + Kanon + `richter.json`
+      + Tor `check:besetzung`; Abdeckung BS 98.6 % / Bund 96.1 %, Leak-Scan korpusweit 0.
+      Wortlaut → `ROADMAP-CHRONIK.md` → R-RICHTER (26.7.2026).
       **Block B (offen, reines UI):** Facette als Autocomplete/Combobox + `?richter`-URL-Achse
       + e2e/axe/perf — bewusst getrennt, um Risiko-Klassen nicht zu mischen (§14.2).
       **Spätere Politur:** Gerichtsschreiber:in als eigene Achse, Spruchkörper-Anzeige im Reader,
@@ -1045,10 +998,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
       Index, **ohne je rot zu werden**). Entscheid gehört David; bis dahin nicht implementieren.
     - [x] **+ Auftrags-Eingang 30.6.: Bündel B** — **B1+B2+A18 ✅ GEBAUT 5.7.2026** (Branch
       <!-- @meta id: W2·6-B · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein -->
-      `feat/w26b-regeste-a18`); B3 war schon 10.7. durch den U-KOPF-Refactor `60988318` geschlossen
-      (Playwright-Beweis BGE 152 I 65) ⇒ alle drei Posten erledigt, Status `done`. B2/A18: Regeste
-      dreisprachig aus bger.ch clir, 272/272 BGE, Tor `check:entscheide`, Gegenprüfung bestanden.
-      Wortlaut → `ROADMAP-CHRONIK.md` → W2·6-B (22.7.2026).
+      `feat/w26b-regeste-a18`); B3 via U-KOPF-Refactor `60988318` ⇒ alle drei Posten erledigt, Status `done`. Wortlaut → `ROADMAP-CHRONIK.md` → W2·6-B (22.7. + 26.7.2026).
     - [x] **Verweis-Präzision im Entscheid-Leser (Referenz BGE 151 III 377)** *(W2·6, `QS-GP`, 3.7.2026)*. i.V.m.-Ketten-Verlinkung (Kürzel auf bare Glieder propagiert, `normVerweiseImText`) + Zitierte-Normen-Chips → Sprung zur ersten Fundstelle-Erwägung; Tore grün, Snapshots additiv. **Chronik:** `ROADMAP-CHRONIK.md` → W2·6/Verweis-Präzision.
     - [x] **BGE-Auszug abgeschnitten — vollständig gefixt (34/34)** *(W2·6-BGE, Inhaltsverlust, `[OF]`)*. 29.6.2026: still mitten im Wort gekappte Auszug-Erwägungen voll nachgeladen (`fuelleGekappteErwaegungen` + Id-Disambiguierung) + Schutz-Tor U+2026 in `check:entscheide`; alle 34 BGE regeneriert, golden byte-gleich. Öffnet keinen 26×-Slot. **Chronik:** `ROADMAP-CHRONIK.md` → W2·6/BGE-Auszug.
       - [x] **Rest 30.6.2026 geschlossen** — `bge_151_V_1`/`bge_151_V_30` via Id-Disambiguierung sauber re-gefetcht (kein Hand-Edit §7), WARN-Quarantäne entfernt. **Chronik:** `ROADMAP-CHRONIK.md` → W2·6/BGE-Auszug.
@@ -1213,21 +1163,14 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   **§14-Intake 20.7.2026 (David):** Bedienungsanleitung/Onboarding für LexMetrik — Ersteinstieg «was kann das Werkzeug», je Rubrik ein Kurzpfad; kein eigener FAHRPLAN, Detail inline in `FAHRPLAN-UX-PUNKTELISTE.md`.
   <!-- @meta id: W2·9 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: FAHRPLAN-UX-PUNKTELISTE.md -->
   **alt-Punkt → Code-Pfad → Status**, *bevor* Restpunkte C2/C5 angefasst werden.
-- [ ] **12 · Code- & Bibliothek-Hygiene** *(Auftrag David 12.7.2026, `[OF]`; Ultracode-Audit
-  <!-- @meta id: W2·12-HYGIENE · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/data/tarif, src/lib/vorlagen/datum.ts, src/pages/gesetz-leser/inhalt.tsx, src/components/forms, bibliothek/INDEX.md, scripts/bibliothek-check.sh] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-CODE-HYGIENE.md -->
-  41 Befunde + 3 Kritik-Linsen mit Repo-Stichproben)* — 14 Bau-Einheiten **H-1…H-14** in
-  Risikoklassen-Reihenfolge: P0 Doku-/Git-Hygiene (Bibliothek-Wahrheits-Sweep inkl.
-  SH-Doppel-Wahrheit §5/S8, check-Scope, 16 gemergte Branches) → P1 verhaltensneutraler Code
-  (Tot-Sweeps src/scripts, Kanton-Typ-Konsolidierung, SG-60.13-Staffel-Generator, Import-Zyklen
-  + `check:zyklen`-Tor) → P2 gegated (Format-SSOT `lib/format.ts` + Gegenprüfung,
-  §6.6-Splits billig, `zahl()`-Eingabe-Entdopplung [Commit B = deklarierte UI-Änderung],
-  Vorlagen-Schema-Konventionstest) → P3 nach PR-Kette #164/#165 (grosse §6.6-Splits,
-  engine-map). **GESPERRT ohne David:** Alt-Engine-Ablösung Gründungsgebühren (BE>20-Mio-
-  Divergenz, Entscheid-Queue). **Eskaliert (scope-fremd):** NE-Umzugsprüfung (per 12.7.
-  FÄLLIG) + 10 Fedlex-Wiedervorlagen 1.8. → Currency-Slot, s. «Pflege & Termine».
-  Beweisregeln G1–G3 (richtiger Beweis-Anker je Fläche, keine Beweisklassen-Mischung pro PR,
-  Gegenprüfungs-Pflicht Risikopfade) im Plan. Detail: **`FAHRPLAN-CODE-HYGIENE.md`**.
-  Trailer `Roadmap: W2·12-HYGIENE`.
+- [x] **12 · Code- & Bibliothek-Hygiene** *(Auftrag David 12.7.2026, `[OF]`; Ultracode-Audit
+  <!-- @meta id: W2·12-HYGIENE · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-CODE-HYGIENE.md -->
+  **ABGESCHLOSSEN 24.7.2026** — alle baubaren Einheiten H-1…H-14 + B24 ✅ (zuletzt B24
+  inhalt.tsx-Split 1494→781 Z., PR #338 `b56b9193`; H-3 No-op, Git-Stand bereits sauber).
+  Status-Log je Einheit: `FAHRPLAN-CODE-HYGIENE.md §S`. Gesperrt-/Eskaliert-Posten laufen
+  ausserhalb weiter: Alt-Engine-Ablösung Gründungsgebühren (Entscheid-Queue David) ·
+  NE-Umzugsprüfung + Fedlex-Wiedervorlagen (Currency-Slot, «Pflege & Termine»).
+  41 Befunde + 3 Kritik-Linsen mit Repo-Stichproben)* — Plan-Prosa-Wortlaut (14 Bau-Einheiten H-1…H-14, Beweisregeln G1–G3) → `ROADMAP-CHRONIK.md` → W2·12-HYGIENE (26.7.2026).
 - [ ] **13 · Kantonale Gesetze & Darstellung** *(Auftrag David 12.7.2026, `[OF]`; Ultracode-Audit
   <!-- @meta id: W2·13-KANTONE · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, src/pages/gesetz-leser/inhalt.tsx, src/pages/GesetzLeser.tsx, src/components/NormText.tsx, src/lib/suche/onlineVolltext.ts, src/lib/normtext/relevanz.ts, public/normtext/kanton] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
   44 Befunde + 3 Kritik-Linsen, davon 10 live an Amtsquellen re-verifiziert)* — **14 sofort
@@ -1385,10 +1328,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   Vernehmlassungen (admin.ch), Parlamentsgeschäfte (parlament.ch), in AS/BBl publiziert aber noch
   nicht in Kraft (Fedlex), künftige Fassungen — Drift gegen die geltende Fassung. Andockpunkt
   `fedlex.ts`/Drift-System.
-  **Teil-ERLEDIGT 10.7.2026 (Fedlex-Portfolio Paket 3):** Vernehmlassungen über den Fedlex-Graphen
-  (822 Verfahren, direkte `foreseenImpactToLegalResource`-Kante; Status/Frist/DE·FR·IT; Norm-Kontext-Bus
-  «Gesetzgebung in Arbeit», laufend zuerst). Currency-Tor `check:vernehmlassungen-netz` + Offline-Assertion.
-  Detail `FAHRPLAN-FEDLEX-PORTFOLIO.md §Paket 3` + `bibliothek/materialien/vernehmlassungen-2026-07-10.md`.
+  **Teil-ERLEDIGT 10.7.2026 (Fedlex-Portfolio Paket 3: Vernehmlassungen, 822 Verfahren).** Wortlaut → `ROADMAP-CHRONIK.md` → W3·11 (26.7.2026); Detail `FAHRPLAN-FEDLEX-PORTFOLIO.md §Paket 3` + `bibliothek/materialien/vernehmlassungen-2026-07-10.md`.
   **Rest offen:** Parlamentsgeschäfte (parlament.ch), künftige-Fassungen-Drift, Übersichtsseite «alle
   laufenden Vernehmlassungen», Laufend-Badge im Reader-Kopf (gesetz-leser war TABU).
 - [ ] **12 · Kanton-Gesetze-Bündel** *(GESETZE-IMPORT-3TIER + BS-VORBILDKANTON + RECHTSSAMMLUNG P6 + POPUP-Kanton-Rest, 26×)*. **Erst öffnen, wenn
@@ -1427,7 +1367,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   `Shell.tsx`/`Topbar.tsx`/`App.tsx`/`tailwind.config.js` → nie parallel.
   - [x] **Gebündelt (Auftrag David 29.6.2026): Bildschirm-/Responsive-Audit** *(SPLIT-VIEW, `[OF]`)* — AUDIT GEFAHREN 5.7.2026 (rein lesend, PR `chore/responsive-audit`): 30 Motive × 5 Breiten = 150 Aufnahmen, 0 Seiten-Overflow, 12 Defekte geflaggt; Befund `abnahme/responsive-audit/BERICHT.md`, Fixes = spätere Schritt-14-Einheiten. **Chronik:** `ROADMAP-CHRONIK.md` → W3·14-Responsive-Audit.
     <!-- @meta id: W3·14-Responsive-Audit · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein -->
-  - [x] **Responsive-Audit-Defekte D1–D10 abgearbeitet** *(reines UI, Go David 10.7.2026, Branch `fix/responsive-audit-defekte`)* — **gefixt:** D1 Vorschau-FAB (Karten-Optik → gefülltes Pill), D2 Shell-Kopf/Fuss-Tap-Ziele auf 44px, D3 Methodik-Pflegeliste mehrspaltig (Höhe −43 %), D5 «A− A+»-Steller + Header-Suche, D9 Gesetze-Placeholder, D10 Chip-Band-Scroll-Affordance. **Bereits geheilt (empirisch belegt):** D7 (Container-Breiten jetzt konsistent 1120px, via A15-Refactor #908bf143) · D8 (Ingress jetzt max-w-reading). **Caveat/nicht Code-Defekt:** D4 (Headless-PDF-Artefakt, Fallbacks vorhanden) · D6 (Sticky-Sidebar-Screenshot-Artefakt) — beide zudem im TABU-Pfad `gesetz-leser/**`. Status je Defekt in `abnahme/responsive-audit/BERICHT.md`.
+  - [x] **Responsive-Audit-Defekte D1–D10 abgearbeitet** *(reines UI, Go David 10.7.2026, Branch `fix/responsive-audit-defekte`)* — ✅; Status je Defekt in `abnahme/responsive-audit/BERICHT.md`. Wortlaut → `ROADMAP-CHRONIK.md` → W3·14-Responsive-Defekte (26.7.2026).
     <!-- @meta id: W3·14-Responsive-Defekte · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein -->
   - [ ] **+ Auftrags-Eingang 30.6.: Bündel S** — **S1** Breadcrumbs in der Pane laufen über globalen
     <!-- @meta id: W3·14-S · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein -->
@@ -1574,20 +1514,7 @@ harter Auflage.
   PDF-only-Kantone/Token-Lücken · LUECKEN L7 Konfidenz-UI/L8 · NOTARIAT NG-4 Zweitpass · TARIF G3b
   komplett (A+B+C+D); Residuum = 32 mehrdeutige SG-Restblöcke (faithful Plaintext, §1) + eigener
   ZH-PDF-Strang (ZH-243 NotGebV §17 / hierarchische Ziffer-Tarife, andere Risiko-Klasse).
-  **ERLEDIGT 5.7. (SG-2935-Rohtext-Reparatur, Branch `fix/sg2935-x-spalten`):** der
-  Gegenprüfungs-Vorbefund (SG-2935 21.03–21.06/3.04–3.07/24.01 fehlten komplett) ist behoben —
-  Wurzel war KEIN Zweispalten-Merge, sondern das Kopf-/Fussband im falschen Koordinatenraum
-  (MediaBox-Ursprung y0≈123 vs. `viewport.height*0.9`-Schwelle → oberste Positionszeilen jeder
-  Anhang-Seite als Schein-Kopfband verworfen) + verworfene ~0-breite Wort-Trenner-Fragmente
-  (Verklebungen) + umgebrochene Querverweis-Zeilen als Schein-Positions-Köpfe (Gegenprüfungs-D1–D3
-  → Geometrie-Orakel `istZifferKopfZeile`: Kopf nur in der Nr.-Spalte). Fix in `adapter-pdf.ts`
-  (`bandSchwellen` MediaBox-relativ, origin-0 byte-identisch) + `anhang-segmenter.ts` (Orakel);
-  SG-2935 83→112 Positionen (25.10 zeigt wieder amtliche 100.–), SG-2808/3849 wortlaut-treuer
-  (verlustfrei; 3849: 4 Phantom-Positionen aus Nachtrags-Historie entfernt). Korpus-Probe über
-  alle 27 PDF-Kanton-Snapshots: 10 weitere Nicht-SG-Dateien tragen Wortlaut-Verbesserungen durch
-  denselben Fix (LU/FR/VS/SZ×4/VD×3, davon SZ-280.411 auch MediaBox-versetzt=Band-Klasse) —
-  Nachzug via `normen-monitor`-Drift (`check:pdf-netz` wird rot) bzw. gezielte Regeneration,
-  Detail `FAHRPLAN-TARIF-TABELLEN-STUFE2.md` §SG-2935-Reparatur.
+  **ERLEDIGT 5.7. (SG-2935-Rohtext-Reparatur, Branch `fix/sg2935-x-spalten`).** Wortlaut → `ROADMAP-CHRONIK.md` → Strang-Detailpunkte/SG-2935 (26.7.2026); Detail `FAHRPLAN-TARIF-TABELLEN-STUFE2.md` §SG-2935-Reparatur.
 - **Infrastruktur-Fundament:** GESETZESTEXT-POPUP (Snapshot/Drift) trägt RECHTSSAMMLUNG/Rechtsprechungs-
   Verzahnung/GESETZE-IMPORT → vor aufsetzenden Strängen mitdenken.
 - **Archiv-Kandidaten** (Code-Stand prüfen): INTERNATIONAL-VOLLTEXT-Rest.

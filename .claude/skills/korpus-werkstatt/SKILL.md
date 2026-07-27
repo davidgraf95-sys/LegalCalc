@@ -70,9 +70,11 @@ die Rückfrage.
 
 ## Grenzen (kein Duplikat — nur Verweise)
 
-- **Dach:** `CLAUDE.md` §1–§14, insb. §2 (Determinismus), §5 (Single Source of
-  Truth), §7 (Normen verifizieren + Zitat-Ausnahme/Build-Regel Snapshots), §8
-  (Status/Ehrlichkeit), §11 (Wissensablage), §14.4 (Definition of Done).
+- **Dach:** `CLAUDE.md` §1–§15, insb. §2 (Determinismus), §5 (Single Source of
+  Truth), §7 (Kernsatz «verifizieren, nicht vertrauen» + Zitat-Ausnahme
+  (a)–(d) — die Build-Regeln stehen seit 25.7.2026 **in diesem Skill**), §8
+  (Status/Ehrlichkeit), §11 (Wissensablage). §14.4 (Definition of Done) und
+  §14.5 (Trailer) stehen im Skill `auftrag`.
 - **Bibliotheks-Standards:** `bibliothek/STANDARDS.md` — **S2** (Status-Vokabular
   ERSTRECHERCHE / ZWEIFACH GEPRÜFT / ABGENOMMEN, koppelt an `verifiziert`/«geprüft»),
   **S5** (Negativbefunde sind Pflicht), **S6** (Datiertes sofort ins
@@ -96,6 +98,57 @@ die Rückfrage.
 - **Nur amtliche / URG-freie Quellen** (Art. 5 URG, S3): Fedlex (Bund), kantonale
   Erlasssammlungen via API, amtliche Gerichts-/Behördenseiten — keine Kommentare.
 
+## §7 · Quell-Wahl und Build-Regeln Norm-Snapshots (wohnen hier)
+
+Seit dem A4-Umzug (25.7.2026) stehen die §7-Build-Regeln in diesem Skill;
+`CLAUDE.md` §7 trägt weiterhin den Kernsatz («verifizieren, nicht vertrauen»)
+und die Zitat-Ausnahme (a)–(d), weil beides Invarianten sind.
+
+**Quell-Wahl zuerst.** Vor jeder Datenextraktion aus einer amtlichen Quelle
+**empirisch erheben, welches Format oder welcher Endpunkt das Ziel technisch am
+besten erreicht** — strukturiertes Schema > gerendertes HTML > PDF; an die
+**höchste verfügbare Struktur** andocken, nicht reflexhaft die naheliegende
+Quelle nehmen. Probe-Fetch je Kandidat, Inhalt prüfen (Soft-404-Shells
+erkennen). **Aber:** ein Quell- oder Formatwechsel wird per Messung (POC,
+Differenz) belegt, nie angenommen — Fehler sitzen oft in der eigenen
+Transformation, nicht in der Quelle. Wechsel inkrementell, nie Big-Bang.
+Beispiel und Detail: Memory `extraktion-amtliche-quellen-beste-option`,
+`FAHRPLAN-NORMTEXT-DARSTELLUNG.md §Quell-Architektur-Entscheid` (Fedlex-HTML
+vs. Akoma-Ntoso-XML).
+
+**Die sechs Build-Regeln.** Die Volltext-Snapshots (`public/normtext/`) werden
+ausschliesslich vom Generator erzeugt
+(`npm run normtext -- --datum=$(date +%F)`), nie von Hand editiert. Jede neue
+Quelle folgt zwingend diesem Muster:
+
+1. **Vollabdeckung** — ALLE Artikel je Erlass extrahieren (Bund: jedes
+   `<article id="art_*">` der gepinnten Fedlex-Konsolidierung; Kanton: jeder
+   Artikel des LexWork-Erlasses), nicht nur die zitierten.
+2. **Aufzählungen vollständig** — lit. und Ziff. als `items` je Absatz; nichts
+   abschneiden, sonst wirkt die Bestimmung unvollständig.
+3. **Immer die GELTENDE Fassung** — Bund über die gepinnte, als aktuell
+   verifizierte Konsolidierung (`scripts/fedlex-cache.sh` +
+   `check:fedlex-versionen`); Kanton über `current_version` der LexWork-API
+   (`version_uid` als Drift-Token). Künftige, noch nicht in Kraft stehende
+   Fassungen werden NICHT verlinkt.
+4. **Provenienz je Eintrag** — `stand` (In-Kraft-Datum), `quelleUrl`,
+   `fassungsToken`, `sha` über Text und items; deckt die Zitat-Ausnahme
+   (a)–(d) aus `CLAUDE.md` §7.
+5. **Drift-Tor** — `check:normtext` (offline) und `check:normtext-netz` (live
+   version_uid/Konsolidierung) müssen grün sein; im `gate` und `check:netz`
+   verdrahtet. Neue Quellen ergänzen einen **browserlosen** Adapter (Fetch +
+   strukturierte Extraktion + Drift-Token) — kein Headless-Browser, kein
+   Scraping pro Kanton.
+6. **DB-Artefakt als kanonische Zwischenschicht** — `public/*.json` und die
+   prerenderten Seiten dürfen deterministische Projektion aus
+   `daten/lexmetrik.db` sein. `check:paritaet` beweist die Projektion
+   byte-gleich; die Drift-Tore aus Regel 5 bleiben Arbiter gegen die amtliche
+   Quelle. Massgeblich ist immer die amtliche Fassung, nie das Artefakt
+   (`CLAUDE.md` §5). Bedingungen im Detail: `FAHRPLAN-DATENHALTUNG.md`.
+
+Quellen-Priorität und PDF-Extraktionsregeln im Detail:
+`bibliothek/normen/norm-vorschau-snapshot-system.md`.
+
 ## Verifikation — zwei Pässe, sauber getrennt
 
 - **Pflicht-Pass (§14.4):** Nach **jeder** Extraktions-Produktion auf einem
@@ -115,11 +168,12 @@ die Rückfrage.
 
 ## Definition of Done (§14.4/§14.5 — am Produktionsabschluss abhaken)
 
+Wortlaut von §14.4/§14.5 seit 25.7.2026 im Skill `auftrag`, Ziff. 4/4a/5.
+
 - [ ] §6-/§9-Tore grün (Tor-Status pro Schritt notiert).
 - [ ] Pflicht-Gegenprüfung gelaufen (Risiko-Pfad, §14.4).
 - [ ] Status-Marker §8 gesetzt — «verifiziert»/«geprüft» **nie automatisch**.
-- [ ] STRUKTUR.md-Session-Karte nachgezogen (§14.4, Kopf-Abschnitt «STRUKTUR.md
-      aktuell halten»).
+- [ ] STRUKTUR.md-Session-Karte nachgezogen (§14.4 / Skill `auftrag`, Ziff. 4a).
 - [ ] §11-Wissensablage erfolgt (Schritt in der jeweiligen `methodology/`-Datei).
 - [ ] §14.5-Trailer am Produktions-Commit: `Roadmap: <ID>` und auf Risiko-Pfaden
       zusätzlich `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) — <Befunde>`
@@ -139,7 +193,7 @@ die Rückfrage.
    `FEDLEX`-Taxonomie in `src/lib/fedlex.ts` und `ERLASS_MAP` in
    `scripts/normtext-snapshot.ts` klären (Identität ≠ Normtext); **erst dann**
    Snapshot generieren.
-4. **Gate / vitest rot** → `CLAUDE.md` §6.5-Diagnoseweg: nur die rote vitest-Datei
+4. **Gate / vitest rot** → §6.5-Diagnoseweg (Skill `refactoring`, Ziff. 6): nur die rote vitest-Datei
    einzeln (`npx vitest run src/tests/<datei>`), `npm run golden:diff -- <id>`;
    **nie `dist`/`golden`/Lock direkt lesen**.
 

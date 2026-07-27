@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.274.131",
   "titel": "Übereinkommen über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -46,7 +47,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -55,7 +57,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -64,7 +67,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -73,7 +77,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -82,7 +87,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -91,7 +97,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -100,7 +107,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -109,7 +117,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -118,7 +127,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -127,7 +137,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -136,7 +147,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -145,7 +157,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -154,7 +167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -163,7 +177,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -172,7 +187,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Gerichtliche Schriftstücke"
+     "label": "Kapitel I: Gerichtliche Schriftstücke",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -181,7 +197,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Aussergerichtliche Schriftstücke"
+     "label": "Kapitel II: Aussergerichtliche Schriftstücke",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -190,7 +207,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -199,7 +217,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -208,7 +227,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -217,7 +237,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -226,7 +247,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -242,7 +264,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 125,
+      "l": 281
+     },
+     "kl": "Z"
     },
     {
      "nr": "3",
@@ -255,7 +283,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 145,
+      "l": 281
+     },
+     "kl": "V"
     }
    ]
   },
@@ -263,7 +297,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -272,7 +307,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -281,7 +317,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -290,7 +327,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -299,7 +337,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -308,7 +347,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -317,7 +357,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -326,7 +367,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -335,7 +377,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []

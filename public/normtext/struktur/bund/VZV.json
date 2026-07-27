@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "741.51",
   "titel": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -58,7 +60,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -67,7 +70,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -84,7 +88,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -96,7 +101,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -104,7 +110,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -121,7 +128,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -133,7 +141,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 73,
+      "l": 73
+     },
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -145,7 +159,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -157,7 +172,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -169,7 +185,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -182,7 +199,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 51,
+      "l": 52
+     },
+     "kl": "V"
     },
     {
      "nr": "12",
@@ -195,7 +219,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 58,
+      "l": 59
+     },
+     "kl": "V"
     },
     {
      "nr": "13",
@@ -208,7 +239,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 33,
+      "l": 90
+     },
+     "kl": "V"
     },
     {
      "nr": "14",
@@ -221,7 +259,14 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 45,
+      "l": 46
+     },
+     "kl": "V"
     },
     {
      "nr": "15",
@@ -234,7 +279,14 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 34,
+      "l": 122
+     },
+     "kl": "V"
     },
     {
      "nr": "16",
@@ -247,7 +299,14 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 32,
+      "l": 158
+     },
+     "kl": "V"
     },
     {
      "nr": "17",
@@ -259,7 +318,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 37,
+      "l": 37
+     },
+     "kl": "A"
     }
    ]
   },
@@ -267,11 +333,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11 Allgemeine Bestimmungen"
+     "label": "11 Allgemeine Bestimmungen",
+     "eId": "lvl_1/lvl_11"
     }
    ],
    "marginalie": [
@@ -288,7 +356,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -300,7 +369,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 124,
+      "l": 452
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -312,7 +388,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -324,7 +401,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 0,
+      "l": 207
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -336,7 +420,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -348,7 +433,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -360,7 +446,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -372,7 +459,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -384,7 +472,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -396,7 +485,8 @@
       }
      ],
      "absatz": "3",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -408,7 +498,8 @@
       }
      ],
      "absatz": "3",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -420,7 +511,14 @@
       }
      ],
      "absatz": "3",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 30,
+      "l": 292
+     },
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -433,7 +531,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1 Zulassung von Personen"
+     "sektion": "1 Zulassung von Personen",
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -446,7 +545,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "11 Allgemeine Bestimmungen"
+     "sektion": "11 Allgemeine Bestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -454,11 +554,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11 Allgemeine Bestimmungen"
+     "label": "11 Allgemeine Bestimmungen",
+     "eId": "lvl_1/lvl_11"
     }
    ],
    "marginalie": [
@@ -475,7 +577,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -487,7 +590,8 @@
       }
      ],
      "absatz": "3",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -499,7 +603,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 74,
+      "l": 74
+     },
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -511,7 +621,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 57,
+      "l": 57
+     },
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -523,7 +639,8 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "37",
@@ -535,7 +652,8 @@
       }
      ],
      "absatz": "5",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -551,7 +669,8 @@
       }
      ],
      "absatz": "5",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -564,7 +683,14 @@
       }
      ],
      "absatz": "5",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 4,
+      "it": 7,
+      "o": 229,
+      "l": 451
+     },
+     "kl": "V"
     },
     {
      "nr": "40",
@@ -576,7 +702,8 @@
       }
      ],
      "absatz": "5",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -588,7 +715,8 @@
       }
      ],
      "absatz": "5",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -600,7 +728,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 290,
+      "l": 290
+     },
+     "kl": "A"
     }
    ]
   },
@@ -608,11 +742,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11 Allgemeine Bestimmungen"
+     "label": "11 Allgemeine Bestimmungen",
+     "eId": "lvl_1/lvl_11"
     }
    ],
    "marginalie": [
@@ -629,7 +765,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -641,7 +778,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -654,7 +792,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 92,
+      "l": 202
+     },
+     "kl": "V"
     }
    ]
   },
@@ -662,15 +806,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises"
+     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_121"
     }
    ],
    "marginalie": [
@@ -687,7 +834,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -699,7 +847,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -711,7 +860,8 @@
       }
      ],
      "absatz": "1",
-     "item": "cbis"
+     "item": "cbis",
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -723,7 +873,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -735,7 +886,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -747,7 +899,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 580,
+      "l": 580
+     },
+     "kl": "A"
     },
     {
      "nr": "62",
@@ -759,7 +917,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 315,
+      "l": 315
+     },
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -771,7 +935,13 @@
       }
      ],
      "absatz": "2ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 482,
+      "l": 482
+     },
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -783,7 +953,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -799,7 +975,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -811,7 +993,14 @@
       }
      ],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 6,
+      "it": 0,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -823,7 +1012,8 @@
       }
      ],
      "absatz": "4",
-     "item": "1"
+     "item": "1",
+     "kl": "A"
     }
    ]
   },
@@ -831,15 +1021,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises"
+     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_121"
     }
    ],
    "marginalie": [
@@ -856,7 +1049,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 215,
+      "l": 215
+     },
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -872,7 +1071,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 307,
+      "l": 307
+     },
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -884,7 +1089,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 166,
+      "l": 166
+     },
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -896,7 +1107,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 222,
+      "l": 222
+     },
+     "kl": "A"
     }
    ]
   },
@@ -904,15 +1121,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises"
+     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_121"
     }
    ],
    "marginalie": [
@@ -929,7 +1149,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 168,
+      "l": 168
+     },
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -941,7 +1167,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 82,
+      "l": 82
+     },
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -957,7 +1190,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 610,
+      "l": 610
+     },
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -969,7 +1208,14 @@
       }
      ],
      "absatz": "2ter",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 114,
+      "l": 114
+     },
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -981,7 +1227,8 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "77",
@@ -993,7 +1240,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 425,
+      "l": 425
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1001,15 +1254,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises"
+     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_121"
     }
    ],
    "marginalie": [
@@ -1026,7 +1282,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "79",
@@ -1038,7 +1295,14 @@
       }
      ],
      "absatz": "1",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 8,
+      "o": 23,
+      "l": 23
+     },
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -1050,7 +1314,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 239,
+      "l": 239
+     },
+     "kl": "A"
     },
     {
      "nr": "81",
@@ -1062,7 +1332,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1070,15 +1346,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises"
+     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_121"
     }
    ],
    "marginalie": [
@@ -1089,15 +1368,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises"
+     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_122"
     }
    ],
    "marginalie": [
@@ -1114,7 +1396,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -1127,7 +1410,14 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 2,
+      "it": 0,
+      "o": 88,
+      "l": 89
+     },
+     "kl": "V"
     },
     {
      "nr": "84",
@@ -1140,7 +1430,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 115,
+      "l": 211
+     },
+     "kl": "V"
     },
     {
      "nr": "85",
@@ -1153,7 +1450,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 178,
+      "l": 211
+     },
+     "kl": "V"
     },
     {
      "nr": "86",
@@ -1166,7 +1470,14 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 81,
+      "l": 193
+     },
+     "kl": "V"
     },
     {
      "nr": "87",
@@ -1179,7 +1490,14 @@
       }
      ],
      "absatz": "3",
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 2,
+      "it": 4,
+      "o": 89,
+      "l": 130
+     },
+     "kl": "V"
     },
     {
      "nr": "88",
@@ -1192,7 +1510,14 @@
       }
      ],
      "absatz": "3",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 2,
+      "it": 5,
+      "o": 123,
+      "l": 334
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1200,15 +1525,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "123 Gemeinsame Bestimmungen zum Ablegen der Theorieprüfungen und der praktischen Führerprüfung"
+     "label": "123 Gemeinsame Bestimmungen zum Ablegen der Theorieprüfungen und der praktischen Führerprüfung",
+     "eId": "lvl_1/lvl_12/lvl_123"
     }
    ],
    "marginalie": [
@@ -1219,15 +1547,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "124 Prüfung der Basistheorie und erstmalige Datenerfassung im IVZ-Personen"
+     "label": "124 Prüfung der Basistheorie und erstmalige Datenerfassung im IVZ-Personen",
+     "eId": "lvl_1/lvl_12/lvl_124"
     }
    ],
    "marginalie": [
@@ -1244,7 +1575,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 145,
+      "l": 145
+     },
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -1256,7 +1593,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -1268,7 +1611,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 117,
+      "l": 117
+     },
+     "kl": "A"
     },
     {
      "nr": "96",
@@ -1280,7 +1629,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 158,
+      "l": 158
+     },
+     "kl": "A"
     },
     {
      "nr": "92",
@@ -1293,7 +1648,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "124 Prüfung der Basistheorie und erstmalige Datenerfassung im IVZ-Personen"
+     "sektion": "124 Prüfung der Basistheorie und erstmalige Datenerfassung im IVZ-Personen",
+     "kl": "A"
     }
    ]
   },
@@ -1301,15 +1657,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "124 Prüfung der Basistheorie und erstmalige Datenerfassung im IVZ-Personen"
+     "label": "124 Prüfung der Basistheorie und erstmalige Datenerfassung im IVZ-Personen",
+     "eId": "lvl_1/lvl_12/lvl_124"
     }
    ],
    "marginalie": [
@@ -1326,7 +1685,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1334,15 +1694,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "125 Lernfahrausweis"
+     "label": "125 Lernfahrausweis",
+     "eId": "lvl_1/lvl_12/lvl_125"
     }
    ],
    "marginalie": [
@@ -1360,7 +1723,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 240,
+      "l": 323
+     },
+     "kl": "V"
     },
     {
      "nr": "99",
@@ -1372,7 +1741,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 323,
+      "l": 323
+     },
+     "kl": "A"
     },
     {
      "nr": "100",
@@ -1384,7 +1759,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -1396,7 +1772,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 56,
+      "l": 56
+     },
+     "kl": "A"
     },
     {
      "nr": "102",
@@ -1408,7 +1791,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 257,
+      "l": 257
+     },
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -1420,7 +1809,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 122,
+      "l": 122
+     },
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -1436,7 +1831,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1444,15 +1845,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "125 Lernfahrausweis"
+     "label": "125 Lernfahrausweis",
+     "eId": "lvl_1/lvl_12/lvl_125"
     }
    ],
    "marginalie": [
@@ -1469,7 +1873,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -1477,15 +1882,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "125 Lernfahrausweis"
+     "label": "125 Lernfahrausweis",
+     "eId": "lvl_1/lvl_12/lvl_125"
     }
    ],
    "marginalie": [
@@ -1502,7 +1910,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 203,
+      "l": 203
+     },
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -1514,7 +1928,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 242,
+      "l": 242
+     },
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -1526,7 +1946,8 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -1538,7 +1959,8 @@
       }
      ],
      "absatz": "5",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -1546,15 +1968,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "126 Fahrausbildung"
+     "label": "126 Fahrausbildung",
+     "eId": "lvl_1/lvl_12/lvl_126"
     }
    ],
    "marginalie": [
@@ -1571,7 +1996,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 174,
+      "l": 174
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1579,15 +2010,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "126 Fahrausbildung"
+     "label": "126 Fahrausbildung",
+     "eId": "lvl_1/lvl_12/lvl_126"
     }
    ],
    "marginalie": [
@@ -1604,7 +2038,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 353,
+      "l": 353
+     },
+     "kl": "A"
     },
     {
      "nr": "113",
@@ -1616,7 +2056,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 466,
+      "l": 466
+     },
+     "kl": "U"
     },
     {
      "nr": "114",
@@ -1628,7 +2074,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 50,
+      "l": 50
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1636,15 +2088,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "126 Fahrausbildung"
+     "label": "126 Fahrausbildung",
+     "eId": "lvl_1/lvl_12/lvl_126"
     }
    ],
    "marginalie": [
@@ -1661,7 +2116,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1669,15 +2125,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "127 Prüfung der Zusatztheorie für Führer von Last- und Gesellschaftswagen"
+     "label": "127 Prüfung der Zusatztheorie für Führer von Last- und Gesellschaftswagen",
+     "eId": "lvl_1/lvl_12/lvl_127"
     }
    ],
    "marginalie": [],
@@ -1692,7 +2151,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 117,
+      "l": 117
+     },
+     "kl": "A"
     },
     {
      "nr": "120",
@@ -1704,7 +2169,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "121",
@@ -1716,7 +2187,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1724,15 +2201,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "128 Praktische Führerprüfung"
+     "label": "128 Praktische Führerprüfung",
+     "eId": "lvl_1/lvl_12/lvl_128"
     }
    ],
    "marginalie": [
@@ -1753,7 +2233,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 62,
+      "l": 62
+     },
+     "kl": "A"
     },
     {
      "nr": "123",
@@ -1765,7 +2252,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -1773,15 +2261,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "128 Praktische Führerprüfung"
+     "label": "128 Praktische Führerprüfung",
+     "eId": "lvl_1/lvl_12/lvl_128"
     }
    ],
    "marginalie": [
@@ -1792,15 +2283,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -1817,7 +2311,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -1829,7 +2324,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 389,
+      "l": 389
+     },
+     "kl": "A"
     },
     {
      "nr": "126",
@@ -1841,7 +2342,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 7,
+      "l": 7
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1849,15 +2356,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129a Berufsmässiger Personentransport mit leichten Personentransportfahrzeugen und schweren Personenwagen"
+     "label": "129a Berufsmässiger Personentransport mit leichten Personentransportfahrzeugen und schweren Personenwagen",
+     "eId": "lvl_1/lvl_12/lvl_129_a"
     }
    ],
    "marginalie": [
@@ -1875,7 +2385,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 166,
+      "l": 414
+     },
+     "kl": "V"
     },
     {
      "nr": "144",
@@ -1887,7 +2403,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 414,
+      "l": 414
+     },
+     "kl": "A"
     },
     {
      "nr": "145",
@@ -1900,7 +2422,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 190,
+      "l": 223
+     },
+     "kl": "V"
     },
     {
      "nr": "146",
@@ -1912,7 +2441,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "147",
@@ -1924,7 +2454,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 251,
+      "l": 251
+     },
+     "kl": "A"
     },
     {
      "nr": "148",
@@ -1936,7 +2473,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 547,
+      "l": 547
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1944,11 +2487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen"
+     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen",
+     "eId": "lvl_1/lvl_12_a"
     }
    ],
    "marginalie": [
@@ -1965,7 +2510,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "149",
@@ -1982,7 +2528,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen"
+     "sektion": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen",
+     "kl": "A"
     }
    ]
   },
@@ -1990,11 +2537,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen"
+     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen",
+     "eId": "lvl_1/lvl_12_a"
     }
    ],
    "marginalie": [
@@ -2011,7 +2560,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "154",
@@ -2023,7 +2573,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 187,
+      "l": 187
+     },
+     "kl": "A"
     },
     {
      "nr": "155",
@@ -2035,7 +2592,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 131,
+      "l": 131
+     },
+     "kl": "A"
     },
     {
      "nr": "156",
@@ -2047,7 +2611,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 137,
+      "l": 137
+     },
+     "kl": "A"
     },
     {
      "nr": "157",
@@ -2059,7 +2630,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 396,
+      "l": 396
+     },
+     "kl": "A"
     },
     {
      "nr": "158",
@@ -2071,7 +2648,13 @@
       }
      ],
      "absatz": "1quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 213,
+      "l": 213
+     },
+     "kl": "A"
     },
     {
      "nr": "159",
@@ -2083,7 +2666,13 @@
       }
      ],
      "absatz": "1quinquies",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 108,
+      "l": 108
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2091,15 +2680,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "eId": "lvl_1/lvl_13/lvl_131"
     }
    ],
    "marginalie": [
@@ -2116,7 +2708,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 194,
+      "l": 194
+     },
+     "kl": "A"
     },
     {
      "nr": "168",
@@ -2129,7 +2727,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "13 Massnahmen"
+     "sektion": "13 Massnahmen",
+     "kl": "A"
     },
     {
      "nr": "169",
@@ -2142,7 +2741,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "sektion": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "kl": "A"
     },
     {
      "nr": "170",
@@ -2155,7 +2755,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "sektion": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "kl": "A"
     }
    ]
   },
@@ -2163,15 +2764,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "eId": "lvl_1/lvl_13/lvl_131"
     }
    ],
    "marginalie": [
@@ -2192,7 +2796,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 314,
+      "l": 314
+     },
+     "kl": "A"
     },
     {
      "nr": "174",
@@ -2204,7 +2814,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -2212,15 +2823,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "eId": "lvl_1/lvl_13/lvl_131"
     }
    ],
    "marginalie": [
@@ -2237,7 +2851,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2245,15 +2860,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132 Ausweisentzug"
+     "label": "132 Ausweisentzug",
+     "eId": "lvl_1/lvl_13/lvl_132"
     }
    ],
    "marginalie": [
@@ -2270,7 +2888,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "178",
@@ -2283,7 +2902,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "132 Ausweisentzug"
+     "sektion": "132 Ausweisentzug",
+     "kl": "A"
     }
    ]
   },
@@ -2291,15 +2911,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132 Ausweisentzug"
+     "label": "132 Ausweisentzug",
+     "eId": "lvl_1/lvl_13/lvl_132"
     }
    ],
    "marginalie": [
@@ -2316,7 +2939,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2324,15 +2948,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132 Ausweisentzug"
+     "label": "132 Ausweisentzug",
+     "eId": "lvl_1/lvl_13/lvl_132"
     }
    ],
    "marginalie": [
@@ -2349,7 +2976,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "182",
@@ -2361,7 +2989,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 216,
+      "l": 216
+     },
+     "kl": "A"
     },
     {
      "nr": "183",
@@ -2373,7 +3007,8 @@
       }
      ],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "184",
@@ -2385,7 +3020,14 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 4,
+      "it": 2,
+      "o": 77,
+      "l": 77
+     },
+     "kl": "A"
     },
     {
      "nr": "185",
@@ -2397,7 +3039,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 199,
+      "l": 199
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2405,15 +3053,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132 Ausweisentzug"
+     "label": "132 Ausweisentzug",
+     "eId": "lvl_1/lvl_13/lvl_132"
     }
    ],
    "marginalie": [
@@ -2430,7 +3081,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2438,15 +3090,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe"
+     "label": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_13/lvl_132_a"
     }
    ],
    "marginalie": [
@@ -2463,7 +3118,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "189",
@@ -2475,7 +3131,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 368,
+      "l": 368
+     },
+     "kl": "A"
     },
     {
      "nr": "187",
@@ -2488,7 +3150,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe"
+     "sektion": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe",
+     "kl": "A"
     }
    ]
   },
@@ -2496,15 +3159,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132b Fahrverbot und Verwarnung"
+     "label": "132b Fahrverbot und Verwarnung",
+     "eId": "lvl_1/lvl_13/lvl_132_b"
     }
    ],
    "marginalie": [
@@ -2521,7 +3187,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "196",
@@ -2533,7 +3200,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 315,
+      "l": 315
+     },
+     "kl": "A"
     },
     {
      "nr": "197",
@@ -2545,7 +3218,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 291,
+      "l": 291
+     },
+     "kl": "A"
     },
     {
      "nr": "198",
@@ -2557,7 +3236,8 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "199",
@@ -2569,7 +3249,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "200",
@@ -2581,7 +3262,14 @@
       }
      ],
      "absatz": "3",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 2,
+      "it": 5,
+      "o": 70,
+      "l": 70
+     },
+     "kl": "A"
     },
     {
      "nr": "201",
@@ -2597,7 +3285,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 222,
+      "l": 222
+     },
+     "kl": "A"
     },
     {
      "nr": "194",
@@ -2610,7 +3304,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "132b Fahrverbot und Verwarnung"
+     "sektion": "132b Fahrverbot und Verwarnung",
+     "kl": "A"
     }
    ]
   },
@@ -2618,15 +3313,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132b Fahrverbot und Verwarnung"
+     "label": "132b Fahrverbot und Verwarnung",
+     "eId": "lvl_1/lvl_13/lvl_132_b"
     }
    ],
    "marginalie": [
@@ -2643,7 +3341,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2651,15 +3350,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "134 Verkehrsunterricht zur Nachschulung"
+     "label": "134 Verkehrsunterricht zur Nachschulung",
+     "eId": "lvl_1/lvl_13/lvl_134"
     }
    ],
    "marginalie": [
@@ -2676,7 +3378,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 99,
+      "l": 99
+     },
+     "kl": "A"
     },
     {
      "nr": "206",
@@ -2688,7 +3396,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 119,
+      "l": 119
+     },
+     "kl": "A"
     },
     {
      "nr": "207",
@@ -2700,7 +3414,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 137,
+      "l": 137
+     },
+     "kl": "A"
     },
     {
      "nr": "204",
@@ -2713,7 +3433,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "134 Verkehrsunterricht zur Nachschulung"
+     "sektion": "134 Verkehrsunterricht zur Nachschulung",
+     "kl": "A"
     }
    ]
   },
@@ -2721,15 +3442,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "134 Verkehrsunterricht zur Nachschulung"
+     "label": "134 Verkehrsunterricht zur Nachschulung",
+     "eId": "lvl_1/lvl_13/lvl_134"
     }
    ],
    "marginalie": [
@@ -2746,7 +3470,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 92,
+      "l": 92
+     },
+     "kl": "A"
     },
     {
      "nr": "209",
@@ -2758,7 +3488,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 77,
+      "l": 77
+     },
+     "kl": "A"
     },
     {
      "nr": "210",
@@ -2770,7 +3507,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 83,
+      "l": 83
+     },
+     "kl": "A"
     },
     {
      "nr": "211",
@@ -2782,7 +3525,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 98,
+      "l": 98
+     },
+     "kl": "A"
     },
     {
      "nr": "212",
@@ -2794,7 +3543,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 306,
+      "l": 306
+     },
+     "kl": "A"
     },
     {
      "nr": "213",
@@ -2806,7 +3561,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 297,
+      "l": 297
+     },
+     "kl": "A"
     },
     {
      "nr": "214",
@@ -2818,7 +3579,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2826,11 +3593,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "14 Motorfahrzeugführer aus dem Ausland"
+     "label": "14 Motorfahrzeugführer aus dem Ausland",
+     "eId": "lvl_1/lvl_14"
     }
    ],
    "marginalie": [
@@ -2848,14 +3617,28 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 81,
+      "l": 350
+     },
+     "kl": "V"
     },
     {
      "nr": "216",
      "text": "Nicht ratifiziert von der Schweiz.",
      "links": [],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 149,
+      "l": 350
+     },
+     "kl": "U"
     },
     {
      "nr": "217",
@@ -2873,7 +3656,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 223,
+      "l": 350
+     },
+     "kl": "V"
     },
     {
      "nr": "218",
@@ -2885,7 +3675,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "219",
@@ -2897,7 +3688,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 40,
+      "l": 40
+     },
+     "kl": "A"
     },
     {
      "nr": "220",
@@ -2909,7 +3707,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 466,
+      "l": 466
+     },
+     "kl": "A"
     },
     {
      "nr": "221",
@@ -2922,7 +3726,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 167,
+      "l": 176
+     },
+     "kl": "V"
     },
     {
      "nr": "222",
@@ -2934,7 +3744,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 176,
+      "l": 176
+     },
+     "kl": "A"
     },
     {
      "nr": "223",
@@ -2946,7 +3762,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 542,
+      "l": 542
+     },
+     "kl": "A"
     },
     {
      "nr": "224",
@@ -2958,7 +3780,8 @@
       }
      ],
      "absatz": "3bis",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "225",
@@ -2970,7 +3793,14 @@
       }
      ],
      "absatz": "3bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 4,
+      "it": 1,
+      "o": 408,
+      "l": 408
+     },
+     "kl": "A"
     },
     {
      "nr": "226",
@@ -2983,7 +3813,13 @@
       }
      ],
      "absatz": "3ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 120,
+      "l": 189
+     },
+     "kl": "V"
     },
     {
      "nr": "227",
@@ -2995,7 +3831,14 @@
       }
      ],
      "absatz": "3ter",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 5,
+      "it": 2,
+      "o": 178,
+      "l": 178
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3003,11 +3846,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "14 Motorfahrzeugführer aus dem Ausland"
+     "label": "14 Motorfahrzeugführer aus dem Ausland",
+     "eId": "lvl_1/lvl_14"
     }
    ],
    "marginalie": [
@@ -3024,7 +3869,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 316,
+      "l": 316
+     },
+     "kl": "A"
     },
     {
      "nr": "229",
@@ -3036,7 +3887,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 264,
+      "l": 264
+     },
+     "kl": "A"
     },
     {
      "nr": "230",
@@ -3048,7 +3905,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 9,
+      "l": 104
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3056,11 +3919,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "14 Motorfahrzeugführer aus dem Ausland"
+     "label": "14 Motorfahrzeugführer aus dem Ausland",
+     "eId": "lvl_1/lvl_14"
     }
    ],
    "marginalie": [
@@ -3077,7 +3942,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "232",
@@ -3090,7 +3956,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 714,
+      "l": 735
+     },
+     "kl": "A"
     },
     {
      "nr": "233",
@@ -3102,7 +3974,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 735,
+      "l": 735
+     },
+     "kl": "A"
     },
     {
      "nr": "234",
@@ -3114,7 +3992,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 47,
+      "l": 47
+     },
+     "kl": "A"
     },
     {
      "nr": "235",
@@ -3126,7 +4010,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 194,
+      "l": 194
+     },
+     "kl": "A"
     },
     {
      "nr": "236",
@@ -3138,7 +4028,13 @@
       }
      ],
      "absatz": "1quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 101,
+      "l": 101
+     },
+     "kl": "A"
     },
     {
      "nr": "237",
@@ -3150,7 +4046,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 333,
+      "l": 333
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3158,11 +4060,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "14 Motorfahrzeugführer aus dem Ausland"
+     "label": "14 Motorfahrzeugführer aus dem Ausland",
+     "eId": "lvl_1/lvl_14"
     }
    ],
    "marginalie": [
@@ -3179,7 +4083,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 163,
+      "l": 163
+     },
+     "kl": "A"
     },
     {
      "nr": "240",
@@ -3191,7 +4101,8 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "241",
@@ -3203,7 +4114,14 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 59,
+      "l": 59
+     },
+     "kl": "A"
     },
     {
      "nr": "242",
@@ -3215,7 +4133,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 197,
+      "l": 197
+     },
+     "kl": "A"
     },
     {
      "nr": "243",
@@ -3227,7 +4151,14 @@
       }
      ],
      "absatz": "6",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 6,
+      "it": 1,
+      "o": 59,
+      "l": 59
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3235,11 +4166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "14 Motorfahrzeugführer aus dem Ausland"
+     "label": "14 Motorfahrzeugführer aus dem Ausland",
+     "eId": "lvl_1/lvl_14"
     }
    ],
    "marginalie": [
@@ -3256,7 +4189,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 262,
+      "l": 262
+     },
+     "kl": "A"
     },
     {
      "nr": "245",
@@ -3268,7 +4207,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 125,
+      "l": 125
+     },
+     "kl": "A"
     },
     {
      "nr": "246",
@@ -3280,7 +4225,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 145,
+      "l": 145
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3288,11 +4239,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen"
+     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen",
+     "eId": "lvl_1/lvl_16"
     }
    ],
    "marginalie": [
@@ -3309,7 +4262,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 120,
+      "l": 120
+     },
+     "kl": "A"
     },
     {
      "nr": "253",
@@ -3321,7 +4280,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "254",
@@ -3333,7 +4293,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "255",
@@ -3345,7 +4306,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "256",
@@ -3357,7 +4319,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3365,11 +4333,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen"
+     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen",
+     "eId": "lvl_1/lvl_16"
     }
    ],
    "marginalie": [
@@ -3380,11 +4350,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen"
+     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen",
+     "eId": "lvl_1/lvl_16"
     }
    ],
    "marginalie": [
@@ -3401,7 +4373,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 421,
+      "l": 421
+     },
+     "kl": "A"
     },
     {
      "nr": "258",
@@ -3413,7 +4391,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 258,
+      "l": 258
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3421,11 +4405,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen"
+     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen",
+     "eId": "lvl_1/lvl_16"
     }
    ],
    "marginalie": [
@@ -3436,11 +4422,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen"
+     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen",
+     "eId": "lvl_1/lvl_16"
     }
    ],
    "marginalie": [
@@ -3457,7 +4445,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3465,11 +4454,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "17 Vermieter von Motorfahrzeugen"
+     "label": "17 Vermieter von Motorfahrzeugen",
+     "eId": "lvl_1/lvl_17"
     }
    ],
    "marginalie": []
@@ -3478,15 +4469,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "211 Zulassung"
+     "label": "211 Zulassung",
+     "eId": "lvl_2/lvl_21/lvl_211"
     }
    ],
    "marginalie": [
@@ -3503,7 +4497,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "262",
@@ -3515,7 +4510,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "263",
@@ -3528,7 +4524,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 22,
+      "l": 66
+     },
+     "kl": "V"
     },
     {
      "nr": "264",
@@ -3540,7 +4543,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "265",
@@ -3556,7 +4560,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "266",
@@ -3569,7 +4574,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 220,
+      "l": 237
+     },
+     "kl": "V"
     },
     {
      "nr": "267",
@@ -3581,7 +4593,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "268",
@@ -3593,7 +4606,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "269",
@@ -3606,7 +4620,14 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 58,
+      "l": 221
+     },
+     "kl": "V"
     },
     {
      "nr": "270",
@@ -3618,7 +4639,14 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 221,
+      "l": 221
+     },
+     "kl": "A"
     },
     {
      "nr": "271",
@@ -3631,7 +4659,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 97,
+      "l": 98
+     },
+     "kl": "V"
     },
     {
      "nr": "272",
@@ -3643,7 +4677,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 98,
+      "l": 98
+     },
+     "kl": "A"
     },
     {
      "nr": "273",
@@ -3656,7 +4696,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 138,
+      "l": 197
+     },
+     "kl": "V"
     },
     {
      "nr": "274",
@@ -3668,7 +4714,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 351,
+      "l": 351
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3676,15 +4728,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "211 Zulassung"
+     "label": "211 Zulassung",
+     "eId": "lvl_2/lvl_21/lvl_211"
     }
    ],
    "marginalie": [
@@ -3701,7 +4756,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "276",
@@ -3713,7 +4769,8 @@
       }
      ],
      "absatz": "1",
-     "item": "5"
+     "item": "5",
+     "kl": "A"
     },
     {
      "nr": "277",
@@ -3725,7 +4782,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "278",
@@ -3737,7 +4795,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "279",
@@ -3749,7 +4808,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "280",
@@ -3762,7 +4822,14 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 0,
+      "it": 13,
+      "o": 209,
+      "l": 228
+     },
+     "kl": "V"
     },
     {
      "nr": "281",
@@ -3774,7 +4841,8 @@
       }
      ],
      "absatz": "1",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     },
     {
      "nr": "282",
@@ -3786,7 +4854,8 @@
       }
      ],
      "absatz": "1",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "283",
@@ -3798,7 +4867,8 @@
       }
      ],
      "absatz": "1",
-     "item": "l"
+     "item": "l",
+     "kl": "A"
     },
     {
      "nr": "284",
@@ -3810,7 +4880,14 @@
       }
      ],
      "absatz": "1",
-     "item": "l"
+     "item": "l",
+     "pos": {
+      "b": 0,
+      "it": 16,
+      "o": 10,
+      "l": 80
+     },
+     "kl": "A"
     },
     {
      "nr": "285",
@@ -3826,7 +4903,8 @@
       }
      ],
      "absatz": "1",
-     "item": "m"
+     "item": "m",
+     "kl": "A"
     },
     {
      "nr": "286",
@@ -3838,7 +4916,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "287",
@@ -3850,7 +4934,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 178,
+      "l": 178
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3858,15 +4948,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -3877,15 +4970,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -3902,7 +4998,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 185,
+      "l": 185
+     },
+     "kl": "A"
     },
     {
      "nr": "292",
@@ -3914,7 +5016,8 @@
       }
      ],
      "absatz": "1",
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     },
     {
      "nr": "293",
@@ -3926,7 +5029,8 @@
       }
      ],
      "absatz": "1",
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     },
     {
      "nr": "294",
@@ -3938,7 +5042,14 @@
       }
      ],
      "absatz": "1",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 156,
+      "l": 156
+     },
+     "kl": "A"
     },
     {
      "nr": "295",
@@ -3950,7 +5061,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3958,15 +5075,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -3984,7 +5104,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 55,
+      "l": 287
+     },
+     "kl": "V"
     },
     {
      "nr": "297",
@@ -3997,7 +5124,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 126,
+      "l": 287
+     },
+     "kl": "V"
     },
     {
      "nr": "298",
@@ -4009,7 +5143,14 @@
       }
      ],
      "absatz": "1",
-     "item": "3"
+     "item": "3",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 59,
+      "l": 59
+     },
+     "kl": "A"
     },
     {
      "nr": "299",
@@ -4021,7 +5162,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 112,
+      "l": 112
+     },
+     "kl": "A"
     },
     {
      "nr": "300",
@@ -4034,7 +5181,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 58,
+      "l": 124
+     },
+     "kl": "V"
     },
     {
      "nr": "301",
@@ -4046,7 +5199,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 124,
+      "l": 124
+     },
+     "kl": "A"
     },
     {
      "nr": "302",
@@ -4059,7 +5218,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 4
+     "absatzIndex": 4,
+     "pos": {
+      "b": 4,
+      "o": 272,
+      "l": 272
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4067,15 +5232,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -4092,7 +5260,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "304",
@@ -4105,7 +5274,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 63,
+      "l": 131
+     },
+     "kl": "V"
     },
     {
      "nr": "305",
@@ -4122,7 +5297,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 8,
+      "l": 199
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4130,15 +5311,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -4149,15 +5333,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -4174,7 +5361,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 195,
+      "l": 195
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4182,15 +5375,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -4208,7 +5404,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 158,
+      "l": 224
+     },
+     "kl": "V"
     },
     {
      "nr": "308",
@@ -4221,7 +5423,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 212,
+      "l": 224
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4229,15 +5437,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -4249,14 +5460,26 @@
      "text": "Dieser Abs. ist heute aufgehoben.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 45,
+      "l": 82
+     },
+     "kl": "U"
     },
     {
      "nr": "310",
      "text": "Heute: Art. 96 Abs. 1 Bst. c.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 70,
+      "l": 82
+     },
+     "kl": "G"
     },
     {
      "nr": "311",
@@ -4268,7 +5491,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "312",
@@ -4280,7 +5504,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 191,
+      "l": 191
+     },
+     "kl": "A"
     },
     {
      "nr": "313",
@@ -4296,7 +5526,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 595,
+      "l": 595
+     },
+     "kl": "A"
     },
     {
      "nr": "314",
@@ -4312,7 +5548,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 151,
+      "l": 151
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4320,15 +5562,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -4345,7 +5590,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "316",
@@ -4357,7 +5603,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 26,
+      "l": 26
+     },
+     "kl": "A"
     },
     {
      "nr": "317",
@@ -4369,7 +5622,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 228,
+      "l": 228
+     },
+     "kl": "A"
     },
     {
      "nr": "318",
@@ -4381,7 +5640,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4389,15 +5654,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -4414,7 +5682,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "320",
@@ -4426,7 +5695,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "321",
@@ -4438,7 +5708,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "322",
@@ -4450,7 +5721,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "323",
@@ -4463,7 +5735,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 64,
+      "l": 65
+     },
+     "kl": "V"
     },
     {
      "nr": "324",
@@ -4475,7 +5754,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "325",
@@ -4487,7 +5767,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "326",
@@ -4499,7 +5780,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 108,
+      "l": 108
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4507,15 +5795,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -4532,7 +5823,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 242,
+      "l": 242
+     },
+     "kl": "A"
     },
     {
      "nr": "328",
@@ -4544,7 +5841,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 121,
+      "l": 121
+     },
+     "kl": "A"
     },
     {
      "nr": "329",
@@ -4556,7 +5859,14 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 129,
+      "l": 129
+     },
+     "kl": "A"
     },
     {
      "nr": "330",
@@ -4568,7 +5878,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 143,
+      "l": 143
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4576,15 +5892,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -4601,7 +5920,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     },
     {
      "nr": "332",
@@ -4613,7 +5933,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 262,
+      "l": 262
+     },
+     "kl": "A"
     },
     {
      "nr": "333",
@@ -4625,7 +5951,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 127,
+      "l": 127
+     },
+     "kl": "A"
     },
     {
      "nr": "334",
@@ -4637,7 +5969,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 181,
+      "l": 800
+     },
+     "kl": "A"
     },
     {
      "nr": "335",
@@ -4649,7 +5987,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 269,
+      "l": 800
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4657,15 +6001,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -4682,7 +6029,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 247,
+      "l": 247
+     },
+     "kl": "A"
     },
     {
      "nr": "337",
@@ -4694,7 +6047,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 336,
+      "l": 557
+     },
+     "kl": "A"
     },
     {
      "nr": "338",
@@ -4706,7 +6065,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 557,
+      "l": 557
+     },
+     "kl": "A"
     },
     {
      "nr": "339",
@@ -4718,7 +6083,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 238,
+      "l": 260
+     },
+     "kl": "A"
     },
     {
      "nr": "340",
@@ -4730,7 +6101,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 499,
+      "l": 499
+     },
+     "kl": "A"
     },
     {
      "nr": "341",
@@ -4742,7 +6119,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 81,
+      "l": 81
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4750,15 +6133,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -4775,7 +6161,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "343",
@@ -4787,7 +6174,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "344",
@@ -4800,7 +6188,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 143,
+      "l": 350
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4808,15 +6203,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -4833,7 +6231,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 232,
+      "l": 232
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4841,11 +6245,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "22 Prüfungsfahrzeuge"
+     "label": "22 Prüfungsfahrzeuge",
+     "eId": "lvl_2/lvl_22"
     }
    ],
    "marginalie": [
@@ -4862,7 +6268,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "347",
@@ -4875,7 +6282,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "22 Prüfungsfahrzeuge"
+     "sektion": "22 Prüfungsfahrzeuge",
+     "kl": "A"
     }
    ]
   },
@@ -4883,11 +6291,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "22 Prüfungsfahrzeuge"
+     "label": "22 Prüfungsfahrzeuge",
+     "eId": "lvl_2/lvl_22"
     }
    ],
    "marginalie": [],
@@ -4902,7 +6312,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4910,11 +6321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -4931,7 +6344,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4939,11 +6353,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -4960,7 +6376,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "353",
@@ -4972,7 +6389,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 143,
+      "l": 143
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4980,11 +6403,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -5001,7 +6426,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5009,11 +6440,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -5030,7 +6463,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 232,
+      "l": 232
+     },
+     "kl": "A"
     },
     {
      "nr": "356",
@@ -5042,7 +6481,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 415,
+      "l": 415
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5050,11 +6495,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -5071,7 +6518,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "358",
@@ -5084,7 +6532,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 238,
+      "l": 249
+     },
+     "kl": "V"
     }
    ]
   },
@@ -5092,11 +6546,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -5113,7 +6569,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5121,11 +6578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -5142,7 +6601,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "361",
@@ -5155,7 +6615,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 76,
+      "l": 317
+     },
+     "kl": "V"
     }
    ]
   },
@@ -5163,11 +6630,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -5184,7 +6653,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5192,11 +6662,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "24 …"
+     "label": "24 …",
+     "eId": "lvl_2/lvl_24"
     }
    ],
    "marginalie": [],
@@ -5211,7 +6683,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5219,15 +6692,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "25 Massnahmen"
+     "label": "25 Massnahmen",
+     "eId": "lvl_2/lvl_25"
     },
     {
      "ebene": 3,
-     "label": "251 Fahrzeugausweisentzug"
+     "label": "251 Fahrzeugausweisentzug",
+     "eId": "lvl_2/lvl_25/lvl_251"
     }
    ],
    "marginalie": [
@@ -5244,7 +6720,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 43,
+      "l": 43
+     },
+     "kl": "A"
     },
     {
      "nr": "366",
@@ -5256,7 +6738,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "367",
@@ -5268,7 +6751,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "368",
@@ -5284,7 +6768,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "369",
@@ -5297,7 +6782,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 246,
+      "l": 247
+     },
+     "kl": "V"
     },
     {
      "nr": "370",
@@ -5309,7 +6800,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 247,
+      "l": 247
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5317,15 +6814,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "25 Massnahmen"
+     "label": "25 Massnahmen",
+     "eId": "lvl_2/lvl_25"
     },
     {
      "ebene": 3,
-     "label": "251 Fahrzeugausweisentzug"
+     "label": "251 Fahrzeugausweisentzug",
+     "eId": "lvl_2/lvl_25/lvl_251"
     }
    ],
    "marginalie": [
@@ -5336,15 +6836,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "25 Massnahmen"
+     "label": "25 Massnahmen",
+     "eId": "lvl_2/lvl_25"
     },
     {
      "ebene": 3,
-     "label": "251 Fahrzeugausweisentzug"
+     "label": "251 Fahrzeugausweisentzug",
+     "eId": "lvl_2/lvl_25/lvl_251"
     }
    ],
    "marginalie": [
@@ -5355,15 +6858,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "25 Massnahmen"
+     "label": "25 Massnahmen",
+     "eId": "lvl_2/lvl_25"
     },
     {
      "ebene": 3,
-     "label": "252 Fahrzeuge ohne Ausweis"
+     "label": "252 Fahrzeuge ohne Ausweis",
+     "eId": "lvl_2/lvl_25/lvl_252"
     }
    ],
    "marginalie": [
@@ -5382,7 +6888,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 359,
+      "l": 360
+     },
+     "kl": "V"
     },
     {
      "nr": "372",
@@ -5395,7 +6907,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 360,
+      "l": 360
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5403,15 +6921,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "25 Massnahmen"
+     "label": "25 Massnahmen",
+     "eId": "lvl_2/lvl_25"
     },
     {
      "ebene": 3,
-     "label": "252 Fahrzeuge ohne Ausweis"
+     "label": "252 Fahrzeuge ohne Ausweis",
+     "eId": "lvl_2/lvl_25/lvl_252"
     }
    ],
    "marginalie": [],
@@ -5426,7 +6947,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5434,11 +6956,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "26 Ausländische Fahrzeuge"
+     "label": "26 Ausländische Fahrzeuge",
+     "eId": "lvl_2/lvl_26"
     }
    ],
    "marginalie": [
@@ -5466,7 +6990,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 120,
+      "l": 152
+     },
+     "kl": "V"
     },
     {
      "nr": "376",
@@ -5478,7 +7009,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 327,
+      "l": 451
+     },
+     "kl": "A"
     },
     {
      "nr": "377",
@@ -5490,7 +7027,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 113,
+      "l": 113
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5498,11 +7041,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "26 Ausländische Fahrzeuge"
+     "label": "26 Ausländische Fahrzeuge",
+     "eId": "lvl_2/lvl_26"
     }
    ],
    "marginalie": [
@@ -5519,7 +7064,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "379",
@@ -5531,7 +7077,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "380",
@@ -5543,7 +7095,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 176,
+      "l": 176
+     },
+     "kl": "A"
     },
     {
      "nr": "381",
@@ -5555,7 +7113,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 515,
+      "l": 515
+     },
+     "kl": "A"
     },
     {
      "nr": "382",
@@ -5567,7 +7131,14 @@
       }
      ],
      "absatz": "7",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 6,
+      "it": 2,
+      "o": 121,
+      "l": 121
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5575,11 +7146,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "26 Ausländische Fahrzeuge"
+     "label": "26 Ausländische Fahrzeuge",
+     "eId": "lvl_2/lvl_26"
     }
    ],
    "marginalie": [
@@ -5596,7 +7169,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 238,
+      "l": 238
+     },
+     "kl": "A"
     },
     {
      "nr": "384",
@@ -5609,7 +7188,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 161,
+      "l": 181
+     },
+     "kl": "V"
     },
     {
      "nr": "385",
@@ -5621,7 +7206,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 181,
+      "l": 181
+     },
+     "kl": "A"
     },
     {
      "nr": "386",
@@ -5634,7 +7225,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 90,
+      "l": 91
+     },
+     "kl": "V"
     },
     {
      "nr": "387",
@@ -5646,7 +7243,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 91,
+      "l": 91
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5654,11 +7257,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "26 Ausländische Fahrzeuge"
+     "label": "26 Ausländische Fahrzeuge",
+     "eId": "lvl_2/lvl_26"
     }
    ],
    "marginalie": [
@@ -5669,15 +7274,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "311 …"
+     "label": "311 …",
+     "eId": "lvl_3/lvl_31/lvl_311"
     }
    ],
    "marginalie": [],
@@ -5692,7 +7300,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5700,15 +7309,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "312 Meldung der Ausstellung neuer Ausweise"
+     "label": "312 Meldung der Ausstellung neuer Ausweise",
+     "eId": "lvl_3/lvl_31/lvl_312"
     }
    ],
    "marginalie": [],
@@ -5723,7 +7335,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5731,15 +7344,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "312 Meldung der Ausstellung neuer Ausweise"
+     "label": "312 Meldung der Ausstellung neuer Ausweise",
+     "eId": "lvl_3/lvl_31/lvl_312"
     }
    ],
    "marginalie": [
@@ -5756,7 +7372,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 234,
+      "l": 234
+     },
+     "kl": "A"
     },
     {
      "nr": "391",
@@ -5768,7 +7390,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 149,
+      "l": 149
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5776,15 +7404,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "312 Meldung der Ausstellung neuer Ausweise"
+     "label": "312 Meldung der Ausstellung neuer Ausweise",
+     "eId": "lvl_3/lvl_31/lvl_312"
     }
    ],
    "marginalie": [],
@@ -5799,7 +7430,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5807,15 +7439,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "312 Meldung der Ausstellung neuer Ausweise"
+     "label": "312 Meldung der Ausstellung neuer Ausweise",
+     "eId": "lvl_3/lvl_31/lvl_312"
     }
    ],
    "marginalie": [
@@ -5832,7 +7467,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "394",
@@ -5845,7 +7481,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 103,
+      "l": 227
+     },
+     "kl": "V"
     }
    ]
   },
@@ -5853,15 +7495,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "313 Meldung von Widerhandlungen und andern Tatsachen"
+     "label": "313 Meldung von Widerhandlungen und andern Tatsachen",
+     "eId": "lvl_3/lvl_31/lvl_313"
     }
    ],
    "marginalie": [
@@ -5878,7 +7523,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "396",
@@ -5890,7 +7536,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 93,
+      "l": 93
+     },
+     "kl": "A"
     },
     {
      "nr": "397",
@@ -5902,7 +7555,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 177,
+      "l": 177
+     },
+     "kl": "A"
     },
     {
      "nr": "398",
@@ -5914,7 +7573,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 231,
+      "l": 231
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5922,15 +7587,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "313 Meldung von Widerhandlungen und andern Tatsachen"
+     "label": "313 Meldung von Widerhandlungen und andern Tatsachen",
+     "eId": "lvl_3/lvl_31/lvl_313"
     }
    ],
    "marginalie": [],
@@ -5945,7 +7613,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5953,11 +7622,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "32 Statistik"
+     "label": "32 Statistik",
+     "eId": "lvl_3/lvl_32"
     }
    ],
    "marginalie": [
@@ -5969,7 +7640,13 @@
      "text": "Bezeichnung gemäss Art. 1 des nicht veröffentlichten BRB vom 23. April 1980 über die Anpassung von bundesrechtlichen Erlassen an die neuen Bezeichnungen der Departemente und Ämter. Diese Änderung ist im ganzen Erlass berücksichtigt.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 65,
+      "l": 75
+     },
+     "kl": "A"
     },
     {
      "nr": "402",
@@ -5981,7 +7658,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "403",
@@ -5993,7 +7671,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 339,
+      "l": 339
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6001,11 +7685,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "32 Statistik"
+     "label": "32 Statistik",
+     "eId": "lvl_3/lvl_32"
     }
    ],
    "marginalie": [],
@@ -6020,7 +7706,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6028,11 +7715,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "32 Statistik"
+     "label": "32 Statistik",
+     "eId": "lvl_3/lvl_32"
     }
    ],
    "marginalie": [],
@@ -6047,7 +7736,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6055,7 +7745,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6073,7 +7764,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 114,
+      "l": 124
+     },
+     "kl": "A"
     },
     {
      "nr": "408",
@@ -6086,7 +7783,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 3
+     "absatzIndex": 3,
+     "pos": {
+      "b": 3,
+      "o": 40,
+      "l": 40
+     },
+     "kl": "A"
     },
     {
      "nr": "409",
@@ -6099,7 +7802,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 5
+     "absatzIndex": 5,
+     "pos": {
+      "b": 5,
+      "o": 107,
+      "l": 117
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6107,7 +7816,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6124,7 +7834,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6132,7 +7843,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6150,7 +7862,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 5,
+      "l": 7
+     },
+     "kl": "A"
     },
     {
      "nr": "412",
@@ -6163,7 +7881,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 10
+     "absatzIndex": 10,
+     "pos": {
+      "b": 10,
+      "o": 24,
+      "l": 24
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6171,7 +7895,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6182,7 +7907,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6200,7 +7926,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 3
+     "absatzIndex": 3,
+     "pos": {
+      "b": 3,
+      "o": 24,
+      "l": 24
+     },
+     "kl": "A"
     },
     {
      "nr": "414",
@@ -6213,7 +7945,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 4
+     "absatzIndex": 4,
+     "pos": {
+      "b": 4,
+      "o": 4,
+      "l": 4
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6221,7 +7959,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6238,7 +7977,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "416",
@@ -6251,7 +7991,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 106,
+      "l": 146
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6259,7 +8006,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6270,7 +8018,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -6287,7 +8036,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 107,
+      "l": 107
+     },
+     "kl": "A"
     },
     {
      "nr": "418",
@@ -6299,7 +8054,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 150,
+      "l": 150
+     },
+     "kl": "A"
     },
     {
      "nr": "419",
@@ -6311,7 +8072,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "420",
@@ -6323,7 +8085,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "421",
@@ -6335,7 +8098,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "422",
@@ -6347,7 +8111,14 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 20,
+      "l": 20
+     },
+     "kl": "A"
     },
     {
      "nr": "423",
@@ -6359,7 +8130,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 273,
+      "l": 273
+     },
+     "kl": "A"
     },
     {
      "nr": "424",
@@ -6371,7 +8148,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 15,
+      "l": 15
+     },
+     "kl": "A"
     },
     {
      "nr": "425",
@@ -6383,7 +8166,8 @@
       }
      ],
      "absatz": "5",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "426",
@@ -6395,7 +8179,8 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "427",
@@ -6407,7 +8192,8 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "428",
@@ -6419,7 +8205,8 @@
       }
      ],
      "absatz": "5",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "429",
@@ -6431,7 +8218,8 @@
       }
      ],
      "absatz": "5",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "430",
@@ -6443,7 +8231,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 325,
+      "l": 325
+     },
+     "kl": "A"
     },
     {
      "nr": "431",
@@ -6455,7 +8249,13 @@
       }
      ],
      "absatz": "6bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 121,
+      "l": 121
+     },
+     "kl": "A"
     },
     {
      "nr": "432",
@@ -6471,7 +8271,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 333,
+      "l": 333
+     },
+     "kl": "A"
     },
     {
      "nr": "433",
@@ -6483,7 +8289,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 209,
+      "l": 209
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6491,7 +8303,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -6508,7 +8321,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 486,
+      "l": 587
+     },
+     "kl": "U"
     },
     {
      "nr": "435",
@@ -6520,7 +8339,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 115,
+      "l": 115
+     },
+     "kl": "A"
     },
     {
      "nr": "436",
@@ -6532,7 +8357,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 167,
+      "l": 857
+     },
+     "kl": "A"
     },
     {
      "nr": "437",
@@ -6544,7 +8375,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 857,
+      "l": 857
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6552,7 +8389,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -6570,7 +8408,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6578,7 +8422,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -6595,7 +8440,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 36,
+      "l": 83
+     },
+     "kl": "Z"
     },
     {
      "nr": "464",
@@ -6607,7 +8459,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 40,
+      "l": 84
+     },
+     "kl": "Z"
     },
     {
      "nr": "465",
@@ -6619,7 +8478,14 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 40,
+      "l": 100
+     },
+     "kl": "Z"
     },
     {
      "nr": "466",
@@ -6631,7 +8497,14 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 39,
+      "l": 100
+     },
+     "kl": "Z"
     },
     {
      "nr": "467",
@@ -6651,7 +8524,14 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 39,
+      "l": 92
+     },
+     "kl": "Z"
     },
     {
      "nr": "468",
@@ -6663,7 +8543,14 @@
       }
      ],
      "absatz": null,
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 41,
+      "l": 110
+     },
+     "kl": "Z"
     },
     {
      "nr": "469",
@@ -6675,7 +8562,14 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 40,
+      "l": 105
+     },
+     "kl": "Z"
     },
     {
      "nr": "470",
@@ -6687,7 +8581,14 @@
       }
      ],
      "absatz": null,
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 39,
+      "l": 158
+     },
+     "kl": "Z"
     },
     {
      "nr": "471",
@@ -6703,7 +8604,14 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 0,
+      "it": 8,
+      "o": 36,
+      "l": 69
+     },
+     "kl": "Z"
     },
     {
      "nr": "472",
@@ -6739,7 +8647,14 @@
       }
      ],
      "absatz": null,
-     "item": "k"
+     "item": "k",
+     "pos": {
+      "b": 0,
+      "it": 9,
+      "o": 39,
+      "l": 111
+     },
+     "kl": "Z"
     },
     {
      "nr": "473",
@@ -6751,7 +8666,14 @@
       }
      ],
      "absatz": null,
-     "item": "l"
+     "item": "l",
+     "pos": {
+      "b": 0,
+      "it": 10,
+      "o": 38,
+      "l": 132
+     },
+     "kl": "Z"
     },
     {
      "nr": "474",
@@ -6764,7 +8686,14 @@
       }
      ],
      "absatz": null,
-     "item": "m"
+     "item": "m",
+     "pos": {
+      "b": 0,
+      "it": 11,
+      "o": 53,
+      "l": 54
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6772,7 +8701,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -6789,7 +8719,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6797,15 +8733,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "25 Massnahmen"
+     "label": "25 Massnahmen",
+     "eId": "lvl_2/lvl_25"
     },
     {
      "ebene": 3,
-     "label": "253 …"
+     "label": "253 …",
+     "eId": "lvl_2/lvl_25/lvl_253"
     }
    ],
    "marginalie": [],
@@ -6820,7 +8759,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6828,15 +8768,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises"
+     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_122"
     }
    ],
    "marginalie": [],
@@ -6851,7 +8794,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6859,15 +8803,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises"
+     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_122"
     }
    ],
    "marginalie": [
@@ -6884,7 +8831,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6892,15 +8840,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises"
+     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_122"
     }
    ],
    "marginalie": [
@@ -6917,7 +8868,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 222,
+      "l": 222
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6925,15 +8882,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "314 …"
+     "label": "314 …",
+     "eId": "lvl_3/lvl_31/lvl_314"
     }
    ],
    "marginalie": [],
@@ -6948,7 +8908,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6956,15 +8917,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "123 Gemeinsame Bestimmungen zum Ablegen der Theorieprüfungen und der praktischen Führerprüfung"
+     "label": "123 Gemeinsame Bestimmungen zum Ablegen der Theorieprüfungen und der praktischen Führerprüfung",
+     "eId": "lvl_1/lvl_12/lvl_123"
     }
    ],
    "marginalie": [
@@ -6975,11 +8939,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "32 Statistik"
+     "label": "32 Statistik",
+     "eId": "lvl_3/lvl_32"
     }
    ],
    "marginalie": [],
@@ -6994,7 +8960,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7002,7 +8969,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7019,7 +8987,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7027,7 +8996,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7044,7 +9014,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7052,7 +9023,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7069,7 +9041,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "441",
@@ -7081,7 +9054,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 436,
+      "l": 436
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7089,7 +9068,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7106,7 +9086,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "443",
@@ -7118,7 +9099,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "444",
@@ -7130,7 +9117,13 @@
       }
      ],
      "absatz": "9",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 449,
+      "l": 449
+     },
+     "kl": "A"
     },
     {
      "nr": "445",
@@ -7142,7 +9135,13 @@
       }
      ],
      "absatz": "10",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 846,
+      "l": 846
+     },
+     "kl": "A"
     },
     {
      "nr": "446",
@@ -7154,7 +9153,13 @@
       }
      ],
      "absatz": "13",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 12,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7162,7 +9167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7179,7 +9185,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7187,7 +9194,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7204,7 +9212,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7212,7 +9221,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7229,7 +9239,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7237,7 +9248,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7258,7 +9270,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7266,7 +9279,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7283,7 +9297,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7291,7 +9306,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7308,7 +9324,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7316,7 +9333,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7333,7 +9351,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7341,7 +9360,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7358,7 +9378,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "455",
@@ -7370,7 +9391,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 252,
+      "l": 252
+     },
+     "kl": "A"
     },
     {
      "nr": "456",
@@ -7382,7 +9409,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 411,
+      "l": 411
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7390,7 +9423,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7407,7 +9441,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7415,7 +9450,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7432,7 +9468,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "459",
@@ -7446,7 +9483,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 347,
+      "l": 479
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7454,7 +9497,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [],
@@ -7464,7 +9508,8 @@
      "text": "Noch nicht in Kraft.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -7472,7 +9517,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7489,7 +9535,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7497,15 +9544,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "125 Lernfahrausweis"
+     "label": "125 Lernfahrausweis",
+     "eId": "lvl_1/lvl_12/lvl_125"
     }
    ],
    "marginalie": [
@@ -7522,7 +9572,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7530,15 +9581,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "126 Fahrausbildung"
+     "label": "126 Fahrausbildung",
+     "eId": "lvl_1/lvl_12/lvl_126"
     }
    ],
    "marginalie": [
@@ -7555,7 +9609,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7563,15 +9618,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "126 Fahrausbildung"
+     "label": "126 Fahrausbildung",
+     "eId": "lvl_1/lvl_12/lvl_126"
     }
    ],
    "marginalie": [
@@ -7588,7 +9646,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "118",
@@ -7600,7 +9659,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 747,
+      "l": 747
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7608,15 +9673,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7633,7 +9701,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7641,15 +9710,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7666,7 +9738,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7674,15 +9747,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7694,7 +9770,8 @@
      "text": "Ursprünglich Art. 24<i>a</i>",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "130",
@@ -7707,7 +9784,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 114,
+      "l": 115
+     },
+     "kl": "V"
     },
     {
      "nr": "131",
@@ -7719,7 +9803,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "132",
@@ -7735,7 +9820,8 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "133",
@@ -7748,7 +9834,14 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 276,
+      "l": 278
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7756,15 +9849,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7785,7 +9881,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7793,15 +9890,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7818,7 +9918,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7826,15 +9927,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7846,7 +9950,8 @@
      "text": "Ursprünglich Art. 24<i>c</i>",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "137",
@@ -7858,7 +9963,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 315,
+      "l": 315
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7866,15 +9977,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7886,7 +10000,8 @@
      "text": "Ursprünglich Art. 24<i>d</i>",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "139",
@@ -7898,7 +10013,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "140",
@@ -7910,7 +10026,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 250,
+      "l": 250
+     },
+     "kl": "A"
     },
     {
      "nr": "141",
@@ -7922,7 +10044,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7930,15 +10058,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7955,7 +10086,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7963,11 +10095,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen"
+     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen",
+     "eId": "lvl_1/lvl_12_a"
     }
    ],
    "marginalie": [],
@@ -7986,7 +10120,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7994,11 +10129,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen"
+     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen",
+     "eId": "lvl_1/lvl_12_a"
     }
    ],
    "marginalie": [],
@@ -8017,7 +10154,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8025,11 +10163,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8046,7 +10186,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 73,
+      "l": 73
+     },
+     "kl": "A"
     },
     {
      "nr": "160",
@@ -8059,7 +10205,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "sektion": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "kl": "A"
     }
    ]
   },
@@ -8067,11 +10214,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8088,7 +10237,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8096,11 +10246,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8117,7 +10269,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8125,11 +10278,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8146,7 +10301,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8154,11 +10310,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8176,7 +10334,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 182,
+      "l": 182
+     },
+     "kl": "A"
     },
     {
      "nr": "166",
@@ -8188,7 +10352,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "167",
@@ -8200,7 +10365,8 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -8208,11 +10374,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8223,11 +10391,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8238,15 +10408,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "eId": "lvl_1/lvl_13/lvl_131"
     }
    ],
    "marginalie": [
@@ -8267,7 +10440,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8275,15 +10449,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "eId": "lvl_1/lvl_13/lvl_131"
     }
    ],
    "marginalie": [
@@ -8304,7 +10481,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8312,15 +10490,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "eId": "lvl_1/lvl_13/lvl_131"
     }
    ],
    "marginalie": [
@@ -8337,7 +10518,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8345,15 +10527,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe"
+     "label": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_13/lvl_132_a"
     }
    ],
    "marginalie": [
@@ -8370,7 +10555,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "191",
@@ -8382,7 +10568,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 347,
+      "l": 347
+     },
+     "kl": "A"
     },
     {
      "nr": "192",
@@ -8394,7 +10586,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8402,15 +10600,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe"
+     "label": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_13/lvl_132_a"
     }
    ],
    "marginalie": [
@@ -8427,7 +10628,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8435,15 +10637,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "133 …"
+     "label": "133 …",
+     "eId": "lvl_1/lvl_13/lvl_133"
     }
    ],
    "marginalie": [],
@@ -8458,7 +10663,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8466,11 +10672,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "14 Motorfahrzeugführer aus dem Ausland"
+     "label": "14 Motorfahrzeugführer aus dem Ausland",
+     "eId": "lvl_1/lvl_14"
     }
    ],
    "marginalie": [
@@ -8491,7 +10699,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8499,11 +10708,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15 …"
+     "label": "15 …",
+     "eId": "lvl_1/lvl_15"
     }
    ],
    "marginalie": [],
@@ -8518,7 +10729,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8526,11 +10738,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8548,7 +10762,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "sektion": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "kl": "A"
     }
    ]
   },
@@ -8556,11 +10771,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8577,7 +10794,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -8589,7 +10807,8 @@
       }
      ],
      "absatz": "1",
-     "item": "3"
+     "item": "3",
+     "kl": "A"
     }
    ]
   },
@@ -8597,11 +10816,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8612,26 +10833,30 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
-    "Anerkennungsvoraussetzungen für Psychologen,die verkehrspsychologische Untersuchungen durchführen"
+    "Anerkennungsvoraussetzungen für Psychologen, die verkehrspsychologische Untersuchungen durchführen"
    ]
   },
   "5_d": {
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8642,11 +10867,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8657,11 +10884,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8672,11 +10901,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8693,7 +10924,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8701,11 +10933,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8716,11 +10950,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8737,7 +10973,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 125,
+      "l": 125
+     },
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -8750,7 +10992,14 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 57,
+      "l": 58
+     },
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -8762,7 +11011,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 255,
+      "l": 255
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8770,15 +11025,17 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
-    "Vorgehenbei nicht schlüssigen Untersuchungsergebnissen"
+    "Vorgehen bei nicht schlüssigen Untersuchungsergebnissen"
    ],
    "fussnoten": [
     {
@@ -8791,7 +11048,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8799,15 +11057,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises"
+     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_121"
     }
    ],
    "marginalie": [
@@ -8819,7 +11080,8 @@
      "text": "Ursprünglich Art. 5a.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -8832,7 +11094,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "12 Führerprüfung"
+     "sektion": "12 Führerprüfung",
+     "kl": "A"
     }
    ]
   },
@@ -8840,11 +11103,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15a Moderatoren von Weiterausbildungskursen"
+     "label": "15a Moderatoren von Weiterausbildungskursen",
+     "eId": "lvl_1/lvl_15_a"
     }
    ],
    "marginalie": [
@@ -8862,7 +11127,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "15a Moderatoren von Weiterausbildungskursen"
+     "sektion": "15a Moderatoren von Weiterausbildungskursen",
+     "kl": "A"
     }
    ]
   },
@@ -8870,11 +11136,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15a Moderatoren von Weiterausbildungskursen"
+     "label": "15a Moderatoren von Weiterausbildungskursen",
+     "eId": "lvl_1/lvl_15_a"
     }
    ],
    "marginalie": [
@@ -8885,11 +11153,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15a Moderatoren von Weiterausbildungskursen"
+     "label": "15a Moderatoren von Weiterausbildungskursen",
+     "eId": "lvl_1/lvl_15_a"
     }
    ],
    "marginalie": [
@@ -8906,7 +11176,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -8914,11 +11185,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15a Moderatoren von Weiterausbildungskursen"
+     "label": "15a Moderatoren von Weiterausbildungskursen",
+     "eId": "lvl_1/lvl_15_a"
     }
    ],
    "marginalie": [
@@ -8935,7 +11208,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "251",
@@ -8947,7 +11221,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 292,
+      "l": 292
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8955,11 +11235,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15a Moderatoren von Weiterausbildungskursen"
+     "label": "15a Moderatoren von Weiterausbildungskursen",
+     "eId": "lvl_1/lvl_15_a"
     }
    ],
    "marginalie": [
@@ -8970,11 +11252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15a Moderatoren von Weiterausbildungskursen"
+     "label": "15a Moderatoren von Weiterausbildungskursen",
+     "eId": "lvl_1/lvl_15_a"
     }
    ],
    "marginalie": [
@@ -8985,11 +11269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen"
+     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen",
+     "eId": "lvl_1/lvl_16"
     }
    ],
    "marginalie": [
@@ -9006,7 +11292,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9014,15 +11301,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "211 Zulassung"
+     "label": "211 Zulassung",
+     "eId": "lvl_2/lvl_21/lvl_211"
     }
    ],
    "marginalie": [
@@ -9039,7 +11329,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9047,15 +11338,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "211 Zulassung"
+     "label": "211 Zulassung",
+     "eId": "lvl_2/lvl_21/lvl_211"
     }
    ],
    "marginalie": [
@@ -9072,14 +11366,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "290",
      "text": "Verordnung (EU) 2018/858 des europäischen Parlaments und des Rates vom 30. Mai 2018 über die Genehmigung und die Marktüberwachung von Kraftfahrzeugen und Kraftfahrzeuganhängern sowie von Systemen, Bauteilen und selbstständigen technischen Einheiten für diese Fahrzeuge, zur Änderung der Verordnungen (EG) Nr. 715/2007 und (EG) Nr. 595/2009 und zur Aufhebung der Richtlinie 2007/46/EG, ABl. L 151 vom 14.6.2018, S. 1; zuletzt geändert durch Delegierte Verordnung (EU) 2024/1610, ABl. L, 2024/1610, 6.6.2024.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 260,
+      "l": 413
+     },
+     "kl": "V"
     }
    ]
   },
@@ -9087,15 +11388,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -9112,7 +11416,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9120,11 +11425,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "22 Prüfungsfahrzeuge"
+     "label": "22 Prüfungsfahrzeuge",
+     "eId": "lvl_2/lvl_22"
     }
    ],
    "marginalie": [
@@ -9145,7 +11452,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9153,11 +11461,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "24 …"
+     "label": "24 …",
+     "eId": "lvl_2/lvl_24"
     }
    ],
    "marginalie": [],
@@ -9172,7 +11482,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

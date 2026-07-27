@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "232.16",
   "titel": "Bundesgesetz über den Schutz von Pflanzenzüchtungen",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "2",
@@ -47,7 +48,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "3",
@@ -59,7 +61,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -68,11 +71,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "…"
+     "label": "…",
+     "eId": "chap_1/lvl_u1"
     }
    ],
    "marginalie": [
@@ -93,7 +98,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -107,7 +113,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 118,
+      "l": 153
+     },
+     "kl": "V"
     },
     {
      "nr": "4",
@@ -124,7 +136,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "…"
+     "sektion": "…",
+     "kl": "U"
     }
    ]
   },
@@ -132,11 +145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "…"
+     "label": "…",
+     "eId": "chap_1/lvl_u1"
     }
    ],
    "marginalie": [
@@ -157,7 +172,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -165,11 +181,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "…"
+     "label": "…",
+     "eId": "chap_1/lvl_u1"
     }
    ],
    "marginalie": [
@@ -190,7 +208,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -198,11 +217,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "…"
+     "label": "…",
+     "eId": "chap_1/lvl_u1"
     }
    ],
    "marginalie": [
@@ -213,11 +234,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wirkungen des Sortenschutzes"
+     "label": "1. Abschnitt: Wirkungen des Sortenschutzes",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -239,7 +262,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1a. Kapitel: Sortenschutz"
+     "sektion": "1a. Kapitel: Sortenschutz",
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -256,7 +280,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Wirkungen des Sortenschutzes"
+     "sektion": "1. Abschnitt: Wirkungen des Sortenschutzes",
+     "kl": "A"
     }
    ]
   },
@@ -264,11 +289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wirkungen des Sortenschutzes"
+     "label": "1. Abschnitt: Wirkungen des Sortenschutzes",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -279,11 +306,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wirkungen des Sortenschutzes"
+     "label": "1. Abschnitt: Wirkungen des Sortenschutzes",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -294,11 +323,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wirkungen des Sortenschutzes"
+     "label": "1. Abschnitt: Wirkungen des Sortenschutzes",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -309,11 +340,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Recht auf Sortenschutz"
+     "label": "3. Abschnitt: Recht auf Sortenschutz",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [
@@ -331,7 +364,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 112,
+      "l": 129
+     },
+     "kl": "V"
     },
     {
      "nr": "13",
@@ -347,7 +386,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 129,
+      "l": 129
+     },
+     "kl": "A"
     }
    ]
   },
@@ -355,11 +400,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Recht auf Sortenschutz"
+     "label": "3. Abschnitt: Recht auf Sortenschutz",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [
@@ -370,11 +417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Recht auf Sortenschutz"
+     "label": "3. Abschnitt: Recht auf Sortenschutz",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [
@@ -395,7 +444,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -403,11 +453,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sortenbezeichnung und Marke"
+     "label": "4. Abschnitt: Sortenbezeichnung und Marke",
+     "eId": "chap_1_a/sec_4"
     }
    ],
    "marginalie": [
@@ -429,7 +481,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Abschnitt: Sortenbezeichnung und Marke"
+     "sektion": "4. Abschnitt: Sortenbezeichnung und Marke",
+     "kl": "A"
     }
    ]
   },
@@ -437,11 +490,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sortenbezeichnung und Marke"
+     "label": "4. Abschnitt: Sortenbezeichnung und Marke",
+     "eId": "chap_1_a/sec_4"
     }
    ],
    "marginalie": [
@@ -452,11 +507,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderungen im Bestand des Sortenschutzes"
+     "label": "5. Abschnitt: Änderungen im Bestand des Sortenschutzes",
+     "eId": "chap_1_a/sec_5"
     }
    ],
    "marginalie": [
@@ -477,7 +534,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -485,11 +543,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderungen im Bestand des Sortenschutzes"
+     "label": "5. Abschnitt: Änderungen im Bestand des Sortenschutzes",
+     "eId": "chap_1_a/sec_5"
     }
    ],
    "marginalie": [
@@ -510,7 +570,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 118,
+      "l": 118
+     },
+     "kl": "A"
     }
    ]
   },
@@ -518,11 +584,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderungen im Bestand des Sortenschutzes"
+     "label": "5. Abschnitt: Änderungen im Bestand des Sortenschutzes",
+     "eId": "chap_1_a/sec_5"
     }
    ],
    "marginalie": [
@@ -543,7 +611,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 122,
+      "l": 122
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -559,7 +634,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -567,11 +648,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderungen im Bestand des Sortenschutzes"
+     "label": "5. Abschnitt: Änderungen im Bestand des Sortenschutzes",
+     "eId": "chap_1_a/sec_5"
     }
    ],
    "marginalie": [
@@ -592,7 +675,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 83,
+      "l": 83
+     },
+     "kl": "A"
     }
    ]
   },
@@ -600,11 +690,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Änderung im Recht auf Sortenschutz und im Recht am Sortenschutz"
+     "label": "6. Abschnitt: Änderung im Recht auf Sortenschutz und im Recht am Sortenschutz",
+     "eId": "chap_1_a/sec_6"
     }
    ],
    "marginalie": [
@@ -615,11 +707,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Änderung im Recht auf Sortenschutz und im Recht am Sortenschutz"
+     "label": "6. Abschnitt: Änderung im Recht auf Sortenschutz und im Recht am Sortenschutz",
+     "eId": "chap_1_a/sec_6"
     }
    ],
    "marginalie": [
@@ -630,11 +724,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Änderung im Recht auf Sortenschutz und im Recht am Sortenschutz"
+     "label": "6. Abschnitt: Änderung im Recht auf Sortenschutz und im Recht am Sortenschutz",
+     "eId": "chap_1_a/sec_6"
     }
    ],
    "marginalie": [
@@ -652,7 +748,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 163,
+      "l": 200
+     },
+     "kl": "V"
     }
    ]
   },
@@ -660,11 +762,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Lizenzen"
+     "label": "7. Abschnitt: Lizenzen",
+     "eId": "chap_1_a/sec_7"
     }
    ],
    "marginalie": [
@@ -685,7 +789,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -693,11 +798,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Lizenzen"
+     "label": "7. Abschnitt: Lizenzen",
+     "eId": "chap_1_a/sec_7"
     }
    ],
    "marginalie": [
@@ -718,7 +825,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -726,11 +834,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation und Zuständigkeiten"
+     "label": "1. Abschnitt: Organisation und Zuständigkeiten",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -751,7 +861,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -759,11 +870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation und Zuständigkeiten"
+     "label": "1. Abschnitt: Organisation und Zuständigkeiten",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -784,7 +897,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -792,11 +906,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation und Zuständigkeiten"
+     "label": "1. Abschnitt: Organisation und Zuständigkeiten",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -815,7 +931,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -823,11 +940,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -849,7 +968,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+     "sektion": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes",
+     "kl": "A"
     }
    ]
   },
@@ -857,11 +977,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -872,11 +994,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -887,11 +1011,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -912,7 +1038,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 172,
+      "l": 172
+     },
+     "kl": "A"
     }
    ]
   },
@@ -920,11 +1052,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -945,7 +1079,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -953,11 +1088,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -968,11 +1105,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sortenschutzregister, Veröffentlichungen und Gebühren"
+     "label": "3. Abschnitt: Sortenschutzregister, Veröffentlichungen und Gebühren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -983,11 +1122,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sortenschutzregister, Veröffentlichungen und Gebühren"
+     "label": "3. Abschnitt: Sortenschutzregister, Veröffentlichungen und Gebühren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -998,11 +1139,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sortenschutzregister, Veröffentlichungen und Gebühren"
+     "label": "3. Abschnitt: Sortenschutzregister, Veröffentlichungen und Gebühren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1013,11 +1156,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sortenschutzregister, Veröffentlichungen und Gebühren"
+     "label": "3. Abschnitt: Sortenschutzregister, Veröffentlichungen und Gebühren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1028,11 +1173,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sortenschutzregister, Veröffentlichungen und Gebühren"
+     "label": "3. Abschnitt: Sortenschutzregister, Veröffentlichungen und Gebühren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1043,11 +1190,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zivilrechtlicher Schutz"
+     "label": "3. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "…"
+     "label": "…",
+     "eId": "chap_3/lvl_u1"
     }
    ],
    "marginalie": [
@@ -1068,7 +1217,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -1084,7 +1234,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -1101,7 +1257,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "…"
+     "sektion": "…",
+     "kl": "U"
     }
    ]
   },
@@ -1109,11 +1266,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zivilrechtlicher Schutz"
+     "label": "3. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "…"
+     "label": "…",
+     "eId": "chap_3/lvl_u1"
     }
    ],
    "marginalie": [
@@ -1124,11 +1283,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zivilrechtlicher Schutz"
+     "label": "3. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "…"
+     "label": "…",
+     "eId": "chap_3/lvl_u1"
     }
    ],
    "marginalie": [],
@@ -1143,7 +1304,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1151,11 +1313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zivilrechtlicher Schutz"
+     "label": "3. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "…"
+     "label": "…",
+     "eId": "chap_3/lvl_u1"
     }
    ],
    "marginalie": [],
@@ -1174,7 +1338,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1182,11 +1347,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zivilrechtlicher Schutz"
+     "label": "3. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "…"
+     "label": "…",
+     "eId": "chap_3/lvl_u2"
     }
    ],
    "marginalie": [
@@ -1207,7 +1374,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -1224,7 +1392,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "…"
+     "sektion": "…",
+     "kl": "U"
     }
    ]
   },
@@ -1232,11 +1401,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zivilrechtlicher Schutz"
+     "label": "3. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "…"
+     "label": "…",
+     "eId": "chap_3/lvl_u2"
     }
    ],
    "marginalie": [],
@@ -1251,7 +1422,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1259,7 +1431,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafrechtlicher Schutz"
+     "label": "4. Kapitel: Strafrechtlicher Schutz",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1280,7 +1453,8 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "kl": "A"
     }
    ]
   },
@@ -1288,7 +1462,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafrechtlicher Schutz"
+     "label": "4. Kapitel: Strafrechtlicher Schutz",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1299,7 +1474,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafrechtlicher Schutz"
+     "label": "4. Kapitel: Strafrechtlicher Schutz",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1310,7 +1486,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafrechtlicher Schutz"
+     "label": "4. Kapitel: Strafrechtlicher Schutz",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1321,7 +1498,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1339,7 +1517,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1347,7 +1531,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1368,7 +1553,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1376,7 +1562,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1387,7 +1574,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -1406,7 +1594,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1414,7 +1603,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1426,7 +1616,8 @@
      "text": "Abs. 2 des BRB vom 11. Mai 1977",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -1434,11 +1625,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zivilrechtlicher Schutz"
+     "label": "3. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "…"
+     "label": "…",
+     "eId": "chap_3/lvl_u2"
     }
    ],
    "marginalie": [],
@@ -1457,7 +1650,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1465,11 +1659,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sortenbezeichnung und Marke"
+     "label": "4. Abschnitt: Sortenbezeichnung und Marke",
+     "eId": "chap_1_a/sec_4"
     }
    ],
    "marginalie": [
@@ -1480,11 +1676,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sortenbezeichnung und Marke"
+     "label": "4. Abschnitt: Sortenbezeichnung und Marke",
+     "eId": "chap_1_a/sec_4"
     }
    ],
    "marginalie": [
@@ -1495,11 +1693,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Lizenzen"
+     "label": "7. Abschnitt: Lizenzen",
+     "eId": "chap_1_a/sec_7"
     }
    ],
    "marginalie": [
@@ -1520,7 +1720,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1528,11 +1729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Lizenzen"
+     "label": "7. Abschnitt: Lizenzen",
+     "eId": "chap_1_a/sec_7"
     }
    ],
    "marginalie": [
@@ -1553,7 +1756,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1561,11 +1765,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Organisation und Verfahren"
+     "label": "2. Kapitel: Organisation und Verfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+     "label": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1586,7 +1792,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1594,11 +1801,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zivilrechtlicher Schutz"
+     "label": "3. Kapitel: Zivilrechtlicher Schutz",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "…"
+     "label": "…",
+     "eId": "chap_3/lvl_u1"
     }
    ],
    "marginalie": [],
@@ -1617,7 +1826,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1625,11 +1835,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wirkungen des Sortenschutzes"
+     "label": "1. Abschnitt: Wirkungen des Sortenschutzes",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -1640,11 +1852,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Sortenschutz"
+     "label": "1a. Kapitel: Sortenschutz",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzfähige Sorten"
+     "label": "2. Abschnitt: Schutzfähige Sorten",
+     "eId": "chap_1_a/sec_2"
     }
    ],
    "marginalie": [],
@@ -1664,7 +1878,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Schutzfähige Sorten"
+     "sektion": "2. Abschnitt: Schutzfähige Sorten",
+     "kl": "A"
     }
    ]
   }

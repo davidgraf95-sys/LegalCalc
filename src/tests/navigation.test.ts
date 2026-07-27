@@ -93,6 +93,26 @@ describe('Navigations-SSoT', () => {
     expect(fehlend).toEqual([]);
   });
 
+  // IA-6 Stufe 1 (FAHRPLAN-GESETZES-UX §11.4 Ziff. 3, W2·5d): interne Links
+  // vereinheitlicht — der Gruppen-Kopf «International» zielt wie seine
+  // Geschwister Bund/Kantone auf die kanonische Säule (?ebene=international).
+  // Die 5 Hash-Anker-Kinder bleiben UNVERÄNDERT auf der voll funktionalen
+  // Alias-Seite /international (kein Redirect, keine Hash-Änderung — Stufe 2
+  // nur mit separatem David-Go).
+  it('IA-6: Gesetze › International — Kopf zielt auf die kanonische Säule, die 5 Anker bleiben auf /international', () => {
+    const international = abschnitt('Gesetze').kinder[2] as NavGruppe;
+    expect(international.art).toBe('gruppe');
+    expect(international.label).toBe('International');
+    expect(international.ziel).toBe('/gesetze?ebene=international');
+    expect(international.kinder.map((k) => (k.art === 'link' ? k.ziel : null))).toEqual([
+      '/international#menschenrechte',
+      '/international#privat-zivil',
+      '/international#rechtshilfe',
+      '/international#schweiz-eu',
+      '/international#eu-verordnungen',
+    ]);
+  });
+
   it('jedes Blatt-Ziel löst auf eine echte Route auf (keine toten Links)', () => {
     // Statische Seiten + alle Karten-Routen (Rechner/Vorlagen) aus dem Manifest.
     const echteRouten = new Set<string>([

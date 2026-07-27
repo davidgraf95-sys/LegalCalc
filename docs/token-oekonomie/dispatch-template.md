@@ -1,8 +1,8 @@
 # Standard-Dispatch-Template — Sub-Agenten kompakt beauftragen (QS-TOK P3)
 
 > **Heimat:** Detailquelle zu `FAHRPLAN-TOKEN-OEKONOMIE.md` §5 (P3 Dispatch+Prozess),
-> verankert über `CLAUDE.md` §14.6 (Kontext-Hygiene: *Delegieren > Persistieren > gezielt
-> lesen > Handoff > `/compact`*). Umgesetzt: **T4** (dieses Template) · **T15** (Modell-/
+> verankert über §14.6 (Kontext-Hygiene: *Delegieren > Persistieren > gezielt
+> lesen > Handoff > `/compact`*; seit 25.7.2026 im Skill `auftrag`, Ziff. 6). Umgesetzt: **T4** (dieses Template) · **T15** (Modell-/
 > Effort-Routing) · **T18** (Screenshot-Diät) · **T11** (Gegenprüfungs-Beschaffung) · **T19**
 > (Prompt-Cache-Hygiene).
 >

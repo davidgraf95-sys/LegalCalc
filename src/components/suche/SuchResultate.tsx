@@ -197,6 +197,15 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
   // §8-ehrlicher Zähler (S3/#5): solange Sektionen laden, ist die Zahl nicht final
   // → «N+ … wird noch durchsucht»; erst wenn alles geladen ist, die feste Zahl.
   const nochLaedt = !allesGeladen || gruppen.some((g) => g.laedt);
+  // `unvollstaendig` (W2·5, gestaffelter Artikel-Index) ist NICHT dasselbe wie
+  // `laedt`: Treffer sind bereits da und brauchbar, die Menge wächst nur noch.
+  // Darum behält die Kopfzeile ihre Aufschlüsselung — der Überblick soll sofort
+  // ablesbar sein — und trägt den Vorbehalt als Zusatz. Die Alternative («mindestens
+  // N …») hätte die Aufschlüsselung bis zum Ende des Nachladens verschluckt und
+  // damit weniger Auskunft gegeben, nicht mehr. Welche Ebene fehlt, sagt der
+  // Hinweis AN der betroffenen Gruppe (universalSuche: EBENEN_FEHLT) — hier
+  // bewusst ebenen-neutral formuliert, damit die Ebene nicht doppelt kodiert ist.
+  const waechstNoch = gruppen.some((g) => g.unvollstaendig);
   const gesamt = gruppen.reduce((n, g) => n + (g.laedt ? 0 : g.gesamt), 0);
   // Ergebnis-Kopfzeile «n Treffer, davon x Erlasse / y Artikel» (IA-1, praxis #10):
   // die Aufschlüsselung nennt nur die tatsächlich getroffenen Inhaltsklassen
@@ -208,7 +217,8 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
   const teile: string[] = [];
   if (erlasse > 0) teile.push(`${erlasse} ${erlasse === 1 ? 'Erlass' : 'Erlasse'}`);
   if (artikel > 0) teile.push(`${artikel} Artikel`);
-  const kopf = `${gesamt} Treffer${teile.length ? `, davon ${teile.join(' / ')}` : ''}`;
+  const kopf = `${gesamt} Treffer${teile.length ? `, davon ${teile.join(' / ')}` : ''}`
+    + (waechstNoch ? ' — wird noch ergänzt' : '');
   const status = gruppen.length === 0
     ? (allesGeladen ? 'Keine Treffer' : 'wird durchsucht …')
     : nochLaedt ? `mindestens ${gesamt} Treffer, wird noch durchsucht …` : kopf;

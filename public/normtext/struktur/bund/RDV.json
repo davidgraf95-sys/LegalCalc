@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "143.5",
   "titel": "Verordnung über die Ausstellung von Reisedokumenten für ausländische Personen",
@@ -37,7 +37,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -50,7 +51,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -63,7 +65,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -76,7 +79,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "5",
@@ -88,7 +92,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -109,7 +114,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 41,
+      "l": 77
+     },
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -121,7 +132,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -133,7 +145,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -146,7 +159,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 163,
+      "l": 236
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -159,7 +179,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 235,
+      "l": 236
+     },
+     "kl": "V"
     }
    ]
   },
@@ -179,14 +206,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "12",
      "text": "Verordnung (EG) Nr. 2252/2004 des Rates vom 13. Dez. 2004 über Normen für Sicherheitsmerkmale und biometrische Daten in von den Mitgliedstaaten ausgestellten Pässen und Reisedokumenten, ABl. L 385 vom 29.12.2004, S. 1; zuletzt geändert durch die Verordnung (EG) Nr. 444/2009, ABl. L 142 vom 6.6.2009, S. 1.",
      "links": [],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 33,
+      "l": 51
+     },
+     "kl": "V"
     }
    ]
   },
@@ -206,7 +240,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -219,7 +254,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 281,
+      "l": 352
+     },
+     "kl": "V"
     }
    ]
   },
@@ -239,7 +281,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -252,7 +295,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 153,
+      "l": 183
+     },
+     "kl": "V"
     }
    ]
   },
@@ -270,7 +320,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -285,7 +336,8 @@
      "text": "Fassung gemäss Ziff. I 8 der V vom 1. Febr. 2017 über die Einführung der Lan-desverweisung, in Kraft seit 1. März 2017 (AS 2017 563).",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -305,7 +357,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -317,7 +370,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 302,
+      "l": 302
+     },
+     "kl": "A"
     }
    ]
   },
@@ -333,7 +392,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 204,
+      "l": 243
+     },
+     "kl": "U"
     }
    ]
   },
@@ -353,7 +418,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 230,
+      "l": 230
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -365,7 +436,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 91,
+      "l": 264
+     },
+     "kl": "Z"
     },
     {
      "nr": "26",
@@ -381,7 +458,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 264,
+      "l": 264
+     },
+     "kl": "A"
     }
    ]
   },
@@ -413,7 +496,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 177,
+      "l": 177
+     },
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -425,7 +514,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -445,7 +540,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -457,7 +553,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -469,7 +566,8 @@
       }
      ],
      "absatz": "1",
-     "item": "bbis"
+     "item": "bbis",
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -481,7 +579,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 66,
+      "l": 66
+     },
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -493,7 +598,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -513,7 +624,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 134,
+      "l": 134
+     },
+     "kl": "A"
     }
    ]
   },
@@ -533,7 +650,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 111,
+      "l": 111
+     },
+     "kl": "A"
     },
     {
      "nr": "37",
@@ -546,7 +669,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 234,
+      "l": 254
+     },
+     "kl": "V"
     },
     {
      "nr": "38",
@@ -558,7 +687,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 254,
+      "l": 254
+     },
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -570,7 +705,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 182,
+      "l": 182
+     },
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -582,7 +723,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 101,
+      "l": 101
+     },
+     "kl": "A"
     }
    ]
   },
@@ -602,7 +749,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -614,7 +762,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 99,
+      "l": 99
+     },
+     "kl": "A"
     }
    ]
   },
@@ -634,7 +788,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -660,7 +815,8 @@
       }
      ],
      "absatz": "1",
-     "item": "dbis"
+     "item": "dbis",
+     "kl": "A"
     }
    ]
   },
@@ -720,7 +876,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 144,
+      "l": 226
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -748,7 +910,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 139
+     },
+     "kl": "V"
     }
    ]
   },
@@ -768,7 +936,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 34,
+      "l": 118
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -798,7 +972,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -818,7 +993,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -826,7 +1002,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 108,
+      "l": 274
+     },
+     "kl": "V"
     }
    ]
   },
@@ -846,7 +1028,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

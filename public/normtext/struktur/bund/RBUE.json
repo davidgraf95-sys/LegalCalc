@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.231.15",
   "titel": "Berner Übereinkunft zum Schutz von Werken der Literatur und Kunst revidiert in Paris am 24. Juli 1971",
@@ -40,7 +40,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -52,7 +53,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -96,7 +98,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 6
+     "absatzIndex": 6,
+     "pos": {
+      "b": 6,
+      "o": 72,
+      "l": 373
+     },
+     "kl": "V"
     }
    ]
   },
@@ -135,7 +143,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 108,
+      "l": 444
+     },
+     "kl": "V"
     },
     {
      "nr": "5",
@@ -148,7 +162,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 136,
+      "l": 444
+     },
+     "kl": "V"
     }
    ]
   },
@@ -198,7 +218,14 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 196,
+      "l": 440
+     },
+     "kl": "V"
     }
    ]
   },
@@ -224,7 +251,14 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 199,
+      "l": 237
+     },
+     "kl": "V"
     }
    ]
   },
@@ -254,7 +288,14 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 162,
+      "l": 209
+     },
+     "kl": "V"
     }
    ]
   },
@@ -272,7 +313,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 346,
+      "l": 356
+     },
+     "kl": "V"
     }
    ]
   },
@@ -285,7 +333,14 @@
      "text": "[<i>AS <b>10</b> 219</i>; <i><b>16 </b>611</i>; BS <b>11</b> 931, 945]",
      "links": [],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 338,
+      "l": 792
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -303,7 +358,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 180,
+      "l": 502
+     },
+     "kl": "Z"
     },
     {
      "nr": "14",
@@ -316,7 +377,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 240,
+      "l": 502
+     },
+     "kl": "V"
     }
    ]
   },
@@ -339,7 +406,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 149,
+      "l": 215
+     },
+     "kl": "V"
     }
    ]
   },
@@ -370,7 +443,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 185,
+      "l": 606
+     },
+     "kl": "V"
     }
    ]
   },
@@ -409,7 +488,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 167,
+      "l": 470
+     },
+     "kl": "V"
     },
     {
      "nr": "11",
@@ -422,7 +507,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 315,
+      "l": 470
+     },
+     "kl": "V"
     }
    ]
   },

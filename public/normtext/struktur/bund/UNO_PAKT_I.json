@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.103.1",
   "titel": "Internationaler Pakt über wirtschaftliche, soziale und kulturelle Rechte",
@@ -44,7 +44,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "2",
@@ -57,7 +58,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -66,7 +68,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -75,7 +78,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_2"
     }
    ],
    "marginalie": []
@@ -84,7 +88,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_2"
     }
    ],
    "marginalie": []
@@ -93,7 +98,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_2"
     }
    ],
    "marginalie": []
@@ -102,7 +108,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_2"
     }
    ],
    "marginalie": []
@@ -111,7 +118,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -120,7 +128,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -129,7 +138,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": [],
@@ -146,7 +156,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 135,
+      "l": 347
+     },
+     "kl": "V"
     }
    ]
   },
@@ -154,7 +170,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -163,7 +180,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -172,7 +190,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -181,7 +200,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -190,7 +210,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -199,7 +220,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -208,7 +230,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -217,7 +240,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV"
+     "label": "Teil IV",
+     "eId": "part_4"
     }
    ],
    "marginalie": []
@@ -226,7 +250,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV"
+     "label": "Teil IV",
+     "eId": "part_4"
     }
    ],
    "marginalie": []
@@ -235,7 +260,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV"
+     "label": "Teil IV",
+     "eId": "part_4"
     }
    ],
    "marginalie": []
@@ -244,7 +270,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV"
+     "label": "Teil IV",
+     "eId": "part_4"
     }
    ],
    "marginalie": []
@@ -253,7 +280,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV"
+     "label": "Teil IV",
+     "eId": "part_4"
     }
    ],
    "marginalie": []
@@ -262,7 +290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV"
+     "label": "Teil IV",
+     "eId": "part_4"
     }
    ],
    "marginalie": []
@@ -271,7 +300,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV"
+     "label": "Teil IV",
+     "eId": "part_4"
     }
    ],
    "marginalie": []
@@ -280,7 +310,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV"
+     "label": "Teil IV",
+     "eId": "part_4"
     }
    ],
    "marginalie": []
@@ -289,7 +320,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV"
+     "label": "Teil IV",
+     "eId": "part_4"
     }
    ],
    "marginalie": []
@@ -298,7 +330,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV"
+     "label": "Teil IV",
+     "eId": "part_4"
     }
    ],
    "marginalie": []
@@ -307,7 +340,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V"
+     "label": "Teil V",
+     "eId": "part_5"
     }
    ],
    "marginalie": [],
@@ -324,7 +358,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 194,
+      "l": 346
+     },
+     "kl": "V"
     }
    ]
   },
@@ -332,7 +372,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V"
+     "label": "Teil V",
+     "eId": "part_5"
     }
    ],
    "marginalie": []
@@ -341,7 +382,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V"
+     "label": "Teil V",
+     "eId": "part_5"
     }
    ],
    "marginalie": []
@@ -350,7 +392,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V"
+     "label": "Teil V",
+     "eId": "part_5"
     }
    ],
    "marginalie": []
@@ -359,7 +402,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V"
+     "label": "Teil V",
+     "eId": "part_5"
     }
    ],
    "marginalie": []
@@ -368,7 +412,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V"
+     "label": "Teil V",
+     "eId": "part_5"
     }
    ],
    "marginalie": []

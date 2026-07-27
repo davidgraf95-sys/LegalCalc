@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "510.10",
   "titel": "Bundesgesetz über die Armee und die Militärverwaltung",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -47,7 +48,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "3",
@@ -67,7 +69,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -76,7 +79,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Aufgaben der Armee"
+     "label": "Erster Titel: Aufgaben der Armee",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [],
@@ -99,7 +103,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "4",
@@ -120,7 +125,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Erster Titel: Aufgaben der Armee"
+     "sektion": "Erster Titel: Aufgaben der Armee",
+     "kl": "A"
     }
    ]
   },
@@ -128,11 +134,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -153,7 +161,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -170,7 +179,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Zweiter Titel: Militärdienstpflicht"
+     "sektion": "Zweiter Titel: Militärdienstpflicht",
+     "kl": "A"
     }
    ]
   },
@@ -178,11 +188,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -203,7 +215,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 243,
+      "l": 243
+     },
+     "kl": "A"
     }
    ]
   },
@@ -211,11 +229,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -236,7 +256,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 322,
+      "l": 322
+     },
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -252,7 +278,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 99,
+      "l": 99
+     },
+     "kl": "A"
     }
    ]
   },
@@ -260,11 +292,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -289,7 +323,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 185,
+      "l": 185
+     },
+     "kl": "A"
     }
    ]
   },
@@ -297,11 +337,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -326,7 +368,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -334,15 +377,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Stellungspflicht und Rekrutierung"
+     "label": "1. Abschnitt: Stellungspflicht und Rekrutierung",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -363,7 +409,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -380,7 +427,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "sektion": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -397,7 +445,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Stellungspflicht und Rekrutierung"
+     "sektion": "1. Abschnitt: Stellungspflicht und Rekrutierung",
+     "kl": "A"
     }
    ]
   },
@@ -405,15 +454,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Stellungspflicht und Rekrutierung"
+     "label": "1. Abschnitt: Stellungspflicht und Rekrutierung",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -434,7 +486,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -442,15 +495,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Stellungspflicht und Rekrutierung"
+     "label": "1. Abschnitt: Stellungspflicht und Rekrutierung",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -471,7 +527,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -495,7 +552,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 156,
+      "l": 156
+     },
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -515,7 +578,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 294,
+      "l": 294
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -535,7 +604,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     }
    ]
   },
@@ -543,15 +618,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Stellungspflicht und Rekrutierung"
+     "label": "1. Abschnitt: Stellungspflicht und Rekrutierung",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -572,7 +650,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -592,7 +671,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 42,
+      "l": 42
+     },
+     "kl": "A"
     }
    ]
   },
@@ -600,15 +686,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Stellungspflicht und Rekrutierung"
+     "label": "1. Abschnitt: Stellungspflicht und Rekrutierung",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -629,7 +718,14 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 17,
+      "l": 17
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -645,7 +741,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -661,7 +758,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -677,7 +775,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -693,7 +792,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 238,
+      "l": 238
+     },
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -709,7 +814,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 113,
+      "l": 113
+     },
+     "kl": "A"
     }
    ]
   },
@@ -717,15 +828,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Militärdienst"
+     "label": "2. Abschnitt: Militärdienst",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -746,7 +860,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -763,7 +878,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 112,
+      "l": 112
+     },
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -784,7 +905,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Militärdienst"
+     "sektion": "2. Abschnitt: Militärdienst",
+     "kl": "A"
     }
    ]
   },
@@ -792,15 +914,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Militärdienst"
+     "label": "2. Abschnitt: Militärdienst",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -825,7 +950,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -841,7 +967,8 @@
       }
      ],
      "absatz": "1",
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -857,7 +984,8 @@
       }
      ],
      "absatz": "1",
-     "item": "ater"
+     "item": "ater",
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -873,7 +1001,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "37",
@@ -889,7 +1018,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -897,15 +1027,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Militärdienst"
+     "label": "2. Abschnitt: Militärdienst",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -930,7 +1063,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -943,7 +1077,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 143,
+      "l": 247
+     },
+     "kl": "V"
     }
    ]
   },
@@ -951,15 +1091,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Militärdienst"
+     "label": "2. Abschnitt: Militärdienst",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -970,15 +1113,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Militärdienst"
+     "label": "2. Abschnitt: Militärdienst",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -999,7 +1145,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1007,15 +1159,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Militärdienst"
+     "label": "2. Abschnitt: Militärdienst",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1036,7 +1191,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1044,15 +1200,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Militärdienst"
+     "label": "2. Abschnitt: Militärdienst",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1073,7 +1232,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -1089,7 +1249,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -1105,7 +1266,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -1121,7 +1283,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -1145,7 +1308,8 @@
       }
      ],
      "absatz": "1",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -1161,7 +1325,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 7,
+      "l": 357
+     },
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -1177,7 +1347,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 103,
+      "l": 260
+     },
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -1193,7 +1369,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 115,
+      "l": 115
+     },
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -1209,7 +1391,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 186,
+      "l": 186
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1217,15 +1405,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Militärdienst"
+     "label": "2. Abschnitt: Militärdienst",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1246,7 +1437,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1254,15 +1446,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Militärdienst"
+     "label": "2. Abschnitt: Militärdienst",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1287,7 +1482,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 108,
+      "l": 108
+     },
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -1300,7 +1501,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 29,
+      "l": 72
+     },
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -1320,7 +1528,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 72,
+      "l": 72
+     },
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -1336,14 +1551,26 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 184,
+      "l": 460
+     },
+     "kl": "A"
     },
     {
      "nr": "56",
      "text": "Richtig: Kommando Ausbildung.",
      "links": [],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 351,
+      "l": 460
+     },
+     "kl": "U"
     },
     {
      "nr": "57",
@@ -1359,7 +1586,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 460,
+      "l": 460
+     },
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -1375,7 +1608,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 460,
+      "l": 460
+     },
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -1391,7 +1630,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 92,
+      "l": 92
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1399,15 +1644,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation"
+     "label": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1428,7 +1676,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "62",
@@ -1448,7 +1697,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -1464,7 +1714,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -1484,7 +1735,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 71,
+      "l": 71
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1504,7 +1762,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 117,
+      "l": 117
+     },
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -1521,7 +1786,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation"
+     "sektion": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation",
+     "kl": "A"
     }
    ]
   },
@@ -1529,15 +1795,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation"
+     "label": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1558,7 +1827,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -1578,7 +1848,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -1594,7 +1865,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -1614,7 +1886,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 71,
+      "l": 71
+     },
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -1634,7 +1913,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 117,
+      "l": 117
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1642,15 +1928,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation"
+     "label": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1671,7 +1960,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1679,15 +1969,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation"
+     "label": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1708,7 +2001,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -1724,7 +2018,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 159,
+      "l": 159
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1732,15 +2032,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Pflichten ausser Dienst"
+     "label": "4. Abschnitt: Pflichten ausser Dienst",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1761,7 +2064,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "77",
@@ -1777,7 +2081,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -1794,7 +2099,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Abschnitt: Pflichten ausser Dienst"
+     "sektion": "4. Abschnitt: Pflichten ausser Dienst",
+     "kl": "A"
     }
    ]
   },
@@ -1802,15 +2108,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Pflichten ausser Dienst"
+     "label": "4. Abschnitt: Pflichten ausser Dienst",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1831,7 +2140,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "79",
@@ -1847,7 +2157,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -1863,7 +2174,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -1871,15 +2183,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Pflichten ausser Dienst"
+     "label": "4. Abschnitt: Pflichten ausser Dienst",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1900,7 +2215,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -1916,7 +2232,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 270,
+      "l": 270
+     },
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -1932,7 +2254,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "84",
@@ -1948,7 +2271,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 41,
+      "l": 41
+     },
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -1964,7 +2294,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 41,
+      "l": 41
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1972,11 +2309,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Rechte"
+     "label": "1. Kapitel: Allgemeine Rechte",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1997,7 +2336,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 91,
+      "l": 91
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2005,11 +2350,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Rechte"
+     "label": "1. Kapitel: Allgemeine Rechte",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2030,7 +2377,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2038,11 +2386,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Rechte"
+     "label": "1. Kapitel: Allgemeine Rechte",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2063,7 +2413,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 157,
+      "l": 157
+     },
+     "kl": "A"
     },
     {
      "nr": "96",
@@ -2087,7 +2443,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2095,11 +2457,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Rechte"
+     "label": "1. Kapitel: Allgemeine Rechte",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2120,7 +2484,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 180,
+      "l": 180
+     },
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -2136,7 +2506,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 203,
+      "l": 203
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2144,11 +2520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Allgemeine Pflichten"
+     "label": "2. Kapitel: Allgemeine Pflichten",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2169,7 +2547,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 160,
+      "l": 160
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2177,11 +2561,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Allgemeine Pflichten"
+     "label": "2. Kapitel: Allgemeine Pflichten",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2192,11 +2578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Krankheit und Unfall"
+     "label": "3. Kapitel: Krankheit und Unfall",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2217,7 +2605,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2225,11 +2614,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Krankheit und Unfall"
+     "label": "3. Kapitel: Krankheit und Unfall",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2250,7 +2641,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -2263,7 +2655,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 251,
+      "l": 297
+     },
+     "kl": "V"
     },
     {
      "nr": "104",
@@ -2276,7 +2674,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 296,
+      "l": 297
+     },
+     "kl": "V"
     },
     {
      "nr": "105",
@@ -2292,7 +2696,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 297,
+      "l": 297
+     },
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -2312,7 +2722,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -2332,7 +2748,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 132,
+      "l": 132
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2340,11 +2762,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechtsschutz in nicht vermögensrechtlichen Angelegenheitendes Militärdienstes"
+     "label": "4. Kapitel: Rechtsschutz in nicht vermögensrechtlichen Angelegenheiten des Militärdienstes",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2365,7 +2789,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 230,
+      "l": 230
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2373,11 +2803,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechtsschutz in nicht vermögensrechtlichen Angelegenheitendes Militärdienstes"
+     "label": "4. Kapitel: Rechtsschutz in nicht vermögensrechtlichen Angelegenheiten des Militärdienstes",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2395,7 +2827,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 90,
+      "l": 391
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2403,11 +2841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechtsschutz in nicht vermögensrechtlichen Angelegenheitendes Militärdienstes"
+     "label": "4. Kapitel: Rechtsschutz in nicht vermögensrechtlichen Angelegenheiten des Militärdienstes",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2418,11 +2858,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechtsschutz in nicht vermögensrechtlichen Angelegenheitendes Militärdienstes"
+     "label": "4. Kapitel: Rechtsschutz in nicht vermögensrechtlichen Angelegenheiten des Militärdienstes",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2433,11 +2875,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechtsschutz in nicht vermögensrechtlichen Angelegenheitendes Militärdienstes"
+     "label": "4. Kapitel: Rechtsschutz in nicht vermögensrechtlichen Angelegenheiten des Militärdienstes",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2455,7 +2899,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 222,
+      "l": 292
+     },
+     "kl": "V"
     },
     {
      "nr": "112",
@@ -2475,7 +2925,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 191,
+      "l": 191
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2483,11 +2939,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2512,7 +2970,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 159,
+      "l": 159
+     },
+     "kl": "A"
     },
     {
      "nr": "119",
@@ -2532,7 +2996,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2540,11 +3010,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2569,7 +3041,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "121",
@@ -2585,7 +3058,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 171,
+      "l": 171
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2593,11 +3072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2618,7 +3099,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2626,11 +3108,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2655,7 +3139,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2663,11 +3148,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2688,7 +3175,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2696,11 +3184,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2725,7 +3215,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 73,
+      "l": 73
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2733,11 +3229,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2758,7 +3256,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2766,11 +3265,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2791,7 +3292,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "128",
@@ -2807,7 +3309,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2815,11 +3323,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundausbildung"
+     "label": "2. Kapitel: Grundausbildung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2844,7 +3354,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "137",
@@ -2860,7 +3371,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 210,
+      "l": 210
+     },
+     "kl": "A"
     },
     {
      "nr": "138",
@@ -2876,7 +3393,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 211,
+      "l": 211
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2884,11 +3407,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundausbildung"
+     "label": "2. Kapitel: Grundausbildung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2909,7 +3434,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2917,11 +3443,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Ausbildungsdienste der Formationen"
+     "label": "3. Kapitel: Ausbildungsdienste der Formationen",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -2946,7 +3474,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "141",
@@ -2962,7 +3491,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 126,
+      "l": 126
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2970,11 +3505,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Ausbildungsdienste der Formationen"
+     "label": "3. Kapitel: Ausbildungsdienste der Formationen",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [],
@@ -2993,7 +3530,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3001,11 +3539,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Ausbildungsdienste der Formationen"
+     "label": "3. Kapitel: Ausbildungsdienste der Formationen",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3016,11 +3556,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Ausbildungsdienste der Formationen"
+     "label": "3. Kapitel: Ausbildungsdienste der Formationen",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3031,11 +3573,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Ausbildung der Unteroffiziere, höheren Unteroffiziere und Offiziere"
+     "label": "4. Kapitel: Ausbildung der Unteroffiziere, höheren Unteroffiziere und Offiziere",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [],
@@ -3054,7 +3598,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "147",
@@ -3070,7 +3615,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 235,
+      "l": 235
+     },
+     "kl": "A"
     },
     {
      "nr": "148",
@@ -3086,7 +3637,8 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "149",
@@ -3106,7 +3658,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "150",
@@ -3122,7 +3675,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 217,
+      "l": 217
+     },
+     "kl": "A"
     },
     {
      "nr": "145",
@@ -3143,7 +3702,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Kapitel: Ausbildung der Unteroffiziere, höheren Unteroffiziere und Offiziere"
+     "sektion": "4. Kapitel: Ausbildung der Unteroffiziere, höheren Unteroffiziere und Offiziere",
+     "kl": "A"
     }
    ]
   },
@@ -3151,11 +3711,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Dienst in Schulen und Kursen sowie in der Militärverwaltung"
+     "label": "5. Kapitel: Dienst in Schulen und Kursen sowie in der Militärverwaltung",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [],
@@ -3178,7 +3740,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 219,
+      "l": 219
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3186,11 +3754,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Verwendung ausserhalb der Truppe"
+     "label": "6. Kapitel: Verwendung ausserhalb der Truppe",
+     "eId": "tit_4/chap_6"
     }
    ],
    "marginalie": [
@@ -3211,7 +3781,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "154",
@@ -3227,7 +3798,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 126,
+      "l": 243
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3235,11 +3812,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Verwendung ausserhalb der Truppe"
+     "label": "6. Kapitel: Verwendung ausserhalb der Truppe",
+     "eId": "tit_4/chap_6"
     }
    ],
    "marginalie": [
@@ -3264,7 +3843,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "156",
@@ -3284,7 +3864,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 272,
+      "l": 272
+     },
+     "kl": "A"
     },
     {
      "nr": "157",
@@ -3304,7 +3890,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 178,
+      "l": 178
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3312,11 +3904,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Ausserdienstliche Tätigkeiten"
+     "label": "7. Kapitel: Ausserdienstliche Tätigkeiten",
+     "eId": "tit_4/chap_7"
     }
    ],
    "marginalie": [
@@ -3341,7 +3935,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 167,
+      "l": 167
+     },
+     "kl": "A"
     },
     {
      "nr": "159",
@@ -3361,7 +3961,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 148,
+      "l": 148
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3369,11 +3975,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Ausserdienstliche Tätigkeiten"
+     "label": "7. Kapitel: Ausserdienstliche Tätigkeiten",
+     "eId": "tit_4/chap_7"
     }
    ],
    "marginalie": [
@@ -3398,7 +4006,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "161",
@@ -3414,7 +4023,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 141,
+      "l": 141
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3422,11 +4037,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Vordienstliche Ausbildung"
+     "label": "8. Kapitel: Vordienstliche Ausbildung",
+     "eId": "tit_4/chap_8"
     }
    ],
    "marginalie": []
@@ -3435,11 +4052,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3460,7 +4079,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "163",
@@ -3477,7 +4097,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Fünfter Titel: Einsatz der Armee"
+     "sektion": "Fünfter Titel: Einsatz der Armee",
+     "kl": "A"
     },
     {
      "nr": "164",
@@ -3494,7 +4115,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Kapitel: Allgemeine Bestimmungen"
+     "sektion": "1. Kapitel: Allgemeine Bestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -3502,11 +4124,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Friedensförderungsdienst"
+     "label": "2. Kapitel: Friedensförderungsdienst",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3527,7 +4151,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "170",
@@ -3543,7 +4168,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 86,
+      "l": 86
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3551,11 +4182,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Assistenzdienst"
+     "label": "3. Kapitel: Assistenzdienst",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3580,7 +4213,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3588,11 +4222,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Assistenzdienst"
+     "label": "3. Kapitel: Assistenzdienst",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3603,11 +4239,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Assistenzdienst"
+     "label": "3. Kapitel: Assistenzdienst",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3632,7 +4270,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "177",
@@ -3648,7 +4287,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -3656,11 +4296,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Assistenzdienst"
+     "label": "3. Kapitel: Assistenzdienst",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3681,7 +4323,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "179",
@@ -3705,7 +4348,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 292,
+      "l": 292
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3713,11 +4362,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Assistenzdienst"
+     "label": "3. Kapitel: Assistenzdienst",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3738,7 +4389,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 79,
+      "l": 79
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3746,11 +4403,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Assistenzdienst"
+     "label": "3. Kapitel: Assistenzdienst",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3771,7 +4430,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3779,11 +4439,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Assistenzdienst"
+     "label": "3. Kapitel: Assistenzdienst",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3808,7 +4470,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 53,
+      "l": 53
+     },
+     "kl": "A"
     },
     {
      "nr": "183",
@@ -3828,7 +4497,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 86,
+      "l": 86
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3836,11 +4511,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Assistenzdienst"
+     "label": "3. Kapitel: Assistenzdienst",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3851,11 +4528,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Assistenzdienst"
+     "label": "3. Kapitel: Assistenzdienst",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3866,15 +4545,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3895,7 +4577,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -3903,15 +4586,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3932,7 +4618,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 90,
+      "l": 90
+     },
+     "kl": "A"
     },
     {
      "nr": "186",
@@ -3948,7 +4640,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 342,
+      "l": 342
+     },
+     "kl": "A"
     },
     {
      "nr": "187",
@@ -3964,7 +4662,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 214,
+      "l": 214
+     },
+     "kl": "A"
     },
     {
      "nr": "188",
@@ -3980,7 +4684,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3988,15 +4698,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -4007,15 +4720,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -4026,15 +4742,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -4055,7 +4774,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4063,15 +4783,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -4092,7 +4815,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "193",
@@ -4108,7 +4832,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "194",
@@ -4121,7 +4846,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 168,
+      "l": 169
+     },
+     "kl": "V"
     },
     {
      "nr": "195",
@@ -4137,7 +4869,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 125,
+      "l": 125
+     },
+     "kl": "A"
     },
     {
      "nr": "196",
@@ -4153,7 +4891,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 208,
+      "l": 208
+     },
+     "kl": "A"
     },
     {
      "nr": "197",
@@ -4169,7 +4913,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 101,
+      "l": 101
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4177,15 +4927,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -4208,7 +4961,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4216,15 +4970,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -4245,7 +5002,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 127,
+      "l": 127
+     },
+     "kl": "A"
     },
     {
      "nr": "200",
@@ -4261,7 +5024,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 160,
+      "l": 160
+     },
+     "kl": "A"
     },
     {
      "nr": "201",
@@ -4277,7 +5046,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "202",
@@ -4293,7 +5068,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 241,
+      "l": 241
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4301,15 +5082,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Oberbefehl"
+     "label": "2. Abschnitt: Oberbefehl",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4330,7 +5114,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4338,15 +5123,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Oberbefehl"
+     "label": "2. Abschnitt: Oberbefehl",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4367,7 +5155,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 91,
+      "l": 91
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4375,15 +5169,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Oberbefehl"
+     "label": "2. Abschnitt: Oberbefehl",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4394,15 +5191,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Oberbefehl"
+     "label": "2. Abschnitt: Oberbefehl",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4413,15 +5213,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Oberbefehl"
+     "label": "2. Abschnitt: Oberbefehl",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4432,15 +5235,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Oberbefehl"
+     "label": "2. Abschnitt: Oberbefehl",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4461,7 +5267,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 69,
+      "l": 191
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4469,15 +5281,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Oberbefehl"
+     "label": "2. Abschnitt: Oberbefehl",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4488,15 +5303,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Oberbefehl"
+     "label": "2. Abschnitt: Oberbefehl",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4507,7 +5325,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Titel: Polizeibefugnisse"
+     "label": "5a. Titel: Polizeibefugnisse",
+     "eId": "tit_5_a"
     }
    ],
    "marginalie": [
@@ -4528,7 +5347,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "208",
@@ -4541,7 +5361,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 261,
+      "l": 338
+     },
+     "kl": "V"
     },
     {
      "nr": "206",
@@ -4558,7 +5384,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5a. Titel: Polizeibefugnisse"
+     "sektion": "5a. Titel: Polizeibefugnisse",
+     "kl": "A"
     }
    ]
   },
@@ -4566,11 +5393,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -4595,7 +5424,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "211",
@@ -4616,7 +5446,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Kapitel: Grundsätze"
+     "sektion": "1. Kapitel: Grundsätze",
+     "kl": "A"
     }
    ]
   },
@@ -4624,11 +5455,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -4653,7 +5486,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4661,11 +5495,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [],
@@ -4684,7 +5520,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4692,11 +5529,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Militärische Informations- und Kommunikationstechnologie"
+     "label": "2. Kapitel: Militärische Informations- und Kommunikationstechnologie",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [],
@@ -4715,7 +5554,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "215",
@@ -4732,7 +5572,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Kapitel: Militärische Informations- und Kommunikationstechnologie"
+     "sektion": "2. Kapitel: Militärische Informations- und Kommunikationstechnologie",
+     "kl": "A"
     }
    ]
   },
@@ -4740,11 +5581,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Betriebskontinuität und Resilienz"
+     "label": "2a. Kapitel: Betriebskontinuität und Resilienz",
+     "eId": "tit_6/chap_2_a"
     }
    ],
    "marginalie": [],
@@ -4763,7 +5606,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "219",
@@ -4776,7 +5620,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 199,
+      "l": 200
+     },
+     "kl": "V"
     },
     {
      "nr": "217",
@@ -4793,7 +5643,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2a. Kapitel: Betriebskontinuität und Resilienz"
+     "sektion": "2a. Kapitel: Betriebskontinuität und Resilienz",
+     "kl": "A"
     }
    ]
   },
@@ -4801,11 +5652,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2b. Kapitel: Kommissariatsdienst"
+     "label": "2b. Kapitel: Kommissariatsdienst",
+     "eId": "tit_6/chap_2_b"
     }
    ],
    "marginalie": [],
@@ -4824,7 +5677,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "222",
@@ -4837,7 +5691,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 97,
+      "l": 125
+     },
+     "kl": "V"
     },
     {
      "nr": "220",
@@ -4854,7 +5714,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2b. Kapitel: Kommissariatsdienst"
+     "sektion": "2b. Kapitel: Kommissariatsdienst",
+     "kl": "A"
     }
    ]
   },
@@ -4862,11 +5723,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nachrichtendienst und Militärische Sicherheit"
+     "label": "3. Kapitel: Nachrichtendienst und Militärische Sicherheit",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -4891,7 +5754,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 278,
+      "l": 456
+     },
+     "kl": "A"
     },
     {
      "nr": "225",
@@ -4907,7 +5776,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 456,
+      "l": 456
+     },
+     "kl": "A"
     },
     {
      "nr": "226",
@@ -4920,7 +5795,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 129,
+      "l": 211
+     },
+     "kl": "V"
     },
     {
      "nr": "227",
@@ -4952,7 +5833,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 211,
+      "l": 211
+     },
+     "kl": "A"
     },
     {
      "nr": "228",
@@ -4976,7 +5863,14 @@
       }
      ],
      "absatz": "1ter",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 87,
+      "l": 87
+     },
+     "kl": "A"
     },
     {
      "nr": "229",
@@ -5008,7 +5902,13 @@
       }
      ],
      "absatz": "1quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 452,
+      "l": 452
+     },
+     "kl": "A"
     },
     {
      "nr": "230",
@@ -5024,7 +5924,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 356,
+      "l": 475
+     },
+     "kl": "A"
     },
     {
      "nr": "231",
@@ -5052,7 +5958,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 263,
+      "l": 263
+     },
+     "kl": "A"
     },
     {
      "nr": "232",
@@ -5068,7 +5980,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "233",
@@ -5084,7 +5997,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "234",
@@ -5100,7 +6014,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "235",
@@ -5116,7 +6031,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 265,
+      "l": 265
+     },
+     "kl": "A"
     },
     {
      "nr": "236",
@@ -5144,7 +6065,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 217,
+      "l": 217
+     },
+     "kl": "A"
     },
     {
      "nr": "237",
@@ -5168,7 +6095,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 137,
+      "l": 137
+     },
+     "kl": "A"
     },
     {
      "nr": "238",
@@ -5184,7 +6117,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 10,
+      "o": 286,
+      "l": 286
+     },
+     "kl": "A"
     },
     {
      "nr": "223",
@@ -5205,7 +6144,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Kapitel: Nachrichtendienst und Militärische Sicherheit"
+     "sektion": "3. Kapitel: Nachrichtendienst und Militärische Sicherheit",
+     "kl": "A"
     }
    ]
   },
@@ -5213,11 +6153,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nachrichtendienst und Militärische Sicherheit"
+     "label": "3. Kapitel: Nachrichtendienst und Militärische Sicherheit",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -5242,7 +6184,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "240",
@@ -5258,7 +6201,8 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "241",
@@ -5274,7 +6218,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "242",
@@ -5287,7 +6232,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 139,
+      "l": 159
+     },
+     "kl": "V"
     },
     {
      "nr": "243",
@@ -5300,7 +6252,14 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 202,
+      "l": 214
+     },
+     "kl": "V"
     },
     {
      "nr": "244",
@@ -5316,7 +6275,8 @@
       }
      ],
      "absatz": "4",
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     }
    ]
   },
@@ -5324,11 +6284,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Berufsformationen"
+     "label": "4. Kapitel: Berufsformationen",
+     "eId": "tit_6/chap_4"
     }
    ],
    "marginalie": [],
@@ -5347,7 +6309,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5355,11 +6318,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Grade und besondere Funktionen"
+     "label": "5. Kapitel: Grade und besondere Funktionen",
+     "eId": "tit_6/chap_5"
     }
    ],
    "marginalie": [
@@ -5380,7 +6345,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "251",
@@ -5400,7 +6366,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "252",
@@ -5416,7 +6383,8 @@
       }
      ],
      "absatz": null,
-     "item": "5"
+     "item": "5",
+     "kl": "A"
     },
     {
      "nr": "249",
@@ -5437,7 +6405,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Kapitel: Grade und besondere Funktionen"
+     "sektion": "5. Kapitel: Grade und besondere Funktionen",
+     "kl": "A"
     }
    ]
   },
@@ -5445,11 +6414,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Grade und besondere Funktionen"
+     "label": "5. Kapitel: Grade und besondere Funktionen",
+     "eId": "tit_6/chap_5"
     }
    ],
    "marginalie": [
@@ -5470,7 +6441,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "254",
@@ -5486,7 +6463,14 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 60,
+      "l": 60
+     },
+     "kl": "A"
     },
     {
      "nr": "255",
@@ -5502,7 +6486,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 158,
+      "l": 158
+     },
+     "kl": "A"
     },
     {
      "nr": "256",
@@ -5518,7 +6508,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 187,
+      "l": 187
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5526,11 +6522,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Grade und besondere Funktionen"
+     "label": "5. Kapitel: Grade und besondere Funktionen",
+     "eId": "tit_6/chap_5"
     }
    ],
    "marginalie": [
@@ -5555,7 +6553,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 145,
+      "l": 282
+     },
+     "kl": "A"
     },
     {
      "nr": "258",
@@ -5571,7 +6575,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 282,
+      "l": 282
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5579,11 +6589,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5604,7 +6616,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "260",
@@ -5621,7 +6634,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Siebter Titel: Armeematerial"
+     "sektion": "Siebter Titel: Armeematerial",
+     "kl": "A"
     }
    ]
   },
@@ -5629,11 +6643,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5654,7 +6670,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "263",
@@ -5670,7 +6687,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "264",
@@ -5690,7 +6708,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 113,
+      "l": 113
+     },
+     "kl": "A"
     },
     {
      "nr": "265",
@@ -5706,7 +6730,14 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 128,
+      "l": 128
+     },
+     "kl": "A"
     },
     {
      "nr": "266",
@@ -5722,7 +6753,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 167,
+      "l": 167
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5730,11 +6767,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [],
@@ -5753,7 +6792,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5761,11 +6801,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5776,11 +6818,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5791,11 +6835,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Persönliche Ausrüstung"
+     "label": "2. Kapitel: Persönliche Ausrüstung",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -5816,7 +6862,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "274",
@@ -5832,7 +6884,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5840,11 +6898,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Persönliche Ausrüstung"
+     "label": "2. Kapitel: Persönliche Ausrüstung",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [],
@@ -5863,7 +6923,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5871,11 +6932,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Persönliche Ausrüstung"
+     "label": "2. Kapitel: Persönliche Ausrüstung",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -5904,7 +6967,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 177,
+      "l": 177
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5912,11 +6981,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Persönliche Ausrüstung"
+     "label": "2. Kapitel: Persönliche Ausrüstung",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -5937,7 +7008,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "278",
@@ -5953,7 +7025,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 184,
+      "l": 184
+     },
+     "kl": "A"
     },
     {
      "nr": "279",
@@ -5969,7 +7047,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 175,
+      "l": 175
+     },
+     "kl": "A"
     },
     {
      "nr": "280",
@@ -5985,14 +7069,16 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "281",
      "text": "Ursprünglich: Bst. a",
      "links": [],
      "absatz": "3",
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     },
     {
      "nr": "282",
@@ -6008,7 +7094,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "283",
@@ -6024,7 +7111,8 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "284",
@@ -6040,7 +7128,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 95,
+      "l": 95
+     },
+     "kl": "A"
     },
     {
      "nr": "285",
@@ -6056,7 +7150,8 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "286",
@@ -6068,7 +7163,8 @@
       }
      ],
      "absatz": "5",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "287",
@@ -6081,7 +7177,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 124,
+      "l": 248
+     },
+     "kl": "V"
     },
     {
      "nr": "288",
@@ -6101,7 +7203,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 248,
+      "l": 248
+     },
+     "kl": "A"
     },
     {
      "nr": "289",
@@ -6117,7 +7225,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 422,
+      "l": 422
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6125,11 +7239,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Persönliche Ausrüstung"
+     "label": "2. Kapitel: Persönliche Ausrüstung",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -6150,7 +7266,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "291",
@@ -6166,7 +7288,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 131,
+      "l": 131
+     },
+     "kl": "A"
     },
     {
      "nr": "292",
@@ -6186,7 +7314,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 104,
+      "l": 104
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6194,11 +7328,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Persönliche Ausrüstung"
+     "label": "2. Kapitel: Persönliche Ausrüstung",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [],
@@ -6217,7 +7353,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6225,11 +7362,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitung des Militärwesens"
+     "label": "1. Kapitel: Leitung des Militärwesens",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [
@@ -6250,7 +7389,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "295",
@@ -6270,7 +7410,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 121,
+      "l": 121
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6278,11 +7424,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitung des Militärwesens"
+     "label": "1. Kapitel: Leitung des Militärwesens",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -6301,7 +7449,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6309,11 +7458,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bund und Kantone"
+     "label": "2. Kapitel: Bund und Kantone",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -6334,7 +7485,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6342,11 +7494,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bund und Kantone"
+     "label": "2. Kapitel: Bund und Kantone",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -6371,7 +7525,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6379,11 +7534,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bund und Kantone"
+     "label": "2. Kapitel: Bund und Kantone",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -6404,7 +7561,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6412,11 +7570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bund und Kantone"
+     "label": "2. Kapitel: Bund und Kantone",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -6437,7 +7597,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6445,11 +7606,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bund und Kantone"
+     "label": "2. Kapitel: Bund und Kantone",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -6470,7 +7633,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6478,11 +7642,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bund und Kantone"
+     "label": "2. Kapitel: Bund und Kantone",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -6503,7 +7669,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "304",
@@ -6523,7 +7690,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 80,
+      "l": 80
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6531,11 +7705,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bund und Kantone"
+     "label": "2. Kapitel: Bund und Kantone",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -6546,11 +7722,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bund und Kantone"
+     "label": "2. Kapitel: Bund und Kantone",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -6571,7 +7749,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 310,
+      "l": 310
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6579,15 +7763,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_8/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -6605,7 +7792,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 179,
+      "l": 187
+     },
+     "kl": "V"
     },
     {
      "nr": "308",
@@ -6621,7 +7814,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 145,
+      "l": 145
+     },
+     "kl": "A"
     },
     {
      "nr": "309",
@@ -6637,7 +7836,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 64,
+      "l": 64
+     },
+     "kl": "A"
     },
     {
      "nr": "306",
@@ -6650,7 +7855,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Kapitel: Militärische Bauten und Anlagen"
+     "sektion": "3. Kapitel: Militärische Bauten und Anlagen",
+     "kl": "A"
     }
    ]
   },
@@ -6658,15 +7864,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_8/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -6677,15 +7886,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_8/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -6696,15 +7908,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Einigungs- und Schätzungsverfahren; vorzeitige Besitzeinweisung"
+     "label": "3. Abschnitt: Einigungs- und Schätzungsverfahren; vorzeitige Besitzeinweisung",
+     "eId": "tit_8/chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -6720,7 +7935,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 210,
+      "l": 224
+     },
+     "kl": "V"
     },
     {
      "nr": "324",
@@ -6736,7 +7957,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 224,
+      "l": 224
+     },
+     "kl": "A"
     },
     {
      "nr": "325",
@@ -6752,7 +7979,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "326",
@@ -6768,7 +8001,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 169,
+      "l": 312
+     },
+     "kl": "A"
     },
     {
      "nr": "322",
@@ -6785,7 +8024,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Einigungs- und Schätzungsverfahren; vorzeitige Besitzeinweisung"
+     "sektion": "3. Abschnitt: Einigungs- und Schätzungsverfahren; vorzeitige Besitzeinweisung",
+     "kl": "A"
     }
    ]
   },
@@ -6793,15 +8033,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Rechtsmittelverfahren"
+     "label": "4. Abschnitt: Rechtsmittelverfahren",
+     "eId": "tit_8/chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -6824,7 +8067,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "328",
@@ -6844,7 +8088,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 94,
+      "l": 94
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6852,11 +8102,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Leistungen der Gemeinden sowie Privater"
+     "label": "4. Kapitel: Leistungen der Gemeinden sowie Privater",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6877,7 +8129,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 230,
+      "l": 230
+     },
+     "kl": "A"
     },
     {
      "nr": "333",
@@ -6893,7 +8151,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 77,
+      "l": 77
+     },
+     "kl": "A"
     },
     {
      "nr": "331",
@@ -6910,7 +8174,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Kapitel: Leistungen der Gemeinden sowie Privater"
+     "sektion": "4. Kapitel: Leistungen der Gemeinden sowie Privater",
+     "kl": "A"
     }
    ]
   },
@@ -6918,11 +8183,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Leistungen der Gemeinden sowie Privater"
+     "label": "4. Kapitel: Leistungen der Gemeinden sowie Privater",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6943,7 +8210,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -6951,11 +8219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Leistungen der Gemeinden sowie Privater"
+     "label": "4. Kapitel: Leistungen der Gemeinden sowie Privater",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6973,7 +8243,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 99,
+      "l": 186
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6981,11 +8257,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Leistungen der Gemeinden sowie Privater"
+     "label": "4. Kapitel: Leistungen der Gemeinden sowie Privater",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -7006,7 +8284,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 125,
+      "l": 125
+     },
+     "kl": "A"
     },
     {
      "nr": "337",
@@ -7022,7 +8306,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 97,
+      "l": 97
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7030,11 +8320,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Haftung für Schäden"
+     "label": "5. Kapitel: Haftung für Schäden",
+     "eId": "tit_8/chap_5"
     }
    ],
    "marginalie": [
@@ -7045,11 +8337,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Haftung für Schäden"
+     "label": "5. Kapitel: Haftung für Schäden",
+     "eId": "tit_8/chap_5"
     }
    ],
    "marginalie": [
@@ -7060,11 +8354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Haftung für Schäden"
+     "label": "5. Kapitel: Haftung für Schäden",
+     "eId": "tit_8/chap_5"
     }
    ],
    "marginalie": [
@@ -7075,11 +8371,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Haftung für Schäden"
+     "label": "5. Kapitel: Haftung für Schäden",
+     "eId": "tit_8/chap_5"
     }
    ],
    "marginalie": [
@@ -7090,11 +8388,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Haftung für Schäden"
+     "label": "5. Kapitel: Haftung für Schäden",
+     "eId": "tit_8/chap_5"
     }
    ],
    "marginalie": [
@@ -7115,7 +8415,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 245,
+      "l": 406
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7123,11 +8429,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Haftung für Schäden"
+     "label": "5. Kapitel: Haftung für Schäden",
+     "eId": "tit_8/chap_5"
     }
    ],
    "marginalie": [
@@ -7148,7 +8456,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 290,
+      "l": 290
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7156,11 +8470,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Haftung für Schäden"
+     "label": "5. Kapitel: Haftung für Schäden",
+     "eId": "tit_8/chap_5"
     }
    ],
    "marginalie": [
@@ -7178,7 +8494,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 97,
+      "l": 116
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7186,11 +8508,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Haftung für Schäden"
+     "label": "5. Kapitel: Haftung für Schäden",
+     "eId": "tit_8/chap_5"
     }
    ],
    "marginalie": [
@@ -7211,7 +8535,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "342",
@@ -7224,7 +8549,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 63,
+      "l": 204
+     },
+     "kl": "V"
     },
     {
      "nr": "343",
@@ -7240,7 +8571,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 106,
+      "l": 106
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7248,11 +8585,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Haftung für Schäden"
+     "label": "5. Kapitel: Haftung für Schäden",
+     "eId": "tit_8/chap_5"
     }
    ],
    "marginalie": [
@@ -7273,7 +8612,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "345",
@@ -7286,7 +8626,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 98,
+      "l": 277
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7294,11 +8640,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Aufgebote, Verschiebungen, Dispensationen und Urlaub"
+     "label": "6. Kapitel: Aufgebote, Verschiebungen, Dispensationen und Urlaub",
+     "eId": "tit_8/chap_6"
     }
    ],
    "marginalie": [
@@ -7319,7 +8667,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 185,
+      "l": 185
+     },
+     "kl": "A"
     },
     {
      "nr": "348",
@@ -7339,7 +8693,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 244,
+      "l": 244
+     },
+     "kl": "A"
     },
     {
      "nr": "346",
@@ -7360,7 +8720,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6. Kapitel: Aufgebote, Verschiebungen, Dispensationen und Urlaub"
+     "sektion": "6. Kapitel: Aufgebote, Verschiebungen, Dispensationen und Urlaub",
+     "kl": "A"
     }
    ]
   },
@@ -7368,11 +8729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Aufgebote, Verschiebungen, Dispensationen und Urlaub"
+     "label": "6. Kapitel: Aufgebote, Verschiebungen, Dispensationen und Urlaub",
+     "eId": "tit_8/chap_6"
     }
    ],
    "marginalie": [
@@ -7397,7 +8760,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7405,11 +8769,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "tit_8/chap_7"
     }
    ],
    "marginalie": [
@@ -7430,7 +8796,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "352",
@@ -7444,7 +8811,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 175,
+      "l": 241
+     },
+     "kl": "V"
     },
     {
      "nr": "350",
@@ -7461,7 +8834,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "7. Kapitel: Bearbeitung von Personendaten"
+     "sektion": "7. Kapitel: Bearbeitung von Personendaten",
+     "kl": "A"
     }
    ]
   },
@@ -7469,11 +8843,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "7a. Kapitel: Elektronische Verfahren"
+     "label": "7a. Kapitel: Elektronische Verfahren",
+     "eId": "tit_8/chap_7_a"
     }
    ],
    "marginalie": [],
@@ -7492,7 +8868,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "356",
@@ -7505,7 +8882,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 124,
+      "l": 290
+     },
+     "kl": "V"
     },
     {
      "nr": "354",
@@ -7522,7 +8905,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "7a. Kapitel: Elektronische Verfahren"
+     "sektion": "7a. Kapitel: Elektronische Verfahren",
+     "kl": "A"
     }
    ]
   },
@@ -7530,7 +8914,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Schlussbestimmungen"
+     "label": "Neunter Titel: Schlussbestimmungen",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [
@@ -7551,7 +8936,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7559,7 +8945,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Schlussbestimmungen"
+     "label": "Neunter Titel: Schlussbestimmungen",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [
@@ -7592,7 +8979,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7600,7 +8993,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Schlussbestimmungen"
+     "label": "Neunter Titel: Schlussbestimmungen",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [
@@ -7625,7 +9019,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "369",
@@ -7642,7 +9037,14 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 73,
+      "l": 75
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7650,7 +9052,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Schlussbestimmungen"
+     "label": "Neunter Titel: Schlussbestimmungen",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [
@@ -7662,7 +9065,8 @@
      "text": "BRB vom 19. Juni 1995",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7670,11 +9074,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nachrichtendienst und Militärische Sicherheit"
+     "label": "3. Kapitel: Nachrichtendienst und Militärische Sicherheit",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -7695,7 +9101,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "246",
@@ -7708,7 +9115,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 136,
+      "l": 279
+     },
+     "kl": "V"
     },
     {
      "nr": "247",
@@ -7721,7 +9134,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 187,
+      "l": 188
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7729,11 +9148,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Organisation der Armee"
+     "label": "Sechster Titel: Organisation der Armee",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Grade und besondere Funktionen"
+     "label": "5. Kapitel: Grade und besondere Funktionen",
+     "eId": "tit_6/chap_5"
     }
    ],
    "marginalie": [
@@ -7758,7 +9179,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7766,11 +9188,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -7791,7 +9215,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7799,11 +9224,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -7824,7 +9251,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "270",
@@ -7844,7 +9272,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 154,
+      "l": 154
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7852,11 +9286,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -7877,7 +9313,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7885,11 +9322,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Armeematerial"
+     "label": "Siebter Titel: Armeematerial",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -7910,7 +9349,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7918,11 +9358,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bund und Kantone"
+     "label": "2. Kapitel: Bund und Kantone",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -7939,7 +9381,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7947,15 +9390,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_8/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -7976,7 +9422,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "311",
@@ -7989,7 +9436,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 101,
+      "l": 145
+     },
+     "kl": "V"
     },
     {
      "nr": "312",
@@ -8002,7 +9455,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 95,
+      "l": 133
+     },
+     "kl": "V"
     }
    ]
   },
@@ -8010,15 +9469,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_8/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -8029,15 +9491,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_8/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -8058,7 +9523,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 234,
+      "l": 234
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8066,15 +9537,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_8/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -8095,7 +9569,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8103,15 +9583,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_8/chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -8130,7 +9613,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8138,15 +9622,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_8/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -8164,7 +9651,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 77,
+      "l": 239
+     },
+     "kl": "V"
     },
     {
      "nr": "317",
@@ -8180,7 +9673,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 167,
+      "l": 239
+     },
+     "kl": "A"
     },
     {
      "nr": "318",
@@ -8193,7 +9692,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 34,
+      "l": 132
+     },
+     "kl": "V"
     },
     {
      "nr": "319",
@@ -8209,7 +9714,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 132,
+      "l": 132
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8217,15 +9728,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_8/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -8244,7 +9758,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 150,
+      "l": 151
+     },
+     "kl": "V"
     }
    ]
   },
@@ -8252,15 +9772,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_8/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -8278,7 +9801,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 65,
+      "l": 156
+     },
+     "kl": "V"
     }
    ]
   },
@@ -8286,15 +9815,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Ausserbetriebnahme von militärischen Immobilien"
+     "label": "5. Abschnitt: Ausserbetriebnahme von militärischen Immobilien",
+     "eId": "tit_8/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -8319,7 +9851,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 57,
+      "l": 57
+     },
+     "kl": "A"
     },
     {
      "nr": "329",
@@ -8336,7 +9874,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Ausserbetriebnahme von militärischen Immobilien"
+     "sektion": "5. Abschnitt: Ausserbetriebnahme von militärischen Immobilien",
+     "kl": "A"
     }
    ]
   },
@@ -8344,15 +9883,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Militärische Bauten und Anlagen"
+     "label": "3. Kapitel: Militärische Bauten und Anlagen",
+     "eId": "tit_8/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Ausserbetriebnahme von militärischen Immobilien"
+     "label": "5. Abschnitt: Ausserbetriebnahme von militärischen Immobilien",
+     "eId": "tit_8/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -8363,11 +9905,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "tit_8/chap_7"
     }
    ],
    "marginalie": [
@@ -8392,7 +9936,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8400,11 +9945,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "7a. Kapitel: Elektronische Verfahren"
+     "label": "7a. Kapitel: Elektronische Verfahren",
+     "eId": "tit_8/chap_7_a"
     }
    ],
    "marginalie": []
@@ -8413,11 +9960,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Armeeleitung und Militärverwaltung"
+     "label": "Achter Titel: Armeeleitung und Militärverwaltung",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Gewerbliche Leistungen"
+     "label": "8. Kapitel: Gewerbliche Leistungen",
+     "eId": "tit_8/chap_8"
     }
    ],
    "marginalie": [],
@@ -8436,7 +9985,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 168,
+      "l": 168
+     },
+     "kl": "A"
     },
     {
      "nr": "357",
@@ -8453,7 +10008,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "8. Kapitel: Gewerbliche Leistungen"
+     "sektion": "8. Kapitel: Gewerbliche Leistungen",
+     "kl": "A"
     }
    ]
   },
@@ -8461,7 +10017,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8a. Titel: Finanzielle Mittel für die Armee"
+     "label": "8a. Titel: Finanzielle Mittel für die Armee",
+     "eId": "tit_8_a"
     }
    ],
    "marginalie": [],
@@ -8480,7 +10037,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 134,
+      "l": 134
+     },
+     "kl": "A"
     },
     {
      "nr": "359",
@@ -8501,7 +10064,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "8a. Titel: Finanzielle Mittel für die Armee"
+     "sektion": "8a. Titel: Finanzielle Mittel für die Armee",
+     "kl": "A"
     }
    ]
   },
@@ -8509,7 +10073,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Schlussbestimmungen"
+     "label": "Neunter Titel: Schlussbestimmungen",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [
@@ -8526,7 +10091,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "363",
@@ -8543,7 +10109,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 131,
+      "l": 242
+     },
+     "kl": "A"
     },
     {
      "nr": "364",
@@ -8564,7 +10136,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 242,
+      "l": 242
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8572,7 +10150,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Schlussbestimmungen"
+     "label": "Neunter Titel: Schlussbestimmungen",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [
@@ -8593,7 +10172,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8601,7 +10181,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Schlussbestimmungen"
+     "label": "Neunter Titel: Schlussbestimmungen",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [
@@ -8622,7 +10203,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8630,7 +10212,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Schlussbestimmungen"
+     "label": "Neunter Titel: Schlussbestimmungen",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [
@@ -8651,7 +10234,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8659,15 +10243,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Inhalt der Militärdienstpflicht"
+     "label": "2. Kapitel: Inhalt der Militärdienstpflicht",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation"
+     "label": "3. Abschnitt: Nichtrekrutierung, Ausschluss aus der Armee, Degradation",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -8688,7 +10275,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8696,11 +10284,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Rechte"
+     "label": "1. Kapitel: Allgemeine Rechte",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -8721,7 +10311,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8729,11 +10320,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Rechte"
+     "label": "1. Kapitel: Allgemeine Rechte",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -8754,7 +10347,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8762,11 +10356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Rechte"
+     "label": "1. Kapitel: Allgemeine Rechte",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -8787,7 +10383,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8795,11 +10392,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Rechte"
+     "label": "1. Kapitel: Allgemeine Rechte",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -8820,7 +10419,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8828,11 +10428,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Rechte"
+     "label": "1. Kapitel: Allgemeine Rechte",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -8853,7 +10455,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8861,11 +10464,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Rechte"
+     "label": "1. Kapitel: Allgemeine Rechte",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -8890,7 +10495,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -8906,7 +10512,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 306,
+      "l": 306
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8914,11 +10526,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Krankheit und Unfall"
+     "label": "3. Kapitel: Krankheit und Unfall",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -8939,7 +10553,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8947,11 +10562,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Krankheit und Unfall"
+     "label": "3. Kapitel: Krankheit und Unfall",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -8976,7 +10593,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8984,11 +10602,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Titel und Orden ausländischer Behörden"
+     "label": "5. Kapitel: Titel und Orden ausländischer Behörden",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [],
@@ -9008,7 +10628,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Kapitel: Titel und Orden ausländischer Behörden"
+     "sektion": "5. Kapitel: Titel und Orden ausländischer Behörden",
+     "kl": "A"
     }
    ]
   },
@@ -9016,11 +10637,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Urheberrechte"
+     "label": "6. Kapitel: Urheberrechte",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [],
@@ -9039,7 +10662,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "116",
@@ -9052,7 +10676,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 150,
+      "l": 216
+     },
+     "kl": "V"
     },
     {
      "nr": "114",
@@ -9069,7 +10699,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6. Kapitel: Urheberrechte"
+     "sektion": "6. Kapitel: Urheberrechte",
+     "kl": "A"
     }
    ]
   },
@@ -9077,11 +10708,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee"
+     "label": "Dritter Titel: Rechte und Pflichten der Angehörigen der Armee",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Pflicht zur Rückerstattung von Ausbildungskosten"
+     "label": "7. Kapitel: Pflicht zur Rückerstattung von Ausbildungskosten",
+     "eId": "tit_3/chap_7"
     }
    ],
    "marginalie": [],
@@ -9101,7 +10734,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "7. Kapitel: Pflicht zur Rückerstattung von Ausbildungskosten"
+     "sektion": "7. Kapitel: Pflicht zur Rückerstattung von Ausbildungskosten",
+     "kl": "A"
     }
    ]
   },
@@ -9109,11 +10743,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -9142,7 +10778,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "130",
@@ -9158,7 +10795,14 @@
       }
      ],
      "absatz": "3",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 2,
+      "it": 5,
+      "o": 8,
+      "l": 8
+     },
+     "kl": "A"
     }
    ]
   },
@@ -9166,11 +10810,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -9199,7 +10845,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9207,15 +10854,17 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
-    "Aus- und Weiterbildung von Cyberpezialistinnen und Cyberspezialisten"
+    "Aus- und Weiterbildung von Cyberspezialistinnen und Cyberspezialisten"
    ],
    "fussnoten": [
     {
@@ -9232,7 +10881,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9240,11 +10890,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -9265,7 +10917,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "134",
@@ -9281,7 +10934,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 65,
+      "l": 65
+     },
+     "kl": "A"
     },
     {
      "nr": "135",
@@ -9297,7 +10956,8 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -9305,11 +10965,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3a. Kapitel: Erfüllung der Ausbildungsdienstpflicht ohne Unterbrechung"
+     "label": "3a. Kapitel: Erfüllung der Ausbildungsdienstpflicht ohne Unterbrechung",
+     "eId": "tit_4/chap_3_a"
     }
    ],
    "marginalie": [],
@@ -9328,7 +10990,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "143",
@@ -9345,7 +11008,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Kapitel: Erfüllung der Ausbildungsdienstpflicht ohne Unterbrechung"
+     "sektion": "3a. Kapitel: Erfüllung der Ausbildungsdienstpflicht ohne Unterbrechung",
+     "kl": "A"
     }
    ]
   },
@@ -9353,11 +11017,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Ausbildung der Unteroffiziere, höheren Unteroffiziere und Offiziere"
+     "label": "4. Kapitel: Ausbildung der Unteroffiziere, höheren Unteroffiziere und Offiziere",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [],
@@ -9376,7 +11042,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9384,11 +11051,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Ausbildung der Armee"
+     "label": "Vierter Titel: Ausbildung der Armee",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "9. Kapitel: Informationsplattformen"
+     "label": "9. Kapitel: Informationsplattformen",
+     "eId": "tit_4/chap_9"
     }
    ],
    "marginalie": [],
@@ -9408,7 +11077,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "9. Kapitel: Informationsplattformen"
+     "sektion": "9. Kapitel: Informationsplattformen",
+     "kl": "A"
     }
    ]
   },
@@ -9416,15 +11086,17 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
-    "Anrechnung von Friedensförderungs- und Assistenzdienstan die Ausbildungsdienstpflicht"
+    "Anrechnung von Friedensförderungs- und Assistenzdienst an die Ausbildungsdienstpflicht"
    ],
    "fussnoten": [
     {
@@ -9441,7 +11113,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9449,11 +11122,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -9478,7 +11153,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9486,11 +11162,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -9515,7 +11193,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9523,11 +11202,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Friedensförderungsdienst"
+     "label": "2. Kapitel: Friedensförderungsdienst",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -9548,7 +11229,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9556,11 +11238,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Friedensförderungsdienst"
+     "label": "2. Kapitel: Friedensförderungsdienst",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -9581,7 +11265,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "173",
@@ -9597,7 +11282,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 214,
+      "l": 214
+     },
+     "kl": "A"
     },
     {
      "nr": "174",
@@ -9613,7 +11304,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 178,
+      "l": 178
+     },
+     "kl": "A"
     }
    ]
   },
@@ -9621,11 +11318,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Militärdienstpflicht"
+     "label": "Zweiter Titel: Militärdienstpflicht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -9646,7 +11345,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -9654,15 +11354,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Einsatz der Armee"
+     "label": "Fünfter Titel: Einsatz der Armee",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aktivdienst"
+     "label": "4. Kapitel: Aktivdienst",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -9683,7 +11386,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "191",
@@ -9697,7 +11401,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 216,
+      "l": 217
+     },
+     "kl": "V"
     }
    ]
   },
@@ -9705,7 +11415,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Titel: Polizeibefugnisse"
+     "label": "5a. Titel: Polizeibefugnisse",
+     "eId": "tit_5_a"
     }
    ],
    "marginalie": [
@@ -9730,7 +11441,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "210",
@@ -9746,7 +11458,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 192,
+      "l": 192
+     },
+     "kl": "A"
     }
    ]
   },

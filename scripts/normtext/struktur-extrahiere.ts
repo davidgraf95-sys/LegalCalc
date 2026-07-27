@@ -25,8 +25,12 @@
 import { ankerZuToken, alleAnhangAnker, extrahiereAnhang } from './extrahiere-fedlex.ts';
 
 export interface ArtikelStruktur {
-  /** Amtliche Gliederung von aussen nach innen (Teil → Titel → Abschnitt …). */
-  gliederung: Array<{ ebene: number; label: string }>;
+  /** Amtliche Gliederung von aussen nach innen (Teil → Titel → Abschnitt …).
+   *  EID-1 (W2·5d §12): `eId` = kumulative Fedlex-Container-eId der Ebene
+   *  (`<section id="part_1/tit_1">`, AKN-Schema) — reine, bei jeder Regeneration
+   *  neu erzeugte OUTBOUND-Daten für ELI-Deep-Links (`quelleUrl#<eId>`), NIE
+   *  eigene persistente Anker (revisions-brüchige Pfade, §12.1/§12.4, K2/R8). */
+  gliederung: Array<{ ebene: number; label: string; eId?: string }>;
   /** Marginalien-Kette (Randtitel) von aussen nach innen. */
   marginalie: string[];
   /** Fussnoten, die an einer Überschrift/einem Randtitel über diesem Artikel
@@ -37,7 +41,9 @@ export interface ArtikelStruktur {
   randtitelFn?: Array<{ fnId: string; label: string; kind: 'g' | 'm' }>;
 }
 
-const TAG = /<(\/?)(div|article|h[1-6])\b([^>]*)>/gi;
+// EID-1: `section` matcht zusätzlich, NUR um die Container-eId (`id="part_1/…"`)
+// mitzuschneiden — Sektionen zählen weiterhin NICHT für das div/article-Nesting.
+const TAG = /<(\/?)(div|article|h[1-6]|section)\b([^>]*)>/gi;
 const CLASS = /\bclass="([^"]*)"/i;
 // M13: Haupttext-Artikel «art_…» ODER Schlusstitel-/UeB-Artikel «disp_uN/art_…»
 // (auch «disp_N/art_…» ohne «u», z.B. VZG). Strukturelle Anker (disp_u1/chap_1,
@@ -49,6 +55,37 @@ function hatKlasse(attrs: string, name: string): boolean {
   return m ? m[1].split(/\s+/).includes(name) : false;
 }
 
+// M12 (W2·5b, Gegenprüfung 24.7.): Wörter, vor denen ein Trennstrich ein LEGITIMES
+// hängendes Divis (Ergänzungsstrich) ist und BLEIBEN muss — Konjunktionen
+// («Hin- und Rückweg») und Präpositionen inkl. Verschmelzungen («Inhaber- in
+// Namenaktien», «Geschäfts- ins Privatvermögen»). Jedes ANDERE kleingeschriebene
+// Folgewort nach «Wort-<Umbruch>» ist eine Silbentrennung (zusammenfügen). Am
+// gesamten Bund-Korpus belegt: die einzige Nicht-Konjunktions-/-Präpositions-Klasse
+// ist echte Silbentrennung (keine Gegenbeispiele). Der Wächter check:verklebung
+// (Klasse B) trägt dieselbe Liste — beide müssen synchron bleiben.
+// HAENGEND-Härtung 24.7.2026 (Gegenprüfungs-R3-Nebenbefund + Prüfer-Kalibrierung):
+// wie/samt/je/pro/per/statt/anstatt/trotz/ab/wider/als/noch/nebst ergänzt — eine
+// FEHLENDE Konjunktion/Präposition erzeugt einen still kleingeschriebenen Fehl-Merge
+// mit ERFUNDENEM Wort («Grundstück- samt» → «Grundstücksamt», §1/§7: nie fabrizieren).
+// TRADE-OFF (§8, ehrlich): jedes Listen-Wort, das zugleich häufige deutsche End-Silbe
+// ist, macht Tor-Klasse B auf einen echten Silbenriss blind («Werk- statt» bliebe
+// stehen). Kalibrierung darum je Wort Nutzen (reale Konjunktions-/Präpositions-
+// Verwendung in Randtiteln) gegen Silben-Risiko: «gen» bewusst NICHT gelistet
+// (häufigste End-Silbe — Korpus-Beleg «Motorwa- gen» —, ~kein Titel-Nutzen);
+// die gelisteten Wörter sind im Bund-Korpus als End-Silbe unbelegt (0 Treffer).
+const HAENGEND = /^(?:und|oder|bzw\.?|sowie|resp\.?|bis|beziehungsweise|respektive|wie|samt|je|pro|per|statt|anstatt|trotz|ab|wider|als|noch|nebst|in|ins|im|zu|zum|zur|an|ans|am|auf|aus|bei|beim|mit|von|vom|vor|über|unter|nach|um|ums|für|gegen|durch|ohne)$/i;
+
+/** Ein «Wort-<Trennung><Folgewort>» (Zeilenumbruch-Trennstrich) kontextabhängig
+ *  auflösen: hängendes Divis vor Konjunktion/Präposition → «- » ; Kompositum vor
+ *  Grossbuchstabe → «-» ohne Leerzeichen; Silbentrennung vor sonstigem Klein-
+ *  buchstaben → nahtlos zusammenfügen. */
+function loeseTrennung(folgewort: string): string {
+  if (!folgewort) return ' ';                           // Umbruch am Ende → Leerzeichen
+  if (HAENGEND.test(folgewort)) return `- ${folgewort}`; // hängendes Divis bleibt
+  if (/^[A-ZÀ-ÖØ-Þ]/.test(folgewort)) return `-${folgewort}`; // Kompositum → Bindestrich, kein Leerzeichen
+  return folgewort;                                      // Silbentrennung → zusammen
+}
+
 function reinText(html: string): string {
   return html
     // Fussnoten-<sup> (mit <a>-Anker ODER Zahl) entfernen — sie kleben sonst als
@@ -57,6 +94,29 @@ function reinText(html: string): string {
     // («Zweiter Titel» + «bis» = «Zweiter Titelbis», Art. 89a ff. ZGB).
     .replace(/<sup\b[^>]*>(?:(?!<\/sup>)[\s\S])*?<\/sup>/gi, (m) => (/(<a\b|\d)/i.test(m) ? '' : m))
     .replace(/<a\b[^>]*class="[^"]*footnote[^"]*"[^>]*>[\s\S]*?<\/a>/gi, '')
+    // M12 (W2·5b): Fedlex bricht mehrzeilige Randtitel/Überschriften am Zeilenende
+    // um — als «<br>» ODER (Layout-Artefakt der Quelle) als literaler Trennstrich +
+    // Leerzeichen. Der generische Tag-Strip unten entfernt Tags ERSATZLOS → ein
+    // pauschales <br>→Leerzeichen zerreisst Silbentrennungen («Adoptions-<br>urlaub»
+    // → «Adoptions- urlaub», Gegenprüfung 24.7.). Beide Umbruch-Kodierungen daher
+    // KONTEXTABHÄNGIG über loeseTrennung() auflösen (Konjunktion/Präposition = Divis
+    // bleibt; Grossbuchstabe = Kompositum-Bindestrich; sonst Silbentrennung
+    // zusammenfügen). Empirisch am gesamten Bund-Korpus belegt (12 Silbentrennungs-/
+    // Divis-Fälle klassifiziert, 0 Fehl-Zusammenfügungen).
+    //  (a) Trennstrich AM WORTENDE (Buchstabe davor) + <br> + Folgewort:
+    .replace(/([^\s<])-\s*<br\s*\/?>\s*([^\s<]*)/gi, (_m, vor: string, w: string) => vor + loeseTrennung(w))
+    //  (b) übriges <br> ohne vorangehenden Trennstrich = echter Wort-Umbruch →
+    //      Leerzeichen (OR «Wirkungen<br>eines» = «Wirkungen eines»).
+    .replace(/<br\s*\/?>/gi, ' ')
+    //  (c) literaler Trennstrich + Leerzeichen im Quelltext (kein <br>, PDF-Umbruch-
+    //      Artefakt «Kassenobli- gationen»): NUR wenn ein Buchstabe direkt vor dem
+    //      Trennstrich steht (kein freistehender Gedankenstrich «A - b») UND das
+    //      Folgewort weder Konjunktion noch Präposition ist → Silbentrennung
+    //      nahtlos zusammenfügen. Konjunktions-/Präpositions-Divis («Übergangs- und»,
+    //      «Inhaber- in») und Grossbuchstaben-Komposita bleiben unberührt.
+    .replace(/([^\s<])-\s+([a-zà-öø-ÿ][^\s<]*)/g, (m: string, vor: string, w: string) =>
+      HAENGEND.test(w) ? m : vor + w,
+    )
     .replace(/<[^>]+>/g, '')
     .replace(/&nbsp;|\u00a0/g, ' ')
     .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
@@ -71,19 +131,49 @@ function reinText(html: string): string {
 // («b»+«undesrechtliche»), Enumeratoren («b. Bei- und Austritt») und Titel
 // nach kombinierten Nummern, verwirft aber reine Nummern-Fortsetzungen
 // («Art. 370 und 371» → bleibt «und» → kein Titel) und «…»-Platzhalter.
+// M12 (W2·5b, Gegenprüfung 24.7.): Fedlex nutzt <b>/<i> im h6 für DREI Dinge —
+// (1) die Artikel-NUMMER («Art. 5», Bereich «a–», röm. «III»), die weg soll;
+// (2) whitespace-tragende Abstandshalter («<b> </b>»), die ein Leerzeichen sind;
+// (3) ECHTEN Titeltext (kursive Begriffe «Opting-out», «(Insurance Wrapper)»,
+//     Binnen-Buchstabe «Cyber<i>s</i>pezialistinnen»), der ERHALTEN bleiben muss.
+// Pauschales Strippen (auch → Leerzeichen) verlor (3) («Cyber pezialistinnen»,
+// «( )»). Darum je <b>/<i>-Element klassifizieren. `vor` = letztes Nicht-Tag-
+// Zeichen davor (unterscheidet Buchstaben-Suffix «86a» nach Ziffer [weg] vom
+// Binnen-Buchstaben «Cybers» nach Buchstabe [bleibt]). Empirisch am gesamten
+// Bund-Korpus belegt (93 Nicht-reine-Nummer-Fälle klassifiziert).
+function biErsetzung(innerRoh: string, vor: string): string {
+  const c = innerRoh
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;|\u00a0/g, ' ')
+    .replace(/&amp;/g, '&')
+    .trim();
+  if (c === '') return ' ';                                   // Abstandshalter → Leerzeichen
+  if (/^(?:Art\.?|§)/.test(c)) return '';                     // «Art.»/«§» = Nummer-Wort
+  if (/\d/.test(c)) return '';                                // enthält Ziffer = Nummer/Bereich
+  if (/^[IVXLCDM]+$/.test(c)) return '';                      // römische Artikelnummer «III»
+  if (/^[a-zà-öø-ÿ]?[–—−-]/i.test(c) && /\d/.test(vor)) return ''; // Bereichs-Suffix «a–»/«−» nach Ziffer
+  if (/^[a-zà-öø-ÿ]$/i.test(c) && /\d/.test(vor)) return '';  // Buchstaben-Suffix «86a» nach Ziffer
+  return innerRoh;                                            // ECHTER Titeltext → Inhalt behalten
+}
+
 function artikelSachtitel(roh: string): string | null {
   const titel = reinText(
     roh
-      .replace(/<sup\b[\s\S]*?<\/sup>/gi, '')   // Fussnoten-Marker
-      .replace(/<b\b[^>]*>[\s\S]*?<\/b>/gi, '') // Artikelnummer (fett)
-      .replace(/<i\b[^>]*>[\s\S]*?<\/i>/gi, ''), // Nummern-Suffix (kursiv)
+      .replace(/<sup\b[\s\S]*?<\/sup>/gi, '')    // Fussnoten-Marker
+      .replace(
+        /<(b|i)\b[^>]*>([\s\S]*?)<\/\1>/gi,
+        (_m, _tag: string, inner: string, offset: number, s: string) => {
+          const vor = s.slice(0, offset).replace(/<[^>]+>/g, '').replace(/&nbsp;|\u00a0/g, ' ').slice(-1);
+          return biErsetzung(inner, vor);
+        },
+      ),
   );
   if (!titel || /^(?:und|et|…|\.\.\.|[–-])$/i.test(titel)) return null;
   return titel;
 }
 
 interface Knoten { iscollaps: boolean; pushed: boolean }
-interface Ktx { kind: 'g' | 'm'; ebene: number; label: string; fnIds: string[]; attached: boolean }
+interface Ktx { kind: 'g' | 'm'; ebene: number; label: string; fnIds: string[]; attached: boolean; eId?: string }
 
 /** Extrahiert je Artikel-Token die Gliederung + Marginalie aus Fedlex-HTML. */
 export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur> {
@@ -91,8 +181,14 @@ export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur
   const divstack: Knoten[] = [];
   const context: Ktx[] = [];
   let pending: Ktx | null = null;
-  let cap: { start: number; tag: string } | null = null;
+  let cap: { start: number; tag: string; eId?: string } | null = null;
   let artId: string | null = null; // aktuell offener Artikel (für die fusionierte h6-Marginalie)
+  // EID-1: Container-eId der zuletzt geöffneten <section id="…">. Fedlex setzt das
+  // Heading UNMITTELBAR nach der Section-Öffnung (korpusweit verifiziert 24.7.2026,
+  // 17'307 Sektionen, 9 NHG-h7-Ausnahmen ohne sichtbares Heading). Jedes ANDERE
+  // dazwischen gematchte Tag verwirft die pending-eId — sie darf nie auf ein
+  // fremdes, späteres Heading leaken (Determinismus §2).
+  let pendingEId: string | null = null;
 
   for (const m of html.matchAll(TAG)) {
     const ist_close = m[1] === '/';
@@ -102,8 +198,14 @@ export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur
 
     if (!ist_close) {
       const istHeading = hatKlasse(attrs, 'heading');
+      if (tag === 'section') {
+        const id = attrs.match(/\bid="([^"]+)"/i);
+        pendingEId = id ? id[1] : null;
+        continue; // Sektionen zählen nicht fürs div/article-Nesting
+      }
       if (/^h[1-6]$/.test(tag) && istHeading) {
-        cap = { start: ende, tag }; // h nicht auf den div-Stack
+        cap = { start: ende, tag, ...(pendingEId ? { eId: pendingEId } : {}) }; // h nicht auf den div-Stack
+        pendingEId = null;
         continue;
       }
       if (tag === 'div' || tag === 'article') {
@@ -123,13 +225,19 @@ export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur
             }
             artId = ankerZuToken(id[1]);
             result[artId] = {
-              gliederung: context.filter((c) => c.kind === 'g').map((c) => ({ ebene: c.ebene, label: c.label })),
+              // EID-1: `eId` additiv NACH den Bestandsfeldern (ebene/label bleiben
+              // byte-gleich in Reihenfolge und Wert; Einträge ohne Section-Wrapper
+              // tragen weiterhin KEIN eId-Feld).
+              gliederung: context
+                .filter((c) => c.kind === 'g')
+                .map((c) => ({ ebene: c.ebene, label: c.label, ...(c.eId ? { eId: c.eId } : {}) })),
               marginalie: context.filter((c) => c.kind === 'm').map((c) => c.label),
               ...(rfn.length ? { randtitelFn: rfn } : {}),
             };
           }
         }
-        if (istHeading) cap = { start: ende, tag: 'div' };
+        if (istHeading) cap = { start: ende, tag: 'div', ...(pendingEId ? { eId: pendingEId } : {}) };
+        pendingEId = null; // EID-1: eId bindet nur an das UNMITTELBAR folgende Heading
         const knoten: Knoten = { iscollaps: hatKlasse(attrs, 'collapseable'), pushed: false };
         if (knoten.iscollaps && pending) { context.push(pending); knoten.pushed = true; pending = null; }
         divstack.push(knoten);
@@ -138,16 +246,18 @@ export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur
     }
 
     // Schliess-Tag
+    pendingEId = null; // EID-1: ein Schliess-Tag vor dem Heading → Section wickelt kein Heading
     if (cap && tag === cap.tag) {
       const roh = html.slice(cap.start, m.index);
       const label = reinText(roh);
       // Fussnoten-Marker AN der Überschrift (vor dem Strippen) erfassen.
       const fnIds = [...roh.matchAll(/href="#(fn-[^"]+)"/gi)].map((x) => x[1]);
+      const capEId = cap.eId;
       cap = null;
       const hm = /^h([1-6])$/.exec(tag);
       if (label && !/^(Art\.|§)\s/.test(label)) {
-        if (hm && Number(hm[1]) < 6) pending = { kind: 'g', ebene: Number(hm[1]), label, fnIds, attached: false };
-        else if (!hm) pending = { kind: 'm', ebene: 0, label, fnIds, attached: false };
+        if (hm && Number(hm[1]) < 6) pending = { kind: 'g', ebene: Number(hm[1]), label, fnIds, attached: false, ...(capEId ? { eId: capEId } : {}) };
+        else if (!hm) pending = { kind: 'm', ebene: 0, label, fnIds, attached: false, ...(capEId ? { eId: capEId } : {}) };
         else pending = null;
       } else {
         // Artikel-eigene h6-Überschrift («Art. N <Sachtitel>», BV/ZPO/StPO-Manier):

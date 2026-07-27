@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "313.0",
   "titel": "Bundesgesetz über das Verwaltungsstrafrecht",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -50,7 +51,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "3",
@@ -62,7 +64,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -71,7 +74,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Geltungsbereich des Gesetzes"
+     "label": "Erster Titel: Geltungsbereich des Gesetzes",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -82,11 +86,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -104,7 +110,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 50,
+      "l": 221
+     },
+     "kl": "V"
     }
    ]
   },
@@ -112,11 +124,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -127,11 +141,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -149,7 +165,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -157,11 +174,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -173,11 +192,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -190,11 +211,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -207,11 +230,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -224,11 +249,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -248,7 +275,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 53,
+      "l": 175
+     },
+     "kl": "V"
     }
    ]
   },
@@ -256,11 +289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -286,7 +321,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 464,
+      "l": 464
+     },
+     "kl": "A"
     }
    ]
   },
@@ -294,11 +335,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -320,7 +363,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 41,
+      "l": 41
+     },
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -336,7 +385,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 233,
+      "l": 233
+     },
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -352,7 +407,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 59,
+      "l": 59
+     },
+     "kl": "A"
     }
    ]
   },
@@ -360,11 +422,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -376,11 +440,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -392,11 +458,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Besondere Bestimmungen"
+     "label": "Zweiter Abschnitt: Besondere Bestimmungen",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -418,7 +486,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -426,11 +495,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Besondere Bestimmungen"
+     "label": "Zweiter Abschnitt: Besondere Bestimmungen",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -453,7 +524,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 69,
+      "l": 69
+     },
+     "kl": "A"
     }
    ]
   },
@@ -461,11 +538,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Besondere Bestimmungen"
+     "label": "Zweiter Abschnitt: Besondere Bestimmungen",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -487,7 +566,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 390,
+      "l": 390
+     },
+     "kl": "A"
     }
    ]
   },
@@ -495,11 +580,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Besondere Bestimmungen"
+     "label": "Zweiter Abschnitt: Besondere Bestimmungen",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -521,7 +608,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -529,11 +617,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Besondere Bestimmungen"
+     "label": "Zweiter Abschnitt: Besondere Bestimmungen",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -544,11 +634,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -560,11 +652,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -582,7 +676,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 446,
+      "l": 446
+     },
+     "kl": "A"
     }
    ]
   },
@@ -590,11 +690,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -613,7 +715,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 261,
+      "l": 304
+     },
+     "kl": "V"
     },
     {
      "nr": "18",
@@ -629,7 +737,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 304,
+      "l": 304
+     },
+     "kl": "A"
     }
    ]
   },
@@ -637,11 +751,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -660,7 +776,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 120,
+      "l": 245
+     },
+     "kl": "V"
     },
     {
      "nr": "20",
@@ -676,7 +798,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 187,
+      "l": 245
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -692,7 +820,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 41,
+      "l": 146
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -712,7 +846,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 64,
+      "l": 146
+     },
+     "kl": "A"
     }
    ]
   },
@@ -720,11 +860,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -742,7 +884,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 822,
+      "l": 822
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -754,7 +902,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 124,
+      "l": 125
+     },
+     "kl": "V"
     },
     {
      "nr": "25",
@@ -774,7 +928,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 125,
+      "l": 125
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -790,7 +950,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 147,
+      "l": 147
+     },
+     "kl": "A"
     }
    ]
   },
@@ -798,11 +964,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -824,7 +992,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -832,11 +1001,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -862,7 +1033,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 44,
+      "l": 127
+     },
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -874,7 +1051,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 152,
+      "l": 153
+     },
+     "kl": "V"
     },
     {
      "nr": "31",
@@ -890,7 +1073,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 153,
+      "l": 153
+     },
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -911,7 +1100,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "VI. Beschwerdekammer"
+     "sektion": "VI. Beschwerdekammer",
+     "kl": "A"
     }
    ]
   },
@@ -919,11 +1109,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -935,11 +1127,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -951,11 +1145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -967,11 +1163,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -993,7 +1191,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -1009,7 +1208,14 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 5,
+      "l": 123
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1017,11 +1223,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1039,7 +1247,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 352,
+      "l": 368
+     },
+     "kl": "V"
     },
     {
      "nr": "35",
@@ -1055,7 +1269,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 368,
+      "l": 368
+     },
+     "kl": "U"
     },
     {
      "nr": "36",
@@ -1071,7 +1291,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 69,
+      "l": 69
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1079,11 +1305,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1101,7 +1329,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 197,
+      "l": 209
+     },
+     "kl": "V"
     },
     {
      "nr": "38",
@@ -1113,7 +1347,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 65,
+      "l": 66
+     },
+     "kl": "V"
     },
     {
      "nr": "39",
@@ -1129,7 +1369,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 66,
+      "l": 66
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1137,15 +1383,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Unterabschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Unterabschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_2/subch_1"
     }
    ],
    "marginalie": [
@@ -1157,15 +1406,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Unterabschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Unterabschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_2/subch_1"
     }
    ],
    "marginalie": [
@@ -1177,15 +1429,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Unterabschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Unterabschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_2/subch_1"
     }
    ],
    "marginalie": [
@@ -1207,7 +1462,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1215,15 +1471,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Unterabschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Unterabschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_2/subch_1"
     }
    ],
    "marginalie": [
@@ -1234,15 +1493,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Unterabschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Unterabschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_2/subch_1"
     }
    ],
    "marginalie": [
@@ -1260,7 +1522,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 73,
+      "l": 92
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1268,15 +1536,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1287,15 +1558,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1306,15 +1580,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1326,15 +1603,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1346,15 +1626,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1372,7 +1655,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 93,
+      "l": 452
+     },
+     "kl": "V"
     },
     {
      "nr": "45",
@@ -1384,7 +1673,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 148,
+      "l": 452
+     },
+     "kl": "V"
     },
     {
      "nr": "46",
@@ -1396,7 +1691,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 318,
+      "l": 452
+     },
+     "kl": "V"
     },
     {
      "nr": "47",
@@ -1412,7 +1713,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 452,
+      "l": 452
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1420,15 +1727,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1440,15 +1750,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1473,7 +1786,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 101,
+      "l": 334
+     },
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -1485,7 +1804,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 239,
+      "l": 334
+     },
+     "kl": "V"
     },
     {
      "nr": "50",
@@ -1497,7 +1822,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 294,
+      "l": 334
+     },
+     "kl": "V"
     },
     {
      "nr": "51",
@@ -1513,7 +1844,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 334,
+      "l": 334
+     },
+     "kl": "U"
     }
    ]
   },
@@ -1521,15 +1858,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1540,15 +1880,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1560,15 +1903,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1587,7 +1933,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 162,
+      "l": 285
+     },
+     "kl": "V"
     },
     {
      "nr": "53",
@@ -1603,7 +1955,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 285,
+      "l": 285
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1611,15 +1969,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1632,15 +1993,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1659,7 +2023,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 114,
+      "l": 114
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1667,15 +2037,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1688,15 +2061,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1708,15 +2084,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1728,15 +2107,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1749,15 +2131,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1771,15 +2156,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1793,15 +2181,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1815,15 +2206,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1836,15 +2230,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1857,15 +2254,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1884,7 +2284,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 75,
+      "l": 76
+     },
+     "kl": "V"
     },
     {
      "nr": "56",
@@ -1900,7 +2306,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 76,
+      "l": 76
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1908,15 +2320,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1929,15 +2344,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -1956,7 +2374,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 77,
+      "l": 348
+     },
+     "kl": "V"
     },
     {
      "nr": "58",
@@ -1972,14 +2396,26 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 89,
+      "l": 348
+     },
+     "kl": "A"
     },
     {
      "nr": "59",
      "text": "Bezeichnung gemäss nicht veröffentlichtem BRB vom 19. Dez. 1997.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 154,
+      "l": 348
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1987,15 +2423,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Unterabschnitt: Untersuchung"
+     "label": "Zweiter Unterabschnitt: Untersuchung",
+     "eId": "tit_3/chap_2/subch_2"
     }
    ],
    "marginalie": [
@@ -2016,7 +2455,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2024,15 +2469,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung"
+     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung",
+     "eId": "tit_3/chap_2/subch_3"
     }
    ],
    "marginalie": [
@@ -2044,15 +2492,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung"
+     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung",
+     "eId": "tit_3/chap_2/subch_3"
     }
    ],
    "marginalie": [
@@ -2064,15 +2515,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung"
+     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung",
+     "eId": "tit_3/chap_2/subch_3"
     }
    ],
    "marginalie": [
@@ -2094,7 +2548,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2102,15 +2562,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung"
+     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung",
+     "eId": "tit_3/chap_2/subch_3"
     }
    ],
    "marginalie": [
@@ -2132,7 +2595,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 321,
+      "l": 321
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2140,15 +2609,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung"
+     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung",
+     "eId": "tit_3/chap_2/subch_3"
     }
    ],
    "marginalie": [
@@ -2160,15 +2632,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung"
+     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung",
+     "eId": "tit_3/chap_2/subch_3"
     }
    ],
    "marginalie": [
@@ -2180,15 +2655,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung"
+     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung",
+     "eId": "tit_3/chap_2/subch_3"
     }
    ],
    "marginalie": [
@@ -2200,15 +2678,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung"
+     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung",
+     "eId": "tit_3/chap_2/subch_3"
     }
    ],
    "marginalie": [
@@ -2220,15 +2701,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung"
+     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung",
+     "eId": "tit_3/chap_2/subch_3"
     }
    ],
    "marginalie": [
@@ -2240,15 +2724,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung"
+     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung",
+     "eId": "tit_3/chap_2/subch_3"
     }
    ],
    "marginalie": [
@@ -2260,15 +2747,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung"
+     "label": "Dritter Unterabschnitt: Entscheid der Verwaltung",
+     "eId": "tit_3/chap_2/subch_3"
     }
    ],
    "marginalie": [
@@ -2279,11 +2769,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Gerichtliches Verfahren"
+     "label": "Dritter Abschnitt: Gerichtliches Verfahren",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2301,7 +2793,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 247,
+      "l": 596
+     },
+     "kl": "V"
     },
     {
      "nr": "64",
@@ -2317,7 +2815,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 383,
+      "l": 596
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -2329,7 +2833,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 29,
+      "l": 120
+     },
+     "kl": "V"
     },
     {
      "nr": "66",
@@ -2345,7 +2855,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 120,
+      "l": 120
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2353,11 +2869,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Gerichtliches Verfahren"
+     "label": "Dritter Abschnitt: Gerichtliches Verfahren",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2379,7 +2897,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 153,
+      "l": 153
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2387,11 +2911,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Gerichtliches Verfahren"
+     "label": "Dritter Abschnitt: Gerichtliches Verfahren",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2413,7 +2939,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 102,
+      "l": 102
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2421,11 +2953,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Gerichtliches Verfahren"
+     "label": "Dritter Abschnitt: Gerichtliches Verfahren",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2437,11 +2971,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Gerichtliches Verfahren"
+     "label": "Dritter Abschnitt: Gerichtliches Verfahren",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2453,11 +2989,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Gerichtliches Verfahren"
+     "label": "Dritter Abschnitt: Gerichtliches Verfahren",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2479,7 +3017,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 173,
+      "l": 173
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2487,11 +3031,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Gerichtliches Verfahren"
+     "label": "Dritter Abschnitt: Gerichtliches Verfahren",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2503,11 +3049,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Gerichtliches Verfahren"
+     "label": "Dritter Abschnitt: Gerichtliches Verfahren",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2529,7 +3077,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -2541,7 +3090,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 73,
+      "l": 91
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2549,11 +3104,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Gerichtliches Verfahren"
+     "label": "Dritter Abschnitt: Gerichtliches Verfahren",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2564,11 +3121,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Gerichtliches Verfahren"
+     "label": "Dritter Abschnitt: Gerichtliches Verfahren",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2589,7 +3148,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -2602,7 +3162,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 190,
+      "l": 191
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2610,11 +3176,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Gerichtliches Verfahren"
+     "label": "Dritter Abschnitt: Gerichtliches Verfahren",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2635,7 +3203,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2643,11 +3212,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Revision"
+     "label": "Vierter Abschnitt: Revision",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2659,11 +3230,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Revision"
+     "label": "Vierter Abschnitt: Revision",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2686,7 +3259,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 210,
+      "l": 210
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2694,11 +3273,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Revision"
+     "label": "Vierter Abschnitt: Revision",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2711,11 +3292,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Revision"
+     "label": "Vierter Abschnitt: Revision",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2728,11 +3311,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Revision"
+     "label": "Vierter Abschnitt: Revision",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2745,11 +3330,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Revision"
+     "label": "Vierter Abschnitt: Revision",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2770,7 +3357,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "77",
@@ -2783,7 +3371,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 147,
+      "l": 148
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2791,11 +3385,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Fünfter Abschnitt: Vollzug"
+     "label": "Fünfter Abschnitt: Vollzug",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -2806,11 +3402,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Fünfter Abschnitt: Vollzug"
+     "label": "Fünfter Abschnitt: Vollzug",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -2821,11 +3419,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Fünfter Abschnitt: Vollzug"
+     "label": "Fünfter Abschnitt: Vollzug",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -2836,11 +3436,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Fünfter Abschnitt: Vollzug"
+     "label": "Fünfter Abschnitt: Vollzug",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -2857,7 +3459,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 93,
+      "l": 296
+     },
+     "kl": "V"
     },
     {
      "nr": "79",
@@ -2869,7 +3477,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 265,
+      "l": 296
+     },
+     "kl": "V"
     },
     {
      "nr": "80",
@@ -2889,7 +3503,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 296,
+      "l": 296
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2897,11 +3517,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff"
+     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -2914,11 +3536,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff"
+     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -2931,11 +3555,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff"
+     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -2948,11 +3574,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff"
+     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -2970,7 +3598,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 141,
+      "l": 142
+     },
+     "kl": "V"
     },
     {
      "nr": "82",
@@ -2986,7 +3620,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 142,
+      "l": 142
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2994,11 +3634,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff"
+     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3016,7 +3658,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 181,
+      "l": 181
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3024,11 +3672,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff"
+     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3041,11 +3691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff"
+     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3058,11 +3710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff"
+     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3074,11 +3728,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff"
+     "label": "Sechster Abschnitt: Kosten, Entschädigung und Rückgriff",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3090,11 +3746,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Siebenter Abschnitt: Abwesenheitsverfahren"
+     "label": "Siebenter Abschnitt: Abwesenheitsverfahren",
+     "eId": "tit_3/chap_7"
     }
    ],
    "marginalie": []
@@ -3103,7 +3761,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Schlussbestimmungen"
+     "label": "Vierter Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3132,7 +3791,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 79,
+      "l": 187
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3140,7 +3805,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Schlussbestimmungen"
+     "label": "Vierter Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3151,7 +3817,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Schlussbestimmungen"
+     "label": "Vierter Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3264,7 +3931,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 247
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3272,7 +3945,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Schlussbestimmungen"
+     "label": "Vierter Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3284,7 +3958,8 @@
      "text": "BRB vom 25. Nov. 1974",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3292,11 +3967,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Schutz von Personendaten"
+     "label": "Dritter Abschnitt: Schutz von Personendaten",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3318,7 +3995,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Dritter Abschnitt: Schutz von Personendaten"
+     "sektion": "Dritter Abschnitt: Schutz von Personendaten",
+     "kl": "A"
     }
    ]
   },
@@ -3326,11 +4004,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Schutz von Personendaten"
+     "label": "Dritter Abschnitt: Schutz von Personendaten",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3341,11 +4021,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Schutz von Personendaten"
+     "label": "Dritter Abschnitt: Schutz von Personendaten",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3356,11 +4038,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Schutz von Personendaten"
+     "label": "Dritter Abschnitt: Schutz von Personendaten",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3371,11 +4055,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verwaltungsstrafrecht"
+     "label": "Zweiter Titel: Verwaltungsstrafrecht",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Schutz von Personendaten"
+     "label": "Dritter Abschnitt: Schutz von Personendaten",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3386,11 +4072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften"
+     "label": "Erster Abschnitt: Behörden; allgemeine Verfahrensvorschriften",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -3412,7 +4100,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3420,15 +4109,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Verwaltungsstrafverfahren"
+     "label": "Dritter Titel: Verwaltungsstrafverfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung"
+     "label": "Zweiter Abschnitt: Untersuchung und Strafverfügung der Verwaltung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Unterabschnitt: Allgemeine Bestimmungen"
+     "label": "Erster Unterabschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_2/subch_1"
     }
    ],
    "marginalie": [
@@ -3450,7 +4142,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

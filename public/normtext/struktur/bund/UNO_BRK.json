@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.109",
   "titel": "Übereinkommen über die Rechte von Menschen mit Behinderungen",
@@ -25,7 +25,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "2",
@@ -38,7 +39,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -51,7 +53,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -64,7 +67,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "5",
@@ -77,7 +81,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "6",
@@ -90,7 +95,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "7",
@@ -103,7 +109,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "8",
@@ -116,7 +123,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -208,7 +216,7 @@
   "15": {
    "gliederung": [],
    "marginalie": [
-    "Freiheit von Folter oder grausamer, unmenschlicheroder erniedrigender Behandlung oder Strafe"
+    "Freiheit von Folter oder grausamer, unmenschlicher oder erniedrigender Behandlung oder Strafe"
    ]
   },
   "16": {
@@ -265,7 +273,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 134,
+      "l": 458
+     },
+     "kl": "U"
     }
    ]
   },
@@ -382,7 +396,8 @@
      "text": "Österreich, Schweiz: Depositar",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     },
     {
      "nr": "11",
@@ -390,7 +405,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 56,
+      "l": 79
+     },
+     "kl": "U"
     }
    ]
   },
@@ -418,7 +439,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 494,
+      "l": 558
+     },
+     "kl": "U"
     }
    ]
   },

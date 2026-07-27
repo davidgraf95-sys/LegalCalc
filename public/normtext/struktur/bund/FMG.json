@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "784.10",
   "titel": "Fernmeldegesetz",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -51,7 +52,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "3",
@@ -63,7 +65,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -72,7 +75,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -101,7 +105,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -117,7 +122,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -125,7 +131,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -146,7 +153,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -160,7 +168,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 180,
+      "l": 237
+     },
+     "kl": "V"
     }
    ]
   },
@@ -168,7 +182,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -189,7 +204,8 @@
       }
      ],
      "absatz": null,
-     "item": "cbis"
+     "item": "cbis",
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -205,7 +221,8 @@
       }
      ],
      "absatz": null,
-     "item": "cter"
+     "item": "cter",
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -229,7 +246,8 @@
       }
      ],
      "absatz": null,
-     "item": "dbis"
+     "item": "dbis",
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -245,7 +263,8 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -261,7 +280,8 @@
       }
      ],
      "absatz": null,
-     "item": "ebis"
+     "item": "ebis",
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -277,7 +297,8 @@
       }
      ],
      "absatz": null,
-     "item": "eter"
+     "item": "eter",
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -293,7 +314,8 @@
       }
      ],
      "absatz": null,
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -309,7 +331,8 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -325,7 +348,8 @@
       }
      ],
      "absatz": null,
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -338,7 +362,14 @@
       }
      ],
      "absatz": null,
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 0,
+      "it": 12,
+      "o": 80,
+      "l": 81
+     },
+     "kl": "V"
     }
    ]
   },
@@ -346,11 +377,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -371,7 +404,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -379,11 +413,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -404,7 +440,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -412,11 +449,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -437,7 +476,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -445,11 +485,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -470,7 +512,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -486,7 +529,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 236,
+      "l": 236
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -502,7 +551,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -518,7 +568,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -534,7 +585,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 53,
+      "l": 234
+     },
+     "kl": "A"
     }
    ]
   },
@@ -542,11 +599,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -567,7 +626,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -575,11 +635,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -600,7 +662,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -608,11 +671,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Grundversorgungskonzession"
+     "label": "2. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -633,7 +698,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -649,7 +715,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 264,
+      "l": 264
+     },
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -666,7 +738,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Grundversorgungskonzession"
+     "sektion": "2. Abschnitt: Grundversorgungskonzession",
+     "kl": "A"
     }
    ]
   },
@@ -674,11 +747,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Grundversorgungskonzession"
+     "label": "2. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -699,7 +774,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -715,7 +791,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -723,11 +800,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Grundversorgungskonzession"
+     "label": "2. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -748,7 +827,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -764,7 +844,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 184,
+      "l": 184
+     },
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -780,7 +866,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -796,7 +883,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -812,7 +900,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -825,7 +914,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 2,
+      "l": 2
+     },
+     "kl": "V"
     },
     {
      "nr": "60",
@@ -841,7 +937,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 85,
+      "l": 85
+     },
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -857,7 +960,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 250,
+      "l": 250
+     },
+     "kl": "A"
     }
    ]
   },
@@ -865,11 +974,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Grundversorgungskonzession"
+     "label": "2. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -880,11 +991,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Grundversorgungskonzession"
+     "label": "2. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -903,7 +1016,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -911,11 +1025,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Grundversorgungskonzession"
+     "label": "2. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -936,7 +1052,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -944,11 +1061,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "3. Abschnitt: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -969,7 +1088,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -986,7 +1106,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "sektion": "3. Abschnitt: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "kl": "A"
     }
    ]
   },
@@ -994,11 +1115,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "3. Abschnitt: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1019,7 +1142,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1027,7 +1151,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Funk"
+     "label": "3. Kapitel: Funk",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1048,7 +1173,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1056,7 +1182,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Funk"
+     "label": "3. Kapitel: Funk",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1077,7 +1204,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "77",
@@ -1093,7 +1221,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1106,7 +1235,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 85,
+      "l": 159
+     },
+     "kl": "V"
     },
     {
      "nr": "79",
@@ -1122,7 +1258,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 364,
+      "l": 364
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1130,7 +1272,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Funk"
+     "label": "3. Kapitel: Funk",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1151,7 +1294,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "81",
@@ -1164,7 +1308,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 282,
+      "l": 330
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1172,7 +1322,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Funk"
+     "label": "3. Kapitel: Funk",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1193,7 +1344,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 247,
+      "l": 247
+     },
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -1209,7 +1366,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 62,
+      "l": 62
+     },
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -1225,7 +1388,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 139,
+      "l": 139
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1233,7 +1402,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Funk"
+     "label": "3. Kapitel: Funk",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1244,7 +1414,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Funk"
+     "label": "3. Kapitel: Funk",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1265,7 +1436,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1273,7 +1445,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Adressierungselemente"
+     "label": "4. Kapitel: Adressierungselemente",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1294,7 +1467,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1302,7 +1476,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Adressierungselemente"
+     "label": "4. Kapitel: Adressierungselemente",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1313,7 +1488,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Adressierungselemente"
+     "label": "4. Kapitel: Adressierungselemente",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1334,7 +1510,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1342,7 +1519,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1363,7 +1541,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -1379,7 +1558,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -1392,7 +1572,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 435,
+      "l": 475
+     },
+     "kl": "V"
     },
     {
      "nr": "105",
@@ -1408,7 +1594,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 475,
+      "l": 475
+     },
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -1424,7 +1616,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 167,
+      "l": 167
+     },
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -1440,7 +1638,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -1456,7 +1655,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 64,
+      "l": 64
+     },
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -1472,7 +1677,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 239,
+      "l": 578
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1480,7 +1691,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1502,7 +1714,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 285,
+      "l": 285
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1510,7 +1728,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1531,7 +1750,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 306,
+      "l": 306
+     },
+     "kl": "A"
     },
     {
      "nr": "114",
@@ -1547,7 +1772,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 379,
+      "l": 379
+     },
+     "kl": "A"
     },
     {
      "nr": "115",
@@ -1563,7 +1794,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 172,
+      "l": 172
+     },
+     "kl": "A"
     },
     {
      "nr": "116",
@@ -1579,7 +1816,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 219,
+      "l": 219
+     },
+     "kl": "A"
     },
     {
      "nr": "117",
@@ -1595,7 +1838,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 226,
+      "l": 226
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1603,7 +1852,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1624,7 +1874,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 348,
+      "l": 348
+     },
+     "kl": "A"
     },
     {
      "nr": "119",
@@ -1648,7 +1904,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 372,
+      "l": 372
+     },
+     "kl": "A"
     },
     {
      "nr": "120",
@@ -1672,7 +1934,14 @@
       }
      ],
      "absatz": "1ter",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 99,
+      "l": 99
+     },
+     "kl": "A"
     },
     {
      "nr": "121",
@@ -1688,7 +1957,13 @@
       }
      ],
      "absatz": "1quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 133,
+      "l": 133
+     },
+     "kl": "A"
     },
     {
      "nr": "122",
@@ -1704,7 +1979,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 144,
+      "l": 144
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1712,7 +1993,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1733,7 +2015,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 368,
+      "l": 368
+     },
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -1749,7 +2037,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 199,
+      "l": 404
+     },
+     "kl": "A"
     },
     {
      "nr": "126",
@@ -1765,7 +2059,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 182,
+      "l": 182
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1773,7 +2073,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1794,7 +2095,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 89,
+      "l": 184
+     },
+     "kl": "A"
     },
     {
      "nr": "133",
@@ -1807,7 +2114,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 183,
+      "l": 184
+     },
+     "kl": "V"
     },
     {
      "nr": "134",
@@ -1823,7 +2136,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 473,
+      "l": 473
+     },
+     "kl": "A"
     },
     {
      "nr": "135",
@@ -1839,7 +2158,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 210,
+      "l": 210
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1847,7 +2172,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1868,7 +2194,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1876,7 +2203,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Abgaben"
+     "label": "6. Kapitel: Abgaben",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1897,7 +2225,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1905,7 +2234,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Abgaben"
+     "label": "6. Kapitel: Abgaben",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1926,7 +2256,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "141",
@@ -1939,7 +2270,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 212,
+      "l": 213
+     },
+     "kl": "V"
     },
     {
      "nr": "142",
@@ -1959,7 +2296,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 213,
+      "l": 213
+     },
+     "kl": "A"
     },
     {
      "nr": "143",
@@ -1979,7 +2322,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 240,
+      "l": 240
+     },
+     "kl": "A"
     },
     {
      "nr": "144",
@@ -1999,7 +2348,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 280,
+      "l": 280
+     },
+     "kl": "A"
     },
     {
      "nr": "145",
@@ -2015,7 +2370,8 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "146",
@@ -2028,7 +2384,14 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 5,
+      "it": 2,
+      "o": 169,
+      "l": 170
+     },
+     "kl": "V"
     },
     {
      "nr": "147",
@@ -2044,7 +2407,8 @@
       }
      ],
      "absatz": "5",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -2052,7 +2416,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Abgaben"
+     "label": "6. Kapitel: Abgaben",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2073,7 +2438,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "150",
@@ -2089,7 +2455,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "151",
@@ -2105,7 +2472,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "152",
@@ -2121,7 +2489,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "153",
@@ -2137,7 +2506,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 316,
+      "l": 316
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2145,7 +2520,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Abgaben"
+     "label": "6. Kapitel: Abgaben",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2166,7 +2542,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2174,7 +2551,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Abgaben"
+     "label": "6. Kapitel: Abgaben",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2185,7 +2563,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2207,7 +2586,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "sektion": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "kl": "A"
     }
    ]
   },
@@ -2215,7 +2595,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -2234,7 +2615,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2242,7 +2624,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2263,7 +2646,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 228,
+      "l": 228
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2271,7 +2660,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2282,7 +2672,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Wichtige Landesinteressen"
+     "label": "8. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2303,7 +2694,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "167",
@@ -2319,7 +2711,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "168",
@@ -2332,7 +2730,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 76,
+      "l": 141
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2340,7 +2744,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Wichtige Landesinteressen"
+     "label": "8. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2361,7 +2766,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 330,
+      "l": 330
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2369,7 +2780,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Strafbestimmungen"
+     "label": "9. Kapitel: Strafbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2386,7 +2798,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 122,
+      "l": 122
+     },
+     "kl": "A"
     },
     {
      "nr": "172",
@@ -2398,7 +2816,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 205,
+      "l": 205
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2406,7 +2830,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Strafbestimmungen"
+     "label": "9. Kapitel: Strafbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2424,7 +2849,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 238,
+      "l": 238
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2432,7 +2863,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Strafbestimmungen"
+     "label": "9. Kapitel: Strafbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -2451,7 +2883,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2459,7 +2892,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Strafbestimmungen"
+     "label": "9. Kapitel: Strafbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2476,7 +2910,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 52,
+      "l": 52
+     },
+     "kl": "A"
     },
     {
      "nr": "176",
@@ -2492,7 +2932,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "177",
@@ -2508,7 +2949,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "178",
@@ -2524,7 +2966,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "179",
@@ -2540,7 +2983,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "180",
@@ -2556,7 +3000,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     }
    ]
   },
@@ -2564,7 +3009,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Strafbestimmungen"
+     "label": "9. Kapitel: Strafbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2575,7 +3021,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Strafbestimmungen"
+     "label": "9. Kapitel: Strafbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2594,7 +3041,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 70,
+      "l": 86
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2602,7 +3055,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Strafbestimmungen"
+     "label": "9. Kapitel: Strafbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2620,7 +3074,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 134,
+      "l": 158
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2628,7 +3088,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: ComCom"
+     "label": "10. Kapitel: ComCom",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -2639,7 +3100,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: ComCom"
+     "label": "10. Kapitel: ComCom",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -2650,7 +3112,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Aufsicht und Rechtsschutz"
+     "label": "11. Kapitel: Aufsicht und Rechtsschutz",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2671,7 +3134,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "184",
@@ -2687,7 +3151,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 56,
+      "l": 56
+     },
+     "kl": "A"
     },
     {
      "nr": "185",
@@ -2703,7 +3173,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -2711,7 +3182,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Aufsicht und Rechtsschutz"
+     "label": "11. Kapitel: Aufsicht und Rechtsschutz",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2732,7 +3204,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 165,
+      "l": 165
+     },
+     "kl": "A"
     },
     {
      "nr": "187",
@@ -2748,7 +3226,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 122,
+      "l": 122
+     },
+     "kl": "A"
     },
     {
      "nr": "188",
@@ -2764,7 +3248,14 @@
       }
      ],
      "absatz": "2bis",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 64,
+      "l": 64
+     },
+     "kl": "A"
     },
     {
      "nr": "189",
@@ -2780,7 +3271,13 @@
       }
      ],
      "absatz": "2ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 48,
+      "l": 48
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2788,7 +3285,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Aufsicht und Rechtsschutz"
+     "label": "11. Kapitel: Aufsicht und Rechtsschutz",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2809,7 +3307,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2817,7 +3316,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Aufsicht und Rechtsschutz"
+     "label": "11. Kapitel: Aufsicht und Rechtsschutz",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [],
@@ -2836,7 +3336,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2844,11 +3345,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug und Aufhebung bisherigen Rechts"
+     "label": "1. Abschnitt: Vollzug und Aufhebung bisherigen Rechts",
+     "eId": "chap_12/sec_1"
     }
    ],
    "marginalie": [
@@ -2859,11 +3362,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug und Aufhebung bisherigen Rechts"
+     "label": "1. Abschnitt: Vollzug und Aufhebung bisherigen Rechts",
+     "eId": "chap_12/sec_1"
     }
    ],
    "marginalie": [],
@@ -2882,7 +3387,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2890,11 +3396,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug und Aufhebung bisherigen Rechts"
+     "label": "1. Abschnitt: Vollzug und Aufhebung bisherigen Rechts",
+     "eId": "chap_12/sec_1"
     }
    ],
    "marginalie": [
@@ -2915,7 +3423,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "194",
@@ -2931,7 +3440,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 181,
+      "l": 181
+     },
+     "kl": "A"
     },
     {
      "nr": "195",
@@ -2947,7 +3462,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 142,
+      "l": 142
+     },
+     "kl": "A"
     },
     {
      "nr": "196",
@@ -2963,7 +3484,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 238,
+      "l": 238
+     },
+     "kl": "A"
     },
     {
      "nr": "197",
@@ -2979,7 +3506,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 327,
+      "l": 327
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2987,11 +3520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug und Aufhebung bisherigen Rechts"
+     "label": "1. Abschnitt: Vollzug und Aufhebung bisherigen Rechts",
+     "eId": "chap_12/sec_1"
     }
    ],
    "marginalie": [
@@ -3013,7 +3548,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 37,
+      "l": 54
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3021,11 +3562,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_12/sec_2"
     }
    ],
    "marginalie": [],
@@ -3044,7 +3587,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3052,11 +3596,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Referendum und Inkrafttreten"
+     "label": "3. Abschnitt: Referendum und Inkrafttreten",
+     "eId": "chap_12/sec_3"
     }
    ],
    "marginalie": [],
@@ -3075,14 +3621,21 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "203",
      "text": "BRB vom 6. Okt. 1997",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3090,11 +3643,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3115,7 +3670,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -3131,7 +3687,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 239,
+      "l": 455
+     },
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -3147,7 +3709,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 10,
+      "l": 72
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3155,11 +3723,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3180,7 +3750,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3188,11 +3759,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3221,7 +3794,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3229,11 +3803,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3254,7 +3830,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3262,11 +3839,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3295,7 +3874,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3303,11 +3883,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3328,7 +3910,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3336,11 +3919,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3361,7 +3946,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3369,11 +3955,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3402,7 +3990,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3410,11 +3999,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3435,7 +4026,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3443,11 +4035,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3468,7 +4062,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -3484,7 +4079,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 263,
+      "l": 314
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3492,11 +4093,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3517,7 +4120,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -3533,7 +4137,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 292,
+      "l": 386
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -3549,7 +4159,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 318,
+      "l": 318
+     },
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -3565,7 +4181,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 232,
+      "l": 326
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3573,11 +4195,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Grundversorgungskonzession"
+     "label": "2. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3606,7 +4230,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3614,11 +4239,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Grundversorgungskonzession"
+     "label": "2. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3639,7 +4266,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3647,11 +4275,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "3. Abschnitt: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -3672,7 +4302,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -3688,7 +4319,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 163,
+      "l": 163
+     },
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -3704,7 +4341,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 151,
+      "l": 323
+     },
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -3720,7 +4363,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 256,
+      "l": 360
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3728,11 +4377,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "3. Abschnitt: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -3759,7 +4410,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3767,7 +4419,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Funk"
+     "label": "3. Kapitel: Funk",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -3788,7 +4441,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3796,7 +4450,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Funk"
+     "label": "3. Kapitel: Funk",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -3823,7 +4478,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3831,7 +4487,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Funk"
+     "label": "3. Kapitel: Funk",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -3852,7 +4509,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3860,7 +4518,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Funk"
+     "label": "3. Kapitel: Funk",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -3881,7 +4540,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3889,7 +4549,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Funk"
+     "label": "3. Kapitel: Funk",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -3918,7 +4579,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3926,7 +4588,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Funk"
+     "label": "3. Kapitel: Funk",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -3947,7 +4610,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3955,7 +4619,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Funk"
+     "label": "3. Kapitel: Funk",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -3976,7 +4641,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "88",
@@ -3992,7 +4658,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 268,
+      "l": 268
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4000,7 +4672,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Adressierungselemente"
+     "label": "4. Kapitel: Adressierungselemente",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -4021,7 +4694,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4029,7 +4703,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Adressierungselemente"
+     "label": "4. Kapitel: Adressierungselemente",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -4050,7 +4725,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4058,7 +4734,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Adressierungselemente"
+     "label": "4. Kapitel: Adressierungselemente",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -4079,7 +4756,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "97",
@@ -4092,7 +4770,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 228,
+      "l": 242
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4100,7 +4784,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Adressierungselemente"
+     "label": "4. Kapitel: Adressierungselemente",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -4121,7 +4806,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4129,7 +4815,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Adressierungselemente"
+     "label": "4. Kapitel: Adressierungselemente",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -4150,7 +4837,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4158,7 +4846,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Adressierungselemente"
+     "label": "4. Kapitel: Adressierungselemente",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -4179,7 +4868,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4187,7 +4877,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4216,7 +4907,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4224,7 +4916,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4245,7 +4938,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4253,7 +4947,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4274,7 +4969,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4282,7 +4978,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4303,7 +5000,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "128",
@@ -4319,7 +5017,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 261,
+      "l": 261
+     },
+     "kl": "A"
     },
     {
      "nr": "129",
@@ -4335,7 +5039,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 164,
+      "l": 164
+     },
+     "kl": "A"
     },
     {
      "nr": "130",
@@ -4351,7 +5062,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 241,
+      "l": 241
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4359,7 +5076,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4380,7 +5098,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4388,7 +5107,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4409,7 +5129,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4417,7 +5138,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Fernmeldeanlagen"
+     "label": "5. Kapitel: Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4438,7 +5160,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4446,7 +5169,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Abgaben"
+     "label": "6. Kapitel: Abgaben",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4467,7 +5191,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4475,11 +5200,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4500,7 +5227,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4508,7 +5236,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -4529,7 +5258,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "159",
@@ -4545,7 +5275,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "160",
@@ -4558,7 +5289,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 187
+     },
+     "kl": "V"
     },
     {
      "nr": "161",
@@ -4574,7 +5311,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 187,
+      "l": 187
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4582,7 +5325,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -4603,7 +5347,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4611,7 +5356,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -4632,7 +5378,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4640,7 +5387,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "7. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -4661,7 +5409,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "165",
@@ -4674,7 +5423,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 100,
+      "l": 400
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4682,7 +5437,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Wichtige Landesinteressen"
+     "label": "8. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4711,7 +5467,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4719,11 +5476,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_12/sec_2"
     }
    ],
    "marginalie": [],
@@ -4742,7 +5501,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4750,11 +5510,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_12/sec_2"
     }
    ],
    "marginalie": [
@@ -4775,7 +5537,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4783,11 +5546,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4808,7 +5573,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -4821,7 +5587,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 114,
+      "l": 210
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4829,11 +5602,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fernmeldedienste"
+     "label": "2. Kapitel: Fernmeldedienste",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -4852,7 +5627,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

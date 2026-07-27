@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "211.231",
   "titel": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -45,7 +46,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -54,7 +56,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand"
+     "label": "1. Kapitel: Gegenstand",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -70,7 +73,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 158,
+      "l": 250
+     },
+     "kl": "Z"
     },
     {
      "nr": "3",
@@ -91,7 +100,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Kapitel: Gegenstand"
+     "sektion": "1. Kapitel: Gegenstand",
+     "kl": "A"
     }
    ]
   },
@@ -99,7 +109,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand"
+     "label": "1. Kapitel: Gegenstand",
+     "eId": "chap_1"
     }
    ],
    "marginalie": []
@@ -108,11 +119,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Die Eintragung der Partnerschaft"
+     "label": "2. Kapitel: Die Eintragung der Partnerschaft",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ungültigkeit"
+     "label": "3. Abschnitt: Ungültigkeit",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -133,7 +146,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -141,11 +155,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Die Eintragung der Partnerschaft"
+     "label": "2. Kapitel: Die Eintragung der Partnerschaft",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ungültigkeit"
+     "label": "3. Abschnitt: Ungültigkeit",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -166,7 +182,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -174,11 +191,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Die Eintragung der Partnerschaft"
+     "label": "2. Kapitel: Die Eintragung der Partnerschaft",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ungültigkeit"
+     "label": "3. Abschnitt: Ungültigkeit",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -189,11 +208,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten"
+     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -204,11 +225,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten"
+     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -225,7 +248,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 188,
+      "l": 200
+     },
+     "kl": "V"
     },
     {
      "nr": "13",
@@ -241,7 +270,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 200,
+      "l": 200
+     },
+     "kl": "A"
     }
    ]
   },
@@ -249,11 +284,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten"
+     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -264,11 +301,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten"
+     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -279,11 +318,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten"
+     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -294,11 +335,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten"
+     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -315,7 +358,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 143,
+      "l": 167
+     },
+     "kl": "V"
     },
     {
      "nr": "15",
@@ -331,7 +380,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 167,
+      "l": 167
+     },
+     "kl": "A"
     }
    ]
   },
@@ -339,11 +394,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vermögensrecht"
+     "label": "2. Abschnitt: Vermögensrecht",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -354,11 +411,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vermögensrecht"
+     "label": "2. Abschnitt: Vermögensrecht",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -369,11 +428,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vermögensrecht"
+     "label": "2. Abschnitt: Vermögensrecht",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -384,11 +445,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vermögensrecht"
+     "label": "2. Abschnitt: Vermögensrecht",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -399,11 +462,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vermögensrecht"
+     "label": "2. Abschnitt: Vermögensrecht",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -414,11 +479,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vermögensrecht"
+     "label": "2. Abschnitt: Vermögensrecht",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -429,11 +496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vermögensrecht"
+     "label": "2. Abschnitt: Vermögensrecht",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -444,11 +513,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vermögensrecht"
+     "label": "2. Abschnitt: Vermögensrecht",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -465,7 +536,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 254,
+      "l": 268
+     },
+     "kl": "V"
     },
     {
      "nr": "17",
@@ -481,7 +558,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 268,
+      "l": 268
+     },
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -497,7 +580,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -505,11 +594,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Wirkungen"
+     "label": "3. Abschnitt: Besondere Wirkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -532,7 +623,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -540,11 +632,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Wirkungen"
+     "label": "3. Abschnitt: Besondere Wirkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -561,7 +655,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 77,
+      "l": 211
+     },
+     "kl": "V"
     }
    ]
   },
@@ -569,11 +669,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Wirkungen"
+     "label": "3. Abschnitt: Besondere Wirkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -594,7 +696,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -602,11 +705,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen"
+     "label": "1. Abschnitt: Voraussetzungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -617,11 +722,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen"
+     "label": "1. Abschnitt: Voraussetzungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -632,11 +739,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Folgen"
+     "label": "2. Abschnitt: Folgen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -657,7 +766,14 @@
       }
      ],
      "absatz": "2",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 193,
+      "l": 193
+     },
+     "kl": "A"
     }
    ]
   },
@@ -665,11 +781,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Folgen"
+     "label": "2. Abschnitt: Folgen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -680,11 +798,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Folgen"
+     "label": "2. Abschnitt: Folgen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -695,11 +815,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Folgen"
+     "label": "2. Abschnitt: Folgen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -716,7 +838,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 65,
+      "l": 87
+     },
+     "kl": "V"
     },
     {
      "nr": "27",
@@ -732,7 +860,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 87,
+      "l": 87
+     },
+     "kl": "A"
     }
    ]
   },
@@ -740,7 +874,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
+     "label": "4a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -765,7 +900,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -786,7 +922,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
+     "sektion": "4a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe",
+     "kl": "A"
     }
    ]
   },
@@ -794,7 +931,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -805,7 +943,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -823,7 +962,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "U"
     }
    ]
   },
@@ -831,7 +976,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -843,7 +989,8 @@
      "text": "BRB vom 9. Dez. 2005",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -851,11 +998,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten"
+     "label": "1. Abschnitt: Allgemeine Rechte und Pflichten",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -880,7 +1029,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -888,11 +1038,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft"
+     "label": "3. Kapitel: Wirkungen der eingetragenen Partnerschaft",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Wirkungen"
+     "label": "3. Abschnitt: Besondere Wirkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -913,7 +1065,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -926,7 +1079,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 118,
+      "l": 140
+     },
+     "kl": "V"
     }
    ]
   },
@@ -934,11 +1093,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "4. Kapitel: Gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Folgen"
+     "label": "2. Abschnitt: Folgen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -963,7 +1124,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -971,7 +1133,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
+     "label": "4a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -996,7 +1159,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1004,7 +1168,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1029,7 +1194,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1037,7 +1203,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1058,7 +1225,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1066,11 +1234,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Die Eintragung der Partnerschaft"
+     "label": "2. Kapitel: Die Eintragung der Partnerschaft",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: …"
+     "label": "1. Abschnitt: …",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -1093,7 +1263,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1101,11 +1272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Die Eintragung der Partnerschaft"
+     "label": "2. Kapitel: Die Eintragung der Partnerschaft",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -1128,7 +1301,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1136,11 +1310,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Die Eintragung der Partnerschaft"
+     "label": "2. Kapitel: Die Eintragung der Partnerschaft",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ungültigkeit"
+     "label": "3. Abschnitt: Ungültigkeit",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1161,7 +1337,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1169,11 +1346,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Die Eintragung der Partnerschaft"
+     "label": "2. Kapitel: Die Eintragung der Partnerschaft",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ungültigkeit"
+     "label": "3. Abschnitt: Ungültigkeit",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1194,7 +1373,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

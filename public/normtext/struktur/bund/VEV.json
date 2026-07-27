@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "142.204",
   "titel": "Verordnung über die Einreise und die Visumerteilung",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -47,7 +48,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -56,7 +58,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Abschnitt: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -73,7 +76,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 241,
+      "l": 241
+     },
+     "kl": "A"
     },
     {
      "nr": "4",
@@ -85,21 +94,41 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 156,
+      "l": 156
+     },
+     "kl": "A"
     },
     {
      "nr": "5",
      "text": "Verordnung (EU) Nr. 514/2014 des Europäischen Parlaments und des Rates vom 16. April 2014 zur Festlegung allgemeiner Bestimmungen für den Asyl-, Migrations- und Integrationsfonds und das Instrument für die finanzielle Unterstützung der polizeilichen Zusammenarbeit, der Kriminalprävention und Kriminalitätsbekämpfung und des Krisenmanagements, Fassung gemäss ABl. L 150 vom 20.5.2014, S. 112.",
      "links": [],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 3,
+      "it": 0,
+      "o": 28,
+      "l": 29
+     },
+     "kl": "V"
     },
     {
      "nr": "6",
      "text": "Verordnung (EU) Nr. 515/2014 des Europäischen Parlaments und des Rates vom 16. April 2014 zur Schaffung eines Instruments für die finanzielle Unterstützung für Aussengrenzen und Visa im Rahmen des Fonds für die innere Sicherheit und zur Aufhebung der Entscheidung Nr. 574/2007/EG, Fassung gemäss ABl. L 150 vom 20.5.2014, S. 143.",
      "links": [],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 28,
+      "l": 29
+     },
+     "kl": "V"
     },
     {
      "nr": "7",
@@ -115,14 +144,22 @@
       }
      ],
      "absatz": "4",
-     "item": "bbis"
+     "item": "bbis",
+     "kl": "A"
     },
     {
      "nr": "8",
      "text": "Verordnung (EU) 2017/2226 des Europäischen Parlaments und des Rates vom 30. November 2017 über ein Einreise-/Ausreisesystem (EES) zur Erfassung der Ein- und Ausreisedaten sowie der Einreiseverweigerungsdaten von Drittstaatsangehörigen an den Aussengrenzen der Mitgliedstaaten und zur Festlegung der Bedingungen für den Zugang zum EES zu Gefahrenabwehr- und Strafverfolgungszwecken und zur Änderung des zur Durchführung des Übereinkommens von Schengen sowie der Verordnungen (EG) Nr. 767/2008 und (EU) Nr. 1077/2011, ABl. L 327 vom 9.12.2017, S. 20; zuletzt geändert durch Verordnung (EU) 2021/1134, ABl. L 248 vom 13.7.2021, S. 11.",
      "links": [],
      "absatz": "4",
-     "item": "bbis"
+     "item": "bbis",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 25,
+      "l": 26
+     },
+     "kl": "V"
     },
     {
      "nr": "9",
@@ -134,14 +171,22 @@
       }
      ],
      "absatz": "4",
-     "item": "bter"
+     "item": "bter",
+     "kl": "A"
     },
     {
      "nr": "10",
      "text": "Verordnung (EU) 2018/1240 des Europäischen Parlaments und des Rates vom 12. September 2018 über die Einrichtung eines Europäischen Reiseinformations- und ‑genehmigungssystems (ETIAS) und zur Änderung der Verordnungen (EU) Nr. 1077/2011, (EU) Nr. 515/2014, (EU) 2016/399, (EU) 2016/1624 und (EU) 2017/2226, ABl. L 236 vom 19.9.2018, S. 1; zuletzt geändert durch Verordnung (EU) 2021/1152, ABl. L 249 vom 14.7.2021, S. 15.",
      "links": [],
      "absatz": "4",
-     "item": "bter"
+     "item": "bter",
+     "pos": {
+      "b": 3,
+      "it": 3,
+      "o": 25,
+      "l": 26
+     },
+     "kl": "V"
     },
     {
      "nr": "11",
@@ -153,14 +198,22 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "12",
      "text": "Verordnung (EG) Nr. 810/2009 des Europäischen Parlaments und des Rates vom 13. Juli 2009 über einen Visakodex der Gemeinschaft (Visakodex), ABl. L 243 vom 15.9.2009, S. 1; zuletzt geändert durch Verordnung (EU) 2024/1415, ABl. L, 2024/1415, 22.05.2024.",
      "links": [],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 4,
+      "o": 28,
+      "l": 41
+     },
+     "kl": "V"
     },
     {
      "nr": "13",
@@ -176,14 +229,22 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "14",
      "text": "Verordnung (EU) 2019/817 des Europäischen Parlaments und des Rates vom 20. Mai 2019 zur Errichtung eines Rahmens für die Interoperabilität zwischen EU-Informationssystemen in den Bereichen Grenzen und Visa und zur Änderung der Verordnungen (EG) Nr. 767/2008, (EU) 2016/399, (EU) 2017/2226, (EU) 2018/240, (EU) 2018/1726 und (EU) 2018/1861 des Europäischen Parlaments und des Rates, der Entscheidung 2004/512/EG des Rates und des Beschlusses 2008/633/JI des Rates, ABl. L 135 vom 22.5.2019, S. 27; zuletzt geändert durch Verordnung (EU) 2021/1152, ABl. L 249 vom 14.7.2021, S. 15.",
      "links": [],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 5,
+      "o": 24,
+      "l": 25
+     },
+     "kl": "V"
     },
     {
      "nr": "15",
@@ -199,14 +260,22 @@
       }
      ],
      "absatz": "4",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "16",
      "text": "Verordnung (EU) 2019/818 des Europäischen Parlaments und des Rates vom 20. Mai 2019 zur Errichtung eines Rahmens für die Interoperabilität zwischen EU-Informationssystemen (polizeiliche und justizielle Zusammenarbeit, Asyl und Migration) und zur Änderung der Verordnungen (EU) 2018/1726, (EU) 2018/1862 und (EU) 2019/816, ABl. L 135 vom 22.5.2019, S. 85; zuletzt geändert durch Verordnung (EU) 2021/1150, ABl. L 249 vom 14.7.2021, S. 1.",
      "links": [],
      "absatz": "4",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 3,
+      "it": 6,
+      "o": 24,
+      "l": 25
+     },
+     "kl": "V"
     },
     {
      "nr": "17",
@@ -222,14 +291,22 @@
       }
      ],
      "absatz": "4",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "18",
      "text": "Verordnung (EG) Nr. 1683/95 des Rates vom 29. Mai 1995 über eine einheitliche Visagestaltung, ABl. L 164 vom 14.7.1995, S. 1; zuletzt geändert durch Verordnung (EU) 2023/2685, ABl. L, 2023/2685, 7.12.2023.",
      "links": [],
      "absatz": "4",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 3,
+      "it": 7,
+      "o": 27,
+      "l": 28
+     },
+     "kl": "V"
     },
     {
      "nr": "19",
@@ -241,14 +318,22 @@
       }
      ],
      "absatz": "4",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "20",
      "text": "Verordnung (EG) Nr. 1030/2002 des Rates vom 13. Juni 2002 zur einheitlichen Gestaltung des Aufenthaltstitels für Drittstaatenangehörige, ABl. L 157 vom 15.6.2002, S. 1; zuletzt geändert durch Verordnung (EU) 2017/1954, ABl. L 286 vom 1.11.2017, S. 9.",
      "links": [],
      "absatz": "4",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 3,
+      "it": 8,
+      "o": 29,
+      "l": 30
+     },
+     "kl": "V"
     },
     {
      "nr": "21",
@@ -264,14 +349,22 @@
       }
      ],
      "absatz": "4",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "22",
      "text": "Verordnung (EG) Nr. 767/2008 des Europäischen Parlaments und des Rates vom 9. Juli 2008 über das Visa-Informationssystem (VIS) und den Datenaustausch zwischen den Mitgliedstaaten über Visa für einen kurzfristigen Aufenthalt (VIS-Verordnung), ABl L 218 vom 13.8.2008, S. 60; zuletzt geändert durch Verordnung (EU) 2023/2667, ABl. L, 2023/2667, 7.12.2023.",
      "links": [],
      "absatz": "4",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 3,
+      "it": 9,
+      "o": 28,
+      "l": 29
+     },
+     "kl": "V"
     },
     {
      "nr": "23",
@@ -283,14 +376,22 @@
       }
      ],
      "absatz": "4",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "24",
      "text": "Verordnung (EU) 2021/1148 des Europäischen Parlaments und des Rates vom 7. Juli 2021 zur Schaffung eines Instruments für finanzielle Hilfe im Bereich Grenzverwaltung und Visumpolitik im Rahmen des Fonds für integrierte Grenzverwaltung, ABl. L 251 vom 15.7.2021, S. 48.",
      "links": [],
      "absatz": "4",
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 3,
+      "it": 10,
+      "o": 25,
+      "l": 26
+     },
+     "kl": "V"
     },
     {
      "nr": "25",
@@ -302,14 +403,22 @@
       }
      ],
      "absatz": "4",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     },
     {
      "nr": "26",
      "text": "Verordnung (EU) 2021/1060 des Europäischen Parlaments und des Rates vom 24. Juni 2021 mit gemeinsamen Bestimmungen für den Europäischen Fonds für regionale Entwicklung, den Europäischen Sozialfonds Plus, den Kohäsionsfonds, den Fonds für einen gerechten Übergang und den Europäischen Meeres-, Fischerei- und Aquakulturfonds sowie mit Haushaltsvorschriften für diese Fonds und für den Asyl-, Migrations- und Integrationsfonds, den Fonds für die innere Sicherheit und das Instrument für finanzielle Hilfe im Bereich Grenzverwaltung und Visumpolitik, ABl. L 231 vom 30.6.2021, S. 159.",
      "links": [],
      "absatz": "4",
-     "item": "j"
+     "item": "j",
+     "pos": {
+      "b": 3,
+      "it": 11,
+      "o": 25,
+      "l": 26
+     },
+     "kl": "V"
     },
     {
      "nr": "27",
@@ -321,14 +430,22 @@
       }
      ],
      "absatz": "4",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "28",
      "text": "Beschluss Nr. 1105/2011/EU des Europäischen Parlaments und des Rates vom 25. Oktober 2011 über die Liste der visierfähigen Reisedokumente, die den Inhaber zum Überschreiten der Aussengrenzen berechtigen, und über die Schaffung eines Verfahrens zur Aufstellung dieser Liste, ABl. L 287 vom 4.11.2011, S. 9.",
      "links": [],
      "absatz": "4",
-     "item": "k"
+     "item": "k",
+     "pos": {
+      "b": 3,
+      "it": 12,
+      "o": 26,
+      "l": 27
+     },
+     "kl": "U"
     },
     {
      "nr": "29",
@@ -340,14 +457,22 @@
       }
      ],
      "absatz": "4",
-     "item": "l"
+     "item": "l",
+     "kl": "A"
     },
     {
      "nr": "30",
      "text": "Verordnung (EG) Nr. 694/2003 des Rates vom 14. April 2003 über einheitliche Formate von Dokumenten für den erleichterten Transit (FTD) und Dokumenten für den erleichterten Transit im Eisenbahnverkehr (FRTD) gemäss der Verordnung (EG) Nr. 693/2003, ABl. L 99 vom 17. April 2003, S. 15; zuletzt geändert durch Verordnung (EU) 2023/2667, ABl. L, 2023/2667, 7.12.2023.",
      "links": [],
      "absatz": "4",
-     "item": "l"
+     "item": "l",
+     "pos": {
+      "b": 3,
+      "it": 13,
+      "o": 28,
+      "l": 29
+     },
+     "kl": "V"
     },
     {
      "nr": "31",
@@ -359,14 +484,22 @@
       }
      ],
      "absatz": "4",
-     "item": "m"
+     "item": "m",
+     "kl": "A"
     },
     {
      "nr": "32",
      "text": "Verordnung (EU) 2016/399 des Europäischen Parlaments und des Rates vom 9. März 2016 über einen Gemeinschaftskodex für das Überschreiten der Grenzen durch Personen (Schengener Grenzkodex), ABl. L 77 vom 23.3.2016, S. 1; zuletzt geändert durch Verordnung (EU) 2024/1717, ABl. L, 2024/1717, 20.06.2024.",
      "links": [],
      "absatz": "4",
-     "item": "m"
+     "item": "m",
+     "pos": {
+      "b": 3,
+      "it": 14,
+      "o": 24,
+      "l": 25
+     },
+     "kl": "V"
     },
     {
      "nr": "33",
@@ -378,14 +511,22 @@
       }
      ],
      "absatz": "4",
-     "item": "n"
+     "item": "n",
+     "kl": "A"
     },
     {
      "nr": "34",
      "text": "Verordnung (EU) 2024/1356 des Europäischen Parlaments und des Rates vom 14. Mai 2024 zur Einführung der Überprüfung von Drittstaatsangehörigen an den Aussengrenzen und zur Änderung der Verordnungen (EG) Nr. 767/2008, (EU) 2017/2226, (EU) 2018/1240 und (EU) 2019/817, Fassung gemäss ABl. L, 2024/1356, 22.5.2024.",
      "links": [],
      "absatz": "4",
-     "item": "n"
+     "item": "n",
+     "pos": {
+      "b": 3,
+      "it": 15,
+      "o": 25,
+      "l": 26
+     },
+     "kl": "V"
     },
     {
      "nr": "35",
@@ -397,14 +538,22 @@
       }
      ],
      "absatz": "4",
-     "item": "o"
+     "item": "o",
+     "kl": "A"
     },
     {
      "nr": "36",
      "text": "Verordnung (EU) 2025/12 des Europäischen Parlaments und des Rates vom 19. Dezember 2024 über die Erhebung und Übermittlung vorab übermittelter Fluggastdaten zur Verbesserung und Erleichterung der Kontrollen an den Aussengrenzen, zur Änderung der Verordnungen (EU) 2018/1726 und (EU) 2019/817 sowie zur Aufhebung der Richtlinie 2004/82/EG des Rates, Fassung gemäss ABl. L, 2025/12, 8.1.2025.",
      "links": [],
      "absatz": "4",
-     "item": "o"
+     "item": "o",
+     "pos": {
+      "b": 3,
+      "it": 16,
+      "o": 23,
+      "l": 24
+     },
+     "kl": "V"
     },
     {
      "nr": "37",
@@ -416,7 +565,14 @@
       }
      ],
      "absatz": "4",
-     "item": "o"
+     "item": "o",
+     "pos": {
+      "b": 3,
+      "it": 16,
+      "o": 24,
+      "l": 24
+     },
+     "kl": "A"
     }
    ]
   },
@@ -424,7 +580,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Abschnitt: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -436,7 +593,14 @@
      "text": "Diese Abkommen sind in Anhang 1 aufgeführt.",
      "links": [],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 118,
+      "l": 152
+     },
+     "kl": "U"
     },
     {
      "nr": "39",
@@ -448,7 +612,14 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 350,
+      "l": 350
+     },
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -460,7 +631,14 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 322,
+      "l": 322
+     },
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -472,7 +650,8 @@
       }
      ],
      "absatz": null,
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -484,7 +663,8 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -496,7 +676,8 @@
       }
      ],
      "absatz": null,
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     }
    ]
   },
@@ -504,7 +685,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -516,7 +698,13 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 110,
+      "l": 111
+     },
+     "kl": "V"
     },
     {
      "nr": "45",
@@ -528,14 +716,26 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 111,
+      "l": 111
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 275,
+      "l": 377
+     },
+     "kl": "V"
     }
    ]
   },
@@ -543,7 +743,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -555,7 +756,13 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 170,
+      "l": 224
+     },
+     "kl": "V"
     },
     {
      "nr": "48",
@@ -567,7 +774,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 224,
+      "l": 224
+     },
+     "kl": "A"
     }
    ]
   },
@@ -575,7 +788,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -586,7 +800,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -603,7 +818,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -615,7 +831,8 @@
       }
      ],
      "absatz": "2",
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -627,7 +844,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 99,
+      "l": 99
+     },
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -640,7 +864,14 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 3,
+      "o": 165,
+      "l": 215
+     },
+     "kl": "V"
     }
    ]
   },
@@ -648,7 +879,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -659,7 +891,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -671,7 +904,13 @@
      "text": "Verordnung (EU) 2018/1806 des Europäischen Parlaments und des Rates vom 14. November 2018 zur Aufstellung der Liste der Drittländer, deren Staatsangehörige beim Überschreiten der Aussengrenzen im Besitz eines Visums sein müssen, sowie der Liste der Drittländer, deren Staatsangehörige von dieser Visumpflicht befreit sind, ABl. L 303 vom 28.11.2018, S. 39; zuletzt geändert durch Verordnung (EU) 2025/2441, ABl L, 2025/2441, 10.12.2025.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 75,
+      "l": 151
+     },
+     "kl": "V"
     },
     {
      "nr": "54",
@@ -683,7 +922,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 151,
+      "l": 151
+     },
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -695,21 +940,36 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "56",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 281,
+      "l": 283
+     },
+     "kl": "V"
     },
     {
      "nr": "57",
      "text": "Beschluss 94/795/JI des Rates vom 30. November 1994 über die vom Rat aufgrund von Artikel K.3 Absatz 2 Buchstabe b) des Vertrages über die Europäische Union beschlossene gemeinsame Massnahme über Reiseerleichterungen für Schüler von Drittstaaten mit Wohnsitz in einem Mitgliedstaat, Fassung gemäss ABl. L 327 vom 19.12.1994, S. 1.",
      "links": [],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 310,
+      "l": 356
+     },
+     "kl": "U"
     },
     {
      "nr": "58",
@@ -721,7 +981,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -734,7 +995,14 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 184,
+      "l": 465
+     },
+     "kl": "V"
     },
     {
      "nr": "60",
@@ -747,7 +1015,14 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 363,
+      "l": 465
+     },
+     "kl": "V"
     },
     {
      "nr": "61",
@@ -759,7 +1034,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "62",
@@ -772,7 +1048,14 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 191,
+      "l": 294
+     },
+     "kl": "V"
     },
     {
      "nr": "63",
@@ -784,7 +1067,8 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -797,7 +1081,14 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 1,
+      "it": 7,
+      "o": 252,
+      "l": 269
+     },
+     "kl": "V"
     },
     {
      "nr": "65",
@@ -809,7 +1100,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 488,
+      "l": 488
+     },
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -821,7 +1118,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 326,
+      "l": 326
+     },
+     "kl": "A"
     }
    ]
   },
@@ -829,11 +1132,12 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
-    "Visumpflicht für längerfristigeAufenthalte"
+    "Visumpflicht für längerfristige Aufenthalte"
    ],
    "fussnoten": [
     {
@@ -846,7 +1150,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 316,
+      "l": 316
+     },
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -858,7 +1168,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 267,
+      "l": 267
+     },
+     "kl": "A"
     }
    ]
   },
@@ -866,7 +1182,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -878,7 +1195,14 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 47,
+      "l": 96
+     },
+     "kl": "V"
     },
     {
      "nr": "70",
@@ -890,7 +1214,8 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -902,7 +1227,8 @@
       }
      ],
      "absatz": "4",
-     "item": "1"
+     "item": "1",
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -914,7 +1240,8 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -926,7 +1253,8 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -938,7 +1266,14 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 8,
+      "o": 121,
+      "l": 710
+     },
+     "kl": "V"
     },
     {
      "nr": "75",
@@ -951,7 +1286,14 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 8,
+      "o": 426,
+      "l": 710
+     },
+     "kl": "V"
     },
     {
      "nr": "76",
@@ -964,7 +1306,14 @@
       }
      ],
      "absatz": "4",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 3,
+      "it": 10,
+      "o": 107,
+      "l": 152
+     },
+     "kl": "V"
     },
     {
      "nr": "77",
@@ -976,7 +1325,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 207,
+      "l": 207
+     },
+     "kl": "A"
     }
    ]
   },
@@ -984,7 +1339,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1001,7 +1357,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -1009,7 +1366,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1021,7 +1379,13 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 198,
+      "l": 199
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1029,7 +1393,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1047,7 +1412,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 166,
+      "l": 178
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1055,7 +1426,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1073,7 +1445,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 80,
+      "l": 166
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1081,7 +1459,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1092,7 +1471,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1103,7 +1483,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1115,7 +1496,13 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 166,
+      "l": 175
+     },
+     "kl": "V"
     },
     {
      "nr": "84",
@@ -1127,7 +1514,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 170,
+      "l": 170
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1135,7 +1528,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1146,7 +1540,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1159,7 +1554,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 158,
+      "l": 227
+     },
+     "kl": "V"
     },
     {
      "nr": "86",
@@ -1173,7 +1574,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 215,
+      "l": 227
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1181,7 +1588,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [],
@@ -1196,7 +1604,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1204,7 +1613,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1222,7 +1632,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 82,
+      "l": 163
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1230,7 +1647,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1247,7 +1665,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 240,
+      "l": 240
+     },
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -1259,7 +1683,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 299,
+      "l": 299
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1267,7 +1697,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1284,7 +1715,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 157,
+      "l": 157
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1292,7 +1729,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1303,7 +1741,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1322,7 +1761,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 108,
+      "l": 117
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1330,7 +1775,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1341,11 +1787,12 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
-    "Gültigkeitsdauer der Visa für einen längerfristigenAufenthalt"
+    "Gültigkeitsdauer der Visa für einen längerfristigen Aufenthalt"
    ],
    "fussnoten": [
     {
@@ -1353,7 +1800,13 @@
      "text": "Übereinkommen vom 14. Juni 1985 zur Durchführung des Übereinkommens von Schengen zwischen den Regierungen der Staaten der Benelux-Wirtschaftsunion, der Bundesrepublik Deutschland und der Französischen Republik betreffend den schrittweisen Abbau der Kontrollen an den gemeinsamen Grenzen; ABl. L 239 vom 22.9.2000, S. 19.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 98,
+      "l": 444
+     },
+     "kl": "U"
     },
     {
      "nr": "94",
@@ -1366,7 +1819,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 290,
+      "l": 444
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1374,7 +1833,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren an der Grenze"
+     "label": "5. Abschnitt: Verfahren an der Grenze",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1387,7 +1847,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 82,
+      "l": 222
+     },
+     "kl": "V"
     },
     {
      "nr": "96",
@@ -1400,7 +1866,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 83,
+      "l": 222
+     },
+     "kl": "A"
     },
     {
      "nr": "97",
@@ -1414,7 +1886,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 174,
+      "l": 222
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1422,7 +1900,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren an der Grenze"
+     "label": "5. Abschnitt: Verfahren an der Grenze",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1439,14 +1918,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "99",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 228,
+      "l": 229
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1454,7 +1940,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren an der Grenze"
+     "label": "5. Abschnitt: Verfahren an der Grenze",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1471,7 +1958,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1479,7 +1967,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren an der Grenze"
+     "label": "5. Abschnitt: Verfahren an der Grenze",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1496,7 +1985,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -1509,7 +1999,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 248,
+      "l": 250
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1517,7 +2013,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Sorgfalts- und Betreuungspflicht der Luftverkehrsunternehmen"
+     "label": "6. Abschnitt: Sorgfalts- und Betreuungspflicht der Luftverkehrsunternehmen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1534,7 +2031,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -1546,7 +2044,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "110",
@@ -1558,14 +2057,22 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "111",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 178,
+      "l": 273
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1573,7 +2080,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Sorgfalts- und Betreuungspflicht der Luftverkehrsunternehmen"
+     "label": "6. Abschnitt: Sorgfalts- und Betreuungspflicht der Luftverkehrsunternehmen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1584,7 +2092,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1601,14 +2110,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "113",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 156,
+      "l": 411
+     },
+     "kl": "V"
     },
     {
      "nr": "114",
@@ -1621,7 +2137,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 250,
+      "l": 411
+     },
+     "kl": "V"
     },
     {
      "nr": "115",
@@ -1633,7 +2155,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 411,
+      "l": 411
+     },
+     "kl": "A"
     },
     {
      "nr": "116",
@@ -1645,7 +2173,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "117",
@@ -1657,7 +2186,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "118",
@@ -1669,7 +2199,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "119",
@@ -1681,7 +2212,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "120",
@@ -1693,14 +2225,27 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 160,
+      "l": 160
+     },
+     "kl": "A"
     },
     {
      "nr": "121",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. b.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 378,
+      "l": 500
+     },
+     "kl": "V"
     },
     {
      "nr": "122",
@@ -1712,14 +2257,26 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 524,
+      "l": 524
+     },
+     "kl": "A"
     },
     {
      "nr": "123",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. a.",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 186,
+      "l": 296
+     },
+     "kl": "V"
     },
     {
      "nr": "124",
@@ -1731,7 +2288,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 296,
+      "l": 296
+     },
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -1743,7 +2306,8 @@
       }
      ],
      "absatz": "3",
-     "item": "dbis"
+     "item": "dbis",
+     "kl": "A"
     },
     {
      "nr": "126",
@@ -1755,7 +2319,8 @@
       }
      ],
      "absatz": "3",
-     "item": "dter"
+     "item": "dter",
+     "kl": "A"
     },
     {
      "nr": "127",
@@ -1767,7 +2332,8 @@
       }
      ],
      "absatz": "3",
-     "item": "dquater"
+     "item": "dquater",
+     "kl": "A"
     }
    ]
   },
@@ -1775,7 +2341,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1792,7 +2359,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -1800,7 +2368,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1811,7 +2380,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1828,7 +2398,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1836,7 +2407,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1854,7 +2426,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 116,
+      "l": 170
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1862,7 +2441,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1873,7 +2453,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1884,7 +2465,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Zusammenarbeit der Behörden"
+     "label": "8. Abschnitt: Zusammenarbeit der Behörden",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -1896,7 +2478,13 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 68,
+      "l": 268
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1904,7 +2492,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Zusammenarbeit der Behörden"
+     "label": "8. Abschnitt: Zusammenarbeit der Behörden",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -1916,7 +2505,13 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 158,
+      "l": 210
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1924,7 +2519,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Zusammenarbeit der Behörden"
+     "label": "8. Abschnitt: Zusammenarbeit der Behörden",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -1937,7 +2533,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 124,
+      "l": 125
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1945,7 +2547,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Zusammenarbeit der Behörden"
+     "label": "8. Abschnitt: Zusammenarbeit der Behörden",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -1956,7 +2559,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [],
@@ -1972,7 +2576,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "sektion": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "kl": "A"
     },
     {
      "nr": "190",
@@ -1985,7 +2590,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "sektion": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "kl": "A"
     }
    ]
   },
@@ -1993,7 +2599,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2011,7 +2618,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "sektion": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "kl": "A"
     }
    ]
   },
@@ -2019,7 +2627,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2030,7 +2639,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2041,7 +2651,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2052,7 +2663,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2063,7 +2675,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2074,7 +2687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2085,7 +2699,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2096,7 +2711,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2107,7 +2723,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater"
+     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater",
+     "eId": "sec_11"
     }
    ],
    "marginalie": [
@@ -2124,7 +2741,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 245,
+      "l": 245
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2132,7 +2755,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater"
+     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater",
+     "eId": "sec_11"
     }
    ],
    "marginalie": [
@@ -2150,7 +2774,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 236,
+      "l": 236
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2158,7 +2788,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater"
+     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater",
+     "eId": "sec_11"
     }
    ],
    "marginalie": [
@@ -2175,7 +2806,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2183,7 +2815,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater"
+     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater",
+     "eId": "sec_11"
     }
    ],
    "marginalie": [
@@ -2200,7 +2833,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2208,7 +2842,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Abschnitt : Einreiseverweigerung und Rechtsschutz"
+     "label": "12. Abschnitt : Einreiseverweigerung und Rechtsschutz",
+     "eId": "sec_12"
     }
    ],
    "marginalie": [
@@ -2220,7 +2855,13 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 247,
+      "l": 257
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2228,7 +2869,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Abschnitt : Einreiseverweigerung und Rechtsschutz"
+     "label": "12. Abschnitt : Einreiseverweigerung und Rechtsschutz",
+     "eId": "sec_12"
     }
    ],
    "marginalie": [
@@ -2239,7 +2881,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Abschnitt : Schlussbestimmungen"
+     "label": "13. Abschnitt : Schlussbestimmungen",
+     "eId": "sec_13"
     }
    ],
    "marginalie": [
@@ -2344,7 +2987,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 35,
+      "l": 93
+     },
+     "kl": "Z"
     },
     {
      "nr": "204",
@@ -2357,7 +3006,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2365,7 +3020,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Abschnitt : Schlussbestimmungen"
+     "label": "13. Abschnitt : Schlussbestimmungen",
+     "eId": "sec_13"
     }
    ],
    "marginalie": [
@@ -2376,7 +3032,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Abschnitt : Schlussbestimmungen"
+     "label": "13. Abschnitt : Schlussbestimmungen",
+     "eId": "sec_13"
     }
    ],
    "marginalie": [
@@ -2387,7 +3044,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit"
+     "label": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -2405,7 +3063,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit"
+     "sektion": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit",
+     "kl": "A"
     }
    ]
   },
@@ -2413,7 +3072,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit"
+     "label": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -2424,7 +3084,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren an der Grenze"
+     "label": "5. Abschnitt: Verfahren an der Grenze",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -2441,7 +3102,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -2453,7 +3115,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "102",
@@ -2466,14 +3129,26 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 143,
+      "l": 301
+     },
+     "kl": "V"
     },
     {
      "nr": "103",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 291,
+      "l": 301
+     },
+     "kl": "V"
     },
     {
      "nr": "104",
@@ -2485,7 +3160,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 301,
+      "l": 301
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2493,7 +3174,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2510,14 +3192,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "129",
      "text": "Verordnung (EU) 2018/1240 des Europäischen Parlaments und des Rates vom 12. September 2018 über die Einrichtung eines Europäischen Reiseinformations- und ‑genehmigungssystems (ETIAS) und zur Änderung der Verordnungen (EU) Nr. 1077/2011, (EU) Nr. 515/2014, (EU) 2016/399, (EU) 2016/1624 und (EU) 2017/2226, Fassung gemäss ABl. L 236 vom 19.9.2018, S. 1.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 172,
+      "l": 443
+     },
+     "kl": "V"
     },
     {
      "nr": "130",
@@ -2530,7 +3219,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 410,
+      "l": 443
+     },
+     "kl": "V"
     },
     {
      "nr": "131",
@@ -2542,7 +3237,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "132",
@@ -2554,7 +3250,8 @@
       }
      ],
      "absatz": "1",
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     },
     {
      "nr": "133",
@@ -2566,7 +3263,8 @@
       }
      ],
      "absatz": "1",
-     "item": "jbis"
+     "item": "jbis",
+     "kl": "A"
     },
     {
      "nr": "134",
@@ -2578,7 +3276,8 @@
       }
      ],
      "absatz": "2",
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     }
    ]
   },
@@ -2586,7 +3285,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2603,14 +3303,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "136",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 156,
+      "l": 411
+     },
+     "kl": "V"
     },
     {
      "nr": "137",
@@ -2623,7 +3330,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 250,
+      "l": 411
+     },
+     "kl": "V"
     },
     {
      "nr": "138",
@@ -2635,7 +3348,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "139",
@@ -2647,7 +3361,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "140",
@@ -2659,7 +3374,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "141",
@@ -2671,7 +3387,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "142",
@@ -2683,7 +3400,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "143",
@@ -2695,7 +3413,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 252,
+      "l": 252
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2703,7 +3428,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2720,21 +3446,34 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "145",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. d.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 176,
+      "l": 484
+     },
+     "kl": "V"
     },
     {
      "nr": "146",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. e.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 194,
+      "l": 484
+     },
+     "kl": "V"
     },
     {
      "nr": "147",
@@ -2747,7 +3486,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 288,
+      "l": 484
+     },
+     "kl": "V"
     },
     {
      "nr": "148",
@@ -2759,7 +3504,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "149",
@@ -2771,7 +3517,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -2779,7 +3526,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2796,14 +3544,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "151",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. f.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 174,
+      "l": 518
+     },
+     "kl": "V"
     },
     {
      "nr": "152",
@@ -2816,7 +3571,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 268,
+      "l": 518
+     },
+     "kl": "V"
     },
     {
      "nr": "153",
@@ -2828,14 +3589,26 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 518,
+      "l": 518
+     },
+     "kl": "A"
     },
     {
      "nr": "154",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. g.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 176,
+      "l": 439
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2843,7 +3616,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2860,14 +3634,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "156",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. h.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 175,
+      "l": 458
+     },
+     "kl": "V"
     },
     {
      "nr": "157",
@@ -2880,7 +3661,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 425,
+      "l": 458
+     },
+     "kl": "V"
     },
     {
      "nr": "158",
@@ -2892,7 +3679,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "159",
@@ -2904,7 +3692,8 @@
       }
      ],
      "absatz": "1",
-     "item": "gbis"
+     "item": "gbis",
+     "kl": "A"
     },
     {
      "nr": "160",
@@ -2916,7 +3705,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "161",
@@ -2928,7 +3718,8 @@
       }
      ],
      "absatz": "2",
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     }
    ]
   },
@@ -2936,7 +3727,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2953,14 +3745,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "163",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. i.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 172,
+      "l": 464
+     },
+     "kl": "V"
     },
     {
      "nr": "164",
@@ -2973,14 +3772,26 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 452,
+      "l": 464
+     },
+     "kl": "V"
     },
     {
      "nr": "165",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. j.",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 160,
+      "l": 440
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2988,7 +3799,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -3005,7 +3817,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "167",
@@ -3013,7 +3826,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 328,
+      "l": 450
+     },
+     "kl": "V"
     },
     {
      "nr": "168",
@@ -3027,7 +3846,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 438,
+      "l": 450
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3035,7 +3860,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -3052,7 +3878,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "170",
@@ -3060,7 +3887,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 175,
+      "l": 595
+     },
+     "kl": "V"
     },
     {
      "nr": "171",
@@ -3074,7 +3907,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 269,
+      "l": 595
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3082,7 +3921,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -3099,14 +3939,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "173",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 171,
+      "l": 441
+     },
+     "kl": "V"
     },
     {
      "nr": "174",
@@ -3119,7 +3966,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 265,
+      "l": 441
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3127,7 +3980,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -3144,7 +3998,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "176",
@@ -3152,7 +4007,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 172,
+      "l": 443
+     },
+     "kl": "V"
     },
     {
      "nr": "177",
@@ -3166,7 +4027,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 266,
+      "l": 443
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3174,7 +4041,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -3191,14 +4059,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "179",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. o.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 170,
+      "l": 442
+     },
+     "kl": "V"
     },
     {
      "nr": "180",
@@ -3211,7 +4086,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 264,
+      "l": 442
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3219,7 +4100,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -3236,14 +4118,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "185",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 206,
+      "l": 210
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3251,7 +4140,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_9"
     }
    ],
    "marginalie": []
@@ -3260,7 +4150,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet",
+     "eId": "sec_12_a"
     }
    ],
    "marginalie": [
@@ -3272,7 +4163,14 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. n.",
      "links": [],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 98,
+      "l": 99
+     },
+     "kl": "V"
     },
     {
      "nr": "199",
@@ -3285,14 +4183,28 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 160,
+      "l": 161
+     },
+     "kl": "V"
     },
     {
      "nr": "200",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 116,
+      "l": 187
+     },
+     "kl": "V"
     },
     {
      "nr": "197",
@@ -3305,7 +4217,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+     "sektion": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet",
+     "kl": "A"
     }
    ]
   },
@@ -3313,7 +4226,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet",
+     "eId": "sec_12_a"
     }
    ],
    "marginalie": [
@@ -3324,7 +4238,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet",
+     "eId": "sec_12_a"
     }
    ],
    "marginalie": [
@@ -3342,7 +4257,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 140,
+      "l": 238
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3350,7 +4272,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet",
+     "eId": "sec_12_a"
     }
    ],
    "marginalie": [
@@ -3362,7 +4285,13 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. n.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 193
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3370,7 +4299,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet",
+     "eId": "sec_12_a"
     }
    ],
    "marginalie": [
@@ -3381,7 +4311,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet",
+     "eId": "sec_12_a"
     }
    ],
    "marginalie": [

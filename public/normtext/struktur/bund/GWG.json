@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "955.0",
   "titel": "Bundesgesetz über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung",
@@ -38,7 +38,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -51,7 +52,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -67,7 +69,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "4",
@@ -79,7 +82,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -88,7 +92,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -109,7 +114,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -123,7 +129,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 103,
+      "l": 260
+     },
+     "kl": "V"
     }
    ]
   },
@@ -131,7 +143,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -152,7 +165,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -168,7 +188,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -181,7 +202,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 66,
+      "l": 114
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -213,7 +241,8 @@
       }
      ],
      "absatz": "2",
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -226,7 +255,14 @@
       }
      ],
      "absatz": "2",
-     "item": "abis"
+     "item": "abis",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 128,
+      "l": 137
+     },
+     "kl": "V"
     },
     {
      "nr": "12",
@@ -246,7 +282,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -270,7 +307,8 @@
       }
      ],
      "absatz": "2",
-     "item": "bbis"
+     "item": "bbis",
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -283,7 +321,14 @@
       }
      ],
      "absatz": "2",
-     "item": "bbis"
+     "item": "bbis",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 109,
+      "l": 198
+     },
+     "kl": "V"
     },
     {
      "nr": "15",
@@ -299,7 +344,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -312,7 +358,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 90,
+      "l": 210
+     },
+     "kl": "V"
     },
     {
      "nr": "17",
@@ -332,7 +385,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -360,7 +414,8 @@
       }
      ],
      "absatz": "2",
-     "item": "dbis"
+     "item": "dbis",
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -373,7 +428,14 @@
       }
      ],
      "absatz": "2",
-     "item": "dbis"
+     "item": "dbis",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 110,
+      "l": 121
+     },
+     "kl": "V"
     },
     {
      "nr": "20",
@@ -401,7 +463,8 @@
       }
      ],
      "absatz": "2",
-     "item": "dter"
+     "item": "dter",
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -421,7 +484,8 @@
       }
      ],
      "absatz": "2",
-     "item": "dquater"
+     "item": "dquater",
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -445,7 +509,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -458,7 +523,14 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 9,
+      "o": 63,
+      "l": 70
+     },
+     "kl": "V"
     },
     {
      "nr": "24",
@@ -474,7 +546,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -494,7 +567,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -507,7 +581,14 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 11,
+      "o": 111,
+      "l": 119
+     },
+     "kl": "V"
     },
     {
      "nr": "27",
@@ -523,7 +604,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -543,7 +625,8 @@
       }
      ],
      "absatz": "3",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -559,7 +642,8 @@
       }
      ],
      "absatz": "4",
-     "item": "e"
+     "item": "e",
+     "kl": "U"
     }
    ]
   },
@@ -567,11 +651,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -592,7 +678,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 429,
+      "l": 429
+     },
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -608,7 +700,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 224,
+      "l": 224
+     },
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -621,7 +719,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 167,
+      "l": 315
+     },
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -641,7 +745,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 315,
+      "l": 315
+     },
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -658,7 +768,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Kapitel: Pflichten"
+     "sektion": "2. Kapitel: Pflichten",
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -675,7 +786,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "sektion": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "kl": "A"
     }
    ]
   },
@@ -683,11 +795,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -708,7 +822,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -728,7 +843,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 226,
+      "l": 458
+     },
+     "kl": "A"
     }
    ]
   },
@@ -736,11 +857,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -751,11 +874,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -776,7 +901,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -792,7 +918,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -805,7 +932,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 147,
+      "l": 334
+     },
+     "kl": "V"
     },
     {
      "nr": "42",
@@ -825,7 +959,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -833,11 +968,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -862,7 +999,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 246,
+      "l": 246
+     },
+     "kl": "A"
     }
    ]
   },
@@ -870,11 +1013,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -896,7 +1041,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 150,
+      "l": 231
+     },
+     "kl": "A"
     }
    ]
   },
@@ -904,11 +1055,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht"
+     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -929,7 +1082,8 @@
       }
      ],
      "absatz": "1",
-     "item": "1"
+     "item": "1",
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -942,7 +1096,14 @@
       }
      ],
      "absatz": "1",
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 85,
+      "l": 93
+     },
+     "kl": "V"
     },
     {
      "nr": "51",
@@ -958,7 +1119,8 @@
       }
      ],
      "absatz": "1",
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -974,7 +1136,8 @@
       }
      ],
      "absatz": "1",
-     "item": "3"
+     "item": "3",
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -1002,7 +1165,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -1018,7 +1182,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 383,
+      "l": 383
+     },
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -1034,7 +1205,8 @@
       }
      ],
      "absatz": "1bis",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -1050,7 +1222,8 @@
       }
      ],
      "absatz": "1bis",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -1066,7 +1239,8 @@
       }
      ],
      "absatz": "1bis",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -1090,7 +1264,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 67,
+      "l": 67
+     },
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -1106,7 +1287,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 416,
+      "l": 416
+     },
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -1126,7 +1313,13 @@
       }
      ],
      "absatz": "1quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 356,
+      "l": 356
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1134,11 +1327,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht"
+     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1159,7 +1354,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -1172,7 +1368,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 176,
+      "l": 318
+     },
+     "kl": "V"
     },
     {
      "nr": "68",
@@ -1192,7 +1394,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 318,
+      "l": 318
+     },
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -1212,7 +1420,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 346,
+      "l": 346
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1220,11 +1434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht"
+     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1245,7 +1461,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -1258,7 +1475,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 65,
+      "l": 76
+     },
+     "kl": "V"
     },
     {
      "nr": "81",
@@ -1271,7 +1495,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 47,
+      "l": 96
+     },
+     "kl": "V"
     },
     {
      "nr": "82",
@@ -1291,7 +1522,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 81,
+      "l": 81
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1299,11 +1537,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1324,7 +1564,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "88",
@@ -1345,7 +1586,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 96,
+      "l": 96
+     },
+     "kl": "A"
     },
     {
      "nr": "89",
@@ -1365,7 +1612,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -1381,7 +1629,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -1409,7 +1658,8 @@
       }
      ],
      "absatz": null,
-     "item": "bbis"
+     "item": "bbis",
+     "kl": "A"
     },
     {
      "nr": "92",
@@ -1422,7 +1672,14 @@
       }
      ],
      "absatz": null,
-     "item": "bbis"
+     "item": "bbis",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 112,
+      "l": 138
+     },
+     "kl": "V"
     },
     {
      "nr": "93",
@@ -1442,7 +1699,8 @@
       }
      ],
      "absatz": null,
-     "item": "bter"
+     "item": "bter",
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -1462,7 +1720,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -1470,11 +1729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -1493,7 +1754,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1501,11 +1763,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1530,7 +1794,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1538,11 +1803,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1563,7 +1830,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -1583,7 +1851,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 176,
+      "l": 176
+     },
+     "kl": "A"
     },
     {
      "nr": "99",
@@ -1596,7 +1870,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 138,
+      "l": 201
+     },
+     "kl": "V"
     },
     {
      "nr": "100",
@@ -1616,7 +1896,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 201,
+      "l": 201
+     },
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -1636,7 +1922,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 159,
+      "l": 159
+     },
+     "kl": "A"
     },
     {
      "nr": "102",
@@ -1656,7 +1948,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 203,
+      "l": 203
+     },
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -1676,7 +1974,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 186,
+      "l": 186
+     },
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -1692,7 +1996,8 @@
       }
      ],
      "absatz": "5",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "105",
@@ -1705,7 +2010,14 @@
       }
      ],
      "absatz": "5",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 4,
+      "it": 0,
+      "o": 60,
+      "l": 70
+     },
+     "kl": "V"
     },
     {
      "nr": "106",
@@ -1721,7 +2033,8 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -1737,7 +2050,8 @@
       }
      ],
      "absatz": "5",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -1745,11 +2059,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Meldepflicht der Aufsichtsbehörden und der Aufsichtsorganisationen"
+     "label": "2. Abschnitt: Meldepflicht der Aufsichtsbehörden und der Aufsichtsorganisationen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -1772,7 +2088,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 190,
+      "l": 190
+     },
+     "kl": "A"
     },
     {
      "nr": "111",
@@ -1788,7 +2110,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "112",
@@ -1801,7 +2124,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 77,
+      "l": 87
+     },
+     "kl": "V"
     },
     {
      "nr": "113",
@@ -1817,7 +2147,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "114",
@@ -1833,7 +2164,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "115",
@@ -1849,7 +2181,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "116",
@@ -1869,7 +2202,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 82,
+      "l": 82
+     },
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -1886,7 +2225,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Meldepflicht der Aufsichtsbehörden und der Aufsichtsorganisationen"
+     "sektion": "2. Abschnitt: Meldepflicht der Aufsichtsbehörden und der Aufsichtsorganisationen",
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -1907,7 +2247,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Meldepflicht der Aufsichtsbehörden und der Aufsichtsorganisationen"
+     "sektion": "2. Abschnitt: Meldepflicht der Aufsichtsbehörden und der Aufsichtsorganisationen",
+     "kl": "A"
     }
    ]
   },
@@ -1915,11 +2256,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 2"
+     "label": "3. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 2",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -1942,7 +2285,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "117",
@@ -1959,7 +2303,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 2"
+     "sektion": "3. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 2",
+     "kl": "A"
     }
    ]
   },
@@ -1967,11 +2312,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [
@@ -1992,7 +2339,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "121",
@@ -2008,7 +2356,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 107,
+      "l": 107
+     },
+     "kl": "A"
     },
     {
      "nr": "122",
@@ -2028,7 +2382,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "123",
@@ -2048,7 +2403,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "124",
@@ -2064,7 +2420,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -2084,7 +2446,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 278,
+      "l": 278
+     },
+     "kl": "A"
     },
     {
      "nr": "126",
@@ -2100,7 +2468,14 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 3,
+      "o": 41,
+      "l": 41
+     },
+     "kl": "A"
     },
     {
      "nr": "119",
@@ -2117,7 +2492,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "sektion": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "kl": "A"
     }
    ]
   },
@@ -2125,11 +2501,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [],
@@ -2148,7 +2526,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2156,11 +2535,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [
@@ -2185,7 +2566,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "132",
@@ -2198,7 +2580,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 215,
+      "l": 226
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2206,11 +2594,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Meldestelle für Geldwäscherei"
+     "label": "4. Abschnitt: Meldestelle für Geldwäscherei",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -2225,7 +2615,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 25,
+      "l": 66
+     },
+     "kl": "A"
     },
     {
      "nr": "142",
@@ -2241,7 +2637,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     },
     {
      "nr": "143",
@@ -2261,7 +2663,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 162,
+      "l": 162
+     },
+     "kl": "A"
     },
     {
      "nr": "144",
@@ -2277,7 +2685,8 @@
       }
      ],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "145",
@@ -2290,7 +2699,14 @@
       }
      ],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 3,
+      "it": 0,
+      "o": 77,
+      "l": 87
+     },
+     "kl": "V"
     },
     {
      "nr": "146",
@@ -2306,7 +2722,8 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "147",
@@ -2322,7 +2739,8 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "148",
@@ -2338,7 +2756,14 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 3,
+      "o": 82,
+      "l": 82
+     },
+     "kl": "A"
     },
     {
      "nr": "149",
@@ -2366,7 +2791,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 320,
+      "l": 320
+     },
+     "kl": "A"
     },
     {
      "nr": "150",
@@ -2394,7 +2825,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2402,11 +2839,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -2431,7 +2870,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 153,
+      "l": 153
+     },
+     "kl": "A"
     },
     {
      "nr": "152",
@@ -2459,7 +2905,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "153",
@@ -2472,7 +2919,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 132,
+      "l": 181
+     },
+     "kl": "V"
     },
     {
      "nr": "154",
@@ -2488,7 +2941,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 181,
+      "l": 181
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2496,11 +2955,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -2511,11 +2972,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -2536,7 +2999,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 67,
+      "l": 67
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2544,11 +3013,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -2569,7 +3040,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "162",
@@ -2589,7 +3061,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "163",
@@ -2609,7 +3082,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 98,
+      "l": 98
+     },
+     "kl": "A"
     },
     {
      "nr": "164",
@@ -2625,7 +3104,8 @@
       }
      ],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "165",
@@ -2638,7 +3118,14 @@
       }
      ],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 3,
+      "it": 0,
+      "o": 60,
+      "l": 70
+     },
+     "kl": "V"
     },
     {
      "nr": "166",
@@ -2654,7 +3141,8 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "167",
@@ -2670,7 +3158,8 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "168",
@@ -2686,7 +3175,8 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -2694,11 +3184,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -2719,7 +3211,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "170",
@@ -2732,7 +3225,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 87,
+      "l": 136
+     },
+     "kl": "V"
     },
     {
      "nr": "171",
@@ -2752,7 +3251,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 229,
+      "l": 229
+     },
+     "kl": "A"
     },
     {
      "nr": "172",
@@ -2772,7 +3277,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 7,
+      "l": 7
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2780,11 +3291,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zusammenarbeit inländischer Behörden"
+     "label": "1. Abschnitt: Zusammenarbeit inländischer Behörden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2805,7 +3318,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "174",
@@ -2825,7 +3339,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 177,
+      "l": 177
+     },
+     "kl": "A"
     },
     {
      "nr": "175",
@@ -2841,7 +3361,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 337,
+      "l": 548
+     },
+     "kl": "A"
     },
     {
      "nr": "176",
@@ -2857,7 +3383,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 548,
+      "l": 548
+     },
+     "kl": "A"
     },
     {
      "nr": "177",
@@ -2873,7 +3405,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 298,
+      "l": 298
+     },
+     "kl": "A"
     },
     {
      "nr": "178",
@@ -2901,7 +3439,13 @@
       }
      ],
      "absatz": "2ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 196,
+      "l": 196
+     },
+     "kl": "A"
     },
     {
      "nr": "179",
@@ -2921,7 +3465,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 154,
+      "l": 154
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2929,11 +3479,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden"
+     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2954,7 +3506,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "188",
@@ -2970,7 +3523,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -2978,11 +3532,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden"
+     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3003,7 +3559,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3011,11 +3568,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden"
+     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3036,7 +3595,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "193",
@@ -3049,7 +3609,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 158,
+      "l": 211
+     },
+     "kl": "V"
     },
     {
      "nr": "194",
@@ -3065,7 +3631,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "195",
@@ -3089,7 +3661,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 272,
+      "l": 272
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3097,7 +3675,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bearbeitung von Personendaten"
+     "label": "5. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3118,7 +3697,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "197",
@@ -3132,7 +3712,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 96,
+      "l": 97
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3140,7 +3726,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bearbeitung von Personendaten"
+     "label": "5. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3165,7 +3752,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "199",
@@ -3178,7 +3766,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 188,
+      "l": 248
+     },
+     "kl": "V"
     },
     {
      "nr": "200",
@@ -3198,7 +3792,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 248,
+      "l": 248
+     },
+     "kl": "A"
     },
     {
      "nr": "201",
@@ -3218,7 +3818,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 242,
+      "l": 242
+     },
+     "kl": "A"
     },
     {
      "nr": "202",
@@ -3235,7 +3841,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 102,
+      "l": 161
+     },
+     "kl": "V"
     },
     {
      "nr": "203",
@@ -3255,7 +3867,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 161,
+      "l": 161
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3263,7 +3881,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bearbeitung von Personendaten"
+     "label": "5. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3281,7 +3900,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 110,
+      "l": 320
+     },
+     "kl": "V"
     },
     {
      "nr": "205",
@@ -3294,7 +3919,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 270,
+      "l": 320
+     },
+     "kl": "V"
     },
     {
      "nr": "206",
@@ -3310,7 +3941,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 320,
+      "l": 320
+     },
+     "kl": "A"
     },
     {
      "nr": "207",
@@ -3330,7 +3967,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 173,
+      "l": 173
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3338,7 +3981,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege"
+     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -3357,7 +4001,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3365,7 +4010,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege"
+     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -3386,7 +4032,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "212",
@@ -3402,7 +4049,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3410,7 +4063,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege"
+     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -3435,7 +4089,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3443,7 +4098,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3468,7 +4124,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "216",
@@ -3488,7 +4145,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 196,
+      "l": 196
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3496,7 +4159,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3521,7 +4185,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "218",
@@ -3534,7 +4199,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 63,
+      "l": 112
+     },
+     "kl": "V"
     },
     {
      "nr": "219",
@@ -3550,7 +4221,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 112,
+      "l": 112
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3558,7 +4235,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3569,7 +4247,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3581,7 +4260,8 @@
      "text": "BRB vom 16. März 1998",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3589,11 +4269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht"
+     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3614,7 +4296,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -3627,7 +4310,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 167,
+      "l": 460
+     },
+     "kl": "V"
     },
     {
      "nr": "72",
@@ -3640,7 +4329,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 365,
+      "l": 460
+     },
+     "kl": "V"
     },
     {
      "nr": "73",
@@ -3660,7 +4355,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 460,
+      "l": 460
+     },
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -3680,7 +4381,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 339,
+      "l": 339
+     },
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -3693,7 +4400,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 91,
+      "l": 381
+     },
+     "kl": "V"
     },
     {
      "nr": "76",
@@ -3713,7 +4426,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 381,
+      "l": 381
+     },
+     "kl": "A"
     },
     {
      "nr": "77",
@@ -3729,7 +4448,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 145,
+      "l": 145
+     },
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -3745,7 +4470,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 175,
+      "l": 175
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3753,11 +4484,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Herausgabe von Informationen"
+     "label": "3. Abschnitt: Herausgabe von Informationen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -3773,7 +4506,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 150,
+      "l": 291
+     },
+     "kl": "V"
     },
     {
      "nr": "85",
@@ -3789,7 +4528,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 443,
+      "l": 443
+     },
+     "kl": "A"
     },
     {
      "nr": "86",
@@ -3805,7 +4550,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 113,
+      "l": 113
+     },
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -3822,7 +4573,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Herausgabe von Informationen"
+     "sektion": "3. Abschnitt: Herausgabe von Informationen",
+     "kl": "A"
     }
    ]
   },
@@ -3830,11 +4582,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [
@@ -3855,7 +4609,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3863,11 +4618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [],
@@ -3898,7 +4655,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3906,11 +4664,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [],
@@ -3937,7 +4697,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3945,11 +4706,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [],
@@ -3968,7 +4731,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3976,11 +4740,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3b. Abschnitt: Weiterleitung von Daten über terroristische Aktivitäten"
+     "label": "3b. Abschnitt: Weiterleitung von Daten über terroristische Aktivitäten",
+     "eId": "chap_3/sec_3_b"
     }
    ],
    "marginalie": [],
@@ -3990,7 +4756,13 @@
      "text": "www.un.org > Français > Paix et sécurité > Conseil de sécurité > Résolutions > 2001 > 1373",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 321,
+      "l": 441
+     },
+     "kl": "U"
     },
     {
      "nr": "136",
@@ -4010,7 +4782,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 441,
+      "l": 441
+     },
+     "kl": "A"
     },
     {
      "nr": "137",
@@ -4030,7 +4808,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "138",
@@ -4050,7 +4829,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "139",
@@ -4070,7 +4850,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 184,
+      "l": 184
+     },
+     "kl": "A"
     },
     {
      "nr": "140",
@@ -4090,7 +4876,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 449,
+      "l": 449
+     },
+     "kl": "A"
     },
     {
      "nr": "134",
@@ -4107,7 +4899,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3b. Abschnitt: Weiterleitung von Daten über terroristische Aktivitäten"
+     "sektion": "3b. Abschnitt: Weiterleitung von Daten über terroristische Aktivitäten",
+     "kl": "A"
     }
    ]
   },
@@ -4115,11 +4908,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -4144,7 +4939,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "156",
@@ -4157,7 +4953,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 131,
+      "l": 147
+     },
+     "kl": "V"
     },
     {
      "nr": "157",
@@ -4170,7 +4973,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 72,
+      "l": 113
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4178,11 +4988,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -4207,7 +5019,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "160",
@@ -4227,7 +5040,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 288,
+      "l": 288
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4235,11 +5054,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zusammenarbeit inländischer Behörden"
+     "label": "1. Abschnitt: Zusammenarbeit inländischer Behörden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -4260,7 +5081,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "181",
@@ -4273,7 +5095,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 174,
+      "l": 258
+     },
+     "kl": "V"
     },
     {
      "nr": "182",
@@ -4289,7 +5117,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 175,
+      "l": 258
+     },
+     "kl": "A"
     },
     {
      "nr": "183",
@@ -4309,7 +5143,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 174,
+      "l": 174
+     },
+     "kl": "A"
     },
     {
      "nr": "184",
@@ -4329,7 +5169,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 246,
+      "l": 246
+     },
+     "kl": "A"
     },
     {
      "nr": "185",
@@ -4349,7 +5195,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 328,
+      "l": 328
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4357,11 +5209,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Zusammenarbeit mit den Aufsichtsorganisationen und den Selbstregulierungsorganisationen"
+     "label": "1a. Abschnitt: Zusammenarbeit mit den Aufsichtsorganisationen und den Selbstregulierungsorganisationen",
+     "eId": "chap_4/sec_1_a"
     }
    ],
    "marginalie": [],
@@ -4385,7 +5239,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1a. Abschnitt: Zusammenarbeit mit den Aufsichtsorganisationen und den Selbstregulierungsorganisationen"
+     "sektion": "1a. Abschnitt: Zusammenarbeit mit den Aufsichtsorganisationen und den Selbstregulierungsorganisationen",
+     "kl": "A"
     }
    ]
   },
@@ -4393,7 +5248,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -4414,7 +5270,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4422,11 +5279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden"
+     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4447,7 +5306,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "191",
@@ -4461,7 +5321,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 192,
+      "l": 267
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4469,7 +5335,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bearbeitung von Personendaten"
+     "label": "5. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4490,7 +5357,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "209",
@@ -4506,7 +5374,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -4514,7 +5383,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege"
+     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -4533,7 +5403,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4541,11 +5412,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4566,7 +5439,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4574,11 +5448,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Sorgfaltspflichten der Händlerinnen und Händler"
+     "label": "1a. Abschnitt: Sorgfaltspflichten der Händlerinnen und Händler",
+     "eId": "chap_2/sec_1_a"
     }
    ],
    "marginalie": [],
@@ -4597,7 +5473,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -4610,7 +5487,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 147,
+      "l": 334
+     },
+     "kl": "V"
     },
     {
      "nr": "46",
@@ -4627,7 +5511,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1a. Abschnitt: Sorgfaltspflichten der Händlerinnen und Händler"
+     "sektion": "1a. Abschnitt: Sorgfaltspflichten der Händlerinnen und Händler",
+     "kl": "A"
     }
    ]
   },
@@ -4635,11 +5520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht"
+     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4660,7 +5547,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "62",
@@ -4673,7 +5561,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 220,
+      "l": 261
+     },
+     "kl": "V"
     },
     {
      "nr": "63",
@@ -4693,7 +5587,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 163,
+      "l": 163
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4701,11 +5601,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht"
+     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4730,7 +5632,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -4743,7 +5646,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 131,
+      "l": 332
+     },
+     "kl": "V"
     }
    ]
   }

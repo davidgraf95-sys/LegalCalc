@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "641.20",
   "titel": "Bundesgesetz über die Mehrwertsteuer",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -45,7 +46,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -54,7 +56,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -75,7 +78,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -83,7 +87,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -94,7 +99,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -111,7 +117,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 128,
+      "l": 134
+     },
+     "kl": "V"
     },
     {
      "nr": "5",
@@ -127,7 +140,8 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -143,7 +157,8 @@
       }
      ],
      "absatz": null,
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -159,7 +174,8 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -175,7 +191,8 @@
       }
      ],
      "absatz": null,
-     "item": "l"
+     "item": "l",
+     "kl": "A"
     }
    ]
   },
@@ -183,7 +200,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -200,7 +218,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 171,
+      "l": 171
+     },
+     "kl": "U"
     },
     {
      "nr": "10",
@@ -216,7 +240,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 123,
+      "l": 123
+     },
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -232,7 +262,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 185,
+      "l": 185
+     },
+     "kl": "A"
     }
    ]
   },
@@ -240,7 +276,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -261,7 +298,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -269,7 +307,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -280,7 +319,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -301,7 +341,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 455,
+      "l": 455
+     },
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -317,7 +363,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 281,
+      "l": 281
+     },
+     "kl": "A"
     }
    ]
   },
@@ -325,7 +378,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -346,7 +400,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -362,7 +417,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -370,7 +426,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -381,11 +438,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -406,7 +465,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 49,
+      "l": 49
+     },
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -422,7 +488,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 41,
+      "l": 41
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -438,7 +511,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 129,
+      "l": 129
+     },
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -454,7 +533,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 186,
+      "l": 186
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -470,7 +556,8 @@
       }
      ],
      "absatz": "2",
-     "item": "1bis"
+     "item": "1bis",
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -486,7 +573,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -502,7 +590,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -518,7 +607,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 7,
+      "o": 153,
+      "l": 153
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -534,7 +630,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 74,
+      "l": 74
+     },
+     "kl": "A"
     }
    ]
   },
@@ -542,11 +644,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -557,11 +661,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -582,7 +688,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 252,
+      "l": 252
+     },
+     "kl": "A"
     }
    ]
   },
@@ -590,11 +702,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -615,7 +729,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 360,
+      "l": 360
+     },
+     "kl": "A"
     }
    ]
   },
@@ -623,11 +743,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -648,7 +770,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 85,
+      "l": 85
+     },
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -664,7 +793,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 116,
+      "l": 116
+     },
+     "kl": "A"
     }
    ]
   },
@@ -672,11 +808,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -697,7 +835,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -713,7 +852,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -725,7 +865,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 73,
+      "l": 132
+     },
+     "kl": "V"
     },
     {
      "nr": "33",
@@ -741,7 +887,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 290,
+      "l": 290
+     },
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -757,7 +909,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 233,
+      "l": 233
+     },
+     "kl": "A"
     }
    ]
   },
@@ -765,11 +923,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -780,11 +940,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -795,11 +957,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -824,7 +988,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 298,
+      "l": 298
+     },
+     "kl": "A"
     }
    ]
   },
@@ -832,11 +1002,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -847,11 +1019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -862,11 +1036,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -887,7 +1063,8 @@
       }
      ],
      "absatz": "2",
-     "item": "1"
+     "item": "1",
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -899,7 +1076,14 @@
       }
      ],
      "absatz": "2",
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 117,
+      "l": 124
+     },
+     "kl": "V"
     },
     {
      "nr": "39",
@@ -915,7 +1099,8 @@
       }
      ],
      "absatz": "2",
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -931,7 +1116,8 @@
       }
      ],
      "absatz": "2",
-     "item": "3bis"
+     "item": "3bis",
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -947,7 +1133,8 @@
       }
      ],
      "absatz": "2",
-     "item": "8"
+     "item": "8",
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -963,7 +1150,14 @@
       }
      ],
      "absatz": "2",
-     "item": "11"
+     "item": "11",
+     "pos": {
+      "b": 1,
+      "it": 11,
+      "o": 62,
+      "l": 62
+     },
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -979,7 +1173,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -995,7 +1190,8 @@
       }
      ],
      "absatz": "2",
-     "item": "12"
+     "item": "12",
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -1011,7 +1207,14 @@
       }
      ],
      "absatz": "2",
-     "item": "14"
+     "item": "14",
+     "pos": {
+      "b": 1,
+      "it": 19,
+      "o": 175,
+      "l": 175
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -1027,7 +1230,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -1047,7 +1251,8 @@
       }
      ],
      "absatz": "2",
-     "item": "14bis"
+     "item": "14bis",
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -1059,7 +1264,8 @@
       }
      ],
      "absatz": "2",
-     "item": "15"
+     "item": "15",
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -1075,7 +1281,8 @@
       }
      ],
      "absatz": "2",
-     "item": "16"
+     "item": "16",
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -1087,7 +1294,14 @@
       }
      ],
      "absatz": "2",
-     "item": "16"
+     "item": "16",
+     "pos": {
+      "b": 1,
+      "it": 26,
+      "o": 504,
+      "l": 533
+     },
+     "kl": "V"
     },
     {
      "nr": "51",
@@ -1103,7 +1317,8 @@
       }
      ],
      "absatz": "2",
-     "item": "17"
+     "item": "17",
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -1119,7 +1334,8 @@
       }
      ],
      "absatz": "2",
-     "item": "18"
+     "item": "18",
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -1139,7 +1355,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -1151,7 +1368,14 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 42,
+      "o": 103,
+      "l": 636
+     },
+     "kl": "V"
     },
     {
      "nr": "55",
@@ -1163,7 +1387,14 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 42,
+      "o": 463,
+      "l": 636
+     },
+     "kl": "V"
     },
     {
      "nr": "56",
@@ -1179,7 +1410,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -1191,7 +1423,14 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 43,
+      "o": 89,
+      "l": 424
+     },
+     "kl": "V"
     },
     {
      "nr": "58",
@@ -1207,7 +1446,8 @@
       }
      ],
      "absatz": "2",
-     "item": "23"
+     "item": "23",
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -1219,7 +1459,14 @@
       }
      ],
      "absatz": "2",
-     "item": "23"
+     "item": "23",
+     "pos": {
+      "b": 1,
+      "it": 53,
+      "o": 142,
+      "l": 293
+     },
+     "kl": "V"
     },
     {
      "nr": "60",
@@ -1235,7 +1482,8 @@
       }
      ],
      "absatz": "2",
-     "item": "25"
+     "item": "25",
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -1255,7 +1503,8 @@
       }
      ],
      "absatz": "2",
-     "item": "28"
+     "item": "28",
+     "kl": "A"
     },
     {
      "nr": "62",
@@ -1271,7 +1520,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -1287,7 +1537,8 @@
       }
      ],
      "absatz": "2",
-     "item": "28bis"
+     "item": "28bis",
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -1303,7 +1554,8 @@
       }
      ],
      "absatz": "2",
-     "item": "30"
+     "item": "30",
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1319,7 +1571,8 @@
       }
      ],
      "absatz": "2",
-     "item": "31"
+     "item": "31",
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -1335,7 +1588,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 361,
+      "l": 361
+     },
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -1351,7 +1610,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 119,
+      "l": 119
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1359,11 +1624,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1384,7 +1651,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 198,
+      "l": 198
+     },
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -1400,7 +1673,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -1408,11 +1682,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1433,7 +1709,8 @@
       }
      ],
      "absatz": "2",
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -1445,7 +1722,8 @@
       }
      ],
      "absatz": "2",
-     "item": "3"
+     "item": "3",
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -1457,7 +1735,14 @@
       }
      ],
      "absatz": "2",
-     "item": "3"
+     "item": "3",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 81,
+      "l": 419
+     },
+     "kl": "V"
     },
     {
      "nr": "73",
@@ -1473,7 +1758,8 @@
       }
      ],
      "absatz": "2",
-     "item": "3bis"
+     "item": "3bis",
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -1489,7 +1775,8 @@
       }
      ],
      "absatz": "2",
-     "item": "7"
+     "item": "7",
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -1505,7 +1792,8 @@
       }
      ],
      "absatz": "2",
-     "item": "11"
+     "item": "11",
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -1521,7 +1809,8 @@
       }
      ],
      "absatz": "2",
-     "item": "12"
+     "item": "12",
+     "kl": "A"
     },
     {
      "nr": "77",
@@ -1533,7 +1822,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 15,
+      "o": 85,
+      "l": 86
+     },
+     "kl": "V"
     },
     {
      "nr": "78",
@@ -1549,7 +1845,8 @@
       }
      ],
      "absatz": "2",
-     "item": "13"
+     "item": "13",
+     "kl": "A"
     },
     {
      "nr": "79",
@@ -1565,7 +1862,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 269,
+      "l": 269
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1573,11 +1876,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bemessungsgrundlage und Steuersätze"
+     "label": "3. Kapitel: Bemessungsgrundlage und Steuersätze",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1598,7 +1903,13 @@
       }
      ],
      "absatz": "5bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 208,
+      "l": 208
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1606,11 +1917,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bemessungsgrundlage und Steuersätze"
+     "label": "3. Kapitel: Bemessungsgrundlage und Steuersätze",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1627,7 +1940,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 85,
+      "l": 85
+     },
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -1639,7 +1958,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 59,
+      "l": 59
+     },
+     "kl": "A"
     },
     {
      "nr": "84",
@@ -1655,7 +1980,8 @@
       }
      ],
      "absatz": "2",
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -1667,7 +1993,14 @@
       }
      ],
      "absatz": "2",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 58,
+      "l": 96
+     },
+     "kl": "V"
     },
     {
      "nr": "86",
@@ -1683,7 +2016,8 @@
       }
      ],
      "absatz": "2",
-     "item": "10"
+     "item": "10",
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -1699,7 +2033,8 @@
       }
      ],
      "absatz": "2",
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     },
     {
      "nr": "88",
@@ -1716,7 +2051,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 818,
+      "l": 818
+     },
+     "kl": "A"
     },
     {
      "nr": "89",
@@ -1728,7 +2069,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 72,
+      "l": 394
+     },
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -1748,7 +2095,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 394,
+      "l": 394
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1756,11 +2109,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechnungsstellung und Steuerausweis"
+     "label": "4. Kapitel: Rechnungsstellung und Steuerausweis",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1781,7 +2136,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -1789,11 +2145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechnungsstellung und Steuerausweis"
+     "label": "4. Kapitel: Rechnungsstellung und Steuerausweis",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1814,7 +2172,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "93",
@@ -1830,7 +2189,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 232,
+      "l": 232
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1838,11 +2203,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1859,7 +2226,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 463,
+      "l": 463
+     },
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -1875,7 +2248,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 131,
+      "l": 131
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1883,11 +2262,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1908,7 +2289,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 213,
+      "l": 213
+     },
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -1924,7 +2311,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 198,
+      "l": 198
+     },
+     "kl": "A"
     },
     {
      "nr": "99",
@@ -1936,7 +2329,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 287,
+      "l": 324
+     },
+     "kl": "V"
     },
     {
      "nr": "100",
@@ -1952,7 +2351,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 185,
+      "l": 185
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1960,11 +2365,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1975,11 +2382,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1990,11 +2399,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -2005,11 +2416,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -2020,15 +2433,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zeitliche Bemessung"
+     "label": "1. Abschnitt: Zeitliche Bemessung",
+     "eId": "tit_2/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2045,7 +2461,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 110,
+      "l": 110
+     },
+     "kl": "U"
     }
    ]
   },
@@ -2053,15 +2475,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zeitliche Bemessung"
+     "label": "1. Abschnitt: Zeitliche Bemessung",
+     "eId": "tit_2/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2082,7 +2507,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 180,
+      "l": 180
+     },
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -2098,7 +2529,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 100,
+      "l": 100
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2106,15 +2544,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Umfang der Steuerforderung und Meldeverfahren"
+     "label": "2. Abschnitt: Umfang der Steuerforderung und Meldeverfahren",
+     "eId": "tit_2/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2125,15 +2566,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Umfang der Steuerforderung und Meldeverfahren"
+     "label": "2. Abschnitt: Umfang der Steuerforderung und Meldeverfahren",
+     "eId": "tit_2/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2150,7 +2594,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 302,
+      "l": 302
+     },
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -2166,7 +2616,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 159,
+      "l": 159
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2174,15 +2630,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Umfang der Steuerforderung und Meldeverfahren"
+     "label": "2. Abschnitt: Umfang der Steuerforderung und Meldeverfahren",
+     "eId": "tit_2/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2203,7 +2662,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -2215,7 +2675,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 50,
+      "l": 51
+     },
+     "kl": "V"
     },
     {
      "nr": "109",
@@ -2231,7 +2698,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "110",
@@ -2243,7 +2711,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 249,
+      "l": 277
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2251,15 +2726,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung"
+     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2270,15 +2748,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung"
+     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2299,7 +2780,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 127,
+      "l": 127
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2307,15 +2794,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung"
+     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2326,15 +2816,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung"
+     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2345,15 +2838,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung"
+     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2364,15 +2860,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung"
+     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2393,7 +2892,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 142,
+      "l": 142
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2401,7 +2906,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bezugsteuer"
+     "label": "3. Titel: Bezugsteuer",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -2422,7 +2928,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "114",
@@ -2438,7 +2945,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "115",
@@ -2454,7 +2962,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "116",
@@ -2470,7 +2979,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "117",
@@ -2486,7 +2996,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 102,
+      "l": 102
+     },
+     "kl": "A"
     },
     {
      "nr": "118",
@@ -2502,7 +3018,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -2510,7 +3027,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bezugsteuer"
+     "label": "3. Titel: Bezugsteuer",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -2521,7 +3039,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bezugsteuer"
+     "label": "3. Titel: Bezugsteuer",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -2532,7 +3051,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bezugsteuer"
+     "label": "3. Titel: Bezugsteuer",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -2543,7 +3063,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bezugsteuer"
+     "label": "3. Titel: Bezugsteuer",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -2554,7 +3075,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2565,7 +3087,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2582,7 +3105,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 59,
+      "l": 99
+     },
+     "kl": "V"
     },
     {
      "nr": "121",
@@ -2598,7 +3127,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "122",
@@ -2610,7 +3140,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 89,
+      "l": 116
+     },
+     "kl": "A"
     },
     {
      "nr": "123",
@@ -2626,7 +3163,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 127,
+      "l": 127
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2634,7 +3177,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2651,7 +3195,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 62,
+      "l": 159
+     },
+     "kl": "V"
     },
     {
      "nr": "125",
@@ -2667,7 +3218,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 159,
+      "l": 159
+     },
+     "kl": "A"
     },
     {
      "nr": "126",
@@ -2683,7 +3241,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 253,
+      "l": 253
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2691,7 +3255,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2708,7 +3273,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 70,
+      "l": 85
+     },
+     "kl": "V"
     },
     {
      "nr": "128",
@@ -2724,7 +3296,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "129",
@@ -2740,7 +3313,8 @@
       }
      ],
      "absatz": "1",
-     "item": "m"
+     "item": "m",
+     "kl": "A"
     }
    ]
   },
@@ -2748,7 +3322,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2769,7 +3344,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "131",
@@ -2781,7 +3357,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 215,
+      "l": 306
+     },
+     "kl": "V"
     },
     {
      "nr": "132",
@@ -2793,7 +3376,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "133",
@@ -2805,7 +3389,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -2813,7 +3398,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2830,7 +3416,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2838,7 +3425,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2855,7 +3443,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 81,
+      "l": 83
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2863,7 +3457,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2874,7 +3469,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2891,7 +3487,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 72,
+      "l": 261
+     },
+     "kl": "V"
     },
     {
      "nr": "137",
@@ -2907,7 +3510,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "138",
@@ -2923,7 +3527,8 @@
       }
      ],
      "absatz": null,
-     "item": "cbis"
+     "item": "cbis",
+     "kl": "A"
     },
     {
      "nr": "139",
@@ -2939,7 +3544,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -2947,7 +3553,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2964,7 +3571,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 159,
+      "l": 493
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2972,7 +3585,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2989,7 +3603,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 279,
+      "l": 345
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2997,7 +3617,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3014,7 +3635,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 70,
+      "l": 135
+     },
+     "kl": "V"
     },
     {
      "nr": "143",
@@ -3026,7 +3654,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 120,
+      "l": 165
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3034,7 +3669,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3045,7 +3681,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3066,7 +3703,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 218,
+      "l": 218
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3074,7 +3718,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3091,7 +3736,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 71,
+      "l": 350
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3099,11 +3751,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "1. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3124,7 +3778,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3132,11 +3787,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3153,7 +3810,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 268,
+      "l": 338
+     },
+     "kl": "V"
     },
     {
      "nr": "149",
@@ -3169,7 +3832,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 338,
+      "l": 338
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3177,11 +3846,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3202,7 +3873,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 200,
+      "l": 200
+     },
+     "kl": "A"
     },
     {
      "nr": "151",
@@ -3218,7 +3895,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 300,
+      "l": 300
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3226,11 +3909,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3241,11 +3926,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3256,11 +3943,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3277,7 +3966,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 252,
+      "l": 272
+     },
+     "kl": "V"
     },
     {
      "nr": "153",
@@ -3293,7 +3988,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 272,
+      "l": 272
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3301,11 +4002,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3316,11 +4019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3331,11 +4036,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Auskunftspflicht von Drittpersonen"
+     "label": "3. Kapitel: Auskunftspflicht von Drittpersonen",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [],
@@ -3354,7 +4061,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -3362,15 +4070,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Geheimhaltung und Amtshilfe"
+     "label": "1. Abschnitt: Geheimhaltung und Amtshilfe",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3391,7 +4102,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "157",
@@ -3407,7 +4119,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "155",
@@ -3424,7 +4137,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Geheimhaltung und Amtshilfe"
+     "sektion": "1. Abschnitt: Geheimhaltung und Amtshilfe",
+     "kl": "A"
     }
    ]
   },
@@ -3432,15 +4146,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Geheimhaltung und Amtshilfe"
+     "label": "1. Abschnitt: Geheimhaltung und Amtshilfe",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3457,7 +4174,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 443,
+      "l": 604
+     },
+     "kl": "V"
     },
     {
      "nr": "159",
@@ -3473,7 +4196,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 604,
+      "l": 604
+     },
+     "kl": "A"
     },
     {
      "nr": "160",
@@ -3485,7 +4214,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 306,
+      "l": 376
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3493,15 +4228,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Datenschutz"
+     "label": "2. Abschnitt: Datenschutz",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3522,7 +4260,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "165",
@@ -3538,7 +4277,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 196,
+      "l": 196
+     },
+     "kl": "A"
     },
     {
      "nr": "166",
@@ -3554,7 +4299,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "167",
@@ -3566,7 +4317,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 158,
+      "l": 166
+     },
+     "kl": "V"
     },
     {
      "nr": "168",
@@ -3582,7 +4339,14 @@
       }
      ],
      "absatz": "3",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 2,
+      "it": 5,
+      "o": 35,
+      "l": 35
+     },
+     "kl": "A"
     },
     {
      "nr": "163",
@@ -3599,7 +4363,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Datenschutz"
+     "sektion": "2. Abschnitt: Datenschutz",
+     "kl": "A"
     }
    ]
   },
@@ -3607,15 +4372,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung",
+     "eId": "tit_5/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3637,7 +4405,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+     "sektion": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung",
+     "kl": "A"
     }
    ]
   },
@@ -3645,15 +4414,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung",
+     "eId": "tit_5/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3670,7 +4442,14 @@
       }
      ],
      "absatz": "6",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 5,
+      "it": 2,
+      "o": 74,
+      "l": 75
+     },
+     "kl": "V"
     },
     {
      "nr": "180",
@@ -3682,7 +4461,14 @@
       }
      ],
      "absatz": "6",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 5,
+      "it": 3,
+      "o": 79,
+      "l": 80
+     },
+     "kl": "V"
     },
     {
      "nr": "181",
@@ -3694,7 +4480,14 @@
       }
      ],
      "absatz": "6",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 5,
+      "it": 4,
+      "o": 98,
+      "l": 99
+     },
+     "kl": "V"
     },
     {
      "nr": "182",
@@ -3714,7 +4507,14 @@
       }
      ],
      "absatz": "6",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 5,
+      "it": 4,
+      "o": 99,
+      "l": 99
+     },
+     "kl": "A"
     },
     {
      "nr": "183",
@@ -3734,7 +4534,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3742,15 +4548,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung",
+     "eId": "tit_5/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3761,15 +4570,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung",
+     "eId": "tit_5/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3780,11 +4592,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren"
+     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -3801,7 +4615,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 25,
+      "l": 121
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3809,11 +4629,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren"
+     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -3824,11 +4646,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren"
+     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -3839,11 +4663,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren"
+     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -3854,11 +4680,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren"
+     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -3876,7 +4704,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 152,
+      "l": 163
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3884,11 +4718,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -3905,7 +4741,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 49,
+      "l": 112
+     },
+     "kl": "V"
     },
     {
      "nr": "188",
@@ -3921,7 +4763,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 477,
+      "l": 477
+     },
+     "kl": "A"
     },
     {
      "nr": "189",
@@ -3937,7 +4785,13 @@
       }
      ],
      "absatz": "10",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 81,
+      "l": 81
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3945,11 +4799,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -3970,7 +4826,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 203,
+      "l": 203
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3978,11 +4840,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -4003,7 +4867,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     },
     {
      "nr": "193",
@@ -4019,7 +4889,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 145,
+      "l": 145
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4027,11 +4903,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -4052,7 +4930,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 193,
+      "l": 193
+     },
+     "kl": "A"
     },
     {
      "nr": "195",
@@ -4068,7 +4952,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "196",
@@ -4084,7 +4974,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 96,
+      "l": 96
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4092,11 +4988,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -4107,11 +5005,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -4128,7 +5028,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 130,
+      "l": 131
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4136,11 +5042,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -4161,7 +5069,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4169,11 +5083,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Steuersicherung"
+     "label": "7. Kapitel: Steuersicherung",
+     "eId": "tit_5/chap_7"
     }
    ],
    "marginalie": [
@@ -4194,7 +5110,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 126,
+      "l": 126
+     },
+     "kl": "A"
     },
     {
      "nr": "200",
@@ -4206,7 +5129,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 221,
+      "l": 292
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4214,11 +5143,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Steuersicherung"
+     "label": "7. Kapitel: Steuersicherung",
+     "eId": "tit_5/chap_7"
     }
    ],
    "marginalie": [
@@ -4239,7 +5170,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 160,
+      "l": 160
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4247,11 +5184,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Steuersicherung"
+     "label": "7. Kapitel: Steuersicherung",
+     "eId": "tit_5/chap_7"
     }
    ],
    "marginalie": [
@@ -4262,7 +5201,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4273,7 +5213,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4290,7 +5231,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 74,
+      "l": 324
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4298,7 +5245,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4309,7 +5257,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4320,7 +5269,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4338,7 +5288,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 108,
+      "l": 387
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4346,7 +5302,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4363,7 +5320,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 49,
+      "l": 71
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4371,7 +5334,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4388,7 +5352,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 156,
+      "l": 267
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4396,7 +5366,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4413,7 +5384,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 149
+     },
+     "kl": "V"
     },
     {
      "nr": "208",
@@ -4425,7 +5402,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 90,
+      "l": 174
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4433,7 +5416,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4444,7 +5428,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4465,7 +5450,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "210",
@@ -4477,7 +5463,14 @@
       }
      ],
      "absatz": "1",
-     "item": "3"
+     "item": "3",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 86,
+      "l": 144
+     },
+     "kl": "V"
     },
     {
      "nr": "211",
@@ -4493,7 +5486,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "212",
@@ -4509,7 +5503,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -4517,7 +5512,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4534,7 +5530,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 126,
+      "l": 141
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4542,11 +5544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ausführungsbestimmungen"
+     "label": "1. Kapitel: Ausführungsbestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -4563,7 +5567,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 115,
+      "l": 156
+     },
+     "kl": "V"
     },
     {
      "nr": "215",
@@ -4579,7 +5590,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "216",
@@ -4595,7 +5607,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4603,11 +5621,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ausführungsbestimmungen"
+     "label": "1. Kapitel: Ausführungsbestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -4628,7 +5648,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -4636,11 +5657,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ausführungsbestimmungen"
+     "label": "1. Kapitel: Ausführungsbestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -4661,7 +5684,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 217,
+      "l": 217
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4669,11 +5698,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufhebung und Änderung bisherigen Rechts"
+     "label": "2. Kapitel: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -4735,7 +5766,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 46,
+      "l": 63
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -4743,11 +5780,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufhebung und Änderung bisherigen Rechts"
+     "label": "2. Kapitel: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -4765,7 +5804,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4773,11 +5818,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4788,11 +5835,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4803,11 +5852,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4818,11 +5869,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4843,7 +5896,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 166,
+      "l": 166
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4851,11 +5910,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Referendum und Inkrafttreten"
+     "label": "4. Kapitel: Referendum und Inkrafttreten",
+     "eId": "tit_7/chap_4"
     }
    ],
    "marginalie": [],
@@ -4870,7 +5931,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 53,
+      "l": 53
+     },
+     "kl": "A"
     },
     {
      "nr": "225",
@@ -4882,7 +5949,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 147,
+      "l": 147
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4890,11 +5963,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4919,7 +5994,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4927,11 +6003,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4952,7 +6030,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4960,11 +6039,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -4985,7 +6066,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4993,11 +6075,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bemessungsgrundlage und Steuersätze"
+     "label": "3. Kapitel: Bemessungsgrundlage und Steuersätze",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -5018,7 +6102,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5026,11 +6111,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -5051,7 +6138,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5059,15 +6147,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zeitliche Bemessung"
+     "label": "1. Abschnitt: Zeitliche Bemessung",
+     "eId": "tit_2/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -5088,7 +6179,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5096,7 +6188,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bezugsteuer"
+     "label": "3. Titel: Bezugsteuer",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -5117,7 +6210,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5125,11 +6219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "1. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5150,7 +6246,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5158,15 +6255,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Geheimhaltung und Amtshilfe"
+     "label": "1. Abschnitt: Geheimhaltung und Amtshilfe",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -5187,7 +6287,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "162",
@@ -5199,7 +6300,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 74,
+      "l": 75
+     },
+     "kl": "V"
     }
    ]
   },
@@ -5207,15 +6314,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Datenschutz"
+     "label": "2. Abschnitt: Datenschutz",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5236,7 +6346,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "170",
@@ -5252,7 +6363,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     },
     {
      "nr": "171",
@@ -5268,7 +6385,8 @@
       }
      ],
      "absatz": "3",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "172",
@@ -5284,7 +6402,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5292,15 +6416,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Datenschutz"
+     "label": "2. Abschnitt: Datenschutz",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5321,7 +6448,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "174",
@@ -5333,7 +6461,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 141,
+      "l": 181
+     },
+     "kl": "V"
     },
     {
      "nr": "175",
@@ -5349,7 +6483,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 435,
+      "l": 435
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5357,15 +6497,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Datenschutz"
+     "label": "2. Abschnitt: Datenschutz",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5386,7 +6529,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5394,15 +6538,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Datenschutz"
+     "label": "2. Abschnitt: Datenschutz",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5423,7 +6570,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5431,15 +6579,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung",
+     "eId": "tit_5/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -5460,7 +6611,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5468,11 +6620,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -5493,7 +6647,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5501,11 +6656,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Steuersicherung"
+     "label": "7. Kapitel: Steuersicherung",
+     "eId": "tit_5/chap_7"
     }
    ],
    "marginalie": [
@@ -5526,7 +6683,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

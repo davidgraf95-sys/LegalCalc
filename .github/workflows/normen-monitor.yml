@@ -25,6 +25,14 @@ on:
 
 env:
   PROD_URL: https://lexmetrik.vercel.app
+  # Zeitzone wie in ci.yml (dort mit Begründung, Zeilen 79–83): GitHub-Runner
+  # laufen in UTC, die Schweizer Rechtsstände und die datumsabhängigen Tore
+  # rechnen aber wie die Nutzer. Betrifft hier `check:verfall` (Zeile 52) —
+  # Verfallstermine sind Kalendertage, und ein UTC-Runner kippt sie im Fenster
+  # zwischen 22:00/23:00 und Mitternacht Zürich einen Tag zu früh bzw. zu spät.
+  # Nachtrag 26.7.2026: dieselbe fehlende Zeile war in fedlex-frische.yml die
+  # Ursache eines strukturell garantierten Fehlschlags (dort dokumentiert).
+  TZ: Europe/Zurich
 
 jobs:
   normen:

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "641.10",
   "titel": "Bundesgesetz über die Stempelabgaben",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -51,7 +52,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "3",
@@ -63,7 +65,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -72,11 +75,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand des Gesetzes"
+     "label": "I. Gegenstand des Gesetzes",
+     "eId": "lvl_u1/lvl_I"
     }
    ],
    "marginalie": [],
@@ -95,7 +100,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -115,7 +121,8 @@
       }
      ],
      "absatz": "1",
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -135,7 +142,8 @@
       }
      ],
      "absatz": "1",
-     "item": "2bis"
+     "item": "2bis",
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -151,7 +159,14 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 9,
+      "l": 11
+     },
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -167,7 +182,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -187,7 +203,8 @@
       }
      ],
      "absatz": "1",
-     "item": "3"
+     "item": "3",
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -207,7 +224,8 @@
       }
      ],
      "absatz": "1",
-     "item": "3bis"
+     "item": "3bis",
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -223,7 +241,8 @@
       }
      ],
      "absatz": "1",
-     "item": "5"
+     "item": "5",
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -236,7 +255,14 @@
       }
      ],
      "absatz": "1",
-     "item": "5"
+     "item": "5",
+     "pos": {
+      "b": 0,
+      "it": 12,
+      "o": 85,
+      "l": 92
+     },
+     "kl": "V"
     }
    ]
   },
@@ -244,11 +270,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     },
     {
      "ebene": 2,
-     "label": "II. …"
+     "label": "II. …",
+     "eId": "lvl_u1/lvl_II"
     }
    ],
    "marginalie": [],
@@ -267,7 +295,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -275,11 +304,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     },
     {
      "ebene": 2,
-     "label": "III. Verhältnis zum kantonalen Recht"
+     "label": "III. Verhältnis zum kantonalen Recht",
+     "eId": "lvl_u1/lvl_III"
     }
    ],
    "marginalie": [],
@@ -519,7 +550,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 361,
+      "l": 363
+     },
+     "kl": "Z"
     },
     {
      "nr": "15",
@@ -547,7 +584,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 184,
+      "l": 184
+     },
+     "kl": "A"
     }
    ]
   },
@@ -555,11 +598,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     },
     {
      "ebene": 2,
-     "label": "IV. Begriffsbestimmungen"
+     "label": "IV. Begriffsbestimmungen",
+     "eId": "lvl_u1/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -575,7 +620,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 64,
+      "l": 130
+     },
+     "kl": "V"
     },
     {
      "nr": "17",
@@ -591,7 +642,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 130,
+      "l": 130
+     },
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -604,7 +661,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 396,
+      "l": 509
+     },
+     "kl": "V"
     },
     {
      "nr": "19",
@@ -620,7 +683,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 509,
+      "l": 509
+     },
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -636,7 +705,14 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 91,
+      "l": 91
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -652,7 +728,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 94,
+      "l": 94
+     },
+     "kl": "A"
     }
    ]
   },
@@ -660,11 +742,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -685,7 +769,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -705,7 +790,14 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 67,
+      "l": 67
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -721,7 +813,8 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -741,7 +834,8 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -757,7 +851,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -777,7 +872,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -793,7 +889,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -801,11 +898,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -834,7 +933,14 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 5,
+      "l": 312
+     },
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -850,7 +956,8 @@
       }
      ],
      "absatz": "1",
-     "item": "ater"
+     "item": "ater",
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -863,7 +970,14 @@
       }
      ],
      "absatz": "1",
-     "item": "ater"
+     "item": "ater",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 212,
+      "l": 394
+     },
+     "kl": "V"
     },
     {
      "nr": "33",
@@ -879,7 +993,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -899,7 +1014,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -915,7 +1031,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -939,7 +1056,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "37",
@@ -967,7 +1085,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -991,7 +1110,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -1007,7 +1127,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -1020,7 +1141,14 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 0,
+      "it": 13,
+      "o": 69,
+      "l": 70
+     },
+     "kl": "V"
     },
     {
      "nr": "41",
@@ -1036,7 +1164,8 @@
       }
      ],
      "absatz": "1",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -1052,7 +1181,8 @@
       }
      ],
      "absatz": "1",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -1076,7 +1206,8 @@
       }
      ],
      "absatz": "1",
-     "item": "l"
+     "item": "l",
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -1089,7 +1220,14 @@
       }
      ],
      "absatz": "1",
-     "item": "l"
+     "item": "l",
+     "pos": {
+      "b": 0,
+      "it": 18,
+      "o": 337,
+      "l": 367
+     },
+     "kl": "V"
     },
     {
      "nr": "45",
@@ -1113,7 +1251,14 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 19,
+      "o": 2,
+      "l": 3
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -1125,7 +1270,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 131,
+      "l": 131
+     },
+     "kl": "U"
     }
    ]
   },
@@ -1133,11 +1284,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "II. Entstehung der Abgabeforderung"
+     "label": "II. Entstehung der Abgabeforderung",
+     "eId": "chap_1/lvl_II"
     }
    ],
    "marginalie": [],
@@ -1160,7 +1313,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -1173,7 +1327,14 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 5,
+      "l": 123
+     },
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -1189,7 +1350,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -1217,7 +1379,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -1230,7 +1393,14 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 107,
+      "l": 152
+     },
+     "kl": "V"
     },
     {
      "nr": "52",
@@ -1246,7 +1416,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1254,11 +1430,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "III. Abgabesätze und Berechnungsgrundlage"
+     "label": "III. Abgabesätze und Berechnungsgrundlage",
+     "eId": "chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -1279,7 +1457,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -1295,7 +1474,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 72,
+      "l": 72
+     },
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -1311,7 +1496,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1319,11 +1510,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "III. Abgabesätze und Berechnungsgrundlage"
+     "label": "III. Abgabesätze und Berechnungsgrundlage",
+     "eId": "chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -1344,7 +1537,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -1360,7 +1554,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -1376,7 +1571,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -1389,7 +1585,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -1417,7 +1614,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -1430,7 +1628,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 117,
+      "l": 245
+     },
+     "kl": "V"
     },
     {
      "nr": "62",
@@ -1458,7 +1662,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 245,
+      "l": 245
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1466,11 +1676,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_1/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -1489,7 +1701,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 80,
+      "l": 243
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1505,7 +1723,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -1529,7 +1753,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 7,
+      "l": 7
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1537,11 +1767,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "V. Fälligkeit der Abgabeforderung"
+     "label": "V. Fälligkeit der Abgabeforderung",
+     "eId": "chap_1/lvl_V"
     }
    ],
    "marginalie": [],
@@ -1560,7 +1792,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -1576,7 +1809,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -1584,11 +1818,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "VI. Stundung und Erlass der Abgabeforderung"
+     "label": "VI. Stundung und Erlass der Abgabeforderung",
+     "eId": "chap_1/lvl_VI"
     }
    ],
    "marginalie": []
@@ -1597,11 +1833,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1622,7 +1860,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 203,
+      "l": 203
+     },
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -1642,7 +1886,8 @@
       }
      ],
      "absatz": "2",
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -1658,7 +1903,8 @@
       }
      ],
      "absatz": "2",
-     "item": "3"
+     "item": "3",
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -1671,7 +1917,14 @@
       }
      ],
      "absatz": "2",
-     "item": "3"
+     "item": "3",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 48,
+      "l": 49
+     },
+     "kl": "V"
     },
     {
      "nr": "73",
@@ -1687,7 +1940,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 90,
+      "l": 90
+     },
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -1703,7 +1963,8 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -1716,7 +1977,14 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 2,
+      "it": 0,
+      "o": 99,
+      "l": 231
+     },
+     "kl": "V"
     },
     {
      "nr": "76",
@@ -1729,7 +1997,14 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 2,
+      "it": 0,
+      "o": 230,
+      "l": 231
+     },
+     "kl": "V"
     },
     {
      "nr": "77",
@@ -1745,7 +2020,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1761,7 +2037,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "79",
@@ -1785,7 +2062,8 @@
       }
      ],
      "absatz": "3",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -1809,7 +2087,8 @@
       }
      ],
      "absatz": "3",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "81",
@@ -1825,7 +2104,14 @@
       }
      ],
      "absatz": "3",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 2,
+      "it": 7,
+      "o": 242,
+      "l": 242
+     },
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -1838,7 +2124,14 @@
       }
      ],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 3,
+      "it": 0,
+      "o": 70,
+      "l": 271
+     },
+     "kl": "V"
     },
     {
      "nr": "83",
@@ -1851,7 +2144,14 @@
       }
      ],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 3,
+      "it": 0,
+      "o": 187,
+      "l": 271
+     },
+     "kl": "V"
     },
     {
      "nr": "84",
@@ -1864,7 +2164,14 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 96,
+      "l": 186
+     },
+     "kl": "V"
     },
     {
      "nr": "85",
@@ -1877,7 +2184,14 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 85,
+      "l": 239
+     },
+     "kl": "V"
     },
     {
      "nr": "86",
@@ -1901,7 +2215,14 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 3,
+      "o": 194,
+      "l": 194
+     },
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -1925,7 +2246,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 205,
+      "l": 205
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1933,11 +2260,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1962,7 +2291,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "89",
@@ -1975,7 +2305,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 247,
+      "l": 415
+     },
+     "kl": "V"
     },
     {
      "nr": "90",
@@ -1995,7 +2332,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -2011,7 +2349,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "92",
@@ -2027,7 +2366,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "93",
@@ -2043,7 +2383,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -2071,7 +2412,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -2087,7 +2429,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "96",
@@ -2103,7 +2446,8 @@
       }
      ],
      "absatz": "1",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     },
     {
      "nr": "97",
@@ -2116,7 +2460,14 @@
       }
      ],
      "absatz": "1",
-     "item": "j"
+     "item": "j",
+     "pos": {
+      "b": 0,
+      "it": 9,
+      "o": 180,
+      "l": 383
+     },
+     "kl": "V"
     },
     {
      "nr": "98",
@@ -2132,7 +2483,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "99",
@@ -2148,7 +2505,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 468,
+      "l": 468
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2156,11 +2519,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "II. Entstehung der Abgabeforderung"
+     "label": "II. Entstehung der Abgabeforderung",
+     "eId": "chap_2/lvl_II"
     }
    ],
    "marginalie": []
@@ -2169,11 +2534,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "III. Abgabesatz und Berechnungsgrundlage"
+     "label": "III. Abgabesatz und Berechnungsgrundlage",
+     "eId": "chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2194,7 +2561,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     },
     {
      "nr": "101",
@@ -2210,7 +2578,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 12,
+      "l": 57
+     },
+     "kl": "U"
     },
     {
      "nr": "102",
@@ -2226,7 +2601,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 10,
+      "l": 56
+     },
+     "kl": "U"
     }
    ]
   },
@@ -2234,11 +2616,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2259,7 +2643,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 165,
+      "l": 165
+     },
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -2283,7 +2674,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2291,11 +2688,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2316,7 +2715,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 125,
+      "l": 125
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2324,11 +2729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2349,7 +2756,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "111",
@@ -2362,7 +2770,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 184,
+      "l": 414
+     },
+     "kl": "V"
     },
     {
      "nr": "112",
@@ -2378,7 +2792,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 255,
+      "l": 414
+     },
+     "kl": "A"
     },
     {
      "nr": "113",
@@ -2398,7 +2818,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2406,11 +2832,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "V. Fälligkeit der Abgabeforderung"
+     "label": "V. Fälligkeit der Abgabeforderung",
+     "eId": "chap_2/lvl_V"
     }
    ],
    "marginalie": []
@@ -2419,11 +2847,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien"
+     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -2434,11 +2864,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien"
+     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -2459,7 +2891,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "116",
@@ -2475,7 +2908,14 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 5,
+      "l": 87
+     },
+     "kl": "A"
     },
     {
      "nr": "117",
@@ -2488,7 +2928,14 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 80,
+      "l": 87
+     },
+     "kl": "V"
     },
     {
      "nr": "118",
@@ -2504,7 +2951,14 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 5,
+      "l": 106
+     },
+     "kl": "A"
     },
     {
      "nr": "119",
@@ -2517,7 +2971,14 @@
       }
      ],
      "absatz": null,
-     "item": "k"
+     "item": "k",
+     "pos": {
+      "b": 0,
+      "it": 11,
+      "o": 43,
+      "l": 183
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2525,11 +2986,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien"
+     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "II. Entstehung der Abgabeforderung"
+     "label": "II. Entstehung der Abgabeforderung",
+     "eId": "chap_3/lvl_II"
     }
    ],
    "marginalie": []
@@ -2538,11 +3001,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien"
+     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "III. Abgabesätze und Berechnungsgrundlage"
+     "label": "III. Abgabesätze und Berechnungsgrundlage",
+     "eId": "chap_3/lvl_III"
     }
    ],
    "marginalie": [],
@@ -2561,7 +3026,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 109,
+      "l": 109
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2569,11 +3040,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien"
+     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_3/lvl_IV"
     }
    ],
    "marginalie": []
@@ -2582,11 +3055,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien"
+     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "V. Fälligkeit der Abgabeforderung"
+     "label": "V. Fälligkeit der Abgabeforderung",
+     "eId": "chap_3/lvl_V"
     }
    ],
    "marginalie": []
@@ -2595,11 +3070,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben"
+     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "I. Festsetzung der Abgaben"
+     "label": "I. Festsetzung der Abgaben",
+     "eId": "chap_4/lvl_I"
     }
    ],
    "marginalie": []
@@ -2608,11 +3085,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben"
+     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "II. Umrechnung ausländischer Währungen"
+     "label": "II. Umrechnung ausländischer Währungen",
+     "eId": "chap_4/lvl_II"
     }
    ],
    "marginalie": []
@@ -2621,11 +3100,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben"
+     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "III. Verzugszins"
+     "label": "III. Verzugszins",
+     "eId": "chap_4/lvl_III"
     }
    ],
    "marginalie": [],
@@ -2645,7 +3126,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "III. Verzugszins"
+     "sektion": "III. Verzugszins",
+     "kl": "A"
     },
     {
      "nr": "122",
@@ -2658,7 +3140,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "III. Verzugszins"
+     "sektion": "III. Verzugszins",
+     "kl": "A"
     }
    ]
   },
@@ -2666,11 +3149,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben"
+     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "IV. Verjährung der Abgabeforderung"
+     "label": "IV. Verjährung der Abgabeforderung",
+     "eId": "chap_4/lvl_IV"
     }
    ],
    "marginalie": []
@@ -2679,15 +3164,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Behörden"
+     "label": "A. Behörden",
+     "eId": "chap_5/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Eidgenössische Steuerverwaltung"
+     "label": "I. Eidgenössische Steuerverwaltung",
+     "eId": "chap_5/lvl_A/lvl_I"
     }
    ],
    "marginalie": [],
@@ -2706,7 +3194,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2714,15 +3203,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Behörden"
+     "label": "A. Behörden",
+     "eId": "chap_5/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Amtshilfe"
+     "label": "II. Amtshilfe",
+     "eId": "chap_5/lvl_A/lvl_II"
     }
    ],
    "marginalie": [],
@@ -2741,7 +3233,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 74,
+      "l": 286
+     },
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -2754,7 +3252,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 329,
+      "l": 331
+     },
+     "kl": "V"
     },
     {
      "nr": "126",
@@ -2770,7 +3274,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 331,
+      "l": 331
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2778,15 +3288,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Behörden"
+     "label": "A. Behörden",
+     "eId": "chap_5/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Schweigepflicht"
+     "label": "III. Schweigepflicht",
+     "eId": "chap_5/lvl_A/lvl_III"
     }
    ],
    "marginalie": [],
@@ -2796,7 +3309,14 @@
      "text": "Bezeichnung gemäss nicht veröffentlichtem BRB vom 19. Dez. 1997.",
      "links": [],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 125,
+      "l": 257
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2804,15 +3324,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Abgabeerhebung"
+     "label": "I. Abgabeerhebung",
+     "eId": "chap_5/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -2833,7 +3356,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2841,15 +3370,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Abgabeerhebung"
+     "label": "I. Abgabeerhebung",
+     "eId": "chap_5/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -2870,7 +3402,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 72,
+      "l": 72
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2878,15 +3416,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Abgabeerhebung"
+     "label": "I. Abgabeerhebung",
+     "eId": "chap_5/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -2897,15 +3438,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Abgabeerhebung"
+     "label": "I. Abgabeerhebung",
+     "eId": "chap_5/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -2923,7 +3467,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 130,
+      "l": 341
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2931,15 +3481,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "II. Entscheide der ESTV"
+     "label": "II. Entscheide der ESTV",
+     "eId": "chap_5/lvl_B/lvl_II"
     }
    ],
    "marginalie": []
@@ -2948,15 +3501,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "III. Einsprache"
+     "label": "III. Einsprache",
+     "eId": "chap_5/lvl_B/lvl_III"
     }
    ],
    "marginalie": [],
@@ -2975,7 +3531,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "132",
@@ -2992,7 +3549,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "III. Einsprache"
+     "sektion": "III. Einsprache",
+     "kl": "A"
     }
    ]
   },
@@ -3000,15 +3558,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "III. Einsprache"
+     "label": "III. Einsprache",
+     "eId": "chap_5/lvl_B/lvl_III"
     }
    ],
    "marginalie": [],
@@ -3027,7 +3588,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3035,15 +3597,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "IV. Kosten"
+     "label": "IV. Kosten",
+     "eId": "chap_5/lvl_B/lvl_IV"
     }
    ],
    "marginalie": []
@@ -3052,15 +3617,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "V. Zwangsvollstreckung"
+     "label": "V. Zwangsvollstreckung",
+     "eId": "chap_5/lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -3071,15 +3639,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "V. Zwangsvollstreckung"
+     "label": "V. Zwangsvollstreckung",
+     "eId": "chap_5/lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -3097,7 +3668,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 374,
+      "l": 433
+     },
+     "kl": "V"
     },
     {
      "nr": "138",
@@ -3113,7 +3690,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 433,
+      "l": 433
+     },
+     "kl": "A"
     },
     {
      "nr": "139",
@@ -3129,7 +3712,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 103,
+      "l": 103
+     },
+     "kl": "A"
     },
     {
      "nr": "140",
@@ -3153,7 +3742,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 79,
+      "l": 79
+     },
+     "kl": "A"
     },
     {
      "nr": "141",
@@ -3177,7 +3772,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3185,11 +3786,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Revision und Erläuterung von Entscheiden"
+     "label": "C. Revision und Erläuterung von Entscheiden",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [],
@@ -3205,7 +3808,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 142,
+      "l": 164
+     },
+     "kl": "V"
     },
     {
      "nr": "143",
@@ -3221,7 +3830,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3229,15 +3844,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Strafbestimmungen"
+     "label": "Sechster Abschnitt: Strafbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "A. Widerhandlungen"
+     "label": "A. Widerhandlungen",
+     "eId": "chap_6/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Hinterziehung"
+     "label": "I. Hinterziehung",
+     "eId": "chap_6/lvl_A/lvl_I"
     }
    ],
    "marginalie": [],
@@ -3253,7 +3871,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 311,
+      "l": 508
+     },
+     "kl": "V"
     },
     {
      "nr": "146",
@@ -3269,7 +3893,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 508,
+      "l": 508
+     },
+     "kl": "A"
     },
     {
      "nr": "147",
@@ -3286,7 +3916,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 5,
+      "l": 5
+     },
+     "kl": "A"
     },
     {
      "nr": "144",
@@ -3303,7 +3939,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "I. Hinterziehung"
+     "sektion": "I. Hinterziehung",
+     "kl": "A"
     }
    ]
   },
@@ -3311,15 +3948,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Strafbestimmungen"
+     "label": "Sechster Abschnitt: Strafbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "A. Widerhandlungen"
+     "label": "A. Widerhandlungen",
+     "eId": "chap_6/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Abgabegefährdung"
+     "label": "II. Abgabegefährdung",
+     "eId": "chap_6/lvl_A/lvl_II"
     }
    ],
    "marginalie": [],
@@ -3338,7 +3978,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "149",
@@ -3352,7 +3993,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 116,
+      "l": 168
+     },
+     "kl": "V"
     },
     {
      "nr": "150",
@@ -3369,7 +4016,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 168,
+      "l": 168
+     },
+     "kl": "A"
     },
     {
      "nr": "151",
@@ -3382,7 +4035,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 123,
+      "l": 136
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3390,15 +4049,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Strafbestimmungen"
+     "label": "Sechster Abschnitt: Strafbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "A. Widerhandlungen"
+     "label": "A. Widerhandlungen",
+     "eId": "chap_6/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Ordnungswidrigkeiten"
+     "label": "III. Ordnungswidrigkeiten",
+     "eId": "chap_6/lvl_A/lvl_III"
     }
    ],
    "marginalie": []
@@ -3407,11 +4069,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Strafbestimmungen"
+     "label": "Sechster Abschnitt: Strafbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "B. Verhältnis zum Verwaltungsstrafrechtsgesetz"
+     "label": "B. Verhältnis zum Verwaltungsstrafrechtsgesetz",
+     "eId": "chap_6/lvl_B"
     }
    ],
    "marginalie": [],
@@ -3427,7 +4091,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 50,
+      "l": 152
+     },
+     "kl": "V"
     },
     {
      "nr": "155",
@@ -3443,7 +4113,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
     },
     {
      "nr": "156",
@@ -3459,7 +4135,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "153",
@@ -3476,7 +4158,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "B. Verhältnis zum Verwaltungsstrafrechtsgesetz"
+     "sektion": "B. Verhältnis zum Verwaltungsstrafrechtsgesetz",
+     "kl": "A"
     }
    ]
   },
@@ -3484,11 +4167,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "I. Anrechnung bezahlter Emissionsabgaben"
+     "label": "I. Anrechnung bezahlter Emissionsabgaben",
+     "eId": "chap_7/lvl_I"
     }
    ],
    "marginalie": [],
@@ -3507,7 +4192,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3515,11 +4201,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "II. Änderung des Verrechnungssteuergesetzes"
+     "label": "II. Änderung des Verrechnungssteuergesetzes",
+     "eId": "chap_7/lvl_II"
     }
    ],
    "marginalie": [],
@@ -3535,7 +4223,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3543,11 +4237,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "III. Aufhebung bisherigen Rechts"
+     "label": "III. Aufhebung bisherigen Rechts",
+     "eId": "chap_7/lvl_III"
     }
    ],
    "marginalie": [],
@@ -3562,14 +4258,28 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 36,
+      "l": 61
+     },
+     "kl": "Z"
     },
     {
      "nr": "160",
      "text": "[BS <b>6</b> 126]",
      "links": [],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 37,
+      "l": 88
+     },
+     "kl": "Z"
     },
     {
      "nr": "161",
@@ -3581,7 +4291,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 34,
+      "l": 105
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3589,11 +4306,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "IV. Vollzug"
+     "label": "IV. Vollzug",
+     "eId": "chap_7/lvl_IV"
     }
    ],
    "marginalie": []
@@ -3602,11 +4321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "V. Inkrafttreten"
+     "label": "V. Inkrafttreten",
+     "eId": "chap_7/lvl_V"
     }
    ],
    "marginalie": [],
@@ -3616,7 +4337,8 @@
      "text": "BRB vom 30. Okt. 1973",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3624,11 +4346,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3657,7 +4381,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -3673,7 +4398,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -3686,7 +4412,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 56,
+      "l": 57
+     },
+     "kl": "V"
     },
     {
      "nr": "108",
@@ -3702,7 +4435,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -3710,11 +4444,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3735,7 +4471,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3743,15 +4480,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Behörden"
+     "label": "A. Behörden",
+     "eId": "chap_5/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Datenbearbeitung"
+     "label": "IIa. Datenbearbeitung",
+     "eId": "chap_5/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [],
@@ -3771,7 +4511,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "IIa. Datenbearbeitung"
+     "sektion": "IIa. Datenbearbeitung",
+     "kl": "A"
     }
    ]
   },
@@ -3779,15 +4520,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "III. Einsprache"
+     "label": "III. Einsprache",
+     "eId": "chap_5/lvl_B/lvl_III"
     }
    ],
    "marginalie": [],
@@ -3814,7 +4558,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3822,15 +4567,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "IVa. Elektronische Verfahren"
+     "label": "IVa. Elektronische Verfahren",
+     "eId": "chap_5/lvl_B/lvl_IV_a"
     }
    ],
    "marginalie": [],
@@ -3850,7 +4598,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "IVa. Elektronische Verfahren"
+     "sektion": "IVa. Elektronische Verfahren",
+     "kl": "A"
     }
    ]
   },
@@ -3858,15 +4607,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Strafbestimmungen"
+     "label": "Sechster Abschnitt: Strafbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "A. Widerhandlungen"
+     "label": "A. Widerhandlungen",
+     "eId": "chap_6/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Allgemeine Bestimmungen"
+     "label": "IV. Allgemeine Bestimmungen",
+     "eId": "chap_6/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -3885,7 +4637,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3893,11 +4646,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_1/lvl_I"
     }
    ],
    "marginalie": [],
@@ -3924,7 +4679,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3932,11 +4688,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "III. Abgabesätze und Berechnungsgrundlage"
+     "label": "III. Abgabesätze und Berechnungsgrundlage",
+     "eId": "chap_1/lvl_III"
     }
    ],
    "marginalie": [],
@@ -3963,7 +4721,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

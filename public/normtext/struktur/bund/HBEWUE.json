@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.274.132",
   "titel": "Übereinkommen über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -42,7 +43,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -51,7 +53,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -60,7 +63,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -69,7 +73,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -78,7 +83,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -87,7 +93,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -96,7 +103,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -105,7 +113,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -114,7 +123,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -123,7 +133,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -132,7 +143,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -141,7 +153,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -150,7 +163,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -159,7 +173,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Rechtshilfeersuchen"
+     "label": "Kapitel I: Rechtshilfeersuchen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -168,7 +183,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte"
+     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -177,7 +193,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte"
+     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -186,7 +203,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte"
+     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -195,7 +213,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte"
+     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -204,7 +223,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte"
+     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -213,7 +233,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte"
+     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -222,7 +243,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte"
+     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -231,7 +253,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte"
+     "label": "Kapitel II: Beweisaufnahme durch diplomatische oder konsularische Vertreter und durch Beauftragte",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -240,7 +263,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -249,7 +273,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -258,7 +283,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -267,7 +293,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -276,7 +303,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -285,7 +313,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -294,7 +323,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -310,7 +340,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 126,
+      "l": 282
+     },
+     "kl": "Z"
     },
     {
      "nr": "3",
@@ -324,7 +360,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 146,
+      "l": 282
+     },
+     "kl": "V"
     }
    ]
   },
@@ -332,7 +374,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -341,7 +384,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -350,7 +394,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -359,7 +404,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -368,7 +414,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -377,7 +424,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -386,7 +434,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -395,7 +444,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -404,7 +454,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -413,7 +464,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -430,7 +482,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 263,
+      "l": 366
+     },
+     "kl": "V"
     }
    ]
   },
@@ -438,7 +496,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -447,7 +506,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -456,7 +516,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Allgemeine Bestimmungen"
+     "label": "Kapitel III: Allgemeine Bestimmungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []

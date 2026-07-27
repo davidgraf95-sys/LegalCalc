@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "211.432.11",
   "titel": "Technische Verordnung des EJPD und des VBS über das Grundbuch",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -47,7 +48,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -59,7 +61,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -71,7 +74,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -80,7 +84,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Gegenstand"
+     "label": "1. Abschnitt: Gegenstand",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [],
@@ -95,7 +100,8 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -107,7 +113,8 @@
       }
      ],
      "absatz": null,
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -119,7 +126,8 @@
       }
      ],
      "absatz": null,
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -131,7 +139,8 @@
       }
      ],
      "absatz": null,
-     "item": "l"
+     "item": "l",
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -143,7 +152,8 @@
       }
      ],
      "absatz": null,
-     "item": "m"
+     "item": "m",
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -155,7 +165,8 @@
       }
      ],
      "absatz": null,
-     "item": "n"
+     "item": "n",
+     "kl": "A"
     }
    ]
   },
@@ -163,7 +174,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -180,7 +192,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -192,7 +205,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -204,7 +218,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -216,7 +231,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -228,7 +244,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -240,7 +257,8 @@
       }
      ],
      "absatz": "1",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     }
    ]
   },
@@ -248,7 +266,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -259,7 +278,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -270,7 +290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -287,7 +308,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -295,7 +317,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -312,7 +335,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 206,
+      "l": 206
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -324,7 +353,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 167,
+      "l": 167
+     },
+     "kl": "A"
     }
    ]
   },
@@ -332,7 +367,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Datenbeschreibungssprachen"
+     "label": "3. Abschnitt: Datenbeschreibungssprachen",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [],
@@ -342,7 +378,13 @@
      "text": "Diese Norm kann kostenlos eingesehen und gegen Bezahlung bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur; www.snv.ch.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 120,
+      "l": 133
+     },
+     "kl": "V"
     }
    ]
   },
@@ -350,7 +392,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Das Datenmodell für das Grundbuch"
+     "label": "4. Abschnitt: Das Datenmodell für das Grundbuch",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [],
@@ -365,7 +408,8 @@
       }
      ],
      "absatz": "3",
-     "item": "3"
+     "item": "3",
+     "kl": "A"
     }
    ]
   },
@@ -373,7 +417,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Das Datenmodell für den Datenaustausch zwischen der amtlichenVermessung und dem Grundbuch"
+     "label": "5. Abschnitt: Das Datenmodell für den Datenaustausch zwischen der amtlichen Vermessung und dem Grundbuch",
+     "eId": "sec_5"
     }
    ],
    "marginalie": []
@@ -382,7 +427,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Die Schnittstelle für den Bezug und den Austausch von Grundbuchdaten"
+     "label": "6. Abschnitt: Die Schnittstelle für den Bezug und den Austausch von Grundbuchdaten",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [],
@@ -397,7 +443,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -409,7 +456,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     }
    ]
   },
@@ -417,7 +465,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Die Schnittstelle für den Datenaustausch zwischen der amtlichenVermessung und dem Grundbuch"
+     "label": "7. Abschnitt: Die Schnittstelle für den Datenaustausch zwischen der amtlichen Vermessung und dem Grundbuch",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -430,7 +479,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 126,
+      "l": 134
+     },
+     "kl": "V"
     }
    ]
   },
@@ -438,7 +493,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Die Schnittstelle für den Datenaustausch zwischen der amtlichenVermessung und dem Grundbuch"
+     "label": "7. Abschnitt: Die Schnittstelle für den Datenaustausch zwischen der amtlichen Vermessung und dem Grundbuch",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -449,7 +505,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Anforderungen an die Informatiksysteme"
+     "label": "8. Abschnitt: Anforderungen an die Informatiksysteme",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -460,7 +517,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Anforderungen an die Informatiksysteme"
+     "label": "8. Abschnitt: Anforderungen an die Informatiksysteme",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -471,7 +529,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Anforderungen an die Informatiksysteme"
+     "label": "8. Abschnitt: Anforderungen an die Informatiksysteme",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -482,7 +541,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Die eidgenössische Grundstücksidentifikation"
+     "label": "9. Abschnitt: Die eidgenössische Grundstücksidentifikation",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -493,7 +553,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Die eidgenössische Grundstücksidentifikation"
+     "label": "9. Abschnitt: Die eidgenössische Grundstücksidentifikation",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -504,7 +565,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt: Datenformate von Dokumenten für den elektronischen Geschäftsverkehr mit den Grundbuchämtern"
+     "label": "10. Abschnitt: Datenformate von Dokumenten für den elektronischen Geschäftsverkehr mit den Grundbuchämtern",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -521,7 +583,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -533,7 +596,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 192,
+      "l": 284
+     },
+     "kl": "V"
     },
     {
      "nr": "35",
@@ -545,7 +615,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -557,7 +628,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 109,
+      "l": 213
+     },
+     "kl": "V"
     }
    ]
   },
@@ -565,7 +643,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt: Datenformate von Dokumenten für den elektronischen Geschäftsverkehr mit den Grundbuchämtern"
+     "label": "10. Abschnitt: Datenformate von Dokumenten für den elektronischen Geschäftsverkehr mit den Grundbuchämtern",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -582,7 +661,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 249,
+      "l": 328
+     },
+     "kl": "V"
     },
     {
      "nr": "38",
@@ -594,7 +680,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -606,7 +693,14 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 66,
+      "l": 67
+     },
+     "kl": "V"
     },
     {
      "nr": "40",
@@ -618,7 +712,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -626,7 +721,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt: Datenformate von Dokumenten für den elektronischen Geschäftsverkehr mit den Grundbuchämtern"
+     "label": "10. Abschnitt: Datenformate von Dokumenten für den elektronischen Geschäftsverkehr mit den Grundbuchämtern",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -643,7 +739,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 90,
+      "l": 91
+     },
+     "kl": "V"
     },
     {
      "nr": "42",
@@ -655,7 +757,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 91,
+      "l": 91
+     },
+     "kl": "A"
     }
    ]
   },
@@ -663,7 +771,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Abschnitt: Alternative Übermittlungsverfahren"
+     "label": "11. Abschnitt: Alternative Übermittlungsverfahren",
+     "eId": "sec_11"
     }
    ],
    "marginalie": [
@@ -692,14 +801,28 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 190,
+      "l": 255
+     },
+     "kl": "Z"
     },
     {
      "nr": "44",
      "text": "www.eCH.ch",
      "links": [],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 162,
+      "l": 198
+     },
+     "kl": "U"
     }
    ]
   },
@@ -707,7 +830,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Abschnitt: Alternative Übermittlungsverfahren"
+     "label": "11. Abschnitt: Alternative Übermittlungsverfahren",
+     "eId": "sec_11"
     }
    ],
    "marginalie": [
@@ -724,7 +848,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 181,
+      "l": 192
+     },
+     "kl": "V"
     }
    ]
   },
@@ -732,7 +862,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Abschnitt: Langzeitsicherung"
+     "label": "12. Abschnitt: Langzeitsicherung",
+     "eId": "sec_12"
     }
    ],
    "marginalie": [],
@@ -747,7 +878,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 219,
+      "l": 315
+     },
+     "kl": "V"
     }
    ]
   },
@@ -755,7 +892,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Abschnitt: Mindestanforderungen an die Betriebssicherheit der Grundbuchsysteme"
+     "label": "13. Abschnitt: Mindestanforderungen an die Betriebssicherheit der Grundbuchsysteme",
+     "eId": "sec_13"
     }
    ],
    "marginalie": []
@@ -764,7 +902,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Abschnitt: Schlussbestimmungen"
+     "label": "14. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_14"
     }
    ],
    "marginalie": [
@@ -782,7 +921,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 63,
+      "l": 99
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -790,7 +935,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Abschnitt: Schlussbestimmungen"
+     "label": "14. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_14"
     }
    ],
    "marginalie": [
@@ -801,7 +947,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Abschnitt: Schlussbestimmungen"
+     "label": "14. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_14"
     }
    ],
    "marginalie": [
@@ -812,7 +959,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes"
+     "label": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes",
+     "eId": "sec_6_a"
     }
    ],
    "marginalie": [
@@ -830,7 +978,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes"
+     "sektion": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes",
+     "kl": "A"
     }
    ]
   },
@@ -838,7 +987,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes"
+     "label": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes",
+     "eId": "sec_6_a"
     }
    ],
    "marginalie": [
@@ -849,7 +999,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle"
+     "label": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle",
+     "eId": "sec_11_a"
     }
    ],
    "marginalie": [
@@ -867,7 +1018,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle"
+     "sektion": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle",
+     "kl": "A"
     }
    ]
   },
@@ -875,7 +1027,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle"
+     "label": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle",
+     "eId": "sec_11_a"
     }
    ],
    "marginalie": [
@@ -886,7 +1039,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Abschnitt: Schlussbestimmungen"
+     "label": "14. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_14"
     }
    ],
    "marginalie": [
@@ -903,7 +1057,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -911,7 +1066,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Abschnitt: Schlussbestimmungen"
+     "label": "14. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_14"
     }
    ],
    "marginalie": [
@@ -928,7 +1084,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -948,7 +1105,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 382,
+      "l": 420
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -956,7 +1119,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Abschnitt: Plan für das Grundbuch"
+     "label": "3a. Abschnitt: Plan für das Grundbuch",
+     "eId": "sec_3_a"
     }
    ],
    "marginalie": [
@@ -973,7 +1137,14 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 115,
+      "l": 226
+     },
+     "kl": "V"
     },
     {
      "nr": "23",
@@ -985,7 +1156,14 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 81,
+      "l": 119
+     },
+     "kl": "V"
     },
     {
      "nr": "21",
@@ -998,7 +1176,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Abschnitt: Plan für das Grundbuch"
+     "sektion": "3a. Abschnitt: Plan für das Grundbuch",
+     "kl": "A"
     }
    ]
   },
@@ -1006,7 +1185,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Abschnitt: Plan für das Grundbuch"
+     "label": "3a. Abschnitt: Plan für das Grundbuch",
+     "eId": "sec_3_a"
     }
    ],
    "marginalie": [
@@ -1017,7 +1197,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung"
+     "label": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung",
+     "eId": "sec_3_b"
     }
    ],
    "marginalie": [
@@ -1034,7 +1215,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 55,
+      "l": 56
+     },
+     "kl": "V"
     },
     {
      "nr": "26",
@@ -1046,7 +1234,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 98,
+      "l": 148
+     },
+     "kl": "V"
     },
     {
      "nr": "24",
@@ -1059,7 +1254,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung"
+     "sektion": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung",
+     "kl": "A"
     }
    ]
   },
@@ -1067,7 +1263,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung"
+     "label": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung",
+     "eId": "sec_3_b"
     }
    ],
    "marginalie": [
@@ -1078,7 +1275,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung"
+     "label": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1096,7 +1294,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung"
+     "sektion": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung",
+     "kl": "A"
     }
    ]
   },
@@ -1104,7 +1303,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung"
+     "label": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [

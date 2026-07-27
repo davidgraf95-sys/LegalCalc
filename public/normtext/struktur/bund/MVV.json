@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "833.11",
   "titel": "Verordnung über die Militärversicherung",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -48,7 +49,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -60,7 +62,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -69,7 +72,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -87,7 +91,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 178,
+      "l": 268
+     },
+     "kl": "V"
     },
     {
      "nr": "5",
@@ -100,7 +110,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 229,
+      "l": 268
+     },
+     "kl": "V"
     },
     {
      "nr": "6",
@@ -112,7 +128,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 268,
+      "l": 268
+     },
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -124,7 +146,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -137,7 +165,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 190,
+      "l": 280
+     },
+     "kl": "V"
     },
     {
      "nr": "9",
@@ -150,7 +184,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 247,
+      "l": 280
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -162,7 +202,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 280,
+      "l": 280
+     },
+     "kl": "A"
     }
    ]
   },
@@ -170,7 +216,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -187,7 +234,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -200,7 +248,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 88,
+      "l": 89
+     },
+     "kl": "V"
     }
    ]
   },
@@ -208,7 +263,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -225,7 +281,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -237,7 +294,8 @@
       }
      ],
      "absatz": null,
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     }
    ]
   },
@@ -245,7 +303,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -262,7 +321,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -275,7 +335,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 228,
+      "l": 247
+     },
+     "kl": "V"
     }
    ]
   },
@@ -283,7 +349,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -300,7 +367,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 274,
+      "l": 274
+     },
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -312,7 +385,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 199,
+      "l": 199
+     },
+     "kl": "A"
     }
    ]
   },
@@ -320,11 +399,12 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
-    "Zivilpersonen im Einsatz oder in Ausbildung für Armee undZivilschutz"
+    "Zivilpersonen im Einsatz oder in Ausbildung für Armee und Zivilschutz"
    ],
    "fussnoten": [
     {
@@ -337,7 +417,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -349,7 +430,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 184,
+      "l": 184
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -361,7 +448,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -422,7 +510,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 104,
+      "l": 115
+     },
+     "kl": "Z"
     },
     {
      "nr": "23",
@@ -434,7 +529,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 115,
+      "l": 115
+     },
+     "kl": "A"
     }
    ]
   },
@@ -442,7 +544,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -459,7 +562,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -473,7 +577,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 206,
+      "l": 295
+     },
+     "kl": "V"
     }
    ]
   },
@@ -481,7 +591,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -498,7 +609,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -506,7 +618,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -525,7 +638,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 143,
+      "l": 290
+     },
+     "kl": "V"
     }
    ]
   },
@@ -533,7 +652,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -550,7 +670,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -562,7 +683,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 332,
+      "l": 332
+     },
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -575,7 +702,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 207,
+      "l": 423
+     },
+     "kl": "V"
     },
     {
      "nr": "37",
@@ -587,7 +720,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 279,
+      "l": 423
+     },
+     "kl": "A"
     }
    ]
   },
@@ -595,7 +734,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -612,7 +752,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -624,7 +765,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 439,
+      "l": 439
+     },
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -636,7 +783,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 257,
+      "l": 257
+     },
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -649,7 +802,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 118,
+      "l": 170
+     },
+     "kl": "V"
     },
     {
      "nr": "42",
@@ -661,7 +820,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 170,
+      "l": 170
+     },
+     "kl": "A"
     }
    ]
   },
@@ -669,7 +834,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -686,7 +852,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -700,7 +867,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 296,
+      "l": 588
+     },
+     "kl": "V"
     }
    ]
   },
@@ -708,7 +881,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -725,7 +899,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -737,7 +912,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -750,7 +926,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 30,
+      "l": 31
+     },
+     "kl": "V"
     }
    ]
   },
@@ -758,7 +941,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -775,7 +959,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -788,7 +978,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 214,
+      "l": 232
+     },
+     "kl": "V"
     },
     {
      "nr": "56",
@@ -800,7 +996,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 232,
+      "l": 232
+     },
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -812,7 +1014,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 7,
+      "l": 104
+     },
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -824,7 +1032,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 393,
+      "l": 393
+     },
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -836,7 +1050,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     }
    ]
   },
@@ -844,7 +1064,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -861,7 +1082,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 227,
+      "l": 227
+     },
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -873,7 +1100,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 263,
+      "l": 263
+     },
+     "kl": "A"
     }
    ]
   },
@@ -881,7 +1114,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -899,7 +1133,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 81,
+      "l": 314
+     },
+     "kl": "V"
     },
     {
      "nr": "63",
@@ -911,7 +1151,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 314,
+      "l": 314
+     },
+     "kl": "A"
     }
    ]
   },
@@ -919,7 +1165,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -930,7 +1177,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -941,7 +1189,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -958,7 +1207,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 450,
+      "l": 450
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -970,7 +1225,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 213,
+      "l": 213
+     },
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -983,7 +1244,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 51,
+      "l": 394
+     },
+     "kl": "V"
     },
     {
      "nr": "67",
@@ -996,7 +1263,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 262,
+      "l": 394
+     },
+     "kl": "V"
     },
     {
      "nr": "68",
@@ -1008,7 +1281,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 394,
+      "l": 394
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1016,7 +1295,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1033,7 +1313,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 357,
+      "l": 357
+     },
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -1046,7 +1332,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 20,
+      "l": 260
+     },
+     "kl": "V"
     },
     {
      "nr": "71",
@@ -1059,7 +1351,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 140,
+      "l": 260
+     },
+     "kl": "V"
     },
     {
      "nr": "72",
@@ -1071,7 +1369,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 260,
+      "l": 260
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1079,7 +1383,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1096,7 +1401,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 188,
+      "l": 188
+     },
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -1108,7 +1419,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 174,
+      "l": 174
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1116,7 +1433,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1127,7 +1445,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1145,7 +1464,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 86,
+      "l": 159
+     },
+     "kl": "V"
     },
     {
      "nr": "76",
@@ -1157,7 +1482,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 159,
+      "l": 159
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1165,7 +1496,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1182,7 +1514,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 221,
+      "l": 221
+     },
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1194,7 +1532,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 87,
+      "l": 87
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1202,7 +1546,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1219,7 +1564,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 281,
+      "l": 281
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1227,7 +1578,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1244,7 +1596,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 226,
+      "l": 226
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1252,7 +1610,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1263,7 +1622,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1280,7 +1640,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -1292,7 +1653,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 280,
+      "l": 280
+     },
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -1304,7 +1671,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 103,
+      "l": 103
+     },
+     "kl": "A"
     },
     {
      "nr": "84",
@@ -1316,7 +1689,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 107,
+      "l": 107
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1324,7 +1703,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verhältnis zu Dritten"
+     "label": "3. Abschnitt: Verhältnis zu Dritten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1341,7 +1721,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1349,7 +1730,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verhältnis zu Dritten"
+     "label": "3. Abschnitt: Verhältnis zu Dritten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1360,7 +1742,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verhältnis zu Dritten"
+     "label": "3. Abschnitt: Verhältnis zu Dritten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1377,7 +1760,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 172,
+      "l": 172
+     },
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -1389,7 +1778,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1397,7 +1792,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verhältnis zu Dritten"
+     "label": "3. Abschnitt: Verhältnis zu Dritten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1414,7 +1810,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "93",
@@ -1426,7 +1823,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 226,
+      "l": 226
+     },
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -1438,7 +1841,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -1446,7 +1850,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege"
+     "label": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1463,7 +1868,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 100,
+      "l": 100
+     },
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -1475,7 +1886,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 160,
+      "l": 160
+     },
+     "kl": "A"
     },
     {
      "nr": "99",
@@ -1487,7 +1904,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1495,7 +1918,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege"
+     "label": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1512,7 +1936,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -1524,7 +1949,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 157,
+      "l": 157
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1532,7 +1963,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Datenbekanntgabe"
+     "label": "4a. Abschnitt: Datenbekanntgabe",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [],
@@ -1547,7 +1979,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1555,7 +1988,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1585,7 +2019,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 32,
+      "l": 201
+     },
+     "kl": "Z"
     },
     {
      "nr": "113",
@@ -1602,7 +2042,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 201
+     },
+     "kl": "Z"
     },
     {
      "nr": "111",
@@ -1610,7 +2056,8 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "sektion": "6. Abschnitt: Schlussbestimmungen"
+     "sektion": "6. Abschnitt: Schlussbestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -1618,7 +2065,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [],
@@ -1633,7 +2081,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1641,7 +2090,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [],
@@ -1656,7 +2106,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1664,7 +2115,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1675,7 +2127,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1696,7 +2149,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -1710,7 +2164,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 31,
+      "l": 414
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1718,7 +2178,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1735,7 +2196,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -1748,7 +2210,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 178,
+      "l": 200
+     },
+     "kl": "V"
     },
     {
      "nr": "52",
@@ -1764,7 +2232,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 200,
+      "l": 200
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1772,7 +2246,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1789,7 +2264,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1797,7 +2273,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -1814,7 +2291,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 71,
+      "l": 71
+     },
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -1827,7 +2310,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 103,
+      "l": 218
+     },
+     "kl": "V"
     },
     {
      "nr": "85",
@@ -1840,7 +2329,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+     "sektion": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten",
+     "kl": "A"
     }
    ]
   },
@@ -1848,7 +2338,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -1865,7 +2356,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1873,7 +2365,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -1884,7 +2377,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -1895,7 +2389,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -1906,7 +2401,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege"
+     "label": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1923,7 +2419,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -1936,7 +2433,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege"
+     "sektion": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege",
+     "kl": "A"
     }
    ]
   },
@@ -1944,7 +2442,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Datenbekanntgabe"
+     "label": "4a. Abschnitt: Datenbekanntgabe",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1962,7 +2461,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 297,
+      "l": 377
+     },
+     "kl": "V"
     },
     {
      "nr": "102",
@@ -1975,7 +2480,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4a. Abschnitt: Datenbekanntgabe"
+     "sektion": "4a. Abschnitt: Datenbekanntgabe",
+     "kl": "A"
     }
    ]
   },
@@ -1983,7 +2489,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Datenbekanntgabe"
+     "label": "4a. Abschnitt: Datenbekanntgabe",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [],
@@ -1998,7 +2505,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2006,7 +2514,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Führung der Militärversicherung"
+     "label": "5. Abschnitt: Führung der Militärversicherung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -2023,7 +2532,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -2036,7 +2546,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 106,
+      "l": 325
+     },
+     "kl": "V"
     },
     {
      "nr": "106",
@@ -2049,7 +2565,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Führung der Militärversicherung"
+     "sektion": "5. Abschnitt: Führung der Militärversicherung",
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -2062,7 +2579,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Führung der Militärversicherung"
+     "sektion": "5. Abschnitt: Führung der Militärversicherung",
+     "kl": "A"
     }
    ]
   },
@@ -2070,7 +2588,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Führung der Militärversicherung"
+     "label": "5. Abschnitt: Führung der Militärversicherung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [],
@@ -2085,7 +2604,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2093,7 +2613,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -2110,7 +2631,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "117",
@@ -2123,7 +2645,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 160,
+      "l": 267
+     },
+     "kl": "Z"
     },
     {
      "nr": "118",
@@ -2137,7 +2665,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 169,
+      "l": 267
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2145,7 +2679,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -2166,7 +2701,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -2179,7 +2715,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 93,
+      "l": 160
+     },
+     "kl": "V"
     },
     {
      "nr": "28",
@@ -2192,7 +2734,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 151,
+      "l": 160
+     },
+     "kl": "V"
     },
     {
      "nr": "29",
@@ -2204,7 +2752,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 88,
+      "l": 88
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2212,7 +2766,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [],
@@ -2231,7 +2786,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2239,7 +2795,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -2256,7 +2813,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

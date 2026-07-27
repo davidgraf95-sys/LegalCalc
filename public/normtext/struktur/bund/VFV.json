@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "831.111",
   "titel": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -47,7 +48,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -59,7 +61,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -71,7 +74,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "5",
@@ -83,7 +87,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -92,7 +97,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Allgemeine Bestimmungen"
+     "label": "A. Allgemeine Bestimmungen",
+     "eId": "lvl_A"
     }
    ],
    "marginalie": [],
@@ -107,7 +113,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -115,7 +122,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Allgemeine Bestimmungen"
+     "label": "A. Allgemeine Bestimmungen",
+     "eId": "lvl_A"
     }
    ],
    "marginalie": [
@@ -132,7 +140,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -140,7 +149,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Allgemeine Bestimmungen"
+     "label": "A. Allgemeine Bestimmungen",
+     "eId": "lvl_A"
     }
    ],
    "marginalie": [
@@ -157,7 +167,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -165,7 +176,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Allgemeine Bestimmungen"
+     "label": "A. Allgemeine Bestimmungen",
+     "eId": "lvl_A"
     }
    ],
    "marginalie": [],
@@ -180,7 +192,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -188,7 +201,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Allgemeine Bestimmungen"
+     "label": "A. Allgemeine Bestimmungen",
+     "eId": "lvl_A"
     }
    ],
    "marginalie": [
@@ -205,7 +219,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -213,7 +228,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Allgemeine Bestimmungen"
+     "label": "A. Allgemeine Bestimmungen",
+     "eId": "lvl_A"
     }
    ],
    "marginalie": [],
@@ -228,7 +244,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -236,7 +253,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Beitritt zur freiwilligen Versicherung"
+     "label": "B. Beitritt zur freiwilligen Versicherung",
+     "eId": "lvl_B"
     }
    ],
    "marginalie": [
@@ -253,7 +271,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -269,7 +288,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -277,7 +302,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Beitritt zur freiwilligen Versicherung"
+     "label": "B. Beitritt zur freiwilligen Versicherung",
+     "eId": "lvl_B"
     }
    ],
    "marginalie": [
@@ -294,7 +320,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -306,7 +333,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 323,
+      "l": 323
+     },
+     "kl": "A"
     }
    ]
   },
@@ -314,7 +347,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Beitritt zur freiwilligen Versicherung"
+     "label": "B. Beitritt zur freiwilligen Versicherung",
+     "eId": "lvl_B"
     }
    ],
    "marginalie": [],
@@ -329,7 +363,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -337,7 +372,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Beitritt zur freiwilligen Versicherung"
+     "label": "B. Beitritt zur freiwilligen Versicherung",
+     "eId": "lvl_B"
     }
    ],
    "marginalie": [],
@@ -352,7 +388,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -360,7 +397,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Beitritt zur freiwilligen Versicherung"
+     "label": "B. Beitritt zur freiwilligen Versicherung",
+     "eId": "lvl_B"
     }
    ],
    "marginalie": [
@@ -377,7 +415,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -385,7 +424,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Rücktritt von der freiwilligen Versicherung und Ausschluss"
+     "label": "C. Rücktritt von der freiwilligen Versicherung und Ausschluss",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -402,7 +442,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -410,7 +451,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Rücktritt von der freiwilligen Versicherung und Ausschluss"
+     "label": "C. Rücktritt von der freiwilligen Versicherung und Ausschluss",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -427,7 +469,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -439,7 +482,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 132,
+      "l": 132
+     },
+     "kl": "G"
     },
     {
      "nr": "22",
@@ -451,7 +501,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 213,
+      "l": 213
+     },
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -463,7 +519,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 369,
+      "l": 369
+     },
+     "kl": "A"
     }
    ]
   },
@@ -471,7 +533,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -488,7 +551,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -500,7 +564,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 490,
+      "l": 599
+     },
+     "kl": "V"
     }
    ]
   },
@@ -508,7 +578,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [],
@@ -523,7 +594,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -531,7 +603,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -548,7 +621,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -560,7 +634,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 55,
+      "l": 55
+     },
+     "kl": "G"
     },
     {
      "nr": "40",
@@ -572,7 +652,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 288,
+      "l": 288
+     },
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -584,7 +670,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -592,7 +684,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -609,7 +702,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 368,
+      "l": 368
+     },
+     "kl": "A"
     }
    ]
   },
@@ -617,7 +716,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -634,7 +734,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -642,7 +743,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "E. Renten und Taggelder"
+     "label": "E. Renten und Taggelder",
+     "eId": "lvl_E"
     }
    ],
    "marginalie": [
@@ -659,7 +761,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 100,
+      "l": 100
+     },
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -675,7 +783,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 364,
+      "l": 364
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -688,7 +802,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "E. Renten und Taggelder"
+     "sektion": "E. Renten und Taggelder",
+     "kl": "A"
     }
    ]
   },
@@ -696,7 +811,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "E. Renten und Taggelder"
+     "label": "E. Renten und Taggelder",
+     "eId": "lvl_E"
     }
    ],
    "marginalie": [
@@ -713,7 +829,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -721,7 +838,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "E. Renten und Taggelder"
+     "label": "E. Renten und Taggelder",
+     "eId": "lvl_E"
     }
    ],
    "marginalie": [
@@ -738,7 +856,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -750,7 +869,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 224,
+      "l": 224
+     },
+     "kl": "G"
     }
    ]
   },
@@ -758,7 +883,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "F. …"
+     "label": "F. …",
+     "eId": "lvl_F"
     }
    ],
    "marginalie": [],
@@ -773,7 +899,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -781,7 +908,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "H. Schlussbestimmungen"
+     "label": "H. Schlussbestimmungen",
+     "eId": "lvl_H"
     }
    ],
    "marginalie": [
@@ -798,7 +926,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -811,7 +940,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 280
+     },
+     "kl": "V"
     },
     {
      "nr": "56",
@@ -824,7 +959,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 232,
+      "l": 280
+     },
+     "kl": "V"
     }
    ]
   },
@@ -832,7 +973,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "H. Schlussbestimmungen"
+     "label": "H. Schlussbestimmungen",
+     "eId": "lvl_H"
     }
    ],
    "marginalie": [
@@ -849,7 +991,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 32,
+      "l": 130
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -857,7 +1005,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -874,7 +1023,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -886,7 +1036,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 85,
+      "l": 85
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -898,7 +1055,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 115,
+      "l": 115
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -911,7 +1074,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "D. Beiträge"
+     "sektion": "D. Beiträge",
+     "kl": "A"
     }
    ]
   },
@@ -919,7 +1083,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -940,7 +1105,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -948,7 +1114,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -965,7 +1132,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -973,7 +1141,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -990,7 +1159,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -1002,7 +1172,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 168,
+      "l": 168
+     },
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -1014,7 +1190,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 142,
+      "l": 280
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1022,7 +1204,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [],
@@ -1041,7 +1224,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1049,7 +1233,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [],
@@ -1068,7 +1253,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1076,7 +1262,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -1093,7 +1280,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -1113,7 +1301,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 90,
+      "l": 182
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1121,7 +1315,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "G. …"
+     "label": "G. …",
+     "eId": "lvl_G"
     }
    ],
    "marginalie": [],
@@ -1136,7 +1331,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

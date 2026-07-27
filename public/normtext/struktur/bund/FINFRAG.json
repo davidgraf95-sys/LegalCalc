@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "958.1",
   "titel": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -45,7 +46,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -54,7 +56,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -65,7 +68,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -90,7 +94,8 @@
       }
      ],
      "absatz": null,
-     "item": "5a"
+     "item": "5a",
+     "kl": "A"
     },
     {
      "nr": "4",
@@ -110,7 +115,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -122,7 +128,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 8,
+      "o": 168,
+      "l": 246
+     },
+     "kl": "V"
     },
     {
      "nr": "6",
@@ -142,7 +155,8 @@
       }
      ],
      "absatz": null,
-     "item": "bbis"
+     "item": "bbis",
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -162,7 +176,8 @@
       }
      ],
      "absatz": null,
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     }
    ]
   },
@@ -170,7 +185,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -181,15 +197,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -200,15 +219,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -219,15 +241,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -238,15 +263,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -257,15 +285,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -276,15 +307,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -309,7 +343,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 187,
+      "l": 187
+     },
+     "kl": "A"
     }
    ]
   },
@@ -317,15 +357,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -342,7 +385,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 146,
+      "l": 359
+     },
+     "kl": "V"
     }
    ]
   },
@@ -350,15 +399,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -369,15 +421,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -388,15 +443,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -407,15 +465,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -426,15 +487,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -451,7 +515,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 56,
+      "l": 94
+     },
+     "kl": "V"
     }
    ]
   },
@@ -459,15 +529,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -492,7 +565,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 584,
+      "l": 584
+     },
+     "kl": "A"
     }
    ]
   },
@@ -500,15 +579,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -519,15 +601,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -538,15 +623,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -557,15 +645,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -576,15 +667,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen"
+     "label": "1. Abschnitt: Bewilligungsvoraussetzungen und Pflichten für alle Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -595,19 +689,22 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsameFinanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
-    "Systemisch bedeutsame Finanzmarktinfrastrukturen undGeschäftsprozesse"
+    "Systemisch bedeutsame Finanzmarktinfrastrukturen und Geschäftsprozesse"
    ],
    "fussnoten": [
     {
@@ -628,7 +725,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 221,
+      "l": 221
+     },
+     "kl": "A"
     }
    ]
   },
@@ -636,15 +739,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsameFinanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -661,14 +767,27 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 180,
+      "l": 288
+     },
+     "kl": "V"
     },
     {
      "nr": "14",
      "text": "Heute: nach Art. 21 Bst. b NBG.",
      "links": [],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 98,
+      "l": 116
+     },
+     "kl": "G"
     }
    ]
   },
@@ -676,15 +795,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsameFinanzmarktinfrastrukturen"
+     "label": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -695,15 +817,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bewilligungsverfahren"
+     "label": "3. Abschnitt: Bewilligungsverfahren",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [],
@@ -726,7 +851,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 250,
+      "l": 250
+     },
+     "kl": "A"
     }
    ]
   },
@@ -734,15 +865,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -753,15 +887,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -772,15 +909,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -791,15 +931,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -810,15 +953,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -829,15 +975,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -848,15 +997,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -867,15 +1019,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -886,15 +1041,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -915,7 +1073,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 61,
+      "l": 61
+     },
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -935,7 +1099,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -947,7 +1112,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 78,
+      "l": 87
+     },
+     "kl": "V"
     },
     {
      "nr": "19",
@@ -959,7 +1131,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 87,
+      "l": 245
+     },
+     "kl": "V"
     },
     {
      "nr": "20",
@@ -979,7 +1158,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 244,
+      "l": 245
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -995,7 +1181,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -1011,7 +1198,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -1027,7 +1215,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -1043,7 +1232,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 45,
+      "l": 45
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1051,15 +1247,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1080,14 +1279,22 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "26",
      "text": "Artikel 8 Abs. 1 Bst. c und d sind nie in Kraft getreten.",
      "links": [],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 95,
+      "l": 172
+     },
+     "kl": "U"
     },
     {
      "nr": "27",
@@ -1099,7 +1306,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 148,
+      "l": 172
+     },
+     "kl": "V"
     },
     {
      "nr": "28",
@@ -1111,7 +1325,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 124,
+      "l": 125
+     },
+     "kl": "V"
     },
     {
      "nr": "29",
@@ -1127,7 +1347,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 125,
+      "l": 125
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1135,15 +1361,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1164,7 +1393,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 254,
+      "l": 254
+     },
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -1176,7 +1411,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 124,
+      "l": 125
+     },
+     "kl": "V"
     },
     {
      "nr": "32",
@@ -1192,7 +1433,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 125,
+      "l": 125
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1200,15 +1447,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1219,15 +1469,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1238,15 +1491,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1257,15 +1513,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1276,15 +1535,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Handelsplätze"
+     "label": "1. Abschnitt: Handelsplätze",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1305,7 +1567,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -1313,15 +1576,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisierte Handelssysteme"
+     "label": "2. Abschnitt: Organisierte Handelssysteme",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1332,15 +1598,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisierte Handelssysteme"
+     "label": "2. Abschnitt: Organisierte Handelssysteme",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1365,7 +1634,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 176,
+      "l": 176
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1373,15 +1648,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisierte Handelssysteme"
+     "label": "2. Abschnitt: Organisierte Handelssysteme",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1392,15 +1670,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisierte Handelssysteme"
+     "label": "2. Abschnitt: Organisierte Handelssysteme",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1411,15 +1692,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisierte Handelssysteme"
+     "label": "2. Abschnitt: Organisierte Handelssysteme",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1430,15 +1714,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Strombörsen"
+     "label": "3. Abschnitt: Strombörsen",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": []
@@ -1447,15 +1734,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zentrale Gegenparteien"
+     "label": "3. Kapitel: Zentrale Gegenparteien",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1466,15 +1756,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zentrale Gegenparteien"
+     "label": "3. Kapitel: Zentrale Gegenparteien",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1485,15 +1778,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zentrale Gegenparteien"
+     "label": "3. Kapitel: Zentrale Gegenparteien",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1504,15 +1800,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zentrale Gegenparteien"
+     "label": "3. Kapitel: Zentrale Gegenparteien",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1523,15 +1822,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zentrale Gegenparteien"
+     "label": "3. Kapitel: Zentrale Gegenparteien",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1542,15 +1844,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zentrale Gegenparteien"
+     "label": "3. Kapitel: Zentrale Gegenparteien",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1561,15 +1866,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zentrale Gegenparteien"
+     "label": "3. Kapitel: Zentrale Gegenparteien",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1580,15 +1888,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zentrale Gegenparteien"
+     "label": "3. Kapitel: Zentrale Gegenparteien",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1599,15 +1910,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zentrale Gegenparteien"
+     "label": "3. Kapitel: Zentrale Gegenparteien",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Interoperabilitätsvereinbarungen"
+     "label": "2. Abschnitt: Interoperabilitätsvereinbarungen",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1618,15 +1932,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zentrale Gegenparteien"
+     "label": "3. Kapitel: Zentrale Gegenparteien",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Interoperabilitätsvereinbarungen"
+     "label": "2. Abschnitt: Interoperabilitätsvereinbarungen",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1637,15 +1954,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zentrale Gegenparteien"
+     "label": "3. Kapitel: Zentrale Gegenparteien",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Teilnehmer"
+     "label": "3. Abschnitt: Teilnehmer",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1656,15 +1976,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zentrale Gegenparteien"
+     "label": "3. Kapitel: Zentrale Gegenparteien",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Teilnehmer"
+     "label": "3. Abschnitt: Teilnehmer",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1675,15 +1998,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zentrale Gegenparteien"
+     "label": "3. Kapitel: Zentrale Gegenparteien",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Anerkennung ausländischer zentraler Gegenparteien"
+     "label": "4. Abschnitt: Anerkennung ausländischer zentraler Gegenparteien",
+     "eId": "tit_2/chap_3/sec_4"
     }
    ],
    "marginalie": []
@@ -1692,15 +2018,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zentralverwahrer"
+     "label": "4. Kapitel: Zentralverwahrer",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1711,34 +2040,40 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zentralverwahrer"
+     "label": "4. Kapitel: Zentralverwahrer",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
-    "Grundsätze der Verwahrung, Verbuchung und Übertragungvon Effekten"
+    "Grundsätze der Verwahrung, Verbuchung und Übertragung von Effekten"
    ]
   },
   "63": {
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zentralverwahrer"
+     "label": "4. Kapitel: Zentralverwahrer",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1749,15 +2084,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zentralverwahrer"
+     "label": "4. Kapitel: Zentralverwahrer",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1768,15 +2106,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zentralverwahrer"
+     "label": "4. Kapitel: Zentralverwahrer",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1787,15 +2128,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zentralverwahrer"
+     "label": "4. Kapitel: Zentralverwahrer",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1806,15 +2150,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zentralverwahrer"
+     "label": "4. Kapitel: Zentralverwahrer",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1825,15 +2172,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zentralverwahrer"
+     "label": "4. Kapitel: Zentralverwahrer",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1844,15 +2194,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zentralverwahrer"
+     "label": "4. Kapitel: Zentralverwahrer",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1863,15 +2216,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zentralverwahrer"
+     "label": "4. Kapitel: Zentralverwahrer",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verbindungen von Zentralverwahrern"
+     "label": "2. Abschnitt: Verbindungen von Zentralverwahrern",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1882,15 +2238,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zentralverwahrer"
+     "label": "4. Kapitel: Zentralverwahrer",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verbindungen von Zentralverwahrern"
+     "label": "2. Abschnitt: Verbindungen von Zentralverwahrern",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1901,15 +2260,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zentralverwahrer"
+     "label": "4. Kapitel: Zentralverwahrer",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verbindungen von Zentralverwahrern"
+     "label": "2. Abschnitt: Verbindungen von Zentralverwahrern",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1920,15 +2282,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zentralverwahrer"
+     "label": "4. Kapitel: Zentralverwahrer",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Segregierung durch den Teilnehmer"
+     "label": "3. Abschnitt: Segregierung durch den Teilnehmer",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": []
@@ -1937,15 +2302,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Transaktionsregister"
+     "label": "5. Kapitel: Transaktionsregister",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1956,15 +2324,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Transaktionsregister"
+     "label": "5. Kapitel: Transaktionsregister",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1975,15 +2346,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Transaktionsregister"
+     "label": "5. Kapitel: Transaktionsregister",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1994,15 +2368,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Transaktionsregister"
+     "label": "5. Kapitel: Transaktionsregister",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2013,15 +2390,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Transaktionsregister"
+     "label": "5. Kapitel: Transaktionsregister",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2038,7 +2418,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 238,
+      "l": 298
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2046,15 +2433,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Transaktionsregister"
+     "label": "5. Kapitel: Transaktionsregister",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2065,15 +2455,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Transaktionsregister"
+     "label": "5. Kapitel: Transaktionsregister",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anerkennung ausländischer Transaktionsregister"
+     "label": "2. Abschnitt: Anerkennung ausländischer Transaktionsregister",
+     "eId": "tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": []
@@ -2082,11 +2475,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Zahlungssysteme"
+     "label": "6. Kapitel: Zahlungssysteme",
+     "eId": "tit_2/chap_6"
     }
    ],
    "marginalie": [
@@ -2097,11 +2492,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Zahlungssysteme"
+     "label": "6. Kapitel: Zahlungssysteme",
+     "eId": "tit_2/chap_6"
     }
    ],
    "marginalie": [
@@ -2112,11 +2509,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Aufsicht und Überwachung"
+     "label": "7. Kapitel: Aufsicht und Überwachung",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -2127,11 +2526,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Aufsicht und Überwachung"
+     "label": "7. Kapitel: Aufsicht und Überwachung",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -2148,7 +2549,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 224
+     },
+     "kl": "V"
     },
     {
      "nr": "42",
@@ -2160,7 +2567,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 208,
+      "l": 224
+     },
+     "kl": "V"
     },
     {
      "nr": "43",
@@ -2172,7 +2585,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 202,
+      "l": 217
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2180,11 +2599,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Aufsicht und Überwachung"
+     "label": "7. Kapitel: Aufsicht und Überwachung",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -2195,11 +2616,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Aufsicht und Überwachung"
+     "label": "7. Kapitel: Aufsicht und Überwachung",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -2210,11 +2633,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Aufsicht und Überwachung"
+     "label": "7. Kapitel: Aufsicht und Überwachung",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -2231,7 +2656,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 33,
+      "l": 139
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2239,11 +2670,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Insolvenzrechtliche Bestimmungen"
+     "label": "8. Kapitel: Insolvenzrechtliche Bestimmungen",
+     "eId": "tit_2/chap_8"
     }
    ],
    "marginalie": [
@@ -2260,7 +2693,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 157,
+      "l": 240
+     },
+     "kl": "V"
     },
     {
      "nr": "46",
@@ -2276,7 +2715,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 240,
+      "l": 240
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2284,11 +2729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Insolvenzrechtliche Bestimmungen"
+     "label": "8. Kapitel: Insolvenzrechtliche Bestimmungen",
+     "eId": "tit_2/chap_8"
     }
    ],
    "marginalie": [
@@ -2313,7 +2760,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 462,
+      "l": 462
+     },
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -2333,7 +2786,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 366,
+      "l": 366
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2341,11 +2800,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Insolvenzrechtliche Bestimmungen"
+     "label": "8. Kapitel: Insolvenzrechtliche Bestimmungen",
+     "eId": "tit_2/chap_8"
     }
    ],
    "marginalie": [
@@ -2366,7 +2827,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -2382,7 +2844,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -2390,11 +2853,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Insolvenzrechtliche Bestimmungen"
+     "label": "8. Kapitel: Insolvenzrechtliche Bestimmungen",
+     "eId": "tit_2/chap_8"
     }
    ],
    "marginalie": [
@@ -2405,11 +2870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Insolvenzrechtliche Bestimmungen"
+     "label": "8. Kapitel: Insolvenzrechtliche Bestimmungen",
+     "eId": "tit_2/chap_8"
     }
    ],
    "marginalie": [
@@ -2420,15 +2887,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2445,7 +2915,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 70,
+      "l": 71
+     },
+     "kl": "V"
     },
     {
      "nr": "52",
@@ -2465,7 +2942,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -2477,7 +2955,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 38,
+      "l": 39
+     },
+     "kl": "V"
     },
     {
      "nr": "54",
@@ -2489,7 +2974,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 140,
+      "l": 141
+     },
+     "kl": "V"
     },
     {
      "nr": "55",
@@ -2509,7 +3001,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -2521,7 +3014,14 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 99,
+      "l": 167
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2529,15 +3029,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2548,15 +3051,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2567,15 +3073,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2586,15 +3095,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei"
+     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2605,15 +3117,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei"
+     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2624,15 +3139,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei"
+     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2643,15 +3161,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei"
+     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2662,15 +3183,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei"
+     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2681,15 +3205,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei"
+     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2700,15 +3227,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei"
+     "label": "2. Abschnitt: Abrechnung über eine zentrale Gegenpartei",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2719,15 +3249,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Meldung an ein Transaktionsregister"
+     "label": "3. Abschnitt: Meldung an ein Transaktionsregister",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -2738,15 +3271,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Meldung an ein Transaktionsregister"
+     "label": "3. Abschnitt: Meldung an ein Transaktionsregister",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -2757,15 +3293,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Meldung an ein Transaktionsregister"
+     "label": "3. Abschnitt: Meldung an ein Transaktionsregister",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -2783,7 +3322,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 100,
+      "l": 113
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2791,15 +3336,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Risikominderung"
+     "label": "4. Abschnitt: Risikominderung",
+     "eId": "tit_3/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -2824,7 +3372,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -2832,15 +3381,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Risikominderung"
+     "label": "4. Abschnitt: Risikominderung",
+     "eId": "tit_3/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -2851,15 +3403,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Risikominderung"
+     "label": "4. Abschnitt: Risikominderung",
+     "eId": "tit_3/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -2870,15 +3425,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Risikominderung"
+     "label": "4. Abschnitt: Risikominderung",
+     "eId": "tit_3/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -2889,15 +3447,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Risikominderung"
+     "label": "4. Abschnitt: Risikominderung",
+     "eId": "tit_3/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -2908,15 +3469,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Handel über Handelsplätze und organisierte Handelssysteme"
+     "label": "5. Abschnitt: Handel über Handelsplätze und organisierte Handelssysteme",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2927,15 +3491,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Handel über Handelsplätze und organisierte Handelssysteme"
+     "label": "5. Abschnitt: Handel über Handelsplätze und organisierte Handelssysteme",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2946,15 +3513,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Handel über Handelsplätze und organisierte Handelssysteme"
+     "label": "5. Abschnitt: Handel über Handelsplätze und organisierte Handelssysteme",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2965,15 +3535,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Handel über Handelsplätze und organisierte Handelssysteme"
+     "label": "5. Abschnitt: Handel über Handelsplätze und organisierte Handelssysteme",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2984,15 +3557,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Prüfung"
+     "label": "6. Abschnitt: Prüfung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -3009,7 +3585,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 54,
+      "l": 152
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3017,15 +3599,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Handel mit Derivaten"
+     "label": "1. Kapitel: Handel mit Derivaten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Prüfung"
+     "label": "6. Abschnitt: Prüfung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -3042,7 +3627,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 136,
+      "l": 137
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3050,11 +3641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Positionslimiten für Warenderivate"
+     "label": "2. Kapitel: Positionslimiten für Warenderivate",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -3065,11 +3658,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Positionslimiten für Warenderivate"
+     "label": "2. Kapitel: Positionslimiten für Warenderivate",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -3080,11 +3675,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Offenlegung von Beteiligungen"
+     "label": "3. Kapitel: Offenlegung von Beteiligungen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3095,11 +3692,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Offenlegung von Beteiligungen"
+     "label": "3. Kapitel: Offenlegung von Beteiligungen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3110,11 +3709,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Offenlegung von Beteiligungen"
+     "label": "3. Kapitel: Offenlegung von Beteiligungen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3125,11 +3726,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Offenlegung von Beteiligungen"
+     "label": "3. Kapitel: Offenlegung von Beteiligungen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3140,11 +3743,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Offenlegung von Beteiligungen"
+     "label": "3. Kapitel: Offenlegung von Beteiligungen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3155,11 +3760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3176,7 +3783,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 191,
+      "l": 200
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3184,11 +3797,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3199,11 +3814,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3214,11 +3831,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3235,7 +3854,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 139,
+      "l": 221
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3243,11 +3868,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3258,11 +3885,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3273,11 +3902,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3294,7 +3925,14 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 114,
+      "l": 170
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3302,11 +3940,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3317,11 +3957,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3332,11 +3974,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3347,11 +3991,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3362,11 +4008,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3377,11 +4025,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3392,11 +4042,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3407,11 +4059,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3428,7 +4082,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 165,
+      "l": 166
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3436,11 +4096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3451,11 +4113,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentliche Kaufangebote"
+     "label": "4. Kapitel: Öffentliche Kaufangebote",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -3472,7 +4136,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 114,
+      "l": 171
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3480,11 +4150,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Insiderhandel und Marktmanipulation"
+     "label": "5. Kapitel: Insiderhandel und Marktmanipulation",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -3509,7 +4181,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -3529,7 +4202,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -3537,11 +4211,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Insiderhandel und Marktmanipulation"
+     "label": "5. Kapitel: Insiderhandel und Marktmanipulation",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -3566,7 +4242,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 296,
+      "l": 296
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3574,11 +4257,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Instrumente der Marktaufsicht"
+     "label": "6. Kapitel: Instrumente der Marktaufsicht",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3589,11 +4274,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Instrumente der Marktaufsicht"
+     "label": "6. Kapitel: Instrumente der Marktaufsicht",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3611,7 +4298,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 80,
+      "l": 193
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3619,11 +4312,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Marktverhalten"
+     "label": "3. Titel: Marktverhalten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Instrumente der Marktaufsicht"
+     "label": "6. Kapitel: Instrumente der Marktaufsicht",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3634,11 +4329,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Strafbestimmungen"
+     "label": "1. Kapitel: Strafbestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3663,7 +4360,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 71,
+      "l": 71
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3671,11 +4374,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Strafbestimmungen"
+     "label": "1. Kapitel: Strafbestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3686,11 +4391,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Strafbestimmungen"
+     "label": "1. Kapitel: Strafbestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3701,11 +4408,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Strafbestimmungen"
+     "label": "1. Kapitel: Strafbestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3716,11 +4425,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Strafbestimmungen"
+     "label": "1. Kapitel: Strafbestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3731,11 +4442,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Strafbestimmungen"
+     "label": "1. Kapitel: Strafbestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3746,11 +4459,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Strafbestimmungen"
+     "label": "1. Kapitel: Strafbestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3761,11 +4476,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Strafbestimmungen"
+     "label": "1. Kapitel: Strafbestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3790,7 +4507,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -3810,7 +4528,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -3830,7 +4549,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 545,
+      "l": 545
+     },
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -3850,7 +4575,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 412,
+      "l": 412
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3858,11 +4589,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Strafbestimmungen"
+     "label": "1. Kapitel: Strafbestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3887,7 +4620,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 318,
+      "l": 318
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3895,11 +4634,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Strafbestimmungen"
+     "label": "1. Kapitel: Strafbestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3910,15 +4651,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "tit_4/chap_2/sec_1"
     }
    ],
    "marginalie": []
@@ -3927,15 +4671,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Änderung anderer Erlasse"
+     "label": "2. Abschnitt: Änderung anderer Erlasse",
+     "eId": "tit_4/chap_2/sec_2"
     }
    ],
    "marginalie": []
@@ -3944,15 +4691,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -3963,15 +4713,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -3982,15 +4735,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4001,15 +4757,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4020,15 +4779,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4039,15 +4801,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Referendum und Inkrafttreten"
+     "label": "4. Abschnitt: Referendum und Inkrafttreten",
+     "eId": "tit_4/chap_2/sec_4"
     }
    ],
    "marginalie": [],
@@ -4057,7 +4822,8 @@
      "text": "BRB vom 25. Nov. 2015",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -4069,7 +4835,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -4077,11 +4844,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Strafbestimmungen"
+     "label": "1. Kapitel: Strafbestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4106,7 +4875,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4114,15 +4884,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Straf- und Schlussbestimmungen"
+     "label": "4. Titel: Straf- und Schlussbestimmungen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4143,7 +4916,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     },
     {
      "nr": "78",
@@ -4156,7 +4930,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 348
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4164,15 +4944,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1a. Abschnitt: Anerkennung ausländischer Handelsplätze für den Handel mit Beteiligungspapieren von Gesellschaften mit Sitz in der Schweiz"
+     "label": "1a. Abschnitt: Anerkennung ausländischer Handelsplätze für den Handel mit Beteiligungspapieren von Gesellschaften mit Sitz in der Schweiz",
+     "eId": "tit_2/chap_2/sec_1_a"
     }
    ],
    "marginalie": [
@@ -4194,7 +4977,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1a. Abschnitt: Anerkennung ausländischer Handelsplätze für den Handel mit Beteiligungspapieren von Gesellschaften mit Sitz in der Schweiz"
+     "sektion": "1a. Abschnitt: Anerkennung ausländischer Handelsplätze für den Handel mit Beteiligungspapieren von Gesellschaften mit Sitz in der Schweiz",
+     "kl": "G"
     }
    ]
   },
@@ -4202,15 +4986,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1a. Abschnitt: Anerkennung ausländischer Handelsplätze für den Handel mit Beteiligungspapieren von Gesellschaften mit Sitz in der Schweiz"
+     "label": "1a. Abschnitt: Anerkennung ausländischer Handelsplätze für den Handel mit Beteiligungspapieren von Gesellschaften mit Sitz in der Schweiz",
+     "eId": "tit_2/chap_2/sec_1_a"
     }
    ],
    "marginalie": [
@@ -4221,15 +5008,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen"
+     "label": "2. Kapitel: Handelsplätze, organisierte Handelssysteme und Strombörsen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1a. Abschnitt: Anerkennung ausländischer Handelsplätze für den Handel mit Beteiligungspapieren von Gesellschaften mit Sitz in der Schweiz"
+     "label": "1a. Abschnitt: Anerkennung ausländischer Handelsplätze für den Handel mit Beteiligungspapieren von Gesellschaften mit Sitz in der Schweiz",
+     "eId": "tit_2/chap_2/sec_1_a"
     }
    ],
    "marginalie": [
@@ -4240,11 +5030,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4a. Kapitel: DLT-Handelssysteme"
+     "label": "4a. Kapitel: DLT-Handelssysteme",
+     "eId": "tit_2/chap_4_a"
     }
    ],
    "marginalie": [
@@ -4270,7 +5062,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4a. Kapitel: DLT-Handelssysteme"
+     "sektion": "4a. Kapitel: DLT-Handelssysteme",
+     "kl": "A"
     }
    ]
   },
@@ -4278,11 +5071,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4a. Kapitel: DLT-Handelssysteme"
+     "label": "4a. Kapitel: DLT-Handelssysteme",
+     "eId": "tit_2/chap_4_a"
     }
    ],
    "marginalie": [
@@ -4293,11 +5088,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4a. Kapitel: DLT-Handelssysteme"
+     "label": "4a. Kapitel: DLT-Handelssysteme",
+     "eId": "tit_2/chap_4_a"
     }
    ],
    "marginalie": [
@@ -4314,7 +5111,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 38,
+      "l": 39
+     },
+     "kl": "V"
     },
     {
      "nr": "38",
@@ -4326,7 +5130,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 47,
+      "l": 254
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4334,11 +5145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4a. Kapitel: DLT-Handelssysteme"
+     "label": "4a. Kapitel: DLT-Handelssysteme",
+     "eId": "tit_2/chap_4_a"
     }
    ],
    "marginalie": [
@@ -4355,7 +5168,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 409,
+      "l": 410
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4363,11 +5182,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4a. Kapitel: DLT-Handelssysteme"
+     "label": "4a. Kapitel: DLT-Handelssysteme",
+     "eId": "tit_2/chap_4_a"
     }
    ],
    "marginalie": [
@@ -4378,11 +5199,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Finanzmarktinfrastrukturen"
+     "label": "2. Titel: Finanzmarktinfrastrukturen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4a. Kapitel: DLT-Handelssysteme"
+     "label": "4a. Kapitel: DLT-Handelssysteme",
+     "eId": "tit_2/chap_4_a"
     }
    ],
    "marginalie": [

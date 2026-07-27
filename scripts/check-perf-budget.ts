@@ -82,15 +82,48 @@ if (entry.length === 1) {
 //    Shell zieht es für jeden Inhaltspfad (Breadcrumb-Label), also faktisch auf
 //    jeder Gesetzes-Leserseite. Ohne Schranke wächst die Achse mit jedem weiteren
 //    Kanton unbemerkt weiter (§15).
+//    W2·5 (25.7.2026): der Artikel-Suchindex kommt dazu — der mit Abstand
+//    grösste Einzelposten. Er liegt NICHT auf dem kritischen Pfad (lazy, lädt erst
+//    beim ersten Tastendruck in der Suche), gehört aber trotzdem unter eine
+//    Schranke, weil der kantonale Korpus mit 1 231 Erlassen erklärtermassen
+//    unvollständig ist und weiter wächst.
+//
+//    Herleitung der Schranke (gemessen 25.7.2026, nicht gegriffen):
+//      · heute        9 667 KB gzip (54 444 Artikel: Bund 25 389 + Kanton 29 055)
+//      · davon Kanton ~4 399 KB für 1 231 Erlasse  ⇒  ~3.6 KB gzip je Erlass
+//      · Budget      10 400 KB  ⇒  ~733 KB Luft  ⇒  ~200 weitere Kanton-Erlasse
+//    Der eigentliche Schmerz ist nicht die Leitung, sondern der CLIENTSEITIGE
+//    Indexaufbau: er skaliert mit der Artikelzahl und lag bei dieser Grösse
+//    bereits bei ~6.1 s (node) bzw. 5.3 s bis zur ersten Trefferanzeige im
+//    Browser — auf dem ~3.9× langsameren CI-Runner reichte das, um die
+//    Browser-Smoke-Suite reissen zu lassen. Die Schranke soll also anschlagen,
+//    BEVOR jemand das merkt: ~200 Erlasse (gut ein weiterer mittlerer Kanton)
+//    passen durch, ein Massenimport nicht. Wer sie anhebt, hebt bewusst auch die
+//    Wartezeit bis zum ersten Treffer an — dann gehört die Staffelung
+//    (artikelVolltext.ts, `baue()`) mit überdacht, nicht bloss die Zahl.
 const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/register.json', 780 * 1024],
   ['public/rechtsprechung/richter.json', 24 * 1024],
   ['public/rechtsprechung/norm-index.json', 260 * 1024],
+  ['public/such-index/artikel.json', 10_400 * 1024],
 ];
+// GEMESSEN WIRD DIE AUSGELIEFERTE KOPIE in dist/ — mit public/ nur als Rückfall.
+// Grund (CI-Befund 25.7.2026): `public/such-index/artikel.json` ist gitignored und
+// entsteht erst im Build-Schritt. Der Perf-Budget-Job lädt das gebaute `dist/`
+// herunter, hat aber kein `public/` mit Index — das Tor lief darum rot mit
+// «fehlt — Budget nicht prüfbar», obwohl die Datei existierte. `vite build`
+// kopiert public/ nach dist/, also liegt dort BEIDES. dist/ ist ohnehin das
+// richtigere Mass: es ist die Datei, die der Nutzer wirklich bekommt.
+const daten = (rel: string): string | null => {
+  const inDist = join(process.cwd(), 'dist', rel.replace(/^public\//, ''));
+  if (existsSync(inDist)) return inDist;
+  const inPublic = join(process.cwd(), rel);
+  return existsSync(inPublic) ? inPublic : null;
+};
 console.log('check:perf-budget — Daten-Nutzlast (gzip):');
 for (const [rel, max] of DATEN_BUDGET) {
-  const p = join(process.cwd(), rel);
-  if (!existsSync(p)) { fehler.push(`${rel} fehlt — Budget nicht prüfbar.`); continue; }
+  const p = daten(rel);
+  if (!p) { fehler.push(`${rel} fehlt (weder in dist/ noch in public/) — Budget nicht prüfbar.`); continue; }
   const g = gz(p);
   console.log(`  ${rel.replace('public/', '')}  gzip ${kb(g)}  (Budget ${kb(max)})`);
   if (g > max) {

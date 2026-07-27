@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "814.318.142.1",
   "titel": "Luftreinhalte-Verordnung",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -42,7 +43,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -59,7 +61,8 @@
       }
      ],
      "absatz": "2",
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     }
    ]
   },
@@ -67,7 +70,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -84,7 +88,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 347,
+      "l": 347
+     },
+     "kl": "A"
     }
    ]
   },
@@ -92,11 +102,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionsbegrenzung bei neuen stationären Anlagen"
+     "label": "1. Abschnitt: Emissionsbegrenzung bei neuen stationären Anlagen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -113,7 +125,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -121,11 +134,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionsbegrenzung bei neuen stationären Anlagen"
+     "label": "1. Abschnitt: Emissionsbegrenzung bei neuen stationären Anlagen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -136,11 +151,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionsbegrenzung bei neuen stationären Anlagen"
+     "label": "1. Abschnitt: Emissionsbegrenzung bei neuen stationären Anlagen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -151,11 +168,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionsbegrenzung bei neuen stationären Anlagen"
+     "label": "1. Abschnitt: Emissionsbegrenzung bei neuen stationären Anlagen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -172,7 +191,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -184,7 +204,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 154
+     },
+     "kl": "A"
     }
    ]
   },
@@ -192,11 +218,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Emissionsbegrenzung bei bestehenden stationären Anlagen"
+     "label": "2. Abschnitt: Emissionsbegrenzung bei bestehenden stationären Anlagen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -207,11 +235,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Emissionsbegrenzung bei bestehenden stationären Anlagen"
+     "label": "2. Abschnitt: Emissionsbegrenzung bei bestehenden stationären Anlagen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -228,7 +258,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 205,
+      "l": 205
+     },
+     "kl": "A"
     }
    ]
   },
@@ -236,11 +272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Emissionsbegrenzung bei bestehenden stationären Anlagen"
+     "label": "2. Abschnitt: Emissionsbegrenzung bei bestehenden stationären Anlagen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -251,11 +289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Emissionsbegrenzung bei bestehenden stationären Anlagen"
+     "label": "2. Abschnitt: Emissionsbegrenzung bei bestehenden stationären Anlagen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -267,7 +307,8 @@
      "text": "Siehe auch die SchlB Änd. 23. Juni 2004 und 11. April 2018 hiernach.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     }
    ]
   },
@@ -275,11 +316,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Emissionsbegrenzung bei bestehenden stationären Anlagen"
+     "label": "2. Abschnitt: Emissionsbegrenzung bei bestehenden stationären Anlagen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -290,11 +333,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kontrolle von stationären Anlagen"
+     "label": "3. Abschnitt: Kontrolle von stationären Anlagen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -305,11 +350,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kontrolle von stationären Anlagen"
+     "label": "3. Abschnitt: Kontrolle von stationären Anlagen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -326,7 +373,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 243,
+      "l": 243
+     },
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -338,7 +391,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -350,7 +404,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 40,
+      "l": 40
+     },
+     "kl": "A"
     }
    ]
   },
@@ -358,11 +419,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kontrolle von stationären Anlagen"
+     "label": "3. Abschnitt: Kontrolle von stationären Anlagen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -380,7 +443,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 307,
+      "l": 392
+     },
+     "kl": "V"
     },
     {
      "nr": "14",
@@ -392,7 +461,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 392,
+      "l": 392
+     },
+     "kl": "A"
     }
    ]
   },
@@ -400,11 +475,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kontrolle von stationären Anlagen"
+     "label": "3. Abschnitt: Kontrolle von stationären Anlagen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -415,11 +492,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kontrolle von stationären Anlagen"
+     "label": "3. Abschnitt: Kontrolle von stationären Anlagen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -436,7 +515,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -448,7 +528,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 297,
+      "l": 297
+     },
+     "kl": "A"
     }
    ]
   },
@@ -456,11 +542,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Emissionen von Fahrzeugen und Verkehrsanlagen"
+     "label": "4. Abschnitt: Emissionen von Fahrzeugen und Verkehrsanlagen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -471,11 +559,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Emissionen von Fahrzeugen und Verkehrsanlagen"
+     "label": "4. Abschnitt: Emissionen von Fahrzeugen und Verkehrsanlagen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -486,11 +576,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Emissionen von Fahrzeugen und Verkehrsanlagen"
+     "label": "4. Abschnitt: Emissionen von Fahrzeugen und Verkehrsanlagen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -501,11 +593,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: …"
+     "label": "5. Abschnitt: …",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [],
@@ -520,7 +614,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -528,11 +623,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Brennstoffe"
+     "label": "6. Abschnitt: Brennstoffe",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -543,11 +640,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Brennstoffe"
+     "label": "6. Abschnitt: Brennstoffe",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -558,11 +657,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Brennstoffe"
+     "label": "6. Abschnitt: Brennstoffe",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [],
@@ -577,7 +678,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -585,11 +687,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Treibstoffe"
+     "label": "7. Abschnitt: Treibstoffe",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -600,11 +704,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Treibstoffe"
+     "label": "7. Abschnitt: Treibstoffe",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -615,11 +721,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Treibstoffe"
+     "label": "7. Abschnitt: Treibstoffe",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -630,11 +738,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Immissionen"
+     "label": "3. Kapitel: Immissionen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ermittlung und Beurteilung"
+     "label": "1. Abschnitt: Ermittlung und Beurteilung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -645,11 +755,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Immissionen"
+     "label": "3. Kapitel: Immissionen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ermittlung und Beurteilung"
+     "label": "1. Abschnitt: Ermittlung und Beurteilung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -660,11 +772,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Immissionen"
+     "label": "3. Kapitel: Immissionen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ermittlung und Beurteilung"
+     "label": "1. Abschnitt: Ermittlung und Beurteilung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -675,11 +789,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Immissionen"
+     "label": "3. Kapitel: Immissionen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ermittlung und Beurteilung"
+     "label": "1. Abschnitt: Ermittlung und Beurteilung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -690,11 +806,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Immissionen"
+     "label": "3. Kapitel: Immissionen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Massnahmen gegen übermässige Immissionen"
+     "label": "2. Abschnitt: Massnahmen gegen übermässige Immissionen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -711,7 +829,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -719,11 +838,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Immissionen"
+     "label": "3. Kapitel: Immissionen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Massnahmen gegen übermässige Immissionen"
+     "label": "2. Abschnitt: Massnahmen gegen übermässige Immissionen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -740,7 +861,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -748,11 +870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Immissionen"
+     "label": "3. Kapitel: Immissionen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Massnahmen gegen übermässige Immissionen"
+     "label": "2. Abschnitt: Massnahmen gegen übermässige Immissionen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -769,7 +893,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -777,11 +902,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Immissionen"
+     "label": "3. Kapitel: Immissionen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Massnahmen gegen übermässige Immissionen"
+     "label": "2. Abschnitt: Massnahmen gegen übermässige Immissionen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -792,11 +919,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -807,11 +936,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -828,7 +959,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -840,7 +972,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -852,7 +985,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 93,
+      "l": 93
+     },
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -864,7 +1004,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 338,
+      "l": 338
+     },
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -876,7 +1022,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 77,
+      "l": 151
+     },
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -888,7 +1040,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 132,
+      "l": 132
+     },
+     "kl": "A"
     }
    ]
   },
@@ -896,11 +1054,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -917,7 +1077,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -929,7 +1090,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -941,7 +1103,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 214,
+      "l": 214
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -953,7 +1121,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -961,11 +1130,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -982,7 +1153,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 212,
+      "l": 212
+     },
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -994,7 +1171,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 94,
+      "l": 94
+     },
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -1006,7 +1189,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 124,
+      "l": 124
+     },
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -1018,7 +1207,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 300,
+      "l": 300
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1026,11 +1221,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1041,11 +1238,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Änderung und Aufhebung bisherigen Rechts"
+     "label": "2. Abschnitt: Änderung und Aufhebung bisherigen Rechts",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -1060,7 +1259,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1068,11 +1268,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Änderung und Aufhebung bisherigen Rechts"
+     "label": "2. Abschnitt: Änderung und Aufhebung bisherigen Rechts",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1090,7 +1292,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 36,
+      "l": 98
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1098,11 +1306,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmung"
+     "label": "3. Abschnitt: Übergangsbestimmung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": []
@@ -1111,11 +1321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Inkrafttreten"
+     "label": "4. Abschnitt: Inkrafttreten",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": []
@@ -1124,11 +1336,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kontrolle von stationären Anlagen"
+     "label": "3. Abschnitt: Kontrolle von stationären Anlagen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1145,7 +1359,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1153,11 +1368,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4a. Abschnitt: Anforderungen an Baumaschinen und deren Partikelfiltersysteme"
+     "label": "4a. Abschnitt: Anforderungen an Baumaschinen und deren Partikelfiltersysteme",
+     "eId": "chap_2/sec_4_a"
     }
    ],
    "marginalie": [
@@ -1174,7 +1391,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -1186,7 +1409,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 215,
+      "l": 215
+     },
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -1199,7 +1428,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4a. Abschnitt: Anforderungen an Baumaschinen und deren Partikelfiltersysteme"
+     "sektion": "4a. Abschnitt: Anforderungen an Baumaschinen und deren Partikelfiltersysteme",
+     "kl": "A"
     }
    ]
   },
@@ -1207,11 +1437,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4a. Abschnitt: Anforderungen an Baumaschinen und deren Partikelfiltersysteme"
+     "label": "4a. Abschnitt: Anforderungen an Baumaschinen und deren Partikelfiltersysteme",
+     "eId": "chap_2/sec_4_a"
     }
    ],
    "marginalie": [
@@ -1229,14 +1461,27 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 108,
+      "l": 290
+     },
+     "kl": "V"
     },
     {
      "nr": "21",
      "text": "Verordnung (EU) Nr. 2016/1628 des Europäischen Parlaments und des Rates vom 14. September 2016 über die Anforderungen in Bezug auf die Emissionsgrenzwerte für gasförmige Schadstoffe und luftverunreinigende Partikel und die Typgenehmigung für Verbrennungsmotoren für nicht für den Strassenverkehr bestimmte mobile Maschinen und Geräte, Fassung gemäss ABl. L 252 vom 16.09.2016, S. 53; ergänzt durch: Delegierte Verordnung (EU) 2017/654 der Kommission vom 19. Dezember 2016, ABl. L 102 vom 13.04.2017, S. 1; Delegierte Verordnung (EU) 2017/655 der Kommission vom 19. Dezember 2016, ABl. L 102 vom 13.04.2017, S. 334; Durchführungsverordnung (EU) 2017/656 der Kommission vom 19. Dezember 2016, ABl. L 102 vom 13.04.2017, S. 364.",
      "links": [],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 90,
+      "l": 290
+     },
+     "kl": "V"
     },
     {
      "nr": "22",
@@ -1248,7 +1493,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 290,
+      "l": 290
+     },
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -1260,7 +1511,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 209,
+      "l": 209
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1268,11 +1525,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: …"
+     "label": "5. Abschnitt: …",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [],
@@ -1291,7 +1550,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1299,11 +1559,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5a. Abschnitt: Anforderungen an Maschinen und Geräte mit Verbrennungsmotor"
+     "label": "5a. Abschnitt: Anforderungen an Maschinen und Geräte mit Verbrennungsmotor",
+     "eId": "chap_2/sec_5_a"
     }
    ],
    "marginalie": [
@@ -1325,7 +1587,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5a. Abschnitt: Anforderungen an Maschinen und Geräte mit Verbrennungsmotor"
+     "sektion": "5a. Abschnitt: Anforderungen an Maschinen und Geräte mit Verbrennungsmotor",
+     "kl": "A"
     }
    ]
   },
@@ -1333,11 +1596,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5a. Abschnitt: Anforderungen an Maschinen und Geräte mit Verbrennungsmotor"
+     "label": "5a. Abschnitt: Anforderungen an Maschinen und Geräte mit Verbrennungsmotor",
+     "eId": "chap_2/sec_5_a"
     }
    ],
    "marginalie": [
@@ -1349,7 +1614,14 @@
      "text": "Siehe Fussnote zu Art. 19<i>b</i> Abs. 1.",
      "links": [],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 154,
+      "l": 159
+     },
+     "kl": "V"
     },
     {
      "nr": "28",
@@ -1362,7 +1634,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 117,
+      "l": 435
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1370,11 +1648,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5b. Abschnitt: …"
+     "label": "5b. Abschnitt: …",
+     "eId": "chap_2/sec_5_b"
     }
    ],
    "marginalie": [],
@@ -1393,7 +1673,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1401,11 +1682,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Verbrennen von Abfällen"
+     "label": "8. Abschnitt: Verbrennen von Abfällen",
+     "eId": "chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -1422,7 +1705,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -1435,7 +1719,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "8. Abschnitt: Verbrennen von Abfällen"
+     "sektion": "8. Abschnitt: Verbrennen von Abfällen",
+     "kl": "A"
     }
    ]
   },
@@ -1443,11 +1728,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Emissionen"
+     "label": "2. Kapitel: Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Verbrennen von Abfällen"
+     "label": "8. Abschnitt: Verbrennen von Abfällen",
+     "eId": "chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -1464,7 +1751,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1472,11 +1760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1493,7 +1783,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -1507,7 +1798,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 183,
+      "l": 225
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1515,11 +1812,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: …"
+     "label": "3a. Abschnitt: …",
+     "eId": "chap_4/sec_3_a"
     }
    ],
    "marginalie": [],
@@ -1538,7 +1837,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

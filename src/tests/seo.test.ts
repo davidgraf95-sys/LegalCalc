@@ -49,6 +49,14 @@ describe('prerenderRouten()', () => {
   });
 });
 
+// IA-6 Stufe 1 (FAHRPLAN-GESETZES-UX §11.4 Ziff. 3, W2·5d): /international ist
+// funktionale Alias-Seite; Kanonik = Säule /gesetze?ebene=international. Diese
+// EINE Route trägt darum ein Fremd-Canonical — deklarierte fachliche Änderung
+// dieses Tests (§6.3, kein Refactoring). Kein Redirect (Stufe 2 = separates Go).
+const CANONICAL_AUSNAHMEN: Record<string, string> = {
+  '/international': '/gesetze?ebene=international',
+};
+
 describe('metaFuerPfad()', () => {
   it('liefert für jede Prerender-Route Titel, Beschreibung und Canonical', () => {
     for (const p of ROUTEN) {
@@ -56,8 +64,14 @@ describe('metaFuerPfad()', () => {
       expect(meta, p).not.toBeNull();
       expect(meta!.titel.length, p).toBeGreaterThan(0);
       expect(meta!.beschreibung.length, p).toBeGreaterThan(0);
-      expect(meta!.canonical, p).toBe(SITE_URL + p);
+      expect(meta!.canonical, p).toBe(SITE_URL + (CANONICAL_AUSNAHMEN[p] ?? p));
     }
+  });
+
+  it('IA-6: /international kanonisiert auf die Säule /gesetze?ebene=international', () => {
+    expect(metaFuerPfad('/international')!.canonical).toBe(`${SITE_URL}/gesetze?ebene=international`);
+    // Gegenprobe: die Säulen-Trägerroute selbst bleibt Self-Canonical.
+    expect(metaFuerPfad('/gesetze')!.canonical).toBe(`${SITE_URL}/gesetze`);
   });
 
   it('vergibt routen-individuelle Titel (keine Duplikate)', () => {

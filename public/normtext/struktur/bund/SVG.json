@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "741.01",
   "titel": "Strassenverkehrsgesetz",
@@ -38,7 +38,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "U"
    },
    {
     "nr": "2",
@@ -51,7 +52,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -67,7 +69,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "4",
@@ -79,7 +82,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -88,7 +92,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -113,7 +118,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 198,
+      "l": 198
+     },
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -129,7 +140,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 265,
+      "l": 265
+     },
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -142,7 +159,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 187,
+      "l": 216
+     },
+     "kl": "V"
     },
     {
      "nr": "8",
@@ -166,7 +189,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 216,
+      "l": 216
+     },
+     "kl": "A"
     }
    ]
   },
@@ -174,7 +203,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -195,7 +225,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -211,7 +242,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 191,
+      "l": 191
+     },
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -227,7 +264,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 191,
+      "l": 191
+     },
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -243,7 +286,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 301,
+      "l": 301
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -259,7 +308,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 114,
+      "l": 252
+     },
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -279,7 +334,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 252,
+      "l": 252
+     },
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -295,7 +356,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 308,
+      "l": 308
+     },
+     "kl": "A"
     }
    ]
   },
@@ -303,7 +370,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -324,7 +392,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 228,
+      "l": 228
+     },
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -340,7 +414,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 391,
+      "l": 625
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -356,7 +436,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 623,
+      "l": 625
+     },
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -380,7 +466,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 625,
+      "l": 625
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -400,7 +492,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 625,
+      "l": 625
+     },
+     "kl": "A"
     }
    ]
   },
@@ -408,7 +506,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -419,7 +518,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -430,7 +530,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -455,7 +556,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -463,11 +565,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -478,11 +582,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -503,7 +609,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 261,
+      "l": 261
+     },
+     "kl": "A"
     }
    ]
   },
@@ -511,11 +623,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -536,7 +650,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -552,7 +667,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 301,
+      "l": 301
+     },
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -568,7 +689,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 239,
+      "l": 239
+     },
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -584,7 +711,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 395,
+      "l": 395
+     },
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -600,7 +733,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 375,
+      "l": 375
+     },
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -620,7 +759,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 126,
+      "l": 207
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -632,7 +777,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 207,
+      "l": 207
+     },
+     "kl": "A"
     }
    ]
   },
@@ -640,11 +791,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -665,7 +818,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -673,11 +832,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -695,7 +856,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 61,
+      "l": 116
+     },
+     "kl": "V"
     },
     {
      "nr": "36",
@@ -708,7 +876,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 76,
+      "l": 285
+     },
+     "kl": "V"
     },
     {
      "nr": "37",
@@ -724,7 +899,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 285,
+      "l": 285
+     },
+     "kl": "A"
     }
    ]
   },
@@ -732,11 +914,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -757,7 +941,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -765,11 +950,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -790,7 +977,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 95,
+      "l": 95
+     },
+     "kl": "A"
     }
    ]
   },
@@ -798,11 +991,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -823,7 +1018,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -831,11 +1027,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -860,7 +1058,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -876,7 +1075,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 217,
+      "l": 217
+     },
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -892,7 +1097,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 75,
+      "l": 75
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -908,7 +1119,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 85,
+      "l": 302
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -924,7 +1141,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 217,
+      "l": 302
+     },
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -940,7 +1163,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 103,
+      "l": 103
+     },
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -957,7 +1186,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Aus- und Weiterbildung der Motorfahrzeugführer"
+     "sektion": "Aus- und Weiterbildung der Motorfahrzeugführer",
+     "kl": "A"
     }
    ]
   },
@@ -965,11 +1195,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -987,7 +1219,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 132,
+      "l": 235
+     },
+     "kl": "V"
     },
     {
      "nr": "61",
@@ -1003,7 +1241,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 235,
+      "l": 235
+     },
+     "kl": "A"
     },
     {
      "nr": "62",
@@ -1019,7 +1263,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 435,
+      "l": 435
+     },
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -1035,7 +1285,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 435,
+      "l": 435
+     },
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -1047,7 +1303,14 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 97,
+      "l": 97
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1060,7 +1323,14 @@
       }
      ],
      "absatz": "5",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 4,
+      "it": 0,
+      "o": 76,
+      "l": 220
+     },
+     "kl": "V"
     },
     {
      "nr": "66",
@@ -1076,7 +1346,14 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 4,
+      "it": 1,
+      "o": 95,
+      "l": 95
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1084,11 +1361,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1109,7 +1388,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -1125,7 +1405,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 322,
+      "l": 322
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1133,11 +1419,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer"
+     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1162,7 +1450,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 46,
+      "l": 46
+     },
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -1182,7 +1476,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 92,
+      "l": 92
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1190,11 +1490,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer"
+     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1215,7 +1517,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 141,
+      "l": 141
+     },
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -1231,7 +1539,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 204,
+      "l": 204
+     },
+     "kl": "A"
     },
     {
      "nr": "88",
@@ -1251,7 +1565,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 234,
+      "l": 234
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1259,11 +1579,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer"
+     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1284,7 +1606,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1292,11 +1615,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer"
+     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1317,7 +1642,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1325,11 +1651,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1350,7 +1678,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 310,
+      "l": 310
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1358,11 +1692,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1373,11 +1709,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1398,7 +1736,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1406,11 +1745,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1435,7 +1776,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -1455,7 +1797,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -1475,7 +1818,8 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "96",
@@ -1499,7 +1843,8 @@
       }
      ],
      "absatz": "3",
-     "item": "e"
+     "item": "e",
+     "kl": "G"
     },
     {
      "nr": "97",
@@ -1519,7 +1864,8 @@
       }
      ],
      "absatz": "3",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -1543,7 +1889,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "99",
@@ -1559,7 +1911,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1567,7 +1925,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -1578,11 +1937,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Regeln für alle Strassenbenützer"
+     "label": "1. Abschnitt: Regeln für alle Strassenbenützer",
+     "eId": "tit_3/lvl_u1/chap_1"
     }
    ],
    "marginalie": [
@@ -1604,7 +1965,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 173,
+      "l": 173
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1612,11 +1979,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Regeln für alle Strassenbenützer"
+     "label": "1. Abschnitt: Regeln für alle Strassenbenützer",
+     "eId": "tit_3/lvl_u1/chap_1"
     }
    ],
    "marginalie": [
@@ -1628,15 +1997,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "I. Allgemeine Fahrregeln"
+     "label": "I. Allgemeine Fahrregeln",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1648,15 +2020,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "I. Allgemeine Fahrregeln"
+     "label": "I. Allgemeine Fahrregeln",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1682,7 +2057,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 218,
+      "l": 218
+     },
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -1698,7 +2079,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 145,
+      "l": 145
+     },
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -1714,7 +2101,14 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 4,
+      "it": 1,
+      "o": 96,
+      "l": 96
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1722,15 +2116,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "I. Allgemeine Fahrregeln"
+     "label": "I. Allgemeine Fahrregeln",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1752,7 +2149,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 242,
+      "l": 242
+     },
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -1765,7 +2168,14 @@
       }
      ],
      "absatz": "2bis",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 2,
+      "it": 0,
+      "o": 175,
+      "l": 274
+     },
+     "kl": "V"
     },
     {
      "nr": "107",
@@ -1778,7 +2188,14 @@
       }
      ],
      "absatz": "2bis",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 2,
+      "it": 0,
+      "o": 220,
+      "l": 274
+     },
+     "kl": "V"
     },
     {
      "nr": "108",
@@ -1798,7 +2215,14 @@
       }
      ],
      "absatz": "2bis",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 2,
+      "it": 5,
+      "o": 39,
+      "l": 39
+     },
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -1818,7 +2242,13 @@
       }
      ],
      "absatz": "2ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 116,
+      "l": 116
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1826,15 +2256,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "I. Allgemeine Fahrregeln"
+     "label": "I. Allgemeine Fahrregeln",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1860,7 +2293,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 83,
+      "l": 83
+     },
+     "kl": "A"
     },
     {
      "nr": "111",
@@ -1872,7 +2311,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 220,
+      "l": 220
+     },
+     "kl": "A"
     },
     {
      "nr": "112",
@@ -1884,7 +2329,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "113",
@@ -1904,7 +2355,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1912,15 +2369,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "I. Allgemeine Fahrregeln"
+     "label": "I. Allgemeine Fahrregeln",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1946,7 +2406,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 85,
+      "l": 85
+     },
+     "kl": "A"
     },
     {
      "nr": "115",
@@ -1966,7 +2432,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 229,
+      "l": 229
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1974,15 +2446,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "II. Einzelne Verkehrsvorgänge"
+     "label": "II. Einzelne Verkehrsvorgänge",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -1994,15 +2469,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "II. Einzelne Verkehrsvorgänge"
+     "label": "II. Einzelne Verkehrsvorgänge",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2014,15 +2492,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "II. Einzelne Verkehrsvorgänge"
+     "label": "II. Einzelne Verkehrsvorgänge",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2034,15 +2515,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "II. Einzelne Verkehrsvorgänge"
+     "label": "II. Einzelne Verkehrsvorgänge",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2054,15 +2538,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "II. Einzelne Verkehrsvorgänge"
+     "label": "II. Einzelne Verkehrsvorgänge",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2074,15 +2561,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "III. Sicherungsvorkehren"
+     "label": "III. Sicherungsvorkehren",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2094,15 +2584,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "III. Sicherungsvorkehren"
+     "label": "III. Sicherungsvorkehren",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2114,15 +2607,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "III. Sicherungsvorkehren"
+     "label": "III. Sicherungsvorkehren",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2148,7 +2644,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 178,
+      "l": 178
+     },
+     "kl": "A"
     },
     {
      "nr": "117",
@@ -2168,7 +2670,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 261,
+      "l": 261
+     },
+     "kl": "A"
     },
     {
      "nr": "118",
@@ -2188,7 +2696,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 83,
+      "l": 83
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2196,15 +2710,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "III. Sicherungsvorkehren"
+     "label": "III. Sicherungsvorkehren",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2216,15 +2733,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "IV. Regeln für besondere Strassenverhältnisse"
+     "label": "IV. Regeln für besondere Strassenverhältnisse",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2236,15 +2756,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "IV. Regeln für besondere Strassenverhältnisse"
+     "label": "IV. Regeln für besondere Strassenverhältnisse",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2256,15 +2779,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "IV. Regeln für besondere Strassenverhältnisse"
+     "label": "IV. Regeln für besondere Strassenverhältnisse",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2276,15 +2802,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "V. Besondere Fahrzeugarten"
+     "label": "V. Besondere Fahrzeugarten",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -2310,7 +2839,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 83,
+      "l": 83
+     },
+     "kl": "A"
     },
     {
      "nr": "120",
@@ -2330,7 +2865,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2338,15 +2879,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "V. Besondere Fahrzeugarten"
+     "label": "V. Besondere Fahrzeugarten",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -2358,15 +2902,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "V. Besondere Fahrzeugarten"
+     "label": "V. Besondere Fahrzeugarten",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -2378,11 +2925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Regeln für den übrigen Verkehr"
+     "label": "3. Abschnitt: Regeln für den übrigen Verkehr",
+     "eId": "tit_3/lvl_u1/chap_3"
     }
    ],
    "marginalie": [
@@ -2408,7 +2957,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 224,
+      "l": 224
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2416,11 +2971,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Regeln für den übrigen Verkehr"
+     "label": "3. Abschnitt: Regeln für den übrigen Verkehr",
+     "eId": "tit_3/lvl_u1/chap_3"
     }
    ],
    "marginalie": [
@@ -2432,11 +2989,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verhalten bei Unfällen"
+     "label": "4. Abschnitt: Verhalten bei Unfällen",
+     "eId": "tit_3/lvl_u1/chap_4"
     }
    ],
    "marginalie": [
@@ -2447,11 +3006,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Sportliche Veranstaltungen, Versuchsfahrten"
+     "label": "5. Abschnitt: Sportliche Veranstaltungen, Versuchsfahrten",
+     "eId": "tit_3/lvl_u1/chap_5"
     }
    ],
    "marginalie": [
@@ -2477,7 +3038,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 234,
+      "l": 234
+     },
+     "kl": "A"
     },
     {
      "nr": "123",
@@ -2497,7 +3064,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 111,
+      "l": 111
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2505,11 +3078,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Sportliche Veranstaltungen, Versuchsfahrten"
+     "label": "5. Abschnitt: Sportliche Veranstaltungen, Versuchsfahrten",
+     "eId": "tit_3/lvl_u1/chap_5"
     }
    ],
    "marginalie": [
@@ -2521,11 +3096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -2547,7 +3124,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2555,11 +3133,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -2581,7 +3161,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "128",
@@ -2601,7 +3182,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 44,
+      "l": 44
+     },
+     "kl": "A"
     },
     {
      "nr": "129",
@@ -2621,7 +3208,8 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "130",
@@ -2641,7 +3229,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "131",
@@ -2661,7 +3250,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 154,
+      "l": 154
+     },
+     "kl": "A"
     },
     {
      "nr": "132",
@@ -2677,7 +3272,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "133",
@@ -2697,7 +3298,14 @@
       }
      ],
      "absatz": "6",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 6,
+      "it": 1,
+      "o": 80,
+      "l": 80
+     },
+     "kl": "A"
     },
     {
      "nr": "134",
@@ -2729,7 +3337,13 @@
       }
      ],
      "absatz": "6bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 137,
+      "l": 137
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2737,11 +3351,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -2767,7 +3383,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "136",
@@ -2783,7 +3400,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 184,
+      "l": 184
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2791,11 +3414,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -2817,7 +3442,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 244,
+      "l": 244
+     },
+     "kl": "A"
     },
     {
      "nr": "138",
@@ -2841,7 +3472,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "139",
@@ -2857,7 +3494,8 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "140",
@@ -2873,7 +3511,14 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 4,
+      "it": 1,
+      "o": 128,
+      "l": 128
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2881,11 +3526,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Haftpflicht"
+     "label": "1. Abschnitt: Haftpflicht",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2896,11 +3543,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Haftpflicht"
+     "label": "1. Abschnitt: Haftpflicht",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2925,7 +3574,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "150",
@@ -2938,7 +3593,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 26,
+      "l": 42
+     },
+     "kl": "V"
     },
     {
      "nr": "151",
@@ -2954,7 +3615,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 42,
+      "l": 42
+     },
+     "kl": "A"
     },
     {
      "nr": "152",
@@ -2970,7 +3637,8 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "153",
@@ -2983,7 +3651,14 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 253,
+      "l": 254
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2991,11 +3666,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Haftpflicht"
+     "label": "1. Abschnitt: Haftpflicht",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3020,7 +3697,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3028,11 +3706,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Haftpflicht"
+     "label": "1. Abschnitt: Haftpflicht",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3057,7 +3737,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 337,
+      "l": 337
+     },
+     "kl": "A"
     },
     {
      "nr": "156",
@@ -3077,7 +3763,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 75,
+      "l": 75
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3085,11 +3777,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Haftpflicht"
+     "label": "1. Abschnitt: Haftpflicht",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3107,7 +3801,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 131,
+      "l": 159
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3115,11 +3815,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3140,7 +3842,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 221,
+      "l": 221
+     },
+     "kl": "A"
     },
     {
      "nr": "159",
@@ -3156,7 +3864,8 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "kl": "G"
     },
     {
      "nr": "160",
@@ -3172,7 +3881,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -3180,11 +3890,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3209,7 +3921,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3217,11 +3930,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3239,7 +3954,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 96,
+      "l": 151
+     },
+     "kl": "V"
     },
     {
      "nr": "163",
@@ -3255,7 +3976,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 151,
+      "l": 151
+     },
+     "kl": "A"
     },
     {
      "nr": "164",
@@ -3271,7 +3998,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 225,
+      "l": 225
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3279,11 +4012,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3294,11 +4029,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3319,7 +4056,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 335,
+      "l": 335
+     },
+     "kl": "A"
     },
     {
      "nr": "166",
@@ -3335,7 +4078,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3343,11 +4092,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3372,7 +4123,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 142,
+      "l": 142
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3380,11 +4137,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3405,7 +4164,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "170",
@@ -3418,7 +4178,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 307,
+      "l": 308
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3426,11 +4192,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3455,7 +4223,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "172",
@@ -3469,7 +4238,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 39,
+      "l": 40
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3477,11 +4252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3506,7 +4283,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3514,11 +4292,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3543,7 +4323,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 369,
+      "l": 410
+     },
+     "kl": "A"
     },
     {
      "nr": "175",
@@ -3563,7 +4349,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 440,
+      "l": 440
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3571,11 +4363,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3600,7 +4394,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "177",
@@ -3616,7 +4416,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 297,
+      "l": 297
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3624,11 +4430,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3649,7 +4457,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3657,11 +4466,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3686,7 +4497,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3694,11 +4506,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3719,7 +4533,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "181",
@@ -3732,7 +4547,14 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 97,
+      "l": 302
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3740,11 +4562,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3769,7 +4593,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 262,
+      "l": 528
+     },
+     "kl": "A"
     },
     {
      "nr": "192",
@@ -3785,7 +4615,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 528,
+      "l": 528
+     },
+     "kl": "A"
     },
     {
      "nr": "193",
@@ -3805,7 +4641,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 111,
+      "l": 111
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3813,11 +4655,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3838,7 +4682,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3846,11 +4691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3871,7 +4718,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3879,11 +4727,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verhältnis zu andern Versicherungen"
+     "label": "4. Abschnitt: Verhältnis zu andern Versicherungen",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -3908,7 +4758,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "203",
@@ -3922,7 +4773,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 70,
+      "l": 136
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3930,11 +4787,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verhältnis zu andern Versicherungen"
+     "label": "4. Abschnitt: Verhältnis zu andern Versicherungen",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -3955,7 +4814,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "205",
@@ -3969,7 +4829,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 178,
+      "l": 218
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3977,11 +4843,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4006,7 +4874,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4014,11 +4883,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4039,14 +4910,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "208",
      "text": "",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 169,
+      "l": 202
+     },
+     "kl": "U"
     }
    ]
   },
@@ -4054,11 +4932,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4075,7 +4955,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4083,11 +4964,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4108,7 +4991,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4116,11 +5000,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4141,7 +5027,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4149,11 +5036,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4164,11 +5053,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4179,11 +5070,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4204,7 +5097,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 271,
+      "l": 271
+     },
+     "kl": "A"
     },
     {
      "nr": "213",
@@ -4220,7 +5119,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 316,
+      "l": 316
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4228,7 +5133,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4249,7 +5155,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "239",
@@ -4262,7 +5169,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 147,
+      "l": 231
+     },
+     "kl": "V"
     },
     {
      "nr": "240",
@@ -4278,7 +5191,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 231,
+      "l": 231
+     },
+     "kl": "A"
     },
     {
      "nr": "241",
@@ -4294,7 +5213,13 @@
       }
      ],
      "absatz": "3ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 354,
+      "l": 354
+     },
+     "kl": "A"
     },
     {
      "nr": "242",
@@ -4310,7 +5235,14 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 5,
+      "it": 3,
+      "o": 74,
+      "l": 74
+     },
+     "kl": "A"
     },
     {
      "nr": "243",
@@ -4323,7 +5255,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 42,
+      "l": 83
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4331,7 +5269,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4356,7 +5295,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "246",
@@ -4372,7 +5312,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -4380,7 +5321,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4401,7 +5343,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4409,7 +5352,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4430,7 +5374,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4438,7 +5383,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4459,7 +5405,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "251",
@@ -4472,7 +5419,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 33,
+      "l": 74
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4480,7 +5433,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4505,7 +5459,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "253",
@@ -4521,7 +5476,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 132,
+      "l": 132
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4529,7 +5490,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4550,7 +5512,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "255",
@@ -4566,7 +5529,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 277,
+      "l": 277
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4574,7 +5543,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4599,7 +5569,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "257",
@@ -4611,7 +5582,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "U"
     },
     {
      "nr": "258",
@@ -4624,7 +5596,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 49,
+      "l": 90
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4632,7 +5610,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4653,7 +5632,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4661,7 +5641,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4686,14 +5667,22 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "264",
      "text": "Treten zu einem späteren Zeitpunkt in Kraft.",
      "links": [],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "U"
     }
    ]
   },
@@ -4701,7 +5690,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4723,7 +5713,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 65,
+      "l": 65
+     },
+     "kl": "A"
     },
     {
      "nr": "266",
@@ -4744,7 +5740,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 227,
+      "l": 227
+     },
+     "kl": "A"
     },
     {
      "nr": "267",
@@ -4761,7 +5763,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 6
+     "absatzIndex": 6,
+     "pos": {
+      "b": 6,
+      "o": 821,
+      "l": 821
+     },
+     "kl": "A"
     },
     {
      "nr": "268",
@@ -4778,7 +5786,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 6
+     "absatzIndex": 6,
+     "pos": {
+      "b": 6,
+      "o": 821,
+      "l": 821
+     },
+     "kl": "A"
     },
     {
      "nr": "269",
@@ -4795,7 +5809,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 7
+     "absatzIndex": 7,
+     "pos": {
+      "b": 7,
+      "o": 250,
+      "l": 250
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4803,7 +5823,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4814,7 +5835,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4839,7 +5861,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "271",
@@ -4852,7 +5875,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 50,
+      "l": 128
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4860,7 +5889,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4871,7 +5901,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4892,7 +5923,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4900,7 +5932,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4921,7 +5954,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 358,
+      "l": 358
+     },
+     "kl": "A"
     },
     {
      "nr": "276",
@@ -4941,7 +5980,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4949,7 +5994,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4966,7 +6012,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 213,
+      "l": 213
+     },
+     "kl": "A"
     },
     {
      "nr": "278",
@@ -4982,7 +6034,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 121,
+      "l": 121
+     },
+     "kl": "A"
     },
     {
      "nr": "279",
@@ -4994,7 +6052,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 124,
+      "l": 124
+     },
+     "kl": "U"
     },
     {
      "nr": "280",
@@ -5010,7 +6074,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "281",
@@ -5030,7 +6100,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 359,
+      "l": 359
+     },
+     "kl": "A"
     },
     {
      "nr": "282",
@@ -5054,7 +6130,13 @@
       }
      ],
      "absatz": "9",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "283",
@@ -5074,7 +6156,13 @@
       }
      ],
      "absatz": "10",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 10,
+      "o": 245,
+      "l": 245
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5082,7 +6170,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5111,7 +6200,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 111,
+      "l": 155
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -5119,7 +6214,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5152,14 +6248,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "295",
      "text": "Ziff. 4 des BRB vom 25. Aug. 1959 (<i>AS <b>1959</b> 715</i>).",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     },
     {
      "nr": "296",
@@ -5172,7 +6270,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "297",
@@ -5184,7 +6283,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "298",
@@ -5196,7 +6296,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "299",
@@ -5209,7 +6310,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "300",
@@ -5221,7 +6323,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     }
    ]
   },
@@ -5229,7 +6332,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5266,7 +6370,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5274,7 +6379,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5303,7 +6409,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5311,7 +6418,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5344,7 +6452,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "285",
@@ -5357,7 +6466,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 34,
+      "l": 60
+     },
+     "kl": "V"
     },
     {
      "nr": "286",
@@ -5370,7 +6486,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 48,
+      "l": 160
+     },
+     "kl": "V"
     },
     {
      "nr": "287",
@@ -5383,7 +6506,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 34,
+      "l": 64
+     },
+     "kl": "V"
     },
     {
      "nr": "288",
@@ -5396,7 +6526,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 48,
+      "l": 164
+     },
+     "kl": "V"
     },
     {
      "nr": "289",
@@ -5409,7 +6546,14 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 31,
+      "l": 342
+     },
+     "kl": "V"
     },
     {
      "nr": "290",
@@ -5422,7 +6566,14 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 36,
+      "l": 108
+     },
+     "kl": "V"
     },
     {
      "nr": "291",
@@ -5435,7 +6586,14 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 43,
+      "l": 127
+     },
+     "kl": "V"
     },
     {
      "nr": "292",
@@ -5448,7 +6606,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 63,
+      "l": 580
+     },
+     "kl": "V"
     }
    ]
   },
@@ -5456,11 +6620,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5481,7 +6647,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5489,11 +6656,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5514,7 +6683,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -5530,7 +6700,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 43,
+      "l": 43
+     },
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -5546,7 +6723,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 286,
+      "l": 286
+     },
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -5562,7 +6745,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 164,
+      "l": 275
+     },
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -5578,7 +6767,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5586,11 +6781,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5611,7 +6808,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5619,11 +6817,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5644,7 +6844,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5652,11 +6853,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5685,7 +6888,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -5698,7 +6902,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 88,
+      "l": 120
+     },
+     "kl": "V"
     },
     {
      "nr": "58",
@@ -5718,7 +6929,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 135,
+      "l": 296
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5726,11 +6943,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5751,7 +6970,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5759,11 +6979,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5784,7 +7006,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -5804,7 +7027,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -5824,7 +7048,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -5832,11 +7057,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5857,7 +7084,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -5877,7 +7105,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -5897,14 +7126,16 @@
       }
      ],
      "absatz": "1",
-     "item": "bbis"
+     "item": "bbis",
+     "kl": "A"
     },
     {
      "nr": "73",
      "text": "Siehe auch die SchlB Änd. 14.12.2001 am Ende dieses Textes.",
      "links": [],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "V"
     }
    ]
   },
@@ -5912,11 +7143,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5937,7 +7170,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -5957,7 +7191,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -5981,14 +7216,16 @@
       }
      ],
      "absatz": "2",
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     },
     {
      "nr": "77",
      "text": "Siehe auch die SchlB Änd. 14.12.2001 am Ende dieses Textes.",
      "links": [],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "V"
     }
    ]
   },
@@ -5996,11 +7233,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6021,7 +7260,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "79",
@@ -6041,7 +7281,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 438,
+      "l": 438
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6049,11 +7295,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6074,7 +7322,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "81",
@@ -6090,7 +7339,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 134,
+      "l": 134
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6098,7 +7354,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6124,7 +7381,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "sektion": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "kl": "A"
     }
    ]
   },
@@ -6132,7 +7390,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6143,7 +7402,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6154,7 +7414,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6165,7 +7426,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6176,7 +7438,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6187,7 +7450,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6198,7 +7462,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6209,7 +7474,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -6230,7 +7496,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6238,11 +7505,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -6272,7 +7541,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -6286,7 +7556,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 142,
+      "l": 242
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6294,11 +7570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -6320,7 +7598,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "142",
@@ -6336,7 +7615,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 201,
+      "l": 201
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6344,11 +7629,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -6378,7 +7665,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6386,7 +7674,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIIa. Titel: Verkehrsmanagement"
+     "label": "IIIa. Titel: Verkehrsmanagement",
+     "eId": "tit_3_a"
     }
    ],
    "marginalie": [
@@ -6407,7 +7696,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "147",
@@ -6420,7 +7710,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 136,
+      "l": 197
+     },
+     "kl": "V"
     },
     {
      "nr": "144",
@@ -6433,7 +7730,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "IIIa. Titel: Verkehrsmanagement"
+     "sektion": "IIIa. Titel: Verkehrsmanagement",
+     "kl": "A"
     },
     {
      "nr": "145",
@@ -6450,7 +7748,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "IIIa. Titel: Verkehrsmanagement"
+     "sektion": "IIIa. Titel: Verkehrsmanagement",
+     "kl": "A"
     }
    ]
   },
@@ -6458,7 +7757,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIIa. Titel: Verkehrsmanagement"
+     "label": "IIIa. Titel: Verkehrsmanagement",
+     "eId": "tit_3_a"
     }
    ],
    "marginalie": [
@@ -6479,7 +7779,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6487,11 +7788,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -6516,7 +7819,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6524,7 +7828,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -6545,7 +7850,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -6561,7 +7867,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -6577,7 +7889,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 120,
+      "l": 120
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6585,11 +7903,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6610,7 +7930,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     },
     {
      "nr": "183",
@@ -6626,7 +7947,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 187,
+      "l": 187
+     },
+     "kl": "A"
     },
     {
      "nr": "184",
@@ -6642,7 +7969,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 172,
+      "l": 172
+     },
+     "kl": "A"
     },
     {
      "nr": "185",
@@ -6658,7 +7991,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 92,
+      "l": 92
+     },
+     "kl": "A"
     },
     {
      "nr": "186",
@@ -6671,7 +8010,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 330,
+      "l": 349
+     },
+     "kl": "V"
     },
     {
      "nr": "187",
@@ -6687,7 +8032,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 349,
+      "l": 349
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6695,11 +8046,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6720,7 +8073,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "189",
@@ -6736,7 +8090,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 99,
+      "l": 100
+     },
+     "kl": "A"
     },
     {
      "nr": "190",
@@ -6752,7 +8112,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 393,
+      "l": 393
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6760,11 +8126,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6785,7 +8153,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6793,11 +8162,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6818,7 +8189,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6826,11 +8198,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6851,7 +8225,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6859,11 +8234,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6884,7 +8261,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6892,11 +8270,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6917,7 +8297,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "201",
@@ -6933,7 +8314,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 76,
+      "l": 76
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6941,11 +8328,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -6957,7 +8346,13 @@
      "text": "Tritt zu einem späteren Zeitpunkt in Kraft.",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 59,
+      "l": 59
+     },
+     "kl": "U"
     },
     {
      "nr": "214",
@@ -6982,7 +8377,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "IVa. Titel: Informationssysteme"
+     "sektion": "IVa. Titel: Informationssysteme",
+     "kl": "A"
     }
    ]
   },
@@ -6990,11 +8386,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7015,7 +8413,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "217",
@@ -7028,7 +8427,14 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 69,
+      "l": 117
+     },
+     "kl": "V"
     },
     {
      "nr": "218",
@@ -7044,7 +8450,8 @@
       }
      ],
      "absatz": null,
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     },
     {
      "nr": "219",
@@ -7060,7 +8467,8 @@
       }
      ],
      "absatz": null,
-     "item": "m"
+     "item": "m",
+     "kl": "A"
     },
     {
      "nr": "220",
@@ -7073,7 +8481,14 @@
       }
      ],
      "absatz": null,
-     "item": "m"
+     "item": "m",
+     "pos": {
+      "b": 0,
+      "it": 15,
+      "o": 104,
+      "l": 105
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7081,11 +8496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7096,11 +8513,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7122,7 +8541,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 59,
+      "l": 59
+     },
+     "kl": "A"
     },
     {
      "nr": "222",
@@ -7154,7 +8579,8 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "223",
@@ -7167,7 +8593,14 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 67,
+      "l": 131
+     },
+     "kl": "V"
     },
     {
      "nr": "224",
@@ -7199,7 +8632,8 @@
       }
      ],
      "absatz": null,
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "225",
@@ -7212,7 +8646,14 @@
       }
      ],
      "absatz": null,
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 159,
+      "l": 220
+     },
+     "kl": "V"
     },
     {
      "nr": "226",
@@ -7228,7 +8669,8 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "227",
@@ -7241,7 +8683,14 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 139,
+      "l": 197
+     },
+     "kl": "V"
     },
     {
      "nr": "228",
@@ -7257,7 +8706,8 @@
       }
      ],
      "absatz": null,
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "229",
@@ -7270,7 +8720,14 @@
       }
      ],
      "absatz": null,
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 116,
+      "l": 180
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7278,11 +8735,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7304,7 +8763,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 101,
+      "l": 101
+     },
+     "kl": "A"
     },
     {
      "nr": "231",
@@ -7320,14 +8785,16 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "232",
      "text": "Ursprünglich: Bst. a.",
      "links": [],
      "absatz": null,
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     },
     {
      "nr": "233",
@@ -7343,7 +8810,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "234",
@@ -7359,7 +8827,8 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "235",
@@ -7372,7 +8841,14 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 165,
+      "l": 184
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7380,11 +8856,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7395,11 +8873,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7410,11 +8890,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7425,11 +8907,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle"
+     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle",
+     "eId": "tit_4_a/chap_2"
     }
    ],
    "marginalie": [
@@ -7440,11 +8924,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle"
+     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle",
+     "eId": "tit_4_a/chap_2"
     }
    ],
    "marginalie": [
@@ -7455,11 +8941,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle"
+     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle",
+     "eId": "tit_4_a/chap_2"
     }
    ],
    "marginalie": [
@@ -7470,11 +8958,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle"
+     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle",
+     "eId": "tit_4_a/chap_2"
     }
    ],
    "marginalie": [
@@ -7485,11 +8975,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle"
+     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle",
+     "eId": "tit_4_a/chap_2"
     }
    ],
    "marginalie": [
@@ -7500,11 +8992,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle"
+     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle",
+     "eId": "tit_4_a/chap_2"
     }
    ],
    "marginalie": [
@@ -7515,11 +9009,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen"
+     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen",
+     "eId": "tit_4_a/chap_3"
     }
    ],
    "marginalie": [
@@ -7536,7 +9032,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 126,
+      "l": 126
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7544,11 +9046,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen"
+     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen",
+     "eId": "tit_4_a/chap_3"
     }
    ],
    "marginalie": [
@@ -7566,7 +9070,14 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 80,
+      "l": 222
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7574,11 +9085,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen"
+     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen",
+     "eId": "tit_4_a/chap_3"
     }
    ],
    "marginalie": [
@@ -7589,11 +9102,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen"
+     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen",
+     "eId": "tit_4_a/chap_3"
     }
    ],
    "marginalie": [
@@ -7604,11 +9119,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen"
+     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen",
+     "eId": "tit_4_a/chap_3"
     }
    ],
    "marginalie": [
@@ -7619,11 +9136,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen"
+     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen",
+     "eId": "tit_4_a/chap_3"
     }
    ],
    "marginalie": [
@@ -7634,7 +9153,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -7655,7 +9175,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7663,7 +9184,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -7688,7 +9210,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7696,7 +9219,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -7717,7 +9241,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "261",
@@ -7730,7 +9255,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 82,
+      "l": 84
+     },
+     "kl": "V"
     },
     {
      "nr": "262",
@@ -7746,7 +9278,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 45,
+      "l": 45
+     },
+     "kl": "A"
     }
    ]
   }

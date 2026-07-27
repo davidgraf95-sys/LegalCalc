@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-10",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "812.212.1",
   "titel": "Verordnung über die Bewilligungen im Arzneimittelbereich",
@@ -32,7 +32,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -41,7 +42,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand und Begriffe"
+     "label": "1. Kapitel: Gegenstand und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -58,7 +60,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 202,
+      "l": 203
+     },
+     "kl": "V"
     }
    ]
   },
@@ -66,7 +74,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand und Begriffe"
+     "label": "1. Kapitel: Gegenstand und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -78,7 +87,14 @@
      "text": "Steht für: <i>Good Manufacturing Practice</i>",
      "links": [],
      "absatz": null,
-     "item": "o"
+     "item": "o",
+     "pos": {
+      "b": 0,
+      "it": 14,
+      "o": 348,
+      "l": 402
+     },
+     "kl": "U"
     }
    ]
   },
@@ -86,11 +102,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Herstellungsbewilligung"
+     "label": "1. Abschnitt: Herstellungsbewilligung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -101,11 +119,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Herstellungsbewilligung"
+     "label": "1. Abschnitt: Herstellungsbewilligung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -116,11 +136,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Herstellungsbewilligung"
+     "label": "1. Abschnitt: Herstellungsbewilligung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -131,11 +153,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Herstellungsbewilligung"
+     "label": "1. Abschnitt: Herstellungsbewilligung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -146,11 +170,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Herstellungsbewilligung"
+     "label": "1. Abschnitt: Herstellungsbewilligung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -161,11 +187,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Herstellungsbewilligung"
+     "label": "1. Abschnitt: Herstellungsbewilligung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -176,11 +204,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Herstellungsbewilligung"
+     "label": "1. Abschnitt: Herstellungsbewilligung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -191,11 +221,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Herstellungsbewilligung"
+     "label": "1. Abschnitt: Herstellungsbewilligung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -206,11 +238,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr"
+     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -221,11 +255,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr"
+     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -242,7 +278,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 247,
+      "l": 264
+     },
+     "kl": "V"
     }
    ]
   },
@@ -250,11 +293,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr"
+     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -266,7 +311,14 @@
      "text": "Steht für: <i>Good Distribution Practice</i>",
      "links": [],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 97,
+      "l": 126
+     },
+     "kl": "U"
     }
    ]
   },
@@ -274,11 +326,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr"
+     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -289,11 +343,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr"
+     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -310,7 +366,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 111,
+      "l": 111
+     },
+     "kl": "A"
     }
    ]
   },
@@ -318,11 +380,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr"
+     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -333,11 +397,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr"
+     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -348,11 +414,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr"
+     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -369,7 +437,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 128,
+      "l": 128
+     },
+     "kl": "U"
     }
    ]
   },
@@ -377,11 +451,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr"
+     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -392,11 +468,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr"
+     "label": "2. Abschnitt: Bewilligung für die Einfuhr, den Grosshandel und die Ausfuhr",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -407,11 +485,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bewilligung für den Handel im Ausland"
+     "label": "3. Abschnitt: Bewilligung für den Handel im Ausland",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -422,11 +502,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bewilligung für den Handel im Ausland"
+     "label": "3. Abschnitt: Bewilligung für den Handel im Ausland",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -437,11 +519,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bewilligung für den Handel im Ausland"
+     "label": "3. Abschnitt: Bewilligung für den Handel im Ausland",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -452,11 +536,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bewilligung zur Ausübung einer Mäkler- oder Agenturtätigkeit"
+     "label": "4. Abschnitt: Bewilligung zur Ausübung einer Mäkler- oder Agenturtätigkeit",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -467,11 +553,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bewilligung zur Ausübung einer Mäkler- oder Agenturtätigkeit"
+     "label": "4. Abschnitt: Bewilligung zur Ausübung einer Mäkler- oder Agenturtätigkeit",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -482,11 +570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bewilligung zur Ausübung einer Mäkler- oder Agenturtätigkeit"
+     "label": "4. Abschnitt: Bewilligung zur Ausübung einer Mäkler- oder Agenturtätigkeit",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -497,11 +587,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte"
+     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -512,11 +604,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte"
+     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -533,7 +627,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 90,
+      "l": 101
+     },
+     "kl": "V"
     }
    ]
   },
@@ -541,11 +641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte"
+     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -556,11 +658,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte"
+     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -571,11 +675,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte"
+     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -592,7 +698,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 204,
+      "l": 252
+     },
+     "kl": "V"
     }
    ]
   },
@@ -600,11 +712,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte"
+     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -615,11 +729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte"
+     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -630,11 +746,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte"
+     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -651,7 +769,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 170,
+      "l": 226
+     },
+     "kl": "V"
     }
    ]
   },
@@ -659,11 +783,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte"
+     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -674,11 +800,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte"
+     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -689,11 +817,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte"
+     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -704,11 +834,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte"
+     "label": "5. Abschnitt: Besondere Bestimmungen für Blut und Blutprodukte",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -719,7 +851,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bewilligungsverfahren"
+     "label": "3. Kapitel: Bewilligungsverfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -736,7 +869,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 164,
+      "l": 241
+     },
+     "kl": "V"
     },
     {
      "nr": "12",
@@ -748,7 +887,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 142,
+      "l": 142
+     },
+     "kl": "A"
     }
    ]
   },
@@ -756,7 +901,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bewilligungsverfahren"
+     "label": "3. Kapitel: Bewilligungsverfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -767,7 +913,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bewilligungsverfahren"
+     "label": "3. Kapitel: Bewilligungsverfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -778,7 +925,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bewilligungsverfahren"
+     "label": "3. Kapitel: Bewilligungsverfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -789,7 +937,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bewilligungsverfahren"
+     "label": "3. Kapitel: Bewilligungsverfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -800,7 +949,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland"
+     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -811,7 +961,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland"
+     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -822,7 +973,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland"
+     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -833,7 +985,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland"
+     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [],
@@ -848,7 +1001,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -856,7 +1010,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland"
+     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -873,7 +1028,14 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 78,
+      "l": 119
+     },
+     "kl": "V"
     }
    ]
   },
@@ -881,7 +1043,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland"
+     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -898,7 +1061,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 160,
+      "l": 161
+     },
+     "kl": "V"
     },
     {
      "nr": "16",
@@ -910,7 +1079,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 161,
+      "l": 161
+     },
+     "kl": "A"
     }
    ]
   },
@@ -918,7 +1093,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland"
+     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -930,7 +1106,13 @@
      "text": "Verordnung (EG) Nr. 1236/2005 des Rates vom 27. Juni 2005 betreffend den Handel mit bestimmten Gütern, die zur Vollstreckung der Todesstrafe, zu Folter oder zu anderer grausamer, unmenschlicher oder erniedrigender Behandlung oder Strafe verwendet werden könnten; Fassung gemäss ABl. L 200 vom 30.7.2005, S. 1.",
      "links": [],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 254,
+      "l": 318
+     },
+     "kl": "V"
     }
    ]
   },
@@ -938,7 +1120,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland"
+     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -949,7 +1132,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Befristete Bewilligung zur Anwendung von Arzneimitteln gemäss Artikel 9b Absatz 1 HMG"
+     "label": "5. Kapitel: Befristete Bewilligung zur Anwendung von Arzneimitteln gemäss Artikel 9b Absatz 1 HMG",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -960,7 +1144,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Befristete Bewilligung zur Anwendung von Arzneimitteln gemäss Artikel 9b Absatz 1 HMG"
+     "label": "5. Kapitel: Befristete Bewilligung zur Anwendung von Arzneimitteln gemäss Artikel 9b Absatz 1 HMG",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -971,7 +1156,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Befristete Bewilligung zur Anwendung von Arzneimitteln gemäss Artikel 9b Absatz 1 HMG"
+     "label": "5. Kapitel: Befristete Bewilligung zur Anwendung von Arzneimitteln gemäss Artikel 9b Absatz 1 HMG",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -988,7 +1174,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 216,
+      "l": 241
+     },
+     "kl": "V"
     },
     {
      "nr": "20",
@@ -1000,7 +1192,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 241,
+      "l": 241
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1008,7 +1206,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Befristete Bewilligung zur Anwendung von Arzneimitteln gemäss Artikel 9b Absatz 1 HMG"
+     "label": "5. Kapitel: Befristete Bewilligung zur Anwendung von Arzneimitteln gemäss Artikel 9b Absatz 1 HMG",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1019,11 +1218,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Inspektionen"
+     "label": "1. Abschnitt: Inspektionen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1034,11 +1235,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Inspektionen"
+     "label": "1. Abschnitt: Inspektionen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1049,11 +1252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Inspektionen"
+     "label": "1. Abschnitt: Inspektionen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1064,11 +1269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Inspektionen"
+     "label": "1. Abschnitt: Inspektionen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1079,11 +1286,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Inspektionen"
+     "label": "1. Abschnitt: Inspektionen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1094,11 +1303,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Inspektionen"
+     "label": "1. Abschnitt: Inspektionen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1109,11 +1320,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Inspektionen"
+     "label": "1. Abschnitt: Inspektionen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1124,11 +1337,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Inspektionen"
+     "label": "1. Abschnitt: Inspektionen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1139,11 +1354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zusammenarbeit zwischen Swissmedic und anderen Behörden"
+     "label": "2. Abschnitt: Zusammenarbeit zwischen Swissmedic und anderen Behörden",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1154,11 +1371,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zusammenarbeit zwischen Swissmedic und anderen Behörden"
+     "label": "2. Abschnitt: Zusammenarbeit zwischen Swissmedic und anderen Behörden",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1169,11 +1388,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Datenschutz und Information der Öffentlichkeit"
+     "label": "3. Abschnitt: Datenschutz und Information der Öffentlichkeit",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1190,7 +1411,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -1198,11 +1420,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Datenschutz und Information der Öffentlichkeit"
+     "label": "3. Abschnitt: Datenschutz und Information der Öffentlichkeit",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1213,11 +1437,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Datenschutz und Information der Öffentlichkeit"
+     "label": "3. Abschnitt: Datenschutz und Information der Öffentlichkeit",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1234,7 +1460,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 190,
+      "l": 190
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1242,11 +1474,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Datenschutz und Information der Öffentlichkeit"
+     "label": "3. Abschnitt: Datenschutz und Information der Öffentlichkeit",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1257,11 +1491,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vollzug"
+     "label": "6. Kapitel: Vollzug",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Datenschutz und Information der Öffentlichkeit"
+     "label": "3. Abschnitt: Datenschutz und Information der Öffentlichkeit",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1272,7 +1508,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1283,7 +1520,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1294,7 +1532,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1305,7 +1544,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1316,7 +1556,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland"
+     "label": "4. Kapitel: Besondere Bestimmungen für die Einfuhr, die Ausfuhr, die Durchfuhr und den Handel im Ausland",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1333,7 +1574,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

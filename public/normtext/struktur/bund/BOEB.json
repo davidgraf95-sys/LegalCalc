@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "172.056.1",
   "titel": "Bundesgesetz über das öffentliche Beschaffungswesen",
@@ -37,7 +37,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -49,7 +50,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "3",
@@ -62,7 +64,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -75,7 +78,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "5",
@@ -87,7 +91,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -96,7 +101,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand, Zweck und Begriffe"
+     "label": "1. Kapitel: Gegenstand, Zweck und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -107,7 +113,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand, Zweck und Begriffe"
+     "label": "1. Kapitel: Gegenstand, Zweck und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -118,7 +125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand, Zweck und Begriffe"
+     "label": "1. Kapitel: Gegenstand, Zweck und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -136,7 +144,14 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 65,
+      "l": 243
+     },
+     "kl": "V"
     },
     {
      "nr": "7",
@@ -149,7 +164,14 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 142,
+      "l": 224
+     },
+     "kl": "V"
     }
    ]
   },
@@ -157,11 +179,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Geltungsbereich"
+     "label": "2. Kapitel: Geltungsbereich",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Subjektiver Geltungsbereich"
+     "label": "1. Abschnitt: Subjektiver Geltungsbereich",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -179,7 +203,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 161,
+      "l": 270
+     },
+     "kl": "V"
     },
     {
      "nr": "9",
@@ -192,7 +223,14 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 109,
+      "l": 110
+     },
+     "kl": "V"
     }
    ]
   },
@@ -200,11 +238,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Geltungsbereich"
+     "label": "2. Kapitel: Geltungsbereich",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Subjektiver Geltungsbereich"
+     "label": "1. Abschnitt: Subjektiver Geltungsbereich",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -215,11 +255,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Geltungsbereich"
+     "label": "2. Kapitel: Geltungsbereich",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Subjektiver Geltungsbereich"
+     "label": "1. Abschnitt: Subjektiver Geltungsbereich",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -230,11 +272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Geltungsbereich"
+     "label": "2. Kapitel: Geltungsbereich",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Subjektiver Geltungsbereich"
+     "label": "1. Abschnitt: Subjektiver Geltungsbereich",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -245,11 +289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Geltungsbereich"
+     "label": "2. Kapitel: Geltungsbereich",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Objektiver Geltungsbereich"
+     "label": "2. Abschnitt: Objektiver Geltungsbereich",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -260,11 +306,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Geltungsbereich"
+     "label": "2. Kapitel: Geltungsbereich",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Objektiver Geltungsbereich"
+     "label": "2. Abschnitt: Objektiver Geltungsbereich",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -275,11 +323,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Geltungsbereich"
+     "label": "2. Kapitel: Geltungsbereich",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Objektiver Geltungsbereich"
+     "label": "2. Abschnitt: Objektiver Geltungsbereich",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -297,7 +347,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 81,
+      "l": 82
+     },
+     "kl": "V"
     }
    ]
   },
@@ -305,7 +362,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Grundsätze"
+     "label": "3. Kapitel: Allgemeine Grundsätze",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -316,7 +374,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Grundsätze"
+     "label": "3. Kapitel: Allgemeine Grundsätze",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -334,7 +393,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 292,
+      "l": 433
+     },
+     "kl": "V"
     }
    ]
   },
@@ -342,7 +407,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Grundsätze"
+     "label": "3. Kapitel: Allgemeine Grundsätze",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -353,7 +419,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Grundsätze"
+     "label": "3. Kapitel: Allgemeine Grundsätze",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -364,7 +431,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Grundsätze"
+     "label": "3. Kapitel: Allgemeine Grundsätze",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -375,7 +443,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergabeverfahren"
+     "label": "4. Kapitel: Vergabeverfahren",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -386,7 +455,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergabeverfahren"
+     "label": "4. Kapitel: Vergabeverfahren",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -397,7 +467,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergabeverfahren"
+     "label": "4. Kapitel: Vergabeverfahren",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -408,7 +479,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergabeverfahren"
+     "label": "4. Kapitel: Vergabeverfahren",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -419,7 +491,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergabeverfahren"
+     "label": "4. Kapitel: Vergabeverfahren",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -430,7 +503,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergabeverfahren"
+     "label": "4. Kapitel: Vergabeverfahren",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -441,7 +515,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergabeverfahren"
+     "label": "4. Kapitel: Vergabeverfahren",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -452,7 +527,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergabeverfahren"
+     "label": "4. Kapitel: Vergabeverfahren",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -463,7 +539,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergabeverfahren"
+     "label": "4. Kapitel: Vergabeverfahren",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -474,7 +551,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vergabeverfahren"
+     "label": "4. Kapitel: Vergabeverfahren",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -485,7 +563,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vergabeanforderungen"
+     "label": "5. Kapitel: Vergabeanforderungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -496,7 +575,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vergabeanforderungen"
+     "label": "5. Kapitel: Vergabeanforderungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -507,7 +587,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vergabeanforderungen"
+     "label": "5. Kapitel: Vergabeanforderungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -518,7 +599,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vergabeanforderungen"
+     "label": "5. Kapitel: Vergabeanforderungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -529,7 +611,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vergabeanforderungen"
+     "label": "5. Kapitel: Vergabeanforderungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -554,7 +637,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 154,
+      "l": 154
+     },
+     "kl": "A"
     }
    ]
   },
@@ -562,7 +651,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vergabeanforderungen"
+     "label": "5. Kapitel: Vergabeanforderungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -573,7 +663,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vergabeanforderungen"
+     "label": "5. Kapitel: Vergabeanforderungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -584,7 +675,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vergabeanforderungen"
+     "label": "5. Kapitel: Vergabeanforderungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -595,7 +687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vergabeanforderungen"
+     "label": "5. Kapitel: Vergabeanforderungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -606,7 +699,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ablauf des Vergabeverfahrens"
+     "label": "6. Kapitel: Ablauf des Vergabeverfahrens",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -618,14 +712,28 @@
      "text": "CPV = «Common Procurement Vocabulary» (Gemeinsames Vokabular für öffentliche Aufträge der Europäischen Union)",
      "links": [],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 69,
+      "l": 139
+     },
+     "kl": "U"
     },
     {
      "nr": "14",
      "text": "CPC = «Central Product Classification» (Zentrale Gütersystematik der Vereinten Nationen)",
      "links": [],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 138,
+      "l": 139
+     },
+     "kl": "U"
     }
    ]
   },
@@ -633,7 +741,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ablauf des Vergabeverfahrens"
+     "label": "6. Kapitel: Ablauf des Vergabeverfahrens",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -644,7 +753,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ablauf des Vergabeverfahrens"
+     "label": "6. Kapitel: Ablauf des Vergabeverfahrens",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -655,7 +765,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ablauf des Vergabeverfahrens"
+     "label": "6. Kapitel: Ablauf des Vergabeverfahrens",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -666,7 +777,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ablauf des Vergabeverfahrens"
+     "label": "6. Kapitel: Ablauf des Vergabeverfahrens",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -677,7 +789,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ablauf des Vergabeverfahrens"
+     "label": "6. Kapitel: Ablauf des Vergabeverfahrens",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -688,7 +801,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ablauf des Vergabeverfahrens"
+     "label": "6. Kapitel: Ablauf des Vergabeverfahrens",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -699,7 +813,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ablauf des Vergabeverfahrens"
+     "label": "6. Kapitel: Ablauf des Vergabeverfahrens",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -710,7 +825,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ablauf des Vergabeverfahrens"
+     "label": "6. Kapitel: Ablauf des Vergabeverfahrens",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -721,7 +837,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ablauf des Vergabeverfahrens"
+     "label": "6. Kapitel: Ablauf des Vergabeverfahrens",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -750,7 +867,8 @@
       }
      ],
      "absatz": "1",
-     "item": "fbis"
+     "item": "fbis",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -763,7 +881,14 @@
       }
      ],
      "absatz": "1",
-     "item": "fbis"
+     "item": "fbis",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 227,
+      "l": 240
+     },
+     "kl": "V"
     },
     {
      "nr": "17",
@@ -776,7 +901,14 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 57,
+      "l": 67
+     },
+     "kl": "V"
     },
     {
      "nr": "18",
@@ -789,7 +921,14 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 1,
+      "it": 7,
+      "o": 59,
+      "l": 92
+     },
+     "kl": "V"
     }
    ]
   },
@@ -797,7 +936,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ablauf des Vergabeverfahrens"
+     "label": "6. Kapitel: Ablauf des Vergabeverfahrens",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -808,7 +948,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Fristen und Veröffentlichungen, Statistik"
+     "label": "7. Kapitel: Fristen und Veröffentlichungen, Statistik",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -819,7 +960,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Fristen und Veröffentlichungen, Statistik"
+     "label": "7. Kapitel: Fristen und Veröffentlichungen, Statistik",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -830,7 +972,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Fristen und Veröffentlichungen, Statistik"
+     "label": "7. Kapitel: Fristen und Veröffentlichungen, Statistik",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -841,7 +984,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Fristen und Veröffentlichungen, Statistik"
+     "label": "7. Kapitel: Fristen und Veröffentlichungen, Statistik",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -852,7 +996,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Fristen und Veröffentlichungen, Statistik"
+     "label": "7. Kapitel: Fristen und Veröffentlichungen, Statistik",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -863,7 +1008,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz"
+     "label": "8. Kapitel: Rechtsschutz",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -874,7 +1020,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz"
+     "label": "8. Kapitel: Rechtsschutz",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -885,7 +1032,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz"
+     "label": "8. Kapitel: Rechtsschutz",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -896,7 +1044,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz"
+     "label": "8. Kapitel: Rechtsschutz",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -907,7 +1056,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz"
+     "label": "8. Kapitel: Rechtsschutz",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -926,7 +1076,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 134,
+      "l": 197
+     },
+     "kl": "V"
     }
    ]
   },
@@ -934,7 +1090,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz"
+     "label": "8. Kapitel: Rechtsschutz",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -952,7 +1109,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 25,
+      "l": 179
+     },
+     "kl": "V"
     },
     {
      "nr": "21",
@@ -965,7 +1128,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 74,
+      "l": 179
+     },
+     "kl": "V"
     }
    ]
   },
@@ -973,7 +1142,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz"
+     "label": "8. Kapitel: Rechtsschutz",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -984,7 +1154,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz"
+     "label": "8. Kapitel: Rechtsschutz",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -995,7 +1166,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Kommission Beschaffungswesen Bund‑Kantone"
+     "label": "9. Kapitel: Kommission Beschaffungswesen Bund‑Kantone",
+     "eId": "chap_9"
     }
    ],
    "marginalie": []
@@ -1004,7 +1176,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1015,7 +1188,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1026,7 +1200,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1037,7 +1212,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -1049,7 +1225,8 @@
      "text": "BRB vom 12. Febr. 2020",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.107",
   "titel": "Übereinkommen über die Rechte des Kindes",
@@ -85,7 +85,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "2",
@@ -98,7 +99,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -111,7 +113,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -124,7 +127,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -133,7 +137,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -142,7 +147,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -151,7 +157,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -160,7 +167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -169,7 +177,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -178,7 +187,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -187,7 +197,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -196,7 +207,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -205,7 +217,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -214,7 +227,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -223,7 +237,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -232,7 +247,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -241,7 +257,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -250,7 +267,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -259,7 +277,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -268,7 +287,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -277,7 +297,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -286,7 +307,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -295,7 +317,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -304,7 +327,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -313,7 +337,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -322,7 +347,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -331,7 +357,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -340,7 +367,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -349,7 +377,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -358,7 +387,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -367,7 +397,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -376,7 +407,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -385,7 +417,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -394,7 +427,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -403,7 +437,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -412,7 +447,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -421,7 +457,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -430,7 +467,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -439,7 +477,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -448,7 +487,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -457,7 +497,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -466,7 +507,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -475,7 +517,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -484,7 +527,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -493,7 +537,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I"
+     "label": "Teil I",
+     "eId": "part_I"
     }
    ],
    "marginalie": []
@@ -502,7 +547,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -511,7 +557,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_II"
     }
    ],
    "marginalie": [],
@@ -527,7 +574,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 439,
+      "l": 439
+     },
+     "kl": "A"
     }
    ]
   },
@@ -535,7 +588,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -544,7 +598,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -553,7 +608,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_III"
     }
    ],
    "marginalie": []
@@ -562,7 +618,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_III"
     }
    ],
    "marginalie": []
@@ -571,7 +628,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_III"
     }
    ],
    "marginalie": []
@@ -580,7 +638,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_III"
     }
    ],
    "marginalie": []
@@ -589,7 +648,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_III"
     }
    ],
    "marginalie": []
@@ -598,7 +658,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_III"
     }
    ],
    "marginalie": []
@@ -607,7 +668,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_III"
     }
    ],
    "marginalie": []
@@ -616,7 +678,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_III"
     }
    ],
    "marginalie": []
@@ -625,7 +688,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_III"
     }
    ],
    "marginalie": []

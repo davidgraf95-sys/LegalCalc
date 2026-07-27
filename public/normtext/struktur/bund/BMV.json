@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "412.103.1",
   "titel": "Verordnung über die eidgenössische Berufsmaturität",
@@ -32,7 +32,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -41,7 +42,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -52,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -63,7 +66,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -74,7 +78,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -91,7 +96,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 200,
+      "l": 244
+     },
+     "kl": "A"
     },
     {
      "nr": "3",
@@ -103,7 +114,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 244,
+      "l": 244
+     },
+     "kl": "A"
     }
    ]
   },
@@ -111,7 +128,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -122,7 +140,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -133,7 +152,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Berufsmaturitätsunterricht"
+     "label": "2. Abschnitt: Berufsmaturitätsunterricht",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -144,7 +164,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Berufsmaturitätsunterricht"
+     "label": "2. Abschnitt: Berufsmaturitätsunterricht",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -155,7 +176,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Berufsmaturitätsunterricht"
+     "label": "2. Abschnitt: Berufsmaturitätsunterricht",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -166,7 +188,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Berufsmaturitätsunterricht"
+     "label": "2. Abschnitt: Berufsmaturitätsunterricht",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -177,7 +200,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Berufsmaturitätsunterricht"
+     "label": "2. Abschnitt: Berufsmaturitätsunterricht",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -188,7 +212,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Anforderungen an die Bildungsgänge"
+     "label": "3. Abschnitt: Anforderungen an die Bildungsgänge",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -199,7 +224,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Anforderungen an die Bildungsgänge"
+     "label": "3. Abschnitt: Anforderungen an die Bildungsgänge",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -210,7 +236,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Anforderungen an die Bildungsgänge"
+     "label": "3. Abschnitt: Anforderungen an die Bildungsgänge",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -221,7 +248,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Anforderungen an die Bildungsgänge"
+     "label": "3. Abschnitt: Anforderungen an die Bildungsgänge",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -232,7 +260,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Leistungsbewertung und Promotion"
+     "label": "4. Abschnitt: Leistungsbewertung und Promotion",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -249,7 +278,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 99,
+      "l": 108
+     },
+     "kl": "V"
     }
    ]
   },
@@ -257,7 +292,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Leistungsbewertung und Promotion"
+     "label": "4. Abschnitt: Leistungsbewertung und Promotion",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -268,7 +304,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Leistungsbewertung und Promotion"
+     "label": "4. Abschnitt: Leistungsbewertung und Promotion",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -279,7 +316,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Berufsmaturitätsprüfung"
+     "label": "5. Abschnitt: Berufsmaturitätsprüfung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -290,7 +328,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Berufsmaturitätsprüfung"
+     "label": "5. Abschnitt: Berufsmaturitätsprüfung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -301,7 +340,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Berufsmaturitätsprüfung"
+     "label": "5. Abschnitt: Berufsmaturitätsprüfung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -312,7 +352,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Berufsmaturitätsprüfung"
+     "label": "5. Abschnitt: Berufsmaturitätsprüfung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -323,7 +364,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Berufsmaturitätsprüfung"
+     "label": "5. Abschnitt: Berufsmaturitätsprüfung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -340,7 +382,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -348,7 +391,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Berufsmaturitätsprüfung"
+     "label": "5. Abschnitt: Berufsmaturitätsprüfung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -359,7 +403,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Berufsmaturitätsprüfung"
+     "label": "5. Abschnitt: Berufsmaturitätsprüfung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -370,7 +415,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Berufsmaturitätsprüfung"
+     "label": "5. Abschnitt: Berufsmaturitätsprüfung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -381,7 +427,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Berufsmaturitätsprüfung"
+     "label": "5. Abschnitt: Berufsmaturitätsprüfung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -392,7 +439,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Berufsmaturitätsprüfung"
+     "label": "5. Abschnitt: Berufsmaturitätsprüfung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -403,7 +451,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Anerkennung von Bildungsgängen"
+     "label": "6. Abschnitt: Anerkennung von Bildungsgängen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -414,7 +463,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Anerkennung von Bildungsgängen"
+     "label": "6. Abschnitt: Anerkennung von Bildungsgängen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -425,7 +475,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Anerkennung von Bildungsgängen"
+     "label": "6. Abschnitt: Anerkennung von Bildungsgängen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -443,7 +494,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 217,
+      "l": 218
+     },
+     "kl": "V"
     }
    ]
   },
@@ -451,7 +508,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Vollzug"
+     "label": "7. Abschnitt: Vollzug",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -462,7 +520,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Vollzug"
+     "label": "7. Abschnitt: Vollzug",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -479,7 +538,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 191,
+      "l": 191
+     },
+     "kl": "A"
     }
    ]
   },
@@ -487,7 +552,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Vollzug"
+     "label": "7. Abschnitt: Vollzug",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -498,7 +564,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -519,7 +586,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 52,
+      "l": 69
+     },
+     "kl": "Z"
     },
     {
      "nr": "9",
@@ -531,7 +604,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -539,7 +618,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -556,7 +636,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -564,7 +645,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [

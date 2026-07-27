@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "836.2",
   "titel": "Bundesgesetz über die Familienzulagen und Finanzhilfen an Familienorganisationen",
@@ -41,7 +41,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -54,7 +55,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -70,7 +72,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "4",
@@ -82,7 +85,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "5",
@@ -94,7 +98,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "6",
@@ -106,7 +111,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "7",
@@ -118,7 +124,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -127,7 +134,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Anwendbarkeit des ATSG"
+     "label": "1. Kapitel: Anwendbarkeit des ATSG",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -143,7 +151,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 55,
+      "l": 310
+     },
+     "kl": "V"
     },
     {
      "nr": "9",
@@ -159,7 +173,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 310,
+      "l": 310
+     },
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -175,7 +195,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 94,
+      "l": 94
+     },
+     "kl": "A"
     }
    ]
   },
@@ -183,7 +209,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -194,7 +221,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -212,7 +240,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 348,
+      "l": 453
+     },
+     "kl": "V"
     },
     {
      "nr": "12",
@@ -228,7 +263,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 546,
+      "l": 546
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -241,7 +283,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 377,
+      "l": 378
+     },
+     "kl": "V"
     },
     {
      "nr": "14",
@@ -257,7 +305,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 378,
+      "l": 378
+     },
+     "kl": "A"
     }
    ]
   },
@@ -265,7 +319,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -283,7 +338,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 68,
+      "l": 77
+     },
+     "kl": "V"
     }
    ]
   },
@@ -291,7 +353,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -308,7 +371,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 47,
+      "l": 58
+     },
+     "kl": "G"
     },
     {
      "nr": "17",
@@ -320,7 +389,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 52,
+      "l": 63
+     },
+     "kl": "G"
     }
    ]
   },
@@ -328,7 +403,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -339,7 +415,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -368,7 +445,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -392,7 +470,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     }
    ]
   },
@@ -400,7 +479,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -411,7 +491,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -429,7 +510,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 239,
+      "l": 291
+     },
+     "kl": "V"
     }
    ]
   },
@@ -437,7 +524,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -448,11 +536,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -470,7 +560,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 77,
+      "l": 156
+     },
+     "kl": "V"
     },
     {
      "nr": "23",
@@ -494,7 +591,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -519,7 +617,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "sektion": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "kl": "A"
     }
    ]
   },
@@ -527,11 +626,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -560,7 +661,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 327,
+      "l": 327
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -584,7 +691,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 367,
+      "l": 367
+     },
+     "kl": "A"
     }
    ]
   },
@@ -592,11 +705,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -625,7 +740,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 302,
+      "l": 302
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -649,7 +770,8 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -657,11 +779,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -672,11 +796,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -687,11 +813,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -720,7 +848,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 232,
+      "l": 232
+     },
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -744,7 +878,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 184,
+      "l": 184
+     },
+     "kl": "A"
     }
    ]
   },
@@ -752,11 +892,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -777,7 +919,8 @@
       }
      ],
      "absatz": "2",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     }
    ]
   },
@@ -785,11 +928,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Erwerbstätige in der Landwirtschaft"
+     "label": "2. Abschnitt: Erwerbstätige in der Landwirtschaft",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -806,7 +951,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 195,
+      "l": 243
+     },
+     "kl": "V"
     }
    ]
   },
@@ -814,11 +965,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Nichterwerbstätige"
+     "label": "3. Abschnitt: Nichterwerbstätige",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -847,7 +1000,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 239,
+      "l": 239
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -860,7 +1019,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 120,
+      "l": 233
+     },
+     "kl": "V"
     },
     {
      "nr": "34",
@@ -876,7 +1041,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 233,
+      "l": 233
+     },
+     "kl": "A"
     }
    ]
   },
@@ -884,11 +1055,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Nichterwerbstätige"
+     "label": "3. Abschnitt: Nichterwerbstätige",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -906,7 +1079,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 192,
+      "l": 205
+     },
+     "kl": "V"
     }
    ]
   },
@@ -914,11 +1093,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Nichterwerbstätige"
+     "label": "3. Abschnitt: Nichterwerbstätige",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -929,7 +1110,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechtspflege und Strafbestimmungen"
+     "label": "4. Kapitel: Rechtspflege und Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -948,7 +1130,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 124,
+      "l": 207
+     },
+     "kl": "V"
     }
    ]
   },
@@ -956,7 +1144,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechtspflege und Strafbestimmungen"
+     "label": "4. Kapitel: Rechtspflege und Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -975,7 +1164,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 22,
+      "l": 161
+     },
+     "kl": "V"
     }
    ]
   },
@@ -983,7 +1178,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Verhältnis zum europäischen Recht"
+     "label": "5. Kapitel: Verhältnis zum europäischen Recht",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -1002,7 +1198,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -1015,7 +1212,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 573,
+      "l": 763
+     },
+     "kl": "V"
     },
     {
      "nr": "50",
@@ -1028,7 +1231,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 28,
+      "l": 29
+     },
+     "kl": "V"
     },
     {
      "nr": "51",
@@ -1041,21 +1251,42 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 28,
+      "l": 29
+     },
+     "kl": "V"
     },
     {
      "nr": "52",
      "text": "Verordnung (EWG) Nr. 1408/71 des Rates vom 14. Juni 1971 zur Anwendung der Systeme der sozialen Sicherheit auf Arbeitnehmer und Selbstständige sowie deren Familienangehörige, die innerhalb der Gemeinschaft zu- und abwandern.",
      "links": [],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 28,
+      "l": 29
+     },
+     "kl": "V"
     },
     {
      "nr": "53",
      "text": "Verordnung (EWG) Nr. 574/72 des Rates vom 21. März 1972 über die Durchführung der Verordnung (EWG) Nr. 1408/71 zur Anwendung der Systeme der sozialen Sicherheit auf Arbeitnehmer und Selbstständige sowie deren Familienangehörige, die innerhalb der Gemeinschaft zu- und abwandern.",
      "links": [],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 27,
+      "l": 28
+     },
+     "kl": "V"
     },
     {
      "nr": "54",
@@ -1068,7 +1299,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 624,
+      "l": 711
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1076,7 +1313,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1095,7 +1333,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 81,
+      "l": 104
+     },
+     "kl": "V"
     },
     {
      "nr": "56",
@@ -1111,7 +1355,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -1124,7 +1369,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 78,
+      "l": 80
+     },
+     "kl": "V"
     },
     {
      "nr": "58",
@@ -1140,7 +1392,8 @@
       }
      ],
      "absatz": null,
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -1156,7 +1409,8 @@
       }
      ],
      "absatz": null,
-     "item": "ebis"
+     "item": "ebis",
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -1172,7 +1426,8 @@
       }
      ],
      "absatz": null,
-     "item": "eter"
+     "item": "eter",
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -1188,7 +1443,8 @@
       }
      ],
      "absatz": null,
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "62",
@@ -1212,7 +1468,8 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     }
    ]
   },
@@ -1220,7 +1477,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1231,7 +1489,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1249,7 +1508,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 78,
+      "l": 223
+     },
+     "kl": "V"
     },
     {
      "nr": "64",
@@ -1265,7 +1530,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 223,
+      "l": 223
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1278,7 +1549,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 115,
+      "l": 159
+     },
+     "kl": "V"
     },
     {
      "nr": "66",
@@ -1294,7 +1571,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 159,
+      "l": 159
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1302,7 +1585,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1313,7 +1597,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1325,7 +1610,8 @@
      "text": "BRB vom 31. Okt. 2007",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1333,7 +1619,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Familienzulagenregister"
+     "label": "3a. Kapitel: Familienzulagenregister",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -1354,7 +1641,8 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -1371,7 +1659,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Kapitel: Familienzulagenregister"
+     "sektion": "3a. Kapitel: Familienzulagenregister",
+     "kl": "A"
     }
    ]
   },
@@ -1379,7 +1668,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Familienzulagenregister"
+     "label": "3a. Kapitel: Familienzulagenregister",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -1400,7 +1690,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 174,
+      "l": 321
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1408,7 +1704,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Familienzulagenregister"
+     "label": "3a. Kapitel: Familienzulagenregister",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -1426,7 +1723,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 106,
+      "l": 107
+     },
+     "kl": "V"
     },
     {
      "nr": "40",
@@ -1439,7 +1743,14 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 110,
+      "l": 255
+     },
+     "kl": "V"
     },
     {
      "nr": "41",
@@ -1452,7 +1763,14 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 223,
+      "l": 255
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1460,7 +1778,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Familienzulagenregister"
+     "label": "3a. Kapitel: Familienzulagenregister",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -1471,7 +1790,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Familienzulagenregister"
+     "label": "3a. Kapitel: Familienzulagenregister",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -1482,7 +1802,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Familienzulagenregister"
+     "label": "3a. Kapitel: Familienzulagenregister",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -1503,7 +1824,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -1516,7 +1838,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 162,
+      "l": 266
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1524,7 +1852,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen"
+     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen",
+     "eId": "chap_3_b"
     }
    ],
    "marginalie": [
@@ -1546,7 +1875,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3b. Kapitel: Finanzhilfen an Familienorganisationen"
+     "sektion": "3b. Kapitel: Finanzhilfen an Familienorganisationen",
+     "kl": "A"
     }
    ]
   },
@@ -1554,7 +1884,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen"
+     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen",
+     "eId": "chap_3_b"
     }
    ],
    "marginalie": [
@@ -1565,7 +1896,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen"
+     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen",
+     "eId": "chap_3_b"
     }
    ],
    "marginalie": [
@@ -1576,7 +1908,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen"
+     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen",
+     "eId": "chap_3_b"
     }
    ],
    "marginalie": [
@@ -1597,7 +1930,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 51,
+      "l": 51
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1605,7 +1944,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1626,7 +1966,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1634,7 +1975,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1659,7 +2001,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1667,7 +2010,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1688,7 +2032,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

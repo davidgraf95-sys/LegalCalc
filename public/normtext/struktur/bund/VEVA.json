@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-10",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "814.610",
   "titel": "Verordnung über den Verkehr mit Abfällen",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -47,7 +48,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -59,7 +61,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -71,7 +74,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -80,7 +84,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -97,7 +102,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -109,7 +115,14 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 65,
+      "l": 116
+     },
+     "kl": "V"
     },
     {
      "nr": "7",
@@ -121,7 +134,8 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -129,7 +143,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -146,14 +161,21 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "9",
      "text": "Entscheidung 2000/532/EG der Kommission vom 3. Mai 2000 zur Ersetzung der Entscheidung 94/3/EG über ein Abfallverzeichnis gemäss Art. 1 Bst. a) der Richtlinie 75/442/EWG des Rates über Abfälle und der Entscheidung 94/904/EG des Rates über ein Verzeichnis gefährlicher Abfälle im Sinne von Artikel 1 Absatz 4 der Richtlinie 91/689/EWG über gefährliche Abfälle, ABl. L 226 vom 6.9.2000, S. 3; zuletzt geändert durch Beschluss 2014/955/EU, ABl. L 370 vom 30.12.2014, S. 44.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 274,
+      "l": 305
+     },
+     "kl": "U"
     },
     {
      "nr": "10",
@@ -165,7 +187,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 305,
+      "l": 305
+     },
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -177,7 +205,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -189,7 +218,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -197,7 +227,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -208,11 +239,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Übergabe von Abfällen"
+     "label": "1. Abschnitt: Übergabe von Abfällen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -223,11 +256,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Übergabe von Abfällen"
+     "label": "1. Abschnitt: Übergabe von Abfällen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -244,7 +279,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 139,
+      "l": 140
+     },
+     "kl": "V"
     },
     {
      "nr": "14",
@@ -256,7 +297,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     }
    ]
   },
@@ -264,11 +311,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Übergabe von Abfällen"
+     "label": "1. Abschnitt: Übergabe von Abfällen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -285,7 +334,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -297,7 +347,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 205,
+      "l": 205
+     },
+     "kl": "A"
     }
    ]
   },
@@ -305,11 +361,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Übergabe von Abfällen"
+     "label": "1. Abschnitt: Übergabe von Abfällen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -320,11 +378,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entgegennahme von Abfällen"
+     "label": "2. Abschnitt: Entgegennahme von Abfällen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -341,7 +401,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 178,
+      "l": 265
+     },
+     "kl": "V"
     },
     {
      "nr": "18",
@@ -353,7 +420,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -361,11 +429,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entgegennahme von Abfällen"
+     "label": "2. Abschnitt: Entgegennahme von Abfällen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -376,11 +446,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entgegennahme von Abfällen"
+     "label": "2. Abschnitt: Entgegennahme von Abfällen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -397,7 +469,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 126,
+      "l": 126
+     },
+     "kl": "A"
     }
    ]
   },
@@ -405,11 +483,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entgegennahme von Abfällen"
+     "label": "2. Abschnitt: Entgegennahme von Abfällen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -426,7 +506,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -438,7 +519,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 70,
+      "l": 70
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -450,7 +538,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 306,
+      "l": 306
+     },
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -466,7 +560,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 452,
+      "l": 452
+     },
+     "kl": "A"
     }
    ]
   },
@@ -474,11 +574,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entgegennahme von Abfällen"
+     "label": "2. Abschnitt: Entgegennahme von Abfällen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -495,7 +597,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -507,7 +610,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 359,
+      "l": 359
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -519,7 +628,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 227,
+      "l": 227
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -531,7 +646,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 367,
+      "l": 367
+     },
+     "kl": "A"
     }
    ]
   },
@@ -539,11 +660,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Transport von Abfällen mit Begleitscheinpflicht"
+     "label": "3. Abschnitt: Transport von Abfällen mit Begleitscheinpflicht",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -558,7 +681,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 180,
+      "l": 180
+     },
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -571,7 +700,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Transport von Abfällen mit Begleitscheinpflicht"
+     "sektion": "3. Abschnitt: Transport von Abfällen mit Begleitscheinpflicht",
+     "kl": "A"
     }
    ]
   },
@@ -579,11 +709,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aus- und Einfuhrbeschränkungen"
+     "label": "1. Abschnitt: Aus- und Einfuhrbeschränkungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -598,7 +730,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -610,7 +743,8 @@
       }
      ],
      "absatz": "3",
-     "item": "3"
+     "item": "3",
+     "kl": "A"
     }
    ]
   },
@@ -618,11 +752,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -639,7 +775,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 57,
+      "l": 57
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -651,7 +793,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 331,
+      "l": 331
+     },
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -663,7 +811,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 284,
+      "l": 284
+     },
+     "kl": "A"
     }
    ]
   },
@@ -671,11 +826,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -692,7 +849,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -704,7 +862,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -712,11 +871,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -733,7 +894,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -745,7 +907,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -757,7 +920,8 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -769,7 +933,8 @@
       }
      ],
      "absatz": null,
-     "item": "4"
+     "item": "4",
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -781,7 +946,8 @@
       }
      ],
      "absatz": null,
-     "item": "5"
+     "item": "5",
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -793,7 +959,8 @@
       }
      ],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -805,7 +972,8 @@
       }
      ],
      "absatz": null,
-     "item": "2bis"
+     "item": "2bis",
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -817,7 +985,8 @@
       }
      ],
      "absatz": null,
-     "item": "4"
+     "item": "4",
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -829,7 +998,8 @@
       }
      ],
      "absatz": null,
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     }
    ]
   },
@@ -837,11 +1007,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -858,7 +1030,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 8,
+      "l": 58
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -870,7 +1048,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 207,
+      "l": 207
+     },
+     "kl": "A"
     }
    ]
   },
@@ -878,11 +1062,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -893,11 +1079,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -914,7 +1102,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -922,11 +1111,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -937,11 +1128,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -958,7 +1151,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 180,
+      "l": 180
+     },
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -970,7 +1169,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 285,
+      "l": 285
+     },
+     "kl": "A"
     }
    ]
   },
@@ -978,11 +1184,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -999,7 +1207,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1007,11 +1216,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1028,7 +1239,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1036,11 +1248,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1051,11 +1265,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1066,11 +1282,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1081,11 +1299,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -1100,7 +1320,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1108,11 +1329,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Durchfuhr"
+     "label": "4. Abschnitt: Durchfuhr",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1129,7 +1352,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 271,
+      "l": 271
+     },
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -1145,7 +1374,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 218,
+      "l": 218
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1153,11 +1389,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Durchfuhr"
+     "label": "4. Abschnitt: Durchfuhr",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -1172,7 +1410,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1180,11 +1419,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung"
+     "label": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1201,7 +1442,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 182,
+      "l": 182
+     },
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -1213,7 +1460,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -1225,14 +1473,22 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "61",
      "text": "Verordnung(EG) Nr. 1013/2006 des Europäischen Parlaments und des Rates vom 14. Juni 2006 über die Verbringung von Abfällen, ABI. L 190 vom 12.7.2006, S. 1; zuletzt geändert durch Delegierte Verordnung (EU) 2020/2174, ABl. L 433 vom 22.12.2020, S. 19.",
      "links": [],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 50,
+      "l": 51
+     },
+     "kl": "U"
     },
     {
      "nr": "62",
@@ -1244,7 +1500,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 163,
+      "l": 163
+     },
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -1256,7 +1518,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 156,
+      "l": 156
+     },
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -1268,7 +1537,14 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 91,
+      "l": 91
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1280,7 +1556,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 139,
+      "l": 139
+     },
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -1292,7 +1574,14 @@
       }
      ],
      "absatz": "5",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 5,
+      "it": 3,
+      "o": 101,
+      "l": 101
+     },
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -1304,7 +1593,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 107,
+      "l": 172
+     },
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -1316,7 +1611,14 @@
       }
      ],
      "absatz": "7",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 7,
+      "it": 2,
+      "o": 74,
+      "l": 74
+     },
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -1328,7 +1630,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 183,
+      "l": 183
+     },
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -1341,7 +1649,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung"
+     "sektion": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung",
+     "kl": "A"
     }
    ]
   },
@@ -1349,11 +1658,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung"
+     "label": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1364,11 +1675,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Rücknahme"
+     "label": "6. Abschnitt: Rücknahme",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1379,11 +1692,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Rücknahme"
+     "label": "6. Abschnitt: Rücknahme",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1394,11 +1709,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Rücknahme"
+     "label": "6. Abschnitt: Rücknahme",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1409,11 +1726,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Verkehr mit Sonderabfällen im Ausland"
+     "label": "7. Abschnitt: Verkehr mit Sonderabfällen im Ausland",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": []
@@ -1422,7 +1741,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1433,7 +1753,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1444,7 +1765,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1461,7 +1783,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1469,7 +1792,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1486,7 +1810,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 258,
+      "l": 258
+     },
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -1498,7 +1828,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 87,
+      "l": 87
+     },
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -1510,7 +1846,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 166,
+      "l": 166
+     },
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -1522,7 +1864,14 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 4,
+      "it": 1,
+      "o": 220,
+      "l": 220
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1530,7 +1879,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1547,7 +1897,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 145,
+      "l": 145
+     },
+     "kl": "A"
     },
     {
      "nr": "77",
@@ -1559,7 +1915,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1571,7 +1933,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 80,
+      "l": 80
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1579,7 +1947,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1590,7 +1959,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1607,7 +1977,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -1619,7 +1990,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 155,
+      "l": 155
+     },
+     "kl": "A"
     },
     {
      "nr": "81",
@@ -1631,7 +2008,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 15,
+      "l": 15
+     },
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -1643,7 +2026,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 169,
+      "l": 169
+     },
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -1655,7 +2044,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1663,7 +2058,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1674,7 +2070,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1695,7 +2092,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 66,
+      "l": 103
+     },
+     "kl": "Z"
     },
     {
      "nr": "85",
@@ -1707,7 +2111,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 63,
+      "l": 155
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1715,7 +2126,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1726,7 +2138,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1743,7 +2156,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

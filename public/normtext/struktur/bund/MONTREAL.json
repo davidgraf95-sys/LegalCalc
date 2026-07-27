@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.748.411",
   "titel": "Übereinkommen zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
@@ -51,7 +51,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "2",
@@ -64,7 +65,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -77,7 +79,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -86,7 +89,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Allgemeine Bestimmungen"
+     "label": "Kapitel I: Allgemeine Bestimmungen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [
@@ -97,7 +101,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Allgemeine Bestimmungen"
+     "label": "Kapitel I: Allgemeine Bestimmungen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [
@@ -108,7 +113,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -119,7 +125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -130,7 +137,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -141,7 +149,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -152,7 +161,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -163,7 +173,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -174,7 +185,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -185,7 +197,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -196,7 +209,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -207,7 +221,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -218,7 +233,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -229,7 +245,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -240,7 +257,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -251,7 +269,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern"
+     "label": "Kapitel II: Urkunden und Pflichten der Parteien betreffend die Beförderung von Reisenden, Reisegepäck und Gütern",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -262,7 +281,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -273,7 +293,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -284,7 +305,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -295,7 +317,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -306,7 +329,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -323,7 +347,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 83,
+      "l": 186
+     },
+     "kl": "G"
     },
     {
      "nr": "5",
@@ -335,7 +365,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 124,
+      "l": 162
+     },
+     "kl": "G"
     }
    ]
   },
@@ -343,7 +379,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -360,7 +397,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 177,
+      "l": 178
+     },
+     "kl": "G"
     },
     {
      "nr": "7",
@@ -372,7 +415,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 186,
+      "l": 654
+     },
+     "kl": "G"
     },
     {
      "nr": "8",
@@ -384,7 +433,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 183,
+      "l": 638
+     },
+     "kl": "G"
     }
    ]
   },
@@ -392,7 +447,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -403,7 +459,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -414,7 +471,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -425,7 +483,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -436,7 +495,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -447,7 +507,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -458,7 +519,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -469,7 +531,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -480,7 +543,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -491,7 +555,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -502,7 +567,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -513,7 +579,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -524,7 +591,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -535,7 +603,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -546,7 +615,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes"
+     "label": "Kapitel III: Haftung des Luftfrachtführers und Umfang des Schadenersatzes",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -557,7 +627,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Gemischte Beförderung"
+     "label": "Kapitel IV: Gemischte Beförderung",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": [
@@ -568,7 +639,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer"
+     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -579,7 +651,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer"
+     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -590,7 +663,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer"
+     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -601,7 +675,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer"
+     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -612,7 +687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer"
+     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -623,7 +699,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer"
+     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -634,7 +711,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer"
+     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -645,7 +723,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer"
+     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -656,7 +735,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer"
+     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -667,7 +747,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer"
+     "label": "Kapitel V: Luftbeförderung durch einen anderen als den vertraglichen Luftfrachtführer",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -678,7 +759,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Sonstige Bestimmungen"
+     "label": "Kapitel VI: Sonstige Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [
@@ -689,7 +771,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Sonstige Bestimmungen"
+     "label": "Kapitel VI: Sonstige Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [
@@ -700,7 +783,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Sonstige Bestimmungen"
+     "label": "Kapitel VI: Sonstige Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [
@@ -711,7 +795,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Sonstige Bestimmungen"
+     "label": "Kapitel VI: Sonstige Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [
@@ -722,7 +807,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII: Schlussbestimmungen"
+     "label": "Kapitel VII: Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": [
@@ -733,7 +819,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII: Schlussbestimmungen"
+     "label": "Kapitel VII: Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": [
@@ -744,7 +831,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII: Schlussbestimmungen"
+     "label": "Kapitel VII: Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": [
@@ -762,7 +850,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 215,
+      "l": 265
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -775,7 +870,14 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 244,
+      "l": 302
+     },
+     "kl": "V"
     },
     {
      "nr": "11",
@@ -798,7 +900,14 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 291,
+      "l": 352
+     },
+     "kl": "V"
     }
    ]
   },
@@ -806,7 +915,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII: Schlussbestimmungen"
+     "label": "Kapitel VII: Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": [
@@ -817,7 +927,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII: Schlussbestimmungen"
+     "label": "Kapitel VII: Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": [

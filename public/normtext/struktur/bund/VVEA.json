@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "814.600",
   "titel": "Verordnung über die Vermeidung und die Entsorgung von Abfällen",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -48,7 +49,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -60,7 +62,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -69,7 +72,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -80,7 +84,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -91,7 +96,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -108,7 +114,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -121,7 +128,14 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 101,
+      "l": 189
+     },
+     "kl": "V"
     },
     {
      "nr": "6",
@@ -133,7 +147,8 @@
       }
      ],
      "absatz": null,
-     "item": "fbis"
+     "item": "fbis",
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -146,7 +161,14 @@
       }
      ],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 11,
+      "o": 268,
+      "l": 300
+     },
+     "kl": "V"
     },
     {
      "nr": "8",
@@ -158,7 +180,8 @@
       }
      ],
      "absatz": null,
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -170,7 +193,8 @@
       }
      ],
      "absatz": null,
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     }
    ]
   },
@@ -178,7 +202,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Planung und Berichterstattung"
+     "label": "2. Kapitel: Planung und Berichterstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -195,7 +220,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -207,7 +233,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -219,7 +246,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 191,
+      "l": 191
+     },
+     "kl": "A"
     }
    ]
   },
@@ -227,7 +260,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Planung und Berichterstattung"
+     "label": "2. Kapitel: Planung und Berichterstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -238,7 +272,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Planung und Berichterstattung"
+     "label": "2. Kapitel: Planung und Berichterstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -255,7 +290,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 49,
+      "l": 88
+     },
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -267,7 +309,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -279,7 +322,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 108,
+      "l": 159
+     },
+     "kl": "A"
     }
    ]
   },
@@ -287,11 +336,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Vorschriften"
+     "label": "1. Abschnitt: Allgemeine Vorschriften",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -302,11 +353,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Vorschriften"
+     "label": "1. Abschnitt: Allgemeine Vorschriften",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -317,11 +370,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Vorschriften"
+     "label": "1. Abschnitt: Allgemeine Vorschriften",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -338,7 +393,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -346,11 +402,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Vorschriften"
+     "label": "1. Abschnitt: Allgemeine Vorschriften",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -361,11 +419,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vermeidung von Abfällen"
+     "label": "2. Abschnitt: Vermeidung von Abfällen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": []
@@ -374,11 +434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -389,11 +451,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -410,7 +474,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -418,11 +483,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -433,11 +500,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -454,7 +523,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -462,11 +532,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -477,11 +549,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -498,7 +572,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 142,
+      "l": 142
+     },
+     "kl": "A"
     }
    ]
   },
@@ -506,11 +586,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -528,7 +610,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 72,
+      "l": 120
+     },
+     "kl": "V"
     }
    ]
   },
@@ -536,11 +625,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -557,7 +648,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -569,7 +661,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -582,7 +675,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 227,
+      "l": 236
+     },
+     "kl": "V"
     },
     {
      "nr": "28",
@@ -594,7 +694,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 298,
+      "l": 298
+     },
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -606,7 +712,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -614,11 +721,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -635,7 +744,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -647,7 +757,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 219,
+      "l": 219
+     },
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -659,7 +775,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -667,11 +789,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -682,11 +806,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -697,11 +823,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -718,7 +846,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -731,7 +860,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 90,
+      "l": 90
+     },
+     "kl": "A"
     }
    ]
   },
@@ -739,11 +874,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -760,7 +897,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 624,
+      "l": 624
+     },
+     "kl": "A"
     }
    ]
   },
@@ -768,11 +911,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Ablagerung von Abfällen"
+     "label": "4. Abschnitt: Ablagerung von Abfällen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -789,7 +934,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -797,11 +943,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Vorschriften"
+     "label": "1. Abschnitt: Allgemeine Vorschriften",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -812,11 +960,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Vorschriften"
+     "label": "1. Abschnitt: Allgemeine Vorschriften",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -833,7 +983,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -845,7 +996,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -853,11 +1005,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Vorschriften"
+     "label": "1. Abschnitt: Allgemeine Vorschriften",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -868,11 +1022,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zwischenlager"
+     "label": "2. Abschnitt: Zwischenlager",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -889,7 +1045,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -897,11 +1054,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zwischenlager"
+     "label": "2. Abschnitt: Zwischenlager",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -918,7 +1077,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -930,7 +1090,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -942,7 +1108,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 225,
+      "l": 225
+     },
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -954,7 +1126,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -962,11 +1140,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlagen zur thermischen Behandlung von Abfällen"
+     "label": "3. Abschnitt: Anlagen zur thermischen Behandlung von Abfällen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -984,7 +1164,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 160,
+      "l": 160
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -996,7 +1182,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -1008,7 +1195,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -1016,11 +1204,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlagen zur thermischen Behandlung von Abfällen"
+     "label": "3. Abschnitt: Anlagen zur thermischen Behandlung von Abfällen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1037,7 +1227,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -1049,7 +1240,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -1061,7 +1253,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -1073,7 +1266,8 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     }
    ]
   },
@@ -1081,11 +1275,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Kompostierungs- und Vergärungsanlagen"
+     "label": "4. Abschnitt: Kompostierungs- und Vergärungsanlagen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1096,11 +1292,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Kompostierungs- und Vergärungsanlagen"
+     "label": "4. Abschnitt: Kompostierungs- und Vergärungsanlagen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1190,7 +1388,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 363,
+      "l": 519
+     },
+     "kl": "Z"
     },
     {
      "nr": "53",
@@ -1203,7 +1407,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 58,
+      "l": 89
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1211,11 +1421,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Deponien"
+     "label": "5. Abschnitt: Deponien",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1226,11 +1438,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Deponien"
+     "label": "5. Abschnitt: Deponien",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1241,11 +1455,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Deponien"
+     "label": "5. Abschnitt: Deponien",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1256,11 +1472,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Deponien"
+     "label": "5. Abschnitt: Deponien",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1271,11 +1489,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Deponien"
+     "label": "5. Abschnitt: Deponien",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1286,11 +1506,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Deponien"
+     "label": "5. Abschnitt: Deponien",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1301,11 +1523,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Deponien"
+     "label": "5. Abschnitt: Deponien",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1316,11 +1540,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Deponien"
+     "label": "5. Abschnitt: Deponien",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1331,11 +1557,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Abfallanlagen"
+     "label": "4. Kapitel: Abfallanlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Deponien"
+     "label": "5. Abschnitt: Deponien",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1346,11 +1574,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1361,11 +1591,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1384,7 +1616,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 183,
+      "l": 225
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1392,11 +1630,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1407,11 +1647,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse"
+     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1481,7 +1723,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 47,
+      "l": 77
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1489,11 +1737,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse"
+     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1504,11 +1754,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1525,7 +1777,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1533,11 +1786,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1554,7 +1809,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -1566,7 +1827,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1574,11 +1841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1596,7 +1865,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 292,
+      "l": 306
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1604,11 +1879,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1625,7 +1902,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 408,
+      "l": 408
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1637,7 +1920,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 222,
+      "l": 475
+     },
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -1649,7 +1938,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 475,
+      "l": 475
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1657,11 +1952,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Inkrafttreten"
+     "label": "4. Abschnitt: Inkrafttreten",
+     "eId": "chap_5/sec_4"
     }
    ],
    "marginalie": []
@@ -1670,11 +1967,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1691,7 +1990,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1699,11 +1999,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1720,7 +2022,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1728,11 +2031,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1749,7 +2054,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1757,11 +2063,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwertung von Abfällen"
+     "label": "3. Abschnitt: Verwertung von Abfällen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1778,7 +2086,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1786,11 +2095,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen"
+     "label": "3. Kapitel: Vermeidung, Verwertung und Ablagerung von Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Ablagerung von Abfällen"
+     "label": "4. Abschnitt: Ablagerung von Abfällen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1807,7 +2118,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1815,11 +2127,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [],
@@ -1834,7 +2148,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1842,11 +2157,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1867,7 +2184,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -1881,7 +2199,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 159,
+      "l": 305
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1889,11 +2213,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1910,7 +2236,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1918,11 +2245,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1939,7 +2268,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -1952,7 +2282,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "U"
     }
    ]
   },

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "784.101.1",
   "titel": "Verordnung über Fernmeldedienste",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -55,7 +57,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Begriffe"
+     "label": "1. Kapitel: Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -70,7 +73,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "4",
@@ -82,7 +86,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -90,7 +95,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -107,7 +113,8 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -115,7 +122,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -132,7 +140,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -140,7 +149,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -157,7 +167,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -170,7 +181,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 161,
+      "l": 359
+     },
+     "kl": "V"
     }
    ]
   },
@@ -178,7 +195,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -195,7 +213,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -203,7 +222,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -221,7 +241,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 271,
+      "l": 309
+     },
+     "kl": "V"
     },
     {
      "nr": "11",
@@ -233,7 +259,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 293,
+      "l": 309
+     },
+     "kl": "A"
     }
    ]
   },
@@ -241,7 +273,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -258,7 +291,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -266,7 +300,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -283,7 +318,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -297,7 +333,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 135,
+      "l": 179
+     },
+     "kl": "V"
     }
    ]
   },
@@ -305,7 +347,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -322,7 +365,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -334,7 +378,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 359,
+      "l": 359
+     },
+     "kl": "A"
     }
    ]
   },
@@ -342,7 +392,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -359,7 +410,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 381,
+      "l": 381
+     },
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -371,7 +428,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
     }
    ]
   },
@@ -379,7 +442,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -396,7 +460,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -409,7 +474,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 106,
+      "l": 202
+     },
+     "kl": "V"
     }
    ]
   },
@@ -417,11 +489,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundversorgungskonzession"
+     "label": "1. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -432,11 +506,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundversorgungskonzession"
+     "label": "1. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -447,11 +523,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundversorgungskonzession"
+     "label": "1. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -462,11 +540,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -483,7 +563,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 128,
+      "l": 140
+     },
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -495,7 +582,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -507,7 +595,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -519,7 +608,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -531,7 +621,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -543,7 +634,14 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 0,
+      "it": 9,
+      "o": 688,
+      "l": 688
+     },
+     "kl": "A"
     }
    ]
   },
@@ -551,11 +649,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -572,7 +672,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -580,11 +681,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -595,11 +698,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -616,7 +721,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -624,11 +730,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -645,7 +753,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -653,11 +762,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -674,7 +785,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -682,11 +794,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -703,7 +817,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -711,11 +826,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -732,7 +849,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -740,11 +858,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -755,11 +875,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Finanzierung der Grundversorgung"
+     "label": "3. Abschnitt: Finanzierung der Grundversorgung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -776,7 +898,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 353,
+      "l": 353
+     },
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -788,7 +916,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 224,
+      "l": 224
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -800,7 +934,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 82,
+      "l": 82
+     },
+     "kl": "A"
     }
    ]
   },
@@ -808,11 +948,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Finanzierung der Grundversorgung"
+     "label": "3. Abschnitt: Finanzierung der Grundversorgung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -829,7 +971,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 349,
+      "l": 349
+     },
+     "kl": "A"
     }
    ]
   },
@@ -837,11 +985,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Finanzierung der Grundversorgung"
+     "label": "3. Abschnitt: Finanzierung der Grundversorgung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -852,11 +1002,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste"
+     "label": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -873,7 +1025,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -886,7 +1039,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 66,
+      "l": 125
+     },
+     "kl": "V"
     },
     {
      "nr": "54",
@@ -899,7 +1059,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste"
+     "sektion": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste",
+     "kl": "A"
     }
    ]
   },
@@ -907,11 +1068,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste"
+     "label": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -928,7 +1091,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -941,7 +1105,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 146,
+      "l": 161
+     },
+     "kl": "V"
     }
    ]
   },
@@ -949,11 +1119,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Standortidentifikation"
+     "label": "3. Abschnitt: Standortidentifikation",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -970,7 +1142,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -983,7 +1156,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Standortidentifikation"
+     "sektion": "3. Abschnitt: Standortidentifikation",
+     "kl": "A"
     }
    ]
   },
@@ -991,11 +1165,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Standortidentifikation"
+     "label": "3. Abschnitt: Standortidentifikation",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1012,7 +1188,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -1025,7 +1202,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 130,
+      "l": 276
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1033,11 +1216,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Weitere Pflichten"
+     "label": "4. Abschnitt: Weitere Pflichten",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1054,7 +1239,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -1067,7 +1253,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Abschnitt: Weitere Pflichten"
+     "sektion": "4. Abschnitt: Weitere Pflichten",
+     "kl": "A"
     }
    ]
   },
@@ -1075,11 +1262,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Weitere Pflichten"
+     "label": "4. Abschnitt: Weitere Pflichten",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1096,7 +1285,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 238,
+      "l": 238
+     },
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -1108,7 +1303,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -1116,11 +1312,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Weitere Pflichten"
+     "label": "4. Abschnitt: Weitere Pflichten",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1131,7 +1329,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Nummernportabilität"
+     "label": "4a. Kapitel: Nummernportabilität",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -1148,7 +1347,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1156,7 +1356,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 88,
+      "l": 122
+     },
+     "kl": "V"
     },
     {
      "nr": "76",
@@ -1169,7 +1375,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4a. Kapitel: Nummernportabilität"
+     "sektion": "4a. Kapitel: Nummernportabilität",
+     "kl": "A"
     }
    ]
   },
@@ -1177,7 +1384,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1194,7 +1402,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1202,7 +1411,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1220,7 +1430,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 168,
+      "l": 240
+     },
+     "kl": "V"
     },
     {
      "nr": "87",
@@ -1232,7 +1448,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 240,
+      "l": 240
+     },
+     "kl": "A"
     },
     {
      "nr": "88",
@@ -1244,7 +1466,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 157,
+      "l": 157
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1252,7 +1480,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1269,7 +1498,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1277,7 +1507,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1288,7 +1519,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1305,7 +1537,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1313,7 +1546,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1330,7 +1564,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 170,
+      "l": 170
+     },
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -1343,7 +1583,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 106,
+      "l": 364
+     },
+     "kl": "V"
     },
     {
      "nr": "99",
@@ -1355,7 +1601,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 364,
+      "l": 364
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1363,7 +1615,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1380,7 +1633,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -1393,7 +1647,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 55,
+      "l": 89
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1401,7 +1661,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1451,7 +1712,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 179,
+      "l": 230
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1459,7 +1726,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1470,7 +1738,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1481,7 +1750,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1492,7 +1762,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1503,7 +1774,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1520,7 +1792,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 405,
+      "l": 405
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1528,7 +1806,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1545,7 +1824,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 303,
+      "l": 303
+     },
+     "kl": "A"
     },
     {
      "nr": "105",
@@ -1558,7 +1843,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 128,
+      "l": 138
+     },
+     "kl": "V"
     },
     {
      "nr": "106",
@@ -1570,7 +1861,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -1582,7 +1879,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 324,
+      "l": 324
+     },
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -1594,7 +1897,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 128,
+      "l": 128
+     },
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -1606,7 +1915,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 177,
+      "l": 177
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1614,7 +1929,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1631,7 +1947,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 212,
+      "l": 212
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1639,7 +1961,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1650,11 +1973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1671,7 +1996,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1679,11 +2005,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1700,7 +2028,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 159,
+      "l": 159
+     },
+     "kl": "A"
     },
     {
      "nr": "113",
@@ -1712,7 +2046,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 221,
+      "l": 221
+     },
+     "kl": "A"
     },
     {
      "nr": "114",
@@ -1724,7 +2064,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 249,
+      "l": 249
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1732,11 +2078,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1747,11 +2095,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1768,7 +2118,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "116",
@@ -1780,7 +2131,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -1788,11 +2140,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1809,7 +2163,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1817,11 +2172,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1832,11 +2189,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1847,11 +2206,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen"
+     "label": "2. Abschnitt: Besondere Bestimmungen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1868,7 +2229,14 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 153,
+      "l": 153
+     },
+     "kl": "A"
     },
     {
      "nr": "122",
@@ -1880,7 +2248,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 398,
+      "l": 398
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1888,11 +2262,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen"
+     "label": "2. Abschnitt: Besondere Bestimmungen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1909,7 +2285,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 245,
+      "l": 245
+     },
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -1921,7 +2303,14 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 119,
+      "l": 119
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1929,11 +2318,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen"
+     "label": "2. Abschnitt: Besondere Bestimmungen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1950,7 +2341,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 119,
+      "l": 119
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1958,11 +2356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen"
+     "label": "2. Abschnitt: Besondere Bestimmungen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1973,11 +2373,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -1988,11 +2390,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2003,11 +2407,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2018,11 +2424,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2033,11 +2441,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2048,11 +2458,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [],
@@ -2067,7 +2479,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2075,11 +2488,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2096,7 +2511,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "130",
@@ -2108,7 +2524,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "131",
@@ -2120,7 +2537,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2128,11 +2551,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2143,11 +2568,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2158,11 +2585,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2173,11 +2602,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2188,7 +2619,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2206,7 +2638,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "sektion": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "kl": "A"
     }
    ]
   },
@@ -2214,7 +2647,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2225,7 +2659,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2236,7 +2671,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2247,7 +2683,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2264,7 +2701,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2272,7 +2710,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2289,7 +2728,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "137",
@@ -2302,7 +2742,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "sektion": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "kl": "A"
     }
    ]
   },
@@ -2310,7 +2751,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2327,7 +2769,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "140",
@@ -2339,7 +2782,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 371,
+      "l": 371
+     },
+     "kl": "A"
     },
     {
      "nr": "141",
@@ -2353,7 +2802,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 105,
+      "l": 106
+     },
+     "kl": "V"
     },
     {
      "nr": "142",
@@ -2366,7 +2821,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 106,
+      "l": 106
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2374,7 +2835,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2391,7 +2853,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "144",
@@ -2404,7 +2867,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 226,
+      "l": 382
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2412,7 +2881,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2429,7 +2899,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "146",
@@ -2442,7 +2913,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 164,
+      "l": 215
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2450,7 +2927,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2467,7 +2945,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 337,
+      "l": 337
+     },
+     "kl": "A"
     },
     {
      "nr": "148",
@@ -2479,7 +2963,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 48,
+      "l": 48
+     },
+     "kl": "A"
     },
     {
      "nr": "149",
@@ -2491,7 +2982,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 131,
+      "l": 131
+     },
+     "kl": "A"
     },
     {
      "nr": "150",
@@ -2504,7 +3001,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 50,
+      "l": 226
+     },
+     "kl": "V"
     },
     {
      "nr": "151",
@@ -2516,7 +3019,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 226,
+      "l": 226
+     },
+     "kl": "A"
     },
     {
      "nr": "152",
@@ -2528,7 +3037,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 76,
+      "l": 76
+     },
+     "kl": "A"
     },
     {
      "nr": "153",
@@ -2540,7 +3055,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 137,
+      "l": 137
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2548,7 +3069,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2559,7 +3081,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2570,7 +3093,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2581,7 +3105,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2598,7 +3123,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 305,
+      "l": 305
+     },
+     "kl": "A"
     },
     {
      "nr": "155",
@@ -2610,7 +3141,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 9,
+      "l": 9
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2618,7 +3155,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2635,7 +3173,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "157",
@@ -2649,7 +3188,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 107,
+      "l": 108
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2657,11 +3202,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sicherheitskommunikation"
+     "label": "1. Abschnitt: Sicherheitskommunikation",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [
@@ -2678,7 +3225,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "160",
@@ -2691,7 +3239,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Sicherheitskommunikation"
+     "sektion": "1. Abschnitt: Sicherheitskommunikation",
+     "kl": "A"
     }
    ]
   },
@@ -2699,11 +3248,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sicherheitskommunikation"
+     "label": "1. Abschnitt: Sicherheitskommunikation",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [],
@@ -2718,7 +3269,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2726,11 +3278,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sicherheitskommunikation"
+     "label": "1. Abschnitt: Sicherheitskommunikation",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [
@@ -2748,7 +3302,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 63,
+      "l": 165
+     },
+     "kl": "V"
     },
     {
      "nr": "164",
@@ -2760,7 +3320,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 165,
+      "l": 165
+     },
+     "kl": "A"
     },
     {
      "nr": "165",
@@ -2772,7 +3338,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 213,
+      "l": 213
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2780,11 +3352,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sicherheitskommunikation"
+     "label": "1. Abschnitt: Sicherheitskommunikation",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [
@@ -2801,7 +3375,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2809,11 +3384,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs"
+     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2830,7 +3407,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "168",
@@ -2842,7 +3420,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2850,11 +3429,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs"
+     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2871,7 +3452,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2879,11 +3461,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Störungsmeldung"
+     "label": "3. Abschnitt: Störungsmeldung",
+     "eId": "chap_10/sec_3"
     }
    ],
    "marginalie": [],
@@ -2899,7 +3483,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Störungsmeldung"
+     "sektion": "3. Abschnitt: Störungsmeldung",
+     "kl": "A"
     }
    ]
   },
@@ -2907,7 +3492,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2925,7 +3511,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 61,
+      "l": 171
+     },
+     "kl": "V"
     },
     {
      "nr": "178",
@@ -2937,7 +3529,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 171,
+      "l": 171
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2945,7 +3543,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2956,7 +3555,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2967,7 +3567,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2978,7 +3579,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2989,7 +3591,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3000,7 +3603,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3011,7 +3615,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Teilnahme an den Aktivitäten der Internationalen Fernmeldeunion"
+     "label": "12. Kapitel: Teilnahme an den Aktivitäten der Internationalen Fernmeldeunion",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [],
@@ -3027,7 +3632,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 265,
+      "l": 283
+     },
+     "kl": "V"
     },
     {
      "nr": "180",
@@ -3039,7 +3650,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 381,
+      "l": 381
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3047,11 +3664,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_13/sec_1"
     }
    ],
    "marginalie": []
@@ -3060,11 +3679,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung bisherigen Rechts"
+     "label": "2. Abschnitt: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -3110,7 +3731,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 35,
+      "l": 74
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3118,11 +3745,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung bisherigen Rechts"
+     "label": "2. Abschnitt: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -3140,7 +3769,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3148,11 +3783,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_3"
     }
    ],
    "marginalie": [],
@@ -3167,7 +3804,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3175,11 +3813,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Inkrafttreten"
+     "label": "4. Abschnitt: Inkrafttreten",
+     "eId": "chap_13/sec_4"
     }
    ],
    "marginalie": []
@@ -3188,11 +3828,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung bisherigen Rechts"
+     "label": "2. Abschnitt: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -3209,7 +3851,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "183",
@@ -3234,7 +3877,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 45,
+      "l": 119
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3242,11 +3891,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_3"
     }
    ],
    "marginalie": [],
@@ -3265,7 +3916,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3273,11 +3925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_3"
     }
    ],
    "marginalie": [
@@ -3294,7 +3948,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3302,11 +3957,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_3"
     }
    ],
    "marginalie": [
@@ -3323,7 +3980,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3331,11 +3989,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_3"
     }
    ],
    "marginalie": [
@@ -3352,7 +4012,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3360,11 +4021,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_3"
     }
    ],
    "marginalie": [
@@ -3381,7 +4044,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "191",
@@ -3393,7 +4057,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 168,
+      "l": 389
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3401,7 +4071,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3422,7 +4093,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3430,7 +4102,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3447,7 +4120,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3455,7 +4129,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3472,7 +4147,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3480,7 +4156,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3497,7 +4174,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3505,7 +4183,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3522,7 +4201,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -3534,7 +4214,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -3546,7 +4227,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -3554,7 +4236,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3571,7 +4254,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3579,11 +4263,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Geltungsbereich"
+     "label": "1a. Abschnitt: Geltungsbereich",
+     "eId": "chap_3/sec_1_a"
     }
    ],
    "marginalie": [
@@ -3601,7 +4287,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1a. Abschnitt: Geltungsbereich"
+     "sektion": "1a. Abschnitt: Geltungsbereich",
+     "kl": "A"
     }
    ]
   },
@@ -3609,11 +4296,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Geltungsbereich"
+     "label": "1a. Abschnitt: Geltungsbereich",
+     "eId": "chap_3/sec_1_a"
     }
    ],
    "marginalie": [
@@ -3624,11 +4313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3645,7 +4336,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3653,11 +4345,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3674,7 +4368,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3682,11 +4377,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Übermittlung von Nummern"
+     "label": "1. Abschnitt: Übermittlung von Nummern",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -3701,7 +4398,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -3713,7 +4411,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -3725,7 +4424,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 386,
+      "l": 386
+     },
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -3738,7 +4443,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 6
+     "absatzIndex": 6,
+     "pos": {
+      "b": 6,
+      "o": 325,
+      "l": 325
+     },
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -3746,7 +4457,8 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "sektion": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "sektion": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "kl": "U"
     },
     {
      "nr": "49",
@@ -3759,7 +4471,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Übermittlung von Nummern"
+     "sektion": "1. Abschnitt: Übermittlung von Nummern",
+     "kl": "A"
     }
    ]
   },
@@ -3767,11 +4480,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste"
+     "label": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3788,7 +4503,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3796,11 +4512,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Standortidentifikation"
+     "label": "3. Abschnitt: Standortidentifikation",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3821,7 +4539,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -3833,7 +4552,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -3845,7 +4565,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 282,
+      "l": 282
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3853,11 +4579,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Standortidentifikation"
+     "label": "3. Abschnitt: Standortidentifikation",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3878,7 +4606,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -3890,7 +4619,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -3902,7 +4632,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 401,
+      "l": 401
+     },
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -3914,7 +4650,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 294,
+      "l": 294
+     },
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -3926,7 +4668,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 159,
+      "l": 159
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3934,7 +4682,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Nummernportabilität"
+     "label": "4a. Kapitel: Nummernportabilität",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -3951,7 +4700,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3959,7 +4709,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Nummernportabilität"
+     "label": "4a. Kapitel: Nummernportabilität",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -3976,7 +4727,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3984,7 +4736,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Nummernportabilität"
+     "label": "4a. Kapitel: Nummernportabilität",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -4001,7 +4754,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4009,7 +4763,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Nummernportabilität"
+     "label": "4a. Kapitel: Nummernportabilität",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -4026,7 +4781,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4034,7 +4790,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Nummernportabilität"
+     "label": "4a. Kapitel: Nummernportabilität",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -4051,7 +4808,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4059,7 +4817,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Kapitel: Freie Wahl der Anbieterin für nationale und internationale Verbindungen"
+     "label": "4b. Kapitel: Freie Wahl der Anbieterin für nationale und internationale Verbindungen",
+     "eId": "chap_4_b"
     }
    ],
    "marginalie": [],
@@ -4075,7 +4834,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4b. Kapitel: Freie Wahl der Anbieterin für nationale und internationale Verbindungen"
+     "sektion": "4b. Kapitel: Freie Wahl der Anbieterin für nationale und internationale Verbindungen",
+     "kl": "A"
     }
    ]
   },
@@ -4083,7 +4843,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4100,7 +4861,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "92",
@@ -4112,7 +4874,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "93",
@@ -4125,7 +4888,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 322,
+      "l": 322
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4133,7 +4902,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4154,7 +4924,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -4167,7 +4938,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 608
+     },
+     "kl": "V"
     },
     {
      "nr": "96",
@@ -4180,7 +4957,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 414,
+      "l": 608
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4188,11 +4971,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4209,7 +4994,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4217,11 +5003,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4238,7 +5026,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4246,11 +5035,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4267,7 +5058,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4275,11 +5067,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen"
+     "label": "2. Abschnitt: Besondere Bestimmungen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [],
@@ -4294,7 +5088,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4302,11 +5097,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -4323,7 +5120,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4331,7 +5129,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4348,7 +5147,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4356,7 +5156,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4373,7 +5174,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4381,7 +5183,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4398,7 +5201,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4406,7 +5210,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4423,7 +5228,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4431,7 +5237,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4448,7 +5255,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4456,11 +5264,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs"
+     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -4477,7 +5287,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4485,11 +5296,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs"
+     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -4506,7 +5319,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4514,11 +5328,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen"
+     "label": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen",
+     "eId": "chap_10/sec_4"
     }
    ],
    "marginalie": [
@@ -4536,7 +5352,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen"
+     "sektion": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen",
+     "kl": "A"
     }
    ]
   },
@@ -4544,11 +5361,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen"
+     "label": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen",
+     "eId": "chap_10/sec_4"
     }
    ],
    "marginalie": [
@@ -4559,11 +5378,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen"
+     "label": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen",
+     "eId": "chap_10/sec_4"
     }
    ],
    "marginalie": [
@@ -4580,7 +5401,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4588,11 +5410,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
+     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen",
+     "eId": "chap_10/sec_5"
     }
    ],
    "marginalie": [
@@ -4610,7 +5434,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
+     "sektion": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen",
+     "kl": "A"
     }
    ]
   },
@@ -4618,11 +5443,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
+     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen",
+     "eId": "chap_10/sec_5"
     }
    ],
    "marginalie": [
@@ -4633,11 +5460,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
+     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen",
+     "eId": "chap_10/sec_5"
     }
    ],
    "marginalie": [
@@ -4648,11 +5477,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
+     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen",
+     "eId": "chap_10/sec_5"
     }
    ],
    "marginalie": [
@@ -4663,11 +5494,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung"
+     "label": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung",
+     "eId": "chap_10/sec_6"
     }
    ],
    "marginalie": [
@@ -4685,7 +5518,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung"
+     "sektion": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung",
+     "kl": "A"
     }
    ]
   },
@@ -4693,11 +5527,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung"
+     "label": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung",
+     "eId": "chap_10/sec_6"
     }
    ],
    "marginalie": [
@@ -4708,11 +5544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung"
+     "label": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung",
+     "eId": "chap_10/sec_6"
     }
    ],
    "marginalie": [

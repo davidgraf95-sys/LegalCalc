@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "951.311",
   "titel": "Verordnung über die kollektiven Kapitalanlagen",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -55,11 +57,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zweck und Geltungsbereich"
+     "label": "1. Kapitel: Zweck und Geltungsbereich",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [],
@@ -78,7 +82,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -86,11 +91,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zweck und Geltungsbereich"
+     "label": "1. Kapitel: Zweck und Geltungsbereich",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -101,11 +108,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kollektive Kapitalanlagen"
+     "label": "2. Kapitel: Kollektive Kapitalanlagen",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -122,7 +131,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -134,7 +144,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -147,7 +158,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 128,
+      "l": 218
+     },
+     "kl": "V"
     },
     {
      "nr": "13",
@@ -159,7 +176,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 218,
+      "l": 218
+     },
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -172,7 +195,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 250,
+      "l": 268
+     },
+     "kl": "V"
     },
     {
      "nr": "15",
@@ -184,7 +213,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 268,
+      "l": 268
+     },
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -196,7 +231,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 396,
+      "l": 396
+     },
+     "kl": "A"
     }
    ]
   },
@@ -204,11 +245,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kollektive Kapitalanlagen"
+     "label": "2. Kapitel: Kollektive Kapitalanlagen",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [],
@@ -223,7 +266,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -231,15 +275,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -257,7 +304,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 137,
+      "l": 137
+     },
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -269,7 +322,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -281,7 +335,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 41,
+      "l": 42
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -293,7 +354,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -301,15 +363,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -326,7 +391,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -334,15 +400,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -357,7 +426,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -365,15 +435,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -390,7 +463,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -398,15 +472,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -421,7 +498,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -429,15 +507,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -454,7 +535,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 89,
+      "l": 89
+     },
+     "kl": "A"
     }
    ]
   },
@@ -462,15 +549,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -481,15 +571,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -506,7 +599,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -518,7 +617,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -530,7 +630,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -538,15 +639,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -563,7 +667,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -576,7 +681,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 118,
+      "l": 119
+     },
+     "kl": "V"
     },
     {
      "nr": "42",
@@ -588,7 +699,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 119,
+      "l": 119
+     },
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -600,7 +717,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 155,
+      "l": 155
+     },
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -612,7 +735,8 @@
       }
      ],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -624,7 +748,8 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -636,7 +761,8 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -644,15 +770,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -663,15 +792,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -682,15 +814,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -701,15 +836,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -724,7 +862,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -737,7 +876,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: …"
+     "sektion": "2. Abschnitt: …",
+     "kl": "A"
     }
    ]
   },
@@ -745,15 +885,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -770,7 +913,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -782,7 +926,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 50,
+      "l": 50
+     },
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -794,7 +944,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 188,
+      "l": 188
+     },
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -806,7 +962,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 28,
+      "l": 28
+     },
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -818,7 +981,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 199,
+      "l": 199
+     },
+     "kl": "A"
     }
    ]
   },
@@ -826,15 +995,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -849,7 +1021,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -857,15 +1030,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -882,7 +1058,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 153,
+      "l": 168
+     },
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -894,7 +1077,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 62,
+      "l": 62
+     },
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -906,7 +1095,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -918,7 +1108,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -926,15 +1122,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -951,7 +1150,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -963,7 +1163,8 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     }
    ]
   },
@@ -971,15 +1172,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -994,7 +1198,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1002,15 +1207,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -1025,7 +1233,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1033,15 +1242,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -1056,7 +1268,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1064,11 +1277,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Wahrung der Anlegerinteressen"
+     "label": "4. Kapitel: Wahrung der Anlegerinteressen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1085,7 +1300,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 340,
+      "l": 340
+     },
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -1097,7 +1318,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 265,
+      "l": 265
+     },
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -1109,7 +1336,14 @@
       }
      ],
      "absatz": "4",
-     "item": "3"
+     "item": "3",
+     "pos": {
+      "b": 3,
+      "it": 4,
+      "o": 52,
+      "l": 52
+     },
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -1121,7 +1355,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 120,
+      "l": 120
+     },
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -1133,7 +1373,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 120,
+      "l": 120
+     },
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -1146,7 +1392,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Kapitel: Wahrung der Anlegerinteressen"
+     "sektion": "4. Kapitel: Wahrung der Anlegerinteressen",
+     "kl": "A"
     }
    ]
   },
@@ -1154,11 +1401,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Wahrung der Anlegerinteressen"
+     "label": "4. Kapitel: Wahrung der Anlegerinteressen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1175,7 +1424,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 451,
+      "l": 451
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1183,11 +1438,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Wahrung der Anlegerinteressen"
+     "label": "4. Kapitel: Wahrung der Anlegerinteressen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1204,7 +1461,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1212,11 +1470,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Wahrung der Anlegerinteressen"
+     "label": "4. Kapitel: Wahrung der Anlegerinteressen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1233,7 +1493,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "81",
@@ -1245,7 +1506,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 294,
+      "l": 294
+     },
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -1257,7 +1524,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 356,
+      "l": 356
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1265,15 +1538,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vertraglicher Anlagefonds"
+     "label": "1. Kapitel: Vertraglicher Anlagefonds",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Mindestvermögen"
+     "label": "1. Abschnitt: Mindestvermögen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": []
@@ -1282,15 +1558,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vertraglicher Anlagefonds"
+     "label": "1. Kapitel: Vertraglicher Anlagefonds",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Fondsvertrag"
+     "label": "2. Abschnitt: Fondsvertrag",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1307,7 +1586,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 258,
+      "l": 258
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1315,15 +1600,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vertraglicher Anlagefonds"
+     "label": "1. Kapitel: Vertraglicher Anlagefonds",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Fondsvertrag"
+     "label": "2. Abschnitt: Fondsvertrag",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1340,7 +1628,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -1352,7 +1641,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -1364,7 +1654,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "92",
@@ -1376,7 +1667,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "93",
@@ -1388,7 +1680,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -1400,7 +1693,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -1412,7 +1706,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "96",
@@ -1424,7 +1719,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "97",
@@ -1436,7 +1732,8 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -1448,7 +1745,8 @@
       }
      ],
      "absatz": "2",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "99",
@@ -1460,7 +1758,8 @@
       }
      ],
      "absatz": "2",
-     "item": "o"
+     "item": "o",
+     "kl": "A"
     },
     {
      "nr": "100",
@@ -1472,7 +1771,8 @@
       }
      ],
      "absatz": "2",
-     "item": "p"
+     "item": "p",
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -1484,7 +1784,8 @@
       }
      ],
      "absatz": "2",
-     "item": "q"
+     "item": "q",
+     "kl": "A"
     },
     {
      "nr": "102",
@@ -1496,7 +1797,8 @@
       }
      ],
      "absatz": "2",
-     "item": "r"
+     "item": "r",
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -1508,7 +1810,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 199,
+      "l": 199
+     },
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -1520,7 +1828,8 @@
       }
      ],
      "absatz": "2bis",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "105",
@@ -1532,7 +1841,8 @@
       }
      ],
      "absatz": "2bis",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -1544,7 +1854,8 @@
       }
      ],
      "absatz": "2bis",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -1556,7 +1867,14 @@
       }
      ],
      "absatz": "2bis",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 2,
+      "it": 6,
+      "o": 142,
+      "l": 142
+     },
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -1568,7 +1886,13 @@
       }
      ],
      "absatz": "2ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 283,
+      "l": 283
+     },
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -1580,7 +1904,14 @@
       }
      ],
      "absatz": "2ter",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 83,
+      "l": 83
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1588,15 +1919,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vertraglicher Anlagefonds"
+     "label": "1. Kapitel: Vertraglicher Anlagefonds",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Fondsvertrag"
+     "label": "2. Abschnitt: Fondsvertrag",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1613,7 +1947,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1621,15 +1956,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vertraglicher Anlagefonds"
+     "label": "1. Kapitel: Vertraglicher Anlagefonds",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Fondsvertrag"
+     "label": "2. Abschnitt: Fondsvertrag",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1646,7 +1984,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "112",
@@ -1658,7 +1997,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 217,
+      "l": 361
+     },
+     "kl": "A"
     },
     {
      "nr": "113",
@@ -1670,7 +2015,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 361,
+      "l": 361
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1678,15 +2029,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vertraglicher Anlagefonds"
+     "label": "1. Kapitel: Vertraglicher Anlagefonds",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Fondsvertrag"
+     "label": "2. Abschnitt: Fondsvertrag",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1707,7 +2061,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1715,15 +2075,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vertraglicher Anlagefonds"
+     "label": "1. Kapitel: Vertraglicher Anlagefonds",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Fondsvertrag"
+     "label": "2. Abschnitt: Fondsvertrag",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1740,7 +2103,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 159,
+      "l": 404
+     },
+     "kl": "A"
     },
     {
      "nr": "116",
@@ -1752,7 +2121,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 404,
+      "l": 404
+     },
+     "kl": "A"
     },
     {
      "nr": "117",
@@ -1764,7 +2139,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 203,
+      "l": 203
+     },
+     "kl": "A"
     },
     {
      "nr": "118",
@@ -1776,7 +2157,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 193,
+      "l": 193
+     },
+     "kl": "A"
     },
     {
      "nr": "119",
@@ -1792,7 +2179,13 @@
       }
      ],
      "absatz": "2ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 367,
+      "l": 367
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1800,15 +2193,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1825,7 +2221,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1833,15 +2230,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1858,7 +2258,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "123",
@@ -1872,7 +2273,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 214,
+      "l": 247
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1880,15 +2287,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1899,15 +2309,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1924,7 +2337,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1932,15 +2346,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1957,7 +2374,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "126",
@@ -1970,7 +2388,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 154,
+      "l": 163
+     },
+     "kl": "V"
     },
     {
      "nr": "127",
@@ -1982,7 +2406,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 163,
+      "l": 163
+     },
+     "kl": "A"
     },
     {
      "nr": "128",
@@ -1998,7 +2428,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 292,
+      "l": 292
+     },
+     "kl": "A"
     },
     {
      "nr": "129",
@@ -2011,7 +2447,13 @@
       }
      ],
      "absatz": "3ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 134,
+      "l": 289
+     },
+     "kl": "V"
     },
     {
      "nr": "130",
@@ -2024,7 +2466,13 @@
       }
      ],
      "absatz": "3ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 180,
+      "l": 289
+     },
+     "kl": "V"
     },
     {
      "nr": "131",
@@ -2040,7 +2488,13 @@
       }
      ],
      "absatz": "3ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 289,
+      "l": 289
+     },
+     "kl": "A"
     },
     {
      "nr": "132",
@@ -2052,7 +2506,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 204,
+      "l": 204
+     },
+     "kl": "A"
     },
     {
      "nr": "133",
@@ -2064,7 +2524,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 299,
+      "l": 299
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2072,15 +2538,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2091,15 +2560,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -2114,7 +2586,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2122,15 +2595,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2141,15 +2617,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2160,15 +2639,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2179,15 +2661,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2198,15 +2683,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2217,15 +2705,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation"
+     "label": "2. Abschnitt: Organisation",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2242,7 +2733,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "141",
@@ -2255,7 +2747,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 125,
+      "l": 154
+     },
+     "kl": "V"
     },
     {
      "nr": "142",
@@ -2271,7 +2769,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 154,
+      "l": 154
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2279,15 +2783,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation"
+     "label": "2. Abschnitt: Organisation",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2304,7 +2811,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "144",
@@ -2317,7 +2825,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 49,
+      "l": 50
+     },
+     "kl": "V"
     },
     {
      "nr": "145",
@@ -2329,7 +2844,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "146",
@@ -2341,7 +2857,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "147",
@@ -2354,7 +2871,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 105,
+      "l": 117
+     },
+     "kl": "V"
     },
     {
      "nr": "148",
@@ -2366,7 +2889,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 117,
+      "l": 117
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2374,15 +2903,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation"
+     "label": "2. Abschnitt: Organisation",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2399,7 +2931,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "150",
@@ -2413,7 +2946,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 27,
+      "l": 87
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2421,15 +2960,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation"
+     "label": "2. Abschnitt: Organisation",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -2444,7 +2986,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2452,15 +2995,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -2477,7 +3023,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 680,
+      "l": 680
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2485,15 +3037,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -2504,15 +3059,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -2523,15 +3081,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2548,7 +3109,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2556,15 +3123,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2581,7 +3151,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 142,
+      "l": 142
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2589,15 +3165,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2608,15 +3187,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2633,7 +3215,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "156",
@@ -2645,7 +3228,8 @@
       }
      ],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -2653,15 +3237,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2678,7 +3265,8 @@
       }
      ],
      "absatz": "2",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     }
    ]
   },
@@ -2686,15 +3274,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2705,19 +3296,22 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
-    "Effektenleihe () und Pensionsgeschäft ("
+    "Effektenleihe (Securities Lending) und Pensionsgeschäft (Repo, Reverse Repo)"
    ],
    "fussnoten": [
     {
@@ -2730,7 +3324,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "160",
@@ -2742,7 +3337,14 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 3,
+      "o": 55,
+      "l": 55
+     },
+     "kl": "A"
     },
     {
      "nr": "161",
@@ -2754,7 +3356,14 @@
       }
      ],
      "absatz": "5",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 4,
+      "it": 6,
+      "o": 124,
+      "l": 124
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2762,15 +3371,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2787,7 +3399,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 292,
+      "l": 292
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2795,15 +3413,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2814,15 +3435,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2833,15 +3457,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2862,7 +3489,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 321,
+      "l": 321
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2870,15 +3503,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2889,15 +3525,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2908,15 +3547,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2927,15 +3569,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2946,15 +3591,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2965,15 +3613,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -2990,7 +3641,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 100,
+      "l": 100
+     },
+     "kl": "A"
     },
     {
      "nr": "165",
@@ -3002,7 +3659,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 230,
+      "l": 230
+     },
+     "kl": "A"
     },
     {
      "nr": "166",
@@ -3014,7 +3677,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 330,
+      "l": 330
+     },
+     "kl": "A"
     },
     {
      "nr": "167",
@@ -3026,7 +3695,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 86,
+      "l": 86
+     },
+     "kl": "A"
     },
     {
      "nr": "168",
@@ -3038,7 +3713,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 313,
+      "l": 313
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3046,15 +3727,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3071,7 +3755,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "170",
@@ -3083,7 +3768,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 110,
+      "l": 110
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3091,15 +3782,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3117,7 +3811,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 110,
+      "l": 206
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3125,15 +3825,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3145,7 +3848,13 @@
      "text": "Infolge des BRB vom 7. Juni 2013 der die Anstalt Post in die spezialgesetzliche Schweizerische Post AG umgewandelt und die PostFinance in eine privatrechtliche Aktiengesellschaft ausgegliedert hat, ist der Hinweis auf die Postguthaben seit dem 26. Juni 2013 gegenstandslos.",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 53,
+      "l": 319
+     },
+     "kl": "U"
     }
    ]
   },
@@ -3153,15 +3862,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3172,15 +3884,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3197,7 +3912,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3205,15 +3921,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3230,7 +3949,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 103,
+      "l": 103
+     },
+     "kl": "A"
     },
     {
      "nr": "176",
@@ -3242,7 +3967,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 54,
+      "l": 54
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3250,15 +3982,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3275,7 +4010,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3283,15 +4019,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3308,7 +4047,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3316,15 +4056,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3341,7 +4084,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "180",
@@ -3353,7 +4097,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 356,
+      "l": 356
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3361,15 +4111,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3386,7 +4139,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 219,
+      "l": 219
+     },
+     "kl": "A"
     },
     {
      "nr": "182",
@@ -3398,7 +4157,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 60,
+      "l": 60
+     },
+     "kl": "A"
     },
     {
      "nr": "183",
@@ -3410,7 +4176,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 120,
+      "l": 120
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3418,15 +4190,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3437,15 +4212,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3462,7 +4240,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -3470,15 +4249,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Übrige Fonds für traditionelle und alternative Anlagen"
+     "label": "4. Abschnitt: Übrige Fonds für traditionelle und alternative Anlagen",
+     "eId": "tit_2/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3495,7 +4277,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 145,
+      "l": 145
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3503,15 +4291,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Übrige Fonds für traditionelle und alternative Anlagen"
+     "label": "4. Abschnitt: Übrige Fonds für traditionelle und alternative Anlagen",
+     "eId": "tit_2/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3528,7 +4319,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "187",
@@ -3540,7 +4332,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -3548,15 +4341,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Übrige Fonds für traditionelle und alternative Anlagen"
+     "label": "4. Abschnitt: Übrige Fonds für traditionelle und alternative Anlagen",
+     "eId": "tit_2/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3567,15 +4363,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Übrige Fonds für traditionelle und alternative Anlagen"
+     "label": "4. Abschnitt: Übrige Fonds für traditionelle und alternative Anlagen",
+     "eId": "tit_2/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3593,7 +4392,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 148,
+      "l": 241
+     },
+     "kl": "V"
     },
     {
      "nr": "189",
@@ -3605,7 +4410,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 241,
+      "l": 241
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3613,15 +4424,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Depotbank"
+     "label": "1. Abschnitt: Depotbank",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3632,15 +4446,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Depotbank"
+     "label": "1. Abschnitt: Depotbank",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3657,7 +4474,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 183,
+      "l": 183
+     },
+     "kl": "A"
     },
     {
      "nr": "192",
@@ -3669,7 +4493,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 235,
+      "l": 235
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3677,15 +4507,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Depotbank"
+     "label": "1. Abschnitt: Depotbank",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3696,15 +4529,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Depotbank"
+     "label": "1. Abschnitt: Depotbank",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3721,7 +4557,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "196",
@@ -3734,7 +4571,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 237,
+      "l": 370
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3742,15 +4585,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -3765,7 +4611,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3773,15 +4620,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Stellung der Anlegerinnen und Anleger"
+     "label": "3. Abschnitt: Stellung der Anlegerinnen und Anleger",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3799,7 +4649,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 77,
+      "l": 89
+     },
+     "kl": "V"
     },
     {
      "nr": "202",
@@ -3811,7 +4667,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 89,
+      "l": 89
+     },
+     "kl": "A"
     },
     {
      "nr": "203",
@@ -3824,7 +4686,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 197,
+      "l": 301
+     },
+     "kl": "V"
     },
     {
      "nr": "204",
@@ -3836,7 +4704,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 301,
+      "l": 301
+     },
+     "kl": "A"
     },
     {
      "nr": "200",
@@ -3849,7 +4723,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Stellung der Anlegerinnen und Anleger"
+     "sektion": "3. Abschnitt: Stellung der Anlegerinnen und Anleger",
+     "kl": "A"
     }
    ]
   },
@@ -3857,15 +4732,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Stellung der Anlegerinnen und Anleger"
+     "label": "3. Abschnitt: Stellung der Anlegerinnen und Anleger",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3882,7 +4760,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
     },
     {
      "nr": "207",
@@ -3894,7 +4778,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 561,
+      "l": 561
+     },
+     "kl": "A"
     },
     {
      "nr": "208",
@@ -3906,7 +4796,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 212,
+      "l": 212
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3914,15 +4810,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Stellung der Anlegerinnen und Anleger"
+     "label": "3. Abschnitt: Stellung der Anlegerinnen und Anleger",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3933,15 +4832,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Stellung der Anlegerinnen und Anleger"
+     "label": "3. Abschnitt: Stellung der Anlegerinnen und Anleger",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3952,15 +4854,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Offene kollektive Kapitalanlagen mit Teilvermögen"
+     "label": "4. Abschnitt: Offene kollektive Kapitalanlagen mit Teilvermögen",
+     "eId": "tit_2/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -3971,15 +4876,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Offene kollektive Kapitalanlagen mit Teilvermögen"
+     "label": "4. Abschnitt: Offene kollektive Kapitalanlagen mit Teilvermögen",
+     "eId": "tit_2/chap_4/sec_4"
     }
    ],
    "marginalie": [],
@@ -3994,7 +4902,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4002,15 +4911,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Umstrukturierung und Auflösung"
+     "label": "5. Abschnitt: Umstrukturierung und Auflösung",
+     "eId": "tit_2/chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -4027,7 +4939,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "212",
@@ -4039,7 +4952,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4047,15 +4966,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Umstrukturierung und Auflösung"
+     "label": "5. Abschnitt: Umstrukturierung und Auflösung",
+     "eId": "tit_2/chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -4072,7 +4994,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4080,15 +5008,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Umstrukturierung und Auflösung"
+     "label": "5. Abschnitt: Umstrukturierung und Auflösung",
+     "eId": "tit_2/chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -4099,11 +5030,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen"
+     "label": "1. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -4120,7 +5053,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "216",
@@ -4133,7 +5067,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 139,
+      "l": 246
+     },
+     "kl": "V"
     },
     {
      "nr": "217",
@@ -4145,7 +5085,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 246,
+      "l": 246
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4153,11 +5099,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen"
+     "label": "1. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -4174,7 +5122,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4182,11 +5136,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen"
+     "label": "1. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -4203,7 +5159,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "220",
@@ -4219,7 +5176,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "221",
@@ -4231,7 +5194,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 150,
+      "l": 150
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4239,11 +5208,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen"
+     "label": "1. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -4254,11 +5225,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen"
+     "label": "1. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -4275,7 +5248,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "223",
@@ -4287,7 +5261,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "224",
@@ -4299,7 +5274,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "225",
@@ -4311,7 +5287,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 30,
+      "l": 30
+     },
+     "kl": "A"
     },
     {
      "nr": "226",
@@ -4327,7 +5310,14 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 61,
+      "l": 61
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4335,11 +5325,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -4357,7 +5349,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 315,
+      "l": 340
+     },
+     "kl": "V"
     },
     {
      "nr": "228",
@@ -4369,7 +5367,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 340,
+      "l": 340
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4377,11 +5381,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -4392,11 +5398,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -4407,11 +5415,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -4422,11 +5432,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -4437,11 +5449,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ausländische kollektive Kapitalanlagen"
+     "label": "4. Titel: Ausländische kollektive Kapitalanlagen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Genehmigung"
+     "label": "1. Kapitel: Genehmigung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4458,7 +5472,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4466,11 +5481,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ausländische kollektive Kapitalanlagen"
+     "label": "4. Titel: Ausländische kollektive Kapitalanlagen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Genehmigung"
+     "label": "1. Kapitel: Genehmigung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4487,7 +5504,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4495,11 +5513,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ausländische kollektive Kapitalanlagen"
+     "label": "4. Titel: Ausländische kollektive Kapitalanlagen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Genehmigung"
+     "label": "1. Kapitel: Genehmigung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4516,7 +5536,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4524,11 +5545,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ausländische kollektive Kapitalanlagen"
+     "label": "4. Titel: Ausländische kollektive Kapitalanlagen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Genehmigung"
+     "label": "1. Kapitel: Genehmigung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4539,11 +5562,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ausländische kollektive Kapitalanlagen"
+     "label": "4. Titel: Ausländische kollektive Kapitalanlagen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vertreter ausländischer kollektiver Kapitalanlagen"
+     "label": "2. Kapitel: Vertreter ausländischer kollektiver Kapitalanlagen",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -4560,7 +5585,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4568,11 +5594,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ausländische kollektive Kapitalanlagen"
+     "label": "4. Titel: Ausländische kollektive Kapitalanlagen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vertreter ausländischer kollektiver Kapitalanlagen"
+     "label": "2. Kapitel: Vertreter ausländischer kollektiver Kapitalanlagen",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -4583,11 +5611,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ausländische kollektive Kapitalanlagen"
+     "label": "4. Titel: Ausländische kollektive Kapitalanlagen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vertreter ausländischer kollektiver Kapitalanlagen"
+     "label": "2. Kapitel: Vertreter ausländischer kollektiver Kapitalanlagen",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -4604,7 +5634,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "263",
@@ -4616,7 +5647,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 346,
+      "l": 346
+     },
+     "kl": "A"
     },
     {
      "nr": "264",
@@ -4628,7 +5665,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "265",
@@ -4641,7 +5679,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 155,
+      "l": 267
+     },
+     "kl": "V"
     },
     {
      "nr": "266",
@@ -4653,7 +5697,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 267,
+      "l": 267
+     },
+     "kl": "A"
     },
     {
      "nr": "267",
@@ -4665,7 +5715,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 322,
+      "l": 322
+     },
+     "kl": "A"
     },
     {
      "nr": "268",
@@ -4681,7 +5737,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 175,
+      "l": 175
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4689,11 +5751,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Prüfung und Aufsicht"
+     "label": "5. Titel: Prüfung und Aufsicht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prüfung"
+     "label": "1. Kapitel: Prüfung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -4710,7 +5774,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "269",
@@ -4723,7 +5788,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Titel: Prüfung und Aufsicht"
+     "sektion": "5. Titel: Prüfung und Aufsicht",
+     "kl": "A"
     },
     {
      "nr": "270",
@@ -4736,7 +5802,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Kapitel: Prüfung"
+     "sektion": "1. Kapitel: Prüfung",
+     "kl": "A"
     }
    ]
   },
@@ -4744,11 +5811,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Prüfung und Aufsicht"
+     "label": "5. Titel: Prüfung und Aufsicht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prüfung"
+     "label": "1. Kapitel: Prüfung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -4765,7 +5834,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "273",
@@ -4778,7 +5848,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 130,
+      "l": 157
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4786,11 +5862,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Prüfung und Aufsicht"
+     "label": "5. Titel: Prüfung und Aufsicht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prüfung"
+     "label": "1. Kapitel: Prüfung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -4805,7 +5883,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4813,11 +5892,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Prüfung und Aufsicht"
+     "label": "5. Titel: Prüfung und Aufsicht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prüfung"
+     "label": "1. Kapitel: Prüfung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -4834,7 +5915,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4842,11 +5924,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Prüfung und Aufsicht"
+     "label": "5. Titel: Prüfung und Aufsicht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufsicht"
+     "label": "2. Kapitel: Aufsicht",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -4864,7 +5948,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Kapitel: Aufsicht"
+     "sektion": "2. Kapitel: Aufsicht",
+     "kl": "A"
     }
    ]
   },
@@ -4872,11 +5957,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Prüfung und Aufsicht"
+     "label": "5. Titel: Prüfung und Aufsicht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufsicht"
+     "label": "2. Kapitel: Aufsicht",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -4893,7 +5980,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 31,
+      "l": 31
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4901,7 +5995,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "6. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [],
@@ -4916,7 +6011,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4924,7 +6020,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "6. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4941,7 +6038,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "281",
@@ -4953,7 +6051,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 336,
+      "l": 393
+     },
+     "kl": "Z"
     },
     {
      "nr": "282",
@@ -4965,7 +6069,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 375,
+      "l": 393
+     },
+     "kl": "Z"
     },
     {
      "nr": "283",
@@ -4977,7 +6087,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 393,
+      "l": 393
+     },
+     "kl": "A"
     },
     {
      "nr": "284",
@@ -4989,7 +6105,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 250,
+      "l": 250
+     },
+     "kl": "A"
     },
     {
      "nr": "285",
@@ -5001,7 +6123,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 268,
+      "l": 286
+     },
+     "kl": "Z"
     },
     {
      "nr": "286",
@@ -5013,7 +6141,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 286,
+      "l": 286
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5021,7 +6155,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "6. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5032,15 +6167,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Depotbank"
+     "label": "1. Abschnitt: Depotbank",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -5057,7 +6195,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5065,15 +6204,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Depotbank"
+     "label": "1. Abschnitt: Depotbank",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -5090,7 +6232,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "194",
@@ -5103,7 +6246,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 154
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5111,15 +6260,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -5138,7 +6290,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5146,15 +6299,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -5173,7 +6329,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5181,19 +6338,22 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Stellung der Anlegerinnen und Anleger"
+     "label": "3. Abschnitt: Stellung der Anlegerinnen und Anleger",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
-    "Verwaltung derLiquidität"
+    "Verwaltung der Liquidität"
    ],
    "fussnoten": [
     {
@@ -5206,7 +6366,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5214,15 +6375,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Stellung der Anlegerinnen und Anleger"
+     "label": "3. Abschnitt: Stellung der Anlegerinnen und Anleger",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -5239,7 +6403,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5247,15 +6412,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Umstrukturierung und Auflösung"
+     "label": "5. Abschnitt: Umstrukturierung und Auflösung",
+     "eId": "tit_2/chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -5272,7 +6440,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5280,11 +6449,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -5301,7 +6472,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5309,11 +6481,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Titel: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit festem Kapital",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -5330,7 +6504,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5338,11 +6513,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_3_a/chap_1"
     }
    ],
    "marginalie": [
@@ -5360,7 +6537,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Titel: Limited Qualified Investor Fund"
+     "sektion": "3a. Titel: Limited Qualified Investor Fund",
+     "kl": "A"
     }
    ]
   },
@@ -5368,11 +6546,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_3_a/chap_1"
     }
    ],
    "marginalie": [
@@ -5390,7 +6570,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 87,
+      "l": 149
+     },
+     "kl": "V"
     },
     {
      "nr": "233",
@@ -5402,7 +6588,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 144,
+      "l": 145
+     },
+     "kl": "U"
     }
    ]
   },
@@ -5410,11 +6602,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_3_a/chap_1"
     }
    ],
    "marginalie": [
@@ -5425,26 +6619,30 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_3_a/chap_1"
     }
    ],
    "marginalie": [
-    "Informationspflichten beiStatuswechsel"
+    "Informationspflichten bei Statuswechsel"
    ]
   },
   "126_e": {
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_3_a/chap_1"
     }
    ],
    "marginalie": [
@@ -5455,11 +6653,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_3_a/chap_1"
     }
    ],
    "marginalie": [
@@ -5470,11 +6670,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_3_a/chap_1"
     }
    ],
    "marginalie": [
@@ -5485,11 +6687,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_3_a/chap_1"
     }
    ],
    "marginalie": [
@@ -5500,11 +6704,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Besondere Bestimmungen für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV"
+     "label": "2. Kapitel: Besondere Bestimmungen für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV",
+     "eId": "tit_3_a/chap_2"
     }
    ],
    "marginalie": [
@@ -5515,11 +6721,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Besondere Bestimmungen für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV"
+     "label": "2. Kapitel: Besondere Bestimmungen für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV",
+     "eId": "tit_3_a/chap_2"
     }
    ],
    "marginalie": [
@@ -5530,11 +6738,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Besondere Bestimmungen für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV"
+     "label": "2. Kapitel: Besondere Bestimmungen für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV",
+     "eId": "tit_3_a/chap_2"
     }
    ],
    "marginalie": [
@@ -5545,11 +6755,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Besondere Bestimmungen für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV"
+     "label": "2. Kapitel: Besondere Bestimmungen für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV",
+     "eId": "tit_3_a/chap_2"
     }
    ],
    "marginalie": [
@@ -5560,11 +6772,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Besondere Bestimmungen für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV"
+     "label": "2. Kapitel: Besondere Bestimmungen für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV",
+     "eId": "tit_3_a/chap_2"
     }
    ],
    "marginalie": [
@@ -5575,11 +6789,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Besondere Bestimmungen für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV"
+     "label": "2. Kapitel: Besondere Bestimmungen für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV",
+     "eId": "tit_3_a/chap_2"
     }
    ],
    "marginalie": [
@@ -5590,15 +6806,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anlagevorschriften"
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anlagebeschränkungen und Anlagetechniken für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV"
+     "label": "1. Abschnitt: Anlagebeschränkungen und Anlagetechniken für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV",
+     "eId": "tit_3_a/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5609,15 +6828,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anlagevorschriften"
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anlagebeschränkungen und Anlagetechniken für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV"
+     "label": "1. Abschnitt: Anlagebeschränkungen und Anlagetechniken für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV",
+     "eId": "tit_3_a/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5635,7 +6857,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 26,
+      "l": 267
+     },
+     "kl": "V"
     },
     {
      "nr": "235",
@@ -5647,7 +6875,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 60,
+      "l": 267
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -5655,15 +6889,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anlagevorschriften"
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anlagebeschränkungen und Anlagetechniken für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV"
+     "label": "1. Abschnitt: Anlagebeschränkungen und Anlagetechniken für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV",
+     "eId": "tit_3_a/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5674,15 +6911,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anlagevorschriften"
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anlagebeschränkungen und Anlagetechniken für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV"
+     "label": "1. Abschnitt: Anlagebeschränkungen und Anlagetechniken für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV",
+     "eId": "tit_3_a/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5693,15 +6933,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anlagevorschriften"
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anlagebeschränkungen und Anlagetechniken für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV"
+     "label": "1. Abschnitt: Anlagebeschränkungen und Anlagetechniken für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV",
+     "eId": "tit_3_a/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5719,7 +6962,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 27,
+      "l": 199
+     },
+     "kl": "V"
     },
     {
      "nr": "237",
@@ -5731,7 +6980,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 61,
+      "l": 199
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -5739,15 +6994,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anlagevorschriften"
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusätzliche Vorschriften für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV mit Immobilienanlagen"
+     "label": "2. Abschnitt: Zusätzliche Vorschriften für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV mit Immobilienanlagen",
+     "eId": "tit_3_a/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5758,15 +7016,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anlagevorschriften"
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusätzliche Vorschriften für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV mit Immobilienanlagen"
+     "label": "2. Abschnitt: Zusätzliche Vorschriften für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV mit Immobilienanlagen",
+     "eId": "tit_3_a/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5784,7 +7045,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 108,
+      "l": 210
+     },
+     "kl": "V"
     }
    ]
   },
@@ -5792,15 +7060,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anlagevorschriften"
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusätzliche Vorschriften für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV mit Immobilienanlagen"
+     "label": "2. Abschnitt: Zusätzliche Vorschriften für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV mit Immobilienanlagen",
+     "eId": "tit_3_a/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5811,15 +7082,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anlagevorschriften"
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusätzliche Vorschriften für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV mit Immobilienanlagen"
+     "label": "2. Abschnitt: Zusätzliche Vorschriften für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV mit Immobilienanlagen",
+     "eId": "tit_3_a/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5830,15 +7104,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anlagevorschriften"
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusätzliche Vorschriften für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV mit Immobilienanlagen"
+     "label": "2. Abschnitt: Zusätzliche Vorschriften für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV mit Immobilienanlagen",
+     "eId": "tit_3_a/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5849,15 +7126,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anlagevorschriften"
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusätzliche Vorschriften für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV mit Immobilienanlagen"
+     "label": "2. Abschnitt: Zusätzliche Vorschriften für L-QIF in der Rechtsform des vertraglichen Anlagefonds oder der SICAV mit Immobilienanlagen",
+     "eId": "tit_3_a/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5868,15 +7148,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Prüfung und Prüfberichte"
+     "label": "5. Kapitel: Prüfung und Prüfberichte",
+     "eId": "tit_3_a/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Prüfberichte"
+     "label": "2. Abschnitt: Prüfberichte",
+     "eId": "tit_3_a/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -5887,15 +7170,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anlagevorschriften"
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anlagevorschriften für L-QIF in der Rechtsform der KmGK"
+     "label": "3. Abschnitt: Anlagevorschriften für L-QIF in der Rechtsform der KmGK",
+     "eId": "tit_3_a/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -5906,15 +7192,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Prüfung und Prüfberichte"
+     "label": "5. Kapitel: Prüfung und Prüfberichte",
+     "eId": "tit_3_a/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Prüfberichte"
+     "label": "2. Abschnitt: Prüfberichte",
+     "eId": "tit_3_a/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -5933,7 +7222,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 68,
+      "l": 110
+     },
+     "kl": "V"
     }
    ]
   },
@@ -5941,15 +7236,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Prüfung und Prüfberichte"
+     "label": "5. Kapitel: Prüfung und Prüfberichte",
+     "eId": "tit_3_a/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Prüfberichte"
+     "label": "2. Abschnitt: Prüfberichte",
+     "eId": "tit_3_a/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -5960,15 +7258,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Prüfung und Prüfberichte"
+     "label": "5. Kapitel: Prüfung und Prüfberichte",
+     "eId": "tit_3_a/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Prüfberichte"
+     "label": "2. Abschnitt: Prüfberichte",
+     "eId": "tit_3_a/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -5979,15 +7280,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Prüfung und Prüfberichte"
+     "label": "5. Kapitel: Prüfung und Prüfberichte",
+     "eId": "tit_3_a/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Prüfung"
+     "label": "1. Abschnitt: Prüfung",
+     "eId": "tit_3_a/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -6005,7 +7309,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 5,
+      "o": 122,
+      "l": 169
+     },
+     "kl": "V"
     },
     {
      "nr": "243",
@@ -6017,7 +7328,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 5,
+      "o": 156,
+      "l": 169
+     },
+     "kl": "Z"
     },
     {
      "nr": "244",
@@ -6030,7 +7348,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 118,
+      "l": 130
+     },
+     "kl": "V"
     },
     {
      "nr": "245",
@@ -6043,7 +7367,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 186,
+      "l": 221
+     },
+     "kl": "V"
     },
     {
      "nr": "246",
@@ -6059,7 +7389,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 220,
+      "l": 221
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -6067,11 +7403,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "4. Kapitel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3_a/chap_4"
     }
    ],
    "marginalie": [
@@ -6089,7 +7427,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 110,
+      "l": 207
+     },
+     "kl": "V"
     },
     {
      "nr": "240",
@@ -6105,7 +7449,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 144,
+      "l": 207
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -6113,11 +7463,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "4. Kapitel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3_a/chap_4"
     }
    ],
    "marginalie": [
@@ -6128,15 +7480,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Prüfung und Prüfberichte"
+     "label": "5. Kapitel: Prüfung und Prüfberichte",
+     "eId": "tit_3_a/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Prüfung"
+     "label": "1. Abschnitt: Prüfung",
+     "eId": "tit_3_a/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -6154,7 +7509,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 120,
+      "l": 121
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6162,15 +7523,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Prüfung und Prüfberichte"
+     "label": "5. Kapitel: Prüfung und Prüfberichte",
+     "eId": "tit_3_a/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Prüfung"
+     "label": "1. Abschnitt: Prüfung",
+     "eId": "tit_3_a/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -6181,15 +7545,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anlagevorschriften"
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anlagevorschriften für L-QIF in der Rechtsform der KmGK"
+     "label": "3. Abschnitt: Anlagevorschriften für L-QIF in der Rechtsform der KmGK",
+     "eId": "tit_3_a/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6200,15 +7567,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Titel: Limited Qualified Investor Fund"
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Prüfung und Prüfberichte"
+     "label": "5. Kapitel: Prüfung und Prüfberichte",
+     "eId": "tit_3_a/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Prüfberichte"
+     "label": "2. Abschnitt: Prüfberichte",
+     "eId": "tit_3_a/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -6226,7 +7596,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 132,
+      "l": 142
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6234,11 +7610,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ausländische kollektive Kapitalanlagen"
+     "label": "4. Titel: Ausländische kollektive Kapitalanlagen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Genehmigung"
+     "label": "1. Kapitel: Genehmigung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -6255,7 +7633,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6263,11 +7642,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ausländische kollektive Kapitalanlagen"
+     "label": "4. Titel: Ausländische kollektive Kapitalanlagen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Genehmigung"
+     "label": "1. Kapitel: Genehmigung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -6284,7 +7665,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6292,11 +7674,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ausländische kollektive Kapitalanlagen"
+     "label": "4. Titel: Ausländische kollektive Kapitalanlagen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Genehmigung"
+     "label": "1. Kapitel: Genehmigung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -6313,7 +7697,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "254",
@@ -6325,7 +7710,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 136,
+      "l": 136
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6333,11 +7724,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ausländische kollektive Kapitalanlagen"
+     "label": "4. Titel: Ausländische kollektive Kapitalanlagen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Genehmigung"
+     "label": "1. Kapitel: Genehmigung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -6354,7 +7747,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "257",
@@ -6368,7 +7762,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 160,
+      "l": 388
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6376,11 +7776,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ausländische kollektive Kapitalanlagen"
+     "label": "4. Titel: Ausländische kollektive Kapitalanlagen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Genehmigung"
+     "label": "1. Kapitel: Genehmigung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -6397,7 +7799,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "259",
@@ -6411,7 +7814,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 92,
+      "l": 93
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6419,15 +7828,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -6444,7 +7856,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -6456,7 +7869,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 98,
+      "l": 98
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6464,15 +7883,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -6489,7 +7911,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -6501,7 +7924,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -6509,15 +7933,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -6534,7 +7961,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6542,15 +7970,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -6567,7 +7998,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6575,11 +8007,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ausländische kollektive Kapitalanlagen"
+     "label": "4. Titel: Ausländische kollektive Kapitalanlagen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vertreter ausländischer kollektiver Kapitalanlagen"
+     "label": "2. Kapitel: Vertreter ausländischer kollektiver Kapitalanlagen",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -6600,7 +8034,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6608,11 +8043,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Prüfung und Aufsicht"
+     "label": "5. Titel: Prüfung und Aufsicht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prüfung"
+     "label": "1. Kapitel: Prüfung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -6627,7 +8064,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6635,15 +8073,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemein"
+     "label": "1. Abschnitt: Allgemein",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -6660,7 +8101,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -6672,7 +8114,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -6685,7 +8128,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 64,
+      "l": 65
+     },
+     "kl": "V"
     }
    ]
   },
@@ -6693,7 +8143,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "6. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [],
@@ -6712,7 +8163,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6720,7 +8172,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "6. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [],
@@ -6739,7 +8192,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6747,7 +8201,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "6. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -6764,7 +8219,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6772,11 +8228,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zweck und Geltungsbereich"
+     "label": "1. Kapitel: Zweck und Geltungsbereich",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6788,7 +8246,8 @@
      "text": "Ursprünglich Art. 1.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6796,11 +8255,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zweck und Geltungsbereich"
+     "label": "1. Kapitel: Zweck und Geltungsbereich",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6821,7 +8282,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -6833,7 +8295,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 167,
+      "l": 167
+     },
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -6845,7 +8313,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 104,
+      "l": 262
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6853,11 +8327,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zweck und Geltungsbereich"
+     "label": "1. Kapitel: Zweck und Geltungsbereich",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [],
@@ -6876,7 +8352,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6884,15 +8361,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -6911,7 +8391,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6919,15 +8400,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -6942,7 +8426,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6950,15 +8435,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -6977,7 +8465,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6985,15 +8474,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bewilligung und Genehmigung"
+     "label": "3. Kapitel: Bewilligung und Genehmigung",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -7012,7 +8504,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7020,15 +8513,17 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Wahrung der Anlegerinteressen"
+     "label": "4. Kapitel: Wahrung der Anlegerinteressen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
-    "Bestmögliche Ausführung vonEffektenhandelsgeschäften und sonstigen Transaktionen"
+    "Bestmögliche Ausführung von Effektenhandelsgeschäften und sonstigen Transaktionen"
    ],
    "fussnoten": [
     {
@@ -7041,7 +8536,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7049,11 +8545,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Wahrung der Anlegerinteressen"
+     "label": "4. Kapitel: Wahrung der Anlegerinteressen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -7070,7 +8568,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "77",
@@ -7082,7 +8581,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 219,
+      "l": 219
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7090,11 +8595,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Wahrung der Anlegerinteressen"
+     "label": "4. Kapitel: Wahrung der Anlegerinteressen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -7115,7 +8622,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7123,11 +8631,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Wahrung der Anlegerinteressen"
+     "label": "4. Kapitel: Wahrung der Anlegerinteressen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [],
@@ -7146,7 +8656,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7154,15 +8665,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vertraglicher Anlagefonds"
+     "label": "1. Kapitel: Vertraglicher Anlagefonds",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Fondsvertrag"
+     "label": "2. Abschnitt: Fondsvertrag",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -7179,7 +8693,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -7191,7 +8706,8 @@
       }
      ],
      "absatz": "1",
-     "item": "n"
+     "item": "n",
+     "kl": "A"
     },
     {
      "nr": "86",
@@ -7204,7 +8720,14 @@
       }
      ],
      "absatz": "1",
-     "item": "n"
+     "item": "n",
+     "pos": {
+      "b": 0,
+      "it": 13,
+      "o": 119,
+      "l": 192
+     },
+     "kl": "V"
     },
     {
      "nr": "87",
@@ -7216,7 +8739,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 266,
+      "l": 266
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7224,11 +8753,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zweck und Geltungsbereich"
+     "label": "1. Kapitel: Zweck und Geltungsbereich",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [],
@@ -7243,7 +8774,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7251,15 +8783,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vertraglicher Anlagefonds"
+     "label": "1. Kapitel: Vertraglicher Anlagefonds",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Fondsvertrag"
+     "label": "2. Abschnitt: Fondsvertrag",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -7274,7 +8809,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7282,15 +8818,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -7311,7 +8850,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "136",
@@ -7325,7 +8865,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 83,
+      "l": 95
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7333,15 +8879,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital"
+     "label": "2. Kapitel: Investmentgesellschaft mit variablem Kapital",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -7358,7 +8907,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "138",
@@ -7370,7 +8920,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 167,
+      "l": 167
+     },
+     "kl": "A"
     },
     {
      "nr": "139",
@@ -7382,7 +8938,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 149,
+      "l": 149
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7390,11 +8952,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kollektive Kapitalanlagen"
+     "label": "2. Kapitel: Kollektive Kapitalanlagen",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -7415,7 +8979,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7423,15 +8988,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Effektenfonds"
+     "label": "2. Abschnitt: Effektenfonds",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -7448,7 +9016,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7456,15 +9025,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Offene kollektive Kapitalanlagen"
+     "label": "2. Titel: Offene kollektive Kapitalanlagen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften"
+     "label": "3. Kapitel: Arten der offenen kollektiven Kapitalanlagen und Anlagevorschriften",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Immobilienfonds"
+     "label": "3. Abschnitt: Immobilienfonds",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -7481,7 +9053,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

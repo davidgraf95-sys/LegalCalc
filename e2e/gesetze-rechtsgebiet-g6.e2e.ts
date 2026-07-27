@@ -13,16 +13,23 @@ function fehlerSammeln(page: Page): string[] {
 }
 
 test.describe('/gesetze — Rechtsgebiets-Sicht (G6)', () => {
-  test('vierte Tür öffnet Querschnitts-Themen + Grundgerüst, Deep-Link, Rückweg', async ({ page }) => {
+  test('Rechtsgebiets-Sicht öffnet Querschnitts-Themen + Grundgerüst, Deep-Link, Rückweg', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.goto('/gesetze')
     const main = page.getByRole('main')
 
-    // Der Landeplatz trägt die vierte Tür NEBEN den drei Ebenen-Kacheln.
-    const tuer = main.getByRole('button', { name: /Nach Rechtsgebiet & Thema/ })
-    await expect(tuer).toBeVisible()
-    await tuer.click()
-    await expect(page).toHaveURL(/ansicht=rechtsgebiet/)
+    // Y-A (§11.8, David 16.7.2026 Auswahl-Dialog: JA — deklarierte Anpassung des
+    // Einstiegs-Pfads): die frühere 4. Landeplatz-Kachel ist zum reinen
+    // Gliederungs-Modus demoted; der Zugang lebt im bestehenden A15-Umschalter
+    // (Bund-Säule → «Rechtsgebiet»). Alle inhaltlichen Assertions der Sicht
+    // bleiben UNVERÄNDERT; die Erreichbarkeits-Pins der Alt-URL
+    // (?ansicht=rechtsgebiet — Overflow-Test unten + gesetze-uebersicht-u
+    // «G6-Tür bleibt erreichbar») bleiben UNANGEPASST.
+    await main.getByRole('button', { name: /Bundesrecht/ }).click()
+    await main.getByRole('group', { name: 'Gliederung' }).getByRole('button', { name: 'Rechtsgebiet' }).click()
+    // IA-5 (§11.4 Ziff. 2, deklarierte URL-FORM-Anpassung): EIN kanonischer
+    // Zustand `?gliederung=rechtsgebiet` (A15-Mechanik) statt `?ansicht=…`.
+    await expect(page).toHaveURL(/gliederung=rechtsgebiet/)
 
     // Beide Ebenen der Sicht sind da: das kuratierte Delta + das Grundgerüst.
     await expect(main.getByRole('heading', { name: 'Querschnitts-Themen' })).toBeVisible()
@@ -49,9 +56,11 @@ test.describe('/gesetze — Rechtsgebiets-Sicht (G6)', () => {
     await main.getByText('Privatrecht', { exact: true }).first().click()
     await expect(main.getByRole('link', { name: /Obligationenrecht/ }).first()).toBeVisible()
 
-    // Rückweg zum Landeplatz.
+    // Rückweg zum Landeplatz. (IA-5, deklarierte URL-FORM-Anpassung: der Zustand
+    // liegt jetzt kanonisch in `?ebene=…&gliederung=…` — «zurück» heisst: keine
+    // Säule mehr gewählt; die Gliederungs-Wahl bleibt als Deep-Link-Parameter.)
     await main.getByRole('button', { name: '← Übersicht' }).click()
-    await expect(page).not.toHaveURL(/ansicht=rechtsgebiet/)
+    await expect(page).not.toHaveURL(/ebene=/)
     await expect(main.getByRole('button', { name: /Bundesrecht/ })).toBeVisible()
 
     expect(fehler).toEqual([])

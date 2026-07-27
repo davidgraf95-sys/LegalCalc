@@ -160,7 +160,29 @@ test.describe('IA-1 · Dedup + Ergebnis-Kopfzeile (§11.3 Zeile 10)', () => {
     // sr-only Live-Region trägt denselben Text → gezielt die SICHTBARE (aria-hidden)
     // Kopfzeile ansteuern.
     const kopf = page.locator('p[aria-hidden="true"]', { hasText: /\d+ Treffer, davon .*(Erlass|Artikel)/ })
-    await expect(kopf).toBeVisible()
+    // ── Lade-Latte 26.7.2026 (deklarierte Test-Änderung §6.3) ────────────────────
+    // Diese Latte ist eine LADE-Synchronisation, kein Interaktions-Prüfschritt:
+    // die Kopfzeile wird erst sichtbar, wenn JEDE Suchgruppe fertig geladen ist
+    // (`SuchResultate.tsx` hält den bereits reservierten Slot solange auf
+    // `invisible`) — also Artikel-Index UND alle Erlass-Manifeste, eine strikt
+    // stärkere Bedingung als der «Sprung»-Treffer, auf den `sprungWalk` oben mit
+    // 20 s wartet. Der Default von 10 s (playwright.config.ts) ist der Wert für
+    // INTERAKTIONS-Assertions und dafür strukturell zu knapp.
+    //
+    // Belegter Anlass: auf PR-CI (Lauf 30209953784, Shard 5/8) riss die Latte 3×
+    // am 10-s-Default, lokal braucht sie 5.3 s. Gegengemessen 26.7.2026 auf einem
+    // 4-vCPU-Container @2.1 GHz (CI-Zweig, workers=1, 4 Läufe, alle grün):
+    // 12 189 · 11 998 · 11 364 · 11 413 ms — die Wartezeit liegt auf langsamer
+    // Hardware also SCHON OHNE 2-vCPU-Contention über dem Default. Der 2-vCPU-
+    // Runner liegt darüber; mit dem für dieses Repo gemessenen CI-Faktor (~3.9,
+    // Beleg im Kopf von playwright.config.ts) projizieren die lokalen 5.3 s auf
+    // ~21 s. 30 s deckt das mit ~40 % Marge und bleibt weit im 90-s-Datei-Budget.
+    //
+    // Die PRÜFAUSSAGE ist unberührt (§6.3): geprüft wird unverändert, dass die
+    // Kopfzeile mit der festen Aufschlüsselung «n Treffer, davon x Erlasse /
+    // y Artikel» sichtbar wird — nur die Frist entspricht jetzt dem Ladezustand,
+    // auf den sie tatsächlich wartet.
+    await expect(kopf).toBeVisible({ timeout: 30_000 })
   })
 })
 

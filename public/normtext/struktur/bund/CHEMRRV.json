@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "814.81",
   "titel": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen",
@@ -39,7 +39,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -52,7 +53,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -65,7 +67,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -78,7 +81,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "5",
@@ -91,7 +95,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "6",
@@ -104,7 +109,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "7",
@@ -116,7 +122,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -125,7 +132,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -142,7 +150,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -155,7 +164,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 41,
+      "l": 42
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -167,7 +183,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -180,7 +197,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 32,
+      "l": 67
+     },
+     "kl": "V"
     },
     {
      "nr": "12",
@@ -193,7 +217,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 34,
+      "l": 126
+     },
+     "kl": "V"
     },
     {
      "nr": "13",
@@ -205,7 +236,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -213,7 +245,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -231,7 +264,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 96,
+      "l": 96
+     },
+     "kl": "A"
     }
    ]
   },
@@ -239,11 +278,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Einschränkungen, Verbote und Ausnahmebewilligungen"
+     "label": "1. Abschnitt: Einschränkungen, Verbote und Ausnahmebewilligungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": []
@@ -252,11 +293,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anwendungsbewilligungen"
+     "label": "2. Abschnitt: Anwendungsbewilligungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -273,7 +316,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -285,7 +329,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -301,7 +346,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -309,11 +355,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anwendungsbewilligungen"
+     "label": "2. Abschnitt: Anwendungsbewilligungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -330,7 +378,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 208,
+      "l": 208
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -342,7 +396,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 78,
+      "l": 78
+     },
+     "kl": "A"
     }
    ]
   },
@@ -350,11 +411,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anwendungsbewilligungen"
+     "label": "2. Abschnitt: Anwendungsbewilligungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -371,7 +434,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -379,11 +443,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -400,7 +466,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -412,7 +479,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 170,
+      "l": 170
+     },
+     "kl": "A"
     }
    ]
   },
@@ -420,11 +493,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -441,7 +516,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 222,
+      "l": 222
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -453,7 +534,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 314,
+      "l": 314
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -465,7 +552,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 241,
+      "l": 241
+     },
+     "kl": "A"
     }
    ]
   },
@@ -473,11 +566,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -494,7 +589,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -502,11 +598,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -523,7 +621,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -531,11 +630,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -552,7 +653,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 262,
+      "l": 262
+     },
+     "kl": "A"
     }
    ]
   },
@@ -560,11 +667,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -581,7 +690,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 292,
+      "l": 292
+     },
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -593,7 +708,14 @@
       }
      ],
      "absatz": "6",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 5,
+      "it": 2,
+      "o": 159,
+      "l": 159
+     },
+     "kl": "A"
     }
    ]
   },
@@ -601,7 +723,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -612,7 +735,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -629,7 +753,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -637,7 +762,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -648,7 +774,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -666,7 +793,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 101,
+      "l": 102
+     },
+     "kl": "V"
     },
     {
      "nr": "39",
@@ -679,7 +812,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 182,
+      "l": 204
+     },
+     "kl": "V"
     },
     {
      "nr": "40",
@@ -691,7 +830,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 204,
+      "l": 204
+     },
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -704,7 +849,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 84,
+      "l": 96
+     },
+     "kl": "V"
     },
     {
      "nr": "42",
@@ -716,7 +867,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 96,
+      "l": 96
+     },
+     "kl": "A"
     }
    ]
   },
@@ -724,7 +881,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -741,7 +899,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 164,
+      "l": 164
+     },
+     "kl": "A"
     }
    ]
   },
@@ -749,7 +913,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -766,7 +931,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 499,
+      "l": 499
+     },
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -778,7 +949,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 434,
+      "l": 434
+     },
+     "kl": "A"
     }
    ]
   },
@@ -786,7 +963,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -797,7 +975,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -814,7 +993,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -822,7 +1002,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -839,7 +1020,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -853,7 +1035,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 140,
+      "l": 141
+     },
+     "kl": "V"
     }
    ]
   },
@@ -861,7 +1049,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -880,7 +1069,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 190,
+      "l": 191
+     },
+     "kl": "V"
     }
    ]
   },
@@ -888,7 +1083,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1009,7 +1205,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 73,
+      "l": 142
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1017,7 +1219,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1028,11 +1231,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1049,7 +1254,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1057,7 +1263,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1078,7 +1285,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -1091,7 +1299,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 270,
+      "l": 368
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1099,11 +1313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Besondere Kennzeichnungen"
+     "label": "1a. Abschnitt: Besondere Kennzeichnungen",
+     "eId": "chap_2/sec_1_a"
     }
    ],
    "marginalie": [],
@@ -1119,7 +1335,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1a. Abschnitt: Besondere Kennzeichnungen"
+     "sektion": "1a. Abschnitt: Besondere Kennzeichnungen",
+     "kl": "A"
     }
    ]
   },
@@ -1127,11 +1344,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anwendungsbewilligungen"
+     "label": "2. Abschnitt: Anwendungsbewilligungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1148,7 +1367,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1156,11 +1376,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1177,7 +1399,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -1190,7 +1413,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 205,
+      "l": 499
+     },
+     "kl": "V"
     },
     {
      "nr": "30",
@@ -1203,7 +1432,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 416,
+      "l": 499
+     },
+     "kl": "V"
     }
    ]
   },

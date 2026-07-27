@@ -42,7 +42,7 @@ erwarte "/api/suche" "$PROD/api/suche?q=vertrag&limit=1" '^(200|503)$' 'applicat
 erwarte "normtext/register.json"        "$PROD/normtext/register.json"        '^200$' 'application/json'
 erwarte "rechtsprechung/register.json"  "$PROD/rechtsprechung/register.json"  '^200$' 'application/json'
 erwarte "materialien/register.json"     "$PROD/materialien/register.json"     '^200$' 'application/json'
-erwarte "such-index/artikel-bund.json"  "$PROD/such-index/artikel-bund.json"  '^200$' 'application/json'
+erwarte "such-index/artikel.json"       "$PROD/such-index/artikel.json"       '^200$' 'application/json'
 
 # Soft-404-Signal (O-1.4): ein fehlender Daten-Pfad MUSS 404 geben, nicht die
 # 200-HTML-Shell. Deckt das negative Rewrite-Muster in vercel.json ab.

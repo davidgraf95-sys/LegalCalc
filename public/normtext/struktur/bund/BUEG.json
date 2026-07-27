@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "141.0",
   "titel": "Bundesgesetz über das Schweizer Bürgerrecht",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -45,7 +46,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -54,11 +56,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen"
+     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb von Gesetzes wegen"
+     "label": "1. Kapitel: Erwerb von Gesetzes wegen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -69,11 +73,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen"
+     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb von Gesetzes wegen"
+     "label": "1. Kapitel: Erwerb von Gesetzes wegen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -84,11 +90,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen"
+     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb von Gesetzes wegen"
+     "label": "1. Kapitel: Erwerb von Gesetzes wegen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -99,11 +107,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen"
+     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb von Gesetzes wegen"
+     "label": "1. Kapitel: Erwerb von Gesetzes wegen",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -114,11 +124,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen"
+     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verlust von Gesetzes wegen"
+     "label": "2. Kapitel: Verlust von Gesetzes wegen",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -129,11 +141,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen"
+     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verlust von Gesetzes wegen"
+     "label": "2. Kapitel: Verlust von Gesetzes wegen",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -144,11 +158,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen"
+     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verlust von Gesetzes wegen"
+     "label": "2. Kapitel: Verlust von Gesetzes wegen",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -159,11 +175,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen"
+     "label": "1. Titel: Erwerb und Verlust von Gesetzes wegen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verlust von Gesetzes wegen"
+     "label": "2. Kapitel: Verlust von Gesetzes wegen",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -174,15 +192,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ordentliche Einbürgerung"
+     "label": "1. Abschnitt: Ordentliche Einbürgerung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -193,15 +214,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ordentliche Einbürgerung"
+     "label": "1. Abschnitt: Ordentliche Einbürgerung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -212,15 +236,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ordentliche Einbürgerung"
+     "label": "1. Abschnitt: Ordentliche Einbürgerung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -231,15 +258,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ordentliche Einbürgerung"
+     "label": "1. Abschnitt: Ordentliche Einbürgerung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -250,15 +280,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ordentliche Einbürgerung"
+     "label": "1. Abschnitt: Ordentliche Einbürgerung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -269,15 +302,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ordentliche Einbürgerung"
+     "label": "1. Abschnitt: Ordentliche Einbürgerung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -288,15 +324,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ordentliche Einbürgerung"
+     "label": "1. Abschnitt: Ordentliche Einbürgerung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -307,15 +346,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ordentliche Einbürgerung"
+     "label": "1. Abschnitt: Ordentliche Einbürgerung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -326,15 +368,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ordentliche Einbürgerung"
+     "label": "1. Abschnitt: Ordentliche Einbürgerung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -345,15 +390,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ordentliche Einbürgerung"
+     "label": "1. Abschnitt: Ordentliche Einbürgerung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -370,7 +418,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 269,
+      "l": 269
+     },
+     "kl": "A"
     }
    ]
   },
@@ -378,15 +432,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ordentliche Einbürgerung"
+     "label": "1. Abschnitt: Ordentliche Einbürgerung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -397,15 +454,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Erleichterte Einbürgerung"
+     "label": "2. Abschnitt: Erleichterte Einbürgerung",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -416,15 +476,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Erleichterte Einbürgerung"
+     "label": "2. Abschnitt: Erleichterte Einbürgerung",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -435,15 +498,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Erleichterte Einbürgerung"
+     "label": "2. Abschnitt: Erleichterte Einbürgerung",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -454,15 +520,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Erleichterte Einbürgerung"
+     "label": "2. Abschnitt: Erleichterte Einbürgerung",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -473,15 +542,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Erleichterte Einbürgerung"
+     "label": "2. Abschnitt: Erleichterte Einbürgerung",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -492,15 +564,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Erleichterte Einbürgerung"
+     "label": "2. Abschnitt: Erleichterte Einbürgerung",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -511,15 +586,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Wiedereinbürgerung"
+     "label": "3. Abschnitt: Wiedereinbürgerung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -530,15 +608,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Wiedereinbürgerung"
+     "label": "3. Abschnitt: Wiedereinbürgerung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -549,15 +630,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Wiedereinbürgerung"
+     "label": "3. Abschnitt: Wiedereinbürgerung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -568,15 +652,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Wiedereinbürgerung"
+     "label": "3. Abschnitt: Wiedereinbürgerung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -587,15 +674,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -606,15 +696,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -625,15 +718,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -651,7 +747,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 111,
+      "l": 112
+     },
+     "kl": "V"
     }
    ]
   },
@@ -659,15 +761,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -678,15 +783,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -697,15 +805,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -716,15 +827,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -735,15 +849,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verlust durch behördlichen Beschluss"
+     "label": "2. Kapitel: Verlust durch behördlichen Beschluss",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Entlassung"
+     "label": "1. Abschnitt: Entlassung",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -754,15 +871,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verlust durch behördlichen Beschluss"
+     "label": "2. Kapitel: Verlust durch behördlichen Beschluss",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Entlassung"
+     "label": "1. Abschnitt: Entlassung",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -773,15 +893,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verlust durch behördlichen Beschluss"
+     "label": "2. Kapitel: Verlust durch behördlichen Beschluss",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Entlassung"
+     "label": "1. Abschnitt: Entlassung",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -792,15 +915,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verlust durch behördlichen Beschluss"
+     "label": "2. Kapitel: Verlust durch behördlichen Beschluss",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Entlassung"
+     "label": "1. Abschnitt: Entlassung",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -811,15 +937,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verlust durch behördlichen Beschluss"
+     "label": "2. Kapitel: Verlust durch behördlichen Beschluss",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Entlassung"
+     "label": "1. Abschnitt: Entlassung",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -830,15 +959,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verlust durch behördlichen Beschluss"
+     "label": "2. Kapitel: Verlust durch behördlichen Beschluss",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Entzug"
+     "label": "2. Abschnitt: Entzug",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": []
@@ -847,7 +979,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Feststellungsverfahren"
+     "label": "3. Titel: Feststellungsverfahren",
+     "eId": "tit_3"
     }
    ],
    "marginalie": []
@@ -856,7 +989,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Bearbeitung von Personendaten und Amtshilfe"
+     "label": "4. Titel: Bearbeitung von Personendaten und Amtshilfe",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -877,7 +1011,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -890,7 +1025,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 535,
+      "l": 603
+     },
+     "kl": "V"
     }
    ]
   },
@@ -898,7 +1039,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Bearbeitung von Personendaten und Amtshilfe"
+     "label": "4. Titel: Bearbeitung von Personendaten und Amtshilfe",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -909,7 +1051,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Rechtsschutz"
+     "label": "5. Titel: Rechtsschutz",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -920,7 +1063,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Rechtsschutz"
+     "label": "5. Titel: Rechtsschutz",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -931,11 +1075,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug sowie Aufhebung und Änderung anderer Erlasse"
+     "label": "1. Kapitel: Vollzug sowie Aufhebung und Änderung anderer Erlasse",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -946,26 +1092,30 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug sowie Aufhebung und Änderung anderer Erlasse"
+     "label": "1. Kapitel: Vollzug sowie Aufhebung und Änderung anderer Erlasse",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
-    "Aufhebung undÄnderung anderer Erlasse"
+    "Aufhebung und Änderung anderer Erlasse"
    ]
   },
   "50": {
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsbestimmungen"
+     "label": "2. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -976,11 +1126,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsbestimmungen"
+     "label": "2. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -991,11 +1143,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Referendum und Inkrafttreten"
+     "label": "3. Kapitel: Referendum und Inkrafttreten",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [],
@@ -1005,7 +1159,8 @@
      "text": "BRB vom 17. Juni 2016",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1013,15 +1168,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss"
+     "label": "2. Titel: Erwerb und Verlust durch behördlichen Beschluss",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss"
+     "label": "1. Kapitel: Erwerb durch behördlichen Beschluss",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Erleichterte Einbürgerung"
+     "label": "2. Abschnitt: Erleichterte Einbürgerung",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1046,7 +1204,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1054,11 +1213,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsbestimmungen"
+     "label": "2. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -1083,7 +1244,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -1096,7 +1258,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 353,
+      "l": 353
+     },
+     "kl": "U"
     }
    ]
   },

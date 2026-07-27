@@ -1419,13 +1419,13 @@ als Opus-Einheiten; Fable orchestriert nur.
 | **A19 ✅ GEBAUT 10.7.** | Fussnoten VZG + Präambel-Extraktor (FN-1+Drop-Fix+FN-2, `feat/v2-fn1-fn2`; Drop-Fix breiter als geplant → Schlusstitel-Fussnoten korpusweit recovert, «OR/ZGB byte-gleich» galt NICHT, stattdessen strukturell nicht-regressions-bewiesen; Gegenprüfung Fedlex bestanden — Detail V2 §2 F1) | **FN-1 + FN-2 (+ Drop-Fix `disp_*`)**, V2 §2 F1 | «dort sind fussnoten nicht verklinkt im text» (VZG). Extraktor-Fallback: fnbck-leer ⇒ nr aus führendem `<sup>N</sup>` der Definition (matcht 226/226 VZG); Artikel-Regex um `disp_*/art_*` erweitern (17 verschluckte VZG-Noten); Präambel-Marker-Nummern je Kopf-Zeile erfassen (`KopfZeile.fnNrs`). | **Risiko-Pfad** (`scripts/normtext` + `kopf-extrahiere.ts` + Sidecars) ⇒ `check:gegenpruefung` Pflicht. **SOFORT startbar, kollisionsfrei** (kein `parts.tsx`/`inhalt.tsx`; Reader-Marker-Mechanik greift von selbst). Vorbedingung `fedlex-cache.sh` + «0 übersprungen»; abhängig von **Fedlex-P1-a/b**-Pin-Refresh. |
 | **A20 ✅ GEBAUT 12.7.** (`feat/v2-fn3`) | Präambel-Fussnoten inline | **FN-3**, V2 §2 F1 | «präambeln haben auch keine verlinkten fussnoten». FnRef-Marker je Präambel-Zeile im `ErlassKopfBlock` (HINTER dem U-VERWEIS-A11-NormText-Element, `artikel="kopf"`) + Anker `fn-kopf-${nr}` am Kopf-Apparat. Daten additiv aus A19 (215 Erlasse / 555 Marker / 0 Orphans korpusweit); R9/§8-Sichtbarkeit (data-fn-marker/-apparat folgen dem Fussnoten-Toggle). Wirkt für OR sofort, für VZG nach A19. Gate voll grün, golden byte-gleich, e2e verweis-u FN-3-Block. | **HART NACH U-VERWEIS-Merge** (belegte `parts.tsx`-Kollision; baut auf dem A11-NormText-Unterbau auf). Reine Darstellung — **Gegenprüfung n/a** (kein Extraktor-Eingriff, kein Risiko-Pfad). |
 | **A21** | Absatz-Zuordnung Alt-Form | **FN-4**, V2 §2 F1 | Absatz-Zuordnung für Alt-Form-Erlasse (VZG `absatz=null` ⇒ Marker am Absatz statt Artikelebene). | Bündelt mit A19-Regeneration; Risiko-Pfad-nah (Extraktions-Metadaten). |
-| **A22 · K-2 ✅ GEBAUT 11.7.** (K-1/«in Kraft seit» = Datenteil, offen) | Kopf nützlicher + Fussnoten-Anwahl | **K-1 + K-2**, V2 §2 F2 | «der kopf des gesetzes nützlicher … fussnoten anwahl etc dort». K-1: «in Kraft seit …» in die Meta-Zeile (SPARQL `jolux:dateEntryInForce` an die Currency-Pipeline; 54 Erlassdatum-Lücken = Pin-Staleness, kein neuer Code). K-2: Fussnoten-Chip neben ◧Ansicht (Zähler N aus Sidecar; Toggle mit Apparat-Sprung, §8-ehrlich vor A19). | **NACH U-VERWEIS-Merge, in EINEM koordinierten Kopf-PR mit U-PDF** (Slot-Layout Ansicht·Fussnoten·Download nur einmal umbauen). K-1-Anteil (SPARQL/Currency) Risiko-Pfad-nah ⇒ Gegenprüfung. |
+| **A22 · K-2 ✅ GEBAUT 11.7. · K-1 ✅ GEBAUT 12.7. (PR #213, `9e7e505b` — Plan-Korrektur 25.7.: war fälschlich als offen geführt)** | Kopf nützlicher + Fussnoten-Anwahl | **K-1 + K-2**, V2 §2 F2 | «der kopf des gesetzes nützlicher … fussnoten anwahl etc dort». K-1: «in Kraft seit …» in die Meta-Zeile (SPARQL `jolux:dateEntryInForce` an die Currency-Pipeline; 54 Erlassdatum-Lücken = Pin-Staleness, kein neuer Code). K-2: Fussnoten-Chip neben ◧Ansicht (Zähler N aus Sidecar; Toggle mit Apparat-Sprung, §8-ehrlich vor A19). | **NACH U-VERWEIS-Merge, in EINEM koordinierten Kopf-PR mit U-PDF** (Slot-Layout Ansicht·Fussnoten·Download nur einmal umbauen). K-1-Anteil (SPARQL/Currency) Risiko-Pfad-nah ⇒ Gegenprüfung. |
 | **A23 ✅ GEBAUT 11.7.** | BGE-Steuerung Rubrik-Ansicht | **B-1 + B-2 (Kappung 5→10)**, V2 §2 F3 | «bei bundesgerichtsentscheiden … abwahl möglich … in rubrik ansicht. mit möglichkeit auswahl wie lange zurück bge». B-1: 4. Switch «Entscheide» (Default AN, CSS `data-leitfaelle`). B-2: Zeitraum «alle·20·10·5 J.» (Default alle) über `r.datum`; **Kappung `LEITFAELLE_SICHTBAR` 5 → 10** (David-Entscheid 10.7.). Store-Abo als Primitiv-Selektor (§15). | Golden-neutral (Leitfall-Zeile client-only). **Kollision `parts.tsx`/`inhalt.tsx` ⇒ nach U-VERWEIS-Merge** (V2 §4). Kein Datenbedarf. |
 | **A24 · L-1+L-2 ✅ GEBAUT 11.7.** (L-3 offen, David/Council-Gate) | Liniengliederung reparieren | **L-1 + L-2 + L-3** (L-4 ✗), V2 §2 F4 | «funktioniert das mit der liniengliederung praktisch nicht». **L-1 ✅: Einzug-Cap 3→5 (`inhalt.tsx`, `tiefe<=5`) + Mobil-Token `einzug-mobil` (0.75rem statt Kollaps auf 0; `data-linien=aus` kollabiert weiter ALLE Ebenen).** **L-2 ✅: Guide-Ton 10 %/14 % → 18 %/24 % (= `--line-strong`, `--guide-gliederung`).** **L-3 (Auto-Default-Umkehr ZGB/OR, Umkehr #161): NICHT in feat/v2-l1-l2 gebaut — bleibt hinter David/Council-Gate.** L-4 (Ton-Bänder) ENTFÄLLT (David-Entscheid Farbe-nur-Referenzschicht). | Golden-neutral (reine Reader-CSS/TS), kein Datenbedarf, client-seitig. `check:linien-kanon` GRÜN unverändert (Aufbau-Regelwerk/Referenz-Verdikte unberührt — nur L-3 würde sie umstellen); DESIGN-REGLEMENT §4b (Guide-Ton + Einzug-Skala) nachgezogen. Playwright-Beleg Light+Dark Desktop+Mobil@390, CLS 0. |
 | **A25** | Mehr Farben (Referenzschicht) | **C-1 + C-2 + C-3**, V2 §2 F5 | «gerne auch noch mit mehr farben». **Doktrin: Farbe NUR Referenz-/Verzahnungsschicht (Chips/Badges/Kopf), Normtext-Körper farbfrei** (David-Entscheid). C-1: KantenChip `kategorie`-Prop (norm=brass byte-id / entscheid=slate), StatusBadge Revisions-↻ → warn. C-2: Overline-Farbpunkte + Currency-Tonung (nach U-VERWEIS, im Kopf-PR). C-3: NormChip/Materialien (DEFER, U-VERWEIS-Kollision). | Golden-neutral (CSS/Token-only). **C-1 SOFORT startbar, kollisionsfrei** (KantenChip/StatusBadge/index.css). C-2/C-3 nach U-VERWEIS. Kontrast-Messung als Gate (slate auf paper dunkel 3.31 knapp). |
 | **A26 ✅ GEBAUT 11.7.** | «Ansicht»-Dropdown in die immer sichtbare Leiste + Fussnoten-Auswahl ins Menü | **A26 (reines UI)**, Wortlaut `docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-11.md` | «ansichtsdropdown menu in … diese leiste integrieren `Gesetze › Bund › ZPO … Stand … ✕` … immer sichtbar wenn man im gesetz ist» + «fussnotenauswahl ebenfalls in dropdownmenu einfügen». (1) «Ansicht»-Dropdown wandert aus dem weggescrollenden `ErlassLeserKopf` in den IMMER sichtbaren **Inhalts-Kopf** (`InhaltsKopf.tsx`, sticky `top-16`) — via `KopfDaten.ansichtSlot` über den vorhandenen `meldeInhaltsKopf`-Kanal (Layer-Trennung; globaler `leserOptionen`-Store bleibt EINE Quelle §5). (2) Fussnoten-Chip (V2·K-2) geht als **Eintrag** ins Menü auf (Zähler N am `Fussnoten`-Schalter, Chip-Sprung entfällt bewusst). **Platzierung:** Einzelansicht NUR im Inhalts-Kopf (aus `ErlassLeserKopf` entfernt); Split-View (`imPane`) bleibt im `ErlassLeserKopf` (kein `PaneKopf`-Umbau/Stacking-Risiko), nie zwei Menüs gleichzeitig. **Mobil @390:** Icon-only-Trigger (◧, `aria-label`), Panel `absolute` (CLS 0), Inhalts-Kopf `z-30` (Panel über Inhalts-Sticky-Leisten). | **Präzisierung:** Davids «Leiste» = Inhalts-Kopf, NICHT der 2-Spalten-`SektionKontextKopf` (nur der Inhalts-Kopf ist in JEDER Layout-Variante immer sichtbar). Golden IDENTISCH (Reader-Chrome ausserhalb Golden-Scope). e2e `leser-kopf-g2b`/`-v2`/`-a9`/`leser-optionen`/`a11y`/`tastatur`/`smoke` grün (Dropdown-Ort + K-2-Fussnoten-Eintrag nachgezogen). **Gegenprüfung n/a** (reines UI). Roadmap W2·5d. |
 | **A27 ✅ GEBAUT 12.7.** | Gliederungspfad-Zeile am Artikel entfernen | **A27 (reines UI)**, Wortlaut `docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-12.md` | «bei den gesetzen ist diese line nicht notwendig llgemeine Bestimmungen › Zuständigkeit der Gerichte und Ausstand › Örtliche Zuständigkeit › Allgemeine Bestimmungen › Art. 9 ZPO ⧉ Zitat». Der Sticky Section-Kontextkopf (`SektionKontextKopf`, 2-Spalten-Lesemodus) — tiefer In-Erlass-Gliederungspfad «Titel › … › Art. N» + «⧉ Zitat» — ist **komplett entfernt** (Komponente, `parts.tsx`-Export, `inhalt.tsx`-Nutzung + tote `baueZitat`/`sekLabelById`-Ableitungen). Seit **A26 (#198)** trägt der immer sichtbare Inhalts-Kopf die Orientierung → der zusätzliche Pfad war redundant. **Funktions-Treue (§15):** das «⧉ Zitat» war die Zitat-Kopieraktion (kein «Pane öffnen» — ⧉ = Chip-Dekor); dieselbe Kopieraktion mit identischem `baueZitat`-Voll-Zitat steht je Artikel in der Artikelnummer-Zeile (`ArtikelLeser`). Das echte Pane-⧉ (`oeffneDaneben`, Leitfall-Zeile) unberührt. | Golden IDENTISCH (Reader-Chrome ausserhalb Golden-Scope). e2e `leser-kopf-g2b` (3 Kontextkopf-Tests entfernt, Zitat-Test → Artikel-Knopf umgehängt) + `-a9` (CLS-0-Sprungschritt Breadcrumb → TOC-Gliederung umgehängt) nachgezogen; `check:linien-kanon`-READER-Liste um die gelöschte Datei bereinigt (kein Marker/Regel-Eingriff). Voller `npm run gate` grün, CLS 0. **Gegenprüfung n/a** (reines UI). Roadmap W2·5d. |
-| **DEFER** | wortgenaue Marker | **FN-5 = M14/G14**, V2 §2 F1 | wortgenaue Inline-Position (Offset im Haupt-Snapshot) — einziger Pfad mit grossem golden-Haupt-Diff. | **Deferiert hinter QS-PERF/U-POSITION, separates David-Go** (Entscheid 10.7. Ziff. 4). |
+| **FN-5 ✅ GEBAUT 26.7.** | wortgenaue Marker | **FN-5 = M14/G14**, V2 §2 F1 | wortgenaue Inline-Position — gebaut als SIDECAR-Variante (`pos{b,it,o,l}` im Struktur-Sidecar, Haupt-Snapshots byte-unverändert; der angenommene grosse golden-Haupt-Diff entfiel). Detail V2 §2 F1 + `bibliothek/normen/fn5-wortgenaue-marker-2026-07-26.md`. | Go via Blanko-Go David 24.7. + Bau-Auftrag 25.7. («nächste session … am richtigen ort»); Sequenz QS-PERF/U-POSITION erfüllt. Gegenprüfung im Bau-PR. |
 
 **Deklarierte Überstimmungen (an Ort, wie §10.5):**
 
@@ -1464,7 +1464,7 @@ als Opus-Einheiten; Fable orchestriert nur.
    Regenerationslauf nach **Fedlex-P1-a/b-Pin-Refresh**, EIN Diff-Audit (OR/ZGB/StGB/BV
    byte-gleich als Nicht-Regressions-Beweis). Vor jeder Regeneration `fedlex-cache.sh`
    + «0 übersprungen»-Kontrolle (sonst grüner No-op-Lauf).
-5. **Deferiert:** FN-5/M14 hart nach QS-PERF (separates David-Go).
+5. **Deferiert:** ~~FN-5/M14~~ (✅ gebaut 26.7.2026, s. §10.8-Tabelle).
 
 ### 10.9 · A28 — Auto-Linien-Default korpusweit zurückgezogen (David 12.7.2026, Live-Feedback auf L-3)
 
@@ -1575,6 +1575,17 @@ E2 (Rendering) ‖ E3 (Pane) parallel in Worktrees → dann E4 → E5 → E6 →
 A38/D-Kette und A39/PR-B/PR-C laufen als eigene Stränge (andere Flächen).
 Je Einheit gilt die A9-DoD-Zeile (§10.4) wörtlich; Risiko-Einheiten (E1, A39,
 A40-Anteil) mit Gegenprüfungs-Quittung.
+
+**Status E4/A32+A36 ✅ (25.7.2026, Worktree `lm-e4`, PR #346, Squash `cf6e53a0` — Bau: Fable 5):**
+A32: KontextPanel in jeder 2-Spalten-Ansicht neu UNTERHALB des Gliederungsbaums (TOC-Spalte,
+Slot-Token `h-toc-kontext` 33vh ab erstem Render reserviert, Panel blendet erst nach Ladung ein
+— CLS 0 by construction, e2e @6×-Drossel); Mobil/Drawer + schmales Pane ehrlich am Leseende
+(nie im Drawer versteckt). A36: ZGB-TOC-Kuration render-seitig (`kuratiereTocSektionen` in
+`berechnungen.ts`, exakter Identitäts-Match; 74 `disp_u2_art_*`-Token nur aus dem TOC-Baum,
+Lesespalte/Anker/Ctrl+F/Print vollständig — §15-Treue, Substanz-Probe im Test). Kein
+Sidecar-/Generator-Umbau, kein Risikopfad. Gate voll grün, golden byte-gleich, e2e 26/26
+unangepasst + neues `leser-kontext-e4`. Screenshot-Serie 390–1920; 33vh-Deckel =
+Gestaltungsentscheid zur David-Sichtprüfung. **Damit ist die E-Reihe E1–E7 KOMPLETT.**
 
 **Status E7/A33 ✅ (17.7.2026, Worktree `lm-a33`, Branch `fix/a33-gliederung`):**
 Ultracode-Audit + Fix-Einheit gebaut. Bestätigte Root-Causes: **RC1** TOC-Mitscroll
@@ -1774,6 +1785,47 @@ Je Einheit gilt die **A9-DoD-Zeile (§10.4) wörtlich** (CPU-Throttle 6×, CLS 0
 
 ### 11.10 · Ausführungsvermerke der §11-Einheiten
 
+**IA-5 + Y-A-Mini ✅ GEBAUT + GEMERGT 25.7.2026 (Fable 5, PR #352, Squash `faf7028d`).**
+`?ansicht=rechtsgebiet` → kanonisch `?gliederung=rechtsgebiet` (Alias bleibt auflösbar,
+Parse-Normalisierung, kein Redirect); 4. Einstiegskachel demoted (Y-A, David 16.7. JA) —
+Landeplatz = 3 Kacheln + A–Z-Register, Zugang über A15-Gliederungs-Umschalter. Bindende
+Erreichbarkeits-Pins unangepasst grün; nur URL-FORM-Assertions deklariert angepasst.
+Prerender-Markup byte-identisch (Kachel lebt im Client-JS).
+
+**IA-6 ✅ GEBAUT + GEMERGT 25.7.2026 (Fable 5, PR #353, Squash `767aeb96`).** Stufe 1:
+`rel=canonical`+`og:url` der /international-Seite → Säule `?ebene=international`
+(`kanonischerPfad`-Override in seo.ts, eine Quelle §5); Sidebar-Gruppen-Kopf vereinheitlicht;
+5 Hash-Anker regressions-bewiesen (neue e2e 8/8). Prerender-Diff exakt 63 Routen-Seiten ×
+1 Sidebar-href + international.html-Head. Vormerkung Y-C: Canonical-Kette der Query-Säule.
+Nachtrag auf dem Branch: **A35-Clear-Prädikat 15s→45s** (deklarierte Infra-Kalibrierung —
+der Highlight-Clear braucht real ~16–17 s; Assertion unverändert scharf).
+
+**IA-7 ✅ GEBAUT + GEMERGT 25.7.2026 (Fable 5, PR #355, Squash `da73c754`) — §11 DAMIT
+KOMPLETT (IA-1…IA-7 + Y-A/Y-B; offen nur Y-C Stufe 2).** Erlass-Zahl-Badges an den 26
+Sidebar-Kantonslinks (IA-2-Pill-Muster, O4-aria, 0-Fall «keine Erlasse, dünn»); Daten
+build-time (`kantonErlassZahlen` in gen-startseite-zaehler, Drift-Tor check:zaehler);
+erfassungsgrad.ts nur konsumiert. Prerender 8164/8164 identisch (Badge hinter eingeklappter
+Gruppe, atomar beim Aufklappen, CLS 0).
+
+**IA-3 · A–Z-/Kürzel-Register ✅ GEBAUT + GEMERGT 25.7.2026 (Fable 5, Worktree `lm-ia3`,
+PR #347, Squash `15a7eac8`).** Buchstaben-Leiste + title-only-Filter auf dem geladenen
+`register.json` (kein zweiter Index, K10); Einsortierung DIN 5007-1 (NFD-Faltung Ä→A,
+Nicht-Buchstaben → Sammelklasse «0–9»); Lazy-je-Buchstabe; Mobil kollabiert; H1-Budget-Beweis
+2 Interaktionen (e2e); Prerender byte-neutral gemessen. **CI-Härtungs-Story:** eigenes
+CLS-Tor riss in CI (0.0657 @6× — lokal grün); Attribution fand DREI Quellen (cv-Platzhalter-
+Einwachsen · React-Key-Wanderer beim Sichten-Wechsel · Status-Text-Shift) → Fix §15.2
+(Scroll-Region konstanter Höhe, cv von Zeilen entfernt, `ul` je Sicht ge-keyt, Status-Zeile
+fix) OHNE Tor-Aufweichung; 6/6 grün @6×-Drossel. Bekannter a33-F2/V1-Contention-Flake riss
+zweimal quer (Rerun heilte; Härtung als Task-Chip verortet).
+
+**IA-4 · Scope-Chip ✅ GEBAUT + GEMERGT 25.7.2026 (Fable 5, Worktree `lm-ia4`, PR #350,
+Squash `e33737a9`).** Übersichts-Filter: Scope-Label + Chip «auf alle Ebenen erweitern»
+(alter untestierter «Nur X/Alle»-Umschalter darin aufgegangen); A–Z-Register bewusst nur
+ehrliches Label (filtert bereits alle Ebenen — kein wirkungsloser Chip, §3.1). **Deklarierte
+kleine Verhaltensänderung:** Tippen in aktiver Säule filtert default die Säule (vorher still
+global, ungepinnt) — Spec-Wortlaut §11.5. e2e 86/86 bestehend unangepasst + 5 neue;
+CLS-Nullprobe attribuierte vorbestehenden Footer-Shift (Task-Chip verortet).
+
 **IA-2 · Erfassungsgrad sichtbar ✅ GEBAUT 16.7.2026 (Opus, Worktree `feat/ia2-erfassungsgrad`).**
 Neue SSoT `src/lib/normtext/erfassungsgrad.ts` (dokumentiert-deterministisch nach
 A14, §8 «nie raten»): `erfassungsgrad(kanton, n)` → `vollstaendig` NUR bei
@@ -1866,16 +1918,25 @@ dem steuerungs-Querverweis «§12 Ziff. 2» = Pathspec-Commit-Konvention).
 
 ### 12.5 · Bau-Go-Status & David-Gate (ans ENDE)
 
-- **EID-1 (Enabler):** verhaltensneutral/additiv, Risiko-Pfad-abgesichert (`check:gegenpruefung`
-  + Golden byte-gleich) — **sofort baubar, sobald Bau-Go erteilt.** Kein Produkt-Entscheid nötig.
-- **EID-2 (Deep-Links):** fügt eine sichtbare Reader-Oberfläche hinzu (Link «amtliche Fassung
-  an genau dieser Stelle») → **David-Gate: Platzierung/Wortlaut/Sichtbarkeit** (Artikel-Zeile
-  vs. Sektions-Kopf) vor Bau vorlegen (§Y-Verfahren).
-- **EID-3 (Folge-Härtungen):** **David-Gate** — Teil (a) re-öffnet die A27/§11.7-Entscheidung
-  (SektionKontextKopf); nur mit ausdrücklichem Entscheid. Teil (b) optional, niedrige Priorität.
-- **Gesamt-Bau-Go (Ausführung der Einheiten):** ausstehend — dieser Abschnitt ist der Intake
-  (David-GO 17.7. = Aufnahme als Bau-Einheit), die Ausführung folgt der Fahrplan-Sequenz mit
-  den obigen Gates.
+- **EID-1 ✅ GEBAUT + GEGENGEPRÜFT + GEMERGT 25.7.2026** (Fable-Bau/Opus-Prüfung, Worktree
+  `lm-eid1`, PR #348, Squash `f761b2db`): `gliederung[].eId?` additiv (54 118 Felder, 227
+  Sidecars; Differ 227/227 byte-gleich nach eId+Stempel-Entfernung; Konsumregel «unmittelbar
+  folgendes Heading», 9 NHG-h7-Fälle sauber verworfen, Doppel-Section synthetisch belegt).
+  Gegenprüfung: 15 970-eId-Kongruenz-Stichprobe über 11 Erlasse, 0 Fehl-Bindung; Register-Hash
+  `ff543f71`. **Bekannte Grenze:** Annex-Sections (separater Anhang-Pfad) noch ohne eId.
+- **EID-2 ✅ GEBAUT + GEGENGEPRÜFT + GEMERGT 25.7.2026** (PR #349, Squash `15d413f4`):
+  «amtliche Fassung ↗» hover-dezent an Artikel-Aktionszeile UND SektionKopf-Titelzeile
+  (ELI-Form; Artikel-Fragment verbatim aus Snapshot-quelleUrl = eine Wahrheit §5; Null-Gates
+  Kanton/aufgehoben/`__N`/Nicht-ELI/ohne-Fragment; 13 eId-lose Erlasse sektions-linkfrei §8;
+  a11y tastaturerreichbar, CLS-frei). Gegenprüfung: 20+ Soll-vor-Ist-Proben live gegen Fedlex,
+  Register-Hash `23f5f954`. **David-Gate Platzierung wurde unter dem Blanko-Go 24.7.
+  orchestrator-entschieden (konservativ) — Sichtprüfung David erbeten** (Screenshots im PR).
+  Notizen ohne Defekt: Paritäts-Sweep-Doku überbehauptet (tautologisch für Haupttext);
+  `ELI_FORM`-Präfix-Regex-Härtung = Kandidat bei nächster Berührung. Folge-Anpassung §6.3:
+  1 ambiger e2e-Locator präzisiert (g3b-anhang; Sweep: einziger von 50).
+- **EID-3 (Folge-Härtungen):** Teil (a) re-öffnet die A27/§11.7-Entscheidung
+  (SektionKontextKopf) — bleibt trotz Blanko-Go bewusst liegen (David hat A27 inhaltlich
+  entschieden; Re-Öffnung nur auf ausdrücklichen Wunsch). Teil (b) optional, niedrig.
 
 ---
 

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "946.512",
   "titel": "Verordnung über das schweizerische Akkreditierungssystem und die Bezeichnung von Prüf-, Konformitätsbewertungs-, Anmelde‑ und Zulassungsstellen",
@@ -40,7 +40,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -53,7 +54,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -66,7 +68,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -78,7 +81,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "5",
@@ -91,7 +95,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "6",
@@ -104,7 +109,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "7",
@@ -117,7 +123,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "8",
@@ -129,7 +136,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -138,7 +146,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand; Zweck der Akkreditierung und der Bezeichnung"
+     "label": "1. Kapitel: Gegenstand; Zweck der Akkreditierung und der Bezeichnung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -155,7 +164,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 49,
+      "l": 91
+     },
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -167,7 +183,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 167,
+      "l": 167
+     },
+     "kl": "A"
     }
    ]
   },
@@ -175,7 +197,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand; Zweck der Akkreditierung und der Bezeichnung"
+     "label": "1. Kapitel: Gegenstand; Zweck der Akkreditierung und der Bezeichnung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -186,7 +209,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand; Zweck der Akkreditierung und der Bezeichnung"
+     "label": "1. Kapitel: Gegenstand; Zweck der Akkreditierung und der Bezeichnung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -197,11 +221,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsatz"
+     "label": "1. Abschnitt: Grundsatz",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -216,7 +242,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 41,
+      "l": 41
+     },
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -228,7 +261,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 218,
+      "l": 218
+     },
+     "kl": "A"
     }
    ]
   },
@@ -236,11 +275,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schweizerische Akkreditierungsstelle"
+     "label": "2. Abschnitt: Schweizerische Akkreditierungsstelle",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -255,7 +296,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -263,11 +305,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Akkreditierungskommission"
+     "label": "3. Abschnitt: Akkreditierungskommission",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -282,7 +326,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 131,
+      "l": 131
+     },
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -294,7 +344,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -302,11 +358,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Voraussetzungen der Akkreditierung"
+     "label": "4. Abschnitt: Voraussetzungen der Akkreditierung",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": []
@@ -315,11 +373,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Akkreditierungsgesuch"
+     "label": "5. Abschnitt: Akkreditierungsgesuch",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": []
@@ -328,11 +388,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Begutachtung und Beurteilung des Akkreditierungsgesuchs"
+     "label": "6. Abschnitt: Begutachtung und Beurteilung des Akkreditierungsgesuchs",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -349,7 +411,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -357,11 +420,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Begutachtung und Beurteilung des Akkreditierungsgesuchs"
+     "label": "6. Abschnitt: Begutachtung und Beurteilung des Akkreditierungsgesuchs",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -378,7 +443,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 179,
+      "l": 179
+     },
+     "kl": "A"
     }
    ]
   },
@@ -386,11 +457,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Begutachtung und Beurteilung des Akkreditierungsgesuchs"
+     "label": "6. Abschnitt: Begutachtung und Beurteilung des Akkreditierungsgesuchs",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -401,11 +474,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Begutachtung und Beurteilung des Akkreditierungsgesuchs"
+     "label": "6. Abschnitt: Begutachtung und Beurteilung des Akkreditierungsgesuchs",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -416,11 +491,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Begutachtung und Beurteilung des Akkreditierungsgesuchs"
+     "label": "6. Abschnitt: Begutachtung und Beurteilung des Akkreditierungsgesuchs",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -437,7 +514,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 243,
+      "l": 243
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -449,7 +532,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 115,
+      "l": 115
+     },
+     "kl": "A"
     }
    ]
   },
@@ -457,11 +546,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Akkreditierungsentscheid"
+     "label": "7. Abschnitt: Akkreditierungsentscheid",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [],
@@ -476,7 +567,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 164,
+      "l": 164
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -488,7 +585,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -500,7 +603,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 216,
+      "l": 216
+     },
+     "kl": "A"
     }
    ]
   },
@@ -508,11 +617,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Wirkung der Akkreditierung"
+     "label": "8. Abschnitt: Wirkung der Akkreditierung",
+     "eId": "chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -523,11 +634,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Wirkung der Akkreditierung"
+     "label": "8. Abschnitt: Wirkung der Akkreditierung",
+     "eId": "chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -538,11 +651,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Wirkung der Akkreditierung"
+     "label": "8. Abschnitt: Wirkung der Akkreditierung",
+     "eId": "chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -553,11 +668,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Wirkung der Akkreditierung"
+     "label": "8. Abschnitt: Wirkung der Akkreditierung",
+     "eId": "chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -568,11 +685,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Nachkontrolle, Anpassung, Suspendierung und Entzug der Akkreditierung"
+     "label": "9. Abschnitt: Nachkontrolle, Anpassung, Suspendierung und Entzug der Akkreditierung",
+     "eId": "chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -583,11 +702,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Nachkontrolle, Anpassung, Suspendierung und Entzug der Akkreditierung"
+     "label": "9. Abschnitt: Nachkontrolle, Anpassung, Suspendierung und Entzug der Akkreditierung",
+     "eId": "chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -604,7 +725,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -612,11 +734,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Nachkontrolle, Anpassung, Suspendierung und Entzug der Akkreditierung"
+     "label": "9. Abschnitt: Nachkontrolle, Anpassung, Suspendierung und Entzug der Akkreditierung",
+     "eId": "chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -634,7 +758,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 196,
+      "l": 320
+     },
+     "kl": "A"
     }
    ]
   },
@@ -642,11 +772,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "10. Abschnitt: Internationale Zusammenarbeit"
+     "label": "10. Abschnitt: Internationale Zusammenarbeit",
+     "eId": "chap_2/sec_10"
     }
    ],
    "marginalie": []
@@ -655,11 +787,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Akkreditierung"
+     "label": "2. Kapitel: Akkreditierung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "11. Abschnitt: Information"
+     "label": "11. Abschnitt: Information",
+     "eId": "chap_2/sec_11"
     }
    ],
    "marginalie": []
@@ -668,11 +802,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsatz"
+     "label": "1. Abschnitt: Grundsatz",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -687,7 +823,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -695,11 +832,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Voraussetzungen der Bezeichnung"
+     "label": "2. Abschnitt: Voraussetzungen der Bezeichnung",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -714,7 +853,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 257,
+      "l": 257
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -726,7 +871,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 47,
+      "l": 47
+     },
+     "kl": "A"
     }
    ]
   },
@@ -734,11 +885,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bezeichnungsgesuch und Anforderungen an die Bezeichnungsbehörde"
+     "label": "3. Abschnitt: Bezeichnungsgesuch und Anforderungen an die Bezeichnungsbehörde",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -755,7 +908,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -768,7 +922,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Bezeichnungsgesuch und Anforderungen an die Bezeichnungsbehörde"
+     "sektion": "3. Abschnitt: Bezeichnungsgesuch und Anforderungen an die Bezeichnungsbehörde",
+     "kl": "A"
     }
    ]
   },
@@ -776,11 +931,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Behandlung des Gesuchs"
+     "label": "4. Abschnitt: Behandlung des Gesuchs",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -797,7 +954,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -805,11 +963,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Behandlung des Gesuchs"
+     "label": "4. Abschnitt: Behandlung des Gesuchs",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -826,7 +986,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     }
    ]
   },
@@ -834,11 +1000,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Behandlung des Gesuchs"
+     "label": "4. Abschnitt: Behandlung des Gesuchs",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -855,7 +1023,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -863,11 +1032,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Behandlung des Gesuchs"
+     "label": "4. Abschnitt: Behandlung des Gesuchs",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -884,7 +1055,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -892,11 +1064,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Entscheid"
+     "label": "5. Abschnitt: Entscheid",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [],
@@ -912,7 +1086,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Entscheid"
+     "sektion": "5. Abschnitt: Entscheid",
+     "kl": "A"
     }
    ]
   },
@@ -920,11 +1095,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Nachkontrolle, Suspendierung und Widerruf der Bezeichnung"
+     "label": "6. Abschnitt: Nachkontrolle, Suspendierung und Widerruf der Bezeichnung",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -935,11 +1112,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Nachkontrolle, Suspendierung und Widerruf der Bezeichnung"
+     "label": "6. Abschnitt: Nachkontrolle, Suspendierung und Widerruf der Bezeichnung",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -956,7 +1135,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 191,
+      "l": 191
+     },
+     "kl": "A"
     }
    ]
   },
@@ -964,11 +1149,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Information"
+     "label": "7. Abschnitt: Information",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": []
@@ -977,7 +1164,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -988,7 +1176,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -999,7 +1188,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1017,7 +1207,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 226,
+      "l": 226
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1025,7 +1221,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1043,7 +1240,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 202,
+      "l": 313
+     },
+     "kl": "V"
     },
     {
      "nr": "42",
@@ -1055,7 +1258,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 313,
+      "l": 313
+     },
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -1067,7 +1276,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 271,
+      "l": 271
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1075,7 +1290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1092,7 +1308,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -1104,7 +1321,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 206,
+      "l": 206
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1112,7 +1336,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1129,7 +1354,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -1142,7 +1368,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 68,
+      "l": 185
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1150,7 +1382,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1168,7 +1401,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 35,
+      "l": 98
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1176,7 +1415,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1193,7 +1433,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 73,
+      "l": 241
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1201,7 +1447,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1212,11 +1459,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bezeichnungsgesuch und Anforderungen an die Bezeichnungsbehörde"
+     "label": "3. Abschnitt: Bezeichnungsgesuch und Anforderungen an die Bezeichnungsbehörde",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1233,7 +1482,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1241,11 +1491,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Information"
+     "label": "7. Abschnitt: Information",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -1262,7 +1514,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1270,11 +1523,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Information"
+     "label": "7. Abschnitt: Information",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -1291,7 +1546,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1299,11 +1555,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen"
+     "label": "3. Kapitel: Bezeichnung von Prüf‑, Konformitätsbewertungs‑, Anmelde‑ und Zulassungsstellen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Information"
+     "label": "7. Abschnitt: Information",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -1320,7 +1578,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1328,7 +1587,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1345,7 +1605,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

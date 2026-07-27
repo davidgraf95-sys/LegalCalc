@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "921.0",
   "titel": "Bundesgesetz über den Wald",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -51,7 +52,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "3",
@@ -63,7 +65,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -72,7 +75,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -83,7 +87,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -94,7 +99,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -105,11 +111,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rodung und Waldfeststellung"
+     "label": "1. Abschnitt: Rodung und Waldfeststellung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -120,11 +128,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rodung und Waldfeststellung"
+     "label": "1. Abschnitt: Rodung und Waldfeststellung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -145,7 +155,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 317,
+      "l": 317
+     },
+     "kl": "A"
     }
    ]
   },
@@ -153,11 +169,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rodung und Waldfeststellung"
+     "label": "1. Abschnitt: Rodung und Waldfeststellung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -174,7 +192,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -186,7 +205,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 104,
+      "l": 126
+     },
+     "kl": "A"
     }
    ]
   },
@@ -194,11 +219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rodung und Waldfeststellung"
+     "label": "1. Abschnitt: Rodung und Waldfeststellung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -223,7 +250,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -236,7 +264,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 121,
+      "l": 155
+     },
+     "kl": "V"
     }
    ]
   },
@@ -244,11 +279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rodung und Waldfeststellung"
+     "label": "1. Abschnitt: Rodung und Waldfeststellung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -271,7 +308,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -279,11 +317,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rodung und Waldfeststellung"
+     "label": "1. Abschnitt: Rodung und Waldfeststellung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -302,7 +342,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 158,
+      "l": 206
+     },
+     "kl": "V"
     }
    ]
   },
@@ -310,11 +356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rodung und Waldfeststellung"
+     "label": "1. Abschnitt: Rodung und Waldfeststellung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -332,7 +380,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 91,
+      "l": 162
+     },
+     "kl": "V"
     },
     {
      "nr": "15",
@@ -352,7 +406,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 85,
+      "l": 85
+     },
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -368,7 +429,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 214,
+      "l": 214
+     },
+     "kl": "A"
     }
    ]
   },
@@ -376,11 +443,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wald und Raumplanung"
+     "label": "2. Abschnitt: Wald und Raumplanung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -398,7 +467,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 98,
+      "l": 127
+     },
+     "kl": "V"
     }
    ]
   },
@@ -406,11 +481,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wald und Raumplanung"
+     "label": "2. Abschnitt: Wald und Raumplanung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -421,11 +498,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wald und Raumplanung"
+     "label": "2. Abschnitt: Wald und Raumplanung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -450,7 +529,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -470,7 +550,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 111,
+      "l": 111
+     },
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -490,7 +576,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     }
    ]
   },
@@ -498,11 +590,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Betreten und Befahren des Waldes"
+     "label": "3. Abschnitt: Betreten und Befahren des Waldes",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -513,11 +607,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Betreten und Befahren des Waldes"
+     "label": "3. Abschnitt: Betreten und Befahren des Waldes",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -528,11 +624,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Schutz vor anderen Beeinträchtigungen"
+     "label": "4. Abschnitt: Schutz vor anderen Beeinträchtigungen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -553,7 +651,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 113,
+      "l": 113
+     },
+     "kl": "A"
     }
    ]
   },
@@ -561,11 +665,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Schutz vor anderen Beeinträchtigungen"
+     "label": "4. Abschnitt: Schutz vor anderen Beeinträchtigungen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -586,7 +692,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 136,
+      "l": 136
+     },
+     "kl": "A"
     }
    ]
   },
@@ -594,11 +706,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Schutz vor anderen Beeinträchtigungen"
+     "label": "4. Abschnitt: Schutz vor anderen Beeinträchtigungen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -609,7 +723,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutz vor Naturereignissen"
+     "label": "3. Kapitel: Schutz vor Naturereignissen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -628,7 +743,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -636,11 +752,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Pflege und Nutzung des Waldes"
+     "label": "4. Kapitel: Pflege und Nutzung des Waldes",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bewirtschaftung des Waldes"
+     "label": "1. Abschnitt: Bewirtschaftung des Waldes",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -651,11 +769,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Pflege und Nutzung des Waldes"
+     "label": "4. Kapitel: Pflege und Nutzung des Waldes",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bewirtschaftung des Waldes"
+     "label": "1. Abschnitt: Bewirtschaftung des Waldes",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -666,11 +786,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Pflege und Nutzung des Waldes"
+     "label": "4. Kapitel: Pflege und Nutzung des Waldes",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bewirtschaftung des Waldes"
+     "label": "1. Abschnitt: Bewirtschaftung des Waldes",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -681,11 +803,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Pflege und Nutzung des Waldes"
+     "label": "4. Kapitel: Pflege und Nutzung des Waldes",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bewirtschaftung des Waldes"
+     "label": "1. Abschnitt: Bewirtschaftung des Waldes",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -696,11 +820,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Pflege und Nutzung des Waldes"
+     "label": "4. Kapitel: Pflege und Nutzung des Waldes",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bewirtschaftung des Waldes"
+     "label": "1. Abschnitt: Bewirtschaftung des Waldes",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -711,11 +837,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Pflege und Nutzung des Waldes"
+     "label": "4. Kapitel: Pflege und Nutzung des Waldes",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bewirtschaftung des Waldes"
+     "label": "1. Abschnitt: Bewirtschaftung des Waldes",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -733,7 +861,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 109,
+      "l": 265
+     },
+     "kl": "V"
     }
    ]
   },
@@ -741,11 +875,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Pflege und Nutzung des Waldes"
+     "label": "4. Kapitel: Pflege und Nutzung des Waldes",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verhütung und Behebung von Waldschäden"
+     "label": "2. Abschnitt: Verhütung und Behebung von Waldschäden",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -766,7 +902,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -774,11 +911,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Pflege und Nutzung des Waldes"
+     "label": "4. Kapitel: Pflege und Nutzung des Waldes",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verhütung und Behebung von Waldschäden"
+     "label": "2. Abschnitt: Verhütung und Behebung von Waldschäden",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -799,7 +938,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 247,
+      "l": 247
+     },
+     "kl": "A"
     }
    ]
   },
@@ -807,11 +952,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Pflege und Nutzung des Waldes"
+     "label": "4. Kapitel: Pflege und Nutzung des Waldes",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verhütung und Behebung von Waldschäden"
+     "label": "2. Abschnitt: Verhütung und Behebung von Waldschäden",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -822,11 +969,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausbildung, Beratung, Forschung und Grundlagenbeschaffung"
+     "label": "1. Abschnitt: Ausbildung, Beratung, Forschung und Grundlagenbeschaffung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -847,7 +996,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 59,
+      "l": 59
+     },
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -863,7 +1018,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 133,
+      "l": 133
+     },
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -879,7 +1040,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -895,7 +1062,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 264,
+      "l": 264
+     },
+     "kl": "A"
     }
    ]
   },
@@ -903,11 +1076,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausbildung, Beratung, Forschung und Grundlagenbeschaffung"
+     "label": "1. Abschnitt: Ausbildung, Beratung, Forschung und Grundlagenbeschaffung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -918,11 +1093,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausbildung, Beratung, Forschung und Grundlagenbeschaffung"
+     "label": "1. Abschnitt: Ausbildung, Beratung, Forschung und Grundlagenbeschaffung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -933,11 +1110,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausbildung, Beratung, Forschung und Grundlagenbeschaffung"
+     "label": "1. Abschnitt: Ausbildung, Beratung, Forschung und Grundlagenbeschaffung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -948,11 +1127,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausbildung, Beratung, Forschung und Grundlagenbeschaffung"
+     "label": "1. Abschnitt: Ausbildung, Beratung, Forschung und Grundlagenbeschaffung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -963,11 +1144,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausbildung, Beratung, Forschung und Grundlagenbeschaffung"
+     "label": "1. Abschnitt: Ausbildung, Beratung, Forschung und Grundlagenbeschaffung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -978,11 +1161,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung"
+     "label": "2. Abschnitt: Finanzierung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1003,7 +1188,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1011,11 +1197,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung"
+     "label": "2. Abschnitt: Finanzierung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1036,7 +1224,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1044,11 +1233,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung"
+     "label": "2. Abschnitt: Finanzierung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1069,7 +1260,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -1085,7 +1277,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 134,
+      "l": 134
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1093,11 +1291,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung"
+     "label": "2. Abschnitt: Finanzierung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1118,7 +1318,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -1134,7 +1335,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 205,
+      "l": 205
+     },
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -1150,7 +1357,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -1166,7 +1374,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -1182,7 +1391,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1190,11 +1405,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung"
+     "label": "2. Abschnitt: Finanzierung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1212,7 +1429,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 135,
+      "l": 136
+     },
+     "kl": "V"
     },
     {
      "nr": "54",
@@ -1228,7 +1451,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 136,
+      "l": 136
+     },
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -1244,7 +1473,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 218,
+      "l": 218
+     },
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -1260,7 +1495,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1268,11 +1509,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung"
+     "label": "2. Abschnitt: Finanzierung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1293,7 +1536,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -1301,11 +1545,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung"
+     "label": "2. Abschnitt: Finanzierung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1326,7 +1572,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -1342,7 +1589,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 123,
+      "l": 171
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1350,7 +1603,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen"
+     "label": "6. Kapitel: Strafbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1372,7 +1626,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 85,
+      "l": 85
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1380,7 +1640,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen"
+     "label": "6. Kapitel: Strafbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1402,7 +1663,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 85,
+      "l": 85
+     },
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -1415,7 +1682,14 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 233,
+      "l": 253
+     },
+     "kl": "V"
     },
     {
      "nr": "69",
@@ -1492,7 +1766,14 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 255,
+      "l": 279
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1500,7 +1781,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen"
+     "label": "6. Kapitel: Strafbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1519,7 +1801,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 300,
+      "l": 301
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1527,7 +1815,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen"
+     "label": "6. Kapitel: Strafbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1538,11 +1827,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verfahren und Vollzug"
+     "label": "7. Kapitel: Verfahren und Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verfahren"
+     "label": "1. Abschnitt: Verfahren",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1567,7 +1858,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 99,
+      "l": 99
+     },
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -1595,7 +1892,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 10,
+      "l": 10
+     },
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -1607,7 +1910,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 13,
+      "l": 204
+     },
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -1620,7 +1929,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 162,
+      "l": 316
+     },
+     "kl": "V"
     },
     {
      "nr": "75",
@@ -1636,7 +1951,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 196,
+      "l": 316
+     },
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -1652,7 +1973,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 114,
+      "l": 114
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1660,11 +1987,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verfahren und Vollzug"
+     "label": "7. Kapitel: Verfahren und Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verfahren"
+     "label": "1. Abschnitt: Verfahren",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1683,7 +2012,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 176,
+      "l": 210
+     },
+     "kl": "V"
     },
     {
      "nr": "78",
@@ -1700,7 +2035,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 210,
+      "l": 210
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1708,11 +2049,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verfahren und Vollzug"
+     "label": "7. Kapitel: Verfahren und Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verfahren"
+     "label": "1. Abschnitt: Verfahren",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1730,7 +2073,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 83,
+      "l": 310
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1738,11 +2087,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verfahren und Vollzug"
+     "label": "7. Kapitel: Verfahren und Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vollzug"
+     "label": "2. Abschnitt: Vollzug",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1759,7 +2110,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -1775,7 +2127,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 67,
+      "l": 67
+     },
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -1788,7 +2146,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 342,
+      "l": 360
+     },
+     "kl": "V"
     },
     {
      "nr": "84",
@@ -1804,7 +2168,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 287,
+      "l": 287
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1812,11 +2182,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verfahren und Vollzug"
+     "label": "7. Kapitel: Verfahren und Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vollzug"
+     "label": "2. Abschnitt: Vollzug",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1827,11 +2199,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verfahren und Vollzug"
+     "label": "7. Kapitel: Verfahren und Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vollzug"
+     "label": "2. Abschnitt: Vollzug",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1852,7 +2226,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1860,11 +2240,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verfahren und Vollzug"
+     "label": "7. Kapitel: Verfahren und Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vollzug"
+     "label": "2. Abschnitt: Vollzug",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1875,11 +2257,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verfahren und Vollzug"
+     "label": "7. Kapitel: Verfahren und Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vollzug"
+     "label": "2. Abschnitt: Vollzug",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1890,7 +2274,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1935,7 +2320,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 37,
+      "l": 103
+     },
+     "kl": "Z"
     },
     {
      "nr": "88",
@@ -1947,7 +2339,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 34,
+      "l": 98
+     },
+     "kl": "Z"
     },
     {
      "nr": "89",
@@ -1963,7 +2362,14 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 41,
+      "l": 146
+     },
+     "kl": "Z"
     },
     {
      "nr": "90",
@@ -1975,7 +2381,14 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 37,
+      "l": 90
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1983,7 +2396,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2001,7 +2415,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2009,7 +2429,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2030,7 +2451,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 356,
+      "l": 356
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2038,7 +2465,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2050,7 +2478,8 @@
      "text": "BRB vom 30. Nov. 1992",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2058,11 +2487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Pflege und Nutzung des Waldes"
+     "label": "4. Kapitel: Pflege und Nutzung des Waldes",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bewirtschaftung des Waldes"
+     "label": "1. Abschnitt: Bewirtschaftung des Waldes",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2083,7 +2514,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2091,11 +2523,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Pflege und Nutzung des Waldes"
+     "label": "4. Kapitel: Pflege und Nutzung des Waldes",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verhütung und Behebung von Waldschäden"
+     "label": "2. Abschnitt: Verhütung und Behebung von Waldschäden",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2116,7 +2550,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2124,11 +2559,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Pflege und Nutzung des Waldes"
+     "label": "4. Kapitel: Pflege und Nutzung des Waldes",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verhütung und Behebung von Waldschäden"
+     "label": "2. Abschnitt: Verhütung und Behebung von Waldschäden",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2149,7 +2586,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2157,11 +2595,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Holzförderung"
+     "label": "1a. Abschnitt: Holzförderung",
+     "eId": "chap_5/sec_1_a"
     }
    ],
    "marginalie": [
@@ -2183,7 +2623,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1a. Abschnitt: Holzförderung"
+     "sektion": "1a. Abschnitt: Holzförderung",
+     "kl": "A"
     }
    ]
   },
@@ -2191,11 +2632,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Holzförderung"
+     "label": "1a. Abschnitt: Holzförderung",
+     "eId": "chap_5/sec_1_a"
     }
    ],
    "marginalie": [
@@ -2206,11 +2649,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung"
+     "label": "2. Abschnitt: Finanzierung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2231,7 +2676,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2239,11 +2685,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung"
+     "label": "2. Abschnitt: Finanzierung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2264,7 +2712,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2272,11 +2721,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung"
+     "label": "2. Abschnitt: Finanzierung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2297,7 +2748,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -2313,7 +2765,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -2329,7 +2782,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -2345,7 +2804,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -2361,7 +2821,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -2377,7 +2838,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -2393,7 +2855,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -2401,11 +2864,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2430,7 +2895,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "62",
@@ -2443,7 +2909,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 137,
+      "l": 138
+     },
+     "kl": "V"
     },
     {
      "nr": "63",
@@ -2459,7 +2931,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -2475,7 +2953,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 52,
+      "l": 52
+     },
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -2492,7 +2976,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Weitere Massnahmen"
+     "sektion": "3. Abschnitt: Weitere Massnahmen",
+     "kl": "A"
     }
    ]
   },
@@ -2500,11 +2985,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Förderungsmassnahmen"
+     "label": "5. Kapitel: Förderungsmassnahmen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2529,7 +3016,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2537,11 +3025,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verfahren und Vollzug"
+     "label": "7. Kapitel: Verfahren und Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verfahren"
+     "label": "1. Abschnitt: Verfahren",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -2562,7 +3052,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2570,11 +3061,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Verfahren und Vollzug"
+     "label": "7. Kapitel: Verfahren und Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Vollzug"
+     "label": "2. Abschnitt: Vollzug",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2595,7 +3088,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2603,11 +3097,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen"
+     "label": "2. Kapitel: Schutz des Waldes vor Eingriffen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rodung und Waldfeststellung"
+     "label": "1. Abschnitt: Rodung und Waldfeststellung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2628,7 +3124,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -2641,7 +3138,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 89,
+      "l": 144
+     },
+     "kl": "V"
     },
     {
      "nr": "7",
@@ -2654,7 +3158,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 90,
+      "l": 91
+     },
+     "kl": "V"
     }
    ]
   }

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "831.42",
   "titel": "Bundesgesetz über die Freizügigkeit in der beruflichen Alters‑, Hinterlassenen- und Invalidenvorsorge",
@@ -38,7 +38,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "2",
@@ -54,7 +55,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "3",
@@ -66,7 +68,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -75,7 +78,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Geltungsbereich"
+     "label": "1. Abschnitt: Geltungsbereich",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [],
@@ -90,7 +94,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 259,
+      "l": 316
+     },
+     "kl": "V"
     },
     {
      "nr": "5",
@@ -106,7 +116,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 316,
+      "l": 316
+     },
+     "kl": "A"
     }
    ]
   },
@@ -114,7 +130,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten"
+     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -132,7 +149,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 385,
+      "l": 470
+     },
+     "kl": "V"
     },
     {
      "nr": "7",
@@ -161,7 +184,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 470,
+      "l": 470
+     },
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -177,7 +206,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 304,
+      "l": 304
+     },
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -197,7 +232,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 150,
+      "l": 150
+     },
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -213,7 +254,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 218,
+      "l": 218
+     },
+     "kl": "A"
     }
    ]
   },
@@ -221,7 +268,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten"
+     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -232,7 +280,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten"
+     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -249,7 +298,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 207,
+      "l": 223
+     },
+     "kl": "V"
     },
     {
      "nr": "12",
@@ -265,7 +320,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 223,
+      "l": 223
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -277,7 +338,14 @@
       }
      ],
      "absatz": "2bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 106,
+      "l": 106
+     },
+     "kl": "A"
     }
    ]
   },
@@ -285,7 +353,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten"
+     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -306,7 +375,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -322,7 +392,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 222,
+      "l": 222
+     },
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -338,7 +414,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 132,
+      "l": 132
+     },
+     "kl": "A"
     }
    ]
   },
@@ -346,7 +428,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten"
+     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -357,7 +440,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten"
+     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -368,7 +452,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten"
+     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -385,7 +470,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 258,
+      "l": 277
+     },
+     "kl": "V"
     },
     {
      "nr": "19",
@@ -401,7 +492,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 77,
+      "l": 77
+     },
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -417,7 +515,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     }
    ]
   },
@@ -425,7 +529,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Eintritt der Versicherten"
+     "label": "3. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Eintritt der Versicherten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -442,7 +547,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 219,
+      "l": 220
+     },
+     "kl": "V"
     },
     {
      "nr": "22",
@@ -462,7 +573,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 220,
+      "l": 220
+     },
+     "kl": "A"
     }
    ]
   },
@@ -470,7 +587,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Eintritt der Versicherten"
+     "label": "3. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Eintritt der Versicherten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -481,7 +599,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Eintritt der Versicherten"
+     "label": "3. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Eintritt der Versicherten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -493,7 +612,13 @@
      "text": "Fassung gemäss Ziff. I 11 des BG vom 19. März 1999 über das Stabilisierungsprogramm 1998, in Kraft seit 1. Jan. 2001 (<i>AS <b>1999</b> 237</i>; <i>BBl <b>1999</b> 4</i>).",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 197,
+      "l": 197
+     },
+     "kl": "A"
     }
    ]
   },
@@ -501,7 +626,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Eintritt der Versicherten"
+     "label": "3. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Eintritt der Versicherten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -512,7 +638,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Eintritt der Versicherten"
+     "label": "3. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Eintritt der Versicherten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -523,7 +650,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Eintritt der Versicherten"
+     "label": "3. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Eintritt der Versicherten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -534,7 +662,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel"
+     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -556,7 +685,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel"
+     "sektion": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel",
+     "kl": "A"
     }
    ]
   },
@@ -564,7 +694,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel"
+     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -585,7 +716,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 147,
+      "l": 148
+     },
+     "kl": "A"
     }
    ]
   },
@@ -593,7 +730,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel"
+     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -614,7 +752,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 99,
+      "l": 100
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -630,7 +775,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -646,7 +792,14 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 71,
+      "l": 71
+     },
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -658,7 +811,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 210,
+      "l": 367
+     },
+     "kl": "V"
     },
     {
      "nr": "30",
@@ -674,7 +833,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 367,
+      "l": 367
+     },
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -690,7 +855,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 260,
+      "l": 260
+     },
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -706,7 +877,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 128,
+      "l": 128
+     },
+     "kl": "A"
     }
    ]
   },
@@ -714,7 +891,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel"
+     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -732,7 +910,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 124,
+      "l": 136
+     },
+     "kl": "V"
     }
    ]
   },
@@ -740,7 +924,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel"
+     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -761,7 +946,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -773,7 +959,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 351,
+      "l": 367
+     },
+     "kl": "V"
     },
     {
      "nr": "39",
@@ -789,7 +981,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 367,
+      "l": 367
+     },
+     "kl": "A"
     }
    ]
   },
@@ -797,7 +995,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Erhaltung des Vorsorgeschutzes in besonderen Fällen"
+     "label": "5. Abschnitt: Erhaltung des Vorsorgeschutzes in besonderen Fällen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -808,7 +1007,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Erhaltung des Vorsorgeschutzes in besonderen Fällen"
+     "label": "5. Abschnitt: Erhaltung des Vorsorgeschutzes in besonderen Fällen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -820,7 +1020,13 @@
      "text": "Da die Verwendung von Paarformen die Lesbarkeit des vorliegenden Artikels erschwert, wird die männliche Personenbezeichnung als Ausdruck gewählt, der sich auf Personen beider Geschlechter bezieht.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 21,
+      "l": 252
+     },
+     "kl": "U"
     }
    ]
   },
@@ -828,7 +1034,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "sec_5_a"
     }
    ],
    "marginalie": [
@@ -849,7 +1056,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -862,7 +1070,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 120,
+      "l": 265
+     },
+     "kl": "V"
     },
     {
      "nr": "46",
@@ -875,7 +1089,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 181,
+      "l": 265
+     },
+     "kl": "V"
     },
     {
      "nr": "43",
@@ -892,7 +1112,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "sektion": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "kl": "A"
     }
    ]
   },
@@ -900,7 +1121,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "sec_5_a"
     }
    ],
    "marginalie": [
@@ -921,7 +1143,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -929,7 +1152,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Information der Versicherten und Dokumentation im Hinblick auf eine Scheidung"
+     "label": "6. Abschnitt: Information der Versicherten und Dokumentation im Hinblick auf eine Scheidung",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [],
@@ -948,7 +1172,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 120,
+      "l": 120
+     },
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -964,7 +1194,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 167,
+      "l": 360
+     },
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -980,7 +1216,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 360,
+      "l": 360
+     },
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -992,7 +1234,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 50,
+      "l": 96
+     },
+     "kl": "V"
     },
     {
      "nr": "70",
@@ -1016,7 +1265,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 96,
+      "l": 96
+     },
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -1032,7 +1288,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 56,
+      "l": 56
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1049,7 +1311,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6. Abschnitt: Information der Versicherten und Dokumentation im Hinblick auf eine Scheidung"
+     "sektion": "6. Abschnitt: Information der Versicherten und Dokumentation im Hinblick auf eine Scheidung",
+     "kl": "A"
     }
    ]
   },
@@ -1057,7 +1320,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Anwendbarkeit des BVG"
+     "label": "7. Abschnitt: Anwendbarkeit des BVG",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1078,7 +1342,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -1091,7 +1356,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 24,
+      "l": 255
+     },
+     "kl": "V"
     },
     {
      "nr": "83",
@@ -1108,7 +1379,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "7. Abschnitt: Anwendbarkeit des BVG"
+     "sektion": "7. Abschnitt: Anwendbarkeit des BVG",
+     "kl": "A"
     }
    ]
   },
@@ -1116,7 +1388,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -1145,7 +1418,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 247,
+      "l": 247
+     },
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -1153,7 +1432,8 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "sektion": "9. Abschnitt: Schlussbestimmungen"
+     "sektion": "9. Abschnitt: Schlussbestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -1161,7 +1441,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -1182,7 +1463,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 7,
+      "l": 7
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1190,7 +1477,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -1202,7 +1490,8 @@
      "text": "BRB vom 3. Okt. 1994",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1210,7 +1499,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel"
+     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1231,7 +1521,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -1243,7 +1534,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 125,
+      "l": 126
+     },
+     "kl": "V"
     },
     {
      "nr": "36",
@@ -1259,7 +1556,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 126,
+      "l": 126
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1267,7 +1570,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel"
+     "label": "4. Abschnitt: Berechnung der Austrittsleistung und Anspruch auf freie Mittel",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1288,7 +1592,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -1300,7 +1605,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 127,
+      "l": 506
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1308,7 +1619,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "sec_5_a"
     }
    ],
    "marginalie": [
@@ -1337,7 +1649,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -1349,7 +1662,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 198,
+      "l": 271
+     },
+     "kl": "V"
     },
     {
      "nr": "49",
@@ -1361,7 +1680,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 74,
+      "l": 278
+     },
+     "kl": "V"
     },
     {
      "nr": "50",
@@ -1373,7 +1698,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 106,
+      "l": 278
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1381,7 +1712,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "sec_5_a"
     }
    ],
    "marginalie": [
@@ -1410,7 +1742,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1418,7 +1751,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "sec_5_a"
     }
    ],
    "marginalie": [
@@ -1447,7 +1781,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -1459,7 +1794,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 174,
+      "l": 302
+     },
+     "kl": "V"
     },
     {
      "nr": "54",
@@ -1471,7 +1812,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 280,
+      "l": 302
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1479,7 +1826,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "sec_5_a"
     }
    ],
    "marginalie": [
@@ -1500,7 +1848,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -1512,7 +1861,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 402,
+      "l": 447
+     },
+     "kl": "V"
     },
     {
      "nr": "57",
@@ -1524,7 +1879,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 105,
+      "l": 106
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1532,7 +1893,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "sec_5_a"
     }
    ],
    "marginalie": [
@@ -1553,7 +1915,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -1565,7 +1928,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 151,
+      "l": 244
+     },
+     "kl": "V"
     },
     {
      "nr": "60",
@@ -1577,7 +1946,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 233,
+      "l": 244
+     },
+     "kl": "V"
     },
     {
      "nr": "61",
@@ -1593,7 +1968,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 24,
+      "l": 230
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1601,7 +1982,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft"
+     "label": "5a. Abschnitt: Ehescheidung und gerichtliche Auflösung der eingetragenen Partnerschaft",
+     "eId": "sec_5_a"
     }
    ],
    "marginalie": [
@@ -1622,7 +2004,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -1634,7 +2017,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 82,
+      "l": 236
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1642,7 +2031,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht"
+     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht",
+     "eId": "sec_6_a"
     }
    ],
    "marginalie": [
@@ -1663,7 +2053,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -1676,7 +2067,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht"
+     "sektion": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht",
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -1697,7 +2089,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht"
+     "sektion": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht",
+     "kl": "A"
     }
    ]
   },
@@ -1705,7 +2098,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht"
+     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht",
+     "eId": "sec_6_a"
     }
    ],
    "marginalie": [],
@@ -1724,7 +2118,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1732,7 +2127,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht"
+     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht",
+     "eId": "sec_6_a"
     }
    ],
    "marginalie": [
@@ -1753,7 +2149,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 16,
+      "l": 17
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1761,7 +2164,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht"
+     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht",
+     "eId": "sec_6_a"
     }
    ],
    "marginalie": [
@@ -1772,7 +2176,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht"
+     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht",
+     "eId": "sec_6_a"
     }
    ],
    "marginalie": [
@@ -1783,7 +2188,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht"
+     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht",
+     "eId": "sec_6_a"
     }
    ],
    "marginalie": [
@@ -1805,7 +2211,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 150,
+      "l": 150
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1813,7 +2225,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht"
+     "label": "6a. Abschnitt: Meldepflichten, Zentralstelle 2. Säule, Massnahmen bei Vernachlässigung der Unterhaltspflicht",
+     "eId": "sec_6_a"
     }
    ],
    "marginalie": [
@@ -1842,7 +2255,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "79",
@@ -1854,7 +2268,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 251,
+      "l": 294
+     },
+     "kl": "V"
     },
     {
      "nr": "80",
@@ -1866,7 +2286,14 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 56,
+      "l": 57
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1874,7 +2301,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6b. Abschnitt: Verjährung von Ansprüchen und Aufbewahrung von Vorsorgeunterlagen"
+     "label": "6b. Abschnitt: Verjährung von Ansprüchen und Aufbewahrung von Vorsorgeunterlagen",
+     "eId": "sec_6_b"
     }
    ],
    "marginalie": [],
@@ -1890,7 +2318,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 97,
+      "l": 109
+     },
+     "kl": "V"
     },
     {
      "nr": "81",
@@ -1907,7 +2341,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6b. Abschnitt: Verjährung von Ansprüchen und Aufbewahrung von Vorsorgeunterlagen"
+     "sektion": "6b. Abschnitt: Verjährung von Ansprüchen und Aufbewahrung von Vorsorgeunterlagen",
+     "kl": "A"
     }
    ]
   },
@@ -1915,7 +2350,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Anwendbarkeit des BVG"
+     "label": "7. Abschnitt: Anwendbarkeit des BVG",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1936,7 +2372,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -1948,7 +2385,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 63,
+      "l": 571
+     },
+     "kl": "V"
     },
     {
      "nr": "88",
@@ -1960,7 +2403,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 173,
+      "l": 571
+     },
+     "kl": "V"
     },
     {
      "nr": "89",
@@ -1972,7 +2421,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 533,
+      "l": 571
+     },
+     "kl": "V"
     },
     {
      "nr": "90",
@@ -1988,7 +2443,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 571,
+      "l": 571
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1996,7 +2457,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Internationale Koordination"
+     "label": "8. Abschnitt: Internationale Koordination",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -2017,7 +2479,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -2029,7 +2492,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 573,
+      "l": 763
+     },
+     "kl": "V"
     },
     {
      "nr": "95",
@@ -2041,7 +2510,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 28,
+      "l": 29
+     },
+     "kl": "V"
     },
     {
      "nr": "96",
@@ -2053,7 +2529,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 28,
+      "l": 29
+     },
+     "kl": "V"
     },
     {
      "nr": "97",
@@ -2077,7 +2560,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 28,
+      "l": 29
+     },
+     "kl": "V"
     },
     {
      "nr": "98",
@@ -2101,7 +2591,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 27,
+      "l": 28
+     },
+     "kl": "V"
     },
     {
      "nr": "99",
@@ -2113,7 +2610,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 624,
+      "l": 711
+     },
+     "kl": "V"
     },
     {
      "nr": "91",
@@ -2138,7 +2641,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "8. Abschnitt: Internationale Koordination"
+     "sektion": "8. Abschnitt: Internationale Koordination",
+     "kl": "A"
     },
     {
      "nr": "92",
@@ -2155,7 +2659,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "8. Abschnitt: Internationale Koordination"
+     "sektion": "8. Abschnitt: Internationale Koordination",
+     "kl": "A"
     }
    ]
   },
@@ -2163,7 +2668,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Internationale Koordination"
+     "label": "8. Abschnitt: Internationale Koordination",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -2180,7 +2686,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 182,
+      "l": 299
+     },
+     "kl": "V"
     },
     {
      "nr": "101",
@@ -2192,7 +2704,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 154,
+      "l": 271
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2200,7 +2718,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Internationale Koordination"
+     "label": "8. Abschnitt: Internationale Koordination",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -2217,7 +2736,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 33,
+      "l": 244
+     },
+     "kl": "V"
     },
     {
      "nr": "103",
@@ -2229,7 +2755,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 35,
+      "l": 234
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2237,7 +2770,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Internationale Koordination"
+     "label": "8. Abschnitt: Internationale Koordination",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -2248,7 +2782,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Internationale Koordination"
+     "label": "8. Abschnitt: Internationale Koordination",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -2265,7 +2800,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 178,
+      "l": 205
+     },
+     "kl": "V"
     },
     {
      "nr": "105",
@@ -2277,7 +2818,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 84,
+      "l": 94
+     },
+     "kl": "V"
     },
     {
      "nr": "106",
@@ -2289,7 +2836,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 87,
+      "l": 97
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2297,7 +2850,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Internationale Koordination"
+     "label": "8. Abschnitt: Internationale Koordination",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -2318,7 +2872,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -2331,7 +2886,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 74,
+      "l": 241
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2339,7 +2900,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten"
+     "label": "2. Abschnitt: Rechte und Pflichten der Vorsorgeeinrichtung bei Austritt von Versicherten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [],
@@ -2366,7 +2928,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

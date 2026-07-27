@@ -5,7 +5,7 @@ fedlex:eli-Nachbearbeitungs-Ritual, das JSON-Schema der Snapshots, die
 Register-Felder und das Zeilenformat von `fedlex-cache.sh`. Das *Warum* und die
 fachliche Reihenfolge stehen in `methodology/normtext.md`; **diese Datei erst
 beim Schritt «Cache laden / Snapshot generieren» in den Kontext ziehen**, nicht
-vorab. Eiserne Regel (CLAUDE.md §7 Build-Regel): Snapshots werden
+vorab. Eiserne Regel (§7 Build-Regeln, in `SKILL.md`): Snapshots werden
 **ausschliesslich vom Generator** erzeugt, **nie von Hand editiert**; das Datum
 kommt immer aus der Shell (`$(date +%F)`, §2 — kein `new Date()` im Skript,
 erzwungen in der Funktion `leseDatum()` in `scripts/normtext-snapshot.ts`, die

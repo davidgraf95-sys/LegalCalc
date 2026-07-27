@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.232.04",
   "titel": "Pariser Übereinkunft zum Schutz des gewerblichen Eigentums revidiert in Stockholm am 14. Juli 1967",
@@ -10,7 +10,8 @@
     "text": "Der Originaltext findet sich unter der gleichen Nummer in der französischen Ausgabe dieser Sammlung. Die Artikel der Übereinkunft sind mit Überschriften versehen worden, um die Benützung des Textes zu erleichtern; der Originaltext enthält keine Artikelüberschriften.",
     "links": [],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "U"
    },
    {
     "nr": "2",
@@ -22,7 +23,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -48,49 +50,49 @@
   "4": {
    "gliederung": [],
    "marginalie": [
-    "[A.–I. Prioritätsrecht. – G. Teilung der Anmeldung]"
+    "[A.–I. Patente, Gebrauchsmuster, gewerbliche Muster und Modelle, Marken, Erfinderscheine: Prioritätsrecht. – G. Patente: Teilung der Anmeldung]"
    ]
   },
   "5": {
    "gliederung": [],
    "marginalie": [
-    "[A. Einfuhr von Gegenständen, unterlassene oder ungenügende Ausübung, Zwangslizenzen. – B. Unterlassene Ausübung, Einfuhr von Gegenständen. – C. Unterlassener Gebrauch, Gebrauch in abweichender Form, Gebrauch durch Mitinhaber. – D. Nichterforderlichkeit von Schutzvermerken]"
+    "[A. Patente: Einfuhr von Gegenständen, unterlassene oder ungenügende Ausübung, Zwangslizenzen. – B. Gewerbliche Muster und Modelle: Unterlassene Ausübung, Einfuhr von Gegenständen. – C. Marken: Unterlassener Gebrauch, Gebrauch in abweichender Form, Gebrauch durch Mitinhaber. – D. Patente, Gebrauchsmuster, Marken, gewerbliche Muster und Modelle: Nichterforderlichkeit von Schutzvermerken]"
    ]
   },
   "6": {
    "gliederung": [],
    "marginalie": [
-    "[ Eintragungsbedingungen – Unabhängigkeit der in verschiedenen Ländern geschützten identischen Marken]"
+    "[Marken: Eintragungsbedingungen – Unabhängigkeit der in verschiedenen Ländern geschützten identischen Marken]"
    ]
   },
   "7": {
    "gliederung": [],
    "marginalie": [
-    "[ Eintragung ohne Rücksicht auf die Beschaffenheit des Erzeugnisses]"
+    "[Marken: Eintragung ohne Rücksicht auf die Beschaffenheit des Erzeugnisses]"
    ]
   },
   "8": {
    "gliederung": [],
    "marginalie": [
-    "[]"
+    "[Handelsnamen]"
    ]
   },
   "9": {
    "gliederung": [],
    "marginalie": [
-    "[ Beschlagnahme des mit einer Marke oder einem Handelsnamen widerrechtlich versehenen Erzeugnisses bei der Einfuhr]"
+    "[Marken, Handelsnamen: Beschlagnahme des mit einer Marke oder einem Handelsnamen widerrechtlich versehenen Erzeugnisses bei der Einfuhr]"
    ]
   },
   "10": {
    "gliederung": [],
    "marginalie": [
-    "[ Beschlagnahme des mit einer falschen Herkunftsangabe versehenen Erzeugnisses bei der Einfuhr]"
+    "[Herkunftsangaben: Beschlagnahme des mit einer falschen Herkunftsangabe versehenen Erzeugnisses bei der Einfuhr]"
    ]
   },
   "11": {
    "gliederung": [],
    "marginalie": [
-    "[ Zeitweiliger Schutz im Zusammenhang mit internationalen Ausstellungen]"
+    "[Patentfähige Erfindungen, Gebrauchsmuster, gewerbliche Muster und Modelle, Marken: Zeitweiliger Schutz im Zusammenhang mit internationalen Ausstellungen]"
    ]
   },
   "12": {
@@ -117,7 +119,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -137,7 +140,14 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 196,
+      "l": 444
+     },
+     "kl": "V"
     },
     {
      "nr": "5",
@@ -149,7 +159,14 @@
       }
      ],
      "absatz": null,
-     "item": "v"
+     "item": "v",
+     "pos": {
+      "b": 0,
+      "it": 9,
+      "o": 64,
+      "l": 117
+     },
+     "kl": "U"
     },
     {
      "nr": "6",
@@ -161,7 +178,14 @@
       }
      ],
      "absatz": null,
-     "item": "7"
+     "item": "7",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 83,
+      "l": 264
+     },
+     "kl": "U"
     }
    ]
   },
@@ -181,7 +205,14 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 2,
+      "it": 5,
+      "o": 138,
+      "l": 153
+     },
+     "kl": "U"
     },
     {
      "nr": "8",
@@ -193,7 +224,8 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "kl": "U"
     }
    ]
   },
@@ -213,7 +245,14 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 208,
+      "l": 247
+     },
+     "kl": "V"
     }
    ]
   },
@@ -263,7 +302,14 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 216,
+      "l": 226
+     },
+     "kl": "V"
     }
    ]
   },
@@ -309,7 +355,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 205,
+      "l": 266
+     },
+     "kl": "Z"
     },
     {
      "nr": "12",
@@ -317,7 +369,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 265,
+      "l": 266
+     },
+     "kl": "V"
     },
     {
      "nr": "13",
@@ -329,7 +387,14 @@
       }
      ],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 147,
+      "l": 318
+     },
+     "kl": "V"
     },
     {
      "nr": "14",
@@ -341,7 +406,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 176,
+      "l": 310
+     },
+     "kl": "V"
     },
     {
      "nr": "15",
@@ -353,7 +425,14 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 205,
+      "l": 339
+     },
+     "kl": "V"
     }
    ]
   },
@@ -374,7 +453,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 278,
+      "l": 598
+     },
+     "kl": "V"
     }
    ]
   },
@@ -401,104 +486,110 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 238,
+      "l": 640
+     },
+     "kl": "V"
     }
    ]
   },
   "10_bis": {
    "gliederung": [],
    "marginalie": [
-    "[]"
+    "[Schutz gegen unlauteren Wettbewerb]"
    ]
   },
   "10_ter": {
    "gliederung": [],
    "marginalie": [
-    "[ Rechtsbehelfe – Klagerecht von Vereinigungen]"
+    "[Marken, Handelsnamen, Herkunftsangaben, Schutz gegen unlauteren Wettbewerb: Rechtsbehelfe – Klagerecht von Vereinigungen]"
    ]
   },
   "4_bis": {
    "gliederung": [],
    "marginalie": [
-    "[ Unabhängigkeit der für dieselbe Erfindung in verschiedenen Ländern erlangten Patente]"
+    "[Patente: Unabhängigkeit der für dieselbe Erfindung in verschiedenen Ländern erlangten Patente]"
    ]
   },
   "4_quater": {
    "gliederung": [],
    "marginalie": [
-    "[ Patentierbarkeit im Falle innerstaatlicher Vertriebsbeschränkungen]"
+    "[Patente: Patentierbarkeit im Falle innerstaatlicher Vertriebsbeschränkungen]"
    ]
   },
   "4_ter": {
    "gliederung": [],
    "marginalie": [
-    "[ Erfindernennung im Patent]"
+    "[Patente: Erfindernennung im Patent]"
    ]
   },
   "5_bis": {
    "gliederung": [],
    "marginalie": [
-    "[ Nachfrist für die Zahlung von Aufrechterhaltungsgebühren. – Wiederherstellung]"
+    "[Alle gewerblichen Schutzrechte: Nachfrist für die Zahlung von Aufrechterhaltungsgebühren. – Patente: Wiederherstellung]"
    ]
   },
   "5_quater": {
    "gliederung": [],
    "marginalie": [
-    "[ Einfuhr von Erzeugnissen bei Schutz des Herstellungsverfahrens im Einfuhrland]"
+    "[Patente: Einfuhr von Erzeugnissen bei Schutz des Herstellungsverfahrens im Einfuhrland]"
    ]
   },
   "5_quinquies": {
    "gliederung": [],
    "marginalie": [
-    "[]"
+    "[Gewerbliche Muster und Modelle]"
    ]
   },
   "5_ter": {
    "gliederung": [],
    "marginalie": [
-    "[ Freie Einfuhr von in Verkehrsmitteln eingebauten patentierten Gegenständen]"
+    "[Patente: Freie Einfuhr von in Verkehrsmitteln eingebauten patentierten Gegenständen]"
    ]
   },
   "6_bis": {
    "gliederung": [],
    "marginalie": [
-    "[ Notorisch bekannte Marken]"
+    "[Marken: Notorisch bekannte Marken]"
    ]
   },
   "6_quater": {
    "gliederung": [],
    "marginalie": [
-    "[ Übertragung]"
+    "[Marken: Übertragung]"
    ]
   },
   "6_quinquies": {
    "gliederung": [],
    "marginalie": [
-    "[ Zulassung der in einem Verbandsland eingetragenen Marke zum Schutz in den anderen Verbandsländern («telle quelle-Klausel»)]"
+    "[Marken: Zulassung der in einem Verbandsland eingetragenen Marke zum Schutz in den anderen Verbandsländern («telle quelle-Klausel»)]"
    ]
   },
   "6_septies": {
    "gliederung": [],
    "marginalie": [
-    "[ Eintragung auf den Namen des Agenten oder Vertreters ohne Zustimmung des Markeninhabers]"
+    "[Marken: Eintragung auf den Namen des Agenten oder Vertreters ohne Zustimmung des Markeninhabers]"
    ]
   },
   "6_sexies": {
    "gliederung": [],
    "marginalie": [
-    "[ Dienstleistungsmarken]"
+    "[Marken: Dienstleistungsmarken]"
    ]
   },
   "6_ter": {
    "gliederung": [],
    "marginalie": [
-    "[ Verbot der Eintragung und des Gebrauchs von Hoheitszeichen, amtlichen Prüf‑ und Gewährzeichen und von Kennzeichen zwischenstaatlicher Organisationen]"
+    "[Marken: Verbot der Eintragung und des Gebrauchs von Hoheitszeichen, amtlichen Prüf‑ und Gewährzeichen und von Kennzeichen zwischenstaatlicher Organisationen]"
    ]
   },
   "7_bis": {
    "gliederung": [],
    "marginalie": [
-    "[ Verbandsmarken]"
+    "[Marken: Verbandsmarken]"
    ]
   }
  }

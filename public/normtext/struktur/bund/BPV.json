@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "172.220.111.3",
   "titel": "Bundespersonalverordnung",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -42,7 +43,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -60,7 +62,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 284,
+      "l": 292
+     },
+     "kl": "V"
     },
     {
      "nr": "3",
@@ -73,7 +82,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 173,
+      "l": 182
+     },
+     "kl": "V"
     },
     {
      "nr": "4",
@@ -85,7 +101,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -97,7 +114,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 121,
+      "l": 121
+     },
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -110,7 +134,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 25,
+      "l": 79
+     },
+     "kl": "V"
     },
     {
      "nr": "7",
@@ -122,7 +153,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -167,7 +199,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 54,
+      "l": 90
+     },
+     "kl": "Z"
     },
     {
      "nr": "9",
@@ -180,7 +219,14 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 57,
+      "l": 69
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -192,7 +238,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -205,7 +252,14 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 53,
+      "l": 164
+     },
+     "kl": "V"
     },
     {
      "nr": "12",
@@ -221,7 +275,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 380,
+      "l": 380
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -233,7 +293,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 269,
+      "l": 269
+     },
+     "kl": "A"
     }
    ]
   },
@@ -241,7 +307,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -258,7 +325,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -270,7 +338,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -282,7 +351,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -294,7 +364,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -306,7 +377,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 340,
+      "l": 340
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -318,7 +395,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 177,
+      "l": 177
+     },
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -330,7 +413,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 208,
+      "l": 208
+     },
+     "kl": "A"
     }
    ]
   },
@@ -338,7 +427,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -355,7 +445,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 149,
+      "l": 149
+     },
+     "kl": "A"
     }
    ]
   },
@@ -363,11 +459,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -384,7 +482,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -396,7 +495,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 125,
+      "l": 125
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -408,7 +513,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 196,
+      "l": 196
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -420,7 +531,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 317,
+      "l": 317
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -432,7 +549,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 220,
+      "l": 220
+     },
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -444,7 +567,14 @@
       }
      ],
      "absatz": "5",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 6,
+      "it": 3,
+      "o": 58,
+      "l": 58
+     },
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -456,7 +586,13 @@
       }
      ],
      "absatz": "5bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 124,
+      "l": 124
+     },
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -468,7 +604,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -476,11 +618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -497,7 +641,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -509,7 +654,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 47,
+      "l": 47
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -521,7 +672,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 174,
+      "l": 174
+     },
+     "kl": "A"
     }
    ]
   },
@@ -529,11 +686,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -544,11 +703,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -565,7 +726,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -579,7 +741,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 137,
+      "l": 138
+     },
+     "kl": "V"
     }
    ]
   },
@@ -587,11 +755,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -602,11 +772,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -617,11 +789,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -638,7 +812,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -646,11 +821,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -667,7 +844,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -675,11 +853,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -690,11 +870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -705,11 +887,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -726,7 +910,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 68,
+      "l": 68
+     },
+     "kl": "A"
     }
    ]
   },
@@ -734,11 +924,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Dialog und Personalbeurteilung"
+     "label": "2. Abschnitt: Dialog und Personalbeurteilung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -756,7 +948,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Dialog und Personalbeurteilung"
+     "sektion": "2. Abschnitt: Dialog und Personalbeurteilung",
+     "kl": "A"
     }
    ]
   },
@@ -764,11 +957,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Dialog und Personalbeurteilung"
+     "label": "2. Abschnitt: Dialog und Personalbeurteilung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -779,11 +974,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Dialog und Personalbeurteilung"
+     "label": "2. Abschnitt: Dialog und Personalbeurteilung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": []
@@ -792,11 +989,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Koordination und Berichterstattung"
+     "label": "3. Abschnitt: Koordination und Berichterstattung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -813,7 +1012,8 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -825,7 +1025,8 @@
       }
      ],
      "absatz": "3",
-     "item": "bbis"
+     "item": "bbis",
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -837,7 +1038,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -849,7 +1051,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -861,7 +1064,8 @@
       }
      ],
      "absatz": "3",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -873,7 +1077,8 @@
       }
      ],
      "absatz": "3",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -885,7 +1090,8 @@
       }
      ],
      "absatz": "3",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -897,7 +1103,8 @@
       }
      ],
      "absatz": "3",
-     "item": "m"
+     "item": "m",
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -909,7 +1116,8 @@
       }
      ],
      "absatz": "3",
-     "item": "p"
+     "item": "p",
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -921,7 +1129,8 @@
       }
      ],
      "absatz": "3",
-     "item": "q"
+     "item": "q",
+     "kl": "A"
     }
    ]
   },
@@ -929,11 +1138,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Koordination und Berichterstattung"
+     "label": "3. Abschnitt: Koordination und Berichterstattung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -950,7 +1161,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -958,11 +1170,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Koordination und Berichterstattung"
+     "label": "3. Abschnitt: Koordination und Berichterstattung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -979,7 +1193,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -987,11 +1202,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Koordination und Berichterstattung"
+     "label": "3. Abschnitt: Koordination und Berichterstattung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1008,7 +1225,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 227,
+      "l": 227
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1016,7 +1239,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1033,7 +1257,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 104,
+      "l": 104
+     },
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -1045,7 +1275,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1057,7 +1288,8 @@
       }
      ],
      "absatz": "2",
-     "item": "bbis"
+     "item": "bbis",
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -1069,7 +1301,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -1081,7 +1314,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -1093,7 +1327,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -1106,7 +1346,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 167,
+      "l": 219
+     },
+     "kl": "V"
     },
     {
      "nr": "70",
@@ -1118,7 +1364,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 219,
+      "l": 219
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1126,7 +1378,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1143,7 +1396,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -1155,7 +1409,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -1167,7 +1422,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1175,7 +1436,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1192,7 +1454,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "75",
@@ -1204,7 +1472,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 349,
+      "l": 349
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1212,7 +1486,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1229,7 +1504,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "77",
@@ -1241,7 +1517,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 145,
+      "l": 145
+     },
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1253,7 +1535,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "79",
@@ -1265,7 +1548,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 112,
+      "l": 112
+     },
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -1277,7 +1566,14 @@
       }
      ],
      "absatz": "3bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 116,
+      "l": 116
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1285,7 +1581,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1302,7 +1599,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1310,7 +1608,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1327,7 +1626,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "92",
@@ -1339,7 +1639,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "93",
@@ -1351,7 +1652,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -1363,7 +1665,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -1375,7 +1678,8 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     }
    ]
   },
@@ -1383,7 +1687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1400,7 +1705,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1408,7 +1714,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1425,7 +1732,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -1437,7 +1745,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 276,
+      "l": 276
+     },
+     "kl": "A"
     },
     {
      "nr": "99",
@@ -1450,7 +1764,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 134,
+      "l": 195
+     },
+     "kl": "V"
     },
     {
      "nr": "100",
@@ -1462,7 +1782,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 153,
+      "l": 153
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1470,7 +1796,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1487,7 +1814,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 199,
+      "l": 199
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1495,7 +1828,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1512,7 +1846,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1520,7 +1855,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1537,7 +1873,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1545,7 +1882,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1562,7 +1900,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "115",
@@ -1574,7 +1913,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "116",
@@ -1587,7 +1927,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 177,
+      "l": 365
+     },
+     "kl": "V"
     },
     {
      "nr": "117",
@@ -1599,7 +1945,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 365,
+      "l": 365
+     },
+     "kl": "A"
     },
     {
      "nr": "118",
@@ -1611,7 +1963,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1619,11 +1977,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1640,7 +2000,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1648,11 +2009,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1669,7 +2032,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 146,
+      "l": 146
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1677,11 +2046,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1698,7 +2069,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 149,
+      "l": 149
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1706,11 +2083,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1727,7 +2106,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1735,11 +2115,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1756,7 +2138,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1764,11 +2147,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1779,11 +2164,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1800,7 +2187,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1808,11 +2196,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1823,11 +2213,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1844,7 +2236,8 @@
       }
      ],
      "absatz": "2",
-     "item": "ebis"
+     "item": "ebis",
+     "kl": "A"
     },
     {
      "nr": "131",
@@ -1856,7 +2249,8 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "132",
@@ -1872,7 +2266,8 @@
       }
      ],
      "absatz": "2",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "133",
@@ -1884,7 +2279,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1892,11 +2293,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1917,7 +2320,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -1925,11 +2329,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1946,7 +2352,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 188,
+      "l": 188
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1954,11 +2366,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -1973,7 +2387,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1981,11 +2396,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1996,11 +2413,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2017,7 +2436,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "143",
@@ -2029,7 +2449,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 122,
+      "l": 122
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2037,11 +2463,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2058,7 +2486,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 270,
+      "l": 270
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2066,11 +2500,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2087,7 +2523,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "149",
@@ -2101,7 +2538,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 180,
+      "l": 305
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2109,11 +2552,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Funktionsbewertung"
+     "label": "3. Abschnitt: Funktionsbewertung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2130,7 +2575,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 191,
+      "l": 191
+     },
+     "kl": "A"
     },
     {
      "nr": "161",
@@ -2142,7 +2593,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 330,
+      "l": 330
+     },
+     "kl": "A"
     },
     {
      "nr": "162",
@@ -2154,7 +2611,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 247,
+      "l": 247
+     },
+     "kl": "A"
     },
     {
      "nr": "163",
@@ -2166,7 +2629,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "164",
@@ -2182,7 +2651,13 @@
       }
      ],
      "absatz": "7bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 194,
+      "l": 194
+     },
+     "kl": "A"
     },
     {
      "nr": "165",
@@ -2194,7 +2669,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 199,
+      "l": 199
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2202,11 +2683,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Funktionsbewertung"
+     "label": "3. Abschnitt: Funktionsbewertung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2227,7 +2710,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "169",
@@ -2239,7 +2723,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 128,
+      "l": 128
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2247,11 +2737,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2268,7 +2760,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "172",
@@ -2280,7 +2773,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "173",
@@ -2292,7 +2791,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 300,
+      "l": 300
+     },
+     "kl": "A"
     },
     {
      "nr": "174",
@@ -2308,7 +2813,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "175",
@@ -2320,7 +2831,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 193,
+      "l": 193
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2328,11 +2845,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2349,7 +2868,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 136,
+      "l": 136
+     },
+     "kl": "A"
     },
     {
      "nr": "183",
@@ -2365,7 +2890,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 243,
+      "l": 243
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2373,11 +2904,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2394,7 +2927,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 562,
+      "l": 562
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2402,11 +2941,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2424,7 +2965,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 127,
+      "l": 380
+     },
+     "kl": "V"
     },
     {
      "nr": "186",
@@ -2437,7 +2984,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 329,
+      "l": 380
+     },
+     "kl": "V"
     },
     {
      "nr": "187",
@@ -2449,7 +3002,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 380,
+      "l": 380
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2457,11 +3016,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2478,7 +3039,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "189",
@@ -2490,7 +3052,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "190",
@@ -2502,7 +3065,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 364,
+      "l": 364
+     },
+     "kl": "A"
     },
     {
      "nr": "191",
@@ -2514,7 +3083,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 382,
+      "l": 382
+     },
+     "kl": "A"
     },
     {
      "nr": "192",
@@ -2526,7 +3101,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 101,
+      "l": 101
+     },
+     "kl": "A"
     },
     {
      "nr": "193",
@@ -2539,7 +3120,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 331,
+      "l": 343
+     },
+     "kl": "V"
     },
     {
      "nr": "194",
@@ -2551,7 +3138,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 343,
+      "l": 343
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2559,11 +3152,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2580,7 +3175,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "208",
@@ -2592,7 +3188,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 41,
+      "l": 41
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2600,11 +3202,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2621,7 +3225,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2629,11 +3239,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2644,11 +3256,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2665,7 +3279,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "211",
@@ -2678,7 +3293,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 175,
+      "l": 187
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2686,11 +3307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2707,7 +3330,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "223",
@@ -2719,7 +3343,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 263,
+      "l": 263
+     },
+     "kl": "A"
     },
     {
      "nr": "224",
@@ -2731,7 +3361,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 433,
+      "l": 433
+     },
+     "kl": "A"
     },
     {
      "nr": "225",
@@ -2743,7 +3379,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 143,
+      "l": 143
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2751,11 +3393,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2772,7 +3416,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "227",
@@ -2784,7 +3429,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2792,11 +3438,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2813,7 +3461,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "229",
@@ -2825,7 +3474,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 83,
+      "l": 83
+     },
+     "kl": "A"
     },
     {
      "nr": "230",
@@ -2841,7 +3497,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2849,11 +3511,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2870,7 +3534,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "234",
@@ -2886,7 +3551,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2894,11 +3565,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -2915,7 +3588,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 210,
+      "l": 210
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2923,11 +3602,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -2938,11 +3619,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -2953,11 +3636,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -2974,7 +3659,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 92,
+      "l": 92
+     },
+     "kl": "A"
     },
     {
      "nr": "237",
@@ -2986,7 +3677,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     }
    ]
   },
@@ -2994,11 +3686,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3015,7 +3709,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
     },
     {
      "nr": "239",
@@ -3027,7 +3727,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "240",
@@ -3039,7 +3740,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 62,
+      "l": 62
+     },
+     "kl": "A"
     },
     {
      "nr": "241",
@@ -3051,7 +3759,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 193,
+      "l": 193
+     },
+     "kl": "A"
     },
     {
      "nr": "242",
@@ -3063,7 +3777,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 360,
+      "l": 360
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3071,11 +3791,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3086,11 +3808,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3107,7 +3831,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "244",
@@ -3119,7 +3844,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "245",
@@ -3131,7 +3857,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3139,11 +3871,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3160,7 +3894,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "254",
@@ -3172,7 +3907,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3180,11 +3916,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3195,11 +3933,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3216,7 +3956,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "256",
@@ -3228,7 +3969,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 57,
+      "l": 57
+     },
+     "kl": "A"
     },
     {
      "nr": "257",
@@ -3240,7 +3987,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "258",
@@ -3252,7 +4000,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "259",
@@ -3264,7 +4013,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 111,
+      "l": 111
+     },
+     "kl": "A"
     },
     {
      "nr": "260",
@@ -3276,7 +4031,8 @@
       }
      ],
      "absatz": "2",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     },
     {
      "nr": "261",
@@ -3288,7 +4044,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 148,
+      "l": 148
+     },
+     "kl": "A"
     },
     {
      "nr": "262",
@@ -3300,7 +4062,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "263",
@@ -3312,7 +4075,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "264",
@@ -3324,7 +4088,8 @@
       }
      ],
      "absatz": "3",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "265",
@@ -3336,7 +4101,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "266",
@@ -3352,7 +4123,13 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "267",
@@ -3364,7 +4141,13 @@
       }
      ],
      "absatz": "4ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 328,
+      "l": 328
+     },
+     "kl": "A"
     },
     {
      "nr": "268",
@@ -3380,7 +4163,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 150,
+      "l": 150
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3388,11 +4177,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3409,7 +4200,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "271",
@@ -3421,7 +4213,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "272",
@@ -3433,7 +4226,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 126,
+      "l": 126
+     },
+     "kl": "A"
     },
     {
      "nr": "273",
@@ -3449,7 +4248,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 76,
+      "l": 76
+     },
+     "kl": "A"
     },
     {
      "nr": "274",
@@ -3461,7 +4266,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 220,
+      "l": 220
+     },
+     "kl": "A"
     },
     {
      "nr": "275",
@@ -3473,7 +4284,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 117,
+      "l": 117
+     },
+     "kl": "A"
     },
     {
      "nr": "276",
@@ -3485,7 +4302,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 240,
+      "l": 240
+     },
+     "kl": "A"
     },
     {
      "nr": "277",
@@ -3497,7 +4320,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 203,
+      "l": 203
+     },
+     "kl": "A"
     },
     {
      "nr": "278",
@@ -3509,7 +4338,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3517,11 +4352,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3538,7 +4375,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3546,11 +4384,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3561,11 +4401,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3576,11 +4418,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3597,7 +4441,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 242,
+      "l": 242
+     },
+     "kl": "A"
     },
     {
      "nr": "281",
@@ -3613,7 +4463,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3621,11 +4477,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3636,11 +4494,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3651,11 +4511,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3672,7 +4534,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 253,
+      "l": 253
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3680,11 +4548,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3695,11 +4565,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3716,7 +4588,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "284",
@@ -3728,7 +4601,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "285",
@@ -3741,7 +4615,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 131,
+      "l": 185
+     },
+     "kl": "V"
     },
     {
      "nr": "286",
@@ -3757,7 +4638,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 62,
+      "l": 62
+     },
+     "kl": "A"
     },
     {
      "nr": "287",
@@ -3773,7 +4661,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 477,
+      "l": 477
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3781,7 +4675,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3792,7 +4687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3803,7 +4699,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3820,7 +4717,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "310",
@@ -3832,7 +4730,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 119,
+      "l": 119
+     },
+     "kl": "A"
     },
     {
      "nr": "311",
@@ -3844,7 +4748,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 97,
+      "l": 97
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3852,7 +4762,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3869,7 +4780,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 385,
+      "l": 385
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3877,7 +4794,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3894,7 +4812,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3902,7 +4821,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3920,7 +4840,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 529,
+      "l": 582
+     },
+     "kl": "V"
     },
     {
      "nr": "316",
@@ -3932,7 +4858,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 582,
+      "l": 582
+     },
+     "kl": "A"
     },
     {
      "nr": "317",
@@ -3944,7 +4876,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 313,
+      "l": 313
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3952,7 +4890,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3969,7 +4908,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 188,
+      "l": 188
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3977,7 +4922,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3994,7 +4940,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "329",
@@ -4006,7 +4953,8 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -4014,7 +4962,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -4029,7 +4978,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4037,7 +4987,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4055,7 +5006,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 106,
+      "l": 116
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4063,7 +5020,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4080,7 +5038,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -4088,7 +5047,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4099,7 +5059,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4118,7 +5079,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 207,
+      "l": 208
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4126,7 +5093,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4144,7 +5112,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 116,
+      "l": 147
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4152,7 +5126,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4169,7 +5144,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4177,11 +5153,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4198,7 +5176,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "342",
@@ -4210,7 +5189,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 312,
+      "l": 312
+     },
+     "kl": "A"
     },
     {
      "nr": "340",
@@ -4223,7 +5208,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "sektion": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "kl": "A"
     }
    ]
   },
@@ -4231,11 +5217,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4252,7 +5240,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4260,11 +5249,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -4281,7 +5272,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "359",
@@ -4293,7 +5285,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 268,
+      "l": 268
+     },
+     "kl": "A"
     },
     {
      "nr": "360",
@@ -4305,7 +5303,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "361",
@@ -4317,7 +5316,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "357",
@@ -4330,7 +5330,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses"
+     "sektion": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses",
+     "kl": "A"
     }
    ]
   },
@@ -4338,7 +5339,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Mitwirkung und Sozialpartnerschaft"
+     "label": "8. Kapitel: Mitwirkung und Sozialpartnerschaft",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4355,7 +5357,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 259,
+      "l": 259
+     },
+     "kl": "A"
     },
     {
      "nr": "363",
@@ -4367,7 +5375,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 279,
+      "l": 279
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4375,7 +5389,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Mitwirkung und Sozialpartnerschaft"
+     "label": "8. Kapitel: Mitwirkung und Sozialpartnerschaft",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4392,7 +5407,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     },
     {
      "nr": "365",
@@ -4404,7 +5425,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 275,
+      "l": 275
+     },
+     "kl": "A"
     },
     {
      "nr": "366",
@@ -4416,7 +5443,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4424,7 +5457,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Mitwirkung und Sozialpartnerschaft"
+     "label": "8. Kapitel: Mitwirkung und Sozialpartnerschaft",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4441,7 +5475,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 154,
+      "l": 154
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4449,7 +5489,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Verjährung"
+     "label": "9. Kapitel: Verjährung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -4464,7 +5505,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "368",
@@ -4477,7 +5519,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "9. Kapitel: Verjährung"
+     "sektion": "9. Kapitel: Verjährung",
+     "kl": "A"
     }
    ]
   },
@@ -4485,7 +5528,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Verjährung"
+     "label": "9. Kapitel: Verjährung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -4500,7 +5544,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4508,7 +5553,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Verjährung"
+     "label": "9. Kapitel: Verjährung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -4523,7 +5569,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4531,7 +5578,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Verjährung"
+     "label": "9. Kapitel: Verjährung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -4546,7 +5594,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "373",
@@ -4560,7 +5609,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 108,
+      "l": 109
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4568,7 +5623,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Ausführungsbestimmungen"
+     "label": "10. Kapitel: Ausführungsbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4585,7 +5641,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "375",
@@ -4597,7 +5654,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "376",
@@ -4609,7 +5667,8 @@
       }
      ],
      "absatz": "2",
-     "item": "hbis"
+     "item": "hbis",
+     "kl": "A"
     },
     {
      "nr": "377",
@@ -4625,7 +5684,8 @@
       }
      ],
      "absatz": "2",
-     "item": "kbis"
+     "item": "kbis",
+     "kl": "A"
     },
     {
      "nr": "378",
@@ -4637,7 +5697,8 @@
       }
      ],
      "absatz": "2",
-     "item": "obis"
+     "item": "obis",
+     "kl": "A"
     },
     {
      "nr": "379",
@@ -4649,7 +5710,8 @@
       }
      ],
      "absatz": "2",
-     "item": "oter"
+     "item": "oter",
+     "kl": "A"
     },
     {
      "nr": "380",
@@ -4661,7 +5723,8 @@
       }
      ],
      "absatz": "2",
-     "item": "p"
+     "item": "p",
+     "kl": "A"
     },
     {
      "nr": "381",
@@ -4673,7 +5736,8 @@
       }
      ],
      "absatz": "2",
-     "item": "q"
+     "item": "q",
+     "kl": "A"
     },
     {
      "nr": "382",
@@ -4685,7 +5749,8 @@
       }
      ],
      "absatz": "2",
-     "item": "r"
+     "item": "r",
+     "kl": "A"
     },
     {
      "nr": "383",
@@ -4697,7 +5762,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 294,
+      "l": 294
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4705,7 +5776,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Ausführungsbestimmungen"
+     "label": "10. Kapitel: Ausführungsbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4722,7 +5794,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     },
     {
      "nr": "385",
@@ -4738,7 +5816,8 @@
       }
      ],
      "absatz": "1",
-     "item": "ebis"
+     "item": "ebis",
+     "kl": "A"
     },
     {
      "nr": "386",
@@ -4750,7 +5829,8 @@
       }
      ],
      "absatz": "1",
-     "item": "hbis"
+     "item": "hbis",
+     "kl": "A"
     },
     {
      "nr": "387",
@@ -4762,7 +5842,14 @@
       }
      ],
      "absatz": "2",
-     "item": "j"
+     "item": "j",
+     "pos": {
+      "b": 1,
+      "it": 9,
+      "o": 87,
+      "l": 87
+     },
+     "kl": "A"
     },
     {
      "nr": "388",
@@ -4774,7 +5861,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 137,
+      "l": 137
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4782,7 +5875,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Ausführungsbestimmungen"
+     "label": "10. Kapitel: Ausführungsbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4803,7 +5897,14 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 5,
+      "l": 137
+     },
+     "kl": "A"
     },
     {
      "nr": "390",
@@ -4815,7 +5916,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -4823,7 +5925,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4834,7 +5937,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4851,7 +5955,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "337",
@@ -4863,7 +5968,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 233,
+      "l": 233
+     },
+     "kl": "A"
     },
     {
      "nr": "338",
@@ -4875,7 +5986,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 244,
+      "l": 244
+     },
+     "kl": "A"
     },
     {
      "nr": "339",
@@ -4887,7 +6004,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 222,
+      "l": 222
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4895,11 +6018,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4916,7 +6041,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -4924,11 +6050,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4939,11 +6067,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4960,7 +6090,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 283,
+      "l": 283
+     },
+     "kl": "A"
     }
    ]
   },
@@ -4968,11 +6104,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4983,11 +6121,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4998,11 +6138,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [],
@@ -5017,7 +6159,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5025,11 +6168,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -5046,7 +6191,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5054,11 +6200,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -5075,7 +6223,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "349",
@@ -5087,7 +6236,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 129,
+      "l": 129
+     },
+     "kl": "A"
     },
     {
      "nr": "350",
@@ -5100,7 +6255,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 78,
+      "l": 79
+     },
+     "kl": "V"
     },
     {
      "nr": "351",
@@ -5112,7 +6274,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "352",
@@ -5125,7 +6288,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 139,
+      "l": 262
+     },
+     "kl": "V"
     },
     {
      "nr": "353",
@@ -5138,7 +6308,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 261,
+      "l": 262
+     },
+     "kl": "V"
     },
     {
      "nr": "354",
@@ -5150,7 +6327,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -5158,11 +6336,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -5179,7 +6359,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5187,11 +6368,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -5208,7 +6391,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5216,11 +6400,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -5231,11 +6417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -5252,7 +6440,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5260,11 +6449,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -5281,7 +6472,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -5293,7 +6485,13 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 417,
+      "l": 417
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5301,11 +6499,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -5322,7 +6522,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -5335,7 +6536,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 171,
+      "l": 371
+     },
+     "kl": "V"
     },
     {
      "nr": "42",
@@ -5348,7 +6555,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 238,
+      "l": 371
+     },
+     "kl": "V"
     }
    ]
   },
@@ -5356,7 +6569,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [],
@@ -5375,7 +6589,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "391",
@@ -5388,7 +6603,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "11. Kapitel: Schlussbestimmungen"
+     "sektion": "11. Kapitel: Schlussbestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -5396,7 +6612,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [],
@@ -5415,7 +6632,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5423,7 +6641,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5444,7 +6663,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     },
     {
      "nr": "395",
@@ -5464,7 +6684,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 288,
+      "l": 288
+     },
+     "kl": "V"
     },
     {
      "nr": "396",
@@ -5476,7 +6702,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     },
     {
      "nr": "397",
@@ -5489,7 +6721,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 62,
+      "l": 173
+     },
+     "kl": "V"
     },
     {
      "nr": "398",
@@ -5501,7 +6739,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 73,
+      "l": 73
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5509,7 +6753,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [],
@@ -5528,7 +6773,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5536,7 +6782,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5553,7 +6800,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "401",
@@ -5565,7 +6813,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 7,
+      "l": 7
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5573,7 +6827,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5590,7 +6845,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5598,7 +6854,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5615,7 +6872,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5623,7 +6881,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5640,7 +6899,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5648,7 +6908,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [],
@@ -5667,7 +6928,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5675,7 +6937,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5692,7 +6955,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5700,7 +6964,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5717,7 +6982,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -5725,7 +6991,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5742,7 +7009,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "409",
@@ -5754,7 +7022,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 182,
+      "l": 464
+     },
+     "kl": "Z"
     },
     {
      "nr": "410",
@@ -5767,7 +7041,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 191,
+      "l": 464
+     },
+     "kl": "V"
     },
     {
      "nr": "411",
@@ -5781,7 +7061,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 3
+     "absatzIndex": 3,
+     "pos": {
+      "b": 3,
+      "o": 233,
+      "l": 486
+     },
+     "kl": "V"
     }
    ]
   },
@@ -5789,7 +7075,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5806,7 +7093,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "413",
@@ -5818,7 +7106,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 201,
+      "l": 201
+     },
+     "kl": "A"
     },
     {
      "nr": "414",
@@ -5831,7 +7125,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 182,
+      "l": 363
+     },
+     "kl": "V"
     },
     {
      "nr": "415",
@@ -5843,7 +7143,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 363,
+      "l": 363
+     },
+     "kl": "A"
     },
     {
      "nr": "416",
@@ -5856,7 +7162,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 344,
+      "l": 555
+     },
+     "kl": "V"
     },
     {
      "nr": "417",
@@ -5868,7 +7180,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 555,
+      "l": 555
+     },
+     "kl": "A"
     },
     {
      "nr": "418",
@@ -5880,7 +7198,13 @@
       }
      ],
      "absatz": "1quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 473,
+      "l": 473
+     },
+     "kl": "A"
     },
     {
      "nr": "419",
@@ -5892,7 +7216,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 143,
+      "l": 143
+     },
+     "kl": "A"
     },
     {
      "nr": "420",
@@ -5904,7 +7234,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 302,
+      "l": 302
+     },
+     "kl": "A"
     },
     {
      "nr": "421",
@@ -5916,7 +7252,14 @@
       }
      ],
      "absatz": "3",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 6,
+      "it": 4,
+      "o": 103,
+      "l": 103
+     },
+     "kl": "A"
     },
     {
      "nr": "422",
@@ -5928,7 +7271,14 @@
       }
      ],
      "absatz": "3bis",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 7,
+      "it": 2,
+      "o": 113,
+      "l": 113
+     },
+     "kl": "A"
     },
     {
      "nr": "423",
@@ -5940,7 +7290,14 @@
       }
      ],
      "absatz": "3ter",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 8,
+      "it": 2,
+      "o": 113,
+      "l": 113
+     },
+     "kl": "A"
     },
     {
      "nr": "424",
@@ -5952,7 +7309,13 @@
       }
      ],
      "absatz": "3quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 9,
+      "o": 320,
+      "l": 320
+     },
+     "kl": "A"
     },
     {
      "nr": "425",
@@ -5964,7 +7327,13 @@
       }
      ],
      "absatz": "3quinquies",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 10,
+      "o": 457,
+      "l": 457
+     },
+     "kl": "A"
     },
     {
      "nr": "426",
@@ -5976,7 +7345,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 11,
+      "it": 1,
+      "o": 184,
+      "l": 184
+     },
+     "kl": "A"
     },
     {
      "nr": "427",
@@ -5989,7 +7365,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 12
+     "absatzIndex": 12,
+     "pos": {
+      "b": 12,
+      "o": 637,
+      "l": 637
+     },
+     "kl": "A"
     }
    ]
   },
@@ -5997,7 +7379,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -6014,7 +7397,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6022,11 +7406,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -6047,7 +7433,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -6059,7 +7446,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 85,
+      "l": 85
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6067,11 +7460,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Koordination und Berichterstattung"
+     "label": "3. Abschnitt: Koordination und Berichterstattung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6088,7 +7483,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6096,11 +7492,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Koordination und Berichterstattung"
+     "label": "3. Abschnitt: Koordination und Berichterstattung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6117,7 +7515,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6125,7 +7524,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -6142,7 +7542,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -6154,7 +7555,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 142,
+      "l": 142
+     },
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -6166,7 +7573,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 143,
+      "l": 143
+     },
+     "kl": "A"
     },
     {
      "nr": "84",
@@ -6178,7 +7591,13 @@
       }
      ],
      "absatz": "2ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6186,7 +7605,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -6203,7 +7623,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "86",
@@ -6215,7 +7636,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -6227,7 +7654,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 121,
+      "l": 121
+     },
+     "kl": "A"
     },
     {
      "nr": "88",
@@ -6239,7 +7672,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 143,
+      "l": 143
+     },
+     "kl": "A"
     },
     {
      "nr": "89",
@@ -6251,7 +7690,13 @@
       }
      ],
      "absatz": "1quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6259,7 +7704,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -6276,7 +7722,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6284,7 +7731,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -6301,7 +7749,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6309,7 +7758,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -6326,7 +7776,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6334,7 +7785,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -6351,7 +7803,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -6363,7 +7816,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 223,
+      "l": 223
+     },
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -6376,7 +7835,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 223,
+      "l": 552
+     },
+     "kl": "V"
     },
     {
      "nr": "108",
@@ -6388,7 +7853,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 552,
+      "l": 552
+     },
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -6400,7 +7871,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 559,
+      "l": 559
+     },
+     "kl": "A"
     },
     {
      "nr": "110",
@@ -6412,7 +7889,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 559,
+      "l": 559
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6420,7 +7903,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -6435,7 +7919,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -6443,7 +7928,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -6462,7 +7948,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -6470,11 +7957,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -6491,7 +7980,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "123",
@@ -6503,7 +7993,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     },
     {
      "nr": "124",
@@ -6515,7 +8011,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -6527,7 +8024,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 201,
+      "l": 201
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6535,11 +8038,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -6556,7 +8061,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6564,11 +8070,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -6585,7 +8093,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "135",
@@ -6599,7 +8108,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 252,
+      "l": 344
+     },
+     "kl": "V"
     },
     {
      "nr": "136",
@@ -6612,7 +8127,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 344,
+      "l": 344
+     },
+     "kl": "A"
     },
     {
      "nr": "137",
@@ -6624,7 +8145,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 59,
+      "l": 59
+     },
+     "kl": "A"
     },
     {
      "nr": "138",
@@ -6636,7 +8164,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 203,
+      "l": 203
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6644,11 +8178,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -6669,7 +8205,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6677,11 +8214,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -6698,7 +8237,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "146",
@@ -6710,7 +8250,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 93,
+      "l": 93
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6718,11 +8264,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -6739,7 +8287,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "151",
@@ -6751,7 +8300,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 121,
+      "l": 121
+     },
+     "kl": "A"
     },
     {
      "nr": "152",
@@ -6764,7 +8320,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 102,
+      "l": 103
+     },
+     "kl": "V"
     },
     {
      "nr": "153",
@@ -6776,7 +8339,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "154",
@@ -6788,7 +8352,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 250,
+      "l": 250
+     },
+     "kl": "A"
     },
     {
      "nr": "155",
@@ -6801,7 +8371,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 282,
+      "l": 291
+     },
+     "kl": "V"
     },
     {
      "nr": "156",
@@ -6813,7 +8389,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 291,
+      "l": 291
+     },
+     "kl": "A"
     },
     {
      "nr": "157",
@@ -6826,7 +8408,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 217,
+      "l": 231
+     },
+     "kl": "V"
     },
     {
      "nr": "158",
@@ -6838,7 +8426,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 231,
+      "l": 231
+     },
+     "kl": "A"
     }
    ]
   },
@@ -6846,11 +8440,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -6869,7 +8465,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6877,11 +8474,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Funktionsbewertung"
+     "label": "3. Abschnitt: Funktionsbewertung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -6902,7 +8501,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6910,11 +8510,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Funktionsbewertung"
+     "label": "3. Abschnitt: Funktionsbewertung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -6931,7 +8533,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6939,11 +8542,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Funktionsbewertung"
+     "label": "3. Abschnitt: Funktionsbewertung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [],
@@ -6962,7 +8567,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -6970,11 +8576,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -6995,7 +8603,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "177",
@@ -7007,7 +8616,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 478,
+      "l": 478
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7015,11 +8630,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -7036,7 +8653,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7044,11 +8662,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -7065,7 +8685,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "180",
@@ -7079,7 +8700,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 248,
+      "l": 367
+     },
+     "kl": "V"
     },
     {
      "nr": "181",
@@ -7093,7 +8720,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 318,
+      "l": 367
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7101,11 +8734,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -7122,7 +8757,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "196",
@@ -7134,7 +8770,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "197",
@@ -7146,7 +8783,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 282,
+      "l": 282
+     },
+     "kl": "A"
     },
     {
      "nr": "198",
@@ -7162,7 +8805,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 519,
+      "l": 519
+     },
+     "kl": "A"
     },
     {
      "nr": "199",
@@ -7174,7 +8823,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 131,
+      "l": 131
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7182,11 +8837,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -7203,7 +8860,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "201",
@@ -7215,7 +8873,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "202",
@@ -7227,7 +8886,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 276,
+      "l": 276
+     },
+     "kl": "A"
     },
     {
      "nr": "203",
@@ -7239,7 +8904,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 330,
+      "l": 330
+     },
+     "kl": "A"
     },
     {
      "nr": "204",
@@ -7251,7 +8922,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 240,
+      "l": 240
+     },
+     "kl": "A"
     },
     {
      "nr": "205",
@@ -7263,7 +8940,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 120,
+      "l": 120
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7271,15 +8954,17 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
-    "Urlaub für die Betreuung von gesundheitlich schwerbeeinträchtigten Kindern"
+    "Urlaub für die Betreuung von gesundheitlich schwer beeinträchtigten Kindern"
    ],
    "fussnoten": [
     {
@@ -7292,7 +8977,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7300,11 +8986,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -7321,7 +9009,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "213",
@@ -7333,7 +9022,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 349,
+      "l": 349
+     },
+     "kl": "A"
     },
     {
      "nr": "214",
@@ -7345,7 +9040,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 154,
+      "l": 154
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7353,11 +9054,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -7374,7 +9077,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7382,11 +9086,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -7403,7 +9109,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "217",
@@ -7415,7 +9122,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "218",
@@ -7427,7 +9135,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 98,
+      "l": 98
+     },
+     "kl": "A"
     },
     {
      "nr": "219",
@@ -7440,7 +9154,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 171,
+      "l": 305
+     },
+     "kl": "V"
     },
     {
      "nr": "220",
@@ -7452,7 +9172,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 305,
+      "l": 305
+     },
+     "kl": "A"
     },
     {
      "nr": "221",
@@ -7464,7 +9190,14 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 4,
+      "it": 2,
+      "o": 36,
+      "l": 36
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7472,11 +9205,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -7493,7 +9228,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "232",
@@ -7505,7 +9241,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 282,
+      "l": 282
+     },
+     "kl": "A"
     }
    ]
   },
@@ -7513,11 +9255,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -7534,7 +9278,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7542,11 +9287,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -7567,7 +9314,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "248",
@@ -7580,7 +9328,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 115,
+      "l": 236
+     },
+     "kl": "V"
     },
     {
      "nr": "249",
@@ -7592,7 +9347,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -7600,11 +9356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -7621,7 +9379,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7629,11 +9388,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -7650,7 +9411,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "252",
@@ -7662,7 +9424,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -7670,11 +9433,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -7691,7 +9456,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7699,11 +9465,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massgebender Lohn"
+     "label": "1. Abschnitt: Massgebender Lohn",
+     "eId": "chap_4_a/sec_1"
     }
    ],
    "marginalie": [
@@ -7720,7 +9488,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 206,
+      "l": 206
+     },
+     "kl": "A"
     },
     {
      "nr": "290",
@@ -7732,7 +9506,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 327,
+      "l": 327
+     },
+     "kl": "A"
     },
     {
      "nr": "291",
@@ -7744,7 +9524,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "292",
@@ -7756,7 +9542,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "288",
@@ -7773,7 +9565,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4a. Kapitel: Berufliche Vorsorge"
+     "sektion": "4a. Kapitel: Berufliche Vorsorge",
+     "kl": "A"
     }
    ]
   },
@@ -7781,11 +9574,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massgebender Lohn"
+     "label": "1. Abschnitt: Massgebender Lohn",
+     "eId": "chap_4_a/sec_1"
     }
    ],
    "marginalie": [
@@ -7796,11 +9591,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [
@@ -7811,11 +9608,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [
@@ -7832,7 +9631,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7840,11 +9640,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [
@@ -7861,7 +9663,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "295",
@@ -7874,7 +9677,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 228,
+      "l": 429
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7882,11 +9691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [
@@ -7903,7 +9714,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "297",
@@ -7917,7 +9729,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 324,
+      "l": 409
+     },
+     "kl": "V"
     }
    ]
   },
@@ -7925,11 +9743,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [],
@@ -7944,7 +9764,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -7952,11 +9773,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [
@@ -7973,7 +9796,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "300",
@@ -7987,7 +9811,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 78,
+      "l": 140
+     },
+     "kl": "V"
     },
     {
      "nr": "301",
@@ -8000,7 +9830,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     },
     {
      "nr": "302",
@@ -8012,7 +9848,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 69,
+      "l": 69
+     },
+     "kl": "A"
     },
     {
      "nr": "303",
@@ -8024,7 +9867,14 @@
       }
      ],
      "absatz": "1ter",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 2,
+      "it": 5,
+      "o": 118,
+      "l": 118
+     },
+     "kl": "A"
     },
     {
      "nr": "304",
@@ -8036,7 +9886,13 @@
       }
      ],
      "absatz": "1quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 188,
+      "l": 188
+     },
+     "kl": "A"
     },
     {
      "nr": "305",
@@ -8048,7 +9904,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 530,
+      "l": 530
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8056,11 +9918,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: …"
+     "label": "3. Abschnitt: …",
+     "eId": "chap_4_a/sec_3"
     }
    ],
    "marginalie": [],
@@ -8075,7 +9939,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -8083,11 +9948,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: …"
+     "label": "4. Abschnitt: …",
+     "eId": "chap_4_a/sec_4"
     }
    ],
    "marginalie": [],
@@ -8106,7 +9973,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8114,11 +9982,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: …"
+     "label": "4. Abschnitt: …",
+     "eId": "chap_4_a/sec_4"
     }
    ],
    "marginalie": [],
@@ -8137,7 +10007,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8145,7 +10016,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -8162,7 +10034,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8170,7 +10043,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -8191,7 +10065,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "319",
@@ -8204,7 +10079,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 150,
+      "l": 151
+     },
+     "kl": "V"
     }
    ]
   },
@@ -8212,7 +10093,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -8233,7 +10115,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8241,7 +10124,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -8258,7 +10142,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "322",
@@ -8270,7 +10155,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 90,
+      "l": 90
+     },
+     "kl": "A"
     }
    ]
   },
@@ -8278,7 +10169,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -8295,7 +10187,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8303,7 +10196,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -8320,7 +10214,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -8328,7 +10223,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -8345,7 +10241,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "326",
@@ -8358,7 +10255,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 171,
+      "l": 237
+     },
+     "kl": "V"
     }
    ]
   },
