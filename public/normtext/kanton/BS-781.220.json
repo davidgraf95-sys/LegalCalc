@@ -483,6 +483,7 @@
       "artikel": "11_a",
       "artikelLabel": "§ 11a",
       "titel": "Baustellen",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": "1",

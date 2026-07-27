@@ -505,6 +505,7 @@
       "artikel": "22",
       "artikelLabel": "§ 22",
       "titel": "Entschädigung der Mitglieder der FU-Rekurskommission",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": "1",
@@ -1011,6 +1012,7 @@
       "artikel": "34",
       "artikelLabel": "§ 34",
       "titel": "Bericht und Rechnung",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": "1",

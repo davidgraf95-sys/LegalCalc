@@ -66,7 +66,6 @@
       "artikel": "2.1",
       "artikelLabel": "Art. 2.1",
       "titel": "Verfahren",
-      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -246,7 +245,6 @@
       "artikel": "3.1",
       "artikelLabel": "Art. 3.1",
       "titel": "Garantierte Liefermengen",
-      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -309,7 +307,6 @@
       "artikel": "3.2",
       "artikelLabel": "Art. 3.2",
       "titel": "Heizwert",
-      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -368,7 +365,6 @@
       "artikel": "3.3",
       "artikelLabel": "Art. 3.3",
       "titel": "Garantieleistung",
-      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -446,7 +442,6 @@
       "artikel": "3.4",
       "artikelLabel": "Art. 3.4",
       "titel": "Lieferbedingungen",
-      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -486,7 +481,6 @@
       "artikel": "4.1",
       "artikelLabel": "Art. 4.1",
       "titel": "Liefermengen",
-      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -545,7 +539,6 @@
       "artikel": "4.2",
       "artikelLabel": "Art. 4.2",
       "titel": "Lieferbedingungen",
-      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -623,7 +616,6 @@
       "artikel": "4.3",
       "artikelLabel": "Art. 4.3",
       "titel": "Garantieleistung",
-      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,

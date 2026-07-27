@@ -537,6 +537,7 @@
       "artikel": "20",
       "artikelLabel": "§ 20",
       "titel": "Wohnsitz",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": "1",
