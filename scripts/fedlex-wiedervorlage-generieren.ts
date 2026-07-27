@@ -196,7 +196,7 @@ export function baueAutoBlock(
     'Snapshot ersetzen/entfernen, Nachfolge-Erlass prüfen. Roh gemeldet (ohne',
     'SSoT-Filter aus `src/lib/normtext/aufhebungen.ts` — folgt mit #287).',
     '',
-    '| Erlass (aufgehoben) | Fundstelle | Aufhebungsdatum | Rhythmus | Nächste Prüfung |',
+    '| Erlass (Aufhebungs-Posten) | Fundstelle | Aufhebungsdatum | Rhythmus | Nächste Prüfung |',
     '|---|---|---|---|---|',
     ...aufhebungsZeilen,
   ];

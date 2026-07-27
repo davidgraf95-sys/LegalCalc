@@ -131,7 +131,7 @@ als geltend dargestellt werden, sobald das Datum erreicht ist. Massnahme:
 Snapshot ersetzen/entfernen, Nachfolge-Erlass prüfen. Roh gemeldet (ohne
 SSoT-Filter aus `src/lib/normtext/aufhebungen.ts` — folgt mit #287).
 
-| Erlass (aufgehoben) | Fundstelle | Aufhebungsdatum | Rhythmus | Nächste Prüfung |
+| Erlass (Aufhebungs-Posten) | Fundstelle | Aufhebungsdatum | Rhythmus | Nächste Prüfung |
 |---|---|---|---|---|
 | Aufgehoben: BMV (SR 412.103.1) | `scripts/fedlex-cache.sh` (BMV) | aufgehoben seit 1.3.2026 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung erfolgt — Massnahme nötig |
 | Aufhebung angekündigt: PatV (SR 232.141) | `scripts/fedlex-cache.sh` (PATV) | Aufhebung angekündigt per 1.1.2027 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung angekündigt ab 1.1.2027 |
