@@ -557,7 +557,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > Reihenfolge nach Praxis-Hebel × Machbarkeit ohne Fachzeit × Abhängigkeiten. Alles `[OF]`, sofern
 > nicht vermerkt. Details + Bau-Auflagen je Werkzeug: «Funktions-Katalog» unten + jeweilige `FAHRPLAN-*.md`.
 
-<!-- @queue: QS-TOK, W2·5d, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6-NKEY, W2·7-BEZUG, W2·6b-MAT-FINMA -->
+<!-- @queue: W2·6-NKEY, W2·7-BEZUG, QS-TOK, W2·5d, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
 <!-- ^ SSoT der Bau-Reihenfolge (Einbau 24.7.2026): plan:next wertet die @queue VOR der
      Dokumentreihenfolge aus; Integrität erzwingt check:plan Regel 8 (tote/erledigte IDs rot,
      Prosa-«OBERSTER» muss dem Queue-Kopf entsprechen). Priorität ändern = NUR diese Zeile
@@ -566,9 +566,12 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
      passt»); will er später die Gesetzesdarstellung vorziehen, W2·12-HYGIENE an den Kopf
      dieser Zeile setzen. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT (Priorisierung David 10.7.2026): `QS-TOK` Token-Ökonomie des
-> Agenten-Baus.** Wortlaut David (Chat 10.7.2026): «oberster schritt soll sein den token verbrauch
-> zu minimieren.»
+> **⬆ OBERSTER OFFENER SCHRITT (Dekret David 27.7.2026): `W2·6-NKEY` normKeys-Abdeckung —
+> die nächste Bau-Session startet mit GENAU diesem Schritt, Umsetzung mit ULTRACODE; danach
+> `W2·7-BEZUG`.** Vorherige Spitze `QS-TOK` (Priorisierung David 10.7.2026, Wortlaut «oberster
+> schritt soll sein den token verbrauch zu minimieren») rückt dahinter — von David am 27.7.
+> ausdrücklich so verfügt («als erster schritt entscheide noch besser screenen … nächste session
+> baut das als erstes, mit ultracode»).
 > <!-- @meta id: QS-TOK · status: ready · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts, .claude, CLAUDE.md, ROADMAP.md, STRUKTUR.md] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-TOKEN-OEKONOMIE.md -->
 > Bau verbraucht **weniger Tokens** — nur über Effizienz (gezielter lesen, kompakter übergeben,
 > deterministisch statt modellgetrieben, cachen, indizieren); Einmal-Investitionen ok.
@@ -1065,7 +1068,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   `bibliothek/recherche/zitationsnetz-feasibility.md`. **DoD:** Generator deterministisch (2 Läufe
   byte-gleich) · `check:gegenpruefung` bestanden · golden byte-gleich · Tore grün. Trailer
   `Roadmap: W2·6-ZNETZ` + `Gegenpruefung: <Verdikt>`.
-- [ ] **6-NKEY · normKeys-Abdeckung generalisieren — Register-Ableitung + FR/IT-Aliase + Sichtbarkeits-Tor** *(§14-Intake 21.7.2026, David · Extraktion/Mapping — Risikopfad, `QS-GP`; **ULTRACODE freigegeben** für den Bau · **Dekret David 27.7.2026: erste Stufe der Verzahnungs-Strecke, vor `W2·7-BEZUG`** — in @queue verankert)*
+- [ ] **6-NKEY · normKeys-Abdeckung generalisieren — Register-Ableitung + FR/IT-Aliase + Sichtbarkeits-Tor** *(§14-Intake 21.7.2026, David · Extraktion/Mapping — Risikopfad, `QS-GP`; **ULTRACODE freigegeben** für den Bau · **Dekret David 27.7.2026: erste Stufe der Verzahnungs-Strecke, vor `W2·7-BEZUG`; die NÄCHSTE Bau-Session startet mit GENAU DIESEM Schritt, Umsetzung mit ULTRACODE** — an der @queue-Spitze verankert)*
   <!-- @meta id: W2·6-NKEY · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/rechtsprechung, src/lib/rechtsprechung] · worktree: ja · 26x: nein -->
   **Befund (empirisch, 21.7.2026, Anlassfall `bge_148_II_475` ohne KG-Verzahnung):** Von 9 905
   Norm-Zitat-Nennungen über 5 093 Entscheide mappt die Hand-Whitelist `ABK_REGISTER`
