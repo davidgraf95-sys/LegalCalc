@@ -11,7 +11,7 @@
 // Fixture dokumentiert in src/tests/fixtures/lexwork-bs-audit.ts), abgerufen 23.6.2026.
 import { describe, expect, it } from 'vitest';
 import { extrahiereAlleLexWorkArtikel } from '../../scripts/normtext/adapter-lexwork';
-import { erlassBezeichnung } from '../../scripts/normtext-snapshot';
+import { erlassBezeichnung, akronymAusErlassName } from '../../scripts/normtext-snapshot';
 import { identitaetAusErlass } from '../../scripts/normtext/browse-manifest';
 import {
   LEXWORK_BS_410100_AUFGEHOBEN_XHTML,
@@ -148,6 +148,32 @@ describe('S9 — Volltitel statt degradiertes «KÜRZEL (SR-Nr.)»', () => {
 
   it('fehlender Titel → Abkürzung als Notbehelf (keine leere Bezeichnung)', () => {
     expect(erlassBezeichnung('', 'XYZ', '999.9')).toBe('XYZ (999.9)');
+  });
+});
+
+describe('B2 (Gegenprüfung PR #391) — Akronym-Fallback aus kuratiertem Erlassnamen', () => {
+  it('extrahiert das Klammer-Akronym am Ende (AG-725.100: API-Abkürzung leer)', () => {
+    expect(akronymAusErlassName('Gesetz über die Grundbuchabgaben (GBAG)')).toBe('GBAG');
+  });
+
+  it('kein Klammer-Akronym im Namen → leerer String (keine Erfindung, §7)', () => {
+    expect(akronymAusErlassName('Gesetz über die Grundbuchabgaben')).toBe('');
+  });
+
+  it('Klammer-Inhalt ist keine Grossbuchstaben-Folge (z.B. eine SR-Nr.) → kein Treffer', () => {
+    expect(akronymAusErlassName('Verordnung über Sowieso (SAR 725.100)')).toBe('');
+  });
+
+  it('generisch, nicht kanton-/erlass-spezifisch: wirkt gleich für einen anderen Namen', () => {
+    expect(akronymAusErlassName('Irgendein Erlass (XYZ)')).toBe('XYZ');
+  });
+
+  it('End-zu-Ende: leere API-Abkürzung + kuratiertes Akronym ergibt dieselbe Bezeichnung wie eine direkt gelieferte Abkürzung', () => {
+    const apiAbkuerzungLeer = '';
+    const abk = apiAbkuerzungLeer || akronymAusErlassName('Gesetz über die Grundbuchabgaben (GBAG)');
+    expect(erlassBezeichnung('Gesetz über die Grundbuchabgaben', abk, 'SAR 725.100')).toBe(
+      'Gesetz über die Grundbuchabgaben, GBAG (SAR 725.100)',
+    );
   });
 });
 

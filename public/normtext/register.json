@@ -5015,6 +5015,26 @@
       "pdfStand": "2025-01-01"
     },
     {
+      "key": "AG-725.100",
+      "ebene": "kanton",
+      "kanton": "AG",
+      "kuerzel": "GBAG",
+      "titel": "Gesetz über die Grundbuchabgaben",
+      "sr": "SAR 725.100",
+      "rechtsgebiet": "oeffentlich",
+      "sprache": "de",
+      "rang": 0,
+      "status": "snapshot",
+      "datei": "kanton/AG-725.100.json",
+      "artikelAnzahl": 35,
+      "stand": "2020-01-01",
+      "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/725.100",
+      "fassungsToken": "1c8fd03927f498fe939c30dd5e6ea7d0",
+      "pdfPfad": null,
+      "pdfUrl": "https://gesetzessammlungen.ag.ch/api/de/versions/2796/pdf_file",
+      "pdfStand": "2020-01-01"
+    },
+    {
       "key": "AG-662.110",
       "ebene": "kanton",
       "kanton": "AG",
@@ -5033,26 +5053,6 @@
       "pdfPfad": null,
       "pdfUrl": "https://gesetzessammlungen.ag.ch/api/de/versions/3768/pdf_file",
       "pdfStand": "2024-07-01"
-    },
-    {
-      "key": "AG-725.100",
-      "ebene": "kanton",
-      "kanton": "AG",
-      "kuerzel": "Gesetz über die Grundbuchabgaben",
-      "titel": "Gesetz über die Grundbuchabgaben (SAR 725.100)",
-      "sr": "SAR 725.100",
-      "rechtsgebiet": "oeffentlich",
-      "sprache": "de",
-      "rang": 0,
-      "status": "snapshot",
-      "datei": "kanton/AG-725.100.json",
-      "artikelAnzahl": 35,
-      "stand": "2020-01-01",
-      "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/725.100",
-      "fassungsToken": "1c8fd03927f498fe939c30dd5e6ea7d0",
-      "pdfPfad": null,
-      "pdfUrl": "https://gesetzessammlungen.ag.ch/api/de/versions/2796/pdf_file",
-      "pdfStand": "2020-01-01"
     },
     {
       "key": "AI-177.410",
