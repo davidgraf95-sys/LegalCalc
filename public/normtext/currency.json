@@ -1,744 +1,737 @@
 {
   "ADOV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "AHVG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2034-01-01"
   },
   "AHVV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2034-01-01"
   },
   "AIG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "AKKBV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "AMBV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "APOSTILLE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ARG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ARGV1": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ARGV2": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ARGV3": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ARGV4": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ARGV5": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ASYLG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "ASYLV1": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ASYLV2": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ASYLV3": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ATSG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ATSV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "AVIG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "AVIV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-08-01"
   },
   "AVO": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BANKG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-10-01"
   },
   "BANKV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "BBG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-10-01"
   },
   "BBV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-10-01"
   },
   "BEG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-10-01"
   },
   "BETMG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2029-08-01"
   },
   "BETMKV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BEWG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BEWV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BGBB": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BGBM": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BGERR": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BGFA": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BGG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BGOE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BKV": {
-    "geprueftAm": "2026-07-10"
-  },
-  "BMV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BOEB": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BPG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "BPR": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BPV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "BUEG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "BUEV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-08-01"
   },
   "BV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2029-01-01"
   },
   "BVG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-09-26"
   },
   "BVV3": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-06-01"
   },
   "BVV_2": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-08-01"
   },
   "CEDAW": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "CHEMRRV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-12-01"
   },
   "CHEMV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "CISG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "CMR": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "CO2_GESETZ": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27",
+    "naechsteFassungAb": "2027-01-01"
   },
   "DBG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2029-01-01"
   },
   "DESG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "DESV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "DSG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "DSV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "EAUE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "EBG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "ELG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2029-01-01"
   },
   "ELV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ENG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "ENTG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ENTSG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "EOG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "EOV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2028-01-01"
   },
   "EPG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "EPV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ERV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "FAMZG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "FAMZV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "FAV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2028-07-01"
   },
   "FDV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "FIDLEG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-10-01"
   },
   "FIDLEV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "FINFRAG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2029-01-01"
   },
   "FINFRAV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "FINFRAV_FINMA": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "FINIG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-10-01"
   },
   "FINIV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "FINMAG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "FINMA_GEBV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "FMG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "FUSG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "FZA": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "FZG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "FZV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-08-01"
   },
   "GBV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "GEBV_HREG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "GEBV_SCHKG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "GFK": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "GLG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2032-07-01"
   },
   "GSCHG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "GSCHV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2028-01-01"
   },
   "GWG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-10-01"
   },
   "GWV_FINMA": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "HAUE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "HBEWUE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "HEUE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "HKSUE96": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "HKUE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "HMG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "HREGV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-10-01"
   },
   "HUVUE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "HZUE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ICAO": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "IPRG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "IRSG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ISTANBUL": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "IVG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "IVV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "JSTG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "JSTPO": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "KAG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-10-01"
   },
   "KG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "KKG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "KKV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "KKV_FINMA": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "KLV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-08-01"
   },
   "KOV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "KRK": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "KVG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2028-01-01"
   },
   "KVV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-08-01"
   },
   "LFG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "LMG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "LRV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-08-01"
   },
   "LSV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "LUGUE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "MEPV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "MG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "MONTREAL": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "MSCHG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "MSCHV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "MSTG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "MSTP": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "MVG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "MVV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "MWSTG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "MWSTV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "NBV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "NHG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "NHV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "OHG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "OR": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-10-01"
   },
   "PARLG": {
-    "geprueftAm": "2026-07-10"
-  },
-  "PARTG": {
-    "geprueftAm": "2026-07-10"
-  },
-  "PATG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
-  "PATV": {
-    "geprueftAm": "2026-07-10"
+  "PARTG": {
+    "geprueftAm": "2026-07-27"
+  },
+  "PATG": {
+    "geprueftAm": "2026-07-27",
+    "naechsteFassungAb": "2027-01-01"
   },
   "PAVO": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "PRG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "PUBLG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "PUEG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "PVUE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "QSTV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "RBUE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "RDV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "RPG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "RPV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "RVOG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "RVOV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "SCHKG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "SKV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "SORTG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "SSV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "STAATENLOSE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "STBOG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "STG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "STGB": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-10-01"
   },
   "STHG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2029-01-01"
   },
   "STPO": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "SVG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "TGBV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "THG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "TXG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "UNO_ANTIFOLTER": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "UNO_BRK": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "UNO_PAKT_I": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "UNO_PAKT_II": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "URG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "URV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "USG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-08-01"
   },
   "UVG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "UVPV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "UVV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "UWG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VAG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VAM": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VBB": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VEV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VEVA": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VFV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "VGG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "VGKE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VGR": {
-    "geprueftAm": "2026-07-10"
-  },
-  "VGVP": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VIL": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VINTA": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VKKG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VKL": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2032-07-01"
   },
   "VMWG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VOEB": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VRK": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VRV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2031-01-01"
   },
   "VSTG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VSTRR": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VSTV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VTS": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2031-01-01"
   },
   "VVEA": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-08-01"
   },
   "VVG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VVK": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VVV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VWVG": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "VZAE": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VZG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "VZV": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2027-01-01"
   },
   "WAG": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "WAV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ZAVV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ZEMIS_V": {
-    "geprueftAm": "2026-07-10",
+    "geprueftAm": "2026-07-27",
     "naechsteFassungAb": "2026-08-01"
   },
   "ZENTV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ZGB": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ZPO": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   },
   "ZSTV": {
-    "geprueftAm": "2026-07-10"
+    "geprueftAm": "2026-07-27"
   }
 }
