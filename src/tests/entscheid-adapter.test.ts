@@ -109,6 +109,22 @@ describe('abteilung/legalArea → Sachgebiet (deklariert)', () => {
     expect(normSignalSachgebiet(['OR'])).toBeNull();
     expect(normSignalSachgebiet([])).toBeNull();
   });
+  it('Norm-Signal folgt der DEKLARIERTEN Tabellenordnung, nicht der Eingabe-Reihenfolge (§2)', () => {
+    // Befund 28.7.2026: iteriert wurde über die übergebenen Keys — mit der jetzt
+    // breiten Tabelle kippte das Sachgebiet je nach Reihenfolge der statutes[].
+    // Nachgestellt an genau diesem Gegenbeispiel: ['Art. 5 AsylG','Art. 12 DBG']
+    // auf einem 2C-Fall lieferte 'oeffentlich', umgekehrt 'sozial-abgaben'.
+    // Gleiche Eingabemenge → gleiches Ergebnis; Migration hat Vorrang vor Steuer.
+    expect(normSignalSachgebiet(['ASYLG', 'DBG'])).toBe('oeffentlich');
+    expect(normSignalSachgebiet(['DBG', 'ASYLG'])).toBe('oeffentlich');
+    expect(normSignalSachgebiet(['MWSTG', 'AIG'])).toBe('oeffentlich');
+    expect(normSignalSachgebiet(['VSTG', 'BEWG'])).toBe('oeffentlich');
+    // Innerhalb einer Gebietsgruppe ist die Reihenfolge ohnehin ergebnisgleich.
+    expect(normSignalSachgebiet(['MWSTG', 'DBG'])).toBe('sozial-abgaben');
+    expect(normSignalSachgebiet(['DBG', 'MWSTG'])).toBe('sozial-abgaben');
+    // Gross-/Kleinschreibung der Eingabe bleibt unerheblich.
+    expect(normSignalSachgebiet(['dbg', 'asylg'])).toBe('oeffentlich');
+  });
 });
 
 describe('sha256EntscheidBloecke', () => {

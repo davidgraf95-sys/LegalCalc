@@ -14,7 +14,7 @@ import {
   holeEntscheidOCL, enumeriereNeueste, enumeriereNeuesteAlle, citedRefZuId, enumeriereBge, enumeriereBgeBaender, holeBgeLeitentscheid,
 } from './normtext/adapter-entscheide';
 import { schreibeKorpus, ladeBestandSnapshots } from './normtext/entscheide-schreiben';
-import { normKeysVonSnapshot } from './normtext/entscheide-mapping';
+import { normKeysVonSnapshot, remapNormKeys } from './normtext/entscheide-mapping';
 import { sha256EntscheidBloecke } from './normtext/sha-entscheide';
 import { holeRegesteSprachfassungen, holeClirHtml, parseClirUrteilskopf, bgeRefZuClirId } from './normtext/clir-regeste';
 import type { EntscheidSnapshot } from '../src/lib/rechtsprechung/typen';
@@ -245,9 +245,14 @@ async function main() {
     }
     const vorher = basis.filter((s) => (s.normKeys ?? []).length > 0).length;
     let veraendert = 0;
+    // Alt-Keys, die die Neuberechnung nicht reproduziert, werden BEWAHRT statt
+    // gelöscht — Regel und Begründung in `remapNormKeys` (§5: eine Stelle).
+    let altErhaltenKeys = 0;
+    let altErhaltenSnaps = 0;
     for (const s of basis) {
       const alt = s.normKeys ?? [];
-      const neu = normKeysVonSnapshot(s);          // ohne hint: rein aus dem Snapshot
+      const { keys: neu, nurAlt } = remapNormKeys(alt, normKeysVonSnapshot(s)); // ohne hint: rein aus dem Snapshot
+      if (nurAlt.length) { altErhaltenKeys += nurAlt.length; altErhaltenSnaps++; }
       if (neu.length !== alt.length || neu.some((k, i) => k !== alt[i])) veraendert++;
       s.normKeys = neu;
     }
@@ -255,6 +260,7 @@ async function main() {
     const res = schreibeKorpus(basis, datum);
     console.log(`[remap] ${basis.length} Snapshots · normKeys verändert: ${veraendert}`);
     console.log(`[remap] mit ≥1 normKey: vorher ${vorher} → nachher ${nachher}`);
+    console.log(`[remap] alt-erhalten: ${altErhaltenKeys} Keys über ${altErhaltenSnaps} Snapshots (nicht aus dem Snapshot rekonstruierbar, siehe Kommentar).`);
     console.log(`[remap] geschrieben: ${res.anzahl} Manifest-Einträge, ${res.normBuckets} Norm-Buckets, ${res.artikelBuckets} Artikel-Buckets, ${res.shards} Shards.`);
     return;
   }

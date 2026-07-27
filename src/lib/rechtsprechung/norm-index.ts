@@ -1,9 +1,20 @@
 // ─── Norm → Entscheid-Index (Verzahnung, Burggraben) ────────────────────────
 //
 // Lazy geladener Index public/rechtsprechung/norm-index.json: zu einem Erlass-
-// Register-key die einschlägig GENANNTEN Bundesgerichtsentscheide. Quelle = die
-// (maschinell extrahierten) statutes[] der Entscheide → Status 'maschinell', nie
-// als geprüftes Präjudiz verkaufen (§7/§8). Reine Ladeschicht (§3).
+// Register-key die GENANNTEN Bundesgerichtsentscheide. Reine Ladeschicht (§3).
+//
+// Quelle (Stand W2·6-NKEY a+d) = die (maschinell extrahierten) statutes[] der
+// Entscheide ∪ die deterministische Fliesstext-Erkennung über Regeste und
+// Urteilstext (`extrahiereStatutRefs`). Status bleibt 'maschinell' — nie als
+// geprüftes Präjudiz verkaufen (§7/§8).
+//
+// Was «genannt» hier ehrlich heisst: die Fliesstext-Erkennung ist vollständig
+// und erfasst damit auch beiläufige, rein prozessuale Nennungen — das BGG steht
+// dadurch in rund 85 % der Snapshots, ohne dass der Entscheid in der Sache
+// etwas zum BGG sagt. Das ist gewollt (Dekret David, 27.7.2026): erst
+// vollständig erkennen, dann über Ranking und Deckel kuratieren
+// (LEITFAELLE_PRO_ARTIKEL, proNorm-Top-12) statt an der Extraktion still zu
+// verwerfen. Ein Eintrag im Index belegt eine NENNUNG, keine Einschlägigkeit.
 
 import type { Leitcharakter } from './typen';
 

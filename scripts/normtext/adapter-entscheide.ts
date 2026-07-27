@@ -357,8 +357,18 @@ export function mappeEntscheidOCL(
   // unten). Bewusst die schmale statutes-Menge und NICHT die neue, breitere
   // Fliesstext-Ableitung (W2·6-NKEY): die Klassierung soll sich am ausdrücklich
   // als einschlägig genannten Erlass orientieren, nicht an jeder beiläufigen
-  // Nennung im Urteilstext — sonst kippte das Sachgebiet bestehender Entscheide
-  // (§1/§6: die Umstellung ist eine normKeys-, keine Sachgebiets-Änderung).
+  // Nennung im Urteilstext.
+  //
+  // EHRLICH dazu (Korrektur 28.7.2026 — die frühere Fassung dieses Kommentars
+  // behauptete, die Umstellung kippe kein bestehendes Sachgebiet; das stimmt so
+  // nicht): unverändert blieb nur die QUELLE (statutes[]), die ABBILDUNG dieser
+  // Quelle auf Register-keys ist neu breit. `statutesZuNormKeys` löst jetzt über
+  // das ganze Register auf statt über die alte 26er-Hand-Whitelist. Für 2A/2C/2D
+  // heisst das: ASYLG/BEWG/MWSTG/VSTG erzeugen NEU ein Signal (vorher unbekannt →
+  // Fallback legal_area/Abteilung), und STG erzeugt NIE mehr eines — bewusst, es
+  // steht in ABK_AUSSCHLUSS (föderal/kantonal mehrdeutig). Beides ist gewollt und
+  // fachlich die bessere Klassierung, aber es IST eine Sachgebiets-Änderung an
+  // den betroffenen Entscheiden und wird als solche deklariert (§6.3/§8).
   const signalKeys = new Set<string>(statutesZuNormKeys(det.statutes ?? []));
   if (opts.normKeyHint) signalKeys.add(opts.normKeyHint);
 
@@ -747,6 +757,16 @@ export async function holeBgeLeitentscheid(
       rubrum: azaSnap.rubrum ?? basis.rubrum,
       dispositivOrders: azaSnap.dispositivOrders,
       zitierteEntscheide: azaSnap.zitierteEntscheide.length ? azaSnap.zitierteEntscheide : basis.zitierteEntscheide,
+      // Roh-statutes BEIDER Seiten persistieren (Befund 28.7.2026): bisher wurden
+      // die `normKeys` als Vereinigung basis∪aza gespeichert, die zugrunde liegenden
+      // `zitierteNormen` aber NUR aus `basis` — die aza-statutes waren im Snapshot
+      // nirgends mehr abgebildet. Folge: aus dem committeten Snapshot allein liess
+      // sich der eigene normKey-Stand nicht mehr rekonstruieren (bge_152_I_61 trägt
+      // 'ZPO', ohne dass 'ZPO'/'CPC' in zitierteNormen ODER Fliesstext vorkommt) —
+      // eine zweite, nicht belegbare Wahrheit (§5/§8). Reihenfolge: basis-Einträge
+      // zuerst in Originalfolge, dann die NEUEN aza-Einträge in Originalfolge; kein
+      // Re-Sort, damit bestehende Snapshots nicht unnötig umgeschrieben werden (§6).
+      zitierteNormen: [...new Set([...basis.zitierteNormen, ...azaSnap.zitierteNormen])],
       // Vereinigung beider Seiten (Sammlungs-Auszug + volles Urteil) — sortiert,
       // damit dieser Bau-Pfad dieselbe Reihenfolge liefert wie normKeysVonSnapshot
       // über den fertigen Merge (§2 build-pfad-unabhängig).

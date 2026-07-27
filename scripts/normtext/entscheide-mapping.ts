@@ -1,9 +1,22 @@
 // ─── Deterministische Mappings für die Rechtsprechungs-Pipeline (§2) ─────────
 //
 // Keine Heuristik im Produktpfad, keine LLM-Zuordnung: alle Tabellen sind
-// DEKLARIERT oder aus einer deklarierten Quelle ABGELEITET. statutes[] sind
-// Roh-Drittextraktion (NICHT verifiziert) → nur als «einschlägig genannt»
-// werten, der Status bleibt 'maschinell'.
+// DEKLARIERT oder aus einer deklarierten Quelle ABGELEITET.
+//
+// QUELLE der Norm-Zuordnung (Stand W2·6-NKEY a+d, ehrlich benannt — §8):
+// `statutes[]` (Roh-Drittextraktion OCL, NICHT verifiziert) ∪ deterministische
+// FLIESSTEXT-Erkennung (`extrahiereStatutRefs` über Regeste + alle Abschnitts-
+// Blöcke). Beide Zweige sind maschinell → der Status bleibt 'maschinell', nie
+// als geprüftes Präjudiz verkauft (§7/§8).
+//
+// Die Fliesstext-Erkennung ist bewusst VOLLSTÄNDIG und damit auch beiläufig:
+// erfasst wird jede Nennung im Urteilstext, einschliesslich rein prozessualer
+// Standard-Zitate — das BGG erscheint dadurch in rund 85 % der Snapshots, ohne
+// dass der Entscheid in der Sache etwas zum BGG sagt. Das ist der ausdrückliche
+// Dekret-Stand (David, 27.7.2026): erst vollständig erkennen, dann über Ranking
+// und Deckel kuratieren (LEITFAELLE_PRO_ARTIKEL, proNorm-Top-12) — nie durch
+// stilles Verwerfen an der Extraktion, weil ein verworfenes Zitat nirgends mehr
+// sichtbar ist und die Lücke niemand bemerkt (§8/§6.7).
 //
 // ── W2·6-NKEY (Roadmap, Dekret David 27.7.2026) ──────────────────────────────
 // Die Abkürzungs-Tabelle war eine HAND-Whitelist mit 26 Einträgen — sie kannte
@@ -35,6 +48,20 @@ import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
  * verschiedene Erlasse) auf dasselbe Token 'BVV' und wären nicht mehr
  * unterscheidbar (§1). Umlaute bleiben stehen, damit 'BüG' → 'BÜG' auf den
  * Register-key 'BUEG' zeigt, ohne den Umlaut vorher zu verlieren.
+ *
+ * REICHWEITE der Ziffern-Bewahrung, ehrlich (§8): sie wirkt im statutes-Pfad
+ * (`statutesZuNormKeys` liest das Trailing-Token samt Ziffernblock) — NICHT im
+ * Fliesstext-Pfad. `extrahiereStatutRefs` matcht `GESETZ_CODE` ohne Leerzeichen
+ * und trifft daher nur die zusammengeschriebene Form: 'Art. 27 BVV2' → 'BVV2',
+ * 'Art. 27 BVV 2' → gesetz 'BVV' → `normKeyFuerAbk('BVV')` = null (empirisch
+ * geprüft 28.7.2026). Betroffen sind die getrennt geschriebenen Ziffern-Kürzel
+ * BVV 2/BVV 3, ArGV 1–5 und AsylV 1–3. Der Extraktor wird dafür bewusst NICHT
+ * geändert: seine Falsch-Positiv-Abstimmung ist kampferprobt, und ein
+ * gelockerter Ziffern-Anhang zöge Randnummern/Jahreszahlen als Erlass-Suffix
+ * herein (§1: lieber eine benannte Lücke als ein falscher Treffer). Die Lücke
+ * ist gedeckt, solange die Nennung auch in `statutes[]` steht; ungemappte
+ * 'BVV'-Token weist das Sichtbarkeits-Tor (Baustein c) aus, statt sie still zu
+ * schlucken (§6.7).
  */
 export function normalisiereAbk(abk: string): string {
   return String(abk).toUpperCase().replace(/[^A-Z0-9ÄÖÜ]/g, '');
@@ -98,11 +125,23 @@ export const ABK_KOLLISIONEN: ReadonlyArray<string> = KOLLISIONEN;
  * Register-keys, deren Abkürzung ausgeschlossen ist (heute: 'STG'). Für den
  * Bestand-Schutzfilter in schreibeKorpus: ALT-Snapshots tragen den Key noch in
  * `normKeys`, obwohl er nicht mehr gemappt wird.
+ *
+ * Abgeleitet DIREKT aus dem ERLASS_REGISTER, nicht über `ABK_TABELLE` (Härtung
+ * 28.7.2026): die Tabelle VERWIRFT kollidierte Abkürzungen beidseitig. Käme je
+ * ein zweiter Register-Eintrag mit normalisiert 'STG' dazu, verschwände der
+ * Eintrag aus der Tabelle — `ABK_TABELLE.get('STG')` wäre `undefined`, die
+ * Menge LEER und der Bestand-Schutzfilter still entwaffnet (nachgestellt: genau
+ * dieser Fall liefert `[]`). Ein Schutz, der sich durch eine Kollision selbst
+ * abschaltet, ist ein Tor, das nicht scheitern kann (§6.7). Darum wird über die
+ * Register-Einträge gescannt — kollisionsunabhängig, und ein kollidierender
+ * Zweit-Erlass landet zusätzlich in der Menge statt sie zu leeren.
  */
 export const AUSGESCHLOSSENE_KEYS: ReadonlySet<string> = new Set(
-  [...ABK_AUSSCHLUSS.keys()]
-    .map((abk) => ABK_TABELLE.get(abk))
-    .filter((k): k is string => !!k),
+  ERLASS_REGISTER
+    .filter((e) => ABK_AUSSCHLUSS.has(normalisiereAbk(e.kuerzel))
+                || ABK_AUSSCHLUSS.has(normalisiereAbk(e.key)))
+    .map((e) => e.key)
+    .sort(),
 );
 
 export function normKeyFuerAbk(abk: string): string | null {
@@ -161,6 +200,11 @@ export function fliesstextVon(snap: EntscheidSnapshot): string {
  * im Text). Optionaler `hint` = bereits aufgelöster Register-key (Quellzweig
  * mit deklarierter Erlass-Bindung). Alphabetisch sortiert → build-pfad-
  * unabhängig stabil (§2).
+ *
+ * Der `hint` unterliegt demselben Ausschluss wie die beiden Text-Zweige
+ * (Härtung 28.7.2026): der Ausschluss mehrdeutiger Kürzel ist TOTAL, sonst
+ * käme 'STG' über den Quellzweig doch noch in `normKeys` und die föderal/
+ * kantonale Mehrdeutigkeit stünde wieder im Korpus (§1/§8).
  */
 export function normKeysVonSnapshot(snap: EntscheidSnapshot, hint?: string | null): string[] {
   const out = new Set<string>(statutesZuNormKeys(snap.zitierteNormen ?? []));
@@ -168,8 +212,35 @@ export function normKeysVonSnapshot(snap: EntscheidSnapshot, hint?: string | nul
     const k = normKeyFuerAbk(ref.gesetz);
     if (k) out.add(k);
   }
-  if (hint) out.add(hint);
+  if (hint && !AUSGESCHLOSSENE_KEYS.has(hint)) out.add(hint);
   return [...out].sort();
+}
+
+/**
+ * Re-Map-Regel für den BESTEHENDEN Korpus (`--remap`): neu berechnete Keys
+ * VEREINIGT mit den Alt-Keys, die die Neuberechnung nicht reproduziert —
+ * abzüglich der AUSGESCHLOSSENE_KEYS. Sortiert (§2).
+ *
+ * Warum bewahren statt neu setzen (Befund 28.7.2026): bis zur Adapter-Härtung
+ * persistierte der BGE-Merge nur die basis-`zitierteNormen`; die statutes des
+ * unterliegenden aza-Urteils flossen in die `normKeys`, wurden selbst aber nie
+ * gespeichert. Solche Alt-Keys sind legitime Roh-Signale ohne Beleg IM
+ * Snapshot (bge_152_I_61 trägt 'ZPO', ohne dass 'ZPO'/'CPC' in zitierteNormen
+ * oder Fliesstext vorkommt) — ein Re-Map, der sie entfernt, ist stiller
+ * Datenverlust (§8), keine Neuberechnung. Ausgenommen bleiben die
+ * ausgeschlossenen Keys: die SOLLEN aus dem Bestand verschwinden.
+ *
+ * Idempotent: das Ergebnis des ersten Laufs ist Fixpunkt des zweiten, weil die
+ * bewahrten Keys beim nächsten Lauf wieder als «nur alt» erkannt werden.
+ * Rückgabe zusätzlich `nurAlt` — der Aufrufer weist die Zahl aus, statt die
+ * Bewahrung still geschehen zu lassen (§6.7).
+ */
+export function remapNormKeys(alt: readonly string[], berechnet: readonly string[]): {
+  keys: string[]; nurAlt: string[];
+} {
+  const neu = new Set(berechnet);
+  const nurAlt = (alt ?? []).filter((k) => !neu.has(k) && !AUSGESCHLOSSENE_KEYS.has(k));
+  return { keys: [...new Set([...neu, ...nurAlt])].sort(), nurAlt };
 }
 
 /**
@@ -235,16 +306,25 @@ export function istMehrdeutigeOerAbteilung(docket: string): boolean {
 // Eindeutiges Sachgebiets-Signal aus den zitierten Normen (Register-keys):
 // Migrations-/Ausländerrecht → öffentlich; Steuerrecht → sozial-abgaben.
 // Kein Treffer → null (der Aufrufer fällt dann auf legal_area / Abteilung zurück).
-const NORM_SIGNAL: Record<string, Rechtsgebiet> = {
-  AIG: 'oeffentlich', ASYLG: 'oeffentlich', BEWG: 'oeffentlich',
-  DBG: 'sozial-abgaben', STHG: 'sozial-abgaben', MWSTG: 'sozial-abgaben',
-  STG: 'sozial-abgaben', VSTG: 'sozial-abgaben',
-};
+// DEKLARIERTE Priorität: die Reihenfolge dieser Liste entscheidet, welches
+// Signal gewinnt, wenn ein Entscheid mehrere trägt — Migrationsrecht (AIG,
+// AsylG, BewG) vor Steuerrecht (DBG, StHG, MWSTG, StG, VStG).
+//
+// Früher wurde über die ÜBERGEBENEN Keys iteriert; das Ergebnis hing damit an
+// der Reihenfolge der statutes[] und kippte je Entscheid: ['Art. 5 AsylG',
+// 'Art. 12 DBG'] auf einem 2C-Fall lieferte 'oeffentlich', die umgekehrte
+// Nennung derselben zwei Normen 'sozial-abgaben' (empirisch nachgestellt
+// 28.7.2026). Gleiche Eingabemenge → gleiches Sachgebiet ist §2; die Priorität
+// gehört in die Tabelle, nicht in die Laune der Drittextraktion.
+const NORM_SIGNAL: ReadonlyArray<readonly [string, Rechtsgebiet]> = [
+  ['AIG', 'oeffentlich'], ['ASYLG', 'oeffentlich'], ['BEWG', 'oeffentlich'],
+  ['DBG', 'sozial-abgaben'], ['STHG', 'sozial-abgaben'], ['MWSTG', 'sozial-abgaben'],
+  ['STG', 'sozial-abgaben'], ['VSTG', 'sozial-abgaben'],
+];
 export function normSignalSachgebiet(normKeys: Iterable<string>): Rechtsgebiet | null {
-  for (const k of normKeys) {
-    const g = NORM_SIGNAL[String(k).toUpperCase()];
-    if (g) return g;
-  }
+  const vorhanden = new Set<string>();
+  for (const k of normKeys) vorhanden.add(String(k).toUpperCase());
+  for (const [key, geb] of NORM_SIGNAL) if (vorhanden.has(key)) return geb;
   return null;
 }
 
