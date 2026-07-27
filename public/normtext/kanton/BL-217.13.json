@@ -1,14 +1,13 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-06-22",
   "eintraege": [
     {
       "id": "kanton/BL/217.13/art_1",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "1",
       "artikelLabel": "§ 1",
-      "titel": "Aufwandgebühr",
       "bloecke": [
         {
           "absatz": "1",
@@ -21,7 +20,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "6409eb4488141f0d537332e7009136a10f42f4150f0632caadecd21897066c31"
     },
@@ -29,10 +28,9 @@
       "id": "kanton/BL/217.13/art_2",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "2",
       "artikelLabel": "§ 2",
-      "titel": "Gebühr für nicht zustande gekommene Urkunden",
       "bloecke": [
         {
           "absatz": "1",
@@ -51,7 +49,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "b46128fa8e8bcbbbf3717b78c7aafb3010b83064c11a82c5edb1cbe467570812"
     },
@@ -59,10 +57,9 @@
       "id": "kanton/BL/217.13/art_3",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "3",
       "artikelLabel": "§ 3",
-      "titel": "Gebührentragung",
       "bloecke": [
         {
           "absatz": "1",
@@ -79,7 +76,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "45209eaa62efe5f05fdfffb91924fa3f88133a1daf9eef86b7705fcf184a8aa1"
     },
@@ -87,10 +84,9 @@
       "id": "kanton/BL/217.13/art_4",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "4",
       "artikelLabel": "§ 4",
-      "titel": "Offerte, Kostenvorschuss",
       "bloecke": [
         {
           "absatz": "1",
@@ -103,7 +99,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "1017327115bb783cc5e83f16f4e60c317440fb66fa7fe83979f339d02ff6f5ae"
     },
@@ -111,10 +107,9 @@
       "id": "kanton/BL/217.13/art_5",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "5",
       "artikelLabel": "§ 5",
-      "titel": "Rechnungstellung",
       "bloecke": [
         {
           "absatz": "1",
@@ -123,7 +118,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "9711c5a0b8a16b2dd53667c71996133948b1aca6e5c0e636b41539ba6f26a8db"
     },
@@ -131,10 +126,9 @@
       "id": "kanton/BL/217.13/art_6",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "6",
       "artikelLabel": "§ 6",
-      "titel": "Fälligkeit, Verzugszins",
       "bloecke": [
         {
           "absatz": "1",
@@ -147,7 +141,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "23a605a64ac16e40edcc3478bc784df1468f00b7f7c56c7854c948ac96c3228e"
     },
@@ -155,10 +149,9 @@
       "id": "kanton/BL/217.13/art_7",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "7",
       "artikelLabel": "§ 7",
-      "titel": "Gebührenermässigung, Gebührenerlass",
       "bloecke": [
         {
           "absatz": "1",
@@ -171,7 +164,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "1dd2dfa25c9eaa16d1a368d251dfc03ee93a85ec6178eb45cf1a59baec61e1fc"
     },
@@ -179,10 +172,9 @@
       "id": "kanton/BL/217.13/art_8",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "8",
       "artikelLabel": "§ 8",
-      "titel": "Stundenansatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -201,7 +193,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "fa61c152e65334bb3d2827b52022130919825c264484be896f532f519cce311f"
     },
@@ -209,10 +201,9 @@
       "id": "kanton/BL/217.13/art_9",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "9",
       "artikelLabel": "§ 9",
-      "titel": "Rahmengebühren",
       "bloecke": [
         {
           "absatz": "1",
@@ -259,7 +250,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "a829ea4a513cfe9758a2ded7daaad991319b8de9867aa6e2cb06b04a5159036a"
     },
@@ -267,10 +258,9 @@
       "id": "kanton/BL/217.13/art_10",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "10",
       "artikelLabel": "§ 10",
-      "titel": "Feste Gebührenansätze",
       "bloecke": [
         {
           "absatz": "1",
@@ -305,7 +295,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "54ca4bffefbd304098d142337ca264416721b45d172d3b71755fda6762926c75"
     },
@@ -313,10 +303,9 @@
       "id": "kanton/BL/217.13/art_11",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "11",
       "artikelLabel": "§ 11",
-      "titel": "Mehrwertsteuer",
       "bloecke": [
         {
           "absatz": "1",
@@ -329,7 +318,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "45be61a02866fc017ec81cbe4294031e6682505a861cfd4665ebde16880f7492"
     },
@@ -337,10 +326,9 @@
       "id": "kanton/BL/217.13/art_12",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "12",
       "artikelLabel": "§ 12",
-      "titel": "Preisbekanntgabe",
       "bloecke": [
         {
           "absatz": "1",
@@ -349,7 +337,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "a7f45455cb780cb80427f0db86d86ccceeffc4ff7f3d0672294d695a69cf4019"
     },
@@ -357,10 +345,9 @@
       "id": "kanton/BL/217.13/art_13",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "13",
       "artikelLabel": "§ 13",
-      "titel": "Auslagen, Kopien",
       "bloecke": [
         {
           "absatz": "1",
@@ -383,7 +370,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "a091afc661e67c704a45ced153a56fc64663040357bd3d624b69ead672988791"
     },
@@ -391,10 +378,9 @@
       "id": "kanton/BL/217.13/art_14",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "14",
       "artikelLabel": "§ 14",
-      "titel": "Übergangsbestimmung für die Gebühren der Notariate der Bezirksschreibereien",
       "bloecke": [
         {
           "absatz": "1",
@@ -403,7 +389,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "9aad4621e9d10e31c7d918cbaa6fe4c4a9315df8efa72b279fd926b2a2f25a94"
     },
@@ -411,10 +397,9 @@
       "id": "kanton/BL/217.13/art_15",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "15",
       "artikelLabel": "§ 15",
-      "titel": "Aufhebung bisherigen Rechtes",
       "bloecke": [
         {
           "absatz": "1",
@@ -423,7 +408,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "d2d1e665354326c92cfcb59976d033aed0615c6200fa5c268f7f32c66553baf9"
     },
@@ -431,10 +416,9 @@
       "id": "kanton/BL/217.13/art_16",
       "ebene": "kanton",
       "quelle": "BL",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (SGS 217.13)",
+      "erlass": "NotGebV (SGS 217.13)",
       "artikel": "16",
       "artikelLabel": "§ 16",
-      "titel": "Inkrafttreten",
       "bloecke": [
         {
           "absatz": "1",
@@ -443,7 +427,7 @@
       ],
       "stand": "2012-11-01",
       "quelleUrl": "https://bl.clex.ch/app/de/texts_of_law/217.13",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "acdf13d08f91fc4d60d98e745b41f47e",
       "sha": "f441477a9facf0ac32ab657f9d2df5a82ebc22c21c6e315ae823239920994a90"
     }

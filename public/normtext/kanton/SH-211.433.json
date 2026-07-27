@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-06-19",
   "eintraege": [
     {
       "id": "kanton/SH/211.433/art_1",
@@ -8,7 +8,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "1",
       "artikelLabel": "§ 1",
-      "titel": "Gebührenpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -21,7 +20,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "9279743a05cc259e47dd40b8fbadabc270acbfb3446221810573fe367e5b21d9"
     },
@@ -32,7 +31,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "2",
       "artikelLabel": "§ 2",
-      "titel": "Auslagen",
       "bloecke": [
         {
           "absatz": "1",
@@ -45,7 +43,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "ae715ee9c36337e38226eb8db5db5d435bbcce49ca4645550ac1cc990cfeb462"
     },
@@ -56,7 +54,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "3",
       "artikelLabel": "§ 3",
-      "titel": "Mehrwertsteuer",
       "bloecke": [
         {
           "absatz": "1",
@@ -65,7 +62,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "449044a81a2fd0bf6ee79a4cf66d6a46eb37f0a480c53d5e297e04552577463f"
     },
@@ -76,7 +73,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "4",
       "artikelLabel": "§ 4",
-      "titel": "Haftung für die Gebühren",
       "bloecke": [
         {
           "absatz": "1",
@@ -85,7 +81,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "4cca651dbd9b27019070361a91cfd4156229f9c3048bff5bee08f300a36f48c0"
     },
@@ -96,7 +92,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "5",
       "artikelLabel": "§ 5",
-      "titel": "Kostenvorschuss",
       "bloecke": [
         {
           "absatz": "1",
@@ -105,7 +100,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "2b9845fdbedf76c0089e43684abd92c2ef8433d340837346e9f44017bcb72aaf"
     },
@@ -116,7 +111,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "6",
       "artikelLabel": "§ 6",
-      "titel": "Rekurs",
       "bloecke": [
         {
           "absatz": "1",
@@ -125,7 +119,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "2ee0d6593d66fad916e00ffc2be277b0b825e39ccb2a83dedc6ab5b498bbe682"
     },
@@ -136,7 +130,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "7",
       "artikelLabel": "§ 7",
-      "titel": "Gebührenermässigung und ‑erlass: Gemeinnützigkeit",
       "bloecke": [
         {
           "absatz": "1",
@@ -145,7 +138,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "fdb420679a529fa6db136f3141541a5e83ff7b34140a4f6ebc2912d6c896b6f9"
     },
@@ -156,7 +149,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "8",
       "artikelLabel": "§ 8",
-      "titel": "Gebührenermässigung und ‑erlass: Vereinfachte Geschäftsabwicklung",
       "bloecke": [
         {
           "absatz": "1",
@@ -165,7 +157,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "6904bde3e70cb82e84f60864af45a8a978fe5ba233f66d819c11655e8ffa9338"
     },
@@ -176,7 +168,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "9",
       "artikelLabel": "§ 9",
-      "titel": "Gebührenermässigung und ‑erlass: Gesuch an den Regierungsrat",
       "bloecke": [
         {
           "absatz": "1",
@@ -185,7 +176,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "f842a562f097f95fecbe4a636db3b78405fa826fe20e01a98e695c87455148ae"
     },
@@ -196,7 +187,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "10",
       "artikelLabel": "§ 10",
-      "titel": "Vertragssumme: Handänderung",
       "bloecke": [
         {
           "absatz": "1",
@@ -221,7 +211,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "fd27d808ca5ad85ffa5cdd3de0ca4379bfd6f337ce37aaaffa9f55020e776d1b"
     },
@@ -232,7 +222,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "11",
       "artikelLabel": "§ 11",
-      "titel": "Vertragssumme: Handänderung mit Gebäudeerstellung",
       "bloecke": [
         {
           "absatz": "1",
@@ -249,7 +238,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "a6bf13339d7968213b2b381946d9f9c4713aacef8c3d5e0daf7863427507be5f"
     },
@@ -260,7 +249,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "12",
       "artikelLabel": "§ 12",
-      "titel": "Gleichstellung von Baurechten mit Handänderungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -269,7 +257,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "7e6298c919e22c81e704d8a22c6a5dee8da1a9366608255a14504e7d76eb1f1b"
     },
@@ -280,7 +268,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "13",
       "artikelLabel": "§ 13",
-      "titel": "Sämtliche Rechtsgeschäfte",
       "bloecke": [
         {
           "absatz": "1",
@@ -299,32 +286,12 @@
               "text": "Pfandvertrag:"
             },
             {
-              "marke": "3",
-              "text": "Errichtung, Erhöhung: 1‰ des Errichtungs- bzw. Erhöhungsbetrages, mindestens Fr. 50.00"
-            },
-            {
-              "marke": "3",
-              "text": "Pfandvermehrung, Maximalzinsfuss, Nachrückungsrecht usw.: Fr. 10.00 bis Fr. 50.00"
-            },
-            {
-              "marke": "3",
-              "text": "Umwandlung Pfandrechtsart, Pfandrechtszerlegung, Pfandrechtserneuerung bei Grundpfandverschreibung: ½‰ der Pfandsumme, mindestens Fr. 50.00"
-            },
-            {
               "marke": "4",
               "text": "Dienstbarkeit, Grundlast (inkl. Änderung): Fr. 50.00 bis Fr. 500.00"
             },
             {
               "marke": "5",
               "text": "Begründung Stockwerkeigentum:"
-            },
-            {
-              "marke": "5",
-              "text": "Grundgebühr: Fr. 500.00"
-            },
-            {
-              "marke": "5",
-              "text": "Pro Einheit: Fr. 30.00"
             },
             {
               "marke": "6",
@@ -347,9 +314,9 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
-      "sha": "fbc6a4d84be8e327ac906d21167715c52d5005f4c344f0c9d5b839d8532959d1"
+      "sha": "86008775aa44b10e89ca6c6a310f396b3fa3bb0c5def69dba97af308efd39e63"
     },
     {
       "id": "kanton/SH/211.433/art_14",
@@ -358,7 +325,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "14",
       "artikelLabel": "§ 14",
-      "titel": "Handänderungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -373,40 +339,12 @@
               "text": "Spezielle Handänderung: 3‰ der Vertragssumme, mindestens Fr. 50.00, bei folgenden Fällen:"
             },
             {
-              "marke": "2",
-              "text": "An Verwandte in auf- und absteigender Linie sowie an Stiefkinder der Veräusserer"
-            },
-            {
-              "marke": "2",
-              "text": "Sacheinlage an Gesellschaft in Gründung, wobei als Gründer ausschliesslich Personen im Sinne von Ziff. 2.1, die Veräusserer und die Ehegatten und eingetragenen Partner sowie Dritte, deren Mitwirkung sich auf die Gründung beschränkt, auftreten dürfen"
-            },
-            {
-              "marke": "2",
-              "text": "Sachübernahme durch Gesellschaft, mit Gesellschafterbeteiligung im Sinne von Ziff. 2.2."
-            },
-            {
-              "marke": "2",
-              "text": "Durch Kollektivgesellschaft an einen oder mehrere Gesellschafter sowie durch Kommanditgesellschaft an den oder die unbeschränkt haftenden Gesellschafter"
-            },
-            {
-              "marke": "2",
-              "text": "Bestandesübertragung gemäss Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen"
-            },
-            {
               "marke": "3",
               "text": "Handänderung infolge Ehe- oder Vermögensvertrag, Rechtsgeschäft unter Ehegatten oder eingetragenen Partnern, güterrechtliche Auseinandersetzung, Erbgang, Erbteilung, Vermächtnis: 1‰ des Übernahmepreises bzw. des Steuer- oder Ertragswertes, mindestens Fr. 50.00"
             },
             {
               "marke": "4",
               "text": "Änderung von Allein- bzw. Miteigentum in Gesamteigentum oder umgekehrt sowie innerhalb eines Gesamthandverhältnisses (ausgenommen Ziff. 3 hievor): 6‰:"
-            },
-            {
-              "marke": "4",
-              "text": "Unveränderter Personenbestand: 2‰ der Vertragssumme, mindestens Fr. 50.00"
-            },
-            {
-              "marke": "4",
-              "text": "Veränderter Personenbestand: 6‰ der Vertragssumme, mindestens Fr. 50.00"
             },
             {
               "marke": "5",
@@ -419,27 +357,15 @@
             {
               "marke": "7",
               "text": "Eigentumsänderung durch Fusion, Spaltung und Vermögensübertragung nach Fusionsgesetz, pro Grundstück:"
-            },
-            {
-              "marke": "7",
-              "text": "bis fünf Grundstücke: Fr. 250.00"
-            },
-            {
-              "marke": "7",
-              "text": "jedes weitere Grundstück: Fr. 100.00"
-            },
-            {
-              "marke": "7",
-              "text": "mindestens: Fr. 800.00"
             }
           ]
         }
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
-      "sha": "ffa1e2e1fba62ce0568e9f1f72ad2ad214ce064e512fc22d20c6f6e8aceb55ec"
+      "sha": "a64ba8e6cbde03329f9aeb6a33ac5950d8a91cdc14047a22948a7f2b6b4f686e"
     },
     {
       "id": "kanton/SH/211.433/art_15",
@@ -448,7 +374,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "15",
       "artikelLabel": "§ 15",
-      "titel": "Grundpfandrechte",
       "bloecke": [
         {
           "absatz": "1",
@@ -483,7 +408,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "ec1c8b98bb894807c6f28d66d1d05673d43f2d1b1af4e55551450c4e4859e210"
     },
@@ -494,7 +419,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "16",
       "artikelLabel": "§ 16",
-      "titel": "Verschiedene Eintragungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -503,14 +427,6 @@
             {
               "marke": "1",
               "text": "Grenzänderung:"
-            },
-            {
-              "marke": "1",
-              "text": "Flächenänderung pro Grundstück: Fr. 10.00 bis Fr. 100.00"
-            },
-            {
-              "marke": "1",
-              "text": "Bereinigung der beschränkten dinglichen Rechte, Vormerkungen, Anmerkungen, pro Eintrag: Fr. 20.00 bis Fr. 100.00"
             },
             {
               "marke": "2",
@@ -561,9 +477,9 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
-      "sha": "13afa66b99d4ceb4e28f5599bcef51b48cbd51367a7684072f57552f05b214c3"
+      "sha": "2515fb03eccda5e23fa57b3326a0300f702b73d19f5772cd2096a9d0a7b82b29"
     },
     {
       "id": "kanton/SH/211.433/art_17",
@@ -572,7 +488,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "17",
       "artikelLabel": "§ 17",
-      "titel": "Vormerkungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -651,7 +566,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "835ab30ab04e59919352f2528a29d7b51b34acd3baf70eb7a45a1f9201907fa8"
     },
@@ -662,7 +577,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "18",
       "artikelLabel": "§ 18",
-      "titel": "Anmerkungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -681,14 +595,6 @@
               "text": "Stockwerkeigentum:"
             },
             {
-              "marke": "3",
-              "text": "Begründung vor Erstellung des Gebäudes, Reglement, pro Fall: Fr. 100.00"
-            },
-            {
-              "marke": "3",
-              "text": "Stockwerkanteile verpfändet: Fr. 20.00"
-            },
-            {
               "marke": "4",
               "text": "Tatsachen gemäss Bundesgesetz über das bäuerliche Bodenrecht: Fr. 20.00 bis Fr. 100.00"
             },
@@ -705,9 +611,9 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
-      "sha": "d6d7e9623c7078f8cfdf527df3b6f34f62f0e45994ec13711e3859c54555c316"
+      "sha": "0548ed9e1e812a9956d499ad125a2b5a78d0db575be07efb674c4280f2a0c745"
     },
     {
       "id": "kanton/SH/211.433/art_19",
@@ -716,7 +622,6 @@
       "erlass": "Grundbuchgebührenverordnung (SHR 211.433)",
       "artikel": "19",
       "artikelLabel": "§ 19",
-      "titel": "Verschiedenes",
       "bloecke": [
         {
           "absatz": "1",
@@ -771,7 +676,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "9bb1405ac8fdaf7d038f4d4b572dcfcb9f54482c9a58aceced02e727e88b5b79"
     },
@@ -790,7 +695,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "20b2d8a49a49dbdfc3db198d175421dfceb7fab4f29fb46691cea0df67e598af"
     },
@@ -817,7 +722,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/211.433",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a108a250c63ed8b04ff1b37a4654e75b",
       "sha": "d7921c9388f84f965f1d8109d1c2137a2a2d98a137e7ebce8c759f9e86c32ed0"
     }

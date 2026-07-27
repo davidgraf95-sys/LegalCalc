@@ -1,14 +1,13 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-06-22",
   "eintraege": [
     {
       "id": "kanton/BE/168.811/art_1",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "1",
       "artikelLabel": "Art. 1",
-      "titel": "Gegenstand",
       "bloecke": [
         {
           "absatz": "1",
@@ -17,7 +16,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "5c281fab91cc25e062b1e0937250f92261b2b73d328600d3eb45842c002d6033"
     },
@@ -25,10 +24,9 @@
       "id": "kanton/BE/168.811/art_2",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "2",
       "artikelLabel": "Art. 2",
-      "titel": "Parteikostenersatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -37,7 +35,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "3dfefa51bc99747dcf3962c25219f0f7b7f9ec02a8408c96674bcb395659a671"
     },
@@ -45,10 +43,9 @@
       "id": "kanton/BE/168.811/art_3",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "3",
       "artikelLabel": "Art. 3",
-      "titel": "Ermittlung des Streitwerts",
       "bloecke": [
         {
           "absatz": "1",
@@ -57,7 +54,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "3ee67536ff1209e0f4268a4d97e450340d86f42d393bd226084fe77235003a36"
     },
@@ -65,10 +62,9 @@
       "id": "kanton/BE/168.811/art_4",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
-      "titel": "Anpassung an die Teuerung",
       "bloecke": [
         {
           "absatz": "1",
@@ -77,7 +73,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "d443a83b1403ce2b37e02ec0bdabfc22f8b9e1113d855284cf667cc12db2ad9c"
     },
@@ -85,28 +81,17 @@
       "id": "kanton/BE/168.811/art_5",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "5",
       "artikelLabel": "Art. 5",
-      "titel": "Erstinstanzliche Verfahren",
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Ist der Streitwert bestimmbar, wird das Honorar in erstinstanzlichen Verfahren wie folgt bemessen:"
-        },
-        {
-          "absatz": null,
-          "text": "",
+          "text": "Ist der Streitwert bestimmbar, wird das Honorar in erstinstanzlichen Verfahren wie folgt bemessen:",
           "mehrspaltig": {
-            "spalten": [
-              {
-                "typ": "text",
-                "titel": "Streitwert in Franken"
-              },
-              {
-                "typ": "text",
-                "titel": "Honorar in Franken"
-              }
+            "kopf": [
+              "Streitwert in Franken",
+              "Honorar in Franken"
             ],
             "zeilen": [
               [
@@ -159,18 +144,17 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
-      "sha": "b27e3ececd6271b774757e87e70f530af2b3154792f755f979a926e2758d4a27"
+      "sha": "c20082d4e0ba78438642198174db6287436d130541a282c74a8405f436947f3c"
     },
     {
       "id": "kanton/BE/168.811/art_6",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "6",
       "artikelLabel": "Art. 6",
-      "titel": "Vorsorgliche Beweisführung",
       "bloecke": [
         {
           "absatz": "1",
@@ -179,7 +163,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "4d20499e8ce7c2d49f317861437b3f4d1516134a4470480e3d71f1e7887a263f"
     },
@@ -187,10 +171,9 @@
       "id": "kanton/BE/168.811/art_7",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "7",
       "artikelLabel": "Art. 7",
-      "titel": "Rechtsmittelverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -199,7 +182,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "446757461f9e8ecb17f2c99492e0c5168b1635fa33dec8820f7afb97a743afd5"
     },
@@ -207,10 +190,9 @@
       "id": "kanton/BE/168.811/art_8",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "8",
       "artikelLabel": "Art. 8",
-      "titel": "Erledigung ohne Urteil",
       "bloecke": [
         {
           "absatz": "1",
@@ -219,7 +201,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "8ddd5f41eca6bbc0e29a5480aa2552fd0d325e3d1fe8b71db956ec13c1fc9dee"
     },
@@ -227,10 +209,9 @@
       "id": "kanton/BE/168.811/art_9",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "9",
       "artikelLabel": "Art. 9",
-      "titel": "Zuschlag",
       "bloecke": [
         {
           "absatz": "1",
@@ -239,7 +220,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "a1b2da1c7e4c5e6b13e7382f8f36af6d559f98fead54523fa9e730a5f4c81d8d"
     },
@@ -247,10 +228,9 @@
       "id": "kanton/BE/168.811/art_10",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "10",
       "artikelLabel": "Art. 10",
-      "titel": "Reisezuschlag",
       "bloecke": [
         {
           "absatz": "1",
@@ -259,7 +239,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "a210a47676792d991cb38e1c421e69c91694a20951a972e253dbdee0277d865d"
     },
@@ -267,10 +247,9 @@
       "id": "kanton/BE/168.811/art_11",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "11",
       "artikelLabel": "Art. 11",
-      "titel": "Beschwerdeverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -283,7 +262,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "2b7ed44b9e4d58e0ea3379550d7a06f732410f5544831849bb4e3f2e3ae5f7e3"
     },
@@ -291,10 +270,9 @@
       "id": "kanton/BE/168.811/art_12",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "12",
       "artikelLabel": "Art. 12",
-      "titel": "Klageverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -307,7 +285,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "721c25a25f9e8e6d19c165072de625bf11f23bdf3ba558386a083b71a6680004"
     },
@@ -315,10 +293,9 @@
       "id": "kanton/BE/168.811/art_13",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "13",
       "artikelLabel": "Art. 13",
-      "titel": "Sozialversicherungsrechtliche Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -327,7 +304,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "523ab600a13528a81a2afc9dc3008274e229ab5db6669b233dc285f86397ad31"
     },
@@ -335,10 +312,9 @@
       "id": "kanton/BE/168.811/art_14",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "14",
       "artikelLabel": "Art. 14",
-      "titel": "Vorsorgliche Beweisführung",
       "bloecke": [
         {
           "absatz": "1",
@@ -347,7 +323,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "0e7d20c63dd9c0a6d4a0465e461ecab89a94e4cf3c92d47ff5cae7e990e526ab"
     },
@@ -355,10 +331,9 @@
       "id": "kanton/BE/168.811/art_15",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "15",
       "artikelLabel": "Art. 15",
-      "titel": "Erledigung ohne Urteil",
       "bloecke": [
         {
           "absatz": "1",
@@ -367,7 +342,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "7fe4b538b7658276424ba0cd4d712bd5caaa79f56f2e0b648e9ff5a96d8a2739"
     },
@@ -375,10 +350,9 @@
       "id": "kanton/BE/168.811/art_16",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "16",
       "artikelLabel": "Art. 16",
-      "titel": "Zuschläge",
       "bloecke": [
         {
           "absatz": "1",
@@ -387,7 +361,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "f60a397e09193d3f089833a61b8c3eec0e246ec367742dcd9728fbd91f9a7775"
     },
@@ -395,10 +369,9 @@
       "id": "kanton/BE/168.811/art_17",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "17",
       "artikelLabel": "Art. 17",
-      "titel": "Honorar",
       "bloecke": [
         {
           "absatz": "1",
@@ -453,7 +426,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "7e7874e1bd512fd18cc2167ca6598a48edab97618332bfb4d289016e61d11990"
     },
@@ -461,10 +434,9 @@
       "id": "kanton/BE/168.811/art_18",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "18",
       "artikelLabel": "Art. 18",
-      "titel": "Zuschläge",
       "bloecke": [
         {
           "absatz": "1",
@@ -477,7 +449,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "5ff0e8934d02cf4a90fdfd33b5b21c257c10cdac921c98e7a6c8c6766e39441a"
     },
@@ -485,10 +457,9 @@
       "id": "kanton/BE/168.811/art_19",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "19",
       "artikelLabel": "Art. 19",
-      "titel": "Übergangsrecht",
       "bloecke": [
         {
           "absatz": "1",
@@ -497,7 +468,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "d7dd072deaa8fb561d81deb47f774c01e1960869766bbcf081c15404b580e993"
     },
@@ -505,10 +476,9 @@
       "id": "kanton/BE/168.811/art_20",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "20",
       "artikelLabel": "Art. 20",
-      "titel": "Inkrafttreten",
       "bloecke": [
         {
           "absatz": "1",
@@ -517,7 +487,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "c228d01e54273936d60d8083981f39a67b9e05e55f53906495703007d768ec2d"
     },
@@ -525,7 +495,7 @@
       "id": "kanton/BE/168.811/art_t1-1",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Verordnung über die Bemessung des Parteikostenersatzes, Parteikostenverordnung, PKV (BSG 168.811)",
+      "erlass": "Parteikostenverordnung, PKV (BSG 168.811)",
       "artikel": "t1-1",
       "artikelLabel": "Art. T1-1",
       "bloecke": [
@@ -540,7 +510,7 @@
       ],
       "stand": "2012-01-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/168.811",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "098df6d95ea32c44c4f7b9e7a5c119ee",
       "sha": "98c6a60ca6da2775b2d8c40be13aad57936ef882f3ea09138cffabbd8eb2cd86"
     }

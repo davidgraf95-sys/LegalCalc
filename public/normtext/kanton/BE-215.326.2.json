@@ -1,14 +1,13 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-06-22",
   "eintraege": [
     {
       "id": "kanton/BE/215.326.2/art_1",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "1",
       "artikelLabel": "Art. 1",
-      "titel": "Grundsatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -17,7 +16,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "5a1c4ca03849ea2c076652ba047f875f0f06f94c8dbb03ffeaed8c04a4722064"
     },
@@ -25,10 +24,9 @@
       "id": "kanton/BE/215.326.2/art_2",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "2",
       "artikelLabel": "Art. 2",
-      "titel": "Steuerpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -37,7 +35,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "2c72f414ae4740d3f096a7bc2a71ab32bacb2b64547284dc9b441c807a764f5f"
     },
@@ -45,10 +43,9 @@
       "id": "kanton/BE/215.326.2/art_3",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "3",
       "artikelLabel": "Art. 3",
-      "titel": "Verjährung",
       "bloecke": [
         {
           "absatz": "1",
@@ -57,7 +54,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "56b12b16e59a2d99164841a3ef9e8f6d153f1b5004fa3aedca6821c7ccdaf10c"
     },
@@ -65,10 +62,9 @@
       "id": "kanton/BE/215.326.2/art_4",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
-      "titel": "Grundstücke",
       "bloecke": [
         {
           "absatz": "1",
@@ -103,7 +99,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "51ac82d681be9690603aaf59a54712c87d12565be4ebb9fb4a12ca1c02088924"
     },
@@ -111,10 +107,9 @@
       "id": "kanton/BE/215.326.2/art_5",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "5",
       "artikelLabel": "Art. 5",
-      "titel": "Handänderungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -163,7 +158,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "2a9aab30ad1b48bc243a69ac3385e536b5697bc232c013f20994e046cee7197c"
     },
@@ -171,10 +166,9 @@
       "id": "kanton/BE/215.326.2/art_6",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "6",
       "artikelLabel": "Art. 6",
-      "titel": "Bemessungsgrundlagen 1. Grundsatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -183,7 +177,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "005373330c7b691fb869e2b44b9fb0a53cc236f3359115e5d2feb30b5e0072a8"
     },
@@ -191,10 +185,9 @@
       "id": "kanton/BE/215.326.2/art_6_a",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "6_a",
       "artikelLabel": "Art. 6a",
-      "titel": "1a. Schlüsselfertige Baute oder Stockwerkeinheit, Verbindung von Kauf- und Werkvertrag",
       "bloecke": [
         {
           "absatz": "1",
@@ -207,7 +200,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "3d60d7e5e216eaa90cbeb00a1ebaae93971cffb401c61d52a945210f2c49826c"
     },
@@ -215,10 +208,9 @@
       "id": "kanton/BE/215.326.2/art_7",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "7",
       "artikelLabel": "Art. 7",
-      "titel": "2. Wiederkehrende Leistungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -231,7 +223,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "1958970dd3112cd3c276f9243b49e5233e4e07c9919195b2e9ebb0568d55f59f"
     },
@@ -239,10 +231,9 @@
       "id": "kanton/BE/215.326.2/art_8",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "8",
       "artikelLabel": "Art. 8",
-      "titel": "3. Tausch",
       "bloecke": [
         {
           "absatz": "1",
@@ -251,7 +242,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "75e1a2a75b2d3c54d35c61374a640062ebc3df468fb88b35203dea3b32870d37"
     },
@@ -259,10 +250,9 @@
       "id": "kanton/BE/215.326.2/art_9",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "9",
       "artikelLabel": "Art. 9",
-      "titel": "4. Realteilung",
       "bloecke": [
         {
           "absatz": "1",
@@ -271,7 +261,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "ef12190efceb222f91acc7da2c73d687f8b47a84e7a119e5c2a8b3cf3c9d8e19"
     },
@@ -279,10 +269,9 @@
       "id": "kanton/BE/215.326.2/art_10",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "10",
       "artikelLabel": "Art. 10",
-      "titel": "Gesamteigentum",
       "bloecke": [
         {
           "absatz": "1",
@@ -295,7 +284,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "5934dac3aa671a91441296e302decf4e1bffd77ad5b0d36f7175bd8e92cf8545"
     },
@@ -303,10 +292,9 @@
       "id": "kanton/BE/215.326.2/art_11",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "11",
       "artikelLabel": "Art. 11",
-      "titel": "Steuersatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -323,7 +311,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "1ed4f909bd0eeefe21ace517a337d770931592c53700ee2b8ed14802a8f5d839"
     },
@@ -331,10 +319,9 @@
       "id": "kanton/BE/215.326.2/art_11_a",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "11_a",
       "artikelLabel": "Art. 11a",
-      "titel": "Nachträgliche Steuerbefreiung 1. Gesuch, Stundung",
       "bloecke": [
         {
           "absatz": "1",
@@ -363,7 +350,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "febb39db992639e22634c858918658291c592940d3255676f420a00eae349743"
     },
@@ -371,10 +358,9 @@
       "id": "kanton/BE/215.326.2/art_11_b",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "11_b",
       "artikelLabel": "Art. 11b",
-      "titel": "2. Voraussetzungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -387,7 +373,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "30be8e66dafef6f9fff1d6235556581ed3128b0120e52f2dd259da7e6f8868c2"
     },
@@ -395,10 +381,9 @@
       "id": "kanton/BE/215.326.2/art_12",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "12",
       "artikelLabel": "Art. 12",
-      "titel": "Ausnahmen von der Steuerpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -445,37 +430,17 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "dd7ab31b7a90f02ca17849620ed18adc5da3274fafea0cc65bcbf86be1fd2ba5"
-    },
-    {
-      "id": "kanton/BE/215.326.2/art_13–15",
-      "ebene": "kanton",
-      "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
-      "artikel": "13–15",
-      "artikelLabel": "Art. 13–15",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2023-04-01",
-      "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "719c0064432739eecc3943438e5ca40b",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/BE/215.326.2/art_16",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "16",
       "artikelLabel": "Art. 16",
-      "titel": "Veranlagungsbehörde",
       "bloecke": [
         {
           "absatz": "1",
@@ -484,7 +449,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "7446f3a2de07b8e57c024bff3d3a4b3582611cc2d934a846d3844f47de799ceb"
     },
@@ -492,10 +457,9 @@
       "id": "kanton/BE/215.326.2/art_16_a",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "16_a",
       "artikelLabel": "Art. 16a",
-      "titel": "Bearbeitung von Daten aus zentralen Personendatensammlungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -508,7 +472,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "5be656a474503becfa302de0df349342ac353b5f565c303262ca8a31d9c0f847"
     },
@@ -516,10 +480,9 @@
       "id": "kanton/BE/215.326.2/art_17",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "17",
       "artikelLabel": "Art. 17",
-      "titel": "Veranlagung bei Grundbuchanmeldung, Stundung bei nachträglicher Steuerbefreiung",
       "bloecke": [
         {
           "absatz": "1",
@@ -532,7 +495,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "1e74db8c98f389e5794c90598bf80c0604d1a0ab57e3dab47d9de43e8ca50e08"
     },
@@ -540,10 +503,9 @@
       "id": "kanton/BE/215.326.2/art_17_a",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "17_a",
       "artikelLabel": "Art. 17a",
-      "titel": "Nachträgliche Steuerbefreiung gemäss Artikel 11a 1. Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -560,7 +522,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "bb64159b7c2b7557cdce98061c61c560024b0c31ab14b746adc0ee35417a379c"
     },
@@ -568,10 +530,9 @@
       "id": "kanton/BE/215.326.2/art_17_b",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "17_b",
       "artikelLabel": "Art. 17b",
-      "titel": "2. Bezug der gestundeten Steuer",
       "bloecke": [
         {
           "absatz": "1",
@@ -580,7 +541,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "d55d9dea59dfbdde8b918776e7b0500a39999332fe30d3bf44096caccd9dc39d"
     },
@@ -588,10 +549,9 @@
       "id": "kanton/BE/215.326.2/art_18",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "18",
       "artikelLabel": "Art. 18",
-      "titel": "Veranlagung ohne Grundbuchanmeldung",
       "bloecke": [
         {
           "absatz": "1",
@@ -608,7 +568,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "1c7b6952f6544aabce7e33cfe00765c6ea668a50ead9b5329e3be4936dc1b7f1"
     },
@@ -616,10 +576,9 @@
       "id": "kanton/BE/215.326.2/art_18_a",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "18_a",
       "artikelLabel": "Art. 18a",
-      "titel": "Veranlagung nach Ermessen",
       "bloecke": [
         {
           "absatz": "1",
@@ -628,7 +587,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "ee79c2a5ec33c71deb799a01a498238cbf63fcc6076e197e9576edb7c3eed88b"
     },
@@ -636,10 +595,9 @@
       "id": "kanton/BE/215.326.2/art_19",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "19",
       "artikelLabel": "Art. 19",
-      "titel": "Nachveranlagung",
       "bloecke": [
         {
           "absatz": "1",
@@ -648,7 +606,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "ebe1efa0e5d04c4ff7af19c9d352cd6a4b590e5761c6e11d5c11e9d2ce800440"
     },
@@ -656,10 +614,9 @@
       "id": "kanton/BE/215.326.2/art_20",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "20",
       "artikelLabel": "Art. 20",
-      "titel": "Bezug 1. Grundsatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -668,7 +625,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "7b04f099334c9bd7cfff471173a0ce1b245fcce2ec139aa771c12ca2ae920cbd"
     },
@@ -676,10 +633,9 @@
       "id": "kanton/BE/215.326.2/art_21",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "21",
       "artikelLabel": "Art. 21",
-      "titel": "2. Verzinsung",
       "bloecke": [
         {
           "absatz": "1",
@@ -696,7 +652,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "8debf41f900c148a825d6d0e12ee3f9c3f6ee3c516a44f857dcfebf001c17ceb"
     },
@@ -704,10 +660,9 @@
       "id": "kanton/BE/215.326.2/art_22",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "22",
       "artikelLabel": "Art. 22",
-      "titel": "3. Sicherung",
       "bloecke": [
         {
           "absatz": "1",
@@ -720,7 +675,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "a7ad4ef2823360dd240ba787b1d90881048ba4624dd8b2ba1cd786f28ed4f920"
     },
@@ -728,10 +683,9 @@
       "id": "kanton/BE/215.326.2/art_23",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "23",
       "artikelLabel": "Art. 23",
-      "titel": "Erlass und Stundung 1. Durch die Direktion für Inneres und Justiz",
       "bloecke": [
         {
           "absatz": "1",
@@ -744,7 +698,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "4a43a68e769bdef8ae7cb6f13dfb73c0ca45ea30fe1ec1f1d777988b26272b72"
     },
@@ -752,10 +706,9 @@
       "id": "kanton/BE/215.326.2/art_24",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "24",
       "artikelLabel": "Art. 24",
-      "titel": "2. Durch den Regierungsrat",
       "bloecke": [
         {
           "absatz": "1",
@@ -764,7 +717,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "591ea743f715c113550c63979c29e914ca608e5dd03e6df337cd2f04460f8279"
     },
@@ -772,10 +725,9 @@
       "id": "kanton/BE/215.326.2/art_24_a",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "24_a",
       "artikelLabel": "Art. 24a",
-      "titel": "3. Durch die Wirtschafts-, Energie- und Umweltdirektion",
       "bloecke": [
         {
           "absatz": "1",
@@ -784,7 +736,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "766b5eaaa64e138eb766c67c2a6d0d556a3f028a49ce31fc3f32c74005fee2b9"
     },
@@ -792,10 +744,9 @@
       "id": "kanton/BE/215.326.2/art_25",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "25",
       "artikelLabel": "Art. 25",
-      "titel": "4. Gemeinsame Bestimmungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -812,7 +763,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "4cbaaa077bb8f48e556882ab6e45f28bd5b32ee61247beac68cc843b553567ad"
     },
@@ -820,10 +771,9 @@
       "id": "kanton/BE/215.326.2/art_26",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "26",
       "artikelLabel": "Art. 26",
-      "titel": "Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -836,7 +786,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "0e18daa4e0e9909b5fb62d968e2798610ff17577cf4b468fe3998d1e8731c76a"
     },
@@ -844,10 +794,9 @@
       "id": "kanton/BE/215.326.2/art_27",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "27",
       "artikelLabel": "Art. 27",
-      "titel": "Rechtsweg",
       "bloecke": [
         {
           "absatz": "1",
@@ -872,7 +821,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "2750fa0f13fa8fdbc1b663ab91a35ea3d9a3a1c2c786f68fb9e4f420906c62c0"
     },
@@ -880,7 +829,7 @@
       "id": "kanton/BE/215.326.2/art_28",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "28",
       "artikelLabel": "Art. 28",
       "bloecke": [
@@ -899,7 +848,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "086a7f467443aed91ad72333a74c7353b08ca8a188e7b0cdb3735a20ed200ba1"
     },
@@ -907,10 +856,9 @@
       "id": "kanton/BE/215.326.2/art_29",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "29",
       "artikelLabel": "Art. 29",
-      "titel": "Vollzug",
       "bloecke": [
         {
           "absatz": "1",
@@ -919,7 +867,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "175d5337602d2487ac4736d3f651b975b27b3be99c3d69fc5f1ecdeaf1f167b9"
     },
@@ -927,10 +875,9 @@
       "id": "kanton/BE/215.326.2/art_30",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "30",
       "artikelLabel": "Art. 30",
-      "titel": "Übergangsbestimmungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -939,7 +886,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "cda99dd170447fed3c3042c5e52e5d752e3ae0d0eaf2bb1821f0400cdc299c5d"
     },
@@ -947,10 +894,9 @@
       "id": "kanton/BE/215.326.2/art_31",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "31",
       "artikelLabel": "Art. 31",
-      "titel": "Änderung von Erlassen",
       "bloecke": [
         {
           "absatz": "1",
@@ -969,7 +915,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "e69aecdcbf1dbd0cc9491b5ab40437fe3d30fd15f51d84573131e47139eae644"
     },
@@ -977,10 +923,9 @@
       "id": "kanton/BE/215.326.2/art_32",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "32",
       "artikelLabel": "Art. 32",
-      "titel": "Aufhebung eines Erlasses",
       "bloecke": [
         {
           "absatz": "1",
@@ -989,7 +934,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "125577dd42c6b2e4a28a726b021d52d12f2bcaaa88c75341ded712c5c533db30"
     },
@@ -997,10 +942,9 @@
       "id": "kanton/BE/215.326.2/art_33",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "Handänderungssteuergesetz, HStG (BSG 215.326.2)",
+      "erlass": "HStG (BSG 215.326.2)",
       "artikel": "33",
       "artikelLabel": "Art. 33",
-      "titel": "Inkrafttreten",
       "bloecke": [
         {
           "absatz": "1",
@@ -1009,7 +953,7 @@
       ],
       "stand": "2023-04-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/215.326.2",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "719c0064432739eecc3943438e5ca40b",
       "sha": "fb452d4321a33ecf3f2bf707eaa1568a56323ef192950a9c6261614e09de9435"
     }

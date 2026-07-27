@@ -1,14 +1,13 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-06-22",
   "eintraege": [
     {
       "id": "kanton/GR/210.370/art_1",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "1",
       "artikelLabel": "Art. 1",
-      "titel": "Anwendungsbereich",
       "bloecke": [
         {
           "absatz": "1",
@@ -25,7 +24,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "362d03d586591323ebef76281e3a7ee06d08bd1d78d51958c6bd24f30b936d3c"
     },
@@ -33,10 +32,9 @@
       "id": "kanton/GR/210.370/art_2",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "2",
       "artikelLabel": "Art. 2",
-      "titel": "Beschwerde, Moderation",
       "bloecke": [
         {
           "absatz": "1",
@@ -53,7 +51,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "ac9600c1ec9ed2a351febbe47e8c65e3da9ec132a36f83d27a2b1b48a53f49f6"
     },
@@ -61,10 +59,9 @@
       "id": "kanton/GR/210.370/art_3",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "3",
       "artikelLabel": "Art. 3",
-      "titel": "Sicherstellung",
       "bloecke": [
         {
           "absatz": "1",
@@ -73,7 +70,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "5c53039324984a3139772c7ca593b31ebd20126de1915c7899d0e88272cf102d"
     },
@@ -81,10 +78,9 @@
       "id": "kanton/GR/210.370/art_4",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
-      "titel": "Zahlungspflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -97,7 +93,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "82c0a9f06ea919908a0bea40538b3d3da5f013eacac3c48843b69dbf3d3051c0"
     },
@@ -105,10 +101,9 @@
       "id": "kanton/GR/210.370/art_5",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "5",
       "artikelLabel": "Art. 5",
-      "titel": "Gebührenberechnung 1. Allgemeines",
       "bloecke": [
         {
           "absatz": "1",
@@ -125,7 +120,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "25064d04d9961aba4fdbb7c4384c5821163048f69706f65e2c4aa88e127761bf"
     },
@@ -133,10 +128,9 @@
       "id": "kanton/GR/210.370/art_6",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "6",
       "artikelLabel": "Art. 6",
-      "titel": "2. Mehrere Rechtsgeschäfte",
       "bloecke": [
         {
           "absatz": "1",
@@ -145,7 +139,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "e3a229998056e12508acf287219bf1425ebbe0c77cbca91e7e9b5d1490c636b8"
     },
@@ -153,10 +147,9 @@
       "id": "kanton/GR/210.370/art_7",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "7",
       "artikelLabel": "Art. 7",
-      "titel": "3. Ohne Gebührenposition, Gebührenrahmen",
       "bloecke": [
         {
           "absatz": "1",
@@ -169,7 +162,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "290f0ee6b30669862f26f9b750f89f8d4b9a0b8526de48d3945d902e6223beca"
     },
@@ -177,10 +170,9 @@
       "id": "kanton/GR/210.370/art_8",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "8",
       "artikelLabel": "Art. 8",
-      "titel": "4. Ohne Beurkundung",
       "bloecke": [
         {
           "absatz": "1",
@@ -189,7 +181,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "bb6a1d5f619ff879536bf60eaa36f338f2723ffcf04f2390fa9baa76ba750d38"
     },
@@ -197,10 +189,9 @@
       "id": "kanton/GR/210.370/art_9",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "9",
       "artikelLabel": "Art. 9",
-      "titel": "5. Herabsetzung, Erlass",
       "bloecke": [
         {
           "absatz": "1",
@@ -209,7 +200,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "c3a5e8914f0da9c285c65a48bf3e07a48548d87ad228bf8a09fd6cf74d9545ed"
     },
@@ -217,10 +208,9 @@
       "id": "kanton/GR/210.370/art_10",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "10",
       "artikelLabel": "Art. 10",
-      "titel": "Beglaubigungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -251,7 +241,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "14780acb0b2c02c367dc1480fdf36e44ed21e2ca8c9d6cb98c1ed885edf72952"
     },
@@ -259,10 +249,9 @@
       "id": "kanton/GR/210.370/art_11",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "11",
       "artikelLabel": "Art. 11",
-      "titel": "Beurkundungen 1. Personenrecht",
       "bloecke": [
         {
           "absatz": null,
@@ -285,7 +274,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "aeb232d0300567d035c1f932d04024822ab872edf3d27ad2e87ad31ef866e118"
     },
@@ -293,10 +282,9 @@
       "id": "kanton/GR/210.370/art_12",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "12",
       "artikelLabel": "Art. 12",
-      "titel": "2. Familienrecht",
       "bloecke": [
         {
           "absatz": null,
@@ -327,7 +315,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "601cded5acd169143077104a3438b01330b166178f6b8c70ae100807571190d0"
     },
@@ -335,10 +323,9 @@
       "id": "kanton/GR/210.370/art_13",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "13",
       "artikelLabel": "Art. 13",
-      "titel": "3. Erbrecht",
       "bloecke": [
         {
           "absatz": null,
@@ -373,7 +360,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "586ee95e7c22a9e9ccc30e39d105a1c840500bdd2ebf8b81f8bac7b71a17f53a"
     },
@@ -381,10 +368,9 @@
       "id": "kanton/GR/210.370/art_14",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "14",
       "artikelLabel": "Art. 14",
-      "titel": "4. Sachenrecht a) Bemessungsgrundlage",
       "bloecke": [
         {
           "absatz": "1",
@@ -405,7 +391,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "c6885d9d86e21618ec757ee39d3aa107b3939fc415440bd2108c47deb1c1a769"
     },
@@ -413,10 +399,9 @@
       "id": "kanton/GR/210.370/art_15",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "15",
       "artikelLabel": "Art. 15",
-      "titel": "b) Errichten einer Urkunde",
       "bloecke": [
         {
           "absatz": "1",
@@ -425,7 +410,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "955df91193e257d5f7d00f8c362bcf91134f7cec49daca01dd4a7ac98a492137"
     },
@@ -433,10 +418,9 @@
       "id": "kanton/GR/210.370/art_16",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "16",
       "artikelLabel": "Art. 16",
-      "titel": "c) Beurkundung",
       "bloecke": [
         {
           "absatz": null,
@@ -473,10 +457,6 @@
             {
               "marke": "h",
               "text": "Vereinbarungen über den Anrechnungswert und die Aufhebung oder die Abänderung des Zuweisungsanspruches bei gemeinschaftlichem Eigentum an landwirtschaftlichen Gewerben und Grundstücken: Minimum: Fr. 100.–, Maximum: Fr. 1000.–"
-            },
-            {
-              "marke": "i",
-              "text": ""
             },
             {
               "marke": "1",
@@ -559,18 +539,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
-      "sha": "10acfcc2f6bb715ee2b3ab170143b8a2116c3bdc21de804866d8623090960349"
+      "sha": "50328b7a389be764c1f721bce3515ab5d3a741af81659a8f0169a0cc5479c222"
     },
     {
       "id": "kanton/GR/210.370/art_17",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "17",
       "artikelLabel": "Art. 17",
-      "titel": "5. Aktienrecht",
       "bloecke": [
         {
           "absatz": null,
@@ -613,7 +592,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "5973d4c562d6767855c3e981f5219e864b6bd9d8eaaf791181ce2878348999f7"
     },
@@ -621,10 +600,9 @@
       "id": "kanton/GR/210.370/art_18",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "18",
       "artikelLabel": "Art. 18",
-      "titel": "6. GmbH-Recht",
       "bloecke": [
         {
           "absatz": null,
@@ -663,7 +641,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "6236e04c0224a193ed4c69ef2ed261b0879c90545104335562ece85fdda1ae43"
     },
@@ -671,10 +649,9 @@
       "id": "kanton/GR/210.370/art_18_a",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "18_a",
       "artikelLabel": "Art. 18a",
-      "titel": "7. Fusionsrecht",
       "bloecke": [
         {
           "absatz": null,
@@ -709,7 +686,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "e456222519a7a9b573e50f5085fc01c5d3e95a234de9be8bd130ce624238539a"
     },
@@ -717,10 +694,9 @@
       "id": "kanton/GR/210.370/art_18_b",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "18_b",
       "artikelLabel": "Art. 18b",
-      "titel": "8. Genossenschaftsrecht",
       "bloecke": [
         {
           "absatz": null,
@@ -743,7 +719,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "f974b1f054e7cd8676863d409e477f421ed03ef46b4937d163a356c46e0b3ae4"
     },
@@ -751,10 +727,9 @@
       "id": "kanton/GR/210.370/art_19",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "19",
       "artikelLabel": "Art. 19",
-      "titel": "9. Übriges Obligationenrecht",
       "bloecke": [
         {
           "absatz": null,
@@ -793,7 +768,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "6332aabddd505c66599f7ee65801e0e0654e9a949d15d0cf28d906a83d6798bc"
     },
@@ -801,10 +776,9 @@
       "id": "kanton/GR/210.370/art_19_a",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "19_a",
       "artikelLabel": "Art. 19a",
-      "titel": "10. Vollstreckbare öffentliche Urkunde",
       "bloecke": [
         {
           "absatz": null,
@@ -827,7 +801,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "a34211058c3570d297f4f8434b8caac924fae84989a1d5ed8cd04668fd05d3e2"
     },
@@ -835,10 +809,9 @@
       "id": "kanton/GR/210.370/art_20",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Notariatsgebühren, NotGebV (BR 210.370)",
+      "erlass": "NotGebV (BR 210.370)",
       "artikel": "20",
       "artikelLabel": "Art. 20",
-      "titel": "In-Kraft-Treten",
       "bloecke": [
         {
           "absatz": "1",
@@ -847,7 +820,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/210.370",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "43dc40e5015acde165f1033deeb5b7b6",
       "sha": "87194a13de4800e22214e2a2130eb31f614ad91540eb687e34f050c0038a79e0"
     }

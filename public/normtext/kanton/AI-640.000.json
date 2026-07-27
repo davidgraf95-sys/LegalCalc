@@ -1,14 +1,13 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-06-19",
   "eintraege": [
     {
       "id": "kanton/AI/640.000/art_1",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "1",
       "artikelLabel": "Art. 1",
-      "titel": "Steuerhoheiten, Steuerarten",
       "bloecke": [
         {
           "absatz": "1",
@@ -65,7 +64,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "c5c5616c61d8081fbed2efdda085607b7ef17a1c5bc07e505ca8ffd93f799ca8"
     },
@@ -73,10 +72,9 @@
       "id": "kanton/AI/640.000/art_2",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "2",
       "artikelLabel": "Art. 2",
-      "titel": "Kirchensteuer",
       "bloecke": [
         {
           "absatz": "1",
@@ -93,7 +91,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "47935db840e9e92224dec1722eff31a509f7305bd04b79d0985627cf164828eb"
     },
@@ -101,10 +99,9 @@
       "id": "kanton/AI/640.000/art_3",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "3",
       "artikelLabel": "Art. 3",
-      "titel": "Einfache Steuer, Steuerfüsse",
       "bloecke": [
         {
           "absatz": "1",
@@ -131,7 +128,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "fde3044763f46e8fb65f5a5491c531fe9c9a77c4d7d71f2e69850f902b6127f1"
     },
@@ -139,10 +136,9 @@
       "id": "kanton/AI/640.000/art_4",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
-      "titel": "Steuererleichterungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -151,7 +147,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "5b33aeaa5de99bec1fa5117193caa8c3626107009bb9fb640e042abf7fd20711"
     },
@@ -159,10 +155,9 @@
       "id": "kanton/AI/640.000/art_5",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "5",
       "artikelLabel": "Art. 5",
-      "titel": "Gegenrecht",
       "bloecke": [
         {
           "absatz": "1",
@@ -171,7 +166,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "b72d3ef642fede860b31a8ae607e787236ab1d9dc5c9b9d666a4d3c6d2b0c587"
     },
@@ -179,10 +174,9 @@
       "id": "kanton/AI/640.000/art_5_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "5_bis",
       "artikelLabel": "Art. 5bis",
-      "titel": "Eingetragene Partnerschaft",
       "bloecke": [
         {
           "absatz": "1",
@@ -191,7 +185,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "16946c35bd38338d1f8d6b2ba6e2b347055a49ff0404cc0e1d22e460437b2e19"
     },
@@ -199,10 +193,9 @@
       "id": "kanton/AI/640.000/art_6",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "6",
       "artikelLabel": "Art. 6",
-      "titel": "Persönliche Zugehörigkeit",
       "bloecke": [
         {
           "absatz": "1",
@@ -223,7 +216,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "3cf06ffd2f7e8e0d03c3b08bf5c9119f90110f5b2d5efa7f32d7bfbc79763650"
     },
@@ -231,10 +224,9 @@
       "id": "kanton/AI/640.000/art_7",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "7",
       "artikelLabel": "Art. 7",
-      "titel": "Wirtschaftliche Zugehörigkeit",
       "bloecke": [
         {
           "absatz": "1",
@@ -295,7 +287,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "0df30d799453b3a4fa3754679e4167ecb3522fdde9696997e4dbbad37f778a8d"
     },
@@ -303,10 +295,9 @@
       "id": "kanton/AI/640.000/art_8",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "8",
       "artikelLabel": "Art. 8",
-      "titel": "Umfang der Steuerpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -319,7 +310,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "dea917c65243f7fa6881dd7d9e15f04a20f6b278afdbd66588900c6c71bf383a"
     },
@@ -327,10 +318,9 @@
       "id": "kanton/AI/640.000/art_9",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "9",
       "artikelLabel": "Art. 9",
-      "titel": "Steuerausscheidung",
       "bloecke": [
         {
           "absatz": "1",
@@ -359,7 +349,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "0d08f8bad92fa1b5f50a698908f5e23576fd4b8cb049648bba2ebf2fdde0d2d8"
     },
@@ -367,10 +357,9 @@
       "id": "kanton/AI/640.000/art_10",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "10",
       "artikelLabel": "Art. 10",
-      "titel": "Steuerberechnung bei anteiliger Steuerpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -383,7 +372,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "22c1b1236a3a8dc1184b15fa2067e7c1060559e48556c987c3b960610059e181"
     },
@@ -391,10 +380,9 @@
       "id": "kanton/AI/640.000/art_11",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "11",
       "artikelLabel": "Art. 11",
-      "titel": "Beginn und Ende der Steuerpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -411,7 +399,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "c45fb98bfe647f5c7e8bb601f7ead88d16bc4d7e1c1bc8e0b74429c0a7f89a37"
     },
@@ -419,10 +407,9 @@
       "id": "kanton/AI/640.000/art_12",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "12",
       "artikelLabel": "Art. 12",
-      "titel": "Familienbesteuerung",
       "bloecke": [
         {
           "absatz": "1",
@@ -439,7 +426,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "473e2b8aa3136c01e708f05a3aef51189886c073072d709c588500f85162991a"
     },
@@ -447,10 +434,9 @@
       "id": "kanton/AI/640.000/art_13",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "13",
       "artikelLabel": "Art. 13",
-      "titel": "Einfache Gesellschaften, Kollektiv- und Komanditgesellschaften, ausländische Handelsgesellschaften und andere Personengemeinschaften",
       "bloecke": [
         {
           "absatz": "1",
@@ -463,7 +449,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "380e5d7cd19f097e18dc956a2578e196613f8a981103119ed27c78c0492c998b"
     },
@@ -471,10 +457,9 @@
       "id": "kanton/AI/640.000/art_14",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "14",
       "artikelLabel": "Art. 14",
-      "titel": "Erbengemeinschaften",
       "bloecke": [
         {
           "absatz": "1",
@@ -487,7 +472,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "6783a87e585774af8a11b50382be436ebaee1b3b9710a02f995813450d3323d9"
     },
@@ -495,10 +480,9 @@
       "id": "kanton/AI/640.000/art_14_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "14_bis",
       "artikelLabel": "Art. 14bis",
-      "titel": "Kollektive Kapitalanlagen",
       "bloecke": [
         {
           "absatz": "1",
@@ -507,7 +491,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "ed136078e0355278291ff1fdd64653d5215eb43fddfe5994a71f6d62cdcd0061"
     },
@@ -515,10 +499,9 @@
       "id": "kanton/AI/640.000/art_15",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "15",
       "artikelLabel": "Art. 15",
-      "titel": "Steuernachfolge",
       "bloecke": [
         {
           "absatz": "1",
@@ -535,7 +518,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "6bfdb3522c3f19f198dfa23659619e0dffd6786cf987fdb43f9bc6f0c254f30c"
     },
@@ -543,10 +526,9 @@
       "id": "kanton/AI/640.000/art_16",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "16",
       "artikelLabel": "Art. 16",
-      "titel": "Haftung",
       "bloecke": [
         {
           "absatz": "1",
@@ -581,7 +563,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "08e89a53f7da6d278d224878e592fb3fa0cae74cb20a92fcadf96dc8e888385b"
     },
@@ -589,10 +571,9 @@
       "id": "kanton/AI/640.000/art_17",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "17",
       "artikelLabel": "Art. 17",
-      "titel": "Besteuerung nach dem Aufwand",
       "bloecke": [
         {
           "absatz": "1",
@@ -661,7 +642,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "d175f29f2029aeaf4b8eb492cceb97c20879200b8667d513ec3203bb91545334"
     },
@@ -669,10 +650,9 @@
       "id": "kanton/AI/640.000/art_18",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "18",
       "artikelLabel": "Art. 18",
-      "titel": "Angehörige diplomatischer und konsularischer Vertretungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -685,7 +665,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "8dbb5006ae3eae3e6240b05179be8da2d8a0c5a44e78a89c5e42a7669b977e7c"
     },
@@ -693,10 +673,9 @@
       "id": "kanton/AI/640.000/art_19",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "19",
       "artikelLabel": "Art. 19",
-      "titel": "1. Steuerbare Einkünfte a. Allgemeines",
       "bloecke": [
         {
           "absatz": "1",
@@ -713,7 +692,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "4a89df0e17d4263f079033202b70437512e28c058cb140da08cbbf4644928f68"
     },
@@ -721,10 +700,9 @@
       "id": "kanton/AI/640.000/art_20",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "20",
       "artikelLabel": "Art. 20",
-      "titel": "b. Unselbständige Erwerbstätigkeit",
       "bloecke": [
         {
           "absatz": "1",
@@ -755,7 +733,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "f489776bdf2ea0705ffafce1d97aac479c07d2d52e2d7ea1c9ec6e346adf9d95"
     },
@@ -763,10 +741,9 @@
       "id": "kanton/AI/640.000/art_20_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "20_bis",
       "artikelLabel": "Art. 20bis",
-      "titel": "ba. Einkünfte aus echten Mitarbeiterbeteiligungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -787,7 +764,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "f82be4f4afc5ac958454cddf4d87538b903f2bb17d428b80316d49d626136889"
     },
@@ -795,10 +772,9 @@
       "id": "kanton/AI/640.000/art_20_ter",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "20_ter",
       "artikelLabel": "Art. 20ter",
-      "titel": "bb. Einkünfte aus unechten Mitarbeiterbeteiligungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -807,7 +783,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "b5487cbf09e6e8e2168f3ef95de39a7ceb8dd41f9bdc0f3ab746552022ffd332"
     },
@@ -815,10 +791,9 @@
       "id": "kanton/AI/640.000/art_21",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "21",
       "artikelLabel": "Art. 21",
-      "titel": "c. Selbständige Erwerbstätigkeit ca. Allgemeines",
       "bloecke": [
         {
           "absatz": "1",
@@ -843,7 +818,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "9ef596a41eae4b870358137455d67541a9c94abd88b6fa27db615f974e2637e7"
     },
@@ -851,10 +826,9 @@
       "id": "kanton/AI/640.000/art_22",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "22",
       "artikelLabel": "Art. 22",
-      "titel": "cb. Umstrukturierungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -881,7 +855,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "ed93a5a04c057c803b9db40c38ededae37c4423a046c727f10b62f39a86324a5"
     },
@@ -889,10 +863,9 @@
       "id": "kanton/AI/640.000/art_22_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "22_bis",
       "artikelLabel": "Art. 22bis",
-      "titel": "cc. Weitere Tatbestände",
       "bloecke": [
         {
           "absatz": "1",
@@ -909,7 +882,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "c1635aeb8303566d1ed580b7d4cf2697c7dbfaad2250d4ad27fc18c0d3222822"
     },
@@ -917,10 +890,9 @@
       "id": "kanton/AI/640.000/art_22_quater",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "22_quater",
       "artikelLabel": "Art. 22quater",
-      "titel": "ce. Erfolg aus Patenten und vergleichbaren Rechten",
       "bloecke": [
         {
           "absatz": "1",
@@ -929,7 +901,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "579b9033aa009c40efdceaa0a66fb032b3f2df48309de553c77f90b10244d0b0"
     },
@@ -937,10 +909,9 @@
       "id": "kanton/AI/640.000/art_22_ter",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "22_ter",
       "artikelLabel": "Art. 22ter",
-      "titel": "cd. Teilbesteuerung der Einkünfte aus Beteiligungen des Geschäftsvermögens",
       "bloecke": [
         {
           "absatz": "1",
@@ -953,7 +924,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "1f6ba2a48470eb1a7a352c079984c9577df0af37229758c594457072c33e41be"
     },
@@ -961,10 +932,9 @@
       "id": "kanton/AI/640.000/art_23",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "23",
       "artikelLabel": "Art. 23",
-      "titel": "d. Bewegliches Vermögen da. Grundsatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -1045,7 +1015,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "fa4426811a37205e960076d27f1112d760217ef9b1a2d598e0979a9a7bd674cc"
     },
@@ -1053,10 +1023,9 @@
       "id": "kanton/AI/640.000/art_23_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "23_bis",
       "artikelLabel": "Art. 23bis",
-      "titel": "db. Besondere Fälle",
       "bloecke": [
         {
           "absatz": "1",
@@ -1079,7 +1048,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "e5c329a6bb214b0556ea7a5ff4e298740271d60c5ade666c85045a5cd713f719"
     },
@@ -1087,10 +1056,9 @@
       "id": "kanton/AI/640.000/art_24",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "24",
       "artikelLabel": "Art. 24",
-      "titel": "e. Unbewegliches Vermögen",
       "bloecke": [
         {
           "absatz": "1",
@@ -1125,7 +1093,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "9ebea174f0e8d8f6d8b8cecdbeee71bb169fe96df3e665a7ef6c4793a46f39c3"
     },
@@ -1133,10 +1101,9 @@
       "id": "kanton/AI/640.000/art_25",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "25",
       "artikelLabel": "Art. 25",
-      "titel": "f. Einkünfte aus Vorsorge",
       "bloecke": [
         {
           "absatz": "1",
@@ -1153,7 +1120,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "b6e2268d3167379592d8a9d03c021983759e876b4733911200449d8326caf6a5"
     },
@@ -1161,10 +1128,9 @@
       "id": "kanton/AI/640.000/art_26",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "26",
       "artikelLabel": "Art. 26",
-      "titel": "g. Übrige Einkünfte",
       "bloecke": [
         {
           "absatz": "1",
@@ -1199,7 +1165,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "206c5ced953551e1b10cb9af846825ab3a7168ece4c696854b3592d6e61e3d33"
     },
@@ -1207,10 +1173,9 @@
       "id": "kanton/AI/640.000/art_27",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "27",
       "artikelLabel": "Art. 27",
-      "titel": "h. Steuerfreie Einkünfte",
       "bloecke": [
         {
           "absatz": "1",
@@ -1289,7 +1254,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "19fbfcfa6eb4631d9af3ccb04919c3633864b1e7e22a00e4b8bfeae2149678cc"
     },
@@ -1297,10 +1262,9 @@
       "id": "kanton/AI/640.000/art_28",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "28",
       "artikelLabel": "Art. 28",
-      "titel": "2. Ermittlung des Reineinkommens a. Grundsatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -1313,7 +1277,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "112cf182746b1bb6874bc6d0922e59975163d9e4df095dee022bbe373cf57b33"
     },
@@ -1321,10 +1285,9 @@
       "id": "kanton/AI/640.000/art_29",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "29",
       "artikelLabel": "Art. 29",
-      "titel": "b. Unselbständige Erwerbstätigkeit",
       "bloecke": [
         {
           "absatz": "1",
@@ -1355,7 +1318,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "2c571de9a58537ff10b39c9b4a5aabe7115fb1825c2aecc9062173943cf91542"
     },
@@ -1363,10 +1326,9 @@
       "id": "kanton/AI/640.000/art_30",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "30",
       "artikelLabel": "Art. 30",
-      "titel": "c. Selbständige Erwerbstätigkeit ca. Allgemeines",
       "bloecke": [
         {
           "absatz": "1",
@@ -1445,7 +1407,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "d352fcd3cfd0720a3f7cabf4f7d3a6b8f6ea6ede2ca03dc73df673cfd059c7b5"
     },
@@ -1453,10 +1415,9 @@
       "id": "kanton/AI/640.000/art_31",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "31",
       "artikelLabel": "Art. 31",
-      "titel": "cb. Abschreibungen, Wertberichtigungen und Rückstellungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -1491,7 +1452,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "980381791e1a68d6ac940ec0a1f1f86513898714796235de2af2044cd6ad6301"
     },
@@ -1499,10 +1460,9 @@
       "id": "kanton/AI/640.000/art_32",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "32",
       "artikelLabel": "Art. 32",
-      "titel": "cc. Ersatzbeschaffungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -1519,7 +1479,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "7bf2b3463ce2dcbfa2729ec593dd08a89a20e120dacc1bbb8e2a218953064d18"
     },
@@ -1527,10 +1487,9 @@
       "id": "kanton/AI/640.000/art_32_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "32_bis",
       "artikelLabel": "Art. 32bis",
-      "titel": "ccbis. Abzug von Forschungs- und Entwicklungsaufwand bei selbständiger Erwerbstätigkeit",
       "bloecke": [
         {
           "absatz": "1",
@@ -1539,7 +1498,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "caf21de6fc6890efebc129a44768a653802ad24cf7b8ca105fedac26508453dc"
     },
@@ -1547,10 +1506,9 @@
       "id": "kanton/AI/640.000/art_33",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "33",
       "artikelLabel": "Art. 33",
-      "titel": "cd. Verluste",
       "bloecke": [
         {
           "absatz": "1",
@@ -1567,7 +1525,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "a58614ee24182641385f257ceab4232697fd143a0f87ee90ddd99402ad6c3aad"
     },
@@ -1575,10 +1533,9 @@
       "id": "kanton/AI/640.000/art_34",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "34",
       "artikelLabel": "Art. 34",
-      "titel": "d. Privatvermögen",
       "bloecke": [
         {
           "absatz": "1",
@@ -1607,7 +1564,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "fa00e1eb528421ed3a7f419f2d41d6253c396fb9628930e9db3a090690974399"
     },
@@ -1615,10 +1572,9 @@
       "id": "kanton/AI/640.000/art_35",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "35",
       "artikelLabel": "Art. 35",
-      "titel": "e. Allgemeine Abzüge",
       "bloecke": [
         {
           "absatz": "1",
@@ -1673,32 +1629,12 @@
               "text": "die Mitgliederbeiträge und Zuwendungen bis zum Gesamtbetrag von Fr. 10'000.-- an politische Parteien, die entweder"
             },
             {
-              "marke": "1",
-              "text": "im Parteienregister nach Art. 76a des Bundesgesetzes vom 17. Dezember 1976 über die politischen Rechte eingetragen sind oder"
-            },
-            {
-              "marke": "2",
-              "text": "in einem kantonalen Parlament vertreten sind oder"
-            },
-            {
-              "marke": "3",
-              "text": "in einem Kanton bei den letzten Wahlen des kantonalen Parlaments mindestens 3 Prozent der Stimmen erreicht haben."
-            },
-            {
               "marke": "m",
               "text": "…"
             },
             {
               "marke": "n",
               "text": "die Kosten der berufsorientierten Aus- und Weiterbildung, einschliesslich der Umschulungskosten, bis zum Gesamtbetrag von Fr. 12'000.--, sofern:"
-            },
-            {
-              "marke": "1",
-              "text": "ein erster Abschluss auf der Sekundarstufe II vorliegt, oder"
-            },
-            {
-              "marke": "2",
-              "text": "das 20. Lebensjahr vollendet ist und es sich nicht um die Ausbildungskosten bis zum ersten Abschluss auf der Sekundarstufe II handelt."
             }
           ]
         },
@@ -1713,18 +1649,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "977200ce21081883e3e01c7198f413e7c0e7b2b82e62eed656415122b6e982d5"
+      "sha": "f9e7afb44870d27d2196a4878959914fc1a0b867dd55ae63bc1cfc672f847d94"
     },
     {
       "id": "kanton/AI/640.000/art_36",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "36",
       "artikelLabel": "Art. 36",
-      "titel": "f. Nicht abziehbare Kosten und Aufwendungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -1755,7 +1690,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "99d7be0b197fd8ee93257fc5636ffd3eff672a5458cc32dbfc8929f7418da7fc"
     },
@@ -1763,10 +1698,9 @@
       "id": "kanton/AI/640.000/art_37",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "37",
       "artikelLabel": "Art. 37",
-      "titel": "g. Sozialabzüge",
       "bloecke": [
         {
           "absatz": "1",
@@ -1793,7 +1727,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "9fc3010b9dbb6979b8f0039134e59c475e4f579d8b0f24a1b9369c1be522a3b0"
     },
@@ -1801,10 +1735,9 @@
       "id": "kanton/AI/640.000/art_38",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "38",
       "artikelLabel": "Art. 38",
-      "titel": "h. Steuerberechnung ha. Einkommenssteuersatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -1883,7 +1816,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "ff19415bc9ccbcd2ca3bf5a998f4d9b3949c2112a9dbaba0c986a319745815a5"
     },
@@ -1891,10 +1824,9 @@
       "id": "kanton/AI/640.000/art_39",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "39",
       "artikelLabel": "Art. 39",
-      "titel": "hb. Kapitalabfindungen für wiederkehrende Leistungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -1903,7 +1835,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "badd3cea7e4466159e81b08eb5bfaf1420336b580c851b150be5800c9d3c9f01"
     },
@@ -1911,10 +1843,9 @@
       "id": "kanton/AI/640.000/art_39_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "39_bis",
       "artikelLabel": "Art. 39bis",
-      "titel": "hc. Liquidationsgewinne",
       "bloecke": [
         {
           "absatz": "1",
@@ -1931,7 +1862,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "6eea34439dba4332ea415e336a87b19385c2661365bb9000757af2153069dd83"
     },
@@ -1939,10 +1870,9 @@
       "id": "kanton/AI/640.000/art_40",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "40",
       "artikelLabel": "Art. 40",
-      "titel": "hd. Kapitalleistungen aus Vorsorge",
       "bloecke": [
         {
           "absatz": "1",
@@ -1955,7 +1885,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "fd1c3faf7c4e785e8e2803a34dae8fa79692d32e58882f5231930b8caff687df"
     },
@@ -1963,10 +1893,9 @@
       "id": "kanton/AI/640.000/art_41",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "41",
       "artikelLabel": "Art. 41",
-      "titel": "Steuerobjekt",
       "bloecke": [
         {
           "absatz": "1",
@@ -1979,7 +1908,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "f175b5f6e16e5d86faaa5590f06f28bcbba92ae1d22c8f0b309ff9c21ce34688"
     },
@@ -1987,10 +1916,9 @@
       "id": "kanton/AI/640.000/art_42",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "42",
       "artikelLabel": "Art. 42",
-      "titel": "Bewertung",
       "bloecke": [
         {
           "absatz": "1",
@@ -2019,37 +1947,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "5cc45d17ac2e3b7a0dec61bcbe6387ce6dfac9b043164296e865e3e768f3c4ad"
-    },
-    {
-      "id": "kanton/AI/640.000/art_43",
-      "ebene": "kanton",
-      "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
-      "artikel": "43",
-      "artikelLabel": "Art. 43",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/AI/640.000/art_44",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "44",
       "artikelLabel": "Art. 44",
-      "titel": "Schuldenabzug",
       "bloecke": [
         {
           "absatz": "1",
@@ -2058,7 +1966,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "522b926b5e2cbff797426aa457d5679111a499458fd108455404e70bfb31375d"
     },
@@ -2066,10 +1974,9 @@
       "id": "kanton/AI/640.000/art_45",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "45",
       "artikelLabel": "Art. 45",
-      "titel": "Steuerberechnung",
       "bloecke": [
         {
           "absatz": "1",
@@ -2100,7 +2007,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "55d0100944b9ea06bdf7d9db5367ea12cf6513e344ba3416910353344c125b75"
     },
@@ -2108,10 +2015,9 @@
       "id": "kanton/AI/640.000/art_46",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "46",
       "artikelLabel": "Art. 46",
-      "titel": "Steuerperiode",
       "bloecke": [
         {
           "absatz": "1",
@@ -2132,7 +2038,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "f54a18140fd2b7baae0c5dd12a2c28aeba366f83c8cb74d2d9903b579d22ddb8"
     },
@@ -2140,10 +2046,9 @@
       "id": "kanton/AI/640.000/art_47",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "47",
       "artikelLabel": "Art. 47",
-      "titel": "Bemessungsperiode für das Einkommen",
       "bloecke": [
         {
           "absatz": "1",
@@ -2160,7 +2065,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "a65fc9748ca0776c6d6709a60ecd02fd987cc18be5f30770f317cdead378fdb2"
     },
@@ -2168,10 +2073,9 @@
       "id": "kanton/AI/640.000/art_48",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "48",
       "artikelLabel": "Art. 48",
-      "titel": "Bemessung des Vermögens",
       "bloecke": [
         {
           "absatz": "1",
@@ -2192,7 +2096,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "f92b1586bb597358eb6fd5b6bb98fd87a7c08190d7c75240bd4e59c530ae9eb3"
     },
@@ -2200,10 +2104,9 @@
       "id": "kanton/AI/640.000/art_49",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "49",
       "artikelLabel": "Art. 49",
-      "titel": "Begründung und Auflösung der Ehe",
       "bloecke": [
         {
           "absatz": "1",
@@ -2220,7 +2123,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "a0255a19240b20a116ca66d9f39aa4441abe8a9a0c26d04a1ddd7a4ffe56553e"
     },
@@ -2228,10 +2131,9 @@
       "id": "kanton/AI/640.000/art_50",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "50",
       "artikelLabel": "Art. 50",
-      "titel": "Anpassung an veränderte Verhältnisse",
       "bloecke": [
         {
           "absatz": "1",
@@ -2244,7 +2146,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "a38045a9e60b31130ce70db5c16c3328c07b229ca5c8d25d8b03c5dd4d3dced5"
     },
@@ -2252,10 +2154,9 @@
       "id": "kanton/AI/640.000/art_51",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "51",
       "artikelLabel": "Art. 51",
-      "titel": "Steuersubjekt",
       "bloecke": [
         {
           "absatz": "1",
@@ -2282,7 +2183,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "f8d67cf5f883f1e96d11e7c5ccb236a47f3dfde23b051d04e70287de564fd91b"
     },
@@ -2290,10 +2191,9 @@
       "id": "kanton/AI/640.000/art_52",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "52",
       "artikelLabel": "Art. 52",
-      "titel": "Persönliche Zugehörigkeit",
       "bloecke": [
         {
           "absatz": "1",
@@ -2306,7 +2206,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "8acaa799b8bc5ec7987cb2f9cef53c04cc9d04cd995103cf8d03ba6d75e69c45"
     },
@@ -2314,10 +2214,9 @@
       "id": "kanton/AI/640.000/art_53",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "53",
       "artikelLabel": "Art. 53",
-      "titel": "Wirtschaftliche Zugehörigkeit",
       "bloecke": [
         {
           "absatz": "1",
@@ -2362,7 +2261,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "6ea2d10ceac9f63183ee70ce8e6f9513ccf7e57a6a266d4580bfd3206b754156"
     },
@@ -2370,10 +2269,9 @@
       "id": "kanton/AI/640.000/art_54",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "54",
       "artikelLabel": "Art. 54",
-      "titel": "Umfang der Steuerpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -2386,7 +2284,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "3f44e6727d58f78266f6ce135f3bbe0d475f3fde002cc5b91c8140ed815af42d"
     },
@@ -2394,10 +2292,9 @@
       "id": "kanton/AI/640.000/art_55",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "55",
       "artikelLabel": "Art. 55",
-      "titel": "Steuerausscheidung",
       "bloecke": [
         {
           "absatz": "1",
@@ -2426,7 +2323,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "0b2fef33d7b8a982ac651286c07fb6d9e001b4514b7a954ec5d099aea58b810d"
     },
@@ -2434,10 +2331,9 @@
       "id": "kanton/AI/640.000/art_56",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "56",
       "artikelLabel": "Art. 56",
-      "titel": "Beginn und Ende der Steuerpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -2462,7 +2358,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "01648f099aee68134cb3c03d5c4c727f21b1f85c5cd92c02d686fb277c14b464"
     },
@@ -2470,10 +2366,9 @@
       "id": "kanton/AI/640.000/art_57",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "57",
       "artikelLabel": "Art. 57",
-      "titel": "Haftung",
       "bloecke": [
         {
           "absatz": "1",
@@ -2504,7 +2399,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "21ad404ea8bb7a5c34640f5ecf012043538e8312b1c7205a4d43d5370011f2c9"
     },
@@ -2512,10 +2407,9 @@
       "id": "kanton/AI/640.000/art_58",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "58",
       "artikelLabel": "Art. 58",
-      "titel": "Ausnahmen von der Steuerpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -2570,7 +2464,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "e58469a68264cca34c878cf6b4afb5573abffccfed0b954e52104d4312e23ee6"
     },
@@ -2578,10 +2472,9 @@
       "id": "kanton/AI/640.000/art_59",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "59",
       "artikelLabel": "Art. 59",
-      "titel": "1. Steuerobjekt",
       "bloecke": [
         {
           "absatz": "1",
@@ -2590,7 +2483,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "474e8bf31d01c791b2e39cbe40c067258b485f9c25d0b7f265d1c1f838c34b04"
     },
@@ -2598,10 +2491,9 @@
       "id": "kanton/AI/640.000/art_60",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "60",
       "artikelLabel": "Art. 60",
-      "titel": "2. Berechnung des Reingewinns a. Allgemeines",
       "bloecke": [
         {
           "absatz": "1",
@@ -2614,30 +2506,6 @@
             {
               "marke": "b",
               "text": "allen vor Berechnung des Saldos der Erfolgsrechnung ausgeschiedenen Teilen des Geschäftsergebnisses, die nicht zur Deckung von geschäftsmässig begründetem Aufwand verwendet werden, wie insbesondere:"
-            },
-            {
-              "marke": "1",
-              "text": "Kosten für die Anschaffung, Herstellung oder Wertvermehrung von Gegenständen des Anlagevermögens,"
-            },
-            {
-              "marke": "2",
-              "text": "geschäftsmässig nicht begründete Abschreibungen, Wertberichtigungen und Rückstellungen,"
-            },
-            {
-              "marke": "3",
-              "text": "Einlagen in die Reserven,"
-            },
-            {
-              "marke": "4",
-              "text": "Einzahlungen auf das Eigenkapital aus Mitteln der juristischen Person,"
-            },
-            {
-              "marke": "5",
-              "text": "offene und verdeckte Gewinnausschüttungen sowie Gewinnvorwegnahmen,"
-            },
-            {
-              "marke": "6",
-              "text": "geschäftsmässig nicht begründete Zuwendungen an Dritte;"
             },
             {
               "marke": "c",
@@ -2660,18 +2528,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "1e0f5dff4cc3979574bfe3d139264f9429de010818a250efd62a9e3543785b37"
+      "sha": "b23f20c3b6bc95982cc455651630124ae153112e1b5c74f801a66a9025d196c6"
     },
     {
       "id": "kanton/AI/640.000/art_60_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "60_bis",
       "artikelLabel": "Art. 60bis",
-      "titel": "abis. Patente und vergleichbare Rechte: Begriffe",
       "bloecke": [
         {
           "absatz": "1",
@@ -2724,7 +2591,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "bf56d4e9f54d992c9d802bd5d64339c0fb5dd0b66c440d68e10ebe5e0e8f3647"
     },
@@ -2732,10 +2599,9 @@
       "id": "kanton/AI/640.000/art_60_ter",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "60_ter",
       "artikelLabel": "Art. 60ter",
-      "titel": "ater. Patente und vergleichbare Rechte: Besteuerung",
       "bloecke": [
         {
           "absatz": "1",
@@ -2756,7 +2622,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "9a8fefa8aca86585efb96343c75f9fb978037ef0d0c9184002295dcd27296453"
     },
@@ -2764,10 +2630,9 @@
       "id": "kanton/AI/640.000/art_61",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "61",
       "artikelLabel": "Art. 61",
-      "titel": "b. Geschäftsmässig begründeter Aufwand",
       "bloecke": [
         {
           "absatz": "1",
@@ -2846,7 +2711,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "830faac63063642ca4d5550219e9b08d7956cb66f26997adda47c02b74dafc79"
     },
@@ -2854,10 +2719,9 @@
       "id": "kanton/AI/640.000/art_62",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "62",
       "artikelLabel": "Art. 62",
-      "titel": "c. Erfolgsneutrale Vorgänge",
       "bloecke": [
         {
           "absatz": "1",
@@ -2884,7 +2748,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "3fc4db43f65d91bb49af07ac1fa36923abcf2a2aca7629005d328abc3b6a8cc8"
     },
@@ -2892,10 +2756,9 @@
       "id": "kanton/AI/640.000/art_63",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "63",
       "artikelLabel": "Art. 63",
-      "titel": "d. Umstrukturierungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -2948,7 +2811,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "160c582121f8a1d4ec56e4c6b749ec84ab57cef9055cb03ed79c509445caff7b"
     },
@@ -2956,10 +2819,9 @@
       "id": "kanton/AI/640.000/art_63_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "63_bis",
       "artikelLabel": "Art. 63bis",
-      "titel": "dbis. Aufdeckung stiller Reserven bei Beginn der Steuerpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -2980,7 +2842,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "36f877cce04fab772ddf5477a20383b0e30f70e0a812bf6d868918eb2be38516"
     },
@@ -2988,10 +2850,9 @@
       "id": "kanton/AI/640.000/art_63_ter",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "63_ter",
       "artikelLabel": "Art. 63ter",
-      "titel": "dter. Besteuerung stiller Reserven bei Ende der Steuerpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -3004,7 +2865,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "6f51d2930948cd9bac943736609b6a9a610d70ef666dc387e95e35345f1771ef"
     },
@@ -3012,10 +2873,9 @@
       "id": "kanton/AI/640.000/art_64",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "64",
       "artikelLabel": "Art. 64",
-      "titel": "e. Abschreibungen, Wertberichtigungen und Rückstellungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -3050,7 +2910,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "fd5ef72e2daccf0ccca425dc84620f412a31095ee509497c8beffba484a8b5ef"
     },
@@ -3058,10 +2918,9 @@
       "id": "kanton/AI/640.000/art_65",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "65",
       "artikelLabel": "Art. 65",
-      "titel": "f. Ersatzbeschaffungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -3082,7 +2941,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "0a2fa47860e878a6de7eb4665c7cc0852be261bd20841e4ca59b901672d10254"
     },
@@ -3090,10 +2949,9 @@
       "id": "kanton/AI/640.000/art_65_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "65_bis",
       "artikelLabel": "Art. 65bis",
-      "titel": "fbis. Zusätzlicher Abzug von Forschungs- und Entwicklungsaufwand",
       "bloecke": [
         {
           "absatz": "1",
@@ -3124,7 +2982,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "95d65f38f76ad7042ef1555e3cc0177c6d3c5ac7defeda8e77ffdf29b1dc1dee"
     },
@@ -3132,10 +2990,9 @@
       "id": "kanton/AI/640.000/art_65_ter",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "65_ter",
       "artikelLabel": "Art. 65ter",
-      "titel": "fter. Entlastungsbegrenzung",
       "bloecke": [
         {
           "absatz": "1",
@@ -3148,7 +3005,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "9ab506254dd1552617aa83f9c95d1e197c9bf34a9fb8eb981bc11181eeb97936"
     },
@@ -3156,10 +3013,9 @@
       "id": "kanton/AI/640.000/art_66",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "66",
       "artikelLabel": "Art. 66",
-      "titel": "g. Verluste",
       "bloecke": [
         {
           "absatz": "1",
@@ -3176,7 +3032,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "58213100c36df4c03c3bb1c07a813012696725f4e6ace579033a45736eddb95c"
     },
@@ -3184,10 +3040,9 @@
       "id": "kanton/AI/640.000/art_67",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "67",
       "artikelLabel": "Art. 67",
-      "titel": "3. Steuerberechnung a. Gewinnsteuersatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -3200,7 +3055,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "0efdbe7c017b4dfefa97c0e669a5c4ca26edd60eeadf5be2dfc413ed036f3757"
     },
@@ -3208,10 +3063,9 @@
       "id": "kanton/AI/640.000/art_68",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "68",
       "artikelLabel": "Art. 68",
-      "titel": "b. Gemischte Beteiligungsgesellschaften",
       "bloecke": [
         {
           "absatz": "1",
@@ -3254,7 +3108,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "393c62fb5f1d8c7712c5a0087bd782fb86ab47787526ba52ff452c58770600c0"
     },
@@ -3262,10 +3116,9 @@
       "id": "kanton/AI/640.000/art_68_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "68_bis",
       "artikelLabel": "Art. 68bis",
-      "titel": "ba. Veräusserung einer Mehrheitsbeteiligung an einer Immobiliengesellschaft",
       "bloecke": [
         {
           "absatz": "1",
@@ -3274,56 +3127,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "e6e185c30ac4bf67a7f5618109c64208c5e5dce3d952eb99b0b6dd573d30b141"
-    },
-    {
-      "id": "kanton/AI/640.000/art_69",
-      "ebene": "kanton",
-      "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
-      "artikel": "69",
-      "artikelLabel": "Art. 69",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "id": "kanton/AI/640.000/art_70",
-      "ebene": "kanton",
-      "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
-      "artikel": "70",
-      "artikelLabel": "Art. 70",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/AI/640.000/art_71",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "71",
       "artikelLabel": "Art. 71",
-      "titel": "e. Juristische Personen mit ideellen Zwecken",
       "bloecke": [
         {
           "absatz": "1",
@@ -3332,7 +3146,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "cc2c396a81100610a657e319eddcd97d6a48456ff021a06127d8ae52cf595b34"
     },
@@ -3340,10 +3154,9 @@
       "id": "kanton/AI/640.000/art_71_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "71_bis",
       "artikelLabel": "Art. 71bis",
-      "titel": "f. Vereine, Stiftungen und übrige juristische Personen",
       "bloecke": [
         {
           "absatz": "1",
@@ -3352,7 +3165,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "d4473c7ac686743328382cddc203995e16f0ccad7e2c33f472205f9009283f99"
     },
@@ -3360,10 +3173,9 @@
       "id": "kanton/AI/640.000/art_72",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "72",
       "artikelLabel": "Art. 72",
-      "titel": "1. Steuerobjekt",
       "bloecke": [
         {
           "absatz": "1",
@@ -3372,7 +3184,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "35c0f954ef2141f059330b1ae7db0f045418dfa2109eaec97f6a24a08a6efdd3"
     },
@@ -3380,10 +3192,9 @@
       "id": "kanton/AI/640.000/art_73",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "73",
       "artikelLabel": "Art. 73",
-      "titel": "a. Kapitalgesellschaften und Genossenschaften",
       "bloecke": [
         {
           "absatz": "1",
@@ -3408,7 +3219,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "818581bc42c99e82ee353c94c5b0f96932730ba6cdb73399f196da69381a46d3"
     },
@@ -3416,10 +3227,9 @@
       "id": "kanton/AI/640.000/art_74",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "74",
       "artikelLabel": "Art. 74",
-      "titel": "b. Übrige juristische Personen",
       "bloecke": [
         {
           "absatz": "1",
@@ -3446,7 +3256,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "33f1a3ac1d77a2c9f5fd416f258b22e0ba12422dc93dd16ac12ce211de625145"
     },
@@ -3454,10 +3264,9 @@
       "id": "kanton/AI/640.000/art_75",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "75",
       "artikelLabel": "Art. 75",
-      "titel": "2. Steuerberechnung",
       "bloecke": [
         {
           "absatz": "1",
@@ -3474,10 +3283,6 @@
           ]
         },
         {
-          "absatz": null,
-          "text": "Der Grosse Rat legt den Steuersatz jährlich fest."
-        },
-        {
           "absatz": "2",
           "text": "Die Gewinnsteuer wird an die Kapitalsteuer angerechnet. Die Kapitalsteuer beträgt für Kapitalgesellschaften im Kanton mindestens Fr. 500.--."
         },
@@ -3488,18 +3293,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "19e29e9ac0b3acaedbcd625b48de6ec27f76aa3b667f7f4fcfb59809a049d16a"
+      "sha": "4cbee9c5639a1691e3b1b9f9a203b47034bfee1fb7b22fb2c720572f5eb1dbe8"
     },
     {
       "id": "kanton/AI/640.000/art_76",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "76",
       "artikelLabel": "Art. 76",
-      "titel": "Steuerverwendung",
       "bloecke": [
         {
           "absatz": "1",
@@ -3508,7 +3312,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "000c0befbede8759feabebed4539850b429b7915061795c0df7e44f95c4c8deb"
     },
@@ -3516,10 +3320,9 @@
       "id": "kanton/AI/640.000/art_77",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "77",
       "artikelLabel": "Art. 77",
-      "titel": "Steuerperiode",
       "bloecke": [
         {
           "absatz": "1",
@@ -3536,7 +3339,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "581f04d48dd1e0e9e027e34d41541f358341689d16af70188927139a730bef95"
     },
@@ -3544,10 +3347,9 @@
       "id": "kanton/AI/640.000/art_78",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "78",
       "artikelLabel": "Art. 78",
-      "titel": "Bemessung des Reingewinns",
       "bloecke": [
         {
           "absatz": "1",
@@ -3560,7 +3362,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "8e32d9dd5d22a8102ca6416d0820d1fab05cc0910cee0e4a9d3ab87be92a6039"
     },
@@ -3568,10 +3370,9 @@
       "id": "kanton/AI/640.000/art_79",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "79",
       "artikelLabel": "Art. 79",
-      "titel": "Bemessung des Eigenkapitals",
       "bloecke": [
         {
           "absatz": "1",
@@ -3588,7 +3389,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "d37946b4803caa9f9457e7499cb056a97b46c3701449ce178cc7d0ffa5a7fdbb"
     },
@@ -3596,10 +3397,9 @@
       "id": "kanton/AI/640.000/art_80",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "80",
       "artikelLabel": "Art. 80",
-      "titel": "Der Quellensteuer unterliegende Personen",
       "bloecke": [
         {
           "absatz": "1",
@@ -3612,7 +3412,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "1e3b275d29d1cc3546c628acbba7336cbf9213c85cdd94f82f8ef2786b3bfafc"
     },
@@ -3620,10 +3420,9 @@
       "id": "kanton/AI/640.000/art_81",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "81",
       "artikelLabel": "Art. 81",
-      "titel": "Steuerbare Leistungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -3650,7 +3449,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "21a43131349401df8e8d838485094e4b281e5991634beeb5e00769a6cc7a2ba6"
     },
@@ -3658,10 +3457,9 @@
       "id": "kanton/AI/640.000/art_82",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "82",
       "artikelLabel": "Art. 82",
-      "titel": "Steuertarif",
       "bloecke": [
         {
           "absatz": "1",
@@ -3686,7 +3484,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "20b6804aebdadd6631a9cf7739565c2cd8d072b1f2f834add33e504b1fc0095c"
     },
@@ -3694,10 +3492,9 @@
       "id": "kanton/AI/640.000/art_83",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "83",
       "artikelLabel": "Art. 83",
-      "titel": "Steuerabzug auf Ersatzeinkünften",
       "bloecke": [
         {
           "absatz": "1",
@@ -3714,7 +3511,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "0fc750de12e895a691af204530daa346f281e3c0fc3990d765ac0448f9161e49"
     },
@@ -3722,10 +3519,9 @@
       "id": "kanton/AI/640.000/art_83_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "83_bis",
       "artikelLabel": "Art. 83bis",
-      "titel": "Steuerabzug auf rückvergüteten AHV-Beiträgen",
       "bloecke": [
         {
           "absatz": "1",
@@ -3734,37 +3530,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "6f8b5d437271e82c1cef5fee5ee35e53cb52175ec9ad68f4c9ced1289f6f2548"
-    },
-    {
-      "id": "kanton/AI/640.000/art_84",
-      "ebene": "kanton",
-      "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
-      "artikel": "84",
-      "artikelLabel": "Art. 84",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/AI/640.000/art_84_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "84_bis",
       "artikelLabel": "Art. 84bis",
-      "titel": "Obligatorische nachträgliche ordentliche Veranlagung",
       "bloecke": [
         {
           "absatz": "1",
@@ -3803,7 +3579,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "3ea3485697109f6b1b202b5b94b10986807640725d8e51a2727bfa1b68418bda"
     },
@@ -3811,10 +3587,9 @@
       "id": "kanton/AI/640.000/art_84_ter",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "84_ter",
       "artikelLabel": "Art. 84ter",
-      "titel": "Nachträgliche ordentliche Veranlagung auf Antrag",
       "bloecke": [
         {
           "absatz": "1",
@@ -3839,7 +3614,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "ee3f4a2c22e9b969f6c371b5b43b3ba6b484f2a679c37a43d110a696c528ac8a"
     },
@@ -3847,10 +3622,9 @@
       "id": "kanton/AI/640.000/art_85",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "85",
       "artikelLabel": "Art. 85",
-      "titel": "Arbeitnehmer",
       "bloecke": [
         {
           "absatz": "1",
@@ -3889,7 +3663,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "af271f086b998e3d55892f78b0db2d0523e1fd789aef31e7b5872cfc84d0b0fe"
     },
@@ -3897,10 +3671,9 @@
       "id": "kanton/AI/640.000/art_86",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "86",
       "artikelLabel": "Art. 86",
-      "titel": "Künstler, Sportler und Referenten",
       "bloecke": [
         {
           "absatz": "1",
@@ -3935,7 +3708,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "4fe7009988adf07b05e68163a6cda9b79bb0b165e650061255c74f16ab5d0f42"
     },
@@ -3943,10 +3716,9 @@
       "id": "kanton/AI/640.000/art_87",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "87",
       "artikelLabel": "Art. 87",
-      "titel": "Organe juristischer Personen",
       "bloecke": [
         {
           "absatz": "1",
@@ -3963,7 +3735,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "b3cd84edbe9ffc62d26ed4af1d193e02df47c9a90ca7cc4a6669034f38a7253e"
     },
@@ -3971,10 +3743,9 @@
       "id": "kanton/AI/640.000/art_87_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "87_bis",
       "artikelLabel": "Art. 87bis",
-      "titel": "Empfänger von Mitarbeiterbeteiligungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -3987,7 +3758,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "18877fa9e1357ed1655631c621b349041e609a9e7b27a5eeb3953a9696701eda"
     },
@@ -3995,10 +3766,9 @@
       "id": "kanton/AI/640.000/art_88",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "88",
       "artikelLabel": "Art. 88",
-      "titel": "Hypothekargläubiger",
       "bloecke": [
         {
           "absatz": "1",
@@ -4015,7 +3785,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "a0e0d3985d2044de7527da75acc4fb08c071ac3272ee6e96943ed80ad7664bed"
     },
@@ -4023,10 +3793,9 @@
       "id": "kanton/AI/640.000/art_89",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "89",
       "artikelLabel": "Art. 89",
-      "titel": "Empfänger von Vorsorgeleistungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -4043,28 +3812,23 @@
           ]
         },
         {
-          "absatz": null,
-          "text": "Renten, Pensionen, Ruhegehälter, Kapitalleistungen oder andere Vergütungen erhalten, sind für diese Leistungen steuerpflichtig."
-        },
-        {
           "absatz": "2",
           "text": "Die Steuer beträgt sechs Prozent der Bruttoeinkünfte."
         }
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "fefb683d7597099757043747b86f9d3ace9801faf4b07c7994eee1a778633879"
+      "sha": "fb0aac05dcc34bb65f32ef7c88f9c5a1088ed4b9a7fb3e29f86fe840521180c3"
     },
     {
       "id": "kanton/AI/640.000/art_89_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "89_bis",
       "artikelLabel": "Art. 89bis",
-      "titel": "Nachträgliche ordentliche Veranlagung auf Antrag",
       "bloecke": [
         {
           "absatz": "1",
@@ -4095,7 +3859,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "955315afc5a16643cfd376a4ea6f2726680b5e79dd9b88054552fb9de8028009"
     },
@@ -4103,10 +3867,9 @@
       "id": "kanton/AI/640.000/art_89_ter",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "89_ter",
       "artikelLabel": "Art. 89ter",
-      "titel": "Nachträgliche ordentliche Veranlagung von Amtes wegen",
       "bloecke": [
         {
           "absatz": "1",
@@ -4119,7 +3882,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "ee59f8c04212208c670ee70f586938cab2f4513f82ba14cada64939a95bb1421"
     },
@@ -4127,10 +3890,9 @@
       "id": "kanton/AI/640.000/art_90",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "90",
       "artikelLabel": "Art. 90",
-      "titel": "Steuerbeträge",
       "bloecke": [
         {
           "absatz": "1",
@@ -4139,7 +3901,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "9ad35432188a39a2c72527b23e37994b025435fa8a729e1c5369d6068cb6ad00"
     },
@@ -4147,10 +3909,9 @@
       "id": "kanton/AI/640.000/art_90_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "90_bis",
       "artikelLabel": "Art. 90bis",
-      "titel": "Der Quellensteuerpflicht unterliegende Personen",
       "bloecke": [
         {
           "absatz": "1",
@@ -4163,7 +3924,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "4ae5da397341ac48db13fbac3fee7121757eded8ab345cddd709027ac3eb3750"
     },
@@ -4171,10 +3932,9 @@
       "id": "kanton/AI/640.000/art_90_quater",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "90_quater",
       "artikelLabel": "Art. 90quater",
-      "titel": "Steuerabzug",
       "bloecke": [
         {
           "absatz": "1",
@@ -4191,7 +3951,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "b06b2ce146caacc4e57f0813f7148d6788b4b933f311d3bf05ad1e6e5de6d1cc"
     },
@@ -4199,10 +3959,9 @@
       "id": "kanton/AI/640.000/art_90_ter",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "90_ter",
       "artikelLabel": "Art. 90ter",
-      "titel": "Steuerbare Leistungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -4211,7 +3970,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "2ea2e45c1ffc8776bbf37c1d02c540ab7b186694de00a7fa1698eaa54b5312ec"
     },
@@ -4219,10 +3978,9 @@
       "id": "kanton/AI/640.000/art_91",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "91",
       "artikelLabel": "Art. 91",
-      "titel": "Abgegoltene Steuer",
       "bloecke": [
         {
           "absatz": "1",
@@ -4231,7 +3989,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "cbf1eb628499a56aade2240d60be0864a8c40b43a451df74e7e4637a3f480b08"
     },
@@ -4239,10 +3997,9 @@
       "id": "kanton/AI/640.000/art_92",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "92",
       "artikelLabel": "Art. 92",
-      "titel": "Pflichten des Schuldners der steuerbaren Leistung",
       "bloecke": [
         {
           "absatz": "1",
@@ -4293,37 +4050,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "0a54d393aa6c125b551359d0f51c255081a29c96f9e69b3c6bbc7980131989c2"
-    },
-    {
-      "id": "kanton/AI/640.000/art_93",
-      "ebene": "kanton",
-      "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
-      "artikel": "93",
-      "artikelLabel": "Art. 93",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/AI/640.000/art_93_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "93_bis",
       "artikelLabel": "Art. 93bis",
-      "titel": "Interkantonale Verhältnisse",
       "bloecke": [
         {
           "absatz": "1",
@@ -4332,7 +4069,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "947c7a3382077444ec95a4de511bb664531f8a2a4e9e623e75c2e5f5783ad77c"
     },
@@ -4340,10 +4077,9 @@
       "id": "kanton/AI/640.000/art_93_ter",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "93_ter",
       "artikelLabel": "Art. 93ter",
-      "titel": "Interkommunale Verhältnisse",
       "bloecke": [
         {
           "absatz": "1",
@@ -4352,7 +4088,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "ace379e5ee7b4bd16fd50629c4fc5539030360c5267c8f69008a9f03ff0ab4c1"
     },
@@ -4360,10 +4096,9 @@
       "id": "kanton/AI/640.000/art_94",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "94",
       "artikelLabel": "Art. 94",
-      "titel": "Fälligkeit und Ablieferung der Steuer",
       "bloecke": [
         {
           "absatz": "1",
@@ -4372,7 +4107,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "c2660896bd9e063a2f852d27115925892fe75cd3e54cf3805cce75d5e9d71061"
     },
@@ -4380,10 +4115,9 @@
       "id": "kanton/AI/640.000/art_95",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "95",
       "artikelLabel": "Art. 95",
-      "titel": "Gegenstand",
       "bloecke": [
         {
           "absatz": "1",
@@ -4400,7 +4134,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "ca31b81bb53b132d2504223b4c8c72a165588221d49e78a3c4165e7cec49d55a"
     },
@@ -4408,10 +4142,9 @@
       "id": "kanton/AI/640.000/art_96",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "96",
       "artikelLabel": "Art. 96",
-      "titel": "Steuerpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -4464,7 +4197,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "483fc1bcd7dff2ba9aba9f0d56453b1993de30132ed89e7e1682e3ef9b38a53d"
     },
@@ -4472,10 +4205,9 @@
       "id": "kanton/AI/640.000/art_97",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "97",
       "artikelLabel": "Art. 97",
-      "titel": "Steuerfreie Vermögensübergänge",
       "bloecke": [
         {
           "absatz": "1",
@@ -4506,7 +4238,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "3da6a3634783457364d09860d0fc56d16d4a352b85e8b8ea9cbdf191c1164cb2"
     },
@@ -4514,10 +4246,9 @@
       "id": "kanton/AI/640.000/art_98",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "98",
       "artikelLabel": "Art. 98",
-      "titel": "Bewertung der Zuwendungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -4542,7 +4273,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "4984fb74f010b56bbdc74cb3a67d1699a42260a861511887dcd8521b016c5070"
     },
@@ -4550,10 +4281,9 @@
       "id": "kanton/AI/640.000/art_99",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "99",
       "artikelLabel": "Art. 99",
-      "titel": "Berechnung des Erbanfalls",
       "bloecke": [
         {
           "absatz": "1",
@@ -4588,7 +4318,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "1e4e84c99540d80abf12bb1813d447ea7c6bb9b1debf2af53e87669cf28c08a7"
     },
@@ -4596,10 +4326,9 @@
       "id": "kanton/AI/640.000/art_100",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "100",
       "artikelLabel": "Art. 100",
-      "titel": "Steuerberechnung a. Freibeträge",
       "bloecke": [
         {
           "absatz": "1",
@@ -4630,7 +4359,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "0c36f9163bbe93577be47e7da6a703a96ff4b98c530e8c664455e7a3aab1d83d"
     },
@@ -4638,10 +4367,9 @@
       "id": "kanton/AI/640.000/art_101",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "101",
       "artikelLabel": "Art. 101",
-      "titel": "b. Steuersätze",
       "bloecke": [
         {
           "absatz": "1",
@@ -4680,7 +4408,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "dccf77f05a034c1eeedfb45a97a1a8ed4bba8b5ee6a19119762789b7daa81d00"
     },
@@ -4688,10 +4416,9 @@
       "id": "kanton/AI/640.000/art_102",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "102",
       "artikelLabel": "Art. 102",
-      "titel": "Haftung",
       "bloecke": [
         {
           "absatz": "1",
@@ -4704,7 +4431,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "d1a723f881dcfb7039d51278be2186ade49681ba0a950a0dd05de6cd2f9de538"
     },
@@ -4712,10 +4439,9 @@
       "id": "kanton/AI/640.000/art_103",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "103",
       "artikelLabel": "Art. 103",
-      "titel": "1. Steuerpflicht a. Tatbestand",
       "bloecke": [
         {
           "absatz": "1",
@@ -4760,7 +4486,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "4cacc5e904ef6d839704c51aae521c06e980a6a43700c712b502e0cf7d4791ff"
     },
@@ -4768,10 +4494,9 @@
       "id": "kanton/AI/640.000/art_104",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "104",
       "artikelLabel": "Art. 104",
-      "titel": "b. Steueraufschub",
       "bloecke": [
         {
           "absatz": "1",
@@ -4814,7 +4539,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "140074a16e92794441d6f5e829c59fd6b53b95208870c2fe612ee9dce1140569"
     },
@@ -4822,10 +4547,9 @@
       "id": "kanton/AI/640.000/art_105",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "105",
       "artikelLabel": "Art. 105",
-      "titel": "2. Steuerobjekt a. Grundstückgewinn",
       "bloecke": [
         {
           "absatz": "1",
@@ -4838,7 +4562,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "a83b19ec9cd98ee1c7e890545dbb1170561e86154ffb99cfd6147597f2b8a654"
     },
@@ -4846,10 +4570,9 @@
       "id": "kanton/AI/640.000/art_106",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "106",
       "artikelLabel": "Art. 106",
-      "titel": "b. Erlös",
       "bloecke": [
         {
           "absatz": "1",
@@ -4862,7 +4585,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "8450258b4bf9b7cae794a9015b5ed5af5f9b2a54d3f5fa1c7d45794f5e736290"
     },
@@ -4870,10 +4593,9 @@
       "id": "kanton/AI/640.000/art_107",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "107",
       "artikelLabel": "Art. 107",
-      "titel": "c. Anlagekosten ca. Erwerbspreis",
       "bloecke": [
         {
           "absatz": "1",
@@ -4898,7 +4620,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "ec488af41e02be55cf536b3af2ec26eac9e590e1e3492959d42c59f4fae055ec"
     },
@@ -4906,10 +4628,9 @@
       "id": "kanton/AI/640.000/art_108",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "108",
       "artikelLabel": "Art. 108",
-      "titel": "cb. Aufwendungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -4956,7 +4677,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "bf98158ac1c68aa87c7fa2fd61b2daa0382460d21731b87e8e87d324add0e54b"
     },
@@ -4964,10 +4685,9 @@
       "id": "kanton/AI/640.000/art_109",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "109",
       "artikelLabel": "Art. 109",
-      "titel": "3. Steuerberechnung",
       "bloecke": [
         {
           "absatz": "1",
@@ -5096,56 +4816,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "86263c7b63ca41610b2da6ee14ef4bee59bdc7f1ba4cc6a53aba549c6a6a0431"
-    },
-    {
-      "id": "kanton/AI/640.000/art_110",
-      "ebene": "kanton",
-      "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
-      "artikel": "110",
-      "artikelLabel": "Art. 110",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "id": "kanton/AI/640.000/art_111",
-      "ebene": "kanton",
-      "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
-      "artikel": "111",
-      "artikelLabel": "Art. 111",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/AI/640.000/art_112",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "112",
       "artikelLabel": "Art. 112",
-      "titel": "Gegenstand und Steueranspruch",
       "bloecke": [
         {
           "absatz": "1",
@@ -5158,7 +4839,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "370be9eddcd5b59092aa4ce38e29bef004172e750815dfc74dfb69eae3005945"
     },
@@ -5166,10 +4847,9 @@
       "id": "kanton/AI/640.000/art_113",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "113",
       "artikelLabel": "Art. 113",
-      "titel": "Steuersubjekt",
       "bloecke": [
         {
           "absatz": "1",
@@ -5182,7 +4862,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "58acbce79c1cf2e5309a042b76d9920c966f77814054fc090d2d7f0451272ded"
     },
@@ -5190,10 +4870,9 @@
       "id": "kanton/AI/640.000/art_114",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "114",
       "artikelLabel": "Art. 114",
-      "titel": "Steuerbemessung",
       "bloecke": [
         {
           "absatz": "1",
@@ -5202,7 +4881,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "46c0d8ba383df58ddd49e23163beee9bbf02560219967c6e3235aeaf7798207d"
     },
@@ -5210,10 +4889,9 @@
       "id": "kanton/AI/640.000/art_115",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "115",
       "artikelLabel": "Art. 115",
-      "titel": "Steuersatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -5226,7 +4904,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "73fdcbcabfb2d377ddd67bb0c517e680699a587e6e30d45cfd189d7e139cf2e0"
     },
@@ -5234,10 +4912,9 @@
       "id": "kanton/AI/640.000/art_116",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "116",
       "artikelLabel": "Art. 116",
-      "titel": "Steuerpflicht und Tatbestand",
       "bloecke": [
         {
           "absatz": "1",
@@ -5272,7 +4949,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "a48150931d6889e787fe62ac460eed2dba4dff1d6c55c349f023dcd169969b79"
     },
@@ -5280,10 +4957,9 @@
       "id": "kanton/AI/640.000/art_117",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "117",
       "artikelLabel": "Art. 117",
-      "titel": "Steuerbemessung",
       "bloecke": [
         {
           "absatz": "1",
@@ -5296,7 +4972,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "df2e3c0ce1e9a435ba995682d23a1e891230923426336f4dae8d76691b55b57d"
     },
@@ -5304,10 +4980,9 @@
       "id": "kanton/AI/640.000/art_118",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "118",
       "artikelLabel": "Art. 118",
-      "titel": "Steuerbefreiung",
       "bloecke": [
         {
           "absatz": "1",
@@ -5342,7 +5017,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "ab34153e6868750e6d183583fc90b65894a28e2a55f1175912c2b582d50942fa"
     },
@@ -5350,10 +5025,9 @@
       "id": "kanton/AI/640.000/art_119",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "119",
       "artikelLabel": "Art. 119",
-      "titel": "Steuerberechnung und Steuerverwendung",
       "bloecke": [
         {
           "absatz": "1",
@@ -5366,7 +5040,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "21574b9ebcef33323c16dc3cfe8668ac523778db17b2dc906e688e8475520d9b"
     },
@@ -5374,10 +5048,9 @@
       "id": "kanton/AI/640.000/art_120",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "120",
       "artikelLabel": "Art. 120",
-      "titel": "Steuerbehörde",
       "bloecke": [
         {
           "absatz": "1",
@@ -5394,7 +5067,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "3e84ff4e7e34eb2755a39ec64751784eba802ea7316735ec9ae00af0380e552b"
     },
@@ -5402,10 +5075,9 @@
       "id": "kanton/AI/640.000/art_121",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "121",
       "artikelLabel": "Art. 121",
-      "titel": "1. Amtspflichten a. Ausstand",
       "bloecke": [
         {
           "absatz": "1",
@@ -5440,7 +5112,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "35c34bb03d2be73a492dbb689c358283e63b41ee7c12c809f3e4f944b08d95af"
     },
@@ -5448,10 +5120,9 @@
       "id": "kanton/AI/640.000/art_122",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "122",
       "artikelLabel": "Art. 122",
-      "titel": "b. Amtsgeheimnis",
       "bloecke": [
         {
           "absatz": "1",
@@ -5468,7 +5139,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "ee62b601b93e33d40d065a676ff50f8c76d1b8894b4c045fafb3f4f77bc6a987"
     },
@@ -5476,10 +5147,9 @@
       "id": "kanton/AI/640.000/art_123",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "123",
       "artikelLabel": "Art. 123",
-      "titel": "c. Amtshilfe",
       "bloecke": [
         {
           "absatz": "1",
@@ -5496,7 +5166,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "2a743ce09b2c46ff9e1e62d66d22578d3f1c5a09ec53b7117b4c2b5b6eaf489f"
     },
@@ -5504,10 +5174,9 @@
       "id": "kanton/AI/640.000/art_123_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "123_bis",
       "artikelLabel": "Art. 123bis",
-      "titel": "d. Datenbearbeitung",
       "bloecke": [
         {
           "absatz": "1",
@@ -5538,7 +5207,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "b20b705a02ed9d63ae42f0d44752660d4946d429ce5f75ff6ad53ca6f719c08d"
     },
@@ -5546,10 +5215,9 @@
       "id": "kanton/AI/640.000/art_123_quater",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "123_quater",
       "artikelLabel": "Art. 123quater",
-      "titel": "f. Elektronische Erfassung und Aufbewahrung von Daten",
       "bloecke": [
         {
           "absatz": "1",
@@ -5562,7 +5230,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "a994a0bc8951e9e95bcc66438d0ddb898bd99d8e4e1b24bb822b8326400bbacd"
     },
@@ -5570,10 +5238,9 @@
       "id": "kanton/AI/640.000/art_123_ter",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "123_ter",
       "artikelLabel": "Art. 123ter",
-      "titel": "e. Elektronischer Datenaustausch",
       "bloecke": [
         {
           "absatz": "1",
@@ -5590,7 +5257,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "fbb9ed169512e63b6b18280902973698d936c9873ea36951764348a8a9027f8a"
     },
@@ -5598,10 +5265,9 @@
       "id": "kanton/AI/640.000/art_124",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "124",
       "artikelLabel": "Art. 124",
-      "titel": "2. verfahrensrechtliche Stellung der Ehegatten",
       "bloecke": [
         {
           "absatz": "1",
@@ -5622,7 +5288,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "a177d72b5d8524dcba088a19a747ffb5b6cb771120073f85a8e6348655451a72"
     },
@@ -5630,10 +5296,9 @@
       "id": "kanton/AI/640.000/art_125",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "125",
       "artikelLabel": "Art. 125",
-      "titel": "3. Verfahrensrechte des Steuerpflichtigen a. Akteneinsicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -5650,7 +5315,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "585cd042becc1cb69578367a0a0c0f2b10af8db70bacc765f28d560973a5cc4a"
     },
@@ -5658,10 +5323,9 @@
       "id": "kanton/AI/640.000/art_126",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "126",
       "artikelLabel": "Art. 126",
-      "titel": "b. Beweisabnahme",
       "bloecke": [
         {
           "absatz": "1",
@@ -5670,7 +5334,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "4a55ea05fabc3642b58f477a3b102856808a82059567f4739e69b7c99de3b15d"
     },
@@ -5678,10 +5342,9 @@
       "id": "kanton/AI/640.000/art_127",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "127",
       "artikelLabel": "Art. 127",
-      "titel": "c. Eröffnung",
       "bloecke": [
         {
           "absatz": "1",
@@ -5690,7 +5353,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "7635eaad26e6dabb4c775d0aa8eed633500af2ef9e999474d71cc44b3c7d8c29"
     },
@@ -5698,10 +5361,9 @@
       "id": "kanton/AI/640.000/art_128",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "128",
       "artikelLabel": "Art. 128",
-      "titel": "d. Vertretung",
       "bloecke": [
         {
           "absatz": "1",
@@ -5718,7 +5380,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "fc143c0fa73a4a5e8d0d7a7b51b8e935b23057f36c0c0a5d68ac83d37dd0ad71"
     },
@@ -5726,10 +5388,9 @@
       "id": "kanton/AI/640.000/art_129",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "129",
       "artikelLabel": "Art. 129",
-      "titel": "4. Fristen",
       "bloecke": [
         {
           "absatz": "1",
@@ -5742,7 +5403,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "620546c054b3111b6e459ba1d2dbfa4dea0462be58d1e19ef0e02d6f344dd827"
     },
@@ -5750,10 +5411,9 @@
       "id": "kanton/AI/640.000/art_130",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "130",
       "artikelLabel": "Art. 130",
-      "titel": "5. Verjährung a. Veranlagungsverjährung",
       "bloecke": [
         {
           "absatz": "1",
@@ -5806,7 +5466,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "197bd306724fd0c22f43e13b289e81a168044c5ac1b7c8dfc5d82066070c4f01"
     },
@@ -5814,10 +5474,9 @@
       "id": "kanton/AI/640.000/art_131",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "131",
       "artikelLabel": "Art. 131",
-      "titel": "b. Bezugsverjährung",
       "bloecke": [
         {
           "absatz": "1",
@@ -5834,7 +5493,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "52216a5016366164ce268767e9f2891d995d1e63bbfa67504015e274ccdd8052"
     },
@@ -5842,10 +5501,9 @@
       "id": "kanton/AI/640.000/art_132",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "132",
       "artikelLabel": "Art. 132",
-      "titel": "1. Verfahrenspflichten a. Aufgaben der Steuerbehörden",
       "bloecke": [
         {
           "absatz": "1",
@@ -5858,7 +5516,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "9e254837c5df4aebf78f3b5d28889739396e1b36afe7e21c8c0a8560e74d80d3"
     },
@@ -5866,10 +5524,9 @@
       "id": "kanton/AI/640.000/art_133",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "133",
       "artikelLabel": "Art. 133",
-      "titel": "b. Pflichten des Steuerpflichtigen ba. Steuererklärung",
       "bloecke": [
         {
           "absatz": "1",
@@ -5886,7 +5543,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "8d1e5712a03a25425fbdf79dc1788e5ca822499d1ebad2a88227a2ba45a6b9a3"
     },
@@ -5894,10 +5551,9 @@
       "id": "kanton/AI/640.000/art_134",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "134",
       "artikelLabel": "Art. 134",
-      "titel": "bb. Beilagen zur Steuererklärung",
       "bloecke": [
         {
           "absatz": "1",
@@ -5938,7 +5594,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "57b9604367b01d8022c83638b6a8558f7a4f7e40cb4816732c815af91b2ab4cb"
     },
@@ -5946,10 +5602,9 @@
       "id": "kanton/AI/640.000/art_135",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "135",
       "artikelLabel": "Art. 135",
-      "titel": "bc. Weitere Mitwirkungspflichten",
       "bloecke": [
         {
           "absatz": "1",
@@ -5966,7 +5621,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "1baa24cb358596141c26733cffe2169366f4c0b891938b429f864244d1e76866"
     },
@@ -5974,10 +5629,9 @@
       "id": "kanton/AI/640.000/art_136",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "136",
       "artikelLabel": "Art. 136",
-      "titel": "c. Bescheinigungspflicht Dritter",
       "bloecke": [
         {
           "absatz": "1",
@@ -6012,7 +5666,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "6aa5719271370e1d1b16cbf6e30e7a3446bd73c4ec9f93a9728b11e9754eaaba"
     },
@@ -6020,10 +5674,9 @@
       "id": "kanton/AI/640.000/art_137",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "137",
       "artikelLabel": "Art. 137",
-      "titel": "d. Auskunftspflicht Dritter",
       "bloecke": [
         {
           "absatz": "1",
@@ -6032,7 +5685,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "55ffb4a4b84e1b9bee119556a3d258efd40128443b6a4845a2f8365b50a498b2"
     },
@@ -6040,10 +5693,9 @@
       "id": "kanton/AI/640.000/art_138",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "138",
       "artikelLabel": "Art. 138",
-      "titel": "e. Meldepflicht Dritter",
       "bloecke": [
         {
           "absatz": "1",
@@ -6082,7 +5734,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "c3996c89a94fe413b4a4ee50f0c64ac5a4cdd8e3dbd31458e397f48f88317234"
     },
@@ -6090,10 +5742,9 @@
       "id": "kanton/AI/640.000/art_139",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "139",
       "artikelLabel": "Art. 139",
-      "titel": "2. Veranlagung a. Im Allgemeinen aa. Durchführung",
       "bloecke": [
         {
           "absatz": "1",
@@ -6110,7 +5761,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "6909a71eeb3ce866383b27c63060520c27b2e7810452849f2811d836cf72d54e"
     },
@@ -6118,10 +5769,9 @@
       "id": "kanton/AI/640.000/art_140",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "140",
       "artikelLabel": "Art. 140",
-      "titel": "ab. Eröffnung",
       "bloecke": [
         {
           "absatz": "1",
@@ -6138,7 +5788,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "27e25ab3dc20a65d5d8b1edc8b38520a54b9ee5180c96935c693f1c1b2ef104c"
     },
@@ -6146,10 +5796,9 @@
       "id": "kanton/AI/640.000/art_141",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "141",
       "artikelLabel": "Art. 141",
-      "titel": "b. Erbschafts- und Schenkungssteuern",
       "bloecke": [
         {
           "absatz": "1",
@@ -6170,7 +5819,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "6deb267dadac5dee731c5faa00e038a5bd4485bd78e6f52c8dd53a2103fdddac"
     },
@@ -6178,10 +5827,9 @@
       "id": "kanton/AI/640.000/art_142",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "142",
       "artikelLabel": "Art. 142",
-      "titel": "c. Grundstückgewinnsteuer",
       "bloecke": [
         {
           "absatz": "1",
@@ -6190,7 +5838,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "4e5442dea8205a66504e49f0af29c56880ed9be0a64987462ff1f088c2a4af12"
     },
@@ -6198,10 +5846,9 @@
       "id": "kanton/AI/640.000/art_143",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "143",
       "artikelLabel": "Art. 143",
-      "titel": "3. Einsprache a. Voraussetzungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -6218,7 +5865,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "7844f57394e54ae29a1895cd44b67749b4b7c34f3e8e9edfb1ff6ae52d180434"
     },
@@ -6226,10 +5873,9 @@
       "id": "kanton/AI/640.000/art_144",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "144",
       "artikelLabel": "Art. 144",
-      "titel": "b. Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -6246,7 +5892,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "f41b0160105a2a88c0a1f6ea021211cd6450d841a8044a39ab35a3c976b94b35"
     },
@@ -6254,10 +5900,9 @@
       "id": "kanton/AI/640.000/art_145",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "145",
       "artikelLabel": "Art. 145",
-      "titel": "c. Entscheid",
       "bloecke": [
         {
           "absatz": "1",
@@ -6274,7 +5919,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "4f782da0b0d2a0f45ac955b7ecce63b1ff6ad002c57e9164728dbe27cf67c411"
     },
@@ -6282,10 +5927,9 @@
       "id": "kanton/AI/640.000/art_146",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "146",
       "artikelLabel": "Art. 146",
-      "titel": "1. Verfahrenspflichten a. Des Schuldners der steuerbaren Leistung und des Steuerpflichtigen",
       "bloecke": [
         {
           "absatz": "1",
@@ -6306,7 +5950,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "2a48909388e33eecd92c6095638e8a2972f4b6952cb06bb0e8fa504225e17cbb"
     },
@@ -6314,10 +5958,9 @@
       "id": "kanton/AI/640.000/art_146_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "146_bis",
       "artikelLabel": "Art. 146bis",
-      "titel": "b. Der AHV-Ausgleichskasse",
       "bloecke": [
         {
           "absatz": "1",
@@ -6336,7 +5979,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "43ebbfb6685b080ef467f49e37b3e1f889a0a28202a176d00e3bb45f9302f0b5"
     },
@@ -6344,10 +5987,9 @@
       "id": "kanton/AI/640.000/art_147",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "147",
       "artikelLabel": "Art. 147",
-      "titel": "2. Verfügung und Rechtsmittel",
       "bloecke": [
         {
           "absatz": "1",
@@ -6382,7 +6024,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "2df7917829c8b638d1da0434eda374899a7a8a994e1d4e729e8a640bc75d16a3"
     },
@@ -6390,10 +6032,9 @@
       "id": "kanton/AI/640.000/art_148",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "148",
       "artikelLabel": "Art. 148",
-      "titel": "3. Nachforderung und Rückerstattung",
       "bloecke": [
         {
           "absatz": "1",
@@ -6414,7 +6055,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "d2e523c4f24e004678ccad5e6a24d5df964cc087460b6b1f03d3a3f37aecc3ca"
     },
@@ -6422,10 +6063,9 @@
       "id": "kanton/AI/640.000/art_149",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "149",
       "artikelLabel": "Art. 149",
-      "titel": "Verwaltungsgerichtsbeschwerde",
       "bloecke": [
         {
           "absatz": "1",
@@ -6446,7 +6086,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "77c53e00ec9fa6e764e0c93801a31e74b49333b420344c4b8c2dad3682376253"
     },
@@ -6454,10 +6094,9 @@
       "id": "kanton/AI/640.000/art_150",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "150",
       "artikelLabel": "Art. 150",
-      "titel": "1. Revision a. Voraussetzungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -6510,7 +6149,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "6c117b8cd332ea8c3d4e185ff57e4d84f872cb71c4c83b96beff4112890cbdd0"
     },
@@ -6518,10 +6157,9 @@
       "id": "kanton/AI/640.000/art_151",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "151",
       "artikelLabel": "Art. 151",
-      "titel": "b. Verfahren und Entscheid",
       "bloecke": [
         {
           "absatz": "1",
@@ -6538,7 +6176,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "067f89430f041b4562fe9eb3f1067377cb5b7353e4f0aee72b6d8320a81bb07d"
     },
@@ -6546,10 +6184,9 @@
       "id": "kanton/AI/640.000/art_152",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "152",
       "artikelLabel": "Art. 152",
-      "titel": "2. Berichtigung von Rechnungsfehlern und Schreibversehen",
       "bloecke": [
         {
           "absatz": "1",
@@ -6562,7 +6199,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "bc4da56ee3bba9026efcbcca8eb82938e04f40ce72d75d6e819671e519d7bceb"
     },
@@ -6570,10 +6207,9 @@
       "id": "kanton/AI/640.000/art_153",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "153",
       "artikelLabel": "Art. 153",
-      "titel": "3. Nachsteuer a. Voraussetzungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -6586,7 +6222,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "33937b3053dcd6a14ea2127e014ac16c8df82d1be2daa5589d282254a7d39624"
     },
@@ -6594,10 +6230,9 @@
       "id": "kanton/AI/640.000/art_154",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "154",
       "artikelLabel": "Art. 154",
-      "titel": "b. Verwirkung",
       "bloecke": [
         {
           "absatz": "1",
@@ -6610,7 +6245,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "39c03c117f755834f8fe21ae2d9d448346425bda5f395a8233f321507ee87c23"
     },
@@ -6618,10 +6253,9 @@
       "id": "kanton/AI/640.000/art_155",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "155",
       "artikelLabel": "Art. 155",
-      "titel": "c. Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -6638,7 +6272,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "e0970ada6218f5dba60e9cb501f4cb0ad77e1044e8cc026a79508e80e53ddf96"
     },
@@ -6646,10 +6280,9 @@
       "id": "kanton/AI/640.000/art_155_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "155_bis",
       "artikelLabel": "Art. 155bis",
-      "titel": "c. Vereinfachte Nachbesteuerung von Erben",
       "bloecke": [
         {
           "absatz": "1",
@@ -6684,7 +6317,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "536513a76290e513ea27a2d4045ff2e2e3b5af4a970c61a29456a633e0d61776"
     },
@@ -6692,7 +6325,7 @@
       "id": "kanton/AI/640.000/art_156",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "156",
       "artikelLabel": "Art. 156",
       "bloecke": [
@@ -6711,7 +6344,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "3110d57fea108133aa4ca8d4af29e0679b56c83d29f63266ed6f30c3e9545d28"
     },
@@ -6719,10 +6352,9 @@
       "id": "kanton/AI/640.000/art_157",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "157",
       "artikelLabel": "Art. 157",
-      "titel": "Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -6735,7 +6367,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "d210deee42c261d19a11cd46b009f21388907d1298071d37c470758d1716d293"
     },
@@ -6743,10 +6375,9 @@
       "id": "kanton/AI/640.000/art_158",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "158",
       "artikelLabel": "Art. 158",
-      "titel": "Bezugsstellen",
       "bloecke": [
         {
           "absatz": "1",
@@ -6759,7 +6390,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "2cfa301356da1bf9671fccb46122a95caf52b648ed898f815227207e775230b4"
     },
@@ -6767,10 +6398,9 @@
       "id": "kanton/AI/640.000/art_159",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "159",
       "artikelLabel": "Art. 159",
-      "titel": "Provisorische Rechnung und Schlussrechnung",
       "bloecke": [
         {
           "absatz": "1",
@@ -6795,7 +6425,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "39f2821ab277a860c9b364f961ff3b7099d10a746e96f8507329edf066ed5f56"
     },
@@ -6803,10 +6433,9 @@
       "id": "kanton/AI/640.000/art_160",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "160",
       "artikelLabel": "Art. 160",
-      "titel": "Ausgleichszinsen, Fälligkeit, Zahlungsfrist, Verzugs- und Vergütungszins",
       "bloecke": [
         {
           "absatz": "1",
@@ -6845,7 +6474,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "be15bba3e88b6d4038bbd3dca04464f97a1f4fdc25577cc520d6c286c91ef716"
     },
@@ -6853,10 +6482,9 @@
       "id": "kanton/AI/640.000/art_161",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "161",
       "artikelLabel": "Art. 161",
-      "titel": "Zahlungserleichterungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -6869,7 +6497,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "158c7ea449d51ff8351f2e5ad2108567e1fa25e20f8ecd1f518bf4db6060a053"
     },
@@ -6877,10 +6505,9 @@
       "id": "kanton/AI/640.000/art_162",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "162",
       "artikelLabel": "Art. 162",
-      "titel": "Rechtsmittel",
       "bloecke": [
         {
           "absatz": "1",
@@ -6893,7 +6520,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "5b734be62252b4a1a4b8d230c6c169d845979bb3eab363c10076f408f41c6f88"
     },
@@ -6901,10 +6528,9 @@
       "id": "kanton/AI/640.000/art_163",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "163",
       "artikelLabel": "Art. 163",
-      "titel": "Betreibung",
       "bloecke": [
         {
           "absatz": "1",
@@ -6917,7 +6543,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "434a3bbc47bd55b858523485864e2063ab75ed749d32ad59c9b05ac870d50c9f"
     },
@@ -6925,10 +6551,9 @@
       "id": "kanton/AI/640.000/art_164",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "164",
       "artikelLabel": "Art. 164",
-      "titel": "Sicherstellung",
       "bloecke": [
         {
           "absatz": "1",
@@ -6945,7 +6570,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "b2956af510967ce7931dbe4d55ea3bf1f51f20a1c289a5411e3a772b1d601082"
     },
@@ -6953,10 +6578,9 @@
       "id": "kanton/AI/640.000/art_165",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "165",
       "artikelLabel": "Art. 165",
-      "titel": "Arrest",
       "bloecke": [
         {
           "absatz": "1",
@@ -6969,7 +6593,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "2627745aadd80904b81d917c2a21e115f5a46ab172bfc5b1cedf8923347d20e8"
     },
@@ -6977,10 +6601,9 @@
       "id": "kanton/AI/640.000/art_166",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "166",
       "artikelLabel": "Art. 166",
-      "titel": "Gesetzliches Pfandrecht",
       "bloecke": [
         {
           "absatz": "1",
@@ -6989,7 +6612,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "701063bcb19faae3070374bccc4b15382b26766d47da7381c1be55c481d8be8a"
     },
@@ -6997,10 +6620,9 @@
       "id": "kanton/AI/640.000/art_167",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "167",
       "artikelLabel": "Art. 167",
-      "titel": "Steuererlass",
       "bloecke": [
         {
           "absatz": "1",
@@ -7013,7 +6635,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "30c3ac6f4b0cb70ba085fabab1aae18890e5a4a0157a16728d826af0287de496"
     },
@@ -7021,10 +6643,9 @@
       "id": "kanton/AI/640.000/art_168",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "168",
       "artikelLabel": "Art. 168",
-      "titel": "1. Verletzung von Verfahrenspflichten",
       "bloecke": [
         {
           "absatz": "1",
@@ -7043,26 +6664,21 @@
               "text": "Pflichten verletzt, die ihm als Erben oder Dritten im Inventarverfahren obliegen,"
             }
           ]
-        },
-        {
-          "absatz": null,
-          "text": "wird mit Busse bis zu Fr. 1'000.-- , in schweren Fällen oder im Wiederholungsfall bis zu Fr. 10'000.-- bestraft."
         }
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "f4b9c5afdaff2112f14fecc2dcf3880e34c5309b7ba6724afe557fa9474828bd"
+      "sha": "439b96f1c618caf027d3672670e827cb64227bfeb6e5052e2e65f6bb83be0dc5"
     },
     {
       "id": "kanton/AI/640.000/art_169",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "169",
       "artikelLabel": "Art. 169",
-      "titel": "2. Steuerhinterziehung aa. Vollendete Steuerhinterziehung",
       "bloecke": [
         {
           "absatz": "1",
@@ -7079,7 +6695,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "ea9fe59edaa8dfb571c9c89aeb96348d855fbed34e887303368827fb3bca4e5b"
     },
@@ -7087,10 +6703,9 @@
       "id": "kanton/AI/640.000/art_169_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "169_bis",
       "artikelLabel": "Art. 169bis",
-      "titel": "ab. Straflose Selbstanzeige",
       "bloecke": [
         {
           "absatz": "1",
@@ -7117,7 +6732,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "f30555cfe0d2aaab237148d76db3778512f1a55ee99b26bedd810cd422f912c6"
     },
@@ -7125,10 +6740,9 @@
       "id": "kanton/AI/640.000/art_170",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "170",
       "artikelLabel": "Art. 170",
-      "titel": "b. Versuchte Steuerhinterziehung",
       "bloecke": [
         {
           "absatz": "1",
@@ -7141,7 +6755,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "da36245f71c176bcecb6e53c8ff36ffda7acd8898755e4ee46be9e49ef1b4497"
     },
@@ -7149,10 +6763,9 @@
       "id": "kanton/AI/640.000/art_171",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "171",
       "artikelLabel": "Art. 171",
-      "titel": "c. Mitwirkung Dritter",
       "bloecke": [
         {
           "absatz": "1",
@@ -7169,7 +6782,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "4d97778cd60b17e9d0b3ca6993046238610ef6ce8bf8754f53e4b27f25a0df5e"
     },
@@ -7177,10 +6790,9 @@
       "id": "kanton/AI/640.000/art_172",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "172",
       "artikelLabel": "Art. 172",
-      "titel": "d. Verheimlichung oder Beiseiteschaffung von Nachlasswerten im Inventarverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -7211,37 +6823,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "a682a4638c548aabda42c4a1b969e752dbcc57e27c9caa21423d644e332c3d66"
-    },
-    {
-      "id": "kanton/AI/640.000/art_173",
-      "ebene": "kanton",
-      "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
-      "artikel": "173",
-      "artikelLabel": "Art. 173",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/AI/640.000/art_174",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "174",
       "artikelLabel": "Art. 174",
-      "titel": "e. Steuerhinterziehung von Ehegatten",
       "bloecke": [
         {
           "absatz": "1",
@@ -7250,7 +6842,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "286cfd84d0dcab65f6d730a1f9e5e8d7b7c56e6c2daef815502ea43c16b60da9"
     },
@@ -7258,10 +6850,9 @@
       "id": "kanton/AI/640.000/art_175",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "175",
       "artikelLabel": "Art. 175",
-      "titel": "3. Juristische Personen a. Strafbarkeit",
       "bloecke": [
         {
           "absatz": "1",
@@ -7282,7 +6873,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "4299234c40b86855e86e074769d6f0d33ebefb068908cc324e905a0770715a49"
     },
@@ -7290,10 +6881,9 @@
       "id": "kanton/AI/640.000/art_175_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "175_bis",
       "artikelLabel": "Art. 175bis",
-      "titel": "b. Straflose Selbstanzeige",
       "bloecke": [
         {
           "absatz": "1",
@@ -7350,7 +6940,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "f1d5f5e0aea852e7295d3fc45ae9e93f25ca0aee9cc824746b2d14bceed208ff"
     },
@@ -7358,10 +6948,9 @@
       "id": "kanton/AI/640.000/art_176",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "176",
       "artikelLabel": "Art. 176",
-      "titel": "4. Verfahren vor den Steuerbehörden a. Zuständigkeit",
       "bloecke": [
         {
           "absatz": "1",
@@ -7370,7 +6959,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "5a3af8f5286188cac549a04958baf9e437d3058c2a42c9530b32c4f9afd606d4"
     },
@@ -7378,10 +6967,9 @@
       "id": "kanton/AI/640.000/art_177",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "177",
       "artikelLabel": "Art. 177",
-      "titel": "b. Bussenverfügung",
       "bloecke": [
         {
           "absatz": "1",
@@ -7398,7 +6986,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "212dec29758873e43ffdfc538c4c453d7145ac759e13a45d410202f677390153"
     },
@@ -7406,10 +6994,9 @@
       "id": "kanton/AI/640.000/art_178",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "178",
       "artikelLabel": "Art. 178",
-      "titel": "c. Untersuchung ca. Eröffnung",
       "bloecke": [
         {
           "absatz": "1",
@@ -7426,7 +7013,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "b586ac12ed2b7fdd8b8135e82bf629bfc1948340293afa60ff74dd4c6ba8e4d6"
     },
@@ -7434,10 +7021,9 @@
       "id": "kanton/AI/640.000/art_179",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "179",
       "artikelLabel": "Art. 179",
-      "titel": "cb. Verfahren und Abschluss",
       "bloecke": [
         {
           "absatz": "1",
@@ -7458,7 +7044,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "d8bb7feee33708605bce579f189672f6f443c05a1d6924c59edfdd5624f4fd29"
     },
@@ -7466,10 +7052,9 @@
       "id": "kanton/AI/640.000/art_180",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "180",
       "artikelLabel": "Art. 180",
-      "titel": "5. Verjährung der Strafverfolgung",
       "bloecke": [
         {
           "absatz": "1",
@@ -7482,14 +7067,6 @@
             {
               "marke": "b",
               "text": "bei vollendeter Steuerhinterziehung zehn Jahre nach Ablauf:"
-            },
-            {
-              "marke": "1",
-              "text": "der Steuerperiode, für welche die steuerpflichtige Person nicht oder unvollständig veranlagt wurde oder der Steuerabzug an der Quelle nicht gesetzmässig erfolgte (Art. 169 Abs. 1),"
-            },
-            {
-              "marke": "2",
-              "text": "des Kalenderjahres, in dem eine unrechtmässige Rückerstattung oder ein ungerechtfertigter Erlass erwirkt wurde (Art. 169 Abs. 1) oder Nachlasswerte im Inventarverfahren verheimlicht oder beiseite geschafft wurden (Art. 172 Abs. 1–3)."
             }
           ]
         },
@@ -7500,18 +7077,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "248c2c3b029dc7e609d81bfdada9804a53413193c0527666493e0ee01dc5b74a"
+      "sha": "3bc471a47591d0f6b5ded3025434b1a88ea72447aa8b29be38c802f702241646"
     },
     {
       "id": "kanton/AI/640.000/art_180_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "180_bis",
       "artikelLabel": "Art. 180bis",
-      "titel": "6. Gerichtliche Beurteilung durch das Verwaltungsgericht",
       "bloecke": [
         {
           "absatz": "1",
@@ -7528,7 +7104,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "f2f5c2d51834f7943254a1a08d366b8d8a87abe6259a49c18ac8d7a8a53504c2"
     },
@@ -7536,10 +7112,9 @@
       "id": "kanton/AI/640.000/art_181",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "181",
       "artikelLabel": "Art. 181",
-      "titel": "Steuerbetrug",
       "bloecke": [
         {
           "absatz": "1",
@@ -7556,7 +7131,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "dd61850c8b7973510a1ce4c7c54484fd2592fcad07e01f9b70bc006376990a88"
     },
@@ -7564,10 +7139,9 @@
       "id": "kanton/AI/640.000/art_182",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "182",
       "artikelLabel": "Art. 182",
-      "titel": "Veruntreuung von Quellensteuern",
       "bloecke": [
         {
           "absatz": "1",
@@ -7584,7 +7158,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "1891f267cdbf7cb19dc5670bcd05d2d253802afd0eb3e14141525bc83d346766"
     },
@@ -7592,10 +7166,9 @@
       "id": "kanton/AI/640.000/art_183",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "183",
       "artikelLabel": "Art. 183",
-      "titel": "Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -7608,7 +7181,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "6922220e86c3752301f066c391f7bd3b3c6c64b32a46f46382e45170d18dece0"
     },
@@ -7616,10 +7189,9 @@
       "id": "kanton/AI/640.000/art_184",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "184",
       "artikelLabel": "Art. 184",
-      "titel": "Verjährung der Strafverfolgung",
       "bloecke": [
         {
           "absatz": "1",
@@ -7632,7 +7204,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "4ef6302d6208c5ab1b4eb8933383bacc6fa3fcfca03684f2ae4ae0c2a968fef9"
     },
@@ -7640,10 +7212,9 @@
       "id": "kanton/AI/640.000/art_185",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "185",
       "artikelLabel": "Art. 185",
-      "titel": "Ausführungsbestimmungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -7652,7 +7223,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "b38576364a08309fcacfa9ae862ca81c4d795737311699f312fc8be1c68b7df7"
     },
@@ -7660,10 +7231,9 @@
       "id": "kanton/AI/640.000/art_186",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "186",
       "artikelLabel": "Art. 186",
-      "titel": "1. Aufhebung bisherigen Rechts",
       "bloecke": [
         {
           "absatz": "1",
@@ -7672,7 +7242,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "46afaf49ba964eb62a711c906e6fbd612a7cf3311afd0ad5e44fc842abf7e278"
     },
@@ -7680,10 +7250,9 @@
       "id": "kanton/AI/640.000/art_187",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "187",
       "artikelLabel": "Art. 187",
-      "titel": "2. Rechtsanwendung für die Steuerjahre bis und mit 2000",
       "bloecke": [
         {
           "absatz": "1",
@@ -7696,7 +7265,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "4f4d442b73a717ecf254f74bf30aa1f4a2c42f70b116a132b3f34ddbf77d39fc"
     },
@@ -7704,10 +7273,9 @@
       "id": "kanton/AI/640.000/art_188",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "188",
       "artikelLabel": "Art. 188",
-      "titel": "3. Leistungen aus beruflicher Vorsorge",
       "bloecke": [
         {
           "absatz": "1",
@@ -7730,7 +7298,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "8a67fdc445638bef0414db39241d7799f8b57aff0d28b9524213c80cd064a140"
     },
@@ -7738,10 +7306,9 @@
       "id": "kanton/AI/640.000/art_189",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "189",
       "artikelLabel": "Art. 189",
-      "titel": "4. Kapitalversicherungen mit Einmalprämie",
       "bloecke": [
         {
           "absatz": "1",
@@ -7750,7 +7317,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "8d2aeb830911aebc29f68dded9e4ecdb57edc4e955760dd82ab7a54a247ef724"
     },
@@ -7758,10 +7325,9 @@
       "id": "kanton/AI/640.000/art_190",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "190",
       "artikelLabel": "Art. 190",
-      "titel": "5. Beiträge für den Einkauf von Beitragsjahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -7770,7 +7336,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "0838e128ef93b6828cb6c91002bed713647547729844447c49e518886e586f64"
     },
@@ -7778,10 +7344,9 @@
       "id": "kanton/AI/640.000/art_191",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "191",
       "artikelLabel": "Art. 191",
-      "titel": "6. Ergänzende Vermögenssteuer",
       "bloecke": [
         {
           "absatz": "1",
@@ -7790,7 +7355,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -7798,10 +7363,9 @@
       "id": "kanton/AI/640.000/art_192",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "192",
       "artikelLabel": "Art. 192",
-      "titel": "7. Kapitalgewinne bei gemischten Beteiligungsgesellschaften",
       "bloecke": [
         {
           "absatz": "1",
@@ -7818,7 +7382,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "0c5050642ccf862eaa57bd2441c41bd9a6f1a43f6f136e0d9f138790a1ca3a83"
     },
@@ -7826,10 +7390,9 @@
       "id": "kanton/AI/640.000/art_193",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "193",
       "artikelLabel": "Art. 193",
-      "titel": "8. Wechsel der zeitlichen Bemessung für natürliche Personen a. Allgemeines",
       "bloecke": [
         {
           "absatz": "1",
@@ -7842,7 +7405,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "aa3d1d8e1e6addb1b351ee649e2632c2d81eaa53d8dd3489ce181040b0778e5a"
     },
@@ -7850,10 +7413,9 @@
       "id": "kanton/AI/640.000/art_194",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "194",
       "artikelLabel": "Art. 194",
-      "titel": "b. Ausserordentliche Einkünfte und Aufwendungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -7884,26 +7446,21 @@
               "text": "Krankheits-, Unfall-, Invaliditäts- und Weiterbildungskosten, soweit diese die bereits berücksichtigten Aufwendungen übersteigen."
             }
           ]
-        },
-        {
-          "absatz": null,
-          "text": "Bereits rechtskräftige Veranlagungen werden auf Antrag revidiert. Der entsprechende Antrag ist bis spätestens 31. Dezember 2001 einzureichen. Zuviel bezahlte Steuerbeträge werden ohne Zins zurückerstattet oder mit laufenden Steuern verrechnet."
         }
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
-      "sha": "c56d80848203a92ca9e53cf8a189965b701e7466098fc1b16c75ff308032aa17"
+      "sha": "0d7a6666481610ef70d3e8ab06d71b1c7958f7f37e4f2d3a5ab2fb7b350d11a7"
     },
     {
       "id": "kanton/AI/640.000/art_195",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "195",
       "artikelLabel": "Art. 195",
-      "titel": "9. Steuerbezug",
       "bloecke": [
         {
           "absatz": "1",
@@ -7912,7 +7469,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "ab45773f3b325c468f30999152f6cd57b54219007a9d67c19da84a185c502830"
     },
@@ -7920,10 +7477,9 @@
       "id": "kanton/AI/640.000/art_195_bis",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "195_bis",
       "artikelLabel": "Art. 195bis",
-      "titel": "Kinderabzüge in den Steuerperioden 2007 und 2008 (Art. 37 Abs. 1 lit. a StG)",
       "bloecke": [
         {
           "absatz": "1",
@@ -7932,7 +7488,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "b9d1ce2cc75d96f8c54a50f22cbf0f651c242d58c045be1c10dc4fa55e00d608"
     },
@@ -7940,10 +7496,9 @@
       "id": "kanton/AI/640.000/art_195_quater",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "195_quater",
       "artikelLabel": "Art. 195quater",
-      "titel": "Besteuerung nach dem Aufwand",
       "bloecke": [
         {
           "absatz": "1",
@@ -7952,7 +7507,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "fee572c30049e31706fa6331d6d30950e4d273814607fa016a38d64d2bcdd21b"
     },
@@ -7960,10 +7515,9 @@
       "id": "kanton/AI/640.000/art_195_quinquies",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "195_quinquies",
       "artikelLabel": "Art. 195quinquies",
-      "titel": "Sondersatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -7980,7 +7534,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "458ff2db210d774cb7ee8eae281f0e0fd99dff2833cd8bb305191d5f059fd50b"
     },
@@ -7988,10 +7542,9 @@
       "id": "kanton/AI/640.000/art_195_ter",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "195_ter",
       "artikelLabel": "Art. 195ter",
-      "titel": "Vereinfachte Nachbesteuerung von Erben ab 2010 (Art. 155bis StG)",
       "bloecke": [
         {
           "absatz": "1",
@@ -8000,7 +7553,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "d26580566ae3f8b50aa9777140202fb6a93edeb92e09cce30fc3babc3c94718c"
     },
@@ -8008,10 +7561,9 @@
       "id": "kanton/AI/640.000/art_195sexies",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "195sexies",
       "artikelLabel": "Art. 195sexies",
-      "titel": "Gratiskapitalerhöhungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -8020,7 +7572,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "9b63336ae988ea64976c8084e8a2bc02148be119c0dd86952fce66746a49d3f7"
     },
@@ -8028,7 +7580,7 @@
       "id": "kanton/AI/640.000/art_196",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Steuergesetz, StG (GS 640.000)",
+      "erlass": "StG (GS 640.000)",
       "artikel": "196",
       "artikelLabel": "Art. 196",
       "bloecke": [
@@ -8039,7 +7591,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/640.000",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "78bdf1539d7a5fcf71311361754628c5",
       "sha": "c2cda6070ccd34fe2e148c14bc1ddad2477f10ee7d7448918a0b358926bd9ee0"
     }

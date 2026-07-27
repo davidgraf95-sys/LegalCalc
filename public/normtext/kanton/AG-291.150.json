@@ -1,14 +1,13 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-06-22",
   "eintraege": [
     {
       "id": "kanton/AG/291.150/art_1",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "1",
       "artikelLabel": "§ 1",
-      "titel": "1. Geltungsbereich; Personenbezeichnungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -21,7 +20,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "9735c612caf05a749053f501d154cd7624ba5c194065a3248b6b83ddf5945337"
     },
@@ -29,10 +28,9 @@
       "id": "kanton/AG/291.150/art_2",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "2",
       "artikelLabel": "§ 2",
-      "titel": "2. Umfang der Entschädigung",
       "bloecke": [
         {
           "absatz": "1",
@@ -45,7 +43,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "009865f52de1d7d598e5fe2b6e494fec568b55f19b3c94830d785ef745de9b2a"
     },
@@ -53,10 +51,9 @@
       "id": "kanton/AG/291.150/art_3",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "3",
       "artikelLabel": "§ 3",
-      "titel": "1. Grundentschädigung",
       "bloecke": [
         {
           "absatz": "1",
@@ -135,7 +132,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "5cfb4a0ac8b6715c477bb294c05f87df9e0fecc09fd715048bee5bf3bd3210b0"
     },
@@ -143,10 +140,9 @@
       "id": "kanton/AG/291.150/art_4",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "4",
       "artikelLabel": "§ 4",
-      "titel": "2. Streitwert",
       "bloecke": [
         {
           "absatz": "1",
@@ -171,37 +167,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "a288958f2315517594b4326d1837f118fb3410e83ec105f9b0fb3dd6fed28e7a"
-    },
-    {
-      "id": "kanton/AG/291.150/art_5",
-      "ebene": "kanton",
-      "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
-      "artikel": "5",
-      "artikelLabel": "§ 5",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/AG/291.150/art_6",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "6",
       "artikelLabel": "§ 6",
-      "titel": "3. Ordentliche Zu- und Abschläge",
       "bloecke": [
         {
           "absatz": "1",
@@ -218,7 +194,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "5059e1abc48717d955c43002367ea677dfd4cf2f55d1b91ee2e9ba2105b9c438"
     },
@@ -226,10 +202,9 @@
       "id": "kanton/AG/291.150/art_7",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "7",
       "artikelLabel": "§ 7",
-      "titel": "4. Ausserordentliche Zu- und Abschläge",
       "bloecke": [
         {
           "absatz": "1",
@@ -242,7 +217,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "858df390e39272db96bc69b0179fa669a47c855f83206069e873fab3a36b6605"
     },
@@ -250,10 +225,9 @@
       "id": "kanton/AG/291.150/art_8",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "8",
       "artikelLabel": "§ 8",
-      "titel": "5. Rechtsmittelverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -262,7 +236,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "55f1385a4b4e4e5f75ddcabd2fe6a7d9f504c0d91f448d6993d4685c3f4a8476"
     },
@@ -270,10 +244,9 @@
       "id": "kanton/AG/291.150/art_8_a",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "8_a",
       "artikelLabel": "§ 8a",
-      "titel": "1. Entschädigung",
       "bloecke": [
         {
           "absatz": "1",
@@ -368,7 +341,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "1713920f77adb4fbc90f94cd4db6b0f95ddbef71dc8f84a72f0e6c404f780e82"
     },
@@ -376,10 +349,9 @@
       "id": "kanton/AG/291.150/art_8_b",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "8_b",
       "artikelLabel": "§ 8b",
-      "titel": "2. Besondere Fälle",
       "bloecke": [
         {
           "absatz": "1",
@@ -392,7 +364,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "b83954defabe0bb6f127bdb3a3fd60cc5fd9730cb413393b823e1d3ad07f4497"
     },
@@ -400,10 +372,9 @@
       "id": "kanton/AG/291.150/art_8_c",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "8_c",
       "artikelLabel": "§ 8c",
-      "titel": "3. Festsetzung der Entschädigung",
       "bloecke": [
         {
           "absatz": "1",
@@ -412,7 +383,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "de539569cd95b20aa9e22643b4b5dbfdec47aa3580d594e52eb0df01df354f06"
     },
@@ -420,10 +391,9 @@
       "id": "kanton/AG/291.150/art_9",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "9",
       "artikelLabel": "§ 9",
-      "titel": "Bemessung",
       "bloecke": [
         {
           "absatz": "1",
@@ -468,7 +438,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "58fce011e5d78aa37327ecc98d9755672e1e92514595ca2c7f425922e8c50a5b"
     },
@@ -476,10 +446,9 @@
       "id": "kanton/AG/291.150/art_10",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "10",
       "artikelLabel": "§ 10",
-      "titel": "1. Entschädigung",
       "bloecke": [
         {
           "absatz": "1",
@@ -492,37 +461,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "4dca692423356873b5a90d6bbb70d8a125a303e5bb9970aae12c3c3924d1670b"
-    },
-    {
-      "id": "kanton/AG/291.150/art_11",
-      "ebene": "kanton",
-      "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
-      "artikel": "11",
-      "artikelLabel": "§ 11",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/AG/291.150/art_12",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "12",
       "artikelLabel": "§ 12",
-      "titel": "3. Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -535,7 +484,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "0e5eab861fe8a6c3ad0ab99cbb9b36dcea3ee28b1acbd3f1ed87e59b069fdaa9"
     },
@@ -543,10 +492,9 @@
       "id": "kanton/AG/291.150/art_12_a",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "12_a",
       "artikelLabel": "§ 12a",
-      "titel": "Reduktion bei hohem Streitwert",
       "bloecke": [
         {
           "absatz": "1",
@@ -559,7 +507,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "d9dada71124a79f164081a6b68e4926fa402bca94e1525deed175d4c6118d034"
     },
@@ -567,10 +515,9 @@
       "id": "kanton/AG/291.150/art_13",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "13",
       "artikelLabel": "§ 13",
-      "titel": "Ersatzanspruch",
       "bloecke": [
         {
           "absatz": "1",
@@ -587,37 +534,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "2c6aeb7da43d217965f00562c655a7819237ec6a564b5118498a124364e63e56"
-    },
-    {
-      "id": "kanton/AG/291.150/art_14",
-      "ebene": "kanton",
-      "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
-      "artikel": "14",
-      "artikelLabel": "§ 14",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/AG/291.150/art_15",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "15",
       "artikelLabel": "§ 15",
-      "titel": "1. Anpassung an die Teuerung",
       "bloecke": [
         {
           "absatz": "1",
@@ -626,7 +553,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "1f6263275704e47121e55dbbaa4ddf82b467440390e6b27bc0fbc2604e92855a"
     },
@@ -634,10 +561,9 @@
       "id": "kanton/AG/291.150/art_16",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "16",
       "artikelLabel": "§ 16",
-      "titel": "2. Aufhebung bisherigen Rechts",
       "bloecke": [
         {
           "absatz": "1",
@@ -660,7 +586,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "1b1f9f15913217be11e3bcab658ea5fb597ac1f79ce246dd09601c8a4edb8a3f"
     },
@@ -668,10 +594,9 @@
       "id": "kanton/AG/291.150/art_17",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "17",
       "artikelLabel": "§ 17",
-      "titel": "3. Übergangsbestimmung",
       "bloecke": [
         {
           "absatz": "1",
@@ -692,7 +617,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "f730fe1dd2670c8790d9faee2df2158c857c7333af16fdeb0d5e39dd79b881e9"
     },
@@ -700,10 +625,9 @@
       "id": "kanton/AG/291.150/art_18",
       "ebene": "kanton",
       "quelle": "AG",
-      "erlass": "Dekret über die Entschädigung der Anwälte, Anwaltstarif (SAR 291.150)",
+      "erlass": "Anwaltstarif (SAR 291.150)",
       "artikel": "18",
       "artikelLabel": "§ 18",
-      "titel": "4. Inkrafttreten",
       "bloecke": [
         {
           "absatz": "1",
@@ -712,7 +636,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://gesetzessammlungen.ag.ch/app/de/texts_of_law/291.150",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "b52f0d7238db10fd6dce0741a33e34a3",
       "sha": "976a9a72a8560e39a3d924dd0845eea03e77253ae2167fda1c2fb071ea5ba976"
     }

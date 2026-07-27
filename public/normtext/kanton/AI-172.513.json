@@ -1,14 +1,13 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-06-19",
   "eintraege": [
     {
       "id": "kanton/AI/172.513/art_1",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "1",
       "artikelLabel": "Art. 1",
-      "titel": "Frankenbeträge",
       "bloecke": [
         {
           "absatz": "1",
@@ -17,7 +16,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "284f8efcc77afae2479b263e663240042ce23b41a2ea7ed029c3c5113a896ba0"
     },
@@ -25,10 +24,9 @@
       "id": "kanton/AI/172.513/art_2",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "2",
       "artikelLabel": "Art. 2",
-      "titel": "Stundenansatz (Art. 5 Abs 2 GebV)",
       "bloecke": [
         {
           "absatz": "1",
@@ -37,7 +35,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "225ecebdfcfd78218a07300c652f85e90fddbeda466b88822f457ed6bea0a815"
     },
@@ -45,10 +43,9 @@
       "id": "kanton/AI/172.513/art_3",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "3",
       "artikelLabel": "Art. 3",
-      "titel": "Schwellenwert für Verzicht auf Erhebung (Art. 8 Abs. 2 GebV)",
       "bloecke": [
         {
           "absatz": "1",
@@ -57,7 +54,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "de760ded1a8833257a8538e161ceb7e2198acd916b28384831be1a815ae4acbb"
     },
@@ -65,10 +62,9 @@
       "id": "kanton/AI/172.513/art_4",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
-      "titel": "Mahngebühren (Art. 10 GebV)",
       "bloecke": [
         {
           "absatz": "1",
@@ -77,7 +73,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "3fa19771c0f2d1171124006c0c37479d92eb0bdfd9b68c7e697e01caed1c3508"
     },
@@ -85,10 +81,9 @@
       "id": "kanton/AI/172.513/art_5",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "5",
       "artikelLabel": "Art. 5",
-      "titel": "Bescheinigungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -97,7 +92,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "4365698b185ffd7a5b5e75a192d550525c5be7b910d7af41223a831a7f119046"
     },
@@ -105,10 +100,9 @@
       "id": "kanton/AI/172.513/art_6",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "6",
       "artikelLabel": "Art. 6",
-      "titel": "Beglaubigungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -129,32 +123,23 @@
             {
               "marke": "4",
               "text": "Handelsregistersachen"
-            },
-            {
-              "marke": "4",
-              "text": "Beglaubigter Handelsregisterauszug 30.--"
-            },
-            {
-              "marke": "4",
-              "text": "Beglaubigung anderer Kopien, je Kopie 5.--"
             }
           ]
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "7bf7563e8a0125c305e90bc633f81b7e5cf349945338091deb12ebc138dedcf4"
+      "sha": "4ce58e743d8af9edac56a9800c6f665f54b189ebefb97e0e77101e6b30aa9ccb"
     },
     {
       "id": "kanton/AI/172.513/art_7",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "7",
       "artikelLabel": "Art. 7",
-      "titel": "Kopien",
       "bloecke": [
         {
           "absatz": "1",
@@ -165,24 +150,8 @@
               "text": "elektronische Kopien oder schwarz-weisse Papierkopien"
             },
             {
-              "marke": "1",
-              "text": "pro Seite 1.--"
-            },
-            {
-              "marke": "1",
-              "text": "ab der fünften Seite, pro Seite 0.50"
-            },
-            {
               "marke": "2",
               "text": "Farbkopien auf Papier"
-            },
-            {
-              "marke": "2",
-              "text": "pro Seite 2.--"
-            },
-            {
-              "marke": "2",
-              "text": "ab der fünften Kopie, pro Seite 1.--"
             },
             {
               "marke": "3",
@@ -193,18 +162,17 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "d7e7eac90c5351127384028a17473777ffe3db6f49c707c446b0dc0ec7ccc5c5"
+      "sha": "6e0eb2feee53729b8a081e253537d534234951f105a165deb2edece3c1ccad1c"
     },
     {
       "id": "kanton/AI/172.513/art_8",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "8",
       "artikelLabel": "Art. 8",
-      "titel": "Personen und Familienrecht",
       "bloecke": [
         {
           "absatz": "1",
@@ -227,7 +195,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "03960ea8f98af178ce929221276f52a0d306dbed7297738057ec57e7a7710c5f"
     },
@@ -235,10 +203,9 @@
       "id": "kanton/AI/172.513/art_9",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "9",
       "artikelLabel": "Art. 9",
-      "titel": "Kindes- und Erwachsenenschutz",
       "bloecke": [
         {
           "absatz": "1",
@@ -259,14 +226,6 @@
             {
               "marke": "4",
               "text": "Vorsorgeauftrag"
-            },
-            {
-              "marke": "4",
-              "text": "Hinterlegung 75.-- bis 100.--"
-            },
-            {
-              "marke": "4",
-              "text": "Validierung (Art. 363 ZGB) 100.-- bis 1'000.--"
             },
             {
               "marke": "5",
@@ -293,18 +252,17 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "972238c3656754b36b35f87cc133d7b75c604aad2f4a7c1c3b00ffeae358a794"
+      "sha": "e9d460ee7bdfcf46eda10a31911355bdaae607f8303379e609c13b4756c9bd0a"
     },
     {
       "id": "kanton/AI/172.513/art_10",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "10",
       "artikelLabel": "Art. 10",
-      "titel": "Erbschaftswesen",
       "bloecke": [
         {
           "absatz": "1",
@@ -313,14 +271,6 @@
             {
               "marke": "1",
               "text": "Erbenermittlung"
-            },
-            {
-              "marke": "1",
-              "text": "Grundgebühr 200.--"
-            },
-            {
-              "marke": "1",
-              "text": "zusätzlich pro Erbe (inkl. Vorverstorbene) 10.--"
             },
             {
               "marke": "2",
@@ -341,14 +291,6 @@
             {
               "marke": "6",
               "text": "Amtliche Liquidation"
-            },
-            {
-              "marke": "6",
-              "text": "Anordnung 150.--- bis 750.--"
-            },
-            {
-              "marke": "6",
-              "text": "Durchführung: von den Nachlassaktiven 3% bis 5 %, mind. 750.--"
             },
             {
               "marke": "7",
@@ -397,18 +339,17 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "1ed97c31e1a852dd8bab826ea7b4ecff20439d893b9db850202f7129f7046c36"
+      "sha": "7c6baa63ce768386dc44d0da7a632a77ea6de0f17c8c0e30a35271ee0c865b6c"
     },
     {
       "id": "kanton/AI/172.513/art_11",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "11",
       "artikelLabel": "Art. 11",
-      "titel": "Grundbuch",
       "bloecke": [
         {
           "absatz": "1",
@@ -417,14 +358,6 @@
             {
               "marke": "1",
               "text": "Handänderung infolge Kauf, Tausch, Schenkung, freiwilliger Versteigerung, Urteil oder einer anderen Erwerbsart (ausgenommen Ersitzung und erbrechtliche Übernahme)"
-            },
-            {
-              "marke": "1",
-              "text": "öffentlich beurkundete Handänderungen: vom Handänderungswert 1‰, mind. 100.--"
-            },
-            {
-              "marke": "1",
-              "text": "nicht öffentlich beurkundete Handänderungen: vom Handänderungswert 2‰, mind. 200.--"
             },
             {
               "marke": "2",
@@ -447,14 +380,6 @@
               "text": "Errichtung von Grundpfandrechten (bei Neuerrichtung von Grundpfandrechten unter gleichzeitiger Löschung bestehender Grundpfandrechte ist die Gebühr auf die Differenz zwischen der bisherigen und der neuen Belastung zu erheben; sie beträgt jedoch mind. 50.--, sofern eine öffentliche Beurkundung erforderlich oder mind. 100.-- sofern keine öffentliche Beurkundung erforderlich ist):"
             },
             {
-              "marke": "6",
-              "text": "öffentlich beurkundete Errichtung: von der Pfandsumme 1‰, mind. 50.--, höchst. 2'000.--"
-            },
-            {
-              "marke": "6",
-              "text": "nicht öffentliche beurkundete Errichtung: von der Pfandsumme 2‰, mind. 100.--, höchst. 4'000.--"
-            },
-            {
               "marke": "7",
               "text": "…"
             },
@@ -475,14 +400,6 @@
               "text": "Pfandvermehrungen oder Pfandentlassungen"
             },
             {
-              "marke": "11",
-              "text": "je altrechtliches Grundpfandrecht 5.---"
-            },
-            {
-              "marke": "11",
-              "text": "je neurechtliches Grundpfandrecht 20.---"
-            },
-            {
               "marke": "12",
               "text": "Umwandlung, je Grundpfandrecht 150.--"
             },
@@ -493,22 +410,6 @@
             {
               "marke": "14",
               "text": "Löschungen von Grundpfandrechten"
-            },
-            {
-              "marke": "14",
-              "text": "je altrechtliches Grundpfandrecht gebührenfrei"
-            },
-            {
-              "marke": "14",
-              "text": "je neurechtliches Grundpfandrecht 10.--"
-            },
-            {
-              "marke": "14",
-              "text": "Löschungen im Interesse einer Reduktion der Stückzahl der Pfandtitel können nach Ermessen des Grundbuchverwalters gebührenfrei erfolgen."
-            },
-            {
-              "marke": "14",
-              "text": "Zustimmungserklärung für Rangrücktritte 20.--"
             },
             {
               "marke": "15",
@@ -531,136 +432,20 @@
               "text": "Vormerkungen"
             },
             {
-              "marke": "19",
-              "text": "Kaufs-, Rückkaufs- und Vorkaufsrechte 100.-- bis 1000.--"
-            },
-            {
-              "marke": "19",
-              "text": "…"
-            },
-            {
-              "marke": "19",
-              "text": "…"
-            },
-            {
-              "marke": "19",
-              "text": "Pacht- und Mietverträge 100.-- bis 500.--"
-            },
-            {
-              "marke": "19",
-              "text": "Verfügungsbeschränkungen nach SchKG 60.--"
-            },
-            {
-              "marke": "19",
-              "text": "Vorläufige Eintragungen 60.-- bis 300.--"
-            },
-            {
-              "marke": "19",
-              "text": "Alle übrigen Vormerkungen 60.-- bis 300.--"
-            },
-            {
-              "marke": "19",
-              "text": "Löschungen je Vormerkung 10.--"
-            },
-            {
               "marke": "20",
               "text": "Anmerkungen"
-            },
-            {
-              "marke": "20",
-              "text": "Öffentlich-rechtliche Eigentumsbeschränkungen sowie Verfügungsbeschränkungen (sofern nicht nach übergeordnetem Recht gebührenfrei) 60.-- bis 100.--"
-            },
-            {
-              "marke": "20",
-              "text": "…"
-            },
-            {
-              "marke": "20",
-              "text": "Übrige Anmerkungen 60.-- bis 400.--"
-            },
-            {
-              "marke": "20",
-              "text": "Löschungen je Anmerkung (sofern nicht nach übergeordnetem Recht gebührenfrei) 10.--"
             },
             {
               "marke": "21",
               "text": "Miteintragungen"
             },
             {
-              "marke": "21",
-              "text": "Eintragung des Eigentumsübergangs 100.--"
-            },
-            {
-              "marke": "21",
-              "text": "Grundpfandrechte 60.-- bis 200.--"
-            },
-            {
-              "marke": "21",
-              "text": "Dienstbarkeiten, Grundlasten, Vor- und Anmerkungen 60.--"
-            },
-            {
               "marke": "22",
               "text": "Mit- und Stockwerkeigentum"
             },
             {
-              "marke": "22",
-              "text": "Begründung von Mit- und Stockwerkeigentum 500.-- bis 5'000.--"
-            },
-            {
-              "marke": "22",
-              "text": "Anpassungen und Nachträge zu Mit- und Stockwerkeigentum 100.-- bis 1'000.--"
-            },
-            {
               "marke": "23",
               "text": "Übrige Verrichtungen:'"
-            },
-            {
-              "marke": "23",
-              "text": "Teilung, Vereinigung oder Grenzänderung von Grundstücken 200.-- bis 2'000.--"
-            },
-            {
-              "marke": "23",
-              "text": "Grundbuchauszüge 30.-- bis 600.--"
-            },
-            {
-              "marke": "23",
-              "text": "Bescheinigungen und Vollmachten 20.-- bis 200.--"
-            },
-            {
-              "marke": "23",
-              "text": "Eröffnung und Schliessung von Grundbuchblättern 20.--"
-            },
-            {
-              "marke": "23",
-              "text": "Schuldübernahmeanzeigen 10.--"
-            },
-            {
-              "marke": "23",
-              "text": "Vermessungsauftrag an den Grundbuchgeometer 10.--"
-            },
-            {
-              "marke": "23",
-              "text": "Anzeigen an Amtsstellen 10.--"
-            },
-            {
-              "marke": "23",
-              "text": "Namensänderungen und Sitzverlegungen juristischer Personen 20.-- bis 200.--"
-            },
-            {
-              "marke": "23",
-              "text": "Namensänderung natürlicher Personen infolge Änderungen des Zivilstands gebührenfrei"
-            },
-            {
-              "marke": "23",
-              "text": "…"
-            },
-            {
-              "marke": "23",
-              "text": "Nachführung von Geometerdaten, pro Grundstück 25.--"
-            },
-            {
-              "marke": "23",
-              "text": "Durchführung von Vorkaufsrechtsverfahren 50.-- bis 300.--"
             }
           ]
         },
@@ -675,18 +460,17 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "e7c6b1ea573cf6bd6c00f163a96f4fbb25109a9bdd6f981e68a89e36e54aec4f"
+      "sha": "1547e0427f1df8d783aed69f2926a25a6f815ec82e37d31fe004c2bd5e480f6d"
     },
     {
       "id": "kanton/AI/172.513/art_12",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "12",
       "artikelLabel": "Art. 12",
-      "titel": "Bewilligungsgesetz",
       "bloecke": [
         {
           "absatz": "1",
@@ -699,7 +483,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "6a990ca2a9e19129b754cba587854d22992cf5992b611f1aa2f656315cf59133"
     },
@@ -707,10 +491,9 @@
       "id": "kanton/AI/172.513/art_13",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "13",
       "artikelLabel": "Art. 13",
-      "titel": "Handelsregisterwesen",
       "bloecke": [
         {
           "absatz": "1",
@@ -741,7 +524,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "d8a65b1a678f338d8985f5caed51d2ba064a8952f33af56fb208e360b10d3485"
     },
@@ -749,10 +532,9 @@
       "id": "kanton/AI/172.513/art_14",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "14",
       "artikelLabel": "Art. 14",
-      "titel": "Beurkundungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -821,14 +603,6 @@
               "text": "Dienstbarkeiten und Grundlasten und Vorverträge dazu"
             },
             {
-              "marke": "8",
-              "text": "selbständige und dauernde Rechte: je Recht 200.-- bis 2'000.--"
-            },
-            {
-              "marke": "8",
-              "text": "übrige Dienstbarkeiten und Grundlasten: je Recht 100.-- bis 1'000.--"
-            },
-            {
               "marke": "9",
               "text": "Kaufs-, Rückkaufs- und Vorkaufsrechte: je Recht 100.-- bis 1'000.--"
             },
@@ -867,14 +641,6 @@
               "text": "Kapitalerhöhung"
             },
             {
-              "marke": "2",
-              "text": "Beschluss der Generalversammlung 300.-- bis 2'000.--"
-            },
-            {
-              "marke": "2",
-              "text": "Beschluss des Verwaltungsrats 500.-- bis 4'000.--"
-            },
-            {
               "marke": "3",
               "text": "Statutenänderung ohne Kapitalveränderung 200.-- bis 1'000.--"
             },
@@ -909,14 +675,6 @@
               "text": "Bürgschaften (Art. 493 OR):"
             },
             {
-              "marke": "2",
-              "text": "1‰ des Haftungsbetrags"
-            },
-            {
-              "marke": "2",
-              "text": "für jede Unterschrift des zustimmenden Ehegatten oder der eingetragenen Partnerin oder des eingetragenen Partners zusätzlich 10.--"
-            },
-            {
               "marke": "3",
               "text": "Verpfründungsverträge (Art. 522 OR) 40.-- bis 150.--"
             },
@@ -929,18 +687,17 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "8e06518ddce4bb4e744bcdd1e30221e4ec6826cf86278a104b573adb6eb8f06a"
+      "sha": "a172741c55fb30e4121da299293f101db29cdb9196f154550f92fe240121d601"
     },
     {
       "id": "kanton/AI/172.513/art_15",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "15",
       "artikelLabel": "Art. 15",
-      "titel": "Polizei",
       "bloecke": [
         {
           "absatz": "1",
@@ -951,140 +708,28 @@
               "text": "Tatbestandsrapporte"
             },
             {
-              "marke": "1",
-              "text": "kleine 150.--"
-            },
-            {
-              "marke": "1",
-              "text": "mittlere 300.--"
-            },
-            {
-              "marke": "1",
-              "text": "grosse 550.--"
-            },
-            {
               "marke": "2",
               "text": "Kriminalpolizei, kriminaltechnische Dienste und Testverfahren"
-            },
-            {
-              "marke": "2",
-              "text": "kleine Berichte der kriminaltechnischen Dienste 100.--"
-            },
-            {
-              "marke": "2",
-              "text": "mittlere Berichte der kriminaltechnischen Dienste 250.--"
-            },
-            {
-              "marke": "2",
-              "text": "grosse Berichte der kriminaltechnischen Dienste 500.--"
-            },
-            {
-              "marke": "2",
-              "text": "Schlussbericht über kriminalpolizeiliche Ermittlungen: pro Stunde 80.--, max. 400 pro Tag"
-            },
-            {
-              "marke": "2",
-              "text": "Erkennungsdienstliche Behandlung nach Aufwand"
-            },
-            {
-              "marke": "2",
-              "text": "Erkennungsdienstliche Behandlung auf Begehren Privater 250.--"
-            },
-            {
-              "marke": "2",
-              "text": "Erkennungsdienstliche Auswertungen, insbesondere von Wangenschleimhautabstrichen nach Aufwand"
-            },
-            {
-              "marke": "2",
-              "text": "Untersuchung von technischen Geräten im Auftrag der Staatsanwaltschaft nach Aufwand"
-            },
-            {
-              "marke": "2",
-              "text": "Alkoholschnelltest bei positivem Ergebnis 20.--"
-            },
-            {
-              "marke": "2",
-              "text": "Drogenschnelltest bei positivem Ergebnis 80.--"
             },
             {
               "marke": "3",
               "text": "Interventionen bei häuslicher Gewalt"
             },
             {
-              "marke": "3",
-              "text": "mit Rapport an die Kindes- und Erwachsenenschutzbehörde 100.--"
-            },
-            {
-              "marke": "3",
-              "text": "mit Internierung und Rapport an die Kindes- und Erwachsenenschutzbehörde 250.--"
-            },
-            {
-              "marke": "3",
-              "text": "mit Wegweisung und Rapport an die Staatsanwaltschaft 250.--"
-            },
-            {
-              "marke": "3",
-              "text": "mit Internierung, Wegweisung und Rapporten an die Staatsanwaltschaft und die Kindes- und Erwachsenenschutzbehörde 500.--"
-            },
-            {
               "marke": "4",
               "text": "Polizeilicher Gewahrsam"
-            },
-            {
-              "marke": "4",
-              "text": "Gewahrsam, insbesondere Ausnüchterung, ohne Verpflegung: pro Tag 200.--"
-            },
-            {
-              "marke": "4",
-              "text": "Gewahrsam mit Verpflegung: pro Tag 300.--"
             },
             {
               "marke": "5",
               "text": "Verwaltungsaufträge"
             },
             {
-              "marke": "5",
-              "text": "Fürsorgerische Unterbringung in der Psychiatrischen Klinik Herisau 150.--"
-            },
-            {
-              "marke": "5",
-              "text": "Fürsorgerische Unterbringung in anderen Einrichtungen 200.--"
-            },
-            {
-              "marke": "5",
-              "text": "Zustellung von Betreibungsurkunden, Gerichts- oder Verwaltungsschreiben 20.--"
-            },
-            {
-              "marke": "5",
-              "text": "Polizeiliche Zuführung von Personen an Amtsstellen 20.-- bis 80.--"
-            },
-            {
               "marke": "6",
               "text": "Bergrettung und Dienstleistungen im überwiegenden Interesse Privater (Ordnungsdienst, Transport- oder Rennbegleitungen, besonderer Schutz Privater)"
             },
             {
-              "marke": "6",
-              "text": "Rettungspersonal des Schweizerischen Alpenclubs (SAC) nach SAC-Ansätzen"
-            },
-            {
-              "marke": "6",
-              "text": "Angehörige der Polizei, pro Stunde: 80.--, max. 400.--"
-            },
-            {
-              "marke": "6",
-              "text": "Transport betrunkener Personen an den Wohnort, einschliesslich Kosten für Transportmittel 300.-- bis 500.--"
-            },
-            {
               "marke": "7",
               "text": "Polizeieinsatz ohne Erstattung von Rapporten"
-            },
-            {
-              "marke": "7",
-              "text": "Grundgebühr 100.--"
-            },
-            {
-              "marke": "7",
-              "text": "Fotografien, Pläne, Skizzen nach Aufwand"
             },
             {
               "marke": "8",
@@ -1099,62 +744,25 @@
               "text": "Kosten für Transportmittel, Kommunikation und Verbrauchsmaterial"
             },
             {
-              "marke": "10",
-              "text": "Personenwagen pro km 2.50"
-            },
-            {
-              "marke": "10",
-              "text": "Motorräder pro km 2.--"
-            },
-            {
-              "marke": "10",
-              "text": "Spezialfahrzeuge für Bergrettung 150.--"
-            },
-            {
-              "marke": "10",
-              "text": "andere Einsätze pro km 4.--, mind. 60.--"
-            },
-            {
-              "marke": "10",
-              "text": "Telefonspesen und Porti nach Aufwand"
-            },
-            {
-              "marke": "10",
-              "text": "Verbrauchsmaterial für Spezialeinsätze nach Aufwand"
-            },
-            {
               "marke": "11",
               "text": "Fundbüro, Alarmanlagen, weitere Dienstleistungen"
-            },
-            {
-              "marke": "11",
-              "text": "Leistungen im Zusammenhang mit Funden sind gebührenfrei, ausgenommen Vermittlung und Betreuung von Findelhunden 20.--"
-            },
-            {
-              "marke": "11",
-              "text": "Vermietung von Signalisationsmaterial, je nach Materialumfang 20.-- bis 200.--"
-            },
-            {
-              "marke": "11",
-              "text": "Die Gebühren für Aufschaltung und Betrieb von Gefahrenmeldeanlagen richten sich nach der Vereinbarung zwischen dem Kanton, der Interessengemeinschaft TUS Telekommunikation und Sicherheit und der Besitzerin oder dem Besitzer der Anlage."
             }
           ]
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "6118bf223f59efd6fa83807bcdac0bb1da4454b74c12ae60f63af7813d56f994"
+      "sha": "bb8986e1ec25a8ddd9f02c93ec504ad35ca43f4654904bb780db6ceca2a83e77"
     },
     {
       "id": "kanton/AI/172.513/art_16",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "16",
       "artikelLabel": "Art. 16",
-      "titel": "Staatsanwaltschaft",
       "bloecke": [
         {
           "absatz": "1",
@@ -1165,64 +773,8 @@
               "text": "Allgemeine Gebühren"
             },
             {
-              "marke": "1",
-              "text": "Führungs- und Vorstrafenberichte je 20.--"
-            },
-            {
-              "marke": "1",
-              "text": "Peremtorische Vorladung 10.--"
-            },
-            {
-              "marke": "1",
-              "text": "Gewährung von Akteneinsicht an Versicherungen 10.-- bis 500.--"
-            },
-            {
-              "marke": "1",
-              "text": "Einvernahmen pro Person und Stunde 120.--"
-            },
-            {
-              "marke": "1",
-              "text": "Augenschein, Hausdurchsuchung (exkl. Fahrspesen) 60.-- bis 1'000.--"
-            },
-            {
-              "marke": "1",
-              "text": "Verfügungen (Rechtshilfegesuche, Abschlussverfügungen, Expertenaufträge, Korrespondenzen usw.) 60.-- bis 1'000.--"
-            },
-            {
-              "marke": "1",
-              "text": "Anlage eines Dossiers und des Aktenverzeichnisses 20.-- bis 500.--"
-            },
-            {
               "marke": "2",
               "text": "Erledigung des Verfahrens, Verfahren vor Gericht, Rechtsmittel"
-            },
-            {
-              "marke": "2",
-              "text": "Strafbefehl (Ausfertigung und Entscheid) 20.-- bis 2'000.--"
-            },
-            {
-              "marke": "2",
-              "text": "Anklageerhebung (Überweisungsverfügung) 20.-- bis 3'500.--"
-            },
-            {
-              "marke": "2",
-              "text": "Einstellungsverfügung 20.-- bis 3'500.--"
-            },
-            {
-              "marke": "2",
-              "text": "Vertretung der Anklage vor Gericht 100.-- bis 3'500.--"
-            },
-            {
-              "marke": "2",
-              "text": "Vernehmlassungen zu Beschwerden, Berufung, Anschlussberufung, Vernehmlassungen im Rechtsmittelverfahren, Antragstellung gemäss Strafprozessgesetzgebung 50.-- bis 1'000.--"
-            },
-            {
-              "marke": "2",
-              "text": "Nachträgliche richterliche Anordnung 20.-- bis 500.--"
-            },
-            {
-              "marke": "2",
-              "text": "In besonders aufwändigen Fällen können die Gebühren verdoppelt, in Bagatellsachen bis auf die Hälfte des Mindestansatzes ermässigt werden."
             },
             {
               "marke": "3",
@@ -1233,18 +785,17 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "ddbf027c040ab8504718ef30f521e4fa408721782227601d93f718b8126cd202"
+      "sha": "3a1465f4f3af41fcd7624f4ada628ebb55bdbf9b7d528cffcd6271f9dd733918"
     },
     {
       "id": "kanton/AI/172.513/art_17",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "17",
       "artikelLabel": "Art. 17",
-      "titel": "Strafvollzug",
       "bloecke": [
         {
           "absatz": "1",
@@ -1253,7 +804,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "da5ccb0f34765034ed4b77ea21349098309dc8cb970a81796a4e2b9e4f577755"
     },
@@ -1261,10 +812,9 @@
       "id": "kanton/AI/172.513/art_18",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "18",
       "artikelLabel": "Art. 18",
-      "titel": "Einwohnerkontrolle",
       "bloecke": [
         {
           "absatz": "1",
@@ -1275,14 +825,6 @@
               "text": "Heimatausweis"
             },
             {
-              "marke": "1",
-              "text": "Neuausstellung für ein Jahr 20.--"
-            },
-            {
-              "marke": "1",
-              "text": "…"
-            },
-            {
               "marke": "2",
               "text": "Wohnsitzbescheinigung 20.--"
             },
@@ -1291,24 +833,8 @@
               "text": "Anmeldung zur Wohnsitznahme"
             },
             {
-              "marke": "3",
-              "text": "pro erwachsene Person 20.--"
-            },
-            {
-              "marke": "3",
-              "text": "pro Kind (bis vollendetes 18. Altersjahr) 10.--"
-            },
-            {
               "marke": "4",
               "text": "Anmeldung für Wochenaufenthalter und Grenzgänger"
-            },
-            {
-              "marke": "4",
-              "text": "Anmeldung für ein Jahr 40.--"
-            },
-            {
-              "marke": "4",
-              "text": "Verlängerung für ein weiteres Jahr 25.--"
             },
             {
               "marke": "5",
@@ -1331,18 +857,17 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "a717cba0ef17310cacedfc83b56e0b746642dcc4c0a3dc523264dd62a01b2e83"
+      "sha": "fb1cc995c5819f853ea43108bc686fb1ca5f864e1ba250a2d61dbb238d82b8c9"
     },
     {
       "id": "kanton/AI/172.513/art_18_a",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "18_a",
       "artikelLabel": "Art. 18a",
-      "titel": "Ausländerrechtliche Gebühren bei Höchstbeträgen des Bundesrechts",
       "bloecke": [
         {
           "absatz": "1",
@@ -1351,7 +876,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "3212a05ce7cafc220c754b266a0833484ab73663816e1555a41166c11d185984"
     },
@@ -1359,10 +884,9 @@
       "id": "kanton/AI/172.513/art_19",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "19",
       "artikelLabel": "Art. 19",
-      "titel": "Aufenthalt von ausländischen Personen",
       "bloecke": [
         {
           "absatz": "1",
@@ -1425,7 +949,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "69ddcfb188b0113b83fb86fa6b5b50b9029c5cf9b24d163c932bdb05ae062580"
     },
@@ -1433,10 +957,9 @@
       "id": "kanton/AI/172.513/art_20",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "20",
       "artikelLabel": "Art. 20",
-      "titel": "Arbeit von ausländischen Personen",
       "bloecke": [
         {
           "absatz": "1",
@@ -1487,7 +1010,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "f28eb46641138d5697644dcb9cf5b479cd0ee97665ca1189abb36e61ff27244b"
     },
@@ -1495,10 +1018,9 @@
       "id": "kanton/AI/172.513/art_21",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "21",
       "artikelLabel": "Art. 21",
-      "titel": "Grundstückschätzung",
       "bloecke": [
         {
           "absatz": "1",
@@ -1525,7 +1047,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "105ac27c965e019463a8acfc94ff2fd3c1d68f121aebdc539e8d8fffdedf96fa"
     },
@@ -1533,10 +1055,9 @@
       "id": "kanton/AI/172.513/art_22",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "22",
       "artikelLabel": "Art. 22",
-      "titel": "Schulwesen",
       "bloecke": [
         {
           "absatz": "1",
@@ -1549,7 +1070,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "e02eb6f17f86fdf3f501ed6c3bcf1fd5bfa39c5fd59ba6b613a8727d046cc966"
     },
@@ -1557,10 +1078,9 @@
       "id": "kanton/AI/172.513/art_23",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "23",
       "artikelLabel": "Art. 23",
-      "titel": "Zivilschutz",
       "bloecke": [
         {
           "absatz": "1",
@@ -1579,7 +1099,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "271bec51403aa6af86cc7684501e6c6759918517777a343eeaf798c928c1d4f7"
     },
@@ -1587,10 +1107,9 @@
       "id": "kanton/AI/172.513/art_24",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "24",
       "artikelLabel": "Art. 24",
-      "titel": "Bau",
       "bloecke": [
         {
           "absatz": "1",
@@ -1617,50 +1136,29 @@
               "text": "Fachkommission Heimatschutz und Fachkommission Denkmalpflege (Art. 65 Abs. 7 BauG)"
             },
             {
-              "marke": "5",
-              "text": "Begutachtungen 30.-- bis 500.--"
-            },
-            {
-              "marke": "5",
-              "text": "Augenscheine, Gutachten, umfangreiche Abklärungen und dergleichen durch die Fachkommissionen oder ihre Beauftragten nach Aufwand"
-            },
-            {
               "marke": "6",
               "text": "Schätzungen der Schätzungskommission für die Bestimmung des Marktwerts des gesetzlichen Kaufsrechts (Art. 7a und 87 BauV) 200.-- bis 2'000.--"
             },
             {
               "marke": "7",
               "text": "Aussenreklamen (StKB über Aussenreklamen und Anschlagstellen)"
-            },
-            {
-              "marke": "7",
-              "text": "Bewilligung von Gesuchen von Personen mit Wohnsitz ausserhalb des Kantons Appenzell I.Rh., wenn keine Baubewilligung erforderlich ist, pro Standort 20.--"
-            },
-            {
-              "marke": "7",
-              "text": "Bewilligung von Gesuchen von Personen mit Wohnsitz im Kanton Appenzell I.Rh., wenn keine Baubewilligung erforderlich ist gebührenfrei"
-            },
-            {
-              "marke": "7",
-              "text": "Entfernung unbewilligter Aussenreklamen, die trotz Aufforderung nicht entfernt wurden 100.--"
             }
           ]
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "0fd87362a7c941ef0e06349627744a7efbb0df12226492d6accc05a16076f82b"
+      "sha": "4a8ff28eb3f3397d2cc0fc70261a1c3ced1ffb7f7654e64eab70248e535d284b"
     },
     {
       "id": "kanton/AI/172.513/art_24_a",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "24_a",
       "artikelLabel": "Art. 24a",
-      "titel": "Feuerungskontrolle",
       "bloecke": [
         {
           "absatz": "1",
@@ -1673,7 +1171,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "807c36504964277b4a4af9973d14f5ff4d4bce5480c8fa168140f274cff481d6"
     },
@@ -1681,10 +1179,9 @@
       "id": "kanton/AI/172.513/art_25",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "25",
       "artikelLabel": "Art. 25",
-      "titel": "Öffentlicher Verkehr",
       "bloecke": [
         {
           "absatz": "1",
@@ -1693,7 +1190,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "5598ad657e99918bb21ea6f461de31c786dbba01f91039f3ce6057e6bc56aabb"
     },
@@ -1701,10 +1198,9 @@
       "id": "kanton/AI/172.513/art_26",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "26",
       "artikelLabel": "Art. 26",
-      "titel": "Signalisationen",
       "bloecke": [
         {
           "absatz": "1",
@@ -1713,7 +1209,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "1dbec7a94ff741af53ab6150929079ae76c8ed1b533eebd1a29512c3faa59f95"
     },
@@ -1721,10 +1217,9 @@
       "id": "kanton/AI/172.513/art_27",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "27",
       "artikelLabel": "Art. 27",
-      "titel": "Gesundheitswesen",
       "bloecke": [
         {
           "absatz": "1",
@@ -1733,14 +1228,6 @@
             {
               "marke": "1",
               "text": "Behandlung von Gesuchen um Berufsausübungsbewilligungen, ohne Inspektion"
-            },
-            {
-              "marke": "1",
-              "text": "bei medizinischen Berufen 500.-- bis 2'000.--"
-            },
-            {
-              "marke": "1",
-              "text": "bei anderen Berufen des Gesundheitswesens 200.-- bis 1'500.--"
             },
             {
               "marke": "2",
@@ -1791,14 +1278,6 @@
               "text": "Inspektionen in Apotheken, Drogerien, Privatapotheken von Medizinalpersonen und in anderen Detailhandelsbetrieben, die Arzneimittel abgeben"
             },
             {
-              "marke": "2",
-              "text": "ohne wesentliche Beanstandungen 200.-- bis 2'000.--"
-            },
-            {
-              "marke": "2",
-              "text": "bei wesentlichen Beanstandungen, bei Nachinspektionen und bei ausserordentlichen Inspektionen nach Aufwand"
-            },
-            {
               "marke": "3",
               "text": "Bewilligung für die Abgabe von Arzneimitteln und Tierarzneimitteln im Detailhandel und im Rahmen der Berufsausübung 200.-- bis 2'000.--"
             },
@@ -1837,18 +1316,17 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "0eda9773def538bdb3a82570072639ac795163c10059bf14691ebb5e260f05ac"
+      "sha": "a1462ff1c263b42725ebe6d7c67931773cf7fe3a598d57293db1f14ca7e1ceec"
     },
     {
       "id": "kanton/AI/172.513/art_28",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "28",
       "artikelLabel": "Art. 28",
-      "titel": "Arbeitsgesetzgebung",
       "bloecke": [
         {
           "absatz": "1",
@@ -1859,40 +1337,12 @@
               "text": "für Plangenehmigungen bei einem umbauten Raum (Volumen in Kubikmetern)"
             },
             {
-              "marke": "1",
-              "text": "bis 2000 100.-- bis 300.--"
-            },
-            {
-              "marke": "1",
-              "text": "von 2001 bis 5000 300.-- bis 500.--"
-            },
-            {
-              "marke": "1",
-              "text": "von 5001 bis 7500 500.-- bis 700.--"
-            },
-            {
-              "marke": "1",
-              "text": "von 7501 bis 10000 600.-- bis 800.--"
-            },
-            {
-              "marke": "1",
-              "text": "für jede weiteren 1000 zusätzlich je 50.--"
-            },
-            {
               "marke": "2",
               "text": "für Betriebsbewilligungen 75.-- bis 2'000.--"
             },
             {
               "marke": "3",
               "text": "für Arbeitsbewilligungen"
-            },
-            {
-              "marke": "3",
-              "text": "temporäre Arbeitsbewilligungen für Nacht- oder Sonntagsarbeit, für drei- oder mehrschichtige Arbeit und für den ununterbrochenen Betrieb nach dem Arbeitsgesetz 50.-- bis 300.--"
-            },
-            {
-              "marke": "3",
-              "text": "Bewilligung für die Beschäftigung von Jugendlichen 50.-- bis 200.--"
             },
             {
               "marke": "4",
@@ -1903,18 +1353,17 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "3c1e2fa8a9908e290d6972b08a4a6ae268bdb81e3399f2f235c844a99bfe5acf"
+      "sha": "82554790ba456c7f021f42ea694b49adb8a82051628cc7d66b6bb92ebc9847ec"
     },
     {
       "id": "kanton/AI/172.513/art_29",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "29",
       "artikelLabel": "Art. 29",
-      "titel": "Landwirtschaft und bäuerliches Bodenrecht",
       "bloecke": [
         {
           "absatz": "1",
@@ -1925,18 +1374,6 @@
               "text": "Vollzug der Gesetzgebung über die Direktzahlungen (DZV)"
             },
             {
-              "marke": "1",
-              "text": "Administration und Kontrolle 60.-- bis 500.--"
-            },
-            {
-              "marke": "1",
-              "text": "Nachkontrollen, pro Stunde 70.--"
-            },
-            {
-              "marke": "1",
-              "text": "Mehraufwand durch Nichteinhaltung von Fristen 30.-- bis 300.--"
-            },
-            {
               "marke": "2",
               "text": "Milchwirtschaft: Kontroll- und Laborkosten (Hemmstoffe) gebührenfrei"
             },
@@ -1945,46 +1382,29 @@
               "text": "Bodenrechtskommission"
             },
             {
-              "marke": "3",
-              "text": "Kommissionsentscheide (Art. 3 Abs. 1 EG BGBB) 50.-- bis 500.--"
-            },
-            {
-              "marke": "3",
-              "text": "Präsidialentscheide (Art. 3 Abs. 2 EG BGBB): 60.-- bis 500.--"
-            },
-            {
               "marke": "4",
               "text": "Landwirtschaftliche Beratung, pro Stunde 70.--"
             },
             {
               "marke": "5",
               "text": "Pachtrecht"
-            },
-            {
-              "marke": "5",
-              "text": "Pachtzinsberechnung 50.--"
-            },
-            {
-              "marke": "5",
-              "text": "Mehraufwand aufgrund von weiteren Abklärungen, pro Stunde 70.--"
             }
           ]
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "e1145c45fd45c44da1f93dc98cb440cedf5ebe9bfda411c965c42a2c42f08620"
+      "sha": "a8dea4ff941c97b058739cc78588a4e8032f786499f9ebec5b18f3b7c6303021"
     },
     {
       "id": "kanton/AI/172.513/art_30",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "30",
       "artikelLabel": "Art. 30",
-      "titel": "Alpgesetz",
       "bloecke": [
         {
           "absatz": "1",
@@ -2003,7 +1423,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "350e26724e544038ea603603807563c3ed2f9e6d574cb1f28b90e0a066d3edb4"
     },
@@ -2011,10 +1431,9 @@
       "id": "kanton/AI/172.513/art_31",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "31",
       "artikelLabel": "Art. 31",
-      "titel": "Forstwirtschaft",
       "bloecke": [
         {
           "absatz": "1",
@@ -2049,7 +1468,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "872f300c5518679c7d107900b38e6afcfef769542bcde24a629a8d8241e22c73"
     },
@@ -2057,10 +1476,9 @@
       "id": "kanton/AI/172.513/art_32",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "32",
       "artikelLabel": "Art. 32",
-      "titel": "Jagd",
       "bloecke": [
         {
           "absatz": "1",
@@ -2081,14 +1499,6 @@
             {
               "marke": "4",
               "text": "Jagdprüfung"
-            },
-            {
-              "marke": "4",
-              "text": "ganze Prüfung 200.-- bis 1'000.--"
-            },
-            {
-              "marke": "4",
-              "text": "Teilprüfung 200.-- bis 500.--"
             }
           ]
         },
@@ -2099,18 +1509,17 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "9262c35f210616babc5c62eec3b5a7be9e1b6bf72db001478afbcf252146f157"
+      "sha": "0ca86b9ad8e30fc0eb07571cfcef8370d1295942c90eefc9a8869403acfe2c6f"
     },
     {
       "id": "kanton/AI/172.513/art_33",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "33",
       "artikelLabel": "Art. 33",
-      "titel": "Fischerei",
       "bloecke": [
         {
           "absatz": "1",
@@ -2141,7 +1550,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "4439e33da72c9d7a35fa32ef075f3673757b155c5a15f95e4845c06229dc1a12"
     },
@@ -2149,10 +1558,9 @@
       "id": "kanton/AI/172.513/art_34",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "34",
       "artikelLabel": "Art. 34",
-      "titel": "Lotterien",
       "bloecke": [
         {
           "absatz": "1",
@@ -2161,7 +1569,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "24cbbaf0b5e1dfd3042e1cae017beac02f214bd8f3899c7c9612c988635ab8cb"
     },
@@ -2169,10 +1577,9 @@
       "id": "kanton/AI/172.513/art_35",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "35",
       "artikelLabel": "Art. 35",
-      "titel": "Eichwesen (Verordnung über das Eichwesen)",
       "bloecke": [
         {
           "absatz": "1",
@@ -2183,36 +1590,8 @@
               "text": "von Tanksäulen"
             },
             {
-              "marke": "a",
-              "text": "je Betrieb mit 1 bis 2 Zapfhähnen mit 45.--"
-            },
-            {
-              "marke": "b",
-              "text": "je Betrieb mit 3 bis 5 Zapfhähnen mit 55.--"
-            },
-            {
-              "marke": "c",
-              "text": "je Betrieb mit 6 bis 9 Zapfhähnen mit 65.--"
-            },
-            {
-              "marke": "d",
-              "text": "je Betrieb mit 10 oder mehr Zapfhähnen mit 75.--"
-            },
-            {
               "marke": "2",
               "text": "von Abgasmessgeräten"
-            },
-            {
-              "marke": "a",
-              "text": "je Betrieb mit 1 Gerät mit 40.--"
-            },
-            {
-              "marke": "b",
-              "text": "je Betrieb mit 2 oder mehr Geräten mit 55.--"
-            },
-            {
-              "marke": "c",
-              "text": "Graufilterzuschlag 40.--"
             },
             {
               "marke": "3",
@@ -2265,18 +1644,17 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
-      "sha": "7f3029b4bdc885f9c52acc55de89a5b307c5565a820bc5bef7ce7029a0cb92c4"
+      "sha": "ab20d33e1d6d8b5c10964d49b0cccbf44a81628727106a74c7f2da6a541f7ae5"
     },
     {
       "id": "kanton/AI/172.513/art_36",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Gebührentarif, GebT (GS 172.513)",
+      "erlass": "GebT (GS 172.513)",
       "artikel": "36",
       "artikelLabel": "Art. 36",
-      "titel": "Inkrafttreten",
       "bloecke": [
         {
           "absatz": "1",
@@ -2285,7 +1663,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/172.513",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "54dcf00387cc9ea539d484244a6f0256",
       "sha": "07e091f6662ae179910efc742cb5eec08152ddb940828863793051f761b25b04"
     }

@@ -1,14 +1,13 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-06-22",
   "eintraege": [
     {
       "id": "kanton/GR/310.250/art_1",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Bemessung des Honorars der Rechtsanwältinnen und Rechtsanwälte, Honorarverordnung, HV (BR 310.250)",
+      "erlass": "Honorarverordnung, HV (BR 310.250)",
       "artikel": "1",
       "artikelLabel": "Art. 1",
-      "titel": "Gegenstand",
       "bloecke": [
         {
           "absatz": "1",
@@ -25,7 +24,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/310.250",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "117b5cba277b28004a6a84a4a8a925a2",
       "sha": "0c83f31f8b13cbbe9ff0b76ce4dd790fb1a1b6dca937758ae3156f043d7250e5"
     },
@@ -33,10 +32,9 @@
       "id": "kanton/GR/310.250/art_2",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Bemessung des Honorars der Rechtsanwältinnen und Rechtsanwälte, Honorarverordnung, HV (BR 310.250)",
+      "erlass": "Honorarverordnung, HV (BR 310.250)",
       "artikel": "2",
       "artikelLabel": "Art. 2",
-      "titel": "Parteientschädigung 1. Bemessung",
       "bloecke": [
         {
           "absatz": "1",
@@ -63,7 +61,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/310.250",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "117b5cba277b28004a6a84a4a8a925a2",
       "sha": "4823d57f0e63eda087145ac35f41cb147087111a3dac0b99556be7d5ecc58c5f"
     },
@@ -71,10 +69,9 @@
       "id": "kanton/GR/310.250/art_3",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Bemessung des Honorars der Rechtsanwältinnen und Rechtsanwälte, Honorarverordnung, HV (BR 310.250)",
+      "erlass": "Honorarverordnung, HV (BR 310.250)",
       "artikel": "3",
       "artikelLabel": "Art. 3",
-      "titel": "2. Übliche Ansätze",
       "bloecke": [
         {
           "absatz": "1",
@@ -82,21 +79,11 @@
         },
         {
           "absatz": "2",
-          "text": "Als üblich gilt ein einmaliger Interessenwertzuschlag, der in einem angemessenen Verhältnis zum Honorar nach Zeitaufwand steht und folgende Ansätze nicht übersteigt:"
-        },
-        {
-          "absatz": null,
-          "text": "",
+          "text": "Als üblich gilt ein einmaliger Interessenwertzuschlag, der in einem angemessenen Verhältnis zum Honorar nach Zeitaufwand steht und folgende Ansätze nicht übersteigt:",
           "mehrspaltig": {
-            "spalten": [
-              {
-                "typ": "bereich",
-                "titel": "Bei einem Interessenwert"
-              },
-              {
-                "typ": "text",
-                "titel": "Zuschlag"
-              }
+            "kopf": [
+              "Bei einem Interessenwert",
+              "Zuschlag"
             ],
             "zeilen": [
               [
@@ -143,18 +130,17 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/310.250",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "117b5cba277b28004a6a84a4a8a925a2",
-      "sha": "61a329a03c92dca0d7f8bf8482f335d2012e458bdf05e940e6c29a4d34eef924"
+      "sha": "be8d75435c2b99f560932849613009edb49805c5dc88e1213b9a595eec7b0372"
     },
     {
       "id": "kanton/GR/310.250/art_4",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Bemessung des Honorars der Rechtsanwältinnen und Rechtsanwälte, Honorarverordnung, HV (BR 310.250)",
+      "erlass": "Honorarverordnung, HV (BR 310.250)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
-      "titel": "3. Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -171,7 +157,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/310.250",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "117b5cba277b28004a6a84a4a8a925a2",
       "sha": "c5560a21aa5ea4e8dbe597ee0ab867729bed0f623a7263e15df0050da6aa322b"
     },
@@ -179,10 +165,9 @@
       "id": "kanton/GR/310.250/art_5",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Bemessung des Honorars der Rechtsanwältinnen und Rechtsanwälte, Honorarverordnung, HV (BR 310.250)",
+      "erlass": "Honorarverordnung, HV (BR 310.250)",
       "artikel": "5",
       "artikelLabel": "Art. 5",
-      "titel": "Honorar für unentgeltliche Vertretung und amtliche Verteidigung",
       "bloecke": [
         {
           "absatz": "1",
@@ -199,7 +184,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/310.250",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "117b5cba277b28004a6a84a4a8a925a2",
       "sha": "445f18a5bf82e6dbe5411adaa90dd96d471317755eda7a6f66fecf37545e617c"
     },
@@ -207,10 +192,9 @@
       "id": "kanton/GR/310.250/art_6",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Bemessung des Honorars der Rechtsanwältinnen und Rechtsanwälte, Honorarverordnung, HV (BR 310.250)",
+      "erlass": "Honorarverordnung, HV (BR 310.250)",
       "artikel": "6",
       "artikelLabel": "Art. 6",
-      "titel": "Honorar für Rechtspraktikantinnen und Rechtspraktikanten",
       "bloecke": [
         {
           "absatz": "1",
@@ -219,7 +203,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/310.250",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "117b5cba277b28004a6a84a4a8a925a2",
       "sha": "7fe82e401a5d2e8d09424ca8033c317caaf4d2f5ed931f6b95e6e8813d33bf14"
     },
@@ -227,10 +211,9 @@
       "id": "kanton/GR/310.250/art_7",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Bemessung des Honorars der Rechtsanwältinnen und Rechtsanwälte, Honorarverordnung, HV (BR 310.250)",
+      "erlass": "Honorarverordnung, HV (BR 310.250)",
       "artikel": "7",
       "artikelLabel": "Art. 7",
-      "titel": "Übergangsbestimmung",
       "bloecke": [
         {
           "absatz": "1",
@@ -239,38 +222,17 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/310.250",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "117b5cba277b28004a6a84a4a8a925a2",
       "sha": "ac44775a54cd858110f6aee6fcb59e81cee8929d0820ad020ac549ecebab3791"
-    },
-    {
-      "id": "kanton/GR/310.250/art_8",
-      "ebene": "kanton",
-      "quelle": "GR",
-      "erlass": "Verordnung über die Bemessung des Honorars der Rechtsanwältinnen und Rechtsanwälte, Honorarverordnung, HV (BR 310.250)",
-      "artikel": "8",
-      "artikelLabel": "Art. 8",
-      "titel": "Änderung bisherigen Rechts",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2011-01-01",
-      "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/310.250",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "117b5cba277b28004a6a84a4a8a925a2",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/GR/310.250/art_9",
       "ebene": "kanton",
       "quelle": "GR",
-      "erlass": "Verordnung über die Bemessung des Honorars der Rechtsanwältinnen und Rechtsanwälte, Honorarverordnung, HV (BR 310.250)",
+      "erlass": "Honorarverordnung, HV (BR 310.250)",
       "artikel": "9",
       "artikelLabel": "Art. 9",
-      "titel": "Inkrafttreten",
       "bloecke": [
         {
           "absatz": "1",
@@ -279,7 +241,7 @@
       ],
       "stand": "2011-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/310.250",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "117b5cba277b28004a6a84a4a8a925a2",
       "sha": "29d57ab6ab70b0f38f3df04e2502b63a16e0bc40fe6abdd7d97698a863516c81"
     }

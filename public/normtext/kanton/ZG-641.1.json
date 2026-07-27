@@ -1,14 +1,13 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-06-22",
   "eintraege": [
     {
       "id": "kanton/ZG/641.1/art_1",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
+      "erlass": "Verwaltungsgebührentarif (BGS 641.1)",
       "artikel": "1",
       "artikelLabel": "§ 1",
-      "titel": "A. Entscheide des Regierungsrates",
       "bloecke": [
         {
           "absatz": null,
@@ -47,7 +46,7 @@
       ],
       "stand": "2025-08-22",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
       "sha": "4e482f67ffeb991e1681165dd238cc0fbac866ac38d63c1802921c0cf6f95e04"
     },
@@ -55,10 +54,9 @@
       "id": "kanton/ZG/641.1/art_2",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
+      "erlass": "Verwaltungsgebührentarif (BGS 641.1)",
       "artikel": "2",
       "artikelLabel": "§ 2",
-      "titel": "B. Amtshandlungen im Bildungswesen",
       "bloecke": [
         {
           "absatz": null,
@@ -81,7 +79,7 @@
       ],
       "stand": "2025-08-22",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
       "sha": "f8960de6e366e9f6fd18234f1443766bcc88d7b771becf92a5c70bce5208bf2e"
     },
@@ -89,10 +87,9 @@
       "id": "kanton/ZG/641.1/art_3",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
+      "erlass": "Verwaltungsgebührentarif (BGS 641.1)",
       "artikel": "3",
       "artikelLabel": "§ 3",
-      "titel": "C. Amtshandlungen im Gesundheitswesen",
       "bloecke": [
         {
           "absatz": null,
@@ -147,7 +144,7 @@
       ],
       "stand": "2025-08-22",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
       "sha": "5e02a3224523bda360bbefb76cecb70de7ef3a88e8d936ab81d815cf060b2c8c"
     },
@@ -155,10 +152,9 @@
       "id": "kanton/ZG/641.1/art_4",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
+      "erlass": "Verwaltungsgebührentarif (BGS 641.1)",
       "artikel": "4",
       "artikelLabel": "§ 4",
-      "titel": "D. Amtshandlungen anderer kantonaler Behörden und Amtsstellen",
       "bloecke": [
         {
           "absatz": null,
@@ -281,7 +277,7 @@
       ],
       "stand": "2025-08-22",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
       "sha": "73ac6449a6a11d8d9f275fb440989820a1ca0dd0544f84555ceb2b7f012b514f"
     },
@@ -289,10 +285,9 @@
       "id": "kanton/ZG/641.1/art_4_a",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
+      "erlass": "Verwaltungsgebührentarif (BGS 641.1)",
       "artikel": "4_a",
       "artikelLabel": "§ 4a",
-      "titel": "D.1. Amtshandlungen im Bereich des kantonalen Archivwesens",
       "bloecke": [
         {
           "absatz": null,
@@ -387,7 +382,7 @@
       ],
       "stand": "2025-08-22",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
       "sha": "8b0fca994b4acc9c5c3a4bd7167ea269f2f035cb810827c28ec0082a1c68db98"
     },
@@ -395,10 +390,9 @@
       "id": "kanton/ZG/641.1/art_5",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
+      "erlass": "Verwaltungsgebührentarif (BGS 641.1)",
       "artikel": "5",
       "artikelLabel": "§ 5",
-      "titel": "E. Amtshandlungen der Gemeinde-, Bürger- und Korporationsräte",
       "bloecke": [
         {
           "absatz": null,
@@ -490,7 +484,7 @@
             },
             {
               "marke": "60",
-              "text": "Benützung von öffentlichem Grund pro lfm Gerüst oder m² Boden, wöchentlich: 50 Rappen"
+              "text": "Benützung von öffentlichem Grund pro lfm Gerüst oder m&sup2; Boden, wöchentlich: 50 Rappen"
             },
             {
               "marke": "61",
@@ -501,18 +495,17 @@
       ],
       "stand": "2025-08-22",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
-      "sha": "e94a35df1dbe254843e552c54e528425c844777cc31cc53b20eb9b64d6c2a2fb"
+      "sha": "14e7e0a021d5c4bdc1ca028383b1006d725c4fb9239782195d7f920460680b78"
     },
     {
       "id": "kanton/ZG/641.1/art_6",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
+      "erlass": "Verwaltungsgebührentarif (BGS 641.1)",
       "artikel": "6",
       "artikelLabel": "§ 6",
-      "titel": "F. Amtshandlungen der Gemeindepräsidenten",
       "bloecke": [
         {
           "absatz": null,
@@ -531,7 +524,7 @@
       ],
       "stand": "2025-08-22",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
       "sha": "57e0feb2b4031d2da231b6133458bbad3ea3054037884f51402738a122bb5875"
     },
@@ -539,10 +532,9 @@
       "id": "kanton/ZG/641.1/art_7",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
+      "erlass": "Verwaltungsgebührentarif (BGS 641.1)",
       "artikel": "7",
       "artikelLabel": "§ 7",
-      "titel": "G. Amtshandlungen der Gemeindeweibel",
       "bloecke": [
         {
           "absatz": null,
@@ -562,25 +554,24 @@
             },
             {
               "marke": "67",
-              "text": "Zuschlag für den Zeitaufwand über 1⁄2 Stunde, pro 1⁄2 Stunde: 30"
+              "text": "Zuschlag für den Zeitaufwand über 1&frasl;2 Stunde, pro 1&frasl;2 Stunde: 30"
             }
           ]
         }
       ],
       "stand": "2025-08-22",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
-      "sha": "8cc872253dcc3a66eb58316b83d9e9bca66241821ec8f04d4d0ec4b8a7ce0280"
+      "sha": "c214b0ae1bad25e3a614b3e5ca6cf0d48d40c14bf31b1df8579755ad40be50f6"
     },
     {
       "id": "kanton/ZG/641.1/art_8",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
+      "erlass": "Verwaltungsgebührentarif (BGS 641.1)",
       "artikel": "8",
       "artikelLabel": "§ 8",
-      "titel": "H. Amtshandlungen der Gemeinde- und Bürgerkanzleien",
       "bloecke": [
         {
           "absatz": null,
@@ -683,7 +674,7 @@
       ],
       "stand": "2025-08-22",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
       "sha": "cafccd0e97259f8b6618fefc17ebc629ece6e2ed21eb79ac328163effc9c411c"
     },
@@ -691,10 +682,9 @@
       "id": "kanton/ZG/641.1/art_9",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
+      "erlass": "Verwaltungsgebührentarif (BGS 641.1)",
       "artikel": "9",
       "artikelLabel": "§ 9",
-      "titel": "J. Öffentliche Beurkundungen",
       "bloecke": [
         {
           "absatz": null,
@@ -793,37 +783,17 @@
       ],
       "stand": "2025-08-22",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
       "sha": "2f255e4ce9a87efd660c12b5f0d5183f4196864c41894f52949de77c78b64d3e"
-    },
-    {
-      "id": "kanton/ZG/641.1/art_10",
-      "ebene": "kanton",
-      "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
-      "artikel": "10",
-      "artikelLabel": "§ 10",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2025-08-22",
-      "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/ZG/641.1/art_11",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
+      "erlass": "Verwaltungsgebührentarif (BGS 641.1)",
       "artikel": "11",
       "artikelLabel": "§ 11",
-      "titel": "L. Erbschaftssachen",
       "bloecke": [
         {
           "absatz": null,
@@ -839,7 +809,7 @@
             },
             {
               "marke": "100",
-              "text": "Siegelung der Verlassenschaft (§ 71 EG ZGB): 55 bis 240 (Ausserdem für jede mitwirkende Person eine Entschädigung pro 1⁄2 Stunde Zeitaufwand von: 30)"
+              "text": "Siegelung der Verlassenschaft (§ 71 EG ZGB): 55 bis 240 (Ausserdem für jede mitwirkende Person eine Entschädigung pro 1&frasl;2 Stunde Zeitaufwand von: 30)"
             },
             {
               "marke": "101",
@@ -890,18 +860,17 @@
       ],
       "stand": "2025-08-22",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
-      "sha": "194eea969b382b6a6919b5cff58bc30e2a73407535fc05aa20e3871701e9f15a"
+      "sha": "da629b2d91adb8369a5106a4bbd2a32795ffdcc486ac579113be0a8fd705185e"
     },
     {
       "id": "kanton/ZG/641.1/art_12",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
+      "erlass": "Verwaltungsgebührentarif (BGS 641.1)",
       "artikel": "12",
       "artikelLabel": "§ 12",
-      "titel": "M. Öffentliche freiwillige Versteigerungen",
       "bloecke": [
         {
           "absatz": null,
@@ -936,7 +905,7 @@
       ],
       "stand": "2025-08-22",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
       "sha": "f112c86f4403834344a1727364589f89235db2cf6158ef82e508092c813409ed"
     },
@@ -944,10 +913,9 @@
       "id": "kanton/ZG/641.1/art_13",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kantonsratsbeschluss über die Gebühren in Verwaltungs- und Zivilsachen, Verwaltungsgebührentarif (BGS 641.1)",
+      "erlass": "Verwaltungsgebührentarif (BGS 641.1)",
       "artikel": "13",
       "artikelLabel": "§ 13",
-      "titel": "N. Allgemeine Bestimmungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -956,7 +924,7 @@
       ],
       "stand": "2025-08-22",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/641.1",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-22",
       "fassungsToken": "14580c6b0789cd1cad9aa44e8c9f1595",
       "sha": "cce6287378b023394831f855b6426595fc44f111d06cd13f5bd885ac2dcf66aa"
     }

@@ -1,14 +1,13 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-06-19",
   "eintraege": [
     {
       "id": "kanton/AI/177.410/art_1",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "1",
       "artikelLabel": "Art. 1",
-      "titel": "Geltungsbereich",
       "bloecke": [
         {
           "absatz": "1",
@@ -35,7 +34,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "86690a33cd75c5bcf10139fb74dc99789f8103f02acb9b529ee9d2495df5a31c"
     },
@@ -43,10 +42,9 @@
       "id": "kanton/AI/177.410/art_2",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "2",
       "artikelLabel": "Art. 2",
-      "titel": "Verbindlichkeit",
       "bloecke": [
         {
           "absatz": "1",
@@ -63,7 +61,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "0da35680607c64c01540c1fe6c7e6399ad1b6a88241d37153659953ac697dc10"
     },
@@ -71,10 +69,9 @@
       "id": "kanton/AI/177.410/art_3",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "3",
       "artikelLabel": "Art. 3",
-      "titel": "Abweichungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -83,7 +80,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "7095bc3d9b737fb8b7ffc2ee18343adf795e3179e620236e48668359013dd996"
     },
@@ -91,10 +88,9 @@
       "id": "kanton/AI/177.410/art_4",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
-      "titel": "Honorarnote",
       "bloecke": [
         {
           "absatz": "1",
@@ -103,7 +99,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "5f43a304e5b02a1cd2ff682882f43dcc1f3c75df16529be6c64f92ec476c8432"
     },
@@ -111,10 +107,9 @@
       "id": "kanton/AI/177.410/art_5",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "5",
       "artikelLabel": "Art. 5",
-      "titel": "Begründungspflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -127,7 +122,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "7daac891ad51d646d74e9c1482986a9152c551cb788ade5914acc24a2fb5dc3f"
     },
@@ -135,10 +130,9 @@
       "id": "kanton/AI/177.410/art_6",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "6",
       "artikelLabel": "Art. 6",
-      "titel": "Honorar nach Ermessen",
       "bloecke": [
         {
           "absatz": "1",
@@ -147,7 +141,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "66eb99459c328bc18e2398af7113ae839e97775457303a3988db3819e73cb43f"
     },
@@ -155,10 +149,9 @@
       "id": "kanton/AI/177.410/art_7",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "7",
       "artikelLabel": "Art. 7",
-      "titel": "Rechtliches Gehör",
       "bloecke": [
         {
           "absatz": "1",
@@ -171,37 +164,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "ec320635ec3c451d918b302769e37c1f976eb5a4e77a386cee130fc684cddeca"
-    },
-    {
-      "id": "kanton/AI/177.410/art_8",
-      "ebene": "kanton",
-      "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
-      "artikel": "8",
-      "artikelLabel": "Art. 8",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/AI/177.410/art_9",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "9",
       "artikelLabel": "Art. 9",
-      "titel": "Grundsatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -214,7 +187,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "3f508991a45405ade16a2e4e45711bcc8e9d702f0655151003601ff559572cbf"
     },
@@ -222,10 +195,9 @@
       "id": "kanton/AI/177.410/art_10",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "10",
       "artikelLabel": "Art. 10",
-      "titel": "Mittleres Honorar a) im Allgemeinen",
       "bloecke": [
         {
           "absatz": "1",
@@ -268,7 +240,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "2572ad27a511b770166df7b80f9ea3ad1358e6fc01690a404a099d06546a840d"
     },
@@ -276,10 +248,9 @@
       "id": "kanton/AI/177.410/art_11",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "11",
       "artikelLabel": "Art. 11",
-      "titel": "b) summarisches Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -288,7 +259,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "0db8783c71424fde978c71c8f8f66f8b48d9fb4e16e31808972cbe87cb0ac3e0"
     },
@@ -296,10 +267,9 @@
       "id": "kanton/AI/177.410/art_12",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "12",
       "artikelLabel": "Art. 12",
-      "titel": "c) Verfahren vor Kantonsgericht",
       "bloecke": [
         {
           "absatz": "1",
@@ -308,7 +278,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "840e455267350a8111ab6a5c6c439eb8e1e51052d2a2ff2252f1ee311b1a7005"
     },
@@ -316,10 +286,9 @@
       "id": "kanton/AI/177.410/art_13",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "13",
       "artikelLabel": "Art. 13",
-      "titel": "Grundhonorar",
       "bloecke": [
         {
           "absatz": "1",
@@ -328,7 +297,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "a3afb2cfb5ca524e64b689d516b6b297d30223747882bc8fa5adb2406cabd568"
     },
@@ -336,10 +305,9 @@
       "id": "kanton/AI/177.410/art_14",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "14",
       "artikelLabel": "Art. 14",
-      "titel": "Zuschläge",
       "bloecke": [
         {
           "absatz": "1",
@@ -374,7 +342,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "5eb8c3d0cb27cfbcf789369969d3c7b8f528c636a202bc3d5b84fe67879337e0"
     },
@@ -382,10 +350,9 @@
       "id": "kanton/AI/177.410/art_15",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "15",
       "artikelLabel": "Art. 15",
-      "titel": "Grundsatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -394,7 +361,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "f1af6995ab453c131a3950250441c2733495f42275a54d684bf368b0317e890e"
     },
@@ -402,10 +369,9 @@
       "id": "kanton/AI/177.410/art_16",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "16",
       "artikelLabel": "Art. 16",
-      "titel": "Familienrecht",
       "bloecke": [
         {
           "absatz": "1",
@@ -436,7 +402,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "28d48305d73e601593731fd1cd8d1aa996636da2ab6eda9d79d180476842faea"
     },
@@ -444,10 +410,9 @@
       "id": "kanton/AI/177.410/art_17",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "17",
       "artikelLabel": "Art. 17",
-      "titel": "Strafprozess",
       "bloecke": [
         {
           "absatz": "1",
@@ -474,7 +439,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "3cb94d1d2be7cc7e8fab35b7c96a615f7590baac8d3ff6132b1e3727cb048316"
     },
@@ -482,10 +447,9 @@
       "id": "kanton/AI/177.410/art_18",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "18",
       "artikelLabel": "Art. 18",
-      "titel": "Verwaltungsgerichtsverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -498,7 +462,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "8718cea5a4bbe1177c0fde285fca9a25364f876db97559d78c34e98095a0ba74"
     },
@@ -506,10 +470,9 @@
       "id": "kanton/AI/177.410/art_19",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "19",
       "artikelLabel": "Art. 19",
-      "titel": "Grundsatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -536,7 +499,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "d484241ffa03853a2e3ed0b8729c810addedf7f0b3b38cc6fa5af9fc866af08c"
     },
@@ -544,10 +507,9 @@
       "id": "kanton/AI/177.410/art_20",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "20",
       "artikelLabel": "Art. 20",
-      "titel": "Stundenansatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -578,7 +540,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "b42dc5c466c5471029beeef12a8210abc4fb6b58a7972ba02fd385d8b6bd3107"
     },
@@ -586,10 +548,9 @@
       "id": "kanton/AI/177.410/art_21",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "21",
       "artikelLabel": "Art. 21",
-      "titel": "Allgemeiner Grundsatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -598,7 +559,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "ecd2da269c57ec4e642a907312077821a6a2e2f78a8c397e8e573583c221e039"
     },
@@ -606,10 +567,9 @@
       "id": "kanton/AI/177.410/art_22",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "22",
       "artikelLabel": "Art. 22",
-      "titel": "Honorarpauschale",
       "bloecke": [
         {
           "absatz": "1",
@@ -630,7 +590,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "dfa8f43cdb3d14c91aec7680a1da36f02c47fee6182318b916eac60c62879783"
     },
@@ -638,10 +598,9 @@
       "id": "kanton/AI/177.410/art_23",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "23",
       "artikelLabel": "Art. 23",
-      "titel": "Honorar des unentgeltlichen Vertreters bei Obsiegen",
       "bloecke": [
         {
           "absatz": "1",
@@ -654,7 +613,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "6520ddad51de950e314afb902fca4f73a5dc5cbd6ccb983d9c0486879000b0b5"
     },
@@ -662,10 +621,9 @@
       "id": "kanton/AI/177.410/art_24",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "24",
       "artikelLabel": "Art. 24",
-      "titel": "Anspruch gegenüber dem Mandanten",
       "bloecke": [
         {
           "absatz": "1",
@@ -674,7 +632,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "03f2dd0b7f73e81c6b5a0926e2b7a268fda3790f8874b6cd1d645bf2e247d26e"
     },
@@ -682,10 +640,9 @@
       "id": "kanton/AI/177.410/art_25",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "25",
       "artikelLabel": "Art. 25",
-      "titel": "Umfang",
       "bloecke": [
         {
           "absatz": "1",
@@ -704,7 +661,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "91c9f554c9c1d760c65b7281fdbcc9ba2dda0035eef35a6e2442c3c77dbc100b"
     },
@@ -712,10 +669,9 @@
       "id": "kanton/AI/177.410/art_26",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "26",
       "artikelLabel": "Art. 26",
-      "titel": "Rechtsmittelverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -734,7 +690,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "0cfb482819663bb14f19511a40a334e88bd7e2e90c16ef564761c9f11a4a7d72"
     },
@@ -742,10 +698,9 @@
       "id": "kanton/AI/177.410/art_27",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "27",
       "artikelLabel": "Art. 27",
-      "titel": "Unvollständiger Prozess",
       "bloecke": [
         {
           "absatz": "1",
@@ -780,7 +735,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "89c6299988163c06cf2b1437981f6179154a9f6e9298e978736a062d38b077cf"
     },
@@ -788,10 +743,9 @@
       "id": "kanton/AI/177.410/art_28",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "28",
       "artikelLabel": "Art. 28",
-      "titel": "Barauslagen a) effektiv",
       "bloecke": [
         {
           "absatz": "1",
@@ -822,7 +776,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "574c8557dde9af8a7a9794611c23e0dc6c4028aecb38ac58c93ea1531fc6dd5a"
     },
@@ -830,10 +784,9 @@
       "id": "kanton/AI/177.410/art_29",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "29",
       "artikelLabel": "Art. 29",
-      "titel": "b) pauschal",
       "bloecke": [
         {
           "absatz": "1",
@@ -846,7 +799,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "9cd0f61dd3911fc12b7a94fb8a5667ac5ae5d207e060d3ccaafa506719fd0184"
     },
@@ -854,10 +807,9 @@
       "id": "kanton/AI/177.410/art_30",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "30",
       "artikelLabel": "Art. 30",
-      "titel": "Mehrwertsteuer",
       "bloecke": [
         {
           "absatz": "1",
@@ -866,7 +818,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "fcfda49e731fa19e957c7484db2421b9e1d6d04dee2c0f4e960c24030cdce89f"
     },
@@ -874,10 +826,9 @@
       "id": "kanton/AI/177.410/art_31",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "31",
       "artikelLabel": "Art. 31",
-      "titel": "Übergangsbestimmung",
       "bloecke": [
         {
           "absatz": "1",
@@ -886,37 +837,17 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "98f2816b443f7334aa4d31fe7acc9bed4b11b50fbc394151e81867a6f7177322"
-    },
-    {
-      "id": "kanton/AI/177.410/art_32",
-      "ebene": "kanton",
-      "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
-      "artikel": "32",
-      "artikelLabel": "Art. 32",
-      "bloecke": [
-        {
-          "absatz": null,
-          "text": ""
-        }
-      ],
-      "stand": "2024-01-01",
-      "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
-      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/AI/177.410/art_32_a",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "32_a",
       "artikelLabel": "Art. 32a",
-      "titel": "Übergangsbestimmung zur Revision vom 23. Oktober 2023",
       "bloecke": [
         {
           "absatz": "1",
@@ -925,7 +856,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "4fe2c014e888163cf4e19d1771c9cb7d36f02713ba3ae598896490e6a18d9f8e"
     },
@@ -933,10 +864,9 @@
       "id": "kanton/AI/177.410/art_33",
       "ebene": "kanton",
       "quelle": "AI",
-      "erlass": "Verordnung über die Honorare der Anwälte, AnwHV (GS 177.410)",
+      "erlass": "AnwHV (GS 177.410)",
       "artikel": "33",
       "artikelLabel": "Art. 33",
-      "titel": "Inkrafttreten",
       "bloecke": [
         {
           "absatz": "1",
@@ -945,7 +875,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://ai.clex.ch/app/de/texts_of_law/177.410",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-06-19",
       "fassungsToken": "a834c3e4b8b33e91ae0e1d11998990ac",
       "sha": "65e8303bfabcacd2de79a6990d5dd23b73222ef2f81c5bd15442461d20ed0d4b"
     }
