@@ -213,7 +213,11 @@
         "Der von der Beschwerdeführerin geleistete Parteikostenvorschuss in Höhe von CHF 5'000.– wird ihr zurückerstattet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -487,7 +487,15 @@
         "Dem unentgeltlichen Vertreter der Privatklägerin J____, K____, werden für das Berufungsverfahren ein Honorar von CHF 2’133.35 und ein Auslagenersatz von CHF 64.– (zuzüglich 7,7% MWST von CHF 169.20), insgesamt also CHF 2’366.55, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

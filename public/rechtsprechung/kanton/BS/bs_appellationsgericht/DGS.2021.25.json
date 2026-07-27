@@ -176,7 +176,10 @@
         "Dem Gesuchsteller wird eine Parteientschädigung von CHF 1’500.–, inklusive Auslagen und zuzüglich 7,7 % MWST von CHF 115.50, für das Ausstandsverfahren aus der Gerichtskasse bezahlt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

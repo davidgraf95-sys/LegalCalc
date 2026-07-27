@@ -170,7 +170,11 @@
         "Die Anträge C____ auf Ausrichtung einer Umtriebsentschädigung in Höhe von CHF 50.‒ und einer Parteientschädigung in Höhe von CHF 2'367.60 werden abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

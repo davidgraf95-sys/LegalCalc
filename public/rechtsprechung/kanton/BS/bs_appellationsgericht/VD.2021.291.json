@@ -367,7 +367,12 @@
         "Die Universität Basel hat dem Rekurrenten für das Rekursverfahren vor der Rekurskommission der Universität Basel eine Parteientschädigung von CHF 9'785.–, zuzüglich 7,7 % MWST von CHF 753.45 und für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 7’210.–, zuzüglich 7,7 % MWST von CHF 555.15, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

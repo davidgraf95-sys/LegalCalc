@@ -159,7 +159,9 @@
         "AUFSICHTSKOMMISSION ÜBER DIE"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGFA"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

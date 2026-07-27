@@ -233,7 +233,10 @@
         "Der amtliche Verteidiger, MLaw Silvio Bürgi, wird für das Beschwerdeverfahren ein Honorar von CHF 1'200.– inkl. Auslagenersatz, zuzüglich 8,1 % MWST von insgesamt CHF 97.40, gesamthaft somit CHF 1’297.40, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -177,7 +177,13 @@
         "Art. 32 CLUG",
         "Art. 34 CL"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "LUGUE",
+        "SCHKG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "4A_145/2010",
         "5A_104/2019",

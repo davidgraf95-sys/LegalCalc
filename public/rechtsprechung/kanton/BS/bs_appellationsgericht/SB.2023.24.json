@@ -330,7 +330,13 @@
         "B____ wird gemäss Art. 436 Abs. 1 i.V.m. 433 Abs. 1 der Strafprozessordnung zu Lasten von A____ eine Parteientschädigung von CHF 2'596.90 (inklusive Mehrwertsteuer und Auslagen) für das erstinstanzliche Verfahren und von CHF 2'768.35 für das Berufungsverfahren zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

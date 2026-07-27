@@ -219,8 +219,9 @@
         "Art. 99 BGG"
       ],
       "normKeys": [
-        "ZPO",
-        "BGG"
+        "BGG",
+        "PATG",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "4A_226/2016",

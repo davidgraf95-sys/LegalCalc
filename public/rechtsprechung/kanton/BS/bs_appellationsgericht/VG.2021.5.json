@@ -198,7 +198,10 @@
         "Der Beschwerdeführer trägt die Kosten des verfassungsgerichtlichen Verfahrens mit einer Gebühr von CHF 800.–. Die Gerichtskosten werden mit dem geleisteten Kostenvorschuss von CHF 1‘500.– verrechnet, sodass die Gerichtskasse dem Beschwerdeführer CHF 700.– zurückzuerstatten hat."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

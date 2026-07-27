@@ -401,7 +401,11 @@
         "Der amtlichen Verteidigerin, Advokatin MLaw Anina Hofer, werden für die zweite Instanz ein Honorar von CHF 3'934.– und ein Auslagenersatz von CHF 95.50, zuzüglich Mehrwertsteuer von insgesamt CHF 322.90 (7,7 % auf CHF 875.50 sowie 8,1 % auf CHF 3'154.–), somit total CHF 4'352.40 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

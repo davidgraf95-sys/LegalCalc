@@ -207,7 +207,12 @@
         "Dem amtlichen Verteidiger, Rechtsanwalt [...], wird für das Beschwerdeverfahren ein Honorar von CHF 800.– (inklusive allfällige Auslagen), zuzüglich 8,1 % Mehrwertsteuer von CHF 64.80, insgesamt also CHF 864.80, aus der Gerichtskasse ausgerichtet. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

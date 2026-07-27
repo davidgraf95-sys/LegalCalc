@@ -313,7 +313,13 @@
         "Die amtliche Verteidigerin, lic. iur. Barbara Pauen, wird per Urteilsdatum aus ihrem Mandat entlassen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

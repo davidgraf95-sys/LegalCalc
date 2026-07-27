@@ -191,7 +191,10 @@
         "            Der unentgeltlichen Rechtsvertreterin, B____, wird ein Honorar von CHF 1‘216.–, zuzüglich Auslagen von CHF 8.40, zuzüglich 7,7 % Mehrwertsteuer von CHF 94.30, insgesamt also CHF 1‘318.70, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -188,7 +188,12 @@
         "Das Gesuch um amtliche Verteidigung für das vorliegende Beschwerdever-fahren wird bewilligt. Dem Verteidiger, [...], Advokat, wird aus der Gerichtskasse ein Honorar von CHF 1'200.–, einschliesslich Auslagen, zuzüglich 7,7 % MWST von CHF 92.40 ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

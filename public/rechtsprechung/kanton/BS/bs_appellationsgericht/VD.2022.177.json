@@ -336,7 +336,13 @@
         "Die Vorinstanz hat dem Beschwerdeführer für das verwaltungsgerichtliche Beschwerdeverfahren eine Parteientschädigung von pauschal CHF 2'200.– zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "KRK",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -228,9 +228,13 @@
         "Art. 24a BVV"
       ],
       "normKeys": [
-        "BVG",
+        "ATSG",
+        "BGG",
         "BV",
-        "BGG"
+        "BVG",
+        "BVV_2",
+        "MVG",
+        "UVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

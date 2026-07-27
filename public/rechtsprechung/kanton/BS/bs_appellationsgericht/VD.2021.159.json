@@ -151,7 +151,11 @@
         "Die Rekurrierenden und Beschwerdeführer tragen in solidarischer Verbindung die ordentlichen Kosten des verwaltungsgerichtlichen Verfahrens mit einer Gebühr von CHF 2'000.– für das Verfahren VD.2021.159 und von CHF 2'000.– für das Verfahren VD.2021.160, je einschliesslich Auslagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "DBG",
+        "STHG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

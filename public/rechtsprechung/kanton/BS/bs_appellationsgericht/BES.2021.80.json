@@ -272,7 +272,11 @@
         "B____ wird zu Lasten von A____ für das Beschwerdeverfahren gemäss Art. 436 Abs. 1 in Verbindung mit 432 Abs. 2 der Strafprozessordnung eine Parteientschädigung von CHF 672.90 zugesprochen (inklusive Mehrwertsteuer und Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

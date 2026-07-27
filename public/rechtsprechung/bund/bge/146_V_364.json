@@ -303,9 +303,11 @@
         "Art. 18 Abs. 2 OLAA"
       ],
       "normKeys": [
-        "UVG",
         "ATSG",
-        "BGG"
+        "BGG",
+        "BV",
+        "UVG",
+        "UVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

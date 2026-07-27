@@ -310,7 +310,12 @@
         "            Dem Vertreter der Beschwerdeführerin im Kostenerlass, lic. iur. B____, Advokat, wird ein Anwaltshonorar von Fr. 3'000.00 (inkl. Auslagen) zuzüglich Mehrwertsteuer (8,1%) von Fr. 243.00 aus der Gerichtskasse zugesprochen. "
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -245,7 +245,13 @@
         "Es besteht kein Rückforderungsvorbehalt nach Art. 135 Abs. 4 StPO für die Kosten der amtlichen Verteidigung im zweitinstanzlichen Verfahren."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

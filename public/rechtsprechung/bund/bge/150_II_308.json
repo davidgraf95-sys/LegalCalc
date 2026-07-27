@@ -601,7 +601,13 @@
         "Art. 20 Abs. 1 BGFA"
       ],
       "normKeys": [
-        "BGG"
+        "BGFA",
+        "BGG",
+        "BV",
+        "FINMAG",
+        "STGB",
+        "STPO",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

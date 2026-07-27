@@ -207,7 +207,12 @@
         "Die Beschwerdeführerschaft hat der Wahlverteidigerin, Yvonne Pieles, Advokatin, eine Entschädigung in Höhe von CHF 7'375.–, zzgl. 3% Auslagenpauschale von CHF 221.25 und 8,1% Mehrwertsteuer in der Höhe von CHF 615.30, somit total CHF 8'211.55, auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IRSG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

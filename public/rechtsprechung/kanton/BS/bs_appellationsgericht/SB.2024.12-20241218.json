@@ -459,7 +459,11 @@
         "A____ trägt Kosten von CHF 11'940.80 und eine Urteilsgebühr von CHF 33'000.– für das erstinstanzliche Verfahren sowie die Kosten des zweitinstanzlichen Verfahrens mit Einschluss einer Urteilsgebühr von CHF 2'500.– (inkl. Kanzleiauslagen, zzgl. allfällige übrige Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

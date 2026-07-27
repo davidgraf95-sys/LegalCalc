@@ -215,7 +215,12 @@
         "Art. 269b CO",
         "Art. 269c CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "VMWG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

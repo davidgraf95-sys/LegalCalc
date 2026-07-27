@@ -252,7 +252,12 @@
         "Art. 23 Abs. 2 OASA",
         "Art. 27 Abs. 1 LEI"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "VZAE"
+      ],
       "zitierteEntscheide": [
         "1C_295/2019",
         "1C_357/2019",

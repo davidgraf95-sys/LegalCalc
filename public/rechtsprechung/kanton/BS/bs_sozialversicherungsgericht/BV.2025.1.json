@@ -398,7 +398,11 @@
         "            Die Beklagte 1 und die Beklagte 2 haben keinen Anspruch auf eine Parteientschädigung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "BVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

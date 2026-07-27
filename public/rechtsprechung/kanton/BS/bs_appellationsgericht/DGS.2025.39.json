@@ -209,7 +209,12 @@
         "Dem amtlichen Verteidiger, lic. iur. Alexander Sami, wird für das Ausstandsverfahren ein Honorar von 2'535.84, zuzüglich Auslagen von CHF 38.10 und 8,1 % MWST von CHF 208.49, insgesamt somit CHF 2'782.45, aus der Gerichtskasse ausgerichtet. Art. 135 Abs. 4 StPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

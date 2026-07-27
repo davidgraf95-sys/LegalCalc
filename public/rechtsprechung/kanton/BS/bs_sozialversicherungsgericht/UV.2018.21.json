@@ -270,7 +270,11 @@
         "          Die Kosten für das Gerichtsgutachten der H____ in Höhe von Fr. 5‘000.-- (G 30) sowie die in diesem Zusammenhang entstandenen Reisekosten in Höhe von insgesamt Fr. 153.60 (G 34 und 35) sind von der Beschwerdegegnerin zu tragen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

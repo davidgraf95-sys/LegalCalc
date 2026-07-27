@@ -365,9 +365,14 @@
       ],
       "normKeys": [
         "ATSG",
-        "UVG",
+        "BGG",
+        "IVG",
+        "OR",
         "STGB",
-        "BGG"
+        "STPO",
+        "SVG",
+        "UVG",
+        "UVV"
       ],
       "zitierteEntscheide": [
         "6B_1100/2020",

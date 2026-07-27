@@ -245,9 +245,13 @@
         "Art. 3 KRK"
       ],
       "normKeys": [
-        "BV",
         "BGG",
-        "STPO"
+        "BV",
+        "EMRK",
+        "KRK",
+        "STGB",
+        "STPO",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

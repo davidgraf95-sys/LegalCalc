@@ -167,7 +167,11 @@
         "Die Kindes- und Erwachsenenschutzbehörde hat dem Beschwerdeführer für das verwaltungsgerichtliche Beschwerdeverfahren eine Parteientschädigung von CHF 1'030.–, zuzüglich 8,1 % MWST von CHF 83.43, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

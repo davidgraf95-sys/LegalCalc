@@ -302,7 +302,12 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird dem Rechtsbeistand des Rekurrenten, lic. iur. Jürg Tschopp, für das verwaltungsgerichtliche Rekursverfahren eine Entschädigung von CHF 4'800.– zuzüglich 3 % Auslagenentschädigung vom CHF 144.– und 8,1 % MWST von CHF 400.45, insgesamt somit CHF 5'344.45, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

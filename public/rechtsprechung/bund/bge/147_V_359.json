@@ -207,11 +207,11 @@
         "Art. 37 AVIG"
       ],
       "normKeys": [
-        "BGG",
-        "STGB",
-        "ZGB",
         "AVIG",
-        "OR"
+        "BGG",
+        "OR",
+        "STGB",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "8C_17/2021",

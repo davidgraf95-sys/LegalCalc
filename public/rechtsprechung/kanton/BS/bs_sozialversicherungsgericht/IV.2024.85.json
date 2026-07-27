@@ -251,7 +251,13 @@
         "Der Beschwerdeführerin wird eine reduzierte Parteientschädigung von Fr. 1'875.-- (inklusive Auslagen) zuzüglich Mehrwertsteuer von Fr. 152.-- (8.1 %) zugesprochen. Im Übrigen werden die ausserordentlichen Kosten wettgeschlagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "ATSV",
+        "BGG",
+        "IVG",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -61,7 +61,10 @@
         "Art. 393 CPP",
         "Art. 65 Abs. 1 CPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "BB.2026.50",
         "BGE 140 IV 202",

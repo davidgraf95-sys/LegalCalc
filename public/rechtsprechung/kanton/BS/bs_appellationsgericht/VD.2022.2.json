@@ -221,7 +221,10 @@
         "Das Justiz- und Sicherheitsdepartement hat der Rekurrentin für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 3'819.–, zuzüglich 7,7 % MWST von CHF 294.05, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

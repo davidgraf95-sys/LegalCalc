@@ -464,7 +464,11 @@
         "Die in Rechtskraft erwachsene Entschädigung aus der Gerichtskasse für die unentgeltliche Rechtsvertretung der Privatklägerin im erstinstanzlichen Verfahren von total CHF 3'370.90 hat der Berufungskläger dem Gericht im Umfang von 40 % zurückzubezahlen, sobald es seine wirtschaftlichen Verhältnisse erlauben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

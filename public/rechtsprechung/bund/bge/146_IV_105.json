@@ -244,10 +244,12 @@
         "Art. 66a Abs. 2 STGB"
       ],
       "normKeys": [
-        "BGG",
-        "STGB",
         "AIG",
-        "BV"
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "VZAE"
       ],
       "zitierteEntscheide": [
         "6B_1070/2018",

@@ -117,7 +117,11 @@
         "Die Berufungsklägerin trägt die Gerichtskosten des erstinstanzlichen Verfahrens von CHF 500.– und die Gerichtskosten des Berufungsverfahrens von CHF 500.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

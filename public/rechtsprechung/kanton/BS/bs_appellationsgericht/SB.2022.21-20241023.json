@@ -675,7 +675,13 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird dem Rechtsvertreter der Privatklägerin I____, J____, für das Berufungsverfahren ein Honorar von CHF 14’344.– und ein Auslagenersatz von CHF 25.10, zuzüglich Mehrwertsteuer von insgesamt CHF 1’142.10 (7,7 % auf CHF 5’456.90 sowie 8,1 % auf CHF 8'912.20, somit total CHF 15'511.20, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

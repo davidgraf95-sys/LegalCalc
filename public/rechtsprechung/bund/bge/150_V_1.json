@@ -255,7 +255,10 @@
       ],
       "normKeys": [
         "ATSG",
-        "BGG"
+        "ATSV",
+        "BGG",
+        "BV",
+        "EOG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

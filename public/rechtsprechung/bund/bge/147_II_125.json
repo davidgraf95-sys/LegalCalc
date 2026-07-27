@@ -328,8 +328,11 @@
         "Art. 41 Abs. 1 BV"
       ],
       "normKeys": [
+        "BGG",
         "BV",
-        "BGG"
+        "NHG",
+        "NHV",
+        "RPG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

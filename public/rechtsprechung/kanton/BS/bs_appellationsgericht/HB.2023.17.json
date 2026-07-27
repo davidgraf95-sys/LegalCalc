@@ -182,7 +182,11 @@
         "Dem amtlichen Verteidiger, [...], wird für das Beschwerdeverfahren ein Honorar von CHF 616.65 und ein Auslagenersatz von CHF 22.85, zuzüglich 7,7 % MWST von CHF 49.25, insgesamt also CHF 688.75, aus der Gerichtskasse ausgerichtet. Der Entscheid über eine allfällige Rückforderung gemäss Art. 135 Abs. 4 StPO wird dem Berufungsurteil oder – falls kein Berufungsurteil ergeht – einem separaten Entscheid der Appellationsgerichtspräsidentin vorbehalten (Art. 421 Abs. 1 StPO)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

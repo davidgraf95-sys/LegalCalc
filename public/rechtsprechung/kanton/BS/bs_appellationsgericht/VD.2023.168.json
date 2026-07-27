@@ -222,7 +222,10 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird der Rechtsbeiständin des Rekurrenten, [...], für das verwaltungsgerichtliche Rekursverfahren ein Honorar von CHF 2’250.‒, zuzüglich Auslagen von CHF 64.55 sowie 7,7 % MWST von CHF 123.70 und 8,1% MWST von CHF 57.35, somit insgesamt der Betrag von CHF 2’495.60 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

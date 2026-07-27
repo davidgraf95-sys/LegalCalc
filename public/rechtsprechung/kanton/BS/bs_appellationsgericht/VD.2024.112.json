@@ -252,7 +252,11 @@
         "Die Gerichtskosten des verwaltungsgerichtlichen Rekursverfahrens von insgesamt CHF 800.– werden im Umfang von CHF 160.– vom Rekurrenten und im Umfang von CHF 640.– von der Gemeinde Riehen getragen. Die Gerichtskosten werden mit dem geleisteten Kostenvorschuss von CHF 800.– verrechnet, sodass die Gemeinde Riehen dem Rekurrenten CHF 640.– zu bezahlen hat."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

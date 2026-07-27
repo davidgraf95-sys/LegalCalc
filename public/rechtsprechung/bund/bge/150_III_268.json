@@ -266,8 +266,12 @@
         "Art. 172 Abs. 1 IPRG"
       ],
       "normKeys": [
-        "SCHKG",
-        "BGG"
+        "BGG",
+        "BV",
+        "IPRG",
+        "KOV",
+        "OR",
+        "SCHKG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

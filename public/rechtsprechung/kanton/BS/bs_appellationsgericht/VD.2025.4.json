@@ -242,7 +242,10 @@
         "Der Rekurrentin wird eine Parteientschädigung von CHF 530.– (einschliesslich Auslagen), zuzüglich 8,1 % MWST von CHF 42.95, zu Lasten des Bau- und Verkehrsdepartements zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

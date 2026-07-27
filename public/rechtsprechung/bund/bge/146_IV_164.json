@@ -162,7 +162,13 @@
         "Art. 134 CP",
         "Art. 139 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "JSTG",
+        "JSTPO",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "1B_206/2019",
         "1B_573/2019",

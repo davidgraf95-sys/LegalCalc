@@ -361,7 +361,10 @@
         "Für den Entscheid über die Parteientschädigung für das Rekursverfahren vor der Personalrekurskommission wird die Sache an diese zurückgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

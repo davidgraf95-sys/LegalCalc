@@ -366,7 +366,15 @@
         "Das Justiz- und Sicherheitsdepartement hat den Rekurrierenden für das verwaltungsgerichtliche Rekursverfahren eine reduzierte Parteientschädigung von CHF 772.50, einschliesslich Auslagen und zuzüglich 8,1 % MWST von CHF 62.60, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "KRK",
+        "VZAE",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

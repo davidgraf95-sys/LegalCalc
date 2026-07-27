@@ -225,7 +225,12 @@
         "Der amtlichen Verteidigerin [...] wird Honorar von CHF 2'664.–, zuzüglich Auslagen von CHF 61.80 und Mehrwertsteuer von insgesamt CHF 211.55 (7,7 % auf CHF 2'312.30 sowie 8,1 % auf CHF 33.50), somit total CHF 2'937.35, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "OHG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

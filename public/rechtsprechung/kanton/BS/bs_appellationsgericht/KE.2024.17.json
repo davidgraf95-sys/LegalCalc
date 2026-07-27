@@ -201,7 +201,12 @@
         "Der Beschwerdeführer hat der Beigeladenen für das verwaltungsgerichtliche Beschwerdeverfahren eine Parteientschädigung von CHF 780.–, einschliesslich Auslagen und zuzüglich 8,1 % MWST von CHF 63.20, insgesamt somit CHF 843.20, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "HKSUE96",
+        "IPRG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

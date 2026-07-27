@@ -255,7 +255,11 @@
         "Die Privatklägerin hat den Beschuldigten für das zweitinstanzliche Verfahren eine Parteientschädigung in Höhe von CHF 1'705.10 (einschliesslich Auslagen und Mehrwertsteuer) auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

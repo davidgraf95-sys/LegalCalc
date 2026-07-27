@@ -201,7 +201,11 @@
         "Zufolge Bewilligung der unentgeltlichen Verbeiständung wird der Rechtsbeiständin der Rekurrentin, […], für das verwaltungsgerichtliche Rekursverfahren eine Entschädigung von CHF 830.–, einschliesslich Auslagen und zuzüglich 8,1 % MWST von CHF 67.25, insgesamt somit CHF 897.25, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

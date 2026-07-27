@@ -301,7 +301,13 @@
         "           Dr. Philippe Spitz, Advokat, wird ein Verbeiständungshonorar von Fr. 3'500.--(inklusive Auslagen) zuzüglich Fr. 283.50 Mehrwertsteuer zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVV",
+        "UVG",
+        "UVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

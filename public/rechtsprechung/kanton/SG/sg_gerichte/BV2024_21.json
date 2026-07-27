@@ -225,8 +225,10 @@
         "Art. 22c FZG"
       ],
       "normKeys": [
+        "BVG",
+        "FZG",
         "ZGB",
-        "BVG"
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

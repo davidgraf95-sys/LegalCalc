@@ -268,7 +268,17 @@
         "Der Berufungskläger trägt die reduzierten Kosten von CHF 50.– und eine Urteilsgebühr von CHF 100.– für das erstinstanzliche Verfahren. Der Berufungskläger und seine Eltern tragen in solidarischer Haftung die Kosten des Berufungsverfahrens mit Einschluss einer Urteilsgebühr von CHF 500.– (inklusive Kanzleiauslagen und zuzüglich allfällige übrige Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "JSTG",
+        "JSTPO",
+        "STGB",
+        "STPO",
+        "SVG",
+        "VRV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

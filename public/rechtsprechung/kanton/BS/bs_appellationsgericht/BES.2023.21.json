@@ -263,7 +263,11 @@
         "Der Beschwerdeführerin wird für das Beschwerdeverfahren keine Parteientschädigung ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

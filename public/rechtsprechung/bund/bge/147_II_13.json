@@ -308,7 +308,10 @@
         "Art. 26 DBA"
       ],
       "normKeys": [
-        "BV"
+        "BGG",
+        "BV",
+        "EMRK",
+        "VRK"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

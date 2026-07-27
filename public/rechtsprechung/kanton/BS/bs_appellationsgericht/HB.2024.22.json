@@ -176,7 +176,10 @@
         "Die Gerichtsgebühr für das Beschwerdeverfahren wird auf CHF 500.– (einschliesslich Auslagen) festgesetzt und dem Strafgericht als verfahrensleitender Behörde in Rechnung gestellt. Die definitive Regelung der Kostenauflage wird dem Endentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

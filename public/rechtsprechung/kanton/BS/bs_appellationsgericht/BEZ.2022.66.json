@@ -126,7 +126,10 @@
         "Die Beschwerdeführerin und Anzeigestellerin trägt die Gerichtskosten des Beschwerdeverfahrens wegen Rechtsverzögerung von CHF 200.– sowie die Gerichtskosten des aufsichtsrechtlichen Verfahrens von CHF 200.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

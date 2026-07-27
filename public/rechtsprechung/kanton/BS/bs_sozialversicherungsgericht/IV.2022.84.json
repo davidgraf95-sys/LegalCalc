@@ -260,7 +260,12 @@
         "            Der Beschwerdeführer trägt die ordentlichen Kosten, bestehend aus einer Gerichtsgebühr von Fr. 800.00."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

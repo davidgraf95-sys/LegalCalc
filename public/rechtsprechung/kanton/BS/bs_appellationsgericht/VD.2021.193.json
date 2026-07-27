@@ -167,7 +167,9 @@
         "Das Gesuch um Bewilligung der unentgeltlichen Rechtspflege und Verbeiständung wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

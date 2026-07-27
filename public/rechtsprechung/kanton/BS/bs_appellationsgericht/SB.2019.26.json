@@ -213,7 +213,10 @@
         "Dem Privatverteidiger, [...], Advokat, wird für das zweitinstanzliche Verfahren eine Parteientschädigung von CHF 1'821.70 (inkl. Auslagen und MWST) aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

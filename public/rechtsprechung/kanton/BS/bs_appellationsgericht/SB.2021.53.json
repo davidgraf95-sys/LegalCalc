@@ -458,7 +458,13 @@
         "Der Beurteilte trägt die Verfahrenskosten von CHF 16'043.20 und die Urteilsgebühr von CHF 3'500.– für das erstinstanzliche Verfahren. Das beigebrachte Bargeld im Betrag von CHF 850.– wird mit den Verfahrenskosten und der Urteilsgebühr verrechnet. Er trägt ausserdem die Kosten des zweitinstanzlichen Verfahrens mit Einschluss einer Urteilsgebühr von CHF 2'000.– (inkl. Kanzleiauslagen, zuzüglich allfällige übrige Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

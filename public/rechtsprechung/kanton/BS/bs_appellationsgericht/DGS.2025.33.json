@@ -117,7 +117,10 @@
         "Die Gesuchstellenden tragen die Kosten des Revisionsverfahrens mit einer Gebühr von CHF 800.–, einschliesslich Auslagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

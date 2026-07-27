@@ -122,7 +122,10 @@
         "Der amtlichen Verteidigerin, A____, werden aus der Gerichtskasse ein Honorar von CHF 7’100.‒ und eine Spesenvergütung von CHF 1’582.10, zuzüglich 7,7 % MWST von CHF 668.50, insgesamt also CHF 9’350.60 ausgerichtet. Art. 135 Abs. 4 StPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

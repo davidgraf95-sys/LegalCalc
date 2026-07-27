@@ -162,7 +162,12 @@
         "Die Berufungsbeklagte bezahlt der Berufungsklägerin eine Parteientschädigung von CHF 2'000.– zuzüglich Auslagen von CHF 60.– für das erstinstanzliche Verfahren sowie eine Parteientschädigung von CHF 1'333.– für das Berufungsverfahren."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

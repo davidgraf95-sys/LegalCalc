@@ -197,7 +197,12 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird dem Rechtsbeistand des Rekurrenten, [...], für das verwaltungsgerichtliche Rekursverfahren VD.2020.165 ein Honorar von CHF 1'250.–, einschliesslich Auslagen, zuzüglich 7,7 % MWST von CHF 96.25, aus der Gerichtskasse ausgerichtet. Das weitergehende Gesuch um unentgeltliche Verbeiständung im verwaltungsgerichtlichen Rekursverfahren VD.2021.17 wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -330,7 +330,12 @@
         "Art. 25 Abs. 1 BAUV/OW"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "BV",
+        "FDV",
+        "FMG",
+        "RPG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "1C_12/2022",

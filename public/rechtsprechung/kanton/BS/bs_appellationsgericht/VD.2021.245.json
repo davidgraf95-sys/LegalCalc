@@ -316,7 +316,14 @@
         "Für das verwaltungsgerichtliche Rekursverfahren wird dem Rechtsbeistand der Rekurrentin, [...], zulasten des Justiz- und Sicherheitsdepartements eine Parteientschädigung von CHF 3'855.–, zuzüglich Auslagen von CHF 50.90 und 7,7 % MWST von CHF 300.75, zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "FZA",
+        "VZAE"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

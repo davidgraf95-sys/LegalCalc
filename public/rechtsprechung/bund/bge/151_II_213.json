@@ -207,7 +207,11 @@
         "Art. 32 CV",
         "Art. 4 ALCP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "FZA"
+      ],
       "zitierteEntscheide": [
         "1C_537/2021",
         "2C_158/2023",

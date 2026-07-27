@@ -228,7 +228,15 @@
         "Art. 189 Abs. 4 CST",
         "Art. 25a LAT"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "ENG",
+        "NHG",
+        "RPG",
+        "RPV",
+        "WAG"
+      ],
       "zitierteEntscheide": [
         "1C_240/2021",
         "1C_267/2019",

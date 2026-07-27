@@ -444,8 +444,11 @@
         "Art. 56 KVG"
       ],
       "normKeys": [
+        "ATSG",
         "BGG",
-        "ATSG"
+        "KVG",
+        "KVV",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

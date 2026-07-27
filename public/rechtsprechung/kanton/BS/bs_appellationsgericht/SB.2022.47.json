@@ -429,7 +429,13 @@
         "Dem amtlichen Verteidiger, lic. iur. Mustafa Ates, werden für die zweite Instanz ein Honorar von CHF 3'650.– und ein Auslagenersatz von CHF 72.15, zuzüglich Mehrwertsteuer von insgesamt CHF 294.95 (7,7 % auf CHF 1'640.65 [Aufwand bis 31.12.23] sowie 8,1 % auf CHF 2'081.50 [Aufwand ab 1.1.24]), somit total gerundet CHF 4'017.10 aus der Gerichtskasse ausgerichtet. Art. 135 Abs. 4 der Strafprozessordnung bleibt zu 40 % vorbehalten"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

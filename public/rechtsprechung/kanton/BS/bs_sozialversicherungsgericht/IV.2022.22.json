@@ -250,7 +250,10 @@
         "            Die ordentlichen Kosten des Verfahrens, bestehend aus einer Gebühr von Fr. 100.00, gehen zu Lasten der Beschwerdegegnerin."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

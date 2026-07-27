@@ -231,7 +231,11 @@
         "Dem unentgeltlichen Rechtsbeistand des Gesuchstellers, [...], Rechtsanwalt, wird für das vorliegende Verfahren ein Honorar von CHF 3’600.– und ein Auslagenersatz von CHF 75.55, zuzüglich Mehrwertsteuer von insgesamt CHF 288.35 (7,7 % auf CHF 2’343.20 sowie 8,1 % auf CHF 1’332.35), somit total CHF 3’963.90 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

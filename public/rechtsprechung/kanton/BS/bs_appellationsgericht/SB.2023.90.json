@@ -233,7 +233,12 @@
         "Dem Privatverteidiger, […], wird eine Entschädigung von CHF 1'510.50 für das erstinstanzliche Verfahren und von CHF 2'755.30 für das zweitinstanzliche Verfahren aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

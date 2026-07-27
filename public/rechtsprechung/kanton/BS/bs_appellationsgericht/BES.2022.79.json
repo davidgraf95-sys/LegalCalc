@@ -228,7 +228,11 @@
         "Dem Beschwerdeführer wird für das vorliegende Beschwerdeverfahren die amtliche Verteidigung bewilligt. Dem amtlichen Verteidiger, [...], Advokat, wird aus der Gerichtskasse ein Honorar von CHF 372.60 (inkl. Auslagen und Mehrwertsteuer) aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

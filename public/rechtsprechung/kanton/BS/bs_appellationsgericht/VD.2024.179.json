@@ -132,7 +132,9 @@
         "Auf die Erhebung von Gerichtskosten für das verwaltungsgerichtliche Rekursverfahren wird verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

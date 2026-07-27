@@ -447,7 +447,13 @@
         "Der unentgeltlichen Vertreterin der Berufungsklägerin, [...], werden ein Honorar von CHF 2'370.– und ein Auslagenersatz von CHF 46.95 zuzüglich 7,7 % Mehrwertsteuer von CHF 186.10, insgesamt also CHF 2'603.05 aus der Gerichtskasse ausgerichtet. Vorbehalten bleibt die Nachforderung des Honorars bei der Berufungsbeklagten gemäss Art. 123 Abs. 1 ZPO."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "SCHKG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

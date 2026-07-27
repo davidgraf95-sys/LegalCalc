@@ -216,7 +216,9 @@
         "Die Rekurrierenden haben der Beigeladenen für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 1'280.–, einschliesslich Auslagen, in solidarischer Verbindung zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

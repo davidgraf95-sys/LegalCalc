@@ -278,9 +278,12 @@
         "Art. 3 Abs. 5 UVG"
       ],
       "normKeys": [
+        "ATSG",
         "AVIG",
+        "BGG",
+        "OR",
         "UVG",
-        "BGG"
+        "UVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -310,9 +310,10 @@
         "Art. 58b AIG"
       ],
       "normKeys": [
-        "BV",
         "AIG",
-        "BGG"
+        "BGG",
+        "BV",
+        "VZAE"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -290,7 +290,11 @@
         "Die Beschwerdeführerin trägt die Gerichtskosten mit einer Gebühr von CHF 600.–, einschliesslich Auslagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

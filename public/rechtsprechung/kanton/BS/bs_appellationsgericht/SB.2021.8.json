@@ -281,7 +281,13 @@
         "Die Berufungskläger haben in solidarischer Verpflichtung dem Privatkläger 2 eine Parteientschädigung für das erstinstanzliche Verfahren von CHF 6'008.50 und für das Berufungsverfahren von CHF 2’692.50 zu bezahlen, je einschliesslich Mehrwertsteuer und Spesen. Es wird festgestellt, dass mit den Akonto-Zahlungen des Berufungsklägers 1 vom 29. März 2021 und 1. Juli 2021 die Parteientschädigung für das erstinstanzliche Verfahren im Umfang von CHF 4‘500.– untergegangen ist."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

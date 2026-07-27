@@ -419,7 +419,12 @@
         "Der unentgeltlichen Vertreterin der Privatklägerin, [...], werden aus der Gerichtskasse ein Honorar von CHF 2’866.65 und eine Spesenvergütung von CHF 64.30, zuzüglich 7,7 % MWST von CHF 225.70 sowie Dolmetscherkosten von CHF 140.‒, insgesamt also CHF 3’296.65 ausgerichtet. Der Beurteilte hat dem Appellationsgericht diesen Betrag zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben, in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 der Strafprozessordnung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

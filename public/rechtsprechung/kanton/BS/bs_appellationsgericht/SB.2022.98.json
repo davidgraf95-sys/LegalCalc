@@ -256,7 +256,12 @@
         "Für das erstinstanzliche Verfahren ist der Berufungsklägerin eine reduzierte Parteientschädigung von total CHF 300.– (inklusive Auslagen und inklusive 7,7 % MWST) und für das Berufungsverfahren eine reduzierte Parteientschädigung von total CHF 407.15 (inklusive Auslagenersatz von CHF 56.80 und inklusive 7,7 % MWST von CHF 29.10) aus der Gerichtskasse zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

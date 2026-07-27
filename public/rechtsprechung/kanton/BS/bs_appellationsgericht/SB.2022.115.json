@@ -299,7 +299,11 @@
         "Dem unentgeltlichen Vertreter des Berufungsklägers, [...], werden für die zweite Instanz ein Honorar von CHF 1'900.– und ein Auslagenersatz von CHF 72.85, zuzüglich Mehrwertsteuer von insgesamt CHF 155.75 (7,7 % auf CHF 1'017.45 sowie 8,1 % auf CHF 955.40), somit total CHF 2'128.60 aus der Gerichtskasse zugesprochen. Art. 138 Abs. 1 i.V.m. Art. 135 Abs. 4 StPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

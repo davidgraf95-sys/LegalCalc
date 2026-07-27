@@ -193,7 +193,10 @@
         "Der Beschwerdeführerin ist eine Parteientschädigung von CHF 500.– aus der Zivilgerichtskasse auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -250,7 +250,12 @@
         "Art. 4 Abs. 1 LAA"
       ],
       "normKeys": [
-        "ATSG"
+        "ATSG",
+        "BGG",
+        "BV",
+        "OR",
+        "UVG",
+        "UVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

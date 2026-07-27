@@ -301,7 +301,10 @@
         "Der unentgeltlichen Rechtsvertreterin, B____, wird aus der Gerichtskasse eine Entschädigung von CHF 1'236.– (inklusive Auslagen), zuzüglich Mehrwertsteuer von CHF 95.15, insgesamt CHF 1'331.15, ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "VWVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

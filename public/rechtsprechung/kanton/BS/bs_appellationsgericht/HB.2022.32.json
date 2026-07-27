@@ -142,7 +142,10 @@
         "Dem amtlichen Verteidiger des Beschwerdeführers, [...], werden für das gegenstandslos gewordene Beschwerdeverfahren ein Honorar und ein Auslagenersatz von total CHF 200.–, inklusive Auslagen und zuzüglich 7,7 % MWST von CHF 15.40, aus der Gerichtskasse bezahlt. Der Entscheid über eine allfällige Rückforderung gemäss Art. 135 Abs. 4 StPO wird dem Sachentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

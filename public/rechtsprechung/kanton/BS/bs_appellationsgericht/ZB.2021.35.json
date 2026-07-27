@@ -161,7 +161,13 @@
         "Der Berufungskläger trägt die Gerichtskosten des Berufungsverfahrens von CHF 750.–. Diese gehen zufolge Bewilligung der unentgeltlichen Rechtspflege zu Lasten der Gerichtskasse. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

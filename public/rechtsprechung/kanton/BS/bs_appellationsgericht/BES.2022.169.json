@@ -177,7 +177,11 @@
         "Dem Rechtsvertreter des Beschwerdeführers, [...], Rechtsanwalt, wird für das Beschwerdeverfahren ein Honorar von CHF 1'200.– (inkl. Auslagen) zuzüglich 7,7 % MWST von CHF 92.40, aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 StPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -361,8 +361,13 @@
         "Art. 49 KVV"
       ],
       "normKeys": [
-        "ZGB",
-        "BGG"
+        "ATSG",
+        "BGG",
+        "BV",
+        "KLV",
+        "KVG",
+        "KVV",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

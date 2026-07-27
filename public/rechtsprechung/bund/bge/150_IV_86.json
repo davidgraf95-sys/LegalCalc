@@ -318,7 +318,12 @@
         "Art. 322quater CP",
         "Art. 322ter CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "6B_1033/2020",
         "6B_1399/2022",

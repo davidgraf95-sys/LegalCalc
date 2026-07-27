@@ -440,7 +440,12 @@
         "            Die Parteientschädigung in der Höhe von Fr. 4’250.00 zuzüglich Fr. 344.25 Mehrwertsteuer ist zu vier Fünftel (Fr. 3’400.00) zuzüglich Mehrwertsteuer in der Höhe von Fr. 275.40 von der Beschwerdegegnerin und zu einem Fünftel (Fr. 850.00) zuzüglich Mehrwertsteuer in der Höhe von Fr. 68.85 von der Beigeladenen zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

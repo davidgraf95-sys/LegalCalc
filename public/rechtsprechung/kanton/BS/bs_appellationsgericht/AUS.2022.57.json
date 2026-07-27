@@ -177,7 +177,10 @@
         "            In Gutheissung der unentgeltlichen Rechtspflege wird dem Rechtsbeistand von A____, [...], ein Honorar von CHF 1'131.50 (einschliesslich Auslagen), zuzüglich 7,7 % MWST von CHF 87.15, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

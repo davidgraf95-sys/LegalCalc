@@ -250,7 +250,12 @@
         "Die ausserordentlichen Kosten werden wettgeschlagen. Zufolge Bewilligung der unentgeltlichen Verbeiständung wird Dr. iur. B____, Advokat, ein Honorar von CHF 3'000.00 (inklusive Auslagen) zuzüglich Mehrwertsteuer von CHF 231.00 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

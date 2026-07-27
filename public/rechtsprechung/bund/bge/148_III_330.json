@@ -236,7 +236,10 @@
       "zitierteNormen": [
         "Art. 190 Abs. 2 LDIP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IPRG"
+      ],
       "zitierteEntscheide": [
         "4A_198/2020",
         "4A_200/2021",

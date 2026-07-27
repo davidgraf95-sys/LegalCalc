@@ -177,7 +177,10 @@
         "Das verwaltungsgerichtliche Rekursverfahren ist kostenlos. Die Gerichtskasse hat der Rekurrentin den geleisteten Kostenvorschuss von CHF 1'000.– zurückzuerstatten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

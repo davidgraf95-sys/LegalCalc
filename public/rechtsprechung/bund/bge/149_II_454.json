@@ -239,7 +239,11 @@
         "Art. 26 LIFD"
       ],
       "normKeys": [
-        "DBG"
+        "BGG",
+        "BV",
+        "DBG",
+        "OR",
+        "STHG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

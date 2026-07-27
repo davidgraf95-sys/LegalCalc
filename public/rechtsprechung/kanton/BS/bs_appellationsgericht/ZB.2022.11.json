@@ -347,7 +347,12 @@
         "6.  Der Ehemann hat der Ehefrau für das Berufungsverfahren eine Parteientschädigung von CHF 500.– zuzüglich 7,7 % MWST von CHF 38.50 zu bezahlen. Zufolge voraussichtlicher Uneinbringlichkeit der Parteientschädigung und Bewilligung der unentgeltlichen Rechtspflege für die Ehefrau wird die Parteientschädigung aus der Gerichtskasse ausgerichtet. Im Übrigen tragen die Parteien ihre eigenen Parteikosten. Zufolge Bewilligung der unentgeltlichen Rechtspflege wird der unentgeltlichen Rechtsbeiständin der Ehefrau, [...], Advokatin, und dem unentgeltlichen Rechtsbeistand des Ehemanns, [...], Rechtsanwalt, eine Entschädigung von je CHF 2'000.– zuzüglich 7,7 % MWST von je CHF 154.– aus der Gerichtskasse des Appellationsgerichts ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

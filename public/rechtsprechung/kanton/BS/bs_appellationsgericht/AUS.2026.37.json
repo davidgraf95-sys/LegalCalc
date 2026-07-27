@@ -192,7 +192,11 @@
         "Die unentgeltliche Rechtspflege wird bewilligt. Der unentgeltlichen Rechtsvertreterin, Rechtsanwältin Lea Hungerbühler, wird ein Honorar von CHF 1'610.–, zuzüglich Auslagen von CHF 5.–, insgesamt also CHF 1'615.– aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

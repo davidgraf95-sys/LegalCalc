@@ -191,7 +191,11 @@
         "            Die unentgeltliche Rechtspflege wird bewilligt. Der unentgeltlichen Rechtsvertreterin, MLaw Elena Liechti, Rechtsanwältin, wird ein Honorar von CHF 1'270.–, zuzüglich Auslagen von CHF 10.–, insgesamt also CHF 1'280.– aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

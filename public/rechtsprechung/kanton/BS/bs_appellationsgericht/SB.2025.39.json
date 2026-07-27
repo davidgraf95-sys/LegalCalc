@@ -442,7 +442,12 @@
         "Dem Vertreter des Privatklägers im Kostenerlass, MLaw Gioele Ballarino, Advokat, werden für die zweite Instanz in Anwendung von Art. 136 in Verbindung mit Art. 426 Abs. 4 der Strafprozessordnung ein Honorar von CHF 2'458.35 und ein Auslagenersatz von CHF 59.70, zuzüglich 8,1 % MWST von CHF 203.95, somit total CHF 2'722.– aus der Gerichtskasse ausgerichtet. A____ hat dem Appellationsgericht diesen Betrag zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben, in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 der Strafprozessordnung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

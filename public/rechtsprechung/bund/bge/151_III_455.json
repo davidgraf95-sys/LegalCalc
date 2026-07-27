@@ -279,7 +279,10 @@
         "Art. 31 CV",
         "Art. 32 CV"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IPRG"
+      ],
       "zitierteEntscheide": [
         "4A_140/2022",
         "4A_306/2019",

@@ -1,0 +1,43 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "GLG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "2": [
+      {
+        "key": "bge_149_V_106",
+        "zitierung": "BGE 149 V 106",
+        "regesteKurz": "Art. 26 Abs. 1 BVG, Art. 15 Abs. 2 BVG i.V.m. Art. 12 lit. j BVV 2; Art. 104 OR; reglementarische Regelung des Verzugszinssatzes. Eine reglementarische Regelung des Verzugszinssatzes darf den BVG-Mindestzinssatz nicht unterschreiten (E. 7.…",
+        "datum": "2023-03-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "3": [
+      {
+        "key": "bge_146_V_210",
+        "zitierung": "BGE 146 V 210",
+        "regesteKurz": "Art. 8 Abs. 2 und 3 BV; Art. 8 Abs. 1 lit. f und Art. 15 AVIG; Art. 3 Abs. 1 und 2 GlG. Bei einer schwangeren Frau, die sich auf unbefristete Stellen bewirbt, kann für die Frage der Vermittlungsfähigkeit grundsätzlich nicht nur der Zeitrau…",
+        "datum": "2020-02-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "13": [
+      {
+        "key": "bge_150_I_195",
+        "zitierung": "BGE 150 I 195",
+        "regesteKurz": "Art. 10 Abs. 2 BehiG; Art. 30 und 29a BV; Art. 37a Abs. 1 ETH-Gesetz; Kostenpflicht bei mutwilligem oder leichtsinnigem Verhalten im Verfahren nach BehiG; materielle Rechtskraft im öffentlichen Recht; Anforderungen an ein Gericht nach Art.…",
+        "datum": "2024-04-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

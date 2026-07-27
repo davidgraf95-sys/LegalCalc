@@ -122,7 +122,12 @@
         "Die Beklagte trägt die Gerichtskosten von CHF 400.– und bezahlt der Klägerin eine Umtriebsentschädigung von CHF 400.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "URG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

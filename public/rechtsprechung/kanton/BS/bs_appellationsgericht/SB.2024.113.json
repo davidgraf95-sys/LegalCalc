@@ -388,7 +388,11 @@
         "Für das Berufungsverfahren in eigener Sache werden ihm ein Honorar von CHF 600.‒ sowie eine Spesenvergütung von CHF 18.‒ zuzüglich 8,1 % MWST von CHF 50.05, insgesamt also CHF 668.‒ ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

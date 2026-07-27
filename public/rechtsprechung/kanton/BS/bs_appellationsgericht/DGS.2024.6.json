@@ -208,7 +208,10 @@
         "Der Antrag des Gesuchstellers auf Zusprechung einer Parteientschädigung wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

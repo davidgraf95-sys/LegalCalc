@@ -207,7 +207,10 @@
         "Art. 30 Abs. 2 KV/SH",
         "Art. 30 Abs. 3 KV/SH"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [
         "1C_139/2022",
         "1C_216/2023",

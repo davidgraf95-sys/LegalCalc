@@ -307,7 +307,12 @@
         "Das Departement für Wirtschaft, Soziales und Umwelt hat der Rekurrentin für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 3'090.–, einschliesslich Auslagen und zuzüglich MWST von CHF 242.05 (7,7 % auf CHF 2'060.– und 8,1 % auf CHF 1'030.–), insgesamt somit CHF 3'332.05, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

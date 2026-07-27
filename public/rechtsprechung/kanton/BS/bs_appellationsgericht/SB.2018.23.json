@@ -330,7 +330,12 @@
         "Dem amtlichen Verteidiger von A____ im Rückweisungsverfahren, [...], wird ein Honorar von CHF 600.– (einschliesslich Auslagen), zuzüglich 7,7 % MWST von CHF 46.20, somit total CHF 646.20, aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vollumfänglich vorbehalten"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

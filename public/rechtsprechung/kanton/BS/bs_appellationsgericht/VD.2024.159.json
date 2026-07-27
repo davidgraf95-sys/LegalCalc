@@ -183,7 +183,10 @@
         "Die Abteilung Straf- und Massnahmenvollzug wird verpflichtet, dem Rekurrenten für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung in Höhe von CHF 1'648.– (einschliesslich Auslagen), zuzüglich 8.1 % MWST von CHF 133.50, insgesamt also CHF 1'781.50, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

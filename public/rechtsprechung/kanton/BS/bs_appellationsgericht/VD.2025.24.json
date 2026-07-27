@@ -163,7 +163,9 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege werden dem Rechtsbeistand des Rekurrenten, Dr. Stefan Suter, Advokat, für das verwaltungsgerichtliche Rekursverfahren ein Honorar von CHF 2’500.‒ und eine Spesenvergütung von CHF 21.90 zuzüglich 8,1 % MWST von 204.30, insgesamt somit CHF 2’726.20, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

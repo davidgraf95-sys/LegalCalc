@@ -208,9 +208,11 @@
         "Art. 164 Abs. 2 STPO"
       ],
       "normKeys": [
-        "STPO",
+        "BGG",
+        "BV",
+        "EMRK",
         "STGB",
-        "BGG"
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

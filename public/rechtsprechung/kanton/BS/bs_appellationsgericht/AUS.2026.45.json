@@ -186,7 +186,11 @@
         "            Der unentgeltlichen Rechtsvertreterin, Advokatin MLaw Hannah Frey, wird ein Honorar von CHF 1'650.–, zuzüglich 8,1 % Mehrwertsteuer von CHF 133.65, insgesamt also CHF 1'783.65 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "EMRK",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -331,10 +331,11 @@
         "Art. 81 Abs. 1 SCHKG"
       ],
       "normKeys": [
-        "OR",
-        "ZGB",
         "BGG",
-        "SCHKG"
+        "OR",
+        "SCHKG",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "4A_151/2024",

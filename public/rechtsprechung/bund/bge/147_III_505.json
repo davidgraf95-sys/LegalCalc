@@ -211,9 +211,10 @@
         "Art. 807 Abs. 2 VE"
       ],
       "normKeys": [
-        "ZPO",
+        "BGG",
+        "HREGV",
         "OR",
-        "BGG"
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

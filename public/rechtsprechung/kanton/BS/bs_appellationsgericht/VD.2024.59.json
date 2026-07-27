@@ -216,7 +216,9 @@
         "Es werden keine Gerichtskosten erhoben. Der geleistete Kostenvorschuss in Höhe von CHF 1'000.– wird zurückerstattet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

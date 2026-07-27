@@ -320,7 +320,13 @@
         "            Die Beschwerdegegnerin bezahlt dem Beschwerdeführer eine Parteient-schädigung von Fr. 4'500.-- (inkl. Auslagen) zuzüglich Fr. 364.50 (8.1%) Mehrwertsteuer. Von den Fr. 4’500.-- gehen Fr. 850.-- an RA Martin Lutz und der Rest an Dr. Meret Rehmann."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "BV",
+        "ELG",
+        "KVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -131,7 +131,11 @@
         "-       Kindes- und Erwachsenenschutzbehörde Basel-Stadt"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "HKSUE96",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

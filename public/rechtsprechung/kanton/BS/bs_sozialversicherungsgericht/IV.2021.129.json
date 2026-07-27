@@ -330,7 +330,12 @@
         "          Nicht zu erstatten hat die Beschwerdegegnerin der Beschwerdeführerin die Kosten der Beurteilungen von Dr. L____."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

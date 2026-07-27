@@ -40,7 +40,14 @@ const BUDGET_MB = 1024;
 // der Fan-out still ballooniert. Ist 2.7.2026 ≈ 0.53 MB (Erlass- + Artikel-Ebene);
 // Deckel bewusst fliessend (Ist + grosszügige Reserve, bei Korpus-Ausbau nachziehen),
 // bremst Unfälle, limitiert nicht künstlich (analog BUDGET_MB).
-const NORM_INDEX_BUDGET_MB = 3;
+// 28.7.2026 (W2·6-NKEY Backfill): 3 → 8 MB. Ursache ist der Artikel-Fan-out der
+// Fliesstext-Erkennung: der Backfill leitet die normKeys über ALLE 5093 Snapshots ab
+// (vorher 1114), wodurch die Artikel-Ebene von 355 auf 4473 Buckets wächst — das Dekret
+// («vollständig erkennen») ist genau dieser Fan-out, nicht ein Unfall. Ist 28.7.2026 =
+// 6.13 MB, Deckel = Ist + ~25 % Reserve. §15-Logikverlust-Bewertung: keiner — reine
+// Index-Grösse ohne Regeländerung; die Auslieferung erfolgt bereits über die 157 Shards
+// unter public/rechtsprechung/norm-index/, die Lade-Optimierung ist W2·7-VZUI-Thema.
+const NORM_INDEX_BUDGET_MB = 8;
 const AHV = /\b756\.\d{4}\.\d{4}\.\d{2}\b/;   // CH-Sozialversicherungsnummer (darf nicht vorkommen)
 
 const fehler: string[] = [];

@@ -236,7 +236,12 @@
         "          Dem Vertreter des Beschwerdeführers im Kostenerlass, Dr. B____, Advokat, wird ein Honorar von Fr. 2'000.-- (inkl. Auslagen) zuzüglich Fr. 154.-- (7.7%) MWSt. aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "ATSV",
+        "BGG",
+        "VWVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

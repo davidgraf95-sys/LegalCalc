@@ -167,7 +167,10 @@
         "Art. 189 CPP"
       ],
       "normKeys": [
-        "STGB"
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

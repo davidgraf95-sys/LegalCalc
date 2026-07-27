@@ -193,7 +193,10 @@
         "Art. 20 ALCP",
         "Art. 20 FZA"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "FZA"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

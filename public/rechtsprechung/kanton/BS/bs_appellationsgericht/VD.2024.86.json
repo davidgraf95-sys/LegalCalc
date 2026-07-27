@@ -262,7 +262,10 @@
         "Das Erziehungsdepartement hat der Rekurrentin für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 446.–, einschliesslich Auslagen und zuzüglich 8,1 % MWST von CHF 36.–, insgesamt somit CHF 482.–, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

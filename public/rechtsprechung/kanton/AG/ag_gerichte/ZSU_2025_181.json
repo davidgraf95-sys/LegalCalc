@@ -138,9 +138,9 @@
         "Art. 175 Abs. 2 SCHKG"
       ],
       "normKeys": [
-        "ZPO",
         "BGG",
-        "SCHKG"
+        "SCHKG",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

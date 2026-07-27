@@ -297,7 +297,13 @@
         "Art. 127 Abs. 3 LJ/FR",
         "Art. 17 Abs. 3 OMED"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "2C_222/2016",
         "2C_283/2020",

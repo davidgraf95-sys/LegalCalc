@@ -188,9 +188,13 @@
         "Art. 21a ELG"
       ],
       "normKeys": [
-        "ELG",
         "ATSG",
-        "BGG"
+        "ATSV",
+        "BGG",
+        "BVG",
+        "ELG",
+        "KVG",
+        "KVV"
       ],
       "zitierteEntscheide": [
         "8C_62/2018",

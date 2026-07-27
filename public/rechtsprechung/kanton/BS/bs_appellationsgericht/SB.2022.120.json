@@ -651,7 +651,12 @@
         "B____ wird für das erstinstanzliche Verfahren gemäss Art. 429 Abs. 1 der Strafprozessordnung aus der Strafgerichtskasse eine reduzierte Parteientschädigung von CHF 5'235.20 zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

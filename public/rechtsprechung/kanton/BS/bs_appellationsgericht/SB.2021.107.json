@@ -600,7 +600,12 @@
         "Der unentgeltlichen Vertreterin von C____, [...], wird für das zweitinstanzliche Verfahren ein Honorar gemäss Aufstellung in Höhe von CHF 483.35 und 3 % Auslagenersatz von CHF 14.40 sowie 7,7 % MWST von CHF 38.35, insgesamt also CHF 536.10 aus der Gerichtskasse ausgerichtet. Die zusätzlich verrechneten, im Auslagenersatz jedoch bereits enthaltenen Kommunikations-, Kopier- und Portokosten sind nicht zu entschädigen. Der Beurteilte hat dem Appellationsgericht diesen Betrag in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 und Art. 426 Abs. 4 der Strafprozessordnung zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -208,9 +208,10 @@
         "Art. 61 Abs. 4 STGB"
       ],
       "normKeys": [
-        "STPO",
+        "BGG",
+        "BV",
         "STGB",
-        "BV"
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

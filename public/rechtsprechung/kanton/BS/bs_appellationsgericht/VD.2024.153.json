@@ -192,7 +192,11 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird dem Rechtsbeistand des Rekurrenten, [...], für das verwaltungsgerichtliche Rekursverfahren eine Entschädigung von CHF 1’236.–, einschliesslich Auslagen und zuzüglich MWST CHF 110.10 (8,1 % auf CHF 1'236.–), insgesamt somit CHF 1'346.10 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

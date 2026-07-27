@@ -256,7 +256,10 @@
         "Das JSD hat der Rekurrentin für das verwaltungsgerichtliche Rekursverfahren eine reduzierte Parteientschädigung von CHF 2'737.60, zuzüglich 7,7 % MWST in Höhe von CHF 210.80, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

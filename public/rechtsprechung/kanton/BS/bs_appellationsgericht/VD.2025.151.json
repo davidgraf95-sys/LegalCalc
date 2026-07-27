@@ -192,7 +192,9 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird dem Rechtsbeistand des Rekurrenten, Rechtsanwalt Matthias Brunner, für das verwaltungsgerichtliche Rekursverfahren eine Entschädigung von CHF 1'854.–, einschliesslich Auslagen und zuzüglich 8,1 % MWST von CHF 150.15, insgesamt somit CHF 2'004.15, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

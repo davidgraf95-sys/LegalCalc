@@ -182,7 +182,12 @@
         "Der Beschwerdegegner bezahlt der Beschwerdeführerin eine Parteientschädigung von CHF 500.– für das erstinstanzliche Verfahren."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "SCHKG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -152,7 +152,12 @@
         "Dem Verteidiger, [...], wird für das Ausstandsverfahren ein Honorar von CHF 1'600.– zuzüglich 8,1 % MWST von CHF 129.60, insgesamt somit CHF 1'729.60, aus der Gerichtskasse entrichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

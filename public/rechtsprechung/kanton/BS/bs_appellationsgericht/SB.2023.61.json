@@ -309,7 +309,11 @@
         "Der amtlichen Verteidigerin, [...], Advokatin, werden für das Berufungsverfahren ein Honorar von CHF 2'150.– und ein Auslagenersatz von CHF 54.–, zuzüglich Mehrwertsteuer von insgesamt CHF 171.10 (7,7 % auf CHF 1’854 = CHF 142.75 [Aufwand und Auslagen bis 31.12.23] sowie 8,1 % auf CHF 350.– = CHF 28.35 [Aufwand ab 1.1.24] somit total CHF 171.10) aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt für die Entschädigung der amtlichen Verteidigung im erstinstanzlichen Verfahren vollumfänglich und für das Berufungsverfahren im Umfang 90 % der Kosten der amtlichen Verteidigung vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

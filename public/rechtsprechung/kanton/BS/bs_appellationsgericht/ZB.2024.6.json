@@ -320,7 +320,11 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird der unentgeltlichen Rechtsbeiständin des Berufungsklägers 2 und 3, [...], eine Entschädigung von CHF 2'918.35, einschliesslich Auslagen und zuzüglich 8,1 % MWST von CHF 236.40, insgesamt somit CHF 3'154.75, aus der Gerichtskasse ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

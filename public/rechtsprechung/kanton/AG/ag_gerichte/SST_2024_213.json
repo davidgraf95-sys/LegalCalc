@@ -202,9 +202,10 @@
         "Art. 122 STPO"
       ],
       "normKeys": [
-        "STPO",
         "BGG",
-        "STGB"
+        "OR",
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

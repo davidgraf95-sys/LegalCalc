@@ -315,8 +315,11 @@
         "Art. 292 STGB"
       ],
       "normKeys": [
-        "STGB",
         "BGG",
+        "DESG",
+        "STGB",
+        "URG",
+        "UWG",
         "ZPO"
       ],
       "zitierteEntscheide": [

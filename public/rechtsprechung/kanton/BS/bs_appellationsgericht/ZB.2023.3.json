@@ -672,7 +672,15 @@
         "5. Die Parteikosten des Berufungsverfahrens werden wettgeschlagen. Zufolge Bewilligung der unentgeltlichen Rechtspflege werden den Rechtsbeiständen Honorare aus der Gerichtskasse ausgerichtet. Der unentgeltlichen Rechtsvertreterin der Berufungsklägerin, B____, wird ein Honorar in der Höhe von CHF 5'209.70 (inkl. Auslagen), zuzüglich 7,7 % MWST von CHF 401.15, aus der Gerichtskasse ausgerichtet. Der unentgeltlichen Rechtsvertreterin des Berufungsbeklagten, D____, wird ein Honorar von CHF 5'304.50 (inkl. Auslagen), zuzüglich 7,7 % MWST von CHF 408.45, aus der Gerichtskasse bezahlt. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "DBG",
+        "HKSUE96",
+        "IPRG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

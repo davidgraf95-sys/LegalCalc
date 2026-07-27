@@ -292,7 +292,11 @@
         "Dem amtlichen Verteidiger des Beschwerdegegners, [...], Advokat, wird für das Verfahren BES.2023.168 ein Honorar von CHF 666.67 zuzüglich Auslagen von CHF 16.75 und zuzüglich Mehrwertsteuer von CHF 55.36 (8,1 % auf CHF 683.43) und für das Verfahren BES.2023.169 ein Honorar von CHF 1'900.– zuzüglich Auslagen von CHF 26.50 und zuzüglich Mehrwertsteuer von CHF 156.05 (8,1 % auf CHF 1'926.50), somit total CHF 2'821.35 aus der Gerichtskasse ausgerichtet. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

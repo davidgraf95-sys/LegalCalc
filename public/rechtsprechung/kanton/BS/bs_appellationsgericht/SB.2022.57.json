@@ -279,7 +279,15 @@
         "Die Anträge auf Ausrichtung einer Parteientschädigung für das erst- und zweitinstanzliche Verfahren werden abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SSV",
+        "STGB",
+        "STPO",
+        "SVG",
+        "VRV",
+        "VZV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

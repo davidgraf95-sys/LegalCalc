@@ -290,7 +290,13 @@
         "Die der Beschwerdeführerin geschuldete reduzierte Parteientschädigung in Höhe von Fr. 1'250.-- (inklusive Auslagen) zuzüglich Mehrwertsteuer ist im Umfang von Fr. 625.-- (zuzüglich Fr. 50.60 Mehrwertsteuer) von der Beschwerdegegnerin und im Umfang von Fr. 625.-- (zuzüglich Fr. 50.60 Mehrwertsteuer) von der Beigeladenen zu bezahlen. Im Übrigen werden die ausserordentlichen Kosten wettgeschlagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "BVG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

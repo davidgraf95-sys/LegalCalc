@@ -180,7 +180,11 @@
         "Art. 2 Abs. 2 CP",
         "Art. 2 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -147,7 +147,11 @@
         "Dem Beschwerdeführer wird für das vorliegende Beschwerdeverfahren die amtliche Verteidigung bewilligt. Der amtlichen Verteidigerin, Advokatin [...], wird für das Beschwerdeverfahren ein Honorar von CHF 400.– (einschliesslich Auslagen), zuzüglich 7,7 % MWST von CHF 30.80, somit total CHF 430.80, aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

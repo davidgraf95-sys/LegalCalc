@@ -188,7 +188,11 @@
         "Dem Beschwerdeführer wird für das Beschwerdeverfahren die unentgeltliche Rechtspflege gewährt und seinem Rechtsvertreter, [...], aus der Gerichtskasse eine Entschädigung von insgesamt CHF 1’297.20 (inkl. MWST) ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

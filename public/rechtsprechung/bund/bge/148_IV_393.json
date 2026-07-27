@@ -227,7 +227,13 @@
         "Art. 63 CP",
         "Art. 68 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "1B_188/2012",
         "6B_1029/2021",

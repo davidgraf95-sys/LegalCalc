@@ -121,7 +121,10 @@
         "Die Beschwerdeführenden tragen die Gerichtskosten von CHF 300.– in solidarischer Verbindung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

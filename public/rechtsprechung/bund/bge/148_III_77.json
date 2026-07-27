@@ -203,7 +203,13 @@
         "Art. 4 Abs. 1 LCART",
         "Art. 5 Abs. 1 KG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGERR",
+        "BGG",
+        "BV",
+        "KG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "4A_229/2021",
         "4A_357/2015",

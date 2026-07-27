@@ -190,7 +190,13 @@
         "Art. 19 Abs. 3 OHG",
         "Art. 19 LAVI"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "OHG",
+        "OR"
+      ],
       "zitierteEntscheide": [
         "1A.168/2002",
         "1C_19/2023",

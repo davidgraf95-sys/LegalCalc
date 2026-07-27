@@ -206,9 +206,10 @@
         "Art. 61 ATSG"
       ],
       "normKeys": [
-        "UVG",
         "ATSG",
-        "BGG"
+        "BGG",
+        "UVG",
+        "UVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

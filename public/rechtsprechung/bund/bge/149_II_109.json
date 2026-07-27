@@ -397,7 +397,11 @@
         "Art. 7 CST",
         "Art. 80 LS/GE"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "2C_1083/2012",
         "2C_280/2017",

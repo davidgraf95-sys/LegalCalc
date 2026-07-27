@@ -328,10 +328,13 @@
         "Art. 28a Abs. 1 IVG"
       ],
       "normKeys": [
-        "BGG",
         "ATSG",
-        "UVG",
-        "IVG"
+        "BGG",
+        "BV",
+        "EMRK",
+        "IVG",
+        "IVV",
+        "UVG"
       ],
       "zitierteEntscheide": [
         "8C_111/2021",

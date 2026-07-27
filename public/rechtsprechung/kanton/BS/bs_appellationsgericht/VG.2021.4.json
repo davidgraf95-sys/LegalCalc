@@ -313,7 +313,13 @@
         "Die Beschwerdeführenden tragen die Gerichtskosten des Beschwerdeverfahrens mit einer Gebühr von CHF 1'500.–, einschliesslich Auslagen, in solidarischer Verbindung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "EPG",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

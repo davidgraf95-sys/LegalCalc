@@ -441,10 +441,12 @@
         "Art. 71 STGB"
       ],
       "normKeys": [
-        "STGB",
         "BGG",
         "BV",
-        "STPO"
+        "EMRK",
+        "STGB",
+        "STPO",
+        "VSTRR"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

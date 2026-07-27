@@ -236,7 +236,10 @@
         "            Die Kosten für das psychiatrische Gerichtsgutachten in Höhe von Fr. 4'850.-- sind von der IV-Stelle zu tragen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

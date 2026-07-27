@@ -261,7 +261,11 @@
         "Die Gesuchsgegnerin hat dem Gesuchsgegner für das vorliegende Verfahren eine Parteientschädigung von CHF 780.–, zuzüglich 8,1 % MWST von CHF 63.20, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

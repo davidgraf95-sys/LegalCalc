@@ -236,7 +236,12 @@
         "Art. 11 Abs. 3 RPV",
         "Art. 11 RPG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "RPG",
+        "RPV"
+      ],
       "zitierteEntscheide": [
         "1C_19/2019",
         "1C_388/2015",

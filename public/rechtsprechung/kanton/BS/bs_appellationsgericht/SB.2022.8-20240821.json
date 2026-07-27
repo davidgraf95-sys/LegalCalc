@@ -241,7 +241,11 @@
         "Der unentgeltlichen Vertreterin der Privatklägerin B____, [...], werden ein Honorar von CHF 983.35 und ein Auslagenersatz von CHF 29.50, zuzüglich 7,7 % MWST von CHF 78.‒, somit total CHF 1’090.85 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -325,7 +325,11 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird dem Rechtsbeistand der Beigeladenen, MLaw Andreas Fischer, für das verwaltungsgerichtliche Beschwerdeverfahren ein Honorar von 2’880.–, zuzüglich Auslagen von CHF 30.– und 8,1 % MWST von CHF 235.70, insgesamt somit CHF 3’145.70, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

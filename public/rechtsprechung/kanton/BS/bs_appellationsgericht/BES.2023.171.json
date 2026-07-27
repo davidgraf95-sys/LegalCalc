@@ -153,7 +153,11 @@
         "Zufolge Bewilligung der unentgeltlichen Verbeiständung wird dem Rechtsbeistand des Beschwerdeführers, [...], für das Beschwerdeverfahren ein Honorar von CHF 1'200.–, zuzüglich Mehrwertsteuer von insgesamt CHF 94.– (7,7 % auf CHF 800.– sowie 8,1 % auf CHF 400.–), insgesamt somit CHF 1'294.–, aus der Gerichtskasse ausgerichtet. Art. 135 Abs. 4 in Verbindung mit Art. 138 Abs. 1 StPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -303,7 +303,12 @@
         "Die Rekurrierenden tragen die Kosten des Rekursverfahrens in solidarischer Verbindung mit einer Gebühr von CHF 2’500.–, einschliesslich Auslagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "LSV",
+        "RPG",
+        "USG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -169,7 +169,11 @@
         "Dieses Urteil wird im Dispositiv im Kantonsblatt veröffentlicht (§ 17 Abs. 4 IRG)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

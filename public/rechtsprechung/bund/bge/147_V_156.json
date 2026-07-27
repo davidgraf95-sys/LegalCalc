@@ -203,11 +203,12 @@
         "Art. 9 BV"
       ],
       "normKeys": [
+        "ATSG",
         "BGG",
-        "ELG",
-        "ZGB",
         "BV",
-        "ATSG"
+        "ELG",
+        "KVG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2C_236/2020",

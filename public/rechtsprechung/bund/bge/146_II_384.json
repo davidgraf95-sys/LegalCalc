@@ -414,7 +414,11 @@
         "Art. 19a Abs. 4 KPFV"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "BV",
+        "EBG",
+        "RVOG",
+        "VWVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

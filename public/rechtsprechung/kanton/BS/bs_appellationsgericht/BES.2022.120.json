@@ -173,7 +173,10 @@
         "Der Beschwerdeführer trägt die Gerichtskosten des Verfahrens mit einer Entscheidgebühr von CHF 500.– (einschliesslich Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

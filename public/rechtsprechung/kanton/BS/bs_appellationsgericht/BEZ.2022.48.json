@@ -255,7 +255,13 @@
         "Die Beschwerdegegnerin und der Beschwerdegegner können in der Kanzlei des Appellationsgerichts des Kantons Basel-Stadt, St. Alban-Vorstadt 25, 4052 Basel, Einsicht in den vorliegenden Entscheid nehmen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "LUGUE",
+        "SCHKG",
+        "STGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

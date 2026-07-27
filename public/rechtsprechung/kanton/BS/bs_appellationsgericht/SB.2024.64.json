@@ -429,7 +429,13 @@
         "Die in Rechtskraft erwachsene Entschädigung des Vertreters des Privatklägers im Kostenerlass, lic. iur. Alain Joset, für das erstinstanzliche Verfahren hat der Berufungskläger dem Strafgericht zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben, in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 der Strafprozessordnung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

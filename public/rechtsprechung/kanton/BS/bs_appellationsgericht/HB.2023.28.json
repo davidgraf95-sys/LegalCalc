@@ -277,7 +277,11 @@
         "Der amtlichen Verteidigerin, Advokatin [...], wird für das Beschwerdeverfahren ein Honorar von CHF 1'900.–, ein Auslagenersatz von CHF 28.45 sowie ein Ersatz der Dolmetscherkosten im Betrage von CHF 105.– zzgl. MWST von CHF 148.50, insgesamt also CHF 2'181.95, aus der Gerichtskasse zugesprochen. Der Entscheid über eine allfällige Rückforderung gemäss Art. 135 Abs. 4 StPO wird dem Sachentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

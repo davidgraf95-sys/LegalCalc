@@ -206,7 +206,14 @@
         "Die ausserordentlichen Kosten werden wettgeschlagen. Dr. B____ wird ein Anwaltshonorar von Fr. 3'600.-- (inklusive Auslagen) zuzüglich Mehrwertsteuer von 7.7 % auf Fr. 2'400.-- und von 8.1 % auf Fr. 1'200.-- aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "BV",
+        "ELG",
+        "ELV",
+        "EMRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

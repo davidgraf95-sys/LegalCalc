@@ -257,7 +257,11 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird dem Rechtsbeistand der Rekurrierenden, Advokat MLaw Joël Naef, für das verwaltungsgerichtliche Rekursverfahren eine Entschädigung von CHF 2'087.45, einschliesslich Auslagen und zuzüglich 8,1 % MWST von CHF 169.10, insgesamt somit CHF 2'256.55, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "OR"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

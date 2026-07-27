@@ -183,8 +183,13 @@
         "Art. 121 Abs. 2 CPP"
       ],
       "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
         "STGB",
-        "STPO"
+        "STPO",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

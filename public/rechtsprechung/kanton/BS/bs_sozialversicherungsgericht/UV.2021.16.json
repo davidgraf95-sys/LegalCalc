@@ -271,7 +271,11 @@
         "            Die ausserordentlichen Kosten werden wettgeschlagen. Über das Kostenerlassgesuch sowie über das aus der Gerichtskasse zuzusprechende Anwaltshonorar wird einzelrichterlich entschieden."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

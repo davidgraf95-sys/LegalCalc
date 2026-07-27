@@ -386,7 +386,12 @@
         "Im Verfahren IV.2024.42 hat die Beschwerdegegnerin der Beschwerdeführerin eine Parteientschädigung von Fr. 2'000.-- (inklusive Auslagen) zuzüglich Mehrwertsteuer von Fr. 162.-- (8.1 %) zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

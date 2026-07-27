@@ -161,7 +161,10 @@
         "Das Gesuch um unentgeltliche Rechtspflege für das verwaltungsgerichtliche Rekursverfahren wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

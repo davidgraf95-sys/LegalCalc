@@ -175,7 +175,11 @@
         "Art. 14 RAI",
         "Art. 8 Abs. 1 LAI"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [
         "8C_803/2013",
         "9C_293/2016",

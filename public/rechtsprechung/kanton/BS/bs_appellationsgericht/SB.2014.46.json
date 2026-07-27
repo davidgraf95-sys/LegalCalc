@@ -621,7 +621,12 @@
         "Für das Berufungsverfahren ab dem 9. Dezember 2020 wird dem unentgeltlichen Beistand schliesslich ein Honorar von CHF 1'883.35 sowie ein Auslagenersatz von CHF 50.65, zuzüglich 7,7 % MWST von insgesamt CHF 148.90, somit total CHF 2'082.90, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -206,7 +206,14 @@
         "Art. 31 VGG",
         "Art. 31a Abs. 1 ASYLG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "ASYLG",
+        "BGG",
+        "EMRK",
+        "VGG",
+        "VWVG"
+      ],
       "zitierteEntscheide": [
         "BGE 137 I 305",
         "D-2590/2025",

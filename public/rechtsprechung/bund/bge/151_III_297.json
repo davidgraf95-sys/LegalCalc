@@ -286,7 +286,12 @@
         "Art. 3 IPRG",
         "Art. 3 LDIP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IPRG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "4A_112/2021",
         "4A_146/2012",

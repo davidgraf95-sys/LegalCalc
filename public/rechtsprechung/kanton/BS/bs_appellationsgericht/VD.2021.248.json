@@ -237,7 +237,11 @@
         "Die Rekurrentin und das Universitätsspital Basel werden verpflichtet, der Beigeladenen je eine Parteientschädigung von CHF 1'723.– auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

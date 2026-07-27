@@ -376,7 +376,13 @@
         "Der Berufungskläger trägt die Gerichtskosten des Berufungsverfahrens von CHF 1'000.– und hat der Berufungsbeklagten eine Parteientschädigung von CHF 3'471.–, zuzüglich 8,1 % MWST von CHF 281.15, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IPRG",
+        "STGB",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

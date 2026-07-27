@@ -167,7 +167,9 @@
         "Die Rekurrentin trägt die Kosten des Rekursverfahrens mit einer Gebühr von CHF 4‘000.–, einschliesslich Auslagen. Die Kosten werden mit dem Kosten-vorschuss der Rekurrentin von CHF 4'000.– verrechnet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

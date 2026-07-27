@@ -198,8 +198,10 @@
         "Art. 105 Abs. 2 BGG"
       ],
       "normKeys": [
+        "BGG",
+        "BV",
         "UVG",
-        "BGG"
+        "UVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -243,7 +243,11 @@
         "Dem Beschuldigten wird für das Beschwerdeverfahren eine Entschädigung von CHF 1'113.45 (inkl. Auslagen und MWST) aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

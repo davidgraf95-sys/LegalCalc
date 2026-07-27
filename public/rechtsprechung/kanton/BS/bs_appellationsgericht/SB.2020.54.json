@@ -1175,7 +1175,17 @@
         "D____ wird – neben der Zeugenentschädigung für Barauslagen und Verdienstausfall in Höhe von insgesamt CHF 170.30 – für das Berufungsverfahren umständehalber eine Entschädigung von CHF 750.– (inkl. Auslagen und MWST) aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "FZA",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

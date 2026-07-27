@@ -299,7 +299,11 @@
         "Dem amtlichen Verteidiger, MLaw Silvio Bürgi, werden für die zweite Instanz ein Honorar von CHF 3’900.‒ und ein Auslagenersatz von CHF 81.05, zuzüglich 8,1 % MWST von insgesamt CHF 322.45 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

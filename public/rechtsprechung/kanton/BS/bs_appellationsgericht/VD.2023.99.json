@@ -191,7 +191,10 @@
         "Den Beigeladenen wird eine Parteientschädigung von CHF 2'575.–, inklusive Auslagen, zuzüglich 7,7 % MWST von CHF 198.30, zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "RPG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -175,7 +175,11 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird der unentgeltlichen Rechtsbeiständin der Berufungsklägerin, MLaw Selina Fastrich, eine Entschädigung von CHF 731.45, zuzüglich 8,1 % MWST von CHF 59.25, insgesamt somit CHF 790.70, aus der Gerichtskasse ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -186,7 +186,11 @@
         "Die Rekurrierenden in den Verfahren VD.2023.166, VD.2024.13 und VD.2024.14 haben der Beigeladenen für die verwaltungsgerichtlichen Rekursverfahren insgesamt eine Parteientschädigung von CHF 2'575.–, einschliesslich Auslagen, in solidarischer Verbindung zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "RPG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

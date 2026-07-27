@@ -178,7 +178,10 @@
         "B____ wird für das Beschwerdeverfahren aus der Gerichtskasse eine Parteientschädigung von CHF 1'056.95 (inkl. Auslagen und MWST) zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

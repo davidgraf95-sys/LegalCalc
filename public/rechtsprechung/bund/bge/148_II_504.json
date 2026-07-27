@@ -263,7 +263,10 @@
         "Art. 327a Abs. 1 CO"
       ],
       "normKeys": [
-        "DBG"
+        "BGG",
+        "DBG",
+        "OR",
+        "STHG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

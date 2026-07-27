@@ -269,7 +269,12 @@
         "Der Gesuchsteller im Verfahren DGS.2022.10 trägt die Kosten des Ausstandsverfahrens mit einer Abschreibungsgebühr von CHF 300.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -218,7 +218,12 @@
         "Die Beschwerdeführerin trägt die Gerichtskosten des Beschwerdeverfahrens mit einer Gebühr von CHF 800.–. Der Kostenvorschuss von CHF 800.‒ wird damit verrechnet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

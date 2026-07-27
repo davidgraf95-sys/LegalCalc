@@ -203,8 +203,12 @@
         "Art. 28 KLV"
       ],
       "normKeys": [
+        "ATSG",
+        "BGG",
         "IVG",
-        "BGG"
+        "KLV",
+        "KVG",
+        "KVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

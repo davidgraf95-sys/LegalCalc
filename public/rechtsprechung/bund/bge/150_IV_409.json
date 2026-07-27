@@ -212,7 +212,11 @@
         "Art. 324 Abs. 2 CPP",
         "Art. 380 CPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "1B_40/2023",
         "1B_656/2020",

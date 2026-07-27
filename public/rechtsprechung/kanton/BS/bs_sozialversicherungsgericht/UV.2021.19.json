@@ -235,7 +235,11 @@
         "            Zufolge Bewilligung der unentgeltlichen Verbeiständung wird Advokat K____ ein Honorar von Fr. 3‘600.– (inklusive Auslagen) zuzüglich Mehrwertsteuer von Fr. 277.20 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "ATSV",
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

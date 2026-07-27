@@ -308,10 +308,12 @@
         "Art. 9 AHVG"
       ],
       "normKeys": [
-        "BGG",
-        "STHG",
         "AHVG",
-        "DBG"
+        "BGG",
+        "BV",
+        "DBG",
+        "STHG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2C_1000/2021",

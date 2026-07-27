@@ -159,7 +159,10 @@
         "Der Antrag auf Bewilligung der amtlichen Verteidigung für das Revisionsverfahren wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

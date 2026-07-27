@@ -205,7 +205,10 @@
         "Art. 183 CPC",
         "Art. 319 CPC"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "1B_82/2018",
         "1P.708/2004",

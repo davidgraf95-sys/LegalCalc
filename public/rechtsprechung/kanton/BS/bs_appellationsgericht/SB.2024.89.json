@@ -309,7 +309,12 @@
         "Der Privatverteidigerin, lic. iur. Martina Horni, wird eine reduzierte Entschädigung von CHF 606.– für das zweitinstanzliche Verfahren (inkl. Auslagen und MWST) aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

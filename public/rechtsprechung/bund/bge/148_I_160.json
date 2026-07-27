@@ -530,7 +530,12 @@
         "Art. 113 LTF",
         "Art. 117 CST"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "1C_226/2009",
         "1C_443/2017",

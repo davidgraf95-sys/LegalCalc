@@ -260,7 +260,11 @@
         "Der Rekurrentin 2 wird eine Parteientschädigung von CHF 7'530.– inklusive Auslagen, zuzüglich 7,7 % MWST auf CHF 3'765.– von CHF 289.90 und 8,1 % MWST auf CHF 3'765.– von CHF 304.95, zugesprochen, welche zur Hälfte durch die Baurekurskommission und je zu einem Viertel von den Beigeladenen 1-3 (untereinander in solidarischer Verpflichtung) und dem Beigeladenen 4 zu tragen ist."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "RPG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

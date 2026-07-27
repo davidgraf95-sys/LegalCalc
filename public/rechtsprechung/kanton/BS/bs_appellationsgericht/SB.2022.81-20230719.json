@@ -93,7 +93,9 @@
         "A____ wird für seine Verteidigungskosten aus der Gerichtskasse eine Parteientschädigung von EUR 8’711.22 ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

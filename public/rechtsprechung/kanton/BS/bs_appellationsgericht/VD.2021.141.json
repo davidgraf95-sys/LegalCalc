@@ -196,7 +196,9 @@
         "Der Rekurrent trägt die Gerichtskosten des Rekursverfahrens von CHF 1'500.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

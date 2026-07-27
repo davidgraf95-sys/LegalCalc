@@ -232,7 +232,9 @@
         "Die Rekurrierenden tragen in solidarischer Verbindung die Kosten des verwaltungsgerichtlichen Verfahrens mit einer Gebühr von CHF 2’000.– einschliesslich Auslagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

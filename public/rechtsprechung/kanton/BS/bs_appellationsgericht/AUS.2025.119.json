@@ -197,7 +197,11 @@
         "            Dem unentgeltlichen Rechtsvertreter, lic. iur. Stefan Kunz, Advokat, wird ein Honorar von CHF 904.–, zuzüglich Auslagen von CHF 7.55 und 8,1 % Mehrwertsteuer von CHF 73.85, insgesamt also CHF 985.40 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

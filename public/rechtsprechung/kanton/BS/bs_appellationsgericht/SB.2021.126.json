@@ -346,7 +346,12 @@
         "Dem Vertreter des Privatklägers im Kostenerlass, [...], wird in Anwendung von Art. 136 in Verbindung mit Art. 426 Abs. 4 der Straf­prozessordnung ein Honorar von CHF 1’317.25 und ein Auslagenersatz von CHF 23.40, zuzüglich 7,7 % MWST von CHF 103.25, aus der Gerichtskasse ausgerichtet. A____ hat dem Appellationsgericht diesen Betrag zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben, in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 der Strafprozessordnung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

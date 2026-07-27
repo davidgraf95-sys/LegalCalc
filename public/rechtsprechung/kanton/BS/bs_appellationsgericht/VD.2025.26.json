@@ -251,7 +251,10 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird der Rechtsbeiständin des Rekurrenten, MLaw Cinzia Fallegger-Santo, Advokatin, für das verwaltungsgerichtliche Rekursverfahren eine Entschädigung von CHF 3'131.95, einschliesslich Auslagen und zuzüglich 8,1 % MWST von CHF 253.70, insgesamt somit CHF 3'385.65, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -250,7 +250,11 @@
         "          Die ausserordentlichen Kosten werden wettgeschlagen. Zufolge Bewilligung der unentgeltlichen Rechtspflege wird dem Vertreter der Klägerin, B____, Advokat ein Anwaltshonorar von CHF 3'000.00 (inkl. Auslagen) zuzüglich Mehrwertsteuer von CHF 235.00 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -332,7 +332,13 @@
         "Das Schiedsgericht IN SOZIALVERSICHERUNGSSACHEN"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AMBV",
+        "BGG",
+        "HMG",
+        "KVG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

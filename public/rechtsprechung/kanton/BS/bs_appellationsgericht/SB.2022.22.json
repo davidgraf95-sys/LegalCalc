@@ -371,7 +371,11 @@
         "A____ wird behaftet bei der Anerkennung der Parteientschädigungsforderung in Höhe von CHF 1'952.40 von B____ und C____."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

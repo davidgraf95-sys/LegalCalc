@@ -757,7 +757,16 @@
         "Für die zweite Instanz werden dem amtlichen Verteidiger, Advokat lic. iur. Daniel Wagner, ein Honorar von CHF 14'966.65 und ein Auslagenersatz von CHF 1'382.05, zuzüglich Mehrwertsteuer von insgesamt CHF 1'306.65 (7,7 % auf CHF 4'399.15 [Aufwand bis 31.12.23] sowie 8,1 % auf CHF 11'949.55 [Aufwand ab 1.1.24]), somit total CHF 17'655.35 aus der Gerichtskasse ausgerichtet. Art. 135 Abs. 4 der Strafprozessordnung bleibt im Umfang von 50 % vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "IRSG",
+        "STGB",
+        "STPO",
+        "VZAE"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

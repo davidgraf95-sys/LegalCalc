@@ -208,7 +208,12 @@
         "Der Kostenvorschuss des Beschwerdeführers im Betrag von insgesamt CHF 1'900.– wird mit den ihm auferlegten Verfahrenskosten und mit dem von ihm dem Gericht zu erstattenden Anteil der Parteientschädigung für die Beschwerdegegnerin verrechnet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

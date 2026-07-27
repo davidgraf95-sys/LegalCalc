@@ -297,7 +297,12 @@
         "Dem Verteidiger [...] wird für das Ausstandsverfahren ein Honorar von CHF 1'000.– und ein Auslagenersatz in Höhe von CHF 30.–, zuzüglich 7,7 % Mehrwertsteuer von insgesamt CHF 79.30, total CHF 1'109.30, aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 StPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -326,7 +326,13 @@
         "Das JSD hat den Rekurrierenden für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 5'108.55 (inklusive Auslagen und 7,7 % MWST) zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "KRK",
+        "VZAE"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

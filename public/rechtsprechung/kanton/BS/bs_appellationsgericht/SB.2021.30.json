@@ -284,7 +284,12 @@
         "A_____ wird in Gutheissung seiner Berufung vom Vorwurf des rechtswidrigen Aufenthalts kostenlos freigesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

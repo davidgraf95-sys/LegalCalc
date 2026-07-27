@@ -218,8 +218,11 @@
         "Art. 141 CPP"
       ],
       "normKeys": [
+        "BGG",
         "DSG",
-        "STPO"
+        "STPO",
+        "SVG",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

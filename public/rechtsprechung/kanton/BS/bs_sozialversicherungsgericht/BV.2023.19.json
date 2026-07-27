@@ -323,7 +323,11 @@
         "           Hansjörg Geissmann, Rechtsanwalt, wird ein Verbeiständungshonorar von Fr. 3'500.-- (inklusive Auslagen) zuzüglich Mehrwertsteuer von Fr. 283.50 zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BVG",
+        "IVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

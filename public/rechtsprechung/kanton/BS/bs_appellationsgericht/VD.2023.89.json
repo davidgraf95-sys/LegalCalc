@@ -211,7 +211,9 @@
         "Die Rekurrierenden haben den Beigeladenen für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 3’000.– zu bezahlen, in solidarischer Verpflichtung, zuzüglich Auslagen von CHF 90.– und Mehrwertsteuer von CHF 244.10 (7,7 % auf CHF 1'545.– und 8,1 % auf CHF 1'545.–), total also CHF 3'334.10. "
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

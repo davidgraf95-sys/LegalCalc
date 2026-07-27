@@ -193,10 +193,11 @@
         "Art. 681 Abs. 1 ZGB"
       ],
       "normKeys": [
-        "OR",
-        "ZGB",
+        "BGBB",
         "BGG",
-        "BV"
+        "BV",
+        "OR",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2C_931/2014",

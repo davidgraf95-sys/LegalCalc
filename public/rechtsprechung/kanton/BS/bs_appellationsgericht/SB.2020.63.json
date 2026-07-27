@@ -308,7 +308,14 @@
         "Es wird festgestellt, dass dem früheren amtlichen Verteidiger, [...], Advokat, für seine Bemühungen im Berufungsverfahren ein Honorar von 5.83 Stunden à CHF 200.–, daher CHF 1‘166.65, zuzüglich Auslagen von CHF 35.05 sowie 7,7 % MWST von CHF 92.55, insgesamt also CHF 1‘294.25 aus der Gerichtskasse ausgerichtet wurden. Der neu eingesetzten amtlichen Verteidigerin, [...], werden für die zweite Instanz zusätzlich ein Honorar von 57 Stunden à CHF 200.–, daher CHF 11‘400.–, zuzüglich Aus­lagen von CHF 301.– sowie 7,7 % MWST von CHF 901.–, insgesamt also CHF 12‘602.– aus der Gerichtskasse ausgerichtet. In Bezug auf die Entschädigungen der amtlichen Verteidigung bleibt Art. 135 Abs. 4 der Strafprozessordnung vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

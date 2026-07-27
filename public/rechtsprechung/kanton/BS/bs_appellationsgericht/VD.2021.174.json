@@ -152,7 +152,12 @@
         "Dem Vertreter des Rekurrenten, [...], Rechtsanwalt, wird für das Rekursverfahren ein Honorar von CHF 2'921.85 (inklusive Auslagen) sowie 7,7 % MWST von CHF 225.– aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -219,7 +219,11 @@
         "Dem Beschwerdeführer wird eine reduzierte Parteientschädigung im Betrage von CHF 1’077.– (einschliesslich Auslagen und Mehrwertsteuer) aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

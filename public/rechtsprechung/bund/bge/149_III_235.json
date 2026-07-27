@@ -295,7 +295,10 @@
         "Art. 12 Abs. 1 HBEWUE70",
         "Art. 12 CLAH70"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

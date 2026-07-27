@@ -1,0 +1,31 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "FIDLEG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "3": [
+      {
+        "key": "bge_151_II_884",
+        "zitierung": "BGE 151 II 884",
+        "regesteKurz": "a Art. 29 Abs. 1 BGG; Art. 38 f. StG; Anträge und Rügen vor Bundesgericht; Änderungen des Streitgegenstands im Rechtsmittelverfahren; Verwirkung der Einrede der funktionellen Unzuständigkeit. Grenzen der Zulässigkeit von Anträgen und Rügen…",
+        "datum": "2025-03-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "7": [
+      {
+        "key": "bge_149_III_105",
+        "zitierung": "BGE 149 III 105",
+        "regesteKurz": "Vertrag \"execution only\"; Veruntreuung von Kundenguthaben durch einen Bankangestellten. Die verschiedenen im Rahmen einer Bankbeziehung abgeschlossenen Verträge bilden einen gemischten Vertrag (E. 4.1). Im Falle der Veruntreuung von Kunden…",
+        "datum": "2022-09-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

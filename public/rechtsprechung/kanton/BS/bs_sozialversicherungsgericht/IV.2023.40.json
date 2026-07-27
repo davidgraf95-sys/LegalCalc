@@ -245,7 +245,10 @@
         "          Die Beschwerdeführerin trägt die ordentlichen Kosten, bestehend aus einer Gerichtsgebühr von Fr. 800.--. Zufolge Bewilligung der unentgeltlichen Prozessführung gehen sie zu Lasten des Staates."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -318,7 +318,13 @@
         "Der Privatklägerin B____ AG wird gemäss Art. 436 Abs. 1 in Verbindung mit 433 Abs. 1 der Strafprozessordnung zu Lasten von A____ für das erstinstanzliche Verfahren eine Parteientschädigung von CHF 6'510.55 zugesprochen (inklusive Auslagen und Mehrwertsteuer)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

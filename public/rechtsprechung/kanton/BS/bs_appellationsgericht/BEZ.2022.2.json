@@ -262,7 +262,12 @@
         "Die Beschwerde einschliesslich Beilagen und die korrigierte Version der Beschwerde werden der Beschwerdegegnerin zugestellt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -626,7 +626,15 @@
         "Der unentgeltlichen Vertreterin der Privatklägerin 3, [...], werden für die zweite Instanz ein Honorar von CHF 1'980.– und ein Auslagenersatz von CHF 23.50, zuzüglich 7,7 % MWST von insgesamt CHF 154.25, somit total CHF 2'157.75 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

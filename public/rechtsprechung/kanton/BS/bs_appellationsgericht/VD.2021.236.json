@@ -200,7 +200,11 @@
         "Die Rekurrentin hat der Beigeladenen für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 6’128.50 zuzüglich 7,7 % MWST von CHF 471.90, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "RPG",
+        "VWVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

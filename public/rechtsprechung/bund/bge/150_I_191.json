@@ -142,8 +142,11 @@
         "Art. 6 CEDH"
       ],
       "normKeys": [
-        "ZPO",
-        "BV"
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -226,11 +226,14 @@
         "Art. 60 Abs. 1 CO"
       ],
       "normKeys": [
-        "OR",
-        "VVG",
-        "IVG",
         "BGG",
-        "ZGB"
+        "IVG",
+        "OR",
+        "SCHKG",
+        "STGB",
+        "VVG",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "2C_110/2008",

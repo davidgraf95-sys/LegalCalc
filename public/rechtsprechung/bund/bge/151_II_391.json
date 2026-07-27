@@ -301,8 +301,13 @@
         "Art. 29 Abs. 1 BV"
       ],
       "normKeys": [
+        "BANKG",
         "BGG",
-        "BV"
+        "BV",
+        "ERV",
+        "FINMAG",
+        "VGG",
+        "VWVG"
       ],
       "zitierteEntscheide": [
         "2C_1081/2018",

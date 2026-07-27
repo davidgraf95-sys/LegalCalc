@@ -147,7 +147,10 @@
         "Die Beschwerdeführerin trägt die Gerichtskosten des Beschwerdeverfahrens von CHF 1'200.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

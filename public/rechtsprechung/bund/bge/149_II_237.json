@@ -250,7 +250,11 @@
         "Art. 17 LAT",
         "Art. 18 Abs. 1 LAT"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGBB",
+        "BGG",
+        "RPG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

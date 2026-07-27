@@ -152,7 +152,10 @@
         "Die Gerichtsgebühr für die Beschwerdeverfahren wird auf CHF 600.– (einschliesslich Auslagen) festgesetzt. Die Regelung der Kostenauflage wird dem Berufungsurteil oder – falls kein Berufungsurteil ergeht – einem separaten Entscheid der Appellationsgerichtspräsidentin vorbehalten (Art. 421 Abs. 1 StPO)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

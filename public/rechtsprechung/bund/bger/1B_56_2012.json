@@ -162,10 +162,11 @@
         "Art. 31 Abs. 4 BV"
       ],
       "normKeys": [
-        "STGB",
         "BGG",
-        "STPO",
-        "BV"
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

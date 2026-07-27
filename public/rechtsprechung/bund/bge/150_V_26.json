@@ -208,9 +208,10 @@
         "Art. 65d Abs. 1 BVG"
       ],
       "normKeys": [
-        "ZGB",
+        "BGG",
+        "BV",
         "BVG",
-        "BV"
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

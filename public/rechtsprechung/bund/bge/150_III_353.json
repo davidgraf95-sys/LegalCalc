@@ -249,7 +249,11 @@
       ],
       "normKeys": [
         "BGG",
-        "ZGB"
+        "BV",
+        "BVG",
+        "FZG",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "4A_32/2018",

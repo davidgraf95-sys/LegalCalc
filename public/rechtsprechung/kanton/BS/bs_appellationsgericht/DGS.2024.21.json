@@ -232,7 +232,11 @@
         "A____ wird eine Parteientschädigung von CHF 806.50 (einschliesslich Auslagen und Mehrwertsteuer) zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

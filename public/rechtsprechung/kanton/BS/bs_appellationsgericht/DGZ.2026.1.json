@@ -156,7 +156,10 @@
         "Die Gesuchstellerin und der Gesuchsteller tragen die Gerichtskosten des vorliegenden Gesuchsverfahrens von CHF 200.– in solidarischer Verbindung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

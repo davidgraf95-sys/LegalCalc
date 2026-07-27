@@ -333,7 +333,11 @@
         "Art. 8 BGE"
       ],
       "normKeys": [
-        "BV"
+        "AIG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2C_1004/2018",

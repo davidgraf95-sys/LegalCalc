@@ -218,7 +218,11 @@
         "Dem Rechtsvertreter des Beschwerdegegners 4, [...], werden aus der Gerichtskasse ein Honorar von CHF 1’125.‒ zzgl. 3 % Kleinspesenpauschale von CHF 33.75 und 7,7 % MWST von CHF 89.20, insgesamt also CHF 1’247.95 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

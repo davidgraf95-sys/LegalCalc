@@ -195,7 +195,11 @@
         "            Die Beschwerdeführerin trägt eine Gebühr von Fr. 1'000.--."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "ATSG",
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

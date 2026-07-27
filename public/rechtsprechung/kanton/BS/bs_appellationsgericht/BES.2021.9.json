@@ -243,7 +243,12 @@
         "Der Beschwerdeführer hat dem Beschwerdegegner B____ eine Parteientschädigung in der Höhe von CHF 3'059.20, einschliesslich Auslagen und zuzüglich 7,7 % MWST von CHF 235.55, zu entrichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

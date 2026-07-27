@@ -198,9 +198,10 @@
         "Art. 8 ZGB"
       ],
       "normKeys": [
+        "BGG",
         "SCHKG",
-        "ZGB",
-        "BGG"
+        "VWVG",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

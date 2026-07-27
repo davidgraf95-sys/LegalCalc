@@ -272,7 +272,10 @@
         "          7.      Die Berufungsbeklagte trägt ihre eigenen Parteikosten. Zufolge Bewilligung der unentgeltlichen Rechtspflege wird seinem unentgeltlichen Rechtsbeistand, Advokat [...], für das Berufungsverfahren eine Entschädigung von CHF 880.–, zuzüglich 7,7 % MWST von CHF 68.–, aus der Gerichtskasse ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

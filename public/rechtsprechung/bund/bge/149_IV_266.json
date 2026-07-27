@@ -258,7 +258,13 @@
         "Art. 51 CP"
       ],
       "normKeys": [
-        "STPO"
+        "AIG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO",
+        "VZAE"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

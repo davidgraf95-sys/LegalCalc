@@ -257,7 +257,16 @@
         "Art. 163 CPC",
         "Art. 166 Abs. 1 CPC"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGFA",
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO",
+        "VWVG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

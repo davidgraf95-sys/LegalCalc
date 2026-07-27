@@ -154,7 +154,12 @@
         "Der Beschwerdeführer trägt die Kosten des Verfahrens mit einer Urteilsgebühr von CHF 800.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

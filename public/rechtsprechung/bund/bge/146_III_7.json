@@ -225,7 +225,10 @@
         "Art. 839 Abs. 2 CC",
         "Art. 839 CC"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "5A_426/2015",
         "5A_682/2010",

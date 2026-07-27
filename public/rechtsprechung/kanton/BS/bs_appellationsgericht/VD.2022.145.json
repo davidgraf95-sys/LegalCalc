@@ -241,7 +241,11 @@
         "Der Vertreterin des unentgeltlich verbeiständeten Kindes, [...], werden ein Honorar von CHF 2'416.65 und ein Auslagenersatz von CHF 72.50, zuzüglich 7,7 % MWST von CHF 191.65 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

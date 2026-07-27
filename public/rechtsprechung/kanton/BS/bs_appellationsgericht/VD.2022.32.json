@@ -198,7 +198,11 @@
         "Für das verwaltungsgerichtliche Rekursverfahren werden weder Gerichtskosten erhoben, noch Parteientschädigungen zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -141,7 +141,10 @@
         "Der SMV wird verpflichtet, dem Rekurrenten für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung in Höhe von CHF 2'578.– (einschliesslich Auslagen), zuzüglich 7,7 % MWST von CHF 198.50, insgesamt also CHF 2'776.50, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

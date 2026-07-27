@@ -186,9 +186,11 @@
         "Art. 44 Abs. 1 SVG"
       ],
       "normKeys": [
+        "BGG",
         "STGB",
         "STPO",
-        "BGG"
+        "SVG",
+        "VRV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

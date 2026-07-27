@@ -228,7 +228,12 @@
         "Art. 3 EMRK"
       ],
       "normKeys": [
-        "OR"
+        "BGG",
+        "BV",
+        "EMRK",
+        "OR",
+        "SCHKG",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

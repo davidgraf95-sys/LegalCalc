@@ -212,7 +212,10 @@
         "Der amtlichen Verteidigung, [...], wird ein Honorar von CHF 902.50, einschliesslich Auslagen, zuzüglich 8,1 % Mehrwertsteuer von CHF 73.10, insgesamt also CHF 975.60, aus der Gerichtskasse ausgerichtet. Der Entscheid über eine allfällige Rückforderung gemäss Art. 135 Abs. 4 StPO wird dem Sachentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

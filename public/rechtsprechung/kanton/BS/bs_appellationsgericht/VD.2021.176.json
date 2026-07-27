@@ -175,7 +175,11 @@
         "Infolge Gewährung der unentgeltlichen Rechtspflege gehen die Kosten des verwaltungsgerichtlichen Verfahrens mit einer Gebühr von CHF 1‘000.– zulasten der Gerichtskasse."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

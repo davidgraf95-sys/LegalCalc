@@ -211,7 +211,11 @@
         "Das Gesuch der Beschwerdeführerin um unentgeltliche Rechtspflege für das Beschwerdeverfahren wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

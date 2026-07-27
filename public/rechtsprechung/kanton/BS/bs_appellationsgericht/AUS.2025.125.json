@@ -202,7 +202,11 @@
         "Dem unentgeltlichen Rechtsvertreter, MLaw Benjamin Appius, Advokat, wird ein Honorar von CHF 1'300.–, zuzüglich Auslagen von CHF 39.– und 8,1 % Mehrwertsteuer von CHF 108.50, insgesamt also CHF 1'447.50 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

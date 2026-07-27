@@ -143,7 +143,10 @@
         "Die beschwerdeführende Person, A____, trägt die Kosten des Beschwerdeverfahrens mit einer Gebühr von CHF 500.– (einschliesslich Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

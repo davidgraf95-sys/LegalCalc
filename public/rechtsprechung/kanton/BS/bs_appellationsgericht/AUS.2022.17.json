@@ -107,7 +107,9 @@
         "Das Migrationsamt wird angewiesen, A____ das vorliegende Urteil in einer ihm verständlichen Sprache zu eröffnen, soweit dies zeitlich noch möglich ist."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

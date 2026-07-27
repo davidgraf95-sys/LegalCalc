@@ -281,7 +281,13 @@
         "Der Privatklägerin wird gemäss Art. 436 Abs. 1 i.V.m. 433 Abs. 1 der Strafprozessordnung zu Lasten des Berufungsklägers für das zweitinstanzliche Verfahren eine Parteientschädigung von CHF 3'193.80 (inklusive Mehrwertsteuer und Auslagen) zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG",
+        "VRV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

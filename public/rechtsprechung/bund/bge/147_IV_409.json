@@ -374,10 +374,11 @@
         "Art. 389 Abs. 2 STPO"
       ],
       "normKeys": [
-        "STPO",
-        "STGB",
+        "BGG",
         "BV",
-        "BGG"
+        "EMRK",
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

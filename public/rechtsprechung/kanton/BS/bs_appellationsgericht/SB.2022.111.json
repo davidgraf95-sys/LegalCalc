@@ -162,7 +162,10 @@
         "Über die Verfahrenskosten sowie die Entschädigungen der amtlichen Verteidigung wird mit dem Sachurteil des Berufungsgerichts entschieden."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

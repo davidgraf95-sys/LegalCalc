@@ -521,8 +521,10 @@
         "Art. 292 STGB"
       ],
       "normKeys": [
-        "ZPO",
-        "STGB"
+        "BGG",
+        "PATG",
+        "STGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

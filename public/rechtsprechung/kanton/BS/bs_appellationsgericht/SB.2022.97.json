@@ -158,7 +158,9 @@
         "Das Gesuch um amtliche Verteidigung wird bewilligt. Über die Kosten des vorliegenden Zwischenverfahrens sowie der Entschädigung der amtlichen Verteidigung wird mit dem Urteil in der Sache entschieden."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

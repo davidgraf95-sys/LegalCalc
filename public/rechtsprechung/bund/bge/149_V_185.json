@@ -224,7 +224,12 @@
         "Art. 35 Abs. 1 LAI"
       ],
       "normKeys": [
-        "ELG"
+        "AHVG",
+        "BGG",
+        "BV",
+        "ELG",
+        "ELV",
+        "IVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

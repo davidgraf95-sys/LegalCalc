@@ -233,7 +233,11 @@
         "Art. 330a CO"
       ],
       "normKeys": [
-        "OR"
+        "BGG",
+        "OR",
+        "SCHKG",
+        "VVG",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

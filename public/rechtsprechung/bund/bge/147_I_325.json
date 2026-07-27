@@ -249,10 +249,11 @@
         "Art. 626 Abs. 1 CO"
       ],
       "normKeys": [
+        "BGG",
         "BV",
+        "OR",
         "STHG",
-        "ZGB",
-        "BGG"
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

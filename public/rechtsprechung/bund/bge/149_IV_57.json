@@ -422,7 +422,14 @@
         "Art. 17 CP",
         "Art. 21 Abs. 3 LPERS"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BPG",
+        "BPR",
+        "BPV",
+        "MSTG",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

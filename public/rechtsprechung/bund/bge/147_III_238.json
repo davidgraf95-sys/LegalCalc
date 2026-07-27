@@ -327,8 +327,11 @@
         "Art. 128 Abs. 1 BGG"
       ],
       "normKeys": [
+        "BEG",
         "BGG",
-        "STPO"
+        "OR",
+        "STPO",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "1C_231/2014",

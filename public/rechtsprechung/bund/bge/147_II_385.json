@@ -232,7 +232,13 @@
         "Art. 2 Abs. 3 LDFR",
         "Art. 6 Abs. 1 LDFR"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGBB",
+        "BGG",
+        "NHG",
+        "NHV",
+        "RPG"
+      ],
       "zitierteEntscheide": [
         "2C_1069/2020",
         "9C_177/2020",

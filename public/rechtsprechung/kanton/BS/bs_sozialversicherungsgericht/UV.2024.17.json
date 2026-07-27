@@ -335,7 +335,12 @@
         "            Die Beschwerdegegnerin zahlt dem Beschwerdeführer eine Parteientschädigung von Fr. 1’875.00 (inkl. Auslagen) zuzüglich Fr. 151.90 Mehrwertsteuer (8.1 %). Dem Vertreter des Beschwerdeführers im Kostenerlass, Dr. B____, Advokat, wird ein Anwaltshonorar von Fr. 1’500.-- (inklusive Auslagen) zuzüglich Mehrwertsteuer von Fr. 121.50 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "BV",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

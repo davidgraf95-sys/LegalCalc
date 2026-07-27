@@ -274,7 +274,9 @@
       ],
       "normKeys": [
         "ARG",
-        "BGG"
+        "BGG",
+        "OR",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2C_132/2018",

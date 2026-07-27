@@ -203,7 +203,13 @@
         "Dem amtlichen Verteidiger, Dr. iur. Carlo Bertossa, Advokat, werden für die zweite Instanz ein Honorar von CHF 3'266.65 und ein Auslagenersatz von CHF 52.25, zuzüglich 8,1 % Mehrwertsteuer von CHF 268.85, somit total CHF 3'587.75 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG",
+        "VRV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

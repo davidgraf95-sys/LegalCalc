@@ -237,7 +237,12 @@
         "Dem Vertreter des Privatklägers im Kostenerlass, Advokat [...], wird in Anwendung von Art. 136 in Verbindung mit Art. 426 Abs. 4 der Strafprozessordnung ein Honorar von CHF 8'225.– inklusive Auslagenersatz und inklusive Mehrwertsteuer aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 in Verbindung mit 138 Abs. 1 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "JSTPO",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -101,7 +101,10 @@
         "Der Beschwerdeführer trägt die Gerichtskosten des Beschwerdeverfahrens von CHF 250.–. Sie werden mit dem Kostenvorschuss des Beschwerdeführers von CHF 500.– verrechnet, so dass die Gerichtskasse dem Beschwerdeführer CHF 250.– zurückzuerstatten hat."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

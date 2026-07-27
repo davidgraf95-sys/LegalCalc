@@ -118,7 +118,10 @@
         "Auf das Gesuch um Ratenzahlung betreffend nicht näher bezeichnete weitere Forderungen wird nicht eingetreten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

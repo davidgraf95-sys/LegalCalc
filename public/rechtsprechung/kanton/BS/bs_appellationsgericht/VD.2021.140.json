@@ -202,7 +202,11 @@
         "Dem unentgeltlichen Vertreter des Rekurrenten, [...], werden ein Honorar von CHF 1’600.– und ein Auslagenersatz von CHF 48.– zuzüglich 7,7 % Mehrwertsteuer von CHF 126.90, insgesamt also CHF 1'774.90 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

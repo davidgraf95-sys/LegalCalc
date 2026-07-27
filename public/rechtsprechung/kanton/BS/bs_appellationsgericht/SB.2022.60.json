@@ -197,7 +197,11 @@
         "Dem Beurteilten wird aus der Gerichtskasse für beide Instanzen eine reduzierte Parteientschädigung von gesamthaft CHF 8’558.‒ ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

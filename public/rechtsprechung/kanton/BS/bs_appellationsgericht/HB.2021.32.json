@@ -220,7 +220,11 @@
         "Die Gerichtsgebühr für das Beschwerdeverfahren wird auf CHF 900.– (einschliesslich Auslagen) festgesetzt. Die Regelung der Kostenauflage wird dem Endentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

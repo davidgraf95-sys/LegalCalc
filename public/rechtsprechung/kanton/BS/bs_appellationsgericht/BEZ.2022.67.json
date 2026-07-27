@@ -191,7 +191,10 @@
         "Für das Verfahren vor der unteren Aufsichtsbehörde und für das Verfahren vor der oberen Aufsichtsbehörde werden keine Gerichtskosten erhoben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

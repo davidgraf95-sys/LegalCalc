@@ -246,7 +246,10 @@
         "Les écrits doivent être remis au plus tard le dernier jour du délai à l'autorité pénale, à la Poste suisse ou à une représentation consulaire ou diplomatique suisse (art. 91 Code de procédure pénale suisse)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

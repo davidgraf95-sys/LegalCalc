@@ -207,7 +207,12 @@
         "4.         Dem amtlichen Verteidiger des Gesuchstellers, MLaw Gabriel Giess, werden für das vorliegende Verfahren ein Honorar von CHF 1'300.– und ein Auslagenersatz von CHF 39.–, zuzüglich 8,1 % MWST von CHF 108.45, somit total CHF 1'447.45 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

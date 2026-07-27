@@ -192,7 +192,10 @@
         "            Dem unentgeltlichen Rechtsvertreter, Advokat Daniel Senn, LL.M., wird ein Honorar von CHF 1'215.–, zuzüglich Auslagen von CHF 36.45, insgesamt also CHF 1'251.45, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

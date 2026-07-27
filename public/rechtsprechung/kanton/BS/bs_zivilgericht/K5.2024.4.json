@@ -104,7 +104,10 @@
         "         3.      Die Klägerin hat der Beklagten eine Parteientschädigung von CHF 45'000.00 zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "OR",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

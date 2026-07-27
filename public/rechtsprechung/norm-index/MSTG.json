@@ -1,0 +1,43 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "MSTG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "142": [
+      {
+        "key": "bge_149_IV_57",
+        "zitierung": "BGE 149 IV 57",
+        "regesteKurz": "Art. 322 quinquies und 322 sexies StGB; Vorteilsgewährung und Vorteilsannahme. Prüfung der Tatbestandsmerkmale der Straftaten gemäss Art. 322 quinquies und Art. 322 sexies StGB im Zusammenhang einerseits mit der vorwiegend privaten Einladu…",
+        "datum": "2022-10-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "143": [
+      {
+        "key": "bge_149_IV_57",
+        "zitierung": "BGE 149 IV 57",
+        "regesteKurz": "Art. 322 quinquies und 322 sexies StGB; Vorteilsgewährung und Vorteilsannahme. Prüfung der Tatbestandsmerkmale der Straftaten gemäss Art. 322 quinquies und Art. 322 sexies StGB im Zusammenhang einerseits mit der vorwiegend privaten Einladu…",
+        "datum": "2022-10-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "171c": [
+      {
+        "key": "bge_150_IV_10",
+        "zitierung": "BGE 150 IV 10",
+        "regesteKurz": "a Art. 135 StGB; Gewaltdarstellungen. Tatbestandsmerkmale der strafbaren Handlung (E. 4.1). Regeste b Art. 2 des Bundesgesetzes vom 12. Dezember 2014 über das Verbot der Gruppierungen \"Al-Qaïda\" und \"Islamischer Staat\" sowie verwandter Org…",
+        "datum": "2023-06-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

@@ -253,8 +253,10 @@
         "Art. 22 RPG"
       ],
       "normKeys": [
+        "BGG",
         "BV",
-        "BGG"
+        "RPG",
+        "USG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -249,7 +249,12 @@
         "Dem amtlichen Vertreter, […], werden für das Beschwerdeverfahren ein Honorar von CHF 12'000.–, zuzüglich Auslagen von CHF 583.90 und 7,7 % Mehrwertsteuer von CHF 968.95, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

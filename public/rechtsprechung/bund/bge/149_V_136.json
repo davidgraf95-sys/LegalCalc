@@ -303,9 +303,13 @@
         "Art. 15 FZA"
       ],
       "normKeys": [
+        "ATSG",
+        "AVIG",
+        "AVIV",
         "BGG",
         "BV",
-        "ATSG"
+        "ELG",
+        "FZA"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

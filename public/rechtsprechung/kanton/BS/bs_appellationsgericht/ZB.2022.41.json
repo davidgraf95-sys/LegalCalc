@@ -691,7 +691,15 @@
         "          7.      Dem Kindesvertreter wird für das Berufungsverfahren eine Entschädigung von CHF 830.–, zuzüglich 7,7 % MWST von CHF 64.–, aus der Gerichtskasse ausgerichtet. "
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "DBG",
+        "OR",
+        "SCHKG",
+        "STHG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

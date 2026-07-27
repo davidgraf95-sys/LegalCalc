@@ -307,7 +307,11 @@
         "Art. 190 Abs. 2 IPRG",
         "Art. 190 Abs. 2 LDIP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IPRG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "4A_10/2022",
         "4A_140/2022",

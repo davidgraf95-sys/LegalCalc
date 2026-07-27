@@ -218,8 +218,13 @@
         "Art. 271 Abs. 3 SCHKG"
       ],
       "normKeys": [
+        "BGG",
+        "BV",
+        "IPRG",
+        "LUGUE",
+        "OR",
         "SCHKG",
-        "BGG"
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

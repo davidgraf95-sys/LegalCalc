@@ -327,10 +327,12 @@
         "Art. 9 BV"
       ],
       "normKeys": [
-        "ZPO",
-        "BV",
         "BGG",
-        "OR"
+        "BV",
+        "IPRG",
+        "LUGUE",
+        "OR",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "4A_120/2022",

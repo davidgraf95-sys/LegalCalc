@@ -168,9 +168,10 @@
         "Art. 60 Abs. 1 ATSG"
       ],
       "normKeys": [
-        "BGG",
-        "ATSG",
         "AHVG",
+        "AHVV",
+        "ATSG",
+        "BGG",
         "BV"
       ],
       "zitierteEntscheide": [],

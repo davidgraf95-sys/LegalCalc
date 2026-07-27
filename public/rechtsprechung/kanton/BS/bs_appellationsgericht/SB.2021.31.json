@@ -642,7 +642,12 @@
         "Dem amtlichen Verteidiger, [...], werden für seine Bemühungen im Berufungsverfahren ein Honorar von 53.25 Stunden à CHF 200.–, daher CHF 10'650.–, zuzüglich Aus­lagen von CHF 267.95 sowie 7,7 % MWST von CHF 840.70, insgesamt also CHF 11‘758.65 aus der Gerichtskasse ausgerichtet. In Bezug auf die Entschädigungen der amtlichen Verteidigung bleibt Art. 135 Abs. 4 der Strafprozessordnung vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

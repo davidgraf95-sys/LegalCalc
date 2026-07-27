@@ -405,7 +405,13 @@
         "Auf die Erhebung einer Urteilsgebühr zu Lasten der Privatklägerin für das erstinstanzliche Verfahren sowie von Verfahrenskosten für das Berufungsverfahren wird verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

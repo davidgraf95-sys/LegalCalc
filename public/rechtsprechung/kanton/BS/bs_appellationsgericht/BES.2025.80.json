@@ -159,7 +159,10 @@
         "Dem amtlichen Verteidiger, Dr. Alex Ertl, Advokat, werden für das Beschwerdeverfahren ein Honorar von CHF 1'200.– und ein Auslagenersatz von CHF 36.–zuzüglich 8,1% MWST von CHF 100.10, somit total CHF 1'336.10 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 StPO kommt nicht zur Anwendung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -187,7 +187,11 @@
         "Die Gerichtsgebühr für das Beschwerdeverfahren beträgt CHF 600.– und wird der Staatsanwaltschaft als verfahrensleitender Behörde in Rechnung gestellt. Die definitive Regelung der Kostenauflage wird dem Endentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

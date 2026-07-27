@@ -237,7 +237,14 @@
         "Art. 17 PPMIN",
         "Art. 2 Abs. 1 DPMIN"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "JSTG",
+        "JSTPO",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "6B_1410/2019",
         "6B_165/2020",

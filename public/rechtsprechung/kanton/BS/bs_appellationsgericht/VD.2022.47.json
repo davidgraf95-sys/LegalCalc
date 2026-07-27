@@ -291,7 +291,9 @@
         "Der Baukult Freiwilligen Basler Denkmalpflege wird eine Parteientschädigung von CHF 4'750.– inklusive Auslagen, zuzüglich 7,7 % MWST von CHF 365.75, zugesprochen, welche je zur Hälfte durch den Regierungsrat und in solidarischer Verpflichtung durch die Beigeladenen zu tragen ist."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

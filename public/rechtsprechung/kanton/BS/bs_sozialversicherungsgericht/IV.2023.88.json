@@ -211,7 +211,10 @@
         "          Die ordentlichen Kosten, bestehend aus einer Gebühr von Fr. 800.--, werden dem Beschwerdeführer auferlegt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -278,9 +278,11 @@
         "Art. 97 Abs. 1 BGG"
       ],
       "normKeys": [
-        "ZGB",
+        "BGG",
         "BV",
-        "BGG"
+        "VRK",
+        "VSTG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2C_209/2017",

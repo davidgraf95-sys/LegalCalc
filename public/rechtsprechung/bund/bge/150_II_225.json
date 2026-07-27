@@ -308,9 +308,11 @@
         "Art. 3 LRCF"
       ],
       "normKeys": [
-        "STGB",
         "BGG",
-        "BV"
+        "BV",
+        "STGB",
+        "VG",
+        "VWVG"
       ],
       "zitierteEntscheide": [
         "2C_176/2022",

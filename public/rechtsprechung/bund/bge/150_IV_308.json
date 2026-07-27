@@ -292,7 +292,12 @@
         "Art. 141 Abs. 5 CPP",
         "Art. 141 CPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IRSG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

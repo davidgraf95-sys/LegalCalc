@@ -173,7 +173,11 @@
         "Dem amtlichen Verteidiger, Dr. iur. Philippe Spitz, werden für die zweite Instanz ein Honorar von CHF 3'933.35 und ein Auslagenersatz von CHF 227.15, zuzüglich Mehrwertsteuer von insgesamt CHF 337.– (8,1 % auf CHF 4'160.50), somit total CHF 4'497.50 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

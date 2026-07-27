@@ -241,10 +241,10 @@
         "Art. 28 Abs. 1 IVG"
       ],
       "normKeys": [
-        "IVG",
         "ATSG",
-        "UVG",
-        "BGG"
+        "BGG",
+        "IVG",
+        "UVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

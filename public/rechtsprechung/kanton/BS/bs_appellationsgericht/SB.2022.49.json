@@ -415,7 +415,13 @@
         "-       Departement für Wirtschaft, Soziales und Umwelt Basel-Stadt (Sozialhilfe)"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

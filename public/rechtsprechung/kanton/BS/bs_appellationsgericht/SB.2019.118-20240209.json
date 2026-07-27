@@ -319,7 +319,13 @@
         "Dem amtlichen Verteidiger, [...], werden für das Berufungsverfahren betreffend Neubeurteilung ein Honorar von CHF 2'854.15 und ein Auslagenersatz von CHF 170.50, zuzüglich Mehrwertsteuer von insgesamt CHF 244.15 (7,7 % auf CHF 205.30 sowie 8,1 % auf CHF 2'819.35, somit total CHF 3'268.85 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

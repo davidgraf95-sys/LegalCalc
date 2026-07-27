@@ -163,7 +163,10 @@
         "Der SMV wird verpflichtet, dem Rekurrenten eine Parteientschädigung von CHF 2’250.25 zuzüglich 7,7 % MWST von insgesamt CHF 173.25 auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

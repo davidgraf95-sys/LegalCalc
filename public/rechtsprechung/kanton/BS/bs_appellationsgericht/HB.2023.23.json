@@ -186,7 +186,11 @@
         "Der amtlichen Verteidigerin, [...], Advokatin, werden ein Honorar von CHF 1'616.65 und ein Auslagenersatz von CHF 21.30, zuzüglich 7,7 % MWST von CHF 126.10, aus der Gerichtskasse bezahlt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

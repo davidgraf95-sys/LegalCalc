@@ -139,7 +139,10 @@
         "Der amtliche Verteidiger, [...], wird für seinen Aufwand mit CHF 600.‒ (inkl. Auslagen, zzgl. 8,1 % von CHF 48.60 MWST) entschädigt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

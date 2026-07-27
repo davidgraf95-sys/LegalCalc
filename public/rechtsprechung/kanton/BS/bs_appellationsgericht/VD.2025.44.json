@@ -176,7 +176,9 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird dem unentgeltlichen Rechtsbeistand des Rekurrenten, Advokat Daniel Gmür, für das verwaltungsgerichtliche Rekursverfahren ein Honorar von CHF 1'400.–, zuzüglich Auslagen von CHF 42.– und 8,1 % MWST von CHF 116.80.–, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -164,7 +164,10 @@
         "Art. 5 Abs. 4 CST"
       ],
       "normKeys": [
-        "BV"
+        "BGG",
+        "BV",
+        "PUBLG",
+        "VRK"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

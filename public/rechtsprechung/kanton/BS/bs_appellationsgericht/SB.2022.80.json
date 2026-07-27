@@ -319,7 +319,11 @@
         "Die Parteientschädigung für Privatklägerinnen 2 und 3 wird auf CHF 4'165.60 festgesetzt (einschliesslich 3 Stunden für die Berufungsverhandlung, 3 % Auslagenpauschale und Mehrwertsteuer) und diesen je hälftig zugesprochen. Demnach wird C____ und D____ für das Berufungsverfahren je der Betrag von CHF 2'082.80 zu Lasten des Berufungsklägers zugesprochen. "
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -362,8 +362,10 @@
         "Art. 49 CST"
       ],
       "normKeys": [
-        "BV",
         "BGG",
+        "BV",
+        "EPG",
+        "KRK",
         "ZGB"
       ],
       "zitierteEntscheide": [

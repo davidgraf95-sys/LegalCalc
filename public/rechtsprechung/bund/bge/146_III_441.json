@@ -373,10 +373,13 @@
         "Art. 269 Abs. 1 LP"
       ],
       "normKeys": [
-        "OR",
+        "BGG",
         "HREGV",
+        "KOV",
+        "OR",
         "SCHKG",
-        "BGG"
+        "VZG",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -268,8 +268,11 @@
         "Art. 31 USG"
       ],
       "normKeys": [
+        "BGG",
         "BV",
-        "BGG"
+        "ENTG",
+        "USG",
+        "VVEA"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -188,8 +188,10 @@
         "Art. 261 Abs. 2 ZPO"
       ],
       "normKeys": [
-        "ZPO",
-        "OR"
+        "BGG",
+        "OR",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

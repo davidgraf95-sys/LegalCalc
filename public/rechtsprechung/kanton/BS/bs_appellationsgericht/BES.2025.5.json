@@ -248,7 +248,15 @@
         "Rechtsanwalt Dieter von Blarer wird für das Beschwerdeverfahren ein Honorar von CHF 1'566.–, zuzüglich Auslagen von CHF 5.80 und 8.1 % MWST von CHF 127.32, aus der Gerichtskasse zugesprochen. Im Umfang von CHF 849.55 (50 % dieses Betrages) bleibt Art. 135 Abs. 4 StPO vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "OR",
+        "STGB",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

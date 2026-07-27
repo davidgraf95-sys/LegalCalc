@@ -146,7 +146,9 @@
         "Die Vorinstanz hat dem Beschwerdeführer für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 6'081.40, zuzüglich 7,7 % MWST von CHF 468.25, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

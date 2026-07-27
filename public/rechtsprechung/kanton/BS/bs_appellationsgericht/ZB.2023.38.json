@@ -252,7 +252,12 @@
         "Der Berufungskläger trägt seine eigenen Parteikosten. Zufolge Bewilligung der teilweisen unentgeltlichen Rechtspflege mit einem Selbstbehalt von CHF 3'300.– wird seinem unentgeltlichen Rechtsbeistand, [...], ein Honorar von CHF 2’200.00 nebst Auslagen im Betrag von CHF 66.00, zuzüglich 7,7 % MWST von CHF 174.50, zugesprochen, wobei er in diesem Umfang auf den seinem Mandanten auferlegten Selbstbehalt verwiesen wird."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

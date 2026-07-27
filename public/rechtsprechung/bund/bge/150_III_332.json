@@ -278,9 +278,14 @@
         "Art. 170 DBG"
       ],
       "normKeys": [
-        "ZPO",
+        "BGG",
         "DBG",
-        "BGG"
+        "LUGUE",
+        "OR",
+        "SCHKG",
+        "STHG",
+        "VG",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

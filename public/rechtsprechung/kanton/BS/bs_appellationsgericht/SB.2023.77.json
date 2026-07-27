@@ -275,7 +275,12 @@
         "A____ wird zur Zahlung einer Parteientschädigung an die Privatkläger in Höhe von CHF 9'672.70 (inkl. Auslagen und Mehrwertsteuer) für das erstinstanzliche Verfahren und von CHF 5'278.75 (inkl. Auslagen) für das zweitinstanzliche Verfahren verurteilt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -227,7 +227,12 @@
         "Das Gesuch des Beschwerdegegners um Gewährung der unentgeltlichen Rechtsvertretung bzw. um Anordnung der amtlichen Verteidigung wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

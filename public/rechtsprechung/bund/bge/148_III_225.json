@@ -223,7 +223,11 @@
         "Art. 81 Abs. 1 LP"
       ],
       "normKeys": [
-        "SCHKG"
+        "BGG",
+        "BV",
+        "OR",
+        "SCHKG",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

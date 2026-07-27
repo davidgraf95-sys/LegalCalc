@@ -299,10 +299,11 @@
         "Art. 257 ZPO"
       ],
       "normKeys": [
-        "ZPO",
         "BGG",
+        "BV",
         "OR",
-        "ZGB"
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

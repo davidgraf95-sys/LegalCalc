@@ -245,7 +245,12 @@
         "          Entsprechend dem Verfahrensausgang hat die Beschwerdegegnerin die ordentlichen kosten des Verfahrens, bestehend aus einer Gebühr von Fr. 800.00, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

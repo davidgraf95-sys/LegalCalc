@@ -362,7 +362,12 @@
         "Das Gesuch der Beigeladenen um Bewilligung der unentgeltlichen Rechtspflege wird in ein separates Verfahren verwiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

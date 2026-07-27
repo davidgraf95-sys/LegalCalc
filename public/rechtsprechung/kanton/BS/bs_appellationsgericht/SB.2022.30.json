@@ -143,7 +143,10 @@
         "Der Aufwand des amtlichen Verteidigers der Beschuldigten im Zusammenhang mit dem vorliegenden Nichteintretensantrag und Zwischenentscheid wird nicht entschädigt. "
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "STPO",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

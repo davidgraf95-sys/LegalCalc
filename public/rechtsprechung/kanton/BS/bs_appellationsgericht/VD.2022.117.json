@@ -260,7 +260,13 @@
         "Das Justiz- und Sicherheitsdepartement wird die Parteientschädigung für das verwaltungsinterne Verfahren festzulegen haben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "VZAE"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

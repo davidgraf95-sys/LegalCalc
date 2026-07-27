@@ -172,7 +172,9 @@
         "            Dem unentgeltlichen Rechtsbeistand von A____, [...], wird ein Honorar von CHF 1'269.75 (einschliesslich Auslagen), zuzüglich 7,7 % MWST von CHF 97.70 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

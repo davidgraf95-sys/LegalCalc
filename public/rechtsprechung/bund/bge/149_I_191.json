@@ -338,7 +338,12 @@
         "Art. 36 CST"
       ],
       "normKeys": [
-        "BV"
+        "BGG",
+        "BV",
+        "EMRK",
+        "EPG",
+        "EPV",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

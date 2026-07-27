@@ -211,7 +211,12 @@
         "            Die ordentlichen Kosten, bestehend aus einer Gebühr von CHF 800.--, gehen zu Lasten der Beschwerdegegnerin"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

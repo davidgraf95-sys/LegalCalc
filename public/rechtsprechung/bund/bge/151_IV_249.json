@@ -243,11 +243,11 @@
         "Art. 62 Abs. 1 AIG"
       ],
       "normKeys": [
-        "STPO",
-        "STGB",
         "AIG",
         "BGG",
-        "BV"
+        "BV",
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [
         "6B_1024/2021",

@@ -222,9 +222,13 @@
         "Art. 116 Abs. 2 AUG"
       ],
       "normKeys": [
-        "STPO",
+        "AIG",
+        "ASYLG",
         "BGG",
-        "AIG"
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

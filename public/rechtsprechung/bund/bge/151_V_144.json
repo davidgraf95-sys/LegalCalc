@@ -258,9 +258,11 @@
         "Art. 22a Abs. 1 FZG"
       ],
       "normKeys": [
-        "ZGB",
+        "BGG",
         "BVG",
-        "BGG"
+        "FZG",
+        "FZV",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "9C_338/2024",

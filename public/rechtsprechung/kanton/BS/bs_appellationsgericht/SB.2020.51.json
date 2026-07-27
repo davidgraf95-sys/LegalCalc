@@ -1140,7 +1140,16 @@
         "Der amtlichen Verteidigerin, [...], werden für ihre Bemühungen im Berufungsverfahren ein Honorar von 12.95 Stunden à CHF 200.–, daher CHF 2'590.–, zuzüglich Auslagen von CHF 115.– sowie 7,7 % MWST von CHF 208.30, insgesamt also CHF 2'913.30 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "OR",
+        "STGB",
+        "STPO",
+        "SVG",
+        "VRV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

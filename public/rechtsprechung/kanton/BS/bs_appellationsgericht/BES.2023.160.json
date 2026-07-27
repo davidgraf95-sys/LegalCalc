@@ -183,7 +183,11 @@
         "Dem unentgeltlichen Rechtsbeistand der Beschwerdeführerin wird für seine Bemühungen im Rechtsmittelverfahren eine Parteientschädigung von CHF 1'200.– (inklusive Auslagen) zuzüglich 8,1 % Mehrwertsteuer von CHF 97.20, insgesamt somit CHF 1’297.20, aus der Gerichtskasse entrichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

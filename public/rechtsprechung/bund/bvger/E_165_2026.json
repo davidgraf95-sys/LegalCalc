@@ -91,7 +91,10 @@
         "Art. 3 Abs. 1 LASI",
         "Art. 3 Abs. 2 LASI"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "ASYLG",
+        "BGG"
+      ],
       "zitierteEntscheide": [
         "D-5447/2016",
         "E-165/2026",

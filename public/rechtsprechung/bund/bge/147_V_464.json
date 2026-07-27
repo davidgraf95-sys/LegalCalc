@@ -253,7 +253,10 @@
         "Art. 65d Abs. 1 KVV"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "KLV",
+        "KVG",
+        "KVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

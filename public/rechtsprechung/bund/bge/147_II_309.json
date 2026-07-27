@@ -376,9 +376,13 @@
         "Art. 75 BV"
       ],
       "normKeys": [
-        "ZGB",
+        "BGG",
         "BV",
-        "BGG"
+        "GSCHG",
+        "GSCHV",
+        "RPG",
+        "RPV",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

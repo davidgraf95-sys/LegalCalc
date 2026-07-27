@@ -213,7 +213,11 @@
         "Der amtlichen Verteidigerin, B____, wird für ihre Bemühungen ab dem 9. Juni 2023 ein Honorar von CHF 1'300.‒ und ein Auslagenersatz von CHF 17.80, zuzüglich Mehrwertsteuer von insgesamt CHF 106.‒ (7,7 % auf CHF 191.45 sowie 8,1 % auf CHF 1’126.35), somit total CHF 1‘423.80, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

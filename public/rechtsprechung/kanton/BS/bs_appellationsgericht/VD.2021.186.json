@@ -232,7 +232,9 @@
         "Der Rekurrent trägt die Kosten des verwaltungsgerichtlichen Verfahrens mit einer reduzierten Gebühr von CHF 3'200.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

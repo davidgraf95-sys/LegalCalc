@@ -123,7 +123,9 @@
         "Die Beschwerdeführenden tragen die Gerichtskosten des Beschwerdeverfahrens mit einer Gebühr von CHF 1'000.–, einschliesslich Auslagen, in solidarischer Verbindung. Die Gerichtskosten werden mit dem geleisteten Kostenvorschuss von CHF 2'000.– verrechnet, sodass die Gerichtskasse den Beschwerdeführenden CHF 1'000.– zurückzuerstatten hat."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

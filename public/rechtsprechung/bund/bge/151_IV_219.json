@@ -192,7 +192,10 @@
         "Art. 401 Abs. 2 CPP",
         "Art. 401 CPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "6B_1100/2023",
         "6B_1160/2017",

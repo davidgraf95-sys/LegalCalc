@@ -416,7 +416,14 @@
         "Das Gesuch der Beigeladenen um Bewilligung des Kostenerlasses wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "HEUE",
+        "IPRG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

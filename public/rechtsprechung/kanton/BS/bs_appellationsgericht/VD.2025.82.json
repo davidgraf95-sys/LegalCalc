@@ -187,7 +187,12 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird dem Rechtsbeistand des Rekurrenten, lic. iur. Christoph Dumartheray, Advokat, für das verwaltungsgerichtliche Rekursverfahren eine Entschädigung von CHF 1'030.–, einschliesslich Auslagen und zuzüglich 8,1 % MWST von CHF 83.45, insgesamt somit CHF 1'113.45, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -286,7 +286,11 @@
         "Dem Privatverteidiger von †A____, […], Advokat, wird eine Entschädigung von CHF 12'345.30 für das erst- und das zweitinstanzliche Verfahren (inkl. Auslagen und Mehrwertsteuer) aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -283,7 +283,11 @@
         "Art. 105 Abs. 4 MWSTG"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "EMRK",
+        "MWSTG",
+        "STGB",
+        "VSTRR"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

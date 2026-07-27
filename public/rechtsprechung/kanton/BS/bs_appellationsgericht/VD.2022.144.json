@@ -207,7 +207,14 @@
         "Das Gesundheitsdepartement hat der Rekurrentin für das verwaltungsgerichtliche Rekursverfahren eine reduzierte Parteientschädigung von CHF 390.–, zuzüglich 7,7 % MWST von CHF 30.05, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BGOE",
+        "BV",
+        "DSG",
+        "STPO",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

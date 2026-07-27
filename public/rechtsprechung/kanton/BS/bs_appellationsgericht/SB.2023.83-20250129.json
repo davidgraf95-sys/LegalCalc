@@ -173,7 +173,11 @@
         "Der Vertreterin des Privatklägers im Kostenerlass, [...], Advokatin, werden in Anwendung von Art. 136 der Strafprozessordnung für das zweitinstanzliche Verfahren ein Honorar von CHF 486.– und ein Auslagenersatz von CHF 20.40, zuzüglich 8,1 % Mehrwertsteuer von CHF 41.–, somit total CHF 547.40 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

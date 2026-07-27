@@ -274,7 +274,12 @@
         "Der amtlichen Verteidigerin des Beurteilten, [...], Advokatin, werden für das Berufungsverfahren ein Honorar von CHF 5'220.– und ein Auslagenersatz von CHF 27.40, zuzüglich 8,1 % Mehrwertsteuer von insgesamt CHF 425.–, somit total CHF 5'672.40, aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 Strafprozessordnung wird für das erst- und das zweitinstanzliche Verfahren im Umfang von 70 % vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

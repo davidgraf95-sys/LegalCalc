@@ -170,7 +170,11 @@
         "Der Berufungskläger 1 und die Berufungsklägerin 2 tragen in solidarischer Verbindung die Gerichtskosten von CHF 500.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

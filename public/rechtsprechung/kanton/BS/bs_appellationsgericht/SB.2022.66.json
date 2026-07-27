@@ -384,7 +384,13 @@
         "Dem amtlichen Verteidiger, [...], werden für das Berufungsverfahren ein Honorar von CHF 2'800.– sowie eine Auslagenentschädigung von CHF 17.25, zuzüglich CHF 225.25 Mehrwertsteuer (CHF 57.20 [7,7 %] bzw. CHF 168.05 [8,1 %]), insgesamt CHF 3'042.50 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

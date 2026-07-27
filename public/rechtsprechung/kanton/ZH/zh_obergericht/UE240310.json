@@ -151,8 +151,12 @@
         "Art. 173 STGB"
       ],
       "normKeys": [
-        "STPO",
-        "STGB"
+        "BGERR",
+        "BV",
+        "EMRK",
+        "MSTG",
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [
         "1B_242/2015",

@@ -201,7 +201,11 @@
         "            […], Advokatin, werden ein Honorar von CHF 885.–, Auslagen von CHF 5.– und 8,1 % Mehrwertsteuer von CHF 72.10, insgesamt also CHF 962.10 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -197,7 +197,14 @@
         "Der Beschwerdeführer hat der Beschwerdegegnerin für das Beschwerdeverfahren eine Parteientschädigung von CHF 1'500.– zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "SCHKG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

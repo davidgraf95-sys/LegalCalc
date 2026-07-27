@@ -254,7 +254,11 @@
         "In Bezug auf die in Rechtskraft erwachsene Entschädigung der amtlichen Verteidigung für das erstinstanzliche Verfahren bleibt Art. 135 Abs. 4 StPO vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

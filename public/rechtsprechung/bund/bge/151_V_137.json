@@ -183,9 +183,10 @@
         "Art. 291 ZGB"
       ],
       "normKeys": [
-        "ZGB",
         "ATSG",
-        "BGG"
+        "BGG",
+        "PARTG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "5A_158/2020",

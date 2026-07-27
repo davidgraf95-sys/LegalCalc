@@ -332,7 +332,13 @@
         "Art. 16 CST",
         "Art. 17 CEDH"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "6B_1176/2020",
         "6B_1323/2023",

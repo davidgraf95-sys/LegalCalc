@@ -213,7 +213,10 @@
         "Dem Beschwerdeführer wird für das vorliegende Beschwerdeverfahren die amtliche Verteidigung bewilligt. Dem Verteidiger, Dr. Christian von Wartburg, Advokat, wird aus der Gerichtskasse ein Honorar von CHF 1’200.– (inkl. Auslagen), zuzüglich 8,1 % MWST von CHF 97.20, insgesamt somit CHF 1'297.20, ausgerichtet. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

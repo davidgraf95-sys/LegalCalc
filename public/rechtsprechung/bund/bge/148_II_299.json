@@ -293,7 +293,12 @@
         "Art. 18a Abs. 1 DBG"
       ],
       "normKeys": [
-        "DBG"
+        "BGBB",
+        "BGG",
+        "BV",
+        "DBG",
+        "STHG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2C_11/2011",

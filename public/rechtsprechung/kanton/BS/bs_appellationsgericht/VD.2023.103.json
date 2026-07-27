@@ -221,7 +221,10 @@
         "Die Rekurrierenden und Beschwerdeführenden tragen in solidarischer Verbindung die Gerichtskosten des verwaltungsgerichtlichen Rekurs- und Beschwerdeverfahrens mit einer Gebühr von CHF 1'400.–, einschliesslich Auslagen (CHF 800.– entfallend auf das Rekursverfahren VD.2023.103 und CHF 600.– entfallend auf das Beschwerdeverfahren VD.2023.104)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "DBG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -228,7 +228,12 @@
         "Der Beschwerdeführer hat der Beschuldigten eine Parteientschädigung von insgesamt CHF 1'388.50 (inkl. Auslagen und MWST) zu entrichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "UWG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

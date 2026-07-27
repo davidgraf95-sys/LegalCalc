@@ -149,7 +149,11 @@
         "Das Gesuch um amtliche Verteidigung für das vorliegende Beschwerdeverfahren wird bewilligt. Dem Verteidiger, lic. iur. Reto Gantner, wird aus der Gerichtskasse ein Honorar von CHF 1'200.–, zuzüglich 3 % Auslagenpauschale von CHF 36.– und 8,1 % MWST von CHF 97.20 ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "JSTPO",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

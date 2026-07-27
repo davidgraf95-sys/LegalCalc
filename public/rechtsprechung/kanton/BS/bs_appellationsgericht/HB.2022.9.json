@@ -217,7 +217,10 @@
         "Der amtlichen Verteidigung, [...], wird für das Beschwerdeverfahren ein Honorar von CHF 1'356.30 (einschliesslich Auslagen), zuzüglich 7,7 % MWST von CHF 104.45 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -234,7 +234,13 @@
         "Die Kosten des Zwischenentscheids vom 28. Juni 2023 gehen im Umfang von CHF 800.– zu Lasten der D____ (E____) und im Umfang von CHF 800.– zu Lasten von A____."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

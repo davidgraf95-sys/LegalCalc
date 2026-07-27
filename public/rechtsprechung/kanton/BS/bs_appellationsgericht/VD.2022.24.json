@@ -220,7 +220,13 @@
         "Das Justiz- und Sicherheitsdepartement wird verpflichtet, dem Vertreter des Rekurrenten, [...], für das verwaltungsgerichtliche Verfahren eine Parteientschädigung in Höhe von CHF 3’090.–, einschliesslich Auslagen, zuzüglich 7,7 % Mehrwertsteuer von CHF 237.95, auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "EMRK",
+        "VZAE",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

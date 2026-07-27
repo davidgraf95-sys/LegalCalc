@@ -151,7 +151,14 @@
         "Art. 274 CPP",
         "Art. 279 Abs. 3 CPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "JSTPO",
+        "PARLG",
+        "STBOG",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "6B_179/2024",
         "6B_562/2019",

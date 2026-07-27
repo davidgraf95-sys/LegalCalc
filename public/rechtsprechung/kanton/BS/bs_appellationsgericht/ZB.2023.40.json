@@ -292,7 +292,11 @@
         "Der Ehemann trägt seine eigenen Parteikosten. Zufolge Bewilligung der unentgeltlichen Rechtspflege wird seinem unentgeltlichen Rechtsbeistand, Advokat [...], für das Berufungsverfahren eine Entschädigung von CHF 1'236.–, zuzüglich 7,7 % MWST von CHF 95.–, aus der Gerichtskasse ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

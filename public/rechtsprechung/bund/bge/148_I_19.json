@@ -342,8 +342,10 @@
         "Art. 40 Abs. 3 EPG"
       ],
       "normKeys": [
+        "BGG",
         "BV",
-        "BGG"
+        "EMRK",
+        "EPG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -212,7 +212,11 @@
         "            Dem unentgeltlichen Rechtsvertreter, lic. iur. Sandro Horlacher, Advokat, wird ein Honorar von CHF 1'450.–, zuzüglich Auslagen von CHF 24.– und 8,1 % Mehrwertsteuer von CHF 119.40, insgesamt also CHF 1'593.40 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -173,7 +173,12 @@
         "Dem Beschwerdeführer werden ein Honorar von CHF 2'229.20 und ein Auslagenersatz von CHF 66.90, zuzüglich 8,1 % MWST von CHF 186.–, somit total CHF 2'482.10, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

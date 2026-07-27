@@ -147,7 +147,9 @@
         "Der Rekurrent trägt die Kosten des Verfahrens mit einer Gebühr von CHF 1’000.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

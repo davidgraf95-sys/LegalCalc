@@ -193,9 +193,10 @@
         "Art. 197 Abs. 2 ZGB"
       ],
       "normKeys": [
-        "ZPO",
+        "AHVG",
         "BGG",
-        "ZGB"
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

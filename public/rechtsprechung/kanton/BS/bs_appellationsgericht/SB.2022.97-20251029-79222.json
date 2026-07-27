@@ -248,7 +248,13 @@
         "Über die Verfahrenskosten sowie die Entschädigungen der jeweiligen amtlichen Verteidigung von A____, B____ und C____ wird mit dem jeweiligen Endurteil des Berufungsgerichts in ihrer Sache entschieden."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

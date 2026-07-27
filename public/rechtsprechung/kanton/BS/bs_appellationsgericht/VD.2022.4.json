@@ -271,7 +271,14 @@
         "Das Justiz- und Sicherheitsdepartement Basel-Stadt hat den Rekurrierenden für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 3'630.75, einschliesslich Auslagen und zuzüglich 7,7 % MWST von CHF 279.55, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "VZAE",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

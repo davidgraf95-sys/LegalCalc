@@ -195,7 +195,14 @@
         "Art. 154 Abs. 3 LINFI",
         "Art. 154 Abs. 4 LIMF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BANKG",
+        "BGG",
+        "FINFRAG",
+        "FINIG",
+        "IRSG",
+        "STGB"
+      ],
       "zitierteEntscheide": [
         "1A.217/2002",
         "1A.59/2000",

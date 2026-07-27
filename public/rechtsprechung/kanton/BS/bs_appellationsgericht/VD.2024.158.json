@@ -160,7 +160,11 @@
         "Das Gesuch um unentgeltliche Rechtspflege für das verwaltungsgerichtliche Beschwerdeverfahren wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "DBG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

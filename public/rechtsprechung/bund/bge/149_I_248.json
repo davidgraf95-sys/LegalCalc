@@ -426,10 +426,12 @@
         "Art. 105 Abs. 1 BGG"
       ],
       "normKeys": [
-        "STGB",
-        "BV",
         "AIG",
-        "BGG"
+        "BGG",
+        "BV",
+        "EMRK",
+        "FZA",
+        "STGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

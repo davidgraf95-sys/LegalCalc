@@ -190,7 +190,14 @@
         "Art. 27 LIPAD",
         "Art. 28 Abs. 2 CST"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "ARG",
+        "BGG",
+        "BGOE",
+        "BPG",
+        "BV",
+        "BVG"
+      ],
       "zitierteEntscheide": [
         "1C_129/2016",
         "1C_336/2021",

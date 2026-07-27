@@ -164,7 +164,10 @@
         "Der Privatklägerin wird gemäss Art. 436 Abs. 1 i.V.m. 433 Abs. 1 der Strafprozessordnung zu Lasten der Beschuldigten eine Parteientschädigung für das vorinstanzliche Verfahren von CHF 4'287.95, einschliesslich Mehrwertsteuer, und für das Berufungsverfahren von CHF 2’719.15, einschliesslich Auslagen und Mehrwertsteuer, zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

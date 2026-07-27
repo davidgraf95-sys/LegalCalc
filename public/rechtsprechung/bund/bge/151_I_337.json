@@ -302,7 +302,12 @@
         "Art. 35 CST",
         "Art. 36 Abs. 1 CST"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "2C_299/2023",
         "2C_421/2013",

@@ -310,7 +310,14 @@
         "Art. 10 OIMF",
         "Art. 120 Abs. 1 FINFRAG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "FINFRAG",
+        "FINFRAV",
+        "KAG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

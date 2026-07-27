@@ -371,7 +371,14 @@
         "Art. 2 OPERS",
         "Art. 20 Abs. 1 LPERS"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BPG",
+        "BPV",
+        "BV",
+        "EMRK",
+        "MG"
+      ],
       "zitierteEntscheide": [
         "1C_44/2021",
         "4A_152/2011",

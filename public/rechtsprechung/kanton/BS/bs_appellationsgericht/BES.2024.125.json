@@ -289,7 +289,11 @@
         "Dem Beschwerdegegner wird für das Beschwerdeverfahren die amtliche Verteidigung bewilligt und seiner amtlichen Verteidigerin, Advokatin lic. iur. Sonja Ryf, ein Honorar von CHF 950.– und eine Auslagenentschädigung von CHF 17.95 zuzüglich 8,1 % Mehrwertsteuer von CHF 78.40, somit insgesamt CHF 1'046.35, aus der Gerichtskasse entrichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

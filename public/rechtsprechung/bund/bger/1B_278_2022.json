@@ -152,10 +152,10 @@
         "Art. 64 BGG"
       ],
       "normKeys": [
-        "STGB",
-        "STPO",
+        "BGG",
         "BV",
-        "BGG"
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

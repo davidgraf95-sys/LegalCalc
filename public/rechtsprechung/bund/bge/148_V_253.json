@@ -273,7 +273,13 @@
         "Art. 16c EOG"
       ],
       "normKeys": [
-        "BGG"
+        "AHVG",
+        "AHVV",
+        "BGG",
+        "EOG",
+        "EOV",
+        "IVG",
+        "PRG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

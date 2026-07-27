@@ -317,7 +317,12 @@
         "Art. 28 CP",
         "Art. 31 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "6B_1033/2023",
         "6B_1062/2023",

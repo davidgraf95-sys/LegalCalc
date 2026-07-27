@@ -296,7 +296,14 @@
         "Im Übrigen wird die Stufe 1 der Klage vom 5. März 2021 (Rechtsbegehren Ziff. 1 und 2) abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IPRG",
+        "LUGUE",
+        "OR",
+        "STGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

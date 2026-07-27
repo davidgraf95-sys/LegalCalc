@@ -302,7 +302,11 @@
         "Art. 41 Abs. 4 CST",
         "Art. 49 PA"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "VWVG"
+      ],
       "zitierteEntscheide": [
         "2C_260/2019",
         "2C_421/2013",

@@ -228,9 +228,10 @@
         "Art. 20 Abs. 2ter UVG"
       ],
       "normKeys": [
-        "UVG",
+        "AHVG",
         "ATSG",
-        "BGG"
+        "BGG",
+        "UVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

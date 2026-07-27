@@ -237,7 +237,11 @@
         "Die Steuerrekurskommission hat den Rekurrierenden für das verwaltungsgerichtliche Verfahren eine Parteientschädigung von CHF 1'351.90 (einschliesslich Auslagen), zuzüglich 7,7 % MWST von CHF 104.10, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "DBG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

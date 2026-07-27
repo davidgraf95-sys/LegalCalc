@@ -257,7 +257,11 @@
         "Art. 62 Abs. 2 LEI",
         "Art. 63 Abs. 1 LEI"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

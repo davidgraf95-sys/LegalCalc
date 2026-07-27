@@ -152,7 +152,10 @@
         "Der amtlichen Verteidigerin der Berufungsklägerin, [...], Advokatin, wird ein Honorar von CHF 600.– (inklusive Auslagen und zuzüglich 8,1 % MWST von CHF 48.60) aus der Gerichtskasse bezahlt. Auf eine Rückzahlungspflicht gemäss Art. 135 Abs. 4 StPO wird verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -167,7 +167,11 @@
         "Art. 29a Abs. 3 OASI",
         "Art. 3 Abs. 2 RD"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "ASYLG",
+        "EMRK",
+        "VWVG"
+      ],
       "zitierteEntscheide": [
         "1C_240/2012",
         "BGE 142 II 218",

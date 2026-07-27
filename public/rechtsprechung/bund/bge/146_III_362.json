@@ -286,8 +286,11 @@
         "Art. 63 SVG"
       ],
       "normKeys": [
+        "ATSG",
+        "BGG",
         "OR",
-        "BGG"
+        "SVG",
+        "VVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

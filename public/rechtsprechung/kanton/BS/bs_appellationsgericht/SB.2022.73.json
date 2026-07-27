@@ -284,7 +284,12 @@
         "Über das Honorar der amtlichen Verteidigerin, [...], wird mit separatem Beschluss entschieden."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

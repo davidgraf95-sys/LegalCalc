@@ -273,8 +273,11 @@
         "Art. 321 STGB"
       ],
       "normKeys": [
-        "STGB",
-        "BGG"
+        "BANKG",
+        "BGFA",
+        "BGG",
+        "OR",
+        "STGB"
       ],
       "zitierteEntscheide": [
         "1C_187/2017",

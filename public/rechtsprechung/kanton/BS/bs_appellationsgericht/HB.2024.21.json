@@ -223,7 +223,10 @@
         "Der zum Zeitpunkt dieses Entscheids mandatierten amtlichen Verteidigerin, [...], wird für das Beschwerdeverfahren ein Honorar von CHF 250.– (inkl. Auslagen und MWST) aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

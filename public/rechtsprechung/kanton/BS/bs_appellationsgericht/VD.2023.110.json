@@ -195,7 +195,10 @@
         "Die Rekurrentin trägt die Gerichtskosten des verwaltungsgerichtlichen Rekurs-verfahrens mit einer Gebühr von CHF 3'000.–, einschliesslich Auslagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

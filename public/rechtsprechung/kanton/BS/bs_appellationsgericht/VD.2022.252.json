@@ -231,7 +231,11 @@
         "Das WSU hat der Rekurrentin für das verwaltungsintern Rekursverfahren eine Parteientschädigung von CHF 3’500.–, zuzüglich 7,7 % MWST von CHF 269.50, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ENTSG",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

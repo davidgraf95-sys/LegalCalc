@@ -238,7 +238,11 @@
         "Art. 292 CP"
       ],
       "normKeys": [
-        "ZGB"
+        "BGG",
+        "BV",
+        "STGB",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

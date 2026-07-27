@@ -390,7 +390,14 @@
         "Art. 2 Abs. 1 CP",
         "Art. 2 Abs. 1 RDSPF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "STGB",
+        "STPO",
+        "ZSTV"
+      ],
       "zitierteEntscheide": [
         "1B_323/2022",
         "1C_430/2009",

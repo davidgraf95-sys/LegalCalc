@@ -264,7 +264,12 @@
         "          Der Beschwerdeführerin steht kein Anspruch auf eine Parteientschädigung zu."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "BVG",
+        "IVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

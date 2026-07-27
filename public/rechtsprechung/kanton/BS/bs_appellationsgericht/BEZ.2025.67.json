@@ -122,7 +122,9 @@
         "Die Beschwerdeführerin trägt die Gerichtskosten des Beschwerdeverfahrens von CHF 200.–. Der darüber hinausgehend geleistete Kostenvorschuss wird zu Gunsten der Konkursmasse der Beschwerdeführerin an das Konkursamt überwiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

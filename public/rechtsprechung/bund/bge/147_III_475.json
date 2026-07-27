@@ -358,9 +358,10 @@
         "Art. 229 ZPO"
       ],
       "normKeys": [
-        "ZPO",
         "BGG",
-        "OR"
+        "OR",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

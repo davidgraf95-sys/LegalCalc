@@ -158,7 +158,10 @@
         "Über die Auferlegung der ordentlichen Kosten des Haftbeschwerdeverfahrens im Betrag von CHF 500.– wird mit dem Urteil in der Sache entschieden."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

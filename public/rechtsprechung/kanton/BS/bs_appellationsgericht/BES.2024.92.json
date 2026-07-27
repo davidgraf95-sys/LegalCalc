@@ -262,7 +262,11 @@
         "Den Rechtsvertreterinnen der Beschwerdegegner 2 und 3 wird aus Gerichtskasse jeweils eine Entschädigung von CHF 1'665.50 (inkl. Auslagen und MWST) ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

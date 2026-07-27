@@ -299,7 +299,12 @@
         "          Die ausserordentlichen Kosten werden wettgeschlagen. Dem Vertreter der Beschwerdeführerin, Dr. iur. B____, Advokat, wird ein Anwaltshonorar von Fr. 4'000.00 (inkl. Auslagen) zuzüglich Mehrwertsteuer von Fr. 324.00 ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

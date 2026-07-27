@@ -258,9 +258,18 @@
         "Art. 20a BGE"
       ],
       "normKeys": [
-        "UVG",
+        "ATSG",
+        "AVIG",
+        "BGG",
         "BV",
-        "BGG"
+        "BVG",
+        "IVG",
+        "IVV",
+        "KLV",
+        "KVG",
+        "KVV",
+        "UVG",
+        "UVV"
       ],
       "zitierteEntscheide": [
         "2C_139/2019",

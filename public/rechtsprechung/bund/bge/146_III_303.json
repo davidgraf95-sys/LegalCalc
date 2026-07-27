@@ -242,7 +242,13 @@
         "Art. 272 LP",
         "Art. 274 Abs. 1 LP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "SCHKG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "5A_240/2017",
         "5A_253/2015",

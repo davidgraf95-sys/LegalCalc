@@ -243,7 +243,14 @@
         "Art. 126 Abs. 1 CPP"
       ],
       "normKeys": [
-        "STPO"
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO",
+        "SVG",
+        "UWG",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

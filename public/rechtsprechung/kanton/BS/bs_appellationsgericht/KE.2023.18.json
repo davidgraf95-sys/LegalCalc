@@ -232,7 +232,11 @@
         "Die Vertretungskosten werden wettgeschlagen, wobei der Vertreterin des Beschwerdeführers, [...], aus der Gerichtskasse ein Honorar von CHF 2’400.‒ und eine Auslagenpauschale von CHF 72.‒ zuzüglich 7,7 % MWST von CHF 190.35, insgesamt also CHF 2'662.35, ausgerichtet wird."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

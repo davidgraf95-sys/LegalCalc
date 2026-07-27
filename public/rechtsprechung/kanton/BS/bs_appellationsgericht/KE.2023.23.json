@@ -177,7 +177,10 @@
         "A____ werden umständehalber keine Kosten auferlegt. B____ werden Gerichtskosten des Beschwerdeverfahrens in der Höhe von CHF 200.– (einschliesslich Auslagen) auferlegt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

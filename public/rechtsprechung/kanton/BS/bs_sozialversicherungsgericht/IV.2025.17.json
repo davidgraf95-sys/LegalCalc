@@ -305,7 +305,10 @@
         "            Der Vertreterin der Beschwerdeführerin im Kostenerlass, Lenka Ziegler, wird ein Anwaltshonorar von Fr. 3'000.00 (inkl. Auslagen) zuzüglich Mehrwertsteuer (8,1%) von Fr. 243.00 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

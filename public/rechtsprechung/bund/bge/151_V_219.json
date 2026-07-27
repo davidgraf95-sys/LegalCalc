@@ -321,9 +321,15 @@
         "Art. 15 Abs. 2 LPP"
       ],
       "normKeys": [
-        "OR",
+        "ATSG",
+        "AVIG",
         "BGG",
-        "BVG"
+        "BV",
+        "BVG",
+        "FZG",
+        "IVG",
+        "OR",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "8C_483/2016",

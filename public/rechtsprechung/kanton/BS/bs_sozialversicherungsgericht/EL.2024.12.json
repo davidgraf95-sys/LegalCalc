@@ -261,7 +261,13 @@
         "           Lic. iur. Christina Reinhardt, Advokatin, wird ein Anwaltshonorar von Fr. 3'000.-- (inklusive Auslagen) zuzüglich Mehrwertsteuer von Fr. 243.-- (8.1 %) aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "ELG",
+        "ELV",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

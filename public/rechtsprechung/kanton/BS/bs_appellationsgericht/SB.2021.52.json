@@ -444,7 +444,11 @@
         "Der unentgeltlichen Vertreterin der Privatklägerin, [...], wird für das zweitinstanzliche Verfahren ein Honorar von 12.7 Stunden à CHF 200.–, daher CHF 2'540.–, zuzüglich der ausgewiesenen Auslagen von CHF 24.60 sowie 7,7 % MWST von CHF 197.50, insgesamt also CHF 2'762.10 aus der Gerichtskasse ausgerichtet. Der Beurteilte hat dem Appellationsgericht vier Fünftel dieses Betrags in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 und Art. 426 Abs. 4 der Strafprozessordnung zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

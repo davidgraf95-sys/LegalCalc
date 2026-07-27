@@ -196,7 +196,10 @@
         "Art. 48c Abs. 2 OSE",
         "Art. 48c AVV"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR"
+      ],
       "zitierteEntscheide": [
         "2C_850/2016",
         "2C_851/2016",

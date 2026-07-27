@@ -172,7 +172,12 @@
         "Art. 49 CP",
         "Art. 50 Abs. 1 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "1B_250/2012",
         "1B_355/2022",

@@ -206,7 +206,10 @@
         "Das Gesuch um die Gewährung der unentgeltlichen Verbeiständung wird für das Verfahren VD.2023.121 gewährt und dem Rechtsvertreter aus der Gerichtskasse ein Honorar von CHF 1’600.‒ zuzüglich CHF 123.20 ausgerichtet. Im Verfahren VD.2023.10 wird das Gesuch um unentgeltliche Verbeiständung zufolge Aussichtslosigkeit abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

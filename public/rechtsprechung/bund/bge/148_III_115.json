@@ -163,7 +163,9 @@
         "Art. 472 CO"
       ],
       "normKeys": [
-        "OR"
+        "OR",
+        "STGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

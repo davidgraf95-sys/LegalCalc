@@ -749,7 +749,15 @@
         "Dem Vertreter des Privatklägers F____, [...], werden ein Honorar von 4’320.‒ und eine Spesenvergütung von CHF 90.85 zuzüglich 7,7 % MWST von insgesamt CHF 339.65 ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

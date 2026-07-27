@@ -338,7 +338,13 @@
         "Art. 2 Abs. 2 LPC"
       ],
       "normKeys": [
-        "DBG"
+        "BGG",
+        "BV",
+        "DBG",
+        "ELG",
+        "OR",
+        "STHG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2A.668/2004",

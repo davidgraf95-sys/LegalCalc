@@ -666,7 +666,14 @@
         "Der unentgeltlichen Vertreterin des Privatklägers 1, [...], Advokatin, werden für die zweite Instanz ein Honorar von CHF 4'500.– und ein Auslagenersatz von CHF 117.40, zuzüglich 7,7 % MWST von insgesamt CHF 355.55, somit total CHF 4'972.95 aus der Gerichtskasse ausgerichtet. A____ hat dem Appellationsgericht diesen Betrag in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 der Strafprozessordnung zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

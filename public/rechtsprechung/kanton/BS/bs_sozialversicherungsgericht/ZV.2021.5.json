@@ -238,7 +238,14 @@
         "Die Klägerin bezahlt der Beklagten eine Parteientschädigung von Fr. 5'750.00 (inkl. Auslagen) zuzüglich Mehrwertsteuer von Fr. 442.75."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IPRG",
+        "LUGUE",
+        "VVG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

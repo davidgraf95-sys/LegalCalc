@@ -273,7 +273,10 @@
         "Dem amtlichen Verteidiger des Gesuchstellers, [...], wird zu Lasten der Gerichtskasse ein Honorar von CHF 600.– zuzüglich 8,1 % MWST von CHF 48.60 und Auslagenpauschale von CHF 30.–, insgesamt somit CHF 678.60, zugesprochen. Art. 135 Abs. 4 StPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

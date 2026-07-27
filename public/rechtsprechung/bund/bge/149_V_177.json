@@ -257,8 +257,9 @@
       ],
       "normKeys": [
         "ATSG",
+        "BGG",
         "IVG",
-        "BGG"
+        "IVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

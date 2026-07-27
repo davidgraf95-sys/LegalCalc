@@ -275,7 +275,10 @@
         "Der Beigeladenen wird eine Parteientschädigung von CHF 3'000.– inklusive Auslagen, zuzüglich 7,7 % MWST von CHF 231.–, für beide Verfahren zugesprochen, welche je zur Hälfte durch die Rekurrierenden im Verfahren VD.2022.264 einerseits und die Rekurrentinnen im Verfahren VD.2022.270 andererseits, untereinander jeweils in solidarischer Verpflichtung, zu tragen ist."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

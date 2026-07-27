@@ -323,7 +323,11 @@
         "Die Beschwerdeführer haben dem Wahlverteidiger, Gabriel Püntener, Rechtsanwalt, eine Entschädigung in Höhe von total CHF 2'176.25 (inkl. Auslagenersatz von CHF 13.20 und 8,1 % MWST von CHF 163.05) auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

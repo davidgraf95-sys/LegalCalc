@@ -281,7 +281,12 @@
         "Der Berufungskläger hat dem Berufungsbeklagten eine Parteientschädigung von CHF 1'500.– und Auslagen von CHF 45.–, zuzüglich 8,1 % Mehrwertsteuer von CHF 125.10, somit total CHF 1'670.10 zu bezahlen. Zufolge voraussichtlicher Uneinbringlichkeit der Parteientschädigung und Bewilligung der unentgeltlichen Rechtspflege für den Berufungsbeklagten werden seinem unentgeltlichen Rechtsbeistand, lic. iur. Silvan Ulrich, ein Honorar von CHF 1'200.– und Auslagen von CHF 36.–, zuzüglich 8,1 % Mehrwertsteuer von CHF 100.10, somit total CHF 1'336.10 aus der Gerichtskasse ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO durch den Berufungskläger bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

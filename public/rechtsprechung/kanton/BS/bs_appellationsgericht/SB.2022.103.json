@@ -280,7 +280,12 @@
         "A____ wird für die im erstinstanzlichen Verfahren getätigten Aufwendungen durch [...] ausserdem eine reduzierte Parteientschädigung in Höhe von CHF 500.– aus der Gerichtskasse zugesprochen (inkl. Auslagen und MWST)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

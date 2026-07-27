@@ -158,7 +158,10 @@
         "Der Gesuchstellerin wird zu Lasten der Gerichtskasse eine Parteientschädigung von CHF 750.– zuzüglich 8,1 % MWST von CHF 60.75, somit total CHF 810.75 zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

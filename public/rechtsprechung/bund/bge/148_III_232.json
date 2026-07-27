@@ -267,7 +267,15 @@
         "Art. 13 Abs. 2 OLP",
         "Art. 13 LPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "BVG",
+        "FZG",
+        "FZV",
+        "OR",
+        "SCHKG"
+      ],
       "zitierteEntscheide": [
         "2C_538/2009",
         "5A_187/2011",

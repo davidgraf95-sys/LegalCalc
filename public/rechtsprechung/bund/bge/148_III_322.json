@@ -251,9 +251,10 @@
         "Art. 221 Abs. 1 ZPO"
       ],
       "normKeys": [
-        "ZPO",
+        "BGG",
         "OR",
-        "BGG"
+        "SCHKG",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

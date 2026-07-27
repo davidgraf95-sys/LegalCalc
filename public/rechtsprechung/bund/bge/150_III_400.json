@@ -232,7 +232,12 @@
         "Art. 236 Abs. 2 CPC",
         "Art. 238 CPC"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "SCHKG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "4A_131/2012",
         "4A_266/2020",

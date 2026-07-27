@@ -263,7 +263,10 @@
         "Art. 4 BGE"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "BV",
+        "BVG",
+        "VWVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

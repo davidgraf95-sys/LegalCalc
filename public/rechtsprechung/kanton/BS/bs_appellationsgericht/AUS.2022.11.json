@@ -135,7 +135,9 @@
         "            Das Migrationsamt Basel-Stadt wird angewiesen, A___ das vorliegende Urteil in einer für ihn verständlichen Sprache zu eröffnen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

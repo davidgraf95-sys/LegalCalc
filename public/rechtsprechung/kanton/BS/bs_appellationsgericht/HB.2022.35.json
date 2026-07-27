@@ -161,7 +161,11 @@
         "Der amtlichen Verteidigerin, [...], wird ein Honorar von pauschal CHF 400.– (inkl. allfällige Auslagen und 7,7 % MWST) aus der Gerichtskasse bezahlt. Der Entscheid über eine allfällige Rückforderung gemäss Art. 135 Abs. 4 StPO wird dem Sachentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

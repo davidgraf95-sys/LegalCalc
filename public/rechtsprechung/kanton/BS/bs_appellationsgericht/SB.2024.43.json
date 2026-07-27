@@ -328,7 +328,13 @@
         "Der Vertreterin der Privatklägerin im Kostenerlass, Mlaw Anina Hofer, Advokatin, werden für das zweitinstanzliche Verfahren in Anwendung von Art. 136 der Strafprozessordnung ein Honorar von CHF 3'833.35 und ein Auslagenersatz von CHF 6.–, zuzüglich 8,1 % MWST von 311.–, somit total CHF 4'150.35 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

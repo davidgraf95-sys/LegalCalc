@@ -216,7 +216,11 @@
         "Der Beschwerdegegner zahlt dem Beschwerdeführer für das Beschwerdeverfahren eine Parteientschädigung von CHF 138.– (einschliesslich Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

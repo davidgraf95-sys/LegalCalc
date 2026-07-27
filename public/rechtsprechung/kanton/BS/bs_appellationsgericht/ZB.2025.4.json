@@ -137,7 +137,11 @@
         "Die Berufungsklägerin zahlt der Berufungsbeklagten eine Parteientschädigung von CHF 1'545.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

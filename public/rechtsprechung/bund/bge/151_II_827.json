@@ -389,7 +389,11 @@
       ],
       "normKeys": [
         "BGG",
-        "DBG"
+        "DBG",
+        "OR",
+        "VSTG",
+        "VSTV",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2C_1135/2016",

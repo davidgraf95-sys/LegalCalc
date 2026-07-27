@@ -231,7 +231,13 @@
         "Der Beschwerdeführer trägt die ordentlichen Kosten des verwaltungsgerichtlichen Verfahrens mit einer Gebühr von CHF 1’200.–, einschliesslich Auslagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "DBG",
+        "STHG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -291,7 +291,13 @@
         "Dem Rekurrenten wird eine reduzierte Parteientschädigung in der Höhe von CHF 1’931.– (inkl. Auslagen), zuzüglich Mehrwertsteuer von 152.55 (7,7 % auf CHF 965.50 und 8,1 % auf CHF 965.50) zugesprochen. Die Parteientschädigung wird zu zwei Dritteln (CHF 1'389.–) der Wohnschutzkommission Basel-Stadt und zu einem Drittel (CHF 694.50) dem Mieterinnen- und Mieterverband Basel auferlegt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "VMWG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

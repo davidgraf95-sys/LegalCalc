@@ -271,7 +271,14 @@
         "Den Rekurrierenden wird eine Parteientschädigung von CHF 7'812.15, einschliesslich Auslagen, zuzüglich 7,7 % MWST von CHF 601.55 zulasten des Justiz- und Sicherheitsdepartments zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "VZAE",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

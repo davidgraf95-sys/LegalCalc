@@ -320,7 +320,11 @@
         "Art. 36 Abs. 1 LFTB",
         "Art. 42 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "PATG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

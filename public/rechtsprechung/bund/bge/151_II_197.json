@@ -267,7 +267,13 @@
         "Art. 22 Abs. 2 LFINMA",
         "Art. 22 Abs. 4 LFINMA"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGERR",
+        "BGG",
+        "BV",
+        "FINMAG",
+        "VWVG"
+      ],
       "zitierteEntscheide": [
         "1B_176/2019",
         "2C_148/2020",

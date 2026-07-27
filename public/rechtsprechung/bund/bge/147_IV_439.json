@@ -276,10 +276,13 @@
         "Art. 190 BV"
       ],
       "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
         "STGB",
         "STPO",
-        "BGG",
-        "BV"
+        "SVG",
+        "VRV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

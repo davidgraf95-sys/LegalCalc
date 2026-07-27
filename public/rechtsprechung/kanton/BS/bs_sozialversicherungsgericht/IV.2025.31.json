@@ -310,7 +310,12 @@
         "          Die ausserordentlichen Kosten werden wettgeschlagen. Zufolge Bewilligung der unentgeltlichen Verbeiständung wird Gaël Jenoure, Advokat, ein Honorar von Fr. 3'000.00 (inkl. Auslagen) nebst Fr. 243.00 Mehrwertsteuer aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

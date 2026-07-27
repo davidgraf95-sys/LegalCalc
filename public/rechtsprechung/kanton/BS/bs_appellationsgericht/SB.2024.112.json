@@ -453,7 +453,13 @@
         "Dem amtlichen Verteidiger, MLaw Julian Burkhalter, Rechtsanwalt, werden für die zweite Instanz ein Honorar von CHF 4'170.– und ein Auslagenersatz von CHF 1030.70, zuzüglich 8,1 % Mehrwertsteuer von insgesamt CHF 421.25, somit total CHF 5'621.95 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

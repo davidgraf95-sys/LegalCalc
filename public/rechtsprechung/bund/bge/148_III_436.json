@@ -220,7 +220,10 @@
         "Art. 190a Abs. 1 LDIP",
         "Art. 190a IPRG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IPRG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -295,7 +295,9 @@
         "Art. 27 MACP",
         "Art. 7 LAAF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [
         "2C_1010/2022",
         "2C_156/2023",

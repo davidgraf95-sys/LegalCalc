@@ -166,7 +166,10 @@
         "            Der unentgeltlichen Rechtsbeiständin von A____, [...], wird ein Honorar von CHF 1'000.– aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

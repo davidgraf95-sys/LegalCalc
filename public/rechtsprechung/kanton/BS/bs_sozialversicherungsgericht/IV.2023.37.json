@@ -390,7 +390,12 @@
         "            Die IV-Stelle trägt die ordentlichen Kosten des Verfahrens mit einer Gebühr von Fr. 800.00 sowie eine Parteientschädigung an die Beschwerdeführerin von Fr. 4’500.00 (inkl. Auslagen) zuzüglich Fr. 327.25 Mehrwertsteuer."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

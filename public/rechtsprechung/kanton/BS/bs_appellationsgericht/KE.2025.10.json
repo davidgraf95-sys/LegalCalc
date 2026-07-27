@@ -226,7 +226,11 @@
         "Der Kindesvertreterin, lic. iur. Jessica Baltzer, werden aus der Gerichtskasse ein Honorar von CHF 4'066.65 und ein Auslagenersatz von CHF 15.40 zuzüglich 8,1 % MWST von CHF 330.65, insgesamt also CHF 4’397.30 ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

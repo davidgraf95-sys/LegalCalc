@@ -251,7 +251,12 @@
         "Die Staatskanzlei hat dem Rekurrenten für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 4'272.–, einschliesslich Auslagen und zuzüglich MWST von CHF 346.–, insgesamt somit CHF 4'618.– zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BGOE",
+        "RPG",
+        "USG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

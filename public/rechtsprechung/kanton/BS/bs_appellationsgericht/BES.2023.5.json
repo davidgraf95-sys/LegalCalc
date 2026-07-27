@@ -192,7 +192,12 @@
         "Dem amtlichen Verteidiger, Rechtsanwalt [...], wird für das Beschwerdeverfahren ein Honorar von CHF 1'200.– (einschliesslich Auslagen) aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -212,7 +212,13 @@
         "Art. 2 OCEI",
         "Art. 23 Abs. 2 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO",
+        "VWVG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "1B_240/2020",
         "1C_811/2013",

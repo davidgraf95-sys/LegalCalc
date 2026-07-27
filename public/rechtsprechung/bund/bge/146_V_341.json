@@ -311,7 +311,17 @@
         "Art. 13 Abs. 5 OLP",
         "Art. 19 Abs. 1 OLP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGERR",
+        "BGG",
+        "BV",
+        "BVG",
+        "DBG",
+        "FZG",
+        "FZV",
+        "OR",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

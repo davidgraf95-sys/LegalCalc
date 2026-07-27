@@ -157,7 +157,12 @@
         "Art. 78 Abs. 2 OAC",
         "Art. 78 Abs. 2 VZV"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "SVG",
+        "VZV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

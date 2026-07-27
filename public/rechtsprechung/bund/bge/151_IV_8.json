@@ -178,7 +178,10 @@
         "Le présent arrêt est communiqué aux parties et au Tribunal cantonal du Valais, Cour pénale I."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB"
+      ],
       "zitierteEntscheide": [
         "6B_1093/2023",
         "6B_355/2023",

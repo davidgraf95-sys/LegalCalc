@@ -166,7 +166,10 @@
       ],
       "normKeys": [
         "BGG",
-        "BV"
+        "BV",
+        "PATG",
+        "STGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

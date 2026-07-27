@@ -305,7 +305,12 @@
         "            Die Beschwerdegegnerin trägt eine Gebühr von Fr. 800.00 und eine Partei-entschädigung von Fr. 3'000.00 (inkl. Auslagen) zuzüglich Mehrwertsteuer von Fr. 243.00 an den Beschwerdeführer."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AHVV",
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

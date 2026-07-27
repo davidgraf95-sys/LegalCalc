@@ -308,8 +308,9 @@
         "Art. 40 EPG"
       ],
       "normKeys": [
-        "BV",
         "BGG",
+        "BV",
+        "EPG",
         "STGB"
       ],
       "zitierteEntscheide": [

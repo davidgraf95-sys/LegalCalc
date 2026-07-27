@@ -222,7 +222,12 @@
         "Art. 429 CPP",
         "Art. 7 CEDH"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

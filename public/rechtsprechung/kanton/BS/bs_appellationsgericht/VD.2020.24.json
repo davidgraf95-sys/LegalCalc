@@ -246,7 +246,12 @@
         "Die Rekurrierenden tragen die Kosten des verwaltungsgerichtlichen Rekursverfahrens in solidarischer Verbindung mit einer reduzierten Gebühr von CHF 5’000.–, einschliesslich Auslagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "GLG",
+        "VWVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

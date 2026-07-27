@@ -185,7 +185,14 @@
         "Art. 56 CPC",
         "Art. 60 CPC"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "SCHKG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "4A_100/2016",
         "4A_165/2021",

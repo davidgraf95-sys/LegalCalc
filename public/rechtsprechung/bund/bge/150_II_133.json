@@ -323,7 +323,14 @@
         "Art. 2 Abs. 1 RPV",
         "Art. 2 NHG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "NHG",
+        "RPG",
+        "RPV",
+        "USG",
+        "UVPV"
+      ],
       "zitierteEntscheide": [
         "1A.230/2005",
         "1C_212/2009",

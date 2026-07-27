@@ -226,7 +226,11 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird der Rechtsbeiständin des Beschwerdeführers, [...], Advokatin, für das verwaltungsgerichtliche Beschwerdeverfahren ein Honorar von CHF 3'615.–, zuzüglich Auslagen von CHF 108.45 und MWST von CHF 286.70 (7,7 %), aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

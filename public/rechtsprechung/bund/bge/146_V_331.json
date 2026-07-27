@@ -241,9 +241,15 @@
         "Art. 16 Abs. 2 OLP"
       ],
       "normKeys": [
-        "BVG",
+        "AHVV",
+        "ATSG",
         "BGG",
-        "ELG"
+        "BVG",
+        "ELG",
+        "ELV",
+        "FZG",
+        "FZV",
+        "IVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

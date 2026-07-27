@@ -222,7 +222,10 @@
         "Es wird umständehalber auf die Erhebung ordentlicher Verfahrenskosten verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

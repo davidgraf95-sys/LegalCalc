@@ -188,7 +188,11 @@
         "Die Beschwerdeführer tragen in solidarischer Verbindung die Kosten des Verfahrens mit einer Entscheidgebühr von CHF 1’000.‒ (inkl. Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

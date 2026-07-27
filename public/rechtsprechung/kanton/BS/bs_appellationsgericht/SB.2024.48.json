@@ -374,7 +374,14 @@
         "Dem amtlichen Verteidiger, Dr. iur. Andreas Noll, werden für die zweite Instanz ein Honorar von CHF 3'258.– und ein Auslagenersatz von CHF 28.25, zuzüglich 8,1 % Mehrwertsteuer von insgesamt CHF 266.20, somit total CHF 3'552.45 aus der Gerichtskasse zugesprochen. Im Umfang von 50 % dieses Betrags bleibt Art. 135 Abs. 4 der Strafprozessordnung vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG",
+        "VRV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -363,7 +363,12 @@
         "Art. 51 LBI"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "BV",
+        "IPRG",
+        "LUGUE",
+        "PATG",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

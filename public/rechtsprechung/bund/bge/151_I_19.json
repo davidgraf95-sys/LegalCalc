@@ -277,8 +277,12 @@
         "Art. 29a BV"
       ],
       "normKeys": [
+        "BGERR",
+        "BGG",
         "BV",
-        "BGG"
+        "EMRK",
+        "VWVG",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

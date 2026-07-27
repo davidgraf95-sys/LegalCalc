@@ -422,7 +422,16 @@
         "Art. 105 Abs. 1 LTF",
         "Art. 105 Abs. 2 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "SVG",
+        "VRV",
+        "VTS",
+        "VZV",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "1C_537/2021",
         "1C_569/2010",

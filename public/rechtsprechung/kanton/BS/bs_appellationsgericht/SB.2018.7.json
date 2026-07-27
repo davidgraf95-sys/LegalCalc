@@ -142,7 +142,10 @@
         "-       Justiz- und Sicherheitsdepartement, Finanzen und Controlling"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

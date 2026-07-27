@@ -266,8 +266,10 @@
         "Art. 84 Abs. 2 CC"
       ],
       "normKeys": [
+        "BGG",
+        "DBG",
         "STHG",
-        "DBG"
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

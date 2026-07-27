@@ -136,7 +136,9 @@
         "Für das vorliegende Urteil werden weder Gerichtskosten erhoben noch eine Parteientschädigung zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

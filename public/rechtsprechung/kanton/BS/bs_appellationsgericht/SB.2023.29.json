@@ -353,7 +353,12 @@
         "A____ wird eine reduzierte Parteientschädigung von CHF 1'100.– für das erstinstanzliche Verfahren sowie von CHF 550.– für das Berufungsverfahren (je inkl. Auslagen und Mehrwertsteuer) aus der Gerichtskasse zugesprochen. Diese wird mit der unbedingten Geldstrafe, den Verfahrenskosten, der reduzierten Urteilsgebühr des erstinstanzlichen Verfahrens sowie der reduzierten Urteilsgebühr des Berufungsverfahrens verrechnet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

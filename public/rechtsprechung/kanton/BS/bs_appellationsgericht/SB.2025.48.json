@@ -203,7 +203,10 @@
         "Der Vertreterin des Privatklägers im Kostenerlass, lic. iur. Joanna Wierzcholski, Advokatin, werden für die zweite Instanz in Anwendung von Art. 136 in Verbindung mit Art. 426 Abs. 4 der Strafprozessordnung ein Honorar von CHF 1'600.– und ein Auslagenersatz von CHF 22.35, zuzüglich 8,1 % MWST von CHF 131.40, somit total CHF 1'753.75 aus der Gerichtskasse ausgerichtet. A____ hat dem Appellationsgericht diesen Betrag zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben, in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 der Strafprozessordnung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

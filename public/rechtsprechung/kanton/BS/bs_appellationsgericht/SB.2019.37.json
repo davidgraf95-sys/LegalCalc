@@ -246,7 +246,10 @@
         "Dem amtlichen Verteidiger, [...], werden für das Rückweisungsverfahren ein Honorar von CHF 1'560.60 und ein Auslagenersatz von CHF 36.20, zuzüglich MWST von 7,7 % in Höhe von insgesamt CHF 122.95, somit total CHF 1'719.75 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -231,11 +231,13 @@
         "Art. 71ter Abs. 3 AHVV"
       ],
       "normKeys": [
-        "BVG",
+        "AHVV",
         "ATSG",
-        "IVG",
         "BGG",
-        "BV"
+        "BV",
+        "BVG",
+        "IVG",
+        "IVV"
       ],
       "zitierteEntscheide": [
         "8C_62/2018",

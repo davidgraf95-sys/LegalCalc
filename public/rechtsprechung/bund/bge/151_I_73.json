@@ -287,7 +287,11 @@
         "Art. 190 BV"
       ],
       "normKeys": [
-        "BV"
+        "ATSG",
+        "BV",
+        "EMRK",
+        "IVG",
+        "VWVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

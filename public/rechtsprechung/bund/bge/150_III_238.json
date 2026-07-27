@@ -239,7 +239,10 @@
         "Art. 190 Abs. 2 IPRG"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "BV",
+        "IPRG",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

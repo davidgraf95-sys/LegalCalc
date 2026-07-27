@@ -608,7 +608,12 @@
         "Dem Privatkläger C____ wird gemäss Art. 436 Abs. 1 i.V.m. 433 Abs. 1 der Strafprozessordnung zu Lasten des Berufungsklägers für die erste Instanz eine Parteientschädigung von CHF 571.15 (inklusive Mehrwertsteuer und Auslagen) zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

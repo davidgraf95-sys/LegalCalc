@@ -366,7 +366,12 @@
         "Art. 12 CP",
         "Art. 13 Abs. 1 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "MSTG",
+        "STGB"
+      ],
       "zitierteEntscheide": [
         "1B_590/2021",
         "6B_122/2021",

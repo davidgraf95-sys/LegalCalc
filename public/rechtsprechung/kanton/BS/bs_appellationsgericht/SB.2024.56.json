@@ -229,7 +229,13 @@
         "Dem amtlichen Verteidiger, B____, wird für die zweite Instanz ein Honorar von CHF 1‘650.‒ und ein Auslagenersatz von CHF 34.05, zuzüglich Mehrwertsteuer von insgesamt CHF 136.40 (8,1 % auf CHF 1'284.05), somit total CHF 1‘820.45, aus der Gerichtskasse zugesprochen. Auf eine Rückforderung im Sinne von Art. 135 Abs. 4 der Strafprozessordnung wird verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SSV",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

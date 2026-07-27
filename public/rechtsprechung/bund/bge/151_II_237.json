@@ -233,11 +233,13 @@
         "Art. 8 ZGB"
       ],
       "normKeys": [
-        "BGG",
         "AIG",
+        "ASYLG",
+        "BGG",
+        "BV",
+        "EMRK",
         "STGB",
-        "ZGB",
-        "BV"
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "1C_280/2022",

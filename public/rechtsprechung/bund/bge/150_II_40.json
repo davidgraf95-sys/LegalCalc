@@ -293,10 +293,11 @@
         "Art. 61 DBG"
       ],
       "normKeys": [
-        "STHG",
+        "BGG",
+        "BV",
         "DBG",
         "OR",
-        "BGG"
+        "STHG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

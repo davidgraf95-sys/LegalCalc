@@ -166,7 +166,11 @@
         "Der Beschwerdeführer hat der Beigeladenen für das Beschwerdeverfahren eine Parteientschädigung in Höhe von CHF 1'668.55, zuzüglich Auslagen von CHF 50.05 und 7,7% Mehrwertsteuer von CHF 132.35, total CHF 1'850.95 zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

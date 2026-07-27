@@ -298,7 +298,10 @@
         "Art. 32 IPRG"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "IPRG",
+        "ZGB",
+        "ZSTV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

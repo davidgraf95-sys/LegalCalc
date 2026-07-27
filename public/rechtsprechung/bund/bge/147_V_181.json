@@ -188,9 +188,11 @@
         "Art. 26a Abs. 3 BVG"
       ],
       "normKeys": [
-        "BVG",
+        "ATSG",
         "BGG",
-        "ATSG"
+        "BVG",
+        "FZG",
+        "IVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

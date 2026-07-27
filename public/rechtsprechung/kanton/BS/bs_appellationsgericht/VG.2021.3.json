@@ -343,7 +343,11 @@
         "Die Beschwerdeführenden tragen die Gerichtskosten des verfassungsgerichtlichen Beschwerdeverfahrens mit einer Gebühr von insgesamt CHF 2’000.–, einschliesslich Auslagen, wie auch der Gebühr für den Massnahmeentscheid vom 29. November 2021 von CHF 500.– in solidarischer Verbindung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EPG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

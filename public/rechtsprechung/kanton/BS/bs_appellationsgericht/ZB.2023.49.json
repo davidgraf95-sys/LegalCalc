@@ -180,7 +180,13 @@
         "Die Berufungskläger haben in solidarischer Verpflichtung den Berufungsbeklagten in solidarischer Verbindung eine Parteientschädigung von CHF 5'966.65, zuzüglich 7,7 % MWST von CHF 414.25 und 8,1 % von CHF 47.50, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

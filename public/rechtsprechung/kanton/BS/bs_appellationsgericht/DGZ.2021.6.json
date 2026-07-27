@@ -127,7 +127,10 @@
         "Die Gesuchstellerin trägt die Kosten des Revisionsverfahrens mit einer Gebühr von CHF 400.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

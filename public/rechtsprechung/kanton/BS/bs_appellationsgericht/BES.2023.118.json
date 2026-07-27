@@ -254,7 +254,13 @@
         "Der Beschwerdeführerin wird für das Beschwerdeverfahren eine Parteientschädigung von CHF 1'113.40 (einschliesslich Auslagen) aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

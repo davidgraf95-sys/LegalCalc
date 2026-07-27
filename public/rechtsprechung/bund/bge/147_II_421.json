@@ -261,7 +261,10 @@
         "Art. 105 Abs. 1 LTF",
         "Art. 83 Abs. 4 LEI"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
