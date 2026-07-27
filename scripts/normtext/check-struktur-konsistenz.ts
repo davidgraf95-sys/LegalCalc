@@ -108,7 +108,10 @@ function main(): void {
   let kantonGeprueft = 0;
   let kantonDoppelIdHinweise = 0;
   let nichtLexworkOhneSidecar = 0;
-  let kantonFehlerVorher = exitCode;
+  // N1 (QS-GP 27.7.2026): eigener Kanton-Fehlerzähler — der frühere Vergleich
+  // gegen das globale exitCode-Flag konnte nach einem Bund-Fehler einen
+  // Kanton-Fehler nicht mehr unterscheiden und druckte die ok-Zeile trotzdem.
+  let kantonFehler = 0;
 
   for (const f of readdirSync(KANTON_SNAP_DIR).filter((f) => f.endsWith('.json') && f !== 'index.json')) {
     const erlass = f.replace(/\.json$/, '');
@@ -125,6 +128,7 @@ function main(): void {
         // einen Sidecar erzeugen müssen).
         console.error(`  FEHLER ${erlass}: LexWork-Snapshot vorhanden, aber Struktur-Sidecar fehlt (${struPfad}).`);
         exitCode = 1;
+        kantonFehler++;
       } else {
         // Dokumentierte Ausnahme: Nicht-LexWork-Quellen (PDF/HTM/ZH-PDF/lexfind)
         // erhalten nie einen Sidecar (struktur-kanton-run.ts überspringt sie).
@@ -142,6 +146,7 @@ function main(): void {
           `(veraltete Struktur — Sidecar nicht mit Snapshot neu gebaut): ${r.verwaist.slice(0, 10).join(', ')}`,
       );
       exitCode = 1;
+      kantonFehler++;
     }
     if (r.fehlend.length > 0) {
       console.error(
@@ -149,13 +154,14 @@ function main(): void {
           `(rendern ohne Gliederung/Randtitel VOR den Sektionen, im TOC unerreichbar): ${r.fehlend.slice(0, 10).join(', ')}`,
       );
       exitCode = 1;
+      kantonFehler++;
     }
     if (r.fehlendDoppelId.length > 0) {
       kantonDoppelIdHinweise += r.fehlendDoppelId.length;
     }
   }
 
-  if (exitCode === kantonFehlerVorher) {
+  if (kantonFehler === 0) {
     console.log(
       `  ok: ${kantonGeprueft} Kanton-Erlasse (LexWork) — Struktur ↔ Snapshot konsistent` +
         (kantonDoppelIdHinweise > 0 ? ` (${kantonDoppelIdHinweise} dokumentierte Doppelartikel-__N ohne Struktur, bekannt)` : '') +
