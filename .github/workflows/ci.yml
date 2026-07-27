@@ -164,6 +164,12 @@ jobs:
         run: npm run check:vollstaendigkeit && npm run check:zaehler && npm run check:historie && npm run check:revisionen && npm run check:artikel-revisionen
       - name: Normtext-Struktur (Tabellen · Grundart · Invarianten)
         run: npm run check:tabellen && npm run check:grundart && npm run check:invarianten
+      # Das §6-Beweismittel selbst: golden/normtext-snapshot.json wird vom
+      # Generator PAUSCHAL ueberschrieben (PR #383 Runde 2: 55'763 -> 32'639
+      # Eintraege aus einem partiellen Korpus) und wurde bis 27.7.2026 von KEINEM
+      # Tor gelesen. Laeuft offline in <1 s.
+      - name: Golden-Vollständigkeit (Normtext-Index ⊇⊆ Snapshots)
+        run: npm run check:golden-normtext
       - name: Quellen-Projektionen (PDF · PDF-Quellen · Bilder)
         run: npm run check:pdf && npm run check:pdf-quellen && npm run check:bilder
       - name: SEO-Index · Verfall-UI
