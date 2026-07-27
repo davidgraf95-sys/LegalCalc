@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/RiE 451.200/art_1",
@@ -25,7 +25,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 451.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c0bfbc63f9276f4685719c994d1cf5f9",
       "sha": "836b551b80003d345d16bf14723aac545b67ce517cea933cf33bf08e045d048e"
     },
@@ -53,7 +53,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 451.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c0bfbc63f9276f4685719c994d1cf5f9",
       "sha": "bbea50d25914348140aef9025bbdf5faf7f4ea47a72a5f8b7c171862c0c441da"
     },
@@ -65,6 +65,7 @@
       "artikel": "3",
       "artikelLabel": "§ 3",
       "titel": "Museumsleitung",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": "1",
@@ -73,7 +74,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 451.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c0bfbc63f9276f4685719c994d1cf5f9",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -93,7 +94,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 451.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c0bfbc63f9276f4685719c994d1cf5f9",
       "sha": "66e86281325893bf070813283ed2d97acc1bcfead2cdd5419b9c6e2cbab6b93c"
     },
@@ -121,7 +122,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 451.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c0bfbc63f9276f4685719c994d1cf5f9",
       "sha": "875eeedb3df1ae19cb55a84263907ee2f189e342e3c35330676d51f0fa8ff713"
     },
@@ -145,7 +146,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 451.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c0bfbc63f9276f4685719c994d1cf5f9",
       "sha": "a8764c763d8409afea88f643cd9982d172630e818684fdc8f055bff23de507ab"
     },
@@ -178,7 +179,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 451.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c0bfbc63f9276f4685719c994d1cf5f9",
       "sha": "9b4b1cc3170ce1c5644030b58ca6a8882ee7b0e1e946ec8d15f71b42757798b2"
     }
