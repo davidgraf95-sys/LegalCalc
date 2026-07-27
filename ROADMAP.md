@@ -557,7 +557,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > Reihenfolge nach Praxis-Hebel × Machbarkeit ohne Fachzeit × Abhängigkeiten. Alles `[OF]`, sofern
 > nicht vermerkt. Details + Bau-Auflagen je Werkzeug: «Funktions-Katalog» unten + jeweilige `FAHRPLAN-*.md`.
 
-<!-- @queue: QS-TOK, W2·5d, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·7-BEZUG, W2·6b-MAT-FINMA -->
+<!-- @queue: QS-TOK, W2·5d, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6-NKEY, W2·7-BEZUG, W2·6b-MAT-FINMA -->
 <!-- ^ SSoT der Bau-Reihenfolge (Einbau 24.7.2026): plan:next wertet die @queue VOR der
      Dokumentreihenfolge aus; Integrität erzwingt check:plan Regel 8 (tote/erledigte IDs rot,
      Prosa-«OBERSTER» muss dem Queue-Kopf entsprechen). Priorität ändern = NUR diese Zeile
@@ -1065,7 +1065,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   `bibliothek/recherche/zitationsnetz-feasibility.md`. **DoD:** Generator deterministisch (2 Läufe
   byte-gleich) · `check:gegenpruefung` bestanden · golden byte-gleich · Tore grün. Trailer
   `Roadmap: W2·6-ZNETZ` + `Gegenpruefung: <Verdikt>`.
-- [ ] **6-NKEY · normKeys-Abdeckung generalisieren — Register-Ableitung + FR/IT-Aliase + Sichtbarkeits-Tor** *(§14-Intake 21.7.2026, David · Extraktion/Mapping — Risikopfad, `QS-GP`; **ULTRACODE freigegeben** für den Bau)*
+- [ ] **6-NKEY · normKeys-Abdeckung generalisieren — Register-Ableitung + FR/IT-Aliase + Sichtbarkeits-Tor** *(§14-Intake 21.7.2026, David · Extraktion/Mapping — Risikopfad, `QS-GP`; **ULTRACODE freigegeben** für den Bau · **Dekret David 27.7.2026: erste Stufe der Verzahnungs-Strecke, vor `W2·7-BEZUG`** — in @queue verankert)*
   <!-- @meta id: W2·6-NKEY · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/rechtsprechung, src/lib/rechtsprechung] · worktree: ja · 26x: nein -->
   **Befund (empirisch, 21.7.2026, Anlassfall `bge_148_II_475` ohne KG-Verzahnung):** Von 9 905
   Norm-Zitat-Nennungen über 5 093 Entscheide mappt die Hand-Whitelist `ABK_REGISTER`
@@ -1114,9 +1114,11 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   Startseiten-Kachel «Meistzitierte Artikel» = Andockpunkt (W2·5c fertig, Fläche frei).
   **Detailquelle:** `FAHRPLAN-VERZAHNUNG-UI.md`.
 - [ ] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** *(§14-Intake 24.7.2026;
-  <!-- @meta id: W2·7-BEZUG · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext/entscheide-schreiben.ts, src/lib/rechtsprechung/norm-index.ts, src/lib/verzahnung, src/components/kontext/KontextPanel.tsx, src/pages/gesetz-leser/LeserAnsichtMenu.tsx, public/rechtsprechung] · seq-weich: [W2·7-VZUI(KontextPanel.tsx), W2·5h-GESETZ-UI(LeserAnsichtMenu.tsx)] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
+  <!-- @meta id: W2·7-BEZUG · status: ready · of: ja · blocker: null · dep: [W2·6-NKEY] · kollision: [scripts/normtext/entscheide-schreiben.ts, src/lib/rechtsprechung/norm-index.ts, src/lib/verzahnung, src/components/kontext/KontextPanel.tsx, src/pages/gesetz-leser/LeserAnsichtMenu.tsx, public/rechtsprechung] · seq-weich: [W2·7-VZUI(KontextPanel.tsx), W2·5h-GESETZ-UI(LeserAnsichtMenu.tsx)] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
   **Fokus-Dekret-Priorität**, Wortlaut David: Verzahnung Gesetz↔Entscheide «sehr gutes Feature, das
-  ich mit Priorität einbauen will»)* — das Verzahnungs-Fundament wird von «BGE-Leitfälle an
+  ich mit Priorität einbauen will»; **Dekret David 27.7.2026: Vorstufe ist `W2·6-NKEY`** — erst das
+  Entscheid-Screening generalisieren, damit ALLE Norm-Zitate erkannt und zugeordnet sind (heute 43 %),
+  dann erst die Bezüge-Schicht darauf bauen; darum `dep: [W2·6-NKEY]` + Queue-Platz davor)* — das Verzahnungs-Fundament wird von «BGE-Leitfälle an
   Bundesnormen» auf **alle Instanzen und Entscheidkategorien** erweitert: **(a)** kantonale
   Entscheide am Artikel (Start BS-Korpus 3765 aus W2·6-BS; kantonaler Norm-Resolver/P0 zuerst) ·
   **(b)** BGer-**Nicht-Leitentscheide** aus dem kuratierten Korpus — Leitentscheid vs. übriges
