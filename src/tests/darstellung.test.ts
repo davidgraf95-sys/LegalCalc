@@ -114,6 +114,32 @@ describe('artikelGanzAufgehoben — markiert (G-AUFH-ART) hat Vorrang', () => {
   });
 });
 
+// G-AUFH-ART Runde 2 (Gegenprüfung 27.7.2026, Befund «latent») — die
+// Tabelle/Mehrspaltig-Schutzlogik (Bug-Fix 26.6.2026) MUSS vor `markiert`
+// geprüft werden, nicht danach: Runde 1 hatte `if (markiert) return true;` VOR
+// dem Tabellen-Schutz stehen — heute nicht auslösbar (der Adapter markiert nie
+// einen Tabellen-tragenden Artikel), aber die Funktion darf sich darauf nicht
+// verlassen. Dieser Test beweist die richtige Reihenfolge unabhängig von der
+// Adapter-Invariante.
+describe('artikelGanzAufgehoben — Tabelle/Mehrspaltig schlägt IMMER `markiert` (Prioritäten-Reihenfolge)', () => {
+  it('markiert=true, aber ein Block trägt eine Tarif-Tabelle → NICHT aufgehoben', () => {
+    expect(
+      artikelGanzAufgehoben(
+        [{ text: '', tabelle: [{ beschreibung: 'x', betrag: '10' }] }],
+        true,
+      ),
+    ).toBe(false);
+  });
+  it('markiert=true, aber ein Block trägt eine Mehrspalten-Tabelle → NICHT aufgehoben', () => {
+    expect(
+      artikelGanzAufgehoben(
+        [{ text: '', mehrspaltig: { zeilen: [['a', 'b']] } }],
+        true,
+      ),
+    ).toBe(false);
+  });
+});
+
 // Stufe-2-D (22.6.2026): Schweizer Tausender-Apostrophe in der Betrag-Spalte
 // der TarifTabelle. Zeichen: U+0027 (gerader Apostroph) — übereinstimmend mit
 // den Fedlex-/LexWork-Snapshots selbst (z. B. «10'000» in BS-154.810.json).

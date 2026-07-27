@@ -207,6 +207,19 @@ export function extrahiereAlleLexWorkArtikel(xhtml: string): {
     // «§ 1a», «Art. 335bis» — wie die Quelle die Nummer schreibt.
     labels[token] = `${leseArtikelSymbol(segment)} ${nummer.replace(/\s+/g, '')}`;
   }
+  // G-AUFH-ART Runde 2 — Container-Ziffer-Ausschluss (Fehlklasse 1, Gegenprüfung
+  // 27.7.2026): ein aufgehoben-markierter Token, der striktes Punkt-Präfix eines
+  // ANDEREN Tokens in DIESEM Erlass ist («2.1» vor «2.1.1»/«2.1.2»), ist eine
+  // Gliederungs-Ziffer ohne eigenen Wortlaut — das Kind trägt den echten
+  // Norminhalt (BS-786.310 Ziffer 2.1 «Verfahren» + Kinder 2.1.1/2.1.2 mit
+  // vollem Text; dasselbe Muster BS-786.300, BS-785.700 §10→10.1/10.2). Muss
+  // ERST nach der vollständigen Token-Sammlung laufen (braucht alle Geschwister).
+  const alleTokens = Object.keys(artikel);
+  for (const token of alleTokens) {
+    if (!artikel[token].aufgehoben) continue;
+    const istContainer = alleTokens.some((other) => other !== token && other.startsWith(`${token}.`));
+    if (istContainer) delete artikel[token].aufgehoben;
+  }
   return { artikel, labels };
 }
 
@@ -423,6 +436,56 @@ function tabelleZuText(tabellenInner: string): string {
   return zeilenTexte.join(' — ');
 }
 
+// ── G-AUFH-ART Runde 2 — amtliche Aufhebungs-Signale (Gegenprüfung 27.7.2026) ──
+
+/** Leer oder ausschliesslich der Ellipsen-Platzhalter «…»/«...» — die Grenze
+ *  für «kein echter Norminhalt» (istAufgehoben in darstellung.ts ist bewusst
+ *  NICHT wiederverwendet: die Render-Heuristik dort behandelt '' separat als
+ *  «nicht aufgehoben» aus Darstellungsgründen; hier zählt Adapter-seitig sowohl
+ *  '' als auch die Ellipse als «kein Wortlaut»). */
+function istLeerOderEllipse(text: string): boolean {
+  const t = text.trim();
+  return t === '' || t === '…' || t === '...';
+}
+
+/** Kein echter Norminhalt: null Blöcke ODER jeder Block (und jedes Item) ist
+ *  leer/Ellipse — Tabelle/Mehrspaltig hat IMMER Vorrang (echter Inhalt, analog
+ *  artikelGanzAufgehoben in darstellung.ts, dort dieselbe Rangfolge). */
+function keinRealerInhalt(bloecke: LexArtikel['bloecke']): boolean {
+  if (bloecke.length === 0) return true;
+  return bloecke.every((b) => {
+    if (b.mehrspaltig && b.mehrspaltig.zeilen.length > 0) return false;
+    if (!istLeerOderEllipse(b.text)) return false;
+    return (b.items ?? []).every((it) => istLeerOderEllipse(it.text));
+  });
+}
+
+/** AGS-Änderungsstern («<strong>*</strong>») IM article_number-Kopf DIESES
+ *  Artikels — die amtliche LexWork/AGS-Änderungsmarkierung (nicht zu verwechseln
+ *  mit demselben Marker in einem Absatz-Text, der dort redaktionell entfernt
+ *  wird, s. bereinige()). Empirisch: BS 132.100 §51/§55/§76a/§76b, GL III-C.1,
+ *  BS-730.110 §108 (Nachbarn §109-118 OHNE Stern bleiben unmarkiert). */
+function traegtKopfStern(segment: string): boolean {
+  const numBlock = segment.match(/<div\s+class='article_number'>([\s\S]*?)<\/div>/i);
+  if (!numBlock) return false;
+  return /<strong>\s*\*\s*<\/strong>/i.test(numBlock[1]);
+}
+
+/** Der WORTLAUT eines eigenen Absatzes dieses Artikels wurde durch die
+ *  amtliche Aufhebungs-Ellipse ersetzt — LexWork kennzeichnet das mit der
+ *  eigenen Klasse 'abrogation_ellip' DIREKT im <p> (kein Absatz-Wrapper-Anker
+ *  nötig, da <p> das Body-Element ist). Bewusst NUR innerhalb <p> geprüft: die
+ *  gleiche Klasse markiert auch eine ganz aufgehobene SEKTIONSÜBERSCHRIFT
+ *  (<div class='level_3 title'>…<span class='abrogation_ellip'>…), die im
+ *  Segment-REST des VORANGEHENDEN Artikels steht (BS 132.100 §76 → Überschrift
+ *  «4.C.II.I.bis» → §76a) — §76 selbst hat echten Wortlaut UND keinen eigenen
+ *  <p>-Ellipse-Absatz, bliebe also korrekt unmarkiert (zusätzlich durch
+ *  keinRealerInhalt geschützt: §76 hat lebenden Text). Empirisch: BS-212.410
+ *  §34 (Falsch-Negativ Runde 1 — Kopf trägt KEINEN Stern, nur diese Ellipse). */
+function enthaeltEigeneAbrogationEllipse(segment: string): boolean {
+  return /<p>\s*<span\s+class='abrogation_ellip'>/i.test(segment);
+}
+
 /** Wandelt ein Artikel-Segment (Kopf + folgende paragraph/enumeration-Geschwister)
  *  in die Absatz-Blöcke um. Reale Aufzählungs-/Tabellen-Formen (Spike 16.6.2026):
  *   (1) enumeration_item-Tabelle  → je Tabelle ein item, an den vorigen Absatz.
@@ -569,20 +632,34 @@ function parseSegment(segment: string): LexArtikel {
     if (roh && roh !== '…' && roh !== '...') titel = roh;
   }
 
-  // G-AUFH-ART — ARTIKEL-genau aufgehoben: das Segment lieferte NACH VOLLSTÄNDIGER
-  // Extraktion (paragraph, enumeration_item, enumeration_tabular, paragraph_post —
-  // alle vier oben abgedeckten Body-Formen) buchstäblich KEINEN Block. Das ist ein
-  // STRUKTURELLES Signal aus der Quelle (Artikelkopf ohne jeden Body-Knoten), nicht
-  // «Text ist zufällig leer» — ein Block MIT Inhalt, dessen bereinigter Text leer
-  // wird (z.B. ein einzelnes lit.-item mit «&nbsp;»-Zelle, S3), zählt NICHT: dort
-  // ist bloecke.length > 0 (das Item bleibt MIT leerer Marke erhalten), nur dieser
-  // EINE Fall (gar kein Body-Knoten) löst den Marker aus. Muss VOR dem Caller-
-  // seitigen Synthese-Push geprüft werden (bloecke ist hier noch die echte, aus dem
-  // Segment gelesene Liste). Empirisch verifiziert BS 132.100 §51/§55/§76a/§76b +
-  // GL III-C.1 (5/5) — siehe LexArtikel.aufgehoben-Doku.
+  // G-AUFH-ART Runde 2 (Gegenprüfung 27.7.2026, Verdikt WIDERLEGT gegen Runde 1) —
+  // «kein Body-Block» ALLEIN stempelte 34 GELTENDE Artikel fälschlich als
+  // aufgehoben (Container-Ziffern mit Wortlaut im Kind-Artikel, Anhang-Verweise,
+  // «wird hier nicht abgedruckt»-Übergangsbestimmungen, Nachbar-Artikel ohne
+  // eigenes Signal). Die AMTLICHE Regel braucht ZWEI unabhängig geprüfte
+  // Bedingungen:
+  //   (a) ein echtes Aufhebungs-SIGNAL der Quelle — entweder der AGS-Änderungs-
+  //       stern im article_number-Kopf dieses Artikels («<strong>*</strong>»)
+  //       ODER die LexWork-eigene Klasse 'abrogation_ellip' als der WORTLAUT
+  //       eines eigenen Absatzes (nicht einer nachfolgenden Sektionsüberschrift
+  //       im Segment-Rest, s. BS 132.100 §76→«4.C.II.I.bis»→§76a: die Ellipse
+  //       gehört zur Überschrift, nicht zu §76 selbst — daher der <p>-Anker);
+  //   (b) UND kein echter Norminhalt: keinRealerInhalt() — leer ODER
+  //       ausschliesslich der Ellipsen-Platzhalter, Tabelle/Mehrspaltig hat
+  //       IMMER Vorrang (echter Inhalt, analog artikelGanzAufgehoben).
+  // Erst (a) UND (b) zusammen tragen den Marker. Container-Ziffern (Kind-Artikel
+  // trägt den Wortlaut) und Anhang-verwiesene Artikel werden zusätzlich als
+  // Post-Pass ausgeschlossen (extrahiereAlleLexWorkArtikel bzw. holeLexWork) —
+  // hier (parseSegment) ist nur EIN Segment sichtbar, kein Geschwister-/Anhang-
+  // Wissen. Empirisch verifiziert 27.7.2026: BS 132.100 §51/§55/§76a/§76b,
+  // GL III-C.1 (5/5), BS-212.410 §34 (Falsch-Negativ Runde 1 behoben), BS-786.310
+  // Art. 2.1 (Container, Runde 1 fälschlich markiert), BS-230.100 §28
+  // («wird hier nicht abgedruckt», kein Stern/keine Ellipse → korrekt unmarkiert).
   const ergebnis: LexArtikel = { bloecke };
   if (titel) ergebnis.titel = titel;
-  if (bloecke.length === 0) ergebnis.aufgehoben = true;
+  if ((traegtKopfStern(segment) || enthaeltEigeneAbrogationEllipse(segment)) && keinRealerInhalt(bloecke)) {
+    ergebnis.aufgehoben = true;
+  }
   return ergebnis;
 }
 
@@ -638,6 +715,15 @@ export function inKraftSeit(
   return '';
 }
 
+/** G-AUFH-ART Runde 2 — Anhang-Ausschluss (Fehlklasse 2, Gegenprüfung
+ *  27.7.2026): extrahiert die Artikel-Nummer aus einem Anhangs-Titel wie
+ *  «Gebührentarif zu § 46» → '46'. Begrenzte, dokumentierte Heuristik (§-/Art.-/
+ *  Ziffer-Zitat am Titel-Ende); kein Treffer → null (§7: nichts erraten). */
+function annexArtikelToken(titel: string): string | null {
+  const m = titel.match(/(?:§|Art\.?|Ziffer)\s*([0-9][\w.]*)\s*$/i);
+  return m ? m[1] : null;
+}
+
 /**
  * Holt einen LexWork-Erlass und extrahiert die angeforderten Artikel-Tokens.
  *
@@ -683,6 +769,8 @@ export async function holeLexWork(
         pdf_link_tol?: string | null;
         structured_document_id?: number | null;
         version_dates_str?: string;
+        // G-AUFH-ART Runde 2: Anhang-Liste für den Anhang-Ausschluss (Fehlklasse 2).
+        annex_documents?: Array<{ title?: string; abrogated?: boolean }> | null;
       } | null;
     };
   };
@@ -732,6 +820,19 @@ export async function holeLexWork(
     const alle = extrahiereAlleLexWorkArtikel(xhtml);
     artikel = alle.artikel;
     labels = alle.labels;
+    // G-AUFH-ART Runde 2 — Anhang-Ausschluss (Fehlklasse 2, Gegenprüfung
+    // 27.7.2026): ein NICHT aufgehobener Anhang, dessen Titel auf «§ N»/«Art. N»/
+    // «Ziffer N» verweist, trägt den echten Norminhalt dieses Artikels
+    // (BS-685.340 §46 «Gebührentarif» → Anhang «Gebührentarif zu § 46»,
+    // abrogated:false) — der leere Artikel-Body ist dann KEIN Aufhebungs-Indiz,
+    // sondern eine Verweis-Konvention. Marker zurücknehmen.
+    for (const anhang of sel?.annex_documents ?? []) {
+      if (anhang.abrogated) continue;
+      const roh = annexArtikelToken(anhang.title ?? '');
+      if (!roh) continue;
+      const token = normalisiereArtikelToken(roh);
+      if (artikel[token]?.aufgehoben) delete artikel[token].aufgehoben;
+    }
   }
 
   return { meta, artikel, labels };
