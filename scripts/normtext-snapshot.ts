@@ -49,6 +49,7 @@ import { holePdf, PDF_PROFILE } from './normtext/adapter-pdf.ts';
 const FETCH_CONCURRENCY = 4;
 import { pdfLawIdSafe } from './normtext/lawid-safe.ts';
 import { baueManifest } from './normtext/kanton-manifest.ts';
+import { mischeGoldenKanton } from './normtext/golden-kanton-merge.ts';
 import { baueBrowseManifest } from './normtext/browse-manifest.ts';
 import type { NormSnapshot, NormSnapshotDatei } from '../src/lib/normtext/typen.ts';
 import type { BildRef } from './normtext/extrahiere-fedlex.ts';
@@ -915,7 +916,8 @@ async function main(): Promise<void> {
   // Kantone erneut über das Netz zu ziehen — so bleibt der Diff auf ZH
   // beschränkt (kein stiller Upstream-Drift, §8). Manifest/Register werden aus
   // der Platte neu gebaut (alle Dateien, nur ZH verändert); der Golden-Index
-  // wird GEMISCHT: alle Nicht-ZH-Einträge bleiben, kanton/ZH/* werden ersetzt.
+  // wird GEMISCHT: alle Nicht-ZH-Einträge bleiben, ersetzt werden die ZH-Erlasse,
+  // die dieser Lauf tatsächlich neu erzeugt hat (golden-kanton-merge.ts).
   if (process.argv.includes('--nur=zh')) {
     const goldenIndex: Record<string, string> = {};
     console.log(`\n[Normtext-Snapshot] --nur=zh, datum=${abgerufen}`);
@@ -940,9 +942,21 @@ async function main(): Promise<void> {
     } catch {
       throw new Error('--nur=zh: golden/normtext-snapshot.json fehlt — ein Voll-Lauf muss zuerst gelaufen sein.');
     }
-    const gemischt: Record<string, string> = {};
-    for (const k of Object.keys(bestand)) if (!k.startsWith('kanton/ZH/')) gemischt[k] = bestand[k];
-    for (const k of Object.keys(goldenIndex)) gemischt[k] = goldenIndex[k];
+    // Dieselbe Merge-Regel wie --nur=kanton (scripts/normtext/golden-kanton-merge.ts):
+    // ersetzt wird je ERLASS, nicht pauschal `kanton/ZH/*`. Für einen gesunden
+    // ZH-Lauf ist das ergebnisgleich (ZH wird nur über die ZH-PDF-Route
+    // erschlossen, also liefert der Lauf jeden ZH-Erlass). Es schliesst aber die
+    // §8-Lücke, dass eine ganz oder teilweise fehlgeschlagene ZH-Phase den
+    // Golden-Altbestand der nicht gelieferten Erlasse still gelöscht hätte —
+    // dieselbe Fehlerklasse wie der AR-1203-Verlust (Commit 7a14fa06).
+    const merge = mischeGoldenKanton(bestand, goldenIndex, new Set(['ZH']));
+    if (merge.bewahrt.length > 0) {
+      console.log(
+        `\n⚠️  WARN (§8): ${merge.bewahrt.length} ZH-Erlass(e) OHNE neue Snapshots in diesem Lauf — ` +
+          `Golden-Altbestand bewahrt: ${merge.bewahrt.join(', ')}`,
+      );
+    }
+    const gemischt = merge.gemischt;
     const sortiert: Record<string, string> = {};
     for (const k of Object.keys(gemischt).sort()) sortiert[k] = gemischt[k];
     mkdirSync('golden', { recursive: true });
@@ -957,8 +971,10 @@ async function main(): Promise<void> {
   // Bund oder die übrigen Kantone erneut über das Netz zu ziehen — so bleibt der
   // Diff auf die gewünschten Kantone beschränkt (kein stiller Upstream-Drift, §8;
   // z. B. nach einem Adapter-Fix wie AR-Anhang-Ziffern / NW-§18-Sub-Staffel
-  // 22.6.2026). Golden wird GEMISCHT: alle Einträge ausser kanton/<K>/* bleiben,
-  // die der genannten Kantone werden ersetzt. Manifest/Register aus der Platte neu.
+  // 22.6.2026). Golden wird GEMISCHT: ersetzt werden genau die ERLASSE der
+  // genannten Kantone, die dieser Lauf tatsächlich neu erzeugt hat — nie der
+  // ganze Kanton (golden-kanton-merge.ts; ein Teillauf wie --discovery fährt nur
+  // EINE Route, s. dort die 7a14fa06-Begründung). Manifest/Register aus der Platte neu.
   if (process.argv.includes('--nur=kanton')) {
     const kantonArg = process.argv.find((a) => a.startsWith('--kanton='));
     if (!kantonArg) {
@@ -1026,26 +1042,27 @@ async function main(): Promise<void> {
     } catch {
       throw new Error('--nur=kanton: golden/normtext-snapshot.json fehlt — ein Voll-Lauf muss zuerst gelaufen sein.');
     }
-    // §8 (kein stiller Datenverlust): Ein Ziel-Kanton, der in DIESEM Lauf 0
-    // Snapshots lieferte (Fetch-Fehler, alle Tokens fehlend), darf seine
-    // bestehenden Golden-Einträge NICHT verlieren. Darum nur Ziel-Kantone
-    // ersetzen, die tatsächlich frische Einträge erzeugt haben; fehlgeschlagene
-    // behalten den Altbestand und werden laut gewarnt.
-    const erfolgKantone = new Set(Object.keys(goldenIndex).map((k) => k.split('/')[1]));
-    const fehlgeschlagen = [...kantone].filter((k) => !erfolgKantone.has(k));
-    if (fehlgeschlagen.length > 0) {
+    // Merge-Regel: scripts/normtext/golden-kanton-merge.ts (eine Quelle, isoliert
+    // getestet in src/tests/golden-kanton-merge.test.ts).
+    const merge = mischeGoldenKanton(bestand, goldenIndex, kantone);
+    if (merge.fehlgeschlageneKantone.length > 0) {
       console.log(
-        `\n⚠️  WARN (§8): Ziel-Kantone OHNE neue Snapshots (Fetch-Fehler?): ${fehlgeschlagen.join(', ')} — ` +
+        `\n⚠️  WARN (§8): Ziel-Kantone OHNE neue Snapshots (Fetch-Fehler?): ${merge.fehlgeschlageneKantone.join(', ')} — ` +
           'ihr Golden-Altbestand bleibt UNVERÄNDERT (kein stiller Verlust).',
       );
     }
-    const istErsetzbar = (key: string): boolean => {
-      const k = key.split('/')[1];
-      return kantone.has(k) && erfolgKantone.has(k);
-    };
-    const gemischt: Record<string, string> = {};
-    for (const k of Object.keys(bestand)) if (!istErsetzbar(k)) gemischt[k] = bestand[k];
-    for (const k of Object.keys(goldenIndex)) gemischt[k] = goldenIndex[k];
+    // §8-Sichtbarkeit: Erlasse der Ziel-Kantone, die dieser Lauf NICHT erzeugt hat
+    // (bei --discovery der Regelfall: HTM/ZH/PDF-Routen liefen nicht). Ihr
+    // Altbestand bleibt — genau das war vor diesem Fix der stille Verlust.
+    if (merge.bewahrt.length > 0) {
+      const zeige = merge.bewahrt.slice(0, 12).join(', ');
+      console.log(
+        `\nℹ️  §8: ${merge.bewahrt.length} Erlass(e) der Ziel-Kantone OHNE neue Snapshots in diesem Lauf — ` +
+          `Golden-Altbestand bewahrt (nicht gefahrene Route / Fetch-Fehler): ${zeige}` +
+          (merge.bewahrt.length > 12 ? ` … (+${merge.bewahrt.length - 12})` : ''),
+      );
+    }
+    const gemischt = merge.gemischt;
     const sortiert: Record<string, string> = {};
     for (const k of Object.keys(gemischt).sort()) sortiert[k] = gemischt[k];
     mkdirSync('golden', { recursive: true });
