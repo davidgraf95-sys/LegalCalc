@@ -37,6 +37,7 @@ bibliothek/
   materialien/ Amtliche Ressourcen / Soft-Law (Behörden-Publikationen) — Rubrik «Materialien»
   normtext/    Volltext-Nebenprodukte (Änderungshistorie/Revisionen-Timeline, Rohdaten) zu den Bund-Erlassen
   seo/         Sichtbarkeit & Performance (CWV-Baseline, Indexierung)
+  betrieb/     Betriebs-/Infrastruktur-Dossiers (Hosting-Beschaffung, CI-/Prüf-Forensik)
   quellen/     Lokale Quellkopien aus Davids Ablagen (gitignored, Urheberrecht) — committet nur die Sichtung [SICHTUNG.md](quellen/SICHTUNG.md)
 ```
 
@@ -323,6 +324,11 @@ im Verfallsregister («Amtliche Muster-Suiten»).
 ## seo/ — Sichtbarkeit & Performance (Strang B, ohne David-Fachzeit)
 
 - [CWV-Baseline (W1.11)](seo/cwv-baseline.md) — LCP/Transfer/Requests der prerenderten Detailseiten; Befund: render-then-replace trägt die LCP auch bei OR/ZGB (~1.7/1.1 MB), W2.8-Splitting für LCP nicht dringlich
+
+## betrieb/ — Betrieb, Infrastruktur, Prüf-Forensik
+
+- [VPS-Bestell-Dossier (QS-BASIS B-5)](betrieb/vps-bestell-dossier-2026-07-17.md) — 3 live-verifizierte Angebote (17.7.2026), Empfehlung netcup RS 4000 G12; entsperrt E3-Serving/E4-Zitatgraph. **Blocker: Bestellung durch David.**
+- [e2e-Flake-Forensik — drei 2-vCPU-Rotfälle (QS-PERF)](betrieb/e2e-flake-forensik-2026-07-26.md) — **Erstrecherche 26.7.2026:** je 4 gemessene Läufe im CI-Zweig zu den drei als 2-vCPU-flaky belegten e2e-Tests. Zwei Deckel kalibriert (`leser-kopf-a9` 5000 → 8000 ms nach der `QS-PERF`-Ziff.-5-Politik, mit Sabotage-Probe rot gezeigt; `gesetze-ia-v2-walks`-Kopfzeile 10 → 30 s, Wartezeit gemessen 11.4–12.2 s). **Dritter Fall als Flake WIDERLEGT:** `norm-sprung` A9 zeigt einen reproduzierbaren **bimodalen ~48-s-Stall** (≈12 s un-gedrosselt) ohne jede Contention, Test-Instrumentierung per Gegenprobe als Ursache ausgeschlossen — **nicht gehärtet**, Ursache offen; Signatur-Hypothese: dieselbe Wurzel wie der offene `QS-PERF`-Befund «OR-LCP ist bimodal»
 
 ## Verwandtes im Repo (nicht hier dupliziert)
 

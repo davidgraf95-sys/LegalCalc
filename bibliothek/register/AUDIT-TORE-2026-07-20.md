@@ -404,6 +404,25 @@ bereits vor).
   darum **als Zettel/PR-Entwurf sichtbar machen** statt still zu scheitern.
   (Welcher Regenerierungs-Schritt die Verschiebung verursacht, hat dieses Audit
   nicht ermittelt — offener Punkt.)
+  > **ERLEDIGT 26.7.2026 — und die Vermutung war falsch.** Kein
+  > Regenerierungs-Schritt verursachte die Verschiebung: **`fedlex-frische.yml`
+  > setzte `TZ` nicht.** Die Golden-Basis ist in Europe/Zurich erzeugt,
+  > GitHub-Runner laufen in UTC, und `berechneKuendigungsfrist` liefert lokale
+  > Tagesgrenzen — damit weichen zwangsläufig genau die zwei zeitzonenabhängigen
+  > Fälle `kuendigung:dj1` + `kuendigung:dj10` ab (die anderen 247 sind
+  > TZ-neutral). Am 26.7. identisch reproduziert: ohne `TZ` exakt dieses
+  > Fallpaar, mit `TZ=Europe/Zurich` «IDENTISCH — 249 Fälle byte-gleich».
+  > `ci.yml` setzt die Zone vier Mal und begründet sie dort selbst (Zeilen
+  > 79–83); dieser Workflow und `normen-monitor.yml` hatten sie schlicht nicht.
+  > Der in neun Allowlist-Einträgen benannte Ersatz-Arbiter war also nicht
+  > «zerbrechlich», sondern strukturell zum Scheitern verurteilt, sobald sein
+  > Frische-Diff einmal griff. Behoben in beiden Workflows und in
+  > `scripts/gate.sh` (dort bedingungslos, sonst ist das Gate in jedem
+  > UTC-Container falsch-rot). Beleg und Herleitung:
+  > [betrieb/e2e-flake-forensik-2026-07-26.md](../betrieb/e2e-flake-forensik-2026-07-26.md) §4.
+  > Der ZWEITE Halbsatz des Punkts bleibt offen: ein fachlich gewollter
+  > Golden-Shift sollte weiterhin als Zettel/PR sichtbar werden, nicht still
+  > scheitern.
 - **`bibliothek/betrieb/` ist von `bibliothek-check.sh` nicht erfasst** (weder in
   der S7-INDEX-Prüfung noch in der S1-Kopfprüfung). Kleiner blinder Fleck,
   hier nur vermerkt.
