@@ -228,7 +228,7 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "rhythmus": "jährlich + vor Verdrahtung"
   },
   {
-    "label": "Aufgehoben: PatV (SR 232.141)",
+    "label": "Aufhebung angekündigt: PatV (SR 232.141)",
     "datum": "2027-01-01",
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (PATV)",
@@ -236,7 +236,7 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "rhythmus": "einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen"
   },
   {
-    "label": "Aufgehoben: VGV (SR 814.621)",
+    "label": "Aufhebung angekündigt: VGV (SR 814.621)",
     "datum": "2027-01-01",
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (VGVP)",

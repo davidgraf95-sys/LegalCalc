@@ -120,7 +120,7 @@ bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
 | Künftige Fassung AHVG (SR 831.10) | `scripts/fedlex-cache.sh` (AHVG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2034 |
 | Künftige Fassung AHVV (SR 831.101) | `scripts/fedlex-cache.sh` (AHVV) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2034 |
 
-### Ganz aufgehobene Erlasse (Aufhebungs-Posten, G-AUFH-Follow-up #259)
+### Aufgehobene und zur Aufhebung angekündigte Erlasse (Aufhebungs-Posten, G-AUFH-Follow-up #259)
 
 Aus dem amtlichen Fedlex-SPARQL-Graphen (`jolux:dateNoLongerInForce` auf der
 ConsolidationAbstract) geerntet. Diese Erlasse werden GANZ aufgehoben — je
@@ -134,8 +134,8 @@ SSoT-Filter aus `src/lib/normtext/aufhebungen.ts` — folgt mit #287).
 | Erlass (aufgehoben) | Fundstelle | Aufhebungsdatum | Rhythmus | Nächste Prüfung |
 |---|---|---|---|---|
 | Aufgehoben: BMV (SR 412.103.1) | `scripts/fedlex-cache.sh` (BMV) | aufgehoben seit 1.3.2026 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung erfolgt — Massnahme nötig |
-| Aufgehoben: PatV (SR 232.141) | `scripts/fedlex-cache.sh` (PATV) | Aufhebung angekündigt per 1.1.2027 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung angekündigt ab 1.1.2027 |
-| Aufgehoben: VGV (SR 814.621) | `scripts/fedlex-cache.sh` (VGVP) | Aufhebung angekündigt per 1.1.2027 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung angekündigt ab 1.1.2027 |
+| Aufhebung angekündigt: PatV (SR 232.141) | `scripts/fedlex-cache.sh` (PATV) | Aufhebung angekündigt per 1.1.2027 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung angekündigt ab 1.1.2027 |
+| Aufhebung angekündigt: VGV (SR 814.621) | `scripts/fedlex-cache.sh` (VGVP) | Aufhebung angekündigt per 1.1.2027 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung angekündigt ab 1.1.2027 |
 
 <!-- /AUTO fedlex-wiedervorlage -->
 

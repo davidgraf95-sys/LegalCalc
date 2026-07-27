@@ -181,11 +181,11 @@ export function baueAutoBlock(
   // die Massnahme ist Snapshot-Ersatz, nicht eine terminierte Frische-Prüfung);
   // eine künftig angekündigte Aufhebung trägt ihr Datum (→ terminierte Vorwarnung).
   const aufhebungsZeilen = aufhebungen.map((a) =>
-    `| Aufgehoben: ${a.kuerzel} (SR ${a.sr}) | \`scripts/fedlex-cache.sh\` (${a.key}) | ${a.kuenftig ? `Aufhebung angekündigt per ${deDatum(a.aufgehobenSeit)}` : `aufgehoben seit ${deDatum(a.aufgehobenSeit)}`} | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | ${a.kuenftig ? `Aufhebung angekündigt ab ${deDatum(a.aufgehobenSeit)}` : 'Aufhebung erfolgt — Massnahme nötig'} |`,
+    `| ${a.kuenftig ? 'Aufhebung angekündigt' : 'Aufgehoben'}: ${a.kuerzel} (SR ${a.sr}) | \`scripts/fedlex-cache.sh\` (${a.key}) | ${a.kuenftig ? `Aufhebung angekündigt per ${deDatum(a.aufgehobenSeit)}` : `aufgehoben seit ${deDatum(a.aufgehobenSeit)}`} | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | ${a.kuenftig ? `Aufhebung angekündigt ab ${deDatum(a.aufgehobenSeit)}` : 'Aufhebung erfolgt — Massnahme nötig'} |`,
   );
   const aufhebungsSektion = aufhebungen.length === 0 ? [] : [
     '',
-    '### Ganz aufgehobene Erlasse (Aufhebungs-Posten, G-AUFH-Follow-up #259)',
+    '### Aufgehobene und zur Aufhebung angekündigte Erlasse (Aufhebungs-Posten, G-AUFH-Follow-up #259)',
     '',
     'Aus dem amtlichen Fedlex-SPARQL-Graphen (`jolux:dateNoLongerInForce` auf der',
     'ConsolidationAbstract) geerntet. Diese Erlasse werden GANZ aufgehoben — je',
