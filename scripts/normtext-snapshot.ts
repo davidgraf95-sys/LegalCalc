@@ -1035,7 +1035,9 @@ async function main(): Promise<void> {
     const browse = baueBrowseManifest(abgerufen);
     writeFileSync('public/normtext/register.json', JSON.stringify(browse, null, 2) + '\n', 'utf8');
 
-    // Golden mischen: Nicht-Ziel-Kantone bewahren, kanton/<K>/* ersetzen.
+    // Golden mischen: Nicht-Ziel-Kantone bewahren; innerhalb der Ziel-Kantone
+    // werden NUR die in diesem Lauf tatsächlich gefahrenen Erlasse ersetzt
+    // (Erlass-Granularität, golden-kanton-merge.ts — Fix AR-1203/PR #390).
     let bestand: Record<string, string>;
     try {
       bestand = JSON.parse(readFileSync('golden/normtext-snapshot.json', 'utf8')) as Record<string, string>;
