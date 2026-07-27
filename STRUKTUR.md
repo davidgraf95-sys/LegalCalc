@@ -21,6 +21,22 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 27.7.2026 (QS-BASIS) — Dependabot-Bump react-router 7.16.0→7.18.1 + Lockfile-Reparatur (PR #337, `9ac296f7` — gemergt = deployt)
+**Auftrag (Dependabot):** react-router/react-router-dom-Bump 7.16.0→7.18.1. Der von Dependabot erzeugte Lock hatte den verschachtelten Eintrag `node_modules/filing-cabinet/node_modules/typescript@5.9.3` verloren — `npm ci` brach schon am Installationsschritt ab, vor jedem Tor. Dieselbe Falle wie beim Vorfall 21./22.7. (PR #326, ROADMAP QS-PERF Ziff. 4).
+- **Fix:** Lockfile-Neubau statt Handkorrektur — Lock von `main` übernommen, dann `npm install --package-lock-only` mit npm 10.9.7 (dieselbe Major-Version wie die CI), damit bleibt der verschachtelte `typescript@5.9.3`-Eintrag erhalten (`typescript` selbst 6.0.3 gehoisted).
+- **Beweis:** `npm ci` grün (618 Pakete) · `npm run gate` voll grün (tsc · vitest · golden:vergleich · lint · check) · `npm run build` grün, 63 Routen prerendert · 30/30 e2e-Navigationsspecs (norm-sprung/gesetze/verzahnung) mit `--retries=0` · CI auf dem PR (Bau/Tore/Merge-Schutz + alle 8 Browser-Smoke-Shards) grün. Nebenbeobachtung ohne Router-Bezug: ein Gate-Lauf meldete einen Worker-Abbruch unter Speicherdruck (0 tatsächliche Testfehler bei 4469 passed) — Wiederholung grün.
+- Gegenprüfung: n/a — Dependency-Bump + Lockfile, kein Rechtsinhalt.
+
+## Session 27.7.2026 (QS-PERF) — drei 2-vCPU-Flakes gehärtet + fehlende CI-Zeitzone (PR #382, `235432fd` — gemergt = deployt)
+**Auftrag:** e2e-Flake-Forensik — zwei fehlkalibrierte Deckel, ein Messfehler im Test, ein fehlendes TZ-Env.
+- **leser-kopf-a9:** Reaktions-Budget 5000→8000 ms auf CI (lokal unverändert), Höhe nach QS-PERF Ziff. 5 (Ist 6263 + max(3 sd, 25 %) → 7829 → 8000); Sabotage-Probe (16× Drossel) rot mit «Expected < 8000 · Received 17394», byte-gleich zurückgebaut.
+- **gesetze-ia-v2-walks:152:** Lade-Latte 10→30 s (gemessen 11 364–12 189 ms — schon über dem Default ohne 2-vCPU-Contention).
+- **norm-sprung A9 — Ursache behoben, kein Deckel gehoben:** der Warmlauf wartete auf den «Sprung»-Treffer (deterministisch aus Register/Parser, steht schon), während der Artikel-Suchindex noch aufgebaut wurde; die restlichen 11 586–14 484 ms Ladearbeit fielen in die gedrosselte Messphase und erschienen dort ×4 als ~48-s-Stall (Rennen Einmal-Load vs. Query-Reset). Warmlauf wartet jetzt auf zwei Signale (Kopfzeile sichtbar + Vorbehalt «wird noch ergänzt» weg); Latten byte-gleich, lösen jetzt in 0.36–0.54 s auf, Spec 2× 44/44 grün.
+- **Fehlende Zeitzone:** `golden:vergleich` meldete dj1/dj10 — reiner TZ-Offset (Golden-Basis Europe/Zurich, Runner UTC), Ursache des einzigen fedlex-frische-Fehlschlags. TZ ergänzt in `fedlex-frische.yml`, `normen-monitor.yml`, bedingungslos in `scripts/gate.sh`.
+- **Beweis:** `gate` grün auch mit erzwungenem `TZ=UTC`; `bibliothek-check`, `check:plan`, `check:e2e-shards` grün; CI (Bau/Tore/Merge-Schutz + alle 8 Shards) grün. Ablage `bibliothek/betrieb/e2e-flake-forensik-2026-07-26.md` + INDEX, ERLEDIGT-Vermerk `AUDIT-TORE-2026-07-20.md` §6.
+- **Offen:** vier weitere Posten unter `QS-PERF` in ROADMAP.md (Artikel-Suchindex-Main-Thread-Kosten ~28.5 s, §8-Auskunftslücke im Fehlerpfad der Suche, Kommentar-Zahl «~4 MB» korpusweit falsch [real 45.7 MiB], Dauer-rAF-Sampler ohne Abschalt-Bedingung) — bereits in ROADMAP.md unter QS-PERF nachgezogen, hier nur referenziert, nicht erneut umgesetzt.
+- Gegenprüfung: n/a — Prüf-/CI-Infrastruktur + Doku, kein Rechtsinhalt.
+
 ## Session 26.7.2026 (Folge-Einheit, Branch feat/fortsetzungs-tiefe) — Fortsetzungs-Tiefe + blockübergreifende Zitier-Kette (PR #378, Squash `d0cc81b0` — gemergt = deployt)
 **Auftrag (Task-Chip, Befund 6 der Routing-Gegenprüfung):** amtliche Struktur verifizieren, `tiefe`-Extraktion für Fortsetzungs-Ziffern, Kette prüfen, ZitierMarken-Unterdrückung rückbauen.
 - **Amtlich verifiziert (§7, PDF-x-Positionen der Pin-Konsolidierungen):** die vom Formelbild unterbrochenen Ziffern «2.» stehen in DBG 22 (S. 17) und STHG 7 (S. 6/7) auf der Ziffern-Einrückung (tiefe 1 unter lit. a bzw. c). Der neue Scanner fand 4 weitere amtlich falsche Ebenen: RBUE 25 (i–v flach NEBEN «4)» statt darunter — invertiert), RBUE/HZUE annex_u1, VVV annex_4 (alle per PDF belegt).
