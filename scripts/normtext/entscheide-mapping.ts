@@ -28,6 +28,20 @@
 // 'BVV 2') und dem dateisicheren `key` (z.B. 'SCHKG', 'BVV_2'), beide über
 // `normalisiereAbk` normalisiert.
 //
+// ── W2·6-NKEY Baustein b: die Alias-Ebene ────────────────────────────────────
+// Die Register-Ableitung kennt nur das DEUTSCHE Anzeige-Kürzel. Ein Entscheid
+// in französischer Amtssprache zitiert aber «art. 42 LTF» statt «Art. 42 BGG»,
+// ein italienischer «art. 41 CO» statt «Art. 41 OR» — dasselbe Bundesgesetz,
+// ein anderes amtliches Kürzel, und ohne Zuordnung verschwand das Zitat
+// lautlos. Das Sichtbarkeits-Tor (Baustein c) hat die Lücke beziffert: 34
+// FR/IT-Amtskürzel über der Schwelle, 76.8 % gemappte Nennungen.
+// Dagegen steht `ABK_ALIASE` (src/lib/normtext/abk-aliase.generated.ts) —
+// amtliche Kurzbezeichnungen je Amtssprache aus Fedlex (jolux:titleShort,
+// Currency-Fenster), über die SR-Nummer an den Register-key gebunden. Nach dem
+// Einzug: 93.6 % gemappte Nennungen, Rot-Liste 46 → 12 (Messung 28.7.2026).
+// Die Aliase sind KEINE zweite Wahrheit (§5): der Erlass-Bestand bleibt das
+// Register, das Artefakt trägt nur dessen fremdsprachige Namen.
+//
 // Zwei Sicherungen halten die Ableitung fachlich ehrlich (§1):
 //  • ABK_AUSSCHLUSS — Abkürzungen, die föderal UND kantonal existieren und pro
 //    Zitat nicht sicher trennbar sind (heute: «StG»). Sie werden NIE gemappt;
@@ -38,6 +52,7 @@
 //    Tor (W2·6-NKEY Baustein c) und der Unit-Test der exakten Liste machen jede
 //    NEUE Kollision laut, statt sie still zu schlucken (§6.7).
 
+import { ABK_ALIASE } from '../../src/lib/normtext/abk-aliase.generated';
 import { ERLASS_REGISTER, type Rechtsgebiet } from '../../src/lib/normtext/register';
 import { extrahiereStatutRefs } from '../../src/lib/rechtsprechung/zitat-extraktion';
 import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
@@ -92,36 +107,6 @@ export const ABK_AUSSCHLUSS: ReadonlyMap<string, string> = new Map([
 ]);
 
 /**
- * Ableitung aus dem Register (§5). Je Eintrag zwei Kandidaten (kuerzel, key) →
- * derselbe Register-key. Zeigt eine Abkürzung auf ZWEI verschiedene keys, wird
- * sie beidseitig verworfen und als Kollision ausgewiesen (nie raten, §1).
- */
-function baueAbkTabelle(): { tabelle: Map<string, string>; kollisionen: string[] } {
-  const tabelle = new Map<string, string>();
-  const kollidiert = new Set<string>();
-  for (const e of ERLASS_REGISTER) {
-    for (const kandidat of [normalisiereAbk(e.kuerzel), normalisiereAbk(e.key)]) {
-      if (!kandidat) continue;
-      const bisher = tabelle.get(kandidat);
-      if (bisher === undefined) { tabelle.set(kandidat, e.key); continue; }
-      if (bisher !== e.key) kollidiert.add(kandidat);
-    }
-  }
-  for (const k of kollidiert) tabelle.delete(k);   // beide Seiten verwerfen
-  return { tabelle, kollisionen: [...kollidiert].sort() };
-}
-
-const { tabelle: ABK_TABELLE, kollisionen: KOLLISIONEN } = baueAbkTabelle();
-
-/**
- * Abkürzungen, die auf mehrere Register-keys zeigen und darum GAR NICHT gemappt
- * werden. Leer = sauber. Sichtbar statt still (§6.7) — der Unit-Test schreibt
- * die exakte Liste fest, damit ein neuer Register-Eintrag, der eine Abkürzung
- * doppelt belegt, rot wird statt Treffer zu verlieren.
- */
-export const ABK_KOLLISIONEN: ReadonlyArray<string> = KOLLISIONEN;
-
-/**
  * Register-keys, deren Abkürzung ausgeschlossen ist (heute: 'STG'). Für den
  * Bestand-Schutzfilter in schreibeKorpus: ALT-Snapshots tragen den Key noch in
  * `normKeys`, obwohl er nicht mehr gemappt wird.
@@ -135,6 +120,10 @@ export const ABK_KOLLISIONEN: ReadonlyArray<string> = KOLLISIONEN;
  * abschaltet, ist ein Tor, das nicht scheitern kann (§6.7). Darum wird über die
  * Register-Einträge gescannt — kollisionsunabhängig, und ein kollidierender
  * Zweit-Erlass landet zusätzlich in der Menge statt sie zu leeren.
+ *
+ * STEHT VOR der Tabellen-Ableitung (28.7.2026, Baustein b), weil die Alias-Ebene
+ * sie braucht: ein fremdsprachiges Kürzel darf einen ausgeschlossenen Erlass
+ * nicht durch die Hintertür wieder hereinholen (siehe baueAbkTabelle).
  */
 export const AUSGESCHLOSSENE_KEYS: ReadonlySet<string> = new Set(
   ERLASS_REGISTER
@@ -143,6 +132,149 @@ export const AUSGESCHLOSSENE_KEYS: ReadonlySet<string> = new Set(
     .map((e) => e.key)
     .sort(),
 );
+
+/**
+ * SR-Nummer → Register-key, für die Auflösung der Fedlex-Aliase (Baustein b).
+ *
+ * NUR Bund-Einträge. Bei kantonalen Einträgen trägt `sr` die KANTONALE
+ * Systematiknummer ('161.12' in BE), die einer Bundes-SR-Nummer zufällig
+ * gleichen kann — eine Auflösung darüber zeigte auf einen völlig anderen
+ * Erlass (§1). Zeigt eine SR-Nummer auf ZWEI Register-keys, wird sie beidseitig
+ * verworfen (nie raten); die betroffenen Aliase erscheinen dann in
+ * ABK_ALIAS_NOTIZEN, statt still zu verschwinden (§6.7).
+ */
+function baueSrIndex(): { srKey: Map<string, string>; mehrdeutig: Set<string> } {
+  const srKey = new Map<string, string>();
+  const mehrdeutig = new Set<string>();
+  for (const e of ERLASS_REGISTER) {
+    if (e.ebene !== 'bund' || !e.sr) continue;
+    const bisher = srKey.get(e.sr);
+    if (bisher === undefined) { srKey.set(e.sr, e.key); continue; }
+    if (bisher !== e.key) mehrdeutig.add(e.sr);
+  }
+  for (const sr of mehrdeutig) srKey.delete(sr);
+  return { srKey, mehrdeutig };
+}
+
+/**
+ * Ableitung aus dem Register (§5) UND den amtlichen Fedlex-Kürzeln.
+ *
+ * Zwei Kandidaten-Quellen, EINE Tabelle und EINE Kollisionsregel:
+ *  (1) Register — je Eintrag die Anzeige-Abkürzung (`kuerzel`) und der
+ *      dateisichere `key`, beide → derselbe Register-key.
+ *  (2) ABK_ALIASE (generiert aus Fedlex, W2·6-NKEY b) — die amtliche
+ *      Kurzbezeichnung je Amtssprache, über die SR-Nummer auf den Register-key
+ *      aufgelöst: 'LTF'/'CO'/'CPC'/'LP'/'CEDH' → BGG/OR/ZPO/SCHKG/EMRK. Ohne
+ *      diese Ebene verschwand jedes Zitat eines französisch- oder italienisch-
+ *      sprachigen Entscheids lautlos, obwohl es dasselbe Bundesrecht meint.
+ *
+ * Zeigt eine normalisierte Abkürzung auf ZWEI verschiedene keys, wird sie
+ * beidseitig verworfen und als Kollision ausgewiesen (nie raten, §1) — für
+ * Aliase gilt exakt dieselbe Regel wie für die Register-Kandidaten. Ein Alias
+ * ist kein besseres Wissen als das Register; er ist dieselbe Art Kandidat.
+ *
+ * ABK_AUSSCHLUSS wirkt auf BEIDE Quellen, und für Aliase auf der KEY-Ebene:
+ * ein Alias, dessen Erlass ausgeschlossen ist, wird gar nicht erst aufgenommen.
+ * Der Anlassfall ist SR 641.10 (eidg. Stempelabgabengesetz): das deutsche «StG»
+ * ist föderal/kantonal mehrdeutig und darum ausgeschlossen — die amtlichen
+ * Kürzel «LT» (fr) und «LTB» (it) sind es NICHT und würden denselben Key 'STG'
+ * über die Hintertür in den Korpus tragen. Das wäre eine fachliche Entscheidung
+ * («altrechtlich/kantonal ausgeschlossene Erlasse doch wieder zulassen»), und
+ * die trifft kein Build-Schritt nebenbei (§7/§8). Zwei Wirkungen wären sonst
+ * widersprüchlich: `normKeysVonSnapshot` erzeugte den Key, der Schreibpfad
+ * (schreibeKorpus, AUSGESCHLOSSENE_KEYS) verwürfe ihn beim Index wieder — ein
+ * halber Zustand, der niemandem hilft. Die verworfenen Aliase stehen in
+ * ABK_ALIAS_AUSGESCHLOSSEN, damit die Lücke benannt bleibt statt still zu sein.
+ */
+function baueAbkTabelle(): {
+  tabelle: Map<string, string>; kollisionen: string[]; notizen: string[]; ausgeschlossen: string[];
+} {
+  const tabelle = new Map<string, string>();
+  const kollidiert = new Set<string>();
+  const notizen: string[] = [];
+  const ausgeschlossen: string[] = [];
+  const setze = (kandidat: string, key: string): void => {
+    if (!kandidat) return;
+    const bisher = tabelle.get(kandidat);
+    if (bisher === undefined) { tabelle.set(kandidat, key); return; }
+    if (bisher !== key) kollidiert.add(kandidat);
+  };
+
+  for (const e of ERLASS_REGISTER) {
+    setze(normalisiereAbk(e.kuerzel), e.key);
+    setze(normalisiereAbk(e.key), e.key);
+  }
+
+  const { srKey, mehrdeutig } = baueSrIndex();
+  for (const a of ABK_ALIASE) {
+    const key = srKey.get(a.sr);
+    if (key === undefined) {
+      notizen.push(
+        `${a.abk} (SR ${a.sr}, ${a.sprache}) — `
+        + (mehrdeutig.has(a.sr)
+          ? 'SR im ERLASS_REGISTER mehrdeutig (zwei keys): Alias verworfen'
+          : 'SR nicht (mehr) im ERLASS_REGISTER: Alias verworfen'),
+      );
+      continue;
+    }
+    if (AUSGESCHLOSSENE_KEYS.has(key) || ABK_AUSSCHLUSS.has(normalisiereAbk(a.abk))) {
+      ausgeschlossen.push(`${a.abk} (SR ${a.sr}, ${a.sprache}) → ${key}`);
+      continue;
+    }
+    setze(normalisiereAbk(a.abk), key);
+  }
+
+  for (const k of kollidiert) tabelle.delete(k);   // beide Seiten verwerfen
+  return {
+    tabelle,
+    kollisionen: [...kollidiert].sort(),
+    notizen: notizen.sort(),
+    ausgeschlossen: ausgeschlossen.sort(),
+  };
+}
+
+const {
+  tabelle: ABK_TABELLE,
+  kollisionen: KOLLISIONEN,
+  notizen: ALIAS_NOTIZEN,
+  ausgeschlossen: ALIAS_AUSGESCHLOSSEN,
+} = baueAbkTabelle();
+
+/**
+ * Aliase des generierten Artefakts, die sich NICHT auf einen Register-key
+ * auflösen liessen (SR fehlt oder ist mehrdeutig). Leer = Artefakt und Register
+ * sind synchron.
+ *
+ * Sichtbar statt still (§6.7): ein Erlass, der aus dem Register verschwindet
+ * oder eine SR-Nummer doppelt belegt, macht seine Aliase wirkungslos — ohne
+ * diese Liste bemerkte das niemand, weil ein wirkungsloses Alias sich genau wie
+ * ein nie erzeugtes verhält. Das Tor check:normkeys weist sie aus.
+ */
+export const ABK_ALIAS_NOTIZEN: ReadonlyArray<string> = ALIAS_NOTIZEN;
+
+/**
+ * Aliase, die auf einen AUSGESCHLOSSENEN Erlass zeigen und darum nicht in die
+ * Tabelle kommen (heute: 'StG'/'LT'/'LTB' → 'STG', SR 641.10). KEIN Fehler,
+ * sondern die bewusst fortgeführte Lücke aus ABK_AUSSCHLUSS — aber sie wird
+ * ausgewiesen, weil eine Lücke, die niemand sieht, sich nicht schliessen lässt.
+ *
+ * OFFENE FACHFRAGE (§7, Entscheid David): «LT»/«LTB» sind im Korpus belegt
+ * ausschliesslich eidgenössisch (bund/bge/151_II_545, 151_II_884, 149_II_462 —
+ * Stempelabgaben-Leitfälle) und wären damit genau der «positive Bund-Signal-
+ * Diskriminator», den der ABK_AUSSCHLUSS-Kommentar als Bedingung nennt. Sie
+ * freizugeben ist eine fachliche Entscheidung über den Umgang mit dem
+ * mehrdeutigen «StG», nicht eine Folge der Alias-Ernte — darum hier vorgemerkt
+ * statt nebenbei umgesetzt.
+ */
+export const ABK_ALIAS_AUSGESCHLOSSEN: ReadonlyArray<string> = ALIAS_AUSGESCHLOSSEN;
+
+/**
+ * Abkürzungen, die auf mehrere Register-keys zeigen und darum GAR NICHT gemappt
+ * werden. Leer = sauber. Sichtbar statt still (§6.7) — der Unit-Test schreibt
+ * die exakte Liste fest, damit ein neuer Register-Eintrag, der eine Abkürzung
+ * doppelt belegt, rot wird statt Treffer zu verlieren.
+ */
+export const ABK_KOLLISIONEN: ReadonlyArray<string> = KOLLISIONEN;
 
 export function normKeyFuerAbk(abk: string): string | null {
   const k = normalisiereAbk(abk);

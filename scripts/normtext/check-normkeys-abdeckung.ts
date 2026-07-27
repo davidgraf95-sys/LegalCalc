@@ -33,18 +33,26 @@
  * vereinzelt, und sie ist die Grenze, bis zu der JEDER Ignore-Eintrag unten
  * einzeln am Korpus-Beleg verifiziert werden konnte. Das ist der Preis der
  * Regel «kein Eintrag ohne geprüfte Begründung» (§7): lieber eine höhere
- * Schwelle mit 12 belegten Einträgen als eine tiefere mit geratenen. Absenken
- * auf 10 ist der nächste Schritt, sobald die FR/IT-Amtskürzel gemappt sind —
- * dann ist die verbleibende Restliste klein genug zum Verifizieren.
+ * Schwelle mit 12 belegten Einträgen als eine tiefere mit geratenen. Ein
+ * Absenken auf 10 ist möglich, seit die FR/IT-Amtskürzel gemappt sind (die
+ * Restliste ist klein genug zum Verifizieren) — es bleibt aber ein EIGENER
+ * Schritt: jedes Token zwischen 10 und 20 will einzeln am Korpus belegt sein,
+ * bevor es in die Ignore-Tabelle darf.
  *
- * DIESES TOR IST HEUTE ROT, UND DAS IST KORREKT (§6.7). Über der Schwelle
- * stehen 34 französische und italienische AMTSKÜRZEL desselben Bundesrechts
- * (LTF/CST/COST = BGG/BV, CP/CPP/CPC/CC/CO, LP/LEF, CEDH/CEDU …). Sie sind
- * keine Lücke im Register, sondern eine fehlende Alias-Ebene; sie gehören
- * darum ausdrücklich NICHT in die Ignore-Tabelle, sondern in die Rot-Liste.
- * W2·6-NKEY Baustein b (Fedlex-Aliase) räumt sie ab; danach ist das Tor mit den
- * 12 deklarierten Ignore-Einträgen grün. Ein Tor, das man grün macht, indem man
- * die offene Arbeit in seine Ausnahmeliste schreibt, hätte den Zweck verfehlt.
+ * DAS TOR WAR BEI SEINER EINFÜHRUNG ROT, UND DAS WAR KORREKT (§6.7). Über der
+ * Schwelle standen 34 französische und italienische AMTSKÜRZEL desselben
+ * Bundesrechts (LTF/CST/COST = BGG/BV, CP/CPP/CPC/CC/CO, LP/LEF, CEDH/CEDU …).
+ * Sie waren keine Lücke im Register, sondern eine fehlende Alias-Ebene; sie
+ * gehörten darum ausdrücklich NICHT in die Ignore-Tabelle, sondern in die
+ * Rot-Liste. Ein Tor, das man grün macht, indem man die offene Arbeit in seine
+ * Ausnahmeliste schreibt, hätte den Zweck verfehlt.
+ *
+ * W2·6-NKEY Baustein b (amtliche Fedlex-Kürzel als generiertes Alias-Artefakt)
+ * hat sie abgeräumt: gemessen am selben Korpus stieg die gemappte Quote von
+ * 76.8 % auf 93.6 % der Nennungen, und die Rot-Liste ab 20 Snapshots schrumpfte
+ * von 46 auf genau die 12 unten deklarierten Ignore-Einträge (Messung
+ * 28.7.2026, 5'093 Snapshots). Alle 34 Token wurden GEMAPPT, keines wurde
+ * ignoriert — der Unterschied ist der ganze Punkt dieses Tors.
  *
  * NICHT geprüft: ob eine gemappte Zuordnung fachlich RICHTIG ist. Das Tor zählt
  * Abdeckung, nicht Wahrheit. Falsch-Zuordnungen sind die Zuständigkeit des
@@ -56,6 +64,8 @@
  */
 import { ladeBestandSnapshots } from './entscheide-schreiben';
 import {
+  ABK_ALIAS_AUSGESCHLOSSEN,
+  ABK_ALIAS_NOTIZEN,
   ABK_AUSSCHLUSS,
   ABK_KOLLISIONEN,
   abkVonStatut,
@@ -63,6 +73,7 @@ import {
   normKeyFuerAbk,
   normalisiereAbk,
 } from './entscheide-mapping';
+import { ABK_ALIASE } from '../../src/lib/normtext/abk-aliase.generated';
 import { extrahiereStatutRefs } from '../../src/lib/rechtsprechung/zitat-extraktion';
 
 /** Snapshot-Frequenz, ab der ein ungemapptes Token das Tor rot macht. */
@@ -351,6 +362,21 @@ function main(): void {
     );
   }
 
+  // ── (4) Aliase, die sich nicht auf einen Register-key auflösen ────────────
+  // Das generierte Artefakt bindet über die SR-Nummer ans Register. Fällt ein
+  // Erlass aus dem Register oder wird seine SR-Nummer doppelt belegt, werden
+  // seine Aliase wirkungslos — und ein wirkungsloses Alias verhält sich exakt
+  // wie ein nie erzeugtes, also unsichtbar (§6.7). Darum hier laut.
+  if (ABK_ALIAS_NOTIZEN.length > 0) {
+    fehler.push(
+      `${ABK_ALIAS_NOTIZEN.length} Alias/Aliase des Artefakts lösen sich NICHT auf:\n`
+      + ABK_ALIAS_NOTIZEN.map((n) => `      ${n}`).join('\n')
+      + '\n      → Artefakt und Register sind auseinandergelaufen. Entweder neu ernten\n'
+      + '        (npm run gen:abk-aliase -- --datum=$(date +%F)) oder die doppelt belegte\n'
+      + '        SR-Nummer im ERLASS_REGISTER entzerren.',
+    );
+  }
+
   // ── Ausgabe ───────────────────────────────────────────────────────────────
   console.log(`  Snapshots:            ${snapshots}`);
   console.log(
@@ -367,6 +393,18 @@ function main(): void {
     `  Token:                ${alle.length} — gemappt ${gemappt.length}, `
     + `ausgeschlossen ${ausgeschlossen.length}, ungemappt ${ungemappt.length}`,
   );
+  console.log(
+    `  Alias-Ebene (Fedlex): ${ABK_ALIASE.length} amtliche DE/FR/IT-Kürzel, `
+    + `${ABK_ALIAS_NOTIZEN.length} nicht auflösbar`,
+  );
+  if (ABK_ALIAS_AUSGESCHLOSSEN.length > 0) {
+    // Kein Fehler: die bewusst fortgeführte ABK_AUSSCHLUSS-Lücke, hier nur
+    // benannt — eine Lücke, die niemand sieht, lässt sich nicht schliessen (§8).
+    console.log(
+      `  Alias auf ausgeschlossenen Erlass (bewusste Lücke, kein Fehler): `
+      + ABK_ALIAS_AUSGESCHLOSSEN.join(', '),
+    );
+  }
   if (ausgeschlossen.length > 0) {
     console.log(
       '  AUSGESCHLOSSEN (bewusste Lücke, kein Fehler): '

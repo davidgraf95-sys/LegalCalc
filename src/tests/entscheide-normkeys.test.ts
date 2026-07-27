@@ -3,7 +3,9 @@ import {
   normalisiereAbk, normKeyFuerAbk, statutesZuNormKeys, fliesstextVon,
   normKeysVonSnapshot, artikelSchluesselVonSnapshot, remapNormKeys,
   ABK_KOLLISIONEN, ABK_AUSSCHLUSS, AUSGESCHLOSSENE_KEYS,
+  ABK_ALIAS_NOTIZEN, ABK_ALIAS_AUSGESCHLOSSEN,
 } from '../../scripts/normtext/entscheide-mapping';
+import { ABK_ALIASE } from '../lib/normtext/abk-aliase.generated';
 import { ERLASS_REGISTER } from '../lib/normtext/register';
 import type { EntscheidSnapshot } from '../lib/rechtsprechung/typen';
 
@@ -68,12 +70,80 @@ describe('normKeyFuerAbk — Ableitung aus dem ERLASS_REGISTER', () => {
   });
 });
 
+// ── Baustein b: amtliche DE/FR/IT-Kürzel aus Fedlex (Alias-Ebene) ────────────
+//
+// FACHLICHE ÄNDERUNG, bewusst deklariert (§6.3): ein Entscheid in französischer
+// oder italienischer Amtssprache zitiert dasselbe Bundesrecht unter einem
+// anderen amtlichen Kürzel («art. 42 LTF» statt «Art. 42 BGG»). Bis Baustein b
+// verschwand jedes solche Zitat lautlos. Das generierte Artefakt
+// abk-aliase.generated.ts (Fedlex jolux:titleShort, Currency-Fenster, Stand
+// 28.7.2026) bindet die Kürzel über die SR-Nummer an den Register-key.
+describe('Alias-Ebene — amtliche FR/IT-Kürzel zeigen auf den Register-key', () => {
+  it('löst die grossen Kodifikationen und Verfahrensgesetze auf', () => {
+    expect(normKeyFuerAbk('LTF')).toBe('BGG');       // Loi sur le Tribunal fédéral
+    expect(normKeyFuerAbk('CO')).toBe('OR');         // Code des obligations
+    expect(normKeyFuerAbk('CC')).toBe('ZGB');        // Code civil
+    expect(normKeyFuerAbk('CPC')).toBe('ZPO');
+    expect(normKeyFuerAbk('CP')).toBe('STGB');
+    expect(normKeyFuerAbk('CPP')).toBe('STPO');
+  });
+  it('löst Verfassung, SchKG, IPRG, DBG und die EMRK auf', () => {
+    expect(normKeyFuerAbk('CST')).toBe('BV');        // «Cst.» (fr)
+    expect(normKeyFuerAbk('Cost.')).toBe('BV');      // «Cost.» (it)
+    expect(normKeyFuerAbk('LP')).toBe('SCHKG');      // Loi sur la poursuite
+    expect(normKeyFuerAbk('LEF')).toBe('SCHKG');     // it «LEF»
+    expect(normKeyFuerAbk('LDIP')).toBe('IPRG');
+    expect(normKeyFuerAbk('LIFD')).toBe('DBG');
+    expect(normKeyFuerAbk('CEDH')).toBe('EMRK');     // pdf-embed-Erlass, SR 0.101
+    expect(normKeyFuerAbk('CEDU')).toBe('EMRK');
+  });
+  it('greift im FLIESSTEXT eines französischsprachigen Entscheids (End-to-End)', () => {
+    const s = snap({
+      abschnitte: [{ typ: 'erwaegung', bloecke: [{
+        marke: '2', text: 'Le recours est recevable au regard de l\'art. 42 al. 2 LTF; '
+          + 'la partie recourante invoque en outre l\'art. 29 al. 2 Cst.',
+      }] }],
+    });
+    expect(normKeysVonSnapshot(s)).toEqual(['BGG', 'BV']);
+    expect([...artikelSchluesselVonSnapshot(s)].sort()).toEqual(['BGG/42', 'BV/29']);
+  });
+  it('jedes Alias-Kürzel des Artefakts löst sich auf oder ist benannt ausgeschlossen', () => {
+    // Bindeglied Artefakt ↔ Register ist die SR-Nummer. Fällt ein Erlass aus dem
+    // Register oder wird eine SR-Nummer doppelt belegt, werden seine Aliase
+    // wirkungslos — und ein wirkungsloses Alias verhält sich exakt wie ein nie
+    // erzeugtes, also unsichtbar (§6.7). Heute: nichts fällt durch.
+    expect([...ABK_ALIAS_NOTIZEN]).toEqual([]);
+    expect(ABK_ALIASE.length).toBeGreaterThan(500);
+  });
+  it('holt einen AUSGESCHLOSSENEN Erlass nicht über die fremdsprachige Hintertür herein', () => {
+    // SR 641.10: das deutsche «StG» ist föderal/kantonal mehrdeutig und darum
+    // ausgeschlossen. «LT» (fr) / «LTB» (it) sind es nicht — sie trügen denselben
+    // key 'STG' trotzdem in den Korpus, und der Schreibpfad (AUSGESCHLOSSENE_KEYS)
+    // verwürfe ihn beim Norm-Index wieder: ein halber Zustand. Die Freigabe ist
+    // eine FACHLICHE Entscheidung (§7), kein Nebeneffekt der Alias-Ernte.
+    expect(normKeyFuerAbk('LT')).toBeNull();
+    expect(normKeyFuerAbk('LTB')).toBeNull();
+    expect(normKeyFuerAbk('StG')).toBeNull();
+    expect([...ABK_ALIAS_AUSGESCHLOSSEN]).toEqual([
+      'LT (SR 641.10, fr) → STG',
+      'LTB (SR 641.10, it) → STG',
+      'StG (SR 641.10, de) → STG',
+    ]);
+  });
+});
+
 describe('Sicherungen der Ableitung — sichtbar statt still (§6.7)', () => {
-  it('ABK_KOLLISIONEN ist heute exakt leer — das Register ist eindeutig', () => {
+  it('ABK_KOLLISIONEN ist heute exakt leer — Register UND Aliase sind eindeutig', () => {
     // EXAKTE Liste, nicht «≤ n»: ein neuer Register-Eintrag, der eine Abkürzung
     // doppelt belegt, macht dieses Tor ROT, statt den Treffer still zu verlieren.
     // Sabotage-Probe 27.7.2026: ein zusätzlicher Register-Eintrag mit kuerzel
     // 'IPRG' unter anderem key liefert ABK_KOLLISIONEN = ['IPRG'] → rot.
+    //
+    // Seit Baustein b (28.7.2026) speisen ZWEI Quellen dieselbe Tabelle und
+    // dieselbe Kollisionsregel: Register-Kandidaten und die amtlichen Fedlex-
+    // Kürzel. Die Liste bleibt leer — 597 Aliase kollidieren mit keinem
+    // Register-Kürzel. Kollidierte je eines, verlören BEIDE Erlasse ihre Zitate;
+    // genau darum steht die Liste hier exakt und nicht als Obergrenze.
     expect([...ABK_KOLLISIONEN]).toEqual([]);
   });
   it('ABK_AUSSCHLUSS trägt heute nur «STG», mit begründendem Text', () => {
