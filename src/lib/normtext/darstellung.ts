@@ -268,10 +268,20 @@ export function istAufgehoben(text: string): boolean {
 
 /** Ist der GANZE Artikel aufgehoben (kein lebender Wortlaut, keine Items)? Dann
  *  zeigt der Reader ihn dezent + standardmässig eingeklappt (Auftrag David:
- *  aufgehobene Artikel «nicht so präsent», aufklappbar). */
+ *  aufgehobene Artikel «nicht so präsent», aufklappbar).
+ *
+ *  G-AUFH-ART (W2·5j, 27.7.2026): `markiert` ist das amtlich VERIFIZIERTE Signal
+ *  aus dem Adapter (NormSnapshot.aufgehoben — nur gesetzt, wenn die Quelle
+ *  strukturell keinen Body-Block liefert, s. adapter-lexwork.ts). Ist es gesetzt,
+ *  entscheidet es SOFORT (kein Erraten mehr nötig); fehlt es (Bund-Bestand vor
+ *  diesem Feld, andere Kantone vor ihrer Regeneration), fällt die Funktion auf
+ *  die bisherige TEXT-Heuristik zurück — bestehendes Verhalten bleibt
+ *  unverändert (§6 Byte-Gleichheit für alle Daten ohne das Feld). */
 export function artikelGanzAufgehoben(
   bloecke: { text: string; items?: { text: string }[]; tabelle?: unknown[]; mehrspaltig?: { zeilen: unknown[] } }[],
+  markiert?: boolean,
 ): boolean {
+  if (markiert) return true;
   if (!bloecke.length) return false;
   return bloecke.every((b) => {
     // Tabelle/Mehrspaltig = LEBENDER Inhalt (text ist dort konventionsgemäss leer)

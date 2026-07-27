@@ -181,7 +181,9 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   const amtlich = verifizierLinkArtikel(e, erlass);
   // Vollständig aufgehobener Artikel → dezent + standardmässig eingeklappt
   // (Auftrag David: «nicht so präsent», aufklappbar über den ▾/▸-Toggle).
-  const ganzAufgehoben = artikelGanzAufgehoben(e.bloecke);
+  // G-AUFH-ART: e.aufgehoben (amtlich verifiziertes Adapter-Signal) hat Vorrang
+  // vor der Text-Heuristik, falls gesetzt (s. artikelGanzAufgehoben-Doku).
+  const ganzAufgehoben = artikelGanzAufgehoben(e.bloecke, e.aufgehoben);
   // Fussnoten am Fuss: amtliche Sidecar-Fussnoten bevorzugen; fehlen sie, die
   // aus dem Wortlaut-Block abgetrennte Änderungshistorie (Extraktions-Artefakt)
   // hier zeigen — einheitlich EINE Quelle, keine Doppelung.

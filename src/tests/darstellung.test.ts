@@ -94,6 +94,26 @@ describe('artikelGanzAufgehoben', () => {
   });
 });
 
+// G-AUFH-ART (W2·5j, 27.7.2026): `markiert` (NormSnapshot.aufgehoben, amtlich
+// verifiziertes Adapter-Signal) hat VORRANG vor der Text-Heuristik — auch wenn
+// der Block-Text für sich genommen «lebend» aussähe. Bis heute kann dieser Fall
+// real nicht vorkommen (der Adapter setzt `aufgehoben` nur bei leerem Body),
+// aber die Funktion muss sich auf das Feld verlassen, sobald es gesetzt ist,
+// statt es zu ignorieren (kein zweites Erraten neben einem bereits vorhandenen
+// amtlichen Befund, §7).
+describe('artikelGanzAufgehoben — markiert (G-AUFH-ART) hat Vorrang', () => {
+  it('markiert=true kollabiert auch «lebend» aussehenden Text', () => {
+    expect(artikelGanzAufgehoben([{ text: 'Ein Satz mit echtem Inhalt.' }], true)).toBe(true);
+  });
+  it('markiert=false/undefined ändert nichts (bestehende Heuristik greift unverändert)', () => {
+    expect(artikelGanzAufgehoben([{ text: 'Ein Satz mit echtem Inhalt.' }], false)).toBe(false);
+    expect(artikelGanzAufgehoben([{ text: 'Ein Satz mit echtem Inhalt.' }])).toBe(false);
+  });
+  it('markiert=true UND leere Blockliste ist ebenfalls aufgehoben (Feld schlägt sogar die leere-Liste-Ausnahme)', () => {
+    expect(artikelGanzAufgehoben([], true)).toBe(true);
+  });
+});
+
 // Stufe-2-D (22.6.2026): Schweizer Tausender-Apostrophe in der Betrag-Spalte
 // der TarifTabelle. Zeichen: U+0027 (gerader Apostroph) — übereinstimmend mit
 // den Fedlex-/LexWork-Snapshots selbst (z. B. «10'000» in BS-154.810.json).
