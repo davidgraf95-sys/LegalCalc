@@ -26,8 +26,10 @@ Notation: M Mechanik · E Ersparnis+Herleitung · R Risiko→Gegenmittel · **K 
 Repo-Nachmessung (Session 24.7. III): **gebaut und verifiziert** sind T1 · T2 · T3 · T5 · T6 ·
 T7 · T9 (Permissions `.claude/settings.json:20f.` + Template-Verankerung) · T15/T18 (im
 Dispatch-Template `docs/token-oekonomie/dispatch-template.md` verankert) · T17 (`test:kurz` in
-`package.json:22`) · T19 sowie `npm run map`/`zeige`/`fahrplan`. **Verbleibend NUR mit separatem
-Go David (§8 Ziff. 4):** T10 · T12-Stufe-2 · T14 · T16 · T20 (je Einsatz). **T13-Rest bewusst
+`package.json:22`) · T19 sowie `npm run map`/`zeige`/`fahrplan`. **Verbleibende Posten: Go David
+27.7.2026 ERTEILT** für T10 · T12-Stufe-2 · T14 · T16 · T20 (Chat-Nachtrag zur Aufräum-Session;
+T16 nur in frischer Session gem. T19-Vorbedingung; T12-Stufe-2: dokumentierte Weglassungs-
+Begründung vor Bau neu bewerten; T20 = stehendes Einsatz-Instrument). **T13-Rest bewusst
 zurückgestellt:** die genannten Config-Dateien sind inzwischen Barrel-Splits (< 25 Z.,
 `startseiteKarten.ts`/`startseiteVorlagen.ts`), der Rest läge auf Risikopfaden
 (`zustaendigkeit.ts`, `normtext/register.ts`) — Gegenprüfungs-Zeremoniell für reine

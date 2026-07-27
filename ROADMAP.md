@@ -583,10 +583,13 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > abgelöste Fassung wörtlich → `ROADMAP-CHRONIK.md` → Steuerungs-Prosa (24.7.2026).
 > **Stand 24.7.2026 (Nachmessung, Session III): autonomer Bau-Rest LEER** — T1/T2/T3/T5/T6/T7/
 > T9/T15/T17/T18/T19 + Dispatch-Template + `map`/`zeige`/`fahrplan` sind gebaut (Belege:
-> FAHRPLAN §Stand + Repo-Nachmessung); die verbleibenden Posten laufen NUR mit separatem Go
-> David (§8 Ziff. 4: T10 · T12-Stufe-2 · T14 · T16 · T20-je-Einsatz) bzw. sind als
-> unwirtschaftlich zurückgestellt (T13-Rest auf Risikopfaden). Eine Bau-Session ohne dieses
-> Go nimmt direkt den nächsten Queue-Schritt.
+> FAHRPLAN §Stand + Repo-Nachmessung); für die verbleibenden Posten hat David das
+> Go erteilt (**Go David 27.7.2026: T10 · T12-Stufe-2 · T14 · T16 · T20**) — sie sind damit
+> autonom baubar, mit drei Massgaben: T16 weiterhin NUR in einer frischen Session (T19-
+> Vorbedingung, chirurgischer CLAUDE.md-Eingriff); T12-Stufe-2: die im Fahrplan dokumentierte
+> Weglassungs-Begründung vor dem Bau neu bewerten (Go hebt das Gate, nicht das Urteil);
+> T20 = stehendes Einsatz-Instrument, kein Einmal-Bau. Unwirtschaftlich zurückgestellt
+> bleibt T13-Rest (Risikopfade).
 
 > **■ Fokus-Dekret 24.7.2026 (David, §14-Intake — 14 Anmerkungen, präzisiert die
 > Feature-Reihenfolge oben): die Gesetzesdarstellung steht im Vordergrund.** Reihenfolge:
