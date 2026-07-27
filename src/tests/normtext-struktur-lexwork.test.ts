@@ -133,6 +133,26 @@ describe('extrahiereStrukturLexWork — Aufhebungs-/Änderungsmarker (§7, A42-G
   });
 });
 
+describe('extrahiereStrukturLexWork — Marginalie mit <sup>-Exponent (N2-Befund, SO-614.11 §11bis)', () => {
+  // Reales Muster (bgs.so.ch/api/de/texts_of_law/614.11 §11bis): der amtliche
+  // Randtitel schreibt den Absatz-Exponenten hochgestellt OHNE Leerzeichen —
+  // «3bis. Übernahme von Verlusten aus dem Ausland». Der Snapshot-Extraktions-
+  // pfad (adapter-lexwork.bereinige, Tag-Strip → '') liest das korrekt; der
+  // Sidecar-Pfad nutzte bislang clean() (Tag-Strip → ' '), was «3 bis.» erzeugte
+  // (Gegenprüfung 27.7., PR #391 Delta-Runde, N2 — 49 betroffene Artikel).
+  const XH = `
+    <div class='article'>
+      <div class='article_number'><span class='article_symbol'>&sect;</span> <span class='number'>11bis</span></div>
+      <div class='article_title'><span class='title_text'>3<sup>bis</sup>. &Uuml;bernahme von Verlusten aus dem Ausland</span></div>
+    </div>
+    <div class='paragraph'><span class='number'>1</span><p><span class='text_content'>x</span></p></div>`;
+
+  it('verbindet den <sup>-Exponenten ohne Leerzeichen («3bis.», nicht «3 bis.»)', () => {
+    const a = extrahiereStrukturLexWork(XH);
+    expect(a['11_bis'].marginalie).toEqual(['3bis. Übernahme von Verlusten aus dem Ausland']);
+  });
+});
+
 describe('extrahiereLexWorkSidecar — kombinierter Extrakt, ein Apparat-Parse', () => {
   it('liefert kopf + artikel deckungsgleich zu den Einzel-Extraktoren', () => {
     const { kopf, artikel } = extrahiereLexWorkSidecar(XHTML);
