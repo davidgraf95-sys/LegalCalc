@@ -52,7 +52,7 @@ Laufdatum) je Bund-Volltext-Erlass geerntet — Fedlex führt künftige Fassunge
 bereits im Triplestore. Jede Zeile ist eine angekündigte künftige Fassung; am
 genannten Tag `scripts/fedlex-cache.sh` neu pinnen + §7-Verifikation. Massgeblich
 bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
-`npm run gen:fedlex-wiedervorlage` regeneriert. Stand des Laufs: 2026-07-10.
+`npm run gen:fedlex-wiedervorlage` regeneriert. Stand des Laufs: 2026-07-27.
 
 | Erlass (künftige Fassung) | Fundstelle | Aktuell gepinnt | Rhythmus | Nächste Prüfung |
 |---|---|---|---|---|
@@ -77,10 +77,11 @@ bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
 | Künftige Fassung FINIG (SR 954.1) | `scripts/fedlex-cache.sh` (FINIG) | gepinnt 1.3.2024 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
 | Künftige Fassung GwG (SR 955.0) | `scripts/fedlex-cache.sh` (GWG) | gepinnt 1.3.2024 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
 | Künftige Fassung BEG (SR 957.1) | `scripts/fedlex-cache.sh` (BEG) | gepinnt 1.1.2023 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
-| Künftige Fassung ChemRRV (SR 814.81) | `scripts/fedlex-cache.sh` (CHEMRRV) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.12.2026 |
+| Künftige Fassung ChemRRV (SR 814.81) | `scripts/fedlex-cache.sh` (CHEMRRV) | gepinnt 16.7.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.12.2026 |
 | Künftige Fassung AIG (SR 142.20) | `scripts/fedlex-cache.sh` (AIG) | gepinnt 12.6.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung AsylG (SR 142.31) | `scripts/fedlex-cache.sh` (ASYLG) | gepinnt 12.6.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung VG (SR 170.32) | `scripts/fedlex-cache.sh` (VG) | gepinnt 15.6.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
+| Künftige Fassung ParlG (SR 171.10) | `scripts/fedlex-cache.sh` (PARLG) | gepinnt 2.3.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung RVOV (SR 172.010.1) | `scripts/fedlex-cache.sh` (RVOV) | gepinnt 1.3.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung VwVG (SR 172.021) | `scripts/fedlex-cache.sh` (VWVG) | gepinnt 1.7.2022 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung BPG (SR 172.220.1) | `scripts/fedlex-cache.sh` (BPG) | gepinnt 1.1.2024 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
@@ -90,6 +91,7 @@ bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
 | Künftige Fassung DesV (SR 232.121) | `scripts/fedlex-cache.sh` (DESV) | gepinnt 1.7.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung PatG (SR 232.14) | `scripts/fedlex-cache.sh` (PATG) | gepinnt 1.7.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung MWSTV (SR 641.201) | `scripts/fedlex-cache.sh` (MWSTV) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
+| Künftige Fassung CO2-Gesetz (SR 641.71) | `scripts/fedlex-cache.sh` (CO2_GESETZ) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung EnG (SR 730.0) | `scripts/fedlex-cache.sh` (ENG) | gepinnt 1.4.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung VZV (SR 741.51) | `scripts/fedlex-cache.sh` (VZV) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung EBG (SR 742.101) | `scripts/fedlex-cache.sh` (EBG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
@@ -117,6 +119,23 @@ bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
 | Künftige Fassung VKL (SR 832.104) | `scripts/fedlex-cache.sh` (VKL) | gepinnt 1.6.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.7.2032 |
 | Künftige Fassung AHVG (SR 831.10) | `scripts/fedlex-cache.sh` (AHVG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2034 |
 | Künftige Fassung AHVV (SR 831.101) | `scripts/fedlex-cache.sh` (AHVV) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2034 |
+
+### Aufgehobene und zur Aufhebung angekündigte Erlasse (Aufhebungs-Posten, G-AUFH-Follow-up #259)
+
+Aus dem amtlichen Fedlex-SPARQL-Graphen (`jolux:dateNoLongerInForce` auf der
+ConsolidationAbstract) geerntet. Diese Erlasse werden GANZ aufgehoben — je
+Zeile entweder bereits erfolgt («aufgehoben seit») oder erst amtlich
+angekündigt und bis dahin geltend («Aufhebung angekündigt per», §8). Der
+Snapshot bleibt allenfalls als historische Fassung nutzbar, darf aber nie mehr
+als geltend dargestellt werden, sobald das Datum erreicht ist. Massnahme:
+Snapshot ersetzen/entfernen, Nachfolge-Erlass prüfen. Roh gemeldet (ohne
+SSoT-Filter aus `src/lib/normtext/aufhebungen.ts` — folgt mit #287).
+
+| Erlass (Aufhebungs-Posten) | Fundstelle | Aufhebungsdatum | Rhythmus | Nächste Prüfung |
+|---|---|---|---|---|
+| Aufgehoben: BMV (SR 412.103.1) | `scripts/fedlex-cache.sh` (BMV) | aufgehoben seit 1.3.2026 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung erfolgt — Massnahme nötig |
+| Aufhebung angekündigt: PatV (SR 232.141) | `scripts/fedlex-cache.sh` (PATV) | Aufhebung angekündigt per 1.1.2027 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung angekündigt ab 1.1.2027 |
+| Aufhebung angekündigt: VGV (SR 814.621) | `scripts/fedlex-cache.sh` (VGVP) | Aufhebung angekündigt per 1.1.2027 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung angekündigt ab 1.1.2027 |
 
 <!-- /AUTO fedlex-wiedervorlage -->
 

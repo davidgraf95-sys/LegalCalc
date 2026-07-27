@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-18",
+  "erzeugt": "2026-07-27",
   "erlasse": [
     {
       "key": "ZGB",
@@ -2089,7 +2089,7 @@
       "rang": 59,
       "status": "snapshot",
       "datei": "bund/VOEB.json",
-      "artikelAnzahl": 34,
+      "artikelAnzahl": 35,
       "stand": "2023-09-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2020/127/de",
       "fassungsToken": "20230901",

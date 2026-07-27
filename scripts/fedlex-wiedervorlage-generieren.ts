@@ -181,20 +181,22 @@ export function baueAutoBlock(
   // die Massnahme ist Snapshot-Ersatz, nicht eine terminierte Frische-Prüfung);
   // eine künftig angekündigte Aufhebung trägt ihr Datum (→ terminierte Vorwarnung).
   const aufhebungsZeilen = aufhebungen.map((a) =>
-    `| Aufgehoben: ${a.kuerzel} (SR ${a.sr}) | \`scripts/fedlex-cache.sh\` (${a.key}) | aufgehoben seit ${deDatum(a.aufgehobenSeit)} | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | ${a.kuenftig ? `Aufhebung angekündigt ab ${deDatum(a.aufgehobenSeit)}` : 'Aufhebung erfolgt — Massnahme nötig'} |`,
+    `| ${a.kuenftig ? 'Aufhebung angekündigt' : 'Aufgehoben'}: ${a.kuerzel} (SR ${a.sr}) | \`scripts/fedlex-cache.sh\` (${a.key}) | ${a.kuenftig ? `Aufhebung angekündigt per ${deDatum(a.aufgehobenSeit)}` : `aufgehoben seit ${deDatum(a.aufgehobenSeit)}`} | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | ${a.kuenftig ? `Aufhebung angekündigt ab ${deDatum(a.aufgehobenSeit)}` : 'Aufhebung erfolgt — Massnahme nötig'} |`,
   );
   const aufhebungsSektion = aufhebungen.length === 0 ? [] : [
     '',
-    '### Ganz aufgehobene Erlasse (Aufhebungs-Posten, G-AUFH-Follow-up #259)',
+    '### Aufgehobene und zur Aufhebung angekündigte Erlasse (Aufhebungs-Posten, G-AUFH-Follow-up #259)',
     '',
     'Aus dem amtlichen Fedlex-SPARQL-Graphen (`jolux:dateNoLongerInForce` auf der',
-    'ConsolidationAbstract) geerntet. Diese Erlasse sind GANZ aufgehoben — der',
+    'ConsolidationAbstract) geerntet. Diese Erlasse werden GANZ aufgehoben — je',
+    'Zeile entweder bereits erfolgt («aufgehoben seit») oder erst amtlich',
+    'angekündigt und bis dahin geltend («Aufhebung angekündigt per», §8). Der',
     'Snapshot bleibt allenfalls als historische Fassung nutzbar, darf aber nie mehr',
-    'als geltend dargestellt werden (§8). Massnahme: Snapshot ersetzen/entfernen,',
-    'Nachfolge-Erlass prüfen. Roh gemeldet (ohne SSoT-Filter aus',
-    '`src/lib/normtext/aufhebungen.ts` — folgt mit #287).',
+    'als geltend dargestellt werden, sobald das Datum erreicht ist. Massnahme:',
+    'Snapshot ersetzen/entfernen, Nachfolge-Erlass prüfen. Roh gemeldet (ohne',
+    'SSoT-Filter aus `src/lib/normtext/aufhebungen.ts` — folgt mit #287).',
     '',
-    '| Erlass (aufgehoben) | Fundstelle | Aufhebungsdatum | Rhythmus | Nächste Prüfung |',
+    '| Erlass (Aufhebungs-Posten) | Fundstelle | Aufhebungsdatum | Rhythmus | Nächste Prüfung |',
     '|---|---|---|---|---|',
     ...aufhebungsZeilen,
   ];

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-26",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "srNummer": "172.056.11",
   "titel": "Verordnung über das öffentliche Beschaffungswesen",
@@ -28,7 +28,8 @@
     "links": [
      {
       "label": "SR <b>172.056.1</b>",
-      "url": "https://fedlex.data.admin.ch/eli/cc/2020/126"
+      "url": "https://fedlex.data.admin.ch/eli/cc/2020/126",
+      "rs": "172.056.1"
      }
     ],
     "absatz": null,
@@ -287,7 +288,8 @@
      "links": [
       {
        "label": "SR <b>172.056.15</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2024/224"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2024/224",
+       "rs": "172.056.15"
       }
      ],
      "absatz": null,
@@ -306,7 +308,8 @@
      "links": [
       {
        "label": "SR <b>172.010.21</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2008/857"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2008/857",
+       "rs": "172.010.21"
       }
      ],
      "absatz": null,
@@ -387,7 +390,8 @@
      "links": [
       {
        "label": "SR <b>235.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2022/491"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2022/491",
+       "rs": "235.1"
       }
      ],
      "absatz": "2",
@@ -509,6 +513,18 @@
    ],
    "marginalie": [
     "Vollzug und Überwachung"
+   ]
+  },
+  "31": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "7. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_7"
+    }
+   ],
+   "marginalie": [
+    "Aufhebung und Änderung anderer Erlasse"
    ],
    "fussnoten": [
     {
@@ -547,7 +563,7 @@
      "absatz": "1",
      "item": "1",
      "pos": {
-      "b": 3,
+      "b": 0,
       "it": 0,
       "o": 32,
       "l": 72
@@ -574,7 +590,7 @@
      "absatz": "1",
      "item": "2",
      "pos": {
-      "b": 3,
+      "b": 0,
       "it": 1,
       "o": 37,
       "l": 106
@@ -593,7 +609,7 @@
      "absatz": "2",
      "item": null,
      "pos": {
-      "b": 4,
+      "b": 1,
       "o": 1,
       "l": 1
      },

@@ -248,7 +248,7 @@ EINTRAEGE=(
   "kov|cc/27/751_749_771|20210801|14|art_1|281.32"
   "rpv|cc/2000/310|20260701|2|art_1|700.1"
   "vbb|cc/1996/2877_2877_2877|20160101|8|art_1|281.31"
-  "voeb|cc/2020/127|20230901|5|art_1|172.056.11"
+  "voeb|cc/2020/127|20230901|8|art_1|172.056.11"
   "vzg|cc/36/425_433_469|20120101|6|art_1|281.42"
   "bvv3|cc/1985/1778_1778_1778|20250101|5|art_1|831.461.3"
   "mvv|cc/1993/3080_3080_3080|20260101|0|art_1|833.11"
@@ -344,10 +344,14 @@ EINTRAEGE=(
   "uvpv|cc/1988/1931_1931_1931|20250101|1|art_1|814.011"
   # Re-Pin 20260101→20260716 (§7-Nachverifikation 18.7.2026): Fedlex publizierte
   # am 16.7.2026 die neue ChemRRV-Konsolidierung (check:fedlex-versionen-Arbiter,
-  # dateApplicability ≤ heute). Kanonisch html-0 (SUFFIXLOS, isExemplifiedBy:
-  # …-20260716-de-html.html) — die alte 20260101-Fassung war html-26. Filestore-
-  # Sonde: 933 kB, srnummer 814.81, art_1 vorhanden (kein Casemates-Shell).
-  "chemrrv|cc/2005/478|20260716|0|art_1|814.81"
+  # dateApplicability ≤ heute) — die alte 20260101-Fassung war html-26.
+  # Korrektur (Gegenprüfung PR #383, 27.7.2026, F2): html-0 (SUFFIXLOS) war die
+  # nicht-kanonische ALIAS-URL, nicht die kanonische Manifestation — sie trug in
+  # Anhang 2 Ziff. 12 eine eId-Kollision (lvl_7 doppelt). Kanonisch per
+  # isExemplifiedBy ist html-1 (…-20260716-de-html-1.html), von
+  # fedlex-repin-kanonik.ts aufgelöst und re-gepinnt. Filestore-Sonde: 933 kB,
+  # srnummer 814.81, art_1 vorhanden (kein Casemates-Shell).
+  "chemrrv|cc/2005/478|20260716|1|art_1|814.81"
   "veva|cc/2005/551|20250801|0|art_1|814.610"
   "vgvp|cc/2000/299|20220101|10|art_1|814.621"
   # ── International: Staatsverträge SR 0.* als Volltext (Auftrag David 25.6.2026) ──
