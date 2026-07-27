@@ -33,7 +33,7 @@
  * vereinzelt, und sie ist die Grenze, bis zu der JEDER Ignore-Eintrag unten
  * einzeln am Korpus-Beleg verifiziert werden konnte. Das ist der Preis der
  * Regel «kein Eintrag ohne geprüfte Begründung» (§7): lieber eine höhere
- * Schwelle mit 12 belegten Einträgen als eine tiefere mit geratenen. Ein
+ * Schwelle mit einer Handvoll belegter Einträge als eine tiefere mit geratenen. Ein
  * Absenken auf 10 ist möglich, seit die FR/IT-Amtskürzel gemappt sind (die
  * Restliste ist klein genug zum Verifizieren) — es bleibt aber ein EIGENER
  * Schritt: jedes Token zwischen 10 und 20 will einzeln am Korpus belegt sein,
@@ -50,13 +50,30 @@
  * W2·6-NKEY Baustein b (amtliche Fedlex-Kürzel als generiertes Alias-Artefakt)
  * hat sie abgeräumt: gemessen am selben Korpus stieg die gemappte Quote von
  * 76.8 % auf 93.6 % der Nennungen, und die Rot-Liste ab 20 Snapshots schrumpfte
- * von 46 auf genau die 12 unten deklarierten Ignore-Einträge (Messung
- * 28.7.2026, 5'093 Snapshots). Alle 34 Token wurden GEMAPPT, keines wurde
- * ignoriert — der Unterschied ist der ganze Punkt dieses Tors.
+ * von 46 auf 12 deklarierte Ignore-Einträge (Messung 28.7.2026, 5'093
+ * Snapshots). Alle 34 Token wurden GEMAPPT, keines wurde ignoriert — der
+ * Unterschied ist der ganze Punkt dieses Tors.
+ * Stand nach Linse 2 (gleicher Korpus): 93.7 %, 11 Ignore-Einträge — 'BGE' ist
+ * entfallen, weil `abkVonStatut` das Token seither gar nicht mehr erzeugt.
  *
- * NICHT geprüft: ob eine gemappte Zuordnung fachlich RICHTIG ist. Das Tor zählt
- * Abdeckung, nicht Wahrheit. Falsch-Zuordnungen sind die Zuständigkeit des
- * Ausschlusses (`ABK_AUSSCHLUSS`) und der fachlichen Abnahme (§7).
+ * ── WAS DIESES TOR NICHT KANN (Linse 2, 28.7.2026 — bitte nicht wegkürzen) ───
+ *
+ * Es misst ABDECKUNG, nicht RICHTIGKEIT. Ein Token zählt als «gemappt», sobald
+ * `normKeyFuerAbk` irgendeinen Register-key liefert — ob es der RICHTIGE ist,
+ * prüft hier nichts. Das ist keine theoretische Einschränkung: eine FALSCH-
+ * Zuordnung hebt die Quote sogar, das Tor wird von ihr also GRÜNER, nicht röter.
+ * Der belegte Fall war die Trunkierung akzentuierter Kürzel — «LPMéd»
+ * (Medizinalberufegesetz SR 811.11) wurde zu 'LPM' verkürzt und traf damit das
+ * amtliche fr/it-Kürzel des Markenschutzgesetzes (SR 232.11): 16 Nennungen in
+ * 5 BGE, alle als «gemappt» gezählt, alle falsch. Geschlossen wurde das an der
+ * Wortgrenze des Extraktors (`CODE_ENDE` in zitat-extraktion.ts), nicht hier.
+ *
+ * Der Angriffskanal ist damit zu, die STRUKTURELLE Grenze bleibt: dieses Tor
+ * kann eine Fehlzuordnung grundsätzlich nicht sehen. Dafür zuständig sind die
+ * adversariale Gegenprüfung auf dem Risikopfad und die fachliche Abnahme (§7) —
+ * nicht eine Zahl in dieser Ausgabe. Wer die Quote als Qualitätsmass liest,
+ * liest sie falsch: sie sagt «wie viel wurde zugeordnet», nie «wie viel wurde
+ * richtig zugeordnet».
  *
  * Offline, deterministisch (§2): liest nur committete Artefakte, sortiert jede
  * Ausgabe, kein Netz, kein Datums-Zugriff in der Prüflogik.
@@ -75,6 +92,7 @@ import {
 } from './entscheide-mapping';
 import { ABK_ALIASE } from '../../src/lib/normtext/abk-aliase.generated';
 import { extrahiereStatutRefs } from '../../src/lib/rechtsprechung/zitat-extraktion';
+import { vergleiche } from './vergleich';
 
 /** Snapshot-Frequenz, ab der ein ungemapptes Token das Tor rot macht. */
 const SCHWELLE = 20;
@@ -207,15 +225,16 @@ const IGNORE: Record<string, IgnoreEintrag> = {
   },
 
   // ── Rauschen (Extraktions-Artefakt, kein Erlass) ──────────────────────────
-  BGE: {
-    grund: 'rauschen',
-    kommentar:
-      'Artefakt der Roh-Drittextraktion (OCL statutes[]): Zeilen der Form «Art. 127 '
-      + 'BGE» (bund/bge/152_II_98, neben korrektem «Art. 127 Abs. 2 CST» derselben '
-      + 'Liste). BGE ist die amtliche Entscheid-SAMMLUNG, kein Erlass — hier ist die '
-      + 'Nicht-Zuordnung das richtige Ergebnis. Ausschliesslich statutes-Pfad '
-      + '(Fliesstext-Nennungen: 0), was die Herkunft bestätigt.',
-  },
+  //
+  // GESTRICHEN (Linse 2, 28.7.2026): der Eintrag 'BGE'. Er deckte das Artefakt
+  // der Roh-Drittextraktion ab — Zeilen der Form «Art. 127 BGE» (bund/bge/
+  // 152_II_98, neben korrektem «Art. 127 Abs. 2 CST» derselben Liste), 51
+  // Nennungen in 50 Snapshots, ausschliesslich statutes-Pfad. Seit `abkVonStatut`
+  // dieselbe Sperrliste `INVALID_LAW_CODES` anwendet wie der Fliesstext-Pfad
+  // (dort stand 'BGE' längst), entsteht der Kandidat gar nicht mehr: das Token
+  // erscheint in dieser Erhebung mit 0 Snapshots. Eine Ausnahme für etwas, das
+  // nicht mehr auftreten kann, ist genau die «tote Regel», die Prüfung (2) unten
+  // rot meldet — darum entfernt statt mitgeschleppt.
   BVV: {
     grund: 'rauschen',
     kommentar:
@@ -275,6 +294,53 @@ function prozent(teil: number, ganz: number): string {
   return ganz === 0 ? '—' : `${((teil / ganz) * 100).toFixed(1)} %`;
 }
 
+/** Kommaliste auf `breite` Zeichen umbrechen (rein, reihenfolgetreu). */
+function umbreche(eintraege: readonly string[], breite: number): string[] {
+  const zeilen: string[] = [];
+  let aktuell = '';
+  for (const e of eintraege) {
+    const stueck = aktuell === '' ? e : `${aktuell}, ${e}`;
+    if (stueck.length > breite && aktuell !== '') { zeilen.push(aktuell); aktuell = e; }
+    else aktuell = stueck;
+  }
+  if (aktuell !== '') zeilen.push(aktuell);
+  return zeilen;
+}
+
+/**
+ * Aliase, die der FLIESSTEXT-Extraktor strukturell nie erzeugen kann (Linse 2).
+ *
+ * Der Extraktor liest nur `[A-Z][A-Z0-9]{1,11}[ÄÖÜ]?` als Gesetzes-Code. Eine
+ * amtliche Abkürzung mit Akzent oder Leerzeichen — «LPMéd», «OMéd», «BVV 2» —
+ * ist in dieser Form nicht treffbar; ihr Alias kann im Fliesstext-Pfad also nie
+ * nachgeschlagen werden. Das ist KEIN Fehler: der Eintrag ist tot, aber
+ * harmlos (er kann nichts falsch zuordnen), und im statutes-Pfad bleibt er
+ * wirksam, weil `abkVonStatut` das Roh-Token samt Akzent liest.
+ *
+ * Ausgewiesen wird er trotzdem — sonst wächst die Liste still, und niemand
+ * merkt, dass ein Erlass im Fliesstext nur über eine ANDERE Sprachfassung
+ * gefunden wird (SR 812.212.21 etwa nur über das it-Kürzel «OM», nie über das
+ * fr-«OMéd»). Genau diese Asymmetrie wollte man wissen, bevor man aus einer
+ * Abdeckungs-Quote Schlüsse zieht (§8).
+ *
+ * ERMITTELT MIT DEM ECHTEN EXTRAKTOR, nicht per Zeichen-Heuristik (§5): das
+ * Alias wird in ein Minimal-Zitat gesetzt und geprüft, ob dabei sein eigener
+ * normalisierter Token herauskommt. Ändert sich die Reichweite des Extraktors,
+ * ändert sich diese Liste automatisch mit — eine nachgebaute Regel täte das
+ * nicht und driftete weg.
+ */
+function unerreichbareAliase(): string[] {
+  const raus: string[] = [];
+  for (const a of ABK_ALIASE) {
+    const ziel = normalisiereAbk(a.abk);
+    if (!ziel) continue;
+    const refs = extrahiereStatutRefs(`Art. 1 ${a.abk}`);
+    if (refs.some((r) => normalisiereAbk(r.gesetz) === ziel)) continue;
+    raus.push(`${a.abk} (SR ${a.sr}, ${a.sprache})`);
+  }
+  return raus.sort(vergleiche);
+}
+
 function main(): void {
   console.log('\n── Tor: normKeys-Abdeckung (Rechtsprechungs-Korpus → ERLASS_REGISTER) ───');
 
@@ -292,7 +358,7 @@ function main(): void {
   }
 
   // ── Klassifikation ────────────────────────────────────────────────────────
-  const alle = [...zahlen.values()].sort((a, b) => a.token.localeCompare(b.token));
+  const alle = [...zahlen.values()].sort((a, b) => vergleiche(a.token, b.token));
   const gemappt = alle.filter((z) => normKeyFuerAbk(z.token) !== null);
   const ausgeschlossen = alle.filter(
     (z) => normKeyFuerAbk(z.token) === null && ABK_AUSSCHLUSS.has(z.token),
@@ -313,7 +379,7 @@ function main(): void {
   // ── (1) Ungemappte Token über der Schwelle ohne Ignore-Eintrag ────────────
   const rot = ungemappt
     .filter((z) => z.snapshots >= SCHWELLE && !(z.token in IGNORE))
-    .sort((a, b) => b.snapshots - a.snapshots || a.token.localeCompare(b.token));
+    .sort((a, b) => b.snapshots - a.snapshots || vergleiche(a.token, b.token));
   if (rot.length > 0) {
     fehler.push(
       `${rot.length} ungemappte(s) Token ab ${SCHWELLE} Snapshots ohne Ignore-Eintrag:\n`
@@ -326,7 +392,28 @@ function main(): void {
   }
 
   // ── (2) Verrottete Ignore-Einträge ────────────────────────────────────────
-  for (const token of Object.keys(IGNORE).sort()) {
+  //
+  // HYSTERESE (Linse 2, 28.7.2026). Die Verrottungs-Prüfung war «n < SCHWELLE ⇒
+  // rot». Damit lag jeder Ignore-Eintrag, dessen Häufigkeit GENAU auf der
+  // Schwelle sitzt, einen einzigen Snapshot vom grundlosen Rot entfernt: 'OG'
+  // und 'VO' standen bei exakt 20 (Messung 28.7.2026). Ein einziger neu
+  // aufgenommener oder ausgetauschter Entscheid — fachlich völlig folgenlos —
+  // hätte das Tor rot gemacht und zum Streichen eines Eintrags aufgefordert,
+  // dessen Begründung unverändert richtig ist. Ein Tor, das auf Rauschen
+  // reagiert, wird abgeschaltet oder weggeklickt; dann fehlt es, wenn es zählt.
+  //
+  // Rot bleiben darum die beiden SCHARFEN Fälle, in denen der Eintrag
+  // nachweislich gegenstandslos ist:
+  //   • das Token mappt inzwischen  → die Ausnahme ist überholt, sie verdeckt
+  //     jetzt ein echtes Mapping;
+  //   • Häufigkeit == 0             → das Token kommt im Korpus GAR NICHT mehr
+  //     vor, die Regel kann nie wieder greifen.
+  // Der Zwischenbereich 1 … SCHWELLE-1 ist eine WARNUNG: der Eintrag ist unter
+  // die Schwelle gerutscht, aber noch belegt. §6.7 bleibt gewahrt — das Tor kann
+  // weiterhin scheitern, und zwar genau an den Fällen, an denen Scheitern etwas
+  // bedeutet.
+  const warnungen: string[] = [];
+  for (const token of Object.keys(IGNORE).sort(vergleiche)) {
     const eintrag = IGNORE[token];
     if (normalisiereAbk(token) !== token) {
       fehler.push(
@@ -342,12 +429,17 @@ function main(): void {
       );
       continue;
     }
-    const z = zahlen.get(token);
-    const n = z?.snapshots ?? 0;
-    if (n < SCHWELLE) {
+    const n = zahlen.get(token)?.snapshots ?? 0;
+    if (n === 0) {
       fehler.push(
-        `IGNORE '${token}' ist tote Regel: nur noch ${n} Snapshot(s), Schwelle ist `
-        + `${SCHWELLE}. Eintrag streichen. (Grund war: ${eintrag.grund})`,
+        `IGNORE '${token}' ist tote Regel: das Token kommt im Korpus NICHT MEHR vor `
+        + `(0 Snapshots). Eintrag streichen. (Grund war: ${eintrag.grund})`,
+      );
+    } else if (n < SCHWELLE) {
+      warnungen.push(
+        `IGNORE '${token}': nur noch ${n} Snapshot(s), Schwelle ${SCHWELLE} — der Eintrag `
+        + `wird nicht mehr gebraucht, um das Tor grün zu halten. Kandidat zum Streichen `
+        + `(kein Fehler: das Token ist weiter belegt). (Grund: ${eintrag.grund})`,
       );
     }
   }
@@ -405,6 +497,17 @@ function main(): void {
       + ABK_ALIAS_AUSGESCHLOSSEN.join(', '),
     );
   }
+  // INFORMATIV, kein Rot: Aliase, die der Fliesstext-Extraktor strukturell nie
+  // trifft (Akzent/Leerzeichen im amtlichen Kürzel). Tote, aber harmlose
+  // Einträge — sichtbar statt still (Begründung bei `unerreichbareAliase`).
+  const unerreichbar = unerreichbareAliase();
+  console.log(
+    `  Alias im FLIESSTEXT-Pfad strukturell unerreichbar (tot, aber harmlos — `
+    + `im statutes-Pfad wirksam): ${unerreichbar.length} von ${ABK_ALIASE.length}`,
+  );
+  // Kompakt umbrochen statt eine Zeile je Eintrag — die Liste ist Diagnose, kein
+  // Befund, und ein Tor, dessen Ausgabe man scrollen muss, wird nicht gelesen.
+  for (const zeile of umbreche(unerreichbar, 92)) console.log(`    ${zeile}`);
   if (ausgeschlossen.length > 0) {
     console.log(
       '  AUSGESCHLOSSEN (bewusste Lücke, kein Fehler): '
@@ -415,7 +518,7 @@ function main(): void {
   }
 
   const top = [...ungemappt]
-    .sort((a, b) => b.snapshots - a.snapshots || a.token.localeCompare(b.token))
+    .sort((a, b) => b.snapshots - a.snapshots || vergleiche(a.token, b.token))
     .slice(0, 20);
   console.log(`  Top-20 ungemappt (Snapshots · statutes/Fliesstext · Ignore-Grund):`);
   for (const z of top) {
@@ -432,10 +535,15 @@ function main(): void {
   const kandidaten = Object.entries(IGNORE)
     .filter(([, e]) => e.srNummer)
     .map(([token, e]) => ({ token, sr: e.srNummer!, n: zahlen.get(token)?.snapshots ?? 0 }))
-    .sort((a, b) => b.n - a.n || a.token.localeCompare(b.token));
+    .sort((a, b) => b.n - a.n || vergleiche(a.token, b.token));
   console.log(`  KORPUS-KANDIDATEN (Bund-SR-Erlasse ohne Register-Eintrag): ${kandidaten.length}`);
   for (const k of kandidaten) {
     console.log(`    ${k.token.padEnd(10)} SR ${k.sr.padEnd(10)} ${k.n} Snapshots`);
+  }
+
+  if (warnungen.length > 0) {
+    console.warn(`\n  WARNUNG (kein Fehler) — ${warnungen.length} Ignore-Eintrag/-Einträge unter der Schwelle:`);
+    for (const w of warnungen) console.warn(`    · ${w}`);
   }
 
   if (fehler.length > 0) {

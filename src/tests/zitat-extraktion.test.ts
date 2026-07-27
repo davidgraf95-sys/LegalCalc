@@ -180,6 +180,35 @@ describe('F2-V5 — Umlaut-/Sonderzeichen-Endung (LugÜ, EPÜ, SDÜ …)', () =>
   });
 });
 
+describe('Linse 2 — akzentuierte Kürzel werden NICHT trunkiert (Fehlzuordnung)', () => {
+  // Belegter Anlassfall: «LPMéd» (Medizinalberufegesetz, SR 811.11) endete an der
+  // früheren Wortgrenze nach 'LPM' — und 'LPM' ist das amtliche fr/it-Kürzel des
+  // Markenschutzgesetzes (SR 232.11). Am committeten Korpus: 16 Nennungen in
+  // 5 BGE (151_I_19, 150_IV_255, 149_II_109, 148_II_465, 148_I_1) → je ein
+  // falscher Norm-Key MSCHG/40 usw. Kein Token ist hier besser als ein falsches:
+  // eine Lücke weist das Sichtbarkeits-Tor aus, eine Fehlzuordnung niemand (§1/§8).
+  it('«art. 40 let. c LPMéd» erzeugt GAR KEIN Token (nicht das falsche LPM)', () => {
+    expect(normen('art. 40 let. c LPMéd')).toEqual([]);
+    expect(normen('art. 2 LPMéd et art. 46 LPMéd')).toEqual([]);
+    // Weitere am Korpus belegte Trunkierungen (dort ohne Fehlzuordnung, weil das
+    // Fragment nicht mappt — derselbe Mechanismus, gleiche Behandlung):
+    expect(normen('art. 3 LFORêts')).toEqual([]);
+    expect(normen('art. 336 al. 3 CPCRév')).toEqual([]);
+    expect(normen("art. 1 al. 1 ARéf")).toEqual([]);
+  });
+  it('das amtliche it-Kürzel «OM» derselben Verordnung bleibt erfasst', () => {
+    // Gegenprobe zur Trunkierung «OMéd» → 'OM': das echte, unverkürzte it-Kürzel
+    // (SR 812.212.21) ist weiterhin ein Treffer — nur der abgeschnittene Rest fällt.
+    expect(normen('art. 40 OM')).toEqual(['ART.40.OM']);
+    expect(normen('art. 40 OMéd')).toEqual([]);
+  });
+  it('Umlaut-Endungen und ASCII-Kürzel bleiben unberührt', () => {
+    expect(normen('Art. 12 LugÜ')).toEqual(['ART.12.LUGÜ']);
+    expect(normen('art. 5 CO')).toEqual(['ART.5.CO']);
+    expect(normen('art. 89 cpv. 1 lett. b LTF')).toEqual(['ART.89.ABS.1.LTF']);
+  });
+});
+
 describe('F2-V6 — Aufzählungs-/ff.-Liste mit gemeinsamem Code', () => {
   it('«Art. 39 ff., 82 ff. und 90 ff. ATSG» → drei Refs', () => {
     expect(normen('Art. 39 ff., 82 ff. und 90 ff. ATSG')).toEqual([

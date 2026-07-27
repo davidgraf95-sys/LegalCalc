@@ -82,7 +82,30 @@ const SUB_TOKEN = '(?:\\d+|[a-z])';
 // als Code durch (Umlaut initial/medial). ASCII-`\b` würde ohne u-Flag mitten im
 // Kürzel («Lug|Ü») eine Grenze ziehen → Endanker `CODE_ENDE` statt `\b`.
 const GESETZ_CODE = '[A-Z][A-Z0-9]{1,11}[ÄÖÜ]?(?:/[A-Z0-9]{2,6})?';
-const CODE_ENDE = '(?![A-Za-z0-9ÄÖÜ_])'; // wie `\b`, aber umlaut-bewusst
+// Wortgrenze hinter dem Code — wie `\b`, aber diakritika-bewusst.
+//
+// TRUNKIERUNGS-FIX (Linse 2, 28.7.2026 — §1-Fehlzuordnung, nicht bloss ein
+// verlorener Treffer): Die frühere Klasse `[A-Za-z0-9ÄÖÜ_]` kannte nur die drei
+// deutschen Umlaute. Jeder AKZENTUIERTE Kleinbuchstabe galt damit als
+// Wortgrenze — der Code-Teil vor dem Akzent wurde abgeschnitten und als
+// vollständiges Kürzel gelesen. Das ist gefährlicher als ein Nicht-Treffer,
+// weil das Fragment ein ANDERES, echtes Kürzel sein kann:
+//   «art. 40 let. c LPMéd» (Medizinalberufegesetz, SR 811.11) → Token 'LPM'
+//   — und 'LPM' ist das amtliche fr/it-Kürzel des MARKENSCHUTZGESETZES
+//   (SR 232.11) → Norm-Key MSCHG/40. Empirisch am committeten Korpus:
+//   16 Nennungen in 5 BGE (151_I_19, 150_IV_255, 149_II_109, 148_II_465,
+//   148_I_1) plus «OMéd» → 'OM' → VAM in 151_II_323; ohne Fehlzuordnung, aber
+//   gleicher Mechanismus: LFORêts, RFORêts, CPCRév, ARRêté, LDét, ARéf, DURée.
+// Der Lookahead deckt darum den Latin-1-Supplement- und Latin-Extended-A/B-
+// Bereich `À-ɏ` ab (die Umlaute ÄÖÜ liegen darin und sind damit
+// weiterhin erfasst). Folge: «LPMéd» erzeugt GAR KEIN Token statt eines
+// falschen — die Nennung ist dann eine benannte Lücke (das Sichtbarkeits-Tor
+// check:normkeys weist sie aus), keine stille Falschzuordnung (§1/§8).
+// Die Änderung ist bewusst einseitig: die Wortgrenze wird nur STRENGER, kein
+// Muster wird durchlässiger — sie kann keinen neuen Falsch-Positiven erzeugen.
+// (Die Range enthält nebenbei × und ÷; beide folgen nie auf ein Erlass-Kürzel,
+// und auch dort wäre die Wirkung nur «verwirft mehr».)
+const CODE_ENDE = '(?![A-Za-z0-9_\\u00C0-\\u024F])';
 
 // Ein einzelnes Artikel-Glied: Zahl/Bereich (F2-V10) + optional Abs./ff. + bis zu
 // drei verkettete Sub-Marker (F2-V2: «lit. b Ziff. 5»).

@@ -54,10 +54,30 @@
  *   Datei-Kopf dokumentiert und macht den Lauf reproduzierbar. Kein Date.now().
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { ERLASS_REGISTER } from '../../src/lib/normtext/register';
 import { sparqlSelect, type SparqlBinding } from '../fedlex-sparql';
+import { vergleiche } from './vergleich';
 
-const ZIEL = 'src/lib/normtext/abk-aliase.generated.ts';
+/**
+ * Ziel-Artefakt, aufgelöst RELATIV ZU DIESER DATEI — nicht zum cwd (Härtung
+ * Linse 2, 28.7.2026).
+ *
+ * Vorher stand hier der cwd-relative Pfad 'src/lib/normtext/…'. Bei einem Lauf
+ * ausserhalb des Repo-Roots (Worktree-Unterordner, CI-Schritt mit anderem
+ * working-directory, `vite-node` aus scripts/) zeigte er ins Leere. Die Folge
+ * war nicht etwa ein Fehler, sondern etwas Schlimmeres: `existsSync` lieferte
+ * false, `bestandZeilen()` gab 0 zurück, und weil das Regressions-Tor nur bei
+ * `alt > 0` greift, war es STILL ABGESCHALTET — genau die Konstellation aus
+ * §6.7 (ein Tor, das nicht scheitern kann). Geschrieben worden wäre dann auch
+ * noch an den falschen Ort.
+ *
+ * `import.meta.url` ist unabhängig vom cwd; von scripts/normtext/ sind es zwei
+ * Ebenen zum Repo-Root.
+ */
+const WURZEL = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
+const ZIEL = resolve(WURZEL, 'src/lib/normtext/abk-aliase.generated.ts');
 
 /** VALUES-Batchgrösse. Verifiziert an 227 SR in 6 Batches (27.7.2026). */
 const BATCH = 40;
@@ -97,11 +117,6 @@ function srListe(): string[] {
     srs.add(e.sr);
   }
   return [...srs].sort(vergleiche);
-}
-
-/** Locale-unabhängiger Stringvergleich (§2: kein ICU-abhängiges localeCompare). */
-function vergleiche(a: string, b: string): number {
-  return a < b ? -1 : a > b ? 1 : 0;
 }
 
 // ── Abfrage ─────────────────────────────────────────────────────────────────
@@ -147,36 +162,85 @@ function zaehlAbfrage(srs: string[]): string {
  * Ein Batch mit COUNT-Gegenprobe (Regel 4). Gibt die Bindings zurück, sobald
  * Zeilenzahl == COUNT; sonst Abbruch nach `VERSUCHE` Anläufen — lieber gar kein
  * Artefakt als ein stillschweigend unvollständiges.
+ *
+ * BEIDE SEITEN WERDEN WIEDERHOLT (Härtung Linse 2, 28.7.2026). Vorher wurde der
+ * COUNT genau EINMAL geholt und danach nur die Zeilen-Abfrage wiederholt. Das
+ * unterstellt, dass ausgerechnet die COUNT-Antwort nie vom Teilergebnis-Fehler
+ * betroffen ist — wofür es keinen Grund gibt: derselbe Endpoint, dasselbe
+ * Verhalten (Regel 4 nennt ≈2 von 20 Läufen). War der ERSTE COUNT der
+ * verstümmelte, verglich der Generator vier weitere Male gegen eine zu kleine
+ * Sollzahl; im ungünstigsten Fall stimmte ein ebenfalls verstümmeltes
+ * Zeilen-Ergebnis mit ihr überein und das «Tor» bestätigte ein Teilergebnis.
+ * Ein Vergleich, dessen Referenz denselben Fehler haben kann wie der Prüfling,
+ * prüft nichts (§6.7). Darum je Anlauf ein FRISCHES Paar (COUNT + Zeilen); nur
+ * ein Paar aus demselben Anlauf zählt als Übereinstimmung.
  */
 async function batchMitZaehltor(srs: string[], nr: number): Promise<SparqlBinding[]> {
-  const zaehl = await sparqlSelect(zaehlAbfrage(srs));
-  const soll = Number(zaehl[0]?.n?.value ?? 'NaN');
-  if (!Number.isFinite(soll)) {
-    console.error(`Batch ${nr}: COUNT-Abfrage lieferte keinen Wert — Abbruch.`);
-    process.exit(1);
-  }
+  const gesehen: string[] = [];
   for (let versuch = 1; versuch <= VERSUCHE; versuch += 1) {
+    const zaehl = await sparqlSelect(zaehlAbfrage(srs));
+    const soll = Number(zaehl[0]?.n?.value ?? 'NaN');
+    if (!Number.isFinite(soll)) {
+      console.error(`Batch ${nr}: COUNT-Abfrage lieferte keinen Wert — Abbruch.`);
+      process.exit(1);
+    }
     const zeilen = await sparqlSelect(zeilenAbfrage(srs));
     if (zeilen.length === soll) {
       const hinweis = versuch > 1 ? ` (nach ${versuch} Anläufen)` : '';
       console.log(`  Batch ${nr}: ${srs.length} SR → ${zeilen.length}/${soll} Zeilen${hinweis}`);
       return zeilen;
     }
-    console.log(`  Batch ${nr}: Teilergebnis ${zeilen.length}/${soll} — Anlauf ${versuch + 1}`);
+    gesehen.push(`${versuch}: ${zeilen.length}/${soll}`);
+    console.log(`  Batch ${nr}: Teilergebnis ${zeilen.length}/${soll} (Zeilen/COUNT) — Anlauf ${versuch + 1}`);
   }
   console.error(
-    `Batch ${nr}: der Endpoint liefert nach ${VERSUCHE} Anläufen weiter ein Teilergebnis `
-    + `(erwartet ${soll} Zeilen). Kein Artefakt geschrieben — später erneut fahren.`,
+    `Batch ${nr}: Zeilen- und COUNT-Abfrage stimmen nach ${VERSUCHE} Anläufen mit je frisch `
+    + `geholtem Paar nicht überein [${gesehen.join(', ')}]. Schwankt auch die Sollzahl, liefert `
+    + 'der Endpoint auf BEIDEN Abfragen Teilergebnisse. Kein Artefakt geschrieben — später '
+    + 'erneut fahren.',
   );
   process.exit(1);
 }
 
 // ── Bestehendes Artefakt (Regressions-Tor) ──────────────────────────────────
 
-/** Zeilenzahl des committeten Artefakts; 0, wenn es (noch) nicht existiert. */
+/**
+ * Zeilenzahl des committeten Artefakts; 0 NUR, wenn es nachweislich noch nicht
+ * existiert (Erstlauf).
+ *
+ * Jeder andere Grund, den Bestand nicht lesen zu können — Leserechte, defekte
+ * Datei, unerwartetes Format —, führt zum ABBRUCH statt zur stillen 0 (Härtung
+ * Linse 2). Eine 0 schaltet das Regressions-Tor unten ab (`alt > 0`); ein
+ * Generator, der wegen eines Lesefehlers plötzlich jede Zeilenzahl akzeptiert,
+ * ist gefährlicher als einer, der gar nicht läuft (§6.7). Existiert die Datei
+ * und enthält sie KEINE Alias-Zeile, ist das ebenfalls kein Erstlauf, sondern
+ * ein kaputtes Artefakt — auch das bricht ab.
+ */
 function bestandZeilen(): number {
-  if (!existsSync(ZIEL)) return 0;
-  return (readFileSync(ZIEL, 'utf8').match(/^ {2}\{ sr: /gm) ?? []).length;
+  if (!existsSync(ZIEL)) {
+    console.log(`  Erstlauf: ${ZIEL} existiert noch nicht — Regressions-Tor greift ab dem nächsten Lauf.`);
+    return 0;
+  }
+  let inhalt: string;
+  try {
+    inhalt = readFileSync(ZIEL, 'utf8');
+  } catch (e) {
+    console.error(
+      `Bestand ${ZIEL} existiert, ist aber nicht lesbar (${String(e)}) — Abbruch. `
+      + 'Ohne gelesenen Bestand wäre das Zeilen-Regressions-Tor still abgeschaltet (§6.7).',
+    );
+    process.exit(1);
+  }
+  const n = (inhalt.match(/^ {2}\{ sr: /gm) ?? []).length;
+  if (n === 0) {
+    console.error(
+      `Bestand ${ZIEL} existiert, enthält aber KEINE Alias-Zeile im erwarteten Format — `
+      + 'Abbruch. Entweder ist die Datei beschädigt oder das Zeilen-Format hat sich '
+      + 'geändert; in beiden Fällen misst das Regressions-Tor nichts mehr (§6.7).',
+    );
+    process.exit(1);
+  }
+  return n;
 }
 
 // ── Hauptlauf ───────────────────────────────────────────────────────────────

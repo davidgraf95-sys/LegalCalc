@@ -191,6 +191,25 @@ describe('statutesZuNormKeys — Trailing-Token mit Ziffern-Block', () => {
   it('einfaches Kürzel + Dedup unverändert', () => {
     expect(statutesZuNormKeys(['Art. 32 Abs. 2 BGG', 'Art. 42 BGG'])).toEqual(['BGG']);
   });
+  it('INVALID_LAW_CODES sperrt AUCH den statutes-Pfad (Linse 2, §5)', () => {
+    // 'la' ist im Fliesstext-Pfad seit jeher gesperrt (Artikel/Präposition) —
+    // im statutes-Pfad war es das nicht. Seit der Alias-Ernte ist 'LA' das
+    // amtliche fr-Kürzel des Luftfahrtgesetzes (SR 748.0): die Zeile lieferte
+    // ['LFG']. Eine Sperre, die nur einer von zwei Pfaden kennt, ist keine.
+    expect(normKeyFuerAbk('LA')).toBe('LFG');       // das Kürzel selbst bleibt gültig …
+    expect(statutesZuNormKeys(['Art. 5 de la'])).toEqual([]);   // … als Satzwort nicht
+    expect(statutesZuNormKeys(['Art. 127 BGE'])).toEqual([]);
+    expect(statutesZuNormKeys(['Art. 141 Abs. 2 KV/FR'])).toEqual([]);
+    // Der PREIS, ehrlich benannt (§8): eine echte fr-Nennung «art. 5 LA» fällt
+    // damit auch im statutes-Pfad weg. Das ist keine neue Lücke, sondern die
+    // Angleichung an den Fliesstext-Pfad, der sie seit jeher hat — und im
+    // committeten Korpus kommt kein einziges 'LA'-Trailing-Token vor (Messung
+    // 28.7.2026: BGE 51, NR 4, SI 3, FR 3, NE 1, ART 1 — sonst nichts).
+    expect(statutesZuNormKeys(['art. 5 LA'])).toEqual([]);
+    // Echte Kürzel ausserhalb der Sperrliste bleiben unberührt:
+    expect(statutesZuNormKeys(['Art. 5 LFG'])).toEqual(['LFG']);
+    expect(statutesZuNormKeys(['art. 42 LTF'])).toEqual(['BGG']);
+  });
   it('hält die BEKANNTE Lücke im Fliesstext-Pfad fest: «BVV 2» getrennt geschrieben (B7)', () => {
     // extrahiereStatutRefs matcht GESETZ_CODE ohne Leerzeichen → 'Art. 27 BVV 2'
     // liefert gesetz 'BVV' und damit keinen key; nur die zusammengeschriebene
@@ -292,6 +311,14 @@ describe('remapNormKeys — Re-Map bewahrt nicht rekonstruierbare Alt-Keys (B1)'
   });
   it('leerer Altbestand → reine Neuberechnung', () => {
     expect(remapNormKeys([], ['OR', 'BGG']).keys).toEqual(['BGG', 'OR']);
+  });
+  it('nurAlt ist dedupliziert und sortiert — die Zahl misst, was wirklich bewahrt wird', () => {
+    // Linse 2: ein Bestands-Snapshot mit doppeltem Alt-Key meldete «2 bewahrte
+    // Keys», obwohl `keys` nur EINEN bewahrt (Set). Die Kennzahl des Backfill-
+    // Laufs war damit zu hoch (§8).
+    const r = remapNormKeys(['ZPO', 'ZPO', 'BGG', 'OR'], ['OR']);
+    expect(r.nurAlt).toEqual(['BGG', 'ZPO']);
+    expect(r.keys).toEqual(['BGG', 'OR', 'ZPO']);
   });
 });
 

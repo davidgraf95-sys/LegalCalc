@@ -38,7 +38,8 @@
 // Dagegen steht `ABK_ALIASE` (src/lib/normtext/abk-aliase.generated.ts) —
 // amtliche Kurzbezeichnungen je Amtssprache aus Fedlex (jolux:titleShort,
 // Currency-Fenster), über die SR-Nummer an den Register-key gebunden. Nach dem
-// Einzug: 93.6 % gemappte Nennungen, Rot-Liste 46 → 12 (Messung 28.7.2026).
+// Einzug: 93.6 % gemappte Nennungen, Rot-Liste 46 → 12 (Messung 28.7.2026);
+// nach der Linse-2-Härtung 93.7 % bei 11 Einträgen, gleicher Korpus.
 // Die Aliase sind KEINE zweite Wahrheit (§5): der Erlass-Bestand bleibt das
 // Register, das Artefakt trägt nur dessen fremdsprachige Namen.
 //
@@ -54,7 +55,7 @@
 
 import { ABK_ALIASE } from '../../src/lib/normtext/abk-aliase.generated';
 import { ERLASS_REGISTER, type Rechtsgebiet } from '../../src/lib/normtext/register';
-import { extrahiereStatutRefs } from '../../src/lib/rechtsprechung/zitat-extraktion';
+import { extrahiereStatutRefs, INVALID_LAW_CODES } from '../../src/lib/rechtsprechung/zitat-extraktion';
 import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
 
 /**
@@ -77,6 +78,27 @@ import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
  * ist gedeckt, solange die Nennung auch in `statutes[]` steht; ungemappte
  * 'BVV'-Token weist das Sichtbarkeits-Tor (Baustein c) aus, statt sie still zu
  * schlucken (§6.7).
+ *
+ * ZWEITE STRUKTURELLE GRENZE — AKZENTUIERTE KÜRZEL (Linse 2, 28.7.2026). Der
+ * Fliesstext-Extraktor kennt nur `[A-Z0-9]` plus die drei deutschen Umlaute als
+ * END-Buchstaben (`GESETZ_CODE`). Ein amtliches Kürzel mit Akzent — «LPMéd»
+ * (SR 811.11), «OMéd» (SR 812.212.21), «LFORêts», «OJéN» — ist damit im
+ * Fliesstext-Pfad BEWUSST NICHT erfassbar. Bis zur Linse 2 wurde es nicht etwa
+ * verworfen, sondern TRUNKIERT: «LPMéd» lieferte das Token 'LPM' — das amtliche
+ * fr/it-Kürzel des MARKENSCHUTZGESETZES (SR 232.11) — und damit einen falschen
+ * Norm-Key (16 Nennungen in 5 BGE, empirisch belegt). Seither endet der Match
+ * gar nicht mehr: kein Token statt eines falschen (§1 — eine benannte Lücke ist
+ * einer stillen Fehlzuordnung immer vorzuziehen).
+ *
+ * FOLGE FÜR DIE ALIAS-EBENE: ein Alias, dessen normalisierte Form der Extraktor
+ * strukturell nie erzeugen kann (Akzent oder Leerzeichen in der amtlichen
+ * Abkürzung — 'LPMéd' → 'LPMD', 'BVV 2' → 'BVV2'), ist im Fliesstext-Pfad ein
+ * TOTER, aber HARMLOSER Eintrag: er kann nichts falsch zuordnen, weil ihn nie
+ * jemand nachschlägt. Im statutes-Pfad bleibt er wirksam (`abkVonStatut` liest
+ * das Roh-Token samt Akzent). Tot heisst darum «wirkungslos in einem der beiden
+ * Zweige», nicht «zu entfernen». Damit die Liste nicht still wächst, weist das
+ * Tor check:normkeys sie informativ aus (kein Rot — es ist kein Fehler, sondern
+ * eine Eigenschaft der Extraktion, §8).
  */
 export function normalisiereAbk(abk: string): string {
   return String(abk).toUpperCase().replace(/[^A-Z0-9ÄÖÜ]/g, '');
@@ -309,10 +331,34 @@ export function statutesZuNormKeys(statutes: string[]): string[] {
  * des Regex im Tor hiesse: das Tor misst eine ANDERE Zerlegung als die, die im
  * Korpus wirkt — es meldete dann Lücken, die es nicht gibt, und übersähe die
  * echten. Genau das soll ein Tor nicht können (§6.7).
+ *
+ * DIESELBE SPERRE WIE IM FLIESSTEXT-PFAD (Linse 2, 28.7.2026). Der Fliesstext-
+ * Extraktor verwirft Kandidaten aus `INVALID_LAW_CODES` — Artikel, Präpositionen
+ * und Konjunktionen DE/FR/IT, Struktur-Marker, Währungscodes. Der statutes-Pfad
+ * kannte diese Sperre NICHT und war damit die offene Flanke derselben
+ * Fehlerklasse: eine Roh-Zeile, die auf ein solches Wort endet, lieferte das
+ * Wort als Erlass-Kandidaten. Belegt am konstruierten Fall «Art. 5 de la» →
+ * Token 'la' → 'LA' — seit der Alias-Ernte (Baustein b) das amtliche fr-Kürzel
+ * des LUFTFAHRTGESETZES (SR 748.0) → `statutesZuNormKeys` gab ['LFG'] zurück.
+ * Im heutigen Korpus feuert der Kanal (noch) nicht: die 6 vorkommenden
+ * INVALID-Token (BGE 51, NR 4, SI 3, FR 3, NE 1, ART 1 — die drei letzten
+ * Kantons-Suffixe aus «KV/FR», «LAQ/SI», «KV/NE») mappen alle auf nichts. Das
+ * ist kein Grund, die Sperre wegzulassen, sondern der Grund, sie JETZT zu
+ * setzen: jede neue Alias-Ernte kann ein weiteres dieser Wörter zu einem
+ * gültigen Kürzel machen, ohne dass irgendwo etwas rot wird (§5 — eine Sperre,
+ * die nur einer von zwei Pfaden kennt, ist keine Sperre).
+ *
+ * Wirkung auf das Tor: die Token verschwinden aus der Zählung, statt als
+ * «ungemappt» geführt zu werden — richtig, denn sie sind gar keine Kandidaten.
+ * Der frühere IGNORE-Eintrag 'BGE' in check-normkeys-abdeckung.ts ist damit
+ * gegenstandslos geworden und wurde dort gestrichen (die Begründung steht in
+ * dessen Kopf).
  */
 export function abkVonStatut(statut: string): string | null {
   const m = /([A-Za-zÄÖÜäöü]{2,}(?:\s+\d{1,2})?)\s*$/.exec(String(statut).trim());
-  return m ? m[1] : null;
+  if (!m) return null;
+  if (INVALID_LAW_CODES.has(normalisiereAbk(m[1]))) return null;
+  return m[1];
 }
 
 /**
@@ -384,12 +430,23 @@ export function normKeysVonSnapshot(snap: EntscheidSnapshot, hint?: string | nul
  * bewahrten Keys beim nächsten Lauf wieder als «nur alt» erkannt werden.
  * Rückgabe zusätzlich `nurAlt` — der Aufrufer weist die Zahl aus, statt die
  * Bewahrung still geschehen zu lassen (§6.7).
+ *
+ * `nurAlt` ist DEDUPLIZIERT und sortiert (Linse 2, 28.7.2026). Vorher wurde die
+ * Alt-Liste nur gefiltert: ein Bestands-Snapshot mit doppeltem Eintrag
+ * (`['ZPO','ZPO']`) meldete «2 bewahrte Keys», obwohl genau EINER bewahrt wurde
+ * — `keys` entdoppelt ja über das Set. Die ausgewiesene Zahl wich damit von der
+ * tatsächlichen Wirkung ab, und eine Kennzahl, die grösser ist als das, was sie
+ * misst, macht einen Backfill-Lauf harmloser oder dramatischer aussehen als er
+ * war (§8). Sortiert, weil die Ausgabe sonst an der Reihenfolge des Bestands
+ * hinge (§2).
  */
 export function remapNormKeys(alt: readonly string[], berechnet: readonly string[]): {
   keys: string[]; nurAlt: string[];
 } {
   const neu = new Set(berechnet);
-  const nurAlt = (alt ?? []).filter((k) => !neu.has(k) && !AUSGESCHLOSSENE_KEYS.has(k));
+  const nurAlt = [...new Set(
+    (alt ?? []).filter((k) => !neu.has(k) && !AUSGESCHLOSSENE_KEYS.has(k)),
+  )].sort();
   return { keys: [...new Set([...neu, ...nurAlt])].sort(), nurAlt };
 }
 
