@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Verordnung über den Anwaltstarif",
   "erlassdatum": "Vom 3. Dezember 1996 (Stand 1. Januar 2026)",
@@ -244,6 +244,15 @@
     "Bemessung"
    ]
   },
+  "16": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Honorar in Strafsachen"
+    }
+   ],
+   "marginalie": []
+  },
   "17": {
    "gliederung": [
     {
@@ -385,6 +394,24 @@
    "marginalie": [
     "Übergangsbestimmungen"
    ]
+  },
+  "27": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "6. Übergangs- und Schlussbestimmungen"
+    }
+   ],
+   "marginalie": []
+  },
+  "28": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "6. Übergangs- und Schlussbestimmungen"
+    }
+   ],
+   "marginalie": []
   },
   "25_a": {
    "gliederung": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Gesetz über den Gebührentarif im Grundbuchwesen",
   "erlassdatum": "Vom 27. September 2007 (Stand 1. Januar 2019)",
@@ -296,6 +296,26 @@
      "text": "GS 21, 409",
      "links": [],
      "absatz": "1",
+     "item": null
+    }
+   ]
+  },
+  "17": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4. Übergangs- und Schlussbestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Änderung bisherigen Rechts"
+   ],
+   "fussnoten": [
+    {
+     "nr": "8",
+     "text": "Die Änderungen sind in den entsprechenden Erlassen publiziert.",
+     "links": [],
+     "absatz": null,
      "item": null
     }
    ]

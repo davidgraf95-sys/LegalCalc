@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Gesetz über die Gemeinde- und Kirchensteuern",
   "erlassdatum": "Vom 31.08.2006 (Stand 01.01.2025)",
@@ -585,6 +585,26 @@
    ],
    "marginalie": [
     "Anpassung der Gesetzgebung"
+   ]
+  },
+  "32": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "6. Schlussbestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Änderung bisherigen Rechts"
+   ],
+   "fussnoten": [
+    {
+     "nr": "12",
+     "text": "Änderungen bisherigen Rechts werden nicht aufgeführt.",
+     "links": [],
+     "absatz": null,
+     "item": null
+    }
    ]
   },
   "33": {

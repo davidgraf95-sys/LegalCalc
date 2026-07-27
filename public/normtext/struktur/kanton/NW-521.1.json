@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Gesetz über die Steuern des Kantons und der Gemeinden",
   "erlassdatum": "vom 22.03.2000 (Stand 01.01.2026)",
@@ -2254,6 +2254,19 @@
     "8. Quellensteuer der direkten Bundessteuer"
    ]
   },
+  "127": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5 Quellensteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "5.2 Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    }
+   ],
+   "marginalie": []
+  },
   "128": {
    "gliederung": [
     {
@@ -2337,6 +2350,19 @@
      "item": null
     }
    ]
+  },
+  "133": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5 Quellensteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "5.3 Gemeinsame Bestimmungen bezüglich die Erhebung der Quellensteuer"
+    }
+   ],
+   "marginalie": []
   },
   "134": {
    "gliederung": [
@@ -2816,6 +2842,15 @@
     "Haftung"
    ]
   },
+  "168": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "7 Erbschafts- und Schenkungssteuer"
+    }
+   ],
+   "marginalie": []
+  },
   "169": {
    "gliederung": [
     {
@@ -2876,6 +2911,19 @@
      "item": null
     }
    ]
+  },
+  "172": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "8 Verfahrensrecht"
+    },
+    {
+     "ebene": 2,
+     "label": "8.1 Organisation und Zuständigkeiten"
+    }
+   ],
+   "marginalie": []
   },
   "173": {
    "gliederung": [
@@ -3117,6 +3165,23 @@
      "item": null
     }
    ]
+  },
+  "185": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "8 Verfahrensrecht"
+    },
+    {
+     "ebene": 2,
+     "label": "8.2 Allgemeine Verfahrensgrundsätze"
+    },
+    {
+     "ebene": 3,
+     "label": "8.2.4 Verfahrensrechte der Steuerpflichtigen"
+    }
+   ],
+   "marginalie": []
   },
   "186": {
    "gliederung": [
@@ -3721,6 +3786,19 @@
     "Stichtag"
    ]
   },
+  "217": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "8 Verfahrensrecht"
+    },
+    {
+     "ebene": 2,
+     "label": "8.5 Schatzungsverfahren"
+    }
+   ],
+   "marginalie": []
+  },
   "218": {
    "gliederung": [
     {
@@ -3840,6 +3918,19 @@
    "marginalie": [
     "Nachsteuern 1. ordentliche Nachsteuer"
    ]
+  },
+  "226": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "8 Verfahrensrecht"
+    },
+    {
+     "ebene": 2,
+     "label": "8.6 Änderung rechtskräftiger Verfügungen und Entscheide"
+    }
+   ],
+   "marginalie": []
   },
   "227": {
    "gliederung": [
@@ -4797,6 +4888,19 @@
     "Steueraufteilung"
    ]
   },
+  "114–115": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5 Quellensteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "5.1 Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+    }
+   ],
+   "marginalie": []
+  },
   "118_a": {
    "gliederung": [
     {
@@ -4893,6 +4997,15 @@
    "marginalie": [
     "b) Wegfall der Steuerbefreiung"
    ]
+  },
+  "165–166": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "7 Erbschafts- und Schenkungssteuer"
+    }
+   ],
+   "marginalie": []
   },
   "179_a": {
    "gliederung": [
@@ -5308,6 +5421,23 @@
     }
    ]
   },
+  "261–266": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "9 Steuerstrafrecht"
+    },
+    {
+     "ebene": 2,
+     "label": "9.2 Strafverfahren"
+    },
+    {
+     "ebene": 3,
+     "label": "9.2.2 Strafverfügung"
+    }
+   ],
+   "marginalie": []
+  },
   "274_a": {
    "gliederung": [
     {
@@ -5327,6 +5457,15 @@
      "item": null
     }
    ]
+  },
+  "278–279": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "10 Übergangs- und Schlussbestimmungen"
+    }
+   ],
+   "marginalie": []
   },
   "280_a": {
    "gliederung": [
@@ -5576,6 +5715,57 @@
    "marginalie": [
     "Gewinne von juristischen Personen mit ideellen Zwecken"
    ]
+  },
+  "88–89": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3 Gewinn- und Kapitalsteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "3.2 Gewinnsteuer"
+    },
+    {
+     "ebene": 3,
+     "label": "3.2.3 Steuerberechnung"
+    }
+   ],
+   "marginalie": []
+  },
+  "94–95": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3 Gewinn- und Kapitalsteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "3.3 Kapitalsteuer"
+    },
+    {
+     "ebene": 3,
+     "label": "3.3.2 Berechnung des Eigenkapitals"
+    }
+   ],
+   "marginalie": []
+  },
+  "99–100": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3 Gewinn- und Kapitalsteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "3.3 Kapitalsteuer"
+    },
+    {
+     "ebene": 3,
+     "label": "3.3.3 Steuerberechnung"
+    }
+   ],
+   "marginalie": []
   }
  }
 }

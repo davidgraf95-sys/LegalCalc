@@ -1,13 +1,14 @@
 {
-  "erzeugt": "2026-06-22",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/ZG/215.35/art_1",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "1",
       "artikelLabel": "§ 1",
+      "titel": "Geltungsbereich",
       "bloecke": [
         {
           "absatz": "1",
@@ -16,7 +17,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "a746705c67307342a199a4ce11d71db485ba46abc0ac6278d8d093251a2ade7d"
     },
@@ -24,9 +25,10 @@
       "id": "kanton/ZG/215.35/art_2",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "titel": "Grundbuchgebühren",
       "bloecke": [
         {
           "absatz": "1",
@@ -39,7 +41,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "8439ee8fd35786e468b08b6b17df039c2df9c9822a4351bd9db382850c93727a"
     },
@@ -47,9 +49,10 @@
       "id": "kanton/ZG/215.35/art_3",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "titel": "Auslagen",
       "bloecke": [
         {
           "absatz": "1",
@@ -62,7 +65,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "614b4fe34fff17c7357edb37794957e6dcab1fc7ecd93723ebb9c2e8fd1d1bbe"
     },
@@ -70,9 +73,10 @@
       "id": "kanton/ZG/215.35/art_4",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "titel": "Gebührenpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -103,7 +107,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "2a9155bfe694c2336233e990b517a487e79eb5c7ccce8e30b5955ff4b7f457bc"
     },
@@ -111,9 +115,10 @@
       "id": "kanton/ZG/215.35/art_5",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "titel": "Gebührenfreiheit",
       "bloecke": [
         {
           "absatz": "1",
@@ -148,7 +153,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "696c1ae86c45c310da529e7e24c3494aedfcc4d0ab0e68a1a6a0d0d05d233263"
     },
@@ -156,9 +161,10 @@
       "id": "kanton/ZG/215.35/art_6",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "titel": "Gebührenerlass",
       "bloecke": [
         {
           "absatz": "1",
@@ -181,7 +187,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "a28ab0e9ec8b94cc4819d4c684e46c85a0185eb4530d6c78af3b112d8e92099a"
     },
@@ -189,9 +195,10 @@
       "id": "kanton/ZG/215.35/art_7",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "titel": "Kostenvorschuss",
       "bloecke": [
         {
           "absatz": "1",
@@ -204,7 +211,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "eadbd8ff5683faa350c9908cc9b6b9ff3ab976ccb75207af6264307183a52b22"
     },
@@ -212,9 +219,10 @@
       "id": "kanton/ZG/215.35/art_8",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "titel": "Gesetzliches Pfandrecht",
       "bloecke": [
         {
           "absatz": "1",
@@ -223,7 +231,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "3c009871b60bfa504803e35bb85a5f53637bff9fe2910e95d749214f8f1c424a"
     },
@@ -231,9 +239,10 @@
       "id": "kanton/ZG/215.35/art_9",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "titel": "Auskunfts- und Mitwirkungspflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -242,7 +251,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "d661a14385710fe75bf5fe96da297571880612550f5a4fe3ffa93dec04a088c9"
     },
@@ -250,9 +259,10 @@
       "id": "kanton/ZG/215.35/art_10",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "10",
       "artikelLabel": "§ 10",
+      "titel": "Rechnungsstellung und Inkasso",
       "bloecke": [
         {
           "absatz": "1",
@@ -261,7 +271,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "48fbf05d904fcaaa752d4ac035f967044bb5b39dd92f8d9fdd47c3684984eeae"
     },
@@ -269,9 +279,10 @@
       "id": "kanton/ZG/215.35/art_11",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "titel": "Verjährung",
       "bloecke": [
         {
           "absatz": "1",
@@ -280,7 +291,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "44ab3098e8d8f5d3e9fead215aa26b4823299c9056e8a616829ed0808debe19d"
     },
@@ -288,9 +299,10 @@
       "id": "kanton/ZG/215.35/art_12",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "titel": "Beschwerde",
       "bloecke": [
         {
           "absatz": "1",
@@ -307,7 +319,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "b79fc3222c43308c0a13e854d8c5e799109362fda1446b34915e14d2828029ed"
     },
@@ -315,9 +327,10 @@
       "id": "kanton/ZG/215.35/art_13",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "titel": "Grundsatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -334,7 +347,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "022d80e625b2874cb3eaf52626da2628dcb775e9f7bcfab6bd7c76c37ae2d2ef"
     },
@@ -342,9 +355,10 @@
       "id": "kanton/ZG/215.35/art_14",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "14",
       "artikelLabel": "§ 14",
+      "titel": "Geschäfte mit besonderer Bedeutung",
       "bloecke": [
         {
           "absatz": "1",
@@ -399,7 +413,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "e6d7093f407f80f61dbd894fdbe56cc65a4f81e40d133da4b8d7ca70c37aa554"
     },
@@ -407,9 +421,10 @@
       "id": "kanton/ZG/215.35/art_15",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "15",
       "artikelLabel": "§ 15",
+      "titel": "Beurkundungsgebühren",
       "bloecke": [
         {
           "absatz": "1",
@@ -418,7 +433,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "04fa03cf5d17f4b6e64033d541e5081d169fa3e6306a8fd580cc51dce606e637"
     },
@@ -426,9 +441,10 @@
       "id": "kanton/ZG/215.35/art_16",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "16",
       "artikelLabel": "§ 16",
+      "titel": "Aufhebung bisherigen Rechts",
       "bloecke": [
         {
           "absatz": "1",
@@ -437,17 +453,38 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "594f743adec98135cf4cb9b5841108f6036b1736fb756c6ce28a3d679c9807da"
+    },
+    {
+      "id": "kanton/ZG/215.35/art_17",
+      "ebene": "kanton",
+      "quelle": "ZG",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
+      "artikel": "17",
+      "artikelLabel": "§ 17",
+      "titel": "Änderung bisherigen Rechts",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2019-01-01",
+      "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/ZG/215.35/art_18",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "18",
       "artikelLabel": "§ 18",
+      "titel": "Anwendbares Recht",
       "bloecke": [
         {
           "absatz": "1",
@@ -456,7 +493,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "713893cdccbfe60c4bcac5235f99021504a965da2fe1d5425002cb727e274c95"
     },
@@ -464,9 +501,10 @@
       "id": "kanton/ZG/215.35/art_19",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Grundbuchgebührentarif (BGS 215.35)",
+      "erlass": "Gesetz über den Gebührentarif im Grundbuchwesen, Grundbuchgebührentarif (BGS 215.35)",
       "artikel": "19",
       "artikelLabel": "§ 19",
+      "titel": "Inkrafttreten",
       "bloecke": [
         {
           "absatz": "1",
@@ -475,7 +513,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/215.35",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "92e7cc11396ba0c33528a88118ae7d50",
       "sha": "543925caae178f4319628959ae059f6913c22322faa25f2926e29e4a42207b20"
     }

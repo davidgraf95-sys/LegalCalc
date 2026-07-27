@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Gebührenordnung für die Rechtspflege",
   "erlassdatum": "vom 28.09.1973 (Stand 01.03.2015)",
@@ -249,6 +249,19 @@
     "Kantonsgericht"
    ]
   },
+  "13": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Amtliche Kosten der Behörden"
+    },
+    {
+     "ebene": 2,
+     "label": "1.2. Gebühren im Schlichtungs- und Zivilgerichtsverfahren"
+    }
+   ],
+   "marginalie": []
+  },
   "14": {
    "gliederung": [
     {
@@ -262,6 +275,28 @@
    ],
    "marginalie": [
     "Obergericht"
+   ]
+  },
+  "15": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Amtliche Kosten der Behörden"
+    },
+    {
+     "ebene": 2,
+     "label": "1.2. Gebühren im Schlichtungs- und Zivilgerichtsverfahren"
+    }
+   ],
+   "marginalie": [],
+   "fussnoten": [
+    {
+     "nr": "9",
+     "text": "Das Administrativverfahren im Strassenverkehr wurde mit dem Gesetz über die Justizreform (Änderung von Art. 72 und Aufhebung von Art. 73 GOG) dem VSZ übertragen; Rechtsmittelinstanz ist das Verwaltungsgericht (Art. 12 Abs. 3 Bst. b Vereinbarung VSZ; GDB 771.4)",
+     "links": [],
+     "absatz": null,
+     "item": null
+    }
    ]
   },
   "16": {
@@ -278,6 +313,19 @@
    "marginalie": [
     "Staatsanwaltschaft und Jugendanwaltschaft"
    ]
+  },
+  "17": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Amtliche Kosten der Behörden"
+    },
+    {
+     "ebene": 2,
+     "label": "1.3. Gebühren im Strafrechtsverfahren und im Verfahren betreffend Administrativmassnahmen im Strassenverkehr"
+    }
+   ],
+   "marginalie": []
   },
   "18": {
    "gliederung": [
@@ -323,6 +371,19 @@
    "marginalie": [
     "Obergericht"
    ]
+  },
+  "21": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Amtliche Kosten der Behörden"
+    },
+    {
+     "ebene": 2,
+     "label": "1.3. Gebühren im Strafrechtsverfahren und im Verfahren betreffend Administrativmassnahmen im Strassenverkehr"
+    }
+   ],
+   "marginalie": []
   },
   "22": {
    "gliederung": [
@@ -529,6 +590,15 @@
     "c. Im Rechtsmittelverfahren"
    ]
   },
+  "37": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Entschädigung der Anwälte"
+    }
+   ],
+   "marginalie": []
+  },
   "38": {
    "gliederung": [
     {
@@ -652,6 +722,19 @@
      "item": null
     }
    ]
+  },
+  "10–11": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Amtliche Kosten der Behörden"
+    },
+    {
+     "ebene": 2,
+     "label": "1.2. Gebühren im Schlichtungs- und Zivilgerichtsverfahren"
+    }
+   ],
+   "marginalie": []
   },
   "25_a": {
    "gliederung": [
@@ -825,6 +908,19 @@
      "item": null
     }
    ]
+  },
+  "6–7": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Amtliche Kosten der Behörden"
+    },
+    {
+     "ebene": 2,
+     "label": "1.2. Gebühren im Schlichtungs- und Zivilgerichtsverfahren"
+    }
+   ],
+   "marginalie": []
   }
  }
 }

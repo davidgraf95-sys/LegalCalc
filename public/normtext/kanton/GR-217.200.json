@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-22",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/GR/217.200/art_1",
@@ -8,6 +8,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "1",
       "artikelLabel": "Art. 1",
+      "titel": "Anwendungsbereich",
       "bloecke": [
         {
           "absatz": "1",
@@ -20,7 +21,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "c4f215167fbf2058fbc6394f399d7136caa6294649dde303febf9ba963135994"
     },
@@ -31,6 +32,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "2",
       "artikelLabel": "Art. 2",
+      "titel": "Grundbuchkreise",
       "bloecke": [
         {
           "absatz": "1",
@@ -51,7 +53,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "ac196071cccabb5f193959e4451c277f0b796b8ee3b4c15e3fee29635849c324"
     },
@@ -62,6 +64,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "3",
       "artikelLabel": "Art. 3",
+      "titel": "Sicherstellung",
       "bloecke": [
         {
           "absatz": "1",
@@ -70,7 +73,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "b5723394f7c830c51d214a1a1b88ec5686dbcecde0075aa33848313e87f4248a"
     },
@@ -81,6 +84,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
+      "titel": "Verweis auf Gebührenverordnung, Verfügung",
       "bloecke": [
         {
           "absatz": "1",
@@ -93,7 +97,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "b0f5fa20483bd034776aab2be157fedc2944141b47764b89750058b762aa26fb"
     },
@@ -104,6 +108,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "5",
       "artikelLabel": "Art. 5",
+      "titel": "Gebührenfreiheit, Reduktion, Erlass",
       "bloecke": [
         {
           "absatz": "1",
@@ -116,7 +121,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "6b08bbe0b2188457ab3b026b090746d5f15a4addcc56a2b2cff619874c6278f7"
     },
@@ -127,6 +132,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "6",
       "artikelLabel": "Art. 6",
+      "titel": "Zahlungspflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -139,7 +145,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "27ea7393b6f5242adbb06fbecbe16b2c3bc92170aa10f1a72d120a03738c0651"
     },
@@ -150,6 +156,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "7",
       "artikelLabel": "Art. 7",
+      "titel": "Beschwerde",
       "bloecke": [
         {
           "absatz": "1",
@@ -162,7 +169,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "0e8ee7b7f9bcf58748b90873d3b87fa578a9d336ed88cc60d713839c43471f78"
     },
@@ -173,6 +180,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "8",
       "artikelLabel": "Art. 8",
+      "titel": "Mehrere Rechtsgeschäfte",
       "bloecke": [
         {
           "absatz": "1",
@@ -181,7 +189,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "57680ee5c7edd53fe08cff318ec16e03a33b06a4df852e1393e74a24549da1dc"
     },
@@ -192,6 +200,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "9",
       "artikelLabel": "Art. 9",
+      "titel": "Bemessung nach Vertragssumme",
       "bloecke": [
         {
           "absatz": "1",
@@ -208,7 +217,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "2b039cc2b37004b4b7b95f37bc2e32071a89d1292bc6e93c197cb8a004059bd6"
     },
@@ -219,6 +228,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "10",
       "artikelLabel": "Art. 10",
+      "titel": "Bemessung nach Zeitaufwand",
       "bloecke": [
         {
           "absatz": "1",
@@ -227,7 +237,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "176d3b168d27bc1eec8cbd8f42cc529ea7bbede45e3ad5082bb827a5a67f3d52"
     },
@@ -238,6 +248,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "11",
       "artikelLabel": "Art. 11",
+      "titel": "Errichten 1. Im Allgemeinen",
       "bloecke": [
         {
           "absatz": "1",
@@ -254,7 +265,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "7e69ae0b836373549dcd9f2fa3bdc7d8e93291a728899ea2ce9f68d4a67c7f96"
     },
@@ -265,6 +276,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "12",
       "artikelLabel": "Art. 12",
+      "titel": "2. Im Einzelnen",
       "bloecke": [
         {
           "absatz": null,
@@ -327,7 +339,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "d76ef959c181ca7ff7ebe6589a1eec65e2d846a9f50ba0902a0386ab4e30ae03"
     },
@@ -338,6 +350,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "13",
       "artikelLabel": "Art. 13",
+      "titel": "Eintragung",
       "bloecke": [
         {
           "absatz": null,
@@ -568,7 +581,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "c3be58b9f411ba071caab760c7a8d558da34f1352f5ef2470b12b274d01aac1a"
     },
@@ -579,6 +592,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "14",
       "artikelLabel": "Art. 14",
+      "titel": "Vormerkung und Anmerkung",
       "bloecke": [
         {
           "absatz": null,
@@ -613,7 +627,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "7d19beb2addee2e24cae43eb8d8d43f87b7af647793954c1e0a7d1697779eab8"
     },
@@ -624,6 +638,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "15",
       "artikelLabel": "Art. 15",
+      "titel": "Löschung",
       "bloecke": [
         {
           "absatz": null,
@@ -642,7 +657,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "808da10e0ecd912b676c3287a79253aba8e9fc2654d21a7525f4b16e2a9840fe"
     },
@@ -653,6 +668,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "16",
       "artikelLabel": "Art. 16",
+      "titel": "Tagebuch",
       "bloecke": [
         {
           "absatz": "1",
@@ -661,7 +677,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "75b18a45ba846887be938c517c05d9801e66bdaef1899aae8d1c920e31c7ce21"
     },
@@ -672,6 +688,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "17",
       "artikelLabel": "Art. 17",
+      "titel": "Gläubigerwechsel",
       "bloecke": [
         {
           "absatz": "1",
@@ -690,7 +707,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "6a90d14ee0b92e394c5436798fa7b6ce393f3c802558a266b8083d6187d6c355"
     },
@@ -701,6 +718,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "18",
       "artikelLabel": "Art. 18",
+      "titel": "Andere Bemühungen",
       "bloecke": [
         {
           "absatz": null,
@@ -783,7 +801,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "8fb3097402eaa4f088bd2df25f97c72b8b01bea35327bd2912f9c6cd591eeb28"
     },
@@ -794,6 +812,7 @@
       "erlass": "Verordnung über die Gebühren der Grundbuchämter (BR 217.200)",
       "artikel": "19",
       "artikelLabel": "Art. 19",
+      "titel": "In-Kraft-Treten, Aufhebung bisherigen Rechts",
       "bloecke": [
         {
           "absatz": "1",
@@ -802,7 +821,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gr-lex.gr.ch/app/de/texts_of_law/217.200",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5c459f13fac0347b9f6567d9874dfd38",
       "sha": "721908ae61fa526206440cce485c409add02118d56750d31cd32cc1fbd705452"
     }

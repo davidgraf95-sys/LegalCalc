@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-19",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/FR/214.5.16/art_1",
@@ -8,6 +8,7 @@
       "erlass": "Tarif des émoluments fixes du registre foncier (RSF 214.5.16)",
       "artikel": "1",
       "artikelLabel": "Art. 1",
+      "titel": "Principe",
       "bloecke": [
         {
           "absatz": "1",
@@ -20,7 +21,7 @@
       ],
       "stand": "2018-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/214.5.16",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "77a9eb7c7fbaed8897acafb1a3d1b3e2",
       "sha": "b48ad1914be6a1a3b32b007a4c875cb0f2b99a02991cd4098548a8ccc9157756"
     },
@@ -31,6 +32,7 @@
       "erlass": "Tarif des émoluments fixes du registre foncier (RSF 214.5.16)",
       "artikel": "2",
       "artikelLabel": "Art. 2",
+      "titel": "Emoluments fixes",
       "bloecke": [
         {
           "absatz": "1",
@@ -41,20 +43,44 @@
               "text": "Renseignement, recherche, d'une durée supérieure à quinze minutes:"
             },
             {
+              "marke": "a",
+              "text": "par quart d'heure: Fr. 10"
+            },
+            {
               "marke": "2",
               "text": "Pré-étude de dossier:"
+            },
+            {
+              "marke": "a",
+              "text": "selon la complexité et le temps consacré: de Fr. 50 à 500"
             },
             {
               "marke": "3",
               "text": "Etablissement d'une réquisition d'inscription:"
             },
             {
+              "marke": "a",
+              "text": "selon le temps consacré: de Fr. 30 à 100"
+            },
+            {
               "marke": "4",
               "text": "Etablissement d'une convention d'échange (art. 150 LAF):"
             },
             {
+              "marke": "a",
+              "text": "par acte, suivant sa complexité: de Fr. 50 à 200, plus 20 par article"
+            },
+            {
               "marke": "5",
               "text": "Etablissement d'un extrait du registre foncier:"
+            },
+            {
+              "marke": "a",
+              "text": "pour un seul immeuble (fiche, registre foncier informatique, cadastre cantonal): Fr. 20"
+            },
+            {
+              "marke": "b",
+              "text": "pour plusieurs immeubles en relation avec la même propriété, à partir du deuxième immeuble et par immeuble: Fr. 10"
             },
             {
               "marke": "6",
@@ -69,61 +95,225 @@
               "text": "Avis, communication écrite ou électronique, attestation d'inscription au journal:"
             },
             {
+              "marke": "a",
+              "text": "par avis, communication ou attestation: Fr. 30"
+            },
+            {
               "marke": "9",
               "text": "Propriété par étages et copropriété immatriculée, pour la constitution ou la modification:"
+            },
+            {
+              "marke": "a",
+              "text": "pour le bien-fonds: Fr. 100"
+            },
+            {
+              "marke": "b",
+              "text": "pour l'immatriculation de chaque part: Fr. 30"
+            },
+            {
+              "marke": "c",
+              "text": "pour chaque mention (règlement, etc.), par unité: Fr. 10"
+            },
+            {
+              "marke": "d",
+              "text": "pour chaque annotation (droit de préemption, etc.), par unité: Fr. 10"
             },
             {
               "marke": "10",
               "text": "Servitudes ou charges foncières:"
             },
             {
+              "marke": "a",
+              "text": "pour l'inscription ou la modification, à titre d'émolument fixe: Fr. 50"
+            },
+            {
+              "marke": "b",
+              "text": "par immeuble concerné (fonds servant ou fonds dominant): Fr. 5"
+            },
+            {
+              "marke": "c",
+              "text": "pour l'inscription d'une postposition: Fr. 50"
+            },
+            {
               "marke": "11",
               "text": "Droits de gage:"
+            },
+            {
+              "marke": "a",
+              "text": "pour l'inscription, l'extension, la division, la réunion, la novation (y compris la déclaration de rang et l'annotation du droit de profiter des cases libres), par gage: Fr. 100"
+            },
+            {
+              "marke": "b",
+              "text": "pour l'inscription d'une case réservée: Fr. 100"
+            },
+            {
+              "marke": "c",
+              "text": "pour une modification d'inscription, notamment cession de créance, nantissement, transformation de gage, augmentation ou réduction de capital, modification du taux d'intérêt, postposition de rang et autres opérations analogues, par gage: Fr. 50"
+            },
+            {
+              "marke": "d",
+              "text": "pour un dégrèvement, y compris l'inscription du dégrèvement sur le titre, par gage: Fr. 50"
+            },
+            {
+              "marke": "e",
+              "text": "pour la confection d'une cédule hypothécaire ou d'une hypothèque ou pour la modification de la désignation de l'objet du gage sur le titre: Fr. 30"
+            },
+            {
+              "marke": "f",
+              "text": "pour l'inscription d'un nouveau ou d'une nouvelle propriétaire sur le titre, dans le cas de l'article 76 al. 2 LRF, par titre: Fr. 30"
             },
             {
               "marke": "12",
               "text": "Annotations et mentions (inscription ou modification):"
             },
             {
+              "marke": "a",
+              "text": "au titre d'émolument fixe: Fr. 50"
+            },
+            {
+              "marke": "b",
+              "text": "par immeuble concerné: Fr. 5"
+            },
+            {
+              "marke": "c",
+              "text": "pour une postposition d'une annotation: Fr. 50"
+            },
+            {
               "marke": "13",
               "text": "Verbaux:"
+            },
+            {
+              "marke": "a",
+              "text": "de routes, de division ou de modification, par immeuble touché ou radié: Fr. 30"
+            },
+            {
+              "marke": "b",
+              "text": "par demande de consentement à dégrèvement: Fr. 30"
+            },
+            {
+              "marke": "c",
+              "text": "pour chaque report de servitude, gage, annotation ou mention: Fr. 10"
             },
             {
               "marke": "14",
               "text": "Avis de suspension de réquisition, retrait de réquisition, décision de rejet:"
             },
             {
+              "marke": "a",
+              "text": "par avis, retrait ou décision: de Fr. 40 à 100"
+            },
+            {
               "marke": "15",
               "text": "Pièces justificatives établies par le conservateur ou la conservatrice:"
+            },
+            {
+              "marke": "a",
+              "text": "par pièce, selon le temps consacré: de Fr. 30 à 500"
             },
             {
               "marke": "16",
               "text": "Acquisitions de propriété immobilière:"
             },
             {
+              "marke": "a",
+              "text": "par publication: Fr. 30"
+            },
+            {
               "marke": "17",
               "text": "Photocopies (recto ou recto/verso):"
+            },
+            {
+              "marke": "a",
+              "text": "jusqu'à 20 pages, par page: Fr. 2"
+            },
+            {
+              "marke": "b",
+              "text": "dès la 21e page, par page: Fr. 1"
+            },
+            {
+              "marke": "c",
+              "text": "impression ou photocopie du plan du registre foncier, par page: Fr. 5"
             },
             {
               "marke": "18",
               "text": "Consultation de la banque de données Intercapi:"
             },
             {
+              "marke": "a",
+              "text": "connexion à la banque de données, par entreprise:"
+            },
+            {
+              "marke": "a",
+              "text": "pour le premier utilisateur ou la première utilisatrice, par année: Fr. 100"
+            },
+            {
+              "marke": "a",
+              "text": "pour les utilisateurs et utilisatrices suivants, par utilisateur ou utilisatrice et par année: Fr. 30"
+            },
+            {
+              "marke": "b",
+              "text": "extrait de la base de données:"
+            },
+            {
+              "marke": "b",
+              "text": "en cas d'accès complet aux données, par extrait: Fr. 3.50"
+            },
+            {
+              "marke": "b",
+              "text": "en cas d'accès partiel aux données, par extrait: Fr. 2.50"
+            },
+            {
+              "marke": "b",
+              "text": "en cas d'accès limité à la propriété et au descriptif cadastral ou en cas d'accès limité au territoire d'une commune, par extrait: Fr. 1.50"
+            },
+            {
               "marke": "19",
               "text": "Consultation du portail de renseignement externe au canton:"
             },
             {
+              "marke": "a",
+              "text": "en cas d'accès complet aux données, par extrait: Fr. 3.50"
+            },
+            {
+              "marke": "b",
+              "text": "en cas d'accès partiel aux données, par extrait: Fr. 2.50"
+            },
+            {
               "marke": "20",
               "text": "Extraction et livraison de données, en fonction de la taille des fichiers (l'unité de mesure est le mégaoctet):"
+            },
+            {
+              "marke": "a",
+              "text": "pour une extraction et livraison unique ou pour une extraction et livraison périodique effectuée à intervalle semestriel ou annuel:"
+            },
+            {
+              "marke": "a",
+              "text": "par mégaoctet: Fr. 24"
+            },
+            {
+              "marke": "a",
+              "text": "mais au minimum: Fr. 120"
+            },
+            {
+              "marke": "b",
+              "text": "pour une extraction et livraison périodique effectuée à intervalle inférieur ou égal à trois mois:"
+            },
+            {
+              "marke": "b",
+              "text": "par mégaoctet: Fr. 12"
+            },
+            {
+              "marke": "b",
+              "text": "mais au minimum: Fr. 60"
             }
           ]
         }
       ],
       "stand": "2018-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/214.5.16",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "77a9eb7c7fbaed8897acafb1a3d1b3e2",
-      "sha": "0da667872955d22d0730e30420462670bd1dfadea4e9dbab2912fefa8436b3dd"
+      "sha": "4cba94cf6321169295e0cfab6caccc2477149228356f7a6a26c5cb0a5737f991"
     },
     {
       "id": "kanton/FR/214.5.16/art_3",
@@ -132,6 +322,7 @@
       "erlass": "Tarif des émoluments fixes du registre foncier (RSF 214.5.16)",
       "artikel": "3",
       "artikelLabel": "Art. 3",
+      "titel": "Cas non expressément prévus",
       "bloecke": [
         {
           "absatz": "1",
@@ -140,7 +331,7 @@
       ],
       "stand": "2018-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/214.5.16",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "77a9eb7c7fbaed8897acafb1a3d1b3e2",
       "sha": "599309119ac74f1abaf51bfc6b4fa6fcba1ea0e25f049101a4ddabe6e86b6d9d"
     },
@@ -151,6 +342,7 @@
       "erlass": "Tarif des émoluments fixes du registre foncier (RSF 214.5.16)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
+      "titel": "Facturation pour les opérations des immeubles situés dans plusieurs arrondissements",
       "bloecke": [
         {
           "absatz": "1",
@@ -159,7 +351,7 @@
       ],
       "stand": "2018-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/214.5.16",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "77a9eb7c7fbaed8897acafb1a3d1b3e2",
       "sha": "b9dbc2f12690cc84040265cd1772a073b587340f9dfa50693283d42d96927390"
     },
@@ -170,6 +362,7 @@
       "erlass": "Tarif des émoluments fixes du registre foncier (RSF 214.5.16)",
       "artikel": "5",
       "artikelLabel": "Art. 5",
+      "titel": "Exonérations",
       "bloecke": [
         {
           "absatz": "1",
@@ -188,7 +381,7 @@
       ],
       "stand": "2018-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/214.5.16",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "77a9eb7c7fbaed8897acafb1a3d1b3e2",
       "sha": "550eb12d01e4f2cd04e149746aa606b0903d42256b297f810eb5bf611ed89b13"
     },
@@ -199,6 +392,7 @@
       "erlass": "Tarif des émoluments fixes du registre foncier (RSF 214.5.16)",
       "artikel": "6",
       "artikelLabel": "Art. 6",
+      "titel": "Abrogation",
       "bloecke": [
         {
           "absatz": "1",
@@ -207,7 +401,7 @@
       ],
       "stand": "2018-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/214.5.16",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "77a9eb7c7fbaed8897acafb1a3d1b3e2",
       "sha": "13b4f30129a1fd83fb08056bc0284ec862488c8f525af1a21aeb6d360d14d352"
     },
@@ -218,6 +412,7 @@
       "erlass": "Tarif des émoluments fixes du registre foncier (RSF 214.5.16)",
       "artikel": "7",
       "artikelLabel": "Art. 7",
+      "titel": "Modification",
       "bloecke": [
         {
           "absatz": "1",
@@ -226,7 +421,7 @@
       ],
       "stand": "2018-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/214.5.16",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "77a9eb7c7fbaed8897acafb1a3d1b3e2",
       "sha": "1eecd0f2ffca1374578fecae800f8c0135a83b6b4f832c348c06edf07aeecce3"
     },
@@ -237,6 +432,7 @@
       "erlass": "Tarif des émoluments fixes du registre foncier (RSF 214.5.16)",
       "artikel": "8",
       "artikelLabel": "Art. 8",
+      "titel": "Entrée en vigueur",
       "bloecke": [
         {
           "absatz": "1",
@@ -245,7 +441,7 @@
       ],
       "stand": "2018-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/214.5.16",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "77a9eb7c7fbaed8897acafb1a3d1b3e2",
       "sha": "06060f4f343ee0c32480cfdf400a57497e84c521425b257b833eebb3687d170d"
     }

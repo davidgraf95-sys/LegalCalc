@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Dekret über die Entschädigung der Anwälte",
   "erlassdatum": "Vom 10.11.1987 (Stand 01.01.2024)",
@@ -114,6 +114,15 @@
     "2. Streitwert"
    ]
   },
+  "5": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Entschädigung in Zivilsachen"
+    }
+   ],
+   "marginalie": []
+  },
   "6": {
    "gliederung": [
     {
@@ -169,6 +178,15 @@
     "1. Entschädigung"
    ]
   },
+  "11": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4. Unentgeltliche Rechtsvertretung"
+    }
+   ],
+   "marginalie": []
+  },
   "12": {
    "gliederung": [
     {
@@ -204,6 +222,15 @@
      "item": null
     }
    ]
+  },
+  "14": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "6. Kostennote"
+    }
+   ],
+   "marginalie": []
   },
   "15": {
    "gliederung": [

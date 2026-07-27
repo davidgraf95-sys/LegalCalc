@@ -1,11 +1,23 @@
 /**
- * check:struktur-konsistenz — Tor: Struktur-Sidecar ↔ Snapshot je Bund-Gesetz.
+ * check:struktur-konsistenz — Tor: Struktur-Sidecar ↔ Snapshot je Erlass (Bund + Kanton).
  *
  * Snapshot und Struktur-Sidecar werden von ZWEI getrennten Generatoren erzeugt
- * (`npm run normtext` vs. `normtext:struktur`). Wird nur einer neu gebaut, driften
- * sie STILL: Artikel rendern ohne Gliederung/Randtitel, Struktur-Schlüssel zeigen
- * ins Leere. Dieser Defekt lag am 30.6.2026 unbemerkt in Produktion (OR). Das Tor
- * verhindert, dass solcher Drift je wieder still verschifft wird (§7/§8).
+ * (`npm run normtext` vs. `normtext:struktur`/`normtext:struktur-kanton`). Wird nur
+ * einer neu gebaut, driften sie STILL: Artikel rendern ohne Gliederung/Randtitel,
+ * Struktur-Schlüssel zeigen ins Leere. Dieser Defekt lag am 30.6.2026 unbemerkt in
+ * Produktion (OR, Bund) und erneut am 27.7.2026 im Kanton-Bestand (Gegenprüfung zu
+ * PR #391: 289 Snapshot-Artikel in 34 Kantons-Erlassen ohne Sidecar-Eintrag, weil
+ * ein Kanton-Titel-Nachzug die Snapshots neu erzeugte, aber die Sidecars vom 18.7.
+ * unangetastet liess). Das Tor verhindert, dass solcher Drift je wieder still
+ * verschifft wird (§7/§8) — für BEIDE Ebenen.
+ *
+ * Kanton-Sonderfall (kein stiller Fehler, sondern dokumentierte Ausnahme): Sidecars
+ * entstehen nur aus der LexWork-API (`struktur-kanton-run.ts`); Kanton-Erlasse aus
+ * anderen Quellen (HTM/PDF/ZH-PDF/lexfind) haben BEWUSST nie einen Sidecar — der
+ * Reader fällt dort auf die flache Darstellung zurück. Diese Dateien werden anhand
+ * derselben LEXWORK-Erkennung wie im Runner identifiziert und vom Sidecar-Zwang
+ * ausgenommen; ihre Zahl wird im ok-Fall sichtbar ausgewiesen (§8: keine stille
+ * Toleranz), nicht nur weggelassen.
  *
  * Offline (kein Netz, kein /tmp-Cache): liest nur die committeten Artefakte.
  * Aufruf: vite-node scripts/normtext/check-struktur-konsistenz.ts
@@ -15,12 +27,24 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { pruefeStrukturKonsistenz } from './vollstaendigkeit-logik.ts';
 
-const SNAP_DIR = 'public/normtext/bund';
-const STRUKTUR_DIR = 'public/normtext/struktur/bund';
+const BUND_SNAP_DIR = 'public/normtext/bund';
+const BUND_STRUKTUR_DIR = 'public/normtext/struktur/bund';
+const KANTON_SNAP_DIR = 'public/normtext/kanton';
+const KANTON_STRUKTUR_DIR = 'public/normtext/struktur/kanton';
+
+// Kongruent zur Quell-Erkennung in struktur-kanton-run.ts: nur LexWork-Erlasse
+// erhalten je einen Struktur-Sidecar; alle anderen Quellen sind eine dokumentierte
+// Ausnahme vom Sidecar-Zwang (kein Fehler).
+const LEXWORK = /\/app\/(de|fr|it)\/texts_of_law\//;
 
 function tokensVonSnapshot(pfad: string): string[] {
-  const datei = JSON.parse(readFileSync(pfad, 'utf8')) as { eintraege?: Array<{ artikel: string }> };
+  const datei = JSON.parse(readFileSync(pfad, 'utf8')) as { eintraege?: Array<{ artikel: string; quelleUrl?: string }> };
   return (datei.eintraege ?? []).map((e) => e.artikel);
+}
+
+function ersteQuelleUrl(pfad: string): string {
+  const datei = JSON.parse(readFileSync(pfad, 'utf8')) as { eintraege?: Array<{ quelleUrl?: string }> };
+  return datei.eintraege?.[0]?.quelleUrl ?? '';
 }
 
 function keysVonStruktur(pfad: string): string[] {
@@ -29,15 +53,17 @@ function keysVonStruktur(pfad: string): string[] {
 }
 
 function main(): void {
-  console.log('\n── Tor: Struktur-Konsistenz (Sidecar ↔ Snapshot, Bund) ───────────────────');
   let exitCode = 0;
-  let geprueft = 0;
-  let doppelIdHinweise = 0;
 
-  for (const f of readdirSync(SNAP_DIR).filter((f) => f.endsWith('.json'))) {
+  // ── Bund ────────────────────────────────────────────────────────────────────
+  console.log('\n── Tor: Struktur-Konsistenz (Sidecar ↔ Snapshot, Bund) ───────────────────');
+  let bundGeprueft = 0;
+  let bundDoppelIdHinweise = 0;
+
+  for (const f of readdirSync(BUND_SNAP_DIR).filter((f) => f.endsWith('.json'))) {
     const gesetz = f.replace(/\.json$/, '');
-    const snapPfad = join(SNAP_DIR, f);
-    const struPfad = join(STRUKTUR_DIR, f);
+    const snapPfad = join(BUND_SNAP_DIR, f);
+    const struPfad = join(BUND_STRUKTUR_DIR, f);
 
     // Ein Bund-Snapshot OHNE Struktur-Sidecar ist selbst ein Drift-Befund
     // (der Reader erwartet das Sidecar für die Gliederung).
@@ -48,7 +74,7 @@ function main(): void {
     }
 
     const r = pruefeStrukturKonsistenz(tokensVonSnapshot(snapPfad), keysVonStruktur(struPfad));
-    geprueft++;
+    bundGeprueft++;
 
     if (r.verwaist.length > 0) {
       console.error(
@@ -66,17 +92,89 @@ function main(): void {
     }
     if (r.fehlendDoppelId.length > 0) {
       // Dokumentierte Doppelartikel-Grenze (2. Vorkommen einer art_id) — kein Fehler.
-      doppelIdHinweise += r.fehlendDoppelId.length;
+      bundDoppelIdHinweise += r.fehlendDoppelId.length;
     }
   }
 
   if (exitCode === 0) {
     console.log(
-      `  ok: ${geprueft} Bund-Gesetze — Struktur ↔ Snapshot konsistent` +
-        (doppelIdHinweise > 0 ? ` (${doppelIdHinweise} dokumentierte Doppelartikel-__N ohne Struktur, bekannt)` : ''),
+      `  ok: ${bundGeprueft} Bund-Gesetze — Struktur ↔ Snapshot konsistent` +
+        (bundDoppelIdHinweise > 0 ? ` (${bundDoppelIdHinweise} dokumentierte Doppelartikel-__N ohne Struktur, bekannt)` : ''),
+    );
+  }
+
+  // ── Kanton ──────────────────────────────────────────────────────────────────
+  console.log('\n── Tor: Struktur-Konsistenz (Sidecar ↔ Snapshot, Kanton) ──────────────────');
+  let kantonGeprueft = 0;
+  let kantonDoppelIdHinweise = 0;
+  let nichtLexworkOhneSidecar = 0;
+  // N1 (QS-GP 27.7.2026): eigener Kanton-Fehlerzähler — der frühere Vergleich
+  // gegen das globale exitCode-Flag konnte nach einem Bund-Fehler einen
+  // Kanton-Fehler nicht mehr unterscheiden und druckte die ok-Zeile trotzdem.
+  let kantonFehler = 0;
+
+  for (const f of readdirSync(KANTON_SNAP_DIR).filter((f) => f.endsWith('.json') && f !== 'index.json')) {
+    const erlass = f.replace(/\.json$/, '');
+    const snapPfad = join(KANTON_SNAP_DIR, f);
+    const struPfad = join(KANTON_STRUKTUR_DIR, f);
+    const tokens = tokensVonSnapshot(snapPfad);
+    if (tokens.length === 0) continue; // leere Snapshot-Datei (kann nicht vorkommen, defensiv)
+
+    const istLexwork = LEXWORK.test(ersteQuelleUrl(snapPfad));
+
+    if (!existsSync(struPfad)) {
+      if (istLexwork) {
+        // LexWork-Erlass OHNE Sidecar ist ein echter Drift-Befund (Runner hätte
+        // einen Sidecar erzeugen müssen).
+        console.error(`  FEHLER ${erlass}: LexWork-Snapshot vorhanden, aber Struktur-Sidecar fehlt (${struPfad}).`);
+        exitCode = 1;
+        kantonFehler++;
+      } else {
+        // Dokumentierte Ausnahme: Nicht-LexWork-Quellen (PDF/HTM/ZH-PDF/lexfind)
+        // erhalten nie einen Sidecar (struktur-kanton-run.ts überspringt sie).
+        nichtLexworkOhneSidecar++;
+      }
+      continue;
+    }
+
+    const r = pruefeStrukturKonsistenz(tokens, keysVonStruktur(struPfad));
+    kantonGeprueft++;
+
+    if (r.verwaist.length > 0) {
+      console.error(
+        `  FEHLER ${erlass}: ${r.verwaist.length} VERWAISTE Struktur-Schlüssel ` +
+          `(veraltete Struktur — Sidecar nicht mit Snapshot neu gebaut): ${r.verwaist.slice(0, 10).join(', ')}`,
+      );
+      exitCode = 1;
+      kantonFehler++;
+    }
+    if (r.fehlend.length > 0) {
+      console.error(
+        `  FEHLER ${erlass}: ${r.fehlend.length} Snapshot-Artikel OHNE Struktur ` +
+          `(rendern ohne Gliederung/Randtitel VOR den Sektionen, im TOC unerreichbar): ${r.fehlend.slice(0, 10).join(', ')}`,
+      );
+      exitCode = 1;
+      kantonFehler++;
+    }
+    if (r.fehlendDoppelId.length > 0) {
+      kantonDoppelIdHinweise += r.fehlendDoppelId.length;
+    }
+  }
+
+  if (kantonFehler === 0) {
+    console.log(
+      `  ok: ${kantonGeprueft} Kanton-Erlasse (LexWork) — Struktur ↔ Snapshot konsistent` +
+        (kantonDoppelIdHinweise > 0 ? ` (${kantonDoppelIdHinweise} dokumentierte Doppelartikel-__N ohne Struktur, bekannt)` : '') +
+        ` · ${nichtLexworkOhneSidecar} Nicht-LexWork-Erlasse ohne Sidecar (dokumentierte Ausnahme, Reader nutzt flache Darstellung)`,
     );
   } else {
-    console.error('\n  Struktur-Drift gefunden → `npm run normtext:struktur -- --datum=<F>` neu bauen.');
+    console.error(
+      `\n  ℹ️  ${nichtLexworkOhneSidecar} Nicht-LexWork-Erlasse ohne Sidecar sind eine dokumentierte Ausnahme (kein Fehler).`,
+    );
+  }
+
+  if (exitCode !== 0) {
+    console.error('\n  Struktur-Drift gefunden → `npm run normtext:struktur -- --datum=<F>` (Bund) bzw. `npm run normtext:struktur-kanton -- --datum=<F> --kanton=<KT>` (Kanton) neu bauen.');
   }
   process.exit(exitCode);
 }

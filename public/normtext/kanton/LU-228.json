@@ -1,13 +1,14 @@
 {
-  "erzeugt": "2026-06-19",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/LU/228/art_1",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "1",
       "artikelLabel": "§ 1",
+      "titel": "Grundsatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -16,7 +17,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "0d5bca5358bda713159f8959f2ce0d1915f11e231af4f650262b1115aad54cb1"
     },
@@ -24,9 +25,10 @@
       "id": "kanton/LU/228/art_2",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "titel": "Eigentum",
       "bloecke": [
         {
           "absatz": "1",
@@ -65,7 +67,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "709ee62721600e65da18506b5813e01c7eae4d798bfcb575715df5dd6b733884"
     },
@@ -73,9 +75,10 @@
       "id": "kanton/LU/228/art_3",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "titel": "Stockwerkeigentum",
       "bloecke": [
         {
           "absatz": "1",
@@ -98,7 +101,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "0118b20bf43ada090be0f69d2a4c6f0e416281c1a5d49b088744fd6a0ee50051"
     },
@@ -106,9 +109,10 @@
       "id": "kanton/LU/228/art_4",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "titel": "Selbständiges und unselbständiges Miteigentum",
       "bloecke": [
         {
           "absatz": "1",
@@ -143,7 +147,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "cdf5742c4509fe2d8b7569a3344bc1200d966737b8930d52ba787953a5b28061"
     },
@@ -151,9 +155,10 @@
       "id": "kanton/LU/228/art_5",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "titel": "Wasserrechte und Bergwerke",
       "bloecke": [
         {
           "absatz": "1",
@@ -172,7 +177,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "3da6c29e5cebe18a0634da63ca9b3d1d444d5a01e110aef31aa37192adcdddb4"
     },
@@ -180,9 +185,10 @@
       "id": "kanton/LU/228/art_6",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "titel": "Dienstbarkeiten und Grundlasten",
       "bloecke": [
         {
           "absatz": "1",
@@ -213,7 +219,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "97fc1e76b920b80b7415bb808a411f88be2cdeb8adb35f6c18e148d7904457d9"
     },
@@ -221,9 +227,10 @@
       "id": "kanton/LU/228/art_7",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "titel": "Selbständiges und dauerndes Baurecht",
       "bloecke": [
         {
           "absatz": "1",
@@ -250,7 +257,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "1adfb2e351e34e4308fe90a06496d11d881404c8a10c556c1944f51ccf6c3496"
     },
@@ -258,9 +265,10 @@
       "id": "kanton/LU/228/art_8",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "titel": "Eintragung und Löschung von Grundpfandrechten",
       "bloecke": [
         {
           "absatz": "1",
@@ -291,7 +299,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "0c6c2108327a3e94bcf961473a2edffd3ac59ef82b109ce5a3b841395fea56ae"
     },
@@ -299,9 +307,10 @@
       "id": "kanton/LU/228/art_9",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "titel": "Verschiedene Verrichtungen bei Grundpfandrechten",
       "bloecke": [
         {
           "absatz": "1",
@@ -318,6 +327,14 @@
             {
               "marke": "3",
               "text": "Für die Zusammenlegung von Pfandrechten beträgt die Gebühr:"
+            },
+            {
+              "marke": "a",
+              "text": "Beträge bis Fr. 20 000.– gebührenfrei,"
+            },
+            {
+              "marke": "b",
+              "text": "Beträge über Fr. 20 000.– je Pfandrecht Fr. 30.–; die Gebühr berechnet sich von der höheren Anzahl anrechenbarer Pfandpositionen, beträgt aber mindestens Fr. 30.– für jede Neueintragung."
             },
             {
               "marke": "4",
@@ -352,17 +369,18 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
-      "sha": "fba5360e13044e7b7e3d8f0122e19ddb6b975aa685bd24c872d6821947a66ce3"
+      "sha": "cc56431209d292c162ab3f956dcc59e4f5572add14c01729fca638f9f00d455b"
     },
     {
       "id": "kanton/LU/228/art_10",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "10",
       "artikelLabel": "§ 10",
+      "titel": "Pfandtitel",
       "bloecke": [
         {
           "absatz": "1",
@@ -381,7 +399,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "b06516fba6e90c5feab6c2f2960e2174e722e60579d2357b4de98d4e9d267198"
     },
@@ -389,9 +407,10 @@
       "id": "kanton/LU/228/art_11",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "titel": "Vormerkungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -422,7 +441,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "3bbb06044000f4a5346c444cf7918d1565dd27febef31f01dbbcef8f94b5aae3"
     },
@@ -430,9 +449,10 @@
       "id": "kanton/LU/228/art_12",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "titel": "Anmerkungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -451,7 +471,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "d67bc9151af79203a715aa9a1f52709025c65caf1549b8824ffee8c06161a218"
     },
@@ -459,9 +479,10 @@
       "id": "kanton/LU/228/art_13",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "titel": "Verschiedene Eintragungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -488,7 +509,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "52e74c4f180eab30e6418596c3080d8c21b13e195dcf5f9d6990f41fa25d09e4"
     },
@@ -496,9 +517,10 @@
       "id": "kanton/LU/228/art_14",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "14",
       "artikelLabel": "§ 14",
+      "titel": "Auskunftserteilung und sonstige Verrichtungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -541,7 +563,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "d61873b256bacae1d687eff6287e0d03e3687083b9be0f9f0a94ec2cd8675699"
     },
@@ -549,9 +571,10 @@
       "id": "kanton/LU/228/art_15",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "15",
       "artikelLabel": "§ 15",
+      "titel": "Aufbewahrung von Pfandtiteln",
       "bloecke": [
         {
           "absatz": "1",
@@ -560,7 +583,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "9fbf5aba4b4f091249ffd2349cede7ca4b44e52a1287e9b4bc0ad4d5d91e02fd"
     },
@@ -568,9 +591,10 @@
       "id": "kanton/LU/228/art_16",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "16",
       "artikelLabel": "§ 16",
+      "titel": "Auslagen, Spesen und Mahngebühren",
       "bloecke": [
         {
           "absatz": "1",
@@ -587,7 +611,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "a8f6771e3bd077edde3127c93908fd3ee7eace9e7ec35170531278e95f4f2fc8"
     },
@@ -595,9 +619,10 @@
       "id": "kanton/LU/228/art_17",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "17",
       "artikelLabel": "§ 17",
+      "titel": "Grundstücke in mehreren Grundbuchkreisen",
       "bloecke": [
         {
           "absatz": "1",
@@ -606,7 +631,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "3351d6b25ae596e8cdf2f23a7e1774463f5a55c2628febccc18053b0109cbd77"
     },
@@ -614,9 +639,10 @@
       "id": "kanton/LU/228/art_18",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "18",
       "artikelLabel": "§ 18",
+      "titel": "Beschwerde",
       "bloecke": [
         {
           "absatz": "1",
@@ -629,7 +655,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "7b20a716f1941ab81467c77959b8753145e75dd80a1139315f0fdefd10c8925f"
     },
@@ -637,9 +663,10 @@
       "id": "kanton/LU/228/art_19",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "19",
       "artikelLabel": "§ 19",
+      "titel": "Gebührenfreiheit",
       "bloecke": [
         {
           "absatz": "1",
@@ -666,7 +693,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "e116eb10e2a60c391ddd1cec9900f5152a69004fd7c342565c290299838d96d7"
     },
@@ -674,9 +701,10 @@
       "id": "kanton/LU/228/art_20",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
+      "erlass": "Verordnung über die Grundbuchgebühren, Grundbuchgebührentarif, GBGT (SRL Nr. 228)",
       "artikel": "20",
       "artikelLabel": "§ 20",
+      "titel": "Schlussbestimmungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -685,7 +713,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/228",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ddfd8a803702cdce3c2850d74fb1862d",
       "sha": "a98db3cc968f703b26ad640c5fa7cb3f842fe851e7f19473c24170d68eb0b4dc"
     }

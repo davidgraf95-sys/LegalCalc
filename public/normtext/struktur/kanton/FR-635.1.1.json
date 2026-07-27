@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Loi sur les droits de mutation et les droits sur les gages immobiliers",
   "erlassdatum": "du 01.05.1996 (version entrée en vigueur le 01.03.2024)",
@@ -722,6 +722,15 @@
    "marginalie": [
     "Demande en restitution de l'indu – Forme - autorité"
    ]
+  },
+  "50": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "7 Perception"
+    }
+   ],
+   "marginalie": []
   },
   "51": {
    "gliederung": [

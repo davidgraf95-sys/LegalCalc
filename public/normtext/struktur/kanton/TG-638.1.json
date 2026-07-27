@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Verordnung des Grossen Rates über die Gebühren der Strafverfolgungs- und Gerichtsbehörden",
   "erlassdatum": "vom 13.05.1992 (Stand 01.01.2022)"
@@ -107,6 +107,15 @@
     "Einzelrichter der Bezirksgerichte"
    ]
   },
+  "9": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Verfahrensgebühr"
+    }
+   ],
+   "marginalie": []
+  },
   "10": {
    "gliederung": [
     {
@@ -128,6 +137,15 @@
    "marginalie": [
     "Bezirksgerichte"
    ]
+  },
+  "12": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Verfahrensgebühr"
+    }
+   ],
+   "marginalie": []
   },
   "13": {
    "gliederung": [
@@ -160,6 +178,24 @@
    ],
    "marginalie": [
     "Hängige Verfahren"
+   ]
+  },
+  "16": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Übergangs- und Schlussbestimmungen"
+    }
+   ],
+   "marginalie": [],
+   "fussnoten": [
+    {
+     "nr": "2",
+     "text": "Aufhebung bisherigen Rechtes, ABl. 1992, Seite 927.",
+     "links": [],
+     "absatz": null,
+     "item": null
+    }
    ]
   },
   "17": {
