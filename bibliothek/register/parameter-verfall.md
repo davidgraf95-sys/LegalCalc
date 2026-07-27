@@ -123,17 +123,19 @@ bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
 ### Ganz aufgehobene Erlasse (Aufhebungs-Posten, G-AUFH-Follow-up #259)
 
 Aus dem amtlichen Fedlex-SPARQL-Graphen (`jolux:dateNoLongerInForce` auf der
-ConsolidationAbstract) geerntet. Diese Erlasse sind GANZ aufgehoben — der
+ConsolidationAbstract) geerntet. Diese Erlasse werden GANZ aufgehoben — je
+Zeile entweder bereits erfolgt («aufgehoben seit») oder erst amtlich
+angekündigt und bis dahin geltend («Aufhebung angekündigt per», §8). Der
 Snapshot bleibt allenfalls als historische Fassung nutzbar, darf aber nie mehr
-als geltend dargestellt werden (§8). Massnahme: Snapshot ersetzen/entfernen,
-Nachfolge-Erlass prüfen. Roh gemeldet (ohne SSoT-Filter aus
-`src/lib/normtext/aufhebungen.ts` — folgt mit #287).
+als geltend dargestellt werden, sobald das Datum erreicht ist. Massnahme:
+Snapshot ersetzen/entfernen, Nachfolge-Erlass prüfen. Roh gemeldet (ohne
+SSoT-Filter aus `src/lib/normtext/aufhebungen.ts` — folgt mit #287).
 
 | Erlass (aufgehoben) | Fundstelle | Aufhebungsdatum | Rhythmus | Nächste Prüfung |
 |---|---|---|---|---|
 | Aufgehoben: BMV (SR 412.103.1) | `scripts/fedlex-cache.sh` (BMV) | aufgehoben seit 1.3.2026 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung erfolgt — Massnahme nötig |
-| Aufgehoben: PatV (SR 232.141) | `scripts/fedlex-cache.sh` (PATV) | aufgehoben seit 1.1.2027 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung angekündigt ab 1.1.2027 |
-| Aufgehoben: VGV (SR 814.621) | `scripts/fedlex-cache.sh` (VGVP) | aufgehoben seit 1.1.2027 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung angekündigt ab 1.1.2027 |
+| Aufgehoben: PatV (SR 232.141) | `scripts/fedlex-cache.sh` (PATV) | Aufhebung angekündigt per 1.1.2027 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung angekündigt ab 1.1.2027 |
+| Aufgehoben: VGV (SR 814.621) | `scripts/fedlex-cache.sh` (VGVP) | Aufhebung angekündigt per 1.1.2027 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung angekündigt ab 1.1.2027 |
 
 <!-- /AUTO fedlex-wiedervorlage -->
 

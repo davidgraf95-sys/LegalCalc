@@ -232,7 +232,7 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "datum": "2027-01-01",
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (PATV)",
-    "wert": "aufgehoben seit 1.1.2027",
+    "wert": "Aufhebung angekündigt per 1.1.2027",
     "rhythmus": "einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen"
   },
   {
@@ -240,7 +240,7 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "datum": "2027-01-01",
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (VGVP)",
-    "wert": "aufgehoben seit 1.1.2027",
+    "wert": "Aufhebung angekündigt per 1.1.2027",
     "rhythmus": "einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen"
   },
   {
