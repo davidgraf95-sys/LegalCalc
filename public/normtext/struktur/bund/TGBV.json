@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "211.432.11",
   "titel": "Technische Verordnung des EJPD und des VBS über das Grundbuch",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -47,7 +48,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -59,7 +61,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -71,7 +74,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -96,7 +100,8 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -108,7 +113,8 @@
       }
      ],
      "absatz": null,
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -120,7 +126,8 @@
       }
      ],
      "absatz": null,
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -132,7 +139,8 @@
       }
      ],
      "absatz": null,
-     "item": "l"
+     "item": "l",
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -144,7 +152,8 @@
       }
      ],
      "absatz": null,
-     "item": "m"
+     "item": "m",
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -156,7 +165,8 @@
       }
      ],
      "absatz": null,
-     "item": "n"
+     "item": "n",
+     "kl": "A"
     }
    ]
   },
@@ -182,7 +192,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -194,7 +205,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -206,7 +218,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -218,7 +231,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -230,7 +244,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -242,7 +257,8 @@
       }
      ],
      "absatz": "1",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     }
    ]
   },
@@ -292,7 +308,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -318,7 +335,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 206,
+      "l": 206
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -330,7 +353,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 167,
+      "l": 167
+     },
+     "kl": "A"
     }
    ]
   },
@@ -349,7 +378,13 @@
      "text": "Diese Norm kann kostenlos eingesehen und gegen Bezahlung bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur; www.snv.ch.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 120,
+      "l": 133
+     },
+     "kl": "V"
     }
    ]
   },
@@ -373,7 +408,8 @@
       }
      ],
      "absatz": "3",
-     "item": "3"
+     "item": "3",
+     "kl": "A"
     }
    ]
   },
@@ -407,7 +443,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -419,7 +456,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     }
    ]
   },
@@ -441,7 +479,13 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 126,
+      "l": 134
+     },
+     "kl": "V"
     }
    ]
   },
@@ -539,7 +583,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -551,7 +596,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 192,
+      "l": 284
+     },
+     "kl": "V"
     },
     {
      "nr": "35",
@@ -563,7 +615,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -575,7 +628,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 109,
+      "l": 213
+     },
+     "kl": "V"
     }
    ]
   },
@@ -601,7 +661,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 249,
+      "l": 328
+     },
+     "kl": "V"
     },
     {
      "nr": "38",
@@ -613,7 +680,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -625,7 +693,14 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 66,
+      "l": 67
+     },
+     "kl": "V"
     },
     {
      "nr": "40",
@@ -637,7 +712,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -663,7 +739,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 90,
+      "l": 91
+     },
+     "kl": "V"
     },
     {
      "nr": "42",
@@ -675,7 +757,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 91,
+      "l": 91
+     },
+     "kl": "A"
     }
    ]
   },
@@ -713,14 +801,28 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 190,
+      "l": 255
+     },
+     "kl": "Z"
     },
     {
      "nr": "44",
      "text": "www.eCH.ch",
      "links": [],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 162,
+      "l": 198
+     },
+     "kl": "U"
     }
    ]
   },
@@ -746,7 +848,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 181,
+      "l": 192
+     },
+     "kl": "V"
     }
    ]
   },
@@ -770,7 +878,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 219,
+      "l": 315
+     },
+     "kl": "V"
     }
    ]
   },
@@ -807,7 +921,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 63,
+      "l": 99
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -858,7 +978,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes"
+     "sektion": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes",
+     "kl": "A"
     }
    ]
   },
@@ -897,7 +1018,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle"
+     "sektion": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle",
+     "kl": "A"
     }
    ]
   },
@@ -935,7 +1057,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -961,7 +1084,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -981,7 +1105,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 382,
+      "l": 420
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1007,7 +1137,14 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 115,
+      "l": 226
+     },
+     "kl": "V"
     },
     {
      "nr": "23",
@@ -1019,7 +1156,14 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 81,
+      "l": 119
+     },
+     "kl": "V"
     },
     {
      "nr": "21",
@@ -1032,7 +1176,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Abschnitt: Plan für das Grundbuch"
+     "sektion": "3a. Abschnitt: Plan für das Grundbuch",
+     "kl": "A"
     }
    ]
   },
@@ -1070,7 +1215,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 55,
+      "l": 56
+     },
+     "kl": "V"
     },
     {
      "nr": "26",
@@ -1082,7 +1234,14 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 98,
+      "l": 148
+     },
+     "kl": "V"
     },
     {
      "nr": "24",
@@ -1095,7 +1254,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung"
+     "sektion": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung",
+     "kl": "A"
     }
    ]
   },
@@ -1134,7 +1294,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung"
+     "sektion": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung",
+     "kl": "A"
     }
    ]
   },

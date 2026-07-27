@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "711",
   "titel": "Bundesgesetz über die Enteignung",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -47,7 +48,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -63,7 +65,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "4",
@@ -75,7 +78,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -132,7 +136,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 245,
+      "l": 245
+     },
+     "kl": "A"
     }
    ]
   },
@@ -158,14 +168,16 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "7",
      "text": "Ursprünglich Bst. d.",
      "links": [],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -208,7 +220,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 177,
+      "l": 294
+     },
+     "kl": "A"
     }
    ]
   },
@@ -288,7 +306,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 164,
+      "l": 224
+     },
+     "kl": "V"
     }
    ]
   },
@@ -336,7 +360,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 479,
+      "l": 479
+     },
+     "kl": "A"
     }
    ]
   },
@@ -378,7 +408,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -446,7 +477,14 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 5,
+      "l": 191
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -459,7 +497,14 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 78,
+      "l": 191
+     },
+     "kl": "V"
     }
    ]
   },
@@ -491,7 +536,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1bis. Berechnung im allgemeinen"
+     "sektion": "1bis. Berechnung im allgemeinen",
+     "kl": "A"
     }
    ]
   },
@@ -597,7 +643,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -614,7 +661,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Abschnitt III: Enteignungsverfahren"
+     "sektion": "Abschnitt III: Enteignungsverfahren",
+     "kl": "A"
     }
    ]
   },
@@ -645,7 +693,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -676,7 +725,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -707,7 +757,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -738,7 +789,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -769,7 +821,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -800,7 +853,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -831,7 +885,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -862,7 +917,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -893,7 +949,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -924,7 +981,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -955,7 +1013,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -986,7 +1045,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -1017,7 +1077,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -1048,7 +1109,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -1079,7 +1141,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1110,7 +1173,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1153,7 +1217,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1184,7 +1249,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1215,7 +1281,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1245,7 +1312,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1276,7 +1344,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "IV. Protokoll"
+     "sektion": "IV. Protokoll",
+     "kl": "A"
     }
    ]
   },
@@ -1307,7 +1376,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "V. Amtliche Verständigung"
+     "sektion": "V. Amtliche Verständigung",
+     "kl": "A"
     }
    ]
   },
@@ -1337,7 +1407,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 282,
+      "l": 282
+     },
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -1354,7 +1430,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "VI. Ausseramtliche Verständigung"
+     "sektion": "VI. Ausseramtliche Verständigung",
+     "kl": "A"
     }
    ]
   },
@@ -1384,7 +1461,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -1401,7 +1479,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Abschnitt VI: Organisation der Schätzungskommissionen"
+     "sektion": "Abschnitt VI: Organisation der Schätzungskommissionen",
+     "kl": "A"
     }
    ]
   },
@@ -1431,7 +1510,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1462,7 +1542,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1493,7 +1574,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -1509,7 +1591,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 23,
+      "l": 23
+     },
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -1525,7 +1614,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 71,
+      "l": 71
+     },
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -1541,7 +1636,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 63,
+      "l": 63
+     },
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -1557,7 +1658,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 159,
+      "l": 208
+     },
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -1577,7 +1684,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 208,
+      "l": 208
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1608,7 +1721,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -1622,7 +1736,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 206,
+      "l": 207
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1653,7 +1773,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -1670,7 +1791,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 270
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1701,7 +1828,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1732,7 +1860,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 48,
+      "l": 48
+     },
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -1748,7 +1882,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -1764,7 +1899,8 @@
       }
      ],
      "absatz": "1",
-     "item": "bbis"
+     "item": "bbis",
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -1780,7 +1916,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -1796,7 +1933,8 @@
       }
      ],
      "absatz": "1",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -1816,7 +1954,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 68,
+      "l": 68
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1833,7 +1977,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Abschnitt VIa: Schätzungsverfahren"
+     "sektion": "Abschnitt VIa: Schätzungsverfahren",
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -1850,7 +1995,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "a. Sachliche"
+     "sektion": "a. Sachliche",
+     "kl": "A"
     }
    ]
   },
@@ -1885,7 +2031,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 298,
+      "l": 298
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1916,7 +2068,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1947,7 +2100,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 302,
+      "l": 302
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1978,7 +2137,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 96,
+      "l": 96
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2013,7 +2178,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 208,
+      "l": 208
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2115,7 +2286,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2145,7 +2317,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "81",
@@ -2161,7 +2334,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 396,
+      "l": 396
+     },
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -2177,7 +2356,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 225,
+      "l": 350
+     },
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -2197,7 +2382,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 124,
+      "l": 124
+     },
+     "kl": "A"
     },
     {
      "nr": "84",
@@ -2213,7 +2404,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 193,
+      "l": 193
+     },
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -2237,7 +2434,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 561,
+      "l": 561
+     },
+     "kl": "A"
     },
     {
      "nr": "86",
@@ -2257,7 +2460,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "79",
@@ -2274,7 +2483,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Abschnitt VIbis: Vorzeitige Besitzeinweisung"
+     "sektion": "Abschnitt VIbis: Vorzeitige Besitzeinweisung",
+     "kl": "A"
     }
    ]
   },
@@ -2308,7 +2518,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "89",
@@ -2321,7 +2532,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 125,
+      "l": 126
+     },
+     "kl": "V"
     },
     {
      "nr": "87",
@@ -2342,7 +2559,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Abschnitt VII: Beschwerde"
+     "sektion": "Abschnitt VII: Beschwerde",
+     "kl": "A"
     }
    ]
   },
@@ -2372,7 +2590,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -2392,7 +2611,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 178,
+      "l": 319
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2426,7 +2651,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2480,7 +2706,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "96",
@@ -2493,7 +2720,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 110,
+      "l": 156
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2523,7 +2756,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 521,
+      "l": 521
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2580,7 +2819,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 552,
+      "l": 552
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2622,7 +2867,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 170,
+      "l": 170
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2667,7 +2918,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 165,
+      "l": 165
+     },
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -2680,7 +2937,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 150,
+      "l": 151
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2723,7 +2986,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 379,
+      "l": 380
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2807,7 +3076,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -2897,7 +3167,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "105",
@@ -2918,7 +3189,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 164,
+      "l": 164
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2948,7 +3225,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2978,7 +3256,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -2992,7 +3271,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 159,
+      "l": 160
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3022,7 +3307,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3069,7 +3355,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "110",
@@ -3090,7 +3382,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Verordnung des Bundesrates"
+     "sektion": "1. Verordnung des Bundesrates",
+     "kl": "A"
     }
    ]
   },
@@ -3121,7 +3414,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "113",
@@ -3134,7 +3428,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 66,
+      "l": 300
+     },
+     "kl": "V"
     },
     {
      "nr": "114",
@@ -3150,7 +3450,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 300,
+      "l": 300
+     },
+     "kl": "A"
     },
     {
      "nr": "115",
@@ -3166,7 +3472,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 137,
+      "l": 137
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3197,7 +3509,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "117",
@@ -3213,7 +3526,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 322,
+      "l": 322
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3244,7 +3563,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "120",
@@ -3264,7 +3584,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 142,
+      "l": 330
+     },
+     "kl": "A"
     },
     {
      "nr": "121",
@@ -3277,7 +3603,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 150,
+      "l": 164
+     },
+     "kl": "V"
     },
     {
      "nr": "122",
@@ -3290,7 +3622,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 113,
+      "l": 114
+     },
+     "kl": "V"
     },
     {
      "nr": "123",
@@ -3310,7 +3648,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 114,
+      "l": 114
+     },
+     "kl": "A"
     },
     {
      "nr": "118",
@@ -3331,7 +3675,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Im Verfahren vor dem Bundesverwaltungsgericht und dem Bundesgericht"
+     "sektion": "4. Im Verfahren vor dem Bundesverwaltungsgericht und dem Bundesgericht",
+     "kl": "A"
     }
    ]
   },
@@ -3373,7 +3718,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -3387,7 +3733,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 251,
+      "l": 327
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3420,21 +3772,42 @@
      "text": "[AS <b>I</b> 319]",
      "links": [],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 32,
+      "l": 90
+     },
+     "kl": "Z"
     },
     {
      "nr": "127",
      "text": "[<i>AS <b>19</b> 334</i>]",
      "links": [],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 51,
+      "l": 123
+     },
+     "kl": "Z"
     },
     {
      "nr": "128",
      "text": "[<i>AS <b>19</b> 370</i>]",
      "links": [],
      "absatz": null,
-     "item": "3"
+     "item": "3",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 81,
+      "l": 247
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3461,7 +3834,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3482,7 +3861,8 @@
      "text": "BRB vom 3. Nov. 1931",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3521,7 +3901,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3551,7 +3932,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3580,7 +3962,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Abschnitt V: Vorsorgliche Beweiserhebung"
+     "sektion": "Abschnitt V: Vorsorgliche Beweiserhebung",
+     "kl": "A"
     }
    ]
   },
@@ -3621,7 +4004,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -3634,7 +4018,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 104,
+      "l": 233
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3665,7 +4055,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -3678,7 +4069,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 93,
+      "l": 279
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3709,7 +4106,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -3722,7 +4120,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 58,
+      "l": 260
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3752,7 +4156,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3782,7 +4187,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

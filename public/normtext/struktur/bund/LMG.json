@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "817.0",
   "titel": "Bundesgesetz über Lebensmittel und Gebrauchsgegenstände",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -300,7 +302,14 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 2,
+      "it": 0,
+      "o": 30,
+      "l": 56
+     },
+     "kl": "V"
     },
     {
      "nr": "4",
@@ -313,7 +322,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 31,
+      "l": 32
+     },
+     "kl": "V"
     }
    ]
   },
@@ -396,7 +412,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 215,
+      "l": 278
+     },
+     "kl": "V"
     }
    ]
   },
@@ -445,7 +467,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 432,
+      "l": 433
+     },
+     "kl": "V"
     }
    ]
   },
@@ -832,7 +860,14 @@
       }
      ],
      "absatz": "5",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 4,
+      "it": 0,
+      "o": 38,
+      "l": 39
+     },
+     "kl": "V"
     },
     {
      "nr": "9",
@@ -845,7 +880,14 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 4,
+      "it": 1,
+      "o": 38,
+      "l": 39
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -858,7 +900,14 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 4,
+      "it": 2,
+      "o": 34,
+      "l": 35
+     },
+     "kl": "V"
     },
     {
      "nr": "11",
@@ -871,7 +920,14 @@
       }
      ],
      "absatz": "5",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 4,
+      "it": 3,
+      "o": 38,
+      "l": 39
+     },
+     "kl": "V"
     },
     {
      "nr": "12",
@@ -884,7 +940,14 @@
       }
      ],
      "absatz": "5",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 4,
+      "it": 4,
+      "o": 40,
+      "l": 41
+     },
+     "kl": "V"
     },
     {
      "nr": "13",
@@ -897,7 +960,14 @@
       }
      ],
      "absatz": "5",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 4,
+      "it": 5,
+      "o": 34,
+      "l": 35
+     },
+     "kl": "V"
     }
    ]
   },
@@ -973,7 +1043,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 229,
+      "l": 326
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1022,7 +1098,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 96,
+      "l": 141
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1272,7 +1354,14 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 135,
+      "l": 149
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1310,7 +1399,8 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -1322,7 +1412,8 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -1335,7 +1426,14 @@
       }
      ],
      "absatz": "5",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 4,
+      "it": 6,
+      "o": 111,
+      "l": 204
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1402,7 +1500,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 158,
+      "l": 264
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1433,7 +1537,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 203,
+      "l": 203
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -1445,7 +1555,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 250,
+      "l": 250
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1612,7 +1728,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 317,
+      "l": 371
+     },
+     "kl": "Z"
     },
     {
      "nr": "24",
@@ -1632,7 +1754,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 71,
+      "l": 71
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1653,7 +1781,8 @@
      "text": "BRB vom 16. Dez. 2016",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1688,7 +1817,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

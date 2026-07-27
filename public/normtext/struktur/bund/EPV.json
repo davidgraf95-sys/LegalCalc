@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "818.101.1",
   "titel": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen",
@@ -32,7 +32,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -137,7 +138,8 @@
       }
      ],
      "absatz": null,
-     "item": "1bis"
+     "item": "1bis",
+     "kl": "A"
     }
    ]
   },
@@ -168,7 +170,8 @@
       }
      ],
      "absatz": "2",
-     "item": "1bis"
+     "item": "1bis",
+     "kl": "A"
     }
    ]
   },
@@ -199,7 +202,8 @@
       }
      ],
      "absatz": "1",
-     "item": "1bis"
+     "item": "1bis",
+     "kl": "A"
     }
    ]
   },
@@ -230,7 +234,8 @@
       }
      ],
      "absatz": null,
-     "item": "7"
+     "item": "7",
+     "kl": "A"
     }
    ]
   },
@@ -261,7 +266,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 298,
+      "l": 298
+     },
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -273,7 +284,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 124,
+      "l": 124
+     },
+     "kl": "A"
     }
    ]
   },
@@ -321,7 +338,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 120,
+      "l": 120
+     },
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -333,7 +356,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 283,
+      "l": 283
+     },
+     "kl": "A"
     }
    ]
   },
@@ -670,7 +699,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -682,7 +712,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 295,
+      "l": 295
+     },
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -694,7 +730,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 151,
+      "l": 151
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -706,7 +748,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 223,
+      "l": 223
+     },
+     "kl": "A"
     }
    ]
   },
@@ -907,7 +955,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 136,
+      "l": 157
+     },
+     "kl": "V"
     }
    ]
   },
@@ -990,7 +1045,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 171,
+      "l": 192
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1021,7 +1082,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 69,
+      "l": 144
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1087,7 +1155,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 75,
+      "l": 89
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1203,7 +1277,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 21,
+      "l": 108
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1372,7 +1452,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 72,
+      "l": 116
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1488,7 +1574,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 186,
+      "l": 498
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1589,7 +1681,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 97,
+      "l": 102
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1822,7 +1921,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -1834,7 +1934,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 184,
+      "l": 252
+     },
+     "kl": "V"
     },
     {
      "nr": "30",
@@ -1846,7 +1952,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 252,
+      "l": 252
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1877,7 +1989,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 112,
+      "l": 112
+     },
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -1889,7 +2007,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 336,
+      "l": 336
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -1901,7 +2025,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 87,
+      "l": 87
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1953,7 +2083,8 @@
       }
      ],
      "absatz": "1",
-     "item": "abis"
+     "item": "abis",
+     "kl": "G"
     }
    ]
   },
@@ -1984,7 +2115,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -2032,7 +2164,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "37",
@@ -2045,7 +2178,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 117,
+      "l": 118
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2077,7 +2216,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 198,
+      "l": 198
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2193,7 +2338,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 142,
+      "l": 158
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2270,7 +2421,14 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 32,
+      "l": 139
+     },
+     "kl": "Z"
     },
     {
      "nr": "41",
@@ -2290,7 +2448,14 @@
       }
      ],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 47,
+      "l": 48
+     },
+     "kl": "Z"
     },
     {
      "nr": "42",
@@ -2306,7 +2471,14 @@
       }
      ],
      "absatz": null,
-     "item": "3"
+     "item": "3",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 28,
+      "l": 58
+     },
+     "kl": "Z"
     },
     {
      "nr": "43",
@@ -2318,7 +2490,14 @@
       }
      ],
      "absatz": null,
-     "item": "4"
+     "item": "4",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 39,
+      "l": 81
+     },
+     "kl": "Z"
     },
     {
      "nr": "44",
@@ -2334,7 +2513,14 @@
       }
      ],
      "absatz": null,
-     "item": "5"
+     "item": "5",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 40,
+      "l": 119
+     },
+     "kl": "Z"
     },
     {
      "nr": "45",
@@ -2346,7 +2532,14 @@
       }
      ],
      "absatz": null,
-     "item": "6"
+     "item": "6",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 32,
+      "l": 64
+     },
+     "kl": "Z"
     },
     {
      "nr": "46",
@@ -2370,7 +2563,14 @@
       }
      ],
      "absatz": null,
-     "item": "7"
+     "item": "7",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 36,
+      "l": 37
+     },
+     "kl": "Z"
     },
     {
      "nr": "47",
@@ -2386,7 +2586,14 @@
       }
      ],
      "absatz": null,
-     "item": "8"
+     "item": "8",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 31,
+      "l": 80
+     },
+     "kl": "Z"
     },
     {
      "nr": "48",
@@ -2406,7 +2613,14 @@
       }
      ],
      "absatz": null,
-     "item": "9"
+     "item": "9",
+     "pos": {
+      "b": 0,
+      "it": 8,
+      "o": 28,
+      "l": 139
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -2454,7 +2668,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -2480,7 +2695,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2513,7 +2729,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -2546,7 +2763,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -2579,7 +2797,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -2612,7 +2831,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -2645,7 +2865,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2674,7 +2895,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },

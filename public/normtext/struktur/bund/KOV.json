@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "281.32",
   "titel": "Verordnung über die Geschäftsführung der Konkursämter",
@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -58,7 +60,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -90,7 +93,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -121,7 +125,8 @@
       }
      ],
      "absatz": null,
-     "item": "7"
+     "item": "7",
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -133,7 +138,14 @@
       }
      ],
      "absatz": null,
-     "item": "12"
+     "item": "12",
+     "pos": {
+      "b": 0,
+      "it": 11,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -159,7 +171,13 @@
      "text": "In der AS nicht veröffentlicht.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 94,
+      "l": 160
+     },
+     "kl": "U"
     }
    ]
   },
@@ -185,7 +203,8 @@
      "text": "Im italienischen Text besteht dieser Art. aus einem einzigen Abs.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -216,7 +235,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 76,
+      "l": 76
+     },
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -228,7 +253,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 205,
+      "l": 205
+     },
+     "kl": "A"
     }
    ]
   },
@@ -289,7 +320,8 @@
      "text": "Im französischen Text besteht dieser Artikel aus zwei Absätzen.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -339,7 +371,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -351,14 +389,26 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 334,
+      "l": 334
+     },
+     "kl": "A"
     },
     {
      "nr": "14",
      "text": "Ursprünglich Abs. 3.",
      "links": [],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 112,
+      "l": 112
+     },
+     "kl": "A"
     }
    ]
   },
@@ -385,7 +435,8 @@
      "text": "Ursprünglich Art. 12",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -398,7 +449,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "d. Edition"
+     "sektion": "d. Edition",
+     "kl": "A"
     }
    ]
   },
@@ -429,7 +481,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -442,7 +495,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "III. Elektronische Datenverarbeitung"
+     "sektion": "III. Elektronische Datenverarbeitung",
+     "kl": "A"
     }
    ]
   },
@@ -468,7 +522,13 @@
      "text": "Im italienischen Text bilden die Abs. 1 und 2 einen einzigen Absatz.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 95,
+      "l": 95
+     },
+     "kl": "U"
     },
     {
      "nr": "21",
@@ -480,14 +540,26 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 428,
+      "l": 428
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
      "text": "Im italienischen Text bilden die Abs. 1 und 2 einen einzigen Absatz.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 428,
+      "l": 428
+     },
+     "kl": "U"
     },
     {
      "nr": "19",
@@ -495,7 +567,8 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "sektion": "IV. Ordnung und Aufbewahrung der Akten"
+     "sektion": "IV. Ordnung und Aufbewahrung der Akten",
+     "kl": "A"
     }
    ]
   },
@@ -527,7 +600,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -559,7 +633,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -572,7 +647,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 287,
+      "l": 298
+     },
+     "kl": "V"
     },
     {
      "nr": "26",
@@ -584,7 +666,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -611,7 +694,8 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "sektion": "V. Buch-, Kassa- und Rechnungsführung"
+     "sektion": "V. Buch-, Kassa- und Rechnungsführung",
+     "kl": "A"
     }
    ]
   },
@@ -707,7 +791,8 @@
      "text": "Im französischen Text besteht dieser Artikel aus drei Absätzen. Dem Abs. 1 entspricht der erste Satzteil des ersten Satzes bis «aufzubewahren», Abs. 2 der zweite Satzteil des ersten Satzes und Abs. 3 der zweite Satz.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -790,7 +875,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 406,
+      "l": 406
+     },
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -803,7 +894,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "sektion": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -816,7 +908,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "sektion": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "kl": "A"
     }
    ]
   },
@@ -848,7 +941,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -898,7 +992,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -930,7 +1025,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 96,
+      "l": 96
+     },
+     "kl": "A"
     }
    ]
   },
@@ -957,7 +1058,8 @@
      "text": "Im italienischen Text besteht dieser Artikel aus einem einzigen Absatz.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -989,7 +1091,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1039,7 +1147,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1071,7 +1180,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1102,7 +1212,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 391,
+      "l": 391
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1151,7 +1267,14 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 103,
+      "l": 135
+     },
+     "kl": "V"
     },
     {
      "nr": "47",
@@ -1163,7 +1286,8 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     }
    ]
   },
@@ -1194,7 +1318,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1225,7 +1350,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1256,7 +1382,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -1268,7 +1395,14 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 114,
+      "l": 114
+     },
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -1276,7 +1410,8 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "sektion": "II. Schuldenruf"
+     "sektion": "II. Schuldenruf",
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -1289,7 +1424,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Spezialanzeigen über die Konkurseröffnung"
+     "sektion": "1. Spezialanzeigen über die Konkurseröffnung",
+     "kl": "A"
     }
    ]
   },
@@ -1320,7 +1456,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1351,7 +1488,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 201,
+      "l": 201
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1382,7 +1525,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 155,
+      "l": 155
+     },
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -1395,7 +1544,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Aktenübergabe an ausseramtliche Konkursverwaltungen. Mitteilung"
+     "sektion": "2. Aktenübergabe an ausseramtliche Konkursverwaltungen. Mitteilung",
+     "kl": "A"
     }
    ]
   },
@@ -1426,7 +1576,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1458,7 +1609,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1490,7 +1642,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1522,7 +1675,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1555,7 +1709,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 515,
+      "l": 515
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1607,7 +1767,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 176,
+      "l": 176
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1640,7 +1806,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1672,7 +1839,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1704,7 +1872,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1736,7 +1905,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 291,
+      "l": 291
+     },
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -1749,7 +1924,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "f. Konkurrenz von Pfandansprüchen und Ansprüchen nach den Artikeln 242 und 242a SchKG mit Kompetenzansprüchen"
+     "sektion": "f. Konkurrenz von Pfandansprüchen und Ansprüchen nach den Artikeln 242 und 242a SchKG mit Kompetenzansprüchen",
+     "kl": "A"
     }
    ]
   },
@@ -1798,7 +1974,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 57,
+      "l": 57
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1830,7 +2013,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1862,7 +2046,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 370,
+      "l": 370
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1894,7 +2084,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1926,7 +2117,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 403,
+      "l": 403
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1958,7 +2155,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1991,7 +2189,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 426,
+      "l": 426
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2055,7 +2259,8 @@
      "text": "Im italienischen Text besteht dieser Artikel aus einem einzigen Absatz.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     },
     {
      "nr": "79",
@@ -2067,7 +2272,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 208,
+      "l": 208
+     },
+     "kl": "A"
     },
     {
      "nr": "77",
@@ -2080,7 +2291,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "aa. Innerhalb der Anfechtungsfrist"
+     "sektion": "aa. Innerhalb der Anfechtungsfrist",
+     "kl": "A"
     }
    ]
   },
@@ -2149,7 +2361,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2216,7 +2429,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2243,7 +2457,8 @@
      "text": "Im italienischen Text besteht dieser Artikel aus einem einzigen Absatz.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -2292,7 +2507,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 451,
+      "l": 451
+     },
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -2304,7 +2525,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 246,
+      "l": 246
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2336,7 +2563,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -2350,7 +2578,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 186,
+      "l": 399
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2382,7 +2616,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2415,7 +2650,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 183,
+      "l": 276
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2447,7 +2688,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2479,7 +2721,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2527,7 +2770,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2596,7 +2840,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -2610,7 +2855,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 156,
+      "l": 466
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2642,7 +2893,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2691,7 +2943,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 170,
+      "l": 170
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2739,7 +2997,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2770,7 +3029,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2801,7 +3061,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2866,7 +3127,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2898,7 +3160,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Einfluss von Prozessen nach Art. 260 SchKG"
+     "sektion": "3. Einfluss von Prozessen nach Art. 260 SchKG",
+     "kl": "A"
     }
    ]
   },
@@ -2929,7 +3192,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -2942,7 +3206,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 101,
+      "l": 101
+     },
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -2954,7 +3224,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -2981,7 +3252,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "105",
@@ -2989,7 +3261,8 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "sektion": "…"
+     "sektion": "…",
+     "kl": "U"
     }
    ]
   },
@@ -3011,7 +3284,13 @@
      "text": "Im italienischen Text besteht dieser Absatz aus zwei Absätzen. Jeder Absatz entspricht einem Satz des deutschen Textes.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 399,
+      "l": 399
+     },
+     "kl": "U"
     },
     {
      "nr": "108",
@@ -3023,7 +3302,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3044,7 +3329,13 @@
      "text": "Gegenstandslose UeB.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "U"
     }
    ]
   },
@@ -3071,7 +3362,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 60,
+      "l": 178
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3102,7 +3399,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -3114,7 +3412,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 171,
+      "l": 171
+     },
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -3127,7 +3431,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 114,
+      "l": 130
+     },
+     "kl": "V"
     },
     {
      "nr": "31",
@@ -3139,7 +3449,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 130,
+      "l": 130
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -3152,7 +3468,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Aufzeichnung auf Bild- und Datenträgern"
+     "sektion": "3. Aufzeichnung auf Bild- und Datenträgern",
+     "kl": "A"
     }
    ]
   },
@@ -3183,7 +3500,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3214,7 +3532,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

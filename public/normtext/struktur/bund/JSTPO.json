@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "312.1",
   "titel": "Schweizerische Jugendstrafprozessordnung",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "3",
@@ -58,7 +60,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -93,7 +96,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -106,7 +110,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 102,
+      "l": 307
+     },
+     "kl": "V"
     }
    ]
   },
@@ -144,7 +154,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 116,
+      "l": 134
+     },
+     "kl": "V"
     }
    ]
   },
@@ -182,7 +198,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 64,
+      "l": 206
+     },
+     "kl": "V"
     },
     {
      "nr": "8",
@@ -194,7 +217,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 41,
+      "l": 52
+     },
+     "kl": "V"
     }
    ]
   },
@@ -220,7 +249,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 174,
+      "l": 188
+     },
+     "kl": "V"
     }
    ]
   },
@@ -286,7 +321,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 309,
+      "l": 309
+     },
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -302,7 +343,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -318,7 +360,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 121,
+      "l": 121
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -330,7 +378,14 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 87,
+      "l": 114
+     },
+     "kl": "V"
     }
    ]
   },
@@ -416,7 +471,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 103,
+      "l": 119
+     },
+     "kl": "V"
     }
    ]
   },
@@ -442,7 +504,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 48,
+      "l": 68
+     },
+     "kl": "V"
     }
    ]
   },
@@ -542,7 +611,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 153,
+      "l": 175
+     },
+     "kl": "V"
     }
    ]
   },
@@ -607,7 +682,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 79,
+      "l": 216
+     },
+     "kl": "V"
     }
    ]
   },
@@ -633,7 +714,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 60,
+      "l": 115
+     },
+     "kl": "V"
     },
     {
      "nr": "19",
@@ -649,7 +737,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -661,7 +750,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 71,
+      "l": 72
+     },
+     "kl": "V"
     }
    ]
   },
@@ -687,7 +783,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 329,
+      "l": 330
+     },
+     "kl": "V"
     }
    ]
   },
@@ -725,7 +827,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 105,
+      "l": 127
+     },
+     "kl": "V"
     }
    ]
   },
@@ -756,7 +864,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 79,
+      "l": 140
+     },
+     "kl": "V"
     }
    ]
   },
@@ -806,7 +920,8 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -822,7 +937,13 @@
       }
      ],
      "absatz": "5bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 104,
+      "l": 104
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -834,7 +955,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 68,
+      "l": 69
+     },
+     "kl": "V"
     }
    ]
   },
@@ -943,7 +1070,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 31,
+      "l": 42
+     },
+     "kl": "V"
     }
    ]
   },
@@ -970,7 +1103,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 93,
+      "l": 94
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1044,7 +1183,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 42,
+      "l": 54
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1170,7 +1315,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 40,
+      "l": 51
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1228,7 +1379,8 @@
      "text": "BRB vom 31. März 2010",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

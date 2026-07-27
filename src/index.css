@@ -391,7 +391,63 @@
      im Ausdruck weggelassen (display:none wirkt in @media print gleichermassen). */
   html[data-fussnoten="aus"] .lc-leser button[aria-label^="Fussnote"],
   html[data-fussnoten="aus"] .lc-leser [data-fn-marker],
-  html[data-fussnoten="aus"] .lc-leser [data-fn-apparat] {
+  html[data-fussnoten="aus"] .lc-leser [data-fn-apparat],
+  html[data-fussnoten="aus"] .lc-leser [data-hist-chrono] {
+    display: none;
+  }
+
+  /* ── W2·5i-HIST-ANSICHT: «Änderungshistorie: aus / als Fussnoten / als
+     Chronologie» (§14-Intake David 20.7.2026, gebaut 26.7.2026 nach dem
+     H0-Verdikt `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`).
+
+     Der TRAGENDE Satz (H0-Auflage 1, nicht verhandelbar): ausgeblendet wird
+     ausschliesslich `[data-fn-klasse="A"]` — die build-seitig als reine
+     Änderungshistorie klassifizierten Fussnoten. Echte Verweise ("V"), die
+     Grauzone ("G"), Publikationsnachweise ("Z"), Unklares ("U") UND jede
+     Fussnote OHNE Klasse (alle Kanton-Sidecars tragen kein `kl`) bleiben in
+     JEDER der drei Ansichten sichtbar. Attribut-Selektoren greifen nur bei
+     exakt "A" — eine fehlende Klasse blendet also nie etwas aus (§8/§1).
+
+     R9/§8: `display:none` trifft NUR Marker-Ziffern und Apparat-Zeilen, NIE
+     einen Substanz-Träger — der Normtext selbst ist von keiner dieser Regeln
+     erfasst und bleibt in jeder Ansicht sichtbar, durchsuchbar (Ctrl+F) und im
+     Ausdruck. Gleiche Mechanik und gleiche Begründung wie der bestehende
+     data-fussnoten-Toggle darüber; der `<p id="fn-…">`-Quellblock bleibt im DOM,
+     weshalb das Marker-Popover (liest `innerHTML`) auch in der Chronologie-
+     Ansicht weiterarbeitet.
+
+     Default 'fussnoten' emittiert KEINE Regel ⇒ Grundzustand byte-gleich (R6).
+     Beide Umschaltungen sind klick-getrieben ⇒ der Reflow liegt binnen 500 ms
+     nach der Eingabe (CLS-exkludiert), und weil Apparat UND Chronologie-Liste
+     dauerhaft im DOM liegen, wird beim Umschalten nichts nachgeladen. ── */
+
+  /* «aus»: Änderungsvermerke ganz weg — Marker und Apparat-Zeile. */
+  html[data-histansicht="aus"] .lc-leser [data-fn-klasse="A"] {
+    display: none;
+  }
+
+  /* «als Chronologie»: die A-Zeilen verlassen den nummerierten Apparat und
+     erscheinen stattdessen als datierte Liste. Die INLINE-Marker bleiben
+     absichtlich stehen — sie sind der Bezugspunkt im Wortlaut, und ihr Popover
+     zeigt den Vermerk an Ort und Stelle. */
+  html[data-histansicht="chronologie"] .lc-leser [data-fn-apparat] [data-fn-klasse="A"] {
+    display: none;
+  }
+
+  /* Die Chronologie-Liste liegt immer im DOM und ist NUR in ihrer Ansicht
+     sichtbar (in «aus» ebenso weg wie der Apparat — sonst zeigte «aus» die
+     Historie doppelt gedreht wieder an). */
+  .lc-leser [data-hist-chrono] {
+    display: none;
+  }
+  html[data-histansicht="chronologie"] .lc-leser [data-hist-chrono] {
+    display: block;
+  }
+  /* Trägt der Apparat NUR noch unsichtbare A-Zeilen, bliebe seine Trennlinie
+     als leerer Strich stehen. `:not(:has(…))` prüft, ob überhaupt eine
+     nicht-A-Zeile darin steckt; fehlt sie, verschwindet der Rahmen mit. */
+  html[data-histansicht="chronologie"] .lc-leser [data-fn-apparat]:not(:has(> :not([data-fn-klasse="A"]))),
+  html[data-histansicht="aus"] .lc-leser [data-fn-apparat]:not(:has(> :not([data-fn-klasse="A"]))) {
     display: none;
   }
 

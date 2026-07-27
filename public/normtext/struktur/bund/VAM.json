@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "812.212.21",
   "titel": "Verordnung über die Arzneimittel",
@@ -36,7 +36,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -49,7 +50,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -62,7 +64,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -75,7 +78,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -100,7 +104,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -113,7 +118,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 134,
+      "l": 135
+     },
+     "kl": "V"
     },
     {
      "nr": "7",
@@ -131,7 +142,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 102,
+      "l": 110
+     },
+     "kl": "V"
     }
    ]
   },
@@ -163,7 +180,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 112,
+      "l": 113
+     },
+     "kl": "V"
     }
    ]
   },
@@ -195,7 +219,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 280,
+      "l": 291
+     },
+     "kl": "V"
     }
    ]
   },
@@ -261,7 +291,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 183,
+      "l": 193
+     },
+     "kl": "V"
     }
    ]
   },
@@ -327,7 +363,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 214,
+      "l": 223
+     },
+     "kl": "V"
     },
     {
      "nr": "12",
@@ -339,7 +381,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 223,
+      "l": 223
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -352,7 +400,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 307,
+      "l": 328
+     },
+     "kl": "V"
     }
    ]
   },
@@ -401,7 +455,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 244,
+      "l": 508
+     },
+     "kl": "V"
     }
    ]
   },
@@ -586,7 +646,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Änderungen der Zulassung bei Humanarzneimitteln"
+     "sektion": "3. Abschnitt: Änderungen der Zulassung bei Humanarzneimitteln",
+     "kl": "A"
     }
    ]
   },
@@ -663,7 +724,13 @@
      "text": "Verordnung (EG) Nr. 1234/2008 der Kommission vom 24. November 2008 über die Prüfung von Änderungen der Zulassungen von Human- und Tierarzneimitteln, ABl. L 334 vom 12.12.2008, S. 7; zuletzt geändert durch Delegierte Verordnung (EU) 2021/756, ABl. L 162 vom 10.5.2021, S. 1.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 293,
+      "l": 375
+     },
+     "kl": "V"
     },
     {
      "nr": "17",
@@ -675,7 +742,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 375,
+      "l": 375
+     },
+     "kl": "A"
     }
    ]
   },
@@ -740,7 +813,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -820,7 +894,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -969,7 +1044,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 134,
+      "l": 135
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1087,7 +1168,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 178,
+      "l": 214
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1135,7 +1222,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 462,
+      "l": 462
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -1148,7 +1241,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 100,
+      "l": 387
+     },
+     "kl": "V"
     },
     {
      "nr": "26",
@@ -1161,7 +1260,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 298,
+      "l": 387
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1214,7 +1319,14 @@
      "text": "GLN = Global Location Number",
      "links": [],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 145,
+      "l": 147
+     },
+     "kl": "U"
     },
     {
      "nr": "28",
@@ -1227,7 +1339,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 85,
+      "l": 209
+     },
+     "kl": "V"
     },
     {
      "nr": "29",
@@ -1240,7 +1358,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 167,
+      "l": 209
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1266,7 +1390,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     }
    ]
   },
@@ -1302,7 +1427,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1329,7 +1455,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 149,
+      "l": 176
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1412,7 +1544,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 162,
+      "l": 163
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1441,7 +1579,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 367,
+      "l": 367
+     },
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -1453,7 +1597,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 102,
+      "l": 102
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1490,7 +1640,13 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 92,
+      "l": 93
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1578,7 +1734,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 361,
+      "l": 373
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1620,7 +1782,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 194,
+      "l": 235
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1736,7 +1904,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 189,
+      "l": 189
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1797,7 +1971,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 149,
+      "l": 158
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1826,7 +2006,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1852,7 +2033,13 @@
      "text": "Doc.Ref.EMEA/CHMP/SWP/4447/00 vom 1. Juni 2006. Der Text kann bei der EMA bezogen werden: www.ema.europa.eu .",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 203,
+      "l": 374
+     },
+     "kl": "V"
     },
     {
      "nr": "45",
@@ -1865,7 +2052,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 138,
+      "l": 139
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1896,7 +2089,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -1909,7 +2103,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 88,
+      "l": 170
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2043,7 +2244,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 150,
+      "l": 287
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -2090,7 +2297,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Abschnitt: Änderungen der Zulassung bei Tierarzneimitteln"
+     "sektion": "3a. Abschnitt: Änderungen der Zulassung bei Tierarzneimitteln",
+     "kl": "A"
     }
    ]
   },
@@ -2133,7 +2341,13 @@
      "text": "Verordnung (EU) 2019/6 des Europäischen Parlaments und des Rates vom 11. Dezember 2018 über Tierarzneimittel und zur Aufhebung der Richtlinie 2001/82/EG; Fassung gemäss ABl. L 4 vom 7.1.2019, S. 43.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 285,
+      "l": 352
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2164,7 +2378,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2193,7 +2408,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

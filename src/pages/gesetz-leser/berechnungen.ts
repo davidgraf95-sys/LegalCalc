@@ -185,3 +185,58 @@ export function schaetzeArtikelHoehe(e: NormSnapshot): number {
   }
   return Math.max(120, Math.round(h));
 }
+
+// ─── W2·5i-HIST-ANSICHT: Chronologie der Änderungsvermerke ────────────────────
+//
+// Ansicht «Änderungshistorie: als Chronologie» zeigt die als Änderungsvermerk
+// klassifizierten Fussnoten EINES Artikels nicht als nummerierten Apparat, sondern
+// zeitlich geordnet. Das ist reine Darstellung (§3): keine neue Datenquelle, kein
+// eigener Parser — die Fussnoten sind die schon geladenen Sidecar-Fussnoten, das
+// Datum kommt aus dem BESTEHENDEN Revisions-Extrakt (§5). Hier lebt allein die
+// REIHUNG, und die ist deterministisch und total geordnet (§2):
+//
+//   1. aufsteigend nach ISO-Datum (lexikografischer String-Vergleich — kein
+//      `new Date`, keine Zeitzone),
+//   2. UNDATIERTE immer ans Ende (nie zwischen datierte gemischt),
+//   3. bei gleichem Datum UND unter den Undatierten: nach Fussnoten-Nummer
+//      (numerisch, dann Buchstaben-Suffix «95a»).
+//
+// Punkt 3 ist der Grund, warum die Reihung hier und nicht inline in der Komponente
+// steht: ohne Schlussschlüssel entschiede die Eingabe-Reihenfolge, und die Ordnung
+// wäre nur so stabil wie die Sidecar-Sortierung. Als reine Funktion ist sie direkt
+// prüfbar (src/tests/hist-chronologie.test.ts).
+export interface ChronoFussnote { nr: string; kl?: string; text?: string }
+export interface ChronoEintrag<T extends ChronoFussnote> { fn: T; iso: string | null }
+
+/** Fussnoten-Nummer → Sortierschlüssel [Zahl, Suffix]; unparsbar ⇒ ans Ende. */
+export function fnNrSortKey(nr: string | undefined): [number, string] {
+  const m = /^(\d+)([a-z]*)$/i.exec((nr ?? '').trim());
+  return m ? [parseInt(m[1], 10), m[2].toLowerCase()] : [Number.POSITIVE_INFINITY, nr ?? ''];
+}
+
+/**
+ * Änderungsvermerke (`kl === 'A'`) eines Artikels → chronologisch geordnete Liste.
+ * `datumVon` liefert das ISO-Datum einer Fussnote (injiziert, damit die Reihung
+ * ohne den Revisions-Extrakt prüfbar bleibt und der Extrakt EINE Quelle bleibt).
+ *
+ * Bewusst NUR 'A': V/G/Z/U und Fussnoten ohne Klasse gehören nicht in die
+ * Chronologie — sie bleiben im regulären Apparat und in jeder Ansicht sichtbar
+ * (H0-Auflage 1). Keine Fussnote steht je NUR in der Chronologie.
+ */
+export function baueChronologie<T extends ChronoFussnote>(
+  fussnoten: readonly T[],
+  datumVon: (text: string) => string | null,
+): Array<ChronoEintrag<T>> {
+  return fussnoten
+    .filter((f) => f.kl === 'A')
+    .map((fn) => ({ fn, iso: datumVon(fn.text ?? '') }))
+    .sort((a, b) => {
+      if (a.iso !== b.iso) {
+        if (a.iso == null) return 1;      // undatiert immer ans Ende
+        if (b.iso == null) return -1;
+        return a.iso < b.iso ? -1 : 1;
+      }
+      const ka = fnNrSortKey(a.fn.nr), kb = fnNrSortKey(b.fn.nr);
+      return ka[0] - kb[0] || ka[1].localeCompare(kb[1]);
+    });
+}

@@ -154,6 +154,25 @@ export interface Fussnote {
    *  weil mehrere absatzlose Blöcke alle absatz=null tragen. Marker rendert am
    *  Ende dieses Blocks statt auf der Artikelebene. */
   absatzIndex?: number;
+  /** FN-5/M14: wortgenaue Marker-Position — `b` = Block-Index in `bloecke`,
+   *  optional `it` = Item-Index, `o` = Zeichen-Offset im finalen Text, `l` =
+   *  Textlänge zur Generationszeit (Drift-Riegel: bei Längen-Mismatch verwirft
+   *  der Reader den Offset). Nur vom Generator gesetzt, wenn die Position
+   *  zeichengenau bewiesen ist (fussnoten-offsets.ts); fehlt `pos`, rendert
+   *  der Marker wie bisher am Absatz-/Item-Ende. */
+  pos?: { b: number; it?: number; o: number; l: number };
+  /** W2·5i-HIST-ANSICHT: build-seitig berechnete Fussnoten-KLASSE (H0-Auflage 3 —
+   *  EINMAL im Generator, `scripts/normtext/fussnoten-klassifikation.ts`, nie zur
+   *  Laufzeit). `A` = reine Änderungshistorie (die EINZIGE Klasse, welche die
+   *  Ansicht «Änderungshistorie: aus» dämpfen darf, H0-Auflage 1) · `V` = Verweis/
+   *  Substanz · `G` = Grauzone (Revisionsvermerk MIT Leser-Redirect) · `Z` = reiner
+   *  Publikationsnachweis · `U` = unklar.
+   *
+   *  FEHLT das Feld (alle Kanton-Sidecars — dort sind nur 11 % der Fussnoten
+   *  Historie, der Nutzen des Umschalters liegt auf der Bund-Fläche), gilt die
+   *  Fussnote als unklassifiziert und bleibt in JEDER Ansicht sichtbar. Das ist
+   *  die konservative Richtung (§8): eine fehlende Klasse blendet nie etwas aus. */
+  kl?: 'A' | 'V' | 'G' | 'Z' | 'U';
 }
 export interface ArtikelStruktur {
   /** EID-1 (W2·5d §12): optionale Fedlex-Container-eId je Ebene — reine, bei jeder

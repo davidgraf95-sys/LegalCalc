@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "944.3",
   "titel": "Bundesgesetz über Pauschalreisen",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -80,21 +82,39 @@
      "text": "Da die durchgehende Verwendung von Paarformen die Lesbarkeit des vorliegenden Erlasses erschwert, wird im folgenden die männliche Personenbezeichnung als Ausdruck gewählt, der sich auf Personen beider Geschlechter bezieht.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 51,
+      "l": 177
+     },
+     "kl": "U"
     },
     {
      "nr": "4",
      "text": "Da die durchgehende Verwendung von Paarformen die Lesbarkeit des vorliegenden Erlasses erschwert, wird im folgenden die männliche Personenbezeichnung als Ausdruck gewählt, der sich auf Personen beider Geschlechter bezieht.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 45,
+      "l": 132
+     },
+     "kl": "U"
     },
     {
      "nr": "5",
      "text": "Da die durchgehende Verwendung von Paarformen die Lesbarkeit des vorliegenden Erlasses erschwert, wird im folgenden die männliche Personenbezeichnung als Ausdruck gewählt, der sich auf Personen beider Geschlechter bezieht.",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 42,
+      "l": 60
+     },
+     "kl": "U"
     }
    ]
   },
@@ -232,7 +252,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 304,
+      "l": 382
+     },
+     "kl": "A"
     }
    ]
   },
@@ -317,7 +343,8 @@
      "text": "BRB vom 30. Nov. 1993",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

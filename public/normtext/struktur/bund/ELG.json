@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "831.30",
   "titel": "Bundesgesetz über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -72,7 +74,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 55,
+      "l": 257
+     },
+     "kl": "V"
     }
    ]
   },
@@ -121,7 +129,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 68,
+      "l": 157
+     },
+     "kl": "V"
     }
    ]
   },
@@ -153,7 +167,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 63,
+      "l": 130
+     },
+     "kl": "V"
     },
     {
      "nr": "6",
@@ -169,7 +189,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -193,7 +214,8 @@
       }
      ],
      "absatz": "1",
-     "item": "abis"
+     "item": "abis",
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -206,7 +228,14 @@
       }
      ],
      "absatz": "1",
-     "item": "abis"
+     "item": "abis",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 153,
+      "l": 235
+     },
+     "kl": "V"
     },
     {
      "nr": "9",
@@ -222,7 +251,8 @@
       }
      ],
      "absatz": "1",
-     "item": "ater"
+     "item": "ater",
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -238,7 +268,8 @@
       }
      ],
      "absatz": "1",
-     "item": "aquater"
+     "item": "aquater",
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -254,7 +285,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -270,7 +302,8 @@
       }
      ],
      "absatz": "1",
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -286,7 +319,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -299,7 +333,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 8,
+      "o": 134,
+      "l": 182
+     },
+     "kl": "V"
     },
     {
      "nr": "15",
@@ -315,7 +356,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 77,
+      "l": 77
+     },
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -331,7 +379,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 245,
+      "l": 245
+     },
+     "kl": "A"
     }
    ]
   },
@@ -366,7 +420,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 306,
+      "l": 306
+     },
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -379,7 +439,14 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 2,
+      "it": 0,
+      "o": 174,
+      "l": 222
+     },
+     "kl": "V"
     },
     {
      "nr": "19",
@@ -395,7 +462,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -408,7 +476,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 89,
+      "l": 305
+     },
+     "kl": "V"
     },
     {
      "nr": "21",
@@ -424,7 +499,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -440,7 +516,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -456,7 +533,14 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 231,
+      "l": 231
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -472,7 +556,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 341,
+      "l": 341
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -488,7 +578,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 238,
+      "l": 238
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -504,7 +600,13 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 143,
+      "l": 143
+     },
+     "kl": "A"
     }
    ]
   },
@@ -571,7 +673,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 131,
+      "l": 148
+     },
+     "kl": "V"
     }
    ]
   },
@@ -606,7 +714,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 118,
+      "l": 118
+     },
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -622,7 +737,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 264,
+      "l": 264
+     },
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -638,7 +759,14 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 346,
+      "l": 346
+     },
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -654,7 +782,8 @@
       }
      ],
      "absatz": "5",
-     "item": "cbis"
+     "item": "cbis",
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -667,7 +796,14 @@
       }
      ],
      "absatz": "5",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 5,
+      "it": 7,
+      "o": 84,
+      "l": 120
+     },
+     "kl": "V"
     }
    ]
   },
@@ -702,7 +838,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 157,
+      "l": 157
+     },
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -714,7 +856,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "U"
     },
     {
      "nr": "36",
@@ -730,7 +873,8 @@
       }
      ],
      "absatz": "1",
-     "item": "3"
+     "item": "3",
+     "kl": "A"
     },
     {
      "nr": "37",
@@ -746,7 +890,8 @@
       }
      ],
      "absatz": "1",
-     "item": "4"
+     "item": "4",
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -766,7 +911,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -782,7 +928,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -798,7 +945,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 423,
+      "l": 423
+     },
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -822,7 +975,14 @@
       }
      ],
      "absatz": "1ter",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 181,
+      "l": 181
+     },
+     "kl": "G"
     },
     {
      "nr": "42",
@@ -846,7 +1006,13 @@
       }
      ],
      "absatz": "1quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 146,
+      "l": 146
+     },
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -870,7 +1036,13 @@
       }
      ],
      "absatz": "1quinquies",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 210,
+      "l": 210
+     },
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -895,7 +1067,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 5
+     "absatzIndex": 5,
+     "pos": {
+      "b": 5,
+      "o": 358,
+      "l": 358
+     },
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -912,7 +1090,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 6
+     "absatzIndex": 6,
+     "pos": {
+      "b": 6,
+      "o": 394,
+      "l": 394
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -928,7 +1112,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 161,
+      "l": 161
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -944,7 +1134,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -960,7 +1151,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -976,7 +1168,8 @@
       }
      ],
      "absatz": "3",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     }
    ]
   },
@@ -1015,7 +1208,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -1031,7 +1225,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -1047,7 +1242,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -1063,7 +1259,8 @@
       }
      ],
      "absatz": "1",
-     "item": "dbis"
+     "item": "dbis",
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -1076,7 +1273,14 @@
       }
      ],
      "absatz": "1",
-     "item": "dbis"
+     "item": "dbis",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 75,
+      "l": 140
+     },
+     "kl": "V"
     },
     {
      "nr": "55",
@@ -1092,7 +1296,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -1108,7 +1313,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -1132,7 +1338,14 @@
       }
      ],
      "absatz": "1bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 190,
+      "l": 190
+     },
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -1145,7 +1358,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 189,
+      "l": 346
+     },
+     "kl": "V"
     },
     {
      "nr": "59",
@@ -1161,7 +1380,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 346,
+      "l": 346
+     },
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -1174,7 +1399,14 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 4,
+      "it": 0,
+      "o": 73,
+      "l": 74
+     },
+     "kl": "V"
     },
     {
      "nr": "61",
@@ -1190,7 +1422,8 @@
       }
      ],
      "absatz": "3",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "62",
@@ -1206,7 +1439,8 @@
       }
      ],
      "absatz": "3",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -1219,7 +1453,14 @@
       }
      ],
      "absatz": "3",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 4,
+      "it": 6,
+      "o": 147,
+      "l": 170
+     },
+     "kl": "V"
     },
     {
      "nr": "64",
@@ -1235,7 +1476,8 @@
       }
      ],
      "absatz": "3",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1251,7 +1493,8 @@
       }
      ],
      "absatz": "3",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     }
    ]
   },
@@ -1283,7 +1526,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 92,
+      "l": 118
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1318,7 +1567,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 544,
+      "l": 544
+     },
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -1334,7 +1589,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 187,
+      "l": 187
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1369,7 +1630,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 148,
+      "l": 148
+     },
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -1385,7 +1652,8 @@
       }
      ],
      "absatz": "1",
-     "item": "bbis"
+     "item": "bbis",
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -1398,7 +1666,14 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 41,
+      "l": 42
+     },
+     "kl": "V"
     },
     {
      "nr": "73",
@@ -1414,7 +1689,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 369,
+      "l": 494
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1475,7 +1756,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 120,
+      "l": 121
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1515,7 +1802,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 57,
+      "l": 271
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1545,7 +1838,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1558,7 +1852,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 112,
+      "l": 129
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1588,7 +1888,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 139,
+      "l": 139
+     },
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -1604,7 +1910,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 255,
+      "l": 255
+     },
+     "kl": "A"
     },
     {
      "nr": "81",
@@ -1620,7 +1932,13 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 203,
+      "l": 203
+     },
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -1636,7 +1954,13 @@
       }
      ],
      "absatz": "1quater",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 190,
+      "l": 190
+     },
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -1652,7 +1976,13 @@
       }
      ],
      "absatz": "1quinquies",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 180,
+      "l": 180
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1694,7 +2024,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 275,
+      "l": 275
+     },
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -1707,7 +2043,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 171,
+      "l": 182
+     },
+     "kl": "V"
     },
     {
      "nr": "88",
@@ -1723,7 +2065,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 57,
+      "l": 57
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1753,7 +2101,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 373,
+      "l": 373
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1781,7 +2135,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 95,
+      "l": 119
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1811,7 +2171,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "92",
@@ -1824,7 +2185,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 56,
+      "l": 62
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1852,7 +2219,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1882,7 +2250,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -1895,7 +2264,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 77,
+      "l": 99
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1925,7 +2300,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 60,
+      "l": 147
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1953,7 +2334,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 22,
+      "l": 44
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1980,7 +2367,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 93,
+      "l": 161
+     },
+     "kl": "V"
     },
     {
      "nr": "105",
@@ -1996,7 +2389,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -2009,7 +2403,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 52,
+      "l": 63
+     },
+     "kl": "V"
     },
     {
      "nr": "107",
@@ -2022,7 +2423,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 15,
+      "l": 33
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2050,7 +2457,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -2063,7 +2471,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 573,
+      "l": 763
+     },
+     "kl": "V"
     },
     {
      "nr": "110",
@@ -2076,7 +2490,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 28,
+      "l": 29
+     },
+     "kl": "V"
     },
     {
      "nr": "111",
@@ -2089,7 +2510,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 28,
+      "l": 29
+     },
+     "kl": "V"
     },
     {
      "nr": "112",
@@ -2113,7 +2541,14 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 28,
+      "l": 29
+     },
+     "kl": "V"
     },
     {
      "nr": "113",
@@ -2137,7 +2572,14 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 27,
+      "l": 28
+     },
+     "kl": "V"
     },
     {
      "nr": "114",
@@ -2150,7 +2592,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 624,
+      "l": 711
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2209,7 +2657,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 172,
+      "l": 602
+     },
+     "kl": "Z"
     },
     {
      "nr": "116",
@@ -2222,7 +2676,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 354,
+      "l": 602
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -2305,14 +2765,21 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 34,
+      "l": 132
+     },
+     "kl": "Z"
     },
     {
      "nr": "118",
      "text": "BRB vom 7. Nov. 2007",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2347,7 +2814,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -2383,7 +2851,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Rückerstattung rechtmässig bezogener Leistungen"
+     "sektion": "5. Abschnitt: Rückerstattung rechtmässig bezogener Leistungen",
+     "kl": "G"
     }
    ]
   },
@@ -2442,7 +2911,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -2455,7 +2925,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 134,
+      "l": 177
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2485,7 +2961,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -2499,7 +2976,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 286,
+      "l": 642
+     },
+     "kl": "V"
     },
     {
      "nr": "95",
@@ -2513,7 +2996,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 324,
+      "l": 642
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2551,7 +3040,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "97",
@@ -2565,7 +3055,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 50,
+      "l": 325
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2595,7 +3091,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2630,7 +3127,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

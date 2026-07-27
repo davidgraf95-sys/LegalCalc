@@ -2,6 +2,7 @@
   "_kommentar": "e2e-Shard-Balancing: 8 Gruppen, LPT-gepackt aus CI-GEMESSENEN Spec-Dauern (playwright-report-Artefakte, Lauf 30175300387 vom 25.7.2026, Summe 44.0 min — lokale Dauern skalieren nicht auf den CI-Runner, gemessen 11.8/15.5/21.0 min bei 3 «lokal balancierten» Gruppen). Ändert NUR, welche Datei auf welchem Runner läuft — kein Test/Assertion/Timeout/Umfang (§6.3). Union-Wächter: scripts/e2e-shard-gruppen.mjs --pruefen. Neue Spec → hier in die leichteste Gruppe packen, sonst Wächter rot. Neu packen: Dauern aus den playwright-report-gruppe-*-Artefakten eines grünen Laufs aggregieren, LPT.",
   "gruppen": {
     "1": [
+      "bild-block-items.e2e.ts",
       "leser-gliederung-a33.e2e.ts"
     ],
     "2": [
@@ -15,6 +16,7 @@
     "3": [
       "fremdgesetz-verweis-aig.e2e.ts",
       "gesetze-historie-badge.e2e.ts",
+      "hist-ansicht-w25i.e2e.ts",
       "gesetze-randtitel-6b.e2e.ts",
       "gesetze-rechtsgebiet-g6.e2e.ts",
       "leser-breite-a37.e2e.ts",
@@ -34,6 +36,7 @@
     "5": [
       "a11y.e2e.ts",
       "ag-gruendung-wizard.e2e.ts",
+      "fn5-wortposition.e2e.ts",
       "fussnote-absatz-altform.e2e.ts",
       "gesetze-ia-v2-walks.e2e.ts",
       "gesetze-ia7-sidebar-badges.e2e.ts",

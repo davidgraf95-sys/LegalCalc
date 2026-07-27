@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.172.030.4",
   "titel": "Übereinkommen zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
@@ -29,7 +29,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },

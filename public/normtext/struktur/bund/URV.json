@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "231.11",
   "titel": "Verordnung über das Urheberrecht und verwandte Schutzrechte",
@@ -36,7 +36,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -49,7 +50,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -62,7 +64,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -74,7 +77,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -123,7 +127,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -152,7 +157,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 176,
+      "l": 177
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -200,7 +211,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 272,
+      "l": 272
+     },
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -216,7 +233,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 102,
+      "l": 102
+     },
+     "kl": "A"
     }
    ]
   },
@@ -247,7 +270,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -295,7 +319,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -324,7 +349,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -389,7 +415,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -488,7 +515,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 138
+     },
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -500,7 +533,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 240,
+      "l": 240
+     },
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -512,7 +551,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 106,
+      "l": 106
+     },
+     "kl": "A"
     }
    ]
   },
@@ -549,7 +594,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "sektion": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "kl": "A"
     }
    ]
   },
@@ -600,7 +646,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 94,
+      "l": 157
+     },
+     "kl": "V"
     },
     {
      "nr": "25",
@@ -613,7 +665,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 128,
+      "l": 143
+     },
+     "kl": "V"
     }
    ]
   },
@@ -647,7 +705,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 46,
+      "l": 109
+     },
+     "kl": "Z"
     },
     {
      "nr": "29",
@@ -659,7 +724,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 41,
+      "l": 113
+     },
+     "kl": "Z"
     },
     {
      "nr": "30",
@@ -671,7 +743,14 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 30,
+      "l": 110
+     },
+     "kl": "Z"
     },
     {
      "nr": "27",
@@ -679,7 +758,8 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "sektion": "5. Kapitel: Schlussbestimmungen"
+     "sektion": "5. Kapitel: Schlussbestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -723,7 +803,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 209,
+      "l": 266
+     },
+     "kl": "V"
     },
     {
      "nr": "16",
@@ -736,7 +822,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Gebühren"
+     "sektion": "3. Abschnitt: Gebühren",
+     "kl": "A"
     }
    ]
   },
@@ -803,7 +890,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 139
+     },
+     "kl": "V"
     }
    ]
   },
@@ -829,7 +922,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -842,7 +936,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1a. Kapitel: Beobachtungsstelle für technische Massnahmen"
+     "sektion": "1a. Kapitel: Beobachtungsstelle für technische Massnahmen",
+     "kl": "A"
     }
    ]
   },
@@ -868,7 +963,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 51,
+      "l": 51
+     },
+     "kl": "A"
     }
    ]
   },
@@ -908,7 +1009,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1004,7 +1106,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

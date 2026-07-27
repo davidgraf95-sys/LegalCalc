@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "312.5",
   "titel": "Bundesgesetz über die Hilfe an Opfer von Straftaten",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -89,7 +91,14 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -152,21 +161,39 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 311,
+      "l": 417
+     },
+     "kl": "V"
     },
     {
      "nr": "5",
      "text": "Siehe Art. 49 (Koordination mit dem ELG)",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 417,
+      "l": 417
+     },
+     "kl": "V"
     },
     {
      "nr": "6",
      "text": "Siehe Art. 49 (Koordination mit dem ELG)",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 164,
+      "l": 164
+     },
+     "kl": "V"
     }
    ]
   },
@@ -208,7 +235,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -274,7 +302,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 258,
+      "l": 259
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -290,7 +324,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 259,
+      "l": 259
+     },
+     "kl": "U"
     },
     {
      "nr": "11",
@@ -306,7 +346,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 293,
+      "l": 293
+     },
+     "kl": "A"
     }
    ]
   },
@@ -341,7 +387,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 139,
+      "l": 139
+     },
+     "kl": "A"
     }
    ]
   },
@@ -418,7 +470,8 @@
      "text": "Siehe Art. 49 (Koordination mit dem ELG)",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     }
    ]
   },
@@ -480,7 +533,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 131,
+      "l": 184
+     },
+     "kl": "V"
     }
    ]
   },
@@ -506,7 +565,14 @@
      "text": "Siehe Art. 49 (Koordination mit dem ELG)",
      "links": [],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 222,
+      "l": 222
+     },
+     "kl": "V"
     },
     {
      "nr": "16",
@@ -518,7 +584,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     }
    ]
   },
@@ -567,7 +639,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 167,
+      "l": 194
+     },
+     "kl": "V"
     }
    ]
   },
@@ -598,7 +676,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 30,
+      "l": 30
+     },
+     "kl": "A"
     }
    ]
   },
@@ -647,7 +732,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 61,
+      "l": 129
+     },
+     "kl": "V"
     },
     {
      "nr": "20",
@@ -660,7 +752,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 128,
+      "l": 129
+     },
+     "kl": "V"
     }
    ]
   },
@@ -801,7 +900,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 246,
+      "l": 339
+     },
+     "kl": "V"
     }
    ]
   },
@@ -840,7 +945,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 40,
+      "l": 57
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -891,14 +1002,16 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "25",
      "text": "Das ELG trat am 1. Jan. 2008 in Kraft.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -919,7 +1032,8 @@
      "text": "BRB vom 27. Febr. 2008",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -947,7 +1061,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -977,7 +1092,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

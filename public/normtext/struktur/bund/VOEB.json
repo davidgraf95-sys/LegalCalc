@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "172.056.11",
   "titel": "Verordnung über das öffentliche Beschaffungswesen",
@@ -32,7 +32,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -54,7 +55,13 @@
      "text": "www.simap.ch",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 110,
+      "l": 126
+     },
+     "kl": "U"
     }
    ]
   },
@@ -284,7 +291,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 94,
+      "l": 179
+     },
+     "kl": "V"
     },
     {
      "nr": "4",
@@ -296,7 +310,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 145,
+      "l": 204
+     },
+     "kl": "V"
     }
    ]
   },
@@ -370,7 +391,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 481,
+      "l": 500
+     },
+     "kl": "V"
     },
     {
      "nr": "6",
@@ -382,7 +409,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 500,
+      "l": 500
+     },
+     "kl": "A"
     }
    ]
   },
@@ -444,7 +477,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 102,
+      "l": 174
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -506,7 +545,14 @@
       }
      ],
      "absatz": "1",
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 3,
+      "it": 0,
+      "o": 32,
+      "l": 72
+     },
+     "kl": "Z"
     },
     {
      "nr": "9",
@@ -526,7 +572,14 @@
       }
      ],
      "absatz": "1",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 37,
+      "l": 106
+     },
+     "kl": "Z"
     },
     {
      "nr": "10",
@@ -538,7 +591,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },

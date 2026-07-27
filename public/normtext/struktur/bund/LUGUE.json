@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.275.12",
   "titel": "Übereinkommen über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen",
@@ -54,7 +54,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -66,7 +67,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -407,7 +409,14 @@
       }
      ],
      "absatz": null,
-     "item": "4"
+     "item": "4",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 632,
+      "l": 1084
+     },
+     "kl": "V"
     }
    ]
   },
@@ -483,7 +492,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 94,
+      "l": 341
+     },
+     "kl": "V"
     }
    ]
   },

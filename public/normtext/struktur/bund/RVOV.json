@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "172.010.1",
   "titel": "Regierungs- und Verwaltungsorganisationsverordnung",
@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -48,7 +49,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -60,7 +62,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -87,7 +90,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 237,
+      "l": 237
+     },
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -99,7 +108,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 347,
+      "l": 347
+     },
+     "kl": "A"
     }
    ]
   },
@@ -149,7 +164,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 250,
+      "l": 250
+     },
+     "kl": "A"
     }
    ]
   },
@@ -175,7 +196,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 104,
+      "l": 104
+     },
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -187,7 +214,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 141,
+      "l": 141
+     },
+     "kl": "A"
     }
    ]
   },
@@ -219,7 +252,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 353,
+      "l": 418
+     },
+     "kl": "V"
     },
     {
      "nr": "16",
@@ -232,7 +271,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Gliederung der Bundesverwaltung"
+     "sektion": "1. Abschnitt: Gliederung der Bundesverwaltung",
+     "kl": "A"
     }
    ]
   },
@@ -263,7 +303,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -379,7 +420,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 123,
+      "l": 123
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -391,7 +438,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 158,
+      "l": 158
+     },
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -403,7 +456,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 135,
+      "l": 135
+     },
+     "kl": "A"
     }
    ]
   },
@@ -434,7 +493,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 80,
+      "l": 80
+     },
+     "kl": "A"
     }
    ]
   },
@@ -538,7 +603,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 272,
+      "l": 326
+     },
+     "kl": "Z"
     },
     {
      "nr": "70",
@@ -595,7 +667,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 325,
+      "l": 326
+     },
+     "kl": "Z"
     },
     {
      "nr": "71",
@@ -607,7 +686,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 113,
+      "l": 200
+     },
+     "kl": "A"
     }
    ]
   },
@@ -787,7 +872,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "Z"
     }
    ]
   },
@@ -819,7 +905,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 280,
+      "l": 287
+     },
+     "kl": "G"
     }
    ]
   },
@@ -851,7 +943,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 101,
+      "l": 130
+     },
+     "kl": "G"
     }
    ]
   },
@@ -899,7 +997,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -912,7 +1011,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 112,
+      "l": 197
+     },
+     "kl": "V"
     }
    ]
   },
@@ -943,7 +1048,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1008,7 +1114,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1039,7 +1146,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -1052,7 +1160,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 174,
+      "l": 175
+     },
+     "kl": "V"
     },
     {
      "nr": "91",
@@ -1064,7 +1178,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 175,
+      "l": 175
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1095,7 +1215,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -1126,7 +1247,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -1157,7 +1279,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -1182,7 +1305,14 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 86,
+      "l": 134
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1212,7 +1342,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 134,
+      "l": 187
+     },
+     "kl": "V"
     },
     {
      "nr": "106",
@@ -1225,7 +1361,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 74,
+      "l": 244
+     },
+     "kl": "V"
     },
     {
      "nr": "107",
@@ -1237,7 +1379,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 244,
+      "l": 244
+     },
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -1249,7 +1397,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 95,
+      "l": 95
+     },
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -1262,7 +1416,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Bewilligungen zur Vornahme von Handlungen für einen fremden Staat und für internationale Gerichte"
+     "sektion": "2. Abschnitt: Bewilligungen zur Vornahme von Handlungen für einen fremden Staat und für internationale Gerichte",
+     "kl": "A"
     }
    ]
   },
@@ -1291,7 +1446,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1320,7 +1476,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1350,7 +1507,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 40,
+      "l": 235
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1399,7 +1562,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 111,
+      "l": 121
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1430,7 +1599,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1458,7 +1628,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1492,7 +1663,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Abschnitt: Ausnahmen von der Führung mit Leistungsvereinbarung"
+     "sektion": "3a. Abschnitt: Ausnahmen von der Führung mit Leistungsvereinbarung",
+     "kl": "A"
     }
    ]
   },
@@ -1537,7 +1709,14 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 51,
+      "l": 178
+     },
+     "kl": "V"
     },
     {
      "nr": "80",
@@ -1550,7 +1729,14 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 102,
+      "l": 178
+     },
+     "kl": "V"
     },
     {
      "nr": "81",
@@ -1563,7 +1749,14 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 165,
+      "l": 178
+     },
+     "kl": "V"
     },
     {
      "nr": "78",
@@ -1576,7 +1769,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3b. Abschnitt: Ausnahmen vom Erfordernis der Doppelunterschrift"
+     "sektion": "3b. Abschnitt: Ausnahmen vom Erfordernis der Doppelunterschrift",
+     "kl": "A"
     }
    ]
   },
@@ -1607,7 +1801,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1638,7 +1833,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1669,7 +1865,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1700,7 +1897,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1732,7 +1930,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 164,
+      "l": 217
+     },
+     "kl": "V"
     },
     {
      "nr": "92",
@@ -1745,7 +1949,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6. Abschnitt: Administrativuntersuchung"
+     "sektion": "6. Abschnitt: Administrativuntersuchung",
+     "kl": "A"
     }
    ]
   },
@@ -1811,7 +2016,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 91,
+      "l": 147
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1877,7 +2088,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 108,
+      "l": 187
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1925,7 +2142,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "97",
@@ -1939,7 +2157,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 215,
+      "l": 235
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1983,7 +2207,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Kapitel: Genehmigung kantonaler Erlasse"
+     "sektion": "3a. Kapitel: Genehmigung kantonaler Erlasse",
+     "kl": "A"
     }
    ]
   },
@@ -2046,7 +2271,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3b. Kapitel: Verträge der Kantone unter sich oder mit dem Ausland"
+     "sektion": "3b. Kapitel: Verträge der Kantone unter sich oder mit dem Ausland",
+     "kl": "A"
     }
    ]
   },
@@ -2131,7 +2357,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 173,
+      "l": 395
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -2144,7 +2376,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1a. Kapitel: Informationsgesuche von Ratsmitgliedern und parlamentarischen Kommissionen"
+     "sektion": "1a. Kapitel: Informationsgesuche von Ratsmitgliedern und parlamentarischen Kommissionen",
+     "kl": "A"
     }
    ]
   },
@@ -2169,7 +2402,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 140,
+      "l": 171
+     },
+     "kl": "V"
     },
     {
      "nr": "12",
@@ -2182,7 +2421,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1b. Kapitel: Konsultation der für die Aussenpolitik zuständigen parlamentarischen Kommissionen"
+     "sektion": "1b. Kapitel: Konsultation der für die Aussenpolitik zuständigen parlamentarischen Kommissionen",
+     "kl": "A"
     }
    ]
   },
@@ -2207,7 +2447,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 85,
+      "l": 151
+     },
+     "kl": "V"
     },
     {
      "nr": "14",
@@ -2220,7 +2467,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1c. Kapitel: Berichterstattung über die vertraulichen oder geheimen Erlasse, völkerrechtlichen Verträge und Beschlüsse des internationalen Rechts"
+     "sektion": "1c. Kapitel: Berichterstattung über die vertraulichen oder geheimen Erlasse, völkerrechtlichen Verträge und Beschlüsse des internationalen Rechts",
+     "kl": "A"
     }
    ]
   },
@@ -2286,7 +2534,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1a. Abschnitt: Ausserparlamentarische Kommissionen"
+     "sektion": "1a. Abschnitt: Ausserparlamentarische Kommissionen",
+     "kl": "A"
     }
    ]
   },
@@ -2317,7 +2566,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 46,
+      "l": 46
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2348,7 +2603,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2379,7 +2635,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2427,7 +2684,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -2439,7 +2697,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -2451,7 +2710,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -2463,7 +2723,8 @@
       }
      ],
      "absatz": "2",
-     "item": "gbis"
+     "item": "gbis",
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -2475,7 +2736,8 @@
       }
      ],
      "absatz": "2",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -2487,7 +2749,8 @@
       }
      ],
      "absatz": "2",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -2499,7 +2762,8 @@
       }
      ],
      "absatz": "2",
-     "item": "l"
+     "item": "l",
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -2511,7 +2775,8 @@
       }
      ],
      "absatz": "2",
-     "item": "m"
+     "item": "m",
+     "kl": "A"
     }
    ]
   },
@@ -2542,7 +2807,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2573,7 +2839,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2599,7 +2866,8 @@
      "text": "Siehe auch Abs. 2 der UeB der Änd. vom 26. Nov. 2008 am Schluss dieses Textes.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "34",
@@ -2612,7 +2880,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 50,
+      "l": 70
+     },
+     "kl": "V"
     },
     {
      "nr": "35",
@@ -2624,7 +2898,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 185,
+      "l": 185
+     },
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -2636,7 +2916,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 296,
+      "l": 296
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2667,7 +2953,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2698,7 +2985,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 200,
+      "l": 200
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2763,7 +3056,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2794,7 +3088,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2825,7 +3120,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -2837,7 +3133,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 236,
+      "l": 236
+     },
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -2850,7 +3152,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 374,
+      "l": 429
+     },
+     "kl": "V"
     },
     {
      "nr": "46",
@@ -2862,7 +3170,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 429,
+      "l": 429
+     },
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -2875,7 +3189,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1b. Abschnitt: Leitungsorgane von Organisationen des Bundes sowie Bundesvertretungen in Organisationen des öffentlichen oder privaten Rechts"
+     "sektion": "1b. Abschnitt: Leitungsorgane von Organisationen des Bundes sowie Bundesvertretungen in Organisationen des öffentlichen oder privaten Rechts",
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -2888,7 +3203,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1b. Abschnitt: Leitungsorgane von Organisationen des Bundes sowie Bundesvertretungen in Organisationen des öffentlichen oder privaten Rechts"
+     "sektion": "1b. Abschnitt: Leitungsorgane von Organisationen des Bundes sowie Bundesvertretungen in Organisationen des öffentlichen oder privaten Rechts",
+     "kl": "A"
     }
    ]
   },
@@ -2919,7 +3235,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2948,7 +3265,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 329,
+      "l": 329
+     },
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -2960,7 +3283,8 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -2972,7 +3296,8 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -2984,7 +3309,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -2997,7 +3328,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1c. Abschnitt: Verzeichnis der Mitglieder von ausserparlamentarischen Kommissionen, Leitungsorganen und Bundesvertretungen"
+     "sektion": "1c. Abschnitt: Verzeichnis der Mitglieder von ausserparlamentarischen Kommissionen, Leitungsorganen und Bundesvertretungen",
+     "kl": "A"
     }
    ]
   },
@@ -3028,7 +3360,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -3041,7 +3374,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1d. Abschnitt: Entschädigung der Mitglieder ausserparlamentarischer Kommissionen"
+     "sektion": "1d. Abschnitt: Entschädigung der Mitglieder ausserparlamentarischer Kommissionen",
+     "kl": "A"
     }
    ]
   },
@@ -3089,7 +3423,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 123,
+      "l": 123
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3120,7 +3460,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 150,
+      "l": 150
+     },
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -3136,7 +3482,14 @@
       }
      ],
      "absatz": "3bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 261,
+      "l": 261
+     },
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -3152,7 +3505,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 646,
+      "l": 646
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3183,7 +3542,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 115,
+      "l": 115
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3214,7 +3579,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 56,
+      "l": 56
+     },
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -3226,7 +3597,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 276,
+      "l": 276
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3257,7 +3634,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 230,
+      "l": 230
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3320,7 +3703,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

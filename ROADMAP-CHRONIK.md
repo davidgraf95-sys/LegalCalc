@@ -963,3 +963,117 @@ Aus `ROADMAP.md` Schritt 12 (Kopfzeile, `@meta`, ABGESCHLOSSEN-Einzeiler und die
   denselben Fix (LU/FR/VS/SZ×4/VD×3, davon SZ-280.411 auch MediaBox-versetzt=Band-Klasse) —
   Nachzug via `normen-monitor`-Drift (`check:pdf-netz` wird rot) bzw. gezielte Regeneration,
   Detail `FAHRPLAN-TARIF-TABELLEN-STUFE2.md` §SG-2935-Reparatur.
+
+## W2·5d / FN-5 — Bau-Auftrags-Wortlaut des erledigten Postens *(erledigt 26.7.2026; Wortlaut wörtlich verschoben 26.7.2026)*
+
+- [ ] **FN-5/M14** wortgenaue Fussnoten-Marker (XL). V2 §2 F1. **BAU-AUFTRAG STEHT
+  (David 25.7.2026, wörtlich: «vermerke 3 im bauplan, dass nächste session es am
+  richtigen ort macht»)** — das frühere separate David-Go ist erteilt, die
+  Sequenz-Vorbedingungen (QS-PERF, U-POSITION) sind erfüllt. **Nächste Bau-Session
+  nimmt FN-5 als EIGENE Einheit** (nicht nebenbei): Extraktor-Offset/Platzhalter im
+  Haupt-Snapshot = Risikopfad `scripts/normtext` mit grossem deklariertem §6.3-
+  Snapshot-Diff ⇒ volle adversariale Gegenprüfung (Skill »gegenpruefung«), Differ-
+  Beweis (nur Marker-Positions-Felder, kein Textverlust), Wortlaut-Stichproben je
+  Defektklasse gegen den Fedlex-Cache, Reader-Render (FnRef am Wort-Offset) + CLS.
+  Bis dahin bleibt der Marker am Absatz-/Item-Ende (ausgewiesene Rest-Ungenauigkeit).
+
+*(Umsetzungs-Anm. 26.7.2026: gebaut wurde die SIDECAR-Variante der M14-Spec —
+Haupt-Snapshots byte-unverändert statt des hier angenommenen grossen
+Snapshot-Diffs; §7-Abweichung im ROADMAP-Einzeiler und im PR offengelegt.)*
+
+## QS-CURRENCY — Gesetze-Currency & Coverage: Paket 1 *(done; Wortlaut wörtlich verschoben 26.7.2026)*
+
+**Stand 5.7.2026:
+P1-a + P1-b gebaut (dieser PR) — Paket 1 damit komplett (P1-c/d schon in main, PR #142).**
+**P1-b (Monitoring dicht):** Regex-Fix `fedlex-pins.ts` `[a-z_]+`→`[a-z0-9_]+` (11 parser-blinde
+Ziffern-Pins jetzt überwacht, 207→218) + Parser-Selbsttest + Coverage-Assertion (kein gehosteter
+Bund-Volltext ohne Pin, rot bei Verstoss) + PDF-Embed-Pins (EMRK/NYÜ) ins `check:fedlex-versionen`.
+**P1-a (Datenlauf):** 18 überholte Snapshots + 2 PDF-Embeds auf die geltende Fassung gehoben
+(html-N SPARQL-kanonisch via isExemplifiedBy; klv/vrv=8, ssv=14; Artikel-Diff +85, 9 eId-Renames
+1:1, 0 Verlust); `check:fedlex-versionen` **Exit 0 (0 stale)**. Nebenbei zwei Mechanik-Bugs gefixt
+(Golden-`--erlass`-Merge behielt Phantom-Keys; check:pdf-netz notation-Join-Partial-Result).
+Gegenprüfung bestanden. Trailer `Roadmap: QS-CURRENCY`. **Status: `[✓]` (Paket 1 abgeschlossen).**
+**Etikett-Korrektur 20.7.2026:** Der Schritt stand trotz dieses `[✓]` noch auf `wip` ⇒ jetzt **`done`**.
+Geprüft, dass der Schritt-Umfang wirklich nur **Paket 1** ist: `FAHRPLAN-FEDLEX-PORTFOLIO.md` ordnet die
+Pakete 2/5/3/4 fremden IDs zu (`W2·6`, `W2·6-REV`, `W3·11`, `W3·13`), `W2·14-SIGNAL` hängt nur lose daran —
+es bleibt also kein Rest unter diesem Etikett liegen. Die laufende **Korpus-Pflege** (`check:fedlex-versionen`,
+Wiedervorlage-Läufe, z. B. `5b676c3b`) läuft als Automatik weiter und ist **kein** offener Bau-Schritt;
+die Gesundheit dieser Automatik wird neu von **`QS-AUTOMATIK`** überwacht (dort ist `fedlex-frische.yml` rot).
+
+## R-RICHTER — Richter-/Spruchkörper-Filter, Block A (Daten/Risiko) *(offener Schritt; Block-A-Prosa wörtlich verschoben 26.7.2026)*
+
+**Block A (Daten/Risiko, erledigt):** Schnitt `scripts/rechtsprechung/bs-besetzung.ts`
+(BS-Deckblatt + Signatur, Re-Parse der 3765 aus dem Roh-Golden **ohne Re-Crawl**), reiner
+Parser/Kanon `src/lib/rechtsprechung/besetzung.ts` (deterministisch, §2), Projektion
+`BrowseEntscheid.richter[{s,r}]` + neues `public/rechtsprechung/richter.json`
+(Slug → Anzeigename + Trefferzahl), neues Tor **`check:besetzung`** in der Gate-Kette
+(Leak/Konsistenz/Determinismus hart, Abdeckung mit Schwelle, Kollisions-Report).
+Abdeckung BS 98.6 % · Bund 96.1 %, 511 Slugs (208 Richter:innen, 303 Gerichtsschreiber:innen),
+**Anonymisierungs-Leak-Scan korpusweit 0**. `abschnitte`/`sha` byte-unverändert (§6).
+
+
+## W2·5i-HIST-ANSICHT — Fassungshistorie an-/abwählbar: H0-Verdikt + H1-Bau + Gegenprüfungs-Erzählung *(erledigt 26.7.2026, PR #375 Squash `de8f294a`; Wortlaut wörtlich verschoben 26.7.2026)*
+
+  *(§14-Intake 20.7.2026, David — Queue-Platz 4 · Darstellung + Datenklassifikation, kein Rechtsinhalt)*.
+  **Der Befund, der den Schritt trägt (gemessen, nicht geschätzt):** im OR sind **778 von 933 Fussnoten
+  Änderungsvermerke** und nur **77 echte Verweise**. Die Fussnoten-Spalte ist damit zu ~83 % Fassungs-
+  historie, die als «Fussnote» getarnt den Lesefluss trägt — wer Fussnoten abschaltet, verliert die
+  echten Verweise mit; wer sie anlässt, liest überwiegend Revisionsprosa.
+  **Bau-Vorschlag:** dreiwertige Auswahl **«Änderungshistorie: aus / als Fussnoten / als Chronologie»**
+  im bestehenden **«Ansicht ▾»-Menü** (`src/pages/gesetz-leser/LeserAnsichtMenu.tsx` hat Persistenz **und** Pre-Paint-Mechanik
+  schon — dort einklinken, kein neues Menü), **Verweis-Fussnoten unabhängig davon** schaltbar. Löst
+  nebenbei das bekannte Leerraum-Residuum.
+  **ZWINGENDE VORSTUFE H0 — Trennbarkeit MESSEN, bevor irgendetwas gebaut wird (§8):** die 778/77-Zahl
+  belegt, *dass* es zwei Klassen gibt, **nicht**, dass sie maschinell **sauber trennbar** sind. Vor dem Bau
+  ist korpusweit (nicht nur am OR — Leitplanke «nie aus einem Beispiel aufs Ganze») zu erheben, mit welcher
+  Präzision/Recall die Klassifikation Änderungsvermerk ↔ Verweis gelingt und **wie die Grauzone aussieht**
+  (Fussnoten, die beides tun). Ergebnis ist ein Verdikt mit Zahlen; fällt es schlecht aus, wird der
+  Umschalter **nicht** gebaut (eine Ansicht, die 5 % der Fussnoten falsch einordnet, verliert Normtext-
+  Information und verstösst gegen §15-Funktions-Treue). **Erst H0, dann H1 (UI).**
+  **Fassungs-Fundament (§14-Intake 20.7., David — gilt über diesen Schritt hinaus):** Dieser Schritt ist die
+  erste aktive Fläche, an der es greift — darum hier verankert statt im geparkten `W2·5g-ZEIT`:
+  **(i)** Fassungs-Schlüssel (`fassungsToken`/`stand`/`sha`) **durchgängig** mitführen, auch wo heute nur die
+  geltende Fassung gezeigt wird · **(ii)** Anker **fassungsstabil** halten (`#art-` darf nicht kippen, wenn
+  später eine zweite Fassung danebentritt) · **(iii)** §8 «nicht geltendes Recht» **unmissverständlich**
+  auszeichnen. Das ist **kein eigener Bau-Schritt**, sondern eine Auflage an **jede** Normtext-Arbeit;
+  Begründung und Detail: `FAHRPLAN-GESETZESDARSTELLUNG-V2.md` §7.
+  **DoD:** H0-Verdikt mit Korpus-Zahlen **vor** H1 · `check:normtext`/`check:historie` · golden byte-gleich
+  (§6/§15 — kein Fussnoten-Verlust in KEINER der drei Ansichten) · axe · `check:perf-budget`.
+  Trailer `Roadmap: W2·5i-HIST-ANSICHT`.
+  **H0 ✅ 25.7.2026 (Fable 5): VERDIKT BESTANDEN** — 37'849 Fussnoten korpusweit klassifiziert,
+  Substanz→ausgeblendet empirisch 0.008–0.04 % (≪ 5 %-Schwelle; Stichprobe n=300 gelabelt +
+  Vollscan aller 25'367 AENDERUNG); Kanton nur 11 % Historie (Nutzen = Bund-Fläche). H1 darf
+  gebaut werden, Auflagen 1–5 in `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`
+  (nur AENDERUNG ausblendbar · Klassifikation build-seitig ⇒ Risiko-Pfad/Gegenprüfung ·
+  ZITAT-Behandlung = David-Entscheid). Messwerkzeug `scripts/analyse/hist-h0.ts`.
+  **H1 ✅ GEBAUT 26.7.2026 (Branch `feat/w25i-hist-ansicht`, Tore grün — Merge steht aus).**
+  Klassifikator in die Generator-Schicht gehoben (`scripts/normtext/fussnoten-klassifikation.ts`
+  = SSoT, `hist-h0.ts` importiert sie); Auflage 2 eingebaut (13 Fussnoten verlassen AENDERUNG,
+  **alle kantonal** → korpusweit 25'354; Bund unverändert 24'693). NUR Bund regeneriert:
+  227 Sidecars, 31'786 neue `kl`-Felder (A 24'693 · V 5'759 · G 292 · Z 632 · U 410) —
+  **Additivität bewiesen** (`check-sidecar-differ.ts`: 0 unerlaubte Abweichungen, `pos{b,it,o,l}`
+  aus FN-5 byte-identisch). UI dreiwertig im bestehenden «Ansicht ▾»-Menü (`data-histansicht`
+  am `<html>`, Pre-Paint, Default = heutige Darstellung ⇒ R6-No-op); **nur `[data-fn-klasse="A"]`
+  ist dämpfbar** (Auflage 1), Fussnoten OHNE Klasse (ganzer Kanton) bleiben immer sichtbar.
+  Tore: `npm run gate` grün (golden byte-gleich) · `check:normtext`/`check:historie`/
+  `check:struktur-konsistenz` · `check:perf-budget` · 41 neue Unit-Tests + 8 e2e (inkl.
+  axe-Scan des offenen Panels und §6.7-Sabotage-Proben, je einmal rot gezeigt).
+  Nebenbefund gefixt: latenter WCAG-Kontrast-Verstoss `ink-400` am OptSwitch-AUS-Zustand
+  (serious, seit A4 latent — erst der Scan des GEÖFFNETEN Panels deckte ihn auf).
+  **Gegenprüfung ✅ 26.7.2026 (Auflage 3): VERDIKT BESTANDEN, 6 Befunde — alle umgesetzt.**
+  Sachlich tragend waren zwei: **B1** — 62 Bund-Fussnoten tragen ein Geltungs-ENDdatum
+  (27 davon ≥ 2026, laufende Befristungen: `ASYLG 95a` fn300 «gilt bis 31. Dez. 2027»,
+  `KVG 37` fn116/117, `VTS 95` fn438) und waren als `A` ausblendbar → Regel «Befristung»
+  → `G`; **B3** — `AVIV 51a` fn168 «Laut Ziff. II kann die Karenzfrist …» = operative
+  Fristenlauf-Regel → `G`. **§2-Entscheid dabei:** auch ABGELAUFENE Befristungen werden
+  `G`; eine Unterscheidung nach «heute» wäre `Date.now()` in der Klassifikation und
+  machte das Sidecar unreproduzierbar (eigener Unit-Test sichert die Gleichbehandlung).
+  Wirkung, gemessen: **62× A→G** (einzeln im Differ ausgewiesen), Bund A 24'693 → **24'631**,
+  G 292 → **354**. B4 Fussnoten-Nr in der Chronologie-Zeile · B5 e2e deckt jetzt auch je
+  einen `G`- und `U`-Fall (`ELG` Art. 10) · B6 `check-sidecar-differ` ehrlich als
+  Einmalbeweis-Skript benannt und als `npm run normtext:sidecar-differ` verankert.
+  **Offen vor Merge:** nur noch die **fachliche Abnahme David** inkl. **ZITAT-Entscheid**
+  (Auflage 5: heute sichtbar = Empfehlung, nicht entschieden).
+
+*(Nachtrag 26.7.2026: «Merge steht aus» ist überholt — PR #375 wurde nach 4 Gegenprüfungs-Runden
+(R1/Delta/Delta-2 inkl. #376-Konfliktauflösung als reine Verschiebung) gemergt und deployt.)*

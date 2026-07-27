@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "818.101",
   "titel": "Bundesgesetz über die Bekämpfung übertragbarer Krankheiten des Menschen",
@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -284,7 +286,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 225,
+      "l": 319
+     },
+     "kl": "V"
     }
    ]
   },
@@ -351,7 +359,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 66,
+      "l": 66
+     },
+     "kl": "A"
     }
    ]
   },
@@ -434,7 +448,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 180,
+      "l": 242
+     },
+     "kl": "V"
     }
    ]
   },
@@ -554,7 +574,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -788,7 +809,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 199,
+      "l": 221
+     },
+     "kl": "V"
     }
    ]
   },
@@ -877,7 +904,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 233,
+      "l": 253
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1149,7 +1182,13 @@
       }
      ],
      "absatz": "9",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 206,
+      "l": 302
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -1165,7 +1204,13 @@
       }
      ],
      "absatz": "9",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 213,
+      "l": 302
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1214,7 +1259,14 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 158,
+      "l": 178
+     },
+     "kl": "V"
     },
     {
      "nr": "13",
@@ -1230,7 +1282,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 109,
+      "l": 109
+     },
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -1246,7 +1305,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 97,
+      "l": 97
+     },
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -1262,7 +1327,8 @@
       }
      ],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -1278,7 +1344,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -1342,7 +1409,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 220,
+      "l": 247
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1476,7 +1549,14 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 36,
+      "l": 66
+     },
+     "kl": "V"
     },
     {
      "nr": "20",
@@ -1489,7 +1569,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 36,
+      "l": 65
+     },
+     "kl": "V"
     },
     {
      "nr": "21",
@@ -1502,7 +1589,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 36,
+      "l": 66
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1654,7 +1748,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "G"
     },
     {
      "nr": "23",
@@ -1667,7 +1762,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 131,
+      "l": 258
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1711,7 +1812,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 66,
+      "l": 163
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1761,7 +1868,8 @@
       }
      ],
      "absatz": "1",
-     "item": "n"
+     "item": "n",
+     "kl": "G"
     }
    ]
   },
@@ -1788,7 +1896,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 159,
+      "l": 231
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1862,7 +1976,14 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 34,
+      "l": 94
+     },
+     "kl": "Z"
     },
     {
      "nr": "28",
@@ -1890,7 +2011,14 @@
       }
      ],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 30,
+      "l": 75
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1917,7 +2045,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1947,7 +2081,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 120,
+      "l": 239
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1968,7 +2108,8 @@
      "text": "BRB vom 29. April 2015",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2021,7 +2162,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   },
@@ -2074,7 +2216,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "G"
     }
    ]
   }

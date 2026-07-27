@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "221.229.1",
   "titel": "Bundesgesetz über den Versicherungsvertrag",
@@ -38,7 +38,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "U"
    },
    {
     "nr": "2",
@@ -50,7 +51,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "3",
@@ -62,7 +64,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "4",
@@ -74,7 +77,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -110,7 +114,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 32,
+      "l": 174
+     },
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -127,7 +137,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Kapitel: Allgemeine Bestimmungen"
+     "sektion": "1. Kapitel: Allgemeine Bestimmungen",
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -144,7 +155,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Abschluss des Vertrags"
+     "sektion": "1. Abschnitt: Abschluss des Vertrags",
+     "kl": "A"
     }
    ]
   },
@@ -196,7 +208,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -212,7 +225,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 283,
+      "l": 283
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -228,7 +247,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -244,7 +264,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -260,7 +281,8 @@
       }
      ],
      "absatz": "1",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -276,7 +298,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -292,7 +315,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -308,7 +332,8 @@
       }
      ],
      "absatz": "1",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -324,7 +349,8 @@
       }
      ],
      "absatz": "1",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -336,7 +362,14 @@
       }
      ],
      "absatz": "1",
-     "item": "k"
+     "item": "k",
+     "pos": {
+      "b": 0,
+      "it": 10,
+      "o": 155,
+      "l": 162
+     },
+     "kl": "V"
     },
     {
      "nr": "21",
@@ -352,7 +385,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 416,
+      "l": 416
+     },
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -369,7 +408,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Aufklärungspflichten"
+     "sektion": "2. Abschnitt: Aufklärungspflichten",
+     "kl": "A"
     }
    ]
   },
@@ -405,7 +445,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 383,
+      "l": 383
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -421,7 +467,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 158,
+      "l": 158
+     },
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -438,7 +490,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "a. Im Allgemeinen"
+     "sektion": "a. Im Allgemeinen",
+     "kl": "A"
     }
    ]
   },
@@ -474,7 +527,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 352,
+      "l": 352
+     },
+     "kl": "A"
     }
    ]
   },
@@ -510,7 +569,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -526,7 +586,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 378,
+      "l": 442
+     },
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -543,7 +609,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 141,
+      "l": 141
+     },
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -559,7 +631,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 397,
+      "l": 397
+     },
+     "kl": "A"
     }
    ]
   },
@@ -613,7 +691,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 105
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -629,7 +713,8 @@
       }
      ],
      "absatz": null,
-     "item": "5"
+     "item": "5",
+     "kl": "A"
     }
    ]
   },
@@ -664,7 +749,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -681,7 +767,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags"
+     "sektion": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags",
+     "kl": "A"
     }
    ]
   },
@@ -716,7 +803,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -752,7 +840,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -788,7 +877,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -824,7 +914,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -840,7 +936,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 154,
+      "l": 280
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -909,7 +1011,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -944,7 +1047,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -961,7 +1070,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Abschnitt: Prämie"
+     "sektion": "4. Abschnitt: Prämie",
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -978,7 +1088,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Fälligkeit"
+     "sektion": "Fälligkeit",
+     "kl": "A"
     }
    ]
   },
@@ -1013,7 +1124,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 347,
+      "l": 347
+     },
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -1029,7 +1146,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 79,
+      "l": 79
+     },
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -1046,7 +1169,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Mahnpflicht des Versicherungsunternehmens; Verzugsfolgen"
+     "sektion": "Mahnpflicht des Versicherungsunternehmens; Verzugsfolgen",
+     "kl": "A"
     }
    ]
   },
@@ -1081,7 +1205,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1116,7 +1241,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -1132,7 +1258,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 187,
+      "l": 187
+     },
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -1149,7 +1281,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Teilbarkeit"
+     "sektion": "Teilbarkeit",
+     "kl": "A"
     }
    ]
   },
@@ -1184,7 +1317,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 238,
+      "l": 238
+     },
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -1201,7 +1340,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Änderung des Vertrags"
+     "sektion": "5. Abschnitt: Änderung des Vertrags",
+     "kl": "A"
     }
    ]
   },
@@ -1321,7 +1461,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1369,7 +1510,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 158,
+      "l": 252
+     },
+     "kl": "V"
     },
     {
      "nr": "66",
@@ -1385,7 +1532,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 252,
+      "l": 252
+     },
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -1401,7 +1554,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -1418,7 +1577,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Entzug der Bewilligung zum Geschäftsbetrieb; privatrechtliche Folgen"
+     "sektion": "Entzug der Bewilligung zum Geschäftsbetrieb; privatrechtliche Folgen",
+     "kl": "A"
     }
    ]
   },
@@ -1449,7 +1609,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 211,
+      "l": 231
+     },
+     "kl": "V"
     },
     {
      "nr": "69",
@@ -1465,7 +1631,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 231,
+      "l": 231
+     },
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -1481,7 +1653,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 83,
+      "l": 83
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1517,7 +1695,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "7. Abschnitt: Eintritt des befürchteten Ereignisses"
+     "sektion": "7. Abschnitt: Eintritt des befürchteten Ereignisses",
+     "kl": "A"
     }
    ]
   },
@@ -1603,7 +1782,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 149,
+      "l": 149
+     },
+     "kl": "A"
     },
     {
      "nr": "81",
@@ -1619,7 +1804,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 216,
+      "l": 216
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1655,7 +1846,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "8. Abschnitt: Weitere Bestimmungen"
+     "sektion": "8. Abschnitt: Weitere Bestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -1690,7 +1882,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 431,
+      "l": 431
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1725,7 +1923,14 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 204,
+      "l": 204
+     },
+     "kl": "A"
     },
     {
      "nr": "84",
@@ -1742,7 +1947,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "Vertragsverletzung"
+     "sektion": "Vertragsverletzung",
+     "kl": "A"
     }
    ]
   },
@@ -1777,7 +1983,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 161,
+      "l": 296
+     },
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -1789,7 +2001,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 209,
+      "l": 296
+     },
+     "kl": "V"
     },
     {
      "nr": "88",
@@ -1809,7 +2027,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 296,
+      "l": 296
+     },
+     "kl": "A"
     },
     {
      "nr": "89",
@@ -1825,7 +2049,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 167,
+      "l": 167
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1877,7 +2107,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1933,7 +2169,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "107",
@@ -1949,7 +2186,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 206,
+      "l": 206
+     },
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -1965,7 +2208,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 187,
+      "l": 243
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2000,7 +2249,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2060,7 +2310,8 @@
      "text": "Ursprünglich: Art. 67",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2096,7 +2347,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "111",
@@ -2113,7 +2365,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Haftpflichtversicherung"
+     "sektion": "2. Abschnitt: Haftpflichtversicherung",
+     "kl": "A"
     }
    ]
   },
@@ -2149,7 +2402,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 339,
+      "l": 339
+     },
+     "kl": "A"
     },
     {
      "nr": "114",
@@ -2165,7 +2424,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 304,
+      "l": 304
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2200,7 +2465,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 325,
+      "l": 325
+     },
+     "kl": "A"
     },
     {
      "nr": "116",
@@ -2217,7 +2488,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Lebensversicherung"
+     "sektion": "3. Abschnitt: Lebensversicherung",
+     "kl": "A"
     }
    ]
   },
@@ -2269,7 +2541,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2301,7 +2574,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 127,
+      "l": 127
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2333,7 +2612,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 178,
+      "l": 178
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2405,7 +2690,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2441,7 +2727,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 418,
+      "l": 418
+     },
+     "kl": "A"
     },
     {
      "nr": "122",
@@ -2458,7 +2750,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "f. Eintrittsrecht"
+     "sektion": "f. Eintrittsrecht",
+     "kl": "A"
     }
    ]
   },
@@ -2491,7 +2784,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 164,
+      "l": 211
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2528,7 +2827,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 163,
+      "l": 163
+     },
+     "kl": "A"
     },
     {
      "nr": "126",
@@ -2544,7 +2849,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 360,
+      "l": 360
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2581,7 +2892,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 369,
+      "l": 369
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2617,7 +2934,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2652,7 +2970,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2687,7 +3006,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2723,7 +3043,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2759,7 +3080,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 112,
+      "l": 112
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2795,7 +3122,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 156,
+      "l": 156
+     },
+     "kl": "A"
     },
     {
      "nr": "135",
@@ -2812,7 +3145,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "c. Obliegenheiten des Versicherungsunternehmens; Nachprüfung durch die FINMA; Fälligkeit der Rückkaufsforderung"
+     "sektion": "c. Obliegenheiten des Versicherungsunternehmens; Nachprüfung durch die FINMA; Fälligkeit der Rückkaufsforderung",
+     "kl": "A"
     }
    ]
   },
@@ -2883,7 +3217,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2918,7 +3253,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2948,7 +3284,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "143",
@@ -2965,7 +3302,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Kapitel: Zwingende Bestimmungen"
+     "sektion": "3. Kapitel: Zwingende Bestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -2995,7 +3333,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3033,7 +3372,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 116,
+      "l": 217
+     },
+     "kl": "V"
     },
     {
      "nr": "152",
@@ -3045,7 +3390,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 195,
+      "l": 217
+     },
+     "kl": "V"
     },
     {
      "nr": "153",
@@ -3073,7 +3424,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 217,
+      "l": 217
+     },
+     "kl": "A"
     },
     {
      "nr": "150",
@@ -3090,7 +3447,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Kapitel: Schlussbestimmungen"
+     "sektion": "4. Kapitel: Schlussbestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -3120,7 +3478,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "155",
@@ -3136,7 +3495,8 @@
       }
      ],
      "absatz": "1",
-     "item": "2"
+     "item": "2",
+     "kl": "A"
     },
     {
      "nr": "156",
@@ -3148,7 +3508,14 @@
       }
      ],
      "absatz": "1",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 138,
+      "l": 298
+     },
+     "kl": "V"
     },
     {
      "nr": "157",
@@ -3160,7 +3527,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 55,
+      "l": 56
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3190,7 +3563,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3220,7 +3594,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3251,14 +3631,21 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 98,
+      "l": 246
+     },
+     "kl": "Z"
     },
     {
      "nr": "163",
      "text": "BRB vom 17. Juli 1908 (<i>AS <b>24</b> 756</i>).",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3296,7 +3683,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3330,7 +3718,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3365,7 +3754,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3400,7 +3790,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3435,7 +3826,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3470,7 +3862,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3505,7 +3898,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3540,7 +3934,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3575,7 +3970,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -3587,7 +3983,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 138,
+      "l": 371
+     },
+     "kl": "V"
     },
     {
      "nr": "59",
@@ -3604,7 +4006,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6. Abschnitt: Beendigung des Vertrags"
+     "sektion": "6. Abschnitt: Beendigung des Vertrags",
+     "kl": "A"
     }
    ]
   },
@@ -3639,7 +4042,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3674,7 +4078,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3709,7 +4114,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3744,7 +4150,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3779,7 +4186,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3814,7 +4222,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -3826,7 +4235,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 191,
+      "l": 229
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3861,7 +4276,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -3873,7 +4289,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 137,
+      "l": 170
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3916,7 +4338,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3951,7 +4374,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3994,7 +4418,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -4006,7 +4431,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 132,
+      "l": 200
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4041,7 +4472,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4076,7 +4508,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4111,7 +4544,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "96",
@@ -4124,7 +4558,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 7,
+      "l": 355
+     },
+     "kl": "V"
     },
     {
      "nr": "97",
@@ -4137,7 +4577,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 153,
+      "l": 355
+     },
+     "kl": "V"
     },
     {
      "nr": "98",
@@ -4153,7 +4599,14 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 63,
+      "l": 175
+     },
+     "kl": "G"
     },
     {
      "nr": "99",
@@ -4165,7 +4618,14 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 61,
+      "l": 191
+     },
+     "kl": "V"
     },
     {
      "nr": "94",
@@ -4182,7 +4642,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "AHV-Nummer"
+     "sektion": "AHV-Nummer",
+     "kl": "A"
     }
    ]
   },
@@ -4215,7 +4676,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "100",
@@ -4232,7 +4694,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Kapitel: Besondere Bestimmungen"
+     "sektion": "2. Kapitel: Besondere Bestimmungen",
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -4249,7 +4712,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Sachversicherung"
+     "sektion": "1. Abschnitt: Sachversicherung",
+     "kl": "A"
     }
    ]
   },
@@ -4284,7 +4748,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4319,7 +4784,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4355,7 +4821,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4390,7 +4857,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4433,7 +4901,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4477,7 +4946,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4513,7 +4983,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Abschnitt: Unfall- und Krankenversicherung"
+     "sektion": "4. Abschnitt: Unfall- und Krankenversicherung",
+     "kl": "A"
     }
    ]
   },
@@ -4565,7 +5036,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "140",
@@ -4582,7 +5054,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Koordination"
+     "sektion": "5. Abschnitt: Koordination",
+     "kl": "A"
     }
    ]
   },
@@ -4612,7 +5085,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "147",
@@ -4624,7 +5098,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 61,
+      "l": 111
+     },
+     "kl": "V"
     },
     {
      "nr": "148",
@@ -4636,7 +5117,14 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 110,
+      "l": 111
+     },
+     "kl": "V"
     },
     {
      "nr": "149",
@@ -4648,7 +5136,14 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 37,
+      "l": 38
+     },
+     "kl": "V"
     }
    ]
   }

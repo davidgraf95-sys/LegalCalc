@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "241",
   "titel": "Bundesgesetz gegen den unlauteren Wettbewerb",
@@ -41,7 +41,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -57,7 +58,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "3",
@@ -69,7 +71,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -132,7 +135,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -148,7 +152,8 @@
       }
      ],
      "absatz": "1",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -164,7 +169,8 @@
       }
      ],
      "absatz": "1",
-     "item": "l"
+     "item": "l",
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -184,7 +190,8 @@
       }
      ],
      "absatz": "1",
-     "item": "m"
+     "item": "m",
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -200,7 +207,8 @@
       }
      ],
      "absatz": "1",
-     "item": "n"
+     "item": "n",
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -216,7 +224,8 @@
       }
      ],
      "absatz": "1",
-     "item": "o"
+     "item": "o",
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -232,7 +241,8 @@
       }
      ],
      "absatz": "1",
-     "item": "p"
+     "item": "p",
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -248,7 +258,8 @@
       }
      ],
      "absatz": "1",
-     "item": "q"
+     "item": "q",
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -264,7 +275,8 @@
       }
      ],
      "absatz": "1",
-     "item": "r"
+     "item": "r",
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -280,7 +292,8 @@
       }
      ],
      "absatz": "1",
-     "item": "s"
+     "item": "s",
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -296,7 +309,8 @@
       }
      ],
      "absatz": "1",
-     "item": "t"
+     "item": "t",
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -320,7 +334,8 @@
       }
      ],
      "absatz": "1",
-     "item": "u"
+     "item": "u",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -336,7 +351,8 @@
       }
      ],
      "absatz": "1",
-     "item": "v"
+     "item": "v",
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -352,7 +368,8 @@
       }
      ],
      "absatz": "1",
-     "item": "w"
+     "item": "w",
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -368,7 +385,8 @@
       }
      ],
      "absatz": "1",
-     "item": "x"
+     "item": "x",
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -384,7 +402,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 221,
+      "l": 221
+     },
+     "kl": "A"
     }
    ]
   },
@@ -419,7 +443,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -439,7 +464,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -525,7 +551,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -560,7 +587,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -573,7 +601,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 54,
+      "l": 200
+     },
+     "kl": "V"
     },
     {
      "nr": "27",
@@ -590,7 +624,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Prozessrechtliche Bestimmungen"
+     "sektion": "2. Abschnitt: Prozessrechtliche Bestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -625,7 +660,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -645,7 +681,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -661,7 +698,14 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 140,
+      "l": 140
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -677,7 +721,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 267,
+      "l": 267
+     },
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -690,7 +740,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 104,
+      "l": 161
+     },
+     "kl": "V"
     },
     {
      "nr": "35",
@@ -706,7 +762,13 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 161,
+      "l": 161
+     },
+     "kl": "A"
     }
    ]
   },
@@ -753,7 +815,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -770,7 +838,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Kapitel: Verwaltungsrechtliche Bestimmungen"
+     "sektion": "3. Kapitel: Verwaltungsrechtliche Bestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -821,7 +890,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 98,
+      "l": 134
+     },
+     "kl": "V"
     },
     {
      "nr": "44",
@@ -834,7 +909,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 60,
+      "l": 146
+     },
+     "kl": "V"
     },
     {
      "nr": "45",
@@ -850,7 +931,13 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 146,
+      "l": 146
+     },
+     "kl": "A"
     }
    ]
   },
@@ -893,7 +980,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Kapitel: Zusammenarbeit mit ausländischen Aufsichtsbehörden"
+     "sektion": "3a. Kapitel: Zusammenarbeit mit ausländischen Aufsichtsbehörden",
+     "kl": "A"
     }
    ]
   },
@@ -920,7 +1008,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 256,
+      "l": 267
+     },
+     "kl": "V"
     },
     {
      "nr": "48",
@@ -936,7 +1030,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 267,
+      "l": 267
+     },
+     "kl": "A"
     }
    ]
   },
@@ -966,7 +1066,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -982,7 +1083,13 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 154
+     },
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -998,7 +1105,13 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 57,
+      "l": 57
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1028,7 +1141,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -1044,7 +1158,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -1061,7 +1176,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 46,
+      "l": 46
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1089,7 +1210,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1117,7 +1239,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 165
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1143,7 +1271,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 247,
+      "l": 252
+     },
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -1159,7 +1293,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 252,
+      "l": 252
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1190,7 +1330,13 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 39,
+      "l": 87
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1211,7 +1357,8 @@
      "text": "BRB vom 14. Dez. 1987",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1244,7 +1391,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1279,7 +1427,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -1295,7 +1444,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1328,7 +1483,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1358,7 +1514,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1388,7 +1545,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1423,7 +1581,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1458,7 +1617,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -1470,7 +1630,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -1505,7 +1666,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }
