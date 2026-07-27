@@ -14,6 +14,7 @@ import {
   holeEntscheidOCL, enumeriereNeueste, enumeriereNeuesteAlle, citedRefZuId, enumeriereBge, enumeriereBgeBaender, holeBgeLeitentscheid,
 } from './normtext/adapter-entscheide';
 import { schreibeKorpus, ladeBestandSnapshots } from './normtext/entscheide-schreiben';
+import { normKeysVonSnapshot } from './normtext/entscheide-mapping';
 import { sha256EntscheidBloecke } from './normtext/sha-entscheide';
 import { holeRegesteSprachfassungen, holeClirHtml, parseClirUrteilskopf, bgeRefZuClirId } from './normtext/clir-regeste';
 import type { EntscheidSnapshot } from '../src/lib/rechtsprechung/typen';
@@ -90,6 +91,12 @@ const regesteRefresh = process.argv.includes('--regeste-refresh');
 // ergänzt sie zum committeten Bestand (byte-treu, §6), inkl. dreisprachiger clir-
 // Regeste (A18) für die NEUEN BGE. Bund/Kanton/eidg + Bestands-BGE bleiben unberührt.
 const bgeBaender = (arg('--bge-baender') ?? '').split(',').map((s) => Number(s.trim())).filter((n) => Number.isFinite(n) && n > 0);
+// --remap (W2·6-NKEY): rechnet die `normKeys` des BESTEHENDEN Korpus mit der
+// abgeleiteten Register-Tabelle + der Fliesstext-Erkennung neu und schreibt den
+// Korpus über denselben Writer. STRIKT OFFLINE (kein Netz-Zweig läuft), rein aus
+// den committeten Snapshots — mit gleichem --datum byte-gleich wiederholbar (§2).
+// Berührt `sha` NICHT (der deckt nur `abschnitte`).
+const remap = process.argv.includes('--remap');
 // Cache-Verzeichnis der rohen clir-HTML (gitignored; Re-Parse ohne Re-Crawl).
 const CLIR_CACHE = path.join(process.cwd(), 'daten', 'cache', 'clir-regeste');
 // Court-spezifischer Sachgebiets-Hint (deterministisch, deklariert): Patentstreit =
@@ -229,6 +236,29 @@ async function eidgKorpus(): Promise<EntscheidSnapshot[]> {
 const docketSlug = (d: string) => d.replace(/\s+/g, '').replace(/[^A-Za-z0-9]/g, '_');
 
 async function main() {
+  // ── Re-Map der normKeys (W2·6-NKEY) — OFFLINE, vor allen Netz-Zweigen ───────
+  if (remap) {
+    const basis = ladeBestandSnapshots();
+    if (!basis.length) {
+      console.log('[remap] 0 Snapshots geladen (kein Bestand?) — Korpus unberührt.');
+      return;
+    }
+    const vorher = basis.filter((s) => (s.normKeys ?? []).length > 0).length;
+    let veraendert = 0;
+    for (const s of basis) {
+      const alt = s.normKeys ?? [];
+      const neu = normKeysVonSnapshot(s);          // ohne hint: rein aus dem Snapshot
+      if (neu.length !== alt.length || neu.some((k, i) => k !== alt[i])) veraendert++;
+      s.normKeys = neu;
+    }
+    const nachher = basis.filter((s) => s.normKeys.length > 0).length;
+    const res = schreibeKorpus(basis, datum);
+    console.log(`[remap] ${basis.length} Snapshots · normKeys verändert: ${veraendert}`);
+    console.log(`[remap] mit ≥1 normKey: vorher ${vorher} → nachher ${nachher}`);
+    console.log(`[remap] geschrieben: ${res.anzahl} Manifest-Einträge, ${res.normBuckets} Norm-Buckets, ${res.artikelBuckets} Artikel-Buckets, ${res.shards} Shards.`);
+    return;
+  }
+
   console.log(`[entscheide] Build ${datum} · BGE ${bgeVon ?? '–'} · Bund-Limit ${bundLimit} · Kantone [${kantCourts.join(',') || '–'}] je ${kantonPro}${additiv ? ` · ADDITIV eidg [${eidgCourts.join(',') || '–'}] je ${eidgPro}` : ''}`);
 
   // ── BGE-Band-Nachzug (W2·6): vollständige Bände additiv ergänzen ─────────────

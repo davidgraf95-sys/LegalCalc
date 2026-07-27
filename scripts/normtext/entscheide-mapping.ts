@@ -1,34 +1,194 @@
 // ─── Deterministische Mappings für die Rechtsprechungs-Pipeline (§2) ─────────
 //
 // Keine Heuristik im Produktpfad, keine LLM-Zuordnung: alle Tabellen sind
-// DEKLARIERT. statutes[] sind Roh-Drittextraktion (NICHT verifiziert) → nur als
-// «einschlägig genannt» werten, der Status bleibt 'maschinell'.
+// DEKLARIERT oder aus einer deklarierten Quelle ABGELEITET. statutes[] sind
+// Roh-Drittextraktion (NICHT verifiziert) → nur als «einschlägig genannt»
+// werten, der Status bleibt 'maschinell'.
+//
+// ── W2·6-NKEY (Roadmap, Dekret David 27.7.2026) ──────────────────────────────
+// Die Abkürzungs-Tabelle war eine HAND-Whitelist mit 26 Einträgen — sie kannte
+// z.B. IPRG nicht, obwohl der Erlass im Register steht und BGE 152 III 137 ihn
+// 68-mal nennt. Ein Erlass, der im Katalog geführt wird, muss in der Verzahnung
+// auch auffindbar sein. Die Tabelle wird darum aus dem ERLASS_REGISTER
+// ABGELEITET (§5: eine Quelle je Fachinhalt — das Register ist sie), mit zwei
+// Kandidaten je Eintrag: der Anzeige-Abkürzung (`kuerzel`, z.B. 'SchKG',
+// 'BVV 2') und dem dateisicheren `key` (z.B. 'SCHKG', 'BVV_2'), beide über
+// `normalisiereAbk` normalisiert.
+//
+// Zwei Sicherungen halten die Ableitung fachlich ehrlich (§1):
+//  • ABK_AUSSCHLUSS — Abkürzungen, die föderal UND kantonal existieren und pro
+//    Zitat nicht sicher trennbar sind (heute: «StG»). Sie werden NIE gemappt;
+//    lieber eine Lücke als eine falsche Bundesrechts-Zuordnung (§8).
+//  • ABK_KOLLISIONEN — dieselbe normalisierte Abkürzung zeigte auf ZWEI
+//    verschiedene Register-keys. Dann wird das Mapping BEIDSEITIG verworfen
+//    (nie geraten) und die Abkürzung hier sichtbar gemacht: das Sichtbarkeits-
+//    Tor (W2·6-NKEY Baustein c) und der Unit-Test der exakten Liste machen jede
+//    NEUE Kollision laut, statt sie still zu schlucken (§6.7).
 
-import type { Rechtsgebiet } from '../../src/lib/normtext/register';
+import { ERLASS_REGISTER, type Rechtsgebiet } from '../../src/lib/normtext/register';
+import { extrahiereStatutRefs } from '../../src/lib/rechtsprechung/zitat-extraktion';
+import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
 
-// Gesetz-Abkürzung (OCL statutes[] / law_code) → Register-key der Gesetzes-Rubrik.
-const ABK_REGISTER: Record<string, string> = {
-  OR: 'OR', ZGB: 'ZGB', ZPO: 'ZPO', STGB: 'STGB', STPO: 'STPO', BGG: 'BGG',
-  SCHKG: 'SCHKG', VVG: 'VVG', VMWG: 'VMWG', ARG: 'ARG', BV: 'BV', DBG: 'DBG',
-  DSG: 'DSG', AIG: 'AIG', STG: 'STG', HREGV: 'HREGV', BGFA: 'BGFA',
-  // Sozialversicherung / Abgaben (Audit: SG-Versicherungsfälle EL/IV/UV …)
-  ATSG: 'ATSG', AHVG: 'AHVG', IVG: 'IVG', UVG: 'UVG', AVIG: 'AVIG', BVG: 'BVG',
-  ELG: 'ELG', FAMZG: 'FAMZG', STHG: 'STHG',
-};
-
-export function normKeyFuerAbk(abk: string): string | null {
-  const k = abk.toUpperCase().replace(/[^A-ZÄÖÜ]/g, '');
-  return ABK_REGISTER[k] ?? null;
+/**
+ * Abkürzung → Vergleichsform: gross, dann alles ausser [A-Z0-9ÄÖÜ] weg.
+ * Ziffern werden BEWAHRT — sonst kollabierten 'BVV 2' und 'BVV 3' (zwei
+ * verschiedene Erlasse) auf dasselbe Token 'BVV' und wären nicht mehr
+ * unterscheidbar (§1). Umlaute bleiben stehen, damit 'BüG' → 'BÜG' auf den
+ * Register-key 'BUEG' zeigt, ohne den Umlaut vorher zu verlieren.
+ */
+export function normalisiereAbk(abk: string): string {
+  return String(abk).toUpperCase().replace(/[^A-Z0-9ÄÖÜ]/g, '');
 }
 
-/** "Art. 32 Abs. 2 BGG" → ['BGG']; mehrere Nennungen dedupliziert. */
+/**
+ * Föderal/kantonal mehrdeutige Abkürzungen (normalisiert) → Begründung. Sie
+ * werden NIE auf einen Bundes-Register-key gemappt.
+ *
+ * «StG» = eidg. Stempelsteuergesetz (SR 641.10) ODER kantonales Steuergesetz
+ * (StG/BE, StG/ZH, StG/SG …). Der Kantons-Suffix steht nur in der Regeste-
+ * Erstnennung, nicht bei jeder Fliesstext-Nennung; kantonale Grundstückgewinn-/
+ * Einkommenssteuer-Fälle (z.B. BGE 152 II 116, StHG-Kontext) tragen GAR keinen
+ * Suffix — eine Suffix-Heuristik greift also zu kurz. Daher konservativ ganz
+ * weglassen. Preis: die wenigen echten eidg. Stempelsteuer-Leitfälle (z.B.
+ * BGE 151 II 884) fehlen bewusst, bis ein positiver Bund-Signal-Diskriminator
+ * gebaut ist. Befund: Gegenprüfung W3 (Opus, 2.7.2026) — 5 kantonale Falsch-
+ * Positive. Deckt sich mit OCLs Design: deren kuratierte Bund-Whitelist
+ * `_SR_NUMBER_MAP` (mcp_server.py:3810) listet die unzweideutigen Bundesgesetze
+ * (BV/OR/ZGB/StGB/… bis DBG) und lässt «StG»/StHG bewusst WEG.
+ */
+export const ABK_AUSSCHLUSS: ReadonlyMap<string, string> = new Map([
+  ['STG', 'föderal/kantonal mehrdeutig: eidg. Stempelabgabengesetz (SR 641.10) '
+    + 'ODER kantonales Steuergesetz (StG/BE, StG/ZH …). Der Kantons-Suffix fehlt '
+    + 'in der Fliesstext-Nennung, eine Suffix-Heuristik greift zu kurz — '
+    + 'Gegenprüfung W3 (Opus, 2.7.2026): 5 kantonale Falsch-Positive. Lieber '
+    + 'eine Lücke als eine falsche Bundesrechts-Zuordnung (§1/§8).'],
+]);
+
+/**
+ * Ableitung aus dem Register (§5). Je Eintrag zwei Kandidaten (kuerzel, key) →
+ * derselbe Register-key. Zeigt eine Abkürzung auf ZWEI verschiedene keys, wird
+ * sie beidseitig verworfen und als Kollision ausgewiesen (nie raten, §1).
+ */
+function baueAbkTabelle(): { tabelle: Map<string, string>; kollisionen: string[] } {
+  const tabelle = new Map<string, string>();
+  const kollidiert = new Set<string>();
+  for (const e of ERLASS_REGISTER) {
+    for (const kandidat of [normalisiereAbk(e.kuerzel), normalisiereAbk(e.key)]) {
+      if (!kandidat) continue;
+      const bisher = tabelle.get(kandidat);
+      if (bisher === undefined) { tabelle.set(kandidat, e.key); continue; }
+      if (bisher !== e.key) kollidiert.add(kandidat);
+    }
+  }
+  for (const k of kollidiert) tabelle.delete(k);   // beide Seiten verwerfen
+  return { tabelle, kollisionen: [...kollidiert].sort() };
+}
+
+const { tabelle: ABK_TABELLE, kollisionen: KOLLISIONEN } = baueAbkTabelle();
+
+/**
+ * Abkürzungen, die auf mehrere Register-keys zeigen und darum GAR NICHT gemappt
+ * werden. Leer = sauber. Sichtbar statt still (§6.7) — der Unit-Test schreibt
+ * die exakte Liste fest, damit ein neuer Register-Eintrag, der eine Abkürzung
+ * doppelt belegt, rot wird statt Treffer zu verlieren.
+ */
+export const ABK_KOLLISIONEN: ReadonlyArray<string> = KOLLISIONEN;
+
+/**
+ * Register-keys, deren Abkürzung ausgeschlossen ist (heute: 'STG'). Für den
+ * Bestand-Schutzfilter in schreibeKorpus: ALT-Snapshots tragen den Key noch in
+ * `normKeys`, obwohl er nicht mehr gemappt wird.
+ */
+export const AUSGESCHLOSSENE_KEYS: ReadonlySet<string> = new Set(
+  [...ABK_AUSSCHLUSS.keys()]
+    .map((abk) => ABK_TABELLE.get(abk))
+    .filter((k): k is string => !!k),
+);
+
+export function normKeyFuerAbk(abk: string): string | null {
+  const k = normalisiereAbk(abk);
+  if (ABK_AUSSCHLUSS.has(k)) return null;
+  return ABK_TABELLE.get(k) ?? null;
+}
+
+/**
+ * "Art. 32 Abs. 2 BGG" → ['BGG']; mehrere Nennungen dedupliziert.
+ * Das Trailing-Token fängt einen angehängten einzelnen Ziffern-Block mit
+ * («Art. 27 BVV 2» → 'BVV 2' → key 'BVV_2») — ohne ihn fiele die Nennung auf
+ * 'BVV' zurück und wäre von 'BVV 3' nicht mehr unterscheidbar (§1).
+ */
 export function statutesZuNormKeys(statutes: string[]): string[] {
   const out = new Set<string>();
   for (const s of statutes ?? []) {
-    const m = /([A-Za-zÄÖÜäöü]{2,})\s*$/.exec(String(s).trim());
+    const m = /([A-Za-zÄÖÜäöü]{2,}(?:\s+\d{1,2})?)\s*$/.exec(String(s).trim());
     if (m) { const k = normKeyFuerAbk(m[1]); if (k) out.add(k); }
   }
   return [...out];
+}
+
+/**
+ * Deterministische Text-Assemblage eines Snapshots für die Zitat-Extraktion
+ * (W2·6-NKEY Baustein d): Regeste (flach + alle Sprachfassungen inkl. der
+ * mehrteiligen «Regeste a/b/c») und alle Abschnitts-Blöcke (Volltext UND
+ * BGE-Auszug). KEINE weiteren Felder — kein Rubrum, keine Dispositiv-Orders,
+ * keine Zitierung: dort stehen Parteien-/Verfahrensangaben, keine Norm-Zitate.
+ * Rein (§2): gleiche Eingabe → gleicher String.
+ */
+export function fliesstextVon(snap: EntscheidSnapshot): string {
+  const teile: string[] = [];
+  const reg = snap.regeste;
+  if (reg) {
+    teile.push(reg.text);
+    for (const f of reg.sprachfassungen ?? []) {
+      teile.push(f.kopf);
+      teile.push(...(f.absaetze ?? []));
+      for (const w of f.weitereRegesten ?? []) {
+        teile.push(w.kopf);
+        teile.push(...(w.absaetze ?? []));
+      }
+    }
+  }
+  for (const a of [...(snap.abschnitte ?? []), ...(snap.auszugAbschnitte ?? [])]) {
+    for (const b of a.bloecke ?? []) teile.push(b.text);
+  }
+  return teile.filter((t) => typeof t === 'string' && t.trim() !== '').join('\n');
+}
+
+/**
+ * normKeys eines Snapshots: Vereinigung aus der Roh-Drittextraktion
+ * (`zitierteNormen`, OCL statutes[]) UND den im FLIESSTEXT erkannten
+ * Gesetzes-Zitaten (§1 — der Anlassfall BGE 152 III 137 nennt das IPRG 68-mal
+ * im Text). Optionaler `hint` = bereits aufgelöster Register-key (Quellzweig
+ * mit deklarierter Erlass-Bindung). Alphabetisch sortiert → build-pfad-
+ * unabhängig stabil (§2).
+ */
+export function normKeysVonSnapshot(snap: EntscheidSnapshot, hint?: string | null): string[] {
+  const out = new Set<string>(statutesZuNormKeys(snap.zitierteNormen ?? []));
+  for (const ref of extrahiereStatutRefs(fliesstextVon(snap))) {
+    const k = normKeyFuerAbk(ref.gesetz);
+    if (k) out.add(k);
+  }
+  if (hint) out.add(hint);
+  return [...out].sort();
+}
+
+/**
+ * (Register-key, Artikel-Token)-Paare, die ein Snapshot zitiert — 'OR/41'-Form,
+ * deduppt. Quelle sind die Roh-statutes UND der Fliesstext (Baustein d). Der
+ * Ausschluss mehrdeutiger Kürzel wirkt bereits in `normKeyFuerAbk`.
+ * EINE Stelle (§5): Live-Index (baueArtikelIndex) und Oracle-Tor
+ * (check-rangliste-oracle) rechnen mit derselben Funktion, sonst driftet das
+ * Tor von dem weg, was es prüfen soll.
+ */
+export function artikelSchluesselVonSnapshot(snap: EntscheidSnapshot): Set<string> {
+  const out = new Set<string>();
+  const text = (snap.zitierteNormen ?? []).join('\n') + '\n' + fliesstextVon(snap);
+  for (const ref of extrahiereStatutRefs(text)) {
+    const rk = normKeyFuerAbk(ref.gesetz);
+    if (!rk) continue;
+    out.add(`${rk}/${ref.artikel}`);
+  }
+  return out;
 }
 
 // legal_area (OCL) → Sachgebiet-Achse der Gesetze.

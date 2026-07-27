@@ -11,9 +11,8 @@ import type { EntscheidSnapshot, EntscheidSnapshotDatei } from '../../src/lib/re
 import type { BrowseEntscheid, EntscheidManifest, RichterRef, RichterRegister } from '../../src/lib/rechtsprechung/register';
 import { parseBesetzung, kanonisiere, bereinigeBesetzungsFreitext, type KanonEintrag } from '../../src/lib/rechtsprechung/besetzung';
 import type { EntscheidRef, LeitfallRef, LeitfallShard } from '../../src/lib/rechtsprechung/norm-index';
-import { extrahiereStatutRefs } from '../../src/lib/rechtsprechung/zitat-extraktion';
 import { minteEcliFuerSnapshot } from '../../src/lib/rechtsprechung/ecli';
-import { normKeyFuerAbk } from './entscheide-mapping';
+import { artikelSchluesselVonSnapshot, AUSGESCHLOSSENE_KEYS } from './entscheide-mapping';
 
 export function keyVon(snap: EntscheidSnapshot): { key: string; datei: string } {
   const docketSafe = snap.id.split('/').pop()!;
@@ -85,38 +84,13 @@ function selbstTokens(snap: EntscheidSnapshot): string[] {
   return [...out];
 }
 
-/**
- * Kürzel, die föderal UND kantonal existieren und pro Zitat NICHT sicher
- * unterscheidbar sind → aus dem föderalen Bund-Artikel-Index ausgeschlossen
- * (§1 Korrektheit vor Abdeckung, §8 keine falsche Bundesrechts-Zuordnung).
- *
- * «StG» = eidg. Stempelsteuergesetz (SR 641.10) ODER kantonales Steuergesetz
- * (StG/BE, StG/ZH, StG/SG …). Der Kantons-Suffix steht nur in der Regeste-
- * Erstnennung, nicht bei jeder Fliesstext-Nennung; kantonale Grundstückgewinn-/
- * Einkommenssteuer-Fälle (z.B. BGE 152 II 116, StHG-Kontext) tragen GAR keinen
- * Suffix — eine Suffix-Heuristik greift also zu kurz. Daher konservativ ganz
- * weglassen. Preis: die wenigen echten eidg. Stempelsteuer-Leitfälle (z.B.
- * BGE 151 II 884) fehlen bewusst, bis ein positiver Bund-Signal-Diskriminator
- * gebaut ist. Befund: Gegenprüfung W3 (Opus, 2.7.2026) — 5 kant. Falsch-Positive.
- *
- * Deckt sich mit OCLs Design: deren kuratierte Bund-Whitelist `_SR_NUMBER_MAP`
- * (mcp_server.py:3810, Abkürzung→SR-Nummer) listet die unzweideutigen Bundes-
- * gesetze (BV/OR/ZGB/StGB/… bis DBG) und lässt «StG»/StHG bewusst WEG.
- */
-const AMBIGE_BUND_KANTON_KUERZEL: ReadonlySet<string> = new Set(['STG']);
-
-/** (Register-key, Artikel-Token)-Paare, die ein Snapshot zitiert — 'OR/41'-Form, deduppt. */
-function artikelSchluesselVon(snap: EntscheidSnapshot): Set<string> {
-  const out = new Set<string>();
-  // Roh-statutes (OCL statutes[]) tragen das Artikel-Token; zusammenfügen und einmal
-  // extrahieren (extrahiereStatutRefs dedupliziert über die Normalform).
-  for (const ref of extrahiereStatutRefs((snap.zitierteNormen ?? []).join('\n'))) {
-    const rk = normKeyFuerAbk(ref.gesetz);
-    if (!rk || AMBIGE_BUND_KANTON_KUERZEL.has(rk)) continue;
-    out.add(`${rk}/${ref.artikel}`);
-  }
-  return out;
-}
+// Die (Register-key, Artikel)-Paare eines Snapshots rechnet jetzt
+// `artikelSchluesselVonSnapshot` (entscheide-mapping.ts) — inkl. der
+// Fliesstext-Erkennung (W2·6-NKEY Baustein d) und des Ausschlusses föderal/
+// kantonal mehrdeutiger Kürzel («StG»). Die frühere lokale Kopie samt
+// AMBIGE_BUND_KANTON_KUERZEL ist dorthin umgezogen (§5: eine Stelle — auch das
+// Oracle-Tor check-rangliste-oracle rechnet nun mit derselben Funktion); die
+// Begründung des StG-Ausschlusses steht dort als ABK_AUSSCHLUSS-Eintrag.
 
 /**
  * Artikel-Ebene des Norm-Index (W3), deterministisch (§2). Nur Bundesgerichts-
@@ -143,7 +117,7 @@ export function baueArtikelIndex(auswahl: EntscheidSnapshot[]): Record<string, L
   for (const s of bg) {
     const { key } = keyVon(s);
     refByKey.set(key, refVon(s));
-    artikelVon.set(key, artikelSchluesselVon(s));
+    artikelVon.set(key, artikelSchluesselVonSnapshot(s));
     const cited = new Set<string>();
     for (const z of s.zitierteEntscheide ?? []) {
       const tok = kanonZitat(z);
@@ -336,7 +310,11 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
       for (const nk of snap.normKeys) {
         // Föderal/kantonal mehrdeutige Kürzel (StG) auch erlass-eben ausschliessen
         // (gleiche OCL-orientierte Entscheidung wie Artikel-Ebene; Gegenprüfung W3 #12).
-        if (AMBIGE_BUND_KANTON_KUERZEL.has(nk)) continue;
+        // Der Filter greift hier auf den KEY (nicht die Abkürzung), weil ALT-Bestands-
+        // Snapshots den ausgeschlossenen Key noch in `normKeys` tragen können — die
+        // Erzeugerseite (normKeysVonSnapshot) lässt ihn seit W2·6-NKEY gar nicht mehr
+        // entstehen, der Schutz muss aber auch ohne Backfill wirken (§1).
+        if (AUSGESCHLOSSENE_KEYS.has(nk)) continue;
         (proNorm[nk] ??= []).push({
           key, zitierung: snap.zitierung, regesteKurz, datum: snap.datum,
           leitcharakter: snap.leitcharakter, gericht: snap.gericht, kanton: snap.kanton,
