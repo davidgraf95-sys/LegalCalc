@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/952.610/art_1",
@@ -31,7 +31,7 @@
       ],
       "stand": "2019-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7fe663c1bbd2c854ed1b48755ce21469",
       "sha": "f6aa32bbf20be01ce390475bb574d6ea81a2fe344d62d49b347cc6b83530c73b"
     },
@@ -43,6 +43,7 @@
       "artikel": "1_a",
       "artikelLabel": "Art. 1a",
       "titel": "Tarifierung für Parkhaus Storchen (Fischmarkt 10 / 4051 Basel)",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -51,7 +52,7 @@
       ],
       "stand": "2019-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7fe663c1bbd2c854ed1b48755ce21469",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -117,7 +118,7 @@
       ],
       "stand": "2019-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7fe663c1bbd2c854ed1b48755ce21469",
       "sha": "178a51ddedab236ff95f993d4a5be5825e30f55805cfe8a4898e47f379d79384"
     },
@@ -147,7 +148,7 @@
       ],
       "stand": "2019-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7fe663c1bbd2c854ed1b48755ce21469",
       "sha": "2999037e92efa14072bc10b2ae50fb7ca986c41b6d7d9f971f22720ec3ee3fd0"
     },
@@ -197,7 +198,7 @@
       ],
       "stand": "2019-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7fe663c1bbd2c854ed1b48755ce21469",
       "sha": "86e37c355229b5c92ea2685694616c86379305d0ffd9a4ac70556710c3ef6e17"
     },
@@ -245,7 +246,7 @@
       ],
       "stand": "2019-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7fe663c1bbd2c854ed1b48755ce21469",
       "sha": "e3b973c0dc212974a94a68af543fc67fd9268bd9dab499c5ac7746a395fcb28e"
     },
@@ -279,7 +280,7 @@
       ],
       "stand": "2019-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7fe663c1bbd2c854ed1b48755ce21469",
       "sha": "506b37ec3cb0b6549003db4c07f5cacbf8452f2cc583f472f94b8f7fe87f5727"
     },
@@ -299,7 +300,7 @@
       ],
       "stand": "2019-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7fe663c1bbd2c854ed1b48755ce21469",
       "sha": "5589920e69260b22518e52ea34fc93a1b85fdee611de2696845ac7562fa69617"
     },
@@ -355,7 +356,7 @@
       ],
       "stand": "2019-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7fe663c1bbd2c854ed1b48755ce21469",
       "sha": "4eb4863e8e9125106acfc65b989edd9804364510dea4ae07eed3ccebc3c4bb2c"
     },
@@ -385,7 +386,7 @@
       ],
       "stand": "2019-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7fe663c1bbd2c854ed1b48755ce21469",
       "sha": "dfcc3d4ff7b77528188228df6ce99be278959d83a2df32db37e98d879823b3ab"
     },
@@ -423,7 +424,7 @@
       ],
       "stand": "2019-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7fe663c1bbd2c854ed1b48755ce21469",
       "sha": "85e7e0095744476f479514012704660ec8c770de76742284d7d08f34422b9d49"
     },
@@ -489,7 +490,7 @@
       ],
       "stand": "2019-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7fe663c1bbd2c854ed1b48755ce21469",
       "sha": "e3f591037b1f1da1eb9e86a4569ff3242e0460666046067ae1548aa3a4abec49"
     },
@@ -549,7 +550,7 @@
       ],
       "stand": "2019-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7fe663c1bbd2c854ed1b48755ce21469",
       "sha": "f763ef98457bbc68a00539a280ddc1fdbefa886a1d2cbaa9b80d8dc931b7898d"
     }

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/781.220/art_1",
@@ -17,7 +17,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "95bb4eeed17ab499a4e17aa10e743c1604ff9bd6bf77dee4d9293a1a310ea166"
     },
@@ -45,7 +45,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "1baaba4c37af2b421c1a0d13fb7d758763b1100b0e7639eab0f3ce8aaa378810"
     },
@@ -56,6 +56,7 @@
       "erlass": "Verordnung über die Verschärfung von Emissionsbegrenzungen für stationäre Anlagen, Massnahmenverordnung (781.220)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -64,7 +65,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -75,6 +76,7 @@
       "erlass": "Verordnung über die Verschärfung von Emissionsbegrenzungen für stationäre Anlagen, Massnahmenverordnung (781.220)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -83,7 +85,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -107,7 +109,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "1bdd8c356bea58353fce2d0518a75a12365cecb8506945d3300cd93e63154f88"
     },
@@ -149,7 +151,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "6e948c6082e1baabed4dbf5863b81ae347fa163910016844268729a2ad3452d2"
     },
@@ -181,7 +183,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "d46516d0f23eae4915928ddcc782035af7ecfe7bf3d1839ce3d724d15f677b03"
     },
@@ -192,6 +194,7 @@
       "erlass": "Verordnung über die Verschärfung von Emissionsbegrenzungen für stationäre Anlagen, Massnahmenverordnung (781.220)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -200,7 +203,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -211,6 +214,7 @@
       "erlass": "Verordnung über die Verschärfung von Emissionsbegrenzungen für stationäre Anlagen, Massnahmenverordnung (781.220)",
       "artikel": "7_a",
       "artikelLabel": "§ 7a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -219,7 +223,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -251,7 +255,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "a1e2975d792d323698c0411659162edbfa4861db7550857f602b7792ce96ecec"
     },
@@ -305,7 +309,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "de376b014ea700b205277f6232418169a37819c330e9fe1272c7cdb3134d1127"
     },
@@ -329,7 +333,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "bf85f0923a5b0859e5396190928e9c0f0ed607c8877146f0d827bcf60be2f0b1"
     },
@@ -375,7 +379,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "1c93d0b65d0b27e191a11f6427378630a8d093eaa8d276ead8210d9bc6f78c8e"
     },
@@ -447,7 +451,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "f05b8f0a6b5b7e0a83696056d07b5351597ee733906c43dac6e660fad2ef2413"
     },
@@ -458,6 +462,7 @@
       "erlass": "Verordnung über die Verschärfung von Emissionsbegrenzungen für stationäre Anlagen, Massnahmenverordnung (781.220)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -466,7 +471,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -486,7 +491,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -510,7 +515,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "3e1b1d6bc0440631e70fe67acf1b83124e0340acf47de812f1a44a4a1b0c3281"
     },
@@ -564,7 +569,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "7e06efd951a63e559f123ef98230fa48eec6d846604022c0270c63eb9512b08f"
     },
@@ -588,7 +593,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "568302c5935a983a72993f4bee4041d04b81f6f890ae4922bd9dda7720febe6f"
     },
@@ -630,7 +635,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "92c1e4ba5f05ea045d86830f8eb74823273b0417249d22d5e025413d9c003203"
     },
@@ -654,7 +659,7 @@
       ],
       "stand": "2026-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/781.220",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2269482e5a59268d789669034c406d8c",
       "sha": "775452104d3e308e1592837a4e15a3f6b710a49041dd4789b30a87f57070564f"
     }

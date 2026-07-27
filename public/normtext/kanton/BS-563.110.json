@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/563.110/art_1",
@@ -25,7 +25,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "2b081bc8a7ca0f62bc76633b43df219815e34e66d7870ebfd8a61605c43249fb"
     },
@@ -49,7 +49,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "b55a8a8e4f60e7da1ee122858e39add5acbff2e37d7fdee56f787b029af55b59"
     },
@@ -73,7 +73,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "3ce562b5eaae33f7e2320bf1132fecb6d8e05058af4b0b5cf2f544ff18ae5649"
     },
@@ -97,7 +97,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "8bcfe21de3bd449c01ab2896783b6bf7e8f7f1a959f8b9208d6293859047b375"
     },
@@ -125,7 +125,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "d8956ee152265552f4abf10d3693d891b63ff339e1e5c8bf8272282869b3b900"
     },
@@ -161,7 +161,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "8fce40e129384a19fd522544a40e345e61623d8fca4e34a1bb677856c78065b3"
     },
@@ -189,7 +189,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "6c6e18beac765d007e45a0bec14ca9898bc8305119e2483eaee047af45cd78b3"
     },
@@ -213,7 +213,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "0e548148b780546c8aed54b299fd197c355b344b90520c1fc7494f56d854f987"
     },
@@ -224,6 +224,7 @@
       "erlass": "Verordnung zum Gastgewerbegesetz (563.110)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -232,7 +233,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -256,7 +257,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "32ce1f8379232b501429280e5327590f250855fad262af99a9f9647d2eeee598"
     },
@@ -276,7 +277,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "0bb4e0c873da7c83230064de41c9dd37ce4f6ec3e0099bb3fc7431cd150b298e"
     },
@@ -304,7 +305,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "3f52f3b43c3d09dfb4cb4f35f88a5ad94029a5808bc7cb553a2c7cf0121fccb8"
     },
@@ -328,7 +329,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "635b11d6d345800a081193628ce988a6736f07b64379f350e94389006c4bcb24"
     },
@@ -364,7 +365,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "bac1897c59ffd1c4b4415120eb0267c4012a01fada0ab639339fee5ada72311d"
     },
@@ -392,7 +393,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "34f56c064f4cc1310e155fe38e82c385fde65de0a2225269a61e0f8fa3b650cc"
     },
@@ -424,7 +425,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "a75e12af3f6827f511fbbab537bbde5dc6225954ae502f7fee8ec3a914a89a45"
     },
@@ -456,7 +457,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "92dd82f3884a6f95748d2c8c10ea4686758cc378cb3c3f37b3fee15930a23801"
     },
@@ -484,7 +485,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "76aacfc9a118734130455916ad16e5bbc0ab943c592ccf872c4f3c5658094584"
     },
@@ -508,7 +509,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "464186cad70a631e698a5b0c84423e5502f2a4001ce3d9c5928a6aa0e413ae7e"
     },
@@ -528,7 +529,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "ec866efa39c2db4baea542a3604c018d8549b10293e3b9aa9c769fd0e9cd4880"
     },
@@ -548,7 +549,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "18b752ddba0fc509bb1fe3c711365e748a3756c2de07aad8dd5dc49566b14c68"
     },
@@ -568,7 +569,7 @@
       ],
       "stand": "2020-02-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/563.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74b8d67c299f7dc9b519d3f2e585451d",
       "sha": "8b3b855a6897f882ee9f8b5433cbaa83b3d4b9f52c95261fd3344158371f485a"
     }

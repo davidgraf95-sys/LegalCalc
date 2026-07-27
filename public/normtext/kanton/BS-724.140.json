@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/724.140/art_1",
@@ -8,6 +8,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "1",
       "artikelLabel": "§ 1",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -16,7 +17,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -27,6 +28,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -35,7 +37,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -46,6 +48,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "2_a",
       "artikelLabel": "§ 2a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -54,7 +57,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -65,6 +68,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -73,7 +77,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -84,6 +88,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -92,7 +97,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -103,6 +108,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -111,7 +117,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -122,6 +128,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -130,7 +137,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -141,6 +148,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -149,7 +157,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -160,6 +168,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -168,7 +177,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -179,6 +188,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -187,7 +197,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -198,6 +208,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "10",
       "artikelLabel": "§ 10",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -206,7 +217,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -217,6 +228,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -225,7 +237,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -236,6 +248,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -244,7 +257,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -255,6 +268,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -263,7 +277,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -274,6 +288,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "14",
       "artikelLabel": "§ 14",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -282,7 +297,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -293,6 +308,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "15",
       "artikelLabel": "§ 15",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -301,7 +317,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -312,6 +328,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "16",
       "artikelLabel": "§ 16",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -320,7 +337,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -331,6 +348,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "17",
       "artikelLabel": "§ 17",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -339,7 +357,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -350,6 +368,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "18",
       "artikelLabel": "§ 18",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -358,7 +377,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -369,6 +388,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "19",
       "artikelLabel": "§ 19",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -377,7 +397,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -388,6 +408,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "20",
       "artikelLabel": "§ 20",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -396,7 +417,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -407,6 +428,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "21",
       "artikelLabel": "§ 21",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -415,7 +437,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -426,6 +448,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "22",
       "artikelLabel": "§ 22",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -434,7 +457,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -445,6 +468,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "23",
       "artikelLabel": "§ 23",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -453,7 +477,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -464,6 +488,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "24",
       "artikelLabel": "§ 24",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -472,7 +497,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -483,6 +508,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "25",
       "artikelLabel": "§ 25",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -491,7 +517,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -502,6 +528,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "26",
       "artikelLabel": "§ 26",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -510,7 +537,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -521,6 +548,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "27",
       "artikelLabel": "§ 27",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -529,7 +557,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -540,6 +568,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "28",
       "artikelLabel": "§ 28",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -548,7 +577,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -559,6 +588,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "29",
       "artikelLabel": "§ 29",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -567,7 +597,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -578,6 +608,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "30",
       "artikelLabel": "§ 30",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -586,7 +617,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -597,6 +628,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "31",
       "artikelLabel": "§ 31",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -605,7 +637,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -616,6 +648,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "32",
       "artikelLabel": "§ 32",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -624,7 +657,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -635,6 +668,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "33",
       "artikelLabel": "§ 33",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -643,7 +677,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -654,6 +688,7 @@
       "erlass": "Verordnung über die Inanspruchnahme der Allmend, Allmendverordnung (724.140)",
       "artikel": "33_a",
       "artikelLabel": "§ 33a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -662,7 +697,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -681,7 +716,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "1dd753e56706357b7f9e55a711a6d12f9f5482053399c1c78f0795117c1708f9"
     },
@@ -704,7 +739,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "5afb46398ba39035feadd796beb39e91cce705b6f83a0ff053bc78abcb7761da"
     },
@@ -723,7 +758,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "7b9fb166d4f40b0b789f6a1884ff0a31973d5cf4b7d0175029e3738c48dc663e"
     },
@@ -742,7 +777,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "f4186ff1b6a123a04ce0bd00778b454abcd8d948969efd6bb682b6934e1f94d4"
     },
@@ -761,7 +796,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "cf4f01c22fa09a3c9aeb63095facb1c77f8bc61aa2ddaffd2a61ce1e89273f08"
     },
@@ -780,7 +815,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "573c4f745fc692757fb38d1021f38598caa3eb8c12e8af7979e5d6006cd6fc22"
     },
@@ -799,7 +834,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "ad15d2abecef675cf8f4352b3a0c40cfd6035ebaa01eafa6f1eb6cd4ef1feff1"
     },
@@ -818,7 +853,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "ea0baa7c32a434827cfeb2d7163f8d3c334e2644502b474efa71f7855d183107"
     },
@@ -837,7 +872,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "93fe2fc080b7242b35d855b350691b01a8ac1c99a1e8f28da908e50460f0b9d9"
     },
@@ -856,7 +891,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "6aa663ca9ea8394b6db47f151c2178061d6000b32c7c8501240489776151aeec"
     },
@@ -893,7 +928,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "6e5271c3906f4947fef227481a9777f1b9b8c76192f278d01869fda43d6ffcd5"
     },
@@ -916,7 +951,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "17206d7d9d362b09321053a8be870ae6d1616328ebbd4175cdf67cce178df292"
     },
@@ -935,7 +970,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "274ac60a4dc4b2915254a71d56d6260bf5b60f4ed39d232f66fbc1e8171070a6"
     },
@@ -954,7 +989,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "2fe390c4697c81ee1148e1943d27d1d8476db693a1510d205ef2fe7a9b92a0ac"
     },
@@ -977,7 +1012,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "f82308946ffcd266f6837d5f1218d6b0b16b8acb9f023c590d902fca95aec3f9"
     },
@@ -996,7 +1031,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "f7cf628a309b6eb302d0fb2692227d57736a994654bbea20ef45c6344290a645"
     },
@@ -1015,7 +1050,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "84e7d97426c882eff837822465bf94282b6d82247f0a8b3178234f675cc13157"
     },
@@ -1034,7 +1069,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "1317210adb1699746640a6a2c59369bc69e910bf11468e1389bd10d510872d6a"
     },
@@ -1053,7 +1088,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "50169e42f9b46f694be2019189f4595005bcc0cdcf80ccf2f61085a8a4a68af3"
     },
@@ -1072,7 +1107,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "86a988d12fb2e8b00f86e796dcec79c64f32dc665880bd596b0ed988a69b1f19"
     },
@@ -1095,7 +1130,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "3166f7e3d6116a0ab86535a25b57e27d87bcc949d146c518582a1baf4e9e88b5"
     },
@@ -1114,7 +1149,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "85ecc3fcbcd428b4a8d66d1d122e49d08d7235f3239028d8f02fc67074770303"
     },
@@ -1133,7 +1168,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "1a13e6c946c378fbd77d24a35e48fb9b42d1fba79731b5f2c665fa79e6595605"
     },
@@ -1166,7 +1201,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "d2377f73c67f4133ba16fff80672a888be6f52c3a9d2367035a7e25ce95dda4b"
     },
@@ -1185,7 +1220,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "5aa76ab0ecc12c7cbf8e4da01f5847d3932cb4399d7c6c26c6b34c6452412cb8"
     },
@@ -1204,7 +1239,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "15c925e213d7fab91fca213cb110c7c1bd4184d6058ce8a9348bdb988e67510e"
     },
@@ -1223,7 +1258,7 @@
       ],
       "stand": "2017-02-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.140",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d92b56a7687d296e507bb25eb1c9eb90",
       "sha": "30054aea944058cf67f1cdc550b209f8b1ed7e8362fe3dfaaf5fbdb0e45c7670"
     }

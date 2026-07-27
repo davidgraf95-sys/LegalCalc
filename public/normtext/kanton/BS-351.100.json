@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/351.100/art_1",
@@ -17,7 +17,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "619f003b7381f3ad2a18ae8d0fad6372445c955b42a8e4b508a46c15d6bdd419"
     },
@@ -51,7 +51,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "a098ceb431f0c0167edc88787b158cdb37cb34f1c1b4e07aec3570afee888f1c"
     },
@@ -97,7 +97,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "9fc11461acd3dbc77bb6b5f2c1b8048aaed1f2ed4f143d6e3a3f77c0598ea681"
     },
@@ -121,7 +121,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "f1119c250948797d0580fe2f57c2b74793eba22401a016d585c5ae7d04a94df1"
     },
@@ -141,7 +141,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "0039cc57e0548ce8c1b51992de679f1f932c091c2394dcb4fa0c45d069389ca5"
     },
@@ -152,6 +152,7 @@
       "erlass": "Vollziehungsverordnung zum Bundesgesetz über Lebensmittel und Gebrauchsgegenstände (351.100)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -160,7 +161,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -184,7 +185,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "7762ab0d167d42b30dcb2b274e6836582638309ad96d34cba477892d1c82b418"
     },
@@ -204,7 +205,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "9b184d082f1f584a73639b6248c3d765f12a0c295c8f9f264e58ce9545c87663"
     },
@@ -224,7 +225,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "91c9d946b9cdf1048665b3236e0972d02aa88c8579ceb4cdbfee3f519dece1c0"
     },
@@ -252,7 +253,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "103a819db66acfc8eb8f0d0994b94164128aefad66870baa6477e1845101276b"
     },
@@ -284,7 +285,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "d524436b09c32ed3b3c4be4dcee8e15158c907d8b4c8274b9d00b4d78eccd599"
     },
@@ -308,7 +309,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "507a43c4666a7b86aab953b1018190309c204a8567f169d5cb60622b440abf55"
     },
@@ -328,7 +329,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "9b132db4cb9b23417ef65cd0c6a3a578dc234489dcb317f5989202b42c66043a"
     },
@@ -348,7 +349,7 @@
       ],
       "stand": "2018-10-25",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/351.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b32e39e8560d01bd7364da8943e51dfb",
       "sha": "e5013ebc5ab7a30eb4aac38d65be818d098cb6edbc7f8d86cf345a4513b5a4db"
     }

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/724.500/art_1",
@@ -8,6 +8,7 @@
       "erlass": "Verordnung über die Strassenprostitution (724.500)",
       "artikel": "1",
       "artikelLabel": "§ 1",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -16,7 +17,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7b54c66663dee17add406226e4085a47",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -35,7 +36,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/724.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7b54c66663dee17add406226e4085a47",
       "sha": "e07f8ee3162bb96a088deb78f15542ba8af04bb163c10d97e8ed47c6578d4def"
     }

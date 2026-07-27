@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/RiE 153.150/art_1",
@@ -21,7 +21,7 @@
       ],
       "stand": "2015-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 153.150",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7820e2aaedab62c7b5dbe7c932aae699",
       "sha": "1cc2aee37fd162709fcfeadd8bd905469cfe6342347536eacacc4220b6fda619"
     },
@@ -63,7 +63,7 @@
       ],
       "stand": "2015-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 153.150",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7820e2aaedab62c7b5dbe7c932aae699",
       "sha": "e731dd7c45fb525a9248ae58933cf022d65d5ae4f88a93bcb0299811c6e18fdc"
     },
@@ -83,7 +83,7 @@
       ],
       "stand": "2015-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 153.150",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7820e2aaedab62c7b5dbe7c932aae699",
       "sha": "4ab57f407f8db0f0202bf2c7b7953c388759b506cf6ce39e7b754468df152f46"
     },
@@ -94,6 +94,7 @@
       "erlass": "Ordnung über die Entschädigung der Mitglieder des Gemeinderats der Einwohnergemeinde Riehen (RiE 153.150)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -102,7 +103,7 @@
       ],
       "stand": "2015-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 153.150",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7820e2aaedab62c7b5dbe7c932aae699",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -134,7 +135,7 @@
       ],
       "stand": "2015-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 153.150",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7820e2aaedab62c7b5dbe7c932aae699",
       "sha": "b9246716a6ea18af7bf98fb914c599f6a5dda4bc96e4328c96f8a9689a357b12"
     },
@@ -176,7 +177,7 @@
       ],
       "stand": "2015-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 153.150",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7820e2aaedab62c7b5dbe7c932aae699",
       "sha": "d881186b4308dbe17518164dd4a7ffce1db4a32810b344589a374ef2b4422528"
     },
@@ -196,7 +197,7 @@
       ],
       "stand": "2015-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 153.150",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7820e2aaedab62c7b5dbe7c932aae699",
       "sha": "359164bb038457921913db084a710caafa094c75353745d0addc54a7cdb139ab"
     },
@@ -216,7 +217,7 @@
       ],
       "stand": "2015-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 153.150",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7820e2aaedab62c7b5dbe7c932aae699",
       "sha": "9eda694009eaf69fffe1d9d6b99742c7be989ef6107735799afa6eee579f92c9"
     },
@@ -240,7 +241,7 @@
       ],
       "stand": "2015-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 153.150",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7820e2aaedab62c7b5dbe7c932aae699",
       "sha": "6c62da5b9e0aaa4bb279c9246aa341edf7d872a3c732970870c463c0b229574c"
     },
@@ -260,7 +261,7 @@
       ],
       "stand": "2015-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 153.150",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7820e2aaedab62c7b5dbe7c932aae699",
       "sha": "7cb15db74516f8d5074b5f1bdaa9a02c99552e9f9ac02626a3055a2f9edfc7df"
     },
@@ -280,7 +281,7 @@
       ],
       "stand": "2015-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 153.150",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "7820e2aaedab62c7b5dbe7c932aae699",
       "sha": "c689e959d97aa2d838655b8a2692924af0a4ff0c1d5f40edbac99331bbc7123f"
     }

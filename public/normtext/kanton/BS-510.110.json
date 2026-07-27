@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/510.110/art_1",
@@ -21,7 +21,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "38c3e12e778948b237593fdc5060c8f67b1c0840eeeb37ff8ea7f0888502608c"
     },
@@ -32,6 +32,7 @@
       "erlass": "Verordnung betreffend die Kantonspolizei des Kantons Basel-Stadt, Polizeiverordnung, PolV (510.110)",
       "artikel": "1_a",
       "artikelLabel": "§ 1a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -40,7 +41,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -86,7 +87,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "4a0a27f3f70e64b427c3524ee297883a8e2b30a0f58d2fc373b9e4066c562a92"
     },
@@ -132,7 +133,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "3ad558f261fa670ec7f13d048169d36e5b6be3452e73c3ba07f13dad0f0fea8b"
     },
@@ -156,7 +157,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "ca12b44549c9e1873e9f6ca40dba0267010145479f92461774f1104a92b3c094"
     },
@@ -184,7 +185,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "fcd1462ec641abe6523e8fe0a6362103b8966ae0563237e8df4cf241e800c714"
     },
@@ -212,7 +213,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "ed0786659c75341be82f47b5e354a58839cd65b52cf997b6799217080befc341"
     },
@@ -254,7 +255,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "0f276985de5b248c685b57fd782cc0e3ae6e045cd8f9eef1f6e519cdf27f6cd8"
     },
@@ -265,6 +266,7 @@
       "erlass": "Verordnung betreffend die Kantonspolizei des Kantons Basel-Stadt, Polizeiverordnung, PolV (510.110)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -273,7 +275,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -297,7 +299,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "5fd979b66c81b771b2f566ef2ca8c4f7265f5e22eb3201711e5a2aab82f60a67"
     },
@@ -325,7 +327,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "75a417e73cbc55dfb9631206c63c00c593710c7150b2496d91d1899a51c01f91"
     },
@@ -336,6 +338,7 @@
       "erlass": "Verordnung betreffend die Kantonspolizei des Kantons Basel-Stadt, Polizeiverordnung, PolV (510.110)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -344,7 +347,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -363,7 +366,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "045632e5ef7a32f721aac3f32d81bb373e48dcdf246923a609c23e0688422aba"
     },
@@ -391,7 +394,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "fbd3e4530c0c15abc2ba370db7adbe5460ba83c61dba2f30ef00c250aaa566ee"
     },
@@ -429,7 +432,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "c8b112f33474b5da59a5240d727dbccb6420a37cd8186e4e7403774725be9b32"
     },
@@ -461,7 +464,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "ad1468c68bf65c9cde90f06b78dfffd09c8ff41ea7d09d7312cd09f549522137"
     },
@@ -481,7 +484,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "9d9a6533595ae16efdfa0f6965b1f68b1824e541537278044d2e378a81cb6824"
     },
@@ -501,7 +504,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "25b271168352c155fe88fb038de41e0882e51165a25a78f1fe5151bd4bd73c7c"
     },
@@ -521,7 +524,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "2db42d697ad790cf41ad36b3fd2d0eb29ab5b7b96e24297d173589e3b33d59f3"
     },
@@ -541,7 +544,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "7b9cbe6751cfcfed37acb48aa5af6729788c70775c46d53f347d5b3779505a11"
     },
@@ -561,7 +564,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "e76f81cb0518ef24d902e890aec06b528e75e4ee9571bbd373cb527a01b2e96f"
     },
@@ -581,7 +584,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "09c6f85922ea02ce6713f0dd97e43038e77d17d2417fff12379d9b584176e2ce"
     },
@@ -609,7 +612,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "ec868e1af94323235cf301d41940b70553c877b25f54e589666b4cde9e2fc730"
     },
@@ -629,7 +632,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "7a3f8a4f42f9044f04a863019d22e331538a72e4d0eb978a680947ea602e973e"
     },
@@ -719,7 +722,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "641f31a1b0f89daa02994dc28d33e19d6897f18962ea298fe7117949fe6fb4c0"
     },
@@ -743,7 +746,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "b94d3087e6b5491a8c9dc5f0e31cbb60d12d31824ceb4472beb408676bee069e"
     },
@@ -785,7 +788,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "f1d6ccf76911692ba7982090c99fcb7ee16b9b1970ba0f3c82ddd41bb89b75f7"
     },
@@ -859,7 +862,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "dd59e8ff209b4deb099b6f7acc139c4578e9fb7c10f110c93fa7d03de6b6f9f1"
     },
@@ -917,7 +920,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "8b0733b5717b9aa2ab1a66398d9caf0c9d894a972e2a8d1a22c4633ead9f5325"
     },
@@ -959,7 +962,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "5154d42ce0db62b8fbd7d76233b6609c8aa3bb999875d858c5f7bb89c0b755b6"
     },
@@ -993,7 +996,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "1375e83965de812bc359bc19ec7c72b69325428a73e68908f7fc35787c4b062e"
     },
@@ -1029,7 +1032,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "f1c66a3eac4e4e84249b26da08014c4ca69a32a0c026d12604281de77d9a3fff"
     },
@@ -1053,7 +1056,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "180699d2deff66ed376987afa4ad330929e7789c928151a3454e02c2ed5e534b"
     },
@@ -1091,7 +1094,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "b122df1616dd08686ebe56853318d5f27dcf110545552eb685ccbc9f2da961ce"
     },
@@ -1111,7 +1114,7 @@
       ],
       "stand": "2025-06-19",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/510.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "571000b79390b567d44cb334a8dcadff",
       "sha": "95842ea2b140bfc78b495f2c41a6197dfc1a19c42ad552c519235b27da04d5e1"
     }

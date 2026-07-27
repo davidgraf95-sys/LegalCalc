@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/834.400/art_1",
@@ -28,7 +28,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "ae79adda73372164d8da74d50067997021788880e318338bb86bf27c9d84349c"
     },
@@ -48,7 +48,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "d45bcd6e510e628a4c05c438ec77038b6abbf9d1e983b3ac1be29ca0a9e181c9"
     },
@@ -59,6 +59,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -67,7 +68,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -91,7 +92,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "98ea49f073ad4f99aededfdecd96bffe5afa52a1e5a1b78859d115eb1a7961c7"
     },
@@ -115,7 +116,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "764f95dc18325b282bbf86b46b358f93793fb5fac3727d9b425563952766bac7"
     },
@@ -126,6 +127,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -134,7 +136,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -145,6 +147,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -153,7 +156,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -164,6 +167,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -172,7 +176,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -183,6 +187,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -191,7 +196,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -202,6 +207,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "10",
       "artikelLabel": "§ 10",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -210,7 +216,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -221,6 +227,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -229,7 +236,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -240,6 +247,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -248,7 +256,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -259,6 +267,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -267,7 +276,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -278,6 +287,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "14",
       "artikelLabel": "§ 14",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -286,7 +296,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -297,6 +307,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "15",
       "artikelLabel": "§ 15",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -305,7 +316,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -316,6 +327,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "16",
       "artikelLabel": "§ 16",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -324,7 +336,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -360,7 +372,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "8b8e7020f3b68d8cb08e699c2e54f8e2249d6ffe4b38d6caff11b04884426a99"
     },
@@ -380,7 +392,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "0b25a52441a68e975fce040565fdb6a219e4b696db08153eaefc8b3664860eae"
     },
@@ -391,6 +403,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "19",
       "artikelLabel": "§ 19",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -399,7 +412,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -435,7 +448,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "54cc4fda5a5a7d105197f2f9c133b333b5ff22721237d353a2bf555b1b29718b"
     },
@@ -459,7 +472,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "4855c71479ba988aa9ecac4dbf5f649142a69968dfe737b3541e473fee0d234d"
     },
@@ -491,7 +504,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "ef39ba3aa6d0a574c665a797079dd1e67eea313b98d90249cbcb021de96746c8"
     },
@@ -511,7 +524,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "cd86e783ad48a8262eef65f0385f6cc58e20ea914283b809db31a8b49b469d3f"
     },
@@ -522,6 +535,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "24",
       "artikelLabel": "§ 24",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -530,7 +544,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -541,6 +555,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "25",
       "artikelLabel": "§ 25",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -549,7 +564,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -560,6 +575,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "26",
       "artikelLabel": "§ 26",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -568,7 +584,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -579,6 +595,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "27",
       "artikelLabel": "§ 27",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -587,7 +604,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -598,6 +615,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "28",
       "artikelLabel": "§ 28",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -606,7 +624,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -617,6 +635,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "29",
       "artikelLabel": "§ 29",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -625,7 +644,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -636,6 +655,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "30",
       "artikelLabel": "§ 30",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -644,7 +664,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -655,6 +675,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "31",
       "artikelLabel": "§ 31",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -663,7 +684,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -674,6 +695,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "32",
       "artikelLabel": "§ 32",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -682,7 +704,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -693,6 +715,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "33",
       "artikelLabel": "§ 33",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -701,7 +724,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -712,6 +735,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "34",
       "artikelLabel": "§ 34",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -720,7 +744,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -731,6 +755,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "35",
       "artikelLabel": "§ 35",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -739,7 +764,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -750,6 +775,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "36",
       "artikelLabel": "§ 36",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -758,7 +784,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -769,6 +795,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "37",
       "artikelLabel": "§ 37",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -777,7 +804,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -788,6 +815,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "38",
       "artikelLabel": "§ 38",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -796,7 +824,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -807,6 +835,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "39",
       "artikelLabel": "§ 39",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -815,7 +844,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -826,6 +855,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "40",
       "artikelLabel": "§ 40",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -834,7 +864,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -845,6 +875,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "41",
       "artikelLabel": "§ 41",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -853,7 +884,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -864,6 +895,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "42",
       "artikelLabel": "§ 42",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -872,7 +904,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -883,6 +915,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "43",
       "artikelLabel": "§ 43",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -891,7 +924,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -902,6 +935,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "44",
       "artikelLabel": "§ 44",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -910,7 +944,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -921,6 +955,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "45",
       "artikelLabel": "§ 45",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -929,7 +964,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -940,6 +975,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "46",
       "artikelLabel": "§ 46",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -948,7 +984,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -959,6 +995,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "47",
       "artikelLabel": "§ 47",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -967,7 +1004,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -978,6 +1015,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "48",
       "artikelLabel": "§ 48",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -986,7 +1024,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -997,6 +1035,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "49",
       "artikelLabel": "§ 49",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1005,7 +1044,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1016,6 +1055,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "50",
       "artikelLabel": "§ 50",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1024,7 +1064,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1035,6 +1075,7 @@
       "erlass": "Gesetz über die Krankenversicherung im Kanton Basel-Stadt, GKV (834.400)",
       "artikel": "51",
       "artikelLabel": "§ 51",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1043,7 +1084,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1079,7 +1120,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e0d586a32352dbc6d292e267510de233dd2d2bb89df052ad0ab1d41c105f66f0"
     },
@@ -1103,7 +1144,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "cbb94c80acf5b43e066701071ac52c05091748e95befa3b271959ea50fd3ed5e"
     },
@@ -1123,7 +1164,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "6e886806109f1074fa6ea24dd077d29d78d9f5202138e0e75c1e15b225e5173a"
     },
@@ -1147,7 +1188,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "b6e44ea7ee9357ec64ab58e8ccd18e16c81b8cba4772e4e2ad066acfffe831cf"
     },
@@ -1167,7 +1208,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "fd0b0d2b25cb07bc2a7068850c363332d2a3d82c4499fb97aba1996d7eabc017"
     },
@@ -1186,7 +1227,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "2ed9d413adf35fab2ce395b5d600ab716708f3173eb773071dc4ff7044b0a43b"
     },
@@ -1206,7 +1247,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "46674f2dfe25f78821cbd310fdb366ab250d3ace68b1af040721c367828b7048"
     },
@@ -1226,7 +1267,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "b3a67515935abcf25a4e9326c40ee833f1f4021e3fa9d902dde854a66673af8a"
     },
@@ -1284,7 +1325,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "1260226954c30bfb13519775d153958d613c1ac6d7795efbdc916175f1cd1bd3"
     },
@@ -1304,7 +1345,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "fc592a4bee3a39d739b212d9a37f3bfb84d2f9aecc90c21cea18184376e37c06"
     },
@@ -1323,7 +1364,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "ae4d9a132748d9d89d3b75c71d9bbd81f684ca351d3726c74f7c9d93a7b5bbef"
     },
@@ -1356,7 +1397,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "387b1d650e82eb066eca21ecae4644b7bf8177e2ca6a2ba56c4f9b255b6b3368"
     },
@@ -1375,7 +1416,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/834.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5581ba718bb465ac733c02a28976afc7",
       "sha": "e4db08cc8e85375f21158d2d2ff39c6cda98ee83cfeca58740ad620bfc2410a2"
     }

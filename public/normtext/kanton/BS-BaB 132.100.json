@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/BaB 132.100/art_1",
@@ -17,7 +17,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "0f4618620ffe07211806be7890186c74d2d3521a5c9e52fdd075f2b68a29bd3d"
     },
@@ -37,7 +37,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "b2ea2a32a5093c24a006c24a332791fa30441cffd8b7b7f1d8480a8acf6dcfff"
     },
@@ -57,7 +57,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "41df7b96c6e83b828fed0d6b8532a747c8119590ba2e5ebcb661b759c68247b5"
     },
@@ -68,6 +68,7 @@
       "erlass": "Ordnung betreffend die politischen Rechte in der Bürgergemeinde der Stadt Basel (BaB 132.100)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -76,7 +77,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -96,7 +97,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "7a2ee756d847db24f2a164f465436e3a32e78320c7359400830eb60f4d25c661"
     },
@@ -120,7 +121,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "d647ce8ff1f352521ebfe77db9d1751a3451c250db1bbbc2f05a48f8cbef6604"
     },
@@ -144,7 +145,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "867c81667442b270bde161f566d5c773ec8d83c0a0ce45655f45e7a9ae8e7df8"
     },
@@ -164,7 +165,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "063cc85df81d58c69e86be388245f8484dd8a8313cfb76ac42a0ca1f4d349aa7"
     },
@@ -196,7 +197,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "e25aed6fa4260863b10f944867ebe65ce6482648be67484319698fc356f31e21"
     },
@@ -224,7 +225,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "e97c403e27b737fdcfd5eebc01da7a6a16f537883db06b7926b61bb96fddc065"
     },
@@ -252,7 +253,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "51cba7fc6f94bb20e5e4489de965fad00f3cc1e3331961d41ddf9bd6bd43165f"
     },
@@ -292,7 +293,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "5e164a3a51c4a1b87e16b2d72ad1e5009079631c4711d84e7dfd3f2ffe48e92f"
     },
@@ -350,7 +351,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "f209cc7218d6e625fa0fb6b8a950b33e95426c0a90fd8982d4a02f4a3c659f40"
     },
@@ -416,7 +417,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "701a917a5eb94664d6a44faa6d1bc6465c46d7e096ce3d09403398cfa59a1fe4"
     },
@@ -444,7 +445,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "13510064035300621ba3e6834eb624a0e6d7387376372ff8266614c30454674e"
     },
@@ -464,7 +465,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "60fc09e2fcb3b6affc1284d16ebe11c3484371773311fe1fdaa9ee9aeae2de94"
     },
@@ -496,7 +497,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "7a312862f49f4312284290d13961dfa9f0db3a7b6cebae72b4e34e35f7c6b818"
     },
@@ -516,7 +517,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "534a8461ab20a7197fdf6d8f01b93ec4a54a8f7bc3e613e480e443f8da2f08bd"
     },
@@ -544,7 +545,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "63414c52345cbeed97a9e7ec48484be833291f8e7ff71c7993718c9844c2dbce"
     },
@@ -588,7 +589,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "1046ac5764b0c9f93fd1a07865d21b6233eedbc14a73c067c6aac01d110569d4"
     },
@@ -612,7 +613,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "9f065f9a1d71ed12e5cf0fd3d1b94528bfaeb9b571de3dd85ab72a363cf2cd54"
     },
@@ -632,7 +633,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "b30a788b84c1a83a2947be09431f8bf63c27fdb194bd84c90fa17fc8517453b8"
     },
@@ -652,7 +653,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "f6cf8b9476fcea32ee94a78b337cab4969f58d9bd8860d1996c598d87df6bbae"
     },
@@ -672,7 +673,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "fc51ca432d41d8355b55d3f06669385a3fbbcff6243e229f5cd44cf559f6ca8e"
     },
@@ -696,7 +697,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "b101d5d8c53138bfa570bbb44f03a7e960e3736983a43d6e6e0a8b47f7e5ff0f"
     },
@@ -716,7 +717,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "4a86aa8c5a26a5aac82134ce58357f1ea9ff3bb9f1724cdc3fc0c667a07a759d"
     },
@@ -744,7 +745,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "f2760de288e8ddf6934a1618d54c975891afc8fdbd032ec0e4876d5087053861"
     },
@@ -772,7 +773,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "32f118f878a77ad3283f48d5a5e5019ade13a1dcb5cedb989383a563fcc2a6bd"
     },
@@ -796,7 +797,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "69327ba5d68cbc850b4cdec7122d555b99c0ff45af392a38b1b82dba5dbdf4b1"
     },
@@ -816,7 +817,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "f5271da3eb87c670f4a3c2ec8516988fcc4e4c08e5e8aa4bc40786e2a49da461"
     },
@@ -836,7 +837,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "75231b545c87f86ac055823bd6d4c2cf330e0bab5ad44ee55f5d0cc78aa8ae8e"
     },
@@ -882,7 +883,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "4e9c39f4e70cfbbd13e1a17a4e2dd24f156c191c5dd56cff9eb21db0fa8aa897"
     },
@@ -902,7 +903,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "129b6a351adb6cde1ed1e48ab5c6f0ffc00c0989c06f964c420528e5d5bb4bb9"
     },
@@ -922,7 +923,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "7eaa0329e4064a1bdbb6417d936c8c460391d0f63ff4a44d740868cb0148ad34"
     },
@@ -946,7 +947,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "8d7667395ab1e03ca000bf1dadfe0c166a5280709072a9cb00c128338ab854c4"
     },
@@ -966,7 +967,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "8d9aef6bffce9fecd5088cc851ffe660c7b55c8e9fc563ae589015ca81f626d0"
     },
@@ -990,7 +991,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "3e1a9b1857b24eeef0c11fea0afcd31ccb86a5b61d57461ba4d2b8d2b16522b7"
     },
@@ -1010,7 +1011,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "705f1ecb932705370df5327f6fa732d47085b1916098084ac681ce949fce0958"
     },
@@ -1054,7 +1055,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "1e32453b00a27f7860819f561f141b0bc6047ae331b408644995f643bde37937"
     },
@@ -1074,7 +1075,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "17f3c8848ba42fb13e7b8c343704f40c125a6d93ade2210dc8a36d3fac7e2ae0"
     },
@@ -1106,7 +1107,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "9bfefc3853878b1547012b411a1884e52e53b4e9de351442c9ebe36dbb0cbff3"
     },
@@ -1146,7 +1147,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "9ea0cc03f23a7733d866e668ca05d4b54eed1649d9e637ce07caa5890a32490d"
     },
@@ -1166,7 +1167,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "2f321223320ab2b2d55bd1b131cfd344f16dcc991a32c8f20787a574ea9487ad"
     },
@@ -1186,7 +1187,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "d29d5139e20b572081364f0e269da23a15818ea7147a7709418197fa35a4ecd5"
     },
@@ -1210,7 +1211,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "b677d3b65306bc78acee88f843c0cee4862b85838435b0ef0b67ab82790c5266"
     },
@@ -1230,7 +1231,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "9f44f665c1880a84dd3b26cae28e396eb6bf1c66115e1b362f73fd023849d698"
     },
@@ -1266,7 +1267,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "5e6a8a11c009a07231a62dea409f4acbe5d2e0ff5d5efc14564ca45efacbfd04"
     },
@@ -1310,7 +1311,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "90c5ea1e940bda96807458e190bc5cf2f6bea235a91f7ec261e3dada511462d8"
     },
@@ -1338,7 +1339,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "701e37c3d99e4109dc0e76449c2b5327873eaca2cb45565854a16efbb4b5921e"
     },
@@ -1358,7 +1359,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "eda2ec1a3e2009c902a6938d9bf6d1065c984a63bad6d2484005fb9be4f4101e"
     },
@@ -1386,7 +1387,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "afa887d69d13e4aba3838b5667af7cde3d8f51d94e88d6f5bf71929d7e33cdd2"
     },
@@ -1410,7 +1411,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "e4acd21125ed4bbf0a688e58b00fe9d9f7c1f754bc9dc98feaa2e34cf6cb188a"
     },
@@ -1430,7 +1431,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "dbe98ba0d2628d023422b7ef6a553ebb6180153b3caccd8217ce6646f46d9a6b"
     },
@@ -1454,7 +1455,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "daa3db6017ce9ec3ab1f835844d49056e19dc548a4122dc68c621d4890aaff45"
     },
@@ -1478,7 +1479,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "5f5be1cce3cedcb19085eec8235570fda5f05e4583d75701637ecdfe6906b83d"
     },
@@ -1502,7 +1503,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "ccc280946dda4ce0bc1e9bc4cd26510c333492d458995f114f5ee10902fd0af3"
     },
@@ -1522,7 +1523,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "203ca9b7a69b26e4edb03d226ec225cd8f975fca81c51c3c186048822eaeda3b"
     },
@@ -1542,7 +1543,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "55596bd53d722cbcc18e1c69e6d89327be7d6d0ae5f879001c94f3e1168a1df7"
     },
@@ -1566,7 +1567,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "a615967e28c4ae6fa22316545eed39e9216a05efd1122a45332271ed58d93a50"
     },
@@ -1608,7 +1609,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "f6755d7223951c85bae541f5e746e3eff7f4faed6f0188d9b2c4105e8559cb17"
     },
@@ -1632,7 +1633,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "3ffdd013421f8f5fc7613e5103ba42b272827229f0508e39a8cb5773241068c6"
     },
@@ -1670,7 +1671,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "7627af71f8c105be02335715a638697ef1fe8f9fb480e0c6a3cfc2e6425a8f6c"
     },
@@ -1690,7 +1691,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "226d16fb22d52db2737aac469eb6cf336eaee9abe70a55f3fb8614afd36b0bc4"
     },
@@ -1710,7 +1711,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "c1ac953b4d5de422604b5152df11cfafdb0d8fb3e33527e6757129abfb7dba9a"
     },
@@ -1734,7 +1735,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "505c8e1b8a79d57d9431bfe3af0d9a1b6dc1b1dfae57bac8417203afcbe295c1"
     },
@@ -1754,7 +1755,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "386e570159be126c41cc7aa43b3777620eb968264cc6a9145002e57a400d9029"
     },
@@ -1778,7 +1779,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "e1ae36df95c9c903f0dbd963c7529b52df15419e2ff9604b0db3cfe39e660413"
     },
@@ -1802,7 +1803,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "e5ee3ecdf6e062371da67141d1b15959e81a9eb3da9c0bda8ee9afabdacc7ae3"
     },
@@ -1822,7 +1823,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "01842175d70119ca15bb7f66e61b4e2b4ce8c4142bcefa11402d32c76beaaf3b"
     },
@@ -1860,7 +1861,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "5e0dd2766600011d16c2f7c994fbe49c5906555ad5b0c63820581ff1c1c3c247"
     },
@@ -1892,7 +1893,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "a23433dedc80b01c26f4adbd4c0829382af7227cca77511286abe43db4c19c21"
     },
@@ -1920,7 +1921,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "51b8267ef346e5c03bcd36930400e983e3a94a4b29506855b90a45a9c5e117cd"
     },
@@ -1944,7 +1945,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "13bcad29471b29cca4fa65dcb2a61649b266a6e761444e3bfdaadc80336fcd4f"
     },
@@ -1982,7 +1983,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "bafb5154b953612cd669a44174ffd403163ab380981b02ddf56a225d3f2b019f"
     },
@@ -2006,7 +2007,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "27baad7e3314143bd7240372df7c272c6975e16d39b2c82af4a876afdcdb5cce"
     },
@@ -2034,7 +2035,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "f4cedb7577fc05c4288fb31b23db43753a91bc0e9c1a139d0024796fc31496f8"
     },
@@ -2092,7 +2093,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "1834582e8c55400a847f18fb0ac2b85cd0821a0b4c5e3eec7827c3cba1b39cd0"
     },
@@ -2128,7 +2129,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "0a662ceb8fe897d11374747aa49f228c01f523db45df307027157648df3e0db0"
     },
@@ -2168,7 +2169,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "35c3837f3e0e65cc24f667c747f5eeb710831df88b76a5f92ae213f044cd76d6"
     },
@@ -2200,7 +2201,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "b380ab37a3a21cd6750f357b67d968517680cb905469d0e1df239d8d23db2176"
     },
@@ -2234,7 +2235,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "cf136822cef54ea27a6bd8b00f5b76e2e84f65b5d762894da03d0570ec6bf9d7"
     },
@@ -2258,7 +2259,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "e82f25eae894df12805687d25521882e291ce31fc023cefefc272c0e125263a8"
     },
@@ -2304,7 +2305,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "e8f95512b214073d03808fb0d23460cd52a4bd1b7b1ba02c361a49947dc12387"
     },
@@ -2324,7 +2325,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "0880f2f29553cec16b571b7096f39492cdeba899e6ea8bfa04d6b652fe4e0391"
     },
@@ -2344,7 +2345,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "4589c2e52cfcde9ba69f8e6ea56736321cac7f3eb190cf2cc82fa084b90d02f0"
     },
@@ -2364,7 +2365,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "d7d766c190390118c6a5dd7d5ba84dd6e860250c11f094820023afbf6b004d75"
     },
@@ -2388,7 +2389,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "f08faf87242fea37c2d28d458cd4e88b44defa3770c25616db5c4677a56737a1"
     },
@@ -2412,7 +2413,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "98d1a4e17b3fead51b169b42c5d86a9ea919a58827fccac5df654156379880ab"
     },
@@ -2436,7 +2437,7 @@
       ],
       "stand": "2022-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 132.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c23476727718da6648c4236d37f47678",
       "sha": "e878846df236a499c40e3e170c719c52b939e2f2502736fc4822aed2755936d1"
     }

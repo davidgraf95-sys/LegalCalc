@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/640.110/art_1",
@@ -20,7 +20,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "8b6d651c8f1c256cdce9ca3c4b9d97381d4bf44149996eb4eab09bf6e4836d56"
     },
@@ -51,7 +51,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "fc289dd998f2be1609991a1e546b40d9234b1e436349e67771eb949b4c7a2235"
     },
@@ -78,7 +78,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "df21e9ceca9de786690f9aa82814d642693d0b1f6d3d17604067a349208f319c"
     },
@@ -105,7 +105,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "929c35f85b1c7d586f3d33f2b3d193a0460d08f5ce37bc7438425d1571a7a2bd"
     },
@@ -128,7 +128,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "7e3ed3647371da0c17bff8ff651e70c9fa755f01b04e13884392243b23c4dd9c"
     },
@@ -147,7 +147,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -170,7 +170,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "ddc95dfb7da4c0a2f12f0bf1f750f52505bb94c1bb33db1cb2fea5bb9f641a11"
     },
@@ -181,6 +181,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -189,7 +190,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -200,6 +201,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -208,7 +210,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -243,7 +245,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "9077f3e8878d6f3e4bf67d30558d127a76d393df87e335f65d046031e32904b6"
     },
@@ -254,6 +256,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -262,7 +265,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -286,7 +289,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "ac2120971bd1d1e7b68d7f3f314e54a39f320bcb13a2bd7e74aa79316600c83a"
     },
@@ -310,7 +313,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "045b3540c674a11ce1a8dd5749bcc81838daaa5a3e2a4b6a66dc46abbb39948e"
     },
@@ -322,6 +325,7 @@
       "artikel": "14",
       "artikelLabel": "§ 14",
       "titel": "c) Beteiligungen",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -330,7 +334,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -362,7 +366,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "45b84cc875dc03b1e328ff0e86d7393027c65e2bc52e66d8c53df0dd841208a7"
     },
@@ -385,7 +389,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "2ee1f2ccb7a7153ad63fc6f398f93a693902dff1b8d9a822b6e50ea80a65f3b6"
     },
@@ -412,7 +416,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "fedff5214dd1bcd46f775edfe3d193400afba8c7119b41792e6672c45255be6b"
     },
@@ -431,7 +435,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "b60ec32382a876982bf8d4374ba2c3952daa284edd0949eeb9f91d4bd8339c54"
     },
@@ -471,7 +475,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "f2d11a57dcf14d9ac86ee5533067a696c1607253d93a6bc964cd26e2a0a7bbb2"
     },
@@ -499,7 +503,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "490c88fac4230396a8f46609aa80f45a3e78748ff0ce921b1e460931b92c6b51"
     },
@@ -511,6 +515,7 @@
       "artikel": "21",
       "artikelLabel": "§ 21",
       "titel": "c) Berufsunkostenpauschalen",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -519,7 +524,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -551,7 +556,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "8e88275eaab1ba36af9e1f615775fcc6ade6b85ccf30721e33ec25fc996bc960"
     },
@@ -575,7 +580,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "9d06c035403c42fd644b85b556c9d3c91638a550ed80888230f509a47bccede6"
     },
@@ -621,7 +626,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "d641be6a8cd14b42c44a1a11395eeb63a6f83c0fba6a5471d92c1283f83f1e72"
     },
@@ -649,7 +654,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "a182bb5b31aee3395492ebbeb8e3492627e7a8b27e7faaf701fc7dddbed0bb8c"
     },
@@ -660,6 +665,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "25",
       "artikelLabel": "§ 25",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -668,7 +674,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -700,7 +706,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "c6e0b07055fc4c951bb6cf002cf986fbe6ec51be40acc4a01b3b95672aa819d5"
     },
@@ -720,7 +726,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "f04370f2a748c1d9a6e8be91cb55bbc9628aa23aead412ae65134b5c43ed6696"
     },
@@ -744,7 +750,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "f8751ccea85058d882710d19d6933d2c91a19498ee0dec14b72fde96891db374"
     },
@@ -756,6 +762,7 @@
       "artikel": "29",
       "artikelLabel": "§ 29",
       "titel": "k) Gelegentlicher Nebenerwerb",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -764,7 +771,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -796,7 +803,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "45fa376081c2ea287bc0bf0fb066c78a8396a207ed5a3fcd3ae4d96805167f55"
     },
@@ -824,7 +831,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "b8cabad3b269739f6f58034e8b21d8abca1daf2c2ac7d269c93197c9323cf291"
     },
@@ -855,7 +862,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "48da923f989bf44434cdf8dbbb4924bc4f59eaf51ded833f8b9c7c674a342013"
     },
@@ -879,7 +886,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "5cd8198891c760f19db7073c256ff8b35b14e1a5662aaddf258207c88da4632d"
     },
@@ -921,7 +928,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "bde2283370c0213570f9bc723c59ad47af0060205ca5f7e97f59369876678f43"
     },
@@ -955,7 +962,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "8b45b9f4e880e12f25af7a14beaf35d82b7e71072059a14b6f642046d7232464"
     },
@@ -985,7 +992,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "8ab5112ca16487fea79796c2dbecc6f3d703265d4f0e01fbc73ba9ba2aa0b0ac"
     },
@@ -1017,7 +1024,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "062533adfe2d40eade4e6d263c1b1857acbb2988ccc0883d460b175fc688970a"
     },
@@ -1037,7 +1044,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "dfd0cea96d3dc9af194760b5e6f2f6dc75990da8c1a4ec4233d36910e45c63fb"
     },
@@ -1073,7 +1080,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "0fcc8b125bf15298584837cfb678459501e27d68e29866068050059e4273746a"
     },
@@ -1111,7 +1118,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "bf4ecec807bf17bc441ce329b109b4f15c061b900093cfa71ea1010764633661"
     },
@@ -1153,7 +1160,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "b958b8de7865b1c7d48edf0e21bc9b11dd926e831d2db43d4a1a22598a0d3741"
     },
@@ -1178,7 +1185,20 @@
           "absatz": null,
           "text": "",
           "mehrspaltig": {
-            "kopf": [],
+            "spalten": [
+              {
+                "typ": "text",
+                "titel": ""
+              },
+              {
+                "typ": "text",
+                "titel": ""
+              },
+              {
+                "typ": "text",
+                "titel": ""
+              }
+            ],
             "zeilen": [
               [
                 "Anzahl Kinder",
@@ -1215,9 +1235,9 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
-      "sha": "871ae7e67e2366eec30668cd26d63e215ad7c207fb3ef48a180a2b57080d0618"
+      "sha": "1993e50fae05a1b1fce68891079d3e1d8b1fb71c936829a136deaeb5c040777b"
     },
     {
       "id": "kanton/BS/640.110/art_40",
@@ -1255,7 +1275,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "588bdc0469c09bde1e4cb1112ec30d053768283a2de3dc293e40a7cc85b04b91"
     },
@@ -1266,6 +1286,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "41",
       "artikelLabel": "§ 41",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1274,7 +1295,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1293,7 +1314,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "3b32e9881431130afa63e5acb9f003f97c5c3ca6741ad3b611fccb75fc0c5fe6"
     },
@@ -1316,7 +1337,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "8de98fa3882e87a44f088c185fadef06ec31ae85c95afa3e9f9da4ca1730a698"
     },
@@ -1327,6 +1348,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "44",
       "artikelLabel": "§ 44",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1335,7 +1357,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1362,7 +1384,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "dbea4ec879ec214d896135a954a7916f1cc4bc206e234eb8372fce9e41bac117"
     },
@@ -1397,7 +1419,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "de361ef8d5df766181708ca5ea89f1c97a9c3e55601b1e10c4c6d5839e9baf77"
     },
@@ -1420,7 +1442,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "67f61bd8486cc06a28d867bc4fee736fb4fd9788d182f7c0cbd1e582d86666f8"
     },
@@ -1462,7 +1484,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "ef46aec34da127c46af3f3e84a680f8d3988c2278885824e2fedaefc309b87a4"
     },
@@ -1494,7 +1516,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "92f4e5ab3ff0a781b46fbd0d0ac8c34b3800d97750c951caa7c1a1a48636e2df"
     },
@@ -1534,7 +1556,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "72cb66e85030a6ddeabb4973654fdbecd8e83e1d4cf4d8d2f4a3b3775451377e"
     },
@@ -1566,7 +1588,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "1ee964e8a8c849bc23e3842becb2e75bdee2113660e7440f3858f9e1d5c47e41"
     },
@@ -1598,7 +1620,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "24206b66f27b54acbc1bed9771fd83f4c357ce3db55dead7c1e117bfdca59d27"
     },
@@ -1618,7 +1640,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "9f9a7b6016e230db9c9de4ea17de2746288fbc6caf1fdec4e6a7c7578965eabc"
     },
@@ -1646,7 +1668,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "d817e57e74f964bff6120618f20696f971e98c1adb6d5ba8f9425e9507d75ede"
     },
@@ -1674,7 +1696,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "c9d4d47d08c5b4656325cfd5b1716e6573899e64d0b8f041f872fab0e719f5ca"
     },
@@ -1702,7 +1724,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "3ea148a1ed5625fde63be3a1ec2587978502f04d04eb2ee8c64c31e8811a7539"
     },
@@ -1725,7 +1747,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "b0ee4ce7dd214e53b2f03bcdfe437ff986e2ee1c5480bdd60311a36ec951dae7"
     },
@@ -1752,7 +1774,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "9c8d732f3aedd6330bf608551a9ae98ccd711db9595a21598d77fba3a8d8bf9f"
     },
@@ -1771,7 +1793,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "70beaa91ecef86d14f24bdec81f90f530df7d6f254f66ac20f82483f4de98724"
     },
@@ -1782,6 +1804,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "59",
       "artikelLabel": "§ 59",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1790,7 +1813,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1814,7 +1837,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "691201399dd27ac0f94b29eaea09de05290743290f8b77b23194333da36106e2"
     },
@@ -1856,7 +1879,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "08d4b3c7ca2b1d31d66dc81e7c3e8d80a713955c22f3a6b8089cc61529ba2474"
     },
@@ -1884,7 +1907,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "448c8cb4986c0c6e3644130182112cf490146f26c1d4cb8e702b88f9499fb4cd"
     },
@@ -1896,6 +1919,7 @@
       "artikel": "63",
       "artikelLabel": "§ 63",
       "titel": "d) Kollektivität der Vorsorge",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1904,7 +1928,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1916,6 +1940,7 @@
       "artikel": "64",
       "artikelLabel": "§ 64",
       "titel": "e) Planmässigkeit und Angemessenheit der Vorsorge",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1924,7 +1949,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1936,6 +1961,7 @@
       "artikel": "65",
       "artikelLabel": "§ 65",
       "titel": "f) Begünstigtenordnung",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1944,7 +1970,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1956,6 +1982,7 @@
       "artikel": "66",
       "artikelLabel": "§ 66",
       "titel": "g) Selbständigerwerbende",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1964,7 +1991,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2017,7 +2044,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e741fb0e8f54bd07bf84441b75f83fac5c5470fe8ea369b8c827cd62a67bf105"
     },
@@ -2036,7 +2063,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "55c745b309058cf7e5cbff28f0178ee4c7ebe05c99c5bddb274c6355e17c5dd2"
     },
@@ -2055,7 +2082,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "b2783d0d66e2dc0b9f91fc2322400cbf50e8269d69e431f61bdf8bd42cfa82e2"
     },
@@ -2066,6 +2093,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "69",
       "artikelLabel": "§ 69",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2074,7 +2102,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2093,7 +2121,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "48da34b5197439444d44aebced336d71841ceb60348222a9fff68c6487ae4876"
     },
@@ -2104,6 +2132,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "71",
       "artikelLabel": "§ 71",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2112,7 +2141,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2123,6 +2152,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "72",
       "artikelLabel": "§ 72",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2131,7 +2161,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2142,6 +2172,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "73",
       "artikelLabel": "§ 73",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2150,7 +2181,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2161,6 +2192,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "74",
       "artikelLabel": "§ 74",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2169,7 +2201,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2180,6 +2212,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "75",
       "artikelLabel": "§ 75",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2188,7 +2221,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2199,6 +2232,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "76",
       "artikelLabel": "§ 76",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2207,7 +2241,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2218,6 +2252,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "77",
       "artikelLabel": "§ 77",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2226,7 +2261,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2323,7 +2358,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "fa221a8e5c969aca0c8a78c415f887a383421921c13b57ab7790c750c5340344"
     },
@@ -2346,7 +2381,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e36b6c3a0f41e22ca6006246e30d7b4ed8195b823e6c6f459c9f09c75f5da10d"
     },
@@ -2373,7 +2408,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "d085447d33634423b8c20bb59ccd46e31899cb4ba9bcd227fea2a7c97b5a14e2"
     },
@@ -2384,6 +2419,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "80",
       "artikelLabel": "§ 80",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2392,7 +2428,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2403,6 +2439,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "81",
       "artikelLabel": "§ 81",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2411,7 +2448,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2422,6 +2459,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "82",
       "artikelLabel": "§ 82",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2430,7 +2468,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2465,7 +2503,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "7f4a240d80b15a018f269822220f9d07377ecd9baaa40b18f4ee33b5bef7c874"
     },
@@ -2488,7 +2526,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e509f9449f636e2f8f40c7d3223405199541f08e713838741a6f9bb110a970b1"
     },
@@ -2511,7 +2549,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "1011d23a9be6eeed0b4dad9df68a482c822e7a8cb9fd7a7d99aafc9207b6753b"
     },
@@ -2552,7 +2590,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e05f64716b9e3c29e41fdaaddd6b3709997dc80fd476ed5c9ca58fe72e9b119d"
     },
@@ -2579,7 +2617,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "3bda31603e7ddce5ac680df5baeb56b718daba34c52e54b3a88822d4da68f3df"
     },
@@ -2602,7 +2640,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "084ed2e4e080047c87eec12040c322276ad758f9bbb2c6728e181a600daaf50f"
     },
@@ -2625,7 +2663,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "49ea85762c53048a8a2406ac7ca8417c180b1d4b8009bdd29d0964a814d6acfe"
     },
@@ -2666,7 +2704,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "0a5e4293f01f653d3a30d156446a92757ba23dcbcac55afcbcb071ac98f8bd5f"
     },
@@ -2685,7 +2723,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "6d6f22d8f6a08b0a0a18ce5409091acbbe47df12673d8228a8e9753c4975f154"
     },
@@ -2708,7 +2746,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "244394b9cd1970d78a9664e51df851c71d2036e8893a6efab1252ae4eab10fca"
     },
@@ -2743,7 +2781,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "a51a934c1daa1ab18203f848f9a859469719549a477ba9b227173788e3ead49e"
     },
@@ -2762,7 +2800,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "6d5fb231017446676a1f260cd3f4c57b91a602d18336e4776b71ed4aec087fcf"
     },
@@ -2789,7 +2827,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "5673cef1a64c8beb03ea5b3a4bd6e9a05579e244cc78f6ee84fa0c2ed097e8ce"
     },
@@ -2812,7 +2850,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "0b775909d2e89b88307f293d4fb3bec17db2e13f965465ba16aba5bb0f42eaa0"
     },
@@ -2835,7 +2873,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "424361b8c20dfcbddc05eeb75f9a2345e961d0952811174116c5ac9a5ff8dd1c"
     },
@@ -2858,7 +2896,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "560c846106ac0a5b3ebc7749d04bcb03acf5e7d00501e1c91808a392d07c2d98"
     },
@@ -2881,7 +2919,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "f6ea6cb65c8fd2ee292c1df328f835f384ee18b52b05d24c8a4dca1bb3dfe5cd"
     },
@@ -2908,7 +2946,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "ebc15e1740487599281bc808e3a52ee0d269b60b1309eb4f2ab533351c3d2d51"
     },
@@ -2927,7 +2965,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "f57b9e2beed97066254f9d266addc288241f00ce6f9039394733054f77544833"
     },
@@ -2950,7 +2988,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "4bf363b9432bb5469f049304711b427e8caedcfa54fd63ee991cea365d48a9bc"
     },
@@ -2981,7 +3019,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "95a7c4969a616c3624b939bf4c2dbc9a74d436046823595f2d24573ec653e5a2"
     },
@@ -3022,7 +3060,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "8a95c33e935a885cc4bdc691a6c33fbdca6c3ddea687f7c79067f6a7a37be3fb"
     },
@@ -3045,7 +3083,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "7916408af8d51f8e82ea3f242cb78f3e192d3b60b9f781a2e9f9f82e3a752119"
     },
@@ -3064,7 +3102,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e51ef82e3f091b6914642f7e6ad0304cd8810ca99bc36254a5e5b6d7f60824b1"
     },
@@ -3087,7 +3125,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "b9fe9f4c130e70fee2da76923312ca0c9a24abbd778545f98b64feb0432e912a"
     },
@@ -3141,7 +3179,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "3523f7ded2428bbd4c5b673701a4533f68624eb1065e94dfd5e2b5afaf6becbf"
     },
@@ -3161,7 +3199,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "ae8d600f596cfb3e8358d44d8517200d4d61a81269eea3bdf353013ae41dff5e"
     },
@@ -3193,7 +3231,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "c0ae9fea7c5c5f41e749273f01f8813ee7dfd48e9be62055bb284390d11be44d"
     },
@@ -3225,7 +3263,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "3df93873b9965029b114dce13c60759eb4fbdc589fb778ea4dad008c6df0f014"
     },
@@ -3253,7 +3291,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "14483d88e8214e2b0167fea2af3e9484551f961278e9f32d578642a30243f1d5"
     },
@@ -3277,7 +3315,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "2f0bae65aa6822c1aea2f8b1f6fad7c95d2e13407eb6a8d5a2f96affc5c2d5ac"
     },
@@ -3297,7 +3335,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "dd0fc3d8ca9b228060af8ed3613392a36c596286c93085719a64ab563c8d947e"
     },
@@ -3317,7 +3355,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "b6e62f0283f39bbea2c46361553a1a0a906bdc2e4406bf9ab97b82d50830a883"
     },
@@ -3345,7 +3383,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "f49855958fbc289ef7ade07f4c16fc5afb894f3422d13585d65f0da7d111c1f9"
     },
@@ -3365,7 +3403,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "007bf655c5eca74666ae74fb5f573f8d96760bd1286930dd912dbba2773ab4d5"
     },
@@ -3389,7 +3427,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "87a92e58363d20e0009498ccd09f0141a24a655b6a76536b76b1e6eaf0c6349a"
     },
@@ -3412,7 +3450,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "17c4f6742656e5e7faf34389f45498640ad515b2b9cb7cba9a556a5cb577f542"
     },
@@ -3440,7 +3478,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "a366127ae50010bf183a6bc9d9dbcf7db11a9ca1a1ed34d209e8ea2f2258d1c9"
     },
@@ -3474,7 +3512,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "58ae77547503d6fc9675863fde19bd05ba929796fdfb5d17516ae00865cb6f10"
     },
@@ -3497,7 +3535,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "90056c88f156f3914fa628ceef2511fa52ae584c3e836ab12251d9b059e8e567"
     },
@@ -3520,7 +3558,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "7fd6ca1f949f675f590de28d77d16398f84fcd7b613e6e7329015f8a62f7df8e"
     },
@@ -3539,7 +3577,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "6b483a4a9e71b9171c0adb0d21f40d2238f23d19e0efb7f0c9bc3fe4b265f12d"
     },
@@ -3566,7 +3604,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e8452186d8aad3dde396ebb16546e7d4bd7ec627eec164385dbde816e9c548aa"
     },
@@ -3585,7 +3623,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "89dece6f278095d6f6ecb995469497dfd9b730e03b1c9fe152d12f00cad6df8b"
     },
@@ -3622,7 +3660,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "bca255392aada39f0da9a8b288ba72e112da1aa4865ec1e26c17493494f734db"
     },
@@ -3645,7 +3683,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "99124dadaea0de64a579bab2843b8b9473b0a4e78fd7394f7015d4d5dba8073b"
     },
@@ -3672,7 +3710,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "9397a856cb28ce7158c1b6852246e107602d902383326cd672cb27c65bb46435"
     },
@@ -3691,7 +3729,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e2118be70fdd0a646a36661cc35f4f8f4e9d46d977807686e6ad64d206169b0b"
     },
@@ -3718,7 +3756,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "4bef58026b535ab41f03fd962199853be80ebbf6e75b2b17a798f7cc31ec8ff5"
     },
@@ -3729,6 +3767,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "117",
       "artikelLabel": "§ 117",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3737,7 +3776,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3748,6 +3787,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "118",
       "artikelLabel": "§ 118",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3756,7 +3796,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3767,6 +3807,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "119",
       "artikelLabel": "§ 119",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3775,7 +3816,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3803,7 +3844,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e2fd2e171ed795daff2a75f1e1649b580bff81cd7bcdaea030c6b18ff022f698"
     },
@@ -3845,7 +3886,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "9054b9de8ebcf5adcfb8b578ac068d33c0bfb5b4d14eb4fda9f7e82523060751"
     },
@@ -3865,7 +3906,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "6c3e145595ace5d547fc8b2921b8097c97a1b1b56cee968ad0a15b83caaabde0"
     },
@@ -3903,7 +3944,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "625ec0afac85b31ea423bbb32db13caf0e8a425911ebd716a95b2d5c3b460cf0"
     },
@@ -3938,7 +3979,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "a13c4b66abf60b708b03fcafd4ff79b8129660449d46aada34aca47813a4be0a"
     },
@@ -3949,6 +3990,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "123",
       "artikelLabel": "§ 123",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3957,7 +3999,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3981,7 +4023,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "f831681b3a5f944aa21e10bc786f838655266dbdd70d7dd0158f902b77bbd6f5"
     },
@@ -4023,7 +4065,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e0192bc60ab681595cdd482139213ec2387ca37098b16dc5f3a174a6f8d92525"
     },
@@ -4046,7 +4088,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "6e160e120e706d5e73b81a73f97ba17b1fa82f2e785aca663e99d2a4e3f6f0f7"
     },
@@ -4070,7 +4112,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "5c1593a68b1ccbf177a2bcc96501d20eed87da7c9ff475386020f654a539c993"
     },
@@ -4098,7 +4140,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "a4b67827824a159fe750a87dbc11b76002abddf87529910ebf9e4f436b577ecb"
     },
@@ -4144,7 +4186,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "bdcc18cf9f3002da3acd79495cf6b1788fbff1a2ac29354e4650144986d13d12"
     },
@@ -4194,7 +4236,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "2779a190a39ea0323910d6c5f6f2f8458f60a62e47432ac5776eda0558575a30"
     },
@@ -4252,7 +4294,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "8e48175e2d0f72c6eb03f6ca4373666e3205dfd5059e5e57c22500bd8834fe3b"
     },
@@ -4292,7 +4334,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "43015f1cb8bc25c94684af20e29ff3262c065f75b6ba2b48312c9dff380dcdea"
     },
@@ -4324,7 +4366,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "387c495af0c543d1a8ff10167afe87b806a78b0425d8b3f18bc05cec5dadb93c"
     },
@@ -4348,7 +4390,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "6664dc89b0dc0c52481a56f159a0bff416a49e0531882e8a59b66c0d4884ed61"
     },
@@ -4372,7 +4414,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "7890e42b4a6914c68f5b84f372d43f32928680323433dab088fee21bbf2cb625"
     },
@@ -4400,7 +4442,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "cbd3637a69266a4fb54b671016eb2b2d92c3215c0d474306179fda7a6a8fc3a7"
     },
@@ -4431,7 +4473,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "ccf5dc36990473cfc54fcc2d905134923118d4d426f9b180df127d2ffe145e1f"
     },
@@ -4454,7 +4496,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "89b3b526156dd711226d7d8b0099761952789afe9f4b4e5607d415d39cfe1492"
     },
@@ -4477,7 +4519,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "f11414f1fc889f63ee9f7c6c74e1a8df086ae22dc4b5592a8a2008f1f83056ab"
     },
@@ -4496,7 +4538,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "49573c9065874f5019e6fa07f9bb417da4fc5e0990f2c74ce63f57ec16a545c8"
     },
@@ -4519,7 +4561,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "646f6c6a958ebad82816609e7554b7ed6640ff84f9deee2c46c5e28d4fcfade0"
     },
@@ -4546,7 +4588,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "8f9b8a2d730d0b4f5b694c1c23ffcfa02c6a5bb543008dc9e94a592db420c71b"
     },
@@ -4573,7 +4615,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "0b86be207dce2aa903de1e2d9cc03ac4715796335167f82b74ebadd7a8d4d9cd"
     },
@@ -4601,7 +4643,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "0cd065819dbd51b6ea283180576cb8def0b3a91acb967df02974a3ef65c92962"
     },
@@ -4635,7 +4677,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "fcd6d26aba21248033c35fa50809f3d9df9723e680f6486aba5662c0fc2a5345"
     },
@@ -4666,7 +4708,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "0d45a5392bd63c4518cbfe4d40af900cb175fd7a746bb3141663cb587a9d6933"
     },
@@ -4677,6 +4719,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "147",
       "artikelLabel": "§ 147",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4685,7 +4728,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4712,7 +4755,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "6422a0d0e1e79bc46af0119e750fa1d66817ac772a3016899304553ad2293445"
     },
@@ -4723,6 +4766,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "149",
       "artikelLabel": "§ 149",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4731,7 +4775,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4742,6 +4786,7 @@
       "erlass": "Verordnung zum Gesetz über die direkten Steuern, Steuerverordnung, StV (640.110)",
       "artikel": "150",
       "artikelLabel": "§ 150",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4750,7 +4795,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4769,7 +4814,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "272672277c56bfbc5d6e6d572552749b7266414c79e3b34b9be75429f5cc22cb"
     },
@@ -4796,7 +4841,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "ddea164ec3f877be10c5c759a50eb3a9efa9f58725b353b8f0b1201df3919011"
     },
@@ -4815,7 +4860,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d7354ae444dd3e3da385bc8a55c05685",
       "sha": "317f25217cbeb4387c86e791cd40ce99cd5028a3194a36030feb8659b3ee0b60"
     }

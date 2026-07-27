@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/491.100/art_1",
@@ -17,7 +17,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "7512aa96db19fd234093a3b8c486aae2de6fb26c13954b3ac572ae58d5f301b4"
     },
@@ -37,7 +37,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "73c2527841580d0b454cc790cd9f5c36e4932de5e53839c82de048cfa8dbf1c3"
     },
@@ -57,7 +57,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "0eb684a024af193d0cf876363f1bc14338d32fac0768fc0f121932db3328e6d9"
     },
@@ -99,7 +99,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "ba5ad9de4864482b43d1ec5c09aae353f3e5b115ee3a8eb2dce67939bf33e0aa"
     },
@@ -137,7 +137,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "fc6c8d4a458d63fb6309710456497d53050a7b57c8cff3eb263160ffb53b9513"
     },
@@ -148,6 +148,7 @@
       "erlass": "Gesetz betreffend Ausbildungsbeiträge (491.100)",
       "artikel": "5_a",
       "artikelLabel": "§ 5a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -156,7 +157,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -176,7 +177,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "0aa1a698d7e3fd8007b11c0b7eed4f8a2ef9b75d52064b9f23df8ba90fd4018c"
     },
@@ -200,7 +201,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "a33ed797ca1315ab4c10a16e9297da0ba13861c4d522c1e143a43c6babeb78d0"
     },
@@ -236,7 +237,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "9d786031babe53521ce146d5e409e163f17da83480879c120fa4ffe283f27dbb"
     },
@@ -256,7 +257,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "5e04188667e1dfd7c7d7748be944bcc62376555d3c95578fcca4b6e5f56f6199"
     },
@@ -276,7 +277,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "2c4beb8ffa671ceb0576381d6d78e3ce914e7bef9983e203e57aa0615d63d304"
     },
@@ -296,7 +297,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "e66161a36b154193ae5ef7a68dc7c70903c53c3d4c28911f59ad55e6e5543a81"
     },
@@ -316,7 +317,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "038b4eca03b20965d49b49243391bbbe131901dda248c7b260b85e25cc8021dc"
     },
@@ -344,7 +345,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "c29e1218771158ea60caf578f736ecc424b02c2f002091feeb2008ffeca9d995"
     },
@@ -368,7 +369,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "d5a87597f26cb57c290c25d980adbe738862339071878e8b900a50364e467603"
     },
@@ -396,7 +397,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "bfc875313115527bb395aeb145223bc266d7880cf4e65ac34c63388b7e1cf1a7"
     },
@@ -416,7 +417,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "6422774bcacda9b65abb3bad0bfbbee596342956f9f33e214c59f757be2162e3"
     },
@@ -452,7 +453,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "1351b85d8842481a0832a6bb9d93383604a39f398b03649378985d0b035e4078"
     },
@@ -476,7 +477,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "1d0deef15da73aa46bf5e79d97add04bd75daaaf1df42548afdfac4638a1103b"
     },
@@ -504,7 +505,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "009a66efdbf7b95f09570b8ca6c96e9eef8aa756888e571a82dd3b3ea64bbcea"
     },
@@ -532,7 +533,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "6d8313bfd1d68a35b8f8a999a8c3af89e28939a854608d1bea376a1edc215c4f"
     },
@@ -552,7 +553,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "17bf66cf37eec83263c4640edb3b46fceaab5eb6378c04e52313068d7909dd40"
     },
@@ -576,7 +577,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "96d094bf5b4393407d350185260dbeabbe7fcd47fb7db0261cde9b43e6cc8d0e"
     },
@@ -588,6 +589,7 @@
       "artikel": "23",
       "artikelLabel": "§ 23",
       "titel": "Änderung und Ausserkrafttreten bisheriger Gesetze",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -596,7 +598,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -615,7 +617,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "6ae984c34e79a9d55df120f288d01d99b0538fcfc95ce5c319af7eedb06326c5"
     },
@@ -635,7 +637,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "30bf6c1c3f591c2223cddd2d42d94050a21c16443b2f0a13b0ea1199a88fe8c8"
     },
@@ -659,7 +661,7 @@
       ],
       "stand": "2014-01-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/491.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e82296c4782baea00e284eb178751627",
       "sha": "c829ef9bbad168eb7cad94a3c1c01590081cbbcd75de728272aaf6366eaa5fa5"
     }

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/165.100/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "0e3cf95dd8a7b6c03f3b5967e739d9cd102e717757c3c76d0cb4e1e45b64d9b7"
     },
@@ -43,7 +43,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "e092af170b7d3cc9449a6c2114f6098c6157c4955a067021217c22725f39dfa7"
     },
@@ -70,7 +70,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "db97bf8ccc9ada3ecdd19d8a67ebb6500e5052b4d0d9c8bf85f03faf03eea511"
     },
@@ -93,7 +93,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "e6be9d9d3e60813fe8c3cd4359ed9a9556566d8dd7e51960adf393b765f61bcf"
     },
@@ -112,7 +112,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "3ec74130ebdd16688f77b852c5e847f6ced60822d1ce35192dfd102d5802508d"
     },
@@ -135,7 +135,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "89f778883e087441f0f69a4f71e0a8a36703beb4ed9a22cd88d6dcd1da0ef288"
     },
@@ -158,7 +158,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "9939837d2c63eca6ca10eb8fb264818af147fe5aa784c026d0eca7fcb23b8c8b"
     },
@@ -181,7 +181,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "b851846c9db8163e4acae6acfdd82f73223faee08ecb8921728a4540750789f9"
     },
@@ -218,7 +218,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "f60fb38fdecf18cb0b7270e89555b915973c03cd861690564bebe13bb7a637cf"
     },
@@ -241,7 +241,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "2d9eade2d5f5b56a954af445e4d47f32284a277eb8d322ef3243cd4368557603"
     },
@@ -252,6 +252,7 @@
       "erlass": "Gesetz betreffend die Versicherung der Mitarbeiterinnen und Mitarbeiter des Kantons Basel-Stadt bei Unfall und Krankheit (165.100)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -260,7 +261,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -271,6 +272,7 @@
       "erlass": "Gesetz betreffend die Versicherung der Mitarbeiterinnen und Mitarbeiter des Kantons Basel-Stadt bei Unfall und Krankheit (165.100)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -279,7 +281,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -302,7 +304,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "60756af89e419fe4905c7ffd4481026d4e61ce61d47807dd9c9b9b3bcf00e55f"
     },
@@ -321,7 +323,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "79d9d2597213265027750555a9059956bfe89f3f88779f930be6b5367eda91fd"
     },
@@ -344,7 +346,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "77cc545ceffd5402324df5a2b7f7331bc76abde187c49a8b502c33b4ff022e2a"
     },
@@ -355,6 +357,7 @@
       "erlass": "Gesetz betreffend die Versicherung der Mitarbeiterinnen und Mitarbeiter des Kantons Basel-Stadt bei Unfall und Krankheit (165.100)",
       "artikel": "16",
       "artikelLabel": "§ 16",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -363,7 +366,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -382,7 +385,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "abb64f22cf59ad6ab09b4adb6c27b2043d8959d320c6dd8b1edf8594bd951f19"
     },
@@ -415,7 +418,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "176000a1bc1ed23230c16e165488be678a10c4388280624d9b101b684ff7c941"
     },
@@ -438,7 +441,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "940c9d1a95c25f7a24a192e1b212ef11eac18609e7e91708596b6aed90062eb0"
     },
@@ -457,7 +460,7 @@
       ],
       "stand": "2017-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/165.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "186da84d01116696d711db5ca762df4c",
       "sha": "13496516c7d325f2e0fb59e5cbb326ab15ec27f0a11e4dfb5b3ac37d12765a30"
     }

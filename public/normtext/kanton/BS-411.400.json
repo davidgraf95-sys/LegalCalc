@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/411.400/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "9bf4c1a07556f3bc177ff63d0f082125c258bb5869f07be7d9e6c5e17a7a321c"
     },
@@ -35,7 +35,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "e39817a4bc6d5ed9f45f1b2122ce5e9e34002aeea3f1c478a1a26c9708d54e35"
     },
@@ -58,7 +58,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "d5c94cd4b01699efcba9ab319bcbec2a0dbe989716cf6a0243da77edc7900f4b"
     },
@@ -77,7 +77,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "ebff45144e2e1217aff3dff70e2a9419ba6ba481b642a88703416e3010d55b5a"
     },
@@ -96,7 +96,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "0ce2d8f2e96fe8361e32e22a375b2f0a6de1e49ab993e8871fa021f8618aa692"
     },
@@ -119,7 +119,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "8c47f05b9e91cad3be1ff1e8d70db3753062ba5fad41f95b6a28868979360cbe"
     },
@@ -142,7 +142,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "b9c2c96b48219bf52c86bdadc9b3041de23300f9d5bad0b5aeb44ae2b1d6cfc4"
     },
@@ -161,7 +161,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "2ac74ab557fa442bf53fb9e4e1b9cf985186b77bfdcc999cfbd68a958ef558b6"
     },
@@ -180,7 +180,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "bbdd95270d4e1fe0b179b1cc298adaabf4bfb705b786285f8a28ccc1e9d218b6"
     },
@@ -207,7 +207,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "660e041967a47e86d4ecca112a7e80357b834190699bd6c7cae4f619c4cd86e7"
     },
@@ -218,6 +218,7 @@
       "erlass": "Ordnung für die Lehrpersonen (411.400)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -226,7 +227,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -245,7 +246,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "5a2ea3c8071e19068274a99fa9e96596f16f6089374f9069d9f3362fc1bc1853"
     },
@@ -268,7 +269,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "16884d2abe98d4f722f1c0256aee6005d76dde451e94671b8353777a96e5eb87"
     },
@@ -287,7 +288,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "46f71c488579836146aa9530ff113c9b023eec8023e399e27ac03c9f67299e3e"
     },
@@ -298,6 +299,7 @@
       "erlass": "Ordnung für die Lehrpersonen (411.400)",
       "artikel": "14_a",
       "artikelLabel": "§ 14a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -306,7 +308,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -317,6 +319,7 @@
       "erlass": "Ordnung für die Lehrpersonen (411.400)",
       "artikel": "15",
       "artikelLabel": "§ 15",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -325,7 +328,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -344,7 +347,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "dc05a86f2ca467e20594dda2bea9978b94456b92980826cf676d93350373d305"
     },
@@ -367,7 +370,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "fc5dcfda8c41933e30db7553a0de89e5295152f346ea2d561121051cc147e0ce"
     },
@@ -378,6 +381,7 @@
       "erlass": "Ordnung für die Lehrpersonen (411.400)",
       "artikel": "18",
       "artikelLabel": "§ 18",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -386,7 +390,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -405,7 +409,7 @@
       ],
       "stand": "2014-08-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "74d38d60c60d37228956858ffa7333f8",
       "sha": "c4d77bca779266a52fd8e7a09f027204fff2ba5c3d7cca75bb95990b8d775d2c"
     }

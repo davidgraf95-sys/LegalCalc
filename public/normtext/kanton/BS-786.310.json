@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/786.310/art_1.1",
@@ -16,7 +16,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "82326b7baea34a438cec993f9597ba48dfd8a8a5e269d9c958265fe1f70eb581"
     },
@@ -35,7 +35,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "6089cd372ad9c00f5a86f63a8e34f066fd3d0693c373d92abbbdea507ec8ae60"
     },
@@ -54,7 +54,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "23fa786fc3a42ec827dc92a41a44b8515b71507b64fe7e9cac9ab972ecff9227"
     },
@@ -66,6 +66,7 @@
       "artikel": "2.1",
       "artikelLabel": "Art. 2.1",
       "titel": "Verfahren",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -74,7 +75,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -93,7 +94,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "45fdb7cf4354af86353df8601d3bb5b6c3590c59fc20aa3ac53d669aae14c211"
     },
@@ -112,7 +113,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "1016b735721ff3eddeb919ca246ceda2969d25635691b139478c8075e9a10476"
     },
@@ -131,7 +132,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "d0d30c670be527dd4f340f5571d3da42f4e3d8be5de80d135a62264258eb3400"
     },
@@ -176,7 +177,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "ed828fba8a945cb090f729ca4eb69ed5c653cfe1ad6e45958403502d85c2c18a"
     },
@@ -195,7 +196,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "d0f9ba93e2961915a88d807d81173bac96f546562b330253bfa0a8b1f196833f"
     },
@@ -214,7 +215,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "ff16cf6ae83f4db7094bd228272cba37bd9a8d929a5f99b6d18a6cd9f28e1b19"
     },
@@ -233,7 +234,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "2d5cc2b8db7a1653abf687aa0d00f6cf83fd7d10437ab16b4f6fb0cd936ea678"
     },
@@ -245,6 +246,7 @@
       "artikel": "3.1",
       "artikelLabel": "Art. 3.1",
       "titel": "Garantierte Liefermengen",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -253,7 +255,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -276,7 +278,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "203d8ea24b47a484893249133140d7796141d2fad14ced0ee35b2603a9f74d20"
     },
@@ -295,7 +297,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "d0a8d3e95c1e3877817568173bb78b6108f311f0625f90a4e8e813cfc3865aff"
     },
@@ -307,6 +309,7 @@
       "artikel": "3.2",
       "artikelLabel": "Art. 3.2",
       "titel": "Heizwert",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -315,7 +318,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -334,7 +337,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "8175d3476a1883c86b6b7638a68574a7ca1786e9f3acbcc9db025bee4e274810"
     },
@@ -353,7 +356,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "06fae2732ce0bcc9852985d76ded980f56a11aabc4414d5decf40255525bf0e0"
     },
@@ -365,6 +368,7 @@
       "artikel": "3.3",
       "artikelLabel": "Art. 3.3",
       "titel": "Garantieleistung",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -373,7 +377,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -392,7 +396,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "ef1257a5981dabf092910631a639c54ba6f7c47fc52b0a45667c61775b9bbdb3"
     },
@@ -411,7 +415,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "66ed2940885318dea0798d98c9a2b03580d3fd677024092a0e53a8f705d4c4d4"
     },
@@ -430,7 +434,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "10150a595678eaa9fd306ece2099cf20ba94ca3c66bbe940a3508846deac7a1e"
     },
@@ -442,6 +446,7 @@
       "artikel": "3.4",
       "artikelLabel": "Art. 3.4",
       "titel": "Lieferbedingungen",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -450,7 +455,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -469,7 +474,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "e520849440b33814a7e6fcd3d609018171347acc99f3b3ede9cf6725642bb439"
     },
@@ -481,6 +486,7 @@
       "artikel": "4.1",
       "artikelLabel": "Art. 4.1",
       "titel": "Liefermengen",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -489,7 +495,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -508,7 +514,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "2a99a655a1671ac7b5e566d6ab225627b2e7be45d399981f2d66502e7829a632"
     },
@@ -527,7 +533,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "389e4f9ea2b233e8575f7efd852cae9b2a9fc60870fe2d5a2cccc6928af2eda6"
     },
@@ -539,6 +545,7 @@
       "artikel": "4.2",
       "artikelLabel": "Art. 4.2",
       "titel": "Lieferbedingungen",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -547,7 +554,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -566,7 +573,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "9b6f7d247d16f75cbe91a3107c173937bd13e39ea12baeaaeeb128a7197d920e"
     },
@@ -585,7 +592,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "9d8109cc855bdbd3e62692ad8038d750933b6b56b16426dcb125add1d7f2d1c0"
     },
@@ -604,7 +611,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "91b1a4cc60a0183662404eadf619620e6b8dacbc27130b0d73cb0deb4d3ca0fe"
     },
@@ -616,6 +623,7 @@
       "artikel": "4.3",
       "artikelLabel": "Art. 4.3",
       "titel": "Garantieleistung",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -624,7 +632,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -643,7 +651,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "1db53eb530ff886994f89be90a436277cd860ccd9e13b1233344cff9d519dcd3"
     },
@@ -662,7 +670,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "28252cf57958be24b1309ad7d25e98e7c956d8d3e9906a5789eefd8da112c3b6"
     },
@@ -681,7 +689,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "2448bd099e92c1da074979043f7d06e704e65044f0bbd664d9b52e0712b09014"
     },
@@ -700,7 +708,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "9771240d54e8ebea181010c473183bf22ab174bc97bc918906d0f21f042b2bb2"
     },
@@ -719,7 +727,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "3c6f8a2d841b292b804ac6af04f0d30e930bddf3687ee99ad03d743115318f37"
     },
@@ -738,7 +746,7 @@
       ],
       "stand": "2019-10-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/786.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "68c82d0b5fea3c8687a8dcb98dcb91db",
       "sha": "2dd72554e9c88ad1f14576f9fbcf2469ae0785fdd90a86cc849cfe408616a618"
     }

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/BaB 152.100/art_1",
@@ -19,10 +19,10 @@
           "text": "Ton- und Bildaufnahmen sind nur mit der Zustimmung des Präsidenten/der Präsidentin gestattet."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "3dfb85d8452031c7ff08803db00144832f4f999da2e1b7d055d9e7960168feec"
     },
     {
@@ -32,16 +32,17 @@
       "erlass": "Geschäftsordnung des Bürgergemeinderates der Stadt Basel (BaB 152.100)",
       "artikel": "1_a",
       "artikelLabel": "§ 1a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
           "text": ""
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -62,10 +63,10 @@
           "text": "Nach Neuwahlen führt das älteste anwesende Ratsmitglied so lange den Vorsitz, bis die Wahl des Präsidenten/der Präsidentin erfolgt ist."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "dcea3ef8fb7f3597b869d4c4a136fc882364669cd1542eae4b917a0fca66a464"
     },
     {
@@ -102,10 +103,10 @@
           "text": "Bei Ruhestörung durch Zuhörer kann der Präsident/die Präsidentin die Ruhestörer oder alle Zuhörer aus dem Saal weisen lassen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "28d933375bcd989ee1d90c540a655aece98dab6d74f87312a1f33e488d8e337c"
     },
     {
@@ -120,13 +121,17 @@
         {
           "absatz": "1",
           "text": "Über die Verhandlungen wird ein Protokoll geführt, das der Öffentlichkeit zugänglich ist."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Protokollführung obliegt der Kanzlei des Bürgergemeinderats."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
-      "sha": "c73b1d8ffaa62096ed40884c412772f6a33c2286b06b56e65176f95d24e7b438"
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
+      "sha": "eac5ed78e7bb1d0b6aba57023c543bab6cd939c716211a4ba6ddb8f605ab2f46"
     },
     {
       "id": "kanton/BS/BaB 152.100/art_5",
@@ -150,10 +155,10 @@
           "text": "Bei Beschlüssen, die dem Referendum unterliegen, ist das Datum des Ablaufs der Referendumsfrist anzugeben."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "aa025a06f4c3aeac207914bc74a417627755441f728502b9ec38e25435bf68d4"
     },
     {
@@ -170,10 +175,10 @@
           "text": "Zur Bildung einer Fraktion sind mindestens drei Ratsmitglieder erforderlich."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "84ec3ed03e26d5de0da27f8abe4596bb663c7f4752131268ee83daf23a59d575"
     },
     {
@@ -183,11 +188,11 @@
       "erlass": "Geschäftsordnung des Bürgergemeinderates der Stadt Basel (BaB 152.100)",
       "artikel": "7",
       "artikelLabel": "§ 7",
-      "titel": "Entschädigung",
+      "titel": "Sitzungsgeld",
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die Mitglieder des Bürgergemeinderates erhalten für jede Sitzung im Plenum und für jede Kommissionssitzung ein angemessenes Sitzungsgeld, abgestuft nach ihren jeweiligen Funktionen als Präsidentin oder Präsident, Protokollführerin oder Protokollführer und Mitglied."
+          "text": "Die Mitglieder des Bürgergemeinderates erhalten für jede Sitzung im Plenum und für jede Kommissionssitzung ein angemessenes Sitzungsgeld, abgestuft nach ihren jeweiligen Funktionen als Präsident/Präsidentin und Mitglied."
         },
         {
           "absatz": "1bis",
@@ -198,11 +203,11 @@
           "text": "Der Bürgergemeinderat kann im Sinne einer Spesenpauschale zusätzlich einen angemessenen Grundbetrag festlegen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
-      "sha": "a08837c775aa52a39b63ea9a4646371ec92120fdcd0e14a3187b84d34e750116"
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
+      "sha": "b6a6059bae30af0eb03f7e283a0105bb1d4d155baa683e338367afaf6c995ea4"
     },
     {
       "id": "kanton/BS/BaB 152.100/art_8",
@@ -218,10 +223,10 @@
           "text": "Der Rücktritt aus dem Bürgergemeinderat ist dem Präsidenten/der Präsidentin schriftlich zu erklären; er kann nicht widerrufen werden. Der Präsident/die Präsidentin leitet das Schreiben zur Feststellung des Nachrückenden an den Bürgerrat weiter."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "b29de823fe310c17bd7f2274f51d1327b0dcffb08832c7f2376ef75c6c0793b1"
     },
     {
@@ -238,10 +243,10 @@
           "text": "Jedes Ratsmitglied hat das Recht, zur Abwehr eines Angriffs gegen sich selbst oder gegen seine Fraktion eine kurze persönliche Erklärung abzugeben. Das Wort hiezu ist ihm nach Abschluss der Debatte zu erteilen, in deren Verlauf der Angriff erfolgt ist, jedoch vor der Schlussabstimmung."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "a7f465e04f0f9c138b3bbee3d5ff4f529947398b8beae6c4d2320b35874184d6"
     },
     {
@@ -262,10 +267,10 @@
           "text": "Um die Beschlussfähigkeit festzustellen, kann der Präsident/die Präsidentin jederzeit einen Namensaufruf anordnen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "f8c148cfc1bb0a972720a8a7969728a079f5aa153cf7ac227f84104991974a44"
     },
     {
@@ -294,10 +299,10 @@
           "text": "Die Interessenbindungen werden in einem Verzeichnis abgebildet. Das Verzeichnis wird veröffentlicht."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "bc79b4e70f814cbe9ef90ec0b081784591cf425ebc3383711625234cdb74c38f"
     },
     {
@@ -314,10 +319,10 @@
           "text": "Die Ausstandspflicht der Mitglieder des Bürgergemeinderats und seiner Kommissionen gilt für die Vorbereitung, die Beratung und die Beschlussfassung im Plenum und in den Kommissionen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "eb3af90a59fe7f0e2f91b32ede7eef2c95ab7bcac1bcc614537e382fd7d7d2b7"
     },
     {
@@ -334,10 +339,10 @@
           "text": "Zu Beginn der Sitzung wird die Tagesordnung bereinigt. Hat der Bürgergemeinderat die Tagesordnung genehmigt, kann nur mit einem Mehr von zwei Dritteln der Stimmen davon abgewichen werden."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "138d01d89f3afd61e333d94cb2ae3b3ed4202a7774d7011390ae7ee7fc6da5bf"
     },
     {
@@ -354,10 +359,10 @@
           "text": "Der Bürgerrat kann seine Vorlagen und Berichte, nachdem sie den Mitgliedern des Bürgergemeinderates zugestellt worden sind, ohne Zustimmung des Bürgergemeinderates nicht zurückziehen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "82d8ca7afc753f4c1eb875d93ab5c0f274926f517f66a27ff70870a42ff22702"
     },
     {
@@ -374,10 +379,10 @@
           "text": "Die Produktesummenbudgets für das folgende Jahr müssen spätestens am 1. November im Besitz der Aufsichtskommission sein. Sie werden spätestens im Dezember vom Bürgergemeinderat behandelt."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "52e4ba414c78a846974e9a1de6d966c12d181f1ed091a594ab3d94c1fde2fc25"
     },
     {
@@ -394,10 +399,10 @@
           "text": "Die Produktesummenrechnungen für das verflossene Jahr müssen spätestens am 15. April im Besitz der Aufsichtskommission sein. Diese hat bis spätestens 1. Juni ihren schriftlichen Bericht zu erstatten."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "84213e58b61a914e2525f14127e87d229a75372d0a46474a57bda996143fc02f"
     },
     {
@@ -414,10 +419,10 @@
           "text": "Der Jahresbericht des Bürgerrates für das verflossene Jahr muss spätestens am 15. April im Besitz der Aufsichtskommission sein. Diese hat bis spätestens am 1. Juni ihren schriftlichen Bericht zu erstatten."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "85c552189a93323ca85ede468bc29fb80288bacd3ee73275155c9c773c5e692f"
     },
     {
@@ -450,10 +455,10 @@
           "text": "Der Präsident/die Präsidentin stimmt nicht mit, gibt jedoch bei Stimmengleichheit den Stichentscheid. In diesem Falle hat er/sie das Recht, seinen/ihren Entscheid zu begründen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "dd0ca59444f161d185d8997a5ca4bce6323ea748de2212b2506a45d39851d0b3"
     },
     {
@@ -470,10 +475,10 @@
           "text": "Sofern die Gemeindeordnung, diese Geschäftsordnung oder deren Ausführungsbestimmungen nichts anderes festlegen, entscheidet das absolute Mehr der Stimmen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "194840fadaf5aa37e7b98fcae97670b0fde625de7508bd6f94ec8ebd44a75d57"
     },
     {
@@ -490,10 +495,10 @@
           "text": "Eine namentliche Abstimmung ist durchzuführen, falls vier Ratsmitglieder dies unterschriftlich verlangen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "18cf7cdd7241b7da9aa261b06998c36437b00407e029c49ed5d8d7feb845a00d"
     },
     {
@@ -503,16 +508,17 @@
       "erlass": "Geschäftsordnung des Bürgergemeinderates der Stadt Basel (BaB 152.100)",
       "artikel": "19",
       "artikelLabel": "§ 19",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
           "text": ""
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -537,10 +543,10 @@
           "text": "Der Präsident/die Präsidentin gibt bei geheimen Wahlen seine/ihre Stimme ebenfalls ab."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "35f673a5eee7fa974b58d95f97db39ca391f26033d0157d30925d56644a9ef33"
     },
     {
@@ -561,10 +567,10 @@
           "text": "Erreichen im ersten und zweiten Wahlgang weniger Kandidaten, als zu wählen sind, das absolute Mehr, so entscheidet im dritten Wahlgang das relative Mehr. Bei gleicher Stimmenzahl entscheidet das Los, das vom Präsidenten/der Präsidentin sofort, dem Rate sichtbar, gezogen wird."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "b578e2e060e1cf8c9bc601ce3094cfc76ad64140b3060fcf86d83534a5cf804e"
     },
     {
@@ -589,10 +595,10 @@
           "text": "Wer im ersten Wahlgang keine Stimme erhalten hat, kann auch in den folgenden Wahlgängen keine gültige Stimme erhalten."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "34715ab94e20fb2a204026dc0b80e423d2f22b01bd352000714405347dd14164"
     },
     {
@@ -613,10 +619,10 @@
           "text": "Enthält ein Zettel mehr Personen, als zu wählen sind, so werden die am Schlusse stehenden Namen als überzählig gestrichen. Ist ein Name mehrmals auf dem gleichen Stimmzettel enthalten, wird er nur einmal gezählt."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "97b1b59ff71d20bd2d0a82e05c876390d3e086d3797360c6f029c70470ed11c5"
     },
     {
@@ -626,22 +632,22 @@
       "erlass": "Geschäftsordnung des Bürgergemeinderates der Stadt Basel (BaB 152.100)",
       "artikel": "24",
       "artikelLabel": "§ 24",
-      "titel": "Wahl der Präsidentin oder des Präsidenten, der Statthalterin oder des Statthalters und der Protokollführerin oder des Protokollführers",
+      "titel": "Wahl der Präsidentin oder des Präsidenten und der Statthalterin oder des Statthalters",
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Der Bürgergemeinderat wählt in der konstituierenden Sitzung der Legislaturperiode und in der letzten Sitzung des zweiten sowie des vierten Amtsjahres seine Präsidentin oder seinen Präsidenten, seine Statthalterin oder seinen Statthalter und seine Protokollführerin oder seinen Protokollführer auf eine Amtsdauer von zwei Jahren."
+          "text": "Der Bürgergemeinderat wählt in der konstituierenden Sitzung der Legislaturperiode und in der letzten Sitzung des zweiten sowie des vierten Amtsjahres seine Präsidentin oder seinen Präsidenten und seine Statthalterin oder seinen Statthalter auf eine Amtsdauer von zwei Jahren."
         },
         {
           "absatz": "2",
           "text": "Nach Ablauf einer vollen Amtsdauer sind Präsident/Präsidentin und Statthalter/Statthalterin für die nächste Amtsdauer in das gleiche Amt nicht mehr wählbar."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
-      "sha": "272eba563515b636092b26ae6b6190679c45b0238ec62814f1d1bfd28a1c2e6e"
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
+      "sha": "7c7dfe6b2bfab59d7015d41393a4cd4a0f71d5fdcfc12d60f65457f499711263"
     },
     {
       "id": "kanton/BS/BaB 152.100/art_25",
@@ -661,10 +667,10 @@
           "text": "Das Büro erledigt die ihm übertragenen Sach- und Wahlgeschäfte."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "36f8fc28ae6c3cc8ef5b6185e1585f66d7cf78c8949464789e155da4162f4c00"
     },
     {
@@ -681,10 +687,10 @@
           "text": "Ersatzwahlen sind für den Rest der Amtsdauer sobald als möglich vorzunehmen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "5eb50da817cd3325ab8a8ef3209c0158a1309b1424a14d451ac43a685380aa8e"
     },
     {
@@ -705,10 +711,10 @@
           "text": "Der Bürgerrat beantwortet Interpellationen mündlich in der Sitzung, für welche die Interpellation eingereicht wurde."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "3847659d5101ab8d2c175a03bc5cbd6c6ab7f7ab00d24b3fe857c4ca705175a5"
     },
     {
@@ -749,10 +755,10 @@
           "text": "Der Bürgergemeinderat kann die Frist verlängern."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "056820b1df013204358e8f00ef467913e76b55f752dfa6d97b916f7f718decc2"
     },
     {
@@ -773,10 +779,10 @@
           "text": "Kleine Anfragen sind innerhalb von sechs Monaten seit Eingabe zu beantworten."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "7985471c827d3df1abad4784cade0e85ff08d8638a32895826b61c3f03a696a1"
     },
     {
@@ -797,10 +803,10 @@
           "text": "Beschliesst der Bürgergemeinderat, darauf einzutreten, so kann eine endgültige Beschlussfassung nur stattfinden, wenn von seiten des Bürgerrates keine Einsprache erhoben wird. Wird Einsprache erhoben, so ist der Antrag dem Bürgerrat zu überweisen, der bis zur nächsten Sitzung dazu Bericht und Antrag zu stellen hat."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "9695aae0686ba752b22cd0bf45584ce6743a15cf2c5ed3e3e979ec0be56e40ca"
     },
     {
@@ -817,10 +823,10 @@
           "text": "Jedes Mitglied ist berechtigt, eine Stellungnahme des Bürgergemeinderates in der Form einer Resolution zu beantragen. Eine Resolution kann nur mit einer Mehrheit von zwei Dritteln der Anwesenden gefasst werden."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "45857b2076796bfc5793b7da707012f62e91028b73365743987795a0e44928be"
     },
     {
@@ -830,16 +836,17 @@
       "erlass": "Geschäftsordnung des Bürgergemeinderates der Stadt Basel (BaB 152.100)",
       "artikel": "32",
       "artikelLabel": "§ 32",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
           "text": ""
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -856,10 +863,10 @@
           "text": "Eine Petition ist dem Bürgergemeinderat schriftlich einzureichen und wird seinem Büro zur Berichterstattung überwiesen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "0c26e947f69745cdbe1fe67102216126a65f6a3aac6cf967c5c0c2ee3dec6081"
     },
     {
@@ -890,10 +897,10 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "616e46c7f80d60b6bcb183a22cccfa1a4516de0bafdb2cf352659f92620f7621"
     },
     {
@@ -914,10 +921,10 @@
           "text": "Die Prüfung der Gültigkeit der Wahlen in den Bürgergemeinderat wird durch die im Zeitpunkt der Wahlen amtierende Wahlprüfungskommission vorgenommen. Zu diesem Zweck sind ihr alle Wahlakten sofort nach Eingang zur Verfügung zu stellen. Ihren Bericht erstattet sie an der konstituierenden Sitzung der Legislaturperiode."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "4c833d1ca1de6eb8bc3e294fe7e8cad914c3298da9be2f7c27fa502b0219cff7"
     },
     {
@@ -927,16 +934,17 @@
       "erlass": "Geschäftsordnung des Bürgergemeinderates der Stadt Basel (BaB 152.100)",
       "artikel": "36",
       "artikelLabel": "§ 36",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
           "text": ""
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -946,16 +954,17 @@
       "erlass": "Geschäftsordnung des Bürgergemeinderates der Stadt Basel (BaB 152.100)",
       "artikel": "37",
       "artikelLabel": "§ 37",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
           "text": ""
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -980,10 +989,10 @@
           "text": "Die Amtsdauer der Mitglieder endet mit der Verabschiedung des Schlussberichtes durch den Bürgergemeinderat, in jedem Fall mit Ablauf der Legislaturperiode."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "18bd3ed8a547deb1620e2a75f7bbe0b8de4ada92260499a491426dd46c5ff12a"
     },
     {
@@ -1012,10 +1021,10 @@
           "text": "Ersatzwahlen sind sobald als möglich von der gleichen Instanz vorzunehmen, welche die Kommission gewählt hat."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "e4a01b3abd3362d4093b2adde5346a0781f7d72a487022b0c546b79de666b1d3"
     },
     {
@@ -1044,10 +1053,10 @@
           "text": "Lehnt eine gewählte Person die Wahl ab, so verfügt der Präsident oder die Präsidentin eine Unterbrechung der Sitzung. Das Wahlgeschäft für die noch offenen Sitze wird bis zur nächsten Sitzung des Bürgergemeinderates ausgestellt; auf Antrag der betroffenen Fraktion kann das Wahlgeschäft nach der Unterbrechung auch in derselben Sitzung erledigt werden. Die Wahl für die vakant gebliebenen Sitze wird von Anfang an wiederholt, wobei der Vertretungsanspruch der Fraktion gewahrt bleibt. Lehnt ein Gewählter nach dem zweiten oder dritten Wahlgang die Wahl ab, so entfällt der Fraktionsanspruch für den nächsten Wahlgang. § 22 Abs. 3 dieser Geschäftsordnung ist in diesem Fall nicht anwendbar."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "deb11c86f08d47156a4342b0102b95ad14a6844bdf3608697f032e0854cae460"
     },
     {
@@ -1072,10 +1081,10 @@
           "text": "Falls ein vom Bürgergemeinderat gewähltes Mitglied der Einbürgerungskommission aus persönlichen oder beruflichen Gründen länger als drei Monate verhindert ist, an der Kommissionstätigkeit teilzunehmen, kann die Fraktion aus ihrem Kreis eine Stellvertretung vorschlagen. Diese ist vom Bürgergemeinderat zu genehmigen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "8da80ff3e23bf88c438f7b87be7eae6793b6febb8b762c4d0d085bef00cca163"
     },
     {
@@ -1100,10 +1109,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "de07db1db28225bb30f3a63a7dbda35c4766791559342e4f457bd3a87610c6f8"
     },
     {
@@ -1132,10 +1141,10 @@
           "text": "Bei Verletzung der Vertraulichkeit oder der Geheimhaltung kann der Präsident bzw. die Präsidentin des Bürgergemeinderates nach Abklärung des Sachverhalts durch das Büro den Bürgergemeinderat orientieren und allfällige Anträge stellen. Dem fehlbaren Mitglied kann ein Verweis erteilt werden."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "e76435ebbd23660c54d6a0fe347603450ae6caa4689ecfcbc39aa0bdfd0ca3ff"
     },
     {
@@ -1145,16 +1154,17 @@
       "erlass": "Geschäftsordnung des Bürgergemeinderates der Stadt Basel (BaB 152.100)",
       "artikel": "41_a",
       "artikelLabel": "§ 41a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
           "text": ""
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -1164,16 +1174,17 @@
       "erlass": "Geschäftsordnung des Bürgergemeinderates der Stadt Basel (BaB 152.100)",
       "artikel": "41_b",
       "artikelLabel": "§ 41b",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
           "text": ""
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -1183,16 +1194,17 @@
       "erlass": "Geschäftsordnung des Bürgergemeinderates der Stadt Basel (BaB 152.100)",
       "artikel": "41_c",
       "artikelLabel": "§ 41c",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
           "text": ""
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -1202,16 +1214,17 @@
       "erlass": "Geschäftsordnung des Bürgergemeinderates der Stadt Basel (BaB 152.100)",
       "artikel": "41_d",
       "artikelLabel": "§ 41d",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
           "text": ""
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -1228,10 +1241,10 @@
           "text": "Der Bürgergemeinderat erlässt die erforderlichen Ausführungsbestimmungen zu dieser Geschäftsordnung."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "79958306534f1ef233a40ca78c14ec377ca3b1eadf9c18b3c196422618f81409"
     },
     {
@@ -1248,10 +1261,10 @@
           "text": "Durch diese Geschäftsordnung wird diejenige vom 13. Dezember 1977 aufgehoben."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "130810970fbe08c0212c8ae65feec0cce6648526a9d9d8f537f689910579e851"
     },
     {
@@ -1261,16 +1274,17 @@
       "erlass": "Geschäftsordnung des Bürgergemeinderates der Stadt Basel (BaB 152.100)",
       "artikel": "43_a",
       "artikelLabel": "§ 43a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
           "text": ""
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 152.100",
-      "abgerufen": "2026-06-23",
-      "fassungsToken": "bce8c23b1521cb855ba6b8180b1ecebd",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "84e2baf3318be1557c12a77a9e279498",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   ]

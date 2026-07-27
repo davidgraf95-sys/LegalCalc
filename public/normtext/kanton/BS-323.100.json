@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/323.100/art_1",
@@ -25,7 +25,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "49b8579675887b7b1cec8ad2e6d72e738ff7b677f31602a82d78b09b32482425"
     },
@@ -49,7 +49,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "6aa7eab349714548ab89dc7e884fef5943228acc975f8dee4e50a74aedc79334"
     },
@@ -73,7 +73,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "968738e0b675540fc56d7928d6caf4bf55ccc71d5570d1fe016ab6e1ceab9e2b"
     },
@@ -84,6 +84,7 @@
       "erlass": "Gesetz über Behandlung und Einweisung psychisch kranker Personen, Psychiatriegesetz (323.100)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -92,7 +93,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -120,7 +121,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "dc16393efdcd0fc71b63cdf94908e11809f3c0fdde9b4c40e345c85e892f554f"
     },
@@ -144,7 +145,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "ba1d14213324749caa3767ffd5b639c1e3e242734b7bb31f8da167c19c48023e"
     },
@@ -168,7 +169,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "b01bcf5c1c495f820bcf4de0e28e9b272029b735541573e579927f0ce03f2fb0"
     },
@@ -179,6 +180,7 @@
       "erlass": "Gesetz über Behandlung und Einweisung psychisch kranker Personen, Psychiatriegesetz (323.100)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -187,7 +189,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -211,7 +213,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "52465e0cb3dc8359f3ef68c3be3beb2dd9bbdc8c7fdf1279c0cebeb8319e3f69"
     },
@@ -231,7 +233,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "a5f9de6fbba1cdbefe753b54eeebbeb1b51eee7d720d6dacb357e85aedea9793"
     },
@@ -251,7 +253,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "c33e5d63bebb6a5ff55e923388d2f940970703ea9e9cc7fdfda9435a05a08e7b"
     },
@@ -279,7 +281,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "3143eebc97a990f08597ab33fc872dbb5592a87c226428bc396498e9c2fbbb1e"
     },
@@ -315,7 +317,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "dc2f04121ba98ef175f2d15a2b998a3adc6dbdaba8cd176c6f3073117e0e0524"
     },
@@ -343,7 +345,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "daf9d50235d0c0dde2aa9934d9d81bebb3b600707869f2eab880a600abd2462d"
     },
@@ -371,7 +373,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "b4a1a6f9d2085cb1a83b8ee0dd85197294c6f0dcd4efd250c1a0da2d8e4b466a"
     },
@@ -417,7 +419,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "026144ffec1973d5549df1ff34c2a2643b329b6f0d8964630dd1b672d74d26d3"
     },
@@ -449,7 +451,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "b65a80e33e505f848ffb5581da197bafab035f525849cc750a6650f9cfb9b050"
     },
@@ -481,7 +483,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "5483f6d42adb9bff5aa551377a06502b4450276b1b4efe5d3305c9909353db70"
     },
@@ -513,7 +515,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "6d0246d12570ee300d79492c718c25b058cd8b184ba876bc1262c2c1d250a0ad"
     },
@@ -541,7 +543,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "718a1efd31167f46d6ae5446b512e5f276e4a6c2e6046c2c983de62d2b6f8493"
     },
@@ -577,7 +579,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "d4cb3cbfc9db4e39a3c7cf3cb13591670495750b2f40f4f19418d533dc98afcd"
     },
@@ -613,7 +615,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "2776f20e37c5f7e3380807cc610bcfe92b77ea8b99c0eb7c0b9647000c143689"
     },
@@ -649,7 +651,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "b8e70e9b3b81fa6625c5f6ea005cef05ecc8dfb7be6ed52b0e7c948809cb59d0"
     },
@@ -669,7 +671,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "e3b9c290f7afbc1b87d464a7f9872f633174926ad8497616282c88f04d2e0100"
     },
@@ -701,7 +703,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "7678dc2556559dd1b846d7e5c007fcd57811a25740cccd09b282599f3b9c12ad"
     },
@@ -721,7 +723,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "10d95bc8f4ce07e7bd95c3259165525385f5f4c60ca1d8ed2e6b5e1c0530876a"
     },
@@ -753,7 +755,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "6ff28c25d5385ad858c9dd439ef896a355526e5bf55608b11bc4b52535aca3f5"
     },
@@ -777,7 +779,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "c7ca90249655050967f30d1e5a420b72451f5fb2176e38da357c4d78552bb8db"
     },
@@ -797,7 +799,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "1e84b7fda2d06326d6c01969c41f5493ae03ee0db3936c06a349c6e054b094bb"
     },
@@ -821,7 +823,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "98784666378683d8fbbce9c107f5cdb96dc4538f345bf862d91342fd77948817"
     },
@@ -849,7 +851,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "cb397a32743798dd74d77976c685b7c7098bc7a6f61becebf5aee47eed9f9ab6"
     },
@@ -877,7 +879,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "83d398a4d39dc3f191b0e6bbfbc7a48be51bd5291606b2eeea72ef97c6199a72"
     },
@@ -888,6 +890,7 @@
       "erlass": "Gesetz über Behandlung und Einweisung psychisch kranker Personen, Psychiatriegesetz (323.100)",
       "artikel": "33",
       "artikelLabel": "§ 33",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -896,7 +899,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -907,6 +910,7 @@
       "erlass": "Gesetz über Behandlung und Einweisung psychisch kranker Personen, Psychiatriegesetz (323.100)",
       "artikel": "34",
       "artikelLabel": "§ 34",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -915,7 +919,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -926,6 +930,7 @@
       "erlass": "Gesetz über Behandlung und Einweisung psychisch kranker Personen, Psychiatriegesetz (323.100)",
       "artikel": "35",
       "artikelLabel": "§ 35",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -934,7 +939,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -945,6 +950,7 @@
       "erlass": "Gesetz über Behandlung und Einweisung psychisch kranker Personen, Psychiatriegesetz (323.100)",
       "artikel": "36",
       "artikelLabel": "§ 36",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -953,7 +959,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -964,6 +970,7 @@
       "erlass": "Gesetz über Behandlung und Einweisung psychisch kranker Personen, Psychiatriegesetz (323.100)",
       "artikel": "37",
       "artikelLabel": "§ 37",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -972,7 +979,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -983,6 +990,7 @@
       "erlass": "Gesetz über Behandlung und Einweisung psychisch kranker Personen, Psychiatriegesetz (323.100)",
       "artikel": "38",
       "artikelLabel": "§ 38",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -991,7 +999,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1002,6 +1010,7 @@
       "erlass": "Gesetz über Behandlung und Einweisung psychisch kranker Personen, Psychiatriegesetz (323.100)",
       "artikel": "39",
       "artikelLabel": "§ 39",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1010,7 +1019,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1021,6 +1030,7 @@
       "erlass": "Gesetz über Behandlung und Einweisung psychisch kranker Personen, Psychiatriegesetz (323.100)",
       "artikel": "40",
       "artikelLabel": "§ 40",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1029,7 +1039,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1040,6 +1050,7 @@
       "erlass": "Gesetz über Behandlung und Einweisung psychisch kranker Personen, Psychiatriegesetz (323.100)",
       "artikel": "41",
       "artikelLabel": "§ 41",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1048,7 +1059,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1059,6 +1070,7 @@
       "erlass": "Gesetz über Behandlung und Einweisung psychisch kranker Personen, Psychiatriegesetz (323.100)",
       "artikel": "42",
       "artikelLabel": "§ 42",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1067,7 +1079,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1086,7 +1098,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "5964d1f1e04c7f45c450713929b61778615681558a52289b9a029341008d5924"
     },
@@ -1105,7 +1117,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "f7cdc151b3b8cd5f0e51097a45d5b3f7eb4b7ce394b647929e102fe724a6148e"
     },
@@ -1125,7 +1137,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "ab14414d4d615bfe4a527c83596a4e5a8a6b94d409c7dcc427a140eb8a810567"
     },
@@ -1149,7 +1161,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "c17ec905ad8c3907bcf5a4ca123ec1d25c31e14518b24de6401af25cc16cc51d"
     },
@@ -1173,7 +1185,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "58c0f71b32912f5daa9ffedeb8b293604a8d23e24a8e6a781c09cbb28ddb32ff"
     },
@@ -1193,7 +1205,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/323.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aafa7563039fe2f202f48ac6290dc42b",
       "sha": "3da08181ec445a3a5d470eff1de808a140c6c7884dc84563499ca26209792818"
     }

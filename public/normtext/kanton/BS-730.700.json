@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/730.700/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "2022-07-14",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0a916c7e82c68e30fb9f6d9dfafbdb34",
       "sha": "6efb0ed58817a94a1b86c0ca1784141e1f26216e7352320f2b23a06f310b687d"
     },
@@ -59,7 +59,7 @@
       ],
       "stand": "2022-07-14",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0a916c7e82c68e30fb9f6d9dfafbdb34",
       "sha": "ca4f73291c02055fae31e27fa738ab8606ad4c9e4f6b957b5807c1448db5dd53"
     },
@@ -82,7 +82,7 @@
       ],
       "stand": "2022-07-14",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0a916c7e82c68e30fb9f6d9dfafbdb34",
       "sha": "ec5bc18192a997d30c3d640e8eebb5c03a49d9f4c2e4833d82f7aec277118683"
     },
@@ -105,7 +105,7 @@
       ],
       "stand": "2022-07-14",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0a916c7e82c68e30fb9f6d9dfafbdb34",
       "sha": "51bf09bf577c6f19d1fa4e29647ac9e0fc2676a82907360737ebaf202f691dd6"
     },
@@ -116,6 +116,7 @@
       "erlass": "Verordnung über Beiträge an die Kosten der Beseitigung von Sprayereien an privaten Liegenschaften (730.700)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -124,7 +125,7 @@
       ],
       "stand": "2022-07-14",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0a916c7e82c68e30fb9f6d9dfafbdb34",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -152,7 +153,7 @@
       ],
       "stand": "2022-07-14",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0a916c7e82c68e30fb9f6d9dfafbdb34",
       "sha": "2e5179d0777ba3382efd23d352cc008b22befc03df3d6d72317f5c6de59d0524"
     },
@@ -163,6 +164,7 @@
       "erlass": "Verordnung über Beiträge an die Kosten der Beseitigung von Sprayereien an privaten Liegenschaften (730.700)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -171,7 +173,7 @@
       ],
       "stand": "2022-07-14",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0a916c7e82c68e30fb9f6d9dfafbdb34",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -182,6 +184,7 @@
       "erlass": "Verordnung über Beiträge an die Kosten der Beseitigung von Sprayereien an privaten Liegenschaften (730.700)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -190,7 +193,7 @@
       ],
       "stand": "2022-07-14",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0a916c7e82c68e30fb9f6d9dfafbdb34",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }

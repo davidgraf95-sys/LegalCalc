@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/955.200/art_1",
@@ -28,7 +28,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e462e8b728bb7e81d5aebbf31eff8ea4",
       "sha": "1621c62647b23aeb8dd17d0507116acc0b6d08c1cd3cba20e4c42acb18565d01"
     },
@@ -55,7 +55,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e462e8b728bb7e81d5aebbf31eff8ea4",
       "sha": "5e2e75cac67ac5bdd1d3f75f3e8e3c372c3bfd75d203e7b92d898b5a685a6024"
     },
@@ -78,7 +78,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e462e8b728bb7e81d5aebbf31eff8ea4",
       "sha": "e0df0042c584151599909bb45f207efcd5eb4605f2a4447f51dfe23f1df04b1b"
     },
@@ -89,6 +89,7 @@
       "erlass": "Gesetz über die Rheinschiffahrtsgerichte (955.200)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -97,7 +98,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e462e8b728bb7e81d5aebbf31eff8ea4",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -108,6 +109,7 @@
       "erlass": "Gesetz über die Rheinschiffahrtsgerichte (955.200)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -116,7 +118,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e462e8b728bb7e81d5aebbf31eff8ea4",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -135,7 +137,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e462e8b728bb7e81d5aebbf31eff8ea4",
       "sha": "3fec5bdfdd34d1fcbe46479ef8bf0d42952dd8a5ea0809103de9d016a8baf084"
     }

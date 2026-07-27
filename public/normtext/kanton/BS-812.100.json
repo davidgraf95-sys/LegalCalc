@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/812.100/art_1",
@@ -29,7 +29,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "28f19fcab8d247d7b5d9a285765b7b73dc103654562b0b25f6fab3d879dc9c0f"
     },
@@ -49,7 +49,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "27ee7e4206afe4972ba17f2f21933d7bbed92521b8d771eb06ea14581b3d51d5"
     },
@@ -73,7 +73,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "1731cf44e25ec14c8f4ba4baac7384de26c72be92af98d54f607f8815b55ea98"
     },
@@ -93,7 +93,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "9fd8ae7b33149c598d901dd94ae0fddf49e97a340401e02b3f643f7762c895c2"
     },
@@ -125,7 +125,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "036fed07077b96552346b35f4068992c64ea3de1bd5be96e3ec022d0b310a629"
     },
@@ -149,7 +149,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "0fa7637f56c30191b793b811050cd19aa6ed9cbc9a4928b1372aefdfaec8d596"
     },
@@ -160,6 +160,7 @@
       "erlass": "Einführungsgesetz zum Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel, Arbeitsgesetz (812.100)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -168,7 +169,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -188,7 +189,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "a90f0b4279d90b4b425b039bb429cbb431a48f19c4207b2893b5b1d04b0b8e94"
     },
@@ -208,7 +209,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "cdfcfece41ed52c2d20db925a7d5a8706ac21a72167317c191ba727b61c2c223"
     },
@@ -246,7 +247,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "3c5ad70f899b595d5274c995af41f08444260b322cff996b0567346c08d41158"
     },
@@ -266,7 +267,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "e16b9d436392d8d33d4552b874bd1127cbad3b6e85989c0780f1675d10c5e85c"
     },
@@ -286,7 +287,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "909a815eaecbaa3cc0880c0071e00db622d61d6b5f1b37e6804f3cbf15b95378"
     },
@@ -306,7 +307,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "4657285f4ece23ee66e25ca227d8c7968cf4a7f6dede67c1e81e48505405b2c2"
     },
@@ -326,7 +327,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "c673605e1464e6650fc125df4ec649f88d568aee22779eb1bbc495b873affb7c"
     },
@@ -358,7 +359,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "87115f4d8f11dd80d074017822a7f0eb66904060c38bf47c1f9d843af8d5df85"
     },
@@ -377,7 +378,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "51f7137e2a41acd5bbd6ce03b22ed97f385ba3f632110c5415b0dbb618ac61ae"
     },
@@ -400,7 +401,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "0df4b4b44f3be7632df1846cd508da7223905cb984c9f7e552c39e5d785fb4b6"
     },
@@ -430,7 +431,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "1c6f30c8b70ceec3c99fb5ee886f6fa63332fd0ec8ae2047ad9cdecb04eedc88"
     },
@@ -442,6 +443,7 @@
       "artikel": "19",
       "artikelLabel": "§ 19",
       "titel": "Abänderung kantonaler Vorschriften",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -450,7 +452,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -470,7 +472,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/812.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "98bb370080631c3bd63615a67cdb0ee5",
       "sha": "3c679a51be16112a60f20fda0c4f88d8be13a0c159e491868f18f9cecbb29de4"
     }

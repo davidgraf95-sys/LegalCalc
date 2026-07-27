@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/442.410/art_1",
@@ -47,7 +47,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "4d3bbf760f4c4ce18da7941c75c3c930dd463c00532a00a2f466eafe7a91b81b"
     },
@@ -67,7 +67,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "41846c52eb47ae1f3b06d5035d2e80ad8c222880be6dc029579d08d1bce578e0"
     },
@@ -149,7 +149,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "8b0be7a6547ec589374e3b4890e734f047393a0bac0a58cd44db85d2046fa549"
     },
@@ -169,7 +169,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "db28c172b807397e9240d1b331014144f140cccd226fd4f95038a80c84603377"
     },
@@ -197,7 +197,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "52e66f6784d3396311001d674c00d511ef49b5ae0bb83abd410fa5d9d3b9abd1"
     },
@@ -221,7 +221,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "178147528f86680073f1fe96d4f0ca0852774847fb8e4fd37667e9d62931df62"
     },
@@ -241,7 +241,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "ccafd595191eac0701b45ce86b3716b0ce19ede67645ae179f38e59adaa41a45"
     },
@@ -273,7 +273,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "4c891aea41816377a40ddeb78fad5e2ed9e690d85d6186679c648207d32f5ed0"
     },
@@ -305,7 +305,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "23723b67f5168153826363d6806c6e1998e1456d68b7e8f348a051456bbfb0aa"
     },
@@ -349,7 +349,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "17b660c8e8327f9c1aec0b2f9505b8172de3c447debdc7ae41ed41273f8a65b5"
     },
@@ -360,6 +360,7 @@
       "erlass": "Vereinbarung über das Immobilienwesen der Universität Basel, Immobilienvereinbarung, ImmoV (442.410)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -368,7 +369,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -379,6 +380,7 @@
       "erlass": "Vereinbarung über das Immobilienwesen der Universität Basel, Immobilienvereinbarung, ImmoV (442.410)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -387,7 +389,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -411,7 +413,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "99d10304c1f6c18b34fc00818da194d3c00aa99ac815dd6bd9e3562b4a80c749"
     },
@@ -434,7 +436,7 @@
         },
         {
           "absatz": "3",
-          "text": "Die Verwendung von Mitteln des Fonds für Instandhaltung und Instandsetzung für Mobiliar (BKP 9) und gemäss Schnittstellenpapier Bau ist ausgeschlossen. Diese Kosten werden über den Globalbeitrag finanziert und in der Spartenrechnung „Immobilien\" ausgewiesen."
+          "text": "Die Verwendung von Mitteln des Fonds für Instandhaltung und Instandsetzung für Mobiliar (BKP 9) und gemäss Schnittstellenpapier Bau ist ausgeschlossen. Diese Kosten werden über den Globalbeitrag finanziert und in der Spartenrechnung „Immobilien“ ausgewiesen."
         },
         {
           "absatz": "4",
@@ -443,9 +445,9 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
-      "sha": "5100b11bd3c3ccab81b6d7c1e6d1f2e219b3ad475eb1449bdc34f07a9c992df7"
+      "sha": "533cfecd35b6691a053cbd422360a292e8a442a244596ce881d138fa65fa78f0"
     },
     {
       "id": "kanton/BS/442.410/art_15",
@@ -471,7 +473,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "6084c9adfcf312a2b08d824b0bc0a197fc887b478820e74b6defe78603235046"
     },
@@ -499,7 +501,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "3a51770bf220373aed797e5f018cbb1837bad42c419631758b73674a4cd5d144"
     },
@@ -537,7 +539,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "efdc3411f46e469e03524a77084c6c386a38493588e5756a0a1aef269d00415f"
     },
@@ -577,7 +579,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "e4a1010461eb8ee1efe6acfc3366a7c26453143d75528b03d2b9c1825e8a275c"
     },
@@ -605,7 +607,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "8d9a8281a5764e4872b357673bece8ed20205be7d747d79cabe0d111b8a7c2be"
     },
@@ -629,7 +631,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "afc994b2f581481b048883e76a22e3007e8e18902c96e37061e372e4a518a38c"
     },
@@ -679,7 +681,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "45ca9ff81af8b7a5bf5aaed44db21066f923978d42d82563e2c2e8caac5a67dd"
     },
@@ -699,7 +701,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "74e4cf6116d945e3507ad60580c90b1cd27625f1175ccae785ff7965cd42bda0"
     },
@@ -727,7 +729,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "a1ec166506cea6f4f7b96a5148f36e8bca5b6f34fa6cf6910106473bc46fdeda"
     },
@@ -738,6 +740,7 @@
       "erlass": "Vereinbarung über das Immobilienwesen der Universität Basel, Immobilienvereinbarung, ImmoV (442.410)",
       "artikel": "24",
       "artikelLabel": "§ 24",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -746,7 +749,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -770,7 +773,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "c06fd42287216ca339c94da14bdaaa6aeb4098784a1fcbbe280cc5b228ed0bbf"
     },
@@ -790,7 +793,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/442.410",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "897e44ed04965ac0d0eb11b2d34b2034",
       "sha": "ff7497a4854aa04fb17d96862bf1744663f930e7aba422b6e29b5fb046bbde95"
     }

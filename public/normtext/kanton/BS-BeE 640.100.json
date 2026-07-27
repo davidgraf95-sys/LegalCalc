@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/BeE 640.100/art_1",
@@ -17,7 +17,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "8c6a6c2a1533b8ff27beb536231bc1e2d360a512495c06beb5fd3aef26af69c7"
     },
@@ -37,7 +37,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "28f81a98dde82db25a4871c5f3c22768d270dc2190f069b759aded4642f28efc"
     },
@@ -71,7 +71,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "1516da793474f62e954726fcf48ef2909c7523d384da86fc1cd8854c06c47ecc"
     },
@@ -95,7 +95,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "bdd9f675e0f795b8f00b36e1219301ac5140d9fad08a6fa9bca2f501c5cbaf35"
     },
@@ -119,7 +119,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "6b482b3e39ab92a005f6859422db78326e12ac4a6b9709604041976f95a8842d"
     },
@@ -165,7 +165,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "69802e953c5a74493cac308a8f8b9beae228fa57559a1a70685756be7955efb6"
     },
@@ -193,7 +193,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "bc9b54365f4d1bbe27622575fcdc4abc70032dc91f105306629c3b1ceb8ee9a6"
     },
@@ -204,6 +204,7 @@
       "erlass": "Steuerordnung der Gemeinde Bettingen (BeE 640.100)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -212,7 +213,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -236,7 +237,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "658ef483f10e4076798c7e4d74a545638ab6e108cf5c5f837bb74d9645ff783f"
     },
@@ -264,7 +265,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "f479bbbe88cc12b4e1e49490b7c7973e5f97e56a642c3bd4286c9250e0e3b092"
     },
@@ -296,7 +297,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "478788686382c1edf48dba428df3a214ab69bea9198d92ee29b4367191abfb9e"
     },
@@ -324,7 +325,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "131f721164e3eaa73d44d0719df60b5e7efd7e34a836e7a3b9806c762552dfa6"
     },
@@ -374,7 +375,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "5c7b2bfd92df1011090afa2ee9bb489a7fed353252c81ceac26d71e9d46e276e"
     },
@@ -394,7 +395,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "3fe7f0a06de03491c28758d65bd42941d953c15ad9115ab3d93db0f3fa1e5f90"
     },
@@ -422,7 +423,7 @@
       ],
       "stand": "2019-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 640.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f1a0b0c35a382090b3a2c1f93bd84a36",
       "sha": "07c8f27fa6caa6415b969f873fa6bce8225c488ce50b3f29126984595b212a8e"
     }

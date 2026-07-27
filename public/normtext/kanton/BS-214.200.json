@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/214.200/art_1",
@@ -17,7 +17,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "084358633f6b2a5569bcabc6dc056629727c186fff02e707faf2ba22b2076ee1"
     },
@@ -41,7 +41,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "1681d42e299563891d566bd7c790452c1620214404064cfb22acb134c68ff671"
     },
@@ -69,7 +69,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "97760b11f82cfd3c83dcf805c66dabc2ec1620f419349fea428135cd62e9dec6"
     },
@@ -80,6 +80,7 @@
       "erlass": "Verordnung über die Behandlung von Fundsachen, Fundsachenverordnung (214.200)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -88,7 +89,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -108,7 +109,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "d688ba6a188a4c893f776be7530f6483292bbba6141bd6e4b9c7f354deb1e766"
     },
@@ -132,7 +133,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "b96fbed1e787a9aa6a6848f3d8ed70f09cfba71d38279a0c676999626a243d23"
     },
@@ -160,7 +161,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "fca4af6f46e4aa01271a8e693a831b060329efa3cf8393e989e78673a9812729"
     },
@@ -188,7 +189,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "a5b3335adbd5de08b467ab0b9e85c4175105fa411b462359893639019bf47eb0"
     },
@@ -212,7 +213,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "bb26e418facab3399ab94f616cbe99194716dcd61f7bae40670b519d19d7f9b5"
     },
@@ -232,7 +233,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "3e426d95bae8e79f8d7e9b3f220ba68995cd7ca186f31342cf247c417f56534d"
     },
@@ -252,7 +253,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "8fe1520995e5b709695875fc10124615ba2b6ca91b5c722becbce3194a712762"
     },
@@ -263,6 +264,7 @@
       "erlass": "Verordnung über die Behandlung von Fundsachen, Fundsachenverordnung (214.200)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -271,7 +273,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -291,7 +293,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "156f35ede5bc777fd9006efca9a9d278a8e89ae9ae0b8cd86b24d85546f44a03"
     },
@@ -315,7 +317,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "56df05af568be79d4a4d4feb2d491ec14a0845f78f004c1ff0f1500639329b06"
     },
@@ -336,9 +338,15 @@
           "absatz": null,
           "text": "",
           "mehrspaltig": {
-            "kopf": [
-              "Bei einem Wert der Sache",
-              "Gebühr"
+            "spalten": [
+              {
+                "typ": "text",
+                "titel": "Bei einem Wert der Sache"
+              },
+              {
+                "typ": "text",
+                "titel": "Gebühr"
+              }
             ],
             "zeilen": [
               [
@@ -363,9 +371,9 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
-      "sha": "2609c6eb414fabce94368fc51a6b997129daccf2e37099c4d45edd99f60f4cc7"
+      "sha": "89a29fb4aaeb0d4daa4175f4e2acb7d4bcaaf399248ce952ae3d7d5831fff444"
     },
     {
       "id": "kanton/BS/214.200/art_16",
@@ -383,7 +391,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "ce62e0ec82437453b03f45fa6695cc57edf29bd665a2562dba88f8a64f13e294"
     },
@@ -403,7 +411,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "2f8c34fbf866dcf979030e38571ac48a1375aaf0249a101c5338cb68b6c70432"
     },
@@ -423,7 +431,7 @@
       ],
       "stand": "2016-10-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "59e9fcfbb30e661563198abffa9e3b94",
       "sha": "8b3b855a6897f882ee9f8b5433cbaa83b3d4b9f52c95261fd3344158371f485a"
     }

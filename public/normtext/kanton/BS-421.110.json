@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/421.110/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "83066448ecf1f527266c8026f1161aa8caeadc915c2c8260fef6148e6ca344d0"
     },
@@ -39,7 +39,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "7db24254779582191cabaa1532b7ec35690bee33ccc3c83cdb10dce95a10e5fe"
     },
@@ -58,7 +58,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "d92fff30e62719086d33610274df2cbd0cfe9186edea50a13b6654b4d8c9c54d"
     },
@@ -77,7 +77,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "f67458af5e19f7ab37f0e9cbb70fa1388162f8e49f54ada858ca62174aa1c483"
     },
@@ -96,7 +96,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "6a5144c52aaada53a6f85c6eeddb76d5a76e0b94b9b293186d684af66056a277"
     },
@@ -129,7 +129,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "fb40cbdb81d2bb92d0a684b40ec113904304da5e6e7961291ab796b5fa223e92"
     },
@@ -174,7 +174,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "e9a7e9486431da486be5f5b3c08afe50214bef34f586da8c851c7bbca2e55d67"
     },
@@ -197,7 +197,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "8a27d4504872f181ec17ea7a7796385d37a0458dec52ff130e68061ce547641a"
     },
@@ -216,7 +216,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "ca3e229e3c2ba1e4a325517c6908de40859c3088b0ebc9b0adafaa5933a6cb0a"
     },
@@ -235,7 +235,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "c37ec2ac3f7a8ad7228dfd741da8004548347db483fc339de0f508543bfa64db"
     },
@@ -246,6 +246,7 @@
       "erlass": "Schulordnung für die Allgemeine Gewerbeschule Basel (421.110)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -254,7 +255,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -265,6 +266,7 @@
       "erlass": "Schulordnung für die Allgemeine Gewerbeschule Basel (421.110)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -273,7 +275,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -284,6 +286,7 @@
       "erlass": "Schulordnung für die Allgemeine Gewerbeschule Basel (421.110)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -292,7 +295,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -311,7 +314,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "e6ca986dd779193f6e97a0e595252a5e7d93a6fc5d47edf26c93861c80f744fd"
     },
@@ -340,7 +343,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "3a4e390f2e257aa5833a17c433e6d225c1be70f5612498260bafa4890417df86"
     },
@@ -359,7 +362,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "447429337532524a431bc7f38cf2c14160819dd8c5443d2f56e71d24620389a0"
     },
@@ -378,7 +381,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "4fa6dd8a61396b139d160dfe2eca004d578939b9394b48a2af92dd08ab2b15f0"
     },
@@ -397,7 +400,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "95f43e761ab941207ba426cffd3d187f3104340aedab9dfb7d55be5b01e6cfaf"
     },
@@ -428,7 +431,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "82b8e197326e95ae637d9bf58533d889edbc3d65add8f44c4e788c1593853e28"
     },
@@ -447,7 +450,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "540216ce41af02a1195aed47f1dca0d8c45ec2893c855fb50ded334f18919721"
     },
@@ -466,7 +469,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "8124c4702cc3dace0c20caa6b20826d0aa7edcb0f07efd59a4c74cfb3dc88f11"
     },
@@ -485,7 +488,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "b6637b3ffec4b025c889b7d9f315833eb50896813b260c6a157ddfc7dba33469"
     },
@@ -508,7 +511,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "a4a3a4d4b5a9b4014217c36a2f97176be2c92afb30e4fa36f4c443d290966ac6"
     },
@@ -531,7 +534,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "88d4ddc4591d5eea3bd6468c8fe934a44344b3be25769bce764bfb2568468d7d"
     },
@@ -550,7 +553,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "7fa2a193026fd1fd76c5e55f6b359212228461b38a196d0c297c4950165554c6"
     },
@@ -587,7 +590,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "687c6d8a9d9c711b8f5f80e31c525d037db66fe02f01dcd47a83c93c8fffa3f1"
     },
@@ -606,7 +609,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "e0628032377c05476d6aa7cb95dfa0ad425e42ae150a307fb8c916573c253fc2"
     },
@@ -639,7 +642,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "9bbdca12262996fd2d2c547753fa3793254e1f7295c98af7679f68ff4a02b09d"
     },
@@ -662,7 +665,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "1de62594580a6b8aad5c2d8fd7a14b348e2464f91d166aad4382cc8d9524ee77"
     },
@@ -681,7 +684,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "e416cdf8c8096b6f7e4dcef00d8ca07938afee13d641ede30162045647514a93"
     },
@@ -700,7 +703,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "b93585d1b51b491f480aa88c9856abc086cefcb0456fc251b484b9a983d4b984"
     },
@@ -719,7 +722,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "11e20fe5987a4fd88fc3ccbcedb3c8cb371100890d2cb12ddcd7efce3c4f71ae"
     },
@@ -760,7 +763,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "019ef4f3f89a472e92ef6bc200b641cf021ae06cf21940307393f4447cc9e8cb"
     },
@@ -779,7 +782,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "dc60f2b3dee08d5435833bce5a38c68a680728fdfeb75dbf5c6ce1ad38212b1b"
     },
@@ -806,7 +809,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "e9ac632ebfdf36dcf08bd63a6649a3d5284ff92c885fad40631f17ed39c75192"
     },
@@ -829,7 +832,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "35a6af9847ee91958b5695480de19f2d07b2ebb4a8011e8874c36e003a09e86a"
     },
@@ -848,7 +851,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "3f393653b036a06fb1d91a310ed33c796e83a9bdd01c62cbfd67dd2807b9a2cb"
     },
@@ -867,7 +870,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "1a729f3094976c29a647c5e6c7e1c3945c2b68dc229f11dcb1eab4257ce013cd"
     },
@@ -886,7 +889,7 @@
       ],
       "stand": "2004-08-09",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "290345b698aaf92e670c5a363faba273",
       "sha": "6360d4822d61ebeced1ebd2fca98c96bf9e06a7609cba0921789df5ff8b018f4"
     }

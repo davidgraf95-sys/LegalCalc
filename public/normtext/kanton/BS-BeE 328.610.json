@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/BeE 328.610/art_1",
@@ -17,7 +17,7 @@
       ],
       "stand": "2018-03-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d3880c15f2c58b7da55dca326452df4d",
       "sha": "b29c20e95008ea847a6c0c7aad8cc91711c85af854ad2100f16944511e99c224"
     },
@@ -37,7 +37,7 @@
       ],
       "stand": "2018-03-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d3880c15f2c58b7da55dca326452df4d",
       "sha": "13b3ce2ca6effcc97c01a5ba0a2b3e24cd393df9e00e9928d5058ceddf20da0e"
     },
@@ -61,7 +61,7 @@
       ],
       "stand": "2018-03-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d3880c15f2c58b7da55dca326452df4d",
       "sha": "3e3e55d7066cb5410b9a13db7697d27bb30be5210f0a77bfb9384884a0e84e49"
     },
@@ -107,7 +107,7 @@
       ],
       "stand": "2018-03-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d3880c15f2c58b7da55dca326452df4d",
       "sha": "bf9a510a50c1af492f52924a809f4c965c9948cae8fdf08d0cdbfccd72d3ab11"
     },
@@ -149,7 +149,7 @@
       ],
       "stand": "2018-03-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d3880c15f2c58b7da55dca326452df4d",
       "sha": "c5c08c4ce6e3b39bbed49ad3457b9790f0150dae25f4c31925d02c3cf739fda1"
     },
@@ -173,7 +173,7 @@
       ],
       "stand": "2018-03-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d3880c15f2c58b7da55dca326452df4d",
       "sha": "4ee155924d19d03ee14a31567d8b8f777786bb2eb6a222a43c24f0f6b020035b"
     },
@@ -184,6 +184,7 @@
       "erlass": "Reglement betreffend die Zahnpflege bei Kindern (Zahnpflegereglement) (BeE 328.610)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -192,7 +193,7 @@
       ],
       "stand": "2018-03-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d3880c15f2c58b7da55dca326452df4d",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -212,7 +213,7 @@
       ],
       "stand": "2018-03-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d3880c15f2c58b7da55dca326452df4d",
       "sha": "56ddb1056804e2ea62c601d3a07e9d78f122ddac318c5264825b76a46370e4d5"
     }

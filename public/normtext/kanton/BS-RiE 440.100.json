@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/RiE 440.100/art_1",
@@ -25,7 +25,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 440.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "039c9f628645e53c654cd9513da6b20b",
       "sha": "fc19e6f88e461c0c807beaf5aed6344dc8eed9fe0df40abdf6149eabe72094b0"
     },
@@ -53,7 +53,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 440.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "039c9f628645e53c654cd9513da6b20b",
       "sha": "77499d9543f8a3cbfa85b25061eef441ecd77a1b9c7716e2dce4e5bd23f81c68"
     },
@@ -97,7 +97,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 440.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "039c9f628645e53c654cd9513da6b20b",
       "sha": "fb36dedd9c5677dd047118afe14f2275e7b7eed921700bfd7b4dd77c34a75c66"
     },
@@ -127,7 +127,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 440.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "039c9f628645e53c654cd9513da6b20b",
       "sha": "3be8f850e040fbda68f2838f99e695aca93870df8f9e6657cd9f8999b3f5724b"
     },
@@ -138,6 +138,7 @@
       "erlass": "Reglement für die Gemeindebibliothek Riehen (RiE 440.100)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -146,7 +147,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 440.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "039c9f628645e53c654cd9513da6b20b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -170,7 +171,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 440.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "039c9f628645e53c654cd9513da6b20b",
       "sha": "ba20e2723371db03d508c2b3f48d5a9a01628f0fbd018584b8cf119f96c70fe0"
     },
@@ -202,7 +203,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 440.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "039c9f628645e53c654cd9513da6b20b",
       "sha": "a7d9c66637cf917a37d19d534bbe23e20658c42d589c38f8ca6f0fb57d02fe45"
     },
@@ -230,7 +231,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 440.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "039c9f628645e53c654cd9513da6b20b",
       "sha": "244533f6c18b6d7a78369ef9a11cbb42ca4736b75a205f9e9d814a3ac8835e1a"
     },
@@ -241,6 +242,7 @@
       "erlass": "Reglement für die Gemeindebibliothek Riehen (RiE 440.100)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -249,7 +251,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 440.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "039c9f628645e53c654cd9513da6b20b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }

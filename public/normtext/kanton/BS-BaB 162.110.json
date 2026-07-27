@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/BaB 162.110/art_1",
@@ -31,7 +31,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "6773dcfcbb7b508e7d0f35d9e111d26dcc8cf24cc8635ed755f58a541a362dfa"
     },
@@ -63,7 +63,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "30ad32862b1012a89151853f32fa189a908991697e52fd30f308e2e54f99dc4b"
     },
@@ -91,7 +91,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "dc6b514302c2b9aff1bc90c4676ed92a7a9d3f2574d6875be5d4c2131148193e"
     },
@@ -115,7 +115,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "4b07155888ddf135b8de8b3b4e4d43b6b6a6505dfb0bde7c7187977e45a20686"
     },
@@ -143,7 +143,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "e44bfcf0c3050d701c1b0dc7713dc9bf305926b749cb20099168f510a0786ccf"
     },
@@ -177,7 +177,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "79cf5322b752a8067c70e7910c54401ade15e2d3ad265cfc47cc81f98111e57e"
     },
@@ -205,7 +205,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "9856c84c86e6c803645de1ddb0ec123eeadd5d4d7da36ba38ac11169db0d9aeb"
     },
@@ -229,7 +229,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "ccb7383b5e45cf1da1d3d85d0f180de51b861e766af2eafb8042fa5a7f5c96db"
     },
@@ -267,7 +267,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "68e72b5c8849cd97c13687d3943b68c264157e7afd6a30284169d6c281e7b874"
     },
@@ -279,6 +279,7 @@
       "artikel": "10",
       "artikelLabel": "§ 10",
       "titel": "Rückerstattung der Aufwendungen",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -287,7 +288,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -337,7 +338,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "f39ed22add3837540c0a55c2b058b9e937f63c26ec9c5ced229fc241756d3c97"
     },
@@ -361,7 +362,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "c330a4f72175883022f397c0551039112a0afa0fe3e45ea4a1938f8e8a6f26a4"
     },
@@ -389,7 +390,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "3735086440d6f7cb129779cdb30c7043e07c068e79a69bedd83e9a8546dc94be"
     },
@@ -417,7 +418,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "7d3ac4f0fc9a4d73b81e1f1f7c72999c96203bfd93269fa8bcc6b091e360985e"
     },
@@ -437,7 +438,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "e098831d5af468168e93ac64988a48e2f7ee95de8e58ef6cf0d444b910fcd787"
     },
@@ -469,7 +470,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "824d58914154e60c7af934573ba68afd10a49aa312bd961080e47408c191b56a"
     },
@@ -481,6 +482,7 @@
       "artikel": "14",
       "artikelLabel": "§ 14",
       "titel": "Verfahren",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -489,7 +491,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -513,7 +515,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "ba9e7ed12ded88b608fd3ab1ec5f75c352e7f26802b65cdddacb22a9c5ff0ef8"
     },
@@ -537,7 +539,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "790bab4a7b6a2699c1ca8cc992de37f545018ff885cfba7018c9459fbea30e4d"
     },
@@ -557,7 +559,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "07d213924b3dfffc85686502dfb57d89056e7fa0bdc6350160f7503a4ce0d3f2"
     },
@@ -585,7 +587,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "3b018681d1d4483d82f6b3ff87f27a5788bbbf66f55a4ede0a10e63e390e5dd0"
     },
@@ -605,7 +607,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "f7324ff0fa595891a8b7932d688b276351508de10fe30794319e15c62563db2e"
     },
@@ -629,7 +631,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "973250c68b06dc626b8beb805c4feb10d601a2c92845223ffa73726c4b6ce0a7"
     },
@@ -657,7 +659,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "dd5a3b298aced860b4649566307c6f858528cfef78bf05aa4cdfe5e9d9897840"
     },
@@ -681,7 +683,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "c42d8187f2ee84647f76a153125bede9e09f6a8b49b066a7bc54cfe0a38b0f2a"
     },
@@ -709,7 +711,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "eaca630e280b2e1cb752304192ac7e3e93dcaa3bec5abaa54352f4157e7e4652"
     },
@@ -737,7 +739,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "a6630fb977f341d5dbe3468774978e3ef29231100b87453f81b043924fd0e622"
     },
@@ -769,7 +771,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "724223773f50fd838cf60fd20b5e28b3a236755ea4bbf21994ddcc845dc69044"
     },
@@ -819,7 +821,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "b55b7b3440b911255404fe295c7d6287e8e0feff41706bd055cfbc4c469c3628"
     },
@@ -843,7 +845,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "6a60316469c66ead73c7c95e674a8e582fe182cf9d89bcb6493d48db635e8fbe"
     },
@@ -875,7 +877,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "98b10eddf8d55a57d1e12ddbcee37c183c0462a8fcb1217dfc24355bfa2eece6"
     },
@@ -899,7 +901,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "9841fd10cbeccaeee882eb8ae966d679be309ba5b2349680445587680f0e41be"
     },
@@ -931,7 +933,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "9c21b8bbf3761e77377bd053b9d9d0d50bf503e0680efe44de885cf0f002d8c5"
     },
@@ -971,7 +973,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "88bd74c3f3e53c67d4ba133771946e8fa491c49e5c2d4658a8f6463ff3f679a3"
     },
@@ -1065,7 +1067,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "9ad65b9be3c45ea1da0efb7f7e15c563e4e1d7e36f02e4861e2adbe10a5afb19"
     },
@@ -1085,7 +1087,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "ae30c75dc100c2bab5e1f530f1f1863f0848dbf0638aaaf9b6b3eb04c5415d08"
     },
@@ -1113,7 +1115,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "d76ad7aa721d974fd586dd5f1cb36f4bc4b17a8cf1e4de72bc29711ed48525c3"
     },
@@ -1155,7 +1157,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "fd5c3ffdd2366f310ccb6b309aecde55013a728aa744965fae00ad9d3b067b40"
     },
@@ -1179,7 +1181,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "541a308507bfda7afee7438196bf441851c28feb2a9b4f9987ac5b6936a3d017"
     },
@@ -1211,7 +1213,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "4c2f90e55aaf8c9af80a622c67c918ecbc00bc57369eea21089ae9b0035ad14e"
     },
@@ -1235,7 +1237,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "682ceb5d22dfb942641b881272c36a93f6550bcc8db850af8f97e3136b3415e9"
     },
@@ -1269,7 +1271,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "9a1fe7d0d02881464753d6eb5c111f0f039cddc7c17e93f2f526866c9f1a7dfd"
     },
@@ -1301,7 +1303,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "8965d51d9504faeabcd3d6b1386c47c87e5339ce94fe1dfca8faa6b6620b5944"
     },
@@ -1325,7 +1327,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "a6024fa8a5bf8673ab391e02d814647bc07eff1d112e56d378b75379bf457459"
     },
@@ -1353,7 +1355,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "ee4d82fde7beaebad46d978f64e801329e6c05764524100535cac9ada4a093b3"
     },
@@ -1381,7 +1383,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "d689f47f7e7f025e4ee70fafbe6ec462c4e3f52a2f6642455a1eee13975386c6"
     },
@@ -1401,7 +1403,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "6e13ec9db121d47500f5171e7b12e633a43aeb0be3bf42ad9c11d436c5382236"
     },
@@ -1421,7 +1423,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 162.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8512a5836aad6cf5e9e7c7d24facac5e",
       "sha": "616c1fc255e90ceced74b3109f9f395ed99c88a67646730ad3d7eef328523616"
     }

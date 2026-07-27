@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/771.920/art_1",
@@ -20,7 +20,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.920",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5924cf3c9ae6892127a31c6de5c77864",
       "sha": "dfb5add558ccedb04164ea117380eb8882d83aed8af6ca22a8763fc5b1a2610d"
     },
@@ -53,7 +53,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.920",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5924cf3c9ae6892127a31c6de5c77864",
       "sha": "4f71354101f2e4c26e82893e075b1fc15e913b7a1e838ac40018971a50d6fe0d"
     },
@@ -64,6 +64,7 @@
       "erlass": "Verordnung betreffend die Wässerungsverhältnisse am Riehenteich (771.920)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -72,7 +73,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.920",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5924cf3c9ae6892127a31c6de5c77864",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -91,7 +92,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.920",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5924cf3c9ae6892127a31c6de5c77864",
       "sha": "e93e7bbc404e0c329cc1cb0f6ad9f9a0f70d18414ceab18bfccb150157567792"
     },
@@ -114,7 +115,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.920",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5924cf3c9ae6892127a31c6de5c77864",
       "sha": "a55d904a5fb96774108f14d1747462532786968e0db7ab2225ada892d53fa4b7"
     },
@@ -137,7 +138,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.920",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5924cf3c9ae6892127a31c6de5c77864",
       "sha": "6d8f901f9091a3f6c7de26ada5496c108fd1bb4770fc13671ece93e3e5842636"
     },
@@ -156,7 +157,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.920",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5924cf3c9ae6892127a31c6de5c77864",
       "sha": "8226f9fda983bd76556f175b2a37c00d6802435dd30c16ddcacc48a10592309b"
     },
@@ -183,7 +184,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.920",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5924cf3c9ae6892127a31c6de5c77864",
       "sha": "325d60c47a865456c53629b81581f7e3ff5268f88f2d830e7c799ef5d6961e99"
     },
@@ -202,7 +203,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.920",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5924cf3c9ae6892127a31c6de5c77864",
       "sha": "b83bfd3e5903df9d5ba6c304e00d331f901108789f27ebc213b498d9b5777f63"
     }

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/RiE 328.600/art_1",
@@ -17,7 +17,7 @@
       ],
       "stand": "2013-06-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e896a94a87bee156f9b30204e854ed86",
       "sha": "2f903a84b0e850f6b166e933c9b5e909c25227e7d428e7a512a673b01db3ec85"
     },
@@ -67,7 +67,7 @@
       ],
       "stand": "2013-06-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e896a94a87bee156f9b30204e854ed86",
       "sha": "aff1a20cf6e61b3543617b57f21d04c1da258d2453b699fb8eeb0caa52cc86a6"
     },
@@ -78,6 +78,7 @@
       "erlass": "Ordnung betreffend die Zahnpflege bei Kindern, Zahpflegeordnung (RiE 328.600)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -86,7 +87,7 @@
       ],
       "stand": "2013-06-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e896a94a87bee156f9b30204e854ed86",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -97,6 +98,7 @@
       "erlass": "Ordnung betreffend die Zahnpflege bei Kindern, Zahpflegeordnung (RiE 328.600)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -105,7 +107,7 @@
       ],
       "stand": "2013-06-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e896a94a87bee156f9b30204e854ed86",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -132,7 +134,7 @@
       ],
       "stand": "2013-06-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e896a94a87bee156f9b30204e854ed86",
       "sha": "6c170a2495f026311e32b34c5ac6f46c3c2ac9db6af4fe5de29a01eb3d99bb61"
     },
@@ -151,7 +153,7 @@
       ],
       "stand": "2013-06-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e896a94a87bee156f9b30204e854ed86",
       "sha": "960f43523f6c662e293b488d9e68f58c2b65cd51635dad59a638f03510816cea"
     },
@@ -171,7 +173,7 @@
       ],
       "stand": "2013-06-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e896a94a87bee156f9b30204e854ed86",
       "sha": "4878f1b4ff0b528bc8ade143d0124fcf2f1936bf1d9bb7579c00248f3e359bb6"
     },
@@ -190,7 +192,7 @@
       ],
       "stand": "2013-06-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e896a94a87bee156f9b30204e854ed86",
       "sha": "93c655eed7fa1f090f14d75d4fdd881c6f30d57b9244d4a03ed4a6e44f26c4b4"
     },
@@ -217,7 +219,7 @@
       ],
       "stand": "2013-06-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e896a94a87bee156f9b30204e854ed86",
       "sha": "4768efaa40fef6535a1c1d4cbab1bb4b182f14a002a209d53aa34f977b05d53f"
     },
@@ -237,7 +239,7 @@
       ],
       "stand": "2013-06-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e896a94a87bee156f9b30204e854ed86",
       "sha": "2fee9bb291c093b96d68b09bb81c41921bb26e392e79d52f2de9bc6bd3de087e"
     },
@@ -257,7 +259,7 @@
       ],
       "stand": "2013-06-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e896a94a87bee156f9b30204e854ed86",
       "sha": "f3a4e038e9b4b0ddd72cc2209ea6867b66bdceed47120264f89eaf981658ba64"
     }

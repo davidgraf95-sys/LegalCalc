@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/BaB 111.100/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "78a68dfdf5c1d8f8e8068e86040a06da05f4aaae046e8505dea17e1facc71a5e"
     },
@@ -65,7 +65,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "54d405520ba9a91061917f107ab2303ed760da5c2ba71570095de6980ec99cac"
     },
@@ -76,6 +76,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "2_a",
       "artikelLabel": "§ 2a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -84,7 +85,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -124,7 +125,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "eb829379762f3661d2ea7c3cf5cee457de9ec081d140c2e24b9c400fe82ec8be"
     },
@@ -148,7 +149,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "378591a6885579a1ddb44544011df82cc1020df26becbe1c129fb3d2bb9711cb"
     },
@@ -176,7 +177,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "b59600a1f82dbbaa0b033e20da24d05e95e2bf1a64abb75fbbfaf62df2e2627c"
     },
@@ -196,7 +197,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "fc3b80c7fafd187f6890fe377f93c831afb61395d8924f910a3d99d909f09535"
     },
@@ -216,7 +217,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "53051b2ad10940bf2646240842c381a1f34bdeaa0340b9d40c2a1f91bd812d10"
     },
@@ -240,7 +241,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "ee818b30e23d59059af5c6021c950e5c8840c391898480236664f80fce0877d3"
     },
@@ -268,7 +269,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "29c2de9dce00944d58827c3dcc479c528ad92b4675256a83b028dc05ee9cc0e8"
     },
@@ -296,7 +297,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "db080b63ab03386387d76b5b39bf9126ff2878c9a97e9eac44c15ea83159bb8e"
     },
@@ -324,7 +325,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "6c74b78d452e40604b2bcb53a331a96f1aad2ca812cda2c6e7f988c17bfa1031"
     },
@@ -352,7 +353,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "2f654359c0cc7ef3e0ab103d813706faf545d1a4df52fa1bef4643ac934b5062"
     },
@@ -376,7 +377,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "a0b73de7b05ea4e2beda2171b292c933e3c5b653add1e2836fbe75eb10da01a2"
     },
@@ -396,7 +397,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "616e3f58963f2e05cb353d391467d64335b1da98d08f49bdfb95bfcf5fece315"
     },
@@ -440,7 +441,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "ec2835819fae71e4ac8df539679002f128c3ffd907795016992aa51251f48d42"
     },
@@ -460,7 +461,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "92c05d983620c3cf540fb11fbce9a1c2787be812515270e6c46bf8e0f7bad509"
     },
@@ -488,7 +489,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "19e7adf2f9f3bf39c9304b52cddd17d4be4b099d78ee1eb681a7b7f89447ef66"
     },
@@ -512,7 +513,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "fabe3c710f55993f1edd9137d9a0c6c28d451e71faeaaab59c4323159b13c105"
     },
@@ -536,7 +537,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "02e978227d310c7dc693deed26f1119a1daf274b760eeefdf41f047910f01626"
     },
@@ -560,7 +561,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "fdd5428e3b512d4883fde075487174e2fdeb064a9b2aa564df7f73d2cf19fba0"
     },
@@ -602,7 +603,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "c937b6647b7233c139696242e8c0ed88e6906fb8f18c500cf5d76d7c610a9b22"
     },
@@ -732,7 +733,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "92dac541198b249a13b674606d0cd5179bd7cbef5ceef480580513dca74f0433"
     },
@@ -760,7 +761,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "b9c44830ca8055da8f00378c89e800fceff150eee3db753f21cdb707c629c1b7"
     },
@@ -796,7 +797,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "fbf55f983f7e076d3bc5ac93cf0e24a8233e1a15b283b351bd5cd715c5c244d5"
     },
@@ -816,7 +817,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "8bd88887b6e2622fa5b950f3c3ea640f52d24a5d6bb40a253192cdf296edee38"
     },
@@ -836,7 +837,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "823c0a71143fe1160727433b0f941947a55f130f99caf765a47080b5de9971e1"
     },
@@ -890,7 +891,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "b26aeb9b7c16fd592a2e8f25f864f37c846aeec8916b89e7532c8d9d3cdda3b5"
     },
@@ -924,7 +925,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "0e2af8e944392694f17a7dba4501017d15fb25b084de66e5b2a4174a06cfeda2"
     },
@@ -962,7 +963,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "28c363181bf7dcbffb66b1344b25f40b0d55d49198bbd5f582be8e72ea7a4a24"
     },
@@ -990,7 +991,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "f194f9ae33c36152dc2e823c8b537d0e26dfc46f3e683dd612c9b9ec69f9ceac"
     },
@@ -1022,7 +1023,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "64e8625d5fc8725b124a2f8b66e9b69ac0cde82240d72b02e280d4e586f7a5af"
     },
@@ -1112,7 +1113,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "127a07b14bd367ae7ec3a712cde9c69c5a740089e2f628e22f80e784e9bb8682"
     },
@@ -1136,7 +1137,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "13648209618a783d43acf56986b3a476b071ebc27763cf079f0aecadc192a6d8"
     },
@@ -1178,7 +1179,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e6dc050a4070025ec14e56a90d4eb28a7c1e26aec8adfa5234eeeb8425cd9b39"
     },
@@ -1214,7 +1215,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "d717f0330d4760e434673662a1ce3ec05c0b2155d9d19ec93019626d642699e3"
     },
@@ -1233,7 +1234,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "5333e0a0aee532d2f1c8a612a2a91b900d1cab4d16449ba8863d2dc105629770"
     },
@@ -1244,6 +1245,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "17",
       "artikelLabel": "§ 17",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1252,7 +1254,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1280,7 +1282,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "229a7394b2149f3a46b6f93dfca538d3bbc2ddc23f0717fa85b45cc688fe9767"
     },
@@ -1304,7 +1306,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "48d31a4239d537c9c4ee79876949602beb3e2af312d56485aed02616e986828a"
     },
@@ -1324,7 +1326,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "c13cd9ef2f557f82831bea999fd945643b08ae96c09a08f55b6382d67ace97e1"
     },
@@ -1348,7 +1350,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "ed1fa7135a8e8e1a6cc8e5a39500ec80c92bace49c59eca4dbb51b77052a9bfb"
     },
@@ -1380,7 +1382,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "7a0384d5b82e916391441b8aa8325831352fda120d3098a3f1943f58bdfd43dc"
     },
@@ -1391,6 +1393,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "21",
       "artikelLabel": "§ 21",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1399,7 +1402,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1453,7 +1456,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "60591c06d8d3e62c3e18dbf5914c8e09cb91c47c610c017a11ec100acf2986ae"
     },
@@ -1477,7 +1480,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "c8b6deb1370058cab2c2fffb89039f922eab6fe56e62224f1f90e7cf28405c6e"
     },
@@ -1488,6 +1491,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "21_c",
       "artikelLabel": "§ 21c",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1496,7 +1500,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1532,7 +1536,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "f72f6f18bea93dd3dd4f3186b161cd3b8dc0b0a4b7411a33142714bb6fa2c287"
     },
@@ -1564,7 +1568,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "b636ea96ec1be3b8937a8a515f00e93c103dd0fb05f2acb8c9e8508bad1f45d6"
     },
@@ -1588,7 +1592,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "868e89c053b51aba4ff6033710ac77b4e6e9515b65eeb2dd944e646eabfc75e8"
     },
@@ -1620,7 +1624,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "4992a44edd9ef11e9906d83b6444f0e16d5b38dfddce928e23f227a9511cfbfa"
     },
@@ -1631,6 +1635,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "21_h",
       "artikelLabel": "§ 21h",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1639,7 +1644,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1650,6 +1655,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "21_i",
       "artikelLabel": "§ 21i",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1658,7 +1664,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1669,6 +1675,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "21_j",
       "artikelLabel": "§ 21j",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1677,7 +1684,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1688,6 +1695,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "21_k",
       "artikelLabel": "§ 21k",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1696,7 +1704,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1707,6 +1715,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "21_l",
       "artikelLabel": "§ 21l",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1715,7 +1724,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1726,6 +1735,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "22",
       "artikelLabel": "§ 22",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1734,7 +1744,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1745,6 +1755,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "23",
       "artikelLabel": "§ 23",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1753,7 +1764,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1764,6 +1775,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "24",
       "artikelLabel": "§ 24",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1772,7 +1784,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1783,6 +1795,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "25",
       "artikelLabel": "§ 25",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1791,7 +1804,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1815,7 +1828,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "761788295fe2b1e978122fea761eeae3fff82b9d1dbc1998afd24d48fad2c85d"
     },
@@ -1835,7 +1848,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e2aea2c8b55e52c288c6772009575f59f20f0b661ef2e64860c1fc4bc158669c"
     },
@@ -1859,7 +1872,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "1104f9e3aa3abba0b1d80093407d13d9b1cf1cfd5195c7f3d9bc05fe51f794bc"
     },
@@ -1870,6 +1883,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "29",
       "artikelLabel": "§ 29",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1878,7 +1892,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1901,7 +1915,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "045164b1ee1925217fe68631cac492348d42ad63446a64a20784389203589913"
     },
@@ -1921,7 +1935,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "ca6f908fe72d06e9bc869d419c776e945d50046610b029a417ce74f4ecabdf0a"
     },
@@ -1953,7 +1967,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "900360238067c2494f1cf15fbc2b5ee8aeb7944e019f68fa82d13e1b85bea71e"
     },
@@ -1981,7 +1995,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "8182cfd86c0fa3576f2a43c046876b022d775ef8fd769b6453aa4f08708fe163"
     },
@@ -2001,7 +2015,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "abb814528c1e1db2c456e30c0664331a0c43d2ed8f15131841d091241bdbf5b3"
     },
@@ -2021,7 +2035,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "3a446b8d6cbc1fa043f138ff5eca987ebe57c5d011b1291fbd88206ec3191053"
     },
@@ -2063,7 +2077,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "c726581dce3c6d952bcdb4ec0f4969f751524df9dbb71a0101b9978dc8e7827d"
     },
@@ -2074,6 +2088,7 @@
       "erlass": "Gemeindeordnung der Bürgergemeinde der Stadt Basel (BaB 111.100)",
       "artikel": "36_a",
       "artikelLabel": "§ 36a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2082,7 +2097,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 111.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "4039fef4f34c032f7b5e2475ef326d88",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }

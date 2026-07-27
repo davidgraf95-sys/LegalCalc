@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/171.300/art_1",
@@ -24,7 +24,7 @@
       ],
       "stand": "1907-11-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/171.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c757c46eb659c5f88e7d937a6fbf901b",
       "sha": "cdcbbfa4d7bb83d1eab245310a1d293b728fee3b3bf7aed4cdcbb018e3a59084"
     },
@@ -43,7 +43,7 @@
       ],
       "stand": "1907-11-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/171.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c757c46eb659c5f88e7d937a6fbf901b",
       "sha": "47182210ea5dcc903f4dfa19ddda7b59cefe67a3c69f2420c71126804b5c32d1"
     },
@@ -66,7 +66,7 @@
       ],
       "stand": "1907-11-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/171.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c757c46eb659c5f88e7d937a6fbf901b",
       "sha": "8a4477b8f45d945fe62ba32709805016837f29924ce5b67ed124ff2830bda47c"
     },
@@ -93,7 +93,7 @@
       ],
       "stand": "1907-11-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/171.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c757c46eb659c5f88e7d937a6fbf901b",
       "sha": "3c3dedcc9d53140e8f9bdd2f0f5dfa7c69e488af9fa49789c86a7bef22a6b301"
     },
@@ -120,7 +120,7 @@
       ],
       "stand": "1907-11-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/171.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c757c46eb659c5f88e7d937a6fbf901b",
       "sha": "c3f75ab22896c6f9a7b599f58576f8a6e154a4dca10a67929bb8deeb2a99c626"
     },
@@ -131,6 +131,7 @@
       "erlass": "Gesetz betreffend Verschmelzung der Gemeinde Kleinhüningen mit der Stadt Basel (171.300)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -139,7 +140,7 @@
       ],
       "stand": "1907-11-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/171.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c757c46eb659c5f88e7d937a6fbf901b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -168,7 +169,7 @@
       ],
       "stand": "1907-11-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/171.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c757c46eb659c5f88e7d937a6fbf901b",
       "sha": "8544530849b46ed16b69bcbf0d0ec7ed1ced43009a7b104dbb5c25fe96acf351"
     },
@@ -197,7 +198,7 @@
       ],
       "stand": "1907-11-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/171.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c757c46eb659c5f88e7d937a6fbf901b",
       "sha": "f134ce7c871f00cd8011164018d1bbb7bddcfee8fa6996c1299ca4052c4f1823"
     },
@@ -220,7 +221,7 @@
       ],
       "stand": "1907-11-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/171.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c757c46eb659c5f88e7d937a6fbf901b",
       "sha": "b12b763f9e2e78e5876a1aa873d63a3b9697a7eaac5ecb2c24474a356a35de99"
     },
@@ -247,7 +248,7 @@
       ],
       "stand": "1907-11-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/171.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c757c46eb659c5f88e7d937a6fbf901b",
       "sha": "969fe852cd2eef40b808d2753d1a889b6e3ea7f75c1f493b71aae0ebae6e9412"
     },
@@ -266,7 +267,7 @@
       ],
       "stand": "1907-11-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/171.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c757c46eb659c5f88e7d937a6fbf901b",
       "sha": "34258310b1d18149b6f02d66b8416e7f9f1bda94f5b18ef231bf08e10174d2f4"
     },
@@ -285,7 +286,7 @@
       ],
       "stand": "1907-11-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/171.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c757c46eb659c5f88e7d937a6fbf901b",
       "sha": "889830ec328525ab294c119c858c2f563712b0478828aacc9602ffb2a7a75728"
     }

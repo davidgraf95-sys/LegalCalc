@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/955.100/art_1",
@@ -43,7 +43,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3428dcd8b5e1e4562468fdbfe8770121",
       "sha": "32acbda374bf1a340a9c4a7000f5dce2e4a73335ce6573d782e31026286c1d05"
     },
@@ -73,7 +73,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3428dcd8b5e1e4562468fdbfe8770121",
       "sha": "6ac496b2297df3ee1b01622e4464a3243fc19cc8cffa8464cc1309eea14c7837"
     },
@@ -119,7 +119,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3428dcd8b5e1e4562468fdbfe8770121",
       "sha": "d208f9dea2140f993f6eed0809eac7b273c976dc0177427733292483257bac50"
     },
@@ -139,7 +139,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3428dcd8b5e1e4562468fdbfe8770121",
       "sha": "1b77a59129c45be411ac1ebecca6bdd2e0d1dd2ad98df21ab29318b2c472580d"
     },
@@ -159,7 +159,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3428dcd8b5e1e4562468fdbfe8770121",
       "sha": "a19ca493e9214c1e6c9d436c0040818198d3abc42d86b56ba80659079dc4a50f"
     },
@@ -313,7 +313,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3428dcd8b5e1e4562468fdbfe8770121",
       "sha": "6d6306e4713f6a2ddd7bdcd65f85a2deac09b2a7ebced5e67e5bd1fe1a40b4fe"
     },
@@ -324,6 +324,7 @@
       "erlass": "Vollziehungsverordnung zum Bundesgesetz über die Binnenschifffahrt, Kleinschifffahrtsverordnung (955.100)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -332,7 +333,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3428dcd8b5e1e4562468fdbfe8770121",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -352,7 +353,7 @@
       ],
       "stand": "2020-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/955.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3428dcd8b5e1e4562468fdbfe8770121",
       "sha": "0bac670dbf0140e485222d38edbd725f1373bd4845e54adaa4d6ecbe957c2c87"
     }

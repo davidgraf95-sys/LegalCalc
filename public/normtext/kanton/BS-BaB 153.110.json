@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/BaB 153.110/art_1",
@@ -25,7 +25,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "cb702c0bb977068f929f269b07940362",
       "sha": "d9bd137f22b98c9205a39b3953444c94a0286c27d654ed4acdc8503fbb22c0a3"
     },
@@ -45,7 +45,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "cb702c0bb977068f929f269b07940362",
       "sha": "4c76073ec2374407d557aa769e9fc124854acb8548cb874147df78a7ecb0c10a"
     },
@@ -65,7 +65,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "cb702c0bb977068f929f269b07940362",
       "sha": "2067061b190039241e32920e79a6bd52aaad019a7a6641403f9fb88401a72234"
     },
@@ -85,7 +85,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "cb702c0bb977068f929f269b07940362",
       "sha": "4c80e3f7fd8850998a62627c7dc7c69bf020e5348f7ba84881b915c742ab6548"
     },
@@ -131,7 +131,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "cb702c0bb977068f929f269b07940362",
       "sha": "c04f0cca593892f655206fe9013e0ad86c833cf3289f902dd4dc47cef2d034aa"
     },
@@ -167,7 +167,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "cb702c0bb977068f929f269b07940362",
       "sha": "69af4b788d0f63649afe7f68f772496c530216119742edabf3ed461a71601a49"
     },
@@ -205,7 +205,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "cb702c0bb977068f929f269b07940362",
       "sha": "aaed8a7732033cb8942702116e29eaaae9921e733d97082fd44bed04ac027177"
     },
@@ -225,7 +225,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "cb702c0bb977068f929f269b07940362",
       "sha": "9a8491895dab8bc6823479597e74f5bb2bb1d8b1a34335b395a312b121027d9f"
     },
@@ -275,7 +275,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "cb702c0bb977068f929f269b07940362",
       "sha": "d7ca3cf963d54aa6b2439d3cbe946f8f68a84179bcc2d10bcdd5c00818ea22c7"
     },
@@ -286,6 +286,7 @@
       "erlass": "Ausführungsbestimmungen zur Geschäftsordnung des Bürgerrates der Stadt Basel (BaB 153.110)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -294,7 +295,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "cb702c0bb977068f929f269b07940362",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -314,7 +315,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "cb702c0bb977068f929f269b07940362",
       "sha": "bad07af2b847e0c9b9dc657794eddd833b57872fef99be171c773dbe8a14ee26"
     },
@@ -325,6 +326,7 @@
       "erlass": "Ausführungsbestimmungen zur Geschäftsordnung des Bürgerrates der Stadt Basel (BaB 153.110)",
       "artikel": "10_a",
       "artikelLabel": "§ 10a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -333,7 +335,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "cb702c0bb977068f929f269b07940362",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }

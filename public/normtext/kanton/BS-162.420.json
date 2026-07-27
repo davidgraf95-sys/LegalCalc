@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/162.420/art_1",
@@ -29,7 +29,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "6b3d44e9dbf4329ee946efc3988f25f10582451f79ad674531b126c0215d95c2"
     },
@@ -87,7 +87,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "110aa81866a6fa0d9a8eeb5a8b66b4d4deb8c284d2d08bb38824fcec73731d01"
     },
@@ -121,7 +121,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "0eb6ffdc4aa8f77cf63a8b9dd444bcd6071dbcd79c0166b91b41db20af190d2b"
     },
@@ -141,7 +141,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "26fc257705a38a120ababcbcc69754e4fc68af04a64d676114c4bb7d4e899c52"
     },
@@ -153,6 +153,7 @@
       "artikel": "3",
       "artikelLabel": "§ 3",
       "titel": "Stillurlaub",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -161,7 +162,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -181,7 +182,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "ae2896c7d02395f1f92e2d8d4024e3b38fa14c335b302378beaf941e4eb09328"
     },
@@ -201,7 +202,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "8246d5a78a12a0e390d9f4fc1ba2aeb3c1c680a3eb460ca3e9f0179144eea83d"
     },
@@ -233,7 +234,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "0060bb011552f6f9ccfee39b4919112c4b039d42a5fc5664fa54d9f9ef908671"
     },
@@ -257,7 +258,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "a059e8240951d5cf5df53c6f858b6ce99fab2412e6f1ed41cd145cb996efc61e"
     },
@@ -303,7 +304,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "35de8f99f8b24ff46de374c0e99ace66630b0c4d9af7772c617ebd56f3944243"
     },
@@ -314,6 +315,7 @@
       "erlass": "Verordnung über den Schwangerschafts- und Mutterschaftsurlaub, SMUV (162.420)",
       "artikel": "7_b",
       "artikelLabel": "§ 7b",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -322,7 +324,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -333,6 +335,7 @@
       "erlass": "Verordnung über den Schwangerschafts- und Mutterschaftsurlaub, SMUV (162.420)",
       "artikel": "7_c",
       "artikelLabel": "§ 7c",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -341,7 +344,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -361,7 +364,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "a102d2a2cba1dd4f69612ad77e24789536a7da95a15118b1af58578dcc83feba"
     },
@@ -389,7 +392,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/162.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "62f87338ed956130b5707742c0507859",
       "sha": "e8156495544c355cc5d8786bee30619b6566409ce41ec0b655664f442c4a4398"
     }
