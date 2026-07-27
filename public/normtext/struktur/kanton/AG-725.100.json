@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Gesetz über die Grundbuchabgaben",
   "erlassdatum": "Vom 07.05.1980 (Stand 01.01.2020)",
@@ -174,6 +174,19 @@
    "marginalie": [
     "Grundsatz"
    ]
+  },
+  "9": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Abgabenhöhe"
+    },
+    {
+     "ebene": 2,
+     "label": "2.1. Handänderungen"
+    }
+   ],
+   "marginalie": []
   },
   "10": {
    "gliederung": [
@@ -354,6 +367,19 @@
    "marginalie": [
     "Parzellierungen"
    ]
+  },
+  "22": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Abgabenhöhe"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3. …"
+    }
+   ],
+   "marginalie": []
   },
   "23": {
    "gliederung": [

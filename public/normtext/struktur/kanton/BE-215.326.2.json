@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Handänderungssteuergesetz",
   "erlassdatum": "vom 18.03.1992 (Stand 01.04.2023)",
@@ -474,6 +474,15 @@
    "marginalie": [
     "2. Voraussetzungen"
    ]
+  },
+  "13–15": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3 …"
+    }
+   ],
+   "marginalie": []
   },
   "16_a": {
    "gliederung": [

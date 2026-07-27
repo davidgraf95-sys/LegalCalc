@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Gesetz über die Gebühren und Gemengsteuern der Grundbuchämter und Notariate",
   "erlassdatum": "vom 20.11.1996 (Stand 01.01.2016)"
@@ -93,6 +93,15 @@
     "Gebührenentscheid"
    ]
   },
+  "9": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Allgemeines"
+    }
+   ],
+   "marginalie": []
+  },
   "10": {
    "gliederung": [
     {
@@ -161,6 +170,15 @@
    "marginalie": [
     "Gebührenansätze"
    ]
+  },
+  "15": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Notariatsgeschäfte"
+    }
+   ],
+   "marginalie": []
   },
   "16": {
    "gliederung": [

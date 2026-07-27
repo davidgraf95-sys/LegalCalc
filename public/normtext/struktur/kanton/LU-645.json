@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Gesetz über die Handänderungssteuer",
   "erlassdatum": "vom 28.06.1983 (Stand 01.01.2025)",
@@ -285,6 +285,33 @@
     "Steuerstrafrecht"
    ]
   },
+  "15": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4 Strafbestimmungen"
+    }
+   ],
+   "marginalie": []
+  },
+  "16": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4 Strafbestimmungen"
+    }
+   ],
+   "marginalie": []
+  },
+  "17": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4 Strafbestimmungen"
+    }
+   ],
+   "marginalie": []
+  },
   "18": {
    "gliederung": [
     {
@@ -360,6 +387,15 @@
    "marginalie": [
     "Anteile am Steuerertrag"
    ]
+  },
+  "23": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "7 Aufteilung des Steuerertrags"
+    }
+   ],
+   "marginalie": []
   },
   "24": {
    "gliederung": [
@@ -437,6 +473,26 @@
      "text": "VII 397 und Z II 672",
      "links": [],
      "absatz": "1",
+     "item": null
+    }
+   ]
+  },
+  "29": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "9 Übergangs- und Schlussbestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Änderung bestehenden Rechts"
+   ],
+   "fussnoten": [
+    {
+     "nr": "14",
+     "text": "Gemäss Sammelerlass LexWork XML vom 3. März 2015 (G 2015 91) wurde diese Bestimmung betreffend Fremdänderungen aus dem Erlass entfernt.",
+     "links": [],
+     "absatz": null,
      "item": null
     }
    ]

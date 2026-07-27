@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Gesetz über die Staats- und Gemeindesteuern",
   "erlassdatum": "Vom 01.12.1985 (Stand 01.01.2025)",
@@ -104,6 +104,19 @@
    "marginalie": [
     "II. Steuererleichterungen"
    ]
+  },
+  "7": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.1. Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": []
   },
   "8": {
    "gliederung": [
@@ -880,6 +893,23 @@
     "d) Abzug von Verlusten"
    ]
   },
+  "38": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Die direkte Staatssteuer der natürlichen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2. Einkommenssteuer"
+    }
+   ],
+   "marginalie": []
+  },
   "39": {
    "gliederung": [
     {
@@ -898,6 +928,23 @@
    "marginalie": [
     "3. Bei Privatvermögen"
    ]
+  },
+  "40": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Die direkte Staatssteuer der natürlichen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2. Einkommenssteuer"
+    }
+   ],
+   "marginalie": []
   },
   "41": {
    "gliederung": [
@@ -1682,6 +1729,23 @@
     "II. Bemessungsperiode"
    ]
   },
+  "76": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Die direkte Staatssteuer der natürlichen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.6. Zeitliche Bemessung"
+    }
+   ],
+   "marginalie": []
+  },
   "77": {
    "gliederung": [
     {
@@ -1719,6 +1783,91 @@
    "marginalie": [
     "IV. Begründung und Auflösung der Ehe"
    ]
+  },
+  "79": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Die direkte Staatssteuer der natürlichen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.6. Zeitliche Bemessung"
+    }
+   ],
+   "marginalie": []
+  },
+  "80": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Die direkte Staatssteuer der natürlichen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.6. Zeitliche Bemessung"
+    }
+   ],
+   "marginalie": []
+  },
+  "81": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Die direkte Staatssteuer der natürlichen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.6. Zeitliche Bemessung"
+    }
+   ],
+   "marginalie": []
+  },
+  "82": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Die direkte Staatssteuer der natürlichen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.6. Zeitliche Bemessung"
+    }
+   ],
+   "marginalie": []
+  },
+  "83": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Die direkte Staatssteuer der natürlichen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.6. Zeitliche Bemessung"
+    }
+   ],
+   "marginalie": []
   },
   "84": {
    "gliederung": [
@@ -2087,6 +2236,74 @@
     }
    ]
   },
+  "99": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3. Die direkte Staatssteuer der juristischen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.3.2. Gewinnsteuer"
+    }
+   ],
+   "marginalie": []
+  },
+  "100": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3. Die direkte Staatssteuer der juristischen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.3.2. Gewinnsteuer"
+    }
+   ],
+   "marginalie": []
+  },
+  "101": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3. Die direkte Staatssteuer der juristischen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.3.2. Gewinnsteuer"
+    }
+   ],
+   "marginalie": []
+  },
+  "102": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3. Die direkte Staatssteuer der juristischen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.3.2. Gewinnsteuer"
+    }
+   ],
+   "marginalie": []
+  },
   "103": {
    "gliederung": [
     {
@@ -2182,6 +2399,23 @@
     "II. Steuerberechnung"
    ]
   },
+  "108": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3. Die direkte Staatssteuer der juristischen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.3.3. Kapitalsteuer"
+    }
+   ],
+   "marginalie": []
+  },
   "109": {
    "gliederung": [
     {
@@ -2251,6 +2485,23 @@
     "II. Bemessungsperiode"
    ]
   },
+  "112": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3. Die direkte Staatssteuer der juristischen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.3.5. Zeitliche Bemessung"
+    }
+   ],
+   "marginalie": []
+  },
   "113": {
    "gliederung": [
     {
@@ -2307,6 +2558,23 @@
    "marginalie": [
     "I. Arbeitnehmer"
    ]
+  },
+  "116": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.4. Quellensteuer"
+    },
+    {
+     "ebene": 3,
+     "label": "2.4.2. Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    }
+   ],
+   "marginalie": []
   },
   "117": {
    "gliederung": [
@@ -2402,6 +2670,23 @@
    "marginalie": [
     "2. Organisation a) Veranlagung der natürlichen Personen aa) Veranlagungsbehörde"
    ]
+  },
+  "122": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.5. Behörden und Verfahren"
+    },
+    {
+     "ebene": 3,
+     "label": "2.5.1. Steuerbehörden"
+    }
+   ],
+   "marginalie": []
   },
   "123": {
    "gliederung": [
@@ -3836,6 +4121,19 @@
     "3. Juristische Personen a) Allgemeines"
    ]
   },
+  "194": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.6. Steuerstrafrecht"
+    }
+   ],
+   "marginalie": []
+  },
   "195": {
    "gliederung": [
     {
@@ -3865,6 +4163,19 @@
    "marginalie": [
     "b) Bei Steuerhinterziehung"
    ]
+  },
+  "197": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.6. Steuerstrafrecht"
+    }
+   ],
+   "marginalie": []
   },
   "198": {
    "gliederung": [
@@ -5432,6 +5743,40 @@
     "3. Gewinnsteuer im ersten und im zweiten Jahr nach dem Inkrafttreten der Änderung vom 9. Februar 2020"
    ]
   },
+  "100_bis": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3. Die direkte Staatssteuer der juristischen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.3.2. Gewinnsteuer"
+    }
+   ],
+   "marginalie": []
+  },
+  "106_bis": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3. Die direkte Staatssteuer der juristischen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.3.3. Kapitalsteuer"
+    }
+   ],
+   "marginalie": []
+  },
   "113_bis": {
    "gliederung": [
     {
@@ -5969,6 +6314,23 @@
    "marginalie": [
     "IV. Vereinfachte Nachbesteuerung von Erben"
    ]
+  },
+  "179_bis": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.5. Behörden und Verfahren"
+    },
+    {
+     "ebene": 3,
+     "label": "2.5.9. Bezug und Sicherung der Steuer"
+    }
+   ],
+   "marginalie": []
   },
   "183_bis": {
    "gliederung": [
@@ -6660,6 +7022,23 @@
    "marginalie": [
     "4 ter. Besteuerung stiller Reserven am Ende der Steuerpflicht"
    ]
+  },
+  "95_bis": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Die direkte Staatssteuer"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3. Die direkte Staatssteuer der juristischen Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.3.2. Gewinnsteuer"
+    }
+   ],
+   "marginalie": []
   }
  }
 }

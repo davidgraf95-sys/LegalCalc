@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Steuergesetz",
   "erlassdatum": "vom 09.04.1998 (Stand 01.01.2026)",
@@ -156,6 +156,15 @@
     "c) Ausgleichsbeiträge an Kirchgemeinden"
    ]
   },
+  "10": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ERSTER TEIL: ALLGEMEINE BESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
   "11": {
    "gliederung": [
     {
@@ -253,6 +262,23 @@
    "marginalie": [
     "Steuerausscheidung"
    ]
+  },
+  "17": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Erster Abschnitt: Einkommens- und Vermögenssteuern"
+    },
+    {
+     "ebene": 3,
+     "label": "I. Steuerpflicht"
+    }
+   ],
+   "marginalie": []
   },
   "18": {
    "gliederung": [
@@ -1122,6 +1148,23 @@
     "g) Sozialabzüge"
    ]
   },
+  "49": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Erster Abschnitt: Einkommens- und Vermögenssteuern"
+    },
+    {
+     "ebene": 3,
+     "label": "II. Einkommenssteuer"
+    }
+   ],
+   "marginalie": []
+  },
   "50": {
    "gliederung": [
     {
@@ -1292,6 +1335,57 @@
    "marginalie": [
     "2. Ausnahme für land- und forstwirtschaftliche Grundstücke"
    ]
+  },
+  "59": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Erster Abschnitt: Einkommens- und Vermögenssteuern"
+    },
+    {
+     "ebene": 3,
+     "label": "III. Vermögenssteuer"
+    }
+   ],
+   "marginalie": []
+  },
+  "60": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Erster Abschnitt: Einkommens- und Vermögenssteuern"
+    },
+    {
+     "ebene": 3,
+     "label": "III. Vermögenssteuer"
+    }
+   ],
+   "marginalie": []
+  },
+  "61": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Erster Abschnitt: Einkommens- und Vermögenssteuern"
+    },
+    {
+     "ebene": 3,
+     "label": "III. Vermögenssteuer"
+    }
+   ],
+   "marginalie": []
   },
   "62": {
    "gliederung": [
@@ -1573,6 +1667,40 @@
    "marginalie": [
     "Steuerausscheidung"
    ]
+  },
+  "75": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Zweiter Abschnitt: Gewinn- und Kapitalsteuern"
+    },
+    {
+     "ebene": 3,
+     "label": "I. Steuerpflicht"
+    }
+   ],
+   "marginalie": []
+  },
+  "76": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Zweiter Abschnitt: Gewinn- und Kapitalsteuern"
+    },
+    {
+     "ebene": 3,
+     "label": "I. Steuerpflicht"
+    }
+   ],
+   "marginalie": []
   },
   "77": {
    "gliederung": [
@@ -1959,6 +2087,74 @@
     }
    ]
   },
+  "92": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Zweiter Abschnitt: Gewinn- und Kapitalsteuern"
+    },
+    {
+     "ebene": 3,
+     "label": "II. Gewinnsteuer"
+    }
+   ],
+   "marginalie": []
+  },
+  "93": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Zweiter Abschnitt: Gewinn- und Kapitalsteuern"
+    },
+    {
+     "ebene": 3,
+     "label": "II. Gewinnsteuer"
+    }
+   ],
+   "marginalie": []
+  },
+  "94": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Zweiter Abschnitt: Gewinn- und Kapitalsteuern"
+    },
+    {
+     "ebene": 3,
+     "label": "II. Gewinnsteuer"
+    }
+   ],
+   "marginalie": []
+  },
+  "95": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Zweiter Abschnitt: Gewinn- und Kapitalsteuern"
+    },
+    {
+     "ebene": 3,
+     "label": "II. Gewinnsteuer"
+    }
+   ],
+   "marginalie": []
+  },
   "96": {
    "gliederung": [
     {
@@ -2034,6 +2230,40 @@
    "marginalie": [
     "Steuerberechnung"
    ]
+  },
+  "100": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Zweiter Abschnitt: Gewinn- und Kapitalsteuern"
+    },
+    {
+     "ebene": 3,
+     "label": "IV. Minimalsteuer auf Grundstücken"
+    }
+   ],
+   "marginalie": []
+  },
+  "101": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Zweiter Abschnitt: Gewinn- und Kapitalsteuern"
+    },
+    {
+     "ebene": 3,
+     "label": "IV. Minimalsteuer auf Grundstücken"
+    }
+   ],
+   "marginalie": []
   },
   "102": {
    "gliederung": [
@@ -2204,6 +2434,57 @@
    "marginalie": [
     "Steuerabzug auf Ersatzeinkünften"
    ]
+  },
+  "110": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Dritter Abschnitt: Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "I. Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+    }
+   ],
+   "marginalie": []
+  },
+  "111": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Dritter Abschnitt: Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "I. Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+    }
+   ],
+   "marginalie": []
+  },
+  "112": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Dritter Abschnitt: Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "I. Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+    }
+   ],
+   "marginalie": []
   },
   "113": {
    "gliederung": [
@@ -2389,6 +2670,23 @@
     "Mindesteinkommen"
    ]
   },
+  "121": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Dritter Abschnitt: Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "II. Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    }
+   ],
+   "marginalie": []
+  },
   "122": {
    "gliederung": [
     {
@@ -2502,6 +2800,40 @@
    "marginalie": [
     "Haftung"
    ]
+  },
+  "126": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Dritter Abschnitt: Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "III. Gemeinsame Bestimmungen"
+    }
+   ],
+   "marginalie": []
+  },
+  "127": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Dritter Abschnitt: Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "III. Gemeinsame Bestimmungen"
+    }
+   ],
+   "marginalie": []
   },
   "128": {
    "gliederung": [
@@ -3060,6 +3392,23 @@
     "Kantonales Steueramt"
    ]
   },
+  "159": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Sechster Abschnitt: Organisation und Verfahren"
+    },
+    {
+     "ebene": 3,
+     "label": "I. Steuerbehörden"
+    }
+   ],
+   "marginalie": []
+  },
   "160": {
    "gliederung": [
     {
@@ -3488,6 +3837,23 @@
    "marginalie": [
     "c) Eröffnung 1. Veranlagung"
    ]
+  },
+  "179": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "ZWEITER TEIL: STAATSSTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Sechster Abschnitt: Organisation und Verfahren"
+    },
+    {
+     "ebene": 3,
+     "label": "III. Veranlagung"
+    }
+   ],
+   "marginalie": []
   },
   "180": {
    "gliederung": [
@@ -4819,6 +5185,19 @@
     "Berechnung"
    ]
   },
+  "246": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "DRITTER TEIL: GEMEINDESTEUERN"
+    },
+    {
+     "ebene": 2,
+     "label": "Fünfter Abschnitt: Vergnügungssteuer"
+    }
+   ],
+   "marginalie": []
+  },
   "247": {
    "gliederung": [
     {
@@ -4913,6 +5292,23 @@
    "marginalie": [
     "d) Verheimlichung oder Beiseiteschaffung von Nachlasswerten im Inventarverfahren 1. Grundsatz"
    ]
+  },
+  "252": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "VIERTER TEIL: STEUERSTRAFRECHT"
+    },
+    {
+     "ebene": 2,
+     "label": "Erster Abschnitt: Verletzung von Verfahrenspflichten und Steuerhinterziehung"
+    },
+    {
+     "ebene": 3,
+     "label": "I. Straftatbestände und strafbare Personen"
+    }
+   ],
+   "marginalie": []
   },
   "253": {
    "gliederung": [
@@ -5380,6 +5776,60 @@
     "Verjährung der Strafverfolgung"
    ]
   },
+  "276": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": [],
+   "fussnoten": [
+    {
+     "nr": "77",
+     "text": "Änderungen bisherigen Rechts werden nicht aufgeführt.",
+     "links": [],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "277": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": [],
+   "fussnoten": [
+    {
+     "nr": "78",
+     "text": "Änderungen bisherigen Rechts werden nicht aufgeführt.",
+     "links": [],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "278": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": [],
+   "fussnoten": [
+    {
+     "nr": "79",
+     "text": "Änderungen bisherigen Rechts werden nicht aufgeführt.",
+     "links": [],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
   "279": {
    "gliederung": [
     {
@@ -5456,6 +5906,15 @@
     "b) Kapitalversicherungen mit Einmalprämie"
    ]
   },
+  "282": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
   "283": {
    "gliederung": [
     {
@@ -5477,6 +5936,294 @@
    "marginalie": [
     "e) Kapitalgewinne bei gemischten Beteiligungsgesellschaften"
    ]
+  },
+  "285": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "286": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "287": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "288": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "289": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "290": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "291": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "292": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "293": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "294": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "295": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "296": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "297": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "298": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "299": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "300": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "301": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "302": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "303": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "304": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "305": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "306": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "307": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "308": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "309": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "310": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "311": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "312": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "313": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "314": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "315": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
+  },
+  "316": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "FÜNFTER TEIL: SCHLUSSBESTIMMUNGEN"
+    }
+   ],
+   "marginalie": []
   },
   "317": {
    "gliederung": [

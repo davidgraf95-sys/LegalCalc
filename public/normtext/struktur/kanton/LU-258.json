@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Verordnung über die Beurkundungsgebühren",
   "erlassdatum": "vom 24.11.1973 (Stand 01.01.2022)",
@@ -389,6 +389,23 @@
     }
    ]
   },
+  "22": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": []
+  },
   "23": {
    "gliederung": [
     {
@@ -426,6 +443,23 @@
    "marginalie": [
     "Stockwerkeigentum"
    ]
+  },
+  "25": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": []
   },
   "26": {
    "gliederung": [
@@ -710,6 +744,23 @@
    "marginalie": [
     "c. Kapitalherabsetzung"
    ]
+  },
+  "40": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": []
   },
   "41": {
    "gliederung": [

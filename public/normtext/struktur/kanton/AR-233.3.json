@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Verordnung über die Rechtskosten und Entschädigungen in der Zivil- und Strafrechtspflege",
   "erlassdatum": "vom 15.06.1981 (Stand 01.12.2017)",
@@ -183,6 +183,19 @@
    ],
    "marginalie": []
   },
+  "15": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5. Abschnitt: Gebühren"
+    },
+    {
+     "ebene": 2,
+     "label": "I. Zivilrechtspflege"
+    }
+   ],
+   "marginalie": []
+  },
   "16": {
    "gliederung": [
     {
@@ -197,6 +210,19 @@
    "marginalie": []
   },
   "17": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5. Abschnitt: Gebühren"
+    },
+    {
+     "ebene": 2,
+     "label": "I. Zivilrechtspflege"
+    }
+   ],
+   "marginalie": []
+  },
+  "18": {
    "gliederung": [
     {
      "ebene": 1,
@@ -352,6 +378,19 @@
    ],
    "marginalie": []
   },
+  "30": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5. Abschnitt: Gebühren"
+    },
+    {
+     "ebene": 2,
+     "label": "II. Strafrechtspflege"
+    }
+   ],
+   "marginalie": []
+  },
   "31": {
    "gliederung": [
     {
@@ -440,6 +479,15 @@
      "item": null
     }
    ]
+  },
+  "36–42": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "7. Abschnitt: Entschädigungen"
+    }
+   ],
+   "marginalie": []
   },
   "42_bis": {
    "gliederung": [

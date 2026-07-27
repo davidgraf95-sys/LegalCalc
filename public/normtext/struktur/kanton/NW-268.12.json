@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Verordnung über die Beurkundungsgebühren",
   "erlassdatum": "vom 19.04.1994 (Stand 01.01.2016)",
@@ -949,6 +949,23 @@
      "item": null
     }
    ]
+  },
+  "39": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Gebührentarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.1 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.1.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": []
   },
   "40": {
    "gliederung": [

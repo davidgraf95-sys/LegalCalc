@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Gebührentarif",
   "erlassdatum": "Vom 08.03.2016 (Stand 01.03.2026)",
@@ -797,6 +797,23 @@
     "Energiefachstelle"
    ]
   },
+  "37": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Gebühren der Verwaltung"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Gebühren nach Aufgabenbereichen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.6. Gebäudeversicherung"
+    }
+   ],
+   "marginalie": []
+  },
   "38": {
    "gliederung": [
     {
@@ -815,6 +832,23 @@
    "marginalie": [
     "Gemeinden"
    ]
+  },
+  "39": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Gebühren der Verwaltung"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Gebühren nach Aufgabenbereichen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.8. Gesundheit"
+    }
+   ],
+   "marginalie": []
   },
   "40": {
    "gliederung": [
@@ -853,6 +887,23 @@
    "marginalie": [
     "Betriebsbewilligungen, andere Bewilligungen sowie weitere Dienstleistungen"
    ]
+  },
+  "42": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Gebühren der Verwaltung"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Gebühren nach Aufgabenbereichen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.8. Gesundheit"
+    }
+   ],
+   "marginalie": []
   },
   "43": {
    "gliederung": [
@@ -1859,6 +1910,23 @@
    "marginalie": [
     "Beglaubigungen"
    ]
+  },
+  "87": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Gebühren der Verwaltung"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Gebühren nach Aufgabenbereichen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.14. Soziale Sicherheit"
+    }
+   ],
+   "marginalie": []
   },
   "88": {
    "gliederung": [
@@ -3549,6 +3617,19 @@
    "marginalie": [
     "Schiedsgericht in der Kranken- und Unfallversicherung"
    ]
+  },
+  "152": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Gebühren der Gerichte"
+    },
+    {
+     "ebene": 2,
+     "label": "3.5. Friedensrichter"
+    }
+   ],
+   "marginalie": []
   },
   "153": {
    "gliederung": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Verordnung über die Gebühren zum Zivilrecht",
   "erlassdatum": "Vom 08.01.1991 (Stand 01.01.2013)",
@@ -70,6 +70,24 @@
    "marginalie": [
     "Umfang der Gebühr"
    ]
+  },
+  "3": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": []
+  },
+  "4": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": []
   },
   "5": {
    "gliederung": [
@@ -147,6 +165,15 @@
    "marginalie": [
     "Zuständigkeit für Gebührenerlass"
    ]
+  },
+  "12": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": []
   },
   "13": {
    "gliederung": [
@@ -278,6 +305,24 @@
     "Fertigungs- und Katastergebühren"
    ]
   },
+  "20": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3 Gebühren für die Gemeinden; Entschädigung für Mandatsträgerinnen und Mandatsträger"
+    }
+   ],
+   "marginalie": []
+  },
+  "21": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3 Gebühren für die Gemeinden; Entschädigung für Mandatsträgerinnen und Mandatsträger"
+    }
+   ],
+   "marginalie": []
+  },
   "22": {
    "gliederung": [
     {
@@ -342,6 +387,15 @@
      "item": null
     }
    ]
+  },
+  "25": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4 Übergangs- und Schlussbestimmungen"
+    }
+   ],
+   "marginalie": []
   },
   "26": {
    "gliederung": [
@@ -424,6 +478,60 @@
    "marginalie": [
     "Indexierung"
    ]
+  },
+  "21_a": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3 Gebühren für die Gemeinden; Entschädigung für Mandatsträgerinnen und Mandatsträger"
+    }
+   ],
+   "marginalie": []
+  },
+  "25_a": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4 Übergangs- und Schlussbestimmungen"
+    }
+   ],
+   "marginalie": []
+  },
+  "25_b": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4 Übergangs- und Schlussbestimmungen"
+    }
+   ],
+   "marginalie": []
+  },
+  "25_c": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4 Übergangs- und Schlussbestimmungen"
+    }
+   ],
+   "marginalie": []
+  },
+  "25_d": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4 Übergangs- und Schlussbestimmungen"
+    }
+   ],
+   "marginalie": []
+  },
+  "25_e": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4 Übergangs- und Schlussbestimmungen"
+    }
+   ],
+   "marginalie": []
   },
   "25_f": {
    "gliederung": [

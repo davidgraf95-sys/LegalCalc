@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Justizgesetz",
   "erlassdatum": "Vom 09.11.2009 (Stand 01.05.2026)",
@@ -2341,6 +2341,26 @@
       }
      ],
      "absatz": "1",
+     "item": null
+    }
+   ]
+  },
+  "109": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "10 Schlussbestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Aufhebungen und Änderungen"
+   ],
+   "fussnoten": [
+    {
+     "nr": "36",
+     "text": "Gegenstandslos.",
+     "links": [],
+     "absatz": null,
      "item": null
     }
    ]

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Règlement sur la justice",
   "erlassdatum": "du 30.11.2010 (version entrée en vigueur le 01.12.2025)",
@@ -106,6 +106,15 @@
    "marginalie": [
     "Récompenses pour participation du public aux recherches (art. 149 LJ et 211 CPP) – Versement"
    ]
+  },
+  "9": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Règles diverses"
+    }
+   ],
+   "marginalie": []
   },
   "10": {
    "gliederung": [
@@ -561,6 +570,23 @@
     "Emoluments du greffe"
    ]
   },
+  "32": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarifs"
+    },
+    {
+     "ebene": 2,
+     "label": "2.1 Frais judiciaires en matière civile (art. 124 LJ)"
+    },
+    {
+     "ebene": 3,
+     "label": "2.1.4 …"
+    }
+   ],
+   "marginalie": []
+  },
   "33": {
    "gliederung": [
     {
@@ -920,6 +946,58 @@
    ],
    "marginalie": []
   },
+  "52": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarifs"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3 Médiation (art. 127 al. 3 LJ)"
+    }
+   ],
+   "marginalie": []
+  },
+  "53": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarifs"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3 Médiation (art. 127 al. 3 LJ)"
+    }
+   ],
+   "marginalie": []
+  },
+  "54": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarifs"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3 Médiation (art. 127 al. 3 LJ)"
+    }
+   ],
+   "marginalie": []
+  },
+  "55": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarifs"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3 Médiation (art. 127 al. 3 LJ)"
+    }
+   ],
+   "marginalie": []
+  },
   "56": {
    "gliederung": [
     {
@@ -1233,6 +1311,23 @@
    "marginalie": [
     "Fixation – Décision"
    ]
+  },
+  "74": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarifs"
+    },
+    {
+     "ebene": 2,
+     "label": "2.5 Dépens en matière civile (art. 124 LJ et 96 CPC)"
+    },
+    {
+     "ebene": 3,
+     "label": "2.5.4 Procédure"
+    }
+   ],
+   "marginalie": []
   },
   "75": {
    "gliederung": [

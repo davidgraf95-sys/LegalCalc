@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Steuergesetz",
   "erlassdatum": "vom 25.04.1999 (Stand 01.01.2024)",
@@ -638,6 +638,19 @@
     "Bewertung"
    ]
   },
+  "43": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "II. Einkommens- und Vermögenssteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "II.C. Vermögenssteuer"
+    }
+   ],
+   "marginalie": []
+  },
   "44": {
    "gliederung": [
     {
@@ -1013,6 +1026,32 @@
     "b. Gemischte Beteiligungsgesellschaften"
    ]
   },
+  "69": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "III. Gewinn- und Kapitalsteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "III.B. Gewinnsteuer"
+    }
+   ],
+   "marginalie": []
+  },
+  "70": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "III. Gewinn- und Kapitalsteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "III.B. Gewinnsteuer"
+    }
+   ],
+   "marginalie": []
+  },
   "71": {
    "gliederung": [
     {
@@ -1208,6 +1247,19 @@
     "Steuerabzug auf Ersatzeinkünften"
    ]
   },
+  "84": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "IV. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "IV.A. Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+    }
+   ],
+   "marginalie": []
+  },
   "85": {
    "gliederung": [
     {
@@ -1327,6 +1379,19 @@
    "marginalie": [
     "Pflichten des Schuldners der steuerbaren Leistung"
    ]
+  },
+  "93": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "IV. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "IV.C. Gemeinsame Bestimmungen"
+    }
+   ],
+   "marginalie": []
   },
   "94": {
    "gliederung": [
@@ -1507,6 +1572,24 @@
    "marginalie": [
     "3. Steuerberechnung"
    ]
+  },
+  "110": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "VI. Grundstückgewinnsteuer"
+    }
+   ],
+   "marginalie": []
+  },
+  "111": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "VI. Grundstückgewinnsteuer"
+    }
+   ],
+   "marginalie": []
   },
   "112": {
    "gliederung": [
@@ -2348,6 +2431,19 @@
    "marginalie": [
     "d. Verheimlichung oder Beiseiteschaffung von Nachlasswerten im Inventarverfahren"
    ]
+  },
+  "173": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "XI. Steuerstrafrecht"
+    },
+    {
+     "ebene": 2,
+     "label": "XI.A. Verletzung von Verfahrenspflichten und Steuerhinterziehung"
+    }
+   ],
+   "marginalie": []
   },
   "174": {
    "gliederung": [

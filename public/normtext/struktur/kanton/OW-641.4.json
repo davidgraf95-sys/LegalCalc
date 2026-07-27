@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Steuergesetz",
   "erlassdatum": "vom 30.10.1994 (Stand 01.01.2026)",
@@ -944,6 +944,27 @@
    ],
    "marginalie": []
   },
+  "39": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Besteuerung der natürlichen Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Einkommenssteuer"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.5. Steuerberechnung"
+    },
+    {
+     "ebene": 4,
+     "label": "2.2.5.2. Sonderfälle"
+    }
+   ],
+   "marginalie": []
+  },
   "40": {
    "gliederung": [
     {
@@ -1239,6 +1260,27 @@
    ],
    "marginalie": []
   },
+  "61": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Besteuerung der natürlichen Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "2.6. Zeitliche Bemessung"
+    },
+    {
+     "ebene": 3,
+     "label": "2.6.2. Hauptveranlagung"
+    },
+    {
+     "ebene": 4,
+     "label": "2.6.2.1. Bemessungsperiode"
+    }
+   ],
+   "marginalie": []
+  },
   "62": {
    "gliederung": [
     {
@@ -1363,6 +1405,23 @@
     "Steuerfüsse"
    ]
   },
+  "68": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Besteuerung der natürlichen Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "2.6. Zeitliche Bemessung"
+    },
+    {
+     "ebene": 3,
+     "label": "2.6.4. Steuerfüsse"
+    }
+   ],
+   "marginalie": []
+  },
   "69": {
    "gliederung": [
     {
@@ -1454,6 +1513,23 @@
    "marginalie": [
     "Umfang der Steuerpflicht"
    ]
+  },
+  "73": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Besteuerung der juristischen Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "3.1. Steuerpflicht"
+    },
+    {
+     "ebene": 3,
+     "label": "3.1.2. Steuerliche Zugehörigkeit"
+    }
+   ],
+   "marginalie": []
   },
   "74": {
    "gliederung": [
@@ -1848,6 +1924,48 @@
     }
    ]
   },
+  "89": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Besteuerung der juristischen Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "3.2. Gewinnsteuer"
+    },
+    {
+     "ebene": 3,
+     "label": "3.2.2. Steuerberechnung"
+    },
+    {
+     "ebene": 4,
+     "label": "3.2.2.2. Gesellschaften mit Beteiligungen"
+    }
+   ],
+   "marginalie": []
+  },
+  "90": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Besteuerung der juristischen Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "3.2. Gewinnsteuer"
+    },
+    {
+     "ebene": 3,
+     "label": "3.2.2. Steuerberechnung"
+    },
+    {
+     "ebene": 4,
+     "label": "3.2.2.3. …"
+    }
+   ],
+   "marginalie": []
+  },
   "91": {
    "gliederung": [
     {
@@ -2040,6 +2158,23 @@
     "Kapitalgesellschaften und Genossenschaften"
    ]
   },
+  "99": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Besteuerung der juristischen Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "3.3. Kapitalsteuer"
+    },
+    {
+     "ebene": 3,
+     "label": "3.3.2. Steuerberechnung"
+    }
+   ],
+   "marginalie": []
+  },
   "100": {
    "gliederung": [
     {
@@ -2221,6 +2356,69 @@
     "Quellensteuerabzug"
    ]
   },
+  "111": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "4.1. Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+    },
+    {
+     "ebene": 3,
+     "label": "4.1.2. …"
+    },
+    {
+     "ebene": 4,
+     "label": "4.1.2.3. …"
+    },
+    {
+     "ebene": 5,
+     "label": "4.1.2.3.1. …"
+    }
+   ],
+   "marginalie": []
+  },
+  "114": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "4.1. Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+    },
+    {
+     "ebene": 3,
+     "label": "4.1.2. …"
+    },
+    {
+     "ebene": 4,
+     "label": "4.1.2.4. …"
+    }
+   ],
+   "marginalie": []
+  },
+  "115": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "4.1. Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+    },
+    {
+     "ebene": 3,
+     "label": "4.1.3. …"
+    }
+   ],
+   "marginalie": []
+  },
   "116": {
    "gliederung": [
     {
@@ -2259,6 +2457,23 @@
     "Wechsel zwischen Quellensteuer und ordentlicher Veranlagung"
    ]
   },
+  "118": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "4.1. Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+    },
+    {
+     "ebene": 3,
+     "label": "4.1.3. …"
+    }
+   ],
+   "marginalie": []
+  },
   "119": {
    "gliederung": [
     {
@@ -2296,6 +2511,23 @@
    "marginalie": [
     "Der Quellensteuer unterworfene Arbeitnehmer"
    ]
+  },
+  "121": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "4.2. Natürliche und juristische Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz"
+    },
+    {
+     "ebene": 3,
+     "label": "4.2.1. …"
+    }
+   ],
+   "marginalie": []
   },
   "122": {
    "gliederung": [
@@ -2373,6 +2605,23 @@
     "Empfänger von Vorsorgeleistungen"
    ]
   },
+  "128": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "4.2. Natürliche und juristische Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz"
+    },
+    {
+     "ebene": 3,
+     "label": "4.2.6. …"
+    }
+   ],
+   "marginalie": []
+  },
   "129": {
    "gliederung": [
     {
@@ -2386,6 +2635,45 @@
     {
      "ebene": 3,
      "label": "4.2.7. …"
+    }
+   ],
+   "marginalie": []
+  },
+  "130": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5. …"
+    },
+    {
+     "ebene": 2,
+     "label": "5.1. …"
+    }
+   ],
+   "marginalie": []
+  },
+  "140": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5. …"
+    },
+    {
+     "ebene": 2,
+     "label": "5.5. …"
+    }
+   ],
+   "marginalie": []
+  },
+  "141": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5. …"
+    },
+    {
+     "ebene": 2,
+     "label": "5.6. …"
     }
    ],
    "marginalie": []
@@ -2471,6 +2759,23 @@
     {
      "ebene": 3,
      "label": "6.2.2. Steuersubjekt"
+    }
+   ],
+   "marginalie": []
+  },
+  "147": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "6. Grundsteuern (Grundstückgewinn- und Handänderungssteuern)"
+    },
+    {
+     "ebene": 2,
+     "label": "6.2. Grundstückgewinnsteuer"
+    },
+    {
+     "ebene": 3,
+     "label": "6.2.3. Steuerbefreiung"
     }
    ],
    "marginalie": []
@@ -3116,6 +3421,23 @@
     "Vertragliche Vertretung"
    ]
   },
+  "185": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "7. Verfahrensrecht"
+    },
+    {
+     "ebene": 2,
+     "label": "7.2. Allgemeine Verfahrensgrundsätze"
+    },
+    {
+     "ebene": 3,
+     "label": "7.2.3. Verfahrensrechte der Steuerpflichtigen"
+    }
+   ],
+   "marginalie": []
+  },
   "186": {
    "gliederung": [
     {
@@ -3465,6 +3787,27 @@
     "Kosten"
    ]
   },
+  "199": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "7. Verfahrensrecht"
+    },
+    {
+     "ebene": 2,
+     "label": "7.3. Veranlagung im ordentlichen Verfahren"
+    },
+    {
+     "ebene": 3,
+     "label": "7.3.2. Veranlagung"
+    },
+    {
+     "ebene": 4,
+     "label": "7.3.2.2. Besondere Vorschriften"
+    }
+   ],
+   "marginalie": []
+  },
   "200": {
    "gliederung": [
     {
@@ -3487,6 +3830,27 @@
    "marginalie": [
     "Inventar bei Todesfällen"
    ]
+  },
+  "201": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "7. Verfahrensrecht"
+    },
+    {
+     "ebene": 2,
+     "label": "7.3. Veranlagung im ordentlichen Verfahren"
+    },
+    {
+     "ebene": 3,
+     "label": "7.3.2. Veranlagung"
+    },
+    {
+     "ebene": 4,
+     "label": "7.3.2.2. Besondere Vorschriften"
+    }
+   ],
+   "marginalie": []
   },
   "202": {
    "gliederung": [
@@ -4615,6 +4979,19 @@
     "Löschung im Handelsregister"
    ]
   },
+  "261": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "8. Bezug und Sicherung der Steuern"
+    },
+    {
+     "ebene": 2,
+     "label": "8.4. Steuersicherung"
+    }
+   ],
+   "marginalie": []
+  },
   "262": {
    "gliederung": [
     {
@@ -4722,6 +5099,23 @@
    "marginalie": [
     "Verheimlichung oder Beiseiteschaffung von Nachlassaktiven im Inventarverfahren"
    ]
+  },
+  "268": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "9. Steuerstrafrecht"
+    },
+    {
+     "ebene": 2,
+     "label": "9.1. Verletzung von Verfahrenspflichten und Steuerhinterziehung"
+    },
+    {
+     "ebene": 3,
+     "label": "9.1.2. Steuerhinterziehung"
+    }
+   ],
+   "marginalie": []
   },
   "269": {
    "gliederung": [
@@ -5814,6 +6208,52 @@
    ],
    "marginalie": []
   },
+  "109–110": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "4.1. Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+    },
+    {
+     "ebene": 3,
+     "label": "4.1.2. …"
+    },
+    {
+     "ebene": 4,
+     "label": "4.1.2.2. …"
+    }
+   ],
+   "marginalie": []
+  },
+  "112–113": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "4.1. Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+    },
+    {
+     "ebene": 3,
+     "label": "4.1.2. …"
+    },
+    {
+     "ebene": 4,
+     "label": "4.1.2.3. …"
+    },
+    {
+     "ebene": 5,
+     "label": "4.1.2.3.2. …"
+    }
+   ],
+   "marginalie": []
+  },
   "116_a": {
    "gliederung": [
     {
@@ -5871,6 +6311,23 @@
     "Nachträglich ordentliche Veranlagung von Amtes wegen"
    ]
   },
+  "123–124": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "4.2. Natürliche und juristische Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz"
+    },
+    {
+     "ebene": 3,
+     "label": "4.2.2. …"
+    }
+   ],
+   "marginalie": []
+  },
   "127_a": {
    "gliederung": [
     {
@@ -5926,6 +6383,45 @@
      "item": null
     }
    ]
+  },
+  "131–133": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5. …"
+    },
+    {
+     "ebene": 2,
+     "label": "5.2. …"
+    }
+   ],
+   "marginalie": []
+  },
+  "134–136": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5. …"
+    },
+    {
+     "ebene": 2,
+     "label": "5.3. …"
+    }
+   ],
+   "marginalie": []
+  },
+  "137–139": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5. …"
+    },
+    {
+     "ebene": 2,
+     "label": "5.4. …"
+    }
+   ],
+   "marginalie": []
   },
   "145_a": {
    "gliederung": [
@@ -6029,6 +6525,23 @@
    "marginalie": [
     "Kantonale Finanzverwaltung"
    ]
+  },
+  "169–172": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "7. Verfahrensrecht"
+    },
+    {
+     "ebene": 2,
+     "label": "7.1. Behördenorganisation"
+    },
+    {
+     "ebene": 3,
+     "label": "7.1.2. Steuerbehörden"
+    }
+   ],
+   "marginalie": []
   },
   "16_a": {
    "gliederung": [
@@ -6671,6 +7184,61 @@
    "marginalie": [
     "Liquidationsgewinne"
    ]
+  },
+  "41–42": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Besteuerung der natürlichen Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2. Einkommenssteuer"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.5. Steuerberechnung"
+    },
+    {
+     "ebene": 4,
+     "label": "2.2.5.2. Sonderfälle"
+    }
+   ],
+   "marginalie": []
+  },
+  "49–50": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Besteuerung der natürlichen Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "2.3. Vermögenssteuer"
+    },
+    {
+     "ebene": 3,
+     "label": "2.3.2. Bewertung"
+    },
+    {
+     "ebene": 4,
+     "label": "2.3.2.3. Bewegliches Vermögen und immaterielle Güter"
+    }
+   ],
+   "marginalie": []
+  },
+  "57–58": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Besteuerung der natürlichen Personen"
+    },
+    {
+     "ebene": 2,
+     "label": "2.4. …"
+    }
+   ],
+   "marginalie": []
   },
   "78_a": {
    "gliederung": [

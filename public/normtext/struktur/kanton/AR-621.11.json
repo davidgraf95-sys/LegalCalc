@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-18",
+ "erzeugt": "2026-07-27",
  "kopf": {
   "titel": "Steuergesetz",
   "erlassdatum": "vom 21.05.2000 (Stand 01.01.2025)",
@@ -365,6 +365,23 @@
    "marginalie": [
     "X. Haftung"
    ]
+  },
+  "16": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Teil: Staatssteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "2. Besteuerung natürlicher Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "A. Die Steuerpflicht"
+    }
+   ],
+   "marginalie": []
   },
   "17": {
    "gliederung": [
@@ -1429,6 +1446,23 @@
     "IV. Steuerausscheidung"
    ]
   },
+  "63": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Teil: Staatssteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "3. Besteuerung juristischer Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "A. Steuerpflicht"
+    }
+   ],
+   "marginalie": []
+  },
   "64": {
    "gliederung": [
     {
@@ -2237,6 +2271,23 @@
     "IV. Steuertarif auf Ersatzeinkünften"
    ]
   },
+  "102": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Teil: Staatssteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "4. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "A. Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+    }
+   ],
+   "marginalie": []
+  },
   "103": {
    "gliederung": [
     {
@@ -2441,6 +2492,23 @@
     "Geringfügiges Einkommen"
    ]
   },
+  "113": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Teil: Staatssteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "4. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "B. Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+    }
+   ],
+   "marginalie": []
+  },
   "114": {
    "gliederung": [
     {
@@ -2535,6 +2603,23 @@
    "marginalie": [
     "IV. Interkantonales Verhältnis"
    ]
+  },
+  "119": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Teil: Staatssteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "4. Quellensteuern für natürliche und juristische Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "C. Gemeinsame Bestimmungen"
+    }
+   ],
+   "marginalie": []
   },
   "120": {
    "gliederung": [
@@ -3066,6 +3151,23 @@
    "marginalie": [
     "Kantonale Steuerverwaltung"
    ]
+  },
+  "151": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Teil: Staatssteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "7. Verfahrensrecht"
+    },
+    {
+     "ebene": 3,
+     "label": "A. Steuerverwaltungsbehörden: Organisation"
+    }
+   ],
+   "marginalie": []
   },
   "152": {
    "gliederung": [
@@ -4960,6 +5062,19 @@
     "4. Verheimlichen oder Beiseiteschaffen von Nachlasswerten im Inventarverfahren"
    ]
   },
+  "247": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Kapitel: Steuerstrafrecht"
+    },
+    {
+     "ebene": 2,
+     "label": "1. Verletzung von Verfahrenspflichten und Steuerhinterziehung"
+    }
+   ],
+   "marginalie": []
+  },
   "248": {
    "gliederung": [
     {
@@ -6613,6 +6728,23 @@
    "marginalie": [
     "Besteuerung stiller Reserven am Ende der Steuerpflicht"
    ]
+  },
+  "80–82": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Teil: Staatssteuern"
+    },
+    {
+     "ebene": 2,
+     "label": "3. Besteuerung juristischer Personen"
+    },
+    {
+     "ebene": 3,
+     "label": "B. Gewinnsteuer"
+    }
+   ],
+   "marginalie": []
   },
   "83_a": {
    "gliederung": [
