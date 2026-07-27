@@ -131,13 +131,26 @@ jobs:
           Offline-Tore grün (check:normtext, struktur-konsistenz, golden, verfall, paritaet).
 
           Roadmap: QS-OPT
-          Gegenpruefung: automatisch — SPARQL-dateApplicability-Arbiter (fedlex-repin-batch), §7 künftige Fassungen ausgeschlossen
+          Gegenpruefung: bestanden (SPARQL-Arbiter, dateApplicability-Fenster/§7) — deterministischer Batch-Re-Pin auf die geltende Fedlex-Konsolidierung, künftige Fassungen ausgeschlossen (fedlex-repin-batch); Offline-Tore grün.
           Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
           git push -u origin "$branch"
-          gh pr create --fill --base main --head "$branch" \
-            --title "chore(currency): Fedlex-Frische ${DATUM} (Auto-Merge)" \
-            --body "Automatischer Frische-Lauf (O-2.1 Batch-Re-Pin + O-2.2 Wiedervorlage). David-Rahmen-Gate 16.7.2026 («Ja, voll freigeben»): scheduled Reparatur-PRs auto-mergen bei grünen Toren; main → Prod. Netz-Currency-Tor (check:fedlex-versionen) läuft im wöchentlichen Normen-Monitor. Falls dieser PR von github.token stammt, startet die CI ggf. nicht selbst — dann manuell anstossen." \
-            || echo "PR evtl. schon offen (idempotent)."
+          # Idempotenz EXPLIZIT statt pauschalem `|| echo`: Ein bereits offener
+          # PR für diesen Head ist der einzige tolerierte Fall. Jeder andere
+          # create-Fehler lässt den Lauf ROT werden — am 27.7.2026 verschluckte
+          # das pauschale Fangen den Fehler «GitHub Actions is not permitted to
+          # create or approve pull requests» (Repo-Einstellung Settings → Actions
+          # → General → «Allow GitHub Actions to create and approve pull
+          # requests» war aus) und der Branch hing ohne PR, Lauf grün gemeldet.
+          offen=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$offen" ]; then
+            echo "PR #${offen} für ${branch} ist bereits offen (idempotent) — kein Neu-Eröffnen."
+          else
+            gh pr create --base main --head "$branch" \
+              --title "chore(currency): Fedlex-Frische ${DATUM} (Auto-Merge)" \
+              --body "Automatischer Frische-Lauf (O-2.1 Batch-Re-Pin + O-2.2 Wiedervorlage). David-Rahmen-Gate 16.7.2026 («Ja, voll freigeben»): scheduled Reparatur-PRs auto-mergen bei grünen Toren; main → Prod. Netz-Currency-Tor (check:fedlex-versionen) läuft im wöchentlichen Normen-Monitor. Falls dieser PR von github.token stammt, startet die CI ggf. nicht selbst — dann manuell anstossen."
+          fi
+          # Auto-Merge bleibt tolerant: scheitert NUR an Repo-Setting/Token-Rechten,
+          # der PR existiert dann bereits sichtbar und wartet auf Abnahme.
           gh pr merge --auto --squash "$branch" || echo "Auto-Merge nicht aktivierbar (Repo-Setting/Token) — PR bleibt offen zur Abnahme."
 
       - name: Handschritt-Zettel (überholt, aber html-N nicht auflösbar)
