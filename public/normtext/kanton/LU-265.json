@@ -1,13 +1,14 @@
 {
-  "erzeugt": "2026-06-19",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/LU/265/art_1",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "1",
       "artikelLabel": "§ 1",
+      "titel": "Bemessung der amtlichen Gebühren",
       "bloecke": [
         {
           "absatz": "1",
@@ -28,7 +29,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "827f6eaebb5cf39b5453580a55281657b9d2d626d23ebf5dbef547f36da5e434"
     },
@@ -36,9 +37,10 @@
       "id": "kanton/LU/265/art_2",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "titel": "Bemessung der Gebühren der berufsmässigen Vertretung",
       "bloecke": [
         {
           "absatz": "1",
@@ -63,7 +65,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "c64cf0cd56d69ae38ac54cc02ebf79425586967d38363f6581308e171e754247"
     },
@@ -71,9 +73,10 @@
       "id": "kanton/LU/265/art_3",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "titel": "Streitwert",
       "bloecke": [
         {
           "absatz": "1",
@@ -90,7 +93,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "70daed8f84669567da8dccd5fe92443e5423677e3daa9549471c0406a9bacb3f"
     },
@@ -98,9 +101,10 @@
       "id": "kanton/LU/265/art_4",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "titel": "Schlichtungsverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -113,6 +117,22 @@
             {
               "marke": "b",
               "text": "in vermögensrechtlichen Streitigkeiten bei einem Streitwert"
+            },
+            {
+              "marke": "a",
+              "text": "bis Fr. 50 000.– Fr. 200.– bis Fr. 400.–"
+            },
+            {
+              "marke": "b",
+              "text": "über Fr. 50 000.– bis Fr. 100 000.– Fr. 300.– bis Fr. 600.–"
+            },
+            {
+              "marke": "c",
+              "text": "über Fr. 100 000.– bis Fr. 500 000.– Fr. 500.– bis Fr. 1000.–"
+            },
+            {
+              "marke": "d",
+              "text": "über Fr. 500 000.– Fr. 800.– bis Fr. 2000.–"
             }
           ]
         },
@@ -123,17 +143,18 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
-      "sha": "b7a213f47eb9a4fd890d4ea506d27bca59090a6d2373bd4a3fc8bdaefa343050"
+      "sha": "e2677ba42671fe72b0d577eca3cef3e4315d549cbad27fcc85caeb5320ce6d16"
     },
     {
       "id": "kanton/LU/265/art_5",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "titel": "Ordentliches Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -180,7 +201,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "5262428ead37efc963abb40f5fefeab2070b8fe11bbaffb533a89b56fdb6f8a7"
     },
@@ -188,9 +209,10 @@
       "id": "kanton/LU/265/art_6",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "titel": "Vereinfachtes Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -225,7 +247,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "8201e5f60ccee18329ab146055ffce9714a4a4265850ebe5ef37f67263daa8b0"
     },
@@ -233,9 +255,10 @@
       "id": "kanton/LU/265/art_7",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "titel": "Summarisches Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -258,7 +281,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "41a8737efc52a21c6d841710ac31e4ef5ed785c703563f0a4a779163d5b2d19a"
     },
@@ -266,9 +289,10 @@
       "id": "kanton/LU/265/art_8",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "titel": "Verfahren nach den Artikeln 271–307 ZPO",
       "bloecke": [
         {
           "absatz": "1",
@@ -289,7 +313,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "c652d7b52417bbb21c93af1dfd7a4846bdccf5501c842566aaa9a92ef0b16e8f"
     },
@@ -297,9 +321,10 @@
       "id": "kanton/LU/265/art_9",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "titel": "Berufungsverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -308,7 +333,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "b01b2af8dcac3c210790ea7f1b2063ca05af61ca6bc6511443ac74c01b8654a6"
     },
@@ -316,9 +341,10 @@
       "id": "kanton/LU/265/art_10",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "10",
       "artikelLabel": "§ 10",
+      "titel": "Beschwerdeverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -327,7 +353,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "889413762b14fc67c59052f10d9d53b894d3759546247cc3bf53e63d13bf4303"
     },
@@ -335,9 +361,10 @@
       "id": "kanton/LU/265/art_11",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "titel": "Revisionsverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -350,7 +377,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "298124f81ec4741669c074a3d6fb1d16709149caadb4ecb4f47b7e2fb6e9954e"
     },
@@ -358,9 +385,10 @@
       "id": "kanton/LU/265/art_12",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "titel": "Übrige Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -369,7 +397,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "0f82f4d28afdc11b0e396809e73981fee59d3f05f60460b4ba0aa62c240f690d"
     },
@@ -377,9 +405,10 @@
       "id": "kanton/LU/265/art_13",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "titel": "Erstinstanzliche Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -392,7 +421,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "07506549e0d34d6e4a69c9c2cb285d3fd25fdf7874af2fe219f8e873135e4f50"
     },
@@ -400,9 +429,10 @@
       "id": "kanton/LU/265/art_14",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "14",
       "artikelLabel": "§ 14",
+      "titel": "Rechtsmittelverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -415,7 +445,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "5cc0b3617d7ea50ab16bc0a878b89bc50a9c40280dc35c6b6cb48d4fe5b784ff"
     },
@@ -423,9 +453,10 @@
       "id": "kanton/LU/265/art_15",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "15",
       "artikelLabel": "§ 15",
+      "titel": "Staatsanwaltschaft",
       "bloecke": [
         {
           "absatz": "1",
@@ -460,7 +491,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "873b79431a414565e7b3ec01b9b7cd5695446e9de2144ff9e222674cf1d20e77"
     },
@@ -468,9 +499,10 @@
       "id": "kanton/LU/265/art_16",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "16",
       "artikelLabel": "§ 16",
+      "titel": "Oberstaatsanwaltschaft",
       "bloecke": [
         {
           "absatz": "1",
@@ -479,7 +511,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "f97a325afdec0f42798ceaf1297ae71fa14c7c93f98f187d20def21ea10681b9"
     },
@@ -487,9 +519,10 @@
       "id": "kanton/LU/265/art_17",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "17",
       "artikelLabel": "§ 17",
+      "titel": "Jugendgericht",
       "bloecke": [
         {
           "absatz": "1",
@@ -498,7 +531,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "f0dd67287d194a85fffe5c8883200ddaa77cefd01a10b47067a11de58943156a"
     },
@@ -506,9 +539,10 @@
       "id": "kanton/LU/265/art_18",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "18",
       "artikelLabel": "§ 18",
+      "titel": "Bezirksgericht",
       "bloecke": [
         {
           "absatz": "1",
@@ -527,7 +561,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "0370004b8e8799a19dedae7348ec3954eaf736e525d65c8442d4cc9c93ef6356"
     },
@@ -535,9 +569,10 @@
       "id": "kanton/LU/265/art_19",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "19",
       "artikelLabel": "§ 19",
+      "titel": "Kriminalgericht",
       "bloecke": [
         {
           "absatz": "1",
@@ -556,7 +591,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "dc655b49de33dfe1076f2b8f2becfe0da09499780b8d77eb2fb86597d1f1d4a9"
     },
@@ -564,9 +599,10 @@
       "id": "kanton/LU/265/art_20",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "20",
       "artikelLabel": "§ 20",
+      "titel": "Zwangsmassnahmengericht",
       "bloecke": [
         {
           "absatz": "1",
@@ -585,7 +621,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "dafb8443443df21b96a633b28ba57e40592f24078db7f8465dcd7957062d9a86"
     },
@@ -593,9 +629,10 @@
       "id": "kanton/LU/265/art_21",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "21",
       "artikelLabel": "§ 21",
+      "titel": "Kantonsgericht",
       "bloecke": [
         {
           "absatz": "1",
@@ -626,7 +663,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "ff6c8ed5e5b8d659157dd411f939202759c4afe399ec2f9d36896ef3001fbebb"
     },
@@ -634,9 +671,10 @@
       "id": "kanton/LU/265/art_22",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "22",
       "artikelLabel": "§ 22",
+      "titel": "Amtliche Verteidigung",
       "bloecke": [
         {
           "absatz": "1",
@@ -653,7 +691,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "b03986641c6efbed1a685e8e764159c62d1bedd3062c39a0e3ef199a72adeb2c"
     },
@@ -661,9 +699,10 @@
       "id": "kanton/LU/265/art_23",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "23",
       "artikelLabel": "§ 23",
+      "titel": "Zeuginnen, Zeugen und Auskunftspersonen",
       "bloecke": [
         {
           "absatz": "1",
@@ -688,7 +727,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "720c2279471ac8107d8f107d432078dce4bc5b8eb4ddc4aa11bb0b77e7cabe0a"
     },
@@ -696,9 +735,10 @@
       "id": "kanton/LU/265/art_24",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "24",
       "artikelLabel": "§ 24",
+      "titel": "Drittpersonen",
       "bloecke": [
         {
           "absatz": "1",
@@ -707,7 +747,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "eb31cd317ea4ac4353fa245cc711e16c1d9f1bdeee39548ea3f58c440b968983"
     },
@@ -715,9 +755,10 @@
       "id": "kanton/LU/265/art_25",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "25",
       "artikelLabel": "§ 25",
+      "titel": "Sachverständige",
       "bloecke": [
         {
           "absatz": "1",
@@ -734,7 +775,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "6435542140c1616d9b3d6907e8dbaccae366e530177663b0740b58993963805a"
     },
@@ -742,9 +783,10 @@
       "id": "kanton/LU/265/art_26",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "26",
       "artikelLabel": "§ 26",
+      "titel": "Übersetzerinnen und Übersetzer",
       "bloecke": [
         {
           "absatz": "1",
@@ -757,7 +799,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "16724e04d6edd155867275ae7d5c2ae796b462a752d64edee708ab1e3f3b4de5"
     },
@@ -765,9 +807,10 @@
       "id": "kanton/LU/265/art_27",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "27",
       "artikelLabel": "§ 27",
+      "titel": "Vertreter oder Vertreterin des Kindes",
       "bloecke": [
         {
           "absatz": "1",
@@ -776,7 +819,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "45e6f949d3f17021df0ace536a9ecedd95664ff3466a2aa318d86489fdd916e4"
     },
@@ -784,9 +827,10 @@
       "id": "kanton/LU/265/art_28",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "28",
       "artikelLabel": "§ 28",
+      "titel": "Mediatorinnen und Mediatoren",
       "bloecke": [
         {
           "absatz": "1",
@@ -795,7 +839,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "6e121580f3bb3419702dd1443468f9bf96340563c7646ccbcfb140cbcf307a56"
     },
@@ -803,9 +847,10 @@
       "id": "kanton/LU/265/art_29",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "29",
       "artikelLabel": "§ 29",
+      "titel": "Umtriebsentschädigung",
       "bloecke": [
         {
           "absatz": "1",
@@ -822,7 +867,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "3fc879dd50f162fb20ab0078106b3662ee57a39b57fec418444e5709178b487c"
     },
@@ -830,9 +875,10 @@
       "id": "kanton/LU/265/art_30",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "30",
       "artikelLabel": "§ 30",
+      "titel": "Entschädigungsberechtigte Bemühungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -845,7 +891,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "dffb339c1cf26f71ffd4070744bb04d8b9e772b8e418f05641581f45b5f4f530"
     },
@@ -853,9 +899,10 @@
       "id": "kanton/LU/265/art_30_a",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "30_a",
       "artikelLabel": "§ 30a",
+      "titel": "Akontozahlungen bei amtlicher Verteidigung oder unentgeltlicher Rechtsverbeiständung",
       "bloecke": [
         {
           "absatz": "1",
@@ -876,7 +923,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "2366cfe509ae921b81c973a5f9d0f961dd8506365f0c6b315766b7f0b579d457"
     },
@@ -884,9 +931,10 @@
       "id": "kanton/LU/265/art_31",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "31",
       "artikelLabel": "§ 31",
+      "titel": "Verfahren nach der ZPO und nach dem VRG",
       "bloecke": [
         {
           "absatz": "1",
@@ -903,7 +951,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "5bfbd4b5233a8e75a9285e284c0bd1c65dbfbdbb89b39b2c6b0608fc594ab83a"
     },
@@ -911,9 +959,10 @@
       "id": "kanton/LU/265/art_32",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "32",
       "artikelLabel": "§ 32",
+      "titel": "Verfahren nach der StPO",
       "bloecke": [
         {
           "absatz": "1",
@@ -934,7 +983,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "426a8856d29151eb1133871845fbebcbb771e45233141f5aed07205c1cb08fa7"
     },
@@ -942,9 +991,10 @@
       "id": "kanton/LU/265/art_33",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "33",
       "artikelLabel": "§ 33",
+      "titel": "Ersatzberechtigte Auslagen",
       "bloecke": [
         {
           "absatz": "1",
@@ -975,7 +1025,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "21343f4e3c43c4156b567c4dbaf04a732a5a40e874ec9eef528df550699161f1"
     },
@@ -983,9 +1033,10 @@
       "id": "kanton/LU/265/art_34",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "34",
       "artikelLabel": "§ 34",
+      "titel": "Grundsatz",
       "bloecke": [
         {
           "absatz": "1",
@@ -998,7 +1049,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "c54f6a586084e9204367b71ca3cf428eb8558cdbf9339feb3be11b986305ec4f"
     },
@@ -1006,9 +1057,10 @@
       "id": "kanton/LU/265/art_35",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "35",
       "artikelLabel": "§ 35",
+      "titel": "Stundung, Ermässigung und Erlass",
       "bloecke": [
         {
           "absatz": "1",
@@ -1031,7 +1083,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "7bbfc8c82cc3a2d98c6b116631958d468838caff8a73e6fcb620f73d60d21d66"
     },
@@ -1039,9 +1091,10 @@
       "id": "kanton/LU/265/art_36",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "36",
       "artikelLabel": "§ 36",
+      "titel": "Gebühren",
       "bloecke": [
         {
           "absatz": "1",
@@ -1056,8 +1109,28 @@
               "text": "Abgabe eines anonymisierten Urteils/Entscheids"
             },
             {
+              "marke": "1",
+              "text": "Seite 1–5 Fr. 5.– pro Seite"
+            },
+            {
+              "marke": "2",
+              "text": "Seite 6–50 Fr. 1.– pro Seite"
+            },
+            {
+              "marke": "3",
+              "text": "ab Seite 51 Fr. 0.50 pro Seite"
+            },
+            {
               "marke": "c",
               "text": "Abgabe eines nicht anonymisierten Urteils/Entscheids"
+            },
+            {
+              "marke": "1",
+              "text": "Seite 1–50 Fr. 1.– pro Seite"
+            },
+            {
+              "marke": "2",
+              "text": "ab Seite 51 Fr. 0.50 pro Seite"
             },
             {
               "marke": "d",
@@ -1066,6 +1139,18 @@
             {
               "marke": "e",
               "text": "Kopieren von Schriftstücken"
+            },
+            {
+              "marke": "1",
+              "text": "A4-Kopie schwarz-weiss Fr. –.50 pro Kopie"
+            },
+            {
+              "marke": "2",
+              "text": "A4-Kopie farbig Fr. –.70 pro Kopie"
+            },
+            {
+              "marke": "3",
+              "text": "A3-Kopie Fr. 1.– pro Kopie"
             },
             {
               "marke": "f",
@@ -1088,17 +1173,18 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
-      "sha": "51df29d8e3c40a7c309f86b848d2cb6607222667cb0e25019e7aacf030d22199"
+      "sha": "51751ae2b30b8385959caba9bb8df1fbf372cf358fb9c2c21ccd001a88f186bb"
     },
     {
       "id": "kanton/LU/265/art_37",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "37",
       "artikelLabel": "§ 37",
+      "titel": "Auslagen",
       "bloecke": [
         {
           "absatz": "1",
@@ -1107,7 +1193,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "370c74a4ab8036d70192d888775e90b31e45ab9e779bc084fbaae61b8dd8ecff"
     },
@@ -1115,9 +1201,10 @@
       "id": "kanton/LU/265/art_38",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "38",
       "artikelLabel": "§ 38",
+      "titel": "Aufhebung bisherigen Rechts",
       "bloecke": [
         {
           "absatz": "1",
@@ -1126,7 +1213,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "e6161e91c4be3dcbe948d3c7ea150c490ff82769297ea59b8e4ed7f1580a49be"
     },
@@ -1134,9 +1221,10 @@
       "id": "kanton/LU/265/art_39",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "39",
       "artikelLabel": "§ 39",
+      "titel": "Übergangsbestimmungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -1149,7 +1237,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "7bf4f4802891f04a60ba3d7bbb9e346f4644ed8ac74883c7560616bb2a6bfcd7"
     },
@@ -1157,9 +1245,10 @@
       "id": "kanton/LU/265/art_40",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
+      "erlass": "Verordnung über die Kosten in Zivil-, Straf- und verwaltungsgerichtlichen Verfahren, Justiz-Kostenverordnung, JusKV (SRL Nr. 265)",
       "artikel": "40",
       "artikelLabel": "§ 40",
+      "titel": "Inkrafttreten",
       "bloecke": [
         {
           "absatz": "1",
@@ -1168,7 +1257,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/265",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2aa177649f831cf95054a6fefc7b8083",
       "sha": "79744221888b1385c0f99ad6cd730d91fe56e46f6c7833fa9bcfa486c91b3276"
     }

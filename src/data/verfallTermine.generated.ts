@@ -14,7 +14,7 @@ export type VerfallTermin = {
 
 export const VERFALL_STAND = "11.7.2026";
 export const VERFALL_QUELLE = "bibliothek/register/parameter-verfall.md";
-export const VERFALL_MANUELL_ANZAHL = 20;
+export const VERFALL_MANUELL_ANZAHL = 21;
 
 export const VERFALL_TERMINE: VerfallTermin[] = [
   {
@@ -206,7 +206,7 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "datum": "2026-12-01",
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (CHEMRRV)",
-    "wert": "gepinnt 1.1.2026",
+    "wert": "gepinnt 16.7.2026",
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
@@ -226,6 +226,22 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "fundstelle": "nur Dossiers (`gesellschaftsgruendung.md` Teil 5; `recherche/INDEX.md`-Nachträge) — nicht verdrahtet",
     "wert": "10,0 % / Skala < CHF 60'500 (Merkblatt 2.02, 2026); EFD 4,0 %",
     "rhythmus": "jährlich + vor Verdrahtung"
+  },
+  {
+    "label": "Aufgehoben: PatV (SR 232.141)",
+    "datum": "2027-01-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (PATV)",
+    "wert": "aufgehoben seit 1.1.2027",
+    "rhythmus": "einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen"
+  },
+  {
+    "label": "Aufgehoben: VGV (SR 814.621)",
+    "datum": "2027-01-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (VGVP)",
+    "wert": "aufgehoben seit 1.1.2027",
+    "rhythmus": "einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen"
   },
   {
     "label": "Betreibungsämter-Stammdaten 26 Kt. (130 Kreis-Ämter in 13 Kt. + 10 Einheitsämter, Gemeinde-Karten 11 Kt.)",
@@ -308,6 +324,14 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
+    "label": "Künftige Fassung CO2-Gesetz (SR 641.71)",
+    "datum": "2027-01-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (CO2_GESETZ)",
+    "wert": "gepinnt 1.1.2025",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
     "label": "Künftige Fassung DesV (SR 232.121)",
     "datum": "2027-01-01",
     "quelle": "Tabelle",
@@ -385,6 +409,14 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (MWSTV)",
     "wert": "gepinnt 1.1.2025",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
+    "label": "Künftige Fassung ParlG (SR 171.10)",
+    "datum": "2027-01-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (PARLG)",
+    "wert": "gepinnt 2.3.2026",
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {

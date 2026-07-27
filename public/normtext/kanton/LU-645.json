@@ -1,13 +1,14 @@
 {
-  "erzeugt": "2026-06-19",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/LU/645/art_1",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "1",
       "artikelLabel": "§ 1",
+      "titel": "Steuerhoheit",
       "bloecke": [
         {
           "absatz": "1",
@@ -16,7 +17,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "5bd4acee2d8b167f08394392e7c536b478d19a0f2efe203a9452af493ba2df0e"
     },
@@ -24,9 +25,10 @@
       "id": "kanton/LU/645/art_2",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "titel": "Steuerbegründende Handänderungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -43,23 +45,36 @@
             {
               "marke": "3",
               "text": "der Übergang der wirtschaftlichen Verfügungsmacht über ein Grundstück, namentlich durch:"
+            },
+            {
+              "marke": "a",
+              "text": "die Veräusserung von Beteiligungen an Immobiliengesellschaften,"
+            },
+            {
+              "marke": "b",
+              "text": "die Übertragung eines Kaufrechts und den Eintritt in einen Kauf- oder Kaufvorvertrag. Als Handänderung gilt auch der Verzicht auf die Rechte aus Kaufrechts‑, Kauf- oder Kaufvorvertrag, sofern dadurch beabsichtigt wird, einem Dritten den Erwerb des Eigentums am Grundstück zu ermöglichen, und das Eigentum in der Folge auf diesen übertragen wird,"
+            },
+            {
+              "marke": "c",
+              "text": "die Belastung eines Grundstücks mit einer Dienstbarkeit, wenn diese die unbeschränkte Bewirtschaftung oder den Veräusserungswert des Grundstücks dauernd und wesentlich beeinträchtigt, insbesondere durch die Einräumung eines Baurechts oder eines Bauverbots."
             }
           ]
         }
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
-      "sha": "184ec6f7f21b662461562f5fc8cc7d743e438b7e18268783073fc51332bdedea"
+      "sha": "01d243c1f84497a8e6295a9862e4214571e9e1c19ebd25982951dfd027c7e6a6"
     },
     {
       "id": "kanton/LU/645/art_3",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "titel": "Steuerfreie Handänderungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -94,7 +109,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "0bb0677a40aa1f2353457454136b44331e9daf7c55938d3e7a2fc49bfcb115b5"
     },
@@ -102,9 +117,10 @@
       "id": "kanton/LU/645/art_4",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "titel": "Steuerpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -117,7 +133,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "cd1722582d5cc3b65ba77170f994a9845899467cdff0ec034c17037d718d82ef"
     },
@@ -125,9 +141,10 @@
       "id": "kanton/LU/645/art_5",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "titel": "Ausnahmen von der Steuerpflicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -158,7 +175,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "220c56c0e5896b4db432d76bda909db69f3d4c512bebe35782b564a5cb80a678"
     },
@@ -166,9 +183,10 @@
       "id": "kanton/LU/645/art_6",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "titel": "Steuermass",
       "bloecke": [
         {
           "absatz": "1",
@@ -177,7 +195,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "37deaaa21133e116d7d0d3aada87302e94ad983630d0360246fc5d3d7b05f43e"
     },
@@ -185,9 +203,10 @@
       "id": "kanton/LU/645/art_7",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "titel": "Handänderungswert",
       "bloecke": [
         {
           "absatz": "1",
@@ -208,7 +227,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "0ab6908667535f1ffadb02e5eaa62d702e6915de39cc61258a982a43ff5f7ad8"
     },
@@ -216,9 +235,10 @@
       "id": "kanton/LU/645/art_8",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "titel": "Tauschverträge",
       "bloecke": [
         {
           "absatz": "1",
@@ -235,7 +255,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "e7d7adfe01d1cd10e139ceada32b156981e3b4676028e77f4af47bc9c0054e21"
     },
@@ -243,9 +263,10 @@
       "id": "kanton/LU/645/art_9",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "titel": "Sonderfälle",
       "bloecke": [
         {
           "absatz": "1",
@@ -254,7 +275,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "c8d84cc0c8cd7b70aecfd68eb0199451a8b56163afc87cfd59b9f1b9b2a459ac"
     },
@@ -262,9 +283,10 @@
       "id": "kanton/LU/645/art_10",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "10",
       "artikelLabel": "§ 10",
+      "titel": "Veranlagung und Delegation",
       "bloecke": [
         {
           "absatz": "1",
@@ -289,7 +311,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "1d8a1a4783e6bdc7e0295a5ba68ee2a84ab15befa12cb96ddf4b268fbffaddb1"
     },
@@ -297,9 +319,10 @@
       "id": "kanton/LU/645/art_11",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "titel": "Melde- und Mitwirkungspflichten",
       "bloecke": [
         {
           "absatz": "1",
@@ -320,7 +343,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "31f2ce353394f0cd5a3a5513c306aff53804b350733d6140c6caa68c6bebd63e"
     },
@@ -328,9 +351,10 @@
       "id": "kanton/LU/645/art_12",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "titel": "Revision",
       "bloecke": [
         {
           "absatz": "1",
@@ -339,7 +363,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "4d0992220339016c97c1431c0f1e18c6bb6a235937b6f670c82df697b6798eda"
     },
@@ -347,9 +371,10 @@
       "id": "kanton/LU/645/art_12_a",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "12_a",
       "artikelLabel": "§ 12a",
+      "titel": "Berichtigung von Rechnungsfehlern und Schreibversehen",
       "bloecke": [
         {
           "absatz": "1",
@@ -362,7 +387,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "b406fd90f16dcd32d6091b9e48ba95e8e3299370c1be9c56ae53b8120397d703"
     },
@@ -370,9 +395,10 @@
       "id": "kanton/LU/645/art_12_b",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "12_b",
       "artikelLabel": "§ 12b",
+      "titel": "Nachsteuer",
       "bloecke": [
         {
           "absatz": "1",
@@ -389,7 +415,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "60ea088374f4f678ef1d6a26c4d42fc62432f61a1f2fdb4eed5c74d5301c7f4f"
     },
@@ -397,9 +423,10 @@
       "id": "kanton/LU/645/art_13",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "titel": "Veranlagungsverjährung",
       "bloecke": [
         {
           "absatz": "1",
@@ -416,7 +443,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "1a038a88a0c2991d398759d74cc255636b11e8fe8ec03f9c12e674ba36278fb9"
     },
@@ -424,9 +451,10 @@
       "id": "kanton/LU/645/art_14",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "14",
       "artikelLabel": "§ 14",
+      "titel": "Steuerstrafrecht",
       "bloecke": [
         {
           "absatz": "1",
@@ -447,17 +475,75 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "a29bd28e21dcc2eab5ef6d879a346d531ce8a93a300e12b56a5365c04d6eab47"
+    },
+    {
+      "id": "kanton/LU/645/art_15",
+      "ebene": "kanton",
+      "quelle": "LU",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
+      "artikel": "15",
+      "artikelLabel": "§ 15",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2025-01-01",
+      "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "kanton/LU/645/art_16",
+      "ebene": "kanton",
+      "quelle": "LU",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
+      "artikel": "16",
+      "artikelLabel": "§ 16",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2025-01-01",
+      "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "kanton/LU/645/art_17",
+      "ebene": "kanton",
+      "quelle": "LU",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
+      "artikel": "17",
+      "artikelLabel": "§ 17",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2025-01-01",
+      "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/LU/645/art_18",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "18",
       "artikelLabel": "§ 18",
+      "titel": "Einsprache und Verwaltungsgerichtsbeschwerde",
       "bloecke": [
         {
           "absatz": "1",
@@ -478,7 +564,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "ed71770eb57af2ba48ef7029b63d68747d130becd24ea616be58545750ddb624"
     },
@@ -486,9 +572,10 @@
       "id": "kanton/LU/645/art_19",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "19",
       "artikelLabel": "§ 19",
+      "titel": "Fälligkeit und Verzinsung",
       "bloecke": [
         {
           "absatz": "1",
@@ -505,7 +592,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "5529a63d0fe4571a6e73145bfc8d38599a97893b1d7f182b3cea4ed4b10e6a81"
     },
@@ -513,9 +600,10 @@
       "id": "kanton/LU/645/art_19_a",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "19_a",
       "artikelLabel": "§ 19a",
+      "titel": "Pfandrecht",
       "bloecke": [
         {
           "absatz": "1",
@@ -528,7 +616,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "588e93cc69bd60380dc89cc6c65414aff6f61d9b1f8522b786abc912b81ced84"
     },
@@ -536,9 +624,10 @@
       "id": "kanton/LU/645/art_20",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "20",
       "artikelLabel": "§ 20",
+      "titel": "Verjährung",
       "bloecke": [
         {
           "absatz": "1",
@@ -555,7 +644,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "1b88649648794d33e439286c3fb8e4822f450ddfc0de3a37881ef021d35eef7e"
     },
@@ -563,9 +652,10 @@
       "id": "kanton/LU/645/art_21",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "21",
       "artikelLabel": "§ 21",
+      "titel": "Zahlungserleichterungen und Erlass",
       "bloecke": [
         {
           "absatz": "1",
@@ -582,7 +672,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "85cca2b8be90880d11ce04dc6235e103631ed9167b45e981d00f8895dab0a919"
     },
@@ -590,9 +680,10 @@
       "id": "kanton/LU/645/art_22",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "22",
       "artikelLabel": "§ 22",
+      "titel": "Anteile am Steuerertrag",
       "bloecke": [
         {
           "absatz": "1",
@@ -611,17 +702,37 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "b3fff4bb24ffe2d9108787765794acf0de22c5436d9f8b02c0774568ff3e5a49"
+    },
+    {
+      "id": "kanton/LU/645/art_23",
+      "ebene": "kanton",
+      "quelle": "LU",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
+      "artikel": "23",
+      "artikelLabel": "§ 23",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2025-01-01",
+      "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/LU/645/art_24",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "24",
       "artikelLabel": "§ 24",
+      "titel": "Verantwortung der Gemeinden",
       "bloecke": [
         {
           "absatz": "1",
@@ -634,7 +745,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "810320b404430ec01bf7d1c8de0f398150071038f69f92c9ba905e88a62bd218"
     },
@@ -642,9 +753,10 @@
       "id": "kanton/LU/645/art_25",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "25",
       "artikelLabel": "§ 25",
+      "titel": "Abrechnung",
       "bloecke": [
         {
           "absatz": "1",
@@ -653,7 +765,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "f75dc525744fb8b6e7e721db8a7c78463c34e5b1596a95cebb543f2b79f979e2"
     },
@@ -661,9 +773,10 @@
       "id": "kanton/LU/645/art_26",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "26",
       "artikelLabel": "§ 26",
+      "titel": "Aufsicht über den Vollzug",
       "bloecke": [
         {
           "absatz": "1",
@@ -680,7 +793,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "d884cbed17adf6736217ead24ec08a7912c0d744621a4f470564706cadbdf86a"
     },
@@ -688,9 +801,10 @@
       "id": "kanton/LU/645/art_27",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "27",
       "artikelLabel": "§ 27",
+      "titel": "Anwendbares Recht",
       "bloecke": [
         {
           "absatz": "1",
@@ -703,7 +817,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "36dc8e9964c3886740622fb6dce88bb9060055b498fdd35f30bd32190c5d24db"
     },
@@ -711,9 +825,10 @@
       "id": "kanton/LU/645/art_28",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "28",
       "artikelLabel": "§ 28",
+      "titel": "Aufhebung bestehenden Rechts",
       "bloecke": [
         {
           "absatz": "1",
@@ -732,17 +847,38 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "8e454d623ee0b2e9350c05ccfd9c6237a724a1088c170c59cf8152fc2eaf3984"
+    },
+    {
+      "id": "kanton/LU/645/art_29",
+      "ebene": "kanton",
+      "quelle": "LU",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
+      "artikel": "29",
+      "artikelLabel": "§ 29",
+      "titel": "Änderung bestehenden Rechts",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2025-01-01",
+      "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/LU/645/art_29_a",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "29_a",
       "artikelLabel": "§ 29a",
+      "titel": "Übergangsbestimmungen der Änderung vom 22. November 1999",
       "bloecke": [
         {
           "absatz": "1",
@@ -759,7 +895,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "ef31adf01c99aa8363b3ab8a525f41aad30979797a2b936da97383311cfd1272"
     },
@@ -767,9 +903,10 @@
       "id": "kanton/LU/645/art_30",
       "ebene": "kanton",
       "quelle": "LU",
-      "erlass": "HStG (SRL Nr. 645)",
+      "erlass": "Gesetz über die Handänderungssteuer, HStG (SRL Nr. 645)",
       "artikel": "30",
       "artikelLabel": "§ 30",
+      "titel": "Inkrafttreten",
       "bloecke": [
         {
           "absatz": "1",
@@ -778,7 +915,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://srl.lu.ch/app/de/texts_of_law/645",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f0e7b4d8ce79a7241d3b16f9ba9afe66",
       "sha": "f25f879377ce8be25512431afb90826fad43170be0f23d20abe99f99d846988e"
     }

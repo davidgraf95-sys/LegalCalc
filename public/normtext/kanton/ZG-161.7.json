@@ -1,32 +1,34 @@
 {
-  "erzeugt": "2026-06-22",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/ZG/161.7/art_1",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "1",
       "artikelLabel": "§ 1",
+      "titel": "Geltungsbereich",
       "bloecke": [
         {
           "absatz": "1",
           "text": "Diese Verordnung regelt die amtlichen Kosten in Zivil- und Strafverfahren sowie die ausserprozessualen Gebühren."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "0a27f555e5c7d55eb4f805f933cae51226ac933940e61d9e06b2efd087c0365e"
     },
     {
       "id": "kanton/ZG/161.7/art_2",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "titel": "Zusammensetzung der Kosten",
       "bloecke": [
         {
           "absatz": "1",
@@ -37,19 +39,20 @@
           "text": "Gebühren sind die Pauschalen zur Deckung des Verfahrensaufwands und für den Entscheid."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "4f6fcf5aaf52297a65f4ef521438c8d4fe6ad4d8881d43374a71134298e2a36b"
     },
     {
       "id": "kanton/ZG/161.7/art_3",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "titel": "Bemessung der Gebühr",
       "bloecke": [
         {
           "absatz": "1",
@@ -74,19 +77,20 @@
           "text": "Der Streitwert gemäss Abs. 1 Bst. a wird nach Art. 91 – 94 ZPO bestimmt."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "2f8cf04e53751adabb9a96be099aca97449dbccd6f2d383222a2086cc79dcd39"
     },
     {
       "id": "kanton/ZG/161.7/art_4",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "titel": "Erhöhung der Gebühr",
       "bloecke": [
         {
           "absatz": "1",
@@ -97,19 +101,20 @@
           "text": "Die Gebühr kann bis auf das Doppelte erhöht werden, wenn keine der Parteien Sitz oder Wohnsitz in der Schweiz hat und es sich beim Streitgegenstand nicht um ein in der Schweiz gelegenes Grundstück handelt."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "6cd8c8092d9ca80d66514e0cc5de6fc278db5667f73d167938567fa33f1d742b"
     },
     {
       "id": "kanton/ZG/161.7/art_5",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "titel": "Herabsetzung der Gebühr und Verzicht",
       "bloecke": [
         {
           "absatz": "1",
@@ -124,38 +129,40 @@
           "text": "Wenn die Umstände es rechtfertigen, kann auf das Erheben von Kosten ganz oder teilweise verzichtet werden."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "f8eab27ee632c576c3cd56bbfbe0f3dc4aa7ffd10994a4331c78bbad7b6c5df2"
     },
     {
       "id": "kanton/ZG/161.7/art_6",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "titel": "Gebühren für nicht ausdrücklich erwähnte Verrichtungen",
       "bloecke": [
         {
           "absatz": "1",
           "text": "Soweit diese Verordnung für Amtshandlungen keine besonderen Gebühren vorsieht, beträgt die Gebühr in der Regel Franken 100 bis 3000."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "fc0f3f27781e9f712773124757b6809748988f5e8228ec09eb22c794a84ef127"
     },
     {
       "id": "kanton/ZG/161.7/art_7",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "titel": "Aufführung der Kosten im Entscheid",
       "bloecke": [
         {
           "absatz": "1",
@@ -166,19 +173,20 @@
           "text": "Gebühren und Auslagen, die im Zeitpunkt des Entscheids noch nicht bekannt sind, können vorbehalten und später in Rechnung gestellt werden. Der Vorbehalt ist im Entscheid aufzuführen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "afeb8e9f79995e9d49f9cf6ee8e308a7f6a0a1dc74ba8b5cc99502db2574a552"
     },
     {
       "id": "kanton/ZG/161.7/art_8",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "titel": "Einzug der Kosten",
       "bloecke": [
         {
           "absatz": "1",
@@ -193,19 +201,20 @@
           "text": "Auf die Kosten wird nach Ablauf der Zahlungsfrist ein Verzugszins von 5 % geschuldet (Art. 112 Abs. 3 ZPO, Art. 442 Abs. 2 StPO)."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "f904296d226852ae7292c7ac26ed2b6f1f53cb017868f018e4314cd9c3c9ed79"
     },
     {
       "id": "kanton/ZG/161.7/art_9",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "titel": "Gerichtskosten",
       "bloecke": [
         {
           "absatz": "1",
@@ -234,27 +243,38 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "00a5848378e66dbbfbb7fb75468a0e85090cd2c5680e276c2eecfae505320c59"
     },
     {
       "id": "kanton/ZG/161.7/art_10",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "10",
       "artikelLabel": "§ 10",
+      "titel": "Schlichtungsverfahren",
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Im Schlichtungsverfahren beträgt die Gebühr:",
+          "text": "Im Schlichtungsverfahren beträgt die Gebühr:"
+        },
+        {
+          "absatz": null,
+          "text": "",
           "mehrspaltig": {
-            "kopf": [
-              "Streitwert in Franken",
-              "Gebühr in Franken"
+            "spalten": [
+              {
+                "typ": "text",
+                "titel": "Streitwert in Franken"
+              },
+              {
+                "typ": "bereich",
+                "titel": "Gebühr in Franken"
+              }
             ],
             "zeilen": [
               [
@@ -289,28 +309,42 @@
           "text": "Vorbehalten bleiben die kostenlosen Verfahren gemäss Art. 113 Abs. 2 und Art. 114 ZPO."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
-      "sha": "1056114d58cc7ed382a7df4d1a429b122d9bf6a83c132071204f368d49dffe5b"
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
+      "sha": "c5c372bd19ec26a91b2115239aaa5fe62bcfb9637bf4386cf9540bb962a1b6b0"
     },
     {
       "id": "kanton/ZG/161.7/art_11",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "titel": "Ordentliches und vereinfachtes Verfahren",
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Im ordentlichen und im vereinfachten Verfahren beträgt die Entscheidgebühr:",
+          "text": "Im ordentlichen und im vereinfachten Verfahren beträgt die Entscheidgebühr:"
+        },
+        {
+          "absatz": null,
+          "text": "",
           "mehrspaltig": {
-            "kopf": [
-              "Streitwert in Franken",
-              "Gebühr in Franken",
-              "jedoch höchstens % des Streitwerts"
+            "spalten": [
+              {
+                "typ": "text",
+                "titel": "Streitwert in Franken"
+              },
+              {
+                "typ": "bereich",
+                "titel": "Gebühr in Franken"
+              },
+              {
+                "typ": "text",
+                "titel": "jedoch höchstens % des Streitwerts"
+              }
             ],
             "zeilen": [
               [
@@ -385,19 +419,20 @@
           "text": "Sind periodisch wiederkehrende Leistungen im Streit, kann die gemäss Abs. 1 berechnete Entscheidgebühr bis auf die Hälfte ermässigt werden. Ausgenommen sind familienrechtliche Verfahren nach § 13."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
-      "sha": "a6be27f48f893d76c25d022c9b2342f867acc840b80c2409276e095a7fc8b212"
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
+      "sha": "5446f2a81819dd3137361894152d5111c98aa3c945c8bc523950d1249b07b060"
     },
     {
       "id": "kanton/ZG/161.7/art_12",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "titel": "Summarisches Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -408,19 +443,20 @@
           "text": "Für die Entgegennahme einer Schutzschrift beträgt die Gebühr Franken 500 bis 2000."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "5f23ee12c635d4fa7b666480bb758cca72b34e85420c50377bfb695b72fd7156"
     },
     {
       "id": "kanton/ZG/161.7/art_13",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "titel": "Familienrechtliche Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -439,19 +475,20 @@
           "text": "Bei der Vertretung des Kindes gemäss Art. 299 ZPO wird die Entschädigung der Vertretung aufgrund des vereinbarten Stundenansatzes und des Zeitaufwands festgesetzt. Ist die Vertretung eine Rechtsanwältin oder ein Rechtsanwalt, bemisst sich die Entschädigung nach der Verordnung des Obergerichts über den Anwaltstarif."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "977c8ab9219bdbfb36eb298b95da44c32b14233df7569950b61570fe79d81d78"
     },
     {
       "id": "kanton/ZG/161.7/art_14",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "14",
       "artikelLabel": "§ 14",
+      "titel": "Besondere Entscheide im laufenden Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -462,19 +499,20 @@
           "text": "Für Zwischenentscheide nach Art. 237 ZPO beträgt die Entscheidgebühr die Hälfte bis drei Viertel der ordentlichen Gebühr."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "7ed9dfc6f73cdf9889c6086443dd81c218b63706f67928df254055e7c97093d2"
     },
     {
       "id": "kanton/ZG/161.7/art_15",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "15",
       "artikelLabel": "§ 15",
+      "titel": "Rechtsmittelverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -485,57 +523,60 @@
           "text": "Bei der Ablehnung eines Revisionsgesuchs beträgt die Entscheidgebühr Franken 200 bis 5000."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "076bddecd148ec0d1b30939e6e4f60f28566bf17654701a2f3c4e7918c20b471"
     },
     {
       "id": "kanton/ZG/161.7/art_16",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "16",
       "artikelLabel": "§ 16",
+      "titel": "Erläuterungsverfahren",
       "bloecke": [
         {
           "absatz": "1",
           "text": "Wird ein Gesuch um Erläuterung, Berichtigung oder Ergänzung eines Entscheids abgewiesen, kann eine Entscheidgebühr von Franken 100 bis 2000 erhoben werden."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "8fb8d258342820682793673018f22d7b2546348d79c9400b4aa79b926ac4246d"
     },
     {
       "id": "kanton/ZG/161.7/art_17",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "17",
       "artikelLabel": "§ 17",
+      "titel": "Rechtshilfeverfahren",
       "bloecke": [
         {
           "absatz": "1",
           "text": "Für die Erledigung auswärtiger Rechtshilfeersuchen wird eine Gebühr von Franken 100 bis 2000 erhoben, soweit nicht bundesrechtliche Vorschriften oder Staatsverträge Gebührenfreiheit vorsehen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "c065df1614e0aa613dbe434e9070e857debe1160100228fbb7f8307fc3109c50"
     },
     {
       "id": "kanton/ZG/161.7/art_18",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "18",
       "artikelLabel": "§ 18",
+      "titel": "Schiedsgerichtsbarkeit",
       "bloecke": [
         {
           "absatz": "1",
@@ -546,38 +587,40 @@
           "text": "In Rechtsmittelverfahren gegen Schiedsurteile vor staatlichen Gerichten richtet sich die Entscheidgebühr nach § 11."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "a70712f571db467968c61d9b128442e09a255f73d595eaa8c0862232dbc0b138"
     },
     {
       "id": "kanton/ZG/161.7/art_19",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "19",
       "artikelLabel": "§ 19",
+      "titel": "Nichtstreitige Rechtssachen",
       "bloecke": [
         {
           "absatz": "1",
           "text": "Fehlt nach der Natur des Verfahrens eine beklagte Partei, beträgt die Entscheidgebühr Franken 100 bis 6000."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "3adfcd2ea6b15c518b07e02bb4b8da88eb4648b4acb584d548b8994f55237e42"
     },
     {
       "id": "kanton/ZG/161.7/art_20",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "20",
       "artikelLabel": "§ 20",
+      "titel": "Verfahrenskosten",
       "bloecke": [
         {
           "absatz": "1",
@@ -612,40 +655,46 @@
               "text": "Kosten für Zeugen und Auskunftspersonen."
             }
           ]
+        },
+        {
+          "absatz": "3",
+          "text": "Auf die Aufführung der Gebühren und Auslagen gemäss § 7 Abs. 1 kann verzichtet werden, wenn eine Nichtanhandnahme-, Einstellungs- oder Sistierungsverfügung erlassen wird, keine externen Auslagen angefallen sind und die Kosten auf die Staatskasse genommen werden."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
-      "sha": "3b00a389993c618740fe82edf7516a675dd580d17dfa6f8ae078e64d17dea90c"
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
+      "sha": "5a899fb4ff1feb8359a22e1bb3cf8b99f3dff94a94acf23a5136a229e4ffc0da"
     },
     {
       "id": "kanton/ZG/161.7/art_21",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "21",
       "artikelLabel": "§ 21",
+      "titel": "Vorverfahren",
       "bloecke": [
         {
           "absatz": "1",
           "text": "Für das Vorverfahren, die polizeilichen Ermittlungen eingeschlossen, wird eine Gebühr von Franken 100 bis 20’000 erhoben."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "1f9d434bfd569cc7f9101752eb5f51cb9887478015f3a5787861031114f4425b"
     },
     {
       "id": "kanton/ZG/161.7/art_21_bis",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "21_bis",
       "artikelLabel": "§ 21bis",
+      "titel": "Zwangsmassnahmengericht",
       "bloecke": [
         {
           "absatz": "1",
@@ -662,19 +711,20 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "2a65c1707b88419bbdc167e39e9e4c206f020ac941548b00969c6d523b818807"
     },
     {
       "id": "kanton/ZG/161.7/art_22",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "22",
       "artikelLabel": "§ 22",
+      "titel": "Strafbefehlsverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -685,19 +735,20 @@
           "text": "Deckt die Pauschalgebühr die Auslagen offensichtlich nicht, sind diese separat zu erheben."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "290f2164212227ddd62533072bf9705182e73a8a2e5b60b34fa591c74586d6d0"
     },
     {
       "id": "kanton/ZG/161.7/art_23",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "23",
       "artikelLabel": "§ 23",
+      "titel": "Erstinstanzliches Hauptverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -722,19 +773,20 @@
           "text": "Wird über eine Zivilklage erst anschliessend an die Beurteilung von Schuld und Strafpunkt entschieden (Art. 126 Abs. 4 StPO), bemisst sich die Gebühr nach § 11 Abs. 1."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "c3335a2742877a5f330bfda23af7afa0443dcba9c807b708a756506bb61fb786"
     },
     {
       "id": "kanton/ZG/161.7/art_24",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "24",
       "artikelLabel": "§ 24",
+      "titel": "Rechtsmittelverfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -749,19 +801,20 @@
           "text": "Bei der Ablehnung eines Revisionsgesuchs beträgt die Gebühr Franken 200 bis 5000."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "7a5e4b0142143ad4115fd039d7e6086d2c1d9067ee211b2a18c65d135dc6e50f"
     },
     {
       "id": "kanton/ZG/161.7/art_25",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "25",
       "artikelLabel": "§ 25",
+      "titel": "Besondere Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -794,19 +847,20 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "da7868b84667676a86e11f9f865fcea39fa5a165889d4a9dc2e4ab20d335e41e"
     },
     {
       "id": "kanton/ZG/161.7/art_26",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "26",
       "artikelLabel": "§ 26",
+      "titel": "Kosten für Amtshandlungen nach EG BGFA",
       "bloecke": [
         {
           "absatz": "1",
@@ -871,38 +925,40 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "2585964f9ef35c88be87c2737d873868d730fc414bd5ba093ae0595fcd24895d"
     },
     {
       "id": "kanton/ZG/161.7/art_26_bis",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "26_bis",
       "artikelLabel": "§ 26bis",
+      "titel": "Kosten für Amtshandlungen nach E-EÖBV",
       "bloecke": [
         {
           "absatz": "1",
           "text": "Für die Genehmigung des UPReg-Eintrags und dessen Löschung beläuft sich die Gebühr auf Franken 100 bis 300."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "712cd83fdf770cefc50342499ad7ed8db9d4e4f1b1966898a8c93b21ecd61026"
     },
     {
       "id": "kanton/ZG/161.7/art_27",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "27",
       "artikelLabel": "§ 27",
+      "titel": "Kosten in übrigen Verwaltungssachen",
       "bloecke": [
         {
           "absatz": "1",
@@ -913,19 +969,20 @@
           "text": "Die Gebühr im Verwaltungsbeschwerdeverfahren nach § 79 GOG beträgt Franken 200 bis 5000."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "28ce1cb93ce35278c82abe1a25e08fb401b63373a35b299255610b7f58cf20a8"
     },
     {
       "id": "kanton/ZG/161.7/art_28",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "28",
       "artikelLabel": "§ 28",
+      "titel": "Zeuginnen und Zeugen",
       "bloecke": [
         {
           "absatz": "1",
@@ -944,38 +1001,40 @@
           "text": "Bedürfen Zeuginnen und Zeugen wegen besonderer Umstände einer Begleitperson, so hat diese die gleichen Ansprüche wie die Zeuginnen und Zeugen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "999ca8a91590dfc078909e1a21790d493a78efc174e6041ffc8253dc3b131b3a"
     },
     {
       "id": "kanton/ZG/161.7/art_29",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "29",
       "artikelLabel": "§ 29",
+      "titel": "Auskunftspersonen",
       "bloecke": [
         {
           "absatz": "1",
           "text": "Auskunftspersonen kann eine Entschädigung gemäss § 28 ausgerichtet werden."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "ee836954354f220d5b50d0d6d95dfe72dcadcee228ad2063e8e2630276c1cd47"
     },
     {
       "id": "kanton/ZG/161.7/art_30",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "30",
       "artikelLabel": "§ 30",
+      "titel": "Sachverständige Personen sowie Übersetzerinnen und Übersetzer",
       "bloecke": [
         {
           "absatz": "1",
@@ -986,38 +1045,40 @@
           "text": "Die Entschädigung von Übersetzerinnen und Übersetzern richtet sich nach der Verordnung betreffend das Übersetzungswesen im behördlichen Verkehr."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "10e382142f0e2b1f29fadb730c75ae686bc44994b8339403d096c341ba140b0e"
     },
     {
       "id": "kanton/ZG/161.7/art_31",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "31",
       "artikelLabel": "§ 31",
+      "titel": "Drittpersonen",
       "bloecke": [
         {
           "absatz": "1",
           "text": "Dritte, die von Beweismassnahmen betroffen sind, werden gemäss § 28 entschädigt."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "47718f8f0f67a55a216be71fcb2ca4c073e29419b8b7883fa12a600149906a0f"
     },
     {
       "id": "kanton/ZG/161.7/art_32",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "32",
       "artikelLabel": "§ 32",
+      "titel": "Kanzleigebühren",
       "bloecke": [
         {
           "absatz": "1",
@@ -1074,19 +1135,20 @@
           "text": "Die Erstellung von Kopien, Bescheinigungen und anonymisierten Entscheiden für Amtsstellen sowie die Vorlegung oder Zustellung von Akten an Amtsstellen erfolgt kostenlos."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "fa6fc0d1277cf6075608d9489316a137b63bca7345106754c8dca3f502b7a067"
     },
     {
       "id": "kanton/ZG/161.7/art_33",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "33",
       "artikelLabel": "§ 33",
+      "titel": "Inkrafttreten und Übergangsbestimmung",
       "bloecke": [
         {
           "absatz": "1",
@@ -1097,29 +1159,30 @@
           "text": "Sie findet Anwendung auf alle im Zeitpunkt des Inkrafttretens hängigen Zivil- und Strafverfahren."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "dee0b4cd0b20d675447097226df0b4a7c46d4cfdfe5eb1bda6b5409b9e2d7b89"
     },
     {
       "id": "kanton/ZG/161.7/art_34",
       "ebene": "kanton",
       "quelle": "ZG",
-      "erlass": "Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
+      "erlass": "Verordnung über die Kosten in der Zivil- und Strafrechtspflege, Kostenverordnung Obergericht, KoV OG (BGS 161.7)",
       "artikel": "34",
       "artikelLabel": "§ 34",
+      "titel": "Aufhebung bisherigen Rechts",
       "bloecke": [
         {
           "absatz": "1",
           "text": "Die Verordnung betreffend Kosten und Entschädigungen in der Zivil- und Strafrechtspflege vom 28. November 1995 sowie der Beschluss des Obergerichts vom 3. Dezember 2002 (Gebühren für die Amtshandlungen gemäss EG BGFA) werden aufgehoben."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://bgs.zg.ch/app/de/texts_of_law/161.7",
-      "abgerufen": "2026-06-22",
-      "fassungsToken": "0129f9eb690727ba4eed9e8d474e19d2",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "29bc3555b24e5ea2d45e6c71a22ff988",
       "sha": "ab4c73f5bc3848d0946bf3e3e27de700d032f3e88bfdbc0988cd0119d71e37e9"
     }
   ]

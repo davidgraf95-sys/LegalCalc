@@ -1,13 +1,14 @@
 {
-  "erzeugt": "2026-06-22",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/VS/643.1/art_1",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "1",
       "artikelLabel": "Art. 1",
+      "titel": "Souveraineté - Etat",
       "bloecke": [
         {
           "absatz": "1",
@@ -16,7 +17,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "cb7b3ade9a354dd8f9ba20f9e395b93b87873abdada142e3d3a7ac73528ec3dc"
     },
@@ -24,9 +25,10 @@
       "id": "kanton/VS/643.1/art_2",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "2",
       "artikelLabel": "Art. 2",
+      "titel": "Souveraineté - Communes",
       "bloecke": [
         {
           "absatz": "1",
@@ -43,7 +45,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "fe54ff5fb42aefebb37aa9ded8847a99e648ad8885a1bec5bfcde7c3a7e9c9e8"
     },
@@ -51,9 +53,10 @@
       "id": "kanton/VS/643.1/art_3",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "3",
       "artikelLabel": "Art. 3",
+      "titel": "Champ d'application matériel",
       "bloecke": [
         {
           "absatz": "1",
@@ -66,7 +69,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "ae1d1d72f2a62810a7b7d80f99ede05cfe926a29d973afc94d589c7d80278336"
     },
@@ -74,9 +77,10 @@
       "id": "kanton/VS/643.1/art_4",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
+      "titel": "Champ d'application territorial",
       "bloecke": [
         {
           "absatz": "1",
@@ -89,7 +93,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "762d8f40211e069ca957ae1687291ae2995085403e56f969d3652555295adbe1"
     },
@@ -97,9 +101,10 @@
       "id": "kanton/VS/643.1/art_5",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "5",
       "artikelLabel": "Art. 5",
+      "titel": "Principe",
       "bloecke": [
         {
           "absatz": "1",
@@ -108,7 +113,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "781ecfadc33ad0d4bd651fd9d9db545fdd2ec1ac282e2c202b6670563374d1cb"
     },
@@ -116,9 +121,10 @@
       "id": "kanton/VS/643.1/art_6",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "6",
       "artikelLabel": "Art. 6",
+      "titel": "Actes de mutations et actes analogues",
       "bloecke": [
         {
           "absatz": "1",
@@ -195,7 +201,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "56589f9931e5c60e1828654d60cb25cf78df9e94db3a0c162142b3245ebbe993"
     },
@@ -203,9 +209,10 @@
       "id": "kanton/VS/643.1/art_7",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "7",
       "artikelLabel": "Art. 7",
+      "titel": "Sociétés immobilières",
       "bloecke": [
         {
           "absatz": "1",
@@ -228,7 +235,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "1d4a44b886e5b7fde87ab61fb7491a158d5c17a95ba9832ad2386dae373f7a79"
     },
@@ -236,9 +243,10 @@
       "id": "kanton/VS/643.1/art_8",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "8",
       "artikelLabel": "Art. 8",
+      "titel": "Actes constitutifs de gages immobiliers et actes analogues",
       "bloecke": [
         {
           "absatz": "1",
@@ -261,7 +269,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "b7bb7f3c9fe59c394e81b242d9b9584fd3177ef411fdc7783f1f22735c318d07"
     },
@@ -269,9 +277,10 @@
       "id": "kanton/VS/643.1/art_9",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "9",
       "artikelLabel": "Art. 9",
+      "titel": "Autres opérations",
       "bloecke": [
         {
           "absatz": "1",
@@ -280,7 +289,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "a77d89cc21f9bba3fbbba1d15b437d40707b9d61c9798ad72698f53582981403"
     },
@@ -288,9 +297,10 @@
       "id": "kanton/VS/643.1/art_10",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "10",
       "artikelLabel": "Art. 10",
+      "titel": "Sujet de l'impôt",
       "bloecke": [
         {
           "absatz": "1",
@@ -303,7 +313,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "4a2b0078d677f8f0bd8964b60ec3300e2e9e36f16937111d2b5cce29e4010842"
     },
@@ -311,9 +321,10 @@
       "id": "kanton/VS/643.1/art_11",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "11",
       "artikelLabel": "Art. 11",
+      "titel": "Calcul de l'impôt",
       "bloecke": [
         {
           "absatz": "1",
@@ -404,7 +415,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "80e57558272a022c2d939cb98f75cfd274a90218664ce8ef4cb0cd3e11952e92"
     },
@@ -412,9 +423,10 @@
       "id": "kanton/VS/643.1/art_12",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "12",
       "artikelLabel": "Art. 12",
+      "titel": "Enchères",
       "bloecke": [
         {
           "absatz": "1",
@@ -423,7 +435,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "e7b9d5e2b812873dd3dc8c2b059e7432dba2f2f9445c379de0c8128be6e95698"
     },
@@ -431,9 +443,10 @@
       "id": "kanton/VS/643.1/art_13",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "13",
       "artikelLabel": "Art. 13",
+      "titel": "Partage successoral",
       "bloecke": [
         {
           "absatz": "1",
@@ -442,7 +455,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "a2f5ea827b0549474c946e2b03274134bfd2cd0b0fd2eadc80387a8931946c90"
     },
@@ -450,9 +463,10 @@
       "id": "kanton/VS/643.1/art_14",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "14",
       "artikelLabel": "Art. 14",
+      "titel": "Impôt proportionnel pour les actes de mutations et les actes analogues",
       "bloecke": [
         {
           "absatz": "1",
@@ -483,7 +497,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "14b38f2e7a6d96e0540819e58385474e35d3f85afe5bc67871b37e0a33fd226b"
     },
@@ -491,9 +505,10 @@
       "id": "kanton/VS/643.1/art_15",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "15",
       "artikelLabel": "Art. 15",
+      "titel": "Impôt additionnel communal",
       "bloecke": [
         {
           "absatz": "1",
@@ -510,7 +525,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "529f51ce2d86b3137344a84b785034711a5ae908e3f6b6e6770c23018d3497a8"
     },
@@ -518,9 +533,10 @@
       "id": "kanton/VS/643.1/art_16",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "16",
       "artikelLabel": "Art. 16",
+      "titel": "Impôt proportionnel pour les droits de gage et les actes analogues",
       "bloecke": [
         {
           "absatz": "1",
@@ -543,7 +559,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "2db5912f7a9a312bca222d512afff585955b481376ced01d7211f852d9b3eb2c"
     },
@@ -551,9 +567,10 @@
       "id": "kanton/VS/643.1/art_17",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "17",
       "artikelLabel": "Art. 17",
+      "titel": "Impôt fixe",
       "bloecke": [
         {
           "absatz": "1",
@@ -662,7 +679,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "410c2b27c21a61164bc0782a1ce808313ffe62549e01dfd2b4a67dd9d80498a8"
     },
@@ -670,9 +687,10 @@
       "id": "kanton/VS/643.1/art_18",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "18",
       "artikelLabel": "Art. 18",
+      "titel": "Exemption de l'impôt proportionnel",
       "bloecke": [
         {
           "absatz": "1",
@@ -691,7 +709,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "f609b8349745cbe01a44f40fd6b597b319db11811f9967ec4e4b7bdba176ce59"
     },
@@ -699,9 +717,10 @@
       "id": "kanton/VS/643.1/art_19",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "19",
       "artikelLabel": "Art. 19",
+      "titel": "Registre",
       "bloecke": [
         {
           "absatz": "1",
@@ -710,7 +729,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "cff861bf3d07113790bc2155742273754d726e45cb5ddf6d8374c63ac755dd43"
     },
@@ -718,9 +737,10 @@
       "id": "kanton/VS/643.1/art_20",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "20",
       "artikelLabel": "Art. 20",
+      "titel": "Objets de l'enregistrement",
       "bloecke": [
         {
           "absatz": "1",
@@ -747,7 +767,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "90678688d60924663624aa3361d438ae2ba504cd730de12e7dc9f676adc694a2"
     },
@@ -755,9 +775,10 @@
       "id": "kanton/VS/643.1/art_21",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "21",
       "artikelLabel": "Art. 21",
+      "titel": "Autres écrits",
       "bloecke": [
         {
           "absatz": "1",
@@ -766,7 +787,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "db0b6672ace75df08c98dbb2f32c58c33a5202085356e623f136a9aca4bd1c1e"
     },
@@ -774,9 +795,10 @@
       "id": "kanton/VS/643.1/art_22",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "22",
       "artikelLabel": "Art. 22",
+      "titel": "Délai d'enregistrement",
       "bloecke": [
         {
           "absatz": "1",
@@ -785,7 +807,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "8a202337326a1ed3c8a77538ca0beb4bdcfb7c91770ecf3b66aecc6685d007c1"
     },
@@ -793,9 +815,10 @@
       "id": "kanton/VS/643.1/art_23",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "23",
       "artikelLabel": "Art. 23",
+      "titel": "Obligation d'annonce",
       "bloecke": [
         {
           "absatz": "1",
@@ -818,7 +841,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "61603782dad6209c175af9f4886ce78e4ffc52f660a6db13c0340a127fbfd06b"
     },
@@ -826,9 +849,10 @@
       "id": "kanton/VS/643.1/art_24",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "24",
       "artikelLabel": "Art. 24",
+      "titel": "Autorités de taxation et d'enregistrement",
       "bloecke": [
         {
           "absatz": "1",
@@ -845,7 +869,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "e52c01b68c61098bb0d597c2f5e4256607580ad0ad2e83d45d68fdef24267193"
     },
@@ -853,9 +877,10 @@
       "id": "kanton/VS/643.1/art_25",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "25",
       "artikelLabel": "Art. 25",
+      "titel": "Procédure par l'office du registre foncier",
       "bloecke": [
         {
           "absatz": "1",
@@ -868,7 +893,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "50bb5a53e99d79afbde6a73798326a06795a74f850e1bd7230f2db2c9e21f861"
     },
@@ -876,9 +901,10 @@
       "id": "kanton/VS/643.1/art_26",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "26",
       "artikelLabel": "Art. 26",
+      "titel": "Procédure de taxation par le Service",
       "bloecke": [
         {
           "absatz": "1",
@@ -899,7 +925,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "e921b3dcefebb467d7a92d51da40702a0dee37728d3583a33731fc2b1e952bcc"
     },
@@ -907,9 +933,10 @@
       "id": "kanton/VS/643.1/art_27",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "27",
       "artikelLabel": "Art. 27",
+      "titel": "Rappel d'impôt",
       "bloecke": [
         {
           "absatz": "1",
@@ -918,7 +945,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "cf5d6d2d5cc6f0fc2715453755b742ba458e1a27959e77eefcd2edf6147f6d84"
     },
@@ -926,9 +953,10 @@
       "id": "kanton/VS/643.1/art_28",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "28",
       "artikelLabel": "Art. 28",
+      "titel": "Représentation",
       "bloecke": [
         {
           "absatz": "1",
@@ -941,7 +969,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "80c71a1e2cbf65104fb1e3ada2c9875a78b84f9c0ae0b6a3fc51bfb7611d7310"
     },
@@ -949,9 +977,10 @@
       "id": "kanton/VS/643.1/art_29",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "29",
       "artikelLabel": "Art. 29",
+      "titel": "Echéance de l'impôt",
       "bloecke": [
         {
           "absatz": "1",
@@ -964,7 +993,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "d99ebf47ef524088d816897c5203e8d006b7ffb832b73706c5df6b13e5e4e5f2"
     },
@@ -972,9 +1001,10 @@
       "id": "kanton/VS/643.1/art_30",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "30",
       "artikelLabel": "Art. 30",
+      "titel": "Intérêt de retard et sommation",
       "bloecke": [
         {
           "absatz": "1",
@@ -987,7 +1017,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "951e51377ee4c192a29f1057165228c4c0a4e51e54e31835777292f2073d6d04"
     },
@@ -995,9 +1025,10 @@
       "id": "kanton/VS/643.1/art_31",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "31",
       "artikelLabel": "Art. 31",
+      "titel": "Sûreté de l'impôt",
       "bloecke": [
         {
           "absatz": "1",
@@ -1010,7 +1041,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "4ce88f55c7833dc8a5b1b3534da3bf3a056e343d14f85e5415f029a80df3193c"
     },
@@ -1018,9 +1049,10 @@
       "id": "kanton/VS/643.1/art_32",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "32",
       "artikelLabel": "Art. 32",
+      "titel": "Remboursement exclu",
       "bloecke": [
         {
           "absatz": "1",
@@ -1029,7 +1061,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "39c0c12bcd2107bd174061bfb30e1399a8f17b42dbdbbfc771e18c6a9dbe26bd"
     },
@@ -1037,9 +1069,10 @@
       "id": "kanton/VS/643.1/art_33",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "33",
       "artikelLabel": "Art. 33",
+      "titel": "Péremption de la créance de remboursement",
       "bloecke": [
         {
           "absatz": "1",
@@ -1048,7 +1081,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "9ae415c5f70a355ae850e74c4fa1526f42d9a2a3527b6f6d55b536fe58868a34"
     },
@@ -1056,9 +1089,10 @@
       "id": "kanton/VS/643.1/art_34",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "34",
       "artikelLabel": "Art. 34",
+      "titel": "Prescription de la créance fiscale",
       "bloecke": [
         {
           "absatz": "1",
@@ -1071,7 +1105,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "726aeb0e7ef7e480dfe46d8088c84a7a3f6e58edcd3cd42b217c0ae18096b523"
     },
@@ -1079,9 +1113,10 @@
       "id": "kanton/VS/643.1/art_35",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "35",
       "artikelLabel": "Art. 35",
+      "titel": "Sanctions",
       "bloecke": [
         {
           "absatz": "1",
@@ -1094,7 +1129,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "fc8f74a4e65a64a841f039fcf7e1932233b08865d141f8877f437fe14f33bdfa"
     },
@@ -1102,9 +1137,10 @@
       "id": "kanton/VS/643.1/art_36",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "36",
       "artikelLabel": "Art. 36",
+      "titel": "Voie de recours",
       "bloecke": [
         {
           "absatz": "1",
@@ -1113,7 +1149,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "b792c9d92f32821ba0fd2a19af995eb5935e6fa7f89799b5f36e4b260c4d718e"
     },
@@ -1121,9 +1157,10 @@
       "id": "kanton/VS/643.1/art_37",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "37",
       "artikelLabel": "Art. 37",
+      "titel": "Révision",
       "bloecke": [
         {
           "absatz": "1",
@@ -1132,7 +1169,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "7d80d50f4df501a172aee31bbd3d82bb5c49fc61dfe91d30138e26c5dd5312c1"
     },
@@ -1140,9 +1177,10 @@
       "id": "kanton/VS/643.1/art_38",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "38",
       "artikelLabel": "Art. 38",
+      "titel": "Dispositions transitoires",
       "bloecke": [
         {
           "absatz": "1",
@@ -1151,7 +1189,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "7d644a0c627845c1720649713bcecf396f8baf9e9962c356ea1d17f857b27498"
     },
@@ -1159,9 +1197,10 @@
       "id": "kanton/VS/643.1/art_39",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "39",
       "artikelLabel": "Art. 39",
+      "titel": "Valeurs cadastrales",
       "bloecke": [
         {
           "absatz": "1",
@@ -1170,7 +1209,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "eca0050cf04d2b182fdbdc8cd52cdc03b6f8ab8a15a4eb516e422d671192f66b"
     },
@@ -1178,9 +1217,10 @@
       "id": "kanton/VS/643.1/art_40",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "40",
       "artikelLabel": "Art. 40",
+      "titel": "Transformation des gages immobiliers",
       "bloecke": [
         {
           "absatz": "1",
@@ -1193,7 +1233,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "2f9a6ad314f2724a3d4310f5ead38f4d84d905bc7a9b8077b0250519c9fb6651"
     },
@@ -1201,9 +1241,10 @@
       "id": "kanton/VS/643.1/art_41",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "41",
       "artikelLabel": "Art. 41",
+      "titel": "Dispositions d'application",
       "bloecke": [
         {
           "absatz": "1",
@@ -1212,7 +1253,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "4f77549add780077ce56599e4b9613527f56b85410bad249f6c093d12ada1c22"
     },
@@ -1220,9 +1261,10 @@
       "id": "kanton/VS/643.1/art_42",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "42",
       "artikelLabel": "Art. 42",
+      "titel": "Exécution",
       "bloecke": [
         {
           "absatz": "1",
@@ -1235,7 +1277,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "7538030c16feaca7f9c294b232aa7f10645d4b0a3e9a87e2a3ecaa56cfa57b18"
     },
@@ -1243,9 +1285,10 @@
       "id": "kanton/VS/643.1/art_43",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "43",
       "artikelLabel": "Art. 43",
+      "titel": "Abrogation",
       "bloecke": [
         {
           "absatz": "1",
@@ -1254,7 +1297,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "1266118a65fbdefe90b20033a87dccabe75a30ac855c5251441593a10ae10bfb"
     },
@@ -1262,9 +1305,10 @@
       "id": "kanton/VS/643.1/art_44",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "LDM (RS 643.1)",
+      "erlass": "Loi sur les droits de mutations, LDM (RS 643.1)",
       "artikel": "44",
       "artikelLabel": "Art. 44",
+      "titel": "Entrée en vigueur",
       "bloecke": [
         {
           "absatz": "1",
@@ -1277,7 +1321,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/643.1",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "2da3e4fa094479dfa77afac64f50bc37",
       "sha": "87449a996a12315c06ca91d2bbb01e40a0b23fbc99e38187a7972ee31e3f1e6f"
     }
