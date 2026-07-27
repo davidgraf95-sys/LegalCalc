@@ -153,6 +153,32 @@ describe('extrahiereStrukturLexWork — Marginalie mit <sup>-Exponent (N2-Befund
   });
 });
 
+describe('extrahiereStrukturLexWork — Marginalie ohne stille Interpunktions-Glättung (Gegenprüfung Runde 2, AR-142.22 §17b / AR-911.1 §9a)', () => {
+  // Reales Muster (ar.clex.ch/api/de/texts_of_law/142.22 §17b): der amtliche
+  // Randtitel enthält ECHT ein Leerzeichen vor der Ellipse — «Teilrevision
+  // vom ...» — kein <sup>, reiner Fliesstext. Die vormalige clean()-Reinigung
+  // hatte NEBEN dem Tag-Strip (F1, oben) eine zweite, unabhängige Eigenschaft:
+  // `.replace(/\s+([.,;:!?])/g, '$1')` glättete das Leerzeichen vor der ersten
+  // Ellipse-Periode STILL weg → «Teilrevision vom...». bereinige() (jetzt
+  // genutzt) hat diesen Glättungsschritt nicht und lässt die Quelle verbatim
+  // stehen (§7 Treue) — Gegenprüfung Runde 2 hat das gegen ar.clex.ch bestätigt:
+  // die Quelle enthält das Leerzeichen tatsächlich, der alte Code korrigierte
+  // damit still (und falsch) amtliche Typographie. Zwei von 56 Bestandsfunden
+  // (AR-142.22 §17b, AR-911.1 §9a) gehören dieser zweiten Ursachen-Klasse an,
+  // nicht der <sup>-Verklebung — beide durch denselben Funktionswechsel behoben.
+  const XH = `
+    <div class='article'>
+      <div class='article_number'><span class='article_symbol'>Art.</span> <span class='number'>17b</span></div>
+      <div class='article_title'><span class='title_text'>Teilrevision vom ...</span></div>
+    </div>
+    <div class='paragraph'><span class='number'>1</span><p><span class='text_content'>x</span></p></div>`;
+
+  it('lässt ein quellen-echtes Leerzeichen vor Interpunktion stehen (keine stille Glättung)', () => {
+    const a = extrahiereStrukturLexWork(XH);
+    expect(a['17_b'].marginalie).toEqual(['Teilrevision vom ...']);
+  });
+});
+
 describe('extrahiereLexWorkSidecar — kombinierter Extrakt, ein Apparat-Parse', () => {
   it('liefert kopf + artikel deckungsgleich zu den Einzel-Extraktoren', () => {
     const { kopf, artikel } = extrahiereLexWorkSidecar(XHTML);
