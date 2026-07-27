@@ -97,7 +97,7 @@ export function schreibeErlass(db: DatabaseSync, meta: ErlasseMeta, snapshots: N
   ).run(meta.key, fassungsToken, stand, null, stand, basisUrl(s0.quelleUrl), null, abgerufen, fassungsDigest(snapshots));
 
   const artStmt = db.prepare(
-    'INSERT INTO artikel (erlass_key, fassungs_token, art_id, ord, artikel, artikel_label, grundlage, marg, quelle_url, bloecke_json, sha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+    'INSERT INTO artikel (erlass_key, fassungs_token, art_id, ord, artikel, artikel_label, grundlage, marg, aufgehoben, quelle_url, bloecke_json, sha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
   );
   snapshots.forEach((s, i) => {
     artStmt.run(
@@ -109,6 +109,8 @@ export function schreibeErlass(db: DatabaseSync, meta: ErlasseMeta, snapshots: N
       s.artikelLabel,
       s.grundlage ?? null,
       s.titel ?? null,
+      // G-AUFH-ART: 1 = true, NULL = Feld weggelassen (§7: nichts fabrizieren).
+      s.aufgehoben ? 1 : null,
       s.quelleUrl,
       JSON.stringify(s.bloecke),
       s.sha,
@@ -122,6 +124,7 @@ interface ArtikelRow {
   artikel_label: string;
   grundlage: string | null;
   marg: string | null;
+  aufgehoben: number | null;
   quelle_url: string;
   bloecke_json: string;
   sha: string;
@@ -130,11 +133,13 @@ interface ArtikelRow {
 /**
  * Projiziert EINEN Erlass (eine Fassung) byte-gleich in die NormSnapshotDatei-Form.
  * Feldreihenfolge exakt wie der Generator sie emittiert (id, ebene, quelle, erlass,
- * artikel, artikelLabel, [titel] | [grundlage], bloecke, stand, quelleUrl, abgerufen,
- * fassungsToken, sha) — sonst kippt die Byte-Parität. `titel`(Kanton, aus Spalte marg)
- * und `grundlage`(Bund) schliessen sich empirisch aus; die Reihenfolge titel→grundlage
- * hält beide Ebenen byte-gleich. id/quelle laufen über QUELLE (Kanton == kanton-Spalte,
- * NICHT die erlasse-PK `key`); siehe Modulkopf SCHLÜSSEL vs. QUELLE.
+ * artikel, artikelLabel, [titel], [aufgehoben], [grundlage], bloecke, stand, quelleUrl,
+ * abgerufen, fassungsToken, sha) — sonst kippt die Byte-Parität. `titel`(Kanton, aus
+ * Spalte marg) und `grundlage`(Bund) schliessen sich empirisch aus; `aufgehoben`
+ * (G-AUFH-ART, LexWork/Kanton) kann NEBEN `titel` stehen (BS 132.100 §76a/§76b behalten
+ * ihren Randtitel UND den Marker) — die Reihenfolge titel→aufgehoben→grundlage hält alle
+ * Ebenen byte-gleich. id/quelle laufen über QUELLE (Kanton == kanton-Spalte, NICHT die
+ * erlasse-PK `key`); siehe Modulkopf SCHLÜSSEL vs. QUELLE.
  */
 export function projiziereErlass(db: DatabaseSync, key: string, fassungsToken: string): string {
   const erl = db.prepare('SELECT ebene, abkuerzung, kanton FROM erlasse WHERE key = ?').get(key) as
@@ -147,7 +152,7 @@ export function projiziereErlass(db: DatabaseSync, key: string, fassungsToken: s
   if (!fass) throw new Error(`projiziereErlass: erlass_fassungen fehlt für ${key}/${fassungsToken}`);
   const rows = db
     .prepare(
-      'SELECT art_id, artikel, artikel_label, grundlage, marg, quelle_url, bloecke_json, sha FROM artikel WHERE erlass_key = ? AND fassungs_token = ? ORDER BY ord',
+      'SELECT art_id, artikel, artikel_label, grundlage, marg, aufgehoben, quelle_url, bloecke_json, sha FROM artikel WHERE erlass_key = ? AND fassungs_token = ? ORDER BY ord',
     )
     .all(key, fassungsToken) as unknown as ArtikelRow[];
 
@@ -163,6 +168,7 @@ export function projiziereErlass(db: DatabaseSync, key: string, fassungsToken: s
     o.artikel = r.artikel;
     o.artikelLabel = r.artikel_label;
     if (r.marg !== null) o.titel = r.marg; // Kanton-Randtitel (N1)
+    if (r.aufgehoben) o.aufgehoben = true; // G-AUFH-ART: 1 = true; NULL/0 = Feld weggelassen
     if (r.grundlage !== null) o.grundlage = r.grundlage; // Bund-Delegationsnorm (G23)
     o.bloecke = JSON.parse(r.bloecke_json);
     o.stand = fass.stand;

@@ -149,3 +149,53 @@ describe('E1-Rest B Kanton-Flip: Zeilen → Projektion byte-gleich', () => {
     db.close();
   });
 });
+
+// G-AUFH-ART (W2·5j, 27.7.2026) — der DB-Spalten-Weg hatte KEINE `aufgehoben`-
+// Spalte, als das Feld im Adapter/Typ ergänzt wurde: schreibeErlass/
+// projiziereErlass liessen es beim Roundtrip STILL fallen (kein Wurf, keine
+// Warnung — die Projektion war einfach byte-ärmer als der Generator-Output).
+// BS-132.100 trägt beide Varianten nebeneinander: §51 (aufgehoben, kein Titel)
+// UND §76a (aufgehoben UND Titel gleichzeitig, s. Fixture-Doku N1/G-AUFH-ART).
+describe('G-AUFH-ART Kanton-Flip: `aufgehoben` übersteht den DB-Spalten-Roundtrip', () => {
+  it('BS-132.100: projiziereErlass == committete Bytes (inkl. aufgehoben-Einträge)', () => {
+    const db = frischeDb();
+    const { snapshots, committet } = ladeKanton('BS-132.100');
+    schreibeErlass(
+      db,
+      { key: 'BS-132.100', ebene: 'kanton', kanton: 'BS', sr: null, abkuerzung: snapshots[0].erlass, titel: snapshots[0].erlass, rechtsgebiet: '', status: 'snapshot' },
+      snapshots,
+    );
+    const proj = projiziereErlass(db, 'BS-132.100', snapshots[0].fassungsToken);
+    expect(proj).toBe(committet);
+    db.close();
+  });
+
+  it('`aufgehoben` erscheint nur wo gesetzt, zwischen titel und bloecke — auch WENN titel gleichzeitig gesetzt ist (§76a)', () => {
+    const db = frischeDb();
+    const { snapshots } = ladeKanton('BS-132.100');
+    schreibeErlass(
+      db,
+      { key: 'BS-132.100', ebene: 'kanton', kanton: 'BS', sr: null, abkuerzung: snapshots[0].erlass, titel: snapshots[0].erlass, rechtsgebiet: '', status: 'snapshot' },
+      snapshots,
+    );
+    const proj = JSON.parse(projiziereErlass(db, 'BS-132.100', snapshots[0].fassungsToken)) as {
+      eintraege: Array<Record<string, unknown>>;
+    };
+    const mitMarker = proj.eintraege.filter((e) => 'aufgehoben' in e);
+    const originalMit = snapshots.filter((s) => s.aufgehoben === true);
+    expect(mitMarker.length).toBe(originalMit.length);
+    expect(mitMarker.length).toBeGreaterThan(0);
+    // §76a: aufgehoben UND titel gleichzeitig (echter Randtitel bleibt erhalten).
+    const s76a = proj.eintraege.find((e) => e.id === 'kanton/BS/132.100/art_76_a')!;
+    expect(s76a.aufgehoben).toBe(true);
+    expect(s76a.titel).toBe('Zeitpunkt der Wahlvorschläge');
+    const keys = Object.keys(s76a);
+    expect(keys.indexOf('aufgehoben')).toBe(keys.indexOf('titel') + 1);
+    expect(keys.indexOf('bloecke')).toBe(keys.indexOf('aufgehoben') + 1);
+    // §51: aufgehoben OHNE titel.
+    const s51 = proj.eintraege.find((e) => e.id === 'kanton/BS/132.100/art_51')!;
+    expect(s51.aufgehoben).toBe(true);
+    expect(s51.titel).toBeUndefined();
+    db.close();
+  });
+});
