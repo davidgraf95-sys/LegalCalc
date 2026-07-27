@@ -136,6 +136,14 @@ jobs:
         run: npm run check:entscheide
       - name: Entscheid-Korpus (BS)
         run: npm run check:bs-entscheide
+      # Sichtbarkeits-Tor der Verzahnung (W2·6-NKEY c): zaehlt, wie viele
+      # Gesetzes-Zitate des Korpus KEINEN Register-key finden. Ohne dieses Tor
+      # verschwindet ein nicht zugeordnetes Zitat lautlos — kein Fehler, kein
+      # Log, nur ein Leitfall, der beim Artikel nie erscheint (§6.7).
+      # Liest wie die drei Tore darueber nur die committeten Projektionen unter
+      # public/rechtsprechung/, keine DB, kein Netz.
+      - name: normKeys-Abdeckung (Verzahnung Rechtsprechung ↔ Gesetz)
+        run: npm run check:normkeys
       # Selbstschutz der Tor-Landschaft: meldet neue Tore ohne CI-Lauf.
       # Lief selbst nur lokal — der Melder war damit so unsichtbar wie der
       # Defekt, den er meldet (F2b rekursiv).

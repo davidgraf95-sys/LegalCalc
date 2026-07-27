@@ -159,10 +159,28 @@ export function normKeyFuerAbk(abk: string): string | null {
 export function statutesZuNormKeys(statutes: string[]): string[] {
   const out = new Set<string>();
   for (const s of statutes ?? []) {
-    const m = /([A-Za-zÄÖÜäöü]{2,}(?:\s+\d{1,2})?)\s*$/.exec(String(s).trim());
-    if (m) { const k = normKeyFuerAbk(m[1]); if (k) out.add(k); }
+    const abk = abkVonStatut(s);
+    if (!abk) continue;
+    const k = normKeyFuerAbk(abk);
+    if (k) out.add(k);
   }
   return [...out];
+}
+
+/**
+ * Trailing-Token einer Roh-statutes-Zeile, VOR der Normalisierung:
+ * "Art. 32 Abs. 2 BGG" → 'BGG', "Art. 27 BVV 2" → 'BVV 2'. Kein Treffer → null.
+ *
+ * EIGENE exportierte Funktion, weil zwei Aufrufer dieselbe Zerlegung brauchen
+ * (§5): `statutesZuNormKeys` (Produktpfad) und das Sichtbarkeits-Tor
+ * `check:normkeys` (scripts/normtext/check-normkeys-abdeckung.ts). Eine Kopie
+ * des Regex im Tor hiesse: das Tor misst eine ANDERE Zerlegung als die, die im
+ * Korpus wirkt — es meldete dann Lücken, die es nicht gibt, und übersähe die
+ * echten. Genau das soll ein Tor nicht können (§6.7).
+ */
+export function abkVonStatut(statut: string): string | null {
+  const m = /([A-Za-zÄÖÜäöü]{2,}(?:\s+\d{1,2})?)\s*$/.exec(String(statut).trim());
+  return m ? m[1] : null;
 }
 
 /**
