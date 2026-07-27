@@ -495,6 +495,24 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   DE-Filter der BGer-Pipeline heben) · **O-5 SEO-Nachträge** (GEPARKT, als §10 in
   `FAHRPLAN-SEO-A11Y-GOVERNANCE.md` einsortiert) · **O-6 Werkzeug-Empirie** (DAVID-GATE §0a,
   als Notiz-Block in `KATALOG-ROADMAP.md` §D verortet). **Nur Plan — kein Bau in diesem Schritt.**
+  **■ Folgeaufträge Aufräum-Session 27.7.2026** *(Übergabe; Befunde der Gegenprüfungen zu
+  PR #391–#393, Verortung QS-OPT — je eigener Bau-Schritt, Risiko-Pfade ⇒ `QS-GP`)*:
+  **(F-a)** Aufgehoben-Marker auf die übrigen Kantone ausweiten — 289 leere Artikel ausserhalb
+  BS/GL (AG 5 · AI 15 · AR 12 · BE 1 · BL 56 · FR 15 · GR 2 · LU 8 · NW 15 · OW 39 · SG 62 ·
+  SH 2 · SO 28 · TG 23 · VS 1 · ZG 5), gleiche verschärfte Signal-Regel wie PR #392 (amtliches
+  Aufhebungssignal, nie blosse Leere) ·
+  **(F-b)** Kanton-Currency klären — BS-121.110 trägt veralteten `fassungsToken` (Artefakt
+  2024-10-01 ≠ live; §§ 30a/31/32 würden markiert) und BS-861.520 §10 hängt hinter der Fassung
+  vom 2.7.2026: es fehlt ein Drift-Tor für Kantons-`fassungsToken` analog `check:fedlex-versionen` ·
+  **(F-c)** 3 snapshot-seitige Marginalien-Divergenzen — BS-561.111 §66/§67 (alte
+  Entity-Tabelle „ / “) + BS-861.520 §10 (siehe F-b); Sidecar ist die quellentreue Seite
+  (Gegenprüfung #393 live belegt) ·
+  **(F-d)** NBSP-Faltung in `bereinige()` (adapter-lexwork) UND Sidecar-Pfad: `\s+`-Kollaps
+  frisst U+00A0 — Verstoss gegen die Verbatim-Regel (Skill scraping-swiss-official-sources);
+  Umfang korpusweit erheben, dann Fix + Regeneration. Beleg SO-614.11 §256bis.
+  Zusätzlich notiert (§8, kein Bau): `erzeugt`-Stempel bedeutet «Inhalt zuletzt geändert»,
+  nicht «zuletzt gegen die Quelle geprüft» — bei einem künftigen Kanton-Currency-Tor (F-b)
+  sauber trennen.
 - **Basis-Ausbau — Fundament-Handlungsplan** *(QS-BASIS, `[OF]`, neu 17.7.2026)*.
   **§14-Intake 20.7.2026 (David):** (a) **Turso-Wächter-Abdeckung** — alle relevanten Stellen prüfen, gekoppelt an die Tor-Echtheit (Wächter gegen UNABHÄNGIGE Grösse, nicht gegen die Sync-Marke; `cancelled`/`skipped` zählen als rot — Auslöser `turso-sync.yml` timeout-minutes: 20). (b) **CI-Fehlläufe** (#30) — Referenz auf Worktree `lm-ci`, hier NICHT duplizieren; Playbook-Eintrag «CI-Starvation» ist WIDERLEGT (Queue-Wartezeit 0,0–0,3 min über 10 Läufe gemessen), Kostentreiber sind Reruns (~72 % der Wanduhr). (c) **CI/lokal-Tor-Parität** — `check:seriell` fährt 36 Tore, CI 11; `check:tor-paritaet` friert die Lücke ein, das Schliessen ist offen. **Stand 20.7.2026 (PR `docs/bau-fundament`): 16/36 in CI** — `check:merge-schutz` · `check:tor-paritaet` · `check:dispatch-klausel` · `check:besetzung` · `check:entscheide` · `check:bs-entscheide` neu verdrahtet; die drei Rechtsprechungs-Tore standen mit der sachlich FALSCHEN Begründung «braucht rechtsprechung.db (488 MB)» auf der Allowlist, sie lesen in Wahrheit die committeten Projektionen (je ~1 s grün unter `CI=1`). Rest-Lücke 20 Tore, davon 9 mit Ersatz-Arbiter `fedlex-frische.yml` — **dessen Lauf ist rot (#37), solange das gilt, läuft diese Begründung leer.** (d) **Datenhaltungs-Optimierung** *(§14-Intake David 20.7.2026; im ersten Intake-Durchgang verloren gegangen und durch die adversariale Prüfung von PR #315 wiedergefunden — Nachtrag 20.7.)*: **inkrementeller Sync** (nicht bei jedem Lauf den Vollbestand schieben) · **contentless-FTS** (`content=''` statt external content, wo der Rohtext schon im Serving-Store liegt) · **Index-Strategie** (welche Spalten tragen die realen Query-Pfade aus `api/suche`) · **Heiss/Kalt-Gate** (was gehört in die 1-GB-Turso-Replika, was bleibt kalt) · **Korpus aus git ausgliedern (R6)** — gemessen 20./21.7.2026 als **moderate Kosten** (git status 25–80 ms, CI shallow; real: ~400 MB je Worktree-Checkout, 273 MB Pack, minimaler Churn) ⇒ **kein Dringlichkeits-Fall**, Vorstufe/Teil dieses serverlosen Korpus-Serving-Vorhabens, nicht als isolierter git-Eingriff (Detail `FAHRPLAN-DATENHALTUNG.md` §12.4). Detailquelle `FAHRPLAN-DATENHALTUNG.md`; Bau-Strang W2·6-DATA (E4-Nachbarschaft). Kein eigener FAHRPLAN.
   <!-- @meta id: QS-BASIS · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: FAHRPLAN-BASIS-AUSBAU.md -->
