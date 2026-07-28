@@ -13,7 +13,7 @@ import { test, expect, type Page } from '@playwright/test';
 //   · die Wahl überlebt einen Neuladen.
 //
 // Träger ist wieder die StPO (wie B4). Verifiziert am ausgelieferten Shard
-// `public/rechtsprechung/bezuege/StPO.json`, 28.7.2026:
+// `public/rechtsprechung/bezuege/STPO.json`, 28.7.2026:
 //   · Art. 5 trägt 8 gezeigte von 16 erfassten Leitentscheiden. Deren Daten:
 //     2019-10-03 · 2022-01-12 · 2023-02-17 · 2024-04-25 · 2024-09-04 ·
 //     2024-11-19 · 2025-02-05 · 2025-02-06 — kein Bandjahr-Platzhalter darunter.

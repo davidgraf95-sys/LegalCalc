@@ -22,7 +22,7 @@
  * rein und in `bezug-zeit.test.ts` abgedeckt.
  */
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { renderToString } from 'react-dom/server';
 import { BezugZeitWahl } from '../components/verzahnung/BezugZeitWahl';
 import { histogrammAusShard } from '../pages/gesetz-leser/bezuegeLaden';
@@ -32,8 +32,35 @@ import { bezuegeFuerArtikel, type BezugsShard } from '../lib/rechtsprechung/bezu
 import { BEDIENBARE_KLASSEN } from '../pages/gesetz-leser/bezugAuswahl';
 import type { BezugStatus } from '../lib/verzahnung/facetten';
 
+const SHARD_ORDNER = 'public/rechtsprechung/bezuege';
+
+/**
+ * Verzeichnis-Inhalt EINMAL lesen — als Menge exakter Dateinamen.
+ *
+ * BEFUND 28.7.2026 (CI rot, lokal grün): der Test lud `bezuege/StPO.json`,
+ * die Datei heisst aber `STPO.json` (Register-key, gross). Auf dem macOS-
+ * Dateisystem ist der Pfad unempfindlich gegen Gross-/Kleinschreibung, auf dem
+ * Linux-Runner nicht — der Fehler war lokal unsichtbar und riss erst die CI.
+ *
+ * Der Abgleich unten ist darum ein IDENTITÄTS-Vergleich gegen diese Menge und
+ * kein `readFileSync`-Versuch: nur so scheitert die falsche Schreibung auch
+ * dort, wo das Dateisystem sie durchgehen liesse. Ein Test, der lokal nicht
+ * scheitern kann, ist kein Test (§6.7) — er verschiebt den Fehlschlag bloss in
+ * die CI.
+ */
+const SHARD_DATEIEN: ReadonlySet<string> = new Set(readdirSync(SHARD_ORDNER));
+
 function shard(key: string): BezugsShard {
-  return JSON.parse(readFileSync(`public/rechtsprechung/bezuege/${key}.json`, 'utf8')) as BezugsShard;
+  const datei = `${key}.json`;
+  // Identität, nicht Insensitiv-Treffer: `SHARD_DATEIEN.has` vergleicht Bytes.
+  if (!SHARD_DATEIEN.has(datei)) {
+    const nah = [...SHARD_DATEIEN].filter((d) => d.toLowerCase() === datei.toLowerCase());
+    throw new Error(
+      `Shard «${datei}» gibt es in ${SHARD_ORDNER} nicht.`
+      + (nah.length > 0 ? ` Gemeint ist wohl «${nah.join('», «')}» — Register-keys sind GROSS.` : ''),
+    );
+  }
+  return JSON.parse(readFileSync(`${SHARD_ORDNER}/${datei}`, 'utf8')) as BezugsShard;
 }
 
 /** Kanten des Shards unabhängig von der Prüflingsfunktion nachzählen — sonst
@@ -53,8 +80,9 @@ function kantenZaehlen(s: BezugsShard, filter?: (st: BezugStatus) => boolean): n
 
 describe('B5 · Summen-Identität gegen die ausgelieferten Shards', () => {
   // Drei Erlasse mit unterschiedlichem Zuschnitt: OR (BGE-lastig), StPO (der
-  // grösste, alle vier Klassen), ZPO (ohne übrige BGer-Kante).
-  for (const key of ['OR', 'StPO', 'ZPO']) {
+  // grösste, alle vier Klassen), ZPO (ohne übrige BGer-Kante). Die keys sind die
+  // Register-keys und darum GROSS geschrieben — `shard()` erzwingt das.
+  for (const key of ['OR', 'STPO', 'ZPO']) {
     it(`${key}: Balken + ohneJahr = Zahl der Kanten (alle Klassen)`, () => {
       const s = shard(key);
       const h = histogrammAusShard(s, BEDIENBARE_KLASSEN, []);
