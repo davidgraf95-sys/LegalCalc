@@ -3,18 +3,6 @@
   "erlass": "RPV",
   "gewichtQuelle": "alt",
   "proArtikel": {
-    "1": [
-      {
-        "key": "bge_150_II_2",
-        "zitierung": "BGE 150 II 2",
-        "regesteKurz": "Art. 23e und 23h NHG; Art. 7, 8, 9 Abs. 1, Art. 23 Abs. 1 lit. a-f, Art. 24 lit. b, 25, 26 Abs. 1 und Art. 27 PäV; Festsetzung der Kernzone des Naturerlebnisparks Jorat (Parc naturel périurbain du Jorat). Die Errichtung eines Naturerlebnis…",
-        "datum": "2023-04-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "2": [
       {
         "key": "bge_150_II_133",
@@ -29,16 +17,6 @@
     ],
     "3": [
       {
-        "key": "bge_148_II_36",
-        "zitierung": "BGE 148 II 36",
-        "regesteKurz": "a Windpark Grenchenberg; Richtplanpflicht (Art. 8 Abs. 2 RPG). Anforderungen an die auf Stufe Richtplan nötigen Abklärungen. Dazu gehört das Vorkommen gefährdeter und national prioritärer Arten, die ein Konfliktpotenzial mit Windenergieanl…",
-        "datum": "2021-11-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_150_II_133",
         "zitierung": "BGE 150 II 133",
         "regesteKurz": "Art. 3 Abs. 1 und Art. 6 Abs. 1 und 2 NHG; Art. 6 Abs. 1 und 2 VBLN; Art. 10a Abs. 1 und Art. 10b USG; Art. 5 Abs. 3 UVPV; Art. 25a RPG; Art. 3 RPV; Ausscheidung einer kantonalen Nutzungszone für die Errichtung einer Deponie im Perimeter e…",
@@ -49,10 +27,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_II_86",
-        "zitierung": "BGE 149 II 86",
-        "regesteKurz": "Art. 8 Abs. 2, 8b, 9, 11 und 12 RPG, Art. 5 Abs. 2 lit. a RPV; Windpark Eoljoux; Aufhebung des Nutzungsplans; Weigerung des Bundesrats, die Richtplanfestsetzung für das Vorhaben zu genehmigen; Rechtsschutz. Richtplanvorbehalt; Verankerung…",
-        "datum": "2023-01-27",
+        "key": "bge_148_II_36",
+        "zitierung": "BGE 148 II 36",
+        "regesteKurz": "a Windpark Grenchenberg; Richtplanpflicht (Art. 8 Abs. 2 RPG). Anforderungen an die auf Stufe Richtplan nötigen Abklärungen. Dazu gehört das Vorkommen gefährdeter und national prioritärer Arten, die ein Konfliktpotenzial mit Windenergieanl…",
+        "datum": "2021-11-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -127,18 +105,6 @@
         "zitierung": "BGE 146 I 36",
         "regesteKurz": "Art. 50 Abs. 1 BV, Art. 86 Abs. 3, Art. 87 Abs. 1, Art. 89 Abs. 2 lit. c, Art. 90 und 93 BGG, Art. 8 ff. und 26 RPG, Art. 5 Abs. 2 RPV; Gemeindeautonomie im Zusammenhang mit der Fortschreibung eines Richtplans. Anfechtbarkeit von kantonale…",
         "datum": "2019-10-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "22": [
-      {
-        "key": "bge_147_II_319",
-        "zitierung": "BGE 147 II 319",
-        "regesteKurz": "Art. 18 NHG, Art. 14 NHV, Art. 12 EnG und Art. 9 EnV; Art. 11 und 25 USG, Art. 7 LSV; Windpark Sainte-Croix; Begriff des nationalen Interesses; Lärmschutz. Art. 9 Abs. 2 EnV, der für die jährliche Energieproduktion einen Schwellenwert von…",
-        "datum": "2021-03-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -231,16 +197,6 @@
     ],
     "41": [
       {
-        "key": "bge_147_II_309",
-        "zitierung": "BGE 147 II 309",
-        "regesteKurz": "Wiederherstellung des rechtmässigen Zustands bei illegalen Bauten ausserhalb der Bauzone; keine Verwirkung dieses Anspruchs bzw. dieser Pflicht nach 30 Jahren. Bundesgerichtliche Rechtsprechung zur Verwirkung des Anspruchs bzw. der Pflicht…",
-        "datum": "2021-04-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_II_25",
         "zitierung": "BGE 147 II 25",
         "regesteKurz": "Art. 24c RPG; Art. 41 und 43a RPV; Anwendungsbereich von Art. 24c RPG. Art. 24c RPG in der revidierten Fassung vom 23. Dezember 2011 ist auf eine altrechtliche Wohnbaute in der Landwirtschaftszone, bei der eine landwirtschaftliche Wohnnutz…",
@@ -271,39 +227,9 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_376",
-        "zitierung": "BGE 146 II 376",
-        "regesteKurz": "Art. 78 Abs. 4 BV; Art. 18a Abs. 1 NHG; Art. 2, Art. 5, Art. 6, Art. 7 AlgV; Art. 24 lit. a, Art. 37a RPG; Art. 43, Art. 43a RPV; fehlende nachträgliche Baubewilligungsfähigkeit eines in der Landwirtschaftszone und in einem Amphibienlaichg…",
-        "datum": "2020-04-16",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "43": [
-      {
-        "key": "bge_147_II_309",
-        "zitierung": "BGE 147 II 309",
-        "regesteKurz": "Wiederherstellung des rechtmässigen Zustands bei illegalen Bauten ausserhalb der Bauzone; keine Verwirkung dieses Anspruchs bzw. dieser Pflicht nach 30 Jahren. Bundesgerichtliche Rechtsprechung zur Verwirkung des Anspruchs bzw. der Pflicht…",
-        "datum": "2021-04-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_II_25",
-        "zitierung": "BGE 147 II 25",
-        "regesteKurz": "Art. 24c RPG; Art. 41 und 43a RPV; Anwendungsbereich von Art. 24c RPG. Art. 24c RPG in der revidierten Fassung vom 23. Dezember 2011 ist auf eine altrechtliche Wohnbaute in der Landwirtschaftszone, bei der eine landwirtschaftliche Wohnnutz…",
-        "datum": "2020-05-20",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_146_II_376",
         "zitierung": "BGE 146 II 376",
@@ -327,32 +253,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_II_319",
-        "zitierung": "BGE 147 II 319",
-        "regesteKurz": "Art. 18 NHG, Art. 14 NHV, Art. 12 EnG und Art. 9 EnV; Art. 11 und 25 USG, Art. 7 LSV; Windpark Sainte-Croix; Begriff des nationalen Interesses; Lärmschutz. Art. 9 Abs. 2 EnV, der für die jährliche Energieproduktion einen Schwellenwert von…",
-        "datum": "2021-03-18",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_146_II_289",
         "zitierung": "BGE 146 II 289",
         "regesteKurz": "Art. 15, 18 und 27 RPG und Art. 47 RPV; Reduktion und Neubestimmung der Bauzone im Rahmen der Schaffung einer neuen Nutzungsplanung. Es ist bundesrechtswidrig, im Rahmen der generellen Neuregelung der Nutzungszonen eine Planungszone zu sch…",
         "datum": "2020-04-16",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "52": [
-      {
-        "key": "bge_151_II_737",
-        "zitierung": "BGE 151 II 737",
-        "regesteKurz": "Art. 50, Art. 126 Abs. 1 und Art. 126g AIG; Übergangsbestimmung in Bezug auf die Erweiterung der Härtefallregelung bei häuslicher Gewalt. Inhalt und Hintergrund der speziellen Übergangsbestimmung von Art. 126g AIG zur Änderung von Art. 50…",
-        "datum": "2025-03-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

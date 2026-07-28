@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import {
   normalisiereAbk, normKeyFuerAbk, statutesZuNormKeys, fliesstextVon,
-  normKeysVonSnapshot, artikelSchluesselVonSnapshot, remapNormKeys, undeklarierteAltKeys,
+  normKeysVonSnapshot, artikelSchluesselVonSnapshot, artikelSchluesselMitBefund,
+  KORROBORATIONS_SCHWELLE, remapNormKeys, undeklarierteAltKeys,
   ABK_KOLLISIONEN, ABK_AUSSCHLUSS, AUSGESCHLOSSENE_KEYS,
   ABK_ALIAS_NOTIZEN, ABK_ALIAS_AUSGESCHLOSSEN,
 } from '../../scripts/normtext/entscheide-mapping';
@@ -105,7 +106,14 @@ describe('Alias-Ebene — amtliche FR/IT-Kürzel zeigen auf den Register-key', (
       }] }],
     });
     expect(normKeysVonSnapshot(s)).toEqual(['BGG', 'BV']);
-    expect([...artikelSchluesselVonSnapshot(s)].sort()).toEqual(['BGG/42', 'BV/29']);
+    // ERLASS-Ebene (oben) und ARTIKEL-Ebene (unten) gehen hier AUSEINANDER, und
+    // das ist die Regel, nicht ein Fehler: die Artikel-Ebene verlangt seit R2/B1
+    // eine Korroboration (statutes ODER Regeste ODER ≥2 Nennungen). Beide Artikel
+    // stehen hier je EINMAL im blossen Fliesstext → kein Artikel-Schlüssel.
+    expect([...artikelSchluesselVonSnapshot(s)]).toEqual([]);
+    // Mit statutes-Beleg trägt dieselbe Nennung sofort:
+    const mitStatutes = snap({ ...s, zitierteNormen: ['Art. 42 al. 2 LTF'] });
+    expect([...artikelSchluesselVonSnapshot(mitStatutes)]).toEqual(['BGG/42']);
   });
   it('jedes Alias-Kürzel des Artefakts löst sich auf oder ist benannt ausgeschlossen', () => {
     // Bindeglied Artefakt ↔ Register ist die SR-Nummer. Fällt ein Erlass aus dem
@@ -359,16 +367,68 @@ describe('undeklarierteAltKeys — die Bewahrung ist deklariert, nicht pauschal 
   });
 });
 
-describe('artikelSchluesselVonSnapshot — «KEY/artikel», eine Stelle für Index und Oracle (§5)', () => {
-  it('erkennt den Artikel im Fliesstext (vorher nur aus zitierteNormen)', () => {
-    const s = snap({ abschnitte: [{ typ: 'erwaegung', bloecke: [{ marke: '3', text: IPRG_TEXT }] }] });
+// ── Gegenprüfung R2/B1 — Korroborations-Regel der ARTIKEL-Ebene ─────────────
+//
+// FACHLICHE ÄNDERUNG, deklariert (§6.3): die Artikel-Ebene nimmt eine reine
+// Fliesstext-Nennung nicht mehr ungeprüft auf. Anlass war ein Literatur-Phantom
+// (BGE 150 IV 10 stand unter MSTG/171c, obwohl «171c» dort nur im Buchtitel
+// eines Kommentars vorkommt). Die drei Zweige — statutes ODER Regeste ODER
+// ≥2 Nennungen im übrigen Text — sind hier einzeln festgeschrieben.
+const ERW = (text: string) => [{ typ: 'erwaegung' as const, bloecke: [{ marke: '3', text }] }];
+
+describe('artikelSchluesselVonSnapshot — Korroborations-Regel (R2/B1)', () => {
+  it('(iii) EINE blosse Fliesstext-Nennung reicht NICHT', () => {
+    expect([...artikelSchluesselVonSnapshot(snap({ abschnitte: ERW(IPRG_TEXT) }))]).toEqual([]);
+  });
+
+  it('(iii) ZWEI Nennungen im Fliesstext reichen', () => {
+    const s = snap({ abschnitte: ERW(IPRG_TEXT + '\nDie Anknüpfung nach Art. 126 IPRG greift.') });
     expect([...artikelSchluesselVonSnapshot(s)]).toEqual(['IPRG/126']);
   });
-  it('vereinigt Roh-statutes und Fliesstext, ohne das ausgeschlossene «StG»', () => {
+
+  it('(iii) gezählt wird der ARTIKEL-Schlüssel, nicht die Normalform', () => {
+    // «Art. 6 Abs. 1 EMRK» + «Art. 6 Abs. 3 EMRK» = zweimal Art. 6 EMRK. Die
+    // Zähleinheit muss die Einheit des Index sein, sonst misst die Regel etwas
+    // anderes, als sie entscheidet (Abweichung (A), am Korpus gemessen).
+    const s = snap({ abschnitte: ERW('Nach Art. 6 Abs. 1 EMRK … und Art. 6 Abs. 3 EMRK weiter.') });
+    expect([...artikelSchluesselVonSnapshot(s)]).toEqual(['EMRK/6']);
+  });
+
+  it('(i) statutes-Beleg trägt eine EINZELNE Nennung', () => {
+    const s = snap({ zitierteNormen: ['Art. 41 OR', 'Art. 12 StG'], abschnitte: ERW(IPRG_TEXT) });
+    // 'StG' bleibt ausgeschlossen (föderal/kantonal mehrdeutig) — Regel unberührt.
+    expect([...artikelSchluesselVonSnapshot(s)].sort()).toEqual(['OR/41']);
+  });
+
+  it('(ii) die Regeste trägt eine EINZELNE Nennung (amtlicher Leitsatz)', () => {
     const s = snap({
-      zitierteNormen: ['Art. 41 OR', 'Art. 12 StG'],
-      abschnitte: [{ typ: 'erwaegung', bloecke: [{ marke: '3', text: IPRG_TEXT }] }],
+      regeste: { text: 'Art. 126 IPRG; Stellvertretung.', quelle: 'opencaselaw', sprachfassungen: [] },
+      abschnitte: ERW('Ohne weitere Nennung.'),
     });
-    expect([...artikelSchluesselVonSnapshot(s)].sort()).toEqual(['IPRG/126', 'OR/41']);
+    expect([...artikelSchluesselVonSnapshot(s)]).toEqual(['IPRG/126']);
+  });
+
+  it('(B) Volltext und BGE-Auszug werden MAXIMIERT, nicht addiert', () => {
+    // Der Auszug ist eine zweite Darstellung DESSELBEN Urteils. Würde addiert,
+    // käme jede Einzelnennung auf 2 und die Schwelle wäre wirkungslos — genau
+    // so überlebte das Literatur-Phantom MSTG/171c (nachgestellt am Korpus).
+    const eine = 'Der Kommentar zu Art. 171c MStG erwähnt dies.';
+    const s = snap({ abschnitte: ERW(eine), auszugAbschnitte: ERW(eine) });
+    expect([...artikelSchluesselVonSnapshot(s)]).toEqual([]);
+    // Zwei Nennungen INNERHALB einer Fassung tragen dagegen:
+    const s2 = snap({ abschnitte: ERW(eine + '\n' + eine), auszugAbschnitte: ERW(eine) });
+    expect([...artikelSchluesselVonSnapshot(s2)]).toEqual(['MSTG/171c']);
+  });
+
+  it('verworfene Singletons werden GEZÄHLT zurückgegeben (§6.7, kein stiller Filter)', () => {
+    const s = snap({ abschnitte: ERW(IPRG_TEXT) });
+    expect(artikelSchluesselMitBefund(s).verworfen).toEqual(['IPRG/126']);
+    expect(KORROBORATIONS_SCHWELLE).toBe(2);
+  });
+
+  it('die ERLASS-Ebene bleibt von der Regel unberührt (bewusste Divergenz)', () => {
+    const s = snap({ abschnitte: ERW(IPRG_TEXT) });
+    expect(normKeysVonSnapshot(s)).toEqual(['IPRG']);       // vollständig, wie dekretiert
+    expect([...artikelSchluesselVonSnapshot(s)]).toEqual([]); // präzise
   });
 });

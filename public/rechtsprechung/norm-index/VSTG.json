@@ -27,16 +27,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_II_68",
-        "zitierung": "BGE 151 II 68",
-        "regesteKurz": "Art. 120 Abs. 2 BGG; Art. 20 der Verordnung vom 22. August 1967 über die Anrechnung ausländischer Quellensteuern, vormals Verordnung über die pauschale Steueranrechnung; Art. 57 f. VStG; Zulässigkeit der Klage eines Kantons gegen den Bund…",
-        "datum": "2024-08-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_II_437",
         "zitierung": "BGE 150 II 437",
         "regesteKurz": "Art. 12 Abs. 1, Art. 16 Abs. 1 lit. c und Abs. 2 VStG; Art. 21 Abs. 2 VStV; Beginn des Verzugszinsenlaufs auf geldwerten Leistungen. Rechtsprechung und Lehre gehen in verschiedenen Situationen von unterschiedlichen Zeitpunkten für die Fäll…",
@@ -73,16 +63,6 @@
         "zitierung": "BGE 151 II 827",
         "regesteKurz": "Art. 5 aAbs. 1 bis VStG; Kapitaleinlageprinzip; gesonderte Verbuchung in der Handelsbilanz und Meldung an die ESTV; Vermächtnis. Wenn Inhaber von Beteiligungsrechten der Gesellschaft vermächtnisweise Aktiven zuwenden, liegt eine Kapitalein…",
         "datum": "2025-03-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_462",
-        "zitierung": "BGE 149 II 462",
-        "regesteKurz": "Art. 132 Abs. 1 BV; Art. 83 lit. m, Art. 113 BGG; Art. 6 Abs. 1 lit. k, Art. 12 StG; Erlass der Emissionsabgabe bzw. emissionsabgaberechtlicher Freibetrag. Entscheide des Bundesverwaltungsgerichts betreffend den Erlass der Emissionsabgabe…",
-        "datum": "2023-09-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -125,16 +105,6 @@
     ],
     "12": [
       {
-        "key": "bge_149_II_158",
-        "zitierung": "BGE 149 II 158",
-        "regesteKurz": "Art. 20 Abs. 1 lit. c und Abs. 3 und Art. 125 Abs. 3 DBG; Kapitaleinlageprinzip; Rückzahlung verdeckter Kapitaleinlagen. Befreit ein Inhaber von Beteiligungsrechten die Gesellschaft von einer Schuld (privative Schuldübernahme), ohne dafür…",
-        "datum": "2023-03-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
         "key": "bge_150_II_369",
         "zitierung": "BGE 150 II 369",
         "regesteKurz": "a Art. 58 Abs. 1 lit. c DBG; Massgeblichkeitsprinzip; Korrekturnorm; erfolgsneutrale Verbuchung eigener Aktien. Für die Ermittlung des Reingewinns ist vom Handelsrecht auszugehen (Massgeblichkeitsprinzip; E. 3.1). Der Differenzbetrag zwisc…",
@@ -145,20 +115,20 @@
         "gewicht": 1
       },
       {
+        "key": "bge_149_II_158",
+        "zitierung": "BGE 149 II 158",
+        "regesteKurz": "Art. 20 Abs. 1 lit. c und Abs. 3 und Art. 125 Abs. 3 DBG; Kapitaleinlageprinzip; Rückzahlung verdeckter Kapitaleinlagen. Befreit ein Inhaber von Beteiligungsrechten die Gesellschaft von einer Schuld (privative Schuldübernahme), ohne dafür…",
+        "datum": "2023-03-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_II_827",
         "zitierung": "BGE 151 II 827",
         "regesteKurz": "Art. 5 aAbs. 1 bis VStG; Kapitaleinlageprinzip; gesonderte Verbuchung in der Handelsbilanz und Meldung an die ESTV; Vermächtnis. Wenn Inhaber von Beteiligungsrechten der Gesellschaft vermächtnisweise Aktiven zuwenden, liegt eine Kapitalein…",
         "datum": "2025-03-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_418",
-        "zitierung": "BGE 151 II 418",
-        "regesteKurz": "Art. 10 Abs. 2 und Art. 20 Abs. 1 lit. e DBG; ausländische kollektive Kapitalanlagen; Besteuerung der Einkünfte aus Thesaurierungsfonds. Ausländische kollektive Kapitalanlagen im Sinne von Art. 119 KAG fallen in den Anwendungsbereich von A…",
-        "datum": "2024-12-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -209,28 +179,6 @@
         "gewicht": 0
       }
     ],
-    "17": [
-      {
-        "key": "bge_151_II_827",
-        "zitierung": "BGE 151 II 827",
-        "regesteKurz": "Art. 5 aAbs. 1 bis VStG; Kapitaleinlageprinzip; gesonderte Verbuchung in der Handelsbilanz und Meldung an die ESTV; Vermächtnis. Wenn Inhaber von Beteiligungsrechten der Gesellschaft vermächtnisweise Aktiven zuwenden, liegt eine Kapitalein…",
-        "datum": "2025-03-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_II_437",
-        "zitierung": "BGE 150 II 437",
-        "regesteKurz": "Art. 12 Abs. 1, Art. 16 Abs. 1 lit. c und Abs. 2 VStG; Art. 21 Abs. 2 VStV; Beginn des Verzugszinsenlaufs auf geldwerten Leistungen. Rechtsprechung und Lehre gehen in verschiedenen Situationen von unterschiedlichen Zeitpunkten für die Fäll…",
-        "datum": "2024-03-26",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "19": [
       {
         "key": "bge_151_II_827",
@@ -241,75 +189,9 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_147_II_338",
-        "zitierung": "BGE 147 II 338",
-        "regesteKurz": "Rückerstattung der Verrechnungssteuer; Steuerumgehung (Art. 21 Abs. 2 VStG); Tragweite der im Jahr 1990 publizierten Praxis der ESTV zum \"Kauf eines vollen Portemonnaies\". Voraussetzungen für die Rückerstattung der Verrechnungssteuer (E. 2…",
-        "datum": "2021-07-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "20": [
-      {
-        "key": "bge_147_II_338",
-        "zitierung": "BGE 147 II 338",
-        "regesteKurz": "Rückerstattung der Verrechnungssteuer; Steuerumgehung (Art. 21 Abs. 2 VStG); Tragweite der im Jahr 1990 publizierten Praxis der ESTV zum \"Kauf eines vollen Portemonnaies\". Voraussetzungen für die Rückerstattung der Verrechnungssteuer (E. 2…",
-        "datum": "2021-07-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "21": [
-      {
-        "key": "bge_147_II_338",
-        "zitierung": "BGE 147 II 338",
-        "regesteKurz": "Rückerstattung der Verrechnungssteuer; Steuerumgehung (Art. 21 Abs. 2 VStG); Tragweite der im Jahr 1990 publizierten Praxis der ESTV zum \"Kauf eines vollen Portemonnaies\". Voraussetzungen für die Rückerstattung der Verrechnungssteuer (E. 2…",
-        "datum": "2021-07-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_151_II_494",
-        "zitierung": "BGE 151 II 494",
-        "regesteKurz": "Art. 31 und 32 VRK; Art. 11 Abs. 1 DBA CH-DK; Nutzungsberechtigung an Zinsen; Rechtsmissbrauch im Völkerrecht. Die Auslegung von Art. 11 Abs. 1 DBA CH-DK ergibt, dass nur gesetzliche und vertragliche Weiterleitungsverpflichtungen die Nutzu…",
-        "datum": "2024-10-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_68",
-        "zitierung": "BGE 151 II 68",
-        "regesteKurz": "Art. 120 Abs. 2 BGG; Art. 20 der Verordnung vom 22. August 1967 über die Anrechnung ausländischer Quellensteuern, vormals Verordnung über die pauschale Steueranrechnung; Art. 57 f. VStG; Zulässigkeit der Klage eines Kantons gegen den Bund…",
-        "datum": "2024-08-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "22": [
-      {
-        "key": "bge_147_II_338",
-        "zitierung": "BGE 147 II 338",
-        "regesteKurz": "Rückerstattung der Verrechnungssteuer; Steuerumgehung (Art. 21 Abs. 2 VStG); Tragweite der im Jahr 1990 publizierten Praxis der ESTV zum \"Kauf eines vollen Portemonnaies\". Voraussetzungen für die Rückerstattung der Verrechnungssteuer (E. 2…",
-        "datum": "2021-07-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "24": [
       {
         "key": "bge_147_II_338",
         "zitierung": "BGE 147 II 338",
@@ -351,140 +233,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_146_I_105",
-        "zitierung": "BGE 146 I 105",
-        "regesteKurz": "Art. 10 Abs. 2 Bst. a DBA CH-LU; Art. 31 f. VRK; Art. 8 und 9 BV; Verwaltungsverordnungen (Kreisschreiben etc.); Auslegung; Vertrauensschutz; Anforderungen an Praxisänderungen; Gleichbehandlung im Unrecht. Bedeutung von Verwaltungsverordnu…",
-        "datum": "2019-12-16",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "38": [
-      {
-        "key": "bge_151_II_68",
-        "zitierung": "BGE 151 II 68",
-        "regesteKurz": "Art. 120 Abs. 2 BGG; Art. 20 der Verordnung vom 22. August 1967 über die Anrechnung ausländischer Quellensteuern, vormals Verordnung über die pauschale Steueranrechnung; Art. 57 f. VStG; Zulässigkeit der Klage eines Kantons gegen den Bund…",
-        "datum": "2024-08-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_II_437",
-        "zitierung": "BGE 150 II 437",
-        "regesteKurz": "Art. 12 Abs. 1, Art. 16 Abs. 1 lit. c und Abs. 2 VStG; Art. 21 Abs. 2 VStV; Beginn des Verzugszinsenlaufs auf geldwerten Leistungen. Rechtsprechung und Lehre gehen in verschiedenen Situationen von unterschiedlichen Zeitpunkten für die Fäll…",
-        "datum": "2024-03-26",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_158",
-        "zitierung": "BGE 149 II 158",
-        "regesteKurz": "Art. 20 Abs. 1 lit. c und Abs. 3 und Art. 125 Abs. 3 DBG; Kapitaleinlageprinzip; Rückzahlung verdeckter Kapitaleinlagen. Befreit ein Inhaber von Beteiligungsrechten die Gesellschaft von einer Schuld (privative Schuldübernahme), ohne dafür…",
-        "datum": "2023-03-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "39": [
-      {
-        "key": "bge_151_II_827",
-        "zitierung": "BGE 151 II 827",
-        "regesteKurz": "Art. 5 aAbs. 1 bis VStG; Kapitaleinlageprinzip; gesonderte Verbuchung in der Handelsbilanz und Meldung an die ESTV; Vermächtnis. Wenn Inhaber von Beteiligungsrechten der Gesellschaft vermächtnisweise Aktiven zuwenden, liegt eine Kapitalein…",
-        "datum": "2025-03-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "40": [
-      {
-        "key": "bge_151_II_827",
-        "zitierung": "BGE 151 II 827",
-        "regesteKurz": "Art. 5 aAbs. 1 bis VStG; Kapitaleinlageprinzip; gesonderte Verbuchung in der Handelsbilanz und Meldung an die ESTV; Vermächtnis. Wenn Inhaber von Beteiligungsrechten der Gesellschaft vermächtnisweise Aktiven zuwenden, liegt eine Kapitalein…",
-        "datum": "2025-03-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "45": [
-      {
-        "key": "bge_146_III_113",
-        "zitierung": "BGE 146 III 113",
-        "regesteKurz": "Art. 250 SchKG, Art. 59 Abs. 2 lit. a ZPO; Kollokationsklage, Nulldividende und schutzwürdiges Interesse. Das schutzwürdige Interesse an der Kollokationsklage kann gegeben sein, wenn die mutmassliche Konkursdividende Null beträgt und der k…",
-        "datum": "2020-01-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_151_III_348",
-        "zitierung": "BGE 151 III 348",
-        "regesteKurz": "Art. 72 ff., 113 ff. BGG; Art. 250 Abs. 2 SchKG; Art. 32d USG; Entscheide über die Kollokation öffentlich-rechtlicher Forderungen. Entscheide über die Kollokation fallen unter die Schuldbetreibungs- und Konkurssachen im Sinn von Art. 72 Ab…",
-        "datum": "2024-12-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "47": [
-      {
-        "key": "bge_151_III_177",
-        "zitierung": "BGE 151 III 177",
-        "regesteKurz": "a Art. 169 Abs. 1 DBG; Art. 78 StHG; Art. 38 und 80 SchKG; Steuerarrest; Sicherstellungsverfügung; Betreibung auf Sicherheitsleistung; Rechtsöffnung. Sicherstellungsverfügungen berechtigen erst dann zur definitiven Rechtsöffnung, wenn sie…",
-        "datum": "2025-02-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "48": [
-      {
-        "key": "bge_151_II_494",
-        "zitierung": "BGE 151 II 494",
-        "regesteKurz": "Art. 31 und 32 VRK; Art. 11 Abs. 1 DBA CH-DK; Nutzungsberechtigung an Zinsen; Rechtsmissbrauch im Völkerrecht. Die Auslegung von Art. 11 Abs. 1 DBA CH-DK ergibt, dass nur gesetzliche und vertragliche Weiterleitungsverpflichtungen die Nutzu…",
-        "datum": "2024-10-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_68",
-        "zitierung": "BGE 151 II 68",
-        "regesteKurz": "Art. 120 Abs. 2 BGG; Art. 20 der Verordnung vom 22. August 1967 über die Anrechnung ausländischer Quellensteuern, vormals Verordnung über die pauschale Steueranrechnung; Art. 57 f. VStG; Zulässigkeit der Klage eines Kantons gegen den Bund…",
-        "datum": "2024-08-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "54": [
-      {
-        "key": "bge_151_II_68",
-        "zitierung": "BGE 151 II 68",
-        "regesteKurz": "Art. 120 Abs. 2 BGG; Art. 20 der Verordnung vom 22. August 1967 über die Anrechnung ausländischer Quellensteuern, vormals Verordnung über die pauschale Steueranrechnung; Art. 57 f. VStG; Zulässigkeit der Klage eines Kantons gegen den Bund…",
-        "datum": "2024-08-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "56": [
@@ -517,28 +265,6 @@
         "zitierung": "BGE 151 II 68",
         "regesteKurz": "Art. 120 Abs. 2 BGG; Art. 20 der Verordnung vom 22. August 1967 über die Anrechnung ausländischer Quellensteuern, vormals Verordnung über die pauschale Steueranrechnung; Art. 57 f. VStG; Zulässigkeit der Klage eines Kantons gegen den Bund…",
         "datum": "2024-08-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "61": [
-      {
-        "key": "bge_150_IV_57",
-        "zitierung": "BGE 150 IV 57",
-        "regesteKurz": "Art. 73 Abs. 1 VStrR; Überweisung zur gerichtlichen Beurteilung im Verwaltungsstrafverfahren ohne Vorliegen eines rechtskräftigen Entscheids über die Leistungs- oder Rückleistungspflicht. In Fällen, in denen die Vorfrage der Leistungs- ode…",
-        "datum": "2024-01-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_150_II_437",
-        "zitierung": "BGE 150 II 437",
-        "regesteKurz": "Art. 12 Abs. 1, Art. 16 Abs. 1 lit. c und Abs. 2 VStG; Art. 21 Abs. 2 VStV; Beginn des Verzugszinsenlaufs auf geldwerten Leistungen. Rechtsprechung und Lehre gehen in verschiedenen Situationen von unterschiedlichen Zeitpunkten für die Fäll…",
-        "datum": "2024-03-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

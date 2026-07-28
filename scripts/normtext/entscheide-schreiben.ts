@@ -13,7 +13,7 @@ import type { BrowseEntscheid, EntscheidManifest, RichterRef, RichterRegister } 
 import { parseBesetzung, kanonisiere, bereinigeBesetzungsFreitext, type KanonEintrag } from '../../src/lib/rechtsprechung/besetzung';
 import type { EntscheidRef, LeitfallRef, LeitfallShard } from '../../src/lib/rechtsprechung/norm-index';
 import { minteEcliFuerSnapshot } from '../../src/lib/rechtsprechung/ecli';
-import { artikelSchluesselVonSnapshot, AUSGESCHLOSSENE_KEYS } from './entscheide-mapping';
+import { artikelSchluesselMitBefund, AUSGESCHLOSSENE_KEYS } from './entscheide-mapping';
 import { vergleiche } from './vergleich';
 
 export function keyVon(snap: EntscheidSnapshot): { key: string; datei: string } {
@@ -164,8 +164,20 @@ function selbstTokens(snap: EntscheidSnapshot): string[] {
  * INNERHALB von S_A). Rang: gewicht ↓, dann Leitentscheid vor Routine, dann Datum ↓,
  * dann key (totaler Tiebreaker) — build-pfad-unabhängig stabil.
  */
+/**
+ * Zähler der von der Korroborations-Regel VERWORFENEN Fliesstext-Singletons
+ * (Gegenprüfung R2/B1). Ein Filter, dessen Wirkung niemand sieht, ist ein Tor,
+ * das nicht scheitern kann (§6.7): der `--remap`-Lauf weist die Zahl aus, damit
+ * ein Sprung nach oben (Extraktions-Regression) oder nach unten (Regel
+ * versehentlich entschärft) im Lauf-Protokoll auffällt — nicht erst im Artefakt.
+ * Modulweit, weil `baueArtikelIndex` seine Signatur behält (Aufrufer im Tor).
+ */
+let verworfeneSingletons = 0;
+export function letzteVerworfeneSingletons(): number { return verworfeneSingletons; }
+
 export function baueArtikelIndex(auswahl: EntscheidSnapshot[]): Record<string, LeitfallRef[]> {
   const bg = auswahl.filter((s) => s.gerichtstyp === 'bundesgericht');
+  verworfeneSingletons = 0;
 
   // Token → corpus-key (erste Nennung gewinnt; §2-deterministisch bei Eingabefolge).
   const tokenZuKey = new Map<string, string>();
@@ -180,7 +192,9 @@ export function baueArtikelIndex(auswahl: EntscheidSnapshot[]): Record<string, L
   for (const s of bg) {
     const { key } = keyVon(s);
     refByKey.set(key, refVon(s));
-    artikelVon.set(key, artikelSchluesselVonSnapshot(s));
+    const befund = artikelSchluesselMitBefund(s);
+    verworfeneSingletons += befund.verworfen.length;
+    artikelVon.set(key, befund.schluessel);
     const cited = new Set<string>();
     for (const z of s.zitierteEntscheide ?? []) {
       const tok = kanonZitat(z);
@@ -247,7 +261,7 @@ export function baueShards(proNormArtikel: Record<string, LeitfallRef[]>, datum:
   return out;
 }
 
-export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root = process.cwd()): { anzahl: number; normBuckets: number; artikelBuckets: number; shards: number } {
+export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root = process.cwd()): { anzahl: number; normBuckets: number; artikelBuckets: number; shards: number; verworfeneSingletons: number } {
   const PUB = join(root, 'public', 'rechtsprechung');
   const GENKEYS = join(root, 'src', 'lib', 'rechtsprechung', 'erfasste-keys.generated.ts');
 
@@ -471,7 +485,11 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
     'utf8',
   );
 
-  return { anzahl: manifest.length, normBuckets: Object.keys(proNorm).length, artikelBuckets: Object.keys(proNormArtikel).length, shards: shards.size };
+  return {
+    anzahl: manifest.length, normBuckets: Object.keys(proNorm).length,
+    artikelBuckets: Object.keys(proNormArtikel).length, shards: shards.size,
+    verworfeneSingletons: letzteVerworfeneSingletons(),
+  };
 }
 
 /**

@@ -3,18 +3,6 @@
   "erlass": "BUEG",
   "gewichtQuelle": "alt",
   "proArtikel": {
-    "5": [
-      {
-        "key": "bge_146_III_136",
-        "zitierung": "BGE 146 III 136",
-        "regesteKurz": "Art. 69 Abs. 1 und 2 IPRG; bei einer Klage auf Anfechtung des Kindesverhältnisses anwendbares Recht, alternative Anknüpfung an den Ort der Geburt oder der Klage, Begriff des \"überwiegenden Interesses\". Die Anknüpfung an den Ort der Klagean…",
-        "datum": "2019-11-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "11": [
       {
         "key": "bge_148_I_271",
@@ -103,18 +91,6 @@
         "zitierung": "BGE 150 II 513",
         "regesteKurz": "Art. 21 BüG; Gesuch um erleichterte Einbürgerung des ausländischen Ehegatten einer eingebürgerten Person, deren Einbürgerung nichtig erklärt wurde. Art. 21 Abs. 1 BüG ist in dem Sinne zu verstehen, dass die erleichterte Einbürgerung ausges…",
         "datum": "2024-06-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "51": [
-      {
-        "key": "bge_146_I_195",
-        "zitierung": "BGE 146 I 195",
-        "regesteKurz": "Art. 113, 115 lit. b und 116 BGG; ordentliche Einbürgerung; subsidiäre Verfassungsbeschwerde; Beschwerdebefugnis des Kantons gegen einen Entscheid seines Verwaltungsgerichts. Da der Kanton nicht Grundrechtsträger ist, verfügt er nicht über…",
-        "datum": "2020-03-10",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

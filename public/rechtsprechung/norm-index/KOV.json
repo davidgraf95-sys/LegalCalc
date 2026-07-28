@@ -3,18 +3,6 @@
   "erlass": "KOV",
   "gewichtQuelle": "alt",
   "proArtikel": {
-    "27": [
-      {
-        "key": "bge_151_III_190",
-        "zitierung": "BGE 151 III 190",
-        "regesteKurz": "Art. 230 Abs. 2, Art. 262 Abs. 2 SchKG; Art. 39 und 85 KOV; Sicherheit für die Durchführung des Konkursverfahrens. Die Kosten für die Verwertung von Pfandgegenständen sind bei der Festlegung der Höhe der Sicherheitsleistung gemäss Art. 230…",
-        "datum": "2024-11-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "39": [
       {
         "key": "bge_151_III_190",
@@ -33,16 +21,6 @@
         "zitierung": "BGE 151 III 348",
         "regesteKurz": "Art. 72 ff., 113 ff. BGG; Art. 250 Abs. 2 SchKG; Art. 32d USG; Entscheide über die Kollokation öffentlich-rechtlicher Forderungen. Entscheide über die Kollokation fallen unter die Schuldbetreibungs- und Konkurssachen im Sinn von Art. 72 Ab…",
         "datum": "2024-12-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_III_422",
-        "zitierung": "BGE 149 III 422",
-        "regesteKurz": "Art. 260 SchKG; bedingte Abtretung. Prozessführungsbefugnis des Abtretungsgläubigers bei einer bedingten Abtretung (E. 3). Regeste Art. 260 LP; cession conditionnelle. Faculté du créancier cessionnaire de conduire le procès comme partie en…",
-        "datum": "2023-05-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -79,16 +57,6 @@
         "zitierung": "BGE 150 III 268",
         "regesteKurz": "Art. 22, 260, 268 SchKG; Art. 95 KOV; Art. 166 IPRG; Übereinkunft vom 11. Mai 1834 mit dem Königreich Bayern über gleichmässige Behandlung der gegenseitigen Staatsangehörigen in Konkursfällen; Konkursschluss und Abtretungsverfügung nach Ar…",
         "datum": "2024-04-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_III_441",
-        "zitierung": "BGE 146 III 441",
-        "regesteKurz": "Löschung der konkursiten Gesellschaft im Handelsregister/Abtretung von Ansprüchen nach Art. 260 SchKG. Die Löschung der konkursiten Gesellschaft im Handelsregister hat keinen Einfluss auf die Aktivlegitimation der Abtretungsgläubiger nach…",
-        "datum": "2020-08-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

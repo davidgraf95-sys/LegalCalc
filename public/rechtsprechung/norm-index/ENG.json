@@ -115,16 +115,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_150_II_334",
-        "zitierung": "BGE 150 II 334",
-        "regesteKurz": "Art. 19 Abs. 1 lit. e, Art. 19 Abs. 4 lit. d und Art. 72 Abs. 1 EnG; Art. 2 lit. a, Art. 16 Abs. 2 und Anhang 1.5 Ziff. 2.1.2 lit. g EnFV; Unterscheidung zwischen \"Mischanlagen\" und Hybridanlagen; Klärgas als nicht förderungsberechtigter e…",
-        "datum": "2024-03-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "39": [
@@ -140,18 +130,6 @@
       }
     ],
     "40": [
-      {
-        "key": "bge_151_II_312",
-        "zitierung": "BGE 151 II 312",
-        "regesteKurz": "Art. 39 Abs. 3 Satz 1 und 75 EnG und 80 EnV; neue Energiegesetzgebung; Übergangsrecht; Rückerstattung des bezahlten Zuschlags für die Nutzung des Übertragungsnetzes für Elektrizität. Die Rückerstattung des Netzzuschlags wird jährlich festg…",
-        "datum": "2024-11-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "41": [
       {
         "key": "bge_151_II_312",
         "zitierung": "BGE 151 II 312",
@@ -193,18 +171,6 @@
         "zitierung": "BGE 151 II 312",
         "regesteKurz": "Art. 39 Abs. 3 Satz 1 und 75 EnG und 80 EnV; neue Energiegesetzgebung; Übergangsrecht; Rückerstattung des bezahlten Zuschlags für die Nutzung des Übertragungsnetzes für Elektrizität. Die Rückerstattung des Netzzuschlags wird jährlich festg…",
         "datum": "2024-11-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "50a": [
-      {
-        "key": "bge_150_I_106",
-        "zitierung": "BGE 150 I 106",
-        "regesteKurz": "Art. 26 und 36 BV; Tragweite der Eigentumsgarantie bei der Sanierung von Gebäuden mit elektrischer Heizung; abstrakte Normenkontrolle. Die Sanierungspflicht von Gebäuden mit dezentraler Elektroheizung schränkt die Eigentumsgarantie (Art. 2…",
-        "datum": "2024-04-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

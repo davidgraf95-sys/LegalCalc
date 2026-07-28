@@ -3,34 +3,12 @@
   "erlass": "GSCHV",
   "gewichtQuelle": "alt",
   "proArtikel": {
-    "29": [
-      {
-        "key": "bge_147_II_309",
-        "zitierung": "BGE 147 II 309",
-        "regesteKurz": "Wiederherstellung des rechtmässigen Zustands bei illegalen Bauten ausserhalb der Bauzone; keine Verwirkung dieses Anspruchs bzw. dieser Pflicht nach 30 Jahren. Bundesgerichtliche Rechtsprechung zur Verwirkung des Anspruchs bzw. der Pflicht…",
-        "datum": "2021-04-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "32": [
       {
         "key": "bge_147_II_309",
         "zitierung": "BGE 147 II 309",
         "regesteKurz": "Wiederherstellung des rechtmässigen Zustands bei illegalen Bauten ausserhalb der Bauzone; keine Verwirkung dieses Anspruchs bzw. dieser Pflicht nach 30 Jahren. Bundesgerichtliche Rechtsprechung zur Verwirkung des Anspruchs bzw. der Pflicht…",
         "datum": "2021-04-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_304",
-        "zitierung": "BGE 146 II 304",
-        "regesteKurz": "Besitzstandsschutz von zonenwidrigen Bauten ausserhalb der Bauzone im Gewässerraum (Art. 41c Abs. 2 GSchV; Art. 24c RPG). Art. 41c GSchV enthält eine gegenüber Art. 24c RPG eigenständige Besitzstandsgarantie (abweichend von Urteil 1C_345/2…",
-        "datum": "2020-04-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -60,16 +38,6 @@
       }
     ],
     "41c": [
-      {
-        "key": "bge_151_II_304",
-        "zitierung": "BGE 151 II 304",
-        "regesteKurz": "Art. 18 Abs. 1 ter NHG; Art. 14 Abs. 6 NHV; Art. 7 Abs. 4 JSG; Fuss- und Wanderwegprojekt in einem der letzten nicht erschlossenen Tobel der Region; Autonomiebeschwerde der Gemeinden gegen die teilweise Aufhebung dieses Projekts durch das…",
-        "datum": "2024-11-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_148_II_198",
         "zitierung": "BGE 148 II 198",

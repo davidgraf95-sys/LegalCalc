@@ -3,46 +3,12 @@
   "erlass": "BPG",
   "gewichtQuelle": "alt",
   "proArtikel": {
-    "1": [
-      {
-        "key": "bge_149_I_129",
-        "zitierung": "BGE 149 I 129",
-        "regesteKurz": "Art. 10 Abs. 2 und Art. 36 BV; Art. 47 MG; Art. 20 Abs. 1, Art. 10 Abs. 3 und Art. 37 Abs. 1 BPG; Art. 7 Abs. 1 PVSPA; Auflösung des Arbeitsverhältnisses eines Angehörigen der Spezialkräfte der Armee wegen der Weigerung, sich der für oblig…",
-        "datum": "2023-02-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "2": [
-      {
-        "key": "bge_149_I_129",
-        "zitierung": "BGE 149 I 129",
-        "regesteKurz": "Art. 10 Abs. 2 und Art. 36 BV; Art. 47 MG; Art. 20 Abs. 1, Art. 10 Abs. 3 und Art. 37 Abs. 1 BPG; Art. 7 Abs. 1 PVSPA; Auflösung des Arbeitsverhältnisses eines Angehörigen der Spezialkräfte der Armee wegen der Weigerung, sich der für oblig…",
-        "datum": "2023-02-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "6": [
       {
         "key": "bge_152_II_19",
         "zitierung": "BGE 152 II 19",
         "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 337c Abs. 3 OR; steuerliche Behandlung einer Entschädigung wegen unrechtmässiger fristloser Kündigung nach öffentlichem Personalrecht. Die Entschädigung für…",
         "datum": "2026-01-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_337",
-        "zitierung": "BGE 149 II 337",
-        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2, Ar…",
-        "datum": "2023-08-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -81,18 +47,6 @@
         "gewicht": 0
       }
     ],
-    "12": [
-      {
-        "key": "bge_149_II_337",
-        "zitierung": "BGE 149 II 337",
-        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2, Ar…",
-        "datum": "2023-08-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "19": [
       {
         "key": "bge_149_I_129",
@@ -106,16 +60,6 @@
       }
     ],
     "20": [
-      {
-        "key": "bge_149_II_337",
-        "zitierung": "BGE 149 II 337",
-        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2, Ar…",
-        "datum": "2023-08-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_149_I_129",
         "zitierung": "BGE 149 I 129",
@@ -151,36 +95,12 @@
         "gewicht": 0
       }
     ],
-    "27": [
-      {
-        "key": "bge_149_II_337",
-        "zitierung": "BGE 149 II 337",
-        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2, Ar…",
-        "datum": "2023-08-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "28": [
       {
         "key": "bge_149_II_337",
         "zitierung": "BGE 149 II 337",
         "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2, Ar…",
         "datum": "2023-08-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "36": [
-      {
-        "key": "bge_152_II_19",
-        "zitierung": "BGE 152 II 19",
-        "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 337c Abs. 3 OR; steuerliche Behandlung einer Entschädigung wegen unrechtmässiger fristloser Kündigung nach öffentlichem Personalrecht. Die Entschädigung für…",
-        "datum": "2026-01-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -200,16 +120,6 @@
       }
     ],
     "38": [
-      {
-        "key": "bge_149_II_337",
-        "zitierung": "BGE 149 II 337",
-        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2, Ar…",
-        "datum": "2023-08-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_148_III_126",
         "zitierung": "BGE 148 III 126",
@@ -259,28 +169,6 @@
         "zitierung": "BGE 149 I 129",
         "regesteKurz": "Art. 10 Abs. 2 und Art. 36 BV; Art. 47 MG; Art. 20 Abs. 1, Art. 10 Abs. 3 und Art. 37 Abs. 1 BPG; Art. 7 Abs. 1 PVSPA; Auflösung des Arbeitsverhältnisses eines Angehörigen der Spezialkräfte der Armee wegen der Weigerung, sich der für oblig…",
         "datum": "2023-02-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "34c": [
-      {
-        "key": "bge_152_II_19",
-        "zitierung": "BGE 152 II 19",
-        "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 337c Abs. 3 OR; steuerliche Behandlung einer Entschädigung wegen unrechtmässiger fristloser Kündigung nach öffentlichem Personalrecht. Die Entschädigung für…",
-        "datum": "2026-01-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_337",
-        "zitierung": "BGE 149 II 337",
-        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2, Ar…",
-        "datum": "2023-08-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

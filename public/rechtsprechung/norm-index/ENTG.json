@@ -3,31 +3,7 @@
   "erlass": "ENTG",
   "gewichtQuelle": "alt",
   "proArtikel": {
-    "3": [
-      {
-        "key": "bge_148_II_387",
-        "zitierung": "BGE 148 II 387",
-        "regesteKurz": "Art. 30e, 58 USG; Art. 26, 27 BV; Enteignung für eine Deponie. Verhältnis von Art. 58 Abs. 1 USG zum kantonalen Enteignungsrecht (E. 3.1). Bedürfnisklausel bei der Bewilligungspflicht für Deponien gemäss Art. 30e Abs. 2 USG (E. 3.2.3). Art…",
-        "datum": "2022-03-10",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "5": [
-      {
-        "key": "bge_148_II_387",
-        "zitierung": "BGE 148 II 387",
-        "regesteKurz": "Art. 30e, 58 USG; Art. 26, 27 BV; Enteignung für eine Deponie. Verhältnis von Art. 58 Abs. 1 USG zum kantonalen Enteignungsrecht (E. 3.1). Bedürfnisklausel bei der Bewilligungspflicht für Deponien gemäss Art. 30e Abs. 2 USG (E. 3.2.3). Art…",
-        "datum": "2022-03-10",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "6": [
       {
         "key": "bge_148_II_387",
         "zitierung": "BGE 148 II 387",
@@ -75,18 +51,6 @@
         "gewicht": 0
       }
     ],
-    "22": [
-      {
-        "key": "bge_147_II_201",
-        "zitierung": "BGE 147 II 201",
-        "regesteKurz": "Entschädigung für die Erneuerung eines Überleitungsrechts für eine bestehende Starkstromleitung; Anwendungsbereich von Art. 83 lit. w BGG; Rechtsfrage von grundsätzlicher Bedeutung. Der am 1. Januar 2018 in Kraft getretene Art. 83 lit. w B…",
-        "datum": "2020-10-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "33": [
       {
         "key": "bge_147_II_201",
@@ -111,55 +75,7 @@
         "gewicht": 0
       }
     ],
-    "48": [
-      {
-        "key": "bge_147_II_201",
-        "zitierung": "BGE 147 II 201",
-        "regesteKurz": "Entschädigung für die Erneuerung eines Überleitungsrechts für eine bestehende Starkstromleitung; Anwendungsbereich von Art. 83 lit. w BGG; Rechtsfrage von grundsätzlicher Bedeutung. Der am 1. Januar 2018 in Kraft getretene Art. 83 lit. w B…",
-        "datum": "2020-10-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "50": [
-      {
-        "key": "bge_147_II_201",
-        "zitierung": "BGE 147 II 201",
-        "regesteKurz": "Entschädigung für die Erneuerung eines Überleitungsrechts für eine bestehende Starkstromleitung; Anwendungsbereich von Art. 83 lit. w BGG; Rechtsfrage von grundsätzlicher Bedeutung. Der am 1. Januar 2018 in Kraft getretene Art. 83 lit. w B…",
-        "datum": "2020-10-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "64": [
-      {
-        "key": "bge_147_II_201",
-        "zitierung": "BGE 147 II 201",
-        "regesteKurz": "Entschädigung für die Erneuerung eines Überleitungsrechts für eine bestehende Starkstromleitung; Anwendungsbereich von Art. 83 lit. w BGG; Rechtsfrage von grundsätzlicher Bedeutung. Der am 1. Januar 2018 in Kraft getretene Art. 83 lit. w B…",
-        "datum": "2020-10-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "76": [
-      {
-        "key": "bge_147_II_201",
-        "zitierung": "BGE 147 II 201",
-        "regesteKurz": "Entschädigung für die Erneuerung eines Überleitungsrechts für eine bestehende Starkstromleitung; Anwendungsbereich von Art. 83 lit. w BGG; Rechtsfrage von grundsätzlicher Bedeutung. Der am 1. Januar 2018 in Kraft getretene Art. 83 lit. w B…",
-        "datum": "2020-10-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "91": [
       {
         "key": "bge_147_II_201",
         "zitierung": "BGE 147 II 201",

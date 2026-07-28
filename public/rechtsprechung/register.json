@@ -2425,7 +2425,8 @@
         "AHVG",
         "ATSG",
         "BGG",
-        "IVG"
+        "IVG",
+        "IVV"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -4407,6 +4408,7 @@
       "sprache": "de",
       "normKeys": [
         "BGG",
+        "STGB",
         "STPO"
       ],
       "bestand": "snapshot",
@@ -25625,6 +25627,7 @@
       "normKeys": [
         "BGFA",
         "BGG",
+        "BV",
         "BVG",
         "EMRK",
         "FZV"
@@ -118002,7 +118005,8 @@
       "sachgebiet": "privat",
       "sprache": "de",
       "normKeys": [
-        "BGG"
+        "BGG",
+        "ZGB"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -177144,6 +177148,7 @@
       "sprache": "de",
       "normKeys": [
         "BGG",
+        "SCHKG",
         "STGB",
         "STPO"
       ],
@@ -178182,6 +178187,7 @@
       "sprache": "de",
       "normKeys": [
         "BGG",
+        "VWVG",
         "ZPO"
       ],
       "bestand": "snapshot",
@@ -178633,6 +178639,7 @@
       "sprache": "de",
       "normKeys": [
         "BGG",
+        "SCHKG",
         "STGB",
         "STPO"
       ],
@@ -178670,7 +178677,8 @@
       "sprache": "de",
       "normKeys": [
         "BGG",
-        "LSV"
+        "LSV",
+        "USG"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -180933,6 +180941,7 @@
       "sprache": "de",
       "normKeys": [
         "BGG",
+        "SCHKG",
         "STPO"
       ],
       "bestand": "snapshot",
@@ -181902,6 +181911,7 @@
         "BGG",
         "BV",
         "EMRK",
+        "OR",
         "STGB",
         "STPO"
       ],
@@ -203788,6 +203798,7 @@
       "sprache": "de",
       "normKeys": [
         "AHVG",
+        "AHVV",
         "BGG",
         "FAMZG",
         "ZGB"
@@ -244278,6 +244289,7 @@
       "sprache": "fr",
       "normKeys": [
         "AHVG",
+        "AHVV",
         "ATSG",
         "BGG",
         "BV",

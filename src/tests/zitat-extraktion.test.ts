@@ -77,7 +77,10 @@ describe('extrahiereStatutRefs — Gesetzes-Zitate', () => {
     // Refactoring (§6.3) — mit ORDINAL_SUFFIX kamen die sieben Ordinalwörter
     // SEPTIES/OCTIES/NOVIES/NONIES/DECIES/UNDECIES/DUODECIES dazu. Die Sonde hat
     // hier genau ihren Zweck erfüllt: die Listen-Änderung musste erklärt werden.
-    expect(INVALID_LAW_CODES.size).toBe(167);
+    // Gegenprüfung R2/B2 (28.7.2026): 167 → 168. Mit der ital. Folge-Einzahl
+    // «seg.» kam 'SEG' als eigenständiges Stoppwort dazu (Symmetrie zu FF/SS/SEGG).
+    expect(INVALID_LAW_CODES.size).toBe(168);
+    expect(INVALID_LAW_CODES.has('SEG')).toBe(true);
   });
 
   it('IT-Bundesverfassung «Cost.» bleibt trotz Filter erhalten (Bug-Check Z1)', () => {
@@ -480,6 +483,76 @@ describe('Gegenprüfung R1/B1 — lateinische Ordnungszahlen ab «septies»', ()
     // Erwartet wird KEIN Treffer — insbesondere kein falscher Erlass «ABIS»/«DDECIES».
     expect(normen('Art. 66abis StGB')).toEqual([]);
     expect(normen('Art. 80ddecies IRSG')).toEqual([]);
+  });
+});
+
+// ── Gegenprüfung R2/B2 — Folge-Formen und Wort-Bereiche ─────────────────────
+//
+// FACHLICHE ÄNDERUNG, deklariert (§6.3). Vorher war jede dieser Formen ein
+// TOTALVERLUST: das unverstandene Rest-Token wurde law-Kandidat, nGross 0 →
+// der ganze Treffer fiel weg (reproduziert 28.7.2026, alle → []).
+describe('Gegenprüfung R2/B2 — Folge-Marker f./s./seg. und Wort-Bereiche', () => {
+  it('einbuchstabige Folge-Marker dt./frz. (amtlich: BGE 146 II 111 «Art. 50 f. DBG»)', () => {
+    expect(normen('Art. 133 f. StGB')).toEqual(['ART.133.STGB']);
+    expect(normen('art. 34 s. CL')).toEqual(['ART.34.CL']);
+    expect(normen('Art. 50 f. DBG')).toEqual(['ART.50.DBG']);
+  });
+
+  it('ital. Einzahl «seg.» neben der bestehenden Mehrzahl «segg.»', () => {
+    expect(normen('art. 90 seg. LTF')).toEqual(['ART.90.LTF']);
+    expect(normen('art. 90 segg. LTF')).toEqual(['ART.90.LTF']);
+  });
+
+  it('REGRESSION: der Buchstaben-Artikel bleibt der Buchstaben-Artikel', () => {
+    // «f» darf keinen echten Artikel-Buchstaben fressen — deshalb Pflicht-Punkt
+    // UND Pflicht-Leerzeichen am einbuchstabigen Marker.
+    expect(normen('art. 205f LIFD')).toEqual(['ART.205f.LIFD']);
+    // Zusammengeschrieben mit Punkt bleibt bewusst unerfasst (gepinnte Lücke):
+    // lieber gar kein Treffer als der falsche Artikel 205 statt 205f (§1).
+    expect(normen('Art. 205f. LIFD')).toEqual([]);
+  });
+
+  it('«S» (Satz) bleibt Satz-Marker, «ss» bleibt Folge-Marker', () => {
+    expect(normen('Art. 5 S. 2 StGB')).toEqual(['ART.5.STGB']);
+    expect(normen('Art. 5 Satz 2 StGB')).toEqual(['ART.5.STGB']);
+    expect(normen('Art. 39 ss. et 45 CO')).toEqual(['ART.39.CO', 'ART.45.CO']);
+    expect(normen('Art. 39 s. et 45 CO')).toEqual(['ART.39.CO', 'ART.45.CO']);
+  });
+
+  // ── Die Kollision «bis» (Ordinal) ⊥ «bis» (Bereichswort) ──────────────────
+  // DEKLARIERTE REGEL: Bereich genau dann, wenn nach «bis» eine ZIFFER folgt;
+  // sonst Ordinal. Beide Lesarten sind amtlich belegt, die Regel ist syntaktisch
+  // und deterministisch (§2) — sie schlägt nirgends nach, ob es den Artikel gibt.
+  it('Wort-Bereich dt. «bis» / frz. «à»', () => {
+    const zgb = extrahiereStatutRefs('Art. 12 bis 14 ZGB');
+    expect(zgb.length).toBe(1);
+    expect(zgb[0]).toMatchObject({ gesetz: 'ZGB', artikel: '12', artikelBis: '14' });
+    expect(extrahiereStatutRefs('Art. 14 bis 16 ELG')[0]).toMatchObject({ artikel: '14', artikelBis: '16' });
+    expect(extrahiereStatutRefs('art. 90 à 98 LTF')[0]).toMatchObject({ artikel: '90', artikelBis: '98' });
+  });
+
+  it('Ordinal bleibt Ordinal — auch getrennt geschrieben (amtliche Form)', () => {
+    expect(normen('Art. 179bis StGB')).toEqual(['ART.179bis.STGB']);
+    expect(normen('Art. 179 bis StGB')).toEqual(['ART.179bis.STGB']);
+    expect(normen('Art. 179bis Abs. 2 StGB')).toEqual(['ART.179bis.ABS.2.STGB']);
+  });
+
+  it('der Grenzfall: Ordinal-Wort MIT folgender Ziffer ist ein Bereich', () => {
+    const r = extrahiereStatutRefs('Art. 179 bis 179novies StGB');
+    expect(r.length).toBe(1);
+    expect(r[0]).toMatchObject({ artikel: '179', artikelBis: '179novies' });
+  });
+
+  it('Bereich + Kette am selben Code, und die Monotonie gilt weiter', () => {
+    expect(normen('Art. 3 bis 5 und 7 OR')).toEqual(['ART.3.OR', 'ART.7.OR']);
+    expect(extrahiereStatutRefs('Art. 3 bis 5 und 7 OR')[0].artikelBis).toBe('5');
+    // absteigend gelesen → Endpunkt verworfen, Start-Artikel bleibt
+    expect(extrahiereStatutRefs('Art. 20 bis 10 BV')[0].artikelBis).toBeNull();
+  });
+
+  it('kein neuer Falsch-Positiver: Bereichswort vor Nicht-Erlass', () => {
+    expect(normen('Art. 5 bis 7 des Gesetzes')).toEqual([]);
+    expect(normen('Art. 5 bis 10 Prozent')).toEqual([]);
   });
 });
 

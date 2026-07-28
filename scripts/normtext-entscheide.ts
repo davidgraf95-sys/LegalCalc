@@ -14,7 +14,9 @@ import {
   holeEntscheidOCL, enumeriereNeueste, enumeriereNeuesteAlle, citedRefZuId, enumeriereBge, enumeriereBgeBaender, holeBgeLeitentscheid,
 } from './normtext/adapter-entscheide';
 import { schreibeKorpus, ladeBestandSnapshots } from './normtext/entscheide-schreiben';
-import { normKeysVonSnapshot, remapNormKeys, undeklarierteAltKeys } from './normtext/entscheide-mapping';
+import {
+  normKeysVonSnapshot, remapNormKeys, undeklarierteAltKeys, KORROBORATIONS_SCHWELLE,
+} from './normtext/entscheide-mapping';
 import { sha256EntscheidBloecke } from './normtext/sha-entscheide';
 import { holeRegesteSprachfassungen, holeClirHtml, parseClirUrteilskopf, bgeRefZuClirId } from './normtext/clir-regeste';
 import type { EntscheidSnapshot } from '../src/lib/rechtsprechung/typen';
@@ -324,6 +326,10 @@ async function main() {
     console.log(`[remap] mit ≥1 normKey: vorher ${vorher} → nachher ${nachher}`);
     console.log(`[remap] alt-erhalten: ${altErhaltenKeys} Keys über ${altErhaltenSnaps} Snapshots — alle deklariert (${ALT_ERHALTEN_ERWARTET.size} Eintrag/Einträge in ALT_ERHALTEN_ERWARTET).`);
     console.log(`[remap] geschrieben: ${res.anzahl} Manifest-Einträge, ${res.normBuckets} Norm-Buckets, ${res.artikelBuckets} Artikel-Buckets, ${res.shards} Shards.`);
+    // §6.7: die Wirkung der Korroborations-Regel (Gegenprüfung R2/B1) wird
+    // GEZÄHLT ausgewiesen, nicht bloss behauptet. Springt die Zahl gegenüber dem
+    // Vorlauf, ist entweder die Extraktion oder die Regel gewandert.
+    console.log(`[remap] Artikel-Korroboration: ${res.verworfeneSingletons} Fliesstext-Singletons verworfen (weder in zitierteNormen noch Regeste, < ${KORROBORATIONS_SCHWELLE} Nennungen im übrigen Text).`);
     return;
   }
 

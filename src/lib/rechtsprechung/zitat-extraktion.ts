@@ -127,16 +127,52 @@ const ORDINAL_SUFFIX =
 // führenden «a». «Art. 66abis StGB» ergibt darum bis heute GAR keinen Treffer.
 // Umfang am Entscheid-Korpus: 517 Nennungen (art. 66abis, 34abis, 41cbis,
 // 314abis, 16cbis, 712ibis, 80dbis …), also grösser als die hier geschlossene
-// Ordinal-Lücke. Sie gehört in einen EIGENEN Schritt, weil sie eine andere
-// Risikoklasse trägt: die belegte Schreibung mit Leerzeichen («art. 34a bis»)
-// kollidiert mit dem deutschen Bereichswort «bis» («Art. 12 bis 14 ZGB») und
-// braucht eine eigene adversariale FP-Analyse. Die hier vorgenommene
-// Serien-Erweiterung ändert an dieser Lücke nichts (geprüft: «Art. 80ddecies»
-// bleibt vorher wie nachher ohne Treffer).
-const ARTIKEL_TOKEN = `\\d+(?:\\s*${ORDINAL_SUFFIX}(?![a-z])|[a-z](?![a-z]))?`;
+// Ordinal-Lücke. Sie bleibt eine test-gepinnte Lücke und gehört in einen EIGENEN
+// Schritt: die belegte Schreibung mit Leerzeichen («art. 34a bis») braucht eine
+// eigene adversariale FP-Analyse gegen das Bereichswort «bis», und die
+// Verbund-Form ändert zusätzlich die Sortier-/Anzeige-Ordnung des Artikel-Index.
+//
+// ── ORDINAL «bis» ⊥ BEREICHSWORT «bis» (Gegenprüfung R2/B2, 28.7.2026) ────────
+// Beide Bedeutungen stehen im selben Textfenster hinter derselben Artikelnummer:
+//   «Art. 179 bis StGB»          → ORDINAL (Art. 179bis StGB, geltendes Recht;
+//                                  die getrennte Schreibung ist amtlich belegt)
+//   «Art. 179 bis 179novies StGB» → BEREICH (Art. 179–179novies)
+// DETERMINISTISCHE ENTSCHEIDUNGSREGEL (§2), hier und in ARTIKEL_BEREICH identisch
+// verankert: **«bis» ist Bereichswort genau dann, wenn ihm eine ZIFFER folgt;
+// sonst Ordinal.** Umgesetzt als negativer Lookahead `(?!\s*\d)` — und zwar NUR
+// am GETRENNT geschriebenen Ordinal-Zweig. Der angehängte Zweig («179bis») ist
+// nie mehrdeutig und behält darum keinen Lookahead: sonst kippte «Art. 12bis 3 CP»
+// vom Treffer in den Totalverlust (Rest-Token «bis» wird law-Kandidat, nGross 0).
+// Die Regel ist bewusst syntaktisch, nicht semantisch: kein Nachschlagen, ob der
+// Zielartikel existiert (das wäre eine zweite Wahrheit neben dem Register, §5).
+const ARTIKEL_TOKEN =
+  `\\d+(?:${ORDINAL_SUFFIX}(?![a-z])` +
+  `|\\s+${ORDINAL_SUFFIX}(?![a-z])(?!\\s*\\d)` +
+  `|[a-z](?![a-z]))?`;
 const ABSATZ_TOKEN = ARTIKEL_TOKEN;
-// Qualifikatoren zwischen Absatz und Gesetzes-Code
-const FOLGE_MARKER = '(?:ff|ss|segg)\\.?'; // «und folgende»
+// Qualifikatoren zwischen Absatz und Gesetzes-Code: «und folgende».
+//
+// ZWEI KLASSEN (Gegenprüfung R2/B2, 28.7.2026), weil sie verschiedene Risiken
+// tragen. Vorher kannte die Liste nur `ff|ss|segg` — die dt. Einzahl «f.», die
+// frz. «s.» und die ital. «seg.» fehlten. Das kostete nicht bloss den Zusatz,
+// sondern das GANZE Zitat: das unverstandene Rest-Token wird law-Kandidat,
+// nGross 0 → Treffer verworfen. Reproduziert: 'Art. 133 f. StGB' → [],
+// 'art. 34 s. CL' → []. Amtlich belegt: BGE 146 II 111 zitiert «Art. 50 f. DBG»
+// (Direkte Bundessteuer) — DBG/50 fehlte im Artikel-Index vollständig.
+//
+//  (a) MEHRBUCHSTABIG (ff/segg/seg/ss) — wie bisher mit optionalem Punkt und
+//      optionalem Leerzeichen davor («Art. 133ff. StGB» bleibt gültig). «segg»
+//      steht VOR «seg», sonst bliebe bei «segg.» ein «g» stehen (lett/let-Klasse).
+//  (b) EINBUCHSTABIG (f/s) — nur mit PFLICHT-PUNKT **und** PFLICHT-LEERZEICHEN.
+//      Der Punkt hält «s» vom Satz-Marker-Terrain fern (SUB_MARKER kennt «S» für
+//      «Satz», Z. 148); das Leerzeichen hält «f» von den echten Buchstaben-
+//      Artikeln fern: «art. 205f LIFD» MUSS weiterhin LIFD/205f ergeben, und
+//      ohne Leerzeichen-Pflicht läse «Art. 205f. LIFD» (Satzpunkt) plötzlich
+//      «Art. 205 f.» → LIFD/205, also einen ANDEREN Artikel. Eine falsche
+//      Artikel-Zuordnung ist schlimmer als eine Lücke (§1) — die zusammen-
+//      geschriebene Form bleibt darum bewusst unerfasst und test-gepinnt.
+const FOLGE_MARKER = '(?:ff|segg|seg|ss)\\.?';
+const FOLGE_MARKER_EIN = '[fs]\\.';
 // Untergliederungs-Marker. F2-V3: «Nr» (Staatsvertrags-Standard «Art. 34 Nr. 3
 // LugÜ») VOR «n» in der Alternation, damit «Nr» ganz konsumiert wird statt «n»+«r»
 // — sonst greift «Nr» als law-Kandidat und der Erlass fällt weg (belegt 150_III_423).
@@ -200,11 +236,23 @@ const CODE_ENDE = '(?![A-Za-z0-9_\\u00C0-\\u024F])';
 
 // Ein einzelnes Artikel-Glied: Zahl/Bereich (F2-V10) + optional Abs./ff. + bis zu
 // drei verkettete Sub-Marker (F2-V2: «lit. b Ziff. 5»).
-const ARTIKEL_BEREICH = `${ARTIKEL_TOKEN}(?:\\s*[–-]\\s*${ARTIKEL_TOKEN})?`;
+//
+// BEREICHS-TRENNER (Gegenprüfung R2/B2, 28.7.2026): neben den Strichen (–/-) auch
+// die WORT-Formen «bis» (dt.) und «à» (frz.). Ohne sie war «Art. 14 bis 16 ELG» /
+// «art. 90 à 98 LTF» nicht bloss ohne Bereichs-Endpunkt, sondern ein TOTALVERLUST
+// (reproduziert: beide → []), weil das Bereichswort als law-Kandidat gelesen wird.
+// Beidseitiges Pflicht-Leerzeichen: «bis» ohne Trenner ist immer das Ordinal
+// («179bis»), und ein ziffern-geklebtes «à» gibt es nicht. Die Auflösung der
+// Kollision mit dem Ordinal steht bei ARTIKEL_TOKEN (Ziffer-Lookahead) — beide
+// Stellen tragen dieselbe Regel, darum EINE Konstante (§5).
+// Ital. «a» ist NICHT aufgenommen: einbuchstabig, homograph zur Präposition und
+// am Korpus ohne belegten Bereichs-Fall — test-gepinnte Lücke, keine Vermutung (§7).
+const BEREICHS_TRENNER = '(?:\\s*[–-]\\s*|\\s+(?:bis|à)\\s+)';
+const ARTIKEL_BEREICH = `${ARTIKEL_TOKEN}(?:${BEREICHS_TRENNER}${ARTIKEL_TOKEN})?`;
 const ARTIKEL_GLIED =
   `${ARTIKEL_BEREICH}` +
   `(?:\\s*${ABSATZ_MARKER}\\s*${ABSATZ_TOKEN})?` +
-  `(?:\\s*${FOLGE_MARKER})?` +
+  `(?:\\s*${FOLGE_MARKER}|\\s+${FOLGE_MARKER_EIN})?` +
   // Sub-Marker: der Token-Abschluss `(?![A-Za-z0-9])` (Pendant zum alten Pflicht-
   // `\s+`) verhindert, dass ein Marker-Buchstabe in den Code frisst — z.B. dass
   // «S» (Satz) das «St» von «StGB» konsumiert und nur «GB» als law übrig bleibt.
@@ -236,7 +284,7 @@ const KETTEN_TRENNER = /\s*[,&]\s*|\s+(?:und|et|sowie|bzw\.?|e)\s+/i;
 // Kopf eines Glieds: Start-Artikel (+ optionaler Bereich, + optionaler Absatz).
 // Sub-Marker/ff. werden bewusst NICHT gefangen (fliessen nie in den Norm-Key).
 const GLIED_KOPF = new RegExp(
-  `^\\s*(?<article>${ARTIKEL_TOKEN})(?:\\s*[–-]\\s*(?<articleBis>${ARTIKEL_TOKEN}))?` +
+  `^\\s*(?<article>${ARTIKEL_TOKEN})(?:${BEREICHS_TRENNER}(?<articleBis>${ARTIKEL_TOKEN}))?` +
     `(?:\\s*${ABSATZ_MARKER}\\s*(?<paragraph>${ABSATZ_TOKEN}))?`,
   'i',
 );
@@ -262,10 +310,19 @@ const GLIED_KOPF = new RegExp(
 //     eigenen ABSATZ-Marker der Fortsetzung («… und 106 Abs. 2 BGG» = Art. 106). Ein
 //     blosser Sub-Marker der Fortsetzung («… und 3 lit. c EMRK») zählt NICHT — er ist
 //     Unter-Gliederung, kein neuer Artikel; sonst bliebe das Phantom ART.3.EMRK.
-const GLIED_ABSATZ_MARKER = new RegExp(`${ABSATZ_MARKER}\\s*${ABSATZ_TOKEN}`, 'i');
+//  3) WORTANFANG-PFLICHT `\b` vor beiden Markern (Gegenprüfung R2/B2, 28.7.2026).
+//     Ein Marker ist ein WORT, kein Buchstabe irgendwo in einem Wort. Ohne den
+//     Anker wurde das neue Bereichswort «bis» zum Opfer genau der Falle, die
+//     Asymmetrie 1 für «ss» beschreibt: in «Art. 3 bis 5 und 7 OR» las der
+//     Sub-Prüfer das «s» von «bi|s» als Satz-Marker («s» + Whitespace + «5»),
+//     hielt das Glied für eine offene Ziffern-Aufzählung und verwarf das
+//     Kettenglied «7» — der Bereich wurde erkannt, der Folgeartikel ging
+//     verloren (empirisch: → nur OR/3, ohne OR/7). `\b` ist eine reine
+//     Verschärfung: alle echten Marker stehen nach Whitespace oder am Anfang.
+const GLIED_ABSATZ_MARKER = new RegExp(`\\b${ABSATZ_MARKER}\\s*${ABSATZ_TOKEN}`, 'i');
 // Sub-Marker MIT Pflicht-Trenner (`.`/Whitespace) — schliesst die FOLGE-«ss»-Falle.
 const GLIED_SUB_MARKER = new RegExp(
-  `(?:${SUB_MARKER})(?:\\.\\s*|\\s+)${SUB_TOKEN}(?![A-Za-z0-9])`,
+  `\\b(?:${SUB_MARKER})(?:\\.\\s*|\\s+)${SUB_TOKEN}(?![A-Za-z0-9])`,
   'i',
 );
 /** Trägt ein Glied einen eigenen Absatz-Marker? (Signal «eigener Artikel»). */
@@ -354,7 +411,11 @@ export const INVALID_LAW_CODES: ReadonlySet<string> = new Set([
   // «ART.179.SEPTIES» (Gegenprüfung R1/B1, 28.7.2026).
   'BIS', 'TER', 'QUATER', 'QUINQUIES', 'SEXIES',
   'SEPTIES', 'OCTIES', 'NOVIES', 'NONIES', 'DECIES', 'UNDECIES', 'DUODECIES',
-  'FF', 'SS', 'SEGG', 'ZIFF', 'ZIFFER', 'LIT', 'BST', 'BUCHST', 'SATZ',
+  // Folge-Marker als eigenständige Tokens (Symmetrie zu FOLGE_MARKER, wie bei den
+  // Ordinalen): 'SEG' ist mit der ital. Einzahl «seg.» dazugekommen (R2/B2).
+  // Die EINBUCHSTABIGEN 'F'/'S' brauchen keinen Eintrag — GESETZ_CODE verlangt
+  // mindestens zwei Zeichen, ein Ein-Buchstaben-Token wird nie law-Kandidat.
+  'FF', 'SS', 'SEGG', 'SEG', 'ZIFF', 'ZIFFER', 'LIT', 'BST', 'BUCHST', 'SATZ',
   // ── Deutsch: Artikel, Präpositionen, Konjunktionen ──
   'AB', 'AM', 'AN', 'AUS', 'BEI', 'BZW', 'DA', 'DAS', 'DEM', 'DEN',
   'DER', 'DES', 'DIE', 'DIES', 'DURCH', 'EIN', 'EINE', 'EINEM',
@@ -433,15 +494,29 @@ function artikelNummer(token: string): number {
   return m ? parseInt(m[0], 10) : NaN;
 }
 
+/** StatutRef samt Zahl der Roh-Vorkommen derselben Normalform im Text. */
+export interface StatutRefZahl extends StatutRef {
+  /** Wie oft die Normalform im Text vorkam (≥ 1). */
+  anzahl: number;
+}
+
 /**
- * Extrahiert Gesetzes-Zitate aus Fliesstext (mit bewahrtem Artikel-Token).
- * Dedupliziert über die Normalform; Reihenfolge = erstes Vorkommen.
+ * Wie `extrahiereStatutRefs`, aber mit der Zahl der Roh-Vorkommen je Normalform.
+ *
+ * WARUM ES DIESE VARIANTE GIBT (Gegenprüfung R2/B1, 28.7.2026): die Dedup-Ausgabe
+ * beantwortet die Frage «kommt die Norm vor?», nicht «wie oft?». Die Korroborations-
+ * Regel des Artikel-Index (`artikelSchluesselVonSnapshot`) braucht aber genau das
+ * zweite, um eine einmalige Nennung im LITERATUR-Apparat von einer angewandten
+ * Norm zu unterscheiden. Zählen heisst hier: wie oft ein Ketten-Glied dieselbe
+ * Normalform erzeugt hat — dieselbe Zerlegung, dieselbe Reihenfolge, EINE
+ * Implementierung (§5). `extrahiereStatutRefs` ist die Projektion davon und bleibt
+ * verhaltensgleich (gleiche Objekte, gleiche Reihenfolge, `anzahl` weggelassen).
  */
-export function extrahiereStatutRefs(text: string): StatutRef[] {
+export function extrahiereStatutRefsMitAnzahl(text: string): StatutRefZahl[] {
   if (!text) return [];
 
-  const refs: StatutRef[] = [];
-  const gesehen = new Set<string>();
+  const refs: StatutRefZahl[] = [];
+  const gesehen = new Map<string, StatutRefZahl>();
 
   for (const match of text.matchAll(STATUTE_PATTERN)) {
     const g = match.groups!;
@@ -490,12 +565,25 @@ export function extrahiereStatutRefs(text: string): StatutRef[] {
       if (artikelBis && !(artikelNummer(artikelBis) >= artikelNummer(artikel))) artikelBis = null;
 
       const normalisiert = normalisiereStatut(artikel, absatz, gesetz);
-      if (gesehen.has(normalisiert)) continue;
-      gesehen.add(normalisiert);
-      refs.push({ raw, gesetz, artikel, artikelBis, absatz, normalisiert });
+      const bisher = gesehen.get(normalisiert);
+      if (bisher) { bisher.anzahl += 1; continue; }
+      const ref: StatutRefZahl = { raw, gesetz, artikel, artikelBis, absatz, normalisiert, anzahl: 1 };
+      gesehen.set(normalisiert, ref);
+      refs.push(ref);
     }
   }
   return refs;
+}
+
+/**
+ * Extrahiert Gesetzes-Zitate aus Fliesstext (mit bewahrtem Artikel-Token).
+ * Dedupliziert über die Normalform; Reihenfolge = erstes Vorkommen.
+ */
+export function extrahiereStatutRefs(text: string): StatutRef[] {
+  return extrahiereStatutRefsMitAnzahl(text).map(
+    ({ raw, gesetz, artikel, artikelBis, absatz, normalisiert }) =>
+      ({ raw, gesetz, artikel, artikelBis, absatz, normalisiert }),
+  );
 }
 
 /**

@@ -18,6 +18,26 @@
 // stilles Verwerfen an der Extraktion, weil ein verworfenes Zitat nirgends mehr
 // sichtbar ist und die Lücke niemand bemerkt (§8/§6.7).
 //
+// ── ZWEI EBENEN, ZWEI SEMANTIKEN (Gegenprüfung R2/B1, 28.7.2026) ─────────────
+// Der voranstehende Absatz gilt unverändert für die ERLASS-Ebene
+// (`normKeysVonSnapshot`): dort heisst ein Treffer «dieser Entscheid NENNT den
+// Erlass», Vollständigkeit ist der Zweck, Beiläufigkeit der Preis.
+//
+// Die ARTIKEL-Ebene (`artikelSchluesselVonSnapshot`) sagt etwas anderes. Sie
+// trägt in der UI die Überschrift «Bundesgerichtsentscheide zu Art. X» — ein
+// Versprechen über den Inhalt. Dort gilt seit R2 eine KORROBORATIONS-REGEL:
+// statutes ODER Regeste ODER ≥2 Nennungen im übrigen Fliesstext. Anlass war ein
+// Literatur-Phantom (BGE 150 IV 10 unter MSTG/171c, Artikel nur im Buchtitel
+// eines Kommentars genannt). Die Regel steht vollständig samt Messung an
+// `artikelSchluesselMitBefund`.
+//
+// Die Divergenz ist gewollt und wird hier benannt, damit sie niemand später als
+// Inkonsistenz «aufräumt»: Vollständigkeit auf der Erlass-Ebene und Präzision
+// auf der Artikel-Ebene sind zwei verschiedene Aussagen; eine gemeinsame Regel
+// müsste eine davon aufgeben (§1). Eine Nennung unterhalb der Artikel-Schwelle
+// geht darum NICHT verloren — sie bleibt auf der Erlass-Ebene sichtbar, und die
+// Zahl der verworfenen Singletons weist der `--remap`-Lauf aus (§6.7).
+//
 // ── W2·6-NKEY (Roadmap, Dekret David 27.7.2026) ──────────────────────────────
 // Die Abkürzungs-Tabelle war eine HAND-Whitelist mit 26 Einträgen — sie kannte
 // z.B. IPRG nicht, obwohl der Erlass im Register steht und BGE 152 III 137 ihn
@@ -55,7 +75,9 @@
 
 import { ABK_ALIASE } from '../../src/lib/normtext/abk-aliase.generated';
 import { ERLASS_REGISTER, type Rechtsgebiet } from '../../src/lib/normtext/register';
-import { extrahiereStatutRefs, INVALID_LAW_CODES } from '../../src/lib/rechtsprechung/zitat-extraktion';
+import {
+  extrahiereStatutRefs, extrahiereStatutRefsMitAnzahl, INVALID_LAW_CODES,
+} from '../../src/lib/rechtsprechung/zitat-extraktion';
 import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
 
 /**
@@ -370,23 +392,45 @@ export function abkVonStatut(statut: string): string | null {
  * Rein (§2): gleiche Eingabe → gleicher String.
  */
 export function fliesstextVon(snap: EntscheidSnapshot): string {
+  return zusammen([...regesteTeile(snap), ...blockTeile(snap.abschnitte), ...blockTeile(snap.auszugAbschnitte)]);
+}
+
+/** Gemeinsame Endstufe aller Text-Assemblagen: leere Teile weg, mit `\n` fügen. */
+function zusammen(teile: readonly (string | undefined)[]): string {
+  return teile.filter((t) => typeof t === 'string' && t.trim() !== '').join('\n');
+}
+
+/** Regeste-Anteil (flach + alle Sprachfassungen inkl. «Regeste a/b/c»), in Reihenfolge. */
+function regesteTeile(snap: EntscheidSnapshot): string[] {
   const teile: string[] = [];
   const reg = snap.regeste;
-  if (reg) {
-    teile.push(reg.text);
-    for (const f of reg.sprachfassungen ?? []) {
-      teile.push(f.kopf);
-      teile.push(...(f.absaetze ?? []));
-      for (const w of f.weitereRegesten ?? []) {
-        teile.push(w.kopf);
-        teile.push(...(w.absaetze ?? []));
-      }
+  if (!reg) return teile;
+  teile.push(reg.text);
+  for (const f of reg.sprachfassungen ?? []) {
+    teile.push(f.kopf);
+    teile.push(...(f.absaetze ?? []));
+    for (const w of f.weitereRegesten ?? []) {
+      teile.push(w.kopf);
+      teile.push(...(w.absaetze ?? []));
     }
   }
-  for (const a of [...(snap.abschnitte ?? []), ...(snap.auszugAbschnitte ?? [])]) {
-    for (const b of a.bloecke ?? []) teile.push(b.text);
-  }
-  return teile.filter((t) => typeof t === 'string' && t.trim() !== '').join('\n');
+  return teile;
+}
+
+/** Block-Texte einer Abschnittsfolge, in Reihenfolge. */
+function blockTeile(abschnitte: EntscheidSnapshot['abschnitte'] | undefined): string[] {
+  const teile: string[] = [];
+  for (const a of abschnitte ?? []) for (const b of a.bloecke ?? []) teile.push(b.text);
+  return teile;
+}
+
+/**
+ * NUR die Regeste eines Snapshots — der amtliche LEITSATZ. Eine dort genannte Norm
+ * ist per Definition die Norm, um die es im Entscheid geht; sie braucht keine
+ * weitere Korroboration (Regel (ii) in `artikelSchluesselVonSnapshot`).
+ */
+export function regesteTextVon(snap: EntscheidSnapshot): string {
+  return zusammen(regesteTeile(snap));
 }
 
 /**
@@ -480,22 +524,153 @@ export function undeklarierteAltKeys(
 }
 
 /**
+ * KORROBORATIONS-REGEL der ARTIKEL-Ebene (Gegenprüfung R2/B1, Entscheid
+ * Orchestrator 28.7.2026 — §1 Präzision vor Abdeckung, aber NUR hier).
+ *
+ * ── Der Befund ───────────────────────────────────────────────────────────────
+ * Die UI-Überschrift der Artikel-Ebene lautet «Bundesgerichtsentscheide zu
+ * Art. X». Das ist ein Versprechen über den INHALT des Entscheids, nicht über
+ * das Vorkommen einer Zeichenfolge. Die vollständige Fliesstext-Erkennung
+ * (Baustein d) hält es nicht: BGE 150 IV 10 stand unter MSTG/171c, obwohl
+ * «171c» im ganzen Entscheid AUSSCHLIESSLICH im Literaturnachweis vorkommt
+ * («MARCEL ALEXANDER NIGGLI, Rassendiskriminierung, Ein Kommentar zu
+ * Art. 261bis StGB und Art. 171c MStG, 2a ed. 2007») — das Gericht wendet
+ * Art. 171c MStG nirgends an. Ein Literatur-Phantom im Artikel-Index ist keine
+ * Lücke, sondern eine falsche Auskunft (§8).
+ *
+ * ── Die Regel (deterministisch, §2) ──────────────────────────────────────────
+ * Ein (Erlass, Artikel)-Paar kommt in den Index, wenn EINE der drei Bedingungen
+ * trägt:
+ *   (i)  es steht in `zitierteNormen` (statutes-Pfad) — eine Dritt-Extraktion,
+ *        die nur ANGEWANDTE Normen ausweist, nie den Literaturapparat;
+ *   (ii) es steht in der REGESTE (amtlicher Leitsatz, alle Sprachfassungen) —
+ *        dort steht per Definition die tragende Norm;
+ *   (iii) sonst: mindestens ZWEI Vorkommen im übrigen Fliesstext. Ein
+ *        Literaturnachweis nennt den Artikel im Buchtitel EINMAL; eine
+ *        angewandte Norm wird aufgeworfen, subsumiert und im Ergebnis erneut
+ *        genannt.
+ *
+ * ── Zwei bewusste Abweichungen vom Wortlaut des Auftrags, beide gemessen ─────
+ * (A) GEZÄHLT WIRD DER ARTIKEL-SCHLÜSSEL, NICHT DIE NORMALFORM. Die Normalform
+ *     trennt nach Absatz (ART.6.ABS.1.EMRK ≠ ART.6.ABS.3.EMRK). Ein Entscheid,
+ *     der «Art. 6 Abs. 1 EMRK» und «Art. 6 Abs. 3 lit. d EMRK» je einmal
+ *     erörtert, hat sich zweimal mit Art. 6 EMRK befasst — die Zähleinheit muss
+ *     die Einheit des Index sein, sonst misst die Regel etwas anderes als sie
+ *     entscheidet. Gemessen am Korpus: Normalform-Zählung verwürfe zusätzlich
+ *     2'383 (Snapshot, Artikel)-Paare, darunter EMRK/6 aus BGE 149 I 343 — einen
+ *     der drei in der Gegenprüfung als ECHT bestätigten Fälle.
+ * (B) VOLLTEXT UND BGE-AUSZUG WERDEN NICHT ADDIERT, SONDERN MAXIMIERT. Bei 1'248
+ *     der 5'093 Snapshots trägt `abschnitte` das vollständige Urteil UND
+ *     `auszugAbschnitte` den amtlichen Sammlungs-Auszug — zwei Darstellungen
+ *     DESSELBEN Textes. Eine Addition verdoppelt jede Nennung und macht die
+ *     Schwelle wirkungslos: genau das Literatur-Phantom MSTG/171c steht in
+ *     beiden Fassungen je einmal und käme summiert auf 2 (nachgestellt). Der
+ *     Auszug ist kein zweiter Beleg, sondern derselbe — darum das Maximum.
+ *
+ * ── Reichweite: NUR die Artikel-Ebene ────────────────────────────────────────
+ * `normKeysVonSnapshot` (ERLASS-Ebene) bleibt UNVERÄNDERT. Die beiden Ebenen
+ * haben verschiedene Semantik, und das ist Absicht, nicht Nachlässigkeit:
+ *   • Erlass-Ebene = «dieser Entscheid NENNT den Erlass» — bewusst vollständig
+ *     und beiläufig (Dekret David 27.7.2026, Modul-Kopf oben); das BGG steht in
+ *     rund 85 % der Snapshots, ohne dass es um das BGG ginge. Sie speist
+ *     Verzahnung und Abdeckungs-Messung, wo Vollständigkeit der Zweck ist.
+ *   • Artikel-Ebene = «dieser Entscheid SAGT etwas zu Art. X» — sie speist eine
+ *     kuratierte Leitfall-Liste mit einer inhaltlichen Überschrift.
+ * Eine Nennung, die die Artikel-Schwelle nicht nimmt, verschwindet deshalb nicht
+ * aus dem Korpus; sie bleibt auf der Erlass-Ebene sichtbar. Wer beide Ebenen
+ * gleichschaltete, müsste eine der beiden Aussagen aufgeben (§1).
+ *
+ * ── WAS DIE REGEL KOSTET, GEMESSEN UND UNGEGLÄTTET (§8) ──────────────────────
+ * Wirkung am committeten Korpus (5'093 Snapshots, 28.7.2026):
+ *   (Snapshot, Artikel)-Paare  65'003 → 24'589  (−40'414, −62 %)
+ *   Artikel-Buckets (distinct)  5'436 →  4'103  (−1'333)
+ * Verteilung der Verwerfung nach Erlass: BGG 37.7 % · StPO 18.5 % · StGB 6.3 % ·
+ * ZPO 5.9 % · ATSG 5.4 % · BV 4.5 % — also überwiegend die prozessualen
+ * Standard-Zitate, die der Modul-Kopf als «beiläufig» beschreibt. Median 7
+ * verworfene Paare je Snapshot, p90 14, max 56.
+ *
+ * ZWEI STICHPROBEN, klassifiziert am Text — und sie sagen NICHT dasselbe:
+ *  • Die 10 ALPHABETISCH ERSTEN verworfenen Paare: 9 Katalog (Eintretens-,
+ *    Kognitions-, Kosten- und Rechtsmittelbelehrungs-Formeln), 1 Literatur
+ *    (BGE 146 III 106, ZGB/517 — genannt nur in «KÜNZLE, Berner Kommentar, 2011,
+ *    N. 508/509 zu Art. 517-518 ZGB»), 0 echt angewendet. Diese Stichprobe stützt
+ *    die Regel — sie stammt aber aus nur ZWEI Entscheiden und trifft deren
+ *    Eintretens-Erwägung; sie ist ein Klumpen, kein Querschnitt.
+ *  • Die 10 GLEICHVERTEILT gezogenen (jedes n/10-te Paar der sortierten Liste):
+ *    5 Katalog, 5 ECHT ANGEWENDET — darunter ATSG/17 («sind die in Art. 17 ATSG
+ *    verankerten revisionsrechtlichen Grundsätze sinngemäss anwendbar»),
+ *    OR/30 (Subsumtion der Furchterregung), ZPO/138 (Zustellfiktion, tragend für
+ *    die Fristberechnung), EMRK/6 (Grundlage des Replikrechts, BGE 148 III 161).
+ *
+ * DARAUS FOLGT EHRLICH: die Schwelle trifft die Literatur-Phantome, aber sie
+ * trifft sie nicht ALLEIN. Auf dem verworfenen Teil liegt im Querschnitt eine
+ * Fehlerrate in der Grössenordnung von 50 % — eine einmal, aber tragend
+ * erörterte Norm ist von einer einmal beiläufig genannten durch blosses ZÄHLEN
+ * nicht unterscheidbar. Belegt an einem der drei Fälle, die die Gegenprüfung
+ * ausdrücklich als «echt» bestätigt hatte: EMRK/6 in BGE 149 I 343 (das Gericht
+ * verneint dort die Anwendbarkeit von Art. 6 Ziff. 1 EMRK auf Steuerverfahren
+ * und weist die darauf gestützten Rügen ab — eine Sachaussage) steht genau
+ * EINMAL im Text und fällt darum durch. Das ist kein Umsetzungsfehler, sondern
+ * die Grenze jeder Häufigkeits-Regel; es steht hier, damit die nächste Runde
+ * über die richtige Frage entscheidet — nicht über die Schwelle, sondern über
+ * ein Kontext-Signal (Literatur-Klammer statt Erwägungstext). Dieser Ausbau ist
+ * bewusst NICHT Teil dieses Schritts.
+ */
+export function artikelSchluesselMitBefund(snap: EntscheidSnapshot): {
+  schluessel: Set<string>; verworfen: string[];
+} {
+  const schluessel = new Set<string>();
+  const schl = (gesetz: string, artikel: string): string | null => {
+    const rk = normKeyFuerAbk(gesetz);
+    return rk ? `${rk}/${artikel}` : null;
+  };
+
+  // (i) + (ii): unbedingt zählende Zweige.
+  for (const t of [(snap.zitierteNormen ?? []).join('\n'), regesteTextVon(snap)]) {
+    for (const ref of extrahiereStatutRefs(t)) {
+      const k = schl(ref.gesetz, ref.artikel);
+      if (k) schluessel.add(k);
+    }
+  }
+
+  // (iii): übriger Fliesstext — Vorkommen je Artikel-Schlüssel, Volltext und
+  // BGE-Auszug getrennt gezählt und MAXIMIERT (siehe Abweichung (B)).
+  const zaehlung = new Map<string, number>();
+  for (const teil of [blockTeile(snap.abschnitte), blockTeile(snap.auszugAbschnitte)]) {
+    const proTeil = new Map<string, number>();
+    for (const ref of extrahiereStatutRefsMitAnzahl(zusammen(teil))) {
+      const k = schl(ref.gesetz, ref.artikel);
+      if (k) proTeil.set(k, (proTeil.get(k) ?? 0) + ref.anzahl);
+    }
+    for (const [k, n] of proTeil) zaehlung.set(k, Math.max(zaehlung.get(k) ?? 0, n));
+  }
+
+  const verworfen: string[] = [];
+  for (const [k, n] of zaehlung) {
+    if (schluessel.has(k)) continue;
+    if (n >= KORROBORATIONS_SCHWELLE) schluessel.add(k);
+    else verworfen.push(k);
+  }
+  return { schluessel, verworfen: verworfen.sort() };
+}
+
+/**
+ * Wie oft ein Artikel im übrigen Fliesstext genannt sein muss, wenn ihn weder
+ * `zitierteNormen` noch die Regeste tragen. 2 = «einmal ist ein Literaturzitat,
+ * zweimal ist eine Erörterung». Als Konstante, damit die Schwelle EINE Stelle
+ * hat und im Test benannt werden kann (§5).
+ */
+export const KORROBORATIONS_SCHWELLE = 2;
+
+/**
  * (Register-key, Artikel-Token)-Paare, die ein Snapshot zitiert — 'OR/41'-Form,
- * deduppt. Quelle sind die Roh-statutes UND der Fliesstext (Baustein d). Der
- * Ausschluss mehrdeutiger Kürzel wirkt bereits in `normKeyFuerAbk`.
+ * deduppt, nach der Korroborations-Regel (siehe `artikelSchluesselMitBefund`).
  * EINE Stelle (§5): Live-Index (baueArtikelIndex) und Oracle-Tor
  * (check-rangliste-oracle) rechnen mit derselben Funktion, sonst driftet das
  * Tor von dem weg, was es prüfen soll.
  */
 export function artikelSchluesselVonSnapshot(snap: EntscheidSnapshot): Set<string> {
-  const out = new Set<string>();
-  const text = (snap.zitierteNormen ?? []).join('\n') + '\n' + fliesstextVon(snap);
-  for (const ref of extrahiereStatutRefs(text)) {
-    const rk = normKeyFuerAbk(ref.gesetz);
-    if (!rk) continue;
-    out.add(`${rk}/${ref.artikel}`);
-  }
-  return out;
+  return artikelSchluesselMitBefund(snap).schluessel;
 }
 
 // legal_area (OCL) → Sachgebiet-Achse der Gesetze.
