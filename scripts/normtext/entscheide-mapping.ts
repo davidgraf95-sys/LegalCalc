@@ -4,21 +4,131 @@
 // DEKLARIERT. statutes[] sind Roh-Drittextraktion (NICHT verifiziert) → nur als
 // «einschlägig genannt» werten, der Status bleibt 'maschinell'.
 
-import type { Rechtsgebiet } from '../../src/lib/normtext/register';
+import { ERLASS_REGISTER, type Rechtsgebiet } from '../../src/lib/normtext/register';
+import { FEDLEX_ABK } from './fedlex-abk.generated';
 
-// Gesetz-Abkürzung (OCL statutes[] / law_code) → Register-key der Gesetzes-Rubrik.
-const ABK_REGISTER: Record<string, string> = {
-  OR: 'OR', ZGB: 'ZGB', ZPO: 'ZPO', STGB: 'STGB', STPO: 'STPO', BGG: 'BGG',
-  SCHKG: 'SCHKG', VVG: 'VVG', VMWG: 'VMWG', ARG: 'ARG', BV: 'BV', DBG: 'DBG',
-  DSG: 'DSG', AIG: 'AIG', STG: 'STG', HREGV: 'HREGV', BGFA: 'BGFA',
-  // Sozialversicherung / Abgaben (Audit: SG-Versicherungsfälle EL/IV/UV …)
-  ATSG: 'ATSG', AHVG: 'AHVG', IVG: 'IVG', UVG: 'UVG', AVIG: 'AVIG', BVG: 'BVG',
-  ELG: 'ELG', FAMZG: 'FAMZG', STHG: 'STHG',
-};
+// ─── Abkürzung → Register-key: ABGELEITET, nicht gepflegt (W2·6-NKEY, §5) ─────
+//
+// BEFUND 21.7.2026 (Anlassfall bge_148_II_475 ohne KG-Verzahnung): Die frühere
+// Hand-Whitelist `ABK_REGISTER` (26 Einträge) mappte von 9 912 Norm-Zitat-
+// Nennungen über 5 093 Entscheide nur 43 % auf `normKeys` — der Rest wurde STILL
+// verworfen (§6.7 dem Geist nach). Zwei Ursachen: (a) knapp 100 Erlasse sind
+// längst im Korpus und fehlten bloss in der Tabelle (IPRG, KVG, RPG, MWSTG, SVG,
+// VwVG, USG, KG …); (b) rund 40 % der Nennungen sind FR/IT-Kürzel, die die
+// Tabelle gar nicht kannte (CST→BV, CP→StGB, LTF→BGG, CO→OR, LP/LEF→SchKG …).
+//
+// Statt die Tabelle zu erweitern, wird sie jetzt ABGELEITET — aus zwei Quellen:
+//   1. `ERLASS_REGISTER` (src/lib/normtext/register.ts, SSoT der Erlass-Identität):
+//      der Register-key IST die deutsche Abkürzung, dazu das Anzeige-Kürzel.
+//      Jeder künftige Erlass wird damit automatisch verzahnbar — Ende der
+//      «BGFA-Fix»-Fehlerklasse (ein Erlass im Korpus, aber nicht in der Tabelle).
+//   2. `FEDLEX_ABK` (generiert, scripts/normtext/fedlex-abk.generated.ts): die
+//      AMTLICHEN DE/FR/IT-Kürzel je SR-Nummer aus den Fedlex-Metadaten (§7) —
+//      kein Hand-Erraten von Sprachpaaren.
+// Es gibt bewusst KEINE Fuzzy-/Präfix-Suche: nur exakte Token-Identität (§2).
+//
+// KOLLISIONSREGEL (§1 Korrektheit vor Abdeckung): Beansprucht ein Token ZWEI
+// verschiedene Register-keys, wird es NICHT gemappt (und ist über
+// `ABK_KOLLISIONEN` sichtbar). So bleibt «StG» ≠ «StGB» getrennt, und «BVV»
+// (BVV 2 oder BVV 3?) bzw. «ArGV» (1–5) bleiben ehrlich unzugeordnet statt
+// willkürlich auf eine der Fassungen zu zeigen.
+
+/**
+ * Token-Normalform einer Abkürzung: gross, ohne Trenner. Ziffern bleiben ERHALTEN
+ * («BVV 2» → 'BVV2', «ArGV 1» → 'ARGV1') — sonst kollabierten die numerierten
+ * Verordnungsfassungen zu einem Token und wären nicht mehr unterscheidbar.
+ * Ein kantonaler Suffix bleibt Teil des Tokens («StG/BE» → 'STGBE'), trifft also
+ * nie einen Bundes-key — genau die gewollte Wirkung (§1).
+ */
+export function normAbk(roh: string): string {
+  return String(roh).toUpperCase().replace(/[^A-Z0-9ÄÖÜ]/g, '');
+}
+
+/**
+ * Deklarierte Ausschlussliste: Tokens, die NIE auf Bundesrecht mappen dürfen,
+ * auch wenn eine der Quellen sie anbietet. Jede Zeile mit Grund (§8).
+ */
+const ABK_AUSSCHLUSS: ReadonlyMap<string, string> = new Map([
+  // Kantonale Namensvetter mit identischem Kürzel. Ein kantonales «KV» (Kantons-
+  // verfassung) oder «BauG» (Baugesetz) darf nie als Bundesrecht gelesen werden;
+  // beide sind heute gar keine Bund-Register-keys — der Eintrag ist die VORSORGE
+  // für den Tag, an dem ein Bundeserlass mit diesem Kürzel dazukommt.
+  ['KV', 'kantonale Kantonsverfassungen führen dasselbe Kürzel (§1)'],
+  ['BAUG', 'kantonale Baugesetze führen dasselbe Kürzel (§1)'],
+  ['PG', 'kantonale Personalgesetze führen dasselbe Kürzel (§1)'],
+  ['VRP', 'kantonale Verwaltungsrechtspflegegesetze (VRP/VRPG) — kein Bundeserlass (§1)'],
+  ['VRPG', 'kantonale Verwaltungsrechtspflegegesetze — kein Bundeserlass (§1)'],
+]);
+
+type AbkQuelle = 'register-key' | 'register-kuerzel' | 'fedlex-de' | 'fedlex-fr' | 'fedlex-it';
+
+/**
+ * Baut den Abkürzungs-Index aus Register + Fedlex-Aliasen. Rein und
+ * deterministisch (§2): gleiche Eingabe-Datenlage → gleicher Index; die Reihen-
+ * folge der Quellen ist fest und beeinflusst nur die ausgewiesene `quelle`,
+ * nie das Ergebnis (bei Uneinigkeit greift die Kollisionsregel).
+ */
+function baueAbkIndex(): {
+  index: Map<string, string>;
+  quelle: Map<string, AbkQuelle>;
+  kollisionen: Map<string, string[]>;
+} {
+  // SR-Nummer → Register-keys (eine SR kann im Register mehrfach vorkommen).
+  const keysProSr = new Map<string, string[]>();
+  for (const e of ERLASS_REGISTER) {
+    if (e.ebene !== 'bund' || !e.sr) continue;
+    (keysProSr.get(e.sr) ?? (keysProSr.set(e.sr, []), keysProSr.get(e.sr)!)).push(e.key);
+  }
+
+  // Token → { Register-key → erste (stärkste) Quelle }
+  const anspruch = new Map<string, Map<string, AbkQuelle>>();
+  const belege = (token: string, key: string, q: AbkQuelle): void => {
+    if (!token) return;
+    const m = anspruch.get(token) ?? (anspruch.set(token, new Map()), anspruch.get(token)!);
+    if (!m.has(key)) m.set(key, q);
+  };
+
+  for (const e of ERLASS_REGISTER) {
+    if (e.ebene !== 'bund') continue;
+    belege(normAbk(e.key), e.key, 'register-key');
+    belege(normAbk(e.kuerzel), e.key, 'register-kuerzel');
+  }
+  for (const z of FEDLEX_ABK) {
+    const keys = keysProSr.get(z.sr);
+    // Eine SR mit MEHREREN Register-keys ist für den Alias-Join nicht eindeutig
+    // (welcher Eintrag ist gemeint?) → übersprungen statt geraten (§1).
+    if (!keys || keys.length !== 1) continue;
+    const key = keys[0];
+    if (z.de) belege(normAbk(z.de), key, 'fedlex-de');
+    if (z.fr) belege(normAbk(z.fr), key, 'fedlex-fr');
+    if (z.it) belege(normAbk(z.it), key, 'fedlex-it');
+  }
+
+  const index = new Map<string, string>();
+  const quelle = new Map<string, AbkQuelle>();
+  const kollisionen = new Map<string, string[]>();
+  for (const token of [...anspruch.keys()].sort()) {
+    if (ABK_AUSSCHLUSS.has(token)) continue;
+    const m = anspruch.get(token)!;
+    const keys = [...m.keys()].sort();
+    if (keys.length > 1) { kollisionen.set(token, keys); continue; }
+    index.set(token, keys[0]);
+    quelle.set(token, m.get(keys[0])!);
+  }
+  return { index, quelle, kollisionen };
+}
+
+const ABK = baueAbkIndex();
+
+/** Tokens, die zwei Erlasse beanspruchen und darum bewusst NICHT mappen (§1). */
+export const ABK_KOLLISIONEN: ReadonlyMap<string, readonly string[]> = ABK.kollisionen;
+/** Herkunft je Token (Diagnose für das Sichtbarkeits-Tor `check:normkeys`). */
+export const ABK_QUELLE: ReadonlyMap<string, AbkQuelle> = ABK.quelle;
+/** Gesamtzahl gemappter Tokens (Diagnose). */
+export const ABK_TOKENS: ReadonlyMap<string, string> = ABK.index;
 
 export function normKeyFuerAbk(abk: string): string | null {
-  const k = abk.toUpperCase().replace(/[^A-ZÄÖÜ]/g, '');
-  return ABK_REGISTER[k] ?? null;
+  return ABK.index.get(normAbk(abk)) ?? null;
 }
 
 /** "Art. 32 Abs. 2 BGG" → ['BGG']; mehrere Nennungen dedupliziert. */

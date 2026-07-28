@@ -134,6 +134,12 @@ jobs:
         run: npm run check:besetzung
       - name: Entscheid-Korpus (Bund)
         run: npm run check:entscheide
+      # W2·6-NKEY: macht sichtbar, wie viele Norm-Zitate auf normKeys mappen und
+      # welche Abkuerzungen bewusst verworfen werden (§6.7 gegen stilles
+      # Verwerfen). Liest dieselben committeten Projektionen wie
+      # check:entscheide — kein Netz, keine DB.
+      - name: normKeys-Abdeckung (kein stilles Verwerfen)
+        run: npm run check:normkeys
       - name: Entscheid-Korpus (BS)
         run: npm run check:bs-entscheide
       # Selbstschutz der Tor-Landschaft: meldet neue Tore ohne CI-Lauf.
