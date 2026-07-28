@@ -22,6 +22,11 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 // Fallback) liegt unverändert im Reader; diese Komponente ist reiner Ort/Bedienung (§3).
 // CLS (§15.2): der Kopf hat feste Höhe (h-9); das Feld/Icon wächst nichts ein — der
 // mobile Overlay ist `absolute` und verschiebt nichts.
+//
+// W2·7-BEZUG/B6: die drei Icon-Griffe (☰ Gliederung, Lupe, ✕ der Overlay-Suche)
+// tragen die gemeinsame Leisten-Anatomie `lc-leiste-griff` (24 px, rounded-md,
+// randlos bis zum Hover) statt je eigener bordierter Kästchen; das Feld sitzt
+// auf derselben 24-px-Linie. Funktion und Zustände unverändert.
 
 function Lupe() {
   return (
@@ -47,12 +52,12 @@ export function InGesetzSuche({ value, onChange, gliederung }: {
   const feldRef = useRef<HTMLInputElement>(null);
   useEffect(() => { if (offen) feldRef.current?.focus(); }, [offen]);
   return (
-    <div className="flex items-center gap-1.5">
+    <div className="flex items-center gap-1">
       {gliederung}
       {/* Mobil (< sm): Such-Icon öffnet das Overlay-Feld. Auf sm+ ausgeblendet. */}
       <button type="button" onClick={() => setOffen(true)} aria-label="Im Gesetz suchen"
         title="Im Gesetz suchen"
-        className={`sm:hidden inline-flex h-6 w-6 items-center justify-center rounded-md border border-line text-ink-500 transition-colors hover:border-brass-400 hover:text-brass-700 ${offen ? 'invisible' : ''}`}>
+        className={`lc-leiste-griff sm:hidden ${offen ? 'invisible' : ''}`}>
         <Lupe />
       </button>
       {/* EIN Suchfeld — Desktop: inline in der Zeile; Mobil: Overlay wenn `offen`. */}
@@ -60,11 +65,11 @@ export function InGesetzSuche({ value, onChange, gliederung }: {
         <div className="flex items-center gap-1 rounded-md bg-paper sm:bg-transparent">
           <input ref={feldRef} type="search" value={value} onChange={(e) => onChange(e.target.value)}
             placeholder="Im Gesetz suchen …" aria-label="Im Gesetz suchen"
-            className="lc-input h-7 py-0 text-body-s w-full min-w-0 sm:w-40 lg:w-36 xl:w-52" />
+            className="lc-input h-6 px-2 py-0 text-xs w-full min-w-0 sm:w-40 md:w-44 xl:w-52" />
           {/* ✕ nur im mobilen Overlay (schliesst + leert). Auf sm+ ausgeblendet. */}
           <button type="button" onClick={() => { onChange(''); setOffen(false); }}
             aria-label="Suche schliessen" title="Suche schliessen"
-            className="sm:hidden shrink-0 inline-flex h-6 w-6 items-center justify-center rounded-md border border-line text-ink-500 transition-colors hover:border-brass-400 hover:text-brass-700">
+            className="lc-leiste-griff sm:hidden">
             <span aria-hidden className="text-base leading-none">✕</span>
           </button>
         </div>

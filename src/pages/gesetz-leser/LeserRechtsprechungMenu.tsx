@@ -149,15 +149,19 @@ export function LeserRechtsprechungMenu({
         aria-controls={panelId}
         aria-label="Rechtsprechung"
         data-rechtsprechung-menu
-        className="lc-chip inline-flex items-center gap-1 hover:text-brass-700"
+        className="lc-leiste-griff lc-leiste-griff-fest gap-0.5 px-1 sm:gap-1 sm:px-1.5"
         title="Welche Entscheide unter den Artikeln stehen: Instanzen, Kantone und Zeitraum"
       >
         <span aria-hidden>§</span>
-        {/* Das Wort erst ab lg. Gemessen 28.7.2026: bei 774 px drängte die
+        {/* Das Wort erst ab lg. Gemessen 28.7.2026 (B4): bei 774 px drängte die
             ausgeschriebene Beschriftung den Breadcrumb auf «Ge… › B… › S…»
             zusammen — die Werkzeugleiste soll nicht voller werden als nötig
-            (Vorgabe David). Der Accessible-Name bleibt über `aria-label`
-            erhalten, das Dropdown ist also in JEDER Breite benannt. */}
+            (Vorgabe David). B6 hat die Gegenprobe gemacht (beide Wörter ab md):
+            bei 768 px blieben der Ortsangabe 152 px statt der nötigen ~200 —
+            der Befund hält, die Schwelle bleibt lg. «Ansicht ▾» ist jetzt
+            DIESELBE (vorher sm), damit die zwei als Paar schalten. Der
+            Accessible-Name bleibt über `aria-label` erhalten, das Dropdown ist
+            also in JEDER Breite benannt. */}
         <span className="hidden lg:inline">Rechtsprechung</span>
         {abweichend && <span aria-hidden className="lc-punkt lc-punkt-entscheid" />}
         <span aria-hidden className={`transition-transform ${offen ? 'rotate-180' : ''}`}>▾</span>
