@@ -171,6 +171,11 @@ function main(): void {
   const kantenJeKanton: Record<string, number> = {};
   const kantenJeQuelltyp: Record<string, number> = {};
   let shardsBund = 0, shardsKanton = 0, artikelBuckets = 0, kantenGesamt = 0;
+  // Kantonale Kanten nach ZIEL-Ebene (Gegenprüfung Runde 4/D4): ein kantonaler
+  // Entscheid kann an einem Bundes- ODER an einem Kantonserlass hängen. Der
+  // Modulkopf des Resolvers verwies auf genau diese Aufteilung — es gab sie nur
+  // nicht. Eine Zahl, auf die verwiesen wird, muss auch ausgegeben werden (§7).
+  let kantonalAnBund = 0, kantonalAnKanton = 0;
 
   // T1: Bundesgerichts-Kanten einsammeln (ungekappt-je-Status), später projizieren.
   const projektion = new Map<string, BgKante[]>();   // 'ERLASS/artikel' → Kanten
@@ -257,6 +262,9 @@ function main(): void {
         kantenJeEbene[f.ebene] = (kantenJeEbene[f.ebene] ?? 0) + 1;
         kantenJeKanton[f.kanton] = (kantenJeKanton[f.kanton] ?? 0) + 1;
         kantenJeQuelltyp[f.quelltyp] = (kantenJeQuelltyp[f.quelltyp] ?? 0) + 1;
+        if (f.status === 'kantonal') {
+          if (shard.erlassEbene === 'bund') kantonalAnBund++; else kantonalAnKanton++;
+        }
         if (f.status === 'bge' || f.status === 'bger') {
           bgProjektion.push({ key: e.key, gewicht: e.gewicht, datum: kopf.datum, leit: f.status === 'bge' });
         }
@@ -312,6 +320,7 @@ function main(): void {
   console.log(`  Kanten je Ebene:    ${zeile(kantenJeEbene)}`);
   console.log(`  Kanten je Quelltyp: ${zeile(kantenJeQuelltyp)}`);
   console.log(`  Kanten je Kanton:   ${zeile(kantenJeKanton)}`);
+  console.log(`  Kantonale Kanten nach Ziel: Bundes-Erlass ${kantonalAnBund} · Kantons-Erlass ${kantonalAnKanton}`);
   console.log(`  Grundgesamtheit der Extraktion: ${manifest.entscheide.filter((e) => !e.verweis).length} Snapshots im Manifest; `
     + `T1-Projektion gegen ${bestandKeys.length} norm-index-Artikel geprüft.`);
   console.log(`  Kantonale Resolver: ${[...SYSTEMATIK_PRAEFIX.keys()].sort().join(', ') || '–'} `

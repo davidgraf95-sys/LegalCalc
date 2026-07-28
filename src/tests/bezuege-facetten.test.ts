@@ -390,6 +390,29 @@ describe('B2/R3 · zweite Achse: ausgeschriebener Titel (nicht die Buchstaben)',
     expect(z.zitate.map((x) => x.artikel)).toEqual(['87']);
   });
 
+  it('D1-PIN: ALT-TITEL wird nicht gesperrt, wenn das amtliche Kürzel dasteht', () => {
+    // Sieben BS-Erlasse führen einen Titel ohne Überschneidung zum früheren:
+    // 154.300 · 164.100 · 212.400 · 300.100 · 610.500 · 789.700 · 911.900.
+    // Beleg VD.2024.65 (Lohngesetz, 164.100).
+    const amtlich = 'Lohngesetz, LG (164.100)';
+    const genannt = 'des Gesetzes betreffend Einreihung und Entlöhnung der Mitarbeiterinnen';
+    expect(titelWiderspricht(genannt, amtlich)).toBe(true);                              // ohne Umfeld
+    expect(titelWiderspricht(genannt, amtlich, '(Lohngesetz [LG], SG 164.100)')).toBe(false);
+    // Die Rettung darf HBG nicht mitnehmen — dort steht «HBG», amtlich ist «BPV».
+    expect(titelWiderspricht('des Hochbaugesetzes', 'Bau- und Planungsverordnung, BPV (730.110)',
+      '(HBG, SG 730.110)')).toBe(true);
+  });
+
+  it('D2-PIN: «des gesetzes über/betreffend» bleibt eine benannte Signatur-Lücke', () => {
+    // Ist-Verhalten festgehalten, nicht behoben (§8): das Fremdzitat trifft die
+    // Titel-Signatur von BS-390.720 und beendet das Fenster NICHT.
+    const titelPar = titelParagraphen('Vertrag betreffend die Kremation aufgrund von § 17 des Gesetzes betreffend die Bestattungen (390.720)');
+    expect(titelPar.get('17')).toBe('des gesetzes betreffend');
+    // Gleiche Signatur, anderer Erlass — die Kollision ist real.
+    expect(titelParagraphen('X gemäss § 1 des Gesetzes betreffend die Sozialhilfe (Y)').get('1'))
+      .toBe('des gesetzes betreffend');
+  });
+
   it('schweigt, wo das Dokument gar keinen Titel nennt (benannte Restlücke §8)', () => {
     expect(titelWiderspricht('(PG, ', 'Verordnung zum Personalgesetz, VPG (162.110)')).toBe(false);
   });

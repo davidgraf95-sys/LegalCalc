@@ -22,8 +22,10 @@
 // ── REICHWEITE DIESER AUSSAGE, eng gefasst (Gegenprüfung Runde 1/B4) ────────
 // Sie gilt für den «§»-KANAL, den dieses Modul bedient — und NUR für ihn.
 // W2·7-BEZUG lässt kantonale Entscheide daneben auch BUNDESRECHTLICHE
-// «Art.»-Zitate erzeugen (der grössere Teil der kantonalen Kanten; die aktuelle
-// Aufteilung weist das Tor check:bezuege bei jedem Lauf aus). Dieser zweite Kanal läuft über `artikelSchluesselMitBefund` und
+// «Art.»-Zitate erzeugen (der grössere Teil der kantonalen Kanten). Die aktuelle
+// Aufteilung nach Ziel-Ebene gibt `check:bezuege` bei jedem Lauf aus, Zeile
+// «Kantonale Kanten nach Ziel» — der Verweis zeigte bis Runde 4 auf eine
+// Ausgabe, die es nicht gab (§7). Dieser zweite Kanal läuft über `artikelSchluesselMitBefund` und
 // damit sehr wohl über die Abkürzungs-Tabelle; für ihn ist die Verwechslung
 // NICHT strukturell ausgeschlossen, sondern durch eine eigene Regel begrenzt
 // (`fremdDefinierteKeys`, entscheide-mapping.ts — dort steht die Messung).
@@ -187,12 +189,16 @@ export function amtlichesKuerzel(erlass: string): string | null {
  * WIDERSPRICHT der im Dokument ausgeschriebene Erlass-Titel dem amtlichen Titel
  * der gebundenen Nummer?
  *
- * WIRKUNG, am echten Aufrufpunkt gemessen (28.7.2026, alle 3'765 BS-Snapshots,
- * `loeseKantonZitate` mit und ohne diese Achse): 10'645 gegen 10'647 Zitate —
- * 3 Kanten fallen weg, 1 kommt hinzu. Die drei sind sämtlich richtig entfernt:
- * BS-730.110/§ 8 und /§ 8b (die HBG-Fehlbindung) sowie BS-164.410/§ 15a (das
- * Titel-«§»). Kollateral: null. Die frühere Buchstaben-Achse verlor an derselben
- * Stelle 26 Kanten, davon 24 richtige.
+ * WIRKUNG, am echten Aufrufpunkt gemessen (28.7.2026, alle 3'765 BS-Snapshots)
+ * und sauber zugeschrieben (Gegenprüfung Runde 4/D3):
+ *  · DIESE ACHSE allein entfernt 2 Kanten und fügt keine hinzu — BS-730.110/§ 8
+ *    und /§ 8b, beide die HBG-Fehlbindung. Sie feuert korpusweit 5-mal, jede
+ *    Feuerung richtig.
+ *  · Die Bilanz «3 weg, 1 dazu» (10'645 gegen 10'647) gehört dem GANZEN
+ *    `titel`-Parameter, also zusätzlich der Titel-«§»-Mechanik: sie nimmt
+ *    BS-164.410/§ 15a weg und bringt /§ 5 ein.
+ * Kollateral in beiden Fällen: null. Die frühere Buchstaben-Achse verlor an
+ * derselben Stelle 26 Kanten, davon 24 richtige.
  *
  * ZWEITE FASSUNG DIESER ACHSE (Gegenprüfung Runde 3/C1). Die erste verglich die
  * BUCHSTABEN der Kurzform mit dem amtlichen Kürzel — und war netto schädlich:
@@ -235,8 +241,25 @@ export function titelPhrase(davor: string): string {
   return (davor.split(/[.;:()[\]\n]/).pop() ?? '').trim();
 }
 
-export function titelWiderspricht(genannterTitel: string, amtlicherTitel: string | undefined): boolean {
+export function titelWiderspricht(
+  genannterTitel: string,
+  amtlicherTitel: string | undefined,
+  umfeld = '',
+): boolean {
   if (!amtlicherTitel) return false;                       // keine Angabe → kein Riegel
+  // RETTUNG BEI ALT-TITEL (Gegenprüfung Runde 4/D1). Sieben BS-Erlasse führen
+  // heute einen Titel, der mit ihrem FRÜHEREN keine Wortüberschneidung hat —
+  // 154.300 · 164.100 · 212.400 · 300.100 · 610.500 · 789.700 · 911.900. Zitiert
+  // ein Entscheid den damaligen Titel, sieht die Achse einen Widerspruch, wo
+  // keiner ist: «§ 7 Abs. 4 des Gesetzes betreffend Einreihung und Entlöhnung …
+  // (Lohngesetz [LG], SG 164.100)» — «Lohngesetz» ist der HEUTIGE Titel, der
+  // ausgeschriebene der alte, und die Bindung ist völlig richtig
+  // (reproduziert an VD.2024.65; heute ohne gelieferte Kante, aber latent).
+  // Nennt das Dokument das amtliche KÜRZEL der Nummer, ist die Zuordnung von
+  // ihm selbst bestätigt — dann schweigt die Achse. «HBG … (SG 730.110)» wird
+  // davon nicht gerettet: dort steht «HBG», das amtliche Kürzel ist «BPV».
+  const k = amtlichesKuerzel(amtlicherTitel);
+  if (k && new RegExp(`(?:^|[^A-Za-zÄÖÜäöü0-9])${k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![A-Za-zÄÖÜäöü0-9])`).test(umfeld)) return false;
   // Nur das Textstück UNMITTELBAR vor der Klammer zählt: der Erlass-Titel hängt
   // an ihr. Alles jenseits der nächsten Satz-/Klammergrenze gehört zum
   // Vorsatz und sagt über den zitierten Erlass nichts.
@@ -284,6 +307,15 @@ export function titelParagraphen(erlass: string): Map<string, string> {
  * Gesetzes …» — die Signatur wäre zweimal bloss «des», und JEDES Fremdzitat der
  * Form «§ 1 des Gesetzes über X» träfe sie. Der Schutz gegen fremde § hätte
  * dann ein Loch von der Breite des Wortes «des».
+ * BEKANNTE RESTLÜCKE (Gegenprüfung Runde 4/D2, §8): «des gesetzes über» und
+ * «des gesetzes betreffend» sind selbst noch generisch genug, um mit der
+ * häufigsten Zitierform zusammenzufallen — ein Fremdzitat «§ 1 des Gesetzes
+ * über die Sozialhilfe …» trifft die Signatur von BS-390.720 und beendet das
+ * Fenster dann NICHT. Eine Verlängerung um ein viertes Wort schliesst das nicht
+ * allgemein (auch das vierte kann generisch sein) und verengt zugleich die
+ * echten Titel-§-Treffer; die Klasse bleibt darum benannt statt halb behandelt.
+ * Live-Wirkung heute: keine — für die betroffenen Erlasse existiert kein Shard.
+ * Testpin hält das Ist-Verhalten fest.
  * Ein Füllwort-Verbot wäre der falsche Ausweg — BS-164.160 heisst amtlich
  * «… gemäss § 10 des Lohngesetzes», sein Titel-§ folgt also selbst auf «des»
  * (an genau diesem Fall ist die Füllwort-Fassung gescheitert). Drei Wörter
@@ -528,7 +560,7 @@ export function loeseKantonZitate(
     // `titelWiderspricht`. Geprüft wird der Text VOR der Klammer, dort steht der
     // ausgeschriebene Erlass-Titel.
     const davor = titelPhrase(text.slice(Math.max(0, (m.index ?? 0) - 140), m.index ?? 0));
-    if (titelWiderspricht(davor, titel?.get(sr))) {
+    if (titelWiderspricht(davor, titel?.get(sr), m[0])) {
       nummerMinderheit.add(`${abk}: ${sr} (genannter Titel widerspricht «${titel!.get(sr)!.slice(0, 45)}»)`);
       continue;
     }
@@ -610,7 +642,7 @@ export function loeseKantonZitate(
         // abgeschnitten, sonst bliebe als «Titel» bloss die Kurzform übrig und
         // der Widerspruch wäre unsichtbar.
         const zwischenTitel = titelPhrase(zwischen.replace(/[([][^([]*$/, ''));
-        if (titelWiderspricht(zwischenTitel, titel?.get(sr))) {
+        if (titelWiderspricht(zwischenTitel, titel?.get(sr), zwischen)) {
           nummerMinderheit.add(`${sr} (genannter Titel widerspricht)`);
         } else if (domF !== undefined && domF !== sr) {
           nummerMinderheit.add(`${abkImFenster}: ${sr} (Korpus-Mehrheit ${domF})`);
