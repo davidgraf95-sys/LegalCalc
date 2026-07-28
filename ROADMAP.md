@@ -591,10 +591,10 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
      passt»); will er später die Gesetzesdarstellung vorziehen, W2·12-HYGIENE an den Kopf
      dieser Zeile setzen. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·7-BEZUG` — Bezüge am Artikel.** Die erste Stufe der
-> Verzahnungs-Strecke, `W2·6-NKEY` (Dekret David 27.7.2026), ist **28.7.2026 erledigt** und gibt
-> damit die von ihr abhängige Stufe frei (`dep: [W2·6-NKEY]`): die normKeys-Abdeckung trägt jetzt
-> 99.9 % der Entscheid-Snapshots, das Fundament für die Bezüge-Schicht steht.
+> **⬆ OBERSTER OFFENER SCHRITT: `QS-TOK`.** Die Verzahnungs-Stufe `W2·7-BEZUG` ist seit
+> 28.7.2026 **`wip`** (Bau in der Orchestrierungs-Session; Vorstufe `W2·6-NKEY` am 28.7.2026
+> erledigt — die normKeys-Abdeckung trägt 99.9 % der Entscheid-Snapshots, das Fundament für
+> die Bezüge-Schicht steht).
 > Vorherige Spitze `QS-TOK` (Priorisierung David 10.7.2026, Wortlaut «oberster
 > schritt soll sein den token verbrauch zu minimieren») rückt dahinter — von David am 27.7.
 > ausdrücklich so verfügt («als erster schritt entscheide noch besser screenen … nächste session
@@ -1121,8 +1121,8 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   `parts.tsx`-Eigentümerschaft geklärt (W2·5c fertig). Kein 26×-Bezug — parallel zu E3 fahrbar.
   Startseiten-Kachel «Meistzitierte Artikel» = Andockpunkt (W2·5c fertig, Fläche frei).
   **Detailquelle:** `FAHRPLAN-VERZAHNUNG-UI.md`.
-- [ ] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** *(§14-Intake 24.7.2026;
-  <!-- @meta id: W2·7-BEZUG · status: ready · of: ja · blocker: null · dep: [W2·6-NKEY] · kollision: [scripts/normtext/entscheide-schreiben.ts, src/lib/rechtsprechung/norm-index.ts, src/lib/verzahnung, src/components/kontext/KontextPanel.tsx, src/pages/gesetz-leser/LeserAnsichtMenu.tsx, public/rechtsprechung] · seq-weich: [W2·7-VZUI(KontextPanel.tsx), W2·5h-GESETZ-UI(LeserAnsichtMenu.tsx)] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
+- [~] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** *(§14-Intake 24.7.2026;
+  <!-- @meta id: W2·7-BEZUG · status: wip · of: ja · blocker: null · dep: [W2·6-NKEY] · kollision: [scripts/normtext/entscheide-schreiben.ts, src/lib/rechtsprechung/norm-index.ts, src/lib/verzahnung, src/components/kontext/KontextPanel.tsx, src/pages/gesetz-leser/LeserAnsichtMenu.tsx, public/rechtsprechung] · seq-weich: [W2·7-VZUI(KontextPanel.tsx), W2·5h-GESETZ-UI(LeserAnsichtMenu.tsx)] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
   **Fokus-Dekret-Priorität**, Wortlaut David: Verzahnung Gesetz↔Entscheide «sehr gutes Feature, das
   ich mit Priorität einbauen will»; **Dekret David 27.7.2026: Vorstufe ist `W2·6-NKEY`** — erst das
   Entscheid-Screening generalisieren, damit ALLE Norm-Zitate erkannt und zugeordnet sind (heute 43 %),
