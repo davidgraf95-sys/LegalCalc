@@ -13,6 +13,7 @@ import type { LinienProfil } from './linienAufbau';
 import { kopfOverline, grundartMeta } from './helpers';
 import { ArtikelLeser, ErlassKopfBlock, ErlassLeserKopf } from './parts';
 import { LeserAnsichtMenu } from './LeserAnsichtMenu';
+import { LeserRechtsprechungMenu } from './LeserRechtsprechungMenu';
 import { istAnhangToken } from './berechnungen';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
 
@@ -36,7 +37,7 @@ export function LeserVolltextInhalt({
   internRefs, margAnzeige, kantonSys, basisPfad, renderSektion,
   imPane, istXl, overlayWurzel, treffer, suche, sucheDebounced, setSuche,
   tocBaumEl, tocOffen, tocAuf, setTocOffen, setTocAuf, springeZuArtikel,
-  leitfaelleFuer, bezuegeFuer, revisionFuer, historieFuer, kantoneVerfuegbar,
+  leitfaelleFuer, bezuegeFuer = () => undefined, revisionFuer, historieFuer, kantoneVerfuegbar = [],
   reiterToast, setReiterToast, reiterToastTimerRef,
   tocDrawerRef, trefferRef, navigate,
 }: {
@@ -71,12 +72,16 @@ export function LeserVolltextInhalt({
   setTocAuf: Dispatch<SetStateAction<boolean>>;
   springeZuArtikel: (token: string) => void;
   leitfaelleFuer: (artikel: string) => ArtikelLeserProps['leitfaelle'];
-  /** W2·7-BEZUG/B4: facettierte Bezüge je Artikel (nur im erweiterten Zustand). */
-  bezuegeFuer: (artikel: string) => ArtikelLeserProps['bezuege'];
+  /** W2·7-BEZUG/B4: facettierte Bezüge je Artikel (nur im erweiterten Zustand).
+   *  OPTIONAL: ohne sie rendert der Artikelfuss die unveränderte Leitfall-Zeile —
+   *  der Grundzustand braucht die Bezüge nicht, und ein Aufrufer soll sie nicht
+   *  mitschleppen müssen, nur um die heutige Darstellung zu bekommen. */
+  bezuegeFuer?: (artikel: string) => ArtikelLeserProps['bezuege'];
   revisionFuer: (artikel: string) => ArtikelLeserProps['revision'];
   historieFuer: (artikel: string) => ArtikelLeserProps['historie'];
-  /** B4: Kantone, zu denen DIESER Erlass Kanten hat — speist den Kanton-Schalter. */
-  kantoneVerfuegbar: string[];
+  /** B4: Kantone, zu denen DIESER Erlass Kanten hat — speist den Kanton-Schalter.
+   *  OPTIONAL: leer heisst schlicht «noch kein Shard geladen» (kein Streifen). */
+  kantoneVerfuegbar?: string[];
   reiterToast: boolean;
   setReiterToast: Dispatch<SetStateAction<boolean>>;
   reiterToastTimerRef: MutableRefObject<number | null>;
@@ -135,7 +140,14 @@ export function LeserVolltextInhalt({
   // einheitlich an EINER Stelle — nie zwei Menüs gleichzeitig. In der Einzelansicht
   // (!imPane) trägt der sticky Inhalts-Kopf das Menü (A26) → hier `null`, kein Doppel.
   const ansichtMenuPane = imPane
-    ? <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} kantoneVerfuegbar={kantoneVerfuegbar} />
+    ? (
+      <>
+        {/* B4: dieselbe Paarung wie in der Einzelansicht — im Pane trägt sie die
+            pane-lokale Such-Leiste statt des Inhalts-Kopfs. */}
+        <LeserRechtsprechungMenu kantoneVerfuegbar={kantoneVerfuegbar} />
+        <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />
+      </>
+    )
     : null;
 
   return (

@@ -9,7 +9,7 @@ import { describe, it, expect } from 'vitest';
 import {
   BEDIENBARE_KLASSEN, DEFAULT_KLASSEN, KLASSE_KURZ, KLASSE_SCHALTER,
   istErweitert, normalisiereKlassen, normalisiereKantone, schalteKlasse,
-  schalteKanton, waehleBezuege,
+  schalteKanton, waehleBezuege, bauePraedikate, type WaehlbareKante,
 } from '../pages/gesetz-leser/bezugAuswahl';
 import { STATUS_LABEL, type BezugStatus } from '../lib/verzahnung/facetten';
 import { filtereBezuege, type Bezug } from '../lib/rechtsprechung/bezuege';
@@ -140,5 +140,34 @@ describe('B4 · Label-Tabellen bleiben vollständig', () => {
   it('§7-Wortfeld: kein «geprüft»/«verifiziert» in einem Nutzertext dieser Schicht', () => {
     const texte = [...Object.values(KLASSE_KURZ), ...Object.values(KLASSE_SCHALTER)];
     for (const t of texte) expect(t).not.toMatch(/gepr(ü|ue)ft|verifiziert|gegengepr/i);
+  });
+});
+
+describe('B4 · Andockpunkt für B5 (Datums-Bereichsfilter)', () => {
+  // Vorgabe David 28.7.2026: die Zeit-Filterung baut B5 zentral (Von-Bis-Datum),
+  // NICHT B4. Dieser Test hält nur die Struktur fest, auf die B5 sich verlassen
+  // darf — eine offene Prädikat-Liste statt fester Einzelchecks. Er baut den
+  // Datumsfilter NICHT, er zeigt, dass er ohne Umbau andocken kann.
+  const kanten: Bezug[] = [
+    kante('alt', 'bge', 'CH'),
+    kante('neu', 'bge', 'CH'),
+  ];
+  kanten[0].datum = '1999-01-01';
+  kanten[1].datum = '2024-06-01';
+
+  it('bauePraedikate liefert eine erweiterbare Liste, nicht einen festen Block', () => {
+    const p = bauePraedikate(['bge'], []);
+    expect(Array.isArray(p)).toBe(true);
+    expect(p.length).toBeGreaterThan(0);
+  });
+
+  it('ein zusätzliches Prädikat greift, ohne dass eine bestehende Funktion sich ändert', () => {
+    const p = [...bauePraedikate(['bge'], []), (k: WaehlbareKante) => (k.datum ?? '') >= '2020-01-01'];
+    expect(kanten.filter((b) => p.every((f) => f(b))).map((b) => b.key)).toEqual(['neu']);
+  });
+
+  it('die Kante trägt `datum` schon im Auswahl-Vertrag', () => {
+    const k: WaehlbareKante = kanten[0];
+    expect(k.datum).toBe('1999-01-01');
   });
 });

@@ -118,6 +118,55 @@ export function normalisiereKantone(roh: readonly unknown[]): string[] {
 }
 
 /**
+ * Was eine Kante mindestens tragen muss, um auswählbar zu sein. Bewusst
+ * strukturell und nicht `Bezug`: derselbe Filter soll auf die aufgelöste Kante
+ * UND auf jede spätere Projektion passen, ohne dass eine Seite die andere
+ * importiert (Muster wie `EntscheidFacettenQuelle` in facetten.ts).
+ *
+ * `datum` ist bereits Teil des Vertrags, obwohl HEUTE kein Prädikat es liest —
+ * es ist der Andockpunkt für den Datums-Bereichsfilter aus B5 (s. u.).
+ */
+export interface WaehlbareKante {
+  facetten: { status: BezugStatus; kanton: string };
+  datum?: string;
+}
+
+/** Ein Auswahl-Prädikat: nimmt eine Kante, sagt behalten/verwerfen. Rein (§2). */
+export type BezugsPraedikat = (kante: WaehlbareKante) => boolean;
+
+/**
+ * Die aktive Auswahl in eine LISTE von Prädikaten übersetzen, die alle erfüllt
+ * sein müssen (UND-Verknüpfung über die Achsen, ODER innerhalb einer Achse).
+ *
+ * ── WARUM EINE LISTE UND NICHT DREI FESTE `if`s ────────────────────────────
+ * Vorgabe David 28.7.2026: die Zeit-Filterung wird NICHT hier gebaut, sondern
+ * kommt zentral mit B5 (eigenes Header-Dropdown, Zeitstrahl + Von-Bis-Datum
+ * statt grober Perioden). Damit sie später andocken kann, ohne diese Funktion
+ * aufzuschneiden, ist die Achsen-Menge OFFEN: eine weitere Facette ist ein
+ * weiterer Eintrag in dieser Liste, kein weiterer Zweig in einem gewachsenen
+ * Bedingungs-Block. `WaehlbareKante.datum` liegt dafür schon im Vertrag.
+ *
+ * ERWEITERUNGSPUNKT B5 (Kommentar, KEIN toter Code — §0/1e): der Datumsfilter
+ * wäre genau ein zusätzliches Prädikat der Form
+ *   `if (bereich) aus.push((k) => k.datum != null && k.datum >= bereich.von && k.datum <= bereich.bis)`
+ * — mit der Q1-Auflage aus §1.0, dass BGE-Bandjahr-Platzhalter (YYYY-01-01)
+ * jahr-genau und nie tagesgenau verglichen werden. Hier bewusst NICHT gebaut.
+ */
+export function bauePraedikate(
+  klassen: readonly BezugStatus[],
+  kantone: readonly string[],
+): BezugsPraedikat[] {
+  const aus: BezugsPraedikat[] = [];
+  const status = new Set(klassen);
+  aus.push((k) => status.has(k.facetten.status));
+  if (kantone.length > 0 && klassen.includes('kantonal')) {
+    const schnitt = new Set([...kantone, 'CH']);
+    aus.push((k) => schnitt.has(k.facetten.kanton));
+  }
+  return aus;
+}
+
+/**
  * Kanten nach der UI-Auswahl auswählen — die EINE Stelle, an der aus der
  * Bedienung eine Kantenmenge wird (§5).
  *
@@ -142,21 +191,14 @@ export function normalisiereKantone(roh: readonly unknown[]): string[] {
  *
  * Rein (§2), ordnungserhaltend.
  */
-export function waehleBezuege<T extends { facetten: { status: BezugStatus; kanton: string } }>(
+export function waehleBezuege<T extends WaehlbareKante>(
   alle: readonly T[],
   klassen: readonly BezugStatus[],
   kantone: readonly string[],
 ): T[] {
   if (klassen.length === 0) return [];
-  const status = new Set(klassen);
-  const kantonSchnitt = kantone.length > 0 && klassen.includes('kantonal')
-    ? new Set([...kantone, 'CH'])
-    : null;
-  return alle.filter((b) => {
-    if (!status.has(b.facetten.status)) return false;
-    if (kantonSchnitt && !kantonSchnitt.has(b.facetten.kanton)) return false;
-    return true;
-  });
+  const praedikate = bauePraedikate(klassen, kantone);
+  return alle.filter((b) => praedikate.every((p) => p(b)));
 }
 
 /**
