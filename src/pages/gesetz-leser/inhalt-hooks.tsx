@@ -10,8 +10,7 @@ import {
 } from '../../lib/normtext/browse';
 import type { KantonSystematik } from '../../lib/normtext/systematik';
 import { formatiereDatum, pfadZu } from './helpers';
-import { LeserAnsichtMenu } from './LeserAnsichtMenu';
-import { LeserRechtsprechungMenu } from './LeserRechtsprechungMenu';
+import { LeserMenuPaar } from './LeserMenuPaar';
 import type { Histogramm, Zeitbereich } from './bezugZeit';
 import { InGesetzSuche } from './parts/InGesetzSuche';
 import { paneRoot, findeArt } from './berechnungen';
@@ -182,8 +181,13 @@ export function useInhaltsKopfMeldung(opts: {
       <button type="button" aria-expanded={istXl ? tocOffen : tocAuf}
         onClick={() => { if (istXl) setTocOffen(true); else setTocAuf((v) => !v); }}
         title="Gliederung" aria-label="Gliederung"
-        className="shrink-0 inline-flex h-6 items-center gap-1 rounded-md border border-line px-1.5 text-micro font-medium text-ink-600 transition-colors hover:border-brass-300 hover:text-brass-700">
-        <span aria-hidden>☰</span><span className="hidden lg:inline">Gliederung</span>
+        // B6: gemeinsame Leisten-Anatomie statt eigenem bordierten Kästchen.
+        // Das Wort «Gliederung» erscheint ab xl — eine Stufe SPÄTER als die
+        // beiden Menü-Wörter (md), damit das Paar «Rechtsprechung ▾ · Ansicht ▾»
+        // die einzige beschriftete Gruppe der mittleren Breiten bleibt und der
+        // Riegel nicht drei Wörter nebeneinander trägt.
+        className="lc-leiste-griff">
+        <span aria-hidden>☰</span><span className="hidden xl:inline">Gliederung</span>
       </button>
     ) : undefined;
     meldeInhaltsKopf({
@@ -193,15 +197,16 @@ export function useInhaltsKopfMeldung(opts: {
       artikel: aktArtikel ? `${aktArtikel} ${erlass.kuerzel}` : null,
       ansichtSlot: !imPane && eintraege
         ? (
-          <>
-            {/* W2·7-BEZUG/B4 (Vorgabe David 28.7.2026): «Rechtsprechung ▾» als
-                EIGENES Dropdown der Werkzeugleiste, links von «Ansicht ▾». Beide
-                gehen in denselben `ansichtSlot` — der Kopf (components/layout)
-                rendert ihn opak, die Layer-Trennung bleibt also unberührt. */}
-            <LeserRechtsprechungMenu kantoneVerfuegbar={kantoneVerfuegbar}
-              histogramm={bezugHistogramm} bereich={bezugBereich} />
-            <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />
-          </>
+          // W2·7-BEZUG/B4 (Vorgabe David 28.7.2026): «Rechtsprechung ▾» als
+          // EIGENES Dropdown der Werkzeugleiste, links von «Ansicht ▾». Beide
+          // gehen in denselben `ansichtSlot` — der Kopf (components/layout)
+          // rendert ihn opak, die Layer-Trennung bleibt also unberührt.
+          // B6: die Paarung selbst liegt in `LeserMenuPaar` (§5) — sie stand
+          // vorher als identisches Fragment an ZWEI Stellen (hier und in der
+          // Pane-Suchleiste) und lief in den Label-Schwellen auseinander.
+          <LeserMenuPaar kantoneVerfuegbar={kantoneVerfuegbar}
+            bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}
+            linien={linien} fussnotenAnzahl={fussnotenAnzahl} />
         )
         : undefined,
       // A35: das In-Gesetz-Suchfeld nur in der Einzelansicht (im Split-View trägt es

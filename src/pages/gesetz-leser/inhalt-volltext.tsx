@@ -12,8 +12,7 @@ import { sachgruppe, topTitel, type KantonSystematik } from '../../lib/normtext/
 import type { LinienProfil } from './linienAufbau';
 import { kopfOverline, grundartMeta } from './helpers';
 import { ArtikelLeser, ErlassKopfBlock, ErlassLeserKopf } from './parts';
-import { LeserAnsichtMenu } from './LeserAnsichtMenu';
-import { LeserRechtsprechungMenu } from './LeserRechtsprechungMenu';
+import { LeserMenuPaar } from './LeserMenuPaar';
 import type { Histogramm, Zeitbereich } from './bezugZeit';
 import { istAnhangToken } from './berechnungen';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
@@ -151,13 +150,12 @@ export function LeserVolltextInhalt({
   // (!imPane) trägt der sticky Inhalts-Kopf das Menü (A26) → hier `null`, kein Doppel.
   const ansichtMenuPane = imPane
     ? (
-      <>
-        {/* B4: dieselbe Paarung wie in der Einzelansicht — im Pane trägt sie die
-            pane-lokale Such-Leiste statt des Inhalts-Kopfs. */}
-        <LeserRechtsprechungMenu kantoneVerfuegbar={kantoneVerfuegbar}
-          histogramm={bezugHistogramm} bereich={bezugBereich} />
-        <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />
-      </>
+      // B4: dieselbe Paarung wie in der Einzelansicht — im Pane trägt sie die
+      // pane-lokale Such-Leiste statt des Inhalts-Kopfs. B6: buchstäblich
+      // dieselbe Komponente, nicht mehr eine zweite Kopie (§5).
+      <LeserMenuPaar kantoneVerfuegbar={kantoneVerfuegbar}
+        bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}
+        linien={linien} fussnotenAnzahl={fussnotenAnzahl} />
     )
     : null;
 

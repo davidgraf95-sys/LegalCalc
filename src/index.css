@@ -699,6 +699,37 @@
   .lc-chip-geltend { border-left-color: var(--sage-500); }
   .lc-chip-vorbehalt { border-left-color: var(--warn-500); }
 
+  /* ─── Griffe der Leser-Werkzeugleiste (W2·7-BEZUG/B6, Auftrag David 28.7.2026) ──
+     EINE Anatomie für ALLE Bedien-Elemente der Leiste «Gesetze › Bund › ZGB ·
+     Art. 212 · Im Gesetz suchen … · Rechtsprechung ▾ · Ansicht ▾ · Stand · ✕».
+     Vorher trugen dieselben sechs Griffe VIER Anatomien nebeneinander —
+     bordierte Icon-Knöpfe (☰/✕), `lc-chip` mit Messing-Tick (die zwei Menüs),
+     `lc-input` (Suche) und blanker Text (Stand) — in zwei Radien (sm/md) und
+     zwei Schriftgraden. Genau diese Unruhe ist das, was B6 abstellt: gleiche
+     Höhe (24 px = WCAG 2.5.8 Target-Size), gleicher Radius, gleiche
+     Mono-Micro-Beschriftung.
+
+     Gruppiert wird über WEISSRAUM, nicht über Rahmen (DESIGN-REGLEMENT F1) —
+     darum ist die Grundform randlos und trägt ihre Fläche erst im Hover. Nur
+     die beiden Menü-Auslöser stehen dauerhaft auf `--well` (`-fest`): sie sind
+     als PAAR erkennbar und heben sich von den blossen Icon-Griffen ab, ohne
+     dass die Leiste dafür eine Rahmenlinie mehr braucht.
+
+     Farbe: `ink-600` statt `ink-500`, weil 11 px Text ≥ 4.5:1 tragen muss
+     (F2; dieselbe Korrektur wie bei `lc-overline`/`lc-fineprint`, Auftrag David
+     25.6.2026). Hover-Fläche der Grundform = `--well`, der `-fest`-Form
+     `--surface` (eine Stufe HELLER als well auf der L-Leiter → «anheben»
+     statt «versenken», in beiden Modi gleichgerichtet). */
+  .lc-leiste-griff {
+    @apply inline-flex shrink-0 items-center justify-center gap-1 rounded-md text-ink-600 transition-colors;
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: .6875rem; font-weight: 500; line-height: 1.2;
+    min-height: 24px; min-width: 24px; padding: 0 4px;
+  }
+  .lc-leiste-griff:hover { background: var(--well); color: var(--brass-700); }
+  .lc-leiste-griff-fest { background: var(--well); color: var(--ink-700); padding: 0 6px; }
+  .lc-leiste-griff-fest:hover { background: var(--surface); color: var(--brass-700); }
+
   /* Glas-Effekt für sticky Chrome (Topbar/TabStreifen) — eine Quelle statt
      byte-identischem Inline-Style an zwei Stellen. */
   .lc-glass {

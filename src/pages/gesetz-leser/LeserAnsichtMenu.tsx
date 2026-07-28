@@ -159,12 +159,18 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
         aria-expanded={offen}
         aria-controls={panelId}
         aria-label="Ansicht"
-        className="lc-chip inline-flex items-center gap-1 hover:text-brass-700"
+        data-ansicht-menu
+        className="lc-leiste-griff lc-leiste-griff-fest gap-0.5 px-1 sm:gap-1 sm:px-1.5"
         title="Darstellung: Linien, Fussnoten (mit Änderungshistorie), Verweise"
       >
-        {/* Enger Platz in der Sticky-Positionsleiste (@390): Label nur ≥sm, sonst
-            reines Icon (Accessible-Name bleibt über aria-label «Ansicht» erhalten). */}
-        <span aria-hidden>◧</span><span className="hidden sm:inline">Ansicht</span>
+        {/* Enger Platz in der Sticky-Positionsleiste (@390): Label nur ≥lg, sonst
+            reines Icon (Accessible-Name bleibt über aria-label «Ansicht» erhalten).
+            B6: die Schwelle war hier sm, beim Schwester-Menü «Rechtsprechung» lg —
+            zwischen 640 und 1024 px stand also EIN Wort neben EINEM Icon, und die
+            beiden lasen sich nicht als Paar. Gemessen 28.7.2026 bei 768 px: mit
+            BEIDEN Wörtern blieben der Ortsangabe noch 152 px (nötig ~200) — die
+            Krumen fingen wieder an zu truncaten. Also beide auf lg. */}
+        <span aria-hidden>◧</span><span className="hidden lg:inline">Ansicht</span>
         <span aria-hidden className={`transition-transform ${offen ? 'rotate-180' : ''}`}>▾</span>
       </button>
 
