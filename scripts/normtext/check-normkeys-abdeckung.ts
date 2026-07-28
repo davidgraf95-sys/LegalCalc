@@ -355,11 +355,23 @@ interface UnerreichbaresAlias {
   grund: UnerreichbarGrund;
 }
 
+/**
+ * Nicht-ASCII-Probe OHNE Regex (ESLint `no-control-regex`): die frühere Fassung
+ * schrieb `/[^\x00-\x7F]/`, und ein Kontrollzeichen in einer Regex ist fast immer
+ * ein Tippfehler — die Regel unterscheidet den Absichtsfall nicht. Verhalten
+ * identisch: der Zeichenklassen-Ausschluss traf genau die Code-Units > 127,
+ * dasselbe prüft die Schleife (Code-Unit-Ebene wie die Regex ohne `u`-Flag).
+ */
+function hatNichtAscii(s: string): boolean {
+  for (let i = 0; i < s.length; i++) if (s.charCodeAt(i) > 0x7f) return true;
+  return false;
+}
+
 /** Erste greifende Verwerf-Ursache, in der Reihenfolge des Extraktors. */
 function unerreichbarGrund(abk: string): UnerreichbarGrund {
   if (/\s/.test(abk)) return 'Leerzeichen';
   // Ein Nicht-ASCII-Buchstabe ist nur als END-Umlaut zulässig (GESETZ_CODE).
-  if (/[^\x00-\x7F]/.test(abk.replace(/[ÄÖÜ]$/, ''))) return 'Akzent/Umlaut im Wortinnern';
+  if (hatNichtAscii(abk.replace(/[ÄÖÜ]$/, ''))) return 'Akzent/Umlaut im Wortinnern';
   // Bindestrich/Punkt: der Code endet dort, der Rest fällt ab («GwV-FINMA» → 'GWV').
   if (/[^A-Za-z0-9]/.test(abk)) return 'Trennzeichen kappt den Code';
   if ((abk.match(/[A-ZÄÖÜ]/g) ?? []).length <= 1 && abk.length > 3) {

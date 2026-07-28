@@ -48,21 +48,23 @@ const BUDGET_MB = 1024;
 //
 // WAS DIESER DECKEL IST — und was er NICHT ist (Linse 3, 28.7.2026, korrigiert die
 // §15-Bewertung von ccde5187). Hier stand, die Auslieferung erfolge «bereits über die
-// 157 Shards», die Anhebung sei also laufzeit-neutral. Das ist NACHGEPRÜFT FALSCH:
-// `ladeNormIndex()` in src/lib/rechtsprechung/norm-index.ts fetcht norm-index.json
-// zur LAUFZEIT, und `kontextEntscheide()` (src/lib/kontext.ts) ruft darüber
-// `rechtsprechungFuerErlass()` für das Verweis-Popover auf (KontextPanel.tsx). Der
-// Monolith liegt also auf einem echten Nutzerpfad — die Shards sind die Artikel-,
-// nicht die Erlass-Ebene und ersetzen ihn nicht.
+// 157 Shards», die Anhebung sei also laufzeit-neutral. Das war NACHGEPRÜFT FALSCH:
+// `ladeNormIndex()` fetchte norm-index.json zur LAUFZEIT, und `kontextEntscheide()`
+// (src/lib/kontext.ts) rief darüber `rechtsprechungFuerErlass()` für das Verweis-
+// Popover auf (KontextPanel.tsx). Die Shards sind die Artikel-, nicht die Erlass-Ebene
+// und ersetzten ihn nicht.
+// AUFGELÖST (W2·6-NKEY, 28.7.2026) nicht durch Anheben der gzip-Schranke, sondern
+// durch eine schlanke Laufzeit-Projektion: schreibeKorpus schreibt zusätzlich
+// `norm-index-erlasse.json` = { erzeugt, proNorm } aus DERSELBEN Quelle (§5, Byte-
+// Gleichheit unten geprüft), und `rechtsprechungFuerErlass()` lädt nur noch die
+// (93 statt 731 KB gzip). Damit trägt norm-index.json keinen Laufzeitpfad mehr —
+// übrig bleibt `rechtsprechungFuerArtikel()` für Tests/Gegenprüfung.
 // Dieser Deckel misst darum die DATEI AUF DER PLATTE (Unfall-Bremse gegen still
 // ballonierenden Fan-out), NICHT die Nutzlast auf dem kritischen Pfad. Dafür
-// zuständig ist check:perf-budget (scripts/check-perf-budget.ts, gzip-Schranke für
-// norm-index.json) — und dort ist der Backfill offen: gzip 205 KB (vor Backfill) →
-// 728 KB gegen eine Schranke von 260 KB. Das Anheben DIESES Deckels hat jene
-// Schranke weder geprüft noch entschärft; die Entscheidung (Schranke anheben vs.
-// eine schlanke proNorm-Projektion für den Laufzeitpfad) steht bei David aus und
-// gehört zu W2·7-VZUI. §15-Logikverlust-Bewertung unverändert: keiner — reine
-// Index-Grösse ohne Regeländerung.
+// zuständig ist check:perf-budget (scripts/check-perf-budget.ts) — und dort steht
+// die gzip-Schranke jetzt auf norm-index-erlasse.json, mit derselben Begründung.
+// §15-Logikverlust-Bewertung unverändert: keiner — reine Index-Grösse ohne
+// Regeländerung, identische Rückgabewerte.
 const NORM_INDEX_BUDGET_MB = 8;
 // Per-Shard-Deckel (Linse 3, 28.7.2026, §15). Der Monolith-Deckel oben sagt NICHTS
 // über die je Seite tatsächlich geladene Menge: der ArtikelLeser (gesetz-leser/
@@ -252,6 +254,38 @@ function main() {
     }
     const niMb = statSync(niPfad).size / (1024 * 1024);
     if (niMb > NORM_INDEX_BUDGET_MB) fehler.push(`norm-index.json-Budget überschritten: ${niMb.toFixed(2)} MB > ${NORM_INDEX_BUDGET_MB} MB (Artikel-Fan-out?)`);
+
+    // ── Schlanke Laufzeit-Projektion ≡ Monolith (W2·6-NKEY §5/§15) ─────────────
+    // norm-index-erlasse.json trägt dieselbe Erlass-Ebene wie norm-index.json und ist
+    // die Datei, die `rechtsprechungFuerErlass()` zur Laufzeit zieht. Zwei Dateien mit
+    // demselben Inhalt sind nur so lange EINE Quelle, wie das jemand nachprüft — sonst
+    // entsteht genau die zweite Wahrheit, die §5 verbietet (ein Nachpflege-Skript, das
+    // nur den Monolithen anfasst, würde die UI still auf Altstand servieren).
+    // Der Beweis ist BYTE-scharf, nicht bloss strukturell: erwartet wird exakt die
+    // Serialisierung, die schreibeKorpus() erzeugt (2-Space, Trailing-Newline, dieselbe
+    // Schlüsselfolge) — damit fällt auch eine blosse Umsortierung auf.
+    const erlPfad = join(PUB, 'norm-index-erlasse.json');
+    if (!existsSync(erlPfad)) {
+      fehler.push('norm-index-erlasse.json fehlt — der Laufzeitpfad (rechtsprechungFuerErlass) lädt diese Datei; Korpus neu schreiben.');
+    } else {
+      const soll = JSON.stringify({ erzeugt: idx.erzeugt, proNorm: idx.proNorm }, null, 2) + '\n';
+      const ist = readFileSync(erlPfad, 'utf8');
+      if (ist !== soll) {
+        const istObj = JSON.parse(ist) as { erzeugt: string; proNorm: Record<string, unknown[]> };
+        const istKeys = Object.keys(istObj.proNorm ?? {});
+        const sollKeys = Object.keys(idx.proNorm);
+        const fehlend = sollKeys.filter((k) => !istKeys.includes(k));
+        const zuviel = istKeys.filter((k) => !sollKeys.includes(k));
+        fehler.push(
+          `norm-index-erlasse.json ≠ norm-index.json (proNorm/erzeugt) — zweite Wahrheit auf dem Laufzeitpfad (§5). `
+          + `Buckets ist ${istKeys.length} / soll ${sollKeys.length}`
+          + (fehlend.length ? `, fehlend: ${fehlend.slice(0, 5).join(', ')}` : '')
+          + (zuviel.length ? `, überzählig: ${zuviel.slice(0, 5).join(', ')}` : '')
+          + (istObj.erzeugt !== idx.erzeugt ? `, erzeugt ${istObj.erzeugt} ≠ ${idx.erzeugt}` : '')
+          + '. Korpus neu schreiben (npm run entscheide -- --remap).',
+        );
+      }
+    }
 
     // Schaufenster-Shards (Weiche B): jeder Shard MUSS die Artikel-Ebene des Gesamt-JSON
     // reproduzieren — MEMBERSHIP (welche Leitfälle je Artikel) zeichengleich, damit der

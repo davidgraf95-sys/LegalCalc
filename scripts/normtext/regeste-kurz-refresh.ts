@@ -53,7 +53,16 @@ console.log(`[regeste-kurz] ${schreiben ? 'SCHREIBEN' : 'DRY-RUN'} — aktualisi
 if (schreiben) {
   writeFileSync(regPfad, JSON.stringify(reg, null, 2) + '\n', 'utf8');
   writeFileSync(niPfad, JSON.stringify(ni, null, 2) + '\n', 'utf8');
-  console.log('[regeste-kurz] register.json + norm-index.json geschrieben.');
+  // Die schlanke Laufzeit-Projektion der Erlass-Ebene muss MITGEHEN (W2·6-NKEY §5):
+  // `rechtsprechungFuerErlass()` liest norm-index-erlasse.json, nicht den Monolithen —
+  // ein Refresh nur am Monolithen liesse die UI auf dem Altstand servieren.
+  // check:entscheide prüft die Byte-Gleichheit und würde das sonst rot melden.
+  writeFileSync(
+    join(PUB, 'norm-index-erlasse.json'),
+    JSON.stringify({ erzeugt: ni.erzeugt, proNorm: ni.proNorm }, null, 2) + '\n',
+    'utf8',
+  );
+  console.log('[regeste-kurz] register.json + norm-index.json + norm-index-erlasse.json geschrieben.');
 } else {
   console.log('[regeste-kurz] DRY-RUN — mit --schreiben anwenden.');
 }

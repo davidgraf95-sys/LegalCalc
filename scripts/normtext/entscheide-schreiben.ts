@@ -2,6 +2,7 @@
 //
 // Schreibt aus einer Auswahl EntscheidSnapshots die public/rechtsprechung-Dateien:
 // je Entscheid eine Datei + register.json (Manifest) + norm-index.json +
+// norm-index-erlasse.json (schlanke Laufzeit-Projektion der Erlass-Ebene) +
 // erfasste-keys.generated.ts (interne Verlinkung). Eine Stelle, kein Duplikat (§5).
 
 import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from 'node:fs';
@@ -372,6 +373,15 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
   const proNormSortiert: Record<string, EntscheidRef[]> = {};
   for (const nk of Object.keys(proNorm).sort(vergleiche)) proNormSortiert[nk] = proNorm[nk];
   writeFileSync(join(PUB, 'norm-index.json'), JSON.stringify({ erzeugt: datum, proNorm: proNormSortiert, proNormArtikel }, null, 2) + '\n', 'utf8');
+  // ── Schlanke Laufzeit-Projektion der ERLASS-Ebene (W2·6-NKEY §15) ───────────
+  // Dasselbe `proNorm`-Objekt, nur ohne die Artikel-Ebene. Grund: `kontextEntscheide()`
+  // (src/lib/kontext.ts) braucht fürs Verweis-Popover NUR proNorm, zog dafür aber das
+  // Gesamt-JSON über die Leitung — nach dem Backfill 731 KB gzip statt 93 KB, also das
+  // ~7.8-fache an Nutzlast für unveränderte Information. §5 bleibt gewahrt: EINE Quelle
+  // (proNormSortiert), zwei Projektionen; die Byte-Gleichheit der Schnittmenge prüft
+  // check:entscheide. Serialisierung identisch (2-Space, Trailing-Newline, sortierte
+  // Schlüssel) — sonst wäre der Konsistenz-Beweis dort nicht byte-scharf führbar.
+  writeFileSync(join(PUB, 'norm-index-erlasse.json'), JSON.stringify({ erzeugt: datum, proNorm: proNormSortiert }, null, 2) + '\n', 'utf8');
   // Schaufenster-Shards je Erlass (Weiche B): zusätzliche Projektion, damit der
   // ArtikelLeser nur den Shard seines Erlasses lädt (§15.3). Trailing-Newline +
   // 2-Space wie norm-index.json/register.json (Rechtsprechungs-Serialisierung).

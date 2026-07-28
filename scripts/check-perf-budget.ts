@@ -101,10 +101,37 @@ if (entry.length === 1) {
 //    passen durch, ein Massenimport nicht. Wer sie anhebt, hebt bewusst auch die
 //    Wartezeit bis zum ersten Treffer an — dann gehört die Staffelung
 //    (artikelVolltext.ts, `baue()`) mit überdacht, nicht bloss die Zahl.
+//
+//    W2·6-NKEY (28.7.2026): der Eintrag `norm-index.json` wandert auf
+//    `norm-index-erlasse.json`. Das ist KEINE Deckel-Anhebung, sondern ein
+//    Wechsel des gemessenen Objekts — und der Grund gehört hierher, weil die
+//    naheliegende Lesart («Budget wurde stillschweigend weicher») falsch wäre:
+//      · Der normKeys-Backfill (Dekret W2·6-NKEY: erst vollständig erkennen,
+//        dann kuratieren) hob die Erlass-Buckets von 25 auf 157 und die
+//        Artikel-Buckets von 355 auf 4473. norm-index.json wuchs dadurch von
+//        204 auf 731 KB gzip — gegen diese 260-KB-Schranke.
+//      · Auf dem Nutzerpfad (kontextEntscheide → Verweis-Popover) braucht aber
+//        nur die ERLASS-Ebene geladen zu werden. Sie liegt seit W2·6-NKEY als
+//        eigene Projektion vor (schreibeKorpus schreibt beide aus derselben
+//        Quelle, Byte-Gleichheit prüft check:entscheide) und misst 93 KB gzip.
+//        `rechtsprechungFuerErlass()` zieht nur noch diese Datei.
+//      · Der Monolith trägt zusätzlich die Artikel-Ebene und ist damit reines
+//        Build-/Prüf-Artefakt: zur Laufzeit bedienen ihn nur noch Tests und die
+//        server-seitige Gegenprüfung (`rechtsprechungFuerArtikel`), die UI nimmt
+//        die 157 Shards. Seine Grösse deckelt `NORM_INDEX_BUDGET_MB` in
+//        scripts/normtext/check-entscheide.ts (Datei auf der Platte), die je
+//        Leserseite geladene Menge der dortige Per-Shard-Deckel.
+//      · Schranke = Ist 93 KB + ~30 % Reserve, gerundet. Sie bremst genau das,
+//        was hier zählt: ein Weiterwachsen der Erlass-Ebene auf dem kritischen
+//        Pfad. §15-Logikverlust-Bewertung: keiner — identische Daten, identische
+//        Rückgabe von rechtsprechungFuerErlass(), nur weniger Bytes.
+//    Wer `ladeNormIndex()` (Gesamt-JSON) wieder in eine Komponente holt, bringt
+//    den Monolithen auf den kritischen Pfad zurück und muss ihn hier wieder
+//    eintragen — der Kommentar an `ladeNormIndex` sagt dasselbe.
 const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/register.json', 780 * 1024],
   ['public/rechtsprechung/richter.json', 24 * 1024],
-  ['public/rechtsprechung/norm-index.json', 260 * 1024],
+  ['public/rechtsprechung/norm-index-erlasse.json', 120 * 1024],
   ['public/such-index/artikel.json', 10_400 * 1024],
 ];
 // GEMESSEN WIRD DIE AUSGELIEFERTE KOPIE in dist/ — mit public/ nur als Rückfall.

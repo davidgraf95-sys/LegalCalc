@@ -78,8 +78,34 @@ export interface LeitfallShard {
   proArtikel: Record<string, LeitfallRef[]>;
 }
 
-let indexPromise: Promise<NormEntscheidIndex | null> | null = null;
+/**
+ * Schlanke Laufzeit-Projektion der ERLASS-Ebene (W2·6-NKEY §15):
+ * `public/rechtsprechung/norm-index-erlasse.json` = `{ erzeugt, proNorm }` aus
+ * derselben Quelle wie norm-index.json, nur ohne die Artikel-Ebene. Zusätzliche
+ * Projektion, keine zweite Wahrheit — die Byte-Gleichheit von `proNorm` prüft
+ * check:entscheide (§5).
+ */
+export interface NormErlassIndex {
+  erzeugt: string;
+  proNorm: Record<string, EntscheidRef[]>;
+}
 
+let indexPromise: Promise<NormEntscheidIndex | null> | null = null;
+let erlassPromise: Promise<NormErlassIndex | null> | null = null;
+
+/**
+ * Gesamt-JSON (Erlass- UND Artikel-Ebene, 6.1 MB roh / 731 KB gzip nach dem
+ * W2·6-NKEY-Backfill).
+ *
+ * NICHT MEHR AUF EINEM LAUFZEITPFAD (Stand 28.7.2026, korrigiert den früheren
+ * Kommentarstand): die Erlass-Ebene bedient `ladeNormIndexErlasse()` aus der
+ * schlanken Projektion, die Artikel-Ebene bedienen die 157 Shards
+ * (`ladeLeitfallShard`). Übrig bleibt `rechtsprechungFuerArtikel()` als
+ * Zweitbeweis-Pfad für Tests / server-seitige Gegenprüfung. Wer diese Funktion
+ * wieder in die UI zieht, holt damit das volle Artefakt über die Leitung zurück
+ * und muss das §15-Budget in scripts/check-perf-budget.ts entsprechend
+ * nachziehen.
+ */
 export async function ladeNormIndex(): Promise<NormEntscheidIndex | null> {
   if (!indexPromise) {
     indexPromise = (async () => {
@@ -95,9 +121,30 @@ export async function ladeNormIndex(): Promise<NormEntscheidIndex | null> {
   return indexPromise;
 }
 
-/** Bundesgerichtsentscheide zu einem Erlass-Register-key ('OR', 'ZPO' …) oder []. */
+/** Nur die Erlass-Ebene laden (Promise-Cache wie oben) — die Nutzlast des Verweis-Popovers. */
+export async function ladeNormIndexErlasse(): Promise<NormErlassIndex | null> {
+  if (!erlassPromise) {
+    erlassPromise = (async () => {
+      try {
+        const res = await fetch('/rechtsprechung/norm-index-erlasse.json');
+        if (!res.ok) return null;
+        return (await res.json()) as NormErlassIndex;
+      } catch {
+        return null;
+      }
+    })();
+  }
+  return erlassPromise;
+}
+
+/**
+ * Bundesgerichtsentscheide zu einem Erlass-Register-key ('OR', 'ZPO' …) oder [].
+ *
+ * Liest die schlanke Projektion (93 KB gzip statt 731 KB). Rückgabe unverändert:
+ * `proNorm` ist in beiden Dateien dasselbe Objekt in derselben Ordnung (§5).
+ */
 export async function rechtsprechungFuerErlass(registerKey: string): Promise<EntscheidRef[]> {
-  const idx = await ladeNormIndex();
+  const idx = await ladeNormIndexErlasse();
   return idx?.proNorm[registerKey] ?? [];
 }
 
@@ -124,11 +171,11 @@ export function normArtikelToken(artikel: string): string {
  * server-seitige Gegenprüfung. Die UI nimmt den erlass-lokalen Shard
  * (`leitfaelleFuerArtikel`).
  *
- * ACHTUNG, das Gesamt-JSON ist NICHT vom Laufzeitpfad verschwunden: derselbe
- * `ladeNormIndex()` speist auch `rechtsprechungFuerErlass()`, und das ruft
- * `kontextEntscheide()` (lib/kontext.ts) fürs Verweis-Popover auf. Wer die
- * Grösse dieses Artefakts bewertet, bewertet damit echte Nutzlast — nicht bloss
- * eine Build-Datei (Budget-Kommentare in scripts/normtext/check-entscheide.ts).
+ * Damit ist das Gesamt-JSON seit W2·6-NKEY vom Laufzeitpfad genommen: die
+ * Erlass-Ebene liefert `ladeNormIndexErlasse()`, die Artikel-Ebene die Shards.
+ * Wer diese Funktion in eine Komponente einbaut, macht das Artefakt wieder zu
+ * echter Nutzlast — dann gehören die Deckel in scripts/check-perf-budget.ts und
+ * scripts/normtext/check-entscheide.ts zusammen neu bewertet (§15).
  */
 export async function rechtsprechungFuerArtikel(registerKey: string, artikel: string): Promise<LeitfallRef[]> {
   const idx = await ladeNormIndex();
@@ -198,4 +245,10 @@ export function artikelProEntscheid(shard: LeitfallShard): Map<string, string> {
 /** Nur für Tests: den Shard-Promise-Cache leeren (sonst leckt er über Testfälle). */
 export function _leereShardCache(): void {
   shardPromises.clear();
+}
+
+/** Nur für Tests: die beiden Index-Promise-Caches leeren (Monolith + Erlass-Projektion). */
+export function _leereNormIndexCache(): void {
+  indexPromise = null;
+  erlassPromise = null;
 }
