@@ -183,6 +183,18 @@
         "status": "kantonal"
       }
     },
+    "bs_appellationsgericht_VD.2023.74": {
+      "zitierung": "Appellationsgericht BS VD.2023.74 vom 26.06.2023",
+      "regesteKurz": "Versetzung in die Justizvollzugsanstalt Hindelbank (Urteil BGer 7B_421/2023 vom 29. September 2023)",
+      "datum": "2023-06-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
     "bs_appellationsgericht_VD.2023.85": {
       "zitierung": "Appellationsgericht BS VD.2023.85 vom 23.06.2023",
       "regesteKurz": "Vollzugsbefehl",
@@ -263,6 +275,10 @@
         "gewicht": null
       },
       {
+        "key": "bs_appellationsgericht_VD.2023.74",
+        "gewicht": null
+      },
+      {
         "key": "bs_appellationsgericht_VD.2021.125",
         "gewicht": null
       }
@@ -270,6 +286,10 @@
     "6": [
       {
         "key": "bs_appellationsgericht_VD.2025.39",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.74",
         "gewicht": null
       }
     ],
@@ -408,10 +428,10 @@
   },
   "gesamtProArtikel": {
     "4": {
-      "kantonal": 2
+      "kantonal": 3
     },
     "6": {
-      "kantonal": 1
+      "kantonal": 2
     },
     "7": {
       "kantonal": 1

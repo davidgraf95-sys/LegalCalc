@@ -22,8 +22,8 @@
 // ── REICHWEITE DIESER AUSSAGE, eng gefasst (Gegenprüfung Runde 1/B4) ────────
 // Sie gilt für den «§»-KANAL, den dieses Modul bedient — und NUR für ihn.
 // W2·7-BEZUG lässt kantonale Entscheide daneben auch BUNDESRECHTLICHE
-// «Art.»-Zitate erzeugen (der grössere Teil: 10'038 der 12'299 kantonalen
-// Kanten, Stand nach den Riegeln der Gegenprüfung Runde 2). Dieser zweite Kanal läuft über `artikelSchluesselMitBefund` und
+// «Art.»-Zitate erzeugen (der grössere Teil der kantonalen Kanten; die aktuelle
+// Aufteilung weist das Tor check:bezuege bei jedem Lauf aus). Dieser zweite Kanal läuft über `artikelSchluesselMitBefund` und
 // damit sehr wohl über die Abkürzungs-Tabelle; für ihn ist die Verwechslung
 // NICHT strukturell ausgeschlossen, sondern durch eine eigene Regel begrenzt
 // (`fremdDefinierteKeys`, entscheide-mapping.ts — dort steht die Messung).
@@ -57,7 +57,7 @@ import { join } from 'node:path';
 import {
   extrahiereParagraphGruppen, INVALID_LAW_CODES,
 } from '../../src/lib/rechtsprechung/zitat-extraktion';
-import { normKeyFuerAbk, normalisiereAbk } from './entscheide-mapping';
+import { normKeyFuerAbk, normalisiereAbk, titelUeberlappt } from './entscheide-mapping';
 
 /**
  * Kantonale Systematik-Präfixe je Kanton — DEKLARIERT, nie geraten (§2/§7).
@@ -183,41 +183,71 @@ export function amtlichesKuerzel(erlass: string): string | null {
   return (letzt.match(/[A-ZÄÖÜ]/g) ?? []).length >= 2 ? letzt : null;
 }
 
-/** Vergleichsform für Kürzel: gross, Umlaute ausgeschrieben, nur A–Z0–9. */
-function faltung(s: string): string {
-  return s.toUpperCase()
-    .replace(/Ä/g, 'AE').replace(/Ö/g, 'OE').replace(/Ü/g, 'UE')
-    .replace(/[^A-Z0-9]/g, '');
+/**
+ * WIDERSPRICHT der im Dokument ausgeschriebene Erlass-Titel dem amtlichen Titel
+ * der gebundenen Nummer?
+ *
+ * WIRKUNG, am echten Aufrufpunkt gemessen (28.7.2026, alle 3'765 BS-Snapshots,
+ * `loeseKantonZitate` mit und ohne diese Achse): 10'645 gegen 10'647 Zitate —
+ * 3 Kanten fallen weg, 1 kommt hinzu. Die drei sind sämtlich richtig entfernt:
+ * BS-730.110/§ 8 und /§ 8b (die HBG-Fehlbindung) sowie BS-164.410/§ 15a (das
+ * Titel-«§»). Kollateral: null. Die frühere Buchstaben-Achse verlor an derselben
+ * Stelle 26 Kanten, davon 24 richtige.
+ *
+ * ZWEITE FASSUNG DIESER ACHSE (Gegenprüfung Runde 3/C1). Die erste verglich die
+ * BUCHSTABEN der Kurzform mit dem amtlichen Kürzel — und war netto schädlich:
+ * am echten Aufrufpunkt gemessen 26 verlorene gegen 1 gewonnene Kante, davon
+ * nur 2 echte Treffer (die HBG-Fehlbindung). Die 24 zerstörten waren durchweg
+ * RICHTIG: das Gericht schreibt den amtlichen Titel aus und trifft die Nummer,
+ * nur die Buchstaben der Kurzform sind vertauscht —
+ *   «§ 23 des Gerichtsgebührenreglements (GRR, SG 154.810)»  amtlich GGR  ×12
+ *   «des Verwaltungsrechtspflegegesetzes (VPRG, SG 270.100)» amtlich VRPG ×6
+ *   «der Verordnung zum Personalgesetz [PV, SG 162.110]»     amtlich VPG  ×2
+ *   «Justizvollzugsverordnung, JW; SG 258.210»               amtlich JVV  ×2
+ * Eine vertauschte Kurzform ist ein Schreibfehler AM KÜRZEL, kein Hinweis auf
+ * den falschen Erlass. Der Titel daneben sagt jedes Mal, was gemeint ist.
+ *
+ * DARUM ENTSCHEIDET JETZT DER TITEL, nicht die Abkürzung: gesperrt wird nur,
+ * wenn der genannte Titel mit dem amtlichen KEINE Wortüberschneidung hat.
+ *   · «des Hochbaugesetzes (HBG, SG 730.110)» gegen «Bau- und
+ *     Planungsverordnung, BPV» → keine Überschneidung → gesperrt (richtig).
+ *   · «Bau- und Planungsverordnung (BPV, SG 730.110)» → «planungsverordnung»
+ *     beidseits → bleibt (die Kollateral-Kante § 87 desselben Dokuments).
+ * Die Prüfung ist dieselbe wie bei `fremdDefinierteKeys` — EINE Implementierung
+ * (`titelUeberlappt`), zwei Aufrufer (§5).
+ *
+ * BEKANNTE RESTLÜCKE (§8): nennt das Dokument gar keinen Titel, sondern nur die
+ * Kurzform — «(PG, SG 162.110)» —, gibt es nichts zu widersprechen, und die
+ * Bindung passiert. Diese Klasse ist mit dem Titel-Verfahren nicht erreichbar;
+ * sie wäre nur über eine kantonale Kürzel-Tabelle zu schliessen, und die
+ * kostete nach obiger Messung mehr, als sie einbringt.
+ */
+/**
+ * Die Titel-PHRASE unmittelbar vor einer Locator-Klammer: alles nach der
+ * letzten Satz- oder Klammergrenze. «… (vgl. BGE 1 II 3) des
+ * Gerichtsgebührenreglements » → « des Gerichtsgebührenreglements ».
+ *
+ * Warum die Phrase und nicht das ganze Fenster: 140 Zeichen Vorlauf enthalten
+ * regelmässig einen anderen Erlass, und ein Widerspruch gegen den würde den
+ * richtigen Treffer sperren. Der Titel, um den es geht, klebt an der Klammer.
+ */
+export function titelPhrase(davor: string): string {
+  return (davor.split(/[.;:()[\]\n]/).pop() ?? '').trim();
 }
 
-/**
- * Passt die im Dokument verwendete Abkürzung zum amtlichen Kürzel der Nummer?
- *
- * DIE ZWEITE ACHSE gegen Quell-Tippfehler (Gegenprüfung Runde 2/B2). Die
- * Korpus-Mehrheit (`baueNummernDominanz`) versagt, sobald eine falsche Bindung
- * die EINZIGE ihrer Abkürzung ist — belegt an «(HBG, SG 730.110)»: 730.110 ist
- * die Bau- und PlanungsVERORDNUNG (amtlich «BPV»), «HBG» das aufgehobene
- * Hochbaugesetz. Eine Mehrheit von eins ist keine Mehrheit. Diese Achse braucht
- * keinen zweiten Beleg — sie fragt die Nummer selbst.
- *
- * NUR WENN DIE NUMMER EIN EIGENES KÜRZEL FÜHRT. Trägt der amtliche Titel keines
- * («Verfassung des Kantons Basel-Stadt»), sagt er nichts über die im Urteil
- * übliche Kurzform («KV») — dann schweigt der Riegel. Sonst verlöre der Korpus
- * 361 RICHTIGE Bindungen (KV, AdvG, PG, SHG, EG SchKG …; gemessen 28.7.2026).
- *
- * TEILWORT UND UMLAUT-FALTUNG, ebenfalls gemessen: ohne sie sperrte die Regel
- * 80 statt 29 Bindungen und träfe durchweg RICHTIGE — «VRPG BS», «aBüRG» (alte
- * Fassung), «UeStG» (Umlaut ausgeschrieben), «Gerichtsorganisationsgesetz GOG»
- * (Titel und Kürzel als ein Lauf). Mit Faltung bleiben 29 von 6'151 (0.47 %),
- * sämtlich Vertauschungen oder falsche Erlasse: GRR/GRG↛GGR · VPRG↛VRPG ·
- * BPG/HBG↛BPV · JVG/JW↛JVV · WRSchV↛WRFV · PV↛VPG · StO RiE↛StG/StV.
- */
-export function kuerzelKonsistent(abk: string, erlassString: string | undefined): boolean {
-  if (!erlassString) return true;                 // keine Angabe → kein Riegel
-  const k = amtlichesKuerzel(erlassString);
-  if (!k) return true;                            // Nummer führt kein Kürzel → schweigen
-  const a = faltung(abk), b = faltung(k);
-  return a.includes(b) || b.includes(a);
+export function titelWiderspricht(genannterTitel: string, amtlicherTitel: string | undefined): boolean {
+  if (!amtlicherTitel) return false;                       // keine Angabe → kein Riegel
+  // Nur das Textstück UNMITTELBAR vor der Klammer zählt: der Erlass-Titel hängt
+  // an ihr. Alles jenseits der nächsten Satz-/Klammergrenze gehört zum
+  // Vorsatz und sagt über den zitierten Erlass nichts.
+  const anliegend = genannterTitel;
+  // ABWESENHEIT IST KEIN WIDERSPRUCH (Gegenprüfung Runde 3/C1, zweite Messung).
+  // Ohne diese Bedingung sperrte die Achse auch «(GOG, SG 154.100)»,
+  // «(GGR, SG 154.810)», «(HoR, SG 291.400)» und «(StVO, SG 952.200)» — alle
+  // RICHTIG, nur ohne ausgeschriebenen Titel in Reichweite. Widersprechen kann
+  // nur, wer etwas sagt: verlangt wird ein Titel-WORT direkt vor der Klammer.
+  if (!/(gesetz|verordnung|ordnung|reglement|vertrag|abkommen|beschluss|statut)e?s?\b/i.test(anliegend)) return false;
+  return !titelUeberlappt(anliegend, amtlicherTitel);
 }
 
 /**
@@ -239,10 +269,32 @@ export function kuerzelKonsistent(abk: string, erlassString: string | undefined)
  */
 export function titelParagraphen(erlass: string): Map<string, string> {
   const out = new Map<string, string>();
-  for (const m of erlass.matchAll(/§{1,2}\s*(\d+[a-z]*)\s+([A-Za-zÄÖÜäöü]{3,})/g)) {
-    out.set(m[1].toLowerCase(), m[2].toLowerCase());
+  for (const m of erlass.matchAll(/§{1,2}\s*(\d+[a-z]*)((?:\s+[A-Za-zÄÖÜäöü]{2,}){1,3})/g)) {
+    out.set(m[1].toLowerCase(), folgeSignatur(m[2]));
   }
   return out;
+}
+
+/**
+ * Signatur der auf ein «§» folgenden Wörter: bis zu drei, klein, einfach
+ * getrennt. «des Lohngesetzes» → 'des lohngesetzes'.
+ *
+ * DREI WÖRTER STATT EINEM (Gegenprüfung Runde 3/C2b). Ein einzelnes Folgewort
+ * genügt nicht: BS-390.720 trägt im Titel «§ 17 des Gesetzes …» und «§ 1 des
+ * Gesetzes …» — die Signatur wäre zweimal bloss «des», und JEDES Fremdzitat der
+ * Form «§ 1 des Gesetzes über X» träfe sie. Der Schutz gegen fremde § hätte
+ * dann ein Loch von der Breite des Wortes «des».
+ * Ein Füllwort-Verbot wäre der falsche Ausweg — BS-164.160 heisst amtlich
+ * «… gemäss § 10 des Lohngesetzes», sein Titel-§ folgt also selbst auf «des»
+ * (an genau diesem Fall ist die Füllwort-Fassung gescheitert). Drei Wörter
+ * trennen beides: «des lohngesetzes» ≠ «des gesetzes über».
+ */
+function signaturPasst(erwartet: string, gesehen: string): boolean {
+  return erwartet.startsWith(gesehen) || gesehen.startsWith(erwartet);
+}
+
+function folgeSignatur(roh: string): string {
+  return roh.trim().toLowerCase().split(/\s+/).slice(0, 3).join(' ');
 }
 
 /**
@@ -454,7 +506,6 @@ export function loeseKantonZitate(
   // ── Durchgang 1: dokumentlokale Abkürzungen binden ────────────────────────
   const lokal = new Map<string, string>();     // normalisierte Abk → Erlass-key
   const mehrdeutig = new Set<string>();
-  const tippfehlerNummern = new Set<string>();
   for (const m of text.matchAll(bindungsMuster(sys.praefix))) {
     const sr = nummerAusBindung(m);
     const key = bestand.get(sr);
@@ -469,16 +520,16 @@ export function loeseKantonZitate(
     const dom = dominanz?.get(norm);
     if (dom !== undefined && dom !== sr) {
       nummerMinderheit.add(`${abk}: ${sr} (Korpus-Mehrheit ${dom})`);
-      tippfehlerNummern.add(sr);
       continue;
     }
-    // ACHSE 2 (amtliches Kürzel der Nummer): greift dort, wo Achse 1 blind ist —
-    // wenn die falsche Bindung die einzige ihrer Abkürzung ist und es folglich
-    // keine Mehrheit gibt. Anlassfall «(HBG, SG 730.110)», Begründung und
-    // Messung bei `kuerzelKonsistent`.
-    if (!kuerzelKonsistent(abk, titel?.get(sr))) {
-      nummerMinderheit.add(`${abk}: ${sr} (amtlich «${amtlichesKuerzel(titel!.get(sr)!)}»)`);
-      tippfehlerNummern.add(sr);
+    // ACHSE 2 (ausgeschriebener Titel): greift dort, wo Achse 1 blind ist — wenn
+    // die falsche Bindung die einzige ihrer Abkürzung ist und es folglich keine
+    // Mehrheit gibt. Anlassfall «(HBG, SG 730.110)»; Begründung und Messung bei
+    // `titelWiderspricht`. Geprüft wird der Text VOR der Klammer, dort steht der
+    // ausgeschriebene Erlass-Titel.
+    const davor = titelPhrase(text.slice(Math.max(0, (m.index ?? 0) - 140), m.index ?? 0));
+    if (titelWiderspricht(davor, titel?.get(sr))) {
+      nummerMinderheit.add(`${abk}: ${sr} (genannter Titel widerspricht «${titel!.get(sr)!.slice(0, 45)}»)`);
       continue;
     }
     // AUSSCHLUSS (a), beidseitig: was das Bundes-Register kennt, wird nie
@@ -524,23 +575,46 @@ export function loeseKantonZitate(
       // Erlasses ausweisen — Nummer UND Folgewort wie im amtlichen Titel.
       // Sonst steht dort ein fremdes Zitat, und die Bindung gehört ihm.
       let fremdesParagraph = false;
-      for (const p of zwischen.matchAll(/§{1,2}\s*(\d+[a-z]*)(?:\s+([A-Za-zÄÖÜäöü]{3,}))?/g)) {
-        const folgewort = (p[2] ?? '').toLowerCase();
-        if (titelPar.get(p[1].toLowerCase()) !== folgewort || !folgewort) { fremdesParagraph = true; break; }
+      for (const p of zwischen.matchAll(/§{1,2}\s*(\d+[a-z]*)((?:\s+[A-Za-zÄÖÜäöü]{2,}){0,3})/g)) {
+        const sig = folgeSignatur(p[2] ?? '');
+        const erwartet = titelPar.get(p[1].toLowerCase());
+        if (!sig || erwartet === undefined || !signaturPasst(erwartet, sig)) { fremdesParagraph = true; break; }
       }
       // Die zitierende Gruppe SELBST darf nicht das Titel-«§» sein: «§ 15a
       // Lohngesetz» IST der Titel von BS-164.410 und zitiert ihn nicht.
-      const eigenesFolgewort = /^\s*([A-Za-zÄÖÜäöü]{3,})/.exec(roh)?.[1]?.toLowerCase();
-      const istTitelParagraph = gruppe.artikel.length === 1
-        && eigenesFolgewort !== undefined
-        && titelPar.get(gruppe.artikel[0]) === eigenesFolgewort;
+      //
+      // MEHRGLIEDRIGE GRUPPEN EINGESCHLOSSEN (Gegenprüfung Runde 3/C2a): die
+      // frühere Fassung verlangte `artikel.length === 1` und liess damit
+      // «§§ 15a und 16 Lohngesetz … (SG 164.410)» beide Nummern binden — das
+      // Titel-§ 15a wieder mit. Geprüft wird jetzt das ERSTE Glied, denn es
+      // trägt die Titel-Stelle; ist es das Titel-«§», ist die ganze Gruppe
+      // Titelbestandteil und keine Fundstelle. Heute ohne Live-Wirkung (keine
+      // solche Stelle im Korpus) — aber eine Falle, die nur zufällig nicht
+      // zuschnappt, ist eine Falle (§6.7).
+      const eigeneSig = folgeSignatur((/^((?:\s+[A-Za-zÄÖÜäöü]{2,}){1,3})/.exec(roh)?.[1]) ?? '');
+      const erwarteteSig = titelPar.get(gruppe.artikel[0]);
+      const istTitelParagraph = !!eigeneSig && erwarteteSig !== undefined
+        && signaturPasst(erwarteteSig, eigeneSig);
 
       if (!fremdesParagraph && !istTitelParagraph) {
-        // Als Tippfehler erkannte Nummern wirken auch hier: sonst käme dieselbe
-        // Fehlbindung über den Nummern-Kanal zurück, die Durchgang 1 gerade
-        // verworfen hat (§5 — eine Regel, beide Kanäle).
-        if (tippfehlerNummern.has(sr)) { /* verworfen, in nummerMinderheit ausgewiesen */ }
-        else {
+        // DIESELBEN RIEGEL WIE IM ABKÜRZUNGS-KANAL, aber JE VORKOMMEN statt
+        // dokumentweit (Gegenprüfung Runde 3/C1). Vorher sperrte eine einzige
+        // Fehlbindung die Nummer für das GANZE Dokument — im Anlassfall
+        // VD.2021.219 nahm die HBG-Fehlbindung die daneben völlig korrekte
+        // Kante «§ 87 Abs. 1 Bau- und Planungsverordnung (BPV, SG 730.110)»
+        // mit. Ein Riegel darf nur das treffen, was er belegt hat (§1).
+        const abkImFenster = kuerzelAusKlammer(zwischen.replace(/^[^([]*[([]/, ''));
+        const domF = abkImFenster ? dominanz?.get(normalisiereAbk(abkImFenster)) : undefined;
+        // Im Nummern-Kanal endet `zwischen` MIT der öffnenden Klammer der
+        // Kurzform («… des Hochbaugesetzes (HBG, »). Dieser Klammer-Anlauf wird
+        // abgeschnitten, sonst bliebe als «Titel» bloss die Kurzform übrig und
+        // der Widerspruch wäre unsichtbar.
+        const zwischenTitel = titelPhrase(zwischen.replace(/[([][^([]*$/, ''));
+        if (titelWiderspricht(zwischenTitel, titel?.get(sr))) {
+          nummerMinderheit.add(`${sr} (genannter Titel widerspricht)`);
+        } else if (domF !== undefined && domF !== sr) {
+          nummerMinderheit.add(`${abkImFenster}: ${sr} (Korpus-Mehrheit ${domF})`);
+        } else {
           const key = bestand.get(sr);
           if (key) erlass = key;
           else nummerOhneBestand.add(sr);

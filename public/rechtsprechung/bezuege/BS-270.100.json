@@ -519,18 +519,6 @@
         "status": "kantonal"
       }
     },
-    "bs_appellationsgericht_VD.2025.114": {
-      "zitierung": "Appellationsgericht BS VD.2025.114 vom 19.11.2025",
-      "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung",
-      "datum": "2025-11-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
     "bs_appellationsgericht_VD.2025.115": {
       "zitierung": "Appellationsgericht BS VD.2025.115 vom 18.12.2025",
       "regesteKurz": "Verkehrsanordnung Brunngässlein, Picassoplatz, St. Alban-Graben",
@@ -619,6 +607,18 @@
       "zitierung": "Appellationsgericht BS VD.2025.163 vom 02.01.2026",
       "regesteKurz": "Ablehnung der Wiederherstellung der aufschiebenden Wirkung im Verfahren zur Wiedererteilung des Führerausweises unter A…",
       "datum": "2026-01-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.170": {
+      "zitierung": "Appellationsgericht BS VD.2025.170 vom 13.01.2026",
+      "regesteKurz": "Abtrennung des Verfahrens hinsichtlich des Grenzacherwegs",
+      "datum": "2026-01-13",
       "facetten": {
         "quelltyp": "rechtsprechung",
         "ebene": "kanton",
@@ -1037,6 +1037,10 @@
         "gewicht": null
       },
       {
+        "key": "bs_appellationsgericht_VD.2025.170",
+        "gewicht": null
+      },
+      {
         "key": "bs_appellationsgericht_VD.2025.163",
         "gewicht": null
       },
@@ -1046,10 +1050,6 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2025.52",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.114",
         "gewicht": null
       }
     ],
@@ -1587,7 +1587,7 @@
       "kantonal": 146
     },
     "12": {
-      "kantonal": 215
+      "kantonal": 221
     },
     "13": {
       "kantonal": 461

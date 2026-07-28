@@ -27,6 +27,18 @@
         "status": "kantonal"
       }
     },
+    "bs_appellationsgericht_VD.2022.266": {
+      "zitierung": "Appellationsgericht BS VD.2022.266 vom 11.11.2023",
+      "regesteKurz": "Kündigung des Arbeitsverhältnisses",
+      "datum": "2023-11-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
     "bs_appellationsgericht_VD.2022.8": {
       "zitierung": "Appellationsgericht BS VD.2022.8 vom 19.10.2022",
       "regesteKurz": "Ordentliche Kündigung wegen mangelhaften Verhaltens",
@@ -43,6 +55,18 @@
       "zitierung": "Appellationsgericht BS VD.2023.165 vom 23.10.2024",
       "regesteKurz": "Kündigung des Arbeitsverhältnisses",
       "datum": "2024-10-23",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.42": {
+      "zitierung": "Appellationsgericht BS VD.2024.42 vom 06.01.2025",
+      "regesteKurz": "Kündigung des Arbeitsverhältnisses",
+      "datum": "2025-01-06",
       "facetten": {
         "quelltyp": "rechtsprechung",
         "ebene": "kanton",
@@ -113,6 +137,14 @@
     ],
     "14": [
       {
+        "key": "bs_appellationsgericht_VD.2024.42",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.266",
+        "gewicht": null
+      },
+      {
         "key": "bs_appellationsgericht_VD.2022.8",
         "gewicht": null
       },
@@ -139,7 +171,7 @@
       "kantonal": 1
     },
     "14": {
-      "kantonal": 2
+      "kantonal": 4
     }
   }
 }

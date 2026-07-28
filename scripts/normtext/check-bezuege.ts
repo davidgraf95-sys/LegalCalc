@@ -323,12 +323,17 @@ function main(): void {
   // hat, stimmt die Bindung nicht — so sind die Quell-Tippfehler in der
   // Systematik-Nummer überhaupt gefunden worden (Gegenprüfung Runde 1/B2).
   //
-  // WARUM HINWEIS UND NICHT ROT: nicht jeder Fehltreffer ist ein Fehler. Ein
-  // Entscheid von 2019 zitiert die damals geltende Fassung, und ein seither
-  // aufgehobener § steht im heutigen Snapshot nicht mehr. Diese Fälle sind
-  // legitim (§7/§8) — sie rot zu machen hiesse, dem Gericht vorzuwerfen, dass
-  // sich das Recht seither geändert hat. Rot wäre hier ein Tor, das die falsche
-  // Frage stellt; sichtbar muss die Zahl trotzdem sein (§6.7).
+  // WARUM HINWEIS UND NICHT ROT: die Klasse hat ZWEI legitime Ursachen, und
+  // keine davon ist ein Defekt dieser Pipeline (§7/§8).
+  //  (a) ZEITLICH — ein Entscheid von 2019 zitiert die damals geltende Fassung;
+  //      der seither aufgehobene § steht im heutigen Snapshot nicht mehr
+  //      (BS-154.100 § 56a/§ 82a, BS-253.100 § 35).
+  //  (b) QUELL-ZITIERFEHLER DES GERICHTS — der Entscheid nennt einen §, den der
+  //      richtig gebundene Erlass nie geführt hat (BS-291.400 § 31, BS-861.540
+  //      § 3a). Der Fehler steht im amtlichen Text; ihn stillschweigend zu
+  //      korrigieren hiesse, die Quelle zu überschreiben.
+  // Rot wäre hier ein Tor, das die falsche Frage stellt; sichtbar muss die Zahl
+  // trotzdem sein (§6.7).
   let existenzGeprueft = 0;
   for (const datei of dateien) {
     const shard = JSON.parse(readFileSync(join(BEZ, datei), 'utf8')) as BezugsShard;
@@ -341,7 +346,8 @@ function main(): void {
     for (const token of Object.keys(shard.proArtikel)) {
       if (!vorhanden.has(token)) {
         warn.push(`${shard.erlass}: § ${token} kommt im Normtext-Snapshot nicht vor `
-          + `(${(shard.proArtikel[token] ?? []).length} Kante(n)).`);
+          + `(${(shard.proArtikel[token] ?? []).length} Kante(n)) — Alt-Fassung ODER `
+          + `Zitierfehler der Quelle.`);
       }
     }
   }

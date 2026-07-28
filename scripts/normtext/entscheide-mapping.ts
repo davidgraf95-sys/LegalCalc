@@ -888,7 +888,7 @@ function inhaltsWoerter(s: string): Set<string> {
  * («Ausländergesetz» im Text, «Bundesgesetz über die Ausländerinnen und
  * Ausländer» im Register). Rein (§2).
  */
-function titelUeberlappt(definition: string, registerTitel: string): boolean {
+export function titelUeberlappt(definition: string, registerTitel: string): boolean {
   const a = inhaltsWoerter(definition);
   const b = inhaltsWoerter(registerTitel);
   for (const t of a) if (b.has(t)) return true;

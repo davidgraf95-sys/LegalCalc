@@ -6,7 +6,7 @@ import {
 import { extrahiereParagraphGruppen, extrahiereStatutRefs } from '../lib/rechtsprechung/zitat-extraktion';
 import {
   SYSTEMATIK_PRAEFIX, amtlichesKuerzel, baueNummernDominanz, kantoneOhneResolver,
-  kuerzelKonsistent, loeseKantonZitate, titelParagraphen,
+  loeseKantonZitate, titelParagraphen, titelWiderspricht,
 } from '../../scripts/normtext/kanton-norm-resolver';
 import { fremdDefinierteKeys } from '../../scripts/normtext/entscheide-mapping';
 import type { EntscheidSnapshot } from '../lib/rechtsprechung/typen';
@@ -317,6 +317,24 @@ describe('B1/R2 · Erlass-Titel mit eigenem «§» (Gegenprüfung Runde 2)', () 
     }
   });
 
+  it('C2a-PIN: mehrgliedrige Gruppe bindet das Titel-§ nicht mit', () => {
+    const t = 'Die §§ 15a und 16 Lohngesetz (Zulagenverordnung, SG 164.410) lauten';
+    const z = loeseKantonZitate(t, 'BS', bestand, undefined, titel);
+    expect(z.zitate.map((x) => x.artikel)).not.toContain('15a');
+    expect(z.zitate.map((x) => x.artikel)).not.toContain('16');
+  });
+
+  it('C2b-PIN: die Titel-Signatur trägt drei Wörter, nicht eines', () => {
+    // Einzelwort-Signatur wäre für BS-390.720 bloss «des» — dann träfe JEDES
+    // Fremdzitat «§ N des Gesetzes über X» die Titel-Signatur und beendete das
+    // Fenster nicht mehr.
+    expect(titelParagraphen(titel.get('390.720')!).get('17')).toBe('des gesetzes betreffend');
+    // Fremdzitat mit ANDEREM dritten Wort beendet das Fenster weiterhin.
+    const t = 'Nach § 4 sowie § 1 des Gesetzes über X (Kurzform, SG 390.720) gilt';
+    const z = loeseKantonZitate(t, 'BS', bestand, undefined, titel);
+    expect(z.zitate.some((x) => x.artikel === '4')).toBe(false);
+  });
+
   it('ein FREMDES § dazwischen bindet weiterhin NICHT (Schutz bleibt scharf)', () => {
     const t = 'Nach § 5 VRPG und § 99 Bundesgesetz (Zulagenverordnung, SG 164.410) folgt';
     const z = loeseKantonZitate(t, 'BS', bestand, undefined, titel);
@@ -324,36 +342,56 @@ describe('B1/R2 · Erlass-Titel mit eigenem «§» (Gegenprüfung Runde 2)', () 
   });
 });
 
-describe('B2/R2 · zweite Achse: amtliches Kürzel der Nummer', () => {
+describe('B2/R3 · zweite Achse: ausgeschriebener Titel (nicht die Buchstaben)', () => {
   const bestand = new Map([['730.110', 'BS-730.110'], ['291.100', 'BS-291.100']]);
   const titel = new Map([
     ['730.110', 'Bau- und Planungsverordnung, BPV (730.110)'],
     ['291.100', 'Advokaturgesetz (291.100)'],
   ]);
+  const bestandBreit = new Map([...bestand, ['154.810', 'BS-154.810'], ['270.100', 'BS-270.100'],
+    ['162.110', 'BS-162.110'], ['258.210', 'BS-258.210']]);
+  const titelBreit = new Map([...titel,
+    ['154.810', 'Reglement über die Gerichtsgebühren, Gerichtsgebührenreglement, GGR (SG 154.810)'],
+    ['270.100', 'Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)'],
+    ['162.110', 'Verordnung zum Personalgesetz, VPG (162.110)'],
+    ['258.210', 'Verordnung über den Justizvollzug, Justizvollzugsverordnung, JVV (258.210)']]);
 
   it('amtlichesKuerzel liest nur echte Kürzel', () => {
     expect(amtlichesKuerzel('Bau- und Planungsverordnung, BPV (730.110)')).toBe('BPV');
     expect(amtlichesKuerzel('Verfassung des Kantons Basel-Stadt (111.100)')).toBeNull();
   });
 
-  it('ANLASSFALL HBG: einzige Bindung, also keine Mehrheit — Kürzel-Achse greift', () => {
+  it('ANLASSFALL HBG: genannter Titel widerspricht dem amtlichen → gesperrt', () => {
     const t = '§ 8 des Hochbaugesetzes (HBG, SG 730.110) sieht vor';
     const b = loeseKantonZitate(t, 'BS', bestand, undefined, titel);
     expect(b.zitate).toEqual([]);
-    expect(b.nummerMinderheit).toEqual(['HBG: 730.110 (amtlich «BPV»)']);
+    expect(b.nummerMinderheit.join()).toMatch(/730\.110/);
   });
 
-  it('schweigt, wo die Nummer kein eigenes Kürzel führt (sonst 361 Fehl-Sperren)', () => {
-    expect(kuerzelKonsistent('KV', 'Verfassung des Kantons Basel-Stadt (111.100)')).toBe(true);
-    const t = '§ 18 des Advokaturgesetzes (AdvG, SG 291.100) bestimmt';
-    expect(loeseKantonZitate(t, 'BS', bestand, undefined, titel).zitate.length).toBe(1);
+  it('C1-REGRESSION: vertauschte Kurzform bei RICHTIGEM Titel bleibt erhalten', () => {
+    // Die Buchstaben-Achse zerstörte genau diese Klasse (26 Kanten, davon 24 richtig).
+    const faelle: Array<[string, string]> = [
+      ['§ 23 des Gerichtsgebührenreglements (GRR, SG 154.810) bemisst', 'BS-154.810'],
+      ['§ 12 des Verwaltungsrechtspflegegesetzes (VPRG, SG 270.100) regelt', 'BS-270.100'],
+      ['§ 14 der Verordnung zum Personalgesetz [PV, SG 162.110] sieht', 'BS-162.110'],
+      ['§ 4 der Justizvollzugsverordnung [JW, SG 258.210] bestimmt', 'BS-258.210'],
+      ['§ 87 Abs. 1 Bau- und Planungsverordnung (BPV, SG 730.110) verlangt', 'BS-730.110'],
+    ];
+    for (const [t, key] of faelle) {
+      const z = loeseKantonZitate(t, 'BS', bestandBreit, undefined, titelBreit);
+      expect(z.zitate.map((x) => x.erlass)).toEqual([key]);
+    }
   });
 
-  it('Teilwort und Umlaut-Faltung retten richtige Varianten', () => {
-    expect(kuerzelKonsistent('VRPG BS', 'Gesetz, VRPG (270.100)')).toBe(true);
-    expect(kuerzelKonsistent('aBüRG', 'Bürgerrechtsgesetz, BüRG (121.100)')).toBe(true);
-    expect(kuerzelKonsistent('UeStG', 'Übertretungsstrafgesetz, ÜStG (253.100)')).toBe(true);
-    expect(kuerzelKonsistent('JVG', 'Justizvollzugsverordnung, JVV (258.210)')).toBe(false);
+  it('C1-KOLLATERAL: eine Fehlbindung sperrt die Nummer nicht dokumentweit', () => {
+    const t = 'Nach § 8 des Hochbaugesetzes (HBG, SG 730.110) und § 87 Abs. 1 '
+      + 'Bau- und Planungsverordnung (BPV, SG 730.110) gilt Folgendes.';
+    const z = loeseKantonZitate(t, 'BS', bestandBreit, undefined, titelBreit);
+    expect(z.zitate.map((x) => x.artikel)).toEqual(['87']);
+  });
+
+  it('schweigt, wo das Dokument gar keinen Titel nennt (benannte Restlücke §8)', () => {
+    expect(titelWiderspricht('(PG, ', 'Verordnung zum Personalgesetz, VPG (162.110)')).toBe(false);
   });
 });
 
