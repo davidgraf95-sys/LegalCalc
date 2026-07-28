@@ -34,6 +34,19 @@ export type VerzahnungsKante = {
    *  ungenutzt — Quelle: struktur-Sidecar-Revisions-Fussnoten (hat sich die
    *  zitierte Norm seit dem Entscheidzeitpunkt revidiert?). */
   fassungsBezug?: 'gleich' | 'revidiert' | 'unbekannt';
+  /**
+   * B1-Facetten (W2·7-BEZUG, FAHRPLAN-VERZAHNUNG-UI §9): Quelltyp · Ebene ·
+   * Kanton · Gericht · Leitentscheid-Status. Hier und nicht in einem eigenen
+   * Kantentyp, weil §1.0 EINE Anatomie für alle Bezüge festlegt — Entscheide,
+   * Materialien und künftige Quellgattungen filtern über dieselben Achsen.
+   *
+   * OPTIONAL, damit die Bestands-Projektionen (NormBezug, MaterialBezug,
+   * Werkzeug) unverändert weiterlaufen: eine Kante ohne Facetten ist heute
+   * genau so gültig wie vorher. Sobald B4 die Filter-UI baut, ist das Feld die
+   * einzige Quelle der Schalter — nicht `leitcharakter` und nicht `herkunft`,
+   * die beide etwas anderes messen (Begründung in facetten.ts).
+   */
+  facetten?: import('./facetten').BezugsFacetten;
 };
 
 // ─── Status-Vokabular (geschlossene Liste, nur Abweichungen) ─────────────────
