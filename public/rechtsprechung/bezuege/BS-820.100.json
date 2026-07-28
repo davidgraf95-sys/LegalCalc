@@ -68,27 +68,27 @@
     "2": [
       {
         "key": "bs_appellationsgericht_VD.2021.237",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "4": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.23",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_ZB.2023.62",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "32": [
       {
         "key": "bs_sozialversicherungsgericht_FZ.2025.1",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_FZ.2023.4",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

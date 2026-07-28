@@ -136,15 +136,15 @@
       },
       {
         "key": "bpatger_O2024_007",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bpatger_O2024_002",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bpatger_S2024_005_S2024_006_S2024_007",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "2": [
@@ -164,15 +164,15 @@
       },
       {
         "key": "bpatger_O2024_007",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bpatger_O2024_002",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bpatger_S2024_005_S2024_006_S2024_007",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "13": [
@@ -184,17 +184,17 @@
     "17": [
       {
         "key": "bpatger_O2024_002",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bpatger_S2024_005_S2024_006_S2024_007",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "20": [
       {
         "key": "bpatger_O2024_002",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "24": [
@@ -218,17 +218,17 @@
       },
       {
         "key": "bpatger_O2024_007",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bpatger_S2024_005_S2024_006_S2024_007",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "28": [
       {
         "key": "bpatger_O2024_002",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "35": [
@@ -254,7 +254,7 @@
       },
       {
         "key": "bpatger_O2024_002",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "57": [
@@ -274,7 +274,7 @@
       },
       {
         "key": "bpatger_S2024_005_S2024_006_S2024_007",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "66": [
@@ -286,27 +286,27 @@
     "68": [
       {
         "key": "bpatger_S2023_011",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bpatger_O2024_002",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "77": [
       {
         "key": "bpatger_S2023_011",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bpatger_S2024_005_S2024_006_S2024_007",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "140k": [
       {
         "key": "bpatger_O2024_002",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "28a": [

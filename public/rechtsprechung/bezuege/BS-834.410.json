@@ -104,59 +104,59 @@
     "1": [
       {
         "key": "bs_sozialversicherungsgericht_KV.2023.17",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "18": [
       {
         "key": "bs_sozialversicherungsgericht_KV.2023.8",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "22": [
       {
         "key": "bs_appellationsgericht_VD.2024.190",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_KV.2023.8",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2023.55",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_ZB.2022.41",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_ZB.2023.62",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "25": [
       {
         "key": "bs_sozialversicherungsgericht_EL.2024.11",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "26": [
       {
         "key": "bs_sozialversicherungsgericht_KV.2023.17",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "27": [
       {
         "key": "bs_sozialversicherungsgericht_KV.2023.17",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "8d": [
       {
         "key": "bs_sozialversicherungsgericht_KV.2024.4",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

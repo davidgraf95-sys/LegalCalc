@@ -771,6 +771,189 @@ export function artikelSchluesselVonSnapshot(snap: EntscheidSnapshot): Set<strin
   return out;
 }
 
+// ─── FREMD-DEFINIERTE ABKÜRZUNGEN (W2·7-BEZUG/B1, Gegenprüfung Runde 1) ──────
+//
+// DER BEFUND, der diese Regel erzwungen hat. `bezuege/BPR.json` führte an Art. 3
+// den Basler Entscheid VD.2025.5. Der Entscheid handelt vom Vollzug der
+// Chemikaliengesetzgebung und schreibt selbst: «… Verordnung (EU) Nr. 528/2012
+// über die Bereitstellung auf dem Markt und die Verwendung von Biozidprodukten
+// (Biozidprodukteverordnung, BPR)». Sein «Art. 3 Abs. 1 lit. a BPR» ist EU-Recht.
+// Der Register-Eintrag BPR ist das Bundesgesetz über die politischen Rechte
+// (SR 161.1); das Wort «politisch» kommt im Entscheid kein einziges Mal vor.
+//
+// WARUM ES DIESE KLASSE GIBT. Die FP-Abstimmung der Abkürzungs-Tabelle
+// (W2·6-NKEY) ist an BUNDESGERICHTLICHEM Text gemessen. W2·7-BEZUG öffnet die
+// Extraktion erstmals für kantonalen Text — eine andere Textgattung mit anderem
+// Zitierverhalten (kantonales Recht, EU-Recht, lokale Kurzformen). Eine
+// FP-Analyse der einen Gattung trägt die andere nicht.
+//
+// DIE REGEL. Definiert ein Entscheid eine Abkürzung SELBST über einen Erlass-
+// TITEL, und hat dieser Titel keinerlei Wortüberschneidung mit dem Titel des
+// Register-Erlasses, dann meint dieser Entscheid einen ANDEREN Erlass — die
+// Abkürzung wird für DIESES Dokument nicht gemappt. Das Dokument schlägt die
+// Tabelle, aber nur für sich selbst: kein Raten, keine globale Sperre, keine
+// zweite Wahrheit (§5). Es ist dieselbe Bauart wie die dokumentlokale Bindung im
+// kantonalen Resolver, nur in der Gegenrichtung.
+//
+// GEMESSEN am committeten Korpus (28.7.2026), damit die Regel eine Grösse hat:
+//   · 3'795 kantonale Snapshots → 976 echte Titel-Definitionen, davon 906 auf
+//     einen Register-key auflösbar. Genau EINE zeigt auf einen anderen Erlass:
+//     die BPR-Definition oben. Wo das Dokument sich äussert, ist der Kanal also
+//     zu 905/906 selbstkonsistent.
+//   · 1'283 bundesgerichtliche Snapshots → 31 Definitionen, 14 auflösbar,
+//     NULL Abweichungen dieser Form.
+// Wirkung am Ende beider Arme: 2 gesperrte (Dokument, Key)-Paare, BPR und KAG —
+// beide unten belegt, kein einziger richtiger Treffer mitgenommen.
+//
+// WAS SIE NICHT MISST, ausdrücklich (§8): Fehlzuordnungen in Entscheiden, die
+// die Abkürzung weder definieren noch mit einem Sammlungs-Sigel versehen. Diese
+// Klasse ist mit dieser Methode unsichtbar und bleibt eine benannte Lücke —
+// 1/906 ist die Quote der ERKENNBAREN Fälle, nicht die Fehlerquote des Kanals.
+//
+// ZWEI ARME, EINE PRÜFUNG. Der Titel kann an zwei Stellen stehen: IN der Klammer
+// vor der Abkürzung («(Biozidprodukteverordnung, BPR)», Arm A) oder VOR der
+// Klammer («des kantonalen Anwaltsgesetzes … (KAG; BSG 168.11)», Arm B). Beide
+// Arme stellen dieselbe Frage — überschneidet sich der genannte Titel mit dem
+// Register-Titel? —, nur an verschiedenen Textstellen.
+
+/** Erlass-Titel-Wort — eine Definition nennt einen Titel, ein Zitat eine Fundstelle. */
+const TITEL_WORT = /(gesetz|verordnung|ordnung|reglement|abkommen|konvention|übereinkommen|vertrag|richtlinie|beschluss|statut|charta|pakt|kodex|code)\b/i;
+/** Klammer-Inhalte, die mit einer Fundstelle beginnen — nie eine Definition. */
+const ZITAT_KOPF = /^\s*(?:vgl\.|siehe|s\.|Art\.?|art\.|§|Ziff|Abs|hierzu|zum|zur|dazu|i\.V\.m\.|\d)/;
+/** «(… , ABK)» / «[… ; ABK]» — Titel, Trenner, Kurzform am Klammer-Ende. */
+const DEFINITION = /[([]([^()[\]\n]{4,140}?)[,;]\s*([A-ZÄÖÜ][A-Za-zÄÖÜäöü0-9]{1,11})\s*[)\]]/g;
+/** Inhaltswörter ab 6 Zeichen — Komposita-Vergleich statt Gleichheit. */
+const INHALTSWORT = /[A-Za-zÄÖÜäöüß]{6,}/g;
+/**
+ * Sigel KANTONALER Gesetzessammlungen — DEKLARIERT, mit Korpus-Beleg (§7).
+ *
+ * ERST ALS FORM VERSUCHT, verworfen. Die erste Fassung erkannte den Locator an
+ * seiner Gestalt («2–5 Buchstaben + Dezimalzahl, ausser SR/RS»). Das war
+ * bequem und falsch: sie traf «E. 3.2», «Rz 4.5», «Art. 5.1» und verwarf
+ * daraufhin 339 Register-keys — darunter StPO, SchKG, ZPO, BGG und BV auf
+ * BUNDESGERICHTLICHEN Snapshots, also genau die Zuordnungen, die stimmen. Eine
+ * Ausschlussregel, die im Zweifel alles ausschliesst, ist kein Schutz, sondern
+ * ein Datenverlust mit gutem Gewissen (§1).
+ *
+ * Die Liste ist darum GEMESSEN: Scan aller 5'093 Snapshots nach der Form
+ * «(ABK; SIGEL nnn.nn)», Häufigkeit als Beleg. Aufgenommen sind die Sigel, die
+ * zweifelsfrei eine kantonale Sammlung bezeichnen:
+ *   SG 5'986 (BS) · LS 41 (ZH) · BSG 40 (BE) · BLV 27 (BL) · BR 14 (GR) ·
+ *   SGS 13 (BL) · RB 9 · RSV 8 (VD) · RSN 8 (NE) · sGS 8 (SG) · BGS 7 (SO/ZG) ·
+ *   SAR 4 (AG) · RSF 1 (FR)
+ * NICHT aufgenommen, obwohl im Scan aufgetaucht: `SR`/`RS`/`AS` (eidgenössisch —
+ * sie BESTÄTIGEN die Bundes-Zuordnung), `Rz` (Randziffer), sowie `SB`/`SE`/`AG`/
+ * `GS`/`RL`/`SSSB` (je 1–4 Belege, Sigel nicht zweifelsfrei einer Sammlung
+ * zuzuordnen — im Zweifel NICHT aufnehmen, §7).
+ *
+ * Ein fehlendes Sigel kostet einen Riegel, ein falsches kostet echte Kanten.
+ */
+const KANTONS_SIGEL: ReadonlySet<string> = new Set(
+  ['SG', 'LS', 'BSG', 'BLV', 'BR', 'SGS', 'RB', 'RSV', 'RSN', 'SGS2', 'BGS', 'SAR', 'RSF'],
+);
+
+/**
+ * «(ABK; SIGEL nnn.nn)» — Abkürzung, Trenner, kantonaler Locator, Klammer-Ende.
+ * Eng gefasst: die Abkürzung muss am Klammer-ANFANG und der Locator am
+ * Klammer-ENDE stehen. Damit ist ausgeschlossen, dass irgendein Wort irgendwo in
+ * einer langen Klammer den Riegel auslöst — der Anlassfall «(KAG; BSG 168.11)»
+ * hat genau diese Gestalt.
+ */
+const SIGEL_BINDUNG = /[([]\s*([A-ZÄÖÜ][A-Za-zÄÖÜäöü0-9]{1,11})\s*[;,]\s*([A-Za-zÄÖÜäöü]{2,5})\s+\d{1,4}\.\d+\s*[)\]]/g;
+
+function inhaltsWoerter(s: string): Set<string> {
+  return new Set(s.toLowerCase().match(INHALTSWORT) ?? []);
+}
+
+/**
+ * Überschneiden sich Definitions-Titel und Register-Titel inhaltlich?
+ * Teilwort-Vergleich, weil deutsche Erlass-Titel als Komposita zitiert werden
+ * («Ausländergesetz» im Text, «Bundesgesetz über die Ausländerinnen und
+ * Ausländer» im Register). Rein (§2).
+ */
+function titelUeberlappt(definition: string, registerTitel: string): boolean {
+  const a = inhaltsWoerter(definition);
+  const b = inhaltsWoerter(registerTitel);
+  for (const t of a) if (b.has(t)) return true;
+  for (const t of a) for (const u of b) if (t.length >= 8 && (u.includes(t) || t.includes(u))) return true;
+  return false;
+}
+
+const REGISTER_TITEL = new Map<string, string>(
+  ERLASS_REGISTER.map((e) => [e.key, `${e.titel} ${e.kuerzel}`]),
+);
+
+/**
+ * Register-keys, die DIESER Snapshot selbst als einen ANDEREN Erlass definiert
+ * als den, auf den die Abkürzungs-Tabelle zeigt. Rein (§2).
+ *
+ * Rückgabe sind KEYS, nicht Abkürzungen: der Aufrufer filtert Artikel-Schlüssel
+ * der Form 'KEY/artikel', und eine zweite Übersetzung Abkürzung→key an der
+ * Aufrufstelle wäre eine zweite Stelle, an der die Zuordnung auseinanderlaufen
+ * könnte (§5).
+ *
+ * BEWUSSTE HÄRTE (§1): gesperrt wird der KEY für das ganze Dokument, nicht die
+ * einzelne Nennung. Zitierte derselbe Entscheid daneben den echten Register-
+ * Erlass, ginge diese Kante mit verloren. Das ist die richtige Richtung — ein
+ * Dokument, das eine Abkürzung erkennbar anders belegt, ist für genau diese
+ * Abkürzung keine verlässliche Quelle mehr.
+ */
+export function fremdDefinierteKeys(snap: EntscheidSnapshot): Set<string> {
+  const out = new Set<string>();
+  const text = fliesstextVon(snap);
+  if (!text) return out;
+
+  // ARM A — Titel-Definition ohne Überschneidung («(Biozidprodukteverordnung, BPR)»).
+  for (const m of text.matchAll(DEFINITION)) {
+    const titel = m[1];
+    if (!TITEL_WORT.test(titel) || ZITAT_KOPF.test(titel)) continue;
+    const key = normKeyFuerAbk(m[2]);
+    if (!key) continue;
+    if (!titelUeberlappt(titel, REGISTER_TITEL.get(key) ?? '')) out.add(key);
+  }
+
+  // ARM B — Abkürzung an eine KANTONALE Sammlungs-Nummer gebunden.
+  //
+  // NACHGEZOGEN, weil Arm A ihn nicht deckte und die eigene Stichprobe über die
+  // seltenen Bundes-Erlasse den Beweis lieferte: `bezuege/KAG.json` führte an
+  // Art. 42 den Berner Entscheid 2002024417 mit «Gemäss Art. 42 des kantonalen
+  // Anwaltsgesetzes vom 28. März 2006 (KAG; BSG 168.11)». Das ist das BERNISCHE
+  // Anwaltsgesetz; der Register-Eintrag KAG ist das Kollektivanlagengesetz
+  // (SR 951.31), und «Kapitalanlage» kommt im Entscheid nicht vor. Arm A greift
+  // nicht, weil der Titel VOR der Klammer steht und in der Klammer nur
+  // «Abkürzung; Fundstelle» folgt — eine andere Satzform, dieselbe Fehlerklasse.
+  //
+  // DAS SIGNAL ist stärker als eine Titel-Ähnlichkeit: steht neben der Abkürzung
+  // eine Sammlungs-Nummer, die NICHT die eidgenössische ist (SR/RS), dann zitiert
+  // dieses Dokument an dieser Stelle kantonales Recht. Welchen kantonalen Erlass
+  // genau, muss dafür niemand wissen — es genügt zu wissen, dass es kein
+  // Bundesrecht ist. Der Riegel arbeitet damit auch für Kantone, für die es
+  // (noch) keinen Resolver gibt (BE/AG/ZH/GR/SG — siehe SYSTEMATIK_PRAEFIX).
+  //
+  // «SR» und «RS» sind ausgenommen, denn sie sind der eidgenössische Locator:
+  // «(BVG, SR 831.40)» oder «(HEsÜ; SR 0.211.232.1)» BESTÄTIGEN die Zuordnung,
+  // sie widerlegen sie nicht.
+  for (const m of text.matchAll(SIGEL_BINDUNG)) {
+    if (!KANTONS_SIGEL.has(m[2]) && !KANTONS_SIGEL.has(m[2].toUpperCase())) continue;
+    const key = normKeyFuerAbk(m[1]);
+    if (!key) continue;
+    // DIESELBE TITEL-PRÜFUNG WIE ARM A — nur sitzt der Titel hier VOR der
+    // Klammer («des kantonalen Anwaltsgesetzes vom 28. März 2006 (KAG; BSG
+    // 168.11)»). Ohne sie über-sperrte der Riegel, und zwar nachweislich: die
+    // Gerichte setzen gelegentlich ein kantonales Sigel vor eine BUNDES-Nummer
+    // — «des Ausländer- und Integrationsgesetzes (AIG, SG 142.20)» (4 Fälle)
+    // und «Verwaltungsverfahrensgesetz [VwVG, SG 172.021]» (1 Fall, SR 172.021
+    // mit «SG» verschrieben). Dort ist die Zuordnung RICHTIG, und der Titel
+    // sagt es: er überschneidet sich mit dem Register-Titel. Ein Riegel, der
+    // auch die richtigen Fälle trifft, tauscht nur eine Fehlerart gegen eine
+    // andere (§1).
+    const davor = text.slice(Math.max(0, (m.index ?? 0) - 120), m.index ?? 0);
+    if (titelUeberlappt(davor, REGISTER_TITEL.get(key) ?? '')) continue;
+    out.add(key);
+  }
+  return out;
+}
+
 /**
  * Artikel-Schlüssel PLUS die Zahl dessen, was die Literatur-Kontext-Regel diesem
  * Snapshot genommen hat — für die Verwurf-Statistik des `--remap`-Laufs.

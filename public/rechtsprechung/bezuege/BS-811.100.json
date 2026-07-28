@@ -44,15 +44,15 @@
     "2": [
       {
         "key": "bs_appellationsgericht_BES.2023.66",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_BES.2023.105",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_BES.2023.93",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

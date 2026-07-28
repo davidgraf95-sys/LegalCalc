@@ -44,7 +44,7 @@
     "4": [
       {
         "key": "bs_appellationsgericht_ZB.2022.5",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "25": [
@@ -62,11 +62,11 @@
     "45": [
       {
         "key": "bs_appellationsgericht_BES.2024.47",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_ZB.2022.5",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

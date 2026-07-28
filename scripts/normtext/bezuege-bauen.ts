@@ -41,9 +41,9 @@ import {
   DECKEL_JE_STATUS, STATUS_RANG, facettenFuerEntscheid,
   type BezugStatus, type BezugsFacetten,
 } from '../../src/lib/verzahnung/facetten';
-import { artikelSchluesselMitBefund, fliesstextOhneApparat } from './entscheide-mapping';
+import { artikelSchluesselMitBefund, fliesstextOhneApparat, fremdDefinierteKeys } from './entscheide-mapping';
 import { keyVon, kanonZitat, selbstTokens } from './entscheide-identitaet';
-import { ladeKantonBestand, loeseKantonZitate, type KantonBestand } from './kanton-norm-resolver';
+import { baueNummernDominanz, ladeKantonBestand, loeseKantonZitate, type KantonBestand } from './kanton-norm-resolver';
 
 /** EINE Kante Norm-Artikel → Dokument, mit ihren Facetten (B1). */
 export interface BezugsKante {
@@ -56,8 +56,23 @@ export interface BezugsKante {
    * «Autorität», nie ein Ranking über Gruppen hinweg — die Zahl eines kantonalen
    * Entscheids und die eines BGE sind nicht vergleichbar und werden darum auch
    * nie gegeneinander sortiert (§8).
+   *
+   * `null` = NICHT MESSBAR, nicht «null Zitierungen» (Gegenprüfung Runde 1/B3).
+   * Der Zitier-Graph wird über `kanonZitat` gebildet, und das kennt genau zwei
+   * Formen: BGE-Fundstellen («150 I 17») und Bundesgerichts-Aktenzeichen
+   * («1C_641/2022»). Kantonale Geschäftsnummern («BES.2026.15», «VD.2025.133»)
+   * und die Nummern der übrigen eidg. Gerichte treffen keine davon — die
+   * Token-Map dieser Gruppen bleibt leer, und JEDE Kante bekäme rechnerisch 0.
+   * GEMESSEN am committeten Korpus: kantonal 12'316 Kanten, davon gewicht > 0
+   * in genau 0 Fällen; eidg 164 Kanten, ebenfalls 0. Zum Vergleich bge: 2'594
+   * von 11'433 über 0, Maximum 83.
+   * Eine 0 auszuliefern hiesse zu behaupten, diese Entscheide würden von
+   * niemandem zitiert. Das ist keine Messung, sondern eine Lücke in der
+   * Messvorrichtung — und Lücken werden ausgewiesen, nicht als Messwert
+   * verkauft (§8). Die Sortierung fällt in diesen Klassen damit sichtbar auf den
+   * nachrangigen Schlüssel (Datum ↓, dann key) zurück.
    */
-  gewicht: number;
+  gewicht: number | null;
   facetten: BezugsFacetten;
 }
 
@@ -69,10 +84,14 @@ export interface BezugsDokument {
   facetten: BezugsFacetten;
 }
 
-/** Kanten-Eintrag: Verweis auf den Dokument-Kopf + das artikel-lokale Gewicht. */
+/**
+ * Kanten-Eintrag: Verweis auf den Dokument-Kopf + das artikel-lokale Gewicht.
+ * `gewicht: null` = in dieser Facetten-Klasse nicht messbar (Begründung bei
+ * `BezugsKante.gewicht`) — nicht «null Zitierungen».
+ */
 export interface BezugsEintrag {
   key: string;
-  gewicht: number;
+  gewicht: number | null;
 }
 
 /**
@@ -132,6 +151,10 @@ export interface BezugsBefund {
   nummerOhneBestand: string[];
   /** Kantone mit Entscheiden, aber ohne deklarierten Systematik-Präfix. */
   kantoneOhneResolver: string[];
+  /** Als Quell-Tippfehler verworfene Systematik-Nummern (B2-Riegel). */
+  nummerMinderheit: string[];
+  /** Register-keys, die das Dokument selbst anders definiert (B1-Riegel). */
+  fremdVerworfen: string[];
   /** Literatur-Verwurf über die NICHT-bundesgerichtlichen Snapshots (Ergänzung zu §6.7). */
   literaturVerwurfUebrige: { paare: number; nennungen: number; spannen: number };
 }
@@ -146,6 +169,25 @@ function gewichtsGruppe(s: { gerichtstyp: string; kanton: string }): string {
   if (s.gerichtstyp === 'bundesgericht') return 'bundesgericht';
   if (s.kanton === 'CH') return 'eidg';
   return `kanton:${s.kanton}`;
+}
+
+/**
+ * Ist die topische In-degree in dieser Gruppe überhaupt MESSBAR?
+ *
+ * Nur für das Bundesgericht: `kanonZitat` erkennt BGE-Fundstellen und
+ * Bundesgerichts-Aktenzeichen, sonst nichts. In allen anderen Gruppen bleibt die
+ * Token-Map leer, und ein berechnetes Gewicht wäre für jede Kante 0 — eine Zahl,
+ * die wie ein Messergebnis aussieht und keines ist (§8, Begründung bei
+ * `BezugsKante.gewicht`).
+ *
+ * DIE ALTERNATIVE, bewusst nicht gewählt: die Geschäftsnummern-Formen der
+ * Kantone in `kanonZitat` aufnehmen. Das ist ein eigener fachlicher Schritt —
+ * die Formen sind kantonal verschieden («BES.2026.15», «VB.2018.00411»,
+ * «ZR12024196»), kollidieren mit den bestehenden Docket-Mustern und brauchen
+ * ihre eigene FP-Analyse. Bis dahin ist `null` die ehrliche Auskunft.
+ */
+function gewichtMessbar(gruppe: string): boolean {
+  return gruppe === 'bundesgericht';
 }
 
 /**
@@ -182,8 +224,20 @@ export function baueBezugsIndex(
   const kantonalJeKanal: Record<string, number> = {};
   const abkAusgeschlossen = new Set<string>();
   const nummerOhneBestand = new Set<string>();
+  const nummerMinderheit = new Set<string>();
+  const fremdVerworfen = new Set<string>();
   let kantonalOhneErlass = 0;
   const literaturVerwurfUebrige = { paare: 0, nennungen: 0, spannen: 0 };
+
+  // Korpus-dominante Abkürzung→Nummer-Bindung je Kanton, VOR dem Einzeldurchgang
+  // (Tippfehler-Riegel B2). Zwei Durchgänge, weil «mehrheitlich» eine Aussage
+  // über den Korpus ist und kein Dokument sie allein treffen kann.
+  const dominanz = new Map<string, Map<string, string>>();
+  for (const kanton of kantonBestaende.keys()) {
+    const texte: string[] = [];
+    for (const s of auswahl) if (s.kanton === kanton) texte.push(fliesstextOhneApparat(s));
+    dominanz.set(kanton, baueNummernDominanz(texte, kanton));
+  }
 
   // ── Durchgang 1: je Snapshot Facetten, Artikel-Schlüssel und Selbst-Tokens ──
   interface Eintrag {
@@ -204,7 +258,36 @@ export function baueBezugsIndex(
     // anwendet, gehört an Art. 41 OR. Dass er das aus kantonaler Instanz tut,
     // steht in der Facette, nicht in einem Ausschluss.
     const befund = artikelSchluesselMitBefund(s);
-    const schluessel = new Set(befund.schluessel);
+    // B1-RIEGEL (Gegenprüfung Runde 1): Register-keys, die DIESES Dokument selbst
+    // als anderen Erlass definiert, fallen weg. Begründung, Methode und Messung
+    // stehen bei `fremdDefinierteKeys` (entscheide-mapping.ts). Auf der
+    // Bundesseite gemessen folgenlos (0 Fälle) — darum bleibt die
+    // Bundesgerichts-Projektion byte-gleich.
+    //
+    // NUR AUF NICHT-BUNDESGERICHTLICHEN SNAPSHOTS — und das ist eine
+    // SCOPE-Entscheidung, keine fachliche (§8, offen gelegt statt kaschiert):
+    // Die Regel greift auch auf Bundesgerichts-Text, und dort GENAU ZWEIMAL,
+    // beide Male zu Recht (gemessen 28.7.2026):
+    //   · bge/149_I_161 «(LEP; BLV 340.01)» — waadtländisches Gesetz; der
+    //     Register-key EPG ist das eidg. Epidemiengesetz, dessen fr. Alias «LEp»
+    //     lautet. Namensvetter.
+    //   · bge/150_II_105 «(AIMP; BLV 726.91)» — die interkantonale Vereinbarung
+    //     über das öffentliche Beschaffungswesen; der Register-key IRSG ist das
+    //     Rechtshilfegesetz, dessen fr./it. Alias ebenfalls «AIMP» ist.
+    // Sie hier mitzufiltern hiesse, `proNormArtikel` und damit ein
+    // AUSGELIEFERTES Bestands-Artefakt zu verändern. Das ist eine fachliche
+    // Korrektur am W2·6-NKEY-Kanal, nicht Teil dieser Bau-Einheit — sie gehört
+    // in einen eigenen, deklarierten Schritt mit eigenem Nachweis (§14/§6.3),
+    // sonst wandert eine Inhaltsänderung als Nebenwirkung eines
+    // Struktur-Schritts nach main. Die beiden Fundstellen sind hier benannt,
+    // damit die Lücke nicht verloren geht, sondern beauftragt werden kann.
+    const gesperrt = s.gerichtstyp === 'bundesgericht' ? new Set<string>() : fremdDefinierteKeys(s);
+    const schluessel = new Set<string>();
+    for (const k of befund.schluessel) {
+      const erlass = k.slice(0, k.indexOf('/'));
+      if (gesperrt.has(erlass)) { fremdVerworfen.add(`${erlass} ← ${s.id}`); continue; }
+      schluessel.add(k);
+    }
     if (s.gerichtstyp !== 'bundesgericht') {
       literaturVerwurfUebrige.paare += befund.literaturVerworfen.length;
       literaturVerwurfUebrige.nennungen += befund.literaturNennungen;
@@ -218,7 +301,9 @@ export function baueBezugsIndex(
     // aussen vor (§7: benannte Lücke statt ungeprüfter Ausweitung).
     const bestand = s.kanton !== 'CH' ? kantonBestaende.get(s.kanton) : undefined;
     if (bestand && bestand.size) {
-      const kb = loeseKantonZitate(fliesstextOhneApparat(s), s.kanton, bestand);
+      const kb = loeseKantonZitate(
+        fliesstextOhneApparat(s), s.kanton, bestand, dominanz.get(s.kanton),
+      );
       for (const z of kb.zitate) {
         schluessel.add(`${z.erlass}/${z.artikel}`);
         kantonalJeKanal[z.kanal] = (kantonalJeKanal[z.kanal] ?? 0) + 1;
@@ -226,6 +311,7 @@ export function baueBezugsIndex(
       kantonalOhneErlass += kb.ohneErlass;
       for (const a of kb.abkAusgeschlossen) abkAusgeschlossen.add(a);
       for (const n of kb.nummerOhneBestand) nummerOhneBestand.add(n);
+      for (const n of kb.nummerMinderheit) nummerMinderheit.add(n);
     }
 
     const { key } = keyVon(s);
@@ -292,7 +378,10 @@ export function baueBezugsIndex(
         if (set.has(c)) gewicht.set(c, (gewicht.get(c) ?? 0) + 1);
       }
     }
-    const kanten: BezugsKante[] = liste.map((e) => ({ ...e.ref, gewicht: gewicht.get(e.key) ?? 0 }));
+    const kanten: BezugsKante[] = liste.map((e) => ({
+      ...e.ref,
+      gewicht: gewichtMessbar(e.gruppe) ? (gewicht.get(e.key) ?? 0) : null,
+    }));
     // Erst Status-Klasse (deklarierte Rangordnung), dann die Bestands-Ordnung
     // INNERHALB der Klasse. Nie über Klassen hinweg nach Gewicht sortieren (§8).
     kanten.sort((a, b) =>
@@ -309,6 +398,8 @@ export function baueBezugsIndex(
       abkAusgeschlossen: [...abkAusgeschlossen].sort(),
       nummerOhneBestand: [...nummerOhneBestand].sort(),
       kantoneOhneResolver: [],   // setzt der Aufrufer (kennt die Kantons-Menge)
+      nummerMinderheit: [...nummerMinderheit].sort(),
+      fremdVerworfen: [...fremdVerworfen].sort(),
       literaturVerwurfUebrige,
     },
   };
@@ -434,7 +525,12 @@ function alsLeitfall(k: BezugsKante): LeitfallRef {
     leitcharakter: k.facetten.status === 'bge' ? 'leitentscheid' : 'routine',
     gericht: k.facetten.gericht,
     kanton: k.facetten.kanton,
-    gewicht: k.gewicht,
+    // Für die Bestands-Ordnung ist ein nicht messbares Gewicht wie 0 zu
+    // behandeln: `vergleicheLeitfaelle` rechnet numerisch, und die Ordnung soll
+    // hier ausdrücklich auf den nachrangigen Schlüssel (Datum ↓, key) fallen.
+    // Die Unterscheidung «0 gemessen» vs. «nicht messbar» gehört ins AUSGELIEFERTE
+    // Artefakt, nicht in den Komparator — dort wäre sie folgenlos (§8).
+    gewicht: k.gewicht ?? 0,
   };
 }
 

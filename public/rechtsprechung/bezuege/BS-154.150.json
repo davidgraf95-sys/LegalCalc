@@ -56,23 +56,23 @@
     "12": [
       {
         "key": "bs_appellationsgericht_DGS.2023.6",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "19": [
       {
         "key": "bs_appellationsgericht_DGS.2024.59",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "21a": [
       {
         "key": "bs_appellationsgericht_DGV.2025.2",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_DGV.2025.4",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

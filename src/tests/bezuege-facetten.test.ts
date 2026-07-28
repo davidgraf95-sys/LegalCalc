@@ -5,8 +5,10 @@ import {
 } from '../lib/verzahnung/facetten';
 import { extrahiereParagraphGruppen, extrahiereStatutRefs } from '../lib/rechtsprechung/zitat-extraktion';
 import {
-  SYSTEMATIK_PRAEFIX, kantoneOhneResolver, loeseKantonZitate,
+  SYSTEMATIK_PRAEFIX, baueNummernDominanz, kantoneOhneResolver, loeseKantonZitate,
 } from '../../scripts/normtext/kanton-norm-resolver';
+import { fremdDefinierteKeys } from '../../scripts/normtext/entscheide-mapping';
+import type { EntscheidSnapshot } from '../lib/rechtsprechung/typen';
 import { bezuegeFuerArtikel, filtereBezuege, trefferJeStatus } from '../lib/rechtsprechung/bezuege';
 import type { BezugsShard } from '../lib/rechtsprechung/bezuege';
 
@@ -196,6 +198,90 @@ describe('B2 · kantonaler Resolver — Nummer schlägt Abkürzung', () => {
   it('ist rein: zweimal derselbe Aufruf, dasselbe Ergebnis (§2)', () => {
     const t = '§ 93 GOG (SG 154.100) und § 12 (SG 270.100)';
     expect(loeseKantonZitate(t, 'BS', bestand)).toEqual(loeseKantonZitate(t, 'BS', bestand));
+  });
+});
+
+describe('B1-Riegel · das Dokument schlägt die Abkürzungs-Tabelle (Gegenprüfung R1)', () => {
+  const snap = (text: string): EntscheidSnapshot => ({
+    id: 'kanton/BS/x/T.1', gericht: 'bs_appellationsgericht', gerichtName: 'AG BS',
+    gerichtstyp: 'kantonal', kanton: 'BS', abteilung: null, nummer: 'T.1', bgeReferenz: null,
+    zitierung: 'T.1', datum: '2025-01-01', sprache: 'de', leitcharakter: 'routine',
+    sachgebiet: 'oeffentlich', legalArea: null, rubrum: null, regeste: null, regesteAmtlich: false,
+    abschnitte: [{ typ: 'erwaegung', bloecke: [{ marke: null, text }] }],
+    dispositivOrders: [], zitierteNormen: [], normKeys: [], zitierteEntscheide: [],
+    bestand: 'snapshot', kuratierung: 'maschinell', quelle: 'gerichte-bs',
+    quelleUrl: 'https://example.invalid', abgerufen: '2025-01-01', fassungsToken: 'h', sha: 's',
+  } as unknown as EntscheidSnapshot);
+
+  it('ARM A — Titel-Definition ohne Überschneidung sperrt den Key (Fall BPR)', () => {
+    // Wortlaut aus bs_appellationsgericht/VD.2025.5 (Anlassfall der Gegenprüfung).
+    const t = 'Verordnung (EU) Nr. 528/2012 über die Bereitstellung auf dem Markt und die '
+      + 'Verwendung von Biozidprodukten (Biozidprodukteverordnung, BPR). Art. 3 Abs. 1 lit. a BPR …';
+    expect(fremdDefinierteKeys(snap(t)).has('BPR')).toBe(true);
+  });
+
+  it('ARM B — Titel VOR der Klammer, kantonales Sigel dahinter (Fall KAG)', () => {
+    // Wortlaut aus be_verwaltungsgericht/2002024417 (eigene Stichprobe).
+    const t = 'Gemäss Art. 42 des kantonalen Anwaltsgesetzes vom 28. März 2006 (KAG; BSG 168.11) bezahlt der Kanton …';
+    expect(fremdDefinierteKeys(snap(t)).has('KAG')).toBe(true);
+  });
+
+  it('sperrt NICHT, wenn der genannte Titel zum Register-Erlass passt', () => {
+    // Belegte Über-Sperr-Fälle: kantonales Sigel vor einer BUNDES-Nummer.
+    expect(fremdDefinierteKeys(snap('Art. 75 des Ausländer- und Integrationsgesetzes (AIG, SG 142.20)')).has('AIG')).toBe(false);
+    expect(fremdDefinierteKeys(snap('zu Art. 24 Verwaltungsverfahrensgesetz [VwVG, SG 172.021]')).has('VWVG')).toBe(false);
+  });
+
+  it('sperrt NICHT bei eidgenössischem Locator — der bestätigt die Zuordnung', () => {
+    expect(fremdDefinierteKeys(snap('Bundesgesetz über die berufliche Vorsorge (BVG, SR 831.40)')).size).toBe(0);
+  });
+
+  it('ein blosses Zitat ist keine Definition', () => {
+    expect(fremdDefinierteKeys(snap('(Art. 48 Abs. 1 BGG) und (vgl. Art. 279 Abs. 3 StPO)')).size).toBe(0);
+  });
+});
+
+describe('B2-Riegel · Quell-Tippfehler in der Systematik-Nummer (Gegenprüfung R1)', () => {
+  const bestand = new Map([['154.100', 'BS-154.100'], ['153.100', 'BS-153.100']]);
+
+  it('Korpus-Mehrheit entscheidet; die Minderheits-Nummer wird nicht gebunden', () => {
+    const korpus = [
+      '§ 93 des Gerichtsorganisationsgesetzes (GOG, SG 154.100)',
+      '§ 88 des Gerichtsorganisationsgesetzes (GOG, SG 154.100)',
+      '§ 92 des Gerichtsorganisationsgesetzes (GOG, SG 153.100)',   // Tippfehler
+    ];
+    const dom = baueNummernDominanz(korpus, 'BS');
+    expect(dom.get('GOG')).toBe('154.100');
+    const b = loeseKantonZitate(korpus[2], 'BS', bestand, dom);
+    expect(b.zitate).toEqual([]);
+    expect(b.nummerMinderheit).toEqual(['GOG: 153.100 (Korpus-Mehrheit 154.100)']);
+  });
+
+  it('bei Gleichstand wird NICHT geraten — kein Eintrag, kein Riegel', () => {
+    const dom = baueNummernDominanz([
+      '§ 1 des Gesetzes (XYZ, SG 154.100)',
+      '§ 2 des Gesetzes (XYZ, SG 153.100)',
+    ], 'BS');
+    expect(dom.has('XYZ')).toBe(false);
+  });
+
+  it('ohne Dominanz-Karte verhält sich der Resolver wie zuvor', () => {
+    const b = loeseKantonZitate('§ 92 des Gerichtsorganisationsgesetzes (GOG, SG 153.100)', 'BS', bestand);
+    expect(b.zitate).toEqual([{ erlass: 'BS-153.100', artikel: '92', kanal: 'nummer' }]);
+  });
+});
+
+describe('B3 · gewicht ist in nicht messbaren Klassen null, nicht 0 (§8)', () => {
+  it('der Typ lässt null zu, die Ladeschicht reicht es unverändert durch', () => {
+    const s: BezugsShard = {
+      erzeugt: '2026-07-28', erlass: 'OR', erlassEbene: 'bund',
+      dokumente: {
+        K: { zitierung: 'AGE BEZ.2020.1', regesteKurz: null, datum: '2020-01-01', facetten: { quelltyp: 'rechtsprechung', ebene: 'kanton', kanton: 'BS', gericht: 'bs_appellationsgericht', status: 'kantonal' } },
+      },
+      proArtikel: { '41': [{ key: 'K', gewicht: null }] },
+      gesamtProArtikel: { '41': { kantonal: 5 } },
+    };
+    expect(bezuegeFuerArtikel(s, '41')[0].gewicht).toBeNull();
   });
 });
 

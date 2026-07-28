@@ -206,7 +206,7 @@
       },
       {
         "key": "zh_obergericht_UE240310",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "36": [
@@ -244,7 +244,7 @@
     "35a": [
       {
         "key": "zh_obergericht_UE240310",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

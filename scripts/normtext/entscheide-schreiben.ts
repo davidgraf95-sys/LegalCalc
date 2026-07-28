@@ -505,6 +505,11 @@ export function berichteBezuege(shards: number, befund: BezugsIndex['befund'] | 
   console.log(`[bezuege] Ausschluss-Bilanz — Abkürzungen mit Bundes-Namensvetter NICHT gebunden (${befund.abkAusgeschlossen.length}): ${befund.abkAusgeschlossen.join(', ') || '–'}`);
   console.log(`[bezuege] Systematik-Nummern ohne Normtext-Snapshot (${befund.nummerOhneBestand.length}): ${befund.nummerOhneBestand.join(', ') || '–'}`);
   console.log(`[bezuege] Kantone ohne deklarierten Systematik-Präfix: ${befund.kantoneOhneResolver.join(', ') || '–'}`);
+  // Die zwei Riegel aus der Gegenprüfung Runde 1 — beide zählen, was sie
+  // verhindert haben. Ein Riegel ohne Zahl ist einer, dessen Ausfall niemand
+  // bemerkt (§6.7).
+  console.log(`[bezuege] B1-Riegel — Keys, die das Dokument selbst anders definiert (${befund.fremdVerworfen.length}): ${befund.fremdVerworfen.join(' · ') || '–'}`);
+  console.log(`[bezuege] B2-Riegel — als Quell-Tippfehler verworfene Nummern (${befund.nummerMinderheit.length}): ${befund.nummerMinderheit.join(' · ') || '–'}`);
   const lu = befund.literaturVerwurfUebrige;
   console.log(`[bezuege] Literatur-Kontext-Regel auf NICHT-bundesgerichtlichen Snapshots: ${lu.spannen} Spannen, ${lu.nennungen} Roh-Nennungen, ${lu.paare} verworfene (Snapshot, Artikel)-Paare.`);
 }

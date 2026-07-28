@@ -206,7 +206,7 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2021.109",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "4": [
@@ -226,23 +226,23 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2024.45",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2023.9",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2022.240",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2021.171",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2021.109",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "8": [
@@ -252,7 +252,7 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2023.9",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "9": [
@@ -262,7 +262,7 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2023.9",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "10": [
@@ -272,7 +272,7 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2023.9",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "11": [
@@ -282,7 +282,7 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2023.9",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "13": [
@@ -296,15 +296,15 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2023.174",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2023.9",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2021.104",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "14": [
@@ -324,35 +324,35 @@
     "17": [
       {
         "key": "bs_appellationsgericht_VD.2024.152",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2023.174",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2022.80",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2021.104",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "18": [
       {
         "key": "bs_appellationsgericht_VD.2022.80",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "20": [
       {
         "key": "bs_appellationsgericht_VD.2023.9",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2022.80",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "30": [
@@ -380,17 +380,17 @@
     "36": [
       {
         "key": "bs_appellationsgericht_VD.2023.9",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2022.80",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "37": [
       {
         "key": "bs_appellationsgericht_VD.2021.104",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "39": [
@@ -410,15 +410,15 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2024.45",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2021.171",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2021.104",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "41": [
@@ -438,19 +438,19 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2021.171",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "44": [
       {
         "key": "bs_appellationsgericht_VD.2021.171",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "37a": [
       {
         "key": "bs_appellationsgericht_VD.2023.9",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

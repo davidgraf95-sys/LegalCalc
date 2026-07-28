@@ -32,11 +32,11 @@
     "9": [
       {
         "key": "bs_sozialversicherungsgericht_SG.2019.7",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_SG.2019.2",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

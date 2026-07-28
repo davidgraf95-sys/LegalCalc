@@ -32,11 +32,11 @@
     "3": [
       {
         "key": "bs_appellationsgericht_ZS.2024.3",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2021.67",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

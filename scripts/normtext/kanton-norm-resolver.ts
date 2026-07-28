@@ -12,12 +12,24 @@
 // ── DIE ENTWURFS-ENTSCHEIDUNG, auf der alles andere ruht (§1) ────────────────
 // Die Erlass-Seite wird über die AMTLICHE NUMMER aufgelöst, nicht über eine
 // Abkürzungs-Tabelle. Das ist kein Detail, sondern der Grund, warum die
-// föderal/kantonale Verwechslung hier nicht «gefiltert» werden muss: eine Zahl
-// wie «SG 154.100» IST der Erlass, sie ist nicht mehrdeutig, und es gibt keinen
-// Pfad von ihr zu einem Bundes-Register-key. Die Lehre aus W2·6-NKEY
-// («StG» = eidg. Stempelabgaben ODER kantonales Steuergesetz, ABK_AUSSCHLUSS in
-// entscheide-mapping.ts) trifft die Abkürzungs-Ebene — der Nummern-Kanal ist
-// ihr von vornherein entzogen.
+// föderal/kantonale Verwechslung IN DIESEM MODUL nicht «gefiltert» werden muss:
+// eine Zahl wie «SG 154.100» IST der Erlass, sie ist nicht mehrdeutig, und es
+// gibt von ihr aus keinen Pfad zu einem Bundes-Register-key. Die Lehre aus
+// W2·6-NKEY («StG» = eidg. Stempelabgaben ODER kantonales Steuergesetz,
+// ABK_AUSSCHLUSS in entscheide-mapping.ts) trifft die Abkürzungs-Ebene — der
+// Nummern-Kanal ist ihr von vornherein entzogen.
+//
+// ── REICHWEITE DIESER AUSSAGE, eng gefasst (Gegenprüfung Runde 1/B4) ────────
+// Sie gilt für den «§»-KANAL, den dieses Modul bedient — und NUR für ihn.
+// W2·7-BEZUG lässt kantonale Entscheide daneben auch BUNDESRECHTLICHE
+// «Art.»-Zitate erzeugen (der grössere Teil: 10'040 der 12'316 kantonalen
+// Kanten). Dieser zweite Kanal läuft über `artikelSchluesselMitBefund` und
+// damit sehr wohl über die Abkürzungs-Tabelle; für ihn ist die Verwechslung
+// NICHT strukturell ausgeschlossen, sondern durch eine eigene Regel begrenzt
+// (`fremdDefinierteKeys`, entscheide-mapping.ts — dort steht die Messung).
+// Der frühere Wortlaut hier deckte diesen Kanal mit ab und behauptete damit
+// mehr, als das Modul einlöst; der Anlassfall war eine EU-Verordnung, die als
+// «BPR» auf ein Bundesgesetz gezogen wurde.
 //
 // ── ZWEITER KANAL: DOKUMENTLOKALE ABKÜRZUNGEN ───────────────────────────────
 // Ein Entscheid führt den Erlass EINMAL vollständig ein und nennt ihn danach nur
@@ -160,6 +172,8 @@ export interface AufloesungsBefund {
   abkAusgeschlossen: string[];
   /** Nummern-Locatoren, deren Erlass nicht im kantonalen Snapshot-Bestand steht. */
   nummerOhneBestand: string[];
+  /** Als Quell-Tippfehler verworfen: der Korpus bindet die Abkürzung mehrheitlich anders. */
+  nummerMinderheit: string[];
 }
 
 // ── Das Erlass-Fenster hinter einer §-Gruppe ────────────────────────────────
@@ -270,17 +284,42 @@ export function loeseKantonZitate(
   text: string,
   kanton: string,
   bestand: KantonBestand,
+  /**
+   * Korpus-dominante Bindung «normalisierte Abkürzung → Systematik-Nummer»
+   * (W2·7-BEZUG, Gegenprüfung Runde 1/B2). Optional — ohne sie verhält sich die
+   * Funktion wie zuvor.
+   *
+   * WOGEGEN SIE STEHT — gemessen, nicht vermutet. Die amtlichen Portaltexte
+   * enthalten Tippfehler in der Systematik-Nummer, und ein Tippfehler kann eine
+   * andere, EXISTIERENDE Nummer treffen. Belegte Fälle im BS-Korpus:
+   *   · «Gerichtsorganisationsgesetzes (GOG, SG 153.100)» — amtlich 154.100;
+   *     153.100 ist das Organisationsgesetz (Regierungsrat) und hat die
+   *     zitierten §§ 88/92/93 gar nicht.
+   *   · «(BPG, SG 730.110)» / «(HBG, SG 730.110)» — amtlich 730.100 (Bau- und
+   *     Planungsgesetz); 730.110 ist die zugehörige VERORDNUNG.
+   * Die Nummern-Identität ist nur so unbestechlich wie die Nummer selbst.
+   *
+   * DIE REGEL: bindet der Korpus dieselbe Abkürzung mehrheitlich an eine ANDERE
+   * Nummer, wird die Minderheits-Nummer nicht gebunden. Kein geratener
+   * Schwellenwert — «mehrheitlich» heisst strikt mehr Belege für die andere.
+   * Der Verwurf wird ausgewiesen (`nummerMinderheit`), nie still ausgeführt (§6.7).
+   */
+  dominanz?: ReadonlyMap<string, string>,
 ): AufloesungsBefund {
-  const leer: AufloesungsBefund = { zitate: [], ohneErlass: 0, abkAusgeschlossen: [], nummerOhneBestand: [] };
+  const leer: AufloesungsBefund = {
+    zitate: [], ohneErlass: 0, abkAusgeschlossen: [], nummerOhneBestand: [], nummerMinderheit: [],
+  };
   const sys = SYSTEMATIK_PRAEFIX.get(kanton);
   if (!text || !sys || bestand.size === 0) return leer;
 
   const abkAusgeschlossen = new Set<string>();
   const nummerOhneBestand = new Set<string>();
+  const nummerMinderheit = new Set<string>();
 
   // ── Durchgang 1: dokumentlokale Abkürzungen binden ────────────────────────
   const lokal = new Map<string, string>();     // normalisierte Abk → Erlass-key
   const mehrdeutig = new Set<string>();
+  const tippfehlerNummern = new Set<string>();
   for (const m of text.matchAll(bindungsMuster(sys.praefix))) {
     const sr = m[2];
     const key = bestand.get(sr);
@@ -289,6 +328,15 @@ export function loeseKantonZitate(
     if (!abk) continue;
     const norm = normalisiereAbk(abk);
     if (INVALID_LAW_CODES.has(norm)) continue;
+    // Tippfehler-Riegel: der Korpus bindet diese Abkürzung mehrheitlich an eine
+    // andere Nummer → diese Nummer hier NICHT verwenden, weder für die
+    // Abkürzungs- noch für den Nummern-Kanal desselben Zitats.
+    const dom = dominanz?.get(norm);
+    if (dom !== undefined && dom !== sr) {
+      nummerMinderheit.add(`${abk}: ${sr} (Korpus-Mehrheit ${dom})`);
+      tippfehlerNummern.add(sr);
+      continue;
+    }
     // AUSSCHLUSS (a), beidseitig: was das Bundes-Register kennt, wird nie
     // kantonal gebunden — lieber die Folge-Nennungen verlieren (§1/§8).
     if (normKeyFuerAbk(abk)) { abkAusgeschlossen.add(abk); continue; }
@@ -317,9 +365,15 @@ export function loeseKantonZitate(
     const lm = locator.exec(fenster);
     if (lm && !traegtKuerzelVorKlammer(fenster.slice(0, lm.index))) {
       const sr = (lm[1] ? `${lm[1]} ` : '') + lm[2];
-      const key = bestand.get(sr);
-      if (key) erlass = key;
-      else nummerOhneBestand.add(sr);
+      // Als Tippfehler erkannte Nummern wirken auch hier: sonst käme dieselbe
+      // Fehlbindung über den Nummern-Kanal zurück, die Durchgang 1 gerade
+      // verworfen hat (§5 — eine Regel, beide Kanäle).
+      if (tippfehlerNummern.has(sr)) { /* verworfen, in nummerMinderheit ausgewiesen */ }
+      else {
+        const key = bestand.get(sr);
+        if (key) erlass = key;
+        else nummerOhneBestand.add(sr);
+      }
     }
 
     if (!erlass) {
@@ -348,5 +402,43 @@ export function loeseKantonZitate(
     ohneErlass,
     abkAusgeschlossen: [...abkAusgeschlossen].sort(),
     nummerOhneBestand: [...nummerOhneBestand].sort(),
+    nummerMinderheit: [...nummerMinderheit].sort(),
   };
+}
+
+/**
+ * Korpus-dominante Bindung Abkürzung → Systematik-Nummer, aus allen Texten EINES
+ * Kantons. Deterministisch (§2): bei Gleichstand gewinnt NIEMAND (der Eintrag
+ * entfällt), sonst hinge das Ergebnis an der Dokument-Reihenfolge — und ein
+ * Riegel, der je nach Lesereihenfolge anders greift, ist kein Riegel.
+ */
+export function baueNummernDominanz(texte: Iterable<string>, kanton: string): Map<string, string> {
+  const sys = SYSTEMATIK_PRAEFIX.get(kanton);
+  const zaehler = new Map<string, Map<string, number>>();
+  if (!sys) return new Map();
+  for (const text of texte) {
+    if (!text) continue;
+    for (const m of text.matchAll(bindungsMuster(sys.praefix))) {
+      const abk = kuerzelAusKlammer(m[1]);
+      if (!abk) continue;
+      const norm = normalisiereAbk(abk);
+      if (INVALID_LAW_CODES.has(norm)) continue;
+      const je = zaehler.get(norm) ?? (zaehler.set(norm, new Map()), zaehler.get(norm)!);
+      je.set(m[2], (je.get(m[2]) ?? 0) + 1);
+    }
+  }
+  const out = new Map<string, string>();
+  for (const norm of [...zaehler.keys()].sort()) {
+    const je = zaehler.get(norm)!;
+    let beste: string | null = null;
+    let max = 0;
+    let gleichstand = false;
+    for (const sr of [...je.keys()].sort()) {
+      const n = je.get(sr)!;
+      if (n > max) { max = n; beste = sr; gleichstand = false; }
+      else if (n === max) gleichstand = true;
+    }
+    if (beste && !gleichstand) out.set(norm, beste);
+  }
+  return out;
 }

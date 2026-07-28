@@ -68,11 +68,11 @@
     "1": [
       {
         "key": "bs_appellationsgericht_SB.2018.46",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2021.24",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "2": [
@@ -86,7 +86,7 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2021.24",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "4": [
@@ -100,11 +100,11 @@
       },
       {
         "key": "bs_appellationsgericht_SB.2018.46",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2021.24",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "5": [
@@ -118,11 +118,11 @@
       },
       {
         "key": "bs_appellationsgericht_SB.2018.46",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2021.24",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "7": [
@@ -132,13 +132,13 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2021.24",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "8": [
       {
         "key": "bs_appellationsgericht_VD.2021.24",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "9": [
@@ -156,7 +156,7 @@
     "15": [
       {
         "key": "bs_appellationsgericht_VD.2021.24",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "19": [
@@ -172,7 +172,7 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2021.24",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "26": [
@@ -182,25 +182,25 @@
       },
       {
         "key": "bs_appellationsgericht_SB.2018.46",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "28": [
       {
         "key": "bs_appellationsgericht_SB.2018.46",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "32": [
       {
         "key": "bs_appellationsgericht_SB.2018.46",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "33": [
       {
         "key": "bs_appellationsgericht_SB.2018.46",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

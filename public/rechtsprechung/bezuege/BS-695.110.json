@@ -44,15 +44,15 @@
     "13": [
       {
         "key": "bs_appellationsgericht_VD.2021.224",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2022.6",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2022.7",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

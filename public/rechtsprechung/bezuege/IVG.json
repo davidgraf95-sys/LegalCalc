@@ -2396,31 +2396,31 @@
       },
       {
         "key": "be_verwaltungsgericht_2002025599",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "be_verwaltungsgericht_200202620",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.37",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.116",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.88",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.60",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.170",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "2": [
@@ -2430,11 +2430,11 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.100",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.94",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "3": [
@@ -2486,35 +2486,35 @@
       },
       {
         "key": "be_verwaltungsgericht_2002025599",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.37",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.66",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.38",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "ag_gerichte_VBE_2024_584",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.113",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.100",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.75",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "5": [
@@ -2534,27 +2534,27 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.100",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.119",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.75",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.94",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.197",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.117",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "7": [
@@ -2584,35 +2584,35 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.79",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.58",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.9",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.4",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.104",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.96",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.37",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.92",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "8": [
@@ -2650,35 +2650,35 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.99",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.91",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.79",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.119",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.50",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.41",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.34",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.25",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "9": [
@@ -2700,37 +2700,37 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.100",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.119",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.75",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.94",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.197",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.117",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "10": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.119",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2024.12",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "12": [
@@ -2748,19 +2748,19 @@
       },
       {
         "key": "be_verwaltungsgericht_200202620",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.91",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.32",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.90",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "13": [
@@ -2794,23 +2794,23 @@
       },
       {
         "key": "be_verwaltungsgericht_200202620",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2026.8",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.69",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.32",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.50",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "14": [
@@ -2832,15 +2832,15 @@
       },
       {
         "key": "be_verwaltungsgericht_200202620",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.32",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.50",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "15": [
@@ -2866,35 +2866,35 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.91",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.119",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_UV.2024.22",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.5",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.26",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.106",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.77",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.13",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "16": [
@@ -2908,31 +2908,31 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.79",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.26",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.13",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.10",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.166",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.181",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.134",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "17": [
@@ -2946,35 +2946,35 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.37",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.91",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.9",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.113",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.18",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.19",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.13",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.10",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "18": [
@@ -2984,35 +2984,35 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.91",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_UV.2024.22",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.41",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.77",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.13",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.40",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.10",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.166",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "21": [
@@ -3038,35 +3038,35 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_AH.2025.11",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.34",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.106",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.97",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.88",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_AH.2023.5",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.85",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.108",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "22": [
@@ -3092,23 +3092,23 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.60",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.99",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.41",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_BV.2023.16",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.80",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "23": [
@@ -3126,15 +3126,15 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.60",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.41",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.80",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "24": [
@@ -3152,15 +3152,15 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.60",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.41",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.80",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "25": [
@@ -3170,7 +3170,7 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.75",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "27": [
@@ -3222,35 +3222,35 @@
       },
       {
         "key": "be_verwaltungsgericht_2002025599",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.55",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.135",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.64",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.126",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.55",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.111",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.79",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "29": [
@@ -3276,35 +3276,35 @@
       },
       {
         "key": "be_verwaltungsgericht_2002025599",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.64",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.126",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.112",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.55",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.111",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.79",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.19",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "30": [
@@ -3314,7 +3314,7 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_UV.2024.38",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "32": [
@@ -3328,11 +3328,11 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_BV.2021.21",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.11",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "35": [
@@ -3354,15 +3354,15 @@
       },
       {
         "key": "bs_appellationsgericht_ZB.2023.66",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_KE.2023.37",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.55",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "36": [
@@ -3388,35 +3388,35 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_EL.2023.3",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.100",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.75",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.120",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.106",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.94",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_UV.2022.9",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.197",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "37": [
@@ -3426,7 +3426,7 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_AH.2023.6",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "39": [
@@ -3440,23 +3440,23 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.100",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.75",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.120",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2021.203",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.197",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "42": [
@@ -3494,47 +3494,47 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.85",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.116",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.39",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.62",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.109",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_AH.2024.8",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.84",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.6",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "43": [
       {
         "key": "bs_sozialversicherungsgericht_BV.2021.18",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "44": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.41",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "45": [
@@ -3558,11 +3558,11 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.116",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.51",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "50": [
@@ -3572,17 +3572,17 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.55",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_EL.2022.2",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "55": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.77",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "57": [
@@ -3600,15 +3600,15 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.87",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_EL.2023.3",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.13",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "59": [
@@ -3618,35 +3618,35 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.64",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.16",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.113",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.82",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.119",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.83",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.113",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.46",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "69": [
@@ -3660,35 +3660,35 @@
       },
       {
         "key": "be_verwaltungsgericht_2002025599",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "be_verwaltungsgericht_200202620",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.146",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.109",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.85",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.64",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.112",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.76",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "70": [
@@ -3698,21 +3698,21 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.14",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.180",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "74": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.49",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.150",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "76": [
@@ -3752,25 +3752,25 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.119",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.41",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.26",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.106",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "14quater": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.106",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "14ter": [
@@ -3780,15 +3780,15 @@
       },
       {
         "key": "be_verwaltungsgericht_200202620",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2026.8",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.69",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "18a": [
@@ -3798,97 +3798,97 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.41",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.13",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.10",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.166",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.181",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.134",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "18b": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.77",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.13",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.10",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.166",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.181",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.134",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "18c": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.13",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.10",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.166",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.181",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.134",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "18d": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.13",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.10",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.166",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.181",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.134",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "1a": [
@@ -3912,11 +3912,11 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.100",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.94",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "21bis": [
@@ -3926,7 +3926,7 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_BV.2023.16",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "21ter": [
@@ -3940,7 +3940,7 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_BV.2023.16",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "22bis": [
@@ -3998,35 +3998,35 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.135",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.146",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.55",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.79",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.43",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.37",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.91",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.76",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "28b": [
@@ -4040,35 +4040,35 @@
       },
       {
         "key": "be_verwaltungsgericht_2002025599",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.55",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.135",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.55",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.79",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.19",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.43",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.91",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "42bis": [
@@ -4082,15 +4082,15 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.116",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.62",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.51",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "42quater": [
@@ -4116,11 +4116,11 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_EL.2021.11",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2021.129",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "42quinquies": [
@@ -4184,15 +4184,15 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.6",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.51",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.194",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "54a": [
@@ -4202,35 +4202,35 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.146",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.76",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.19",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.87",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.66",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.62",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.59",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.31",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "57a": [
@@ -4240,47 +4240,47 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.66",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.34",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.17",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.147",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.194",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "59a": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.61",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "66c": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.61",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "69bis": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.34",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "6a": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.3",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "7a": [
@@ -4290,19 +4290,19 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.37",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.77",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.193",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.1",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "7b": [
@@ -4320,41 +4320,41 @@
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.37",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.72",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.7",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.70",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.51",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.193",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.1",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "7d": [
       {
         "key": "bs_sozialversicherungsgericht_IV.2025.37",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2021.134",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "8a": [
@@ -4384,23 +4384,23 @@
       },
       {
         "key": "be_verwaltungsgericht_2002024417",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2024.79",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2023.106",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_BV.2021.21",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_IV.2022.11",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

@@ -701,9 +701,15 @@ export function extrahiereStatutRefsMitAnzahl(text: string): StatutRefZahl[] {
 // die Textstelle, an der die Gruppe endet. WELCHER Erlass gemeint ist, entscheidet
 // der kantonale Resolver (scripts/normtext/kanton-norm-resolver.ts) über die
 // amtliche Systematik-Nummer im selben Zitat — nicht über eine Abkürzungs-Tabelle.
-// So ist die föderal/kantonale Verwechslung nicht «gefiltert», sondern
-// STRUKTURELL ausgeschlossen: es gibt gar keinen Weg von hier zu einem
-// Bundes-Register-key.
+// Auf DIESEM Pfad ist die föderal/kantonale Verwechslung darum nicht
+// «gefiltert», sondern strukturell ausgeschlossen: von hier führt kein Weg zu
+// einem Bundes-Register-key.
+//
+// KEINE AUSSAGE ÜBER DEN «Art.»-KANAL (Gegenprüfung Runde 1/B4). Kantonale
+// Entscheide erzeugen daneben auch bundesrechtliche «Art.»-Zitate, und die
+// laufen über die Abkürzungs-Tabelle wie eh und je — für sie gilt der Satz oben
+// ausdrücklich NICHT. Ihre Begrenzung steht bei `fremdDefinierteKeys`
+// (scripts/normtext/entscheide-mapping.ts), samt Messung und benannter Restlücke.
 //
 // Die Grammatik der Artikel-Liste ist DIESELBE wie bei «Art.» (`ARTIKEL_GLIED` +
 // `KETTEN_GLIED` + `zerlegeArtikelListe`, §5) — Ketten («§§ 88 Abs. 1 und 93»),

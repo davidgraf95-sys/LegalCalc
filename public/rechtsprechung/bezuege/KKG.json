@@ -50,7 +50,7 @@
     "22": [
       {
         "key": "bs_appellationsgericht_SB.2022.131",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "28": [
@@ -60,7 +60,7 @@
       },
       {
         "key": "bs_appellationsgericht_SB.2022.24",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "30": [
@@ -76,7 +76,7 @@
       },
       {
         "key": "bs_appellationsgericht_SB.2022.24",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

@@ -87,42 +87,6 @@
         "status": "kantonal"
       }
     },
-    "bs_appellationsgericht_VD.2024.155": {
-      "zitierung": "Appellationsgericht BS VD.2024.155 vom 25.07.2025",
-      "regesteKurz": "Rekurs gegen einen Entscheid der Baurekurskommission",
-      "datum": "2025-07-25",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.164": {
-      "zitierung": "Appellationsgericht BS VD.2024.164 vom 06.10.2025",
-      "regesteKurz": "Einspracheentscheid zum Bauentscheid Nr. BBG [...] vom 14. September 2022 in Sachen Umbau und Sanierung Mehrfamilienhau…",
-      "datum": "2025-10-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.166": {
-      "zitierung": "Appellationsgericht BS VD.2024.166 vom 06.10.2025",
-      "regesteKurz": "Bauentscheid Nr. BBG [...] vom 14. September 2022 in Sachen Umbau und Sanierung Mehrfamilienhaus mit Ausbau des Dachges…",
-      "datum": "2025-10-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
     "bs_appellationsgericht_VD.2024.23": {
       "zitierung": "Appellationsgericht BS VD.2024.23 vom 02.12.2024",
       "regesteKurz": "Vorentscheid Generelles Baubegehren Nr. [...] vom 13. Februar 2023 in Sachen Grundsatzfragen zum Bauvorhaben Renovation…",
@@ -152,91 +116,77 @@
     "8": [
       {
         "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "12": [
       {
         "key": "bs_appellationsgericht_VD.2023.161",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "15": [
       {
         "key": "bs_appellationsgericht_VD.2023.161",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "31": [
       {
         "key": "bs_appellationsgericht_VD.2023.166",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "32": [
       {
         "key": "bs_appellationsgericht_VD.2024.23",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2021.126",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "47": [
       {
         "key": "bs_appellationsgericht_VD.2025.69",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "48": [
       {
         "key": "bs_appellationsgericht_VD.2023.99",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "56": [
       {
         "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "81": [
       {
         "key": "bs_appellationsgericht_VD.2023.110",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "87": [
       {
         "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": 0
-      }
-    ],
-    "178": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.164",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.166",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.155",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "12a": [
       {
         "key": "bs_appellationsgericht_VD.2023.161",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "8b": [
       {
         "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },
@@ -270,9 +220,6 @@
     },
     "87": {
       "kantonal": 1
-    },
-    "178": {
-      "kantonal": 3
     },
     "12a": {
       "kantonal": 1

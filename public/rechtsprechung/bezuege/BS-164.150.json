@@ -32,13 +32,13 @@
     "3": [
       {
         "key": "bs_appellationsgericht_VD.2020.23",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "8a": [
       {
         "key": "bs_appellationsgericht_VD.2020.24",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

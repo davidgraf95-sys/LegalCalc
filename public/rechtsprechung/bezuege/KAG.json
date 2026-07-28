@@ -3,18 +3,6 @@
   "erlass": "KAG",
   "erlassEbene": "bund",
   "dokumente": {
-    "be_verwaltungsgericht_2002024417": {
-      "zitierung": "Verwaltungsgericht BE 200 2024 417 vom 02.06.2026",
-      "regesteKurz": null,
-      "datum": "2026-06-02",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BE",
-        "gericht": "be_verwaltungsgericht",
-        "status": "kantonal"
-      }
-    },
     "bge_148_II_121": {
       "zitierung": "BGE 148 II 121",
       "regesteKurz": "Art. 9, 27, 49, 94 Abs. 1, 127 BV; Art. 34 KAG; Art. 39 FINIG; Art. 103 FusG; Handänderungsabgabe, die anlässlich des Wechsels der Leitung eines Immobilien-Anlagefonds erhoben wird; Wirtschaftsfreiheit und Wettbewerbsneutralität; Vorrang d…",
@@ -193,12 +181,6 @@
         "gewicht": 0
       }
     ],
-    "42": [
-      {
-        "key": "be_verwaltungsgericht_2002024417",
-        "gewicht": 0
-      }
-    ],
     "58": [
       {
         "key": "bge_150_II_98",
@@ -286,9 +268,6 @@
     },
     "39": {
       "bge": 1
-    },
-    "42": {
-      "kantonal": 1
     },
     "58": {
       "bge": 3

@@ -56,25 +56,25 @@
     "1": [
       {
         "key": "bs_appellationsgericht_VD.2021.257",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "9": [
       {
         "key": "bs_appellationsgericht_VG.2021.3",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "16": [
       {
         "key": "bs_appellationsgericht_VD.2023.59",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "23": [
       {
         "key": "bs_appellationsgericht_VD.2022.100",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

@@ -30,10 +30,19 @@ export interface BezugsDokument {
   facetten: BezugsFacetten;
 }
 
-/** Kanten-Eintrag: Verweis auf den Dokument-Kopf + artikel-lokales Gewicht. */
+/**
+ * Kanten-Eintrag: Verweis auf den Dokument-Kopf + artikel-lokales Gewicht.
+ *
+ * `gewicht: null` heisst NICHT MESSBAR, nicht «null Zitierungen» (W2·7-BEZUG,
+ * Gegenprüfung Runde 1/B3). Der Zitier-Graph erkennt nur BGE-Fundstellen und
+ * Bundesgerichts-Aktenzeichen; kantonale («BES.2026.15») und eidgenössische
+ * Geschäftsnummern treffen keine dieser Formen. Wer die Zahl rendert, muss den
+ * Unterschied mitrendern — eine 0 an einem kantonalen Entscheid behauptete, ihn
+ * zitiere niemand (§8).
+ */
 export interface BezugsEintrag {
   key: string;
-  gewicht: number;
+  gewicht: number | null;
 }
 
 export interface BezugsShard {
@@ -46,10 +55,13 @@ export interface BezugsShard {
   gesamtProArtikel: Record<string, Partial<Record<BezugStatus, number>>>;
 }
 
-/** Aufgelöste Kante: Kopf + Gewicht, wie eine Komponente sie braucht. */
+/**
+ * Aufgelöste Kante: Kopf + Gewicht, wie eine Komponente sie braucht.
+ * `gewicht: null` = nicht messbar (siehe `BezugsEintrag`).
+ */
 export interface Bezug extends BezugsDokument {
   key: string;
-  gewicht: number;
+  gewicht: number | null;
 }
 
 /** Was ein Filter auswählen kann. Leere/fehlende Achse = keine Einschränkung. */

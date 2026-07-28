@@ -56,25 +56,25 @@
     "4": [
       {
         "key": "bs_appellationsgericht_ZS.2024.3",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "11": [
       {
         "key": "bs_appellationsgericht_BES.2023.40",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "12": [
       {
         "key": "bs_appellationsgericht_DGS.2024.43",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "33": [
       {
         "key": "bs_appellationsgericht_BES.2022.54",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

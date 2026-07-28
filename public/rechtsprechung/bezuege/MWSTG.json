@@ -352,7 +352,7 @@
       },
       {
         "key": "bs_appellationsgericht_BEZ.2021.36",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "3": [
@@ -388,7 +388,7 @@
       },
       {
         "key": "bs_appellationsgericht_BEZ.2021.36",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "9": [
@@ -558,7 +558,7 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2022.126",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "27": [
@@ -594,7 +594,7 @@
       },
       {
         "key": "ag_gerichte_HOR_2024_19",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "29": [

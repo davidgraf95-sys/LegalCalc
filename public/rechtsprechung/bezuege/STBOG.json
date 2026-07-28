@@ -168,7 +168,7 @@
       },
       {
         "key": "bstger_RR_2026_46",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "39": [
@@ -178,7 +178,7 @@
       },
       {
         "key": "bstger_RR_2026_46",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "40": [
@@ -190,7 +190,7 @@
     "73": [
       {
         "key": "bstger_RR_2026_46",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "78": [
@@ -210,15 +210,15 @@
       },
       {
         "key": "bstger_CR_2026_5",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bstger_CR_2026_4",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bstger_SK_2025_57",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

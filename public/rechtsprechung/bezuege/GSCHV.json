@@ -108,7 +108,7 @@
     "46": [
       {
         "key": "bs_appellationsgericht_VD.2021.133",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "41a": [
@@ -122,11 +122,11 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2024.40",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2021.133",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "41c": [
@@ -148,11 +148,11 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2024.40",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_VD.2021.133",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "41d": [

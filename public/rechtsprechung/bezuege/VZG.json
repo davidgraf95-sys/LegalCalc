@@ -108,7 +108,7 @@
       },
       {
         "key": "bs_appellationsgericht_BEZ.2023.54",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "16": [
@@ -132,7 +132,7 @@
     "29": [
       {
         "key": "bs_appellationsgericht_BEZ.2026.29",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "33": [
@@ -228,7 +228,7 @@
       },
       {
         "key": "bs_appellationsgericht_BEZ.2023.54",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "78a": [

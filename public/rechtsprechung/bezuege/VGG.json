@@ -346,15 +346,15 @@
       },
       {
         "key": "bvger_F_4158_2026",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bvger_F_3740_2026",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bvger_F_4109_2026",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "32": [
@@ -442,7 +442,7 @@
       },
       {
         "key": "bvger_F_3740_2026",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "40": [

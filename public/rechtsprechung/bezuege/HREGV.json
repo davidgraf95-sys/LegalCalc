@@ -128,7 +128,7 @@
     "5": [
       {
         "key": "bs_appellationsgericht_BES.2024.145",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "45": [
@@ -140,11 +140,11 @@
     "62": [
       {
         "key": "bs_appellationsgericht_ZB.2025.34",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_ZB.2025.27",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "82": [
@@ -156,7 +156,7 @@
     "117": [
       {
         "key": "bs_appellationsgericht_BEZ.2025.17",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "131": [
@@ -184,7 +184,7 @@
     "152a": [
       {
         "key": "bs_appellationsgericht_BES.2024.145",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "159a": [

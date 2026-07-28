@@ -56,19 +56,19 @@
     "1": [
       {
         "key": "bs_sozialversicherungsgericht_KV.2025.3",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_KV.2024.1",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_KV.2023.16",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_sozialversicherungsgericht_KV.2022.1",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

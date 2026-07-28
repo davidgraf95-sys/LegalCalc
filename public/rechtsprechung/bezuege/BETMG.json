@@ -474,7 +474,7 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2023.108",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "8": [
@@ -540,35 +540,35 @@
       },
       {
         "key": "bs_appellationsgericht_SB.2025.17",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2023.48",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2024.48",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2020.119",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2023.2",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2024.104",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2024.73",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2024.79",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "20": [
@@ -600,17 +600,17 @@
       },
       {
         "key": "bs_appellationsgericht_SB.2023.2",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_BES.2022.53",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "27": [
       {
         "key": "bs_appellationsgericht_VD.2023.108",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "19a": [
@@ -648,35 +648,35 @@
       },
       {
         "key": "bs_appellationsgericht_SB.2025.39",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2024.39",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2024.64",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2023.48",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2024.48",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2024.73",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_DGS.2024.61",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_DGS.2025.6",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "19b": [
@@ -690,35 +690,35 @@
       },
       {
         "key": "bs_appellationsgericht_SB.2024.48",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2020.88",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2020.69",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2022.50",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2022.32",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2020.60",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_DGS.2022.26",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_BES.2021.110",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "2a": [
@@ -728,7 +728,7 @@
       },
       {
         "key": "bs_appellationsgericht_VD.2023.108",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "2b": [
@@ -740,7 +740,7 @@
     "305bis": [
       {
         "key": "bs_appellationsgericht_SB.2020.92",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "3e": [

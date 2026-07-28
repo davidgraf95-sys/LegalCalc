@@ -44,17 +44,17 @@
     "23": [
       {
         "key": "bs_appellationsgericht_KE.2024.4",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "31": [
       {
         "key": "bs_appellationsgericht_KE.2024.21",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_KE.2023.28",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

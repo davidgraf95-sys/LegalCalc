@@ -59,6 +59,7 @@ import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import type { EntscheidManifest } from '../../src/lib/rechtsprechung/register';
 import type { NormEntscheidIndex } from '../../src/lib/rechtsprechung/norm-index';
+import { normArtikelToken } from '../../src/lib/rechtsprechung/norm-index';
 import type { BezugsShard } from './bezuege-bauen';
 import {
   DECKEL_JE_STATUS, STATUS_RANG, bezugStatusFuerEntscheid,
@@ -112,6 +113,34 @@ function bestandsOrdnung(a: BgKante, b: BgKante): number {
 
 const fehler: string[] = [];
 const warn: string[] = [];
+
+/**
+ * Artikel-Tokens EINES kantonalen Erlass-Snapshots, in Shard-Normalform.
+ *
+ * Gelesen wird das Feld `artikel` der Einträge, und zwar UNVERÄNDERT durch
+ * `normArtikelToken` — dieselbe Normalisierung, mit der die Shard-Tokens
+ * gebildet werden (§5). Kein eigener Zerleger.
+ *
+ * DASS DAS SO SEIN MUSS, ist gemessen und nicht überlegt: die erste Fassung
+ * zerlegte den Wert mit einem eigenen Regex und schnitt dabei die
+ * Buchstaben-Artikel ab — der Snapshot führt sie als `'30_b'`, `'7_a'`,
+ * `'30 l'`, der Regex machte daraus `'30'` bzw. `'7'`. Das Ergebnis waren 51
+ * Hinweise, von denen 47 nur besagten, dass das Prüfwerkzeug seine eigene
+ * Schreibweise nicht kennt. Ein Abgleich, der die häufigste Form seiner
+ * Vergleichsseite nicht lesen kann, misst nicht den Bestand, sondern sich
+ * selbst (§6.7) — und eine Hinweisliste, die zu 92 % aus Eigenrauschen besteht,
+ * wird nach dem zweiten Lauf nicht mehr gelesen.
+ */
+function artikelTokensVonErlass(pfad: string): Set<string> {
+  const out = new Set<string>();
+  try {
+    const roh = JSON.parse(readFileSync(pfad, 'utf8')) as { eintraege?: Array<{ artikel?: unknown }> };
+    for (const e of roh.eintraege ?? []) {
+      if (typeof e?.artikel === 'string' && e.artikel) out.add(normArtikelToken(e.artikel));
+    }
+  } catch { return new Set(); }
+  return out;
+}
 
 function main(): void {
   if (!existsSync(BEZ)) {
@@ -273,9 +302,40 @@ function main(): void {
   console.log(`  Kantonale Resolver: ${[...SYSTEMATIK_PRAEFIX.keys()].sort().join(', ') || '–'} `
     + `(Kantone ohne deklarierten Systematik-Präfix haben keine kantonalen Erlass-Kanten — benannte Lücke, §8).`);
 
+  // ── T4: Artikel-Existenz-Abgleich, kantonale Erlasse (HINWEIS, nicht rot) ──
+  //
+  // Zeigt eine kantonale Kante auf einen §, den der gebundene Erlass gar nicht
+  // hat, stimmt die Bindung nicht — so sind die Quell-Tippfehler in der
+  // Systematik-Nummer überhaupt gefunden worden (Gegenprüfung Runde 1/B2).
+  //
+  // WARUM HINWEIS UND NICHT ROT: nicht jeder Fehltreffer ist ein Fehler. Ein
+  // Entscheid von 2019 zitiert die damals geltende Fassung, und ein seither
+  // aufgehobener § steht im heutigen Snapshot nicht mehr. Diese Fälle sind
+  // legitim (§7/§8) — sie rot zu machen hiesse, dem Gericht vorzuwerfen, dass
+  // sich das Recht seither geändert hat. Rot wäre hier ein Tor, das die falsche
+  // Frage stellt; sichtbar muss die Zahl trotzdem sein (§6.7).
+  let existenzGeprueft = 0;
+  for (const datei of dateien) {
+    const shard = JSON.parse(readFileSync(join(BEZ, datei), 'utf8')) as BezugsShard;
+    if (shard.erlassEbene !== 'kanton') continue;
+    const snapPfad = join(ROOT, 'public', 'normtext', 'kanton', `${shard.erlass}.json`);
+    if (!existsSync(snapPfad)) continue;   // T2 hat das bereits rot gemeldet
+    const vorhanden = artikelTokensVonErlass(snapPfad);
+    if (!vorhanden.size) continue;         // Snapshot ohne lesbare Artikel — nichts zu sagen
+    existenzGeprueft++;
+    for (const token of Object.keys(shard.proArtikel)) {
+      if (!vorhanden.has(token)) {
+        warn.push(`${shard.erlass}: § ${token} kommt im Normtext-Snapshot nicht vor `
+          + `(${(shard.proArtikel[token] ?? []).length} Kante(n)) — Alt-Fassung oder Fehlbindung.`);
+      }
+    }
+  }
+  console.log(`  Artikel-Existenz-Abgleich: ${existenzGeprueft} kantonale Erlass-Shards gegen ihren Normtext-Snapshot geprüft.`);
+
   if (warn.length) {
-    console.log('\ncheck:bezuege — Hinweise:');
-    for (const w of warn.slice(0, 20)) console.log(`  · ${w}`);
+    console.log(`\ncheck:bezuege — ${warn.length} Hinweis(e), kein Fehler:`);
+    for (const w of warn.slice(0, 25)) console.log(`  · ${w}`);
+    if (warn.length > 25) console.log(`  … und ${warn.length - 25} weitere.`);
   }
   if (fehler.length) {
     console.error(`\ncheck:bezuege ROT — ${fehler.length} Verstoss/Verstösse:`);

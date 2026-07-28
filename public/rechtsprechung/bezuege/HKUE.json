@@ -44,13 +44,13 @@
     "8": [
       {
         "key": "bs_appellationsgericht_KR.2025.2",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "10": [
       {
         "key": "bs_appellationsgericht_KR.2025.2",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "12": [
@@ -74,7 +74,7 @@
     "26": [
       {
         "key": "bs_appellationsgericht_KR.2025.2",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

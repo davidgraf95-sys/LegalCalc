@@ -32,11 +32,11 @@
     "6": [
       {
         "key": "bs_appellationsgericht_DGS.2025.11",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_DGS.2025.6",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },

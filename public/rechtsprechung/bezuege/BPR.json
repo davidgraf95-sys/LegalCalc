@@ -98,28 +98,12 @@
         "gericht": "bge",
         "status": "bge"
       }
-    },
-    "bs_appellationsgericht_VD.2025.5": {
-      "zitierung": "Appellationsgericht BS VD.2025.5 vom 03.06.2025",
-      "regesteKurz": "Luftreinigungsgerät, Vollzug Chemikaliengesetzgebung",
-      "datum": "2025-06-03",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
     }
   },
   "proArtikel": {
     "3": [
       {
         "key": "bge_151_I_354",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.5",
         "gewicht": 0
       }
     ],
@@ -280,8 +264,7 @@
   },
   "gesamtProArtikel": {
     "3": {
-      "bge": 1,
-      "kantonal": 1
+      "bge": 1
     },
     "4": {
       "bge": 1

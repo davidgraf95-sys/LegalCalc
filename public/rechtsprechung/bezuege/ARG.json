@@ -156,7 +156,7 @@
       },
       {
         "key": "bs_appellationsgericht_BES.2022.93",
-        "gewicht": 0
+        "gewicht": null
       }
     ],
     "71": [
@@ -168,11 +168,11 @@
     "35a": [
       {
         "key": "bs_appellationsgericht_VD.2024.163",
-        "gewicht": 0
+        "gewicht": null
       },
       {
         "key": "bs_appellationsgericht_SB.2024.20",
-        "gewicht": 0
+        "gewicht": null
       }
     ]
   },
