@@ -32,6 +32,8 @@
 
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import { STATUS_RANG } from '../../lib/verzahnung/facetten';
+import { entscheidPraezision } from '../../lib/verzahnung/artikel-revisionen';
+import { imBereich, istBereichOffen, type Zeitbereich } from './bezugZeit';
 
 /**
  * Die im Gesetz-Leser bedienbaren Klassen, in Anzeige-Reihenfolge (§2:
@@ -99,7 +101,8 @@ export function istErweitert(klassen: readonly BezugStatus[]): boolean {
  * Die LEERE Menge bleibt erlaubt und wird NICHT stillschweigend auf den
  * Default zurückgesetzt: «alles abgewählt» ist eine legitime Nutzerabsicht,
  * und die Zeile weist sie sichtbar aus («n ausgeblendet · alle zeigen») statt
- * kommentarlos zu verschwinden (§8, gleiches Muster wie der Zeitraum-Filter).
+ * kommentarlos zu verschwinden (§8, gleiches Muster wie der Zeit-Bereich, dessen
+ * offene Enden ebenfalls nie stillschweigend zu Grenzwerten werden).
  */
 export function normalisiereKlassen(roh: readonly unknown[]): BezugStatus[] {
   const erlaubt = new Set<string>(BEDIENBARE_KLASSEN);
@@ -123,11 +126,17 @@ export function normalisiereKantone(roh: readonly unknown[]): string[] {
  * UND auf jede spätere Projektion passen, ohne dass eine Seite die andere
  * importiert (Muster wie `EntscheidFacettenQuelle` in facetten.ts).
  *
- * `datum` ist bereits Teil des Vertrags, obwohl HEUTE kein Prädikat es liest —
- * es ist der Andockpunkt für den Datums-Bereichsfilter aus B5 (s. u.).
+ * `datum` ist seit B5 gelesen (Zeit-Bereichsfilter, s. u.); B4 hatte es bereits
+ * in den Vertrag gelegt, damit dieser Andockpunkt keinen Umbau kostete.
+ *
+ * `facetten.gericht` ist OPTIONAL und dient allein der Q1-Präzision: nur mit dem
+ * Gericht lässt sich ein BGE-Bandjahr-Platzhalter (YYYY-01-01) von einem echten
+ * Urteilsdatum unterscheiden (`entscheidPraezision`). Fehlt es, gilt das Datum
+ * als tagesgenau — für jede Projektion, die kein Gericht führt, ist das die
+ * einzige Aussage, die die Daten decken.
  */
 export interface WaehlbareKante {
-  facetten: { status: BezugStatus; kanton: string };
+  facetten: { status: BezugStatus; kanton: string; gericht?: string };
   datum?: string;
 }
 
@@ -139,22 +148,26 @@ export type BezugsPraedikat = (kante: WaehlbareKante) => boolean;
  * sein müssen (UND-Verknüpfung über die Achsen, ODER innerhalb einer Achse).
  *
  * ── WARUM EINE LISTE UND NICHT DREI FESTE `if`s ────────────────────────────
- * Vorgabe David 28.7.2026: die Zeit-Filterung wird NICHT hier gebaut, sondern
+ * Vorgabe David 28.7.2026: die Zeit-Filterung wird NICHT mit B4 gebaut, sondern
  * kommt zentral mit B5 (eigenes Header-Dropdown, Zeitstrahl + Von-Bis-Datum
- * statt grober Perioden). Damit sie später andocken kann, ohne diese Funktion
+ * statt grober Perioden). Damit sie andocken kann, ohne diese Funktion
  * aufzuschneiden, ist die Achsen-Menge OFFEN: eine weitere Facette ist ein
  * weiterer Eintrag in dieser Liste, kein weiterer Zweig in einem gewachsenen
- * Bedingungs-Block. `WaehlbareKante.datum` liegt dafür schon im Vertrag.
+ * Bedingungs-Block. `WaehlbareKante.datum` lag dafür schon im Vertrag.
  *
- * ERWEITERUNGSPUNKT B5 (Kommentar, KEIN toter Code — §0/1e): der Datumsfilter
- * wäre genau ein zusätzliches Prädikat der Form
- *   `if (bereich) aus.push((k) => k.datum != null && k.datum >= bereich.von && k.datum <= bereich.bis)`
- * — mit der Q1-Auflage aus §1.0, dass BGE-Bandjahr-Platzhalter (YYYY-01-01)
- * jahr-genau und nie tagesgenau verglichen werden. Hier bewusst NICHT gebaut.
+ * B5 hat diesen Punkt eingelöst: die Zeit-Achse ist EIN weiteres Prädikat am
+ * Ende der Liste, keine Zeile der bestehenden zwei hat sich geändert. Die
+ * Q1-Auflage (BGE-Bandjahr-Platzhalter jahr-genau, nie tagesgenau) liegt in
+ * `imBereich` — an einer Stelle, samt Begründung (§5).
+ *
+ * Der offene Bereich fügt GAR KEIN Prädikat hinzu (statt eines, das immer wahr
+ * ist): so läuft der Grundzustand durch genau dieselben zwei Prüfungen wie vor
+ * B5 — messbar gleiches Verhalten, nicht bloss behauptet (§6).
  */
 export function bauePraedikate(
   klassen: readonly BezugStatus[],
   kantone: readonly string[],
+  bereich?: Zeitbereich,
 ): BezugsPraedikat[] {
   const aus: BezugsPraedikat[] = [];
   const status = new Set(klassen);
@@ -162,6 +175,14 @@ export function bauePraedikate(
   if (kantone.length > 0 && klassen.includes('kantonal')) {
     const schnitt = new Set([...kantone, 'CH']);
     aus.push((k) => schnitt.has(k.facetten.kanton));
+  }
+  if (bereich && !istBereichOffen(bereich)) {
+    aus.push((k) => {
+      // Kante ohne Datum ⇒ BEHALTEN: ein Entscheid verschwindet nie deshalb,
+      // weil sein Datum fehlt (§8, gleiche Richtung wie `imBereich`).
+      if (k.datum == null) return true;
+      return imBereich(k.datum, entscheidPraezision(k.datum, k.facetten.gericht ?? ''), bereich);
+    });
   }
   return aus;
 }
@@ -195,9 +216,10 @@ export function waehleBezuege<T extends WaehlbareKante>(
   alle: readonly T[],
   klassen: readonly BezugStatus[],
   kantone: readonly string[],
+  bereich?: Zeitbereich,
 ): T[] {
   if (klassen.length === 0) return [];
-  const praedikate = bauePraedikate(klassen, kantone);
+  const praedikate = bauePraedikate(klassen, kantone, bereich);
   return alle.filter((b) => praedikate.every((p) => p(b)));
 }
 

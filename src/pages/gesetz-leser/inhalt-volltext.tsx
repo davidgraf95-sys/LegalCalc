@@ -14,6 +14,7 @@ import { kopfOverline, grundartMeta } from './helpers';
 import { ArtikelLeser, ErlassKopfBlock, ErlassLeserKopf } from './parts';
 import { LeserAnsichtMenu } from './LeserAnsichtMenu';
 import { LeserRechtsprechungMenu } from './LeserRechtsprechungMenu';
+import type { Histogramm, Zeitbereich } from './bezugZeit';
 import { istAnhangToken } from './berechnungen';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
 
@@ -38,6 +39,7 @@ export function LeserVolltextInhalt({
   imPane, istXl, overlayWurzel, treffer, suche, sucheDebounced, setSuche,
   tocBaumEl, tocOffen, tocAuf, setTocOffen, setTocAuf, springeZuArtikel,
   leitfaelleFuer, bezuegeFuer = () => undefined, revisionFuer, historieFuer, kantoneVerfuegbar = [],
+  bezugHistogramm, bezugBereich,
   reiterToast, setReiterToast, reiterToastTimerRef,
   tocDrawerRef, trefferRef, navigate,
 }: {
@@ -85,6 +87,11 @@ export function LeserVolltextInhalt({
   /** B4: Kantone, zu denen DIESER Erlass Kanten hat — speist den Kanton-Schalter.
    *  OPTIONAL: leer heisst schlicht «noch kein Shard geladen» (kein Streifen). */
   kantoneVerfuegbar?: string[];
+  /** B5: Jahres-Verteilung der Kanten — speist den Zeitstrahl im Pane-Dropdown.
+   *  OPTIONAL: ohne sie zeigt der Streifen seinen ehrlichen Leer-Hinweis. */
+  bezugHistogramm?: Histogramm;
+  /** B5: aktiver Von-Bis-Bereich. OPTIONAL: Default = beide Enden offen. */
+  bezugBereich?: Zeitbereich;
   reiterToast: boolean;
   setReiterToast: Dispatch<SetStateAction<boolean>>;
   reiterToastTimerRef: MutableRefObject<number | null>;
@@ -147,7 +154,8 @@ export function LeserVolltextInhalt({
       <>
         {/* B4: dieselbe Paarung wie in der Einzelansicht — im Pane trägt sie die
             pane-lokale Such-Leiste statt des Inhalts-Kopfs. */}
-        <LeserRechtsprechungMenu kantoneVerfuegbar={kantoneVerfuegbar} />
+        <LeserRechtsprechungMenu kantoneVerfuegbar={kantoneVerfuegbar}
+          histogramm={bezugHistogramm} bereich={bezugBereich} />
         <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />
       </>
     )

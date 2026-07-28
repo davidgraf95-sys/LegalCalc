@@ -8,19 +8,23 @@
 //
 // ── ARBEITSTEILUNG DER BEIDEN DROPDOWNS ────────────────────────────────────
 // «Ansicht ▾»          — WIE der Gesetzestext dargestellt wird (Linien,
-//                        Fussnoten, Verweise, Entscheide-Zeile an/aus).
-// «Rechtsprechung ▾»   — WELCHE Entscheide die Zeile zeigt (Instanzen, Kantone;
-//                        künftig B5: Zeitstrahl + Von-Bis-Datum).
+//                        Fussnoten, Verweise).
+// «Rechtsprechung ▾»   — WELCHE Entscheide die Zeile zeigt (Instanzen, Kantone,
+//                        seit B5: Zeitraum über Zeitstrahl und Von-Bis-Datum).
 // Die Trennung ist die Frage, die der Nutzer stellt — «wie sieht es aus?» gegen
 // «was steht drin?» —, nicht die Technik dahinter.
 //
-// ── ANDOCKPUNKT B5 (nicht bauen, nur freihalten) ───────────────────────────
-// Der Panel-Inhalt ist eine Folge benannter Abschnitte. B5 ergänzt seinen
-// Zeitstrahl + die Von-Bis-Datumseingabe als WEITEREN Abschnitt an der unten
-// markierten Stelle — ohne die Facetten-Steuerung, die Artikel-Fuss-Darstellung
-// oder dieses Gerüst umzubauen. Die Steuerung selbst
-// (`components/verzahnung/BezugFacettenWahl.tsx`) ist vollständig gesteuert und
-// kennt weder dieses Menü noch die Werkzeugleiste.
+// ── ANDOCKPUNKT B5 — EINGELÖST (28.7.2026) ─────────────────────────────────
+// Der Panel-Inhalt ist eine Folge benannter Abschnitte. B5 hat seinen Zeitstrahl
+// + die Von-Bis-Datumseingabe als WEITEREN Abschnitt ergänzt
+// (`components/verzahnung/BezugZeitWahl.tsx`), ohne die Facetten-Steuerung, die
+// Artikel-Fuss-Darstellung oder dieses Gerüst umzubauen: der Andockpunkt hat
+// gehalten, was er versprach. Beide Steuerungen sind vollständig gesteuert und
+// kennen weder dieses Menü noch die Werkzeugleiste.
+//
+// REIHENFOLGE DER ABSCHNITTE: erst WELCHE Instanzen, dann AUS WELCHER ZEIT. Das
+// ist die Reihenfolge, in der die Auswahl wirkt (der Zeitstrahl zeigt die
+// Verteilung der bereits gewählten Instanzen) — und die, in der man fragt.
 //
 // Bedien-/A11y-Mechanik ist bewusst die BAUGLEICHE wie in `LeserAnsichtMenu`
 // (ehrliche Disclosure, KEIN role=menu — ein Menü verspräche eine
@@ -33,25 +37,88 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
 import { BezugFacettenWahl } from '../../components/verzahnung/BezugFacettenWahl';
+import { BezugZeitWahl } from '../../components/verzahnung/BezugZeitWahl';
 import {
-  setzeBezugKlassen, setzeBezugKantone, useBezugKlassen, useBezugKantone, useLeserOptionen,
+  setzeBezugKlassen, setzeBezugKantone, setzeBezugZeit, setzeOption,
+  useBezugKlassen, useBezugKantone, useLeserOptionen,
 } from './leserOptionen';
 import { istErweitert } from './bezugAuswahl';
+import { istBereichOffen, type Histogramm, type Zeitbereich } from './bezugZeit';
 
-export function LeserRechtsprechungMenu({ kantoneVerfuegbar = [] }: {
+const LEERES_HISTOGRAMM: Histogramm = { balken: [], ohneJahr: 0 };
+const OFFEN: Zeitbereich = { von: '', bis: '' };
+
+/**
+ * Panelbreite in px — EINE Zahl, aus der sowohl die CSS-Breite als auch die
+ * Randklemmung unten rechnet (§5). Als Tailwind-Klasse `w-[17rem]` plus separate
+ * JS-Konstante wären es zwei Wahrheiten, die beim ersten Nachjustieren
+ * auseinanderlaufen — und die Klemmung rechnete dann still falsch.
+ *
+ * B5: 240 → 272 px. Gemessen 28.7.2026: bei 240 px schnitt das native
+ * Datumsfeld die Jahreszahl ab («31.12.202»), und zwanzig Balken standen auf je
+ * 9 px.
+ */
+const PANEL_PX = 272;
+/** Mindestabstand zum Fensterrand, wenn das Panel geklemmt werden muss. */
+const RAND_PX = 8;
+/** Was das Panel dem Fenster insgesamt lässt, wenn es breiter wäre als dieses
+ *  (= die `max-width` unten). Auch diese Zahl trägt beides: CSS und Klemmung. */
+const FENSTER_RESERVE_PX = 32;
+
+export function LeserRechtsprechungMenu({
+  kantoneVerfuegbar = [], histogramm = LEERES_HISTOGRAMM, bereich = OFFEN,
+}: {
   /** Kantone, zu denen DIESER Erlass Kanten hat (aus dem geladenen Bezugs-Shard).
    *  Leer ⇒ kein Kanton-Streifen (nichts zu filtern, §13 F4). */
   kantoneVerfuegbar?: string[];
+  /** B5: Jahres-Verteilung der Kanten dieses Erlasses (Zeitstrahl). Leer =
+   *  Shard noch nicht geladen ⇒ der Streifen sagt das, statt eine Grafik ohne
+   *  Inhalt zu zeigen. */
+  histogramm?: Histogramm;
+  /** B5: aktiver Von-Bis-Bereich. Default = beide Enden offen. */
+  bereich?: Zeitbereich;
 }) {
   const opt = useLeserOptionen();
   const klassen = useBezugKlassen();
   const kantone = useBezugKantone();
   const [offen, setOffen] = useState(false);
+  // Wie weit muss das Panel nach RECHTS geschoben werden, damit es nicht links
+  // aus dem Fenster läuft? 0 = gar nicht (der Normalfall auf dem Desktop).
+  const [schub, setSchub] = useState(0);
   const wrapRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const panelId = useId();
 
   useDialogFokus(offen, panelRef, () => setOffen(false));
+
+  /**
+   * Öffnen mit Randklemmung.
+   *
+   * BEFUND 28.7.2026, an der Geometrie gemessen: bei 390 px Fensterbreite sass
+   * die linke Panel-Kante auf x = −94 — knapp ein Drittel der Steuerung lag
+   * ausserhalb des Fensters, darunter der «von»-Beschriftungstext. Das Panel
+   * hängt mit `right-0` am Auslöser, und der Auslöser steht mitten in der
+   * Werkzeugleiste, nicht an deren rechtem Rand; `max-width` hilft dagegen
+   * nichts, weil nicht die Breite überläuft, sondern die Verankerung. (Der
+   * Befund ist mit B4 entstanden — dort lag die Kante bei −62 — und wurde mit
+   * der breiteren B5-Fläche grösser. Behoben wird er hier, weil eine Steuerung,
+   * die man nicht ganz sieht, keine Steuerung ist.)
+   *
+   * Gerechnet wird BEIM KLICK, nicht in einem Layout-Effekt nach dem Rendern:
+   * die rechte Kante des Auslösers steht in diesem Moment fest, die
+   * Panelbreite ist deklariert — es braucht keine Messung des noch nicht
+   * gerenderten Panels und es gibt darum auch kein sichtbares Zurückspringen.
+   */
+  function umschalten(): void {
+    if (offen) { setOffen(false); return; }
+    const r = wrapRef.current?.getBoundingClientRect();
+    if (r && typeof window !== 'undefined') {
+      const breite = Math.min(PANEL_PX, window.innerWidth - FENSTER_RESERVE_PX);
+      const links = r.right - breite;
+      setSchub(links < RAND_PX ? Math.round(RAND_PX - links) : 0);
+    }
+    setOffen(true);
+  }
 
   useEffect(() => {
     if (!offen) return;
@@ -66,19 +133,24 @@ export function LeserRechtsprechungMenu({ kantoneVerfuegbar = [] }: {
   // abweicht — sonst müsste man das Menü öffnen, um zu sehen, dass ein Filter
   // wirkt (§8: kein unsichtbar wirkender Filter). Ein Punkt, kein Zähler: die
   // Werkzeugleiste soll nicht voller werden als nötig.
-  const abweichend = istErweitert(klassen);
+  //
+  // B5: ein aktiver ZEITRAUM zählt dazu. Er ist der Filter, der am stärksten
+  // wegnimmt und dabei am wenigsten sichtbar ist — die Auflistung wird bloss
+  // kürzer, ohne dass irgendwo ein Schalter anders aussähe. Ohne dieses Signal
+  // wäre die §8-Zusage «kein unsichtbar wirkender Filter» genau hier gebrochen.
+  const abweichend = istErweitert(klassen) || !istBereichOffen(bereich);
 
   return (
     <div ref={wrapRef} className="relative inline-flex">
       <button
         type="button"
-        onClick={() => setOffen((o) => !o)}
+        onClick={umschalten}
         aria-expanded={offen}
         aria-controls={panelId}
         aria-label="Rechtsprechung"
         data-rechtsprechung-menu
         className="lc-chip inline-flex items-center gap-1 hover:text-brass-700"
-        title="Welche Entscheide unter den Artikeln stehen: Instanzen und Kantone"
+        title="Welche Entscheide unter den Artikeln stehen: Instanzen, Kantone und Zeitraum"
       >
         <span aria-hidden>§</span>
         {/* Das Wort erst ab lg. Gemessen 28.7.2026: bei 774 px drängte die
@@ -98,32 +170,70 @@ export function LeserRechtsprechungMenu({ kantoneVerfuegbar = [] }: {
           tabIndex={-1}
           role="group"
           aria-label="Auswahl der Rechtsprechung"
-          className="absolute right-0 top-full z-40 mt-1.5 flex w-[15rem] max-w-[calc(100vw-2rem)] flex-col gap-0.5 rounded-lg border border-line bg-paper-raised p-1.5 shadow-lg"
+          // Breite und Klemmung kommen aus DENSELBEN Konstanten wie die
+          // Rechnung in `umschalten` (§5) — darum als style, nicht als
+          // Tailwind-Klasse mit eigener Zahl.
+          style={{
+            width: `min(${PANEL_PX}px, calc(100vw - ${FENSTER_RESERVE_PX}px))`,
+            transform: schub ? `translateX(${schub}px)` : undefined,
+          }}
+          className="absolute right-0 top-full z-40 mt-1.5 flex flex-col gap-0.5 rounded-lg border border-line bg-paper-raised p-1.5 shadow-lg"
         >
           <p className="lc-overline px-2.5 pb-1 pt-0.5">Entscheide am Artikel</p>
 
           {opt.leitfaelle === 'an' ? (
-            <BezugFacettenWahl
-              klassen={klassen}
-              kantone={kantone}
-              kantoneVerfuegbar={kantoneVerfuegbar}
-              onKlassen={setzeBezugKlassen}
-              onKantone={setzeBezugKantone}
-            />
+            <>
+              <BezugFacettenWahl
+                klassen={klassen}
+                kantone={kantone}
+                kantoneVerfuegbar={kantoneVerfuegbar}
+                onKlassen={setzeBezugKlassen}
+                onKantone={setzeBezugKantone}
+              />
+              {/* Der Zeitstrahl steht nur da, wo überhaupt Entscheide gezeigt
+                  werden: sind ALLE Instanzen abgewählt, filterte er eine leere
+                  Menge — ein Steuerelement ohne Wirkung (§13 F4). Der eingestellte
+                  Bereich bleibt dabei gespeichert und kehrt mit der ersten wieder
+                  eingeschalteten Instanz zurück. */}
+              {klassen.length > 0 && (
+                <BezugZeitWahl
+                  bereich={bereich}
+                  histogramm={histogramm}
+                  onBereich={setzeBezugZeit}
+                />
+              )}
+            </>
           ) : (
-            // Kein totes Steuerelement (§13 F4): ist die Entscheide-Zeile im
-            // «Ansicht»-Dropdown ganz abgeschaltet, wirkt hier nichts. Das wird
-            // gesagt, statt Schalter zu zeigen, die nichts tun.
-            <p className="px-2.5 pb-1 pt-1 text-micro leading-snug text-ink-500">
-              Die Entscheide-Zeile ist unter «Ansicht ▾ › Entscheide» ausgeschaltet — es wird gerade keine Rechtsprechung am Artikel gezeigt.
-            </p>
+            // ── SACKGASSE AUS B4, hier geschlossen (Befund beim Bau von B5) ──
+            // Kein totes Steuerelement (§13 F4): ist die Kanten-Zeile per
+            // `data-leitfaelle="aus"` CSS-seitig abgeschaltet (index.css), wirkt
+            // die Facetten-Wahl nicht — das wird gesagt, statt Schalter zu
+            // zeigen, die nichts tun. Der Zweig IST erreichbar: die
+            // B4-Migration überführt ein gespeichertes «Entscheide aus» in
+            // `bezugKlassen: []`, lässt `opt.leitfaelle` aber auf 'aus' stehen.
+            //
+            // Bis hierher verwies der Text auf «Ansicht ▾ › Entscheide» — einen
+            // Schalter, den B4 ENTFERNT hat. Die Meldung benannte damit ein
+            // Steuerelement, das es nicht gibt (§8), und weil seither KEINE
+            // Stelle mehr `setzeOption('leitfaelle', …)` aufruft, gab es
+            // buchstäblich keinen Weg zurück: eine Facette wieder einzuschalten
+            // half nichts, weil die CSS-Regel die Zeile weiterhin ausblendete.
+            // Der Ausweg gehört darum genau dorthin, wo der Verlust auffällt.
+            <div className="px-2.5 pb-1 pt-1">
+              <p className="text-micro leading-snug text-ink-500">
+                Die Entscheide am Artikel sind ausgeblendet — aus einer früheren Einstellung, die es so nicht mehr gibt. Es wird gerade keine Rechtsprechung unter den Artikeln gezeigt.
+              </p>
+              <button
+                type="button"
+                data-entscheide-zurueck
+                onClick={() => setzeOption('leitfaelle', 'an')}
+                className="mt-1.5 rounded px-1.5 py-0.5 text-xs text-ink-500 transition-colors hover:bg-brass-100/40 hover:text-brass-700"
+                title="Die Entscheide-Auflistung am Artikel wieder einblenden — danach hier die gewünschten Instanzen wählen"
+              >
+                Entscheide wieder einblenden
+              </button>
+            </div>
           )}
-
-          {/* ── ANDOCKPUNKT B5 (David 28.7.2026) ────────────────────────────
-              Hier ergänzt B5 den Zeitstrahl und die Von-Bis-Datumseingabe als
-              weiteren benannten Abschnitt. Bewusst NUR dieser Kommentar — kein
-              Platzhalter-Markup und kein toter Zweig (§0/1e); ein reservierter
-              Leerraum wäre zudem sichtbar, ohne etwas zu können (§15.2). */}
         </div>
       )}
     </div>

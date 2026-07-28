@@ -12,6 +12,7 @@ import type { KantonSystematik } from '../../lib/normtext/systematik';
 import { formatiereDatum, pfadZu } from './helpers';
 import { LeserAnsichtMenu } from './LeserAnsichtMenu';
 import { LeserRechtsprechungMenu } from './LeserRechtsprechungMenu';
+import type { Histogramm, Zeitbereich } from './bezugZeit';
 import { InGesetzSuche } from './parts/InGesetzSuche';
 import { paneRoot, findeArt } from './berechnungen';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
@@ -133,6 +134,11 @@ export function useInhaltsKopfMeldung(opts: {
   /** W2·7-BEZUG/B4: Kantone, zu denen dieser Erlass Kanten hat (Kanton-Schalter).
    *  OPTIONAL: leer = noch kein Bezugs-Shard geladen ⇒ kein Kanton-Streifen. */
   kantoneVerfuegbar?: string[];
+  /** W2·7-BEZUG/B5: Jahres-Verteilung der Kanten (Zeitstrahl im Dropdown).
+   *  OPTIONAL: leer = noch kein Shard ⇒ der Streifen sagt das ehrlich. */
+  bezugHistogramm?: Histogramm;
+  /** W2·7-BEZUG/B5: aktiver Von-Bis-Bereich. OPTIONAL: Default = offen. */
+  bezugBereich?: Zeitbereich;
   suche: string;
   setSuche: Dispatch<SetStateAction<string>>;
   istXl: boolean;
@@ -144,6 +150,7 @@ export function useInhaltsKopfMeldung(opts: {
 }): void {
   const {
     erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl, kantoneVerfuegbar = [],
+    bezugHistogramm, bezugBereich,
     suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf, sektionen,
   } = opts;
 
@@ -191,7 +198,8 @@ export function useInhaltsKopfMeldung(opts: {
                 EIGENES Dropdown der Werkzeugleiste, links von «Ansicht ▾». Beide
                 gehen in denselben `ansichtSlot` — der Kopf (components/layout)
                 rendert ihn opak, die Layer-Trennung bleibt also unberührt. */}
-            <LeserRechtsprechungMenu kantoneVerfuegbar={kantoneVerfuegbar} />
+            <LeserRechtsprechungMenu kantoneVerfuegbar={kantoneVerfuegbar}
+              histogramm={bezugHistogramm} bereich={bezugBereich} />
             <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />
           </>
         )
@@ -206,7 +214,8 @@ export function useInhaltsKopfMeldung(opts: {
     // früheren Inline-Effekt.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl,
-      kantoneVerfuegbar, suche, istXl, tocOffen, tocAuf, sektionen.length]);
+      kantoneVerfuegbar, bezugHistogramm, bezugBereich,
+      suche, istXl, tocOffen, tocAuf, sektionen.length]);
 }
 
 // ── Hash-Sprung-Seed + geteilter Aktiv-Artikel-Beobachter (Scroll-Spy) + TOC-

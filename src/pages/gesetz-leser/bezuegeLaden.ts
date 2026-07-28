@@ -41,8 +41,9 @@ import {
   type Bezug, type BezugsShard,
 } from '../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
-import { waehleBezuege } from './bezugAuswahl';
-import { holeBezugKlassen, useBezugKantone, useBezugKlassen } from './leserOptionen';
+import { bauePraedikate, waehleBezuege } from './bezugAuswahl';
+import { baueJahresHistogramm, type Histogramm, type Zeitbereich } from './bezugZeit';
+import { holeBezugKlassen, useBezugBis, useBezugKantone, useBezugKlassen, useBezugVon } from './leserOptionen';
 import { beiLeerlauf } from '../../lib/leerlauf';
 
 /** Was ein Artikel-Fuss zum Rendern braucht (siehe `BezuegeZeile`). */
@@ -75,9 +76,19 @@ export function useBezuege(erlassKey: string | undefined): {
   /** Kantone, zu denen dieser Erlass wirklich Kanten hat (leer, solange der
    *  Shard nicht geladen ist) — speist den Kanton-Schalter im «Ansicht ▾». */
   kantoneVerfuegbar: string[];
+  /** B5: Jahres-Verteilung der Kanten DIESES Erlasses für den Zeitstrahl. */
+  histogramm: Histogramm;
+  /** B5: der aktive Von-Bis-Bereich, für Steuerung und Kanten-Auswahl. */
+  bereich: Zeitbereich;
 } {
   const klassen = useBezugKlassen();
   const kantone = useBezugKantone();
+  // B5: zwei Primitiv-Selektoren (Begründung in leserOptionen.ts) — das Objekt
+  // entsteht memoisiert hier, damit es eine stabile Referenz für die
+  // Abhängigkeits-Listen unten hat.
+  const von = useBezugVon();
+  const bis = useBezugBis();
+  const bereich = useMemo<Zeitbereich>(() => ({ von, bis }), [von, bis]);
   // Vorgabe David 28.7.2026 («nur auflistung wenn aktiviert»): geladen wird,
   // sobald ÜBERHAUPT eine Facette aktiv ist — auch im Default (nur
   // Leitentscheide). Das ist kein Rückschritt gegenüber dem Bestand: die alte
@@ -113,14 +124,24 @@ export function useBezuege(erlassKey: string | undefined): {
     // `waehleBezuege` statt `filtereBezuege` direkt: die LEERE Auswahl heisst
     // in der Datenschicht «keine Einschränkung», in dieser Bedienung aber
     // «alles abgewählt» (Begründung dort, mit reproduziertem Befund).
-    const kanten = waehleBezuege(alle, klassen, kantone);
+    //
+    // B5: der Zeit-Bereich geht als weiteres Prädikat mit hinein — dieselbe
+    // Stelle, dieselbe Auswahl. Ein zweiter Filter irgendwo weiter unten in der
+    // Darstellung erzeugte eine zweite Auswahl-Wahrheit am selben Artikel (§5).
+    const kanten = waehleBezuege(alle, klassen, kantone, bereich);
     return {
       kanten,
       // Grundgesamtheit AUS DEM SHARD (Vor-Deckel), nicht aus der gerenderten
       // Liste — sonst wäre «8 von 8» das Beste, was die Zahl je sagen könnte.
+      //
+      // §8/B5-Auflage: `gesamt` bleibt die Zahl OHNE Zeitfilter. Die Zahl neben
+      // dem Gruppenkopf antwortet damit auf «wie viel gibt es zu diesem
+      // Artikel», nicht auf «wie viel habe ich gerade eingestellt» — sonst
+      // schrumpfte die Grundgesamtheit mit dem Filter mit und behauptete, es
+      // gäbe weniger Praxis, als es gibt.
       gesamt: s.gesamtProArtikel?.[token] ?? {},
     };
-  }, [aktiv, erlassKey, shard, klassen, kantone]);
+  }, [aktiv, erlassKey, shard, klassen, kantone, bereich]);
 
   // useMemo, nicht bei jedem Render neu: die Ableitung geht über ALLE Dokumente
   // des Shards (bis ~1200 bei der StPO) und das Ergebnis hängt an einem Prop-
@@ -137,7 +158,65 @@ export function useBezuege(erlassKey: string | undefined): {
     [shard, erlassKey],
   );
 
-  return { aktiv, bezuegeFuer, kantoneVerfuegbar };
+  // B5: Jahres-Verteilung für den Zeitstrahl. BEWUSST OHNE den Zeit-Bereich in
+  // der Abhängigkeitsliste — der Zeitstrahl zeigt die Verteilung, AUS DER man
+  // wählt, nicht das Ergebnis der eigenen Wahl. Ein Histogramm, das sich beim
+  // Ziehen selbst umbaut, entzieht der Geste die Bezugsgrösse; man könnte eine
+  // einmal enger gezogene Auswahl nicht mehr sehend erweitern.
+  //
+  // Die FACETTEN gehen hingegen ein: wer nur Leitentscheide zeigt, soll die
+  // Verteilung der Leitentscheide sehen und nicht die aller 3207 Kanten der
+  // StPO — sonst zöge er an Balken, die zu Entscheiden gehören, die er gar nicht
+  // eingeschaltet hat (§8: keine Verteilung behaupten, die nicht die gezeigte ist).
+  //
+  // useMemo, nicht je Render: der Lauf geht über ALLE Kanten des Shards
+  // (StPO 3207) — bei jedem Tastendruck im Datumsfeld wäre das eine vermeidbare
+  // Runde (§15).
+  const histogramm = useMemo<Histogramm>(() => {
+    if (!aktiv || !shard || !erlassKey || shard.key !== erlassKey || !shard.shard) {
+      return LEERES_HISTOGRAMM;
+    }
+    return histogrammAusShard(shard.shard, klassen, kantone);
+  }, [aktiv, shard, erlassKey, klassen, kantone]);
+
+  return { aktiv, bezuegeFuer, kantoneVerfuegbar, histogramm, bereich };
+}
+
+/** Geteilte Leer-Instanz: hält die Referenz stabil, solange nichts geladen ist. */
+const LEERES_HISTOGRAMM: Histogramm = { balken: [], ohneJahr: 0 };
+
+/**
+ * Jahres-Verteilung ALLER Kanten eines Shards, gefiltert nach den aktiven
+ * Facetten (ohne Zeit-Achse — siehe Aufruf-Kommentar).
+ *
+ * ZÄHLEINHEIT IST DIE KANTE, nicht das Dokument: ein Entscheid, der fünf Artikel
+ * dieses Erlasses auslegt, ist an diesem Erlass fünfmal einschlägig. Die
+ * Auflistung unter den Artikeln zählt genauso, und ein Zeitstrahl, der anders
+ * zählte als die Liste darunter, wäre eine zweite Zahl-Wahrheit (§5). Die
+ * Summen-Identität (Balken + `ohneJahr` = Kanten) ist im Test festgehalten.
+ *
+ * Rein (§2), exportiert für genau diesen Test.
+ */
+export function histogrammAusShard(
+  shard: BezugsShard,
+  klassen: readonly BezugStatus[],
+  kantone: readonly string[],
+): Histogramm {
+  if (klassen.length === 0) return LEERES_HISTOGRAMM;
+  const praedikate = bauePraedikate(klassen, kantone);
+  const daten: string[] = [];
+  for (const eintraege of Object.values(shard.proArtikel)) {
+    for (const e of eintraege) {
+      const kopf = shard.dokumente[e.key];
+      // Eintrag ohne Dokument-Kopf wird ÜBERSPRUNGEN — genau wie in
+      // `bezuegeFuerArtikel`, sonst zählte der Strahl Kanten, die die Liste
+      // darunter gar nicht rendert.
+      if (!kopf) continue;
+      if (!praedikate.every((p) => p(kopf))) continue;
+      daten.push(kopf.datum);
+    }
+  }
+  return baueJahresHistogramm(daten);
 }
 
 /**
