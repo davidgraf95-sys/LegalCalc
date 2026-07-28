@@ -22,8 +22,6 @@ import { extrahiereFussnotenRevision, kanonArtikelToken } from '../../../lib/ver
 import { margStufeStil, fnTextMitLinks, baueZitat, margLabel } from '../helpers';
 import { zitatMitAusweis, heuteIso, fmtDatumLang } from '../../../lib/format';
 import { schaetzeArtikelHoehe, baueChronologie, fnNrSortKey } from '../berechnungen';
-import { setzeZeitraum, useLeitfallZeitraum } from '../leserOptionen';
-import { filtereLeitfaelleNachZeitraum, zeitraumLabel } from '../leitfallFilter';
 import { BezuegeZeile } from './BezuegeZeile';
 import type { ArtikelBezuege } from '../bezuegeLaden';
 
@@ -59,9 +57,6 @@ const LeitfallZeile = memo(function LeitfallZeile({ refs, normZitat, revision }:
 }) {
   const [alleAuf, setAlleAuf] = useState(false);
   const { oeffneDaneben, kannOeffnen, istOffen } = usePaneSteuerung();
-  // V2·B-2: der Zeitraum-Filter als PRIMITIV-Selektor — diese Zeile re-rendert nur
-  // bei echter Zeitraum-Änderung, nicht bei jedem anderen Ansicht-Toggle (§15).
-  const zeitraum = useLeitfallZeitraum();
 
   // Wie die «Verweise»-Zeile: ohne Treffer GAR KEINE Zeile (kein reservierter
   // Leerraum, §15.2 — die grosse Mehrheit der Artikel hat keine Leitfälle; eine
@@ -70,43 +65,16 @@ const LeitfallZeile = memo(function LeitfallZeile({ refs, normZitat, revision }:
   // prerenderte Normtext (LCP/Ctrl+F) bleibt unberührt (§15.1/3).
   if (!refs || refs.length === 0) return null;
 
-  // V2·B-2: nach Zeitraum filtern (jahr-genau, Q1-sicher). `new Date` ist hier
-  // unbedenklich — die Zeile ist client-only (nicht prerendert), kein Hydra-Drift.
-  const gefiltert = filtereLeitfaelleNachZeitraum(refs, zeitraum, new Date().getFullYear());
-  const zeitLabel = zeitraumLabel(zeitraum);
-  const ueberschrift = (
-    <span className="lc-overline mr-1" title="Maschinell aus den zitierten Normen zugeordnet — keine redaktionelle Präjudizienauswahl. Entscheide beziehen sich auf die im Entscheidzeitpunkt geltende Fassung."><span className="lc-punkt lc-punkt-entscheid" aria-hidden />Leitfälle</span>
-  );
-
-  // §8-Härtung (B-2): sind durch den Zeitraum ALLE weggefiltert, verschwindet die
-  // Zeile NICHT kommentarlos — sie zeigt «n ältere ausgeblendet» (klickbar → alle).
-  // Marker `data-leitfall-zeile` bleibt gesetzt, damit der Entscheide-Toggle (B-1)
-  // auch diese Hinweis-Zeile mit ausblendet.
-  if (gefiltert.length === 0) {
-    const n = refs.length;
-    return (
-      <div data-leitfall-zeile className="mt-4 flex flex-wrap items-center gap-2">
-        {ueberschrift}
-        <button
-          type="button"
-          onClick={() => setzeZeitraum('alle')}
-          className="lc-chip hover:text-brass-700"
-          title="Zeitraum-Filter (Rubrik Ansicht) aufheben und alle Leitfälle zeigen"
-        >
-          {n} {n === 1 ? 'älterer ausgeblendet' : 'ältere ausgeblendet'} · alle zeigen
-        </button>
-      </div>
-    );
-  }
-
-  const sichtbar = alleAuf ? gefiltert : gefiltert.slice(0, LEITFAELLE_SICHTBAR);
-  const rest = gefiltert.length - sichtbar.length;
+  // W2·7-BEZUG/B5: die frühere Zeitraum-Kappung («alle · 20 · 10 · 5 J.») ist HIER
+  // ENTFALLEN. Sie war die einzige Verbraucherin der abgelösten Stufen-Wahl; der
+  // Zeit-Bereich wirkt seit B5 eine Schicht früher, nämlich in der Kanten-Auswahl
+  // (`waehleBezuege`), und damit auf ALLE Instanzen statt nur auf die BGE-Zeile.
+  // Diese Zeile filtert deshalb gar nicht mehr — sie rendert, was sie bekommt.
+  const sichtbar = alleAuf ? refs : refs.slice(0, LEITFAELLE_SICHTBAR);
+  const rest = refs.length - sichtbar.length;
   return (
     <div data-leitfall-zeile className="mt-4 flex flex-wrap items-center gap-2">
-      {ueberschrift}
-      {zeitLabel && (
-        <span className="text-micro text-ink-400" title="Aktiver Zeitraum-Filter (Rubrik Ansicht)">{zeitLabel}</span>
-      )}
+      <span className="lc-overline mr-1" title="Maschinell aus den zitierten Normen zugeordnet — keine redaktionelle Präjudizienauswahl. Entscheide beziehen sich auf die im Entscheidzeitpunkt geltende Fassung."><span className="lc-punkt lc-punkt-entscheid" aria-hidden />Leitfälle</span>
       {sichtbar.map((r) => {
         // ?norm= trägt die Fundstellen-Absicht: das Ziel springt zur ersten
         // Erwägung, die diese Norm zitiert (Auflösung im EntscheidLeser, §5).

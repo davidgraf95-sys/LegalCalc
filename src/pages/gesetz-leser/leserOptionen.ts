@@ -32,16 +32,25 @@
 // übersteuert den Auto-Default global). Alle CSS-Regeln sind auf `.lc-leser` gescopt
 // (index.css), damit sie NUR den Reader treffen.
 //
-// V2·B-2 (David 10.7.2026): der Leitfall-ZEITRAUM «alle · 20 · 10 · 5 J.» ist KEIN
-// data-*-Toggle, sondern ein JS-konsumierter Filterwert — die Leitfall-Zeile
-// (client-only, nicht prerendert) filtert `r.datum` VOR der Sichtbarkeits-Kappung.
-// Er lebt im selben persistenten Store, wird aber über einen PRIMITIV-Selektor
-// (`useLeitfallZeitraum`, nur der String) abonniert: so re-rendern die bis zu ~66
-// Leitfall-Zeilen NUR bei echter Zeitraum-Änderung, nicht bei jedem anderen Toggle.
+// W2·7-BEZUG/B5 (David 28.7.2026): die frühere Stufen-Wahl «alle · 20 · 10 · 5 J.»
+// (V2·B-2) ist ENTFALLEN und durch einen VON-BIS-BEREICH ersetzt — Zeitstrahl mit
+// Zieh-Auswahl plus zwei Datumsfeldern im Dropdown «Rechtsprechung ▾». Er lebt wie
+// die Facetten als JS-konsumierter Filterwert im SELBEN persistenten Store und wird
+// über PRIMITIV-Selektoren (`useBezugVon`/`useBezugBis`, je nur ein String)
+// abonniert: so re-rendern die Abonnenten nur bei echter Bereichs-Änderung, nicht
+// bei jedem anderen Toggle (§15). Zwei Strings statt eines Objekts, weil
+// `getSnapshot` eine STABILE Referenz liefern muss — ein je Aufruf neu gebautes
+// `{von, bis}` liesse React schleifen.
+//
+// EINMALIGE MIGRATION der Alt-Wahl: ein gespeichertes `zeitraum: '5'|'10'|'20'`
+// wird zu `bezugVon = heute minus n Jahre` (`migriereZeitraum`, bezugZeit.ts),
+// 'alle' zu offenen Enden. Sie greift nur, solange kein Bereich gespeichert ist,
+// und wird sofort zurückgeschrieben — sonst wanderte der Grenzwert mit jedem
+// Sitzungstag weiter, und der Filter zeigte jeden Tag etwas anderes an.
 
 // W2·7-BEZUG/B4: die Facetten-Auswahl der Bezüge (Status-Klassen + Kantone) lebt
 // im SELBEN persistenten Store — ein localStorage-Schlüssel, ein Hörer-Satz (§5),
-// wie Zeitraum und Historie-Ansicht. Sie ist wie der Zeitraum JS-konsumiert (kein
+// wie der Zeit-Bereich und die Historie-Ansicht. Sie ist ebenso JS-konsumiert (kein
 // data-*-Attribut): welche Klassen gewählt sind, entscheidet, WELCHER Shard
 // geladen und welche Kanten gerendert werden — das kann CSS nicht. Abonniert wird
 // über Selektoren mit STABILER Referenz (nur bei echter Änderung ein Re-Render),
@@ -50,15 +59,14 @@
 import { useSyncExternalStore } from 'react';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import { DEFAULT_KLASSEN, normalisiereKantone, normalisiereKlassen } from './bezugAuswahl';
+import { migriereZeitraum, normalisiereBereich } from './bezugZeit';
+import { heuteIso } from '../../lib/format';
 
 export type OptFeld = 'linien' | 'fussnoten' | 'verweise' | 'leitfaelle';
 // 'auto' nur für 'linien' sinnvoll (grundart-abhängiger Default, K11); Fussnoten/
 // Verweise/Entscheide nutzen nur 'an'/'aus'. Die Union bleibt gemeinsam (ein Store).
 export type OptWert = 'an' | 'aus' | 'auto';
 export type LeserOptionen = Record<OptFeld, OptWert>;
-
-/** V2·B-2: Zeitraum-Stufen für die Leitfall-Filterung («alle» = ungefiltert). */
-export type LeitfallZeitraum = 'alle' | '20' | '10' | '5';
 
 /**
  * W2·5i-HIST-ANSICHT: DREIWERTIGE Darstellung der Änderungshistorie.
@@ -75,7 +83,7 @@ export type LeitfallZeitraum = 'alle' | '20' | '10' | '5';
  * ('an'|'aus', plus 'auto' für Linien). Ein drittes, semantisch anderes Wort in
  * dieselbe Union zu drücken machte jeden Toggle-Aufruf typunsicher (`setzeOption
  * ('fussnoten', 'chronologie')` wäre compilierbar und sinnlos). Der Wert lebt
- * darum wie `zeitraum` als eigenes Feld im SELBEN persistenten Store — ein
+ * darum wie der Zeit-Bereich als eigenes Feld im SELBEN persistenten Store — ein
  * Store, ein localStorage-Schlüssel, ein Hörer-Satz (§5).
  */
 export type HistAnsicht = 'aus' | 'fussnoten' | 'chronologie';
@@ -83,8 +91,6 @@ export type HistAnsicht = 'aus' | 'fussnoten' | 'chronologie';
 const KEY = 'lm.leser.optionen';
 const FELDER: readonly OptFeld[] = ['linien', 'fussnoten', 'verweise', 'leitfaelle'];
 const DEFAULT: LeserOptionen = { linien: 'auto', fussnoten: 'an', verweise: 'an', leitfaelle: 'an' };
-const ZEITRAEUME: readonly LeitfallZeitraum[] = ['alle', '20', '10', '5'];
-const DEFAULT_ZEITRAUM: LeitfallZeitraum = 'alle';
 const HIST_ANSICHTEN: readonly HistAnsicht[] = ['aus', 'fussnoten', 'chronologie'];
 const DEFAULT_HIST: HistAnsicht = 'fussnoten';
 
@@ -97,28 +103,40 @@ const KEINE_KANTONE: readonly string[] = [];
 
 interface GeladenerZustand {
   opt: LeserOptionen;
-  zeitraum: LeitfallZeitraum;
   hist: HistAnsicht;
   bezugKlassen: readonly BezugStatus[];
   bezugKantone: readonly string[];
+  bezugVon: string;
+  bezugBis: string;
+  /** Wurde die Alt-Stufen-Wahl gerade auf einen Bereich abgebildet? Dann muss
+   *  der Aufrufer einmal zurückschreiben (sonst wandert der Grenzwert täglich). */
+  migriert: boolean;
 }
 
 function lade(): GeladenerZustand {
   const grund = {
-    opt: { ...DEFAULT }, zeitraum: DEFAULT_ZEITRAUM, hist: DEFAULT_HIST,
+    opt: { ...DEFAULT }, hist: DEFAULT_HIST,
     bezugKlassen: DEFAULT_BEZUG_KLASSEN, bezugKantone: KEINE_KANTONE,
+    bezugVon: '', bezugBis: '', migriert: false,
   };
   try {
     const roh = localStorage.getItem(KEY);
     if (!roh) return grund;
     const o = JSON.parse(roh) as Partial<Record<OptFeld, unknown>>
-      & { zeitraum?: unknown; hist?: unknown; bezugKlassen?: unknown; bezugKantone?: unknown };
+      & { zeitraum?: unknown; hist?: unknown; bezugKlassen?: unknown; bezugKantone?: unknown;
+          bezugVon?: unknown; bezugBis?: unknown };
     const opt: LeserOptionen = { ...DEFAULT };
     for (const f of FELDER) if (o[f] === 'an' || o[f] === 'aus' || o[f] === 'auto') opt[f] = o[f] as OptWert;
-    const zeitraum = ZEITRAEUME.includes(o.zeitraum as LeitfallZeitraum)
-      ? (o.zeitraum as LeitfallZeitraum)
-      : DEFAULT_ZEITRAUM;
     const hist = HIST_ANSICHTEN.includes(o.hist as HistAnsicht) ? (o.hist as HistAnsicht) : DEFAULT_HIST;
+    // B5-Migration: steht schon EIN Bereichs-Feld im Speicher, ist der Bereich die
+    // Wahrheit und `zeitraum` ein Überbleibsel, das beim nächsten Schreiben
+    // wegfällt. Sonst wird die Alt-Stufe einmalig abgebildet (§8) — `heuteIso`
+    // ist die einzige Uhr auf diesem Weg und sitzt genau hier an der Grenze (§2).
+    const hatBereich = 'bezugVon' in o || 'bezugBis' in o;
+    const bereich = hatBereich
+      ? normalisiereBereich(o.bezugVon, o.bezugBis)
+      : migriereZeitraum(o.zeitraum, heuteIso(new Date()));
+    const migriert = !hatBereich && bereich.von !== '';
     // Fehlt der Schlüssel GANZ (Bestands-Speicher vor B4), gilt der Default.
     // Steht dort ein leeres Array, ist das eine bewusste Nutzerwahl («alles
     // abgewählt») und bleibt erhalten — normalisiereKlassen setzt sie NICHT
@@ -134,7 +152,7 @@ function lade(): GeladenerZustand {
       ? normalisiereKlassen(o.bezugKlassen)
       : (opt.leitfaelle === 'aus' ? [] : DEFAULT_BEZUG_KLASSEN);
     const bezugKantone = Array.isArray(o.bezugKantone) ? normalisiereKantone(o.bezugKantone) : KEINE_KANTONE;
-    return { opt, zeitraum, hist, bezugKlassen, bezugKantone };
+    return { opt, hist, bezugKlassen, bezugKantone, bezugVon: bereich.von, bezugBis: bereich.bis, migriert };
   } catch {
     // localStorage gesperrt (privater Modus) ODER kaputtes JSON → Default.
     return grund;
@@ -142,44 +160,58 @@ function lade(): GeladenerZustand {
 }
 
 // getSnapshot muss eine STABILE Referenz liefern (sonst warnt/looped React).
-// `aktuell`/`aktuellZeitraum` werden nur bei echten Änderungen ersetzt.
+// `aktuell`/`aktuellVon`/`aktuellBis` werden nur bei echten Änderungen ersetzt.
 const start = typeof window === 'undefined'
   ? {
-      opt: { ...DEFAULT }, zeitraum: DEFAULT_ZEITRAUM, hist: DEFAULT_HIST,
+      opt: { ...DEFAULT }, hist: DEFAULT_HIST,
       bezugKlassen: DEFAULT_BEZUG_KLASSEN, bezugKantone: KEINE_KANTONE,
+      bezugVon: '', bezugBis: '', migriert: false,
     }
   : lade();
 let aktuell: LeserOptionen = start.opt;
-let aktuellZeitraum: LeitfallZeitraum = start.zeitraum;
 let aktuellHist: HistAnsicht = start.hist;
 let aktuellKlassen: readonly BezugStatus[] = start.bezugKlassen;
 let aktuellKantone: readonly string[] = start.bezugKantone;
+let aktuellVon: string = start.bezugVon;
+let aktuellBis: string = start.bezugBis;
 
 function speichere(): void {
   try {
+    // `zeitraum` wird NICHT mitgeschrieben: das Feld ist mit B5 entfallen, und
+    // ein weitergeschleppter Alt-Wert liesse die Migration bei jedem Laden neu
+    // greifen. Ein einziges Schreiben räumt ihn ab.
     localStorage.setItem(KEY, JSON.stringify({
-      ...aktuell, zeitraum: aktuellZeitraum, hist: aktuellHist,
+      ...aktuell, hist: aktuellHist,
       bezugKlassen: aktuellKlassen, bezugKantone: aktuellKantone,
+      bezugVon: aktuellVon, bezugBis: aktuellBis,
     }));
   } catch {
     /* Speicher gesperrt — die Wahl gilt dann nur für die Sitzung */
   }
 }
 
+// Die Alt-Wahl SOFORT festschreiben. Ohne das bliebe `zeitraum` im Speicher und
+// `migriereZeitraum` rechnete bei jedem Laden gegen ein neues «heute» — aus
+// «letzte 5 Jahre» würde ein Grenzwert, der jeden Tag um einen Tag weiterrutscht.
+// Genau einmal: nach dem Schreiben steht `bezugVon` da und `hatBereich` greift.
+if (start.migriert) speichere();
+
 /** Wendet die gespeicherten Toggle-Optionen VOR dem ersten Render an (Aufruf in
  *  main.tsx, analog `wendeThemaAn`). Setzt data-linien/-fussnoten/-verweise/
  *  -leitfaelle am <html>; Default 'an' ⇒ CSS-No-op ⇒ byte-gleiche heutige
- *  Darstellung. Der Zeitraum ist JS-konsumiert (kein data-*-Attribut). */
+ *  Darstellung. Der Zeit-Bereich ist JS-konsumiert (kein data-*-Attribut). */
 export function wendeLeserOptionenAn(): void {
   if (typeof document === 'undefined') return;
   const g = lade();
   aktuell = g.opt;
-  aktuellZeitraum = g.zeitraum;
   aktuellHist = g.hist;
   // B4: JS-konsumiert (kein data-*-Attribut) — die Weiche «welcher Shard» und
   // die Gruppierung der Kanten sind React-Zustand, nicht CSS.
   aktuellKlassen = g.bezugKlassen;
   aktuellKantone = g.bezugKantone;
+  aktuellVon = g.bezugVon;
+  aktuellBis = g.bezugBis;
+  if (g.migriert) speichere();
   const el = document.documentElement;
   for (const f of FELDER) el.setAttribute(`data-${f}`, aktuell[f]);
   // W2·5i: die Historie-Ansicht ist CSS-getrieben wie die vier Toggles → dasselbe
@@ -201,12 +233,20 @@ export function setzeOption(feld: OptFeld, wert: OptWert): void {
   hoerer.forEach((f) => f());
 }
 
-/** V2·B-2: Leitfall-Zeitraum setzen (JS-Filter, kein data-*-Attribut). Persistiert
- *  + benachrichtigt die Hörer; nur die Zeitraum-Abonnenten (Primitiv-Selektor) und
- *  die Leitfall-Zeilen rendern neu. */
-export function setzeZeitraum(z: LeitfallZeitraum): void {
-  if (z === aktuellZeitraum) return;
-  aktuellZeitraum = z;
+/**
+ * W2·7-BEZUG/B5: Zeit-Bereich der Bezüge setzen (JS-Filter, kein data-*-Attribut).
+ * Persistiert + benachrichtigt die Hörer; nur die Bereichs-Abonnenten
+ * (Primitiv-Selektoren) und die Kanten-Auswahl rendern neu.
+ *
+ * Beide Enden werden GEMEINSAM gesetzt und normalisiert: eine Zieh-Auswahl am
+ * Zeitstrahl ist EINE Geste, und zwei getrennte Setzer erzeugten zwischendurch
+ * einen Zustand mit vertauschten Enden — sichtbar als kurz leere Auflistung.
+ */
+export function setzeBezugZeit(von: string, bis: string): void {
+  const neu = normalisiereBereich(von, bis);
+  if (neu.von === aktuellVon && neu.bis === aktuellBis) return;
+  aktuellVon = neu.von;
+  aktuellBis = neu.bis;
   speichere();
   hoerer.forEach((f) => f());
 }
@@ -226,7 +266,7 @@ export function setzeHistAnsicht(h: HistAnsicht): void {
 }
 
 /**
- * W2·7-BEZUG/B4: Facetten-Klassen der Bezüge setzen. Wie `setzeZeitraum` ein
+ * W2·7-BEZUG/B4: Facetten-Klassen der Bezüge setzen. Wie `setzeBezugZeit` ein
  * JS-Filterwert (kein Attribut). Die Referenz-Gleichheit wird bewusst über den
  * INHALT geprüft und nicht über die Objekt-Identität: die Aufrufer bauen die
  * Menge aus `schalteKlasse` immer neu, ein naiver `===`-Vergleich liefe also
@@ -253,7 +293,7 @@ export function setzeBezugKantone(kantone: readonly string[]): void {
 
 // Cross-Tab-Synchronisation: ein einziger Storage-Listener am Modul (nicht pro
 // Abo, sonst entfernt das erste Unsubscribe ihn für alle). Gleiche-Tab-Sync
-// läuft über die `hoerer` (setzeOption/setzeZeitraum benachrichtigen direkt).
+// läuft über die `hoerer` (setzeOption/setzeBezugZeit benachrichtigen direkt).
 if (typeof window !== 'undefined') {
   window.addEventListener('storage', (e) => {
     if (e.key !== KEY) return;
@@ -281,19 +321,30 @@ export function useLeserOptionen(): LeserOptionen {
   return useSyncExternalStore(abonniere, getSnapshot, getServerSnapshot);
 }
 
-/** V2·B-2: Primitiv-Selektor auf den Leitfall-Zeitraum. `getSnapshot` gibt NUR den
- *  String zurück ⇒ obwohl jeder beliebige Toggle die Hörer benachrichtigt, re-rendert
- *  React die Abonnenten nur, wenn sich der String wirklich ändert (Object.is). So
- *  rendern die bis zu ~66 Leitfall-Zeilen NUR bei echter Zeitraum-Änderung neu
- *  (§15-Zusage — sonst wäre sie falsch). */
-function getZeitraumSnapshot(): LeitfallZeitraum {
-  return aktuellZeitraum;
+/**
+ * W2·7-BEZUG/B5: Primitiv-Selektoren auf die beiden Bereichs-Enden.
+ *
+ * Bewusst ZWEI Hooks auf zwei Strings statt eines Hooks auf ein `{von, bis}`:
+ * `getSnapshot` muss eine stabile Referenz liefern, ein je Aufruf frisch
+ * gebautes Objekt liesse React schleifen. Strings vergleicht `Object.is`
+ * wertweise — obwohl jeder beliebige Toggle die Hörer benachrichtigt, rendern
+ * die Abonnenten nur bei echter Bereichs-Änderung neu (§15-Zusage). Wer beide
+ * Enden als Objekt braucht, baut es im eigenen `useMemo` zusammen.
+ */
+function getVonSnapshot(): string {
+  return aktuellVon;
 }
-function getZeitraumServerSnapshot(): LeitfallZeitraum {
-  return DEFAULT_ZEITRAUM;
+function getBisSnapshot(): string {
+  return aktuellBis;
 }
-export function useLeitfallZeitraum(): LeitfallZeitraum {
-  return useSyncExternalStore(abonniere, getZeitraumSnapshot, getZeitraumServerSnapshot);
+function getLeerSnapshot(): string {
+  return '';
+}
+export function useBezugVon(): string {
+  return useSyncExternalStore(abonniere, getVonSnapshot, getLeerSnapshot);
+}
+export function useBezugBis(): string {
+  return useSyncExternalStore(abonniere, getBisSnapshot, getLeerSnapshot);
 }
 
 /** W2·5i: Primitiv-Selektor auf die Historie-Ansicht — gibt NUR den String zurück,

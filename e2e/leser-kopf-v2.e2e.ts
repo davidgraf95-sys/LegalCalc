@@ -7,7 +7,11 @@ import { test, expect, type Page } from '@playwright/test';
 //          Dropdown (Zähler N im Accessible-Name, role=switch); CLS 0 beim Toggle.
 //   · B-1  «Entscheide»-Schalter im Ansicht-Dropdown blendet die BGE-Leitfall-
 //          Auflistung aus (Facetten-Wahl im Dropdown «Rechtsprechung ▾»).
-//   · B-2  Zeitraum-Wahl «alle · 20 · 10 · 5 J.» (Default alle), persistent.
+//   · B-2  Zeitraum-Wahl «alle · 20 · 10 · 5 J.» — ENTFALLEN mit W2·7-BEZUG/B5
+//          (David 28.7.2026). An ihre Stelle tritt der Zeitstrahl mit
+//          Von-Bis-Datum im Dropdown «Rechtsprechung ▾»
+//          (`bezuege-zeitstrahl-b5.e2e.ts`); der Test unten prüft jetzt die
+//          ABWESENHEIT der Alt-Steuerung — §6.3-Deklaration an Ort.
 
 async function warteReader(page: Page, url: string, artId: string): Promise<void> {
   await page.goto(url);
@@ -104,18 +108,29 @@ test('B-1: die Facetten-Wahl blendet die Entscheid-Auflistung aus und wieder ein
   await expect(gruppe).toBeVisible({ timeout: 15000 });
 });
 
-test('B-2: Zeitraum-Wahl «alle · 20 · 10 · 5 J.» — aria-pressed + Persistenz', async ({ page }) => {
+// §6.3-DEKLARATION (deklarierte fachliche Änderung, kein Refactoring):
+// Dieser Test mass die Stufen-Wahl «alle · 20 · 10 · 5 J.» im «Ansicht ▾»-Menü —
+// eine Steuerung, die David am 28.7.2026 ausdrücklich ersetzt hat («zeitstrahl
+// und datumseingabe anstatt 5 jahre 10 jahre usw.») und die seit B4 ohnehin auf
+// nichts mehr wirkte: ihre einzige Verbraucherin, die `LeitfallZeile`, wird vom
+// Reader nicht mehr bedient. Der Test wurde NICHT angepasst, damit er grün wird,
+// sondern UMGEDREHT, weil sein Prüfgegenstand entfernt wurde. Was er einst
+// sachlich absicherte (Auswahl wirkt, Auswahl persistiert), prüft jetzt
+// `bezuege-zeitstrahl-b5.e2e.ts` am Nachfolger — strenger, weil dort auch die
+// Wirkung auf die Auflistung und die Ehrlichkeit der Zähler mitläuft.
+//
+// Was hier BLEIBT, ist der Wächter gegen die Rückkehr: eine entfernte Steuerung,
+// die niemand vermisst, schleicht sich beim nächsten Merge sonst wieder ein.
+test('B-2: die Alt-Zeitraum-Wahl ist aus dem Ansicht-Menü ENTFERNT (B5)', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/ELG', 'art-1');
   await ansichtOeffnen(page);
-  const gruppe = page.locator('[aria-label="Zeitraum der Entscheide"]');
-  await expect(gruppe).toBeVisible();
-  // Default: «alle» aktiv.
-  await expect(gruppe.getByRole('button', { name: 'alle' })).toHaveAttribute('aria-pressed', 'true');
-
-  // «5 J.» wählen → aktiv, «alle» nicht mehr; persistiert in localStorage.
-  await gruppe.getByRole('button', { name: '5 J.' }).click();
-  await expect(gruppe.getByRole('button', { name: '5 J.' })).toHaveAttribute('aria-pressed', 'true');
-  await expect(gruppe.getByRole('button', { name: 'alle' })).toHaveAttribute('aria-pressed', 'false');
-  const ls = await page.evaluate(() => localStorage.getItem('lm.leser.optionen'));
-  expect(ls).toContain('"zeitraum":"5"');
+  const panel = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  await expect(panel).toBeVisible();
+  await expect(page.locator('[aria-label="Zeitraum der Entscheide"]')).toHaveCount(0);
+  for (const label of ['20 J.', '10 J.', '5 J.']) {
+    await expect(panel.getByRole('button', { name: label, exact: true })).toHaveCount(0);
+  }
+  // Die übrigen Streifen des Menüs stehen unverändert da — entfernt wurde genau
+  // eine Steuerung, nicht das Menü.
+  await expect(page.locator('[aria-label="Darstellung der Änderungshistorie"]')).toBeVisible();
 });

@@ -19,8 +19,8 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
 import {
-  setzeOption, setzeZeitraum, setzeHistAnsicht, useLeserOptionen, useLeitfallZeitraum, useHistAnsicht,
-  type OptFeld, type LeitfallZeitraum, type HistAnsicht,
+  setzeOption, setzeHistAnsicht, useLeserOptionen, useHistAnsicht,
+  type OptFeld, type HistAnsicht,
 } from './leserOptionen';
 
 function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz }: {
@@ -64,46 +64,12 @@ function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz }: {
   );
 }
 
-/** V2·B-2: Zeitraum-Wahl für die Leitfälle («alle · 20 · 10 · 5 J.»). Kein `role=
- *  menu`/`radiogroup` (die versprächen Pfeiltasten-Bedienung, die es nicht gibt —
- *  dieselbe Ehrlichkeits-Lehre wie das Dropdown selbst): eine `role="group"` mit
- *  einzeln Tab-fokussierbaren Buttons, jeder trägt `aria-pressed` für den aktiven
- *  Stand. Umschalten setzt den JS-Filterwert (setzeZeitraum) — kein Normtext-Re-
- *  Render, nur die Leitfall-Zeilen (Primitiv-Selektor). */
-function ZeitraumWahl() {
-  const zeitraum = useLeitfallZeitraum();
-  const stufen: readonly [LeitfallZeitraum, string][] = [
-    ['alle', 'alle'], ['20', '20 J.'], ['10', '10 J.'], ['5', '5 J.'],
-  ];
-  return (
-    <div role="group" aria-label="Zeitraum der Entscheide" className="flex flex-wrap items-center gap-1 px-2.5 pt-1.5 pb-0.5">
-      <span className="lc-overline mr-1">Zeitraum</span>
-      {stufen.map(([wert, label]) => {
-        const aktiv = zeitraum === wert;
-        return (
-          <button
-            key={wert}
-            type="button"
-            aria-pressed={aktiv}
-            onClick={() => setzeZeitraum(wert)}
-            title={wert === 'alle' ? 'Alle Entscheide zeigen' : `Nur Entscheide der letzten ${wert} Jahre`}
-            className={`rounded px-1.5 py-0.5 text-xs transition-colors ${
-              aktiv ? 'bg-brass-100/60 font-medium text-ink-900' : 'text-ink-500 hover:bg-brass-100/40'
-            }`}
-          >
-            {label}
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
 /**
  * W2·5i-HIST-ANSICHT: dreiwertige Wahl «Änderungshistorie: aus · als Fussnoten ·
- * als Chronologie». Bedienmuster = `ZeitraumWahl` (role="group" + `aria-pressed`,
- * KEIN `role=radiogroup` — das verspräche eine Pfeiltasten-Bedienung, die es hier
- * nicht gibt; dieselbe Ehrlichkeits-Lehre wie beim Dropdown selbst).
+ * als Chronologie». Bedienmuster wie die übrigen Streifen (role="group" +
+ * `aria-pressed`, KEIN `role=radiogroup` — das verspräche eine Pfeiltasten-
+ * Bedienung, die es hier nicht gibt; dieselbe Ehrlichkeits-Lehre wie beim
+ * Dropdown selbst).
  *
  * Was «aus» ausblendet, ist bewusst ENG (H0-Auflage 1, `bibliothek/normen/
  * hist-ansicht-h0-trennbarkeit.md`): NUR die build-seitig als Änderungsvermerk
@@ -194,7 +160,7 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
         aria-controls={panelId}
         aria-label="Ansicht"
         className="lc-chip inline-flex items-center gap-1 hover:text-brass-700"
-        title="Darstellung: Linien, Fussnoten (mit Änderungshistorie), Verweise, Entscheide (mit Zeitraum)"
+        title="Darstellung: Linien, Fussnoten (mit Änderungshistorie), Verweise"
       >
         {/* Enger Platz in der Sticky-Positionsleiste (@390): Label nur ≥sm, sonst
             reines Icon (Accessible-Name bleibt über aria-label «Ansicht» erhalten). */}
@@ -242,7 +208,7 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
               trennt man sie von den echten Verweisen. Nur sichtbar, wenn Fussnoten
               überhaupt AN sind: bei «Fussnoten aus» ist der ganze Apparat weg, die
               Wahl also wirkungslos → kein totes Steuerelement (§13 F4, gleiches
-              Muster wie ZeitraumWahl unter «Entscheide»). */}
+              Muster wie der Kanton-Streifen unter «Instanzen»). */}
           {opt.fussnoten === 'an' && <HistAnsichtWahl />}
           <OptSwitch
             feld="verweise"
@@ -258,8 +224,17 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
               Entscheide will, wählt dort die Facetten ab; dann steht unter dem
               Artikel nichts UND es wird nichts geladen (der CSS-Weg versteckte
               nur, geladen wurde trotzdem). Die Migration eines gespeicherten
-              «Entscheide aus» erledigt `leserOptionen.ts` einmalig. */}
-          {opt.leitfaelle === 'an' && <ZeitraumWahl />}
+              «Entscheide aus» erledigt `leserOptionen.ts` einmalig.
+
+              W2·7-BEZUG/B5 (David 28.7.2026): die hier zuletzt verbliebene
+              Zeitraum-Wahl «alle · 20 · 10 · 5 J.» ist EBENFALLS ENTFALLEN.
+              Ihre einzige Verbraucherin war die seit B4 vom Reader nicht mehr
+              bediente `LeitfallZeile` — sie stand also sichtbar da und wirkte
+              auf nichts (§13 F4). An ihre Stelle tritt der Zeitstrahl mit
+              Von-Bis-Datum im Dropdown «Rechtsprechung ▾», wo er zur Frage
+              «welche Entscheide?» gehört und auf ALLE Instanzen wirkt statt nur
+              auf die BGE-Zeile. Eine gespeicherte Alt-Stufe bildet
+              `leserOptionen.ts` einmalig auf ein Von-Datum ab. */}
           {/* W2·7-BEZUG/B4: die Facetten-Auswahl (Instanzen, Kantone) sass
               kurzzeitig hier und lebt seit der Vorgabe David 28.7.2026 in einem
               EIGENEN Dropdown «Rechtsprechung ▾» derselben Werkzeugleiste
