@@ -419,13 +419,16 @@ Entscheidkategorien** erweitert — alles über Filter an- und abwählbar (Kanto
   §15 K7). Trefferzahlen je Facette mit ehrlicher Grundgesamtheit ausweisen (§8). Die
   Interaktions-Grammatik aus §1 (KantenChip, KontextGruppe) gilt unverändert — B4 erweitert sie
   um Facetten-Schalter, ersetzt sie nicht.
-- **B5 · Header-Dropdown «Rechtsprechung» mit Zeitstrahl (David-Auftrag 28.7.2026,
+- **B5 · Rechtsprechungs-Dropdown in der Leser-Werkzeugleiste mit Zeitstrahl (David-Auftrag 28.7.2026,
   Wortlaut: «das ist eine der besten funktionen von lexmetrik sie darf auch ihr eigenes
   drop down menu im header haben. zeitstrahl und datumseingabe anstatt 5 jahre 10 jahre
   usw. menu soll interaktiv und innovativ nützlich sein»; Präzisierung David gleichentags:
-  «nur die ansichtsauswahl. artikel sollen trotzdem darunter die entscheide haben»).**
-  Das Header-Dropdown ist AUSSCHLIESSLICH die **Ansichtsauswahl** der Verzahnung — keine
-  eigene Übersichts-/Einstiegswelt: Facetten-Schalter (Instanz/Ebene/Kanton/Status) +
+  «nur die ansichtsauswahl. artikel sollen trotzdem darunter die entscheide haben»;
+  zweite Präzisierung: gemeint ist die LESER-WERKZEUGLEISTE — die Zeile «Gesetze › Bund ›
+  ZGB · Art. 212 ZGB · Im Gesetz suchen … · Ansicht ▾ · Stand» — dort ein Dropdown
+  ANALOG zum Ansicht-Menü).** Das Dropdown ist AUSSCHLIESSLICH die **Ansichtsauswahl**
+  der verzahnten Rechtsprechung — keine eigene Übersichts-/Einstiegswelt:
+  Facetten-Schalter (Instanz/Ebene/Kanton/Status) +
   **interaktiver Zeitstrahl** über die Entscheiddaten (z. B. Histogramm der Kanten pro
   Jahr mit Brush-/Zieh-Auswahl) plus **Von-Bis-Datumseingabe** — ausdrücklich KEINE
   groben Perioden-Buckets («5 Jahre», «10 Jahre»). Die Auswahl wirkt global auf die
