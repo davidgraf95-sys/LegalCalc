@@ -26,13 +26,14 @@
 //
 //   vite-node scripts/normtext/renormalisiere-bestand.ts -- --schreiben
 //
-import { readFileSync, readdirSync, writeFileSync, existsSync, statSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   mappeEntscheidOCL, type OclDecision, type OclStructure,
 } from './adapter-entscheide';
 import { normalisiereErwaegung } from './erwaegung-normalisieren';
 import { sha256EntscheidBloecke } from './sha-entscheide';
+import { alleSnapshots } from './snapshot-walker';
 import type {
   EntscheidBlock, EntscheidSnapshot, EntscheidSnapshotDatei,
 } from '../../src/lib/rechtsprechung/typen';
@@ -44,17 +45,6 @@ const FIX = join(ROOT, 'src', 'tests', 'fixtures');
 const args = process.argv.slice(2);
 const schreiben = args.includes('--schreiben');
 const nurPrefix = args.find((a) => a.startsWith('--nur='))?.split('=')[1] ?? null;
-
-/** Alle Snapshot-Dateien (sortiert für Determinismus, §2). */
-function alleSnapshotDateien(dir: string): string[] {
-  const out: string[] = [];
-  for (const name of readdirSync(dir).sort()) {
-    const p = join(dir, name);
-    if (statSync(p).isDirectory()) out.push(...alleSnapshotDateien(p));
-    else if (name.endsWith('.json') && name !== 'register.json' && name !== 'norm-index.json') out.push(p);
-  }
-  return out;
-}
 
 /** Erwägungs-Block-Liste eines Snapshots (oder []). */
 function erwBloecke(snap: EntscheidSnapshot): EntscheidBlock[] {
@@ -92,10 +82,7 @@ interface Bericht {
 const berichte: Bericht[] = [];
 let geschrieben = 0;
 
-for (const datei of alleSnapshotDateien(PUB)) {
-  const wrap = JSON.parse(readFileSync(datei, 'utf8')) as EntscheidSnapshotDatei;
-  const snap = wrap.eintraege[0];
-  if (!snap) continue;
+for (const { datei, wrap, snap } of alleSnapshots(PUB)) {
   if (nurPrefix && !snap.id.startsWith(nurPrefix)) continue;
 
   const altErw = erwBloecke(snap);

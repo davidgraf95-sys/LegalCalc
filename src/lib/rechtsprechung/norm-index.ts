@@ -111,9 +111,10 @@ export async function ladeNormIndex(): Promise<NormEntscheidIndex | null> {
     indexPromise = (async () => {
       try {
         const res = await fetch('/rechtsprechung/norm-index.json');
-        if (!res.ok) return null;
+        if (!res.ok) { indexPromise = null; return null; }
         return (await res.json()) as NormEntscheidIndex;
       } catch {
+        indexPromise = null;   // transient — nicht dauerhaft als null zementieren
         return null;
       }
     })();
@@ -121,15 +122,27 @@ export async function ladeNormIndex(): Promise<NormEntscheidIndex | null> {
   return indexPromise;
 }
 
-/** Nur die Erlass-Ebene laden (Promise-Cache wie oben) — die Nutzlast des Verweis-Popovers. */
+/**
+ * Nur die Erlass-Ebene laden (Promise-Cache wie oben) — die Nutzlast des Verweis-Popovers.
+ *
+ * FEHLSCHLÄGE WERDEN NICHT GECACHT (Härtung 28.7.2026, §8): der Promise-Cache hielt
+ * bis dahin auch das `null` eines abgebrochenen fetch dauerhaft fest. Ein einziger
+ * transienter Netzfehler beim ERSTEN Öffnen eines Verweis-Popovers liess damit die
+ * Entscheid-Liste für die GANZE Sitzung leer — und zwar ohne Fehlermeldung, also als
+ * «zu diesem Erlass gibt es keine Bundesgerichtsentscheide» gelesen. Das ist eine
+ * Falschaussage über die Rechtslage, nicht bloss ein fehlendes Feature.
+ * Das gehärtete Muster stand schon 60 Zeilen tiefer in `ladeLeitfallShard`; hier ist
+ * es nachgezogen (§5: EIN Muster für alle drei Lader dieser Datei).
+ */
 export async function ladeNormIndexErlasse(): Promise<NormErlassIndex | null> {
   if (!erlassPromise) {
     erlassPromise = (async () => {
       try {
         const res = await fetch('/rechtsprechung/norm-index-erlasse.json');
-        if (!res.ok) return null;
+        if (!res.ok) { erlassPromise = null; return null; }
         return (await res.json()) as NormErlassIndex;
       } catch {
+        erlassPromise = null;
         return null;
       }
     })();

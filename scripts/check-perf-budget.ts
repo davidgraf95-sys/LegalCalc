@@ -128,6 +128,20 @@ if (entry.length === 1) {
 //    Wer `ladeNormIndex()` (Gesamt-JSON) wieder in eine Komponente holt, bringt
 //    den Monolithen auf den kritischen Pfad zurück und muss ihn hier wieder
 //    eintragen — der Kommentar an `ladeNormIndex` sagt dasselbe.
+//
+//    UND DIE ANDERE HÄLFTE DERSELBEN MESSUNG (28.7.2026, Linse 4 — gehört hierher,
+//    weil das Obige sonst wie eine reine Entlastungsgeschichte liest): DERSELBE
+//    normKeys-Backfill hat `register.json` um ~27.5 KB gzip auf 756.9 KB gehoben,
+//    gegen die 780-KB-Schranke — 97 % Deckel-Ausnutzung. Ursache ist dieselbe
+//    Vollständigkeit: `normKeys` steht je Entscheid IM Browse-Register, und der
+//    Backfill füllte es von 21.9 % auf 99.9 % der 5093 Entscheide.
+//    Der BREITESTE Pfad trägt die Abdeckung also mit, und er hat dafür am wenigsten
+//    Luft: register.json lädt jede Rechtsprechungs-Seite, nicht nur ein Popover.
+//    Bewusst NICHT hier gelöst — eine Schranke anzuheben, weil man an sie stösst,
+//    ist keine Massnahme, sondern deren Gegenteil (§8). Die Verschlankung
+//    (normKeys aus dem Browse-Register in eine eigene Projektion, wie es
+//    richter.json für die Spruchkörper-Slugs schon vormacht) ist als Folgearbeit
+//    benannt; bis dahin gilt: wer register.json weiter belädt, reisst das Tor.
 const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/register.json', 780 * 1024],
   ['public/rechtsprechung/richter.json', 24 * 1024],

@@ -20,15 +20,16 @@
 //
 //   vite-node scripts/normtext/remap-sachgebiet.ts -- --schreiben [--datum=YYYY-MM-DD]
 //
-import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   istMehrdeutigeOerAbteilung, normSignalSachgebiet, abteilungZuSachgebiet,
   kantonalSachgebiet, legalAreaZuSachgebiet,
 } from './entscheide-mapping';
 import { schreibeKorpus } from './entscheide-schreiben';
+import { alleSnapshots } from './snapshot-walker';
 import type { Rechtsgebiet } from '../../src/lib/normtext/register';
-import type { EntscheidSnapshot, EntscheidSnapshotDatei } from '../../src/lib/rechtsprechung/typen';
+import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
 
 const ROOT = process.cwd();
 const PUB = join(ROOT, 'public', 'rechtsprechung');
@@ -36,16 +37,6 @@ const PUB = join(ROOT, 'public', 'rechtsprechung');
 const args = process.argv.slice(2);
 const schreiben = args.includes('--schreiben');
 const datumArg = args.find((a) => a.startsWith('--datum='))?.split('=')[1] ?? null;
-
-function alleSnapshotDateien(dir: string): string[] {
-  const out: string[] = [];
-  for (const name of readdirSync(dir).sort()) {
-    const p = join(dir, name);
-    if (statSync(p).isDirectory()) out.push(...alleSnapshotDateien(p));
-    else if (name.endsWith('.json') && name !== 'register.json' && name !== 'norm-index.json') out.push(p);
-  }
-  return out;
-}
 
 /** Reparierte Sachgebiets-Präzedenz — IDENTISCH zu mappeEntscheidOCL (ohne Hint). */
 function leiteSachgebiet(
@@ -63,16 +54,11 @@ function leiteSachgebiet(
 }
 
 function main() {
-  const dateien = alleSnapshotDateien(PUB);
   const snaps: EntscheidSnapshot[] = [];
   const wechsel: Array<{ nr: string; gericht: string; kanton: string; alt: Rechtsgebiet; neu: Rechtsgebiet; signal: string }> = [];
   let oerLegalArea = 0;
 
-  for (const datei of dateien) {
-    const wrap = JSON.parse(readFileSync(datei, 'utf8')) as EntscheidSnapshotDatei;
-    const snap = wrap.eintraege[0];
-    if (!snap) continue;
-
+  for (const { snap } of alleSnapshots(PUB)) {
     const docket = snap.nummer;
     const normKeys = snap.normKeys ?? [];
     const ambig = snap.kanton === 'CH' && istMehrdeutigeOerAbteilung(docket);

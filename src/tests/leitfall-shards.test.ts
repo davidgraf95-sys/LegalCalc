@@ -153,6 +153,52 @@ describe('rechtsprechungFuerErlass — lädt die schlanke Projektion, nicht den 
     vi.stubGlobal('fetch', vi.fn(async () => ({ ok: false, json: async () => ({}) }) as Response));
     expect(await rechtsprechungFuerErlass('OR')).toEqual([]);
   });
+
+  // Härtung 28.7.2026 (W2·6-NKEY Linse 4, §8) — dasselbe Muster, das ladeLeitfallShard
+  // seit W2·7-VZUI trägt: ein FEHLSCHLAG darf nicht dauerhaft im Promise-Cache stehen
+  // bleiben. Sonst macht ein einzelner transienter Netzfehler beim ersten Popover die
+  // Entscheid-Liste für die GANZE Sitzung leer — und «leer» liest sich als «zu diesem
+  // Erlass gibt es keine Bundesgerichtsentscheide», also als Aussage über die
+  // Rechtslage. Ohne die Härtung bleibt der zweite Aufruf unten bei [].
+  it('transienter Fehler wird NICHT dauerhaft gecacht — der nächste Aufruf versucht es erneut', async () => {
+    _leereNormIndexCache();
+    let versuch = 0;
+    const flaky = vi.fn(async () => {
+      versuch++;
+      if (versuch === 1) throw new TypeError('Failed to fetch');   // Netz weg
+      return { ok: true, json: async () => erlassIdx } as Response;
+    });
+    vi.stubGlobal('fetch', flaky);
+
+    expect(await rechtsprechungFuerErlass('OR')).toEqual([]);       // 1. Versuch scheitert
+    expect(await rechtsprechungFuerErlass('OR')).toEqual(erlassIdx.proNorm.OR);   // 2. gelingt
+    expect(flaky).toHaveBeenCalledTimes(2);
+  });
+
+  it('nicht-ok-Antwort (5xx) ebenfalls nicht zementiert', async () => {
+    _leereNormIndexCache();
+    let versuch = 0;
+    const flaky = vi.fn(async () => {
+      versuch++;
+      return versuch === 1
+        ? ({ ok: false, json: async () => ({}) } as Response)
+        : ({ ok: true, json: async () => erlassIdx } as Response);
+    });
+    vi.stubGlobal('fetch', flaky);
+
+    expect(await rechtsprechungFuerErlass('OR')).toEqual([]);
+    expect(await rechtsprechungFuerErlass('OR')).toEqual(erlassIdx.proNorm.OR);
+  });
+
+  it('ERFOLG bleibt gecacht — die Härtung darf den Promise-Cache nicht aufheben', async () => {
+    _leereNormIndexCache();
+    const ok = vi.fn(async () => ({ ok: true, json: async () => erlassIdx } as Response));
+    vi.stubGlobal('fetch', ok);
+    await rechtsprechungFuerErlass('OR');
+    await rechtsprechungFuerErlass('ZPO');
+    await rechtsprechungFuerErlass('OR');
+    expect(ok).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe('leitfaelleFuerArtikel — erlass-lokale Lade-Funktion (Promise-Cache)', () => {

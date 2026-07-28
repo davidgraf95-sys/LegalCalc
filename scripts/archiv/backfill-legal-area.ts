@@ -35,6 +35,16 @@ const args = process.argv.slice(2);
 const schreiben = args.includes('--schreiben');
 const nurPrefix = args.find((a) => a.startsWith('--nur='))?.split('=')[1] ?? null;
 
+// ACHTUNG (Befund 28.7.2026, W2·6-NKEY Linse 4): dieser Walker schliesst
+// Fremd-Artefakte nur NAMENTLICH aus (register.json / norm-index.json) und
+// sammelt darum heute 159 Dateien mit, die gar keine Snapshots sind —
+// richter.json, die 157 norm-index-Shards und norm-index-erlasse.json. Das
+// nachfolgende `wrap.eintraege[0]` wirft darauf einen TypeError.
+// Die vier AKTIVEN Nachpflege-Skripte nutzen deshalb den gemeinsamen Walker
+// mit strukturellem Guard: scripts/normtext/snapshot-walker.ts (§5).
+// Hier bewusst NICHT umgebaut — Archiv-Skripte sind einmalige, bereits
+// gefahrene Backfills; wer sie je wieder anwirft, zieht vorher den Walker
+// nach (und darf sie dann nicht ungeprüft laufen lassen).
 function alleSnapshotDateien(dir: string): string[] {
   const out: string[] = [];
   for (const name of readdirSync(dir).sort()) {

@@ -355,6 +355,22 @@ function main() {
       }
       for (const ak of Object.keys(proArtikelSoll)) if (!gesehen.has(ak)) fehler.push(`proNormArtikel '${ak}' fehlt in den Shards (Projektion unvollständig)`);
     }
+  } else {
+    // §6.7 — ein Tor, das nicht scheitern kann, ist gefährlicher als keines.
+    // ALLES oberhalb hängt an diesem einen `existsSync`: Key-Integrität beider
+    // Index-Ebenen, das norm-index-Budget, die BYTE-Gleichheit der Laufzeit-
+    // Projektion norm-index-erlasse.json und die komplette Shard-Membership.
+    // Ohne diesen Zweig verschwände die Deckung STILL, sobald der Monolith fehlt:
+    // das Tor meldete grün, ohne irgendetwas davon geprüft zu haben — und gerade
+    // die Laufzeit-Datei bliebe ungeprüft, obwohl sie die ist, die der Nutzer lädt.
+    // Ein fehlender Monolith ist kein zulässiger Zustand: schreibeKorpus schreibt
+    // ihn bei JEDEM Lauf.
+    fehler.push(
+      'norm-index.json fehlt — damit entfiele die gesamte Norm-Index-Deckung '
+      + '(Key-Integrität, Grössen-Budget, Byte-Gleichheit von norm-index-erlasse.json '
+      + 'auf dem Laufzeitpfad, Shard-Membership). Korpus neu schreiben '
+      + '(npm run entscheide -- --remap).',
+    );
   }
 
   // ERFASST == Manifest-Keys

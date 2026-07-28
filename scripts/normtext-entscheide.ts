@@ -149,8 +149,17 @@ async function mapLimit<T, R>(items: T[], n: number, fn: (t: T, i: number) => Pr
 // Auswahl-Rang: Regeste zuerst, dann Leitentscheid, dann mit Norm-Verknüpfung.
 const rang = (s: EntscheidSnapshot) =>
   (s.regeste ? 0 : 2) + (s.leitcharakter === 'leitentscheid' ? 0 : 1) + (s.normKeys.length ? 0 : 0.5);
+// DIESELBE Fehlerklasse wie im proNorm-Komparator (entscheide-schreiben.ts, Linse 4,
+// 28.7.2026): `(a.datum < b.datum ? 1 : -1)` liefert bei GLEICHEM Rang UND gleichem
+// Datum −1 für BEIDE Richtungen — keine Ordnung, sondern eine Behauptung. Hier wiegt
+// es zusätzlich, weil danach `.slice(0, limit)` läuft: WELCHE Entscheide überhaupt in
+// den Korpus kommen, hing damit an der Fetch-Reihenfolge (nebenläufig, `mapLimit`).
+// Totaler Tiebreaker ist die Snapshot-`id` — sie ist je Entscheid eindeutig.
 const sortAuswahl = (xs: EntscheidSnapshot[]) =>
-  [...xs].sort((a, b) => rang(a) - rang(b) || (a.datum < b.datum ? 1 : -1));
+  [...xs].sort((a, b) =>
+    rang(a) - rang(b)
+    || (a.datum < b.datum ? 1 : a.datum > b.datum ? -1 : 0)
+    || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 
 /** Bund: Citation-Graph-BFS ab Seeds (+ Listing-Bonus-Seeds), allsprachiger Pool, gewählt nach Rang. */
 async function bundKorpus(): Promise<EntscheidSnapshot[]> {
