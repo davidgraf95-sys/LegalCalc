@@ -1,0 +1,96 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-563.100",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_SB.2020.69": {
+      "zitierung": "Appellationsgericht BS SB.2020.69 vom 24.09.2024",
+      "regesteKurz": "mehrfaches Vergehen gegen das Betäubungsmittelgesetz, mehrfache Übertretung nach Art. 19a des Betäubungsmittelgesetzes…",
+      "datum": "2024-09-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.23": {
+      "zitierung": "Appellationsgericht BS VD.2022.23 vom 11.02.2023",
+      "regesteKurz": "dritte Verwarnung wegen Nichteinhalten von Auflagen (Verfügung des Bau- und Gastgewerbeinspektorats vom 21. Januar 2021)",
+      "datum": "2023-02-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.108": {
+      "zitierung": "Appellationsgericht BS VD.2023.108 vom 09.02.2024",
+      "regesteKurz": "Widerhandlung gegen das Gastgewerbegesetz",
+      "datum": "2024-02-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "2": [
+      {
+        "key": "bs_appellationsgericht_SB.2020.69",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.23",
+        "gewicht": 0
+      }
+    ],
+    "11": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.108",
+        "gewicht": 0
+      }
+    ],
+    "27": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.108",
+        "gewicht": 0
+      }
+    ],
+    "28": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.108",
+        "gewicht": 0
+      }
+    ],
+    "40": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.23",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "2": {
+      "kantonal": 2
+    },
+    "11": {
+      "kantonal": 1
+    },
+    "27": {
+      "kantonal": 1
+    },
+    "28": {
+      "kantonal": 1
+    },
+    "40": {
+      "kantonal": 1
+    }
+  }
+}

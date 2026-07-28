@@ -1,0 +1,50 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-410.700",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2022.172": {
+      "zitierung": "Appellationsgericht BS VD.2022.172 vom 18.11.2022",
+      "regesteKurz": "ausserordentliche Wiederholung eines Unterrichtsjahres bzw. ausserordentliche Beförderung in das nächste Unterrichtsjahr",
+      "datum": "2022-11-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "43": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.172",
+        "gewicht": 0
+      }
+    ],
+    "44": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.172",
+        "gewicht": 0
+      }
+    ],
+    "52": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.172",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "43": {
+      "kantonal": 1
+    },
+    "44": {
+      "kantonal": 1
+    },
+    "52": {
+      "kantonal": 1
+    }
+  }
+}

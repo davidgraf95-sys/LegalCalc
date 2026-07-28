@@ -1,0 +1,223 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "LMG",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bge_151_II_533": {
+      "zitierung": "BGE 151 II 533",
+      "regesteKurz": "Art. 29a, Art. 191 Abs. 3 BV; Art. 82 lit. a, Art. 83 lit. l BGG; zur Zulässigkeit und Unzulässigkeit der Beschwerde im Bereich zollrechtlicher Fragen. Die Veranlagung der Zollabgabe erfolgt anhand von Art, Beschaffenheit und Bruttogewicht…",
+      "datum": "2024-11-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_152_II_124": {
+      "zitierung": "BGE 152 II 124",
+      "regesteKurz": "Art. 12 Abs. 3, Art. 18 und 19 LMG; Art. 12 und 14 LGV; Art. 9 VLtH; lebensmittelrechtliches Täuschungsverbot; Verwendung von Tierarten zur Bezeichnung von pflanzlichen Fleischersatzprodukten. Streitgegenstand (E. 3). Lebensmittelrechtlich…",
+      "datum": "2025-05-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.269": {
+      "zitierung": "Appellationsgericht BS VD.2022.269 vom 13.11.2023",
+      "regesteKurz": "Verbot der gewerblichen Abgabe von mit Lachgas gefüllten Ballonen (Verfügungen vom 26. August 2021 und 19. November 202…",
+      "datum": "2023-11-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.108": {
+      "zitierung": "Appellationsgericht BS VD.2023.108 vom 09.02.2024",
+      "regesteKurz": "Widerhandlung gegen das Gastgewerbegesetz",
+      "datum": "2024-02-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.70": {
+      "zitierung": "Appellationsgericht BS VD.2025.70 vom 15.10.2025",
+      "regesteKurz": "Curcuma-Extrakt, Vollzug Lebensmittelgesetzgebung",
+      "datum": "2025-10-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bge_151_II_533",
+        "gewicht": 0
+      }
+    ],
+    "2": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.269",
+        "gewicht": 0
+      }
+    ],
+    "4": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.108",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.269",
+        "gewicht": 0
+      }
+    ],
+    "7": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.70",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.269",
+        "gewicht": 0
+      }
+    ],
+    "12": [
+      {
+        "key": "bge_152_II_124",
+        "gewicht": 0
+      }
+    ],
+    "18": [
+      {
+        "key": "bge_152_II_124",
+        "gewicht": 0
+      }
+    ],
+    "19": [
+      {
+        "key": "bge_152_II_124",
+        "gewicht": 0
+      }
+    ],
+    "22": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.70",
+        "gewicht": 0
+      }
+    ],
+    "26": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.70",
+        "gewicht": 0
+      }
+    ],
+    "30": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.70",
+        "gewicht": 0
+      }
+    ],
+    "33": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.70",
+        "gewicht": 0
+      }
+    ],
+    "34": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.70",
+        "gewicht": 0
+      }
+    ],
+    "49": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.70",
+        "gewicht": 0
+      }
+    ],
+    "67": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.70",
+        "gewicht": 0
+      }
+    ],
+    "69": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.70",
+        "gewicht": 0
+      }
+    ],
+    "70": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.70",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "bge": 1
+    },
+    "2": {
+      "kantonal": 1
+    },
+    "4": {
+      "kantonal": 2
+    },
+    "7": {
+      "kantonal": 2
+    },
+    "12": {
+      "bge": 1
+    },
+    "18": {
+      "bge": 1
+    },
+    "19": {
+      "bge": 1
+    },
+    "22": {
+      "kantonal": 1
+    },
+    "26": {
+      "kantonal": 1
+    },
+    "30": {
+      "kantonal": 1
+    },
+    "33": {
+      "kantonal": 1
+    },
+    "34": {
+      "kantonal": 1
+    },
+    "49": {
+      "kantonal": 1
+    },
+    "67": {
+      "kantonal": 1
+    },
+    "69": {
+      "kantonal": 1
+    },
+    "70": {
+      "kantonal": 1
+    }
+  }
+}

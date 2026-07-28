@@ -1,0 +1,53 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-365.110",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_SB.2023.29": {
+      "zitierung": "Appellationsgericht BS SB.2023.29 vom 11.09.2024",
+      "regesteKurz": "fahrlässige Körperverletzung, üble Nachrede",
+      "datum": "2024-09-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.256": {
+      "zitierung": "Appellationsgericht BS VD.2022.256 vom 24.03.2023",
+      "regesteKurz": "Maulkorb- und Leinenzwang für Hündin B____ (Mikrochip-Nr. [...]), Gebühren und Kosten",
+      "datum": "2023-03-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.256",
+        "gewicht": 0
+      }
+    ],
+    "2": [
+      {
+        "key": "bs_appellationsgericht_SB.2023.29",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 1
+    },
+    "2": {
+      "kantonal": 1
+    }
+  }
+}

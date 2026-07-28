@@ -1,0 +1,1759 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-640.100",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_SB.2021.108": {
+      "zitierung": "Appellationsgericht BS SB.2021.108 vom 24.08.2022",
+      "regesteKurz": "Betrug, Urkundenfälschung sowie Veruntreuung",
+      "datum": "2022-08-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2021.117": {
+      "zitierung": "Appellationsgericht BS SB.2021.117 vom 24.01.2023",
+      "regesteKurz": "mehrfacher Betrug und mehrfache Urkundenfälschung (BGer 7B_290/2023 vom 18.03.2025)",
+      "datum": "2023-01-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2020.214": {
+      "zitierung": "Appellationsgericht BS VD.2020.214 vom 25.01.2022",
+      "regesteKurz": "kantonale Steuern pro 2014 und direkte Bundessteuer pro 2014 (BGer 2C_234/2022 vom 15. Dezember 2022)",
+      "datum": "2022-01-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2020.254": {
+      "zitierung": "Appellationsgericht BS VD.2020.254 vom 06.04.2022",
+      "regesteKurz": "Kantonale Steuern pro 2013 (Verlustrechnung, Ermessenstaxation; § 30 Abs. 1, § 158 Abs. 2 und § 160 Abs. 4 StG)",
+      "datum": "2022-04-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.106": {
+      "zitierung": "Appellationsgericht BS VD.2021.106 vom 18.02.2022",
+      "regesteKurz": "Neubewertung eines Grundstücks für die Zwecke der Vermögenssteuer",
+      "datum": "2022-02-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.158": {
+      "zitierung": "Appellationsgericht BS VD.2021.158 vom 18.03.2022",
+      "regesteKurz": "Steuerpflicht ab Steuerperiode 2017",
+      "datum": "2022-03-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.159": {
+      "zitierung": "Appellationsgericht BS VD.2021.159 vom 29.01.2022",
+      "regesteKurz": "kantonale Steuern pro 2017 und direkte Bundessteuer pro 2017",
+      "datum": "2022-01-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.186": {
+      "zitierung": "Appellationsgericht BS VD.2021.186 vom 20.03.2022",
+      "regesteKurz": "Grundstückgewinnsteuer",
+      "datum": "2022-03-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.198": {
+      "zitierung": "Appellationsgericht BS VD.2021.198 vom 28.02.2022",
+      "regesteKurz": "Kantonale Steuern pro 2017 (BGer 2C_354/2022 vom 20.3.2023)",
+      "datum": "2022-02-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.213": {
+      "zitierung": "Appellationsgericht BS VD.2021.213 vom 04.07.2022",
+      "regesteKurz": "kantonale Steuern pro 2016 (Liegenschaftskosten) (BGer-Nr.: 9C_605/2022)",
+      "datum": "2022-07-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.224": {
+      "zitierung": "Appellationsgericht BS VD.2021.224 vom 30.06.2022",
+      "regesteKurz": "Bewertung Grundstück B____",
+      "datum": "2022-06-30",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.238": {
+      "zitierung": "Appellationsgericht BS VD.2021.238 vom 25.01.2022",
+      "regesteKurz": "Kirchensteuer pro 2020",
+      "datum": "2022-01-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.258": {
+      "zitierung": "Appellationsgericht BS VD.2021.258 vom 21.03.2022",
+      "regesteKurz": "kantonale Steuern pro 2016 und direkte Bundessteuer pro 2016",
+      "datum": "2022-03-21",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.30": {
+      "zitierung": "Appellationsgericht BS VD.2021.30 vom 17.02.2022",
+      "regesteKurz": "Neubewertung eines Grundstücks für die Zwecke der Vermögenssteuer",
+      "datum": "2022-02-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.99": {
+      "zitierung": "Appellationsgericht BS VD.2021.99 vom 21.02.2022",
+      "regesteKurz": "Nichteintreten auf das Gesuch vom 27. Januar 2021 auf Neuüberprüfung des Entscheids des Bürgerrats vom 16. August 2005…",
+      "datum": "2022-02-21",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.113": {
+      "zitierung": "Appellationsgericht BS VD.2022.113 vom 18.11.2022",
+      "regesteKurz": "Liegenschaftsunterhaltskosten",
+      "datum": "2022-11-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.123": {
+      "zitierung": "Appellationsgericht BS VD.2022.123 vom 19.01.2023",
+      "regesteKurz": "kantonale Steuern und direkte Bundessteuer pro 2017 (BGer 9C_211/2023 vom 23.5.2023)",
+      "datum": "2023-01-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.149": {
+      "zitierung": "Appellationsgericht BS VD.2022.149 vom 29.12.2022",
+      "regesteKurz": "Widerruf der Niederlassungsbewilligung und Wegweisung",
+      "datum": "2022-12-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.19": {
+      "zitierung": "Appellationsgericht BS VD.2022.19 vom 14.08.2022",
+      "regesteKurz": "Neubewertung eines Grundstücks für die Zwecke der Vermögenssteuer (BGer-Nr. 9C_630/2022 vom 22. Februar 2023)",
+      "datum": "2022-08-14",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.212": {
+      "zitierung": "Appellationsgericht BS VD.2022.212 vom 26.01.2023",
+      "regesteKurz": "Familiennachzug",
+      "datum": "2023-01-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.222": {
+      "zitierung": "Appellationsgericht BS VD.2022.222 vom 28.03.2023",
+      "regesteKurz": "Kantonale Steuern und direkte Bundessteuer pro 2012 (BGer 9C_356/2023 vom 7.6.2024)",
+      "datum": "2023-03-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.230": {
+      "zitierung": "Appellationsgericht BS VD.2022.230 vom 25.04.2023",
+      "regesteKurz": "Nichteintreten",
+      "datum": "2023-04-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.242": {
+      "zitierung": "Appellationsgericht BS VD.2022.242 vom 06.02.2023",
+      "regesteKurz": "unentgeltliche Prozessführung",
+      "datum": "2023-02-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.48": {
+      "zitierung": "Appellationsgericht BS VD.2022.48 vom 05.11.2023",
+      "regesteKurz": "Kantonale Steuern pro 2017 (BGer 9C_47/2024 vom 23. September 2024)",
+      "datum": "2023-11-05",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.48-20241217": {
+      "zitierung": "Appellationsgericht BS VD.2022.48 vom 17.12.2024",
+      "regesteKurz": "Kantonale Steuern pro 2017",
+      "datum": "2024-12-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.6": {
+      "zitierung": "Appellationsgericht BS VD.2022.6 vom 30.06.2022",
+      "regesteKurz": "Bewertung des Grundstücks C____ (BGer 2C_737/2022 vom 16.1.2023)",
+      "datum": "2022-06-30",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.61": {
+      "zitierung": "Appellationsgericht BS VD.2022.61 vom 11.07.2022",
+      "regesteKurz": "kantonale Steuern pro 2016 und direkte Bundessteuer pro 2016",
+      "datum": "2022-07-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.7": {
+      "zitierung": "Appellationsgericht BS VD.2022.7",
+      "regesteKurz": "Bewertung Grundstück C____",
+      "datum": "2022-01-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.80": {
+      "zitierung": "Appellationsgericht BS VD.2022.80 vom 09.12.2022",
+      "regesteKurz": "kantonale Steuern und direkte Bundessteuern pro 2018 (BGer 9C_150/2023 vom 25. September 2023)",
+      "datum": "2022-12-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.98": {
+      "zitierung": "Appellationsgericht BS VD.2022.98 vom 19.12.2022",
+      "regesteKurz": "Steuerpflicht ab Steuerperiode 2017",
+      "datum": "2022-12-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.103": {
+      "zitierung": "Appellationsgericht BS VD.2023.103 vom 09.10.2023",
+      "regesteKurz": "Kantonale Steuern und direkte Bundessteuer pro 2018 / Einhaltung der Einsprachefrist",
+      "datum": "2023-10-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.11": {
+      "zitierung": "Appellationsgericht BS VD.2023.11 vom 06.09.2023",
+      "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung (BGer 2C_590/2023)",
+      "datum": "2023-09-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.115": {
+      "zitierung": "Appellationsgericht BS VD.2023.115 vom 13.03.2024",
+      "regesteKurz": "Steuerpflicht (BGer vom 20.11.2024 2C_265/2024)",
+      "datum": "2024-03-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.116": {
+      "zitierung": "Appellationsgericht BS VD.2023.116 vom 13.03.2024",
+      "regesteKurz": "Steuerpflicht (BGer vom 20.11.2024 2C_266/2024)",
+      "datum": "2024-03-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.12": {
+      "zitierung": "Appellationsgericht BS VD.2023.12 vom 24.04.2023",
+      "regesteKurz": "Wiedereinsetzung in die Frist zur Leistung des Kostenvorschusses",
+      "datum": "2023-04-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.127": {
+      "zitierung": "Appellationsgericht BS VD.2023.127 vom 22.03.2024",
+      "regesteKurz": "Unterbrechung der Energielieferung",
+      "datum": "2024-03-22",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.135": {
+      "zitierung": "Appellationsgericht BS VD.2023.135 vom 27.03.2024",
+      "regesteKurz": "Steuererlass zu den kantonalen Steuern und zur direkten Bundessteuer pro 2020",
+      "datum": "2024-03-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.164": {
+      "zitierung": "Appellationsgericht BS VD.2023.164 vom 27.02.2024",
+      "regesteKurz": "kantonale Steuern und direkte Bundessteuer pro 2021",
+      "datum": "2024-02-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.171": {
+      "zitierung": "Appellationsgericht BS VD.2023.171 vom 04.05.2024",
+      "regesteKurz": "Kirchensteuer pro 2020 (BGer 9C_306/2024 vom 24.6.2024))",
+      "datum": "2024-05-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.2": {
+      "zitierung": "Appellationsgericht BS VD.2023.2 vom 16.03.2023",
+      "regesteKurz": "Gebührenerlass",
+      "datum": "2023-03-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.29": {
+      "zitierung": "Appellationsgericht BS VD.2023.29 vom 18.10.2023",
+      "regesteKurz": "Kantonale Steuern und direkte Bundessteuer pro 2017 / Säumnis bei der Leistung der Kostenvorschüsse (BGer 9C_785/2023 v…",
+      "datum": "2023-10-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.35": {
+      "zitierung": "Appellationsgericht BS VD.2023.35 vom 20.10.2023",
+      "regesteKurz": "Belastungszinsen (BGer 9C_758/2023 vom 31.1.2024)",
+      "datum": "2023-10-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.68": {
+      "zitierung": "Appellationsgericht BS VD.2023.68 vom 22.09.2023",
+      "regesteKurz": "Handänderungssteuer",
+      "datum": "2023-09-22",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.112": {
+      "zitierung": "Appellationsgericht BS VD.2024.112 vom 07.02.2025",
+      "regesteKurz": "Rückerstattung von Unterstützungsleistungen aufgrund wirtschaftlicher Verhältnisse",
+      "datum": "2025-02-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.113": {
+      "zitierung": "Appellationsgericht BS VD.2024.113 vom 18.02.2025",
+      "regesteKurz": "Nichteintreten auf einen Rekurs gegen die Nichtverlängerung der Aufenthaltsbewilligung EU/EFTA und Wegweisung sowie Abw…",
+      "datum": "2025-02-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.124": {
+      "zitierung": "Appellationsgericht BS VD.2024.124 vom 18.02.2025",
+      "regesteKurz": "Kantonale Steuern und direkte Bundessteuer pro 2022",
+      "datum": "2025-02-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.143": {
+      "zitierung": "Appellationsgericht BS VD.2024.143 vom 01.04.2025",
+      "regesteKurz": "kantonale Steuern und direkte Bundessteuer pro 2014",
+      "datum": "2025-04-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.145": {
+      "zitierung": "Appellationsgericht BS VD.2024.145 vom 25.06.2025",
+      "regesteKurz": "Kantonale Steuern pro 2021 und direkte Bundessteuer pro 2021",
+      "datum": "2025-06-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.157": {
+      "zitierung": "Appellationsgericht BS VD.2024.157 vom 20.01.2025",
+      "regesteKurz": "Wiedereinsetzung in die Frist zur Leistung des Kostenvorschusses",
+      "datum": "2025-01-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.158": {
+      "zitierung": "Appellationsgericht BS VD.2024.158 vom 20.01.2025",
+      "regesteKurz": "Wiedereinsetzung in die Frist zur Leistung des Kostenvorschusses",
+      "datum": "2025-01-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.33": {
+      "zitierung": "Appellationsgericht BS VD.2024.33 vom 29.05.2024",
+      "regesteKurz": "Nichteintreten auf Rekurs",
+      "datum": "2024-05-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.41": {
+      "zitierung": "Appellationsgericht BS VD.2024.41 vom 14.07.2024",
+      "regesteKurz": "kantonale Steuern pro 2020",
+      "datum": "2024-07-14",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.87": {
+      "zitierung": "Appellationsgericht BS VD.2024.87 vom 17.01.2025",
+      "regesteKurz": "kantonale Steuern pro 2018",
+      "datum": "2025-01-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.97": {
+      "zitierung": "Appellationsgericht BS VD.2024.97 vom 09.12.2024",
+      "regesteKurz": "Erlass der kantonalen Steuern und der direkten Bundessteuer (BGer 9D_1/2025 vom 27. Januar 2025)",
+      "datum": "2024-12-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.132": {
+      "zitierung": "Appellationsgericht BS VD.2025.132 vom 28.10.2025",
+      "regesteKurz": "Nichteintreten auf einen Rekurs gegen die Ablehnung eines Antrags auf überbrückende Unterstützungsleistungen bei der Au…",
+      "datum": "2025-10-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.29": {
+      "zitierung": "Appellationsgericht BS VD.2025.29 vom 17.04.2025",
+      "regesteKurz": "Nichteintreten auf einen Rekurs und eine Beschwerde",
+      "datum": "2025-04-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.53": {
+      "zitierung": "Appellationsgericht BS VD.2025.53 vom 19.09.2025",
+      "regesteKurz": "Gemeindesteuern pro 2008 bis 2017",
+      "datum": "2025-09-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.71": {
+      "zitierung": "Appellationsgericht BS VD.2025.71 vom 23.12.2025",
+      "regesteKurz": "Handänderungssteuer (Beschwerde beim BGer hängig)",
+      "datum": "2025-12-23",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_ZB.2023.3": {
+      "zitierung": "Appellationsgericht BS ZB.2023.3 vom 30.05.2023",
+      "regesteKurz": "Getrenntleben",
+      "datum": "2023-05-30",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_ZB.2023.55": {
+      "zitierung": "Appellationsgericht BS ZB.2023.55 vom 07.08.2024",
+      "regesteKurz": "Getrenntleben",
+      "datum": "2024-08-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_ZB.2024.25": {
+      "zitierung": "Appellationsgericht BS ZB.2024.25 vom 07.10.2024",
+      "regesteKurz": "vorsorgliche Massnahmen (Kinderunterhalt)",
+      "datum": "2024-10-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_ZB.2024.35": {
+      "zitierung": "Appellationsgericht BS ZB.2024.35 vom 09.12.2024",
+      "regesteKurz": "Getrenntleben",
+      "datum": "2024-12-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_AH.2025.2": {
+      "zitierung": "Sozialversicherungsgericht BS AH.2025.2 vom 06.08.2025",
+      "regesteKurz": "Beitragsermittlung Nichterwerbstätiger bei rückwirkend ausgerichteter Rentennachzahlung einer Pensionskasse (Bundesgeri…",
+      "datum": "2025-08-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.53",
+        "gewicht": 0
+      }
+    ],
+    "2": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.53",
+        "gewicht": 0
+      }
+    ],
+    "3": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.115",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.116",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.158",
+        "gewicht": 0
+      }
+    ],
+    "4": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.98",
+        "gewicht": 0
+      }
+    ],
+    "6": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.48-20241217",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.48",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.198",
+        "gewicht": 0
+      }
+    ],
+    "7": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.113",
+        "gewicht": 0
+      }
+    ],
+    "9": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.48",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.11",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.198",
+        "gewicht": 0
+      }
+    ],
+    "17": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.113",
+        "gewicht": 0
+      }
+    ],
+    "18": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.145",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_ZB.2023.55",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.159",
+        "gewicht": 0
+      }
+    ],
+    "19": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.159",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2020.214",
+        "gewicht": 0
+      }
+    ],
+    "22": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.87",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.113",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.258",
+        "gewicht": 0
+      }
+    ],
+    "24": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.145",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_ZB.2023.55",
+        "gewicht": 0
+      }
+    ],
+    "25": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.149",
+        "gewicht": 0
+      }
+    ],
+    "27": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.143",
+        "gewicht": 0
+      }
+    ],
+    "28": [
+      {
+        "key": "bs_appellationsgericht_VD.2020.214",
+        "gewicht": 0
+      }
+    ],
+    "31": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.113",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.213",
+        "gewicht": 0
+      }
+    ],
+    "32": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.48-20241217",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_ZB.2024.25",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_ZB.2023.55",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.48",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_ZB.2023.3",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.222",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.198",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.159",
+        "gewicht": 0
+      }
+    ],
+    "34": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.143",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.61",
+        "gewicht": 0
+      }
+    ],
+    "35": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.145",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.48-20241217",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.48",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.258",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.198",
+        "gewicht": 0
+      }
+    ],
+    "38": [
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2025.2",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.145",
+        "gewicht": 0
+      }
+    ],
+    "39": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.145",
+        "gewicht": 0
+      }
+    ],
+    "40": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.113",
+        "gewicht": 0
+      }
+    ],
+    "41": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.171",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.238",
+        "gewicht": 0
+      }
+    ],
+    "45": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.224",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.6",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.7",
+        "gewicht": 0
+      }
+    ],
+    "46": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.87",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.80",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.19",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.224",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.6",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.258",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.106",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.30",
+        "gewicht": 0
+      }
+    ],
+    "49": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.48-20241217",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.48",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.198",
+        "gewicht": 0
+      }
+    ],
+    "52": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.48-20241217",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.48",
+        "gewicht": 0
+      }
+    ],
+    "64": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.113",
+        "gewicht": 0
+      }
+    ],
+    "69": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.113",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2020.214",
+        "gewicht": 0
+      }
+    ],
+    "77": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.41",
+        "gewicht": 0
+      }
+    ],
+    "84": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.41",
+        "gewicht": 0
+      }
+    ],
+    "85": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.41",
+        "gewicht": 0
+      }
+    ],
+    "87": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.41",
+        "gewicht": 0
+      }
+    ],
+    "104": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.186",
+        "gewicht": 0
+      }
+    ],
+    "105": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.68",
+        "gewicht": 0
+      }
+    ],
+    "106": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.186",
+        "gewicht": 0
+      }
+    ],
+    "107": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.68",
+        "gewicht": 0
+      }
+    ],
+    "136": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.143",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.6",
+        "gewicht": 0
+      }
+    ],
+    "137": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.53",
+        "gewicht": 0
+      }
+    ],
+    "142": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.164",
+        "gewicht": 0
+      }
+    ],
+    "143": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.19",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.224",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.6",
+        "gewicht": 0
+      }
+    ],
+    "147": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.132",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.29",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.113",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.124",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.157",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.158",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.33",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.127",
+        "gewicht": 0
+      }
+    ],
+    "148": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.53",
+        "gewicht": 0
+      }
+    ],
+    "150": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.53",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.98",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2020.214",
+        "gewicht": 0
+      }
+    ],
+    "151": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.97",
+        "gewicht": 0
+      }
+    ],
+    "153": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.143",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.98",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2020.214",
+        "gewicht": 0
+      }
+    ],
+    "158": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.53",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2021.117",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.149",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2021.108",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2020.254",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2020.214",
+        "gewicht": 0
+      }
+    ],
+    "159": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.53",
+        "gewicht": 0
+      }
+    ],
+    "160": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.35",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.103",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.98",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2020.254",
+        "gewicht": 0
+      }
+    ],
+    "164": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.71",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.53",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.145",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.143",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.124",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.87",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.97",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.41",
+        "gewicht": 0
+      }
+    ],
+    "165": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.30",
+        "gewicht": 0
+      }
+    ],
+    "170": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.124",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.157",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.158",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.48-20241217",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.164",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.29",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.12",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.123",
+        "gewicht": 0
+      }
+    ],
+    "171": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.71",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.53",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.145",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.143",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.124",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.157",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.158",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.87",
+        "gewicht": 0
+      }
+    ],
+    "173": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.230",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.212",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.99",
+        "gewicht": 0
+      }
+    ],
+    "174": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.71",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.230",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.99",
+        "gewicht": 0
+      }
+    ],
+    "177": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.97",
+        "gewicht": 0
+      }
+    ],
+    "194": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.112",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.97",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.171",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.35",
+        "gewicht": 0
+      }
+    ],
+    "200": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.97",
+        "gewicht": 0
+      }
+    ],
+    "201": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.97",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_ZB.2024.35",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.135",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.2",
+        "gewicht": 0
+      }
+    ],
+    "209": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.97",
+        "gewicht": 0
+      }
+    ],
+    "222": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.97",
+        "gewicht": 0
+      }
+    ],
+    "228": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.53",
+        "gewicht": 0
+      }
+    ],
+    "234": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.135",
+        "gewicht": 0
+      }
+    ],
+    "165a": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.242",
+        "gewicht": 0
+      }
+    ],
+    "168a": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.98",
+        "gewicht": 0
+      }
+    ],
+    "201a": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.97",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.135",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.2",
+        "gewicht": 0
+      }
+    ],
+    "229a": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.171",
+        "gewicht": 0
+      }
+    ],
+    "69a": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.41",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 1
+    },
+    "2": {
+      "kantonal": 1
+    },
+    "3": {
+      "kantonal": 3
+    },
+    "4": {
+      "kantonal": 1
+    },
+    "6": {
+      "kantonal": 3
+    },
+    "7": {
+      "kantonal": 1
+    },
+    "9": {
+      "kantonal": 3
+    },
+    "17": {
+      "kantonal": 1
+    },
+    "18": {
+      "kantonal": 3
+    },
+    "19": {
+      "kantonal": 2
+    },
+    "22": {
+      "kantonal": 3
+    },
+    "24": {
+      "kantonal": 2
+    },
+    "25": {
+      "kantonal": 1
+    },
+    "27": {
+      "kantonal": 1
+    },
+    "28": {
+      "kantonal": 1
+    },
+    "31": {
+      "kantonal": 2
+    },
+    "32": {
+      "kantonal": 8
+    },
+    "34": {
+      "kantonal": 2
+    },
+    "35": {
+      "kantonal": 5
+    },
+    "38": {
+      "kantonal": 2
+    },
+    "39": {
+      "kantonal": 1
+    },
+    "40": {
+      "kantonal": 1
+    },
+    "41": {
+      "kantonal": 2
+    },
+    "45": {
+      "kantonal": 3
+    },
+    "46": {
+      "kantonal": 11
+    },
+    "49": {
+      "kantonal": 3
+    },
+    "52": {
+      "kantonal": 2
+    },
+    "64": {
+      "kantonal": 1
+    },
+    "69": {
+      "kantonal": 2
+    },
+    "77": {
+      "kantonal": 1
+    },
+    "84": {
+      "kantonal": 1
+    },
+    "85": {
+      "kantonal": 1
+    },
+    "87": {
+      "kantonal": 1
+    },
+    "104": {
+      "kantonal": 1
+    },
+    "105": {
+      "kantonal": 1
+    },
+    "106": {
+      "kantonal": 1
+    },
+    "107": {
+      "kantonal": 1
+    },
+    "136": {
+      "kantonal": 2
+    },
+    "137": {
+      "kantonal": 1
+    },
+    "142": {
+      "kantonal": 1
+    },
+    "143": {
+      "kantonal": 3
+    },
+    "147": {
+      "kantonal": 20
+    },
+    "148": {
+      "kantonal": 1
+    },
+    "150": {
+      "kantonal": 3
+    },
+    "151": {
+      "kantonal": 1
+    },
+    "153": {
+      "kantonal": 3
+    },
+    "158": {
+      "kantonal": 6
+    },
+    "159": {
+      "kantonal": 1
+    },
+    "160": {
+      "kantonal": 4
+    },
+    "164": {
+      "kantonal": 43
+    },
+    "165": {
+      "kantonal": 1
+    },
+    "170": {
+      "kantonal": 11
+    },
+    "171": {
+      "kantonal": 49
+    },
+    "173": {
+      "kantonal": 3
+    },
+    "174": {
+      "kantonal": 3
+    },
+    "177": {
+      "kantonal": 1
+    },
+    "194": {
+      "kantonal": 4
+    },
+    "200": {
+      "kantonal": 1
+    },
+    "201": {
+      "kantonal": 4
+    },
+    "209": {
+      "kantonal": 1
+    },
+    "222": {
+      "kantonal": 1
+    },
+    "228": {
+      "kantonal": 1
+    },
+    "234": {
+      "kantonal": 1
+    },
+    "165a": {
+      "kantonal": 1
+    },
+    "168a": {
+      "kantonal": 1
+    },
+    "201a": {
+      "kantonal": 3
+    },
+    "229a": {
+      "kantonal": 1
+    },
+    "69a": {
+      "kantonal": 1
+    }
+  }
+}

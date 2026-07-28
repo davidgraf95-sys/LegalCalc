@@ -1,0 +1,69 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-212.410",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_KE.2023.28": {
+      "zitierung": "Appellationsgericht BS KE.2023.28 vom 15.05.2024",
+      "regesteKurz": "unentgeltliche Rechtspflege",
+      "datum": "2024-05-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2024.21": {
+      "zitierung": "Appellationsgericht BS KE.2024.21 vom 10.11.2024",
+      "regesteKurz": "Genehmigung Honorarnote Kindesvertreterin",
+      "datum": "2024-11-10",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2024.4": {
+      "zitierung": "Appellationsgericht BS KE.2024.4 vom 19.06.2024",
+      "regesteKurz": "Regelung des persönlichen Verkehrs gemäss Art. 273–275 ZGB, Sistierung des Verfahrens betreffend Antrag auf Erteilung d…",
+      "datum": "2024-06-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "23": [
+      {
+        "key": "bs_appellationsgericht_KE.2024.4",
+        "gewicht": 0
+      }
+    ],
+    "31": [
+      {
+        "key": "bs_appellationsgericht_KE.2024.21",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2023.28",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "23": {
+      "kantonal": 1
+    },
+    "31": {
+      "kantonal": 2
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "MSTG",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bge_149_IV_57": {
+      "zitierung": "BGE 149 IV 57",
+      "regesteKurz": "Art. 322 quinquies und 322 sexies StGB; Vorteilsgewährung und Vorteilsannahme. Prüfung der Tatbestandsmerkmale der Straftaten gemäss Art. 322 quinquies und Art. 322 sexies StGB im Zusammenhang einerseits mit der vorwiegend privaten Einladu…",
+      "datum": "2022-10-31",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "zh_obergericht_UE240310": {
+      "zitierung": "Obergericht ZH UE240310 vom 12.05.2026",
+      "regesteKurz": null,
+      "datum": "2026-05-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "ZH",
+        "gericht": "zh_obergericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "142": [
+      {
+        "key": "bge_149_IV_57",
+        "gewicht": 0
+      }
+    ],
+    "143": [
+      {
+        "key": "bge_149_IV_57",
+        "gewicht": 0
+      }
+    ],
+    "171c": [
+      {
+        "key": "zh_obergericht_UE240310",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "142": {
+      "bge": 1
+    },
+    "143": {
+      "bge": 1
+    },
+    "171c": {
+      "kantonal": 1
+    }
+  }
+}

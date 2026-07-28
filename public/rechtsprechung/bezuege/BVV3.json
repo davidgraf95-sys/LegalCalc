@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BVV3",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bs_sozialversicherungsgericht_BV.2022.12": {
+      "zitierung": "Sozialversicherungsgericht BS BV.2022.12 vom 28.06.2023",
+      "regesteKurz": "BVG Klage gutgeheissen. Leistungsausschlussgrund der Süchtigkeit nicht erstellt.",
+      "datum": "2023-06-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_sozialversicherungsgericht_BV.2022.12",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 1
+    }
+  }
+}

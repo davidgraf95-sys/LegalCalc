@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-212.250",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2024.86": {
+      "zitierung": "Appellationsgericht BS VD.2024.86 vom 25.11.2024",
+      "regesteKurz": "Beiträge an die Kosten der ausserfamiliären Unterbringung",
+      "datum": "2024-11-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "21": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.86",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "21": {
+      "kantonal": 1
+    }
+  }
+}

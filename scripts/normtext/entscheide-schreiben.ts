@@ -15,11 +15,19 @@ import type { EntscheidRef, LeitfallRef, LeitfallShard } from '../../src/lib/rec
 import { minteEcliFuerSnapshot } from '../../src/lib/rechtsprechung/ecli';
 import { artikelSchluesselMitBefund, AUSGESCHLOSSENE_KEYS } from './entscheide-mapping';
 import { vergleiche } from './vergleich';
+import {
+  baueBezugsIndex, baueBezugsShards, ladeBestaende, projiziereBundesgericht,
+  type BezugsIndex,
+} from './bezuege-bauen';
+import { kantoneOhneResolver } from './kanton-norm-resolver';
 
-export function keyVon(snap: EntscheidSnapshot): { key: string; datei: string } {
-  const docketSafe = snap.id.split('/').pop()!;
-  return { key: `${snap.gericht}_${docketSafe}`, datei: `${snap.id}.json` };
-}
+// Identitäts-Primitive (keyVon/kanonZitat/selbstTokens) leben seit W2·7-BEZUG in
+// entscheide-identitaet.ts — der generische Bezugs-Bau braucht sie, darf diesen
+// Schreiber aber nicht importieren (Zyklus). Re-Export unverändert, damit die
+// Bestands-Aufrufer (check-besetzung, check-rangliste-oracle, Tests) unberührt
+// bleiben (§5: EINE Stelle, zwei Konsumenten).
+import { keyVon, kanonZitat } from './entscheide-identitaet';
+export { keyVon, kanonZitat };
 
 /** Gekürzte Regeste aus dem geglätteten Text (normalisiereRegeste strippt u.a. die Überschrift). */
 function regesteKurzVon(snap: EntscheidSnapshot): string | null {
@@ -50,21 +58,11 @@ export function manifestRegesteKurz(snap: EntscheidSnapshot): string | null {
       ? kuerzeRegeste(snap.rubrum.gegenstand, 120) : null);
 }
 
-/**
- * EntscheidRef aus einem Snapshot (identischer Inhalt wie im proNorm-Build).
- * `regesteKurz` über dieselbe Regel wie Manifest und proNorm (§5). Für den heutigen
- * Bestand verhaltensgleich zur früheren Fassung ohne BS-Zweig: die Artikel-Ebene
- * enthält ausschliesslich Bundesgerichts-Entscheide, die BS-Tranche also nie
- * (gemessen: 3765 BS-Einträge, davon 0 mit gerichtstyp 'bundesgericht'). Dass es
- * verhaltensgleich IST, beweist der byte-gleiche Regen — nicht dieser Kommentar.
- */
-function refVon(snap: EntscheidSnapshot): EntscheidRef {
-  const { key } = keyVon(snap);
-  return {
-    key, zitierung: snap.zitierung, regesteKurz: manifestRegesteKurz(snap), datum: snap.datum,
-    leitcharakter: snap.leitcharakter, gericht: snap.gericht, kanton: snap.kanton,
-  };
-}
+// `refVon` (Snapshot → EntscheidRef) ist mit W2·7-BEZUG entfallen: die Artikel-
+// Ebene baut jetzt der generische Bezugs-Bau (bezuege-bauen.ts) und setzt die
+// Kurzzeile über die hereingereichte `manifestRegesteKurz` — dieselbe Regel,
+// eine Stelle weniger (§5). Die Erlass-Ebene (proNorm) füllt schreibeKorpus
+// weiterhin inline; ihre Felder stehen dort im Klartext.
 
 // Deckel je Artikel: «Leitfälle», keine Vollliste — bremst die Artikel-Fan-out des
 // norm-index.json (Budget-Tor in check-entscheide.ts). Bewusst kleiner als der
@@ -115,38 +113,6 @@ export function serialisiere(o: unknown): string {
   return JSON.stringify(o, null, 2) + '\n';
 }
 
-/**
- * Kanonisches Zitat-Token für den Zitier-Abgleich (Entscheid ↔ Entscheid), §2.
- * Vereinheitlicht BEIDE Seiten (Selbst-Identität eines Snapshots UND ein rohes
- * `zitierteEntscheide`-Element) auf dieselbe Normalform, damit «BGE 150 I 17»,
- * «150 I 17» und die aza-Nennung «1C_641/2022» sicher zusammenfinden:
- *   • BGE  → 'BGE:<band>:<abt>:<seite>'   (Präfix BGE/ATF/DTF optional)
- *   • aza  → 'AZA:<abt>:<nr>:<jahr>'      ('1C_641/2022', '1P.179/1994', '5A 33/2004')
- * Kein Treffer → null (nicht abgleichbar).
- */
-export function kanonZitat(roh: string): string | null {
-  const t = String(roh).trim().toUpperCase();
-  // Abteilung inkl. optionalem Suffix der historischen Abteilungen «Ia»/«Va»
-  // ([AB]?, weil t bereits gross ist) — konsistent zu zitat-extraktion.ts; beide
-  // Abgleich-Seiten laufen durch kanonZitat, also intern eindeutig (Bug-Check W3).
-  const bge = /(?:BGE|ATF|DTF)?\s*(\d{1,3})\s+([IVX]{1,4}[AB]?)\s+(\d{1,4})\b/.exec(t);
-  if (bge) return `BGE:${bge[1]}:${bge[2]}:${bge[3]}`;
-  const aza = /\b(\d[A-Z])[._ ](\d{1,6})[/_](\d{4})\b/.exec(t);
-  if (aza) return `AZA:${aza[1]}:${aza[2]}:${aza[3]}`;
-  return null;
-}
-
-/** Zitat-Token, unter denen ein Snapshot von ANDEREN Entscheiden genannt werden kann. */
-function selbstTokens(snap: EntscheidSnapshot): string[] {
-  const out = new Set<string>();
-  for (const roh of [snap.bgeReferenz, snap.nummer, snap.azaUrteil?.aktenzeichen]) {
-    if (!roh) continue;
-    const t = kanonZitat(roh);
-    if (t) out.add(t);
-  }
-  return [...out];
-}
-
 // Die (Register-key, Artikel)-Paare eines Snapshots rechnet jetzt
 // `artikelSchluesselVonSnapshot` (entscheide-mapping.ts) — inkl. der
 // Fliesstext-Erkennung (W2·6-NKEY Baustein d) und des Ausschlusses föderal/
@@ -181,63 +147,55 @@ export function letzterLiteraturVerwurf(): { paare: number; nennungen: number; s
   return { ...literaturVerwurf };
 }
 
-export function baueArtikelIndex(auswahl: EntscheidSnapshot[]): Record<string, LeitfallRef[]> {
+/**
+ * Der generische Bau des LETZTEN Laufs (W2·7-BEZUG). `baueArtikelIndex` behält
+ * seine Signatur (Aufrufer im Oracle-Tor und in den Tests), rechnet aber nicht
+ * mehr selbst — es projiziert. Der volle Bau bleibt hier greifbar, damit
+ * `schreibeKorpus` daraus zusätzlich die Bezugs-Shards schreibt, OHNE die
+ * (teure) Extraktion ein zweites Mal zu fahren.
+ */
+let letzterBezugsIndex: BezugsIndex | null = null;
+export function letzterBezugsBau(): BezugsIndex | null {
+  return letzterBezugsIndex;
+}
+
+/**
+ * Artikel-Ebene des Norm-Index (W3), deterministisch (§2) — jetzt als
+ * PROJEKTION des generischen Bezugs-Baus (W2·7-BEZUG/B1, §5: ein Rechenweg,
+ * zwei Artefakte).
+ *
+ * Inhaltlich unverändert und byte-gleich: nur Bundesgerichts-Entscheide (die
+ * Panel-Überschrift lautet «Bundesgerichtsentscheide zu Art. X»; eidg./kantonale
+ * Gerichte gehören nicht darunter, §8), `gewicht` = topische In-degree innerhalb
+ * S_A = {Bundesgerichtsentscheide, die A zitieren}, Rang gewicht ↓ / Leitentscheid
+ * vor Routine / Datum ↓ / key, Deckel LEITFAELLE_PRO_ARTIKEL.
+ *
+ * Was der generische Bau ZUSÄTZLICH rechnet (kantonale Kanten, Facetten), fällt
+ * für dieses Artefakt in der Projektion wieder weg — der Beweis dafür ist der
+ * byte-gleiche Regen von norm-index.json plus die eigene Prüfung in
+ * check:bezuege (§6.7).
+ */
+export function baueArtikelIndex(auswahl: EntscheidSnapshot[], root = process.cwd()): Record<string, LeitfallRef[]> {
   const bg = auswahl.filter((s) => s.gerichtstyp === 'bundesgericht');
   literaturVerwurf = { paare: 0, nennungen: 0, spannen: 0 };
-
-  // Token → corpus-key (erste Nennung gewinnt; §2-deterministisch bei Eingabefolge).
-  const tokenZuKey = new Map<string, string>();
   for (const s of bg) {
-    const { key } = keyVon(s);
-    for (const tok of selbstTokens(s)) if (!tokenZuKey.has(tok)) tokenZuKey.set(tok, key);
-  }
-
-  const refByKey = new Map<string, EntscheidRef>();
-  const artikelVon = new Map<string, Set<string>>();   // key → {'OR/41', …}
-  const zitiertKeys = new Map<string, Set<string>>();   // key → {zitierte corpus-keys}
-  for (const s of bg) {
-    const { key } = keyVon(s);
-    refByKey.set(key, refVon(s));
     const befund = artikelSchluesselMitBefund(s);
     literaturVerwurf.paare += befund.literaturVerworfen.length;
     literaturVerwurf.nennungen += befund.literaturNennungen;
     literaturVerwurf.spannen += befund.literaturSpannenZahl;
-    artikelVon.set(key, befund.schluessel);
-    const cited = new Set<string>();
-    for (const z of s.zitierteEntscheide ?? []) {
-      const tok = kanonZitat(z);
-      if (!tok) continue;
-      const ck = tokenZuKey.get(tok);
-      if (ck && ck !== key) cited.add(ck);   // Selbstzitat nie zählen
-    }
-    zitiertKeys.set(key, cited);
   }
 
-  // Entscheide je Artikel gruppieren (jeder Fall genau einmal je Artikel).
-  const proArtikel = new Map<string, string[]>();
-  for (const [key, arts] of artikelVon) {
-    for (const a of arts) {
-      const liste = proArtikel.get(a) ?? (proArtikel.set(a, []), proArtikel.get(a)!);
-      liste.push(key);
-    }
-  }
+  const kantone = new Set(auswahl.map((s) => s.kanton));
+  const index = baueBezugsIndex(
+    auswahl,
+    ladeBestaende(root, kantone),
+    vergleicheLeitfaelle,
+    manifestRegesteKurz,
+  );
+  index.befund.kantoneOhneResolver = kantoneOhneResolver(kantone);
+  letzterBezugsIndex = index;
 
-  const out: Record<string, LeitfallRef[]> = {};
-  for (const artikel of [...proArtikel.keys()].sort()) {   // stabile Schlüsselfolge
-    const keys = proArtikel.get(artikel)!;
-    const inSet = new Set(keys);
-    const gewicht = new Map<string, number>(keys.map((k) => [k, 0]));
-    // Topische In-degree: nur Zitierungen von d' ∈ S_A auf d ∈ S_A zählen.
-    for (const d2 of keys) {
-      for (const c of zitiertKeys.get(d2) ?? []) {
-        if (inSet.has(c)) gewicht.set(c, (gewicht.get(c) ?? 0) + 1);
-      }
-    }
-    const refs: LeitfallRef[] = keys.map((k) => ({ ...refByKey.get(k)!, gewicht: gewicht.get(k) ?? 0 }));
-    refs.sort(vergleicheLeitfaelle);
-    out[artikel] = refs.slice(0, LEITFAELLE_PRO_ARTIKEL);
-  }
-  return out;
+  return projiziereBundesgericht(index, vergleicheLeitfaelle, LEITFAELLE_PRO_ARTIKEL);
 }
 
 /**
@@ -269,7 +227,11 @@ export function baueShards(proNormArtikel: Record<string, LeitfallRef[]>, datum:
   return out;
 }
 
-export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root = process.cwd()): { anzahl: number; normBuckets: number; artikelBuckets: number; shards: number; literaturVerwurf: { paare: number; nennungen: number; spannen: number } } {
+export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root = process.cwd()): {
+  anzahl: number; normBuckets: number; artikelBuckets: number; shards: number;
+  bezugsShards: number; bezugsBefund: BezugsIndex['befund'] | null;
+  literaturVerwurf: { paare: number; nennungen: number; spannen: number };
+} {
   const PUB = join(root, 'public', 'rechtsprechung');
   const GENKEYS = join(root, 'src', 'lib', 'rechtsprechung', 'erfasste-keys.generated.ts');
 
@@ -450,7 +412,7 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
   writeFileSync(join(PUB, 'richter.json'), serialisiere(richterObj), 'utf8');
 
   // Artikel-Ebene (W3) zusätzlich zur Erlass-Ebene — proNorm bleibt inhaltlich unverändert.
-  const proNormArtikel = baueArtikelIndex(auswahl);
+  const proNormArtikel = baueArtikelIndex(auswahl, root);
   // §2 (Linse 3, 28.7.2026): Die SCHLÜSSELFOLGE von `proNorm` war die Einfüge-
   // reihenfolge, also die Reihenfolge der Bau-Eingabe (157 Buckets, 63 unsortierte
   // Übergänge). Vollbau und `--remap` erzeugten damit inhaltsgleiche, aber
@@ -481,6 +443,26 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
     writeFileSync(join(shardDir, `${erlass}.json`), serialisiere(shard), 'utf8');
   }
 
+  // ── Bezugs-Shards je Erlass (W2·7-BEZUG/B1–B3) ─────────────────────────────
+  // DRITTE Projektion desselben Baus: alle Facetten-Klassen (BGE · übriges
+  // BGer-Urteil · eidg. Gerichte · kantonale Entscheide), je Klasse gedeckelt,
+  // mit ehrlicher Grundgesamtheit. Auch für KANTONALE Erlasse ('BS-154.100'),
+  // die im Bundes-Register gar nicht vorkommen.
+  //
+  // EIGENE Dateien statt eines erweiterten norm-index-Shards, und zwar aus einem
+  // Laufzeit-Grund (§15): der ArtikelLeser lädt `norm-index/<Erlass>.json` heute
+  // für JEDEN geöffneten Artikel. Hinge die Facetten-Ladung daran, würde jeder
+  // Leser die kantonale Zusatzlast tragen — auch der, der die Filter (B4) nie
+  // einschaltet. So bleibt der Bestands-Shard byte- und gewichtsgleich, und die
+  // neue Datei kostet erst etwas, wenn sie jemand abruft.
+  const bezugsBau = letzterBezugsBau();
+  const bezuege = bezugsBau ? baueBezugsShards(bezugsBau, datum) : new Map();
+  const bezugDir = join(PUB, 'bezuege');
+  mkdirSync(bezugDir, { recursive: true });
+  for (const [erlass, shard] of bezuege) {
+    writeFileSync(join(bezugDir, `${erlass}.json`), serialisiere(shard), 'utf8');
+  }
+
   const keys = manifest.map((m) => m.key).sort();
   writeFileSync(
     GENKEYS,
@@ -496,8 +478,35 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
   return {
     anzahl: manifest.length, normBuckets: Object.keys(proNorm).length,
     artikelBuckets: Object.keys(proNormArtikel).length, shards: shards.size,
+    bezugsShards: bezuege.size,
+    bezugsBefund: bezugsBau?.befund ?? null,
     literaturVerwurf: letzterLiteraturVerwurf(),
   };
+}
+
+/**
+ * Bezugs-Bilanz eines Laufs ins Protokoll — GEZÄHLT, nicht behauptet (§6.7/§8).
+ *
+ * Die vier Blöcke beantworten je eine Frage, die man einem Artefakt sonst nicht
+ * ansieht: Wie viele Kanten je Klasse gibt es überhaupt? Über welchen Kanal kam
+ * die kantonale Auflösung? Was ist bewusst NICHT gemappt worden? Und wo klafft
+ * eine benannte Lücke? Springt eine dieser Zahlen zwischen zwei Läufen, ist
+ * entweder der Korpus, die Extraktion oder eine Ausschlussregel gewandert — und
+ * das soll im Protokoll auffallen, nicht erst im ausgelieferten Index.
+ */
+export function berichteBezuege(shards: number, befund: BezugsIndex['befund'] | null): void {
+  if (!befund) return;
+  const j = (o: Record<string, number>): string =>
+    Object.keys(o).sort().map((k) => `${k} ${o[k]}`).join(' · ') || '–';
+  console.log(`[bezuege] ${shards} Erlass-Shards geschrieben.`);
+  console.log(`[bezuege] Snapshots je Status: ${j(befund.snapshotsJeStatus)}`);
+  console.log(`[bezuege] Kanten je Status (VOR Deckel): ${j(befund.kantenJeStatus)}`);
+  console.log(`[bezuege] kantonale Zitate je Kanal: ${j(befund.kantonalJeKanal)} · §-Gruppen ohne Erlass-Seite: ${befund.kantonalOhneErlass}`);
+  console.log(`[bezuege] Ausschluss-Bilanz — Abkürzungen mit Bundes-Namensvetter NICHT gebunden (${befund.abkAusgeschlossen.length}): ${befund.abkAusgeschlossen.join(', ') || '–'}`);
+  console.log(`[bezuege] Systematik-Nummern ohne Normtext-Snapshot (${befund.nummerOhneBestand.length}): ${befund.nummerOhneBestand.join(', ') || '–'}`);
+  console.log(`[bezuege] Kantone ohne deklarierten Systematik-Präfix: ${befund.kantoneOhneResolver.join(', ') || '–'}`);
+  const lu = befund.literaturVerwurfUebrige;
+  console.log(`[bezuege] Literatur-Kontext-Regel auf NICHT-bundesgerichtlichen Snapshots: ${lu.spannen} Spannen, ${lu.nennungen} Roh-Nennungen, ${lu.paare} verworfene (Snapshot, Artikel)-Paare.`);
 }
 
 /**

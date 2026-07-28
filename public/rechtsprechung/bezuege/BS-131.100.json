@@ -1,0 +1,243 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-131.100",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2023.136": {
+      "zitierung": "Appellationsgericht BS VD.2023.136 vom 06.01.2025",
+      "regesteKurz": "Bauentscheid Nr. BBG [...] vom 16. November 2022 in Sachen Sanierung und Umbau Mehrfamilienhaus mit Ausbau Dachgeschoss…",
+      "datum": "2025-01-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.107": {
+      "zitierung": "Appellationsgericht BS VD.2024.107 vom 19.06.2025",
+      "regesteKurz": "Abbruch von zwei Doppelmehrfamilienhäusern und Neubau von zwei Mehrfamilienhäusern und drei Reiheneinfamilienhäusern (B…",
+      "datum": "2025-06-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.152": {
+      "zitierung": "Appellationsgericht BS VD.2024.152 vom 27.02.2025",
+      "regesteKurz": "Strassenlärmsanierung einer Gemeindestrasse (Entzug der aufschiebenden Wirkung) (BGer 1C_191/2025 vom 3. Juli 2025)",
+      "datum": "2025-02-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.155": {
+      "zitierung": "Appellationsgericht BS VD.2024.155 vom 25.07.2025",
+      "regesteKurz": "Rekurs gegen einen Entscheid der Baurekurskommission",
+      "datum": "2025-07-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.164": {
+      "zitierung": "Appellationsgericht BS VD.2024.164 vom 06.10.2025",
+      "regesteKurz": "Einspracheentscheid zum Bauentscheid Nr. BBG [...] vom 14. September 2022 in Sachen Umbau und Sanierung Mehrfamilienhau…",
+      "datum": "2025-10-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.166": {
+      "zitierung": "Appellationsgericht BS VD.2024.166 vom 06.10.2025",
+      "regesteKurz": "Bauentscheid Nr. BBG [...] vom 14. September 2022 in Sachen Umbau und Sanierung Mehrfamilienhaus mit Ausbau des Dachges…",
+      "datum": "2025-10-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VG.2020.10": {
+      "zitierung": "Appellationsgericht BS VG.2020.10 vom 07.02.2022",
+      "regesteKurz": "Zulässigkeit der kantonalen Volksinitiative \"Basel baut Zukunft\"",
+      "datum": "2022-02-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VG.2024.1": {
+      "zitierung": "Appellationsgericht BS VG.2024.1 vom 18.08.2025",
+      "regesteKurz": "Rechtliche Zulässigkeit der Gemeindeinitiative für eine vernünftige und verhältnismässige Umsetzung des Behindertenglei…",
+      "datum": "2025-08-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_appellationsgericht_VG.2024.1",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VG.2020.10",
+        "gewicht": 0
+      }
+    ],
+    "2": [
+      {
+        "key": "bs_appellationsgericht_VG.2024.1",
+        "gewicht": 0
+      }
+    ],
+    "9": [
+      {
+        "key": "bs_appellationsgericht_VG.2024.1",
+        "gewicht": 0
+      }
+    ],
+    "13": [
+      {
+        "key": "bs_appellationsgericht_VG.2024.1",
+        "gewicht": 0
+      }
+    ],
+    "14": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.164",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.166",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VG.2024.1",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.155",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.136",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VG.2020.10",
+        "gewicht": 0
+      }
+    ],
+    "16": [
+      {
+        "key": "bs_appellationsgericht_VG.2020.10",
+        "gewicht": 0
+      }
+    ],
+    "17": [
+      {
+        "key": "bs_appellationsgericht_VG.2024.1",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VG.2020.10",
+        "gewicht": 0
+      }
+    ],
+    "18": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.152",
+        "gewicht": 0
+      }
+    ],
+    "20": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.107",
+        "gewicht": 0
+      }
+    ],
+    "23": [
+      {
+        "key": "bs_appellationsgericht_VG.2024.1",
+        "gewicht": 0
+      }
+    ],
+    "17a": [
+      {
+        "key": "bs_appellationsgericht_VG.2024.1",
+        "gewicht": 0
+      }
+    ],
+    "2b": [
+      {
+        "key": "bs_appellationsgericht_VG.2024.1",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 2
+    },
+    "2": {
+      "kantonal": 1
+    },
+    "9": {
+      "kantonal": 1
+    },
+    "13": {
+      "kantonal": 1
+    },
+    "14": {
+      "kantonal": 6
+    },
+    "16": {
+      "kantonal": 1
+    },
+    "17": {
+      "kantonal": 2
+    },
+    "18": {
+      "kantonal": 1
+    },
+    "20": {
+      "kantonal": 1
+    },
+    "23": {
+      "kantonal": 1
+    },
+    "17a": {
+      "kantonal": 1
+    },
+    "2b": {
+      "kantonal": 1
+    }
+  }
+}

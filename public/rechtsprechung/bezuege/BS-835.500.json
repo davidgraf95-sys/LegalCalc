@@ -1,0 +1,41 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-835.500",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2024.11": {
+      "zitierung": "Appellationsgericht BS VD.2024.11 vom 12.07.2024",
+      "regesteKurz": "Umwandlung der Aufenthaltsbewilligung EU/EFTA zur Erwerbstätigkeit in eine Aufenthaltsbewilligung EU/EFTA zur Nichterwe…",
+      "datum": "2024-07-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.11",
+        "gewicht": 0
+      }
+    ],
+    "5": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.11",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 1
+    },
+    "5": {
+      "kantonal": 1
+    }
+  }
+}

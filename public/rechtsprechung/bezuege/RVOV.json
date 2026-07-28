@@ -1,0 +1,41 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "RVOV",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bge_148_II_92": {
+      "zitierung": "BGE 148 II 92",
+      "regesteKurz": "Art. 2 Abs. 1 lit. a und Art. 3 Abs. 1 lit. a BGÖ; Art. 55 URG; Anwendung des BGÖ auf die Schiedskommission im Tarifgenehmigungsverfahren mit Einigungstarif. Die Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und ve…",
+      "datum": "2021-10-22",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    }
+  },
+  "proArtikel": {
+    "8": [
+      {
+        "key": "bge_148_II_92",
+        "gewicht": 0
+      }
+    ],
+    "7a": [
+      {
+        "key": "bge_148_II_92",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "8": {
+      "bge": 1
+    },
+    "7a": {
+      "bge": 1
+    }
+  }
+}

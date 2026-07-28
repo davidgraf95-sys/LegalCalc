@@ -13,7 +13,7 @@
 import {
   holeEntscheidOCL, enumeriereNeueste, enumeriereNeuesteAlle, citedRefZuId, enumeriereBge, enumeriereBgeBaender, holeBgeLeitentscheid,
 } from './normtext/adapter-entscheide';
-import { schreibeKorpus, ladeBestandSnapshots } from './normtext/entscheide-schreiben';
+import { schreibeKorpus, ladeBestandSnapshots, berichteBezuege } from './normtext/entscheide-schreiben';
 import {
   normKeysVonSnapshot, remapNormKeys, undeklarierteAltKeys, literaturEntfernteNormKeys,
 } from './normtext/entscheide-mapping';
@@ -361,6 +361,7 @@ async function main() {
     // Vorlauf, ist entweder die Extraktion, der Korpus oder die Marker-Liste gewandert.
     const lv = res.literaturVerwurf;
     console.log(`[remap] Literatur-Kontext-Regel: ${lv.spannen} Zitier-Apparat-Spannen entfernt, darin ${lv.nennungen} Roh-Nennungen; ${lv.paare} (Snapshot, Artikel)-Paare stammten AUSSCHLIESSLICH daraus.`);
+    berichteBezuege(res.bezugsShards, res.bezugsBefund);
     return;
   }
 
@@ -621,6 +622,7 @@ async function main() {
   const bgeN = auswahl.filter((s) => s.gericht === 'bge').length;
   const kantN = auswahl.filter((s) => s.kanton !== 'CH').length;
   console.log(`[entscheide] geschrieben: ${res.anzahl} Snapshots (BGE ${bgeN}, Bund ${res.anzahl - bgeN - kantN}, Kanton ${kantN}), ${res.normBuckets} Norm-Buckets.`);
+  berichteBezuege(res.bezugsShards, res.bezugsBefund);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

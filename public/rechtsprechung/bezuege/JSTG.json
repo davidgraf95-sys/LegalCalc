@@ -1,0 +1,606 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "JSTG",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bge_146_IV_164": {
+      "zitierung": "BGE 146 IV 164",
+      "regesteKurz": "Art. 9 Abs. 2 StGB, Art. 3 Abs. 2 JStG, Art. 29 Abs. 1 StPO, Art. 11 JStPO; Zuständigkeit des Jugendgerichts. Die Rechtsprechung anerkennt Ausnahmen von der Anwendung des Art. 3 Abs. 2 vierter Satz JStG (darunter die Schwere der neuen Stra…",
+      "datum": "2020-03-23",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_146_IV_238": {
+      "zitierung": "BGE 146 IV 238",
+      "regesteKurz": "Art. 17 JStPO; Gelingen oder Scheitern der Mediation. Die in Art. 17 JStPO vorgesehene Mediation stellt der Jugendstrafbehörde ein Instrument zur Verfügung, um auf Konfliktbeziehungen zwischen Tätern und Opfern reagieren zu können (E. 3.2.…",
+      "datum": "2020-06-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_148_IV_298": {
+      "zitierung": "BGE 148 IV 298",
+      "regesteKurz": "Anwendungsbereich von aArt. 260 ter Ziff. 1 bzw. Art. 260 ter Abs. 1 StGB, von Art. 2 Abs. 1 des \"Al-Qaïda/IS-Gesetzes\" vom 12. Dezember 2014 und von Art. 74 Abs. 4 NDG; Vereinbarkeit von Art. 2 Abs. 1 des Al-Qaïda/ IS-Gesetzes mit dem Leg…",
+      "datum": "2022-04-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_148_IV_419": {
+      "zitierung": "BGE 148 IV 419",
+      "regesteKurz": "Art. 5 i.V.m. Art. 15 JStG; Art. 431 Abs. 2 StPO i.V.m. Art. 51 und 110 Abs. 7 StGB; Entschädigung im Jugendstrafrecht nach (vorsorglicher) Unterbringung. Im Jugendstrafrecht führt der Umstand, dass der aufgrund der (vorsorglichen) Unterbr…",
+      "datum": "2022-08-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_149_IV_342": {
+      "zitierung": "BGE 149 IV 342",
+      "regesteKurz": "Art. 3 Abs. 2 JStG; Art. 66a ff. StGB; Landesverweisung von Übergangsstraftätern. Ein dem Erwachsenenstrafrecht unterstehendes Delikt eines jungen Straftäters kann eine Anlasstat für eine (nicht obligatorische) Landesverweisung darstellen,…",
+      "datum": "2023-06-14",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_151_IV_10": {
+      "zitierung": "BGE 151 IV 10",
+      "regesteKurz": "Art. 14 Abs. 1 und 2 JStPO; Grundsatz der Nichtöffentlichkeit der Hauptverhandlung im Jugendstrafverfahren. Das Jugendstrafverfahren findet unter Ausschluss der Öffentlichkeit statt. Das Jugendgericht und die Berufungsinstanz können eine ö…",
+      "datum": "2024-10-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bs_appellationsgericht_BES.2023.136": {
+      "zitierung": "Appellationsgericht BS BES.2023.136 vom 30.05.2024",
+      "regesteKurz": "Änderung der Massnahme, amtliche Verteidigung, Versetzung im Vollzug, Entschädigung für Freiheitsentzug",
+      "datum": "2024-05-30",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2025.45": {
+      "zitierung": "Appellationsgericht BS BES.2025.45 vom 02.07.2025",
+      "regesteKurz": "Stationäre Beobachtung",
+      "datum": "2025-07-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2018.2": {
+      "zitierung": "Appellationsgericht BS SB.2018.2 vom 06.04.2022",
+      "regesteKurz": "Raufhandel",
+      "datum": "2022-04-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2020.119": {
+      "zitierung": "Appellationsgericht BS SB.2020.119 vom 19.09.2025",
+      "regesteKurz": "Diebstahl, mehrfache (teilweise qualifizierte) Sachbeschädigung (grosser Schaden), Hausfriedensbruch, Hinderung einer A…",
+      "datum": "2025-09-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2022.14": {
+      "zitierung": "Appellationsgericht BS SB.2022.14 vom 15.08.2023",
+      "regesteKurz": "Widerhandlung gegen das Strassenverkehrsgesetz (SVG)",
+      "datum": "2023-08-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2022.23-20240926": {
+      "zitierung": "Appellationsgericht BS SB.2022.23 vom 26.09.2024",
+      "regesteKurz": "Vergewaltigung, versuchte Vergewaltigung und mehrfache sexuelle Nötigung",
+      "datum": "2024-09-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2022.26": {
+      "zitierung": "Appellationsgericht BS SB.2022.26 vom 18.10.2023",
+      "regesteKurz": "versuchte schwere Körperverletzung, Verletzung des Geheim- und Privatbereichs durch Aufnahmegeräte, Beschimpfung sowie…",
+      "datum": "2023-10-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2022.88": {
+      "zitierung": "Appellationsgericht BS SB.2022.88 vom 21.03.2024",
+      "regesteKurz": "versuchte einfache Körperverletzung (mit gefährlichem Gegenstand), Sachbeschädigung, mehrfache Beschimpfung, mehrfache…",
+      "datum": "2024-03-21",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2023.4": {
+      "zitierung": "Appellationsgericht BS SB.2023.4 vom 30.05.2024",
+      "regesteKurz": "Raub (mehrfache, versuchte Begehung), Genugtuung zugunsten von C____, Rückerstattungspflicht gemäss Art. 135 Abs. 4 lit…",
+      "datum": "2024-05-30",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2024.114": {
+      "zitierung": "Appellationsgericht BS SB.2024.114 vom 15.07.2025",
+      "regesteKurz": "mehrfacher geringfügiger Diebstahl Urteil BG vom 20.02.26 (6B_927/2025)",
+      "datum": "2025-07-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2024.16": {
+      "zitierung": "Appellationsgericht BS SB.2024.16 vom 18.11.2024",
+      "regesteKurz": "mehrfache Vergewaltigung und versuchte sexuelle Nötigung",
+      "datum": "2024-11-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bge_149_IV_342",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_419",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_298",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2020.119",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2024.16",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.23-20240926",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.26",
+        "gewicht": 0
+      }
+    ],
+    "2": [
+      {
+        "key": "bge_148_IV_419",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_238",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2025.45",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2024.16",
+        "gewicht": 0
+      }
+    ],
+    "3": [
+      {
+        "key": "bge_151_IV_10",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_342",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_164",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2024.114",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2024.16",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.14",
+        "gewicht": 0
+      }
+    ],
+    "5": [
+      {
+        "key": "bge_148_IV_419",
+        "gewicht": 0
+      }
+    ],
+    "9": [
+      {
+        "key": "bs_appellationsgericht_BES.2025.45",
+        "gewicht": 0
+      }
+    ],
+    "10": [
+      {
+        "key": "bge_149_IV_342",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_419",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2025.45",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2024.16",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.23-20240926",
+        "gewicht": 0
+      }
+    ],
+    "11": [
+      {
+        "key": "bge_148_IV_419",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2024.16",
+        "gewicht": 0
+      }
+    ],
+    "12": [
+      {
+        "key": "bge_149_IV_342",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_419",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2024.16",
+        "gewicht": 0
+      }
+    ],
+    "13": [
+      {
+        "key": "bge_148_IV_419",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2024.16",
+        "gewicht": 0
+      }
+    ],
+    "14": [
+      {
+        "key": "bge_148_IV_419",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_298",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2025.45",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2024.16",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2023.4",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.88",
+        "gewicht": 0
+      }
+    ],
+    "15": [
+      {
+        "key": "bge_148_IV_419",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2025.45",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2024.16",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      }
+    ],
+    "16": [
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      }
+    ],
+    "18": [
+      {
+        "key": "bge_148_IV_419",
+        "gewicht": 0
+      }
+    ],
+    "19": [
+      {
+        "key": "bge_148_IV_419",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      }
+    ],
+    "21": [
+      {
+        "key": "bge_146_IV_238",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2020.119",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2023.4",
+        "gewicht": 0
+      }
+    ],
+    "22": [
+      {
+        "key": "bge_148_IV_419",
+        "gewicht": 0
+      }
+    ],
+    "25": [
+      {
+        "key": "bge_148_IV_298",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_164",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2024.16",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.23-20240926",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      }
+    ],
+    "29": [
+      {
+        "key": "bs_appellationsgericht_SB.2020.119",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.23-20240926",
+        "gewicht": 0
+      }
+    ],
+    "31": [
+      {
+        "key": "bs_appellationsgericht_SB.2024.16",
+        "gewicht": 0
+      }
+    ],
+    "32": [
+      {
+        "key": "bge_148_IV_419",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_298",
+        "gewicht": 0
+      }
+    ],
+    "34": [
+      {
+        "key": "bs_appellationsgericht_SB.2022.23-20240926",
+        "gewicht": 0
+      }
+    ],
+    "35": [
+      {
+        "key": "bs_appellationsgericht_SB.2024.16",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.23-20240926",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2018.2",
+        "gewicht": 0
+      }
+    ],
+    "36": [
+      {
+        "key": "bs_appellationsgericht_SB.2020.119",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "bge": 3,
+      "kantonal": 5
+    },
+    "2": {
+      "bge": 2,
+      "kantonal": 2
+    },
+    "3": {
+      "bge": 3,
+      "kantonal": 4
+    },
+    "5": {
+      "bge": 1
+    },
+    "9": {
+      "kantonal": 1
+    },
+    "10": {
+      "bge": 2,
+      "kantonal": 3
+    },
+    "11": {
+      "bge": 1,
+      "kantonal": 1
+    },
+    "12": {
+      "bge": 2,
+      "kantonal": 1
+    },
+    "13": {
+      "bge": 1,
+      "kantonal": 1
+    },
+    "14": {
+      "bge": 2,
+      "kantonal": 4
+    },
+    "15": {
+      "bge": 1,
+      "kantonal": 3
+    },
+    "16": {
+      "kantonal": 1
+    },
+    "18": {
+      "bge": 1
+    },
+    "19": {
+      "bge": 1,
+      "kantonal": 1
+    },
+    "21": {
+      "bge": 1,
+      "kantonal": 2
+    },
+    "22": {
+      "bge": 1
+    },
+    "25": {
+      "bge": 2,
+      "kantonal": 3
+    },
+    "29": {
+      "kantonal": 2
+    },
+    "31": {
+      "kantonal": 1
+    },
+    "32": {
+      "bge": 2
+    },
+    "34": {
+      "kantonal": 1
+    },
+    "35": {
+      "kantonal": 3
+    },
+    "36": {
+      "kantonal": 1
+    }
+  }
+}

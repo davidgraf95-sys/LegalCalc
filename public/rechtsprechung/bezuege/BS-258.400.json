@@ -1,0 +1,77 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-258.400",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_BES.2023.136": {
+      "zitierung": "Appellationsgericht BS BES.2023.136 vom 30.05.2024",
+      "regesteKurz": "Änderung der Massnahme, amtliche Verteidigung, Versetzung im Vollzug, Entschädigung für Freiheitsentzug",
+      "datum": "2024-05-30",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "13": [
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      }
+    ],
+    "15": [
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      }
+    ],
+    "16": [
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      }
+    ],
+    "17": [
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      }
+    ],
+    "20": [
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      }
+    ],
+    "21": [
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "13": {
+      "kantonal": 1
+    },
+    "15": {
+      "kantonal": 1
+    },
+    "16": {
+      "kantonal": 1
+    },
+    "17": {
+      "kantonal": 1
+    },
+    "20": {
+      "kantonal": 1
+    },
+    "21": {
+      "kantonal": 1
+    }
+  }
+}

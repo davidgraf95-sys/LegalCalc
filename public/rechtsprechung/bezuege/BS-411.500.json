@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-411.500",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_sozialversicherungsgericht_IV.2023.101": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2023.101 vom 03.07.2024",
+      "regesteKurz": "Medizinisches Gutachten und ergänzende Stellungnahme verwertbar; Status korrekt; Beschwerdeabweisung",
+      "datum": "2024-07-03",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "9": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.101",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "9": {
+      "kantonal": 1
+    }
+  }
+}

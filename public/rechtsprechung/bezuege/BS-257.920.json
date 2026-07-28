@@ -1,0 +1,69 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-257.920",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2022.184": {
+      "zitierung": "Appellationsgericht BS VD.2022.184 vom 03.04.2023",
+      "regesteKurz": "Erweiterung der Kostengutsprache",
+      "datum": "2023-04-03",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.115": {
+      "zitierung": "Appellationsgericht BS VD.2024.115 vom 29.10.2024",
+      "regesteKurz": "Soforthilfe nach Opferhilfegesetz (BGer 1C_661/2024 vom 10. Dezember 2024)",
+      "datum": "2024-10-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.93": {
+      "zitierung": "Appellationsgericht BS VD.2025.93 vom 28.10.2025",
+      "regesteKurz": "längerfristige Hilfe nach Opferhilfegesetz",
+      "datum": "2025-10-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "5": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.93",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.184",
+        "gewicht": 0
+      }
+    ],
+    "6": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.115",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "5": {
+      "kantonal": 2
+    },
+    "6": {
+      "kantonal": 1
+    }
+  }
+}

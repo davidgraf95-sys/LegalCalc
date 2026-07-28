@@ -1,0 +1,427 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "SSV",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bge_148_IV_30": {
+      "zitierung": "BGE 148 IV 30",
+      "regesteKurz": "§ 229 aZPO/LU; § 20 UeStG/LU, Art. 258 ZPO, Art. 1 SVG, Art. 1 Abs. 2 VRV; allgemeines bzw. gerichtliches Verbot; öffentliche Strasse. Im Rahmen des Strafverfahrens wegen kantonaler Übertretung eines allgemeinen bzw. gerichtlichen Verbots…",
+      "datum": "2021-08-23",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_149_IV_153": {
+      "zitierung": "BGE 149 IV 153",
+      "regesteKurz": "Art. 4 Abs. 2 Rahmenabkommen über die Grenzabfertigung mit Deutschland; Art. 3 StGB; Art. 95 Abs. 1 lit. b SVG; Art. 4 SKV; mangelnde Fahrberechtigung beim bevorstehenden Grenzübertritt; örtliche Zuständigkeit und anwendbares Recht. Schwei…",
+      "datum": "2023-02-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_150_II_444": {
+      "zitierung": "BGE 150 II 444",
+      "regesteKurz": "Art. 82 BV; Art. 3 Abs. 1-4, Art. 32 Abs. 2 und 3 SVG; Art. 1 Abs. 9 und Art. 108 SSV; Anforderungen an ein Gutachten für die Einführung von Tempo 30 auf einem Strassenabschnitt in der Stadt Bern. Ob die Herabsetzung der Höchstgeschwindigk…",
+      "datum": "2024-03-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_151_IV_237": {
+      "zitierung": "BGE 151 IV 237",
+      "regesteKurz": "Art. 7 Abs. 5 OBG i.V.m. Art. 90 Abs. 1 SVG, Art. 6 Ziff. 2 EMRK; Verurteilung des Fahrzeughalters zur Bezahlung einer Ordnungsbusse wegen einer einfachen Verletzung der Verkehrsregeln, die er nicht persönlich begangen hat; Schuldprinzip.…",
+      "datum": "2024-12-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_151_I_3": {
+      "zitierung": "BGE 151 I 3",
+      "regesteKurz": "Art. 8, 26, 27, 36, und 94 BV; kommunales Reglement über das Verbot betreffend den kommerziellen Plakataushang auf öffentlichem Grund und auf privatem Grund, der von öffentlichem Grund aus sichtbar ist; abstrakte Normenkontrolle. Das strit…",
+      "datum": "2024-06-05",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bs_appellationsgericht_BES.2024.107": {
+      "zitierung": "Appellationsgericht BS BES.2024.107 vom 01.11.2024",
+      "regesteKurz": "Nichteintreten auf Einsprache infolge Verspätung",
+      "datum": "2024-11-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2022.38": {
+      "zitierung": "Appellationsgericht BS SB.2022.38 vom 21.06.2023",
+      "regesteKurz": "grobe Verletzung der Verkehrsregeln",
+      "datum": "2023-06-21",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2022.57": {
+      "zitierung": "Appellationsgericht BS SB.2022.57 vom 02.05.2023",
+      "regesteKurz": "grobe Verletzung der Verkehrsregeln, mehrfache Verletzung der Verkehrsregeln",
+      "datum": "2023-05-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2023.56": {
+      "zitierung": "Appellationsgericht BS SB.2023.56 vom 28.02.2025",
+      "regesteKurz": "qualifizierte grobe Verletzung der Verkehrsregeln",
+      "datum": "2025-02-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2024.33": {
+      "zitierung": "Appellationsgericht BS SB.2024.33 vom 14.05.2025",
+      "regesteKurz": "grobe Verletzung der Verkehrsregeln",
+      "datum": "2025-05-14",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2024.56": {
+      "zitierung": "Appellationsgericht BS SB.2024.56 vom 07.01.2025",
+      "regesteKurz": "grobe Verletzung der Verkehrsregeln",
+      "datum": "2025-01-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2024.91": {
+      "zitierung": "Appellationsgericht BS SB.2024.91 vom 21.05.2025",
+      "regesteKurz": "Verletzung der Verkehrsregeln",
+      "datum": "2025-05-21",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.275": {
+      "zitierung": "Appellationsgericht BS VD.2021.275 vom 09.08.2022",
+      "regesteKurz": "Verkehrsanordnung Feldbergstrasse, Tempo 30",
+      "datum": "2022-08-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.92": {
+      "zitierung": "Appellationsgericht BS VD.2021.92 vom 02.06.2022",
+      "regesteKurz": "Verkehrsanordnung C____strasse",
+      "datum": "2022-06-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.170": {
+      "zitierung": "Appellationsgericht BS VD.2023.170 vom 30.06.2024",
+      "regesteKurz": "Widerruf der Niederlassungsbewilligung und Wegweisung",
+      "datum": "2024-06-30",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.13": {
+      "zitierung": "Appellationsgericht BS VD.2025.13 vom 13.10.2025",
+      "regesteKurz": "Verkehrsanordnung Fatiostrasse, Jungstrasse des Amtes für Mobilität vom 16. März 2024 (Beschwerde beim Bundesgericht hä…",
+      "datum": "2025-10-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.52": {
+      "zitierung": "Appellationsgericht BS VD.2025.52 vom 18.12.2025",
+      "regesteKurz": "Verkehrsanordnung Münchensteinerstrasse, Nauenstrasse",
+      "datum": "2025-12-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bge_150_II_444",
+        "gewicht": 0
+      }
+    ],
+    "16": [
+      {
+        "key": "bge_150_II_444",
+        "gewicht": 0
+      }
+    ],
+    "19": [
+      {
+        "key": "bge_148_IV_30",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.170",
+        "gewicht": 0
+      }
+    ],
+    "22": [
+      {
+        "key": "bge_151_IV_237",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_153",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2023.56",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.38",
+        "gewicht": 0
+      }
+    ],
+    "30": [
+      {
+        "key": "bge_148_IV_30",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.170",
+        "gewicht": 0
+      }
+    ],
+    "48": [
+      {
+        "key": "bge_148_IV_30",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2024.107",
+        "gewicht": 0
+      }
+    ],
+    "68": [
+      {
+        "key": "bge_149_IV_153",
+        "gewicht": 0
+      }
+    ],
+    "75": [
+      {
+        "key": "bs_appellationsgericht_SB.2024.91",
+        "gewicht": 0
+      }
+    ],
+    "76": [
+      {
+        "key": "bs_appellationsgericht_SB.2024.91",
+        "gewicht": 0
+      }
+    ],
+    "78": [
+      {
+        "key": "bs_appellationsgericht_SB.2022.57",
+        "gewicht": 0
+      }
+    ],
+    "81": [
+      {
+        "key": "bs_appellationsgericht_SB.2024.56",
+        "gewicht": 0
+      }
+    ],
+    "99": [
+      {
+        "key": "bge_151_I_3",
+        "gewicht": 0
+      }
+    ],
+    "103": [
+      {
+        "key": "bs_appellationsgericht_SB.2024.33",
+        "gewicht": 0
+      }
+    ],
+    "107": [
+      {
+        "key": "bge_150_II_444",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.52",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.13",
+        "gewicht": 0
+      }
+    ],
+    "108": [
+      {
+        "key": "bge_150_II_444",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2024.56",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.275",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.92",
+        "gewicht": 0
+      }
+    ],
+    "113": [
+      {
+        "key": "bge_148_IV_30",
+        "gewicht": 0
+      }
+    ],
+    "22a": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.92",
+        "gewicht": 0
+      }
+    ],
+    "2a": [
+      {
+        "key": "bge_150_II_444",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "bge": 1
+    },
+    "16": {
+      "bge": 1
+    },
+    "19": {
+      "bge": 1,
+      "kantonal": 1
+    },
+    "22": {
+      "bge": 2,
+      "kantonal": 2
+    },
+    "30": {
+      "bge": 1,
+      "kantonal": 1
+    },
+    "48": {
+      "bge": 1,
+      "kantonal": 1
+    },
+    "68": {
+      "bge": 1
+    },
+    "75": {
+      "kantonal": 1
+    },
+    "76": {
+      "kantonal": 1
+    },
+    "78": {
+      "kantonal": 1
+    },
+    "81": {
+      "kantonal": 1
+    },
+    "99": {
+      "bge": 1
+    },
+    "103": {
+      "kantonal": 1
+    },
+    "107": {
+      "bge": 1,
+      "kantonal": 2
+    },
+    "108": {
+      "bge": 1,
+      "kantonal": 3
+    },
+    "113": {
+      "bge": 1
+    },
+    "22a": {
+      "kantonal": 1
+    },
+    "2a": {
+      "bge": 1
+    }
+  }
+}

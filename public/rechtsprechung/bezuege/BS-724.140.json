@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-724.140",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2024.152": {
+      "zitierung": "Appellationsgericht BS VD.2024.152 vom 27.02.2025",
+      "regesteKurz": "Strassenlärmsanierung einer Gemeindestrasse (Entzug der aufschiebenden Wirkung) (BGer 1C_191/2025 vom 3. Juli 2025)",
+      "datum": "2025-02-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "48": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.152",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "48": {
+      "kantonal": 1
+    }
+  }
+}

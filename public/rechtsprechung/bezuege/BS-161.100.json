@@ -1,0 +1,278 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-161.100",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_BES.2020.86": {
+      "zitierung": "Appellationsgericht BS BES.2020.86 vom 12.04.2022",
+      "regesteKurz": "Nichtanhandnahme, Verfahrenseinstellung und Beweisanträge",
+      "datum": "2022-04-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2023.136": {
+      "zitierung": "Appellationsgericht BS BES.2023.136 vom 30.05.2024",
+      "regesteKurz": "Änderung der Massnahme, amtliche Verteidigung, Versetzung im Vollzug, Entschädigung für Freiheitsentzug",
+      "datum": "2024-05-30",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_DGZ.2024.1": {
+      "zitierung": "Appellationsgericht BS DGZ.2024.1 vom 19.03.2024",
+      "regesteKurz": "Eingabe vom 25. Januar 2024",
+      "datum": "2024-03-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2022.20": {
+      "zitierung": "Appellationsgericht BS SB.2022.20 vom 03.02.2023",
+      "regesteKurz": "mehrfacher Betrug",
+      "datum": "2023-02-03",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2020.165": {
+      "zitierung": "Appellationsgericht BS VD.2020.165 vom 05.05.2023",
+      "regesteKurz": "Verlängerungen von Aufenthalten in Sicherheitsabteilungen",
+      "datum": "2023-05-05",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.216": {
+      "zitierung": "Appellationsgericht BS VD.2021.216 vom 25.05.2022",
+      "regesteKurz": "Rechtsverzögerung",
+      "datum": "2022-05-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.130": {
+      "zitierung": "Appellationsgericht BS VD.2022.130 vom 04.03.2024",
+      "regesteKurz": "Versetzung in die JVA Pöschwies",
+      "datum": "2024-03-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.97": {
+      "zitierung": "Appellationsgericht BS VD.2023.97 vom 04.03.2024",
+      "regesteKurz": "Zwei Tage Arrest in einer besonderen Zelle sowie Entzug der Arbeitsbeschäftigungsmöglichkeiten",
+      "datum": "2024-03-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.49": {
+      "zitierung": "Appellationsgericht BS VD.2025.49 vom 04.09.2025",
+      "regesteKurz": "Personalverleih",
+      "datum": "2025-09-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.78": {
+      "zitierung": "Appellationsgericht BS VD.2025.78 vom 09.09.2025",
+      "regesteKurz": "Rechtsverweigerung und Rechtsverzögerung",
+      "datum": "2025-09-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_ZB.2025.28": {
+      "zitierung": "Appellationsgericht BS ZB.2025.28 vom 25.11.2025",
+      "regesteKurz": "Forderung (BGer 4A_620/2025 vom 14. Januar 2026) (BGer 4F_4/2026 vom 22. April 2026)",
+      "datum": "2025-11-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_ZB.2025.8": {
+      "zitierung": "Appellationsgericht BS ZB.2025.8 vom 20.06.2025",
+      "regesteKurz": "Urteilsänderung",
+      "datum": "2025-06-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.216",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2020.86",
+        "gewicht": 0
+      }
+    ],
+    "3": [
+      {
+        "key": "bs_appellationsgericht_ZB.2025.8",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_DGZ.2024.1",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.216",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2020.86",
+        "gewicht": 0
+      }
+    ],
+    "5": [
+      {
+        "key": "bs_appellationsgericht_ZB.2025.8",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_DGZ.2024.1",
+        "gewicht": 0
+      }
+    ],
+    "6": [
+      {
+        "key": "bs_appellationsgericht_ZB.2025.28",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.78",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.49",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_DGZ.2024.1",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.130",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.97",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2020.165",
+        "gewicht": 0
+      }
+    ],
+    "7": [
+      {
+        "key": "bs_appellationsgericht_ZB.2025.8",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_DGZ.2024.1",
+        "gewicht": 0
+      }
+    ],
+    "13": [
+      {
+        "key": "bs_appellationsgericht_SB.2022.20",
+        "gewicht": 0
+      }
+    ],
+    "4a": [
+      {
+        "key": "bs_appellationsgericht_DGZ.2024.1",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.216",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 2
+    },
+    "3": {
+      "kantonal": 5
+    },
+    "5": {
+      "kantonal": 2
+    },
+    "6": {
+      "kantonal": 10
+    },
+    "7": {
+      "kantonal": 2
+    },
+    "13": {
+      "kantonal": 1
+    },
+    "4a": {
+      "kantonal": 2
+    }
+  }
+}

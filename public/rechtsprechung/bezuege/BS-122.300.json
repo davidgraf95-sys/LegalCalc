@@ -1,0 +1,409 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-122.300",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_AUS.2023.1": {
+      "zitierung": "Appellationsgericht BS AUS.2023.1 vom 16.01.2023",
+      "regesteKurz": "Haftentlassungsgesuch",
+      "datum": "2023-01-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2024.23": {
+      "zitierung": "Appellationsgericht BS AUS.2024.23 vom 15.05.2024",
+      "regesteKurz": "Ausgrenzung",
+      "datum": "2024-05-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2025.141": {
+      "zitierung": "Appellationsgericht BS AUS.2025.141 vom 11.12.2025",
+      "regesteKurz": "Ausschaffungshaft (Art. 76 abs. 1 AIG)",
+      "datum": "2025-12-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2025.31": {
+      "zitierung": "Appellationsgericht BS AUS.2025.31 vom 24.03.2025",
+      "regesteKurz": "Durchsetzungshaft (Art. 78 AIG)",
+      "datum": "2025-03-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2025.64": {
+      "zitierung": "Appellationsgericht BS AUS.2025.64 vom 13.06.2025",
+      "regesteKurz": "Ausschaffungshaft (Art. 76 Abs. 1 AIG)",
+      "datum": "2025-06-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2025.68": {
+      "zitierung": "Appellationsgericht BS AUS.2025.68 vom 19.06.2025",
+      "regesteKurz": "Verlängerung Ausschaffungshaft",
+      "datum": "2025-06-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.13": {
+      "zitierung": "Appellationsgericht BS AUS.2026.13 vom 26.02.2026",
+      "regesteKurz": "Verlängerung Ausschaffungshaft",
+      "datum": "2026-02-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.21": {
+      "zitierung": "Appellationsgericht BS AUS.2026.21 vom 13.03.2026",
+      "regesteKurz": "Ausschaffungshaft nach Art. 76a AIG (Haft im Rahmen des Dublin-Verfahrens)",
+      "datum": "2026-03-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.27": {
+      "zitierung": "Appellationsgericht BS AUS.2026.27 vom 31.03.2026",
+      "regesteKurz": "Ausschaffungshaft nach Art. 76a AIG (Haft im Rahmen des Dublin-Verfahrens)",
+      "datum": "2026-03-31",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.29": {
+      "zitierung": "Appellationsgericht BS AUS.2026.29 vom 08.04.2026",
+      "regesteKurz": "Dublin Vorbereitungshaft (Art. 76a AIG)",
+      "datum": "2026-04-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.30": {
+      "zitierung": "Appellationsgericht BS AUS.2026.30 vom 16.04.2026",
+      "regesteKurz": "Verlängerung Ausschaffungshaft",
+      "datum": "2026-04-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.35": {
+      "zitierung": "Appellationsgericht BS AUS.2026.35 vom 17.04.2026",
+      "regesteKurz": "Dublin Vorbereitungshaft (Art. 76a AIG)",
+      "datum": "2026-04-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.37": {
+      "zitierung": "Appellationsgericht BS AUS.2026.37 vom 13.05.2026",
+      "regesteKurz": "Anordnung der Ausschaffungshaft",
+      "datum": "2026-05-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.43": {
+      "zitierung": "Appellationsgericht BS AUS.2026.43 vom 21.05.2026",
+      "regesteKurz": "Anordnung der Ausschaffungshaft",
+      "datum": "2026-05-21",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.44": {
+      "zitierung": "Appellationsgericht BS AUS.2026.44 vom 22.05.2026",
+      "regesteKurz": "Ausschaffungshaft",
+      "datum": "2026-05-22",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.45": {
+      "zitierung": "Appellationsgericht BS AUS.2026.45 vom 01.06.2026",
+      "regesteKurz": "Ausschaffungshaft (Art. 76 Abs. 1 AIG)",
+      "datum": "2026-06-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.46": {
+      "zitierung": "Appellationsgericht BS AUS.2026.46 vom 29.05.2026",
+      "regesteKurz": "Verlängerung Ausschaffungshaft",
+      "datum": "2026-05-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.47": {
+      "zitierung": "Appellationsgericht BS AUS.2026.47 vom 05.06.2026",
+      "regesteKurz": "Anordnung Ausschaffungshaft",
+      "datum": "2026-06-05",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.48": {
+      "zitierung": "Appellationsgericht BS AUS.2026.48 vom 04.06.2026",
+      "regesteKurz": "Anordnung der Vorbereitungshaft",
+      "datum": "2026-06-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.49": {
+      "zitierung": "Appellationsgericht BS AUS.2026.49 vom 09.06.2026",
+      "regesteKurz": "Vorbereitungshaft nach Art. 76a AIG (Haft im Rahmen des Dublin-Verfahrens)",
+      "datum": "2026-06-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.51": {
+      "zitierung": "Appellationsgericht BS AUS.2026.51 vom 09.06.2026",
+      "regesteKurz": "Anordnung der Ausschaffungshaft",
+      "datum": "2026-06-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.52": {
+      "zitierung": "Appellationsgericht BS AUS.2026.52 vom 01.07.2026",
+      "regesteKurz": "Anordnung Durchsetzungshaft",
+      "datum": "2026-07-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.55": {
+      "zitierung": "Appellationsgericht BS AUS.2026.55 vom 07.07.2026",
+      "regesteKurz": "Ausschaffungshaft (Art. 76 Abs. 1 AIG)",
+      "datum": "2026-07-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "2": [
+      {
+        "key": "bs_appellationsgericht_AUS.2026.55",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.51",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.47",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.48",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.45",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.44",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.43",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.37",
+        "gewicht": 0
+      }
+    ],
+    "3": [
+      {
+        "key": "bs_appellationsgericht_AUS.2025.141",
+        "gewicht": 0
+      }
+    ],
+    "4": [
+      {
+        "key": "bs_appellationsgericht_AUS.2026.49",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.46",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.35",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.30",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.29",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.27",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.21",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2026.13",
+        "gewicht": 0
+      }
+    ],
+    "9": [
+      {
+        "key": "bs_appellationsgericht_AUS.2025.68",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2025.64",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2023.1",
+        "gewicht": 0
+      }
+    ],
+    "12": [
+      {
+        "key": "bs_appellationsgericht_AUS.2024.23",
+        "gewicht": 0
+      }
+    ],
+    "15": [
+      {
+        "key": "bs_appellationsgericht_AUS.2026.52",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2025.31",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "2": {
+      "kantonal": 138
+    },
+    "3": {
+      "kantonal": 1
+    },
+    "4": {
+      "kantonal": 126
+    },
+    "9": {
+      "kantonal": 3
+    },
+    "12": {
+      "kantonal": 1
+    },
+    "15": {
+      "kantonal": 2
+    }
+  }
+}

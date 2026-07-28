@@ -1,0 +1,117 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-170.100",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2021.2": {
+      "zitierung": "Appellationsgericht BS VD.2021.2 vom 07.01.2022",
+      "regesteKurz": "Teiländerung Nutzungsplanung Gebiet Dorf, Bettingen (BGer 1C_185/2022 vom 14.2.2024 )",
+      "datum": "2022-01-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.204": {
+      "zitierung": "Appellationsgericht BS VD.2021.204 vom 08.09.2022",
+      "regesteKurz": "Baubeschluss Moosrainwegli (Erstellung der Erschliessungsanlage im Abschnitt Chrischonaweg bis Ende Zone 2R)",
+      "datum": "2022-09-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.160": {
+      "zitierung": "Appellationsgericht BS VD.2022.160 vom 20.10.2022",
+      "regesteKurz": "Abweisung des Antrags auf Einsicht in das ausführliche Protokoll der Gemeindeversammlung vom 26. April 2022",
+      "datum": "2022-10-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.112": {
+      "zitierung": "Appellationsgericht BS VD.2024.112 vom 07.02.2025",
+      "regesteKurz": "Rückerstattung von Unterstützungsleistungen aufgrund wirtschaftlicher Verhältnisse",
+      "datum": "2025-02-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.152": {
+      "zitierung": "Appellationsgericht BS VD.2024.152 vom 27.02.2025",
+      "regesteKurz": "Strassenlärmsanierung einer Gemeindestrasse (Entzug der aufschiebenden Wirkung) (BGer 1C_191/2025 vom 3. Juli 2025)",
+      "datum": "2025-02-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.147": {
+      "zitierung": "Appellationsgericht BS VD.2025.147 vom 25.06.2026",
+      "regesteKurz": "Änderung des Linienplans am Rheintalweg in Riehen (noch nicht rechtskräftig)",
+      "datum": "2026-06-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "26": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.147",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.112",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.160",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.204",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.2",
+        "gewicht": 0
+      }
+    ],
+    "26a": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.152",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "26": {
+      "kantonal": 5
+    },
+    "26a": {
+      "kantonal": 1
+    }
+  }
+}

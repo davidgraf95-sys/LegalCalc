@@ -1,0 +1,98 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "VEV",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2023.100": {
+      "zitierung": "Appellationsgericht BS VD.2023.100 vom 27.08.2023",
+      "regesteKurz": "Familiennachzug",
+      "datum": "2023-08-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.175": {
+      "zitierung": "Appellationsgericht BS VD.2023.175 vom 17.05.2024",
+      "regesteKurz": "Gesuch um Familiennachzug (BGer 2C_324/2024 vom 22. Januar 2025)",
+      "datum": "2024-05-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.95": {
+      "zitierung": "Appellationsgericht BS VD.2023.95 vom 12.01.2024",
+      "regesteKurz": "Wegweisung",
+      "datum": "2024-01-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.12": {
+      "zitierung": "Appellationsgericht BS VD.2025.12 vom 26.03.2025",
+      "regesteKurz": "Rechtsverweigerung",
+      "datum": "2025-03-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "2": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.12",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.175",
+        "gewicht": 0
+      }
+    ],
+    "3": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.95",
+        "gewicht": 0
+      }
+    ],
+    "22": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.12",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.175",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.100",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "2": {
+      "kantonal": 2
+    },
+    "3": {
+      "kantonal": 1
+    },
+    "22": {
+      "kantonal": 3
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BETMKV",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bge_149_IV_307": {
+      "zitierung": "BGE 149 IV 307",
+      "regesteKurz": "Art. 19b BetmG; Art. 69 StGB; Einziehbarkeit von Betäubungsmitteln des Wirkungstyps Cannabis in Zusammenhang mit straflosen Konsumvorbereitungshandlungen. Geringfügige, zum Eigenkonsum bestimmte Mengen Betäubungsmittel des Wirkungstyps Can…",
+      "datum": "2023-06-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_150_IV_255": {
+      "zitierung": "BGE 150 IV 255",
+      "regesteKurz": "Art. 1 StGB; Art. 10, 11 Abs. 1 und Art. 20 Abs. 1 lit. e BetmG; Beihilfe zum Suizid; Verschreibung einer tödlich wirkenden Substanz (Natriumpentobarbital); Legalitätsprinzip. Die Verschreibung von Natriumpentobarbital durch einen Arzt an…",
+      "datum": "2024-03-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    }
+  },
+  "proArtikel": {
+    "46": [
+      {
+        "key": "bge_150_IV_255",
+        "gewicht": 0
+      }
+    ],
+    "85": [
+      {
+        "key": "bge_149_IV_307",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "46": {
+      "bge": 1
+    },
+    "85": {
+      "bge": 1
+    }
+  }
+}

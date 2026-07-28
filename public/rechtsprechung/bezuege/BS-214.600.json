@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-214.600",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2021.24": {
+      "zitierung": "Appellationsgericht BS VD.2021.24 vom 16.03.2022",
+      "regesteKurz": "Bundesgesetz über den Erwerb von Grundstücken durch Personen im Ausland",
+      "datum": "2022-03-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.24",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 1
+    }
+  }
+}

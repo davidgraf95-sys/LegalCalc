@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-164.250",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2023.165": {
+      "zitierung": "Appellationsgericht BS VD.2023.165 vom 23.10.2024",
+      "regesteKurz": "Kündigung des Arbeitsverhältnisses",
+      "datum": "2024-10-23",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "4": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.165",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "4": {
+      "kantonal": 1
+    }
+  }
+}

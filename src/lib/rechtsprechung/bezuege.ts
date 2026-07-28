@@ -1,0 +1,167 @@
+// ─── Bezüge am Artikel: Ladeschicht + Facetten-Auswahl (W2·7-BEZUG, B1) ─────
+//
+// Lazy geladener Shard `public/rechtsprechung/bezuege/<ERLASS>.json`: zu einem
+// Erlass — Bundes-Register-key ('OR') ODER kantonaler Snapshot-key
+// ('BS-154.100') — die Kanten aller Facetten-Klassen an seinen Artikeln.
+//
+// REINE DATENSCHICHT (§3): Laden, Auflösen, Filtern nach deklarierten Facetten.
+// Keine Komponente, kein Zustand über die Sitzung hinaus, keine Voreinstellung —
+// welche Facetten voreingestellt sind und wie sie bedient werden, entscheidet die
+// Filter-UI (B4) und nicht diese Datei.
+//
+// ── ABGRENZUNG zu norm-index.ts, damit niemand das Falsche lädt ─────────────
+//  · `norm-index/<Erlass>.json`  (LeitfallShard) — die BESTEHENDE, schlanke
+//    Bundesgerichts-Sicht. Sie ist der Default-Pfad des ArtikelLesers und bleibt
+//    unverändert; wer keine Facetten braucht, lädt nur sie.
+//  · `bezuege/<Erlass>.json`     (diese Datei) — die generische Sicht mit ALLEN
+//    Klassen. Sie ist eine OBERMENGE der ersten, also nie zusätzlich zu ihr zu
+//    laden, sondern an ihrer Stelle, sobald Facetten im Spiel sind.
+// Beide stammen aus demselben Bau (scripts/normtext/bezuege-bauen.ts); das Tor
+// check:bezuege prüft, dass die Bundesgerichts-Projektion übereinstimmt (§5).
+
+import type { BezugsFacetten, BezugStatus } from '../verzahnung/facetten';
+import { STATUS_RANG } from '../verzahnung/facetten';
+
+/** Dokument-Kopf — EINMAL je Shard, nicht je Artikel (§15, siehe Generator). */
+export interface BezugsDokument {
+  zitierung: string;
+  regesteKurz: string | null;
+  datum: string;
+  facetten: BezugsFacetten;
+}
+
+/** Kanten-Eintrag: Verweis auf den Dokument-Kopf + artikel-lokales Gewicht. */
+export interface BezugsEintrag {
+  key: string;
+  gewicht: number;
+}
+
+export interface BezugsShard {
+  erzeugt: string;
+  erlass: string;
+  erlassEbene: 'bund' | 'kanton';
+  dokumente: Record<string, BezugsDokument>;
+  proArtikel: Record<string, BezugsEintrag[]>;
+  /** Grundgesamtheit je Artikel und Status VOR dem Deckel (§8). */
+  gesamtProArtikel: Record<string, Partial<Record<BezugStatus, number>>>;
+}
+
+/** Aufgelöste Kante: Kopf + Gewicht, wie eine Komponente sie braucht. */
+export interface Bezug extends BezugsDokument {
+  key: string;
+  gewicht: number;
+}
+
+/** Was ein Filter auswählen kann. Leere/fehlende Achse = keine Einschränkung. */
+export interface FacettenAuswahl {
+  status?: ReadonlySet<BezugStatus>;
+  ebene?: ReadonlySet<'bund' | 'kanton'>;
+  kanton?: ReadonlySet<string>;
+  quelltyp?: ReadonlySet<string>;
+}
+
+const shardPromises = new Map<string, Promise<BezugsShard | null>>();
+
+/**
+ * Shard eines Erlasses laden. Promise-Cache je Erlass (Repo-Muster wie
+ * `ladeLeitfallShard`): der erste Artikel stösst EINEN fetch an, alle weiteren
+ * Artikel desselben Erlasses teilen ihn.
+ *
+ * FEHLSCHLÄGE WERDEN NICHT GECACHT — dieselbe Härtung wie in norm-index.ts (§5,
+ * §8): ein transienter Netzfehler beim ersten Öffnen darf die Bezüge nicht für
+ * die ganze Sitzung leer erscheinen lassen. Eine leere Liste liest sich als «zu
+ * diesem Artikel gibt es keine Rechtsprechung» — das ist eine Aussage über die
+ * Rechtslage, nicht ein fehlendes Feature. 404 bleibt gecacht: kein Shard heisst
+ * belegbar «keine Kante zu diesem Erlass», das ist kein Fehler.
+ */
+export async function ladeBezugsShard(erlass: string): Promise<BezugsShard | null> {
+  let p = shardPromises.get(erlass);
+  if (!p) {
+    p = (async () => {
+      try {
+        const res = await fetch(`/rechtsprechung/bezuege/${encodeURIComponent(erlass)}.json`);
+        if (res.status === 404) return null;
+        if (!res.ok) { shardPromises.delete(erlass); return null; }
+        return (await res.json()) as BezugsShard;
+      } catch {
+        shardPromises.delete(erlass);
+        return null;
+      }
+    })();
+    shardPromises.set(erlass, p);
+  }
+  return p;
+}
+
+/**
+ * Artikel-Token normalisieren — IDENTISCH zu `normArtikelToken` in norm-index.ts.
+ * Re-exportiert statt nachgebaut (§5): der Reader reicht die eId-nahe
+ * Unterstrich-Form durch ('727_a'), die Shard-Tokens sind whitespace- und
+ * unterstrich-frei ('727a'). Zwei Normalisierungen, die auseinanderlaufen,
+ * kosten die Bezüge JEDES Buchstaben-Artikels — der Bug ist im Bestand belegt
+ * (W2·7-VZUI/V1b, OR Art. 727a).
+ */
+export { normArtikelToken } from './norm-index';
+
+/**
+ * Kanten eines Artikels, aufgelöst und in Shard-Ordnung (Status-Rang, dann
+ * Gewicht/Leitentscheid/Datum/key). Rein (§2). Ein Eintrag ohne Dokument-Kopf
+ * wird ÜBERSPRUNGEN statt halb gerendert — ein Chip ohne Zitierung wäre eine
+ * Behauptung ohne Fundstelle (§7).
+ */
+export function bezuegeFuerArtikel(shard: BezugsShard, artikelToken: string): Bezug[] {
+  const out: Bezug[] = [];
+  for (const e of shard.proArtikel[artikelToken] ?? []) {
+    const kopf = shard.dokumente[e.key];
+    if (!kopf) continue;
+    out.push({ key: e.key, gewicht: e.gewicht, ...kopf });
+  }
+  return out;
+}
+
+/** Kanten nach einer Facetten-Auswahl filtern. Rein, ordnungserhaltend (§2). */
+export function filtereBezuege(bezuege: readonly Bezug[], auswahl: FacettenAuswahl): Bezug[] {
+  return bezuege.filter((b) => {
+    const f = b.facetten;
+    if (auswahl.status?.size && !auswahl.status.has(f.status)) return false;
+    if (auswahl.ebene?.size && !auswahl.ebene.has(f.ebene)) return false;
+    if (auswahl.kanton?.size && !auswahl.kanton.has(f.kanton)) return false;
+    if (auswahl.quelltyp?.size && !auswahl.quelltyp.has(f.quelltyp)) return false;
+    return true;
+  });
+}
+
+/**
+ * Trefferzahlen je Status MIT ehrlicher Grundgesamtheit (§8).
+ *
+ * `gezeigt` ist, was im Shard steht (nach Deckel); `gesamt` ist, wie viele
+ * Kanten es VOR dem Deckel gab. Beide Zahlen gehören zusammen ausgegeben —
+ * «8 kantonale Entscheide» ohne das «von 214» ist die Vollständigkeits-
+ * Behauptung, die §8 verbietet. Fehlt die Grundgesamtheit im Shard (Alt-Datei),
+ * wird `gesamt` = `gezeigt` gesetzt: lieber gleich als erfunden.
+ */
+export function trefferJeStatus(shard: BezugsShard, artikelToken: string): Array<{
+  status: BezugStatus; gezeigt: number; gesamt: number;
+}> {
+  const gezeigt: Partial<Record<BezugStatus, number>> = {};
+  for (const b of bezuegeFuerArtikel(shard, artikelToken)) {
+    gezeigt[b.facetten.status] = (gezeigt[b.facetten.status] ?? 0) + 1;
+  }
+  const gesamt = shard.gesamtProArtikel?.[artikelToken] ?? {};
+  const alle = new Set<BezugStatus>([
+    ...(Object.keys(gezeigt) as BezugStatus[]),
+    ...(Object.keys(gesamt) as BezugStatus[]),
+  ]);
+  return [...alle]
+    .sort((a, b) => STATUS_RANG[a] - STATUS_RANG[b])
+    .map((status) => ({
+      status,
+      gezeigt: gezeigt[status] ?? 0,
+      gesamt: gesamt[status] ?? gezeigt[status] ?? 0,
+    }));
+}
+
+/** Nur für Tests: den Shard-Promise-Cache leeren (sonst leckt er über Testfälle). */
+export function _leereBezugsCache(): void {
+  shardPromises.clear();
+}

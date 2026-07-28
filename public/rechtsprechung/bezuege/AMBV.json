@@ -1,0 +1,49 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "AMBV",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bge_150_V_210": {
+      "zitierung": "BGE 150 V 210",
+      "regesteKurz": "Art. 25 Abs. 1 und 2 lit. b, Art. 32 Abs. 1 Satz 1, Art. 34 Abs. 1, Art. 44 Abs. 1 Satz 1, Art. 52 Abs. 1 lit. a Ziff. 2 und lit. b KVG; Art. 63 Abs. 2 KVV; ALT II (Bearbeitungstarif) lit. D Ziff. 2 (nachfolgend: ALT II D 2); Art. 4 Abs. 1…",
+      "datum": "2024-03-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bs_sozialversicherungsgericht_SG.2019.7": {
+      "zitierung": "Sozialversicherungsgericht BS SG.2019.7 vom 16.08.2022",
+      "regesteKurz": "Leistungen gemäss Arzneimittelliste mit Tarif (ALT) (Bundesgerichtsurteil 9C_65/2023 vom 18.3.2024) Entschädigungspflic…",
+      "datum": "2022-08-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "8": [
+      {
+        "key": "bge_150_V_210",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_SG.2019.7",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "8": {
+      "bge": 1,
+      "kantonal": 1
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "HEUE",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bs_appellationsgericht_KE.2023.3": {
+      "zitierung": "Appellationsgericht BS KE.2023.3 vom 25.09.2023",
+      "regesteKurz": "Errichtung einer Beistandschaft für E____ (BGer 5A_870/2023 vom 6.12.2023)",
+      "datum": "2023-09-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "5": [
+      {
+        "key": "bs_appellationsgericht_KE.2023.3",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "5": {
+      "kantonal": 1
+    }
+  }
+}

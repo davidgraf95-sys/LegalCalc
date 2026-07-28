@@ -1,0 +1,62 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-152.100",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2021.274": {
+      "zitierung": "Appellationsgericht BS VD.2021.274 vom 05.02.2022",
+      "regesteKurz": "Verletzung und Verweigerung der Aufsichtspflicht (Urteil BGer 1C_161/2022 vom 11. März 2022)",
+      "datum": "2022-02-05",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.98": {
+      "zitierung": "Appellationsgericht BS VD.2024.98 vom 27.02.2025",
+      "regesteKurz": "Ablehnung des Informationszugangs",
+      "datum": "2025-02-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "20": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.274",
+        "gewicht": 0
+      }
+    ],
+    "60": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.98",
+        "gewicht": 0
+      }
+    ],
+    "69": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.274",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "20": {
+      "kantonal": 1
+    },
+    "60": {
+      "kantonal": 1
+    },
+    "69": {
+      "kantonal": 1
+    }
+  }
+}

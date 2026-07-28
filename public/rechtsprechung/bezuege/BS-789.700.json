@@ -1,0 +1,66 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-789.700",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2021.126": {
+      "zitierung": "Appellationsgericht BS VD.2021.126 vom 17.05.2022",
+      "regesteKurz": "betreffend Einspracheentscheide zum Bauentscheid Nr. BBG [...] (1) vom 5. Oktober 2020 in Sachen Abbruch [...], Neubau…",
+      "datum": "2022-05-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.80": {
+      "zitierung": "Appellationsgericht BS VD.2021.80 vom 16.02.2022",
+      "regesteKurz": "Neubewertung eines Grundstücks für die Zwecke der Vermögenssteuer",
+      "datum": "2022-02-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "6": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.80",
+        "gewicht": 0
+      }
+    ],
+    "8": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.126",
+        "gewicht": 0
+      }
+    ],
+    "9": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.126",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.80",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "6": {
+      "kantonal": 1
+    },
+    "8": {
+      "kantonal": 1
+    },
+    "9": {
+      "kantonal": 2
+    }
+  }
+}

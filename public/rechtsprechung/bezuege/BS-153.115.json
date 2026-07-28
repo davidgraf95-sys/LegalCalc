@@ -1,0 +1,71 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-153.115",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2023.33": {
+      "zitierung": "Appellationsgericht BS VD.2023.33 vom 20.10.2023",
+      "regesteKurz": "Ausrichtung von Sitzungsgeldern für die Mitwirkung in der staatlichen Schlichtungsstelle für Mietangelegenheiten",
+      "datum": "2023-10-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_AH.2024.10": {
+      "zitierung": "Sozialversicherungsgericht BS AH.2024.10 vom 04.06.2025",
+      "regesteKurz": "Die Mitglieder der Wohnschutzkommission sind als Behördenmitglieder im Sinne von Art. 7 lit. i AHVV zu qualifizieren, w…",
+      "datum": "2025-06-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2024.10",
+        "gewicht": 0
+      }
+    ],
+    "2": [
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2024.10",
+        "gewicht": 0
+      }
+    ],
+    "3": [
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2024.10",
+        "gewicht": 0
+      }
+    ],
+    "5": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.33",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 1
+    },
+    "2": {
+      "kantonal": 1
+    },
+    "3": {
+      "kantonal": 1
+    },
+    "5": {
+      "kantonal": 1
+    }
+  }
+}

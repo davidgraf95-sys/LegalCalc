@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-786.150",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2024.45": {
+      "zitierung": "Appellationsgericht BS VD.2024.45 vom 09.09.2025",
+      "regesteKurz": "Bauentscheid in Sachen 7 Standorte für Unterflurcontainer",
+      "datum": "2025-09-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "8": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.45",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "8": {
+      "kantonal": 1
+    }
+  }
+}

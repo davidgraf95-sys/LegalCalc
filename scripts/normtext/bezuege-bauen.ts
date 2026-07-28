@@ -1,0 +1,440 @@
+// ─── Die eine generische Bezugs-Schicht (W2·7-BEZUG, B1+B2+B3) ──────────────
+//
+// EIN Bau, zwei Projektionen (§5):
+//
+//   baueBezugsIndex(auswahl)
+//        ├── projiziereBundesgericht()  → proNormArtikel / norm-index-Shards
+//        │                                (BESTANDS-Artefakte, byte-gleich)
+//        └── baueBezugsShards()         → public/rechtsprechung/bezuege/<key>.json
+//                                         (alle Facetten-Klassen, B4-Nutzlast)
+//
+// Es gibt keinen zweiten Rechenweg. Dass die Bundesgerichts-Projektion mit dem
+// Bestand übereinstimmt, ist darum keine Behauptung, sondern der byte-gleiche
+// Regen von norm-index.json — und zusätzlich eine eigene Prüfung im Tor
+// check:bezuege (§6.7: das Tor kann scheitern, und es zeigt, woran).
+//
+// ── WAS DIESER SCHRITT AM BESTAND ÄNDERT — und was nicht (§8) ───────────────
+// NICHT geändert: `normKeys`, `proNorm`, `proNormArtikel`, die 156 norm-index-
+// Shards, register.json, richter.json. Alle bleiben byte-gleich.
+// NEU: die bezuege-Shards. Sie enthalten dieselben Bundesgerichts-Kanten PLUS
+// die kantonalen Kanten PLUS die Facetten. Die Doppelung der Bundes-Kanten auf
+// der Platte ist bewusst: die Laufzeit-Last des ArtikelLesers (§15) darf nicht
+// steigen, solange die Filter-UI (B4) sie gar nicht abruft — der bestehende
+// Shard bleibt darum exakt so schwer wie vorher, und der neue wird erst geladen,
+// wenn jemand die Facetten einschaltet.
+//
+// ── DREI GRÖSSEN, DIE MAN NICHT VERWECHSELN DARF ────────────────────────────
+//  · `status`         — die Facetten-Klasse einer Kante (bge/bger/eidg/kantonal).
+//                       Sie steuert den DECKEL und die Anzeige-Ordnung.
+//  · `gewichtsGruppe` — innerhalb welcher Menge die topische In-degree gezählt
+//                       wird. NICHT dasselbe wie `status`: bge und bger zählen
+//                       GEMEINSAM (beide sind das Bundesgericht, und ein BGE, der
+//                       von einem unpublizierten Urteil zitiert wird, ist dadurch
+//                       zentral). Trennte man sie, änderte sich `gewicht` im
+//                       Bestand — der Umbau wäre nicht mehr verhaltensneutral.
+//  · `leitcharakter`  — das Bestandsfeld ('leitentscheid'|'routine'). Es speist
+//                       `status`, ersetzt ihn aber nicht (§8, siehe facetten.ts).
+
+import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
+import type { LeitfallRef } from '../../src/lib/rechtsprechung/norm-index';
+import {
+  DECKEL_JE_STATUS, STATUS_RANG, facettenFuerEntscheid,
+  type BezugStatus, type BezugsFacetten,
+} from '../../src/lib/verzahnung/facetten';
+import { artikelSchluesselMitBefund, fliesstextOhneApparat } from './entscheide-mapping';
+import { keyVon, kanonZitat, selbstTokens } from './entscheide-identitaet';
+import { ladeKantonBestand, loeseKantonZitate, type KantonBestand } from './kanton-norm-resolver';
+
+/** EINE Kante Norm-Artikel → Dokument, mit ihren Facetten (B1). */
+export interface BezugsKante {
+  key: string;
+  zitierung: string;
+  regesteKurz: string | null;
+  datum: string;
+  /**
+   * Topische In-degree INNERHALB der Gewichts-Gruppe (siehe Modul-Kopf). Nie
+   * «Autorität», nie ein Ranking über Gruppen hinweg — die Zahl eines kantonalen
+   * Entscheids und die eines BGE sind nicht vergleichbar und werden darum auch
+   * nie gegeneinander sortiert (§8).
+   */
+  gewicht: number;
+  facetten: BezugsFacetten;
+}
+
+/** Dokument-Kopf im Shard — EINMAL je Dokument, nicht je Artikel (§15). */
+export interface BezugsDokument {
+  zitierung: string;
+  regesteKurz: string | null;
+  datum: string;
+  facetten: BezugsFacetten;
+}
+
+/** Kanten-Eintrag: Verweis auf den Dokument-Kopf + das artikel-lokale Gewicht. */
+export interface BezugsEintrag {
+  key: string;
+  gewicht: number;
+}
+
+/**
+ * Ein Bezugs-Shard je Erlass — Bundes- wie Kantonserlass.
+ *
+ * ── WARUM DIE DOKUMENT-KÖPFE AUSGELAGERT SIND (§15, Logikverlust: keiner) ───
+ * In der ersten Fassung trug jede Kante ihren vollen Kopf (Zitierung, Kurzzeile,
+ * Datum, fünf Facetten-Felder). GEMESSEN am STPO-Shard: 3'207 Kanten, aber nur
+ * 957 verschiedene Dokumente — jedes stand im Schnitt 3,4-mal vollständig da,
+ * die Datei 1'676 KB. Ein Dokument, das zu 20 Artikeln eines Erlasses etwas
+ * sagt, ist trotzdem EIN Dokument.
+ * Die Auslagerung ist reine Serialisierung: dieselben Kanten, dieselbe
+ * Reihenfolge, dieselben Facetten, dieselben Gewichte — nur einmal statt n-mal
+ * geschrieben. Keine Regel, keine Frist, keine Zuordnung ändert sich (§15-Pflicht
+ * zur Logikverlust-Bewertung: null).
+ */
+export interface BezugsShard {
+  erzeugt: string;
+  /** Erlass-key: Bundes-Register-key ('OR') oder kantonaler Snapshot-key ('BS-154.100'). */
+  erlass: string;
+  /** Ebene des ERLASSES (nicht des Dokuments) — 'BS-154.100' ist kantonal. */
+  erlassEbene: 'bund' | 'kanton';
+  /** Dokument-key → Kopf. Enthält genau die im Shard referenzierten Dokumente. */
+  dokumente: Record<string, BezugsDokument>;
+  /** Artikel-Token → Kanten in Anzeige-Ordnung (Status-Rang, dann Bestands-Ordnung). */
+  proArtikel: Record<string, BezugsEintrag[]>;
+  /**
+   * Ehrliche Grundgesamtheit je Artikel und Status (§8): wie viele Kanten es VOR
+   * dem Deckel gab. Ohne diese Zahl liest sich ein gedeckelter Achterblock wie
+   * eine Vollliste — «8 kantonale Entscheide zu § 93» statt «8 von 214». Der
+   * Deckel ist eine Anzeige-Entscheidung; sie darf die Datenlage nicht
+   * überschreiben (FAHRPLAN §9/B4: «Trefferzahlen je Facette mit ehrlicher
+   * Grundgesamtheit ausweisen»).
+   */
+  gesamtProArtikel: Record<string, Partial<Record<BezugStatus, number>>>;
+}
+
+/** Rohbau: Artikel-Schlüssel → ALLE Kanten (ungedeckelt), plus Bilanz. */
+export interface BezugsIndex {
+  /** Schlüssel 'ERLASS/artikel' → Kanten, je Status sortiert, UNGEDECKELT. */
+  proArtikel: Map<string, BezugsKante[]>;
+  befund: BezugsBefund;
+}
+
+export interface BezugsBefund {
+  /** Snapshots je Status-Klasse (Grundgesamtheit der Extraktion). */
+  snapshotsJeStatus: Record<string, number>;
+  /** Kanten je Status-Klasse, VOR dem Deckel. */
+  kantenJeStatus: Record<string, number>;
+  /** Kantonale (Erlass, Artikel)-Zitate je Auflösungskanal. */
+  kantonalJeKanal: Record<string, number>;
+  /** §-Gruppen ohne auflösbare Erlass-Seite (benannte Lücke, §8). */
+  kantonalOhneErlass: number;
+  /** Dokumentlokale Abkürzungen, die wegen Bundes-Namensvetter NICHT gebunden wurden. */
+  abkAusgeschlossen: string[];
+  /** Systematik-Nummern, deren Erlass nicht im Normtext-Bestand steht. */
+  nummerOhneBestand: string[];
+  /** Kantone mit Entscheiden, aber ohne deklarierten Systematik-Präfix. */
+  kantoneOhneResolver: string[];
+  /** Literatur-Verwurf über die NICHT-bundesgerichtlichen Snapshots (Ergänzung zu §6.7). */
+  literaturVerwurfUebrige: { paare: number; nennungen: number; spannen: number };
+}
+
+/**
+ * Gewichts-Gruppe eines Snapshots — die Menge, innerhalb derer Zitierungen
+ * gezählt werden. Bundesgericht als EINE Gruppe (Begründung im Modul-Kopf), die
+ * übrigen eidg. Gerichte als eine, jeder Kanton für sich: ein Zürcher
+ * Obergerichtsurteil sagt nichts über die Zentralität eines Basler Entscheids.
+ */
+function gewichtsGruppe(s: { gerichtstyp: string; kanton: string }): string {
+  if (s.gerichtstyp === 'bundesgericht') return 'bundesgericht';
+  if (s.kanton === 'CH') return 'eidg';
+  return `kanton:${s.kanton}`;
+}
+
+/**
+ * Totale Ordnung INNERHALB einer Status-Klasse (§2). Identisch zu
+ * `vergleicheLeitfaelle` in entscheide-schreiben.ts — dort ist sie exportiert und
+ * wird hier per Parameter hereingereicht, statt sie zu kopieren (§5). Der Import
+ * läuft in diese Richtung, weil entscheide-schreiben.ts der Schreiber ist und
+ * dieses Modul der Rechner: der Rechner darf den Schreiber nicht importieren
+ * (Zyklus, check:zyklen).
+ */
+export type KantenOrdnung = (a: LeitfallRef, b: LeitfallRef) => number;
+
+/**
+ * Der EINE Bau. Rein und deterministisch (§2): gleiche Snapshot-Folge + gleicher
+ * kantonaler Erlass-Bestand → gleiche Ausgabe, in stabiler Ordnung.
+ *
+ * `kantonBestaende` wird hereingereicht statt hier geladen, damit die Funktion
+ * ohne Dateisystem testbar bleibt (die Lade-Funktion steht im Resolver).
+ */
+export function baueBezugsIndex(
+  auswahl: readonly EntscheidSnapshot[],
+  kantonBestaende: ReadonlyMap<string, KantonBestand>,
+  ordnung: KantenOrdnung,
+  /**
+   * Kurzzeile eines Snapshots. Wird hereingereicht statt hier gerechnet, weil
+   * die Regel (amtliche Regeste, sonst BS-Betreff) EINE Stelle hat und die ist
+   * `manifestRegesteKurz` im Schreiber (§5) — sie hier nachzubauen hätte schon
+   * einmal alle 3765 BS-Kurzzeilen gelöscht.
+   */
+  kurzzeile: (s: EntscheidSnapshot) => string | null,
+): BezugsIndex {
+  const snapshotsJeStatus: Record<string, number> = {};
+  const kantenJeStatus: Record<string, number> = {};
+  const kantonalJeKanal: Record<string, number> = {};
+  const abkAusgeschlossen = new Set<string>();
+  const nummerOhneBestand = new Set<string>();
+  let kantonalOhneErlass = 0;
+  const literaturVerwurfUebrige = { paare: 0, nennungen: 0, spannen: 0 };
+
+  // ── Durchgang 1: je Snapshot Facetten, Artikel-Schlüssel und Selbst-Tokens ──
+  interface Eintrag {
+    key: string;
+    ref: Omit<BezugsKante, 'gewicht'>;
+    gruppe: string;
+    status: BezugStatus;
+    schluessel: Set<string>;
+  }
+  const eintraege: Eintrag[] = [];
+  for (const s of auswahl) {
+    const facetten = facettenFuerEntscheid(s);
+    const status = facetten.status;
+    snapshotsJeStatus[status] = (snapshotsJeStatus[status] ?? 0) + 1;
+
+    // BUNDESRECHTLICHE Artikel-Schlüssel — für JEDEN Snapshot, auch kantonale.
+    // Genau das ist der Kern von B2: ein Basler Entscheid, der Art. 41 OR
+    // anwendet, gehört an Art. 41 OR. Dass er das aus kantonaler Instanz tut,
+    // steht in der Facette, nicht in einem Ausschluss.
+    const befund = artikelSchluesselMitBefund(s);
+    const schluessel = new Set(befund.schluessel);
+    if (s.gerichtstyp !== 'bundesgericht') {
+      literaturVerwurfUebrige.paare += befund.literaturVerworfen.length;
+      literaturVerwurfUebrige.nennungen += befund.literaturNennungen;
+      literaturVerwurfUebrige.spannen += befund.literaturSpannenZahl;
+    }
+
+    // KANTONALE Artikel-Schlüssel («§ 93 … SG 154.100» → 'BS-154.100/93').
+    // Nur für kantonale Entscheide: ein Bundesgerichtsurteil zitiert kantonales
+    // Recht zwar auch, aber dann in der Regel als fremdes Recht mit Kantons-
+    // Bezeichnung — dafür fehlt die FP-Analyse, also bleibt es hier bewusst
+    // aussen vor (§7: benannte Lücke statt ungeprüfter Ausweitung).
+    const bestand = s.kanton !== 'CH' ? kantonBestaende.get(s.kanton) : undefined;
+    if (bestand && bestand.size) {
+      const kb = loeseKantonZitate(fliesstextOhneApparat(s), s.kanton, bestand);
+      for (const z of kb.zitate) {
+        schluessel.add(`${z.erlass}/${z.artikel}`);
+        kantonalJeKanal[z.kanal] = (kantonalJeKanal[z.kanal] ?? 0) + 1;
+      }
+      kantonalOhneErlass += kb.ohneErlass;
+      for (const a of kb.abkAusgeschlossen) abkAusgeschlossen.add(a);
+      for (const n of kb.nummerOhneBestand) nummerOhneBestand.add(n);
+    }
+
+    const { key } = keyVon(s);
+    eintraege.push({
+      key,
+      ref: {
+        key,
+        zitierung: s.zitierung,
+        regesteKurz: kurzzeile(s),
+        datum: s.datum,
+        facetten,
+      },
+      gruppe: gewichtsGruppe(s),
+      status,
+      schluessel,
+    });
+  }
+
+  // ── Durchgang 2: Zitier-Graph JE GEWICHTS-GRUPPE ───────────────────────────
+  const tokenZuKey = new Map<string, Map<string, string>>();   // gruppe → token → key
+  for (const s of auswahl) {
+    const g = gewichtsGruppe(s);
+    const map = tokenZuKey.get(g) ?? (tokenZuKey.set(g, new Map()), tokenZuKey.get(g)!);
+    const { key } = keyVon(s);
+    for (const t of selbstTokens(s)) if (!map.has(t)) map.set(t, key);
+  }
+  const zitiertKeys = new Map<string, Set<string>>();          // key → zitierte keys (gruppenintern)
+  for (const s of auswahl) {
+    const g = gewichtsGruppe(s);
+    const map = tokenZuKey.get(g)!;
+    const { key } = keyVon(s);
+    const cited = new Set<string>();
+    for (const z of s.zitierteEntscheide ?? []) {
+      const tok = kanonZitat(z);
+      if (!tok) continue;
+      const ck = map.get(tok);
+      if (ck && ck !== key) cited.add(ck);      // Selbstzitat nie zählen
+    }
+    zitiertKeys.set(key, cited);
+  }
+
+  // ── Durchgang 3: nach Artikel gruppieren, gewichten, je Status ordnen ──────
+  const proArtikelRoh = new Map<string, Eintrag[]>();
+  for (const e of eintraege) {
+    for (const a of e.schluessel) {
+      const liste = proArtikelRoh.get(a) ?? (proArtikelRoh.set(a, []), proArtikelRoh.get(a)!);
+      liste.push(e);
+    }
+  }
+
+  const proArtikel = new Map<string, BezugsKante[]>();
+  for (const artikel of [...proArtikelRoh.keys()].sort()) {
+    const liste = proArtikelRoh.get(artikel)!;
+    // Gewicht je Gruppe: nur Zitierungen von d' ∈ S_A∩Gruppe auf d ∈ S_A∩Gruppe.
+    const inGruppe = new Map<string, Set<string>>();
+    for (const e of liste) {
+      const set = inGruppe.get(e.gruppe) ?? (inGruppe.set(e.gruppe, new Set()), inGruppe.get(e.gruppe)!);
+      set.add(e.key);
+    }
+    const gewicht = new Map<string, number>(liste.map((e) => [e.key, 0]));
+    for (const e of liste) {
+      const set = inGruppe.get(e.gruppe)!;
+      for (const c of zitiertKeys.get(e.key) ?? []) {
+        if (set.has(c)) gewicht.set(c, (gewicht.get(c) ?? 0) + 1);
+      }
+    }
+    const kanten: BezugsKante[] = liste.map((e) => ({ ...e.ref, gewicht: gewicht.get(e.key) ?? 0 }));
+    // Erst Status-Klasse (deklarierte Rangordnung), dann die Bestands-Ordnung
+    // INNERHALB der Klasse. Nie über Klassen hinweg nach Gewicht sortieren (§8).
+    kanten.sort((a, b) =>
+      STATUS_RANG[a.facetten.status] - STATUS_RANG[b.facetten.status]
+      || ordnung(alsLeitfall(a), alsLeitfall(b)));
+    for (const k of kanten) kantenJeStatus[k.facetten.status] = (kantenJeStatus[k.facetten.status] ?? 0) + 1;
+    proArtikel.set(artikel, kanten);
+  }
+
+  return {
+    proArtikel,
+    befund: {
+      snapshotsJeStatus, kantenJeStatus, kantonalJeKanal, kantonalOhneErlass,
+      abkAusgeschlossen: [...abkAusgeschlossen].sort(),
+      nummerOhneBestand: [...nummerOhneBestand].sort(),
+      kantoneOhneResolver: [],   // setzt der Aufrufer (kennt die Kantons-Menge)
+      literaturVerwurfUebrige,
+    },
+  };
+}
+
+/**
+ * Bundesgerichts-Projektion = das bestehende `proNormArtikel`.
+ *
+ * Sie ist die STELLE, an der die Verhaltensneutralität hängt. Drei Eigenschaften
+ * müssen exakt stimmen, sonst driftet der Bestand:
+ *  1. nur `status` ∈ {bge, bger} (= `gerichtstyp === 'bundesgericht'`);
+ *  2. Ordnung ausschliesslich über `ordnung` (vergleicheLeitfaelle) — die
+ *     Status-Vorsortierung des generischen Baus wird hier NICHT übernommen,
+ *     sonst stünden erst alle BGE und dann alle BGer statt nach Gewicht;
+ *  3. Deckel 8 über die GEMEINSAME Liste, nicht je Status.
+ * Artikel ohne bundesgerichtliche Kante entfallen ganz (kein leerer Bucket).
+ */
+export function projiziereBundesgericht(
+  index: BezugsIndex,
+  ordnung: KantenOrdnung,
+  deckel: number,
+): Record<string, LeitfallRef[]> {
+  const out: Record<string, LeitfallRef[]> = {};
+  for (const [artikel, kanten] of index.proArtikel) {
+    const bg = kanten
+      .filter((k) => k.facetten.status === 'bge' || k.facetten.status === 'bger')
+      .map(alsLeitfall);
+    if (!bg.length) continue;
+    bg.sort(ordnung);
+    out[artikel] = bg.slice(0, deckel);
+  }
+  return out;
+}
+
+/**
+ * Bezugs-Shards je Erlass — die B4-Nutzlast. Deckel je Status-Klasse
+ * (`DECKEL_JE_STATUS`, Begründung in facetten.ts), Grundgesamtheit VOR dem
+ * Deckel je Artikel und Status mitgeführt (§8).
+ */
+export function baueBezugsShards(index: BezugsIndex, datum: string): Map<string, BezugsShard> {
+  const proErlass = new Map<string, Map<string, BezugsKante[]>>();
+  for (const [ak, kanten] of index.proArtikel) {
+    const schraeg = ak.indexOf('/');
+    const erlass = ak.slice(0, schraeg);
+    const token = ak.slice(schraeg + 1);
+    const m = proErlass.get(erlass) ?? (proErlass.set(erlass, new Map()), proErlass.get(erlass)!);
+    m.set(token, kanten);
+  }
+
+  const out = new Map<string, BezugsShard>();
+  for (const erlass of [...proErlass.keys()].sort()) {
+    const roh = proErlass.get(erlass)!;
+    const proArtikel: Record<string, BezugsEintrag[]> = {};
+    const gesamtProArtikel: Record<string, Partial<Record<BezugStatus, number>>> = {};
+    const koepfe = new Map<string, BezugsDokument>();
+    for (const token of [...roh.keys()].sort()) {
+      const kanten = roh.get(token)!;
+      const gesamt: Partial<Record<BezugStatus, number>> = {};
+      const zaehler: Partial<Record<BezugStatus, number>> = {};
+      const behalten: BezugsEintrag[] = [];
+      for (const k of kanten) {
+        const st = k.facetten.status;
+        gesamt[st] = (gesamt[st] ?? 0) + 1;
+        const n = (zaehler[st] ?? 0);
+        if (n >= DECKEL_JE_STATUS[st]) continue;
+        zaehler[st] = n + 1;
+        if (!koepfe.has(k.key)) {
+          koepfe.set(k.key, {
+            zitierung: k.zitierung, regesteKurz: k.regesteKurz,
+            datum: k.datum, facetten: k.facetten,
+          });
+        }
+        behalten.push({ key: k.key, gewicht: k.gewicht });
+      }
+      proArtikel[token] = behalten;
+      gesamtProArtikel[token] = gesamt;
+    }
+    // Schlüssel sortiert (§2): sonst hinge die Datei an der Artikel-Reihenfolge,
+    // in der ein Dokument zufällig zuerst auftauchte.
+    const dokumente: Record<string, BezugsDokument> = {};
+    for (const k of [...koepfe.keys()].sort()) dokumente[k] = koepfe.get(k)!;
+    out.set(erlass, {
+      erzeugt: datum,
+      erlass,
+      // Kantonale Erlass-keys tragen den Kantons-Präfix ('BS-154.100'); alles
+      // andere ist ein Bundes-Register-key. Aus dem SCHLÜSSEL abgeleitet, nicht
+      // aus den Kanten: ein Bundeserlass, der nur von kantonalen Entscheiden
+      // zitiert wird, bleibt ein Bundeserlass (§1).
+      erlassEbene: /^[A-Z]{2}-/.test(erlass) ? 'kanton' : 'bund',
+      dokumente,
+      proArtikel,
+      gesamtProArtikel,
+    });
+  }
+  return out;
+}
+
+/** Kantonale Erlass-Bestände für alle Kantone einer Auswahl laden. */
+export function ladeBestaende(
+  root: string,
+  kantone: Iterable<string>,
+): Map<string, KantonBestand> {
+  const out = new Map<string, KantonBestand>();
+  for (const k of [...new Set(kantone)].sort()) {
+    if (k === 'CH') continue;
+    out.set(k, ladeKantonBestand(root, k));
+  }
+  return out;
+}
+
+// ── Kleinteile, die sonst zwei Module bräuchten ─────────────────────────────
+
+/** `BezugsKante` → `LeitfallRef`-Form für die Bestands-Ordnung (§5). */
+function alsLeitfall(k: BezugsKante): LeitfallRef {
+  return {
+    key: k.key,
+    zitierung: k.zitierung,
+    regesteKurz: k.regesteKurz,
+    datum: k.datum,
+    // `leitcharakter` aus der Facette zurückrechnen: die Ordnung des Bestands
+    // liest genau dieses Feld. Die Facette ist die REICHERE Achse — 'bge' ist
+    // per Definition der amtlich publizierte Leitentscheid, alles andere nicht.
+    leitcharakter: k.facetten.status === 'bge' ? 'leitentscheid' : 'routine',
+    gericht: k.facetten.gericht,
+    kanton: k.facetten.kanton,
+    gewicht: k.gewicht,
+  };
+}
+

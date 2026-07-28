@@ -1,0 +1,110 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-257.500",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_BES.2023.136": {
+      "zitierung": "Appellationsgericht BS BES.2023.136 vom 30.05.2024",
+      "regesteKurz": "Änderung der Massnahme, amtliche Verteidigung, Versetzung im Vollzug, Entschädigung für Freiheitsentzug",
+      "datum": "2024-05-30",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2023.85": {
+      "zitierung": "Appellationsgericht BS BES.2023.85 vom 08.11.2024",
+      "regesteKurz": "Genugtuung für ungerechtfertigte Untersuchungshaft etc.",
+      "datum": "2024-11-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2024.76": {
+      "zitierung": "Appellationsgericht BS BES.2024.76 vom 05.12.2024",
+      "regesteKurz": "Verfahrenseinstellung",
+      "datum": "2024-12-05",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2025.45": {
+      "zitierung": "Appellationsgericht BS BES.2025.45 vom 02.07.2025",
+      "regesteKurz": "Stationäre Beobachtung",
+      "datum": "2025-07-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2024.114": {
+      "zitierung": "Appellationsgericht BS SB.2024.114 vom 15.07.2025",
+      "regesteKurz": "mehrfacher geringfügiger Diebstahl Urteil BG vom 20.02.26 (6B_927/2025)",
+      "datum": "2025-07-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "3": [
+      {
+        "key": "bs_appellationsgericht_BES.2024.76",
+        "gewicht": 0
+      }
+    ],
+    "4": [
+      {
+        "key": "bs_appellationsgericht_BES.2025.45",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2024.76",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.85",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.136",
+        "gewicht": 0
+      }
+    ],
+    "5": [
+      {
+        "key": "bs_appellationsgericht_SB.2024.114",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "3": {
+      "kantonal": 1
+    },
+    "4": {
+      "kantonal": 4
+    },
+    "5": {
+      "kantonal": 1
+    }
+  }
+}

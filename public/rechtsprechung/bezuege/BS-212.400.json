@@ -1,0 +1,344 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-212.400",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_HB.2022.26": {
+      "zitierung": "Appellationsgericht BS HB.2022.26 vom 11.07.2022",
+      "regesteKurz": "Anordnung der Untersuchungshaft bis zum 2. August 2022",
+      "datum": "2022-07-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2023.28": {
+      "zitierung": "Appellationsgericht BS KE.2023.28 vom 15.05.2024",
+      "regesteKurz": "unentgeltliche Rechtspflege",
+      "datum": "2024-05-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2024.15": {
+      "zitierung": "Appellationsgericht BS KE.2024.15 vom 07.08.2024",
+      "regesteKurz": "Errichtung einer Beistandschaft (BGer 5A_566/2024 vom 10.9.2024) Entzug des Kontozugriffs gestützt auf Art. 395 Abs. 3…",
+      "datum": "2024-08-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2024.4": {
+      "zitierung": "Appellationsgericht BS KE.2024.4 vom 19.06.2024",
+      "regesteKurz": "Regelung des persönlichen Verkehrs gemäss Art. 273–275 ZGB, Sistierung des Verfahrens betreffend Antrag auf Erteilung d…",
+      "datum": "2024-06-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2025.25": {
+      "zitierung": "Appellationsgericht BS KE.2025.25 vom 17.10.2025",
+      "regesteKurz": "Aufhebung des Aufenthaltsbestimmungsrechts sowie Regelung des persönlichen Verkehrs",
+      "datum": "2025-10-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2025.29": {
+      "zitierung": "Appellationsgericht BS KE.2025.29 vom 29.10.2025",
+      "regesteKurz": "Errichtung einer Beistandschaft und Entzug des Kontozugriffs",
+      "datum": "2025-10-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2025.32": {
+      "zitierung": "Appellationsgericht BS KE.2025.32 vom 28.08.2025",
+      "regesteKurz": "Zustimmung zur Wohnungskündigung und Haushaltsauflösung gemäss Art. 416 Abs. 1 Ziff. 1 ZGB",
+      "datum": "2025-08-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2025.33": {
+      "zitierung": "Appellationsgericht BS KE.2025.33 vom 06.02.2026",
+      "regesteKurz": "Ernennung Beistandsperson, Festlegung Platzierungsort",
+      "datum": "2026-02-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2025.36": {
+      "zitierung": "Appellationsgericht BS KE.2025.36 vom 22.01.2026",
+      "regesteKurz": "Errichtung einer Beistandschaft / Entzug des Kontozugriffs gestützt auf Art. 395 Abs. 3 ZGB",
+      "datum": "2026-01-22",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2025.38": {
+      "zitierung": "Appellationsgericht BS KE.2025.38 vom 02.12.2025",
+      "regesteKurz": "Beistandschaft",
+      "datum": "2025-12-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2025.44": {
+      "zitierung": "Appellationsgericht BS KE.2025.44 vom 06.02.2026",
+      "regesteKurz": "vorsorgliche Regelung des persönlichen Verkehrs, Feststellung der Kompetenz der Beistandsperson betreffend eine kinderp…",
+      "datum": "2026-02-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2025.45": {
+      "zitierung": "Appellationsgericht BS KE.2025.45 vom 09.02.2026",
+      "regesteKurz": "vorsorgliche Regelung des persönlichen Verkehrs, Feststellung der Kompetenz der Beistandsperson betreffend eine kinderp…",
+      "datum": "2026-02-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_KE.2025.52": {
+      "zitierung": "Appellationsgericht BS KE.2025.52 vom 02.03.2026",
+      "regesteKurz": "Rechtsverzögerung/Rechtsverweigerung",
+      "datum": "2026-03-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2022.5": {
+      "zitierung": "Appellationsgericht BS SB.2022.5 vom 27.09.2024",
+      "regesteKurz": "einfache Körperverletzung, Widerhandlung gegen das Waffengesetz, qualifizierte grobe Verletzung der Verkehrsregeln, Fah…",
+      "datum": "2024-09-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.220": {
+      "zitierung": "Appellationsgericht BS VD.2021.220 vom 05.08.2022",
+      "regesteKurz": "Aufhebung der vorsorglichen Massnahmen, Errichtung einer Beistandschaft",
+      "datum": "2022-08-05",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.262": {
+      "zitierung": "Appellationsgericht BS VD.2022.262 vom 17.04.2023",
+      "regesteKurz": "Errichtung einer Beistandschaft und Entzug des Kontozugriffs",
+      "datum": "2023-04-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "2": [
+      {
+        "key": "bs_appellationsgericht_KE.2023.28",
+        "gewicht": 0
+      }
+    ],
+    "6": [
+      {
+        "key": "bs_appellationsgericht_HB.2022.26",
+        "gewicht": 0
+      }
+    ],
+    "7": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.262",
+        "gewicht": 0
+      }
+    ],
+    "9": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.220",
+        "gewicht": 0
+      }
+    ],
+    "14": [
+      {
+        "key": "bs_appellationsgericht_SB.2022.5",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2024.15",
+        "gewicht": 0
+      }
+    ],
+    "17": [
+      {
+        "key": "bs_appellationsgericht_KE.2025.52",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.45",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.33",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.44",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.36",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.38",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.29",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.25",
+        "gewicht": 0
+      }
+    ],
+    "19": [
+      {
+        "key": "bs_appellationsgericht_KE.2025.45",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.33",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.44",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.36",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.38",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.29",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.25",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_KE.2025.32",
+        "gewicht": 0
+      }
+    ],
+    "20": [
+      {
+        "key": "bs_appellationsgericht_KE.2025.52",
+        "gewicht": 0
+      }
+    ],
+    "24": [
+      {
+        "key": "bs_appellationsgericht_KE.2024.4",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "2": {
+      "kantonal": 1
+    },
+    "6": {
+      "kantonal": 1
+    },
+    "7": {
+      "kantonal": 1
+    },
+    "9": {
+      "kantonal": 1
+    },
+    "14": {
+      "kantonal": 2
+    },
+    "17": {
+      "kantonal": 118
+    },
+    "19": {
+      "kantonal": 109
+    },
+    "20": {
+      "kantonal": 1
+    },
+    "24": {
+      "kantonal": 1
+    }
+  }
+}

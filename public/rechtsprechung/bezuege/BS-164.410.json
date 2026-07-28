@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-164.410",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2021.145": {
+      "zitierung": "Appellationsgericht BS VD.2021.145 vom 28.01.2022",
+      "regesteKurz": "Schliessdienstzulagen",
+      "datum": "2022-01-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "15a": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.145",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "15a": {
+      "kantonal": 1
+    }
+  }
+}
