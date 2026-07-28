@@ -32,7 +32,6 @@
 
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import { STATUS_RANG } from '../../lib/verzahnung/facetten';
-import type { FacettenAuswahl } from '../../lib/rechtsprechung/bezuege';
 
 /**
  * Die im Gesetz-Leser bedienbaren Klassen, in Anzeige-Reihenfolge (§2:
@@ -119,26 +118,45 @@ export function normalisiereKantone(roh: readonly unknown[]): string[] {
 }
 
 /**
- * Die UI-Auswahl auf die `FacettenAuswahl` der Datenschicht abbilden.
+ * Kanten nach der UI-Auswahl auswählen — die EINE Stelle, an der aus der
+ * Bedienung eine Kantenmenge wird (§5).
  *
- * Die Kanton-Achse wird NUR gesetzt, wenn die kantonale Klasse überhaupt
- * gewählt ist. Sonst würde sie die Bundes-Klassen mitfiltern: ein
- * Bundesgerichtsentscheid trägt `kanton:'CH'`, stünde also in keiner
- * Kantons-Auswahl und verschwände, sobald jemand «nur BS» wählt — der Filter
- * für die kantonale Praxis hätte die bundesgerichtliche gelöscht. Der
- * Kantons-Schnitt gehört fachlich INNERHALB der kantonalen Klasse (§1).
+ * ── WARUM DER KANTONS-SCHNITT 'CH' MITFÜHRT ────────────────────────────────
+ * Er wirkt nur INNERHALB der kantonalen Klasse. Ein Bundesgerichtsentscheid
+ * trägt `kanton:'CH'`; ein naiver Kantons-Schnitt liesse ihn durchfallen, und
+ * «nur BS» hätte die gesamte bundesgerichtliche Praxis gelöscht — ein Filter
+ * für die kantonale Ebene, der die Bundesebene wegnimmt (§1).
+ *
+ * ── WARUM DAS NICHT `filtereBezuege` ALLEIN KANN (Befund 28.7.2026) ─────────
+ * Die Datenschicht liest eine leere Achse als «keine Einschränkung»
+ * (`auswahl.status?.size && …` in bezuege.ts) — eine richtige und bewusste
+ * Konvention: ein Aufrufer, der eine Achse nicht bedient, will nicht gefiltert
+ * werden. Für die BEDIENTE Achse dieser UI heisst dieselbe leere Menge aber das
+ * genaue Gegenteil: «ich habe alle Klassen abgewählt». Naiv durchgereicht
+ * zeigte das Abwählen der letzten Klasse plötzlich ALLES — die maximale
+ * Überraschung genau dort, wo der Nutzer aufräumen wollte. Der Test
+ * `bezug-auswahl.test.ts` hat das reproduziert, bevor es je ein Nutzer sah.
+ *
+ * Die Konvention der Datenschicht bleibt darum unangetastet (§3/§5); die
+ * Umdeutung gehört dorthin, wo die Bedienung gedeutet wird: hierher.
+ *
+ * Rein (§2), ordnungserhaltend.
  */
-export function zuFacettenAuswahl(
+export function waehleBezuege<T extends { facetten: { status: BezugStatus; kanton: string } }>(
+  alle: readonly T[],
   klassen: readonly BezugStatus[],
   kantone: readonly string[],
-): FacettenAuswahl {
-  const auswahl: FacettenAuswahl = { status: new Set(klassen) };
-  if (kantone.length > 0 && klassen.includes('kantonal')) {
-    // 'CH' immer mitführen: die Bundes-Klassen tragen es und dürfen an dieser
-    // Achse nicht hängenbleiben (siehe Kopf-Kommentar).
-    return { ...auswahl, kanton: new Set([...kantone, 'CH']) };
-  }
-  return auswahl;
+): T[] {
+  if (klassen.length === 0) return [];
+  const status = new Set(klassen);
+  const kantonSchnitt = kantone.length > 0 && klassen.includes('kantonal')
+    ? new Set([...kantone, 'CH'])
+    : null;
+  return alle.filter((b) => {
+    if (!status.has(b.facetten.status)) return false;
+    if (kantonSchnitt && !kantonSchnitt.has(b.facetten.kanton)) return false;
+    return true;
+  });
 }
 
 /**

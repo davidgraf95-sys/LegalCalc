@@ -29,11 +29,11 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
-  ladeBezugsShard, bezuegeFuerArtikel, filtereBezuege, normArtikelToken,
+  ladeBezugsShard, bezuegeFuerArtikel, normArtikelToken,
   type Bezug, type BezugsShard,
 } from '../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
-import { istErweitert, zuFacettenAuswahl } from './bezugAuswahl';
+import { istErweitert, waehleBezuege } from './bezugAuswahl';
 import { useBezugKantone, useBezugKlassen } from './leserOptionen';
 import { beiLeerlauf } from '../../lib/leerlauf';
 
@@ -91,7 +91,10 @@ export function useBezuege(erlassKey: string | undefined): {
     const token = normArtikelToken(artikel);
     const alle = bezuegeFuerArtikel(s, token);
     if (alle.length === 0) return undefined;
-    const kanten = filtereBezuege(alle, zuFacettenAuswahl(klassen, kantone));
+    // `waehleBezuege` statt `filtereBezuege` direkt: die LEERE Auswahl heisst
+    // in der Datenschicht «keine Einschränkung», in dieser Bedienung aber
+    // «alles abgewählt» (Begründung dort, mit reproduziertem Befund).
+    const kanten = waehleBezuege(alle, klassen, kantone);
     return {
       kanten,
       // Grundgesamtheit AUS DEM SHARD (Vor-Deckel), nicht aus der gerenderten
