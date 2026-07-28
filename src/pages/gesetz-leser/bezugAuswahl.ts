@@ -1,0 +1,220 @@
+// ─── B4: Facetten-Auswahl der Bezüge am Artikel — reine Darstellungslogik ─────
+//
+// W2·7-BEZUG/B4 (FAHRPLAN-VERZAHNUNG-UI §9). Die Datenschicht (B1,
+// `lib/rechtsprechung/bezuege.ts` + `lib/verzahnung/facetten.ts`) kennt
+// bewusst KEINE Voreinstellung — «welche Facetten voreingestellt sind und wie
+// sie bedient werden, entscheidet die Filter-UI (B4) und nicht diese Datei».
+// Genau das steht hier: Default, Normalisierung, Abbildung auf `FacettenAuswahl`
+// und die kurzen Anzeige-Labels. Rein und deterministisch (§2), kein JSX, kein
+// Zustand — der Zustand lebt im Leser-Options-Store (`leserOptionen.ts`).
+//
+// ── WARUM DER DEFAULT NUR `bge` KENNT (§8, konservativ) ─────────────────────
+// Der heutige Reader zeigt am Artikel die BGE-Leitfälle aus dem schlanken
+// `norm-index/<Erlass>.json`. Der Bezugs-Shard ist dessen OBERMENGE (siehe
+// Abgrenzungs-Kommentar in `bezuege.ts`) und mit 717 KB am grössten Erlass
+// deutlich schwerer. Ein Default, der ihn mitlädt, machte JEDEN Leser teurer,
+// um eine Kante zu zeigen, nach der niemand gefragt hat. Darum:
+//   · Grundzustand = genau `{bge}` ⇒ heutiger Pfad, heutiger Shard, heutige
+//     Darstellung — byte-gleich, kein zusätzlicher Fetch (§6, §15).
+//   · Sobald der Nutzer eine weitere Klasse zuschaltet, tritt der Bezugs-Shard
+//     AN DIE STELLE des schlanken (nie zusätzlich, §5) und die Zeile rendert
+//     nach Status-Klassen gruppiert.
+// `istErweitert` ist die eine Stelle, die diese Weiche stellt.
+//
+// ── WARUM ES KEINEN EIGENEN «EBENE»-SCHALTER GIBT (§5) ──────────────────────
+// `BezugsFacetten.ebene` ist aus `status` ableitbar: bge/bger/eidg sind
+// Bundesebene, `kantonal` ist Kantonsebene. Ein zweiter Schalter für dieselbe
+// Unterscheidung wäre ein Steuerelement, das entweder nichts tut oder dem
+// Status-Schalter widerspricht — beides schlechter als einer. Die vier
+// Status-Klassen SIND die Instanz-/Ebenen-Achse; die Kanton-Achse verfeinert
+// die kantonale Klasse. `FacettenAuswahl.ebene` bleibt in der Datenschicht
+// bestehen (andere Konsumenten dürfen sie nutzen), die Leser-UI setzt sie nicht.
+
+import type { BezugStatus } from '../../lib/verzahnung/facetten';
+import { STATUS_RANG } from '../../lib/verzahnung/facetten';
+
+/**
+ * Die im Gesetz-Leser bedienbaren Klassen, in Anzeige-Reihenfolge (§2:
+ * deklariert, nie aus Zählern abgeleitet).
+ *
+ * `material` fehlt BEWUSST: der Bezugs-Korpus trägt heute ausschliesslich
+ * `quelltyp:'rechtsprechung'` (verifiziert 28.7.2026 über alle 311 Shards —
+ * 9922 Dokumente, davon 0 Materialien). Ein Schalter für eine Klasse, die es
+ * im Bestand nicht gibt, wäre ein totes Steuerelement (§13 F4) und zugleich
+ * eine Bestandsbehauptung, die die Daten nicht decken (§8). Er kommt mit
+ * W2·6a-MAT — die Datenschicht (`facettenFuerMaterial`) trägt ihn bereits.
+ */
+export const BEDIENBARE_KLASSEN: readonly BezugStatus[] = ['bge', 'bger', 'eidg', 'kantonal'];
+
+/**
+ * Grundeinstellung: NUR Leitentscheide (§9 B4 «Default konservativ»). Alles
+ * Weitere ist zuschaltbar, nichts wird ungefragt dazugeladen.
+ */
+export const DEFAULT_KLASSEN: readonly BezugStatus[] = ['bge'];
+
+/**
+ * Kurzlabel für die Chip-Gruppen und Schalter.
+ *
+ * Bewusst NEBEN `STATUS_LABEL` (facetten.ts) statt an dessen Stelle: das
+ * dortige Label ist der ausgeschriebene FACHNAME («Eidg. Gericht
+ * (BVGer/BStGer/BPatGer)») und bleibt die massgebliche Bezeichnung — es speist
+ * hier jeden `title`/`aria-label`. Diese Tabelle liefert nur die gekürzte
+ * Sichtform für enge Chip-Reihen. Ein Test hält beide Tabellen vollständig
+ * (jede bedienbare Klasse hat beides), damit sie nicht auseinanderlaufen.
+ */
+export const KLASSE_KURZ: Readonly<Record<BezugStatus, string>> = {
+  bge: 'Leitentscheide',
+  bger: 'Bundesgericht, übrige',
+  eidg: 'Eidg. Gerichte',
+  kantonal: 'Kantonal',
+  material: 'Materialien',
+};
+
+/** Noch kürzer — für den Schalter-Streifen im engen «Ansicht ▾»-Panel. */
+export const KLASSE_SCHALTER: Readonly<Record<BezugStatus, string>> = {
+  bge: 'BGE',
+  bger: 'BGer',
+  eidg: 'Eidg.',
+  kantonal: 'Kantonal',
+  material: 'Mat.',
+};
+
+/**
+ * Ist die Auswahl vom Grundzustand abgewichen? Nur dann tritt der (deutlich
+ * grössere) Bezugs-Shard an die Stelle des schlanken Leitfall-Shards.
+ *
+ * «Abgewichen» heisst: die Menge ist nicht GENAU `{bge}`. Auch das ABWÄHLEN
+ * von `bge` zählt dazu — wer nur kantonale Entscheide sehen will, braucht den
+ * Bezugs-Shard genauso wie wer alles sehen will. Rein (§2).
+ */
+export function istErweitert(klassen: readonly BezugStatus[]): boolean {
+  return !(klassen.length === 1 && klassen[0] === 'bge');
+}
+
+/**
+ * Auswahl normalisieren: unbekannte Werte fallen weg, Doppelte fallen weg,
+ * die Reihenfolge folgt dem deklarierten `STATUS_RANG` (§2 — die Anzeige darf
+ * nie von der Klick-Reihenfolge des Nutzers abhängen).
+ *
+ * Die LEERE Menge bleibt erlaubt und wird NICHT stillschweigend auf den
+ * Default zurückgesetzt: «alles abgewählt» ist eine legitime Nutzerabsicht,
+ * und die Zeile weist sie sichtbar aus («n ausgeblendet · alle zeigen») statt
+ * kommentarlos zu verschwinden (§8, gleiches Muster wie der Zeitraum-Filter).
+ */
+export function normalisiereKlassen(roh: readonly unknown[]): BezugStatus[] {
+  const erlaubt = new Set<string>(BEDIENBARE_KLASSEN);
+  const aus = new Set<BezugStatus>();
+  for (const w of roh) if (typeof w === 'string' && erlaubt.has(w)) aus.add(w as BezugStatus);
+  return [...aus].sort((a, b) => STATUS_RANG[a] - STATUS_RANG[b]);
+}
+
+/** Kantons-Auswahl normalisieren: ISO-Kürzel (2 Grossbuchstaben), dedupliziert,
+ *  alphabetisch. Leer = KEINE Einschränkung (Konvention der Datenschicht:
+ *  «Leere/fehlende Achse = keine Einschränkung», siehe `FacettenAuswahl`). */
+export function normalisiereKantone(roh: readonly unknown[]): string[] {
+  const aus = new Set<string>();
+  for (const w of roh) if (typeof w === 'string' && /^[A-Z]{2}$/.test(w)) aus.add(w);
+  return [...aus].sort();
+}
+
+/**
+ * Was eine Kante mindestens tragen muss, um auswählbar zu sein. Bewusst
+ * strukturell und nicht `Bezug`: derselbe Filter soll auf die aufgelöste Kante
+ * UND auf jede spätere Projektion passen, ohne dass eine Seite die andere
+ * importiert (Muster wie `EntscheidFacettenQuelle` in facetten.ts).
+ *
+ * `datum` ist bereits Teil des Vertrags, obwohl HEUTE kein Prädikat es liest —
+ * es ist der Andockpunkt für den Datums-Bereichsfilter aus B5 (s. u.).
+ */
+export interface WaehlbareKante {
+  facetten: { status: BezugStatus; kanton: string };
+  datum?: string;
+}
+
+/** Ein Auswahl-Prädikat: nimmt eine Kante, sagt behalten/verwerfen. Rein (§2). */
+export type BezugsPraedikat = (kante: WaehlbareKante) => boolean;
+
+/**
+ * Die aktive Auswahl in eine LISTE von Prädikaten übersetzen, die alle erfüllt
+ * sein müssen (UND-Verknüpfung über die Achsen, ODER innerhalb einer Achse).
+ *
+ * ── WARUM EINE LISTE UND NICHT DREI FESTE `if`s ────────────────────────────
+ * Vorgabe David 28.7.2026: die Zeit-Filterung wird NICHT hier gebaut, sondern
+ * kommt zentral mit B5 (eigenes Header-Dropdown, Zeitstrahl + Von-Bis-Datum
+ * statt grober Perioden). Damit sie später andocken kann, ohne diese Funktion
+ * aufzuschneiden, ist die Achsen-Menge OFFEN: eine weitere Facette ist ein
+ * weiterer Eintrag in dieser Liste, kein weiterer Zweig in einem gewachsenen
+ * Bedingungs-Block. `WaehlbareKante.datum` liegt dafür schon im Vertrag.
+ *
+ * ERWEITERUNGSPUNKT B5 (Kommentar, KEIN toter Code — §0/1e): der Datumsfilter
+ * wäre genau ein zusätzliches Prädikat der Form
+ *   `if (bereich) aus.push((k) => k.datum != null && k.datum >= bereich.von && k.datum <= bereich.bis)`
+ * — mit der Q1-Auflage aus §1.0, dass BGE-Bandjahr-Platzhalter (YYYY-01-01)
+ * jahr-genau und nie tagesgenau verglichen werden. Hier bewusst NICHT gebaut.
+ */
+export function bauePraedikate(
+  klassen: readonly BezugStatus[],
+  kantone: readonly string[],
+): BezugsPraedikat[] {
+  const aus: BezugsPraedikat[] = [];
+  const status = new Set(klassen);
+  aus.push((k) => status.has(k.facetten.status));
+  if (kantone.length > 0 && klassen.includes('kantonal')) {
+    const schnitt = new Set([...kantone, 'CH']);
+    aus.push((k) => schnitt.has(k.facetten.kanton));
+  }
+  return aus;
+}
+
+/**
+ * Kanten nach der UI-Auswahl auswählen — die EINE Stelle, an der aus der
+ * Bedienung eine Kantenmenge wird (§5).
+ *
+ * ── WARUM DER KANTONS-SCHNITT 'CH' MITFÜHRT ────────────────────────────────
+ * Er wirkt nur INNERHALB der kantonalen Klasse. Ein Bundesgerichtsentscheid
+ * trägt `kanton:'CH'`; ein naiver Kantons-Schnitt liesse ihn durchfallen, und
+ * «nur BS» hätte die gesamte bundesgerichtliche Praxis gelöscht — ein Filter
+ * für die kantonale Ebene, der die Bundesebene wegnimmt (§1).
+ *
+ * ── WARUM DAS NICHT `filtereBezuege` ALLEIN KANN (Befund 28.7.2026) ─────────
+ * Die Datenschicht liest eine leere Achse als «keine Einschränkung»
+ * (`auswahl.status?.size && …` in bezuege.ts) — eine richtige und bewusste
+ * Konvention: ein Aufrufer, der eine Achse nicht bedient, will nicht gefiltert
+ * werden. Für die BEDIENTE Achse dieser UI heisst dieselbe leere Menge aber das
+ * genaue Gegenteil: «ich habe alle Klassen abgewählt». Naiv durchgereicht
+ * zeigte das Abwählen der letzten Klasse plötzlich ALLES — die maximale
+ * Überraschung genau dort, wo der Nutzer aufräumen wollte. Der Test
+ * `bezug-auswahl.test.ts` hat das reproduziert, bevor es je ein Nutzer sah.
+ *
+ * Die Konvention der Datenschicht bleibt darum unangetastet (§3/§5); die
+ * Umdeutung gehört dorthin, wo die Bedienung gedeutet wird: hierher.
+ *
+ * Rein (§2), ordnungserhaltend.
+ */
+export function waehleBezuege<T extends WaehlbareKante>(
+  alle: readonly T[],
+  klassen: readonly BezugStatus[],
+  kantone: readonly string[],
+): T[] {
+  if (klassen.length === 0) return [];
+  const praedikate = bauePraedikate(klassen, kantone);
+  return alle.filter((b) => praedikate.every((p) => p(b)));
+}
+
+/**
+ * Eine Klasse an-/abschalten. Rein — gibt die neue, normalisierte Menge zurück
+ * (der Store persistiert sie, diese Funktion kennt keinen Zustand).
+ */
+export function schalteKlasse(
+  klassen: readonly BezugStatus[],
+  klasse: BezugStatus,
+): BezugStatus[] {
+  const drin = klassen.includes(klasse);
+  return normalisiereKlassen(drin ? klassen.filter((k) => k !== klasse) : [...klassen, klasse]);
+}
+
+/** Einen Kanton an-/abschalten. Rein (siehe `schalteKlasse`). */
+export function schalteKanton(kantone: readonly string[], kanton: string): string[] {
+  const drin = kantone.includes(kanton);
+  return normalisiereKantone(drin ? kantone.filter((k) => k !== kanton) : [...kantone, kanton]);
+}

@@ -6,7 +6,7 @@ import { test, expect, type Page } from '@playwright/test';
 //   · K-2  Fussnoten-Bedienung — seit A26 (David 11.7.2026) EINTRAG im «Ansicht»-
 //          Dropdown (Zähler N im Accessible-Name, role=switch); CLS 0 beim Toggle.
 //   · B-1  «Entscheide»-Schalter im Ansicht-Dropdown blendet die BGE-Leitfall-
-//          Zeilen aus (rein CSS via data-leitfaelle, kein Re-Render).
+//          Auflistung aus (Facetten-Wahl im Dropdown «Rechtsprechung ▾»).
 //   · B-2  Zeitraum-Wahl «alle · 20 · 10 · 5 J.» (Default alle), persistent.
 
 async function warteReader(page: Page, url: string, artId: string): Promise<void> {
@@ -76,26 +76,32 @@ test('K-2 (A26): Fussnoten-Eintrag im «Ansicht»-Dropdown — Zähler + Toggle 
 // gedrosselten 2-Kern-CI-Runner ins 30s-Timeout (CI-Run 29139277748, dieselbe Lehre
 // wie leser-optionen → BGBM, CI-Befund 4.7.2026). Die Toggle-/Filter-Semantik ist
 // seitengrössen-unabhängig (Attribut + CSS bzw. Store).
-test('B-1: «Entscheide»-Schalter blendet die Leitfall-Zeilen aus (data-leitfaelle, kein Re-Render)', async ({ page }) => {
+// §6.3-DEKLARATION (28.7.2026, W2·7-BEZUG/B4 — Vorgabe David «bezüge kann weg, nur
+// auflistung wenn aktiviert»): Die V1a-Chip-Reihe mit der Overline «Leitfälle» und
+// der Schalter «Entscheide» im Ansicht-Menü sind ENTFALLEN. Der Artikelfuss zeigt
+// die facettierte Auflistung (Gruppenkopf «LEITENTSCHEIDE n von m»), gesteuert vom
+// Dropdown «Rechtsprechung ▾»; ohne aktive Facette steht dort nichts. Die
+// Nachführung ist Teil dieser deklarierten fachlichen Änderung — der geprüfte
+// Sachverhalt bleibt, nur die Darstellung, an der er gemessen wird, ist neu.
+test('B-1: die Facetten-Wahl blendet die Entscheid-Auflistung aus und wieder ein', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/ELG', 'art-1');
   const art = page.locator('#art-10');
   await art.scrollIntoViewIfNeeded();
-  const zeile = art.getByText('Leitfälle', { exact: true });
-  await expect(zeile).toBeVisible({ timeout: 15000 });
+  // Grundzustand: eine Facette aktiv (Leitentscheide) ⇒ die Auflistung steht da.
+  const gruppe = art.locator('[data-bezug-gruppe="bge"]');
+  await expect(gruppe).toBeVisible({ timeout: 15000 });
 
-  await ansichtOeffnen(page);
-  const schalter = page.getByRole('switch', { name: 'Entscheide' });
-  await expect(schalter).toHaveAttribute('aria-checked', 'true'); // Default an
+  // AUS: letzte Facette abwählen ⇒ NICHTS unter dem Artikel. Anders als der
+  // frühere CSS-Schalter versteckt das nicht bloss — es wird auch nichts geladen.
+  await page.locator('[data-rechtsprechung-menu]').first().click();
+  const bge = page.locator('[data-bezug-klasse="bge"]');
+  await expect(bge).toHaveAttribute('aria-pressed', 'true'); // Default an
+  await bge.click();
+  await expect(art.locator('[data-bezuege-zeile]')).toHaveCount(0);
 
-  // AUS: html-Attribut gesetzt, Leitfall-Zeile per CSS ausgeblendet (Text bleibt im DOM).
-  await schalter.click();
-  await expect(page.locator('html')).toHaveAttribute('data-leitfaelle', 'aus');
-  await expect(zeile).toBeHidden();
-
-  // AN zurück: Zeile wieder sichtbar.
-  await schalter.click();
-  await expect(page.locator('html')).toHaveAttribute('data-leitfaelle', 'an');
-  await expect(zeile).toBeVisible();
+  // AN zurück: Auflistung wieder da.
+  await bge.click();
+  await expect(gruppe).toBeVisible({ timeout: 15000 });
 });
 
 test('B-2: Zeitraum-Wahl «alle · 20 · 10 · 5 J.» — aria-pressed + Persistenz', async ({ page }) => {

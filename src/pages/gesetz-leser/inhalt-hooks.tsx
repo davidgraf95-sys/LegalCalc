@@ -11,6 +11,7 @@ import {
 import type { KantonSystematik } from '../../lib/normtext/systematik';
 import { formatiereDatum, pfadZu } from './helpers';
 import { LeserAnsichtMenu } from './LeserAnsichtMenu';
+import { LeserRechtsprechungMenu } from './LeserRechtsprechungMenu';
 import { InGesetzSuche } from './parts/InGesetzSuche';
 import { paneRoot, findeArt } from './berechnungen';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
@@ -129,6 +130,9 @@ export function useInhaltsKopfMeldung(opts: {
   eintraege: NormSnapshot[] | null;
   linien: LinienProfil;
   fussnotenAnzahl: number | null;
+  /** W2·7-BEZUG/B4: Kantone, zu denen dieser Erlass Kanten hat (Kanton-Schalter).
+   *  OPTIONAL: leer = noch kein Bezugs-Shard geladen ⇒ kein Kanton-Streifen. */
+  kantoneVerfuegbar?: string[];
   suche: string;
   setSuche: Dispatch<SetStateAction<string>>;
   istXl: boolean;
@@ -139,7 +143,7 @@ export function useInhaltsKopfMeldung(opts: {
   sektionen: Sektion[];
 }): void {
   const {
-    erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl,
+    erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl, kantoneVerfuegbar = [],
     suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf, sektionen,
   } = opts;
 
@@ -181,7 +185,16 @@ export function useInhaltsKopfMeldung(opts: {
       // Hinter dem laufenden Artikel die Gesetzesabkürzung (z. B. «Art. 7 OR»).
       artikel: aktArtikel ? `${aktArtikel} ${erlass.kuerzel}` : null,
       ansichtSlot: !imPane && eintraege
-        ? <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />
+        ? (
+          <>
+            {/* W2·7-BEZUG/B4 (Vorgabe David 28.7.2026): «Rechtsprechung ▾» als
+                EIGENES Dropdown der Werkzeugleiste, links von «Ansicht ▾». Beide
+                gehen in denselben `ansichtSlot` — der Kopf (components/layout)
+                rendert ihn opak, die Layer-Trennung bleibt also unberührt. */}
+            <LeserRechtsprechungMenu kantoneVerfuegbar={kantoneVerfuegbar} />
+            <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />
+          </>
+        )
         : undefined,
       // A35: das In-Gesetz-Suchfeld nur in der Einzelansicht (im Split-View trägt es
       // weiter die pane-lokale `data-such-bar`, da dort kein InhaltsKopf existiert).
@@ -193,7 +206,7 @@ export function useInhaltsKopfMeldung(opts: {
     // früheren Inline-Effekt.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl,
-      suche, istXl, tocOffen, tocAuf, sektionen.length]);
+      kantoneVerfuegbar, suche, istXl, tocOffen, tocAuf, sektionen.length]);
 }
 
 // ── Hash-Sprung-Seed + geteilter Aktiv-Artikel-Beobachter (Scroll-Spy) + TOC-

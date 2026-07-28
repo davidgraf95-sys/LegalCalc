@@ -159,7 +159,9 @@ function HistAnsichtWahl() {
  *  nicht geladen ⇒ Zähler erscheint erst danach; da er in einem geschlossenen,
  *  absolut positionierten Panel steckt, wächst im sichtbaren Kopf keine Zahl nach
  *  (CLS 0). */
-export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenAnzahl = null }: { zeigeLinien: boolean; linienAutoAn?: boolean; fussnotenAnzahl?: number | null }) {
+export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenAnzahl = null }: {
+  zeigeLinien: boolean; linienAutoAn?: boolean; fussnotenAnzahl?: number | null;
+}) {
   const opt = useLeserOptionen();
   const [offen, setOffen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -248,17 +250,24 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
             label="Verweise"
             titel="Verweis-Links unterstreichen oder schlicht darstellen (der Link bleibt aktiv)"
           />
-          {/* V2·B-1 (David 10.7.2026): 4. Schalter «Entscheide» — blendet die
-              verlinkten BGE-Leitfall-Zeilen ein/aus (rein CSS via data-leitfaelle,
-              Default AN). B-2: darunter der Zeitraum-Filter, nur wenn Entscheide AN
-              (sonst wirkungslos → keine toten Steuerelemente, §13 F4). */}
-          <OptSwitch
-            feld="leitfaelle"
-            an={opt.leitfaelle === 'an'}
-            label="Entscheide"
-            titel="Verlinkte Bundesgerichts-Leitfälle unter den Artikeln ein- oder ausblenden"
-          />
+          {/* W2·7-BEZUG/B4 (Vorgabe David 28.7.2026): der frühere 4. Schalter
+              «Entscheide» ist ENTFALLEN. Er blendete die Kanten-Zeile per CSS
+              aus und steuerte damit dieselbe Sache wie das Dropdown
+              «Rechtsprechung ▾» — zwei konkurrierende Steuerungen für eine
+              Frage, das Gegenteil der Minimalismus-Vorgabe. Wer keine
+              Entscheide will, wählt dort die Facetten ab; dann steht unter dem
+              Artikel nichts UND es wird nichts geladen (der CSS-Weg versteckte
+              nur, geladen wurde trotzdem). Die Migration eines gespeicherten
+              «Entscheide aus» erledigt `leserOptionen.ts` einmalig. */}
           {opt.leitfaelle === 'an' && <ZeitraumWahl />}
+          {/* W2·7-BEZUG/B4: die Facetten-Auswahl (Instanzen, Kantone) sass
+              kurzzeitig hier und lebt seit der Vorgabe David 28.7.2026 in einem
+              EIGENEN Dropdown «Rechtsprechung ▾» derselben Werkzeugleiste
+              (`LeserRechtsprechungMenu.tsx`). Trennung der Fragen: dieses Menü
+              beantwortet «wie sieht der Gesetzestext aus?», jenes «welche
+              Entscheide stehen darunter?». Der Schalter «Entscheide» bleibt
+              hier, weil er die ZEILE ein- und ausblendet — eine
+              Darstellungsfrage. */}
         </div>
       )}
     </div>

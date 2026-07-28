@@ -150,6 +150,28 @@ const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/richter.json', 24 * 1024],
   ['public/rechtsprechung/norm-index-erlasse.json', 120 * 1024],
   ['public/such-index/artikel.json', 10_400 * 1024],
+  // W2·7-BEZUG/B4 (#401 hat den Eintrag bewusst dem UI-Schritt überlassen):
+  // der GRÖSSTE Bezugs-Shard. Gemessen 28.7.2026 über alle 311 Shards:
+  // StPO 716.9 KB roh / 63.5 KB gzip; dahinter StGB 56.1 · OR 47.2 · ZGB 45.1 ·
+  // ZPO 45.0 KB gzip. Der Grösste ist die richtige Schranke, weil ein Nutzer
+  // immer genau EINEN Shard lädt (den seines Erlasses), nie die Summe.
+  //
+  // Budget 80 KB gzip = ~26 % Luft über dem heutigen Grössten. Bewusst so
+  // bemessen und nicht knapper: der Deckel im Generator ist KLASSENWEISE
+  // (DECKEL_JE_STATUS = 8 je Status), ein Shard wächst also mit jeder neuen
+  // Klasse und mit jedem neu erfassten Kanton. B2 deckt heute im Wesentlichen
+  // BS ab (5815 von 5896 kantonalen Kanten korpusweit). Ein zweiter grosser
+  // Kantonskorpus SOLL das Tor rot machen und eine Entscheidung erzwingen
+  // (Deckel senken? Felder auslagern?) statt unbemerkt durchzurutschen — aber
+  // nicht schon der nächste Nachtrag von ein paar Dutzend Entscheiden.
+  //
+  // WARUM DAS TRAGBAR IST, obwohl es nach dem Such-Index das grösste
+  // Einzel-Artefakt ist: der Shard liegt NICHT auf dem kritischen Pfad. Er wird
+  // nur geladen, wenn der Nutzer im «Ansicht ▾» eine Instanz jenseits der
+  // Leitentscheide zuschaltet (`istErweitert`, `bezuegeLaden.ts`) — dann im
+  // Leerlauf und AN DER STELLE des schlanken norm-index-Shards, nie zusätzlich.
+  // Im Grundzustand kostet er null Byte.
+  ['public/rechtsprechung/bezuege/STPO.json', 80 * 1024],
 ];
 // GEMESSEN WIRD DIE AUSGELIEFERTE KOPIE in dist/ — mit public/ nur als Rückfall.
 // Grund (CI-Befund 25.7.2026): `public/such-index/artikel.json` ist gitignored und

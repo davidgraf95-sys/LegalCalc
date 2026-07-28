@@ -24,6 +24,8 @@ import { zitatMitAusweis, heuteIso, fmtDatumLang } from '../../../lib/format';
 import { schaetzeArtikelHoehe, baueChronologie, fnNrSortKey } from '../berechnungen';
 import { setzeZeitraum, useLeitfallZeitraum } from '../leserOptionen';
 import { filtereLeitfaelleNachZeitraum, zeitraumLabel } from '../leitfallFilter';
+import { BezuegeZeile } from './BezuegeZeile';
+import type { ArtikelBezuege } from '../bezuegeLaden';
 
 // Schaufenster-Chips: nur die zentralen Leitfälle direkt zeigen (Reihenfolge =
 // `gewicht` aus dem Shard), Rest hinter «+n weitere». V2·B-2 (David 10.7.2026,
@@ -141,7 +143,7 @@ const LeitfallZeile = memo(function LeitfallZeile({ refs, normZitat, revision }:
 // links «Art. N» als ruhiger Anker mit den Randtiteln darunter (rechtsbündig, nur die
 // gegenüber dem Vorartikel GEÄNDERTEN Stufen, `marg`), rechts der Serif-
 // Bestimmungstext. Ersetzt den früheren fliegenden Standort-Tracker. Reine Darstellung.
-export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, revision, historie, istAnhang = false }: {
+export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, revision, historie, istAnhang = false }: {
   e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: InternRefs;
   marg?: string[];
   /** G-HIST-UI: Fassungshistorie dieses Artikels aus dem erlass-lokalen Shard
@@ -154,8 +156,21 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
    *  byte-gleich, nur Markup/Klassen. Delimitation über Typo + Struktur-Trenner
    *  (Linien-Kanon «Ruhe durch Reduktion» — keine Farb-/Box-Sprache). */
   istAnhang?: boolean;
-  /** Leitfälle dieses Artikels (Reader lädt den erlass-lokalen Shard einmal). */
+  /** Leitfälle dieses Artikels (V1a-Form, flache BGE-Chip-Reihe).
+   *
+   *  W2·7-BEZUG/B4: DER READER SETZT DIESE PROP NICHT MEHR. Seit der Vorgabe
+   *  David 28.7.2026 speist sich der Artikelfuss ausschliesslich aus `bezuege`
+   *  (facettierte Auflistung; der Bezugs-Shard ist die Obermenge des schlanken
+   *  Leitfall-Shards). Die Prop und `LeitfallZeile` bleiben als unveränderte
+   *  Darstellungsform bestehen — sie werden weiterhin direkt konsumiert (u. a.
+   *  vom Farbwörterbuch-Test) und sind kein toter Zweig, sondern ein nicht mehr
+   *  vom Reader bedienter Eingang. */
   leitfaelle?: LeitfallRef[];
+  /** W2·7-BEZUG/B4: facettierte Bezüge dieses Artikels, sobald der Nutzer die
+   *  Facetten erweitert hat. Gesetzt ⇒ die `BezuegeZeile` tritt AN DIE STELLE
+   *  der `LeitfallZeile` (der Bezugs-Shard ist deren Obermenge, §5 — nie beide
+   *  nebeneinander, das wären zwei Wahrheiten am selben Artikel). */
+  bezuege?: ArtikelBezuege;
   /** Revision r(a) dieses Artikels (§V1c) — an die LeitfallZeile durchgereicht. */
   revision?: ArtikelRevision | null;
   // Absolute Tiefe der ERSTEN gezeigten Randtitel-Stufe (Delta-Offset). Damit
@@ -502,8 +517,18 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           )}
           {/* LEITFÄLLE (§11.2): Bundesgerichtsentscheide zu genau diesem Artikel, lazy
               aus dem erlass-lokalen Shard. Verdrahtet das bisher tote proNormArtikel-
-              Modell (norm-index.ts) sichtbar — vom Artikel direkt zur Rechtsprechung. */}
-          <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />
+              Modell (norm-index.ts) sichtbar — vom Artikel direkt zur Rechtsprechung.
+
+              W2·7-BEZUG/B4: der Reader liefert `bezuege` — die nach Instanz
+              gruppierte Auflistung aus dem Bezugs-Shard. Sie tritt AN DIE STELLE
+              der V1a-Zeile (Obermenge, §5): nie beide, sonst stünden dieselben
+              BGE zweimal am Artikel. Ist keine Facette aktiv, ist `bezuege`
+              undefined UND `leitfaelle` ungesetzt ⇒ unter dem Artikel steht
+              nichts (Vorgabe David 28.7.2026). */}
+          {bezuege
+            ? <BezuegeZeile kanten={bezuege.kanten} gesamt={bezuege.gesamt}
+                normZitat={zitat} revision={revision} />
+            : <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />}
           {/* G-HIST-UI: «Gilt seit»-Badge + aufklappbare Fassungs-Timeline dieses
               Artikels (aus dem erlass-lokalen Historie-Shard, idle geladen). Am
               Artikel-Fuss wie Verweise/Leitfälle. §15.2: der Slot steht ab dem

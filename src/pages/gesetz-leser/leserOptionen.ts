@@ -39,7 +39,17 @@
 // (`useLeitfallZeitraum`, nur der String) abonniert: so re-rendern die bis zu ~66
 // Leitfall-Zeilen NUR bei echter Zeitraum-Änderung, nicht bei jedem anderen Toggle.
 
+// W2·7-BEZUG/B4: die Facetten-Auswahl der Bezüge (Status-Klassen + Kantone) lebt
+// im SELBEN persistenten Store — ein localStorage-Schlüssel, ein Hörer-Satz (§5),
+// wie Zeitraum und Historie-Ansicht. Sie ist wie der Zeitraum JS-konsumiert (kein
+// data-*-Attribut): welche Klassen gewählt sind, entscheidet, WELCHER Shard
+// geladen und welche Kanten gerendert werden — das kann CSS nicht. Abonniert wird
+// über Selektoren mit STABILER Referenz (nur bei echter Änderung ein Re-Render),
+// darum werden die Arrays beim Setzen einmal neu gebaut und danach geteilt (§15).
+
 import { useSyncExternalStore } from 'react';
+import type { BezugStatus } from '../../lib/verzahnung/facetten';
+import { DEFAULT_KLASSEN, normalisiereKantone, normalisiereKlassen } from './bezugAuswahl';
 
 export type OptFeld = 'linien' | 'fussnoten' | 'verweise' | 'leitfaelle';
 // 'auto' nur für 'linien' sinnvoll (grundart-abhängiger Default, K11); Fussnoten/
@@ -78,42 +88,79 @@ const DEFAULT_ZEITRAUM: LeitfallZeitraum = 'alle';
 const HIST_ANSICHTEN: readonly HistAnsicht[] = ['aus', 'fussnoten', 'chronologie'];
 const DEFAULT_HIST: HistAnsicht = 'fussnoten';
 
+// W2·7-BEZUG/B4: Grundzustand der Bezugs-Facetten = NUR Leitentscheide (§9 B4
+// «Default konservativ»). Die geteilte Konstanten-Referenz macht den häufigen
+// Fall referenz-stabil: solange niemand umschaltet, liefert `getKlassenSnapshot`
+// IMMER dasselbe Array-Objekt ⇒ kein Re-Render der Abonnenten (Object.is, §15).
+const DEFAULT_BEZUG_KLASSEN: readonly BezugStatus[] = [...DEFAULT_KLASSEN];
+const KEINE_KANTONE: readonly string[] = [];
+
 interface GeladenerZustand {
   opt: LeserOptionen;
   zeitraum: LeitfallZeitraum;
   hist: HistAnsicht;
+  bezugKlassen: readonly BezugStatus[];
+  bezugKantone: readonly string[];
 }
 
 function lade(): GeladenerZustand {
+  const grund = {
+    opt: { ...DEFAULT }, zeitraum: DEFAULT_ZEITRAUM, hist: DEFAULT_HIST,
+    bezugKlassen: DEFAULT_BEZUG_KLASSEN, bezugKantone: KEINE_KANTONE,
+  };
   try {
     const roh = localStorage.getItem(KEY);
-    if (!roh) return { opt: { ...DEFAULT }, zeitraum: DEFAULT_ZEITRAUM, hist: DEFAULT_HIST };
-    const o = JSON.parse(roh) as Partial<Record<OptFeld, unknown>> & { zeitraum?: unknown; hist?: unknown };
+    if (!roh) return grund;
+    const o = JSON.parse(roh) as Partial<Record<OptFeld, unknown>>
+      & { zeitraum?: unknown; hist?: unknown; bezugKlassen?: unknown; bezugKantone?: unknown };
     const opt: LeserOptionen = { ...DEFAULT };
     for (const f of FELDER) if (o[f] === 'an' || o[f] === 'aus' || o[f] === 'auto') opt[f] = o[f] as OptWert;
     const zeitraum = ZEITRAEUME.includes(o.zeitraum as LeitfallZeitraum)
       ? (o.zeitraum as LeitfallZeitraum)
       : DEFAULT_ZEITRAUM;
     const hist = HIST_ANSICHTEN.includes(o.hist as HistAnsicht) ? (o.hist as HistAnsicht) : DEFAULT_HIST;
-    return { opt, zeitraum, hist };
+    // Fehlt der Schlüssel GANZ (Bestands-Speicher vor B4), gilt der Default.
+    // Steht dort ein leeres Array, ist das eine bewusste Nutzerwahl («alles
+    // abgewählt») und bleibt erhalten — normalisiereKlassen setzt sie NICHT
+    // still auf den Default zurück (§8, siehe bezugAuswahl.ts).
+    // MIGRATION (W2·7-BEZUG/B4, einmalig): der frühere Schalter «Entscheide»
+    // ist entfallen (ersetzt durch das Dropdown «Rechtsprechung ▾»). Wer ihn auf
+    // 'aus' gestellt hatte, wollte keine Entscheide am Artikel sehen — dieser
+    // Wille wird übernommen, indem alle Facetten abgewählt starten, statt ihm
+    // die Auflistung mit der neuen Voreinstellung wieder einzublenden (§8: eine
+    // Umstellung darf eine getroffene Nutzerwahl nicht stillschweigend kippen).
+    // Greift NUR, solange keine Facetten-Wahl gespeichert ist, also genau einmal.
+    const bezugKlassen = Array.isArray(o.bezugKlassen)
+      ? normalisiereKlassen(o.bezugKlassen)
+      : (opt.leitfaelle === 'aus' ? [] : DEFAULT_BEZUG_KLASSEN);
+    const bezugKantone = Array.isArray(o.bezugKantone) ? normalisiereKantone(o.bezugKantone) : KEINE_KANTONE;
+    return { opt, zeitraum, hist, bezugKlassen, bezugKantone };
   } catch {
     // localStorage gesperrt (privater Modus) ODER kaputtes JSON → Default.
-    return { opt: { ...DEFAULT }, zeitraum: DEFAULT_ZEITRAUM, hist: DEFAULT_HIST };
+    return grund;
   }
 }
 
 // getSnapshot muss eine STABILE Referenz liefern (sonst warnt/looped React).
 // `aktuell`/`aktuellZeitraum` werden nur bei echten Änderungen ersetzt.
 const start = typeof window === 'undefined'
-  ? { opt: { ...DEFAULT }, zeitraum: DEFAULT_ZEITRAUM, hist: DEFAULT_HIST }
+  ? {
+      opt: { ...DEFAULT }, zeitraum: DEFAULT_ZEITRAUM, hist: DEFAULT_HIST,
+      bezugKlassen: DEFAULT_BEZUG_KLASSEN, bezugKantone: KEINE_KANTONE,
+    }
   : lade();
 let aktuell: LeserOptionen = start.opt;
 let aktuellZeitraum: LeitfallZeitraum = start.zeitraum;
 let aktuellHist: HistAnsicht = start.hist;
+let aktuellKlassen: readonly BezugStatus[] = start.bezugKlassen;
+let aktuellKantone: readonly string[] = start.bezugKantone;
 
 function speichere(): void {
   try {
-    localStorage.setItem(KEY, JSON.stringify({ ...aktuell, zeitraum: aktuellZeitraum, hist: aktuellHist }));
+    localStorage.setItem(KEY, JSON.stringify({
+      ...aktuell, zeitraum: aktuellZeitraum, hist: aktuellHist,
+      bezugKlassen: aktuellKlassen, bezugKantone: aktuellKantone,
+    }));
   } catch {
     /* Speicher gesperrt — die Wahl gilt dann nur für die Sitzung */
   }
@@ -129,6 +176,10 @@ export function wendeLeserOptionenAn(): void {
   aktuell = g.opt;
   aktuellZeitraum = g.zeitraum;
   aktuellHist = g.hist;
+  // B4: JS-konsumiert (kein data-*-Attribut) — die Weiche «welcher Shard» und
+  // die Gruppierung der Kanten sind React-Zustand, nicht CSS.
+  aktuellKlassen = g.bezugKlassen;
+  aktuellKantone = g.bezugKantone;
   const el = document.documentElement;
   for (const f of FELDER) el.setAttribute(`data-${f}`, aktuell[f]);
   // W2·5i: die Historie-Ansicht ist CSS-getrieben wie die vier Toggles → dasselbe
@@ -171,6 +222,32 @@ export function setzeHistAnsicht(h: HistAnsicht): void {
   if (typeof document !== 'undefined') {
     document.documentElement.setAttribute('data-histansicht', h);
   }
+  hoerer.forEach((f) => f());
+}
+
+/**
+ * W2·7-BEZUG/B4: Facetten-Klassen der Bezüge setzen. Wie `setzeZeitraum` ein
+ * JS-Filterwert (kein Attribut). Die Referenz-Gleichheit wird bewusst über den
+ * INHALT geprüft und nicht über die Objekt-Identität: die Aufrufer bauen die
+ * Menge aus `schalteKlasse` immer neu, ein naiver `===`-Vergleich liefe also
+ * nie an und jeder Klick würde alle Abonnenten re-rendern — auch der Klick,
+ * der nichts ändert (§15).
+ */
+export function setzeBezugKlassen(klassen: readonly BezugStatus[]): void {
+  const neu = normalisiereKlassen(klassen);
+  if (neu.length === aktuellKlassen.length && neu.every((k, i) => k === aktuellKlassen[i])) return;
+  aktuellKlassen = neu;
+  speichere();
+  hoerer.forEach((f) => f());
+}
+
+/** B4: Kantons-Auswahl setzen (leer = keine Einschränkung). Siehe
+ *  `setzeBezugKlassen` zur Inhalts- statt Identitäts-Prüfung. */
+export function setzeBezugKantone(kantone: readonly string[]): void {
+  const neu = normalisiereKantone(kantone);
+  if (neu.length === aktuellKantone.length && neu.every((k, i) => k === aktuellKantone[i])) return;
+  aktuellKantone = neu;
+  speichere();
   hoerer.forEach((f) => f());
 }
 
@@ -232,4 +309,54 @@ function getHistServerSnapshot(): HistAnsicht {
 }
 export function useHistAnsicht(): HistAnsicht {
   return useSyncExternalStore(abonniere, getHistSnapshot, getHistServerSnapshot);
+}
+
+/**
+ * W2·7-BEZUG/B4: Selektoren auf die Bezugs-Facetten.
+ *
+ * `getSnapshot` MUSS eine stabile Referenz liefern (sonst warnt React und
+ * schleift). Die Arrays werden darum ausschliesslich in `setzeBezugKlassen`/
+ * `setzeBezugKantone` ersetzt und dazwischen geteilt — im Grundzustand ist es
+ * sogar dieselbe Modul-Konstante (`DEFAULT_BEZUG_KLASSEN`), sodass der
+ * unveränderte Reader gar keinen Re-Render sieht.
+ */
+function getKlassenSnapshot(): readonly BezugStatus[] {
+  return aktuellKlassen;
+}
+function getKlassenServerSnapshot(): readonly BezugStatus[] {
+  return DEFAULT_BEZUG_KLASSEN;
+}
+export function useBezugKlassen(): readonly BezugStatus[] {
+  return useSyncExternalStore(abonniere, getKlassenSnapshot, getKlassenServerSnapshot);
+}
+
+/**
+ * Die Klassen NICHT-reaktiv lesen — für Entscheidungen INNERHALB eines Effekts.
+ *
+ * Warum das nötig ist (Befund 28.7.2026, an der Netzwerk-Sonde gemessen): der
+ * Reader ist prerendert und wird hydriert. Während der Hydration liefert
+ * `useSyncExternalStore` bewusst den SERVER-Snapshot, also den Default — auch
+ * wenn im localStorage längst ein erweiterter Zustand steht und
+ * `wendeLeserOptionenAn()` ihn vor dem ersten Render ins Modul geschrieben hat.
+ * Ein Effekt, der in diesem Moment «bin ich erweitert?» am gerenderten Wert
+ * fragt, bekommt «nein» und lädt den schlanken Shard — den er im erweiterten
+ * Zustand gerade NICHT laden soll. Gemessen kamen dann beide Shards über die
+ * Leitung, und die Zusage «an die Stelle, nie zusätzlich» war falsch.
+ *
+ * Der Modulwert kennt diese Verzögerung nicht: er steht seit `wendeLeserOptionenAn`
+ * richtig. Für die RENDER-Ausgabe bleibt der Hook massgeblich (sonst entstünde
+ * ein Hydration-Mismatch) — dieser Getter ist ausschliesslich für Effekte.
+ */
+export function holeBezugKlassen(): readonly BezugStatus[] {
+  return aktuellKlassen;
+}
+
+function getKantoneSnapshot(): readonly string[] {
+  return aktuellKantone;
+}
+function getKantoneServerSnapshot(): readonly string[] {
+  return KEINE_KANTONE;
+}
+export function useBezugKantone(): readonly string[] {
+  return useSyncExternalStore(abonniere, getKantoneSnapshot, getKantoneServerSnapshot);
 }

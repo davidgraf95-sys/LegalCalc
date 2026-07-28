@@ -39,6 +39,15 @@ test.describe('Normrevisions-Badge im ArtikelLeser (AIG)', () => {
 
   test('(b) Entscheid NACH der Revision → kein Badge (gleich, UI-still)', async ({ page }) => {
     await page.goto('/gesetze/bund/AIG')
+    // §6.3-DEKLARATION (28.7.2026, W2·7-BEZUG/B4): der Anker 2C_1060/2020 ist im
+    // Manifest `bger`/routine — ein kuratiertes Bundesgerichtsurteil, KEIN amtlich
+    // publizierter BGE. Unter dem neuen konservativen Default («nur
+    // Leitentscheide», Vorgabe David 28.7.) ist er darum zu Recht nicht sichtbar.
+    // Das Setup schaltet die Facette «übrige BGer» zu; die geprüfte Sache — die
+    // TEMPORALE Badge-Logik — bleibt unverändert, samt aller Assertions darunter.
+    await page.locator('[data-rechtsprechung-menu]').first().click()
+    await page.locator('[data-bezug-klasse="bger"]').click()
+    await page.keyboard.press('Escape')
     const art34 = page.locator('#art-34')
     await art34.scrollIntoViewIfNeeded()
     // Art. 34 AIG wurde 2019 zuletzt revidiert; sein Leitfall (Urteil 19.2.2021)

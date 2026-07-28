@@ -13,6 +13,7 @@ import type { LinienProfil } from './linienAufbau';
 import { kopfOverline, grundartMeta } from './helpers';
 import { ArtikelLeser, ErlassKopfBlock, ErlassLeserKopf } from './parts';
 import { LeserAnsichtMenu } from './LeserAnsichtMenu';
+import { LeserRechtsprechungMenu } from './LeserRechtsprechungMenu';
 import { istAnhangToken } from './berechnungen';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
 
@@ -36,7 +37,7 @@ export function LeserVolltextInhalt({
   internRefs, margAnzeige, kantonSys, basisPfad, renderSektion,
   imPane, istXl, overlayWurzel, treffer, suche, sucheDebounced, setSuche,
   tocBaumEl, tocOffen, tocAuf, setTocOffen, setTocAuf, springeZuArtikel,
-  leitfaelleFuer, revisionFuer, historieFuer,
+  leitfaelleFuer, bezuegeFuer = () => undefined, revisionFuer, historieFuer, kantoneVerfuegbar = [],
   reiterToast, setReiterToast, reiterToastTimerRef,
   tocDrawerRef, trefferRef, navigate,
 }: {
@@ -70,9 +71,20 @@ export function LeserVolltextInhalt({
   setTocOffen: Dispatch<SetStateAction<boolean>>;
   setTocAuf: Dispatch<SetStateAction<boolean>>;
   springeZuArtikel: (token: string) => void;
-  leitfaelleFuer: (artikel: string) => ArtikelLeserProps['leitfaelle'];
+  /** V1a-Leitfälle je Artikel. OPTIONAL und vom Reader NICHT MEHR gesetzt
+   *  (W2·7-BEZUG/B4, Vorgabe David 28.7.2026): der Artikelfuss speist sich aus
+   *  `bezuegeFuer`. Der Eingang bleibt für direkte Konsumenten offen. */
+  leitfaelleFuer?: (artikel: string) => ArtikelLeserProps['leitfaelle'];
+  /** W2·7-BEZUG/B4: facettierte Bezüge je Artikel (nur im erweiterten Zustand).
+   *  OPTIONAL: ohne sie rendert der Artikelfuss die unveränderte Leitfall-Zeile —
+   *  der Grundzustand braucht die Bezüge nicht, und ein Aufrufer soll sie nicht
+   *  mitschleppen müssen, nur um die heutige Darstellung zu bekommen. */
+  bezuegeFuer?: (artikel: string) => ArtikelLeserProps['bezuege'];
   revisionFuer: (artikel: string) => ArtikelLeserProps['revision'];
   historieFuer: (artikel: string) => ArtikelLeserProps['historie'];
+  /** B4: Kantone, zu denen DIESER Erlass Kanten hat — speist den Kanton-Schalter.
+   *  OPTIONAL: leer heisst schlicht «noch kein Shard geladen» (kein Streifen). */
+  kantoneVerfuegbar?: string[];
   reiterToast: boolean;
   setReiterToast: Dispatch<SetStateAction<boolean>>;
   reiterToastTimerRef: MutableRefObject<number | null>;
@@ -131,7 +143,14 @@ export function LeserVolltextInhalt({
   // einheitlich an EINER Stelle — nie zwei Menüs gleichzeitig. In der Einzelansicht
   // (!imPane) trägt der sticky Inhalts-Kopf das Menü (A26) → hier `null`, kein Doppel.
   const ansichtMenuPane = imPane
-    ? <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />
+    ? (
+      <>
+        {/* B4: dieselbe Paarung wie in der Einzelansicht — im Pane trägt sie die
+            pane-lokale Such-Leiste statt des Inhalts-Kopfs. */}
+        <LeserRechtsprechungMenu kantoneVerfuegbar={kantoneVerfuegbar} />
+        <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />
+      </>
+    )
     : null;
 
   return (
@@ -346,14 +365,14 @@ export function LeserVolltextInhalt({
           {treffer ? (
             <div ref={trefferRef} className="space-y-4">
               <p className="text-body-s text-ink-500"><span className="num">{treffer.length}</span> Treffer für «{sucheDebounced.trim()}»</p>
-              {treffer.map((e) => <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={struktur?.[e.artikel]?.marginalie} imTreffer onSpringe={springeZuArtikel} leitfaelle={leitfaelleFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />)}
+              {treffer.map((e) => <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={struktur?.[e.artikel]?.marginalie} imTreffer onSpringe={springeZuArtikel} leitfaelle={leitfaelleFuer?.(e.artikel)} bezuege={bezuegeFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />)}
               {treffer.length === 0 && <p className="text-body-s text-ink-500">Kein Artikel gefunden.</p>}
             </div>
           ) : (
             <div className="space-y-2">
               {ohneGliederung.length > 0 && (
                 <div className="space-y-5 mb-6">
-                  {ohneGliederung.map((e) => <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={margAnzeige.get(e.artikel)?.teile} margBasis={margAnzeige.get(e.artikel)?.ab} leitfaelle={leitfaelleFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />)}
+                  {ohneGliederung.map((e) => <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={margAnzeige.get(e.artikel)?.teile} margBasis={margAnzeige.get(e.artikel)?.ab} leitfaelle={leitfaelleFuer?.(e.artikel)} bezuege={bezuegeFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />)}
                 </div>
               )}
               {sektionen.map((s) => renderSektion(s, true, 0))}

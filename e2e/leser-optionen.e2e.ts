@@ -60,15 +60,19 @@ async function guide(page: Page, artId: string) {
   }, artId);
 }
 
-test('Options-Leiste: vier role=switch (V2·B-1 «Entscheide»); Fussnoten/Verweise/Entscheide an, Linien-Default aus (V2·A28, Auto-Guide korpusweit zurückgezogen)', async ({ page }) => {
+test('Options-Leiste: drei role=switch (W2·7-BEZUG/B4: «Entscheide» entfallen, ersetzt durch «Rechtsprechung ▾»); Fussnoten/Verweise an, Linien-Default aus (V2·A28, Auto-Guide korpusweit zurückgezogen)', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
   await ansichtOeffnen(page);
   const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
   await expect(gruppe).toBeVisible();
   // V2·B-1 (David 10.7.2026, überstimmt «genau drei Toggles», A19+): 4. Schalter
   // «Entscheide» im Dropdown. BGBM hat eine Gliederungs-Sektion → der Linien-Schalter
-  // ERSCHEINT (zeigeLinien=guideEbene!==null, feature-abhängig, unverändert) ⇒ 4 Switches.
-  await expect(gruppe.getByRole('switch')).toHaveCount(4);
+  // ERSCHEINT (zeigeLinien=guideEbene!==null, feature-abhängig, unverändert) ⇒ 3 Switches.
+  // W2·7-BEZUG/B4 (§6.3-Deklaration, Vorgabe David 28.7.2026): der vierte Schalter
+  // «Entscheide» ist entfallen — er steuerte dieselbe Sache wie das neue Dropdown
+  // «Rechtsprechung ▾» (zwei konkurrierende Steuerungen). Geprüfter Sachverhalt
+  // unverändert: das Menü führt genau die Darstellungs-Schalter und sonst nichts.
+  await expect(gruppe.getByRole('switch')).toHaveCount(3);
   // V2·A28 (David 12.7.2026, Live-Verdikt «funktioniert überhaupt nicht»): der Auto-
   // Guide ist KORPUSWEIT aus → data-guide-auto="aus", der Linien-Schalter zeigt
   // ehrlich «aus» (§8). Das FEATURE bleibt: ein Klick «Linien AN» zeigt den Guide.
@@ -78,12 +82,10 @@ test('Options-Leiste: vier role=switch (V2·B-1 «Entscheide»); Fussnoten/Verwe
   for (const name of ['Fussnoten', 'Verweise']) {
     await expect(gruppe.getByRole('switch', { name })).toHaveAttribute('aria-checked', 'true');
   }
-  await expect(gruppe.getByRole('switch', { name: 'Entscheide' })).toHaveAttribute('aria-checked', 'true');
   const html = page.locator('html');
   await expect(html).toHaveAttribute('data-linien', 'auto');
   await expect(html).toHaveAttribute('data-fussnoten', 'an');
   await expect(html).toHaveAttribute('data-verweise', 'an');
-  await expect(html).toHaveAttribute('data-leitfaelle', 'an');
 });
 
 test('Linien-Toggle: Auto-Default transparent (V2·A28), Nutzer «an» zeigt / «aus» versteckt den Guide, persistiert über Reload', async ({ page }) => {
