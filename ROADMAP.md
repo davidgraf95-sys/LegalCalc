@@ -526,6 +526,27 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   Code («aussagekräftige») angleichen · `nichtAbsicherbar` maskiert danebenliegende
   Befunde (8 über 4 SR gemeldet, 3 gelistet) — itemisieren · Hauptlauf nutzt feste
   Batch-Komposition ohne Selbstheilung, falls sie je deterministisch kappt.
+  **■ Folgeaufträge Verzahnungs-Session 28.7.2026** *(Übergabe; Befunde der 9 GP-Runden zu
+  #401 + B4–B6-Bauten; je eigener Schritt, Risiko-Pfade ⇒ `QS-GP`)*:
+  **(G-a)** Literatur-Phantome schliessen — `zitierteNormen`-Zweig ungefiltert (158 Paare auf
+  main, 4 neu; Beleg MSTG/171c ← zh_obergericht_UE240310) **plus** 39 Fliesstext-
+  Bereichszitat-Phantome kantonaler Kanten («Art. 1-456 ZGB» im Kommentar-Titel; Spannen-Regel
+  greift nicht) — Literatur-Kontext-Regel auf beide Zweige ausdehnen, Backfill, `QS-GP` ·
+  **(G-b)** Bestands-Namensvettern fixen: EPG ← bge_149_I_161 («LEP; BLV 340.01», waadtländisch)
+  und IRSG ← bge_150_II_105 («AIMP; BLV 726.91») + BETMG/305bis ← SB.2020.92
+  (`artikelSchluesselMitBefund` erzeugt STGB- UND BETMG-Key; BetmG hat keinen 305bis) —
+  alle im Code benannt, ändern proNormArtikel ⇒ deklarierter Schritt, `QS-GP` ·
+  **(G-c)** `gewicht`-Zitiergraph für kantonal/eidg: Geschäftsnummern-Formen (BES.2026.15,
+  E-165/2026, SK.2025.57) in `kanonZitat` aufnehmen, dann gewicht statt null ·
+  **(G-d)** Aufräum-Schritt tote V1a-Eingänge: `ArtikelLeser.leitfaelle`/`LeitfallZeile`/
+  `leitfaelleFuer` + CSS `data-leitfaelle="aus"` ohne Auslöser (benannt-tot seit #403/#404) ·
+  **(G-e)** GFK≠FK-Entscheid David (SR 0.142.30, Aktenlage `bibliothek/recherche/
+  fedlex-abkuerzungen-titleshort.md`; mechanisch harmlos, reine Anzeige-/Massgeblichkeitsfrage) ·
+  **(G-f)** Klein-UX aus B5/B6: `LeserAnsichtMenu`-Randklemmung bei ~320 px ·
+  `schaetzeArtikelHoehe` kennt die Kanten-Zeile nicht (OR/41-Lade-CLS ~0.10 Bestand) ·
+  KontextPanel lädt weiterhin den norm-index-Shard selbst (Doppel-Lade-Thema für W2·7-VZUI V2) ·
+  **(G-g)** Dependabot-Wiedervorlage react-router (Fix erst mit react-router-dom 8.x;
+  unstable-RSC-Pfad im Projekt nicht erreichbar, grep-belegt #399).
   Zusätzlich notiert (§8, kein Bau): `erzeugt`-Stempel bedeutet «Inhalt zuletzt geändert»,
   nicht «zuletzt gegen die Quelle geprüft» — bei einem künftigen Kanton-Currency-Tor (F-b)
   sauber trennen.
@@ -591,7 +612,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > Reihenfolge nach Praxis-Hebel × Machbarkeit ohne Fachzeit × Abhängigkeiten. Alles `[OF]`, sofern
 > nicht vermerkt. Details + Bau-Auflagen je Werkzeug: «Funktions-Katalog» unten + jeweilige `FAHRPLAN-*.md`.
 
-<!-- @queue: W2·7-BEZUG, QS-TOK, W2·5d, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
+<!-- @queue: QS-TOK, W2·5d, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
 <!-- ^ SSoT der Bau-Reihenfolge (Einbau 24.7.2026): plan:next wertet die @queue VOR der
      Dokumentreihenfolge aus; Integrität erzwingt check:plan Regel 8 (tote/erledigte IDs rot,
      Prosa-«OBERSTER» muss dem Queue-Kopf entsprechen). Priorität ändern = NUR diese Zeile
@@ -1130,8 +1151,14 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   `parts.tsx`-Eigentümerschaft geklärt (W2·5c fertig). Kein 26×-Bezug — parallel zu E3 fahrbar.
   Startseiten-Kachel «Meistzitierte Artikel» = Andockpunkt (W2·5c fertig, Fläche frei).
   **Detailquelle:** `FAHRPLAN-VERZAHNUNG-UI.md`.
-- [~] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** *(§14-Intake 24.7.2026;
-  <!-- @meta id: W2·7-BEZUG · status: wip · of: ja · blocker: null · dep: [W2·6-NKEY] · kollision: [scripts/normtext/entscheide-schreiben.ts, src/lib/rechtsprechung/norm-index.ts, src/lib/verzahnung, src/components/kontext/KontextPanel.tsx, src/pages/gesetz-leser/LeserAnsichtMenu.tsx, public/rechtsprechung] · seq-weich: [W2·7-VZUI(KontextPanel.tsx), W2·5h-GESETZ-UI(LeserAnsichtMenu.tsx)] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
+- [x] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** — **✅ 28.7.2026 GEBAUT,
+  B1–B6 komplett** (PRs #401 `5e461f5f5` · #403 `4e160737b` · #404 `d42322ed1` · #405 `efba2dceb`):
+  Facetten-Datenmodell + BS-Korpus + BGer-Nicht-Leitentscheide (24'173 Kanten, 311 Shards, **9
+  Gegenprüfungs-Runden**, R1–R8 widerlegt+gefixt, R9 bestanden) · Auflistung direkt am Artikel ohne
+  Zwischenzeile (David-Vorgaben Minimalismus) · Rechtsprechungs-Dropdown in der Werkzeugleiste ·
+  interaktiver Zeitstrahl + Von-Bis-Datum statt Perioden-Buckets · Werkzeugleisten-Gesamtüberarbeitung.
+  Übergabe-Restposten siehe Block «Folgeaufträge Verzahnungs-Session 28.7.» unter QS-OPT. *(§14-Intake 24.7.2026;
+  <!-- @meta id: W2·7-BEZUG · status: done · of: ja · blocker: null · dep: [W2·6-NKEY] · kollision: [scripts/normtext/entscheide-schreiben.ts, src/lib/rechtsprechung/norm-index.ts, src/lib/verzahnung, src/components/kontext/KontextPanel.tsx, src/pages/gesetz-leser/LeserAnsichtMenu.tsx, public/rechtsprechung] · seq-weich: [W2·7-VZUI(KontextPanel.tsx), W2·5h-GESETZ-UI(LeserAnsichtMenu.tsx)] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
   **Fokus-Dekret-Priorität**, Wortlaut David: Verzahnung Gesetz↔Entscheide «sehr gutes Feature, das
   ich mit Priorität einbauen will»; **Dekret David 27.7.2026: Vorstufe ist `W2·6-NKEY`** — erst das
   Entscheid-Screening generalisieren, damit ALLE Norm-Zitate erkannt und zugeordnet sind (heute 43 %),
