@@ -1181,11 +1181,30 @@ function markeloseNotizen(dlInner: string): string[] {
 }
 
 /** Sichtbarer Text einer Anhang-Überschrift: der <a>-Text ohne Icons/Fussnoten.
- *  «<span class="display-icon"></span>…<a href="#annex_1">Anhang 1 </a>» → «Anhang 1». */
+ *  «<span class="display-icon"></span>…<a href="#annex_1">Anhang 1 </a>» → «Anhang 1».
+ *
+ * F-f (QS-OPT, 28.7.2026) — DEKLARIERTE fachliche Änderung: Der frühere PAUSCHALE
+ * Strip `<sup>…</sup>` warf auch das lateinische Ordinal-Suffix weg, das TEIL DER
+ * NUMMER ist («6.6<sup>bis</sup> Rückerstattung der Gebühr» → «6.6 Rückerstattung
+ * der Gebühr»). Damit trugen zwei rechtlich VERSCHIEDENE Ziffern dieselbe Nummer —
+ * ChemRRV Anh. 2.15 zweimal «6.6», VZV zweimal «Anhang 1» (annex_1 UND annex_1_bis),
+ * GSchV Anh. 4 zweimal «221». Ein Zitat auf die verstümmelte Nummer trifft die
+ * falsche Bestimmung (§1/§7).
+ *
+ * Jetzt exakt das ARTIKEL-Muster (§5, eine Mechanik für alle Pfade):
+ *   (1) `entferneFussnotenSups` tilgt NUR die redaktionellen Marker
+ *       `<sup><a href="#fn-…">N</a></sup>` samt Ziffer;
+ *   (2) `entferneTags` klebt das verbleibende Buchstaben-<sup> leerzeichenlos an
+ *       die Nummer (N1-Fix) — dieselbe Regel, die «Art. 335bis»/«art_N_bis» und
+ *       die Gliederungs-Sidecars (struktur-extrahiere.ts `reinText`) erzeugen.
+ * Empirisch abgesichert (alle 227 Bund-Caches): nach Schritt (1) verbleiben in
+ * Anhang-Überschriften AUSSCHLIESSLICH lat. Ordinale (27× bis, 9× ter) und leere
+ * <sup> — kein Ziffern-<sup>, das entferneTags als Exponent beabstanden würde.
+ */
 function anhangUeberschrift(hInner: string): string {
-  const ohneZier = hInner
-    .replace(/<span\s+class="(?:display-icon|external-link-icon)"[^>]*>[\s\S]*?<\/span>/gi, '')
-    .replace(/<sup\b[\s\S]*?<\/sup>/gi, '');
+  const ohneZier = entferneFussnotenSups(
+    hInner.replace(/<span\s+class="(?:display-icon|external-link-icon)"[^>]*>[\s\S]*?<\/span>/gi, ''),
+  );
   return entferneTags(ohneZier);
 }
 
