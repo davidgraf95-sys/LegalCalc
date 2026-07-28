@@ -144,6 +144,13 @@ jobs:
       # public/rechtsprechung/, keine DB, kein Netz.
       - name: normKeys-Abdeckung (Verzahnung Rechtsprechung ↔ Gesetz)
         run: npm run check:normkeys
+      # Bezugs-Schicht (W2·7-BEZUG B1-B3): prueft, dass die Bundesgerichts-Sicht
+      # der Facetten-Shards die bestehende Artikel-Ebene EXAKT nachrechnet (also
+      # EIN Rechenweg, kein Parallelmodell), dass jede Kante aufloesbar ist und
+      # dass keine Deckel- oder Grundgesamtheits-Zahl luegt. Liest wie die Tore
+      # darueber nur die committeten Projektionen, keine DB, kein Netz.
+      - name: Bezugs-Schicht (Facetten · Projektion · Grundgesamtheit)
+        run: npm run check:bezuege
       # Selbstschutz der Tor-Landschaft: meldet neue Tore ohne CI-Lauf.
       # Lief selbst nur lokal — der Melder war damit so unsichtbar wie der
       # Defekt, den er meldet (F2b rekursiv).
