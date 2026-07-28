@@ -300,7 +300,14 @@
         "            Das Verfahren ist kostenlos.        "
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "AHVV",
+        "ATSG",
+        "BGG",
+        "FAMZG",
+        "KRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

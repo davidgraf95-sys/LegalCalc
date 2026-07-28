@@ -270,7 +270,10 @@
         "            Das Verfahren ist kostenlos."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "UVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

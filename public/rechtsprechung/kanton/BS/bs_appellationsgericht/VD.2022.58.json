@@ -147,7 +147,11 @@
         "Der Beschwerdeführer trägt die Kosten des verwaltungsgerichtlichen Beschwerdeverfahrens mit einer Gebühr von CHF 900.–, einschliesslich Auslagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

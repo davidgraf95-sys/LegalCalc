@@ -283,11 +283,12 @@
         "Art. 725b Abs. 3 CO"
       ],
       "normKeys": [
-        "SCHKG",
-        "ZPO",
-        "OR",
         "BGG",
-        "BV"
+        "BV",
+        "OR",
+        "SCHKG",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "4A_36/2019",

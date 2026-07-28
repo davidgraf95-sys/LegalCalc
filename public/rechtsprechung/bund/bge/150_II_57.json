@@ -263,9 +263,10 @@
         "Art. 76a Abs. 1 AIG"
       ],
       "normKeys": [
-        "BV",
         "AIG",
-        "BGG"
+        "BGG",
+        "BV",
+        "EMRK"
       ],
       "zitierteEntscheide": [
         "1C_355/2018",

@@ -336,7 +336,12 @@
         "          B____, Advokatin, wird ein Anwaltshonorar von Fr. 3'000.-- (inklusive Auslagen) zuzüglich Mehrwertsteuer von Fr. 231.-- aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

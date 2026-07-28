@@ -317,7 +317,11 @@
         "Der amtlichen Verteidigerin, lic. iur. Stefanie Stoll, werden für die zweite Instanz ein Honorar von CHF 4'500.– und ein Auslagenersatz von CHF 135.–, zuzüglich 8,1 % Mehrwertsteuer von CHF 375.45, somit total CHF 5'010.45, aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt im Umfang von 80 % vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

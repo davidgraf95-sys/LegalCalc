@@ -152,7 +152,11 @@
         "Dem Berufungskläger wird eine Parteientschädigung von pauschal CHF 4'000.–, zuzüglich 7,7 % MWST von CHF 308.–, für das erst- und zweitinstanzliche Verfahren aus der Gerichtskasse bezahlt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

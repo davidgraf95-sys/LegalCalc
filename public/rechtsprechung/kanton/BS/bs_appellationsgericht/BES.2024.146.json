@@ -214,7 +214,10 @@
         "Dem Verteidiger, lic. iur. Martin Lutz, werden für das Beschwerdeverfahren aus der Gerichtskasse ein Honorar von CHF 2’000.–, einschliesslich Auslagen, zuzüglich 8,1 % MWST von CHF 162.– ausgerichtet. Die Rückerstattungspflicht des Beschwerdeführers nach Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

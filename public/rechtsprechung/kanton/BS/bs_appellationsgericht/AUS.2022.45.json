@@ -165,7 +165,11 @@
         "            Es werden keine Kosten erhoben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "ASYLG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

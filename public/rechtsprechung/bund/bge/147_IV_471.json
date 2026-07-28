@@ -216,9 +216,11 @@
         "Art. 148a Abs. 2 STGB"
       ],
       "normKeys": [
-        "STGB",
+        "BGG",
         "BV",
-        "BGG"
+        "STGB",
+        "STPO",
+        "VSTRR"
       ],
       "zitierteEntscheide": [
         "6B_1308/2020",

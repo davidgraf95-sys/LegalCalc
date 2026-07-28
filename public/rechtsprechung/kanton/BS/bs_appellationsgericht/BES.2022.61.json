@@ -178,7 +178,12 @@
         "Die Beschwerdeführerin trägt die Kosten des Beschwerdeverfahrens mit einer Gebühr von CHF 600.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

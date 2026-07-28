@@ -289,7 +289,11 @@
         "Einer allfälligen Beschwerde gegen das vorliegende Urteil wird in Anwendungvon Art. 103 Abs. 2 lit. a des Bundesgesetzes über das Bundesgericht die aufschiebende Wirkung entzogen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

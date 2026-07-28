@@ -253,10 +253,13 @@
         "Art. 29a CST"
       ],
       "normKeys": [
-        "ZPO",
-        "SCHKG",
+        "BGG",
         "BV",
-        "BGG"
+        "BVG",
+        "GLG",
+        "SCHKG",
+        "VWVG",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "1C_185/2019",

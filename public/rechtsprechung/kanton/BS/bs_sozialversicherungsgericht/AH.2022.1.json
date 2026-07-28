@@ -255,7 +255,13 @@
         "            Die ausserordentlichen Kosten werden wettgeschlagen. Zufolge Bewilligung der unentgeltlichen Verbeiständung wird dem Rechtsvertreter des Beschwerdeführers, Dr. iur. B____, Advokat, wird ein Honorar von CHF 2'500.00 (inkl. Auslagen) zuzüglich CHF 192.50 Mehrwertsteuer aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "AHVV",
+        "ATSG",
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -213,7 +213,12 @@
         "Die Beschwerdeführenden tragen die Kosten des Beschwerdeverfahrens solidarisch mit einer Gebühr von CHF 600.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

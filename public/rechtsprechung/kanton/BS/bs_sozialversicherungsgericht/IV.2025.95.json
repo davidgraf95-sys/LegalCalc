@@ -300,7 +300,11 @@
         "          Dem Vertreter des Beschwerdeführers im Kostenerlass, lic. iur. André Baur, Advokat, wird ein Anwaltshonorar von Fr. 3'000.00 (inkl. Auslagen) ohne Mehrwertsteuer aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -205,7 +205,16 @@
         "Art. 127 CO",
         "Art. 135 CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "STPO",
+        "SVG",
+        "UWG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "4A_417/2021",
         "4A_543/2013",

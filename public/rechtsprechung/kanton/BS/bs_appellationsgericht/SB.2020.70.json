@@ -695,7 +695,14 @@
         "Der Privatklägerin 1 wird zu Lasten von A____ für das erstinstanzliche Verfahren eine reduzierte Parteientschädigung in Höhe von CHF 3'500.– (inkl. Auslagen und MWST) zugesprochen. Die Parteientschädigung fällt gemäss Art. 138 Abs. 2 der Strafprozessordnung zu Folge Bewilligung der unentgeltlichen Rechtspflege an den Kanton."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO",
+        "VZAE"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

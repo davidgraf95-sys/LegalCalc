@@ -118,7 +118,11 @@
         "Die Beklagte trägt die Gerichtskosten von CHF 400.– und bezahlt der Klägerin eine Parteientschädigung von CHF 530.– (einschliesslich Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "URG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

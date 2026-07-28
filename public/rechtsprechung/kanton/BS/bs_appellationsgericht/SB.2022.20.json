@@ -311,7 +311,11 @@
         "Der Beurteilten wird für das zweitinstanzliche Verfahren eine Parteientschädigung in Höhe von CHF 7'023.55 aus der Gerichtskasse zugesprochen (inkl. Auslagen und MWST)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

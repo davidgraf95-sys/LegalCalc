@@ -203,8 +203,11 @@
         "Art. 2 FUSG"
       ],
       "normKeys": [
+        "BGG",
+        "BV",
+        "FUSG",
         "HREGV",
-        "BGG"
+        "OR"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

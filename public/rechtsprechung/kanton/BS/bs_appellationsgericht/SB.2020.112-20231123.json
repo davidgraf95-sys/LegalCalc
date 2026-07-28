@@ -142,7 +142,11 @@
         "Für den vorliegenden Entscheid werden keine Kosten erhoben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

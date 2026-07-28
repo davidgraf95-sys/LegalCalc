@@ -231,9 +231,10 @@
         "Art. 430 Abs. 2 ZGB"
       ],
       "normKeys": [
-        "ZPO",
+        "BGG",
+        "BV",
         "ZGB",
-        "BGG"
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -163,7 +163,10 @@
         "Art. 91 Abs. 2 SVG"
       ],
       "normKeys": [
-        "STGB"
+        "BGG",
+        "STGB",
+        "SVG",
+        "VRV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

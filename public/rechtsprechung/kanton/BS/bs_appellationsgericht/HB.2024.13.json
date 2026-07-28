@@ -188,7 +188,13 @@
         "Dem amtlichen Verteidiger, [...], wird ein Honorar von CHF 1'020.65, einschliesslich Auslagen und Mehrwertsteuer, aus der Gerichtskasse ausgerichtet. Eine allfällige Rückforderung der Hälfte dieser Kosten gemäss Art. 135 Abs. 4 StPO wird dem Endentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

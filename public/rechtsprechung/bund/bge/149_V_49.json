@@ -193,9 +193,12 @@
         "Art. 59 ATSG"
       ],
       "normKeys": [
-        "BGG",
         "ATSG",
-        "BV"
+        "BGG",
+        "BV",
+        "EMRK",
+        "IVV",
+        "VWVG"
       ],
       "zitierteEntscheide": [
         "8C_108/2018",

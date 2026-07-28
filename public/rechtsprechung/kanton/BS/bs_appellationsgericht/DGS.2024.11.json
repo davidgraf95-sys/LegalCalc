@@ -179,7 +179,12 @@
         "Der amtlichen Verteidigung, [...], werden für das Ausstandsverfahren ein Honorar von CHF 1’372.– und ein Auslagenersatz von CHF 41.15, zuzüglich 8,1 % Mehrwertsteuer von CHF 114.45, insgesamt somit CHF 1’527.65, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

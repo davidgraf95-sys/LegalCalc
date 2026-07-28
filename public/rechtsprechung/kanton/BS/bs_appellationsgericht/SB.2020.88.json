@@ -805,7 +805,12 @@
         "Dem Privatverteidiger, lic. iur. Alain Joset, wird eine Entschädigung von CHF 12'914.70 für das erstinstanzliche Verfahren und von CHF 5'456.30 für das zweitinstanzliche Verfahren aus der Gerichtskasse zugesprochen (inkl. Auslagen und Mehrwertsteuer)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -196,7 +196,11 @@
         "-       Staatssekretariat für Migration"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "ASYLG",
+        "EMRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

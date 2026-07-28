@@ -154,7 +154,10 @@
         "Der Antrag auf Gewährung der amtlichen Verteidigung im Beschwerdeverfahren wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

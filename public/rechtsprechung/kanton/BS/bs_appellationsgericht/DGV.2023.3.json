@@ -151,7 +151,11 @@
         "Der Gesuchsteller trägt die Gerichtskosten des Ausstandsverfahrens mit einer Gebühr von CHF 300.–, einschliesslich Auslagen. Diese Kosten gehen zufolge Bewilligung der unentgeltlichen Rechtspflege zu Lasten der Gerichtskasse."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

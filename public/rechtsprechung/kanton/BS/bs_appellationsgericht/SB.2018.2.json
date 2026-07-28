@@ -429,7 +429,12 @@
         "Dem amtlichen Verteidiger, B____, wird für das Berufungsverfahren vor der Rückweisung ein Honorar von CHF 8'100.– aus der Gerichtskasse zugesprochen (bereits ausbezahlt). Für die Zeit nach der Rückweisung wird ihm ein Honorar von CHF 3'400.– und ein Auslagenersatz von CHF 78.–, somit total CHF 3’478.–, aus der Gerichtskasse zugesprochen. Im Umfang von insgesamt CHF 5'789.– bleibt Art. 135 Abs. 4 der Strafprozessordnung vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "JSTG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

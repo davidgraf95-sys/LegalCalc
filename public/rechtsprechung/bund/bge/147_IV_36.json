@@ -208,8 +208,10 @@
         "Art. 313 ZPO"
       ],
       "normKeys": [
-        "STPO",
+        "BGG",
+        "STBOG",
         "STGB",
+        "STPO",
         "ZPO"
       ],
       "zitierteEntscheide": [],

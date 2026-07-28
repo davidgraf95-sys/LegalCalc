@@ -197,7 +197,11 @@
         "Das Gesuch um unentgeltliche Rechtspflege wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

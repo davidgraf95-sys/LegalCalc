@@ -277,7 +277,12 @@
       ],
       "normKeys": [
         "ATSG",
-        "BGG"
+        "BGG",
+        "BV",
+        "IVG",
+        "KLV",
+        "KVG",
+        "KVV"
       ],
       "zitierteEntscheide": [
         "8C_424/2023",

@@ -299,7 +299,11 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird der Kindesvertreterin, lic. iur. Flurina Barblan, ein Honorar von CHF 983.34 nebst Auslagen von CHF 13.60, zuzüglich 8,1 % MWST von CHF 80.75, insgesamt somit CHF 1’077.70, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

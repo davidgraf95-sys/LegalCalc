@@ -286,8 +286,11 @@
         "Art. 61 ATSG"
       ],
       "normKeys": [
+        "ATSG",
         "BGG",
-        "ATSG"
+        "HMG",
+        "KVG",
+        "KVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -264,7 +264,12 @@
         "Art. 31 Abs. 3 VRK"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "BV",
+        "MWSTG",
+        "VRK",
+        "VSTRR",
+        "VZV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

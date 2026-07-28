@@ -204,7 +204,13 @@
         "Der amtlichen Verteidigerin, [...], werden für die Bemühungen bis 31. Dezember 2023 ein Honorar von CHF 4'384.– sowie eine Spesenvergütung von CHF 153.25 zuzüglich CHF 349.40 Mehrwertsteuer und für die Bemühungen ab 1. Januar 2024 ein Honorar von CHF 8'650.– sowie eine Spesenvergütung von CHF 278.60 zuzüglich CHF 723.20 Mehrwertsteuer aus der Strafgerichtskasse und für das Berufungsverfahren ein Honorar von CHF 9'466.– und ein Auslagenersatz von CHF 258.40, zuzüglich 8,1 % Mehrwertsteuer von insgesamt CHF 787.70, somit total CHF 10'512.10, aus der Gerichtskasse des Appellationsgerichts zugesprochen. Art. 135 Abs. 4 Strafprozessordnung wird für das erst- und das zweitinstanzliche Verfahren vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

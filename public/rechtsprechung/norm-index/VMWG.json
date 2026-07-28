@@ -1,9 +1,41 @@
 {
-  "erzeugt": "2026-07-20",
+  "erzeugt": "2026-07-28",
   "erlass": "VMWG",
   "gewichtQuelle": "alt",
   "proArtikel": {
+    "10": [
+      {
+        "key": "bge_147_III_14",
+        "zitierung": "BGE 147 III 14",
+        "regesteKurz": "Art. 269, 270 OR; Anfechtung des Anfangsmietzinses; Berechnung der Nettorendite; Teuerungsanpassung des Eigenkapitals und Eigenkapitalrendite (Rechtsprechungsänderung). Absolute Methode und anwendbare Kriterien für die Kontrolle des Anfang…",
+        "datum": "2020-10-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "11": [
+      {
+        "key": "bge_148_III_209",
+        "zitierung": "BGE 148 III 209",
+        "regesteKurz": "Art. 269a und 270 OR; Anfechtung des Anfangsmietzinses für eine Altbauwohnung; missbräuchlicher Mietzins; Festsetzung des neuen Anfangsmietzinses. Fälle, in denen die Missbräuchlichkeit des Anfangsmietzinses vermutet wird (Zusammenfassung…",
+        "datum": "2022-05-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_147_III_14",
+        "zitierung": "BGE 147 III 14",
+        "regesteKurz": "Art. 269, 270 OR; Anfechtung des Anfangsmietzinses; Berechnung der Nettorendite; Teuerungsanpassung des Eigenkapitals und Eigenkapitalrendite (Rechtsprechungsänderung). Absolute Methode und anwendbare Kriterien für die Kontrolle des Anfang…",
+        "datum": "2020-10-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
       {
         "key": "bge_147_III_431",
         "zitierung": "BGE 147 III 431",
@@ -13,6 +45,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_151_III_201",
+        "zitierung": "BGE 151 III 201",
+        "regesteKurz": "Art. 269a lit. c OR; Art. 58 ZPO; Anfechtung des Anfangsmietzinses; Dispositionsmaxime; Berechnung der Bruttorendite. Berechnung des zulässigen Mietzinses gemäss der Bruttorenditemethode; Grundsätze (E. 4). Das Gericht, das zur Festlegung…",
+        "datum": "2024-10-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_III_123",
@@ -35,14 +77,92 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_147_III_14",
+        "zitierung": "BGE 147 III 14",
+        "regesteKurz": "Art. 269, 270 OR; Anfechtung des Anfangsmietzinses; Berechnung der Nettorendite; Teuerungsanpassung des Eigenkapitals und Eigenkapitalrendite (Rechtsprechungsänderung). Absolute Methode und anwendbare Kriterien für die Kontrolle des Anfang…",
+        "datum": "2020-10-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "14": [
+      {
+        "key": "bge_151_III_16",
+        "zitierung": "BGE 151 III 16",
+        "regesteKurz": "Art. 269b, 269a lit. b OR und Art. 14 Abs. 1 und 4 VMWG; Indexmietverträge; Mietzinserhöhung aufgrund von Mehrleistungen des Vermieters; umfassende Überholungen; Rendite von wertvermehrenden Investitionen. Der zulässige Renditesatz für wer…",
+        "datum": "2024-07-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "15": [
+      {
+        "key": "bge_151_III_201",
+        "zitierung": "BGE 151 III 201",
+        "regesteKurz": "Art. 269a lit. c OR; Art. 58 ZPO; Anfechtung des Anfangsmietzinses; Dispositionsmaxime; Berechnung der Bruttorendite. Berechnung des zulässigen Mietzinses gemäss der Bruttorenditemethode; Grundsätze (E. 4). Das Gericht, das zur Festlegung…",
+        "datum": "2024-10-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "16": [
+      {
+        "key": "bge_147_III_14",
+        "zitierung": "BGE 147 III 14",
+        "regesteKurz": "Art. 269, 270 OR; Anfechtung des Anfangsmietzinses; Berechnung der Nettorendite; Teuerungsanpassung des Eigenkapitals und Eigenkapitalrendite (Rechtsprechungsänderung). Absolute Methode und anwendbare Kriterien für die Kontrolle des Anfang…",
+        "datum": "2020-10-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "17": [
+      {
+        "key": "bge_147_III_32",
+        "zitierung": "BGE 147 III 32",
+        "regesteKurz": "Art. 269b, 269d, 270a OR; indexierte Mietzinse; Herabsetzungsbegehren nach Ablauf der Mindestmietdauer; relative Berechnungsmethode und Ablehnung der absoluten Methode. Anwendbarkeit der relativen Berechnungsmethode beim Begehren um Änderu…",
+        "datum": "2021-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "19": [
+      {
+        "key": "bge_146_III_82",
+        "zitierung": "BGE 146 III 82",
+        "regesteKurz": "Art. 67 Abs. 1 und 130 Abs. 1 OR; Nichtigkeit des Anfangsmietzinses; Beginn der absoluten Verjährungsfrist für die Rückerstattungsforderung. Ist die Festsetzung des Anfangsmietzinses nichtig, beginnt die absolute Verjährungsfrist für den A…",
+        "datum": "2020-02-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_148_IV_288",
         "zitierung": "BGE 148 IV 288",
         "regesteKurz": "Art. 110 Abs. 4 und Art. 251 Ziff. 1 StGB; Art. 269d und 270 Abs. 2 OR; Art. 19 Abs. 1 VMWG; Urkundenfälschung; Formular im Hinblick auf den Abschluss eines neuen Mietvertrages. Das in Art. 269d OR und Art. 19 VMWG vorgeschriebene Formular…",
         "datum": "2022-06-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_63",
+        "zitierung": "BGE 148 III 63",
+        "regesteKurz": "Art. 67 und 270 Abs. 2 OR; Verjährung der Klage auf Feststellung der Nichtigkeit des Anfangsmietzinses; Beginn der Verjährungsfrist (Präzisierung der Rechtsprechung). Interesse des Mieters, den Anfangsmietzins anzufechten, je nachdem ob di…",
+        "datum": "2022-01-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

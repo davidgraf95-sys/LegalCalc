@@ -238,9 +238,10 @@
         "Art. 405 Abs. 3 STPO"
       ],
       "normKeys": [
-        "STPO",
         "BGG",
-        "STGB"
+        "STGB",
+        "STPO",
+        "SVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

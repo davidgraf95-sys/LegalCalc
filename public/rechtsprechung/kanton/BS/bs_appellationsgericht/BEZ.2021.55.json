@@ -137,7 +137,12 @@
         "Der Beschwerdegegner trägt die Gerichtskosten des Beschwerdeverfahrens von CHF 200.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "SCHKG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

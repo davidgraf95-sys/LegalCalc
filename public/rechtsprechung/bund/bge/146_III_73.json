@@ -217,7 +217,12 @@
       ],
       "normKeys": [
         "BGG",
-        "ZGB"
+        "BV",
+        "BVG",
+        "FZG",
+        "OR",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

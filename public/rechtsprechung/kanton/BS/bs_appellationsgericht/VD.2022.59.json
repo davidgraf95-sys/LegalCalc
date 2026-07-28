@@ -126,7 +126,9 @@
         "Der Rekurrent trägt die Kosten des Rekursverfahrens mit einer Gebühr von CHF 300.–, einschliesslich Auslagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

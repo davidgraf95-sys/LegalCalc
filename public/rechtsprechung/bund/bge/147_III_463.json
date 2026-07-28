@@ -198,7 +198,13 @@
         "Art. 42 Abs. 1 CO",
         "Art. 42 Abs. 2 CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "4A_126/2019",
         "4A_175/2018",

@@ -218,7 +218,11 @@
         "Der Beschwerdeführer hat dem Wahlverteidiger, [...], Advokat, eine Entschädigung in Höhe von CHF 11'462.50, zzgl. 3 % Auslagenpauschale von CHF 343.90 und 8,1 % MWST in der Höhe von CHF 956.30, total somit CHF 12'762.70, auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

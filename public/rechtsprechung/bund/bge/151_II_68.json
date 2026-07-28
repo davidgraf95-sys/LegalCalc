@@ -324,7 +324,10 @@
       ],
       "normKeys": [
         "BGG",
-        "BV"
+        "BV",
+        "DBG",
+        "VGG",
+        "VSTG"
       ],
       "zitierteEntscheide": [
         "2C_172/2024",

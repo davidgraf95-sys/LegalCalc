@@ -406,10 +406,11 @@
         "Art. 308 Abs. 1 ZPO"
       ],
       "normKeys": [
-        "ZPO",
-        "OR",
         "BGG",
-        "ZGB"
+        "BV",
+        "OR",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

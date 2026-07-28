@@ -399,7 +399,13 @@
         "Dem amtlichen Verteidiger, B____, werden für das zweitinstanzliche Verfahren ein Honorar von 11.25 Stunden à CHF 200.–, daher CHF 2’250, zuzüglich Auslagen von CHF 64.40 sowie 7,7 % MWST von CHF 178.21, insgesamt also CHF 2'428.21 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

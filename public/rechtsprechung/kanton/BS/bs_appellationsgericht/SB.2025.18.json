@@ -422,7 +422,13 @@
         "Der Vertreterin des Privatklägers im Kostenerlass, MLaw Kassandra Waldvogel, werden für das zweitinstanzliche Verfahren in Anwendung von Art. 136 in Verbindung mit Art. 426 Abs. 4 der Strafprozessordnung ein Honorar von CHF 1'766.65 und ein Auslagenersatz von CHF 38.–, zuzüglich 8,1 % Mehrwertsteuer von CHF 146.20, somit total CHF 1'950.85 aus der Gerichtskasse ausgerichtet. A____ hat dem Appellationsgericht den Betrag im Umfang von zwei Dritteln, somit CHF 1'300.60, zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben, in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 der Strafprozessordnung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

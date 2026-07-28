@@ -137,7 +137,11 @@
         "Dem Beschwerdeführer werden Gerichtskosten des Beschwerdeverfahrens in Höhe von CHF 300. – auferlegt. Diese Kosten gehen zufolge Bewilligung der unentgeltlichen Rechtspflege zu Lasten der Gerichtskasse. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

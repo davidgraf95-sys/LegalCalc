@@ -201,7 +201,11 @@
         "            Die Beschwerdeführerin trägt die ordentlichen Kosten des Verfahrens, bestehend aus einer Gebühr von CHF 800.--. Zufolge Bewilligung des Kostenerlasses gehen diese Kosten zu Lasten des Staates. "
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -308,10 +308,15 @@
         "Art. 147 DBG"
       ],
       "normKeys": [
-        "ZGB",
+        "ATSG",
+        "BGG",
         "BV",
         "DBG",
-        "BGG"
+        "MWSTG",
+        "STHG",
+        "VSTRR",
+        "VWVG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2A.251/1988",

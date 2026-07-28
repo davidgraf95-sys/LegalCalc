@@ -283,7 +283,11 @@
         "Die Beschwerdeführerin hat der Beschuldigten eine Parteientschädigung von CHF 1’077.– zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -287,7 +287,10 @@
         "Art. 135 SPVG/BE"
       ],
       "normKeys": [
-        "BV"
+        "BGG",
+        "BV",
+        "KVG",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

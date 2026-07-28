@@ -211,7 +211,11 @@
         "5.    Zufolge Bewilligung der unentgeltlichen Rechtspflege für die Berufungsbeklagte wird ihrer unentgeltlichen Rechtsbeiständin, Advokatin MLaw Wicky Tzikas, für das Berufungsverfahren eine Entschädigung von CHF 3'289.20, zuzüglich 8,1 % MWST von CHF 266.45, insgesamt somit CHF 3'555.65, aus der Gerichtskasse ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

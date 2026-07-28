@@ -160,7 +160,12 @@
         "A____ wird in Abweisung der Berufung der Staatsanwaltschaft von der Anklage der Nichtabgabe von Ausweisen und / oder Kontrollschilder gemäss Art. 97 Abs. 1 lit. b SVG kostenlos freigesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO",
+        "SVG",
+        "VZV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

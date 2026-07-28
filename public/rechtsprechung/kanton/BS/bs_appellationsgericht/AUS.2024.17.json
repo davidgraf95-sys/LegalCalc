@@ -156,7 +156,9 @@
         "-              Staatssekretariat für Migration"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

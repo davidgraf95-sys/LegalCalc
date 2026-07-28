@@ -133,7 +133,12 @@
         "Für das Gesuchsverfahren werden keine Kosten erhoben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

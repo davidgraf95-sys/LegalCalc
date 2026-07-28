@@ -1466,7 +1466,18 @@
         "Dem amtlichen Verteidiger von C____, [...], werden für das Berufungsverfahren für den Zeitraum ab 27. Juli 2022 ein Honorar von CHF 20'000.– und ein Auslagenersatz von CHF 600.–, zuzüglich 7,7 % Mehrwertsteuer von CHF 1'586.20, insgesamt CHF 22'186.– (gerundet), aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt im Umfang von 60 % vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BEWG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "GWG",
+        "IPRG",
+        "OR",
+        "STGB",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -213,10 +213,11 @@
         "Art. 266 Abs. 6 STPO"
       ],
       "normKeys": [
-        "SCHKG",
+        "BGG",
         "BV",
-        "STPO",
-        "BGG"
+        "SCHKG",
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

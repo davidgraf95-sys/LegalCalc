@@ -237,7 +237,11 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege werden dem Rechtsvertreter, [...], für das verwaltungsgerichtliche Rekursverfahren ein Honorar von CHF 4'033.35, zuzüglich Auslagen von CHF 200.– und 7,7 % Mehrwertsteuer von CHF 325.95 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

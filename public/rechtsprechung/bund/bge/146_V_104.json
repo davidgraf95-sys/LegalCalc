@@ -213,9 +213,11 @@
         "Art. 5 Abs. 1 LAVS"
       ],
       "normKeys": [
-        "AVIG",
         "AHVG",
-        "BGG"
+        "AHVV",
+        "AVIG",
+        "BGG",
+        "UVV"
       ],
       "zitierteEntscheide": [
         "8C_589/2019",

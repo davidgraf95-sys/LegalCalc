@@ -156,7 +156,12 @@
         "Die Beschwerdeführerin bezahlt der Beschwerdegegnerin eine Parteientschädigung von CHF 1'000.– einschliesslich Auslagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "PRG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -247,7 +247,10 @@
         "Auf die Erhebung von Kosten für das verwaltungsgerichtliche Verfahren wird verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

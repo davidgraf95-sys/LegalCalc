@@ -363,10 +363,12 @@
         "Art. 260 Abs. 2 SCHKG"
       ],
       "normKeys": [
-        "SCHKG",
         "BGG",
+        "BV",
+        "HREGV",
         "OR",
-        "HREGV"
+        "SCHKG",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "4C.164/2003",

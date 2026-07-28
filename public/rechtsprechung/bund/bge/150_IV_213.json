@@ -217,8 +217,9 @@
         "Art. 49 STGB"
       ],
       "normKeys": [
-        "STGB",
-        "BGG"
+        "BETMG",
+        "BGG",
+        "STGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -202,7 +202,10 @@
         "Über das Honorar des Verteidigers des Berufungsklägers wird mit dem Endentscheid befunden."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -173,7 +173,10 @@
         "Die Beschwerdeführerin 1 und der Beschwerdeführer 2 tragen die Gerichtskosten des Beschwerdeverfahrens solidarisch mit einer Gebühr von CHF 500.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -240,7 +240,11 @@
         "            Die Beschwerdegegnerin erstattet dem Beschwerdeführer die Kosten für die Beurteilung von Dr. med. F____ vom 14. Juli 2021 in Höhe von CHF 150.00."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

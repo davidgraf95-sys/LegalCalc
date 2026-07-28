@@ -14,26 +14,17 @@
 // Flags:  --schreiben (sonst dry-run)  ·  --nur=<id-prefix>
 //   vite-node scripts/normtext/sachverhalt-strukturieren.ts -- [--schreiben] [--nur=bund/bge]
 //
-import { readFileSync, readdirSync, writeFileSync, statSync } from 'node:fs';
+import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { teileSachverhalt, entrauscheSachverhalt } from '../../src/lib/rechtsprechung/sachverhalt';
 import { sha256EntscheidBloecke } from './sha-entscheide';
+import { alleSnapshots } from './snapshot-walker';
 import type { EntscheidBlock, EntscheidSnapshot, EntscheidSnapshotDatei } from '../../src/lib/rechtsprechung/typen';
 
 const PUB = join(process.cwd(), 'public', 'rechtsprechung');
 const args = process.argv.slice(2);
 const schreiben = args.includes('--schreiben');
 const nurPrefix = args.find((a) => a.startsWith('--nur='))?.split('=')[1] ?? null;
-
-function alleSnapshotDateien(dir: string): string[] {
-  const out: string[] = [];
-  for (const name of readdirSync(dir).sort()) {
-    const p = join(dir, name);
-    if (statSync(p).isDirectory()) out.push(...alleSnapshotDateien(p));
-    else if (name.endsWith('.json') && name !== 'register.json' && name !== 'norm-index.json') out.push(p);
-  }
-  return out;
-}
 
 const W = (s: string) => s.replace(/\s+/g, ' ').trim();
 /** Rekonstruktion aus Block-Folge (Marker + Text) — Basis der Invariante. */
@@ -43,10 +34,7 @@ function rekonstruiere(bloecke: EntscheidBlock[]): string {
 
 let geprueft = 0, gesplittet = 0, geschrieben = 0, uebersprungen = 0;
 
-for (const datei of alleSnapshotDateien(PUB)) {
-  const wrap = JSON.parse(readFileSync(datei, 'utf8')) as EntscheidSnapshotDatei;
-  const snap = wrap.eintraege[0] as EntscheidSnapshot | undefined;
-  if (!snap) continue;
+for (const { datei, wrap, snap } of alleSnapshots(PUB)) {
   if (nurPrefix && !snap.id.startsWith(nurPrefix)) continue;
   geprueft++;
 

@@ -198,7 +198,10 @@
         "Dem amtlichen Verteidiger, [...], substituiert durch [...], werden für das Beschwerdeverfahren ein Honorar von CHF 1'788.75 und ein Auslagenersatz von CHF 36.70, zuzüglich 7,7 % MWST von insgesamt CHF 140.55, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

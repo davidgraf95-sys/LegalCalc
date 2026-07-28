@@ -218,7 +218,14 @@
         "Dem amtlichen Verteidiger, Dr. Nicolas Roulet, werden für die zweite Instanz ein Honorar von CHF 1'850.– und ein Auslagenersatz von CHF 35.25, zuzüglich 8,1 % Mehrwertsteuer von insgesamt CHF 152.70, somit total CHF 2'037.95 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -171,7 +171,10 @@
         "Der Kindervertreterin, Advokatin MLaw Lisa Eisenhut-Hug wird für das Berufungsverfahren eine Entschädigung von CHF 800.–, zuzüglich MWST von CHF 67.25 (8,1 % auf CHF 830.–) sowie Auslagen von CHF 30.– aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

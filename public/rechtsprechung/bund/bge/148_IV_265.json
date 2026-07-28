@@ -183,7 +183,12 @@
         "Art. 356 CPP"
       ],
       "normKeys": [
-        "STPO"
+        "AIG",
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG",
+        "VZV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

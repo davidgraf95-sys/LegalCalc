@@ -173,7 +173,11 @@
         "Art. 83 LP"
       ],
       "normKeys": [
-        "SCHKG"
+        "BGG",
+        "BV",
+        "SCHKG",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

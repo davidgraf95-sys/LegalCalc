@@ -330,7 +330,14 @@
         "            Die ausserordentlichen Kosten werden wettgeschlagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "AHVV",
+        "ATSG",
+        "AVIG",
+        "BGG",
+        "OR"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

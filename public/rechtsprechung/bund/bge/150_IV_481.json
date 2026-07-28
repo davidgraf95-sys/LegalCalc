@@ -167,7 +167,12 @@
         "Art. 90 Abs. 3 SVG",
         "Art. 90 Abs. 3bis LCSTR"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [
         "6B_1016/2021",
         "6B_1379/2023",

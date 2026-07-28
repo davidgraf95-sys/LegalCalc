@@ -228,7 +228,10 @@
         "Der Antrag auf Bewilligung der amtlichen Verteidigung für das Beschwerdeverfahren wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

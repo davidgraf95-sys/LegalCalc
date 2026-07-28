@@ -223,7 +223,11 @@
         "Dem amtlichen Verteidiger, MLaw Lukas Schneiter, werden ein Honorar von CHF 800.– und ein Auslagenersatz von CHF 5.80, zuzüglich 8,1 % Mehrwertsteuer von insgesamt CHF 65.25, somit total CHF 871.05, aus der Gerichtskasse ausgerichtet. Der Entscheid über eine allfällige Rückforderung gemäss Art. 135 Abs. 4 der Strafprozessordnung bleibt dem Sachentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

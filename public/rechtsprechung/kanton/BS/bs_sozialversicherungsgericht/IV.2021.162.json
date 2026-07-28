@@ -380,7 +380,12 @@
         "            Die ausserordentlichen Kosten werden wettgeschlagen. Zufolge Bewilligung der unentgeltlichen Verbeiständung wird der Rechtsvertreterin, C____, Advokatin, ein Honorar von CHF 3'000.00 (inkl. Auslagen) nebst CHF 231.00 Mehrwertsteuer aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -272,7 +272,15 @@
         "Art. 42 Abs. 3bis OAC",
         "Art. 45 OAC"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO",
+        "SVG",
+        "VZV"
+      ],
       "zitierteEntscheide": [
         "6B_1188/2020",
         "6B_136/2021",

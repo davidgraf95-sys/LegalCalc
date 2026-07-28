@@ -248,11 +248,12 @@
         "Art. 649b ZGB"
       ],
       "normKeys": [
-        "OR",
-        "BV",
-        "ZGB",
         "BGG",
-        "SCHKG"
+        "BV",
+        "OR",
+        "SCHKG",
+        "VZG",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

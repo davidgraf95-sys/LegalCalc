@@ -473,7 +473,13 @@
         "Der amtlichen Verteidigerin des Berufungsklägers, [...], werden ein Honorar von CHF 4'400.– eine Auslagenentschädigung von CHF 59.55, zuzüglich 7,7% MWST von CHF 343.40, somit total CHF 4'802.95 aus der Gerichtskasse ausgerichtet. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

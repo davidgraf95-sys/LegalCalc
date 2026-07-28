@@ -345,7 +345,12 @@
         "Die Beschwerdeführerinnen tragen die Gerichtskosten des Beschwerdeverfahrens von CHF 7'000.– in solidarischer Verbindung und haben der Beschwerdegegnerin für das Beschwerdeverfahren in solidarischer Verbindung eine Parteientschädigung von CHF 5'768.– zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "FUSG",
+        "OR",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

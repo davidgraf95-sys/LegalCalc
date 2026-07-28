@@ -216,7 +216,11 @@
         "Art. 10 PRSG",
         "Art. 12 LSPRO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BGOE",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

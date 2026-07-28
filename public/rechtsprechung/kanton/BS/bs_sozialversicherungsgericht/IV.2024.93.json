@@ -286,7 +286,12 @@
         "            Dem Vertreter der Beschwerdeführerin im Kostenerlass, Dr. Peter Vetter, wird ein Anwaltshonorar von Fr. 3'000.-- (inklusive Auslagen) zuzüglich Mehrwertsteuer von Fr. 243.-- aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -257,8 +257,11 @@
       ],
       "normKeys": [
         "AIG",
+        "BGG",
         "BV",
-        "BGG"
+        "EMRK",
+        "VGG",
+        "VWVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

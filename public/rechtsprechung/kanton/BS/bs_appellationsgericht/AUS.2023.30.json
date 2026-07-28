@@ -162,7 +162,10 @@
         "            Das Gesuch um entgeltliche Verbeiständung wird als gegenstandslos abgeschrieben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "EMRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

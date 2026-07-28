@@ -347,7 +347,12 @@
         "Art. 22 LPA",
         "Art. 24 Abs. 2 LPA"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

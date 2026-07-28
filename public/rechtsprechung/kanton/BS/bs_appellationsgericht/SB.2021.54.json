@@ -443,7 +443,12 @@
         "Der amtlichen Verteidigerin des Berufungsklägers A____, [...], werden für das Berufungsverfahren ein Honorar von CHF 5'350.– und ein Auslagenersatz von CHF 117.40, zuzüglich 7,7% MWST von CHF 421.–, aus der Gerichtskasse bezahlt. Eine Rückforderung nach Art 135 Abs. 4 StPO bleibt für die Kosten des erst- und zweitinstanzlichen Verfahrens vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

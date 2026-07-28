@@ -217,7 +217,13 @@
         "Die allfällige Parteientschädigung für das Berufungsverfahren wird für die Berufungsklägerin auf CHF 12'360.– und für den Berufungsbeklagten auf CHF 10'300.–, zuzüglich Mehrwertsteuer von CHF 793.–, festgesetzt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

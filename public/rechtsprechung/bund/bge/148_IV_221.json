@@ -216,8 +216,11 @@
         "Art. 50 Abs. 3 VSTRR"
       ],
       "normKeys": [
+        "BGG",
         "BV",
-        "STPO"
+        "EMRK",
+        "STPO",
+        "VSTRR"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -269,7 +269,13 @@
       ],
       "normKeys": [
         "BGG",
-        "SCHKG"
+        "DBG",
+        "FUSG",
+        "MWSTG",
+        "MWSTV",
+        "OR",
+        "SCHKG",
+        "STHG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

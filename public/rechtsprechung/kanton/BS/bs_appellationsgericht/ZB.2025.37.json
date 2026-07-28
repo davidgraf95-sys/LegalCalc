@@ -97,7 +97,10 @@
         "Auf die Erhebung von Gerichtskosten für das Berufungsverfahren wird verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

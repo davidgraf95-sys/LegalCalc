@@ -190,7 +190,11 @@
         "Der Berufungskläger trägt die Verfahrenskosten von CHF 305.30 und die erstinstanzliche Urteilsgebühr von CHF 200.– sowie die Kosten des Berufungsverfahrens mit Einschluss einer Urteilsgebühr von CHF 1'000.– (inklusive Kanzleiauslagen und zuzüglich allfällige übrige Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

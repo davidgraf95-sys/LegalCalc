@@ -141,7 +141,12 @@
         "Die Beschwerdeführerin trägt die Gerichtskosten des Beschwerdeverfahrens von CHF 700.– und bezahlt der Beschwerdegegnerin eine Parteientschädigung von CHF 1'500.–, zuzüglich Auslagen von CHF 45.– und Mehrwertsteuer von CHF 119.– (7,7 % von CHF 1'545.–)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IPRG",
+        "LUGUE",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

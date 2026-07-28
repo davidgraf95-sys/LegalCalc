@@ -273,9 +273,13 @@
         "Art. 33 Abs. 1 DBG"
       ],
       "normKeys": [
+        "AHVG",
         "BGG",
-        "STHG",
-        "DBG"
+        "BPG",
+        "BVG",
+        "DBG",
+        "FZG",
+        "STHG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -358,8 +358,11 @@
         "Art. 108 LIFD"
       ],
       "normKeys": [
+        "BGG",
+        "BV",
         "DBG",
-        "BGG"
+        "STHG",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

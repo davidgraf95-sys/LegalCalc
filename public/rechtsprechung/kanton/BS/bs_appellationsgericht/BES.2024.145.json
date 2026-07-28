@@ -278,7 +278,14 @@
         "Für das Beschwerdeverfahren werden keine Kosten erhoben. Der geleistete Kostenvorschuss in Höhe von CHF 800.– wird zurückerstattet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "HREGV",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

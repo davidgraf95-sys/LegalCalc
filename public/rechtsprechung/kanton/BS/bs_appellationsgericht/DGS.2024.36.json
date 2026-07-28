@@ -267,7 +267,11 @@
         "Dem amtlichen Verteidiger des Gesuchstellers, Dr. iur. Yves Waldmann, Advokat, wird für das Ausstandsverfahren ein Honorar von CHF 1’600.– zuzüglich Auslagenpauschale von CHF 30.– und 8,1 % Mehrwertsteuer von CHF 132.05, somit total CHF 1’762.05 zugesprochen. Art. 135 Abs. 4 StPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

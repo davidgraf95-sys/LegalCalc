@@ -1,0 +1,55 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "PARTG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "13": [
+      {
+        "key": "bge_146_V_265",
+        "zitierung": "BGE 146 V 265",
+        "regesteKurz": "Art. 291 in Verbindung mit Art. 177 ZGB; Art. 20 Abs. 1 ATSG; Drittauszahlung einer Invalidenrente auf der Grundlage einer zivilgerichtlichen Schuldneranweisung. Die Ehefrau kann die Drittauszahlung der Invalidenrente des Ehemannes gestütz…",
+        "datum": "2020-05-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "14": [
+      {
+        "key": "bge_149_III_117",
+        "zitierung": "BGE 149 III 117",
+        "regesteKurz": "Art. 153 Abs. 2 lit. b SchKG; Betreibung auf Grundpfandverwertung; von den Ehegatten zusammen bewirtschaftetes landwirtschaftliches Gewerbe; Zustellung des Zahlungsbefehls. Der Ehegatte des Betriebenen, der mit diesem zusammen ein landwirt…",
+        "datum": "2022-10-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "27": [
+      {
+        "key": "bge_147_III_209",
+        "zitierung": "BGE 147 III 209",
+        "regesteKurz": "Art. 274a ZGB und Art. 27 Abs. 2 PartG. Voraussetzungen, unter denen einer Drittperson, insbesondere dem früheren eingetragenen Partner des Vaters oder der früheren eingetragenen Partnerin der Mutter, ein Anspruch auf persönlichen Verkehr…",
+        "datum": "2021-03-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "34": [
+      {
+        "key": "bge_151_V_137",
+        "zitierung": "BGE 151 V 137",
+        "regesteKurz": "Art. 20 ATSG; Art. 132 ZGB; Drittauszahlung sozialversicherungsrechtlicher Leistungen aufgrund einer Anweisung des Zivilgerichts. Eine vom Zivilgericht gestützt auf Art. 132 ZGB angeordnete Anweisung zur Drittauszahlung eines Teils der dem…",
+        "datum": "2025-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

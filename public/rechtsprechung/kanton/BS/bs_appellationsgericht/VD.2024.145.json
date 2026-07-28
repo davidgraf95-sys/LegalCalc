@@ -250,7 +250,10 @@
         "Die Rekurrentin und Beschwerdeführerin trägt die Gerichtskosten des verwaltungsgerichtlichen Rekurs- und Beschwerdeverfahrens mit einer Gebühr von CHF 2'400.–, einschliesslich Auslagen (CHF 1'200.– entfallend auf das Rekursverfahren VD.2024.145 und CHF 1'200.– entfallend auf das Beschwerdeverfahren VD.2024.146)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "DBG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

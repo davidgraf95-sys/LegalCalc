@@ -101,10 +101,54 @@ if (entry.length === 1) {
 //    passen durch, ein Massenimport nicht. Wer sie anhebt, hebt bewusst auch die
 //    Wartezeit bis zum ersten Treffer an — dann gehört die Staffelung
 //    (artikelVolltext.ts, `baue()`) mit überdacht, nicht bloss die Zahl.
+//
+//    W2·6-NKEY (28.7.2026): der Eintrag `norm-index.json` wandert auf
+//    `norm-index-erlasse.json`. Das ist KEINE Deckel-Anhebung, sondern ein
+//    Wechsel des gemessenen Objekts — und der Grund gehört hierher, weil die
+//    naheliegende Lesart («Budget wurde stillschweigend weicher») falsch wäre:
+//      · Der normKeys-Backfill (Dekret W2·6-NKEY: erst vollständig erkennen,
+//        dann kuratieren) hob die Erlass-Buckets von 25 auf 156 und die
+//        Artikel-Buckets von 355 auf 4452. norm-index.json wuchs dadurch von
+//        204 auf 724 KB gzip — gegen diese 260-KB-Schranke.
+//        (Zahlen am Landungsstand nachgemessen; die Erstfassung dieses
+//        Kommentars trug 157/4473/731 — den Stand VOR dem Rückbau der
+//        Häufigkeits-Schwelle aus Gegenprüfungs-Runde R3.)
+//      · Auf dem Nutzerpfad (kontextEntscheide → Verweis-Popover) braucht aber
+//        nur die ERLASS-Ebene geladen zu werden. Sie liegt seit W2·6-NKEY als
+//        eigene Projektion vor (schreibeKorpus schreibt beide aus derselben
+//        Quelle, Byte-Gleichheit prüft check:entscheide) und misst 93 KB gzip.
+//        `rechtsprechungFuerErlass()` zieht nur noch diese Datei.
+//      · Der Monolith trägt zusätzlich die Artikel-Ebene und ist damit reines
+//        Build-/Prüf-Artefakt: zur Laufzeit bedienen ihn nur noch Tests und die
+//        server-seitige Gegenprüfung (`rechtsprechungFuerArtikel`), die UI nimmt
+//        die 157 Shards. Seine Grösse deckelt `NORM_INDEX_BUDGET_MB` in
+//        scripts/normtext/check-entscheide.ts (Datei auf der Platte), die je
+//        Leserseite geladene Menge der dortige Per-Shard-Deckel.
+//      · Schranke = Ist 93 KB + ~30 % Reserve, gerundet. Sie bremst genau das,
+//        was hier zählt: ein Weiterwachsen der Erlass-Ebene auf dem kritischen
+//        Pfad. §15-Logikverlust-Bewertung: keiner — identische Daten, identische
+//        Rückgabe von rechtsprechungFuerErlass(), nur weniger Bytes.
+//    Wer `ladeNormIndex()` (Gesamt-JSON) wieder in eine Komponente holt, bringt
+//    den Monolithen auf den kritischen Pfad zurück und muss ihn hier wieder
+//    eintragen — der Kommentar an `ladeNormIndex` sagt dasselbe.
+//
+//    UND DIE ANDERE HÄLFTE DERSELBEN MESSUNG (28.7.2026, Linse 4 — gehört hierher,
+//    weil das Obige sonst wie eine reine Entlastungsgeschichte liest): DERSELBE
+//    normKeys-Backfill hat `register.json` um ~27.5 KB gzip auf 756.9 KB gehoben,
+//    gegen die 780-KB-Schranke — 97 % Deckel-Ausnutzung. Ursache ist dieselbe
+//    Vollständigkeit: `normKeys` steht je Entscheid IM Browse-Register, und der
+//    Backfill füllte es von 21.9 % auf 99.9 % der 5093 Entscheide.
+//    Der BREITESTE Pfad trägt die Abdeckung also mit, und er hat dafür am wenigsten
+//    Luft: register.json lädt jede Rechtsprechungs-Seite, nicht nur ein Popover.
+//    Bewusst NICHT hier gelöst — eine Schranke anzuheben, weil man an sie stösst,
+//    ist keine Massnahme, sondern deren Gegenteil (§8). Die Verschlankung
+//    (normKeys aus dem Browse-Register in eine eigene Projektion, wie es
+//    richter.json für die Spruchkörper-Slugs schon vormacht) ist als Folgearbeit
+//    benannt; bis dahin gilt: wer register.json weiter belädt, reisst das Tor.
 const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/register.json', 780 * 1024],
   ['public/rechtsprechung/richter.json', 24 * 1024],
-  ['public/rechtsprechung/norm-index.json', 260 * 1024],
+  ['public/rechtsprechung/norm-index-erlasse.json', 120 * 1024],
   ['public/such-index/artikel.json', 10_400 * 1024],
 ];
 // GEMESSEN WIRD DIE AUSGELIEFERTE KOPIE in dist/ — mit public/ nur als Rückfall.

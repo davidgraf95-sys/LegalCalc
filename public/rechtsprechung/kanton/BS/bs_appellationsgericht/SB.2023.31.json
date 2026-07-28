@@ -427,7 +427,13 @@
         "Dem amtlichen Verteidiger, lic. iur. Christoph Dumartheray, Advokat, werden für die zweite Instanz ein Honorar von CHF 4'480.– und ein Auslagenersatz von CHF 95.15, zuzüglich Mehrwertsteuer von insgesamt CHF 365.95 (7,7 % auf CHF 1'157.05 sowie 8,1 % auf CHF 3'418.10), somit total CHF 4'941.10 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

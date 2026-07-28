@@ -338,10 +338,13 @@
         "Art. 675 Abs. 2 OR"
       ],
       "normKeys": [
-        "ZPO",
+        "BGG",
+        "BV",
+        "KOV",
         "OR",
         "SCHKG",
-        "BGG"
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

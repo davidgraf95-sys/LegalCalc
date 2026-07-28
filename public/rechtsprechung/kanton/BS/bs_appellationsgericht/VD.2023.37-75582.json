@@ -136,7 +136,10 @@
         "Für das verwaltungsgerichtliche Rekursverfahren werden keine Gerichtskosten erhoben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

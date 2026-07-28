@@ -226,7 +226,13 @@
         "Das Präsidialdepartement hat den Beschwerdeführenden für das verwaltungsgerichtliche Beschwerdeverfahren eine Parteientschädigung von CHF 7'500.–, zuzüglich 7,7 % MWST von CHF 577.50, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BEWG",
+        "BEWV",
+        "BGG",
+        "BV",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

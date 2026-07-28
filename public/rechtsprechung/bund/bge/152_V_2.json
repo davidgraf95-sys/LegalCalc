@@ -247,9 +247,16 @@
         "Art. 23 Abs. 2 BGG"
       ],
       "normKeys": [
-        "BV",
         "ATSG",
-        "BGG"
+        "BGG",
+        "BV",
+        "IVG",
+        "KLV",
+        "KVG",
+        "MVG",
+        "OR",
+        "SVG",
+        "VWVG"
       ],
       "zitierteEntscheide": [
         "2C_492/2022",

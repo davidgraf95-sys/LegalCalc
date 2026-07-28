@@ -255,7 +255,12 @@
         "Art. 135 Abs. 4 StPO bleibt für die Verteidigungskosten des erst- und zweitinstanzlichen Verfahrens im Umfang von 90 % vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

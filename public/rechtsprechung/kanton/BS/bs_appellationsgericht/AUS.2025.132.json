@@ -138,7 +138,9 @@
         "            Der unentgeltlichen Rechtsbeiständin MLaw Elena Liechti wird ein Honorar von CHF 1'422.40 (einschliesslich Auslagen) aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

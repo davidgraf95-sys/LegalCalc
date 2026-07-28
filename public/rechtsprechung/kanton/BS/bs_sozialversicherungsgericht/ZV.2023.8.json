@@ -258,7 +258,13 @@
         "          Eine Rückforderung von der Klägerin bei verbesserten wirtschaftlichen Verhältnissen bleibt vorbehalten (Art. 123 Abs. 1 ZPO)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "OR",
+        "VVG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

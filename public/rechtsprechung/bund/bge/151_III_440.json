@@ -276,10 +276,12 @@
         "Art. 247 SCHKG"
       ],
       "normKeys": [
-        "ZGB",
         "BGG",
+        "BV",
         "OR",
-        "SCHKG"
+        "SCHKG",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "4A_418/2015",

@@ -220,7 +220,13 @@
         "            Das Verfahren ist kostenlos."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "AVIG",
+        "BGG",
+        "OR",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

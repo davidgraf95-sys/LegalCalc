@@ -268,7 +268,11 @@
         "          Dem Vertreter des Klägers im Kostenerlass, MLaw Ch. Stöbi, Advokat, Basel, wird ein Anwaltshonorar von Fr. 5'300.-- (inkl. Auslagen) zuzüglich Fr. 429.30 (8.1%) aus der Gerichtskasse zugesprochen. Eine Rückforderung vom Beschwerdeführer bei verbesserten wirtschaftlichen Verhältnissen bleibt vorbehalten (Art. 123 Abs. 1 ZPO)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "VVG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

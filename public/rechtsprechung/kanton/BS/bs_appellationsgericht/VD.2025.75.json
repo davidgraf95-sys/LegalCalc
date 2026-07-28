@@ -268,7 +268,11 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird dem Rechtsbeistand der Gesuchstellerin, Advokat Daniel Gmür, für das verwaltungsgerichtliche Verfahren eine Entschädigung von CHF 2'060.–, einschliesslich Auslagen und zuzüglich MWST von CHF 166.85, insgesamt somit CHF 2'226.85, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -287,7 +287,10 @@
         "Art. 39 Abs. 1 LOAP"
       ],
       "normKeys": [
-        "BV"
+        "BGG",
+        "BV",
+        "STBOG",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

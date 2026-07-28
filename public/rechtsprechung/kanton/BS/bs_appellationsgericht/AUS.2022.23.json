@@ -144,7 +144,10 @@
         "            Dem Rechtsvertreter […] werden ein Honorar von CHF 1‘200.–und ein Auslagenersatz von CHF 7.15, zuzüglich 7.7 % MWST von CHF 92.95, aus der Gerichtskasse bezahlt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "EMRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

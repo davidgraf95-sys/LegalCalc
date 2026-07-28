@@ -188,7 +188,11 @@
         "Dem Beschwerdeführer wird die amtliche Verteidigung bewilligt. Dem amtlichen Verteidiger, MLaw Dimitri Schärer, Advokat, wird aus der Gerichtskasse ein Honorar von CHF 800.– (inkl. allfälliger Auslagen), zuzüglich 8,1% MWST in Höhe von CHF 64.80, gesamthaft somit CHF 864.80 ausgerichtet. Der Entscheid über eine allfällige Rückforderung gemäss Art. 135 Abs. 4 StPO wird dem Sachentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

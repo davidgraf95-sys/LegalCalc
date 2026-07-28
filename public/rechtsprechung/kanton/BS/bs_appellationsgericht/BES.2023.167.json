@@ -157,7 +157,13 @@
         "-     Staatsanwaltschaft Basel-Stadt"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "STGB",
+        "STPO",
+        "VZAE"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

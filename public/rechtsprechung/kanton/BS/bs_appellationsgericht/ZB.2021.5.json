@@ -204,7 +204,12 @@
         "       5.  Der Ehemann trägt seine eigenen Parteikosten. Zufolge Bewilligung der unentgeltlichen Rechtpflege wird dem unentgeltlichen Rechtsbeistand des Ehemanns, [...], Advokat, eine Entschädigung von CHF 2ꞌ130.–, zuzüglich CHF 32.70 Auslagen und 7,7 % MWST von CHF 166.55, aus der Gerichtskasse des Appellationsgerichts ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

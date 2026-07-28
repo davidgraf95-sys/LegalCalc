@@ -231,7 +231,12 @@
         "Der Beschwerdeführer hat dem Vertreter der Beigeladenen, [...], für das verwaltungsgerichtliche Beschwerdeverfahren eine Parteientschädigung von CHF 1’030.– zuzüglich 7,7 % MWST von CHF 79.30 zu bezahlen. Für den Fall der nachgewiesenen Uneinbringlichkeit dieser Parteientschädigung wird dem Rechtsbeistand der Beigeladenen, [...], zufolge Bewilligung der unentgeltlichen Rechtspflege für das verwaltungsgerichtliche Beschwerdeverfahren ein Honorar von CHF 800.– zuzüglich Auslagen von CHF 30.– und 7,7 % MWST von CHF 63.90 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

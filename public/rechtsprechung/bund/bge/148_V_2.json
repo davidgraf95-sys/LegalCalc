@@ -199,7 +199,10 @@
         "Art. 59 ATSG"
       ],
       "normKeys": [
-        "ATSG"
+        "ATSG",
+        "BGG",
+        "UVV",
+        "VWVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

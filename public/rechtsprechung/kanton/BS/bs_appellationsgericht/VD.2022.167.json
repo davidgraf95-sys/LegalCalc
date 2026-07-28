@@ -226,7 +226,10 @@
         "Der Rekurrent trägt die Gerichtskosten des verwaltungsgerichtlichen Rekursverfahrens mit einer Gebühr von CHF 1‘200.–, einschliesslich Auslagen. Diese werden mit dem geleisteten Kostenvorschuss in gleicher Höhe verrechnet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

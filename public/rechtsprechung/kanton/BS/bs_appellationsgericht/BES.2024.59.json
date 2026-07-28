@@ -159,7 +159,10 @@
         "Der Antrag auf Ausrichtung einer Parteientschädigung bzw. einer Umtriebsentschädigung wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

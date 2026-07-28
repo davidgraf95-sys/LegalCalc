@@ -222,7 +222,12 @@
         "Die Beschwerdeführerin trägt die Kosten des Beschwerdeverfahrens mit einer Gebühr von CHF 800.–, einschliesslich Auslagen. Diese wird mit dem bereits geleisteten Kostenvorschuss in gleicher Höhe verrechnet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

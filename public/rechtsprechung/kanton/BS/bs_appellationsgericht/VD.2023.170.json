@@ -541,7 +541,18 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege hat das JSD dem unentgeltlichen Rechtsbeistand des Rekurrenten, Advokat [...], für das verwaltungsinterne Rekursverfahren eine reduzierte Entschädigung von CHF 825.–, einschliesslich Auslagen und zuzüglich 7,7 % MWST von CHF 64.–, insgesamt somit CHF 889.–, zu bezahlen und wird dem unentgeltlichen Rechtsbeistand des Rekurrenten für das verwaltungsgerichtliche Rekursverfahren eine reduzierte Entschädigung von CHF 1'648.–, einschliesslich Auslagen und zuzüglich MWST von CHF 129.– (7,7 % auf CHF 1'236.– und 8,1 % auf CHF 412.–), insgesamt somit CHF 1'777.–, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "SCHKG",
+        "SSV",
+        "STGB",
+        "SVG",
+        "VRV",
+        "VZAE"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

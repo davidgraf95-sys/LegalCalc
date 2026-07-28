@@ -223,9 +223,12 @@
         "Art. 32 DBG"
       ],
       "normKeys": [
-        "DBG",
         "BGG",
-        "BV"
+        "BV",
+        "BVG",
+        "DBG",
+        "STHG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2C_1081/2015",

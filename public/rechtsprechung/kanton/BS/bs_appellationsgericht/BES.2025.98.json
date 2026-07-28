@@ -268,7 +268,12 @@
         "Dem amtlichen Verteidiger, Dr. iur. Nicolas Roulet, Advokat, wird für das Beschwerdeverfahren ein Honorar von CHF 600.– (einschliesslich Auslagen), zuzüglich 8,1 % Mehrwertsteuer von CHF 48.60, somit total CHF 648.60 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -204,7 +204,11 @@
         "Die Kosten des Verfahrens gehen zu Lasten des Staates. Dem Beschwerdeführer wird aus der Gerichtskasse eine Parteientschädigung von CHF 1’600.15 ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

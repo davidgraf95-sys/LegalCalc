@@ -245,7 +245,10 @@
         "Art. 369 Abs. 1 CP",
         "Art. 369 Abs. 7 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB"
+      ],
       "zitierteEntscheide": [
         "1B_12/2023",
         "1B_213/2020",

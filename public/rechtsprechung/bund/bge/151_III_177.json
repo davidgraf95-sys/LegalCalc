@@ -346,8 +346,11 @@
         "Art. 170 Abs. 1 DBG"
       ],
       "normKeys": [
+        "BGG",
         "DBG",
-        "BGG"
+        "SCHKG",
+        "STHG",
+        "VSTG"
       ],
       "zitierteEntscheide": [
         "2C_1003/2011",

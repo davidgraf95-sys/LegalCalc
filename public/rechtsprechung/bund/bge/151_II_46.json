@@ -370,7 +370,10 @@
       ],
       "normKeys": [
         "BGG",
-        "OR"
+        "BV",
+        "OR",
+        "VGG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "1C_613/2015",

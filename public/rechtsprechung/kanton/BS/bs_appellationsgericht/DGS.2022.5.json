@@ -172,7 +172,11 @@
         "Dem amtlichen Verteidiger [...] wird für das Verfahren ein Honorar von CHF 600.–, einschliesslich Auslagen, zuzüglich 7,7 % Mehrwertsteuer von CHF 46.20, somit total CHF 646.20, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

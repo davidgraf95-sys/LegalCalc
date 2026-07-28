@@ -216,7 +216,13 @@
         "Dem Berufungskläger wird für das erstinstanzliche Verfahren ein Honorar von CHF 1’937.55 und ein Auslagenersatz von CHF 32.30, somit total CHF 1'969.85 und für das Berufungsverfahren ein Honorar von CHF 5’479.20 und ein Auslagenersatz von CHF 21.20, somit total CHF 5'500.40 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

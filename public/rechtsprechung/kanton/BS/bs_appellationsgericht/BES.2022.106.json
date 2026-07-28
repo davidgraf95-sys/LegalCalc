@@ -184,7 +184,11 @@
         "Der Beschwerdeführer trägt die ordentlichen Kosten des Beschwerdeverfahrens mit einer Gebühr von CHF 1’000.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

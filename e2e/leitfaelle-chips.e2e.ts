@@ -20,21 +20,34 @@ test.describe('Leitfälle-Chips im ArtikelLeser (OR)', () => {
     await art41.scrollIntoViewIfNeeded()
     // Chips wachsen idle ein (requestIdleCallback). Die Zeile trägt die Overline
     // «Leitfälle» und einen Chip-Link auf den einschlägigen BGE (aus dem OR-Shard).
+    //
+    // §6.3-DEKLARATION (28.7.2026, W2·6-NKEY): der Norm-Schlüssel-Backfill dieses
+    // Schritts hat die Fliesstext-Abdeckung erweitert — der OR/41-Bucket führt
+    // seither andere Entscheide. Erwartung darum vom früheren BGE 152 III 7 auf den
+    // Rang-1-Eintrag (`gewicht`-Reihenfolge) des Buckets umgestellt: BGE 146 IV 76
+    // aus public/rechtsprechung/norm-index/OR.json. Der geprüfte Sachverhalt bleibt
+    // identisch (Overline + Chip-Link + Ziel-Href), nur der Korpusstand ist neu.
     await expect(art41.getByText('Leitfälle', { exact: true })).toBeVisible()
-    await expect(art41.getByRole('link', { name: /BGE 152 III 7/ })).toBeVisible()
+    await expect(art41.getByRole('link', { name: /BGE 146 IV 76/ })).toBeVisible()
     // Der Chip führt in die Rechtsprechungs-Detailseite.
-    await expect(art41.getByRole('link', { name: /BGE 152 III 7/ })).toHaveAttribute('href', /\/rechtsprechung\/bge_152_III_7/)
+    await expect(art41.getByRole('link', { name: /BGE 146 IV 76/ })).toHaveAttribute('href', /\/rechtsprechung\/bge_146_IV_76/)
     expect(fehler).toEqual([])
   })
 
   test('(b) Artikel OHNE Leitfälle rendert KEINE leere Zeile', async ({ page }) => {
     await page.goto('/gesetze/bund/OR')
-    const art2 = page.locator('#art-2')
-    await art2.scrollIntoViewIfNeeded()
+    // §6.3-DEKLARATION (28.7.2026, W2·6-NKEY): der Norm-Schlüssel-Backfill hat die
+    // Fliesstext-Abdeckung erweitert — OR Art. 2 trägt seither einen Bucket und ist
+    // als «ohne Leitfälle»-Anker verbraucht. Anker darum auf Art. 4 verschoben (im
+    // OR-Shard weiterhin ohne Bucket, vgl. public/rechtsprechung/norm-index/OR.json).
+    // Der geprüfte Sachverhalt bleibt identisch: kein Bucket ⇒ KEINE leere Zeile.
+    const artOhne = page.locator('#art-4')
+    await expect(artOhne).toHaveCount(1)
+    await artOhne.scrollIntoViewIfNeeded()
     // Warten bis die Chips generell geladen sind (art-41 als Anker), dann prüfen,
-    // dass Art. 2 (ohne Treffer im Shard) KEINE «Leitfälle»-Overline trägt.
+    // dass Art. 4 (ohne Treffer im Shard) KEINE «Leitfälle»-Overline trägt.
     await expect(page.locator('#art-41').getByText('Leitfälle', { exact: true })).toBeVisible()
-    await expect(art2.getByText('Leitfälle', { exact: true })).toHaveCount(0)
+    await expect(artOhne.getByText('Leitfälle', { exact: true })).toHaveCount(0)
   })
 
   test('(c) vollständiger Normtext bleibt im DOM (Ctrl+F / §15.1)', async ({ page }) => {

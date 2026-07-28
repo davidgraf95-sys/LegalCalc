@@ -276,7 +276,11 @@
         "Das Justiz- und Sicherheitsdepartement hat für das verwaltungsinterne Rekursverfahren der Rekurrentin eine Parteientschädigung von CHF 1'750.–, einschliesslich Auslagen und zuzüglich 8,1 % MWST von CHF 141.75, und für das verwaltungsgerichtliche Rekursverfahren dem unentgeltlichen Rechtsbeistand der Rekurrentin, Advokat MLaw Daniel Gmür, eine Parteientschädigung von CHF 2'575.–, einschliesslich Auslagen und zuzüglich 8,1 % MWST von CHF 208.60, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "VZAE"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

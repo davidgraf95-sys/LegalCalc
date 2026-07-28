@@ -147,7 +147,11 @@
         "Über die Prozesskosten der vorsorglichen Massnahme wird zusammen mit der Hauptsache entschieden."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

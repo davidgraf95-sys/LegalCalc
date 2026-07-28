@@ -235,7 +235,11 @@
         "Der Kindsvertreterin, [...], Advokatin, wird ein Honorar von CHF 850.– zuzüglich CHF 6.20 Auslagenersatz aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -248,9 +248,13 @@
         "Art. 115 BV"
       ],
       "normKeys": [
-        "BVG",
         "BGG",
-        "BV"
+        "BV",
+        "BVG",
+        "FZG",
+        "FZV",
+        "OR",
+        "SCHKG"
       ],
       "zitierteEntscheide": [
         "1D_6/2018",

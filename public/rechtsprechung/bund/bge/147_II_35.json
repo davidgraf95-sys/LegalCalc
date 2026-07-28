@@ -197,7 +197,9 @@
         "Art. 31 Abs. 1 VRK"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "FZA",
+        "VRK"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

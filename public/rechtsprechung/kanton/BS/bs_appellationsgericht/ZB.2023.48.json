@@ -187,7 +187,11 @@
         "Der Berufungskläger hat der Berufungsbeklagten eine Parteientschädigung von CHF 780.– zuzüglich 7,7 % MWST von CHF 60.05 zu bezahlen. Zufolge offensichtlicher Uneinbringlichkeit der Parteientschädigung und Bewilligung der unentgeltlichen Rechtspflege für die Ehefrau wird ihrer unentgeltlichen Rechtsvertreterin, [...], ein Honorar von CHF 630.– einschliesslich Auslagen und zuzüglich 7,7 % MWST von CHF 48.50 aus der Gerichtskasse ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO durch den Berufungskläger bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

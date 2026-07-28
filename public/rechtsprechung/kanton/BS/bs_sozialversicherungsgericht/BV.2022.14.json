@@ -249,7 +249,12 @@
         "            Die Beklagte trägt eine Gebühr von Fr. 500.00."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BVG",
+        "OR",
+        "SCHKG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

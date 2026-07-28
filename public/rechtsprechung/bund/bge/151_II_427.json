@@ -248,11 +248,12 @@
         "Art. 7 Abs. 1 STHG"
       ],
       "normKeys": [
-        "ZGB",
+        "BGG",
+        "BV",
         "DBG",
-        "ZPO",
         "STHG",
-        "BGG"
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "2C_1039/2015",

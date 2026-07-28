@@ -294,7 +294,11 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird dem Kindesvertreter, [...], für das verwaltungsgerichtliche Beschwerdeverfahren ein Honorar von CHF 3’200.– zuzüglich Auslagen von CHF 7.40 und 7,7 % MWST von CHF 247.– aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

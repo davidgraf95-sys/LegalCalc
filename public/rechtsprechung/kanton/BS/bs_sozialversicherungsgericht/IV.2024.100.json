@@ -295,7 +295,12 @@
         "          Die ausserordentlichen Kosten werden wettgeschlagen. Zufolge Bewilligung der unentgeltlichen Verbeiständung ist B____, Rechtsanwalt, ein Honorar von Fr. 3'000.00 (inkl. Auslagen) nebst Fr. 243.00 Mehrwertsteuer aus der Gerichtskasse auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

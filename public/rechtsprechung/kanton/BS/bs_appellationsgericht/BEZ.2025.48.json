@@ -131,7 +131,10 @@
         "Die Beschwerdeführer tragen die Gerichtskosten von CHF 300.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

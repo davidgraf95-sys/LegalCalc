@@ -181,7 +181,11 @@
         "Der Rekurrent trägt die Gerichtskosten des verwaltungsgerichtlichen Rekurs- und Beschwerdeverfahrens mit einer Gebühr von insgesamt CHF 2'000.–, einschliesslich Auslagen (CHF 1'200.– für das Rekursverfahren VD.2022.107 und CHF 800.– für das Beschwerdeverfahren VD.2022.108). Die Gerichtskosten werden mit den geleisteten Kostenvorschüssen von insgesamt CHF 3'500.– (CHF 2'000.– für das Rekursverfahren VD.2022.107 und CHF 1'500.– für das Beschwerdeverfahren VD.2022.108) verrechnet, sodass die Gerichtskasse dem Rekurrenten insgesamt CHF 1'500.– zurückzuerstatten hat (CHF 800.– für das Rekursverfahren VD.2022.107 und CHF 700.– für das Beschwerdeverfahren VD.2022.108)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "DBG",
+        "EMRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -178,7 +178,10 @@
         "Dem amtlichen Verteidiger, [...], werden für seinen Aufwand aus der Gerichtskasse ein Honorar von CHF 1’200.‒ sowie eine Kleinspesenpauschale von CHF 36.‒ (3 %) zuzüglich 7,7 % MWST von CHF 95.15, insgesamt also CHF 1’331.15 ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

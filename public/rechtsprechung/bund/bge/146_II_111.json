@@ -481,10 +481,12 @@
         "Art. 127 Abs. 2 BV"
       ],
       "normKeys": [
-        "ZGB",
-        "DBG",
+        "BGG",
         "BV",
-        "BGG"
+        "DBG",
+        "OR",
+        "STHG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2A.196/2001",

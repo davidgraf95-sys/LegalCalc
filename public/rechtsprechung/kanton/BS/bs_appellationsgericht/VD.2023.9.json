@@ -186,7 +186,11 @@
         "von CHF 1‘500.– (inkl. Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "LSV",
+        "USG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -192,7 +192,11 @@
         "Art. 63 Abs. 2 LDFR",
         "Art. 63 LDFR"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGBB",
+        "BGG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "2C_20/2021",
         "2C_317/2023",

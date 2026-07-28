@@ -193,8 +193,10 @@
         "Art. 32 UVV"
       ],
       "normKeys": [
+        "ATSG",
+        "BGG",
         "UVG",
-        "BGG"
+        "UVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

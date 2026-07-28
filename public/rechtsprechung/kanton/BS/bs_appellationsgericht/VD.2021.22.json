@@ -206,7 +206,12 @@
         "Dem unentgeltlichen Rechtsbeistand des Rekurrenten, Advokat [...], wird für das verwaltungsgerichtliche Rekursverfahren ein Honorar von CHF 2’382.–, einschliesslich Auslagen, zuzüglich 7,7 % MWST von CHF 183.40, somit total CHF 2’565.40, aus der Gerichtskasse ausgerichtet. "
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

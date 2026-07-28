@@ -179,7 +179,10 @@
         "AUFSICHTSKOMMISSION ÜBER DIE"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGFA",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

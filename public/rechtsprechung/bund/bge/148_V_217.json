@@ -223,9 +223,9 @@
         "Art. 25 ATSG"
       ],
       "normKeys": [
-        "BGG",
         "AHVG",
-        "ATSG"
+        "ATSG",
+        "BGG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -234,7 +234,13 @@
         "Art. 22 Abs. 3 LPP"
       ],
       "normKeys": [
-        "BVG"
+        "AHVG",
+        "AHVV",
+        "BGG",
+        "BV",
+        "BVG",
+        "FAMZG",
+        "IVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

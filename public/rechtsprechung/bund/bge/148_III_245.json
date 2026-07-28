@@ -348,9 +348,12 @@
         "Art. 33 IPRG"
       ],
       "normKeys": [
-        "ZGB",
         "BGG",
-        "BV"
+        "BV",
+        "EMRK",
+        "IPRG",
+        "ZGB",
+        "ZSTV"
       ],
       "zitierteEntscheide": [
         "2C_750/2020",

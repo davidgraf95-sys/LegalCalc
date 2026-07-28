@@ -240,7 +240,12 @@
         "            Die Beschwerdegegnerin hat der Beschwerdeführerin die Kosten für die Beurteilung von Dr. med.  vom 3. August 2022 in Höhe von CHF 500.00 zu ersetzen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG",
+        "UVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

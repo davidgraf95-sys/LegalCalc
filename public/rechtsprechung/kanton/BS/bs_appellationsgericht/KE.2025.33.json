@@ -174,7 +174,12 @@
         "Die Beschwerdeführerin hat dem Beigeladenen für das vorliegende Verfahren eine Parteientschädigung von CHF 1'030.–, einschliesslich Auslagen und zuzüglich 8,1 % MWST von CHF 83.45, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

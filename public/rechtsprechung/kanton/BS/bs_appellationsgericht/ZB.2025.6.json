@@ -151,7 +151,14 @@
         "Die Parteientschädigung für das Berufungsverfahren wird auf CHF 10'000.–, zuzüglich einer Auslagenpauschale von CHF 300.– und 8,1 % MWST von CHF 834.30, festgesetzt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "STGB",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

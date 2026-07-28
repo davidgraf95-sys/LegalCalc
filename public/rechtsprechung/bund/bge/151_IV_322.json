@@ -206,9 +206,10 @@
         "Art. 80 Abs. 1 BGG"
       ],
       "normKeys": [
-        "STPO",
         "BGG",
-        "DBG"
+        "DBG",
+        "STPO",
+        "VSTRR"
       ],
       "zitierteEntscheide": [
         "1B_611/2019",

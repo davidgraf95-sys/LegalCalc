@@ -152,7 +152,10 @@
         "Art. 9 CST"
       ],
       "normKeys": [
-        "STGB"
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

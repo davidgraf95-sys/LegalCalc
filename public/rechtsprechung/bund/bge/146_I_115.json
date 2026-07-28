@@ -188,10 +188,11 @@
         "Art. 364b BGE"
       ],
       "normKeys": [
-        "STPO",
         "BGG",
         "BV",
-        "STGB"
+        "EMRK",
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

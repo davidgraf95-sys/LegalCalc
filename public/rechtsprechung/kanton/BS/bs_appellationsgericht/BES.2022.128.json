@@ -184,7 +184,11 @@
         "Dem Vertreter der Beschwerdeführer im Kostenerlass, B____, wird für das Beschwerdeverfahren ein Honorar von CHF 800.–, zuzüglich Auslagen von CHF 24.–, zuzüglich 7,7% MWST von CHF 63.45, insgesamt somit CHF 887.45, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

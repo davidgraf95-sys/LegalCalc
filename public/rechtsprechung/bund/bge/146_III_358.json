@@ -268,7 +268,14 @@
         "Art. 77 Abs. 1 LDIP",
         "Art. 77 Abs. 3 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "IPRG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

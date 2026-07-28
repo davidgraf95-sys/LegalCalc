@@ -202,7 +202,13 @@
         "Das Justiz- und Sicherheitsdepartement hat dem Rekurrenten für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 3'412.– zuzüglich Mehrwertsteuer von CHF 264.70 (7,7 % auf CHF 2'918.20 und 8,1 % auf CHF 493.90), somit insgesamt CHF 3'676.70, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -196,7 +196,12 @@
         "          Der Beschwerdeführer hat die ordentlichen Kosten, bestehend aus einer Gebühr von Fr. 800.--, zu tragen. Zufolge Bewilligung des Kostenerlasses gehen diese Kosten zu Lasten des Staates."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

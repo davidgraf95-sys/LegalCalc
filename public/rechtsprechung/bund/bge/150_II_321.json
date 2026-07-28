@@ -278,10 +278,11 @@
         "Art. 46 Abs. 2 ABV"
       ],
       "normKeys": [
+        "ATSG",
+        "BGG",
         "BV",
         "STHG",
-        "ATSG",
-        "BGG"
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

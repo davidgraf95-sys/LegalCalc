@@ -275,7 +275,11 @@
         "            Zufolge Bewilligung der unentgeltlichen Verbeiständung wird B____ ein Honorar von Fr. 1'333.35 (inklusive Auslagen) zuzüglich Mehrwertsteuer von Fr. 102.65 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "ATSV",
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

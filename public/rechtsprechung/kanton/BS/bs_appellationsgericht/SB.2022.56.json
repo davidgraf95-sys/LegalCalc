@@ -197,7 +197,10 @@
         "Über die Kosten- und Entschädigungsfolgen wird mit dem Urteil in der Sache entschieden."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

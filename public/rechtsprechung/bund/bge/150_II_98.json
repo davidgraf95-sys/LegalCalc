@@ -213,8 +213,12 @@
         "Art. 32 FINIG"
       ],
       "normKeys": [
+        "BGG",
         "BV",
-        "BGG"
+        "FINIG",
+        "KAG",
+        "KKV",
+        "OR"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

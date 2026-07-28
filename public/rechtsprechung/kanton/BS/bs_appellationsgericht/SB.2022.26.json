@@ -412,7 +412,12 @@
         "Art. 135 Abs. 4 der Strafprozessordnung bleibt im Umfang von 75 % vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "JSTG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

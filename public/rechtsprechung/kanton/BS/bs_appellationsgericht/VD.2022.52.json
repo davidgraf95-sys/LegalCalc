@@ -148,7 +148,10 @@
         "Umständehalber wird auf die Erhebung einer Gebühr verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "VWVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -181,7 +181,10 @@
         "Die Rekurrierenden 3 und 4 bezahlen in solidarischer Verpflichtung den Beigeladenen in solidarischer Verbindung für das Rekursverfahren VD.2021.205 eine Parteientschädigung von CHF 2'272.10, einschliesslich Auslagen, zuzüglich 7,7 % MWST von CHF 174.95."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

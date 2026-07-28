@@ -276,7 +276,14 @@
         "Der Rekurrent trägt die Kosten des verwaltungsgerichtlichen Verfahrens mit einer Gebühr von CHF 1'200.–, einschliesslich Auslagen. Diese Kosten gehen zufolge Bewilligung der unentgeltlichen Rechtspflege zulasten der Gerichtskasse."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

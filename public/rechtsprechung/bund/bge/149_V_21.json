@@ -224,7 +224,11 @@
       ],
       "normKeys": [
         "AHVG",
-        "BGG"
+        "AHVV",
+        "ATSG",
+        "AVIG",
+        "BGG",
+        "BV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

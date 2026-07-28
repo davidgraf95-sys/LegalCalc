@@ -181,11 +181,11 @@
         "Art. 429 Abs. 2 STPO"
       ],
       "normKeys": [
-        "STGB",
         "BGG",
-        "ZGB",
         "OR",
-        "STPO"
+        "STGB",
+        "STPO",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "4A_373/2007",

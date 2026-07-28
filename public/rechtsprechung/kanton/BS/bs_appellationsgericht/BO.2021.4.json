@@ -127,7 +127,10 @@
         "REKURSKOMMISSION FÜR DIE JUSTIZVOLLZUGSANSTALT BOSTADEL"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "VWVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

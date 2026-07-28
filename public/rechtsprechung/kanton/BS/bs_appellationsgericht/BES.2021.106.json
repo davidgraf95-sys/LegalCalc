@@ -188,7 +188,10 @@
         "A____ wird eine Parteientschädigung von CHF 1’000.– (einschliesslich Auslagen), zuzüglich 7,7 % MWST von CHF 77.–, zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -262,8 +262,11 @@
       ],
       "normKeys": [
         "BGG",
+        "BV",
         "DBG",
-        "SCHKG"
+        "OR",
+        "SCHKG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2A.45/2001",

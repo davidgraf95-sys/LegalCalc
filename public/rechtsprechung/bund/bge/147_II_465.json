@@ -214,7 +214,10 @@
         "Art. 24d RPG"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "BV",
+        "RPG",
+        "RPV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

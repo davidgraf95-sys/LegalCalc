@@ -213,7 +213,15 @@
         "Art. 272 Abs. 1 LEF",
         "Art. 272 LEF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "IPRG",
+        "OR",
+        "SCHKG",
+        "STGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "5A_165/2010",
         "5A_222/2012",

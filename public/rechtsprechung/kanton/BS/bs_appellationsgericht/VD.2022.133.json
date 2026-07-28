@@ -344,7 +344,11 @@
         "Der Kindesvertreterin, [...], wird ein Honorar von CHF 3’530.–, zuzüglich Auslagen von CHF 154.– und 7,7 % MWST, total CHF 3’967.65, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

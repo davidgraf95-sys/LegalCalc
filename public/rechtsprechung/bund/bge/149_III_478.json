@@ -287,9 +287,14 @@
         "Art. 8 ZGB"
       ],
       "normKeys": [
-        "ZPO",
+        "BGG",
+        "BV",
+        "IPRG",
+        "LUGUE",
+        "OR",
+        "STGB",
         "ZGB",
-        "BGG"
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "4A_112/2020",

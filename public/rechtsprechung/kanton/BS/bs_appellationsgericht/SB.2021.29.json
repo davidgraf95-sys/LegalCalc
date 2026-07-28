@@ -405,7 +405,12 @@
         "           Dem amtlichen Verteidiger, [...], werden für das Berufungsverfahren ein Honorar von CHF 2'249.80 und ein Auslagenersatz von CHF 45.30, zuzüglich 7,7 % MWST (CHF 176.70), insgesamt somit CHF 2'471.80 aus der Gerichtskasse zugesprochen. In Bezug auf die in Rechtskraft erwachsene Entschädigung der amtlichen Verteidigung für das erstinstanzliche Verfahren bleibt Art. 135 Abs. 4 StPO vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

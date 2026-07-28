@@ -182,7 +182,11 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege werden dem Vertreter des Rekurrenten, [...], aus der Gerichtskasse ein Honorar von CHF 1’600.–, zuzüglich CHF 48.‒ Auslagenersatz sowie 7,7 % Mehrwertsteuer von insgesamt CHF 126.90 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

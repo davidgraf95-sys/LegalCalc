@@ -182,7 +182,10 @@
         "Dem Zeugen C____ wird aus der Gerichtskasse eine Zeugenentschädigung von CHF 205.‒ ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

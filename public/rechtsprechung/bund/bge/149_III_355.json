@@ -238,9 +238,12 @@
         "Art. 6 Abs. 1 ZPO"
       ],
       "normKeys": [
-        "ZPO",
         "BGG",
-        "OR"
+        "BV",
+        "OR",
+        "SCHKG",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

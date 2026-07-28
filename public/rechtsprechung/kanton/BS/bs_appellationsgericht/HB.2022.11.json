@@ -221,7 +221,12 @@
         "Der amtlichen Verteidigerin, [...], Anwältin, wird für das Beschwerdeverfahren ein Honorar von CHF 824.– (einschliesslich Auslagen), zuzüglich 7,7 % MWST von CHF 63.45, insgesamt also CHF 887.45 aus der Gerichtskasse zugesprochen. Der Entscheid über eine allfällige Rückforderung gemäss Art. 135 Abs. 4 StPO wird dem Sachentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

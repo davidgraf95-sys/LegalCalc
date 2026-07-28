@@ -373,8 +373,10 @@
         "Art. 22 BV"
       ],
       "normKeys": [
+        "BGG",
         "BV",
-        "BGG"
+        "EMRK",
+        "EPG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

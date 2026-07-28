@@ -173,7 +173,12 @@
         "Dem Rechtsvertreter des Gesuchstellers wird zu Lasten der Gerichtskasse ein Honorar von CHF 600.– zuzüglich 7,7 % MWST von CHF 46.20 zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

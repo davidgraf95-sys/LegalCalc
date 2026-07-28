@@ -246,7 +246,14 @@
         "          Das Verfahren ist kostenlos."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "AVIG",
+        "AVIV",
+        "BGG",
+        "BV",
+        "FZA"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

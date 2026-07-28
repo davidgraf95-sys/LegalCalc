@@ -171,7 +171,10 @@
         "Die Gerichtskosten des Berufungsverfahrens werden mit dem Kostenvorschuss der Berufungsklägerin 1 von CHF 900.– und dem Kostenvorschuss der Berufungsklägerin 2 von CHF 2'100.– verrechnet, so dass die Berufungsklägerin 2 der Berufungsklägerin 1 CHF 900.– zu bezahlen hat."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -143,7 +143,10 @@
         "Für das Beschwerdeverfahren werden keine Gerichtskosten erhoben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

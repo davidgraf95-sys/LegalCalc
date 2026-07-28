@@ -547,10 +547,11 @@
         "Art. 404 Abs. 1 STPO"
       ],
       "normKeys": [
-        "STGB",
-        "STPO",
         "BGG",
-        "BV"
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [
         "6B_1016/2021",

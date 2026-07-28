@@ -159,7 +159,10 @@
         "Die Beschwerdeführer bezahlen der Beschwerdegegnerin eine Parteientschädigung von CHF 3'000.–. Die von den Beschwerdeführern geleistete Sicherheit von CHF 3'000.– wird dementsprechend der Beschwerdegegnerin überwiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

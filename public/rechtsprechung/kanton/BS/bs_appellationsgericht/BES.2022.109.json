@@ -292,7 +292,11 @@
         "Das Gesuch um amtliche Verteidigung im Ausstandsverfahren wird abgelehnt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -272,7 +272,11 @@
         "Dem amtlichen Verteidiger, [...], Advokat, wird ein Honorar von CHF 1'000.–, zuzüglich Auslagen von CHF 30.– und 7,7 % MWST von CHF 79.30, insgesamt also CHF 1'109.30 aus der Gerichtskasse ausgerichtet. Der Entscheid über eine allfällige Rückforderung gemäss Art. 135 Abs. 4 StPO wird dem Sachentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

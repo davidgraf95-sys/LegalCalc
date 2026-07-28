@@ -40,7 +40,46 @@ const BUDGET_MB = 1024;
 // der Fan-out still ballooniert. Ist 2.7.2026 ≈ 0.53 MB (Erlass- + Artikel-Ebene);
 // Deckel bewusst fliessend (Ist + grosszügige Reserve, bei Korpus-Ausbau nachziehen),
 // bremst Unfälle, limitiert nicht künstlich (analog BUDGET_MB).
-const NORM_INDEX_BUDGET_MB = 3;
+// 28.7.2026 (W2·6-NKEY Backfill): 3 → 8 MB. Ursache ist der Artikel-Fan-out der
+// Fliesstext-Erkennung: der Backfill leitet die normKeys über ALLE 5093 Snapshots ab
+// (vorher 1114), wodurch die Artikel-Ebene von 355 auf 4473 Buckets wächst — das Dekret
+// («vollständig erkennen») ist genau dieser Fan-out, nicht ein Unfall. Ist 28.7.2026 =
+// 6.13 MB, Deckel = Ist + ~25 % Reserve.
+//
+// WAS DIESER DECKEL IST — und was er NICHT ist (Linse 3, 28.7.2026, korrigiert die
+// §15-Bewertung von ccde5187). Hier stand, die Auslieferung erfolge «bereits über die
+// 157 Shards», die Anhebung sei also laufzeit-neutral. Das war NACHGEPRÜFT FALSCH:
+// `ladeNormIndex()` fetchte norm-index.json zur LAUFZEIT, und `kontextEntscheide()`
+// (src/lib/kontext.ts) rief darüber `rechtsprechungFuerErlass()` für das Verweis-
+// Popover auf (KontextPanel.tsx). Die Shards sind die Artikel-, nicht die Erlass-Ebene
+// und ersetzten ihn nicht.
+// AUFGELÖST (W2·6-NKEY, 28.7.2026) nicht durch Anheben der gzip-Schranke, sondern
+// durch eine schlanke Laufzeit-Projektion: schreibeKorpus schreibt zusätzlich
+// `norm-index-erlasse.json` = { erzeugt, proNorm } aus DERSELBEN Quelle (§5, Byte-
+// Gleichheit unten geprüft), und `rechtsprechungFuerErlass()` lädt nur noch die
+// (93 statt 731 KB gzip). Damit trägt norm-index.json keinen Laufzeitpfad mehr —
+// übrig bleibt `rechtsprechungFuerArtikel()` für Tests/Gegenprüfung.
+// Dieser Deckel misst darum die DATEI AUF DER PLATTE (Unfall-Bremse gegen still
+// ballonierenden Fan-out), NICHT die Nutzlast auf dem kritischen Pfad. Dafür
+// zuständig ist check:perf-budget (scripts/check-perf-budget.ts) — und dort steht
+// die gzip-Schranke jetzt auf norm-index-erlasse.json, mit derselben Begründung.
+// §15-Logikverlust-Bewertung unverändert: keiner — reine Index-Grösse ohne
+// Regeländerung, identische Rückgabewerte.
+const NORM_INDEX_BUDGET_MB = 8;
+// Per-Shard-Deckel (Linse 3, 28.7.2026, §15). Der Monolith-Deckel oben sagt NICHTS
+// über die je Seite tatsächlich geladene Menge: der ArtikelLeser (gesetz-leser/
+// inhalt.tsx, KontextPanel.tsx) zieht über `ladeLeitfallShard` genau EINEN Shard
+// je Erlass. Der Backfill hat die grossen Shards ~3.5× wachsen lassen (Ist
+// 28.7.2026, KiB wie unten gemessen: STPO 584, STGB 437, ZPO 426, OR 419,
+// ZGB 398), und für sie gab es bis jetzt gar keinen Deckel: ein weiterer
+// Fan-out-Schritt wäre auf der Leseseite still angekommen. 1024 KB = grösster
+// Ist-Wert + ~75 % Reserve, fliessend nachzuziehen wie BUDGET_MB (Freigabe-Logik
+// David 26.6.2026) — er bremst Unfälle, limitiert nicht künstlich.
+// §6.7-Sabotage-Probe 28.7.2026: mit Deckel 400 KB meldet das Tor genau STPO,
+// STGB, ZPO und OR rot — es kann scheitern, und zwar an den richtigen Dateien.
+// Die eigentliche Lade-Optimierung (Shard-Staffelung/Artikel-Fenster) ist
+// W2·7-VZUI-Thema, nicht diese Bau-Einheit.
+const SHARD_BUDGET_KB = 1024;
 const AHV = /\b756\.\d{4}\.\d{4}\.\d{2}\b/;   // CH-Sozialversicherungsnummer (darf nicht vorkommen)
 
 const fehler: string[] = [];
@@ -216,6 +255,38 @@ function main() {
     const niMb = statSync(niPfad).size / (1024 * 1024);
     if (niMb > NORM_INDEX_BUDGET_MB) fehler.push(`norm-index.json-Budget überschritten: ${niMb.toFixed(2)} MB > ${NORM_INDEX_BUDGET_MB} MB (Artikel-Fan-out?)`);
 
+    // ── Schlanke Laufzeit-Projektion ≡ Monolith (W2·6-NKEY §5/§15) ─────────────
+    // norm-index-erlasse.json trägt dieselbe Erlass-Ebene wie norm-index.json und ist
+    // die Datei, die `rechtsprechungFuerErlass()` zur Laufzeit zieht. Zwei Dateien mit
+    // demselben Inhalt sind nur so lange EINE Quelle, wie das jemand nachprüft — sonst
+    // entsteht genau die zweite Wahrheit, die §5 verbietet (ein Nachpflege-Skript, das
+    // nur den Monolithen anfasst, würde die UI still auf Altstand servieren).
+    // Der Beweis ist BYTE-scharf, nicht bloss strukturell: erwartet wird exakt die
+    // Serialisierung, die schreibeKorpus() erzeugt (2-Space, Trailing-Newline, dieselbe
+    // Schlüsselfolge) — damit fällt auch eine blosse Umsortierung auf.
+    const erlPfad = join(PUB, 'norm-index-erlasse.json');
+    if (!existsSync(erlPfad)) {
+      fehler.push('norm-index-erlasse.json fehlt — der Laufzeitpfad (rechtsprechungFuerErlass) lädt diese Datei; Korpus neu schreiben.');
+    } else {
+      const soll = JSON.stringify({ erzeugt: idx.erzeugt, proNorm: idx.proNorm }, null, 2) + '\n';
+      const ist = readFileSync(erlPfad, 'utf8');
+      if (ist !== soll) {
+        const istObj = JSON.parse(ist) as { erzeugt: string; proNorm: Record<string, unknown[]> };
+        const istKeys = Object.keys(istObj.proNorm ?? {});
+        const sollKeys = Object.keys(idx.proNorm);
+        const fehlend = sollKeys.filter((k) => !istKeys.includes(k));
+        const zuviel = istKeys.filter((k) => !sollKeys.includes(k));
+        fehler.push(
+          `norm-index-erlasse.json ≠ norm-index.json (proNorm/erzeugt) — zweite Wahrheit auf dem Laufzeitpfad (§5). `
+          + `Buckets ist ${istKeys.length} / soll ${sollKeys.length}`
+          + (fehlend.length ? `, fehlend: ${fehlend.slice(0, 5).join(', ')}` : '')
+          + (zuviel.length ? `, überzählig: ${zuviel.slice(0, 5).join(', ')}` : '')
+          + (istObj.erzeugt !== idx.erzeugt ? `, erzeugt ${istObj.erzeugt} ≠ ${idx.erzeugt}` : '')
+          + '. Korpus neu schreiben (npm run entscheide -- --remap).',
+        );
+      }
+    }
+
     // Schaufenster-Shards (Weiche B): jeder Shard MUSS die Artikel-Ebene des Gesamt-JSON
     // reproduzieren — MEMBERSHIP (welche Leitfälle je Artikel) zeichengleich, damit der
     // ArtikelLeser dieselben Chips zeigt wie rechtsprechungFuerArtikel() (keine Daten-
@@ -229,6 +300,17 @@ function main() {
       const proArtikelSoll = idx.proNormArtikel ?? {};
       const erlasseSoll = new Set(Object.keys(proArtikelSoll).map((k) => k.slice(0, k.indexOf('/'))));
       const shardDateien = readdirSync(shardDir).filter((f) => f.endsWith('.json')).sort();
+      // Grösster Shard sichtbar machen: ein Deckel, dessen Abstand niemand sieht,
+      // wird erst beim Reissen bemerkt (§8).
+      const groesster = shardDateien
+        .map((f) => ({ f, kb: statSync(join(shardDir, f)).size / 1024 }))
+        .sort((a, b) => b.kb - a.kb || (a.f < b.f ? -1 : 1))[0];
+      if (groesster) {
+        console.log(
+          `[check:entscheide] Shards: ${shardDateien.length}, grösster ${groesster.f} `
+          + `${groesster.kb.toFixed(0)} KB (Budget ${SHARD_BUDGET_KB} KB).`,
+        );
+      }
       const erlasseIst = new Set(shardDateien.map((f) => f.slice(0, -5)));
       for (const e of erlasseSoll) if (!erlasseIst.has(e)) fehler.push(`Shard fehlt für Erlass '${e}' (hat Artikel-Treffer im norm-index)`);
       for (const e of erlasseIst) if (!erlasseSoll.has(e)) fehler.push(`Shard '${e}.json' ohne Artikel-Treffer im norm-index (verwaist)`);
@@ -236,7 +318,19 @@ function main() {
       const ohneGewicht = (r: LeitfallRef): string => JSON.stringify({ ...r, gewicht: 0 });
       const gesehen = new Set<string>();
       for (const f of shardDateien) {
-        const s = JSON.parse(readFileSync(join(shardDir, f), 'utf8')) as LeitfallShard;
+        const shardPfad = join(shardDir, f);
+        // Per-Shard-Deckel (§15): dies ist die Menge, die eine EINZELNE Leserseite
+        // wirklich zieht — der Monolith-Deckel oben sieht sie nicht.
+        const shardKb = statSync(shardPfad).size / 1024;
+        if (shardKb > SHARD_BUDGET_KB) {
+          fehler.push(
+            `Shard '${f}' überschreitet das Per-Shard-Budget: ${shardKb.toFixed(0)} KB > `
+            + `${SHARD_BUDGET_KB} KB. Das ist die Nutzlast EINER Erlass-Leserseite `
+            + `(ladeLeitfallShard) — entweder den Fan-out prüfen oder den Deckel `
+            + `deliberat nachziehen (§15; Lade-Optimierung → W2·7-VZUI).`,
+          );
+        }
+        const s = JSON.parse(readFileSync(shardPfad, 'utf8')) as LeitfallShard;
         const erlass = f.slice(0, -5);
         if (s.erlass !== erlass) fehler.push(`Shard '${f}': erlass-Feld '${s.erlass}' ≠ Dateiname '${erlass}'`);
         if (s.gewichtQuelle !== 'alt' && s.gewichtQuelle !== 'e4') fehler.push(`Shard '${f}': gewichtQuelle '${String(s.gewichtQuelle)}' ∉ {alt,e4}`);
@@ -261,6 +355,22 @@ function main() {
       }
       for (const ak of Object.keys(proArtikelSoll)) if (!gesehen.has(ak)) fehler.push(`proNormArtikel '${ak}' fehlt in den Shards (Projektion unvollständig)`);
     }
+  } else {
+    // §6.7 — ein Tor, das nicht scheitern kann, ist gefährlicher als keines.
+    // ALLES oberhalb hängt an diesem einen `existsSync`: Key-Integrität beider
+    // Index-Ebenen, das norm-index-Budget, die BYTE-Gleichheit der Laufzeit-
+    // Projektion norm-index-erlasse.json und die komplette Shard-Membership.
+    // Ohne diesen Zweig verschwände die Deckung STILL, sobald der Monolith fehlt:
+    // das Tor meldete grün, ohne irgendetwas davon geprüft zu haben — und gerade
+    // die Laufzeit-Datei bliebe ungeprüft, obwohl sie die ist, die der Nutzer lädt.
+    // Ein fehlender Monolith ist kein zulässiger Zustand: schreibeKorpus schreibt
+    // ihn bei JEDEM Lauf.
+    fehler.push(
+      'norm-index.json fehlt — damit entfiele die gesamte Norm-Index-Deckung '
+      + '(Key-Integrität, Grössen-Budget, Byte-Gleichheit von norm-index-erlasse.json '
+      + 'auf dem Laufzeitpfad, Shard-Membership). Korpus neu schreiben '
+      + '(npm run entscheide -- --remap).',
+    );
   }
 
   // ERFASST == Manifest-Keys

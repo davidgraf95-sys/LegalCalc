@@ -149,7 +149,10 @@
         "Das Gesuch um amtliche Verteidigung für das vorliegende Beschwerdeverfahren wird bewilligt. Dem Verteidiger, Dr. Yves Waldmann, wird aus der Gerichtskasse ein Honorar von CHF 800.–, einschliesslich Auslagen, zuzüglich 8,1% MWST von CHF 64.80 ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

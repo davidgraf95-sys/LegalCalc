@@ -271,7 +271,12 @@
         "Die Rekurrierenden tragen die ordentlichen Kosten des verwaltungsgerichtlichen Verfahrens mit einer Gebühr von CHF 1'200.– in solidarischer Verbindung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "EMRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

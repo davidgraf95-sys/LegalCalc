@@ -428,7 +428,12 @@
         "Dem Privatkläger wird gemäss Art. 436 Abs. 1 in Verbindung mit Art. 433 Abs. 1 der Strafprozessordnung zu Lasten von A____ eine Parteientschädigung von CHF 8'701.30 für das erstinstanzliche verfahren und eine Parteientschädigung von CHF 8'351.35 (inkl. Auslagen und MWST) für das Berufungsverfahren zugesprochen. Die Mehrforderung wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "DSG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

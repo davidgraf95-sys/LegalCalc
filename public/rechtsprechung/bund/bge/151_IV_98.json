@@ -167,7 +167,11 @@
         "Art. 382 CPP",
         "Art. 393 CPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "1B_526/2020",
         "6B_1314/2016",

@@ -357,7 +357,10 @@
         "Der Regierungsrat hat der Rekurrentin für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 10’995.85, einschliesslich Auslagen und zuzüglich MWST von CHF 890.65 zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

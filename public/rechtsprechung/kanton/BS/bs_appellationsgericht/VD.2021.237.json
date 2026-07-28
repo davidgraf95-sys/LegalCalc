@@ -197,7 +197,13 @@
         "Das verwaltungsgerichtliche Rekursverfahren ist kostenlos."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "AHVV",
+        "BGG",
+        "FAMZG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

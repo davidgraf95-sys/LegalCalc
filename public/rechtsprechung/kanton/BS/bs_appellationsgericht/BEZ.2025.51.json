@@ -158,7 +158,11 @@
         "Der beim Appellationsgericht Basel-Stadt hinterlegte Betrag von CHF 5'400.– wird der Beschwerdeführerin zurückbezahlt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

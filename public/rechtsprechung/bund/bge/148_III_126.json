@@ -246,10 +246,11 @@
         "Art. 78 CO"
       ],
       "normKeys": [
-        "ZGB",
-        "OR",
         "BGG",
-        "BV"
+        "BPG",
+        "BV",
+        "OR",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

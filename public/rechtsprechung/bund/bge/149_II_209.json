@@ -315,7 +315,10 @@
         "Art. 97 Abs. 2 LRTV",
         "Art. 97 LRTV"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [
         "2C_1023/2021",
         "2C_1052/2021",

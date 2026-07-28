@@ -287,8 +287,9 @@
         "Art. 99 Abs. 2 BGG"
       ],
       "normKeys": [
-        "BGG",
         "ATSG",
+        "BGG",
+        "BV",
         "IVG"
       ],
       "zitierteEntscheide": [],

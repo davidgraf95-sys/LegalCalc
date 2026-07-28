@@ -195,7 +195,10 @@
       ],
       "normKeys": [
         "BGG",
-        "SCHKG"
+        "BV",
+        "GEBV_SCHKG",
+        "SCHKG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "5A_235/2017",

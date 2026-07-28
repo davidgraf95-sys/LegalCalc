@@ -379,10 +379,13 @@
         "Art. 34 Abs. 2 STGB"
       ],
       "normKeys": [
-        "STGB",
-        "DBG",
         "BGG",
-        "STPO"
+        "BV",
+        "DBG",
+        "EMRK",
+        "MWSTG",
+        "STGB",
+        "VSTRR"
       ],
       "zitierteEntscheide": [
         "2C_113/2018",

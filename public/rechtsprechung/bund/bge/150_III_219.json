@@ -168,8 +168,10 @@
         "Art. 31 SCHKG"
       ],
       "normKeys": [
+        "BGG",
         "SCHKG",
-        "BGG"
+        "VBB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

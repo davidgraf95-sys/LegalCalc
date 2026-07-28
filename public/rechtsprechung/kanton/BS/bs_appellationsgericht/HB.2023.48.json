@@ -152,7 +152,10 @@
         "Der amtlichen Verteidigerin, [...], Advokatin, wird ein Honorar von CHF 800.- (einschliesslich Auslagen und MWST) aus der Gerichtskasse bezahlt. Eine allfällige Rückforderung der Hälfte dieser Kosten gemäss Art. 135 Abs. 4 StPO wird dem Endentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

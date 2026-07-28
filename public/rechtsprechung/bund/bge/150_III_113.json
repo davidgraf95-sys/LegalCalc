@@ -813,10 +813,11 @@
         "Art. 837 Abs. 1 ZGB"
       ],
       "normKeys": [
-        "ZGB",
-        "ZPO",
         "BGG",
-        "OR"
+        "BV",
+        "OR",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

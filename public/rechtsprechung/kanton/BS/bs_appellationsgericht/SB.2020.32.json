@@ -250,7 +250,12 @@
         "Dem amtlichen Verteidiger, [...], Rechtsanwalt, wird für die zweite Instanz ein Honorar von CHF 6’654.45 (inkl. Auslagen und MWST) aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

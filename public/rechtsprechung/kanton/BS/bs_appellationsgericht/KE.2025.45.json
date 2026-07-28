@@ -189,7 +189,11 @@
         "Der Kindervertreterin, lic. iur. Nadja Pini, wird für das vorliegende Verfahren eine Entschädigung von CHF 2'344.– aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -126,7 +126,12 @@
         "Die Beschwerde gegen den Entscheid der unteren Aufsichtsbehörde über das Betreibungs- und Konkursamt vom 8. April 2026 (AB.2025.37) wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "VZG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -188,8 +188,10 @@
         "Art. 14a ELV"
       ],
       "normKeys": [
+        "BGERR",
+        "BGG",
         "ELG",
-        "BGG"
+        "ELV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

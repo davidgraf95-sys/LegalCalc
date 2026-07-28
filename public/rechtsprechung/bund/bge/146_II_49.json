@@ -203,11 +203,14 @@
         "Art. 62 Abs. 2 LSTRI"
       ],
       "normKeys": [
-        "STGB",
-        "BGG",
-        "STPO",
         "AIG",
-        "BV"
+        "BGG",
+        "BV",
+        "EMRK",
+        "FZA",
+        "STGB",
+        "STPO",
+        "SVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

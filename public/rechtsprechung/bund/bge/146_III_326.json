@@ -242,7 +242,11 @@
         "Art. 8 CC",
         "Art. 97 CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "4A_119/2018",
         "4A_230/2008",

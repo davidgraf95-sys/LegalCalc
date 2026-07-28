@@ -243,8 +243,11 @@
         "Art. 91 CO"
       ],
       "normKeys": [
-        "OR",
-        "BGG"
+        "AVIG",
+        "BGG",
+        "BV",
+        "EPG",
+        "OR"
       ],
       "zitierteEntscheide": [
         "4A_109/2008",

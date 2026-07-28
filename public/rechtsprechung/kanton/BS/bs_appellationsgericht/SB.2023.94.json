@@ -370,7 +370,12 @@
         "Überdies wird dem Privatkläger D____ gemäss Art. 433 Abs. 1 StPO zu Lasten der Berufungskläger eine Parteientschädigung zugesprochen, welche in solidarischer Haftung für das erstinstanzliche Verfahren auf CHF 1’720.25 sowie für das zweitinstanzliche Verfahren auf CHF 880.60 (jeweils inkl. Auslagen und MWST) festgesetzt wird."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

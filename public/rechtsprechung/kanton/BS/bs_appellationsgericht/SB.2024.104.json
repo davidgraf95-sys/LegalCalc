@@ -332,7 +332,13 @@
         "Der amtlichen Verteidigerin, lic. phil. Constanze Seelmann, MLaw, Advokatin werden für die zweite Instanz ein Honorar von CHF 3'984.00 und ein Auslagenersatz von CHF 155.95, zuzüglich Mehrwertsteuer von insgesamt CHF 330.00 (8,1 % von CHF 4'074.35), somit total CHF 4'469.95 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

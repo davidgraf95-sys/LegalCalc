@@ -201,9 +201,11 @@
         "Art. 25 Abs. 1 ATSG"
       ],
       "normKeys": [
-        "ZGB",
         "ATSG",
-        "BGG"
+        "BGG",
+        "PARTG",
+        "VWVG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "5P.474/2005",

@@ -411,7 +411,10 @@
         "Die Rekurrierenden tragen die Kosten des Rekurs- und Beschwerdeverfahrens vor der Steuerrekurskommission mit einer reduzierten Gebühr von CHF 2‘250.– (CHF 750.– für das Verfahren STRK.2018.182 und CHF 1‘500.– für das Verfahren STRK 2018.183) sowie die Kosten des verwaltungsgerichtlichen Rekursverfahren mit einer reduzierten Gebühr von CHF 1'500.– für das Verfahren VD.2020.214 und von CHF 1’500.– für das Verfahren VD.2020.215 (je einschliesslich Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "DBG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

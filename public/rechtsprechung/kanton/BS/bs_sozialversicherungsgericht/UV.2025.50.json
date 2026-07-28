@@ -226,7 +226,11 @@
         "           Dem Rechtsvertreter des Beschwerdeführers im Kostenerlass, Dr. Marco Chevalier, Advokat, wird ein Anwaltshonorar von CHF 3'000.00 (inkl. Auslagen) zuzüglich CHF 243.00 Mehrwertsteuer aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

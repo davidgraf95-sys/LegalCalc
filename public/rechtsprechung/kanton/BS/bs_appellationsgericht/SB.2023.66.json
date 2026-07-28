@@ -264,7 +264,12 @@
         "A____ wird eine reduzierte Parteientschädigung von CHF 2'076.80 für das erstinstanzliche Verfahren sowie von CHF 3'822.40 für das zweitinstanzliche Verfahren (je inkl. Auslagen) aus der Gerichtskasse zugesprochen. Diese wird mit der Busse sowie mit den Verfahrenskosten und der reduzierten Urteilsgebühr des erstinstanzlichen Verfahrens verrechnet. Der Überschuss von CHF 5'268.90 wird A____ ausbezahlt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

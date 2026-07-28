@@ -202,7 +202,11 @@
         "Den Vertretern der Beschwerdeführer, lic. iur. Filippo Ferrari, Rechtsanwalt, und lic. iur. Nicola Orelli, Rechtsanwalt, wird eine Entschädigung von CHF 2'162.– (inkl. 8,1 % MWST von CHF 162.–) ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

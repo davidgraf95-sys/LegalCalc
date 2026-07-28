@@ -174,7 +174,11 @@
         "Über die Kosten des vorliegenden Zwischen-Verfahrens wird mit dem Urteil in der Sache entschieden."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BV",
+        "JSTPO",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

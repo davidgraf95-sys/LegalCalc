@@ -484,7 +484,15 @@
         "A____ wird für das zweitinstanzliche Verfahren eine reduzierte Parteientschädigung von CHF 1'525.–, einschliesslich MWST und Auslagen, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG",
+        "VRV",
+        "VZV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

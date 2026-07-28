@@ -337,8 +337,14 @@
       ],
       "normKeys": [
         "BGG",
+        "BV",
         "DBG",
-        "BV"
+        "MWSTG",
+        "MWSTV",
+        "OR",
+        "STHG",
+        "VGG",
+        "VWVG"
       ],
       "zitierteEntscheide": [
         "2A.101/1993",

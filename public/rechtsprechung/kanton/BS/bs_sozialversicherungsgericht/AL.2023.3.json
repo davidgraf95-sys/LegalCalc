@@ -241,7 +241,13 @@
         "          Die ausserordentlichen Kosten werden wettgeschlagen. Zufolge Bewilligung der unentgeltlichen Prozessführung ist der Vertreterin des Beschwerdeführers, B____, Rechtsanwältin, ein Kostenerlasshonorar von Fr. 2'000.00 (inkl. Auslagen) zuzüglich Fr. 162.00 Mehrwertsteuer auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "AVIG",
+        "AVIV",
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

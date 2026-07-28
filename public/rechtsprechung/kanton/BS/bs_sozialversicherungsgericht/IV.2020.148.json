@@ -285,7 +285,12 @@
         "            Die Kosten für das orthopädische Gerichtsgutachten der G____ Begutachtung in Höhe von Fr. 7'623.75 sind von der Beschwerdegegnerin zu tragen.  "
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

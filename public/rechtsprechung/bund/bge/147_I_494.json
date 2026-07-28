@@ -187,8 +187,11 @@
         "Art. 124 Abs. 1 BGG"
       ],
       "normKeys": [
-        "STGB",
         "BGG",
+        "BV",
+        "EMRK",
+        "OHG",
+        "STGB",
         "STPO"
       ],
       "zitierteEntscheide": [

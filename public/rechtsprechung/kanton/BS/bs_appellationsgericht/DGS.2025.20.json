@@ -192,7 +192,11 @@
         "Dem Gesuchsteller wird für das Ausstandsverfahren die amtliche Verteidigung bewilligt. Dem amtlichen Verteidiger, lic. iur Markus Trottmann, werden aus der Gerichtskasse ein Honorar von CHF 400.‒ und ein Auslagenersatz von CHF 6.90 zuzüglich 8,1 % MWST von insgesamt CHF 32.95, gesamthaft somit CHF 439.85 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

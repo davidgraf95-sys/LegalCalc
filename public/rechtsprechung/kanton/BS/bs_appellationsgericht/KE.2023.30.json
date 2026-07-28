@@ -122,7 +122,11 @@
         "Auf die Erhebung von Gerichtskosten für das Beschwerdeverfahren wird umständehalber verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

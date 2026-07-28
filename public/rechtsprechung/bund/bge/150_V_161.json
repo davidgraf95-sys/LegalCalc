@@ -278,10 +278,15 @@
         "Art. 113 BV"
       ],
       "normKeys": [
+        "AHVG",
+        "BGG",
+        "BV",
         "BVG",
         "ELG",
-        "BV",
-        "BGG"
+        "FZG",
+        "FZV",
+        "OR",
+        "SCHKG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -233,7 +233,13 @@
         "Art. 13 CST"
       ],
       "normKeys": [
-        "BV"
+        "BGG",
+        "BV",
+        "EMRK",
+        "EPG",
+        "STGB",
+        "STPO",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

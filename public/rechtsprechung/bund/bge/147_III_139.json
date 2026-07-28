@@ -311,9 +311,11 @@
         "Art. 170 ZGB"
       ],
       "normKeys": [
-        "ZPO",
+        "BGG",
+        "DSG",
+        "OR",
         "ZGB",
-        "BGG"
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

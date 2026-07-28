@@ -256,7 +256,11 @@
         "Überdies wird B____ gemäss Art. 432 Abs. 1 der Strafprozessordnung zu Lasten der Privatklägerin A____ AG eine Parteientschädigung für das zweitinstanzliche Verfahren von CHF 11’299.30 (einschliesslich Auslagen und Mehrwertsteuer) zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

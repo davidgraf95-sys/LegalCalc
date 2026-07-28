@@ -348,7 +348,16 @@
         "Art. 120 CO",
         "Art. 127 CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "BGERR",
+        "BGG",
+        "BV",
+        "BVG",
+        "OR",
+        "VG",
+        "VWVG"
+      ],
       "zitierteEntscheide": [
         "2A.658/2005",
         "2C_218/2018",

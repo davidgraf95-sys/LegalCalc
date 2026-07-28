@@ -586,7 +586,13 @@
         "C____ wird eine Parteientschädigung von CHF 6'903.75 für die erste Instanz und von CHF 2'620.25 für das Berufungsverfahren aus der Staatskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

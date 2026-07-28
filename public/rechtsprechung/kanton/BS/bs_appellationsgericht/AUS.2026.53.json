@@ -173,7 +173,10 @@
         "            Der unentgeltlichen Rechtsvertreterin, Rechtsanwältin Lea Hungerbühler, wird ein Honorar von CHF 1’220.–, zuzüglich Auslagen in Höhe von CHF 5.–, insgesamt also CHF 1‘225.–, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "EMRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

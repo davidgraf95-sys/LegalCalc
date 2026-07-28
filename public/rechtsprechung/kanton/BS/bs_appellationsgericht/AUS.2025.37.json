@@ -261,7 +261,12 @@
         "-       Staatssekretariat für Migration (SEM)"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "ASYLG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

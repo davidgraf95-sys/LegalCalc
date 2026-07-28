@@ -158,7 +158,10 @@
         "Der Gesuchsteller trägt die Kosten des Ausstandsverfahrens mit einer Gebühr von CHF 600.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

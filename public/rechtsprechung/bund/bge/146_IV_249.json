@@ -184,7 +184,14 @@
         "Art. 225 Abs. 1 CP",
         "Art. 225 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "STGB",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

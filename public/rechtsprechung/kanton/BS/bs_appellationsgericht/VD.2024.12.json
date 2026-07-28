@@ -271,7 +271,14 @@
         "-       Staatssekretariat für Migration (SEM)"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "FZA",
+        "IVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

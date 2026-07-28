@@ -352,7 +352,15 @@
         "Art. 3 Abs. 1 LPR",
         "Art. 3 Abs. 2 LPR"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "SSV",
+        "SVG",
+        "UWG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "1C_427/2020",
         "1P.336/2005",

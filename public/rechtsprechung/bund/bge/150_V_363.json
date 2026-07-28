@@ -248,10 +248,14 @@
         "Art. 41b IVV"
       ],
       "normKeys": [
-        "BGG",
-        "STGB",
         "ATSG",
-        "BV"
+        "ATSV",
+        "BGG",
+        "BV",
+        "EMRK",
+        "IVG",
+        "IVV",
+        "STGB"
       ],
       "zitierteEntscheide": [
         "2C_32/2017",

@@ -295,7 +295,13 @@
         "Art. 150 Abs. 1 CPC",
         "Art. 16 Abs. 1 LDIP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "IPRG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "4A_169/2021",
         "4A_31/2023",

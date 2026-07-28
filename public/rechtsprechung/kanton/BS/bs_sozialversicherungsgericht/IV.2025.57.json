@@ -246,7 +246,11 @@
         "             3.      Dem Vertreter der Beschwerdeführerin im Kostenerlass, Dr. iur. Yves Waldmann, Advokat, wird ein Anwaltshonorar von Fr. 3'000.-- (inklusive Auslagen) zuzüglich Mehrwertsteuer von 8,1% auf Fr. 243.-- aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

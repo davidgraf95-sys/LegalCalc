@@ -257,7 +257,14 @@
       ],
       "normKeys": [
         "BGG",
-        "STPO"
+        "BV",
+        "EMRK",
+        "FINMAG",
+        "OR",
+        "STGB",
+        "STPO",
+        "VSTRR",
+        "VSTV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

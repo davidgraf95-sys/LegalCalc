@@ -248,11 +248,17 @@
         "Art. 55 OR"
       ],
       "normKeys": [
-        "BGG",
         "ATSG",
-        "ZGB",
+        "ATSV",
+        "BGG",
+        "BV",
+        "EMRK",
         "OR",
-        "STGB"
+        "STGB",
+        "SVG",
+        "VSTRR",
+        "VWVG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2A.480/2005",

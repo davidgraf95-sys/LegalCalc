@@ -462,7 +462,12 @@
         "       Dem amtlichen Verteidiger, Dr. iur. Alex Ertl, werden für die zweite Instanz ein Honorar von CHF 12’000.– und ein Auslagenersatz von CHF 360.– zuzüglich Mehrwertsteuer von insgesamt CHF 1'000.95 (7,7 % auf CHF 51.50 [Aufwand bis 31. Dezember 23] sowie 8,1 % auf CHF 12'308.50 [Aufwand ab 1. Januar 2024]), somit total CHF 13'360.95 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

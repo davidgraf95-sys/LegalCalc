@@ -167,7 +167,12 @@
         "Der amtlichen Verteidigerin, Advokatin Constanze Seelmann, werden für das Revisionsverfahren ein Honorar von CHF 1'605.– und ein Auslagenersatz von CHF 48.15, zuzüglich Mehrwertsteuer von CHF 133.90 (8,1 %), somit total CHF 1'787.05 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

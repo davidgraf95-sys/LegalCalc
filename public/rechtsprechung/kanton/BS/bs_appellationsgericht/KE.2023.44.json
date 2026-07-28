@@ -118,7 +118,10 @@
         "Für das verwaltungsgerichtliche Beschwerdeverfahren werden keine Gerichtskosten erhoben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

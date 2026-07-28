@@ -253,7 +253,11 @@
         "Die Beschwerdeführerin hat der Beschuldigten eine Parteientschädigung in der Höhe von CHF 500.–, einschliesslich Auslagen und zuzüglich 8,1 % Mehrwertsteuer von CHF 40.50, insgesamt somit CHF 540.50, zu entrichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -333,9 +333,13 @@
         "Art. 18 Abs. 2 OLAA"
       ],
       "normKeys": [
-        "UVG",
         "ATSG",
-        "BGG"
+        "BGG",
+        "KLV",
+        "KVG",
+        "KVV",
+        "UVG",
+        "UVV"
       ],
       "zitierteEntscheide": [
         "8C_1037/2012",

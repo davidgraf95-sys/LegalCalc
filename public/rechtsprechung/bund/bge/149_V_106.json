@@ -263,9 +263,10 @@
         "Art. 26 Abs. 1 BVG"
       ],
       "normKeys": [
-        "OR",
+        "BGG",
         "BVG",
-        "BGG"
+        "GLG",
+        "OR"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

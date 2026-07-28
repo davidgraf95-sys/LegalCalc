@@ -141,7 +141,12 @@
         "Die Beschwerdeführerin (Schuldnerin) trägt die Gerichtskosten in Höhe von CHF 300.–. Die Gerichtskosten werden mit dem von ihr im Verfahren BEZ.2024.78 geleisteten Kostenvorschuss verrechnet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "DBG",
+        "SCHKG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

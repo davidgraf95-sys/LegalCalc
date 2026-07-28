@@ -369,7 +369,11 @@
         "Art. 190a IPRG",
         "Art. 190a LDIP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "IPRG"
+      ],
       "zitierteEntscheide": [
         "4A_100/2023",
         "4A_146/2019",

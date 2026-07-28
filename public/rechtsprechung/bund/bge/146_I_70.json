@@ -238,8 +238,11 @@
         "Art. 16b BO"
       ],
       "normKeys": [
+        "BGG",
         "BV",
-        "BGG"
+        "OR",
+        "RPG",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

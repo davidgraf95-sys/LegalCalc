@@ -221,9 +221,10 @@
         "Art. 9 Abs. 1 ELG"
       ],
       "normKeys": [
-        "ELG",
+        "ATSG",
         "BGG",
-        "ATSG"
+        "ELG",
+        "ELV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

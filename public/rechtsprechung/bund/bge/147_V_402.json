@@ -259,7 +259,14 @@
         "Art. 3 LAMAL",
         "Art. 31 CV"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "BV",
+        "KVG",
+        "KVV",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

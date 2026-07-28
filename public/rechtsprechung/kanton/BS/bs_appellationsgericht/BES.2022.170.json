@@ -198,7 +198,11 @@
         "Der Beschuldigten wird eine Parteientschädigung von CHF 1’615.50 (inklusive Auslagen und Mehrwertsteuer) aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

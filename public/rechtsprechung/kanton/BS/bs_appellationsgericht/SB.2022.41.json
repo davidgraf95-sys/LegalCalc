@@ -497,7 +497,12 @@
         "Der Vertreterin der Privatklägerin im Kostenerlass, Advokatin [...], wird in Anwendung von Art. 136 in Verbindung mit Art. 426 Abs. 4 der Strafprozessordnung ein Honorar von CHF 8'008.80 und ein Auslagenersatz von CHF 143.45 zuzüglich 7,7 % Mehrwertsteuer von CHF 627.75, somit total CHF 8'780.– aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 in Verbindung mit 138 Abs. 1 der Strafprozessordnung bleibt im Umfang von einem Drittel vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

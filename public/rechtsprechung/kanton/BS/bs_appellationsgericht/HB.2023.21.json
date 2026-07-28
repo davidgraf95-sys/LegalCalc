@@ -256,7 +256,10 @@
         "Dem Amtlichen Verteidiger, [...], wird aus der Gerichtskasse eine Entschädigung von CHF 1'200.‒ (inkl. Auslagen, zzgl. 7,7 % MWST), insgesamt also CHF 1'292.40 ausgerichtet. Der Entscheid über eine allfällige Rückforderung gemäss Art. 135 Abs. 4 StPO bleibt dem Sachentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

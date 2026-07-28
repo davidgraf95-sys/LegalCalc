@@ -259,7 +259,11 @@
         "            Die Kosten für das Gerichtsgutachten des K____spitals [...] in Höhe von Fr. 6'645.60 sind von der Beschwerdegegnerin zu tragen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

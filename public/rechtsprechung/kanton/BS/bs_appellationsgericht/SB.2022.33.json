@@ -111,7 +111,10 @@
         "Der Beschuldigte trägt für das zweitinstanzliche Verfahren eine Abstandsgebühr in der Höhe von CHF 500.‒ (Art. 428 Abs. 1 StPO in Verbindung mit § 21 Abs. 1 des Gerichtsgebührenreglements [GGR, SG 154.810])."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

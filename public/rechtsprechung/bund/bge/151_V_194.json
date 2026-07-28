@@ -223,9 +223,11 @@
         "Art. 28 Abs. 1 IVG"
       ],
       "normKeys": [
-        "IVG",
         "ATSG",
-        "BGG"
+        "BGG",
+        "IVG",
+        "IVV",
+        "KVG"
       ],
       "zitierteEntscheide": [
         "8C_104/2024",

@@ -224,7 +224,10 @@
         "Dem Vertreter des Privatklägers im Kostenerlass, Advokat [...], wird für die zweite Instanz in Anwendung von Art. 136 in Verbindung mit Art. 426 Abs. 4 der Strafprozessordnung ein Honorar von CHF 2'300.–, zuzüglich Mehrwertsteuer von insgesamt CHF 179.45 (7,7 % auf CHF 1'720.– sowie 8,1 % auf CHF 580.–), somit total CHF 2'479.45, aus der Gerichtskasse zugesprochen. A____ hat dem Appellationsgericht diesen Betrag zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben, in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 der Strafprozessordnung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

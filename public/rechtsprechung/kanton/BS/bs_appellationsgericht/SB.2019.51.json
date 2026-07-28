@@ -494,7 +494,13 @@
         "Der Beurteilte trägt die Verfahrenskosten von CHF 6'990.30 und die Urteilsgebühr von CHF 8'000.– für das erstinstanzliche Verfahren sowie eine Urteilsgebühr von CHF 2'000.– (inkl. Kanzleiauslagen, zzgl. allfällige übrige Auslagen) für das zweitinstanzliche Verfahren. Die Mehrkosten des erstinstanzlichen Verfahrens von CHF 1'280.– gehen zu Lasten der Strafgerichtskasse."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

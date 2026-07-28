@@ -337,9 +337,13 @@
         "Art. 128 Abs. 1 BV"
       ],
       "normKeys": [
-        "DBG",
+        "BGG",
         "BV",
-        "BGG"
+        "DBG",
+        "OR",
+        "SCHKG",
+        "STHG",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "2A.209/1988",

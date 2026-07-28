@@ -197,7 +197,10 @@
         "Art. 118 Abs. 1 BGG"
       ],
       "normKeys": [
-        "BGG"
+        "AIG",
+        "BGG",
+        "BV",
+        "EMRK"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

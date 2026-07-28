@@ -225,7 +225,14 @@
         "Art. 25a Abs. 5 KVG",
         "Art. 25a Abs. 5 LAMAL"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "ELG",
+        "KVG",
+        "KVV",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "2C_228/2011",
         "2C_783/2017",

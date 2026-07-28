@@ -151,7 +151,10 @@
         "Die Berufungskläger tragen die Kosten des Berufungsverfahrens von CHF 1'500.– in solidarischer Verbindung. Diese werden mit dem Kostenvorschuss der Berufungskläger von CHF 1'500.– verrechnet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -575,7 +575,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > Reihenfolge nach Praxis-Hebel × Machbarkeit ohne Fachzeit × Abhängigkeiten. Alles `[OF]`, sofern
 > nicht vermerkt. Details + Bau-Auflagen je Werkzeug: «Funktions-Katalog» unten + jeweilige `FAHRPLAN-*.md`.
 
-<!-- @queue: W2·6-NKEY, W2·7-BEZUG, QS-TOK, W2·5d, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
+<!-- @queue: W2·7-BEZUG, QS-TOK, W2·5d, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
 <!-- ^ SSoT der Bau-Reihenfolge (Einbau 24.7.2026): plan:next wertet die @queue VOR der
      Dokumentreihenfolge aus; Integrität erzwingt check:plan Regel 8 (tote/erledigte IDs rot,
      Prosa-«OBERSTER» muss dem Queue-Kopf entsprechen). Priorität ändern = NUR diese Zeile
@@ -584,12 +584,14 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
      passt»); will er später die Gesetzesdarstellung vorziehen, W2·12-HYGIENE an den Kopf
      dieser Zeile setzen. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT (Dekret David 27.7.2026): `W2·6-NKEY` normKeys-Abdeckung —
-> die nächste Bau-Session startet mit GENAU diesem Schritt, Umsetzung mit ULTRACODE; danach
-> `W2·7-BEZUG`.** Vorherige Spitze `QS-TOK` (Priorisierung David 10.7.2026, Wortlaut «oberster
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·7-BEZUG` — Bezüge am Artikel.** Die erste Stufe der
+> Verzahnungs-Strecke, `W2·6-NKEY` (Dekret David 27.7.2026), ist **28.7.2026 erledigt** und gibt
+> damit die von ihr abhängige Stufe frei (`dep: [W2·6-NKEY]`): die normKeys-Abdeckung trägt jetzt
+> 99.9 % der Entscheid-Snapshots, das Fundament für die Bezüge-Schicht steht.
+> Vorherige Spitze `QS-TOK` (Priorisierung David 10.7.2026, Wortlaut «oberster
 > schritt soll sein den token verbrauch zu minimieren») rückt dahinter — von David am 27.7.
 > ausdrücklich so verfügt («als erster schritt entscheide noch besser screenen … nächste session
-> baut das als erstes, mit ultracode»).
+> baut das als erstes, mit ultracode»); dieser Vorrang ist mit W2·6-NKEY eingelöst.
 > <!-- @meta id: QS-TOK · status: ready · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts, .claude, CLAUDE.md, ROADMAP.md, STRUKTUR.md] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-TOKEN-OEKONOMIE.md -->
 > Bau verbraucht **weniger Tokens** — nur über Effizienz (gezielter lesen, kompakter übergeben,
 > deterministisch statt modellgetrieben, cachen, indizieren); Einmal-Investitionen ok.
@@ -1089,37 +1091,12 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   `bibliothek/recherche/zitationsnetz-feasibility.md`. **DoD:** Generator deterministisch (2 Läufe
   byte-gleich) · `check:gegenpruefung` bestanden · golden byte-gleich · Tore grün. Trailer
   `Roadmap: W2·6-ZNETZ` + `Gegenpruefung: <Verdikt>`.
-- [ ] **6-NKEY · normKeys-Abdeckung generalisieren — Register-Ableitung + FR/IT-Aliase + Sichtbarkeits-Tor** *(§14-Intake 21.7.2026, David · Extraktion/Mapping — Risikopfad, `QS-GP`; **ULTRACODE freigegeben** für den Bau · **Dekret David 27.7.2026: erste Stufe der Verzahnungs-Strecke, vor `W2·7-BEZUG`; die NÄCHSTE Bau-Session startet mit GENAU DIESEM Schritt, Umsetzung mit ULTRACODE** — an der @queue-Spitze verankert)*
-  <!-- @meta id: W2·6-NKEY · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/rechtsprechung, src/lib/rechtsprechung] · worktree: ja · 26x: nein -->
-  **Befund (empirisch, 21.7.2026, Anlassfall `bge_148_II_475` ohne KG-Verzahnung):** Von 9 905
-  Norm-Zitat-Nennungen über 5 093 Entscheide mappt die Hand-Whitelist `ABK_REGISTER`
-  (`scripts/normtext/entscheide-mapping.ts`, 26 Einträge) nur **43 %** auf `normKeys`; der Rest wird
-  **still verworfen** (§6.7-Verstoss dem Geist nach). Davon: **97 Erlasse sind längst im Korpus**,
-  fehlen nur in der Tabelle (+13 %: IPRG, KVG, RPG, MWSTG, SVG, VwVG, USG, KG, …); **~40 % sind
-  FR/IT-Abkürzungen** (CST→BV, CP→StGB, CPP→StPO, LTF→BGG, CO→OR, CPC→ZPO, CC→ZGB, LP/LEF→SchKG,
-  LIFD→DBG, LAMal→KVG, LCart→KG, …), die die Tabelle gar nicht kennt. Drei Bausteine, Reihenfolge
-  **a → c → b**:
-  - **a · Mapping aus dem Register generieren (§5):** Die deutsche Abkürzung IST der Register-Key
-    (`src/lib/normtext/register.ts`, 227 Bund-Erlasse) — Tabelle build-time ableiten statt parallel
-    pflegen; jeder künftige Erlass wird automatisch verzahnbar (Ende der «BGFA-Fix»-Fehlerklasse,
-    PR #290). Deklarierte Kollisions-/Ausschlussliste bleibt (Muster StG≠StGB; kantonale Namensvetter
-    StG/KV/BauG dürfen NIE auf Bundesrecht mappen — §1).
-  - **c · Sichtbarkeits-Tor gegen stilles Verwerfen (§6.7):** Wächter listet ungemappte Abkürzungen
-    nach Häufigkeit gegen eine deklarierte Ignore-Liste (kantonal/ausserhalb Korpus/Rauschen wie
-    «BGE» = bewusst); Neues darüber = rot. Sabotage-Probe Pflicht. Nebenprodukt: datenbasierte
-    Korpus-Kandidaten (KVG 108+ Nennungen).
-  - **b · Amtliche DE/FR/IT-Aliase aus Fedlex-Metadaten:** SPARQL liefert die amtliche Abkürzung je
-    SR-Nummer und Sprache (Pipeline spricht Fedlex-SPARQL bereits, `scripts/fedlex-cache.sh`);
-    generiertes Alias-Artefakt (`*.generated.ts`, Quelle+Stand §7, `merge=regen` §12), kein Hand-
-    Erraten von Paaren. Ziel-Abdeckung **85–90 %**.
-  **Backfill:** Entscheid-Snapshots + `norm-index`/Leitfall-Shards regenerieren (5 093 Entscheide,
-  deterministisch, 2 Läufe byte-gleich). **Bündelung geprüft (§14.2/§14.3):** NICHT in `W2·6-FILTER`
-  (andere Risiko-Klasse: hier Extraktion/Mapping = Risikopfad, dort Abfrage/Projektion) — löst aber
-  dessen 🔴-Blocker «normKeys 18 %» und ist Fundament für `W2·6-ZNETZ`/`W2·7-VZUI`-Normfilter.
-  Kollisionsfläche mit ZNETZ/FILTER (`public/rechtsprechung`) ⇒ Worktree + serielle Landung (§12).
-  **DoD:** `check:entscheide` grün · Wächter-Tor einmal rot gezeigt · Abdeckungs-Quote vorher/nachher
-  im PR ausgewiesen (§8) · `check:gegenpruefung` **bestanden** (Opus, unabhängig gegen Fedlex-
-  Abkürzungen) · golden byte-gleich. Trailer `Roadmap: W2·6-NKEY` + `Gegenpruefung: <Verdikt>`.
+- [x] **6-NKEY · normKeys-Abdeckung generalisieren — Register-Ableitung + FR/IT-Aliase + Sichtbarkeits-Tor** *(§14-Intake 21.7.2026, David · Extraktion/Mapping — Risikopfad, `QS-GP`; Dekret David 27.7.2026)* — **✅ 28.7.2026 GEBAUT** (Worktree `w26-nkey`, ULTRACODE): Hand-Whitelist 26 Einträge → Register-Ableitung + Fedlex-Alias-Ebene (597 amtliche DE/FR/IT-Kürzel); Nennungs-Abdeckung 43 % → **93.6 %**, Snapshots mit `normKeys` 21.9 % → **99.9 %** (5093 Entscheide); Sichtbarkeits-Tor `check:normkeys` (Schwelle 20, 11 deklarierte Ignore-Einträge). Gegenprüfung **bestanden** (Opus, 4 Runden). Status `done`. Wortlaut → `ROADMAP-CHRONIK.md` → W2·6-NKEY (28.7.2026).
+  <!-- @meta id: W2·6-NKEY · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/rechtsprechung, src/lib/rechtsprechung] · worktree: ja · 26x: nein -->
+  **Offen als Folgearbeit (nicht Teil dieses Schritts):** `register.json` trägt `normKeys` je Entscheid
+  und steht damit bei **97 % des 780-KB-gzip-Deckels** (756.9 KB) — die Verschlankung (eigene Projektion,
+  wie `richter.json` sie für die Spruchkörper-Slugs vormacht) ist **nicht** durch Anheben der Schranke
+  zu lösen (§8). Wer `register.json` weiter belädt, reisst `check:perf-budget`.
 - [ ] **6-VZUI · Verzahnung sichtbar machen** *(David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)* — **V1a ✅ 3.7. · V1c ✅ 4.7. · V1b ✅ 4.7.2026 GEBAUT** (Fundament/Vereinheitlichung · Normrevisions-Ehrlichkeit · E4-Rangliste; Gegenprüfungen bestanden; Wortlaut → `ROADMAP-CHRONIK.md` → W2·7-VZUI, 24.7.2026) · **offen: V2 (E3-Serving) · V3 (E6a)**:
   <!-- @meta id: W2·7-VZUI · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/components/kontext/KontextPanel.tsx, src/pages/EntscheidLeser.tsx, src/components/NormPopover.tsx, src/components/suche/SuchResultate.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
   EINE Interaktions-Grammatik (KantenChip · StatusBadge nur-Abweichung · KontextGruppe-Overlines ·

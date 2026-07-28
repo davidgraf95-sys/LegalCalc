@@ -173,7 +173,12 @@
         "Dem Beschwerdeführer wird aus der Gerichtskasse eine Parteientschädigung für das Beschwerdeverfahren von CHF 807.75 ausgerichtet, einschliesslich Auslagen und Mehrwertsteuer."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "JSTPO",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

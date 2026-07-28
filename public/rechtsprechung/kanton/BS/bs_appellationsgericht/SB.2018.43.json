@@ -206,7 +206,11 @@
         "Dem amtlichen Verteidiger von A____, [...], Advokat, werden für seine Aufwendungen im eingestellten Strafverfahren gegen †B____ vom 3. Oktober 2017 bis 12. April 2024 ein Honorar von CHF 80.–, zuzüglich 8 % MWST von CHF 6.40 (Aufwand 2017), von CHF 842.–, zuzüglich 7.7 % MWST von CHF 64.80 (Aufwand 2018-2023) und von CHF 200.–, zuzüglich 8.1 % MWST von CHF 16.20 (Aufwand 2024) sowie ein Auslagenersatz von CHF 30.–, zuzüglich MWST von CHF 2.45, und damit ein total von CHF 1'241.85 (inklusive MWST) aus der Gerichtskasse bezahlt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

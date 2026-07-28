@@ -980,7 +980,13 @@
         "Die dem Privatkläger 1 zu Lasten von A____ für das erstinstanzliche Verfahren zugesprochene Parteientschädigung in Höhe von CHF 341.70 fällt gemäss Art. 138 Abs. 2 der Strafprozessordnung zu Folge Bewilligung der unentgeltlichen Rechtspflege an den Kanton."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

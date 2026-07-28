@@ -163,7 +163,9 @@
         "Der Beschwerdeführer trägt die Kosten des Verfahrens mit einer Abschreibungsgebühr von CHF 600.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

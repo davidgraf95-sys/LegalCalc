@@ -452,7 +452,15 @@
         "Der Berufungskläger hat der Berufungsbeklagten eine Parteientschädigung von CHF 2'625.– und Auslagen von CHF 78.75, zuzüglich 8,1 % MWST von CHF 219.–, zu bezahlen. Zufolge voraussichtlicher Uneinbringlichkeit der Parteientschädigung und Bewilligung der unentgeltlichen Rechtspflege für die Berufungsbeklagte wird ihrer unentgeltlichen Rechtsbeiständin, Dr. Sabine Aeschlimann, ein Honorar von CHF 2'100.– und Auslagen von CHF 63.–, zuzüglich 8,1 % MWST von CHF 175.20, aus der Gerichtskasse ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO durch den Berufungskläger bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "HKSUE96",
+        "IPRG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

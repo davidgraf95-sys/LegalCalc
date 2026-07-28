@@ -188,9 +188,13 @@
         "Art. 5 AVIV"
       ],
       "normKeys": [
-        "AVIG",
         "ATSG",
-        "BGG"
+        "AVIG",
+        "AVIV",
+        "BGG",
+        "BV",
+        "EMRK",
+        "GLG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -219,7 +219,14 @@
         "Art. 72 LCA",
         "Art. 96 LCA"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "VVG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "4A_177/2015",
         "4A_228/2019",

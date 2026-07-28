@@ -195,7 +195,13 @@
         "Art. 69 Abs. 2 LDIP",
         "Art. 69 LDIP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BUEG",
+        "BV",
+        "IPRG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "5A_210/2016",
         "5A_222/2018",

@@ -147,7 +147,10 @@
         "Auf die Erhebung von Gerichtskosten für das Revisionsverfahren wird verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

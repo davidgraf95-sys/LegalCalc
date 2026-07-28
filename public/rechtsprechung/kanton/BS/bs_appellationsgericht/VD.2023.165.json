@@ -220,7 +220,11 @@
         "Das G____departement hat dem Rechtsbeistand des Rekurrenten, […], für das verwaltungsgerichtliche Rekursverfahren eine Entschädigung von CHF 1’958.60, einschliesslich Auslagen von CHF 21.10 und zuzüglich MWST von CHF 158.40 (7,7 % auf CHF 67.80 und 8,1 % auf CHF 1’890.80), insgesamt somit CHF 2'116.95 zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "OR"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

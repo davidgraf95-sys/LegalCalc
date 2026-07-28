@@ -474,7 +474,12 @@
         "Der unentgeltlichen Rechtsvertreterin der Privatklägerin, [...], werden für das Berufungsverfahren ein Honorar von CHF 1'949.50 und ein Auslagenersatz von CHF 33.50, zuzüglich Mehrwertsteuer von insgesamt CHF 154.45 (7,7 % auf CHF 866.– [Aufwand bis 31. Dezember 2023] sowie 8,1 % auf CHF 1'083.50 [Aufwand ab 1. Januar 2024]), somit total CHF  2'137.45, aus der Gerichtskasse zugesprochen. Die Rückerstattung wird gestützt auf Art. 138 Abs. 1 und 2 i.V.m. Art. 135 Abs. 4 StPO für die Kosten der unentgeltlichen Rechtsvertretung im erst- und zweitinstanzlichen Verfahren angeordnet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

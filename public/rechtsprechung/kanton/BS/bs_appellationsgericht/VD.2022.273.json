@@ -143,7 +143,10 @@
         "Der Rekurrent trägt die ordentlichen Kosten des Rekursverfahrens mit einer Gebühr von CHF 500.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "VWVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

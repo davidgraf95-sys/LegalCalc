@@ -273,7 +273,12 @@
         "Art. 13 USG"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "BV",
+        "LSV",
+        "MG",
+        "RPG",
+        "USG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

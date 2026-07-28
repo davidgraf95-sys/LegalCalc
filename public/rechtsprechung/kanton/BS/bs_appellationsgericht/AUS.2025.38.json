@@ -163,7 +163,10 @@
         "            Der unentgeltlichen Rechtbeiständin von A____, [...], wird ein Honorar von CHF 1'230.45 (einschliesslich Auslagen), zuzüglich 8,1 % MWST von CHF 99.65, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

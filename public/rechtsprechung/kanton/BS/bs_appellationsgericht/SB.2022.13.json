@@ -281,7 +281,13 @@
         "Der Berufungskläger trägt die Verfahrenskosten im Betrage von CHF 385.30 sowie eine Urteilsgebühr von CHF 600.– für das erstinstanzliche Verfahren sowie die Kosten des zweitinstanzlichen Verfahrens mit Einschluss einer Urteilsgebühr von CHF 1’000.– (inkl. Kanzleiauslagen, zuzüglich allfällige übrige Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

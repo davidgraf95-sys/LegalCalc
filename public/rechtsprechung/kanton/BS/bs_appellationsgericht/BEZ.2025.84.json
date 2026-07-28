@@ -131,7 +131,10 @@
         "Der Berufungskläger und die Berufungsklägerin tragen die Gerichtskosten des Berufungsverfahrens von CHF 200.– in solidarischer Verbindung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -253,10 +253,12 @@
         "Art. 5 Abs. 4 AHVG"
       ],
       "normKeys": [
+        "AHVG",
+        "AHVV",
         "BGG",
+        "BV",
         "FAMZG",
-        "ZGB",
-        "AHVG"
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

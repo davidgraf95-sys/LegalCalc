@@ -372,7 +372,13 @@
         "Art. 16 NRPGA",
         "Art. 18 Abs. 2 LAT"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BGOE",
+        "BV",
+        "RPG",
+        "RPV"
+      ],
       "zitierteEntscheide": [
         "1C_150/2016",
         "1C_156/2019",

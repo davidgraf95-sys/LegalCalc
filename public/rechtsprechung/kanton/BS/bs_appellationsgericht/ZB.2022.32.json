@@ -232,7 +232,14 @@
         "Auf die Erhebung von Gerichtskosten für das Berufungsverfahren wird verzichtet. Der Gerichtskostenvorschuss von CHF 600.– wird der Berufungsklägerin zurückerstattet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "STGB",
+        "STPO",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

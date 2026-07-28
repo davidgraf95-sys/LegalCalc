@@ -298,7 +298,11 @@
         "Dem amtlichen Verteidiger, MLaw Marco Belser, werden für das Beschwerdeverfahren ein Honorar von CHF 1’200.–, zuzüglich Auslagenentschädigung von CHF 15.50 sowie 8,1% MWST von CHF 98.50, insgesamt also CHF 1'314.– aus der Gerichtskasse zugesprochen. Der Entscheid über eine allfällige Rückforderung gemäss Art. 135 Abs. 4 StPO wird dem Sachentscheid vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

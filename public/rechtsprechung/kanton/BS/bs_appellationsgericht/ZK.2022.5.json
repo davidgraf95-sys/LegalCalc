@@ -118,7 +118,10 @@
         "Die Gesuchsgegnerin bezahlt der Gesuchstellerin eine Parteientschädigung von CHF 1’000.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IPRG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

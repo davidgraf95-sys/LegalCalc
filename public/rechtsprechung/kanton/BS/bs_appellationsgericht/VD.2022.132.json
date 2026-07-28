@@ -262,7 +262,11 @@
         "Die Rekurrentin trägt die Kosten des verwaltungsgerichtlichen Verfahrens mit einer Gebühr von CHF 1'800.– (einschliesslich Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "PAVO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

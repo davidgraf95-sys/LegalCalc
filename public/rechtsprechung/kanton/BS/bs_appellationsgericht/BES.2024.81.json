@@ -159,7 +159,10 @@
         "Dem Beschwerdeführer wird für das Beschwerdeverfahren zulasten der Staatskasse eine Parteientschädigung von CHF 1'159.85 (einschliesslich Auslagen und MWST) zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

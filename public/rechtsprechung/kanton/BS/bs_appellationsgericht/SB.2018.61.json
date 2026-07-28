@@ -171,7 +171,12 @@
         "Dem amtlichen Verteidiger, [...], Advokat, werden ein Honorar von CHF 1'820.– und Auslagenersatz von CHF 103.70, zuzüglich MWST von insgesamt CHF 147.10 (davon 7.7 % auf CHF 701.50 [mehrwertsteuerpflichtiger Aufwand und Auslagen bis 31. Dezember 2023] sowie 8.1 % auf CHF 1'149.20 [mehrwertsteuerpflichtiger Aufwand und Auslagen ab 1. Januar 2024]) aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 StPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

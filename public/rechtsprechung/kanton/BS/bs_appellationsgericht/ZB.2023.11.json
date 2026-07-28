@@ -525,7 +525,11 @@
         "          9.      Der Kindesvertreterin, Advokatin [...], wird für das Berufungsverfahren eine Entschädigung von CHF 1'030.– aus der Gerichtskasse ausgerichtet. "
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

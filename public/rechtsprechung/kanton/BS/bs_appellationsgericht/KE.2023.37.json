@@ -210,7 +210,13 @@
         "Umständehalber wird auf die Erhebung von Verfahrenskosten verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "BGG",
+        "IVG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

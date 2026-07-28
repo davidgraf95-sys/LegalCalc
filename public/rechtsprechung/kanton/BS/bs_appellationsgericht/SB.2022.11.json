@@ -360,7 +360,13 @@
         "Für die zweite Instanz werden der amtlichen Verteidigerin [...], Rechtsanwältin, ein Honorar gemäss eingereichter Honorarnote in Höhe von CHF 5'731.90 (inkl. Auslagen und MWST) aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

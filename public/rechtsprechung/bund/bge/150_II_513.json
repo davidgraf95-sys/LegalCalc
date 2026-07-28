@@ -166,7 +166,11 @@
         "Art. 21 LN",
         "Art. 36 LN"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BUEG",
+        "BV"
+      ],
       "zitierteEntscheide": [
         "1C_341/2013",
         "1C_54/2024",

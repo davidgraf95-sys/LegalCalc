@@ -265,7 +265,11 @@
         "Zudem wird dem unentgeltlichen Rechtsvertreter des Rekurrenten für das verwaltungsgerichtliche Rekursverfahren eine Entschädigung von CHF 3'313.85, einschliesslich Auslagen und zuzüglich Mehrwertsteuer von CHF 259.55 (7,7 % auf CHF 2'220.30 und 8,1 % auf CHF 1'093.50), insgesamt somit CHF 3'573.40, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SVG",
+        "VZV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

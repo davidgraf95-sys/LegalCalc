@@ -288,9 +288,15 @@
         "Art. 147 DBG"
       ],
       "normKeys": [
+        "ATSG",
         "BGG",
         "BV",
-        "DBG"
+        "DBG",
+        "SCHKG",
+        "STHG",
+        "STPO",
+        "VWVG",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "2A.710/2006",

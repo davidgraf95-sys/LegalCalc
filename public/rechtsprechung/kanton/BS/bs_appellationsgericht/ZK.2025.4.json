@@ -135,7 +135,12 @@
         "Die Gesuchsgegner tragen die Gerichtskosten von CHF 6‘000.– in solidarischer Verbindung und bezahlen der Gesuchstellerin eine Parteientschädigung von CHF 6‘000.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "UWG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

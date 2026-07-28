@@ -203,7 +203,10 @@
         "Die UPK haben der Rekurrentin für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 4'120.–, einschliesslich Auslagen und zuzüglich MWST von CHF 322.75 (7,7 % auf CHF 2'746.65 und 8,1 % auf CHF 1'373.35), zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

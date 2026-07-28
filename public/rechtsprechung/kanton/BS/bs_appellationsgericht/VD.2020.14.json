@@ -215,7 +215,11 @@
         "Der geleistete Kostenvorschuss in Höhe von CHF 3'600.– wird den Rekurrierenden zurückerstattet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "VWVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

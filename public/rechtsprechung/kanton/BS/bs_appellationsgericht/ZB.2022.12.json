@@ -275,7 +275,10 @@
         "C____ hat A____ und B____ für das Beschwerdeverfahren ZB.2022.13 eine Parteientschädigung von insgesamt CHF 1'288.–, zuzüglich 7,7 % MWST von CHF 99.–, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -267,7 +267,11 @@
         "Dem Rechtsvertreter des Beschwerdeführers, D____, Rechtsanwalt, werden zufolge Bewilligung der unentgeltlichen Rechtspflege ein Honorar von CHF 3’862.50 (inkl. Auslagen) und 7,7 % Mehrwertsteuer von CHF 297.40, total CHF 4’159.50, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

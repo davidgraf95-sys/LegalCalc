@@ -200,7 +200,12 @@
         "für das Rückweisungsverfahren CHF 1’450.– (inkl. Auslagen) zuzüglich 7,7 % MWST von CHF 111.65, insgesamt also CHF 1’561.25;"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -286,7 +286,15 @@
         "Art. 17 CL",
         "Art. 2 CL"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "IPRG",
+        "LUGUE",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "4A_133/2021",
         "4A_135/2021",

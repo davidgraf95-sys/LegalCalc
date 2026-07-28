@@ -170,7 +170,9 @@
         "Dem unentgeltlichen Rechtsvertreter von A____ werden ein Honorar von CHF 1'600.– und ein Auslagenersatz von CHF 30.–, zuzüglich 8.1 % MWST von CHF 132.–, aus der Gerichtskasse bezahlt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

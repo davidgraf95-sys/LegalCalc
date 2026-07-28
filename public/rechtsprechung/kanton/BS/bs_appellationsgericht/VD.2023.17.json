@@ -252,7 +252,12 @@
         "Der Antrag auf Zusprechung einer Parteientschädigung für das erstinstanzliche Verwaltungsverfahren wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "DSG",
+        "EMRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

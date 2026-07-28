@@ -378,7 +378,16 @@
         "Dem amtlichen Verteidiger, [...], Advokat, werden für die zweite Instanz ein Honorar von CHF 3’200.– und ein Auslagenersatz von CHF 524.– (inkl. CHF 470.– Dolmetscherentschädigung), zuzüglich Mehrwertsteuer von insgesamt CHF 255.95 (7,7 % auf CHF 1'904.– [Aufwand bis 31.12.23] sowie 8,1 % auf CHF 1’350.– [Aufwand ab 1.1.24]), somit total CHF 3'979.95 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt im Umfang von 100 % vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ASYLG",
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "GFK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

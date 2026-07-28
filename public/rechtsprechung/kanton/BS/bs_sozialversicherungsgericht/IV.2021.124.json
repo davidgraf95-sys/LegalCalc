@@ -240,7 +240,11 @@
         "            Die IV-Stelle bezahlt der Beschwerdeführerin eine Parteientschädigung von Fr. 3‘750.-- (inkl. Auslagen) zuzüglich Mehrwertsteuer von Fr. 288.75.  "
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

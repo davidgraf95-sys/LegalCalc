@@ -214,7 +214,11 @@
         "Art. 42quater LAI"
       ],
       "normKeys": [
-        "IVG"
+        "BGG",
+        "BV",
+        "IVG",
+        "IVV",
+        "ZGB"
       ],
       "zitierteEntscheide": [
         "1C_128/2013",

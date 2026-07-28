@@ -177,7 +177,10 @@
         "Der Berufungsbeklagten B____ werden für das Berufungsverfahren eine Parteientschädigung von CHF 551.80, inklusive Auslagen und zuzüglich 7,7 % MWST von CHF 42.50, und für das erstinstanzliche Verfahren eine Parteientschädigung von total CHF 3'000.– (inklusive 7,7 % MWST) aus der Gerichtskasse entrichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

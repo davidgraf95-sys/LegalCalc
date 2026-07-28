@@ -210,7 +210,11 @@
         "Der amtlichen Verteidigerin, [...], wird für das Revisionsverfahren ein Honorar von CHF 2'684.85 (inkl. Auslagen) zuzüglich 7,7 % Mehrwertsteuer (CHF 206.75), somit insgesamt CHF 2’891.60, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

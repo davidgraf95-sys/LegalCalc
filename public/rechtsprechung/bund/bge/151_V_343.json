@@ -236,7 +236,14 @@
         "Art. 5 Abs. 1 LFLP",
         "Art. 60b Abs. 1 BVV"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BVG",
+        "DBG",
+        "FZA",
+        "FZG",
+        "STHG"
+      ],
       "zitierteEntscheide": [
         "2C_162/2024",
         "2C_436/2011",

@@ -183,7 +183,11 @@
         "Dem Verteidiger, [...], wird für das Beschwerdeverfahren aus der Gerichtskasse ein Honorar von CHF 1'644.15 zzgl. 7,7% MWST von CHF 126.60, einschliesslich Auslagen und 7,7% MWST, ausgerichtet. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

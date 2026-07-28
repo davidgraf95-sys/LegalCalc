@@ -359,9 +359,17 @@
         "Art. 14 ATSG"
       ],
       "normKeys": [
-        "IVG",
+        "AHVG",
+        "AHVV",
         "ATSG",
-        "BGG"
+        "BGG",
+        "IVG",
+        "IVV",
+        "KLV",
+        "KVG",
+        "KVV",
+        "UVG",
+        "UVV"
       ],
       "zitierteEntscheide": [
         "8C_450/2018",

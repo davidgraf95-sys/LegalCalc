@@ -121,7 +121,11 @@
         "               -        Untere Aufsichtsbehörde über das Betreibungs- und Konkursamt"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

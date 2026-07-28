@@ -88,9 +88,9 @@
         "Art. 450 Abs. 2 ZGB"
       ],
       "normKeys": [
-        "ZPO",
         "STPO",
-        "ZGB"
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

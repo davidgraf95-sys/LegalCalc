@@ -212,7 +212,10 @@
         "A____ wird für das vorliegende Beschwerdeverfahren die amtliche Verteidigung bewilligt. Der eingesetzten amtlichen Verteidigerin, Advokatin [...], werden aus der Gerichtskasse ein Honorar von CHF 962.60 inklusive Auslagenersatz, zuzüglich MWST von insgesamt CHF 74.10, gesamthaft somit CHF 1’036.70, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

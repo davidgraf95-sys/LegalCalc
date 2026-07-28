@@ -212,7 +212,10 @@
         "Die Rekurrenten haben in solidarischer Verbindung der Beigeladenen eine Parteientschädigung von CHF 1'545.–, einschliesslich Auslagen, ohne Mehrwertsteuer, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -1,0 +1,31 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "VAG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "25": [
+      {
+        "key": "bge_148_III_201",
+        "zitierung": "BGE 148 III 201",
+        "regesteKurz": "Art. 36 Abs. 2 VAG; Art. 92 Abs. 2 in Verbindung mit Art. 94 VVG; Informationsansprüche der Versicherungsnehmer im Zusammenhang mit Überschussanteilen bei einer Lebensversicherung der Säule 3a. Die Versicherungsunternehmen sind verpflichte…",
+        "datum": "2022-03-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "36": [
+      {
+        "key": "bge_148_III_201",
+        "zitierung": "BGE 148 III 201",
+        "regesteKurz": "Art. 36 Abs. 2 VAG; Art. 92 Abs. 2 in Verbindung mit Art. 94 VVG; Informationsansprüche der Versicherungsnehmer im Zusammenhang mit Überschussanteilen bei einer Lebensversicherung der Säule 3a. Die Versicherungsunternehmen sind verpflichte…",
+        "datum": "2022-03-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

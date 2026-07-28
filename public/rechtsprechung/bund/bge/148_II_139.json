@@ -344,7 +344,12 @@
         "Art. 22 RPG"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "BV",
+        "LFG",
+        "MG",
+        "RPG",
+        "VIL"
       ],
       "zitierteEntscheide": [
         "1C_13/2012",

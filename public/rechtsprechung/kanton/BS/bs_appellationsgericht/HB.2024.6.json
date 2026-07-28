@@ -197,7 +197,10 @@
         "Dem amtlichen Verteidiger, [...], wird aus der Gerichtskasse ein Honorar von CHF 1’200.‒ (inkl. Auslagen, zzgl. CHF 97.20 MWST) ausgerichtet. Der Entscheid über eine allfällige Rückforderung gemäss Art. 135 Abs. 4 StPO wird dem Berufungsurteil oder – falls kein Berufungsurteil ergeht –einem separaten Entscheid des Appellationsgerichtspräsidiums vorbehalten (Art. 421 Abs. 1 StPO)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

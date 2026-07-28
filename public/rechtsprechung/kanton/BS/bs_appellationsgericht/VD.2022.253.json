@@ -202,7 +202,9 @@
         "Die Rekurrentin hat dem Rekursgegner für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 1'030.–, zuzüglich 7,7 % Mehrwertsteuer von CHF 79.30 zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

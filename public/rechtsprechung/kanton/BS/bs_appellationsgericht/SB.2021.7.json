@@ -242,7 +242,12 @@
         "Über die Verfahrenskosten sowie die Entschädigungsfolgen wird mit dem Sachurteil des Berufungsgerichts entschieden."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

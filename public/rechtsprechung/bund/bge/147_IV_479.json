@@ -444,10 +444,12 @@
         "Art. 70 Abs. 1 STGB"
       ],
       "normKeys": [
-        "STPO",
-        "OR",
+        "BGG",
         "BV",
-        "STGB"
+        "OR",
+        "SCHKG",
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [
         "6B_1004/2019",

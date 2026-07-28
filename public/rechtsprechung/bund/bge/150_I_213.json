@@ -314,7 +314,12 @@
         "Art. 14 Abs. 2 WAG",
         "Art. 14 LFO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "WAG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "2C_134/2018",
         "2C_397/2023",

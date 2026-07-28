@@ -243,7 +243,11 @@
         "Der Straf- und Massnahmenvollzug wird verpflichtet, dem Rekurrenten eine Parteientschädigung von CHF 1’600.–, zuzüglich 7,7% MWST von insgesamt CHF 1'723.20 auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

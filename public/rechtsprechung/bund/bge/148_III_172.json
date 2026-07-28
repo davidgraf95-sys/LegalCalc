@@ -253,9 +253,11 @@
         "Art. 30 Abs. 1 BV"
       ],
       "normKeys": [
-        "ZPO",
+        "BGG",
         "BV",
-        "BGG"
+        "OR",
+        "SCHKG",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

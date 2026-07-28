@@ -391,9 +391,12 @@
         "Art. 140 LIFD"
       ],
       "normKeys": [
-        "STGB",
         "BGG",
-        "DBG"
+        "BV",
+        "DBG",
+        "EMRK",
+        "STGB",
+        "STHG"
       ],
       "zitierteEntscheide": [
         "1C_236/2013",

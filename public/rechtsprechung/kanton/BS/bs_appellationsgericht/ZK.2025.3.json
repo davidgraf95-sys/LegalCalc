@@ -148,7 +148,15 @@
         "Die Gesuchstellerinnen tragen vorläufig die Gerichtskosten des Verfahrens betreffend vorsorgliche Massnahmen von CHF 8'000.–. Fallen die vorsorglichen Massnahmen wegen unbenutztem Ablauf der Frist zur Einreichung der Klage dahin, wird diese Kostenregelung definitiv. Kommt es zum Hauptverfahren, bleibt die definitive Kostenregelung im dortigen Verfahren vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "IPRG",
+        "STGB",
+        "UWG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

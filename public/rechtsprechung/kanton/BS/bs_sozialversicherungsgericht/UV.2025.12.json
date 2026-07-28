@@ -340,7 +340,11 @@
         "            Die Beschwerdegegnerin bezahlt dem Beschwerdeführer eine Parteientschädigung von Fr. 3’750.00 (inklusive Auslagen) zuzüglich Fr. 303.75 Mehrwertsteuer sowie Fr. 648.60 für den Arztbericht von Dr. med. I____."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

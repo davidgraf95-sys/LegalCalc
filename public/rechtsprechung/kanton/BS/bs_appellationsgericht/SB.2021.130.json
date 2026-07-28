@@ -250,7 +250,12 @@
         "B____ wird eine Parteientschädigung von CHF 8'508.30 für das erstinstanzliche Verfahren und von CHF 10'412.45 für das zweitinstanzliche Verfahren (jeweils inkl. Auslagen und Mehrwertsteuer) aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

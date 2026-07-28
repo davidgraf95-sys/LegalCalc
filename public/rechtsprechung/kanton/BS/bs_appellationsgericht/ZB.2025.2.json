@@ -342,7 +342,11 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege für die Ehefrau im Berufungsverfahren wird ihrer unentgeltlichen Rechtsvertreterin, lic. iur. Martina Horni, eine Entschädigung von CHF 2'120.– und ein Auslagenersatz von CHF 1.80, zuzüglich Mehrwertsteuer von CHF 171.85, somit total CHF 2'293.65 aus der Gerichtskasse zugesprochen. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

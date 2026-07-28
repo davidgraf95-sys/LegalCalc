@@ -168,7 +168,9 @@
         "            Das Migrationsamt hat A____ eine Parteientschädigung von CHF 1’494.30 auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

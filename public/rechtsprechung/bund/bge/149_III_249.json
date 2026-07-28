@@ -263,9 +263,13 @@
         "Art. 169 Abs. 1 IPRG"
       ],
       "normKeys": [
-        "ZPO",
+        "BGG",
+        "IPRG",
+        "LUGUE",
+        "SCHKG",
+        "VWVG",
         "ZGB",
-        "BGG"
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

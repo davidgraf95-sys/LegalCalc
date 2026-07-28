@@ -151,7 +151,10 @@
         "Auf die Erhebung von Gerichtskosten für das allfällige Beschwerdeverfahren wird verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

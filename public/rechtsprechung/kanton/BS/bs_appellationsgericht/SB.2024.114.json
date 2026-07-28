@@ -289,7 +289,15 @@
         "A____ (vormals […]) trägt in solidarischer Haftung mit seinen Eltern die reduzierten Verfahrenskosten von CHF 50.– und eine reduzierte Urteilsgebühr von CHF 100.– für das erstinstanzliche Verfahren sowie die Kosten des zweitinstanzlichen Verfahrens mit Einschluss einer Urteilsgebühr von CHF 100.– (inkl. Kanzleiauslagen, zuzüglich allfällige übrige Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "JSTG",
+        "JSTPO",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

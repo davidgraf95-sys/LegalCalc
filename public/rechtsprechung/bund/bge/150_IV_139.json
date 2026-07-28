@@ -228,8 +228,10 @@
         "Art. 269 STPO"
       ],
       "normKeys": [
-        "STPO",
-        "BGG"
+        "BGG",
+        "BV",
+        "IRSG",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

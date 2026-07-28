@@ -374,7 +374,13 @@
         "Art. 135 Abs. 4 StPO bleibt für die in Rechtskraft erwachsene Entschädigung der amtlichen Verteidigung im erstinstanzlichen Verfahren im Umfang von 100 % und für die zweitinstanzlichen Kosten der amtlichen Verteidigung im Umfang von 50% vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

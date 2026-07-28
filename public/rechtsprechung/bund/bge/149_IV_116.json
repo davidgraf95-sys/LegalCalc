@@ -261,8 +261,9 @@
         "Art. 238 STGB"
       ],
       "normKeys": [
-        "STGB",
-        "BGG"
+        "BGG",
+        "BV",
+        "STGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

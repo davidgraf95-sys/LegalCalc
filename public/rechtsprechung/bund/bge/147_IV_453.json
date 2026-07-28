@@ -248,7 +248,15 @@
         "Art. 410 Abs. 1 CPP",
         "Art. 42 Abs. 2 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO",
+        "VZAE"
+      ],
       "zitierteEntscheide": [
         "1B_203/2021",
         "1B_524/2020",

@@ -187,7 +187,10 @@
         "Die Steuerverwaltung hat der Rekursgegnerin für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 2'060.–, einschliesslich Auslagen, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STHG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

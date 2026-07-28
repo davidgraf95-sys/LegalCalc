@@ -321,7 +321,12 @@
         "          Die Beschwerdeführerin trägt die ordentlichen Kosten des Verfahrens, bestehend aus einer Gebühr von Fr. 800.--."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -333,7 +333,10 @@
         "Art. 153 Abs. 1 GBV"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "GBV",
+        "OR",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

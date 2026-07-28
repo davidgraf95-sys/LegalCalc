@@ -319,7 +319,10 @@
       ],
       "normKeys": [
         "AHVG",
-        "BGG"
+        "AHVV",
+        "BGG",
+        "MVG",
+        "UVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

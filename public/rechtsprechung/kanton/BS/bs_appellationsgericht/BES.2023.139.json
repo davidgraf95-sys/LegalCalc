@@ -134,7 +134,12 @@
         "Der Beschwerdeführerin wird eine Parteientschädigung von CHF 1'000.– zuzüglich Mehrwertsteuer von CHF 79.– (7,7 % auf CHF 500.– und 8,1 % auf 500.–), somit insgesamt CHF 1'079.– aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

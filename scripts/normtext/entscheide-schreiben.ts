@@ -2,6 +2,7 @@
 //
 // Schreibt aus einer Auswahl EntscheidSnapshots die public/rechtsprechung-Dateien:
 // je Entscheid eine Datei + register.json (Manifest) + norm-index.json +
+// norm-index-erlasse.json (schlanke Laufzeit-Projektion der Erlass-Ebene) +
 // erfasste-keys.generated.ts (interne Verlinkung). Eine Stelle, kein Duplikat (§5).
 
 import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from 'node:fs';
@@ -11,25 +12,56 @@ import type { EntscheidSnapshot, EntscheidSnapshotDatei } from '../../src/lib/re
 import type { BrowseEntscheid, EntscheidManifest, RichterRef, RichterRegister } from '../../src/lib/rechtsprechung/register';
 import { parseBesetzung, kanonisiere, bereinigeBesetzungsFreitext, type KanonEintrag } from '../../src/lib/rechtsprechung/besetzung';
 import type { EntscheidRef, LeitfallRef, LeitfallShard } from '../../src/lib/rechtsprechung/norm-index';
-import { extrahiereStatutRefs } from '../../src/lib/rechtsprechung/zitat-extraktion';
 import { minteEcliFuerSnapshot } from '../../src/lib/rechtsprechung/ecli';
-import { normKeyFuerAbk } from './entscheide-mapping';
+import { artikelSchluesselMitBefund, AUSGESCHLOSSENE_KEYS } from './entscheide-mapping';
+import { vergleiche } from './vergleich';
 
 export function keyVon(snap: EntscheidSnapshot): { key: string; datei: string } {
   const docketSafe = snap.id.split('/').pop()!;
   return { key: `${snap.gericht}_${docketSafe}`, datei: `${snap.id}.json` };
 }
 
-/** Gekürzte Regeste aus dem geglätteten Text (Single Source für proNorm + Artikel-Index, §5). */
+/** Gekürzte Regeste aus dem geglätteten Text (normalisiereRegeste strippt u.a. die Überschrift). */
 function regesteKurzVon(snap: EntscheidSnapshot): string | null {
   return snap.regeste ? kuerzeRegeste(normalisiereRegeste(snap.regeste.text)) : null;
 }
 
-/** EntscheidRef aus einem Snapshot (identischer Inhalt wie im proNorm-Build). */
+/**
+ * DIE Regel für `regesteKurz` in ALLEN Projektionen (register.json, proNorm,
+ * proNormArtikel, Shards) — §5, EINE Stelle.
+ *
+ * Zwei Quellen, in dieser Reihenfolge:
+ *   1. die amtliche Regeste, geglättet und gekürzt;
+ *   2. NUR für die BS-Tranche (Bauplan §4): das Portal publiziert keine Regeste,
+ *      aber einen amtlichen Betreff-Titel (`rubrum.gegenstand`) → Karten-Kurzzeile
+ *      ≤ 120 Zeichen. `regesteVorhanden` bleibt dabei false: der Titel ist Betreff,
+ *      keine Regeste (§8 — nicht als amtliche Regeste ausgeben, was keine ist).
+ *
+ * ALS FUNKTION HERAUSGEZOGEN 28.7.2026 (Linse 4). Stufe 2 stand vorher nur inline
+ * in `schreibeKorpus`; `regeste-kurz-refresh.ts` rechnete daneben mit Stufe 1
+ * allein. GEMESSEN: ein `--schreiben`-Refresh hätte die Kurzzeile bei ALLEN 3765
+ * BS-Entscheiden auf null gesetzt — ein stiller Inhaltsverlust auf der Browse-Seite,
+ * ausgelöst von einem Skript, das nur «auffrischen» sollte. Genau die zweite
+ * Wahrheit, gegen die §5 steht.
+ */
+export function manifestRegesteKurz(snap: EntscheidSnapshot): string | null {
+  return regesteKurzVon(snap)
+    ?? (snap.quelle === 'gerichte-bs' && snap.rubrum?.gegenstand
+      ? kuerzeRegeste(snap.rubrum.gegenstand, 120) : null);
+}
+
+/**
+ * EntscheidRef aus einem Snapshot (identischer Inhalt wie im proNorm-Build).
+ * `regesteKurz` über dieselbe Regel wie Manifest und proNorm (§5). Für den heutigen
+ * Bestand verhaltensgleich zur früheren Fassung ohne BS-Zweig: die Artikel-Ebene
+ * enthält ausschliesslich Bundesgerichts-Entscheide, die BS-Tranche also nie
+ * (gemessen: 3765 BS-Einträge, davon 0 mit gerichtstyp 'bundesgericht'). Dass es
+ * verhaltensgleich IST, beweist der byte-gleiche Regen — nicht dieser Kommentar.
+ */
 function refVon(snap: EntscheidSnapshot): EntscheidRef {
   const { key } = keyVon(snap);
   return {
-    key, zitierung: snap.zitierung, regesteKurz: regesteKurzVon(snap), datum: snap.datum,
+    key, zitierung: snap.zitierung, regesteKurz: manifestRegesteKurz(snap), datum: snap.datum,
     leitcharakter: snap.leitcharakter, gericht: snap.gericht, kanton: snap.kanton,
   };
 }
@@ -51,6 +83,36 @@ export function vergleicheLeitfaelle(a: LeitfallRef, b: LeitfallRef): number {
     || (a.leitcharakter === 'leitentscheid' ? 0 : 1) - (b.leitcharakter === 'leitentscheid' ? 0 : 1)
     || (a.datum < b.datum ? 1 : a.datum > b.datum ? -1 : 0)
     || (a.key < b.key ? -1 : a.key > b.key ? 1 : 0);
+}
+
+/**
+ * Totale Ordnung der Erlass-Ebene (`proNorm`), §2-deterministisch: Leitentscheid vor
+ * Routine, dann Datum ↓, dann key (totaler Tiebreaker).
+ *
+ * BESTANDSFEHLER, gefixt 28.7.2026 (Linse 4). Der Datums-Term lautete hier
+ * `(a.datum < b.datum ? 1 : -1)` — bei GLEICHEM Datum liefert das −1 statt 0, also
+ * `cmp(x,y) === cmp(y,x) === -1`. Das ist keine Ordnung, sondern eine Behauptung:
+ *   · die `||`-Kette bricht bei −1 ab, der key-Tiebreaker war TOTER CODE;
+ *   · das Ergebnis hing damit genau an dem, was der Tiebreaker ausschliessen
+ *     sollte — der Eingabefolge (gemessen: `[A,B]` → `B,A`, `[B,A]` → `A,B`).
+ * Der Kommentar an der Aufrufstelle behauptete trotzdem Totalität; er ist mit
+ * korrigiert. Dieselbe Form trug schon `vergleicheLeitfaelle` oben — die war
+ * richtig und dient hier als Referenz (§5: eine Form, zwei Ebenen).
+ */
+export function vergleicheEntscheidRefs(a: EntscheidRef, b: EntscheidRef): number {
+  return (a.leitcharakter === 'leitentscheid' ? 0 : 1) - (b.leitcharakter === 'leitentscheid' ? 0 : 1)
+    || (a.datum < b.datum ? 1 : a.datum > b.datum ? -1 : 0)
+    || (a.key < b.key ? -1 : a.key > b.key ? 1 : 0);
+}
+
+/**
+ * Serialisierung ALLER Rechtsprechungs-Artefakte (§5): 2-Space-Einrückung +
+ * abschliessender Newline. EINE Stelle, weil `check:entscheide` die Gleichheit von
+ * Monolith und schlanker Projektion BYTE-scharf prüft — und weil Nachpflege-Skripte
+ * (regeste-kurz-refresh) dieselben Dateien schreiben wie `schreibeKorpus`.
+ */
+export function serialisiere(o: unknown): string {
+  return JSON.stringify(o, null, 2) + '\n';
 }
 
 /**
@@ -85,38 +147,13 @@ function selbstTokens(snap: EntscheidSnapshot): string[] {
   return [...out];
 }
 
-/**
- * Kürzel, die föderal UND kantonal existieren und pro Zitat NICHT sicher
- * unterscheidbar sind → aus dem föderalen Bund-Artikel-Index ausgeschlossen
- * (§1 Korrektheit vor Abdeckung, §8 keine falsche Bundesrechts-Zuordnung).
- *
- * «StG» = eidg. Stempelsteuergesetz (SR 641.10) ODER kantonales Steuergesetz
- * (StG/BE, StG/ZH, StG/SG …). Der Kantons-Suffix steht nur in der Regeste-
- * Erstnennung, nicht bei jeder Fliesstext-Nennung; kantonale Grundstückgewinn-/
- * Einkommenssteuer-Fälle (z.B. BGE 152 II 116, StHG-Kontext) tragen GAR keinen
- * Suffix — eine Suffix-Heuristik greift also zu kurz. Daher konservativ ganz
- * weglassen. Preis: die wenigen echten eidg. Stempelsteuer-Leitfälle (z.B.
- * BGE 151 II 884) fehlen bewusst, bis ein positiver Bund-Signal-Diskriminator
- * gebaut ist. Befund: Gegenprüfung W3 (Opus, 2.7.2026) — 5 kant. Falsch-Positive.
- *
- * Deckt sich mit OCLs Design: deren kuratierte Bund-Whitelist `_SR_NUMBER_MAP`
- * (mcp_server.py:3810, Abkürzung→SR-Nummer) listet die unzweideutigen Bundes-
- * gesetze (BV/OR/ZGB/StGB/… bis DBG) und lässt «StG»/StHG bewusst WEG.
- */
-const AMBIGE_BUND_KANTON_KUERZEL: ReadonlySet<string> = new Set(['STG']);
-
-/** (Register-key, Artikel-Token)-Paare, die ein Snapshot zitiert — 'OR/41'-Form, deduppt. */
-function artikelSchluesselVon(snap: EntscheidSnapshot): Set<string> {
-  const out = new Set<string>();
-  // Roh-statutes (OCL statutes[]) tragen das Artikel-Token; zusammenfügen und einmal
-  // extrahieren (extrahiereStatutRefs dedupliziert über die Normalform).
-  for (const ref of extrahiereStatutRefs((snap.zitierteNormen ?? []).join('\n'))) {
-    const rk = normKeyFuerAbk(ref.gesetz);
-    if (!rk || AMBIGE_BUND_KANTON_KUERZEL.has(rk)) continue;
-    out.add(`${rk}/${ref.artikel}`);
-  }
-  return out;
-}
+// Die (Register-key, Artikel)-Paare eines Snapshots rechnet jetzt
+// `artikelSchluesselVonSnapshot` (entscheide-mapping.ts) — inkl. der
+// Fliesstext-Erkennung (W2·6-NKEY Baustein d) und des Ausschlusses föderal/
+// kantonal mehrdeutiger Kürzel («StG»). Die frühere lokale Kopie samt
+// AMBIGE_BUND_KANTON_KUERZEL ist dorthin umgezogen (§5: eine Stelle — auch das
+// Oracle-Tor check-rangliste-oracle rechnet nun mit derselben Funktion); die
+// Begründung des StG-Ausschlusses steht dort als ABK_AUSSCHLUSS-Eintrag.
 
 /**
  * Artikel-Ebene des Norm-Index (W3), deterministisch (§2). Nur Bundesgerichts-
@@ -127,8 +164,26 @@ function artikelSchluesselVon(snap: EntscheidSnapshot): Set<string> {
  * INNERHALB von S_A). Rang: gewicht ↓, dann Leitentscheid vor Routine, dann Datum ↓,
  * dann key (totaler Tiebreaker) — build-pfad-unabhängig stabil.
  */
+/**
+ * LITERATUR-VERWURF-STATISTIK (Gegenprüfung R3; löst die frühere Singleton-Zählung
+ * der zurückgebauten Korroborations-Schwelle ab). Ein Filter, dessen Wirkung niemand
+ * sieht, ist ein Tor, das nicht scheitern kann (§6.7): der `--remap`-Lauf weist die
+ * Zahlen aus, damit ein Sprung nach oben («die Marker greifen zu weit») oder nach
+ * unten («die Regel ist entschärft») im Lauf-Protokoll auffällt — nicht erst im
+ * Artefakt. Modulweit, weil `baueArtikelIndex` seine Signatur behält (Aufrufer im Tor).
+ *
+ * `paare` zählt (Snapshot, Artikel)-Paare, die AUSSCHLIESSLICH aus einer entfernten
+ * Zitier-Apparat-Spanne stammten; `nennungen` die Roh-Vorkommen in diesen Spannen;
+ * `spannen` die Spannen selbst.
+ */
+let literaturVerwurf = { paare: 0, nennungen: 0, spannen: 0 };
+export function letzterLiteraturVerwurf(): { paare: number; nennungen: number; spannen: number } {
+  return { ...literaturVerwurf };
+}
+
 export function baueArtikelIndex(auswahl: EntscheidSnapshot[]): Record<string, LeitfallRef[]> {
   const bg = auswahl.filter((s) => s.gerichtstyp === 'bundesgericht');
+  literaturVerwurf = { paare: 0, nennungen: 0, spannen: 0 };
 
   // Token → corpus-key (erste Nennung gewinnt; §2-deterministisch bei Eingabefolge).
   const tokenZuKey = new Map<string, string>();
@@ -143,7 +198,11 @@ export function baueArtikelIndex(auswahl: EntscheidSnapshot[]): Record<string, L
   for (const s of bg) {
     const { key } = keyVon(s);
     refByKey.set(key, refVon(s));
-    artikelVon.set(key, artikelSchluesselVon(s));
+    const befund = artikelSchluesselMitBefund(s);
+    literaturVerwurf.paare += befund.literaturVerworfen.length;
+    literaturVerwurf.nennungen += befund.literaturNennungen;
+    literaturVerwurf.spannen += befund.literaturSpannenZahl;
+    artikelVon.set(key, befund.schluessel);
     const cited = new Set<string>();
     for (const z of s.zitierteEntscheide ?? []) {
       const tok = kanonZitat(z);
@@ -210,7 +269,7 @@ export function baueShards(proNormArtikel: Record<string, LeitfallRef[]>, datum:
   return out;
 }
 
-export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root = process.cwd()): { anzahl: number; normBuckets: number; artikelBuckets: number; shards: number } {
+export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root = process.cwd()): { anzahl: number; normBuckets: number; artikelBuckets: number; shards: number; literaturVerwurf: { paare: number; nennungen: number; spannen: number } } {
   const PUB = join(root, 'public', 'rechtsprechung');
   const GENKEYS = join(root, 'src', 'lib', 'rechtsprechung', 'erfasste-keys.generated.ts');
 
@@ -269,16 +328,12 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
     // Interop-Lücke; additives Identitätsfeld, lässt die abschnitte-`sha` unberührt).
     snap.ecli = minteEcliFuerSnapshot(snap);
     const wrap: EntscheidSnapshotDatei = { erzeugt: snap.abgerufen || datum, eintraege: [snap] };
-    writeFileSync(ziel, JSON.stringify(wrap, null, 2) + '\n', 'utf8');
+    writeFileSync(ziel, serialisiere(wrap), 'utf8');
 
-    // regesteKurz aus dem GEGLÄTTETEN Text (normalisiereRegeste strippt u.a. die
-    // führende „Regeste"-Überschrift) — sonst stünde „Regeste" doppelt bzw. als Präfix.
-    // BS-Tranche (Bauplan §4): das Portal publiziert keine Regeste, aber einen
-    // amtlichen Betreff-Titel (rubrum.gegenstand) → als Karten-Kurzzeile ≤120 Z.
-    // (regesteVorhanden bleibt false — der Titel ist Betreff, keine Regeste, §8).
-    const regesteKurz = regesteKurzVon(snap)
-      ?? (snap.quelle === 'gerichte-bs' && snap.rubrum?.gegenstand
-        ? kuerzeRegeste(snap.rubrum.gegenstand, 120) : null);
+    // Regel + Begründung stehen an `manifestRegesteKurz` (§5: EINE Stelle — auch
+    // regeste-kurz-refresh.ts rechnet damit, sonst löschte ein Refresh die
+    // BS-Betreff-Kurzzeilen).
+    const regesteKurz = manifestRegesteKurz(snap);
     manifest.push({
       key, gericht: snap.gericht, gerichtName: snap.gerichtName, gerichtstyp: snap.gerichtstyp,
       kanton: snap.kanton, nummer: snap.nummer, bgeReferenz: snap.bgeReferenz, datum: snap.datum,
@@ -336,7 +391,11 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
       for (const nk of snap.normKeys) {
         // Föderal/kantonal mehrdeutige Kürzel (StG) auch erlass-eben ausschliessen
         // (gleiche OCL-orientierte Entscheidung wie Artikel-Ebene; Gegenprüfung W3 #12).
-        if (AMBIGE_BUND_KANTON_KUERZEL.has(nk)) continue;
+        // Der Filter greift hier auf den KEY (nicht die Abkürzung), weil ALT-Bestands-
+        // Snapshots den ausgeschlossenen Key noch in `normKeys` tragen können — die
+        // Erzeugerseite (normKeysVonSnapshot) lässt ihn seit W2·6-NKEY gar nicht mehr
+        // entstehen, der Schutz muss aber auch ohne Backfill wirken (§1).
+        if (AUSGESCHLOSSENE_KEYS.has(nk)) continue;
         (proNorm[nk] ??= []).push({
           key, zitierung: snap.zitierung, regesteKurz, datum: snap.datum,
           leitcharakter: snap.leitcharakter, gericht: snap.gericht, kanton: snap.kanton,
@@ -349,20 +408,30 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
     // §2-Determinismus: `key` als TOTALER Tiebreaker — sonst hängt die Reihenfolge bei
     // Gleichstand (gleicher leitcharakter + gleiches Datum) von der Build-Eingabe-
     // reihenfolge ab (Vollbau [bge,bund,kanton] vs. additiver Lauf [Register-Reihen-
-    // folge] erzeugten sonst denselben Inhalt in anderer Folge). So ist die norm-index
-    // build-pfad-unabhängig stabil.
-    proNorm[nk].sort((a, b) =>
-      (a.leitcharakter === 'leitentscheid' ? 0 : 1) - (b.leitcharakter === 'leitentscheid' ? 0 : 1)
-      || (a.datum < b.datum ? 1 : -1)
-      || (a.key < b.key ? -1 : a.key > b.key ? 1 : 0));
+    // folge] erzeugten sonst denselben Inhalt in anderer Folge). Der Komparator steht
+    // benannt oben (`vergleicheEntscheidRefs`) und ist dort auf Totalität getestet —
+    // hier stand er inline und war es NICHT (Bestandsfehler, Begründung dort).
+    proNorm[nk].sort(vergleicheEntscheidRefs);
     proNorm[nk] = proNorm[nk].slice(0, 12);
   }
 
   // Stabil (V8 TimSort): bei Datums-Gleichstand bleibt die Eingangsreihenfolge —
   // im additiven Lauf die committete Register-Folge, also kein Reorder des Bestands.
+  //
+  // ABGRENZUNG zum K1-Fix oben (gemessen 28.7.2026): dieser Komparator ist TOTAL
+  // (Gleichstand → 0), also kein Fall der dortigen Fehlerklasse. Er ist aber
+  // ABSICHTLICH build-pfad-ABHÄNGIG: mit umgekehrter Eingabe entsteht dasselbe
+  // register.json mit identischer Menge UND identischer Datums-Folge, aber anderer
+  // Reihenfolge INNERHALB eines Datums (erste Abweichung: AUS.2026.52/53, beide
+  // 2026-07-01). Die Build-Pfad-Unabhängigkeit, die dieser Branch erklärt, gilt
+  // damit für norm-index.json, norm-index-erlasse.json, richter.json und alle 157
+  // Shards (empirisch byte-gleich über 5093 Snapshots), NICHT für register.json.
+  // Das ist gewollt: ein key-Tiebreaker hier würde den ganzen Bestand umsortieren,
+  // also genau das, was diese Zeile vermeiden soll. Wer die Unabhängigkeit auch
+  // hier will, entscheidet damit über einen Voll-Reorder — eigener Schritt (§14).
   manifest.sort((a, b) => (a.datum < b.datum ? 1 : a.datum > b.datum ? -1 : 0));
   const manifestObj: EntscheidManifest = { erzeugt: datum, entscheide: manifest };
-  writeFileSync(join(PUB, 'register.json'), JSON.stringify(manifestObj, null, 2) + '\n', 'utf8');
+  writeFileSync(join(PUB, 'register.json'), serialisiere(manifestObj), 'utf8');
   // ── Richter-Register (Slug → Anzeigename + Trefferzahl) ──
   // Eigene, schlanke Projektion: die Facette in Block B lädt sie lazy für Labels
   // und Zähler, damit das grosse register.json slug-schlank bleibt (§15).
@@ -378,11 +447,30 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
     };
   }
   const richterObj: RichterRegister = { erzeugt: datum, richter: richterEintraege };
-  writeFileSync(join(PUB, 'richter.json'), JSON.stringify(richterObj, null, 2) + '\n', 'utf8');
+  writeFileSync(join(PUB, 'richter.json'), serialisiere(richterObj), 'utf8');
 
-  // Artikel-Ebene (W3) zusätzlich zur Erlass-Ebene — proNorm bleibt unverändert.
+  // Artikel-Ebene (W3) zusätzlich zur Erlass-Ebene — proNorm bleibt inhaltlich unverändert.
   const proNormArtikel = baueArtikelIndex(auswahl);
-  writeFileSync(join(PUB, 'norm-index.json'), JSON.stringify({ erzeugt: datum, proNorm, proNormArtikel }, null, 2) + '\n', 'utf8');
+  // §2 (Linse 3, 28.7.2026): Die SCHLÜSSELFOLGE von `proNorm` war die Einfüge-
+  // reihenfolge, also die Reihenfolge der Bau-Eingabe (157 Buckets, 63 unsortierte
+  // Übergänge). Vollbau und `--remap` erzeugten damit inhaltsgleiche, aber
+  // BYTE-VERSCHIEDENE Dateien — genau die Abhängigkeit vom Build-Pfad, die die
+  // Sortierung INNERHALB der Buckets (key als totaler Tiebreaker, oben) längst
+  // ausschliesst. Die Artikel-Ebene war bereits sortiert (`baueArtikelIndex`);
+  // hier wird die Erlass-Ebene nachgezogen. Codepoint-Ordnung wie überall in der
+  // Kette (scripts/normtext/vergleich.ts), nicht locale-abhängig.
+  const proNormSortiert: Record<string, EntscheidRef[]> = {};
+  for (const nk of Object.keys(proNorm).sort(vergleiche)) proNormSortiert[nk] = proNorm[nk];
+  writeFileSync(join(PUB, 'norm-index.json'), serialisiere({ erzeugt: datum, proNorm: proNormSortiert, proNormArtikel }), 'utf8');
+  // ── Schlanke Laufzeit-Projektion der ERLASS-Ebene (W2·6-NKEY §15) ───────────
+  // Dasselbe `proNorm`-Objekt, nur ohne die Artikel-Ebene. Grund: `kontextEntscheide()`
+  // (src/lib/kontext.ts) braucht fürs Verweis-Popover NUR proNorm, zog dafür aber das
+  // Gesamt-JSON über die Leitung — nach dem Backfill 731 KB gzip statt 93 KB, also das
+  // ~7.8-fache an Nutzlast für unveränderte Information. §5 bleibt gewahrt: EINE Quelle
+  // (proNormSortiert), zwei Projektionen; die Byte-Gleichheit der Schnittmenge prüft
+  // check:entscheide. Serialisierung identisch (2-Space, Trailing-Newline, sortierte
+  // Schlüssel) — sonst wäre der Konsistenz-Beweis dort nicht byte-scharf führbar.
+  writeFileSync(join(PUB, 'norm-index-erlasse.json'), serialisiere({ erzeugt: datum, proNorm: proNormSortiert }), 'utf8');
   // Schaufenster-Shards je Erlass (Weiche B): zusätzliche Projektion, damit der
   // ArtikelLeser nur den Shard seines Erlasses lädt (§15.3). Trailing-Newline +
   // 2-Space wie norm-index.json/register.json (Rechtsprechungs-Serialisierung).
@@ -390,7 +478,7 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
   const shardDir = join(PUB, 'norm-index');
   mkdirSync(shardDir, { recursive: true });
   for (const [erlass, shard] of shards) {
-    writeFileSync(join(shardDir, `${erlass}.json`), JSON.stringify(shard, null, 2) + '\n', 'utf8');
+    writeFileSync(join(shardDir, `${erlass}.json`), serialisiere(shard), 'utf8');
   }
 
   const keys = manifest.map((m) => m.key).sort();
@@ -405,7 +493,11 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
     'utf8',
   );
 
-  return { anzahl: manifest.length, normBuckets: Object.keys(proNorm).length, artikelBuckets: Object.keys(proNormArtikel).length, shards: shards.size };
+  return {
+    anzahl: manifest.length, normBuckets: Object.keys(proNorm).length,
+    artikelBuckets: Object.keys(proNormArtikel).length, shards: shards.size,
+    literaturVerwurf: letzterLiteraturVerwurf(),
+  };
 }
 
 /**

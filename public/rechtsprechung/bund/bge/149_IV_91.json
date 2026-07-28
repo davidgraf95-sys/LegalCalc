@@ -237,7 +237,13 @@
         "Art. 391 CPP",
         "Art. 393 CPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGFA",
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "4A_110/2021",
         "6B_1045/2017",

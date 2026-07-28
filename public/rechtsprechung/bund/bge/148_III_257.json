@@ -290,9 +290,12 @@
         "Art. 343 Abs. 1 ZPO"
       ],
       "normKeys": [
+        "BGG",
+        "BV",
+        "MSCHG",
         "STGB",
-        "ZPO",
-        "BGG"
+        "UWG",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

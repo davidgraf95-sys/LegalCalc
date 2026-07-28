@@ -273,8 +273,10 @@
         "Art. 429 Abs. 1 ZGB"
       ],
       "normKeys": [
-        "ZGB",
-        "BGG"
+        "BGG",
+        "BV",
+        "EMRK",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

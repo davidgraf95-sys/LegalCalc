@@ -149,7 +149,10 @@
         "Der amtlichen Verteidigerin, [...], wird für das Beschwerdeverfahren ein Honorar von CHF 650.–, ein Auslagenersatz von CHF 27.75 sowie 7,7% MWST von CHF 41.50 für das Jahr 2023 und 8,1% MWST von CHF 11.25 für das Jahr 2024 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

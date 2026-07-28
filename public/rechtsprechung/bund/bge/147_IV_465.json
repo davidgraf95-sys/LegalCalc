@@ -173,10 +173,13 @@
         "Art. 393 STPO"
       ],
       "normKeys": [
-        "ZPO",
-        "STPO",
+        "BGG",
         "OR",
-        "STGB"
+        "STGB",
+        "STPO",
+        "VWVG",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "2C_1000/2020",

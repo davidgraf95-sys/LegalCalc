@@ -223,7 +223,11 @@
         "Das Zivilgericht hat dem Beschwerdeführer für das Beschwerdeverfahren eine Parteientschädigung von CHF 780.–, zuzüglich 7,7 % MWST von CHF 60.–, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

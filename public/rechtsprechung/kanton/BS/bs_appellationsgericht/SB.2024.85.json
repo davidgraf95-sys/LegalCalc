@@ -434,7 +434,13 @@
         "Dem Privatverteidiger Dr. iur. Yves Waldmann, Advokat, wird gemäss Art. 429 Abs. 1 lit. a in Verbindung mit Art. 430 Abs. 1 lit. a der Strafprozessordnung eine reduzierte Entschädigung von CHF 45'397.45 für das erstinstanzliche Verfahren und von CHF 1'503.15 für das zweitinstanzliche Verfahren (inkl. Auslagen und MWST) aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

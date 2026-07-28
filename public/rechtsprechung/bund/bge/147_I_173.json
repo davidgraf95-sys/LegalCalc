@@ -256,7 +256,12 @@
         "Art. 125 BGG"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO",
+        "VWVG",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "1C_302/2018",

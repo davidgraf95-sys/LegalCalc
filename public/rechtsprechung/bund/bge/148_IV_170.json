@@ -261,8 +261,12 @@
         "Art. 165 STGB"
       ],
       "normKeys": [
-        "STPO",
-        "STGB"
+        "BANKG",
+        "BGG",
+        "OR",
+        "SCHKG",
+        "STGB",
+        "STPO"
       ],
       "zitierteEntscheide": [
         "1A.38/2005",

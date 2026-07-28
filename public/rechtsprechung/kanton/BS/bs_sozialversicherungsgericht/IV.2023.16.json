@@ -315,7 +315,12 @@
         "          Die Beschwerdegegnerin bezahlt der Beschwerdeführerin eine Parteientschädigung von Fr. 4'500.-- (inklusive Auslagen) zuzüglich Mehrwertsteuer von 7.7 % auf Fr. 4'000.-- und von 8.1 % auf Fr. 500.--."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

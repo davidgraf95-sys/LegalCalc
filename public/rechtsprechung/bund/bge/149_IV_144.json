@@ -187,7 +187,12 @@
         "Art. 28 Abs. 6 EIMP",
         "Art. 29 CEEJ"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "IRSG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

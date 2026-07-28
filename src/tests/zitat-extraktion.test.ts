@@ -73,7 +73,14 @@ describe('extrahiereStatutRefs — Gesetzes-Zitate', () => {
     expect(INVALID_LAW_CODES.has('NR')).toBe(true);
     expect(INVALID_LAW_CODES.has('BGE')).toBe(true);
     expect(INVALID_LAW_CODES.has('CHF')).toBe(true);
-    expect(INVALID_LAW_CODES.size).toBe(160);
+    // Gegenprüfung R1/B1 (28.7.2026): 160 → 167. Bewusste fachliche Änderung, kein
+    // Refactoring (§6.3) — mit ORDINAL_SUFFIX kamen die sieben Ordinalwörter
+    // SEPTIES/OCTIES/NOVIES/NONIES/DECIES/UNDECIES/DUODECIES dazu. Die Sonde hat
+    // hier genau ihren Zweck erfüllt: die Listen-Änderung musste erklärt werden.
+    // Gegenprüfung R2/B2 (28.7.2026): 167 → 168. Mit der ital. Folge-Einzahl
+    // «seg.» kam 'SEG' als eigenständiges Stoppwort dazu (Symmetrie zu FF/SS/SEGG).
+    expect(INVALID_LAW_CODES.size).toBe(168);
+    expect(INVALID_LAW_CODES.has('SEG')).toBe(true);
   });
 
   it('IT-Bundesverfassung «Cost.» bleibt trotz Filter erhalten (Bug-Check Z1)', () => {
@@ -177,6 +184,35 @@ describe('F2-V5 — Umlaut-/Sonderzeichen-Endung (LugÜ, EPÜ, SDÜ …)', () =>
     expect(normen('Art. 3 ÖFFENTLICH')).toEqual([]);
     expect(normen('Art. 1 KÜNDIGUNG')).toEqual([]);
     expect(normen('Art. 7 VERGÜTUNG')).toEqual([]);
+  });
+});
+
+describe('Linse 2 — akzentuierte Kürzel werden NICHT trunkiert (Fehlzuordnung)', () => {
+  // Belegter Anlassfall: «LPMéd» (Medizinalberufegesetz, SR 811.11) endete an der
+  // früheren Wortgrenze nach 'LPM' — und 'LPM' ist das amtliche fr/it-Kürzel des
+  // Markenschutzgesetzes (SR 232.11). Am committeten Korpus: 16 Nennungen in
+  // 5 BGE (151_I_19, 150_IV_255, 149_II_109, 148_II_465, 148_I_1) → je ein
+  // falscher Norm-Key MSCHG/40 usw. Kein Token ist hier besser als ein falsches:
+  // eine Lücke weist das Sichtbarkeits-Tor aus, eine Fehlzuordnung niemand (§1/§8).
+  it('«art. 40 let. c LPMéd» erzeugt GAR KEIN Token (nicht das falsche LPM)', () => {
+    expect(normen('art. 40 let. c LPMéd')).toEqual([]);
+    expect(normen('art. 2 LPMéd et art. 46 LPMéd')).toEqual([]);
+    // Weitere am Korpus belegte Trunkierungen (dort ohne Fehlzuordnung, weil das
+    // Fragment nicht mappt — derselbe Mechanismus, gleiche Behandlung):
+    expect(normen('art. 3 LFORêts')).toEqual([]);
+    expect(normen('art. 336 al. 3 CPCRév')).toEqual([]);
+    expect(normen("art. 1 al. 1 ARéf")).toEqual([]);
+  });
+  it('das amtliche it-Kürzel «OM» derselben Verordnung bleibt erfasst', () => {
+    // Gegenprobe zur Trunkierung «OMéd» → 'OM': das echte, unverkürzte it-Kürzel
+    // (SR 812.212.21) ist weiterhin ein Treffer — nur der abgeschnittene Rest fällt.
+    expect(normen('art. 40 OM')).toEqual(['ART.40.OM']);
+    expect(normen('art. 40 OMéd')).toEqual([]);
+  });
+  it('Umlaut-Endungen und ASCII-Kürzel bleiben unberührt', () => {
+    expect(normen('Art. 12 LugÜ')).toEqual(['ART.12.LUGÜ']);
+    expect(normen('art. 5 CO')).toEqual(['ART.5.CO']);
+    expect(normen('art. 89 cpv. 1 lett. b LTF')).toEqual(['ART.89.ABS.1.LTF']);
   });
 });
 
@@ -371,6 +407,248 @@ describe('F2-Fix — Absatz-/Ziffer-Aufzählung erzeugt keine Phantom-Artikel', 
       'ART.90.ATSG',
     ]);
     expect(normen('art. 34 et 2 CP')).toEqual(['ART.34.CP', 'ART.2.CP']);
+  });
+});
+
+// ── Gegenprüfung R1/B1 — Ordinal-Serie über «sexies» hinaus ─────────────────
+// Die Serie endete bei «sexies». Wirkung war NICHT «ein Artikel fehlt», sondern
+// «das ganze Zitat fällt weg»: das unverstandene Ordinalwort wird law-Kandidat,
+// hat nGross 0 und verwirft den Treffer mitsamt allen Kettengliedern.
+describe('Gegenprüfung R1/B1 — lateinische Ordnungszahlen ab «septies»', () => {
+  it('BGE 150 IV 273: Kette «Art. 49, 179 septies und 180 StGB» — alle drei Glieder', () => {
+    expect(normen('Art. 49, 179 septies und 180 StGB')).toEqual([
+      'ART.49.STGB',
+      'ART.179septies.STGB',
+      'ART.180.STGB',
+    ]);
+  });
+
+  it('BGE 150 IV 86: «Art. 322septies Abs. 2 StGB» zusammengeschrieben', () => {
+    const refs = extrahiereStatutRefs('Prüfung der Tatbestandsmerkmale von Art. 322septies Abs. 2 StGB.');
+    expect(refs.length).toBe(1);
+    expect(refs[0]).toMatchObject({
+      gesetz: 'STGB', artikel: '322septies', absatz: '2',
+      normalisiert: 'ART.322septies.ABS.2.STGB',
+    });
+  });
+
+  it('BGE 150 IV 86: getrennt geschriebene Kette «Art. 25 und 322 septies Abs. 2 StGB»', () => {
+    expect(normen('Art. 25 und 322 septies Abs. 2 StGB')).toEqual([
+      'ART.25.STGB',
+      'ART.322septies.ABS.2.STGB',
+    ]);
+  });
+
+  it('belegte Serie octies–duodecies wird als Artikel-Token bewahrt', () => {
+    expect(normen('Art. 322octies StGB')).toEqual(['ART.322octies.STGB']);
+    expect(normen('Art. 179novies StGB')).toEqual(['ART.179novies.STGB']);
+    expect(normen('Art. 322decies Abs. 1 StGB')).toEqual(['ART.322decies.ABS.1.STGB']);
+    expect(normen('Art. 115undecies EG')).toEqual(['ART.115undecies.EG']);
+    expect(normen('Art. 12duodecies OR')).toEqual(['ART.12duodecies.OR']);
+    // «nonies» = belegte kantonale Variantenschreibung zu «novies» (SO 614.11)
+    expect(normen('Art. 115nonies EG')).toEqual(['ART.115nonies.EG']);
+  });
+
+  it('Regressions-Schloss: die Alt-Serie bis «sexies» ist unverändert', () => {
+    expect(normen('Art. 52bis OR')).toEqual(['ART.52bis.OR']);
+    expect(normen('Art. 262ter StGB')).toEqual(['ART.262ter.STGB']);
+    expect(normen('Art. 322quater StGB')).toEqual(['ART.322quater.STGB']);
+    expect(normen('Art. 8quinquies AHVG')).toEqual(['ART.8quinquies.AHVG']);
+    expect(normen('Art. 8sexies AHVG')).toEqual(['ART.8sexies.AHVG']);
+  });
+
+  it('Symmetrie: jedes Serien-Glied steht als eigenes Token in INVALID_LAW_CODES', () => {
+    // Sonst wird ein allein stehendes Ordinalwort selbst zum Erlass-Kandidaten
+    // und erzeugt einen Phantom-Erlass («ART.179.SEPTIES»).
+    for (const w of [
+      'BIS', 'TER', 'QUATER', 'QUINQUIES', 'SEXIES',
+      'SEPTIES', 'OCTIES', 'NOVIES', 'NONIES', 'DECIES', 'UNDECIES', 'DUODECIES',
+    ]) {
+      expect(INVALID_LAW_CODES.has(w)).toBe(true);
+    }
+    // …und wirkt: das Ordinalwort ohne folgendes Kürzel erzeugt keinen Erlass.
+    expect(normen('Der Artikel 179 septies ist einschlägig.')).toEqual([]);
+  });
+
+  it('Monotonie/Bereich bleibt unberührt (Ordinal-Endpunkt)', () => {
+    const refs = extrahiereStatutRefs('vgl. Art. 322ter-322decies StGB');
+    expect(refs.length).toBe(1);
+    expect(refs[0]).toMatchObject({ artikel: '322ter', artikelBis: '322decies' });
+    // absteigend gelesener Binnen-Bindestrich bleibt verworfen
+    expect(extrahiereStatutRefs('art. 227-23 CP')[0].artikelBis).toBeNull();
+  });
+
+  it('bekannte Lücke bleibt Lücke, nicht Fehlzuordnung: Buchstabe+Numerale', () => {
+    // GTR Rz. 309 kennt «Art. 27abis»; dieser Verbund passt in keinen Token-Zweig.
+    // Erwartet wird KEIN Treffer — insbesondere kein falscher Erlass «ABIS»/«DDECIES».
+    expect(normen('Art. 66abis StGB')).toEqual([]);
+    expect(normen('Art. 80ddecies IRSG')).toEqual([]);
+  });
+});
+
+// ── Gegenprüfung R2/B2 — Folge-Formen und Wort-Bereiche ─────────────────────
+//
+// FACHLICHE ÄNDERUNG, deklariert (§6.3). Vorher war jede dieser Formen ein
+// TOTALVERLUST: das unverstandene Rest-Token wurde law-Kandidat, nGross 0 →
+// der ganze Treffer fiel weg (reproduziert 28.7.2026, alle → []).
+describe('Gegenprüfung R2/B2 — Folge-Marker f./s./seg. und Wort-Bereiche', () => {
+  it('einbuchstabige Folge-Marker dt./frz. (amtlich: BGE 146 II 111 «Art. 50 f. DBG»)', () => {
+    expect(normen('Art. 133 f. StGB')).toEqual(['ART.133.STGB']);
+    expect(normen('art. 34 s. CL')).toEqual(['ART.34.CL']);
+    expect(normen('Art. 50 f. DBG')).toEqual(['ART.50.DBG']);
+  });
+
+  it('ital. Einzahl «seg.» neben der bestehenden Mehrzahl «segg.»', () => {
+    expect(normen('art. 90 seg. LTF')).toEqual(['ART.90.LTF']);
+    expect(normen('art. 90 segg. LTF')).toEqual(['ART.90.LTF']);
+  });
+
+  it('REGRESSION: der Buchstaben-Artikel bleibt der Buchstaben-Artikel', () => {
+    // «f» darf keinen echten Artikel-Buchstaben fressen — deshalb Pflicht-Punkt
+    // UND Pflicht-Leerzeichen am einbuchstabigen Marker.
+    expect(normen('art. 205f LIFD')).toEqual(['ART.205f.LIFD']);
+    // Zusammengeschrieben mit Punkt bleibt bewusst unerfasst (gepinnte Lücke):
+    // lieber gar kein Treffer als der falsche Artikel 205 statt 205f (§1).
+    expect(normen('Art. 205f. LIFD')).toEqual([]);
+  });
+
+  it('«S» (Satz) bleibt Satz-Marker, «ss» bleibt Folge-Marker', () => {
+    expect(normen('Art. 5 S. 2 StGB')).toEqual(['ART.5.STGB']);
+    expect(normen('Art. 5 Satz 2 StGB')).toEqual(['ART.5.STGB']);
+    expect(normen('Art. 39 ss. et 45 CO')).toEqual(['ART.39.CO', 'ART.45.CO']);
+    expect(normen('Art. 39 s. et 45 CO')).toEqual(['ART.39.CO', 'ART.45.CO']);
+  });
+
+  // ── Die Kollision «bis» (Ordinal) ⊥ «bis» (Bereichswort) ──────────────────
+  // DEKLARIERTE REGEL: Bereich genau dann, wenn nach «bis» eine ZIFFER folgt;
+  // sonst Ordinal. Beide Lesarten sind amtlich belegt, die Regel ist syntaktisch
+  // und deterministisch (§2) — sie schlägt nirgends nach, ob es den Artikel gibt.
+  it('Wort-Bereich dt. «bis» / frz. «à»', () => {
+    const zgb = extrahiereStatutRefs('Art. 12 bis 14 ZGB');
+    expect(zgb.length).toBe(1);
+    expect(zgb[0]).toMatchObject({ gesetz: 'ZGB', artikel: '12', artikelBis: '14' });
+    expect(extrahiereStatutRefs('Art. 14 bis 16 ELG')[0]).toMatchObject({ artikel: '14', artikelBis: '16' });
+    expect(extrahiereStatutRefs('art. 90 à 98 LTF')[0]).toMatchObject({ artikel: '90', artikelBis: '98' });
+  });
+
+  it('Ordinal bleibt Ordinal — auch getrennt geschrieben (amtliche Form)', () => {
+    expect(normen('Art. 179bis StGB')).toEqual(['ART.179bis.STGB']);
+    expect(normen('Art. 179 bis StGB')).toEqual(['ART.179bis.STGB']);
+    expect(normen('Art. 179bis Abs. 2 StGB')).toEqual(['ART.179bis.ABS.2.STGB']);
+  });
+
+  it('der Grenzfall: Ordinal-Wort MIT folgender Ziffer ist ein Bereich', () => {
+    const r = extrahiereStatutRefs('Art. 179 bis 179novies StGB');
+    expect(r.length).toBe(1);
+    expect(r[0]).toMatchObject({ artikel: '179', artikelBis: '179novies' });
+  });
+
+  it('Bereich + Kette am selben Code, und die Monotonie gilt weiter', () => {
+    expect(normen('Art. 3 bis 5 und 7 OR')).toEqual(['ART.3.OR', 'ART.7.OR']);
+    expect(extrahiereStatutRefs('Art. 3 bis 5 und 7 OR')[0].artikelBis).toBe('5');
+    // absteigend gelesen → Endpunkt verworfen, Start-Artikel bleibt
+    expect(extrahiereStatutRefs('Art. 20 bis 10 BV')[0].artikelBis).toBeNull();
+  });
+
+  it('kein neuer Falsch-Positiver: Bereichswort vor Nicht-Erlass', () => {
+    expect(normen('Art. 5 bis 7 des Gesetzes')).toEqual([]);
+    expect(normen('Art. 5 bis 10 Prozent')).toEqual([]);
+  });
+});
+
+// ── Gegenprüfung R3 — die gesammelten BEKANNTEN LÜCKEN, test-gepinnt ────────
+//
+// KEINE Verhaltensänderung: dieser Block schreibt fest, was der Extraktor HEUTE
+// NICHT sieht. Er ist die Gegenprobe zum Lücken-Block im Modul-Kopf von
+// zitat-extraktion.ts — eine dort behauptete Lücke, die in Wahrheit keine ist
+// (oder eine, die klammheimlich zugeht), wird hier rot. Nummerierung = L1…L8.
+//
+// Warum als Test und nicht bloss als Kommentar: eine Lücke, die niemand pinnt,
+// verschwindet irgendwann unbemerkt — und mit ihr die Begründung, warum sie
+// hingenommen wurde. Wer eine dieser Zeilen ändert, ändert Rechtsauskunft und
+// muss das begründen (§6.3/§8).
+describe('Gegenprüfung R3 — bekannte Extraktions-Lücken (L1–L8), gepinnt', () => {
+  it('L2 · «§» ist kein Artikel-Marker (kantonale Zählweise, 19\'320 Vorkommen)', () => {
+    expect(normen('§ 12 Abs. 2 EG ZGB')).toEqual([]);
+    expect(normen('gemäss § 115 GOG')).toEqual([]);
+    // Gegenprobe: dieselbe Norm mit «Art.» wird sehr wohl erkannt.
+    expect(normen('Art. 12 Abs. 2 ZGB')).toEqual(['ART.12.ABS.2.ZGB']);
+  });
+
+  it('L4 · Kette mit CODE-WECHSEL — Nicht-End-Glieder fallen weg (BGE 149 I 343)', () => {
+    expect(normen('les art. 30 Cst. et 6 CEDH')).toEqual(['ART.30.CST']);
+    // Gegenprobe: die Kette OHNE Code-Wechsel ist vollständig.
+    expect(normen('les art. 30 et 36 Cst.')).toEqual(['ART.30.CST', 'ART.36.CST']);
+  });
+
+  it('L5 · wiederholtes «art.» mit EINEM Schluss-Code — nur das letzte Glied', () => {
+    expect(normen('art. 8 par. 1, art. 11 et art. 20 par. 3 CEDH'))
+      .toEqual(['ART.20.ABS.3.CEDH']);
+    // Gegenprobe: ohne die «art.»-Wiederholung trägt die Kette alle Glieder.
+    expect(normen('art. 8, 11 et 20 CEDH'))
+      .toEqual(['ART.8.CEDH', 'ART.11.CEDH', 'ART.20.CEDH']);
+  });
+
+  it('L6 · Bereichs-Endpunkte werden NICHT indexiert (Start-Artikel-Regel)', () => {
+    // «Art. 75 bis 77 AIG» → AIG/75; Art. 76 und Art. 77 bekommen KEINEN Eintrag.
+    // Der Endpunkt lebt allein in `artikelBis` (Anzeige), nie im Norm-Key.
+    expect(normen('Art. 75 bis 77 AIG')).toEqual(['ART.75.AIG']);
+    expect(extrahiereStatutRefs('Art. 75 bis 77 AIG')[0].artikelBis).toBe('77');
+    expect(normen('Art. 641-654a ZGB')).toEqual(['ART.641.ZGB']);
+  });
+
+  it('L8 · «lit. a.» mit Satzpunkt bricht den Match (49 Vorkommen, SB.2024.90)', () => {
+    expect(normen('Art. 138 Abs. 3 lit. a. ZPO')).toEqual([]);
+    // Ohne den Punkt hinter dem Sub-Token trägt dasselbe Zitat:
+    expect(normen('Art. 138 Abs. 3 lit. a ZPO')).toEqual(['ART.138.ABS.3.ZPO']);
+  });
+});
+
+// ── Gegenprüfung R1/B2 — frz. Absatz-Marker «par.» (paragraphe) ─────────────
+describe('Gegenprüfung R1/B2 — «par.» als Absatz-Marker (Staatsverträge)', () => {
+  it('BGE 149 I 343 / 149 II 74 / 148 V 225: «art. 6 par. 1 CEDH»', () => {
+    const refs = extrahiereStatutRefs("violation de l'art. 6 par. 1 CEDH");
+    expect(refs.length).toBe(1);
+    expect(refs[0]).toMatchObject({
+      gesetz: 'CEDH', artikel: '6', absatz: '1', normalisiert: 'ART.6.ABS.1.CEDH',
+    });
+  });
+
+  it('ohne Punkt geschrieben und in weiteren Staatsvertrags-Kürzeln', () => {
+    expect(normen('art. 6 par 1 CEDH')).toEqual(['ART.6.ABS.1.CEDH']);
+    expect(normen('art. 31 par. 1 CV')).toEqual(['ART.31.ABS.1.CV']);
+    expect(normen('art. 16 par. 2 ALCP')).toEqual(['ART.16.ABS.2.ALCP']);
+  });
+
+  it('«para» wird von «par» NICHT angefressen (Reihenfolge-Schloss)', () => {
+    // Stünde «par» vor «para», bliebe bei «para 3» ein «a» stehen und der
+    // Absatz fiele weg — die lett/let-Fehlerklasse.
+    expect(normen('art. 6 para 1 CEDH')).toEqual(['ART.6.ABS.1.CEDH']);
+    expect(normen('art. 6 para. 1 CEDH')).toEqual(['ART.6.ABS.1.CEDH']);
+  });
+
+  it('adversarial: frz. Präposition «par» erzeugt keinen Falsch-Positiven', () => {
+    // «par» als Präposition steht nie zwischen Artikel- und Ziffern-Token mit
+    // folgendem Erlass-Kürzel; wo es doch danach aussieht, ist der Schwanz ein
+    // Kleinwort (nGross 0) und der bestehende Filter verwirft.
+    expect(normen("l'infraction réprimée par la loi")).toEqual([]);
+    expect(normen("l'art. 271 CP a été violé par 3 personnes")).toEqual(['ART.271.CP']);
+    expect(normen('les mesures prévues par 3 des juges')).toEqual([]);
+    expect(normen("l'art. 5 par 2 des dispositions")).toEqual([]);
+    // «PAR» bleibt als Erlass-Kandidat blockiert
+    expect(INVALID_LAW_CODES.has('PAR')).toBe(true);
+    expect(INVALID_LAW_CODES.has('PARA')).toBe(true);
+  });
+
+  it('Regressions-Schloss: die übrigen Absatz-Marker DE/FR/IT bleiben', () => {
+    expect(normen('Art. 34 Abs. 2 BV')).toEqual(['ART.34.ABS.2.BV']);
+    expect(normen('art. 8 al. 2 CEDH')).toEqual(['ART.8.ABS.2.CEDH']);
+    expect(normen('art. 89 cpv. 1 lett. b LTF')).toEqual(['ART.89.ABS.1.LTF']);
+  });
+
+  it('Phantom-Ketten-Schutz greift auch bei «par.»', () => {
+    // «et 3» ist Fortsetzung der Absatz-Aufzählung, kein eigener Artikel 3.
+    expect(normen('art. 6 par. 1 et 3 CEDH')).toEqual(['ART.6.ABS.1.CEDH']);
   });
 });
 

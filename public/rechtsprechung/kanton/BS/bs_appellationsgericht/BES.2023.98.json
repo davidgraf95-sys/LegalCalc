@@ -154,7 +154,11 @@
         "Der Vertreterin der Beschwerdeführerin, [...], wird für das Beschwerdeverfahren ein Honorar in Höhe von CHF 1'483.40 und ein Auslagenersatz von CHF 48.60, zuzüglich 7,7% MWST von CHF 117.95, insgesamt somit CHF 1'649.95, aus der Gerichtskasse zugesprochen. Vorbehalten bleibt Art. 135 Abs. 4 StPO."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -217,7 +217,9 @@
         "Die Rekurrentin hat der Beigeladenen eine Parteientschädigung von CHF 3’605.–, einschliesslich Auslagen, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

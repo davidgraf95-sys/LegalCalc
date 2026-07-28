@@ -326,10 +326,15 @@
         "Art. 307 STGB"
       ],
       "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "KG",
         "STGB",
-        "ZPO",
         "STPO",
-        "BGG"
+        "VWVG",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

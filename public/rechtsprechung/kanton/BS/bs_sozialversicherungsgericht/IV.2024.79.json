@@ -245,7 +245,12 @@
         "            Die ausserordentlichen Kosten werden wettgeschlagen. Zufolge Bewilligung der unentgeltlichen Prozessführung wird der Rechtsvertreterin der Beschwerdeführerin, Sandra Tibis, Advokatin, ein Honorar in Höhe von CHF 3'000.00 (inklusive Auslagen) zuzüglich CHF 243.00 Mehrwertsteuer auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

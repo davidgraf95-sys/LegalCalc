@@ -167,7 +167,12 @@
         "Art. 336b Abs. 1 CO",
         "Art. 336b Abs. 2 CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "4A_200/2008",
         "4A_243/2018",

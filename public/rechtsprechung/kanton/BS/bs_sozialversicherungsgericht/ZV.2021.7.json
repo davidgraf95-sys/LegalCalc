@@ -258,7 +258,11 @@
         "            Das Verfahren ist kostenlos (Art. 114 lit. e ZPO)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "VVG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

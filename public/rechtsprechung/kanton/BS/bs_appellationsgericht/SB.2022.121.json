@@ -723,7 +723,13 @@
         "Der Antrag der Privatklägerin auf Zusprechung einer Parteientschädigung für das Berufungsverfahren zu Lasten des Berufungsklägers wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

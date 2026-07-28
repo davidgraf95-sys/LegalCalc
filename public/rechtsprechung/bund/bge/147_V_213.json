@@ -233,9 +233,10 @@
         "Art. 17 ATSG"
       ],
       "normKeys": [
-        "UVG",
         "ATSG",
-        "BGG"
+        "BGG",
+        "UVG",
+        "UVV"
       ],
       "zitierteEntscheide": [
         "8C_237/2011",

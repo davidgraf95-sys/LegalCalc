@@ -243,8 +243,10 @@
         "Art. 6 EMRK"
       ],
       "normKeys": [
-        "STPO",
-        "BV"
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

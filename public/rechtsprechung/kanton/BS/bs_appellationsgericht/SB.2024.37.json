@@ -510,7 +510,11 @@
         "Dem Vertreter des Privatklägers im Kostenerlass, Advokat lic. iur. Daniel Helfenfinger, werden für das zweitinstanzliche Verfahren in Anwendung von Art. 136 der Strafprozessordnung ein Honorar von CHF 8’970.– und ein Auslagenersatz von CHF 264.80, zuzüglich 8,1 % Mehrwertsteuer von CHF 748.–, somit total CHF 9'982.80 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

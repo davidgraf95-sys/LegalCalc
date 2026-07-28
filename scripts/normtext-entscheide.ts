@@ -14,6 +14,9 @@ import {
   holeEntscheidOCL, enumeriereNeueste, enumeriereNeuesteAlle, citedRefZuId, enumeriereBge, enumeriereBgeBaender, holeBgeLeitentscheid,
 } from './normtext/adapter-entscheide';
 import { schreibeKorpus, ladeBestandSnapshots } from './normtext/entscheide-schreiben';
+import {
+  normKeysVonSnapshot, remapNormKeys, undeklarierteAltKeys, literaturEntfernteNormKeys,
+} from './normtext/entscheide-mapping';
 import { sha256EntscheidBloecke } from './normtext/sha-entscheide';
 import { holeRegesteSprachfassungen, holeClirHtml, parseClirUrteilskopf, bgeRefZuClirId } from './normtext/clir-regeste';
 import type { EntscheidSnapshot } from '../src/lib/rechtsprechung/typen';
@@ -90,6 +93,56 @@ const regesteRefresh = process.argv.includes('--regeste-refresh');
 // ergänzt sie zum committeten Bestand (byte-treu, §6), inkl. dreisprachiger clir-
 // Regeste (A18) für die NEUEN BGE. Bund/Kanton/eidg + Bestands-BGE bleiben unberührt.
 const bgeBaender = (arg('--bge-baender') ?? '').split(',').map((s) => Number(s.trim())).filter((n) => Number.isFinite(n) && n > 0);
+// --remap (W2·6-NKEY): rechnet die `normKeys` des BESTEHENDEN Korpus mit der
+// abgeleiteten Register-Tabelle + der Fliesstext-Erkennung neu und schreibt den
+// Korpus über denselben Writer. STRIKT OFFLINE (kein Netz-Zweig läuft), rein aus
+// den committeten Snapshots — mit gleichem --datum byte-gleich wiederholbar (§2).
+// Berührt `sha` NICHT (der deckt nur `abschnitte`).
+const remap = process.argv.includes('--remap');
+/**
+ * DEKLARIERTE Alt-Key-Bewahrung (Linse 3, 28.7.2026) — die Ratsche bekommt eine
+ * Sperre.
+ *
+ * `remapNormKeys` bewahrt jeden Alt-Key, den die Neuberechnung nicht reproduziert
+ * (Begründung dort: nicht persistierte aza-statutes sind legitime Roh-Signale ohne
+ * Beleg IM Snapshot). Pauschal angewandt ist das eine EINWEG-RATSCHE: sie bewahrt
+ * auch einen Alt-Key, den ein Korrektheits-Fix soeben als FALSCH entlarvt hat.
+ * Beinahe-Fall aus dieser Bau-Einheit: wäre der Backfill VOR dem Trunkierungs-Fix
+ * gelaufen (LPMéd → 'LPM' → MSCHG), hätte ein späterer `--remap` die fünf falschen
+ * MSCHG-Keys als «alt-erhalten» zurückgeschrieben — der Fix wäre am Artefakt
+ * wirkungslos geblieben, und die Zahl in der Log-Zeile hätte wie eine Rettung
+ * ausgesehen statt wie ein Rückfall.
+ *
+ * Bewahrt wird darum nur noch, was hier DEKLARIERT ist. Alles andere bricht den
+ * Lauf ab (fail-closed, §6.7): lieber ein Abbruch mit vollständiger Liste als ein
+ * stiller Rückschreiber. Wächst die Liste, ist das eine bewusste Entscheidung mit
+ * Herkunfts-Beleg — kein Nebeneffekt.
+ *
+ * §6.7-Sabotage-Probe 28.7.2026: mit LEERER Deklaration bricht `--remap` ab und
+ * nennt «bund/bge/152_I_61: ZPO»; der Abbruch erfolgt VOR `schreibeKorpus`, der
+ * committete Korpus blieb byte-gleich (5'254 Dateien geprüft). Die Sperre kann
+ * also scheitern, und ihr Scheitern zerstört nichts.
+ *
+ * HEUTIGER STAND (gemessen am committeten Korpus, 28.7.2026): genau ein Eintrag.
+ * bund/bge/152_I_61 trägt 'ZPO', ohne dass 'ZPO'/'CPC' in `zitierteNormen` oder im
+ * Fliesstext des Snapshots vorkommt — Herkunft ist der frühere BGE-Merge, der die
+ * statutes des unterliegenden aza-Urteils in die normKeys fliessen liess, ohne sie
+ * selbst zu persistieren (seit der Adapter-Härtung passiert das nicht mehr).
+ *
+ * DIE LISTE BLEIBT BEI EINEM EINTRAG, obwohl die Literatur-Kontext-Regel
+ * (Gegenprüfung R3) 41 weitere Alt-Keys nicht mehr reproduziert — und das ist die
+ * Pointe der Sperre, nicht ihre Umgehung: diese 41 sollen VERSCHWINDEN, nicht
+ * bewahrt werden. Sie in ALT_ERHALTEN_ERWARTET zu schreiben hiesse, den soeben
+ * gebauten Fix am Artefakt wieder auszuschalten. Sie laufen darum über den
+ * Gegenzweig `literaturEntfernteNormKeys` (Ursache je Snapshot mechanisch belegt:
+ * roher Text erzeugt den Key, bereinigter nicht) und werden vollständig
+ * ausgewiesen, nie still gelöscht. Belege sind Kommentar-Fundstellen wie
+ * bge_152_I_9 «N. 16 zu Art. 38 VwVG» (4 Spannen, VwVG sonst nirgends im Text)
+ * oder bge_148_II_465 «ad art. 321 CP».
+ */
+const ALT_ERHALTEN_ERWARTET: ReadonlyMap<string, readonly string[]> = new Map([
+  ['bund/bge/152_I_61', ['ZPO']],
+]);
 // Cache-Verzeichnis der rohen clir-HTML (gitignored; Re-Parse ohne Re-Crawl).
 const CLIR_CACHE = path.join(process.cwd(), 'daten', 'cache', 'clir-regeste');
 // Court-spezifischer Sachgebiets-Hint (deterministisch, deklariert): Patentstreit =
@@ -109,8 +162,17 @@ async function mapLimit<T, R>(items: T[], n: number, fn: (t: T, i: number) => Pr
 // Auswahl-Rang: Regeste zuerst, dann Leitentscheid, dann mit Norm-Verknüpfung.
 const rang = (s: EntscheidSnapshot) =>
   (s.regeste ? 0 : 2) + (s.leitcharakter === 'leitentscheid' ? 0 : 1) + (s.normKeys.length ? 0 : 0.5);
+// DIESELBE Fehlerklasse wie im proNorm-Komparator (entscheide-schreiben.ts, Linse 4,
+// 28.7.2026): `(a.datum < b.datum ? 1 : -1)` liefert bei GLEICHEM Rang UND gleichem
+// Datum −1 für BEIDE Richtungen — keine Ordnung, sondern eine Behauptung. Hier wiegt
+// es zusätzlich, weil danach `.slice(0, limit)` läuft: WELCHE Entscheide überhaupt in
+// den Korpus kommen, hing damit an der Fetch-Reihenfolge (nebenläufig, `mapLimit`).
+// Totaler Tiebreaker ist die Snapshot-`id` — sie ist je Entscheid eindeutig.
 const sortAuswahl = (xs: EntscheidSnapshot[]) =>
-  [...xs].sort((a, b) => rang(a) - rang(b) || (a.datum < b.datum ? 1 : -1));
+  [...xs].sort((a, b) =>
+    rang(a) - rang(b)
+    || (a.datum < b.datum ? 1 : a.datum > b.datum ? -1 : 0)
+    || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 
 /** Bund: Citation-Graph-BFS ab Seeds (+ Listing-Bonus-Seeds), allsprachiger Pool, gewählt nach Rang. */
 async function bundKorpus(): Promise<EntscheidSnapshot[]> {
@@ -229,6 +291,79 @@ async function eidgKorpus(): Promise<EntscheidSnapshot[]> {
 const docketSlug = (d: string) => d.replace(/\s+/g, '').replace(/[^A-Za-z0-9]/g, '_');
 
 async function main() {
+  // ── Re-Map der normKeys (W2·6-NKEY) — OFFLINE, vor allen Netz-Zweigen ───────
+  if (remap) {
+    const basis = ladeBestandSnapshots();
+    if (!basis.length) {
+      console.log('[remap] 0 Snapshots geladen (kein Bestand?) — Korpus unberührt.');
+      return;
+    }
+    const vorher = basis.filter((s) => (s.normKeys ?? []).length > 0).length;
+    let veraendert = 0;
+    // Alt-Keys, die die Neuberechnung nicht reproduziert, werden BEWAHRT statt
+    // gelöscht — Regel und Begründung in `remapNormKeys` (§5: eine Stelle).
+    // NUR das in ALT_ERHALTEN_ERWARTET Deklarierte darf so überleben; alles
+    // andere bricht den Lauf ab, statt still zurückgeschrieben zu werden.
+    let altErhaltenKeys = 0;
+    let altErhaltenSnaps = 0;
+    const bewahrt = new Map<string, readonly string[]>();
+    // GEGENRICHTUNG der Sperre (Gegenprüfung R3): ein Alt-Key, den die
+    // Literatur-Kontext-Regel soeben als Phantom entlarvt hat, darf NICHT bewahrt
+    // werden — sonst schriebe dieser Lauf den Fix wieder weg. Die Ursache wird je
+    // Snapshot mechanisch BELEGT (roher Text erzeugt den Key, bereinigter nicht),
+    // nicht angenommen; alles andere läuft weiter in den fail-closed Abbruch.
+    const litVerworfen = new Map<string, readonly string[]>();
+    let litVerworfenKeys = 0;
+    for (const s of basis) {
+      const alt = s.normKeys ?? [];
+      const nichtBewahren = new Set(literaturEntfernteNormKeys(s));
+      // ohne hint: rein aus dem Snapshot
+      const { keys: neu, nurAlt, verworfen } = remapNormKeys(alt, normKeysVonSnapshot(s), nichtBewahren);
+      if (nurAlt.length) {
+        altErhaltenKeys += nurAlt.length;
+        altErhaltenSnaps++;
+        bewahrt.set(s.id, nurAlt);
+      }
+      if (verworfen.length) {
+        litVerworfenKeys += verworfen.length;
+        litVerworfen.set(s.id, verworfen);
+      }
+      if (neu.length !== alt.length || neu.some((k, i) => k !== alt[i])) veraendert++;
+      s.normKeys = neu;
+    }
+    const undeklariert = undeklarierteAltKeys(bewahrt, ALT_ERHALTEN_ERWARTET);
+    if (undeklariert.length) {
+      console.error(
+        `\n[remap] ABBRUCH — ${undeklariert.length} Snapshot(s) mit nicht deklarierten `
+        + 'Alt-Keys. Ein Alt-Key, den die Neuberechnung nicht reproduziert, kann ein '
+        + 'legitimes Roh-Signal ODER eine soeben korrigierte Fehlzuordnung sein; '
+        + 'welches von beidem, entscheidet kein Automatismus (§1/§6.7). Prüfen und '
+        + 'entweder in ALT_ERHALTEN_ERWARTET (scripts/normtext-entscheide.ts) mit '
+        + 'Herkunfts-Beleg deklarieren oder die Ursache beheben:',
+      );
+      for (const z of undeklariert) console.error(`  · ${z}`);
+      process.exit(1);
+    }
+    const nachher = basis.filter((s) => s.normKeys.length > 0).length;
+    const res = schreibeKorpus(basis, datum);
+    console.log(`[remap] ${basis.length} Snapshots · normKeys verändert: ${veraendert}`);
+    console.log(`[remap] mit ≥1 normKey: vorher ${vorher} → nachher ${nachher}`);
+    console.log(`[remap] alt-erhalten: ${altErhaltenKeys} Keys über ${altErhaltenSnaps} Snapshots — alle deklariert (${ALT_ERHALTEN_ERWARTET.size} Eintrag/Einträge in ALT_ERHALTEN_ERWARTET).`);
+    // Vollständig ausgeben, nicht bloss zählen: ein aus dem Bestand ENTFERNTER Key
+    // ist eine Korrektur an ausgelieferten Daten und gehört ins Lauf-Protokoll (§8).
+    console.log(`[remap] alt-verworfen (Literatur-Phantome, NICHT bewahrt): ${litVerworfenKeys} Keys über ${litVerworfen.size} Snapshots.`);
+    for (const [id, keys] of [...litVerworfen].sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))) {
+      console.log(`  · ${id}: ${[...keys].join(', ')}`);
+    }
+    console.log(`[remap] geschrieben: ${res.anzahl} Manifest-Einträge, ${res.normBuckets} Norm-Buckets, ${res.artikelBuckets} Artikel-Buckets, ${res.shards} Shards.`);
+    // §6.7: die Wirkung der Literatur-Kontext-Regel (Gegenprüfung R3) wird GEZÄHLT
+    // ausgewiesen, nicht bloss behauptet. Springt eine der Zahlen gegenüber dem
+    // Vorlauf, ist entweder die Extraktion, der Korpus oder die Marker-Liste gewandert.
+    const lv = res.literaturVerwurf;
+    console.log(`[remap] Literatur-Kontext-Regel: ${lv.spannen} Zitier-Apparat-Spannen entfernt, darin ${lv.nennungen} Roh-Nennungen; ${lv.paare} (Snapshot, Artikel)-Paare stammten AUSSCHLIESSLICH daraus.`);
+    return;
+  }
+
   console.log(`[entscheide] Build ${datum} · BGE ${bgeVon ?? '–'} · Bund-Limit ${bundLimit} · Kantone [${kantCourts.join(',') || '–'}] je ${kantonPro}${additiv ? ` · ADDITIV eidg [${eidgCourts.join(',') || '–'}] je ${eidgPro}` : ''}`);
 
   // ── BGE-Band-Nachzug (W2·6): vollständige Bände additiv ergänzen ─────────────

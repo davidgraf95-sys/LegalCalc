@@ -508,7 +508,12 @@
         "Dem amtlichen Verteidiger lic. iur. Michael Angehrn, werden für die zweite Instanz ein Honorar von CHF 8'300.–, zuzüglich Mehrwertsteuer von insgesamt CHF 652.50 (7,7 % auf CHF 4'950.– [Aufwand bis 31.12.23] sowie 8,1 % auf CHF 3'350.– [Aufwand ab 1.1.24]), somit total CHF 8'952.50 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt zu einem Drittel vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

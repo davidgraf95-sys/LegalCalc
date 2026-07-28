@@ -453,7 +453,14 @@
         "Der amtlichen Verteidigerin, [...], werden für das Berufungsverfahren ein Honorar von CHF 7'944.– und eine Spesenentschädigung von CHF 240.35, zuzüglich 7,7% Mehrwertsteuer von CHF 630.20 aus der Gerichtskasse ausgerichtet. Art. 135 Abs. 4 der Strafprozessordnung bleibt im Umfang der Hälfte dieser Summe vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "IVG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

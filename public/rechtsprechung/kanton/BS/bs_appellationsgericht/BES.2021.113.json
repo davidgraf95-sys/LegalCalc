@@ -241,7 +241,12 @@
         "Dem Beschwerdegegner 4 wird eine Parteientschädigung in der Höhe von CHF 673.10 (inkl. Auslagen und 7,7 % MWST) ausgerichtet, wovon der Beschwerdeführer die Hälfte, somit CHF 336.55, zu entrichten hat. Die andere Hälfte geht zu Lasten der Gerichtskasse."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

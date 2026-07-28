@@ -314,7 +314,12 @@
         "Art. 269 CO",
         "Art. 269a CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "VMWG"
+      ],
       "zitierteEntscheide": [
         "1C_471/2018",
         "1C_500/2013",

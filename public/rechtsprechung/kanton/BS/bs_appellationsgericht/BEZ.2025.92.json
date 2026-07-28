@@ -132,7 +132,11 @@
         "Auf die Erhebung von Gerichtskosten für das vorliegende Verfahren des Appellationsgerichts wird verzichtet, soweit das Verfahren nicht ohnehin kostenlos ist."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

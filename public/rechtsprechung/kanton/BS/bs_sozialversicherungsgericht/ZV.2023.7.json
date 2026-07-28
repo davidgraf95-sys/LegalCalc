@@ -238,7 +238,12 @@
         "          Die ausserordentlichen Kosten werden wettgeschlagen. Dem Vertreter des Klägers im Kostenerlass, Dr. iur. B____, Advokat, wird ein Anwaltshonorar von CHF 3'000.00 inklusive Auslagen zuzüglich Mehrwertsteuer von CHF 243.00 aus der Gerichtskasse zugesprochen.  "
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "VVG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

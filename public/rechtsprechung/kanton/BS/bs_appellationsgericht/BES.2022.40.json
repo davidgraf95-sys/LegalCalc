@@ -158,7 +158,11 @@
         "Der amtlichen Verteidigerin, [...], werden aus der Gerichtskasse ein Honorar von CHF 1'200.– (inkl. Auslagen), zuzüglich 7,7 % MWST in Höhe von CHF 92.40, ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -226,7 +226,11 @@
         "Dem Berufungskläger wird eine Haftentschädigung von CHF 400.– für den zu Unrecht ausgestandenen Polizeigewahrsam von zwei Tagen vom 7. bis 8. Januar 2018 zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

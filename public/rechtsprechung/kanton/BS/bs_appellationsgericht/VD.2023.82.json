@@ -172,7 +172,11 @@
         "Für das verwaltungsgerichtliche Rekursverfahren werden keine Gerichtskosten erhoben. Der geleistete Kostenvorschuss in Höhe von CHF 500.– wird zurückerstattet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

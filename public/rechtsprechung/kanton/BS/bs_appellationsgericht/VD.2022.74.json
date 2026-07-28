@@ -241,7 +241,11 @@
         "Der Rechtsvertreterin der Beigeladenen, [...], wird zufolge Bewilligung der unentgeltlichen Rechtspflege ein Honorar von CHF 6’000.–, zuzüglich Auslagen von CHF 121.65 und 7,7 % Mehrwertsteuer von CHF 471.35, total CHF 6'593.–, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

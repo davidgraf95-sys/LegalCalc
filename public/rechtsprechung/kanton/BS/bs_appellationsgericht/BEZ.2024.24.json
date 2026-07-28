@@ -112,7 +112,11 @@
         "Die Beschwerdeführenden tragen die Gerichtskosten des Beschwerdeverfahrens von CHF 50.– in solidarischer Verpflichtung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

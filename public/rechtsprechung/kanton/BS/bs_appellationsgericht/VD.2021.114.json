@@ -212,7 +212,9 @@
         "Zufolge Bewilligung der unentgeltlichen Verbeiständung wird der Vertreterin des Rekurrenten, [...], für das verwaltungsgerichtliche Rekursverfahren ein Honorar von CHF 2'400.–, zuzüglich Auslagen von pauschal CHF 72.– und 7,7 % MWST von CHF 190.35, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

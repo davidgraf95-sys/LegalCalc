@@ -248,7 +248,13 @@
         "Dem Beschwerdeführer wird für das Beschwerdeverfahren die amtliche Verteidigung bewilligt und seinem amtlichen Verteidiger, MLaw Benjamin Appius, Advokat, ein Honorar von CHF 1’600.– zuzüglich 8,1 % Mehrwertsteuer von CHF 129.60, somit total CHF 1’729.60, aus der Gerichtskasse entrichtet. Art. 135 Abs. 4 der Schweizerischen Strafprozessordnung und Art. 25 Abs. 2 der Jugendstrafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "JSTG",
+        "JSTPO",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

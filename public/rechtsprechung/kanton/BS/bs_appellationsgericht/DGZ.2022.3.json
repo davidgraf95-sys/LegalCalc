@@ -207,7 +207,13 @@
         "Die Ehegatten tragen ihre eigenen Parteikosten. Zufolge Bewilligung der unentgeltlichen Rechtspflege wird ihren unentgeltlichen Rechtsbeiständinnen, [...], Advokatin, und [...], Advokatin, ein Honorar (inkl. Auslagen) von je CHF 830.–, zuzüglich 7,7 % MWST von CHF 63.90, insgesamt also CHF 893.90 aus der Gerichtskasse ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "HKSUE96",
+        "IPRG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

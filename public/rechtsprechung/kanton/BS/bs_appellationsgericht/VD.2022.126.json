@@ -272,7 +272,12 @@
         "Das Präsidialdepartement hat der Rekurrentin für das verwaltungsgerichtliche Rekursverfahren eine reduzierte Parteientschädigung von CHF 4’120.–, zuzüglich 7,7 % MWST von CHF 317.25 zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "MWSTG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

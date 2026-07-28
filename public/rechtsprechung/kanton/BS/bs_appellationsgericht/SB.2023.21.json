@@ -281,7 +281,11 @@
         "A____ wird zur Zahlung einer Parteientschädigung von CHF 5'025.– für das Berufungsverfahren zugunsten der B____ verurteilt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

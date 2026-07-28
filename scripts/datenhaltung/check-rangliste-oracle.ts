@@ -26,8 +26,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
 import { baueMasseKorpusBruecke } from './masse-korpus-bruecke';
-import { normKeyFuerAbk } from '../normtext/entscheide-mapping';
-import { extrahiereStatutRefs } from '../../src/lib/rechtsprechung/zitat-extraktion';
+import { artikelSchluesselVonSnapshot } from '../normtext/entscheide-mapping';
 import { ladeBestandSnapshots, kanonZitat } from '../normtext/entscheide-schreiben';
 import { normArtikelToken } from '../../src/lib/rechtsprechung/norm-index';
 import type { NormEntscheidIndex } from '../../src/lib/rechtsprechung/norm-index';
@@ -36,7 +35,6 @@ import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
 
 const MASSE_DB = process.env.MASSE_DB ?? 'daten/masse.db';
 const ROOT = process.cwd();
-const AMBIG = new Set(['STG']); // wie norm-index (AMBIGE_BUND_KANTON_KUERZEL)
 
 function ladeJson<T>(p: string): T {
   return JSON.parse(readFileSync(join(ROOT, p), 'utf8')) as T;
@@ -53,15 +51,9 @@ function selbstTokens(s: EntscheidSnapshot): string[] {
   }
   return [...o];
 }
-function artikelSchluessel(s: EntscheidSnapshot): Set<string> {
-  const o = new Set<string>();
-  for (const ref of extrahiereStatutRefs((s.zitierteNormen ?? []).join('\n'))) {
-    const rk = normKeyFuerAbk(ref.gesetz);
-    if (!rk || AMBIG.has(rk)) continue;
-    o.add(`${rk}/${ref.artikel}`);
-  }
-  return o;
-}
+// Artikel-Schlüssel: GETEILTE Funktion mit dem Live-Index (§5) — das Oracle muss
+// dieselbe Logik prüfen, nicht eine Kopie davon. Die frühere lokale Nachbau-
+// Version samt AMBIG-Set driftete sonst von entscheide-schreiben weg (W2·6-NKEY).
 
 type Klasse = 'identisch' | 'erhoeht' | 'vintage-absent' | 'erklaert-delta' | 'UNERKLÄRT';
 
@@ -84,7 +76,7 @@ function main(): number {
   const bg = ladeBestandSnapshots(ROOT).filter((s) => s.gerichtstyp === 'bundesgericht');
   const selbstVon = new Map<string, string[]>();
   const artVon = new Map<string, Set<string>>();
-  for (const s of bg) { const k = korpusKey(s); selbstVon.set(k, selbstTokens(s)); artVon.set(k, artikelSchluessel(s)); }
+  for (const s of bg) { const k = korpusKey(s); selbstVon.set(k, selbstTokens(s)); artVon.set(k, artikelSchluesselVonSnapshot(s)); }
 
   /** norm-index-Beitragende: corpus-Entscheide d2≠d, die A zitieren UND d nennen. */
   function jsCiters(artKey: string, targetKey: string): string[] {

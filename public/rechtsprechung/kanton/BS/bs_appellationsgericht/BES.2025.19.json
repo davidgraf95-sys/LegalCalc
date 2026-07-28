@@ -174,7 +174,11 @@
         "Dem Rechtsvertreter des Beschwerdeführers, MLaw Andreas Fischer, wird für das Beschwerdeverfahren ein Honorar von CHF 1’297.20 (inkl. Auslagen und MWST) aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

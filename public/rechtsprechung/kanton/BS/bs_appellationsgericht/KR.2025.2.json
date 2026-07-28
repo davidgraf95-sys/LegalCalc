@@ -301,7 +301,12 @@
         "Vorbehalten bleibt die Nachforderung gemäss Art. 123 Abs. 1 der Zivilprozessordnung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "HKUE",
+        "STGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

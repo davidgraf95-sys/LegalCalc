@@ -266,7 +266,12 @@
         "Die Berufungsklägerin trägt ihre eigenen Parteikosten und hat dem Berufungsbeklagten eine Parteientschädigung von CHF 3'090.–, zuzüglich 7,7 % MWST von CHF 237.95, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

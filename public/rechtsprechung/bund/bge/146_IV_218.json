@@ -222,7 +222,15 @@
         "Art. 108 CPP",
         "Art. 12 BGFA"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGFA",
+        "BGG",
+        "BV",
+        "OR",
+        "STGB",
+        "STPO",
+        "UWG"
+      ],
       "zitierteEntscheide": [
         "1B_112/2019",
         "1B_144/2016",

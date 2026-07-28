@@ -148,7 +148,11 @@
         "Die Beschwerdeführerin trägt die Verfahrenskosten in Höhe von CHF 300.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

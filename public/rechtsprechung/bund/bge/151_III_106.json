@@ -423,7 +423,12 @@
         "Art. 4 MSCHG"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "BV",
+        "MSCHG",
+        "STGB",
+        "UWG",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "4A_128/2012",

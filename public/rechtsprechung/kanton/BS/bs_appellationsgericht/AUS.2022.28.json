@@ -165,7 +165,11 @@
         "            Das Gesuch um unentgeltliche Rechtspflege wird gutgeheissen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

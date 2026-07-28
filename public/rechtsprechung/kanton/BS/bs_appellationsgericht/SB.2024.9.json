@@ -506,7 +506,12 @@
         "Die in Rechtskraft erwachsene Entschädigung des Vertreters von C____ im Kostenerlass, lic. iur. Christoph Dumartheray, für das erstinstanzliche Verfahren hat A____ dem Strafgericht zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben, in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 der Strafprozessordnung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

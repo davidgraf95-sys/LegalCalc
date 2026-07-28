@@ -656,6 +656,108 @@ Kanton 29 055 aus allen 26 Kantonen** (1 231 kantonale Erlasse). Prod-Smoke-Pfad
       §10/U-REGESTE. · **B3** Sticky-Kopf überdeckt Body in `EntscheidLeser.tsx`
       (*reine UI, eigener Commit — NICHT in dieser Einheit*). Details im Eingangsblock oben.
 
+## W2·6-NKEY — normKeys-Abdeckung generalisieren: Register-Ableitung + FR/IT-Aliase + Sichtbarkeits-Tor *(done 28.7.2026; Plan-Prosa wörtlich verschoben, Abschluss-Prosa ergänzt)*
+
+### Die Plan-Prosa des Schritts (wörtlich, Stand vor dem Bau)
+
+  **Befund (empirisch, 21.7.2026, Anlassfall `bge_148_II_475` ohne KG-Verzahnung):** Von 9 905
+  Norm-Zitat-Nennungen über 5 093 Entscheide mappt die Hand-Whitelist `ABK_REGISTER`
+  (`scripts/normtext/entscheide-mapping.ts`, 26 Einträge) nur **43 %** auf `normKeys`; der Rest wird
+  **still verworfen** (§6.7-Verstoss dem Geist nach). Davon: **97 Erlasse sind längst im Korpus**,
+  fehlen nur in der Tabelle (+13 %: IPRG, KVG, RPG, MWSTG, SVG, VwVG, USG, KG, …); **~40 % sind
+  FR/IT-Abkürzungen** (CST→BV, CP→StGB, CPP→StPO, LTF→BGG, CO→OR, CPC→ZPO, CC→ZGB, LP/LEF→SchKG,
+  LIFD→DBG, LAMal→KVG, LCart→KG, …), die die Tabelle gar nicht kennt. Drei Bausteine, Reihenfolge
+  **a → c → b**:
+  - **a · Mapping aus dem Register generieren (§5):** Die deutsche Abkürzung IST der Register-Key
+    (`src/lib/normtext/register.ts`, 227 Bund-Erlasse) — Tabelle build-time ableiten statt parallel
+    pflegen; jeder künftige Erlass wird automatisch verzahnbar (Ende der «BGFA-Fix»-Fehlerklasse,
+    PR #290). Deklarierte Kollisions-/Ausschlussliste bleibt (Muster StG≠StGB; kantonale Namensvetter
+    StG/KV/BauG dürfen NIE auf Bundesrecht mappen — §1).
+  - **c · Sichtbarkeits-Tor gegen stilles Verwerfen (§6.7):** Wächter listet ungemappte Abkürzungen
+    nach Häufigkeit gegen eine deklarierte Ignore-Liste (kantonal/ausserhalb Korpus/Rauschen wie
+    «BGE» = bewusst); Neues darüber = rot. Sabotage-Probe Pflicht. Nebenprodukt: datenbasierte
+    Korpus-Kandidaten (KVG 108+ Nennungen).
+  - **b · Amtliche DE/FR/IT-Aliase aus Fedlex-Metadaten:** SPARQL liefert die amtliche Abkürzung je
+    SR-Nummer und Sprache (Pipeline spricht Fedlex-SPARQL bereits, `scripts/fedlex-cache.sh`);
+    generiertes Alias-Artefakt (`*.generated.ts`, Quelle+Stand §7, `merge=regen` §12), kein Hand-
+    Erraten von Paaren. Ziel-Abdeckung **85–90 %**.
+  **Backfill:** Entscheid-Snapshots + `norm-index`/Leitfall-Shards regenerieren (5 093 Entscheide,
+  deterministisch, 2 Läufe byte-gleich). **Bündelung geprüft (§14.2/§14.3):** NICHT in `W2·6-FILTER`
+  (andere Risiko-Klasse: hier Extraktion/Mapping = Risikopfad, dort Abfrage/Projektion) — löst aber
+  dessen 🔴-Blocker «normKeys 18 %» und ist Fundament für `W2·6-ZNETZ`/`W2·7-VZUI`-Normfilter.
+  Kollisionsfläche mit ZNETZ/FILTER (`public/rechtsprechung`) ⇒ Worktree + serielle Landung (§12).
+  **DoD:** `check:entscheide` grün · Wächter-Tor einmal rot gezeigt · Abdeckungs-Quote vorher/nachher
+  im PR ausgewiesen (§8) · `check:gegenpruefung` **bestanden** (Opus, unabhängig gegen Fedlex-
+  Abkürzungen) · golden byte-gleich. Trailer `Roadmap: W2·6-NKEY` + `Gegenpruefung: <Verdikt>`.
+
+### Wie es gebaut wurde (28.7.2026, Worktree `w26-nkey`, ULTRACODE)
+
+**a · Register-Ableitung statt Hand-Whitelist (§5).** Die Tabelle wird aus `ERLASS_REGISTER`
+abgeleitet, mit zwei Kandidaten je Eintrag (Anzeige-Abkürzung `kuerzel` und dateisicherer `key`,
+beide über `normalisiereAbk` normalisiert): **654 auflösbare Abkürzungs-Formen auf 237 Erlasse**
+(238 Bund-Einträge). Zeigt eine normalisierte Abkürzung auf ZWEI Register-keys, wird sie
+**beidseitig verworfen** und als Kollision ausgewiesen — nie geraten (§1). `ABK_AUSSCHLUSS` hält
+`StG` (SR 641.10) draussen: föderal UND kantonal, pro Zitat nicht sicher trennbar — lieber eine
+Lücke als eine falsche Bundesrechts-Zuordnung (§8).
+
+**b · Fedlex-Alias-Ebene.** `src/lib/normtext/abk-aliase.generated.ts` trägt **597 amtliche
+DE/FR/IT-Kurzbezeichnungen** aus `jolux:titleShort` (Currency-Fenster über
+`dateEntryInForce`/`dateNoLongerInForce`), über die SR-Nummer an den Register-key gebunden —
+«art. 42 LTF» = Art. 42 BGG, «art. 41 CO» = Art. 41 OR. Vorher verschwand jedes Zitat eines
+französisch- oder italienischsprachigen Entscheids lautlos. Die Aliase sind **keine zweite
+Wahrheit** (§5): der Erlass-Bestand bleibt das Register, das Artefakt trägt nur dessen
+fremdsprachige Namen. Der SR-Index nimmt **nur Bund-Einträge** — bei kantonalen Einträgen trägt
+`sr` die kantonale Systematiknummer, die einer Bundes-SR zufällig gleichen kann. Der Ausschluss
+wirkt auch auf Aliase: «LT» (fr) und «LTB» (it) hätten `STG` sonst durch die Hintertür in den
+Korpus getragen — das wäre eine fachliche Entscheidung, und die trifft kein Build-Schritt nebenbei
+(§7/§8). Methodik + Regenerier-Befehl: `bibliothek/recherche/fedlex-abkuerzungen-titleshort.md`.
+
+**c · Sichtbarkeits-Tor `check:normkeys`.** Schwelle 20 Snapshots, **11 deklarierte
+Ignore-Einträge** je mit Grund (aufgehoben / ausserhalb-korpus / kantonal / rauschen). Das Tor
+beziffert die Restlücke, statt sie zu verschweigen: es weist die **62 von 597 Aliase** aus, die im
+Fliesstext-Pfad strukturell unerreichbar sind — je mit Ursache (Leerzeichen 32 · Trennzeichen
+kappt den Code 17 · Akzent/Umlaut im Wortinnern 9 · nur 1 Grossbuchstabe bei Länge > 3 3 ·
+Sperrliste 1) und mit Korpus-Beleg (34 Formen in 207 Snapshots, 264 Artikel-Zitate ausserhalb des
+Quoten-Nenners). Es nennt **Korpus-Kandidaten ohne Register-Eintrag** (BZP SR 273 · WG SR 514.54)
+und meldet Ignore-Einträge, die unter die Schwelle gefallen sind, als Streich-Kandidaten.
+
+**d · Fliesstext-Artikel (Zusatzauftrag David 27.7.).** Artikel-Zitate im Erwägungstext werden
+erkannt und zugeordnet, nicht mehr nur die `statutes`-Kopfzeile — dort liegt die Masse:
+**88 913 der 98 755 Nennungen** stammen aus dem Fliesstext.
+
+**Ergebnis am Landungsstand.** Nennungs-Abdeckung **93.6 %** (statutes 89.3 % · Fliesstext 94.1 %);
+Snapshots mit `normKeys` **21.9 % → 99.9 %** über 5093 Entscheide; Norm-Index-Buckets von 25 auf
+**156 Erlasse / 4452 Artikel**.
+
+**§15-Laufzeit-Projektion.** Der Backfill hob `norm-index.json` auf 724 KB gzip — gegen eine
+260-KB-Schranke. Statt den Deckel zu heben, wurde die **Erlass-Ebene als eigene Projektion**
+ausgeschrieben (`norm-index-erlasse.json`, **92.7 KB gzip**, Budget 120 KB); nur sie liegt auf dem
+Nutzerpfad (`rechtsprechungFuerErlass()`), der Monolith ist reines Build-/Prüf-Artefakt.
+Logikverlust-Bewertung: **keiner** — identische Daten, identische Rückgabe, nur weniger Bytes.
+Die andere Hälfte derselben Messung ist ehrlich mitgezählt: derselbe Backfill hob `register.json`
+auf 756.9 KB gzip = **97 % des 780-KB-Deckels**. Bewusst NICHT durch Anheben gelöst (§8) — die
+Verschlankung bleibt als Folgearbeit im Plan stehen.
+
+**Vier adversariale Gegenprüfungs-Runden (Opus, frischer Kontext).**
+- **R1 widerlegt:** unvollständige Ordinal-Serie; fr «par.» als Absatzmarker nicht erkannt.
+- **R2 widerlegt:** Literatur-Phantome + Folge-/Wortbereichs-Zitate ⇒ Artikel-Index-Korroboration.
+- **R3 widerlegt:** die eingebaute Häufigkeits-Schwelle löschte **echte Rechtsanwendung**
+  (OR/30 Furchterregung, StPO/428, EMRK/6). Eine Regel, die echte Rechtsanwendung löscht, um eine
+  schmale Phantom-Klasse zu treffen, verletzt §1 — **Häufigkeit ist kein Signal für
+  Tragfähigkeit**. Die Schwelle wurde **zurückgebaut** und durch eine gezielte, deklarierte
+  **Literatur-Kontext-Regel** (`ohneLiteraturApparat`) ersetzt: nicht WIE OFT eine Norm genannt
+  wird entscheidet, sondern WO. Nennungen innerhalb einer Zitier-Apparat-Spanne (Kommentar-Titel,
+  Randnummer-Fundstelle, fr/it «ad art.») sind Angaben ÜBER Literatur, nicht Rechtsanwendung des
+  Gerichts; sie werden vor der Extraktion aus dem Text genommen — auf BEIDEN Ebenen gleich
+  (13 041 Spannen in 1120 Snapshots). Damit bleibt der Dekret-Stand «erst vollständig erkennen»
+  unangetastet: jede erkannte Nennung im Erwägungstext zählt wieder, ohne Schwelle.
+- **R4 bestanden:** 12 amtliche Einzel-Belege gegen bger.ch, korpusweite Verlust-Bilanz **13/13
+  deklariert** (11 STG-Ausschluss, 2 Literatur mechanisch belegt).
+
+**Nachtrag am Landungsstand:** der Begründungs-Kommentar in `scripts/check-perf-budget.ts` trug
+noch die Zahlen VOR dem R3-Rückbau (157 Erlass-/4473 Artikel-Buckets, 731 KB gzip) — auf die
+nachgemessenen 156/4452/724 richtiggestellt, mit Vermerk warum.
+
 ## W2·6-DATA — Etappen-Erzählung E0/E0+/E1/E2/E3 *(offener Schritt; ✅-Prosa wörtlich verschoben 22.7.2026)*
 
       Änderung golden byte-gleich (§6) + `QS-GP`. OCL-Pakete W12 (Bulk-Parquet) + F2 gehen hier auf. **E0 ✅ 2.7.2026** (PR #80/81, `ad065c03`: 218 Bund-Normtext byte-gleich DB↔JSON, `check:paritaet` in der Gate-Kette, doppelt verifiziert). **E0+ ✅ 3.7.2026** (Branch `feat/qs-data-e0-plus`, expliziter Sub-Schritt, KEIN neuer ROADMAP-Schritt — §14): Ziel-Schema §3 angelegt (erlasse/erlass_fassungen/artikel/entscheide inkl. `ecli_key`/`bge_key`+Indizes/soft_law + leere norm_referenzen/zitat_kanten/norm_rangliste) · Partitionierung je Doktyp (`daten/normtext.db`·`rechtsprechung.db`·`soft-law.db`; Monolith `lexmetrik.db` entfällt ersatzlos) · `normalisiere-zitat.ts` + DB-freie Unit-Tests · Reverse-Ingest ausgedehnt (Kanton-Normtext 1231 · Rechtsprechung 342 · 4 Manifeste inkl. Trailing-Newline · Materialien 1) — **`check:paritaet` byte-gleich über 1796 Dateien**, golden-neutral, doppelt verifiziert. **Nächstes: E1** (Generator-Flip). **Klarstellung Leitprinzip 4:** der Reverse-Ingest bereits committeter Kantons-JSONs öffnet **KEINEN** 26×-Slot (Leitprinzip 4 meint neuen Massenimport, nicht Reverse-Befüllung committeter Daten). **Weichen entschieden 3.7.:** Kontext-Auslieferung = Hybrid (Shards+Edge, `FAHRPLAN-DATENHALTUNG.md` §10(6)/§11.5) · Massen-Rebuild = Voll-Rebuild (§10(7)). **E1 ✅ 3.7.2026** (Branch `feat/qs-data-e1-flip`): Generator-Flip Bund-Normtext auf das Spalten-Zielschema (`erlasse`/`erlass_fassungen`/`artikel`), `public/*.json` = Projektion (Wächter alt≠neu → hart ab); neues Tor **`check:datenhaltung`** (Dump-Manifest-Determinismus + Drift gegen committetes `daten-manifest.json` + Invarianten Orphans/§7-Spalten/ATTACH); Risiko-Globs um `scripts/datenhaltung/**`+`daten/**`+`normtext-snapshot.ts` erweitert; Stabilitäts-Report. Byte-Beweis 3 Doppelläufe alt==neu==committet (218 Erlasse/24858 Artikel), `check:paritaet` unverändert 1796, golden byte-gleich, `QS-GP` bestanden. **VORBEHALT:** alter Direktpfad bleibt Wächter (Entfernen = eigener §6-Schritt); Kanton/Rechtsprechung/Materialien noch Blob-Weg. **E2 ✅ 3.7.2026** (Edge-Suche live: `api/suche.ts` + Turso-Hot-Replika; Sync-Timeout-Wurzel behoben 20.7., PR #313). **E3 ✅** (`rechtsprechung.db`, 488 MB).

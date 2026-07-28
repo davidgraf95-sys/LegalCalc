@@ -302,7 +302,11 @@
         "Der Ehemann hat der Ehefrau eine Parteientschädigung von CHF 1'030.– zuzüglich MWST von 7,7 % von CHF 79.30 zu bezahlen. Zufolge voraussichtlicher Uneinbringlichkeit der Parteientschädigung und Bewilligung der unentgeltlichen Rechtspflege für die Ehefrau wird ihrem unentgeltlichen Rechtsbeistand, [...], ein Honorar von CHF 830.– einschliesslich Auslagen und zuzüglich MWST von 7,7 % von CHF 63.90 aus der Gerichtskasse ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO durch den Ehemann bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

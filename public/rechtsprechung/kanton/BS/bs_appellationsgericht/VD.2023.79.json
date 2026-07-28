@@ -218,7 +218,13 @@
         "Die Gesuchstellerin trägt die Kosten des verwaltungsgerichtlichen Verfahrens mit einem Gebührenanteil von CHF 600.– (einschliesslich Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

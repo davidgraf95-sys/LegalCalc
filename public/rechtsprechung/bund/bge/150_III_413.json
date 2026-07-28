@@ -207,7 +207,11 @@
         "Art. 135 LDIP",
         "Art. 2 CL"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IPRG",
+        "LUGUE"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

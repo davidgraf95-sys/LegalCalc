@@ -1702,7 +1702,15 @@
         "Der Vertreterin von A____ im Kostenerlass, B____, wird in Anwendung von Art. 136 in Verbindung mit Art. 426 Abs. 4 StPO ein Honorar von CHF 5’837.65 (inklusive Mehrwertsteuer und Auslagen) aus der Gerichtskasse ausgerichtet. C____ hat dem Appellationsgericht ¾ dieses Betrags zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben, in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 der Strafprozessordnung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "JSTG",
+        "JSTPO",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

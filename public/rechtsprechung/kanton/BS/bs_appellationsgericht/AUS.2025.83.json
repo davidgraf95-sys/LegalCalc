@@ -247,7 +247,11 @@
         "Der unentgeltlichen Rechtsvertreterin, MLaw Elena Liechti, wird ein Honorar von CHF 2'510.–, zuzüglich Auslagen von CHF 10.–, insgesamt also CHF 2'520.–, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

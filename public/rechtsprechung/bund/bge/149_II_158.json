@@ -289,8 +289,12 @@
       ],
       "normKeys": [
         "BGG",
+        "BV",
         "DBG",
-        "BV"
+        "OR",
+        "STHG",
+        "VSTG",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -178,7 +178,13 @@
         "Dem amtlichen Verteidiger, B____, wird für das Ausstandsverfahren ein Honorar von CHF 1‘200.–, zuzüglich 3 % Auslagen von CHF 36.–, zuzüglich 8,1 % MWST von CHF 100.10, insgesamt also CHF 1‘336.10, aus der Gerichtskasse ausgerichtet. Art. 135 Abs. 4 StPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -205,7 +205,12 @@
         "            Die Beklagte hat eine Gerichtsgebühr von Fr. 500.-- zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BVG",
+        "OR",
+        "SCHKG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -527,7 +527,15 @@
         "Dem Vertreter der Privatklägerschaft im Kostenerlass, G____, wird in Anwendung von Art. 136 in Verbindung mit Art. 426 Abs. 4 StPO ein Honorar von CHF 8'643.50 (inklusive Mehrwertsteuer und Auslagen) aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "SCHKG",
+        "STGB",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

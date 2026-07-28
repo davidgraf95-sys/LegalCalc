@@ -193,7 +193,11 @@
         "Dem Gesuchsteller wird für das Wiedererwägungsverfahren eine Parteientschädigung von CHF 2’154.– (einschliesslich Auslagen und MWST) aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

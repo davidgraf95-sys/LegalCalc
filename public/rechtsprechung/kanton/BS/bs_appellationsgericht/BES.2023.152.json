@@ -163,7 +163,11 @@
         "Der Privatverteidigerin, [...], wird eine Entschädigung von CHF 3'724.25 für das Beschwerdeverfahren (inkl. Auslagen und MWST) aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

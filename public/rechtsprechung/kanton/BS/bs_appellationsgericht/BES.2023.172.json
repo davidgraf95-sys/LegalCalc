@@ -300,7 +300,11 @@
         "Der amtlichen Verteidigerin des Beschwerdeführers, [...], Advokatin, werden für das Verfahren vor der zweiten Instanz ein Honorar von CHF 8'016.66 gemäss Honorarnote zzgl. Aufwendungen für vier Stunden für die Verhandlung im Umfang von CHF 800.–, ein Auslagenersatz von insgesamt CHF 324.44 sowie Mehrwertsteuer zu 8,1 % im Umfang von insgesamt CHF 740.43, damit total CHF 9'881.53 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -300,7 +300,12 @@
         "Dem Berufungskläger werden für das Verfahren vor Strafgericht eine Parteientschädigung von total CHF 4'448.95 (inklusive 7,7 % MWST) und für das Berufungsverfahren eine Parteientschädigung von CHF 526.90 (inklusive 7,7 % MWST) für anwaltlichen Aufwand und Auslagen bis 31. Dezember 2023, eine Parteientschädigung von CHF 1'252.35 (inklusive 8,1 % MWST) für anwaltlichen Aufwand und Auslagen bis 14. Juni 2024 sowie eine Parteientschädigung von CHF 1'560.– (für Auslagen Audioanalyse) aus der Gerichtskasse bezahlt. Das Total aller Parteientschädigungen beträgt CHF 7'788.20."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "DSG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

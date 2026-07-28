@@ -208,9 +208,11 @@
         "Art. 28a Abs. 1 IVG"
       ],
       "normKeys": [
-        "BGG",
         "ATSG",
-        "IVG"
+        "BGG",
+        "EMRK",
+        "IVG",
+        "IVV"
       ],
       "zitierteEntscheide": [
         "8C_591/2019",

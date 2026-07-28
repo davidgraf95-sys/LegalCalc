@@ -403,11 +403,13 @@
         "Art. 25 IVV"
       ],
       "normKeys": [
-        "BV",
+        "AHVV",
         "ATSG",
-        "BVG",
         "BGG",
-        "IVG"
+        "BV",
+        "BVG",
+        "IVG",
+        "IVV"
       ],
       "zitierteEntscheide": [
         "8C_13/2023",

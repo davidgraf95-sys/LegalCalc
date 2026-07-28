@@ -296,7 +296,12 @@
         "Art. 101 Abs. 4 STGB"
       ],
       "normKeys": [
-        "STGB"
+        "BGG",
+        "BV",
+        "MWSTG",
+        "STGB",
+        "STPO",
+        "VSTRR"
       ],
       "zitierteEntscheide": [
         "2C_283/2017",

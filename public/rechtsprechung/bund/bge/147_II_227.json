@@ -414,9 +414,17 @@
         "Art. 19 Abs. 1 KG"
       ],
       "normKeys": [
-        "OR",
+        "BGERR",
+        "BGG",
+        "BGOE",
+        "BV",
         "DSG",
-        "BGG"
+        "EMRK",
+        "KG",
+        "OR",
+        "STGB",
+        "VWVG",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "2A.424/2000",

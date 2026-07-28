@@ -255,7 +255,11 @@
         "          Dem Rechtsvertreter des Beschwerdeführers im Kostenerlass, lic. iur. B____, Advokat, wird ein Anwaltshonorar von CHF 3'000.00 (inkl. Auslagen) zuzüglich CHF 231.00 Mehrwertsteuer aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

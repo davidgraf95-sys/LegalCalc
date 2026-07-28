@@ -138,7 +138,10 @@
         "            Auf die Erhebung von Kosten für das Beschwerdeverfahren wird umständehalber verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

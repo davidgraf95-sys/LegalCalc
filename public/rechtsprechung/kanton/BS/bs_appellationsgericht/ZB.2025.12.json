@@ -312,7 +312,14 @@
         "Die Beklage bezahlt den Klägern für das Berufungs- und Anschlussberufungsverfahren eine Parteientschädigung von CHF 3'312.65 (einschliesslich Auslagen und Mehrwertsteuer)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "UWG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

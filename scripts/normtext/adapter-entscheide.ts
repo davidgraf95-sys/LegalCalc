@@ -21,7 +21,7 @@ export { markenPlausibel, MONAT } from './erwaegung-normalisieren';
 import {
   statutesZuNormKeys, legalAreaZuSachgebiet, abteilungZuSachgebiet, gerichtstypFuerCourt,
   gerichtAnzeigename, kantonalSachgebiet, fmtDatumDe,
-  istMehrdeutigeOerAbteilung, normSignalSachgebiet,
+  istMehrdeutigeOerAbteilung, normSignalSachgebiet, normKeysVonSnapshot,
 } from './entscheide-mapping';
 
 const API = 'https://mcp.opencaselaw.ch/api';
@@ -352,9 +352,25 @@ export function mappeEntscheidOCL(
     if (Array.isArray(parsed)) zitierteEntscheide = parsed.map(String).filter(Boolean);
   } catch { /* tolerant: kaputtes cited_decisions ignorieren */ }
 
-  // ── Verzahnung: normKeys ──
-  const normKeys = new Set<string>(statutesZuNormKeys(det.statutes ?? []));
-  if (opts.normKeyHint) normKeys.add(opts.normKeyHint);
+  // ── Sachgebiets-Signal aus den ROH-statutes ──────────────────────────────
+  // NUR für die Disambiguierung der II. öffentlich-rechtlichen Abteilung (C2-1,
+  // unten). Bewusst die schmale statutes-Menge und NICHT die neue, breitere
+  // Fliesstext-Ableitung (W2·6-NKEY): die Klassierung soll sich am ausdrücklich
+  // als einschlägig genannten Erlass orientieren, nicht an jeder beiläufigen
+  // Nennung im Urteilstext.
+  //
+  // EHRLICH dazu (Korrektur 28.7.2026 — die frühere Fassung dieses Kommentars
+  // behauptete, die Umstellung kippe kein bestehendes Sachgebiet; das stimmt so
+  // nicht): unverändert blieb nur die QUELLE (statutes[]), die ABBILDUNG dieser
+  // Quelle auf Register-keys ist neu breit. `statutesZuNormKeys` löst jetzt über
+  // das ganze Register auf statt über die alte 26er-Hand-Whitelist. Für 2A/2C/2D
+  // heisst das: ASYLG/BEWG/MWSTG/VSTG erzeugen NEU ein Signal (vorher unbekannt →
+  // Fallback legal_area/Abteilung), und STG erzeugt NIE mehr eines — bewusst, es
+  // steht in ABK_AUSSCHLUSS (föderal/kantonal mehrdeutig). Beides ist gewollt und
+  // fachlich die bessere Klassierung, aber es IST eine Sachgebiets-Änderung an
+  // den betroffenen Entscheiden und wird als solche deklariert (§6.3/§8).
+  const signalKeys = new Set<string>(statutesZuNormKeys(det.statutes ?? []));
+  if (opts.normKeyHint) signalKeys.add(opts.normKeyHint);
 
   const court = String(det.court ?? 'bger');
   const canton = String(det.canton ?? 'CH');
@@ -371,7 +387,7 @@ export function mappeEntscheidOCL(
     // DBG/StHG→sozial-abgaben), dann die OCL legal_area — sonst landeten alle
     // 2C-Migrationsfälle pauschal unter «sozial-abgaben».
     ?? (istMehrdeutigeOerAbteilung(docket)
-        ? (normSignalSachgebiet(normKeys) ?? legalAreaZuSachgebiet(det.legal_area))
+        ? (normSignalSachgebiet(signalKeys) ?? legalAreaZuSachgebiet(det.legal_area))
         : null)
     ?? abteilungZuSachgebiet(docket)        // BGer-Abteilung (z.B. 5A→privat) ist präziser …
     ?? kantonalSachgebiet(docket)           // … kantonale Aktenzeichen-Präfixe …
@@ -400,7 +416,7 @@ export function mappeEntscheidOCL(
     ? `bund/${court}/${docketSafe}`
     : `kanton/${canton}/${court}/${docketSafe}`;
 
-  return {
+  const snap: EntscheidSnapshot = {
     id: idSafe,
     gericht: court,
     gerichtName,
@@ -424,7 +440,8 @@ export function mappeEntscheidOCL(
     abschnitte,
     dispositivOrders: Array.isArray(str?.dispositiv_orders) ? str.dispositiv_orders.map(String) : [],
     zitierteNormen: Array.isArray(det.statutes) ? det.statutes.map(String) : [],
-    normKeys: [...normKeys],
+    // Wird direkt nach der Zusammensetzung gefüllt (braucht den fertigen Snapshot).
+    normKeys: [],
     zitierteEntscheide,
     bestand: 'snapshot',
     kuratierung: 'maschinell',
@@ -434,6 +451,13 @@ export function mappeEntscheidOCL(
     fassungsToken: String(det.content_hash ?? ''),
     sha: sha256EntscheidBloecke(abschnitte),
   };
+  // ── Verzahnung: normKeys (W2·6-NKEY) ────────────────────────────────────────
+  // Aus den Roh-statutes UND dem FLIESSTEXT des fertigen Snapshots (Regeste +
+  // Abschnitte) — darum erst hier, nach der Zusammensetzung. Der Anlassfall
+  // BGE 152 III 137 nennt das IPRG 68-mal im Text; die alte statutes-only-
+  // Ableitung verlor es. `sha` deckt nur `abschnitte` und bleibt unberührt.
+  snap.normKeys = normKeysVonSnapshot(snap, opts.normKeyHint);
+  return snap;
 }
 
 /** Holt einen Entscheid über OCL keyed-Lookups (Netz) und mappt ihn. */
@@ -733,7 +757,20 @@ export async function holeBgeLeitentscheid(
       rubrum: azaSnap.rubrum ?? basis.rubrum,
       dispositivOrders: azaSnap.dispositivOrders,
       zitierteEntscheide: azaSnap.zitierteEntscheide.length ? azaSnap.zitierteEntscheide : basis.zitierteEntscheide,
-      normKeys: [...new Set([...basis.normKeys, ...azaSnap.normKeys])],
+      // Roh-statutes BEIDER Seiten persistieren (Befund 28.7.2026): bisher wurden
+      // die `normKeys` als Vereinigung basis∪aza gespeichert, die zugrunde liegenden
+      // `zitierteNormen` aber NUR aus `basis` — die aza-statutes waren im Snapshot
+      // nirgends mehr abgebildet. Folge: aus dem committeten Snapshot allein liess
+      // sich der eigene normKey-Stand nicht mehr rekonstruieren (bge_152_I_61 trägt
+      // 'ZPO', ohne dass 'ZPO'/'CPC' in zitierteNormen ODER Fliesstext vorkommt) —
+      // eine zweite, nicht belegbare Wahrheit (§5/§8). Reihenfolge: basis-Einträge
+      // zuerst in Originalfolge, dann die NEUEN aza-Einträge in Originalfolge; kein
+      // Re-Sort, damit bestehende Snapshots nicht unnötig umgeschrieben werden (§6).
+      zitierteNormen: [...new Set([...basis.zitierteNormen, ...azaSnap.zitierteNormen])],
+      // Vereinigung beider Seiten (Sammlungs-Auszug + volles Urteil) — sortiert,
+      // damit dieser Bau-Pfad dieselbe Reihenfolge liefert wie normKeysVonSnapshot
+      // über den fertigen Merge (§2 build-pfad-unabhängig).
+      normKeys: [...new Set([...basis.normKeys, ...azaSnap.normKeys])].sort(),
       // quelleUrl = bger.ch-Live-URL des unterliegenden Urteils = massgebliche Fassung
       // der Voll-Ansicht (Detail) und Quelle-Link der getrennten Übersichts-Karte (§5/§8).
       azaUrteil: { aktenzeichen: azaAz!, key: azaKey!, quelleUrl: azaSnap.quelleUrl },

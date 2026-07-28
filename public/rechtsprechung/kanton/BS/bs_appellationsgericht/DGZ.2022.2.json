@@ -157,7 +157,10 @@
         "Der Gesuchsteller bezahlt der Gesuchsbeklagten für das vorliegende Verfahren eine Parteientschädigung von CHF 625.–, zuzüglich 7,7 % MWST von CHF 48.10, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

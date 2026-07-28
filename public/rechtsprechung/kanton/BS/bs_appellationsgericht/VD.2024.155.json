@@ -211,7 +211,10 @@
         "Der Rekurrentin 2 wird eine Parteientschädigung von CHF 3'090.–, inklusive Auslagen, zugesprochen, welche je zur Hälfte durch die Baurekurskommission und den Beigeladenen zu tragen ist."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

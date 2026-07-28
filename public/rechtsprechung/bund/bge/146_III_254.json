@@ -331,10 +331,10 @@
         "Art. 93 Abs. 1 BGG"
       ],
       "normKeys": [
-        "ZPO",
-        "ZGB",
         "BGG",
-        "OR"
+        "OR",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "2C_944/2017",

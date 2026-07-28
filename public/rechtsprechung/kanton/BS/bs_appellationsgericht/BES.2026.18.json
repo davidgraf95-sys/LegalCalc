@@ -264,7 +264,12 @@
         "Dem amtlichen Verteidiger, Advokat Guido Ehrler, werden für das Beschwerdeverfahren ein Honorar von CHF 1'916.– und ein Auslagenersatz von CHF 48.40, somit total CHF 1'964.40 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung kommt nicht zur Anwendung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

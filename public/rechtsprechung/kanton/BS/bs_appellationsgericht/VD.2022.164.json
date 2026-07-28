@@ -363,7 +363,11 @@
         "Der Kindesvertreterin, [...], wird zufolge Bewilligung der unentgeltlichen Rechtspflege ein Honorar, einschliesslich Auslagen, gemäss Honorarnote von CHF 5'590.40, zuzüglich 3,5 Stunden à CHF 200.– für die Gerichtsverhandlung von CHF 700.– und 7,7 % MWST von CHF 484.40 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

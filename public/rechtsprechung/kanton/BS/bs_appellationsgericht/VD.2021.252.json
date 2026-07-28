@@ -148,7 +148,9 @@
         "Auf die Erhebung von Gerichtskosten für das verwaltungsgerichtliche Beschwerdeverfahren wird verzichtet. Der geleistete Kostenvorschuss in Höhe von CHF 600.– wird zurückerstattet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

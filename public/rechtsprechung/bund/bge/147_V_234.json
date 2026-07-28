@@ -219,9 +219,10 @@
       ],
       "normKeys": [
         "ATSG",
-        "IVG",
         "BGG",
-        "BV"
+        "BV",
+        "IVG",
+        "IVV"
       ],
       "zitierteEntscheide": [
         "2C_761/2017",

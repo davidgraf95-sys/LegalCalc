@@ -483,7 +483,12 @@
         "Zudem wird dem Privatkläger für das Berufungsverfahren gemäss Art. 433 Abs. 1 StPO zu Lasten von A____ eine Parteientschädigung zugesprochen, welche unter Anrechnung des vorgenannten Honorars auf CHF 495.– festgesetzt wird, zuzüglich 7,7 % Mehrwertsteuer von CHF 38.10."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

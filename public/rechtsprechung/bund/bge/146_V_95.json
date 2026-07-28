@@ -243,8 +243,11 @@
         "Art. 124 CC"
       ],
       "normKeys": [
+        "BGG",
+        "BVG",
+        "FZG",
         "ZGB",
-        "BGG"
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

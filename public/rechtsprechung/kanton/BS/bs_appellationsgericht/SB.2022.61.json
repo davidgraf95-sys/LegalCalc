@@ -192,7 +192,10 @@
         "Dem amtlichen Verteidiger, [...], wird ein Honorar von CHF 1'200.–, inklusive Auslagen und zuzüglich 7,7% MWST von CHF 92.40, aus der Gerichtskasse bezahlt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

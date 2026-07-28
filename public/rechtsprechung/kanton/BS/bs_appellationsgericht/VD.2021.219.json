@@ -232,7 +232,13 @@
         "Für das verwaltungsgerichtliche Rekursverfahren werden weder Kosten erhoben noch Parteientschädigungen zugesprochen. Der vom Rekurrenten geleistete Kostenvorschuss in Höhe von CHF 5'000.– wird diesem zurückerstattet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "RPG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -162,7 +162,10 @@
         "Dem Vertreter des Beschwerdeführers, B____, wird für das Beschwerdeverfahren ein Honorar von CHF 1'723.20 (einschliesslich Auslagen und MWST) zulasten der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

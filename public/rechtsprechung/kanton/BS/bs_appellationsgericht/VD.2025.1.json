@@ -197,7 +197,10 @@
         "Zufolge Bewilligung der unentgeltlichen Rechtspflege wird dem Rechtsbeistand des Rekurrenten, lic. iur. Oliver Borer, Advokat, für das verwaltungsgerichtliche Rekursverfahren eine Entschädigung von CHF 1’066.65, zuzüglich 3 % Auslagenpauschale von CHF 32.– und 8,1 % MWST von CHF 89.–, insgesamt somit CHF 1’187.65, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

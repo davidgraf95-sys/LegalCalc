@@ -139,7 +139,10 @@
         "Die Gesuchstellerin trägt die Kosten des Verfahrens mit einer Gebühr von CHF 1'000.– (einschliesslich Kanzleiauslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

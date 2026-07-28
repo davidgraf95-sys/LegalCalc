@@ -341,7 +341,15 @@
         "Art. 21 CP"
       ],
       "normKeys": [
-        "BV"
+        "BGG",
+        "BV",
+        "EMRK",
+        "FINMAG",
+        "GWG",
+        "STGB",
+        "STPO",
+        "VSTRR",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

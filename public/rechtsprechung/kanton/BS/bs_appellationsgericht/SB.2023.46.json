@@ -382,7 +382,12 @@
         "Dem Vertreter der Privatklägerin im Kostenerlass, Advokatin MLaw Andreas Fischer werden in Anwendung von Art. 136 in Verbindung mit Art. 426 Abs. 4 der Strafprozessordnung ein Honorar von CHF 1'166.64 und ein Auslagenersetz von CHF 24.25, zuzüglich Mehrwertsteuer von insgesamt CHF 94.50 (7,7 % auf CHF 493.73 [Aufwand bis 32.12.23] sowie 8,1 % auf CHF 697.16 [Aufwand ab 1.1.24]), somit total CHF 1'285.40 aus der Gerichtskasse ausgerichtet. A____ hat dem Appellationsgericht diesen Betrag zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben, in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 der Strafprozessordnung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

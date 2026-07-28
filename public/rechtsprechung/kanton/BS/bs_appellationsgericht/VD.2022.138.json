@@ -282,7 +282,11 @@
         "Der Rechtsbeiständin der Rekurrentin, Rechtsanwältin B____, wird unter der aufschiebenden Bedingung, dass die Nichtverlängerung der Aufenthaltsbewilligung und die Wegweisung der Rekurrentin vor Juli 2023 wirksam und vollstreckbar werden, für das verwaltungsgerichtliche Rekursverfahren ein Honorar von CHF 542.00, zuzüglich Auslagen von CHF 15.00 und 7,7 % MWST von CHF 42.90, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "ELG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

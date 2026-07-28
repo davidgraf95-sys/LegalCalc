@@ -210,7 +210,12 @@
         "Dem amtlichen Verteidiger, [...], werden aus der Gerichtskasse ein Honorar von 1’583.33 und eine Spesenvergütug von CHF 11.10 sowie 7,7 % MWST von insgesamt CHF 122.77 ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -152,7 +152,10 @@
         "Die Berufungsklägerin trägt die Gerichtskosten des Berufungs- und Beschwerdeverfahrens von CHF 600.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -167,7 +167,12 @@
         "Auf die Erhebung von Gerichtskosten für das Verfahren vor dem Appellationsgericht wird verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

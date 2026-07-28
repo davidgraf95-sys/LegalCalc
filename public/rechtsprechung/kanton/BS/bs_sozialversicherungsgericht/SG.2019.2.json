@@ -661,7 +661,13 @@
         "Das Schiedsgericht IN SOZIALVERSICHERUNGSSACHEN"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "KVG",
+        "KVV",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

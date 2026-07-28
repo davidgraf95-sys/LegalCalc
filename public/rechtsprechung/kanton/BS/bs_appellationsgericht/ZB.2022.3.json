@@ -151,7 +151,10 @@
         "Die Berufungsklägerin trägt die Kosten des Berufungsverfahrens von CHF 6'000.– und zahlt der Berufungsbeklagten eine Parteientschädigung von CHF 6'000.– zuzüglich Auslagen von CHF 180.–."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

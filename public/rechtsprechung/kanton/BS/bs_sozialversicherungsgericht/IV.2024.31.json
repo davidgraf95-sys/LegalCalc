@@ -235,7 +235,13 @@
         "            Der Beschwerdeführer trägt die ordentlichen Kosten, bestehend aus einer Gebühr von Fr. 800.00. Zufolge Bewilligung der unentgeltlichen Prozessführung gehen sie zu Lasten des Staates.        "
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV",
+        "VWVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

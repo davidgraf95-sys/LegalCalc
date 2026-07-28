@@ -323,8 +323,12 @@
         "Art. 276a Abs. 2 ZGB"
       ],
       "normKeys": [
+        "ATSG",
         "BGG",
-        "ZGB"
+        "BV",
+        "FAMZG",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

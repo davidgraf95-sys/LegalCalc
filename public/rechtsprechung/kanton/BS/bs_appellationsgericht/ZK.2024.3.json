@@ -176,7 +176,11 @@
         "Die Gesuchstellerin trägt die Gerichtskosten von CHF 6‘000.– und bezahlt der Gesuchsgegnerin eine Parteientschädigung von CHF 10‘300.– (einschliesslich Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

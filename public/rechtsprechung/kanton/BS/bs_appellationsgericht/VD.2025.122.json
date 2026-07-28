@@ -192,7 +192,10 @@
         "Die Beschwerdeführerin trägt die Gerichtskosten des verwaltungsgerichtlichen Beschwerdeverfahrens mit einer Urteilsgebühr von CHF 4'000.–, einschliesslich Auslagen. Die Gerichtskosten werden mit dem geleisteten Kostenvorschuss von CHF 4'000.– verrechnet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

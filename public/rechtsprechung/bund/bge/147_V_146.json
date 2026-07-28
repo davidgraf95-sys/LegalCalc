@@ -199,7 +199,12 @@
         "Art. 34a BVG"
       ],
       "normKeys": [
-        "BVG"
+        "AHVG",
+        "BGG",
+        "BV",
+        "BVG",
+        "IVG",
+        "UVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

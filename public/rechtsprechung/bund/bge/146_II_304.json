@@ -398,7 +398,16 @@
         "Art. 24c RPG"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "BV",
+        "EMRK",
+        "GSCHG",
+        "GSCHV",
+        "NHG",
+        "NHV",
+        "RPG",
+        "RPV",
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

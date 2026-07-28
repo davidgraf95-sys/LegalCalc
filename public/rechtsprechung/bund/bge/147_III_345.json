@@ -228,9 +228,11 @@
         "Art. 91 Abs. 1 ZPO"
       ],
       "normKeys": [
-        "ZPO",
         "BGG",
-        "OR"
+        "BV",
+        "OR",
+        "ZGB",
+        "ZPO"
       ],
       "zitierteEntscheide": [
         "2C_110/2008",

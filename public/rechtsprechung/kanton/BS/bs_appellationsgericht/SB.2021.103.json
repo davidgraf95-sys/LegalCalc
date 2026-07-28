@@ -379,7 +379,13 @@
         "Der Antrag von A____ auf Ausrichtung einer Parteientschädigung für die erste und zweite Instanz wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

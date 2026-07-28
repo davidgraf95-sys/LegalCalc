@@ -208,8 +208,11 @@
         "Art. 1a Abs. 2 EOG"
       ],
       "normKeys": [
+        "ATSG",
         "AVIG",
-        "BGG"
+        "BGG",
+        "EOG",
+        "EOV"
       ],
       "zitierteEntscheide": [
         "8C_542/2021",

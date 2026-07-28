@@ -190,7 +190,13 @@
         "Dem Berufungskläger wird eine Parteientschädigung von CHF 4'176.80 für das erstinstanzliche Verfahren und von CHF 2'999.75 für das zweitinstanzliche Verfahren (je inkl. Mehrwertsteuer und Auslagen) aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG",
+        "VRV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

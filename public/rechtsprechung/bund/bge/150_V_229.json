@@ -193,10 +193,11 @@
         "Art. 6 Abs. 1 LAINF"
       ],
       "normKeys": [
-        "STGB",
         "ATSG",
-        "UVG",
-        "BGG"
+        "BGG",
+        "KVG",
+        "STGB",
+        "UVG"
       ],
       "zitierteEntscheide": [
         "8C_235/2018",

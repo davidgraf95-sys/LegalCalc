@@ -388,7 +388,12 @@
         "Dem amtlichen Verteidiger [...], Advokat, wird für seine Bemühungen im erstinstanzlichen Verfahren ein Honorar von insgesamt CHF 6’299.95 (inklusive Auslagen und Mehrwertsteuer) aus der Strafgerichtskasse ausgerichtet. Für das Beschwerdeverfahren werden ihm ein Honorar von CHF 5'476.00 und ein Auslagenersatz von CHF 66.75, zuzüglich 7,7 % MWST von CHF 426.80, somit insgesamt CHF 5’969.55, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -336,7 +336,12 @@
         "Art. 15 CST",
         "Art. 16 RLE"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "1C_360/2019",
         "1C_59/2018",

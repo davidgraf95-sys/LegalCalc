@@ -254,7 +254,11 @@
         "Der amtlichen Verteidigerin, [...], werden ein Honorar von CHF 2’450.‒, eine Spesenvergütung von CHF 66.30 und 7,7% MWST von insgesamt CHF 193.75 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt bezüglich der erst- und zweitinstanzlichen Verteidigungskosten im Umfang von 30 Prozent (entsprechend CHF 965.15 bzw. CHF 813.‒) vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -187,7 +187,11 @@
         "Der amtlichen Verteidigerin, lic. iur. Nuray Ates Tekdemir, Advokatin, werden für die zweite Instanz ein Honorar von CHF 2'700.– und ein Auslagenersatz von CHF 74.20, zuzüglich Mehrwertsteuer von insgesamt CHF 219.90 (7,7 % auf CHF 1'191.55 sowie 8,1 % auf CHF 1'582.65), somit total CHF 2'994.10 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 StPO kommt nicht zur Anwendung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

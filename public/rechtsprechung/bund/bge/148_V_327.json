@@ -228,10 +228,13 @@
         "Art. 22 Abs. 1 ATSG"
       ],
       "normKeys": [
-        "UVG",
-        "OR",
         "ATSG",
-        "BGG"
+        "ATSV",
+        "BGG",
+        "OR",
+        "UVG",
+        "UVV",
+        "VWVG"
       ],
       "zitierteEntscheide": [
         "4A_465/2018",

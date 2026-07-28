@@ -1,9 +1,20 @@
 // ─── Norm → Entscheid-Index (Verzahnung, Burggraben) ────────────────────────
 //
 // Lazy geladener Index public/rechtsprechung/norm-index.json: zu einem Erlass-
-// Register-key die einschlägig GENANNTEN Bundesgerichtsentscheide. Quelle = die
-// (maschinell extrahierten) statutes[] der Entscheide → Status 'maschinell', nie
-// als geprüftes Präjudiz verkaufen (§7/§8). Reine Ladeschicht (§3).
+// Register-key die GENANNTEN Bundesgerichtsentscheide. Reine Ladeschicht (§3).
+//
+// Quelle (Stand W2·6-NKEY a+d) = die (maschinell extrahierten) statutes[] der
+// Entscheide ∪ die deterministische Fliesstext-Erkennung über Regeste und
+// Urteilstext (`extrahiereStatutRefs`). Status bleibt 'maschinell' — nie als
+// geprüftes Präjudiz verkaufen (§7/§8).
+//
+// Was «genannt» hier ehrlich heisst: die Fliesstext-Erkennung ist vollständig
+// und erfasst damit auch beiläufige, rein prozessuale Nennungen — das BGG steht
+// dadurch in rund 85 % der Snapshots, ohne dass der Entscheid in der Sache
+// etwas zum BGG sagt. Das ist gewollt (Dekret David, 27.7.2026): erst
+// vollständig erkennen, dann über Ranking und Deckel kuratieren
+// (LEITFAELLE_PRO_ARTIKEL, proNorm-Top-12) statt an der Extraktion still zu
+// verwerfen. Ein Eintrag im Index belegt eine NENNUNG, keine Einschlägigkeit.
 
 import type { Leitcharakter } from './typen';
 
@@ -67,16 +78,43 @@ export interface LeitfallShard {
   proArtikel: Record<string, LeitfallRef[]>;
 }
 
-let indexPromise: Promise<NormEntscheidIndex | null> | null = null;
+/**
+ * Schlanke Laufzeit-Projektion der ERLASS-Ebene (W2·6-NKEY §15):
+ * `public/rechtsprechung/norm-index-erlasse.json` = `{ erzeugt, proNorm }` aus
+ * derselben Quelle wie norm-index.json, nur ohne die Artikel-Ebene. Zusätzliche
+ * Projektion, keine zweite Wahrheit — die Byte-Gleichheit von `proNorm` prüft
+ * check:entscheide (§5).
+ */
+export interface NormErlassIndex {
+  erzeugt: string;
+  proNorm: Record<string, EntscheidRef[]>;
+}
 
+let indexPromise: Promise<NormEntscheidIndex | null> | null = null;
+let erlassPromise: Promise<NormErlassIndex | null> | null = null;
+
+/**
+ * Gesamt-JSON (Erlass- UND Artikel-Ebene, 6.1 MB roh / 731 KB gzip nach dem
+ * W2·6-NKEY-Backfill).
+ *
+ * NICHT MEHR AUF EINEM LAUFZEITPFAD (Stand 28.7.2026, korrigiert den früheren
+ * Kommentarstand): die Erlass-Ebene bedient `ladeNormIndexErlasse()` aus der
+ * schlanken Projektion, die Artikel-Ebene bedienen die 157 Shards
+ * (`ladeLeitfallShard`). Übrig bleibt `rechtsprechungFuerArtikel()` als
+ * Zweitbeweis-Pfad für Tests / server-seitige Gegenprüfung. Wer diese Funktion
+ * wieder in die UI zieht, holt damit das volle Artefakt über die Leitung zurück
+ * und muss das §15-Budget in scripts/check-perf-budget.ts entsprechend
+ * nachziehen.
+ */
 export async function ladeNormIndex(): Promise<NormEntscheidIndex | null> {
   if (!indexPromise) {
     indexPromise = (async () => {
       try {
         const res = await fetch('/rechtsprechung/norm-index.json');
-        if (!res.ok) return null;
+        if (!res.ok) { indexPromise = null; return null; }
         return (await res.json()) as NormEntscheidIndex;
       } catch {
+        indexPromise = null;   // transient — nicht dauerhaft als null zementieren
         return null;
       }
     })();
@@ -84,9 +122,42 @@ export async function ladeNormIndex(): Promise<NormEntscheidIndex | null> {
   return indexPromise;
 }
 
-/** Bundesgerichtsentscheide zu einem Erlass-Register-key ('OR', 'ZPO' …) oder []. */
+/**
+ * Nur die Erlass-Ebene laden (Promise-Cache wie oben) — die Nutzlast des Verweis-Popovers.
+ *
+ * FEHLSCHLÄGE WERDEN NICHT GECACHT (Härtung 28.7.2026, §8): der Promise-Cache hielt
+ * bis dahin auch das `null` eines abgebrochenen fetch dauerhaft fest. Ein einziger
+ * transienter Netzfehler beim ERSTEN Öffnen eines Verweis-Popovers liess damit die
+ * Entscheid-Liste für die GANZE Sitzung leer — und zwar ohne Fehlermeldung, also als
+ * «zu diesem Erlass gibt es keine Bundesgerichtsentscheide» gelesen. Das ist eine
+ * Falschaussage über die Rechtslage, nicht bloss ein fehlendes Feature.
+ * Das gehärtete Muster stand schon 60 Zeilen tiefer in `ladeLeitfallShard`; hier ist
+ * es nachgezogen (§5: EIN Muster für alle drei Lader dieser Datei).
+ */
+export async function ladeNormIndexErlasse(): Promise<NormErlassIndex | null> {
+  if (!erlassPromise) {
+    erlassPromise = (async () => {
+      try {
+        const res = await fetch('/rechtsprechung/norm-index-erlasse.json');
+        if (!res.ok) { erlassPromise = null; return null; }
+        return (await res.json()) as NormErlassIndex;
+      } catch {
+        erlassPromise = null;
+        return null;
+      }
+    })();
+  }
+  return erlassPromise;
+}
+
+/**
+ * Bundesgerichtsentscheide zu einem Erlass-Register-key ('OR', 'ZPO' …) oder [].
+ *
+ * Liest die schlanke Projektion (93 KB gzip statt 731 KB). Rückgabe unverändert:
+ * `proNorm` ist in beiden Dateien dasselbe Objekt in derselben Ordnung (§5).
+ */
 export async function rechtsprechungFuerErlass(registerKey: string): Promise<EntscheidRef[]> {
-  const idx = await ladeNormIndex();
+  const idx = await ladeNormIndexErlasse();
   return idx?.proNorm[registerKey] ?? [];
 }
 
@@ -108,8 +179,16 @@ export function normArtikelToken(artikel: string): string {
  * Absteigend nach topischer In-degree (`gewicht`) vorsortiert. [] wenn unbekannt
  * oder wenn der Index (Alt-Fassung) keine Artikel-Ebene trägt.
  *
- * Liest das GESAMT-JSON (536 KB) — bewusst nur für Tests / server-seitige
- * Gegenprüfung. Die UI nimmt den erlass-lokalen Shard (`leitfaelleFuerArtikel`).
+ * Liest das GESAMT-JSON (6.1 MB, Stand 28.7.2026 nach dem W2·6-NKEY-Backfill;
+ * die frühere Zahl «536 KB» war vor-Backfill) — bewusst nur für Tests /
+ * server-seitige Gegenprüfung. Die UI nimmt den erlass-lokalen Shard
+ * (`leitfaelleFuerArtikel`).
+ *
+ * Damit ist das Gesamt-JSON seit W2·6-NKEY vom Laufzeitpfad genommen: die
+ * Erlass-Ebene liefert `ladeNormIndexErlasse()`, die Artikel-Ebene die Shards.
+ * Wer diese Funktion in eine Komponente einbaut, macht das Artefakt wieder zu
+ * echter Nutzlast — dann gehören die Deckel in scripts/check-perf-budget.ts und
+ * scripts/normtext/check-entscheide.ts zusammen neu bewertet (§15).
  */
 export async function rechtsprechungFuerArtikel(registerKey: string, artikel: string): Promise<LeitfallRef[]> {
   const idx = await ladeNormIndex();
@@ -179,4 +258,10 @@ export function artikelProEntscheid(shard: LeitfallShard): Map<string, string> {
 /** Nur für Tests: den Shard-Promise-Cache leeren (sonst leckt er über Testfälle). */
 export function _leereShardCache(): void {
   shardPromises.clear();
+}
+
+/** Nur für Tests: die beiden Index-Promise-Caches leeren (Monolith + Erlass-Projektion). */
+export function _leereNormIndexCache(): void {
+  indexPromise = null;
+  erlassPromise = null;
 }

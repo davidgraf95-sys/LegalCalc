@@ -263,7 +263,12 @@
         "Art. 279 Abs. 2 LEF",
         "Art. 279 Abs. 4 LEF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "LUGUE",
+        "SCHKG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "5A_307/2018",
         "5A_311/2018",

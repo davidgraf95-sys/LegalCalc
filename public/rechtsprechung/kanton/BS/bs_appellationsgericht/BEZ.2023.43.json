@@ -186,7 +186,13 @@
         "Das Rechtsbegehren des Beschwerdegegners auf Verpflichtung des Beschwerdeführers zur Leistung einer Parteientschädigung wird abgewiesen, soweit darauf eingetreten wird."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "STGB",
+        "STPO",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

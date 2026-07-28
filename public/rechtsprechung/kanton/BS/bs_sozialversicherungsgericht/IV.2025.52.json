@@ -299,7 +299,10 @@
         "          Die ordentlichen Kosten des Verfahrens, bestehend aus einer Gebühr von Fr. 800.00, werden der Beschwerdegegnerin auferlegt. Der vom Beschwerdeführer geleistete Kostenvorschuss wird ihm zurückerstattet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -390,7 +390,13 @@
         "Der amtlichen Verteidigerin [...], werden für die zweite Instanz ein Honorar von CHF 7'352.– und ein Auslagenersatz von CHF 203.–, zuzüglich Mehrwertsteuer von insgesamt CHF 592.– (7,7 % auf CHF 4'991.90 sowie 8,1 % auf 2'563.10), somit total CHF 8'147.– aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

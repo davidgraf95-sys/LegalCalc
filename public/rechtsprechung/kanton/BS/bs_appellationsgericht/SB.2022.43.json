@@ -207,7 +207,11 @@
         "Für die zweite Instanz werden [...], Advokat, für seine Bemühungen im Rahmen der amtlichen Verteidigung ein Honorar von CHF 1'600.– und ein Auslagenersatz von CHF 48.–, zuzüglich 7,7 % MWST von insgesamt CHF 126.90, somit total CHF 1'774.90 aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

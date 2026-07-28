@@ -542,7 +542,15 @@
         "Überdies wird C____ gemäss Art. 433 Abs. 1 StPO zu Lasten von A____ eine Parteientschädigung zugesprochen, welche für die erste Instanz unter Anrechnung des erstinstanzlichen Honorars auf CHF 1’354.35 (inklusive Mehrwertsteuer) und für die zweite Instanz unter Anrechnung des zweitinstanzlichen Honorars auf CHF 778.30 (inklusive Mehrwertsteuer) festgesetzt wird."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ASYLG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "GFK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

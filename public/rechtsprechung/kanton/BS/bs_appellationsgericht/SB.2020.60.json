@@ -504,7 +504,14 @@
         "Dem unentgeltlichen Vertreter des Privatklägers, [...], werden ein Honorar von CHF 1'900.– und eine Auslagenentschädigung von CHF 35.–, zuzüglich 7,7 % Mehrwertsteuer von CHF 149.– aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

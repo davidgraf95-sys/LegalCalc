@@ -166,7 +166,11 @@
         "Der Antrag auf Zusprechung einer weiteren Entschädigung im Betrag von CHF 1'180.21 wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

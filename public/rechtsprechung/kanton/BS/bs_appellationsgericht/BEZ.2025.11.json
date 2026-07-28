@@ -182,7 +182,12 @@
         "Die Beschwerdeführer tragen die Kosten des Beschwerdeverfahrens von CHF 5'000.– und haben dem Beschwerdegegner eine Parteientschädigung von CHF 10'550.– inklusive Auslagen zuzüglich Mehrwertsteuer von 8,1 % von CHF 854.55 zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IPRG",
+        "SCHKG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

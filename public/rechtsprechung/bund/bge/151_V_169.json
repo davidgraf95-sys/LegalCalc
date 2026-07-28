@@ -249,8 +249,11 @@
       ],
       "normKeys": [
         "BGG",
+        "BV",
         "ELG",
-        "BV"
+        "ELV",
+        "FZG",
+        "FZV"
       ],
       "zitierteEntscheide": [
         "2C_41/2016",

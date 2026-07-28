@@ -195,7 +195,12 @@
         "Die Kostenverteilung für den vorliegenden Zwischenentscheid erfolgt mit dem Endentscheid."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -228,7 +228,12 @@
         "Der amtlichen Verteidigerin bzw. unentgeltlichen Rechtsvertreterin, C____, werden für das Beschwerdeverfahren ein Honorar von CHF 1'264.– und ein Auslagenersatz von CHF 15.50, zuzüglich Mehrwertsteuer von insgesamt CHF 98.50, somit total CHF 1'378.– aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

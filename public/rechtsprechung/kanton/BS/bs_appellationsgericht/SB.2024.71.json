@@ -159,7 +159,10 @@
         "Dem amtlichen Verteidiger, [...], wird ein Honorar gemäss Honorarnote ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

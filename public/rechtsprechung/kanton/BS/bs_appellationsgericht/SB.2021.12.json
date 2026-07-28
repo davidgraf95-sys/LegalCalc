@@ -563,7 +563,12 @@
         "Es wird festgestellt, dass der unentgeltlichen Rechtsbeiständin von C____, [...], für ihre Bemühungen im Berufungsverfahren ein Honorar gemäss eingereichter Honorarnote in Höhe von CHF 1’920.– und ein Auslagenersatz von CHF 17.–, zuzüglich Mehrwertsteuer von insgesamt CHF 149.15, somit total CHF 2’086.15, aus der Gerichtskasse ausbezahlt wurde. A____ hat dem Appellationsgericht vier Fünftel dieses Betrags in Anwendung von Art. 138 Abs. 1 in Verbindung mit Art. 135 Abs. 4 und Art. 426 Abs. 4 der Strafprozessordnung zurückzuerstatten, sobald es seine wirtschaftlichen Verhältnisse erlauben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

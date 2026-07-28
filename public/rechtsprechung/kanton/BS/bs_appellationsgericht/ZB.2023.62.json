@@ -1116,7 +1116,20 @@
         "          6.      Der unentgeltlichen Rechtsbeiständin der Berufungsbeklagten 2 und Anschlussberufungsklägerin 2, Advokatin [...], wird für das Verfahren vor der Berufungsinstanz eine Entschädigung von CHF 14'367.50, zuzüglich MWST von CHF 1'163.60 (7,7 % auf CHF 42.10 und 8,1 % auf CHF 14'325.40), insgesamt somit CHF 15'531.10, aus der Gerichtskasse ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "ATSG",
+        "BGG",
+        "DBG",
+        "FAMZG",
+        "IVG",
+        "KVG",
+        "OR",
+        "SCHKG",
+        "STHG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

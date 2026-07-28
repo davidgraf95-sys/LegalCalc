@@ -196,7 +196,14 @@
         "Die Berufungsklägerinnen 1 und 2 tragen die Gerichtskosten des Berufungsverfahrens von CHF 20‘000.– und bezahlen der Berufungsbeklagten eine Parteientschädigung von CHF 25'000.–, jeweils in solidarischer Verbindung."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "OR",
+        "UVG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

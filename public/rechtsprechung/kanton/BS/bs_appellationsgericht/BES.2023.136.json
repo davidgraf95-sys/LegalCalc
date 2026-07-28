@@ -234,7 +234,15 @@
         "Dem amtlichen Verteidiger, C____, Advokat, werden für seine Bemühungen vom 30. Juni 2023 bis 30. Mai 2024 in den Beschwerdeverfahren vor Appellationsgericht ein Honorar von CHF 9'060.– und ein Auslagenersatz von CHF 270.60, zuzüglich Mehrwertsteuer von insgesamt CHF 738.15 (7,7 % auf CHF 4'407.20 sowie 8,1 % auf CHF 4'923.40), somit total CHF 10'068.75 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "JSTG",
+        "JSTPO",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

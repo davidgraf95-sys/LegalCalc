@@ -195,7 +195,11 @@
         "Die Berufungsklägerin trägt ihre eigenen Parteikosten. Zufolge Bewilligung der unentgeltlichen Rechtspflege wird ihrer unentgeltlichen Rechtsbeiständin, E____, ein Honorar von CHF 1'500.–, zuzüglich Auslagen von CHF 45.– und 7,7 % MWST von CHF 118.95, und ihrem unentgeltlichen Rechtsbeistand, F____, ein Honorar von CHF 450.–, zuzüglich Auslagen von CHF 13.50 und 8,1 % MWST von CHF 37.55 aus der Gerichtskasse ausgerichtet. Die Nachzahlung gemäss Art. 123 Abs. 1 ZPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

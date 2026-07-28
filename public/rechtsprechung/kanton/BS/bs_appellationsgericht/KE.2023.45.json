@@ -190,7 +190,12 @@
         "Auf die Erhebung von Gerichtskosten für das verwaltungsgerichtliche Beschwerdeverfahren wird verzichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

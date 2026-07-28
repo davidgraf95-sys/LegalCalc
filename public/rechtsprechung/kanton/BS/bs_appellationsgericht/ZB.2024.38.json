@@ -156,7 +156,10 @@
         "Das Gesuch des Berufungsbeklagten um Bewilligung der unentgeltlichen Rechtspflege für das Berufungsverfahren wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

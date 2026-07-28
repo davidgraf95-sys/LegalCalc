@@ -237,7 +237,11 @@
         "Art. 62 Abs. 2 LTF",
         "Art. 62 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

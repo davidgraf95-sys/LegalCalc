@@ -370,7 +370,12 @@
         "            Die ausserordentlichen Kosten werden wettgeschlagen. Zufolge Bewilligung der unentgeltlichen Rechtsvertretung wird Nicolai Fullin, Advokat, ein Anwaltshonorar von Fr. 3'000.00 (inklusive Auslagen) zuzüglich Mehrwertsteuer von Fr. 243.00 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

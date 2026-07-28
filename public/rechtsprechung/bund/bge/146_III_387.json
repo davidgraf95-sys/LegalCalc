@@ -301,7 +301,12 @@
         "Art. 398 Abs. 2 CO",
         "Art. 402 CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "4A_119/2018",
         "4A_124/2007",

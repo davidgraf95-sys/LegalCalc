@@ -368,7 +368,12 @@
         "            Die Beklagte hat der Klägerin eine Parteientschädigung von CHF 8’787.50 zuzüglich CHF 676.65 Mehrwertsteuer auszurichten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "VVG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

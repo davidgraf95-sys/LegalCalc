@@ -223,9 +223,10 @@
         "Art. 274 Abs. 2 SCHKG"
       ],
       "normKeys": [
-        "SCHKG",
+        "BGG",
+        "BV",
         "DBG",
-        "BGG"
+        "SCHKG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -163,7 +163,10 @@
         "Für das vorliegende Nachverfahren wird A____ die unentgeltliche Rechtspflege bewilligt. Ihrem Rechtsvertreter, Rechtsanwalt André Schlatter, wird ein Honorar von CHF 200.– (einschliesslich Auslagen), zuzüglich 8,1 % Mehrwertsteuer von CHF 16.20, somit total CHF 216.20, ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

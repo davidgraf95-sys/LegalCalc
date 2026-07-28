@@ -227,7 +227,20 @@
         "Art. 30ter Abs. 2 LAVS",
         "Art. 322 Abs. 1 CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "AHVV",
+        "AVIG",
+        "BGG",
+        "BV",
+        "BVG",
+        "DBG",
+        "EOG",
+        "IVG",
+        "OR",
+        "SCHKG",
+        "UVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

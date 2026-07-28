@@ -368,8 +368,13 @@
         "Art. 176 ZGB"
       ],
       "normKeys": [
+        "BGG",
+        "HKSUE96",
+        "HKUE",
+        "IPRG",
+        "LUGUE",
         "ZGB",
-        "BGG"
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

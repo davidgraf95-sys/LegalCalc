@@ -197,7 +197,11 @@
         "Das Gesuch um unentgeltliche Rechtspflege für das verwaltungsgerichtliche Rekursverfahren wird als gegenstandslos geworden abgeschrieben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "VWVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

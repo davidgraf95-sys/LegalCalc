@@ -129,7 +129,12 @@
         "Der Beschwerdeführerin wird eine Parteientschädigung von CHF 1'000.–, inklusive Auslagen und zuzüglich 7,7 % MWST von CHF 77.–, aus der Gerichtskasse bezahlt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

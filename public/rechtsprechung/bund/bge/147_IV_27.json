@@ -244,8 +244,10 @@
       ],
       "normKeys": [
         "BGG",
+        "BV",
+        "EMRK",
         "STGB",
-        "BV"
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

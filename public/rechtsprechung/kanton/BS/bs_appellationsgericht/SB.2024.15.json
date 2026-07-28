@@ -519,7 +519,14 @@
         "A____ trägt die Kosten von CHF 993.90 und eine reduzierte Urteilsgebühr von CHF 1'440.– für das erstinstanzliche Verfahren sowie die Kosten des zweitinstanzlichen Verfahrens mit Einschluss einer reduzierten Urteilsgebühr von CHF 1'350.– (inkl. Kanzleiauslagen, zuzüglich allfällige übrige Auslagen). Dem Verteidiger [...] wird aus der Gerichtskasse eine reduzierte Parteientschädigung von CHF 269.25 für das erstinstanzliche Verfahren zugesprochen. Dem Verteidiger [...] wird für das zweitinstanzliche Verfahren eine reduzierte Parteientschädigung im Umfang von CHF 1'052.50 zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO",
+        "SVG",
+        "VTS"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

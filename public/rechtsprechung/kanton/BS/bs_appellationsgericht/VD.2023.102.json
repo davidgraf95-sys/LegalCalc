@@ -232,7 +232,11 @@
         "Der Rekurrent hat der Beigeladenen für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 8’100.–, einschliesslich Auslagen, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO",
+        "VWVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -787,7 +787,14 @@
         "Der Berufungskläger wird in Anwendung von Art. 433 Abs. 1 lit. b der Strafprozessordnung zu einer Entschädigung in Höhe von CHF 556.70 an den unentgeltlichen Rechtsvertreter der Privatklägerin, lic. iur. Christoph Dumartheray, verurteilt."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

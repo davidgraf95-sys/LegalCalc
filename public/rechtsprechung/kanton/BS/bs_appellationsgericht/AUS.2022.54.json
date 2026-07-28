@@ -144,7 +144,9 @@
         "            Advokat [...] sind ein Honorar von CHF 1'050.– und ein Auslagenersatz von CHF 1.50, zuzüglich 7.7 % MWST von CHF 81.–, aus der Gerichtskasse zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

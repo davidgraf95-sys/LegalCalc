@@ -147,7 +147,11 @@
         "Der Gesuchsteller trägt die Gerichtskosten des vorliegenden Verfahrens von CHF 200.00."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

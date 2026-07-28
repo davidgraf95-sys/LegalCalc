@@ -181,7 +181,10 @@
         "Zufolge Bewilligung der teilweisen unentgeltlichen Verbeiständung wird der Rechtsbeiständin der Beschwerdeführerin, [...], für das verwaltungsgerichtliche Beschwerdeverfahren ein Honorar von CHF 700.–, zuzüglich Auslagen von CHF 21.25 und 7,7 % MWST von CHF 55.55, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -373,7 +373,11 @@
         "Dem amtlichen Verteidiger, lic. iur. Christian Möcklin, werden für die zweite Instanz ein Honorar von CHF 5'420.– und ein Auslagenersatz von CHF 82.35, zuzüglich Mehrwertsteuer von insgesamt CHF 435.40 (7,7 % auf CHF 2'571.60 sowie 8,1 % auf CHF 2'930.75) somit total CHF 5'937.75 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt im Umfang von 90 % vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

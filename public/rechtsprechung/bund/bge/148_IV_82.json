@@ -240,7 +240,12 @@
         "Art. 285a CPP",
         "Art. 289 Abs. 6 CPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

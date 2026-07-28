@@ -157,7 +157,10 @@
         "Das Gesuch vom 12. Juni 2025 einschliesslich Beilagen wird der Gesuchsgegnerin zur Kenntnisnahme zugestellt"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -1,0 +1,1949 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "KVG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bge_151_V_1",
+        "zitierung": "BGE 151 V 1",
+        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der obligator…",
+        "datum": "2024-08-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "3": [
+      {
+        "key": "bge_152_V_2",
+        "zitierung": "BGE 152 V 2",
+        "regesteKurz": "Art. 56 Abs. 2, Art. 61 lit. a und f bis ATSG und Art. 69 Abs. 1 bis IVG (beide in der seit 1. Januar 2021 geltenden Fassung); Gerichtskosten im kantonalen Verfahren bei Rechtsverweigerungs- oder Rechtsverzögerungsbeschwerden auf dem Gebie…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_20",
+        "zitierung": "BGE 152 V 20",
+        "regesteKurz": "Art. 24 Abs. 1 KVG; Ziff. 1.2 Anhang 1 KLV; Art. 14 Abs. 2 lit. b Transplantationsgesetz; Ersatz von Erwerbsausfall bei Organspende. Der vom Organspender direkt gegenüber dem obligatorischen Krankenpflegeversicherer der Organempfängerin ge…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_402",
+        "zitierung": "BGE 147 V 402",
+        "regesteKurz": "Art. 32 der Verordnung (EG) Nr. 883/2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung der Systeme der sozialen Sicherheit; Anhang XI der Verordnung Nr. 883/2004; Abkommen vom 7. Juli 2016 zwischen den zust…",
+        "datum": "2021-06-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_II_248",
+        "zitierung": "BGE 147 II 248",
+        "regesteKurz": "Art. 9 Abs. 2 lit. h StHG; Behandlung und Unterbringung in einem ausserkantonalen Nicht-Listenspital (Privatspital), ohne dass der Wohnsitzkanton eine Kostengutsprache geleistet hat. System der obligatorischen Krankenpflegeversicherung und…",
+        "datum": "2020-12-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_290",
+        "zitierung": "BGE 146 V 290",
+        "regesteKurz": "Art. 24 der Verordnung (EG) Nr. 883/2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung der Systeme der sozialen Sicherheit; Art. 3 Abs. 1 und 2 KVG; Art. 2 Abs. 1 lit. e KVV; internationale Sachleistungsaus…",
+        "datum": "2020-07-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_152",
+        "zitierung": "BGE 146 V 152",
+        "regesteKurz": "a Art. 18 KVG; Art. 19 und 22 KVV; Gemeinsame Einrichtung KVG. Der Gemeinsamen Einrichtung KVG, die im Rahmen der internationalen Sachleistungsaushilfe Aufgaben als aushelfende Trägerin am Wohn- oder Aufenthaltsort der versicherten Persone…",
+        "datum": "2020-02-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "6": [
+      {
+        "key": "bge_146_V_290",
+        "zitierung": "BGE 146 V 290",
+        "regesteKurz": "Art. 24 der Verordnung (EG) Nr. 883/2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung der Systeme der sozialen Sicherheit; Art. 3 Abs. 1 und 2 KVG; Art. 2 Abs. 1 lit. e KVV; internationale Sachleistungsaus…",
+        "datum": "2020-07-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "7": [
+      {
+        "key": "bge_152_V_2",
+        "zitierung": "BGE 152 V 2",
+        "regesteKurz": "Art. 56 Abs. 2, Art. 61 lit. a und f bis ATSG und Art. 69 Abs. 1 bis IVG (beide in der seit 1. Januar 2021 geltenden Fassung); Gerichtskosten im kantonalen Verfahren bei Rechtsverweigerungs- oder Rechtsverzögerungsbeschwerden auf dem Gebie…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_20",
+        "zitierung": "BGE 152 V 20",
+        "regesteKurz": "Art. 24 Abs. 1 KVG; Ziff. 1.2 Anhang 1 KLV; Art. 14 Abs. 2 lit. b Transplantationsgesetz; Ersatz von Erwerbsausfall bei Organspende. Der vom Organspender direkt gegenüber dem obligatorischen Krankenpflegeversicherer der Organempfängerin ge…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "12": [
+      {
+        "key": "bge_149_V_29",
+        "zitierung": "BGE 149 V 29",
+        "regesteKurz": "Art. 67, 69 und 84a Abs. 5 KVG; Art. 13 Abs. 1 DSG; Frist zur Anbringung eines Krankheitsvorbehalts von Seiten der Krankenversicherung im Falle einer Verletzung der Anzeigepflicht; Zeitpunkt, in dem die Krankenversicherung von gewissen Tat…",
+        "datum": "2022-11-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "16": [
+      {
+        "key": "bge_150_V_129",
+        "zitierung": "BGE 150 V 129",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Rückforderung von Vergütungen der Krankenversicherer an ärztliche Leistungserbringer bei Verstössen gegen das Wirtschaftlichkeitsgebo…",
+        "datum": "2023-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "18": [
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_V_119",
+        "zitierung": "BGE 149 V 119",
+        "regesteKurz": "Art. 65b Abs. 2, Art. 65d Abs. 2 und 3 (je in den ab 1. März 2017 geltenden Fassungen), Art. 67 Abs. 2 ter (in der vom 10. Mai 2006 bis 31. Mai 2015 gültig gewesenen Fassung), Art. 67a Abs. 1 KVV (in der ab 1. Juni 2015 geltenden Fassung);…",
+        "datum": "2023-04-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_152",
+        "zitierung": "BGE 146 V 152",
+        "regesteKurz": "a Art. 18 KVG; Art. 19 und 22 KVV; Gemeinsame Einrichtung KVG. Der Gemeinsamen Einrichtung KVG, die im Rahmen der internationalen Sachleistungsaushilfe Aufgaben als aushelfende Trägerin am Wohn- oder Aufenthaltsort der versicherten Persone…",
+        "datum": "2020-02-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "24": [
+      {
+        "key": "bge_150_V_281",
+        "zitierung": "BGE 150 V 281",
+        "regesteKurz": "a Art. 7 Abs. 1 und 2 sowie Art. 7a Abs. 1 und 3 KLV; anwendbarer Tarif bei Spitexleistungen an pflegebedürftige Personen in einer (kein anerkanntes Pflegeheim darstellenden) stationären Einrichtung. Von einer zugelassenen Spitex-Organisat…",
+        "datum": "2024-05-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_151_V_233",
+        "zitierung": "BGE 151 V 233",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Wirtschaftlichkeitskontrolle von ärztlichen Leistungserbringern (\"Überarztung\"); Praxisbesonderheiten (BGE 150 V 129 E. 5.5). Erweite…",
+        "datum": "2024-12-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_V_381",
+        "zitierung": "BGE 150 V 381",
+        "regesteKurz": "Art. 43, Art. 35 Abs. 2 lit. n KVG; Auslegung des Begriffs \"Institut\" (Französisch: \"institut\"/Italienisch: \"istituti\") gemäss Interpretationen in der Tarifstruktur TARMED zu den Notfall-Inkonvenienzpauschalen A und B sowie zum Prozentzusc…",
+        "datum": "2024-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_2",
+        "zitierung": "BGE 152 V 2",
+        "regesteKurz": "Art. 56 Abs. 2, Art. 61 lit. a und f bis ATSG und Art. 69 Abs. 1 bis IVG (beide in der seit 1. Januar 2021 geltenden Fassung); Gerichtskosten im kantonalen Verfahren bei Rechtsverweigerungs- oder Rechtsverzögerungsbeschwerden auf dem Gebie…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_20",
+        "zitierung": "BGE 152 V 20",
+        "regesteKurz": "Art. 24 Abs. 1 KVG; Ziff. 1.2 Anhang 1 KLV; Art. 14 Abs. 2 lit. b Transplantationsgesetz; Ersatz von Erwerbsausfall bei Organspende. Der vom Organspender direkt gegenüber dem obligatorischen Krankenpflegeversicherer der Organempfängerin ge…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_284",
+        "zitierung": "BGE 151 V 284",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Wirtschaftlichkeitskontrolle von ärztlichen Leistungserbringern (\"Überarztung\"); Rückerstattung von Vergütungen. Zur Festlegung der T…",
+        "datum": "2025-04-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_1",
+        "zitierung": "BGE 151 V 1",
+        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der obligator…",
+        "datum": "2024-08-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_273",
+        "zitierung": "BGE 150 V 273",
+        "regesteKurz": "Art. 25 Abs. 2 lit. a Ziff. 3, Art. 25a Abs. 1, Art. 35 Abs. 2 lit. e KVG; Art. 7 Abs. 1 lit. b, Art. 7 Abs. 2 lit. c KLV; Hauspflege. Laut BGE 145 V 161 E. 5 können Familienangehörige der versicherten Person, die bei einer zugelassenen Or…",
+        "datum": "2024-05-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "25": [
+      {
+        "key": "bge_147_V_194",
+        "zitierung": "BGE 147 V 194",
+        "regesteKurz": "Art. 32, 43 Abs. 6 und Art. 52 Abs. 1 lit. b KVG; Art. 65b Abs. 1, 2 lit. b, Abs. 4 bis und 5 KVV; Art. 34f Abs. 1 KLV; Vergleichsgruppenbildung im Zuge des therapeutischen Quervergleichs (TQV). Bei der Durchführung des TQV ist die Wirtsch…",
+        "datum": "2021-04-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 5
+      },
+      {
+        "key": "bge_150_V_281",
+        "zitierung": "BGE 150 V 281",
+        "regesteKurz": "a Art. 7 Abs. 1 und 2 sowie Art. 7a Abs. 1 und 3 KLV; anwendbarer Tarif bei Spitexleistungen an pflegebedürftige Personen in einer (kein anerkanntes Pflegeheim darstellenden) stationären Einrichtung. Von einer zugelassenen Spitex-Organisat…",
+        "datum": "2024-05-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_147_V_464",
+        "zitierung": "BGE 147 V 464",
+        "regesteKurz": "Art. 32 Abs. 1 und Art. 43 Abs. 6 KVG; Art. 65b Abs. 2 lit. b und Abs. 4 bis sowie Art. 65d Abs. 1 KVV; Art. 34f KLV; dreijährliche Überprüfung der Bedingungen für die Aufnahme eines Medikaments in die Spezialitätenliste; Gammeneinteilung.…",
+        "datum": "2021-08-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_151_V_194",
+        "zitierung": "BGE 151 V 194",
+        "regesteKurz": "Art. 6 und 7 Abs. 1, Art. 21 Abs. 4 ATSG; Art. 1a, 4 Abs. 1, Art. 28 Abs. 1 lit. a und Art. 28 Abs. 1 bis IVG; Therapierbarkeit der Gesundheitsschädigung und Rentenanspruch. Die Behandelbarkeit des Leidens tangiert den (koordinationsrechtl…",
+        "datum": "2025-02-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_V_348",
+        "zitierung": "BGE 148 V 348",
+        "regesteKurz": "Art. 32 Abs. 1 und 2 KVG; Art. 65b Abs. 2 lit. a, Art. 65d Abs. 1 und 2 KVV; Art. 34a bis , 34d und 34e KLV; dreijährliche Überprüfung der Aufnahmebedingungen eines Medikaments in die Spezialitätenliste; Auslandpreisvergleich (APV). Bei de…",
+        "datum": "2022-04-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_V_470",
+        "zitierung": "BGE 147 V 470",
+        "regesteKurz": "Art. 32 Abs. 1 und Art. 43 Abs. 6 KVG; Art. 65b Abs. 1, Abs. 2 lit. b und Abs. 4 bis , Art. 65d Abs. 1 und 3 KVV; Art. 34d und 34f KLV; Vergleichsgruppenbildung im Rahmen des therapeutischen Quervergleichs (TQV); Ermittlung der mittleren E…",
+        "datum": "2021-09-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_V_328",
+        "zitierung": "BGE 147 V 328",
+        "regesteKurz": "Art. 32 Abs. 1 und Art. 96 KVG; Art. 65b Abs. 6 und Art. 65d KVV; Art. 34f KLV; Wirtschaftlichkeitsbeurteilung eines patentgeschützten Medikaments im Rahmen des therapeutischen Quervergleichs (TQV). Bei der Beurteilung der Wirtschaftlichke…",
+        "datum": "2021-06-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_2",
+        "zitierung": "BGE 152 V 2",
+        "regesteKurz": "Art. 56 Abs. 2, Art. 61 lit. a und f bis ATSG und Art. 69 Abs. 1 bis IVG (beide in der seit 1. Januar 2021 geltenden Fassung); Gerichtskosten im kantonalen Verfahren bei Rechtsverweigerungs- oder Rechtsverzögerungsbeschwerden auf dem Gebie…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "27": [
+      {
+        "key": "bge_151_V_1",
+        "zitierung": "BGE 151 V 1",
+        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der obligator…",
+        "datum": "2024-08-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_187",
+        "zitierung": "BGE 147 V 187",
+        "regesteKurz": "Art. 27 und 31 Abs. 1 lit. a KVG; Art. 19a Abs. 1 KLV; Sanierung einer nach Vollendung des 20. Altersjahrs erfolgten prothetischen Versorgung eines zahnmedizinischen Geburtsgebrechens. Ist bei als Geburtsgebrechen zu qualifizierenden, schw…",
+        "datum": "2021-03-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_253",
+        "zitierung": "BGE 146 V 253",
+        "regesteKurz": "Art. 25, 27 und 52 Abs. 2 KVG; Art. 33 und 35 KVV; Art. 5 KLV; therapeutische Massnahmen im Zusammenhang mit Geburtsgebrechen. Es besteht kein Anspruch darauf, dass die Kosten einer Hippotherapie, welche der an angeborenen cerebralen Lähmu…",
+        "datum": "2020-06-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "29": [
+      {
+        "key": "bge_152_V_2",
+        "zitierung": "BGE 152 V 2",
+        "regesteKurz": "Art. 56 Abs. 2, Art. 61 lit. a und f bis ATSG und Art. 69 Abs. 1 bis IVG (beide in der seit 1. Januar 2021 geltenden Fassung); Gerichtskosten im kantonalen Verfahren bei Rechtsverweigerungs- oder Rechtsverzögerungsbeschwerden auf dem Gebie…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_20",
+        "zitierung": "BGE 152 V 20",
+        "regesteKurz": "Art. 24 Abs. 1 KVG; Ziff. 1.2 Anhang 1 KLV; Art. 14 Abs. 2 lit. b Transplantationsgesetz; Ersatz von Erwerbsausfall bei Organspende. Der vom Organspender direkt gegenüber dem obligatorischen Krankenpflegeversicherer der Organempfängerin ge…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_244",
+        "zitierung": "BGE 151 V 244",
+        "regesteKurz": "Art. 6 Abs. 2 UVG; unfallähnliche Körperschädigung. Risse im Muskelgewebe von Hohlorganen (glatte Muskulatur) sind nicht von Art. 6 Abs. 2 lit. d UVG erfasst. Der im Rahmen einer Geburt per Kaiserschnitt aufgetretene Riss in der Hinterwand…",
+        "datum": "2024-11-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_70",
+        "zitierung": "BGE 148 V 70",
+        "regesteKurz": "Art. 49 Abs. 1, Art. 49a, Art. 41 Abs. 1 bis KVG; Abs. 1 und 4 der Übergangsbestimmungen zur Änderung des KVG vom 21. Dezember 2007 (Spitalfinanzierung); Finanzierung stationärer Spitalbehandlung bei Übergangsfällen mit Eintritt 2011 und A…",
+        "datum": "2021-11-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_152",
+        "zitierung": "BGE 146 V 152",
+        "regesteKurz": "a Art. 18 KVG; Art. 19 und 22 KVV; Gemeinsame Einrichtung KVG. Der Gemeinsamen Einrichtung KVG, die im Rahmen der internationalen Sachleistungsaushilfe Aufgaben als aushelfende Trägerin am Wohn- oder Aufenthaltsort der versicherten Persone…",
+        "datum": "2020-02-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "31": [
+      {
+        "key": "bge_147_V_187",
+        "zitierung": "BGE 147 V 187",
+        "regesteKurz": "Art. 27 und 31 Abs. 1 lit. a KVG; Art. 19a Abs. 1 KLV; Sanierung einer nach Vollendung des 20. Altersjahrs erfolgten prothetischen Versorgung eines zahnmedizinischen Geburtsgebrechens. Ist bei als Geburtsgebrechen zu qualifizierenden, schw…",
+        "datum": "2021-03-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "32": [
+      {
+        "key": "bge_147_V_194",
+        "zitierung": "BGE 147 V 194",
+        "regesteKurz": "Art. 32, 43 Abs. 6 und Art. 52 Abs. 1 lit. b KVG; Art. 65b Abs. 1, 2 lit. b, Abs. 4 bis und 5 KVV; Art. 34f Abs. 1 KLV; Vergleichsgruppenbildung im Zuge des therapeutischen Quervergleichs (TQV). Bei der Durchführung des TQV ist die Wirtsch…",
+        "datum": "2021-04-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 5
+      },
+      {
+        "key": "bge_150_V_129",
+        "zitierung": "BGE 150 V 129",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Rückforderung von Vergütungen der Krankenversicherer an ärztliche Leistungserbringer bei Verstössen gegen das Wirtschaftlichkeitsgebo…",
+        "datum": "2023-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_147_V_464",
+        "zitierung": "BGE 147 V 464",
+        "regesteKurz": "Art. 32 Abs. 1 und Art. 43 Abs. 6 KVG; Art. 65b Abs. 2 lit. b und Abs. 4 bis sowie Art. 65d Abs. 1 KVV; Art. 34f KLV; dreijährliche Überprüfung der Bedingungen für die Aufnahme eines Medikaments in die Spezialitätenliste; Gammeneinteilung.…",
+        "datum": "2021-08-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_151_V_233",
+        "zitierung": "BGE 151 V 233",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Wirtschaftlichkeitskontrolle von ärztlichen Leistungserbringern (\"Überarztung\"); Praxisbesonderheiten (BGE 150 V 129 E. 5.5). Erweite…",
+        "datum": "2024-12-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_V_178",
+        "zitierung": "BGE 150 V 178",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 56 Abs. 1, Art. 59 Abs. 1 lit. b KVG; Rückforderung im Rahmen einer Rechnungskontrolle gestützt auf die Hochrechnung einer repräsentativen Stichprobe. Allgemeines zur Hochrechnung einer repräsentativen Stichprobe, wie…",
+        "datum": "2024-04-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_V_348",
+        "zitierung": "BGE 148 V 348",
+        "regesteKurz": "Art. 32 Abs. 1 und 2 KVG; Art. 65b Abs. 2 lit. a, Art. 65d Abs. 1 und 2 KVV; Art. 34a bis , 34d und 34e KLV; dreijährliche Überprüfung der Aufnahmebedingungen eines Medikaments in die Spezialitätenliste; Auslandpreisvergleich (APV). Bei de…",
+        "datum": "2022-04-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_V_470",
+        "zitierung": "BGE 147 V 470",
+        "regesteKurz": "Art. 32 Abs. 1 und Art. 43 Abs. 6 KVG; Art. 65b Abs. 1, Abs. 2 lit. b und Abs. 4 bis , Art. 65d Abs. 1 und 3 KVV; Art. 34d und 34f KLV; Vergleichsgruppenbildung im Rahmen des therapeutischen Quervergleichs (TQV); Ermittlung der mittleren E…",
+        "datum": "2021-09-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      }
+    ],
+    "33": [
+      {
+        "key": "bge_152_V_2",
+        "zitierung": "BGE 152 V 2",
+        "regesteKurz": "Art. 56 Abs. 2, Art. 61 lit. a und f bis ATSG und Art. 69 Abs. 1 bis IVG (beide in der seit 1. Januar 2021 geltenden Fassung); Gerichtskosten im kantonalen Verfahren bei Rechtsverweigerungs- oder Rechtsverzögerungsbeschwerden auf dem Gebie…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_20",
+        "zitierung": "BGE 152 V 20",
+        "regesteKurz": "Art. 24 Abs. 1 KVG; Ziff. 1.2 Anhang 1 KLV; Art. 14 Abs. 2 lit. b Transplantationsgesetz; Ersatz von Erwerbsausfall bei Organspende. Der vom Organspender direkt gegenüber dem obligatorischen Krankenpflegeversicherer der Organempfängerin ge…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_158",
+        "zitierung": "BGE 151 V 158",
+        "regesteKurz": "Art. 32, 41, 42, 56 und 62 KVG; Art. 90c und 99 KVV; Kriterien der Wirksamkeit, Zweckmässigkeit und Wirtschaftlichkeit (WZW-Kriterien). Die Überprüfung der WZW-Kriterien durch den Krankenversicherer resp. die Anordnung von Massnahmen zur G…",
+        "datum": "2024-10-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_178",
+        "zitierung": "BGE 150 V 178",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 56 Abs. 1, Art. 59 Abs. 1 lit. b KVG; Rückforderung im Rahmen einer Rechnungskontrolle gestützt auf die Hochrechnung einer repräsentativen Stichprobe. Allgemeines zur Hochrechnung einer repräsentativen Stichprobe, wie…",
+        "datum": "2024-04-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_253",
+        "zitierung": "BGE 146 V 253",
+        "regesteKurz": "Art. 25, 27 und 52 Abs. 2 KVG; Art. 33 und 35 KVV; Art. 5 KLV; therapeutische Massnahmen im Zusammenhang mit Geburtsgebrechen. Es besteht kein Anspruch darauf, dass die Kosten einer Hippotherapie, welche der an angeborenen cerebralen Lähmu…",
+        "datum": "2020-06-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "34": [
+      {
+        "key": "bge_150_V_210",
+        "zitierung": "BGE 150 V 210",
+        "regesteKurz": "Art. 25 Abs. 1 und 2 lit. b, Art. 32 Abs. 1 Satz 1, Art. 34 Abs. 1, Art. 44 Abs. 1 Satz 1, Art. 52 Abs. 1 lit. a Ziff. 2 und lit. b KVG; Art. 63 Abs. 2 KVV; ALT II (Bearbeitungstarif) lit. D Ziff. 2 (nachfolgend: ALT II D 2); Art. 4 Abs. 1…",
+        "datum": "2024-03-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_240",
+        "zitierung": "BGE 146 V 240",
+        "regesteKurz": "Art. 61 lit. c ATSG; Art. 25 Abs. 1 und 2 lit. b, Art. 34 Abs. 1, Art. 52 Abs. 1 lit. a Ziff. 1 und lit. b KVG; Art. 63 Abs. 2, Art. 65, Art. 71a Abs. 1 lit. a und b, Art. 71b Abs. 1, Art. 71c, Art. 71d KVV; Kostenübernahme einer Kombinati…",
+        "datum": "2020-06-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_185",
+        "zitierung": "BGE 146 V 185",
+        "regesteKurz": "Art. 34 Abs. 1 und 2 KVG; Art. 36 Abs. 2 KVV; Übernahme der Kosten von im Ausland erbrachten Leistungen aus der obligatorischen Krankenpflegeversicherung. Die Behandlung, welche in einem zeitlichen und sachlichen Zusammenhang mit einer med…",
+        "datum": "2020-02-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_152",
+        "zitierung": "BGE 146 V 152",
+        "regesteKurz": "a Art. 18 KVG; Art. 19 und 22 KVV; Gemeinsame Einrichtung KVG. Der Gemeinsamen Einrichtung KVG, die im Rahmen der internationalen Sachleistungsaushilfe Aufgaben als aushelfende Trägerin am Wohn- oder Aufenthaltsort der versicherten Persone…",
+        "datum": "2020-02-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "35": [
+      {
+        "key": "bge_151_V_233",
+        "zitierung": "BGE 151 V 233",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Wirtschaftlichkeitskontrolle von ärztlichen Leistungserbringern (\"Überarztung\"); Praxisbesonderheiten (BGE 150 V 129 E. 5.5). Erweite…",
+        "datum": "2024-12-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_V_381",
+        "zitierung": "BGE 150 V 381",
+        "regesteKurz": "Art. 43, Art. 35 Abs. 2 lit. n KVG; Auslegung des Begriffs \"Institut\" (Französisch: \"institut\"/Italienisch: \"istituti\") gemäss Interpretationen in der Tarifstruktur TARMED zu den Notfall-Inkonvenienzpauschalen A und B sowie zum Prozentzusc…",
+        "datum": "2024-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_284",
+        "zitierung": "BGE 151 V 284",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Wirtschaftlichkeitskontrolle von ärztlichen Leistungserbringern (\"Überarztung\"); Rückerstattung von Vergütungen. Zur Festlegung der T…",
+        "datum": "2025-04-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_1",
+        "zitierung": "BGE 151 V 1",
+        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der obligator…",
+        "datum": "2024-08-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_273",
+        "zitierung": "BGE 150 V 273",
+        "regesteKurz": "Art. 25 Abs. 2 lit. a Ziff. 3, Art. 25a Abs. 1, Art. 35 Abs. 2 lit. e KVG; Art. 7 Abs. 1 lit. b, Art. 7 Abs. 2 lit. c KLV; Hauspflege. Laut BGE 145 V 161 E. 5 können Familienangehörige der versicherten Person, die bei einer zugelassenen Or…",
+        "datum": "2024-05-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_210",
+        "zitierung": "BGE 150 V 210",
+        "regesteKurz": "Art. 25 Abs. 1 und 2 lit. b, Art. 32 Abs. 1 Satz 1, Art. 34 Abs. 1, Art. 44 Abs. 1 Satz 1, Art. 52 Abs. 1 lit. a Ziff. 2 und lit. b KVG; Art. 63 Abs. 2 KVV; ALT II (Bearbeitungstarif) lit. D Ziff. 2 (nachfolgend: ALT II D 2); Art. 4 Abs. 1…",
+        "datum": "2024-03-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_70",
+        "zitierung": "BGE 148 V 70",
+        "regesteKurz": "Art. 49 Abs. 1, Art. 49a, Art. 41 Abs. 1 bis KVG; Abs. 1 und 4 der Übergangsbestimmungen zur Änderung des KVG vom 21. Dezember 2007 (Spitalfinanzierung); Finanzierung stationärer Spitalbehandlung bei Übergangsfällen mit Eintritt 2011 und A…",
+        "datum": "2021-11-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_II_248",
+        "zitierung": "BGE 147 II 248",
+        "regesteKurz": "Art. 9 Abs. 2 lit. h StHG; Behandlung und Unterbringung in einem ausserkantonalen Nicht-Listenspital (Privatspital), ohne dass der Wohnsitzkanton eine Kostengutsprache geleistet hat. System der obligatorischen Krankenpflegeversicherung und…",
+        "datum": "2020-12-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "36": [
+      {
+        "key": "bge_147_II_248",
+        "zitierung": "BGE 147 II 248",
+        "regesteKurz": "Art. 9 Abs. 2 lit. h StHG; Behandlung und Unterbringung in einem ausserkantonalen Nicht-Listenspital (Privatspital), ohne dass der Wohnsitzkanton eine Kostengutsprache geleistet hat. System der obligatorischen Krankenpflegeversicherung und…",
+        "datum": "2020-12-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "37": [
+      {
+        "key": "bge_150_V_129",
+        "zitierung": "BGE 150 V 129",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Rückforderung von Vergütungen der Krankenversicherer an ärztliche Leistungserbringer bei Verstössen gegen das Wirtschaftlichkeitsgebo…",
+        "datum": "2023-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "39": [
+      {
+        "key": "bge_151_V_100",
+        "zitierung": "BGE 151 V 100",
+        "regesteKurz": "Art. 55a KVG; Art. 2, 3 und 9 der Verordnung über die Festlegung der Höchstzahlen für Ärztinnen und Ärzte im ambulanten Bereich (Höchstzahlenverordnung); Art. 1, 2 und 12 der Verordnung des Regierungsrats des Kantons Bern über die Zulassun…",
+        "datum": "2025-01-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_381",
+        "zitierung": "BGE 150 V 381",
+        "regesteKurz": "Art. 43, Art. 35 Abs. 2 lit. n KVG; Auslegung des Begriffs \"Institut\" (Französisch: \"institut\"/Italienisch: \"istituti\") gemäss Interpretationen in der Tarifstruktur TARMED zu den Notfall-Inkonvenienzpauschalen A und B sowie zum Prozentzusc…",
+        "datum": "2024-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_281",
+        "zitierung": "BGE 150 V 281",
+        "regesteKurz": "a Art. 7 Abs. 1 und 2 sowie Art. 7a Abs. 1 und 3 KLV; anwendbarer Tarif bei Spitexleistungen an pflegebedürftige Personen in einer (kein anerkanntes Pflegeheim darstellenden) stationären Einrichtung. Von einer zugelassenen Spitex-Organisat…",
+        "datum": "2024-05-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_242",
+        "zitierung": "BGE 148 V 242",
+        "regesteKurz": "Art. 25a Abs. 5 KVG; Übernahme der Kosten durch die obligatorische Krankenpflegeversicherung; Zuständigkeit für die Restfinanzierung bei einer nicht im Wohnsitzkanton in einem Pflegeheim untergebrachten versicherten Person. Zusammenfassung…",
+        "datum": "2022-04-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_70",
+        "zitierung": "BGE 148 V 70",
+        "regesteKurz": "Art. 49 Abs. 1, Art. 49a, Art. 41 Abs. 1 bis KVG; Abs. 1 und 4 der Übergangsbestimmungen zur Änderung des KVG vom 21. Dezember 2007 (Spitalfinanzierung); Finanzierung stationärer Spitalbehandlung bei Übergangsfällen mit Eintritt 2011 und A…",
+        "datum": "2021-11-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_312",
+        "zitierung": "BGE 147 V 312",
+        "regesteKurz": "Art. 14 Abs. 1 lit. b ELG; Art. 13 Abs. 1 der st. gallischen Verordnung über die Vergütung von Krankheits- und Behinderungskosten bei Ergänzungsleistungen; Art. 8 Abs. 1 und Art. 13 Abs. 1 BV; Krankheits- und Behinderungskosten. Eine kanto…",
+        "datum": "2021-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_II_248",
+        "zitierung": "BGE 147 II 248",
+        "regesteKurz": "Art. 9 Abs. 2 lit. h StHG; Behandlung und Unterbringung in einem ausserkantonalen Nicht-Listenspital (Privatspital), ohne dass der Wohnsitzkanton eine Kostengutsprache geleistet hat. System der obligatorischen Krankenpflegeversicherung und…",
+        "datum": "2020-12-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "41": [
+      {
+        "key": "bge_151_V_158",
+        "zitierung": "BGE 151 V 158",
+        "regesteKurz": "Art. 32, 41, 42, 56 und 62 KVG; Art. 90c und 99 KVV; Kriterien der Wirksamkeit, Zweckmässigkeit und Wirtschaftlichkeit (WZW-Kriterien). Die Überprüfung der WZW-Kriterien durch den Krankenversicherer resp. die Anordnung von Massnahmen zur G…",
+        "datum": "2024-10-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_70",
+        "zitierung": "BGE 148 V 70",
+        "regesteKurz": "Art. 49 Abs. 1, Art. 49a, Art. 41 Abs. 1 bis KVG; Abs. 1 und 4 der Übergangsbestimmungen zur Änderung des KVG vom 21. Dezember 2007 (Spitalfinanzierung); Finanzierung stationärer Spitalbehandlung bei Übergangsfällen mit Eintritt 2011 und A…",
+        "datum": "2021-11-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_II_248",
+        "zitierung": "BGE 147 II 248",
+        "regesteKurz": "Art. 9 Abs. 2 lit. h StHG; Behandlung und Unterbringung in einem ausserkantonalen Nicht-Listenspital (Privatspital), ohne dass der Wohnsitzkanton eine Kostengutsprache geleistet hat. System der obligatorischen Krankenpflegeversicherung und…",
+        "datum": "2020-12-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "42": [
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_151_V_233",
+        "zitierung": "BGE 151 V 233",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Wirtschaftlichkeitskontrolle von ärztlichen Leistungserbringern (\"Überarztung\"); Praxisbesonderheiten (BGE 150 V 129 E. 5.5). Erweite…",
+        "datum": "2024-12-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_284",
+        "zitierung": "BGE 151 V 284",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Wirtschaftlichkeitskontrolle von ärztlichen Leistungserbringern (\"Überarztung\"); Rückerstattung von Vergütungen. Zur Festlegung der T…",
+        "datum": "2025-04-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_158",
+        "zitierung": "BGE 151 V 158",
+        "regesteKurz": "Art. 32, 41, 42, 56 und 62 KVG; Art. 90c und 99 KVV; Kriterien der Wirksamkeit, Zweckmässigkeit und Wirtschaftlichkeit (WZW-Kriterien). Die Überprüfung der WZW-Kriterien durch den Krankenversicherer resp. die Anordnung von Massnahmen zur G…",
+        "datum": "2024-10-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_1",
+        "zitierung": "BGE 151 V 1",
+        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der obligator…",
+        "datum": "2024-08-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "43": [
+      {
+        "key": "bge_147_V_194",
+        "zitierung": "BGE 147 V 194",
+        "regesteKurz": "Art. 32, 43 Abs. 6 und Art. 52 Abs. 1 lit. b KVG; Art. 65b Abs. 1, 2 lit. b, Abs. 4 bis und 5 KVV; Art. 34f Abs. 1 KLV; Vergleichsgruppenbildung im Zuge des therapeutischen Quervergleichs (TQV). Bei der Durchführung des TQV ist die Wirtsch…",
+        "datum": "2021-04-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 5
+      },
+      {
+        "key": "bge_147_V_464",
+        "zitierung": "BGE 147 V 464",
+        "regesteKurz": "Art. 32 Abs. 1 und Art. 43 Abs. 6 KVG; Art. 65b Abs. 2 lit. b und Abs. 4 bis sowie Art. 65d Abs. 1 KVV; Art. 34f KLV; dreijährliche Überprüfung der Bedingungen für die Aufnahme eines Medikaments in die Spezialitätenliste; Gammeneinteilung.…",
+        "datum": "2021-08-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_150_V_129",
+        "zitierung": "BGE 150 V 129",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Rückforderung von Vergütungen der Krankenversicherer an ärztliche Leistungserbringer bei Verstössen gegen das Wirtschaftlichkeitsgebo…",
+        "datum": "2023-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_V_470",
+        "zitierung": "BGE 147 V 470",
+        "regesteKurz": "Art. 32 Abs. 1 und Art. 43 Abs. 6 KVG; Art. 65b Abs. 1, Abs. 2 lit. b und Abs. 4 bis , Art. 65d Abs. 1 und 3 KVV; Art. 34d und 34f KLV; Vergleichsgruppenbildung im Rahmen des therapeutischen Quervergleichs (TQV); Ermittlung der mittleren E…",
+        "datum": "2021-09-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_V_328",
+        "zitierung": "BGE 147 V 328",
+        "regesteKurz": "Art. 32 Abs. 1 und Art. 96 KVG; Art. 65b Abs. 6 und Art. 65d KVV; Art. 34f KLV; Wirtschaftlichkeitsbeurteilung eines patentgeschützten Medikaments im Rahmen des therapeutischen Quervergleichs (TQV). Bei der Beurteilung der Wirtschaftlichke…",
+        "datum": "2021-06-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_1",
+        "zitierung": "BGE 151 V 1",
+        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der obligator…",
+        "datum": "2024-08-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_372",
+        "zitierung": "BGE 150 V 372",
+        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines Medikamen…",
+        "datum": "2024-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "44": [
+      {
+        "key": "bge_150_V_178",
+        "zitierung": "BGE 150 V 178",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 56 Abs. 1, Art. 59 Abs. 1 lit. b KVG; Rückforderung im Rahmen einer Rechnungskontrolle gestützt auf die Hochrechnung einer repräsentativen Stichprobe. Allgemeines zur Hochrechnung einer repräsentativen Stichprobe, wie…",
+        "datum": "2024-04-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_381",
+        "zitierung": "BGE 150 V 381",
+        "regesteKurz": "Art. 43, Art. 35 Abs. 2 lit. n KVG; Auslegung des Begriffs \"Institut\" (Französisch: \"institut\"/Italienisch: \"istituti\") gemäss Interpretationen in der Tarifstruktur TARMED zu den Notfall-Inkonvenienzpauschalen A und B sowie zum Prozentzusc…",
+        "datum": "2024-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_210",
+        "zitierung": "BGE 150 V 210",
+        "regesteKurz": "Art. 25 Abs. 1 und 2 lit. b, Art. 32 Abs. 1 Satz 1, Art. 34 Abs. 1, Art. 44 Abs. 1 Satz 1, Art. 52 Abs. 1 lit. a Ziff. 2 und lit. b KVG; Art. 63 Abs. 2 KVV; ALT II (Bearbeitungstarif) lit. D Ziff. 2 (nachfolgend: ALT II D 2); Art. 4 Abs. 1…",
+        "datum": "2024-03-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_70",
+        "zitierung": "BGE 148 V 70",
+        "regesteKurz": "Art. 49 Abs. 1, Art. 49a, Art. 41 Abs. 1 bis KVG; Abs. 1 und 4 der Übergangsbestimmungen zur Änderung des KVG vom 21. Dezember 2007 (Spitalfinanzierung); Finanzierung stationärer Spitalbehandlung bei Übergangsfällen mit Eintritt 2011 und A…",
+        "datum": "2021-11-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_II_248",
+        "zitierung": "BGE 147 II 248",
+        "regesteKurz": "Art. 9 Abs. 2 lit. h StHG; Behandlung und Unterbringung in einem ausserkantonalen Nicht-Listenspital (Privatspital), ohne dass der Wohnsitzkanton eine Kostengutsprache geleistet hat. System der obligatorischen Krankenpflegeversicherung und…",
+        "datum": "2020-12-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_253",
+        "zitierung": "BGE 146 V 253",
+        "regesteKurz": "Art. 25, 27 und 52 Abs. 2 KVG; Art. 33 und 35 KVV; Art. 5 KLV; therapeutische Massnahmen im Zusammenhang mit Geburtsgebrechen. Es besteht kein Anspruch darauf, dass die Kosten einer Hippotherapie, welche der an angeborenen cerebralen Lähmu…",
+        "datum": "2020-06-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "45": [
+      {
+        "key": "bge_146_V_129",
+        "zitierung": "BGE 146 V 129",
+        "regesteKurz": "Art. 70 Abs. 2 ATSG; Vorleistungspflicht; Gesetzeslücke. In Ergänzung von Art. 70 Abs. 2 ATSG ist die Invalidenversicherung vorleistungspflichtig für Hilfsmittel, deren Übernahme durch die Invaliden- oder Unfallversicherung umstritten (und…",
+        "datum": "2020-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "46": [
+      {
+        "key": "bge_150_V_381",
+        "zitierung": "BGE 150 V 381",
+        "regesteKurz": "Art. 43, Art. 35 Abs. 2 lit. n KVG; Auslegung des Begriffs \"Institut\" (Französisch: \"institut\"/Italienisch: \"istituti\") gemäss Interpretationen in der Tarifstruktur TARMED zu den Notfall-Inkonvenienzpauschalen A und B sowie zum Prozentzusc…",
+        "datum": "2024-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "49": [
+      {
+        "key": "bge_148_V_70",
+        "zitierung": "BGE 148 V 70",
+        "regesteKurz": "Art. 49 Abs. 1, Art. 49a, Art. 41 Abs. 1 bis KVG; Abs. 1 und 4 der Übergangsbestimmungen zur Änderung des KVG vom 21. Dezember 2007 (Spitalfinanzierung); Finanzierung stationärer Spitalbehandlung bei Übergangsfällen mit Eintritt 2011 und A…",
+        "datum": "2021-11-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_7",
+        "zitierung": "BGE 148 V 7",
+        "regesteKurz": "Art. 13 Abs. 1, Art. 14 Abs. 1, Art. 26 bis und Art. 27 Abs. 1 IVG; Art. 24 Abs. 2 IVV; Tarif für die zahnärztliche Behandlung eines Geburtsgebrechens; Fallpauschale. Da sich aus der freien Wahl des Leistungserbringers gemäss Art. 26 bis A…",
+        "datum": "2021-10-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_II_248",
+        "zitierung": "BGE 147 II 248",
+        "regesteKurz": "Art. 9 Abs. 2 lit. h StHG; Behandlung und Unterbringung in einem ausserkantonalen Nicht-Listenspital (Privatspital), ohne dass der Wohnsitzkanton eine Kostengutsprache geleistet hat. System der obligatorischen Krankenpflegeversicherung und…",
+        "datum": "2020-12-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "50": [
+      {
+        "key": "bge_150_V_281",
+        "zitierung": "BGE 150 V 281",
+        "regesteKurz": "a Art. 7 Abs. 1 und 2 sowie Art. 7a Abs. 1 und 3 KLV; anwendbarer Tarif bei Spitexleistungen an pflegebedürftige Personen in einer (kein anerkanntes Pflegeheim darstellenden) stationären Einrichtung. Von einer zugelassenen Spitex-Organisat…",
+        "datum": "2024-05-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "52": [
+      {
+        "key": "bge_147_V_194",
+        "zitierung": "BGE 147 V 194",
+        "regesteKurz": "Art. 32, 43 Abs. 6 und Art. 52 Abs. 1 lit. b KVG; Art. 65b Abs. 1, 2 lit. b, Abs. 4 bis und 5 KVV; Art. 34f Abs. 1 KLV; Vergleichsgruppenbildung im Zuge des therapeutischen Quervergleichs (TQV). Bei der Durchführung des TQV ist die Wirtsch…",
+        "datum": "2021-04-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 5
+      },
+      {
+        "key": "bge_147_V_464",
+        "zitierung": "BGE 147 V 464",
+        "regesteKurz": "Art. 32 Abs. 1 und Art. 43 Abs. 6 KVG; Art. 65b Abs. 2 lit. b und Abs. 4 bis sowie Art. 65d Abs. 1 KVV; Art. 34f KLV; dreijährliche Überprüfung der Bedingungen für die Aufnahme eines Medikaments in die Spezialitätenliste; Gammeneinteilung.…",
+        "datum": "2021-08-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_148_V_348",
+        "zitierung": "BGE 148 V 348",
+        "regesteKurz": "Art. 32 Abs. 1 und 2 KVG; Art. 65b Abs. 2 lit. a, Art. 65d Abs. 1 und 2 KVV; Art. 34a bis , 34d und 34e KLV; dreijährliche Überprüfung der Aufnahmebedingungen eines Medikaments in die Spezialitätenliste; Auslandpreisvergleich (APV). Bei de…",
+        "datum": "2022-04-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_V_470",
+        "zitierung": "BGE 147 V 470",
+        "regesteKurz": "Art. 32 Abs. 1 und Art. 43 Abs. 6 KVG; Art. 65b Abs. 1, Abs. 2 lit. b und Abs. 4 bis , Art. 65d Abs. 1 und 3 KVV; Art. 34d und 34f KLV; Vergleichsgruppenbildung im Rahmen des therapeutischen Quervergleichs (TQV); Ermittlung der mittleren E…",
+        "datum": "2021-09-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_V_328",
+        "zitierung": "BGE 147 V 328",
+        "regesteKurz": "Art. 32 Abs. 1 und Art. 96 KVG; Art. 65b Abs. 6 und Art. 65d KVV; Art. 34f KLV; Wirtschaftlichkeitsbeurteilung eines patentgeschützten Medikaments im Rahmen des therapeutischen Quervergleichs (TQV). Bei der Beurteilung der Wirtschaftlichke…",
+        "datum": "2021-06-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_V_372",
+        "zitierung": "BGE 150 V 372",
+        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines Medikamen…",
+        "datum": "2024-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_210",
+        "zitierung": "BGE 150 V 210",
+        "regesteKurz": "Art. 25 Abs. 1 und 2 lit. b, Art. 32 Abs. 1 Satz 1, Art. 34 Abs. 1, Art. 44 Abs. 1 Satz 1, Art. 52 Abs. 1 lit. a Ziff. 2 und lit. b KVG; Art. 63 Abs. 2 KVV; ALT II (Bearbeitungstarif) lit. D Ziff. 2 (nachfolgend: ALT II D 2); Art. 4 Abs. 1…",
+        "datum": "2024-03-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_V_119",
+        "zitierung": "BGE 149 V 119",
+        "regesteKurz": "Art. 65b Abs. 2, Art. 65d Abs. 2 und 3 (je in den ab 1. März 2017 geltenden Fassungen), Art. 67 Abs. 2 ter (in der vom 10. Mai 2006 bis 31. Mai 2015 gültig gewesenen Fassung), Art. 67a Abs. 1 KVV (in der ab 1. Juni 2015 geltenden Fassung);…",
+        "datum": "2023-04-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "53": [
+      {
+        "key": "bge_150_V_210",
+        "zitierung": "BGE 150 V 210",
+        "regesteKurz": "Art. 25 Abs. 1 und 2 lit. b, Art. 32 Abs. 1 Satz 1, Art. 34 Abs. 1, Art. 44 Abs. 1 Satz 1, Art. 52 Abs. 1 lit. a Ziff. 2 und lit. b KVG; Art. 63 Abs. 2 KVV; ALT II (Bearbeitungstarif) lit. D Ziff. 2 (nachfolgend: ALT II D 2); Art. 4 Abs. 1…",
+        "datum": "2024-03-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "54": [
+      {
+        "key": "bge_151_V_100",
+        "zitierung": "BGE 151 V 100",
+        "regesteKurz": "Art. 55a KVG; Art. 2, 3 und 9 der Verordnung über die Festlegung der Höchstzahlen für Ärztinnen und Ärzte im ambulanten Bereich (Höchstzahlenverordnung); Art. 1, 2 und 12 der Verordnung des Regierungsrats des Kantons Bern über die Zulassun…",
+        "datum": "2025-01-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "55": [
+      {
+        "key": "bge_151_V_100",
+        "zitierung": "BGE 151 V 100",
+        "regesteKurz": "Art. 55a KVG; Art. 2, 3 und 9 der Verordnung über die Festlegung der Höchstzahlen für Ärztinnen und Ärzte im ambulanten Bereich (Höchstzahlenverordnung); Art. 1, 2 und 12 der Verordnung des Regierungsrats des Kantons Bern über die Zulassun…",
+        "datum": "2025-01-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "56": [
+      {
+        "key": "bge_150_V_129",
+        "zitierung": "BGE 150 V 129",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Rückforderung von Vergütungen der Krankenversicherer an ärztliche Leistungserbringer bei Verstössen gegen das Wirtschaftlichkeitsgebo…",
+        "datum": "2023-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
+        "key": "bge_149_II_381",
+        "zitierung": "BGE 149 II 381",
+        "regesteKurz": "Art. 68 Abs. 3 BGG; Parteientschädigung zu Gunsten der obsiegenden Krankenversicherung. Der Umstand alleine, dass ein Verfahren die unwirtschaftliche Praxistätigkeit eines Arztes oder einer Ärztin (\"Überarztung\") zum Gegenstand hat, stellt…",
+        "datum": "2023-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_151_V_233",
+        "zitierung": "BGE 151 V 233",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Wirtschaftlichkeitskontrolle von ärztlichen Leistungserbringern (\"Überarztung\"); Praxisbesonderheiten (BGE 150 V 129 E. 5.5). Erweite…",
+        "datum": "2024-12-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_V_381",
+        "zitierung": "BGE 150 V 381",
+        "regesteKurz": "Art. 43, Art. 35 Abs. 2 lit. n KVG; Auslegung des Begriffs \"Institut\" (Französisch: \"institut\"/Italienisch: \"istituti\") gemäss Interpretationen in der Tarifstruktur TARMED zu den Notfall-Inkonvenienzpauschalen A und B sowie zum Prozentzusc…",
+        "datum": "2024-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_V_178",
+        "zitierung": "BGE 150 V 178",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 56 Abs. 1, Art. 59 Abs. 1 lit. b KVG; Rückforderung im Rahmen einer Rechnungskontrolle gestützt auf die Hochrechnung einer repräsentativen Stichprobe. Allgemeines zur Hochrechnung einer repräsentativen Stichprobe, wie…",
+        "datum": "2024-04-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_358",
+        "zitierung": "BGE 151 V 358",
+        "regesteKurz": "Art. 59 Abs. 1 lit. d KVG; Begriff des Wiederholungsfalls. Unter \"Wiederholungsfall\" versteht man das Verhalten eines Leistungserbringers, der wiederholt gegen die gesetzlichen oder vertraglichen Anforderungen hinsichtlich der Wirtschaftli…",
+        "datum": "2025-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_284",
+        "zitierung": "BGE 151 V 284",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Wirtschaftlichkeitskontrolle von ärztlichen Leistungserbringern (\"Überarztung\"); Rückerstattung von Vergütungen. Zur Festlegung der T…",
+        "datum": "2025-04-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "57": [
+      {
+        "key": "bge_150_V_178",
+        "zitierung": "BGE 150 V 178",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 56 Abs. 1, Art. 59 Abs. 1 lit. b KVG; Rückforderung im Rahmen einer Rechnungskontrolle gestützt auf die Hochrechnung einer repräsentativen Stichprobe. Allgemeines zur Hochrechnung einer repräsentativen Stichprobe, wie…",
+        "datum": "2024-04-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_158",
+        "zitierung": "BGE 151 V 158",
+        "regesteKurz": "Art. 32, 41, 42, 56 und 62 KVG; Art. 90c und 99 KVV; Kriterien der Wirksamkeit, Zweckmässigkeit und Wirtschaftlichkeit (WZW-Kriterien). Die Überprüfung der WZW-Kriterien durch den Krankenversicherer resp. die Anordnung von Massnahmen zur G…",
+        "datum": "2024-10-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_273",
+        "zitierung": "BGE 150 V 273",
+        "regesteKurz": "Art. 25 Abs. 2 lit. a Ziff. 3, Art. 25a Abs. 1, Art. 35 Abs. 2 lit. e KVG; Art. 7 Abs. 1 lit. b, Art. 7 Abs. 2 lit. c KLV; Hauspflege. Laut BGE 145 V 161 E. 5 können Familienangehörige der versicherten Person, die bei einer zugelassenen Or…",
+        "datum": "2024-05-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "59": [
+      {
+        "key": "bge_150_V_129",
+        "zitierung": "BGE 150 V 129",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Rückforderung von Vergütungen der Krankenversicherer an ärztliche Leistungserbringer bei Verstössen gegen das Wirtschaftlichkeitsgebo…",
+        "datum": "2023-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_151_V_233",
+        "zitierung": "BGE 151 V 233",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Wirtschaftlichkeitskontrolle von ärztlichen Leistungserbringern (\"Überarztung\"); Praxisbesonderheiten (BGE 150 V 129 E. 5.5). Erweite…",
+        "datum": "2024-12-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_V_178",
+        "zitierung": "BGE 150 V 178",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 56 Abs. 1, Art. 59 Abs. 1 lit. b KVG; Rückforderung im Rahmen einer Rechnungskontrolle gestützt auf die Hochrechnung einer repräsentativen Stichprobe. Allgemeines zur Hochrechnung einer repräsentativen Stichprobe, wie…",
+        "datum": "2024-04-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_II_381",
+        "zitierung": "BGE 149 II 381",
+        "regesteKurz": "Art. 68 Abs. 3 BGG; Parteientschädigung zu Gunsten der obsiegenden Krankenversicherung. Der Umstand alleine, dass ein Verfahren die unwirtschaftliche Praxistätigkeit eines Arztes oder einer Ärztin (\"Überarztung\") zum Gegenstand hat, stellt…",
+        "datum": "2023-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_358",
+        "zitierung": "BGE 151 V 358",
+        "regesteKurz": "Art. 59 Abs. 1 lit. d KVG; Begriff des Wiederholungsfalls. Unter \"Wiederholungsfall\" versteht man das Verhalten eines Leistungserbringers, der wiederholt gegen die gesetzlichen oder vertraglichen Anforderungen hinsichtlich der Wirtschaftli…",
+        "datum": "2025-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_284",
+        "zitierung": "BGE 151 V 284",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Wirtschaftlichkeitskontrolle von ärztlichen Leistungserbringern (\"Überarztung\"); Rückerstattung von Vergütungen. Zur Festlegung der T…",
+        "datum": "2025-04-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "62": [
+      {
+        "key": "bge_151_V_158",
+        "zitierung": "BGE 151 V 158",
+        "regesteKurz": "Art. 32, 41, 42, 56 und 62 KVG; Art. 90c und 99 KVV; Kriterien der Wirksamkeit, Zweckmässigkeit und Wirtschaftlichkeit (WZW-Kriterien). Die Überprüfung der WZW-Kriterien durch den Krankenversicherer resp. die Anordnung von Massnahmen zur G…",
+        "datum": "2024-10-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_II_248",
+        "zitierung": "BGE 147 II 248",
+        "regesteKurz": "Art. 9 Abs. 2 lit. h StHG; Behandlung und Unterbringung in einem ausserkantonalen Nicht-Listenspital (Privatspital), ohne dass der Wohnsitzkanton eine Kostengutsprache geleistet hat. System der obligatorischen Krankenpflegeversicherung und…",
+        "datum": "2020-12-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "64": [
+      {
+        "key": "bge_152_V_2",
+        "zitierung": "BGE 152 V 2",
+        "regesteKurz": "Art. 56 Abs. 2, Art. 61 lit. a und f bis ATSG und Art. 69 Abs. 1 bis IVG (beide in der seit 1. Januar 2021 geltenden Fassung); Gerichtskosten im kantonalen Verfahren bei Rechtsverweigerungs- oder Rechtsverzögerungsbeschwerden auf dem Gebie…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_20",
+        "zitierung": "BGE 152 V 20",
+        "regesteKurz": "Art. 24 Abs. 1 KVG; Ziff. 1.2 Anhang 1 KLV; Art. 14 Abs. 2 lit. b Transplantationsgesetz; Ersatz von Erwerbsausfall bei Organspende. Der vom Organspender direkt gegenüber dem obligatorischen Krankenpflegeversicherer der Organempfängerin ge…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_1",
+        "zitierung": "BGE 151 V 1",
+        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der obligator…",
+        "datum": "2024-08-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_II_248",
+        "zitierung": "BGE 147 II 248",
+        "regesteKurz": "Art. 9 Abs. 2 lit. h StHG; Behandlung und Unterbringung in einem ausserkantonalen Nicht-Listenspital (Privatspital), ohne dass der Wohnsitzkanton eine Kostengutsprache geleistet hat. System der obligatorischen Krankenpflegeversicherung und…",
+        "datum": "2020-12-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "65": [
+      {
+        "key": "bge_149_I_172",
+        "zitierung": "BGE 149 I 172",
+        "regesteKurz": "Art. 49 BV; Art. 65 Abs. 3 Satz 1 KVG; Prämienverbilligung durch die Kantone; Berücksichtigung der aktuellsten Einkommensverhältnisse. Die altrechtliche Regelung des Einführungsgesetzes und der Verordnung zum Krankenversicherungsgesetz des…",
+        "datum": "2023-01-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_369",
+        "zitierung": "BGE 147 V 369",
+        "regesteKurz": "Art. 25 Abs. 1 ATSG und Art. 2 Abs. 1 lit. b ATSV; Rückerstattungspflicht. Der Krankenversicherer ist für die Entgegennahme von Ergänzungsleistungen im Rahmen von Art. 21a ELG (Pauschalbetrag für die obligatorische Krankenpflegeversicherun…",
+        "datum": "2021-07-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "67": [
+      {
+        "key": "bge_150_II_11",
+        "zitierung": "BGE 150 II 11",
+        "regesteKurz": "Art. 25-33a DBG; Gewinnungskosten. Zur Beurteilung, ob es sich bei den Prämien für die Krankentaggeldversicherung um Gewinnungskosten handelt, ist das Kriterium der Freiwilligkeit zur Bezahlung der Prämien massgebend. Aufgrund der einschlä…",
+        "datum": "2023-12-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_V_29",
+        "zitierung": "BGE 149 V 29",
+        "regesteKurz": "Art. 67, 69 und 84a Abs. 5 KVG; Art. 13 Abs. 1 DSG; Frist zur Anbringung eines Krankheitsvorbehalts von Seiten der Krankenversicherung im Falle einer Verletzung der Anzeigepflicht; Zeitpunkt, in dem die Krankenversicherung von gewissen Tat…",
+        "datum": "2022-11-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_III_73",
+        "zitierung": "BGE 147 III 73",
+        "regesteKurz": "Art. 8 ZGB; Krankentaggeldversicherung; Beweis des Erwerbsausfalls bei Arbeitslosigkeit; Vermutung der Erwerbstätigkeit. Die tatsächliche Vermutung, dass eine arbeitslose Person ohne Krankheit erwerbstätig wäre, gilt nur dann, wenn die Arb…",
+        "datum": "2021-01-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "69": [
+      {
+        "key": "bge_149_V_29",
+        "zitierung": "BGE 149 V 29",
+        "regesteKurz": "Art. 67, 69 und 84a Abs. 5 KVG; Art. 13 Abs. 1 DSG; Frist zur Anbringung eines Krankheitsvorbehalts von Seiten der Krankenversicherung im Falle einer Verletzung der Anzeigepflicht; Zeitpunkt, in dem die Krankenversicherung von gewissen Tat…",
+        "datum": "2022-11-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "78": [
+      {
+        "key": "bge_151_V_1",
+        "zitierung": "BGE 151 V 1",
+        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der obligator…",
+        "datum": "2024-08-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_281",
+        "zitierung": "BGE 150 V 281",
+        "regesteKurz": "a Art. 7 Abs. 1 und 2 sowie Art. 7a Abs. 1 und 3 KLV; anwendbarer Tarif bei Spitexleistungen an pflegebedürftige Personen in einer (kein anerkanntes Pflegeheim darstellenden) stationären Einrichtung. Von einer zugelassenen Spitex-Organisat…",
+        "datum": "2024-05-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "84": [
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_V_29",
+        "zitierung": "BGE 149 V 29",
+        "regesteKurz": "Art. 67, 69 und 84a Abs. 5 KVG; Art. 13 Abs. 1 DSG; Frist zur Anbringung eines Krankheitsvorbehalts von Seiten der Krankenversicherung im Falle einer Verletzung der Anzeigepflicht; Zeitpunkt, in dem die Krankenversicherung von gewissen Tat…",
+        "datum": "2022-11-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "87": [
+      {
+        "key": "bge_146_V_240",
+        "zitierung": "BGE 146 V 240",
+        "regesteKurz": "Art. 61 lit. c ATSG; Art. 25 Abs. 1 und 2 lit. b, Art. 34 Abs. 1, Art. 52 Abs. 1 lit. a Ziff. 1 und lit. b KVG; Art. 63 Abs. 2, Art. 65, Art. 71a Abs. 1 lit. a und b, Art. 71b Abs. 1, Art. 71c, Art. 71d KVV; Kostenübernahme einer Kombinati…",
+        "datum": "2020-06-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "89": [
+      {
+        "key": "bge_150_V_129",
+        "zitierung": "BGE 150 V 129",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Rückforderung von Vergütungen der Krankenversicherer an ärztliche Leistungserbringer bei Verstössen gegen das Wirtschaftlichkeitsgebo…",
+        "datum": "2023-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_V_195",
+        "zitierung": "BGE 149 V 195",
+        "regesteKurz": "Art. 89 Abs. 2 KVG; die örtliche Zuständigkeit des kantonalen Schiedsgerichts bei in verschiedenen Kantonen praktizierenden Leistungserbringern. Örtlich zuständig nach der Alternativanknüpfung von Art. 89 Abs. 2 KVG (Ort der ständigen Einr…",
+        "datum": "2023-06-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_281",
+        "zitierung": "BGE 150 V 281",
+        "regesteKurz": "a Art. 7 Abs. 1 und 2 sowie Art. 7a Abs. 1 und 3 KLV; anwendbarer Tarif bei Spitexleistungen an pflegebedürftige Personen in einer (kein anerkanntes Pflegeheim darstellenden) stationären Einrichtung. Von einer zugelassenen Spitex-Organisat…",
+        "datum": "2024-05-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_381",
+        "zitierung": "BGE 149 II 381",
+        "regesteKurz": "Art. 68 Abs. 3 BGG; Parteientschädigung zu Gunsten der obsiegenden Krankenversicherung. Der Umstand alleine, dass ein Verfahren die unwirtschaftliche Praxistätigkeit eines Arztes oder einer Ärztin (\"Überarztung\") zum Gegenstand hat, stellt…",
+        "datum": "2023-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_240",
+        "zitierung": "BGE 146 V 240",
+        "regesteKurz": "Art. 61 lit. c ATSG; Art. 25 Abs. 1 und 2 lit. b, Art. 34 Abs. 1, Art. 52 Abs. 1 lit. a Ziff. 1 und lit. b KVG; Art. 63 Abs. 2, Art. 65, Art. 71a Abs. 1 lit. a und b, Art. 71b Abs. 1, Art. 71c, Art. 71d KVV; Kostenübernahme einer Kombinati…",
+        "datum": "2020-06-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "96": [
+      {
+        "key": "bge_147_V_328",
+        "zitierung": "BGE 147 V 328",
+        "regesteKurz": "Art. 32 Abs. 1 und Art. 96 KVG; Art. 65b Abs. 6 und Art. 65d KVV; Art. 34f KLV; Wirtschaftlichkeitsbeurteilung eines patentgeschützten Medikaments im Rahmen des therapeutischen Quervergleichs (TQV). Bei der Beurteilung der Wirtschaftlichke…",
+        "datum": "2021-06-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_V_372",
+        "zitierung": "BGE 150 V 372",
+        "regesteKurz": "Art. 32 KVG; Art. 64a, 65b, 65c, 65d und 65e KVV; Art. 34d, 34f und 34g KLV (sämtliche Bestimmungen in den vorliegend anwendbaren, bis Ende 2023 gültig gewesenen Fassungen); dreijährliche Überprüfung der Aufnahmebedingungen eines Medikamen…",
+        "datum": "2024-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_348",
+        "zitierung": "BGE 148 V 348",
+        "regesteKurz": "Art. 32 Abs. 1 und 2 KVG; Art. 65b Abs. 2 lit. a, Art. 65d Abs. 1 und 2 KVV; Art. 34a bis , 34d und 34e KLV; dreijährliche Überprüfung der Aufnahmebedingungen eines Medikaments in die Spezialitätenliste; Auslandpreisvergleich (APV). Bei de…",
+        "datum": "2022-04-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_253",
+        "zitierung": "BGE 146 V 253",
+        "regesteKurz": "Art. 25, 27 und 52 Abs. 2 KVG; Art. 33 und 35 KVV; Art. 5 KLV; therapeutische Massnahmen im Zusammenhang mit Geburtsgebrechen. Es besteht kein Anspruch darauf, dass die Kosten einer Hippotherapie, welche der an angeborenen cerebralen Lähmu…",
+        "datum": "2020-06-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "1a": [
+      {
+        "key": "bge_150_V_273",
+        "zitierung": "BGE 150 V 273",
+        "regesteKurz": "Art. 25 Abs. 2 lit. a Ziff. 3, Art. 25a Abs. 1, Art. 35 Abs. 2 lit. e KVG; Art. 7 Abs. 1 lit. b, Art. 7 Abs. 2 lit. c KLV; Hauspflege. Laut BGE 145 V 161 E. 5 können Familienangehörige der versicherten Person, die bei einer zugelassenen Or…",
+        "datum": "2024-05-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_229",
+        "zitierung": "BGE 150 V 229",
+        "regesteKurz": "Art. 4 ATSG; Art. 6 Abs. 1 UVG; Begriff der \"unfallbedingten\" Infektion. Erfolgt die Ansteckung mit dem HI-Virus durch ungeschützten Geschlechtsverkehr und damit in typischer Weise, liegt mangels Ungewöhnlichkeit des äusseren Faktors kein…",
+        "datum": "2024-05-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_III_204",
+        "zitierung": "BGE 150 III 204",
+        "regesteKurz": "Art. 7 ZPO; sachliche Zuständigkeit bei Streitigkeiten aus Zusatzversicherungen zur sozialen Krankenversicherung. Voraussetzungen, die erfüllt sein müssen, damit eine Versicherung als Zusatzversicherung zur sozialen Krankenversicherung im…",
+        "datum": "2024-01-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "25a": [
+      {
+        "key": "bge_147_V_16",
+        "zitierung": "BGE 147 V 16",
+        "regesteKurz": "a Art. 43 ATSG; Art. 18 Abs. 1 UVV in der bis am 31. Dezember 2016 gültig gewesenen Fassung; Abklärung des Anspruchs auf Hauspflegeleistungen. Art. 43 ATSG statuiert keine Rechtspflicht, eine bestimmte Methode, genau definierte Verfahren o…",
+        "datum": "2020-08-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_148_V_28",
+        "zitierung": "BGE 148 V 28",
+        "regesteKurz": "Art. 10 Abs. 3 UVG (in der seit 1. Januar 2017 geltenden Fassung); Art. 18 Abs. 2 lit. b UVV (in der seit 1. Januar 2017 geltenden Fassung); Hilfe und Pflege zu Hause; Verhältnis des Beitrags des Versicherers an nichtmedizinische Hilfe zu…",
+        "datum": "2021-10-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_V_156",
+        "zitierung": "BGE 147 V 156",
+        "regesteKurz": "Art. 25a Abs. 5 KVG; Restfinanzierung der Pflegekosten; Zuständigkeit. Bei im Zeitpunkt des Inkrafttretens der neuen Fassung von Art. 25a Abs. 5 KVG am 1. Januar 2019 bereits bestehendem Pflegeverhältnis mit Wohnsitzverlegung an den Stando…",
+        "datum": "2021-02-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_1",
+        "zitierung": "BGE 151 V 1",
+        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der obligator…",
+        "datum": "2024-08-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_281",
+        "zitierung": "BGE 150 V 281",
+        "regesteKurz": "a Art. 7 Abs. 1 und 2 sowie Art. 7a Abs. 1 und 3 KLV; anwendbarer Tarif bei Spitexleistungen an pflegebedürftige Personen in einer (kein anerkanntes Pflegeheim darstellenden) stationären Einrichtung. Von einer zugelassenen Spitex-Organisat…",
+        "datum": "2024-05-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_273",
+        "zitierung": "BGE 150 V 273",
+        "regesteKurz": "Art. 25 Abs. 2 lit. a Ziff. 3, Art. 25a Abs. 1, Art. 35 Abs. 2 lit. e KVG; Art. 7 Abs. 1 lit. b, Art. 7 Abs. 2 lit. c KLV; Hauspflege. Laut BGE 145 V 161 E. 5 können Familienangehörige der versicherten Person, die bei einer zugelassenen Or…",
+        "datum": "2024-05-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_408",
+        "zitierung": "BGE 148 V 408",
+        "regesteKurz": "Art. 42sexies Abs. 1 IVG; Assistenzbeitrag. BGE 140 V 543 E. 3.2.2 ist in dem Sinne zu präzisieren, als das standardisierte Abklärungsinstrument FAKT2 kein geeignetes Instrument zur Ermittlung des gesamten Hilfebedarfs einer versicherten P…",
+        "datum": "2022-09-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_242",
+        "zitierung": "BGE 148 V 242",
+        "regesteKurz": "Art. 25a Abs. 5 KVG; Übernahme der Kosten durch die obligatorische Krankenpflegeversicherung; Zuständigkeit für die Restfinanzierung bei einer nicht im Wohnsitzkanton in einem Pflegeheim untergebrachten versicherten Person. Zusammenfassung…",
+        "datum": "2022-04-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "36a": [
+      {
+        "key": "bge_150_V_273",
+        "zitierung": "BGE 150 V 273",
+        "regesteKurz": "Art. 25 Abs. 2 lit. a Ziff. 3, Art. 25a Abs. 1, Art. 35 Abs. 2 lit. e KVG; Art. 7 Abs. 1 lit. b, Art. 7 Abs. 2 lit. c KLV; Hauspflege. Laut BGE 145 V 161 E. 5 können Familienangehörige der versicherten Person, die bei einer zugelassenen Or…",
+        "datum": "2024-05-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "49a": [
+      {
+        "key": "bge_148_V_70",
+        "zitierung": "BGE 148 V 70",
+        "regesteKurz": "Art. 49 Abs. 1, Art. 49a, Art. 41 Abs. 1 bis KVG; Abs. 1 und 4 der Übergangsbestimmungen zur Änderung des KVG vom 21. Dezember 2007 (Spitalfinanzierung); Finanzierung stationärer Spitalbehandlung bei Übergangsfällen mit Eintritt 2011 und A…",
+        "datum": "2021-11-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "55a": [
+      {
+        "key": "bge_151_V_100",
+        "zitierung": "BGE 151 V 100",
+        "regesteKurz": "Art. 55a KVG; Art. 2, 3 und 9 der Verordnung über die Festlegung der Höchstzahlen für Ärztinnen und Ärzte im ambulanten Bereich (Höchstzahlenverordnung); Art. 1, 2 und 12 der Verordnung des Regierungsrats des Kantons Bern über die Zulassun…",
+        "datum": "2025-01-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "58a": [
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "58b": [
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "59a": [
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "64a": [
+      {
+        "key": "bge_149_V_108",
+        "zitierung": "BGE 149 V 108",
+        "regesteKurz": "Art. 64a Abs. 7 KVG; § 22 Abs. 1 des aargauischen Gesetzes vom 15. Dezember 2015 zum Bundesgesetz über die Krankenversicherung; Auslegung einer kantonalen Bestimmung über den Zeitpunkt der Aufnahme in die Liste der säumigen Versicherten. E…",
+        "datum": "2023-04-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_369",
+        "zitierung": "BGE 147 V 369",
+        "regesteKurz": "Art. 25 Abs. 1 ATSG und Art. 2 Abs. 1 lit. b ATSV; Rückerstattungspflicht. Der Krankenversicherer ist für die Entgegennahme von Ergänzungsleistungen im Rahmen von Art. 21a ELG (Pauschalbetrag für die obligatorische Krankenpflegeversicherun…",
+        "datum": "2021-07-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "84a": [
+      {
+        "key": "bge_151_V_30",
+        "zitierung": "BGE 151 V 30",
+        "regesteKurz": "Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…",
+        "datum": "2024-09-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_V_29",
+        "zitierung": "BGE 149 V 29",
+        "regesteKurz": "Art. 67, 69 und 84a Abs. 5 KVG; Art. 13 Abs. 1 DSG; Frist zur Anbringung eines Krankheitsvorbehalts von Seiten der Krankenversicherung im Falle einer Verletzung der Anzeigepflicht; Zeitpunkt, in dem die Krankenversicherung von gewissen Tat…",
+        "datum": "2022-11-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "84b": [
+      {
+        "key": "bge_149_V_29",
+        "zitierung": "BGE 149 V 29",
+        "regesteKurz": "Art. 67, 69 und 84a Abs. 5 KVG; Art. 13 Abs. 1 DSG; Frist zur Anbringung eines Krankheitsvorbehalts von Seiten der Krankenversicherung im Falle einer Verletzung der Anzeigepflicht; Zeitpunkt, in dem die Krankenversicherung von gewissen Tat…",
+        "datum": "2022-11-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "95a": [
+      {
+        "key": "bge_146_V_152",
+        "zitierung": "BGE 146 V 152",
+        "regesteKurz": "a Art. 18 KVG; Art. 19 und 22 KVV; Gemeinsame Einrichtung KVG. Der Gemeinsamen Einrichtung KVG, die im Rahmen der internationalen Sachleistungsaushilfe Aufgaben als aushelfende Trägerin am Wohn- oder Aufenthaltsort der versicherten Persone…",
+        "datum": "2020-02-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

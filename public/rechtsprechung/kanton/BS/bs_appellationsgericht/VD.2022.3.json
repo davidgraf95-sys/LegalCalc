@@ -401,7 +401,14 @@
         "Das Justiz- und Sicherheitsdepartement hat dem unentgeltlichen Rechtsbeistand des Rekurrenten, Rechtsanwalt B____, für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 3'896.30, zuzüglich 7,7 % Mehrwertsteuer von CHF 300.–, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "ELV",
+        "EMRK",
+        "FZA",
+        "VZAE"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

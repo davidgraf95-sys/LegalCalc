@@ -253,9 +253,10 @@
         "Art. 77 STGB"
       ],
       "normKeys": [
-        "STGB",
+        "BGG",
         "BV",
-        "BGG"
+        "EMRK",
+        "STGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

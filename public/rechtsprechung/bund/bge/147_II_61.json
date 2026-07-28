@@ -222,7 +222,11 @@
         "Art. 685a CO",
         "Art. 685b Abs. 7 CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGFA",
+        "BGG",
+        "OR"
+      ],
       "zitierteEntscheide": [
         "2C_372/2020",
         "BGE 130 II 87",

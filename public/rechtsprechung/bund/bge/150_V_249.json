@@ -194,9 +194,11 @@
         "Art. 46b Abs. 1 AVIV"
       ],
       "normKeys": [
-        "BGG",
         "ATSG",
-        "AVIG"
+        "AVIG",
+        "AVIV",
+        "BGG",
+        "BV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -279,7 +279,15 @@
         "Dem amtlichen Verteidiger, [...], werden für den zweiten Teil des Berufungsverfahrens ein Honorar von CHF 3’566.‒ zuzüglich Mehrwertsteuer von insgesamt CHF 286.45 (7,7 % auf CHF 600.‒ sowie 8,1 % auf CHF 2’966.‒), somit total CHF 3’852.45 aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt für das erst- und zweitinstanzliche Verfahren im Umfang von 50 % (insgesamt CHF 16’640.‒) vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

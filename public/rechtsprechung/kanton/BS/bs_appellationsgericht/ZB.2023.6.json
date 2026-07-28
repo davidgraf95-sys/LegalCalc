@@ -327,7 +327,11 @@
         "Der Berufungsbeklagte hat der Berufungsklägerin eine Parteientschädigung von CHF 2'875.–, zuzüglich Auslagen von CHF 52.60 und 7,7 % MWST von CHF 225.40, daher insgesamt CHF 3'153.– zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

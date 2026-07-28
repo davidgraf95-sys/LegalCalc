@@ -232,7 +232,11 @@
         "Art. 15 Abs. 3 OACI"
       ],
       "normKeys": [
-        "AVIG"
+        "ATSG",
+        "AVIG",
+        "AVIV",
+        "BGG",
+        "BV"
       ],
       "zitierteEntscheide": [
         "8C_242/2019",

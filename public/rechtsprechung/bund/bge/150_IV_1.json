@@ -258,9 +258,10 @@
         "Art. 9 BV"
       ],
       "normKeys": [
-        "STPO",
+        "BGG",
+        "BV",
         "STGB",
-        "BV"
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

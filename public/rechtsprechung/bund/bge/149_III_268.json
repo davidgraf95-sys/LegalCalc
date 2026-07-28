@@ -278,10 +278,12 @@
         "Art. 69 Abs. 2 SCHKG"
       ],
       "normKeys": [
+        "BEWG",
+        "BGG",
+        "BV",
         "OR",
-        "ZPO",
         "SCHKG",
-        "BGG"
+        "ZPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

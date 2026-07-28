@@ -148,7 +148,11 @@
         "Dem amtlichen Verteidiger des Beschwerdeführers, lic. iur. Amr Abdelaziz, wird für das Beschwerdeverfahren ein Honorar von CHF 1’484.– (einschliesslich Auslagen), zuzüglich 8,1% MWST von CHF 120.20, somit total CHF 1’604.20, aus der Gerichtskasse ausgerichtet. Art. 135 Abs. 4 StPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -258,10 +258,13 @@
         "Art. 51 Abs. 2 OAINF"
       ],
       "normKeys": [
-        "UVG",
         "ATSG",
+        "BGG",
         "IVG",
-        "BGG"
+        "IVV",
+        "MVV",
+        "UVG",
+        "UVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

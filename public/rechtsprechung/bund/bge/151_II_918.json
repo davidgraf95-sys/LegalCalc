@@ -255,7 +255,11 @@
         "Art. 25a Abs. 3 RPG",
         "Art. 25a RPG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "RPG"
+      ],
       "zitierteEntscheide": [
         "1A.175/2003",
         "1C_170/2024",

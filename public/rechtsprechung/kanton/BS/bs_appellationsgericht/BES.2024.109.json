@@ -219,7 +219,11 @@
         "Der amtlichen Verteidigerin Dr. Meret Rehmann, Advokatin, wird für das Beschwerdeverfahren ein Honorar von CHF 1'704.65 (inkl. Auslagen) zuzüglich 8,1 % MWST von CHF 138.10, somit total CHF 1'842.75, aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 StPO bleibt vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

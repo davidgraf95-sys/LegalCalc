@@ -313,7 +313,12 @@
         "Das Gesuch um Anordnung der notwendigen Verteidigung, eventualiter der amtlichen Verteidigung wird abgewiesen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

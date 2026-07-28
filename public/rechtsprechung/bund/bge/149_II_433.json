@@ -265,7 +265,12 @@
         "Art. 71 Abs. 2 LDFR",
         "Art. 71 BGBB"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGBB",
+        "BGG",
+        "BV",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "1C_46/2023",
         "2C_20/2021",

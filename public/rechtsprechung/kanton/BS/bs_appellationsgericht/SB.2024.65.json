@@ -419,7 +419,11 @@
         "Dem amtlichen Verteidiger, […], werden für die zweite Instanz ein Honorar von CHF 4’800.‒ und eine Spesenvergütung von CHF 212.60 zuzüglich 8,1% MWST von insgesamt CHF 406.‒, insgesamt also CHF 5’418.60 ausgerichtet. Art. 135 Abs. 4 der Strafprozessordnung bleibt im Umfang von 75 % (CHF 4’063.95) der zweitinstanzlichen Verteidigungskosten vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

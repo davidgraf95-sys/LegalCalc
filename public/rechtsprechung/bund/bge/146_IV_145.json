@@ -193,8 +193,10 @@
         "Art. 352 Abs. 2 STPO"
       ],
       "normKeys": [
+        "BGG",
         "STGB",
-        "STPO"
+        "STPO",
+        "SVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

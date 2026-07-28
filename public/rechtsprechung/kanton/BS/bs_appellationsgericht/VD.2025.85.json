@@ -178,7 +178,9 @@
         "Die Kommission für Ausbildungsbeiträge hat der Rekurrentin für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 1’416.–, einschliesslich Auslagen und zuzüglich MWST von CHF 114.70 (8,1 % auf CHF 1'416.–), zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

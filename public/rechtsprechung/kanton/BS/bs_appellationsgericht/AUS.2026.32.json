@@ -168,7 +168,9 @@
         "            Der unentgeltlichen Rechtsbeiständin von A____, MLaw Constanze Seelmann, wird ein Honorar von CHF 1'403.85 (einschliesslich Auslagen), zuzüglich 8,1 % MWST von CHF 113.70, aus der Gerichtskasse ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -159,7 +159,10 @@
         "Dem Verteidiger, [...], wird für das Beschwerdeverfahren ein Honorar einschliesslich Auslagenersatz von CHF 1'500.–, zuzüglich 7,7 % MWST von CHF 115.50, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

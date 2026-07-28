@@ -203,7 +203,10 @@
         "Art. 7 Abs. 1 RAPG"
       ],
       "normKeys": [
-        "BGG"
+        "AHVV",
+        "BGG",
+        "EOG",
+        "EOV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -185,7 +185,11 @@
         "Dem Gesuchsgegner wird für das vorliegende Verfahren die amtliche Verteidigung bewilligt. Dem amtlichen Verteidiger, lic. iur. Alain Joset, Advokat, werden ein Honorar von CHF 1'200.– und ein Auslagenersatz von CHF 36.–, zuzüglich 8,1 % Mehrwertsteuer von insgesamt CHF 100.10, somit total CHF 1'336.10 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

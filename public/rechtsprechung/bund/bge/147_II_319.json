@@ -465,7 +465,19 @@
         "Art. 12 ENG",
         "Art. 12 LENE"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "ENG",
+        "LSV",
+        "NHG",
+        "NHV",
+        "RPG",
+        "RPV",
+        "SVG",
+        "USG",
+        "WAG"
+      ],
       "zitierteEntscheide": [
         "1A.168/2005",
         "1A.25/2006",

@@ -1,0 +1,55 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "LMG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bge_151_II_533",
+        "zitierung": "BGE 151 II 533",
+        "regesteKurz": "Art. 29a, Art. 191 Abs. 3 BV; Art. 82 lit. a, Art. 83 lit. l BGG; zur Zulässigkeit und Unzulässigkeit der Beschwerde im Bereich zollrechtlicher Fragen. Die Veranlagung der Zollabgabe erfolgt anhand von Art, Beschaffenheit und Bruttogewicht…",
+        "datum": "2024-11-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "12": [
+      {
+        "key": "bge_152_II_124",
+        "zitierung": "BGE 152 II 124",
+        "regesteKurz": "Art. 12 Abs. 3, Art. 18 und 19 LMG; Art. 12 und 14 LGV; Art. 9 VLtH; lebensmittelrechtliches Täuschungsverbot; Verwendung von Tierarten zur Bezeichnung von pflanzlichen Fleischersatzprodukten. Streitgegenstand (E. 3). Lebensmittelrechtlich…",
+        "datum": "2025-05-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "18": [
+      {
+        "key": "bge_152_II_124",
+        "zitierung": "BGE 152 II 124",
+        "regesteKurz": "Art. 12 Abs. 3, Art. 18 und 19 LMG; Art. 12 und 14 LGV; Art. 9 VLtH; lebensmittelrechtliches Täuschungsverbot; Verwendung von Tierarten zur Bezeichnung von pflanzlichen Fleischersatzprodukten. Streitgegenstand (E. 3). Lebensmittelrechtlich…",
+        "datum": "2025-05-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "19": [
+      {
+        "key": "bge_152_II_124",
+        "zitierung": "BGE 152 II 124",
+        "regesteKurz": "Art. 12 Abs. 3, Art. 18 und 19 LMG; Art. 12 und 14 LGV; Art. 9 VLtH; lebensmittelrechtliches Täuschungsverbot; Verwendung von Tierarten zur Bezeichnung von pflanzlichen Fleischersatzprodukten. Streitgegenstand (E. 3). Lebensmittelrechtlich…",
+        "datum": "2025-05-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

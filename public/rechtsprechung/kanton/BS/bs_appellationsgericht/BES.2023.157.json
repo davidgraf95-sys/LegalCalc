@@ -308,7 +308,12 @@
         "Dem unentgeltlichen Rechtsvertreter des Beschwerdeführers, […], wird aus der Gerichtskasse ein Honorar von CHF 1’000.– (inkl. Auslagen) zzgl. 8,1 % MwSt in der Höhe von CHF 81.–, d.h. insgesamt CHF 1’081.– ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

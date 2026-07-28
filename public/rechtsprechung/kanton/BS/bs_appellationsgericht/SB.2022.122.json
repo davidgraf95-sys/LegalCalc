@@ -424,7 +424,11 @@
         "Der amtlichen Verteidigerin, MLaw Cinzia Fallegger-Santo, werden für die zweite Instanz ein Honorar von CHF 4'051.65 und ein Auslagenersatz von CHF 38.90, zuzüglich Mehrwertsteuer von insgesamt CHF 321.40 (7,7 % auf CHF 2'484.95 sowie 8,1 % auf CHF 1'605.60), somit total CHF 4'411.95 aus der Gerichtskasse zugesprochen. Im Umfang von CHF 3'529.55 bleibt Art. 135 Abs. 4 der Strafprozessordnung vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

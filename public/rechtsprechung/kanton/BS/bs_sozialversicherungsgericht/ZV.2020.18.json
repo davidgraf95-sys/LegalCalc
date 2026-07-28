@@ -228,7 +228,11 @@
         "            Die ausserordentlichen Kosten werden wettgeschlagen. Zufolge Bewilligung der unentgeltlichen Verbeiständung wird lic. iur. B____, Advokat, ein Anwaltshonorar von CHF 3’000.00 (inkl. Auslagen) zuzüglich MWSt von CHF 231.00 aus der Gerichtskasse zugesprochen"
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "VVG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

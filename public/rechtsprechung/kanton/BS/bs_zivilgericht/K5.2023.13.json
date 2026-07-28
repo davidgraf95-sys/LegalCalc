@@ -404,7 +404,11 @@
         "                  Die Parteientschädigung wird der Beklagten im Umfang von CHF 15’000.00 aus der von der Klägerin geleisteten Sicherstellung durch die Gerichtskasse ausgewiesen, sodass die Klägerin der Beklagten noch CHF 3’457.60 zu bezahlen hat."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "OR",
+        "ZGB",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

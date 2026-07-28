@@ -264,7 +264,12 @@
         "Art. 99 LTF"
       ],
       "normKeys": [
-        "BV"
+        "AHVV",
+        "ATSG",
+        "BGG",
+        "BV",
+        "EOG",
+        "EOV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
