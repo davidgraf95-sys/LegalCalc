@@ -16,7 +16,7 @@
  * Das ist die amtliche Kurzbezeichnung des Erlasses je Amtssprache — nicht
  * geraten, nicht übersetzt, nicht aus Modellwissen.
  *
- * ── Die vier Regeln, ohne die das Artefakt falsch wird ───────────────────────
+ * ── Die fünf Regeln, ohne die das Artefakt falsch wird ──────────────────────
  *
  * (1) DATENTYP-IRI AN DER NOTATION IST PFLICHT. `?e skos:notation "220"` trifft
  *     ohne den Typ-IRI auch die Notationstypen `id` und `id-amt` — also fremde
@@ -45,6 +45,24 @@
  *     die Zeilenzahl unter die des committeten Artefakts, bricht der Generator
  *     ab (Regressions-Tor, §6.7) — ein Netz-Ausfall darf Bestand nicht löschen.
  *
+ * (5) EIN-ELEMENT-BATCHES SIND VERBOTEN — der Endpoint liefert dann DETERMINISTISCH
+ *     0 Zeilen, und der COUNT stimmt zu (Befund 28.7.2026, hier gemessen). Isoliert
+ *     bis auf die Stufe: `VALUES ?sr { <EIN Wert> }` + `FILTER(?von <=
+ *     "…"^^xsd:date)` ⇒ aus 25 Treffern werden 0; mit einem ZWEITEN, ebenfalls
+ *     treffenden Wert bleiben alle 149. Belegt an SR 0.142.30 und SR 0.101 (je
+ *     5 Läufe, immer 0/0 Zeilen/COUNT; zusammen 4/4). Ein zweiter, NICHT
+ *     existierender Wert hilft nicht (["0.142.30", "999.999.999"] ⇒ 0): nach dem
+ *     Notations-Join bleibt wieder nur eine Zeile.
+ *
+ *     Das ist die gefährlichste Sorte Fehler, weil das COUNT-Tor aus Regel 4 ihn
+ *     NICHT sehen kann — beide Abfragen sind gleich falsch (§6.7). Zwei Riegel:
+ *     `batchListe()` erzeugt niemals einen Batch mit weniger als zwei SR (ein
+ *     Rest von 1 wandert in den vorherigen Batch), und die Verlust-Gegenprobe im
+ *     Prüf-Modus führt KANARIENVÖGEL mit, deren Ausbleiben den Lauf abbricht.
+ *     Wirksam wird der erste Riegel, sobald die Registergrösse ≡ 1 (mod 40) ist —
+ *     heute 230 SR, also 6 Batches à 40/40/40/40/40/30; bei 241 SR hätte der
+ *     letzte Batch EINE Nummer, und deren Kürzel wären lautlos verschwunden.
+ *
  * KONFLIKTE WERDEN NICHT GERATEN (§8). Trägt eine (sr, sprache) trotz Fenster
  * zwei verschiedene Kürzel, bricht der Generator mit Fehler ab statt still zu
  * tiebreaken. Ein automatisch gewähltes Kürzel wäre eine zweite Wahrheit.
@@ -60,7 +78,7 @@
  * eine amtliche Kurzbezeichnung, wird ein Erlass abgelöst oder kommt ein Kürzel
  * hinzu, blieb die committete Abschrift still falsch — eine zweite Wahrheit (§5),
  * die niemand meldet. `--check` schliesst genau diese Lücke: dieselbe Abfrage,
- * dieselben vier Regeln, aber statt zu schreiben wird VERGLICHEN.
+ * dieselben fünf Regeln, aber statt zu schreiben wird VERGLICHEN.
  *
  * WARUM ALS MODUS UND NICHT ALS ZWEITES SKRIPT (§5): Prüfling und Prüfer müssen
  * dieselbe SPARQL-Kette benutzen. Ein Parallel-Skript mit eigener Abfrage prüfte
@@ -74,7 +92,10 @@
  *      der Vergleich ist mengengleich in BEIDE Richtungen, ein Teilergebnis
  *      erscheint also als «weggefallen» und nicht als «kein Drift». Drittens
  *      bricht ein Resultat von 0 Zeilen sofort ab, statt 597 Weggefallene zu
- *      melden — die ehrlichere Diagnose (Endpoint, nicht Recht).
+ *      melden — die ehrlichere Diagnose (Endpoint, nicht Recht). Und weil ein
+ *      Verlust-Befund und ein gekapptes Resultat gleich AUSSEHEN, wird jeder
+ *      Verlust vor der Meldung gezielt nachgefragt (`verlustGegenprobe`): so
+ *      behauptet das Tor nie eine Rechtsänderung, die es nicht gesehen hat.
  *  (b) Ein NETZFEHLER ist ein eigener Fehlerpfad, nie grün: die einzige I/O-
  *      Strecke (der Batch-Abruf) liegt in einem try/catch, das über
  *      `netzAbbruch()` Ursache UND Nicht-Aussage ausspricht und mit 1 endet.
@@ -198,6 +219,35 @@ function zaehlAbfrage(srs: string[]): string {
 }
 
 /**
+ * Batch-Aufteilung, die NIE einen Ein-Element-Batch erzeugt (Regel 5).
+ *
+ * Ein Rest von genau einer SR-Nummer wird dem vorherigen Batch angehängt (41
+ * statt 40+1). Warum nicht «dann halt ein Batch mit 1»: der Endpoint liefert dazu
+ * deterministisch 0 Zeilen MIT passendem COUNT — die Kürzel dieser SR wären
+ * lautlos weg, im Prüf-Modus als «weggefallen» fehlinterpretiert. Bei einer
+ * einzigen SR-Nummer insgesamt gibt es keinen vorherigen Batch; dann bricht der
+ * Lauf ab, statt ein Ergebnis zu liefern, dem nicht zu trauen ist.
+ */
+function batchListe(srs: string[]): string[][] {
+  if (srs.length === 1) {
+    console.error(
+      'Nur EINE SR-Nummer im Register: der Endpoint liefert zu einem Ein-Element-VALUES '
+      + 'deterministisch 0 Zeilen mit passendem COUNT (Regel 5) — kein vertrauenswürdiges '
+      + 'Ergebnis möglich, Abbruch.',
+    );
+    process.exit(1);
+  }
+  const batches: string[][] = [];
+  for (let i = 0; i < srs.length; i += BATCH) batches.push(srs.slice(i, i + BATCH));
+  const letzter = batches[batches.length - 1];
+  if (batches.length > 1 && letzter.length < 2) {
+    batches[batches.length - 2].push(...letzter);
+    batches.pop();
+  }
+  return batches;
+}
+
+/**
  * Ein Batch mit COUNT-Gegenprobe (Regel 4). Gibt die Bindings zurück, sobald
  * Zeilenzahl == COUNT; sonst Abbruch nach `VERSUCHE` Anläufen — lieber gar kein
  * Artefakt als ein stillschweigend unvollständiges.
@@ -214,7 +264,7 @@ function zaehlAbfrage(srs: string[]): string {
  * prüft nichts (§6.7). Darum je Anlauf ein FRISCHES Paar (COUNT + Zeilen); nur
  * ein Paar aus demselben Anlauf zählt als Übereinstimmung.
  */
-async function batchMitZaehltor(srs: string[], nr: number): Promise<SparqlBinding[]> {
+async function batchMitZaehltor(srs: string[], nr: number | string): Promise<SparqlBinding[]> {
   const gesehen: string[] = [];
   for (let versuch = 1; versuch <= VERSUCHE; versuch += 1) {
     const zaehl = await sparqlSelect(zaehlAbfrage(srs));
@@ -375,7 +425,61 @@ function divergenzHinweis(live: AliasZeile[]): void {
  * alles Geholte bekannt?») wäre bei jedem Teilergebnis grün — genau der
  * Fehlklassifikator aus §6.7.
  */
-function pruefeDrift(live: AliasZeile[], srAnzahl: number, srMitAlias: number): never {
+/**
+ * GEGENPROBE GEGEN DAS STILLE TEILERGEBNIS (§0 Ziff. 3 sinngemäss: ein Fehlbestand
+ * ist ein VERDACHT, keine Ursache).
+ *
+ * Ein «weggefallenes» Kürzel und ein still gekapptes SPARQL-Resultat sehen im
+ * Vergleich IDENTISCH aus. Der Endpoint liefert nachweislich bei ≈2 von 20 Läufen
+ * HTTP 200 mit fehlenden Zeilen (Regel 4 oben, Befund der #397-Session). Das
+ * Batch-COUNT-Tor fängt den Normalfall; es fängt NICHT den Fall, in dem COUNT und
+ * Zeilen gleichermassen gekappt sind. Ein Tor, das dann «die amtliche Abkürzung
+ * ist weggefallen» meldet, behauptet eine Rechtsänderung, die es nicht gesehen hat.
+ *
+ * Darum wird jeder Verlust-Befund gezielt nachgefragt: nur die betroffenen
+ * SR-Nummern, in einem eigenen Batch mit eigenem COUNT-Tor. Tauchen die Kürzel
+ * dabei doch auf, war es ein Teilergebnis — dann bleibt der Lauf rot, aber mit der
+ * RICHTIGEN Diagnose (Endpoint, nicht Recht) und ohne Aufforderung zum Regenerieren.
+ *
+ * KANARIENVÖGEL SIND PFLICHT (Regel 5, gelernt an genau dieser Stelle): eine
+ * Nachfrage über wenige SR-Nummern läuft in dieselbe Falle, in der der Endpoint zu
+ * einem Ein-Element-VALUES deterministisch 0 Zeilen mit passendem COUNT liefert.
+ * Die erste Fassung dieser Gegenprobe fragte genau eine SR nach, bekam 0 Zeilen und
+ * «bestätigte» den Verlust — ein Prüfer, der IMMER bestätigt, prüft nichts (§6.7).
+ * Darum reisen drei Zeilen mit, die im Live-Ergebnis nachweislich vorhanden sind:
+ * fehlen sie in der Nachfrage, ist die Nachfrage selbst kaputt und der Lauf bricht
+ * ab, statt ein Urteil zu fällen.
+ */
+async function verlustGegenprobe(betroffen: string[], kanarien: AliasZeile[]): Promise<Set<string>> {
+  const srs = [...new Set([...betroffen, ...kanarien.map((z) => z.sr)])].sort(vergleiche);
+  let roh: SparqlBinding[];
+  try {
+    roh = await batchMitZaehltor(srs, `Gegenprobe (${betroffen.length} SR + ${kanarien.length} Kanarienvögel)`);
+  } catch (e) {
+    netzAbbruch(e);
+  }
+  const tripel = new Set<string>();
+  for (const b of roh) {
+    const sr = b.sr?.value ?? '';
+    const sp = SPRACHE[b.sprache?.value ?? ''];
+    const abk = (b.abk?.value ?? '').trim();
+    if (!sr || !sp || abk === '') continue;
+    tripel.add(`${sr}|${sp}|${abk}`);
+  }
+  const stumm = kanarien.filter((z) => !tripel.has(`${z.sr}|${z.sprache}|${z.abk}`));
+  if (stumm.length > 0) {
+    console.error(
+      `\nGEGENPROBE NICHT AUSSAGEKRÄFTIG: ${stumm.length} von ${kanarien.length} Kanarienvögeln `
+      + 'fehlen in der Nachfrage, obwohl der Hauptlauf sie geliefert hat — die Nachfrage-Abfrage '
+      + 'selbst ist unzuverlässig (Regel 5: Ein-Element-Falle, Endpoint-Plan). Kein Drift-Urteil:',
+    );
+    for (const z of stumm) console.error(`    • SR ${z.sr} / ${z.sprache}: '${z.abk}' erwartet, nicht geliefert`);
+    process.exit(1);
+  }
+  return tripel;
+}
+
+async function pruefeDrift(live: AliasZeile[], srAnzahl: number, srMitAlias: number): Promise<never> {
   // Null-Resultat: das ist ein Endpoint-Befund, keine Rechtsänderung. Ohne diesen
   // Riegel meldete das Tor 597 «weggefallene» Kürzel und behauptete damit etwas
   // über das Recht, was in Wahrheit eine Aussage über die Leitung ist (§8).
@@ -413,9 +517,11 @@ function pruefeDrift(live: AliasZeile[], srAnzahl: number, srMitAlias: number): 
       geaendert.push(`SR ${sr} / ${sprache}: Artefakt '${bestandAbk.join("', '")}' → Fedlex '${liveAbk.join("', '")}'`);
     }
   }
+  const verloren: AliasZeile[] = [];
   for (const [p, bestandAbk] of bestandPaare) {
     if (livePaare.has(p)) continue;
     const [sr, sprache] = p.split('|');
+    for (const abk of bestandAbk) verloren.push({ sr, sprache: sprache as 'de' | 'fr' | 'it', abk });
     weggefallen.push(
       `SR ${sr} / ${sprache}: Artefakt führt '${bestandAbk.join("', '")}', Fedlex führt am ${STICHTAG} `
       + 'KEIN Kürzel mehr (aufgehoben, abgelöst oder titleShort entfernt)',
@@ -434,9 +540,42 @@ function pruefeDrift(live: AliasZeile[], srAnzahl: number, srMitAlias: number): 
     process.exit(0);
   }
 
+  // Verlust-Befund ⇒ gezielte Gegenprobe, BEVOR er als Rechtsänderung gemeldet wird.
+  let gegenprobe = '';
+  if (verloren.length > 0) {
+    const betroffen = [...new Set(verloren.map((z) => z.sr))].sort(vergleiche);
+    // Kanarienvögel: Live-Zeilen fremder SR — sie MÜSSEN in der Nachfrage wieder
+    // erscheinen, sonst ist die Nachfrage selbst kaputt (Regel 5).
+    const kanarien = live.filter((z) => !betroffen.includes(z.sr)).slice(0, 3);
+    console.log(
+      `\n  ${verloren.length} Verlust-Befund(e) über ${betroffen.length} SR — Gegenprobe gegen `
+      + `stille Teilergebnisse, betroffene SR + ${kanarien.length} Kanarienvögel:`,
+    );
+    const nach = await verlustGegenprobe(betroffen, kanarien);
+    const widerspruch = verloren.filter((z) => nach.has(`${z.sr}|${z.sprache}|${z.abk}`));
+    if (widerspruch.length > 0) {
+      console.error(
+        `\nSTILLES TEILERGEBNIS statt Drift: die Gegenprobe LIEFERT ${widerspruch.length} der `
+        + `${verloren.length} angeblich weggefallenen Kürzel doch — der erste Abruf war gekappt, `
+        + 'obwohl COUNT und Zeilen übereinstimmten. Betroffen:',
+      );
+      for (const z of widerspruch.sort((a, b) => vergleiche(a.sr, b.sr) || vergleiche(a.abk, b.abk))) {
+        console.error(`    • SR ${z.sr} / ${z.sprache}: '${z.abk}' — in der Gegenprobe vorhanden`);
+      }
+      console.error(
+        '\n  → KEIN Drift-Urteil und NICHT regenerieren: das Artefakt ist unverdächtig, der '
+        + 'Endpoint war unvollständig (§8). Lauf später wiederholen; bleibt der Befund bei '
+        + 'mehreren Läufen bestehen, ist es echte Drift.\n',
+      );
+      process.exit(1);
+    }
+    gegenprobe = ` · Verlust in der Gegenprobe bestätigt (${betroffen.length} SR erneut abgefragt)`;
+  }
+
   console.error(
     `\nDRIFT gegen die amtliche Quelle: ${geaendert.length} geändert · ${neu.length} neu · `
-    + `${weggefallen.length} weggefallen (Stichtag ${STICHTAG}, Fedlex-SPARQL jolux:titleShort).`,
+    + `${weggefallen.length} weggefallen (Stichtag ${STICHTAG}, Fedlex-SPARQL jolux:titleShort)`
+    + `${gegenprobe}.`,
   );
   const block = (titel: string, zeilen: string[]): void => {
     if (zeilen.length === 0) return;
@@ -481,8 +620,9 @@ function netzAbbruch(e: unknown): never {
 
 const roh: SparqlBinding[] = [];
 try {
-  for (let i = 0; i < srs.length; i += BATCH) {
-    roh.push(...await batchMitZaehltor(srs.slice(i, i + BATCH), i / BATCH + 1));
+  const batches = batchListe(srs);
+  for (let i = 0; i < batches.length; i += 1) {
+    roh.push(...await batchMitZaehltor(batches[i], i + 1));
   }
 } catch (e) {
   netzAbbruch(e);
@@ -549,7 +689,7 @@ zeilen.sort((a, b) => vergleiche(a.sr, b.sr)
 // Schreib-Lauf schreiben würde. Jede frühere Verzweigung hätte einen zweiten,
 // nur ähnlichen Pfad geschaffen — und ein Prüfer, der etwas anderes berechnet
 // als der Generator, prüft den Generator nicht (§5/§6.7).
-if (NUR_PRUEFEN) pruefeDrift(zeilen, srs.length, jeSrSprache.size);
+if (NUR_PRUEFEN) await pruefeDrift(zeilen, srs.length, jeSrSprache.size);
 
 // ── Regressions-Tor: weniger Zeilen als committet ⇒ Abbruch (§6.7) ──────────
 const alt = bestandZeilen();
