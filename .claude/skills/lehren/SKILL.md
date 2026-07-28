@@ -44,7 +44,7 @@ den Sabotage-Beweis (§6.7 — Skill `refactoring`, Ziff. 7).
 | **F3** | Diagnose ohne Verteilung | 4× an einem Tag wurde Messrauschen als Feature-Regression gedeutet; Reruns = ~72 % der CI-Wanduhr. | Dispatch §0 Ziff. 3: Nullprobe (`ci-doku-noop.yml`) + Streuung gegen den Schwellenabstand, **bevor** einem Feature etwas zugeschrieben wird. |
 | **F4** | Bericht als Wahrheit | 1× fabrizierter Erfolgsbericht bei 0 Tool-Calls; 1× Injection-Versuch. | `CLAUDE.md` §14 Ziff. 7 (Orchestrator) **+** Dispatch §0 Ziff. 1 (Sub-Agent). Bewusste Doppelablage: Sub-Agenten sehen `CLAUDE.md` nicht. |
 | **F5** | Verlorene Agenten-Arbeit | ~6 Agenten-Tode, einmal ~2 h fast verloren. | Dispatch §0 Ziff. 4: WIP-Commit nach jedem Teilschritt. Muss den Agenten erreichen, **bevor** er stirbt — ein toter Agent liest nichts nach. |
-| **F6** | Doppelarbeit | 2 Sessions bauten denselben CLS-Fix in `SuchResultate.tsx`. | Dispatch §0 Ziff. 5: Kollisionsprüfung **vor** Baubeginn (der `landung`-Skill prüft erst am Ende, wenn die Arbeit schon getan ist). |
+| **F6** | Doppelarbeit | 2 Sessions bauten denselben CLS-Fix in `SuchResultate.tsx`. **2. Vorfall 28.7.2026 TROTZ §0.5:** `W2·6-NKEY` doppelt gebaut (#397 gemergt, #398 verworfen — ein voller Opus-Bau entsorgt). Die PR-Sonde war blind (Parallel-PR noch nicht offen), der Remote-Branch `worktree-w26-nkey` der Parallel-Session **war sichtbar**; zudem stand der Schritt nie auf `wip`. | Dispatch §0 Ziff. 5, **eskaliert 28.7.2026** (Regel 5): drei Sonden statt einer — PR-Liste + `git ls-remote --heads origin` + `git worktree list` — und Früh-Push des eigenen Branchs. Orchestrator-Seite: Skill `auftrag` Ziff. 2 (@meta `wip` **vor** Baubeginn setzen und pushen). |
 
 ## Eine neue Lehre ablegen
 
@@ -68,8 +68,13 @@ den Sabotage-Beweis (§6.7 — Skill `refactoring`, Ziff. 7).
   grösstenteils bewusste, dokumentierte CI/lokal-Zweige (`check-materialien.ts`
   hat einen sauberen `else`-Zweig). Ein pauschaler Umbau bräche funktionierende Tore.
 - **Claim-Registry `.claude/anspruch.json`** gegen F6 — ein neues Zustandsfile ist
-  eine neue Drift-Quelle. F6 trat **einmal** auf; die Dispatch-Zeile kostet nichts.
-  *Wiederaufrollen, wenn F6 trotz Klausel ein zweites Mal auftritt.*
+  eine neue Drift-Quelle. *Wiederaufgerollt 28.7.2026 nach dem 2. F6-Vorfall
+  (#397/#398): Entscheid weiterhin GEGEN das Zustandsfile — die Lücke war nicht
+  fehlender Zustand, sondern eine zu enge Sonde (der fremde Branch war sichtbar,
+  nur die PR-Liste blind). Eskaliert wurde innerhalb der Dispatch-Form (drei
+  Sonden + Früh-Push, §0.5) plus wip-Pflicht im Skill `auftrag`. Tritt F6 ein
+  DRITTES Mal auf, obwohl beide Seiten griffen, ist die Registry (oder ein Tor)
+  dran — dann hat auch die verbreiterte Sonde nicht gereicht.*
 - **SessionStart-Injektion von Lehren** — git-zustandsabhängiger
   `additionalContext` ist byte-instabil und zerstört den Prompt-Cache
   (QS-TOK/T19, gemessen bei 95,8 % Cache-Read-Anteil). Nur byte-**konstante**

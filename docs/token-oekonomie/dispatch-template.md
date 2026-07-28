@@ -46,8 +46,11 @@ Byte-stabil halten — der Block wird maschinell eingefügt: `npm run dispatch -
   Featureanteil innerhalb 1 sd = die Messung ist das Ergebnis, nicht das Feature.
 4 RECOVERY. Committe lokal nach jedem abgeschlossenen Teilschritt (WIP-Commit
   genuegt, --squash fasst zusammen). Nie uncommittet ueber laengere Arbeit hinweg.
-5 KOLLISION. Vor Baubeginn: gh pr list --state open --json files gegen die
-  geplanten Zieldateien halten. Ueberschneidung -> melden, nicht doppelt bauen.
+5 KOLLISION. Vor Baubeginn DREI Sonden gegen die geplanten Zieldateien:
+  (a) gh pr list --state open --json files, (b) git ls-remote --heads origin
+  auf fremde feat-/worktree-Branches der Bau-Flaeche, (c) git worktree list.
+  Treffer -> melden, nicht doppelt bauen. Und selbst sichtbar werden: eigenen
+  Branch sofort nach Anlage pushen, nicht erst am Ende.
 6 KEIN MERGE IM BAU-AUFTRAG. Dieser Auftrag baut. Merge/Deploy ist ein eigener,
   nachgelagerter Auftrag nach bestandener adversarialer Pruefung.
 ```

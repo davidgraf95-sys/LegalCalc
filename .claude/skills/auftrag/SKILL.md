@@ -28,9 +28,18 @@ npm run plan:next                # oberster offener Schritt, dep/Blocker, was wi
 npm run fahrplan -- <Schritt>    # Detail-Slice statt Volltext
 ```
 
+**Vor Baubeginn `wip` setzen.** Wer einen Schritt zu bauen beginnt, setzt sein
+@meta auf `status: wip` und pusht das (Doku-Commit auf main genügt) — sonst ist
+die eigene Session für jede parallele unsichtbar. 2. F6-Vorfall 28.7.2026
+(`W2·6-NKEY` doppelt gebaut, #397/#398): der Schritt stand nie auf `wip`, die
+Kollisionssonde der Zweit-Session griff ins Leere. Gegenstück im Dispatch:
+§0 Ziff. 5 (drei Sonden + Früh-Push).
+
 **Erledigtes danach abhaken.** Der Plan wird in beide Richtungen gepflegt, sonst
 verliert er die Steuerungswirkung. Erlebter Schaden: zehn Schritte gleichzeitig
-`wip`, mehrere längst erledigt; zwei Sessions fixten parallel denselben Defekt.
+`wip`, mehrere längst erledigt (ein `wip` wird beim Sessionende wieder
+freigegeben, wenn nicht weitergebaut wird); zwei Sessions fixten parallel
+denselben Defekt.
 
 ## 3. Bündeln — aber nicht über-bündeln
 
