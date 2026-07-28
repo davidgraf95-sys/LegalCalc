@@ -15,6 +15,18 @@
         "gewicht": 0
       }
     ],
+    "3": [
+      {
+        "key": "bge_150_II_2",
+        "zitierung": "BGE 150 II 2",
+        "regesteKurz": "Art. 23e und 23h NHG; Art. 7, 8, 9 Abs. 1, Art. 23 Abs. 1 lit. a-f, Art. 24 lit. b, 25, 26 Abs. 1 und Art. 27 PäV; Festsetzung der Kernzone des Naturerlebnisparks Jorat (Parc naturel périurbain du Jorat). Die Errichtung eines Naturerlebnis…",
+        "datum": "2023-04-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "5": [
       {
         "key": "bge_150_II_547",
@@ -43,6 +55,16 @@
         "zitierung": "BGE 150 II 133",
         "regesteKurz": "Art. 3 Abs. 1 und Art. 6 Abs. 1 und 2 NHG; Art. 6 Abs. 1 und 2 VBLN; Art. 10a Abs. 1 und Art. 10b USG; Art. 5 Abs. 3 UVPV; Art. 25a RPG; Art. 3 RPV; Ausscheidung einer kantonalen Nutzungszone für die Errichtung einer Deponie im Perimeter e…",
         "datum": "2023-11-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_II_2",
+        "zitierung": "BGE 150 II 2",
+        "regesteKurz": "Art. 23e und 23h NHG; Art. 7, 8, 9 Abs. 1, Art. 23 Abs. 1 lit. a-f, Art. 24 lit. b, 25, 26 Abs. 1 und Art. 27 PäV; Festsetzung der Kernzone des Naturerlebnisparks Jorat (Parc naturel périurbain du Jorat). Die Errichtung eines Naturerlebnis…",
+        "datum": "2023-04-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

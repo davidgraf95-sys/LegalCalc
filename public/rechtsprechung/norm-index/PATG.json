@@ -5,6 +5,28 @@
   "proArtikel": {
     "1": [
       {
+        "key": "bge_149_III_351",
+        "zitierung": "BGE 149 III 351",
+        "regesteKurz": "Art. 1 Abs. 1, Art. 7 Abs. 1 und 2 sowie Art. 35 Abs. 1 PatG; Mitbenützungsrecht und Neuheit. Gewerbsmässige Benützungen oder besondere Anstalten dazu vor dem Anmelde- oder Prioritätsdatum im Sinne von Art. 35 Abs. 1 PatG müssen in einer W…",
+        "datum": "2023-04-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_403",
+        "zitierung": "BGE 146 III 403",
+        "regesteKurz": "Art. 52 Abs. 2 und Art. 56 EPÜ 2000; Patentierbarkeit einer Erfindung; Technizität einer gemischten Erfindung; Wiedergabe von Informationen. Der technische Charakter (Technizität) ist dem Erfindungsbegriff inhärent. Die blosse Wiedergabe v…",
+        "datum": "2020-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "2": [
+      {
         "key": "bge_146_III_403",
         "zitierung": "BGE 146 III 403",
         "regesteKurz": "Art. 52 Abs. 2 und Art. 56 EPÜ 2000; Patentierbarkeit einer Erfindung; Technizität einer gemischten Erfindung; Wiedergabe von Informationen. Der technische Charakter (Technizität) ist dem Erfindungsbegriff inhärent. Die blosse Wiedergabe v…",
@@ -25,6 +47,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_403",
+        "zitierung": "BGE 146 III 403",
+        "regesteKurz": "Art. 52 Abs. 2 und Art. 56 EPÜ 2000; Patentierbarkeit einer Erfindung; Technizität einer gemischten Erfindung; Wiedergabe von Informationen. Der technische Charakter (Technizität) ist dem Erfindungsbegriff inhärent. Die blosse Wiedergabe v…",
+        "datum": "2020-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "13": [
@@ -33,6 +65,18 @@
         "zitierung": "BGE 147 III 89",
         "regesteKurz": "Art. 30 Abs. 1 BV, Art. 6 Ziff. 1 EMRK, Art. 47 ZPO; Anschein der Befangenheit eines nebenamtlichen Richters. Zusammenstellung der in der Rechtsprechung entwickelten Grundsätze (E. 4). Prüfung der Befangenheit eines nebenamtlichen Bundespa…",
         "datum": "2020-11-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "24": [
+      {
+        "key": "bge_146_III_416",
+        "zitierung": "BGE 146 III 416",
+        "regesteKurz": "Art. 229 Abs. 1 und Art. 60 i.V.m. Art. 59 Abs. 2 lit. a ZPO; Einschränkung des Patentanspruchs, Novenrecht, Rechtsschutzinteresse. Eine ausserhalb des Zivilprozesses geschaffene Einschränkung des Patentanspruchs ist novenrechtlich nicht a…",
+        "datum": "2020-08-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -83,6 +127,18 @@
         "gewicht": 0
       }
     ],
+    "50": [
+      {
+        "key": "bge_146_III_403",
+        "zitierung": "BGE 146 III 403",
+        "regesteKurz": "Art. 52 Abs. 2 und Art. 56 EPÜ 2000; Patentierbarkeit einer Erfindung; Technizität einer gemischten Erfindung; Wiedergabe von Informationen. Der technische Charakter (Technizität) ist dem Erfindungsbegriff inhärent. Die blosse Wiedergabe v…",
+        "datum": "2020-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "51": [
       {
         "key": "bge_147_III_337",
@@ -119,10 +175,44 @@
     ],
     "58": [
       {
+        "key": "bge_147_III_337",
+        "zitierung": "BGE 147 III 337",
+        "regesteKurz": "a Art. 51 PatG, Art. 69 Abs. 1 EPÜ 2000; Auslegung von Patentansprüchen. Bei der Auslegung von Patentansprüchen handelt es sich um eine Rechtsfrage, die vom Bundesgericht im Beschwerdeverfahren frei überprüft werden kann (E. 6.1 und 6.2).…",
+        "datum": "2021-05-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_146_III_177",
         "zitierung": "BGE 146 III 177",
         "regesteKurz": "Art. 26 Abs. 1 lit. c PatG, Art. 123 Abs. 2 und Art. 138 Abs. 1 lit. c EPÜ 2000; Patentnichtigkeit, Zulässigkeit von Änderungen im Anmeldeverfahren. Art. 123 Abs. 2 EPÜ 2000 erlaubt eine Änderung der Patentanmeldung während des Anmeldeverf…",
         "datum": "2020-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "66": [
+      {
+        "key": "bge_149_III_351",
+        "zitierung": "BGE 149 III 351",
+        "regesteKurz": "Art. 1 Abs. 1, Art. 7 Abs. 1 und 2 sowie Art. 35 Abs. 1 PatG; Mitbenützungsrecht und Neuheit. Gewerbsmässige Benützungen oder besondere Anstalten dazu vor dem Anmelde- oder Prioritätsdatum im Sinne von Art. 35 Abs. 1 PatG müssen in einer W…",
+        "datum": "2023-04-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "28a": [
+      {
+        "key": "bge_146_III_416",
+        "zitierung": "BGE 146 III 416",
+        "regesteKurz": "Art. 229 Abs. 1 und Art. 60 i.V.m. Art. 59 Abs. 2 lit. a ZPO; Einschränkung des Patentanspruchs, Novenrecht, Rechtsschutzinteresse. Eine ausserhalb des Zivilprozesses geschaffene Einschränkung des Patentanspruchs ist novenrechtlich nicht a…",
+        "datum": "2020-08-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

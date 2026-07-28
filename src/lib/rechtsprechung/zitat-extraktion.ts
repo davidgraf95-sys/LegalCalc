@@ -35,6 +35,91 @@
 // vorher verlorenen «consid.»-Pinpoints; (4) «lett.» ital. lettera als Sub-Marker
 // (vorher [] — «let» frass 3 von 4 Zeichen). (3) «ch.» frz. chiffre war bereits
 // über SUB_MARKER erfasst → als geprüft-verworfen dokumentiert.
+//
+// ╔═══════════════════════════════════════════════════════════════════════════╗
+// ║ BEKANNTE EXTRAKTIONS-LÜCKEN — gesammelt (Gegenprüfung R3, 28.7.2026)      ║
+// ╚═══════════════════════════════════════════════════════════════════════════╝
+//
+// WARUM SIE HIER STEHEN. Sie standen vorher verstreut an den Konstanten, die sie
+// betreffen — jede für sich richtig verortet, zusammen aber unsichtbar: niemand
+// konnte sagen, WIE VIEL dieser Extraktor nicht sieht. Eine Lücke, die man nur
+// findet, wenn man ohnehin schon an der richtigen Zeile steht, ist keine
+// ausgewiesene Lücke (§8). Alle Zahlen sind am committeten Entscheid-Korpus
+// gemessen (5'093 Snapshots, 28.7.2026), nicht geschätzt (§7).
+//
+// GEMEINSAMER NENNER ALLER ACHT: sie kosten AUSSCHLIESSLICH Treffer, keiner von
+// ihnen erzeugt einen falschen. Das ist die bewusste Richtung (§1) — eine Lücke
+// weist ein Tor aus, eine Fehlzuordnung niemand.
+//
+// L1 · VERBUND-FORM «Buchstabe + Ordinal» («Art. 66abis StGB») → GAR KEIN Treffer.
+//      GTR Rz. 309 kennt sie amtlich («der bestehende Artikel 65a wird zum
+//      Artikel 65abis»). Sie passt in keinen Zweig von ARTIKEL_TOKEN: «66a»
+//      scheitert am Lookahead `(?![a-z])`, «66bis» am führenden «a».
+//      KORPUS: 517 Nennungen (art. 66abis, 34abis, 41cbis, 314abis, 16cbis,
+//      712ibis, 80dbis …). TEST-PIN: «Art. 66abis StGB» → [].
+//      EIGENER SCHRITT, weil die belegte Schreibung mit Leerzeichen («art. 34a
+//      bis») eine eigene adversariale FP-Analyse gegen das Bereichswort «bis»
+//      braucht und die Verbund-Form die Sortier-/Anzeige-Ordnung des
+//      Artikel-Index ändert.
+//
+// L2 · PARAGRAPHENZEICHEN «§» ist kein Artikel-Marker. ARTIKEL_MARKER kennt nur
+//      «Art.»/«Artikel»; «§ 12 Abs. 2 EG ZGB» ergibt [].
+//      KORPUS: 26'311 «§»-Zeichen in 4'141 Snapshots; als Zitat-Form
+//      («§ N [Abs./lit. …] <CODE>») 19'320 Vorkommen in 3'869 Snapshots.
+//      EINORDNUNG, damit die Zahl nicht grösser wirkt als die Wirkung: «§» ist
+//      die KANTONALE Zählweise (BS, ZH, AG, SO …), und das ERLASS_REGISTER führt
+//      Bundesrecht. Der weit überwiegende Teil dieser Nennungen fände auch bei
+//      erkanntem Marker keinen Register-key. Die Lücke wird erst mit dem
+//      kantonalen Erlass-Bestand fachlich relevant — dann als eigener Schritt
+//      mit eigener FP-Analyse («§» steht auch in Fussnoten und Randziffern).
+//
+// L3 · EINBUCHSTABIGER FOLGE-MARKER ZUSAMMENGESCHRIEBEN («Art. 205f. LIFD») →
+//      bewusst KEIN Treffer. FOLGE_MARKER_EIN verlangt Punkt UND Leerzeichen,
+//      weil sonst «art. 205f LIFD» (echter Buchstaben-Artikel 205f) als
+//      «Art. 205 f.» gelesen würde — ein ANDERER Artikel. Eine falsche
+//      Artikel-Zuordnung ist schlimmer als eine Lücke (§1). TEST-PIN vorhanden:
+//      «Art. 205f. LIFD» → [], «art. 205f LIFD» → ART.205f.LIFD.
+//
+// L4 · KETTE MIT CODE-WECHSEL — Nicht-End-Glieder gehen verloren.
+//      «les art. 30 Cst. et 6 CEDH» → NUR ART.30.CST; «6 CEDH» fällt weg, weil
+//      STATUTE_QUELLE genau EINEN Code am Ende der Liste kennt und der erste
+//      Match bei «Cst.» endet. AMTLICH BELEGT: BGE 149 I 343.
+//      KORPUS (Proxy-Muster «art. N <CODE> et M …»): 226 Vorkommen in 91
+//      Snapshots. TEST-PIN unten.
+//
+// L5 · WIEDERHOLTES «Art.» MIT EINEM SCHLUSS-CODE — nur das letzte Glied zählt.
+//      «art. 8 par. 1, art. 11 et art. 20 par. 3 CEDH» → NUR ART.20.ABS.3.CEDH.
+//      Grund: KETTEN_GLIED setzt hinter dem Konnektor ein ARTIKEL_GLIED voraus,
+//      das mit einer ZIFFER beginnt — ein wiederholtes «art.» bricht die Kette,
+//      und der /g-Scan startet neu erst beim letzten Glied.
+//      KORPUS (Proxy-Muster «art. N …, art. M …»): 4'397 Vorkommen in 1'242
+//      Snapshots — die grösste der acht Lücken. TEST-PIN unten.
+//
+// L6 · BEREICHS-ENDPUNKTE WERDEN NICHT INDEXIERT — DEKLARIERTE START-ARTIKEL-
+//      REGEL, keine Panne: «Art. 75 bis 77 AIG» erzeugt AIG/75, und `artikelBis`
+//      ('77') dient allein der treuen ANZEIGE. Art. 76 bekommt keinen Eintrag.
+//      Das ist so gewollt: die Zwischenglieder eines Bereichs sind nicht
+//      einzeln zitiert, und sie zu materialisieren hiesse, dem Gericht Aussagen
+//      über Artikel zuzuschreiben, die es nicht genannt hat (§8).
+//      KORPUS: 689 Bereichs-Zitate mit erkanntem Endpunkt (1'439 Roh-Nennungen)
+//      in 543 Snapshots; allein «Art. 7x bis NN AIG» 179 Vorkommen.
+//      TEST-PIN unten.
+//
+// L7 · QUELL-KAPPUNG `zitierteNormen` (OCL statutes[]) — betrifft nicht diesen
+//      Extraktor, sondern den zweiten Zweig der Norm-Zuordnung: die Roh-Liste
+//      ist bei 8 Einträgen hart gekappt und alphabetisch sortiert.
+//      KORPUS: 1'085 Snapshots mit exakt 8 Einträgen (alle 1'085 sortiert),
+//      3'766 ohne jeden Eintrag. Volle Fassung samt Folgerung: Kommentar an
+//      `statutesZuNormKeys` in scripts/normtext/entscheide-mapping.ts.
+//
+// L8 · «lit. a.» MIT SATZPUNKT bricht den Match. «Art. 138 Abs. 3 lit. a. ZPO»
+//      → [] (ohne den Punkt hinter dem Sub-Token: ART.138.ABS.3.ZPO). Ursache
+//      ist der Token-Abschluss `(?![A-Za-z0-9])` hinter SUB_TOKEN — er lässt den
+//      Punkt zu, aber der danach folgende Code steht dann hinter einem Trenner,
+//      den ARTIKEL_GLIED nicht mehr überbrückt.
+//      KORPUS: 49 Vorkommen in 33 Snapshots (Fund an SB.2024.90). TEST-PIN unten.
+//      Der Fix wäre klein, ist aber eine Grammatik-Änderung und gehört darum in
+//      denselben eigenen Schritt wie L1/L2/L4/L5 — Risikoklassen-Trennung.
 
 /** Gesetzes-Zitat mit bewahrtem Artikel-/Absatz-Token. */
 export interface StatutRef {
@@ -120,17 +205,10 @@ const ORDINAL_SUFFIX =
 // Artikel-/Absatz-Token: Zahl + optional (Ordinal-Suffix ODER einzelner
 // Buchstabe, der nicht von einem weiteren Buchstaben gefolgt ist).
 //
-// BEKANNTE LÜCKE (Gegenprüfung R1, gemessen 28.7.2026 — bewusst NICHT hier
-// geschlossen): die amtliche Verbund-Form «Buchstabe + Numerale» aus GTR Rz. 309
-// («der bestehende Artikel 65a wird zum Artikel 65abis», Beispiel «Art. 27abis»)
-// passt in keinen der beiden Zweige — «66a» scheitert an `(?![a-z])`, «66bis» am
-// führenden «a». «Art. 66abis StGB» ergibt darum bis heute GAR keinen Treffer.
-// Umfang am Entscheid-Korpus: 517 Nennungen (art. 66abis, 34abis, 41cbis,
-// 314abis, 16cbis, 712ibis, 80dbis …), also grösser als die hier geschlossene
-// Ordinal-Lücke. Sie bleibt eine test-gepinnte Lücke und gehört in einen EIGENEN
-// Schritt: die belegte Schreibung mit Leerzeichen («art. 34a bis») braucht eine
-// eigene adversariale FP-Analyse gegen das Bereichswort «bis», und die
-// Verbund-Form ändert zusätzlich die Sortier-/Anzeige-Ordnung des Artikel-Index.
+// BEKANNTE LÜCKE L1 — die amtliche Verbund-Form «Buchstabe + Numerale»
+// («Art. 66abis StGB», GTR Rz. 309) passt in keinen der beiden Zweige und ergibt
+// GAR keinen Treffer. Umfang, Beleg und der Grund, warum sie einen eigenen
+// Schritt braucht: Lücken-Block im Modul-Kopf, L1.
 //
 // ── ORDINAL «bis» ⊥ BEREICHSWORT «bis» (Gegenprüfung R2/B2, 28.7.2026) ────────
 // Beide Bedeutungen stehen im selben Textfenster hinter derselben Artikelnummer:
@@ -165,12 +243,9 @@ const ABSATZ_TOKEN = ARTIKEL_TOKEN;
 //      steht VOR «seg», sonst bliebe bei «segg.» ein «g» stehen (lett/let-Klasse).
 //  (b) EINBUCHSTABIG (f/s) — nur mit PFLICHT-PUNKT **und** PFLICHT-LEERZEICHEN.
 //      Der Punkt hält «s» vom Satz-Marker-Terrain fern (SUB_MARKER kennt «S» für
-//      «Satz», Z. 148); das Leerzeichen hält «f» von den echten Buchstaben-
-//      Artikeln fern: «art. 205f LIFD» MUSS weiterhin LIFD/205f ergeben, und
-//      ohne Leerzeichen-Pflicht läse «Art. 205f. LIFD» (Satzpunkt) plötzlich
-//      «Art. 205 f.» → LIFD/205, also einen ANDEREN Artikel. Eine falsche
-//      Artikel-Zuordnung ist schlimmer als eine Lücke (§1) — die zusammen-
-//      geschriebene Form bleibt darum bewusst unerfasst und test-gepinnt.
+//      «Satz»); das Leerzeichen hält «f» von den echten Buchstaben-Artikeln fern:
+//      «art. 205f LIFD» MUSS weiterhin LIFD/205f ergeben. Die daraus folgende
+//      bewusste Lücke bei «Art. 205f. LIFD» steht als L3 im Lücken-Block oben.
 const FOLGE_MARKER = '(?:ff|segg|seg|ss)\\.?';
 const FOLGE_MARKER_EIN = '[fs]\\.';
 // Untergliederungs-Marker. F2-V3: «Nr» (Staatsvertrags-Standard «Art. 34 Nr. 3

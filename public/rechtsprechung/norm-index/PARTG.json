@@ -38,6 +38,18 @@
         "kanton": "CH",
         "gewicht": 0
       }
+    ],
+    "34": [
+      {
+        "key": "bge_151_V_137",
+        "zitierung": "BGE 151 V 137",
+        "regesteKurz": "Art. 20 ATSG; Art. 132 ZGB; Drittauszahlung sozialversicherungsrechtlicher Leistungen aufgrund einer Anweisung des Zivilgerichts. Eine vom Zivilgericht gestützt auf Art. 132 ZGB angeordnete Anweisung zur Drittauszahlung eines Teils der dem…",
+        "datum": "2025-02-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
     ]
   }
 }

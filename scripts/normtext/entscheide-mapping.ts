@@ -18,25 +18,28 @@
 // stilles Verwerfen an der Extraktion, weil ein verworfenes Zitat nirgends mehr
 // sichtbar ist und die Lücke niemand bemerkt (§8/§6.7).
 //
-// ── ZWEI EBENEN, ZWEI SEMANTIKEN (Gegenprüfung R2/B1, 28.7.2026) ─────────────
-// Der voranstehende Absatz gilt unverändert für die ERLASS-Ebene
-// (`normKeysVonSnapshot`): dort heisst ein Treffer «dieser Entscheid NENNT den
-// Erlass», Vollständigkeit ist der Zweck, Beiläufigkeit der Preis.
+// ── EINE REGEL FÜR BEIDE EBENEN: DER ZITIER-APPARAT ZÄHLT NICHT ──────────────
+// (Gegenprüfung R3, Entscheid Orchestrator 28.7.2026 — Rückbau der Schwelle)
 //
-// Die ARTIKEL-Ebene (`artikelSchluesselVonSnapshot`) sagt etwas anderes. Sie
-// trägt in der UI die Überschrift «Bundesgerichtsentscheide zu Art. X» — ein
-// Versprechen über den Inhalt. Dort gilt seit R2 eine KORROBORATIONS-REGEL:
-// statutes ODER Regeste ODER ≥2 Nennungen im übrigen Fliesstext. Anlass war ein
-// Literatur-Phantom (BGE 150 IV 10 unter MSTG/171c, Artikel nur im Buchtitel
-// eines Kommentars genannt). Die Regel steht vollständig samt Messung an
-// `artikelSchluesselMitBefund`.
+// Zwischenzeitlich stand hier eine HÄUFIGKEITS-SCHWELLE auf der Artikel-Ebene
+// (statutes ODER Regeste ODER ≥2 Nennungen im Fliesstext, Commit 5e8b49c0). Sie
+// ist WIDERLEGT und vollständig zurückgebaut. Der Beleg stammt aus der Messung,
+// die sie selbst mitbrachte: in einer GLEICHVERTEILTEN Stichprobe der von ihr
+// verworfenen (Snapshot, Artikel)-Paare waren rund die HÄLFTE echt angewendete
+// Normen — ATSG/17 (revisionsrechtliche Grundsätze), ZPO/138 (Zustellfiktion,
+// fristentragend), OR/30 (Furchterregung), STPO/428, EMRK/6. Eine Regel, die
+// echte Rechtsanwendung löscht, um eine schmale Phantom-Klasse zu treffen,
+// verletzt §1; Häufigkeit ist kein Signal für Tragfähigkeit.
 //
-// Die Divergenz ist gewollt und wird hier benannt, damit sie niemand später als
-// Inkonsistenz «aufräumt»: Vollständigkeit auf der Erlass-Ebene und Präzision
-// auf der Artikel-Ebene sind zwei verschiedene Aussagen; eine gemeinsame Regel
-// müsste eine davon aufgeben (§1). Eine Nennung unterhalb der Artikel-Schwelle
-// geht darum NICHT verloren — sie bleibt auf der Erlass-Ebene sichtbar, und die
-// Zahl der verworfenen Singletons weist der `--remap`-Lauf aus (§6.7).
+// An ihre Stelle tritt eine GEZIELTE, deklarierte LITERATUR-KONTEXT-REGEL
+// (`ohneLiteraturApparat`): nicht WIE OFT eine Norm genannt wird entscheidet,
+// sondern WO. Nennungen innerhalb einer Zitier-Apparat-Spanne (Kommentar-Titel,
+// Randnummer-Fundstelle, fr/it «ad art.») sind Angaben ÜBER Literatur, nicht
+// Rechtsanwendung des Gerichts. Sie werden vor der Extraktion aus dem Text
+// genommen — auf BEIDEN Ebenen gleich, weil ein Literaturnachweis auch keine
+// Erlass-Nennung des Gerichts ist. Damit bleibt der Dekret-Stand «erst
+// vollständig erkennen» unangetastet: jede erkannte Nennung im Erwägungstext
+// zählt wieder, ohne Schwelle, ohne Korroboration.
 //
 // ── W2·6-NKEY (Roadmap, Dekret David 27.7.2026) ──────────────────────────────
 // Die Abkürzungs-Tabelle war eine HAND-Whitelist mit 26 Einträgen — sie kannte
@@ -329,8 +332,32 @@ export function normKeyFuerAbk(abk: string): string | null {
 /**
  * "Art. 32 Abs. 2 BGG" → ['BGG']; mehrere Nennungen dedupliziert.
  * Das Trailing-Token fängt einen angehängten einzelnen Ziffern-Block mit
- * («Art. 27 BVV 2» → 'BVV 2' → key 'BVV_2») — ohne ihn fiele die Nennung auf
+ * («Art. 27 BVV 2» → 'BVV 2' → key 'BVV_2') — ohne ihn fiele die Nennung auf
  * 'BVV' zurück und wäre von 'BVV 3' nicht mehr unterscheidbar (§1).
+ *
+ * ── QUELL-EIGENSCHAFT DER EINGABE, ehrlich benannt (§8; Lücke L7) ────────────
+ * `zitierteNormen` ist die ROH-Drittextraktion von OpenCaseLaw (statutes[]) und
+ * trägt zwei Eigenschaften, die man ihr nicht ansieht:
+ *
+ *  (1) HARTE KAPPUNG BEI 8 EINTRÄGEN. Gemessen am committeten Korpus (5'093
+ *      Snapshots, 28.7.2026): Längenverteilung 0 → 3'766 · 1 → 3 · 2 → 20 ·
+ *      3 → 20 · 4 → 34 · 5 → 52 · 6 → 58 · 7 → 55 · 8 → 1'085 · 9+ → 0. Die
+ *      Klippe bei genau 8 ist kein Zufall der Rechtsmaterie, sondern ein Limit
+ *      der Quelle — jeder dieser 1'085 Snapshots hat mutmasslich MEHR zitierte
+ *      Normen, als die Liste zeigt.
+ *  (2) ALPHABETISCH SORTIERT. Alle 1'085 Achter-Listen sind lexikographisch
+ *      geordnet. Die Kappung schneidet also nicht die UNWICHTIGSTEN Normen ab,
+ *      sondern die alphabetisch hinteren — bei einem Entscheid zu «Art. 8 ZGB»
+ *      systematisch das ZGB.
+ *
+ * FOLGERUNG, damit niemand aus (1)/(2) das Falsche schliesst: dieser Zweig ist
+ * eine ERGÄNZUNG, nie ein Massstab. Er darf nicht als «die zitierten Normen»
+ * gelesen, nicht als Soll-Bestand gegen den Fliesstext-Zweig gestellt und nicht
+ * als Korroborations-Beleg benutzt werden — genau dieser letzte Fehlgebrauch
+ * steckte in der zurückgebauten Korroborations-Regel (Gegenprüfung R3). Die
+ * 3'766 Snapshots ohne jeden Eintrag (praktisch der ganze BS-Bestand) hätten
+ * dort strukturell schlechter abgeschnitten als die Bundes-Snapshots — ein
+ * Unterschied der QUELLE, nicht der Rechtsanwendung.
  */
 export function statutesZuNormKeys(statutes: string[]): string[] {
   const out = new Set<string>();
@@ -425,12 +452,152 @@ function blockTeile(abschnitte: EntscheidSnapshot['abschnitte'] | undefined): st
 }
 
 /**
- * NUR die Regeste eines Snapshots — der amtliche LEITSATZ. Eine dort genannte Norm
- * ist per Definition die Norm, um die es im Entscheid geht; sie braucht keine
- * weitere Korroboration (Regel (ii) in `artikelSchluesselVonSnapshot`).
+ * NUR die Regeste eines Snapshots — der amtliche LEITSATZ. Wird heute nur noch
+ * für Messungen und Tests gebraucht (die Korroborations-Regel, die sie als
+ * eigenen Zweig führte, ist zurückgebaut); bleibt exportiert, weil der
+ * Leitsatz-Anteil die einzige Text-Teilmenge ist, die man ohne zweite
+ * Assemblage nicht wieder herstellen kann (§5).
  */
 export function regesteTextVon(snap: EntscheidSnapshot): string {
   return zusammen(regesteTeile(snap));
+}
+
+/**
+ * ── LITERATUR-KONTEXT-REGEL (Gegenprüfung R3, Entscheid Orchestrator 28.7.2026)
+ *
+ * WAS SIE TUT. Sie entfernt aus dem Fliesstext die deklarierten ZITIER-APPARAT-
+ * SPANNEN, BEVOR die Zitat-Extraktion darüber läuft. Eine Spanne beginnt an
+ * einem der unten aufgeführten Marker und endet am nächsten Segment-Ende —
+ * `;`, `)`, `»` oder Zeilenende. Alles ausserhalb bleibt unberührt.
+ *
+ * WARUM DAS UND NICHT ZÄHLEN. Der Vorläufer war eine Häufigkeits-Schwelle
+ * («eine Nennung ist Literatur, zwei sind Erörterung»). Sie ist an der eigenen
+ * Messung gescheitert: in der gleichverteilten Stichprobe der von ihr
+ * verworfenen Paare war rund die Hälfte ECHTE Rechtsanwendung (ATSG/17, ZPO/138,
+ * OR/30, STPO/428, EMRK/6). Häufigkeit misst nicht, ob eine Norm trägt — eine
+ * einmal, aber tragend erörterte Norm sieht gezählt aus wie eine beiläufige.
+ * Der KONTEXT dagegen unterscheidet genau die Klasse, um die es geht: «N. 508/509
+ * zu Art. 517-518 ZGB» ist eine Angabe ÜBER ein Buch, nicht über den Fall.
+ *
+ * REICHWEITE: BEIDE EBENEN. `normKeysVonSnapshot` (Erlass) und
+ * `artikelSchluesselVonSnapshot` (Artikel) lesen denselben bereinigten Text
+ * (`fliesstextOhneApparat`, §5). Das ist kein Kompromiss, sondern die richtige
+ * Symmetrie: ein Literaturnachweis ist auch keine Erlass-Nennung des Gerichts.
+ * Der Dekret-Stand «erst vollständig erkennen, dann kuratieren» (David
+ * 27.7.2026) bleibt damit unangetastet — es wird nichts nach Häufigkeit,
+ * Wichtigkeit oder Rang verworfen, sondern genau eine syntaktisch benannte
+ * Textsorte.
+ *
+ * AUFNAHME-REGEL FÜR MARKER (§7): nur mit Korpus-Beleg (Entscheid-ID + Zitat)
+ * und gemessener Häufigkeit. Im Zweifel NICHT aufnehmen — die nicht
+ * aufgenommenen Klassen stehen unten benannt, damit die Lücke sichtbar ist (§8)
+ * statt sich als «vollständig» auszugeben.
+ *
+ * NICHT AUFGENOMMEN, obwohl hochfrequent — bekannte REST-KLASSE (§8). Die
+ * verbreitetste deutsche Kommentar-Form nennt den Artikel OHNE «zu»-Anker, hinter
+ * dem blossen Werktitel: «Jean-Richard-dit-Bressel, in: Basler Kommentar,
+ * 3. Auflage 2023, Art. 279 StPO N 13» (6'781 Vorkommen von «Basler/Berner/
+ * Zürcher Kommentar» in 2'292 Snapshots; «in:» allein 21'179 in 3'421). Ein
+ * Marker auf den blossen Werktitel hätte keine verlässliche Spannen-Grenze — er
+ * träfe auch «Nach dem Basler Kommentar ist Art. 41 OR anwendbar», also eine
+ * Aussage des Gerichts. Diese Klasse bleibt darum bewusst unerfasst: eine
+ * benannte Lücke ist einer stillen Fehl-Löschung immer vorzuziehen (§1).
+ */
+interface LiteraturMarker {
+  /** Sprechender Name (erscheint in der Tor-/Lauf-Ausgabe). */
+  readonly name: string;
+  /** Regex-Quelle des MARKERS (ohne Spannen-Schwanz), case-insensitiv gelesen. */
+  readonly muster: string;
+  /** Korpus-Beleg: Entscheid-ID + Wortlaut (§7 — kein Marker ohne Fundstelle). */
+  readonly beleg: string;
+  /** Gemessene Häufigkeit am committeten Korpus (5'093 Snapshots, 28.7.2026). */
+  readonly korpus: string;
+}
+
+export const LITERATUR_MARKER: readonly LiteraturMarker[] = [
+  {
+    name: 'Kommentar-Titel («… Kommentar zu Art. X»)',
+    muster: 'Kommentar zu\\s+Art\\.',
+    beleg:
+      'bge_150_IV_10: «MARCEL ALEXANDER NIGGLI, Rassendiskriminierung, Ein Kommentar '
+      + 'zu Art. 261bis StGB und Art. 171c MStG, 2a ed. 2007, n. 405 e 407)» — das '
+      + 'Gericht wendet Art. 171c MStG nirgends an (Phantom-Fund der Gegenprüfung R2).',
+    korpus: '52 Vorkommen in 27 Snapshots',
+  },
+  {
+    name: 'Randnummer-Fundstelle («N. 508/509 zu Art. X»)',
+    // ABWEICHUNG vom Auftrags-Wortlaut (§7), belegt statt behauptet: der Auftrag
+    // nannte nur die Form mit Punkt («N. 12 zu Art.»). Am Korpus stehen daneben
+    // die punktlose Form («N 51 zu Art.», 316 Vorkommen in 117 Snapshots, Beleg
+    // bs_sozialversicherungsgericht/BV.2026.5 «N 51 zu Art. 26 BVG») und die
+    // Randziffer («Rz 46 zu Art.», 84 in 49, Beleg bs_.../KV.2025.2 «Rz 46 zu
+    // Art. 64a KVG») — dieselbe Textsorte, derselbe Anker «zu Art.». Sie hier
+    // NICHT zu führen hiesse, dieselbe Klasse je nach Setzergewohnheit
+    // verschieden zu behandeln (§1).
+    muster: '\\b(?:N|Rz|Rn)\\.?\\s*\\d+[a-z]?(?:\\s*[/–-]\\s*\\d+[a-z]?)?(?:\\s*f{1,2}\\.)?\\s+zu\\s+Art\\.',
+    beleg:
+      'bge_146_III_106: «(KÜNZLE, Berner Kommentar, 2011, N. 508/509 zu Art. 517-518 '
+      + 'ZGB; PILLER, in: Commentaire romand, Code civil II, 2016, N. 131 zu '
+      + 'Art. 518 ZGB)» — ZGB/517 stand allein aus dieser Fundstelle im Index.',
+    korpus: '7\'111 Vorkommen «N. … zu Art.» in 689 Snapshots (+ 316 punktlos, + 84 «Rz»)',
+  },
+  {
+    name: 'fr/it Kommentar-Fundstelle («n° 10 ad art. X»)',
+    // Der Anker ist «ad art.» selbst, nicht die vorangehende Randnummer: die
+    // Schreibungen wechseln («n° 10», «n o 2», «no 66», «n. 1 e segg.»), das
+    // «ad» nicht. «AD» steht bereits in INVALID_LAW_CODES, ist also nie
+    // law-Kandidat; die Form «ad art.» ist in DE/FR/IT-Urteilstext ausnahmslos
+    // ein Verweis auf eine Fundstelle (Kommentar oder Botschaft), nie eine
+    // Subsumtion — deshalb aufgenommen.
+    muster: '\\bad\\s+art\\.',
+    beleg:
+      'bge_152_I_105: «NORA MARKWALDER, in St. Galler Kommentar, …, 4e éd. 2023, '
+      + 'n° 2 ad art. 123c Cst.; CHRISTIAN DENYS, in Commentaire romand, '
+      + 'Constitution fédérale, 2021, n° 10 ad art. 123c Cst.»',
+    korpus: '4\'463 Vorkommen in 324 Snapshots (davon 3\'084 in der Form «n° … ad art.»)',
+  },
+];
+
+/**
+ * Segment-Ende einer Zitier-Apparat-Spanne. Bewusst KURZ gehalten: der Apparat
+ * endet in Schweizer Urteilstext am Semikolon (nächster Autor), an der
+ * schliessenden Klammer (Ende des Klammer-Nachweises), am schliessenden
+ * Anführungszeichen oder an der Absatzgrenze. Ein längerer Schwanz risse
+ * Gerichtstext mit heraus (§1).
+ */
+const SPANNEN_ENDE = '[^;)»\\n]*';
+
+const LITERATUR_SPANNE = new RegExp(
+  `(?:${LITERATUR_MARKER.map((m) => m.muster).join('|')})${SPANNEN_ENDE}`,
+  'gi',
+);
+
+/**
+ * Fliesstext OHNE die deklarierten Zitier-Apparat-Spannen. Rein und
+ * deterministisch (§2): kein Zustand, keine Reihenfolge-Abhängigkeit — `replace`
+ * mit einem /g-Muster setzt `lastIndex` selbst zurück.
+ *
+ * Ersetzt wird durch ein LEERZEICHEN, nicht durch nichts: sonst klebten die
+ * Textränder links und rechts der Spanne zusammen und könnten ein Zitat
+ * ERZEUGEN, das im Original nicht steht (die Regel darf nur wegnehmen, §1).
+ */
+export function ohneLiteraturApparat(text: string): string {
+  if (!text) return text;
+  return text.replace(LITERATUR_SPANNE, ' ');
+}
+
+/** Die entfernten Spannen selbst — Grundlage der Verwurf-Statistik (§6.7). */
+export function literaturSpannen(text: string): string[] {
+  if (!text) return [];
+  return [...text.matchAll(LITERATUR_SPANNE)].map((m) => m[0]);
+}
+
+/**
+ * Die EINE Text-Quelle beider Extraktions-Ebenen (§5). Wer hier etwas ändert,
+ * ändert Erlass- und Artikel-Ebene gemeinsam — genau das ist der Zweck.
+ */
+export function fliesstextOhneApparat(snap: EntscheidSnapshot): string {
+  return ohneLiteraturApparat(fliesstextVon(snap));
 }
 
 /**
@@ -445,15 +612,55 @@ export function regesteTextVon(snap: EntscheidSnapshot): string {
  * (Härtung 28.7.2026): der Ausschluss mehrdeutiger Kürzel ist TOTAL, sonst
  * käme 'STG' über den Quellzweig doch noch in `normKeys` und die föderal/
  * kantonale Mehrdeutigkeit stünde wieder im Korpus (§1/§8).
+ *
+ * Der Fliesstext-Zweig liest den um die Zitier-Apparat-Spannen bereinigten Text
+ * (`fliesstextOhneApparat`, Gegenprüfung R3): ein Erlass, der im Korpus AUSSCHLIESSLICH
+ * im Literaturnachweis eines Kommentars vorkommt, wird von diesem Entscheid nicht
+ * genannt — er wird zitiert BEI einem Autor. Der `zitierteNormen`-Zweig bleibt roh:
+ * dort steht kein Literaturapparat.
  */
 export function normKeysVonSnapshot(snap: EntscheidSnapshot, hint?: string | null): string[] {
   const out = new Set<string>(statutesZuNormKeys(snap.zitierteNormen ?? []));
-  for (const ref of extrahiereStatutRefs(fliesstextVon(snap))) {
+  for (const ref of extrahiereStatutRefs(fliesstextOhneApparat(snap))) {
     const k = normKeyFuerAbk(ref.gesetz);
     if (k) out.add(k);
   }
   if (hint && !AUSGESCHLOSSENE_KEYS.has(hint)) out.add(hint);
   return [...out].sort();
+}
+
+/**
+ * normKeys, die AUSSCHLIESSLICH aus einer entfernten Zitier-Apparat-Spanne
+ * stammen — der Erlass kommt im Snapshot nur im Literaturnachweis vor.
+ *
+ * WOFÜR (Gegenprüfung R3): der `--remap`-Lauf BEWAHRT Alt-Keys, die die
+ * Neuberechnung nicht reproduziert (Einweg-Ratschen-Sperre, siehe
+ * `remapNormKeys`/`undeklarierteAltKeys`). Genau diese Bewahrung wäre hier
+ * falsch: die Literatur-Kontext-Regel hat den Key als Phantom entlarvt; würde er
+ * bewahrt, bliebe der Fix am Artefakt wirkungslos — dieselbe Fehlerklasse, gegen
+ * die die Sperre gebaut wurde, nur in der anderen Richtung.
+ *
+ * Die Funktion trifft keine fachliche Wertung, sie BELEGT nur mechanisch die
+ * Ursache: reproduziert der ROHE Text den Key und der bereinigte nicht, dann und
+ * nur dann hat ihn diese Regel entfernt. Alles andere bleibt beim fail-closed
+ * Abbruch (§6.7). Der `zitierteNormen`-Zweig ist ausgenommen — er wird nie
+ * bereinigt, also kann er auch nichts verlieren.
+ *
+ * Rein, sortiert (§2).
+ */
+export function literaturEntfernteNormKeys(snap: EntscheidSnapshot): string[] {
+  const ausStatutes = new Set(statutesZuNormKeys(snap.zitierteNormen ?? []));
+  const keysAus = (text: string): Set<string> => {
+    const out = new Set<string>();
+    for (const ref of extrahiereStatutRefs(text)) {
+      const k = normKeyFuerAbk(ref.gesetz);
+      if (k) out.add(k);
+    }
+    return out;
+  };
+  const roh = keysAus(fliesstextVon(snap));
+  const rein = keysAus(fliesstextOhneApparat(snap));
+  return [...roh].filter((k) => !rein.has(k) && !ausStatutes.has(k)).sort();
 }
 
 /**
@@ -470,8 +677,17 @@ export function normKeysVonSnapshot(snap: EntscheidSnapshot, hint?: string | nul
  * Datenverlust (§8), keine Neuberechnung. Ausgenommen bleiben die
  * ausgeschlossenen Keys: die SOLLEN aus dem Bestand verschwinden.
  *
+ * `nichtBewahren` (Gegenprüfung R3) ist die GEGENRICHTUNG derselben Sorgfalt: ein
+ * Alt-Key, den ein Korrektheits-Fix soeben als Phantom entlarvt hat, DARF nicht
+ * bewahrt werden, sonst schreibt der Re-Map die korrigierte Zuordnung zurück und
+ * der Fix ist am Artefakt wirkungslos. Der Aufrufer belegt die Ursache je
+ * Snapshot (heute: `literaturEntfernteNormKeys`) — diese Funktion rät nichts,
+ * sie führt aus. Die so verworfenen Keys kommen als `verworfen` zurück und
+ * werden ausgewiesen, nie still gelöscht (§6.7/§8).
+ *
  * Idempotent: das Ergebnis des ersten Laufs ist Fixpunkt des zweiten, weil die
- * bewahrten Keys beim nächsten Lauf wieder als «nur alt» erkannt werden.
+ * bewahrten Keys beim nächsten Lauf wieder als «nur alt» erkannt werden — und
+ * die verworfenen im Bestand gar nicht mehr stehen.
  * Rückgabe zusätzlich `nurAlt` — der Aufrufer weist die Zahl aus, statt die
  * Bewahrung still geschehen zu lassen (§6.7).
  *
@@ -484,14 +700,18 @@ export function normKeysVonSnapshot(snap: EntscheidSnapshot, hint?: string | nul
  * war (§8). Sortiert, weil die Ausgabe sonst an der Reihenfolge des Bestands
  * hinge (§2).
  */
-export function remapNormKeys(alt: readonly string[], berechnet: readonly string[]): {
-  keys: string[]; nurAlt: string[];
-} {
+export function remapNormKeys(
+  alt: readonly string[],
+  berechnet: readonly string[],
+  nichtBewahren: ReadonlySet<string> = new Set(),
+): { keys: string[]; nurAlt: string[]; verworfen: string[] } {
   const neu = new Set(berechnet);
-  const nurAlt = [...new Set(
+  const kandidaten = [...new Set(
     (alt ?? []).filter((k) => !neu.has(k) && !AUSGESCHLOSSENE_KEYS.has(k)),
   )].sort();
-  return { keys: [...new Set([...neu, ...nurAlt])].sort(), nurAlt };
+  const verworfen = kandidaten.filter((k) => nichtBewahren.has(k));
+  const nurAlt = kandidaten.filter((k) => !nichtBewahren.has(k));
+  return { keys: [...new Set([...neu, ...nurAlt])].sort(), nurAlt, verworfen };
 }
 
 /**
@@ -524,153 +744,68 @@ export function undeklarierteAltKeys(
 }
 
 /**
- * KORROBORATIONS-REGEL der ARTIKEL-Ebene (Gegenprüfung R2/B1, Entscheid
- * Orchestrator 28.7.2026 — §1 Präzision vor Abdeckung, aber NUR hier).
- *
- * ── Der Befund ───────────────────────────────────────────────────────────────
- * Die UI-Überschrift der Artikel-Ebene lautet «Bundesgerichtsentscheide zu
- * Art. X». Das ist ein Versprechen über den INHALT des Entscheids, nicht über
- * das Vorkommen einer Zeichenfolge. Die vollständige Fliesstext-Erkennung
- * (Baustein d) hält es nicht: BGE 150 IV 10 stand unter MSTG/171c, obwohl
- * «171c» im ganzen Entscheid AUSSCHLIESSLICH im Literaturnachweis vorkommt
- * («MARCEL ALEXANDER NIGGLI, Rassendiskriminierung, Ein Kommentar zu
- * Art. 261bis StGB und Art. 171c MStG, 2a ed. 2007») — das Gericht wendet
- * Art. 171c MStG nirgends an. Ein Literatur-Phantom im Artikel-Index ist keine
- * Lücke, sondern eine falsche Auskunft (§8).
- *
- * ── Die Regel (deterministisch, §2) ──────────────────────────────────────────
- * Ein (Erlass, Artikel)-Paar kommt in den Index, wenn EINE der drei Bedingungen
- * trägt:
- *   (i)  es steht in `zitierteNormen` (statutes-Pfad) — eine Dritt-Extraktion,
- *        die nur ANGEWANDTE Normen ausweist, nie den Literaturapparat;
- *   (ii) es steht in der REGESTE (amtlicher Leitsatz, alle Sprachfassungen) —
- *        dort steht per Definition die tragende Norm;
- *   (iii) sonst: mindestens ZWEI Vorkommen im übrigen Fliesstext. Ein
- *        Literaturnachweis nennt den Artikel im Buchtitel EINMAL; eine
- *        angewandte Norm wird aufgeworfen, subsumiert und im Ergebnis erneut
- *        genannt.
- *
- * ── Zwei bewusste Abweichungen vom Wortlaut des Auftrags, beide gemessen ─────
- * (A) GEZÄHLT WIRD DER ARTIKEL-SCHLÜSSEL, NICHT DIE NORMALFORM. Die Normalform
- *     trennt nach Absatz (ART.6.ABS.1.EMRK ≠ ART.6.ABS.3.EMRK). Ein Entscheid,
- *     der «Art. 6 Abs. 1 EMRK» und «Art. 6 Abs. 3 lit. d EMRK» je einmal
- *     erörtert, hat sich zweimal mit Art. 6 EMRK befasst — die Zähleinheit muss
- *     die Einheit des Index sein, sonst misst die Regel etwas anderes als sie
- *     entscheidet. Gemessen am Korpus: Normalform-Zählung verwürfe zusätzlich
- *     2'383 (Snapshot, Artikel)-Paare, darunter EMRK/6 aus BGE 149 I 343 — einen
- *     der drei in der Gegenprüfung als ECHT bestätigten Fälle.
- * (B) VOLLTEXT UND BGE-AUSZUG WERDEN NICHT ADDIERT, SONDERN MAXIMIERT. Bei 1'248
- *     der 5'093 Snapshots trägt `abschnitte` das vollständige Urteil UND
- *     `auszugAbschnitte` den amtlichen Sammlungs-Auszug — zwei Darstellungen
- *     DESSELBEN Textes. Eine Addition verdoppelt jede Nennung und macht die
- *     Schwelle wirkungslos: genau das Literatur-Phantom MSTG/171c steht in
- *     beiden Fassungen je einmal und käme summiert auf 2 (nachgestellt). Der
- *     Auszug ist kein zweiter Beleg, sondern derselbe — darum das Maximum.
- *
- * ── Reichweite: NUR die Artikel-Ebene ────────────────────────────────────────
- * `normKeysVonSnapshot` (ERLASS-Ebene) bleibt UNVERÄNDERT. Die beiden Ebenen
- * haben verschiedene Semantik, und das ist Absicht, nicht Nachlässigkeit:
- *   • Erlass-Ebene = «dieser Entscheid NENNT den Erlass» — bewusst vollständig
- *     und beiläufig (Dekret David 27.7.2026, Modul-Kopf oben); das BGG steht in
- *     rund 85 % der Snapshots, ohne dass es um das BGG ginge. Sie speist
- *     Verzahnung und Abdeckungs-Messung, wo Vollständigkeit der Zweck ist.
- *   • Artikel-Ebene = «dieser Entscheid SAGT etwas zu Art. X» — sie speist eine
- *     kuratierte Leitfall-Liste mit einer inhaltlichen Überschrift.
- * Eine Nennung, die die Artikel-Schwelle nicht nimmt, verschwindet deshalb nicht
- * aus dem Korpus; sie bleibt auf der Erlass-Ebene sichtbar. Wer beide Ebenen
- * gleichschaltete, müsste eine der beiden Aussagen aufgeben (§1).
- *
- * ── WAS DIE REGEL KOSTET, GEMESSEN UND UNGEGLÄTTET (§8) ──────────────────────
- * Wirkung am committeten Korpus (5'093 Snapshots, 28.7.2026):
- *   (Snapshot, Artikel)-Paare  65'003 → 24'589  (−40'414, −62 %)
- *   Artikel-Buckets (distinct)  5'436 →  4'103  (−1'333)
- * Verteilung der Verwerfung nach Erlass: BGG 37.7 % · StPO 18.5 % · StGB 6.3 % ·
- * ZPO 5.9 % · ATSG 5.4 % · BV 4.5 % — also überwiegend die prozessualen
- * Standard-Zitate, die der Modul-Kopf als «beiläufig» beschreibt. Median 7
- * verworfene Paare je Snapshot, p90 14, max 56.
- *
- * ZWEI STICHPROBEN, klassifiziert am Text — und sie sagen NICHT dasselbe:
- *  • Die 10 ALPHABETISCH ERSTEN verworfenen Paare: 9 Katalog (Eintretens-,
- *    Kognitions-, Kosten- und Rechtsmittelbelehrungs-Formeln), 1 Literatur
- *    (BGE 146 III 106, ZGB/517 — genannt nur in «KÜNZLE, Berner Kommentar, 2011,
- *    N. 508/509 zu Art. 517-518 ZGB»), 0 echt angewendet. Diese Stichprobe stützt
- *    die Regel — sie stammt aber aus nur ZWEI Entscheiden und trifft deren
- *    Eintretens-Erwägung; sie ist ein Klumpen, kein Querschnitt.
- *  • Die 10 GLEICHVERTEILT gezogenen (jedes n/10-te Paar der sortierten Liste):
- *    5 Katalog, 5 ECHT ANGEWENDET — darunter ATSG/17 («sind die in Art. 17 ATSG
- *    verankerten revisionsrechtlichen Grundsätze sinngemäss anwendbar»),
- *    OR/30 (Subsumtion der Furchterregung), ZPO/138 (Zustellfiktion, tragend für
- *    die Fristberechnung), EMRK/6 (Grundlage des Replikrechts, BGE 148 III 161).
- *
- * DARAUS FOLGT EHRLICH: die Schwelle trifft die Literatur-Phantome, aber sie
- * trifft sie nicht ALLEIN. Auf dem verworfenen Teil liegt im Querschnitt eine
- * Fehlerrate in der Grössenordnung von 50 % — eine einmal, aber tragend
- * erörterte Norm ist von einer einmal beiläufig genannten durch blosses ZÄHLEN
- * nicht unterscheidbar. Belegt an einem der drei Fälle, die die Gegenprüfung
- * ausdrücklich als «echt» bestätigt hatte: EMRK/6 in BGE 149 I 343 (das Gericht
- * verneint dort die Anwendbarkeit von Art. 6 Ziff. 1 EMRK auf Steuerverfahren
- * und weist die darauf gestützten Rügen ab — eine Sachaussage) steht genau
- * EINMAL im Text und fällt darum durch. Das ist kein Umsetzungsfehler, sondern
- * die Grenze jeder Häufigkeits-Regel; es steht hier, damit die nächste Runde
- * über die richtige Frage entscheidet — nicht über die Schwelle, sondern über
- * ein Kontext-Signal (Literatur-Klammer statt Erwägungstext). Dieser Ausbau ist
- * bewusst NICHT Teil dieses Schritts.
- */
-export function artikelSchluesselMitBefund(snap: EntscheidSnapshot): {
-  schluessel: Set<string>; verworfen: string[];
-} {
-  const schluessel = new Set<string>();
-  const schl = (gesetz: string, artikel: string): string | null => {
-    const rk = normKeyFuerAbk(gesetz);
-    return rk ? `${rk}/${artikel}` : null;
-  };
-
-  // (i) + (ii): unbedingt zählende Zweige.
-  for (const t of [(snap.zitierteNormen ?? []).join('\n'), regesteTextVon(snap)]) {
-    for (const ref of extrahiereStatutRefs(t)) {
-      const k = schl(ref.gesetz, ref.artikel);
-      if (k) schluessel.add(k);
-    }
-  }
-
-  // (iii): übriger Fliesstext — Vorkommen je Artikel-Schlüssel, Volltext und
-  // BGE-Auszug getrennt gezählt und MAXIMIERT (siehe Abweichung (B)).
-  const zaehlung = new Map<string, number>();
-  for (const teil of [blockTeile(snap.abschnitte), blockTeile(snap.auszugAbschnitte)]) {
-    const proTeil = new Map<string, number>();
-    for (const ref of extrahiereStatutRefsMitAnzahl(zusammen(teil))) {
-      const k = schl(ref.gesetz, ref.artikel);
-      if (k) proTeil.set(k, (proTeil.get(k) ?? 0) + ref.anzahl);
-    }
-    for (const [k, n] of proTeil) zaehlung.set(k, Math.max(zaehlung.get(k) ?? 0, n));
-  }
-
-  const verworfen: string[] = [];
-  for (const [k, n] of zaehlung) {
-    if (schluessel.has(k)) continue;
-    if (n >= KORROBORATIONS_SCHWELLE) schluessel.add(k);
-    else verworfen.push(k);
-  }
-  return { schluessel, verworfen: verworfen.sort() };
-}
-
-/**
- * Wie oft ein Artikel im übrigen Fliesstext genannt sein muss, wenn ihn weder
- * `zitierteNormen` noch die Regeste tragen. 2 = «einmal ist ein Literaturzitat,
- * zweimal ist eine Erörterung». Als Konstante, damit die Schwelle EINE Stelle
- * hat und im Test benannt werden kann (§5).
- */
-export const KORROBORATIONS_SCHWELLE = 2;
-
-/**
  * (Register-key, Artikel-Token)-Paare, die ein Snapshot zitiert — 'OR/41'-Form,
- * deduppt, nach der Korroborations-Regel (siehe `artikelSchluesselMitBefund`).
+ * deduppt. Quelle sind die Roh-statutes UND der um den Zitier-Apparat bereinigte
+ * Fliesstext (Baustein d + Gegenprüfung R3). Der Ausschluss mehrdeutiger Kürzel
+ * wirkt bereits in `normKeyFuerAbk`.
+ *
+ * KEINE SCHWELLE, KEINE KORROBORATION (Rückbau 28.7.2026). Jede erkannte Nennung
+ * ausserhalb des Zitier-Apparats zählt — einmal genannt genügt. Die zwischenzeitliche
+ * Häufigkeits-Regel (≥2 Nennungen, Commit 5e8b49c0) ist entfernt: sie hat in der
+ * gleichverteilten Stichprobe ihrer eigenen Verwerfungen rund die Hälfte ECHTE
+ * Rechtsanwendung getroffen (ATSG/17, ZPO/138, OR/30, STPO/428, EMRK/6). Wer sie
+ * wieder einführen will, muss zuerst diese Messung widerlegen (§1).
+ *
  * EINE Stelle (§5): Live-Index (baueArtikelIndex) und Oracle-Tor
  * (check-rangliste-oracle) rechnen mit derselben Funktion, sonst driftet das
  * Tor von dem weg, was es prüfen soll.
  */
 export function artikelSchluesselVonSnapshot(snap: EntscheidSnapshot): Set<string> {
-  return artikelSchluesselMitBefund(snap).schluessel;
+  const out = new Set<string>();
+  const text = (snap.zitierteNormen ?? []).join('\n') + '\n' + fliesstextOhneApparat(snap);
+  for (const ref of extrahiereStatutRefs(text)) {
+    const rk = normKeyFuerAbk(ref.gesetz);
+    if (!rk) continue;
+    out.add(`${rk}/${ref.artikel}`);
+  }
+  return out;
+}
+
+/**
+ * Artikel-Schlüssel PLUS die Zahl dessen, was die Literatur-Kontext-Regel diesem
+ * Snapshot genommen hat — für die Verwurf-Statistik des `--remap`-Laufs.
+ *
+ * WARUM GEZÄHLT WIRD (§6.7): ein Filter, dessen Wirkung niemand sieht, ist ein Tor,
+ * das nicht scheitern kann. `literaturVerworfen` sind die Artikel-Schlüssel, die der
+ * ROHE Text erzeugt hätte und der bereinigte nicht mehr — ein Sprung nach oben heisst
+ * «die Marker greifen zu weit oder der Text hat sich geändert», ein Sprung nach unten
+ * «die Regel ist versehentlich entschärft». `literaturNennungen` zählt die
+ * Roh-Vorkommen INNERHALB der entfernten Spannen, `literaturSpannenZahl` die Spannen.
+ *
+ * Die Schlüssel-Menge ist BITGLEICH die von `artikelSchluesselVonSnapshot` — sie wird
+ * von dort geholt, nicht nachgebaut (§5).
+ */
+export function artikelSchluesselMitBefund(snap: EntscheidSnapshot): {
+  schluessel: Set<string>;
+  literaturVerworfen: string[];
+  literaturNennungen: number;
+  literaturSpannenZahl: number;
+} {
+  const schluessel = artikelSchluesselVonSnapshot(snap);
+
+  const spannen = literaturSpannen(fliesstextVon(snap));
+  let literaturNennungen = 0;
+  for (const ref of extrahiereStatutRefsMitAnzahl(spannen.join('\n'))) literaturNennungen += ref.anzahl;
+
+  const roh = new Set<string>();
+  const rohText = (snap.zitierteNormen ?? []).join('\n') + '\n' + fliesstextVon(snap);
+  for (const ref of extrahiereStatutRefs(rohText)) {
+    const rk = normKeyFuerAbk(ref.gesetz);
+    if (rk) roh.add(`${rk}/${ref.artikel}`);
+  }
+  const literaturVerworfen = [...roh].filter((k) => !schluessel.has(k)).sort();
+
+  return { schluessel, literaturVerworfen, literaturNennungen, literaturSpannenZahl: spannen.length };
 }
 
 // legal_area (OCL) → Sachgebiet-Achse der Gesetze.

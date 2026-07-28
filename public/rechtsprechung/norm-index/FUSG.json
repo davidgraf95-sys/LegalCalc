@@ -29,6 +29,18 @@
     ],
     "3": [
       {
+        "key": "bge_146_II_73",
+        "zitierung": "BGE 146 II 73",
+        "regesteKurz": "Art. 69 ff. FusG; Art. 16 Abs. 2 MWSTG 2009; partielle mehrwertsteuerliche Steuernachfolge bei Übertragung eines Teilvermögens im Sinne des Fusionsgesetzes. Nach dem Mehrwertsteuerrecht von 1994 und 1999 setzte die Steuernachfolge der über…",
+        "datum": "2020-02-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "4": [
+      {
         "key": "bge_148_III_362",
         "zitierung": "BGE 148 III 362",
         "regesteKurz": "Art. 23 Abs. 1 lit. b FusG; erleichterte Fusion; indirekte Beteiligungsverhältnisse. Das erleichterte Fusionsverfahren gemäss Art. 23 Abs. 1 lit. b FusG ist nur bei direkten Beteiligungsverhältnissen anwendbar (E. 2-6). Regeste Art. 23 al.…",
@@ -39,7 +51,7 @@
         "gewicht": 0
       }
     ],
-    "4": [
+    "7": [
       {
         "key": "bge_148_III_362",
         "zitierung": "BGE 148 III 362",
@@ -135,7 +147,43 @@
         "gewicht": 0
       }
     ],
+    "25": [
+      {
+        "key": "bge_148_III_362",
+        "zitierung": "BGE 148 III 362",
+        "regesteKurz": "Art. 23 Abs. 1 lit. b FusG; erleichterte Fusion; indirekte Beteiligungsverhältnisse. Das erleichterte Fusionsverfahren gemäss Art. 23 Abs. 1 lit. b FusG ist nur bei direkten Beteiligungsverhältnissen anwendbar (E. 2-6). Regeste Art. 23 al.…",
+        "datum": "2022-08-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "29": [
+      {
+        "key": "bge_148_II_259",
+        "zitierung": "BGE 148 II 259",
+        "regesteKurz": "Art. 24 Abs. 3 StHG; Art. 80 Abs. 4 BVG; Aufschub der Grundstückgewinnsteuer bei Übertragung des Immobilienbestands einer Pensionskasse auf eine Anlagestiftung im Austausch gegen Beteiligungsrechte am Immobilienportfolio dieser Anlagestift…",
+        "datum": "2022-02-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "37": [
+      {
+        "key": "bge_148_II_259",
+        "zitierung": "BGE 148 II 259",
+        "regesteKurz": "Art. 24 Abs. 3 StHG; Art. 80 Abs. 4 BVG; Aufschub der Grundstückgewinnsteuer bei Übertragung des Immobilienbestands einer Pensionskasse auf eine Anlagestiftung im Austausch gegen Beteiligungsrechte am Immobilienportfolio dieser Anlagestift…",
+        "datum": "2022-02-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "51": [
       {
         "key": "bge_148_II_259",
         "zitierung": "BGE 148 II 259",
@@ -149,10 +197,44 @@
     ],
     "69": [
       {
+        "key": "bge_148_III_362",
+        "zitierung": "BGE 148 III 362",
+        "regesteKurz": "Art. 23 Abs. 1 lit. b FusG; erleichterte Fusion; indirekte Beteiligungsverhältnisse. Das erleichterte Fusionsverfahren gemäss Art. 23 Abs. 1 lit. b FusG ist nur bei direkten Beteiligungsverhältnissen anwendbar (E. 2-6). Regeste Art. 23 al.…",
+        "datum": "2022-08-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_146_II_73",
         "zitierung": "BGE 146 II 73",
         "regesteKurz": "Art. 69 ff. FusG; Art. 16 Abs. 2 MWSTG 2009; partielle mehrwertsteuerliche Steuernachfolge bei Übertragung eines Teilvermögens im Sinne des Fusionsgesetzes. Nach dem Mehrwertsteuerrecht von 1994 und 1999 setzte die Steuernachfolge der über…",
         "datum": "2020-02-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "88": [
+      {
+        "key": "bge_148_II_259",
+        "zitierung": "BGE 148 II 259",
+        "regesteKurz": "Art. 24 Abs. 3 StHG; Art. 80 Abs. 4 BVG; Aufschub der Grundstückgewinnsteuer bei Übertragung des Immobilienbestands einer Pensionskasse auf eine Anlagestiftung im Austausch gegen Beteiligungsrechte am Immobilienportfolio dieser Anlagestift…",
+        "datum": "2022-02-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "98": [
+      {
+        "key": "bge_148_II_259",
+        "zitierung": "BGE 148 II 259",
+        "regesteKurz": "Art. 24 Abs. 3 StHG; Art. 80 Abs. 4 BVG; Aufschub der Grundstückgewinnsteuer bei Übertragung des Immobilienbestands einer Pensionskasse auf eine Anlagestiftung im Austausch gegen Beteiligungsrechte am Immobilienportfolio dieser Anlagestift…",
+        "datum": "2022-02-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

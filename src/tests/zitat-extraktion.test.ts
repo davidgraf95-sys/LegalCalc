@@ -556,6 +556,54 @@ describe('Gegenprüfung R2/B2 — Folge-Marker f./s./seg. und Wort-Bereiche', ()
   });
 });
 
+// ── Gegenprüfung R3 — die gesammelten BEKANNTEN LÜCKEN, test-gepinnt ────────
+//
+// KEINE Verhaltensänderung: dieser Block schreibt fest, was der Extraktor HEUTE
+// NICHT sieht. Er ist die Gegenprobe zum Lücken-Block im Modul-Kopf von
+// zitat-extraktion.ts — eine dort behauptete Lücke, die in Wahrheit keine ist
+// (oder eine, die klammheimlich zugeht), wird hier rot. Nummerierung = L1…L8.
+//
+// Warum als Test und nicht bloss als Kommentar: eine Lücke, die niemand pinnt,
+// verschwindet irgendwann unbemerkt — und mit ihr die Begründung, warum sie
+// hingenommen wurde. Wer eine dieser Zeilen ändert, ändert Rechtsauskunft und
+// muss das begründen (§6.3/§8).
+describe('Gegenprüfung R3 — bekannte Extraktions-Lücken (L1–L8), gepinnt', () => {
+  it('L2 · «§» ist kein Artikel-Marker (kantonale Zählweise, 19\'320 Vorkommen)', () => {
+    expect(normen('§ 12 Abs. 2 EG ZGB')).toEqual([]);
+    expect(normen('gemäss § 115 GOG')).toEqual([]);
+    // Gegenprobe: dieselbe Norm mit «Art.» wird sehr wohl erkannt.
+    expect(normen('Art. 12 Abs. 2 ZGB')).toEqual(['ART.12.ABS.2.ZGB']);
+  });
+
+  it('L4 · Kette mit CODE-WECHSEL — Nicht-End-Glieder fallen weg (BGE 149 I 343)', () => {
+    expect(normen('les art. 30 Cst. et 6 CEDH')).toEqual(['ART.30.CST']);
+    // Gegenprobe: die Kette OHNE Code-Wechsel ist vollständig.
+    expect(normen('les art. 30 et 36 Cst.')).toEqual(['ART.30.CST', 'ART.36.CST']);
+  });
+
+  it('L5 · wiederholtes «art.» mit EINEM Schluss-Code — nur das letzte Glied', () => {
+    expect(normen('art. 8 par. 1, art. 11 et art. 20 par. 3 CEDH'))
+      .toEqual(['ART.20.ABS.3.CEDH']);
+    // Gegenprobe: ohne die «art.»-Wiederholung trägt die Kette alle Glieder.
+    expect(normen('art. 8, 11 et 20 CEDH'))
+      .toEqual(['ART.8.CEDH', 'ART.11.CEDH', 'ART.20.CEDH']);
+  });
+
+  it('L6 · Bereichs-Endpunkte werden NICHT indexiert (Start-Artikel-Regel)', () => {
+    // «Art. 75 bis 77 AIG» → AIG/75; Art. 76 und Art. 77 bekommen KEINEN Eintrag.
+    // Der Endpunkt lebt allein in `artikelBis` (Anzeige), nie im Norm-Key.
+    expect(normen('Art. 75 bis 77 AIG')).toEqual(['ART.75.AIG']);
+    expect(extrahiereStatutRefs('Art. 75 bis 77 AIG')[0].artikelBis).toBe('77');
+    expect(normen('Art. 641-654a ZGB')).toEqual(['ART.641.ZGB']);
+  });
+
+  it('L8 · «lit. a.» mit Satzpunkt bricht den Match (49 Vorkommen, SB.2024.90)', () => {
+    expect(normen('Art. 138 Abs. 3 lit. a. ZPO')).toEqual([]);
+    // Ohne den Punkt hinter dem Sub-Token trägt dasselbe Zitat:
+    expect(normen('Art. 138 Abs. 3 lit. a ZPO')).toEqual(['ART.138.ABS.3.ZPO']);
+  });
+});
+
 // ── Gegenprüfung R1/B2 — frz. Absatz-Marker «par.» (paragraphe) ─────────────
 describe('Gegenprüfung R1/B2 — «par.» als Absatz-Marker (Staatsverträge)', () => {
   it('BGE 149 I 343 / 149 II 74 / 148 V 225: «art. 6 par. 1 CEDH»', () => {

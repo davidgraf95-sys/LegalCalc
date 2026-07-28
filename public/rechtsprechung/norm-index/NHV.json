@@ -47,6 +47,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_146_II_304",
+        "zitierung": "BGE 146 II 304",
+        "regesteKurz": "Besitzstandsschutz von zonenwidrigen Bauten ausserhalb der Bauzone im Gewässerraum (Art. 41c Abs. 2 GSchV; Art. 24c RPG). Art. 41c GSchV enthält eine gegenüber Art. 24c RPG eigenständige Besitzstandsgarantie (abweichend von Urteil 1C_345/2…",
+        "datum": "2020-04-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_146_II_347",
         "zitierung": "BGE 146 II 347",
         "regesteKurz": "Art. 18, 18a NHG, Art. 3, 4, 5 Auenverordnung, Art. 17 RPG, Art. 18, 19, 21 EBG, Art. 2, 5, 7 JSG, Art. 4 FWG; Schutz eines Auengebiets von nationaler Bedeutung. Schutz der Biotop-Inventargebiete von nationaler Bedeutung durch die vom Bund…",
@@ -79,12 +89,34 @@
         "gewicht": 0
       }
     ],
+    "23": [
+      {
+        "key": "bge_147_II_125",
+        "zitierung": "BGE 147 II 125",
+        "regesteKurz": "§§ 205 und 207 PBG/ZH; Inventarentlassung; Abwägung zwischen Schutzinteressen und entgegenstehenden (öffentlichen) Interessen bei einem denkmalpflegerisch hochrangigen Schutzobjekt. Es ist nicht generell unzulässig, bei der Suche nach Mögl…",
+        "datum": "2020-08-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "29": [
       {
         "key": "bge_147_II_164",
         "zitierung": "BGE 147 II 164",
         "regesteKurz": "a Art. 8 und 8b RPG; Art. 10 und 12 EnG; Art. 6 NHG; Art. 29 NHV; Art. 54 lit. h WRG; Ausbau des Grimselstausees; Kantonaler Richtplan, Erweiterung erneuerbarer Stromproduktion, Beeinträchtigung eines neuen potenziellen Schutzgebiets, Real…",
         "datum": "2020-11-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_II_347",
+        "zitierung": "BGE 146 II 347",
+        "regesteKurz": "Art. 18, 18a NHG, Art. 3, 4, 5 Auenverordnung, Art. 17 RPG, Art. 18, 19, 21 EBG, Art. 2, 5, 7 JSG, Art. 4 FWG; Schutz eines Auengebiets von nationaler Bedeutung. Schutz der Biotop-Inventargebiete von nationaler Bedeutung durch die vom Bund…",
+        "datum": "2020-03-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

@@ -67,9 +67,39 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_312",
+        "zitierung": "BGE 147 V 312",
+        "regesteKurz": "Art. 14 Abs. 1 lit. b ELG; Art. 13 Abs. 1 der st. gallischen Verordnung über die Vergütung von Krankheits- und Behinderungskosten bei Ergänzungsleistungen; Art. 8 Abs. 1 und Art. 13 Abs. 1 BV; Krankheits- und Behinderungskosten. Eine kanto…",
+        "datum": "2021-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "4": [
+      {
+        "key": "bge_151_V_198",
+        "zitierung": "BGE 151 V 198",
+        "regesteKurz": "Art. 22 bis Abs. 5 und Art. 23 IVG; Art. 20 sexies Abs. 1, Art. 21 septies Abs. 5 und Art. 21 Abs. 3 IVV; Art. 4 und 5 Bst. a der Verordnung (EG) Nr. 883/ 2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung…",
+        "datum": "2024-11-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_V_185",
+        "zitierung": "BGE 149 V 185",
+        "regesteKurz": "Art. 9, 10 und 11 ELG; Art. 4, 5, 11a und 14a ELV; gemeinsame Berechnung der Ergänzungsleistungen einer Bezügerin von Leistungen der IV und ihres Kindes, welches eine Kinderrente der IV bezieht und mit ihr in einem gemeinsamen Haushalt leb…",
+        "datum": "2023-05-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_147_V_441",
         "zitierung": "BGE 147 V 441",
@@ -81,7 +111,29 @@
         "gewicht": 0
       }
     ],
+    "7": [
+      {
+        "key": "bge_149_V_136",
+        "zitierung": "BGE 149 V 136",
+        "regesteKurz": "Art. 114 Abs. 5 BV; Art. 3 Abs. 1, Art. 4 Abs. 1 und Art. 5 Abs. 1 lit. b ÜLG (in Kraft seit 1. Juli 2021); Art. 8, Art. 15 und Art. 16 des Abkommens vom 21. Juni 1999 zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europ…",
+        "datum": "2023-05-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "9": [
+      {
+        "key": "bge_147_V_312",
+        "zitierung": "BGE 147 V 312",
+        "regesteKurz": "Art. 14 Abs. 1 lit. b ELG; Art. 13 Abs. 1 der st. gallischen Verordnung über die Vergütung von Krankheits- und Behinderungskosten bei Ergänzungsleistungen; Art. 8 Abs. 1 und Art. 13 Abs. 1 BV; Krankheits- und Behinderungskosten. Eine kanto…",
+        "datum": "2021-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_146_V_306",
         "zitierung": "BGE 146 V 306",
@@ -91,6 +143,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_326",
+        "zitierung": "BGE 151 V 326",
+        "regesteKurz": "Art. 11a Abs. 2 ELG; Vermögensverzicht und sittliche Unterstützungspflicht unter Geschwistern. Es erscheint fraglich, ob eine über die gesetzlichen Pflichten gemäss Art. 328 ff. ZGB hinausgehende sittliche finanzielle Unterstützungspflicht…",
+        "datum": "2025-05-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_V_24",
@@ -137,16 +199,6 @@
         "zitierung": "BGE 149 V 185",
         "regesteKurz": "Art. 9, 10 und 11 ELG; Art. 4, 5, 11a und 14a ELV; gemeinsame Berechnung der Ergänzungsleistungen einer Bezügerin von Leistungen der IV und ihres Kindes, welches eine Kinderrente der IV bezieht und mit ihr in einem gemeinsamen Haushalt leb…",
         "datum": "2023-05-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_V_441",
-        "zitierung": "BGE 147 V 441",
-        "regesteKurz": "Art. 9 Abs. 2 und Art. 10 Abs. 3 lit. e ELG; Berechnung der Ergänzungsleistung bei Personen, die eine Hilflosenentschädigung der IV beziehen. Eine gemeinsame EL-Berechnung im Sinne von Art. 9 Abs. 2 ELG findet bei Personen, die eine Hilflo…",
-        "datum": "2021-09-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -227,6 +279,16 @@
     ],
     "11": [
       {
+        "key": "bge_146_V_331",
+        "zitierung": "BGE 146 V 331",
+        "regesteKurz": "Art. 11 Abs. 1 lit. c ELG; Art. 16 Abs. 2 FZV; Zeitpunkt der Anrechnung von Guthaben eines Freizügigkeitskontos bei rückwirkender Ausrichtung von Ergänzungsleistungen zur Invalidenrente. Übersicht über die Rechtsprechung. Ein verzehrbarer…",
+        "datum": "2020-09-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_146_V_306",
         "zitierung": "BGE 146 V 306",
         "regesteKurz": "Art. 11 Abs. 1 lit. g ELG; anrechenbare Einnahmen bei Verschwendung des Vermögens. Auch wenn Ergänzungsleistungen ein gewisser sozialhilferechtlicher Charakter beigemessen wird, bleiben sie Sozialversicherungsleistungen. Bestätigung der Re…",
@@ -241,16 +303,6 @@
         "zitierung": "BGE 149 V 185",
         "regesteKurz": "Art. 9, 10 und 11 ELG; Art. 4, 5, 11a und 14a ELV; gemeinsame Berechnung der Ergänzungsleistungen einer Bezügerin von Leistungen der IV und ihres Kindes, welches eine Kinderrente der IV bezieht und mit ihr in einem gemeinsamen Haushalt leb…",
         "datum": "2023-05-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_146_V_331",
-        "zitierung": "BGE 146 V 331",
-        "regesteKurz": "Art. 11 Abs. 1 lit. c ELG; Art. 16 Abs. 2 FZV; Zeitpunkt der Anrechnung von Guthaben eines Freizügigkeitskontos bei rückwirkender Ausrichtung von Ergänzungsleistungen zur Invalidenrente. Übersicht über die Rechtsprechung. Ein verzehrbarer…",
-        "datum": "2020-09-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -277,6 +329,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_150_V_440",
+        "zitierung": "BGE 150 V 440",
+        "regesteKurz": "Art. 16 Abs. 2 FZV; Berücksichtigung des Guthabens auf einem Freizügigkeitskonto bei der Berechnung der Ergänzungsleistungen; Parallelverfahren auf Zusprechung einer Invalidenrente der beruflichen Vorsorge. Das Recht auf Auszahlung einer A…",
+        "datum": "2024-07-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_V_198",
         "zitierung": "BGE 150 V 198",
         "regesteKurz": "Art. 114 Abs. 5 BV; Art. 5 Abs. 1 lit. c und Art. 13 Abs. 2 und 3 ÜLG (in Kraft seit 1. Juli 2021); Überbrückungsleistungen für ältere Arbeitslose; Anspruchsvoraussetzungen für die Überbrückungsleistungen; Verzicht auf Vermögenswerte; Ausl…",
@@ -291,16 +353,6 @@
         "zitierung": "BGE 150 V 105",
         "regesteKurz": "Art. 8 Abs. 1 BV; Art. 14 Abs. 1 lit. b und Abs. 2 ELG; Art. 12 Abs. 1 der st. gallischen Verordnung vom 11. Dezember 2007 über die Vergütung von Krankheits- und Behinderungskosten bei den Ergänzungsleistungen; Pflege und Betreuung durch i…",
         "datum": "2024-03-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_V_161",
-        "zitierung": "BGE 150 V 161",
-        "regesteKurz": "Art. 5 Abs. 2, Art. 6, Art. 113 BV; Art. 1 Abs. 1 BVG; Art. 2-4 FZG; Art. 16 Abs. 1 FZV; Art. 92 Abs. 1 Ziff. 10 und Art. 93 SchKG; § 5 Abs. 1, § 6 Abs. 3, § 7 Abs. 1, § 11, § 13a Abs. 1 des Gesetzes des Kantons Basel-Landschaft vom 21. Ju…",
-        "datum": "2024-02-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -325,6 +377,16 @@
         "zitierung": "BGE 147 V 312",
         "regesteKurz": "Art. 14 Abs. 1 lit. b ELG; Art. 13 Abs. 1 der st. gallischen Verordnung über die Vergütung von Krankheits- und Behinderungskosten bei Ergänzungsleistungen; Art. 8 Abs. 1 und Art. 13 Abs. 1 BV; Krankheits- und Behinderungskosten. Eine kanto…",
         "datum": "2021-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_306",
+        "zitierung": "BGE 146 V 306",
+        "regesteKurz": "Art. 11 Abs. 1 lit. g ELG; anrechenbare Einnahmen bei Verschwendung des Vermögens. Auch wenn Ergänzungsleistungen ein gewisser sozialhilferechtlicher Charakter beigemessen wird, bleiben sie Sozialversicherungsleistungen. Bestätigung der Re…",
+        "datum": "2020-06-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -425,6 +487,18 @@
         "gewicht": 0
       }
     ],
+    "25": [
+      {
+        "key": "bge_148_V_21",
+        "zitierung": "BGE 148 V 21",
+        "regesteKurz": "Art. 21 Abs. 1 und 1 quater ELG; aArt. 21 Abs. 1 ELG (aufgehoben Ende 2020); Art. 13 Abs. 1 ATSG; Art. 25 Abs. 1 und 2 ZGB; Zuständigkeit für die Festsetzung und Auszahlung von Ergänzungsleistungen. Bei einem minderjährigen Kind unter Vorm…",
+        "datum": "2021-12-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "11a": [
       {
         "key": "bge_146_V_306",
@@ -501,6 +575,16 @@
     ],
     "16b": [
       {
+        "key": "bge_151_V_264",
+        "zitierung": "BGE 151 V 264",
+        "regesteKurz": "Art. 16a Abs. 1 ELG; Art. 27a Abs. 1 ELV; Rz. 4720.03 der Wegleitung über die Ergänzungsleistungen zur AHV und IV (WEL); Rückforderung rechtmässig bezogener Leistungen; Ermittlung des Nachlasses der verstorbenen EL-Bezügerin bei massgebend…",
+        "datum": "2025-04-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_V_270",
         "zitierung": "BGE 151 V 270",
         "regesteKurz": "Art. 16b ELG in Verbindung mit Art. 16a Abs. 1 ELG und Art. 27a Abs. 1 ELV; Rückerstattung rechtmässig bezogener Ergänzungsleistungen; Beginn der Verwirkungsfrist. Die einjährige relative Frist kann nicht zu laufen beginnen, solange das zu…",
@@ -541,6 +625,26 @@
         "zitierung": "BGE 150 V 198",
         "regesteKurz": "Art. 114 Abs. 5 BV; Art. 5 Abs. 1 lit. c und Art. 13 Abs. 2 und 3 ÜLG (in Kraft seit 1. Juli 2021); Überbrückungsleistungen für ältere Arbeitslose; Anspruchsvoraussetzungen für die Überbrückungsleistungen; Verzicht auf Vermögenswerte; Ausl…",
         "datum": "2024-03-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_V_161",
+        "zitierung": "BGE 150 V 161",
+        "regesteKurz": "Art. 5 Abs. 2, Art. 6, Art. 113 BV; Art. 1 Abs. 1 BVG; Art. 2-4 FZG; Art. 16 Abs. 1 FZV; Art. 92 Abs. 1 Ziff. 10 und Art. 93 SchKG; § 5 Abs. 1, § 6 Abs. 3, § 7 Abs. 1, § 11, § 13a Abs. 1 des Gesetzes des Kantons Basel-Landschaft vom 21. Ju…",
+        "datum": "2024-02-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_V_136",
+        "zitierung": "BGE 149 V 136",
+        "regesteKurz": "Art. 114 Abs. 5 BV; Art. 3 Abs. 1, Art. 4 Abs. 1 und Art. 5 Abs. 1 lit. b ÜLG (in Kraft seit 1. Juli 2021); Art. 8, Art. 15 und Art. 16 des Abkommens vom 21. Juni 1999 zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europ…",
+        "datum": "2023-05-25",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

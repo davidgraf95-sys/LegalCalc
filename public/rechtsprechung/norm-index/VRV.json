@@ -47,6 +47,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_358",
+        "zitierung": "BGE 146 IV 358",
+        "regesteKurz": "Art. 92 Abs. 2 SVG; Fahrlässige Führerflucht. Führerflucht gemäss Art. 92 Abs. 2 SVG kann auch fahrlässig begangen werden (Bestätigung der Rechtsprechung; E. 3). Regeste Art. 92 al. 2 LCR; délit de fuite par négligence. Le délit de fuite a…",
+        "datum": "2020-09-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "8": [
@@ -55,6 +65,16 @@
         "zitierung": "BGE 148 IV 374",
         "regesteKurz": "Art. 2 Abs. 1 und 2 StGB; Art. 36 Abs. 5 lit. a VRV; Rückwirkung neuen Rechts; lex mitior; Ausnahme vom Verbot des Rechtsüberholens auf Autobahnen \"beim Fahren in parallelen Kolonnen\" (sog. Rechtsvorbeifahren). Ob das neue im Vergleich zum…",
         "datum": "2022-06-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_II_96",
+        "zitierung": "BGE 149 II 96",
+        "regesteKurz": "Art. 16 Abs. 2 SVG; Art. 2 Abs. 2 StGB ;titi; Anhang 1 Ziff. 314.3 OBV; Warnungsentzug des Führerausweises wegen Rechtsüberholens auf der Autobahn; Grundsatz der lex mitior; Beurteilung als Ordnungswidrigkeit. Beim Entscheid über die Anwen…",
+        "datum": "2022-11-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -77,6 +97,54 @@
         "zitierung": "BGE 149 II 96",
         "regesteKurz": "Art. 16 Abs. 2 SVG; Art. 2 Abs. 2 StGB ;titi; Anhang 1 Ziff. 314.3 OBV; Warnungsentzug des Führerausweises wegen Rechtsüberholens auf der Autobahn; Grundsatz der lex mitior; Beurteilung als Ordnungswidrigkeit. Beim Entscheid über die Anwen…",
         "datum": "2022-11-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "47": [
+      {
+        "key": "bge_148_III_343",
+        "zitierung": "BGE 148 III 343",
+        "regesteKurz": "Art. 40b Abs. 1 EBG; Gefährdungshaftung nach Eisenbahngesetz; Art. 40c EBG; Entlastungsgründe. Nach Art. 40c EBG wird der Inhaber eines Eisenbahnunternehmens von der Haftpflicht für den Schaden aus dem Betrieb der Eisenbahn entlastet, wenn…",
+        "datum": "2022-05-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "56": [
+      {
+        "key": "bge_149_IV_153",
+        "zitierung": "BGE 149 IV 153",
+        "regesteKurz": "Art. 4 Abs. 2 Rahmenabkommen über die Grenzabfertigung mit Deutschland; Art. 3 StGB; Art. 95 Abs. 1 lit. b SVG; Art. 4 SKV; mangelnde Fahrberechtigung beim bevorstehenden Grenzübertritt; örtliche Zuständigkeit und anwendbares Recht. Schwei…",
+        "datum": "2023-02-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "4a": [
+      {
+        "key": "bge_149_IV_153",
+        "zitierung": "BGE 149 IV 153",
+        "regesteKurz": "Art. 4 Abs. 2 Rahmenabkommen über die Grenzabfertigung mit Deutschland; Art. 3 StGB; Art. 95 Abs. 1 lit. b SVG; Art. 4 SKV; mangelnde Fahrberechtigung beim bevorstehenden Grenzübertritt; örtliche Zuständigkeit und anwendbares Recht. Schwei…",
+        "datum": "2023-02-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "59a": [
+      {
+        "key": "bge_150_I_120",
+        "zitierung": "BGE 150 I 120",
+        "regesteKurz": "Art. 8, 27, 49 Abs. 1, 74, 82 Abs. 1, 89 Abs. 3 und 94 BV; Art. 106 Abs. 3 SVG; Art. 10-13 CO2-Gesetz; Art. 17f Abs. 2 lit. a CO2-Verordnung; Art. 10 und Anhang 4.1 EnEV; Art. 10 Abs. 2 lit. c, 18 Abs. 2, 24 Abs. 2 und 26 Abs. 2 des Genfer…",
+        "datum": "2024-02-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

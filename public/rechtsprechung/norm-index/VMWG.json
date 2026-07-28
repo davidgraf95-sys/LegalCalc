@@ -24,7 +24,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_147_III_14",
+        "zitierung": "BGE 147 III 14",
+        "regesteKurz": "Art. 269, 270 OR; Anfechtung des Anfangsmietzinses; Berechnung der Nettorendite; Teuerungsanpassung des Eigenkapitals und Eigenkapitalrendite (Rechtsprechungsänderung). Absolute Methode und anwendbare Kriterien für die Kontrolle des Anfang…",
+        "datum": "2020-10-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
       },
       {
         "key": "bge_147_III_431",
@@ -37,14 +47,14 @@
         "gewicht": 1
       },
       {
-        "key": "bge_147_III_14",
-        "zitierung": "BGE 147 III 14",
-        "regesteKurz": "Art. 269, 270 OR; Anfechtung des Anfangsmietzinses; Berechnung der Nettorendite; Teuerungsanpassung des Eigenkapitals und Eigenkapitalrendite (Rechtsprechungsänderung). Absolute Methode und anwendbare Kriterien für die Kontrolle des Anfang…",
-        "datum": "2020-10-26",
+        "key": "bge_151_III_201",
+        "zitierung": "BGE 151 III 201",
+        "regesteKurz": "Art. 269a lit. c OR; Art. 58 ZPO; Anfechtung des Anfangsmietzinses; Dispositionsmaxime; Berechnung der Bruttorendite. Berechnung des zulässigen Mietzinses gemäss der Bruttorenditemethode; Grundsätze (E. 4). Das Gericht, das zur Festlegung…",
+        "datum": "2024-10-31",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 0
       },
       {
         "key": "bge_150_III_123",

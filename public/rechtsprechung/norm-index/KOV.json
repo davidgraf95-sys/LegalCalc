@@ -3,6 +3,18 @@
   "erlass": "KOV",
   "gewichtQuelle": "alt",
   "proArtikel": {
+    "27": [
+      {
+        "key": "bge_151_III_190",
+        "zitierung": "BGE 151 III 190",
+        "regesteKurz": "Art. 230 Abs. 2, Art. 262 Abs. 2 SchKG; Art. 39 und 85 KOV; Sicherheit für die Durchführung des Konkursverfahrens. Die Kosten für die Verwertung von Pfandgegenständen sind bei der Festlegung der Höhe der Sicherheitsleistung gemäss Art. 230…",
+        "datum": "2024-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "39": [
       {
         "key": "bge_151_III_190",
@@ -25,9 +37,7 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      }
-    ],
-    "80": [
+      },
       {
         "key": "bge_149_III_422",
         "zitierung": "BGE 149 III 422",

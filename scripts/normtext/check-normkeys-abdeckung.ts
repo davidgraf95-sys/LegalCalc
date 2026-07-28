@@ -16,7 +16,10 @@
  *   (a) statutes-Pfad   — Trailing-Token je Roh-Zeile aus `zitierteNormen`,
  *                         über `abkVonStatut` (dieselbe Funktion, die
  *                         `statutesZuNormKeys` benutzt);
- *   (b) Fliesstext-Pfad — `ref.gesetz` aus `extrahiereStatutRefs(fliesstextVon(snap))`.
+ *   (b) Fliesstext-Pfad — `ref.gesetz` aus
+ *                         `extrahiereStatutRefs(fliesstextOhneApparat(snap))`;
+ *                         also derselbe um die Zitier-Apparat-Spannen bereinigte
+ *                         Text, den auch `normKeysVonSnapshot` liest (R3).
  * Jedes Token wird mit `normalisiereAbk` normalisiert und einer von drei Klassen
  * zugeordnet: GEMAPPT (`normKeyFuerAbk` ≠ null), AUSGESCHLOSSEN (steht in
  * `ABK_AUSSCHLUSS` — bewusste Lücke, zählt NICHT als ungemappt, wird aber
@@ -75,6 +78,34 @@
  * liest sie falsch: sie sagt «wie viel wurde zugeordnet», nie «wie viel wurde
  * richtig zugeordnet».
  *
+ * ── DIE RICHTUNGS-UMKEHR, ausdrücklich (Gegenprüfung R3, Befund 3) ───────────
+ *
+ * Der vorstehende Absatz sagt, das Tor könne eine Fehlzuordnung nicht SEHEN. Das
+ * ist noch zu freundlich formuliert, und die Untertreibung ist gefährlich, weil
+ * sie zur falschen Lesart einlädt. Die Wirkung ist nicht neutral, sondern
+ * GEGENLÄUFIG:
+ *
+ *   Eine gemappte PHANTOM-Nennung HEBT die Quote.
+ *
+ * Ein Artikel, der ausschliesslich im Literaturnachweis eines Kommentars steht
+ * («… Ein Kommentar zu Art. 261bis StGB und Art. 171c MStG, 2007»), erzeugt ein
+ * Token, das `normKeyFuerAbk` sauber auflöst. Er zählt hier als GEMAPPT, im
+ * Zähler wie im Nenner — obwohl das Gericht die Norm nirgends anwendet. Je mehr
+ * Literatur ein Entscheid zitiert, desto besser sieht dieses Tor aus. Wer die
+ * Quote maximieren wollte, müsste die Zitat-Erkennung LOCKERER machen, nicht
+ * genauer. Das ist die Umkehrung dessen, was ein Qualitätsmass tun müsste.
+ *
+ * Daraus folgen zwei Dinge, beide bewusst:
+ *  · Die Literatur-Kontext-Regel (`ohneLiteraturApparat`) senkt die Quote
+ *    tendenziell — und das ist ein FORTSCHRITT, kein Rückschritt. Ein Sinken
+ *    dieser Zahl darf niemals als Regression gelesen werden; die Ausgabe weist
+ *    darum die Zahl der entfernten Zitier-Apparat-Spannen mit aus.
+ *  · Dieses Tor bleibt ein ABDECKUNGS-Tor. Die Qualität der ZUORDNUNG sichern
+ *    die adversariale Gegenprüfung und die fachliche Abnahme (§7), nicht diese
+ *    Prozentzahl. Ein grünes check:normkeys sagt: «fast jedes gebildete Token
+ *    fand einen Register-key» — nicht «die Zuordnungen sind richtig», und schon
+ *    gar nicht «die Zitate sind echte Rechtsanwendung».
+ *
  * ── ZWEITE STRUKTURELLE GRENZE: DIE AUFLÖSUNG (Gegenprüfung R1/B3, 28.7.2026) ─
  *
  * Dieses Tor misst ausschliesslich die ERLASS-Ebene — Klassen und Quote zählen
@@ -110,12 +141,17 @@ import {
   ABK_AUSSCHLUSS,
   ABK_KOLLISIONEN,
   abkVonStatut,
+  fliesstextOhneApparat,
   fliesstextVon,
+  literaturSpannen,
+  LITERATUR_MARKER,
   normKeyFuerAbk,
   normalisiereAbk,
 } from './entscheide-mapping';
 import { ABK_ALIASE } from '../../src/lib/normtext/abk-aliase.generated';
-import { extrahiereStatutRefs, INVALID_LAW_CODES } from '../../src/lib/rechtsprechung/zitat-extraktion';
+import {
+  extrahiereStatutRefs, extrahiereStatutRefsMitAnzahl, INVALID_LAW_CODES,
+} from '../../src/lib/rechtsprechung/zitat-extraktion';
 import { vergleiche } from './vergleich';
 
 /** Snapshot-Frequenz, ab der ein ungemapptes Token das Tor rot macht. */
@@ -302,7 +338,11 @@ function erhebe(snaps: readonly ReturnType<typeof ladeBestandSnapshots>[number][
       hole(token).statutes += 1;
       imSnapshot.add(token);
     }
-    for (const ref of extrahiereStatutRefs(fliesstextVon(snap))) {
+    // BEREINIGTER Text (Gegenprüfung R3): das Tor MUSS dieselben Kandidaten-Token
+    // bilden wie der Produktpfad (§5). Läse es hier den rohen Fliesstext, stünden
+    // Kürzel im Nenner, die `normKeysVonSnapshot` gar nicht mehr sieht — das Tor
+    // misste dann etwas, das es nicht prüft.
+    for (const ref of extrahiereStatutRefs(fliesstextOhneApparat(snap))) {
       const token = normalisiereAbk(ref.gesetz);
       if (!token) continue;
       hole(token).fliesstext += 1;
@@ -473,7 +513,7 @@ function zaehleUnerreichbarImKorpus(
   const acc = new Map(formen.map((f) => [f, { roh: 0, zitate: 0, snapshots: 0 }]));
   let betroffeneSnapshots = 0;
   for (const snap of snaps) {
-    const text = (snap.zitierteNormen ?? []).join('\n') + '\n' + fliesstextVon(snap);
+    const text = (snap.zitierteNormen ?? []).join('\n') + '\n' + fliesstextOhneApparat(snap);
     const treffer = new Set(text.match(sammel) ?? []);
     if (treffer.size === 0) continue;
     betroffeneSnapshots += 1;
@@ -624,6 +664,16 @@ function main(): void {
     );
   }
 
+  // ── Literatur-Verwurf, gezählt (§6.7) ─────────────────────────────────────
+  let litSpannen = 0; let litNennungen = 0; let litSnapshots = 0;
+  for (const snap of snaps) {
+    const spannen = literaturSpannen(fliesstextVon(snap));
+    if (spannen.length === 0) continue;
+    litSnapshots += 1;
+    litSpannen += spannen.length;
+    for (const ref of extrahiereStatutRefsMitAnzahl(spannen.join('\n'))) litNennungen += ref.anzahl;
+  }
+
   // ── Ausgabe ───────────────────────────────────────────────────────────────
   console.log(`  Snapshots:            ${snapshots}`);
   console.log(
@@ -643,6 +693,14 @@ function main(): void {
   console.log(
     `  Alias-Ebene (Fedlex): ${ABK_ALIASE.length} amtliche DE/FR/IT-Kürzel, `
     + `${ABK_ALIAS_NOTIZEN.length} nicht auflösbar`,
+  );
+  // Literatur-Kontext-Regel (Gegenprüfung R3): was der Produktpfad VOR der
+  // Extraktion aus dem Text nimmt, wird hier gezählt ausgewiesen — sonst wäre der
+  // Filter genau der stille Verwerfer, gegen den dieses Tor gebaut ist (§6.7).
+  console.log(
+    `  Literatur-Kontext-Regel: ${litSpannen} Zitier-Apparat-Spannen in `
+    + `${litSnapshots} Snapshots entfernt, darin ${litNennungen} Roh-Nennungen `
+    + `(${LITERATUR_MARKER.length} deklarierte Marker) — nicht im Nenner oben.`,
   );
   if (ABK_ALIAS_AUSGESCHLOSSEN.length > 0) {
     // Kein Fehler: die bewusst fortgeführte ABK_AUSSCHLUSS-Lücke, hier nur

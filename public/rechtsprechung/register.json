@@ -7106,7 +7106,6 @@
       "sachgebiet": "sozial-abgaben",
       "sprache": "de",
       "normKeys": [
-        "ATSG",
         "BGG",
         "BVG"
       ],
@@ -7200,7 +7199,6 @@
       "normKeys": [
         "ATSG",
         "BGG",
-        "BVG",
         "IVG",
         "IVV"
       ],
@@ -9213,7 +9211,6 @@
         "AHVG",
         "ATSG",
         "BGG",
-        "BV",
         "ELG",
         "ELV"
       ],
@@ -21877,8 +21874,7 @@
       "sprache": "de",
       "normKeys": [
         "BGG",
-        "BVG",
-        "IVG"
+        "BVG"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -24676,7 +24672,6 @@
         "DSG",
         "EMRK",
         "STGB",
-        "VWVG",
         "ZGB"
       ],
       "bestand": "snapshot",
@@ -34956,7 +34951,6 @@
         "BGG",
         "BV",
         "EMRK",
-        "GWG",
         "IRSG",
         "VSTRR"
       ],
@@ -40239,7 +40233,6 @@
       "sachgebiet": "sozial-abgaben",
       "sprache": "de",
       "normKeys": [
-        "BGFA",
         "BGG",
         "BV",
         "EMRK",
@@ -44293,7 +44286,6 @@
       "sprache": "de",
       "normKeys": [
         "BGG",
-        "BGOE",
         "RPG",
         "USG"
       ],
@@ -60235,7 +60227,6 @@
       "normKeys": [
         "BGG",
         "BV",
-        "VWVG",
         "ZGB"
       ],
       "bestand": "snapshot",
@@ -65779,7 +65770,6 @@
         "BGG",
         "BV",
         "BVG",
-        "FZG",
         "IVG",
         "OR",
         "ZGB"
@@ -67505,8 +67495,7 @@
       "sprache": "de",
       "normKeys": [
         "BGG",
-        "BVG",
-        "IVG"
+        "BVG"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -72907,8 +72896,7 @@
       "normKeys": [
         "BGG",
         "BV",
-        "OR",
-        "RPG"
+        "OR"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -76048,7 +76036,6 @@
         "BGG",
         "OR",
         "SCHKG",
-        "VWVG",
         "ZGB",
         "ZPO"
       ],
@@ -76349,7 +76336,6 @@
       "normKeys": [
         "BGG",
         "BVG",
-        "FZG",
         "FZV",
         "OR"
       ],
@@ -76611,8 +76597,7 @@
         "BV",
         "DBG",
         "VGG",
-        "VSTG",
-        "VWVG"
+        "VSTG"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -86987,8 +86972,7 @@
         "AIG",
         "BGG",
         "BV",
-        "EMRK",
-        "VWVG"
+        "EMRK"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -96155,7 +96139,6 @@
       "sachgebiet": "sozial-abgaben",
       "sprache": "de",
       "normKeys": [
-        "BANKG",
         "BGFA",
         "BGG",
         "OR",
@@ -108377,7 +108360,6 @@
         "OR",
         "STGB",
         "STPO",
-        "VSTG",
         "VSTRR",
         "VSTV"
       ],
@@ -122915,8 +122897,7 @@
       "normKeys": [
         "ATSG",
         "BGG",
-        "BV",
-        "MVG"
+        "BV"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -126594,7 +126575,6 @@
         "BV",
         "EMRK",
         "HEUE",
-        "IPRG",
         "ZGB"
       ],
       "bestand": "snapshot",
@@ -130213,7 +130193,6 @@
       "sprache": "de",
       "normKeys": [
         "BGG",
-        "BPG",
         "BV",
         "DSG",
         "EMRK"
@@ -136560,7 +136539,6 @@
         "EMRK",
         "MWSTG",
         "STGB",
-        "STPO",
         "VSTRR"
       ],
       "bestand": "snapshot",
@@ -141206,7 +141184,6 @@
       "normKeys": [
         "BGG",
         "BV",
-        "MSTG",
         "STGB"
       ],
       "bestand": "snapshot",
@@ -148561,7 +148538,6 @@
       "normKeys": [
         "ATSG",
         "BGG",
-        "BVG",
         "IVG"
       ],
       "bestand": "snapshot",
@@ -149741,8 +149717,7 @@
       "normKeys": [
         "BGG",
         "BV",
-        "STPO",
-        "SVG"
+        "STPO"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -151086,8 +151061,7 @@
         "BV",
         "EMRK",
         "STPO",
-        "VWVG",
-        "ZPO"
+        "VWVG"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -156120,7 +156094,6 @@
       "normKeys": [
         "ATSG",
         "BGG",
-        "BVG",
         "IVG"
       ],
       "bestand": "snapshot",
@@ -159090,7 +159063,6 @@
         "ATSG",
         "BGG",
         "BV",
-        "DBG",
         "OR",
         "UVG",
         "VWVG"
@@ -173843,8 +173815,7 @@
       "normKeys": [
         "BGG",
         "STGB",
-        "STPO",
-        "ZGB"
+        "STPO"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -179875,7 +179846,6 @@
         "BGG",
         "BV",
         "EMRK",
-        "STGB",
         "ZGB"
       ],
       "bestand": "snapshot",
@@ -182396,8 +182366,7 @@
       "normKeys": [
         "BGG",
         "BV",
-        "DBG",
-        "STHG"
+        "DBG"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -222632,7 +222601,6 @@
         "BV",
         "OR",
         "SCHKG",
-        "VWVG",
         "ZPO"
       ],
       "bestand": "snapshot",
@@ -224819,7 +224787,6 @@
         "ASYLG",
         "BGG",
         "BV",
-        "RVOG",
         "VG"
       ],
       "bestand": "snapshot",
@@ -239762,7 +239729,6 @@
       "sachgebiet": "oeffentlich",
       "sprache": "de",
       "normKeys": [
-        "BEG",
         "BGG",
         "OR",
         "STPO",
@@ -240694,7 +240660,6 @@
         "KG",
         "OR",
         "STGB",
-        "USG",
         "VGG",
         "VWVG"
       ],
@@ -240776,8 +240741,7 @@
       "sprache": "fr",
       "normKeys": [
         "ATSG",
-        "BGG",
-        "IVG"
+        "BGG"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -241431,7 +241395,6 @@
       "normKeys": [
         "ATSG",
         "BGG",
-        "IVG",
         "UVG",
         "UVV"
       ],
@@ -248264,7 +248227,6 @@
       "normKeys": [
         "BGG",
         "HREGV",
-        "KOV",
         "OR",
         "SCHKG",
         "VZG",
@@ -256064,7 +256026,6 @@
       "sprache": "fr",
       "normKeys": [
         "BGG",
-        "BUEG",
         "BV",
         "SVG"
       ],
@@ -258410,8 +258371,7 @@
         "ATSG",
         "BGG",
         "BV",
-        "EMRK",
-        "UVG"
+        "EMRK"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -260200,8 +260160,7 @@
         "BUEG",
         "BV",
         "IPRG",
-        "ZGB",
-        "ZPO"
+        "ZGB"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

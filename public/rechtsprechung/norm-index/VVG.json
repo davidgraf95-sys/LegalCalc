@@ -3,6 +3,18 @@
   "erlass": "VVG",
   "gewichtQuelle": "alt",
   "proArtikel": {
+    "1": [
+      {
+        "key": "bge_151_III_591",
+        "zitierung": "BGE 151 III 591",
+        "regesteKurz": "Art. 73 Abs. 1 lit. b BVG; sachliche Zuständigkeit des kantonalen Gerichts für Streitigkeiten im Bereich der beruflichen Vorsorge; Klage auf Rückerstattung von Prämien der gebundenen Selbstvorsorge. Die Klage auf Rückerstattung von Prämien…",
+        "datum": "2025-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "3": [
       {
         "key": "bge_148_III_201",
@@ -25,12 +37,36 @@
         "gewicht": 0
       }
     ],
+    "4": [
+      {
+        "key": "bge_151_III_591",
+        "zitierung": "BGE 151 III 591",
+        "regesteKurz": "Art. 73 Abs. 1 lit. b BVG; sachliche Zuständigkeit des kantonalen Gerichts für Streitigkeiten im Bereich der beruflichen Vorsorge; Klage auf Rückerstattung von Prämien der gebundenen Selbstvorsorge. Die Klage auf Rückerstattung von Prämien…",
+        "datum": "2025-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "12": [
       {
         "key": "bge_151_III_591",
         "zitierung": "BGE 151 III 591",
         "regesteKurz": "Art. 73 Abs. 1 lit. b BVG; sachliche Zuständigkeit des kantonalen Gerichts für Streitigkeiten im Bereich der beruflichen Vorsorge; Klage auf Rückerstattung von Prämien der gebundenen Selbstvorsorge. Die Klage auf Rückerstattung von Prämien…",
         "datum": "2025-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "14": [
+      {
+        "key": "bge_152_III_7",
+        "zitierung": "BGE 152 III 7",
+        "regesteKurz": "Art. 75 Abs. 3 ATSG; Art. 63 SVG; Ausnahme vom Regressprivileg des Arbeitgebers; Begriff der obligatorischen Haftpflichtversicherung; Unfall mit einem Bagger. Der in Art. 75 Abs. 3 ATSG statuierte Ausschluss des Regressprivilegs des Arbeit…",
+        "datum": "2025-03-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -115,6 +151,36 @@
     ],
     "46": [
       {
+        "key": "bge_147_III_78",
+        "zitierung": "BGE 147 III 78",
+        "regesteKurz": "Art. 127, 330a OR; Arbeitszeugnis, Verjährung. Klagen auf Ausstellung bzw. Berichtigung eines Arbeitszeugnisses unterliegen der allgemeinen Verjährungsfrist von zehn Jahren gemäss Art. 127 OR (E. 6.2-6.9). Regeste Art. 127, 330a CO; certif…",
+        "datum": "2020-12-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_146_III_25",
+        "zitierung": "BGE 146 III 25",
+        "regesteKurz": "Art. 60 Abs. 1 OR; Art. 127 i.V.m. Art. 130 Abs. 1 OR; Art. 6 Ziff. 1 EMRK; Schadenersatzansprüche der Erben eines Asbestopfers; Beginn der absoluten Verjährung vertraglicher und ausservertraglicher Ansprüche; Bedeutung des EGMR-Urteils Ho…",
+        "datum": "2019-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_III_591",
+        "zitierung": "BGE 151 III 591",
+        "regesteKurz": "Art. 73 Abs. 1 lit. b BVG; sachliche Zuständigkeit des kantonalen Gerichts für Streitigkeiten im Bereich der beruflichen Vorsorge; Klage auf Rückerstattung von Prämien der gebundenen Selbstvorsorge. Die Klage auf Rückerstattung von Prämien…",
+        "datum": "2025-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_III_242",
         "zitierung": "BGE 149 III 242",
         "regesteKurz": "Art. 46 Abs. 1 VVG; Art. 127 OR; Rechtsschutzversicherung; Verjährung des Haftungsanspruchs für die Beratung durch den Versicherer. Auf die Schadenersatzforderung des Versicherten für die juristische Beratung durch die Rechtsschutzversiche…",
@@ -145,6 +211,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_151_III_348",
+        "zitierung": "BGE 151 III 348",
+        "regesteKurz": "Art. 72 ff., 113 ff. BGG; Art. 250 Abs. 2 SchKG; Art. 32d USG; Entscheide über die Kollokation öffentlich-rechtlicher Forderungen. Entscheide über die Kollokation fallen unter die Schuldbetreibungs- und Konkurssachen im Sinn von Art. 72 Ab…",
+        "datum": "2024-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "72": [
@@ -163,6 +239,18 @@
         "zitierung": "BGE 146 III 362",
         "regesteKurz": "Regressprivileg gegenüber einem Sozialversicherer (Art. 75 ATSG); Regressordnung nach Art. 51 Abs. 2 OR. Die von einem Teil der Lehre an BGE 143 III 79 geübte Kritik bildet keinen Anlass für eine Änderung der Rechtsprechung, wonach sich au…",
         "datum": "2020-07-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "76": [
+      {
+        "key": "bge_151_III_361",
+        "zitierung": "BGE 151 III 361",
+        "regesteKurz": "a Art. 2 Abs. 2 Bst. b des Übereinkommens vom 1. Juli 1985 über das auf Trusts anzuwendende Recht und über ihre Anerkennung (nachfolgend: Haager Trust Übereinkommen); Anwendbarkeit des Haager Trust Übereinkommens auf ein liechtensteinische…",
+        "datum": "2024-12-16",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -226,6 +314,18 @@
       }
     ],
     "103a": [
+      {
+        "key": "bge_151_III_35",
+        "zitierung": "BGE 151 III 35",
+        "regesteKurz": "Art. 60 Abs. 1 bis und Art. 103a VVG; direktes Forderungsrecht des geschädigten Dritten; Übergangsrecht. Auf vor Inkrafttreten der Änderung vom 19. Juni 2020 abgeschlossene Versicherungsverträge sind einzig die in Art. 103a VVG aufgeführte…",
+        "datum": "2025-01-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "35a": [
       {
         "key": "bge_151_III_35",
         "zitierung": "BGE 151 III 35",

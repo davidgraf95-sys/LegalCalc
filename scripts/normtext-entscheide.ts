@@ -15,7 +15,7 @@ import {
 } from './normtext/adapter-entscheide';
 import { schreibeKorpus, ladeBestandSnapshots } from './normtext/entscheide-schreiben';
 import {
-  normKeysVonSnapshot, remapNormKeys, undeklarierteAltKeys, KORROBORATIONS_SCHWELLE,
+  normKeysVonSnapshot, remapNormKeys, undeklarierteAltKeys, literaturEntfernteNormKeys,
 } from './normtext/entscheide-mapping';
 import { sha256EntscheidBloecke } from './normtext/sha-entscheide';
 import { holeRegesteSprachfassungen, holeClirHtml, parseClirUrteilskopf, bgeRefZuClirId } from './normtext/clir-regeste';
@@ -128,6 +128,17 @@ const remap = process.argv.includes('--remap');
  * Fliesstext des Snapshots vorkommt — Herkunft ist der frühere BGE-Merge, der die
  * statutes des unterliegenden aza-Urteils in die normKeys fliessen liess, ohne sie
  * selbst zu persistieren (seit der Adapter-Härtung passiert das nicht mehr).
+ *
+ * DIE LISTE BLEIBT BEI EINEM EINTRAG, obwohl die Literatur-Kontext-Regel
+ * (Gegenprüfung R3) 41 weitere Alt-Keys nicht mehr reproduziert — und das ist die
+ * Pointe der Sperre, nicht ihre Umgehung: diese 41 sollen VERSCHWINDEN, nicht
+ * bewahrt werden. Sie in ALT_ERHALTEN_ERWARTET zu schreiben hiesse, den soeben
+ * gebauten Fix am Artefakt wieder auszuschalten. Sie laufen darum über den
+ * Gegenzweig `literaturEntfernteNormKeys` (Ursache je Snapshot mechanisch belegt:
+ * roher Text erzeugt den Key, bereinigter nicht) und werden vollständig
+ * ausgewiesen, nie still gelöscht. Belege sind Kommentar-Fundstellen wie
+ * bge_152_I_9 «N. 16 zu Art. 38 VwVG» (4 Spannen, VwVG sonst nirgends im Text)
+ * oder bge_148_II_465 «ad art. 321 CP».
  */
 const ALT_ERHALTEN_ERWARTET: ReadonlyMap<string, readonly string[]> = new Map([
   ['bund/bge/152_I_61', ['ZPO']],
@@ -296,13 +307,26 @@ async function main() {
     let altErhaltenKeys = 0;
     let altErhaltenSnaps = 0;
     const bewahrt = new Map<string, readonly string[]>();
+    // GEGENRICHTUNG der Sperre (Gegenprüfung R3): ein Alt-Key, den die
+    // Literatur-Kontext-Regel soeben als Phantom entlarvt hat, darf NICHT bewahrt
+    // werden — sonst schriebe dieser Lauf den Fix wieder weg. Die Ursache wird je
+    // Snapshot mechanisch BELEGT (roher Text erzeugt den Key, bereinigter nicht),
+    // nicht angenommen; alles andere läuft weiter in den fail-closed Abbruch.
+    const litVerworfen = new Map<string, readonly string[]>();
+    let litVerworfenKeys = 0;
     for (const s of basis) {
       const alt = s.normKeys ?? [];
-      const { keys: neu, nurAlt } = remapNormKeys(alt, normKeysVonSnapshot(s)); // ohne hint: rein aus dem Snapshot
+      const nichtBewahren = new Set(literaturEntfernteNormKeys(s));
+      // ohne hint: rein aus dem Snapshot
+      const { keys: neu, nurAlt, verworfen } = remapNormKeys(alt, normKeysVonSnapshot(s), nichtBewahren);
       if (nurAlt.length) {
         altErhaltenKeys += nurAlt.length;
         altErhaltenSnaps++;
         bewahrt.set(s.id, nurAlt);
+      }
+      if (verworfen.length) {
+        litVerworfenKeys += verworfen.length;
+        litVerworfen.set(s.id, verworfen);
       }
       if (neu.length !== alt.length || neu.some((k, i) => k !== alt[i])) veraendert++;
       s.normKeys = neu;
@@ -325,11 +349,18 @@ async function main() {
     console.log(`[remap] ${basis.length} Snapshots · normKeys verändert: ${veraendert}`);
     console.log(`[remap] mit ≥1 normKey: vorher ${vorher} → nachher ${nachher}`);
     console.log(`[remap] alt-erhalten: ${altErhaltenKeys} Keys über ${altErhaltenSnaps} Snapshots — alle deklariert (${ALT_ERHALTEN_ERWARTET.size} Eintrag/Einträge in ALT_ERHALTEN_ERWARTET).`);
+    // Vollständig ausgeben, nicht bloss zählen: ein aus dem Bestand ENTFERNTER Key
+    // ist eine Korrektur an ausgelieferten Daten und gehört ins Lauf-Protokoll (§8).
+    console.log(`[remap] alt-verworfen (Literatur-Phantome, NICHT bewahrt): ${litVerworfenKeys} Keys über ${litVerworfen.size} Snapshots.`);
+    for (const [id, keys] of [...litVerworfen].sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))) {
+      console.log(`  · ${id}: ${[...keys].join(', ')}`);
+    }
     console.log(`[remap] geschrieben: ${res.anzahl} Manifest-Einträge, ${res.normBuckets} Norm-Buckets, ${res.artikelBuckets} Artikel-Buckets, ${res.shards} Shards.`);
-    // §6.7: die Wirkung der Korroborations-Regel (Gegenprüfung R2/B1) wird
-    // GEZÄHLT ausgewiesen, nicht bloss behauptet. Springt die Zahl gegenüber dem
-    // Vorlauf, ist entweder die Extraktion oder die Regel gewandert.
-    console.log(`[remap] Artikel-Korroboration: ${res.verworfeneSingletons} Fliesstext-Singletons verworfen (weder in zitierteNormen noch Regeste, < ${KORROBORATIONS_SCHWELLE} Nennungen im übrigen Text).`);
+    // §6.7: die Wirkung der Literatur-Kontext-Regel (Gegenprüfung R3) wird GEZÄHLT
+    // ausgewiesen, nicht bloss behauptet. Springt eine der Zahlen gegenüber dem
+    // Vorlauf, ist entweder die Extraktion, der Korpus oder die Marker-Liste gewandert.
+    const lv = res.literaturVerwurf;
+    console.log(`[remap] Literatur-Kontext-Regel: ${lv.spannen} Zitier-Apparat-Spannen entfernt, darin ${lv.nennungen} Roh-Nennungen; ${lv.paare} (Snapshot, Artikel)-Paare stammten AUSSCHLIESSLICH daraus.`);
     return;
   }
 

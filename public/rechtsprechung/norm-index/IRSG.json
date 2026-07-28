@@ -69,6 +69,26 @@
     ],
     "3": [
       {
+        "key": "bge_151_I_113",
+        "zitierung": "BGE 151 I 113",
+        "regesteKurz": "Art. 27, 48 Abs. 5, Art. 49 Abs. 1 und Art. 94 BV; Art. 63 Abs. 4 der Interkantonalen Vereinbarung über das öffentliche Beschaffungswesen (IVöB 2019); Art. 27, 29 und 31 BöB/IVöB 2019; Art. VIII Abs. 1 des Übereinkommens der Welthandelsorg…",
+        "datum": "2025-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_376",
+        "zitierung": "BGE 149 IV 376",
+        "regesteKurz": "a Art. 2 IRSG; Rechtshilfeausschlussgrund des Ordre public. Inhalt und Geltung des Ordre-public-Vorbehalts in der internationalen Rechtshilfe in Strafsachen. Anforderungen an den Beweis und an die Intensität der Prüfung durch die schweizer…",
+        "datum": "2023-04-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_146_IV_338",
         "zitierung": "BGE 146 IV 338",
         "regesteKurz": "Art. 2 Ziff. 1 und Art. 3 Ziff. 1 EAUe, Art. 3 Abs. 1 und Art. 35 Abs. 1 lit. a IRSG, Art. 260ter Ziff. 1 StGB; Auslieferung an Deutschland wegen mutmasslicher Unterstützung einer kriminellen Organisation. Beidseitige Strafbarkeit; Einrede…",
@@ -79,7 +99,29 @@
         "gewicht": 0
       }
     ],
+    "4": [
+      {
+        "key": "bge_147_II_432",
+        "zitierung": "BGE 147 II 432",
+        "regesteKurz": "Art. 2 Abs. 1 und Art. 23 AVUS; Art. 8 und 35 Abs. 1 IRSG; Art. 154 FinfraG; Auslieferung an die USA; beidseitige Strafbarkeit; Insidertatbestand; Günstigkeitsprinzip. Art. 154 Abs. 3 FinfraG ermöglicht a priori wie seine Vorgängerbestimmu…",
+        "datum": "2021-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "8": [
+      {
+        "key": "bge_151_II_81",
+        "zitierung": "BGE 151 II 81",
+        "regesteKurz": "Art. 10 Abs. 2 lit. b, c und d IVöB 2019; Art. 10 Abs. 3 lit. b, c und d BöB; Begriff der \"in-house\"-, \"quasi-in-house\"- und \"in-state\"-Vergabe. Streitgegenstand (E. 3). Relevanter rechtlicher Rahmen und Begriffe der dem Geltungsbereich de…",
+        "datum": "2024-07-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_147_II_432",
         "zitierung": "BGE 147 II 432",
@@ -101,12 +143,34 @@
         "gewicht": 0
       }
     ],
+    "9": [
+      {
+        "key": "bge_151_I_113",
+        "zitierung": "BGE 151 I 113",
+        "regesteKurz": "Art. 27, 48 Abs. 5, Art. 49 Abs. 1 und Art. 94 BV; Art. 63 Abs. 4 der Interkantonalen Vereinbarung über das öffentliche Beschaffungswesen (IVöB 2019); Art. 27, 29 und 31 BöB/IVöB 2019; Art. VIII Abs. 1 des Übereinkommens der Welthandelsorg…",
+        "datum": "2025-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "10": [
       {
         "key": "bge_151_II_81",
         "zitierung": "BGE 151 II 81",
         "regesteKurz": "Art. 10 Abs. 2 lit. b, c und d IVöB 2019; Art. 10 Abs. 3 lit. b, c und d BöB; Begriff der \"in-house\"-, \"quasi-in-house\"- und \"in-state\"-Vergabe. Streitgegenstand (E. 3). Relevanter rechtlicher Rahmen und Begriffe der dem Geltungsbereich de…",
         "datum": "2024-07-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_II_105",
+        "zitierung": "BGE 150 II 105",
+        "regesteKurz": "Art. XIII Abs. 1 lit. b GPA 2012; Art. 21 Abs. 2 lit. c BöB und IVöB 2019; Art. 8 Abs. 1 lit. c aRLMP-VD; Beschwerdelegitimation und Beweislast für das Fehlen einer angemessenen Alternative bei freihändigen Vergaben (Änderung der Rechtspre…",
+        "datum": "2023-11-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -159,6 +223,16 @@
     ],
     "13": [
       {
+        "key": "bge_151_I_113",
+        "zitierung": "BGE 151 I 113",
+        "regesteKurz": "Art. 27, 48 Abs. 5, Art. 49 Abs. 1 und Art. 94 BV; Art. 63 Abs. 4 der Interkantonalen Vereinbarung über das öffentliche Beschaffungswesen (IVöB 2019); Art. 27, 29 und 31 BöB/IVöB 2019; Art. VIII Abs. 1 des Übereinkommens der Welthandelsorg…",
+        "datum": "2025-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_IV_121",
         "zitierung": "BGE 150 IV 121",
         "regesteKurz": "Art. 6 und 7 Abs. 1 und 3 StGB; Übereinkommen des Europarats vom 11. Mai 2011 zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt (Istanbul-Konvention); aktives Personalitätsprinzip; Tragweite des Erfordernisses der…",
@@ -187,6 +261,50 @@
         "zitierung": "BGE 149 IV 144",
         "regesteKurz": "Art. 18 IRSG; Rechtshilfe an die Russische Föderation; Umgang mit den in der Schweiz gesperrten Vermögenswerten. Nach ihrer militärischen Intervention in der Ukraine und ihrem Austritt aus dem Europarat und der Europäischen Menschenrechtsk…",
         "datum": "2023-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "21": [
+      {
+        "key": "bge_150_II_105",
+        "zitierung": "BGE 150 II 105",
+        "regesteKurz": "Art. XIII Abs. 1 lit. b GPA 2012; Art. 21 Abs. 2 lit. c BöB und IVöB 2019; Art. 8 Abs. 1 lit. c aRLMP-VD; Beschwerdelegitimation und Beweislast für das Fehlen einer angemessenen Alternative bei freihändigen Vergaben (Änderung der Rechtspre…",
+        "datum": "2023-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "25": [
+      {
+        "key": "bge_149_IV_144",
+        "zitierung": "BGE 149 IV 144",
+        "regesteKurz": "Art. 18 IRSG; Rechtshilfe an die Russische Föderation; Umgang mit den in der Schweiz gesperrten Vermögenswerten. Nach ihrer militärischen Intervention in der Ukraine und ihrem Austritt aus dem Europarat und der Europäischen Menschenrechtsk…",
+        "datum": "2023-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_IV_201",
+        "zitierung": "BGE 150 IV 201",
+        "regesteKurz": "Art. 2 IRSG; Art. 26 BV; Rechtshilfe an Russland, Aufrechterhaltung einer Kontosperre. Wer lediglich von einer rechtshilfeweisen Kontosperre in der Schweiz betroffen ist, kann sich nicht auf Art. 2 IRSG (Rechsthilfeausschlussgrund des Ordr…",
+        "datum": "2024-03-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_338",
+        "zitierung": "BGE 146 IV 338",
+        "regesteKurz": "Art. 2 Ziff. 1 und Art. 3 Ziff. 1 EAUe, Art. 3 Abs. 1 und Art. 35 Abs. 1 lit. a IRSG, Art. 260ter Ziff. 1 StGB; Auslieferung an Deutschland wegen mutmasslicher Unterstützung einer kriminellen Organisation. Beidseitige Strafbarkeit; Einrede…",
+        "datum": "2020-06-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -243,10 +361,32 @@
     ],
     "30": [
       {
+        "key": "bge_150_IV_308",
+        "zitierung": "BGE 150 IV 308",
+        "regesteKurz": "Art. 140, 141, 285a ff. StPO; verdeckte Ermittlung und Territorialitätsprinzip. Im Rahmen einer durch das Zwangsmassnahmengericht rechtsgültig genehmigten verdeckten Ermittlung (gestützt auf Art. 285a ff. StPO; E. 2.3) stellt das Versenden…",
+        "datum": "2024-05-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_146_IV_36",
         "zitierung": "BGE 146 IV 36",
         "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des Terri…",
         "datum": "2019-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "31": [
+      {
+        "key": "bge_151_I_113",
+        "zitierung": "BGE 151 I 113",
+        "regesteKurz": "Art. 27, 48 Abs. 5, Art. 49 Abs. 1 und Art. 94 BV; Art. 63 Abs. 4 der Interkantonalen Vereinbarung über das öffentliche Beschaffungswesen (IVöB 2019); Art. 27, 29 und 31 BöB/IVöB 2019; Art. VIII Abs. 1 des Übereinkommens der Welthandelsorg…",
+        "datum": "2025-01-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -303,6 +443,66 @@
         "zitierung": "BGE 152 II 142",
         "regesteKurz": "Art. 9 BV; Art. 42 Abs. 1 und Art. 58 IVöB; Rechtsschutz bei verfrüht abgeschlossenen Beschaffungsverträgen. Die Auffassung der Vorinstanz, wonach der Rechtsschutz bei Beschaffungsverträgen, die in Verletzung der Stillhalteregelung nach Ar…",
         "datum": "2025-05-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "47": [
+      {
+        "key": "bge_146_IV_338",
+        "zitierung": "BGE 146 IV 338",
+        "regesteKurz": "Art. 2 Ziff. 1 und Art. 3 Ziff. 1 EAUe, Art. 3 Abs. 1 und Art. 35 Abs. 1 lit. a IRSG, Art. 260ter Ziff. 1 StGB; Auslieferung an Deutschland wegen mutmasslicher Unterstützung einer kriminellen Organisation. Beidseitige Strafbarkeit; Einrede…",
+        "datum": "2020-06-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "49": [
+      {
+        "key": "bge_146_IV_338",
+        "zitierung": "BGE 146 IV 338",
+        "regesteKurz": "Art. 2 Ziff. 1 und Art. 3 Ziff. 1 EAUe, Art. 3 Abs. 1 und Art. 35 Abs. 1 lit. a IRSG, Art. 260ter Ziff. 1 StGB; Auslieferung an Deutschland wegen mutmasslicher Unterstützung einer kriminellen Organisation. Beidseitige Strafbarkeit; Einrede…",
+        "datum": "2020-06-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "51": [
+      {
+        "key": "bge_146_IV_338",
+        "zitierung": "BGE 146 IV 338",
+        "regesteKurz": "Art. 2 Ziff. 1 und Art. 3 Ziff. 1 EAUe, Art. 3 Abs. 1 und Art. 35 Abs. 1 lit. a IRSG, Art. 260ter Ziff. 1 StGB; Auslieferung an Deutschland wegen mutmasslicher Unterstützung einer kriminellen Organisation. Beidseitige Strafbarkeit; Einrede…",
+        "datum": "2020-06-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "52": [
+      {
+        "key": "bge_151_II_81",
+        "zitierung": "BGE 151 II 81",
+        "regesteKurz": "Art. 10 Abs. 2 lit. b, c und d IVöB 2019; Art. 10 Abs. 3 lit. b, c und d BöB; Begriff der \"in-house\"-, \"quasi-in-house\"- und \"in-state\"-Vergabe. Streitgegenstand (E. 3). Relevanter rechtlicher Rahmen und Begriffe der dem Geltungsbereich de…",
+        "datum": "2024-07-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "53": [
+      {
+        "key": "bge_151_II_81",
+        "zitierung": "BGE 151 II 81",
+        "regesteKurz": "Art. 10 Abs. 2 lit. b, c und d IVöB 2019; Art. 10 Abs. 3 lit. b, c und d BöB; Begriff der \"in-house\"-, \"quasi-in-house\"- und \"in-state\"-Vergabe. Streitgegenstand (E. 3). Relevanter rechtlicher Rahmen und Begriffe der dem Geltungsbereich de…",
+        "datum": "2024-07-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -395,34 +595,14 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_146_IV_36",
-        "zitierung": "BGE 146 IV 36",
-        "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des Terri…",
-        "datum": "2019-11-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "64": [
       {
-        "key": "bge_150_IV_308",
-        "zitierung": "BGE 150 IV 308",
-        "regesteKurz": "Art. 140, 141, 285a ff. StPO; verdeckte Ermittlung und Territorialitätsprinzip. Im Rahmen einer durch das Zwangsmassnahmengericht rechtsgültig genehmigten verdeckten Ermittlung (gestützt auf Art. 285a ff. StPO; E. 2.3) stellt das Versenden…",
-        "datum": "2024-05-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_IV_36",
-        "zitierung": "BGE 146 IV 36",
-        "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des Terri…",
-        "datum": "2019-11-15",
+        "key": "bge_150_II_105",
+        "zitierung": "BGE 150 II 105",
+        "regesteKurz": "Art. XIII Abs. 1 lit. b GPA 2012; Art. 21 Abs. 2 lit. c BöB und IVöB 2019; Art. 8 Abs. 1 lit. c aRLMP-VD; Beschwerdelegitimation und Beweislast für das Fehlen einer angemessenen Alternative bei freihändigen Vergaben (Änderung der Rechtspre…",
+        "datum": "2023-11-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -441,7 +621,67 @@
         "gewicht": 0
       }
     ],
+    "68": [
+      {
+        "key": "bge_147_IV_518",
+        "zitierung": "BGE 147 IV 518",
+        "regesteKurz": "Art. 14 Abs. 1 des Vertrags vom 12. Mai 2004 zwischen der Schweizerischen Eidgenossenschaft und der Föderativen Republik Brasilien über Rechtshilfe in Strafsachen; Art. 29a und Art. 32 Abs. 2 und Abs. 3 BV; Art. 63 Abs. 2 lit. a IRSG; Art.…",
+        "datum": "2021-05-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "76": [
+      {
+        "key": "bge_150_IV_308",
+        "zitierung": "BGE 150 IV 308",
+        "regesteKurz": "Art. 140, 141, 285a ff. StPO; verdeckte Ermittlung und Territorialitätsprinzip. Im Rahmen einer durch das Zwangsmassnahmengericht rechtsgültig genehmigten verdeckten Ermittlung (gestützt auf Art. 285a ff. StPO; E. 2.3) stellt das Versenden…",
+        "datum": "2024-05-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "77": [
+      {
+        "key": "bge_147_IV_518",
+        "zitierung": "BGE 147 IV 518",
+        "regesteKurz": "Art. 14 Abs. 1 des Vertrags vom 12. Mai 2004 zwischen der Schweizerischen Eidgenossenschaft und der Föderativen Republik Brasilien über Rechtshilfe in Strafsachen; Art. 29a und Art. 32 Abs. 2 und Abs. 3 BV; Art. 63 Abs. 2 lit. a IRSG; Art.…",
+        "datum": "2021-05-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "80": [
+      {
+        "key": "bge_149_IV_376",
+        "zitierung": "BGE 149 IV 376",
+        "regesteKurz": "a Art. 2 IRSG; Rechtshilfeausschlussgrund des Ordre public. Inhalt und Geltung des Ordre-public-Vorbehalts in der internationalen Rechtshilfe in Strafsachen. Anforderungen an den Beweis und an die Intensität der Prüfung durch die schweizer…",
+        "datum": "2023-04-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "94": [
+      {
+        "key": "bge_149_IV_376",
+        "zitierung": "BGE 149 IV 376",
+        "regesteKurz": "a Art. 2 IRSG; Rechtshilfeausschlussgrund des Ordre public. Inhalt und Geltung des Ordre-public-Vorbehalts in der internationalen Rechtshilfe in Strafsachen. Anforderungen an den Beweis und an die Intensität der Prüfung durch die schweizer…",
+        "datum": "2023-04-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "103": [
       {
         "key": "bge_149_IV_376",
         "zitierung": "BGE 149 IV 376",
@@ -533,12 +773,44 @@
         "gewicht": 0
       }
     ],
+    "67a": [
+      {
+        "key": "bge_150_IV_201",
+        "zitierung": "BGE 150 IV 201",
+        "regesteKurz": "Art. 2 IRSG; Art. 26 BV; Rechtshilfe an Russland, Aufrechterhaltung einer Kontosperre. Wer lediglich von einer rechtshilfeweisen Kontosperre in der Schweiz betroffen ist, kann sich nicht auf Art. 2 IRSG (Rechsthilfeausschlussgrund des Ordr…",
+        "datum": "2024-03-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_36",
+        "zitierung": "BGE 146 IV 36",
+        "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des Terri…",
+        "datum": "2019-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "74a": [
       {
         "key": "bge_149_IV_376",
         "zitierung": "BGE 149 IV 376",
         "regesteKurz": "a Art. 2 IRSG; Rechtshilfeausschlussgrund des Ordre public. Inhalt und Geltung des Ordre-public-Vorbehalts in der internationalen Rechtshilfe in Strafsachen. Anforderungen an den Beweis und an die Intensität der Prüfung durch die schweizer…",
         "datum": "2023-04-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_IV_144",
+        "zitierung": "BGE 149 IV 144",
+        "regesteKurz": "Art. 18 IRSG; Rechtshilfe an die Russische Föderation; Umgang mit den in der Schweiz gesperrten Vermögenswerten. Nach ihrer militärischen Intervention in der Ukraine und ihrem Austritt aus dem Europarat und der Europäischen Menschenrechtsk…",
+        "datum": "2023-01-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -567,12 +839,36 @@
         "gewicht": 0
       }
     ],
+    "80a": [
+      {
+        "key": "bge_146_IV_36",
+        "zitierung": "BGE 146 IV 36",
+        "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des Terri…",
+        "datum": "2019-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "80b": [
       {
         "key": "bge_147_IV_544",
         "zitierung": "BGE 147 IV 544",
         "regesteKurz": "Art. 78 ff., 84 und 93 Abs. 1 lit. a BGG, Art. 80e Abs. 2 lit. b IRSG; zulässiges Rechtsmittel ans Bundesgericht in Streitfällen über die Parteistellung und Akteneinsicht in einem Strafverfahren bei parallelem Rechtshilfeverfahren. Sind im…",
         "datum": "2021-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "80d": [
+      {
+        "key": "bge_146_IV_36",
+        "zitierung": "BGE 146 IV 36",
+        "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des Terri…",
+        "datum": "2019-11-15",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -591,7 +887,29 @@
         "gewicht": 0
       }
     ],
+    "80o": [
+      {
+        "key": "bge_149_IV_144",
+        "zitierung": "BGE 149 IV 144",
+        "regesteKurz": "Art. 18 IRSG; Rechtshilfe an die Russische Föderation; Umgang mit den in der Schweiz gesperrten Vermögenswerten. Nach ihrer militärischen Intervention in der Ukraine und ihrem Austritt aus dem Europarat und der Europäischen Menschenrechtsk…",
+        "datum": "2023-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "80p": [
+      {
+        "key": "bge_149_IV_144",
+        "zitierung": "BGE 149 IV 144",
+        "regesteKurz": "Art. 18 IRSG; Rechtshilfe an die Russische Föderation; Umgang mit den in der Schweiz gesperrten Vermögenswerten. Nach ihrer militärischen Intervention in der Ukraine und ihrem Austritt aus dem Europarat und der Europäischen Menschenrechtsk…",
+        "datum": "2023-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_I_127",
         "zitierung": "BGE 148 I 127",

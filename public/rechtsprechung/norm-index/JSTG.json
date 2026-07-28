@@ -123,6 +123,18 @@
         "gewicht": 0
       }
     ],
+    "11": [
+      {
+        "key": "bge_148_IV_419",
+        "zitierung": "BGE 148 IV 419",
+        "regesteKurz": "Art. 5 i.V.m. Art. 15 JStG; Art. 431 Abs. 2 StPO i.V.m. Art. 51 und 110 Abs. 7 StGB; Entschädigung im Jugendstrafrecht nach (vorsorglicher) Unterbringung. Im Jugendstrafrecht führt der Umstand, dass der aufgrund der (vorsorglichen) Unterbr…",
+        "datum": "2022-08-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "12": [
       {
         "key": "bge_149_IV_342",
@@ -227,12 +239,56 @@
         "gewicht": 0
       }
     ],
+    "22": [
+      {
+        "key": "bge_148_IV_419",
+        "zitierung": "BGE 148 IV 419",
+        "regesteKurz": "Art. 5 i.V.m. Art. 15 JStG; Art. 431 Abs. 2 StPO i.V.m. Art. 51 und 110 Abs. 7 StGB; Entschädigung im Jugendstrafrecht nach (vorsorglicher) Unterbringung. Im Jugendstrafrecht führt der Umstand, dass der aufgrund der (vorsorglichen) Unterbr…",
+        "datum": "2022-08-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "25": [
+      {
+        "key": "bge_148_IV_298",
+        "zitierung": "BGE 148 IV 298",
+        "regesteKurz": "Anwendungsbereich von aArt. 260 ter Ziff. 1 bzw. Art. 260 ter Abs. 1 StGB, von Art. 2 Abs. 1 des \"Al-Qaïda/IS-Gesetzes\" vom 12. Dezember 2014 und von Art. 74 Abs. 4 NDG; Vereinbarkeit von Art. 2 Abs. 1 des Al-Qaïda/ IS-Gesetzes mit dem Leg…",
+        "datum": "2022-04-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_164",
+        "zitierung": "BGE 146 IV 164",
+        "regesteKurz": "Art. 9 Abs. 2 StGB, Art. 3 Abs. 2 JStG, Art. 29 Abs. 1 StPO, Art. 11 JStPO; Zuständigkeit des Jugendgerichts. Die Rechtsprechung anerkennt Ausnahmen von der Anwendung des Art. 3 Abs. 2 vierter Satz JStG (darunter die Schwere der neuen Stra…",
+        "datum": "2020-03-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "32": [
       {
         "key": "bge_148_IV_419",
         "zitierung": "BGE 148 IV 419",
         "regesteKurz": "Art. 5 i.V.m. Art. 15 JStG; Art. 431 Abs. 2 StPO i.V.m. Art. 51 und 110 Abs. 7 StGB; Entschädigung im Jugendstrafrecht nach (vorsorglicher) Unterbringung. Im Jugendstrafrecht führt der Umstand, dass der aufgrund der (vorsorglichen) Unterbr…",
         "datum": "2022-08-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_298",
+        "zitierung": "BGE 148 IV 298",
+        "regesteKurz": "Anwendungsbereich von aArt. 260 ter Ziff. 1 bzw. Art. 260 ter Abs. 1 StGB, von Art. 2 Abs. 1 des \"Al-Qaïda/IS-Gesetzes\" vom 12. Dezember 2014 und von Art. 74 Abs. 4 NDG; Vereinbarkeit von Art. 2 Abs. 1 des Al-Qaïda/ IS-Gesetzes mit dem Leg…",
+        "datum": "2022-04-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

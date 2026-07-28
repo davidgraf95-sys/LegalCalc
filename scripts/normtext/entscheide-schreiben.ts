@@ -165,19 +165,25 @@ function selbstTokens(snap: EntscheidSnapshot): string[] {
  * dann key (totaler Tiebreaker) — build-pfad-unabhängig stabil.
  */
 /**
- * Zähler der von der Korroborations-Regel VERWORFENEN Fliesstext-Singletons
- * (Gegenprüfung R2/B1). Ein Filter, dessen Wirkung niemand sieht, ist ein Tor,
- * das nicht scheitern kann (§6.7): der `--remap`-Lauf weist die Zahl aus, damit
- * ein Sprung nach oben (Extraktions-Regression) oder nach unten (Regel
- * versehentlich entschärft) im Lauf-Protokoll auffällt — nicht erst im Artefakt.
- * Modulweit, weil `baueArtikelIndex` seine Signatur behält (Aufrufer im Tor).
+ * LITERATUR-VERWURF-STATISTIK (Gegenprüfung R3; löst die frühere Singleton-Zählung
+ * der zurückgebauten Korroborations-Schwelle ab). Ein Filter, dessen Wirkung niemand
+ * sieht, ist ein Tor, das nicht scheitern kann (§6.7): der `--remap`-Lauf weist die
+ * Zahlen aus, damit ein Sprung nach oben («die Marker greifen zu weit») oder nach
+ * unten («die Regel ist entschärft») im Lauf-Protokoll auffällt — nicht erst im
+ * Artefakt. Modulweit, weil `baueArtikelIndex` seine Signatur behält (Aufrufer im Tor).
+ *
+ * `paare` zählt (Snapshot, Artikel)-Paare, die AUSSCHLIESSLICH aus einer entfernten
+ * Zitier-Apparat-Spanne stammten; `nennungen` die Roh-Vorkommen in diesen Spannen;
+ * `spannen` die Spannen selbst.
  */
-let verworfeneSingletons = 0;
-export function letzteVerworfeneSingletons(): number { return verworfeneSingletons; }
+let literaturVerwurf = { paare: 0, nennungen: 0, spannen: 0 };
+export function letzterLiteraturVerwurf(): { paare: number; nennungen: number; spannen: number } {
+  return { ...literaturVerwurf };
+}
 
 export function baueArtikelIndex(auswahl: EntscheidSnapshot[]): Record<string, LeitfallRef[]> {
   const bg = auswahl.filter((s) => s.gerichtstyp === 'bundesgericht');
-  verworfeneSingletons = 0;
+  literaturVerwurf = { paare: 0, nennungen: 0, spannen: 0 };
 
   // Token → corpus-key (erste Nennung gewinnt; §2-deterministisch bei Eingabefolge).
   const tokenZuKey = new Map<string, string>();
@@ -193,7 +199,9 @@ export function baueArtikelIndex(auswahl: EntscheidSnapshot[]): Record<string, L
     const { key } = keyVon(s);
     refByKey.set(key, refVon(s));
     const befund = artikelSchluesselMitBefund(s);
-    verworfeneSingletons += befund.verworfen.length;
+    literaturVerwurf.paare += befund.literaturVerworfen.length;
+    literaturVerwurf.nennungen += befund.literaturNennungen;
+    literaturVerwurf.spannen += befund.literaturSpannenZahl;
     artikelVon.set(key, befund.schluessel);
     const cited = new Set<string>();
     for (const z of s.zitierteEntscheide ?? []) {
@@ -261,7 +269,7 @@ export function baueShards(proNormArtikel: Record<string, LeitfallRef[]>, datum:
   return out;
 }
 
-export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root = process.cwd()): { anzahl: number; normBuckets: number; artikelBuckets: number; shards: number; verworfeneSingletons: number } {
+export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root = process.cwd()): { anzahl: number; normBuckets: number; artikelBuckets: number; shards: number; literaturVerwurf: { paare: number; nennungen: number; spannen: number } } {
   const PUB = join(root, 'public', 'rechtsprechung');
   const GENKEYS = join(root, 'src', 'lib', 'rechtsprechung', 'erfasste-keys.generated.ts');
 
@@ -488,7 +496,7 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
   return {
     anzahl: manifest.length, normBuckets: Object.keys(proNorm).length,
     artikelBuckets: Object.keys(proNormArtikel).length, shards: shards.size,
-    verworfeneSingletons: letzteVerworfeneSingletons(),
+    literaturVerwurf: letzterLiteraturVerwurf(),
   };
 }
 

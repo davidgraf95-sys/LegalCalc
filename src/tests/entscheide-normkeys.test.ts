@@ -2,10 +2,12 @@ import { describe, it, expect } from 'vitest';
 import {
   normalisiereAbk, normKeyFuerAbk, statutesZuNormKeys, fliesstextVon,
   normKeysVonSnapshot, artikelSchluesselVonSnapshot, artikelSchluesselMitBefund,
-  KORROBORATIONS_SCHWELLE, remapNormKeys, undeklarierteAltKeys,
+  ohneLiteraturApparat, LITERATUR_MARKER, literaturEntfernteNormKeys,
+  remapNormKeys, undeklarierteAltKeys,
   ABK_KOLLISIONEN, ABK_AUSSCHLUSS, AUSGESCHLOSSENE_KEYS,
   ABK_ALIAS_NOTIZEN, ABK_ALIAS_AUSGESCHLOSSEN,
 } from '../../scripts/normtext/entscheide-mapping';
+import { extrahiereStatutRefs } from '../lib/rechtsprechung/zitat-extraktion';
 import { ABK_ALIASE } from '../lib/normtext/abk-aliase.generated';
 import { ERLASS_REGISTER } from '../lib/normtext/register';
 import type { EntscheidSnapshot } from '../lib/rechtsprechung/typen';
@@ -106,14 +108,10 @@ describe('Alias-Ebene — amtliche FR/IT-Kürzel zeigen auf den Register-key', (
       }] }],
     });
     expect(normKeysVonSnapshot(s)).toEqual(['BGG', 'BV']);
-    // ERLASS-Ebene (oben) und ARTIKEL-Ebene (unten) gehen hier AUSEINANDER, und
-    // das ist die Regel, nicht ein Fehler: die Artikel-Ebene verlangt seit R2/B1
-    // eine Korroboration (statutes ODER Regeste ODER ≥2 Nennungen). Beide Artikel
-    // stehen hier je EINMAL im blossen Fliesstext → kein Artikel-Schlüssel.
-    expect([...artikelSchluesselVonSnapshot(s)]).toEqual([]);
-    // Mit statutes-Beleg trägt dieselbe Nennung sofort:
-    const mitStatutes = snap({ ...s, zitierteNormen: ['Art. 42 al. 2 LTF'] });
-    expect([...artikelSchluesselVonSnapshot(mitStatutes)]).toEqual(['BGG/42']);
+    // Beide Ebenen sagen hier DASSELBE — eine einzelne Nennung im Erwägungstext
+    // genügt auf beiden. Die zwischenzeitliche Häufigkeits-Schwelle (Commit
+    // 5e8b49c0) hätte hier [] geliefert; sie ist zurückgebaut (Gegenprüfung R3).
+    expect([...artikelSchluesselVonSnapshot(s)].sort()).toEqual(['BGG/42', 'BV/29']);
   });
   it('jedes Alias-Kürzel des Artefakts löst sich auf oder ist benannt ausgeschlossen', () => {
     // Bindeglied Artefakt ↔ Register ist die SR-Nummer. Fällt ein Erlass aus dem
@@ -320,6 +318,28 @@ describe('remapNormKeys — Re-Map bewahrt nicht rekonstruierbare Alt-Keys (B1)'
   it('leerer Altbestand → reine Neuberechnung', () => {
     expect(remapNormKeys([], ['OR', 'BGG']).keys).toEqual(['BGG', 'OR']);
   });
+  // ── Gegenrichtung: die Sperre darf einen Fix nicht rückgängig machen (R3) ──
+  it('bewahrt NICHT, was als Literatur-Phantom belegt ist — und weist es aus', () => {
+    // bge_150_IV_10 trug 'MSTG' aus dem früheren Backfill; der Erlass kommt dort
+    // NUR im Buchtitel eines Kommentars vor. Ohne diesen Zweig schriebe der
+    // Re-Map das Phantom zurück und der Fix wäre am Artefakt wirkungslos.
+    const r = remapNormKeys(['STGB', 'MSTG'], ['STGB'], new Set(['MSTG']));
+    expect(r.keys).toEqual(['STGB']);
+    expect(r.nurAlt).toEqual([]);          // NICHT bewahrt …
+    expect(r.verworfen).toEqual(['MSTG']); // … sondern gezählt verworfen (§6.7)
+  });
+  it('ein NICHT belegter Alt-Key bleibt bewahrt — die Sperre wirkt nur gezielt', () => {
+    const r = remapNormKeys(['STGB', 'ZPO'], ['STGB'], new Set(['MSTG']));
+    expect(r.nurAlt).toEqual(['ZPO']);
+    expect(r.verworfen).toEqual([]);
+  });
+  it('bleibt idempotent, auch mit Verwurf (§2)', () => {
+    const eins = remapNormKeys(['STGB', 'MSTG'], ['STGB'], new Set(['MSTG']));
+    const zwei = remapNormKeys(eins.keys, ['STGB'], new Set(['MSTG']));
+    expect(zwei.keys).toEqual(eins.keys);
+    expect(zwei.verworfen).toEqual([]);
+  });
+
   it('nurAlt ist dedupliziert und sortiert — die Zahl misst, was wirklich bewahrt wird', () => {
     // Linse 2: ein Bestands-Snapshot mit doppeltem Alt-Key meldete «2 bewahrte
     // Keys», obwohl `keys` nur EINEN bewahrt (Set). Die Kennzahl des Backfill-
@@ -367,68 +387,169 @@ describe('undeklarierteAltKeys — die Bewahrung ist deklariert, nicht pauschal 
   });
 });
 
-// ── Gegenprüfung R2/B1 — Korroborations-Regel der ARTIKEL-Ebene ─────────────
+// ── Gegenprüfung R3 — Literatur-Kontext-Regel auf BEIDEN Ebenen ─────────────
 //
-// FACHLICHE ÄNDERUNG, deklariert (§6.3): die Artikel-Ebene nimmt eine reine
-// Fliesstext-Nennung nicht mehr ungeprüft auf. Anlass war ein Literatur-Phantom
-// (BGE 150 IV 10 stand unter MSTG/171c, obwohl «171c» dort nur im Buchtitel
-// eines Kommentars vorkommt). Die drei Zweige — statutes ODER Regeste ODER
-// ≥2 Nennungen im übrigen Text — sind hier einzeln festgeschrieben.
+// FACHLICHE ÄNDERUNG, deklariert (§6.3) — und zwar eine RICHTUNGSKORREKTUR: die
+// hier zuvor festgeschriebene Korroborations-Regel (statutes ODER Regeste ODER
+// ≥2 Nennungen, Commit 5e8b49c0) ist ZURÜCKGEBAUT. Sie ist an der eigenen
+// Messung gescheitert — in der gleichverteilten Stichprobe ihrer Verwerfungen
+// war rund die Hälfte ECHTE Rechtsanwendung (ATSG/17, ZPO/138, OR/30, STPO/428,
+// EMRK/6). Häufigkeit ist kein Signal für Tragfähigkeit.
+//
+// An ihrer Stelle steht eine gezielte KONTEXT-Regel: Nennungen innerhalb einer
+// deklarierten Zitier-Apparat-Spanne zählen nicht, alle anderen wieder ohne
+// Schwelle. Diese Tests wurden deshalb umgeschrieben statt angepasst — das ist
+// keine Verhaltensneutralität und wird auch nicht als solche ausgegeben.
 const ERW = (text: string) => [{ typ: 'erwaegung' as const, bloecke: [{ marke: '3', text }] }];
 
-describe('artikelSchluesselVonSnapshot — Korroborations-Regel (R2/B1)', () => {
-  it('(iii) EINE blosse Fliesstext-Nennung reicht NICHT', () => {
-    expect([...artikelSchluesselVonSnapshot(snap({ abschnitte: ERW(IPRG_TEXT) }))]).toEqual([]);
+describe('Literatur-Kontext-Regel — Spannen-Definition (R3)', () => {
+  it('jeder Marker trägt Beleg und Korpus-Zahl (§7 — kein Marker ohne Fundstelle)', () => {
+    expect(LITERATUR_MARKER.length).toBe(3);
+    for (const m of LITERATUR_MARKER) {
+      expect(m.beleg.length).toBeGreaterThan(40);
+      expect(m.korpus).toMatch(/\d/);
+    }
   });
 
-  it('(iii) ZWEI Nennungen im Fliesstext reichen', () => {
-    const s = snap({ abschnitte: ERW(IPRG_TEXT + '\nDie Anknüpfung nach Art. 126 IPRG greift.') });
-    expect([...artikelSchluesselVonSnapshot(s)]).toEqual(['IPRG/126']);
+  it('die Spanne endet am nächsten Segment-Ende (; ) » oder Zeilenende)', () => {
+    expect(ohneLiteraturApparat('X (KÜNZLE, N. 508/509 zu Art. 517-518 ZGB; PILLER) Y'))
+      .toBe('X (KÜNZLE,  ; PILLER) Y');
+    expect(ohneLiteraturApparat('a (NIGGLI, Ein Kommentar zu Art. 171c MStG, 2007) b'))
+      .toBe('a (NIGGLI, Ein  ) b');
+    expect(ohneLiteraturApparat('u (DENYS, n° 10 ad art. 123c Cst.) v'))
+      .toBe('u (DENYS, n° 10  ) v');
+    // Zeilenende schliesst die Spanne, die nächste Zeile bleibt unberührt.
+    expect(ohneLiteraturApparat('N. 3 zu Art. 5 OR\nGestützt auf Art. 41 OR ist …'))
+      .toBe(' \nGestützt auf Art. 41 OR ist …');
   });
 
-  it('(iii) gezählt wird der ARTIKEL-Schlüssel, nicht die Normalform', () => {
-    // «Art. 6 Abs. 1 EMRK» + «Art. 6 Abs. 3 EMRK» = zweimal Art. 6 EMRK. Die
-    // Zähleinheit muss die Einheit des Index sein, sonst misst die Regel etwas
-    // anderes, als sie entscheidet (Abweichung (A), am Korpus gemessen).
-    const s = snap({ abschnitte: ERW('Nach Art. 6 Abs. 1 EMRK … und Art. 6 Abs. 3 EMRK weiter.') });
-    expect([...artikelSchluesselVonSnapshot(s)]).toEqual(['EMRK/6']);
+  it('MONOTONIE: die Regel nimmt nur weg, sie erzeugt nie ein Zitat', () => {
+    // Die gefährliche Form: der Marker steht ZWISCHEN einer Artikelzahl und einem
+    // Erlass-Code. Klebte der Rest zusammen, entstünde ART.5.OR aus dem Nichts —
+    // eine Fehlzuordnung, wo vorher nur eine fehlende war (§1).
+    const heikel = 'Art. 5 N. 1 zu Art. 9 CC; OR';
+    expect(ohneLiteraturApparat(heikel)).not.toMatch(/Art\. 5\s*OR/);
+    const roh = new Set(extrahiereStatutRefs(heikel).map((r) => r.normalisiert));
+    for (const r of extrahiereStatutRefs(ohneLiteraturApparat(heikel))) {
+      expect(roh.has(r.normalisiert)).toBe(true);
+    }
+    // Am committeten Korpus gemessen (5'093 Snapshots, 28.7.2026): 0 gewonnene
+    // Refs, 0 gewonnene Register-keys — die Teilmengen-Beziehung hält überall.
   });
 
-  it('(i) statutes-Beleg trägt eine EINZELNE Nennung', () => {
+  it('rein und idempotent (§2)', () => {
+    const t = 'A (X, N. 3 zu Art. 5 OR; Y) B';
+    expect(ohneLiteraturApparat(ohneLiteraturApparat(t))).toBe(ohneLiteraturApparat(t));
+    expect(ohneLiteraturApparat(t)).toBe(ohneLiteraturApparat(t));
+  });
+});
+
+describe('Literatur-Kontext-Regel — Wirkung auf beiden Ebenen (R3)', () => {
+  // Die drei ERWARTETEN Verwerfungen, je am Korpus-Beleg nachgestellt.
+  it('BGE 150 IV 10: MSTG/171c verschwindet — Artikel NUR im Kommentar-Buchtitel', () => {
+    const t = 'NIGGLI, Rassendiskriminierung, Ein Kommentar zu Art. 261bis StGB und '
+      + 'Art. 171c MStG, 2a ed. 2007, n. 405 e 407).';
+    const s = snap({ abschnitte: ERW(t) });
+    expect([...artikelSchluesselVonSnapshot(s)]).toEqual([]);
+    expect(normKeysVonSnapshot(s)).toEqual([]);   // auch die ERLASS-Ebene
+  });
+
+  it('BGE 146 III 106: ZGB/517 verschwindet — nur «N. 508/509 zu Art. 517-518 ZGB»', () => {
+    const t = 'Der Betreibungsort der unverteilten Erbschaft (Art. 49 SchKG) gilt auch bei '
+      + 'einer Betreibung gegen den Willensvollstrecker (KÜNZLE, Berner Kommentar, 2011, '
+      + 'N. 508/509 zu Art. 517-518 ZGB; PILLER, in: Commentaire romand, 2016, '
+      + 'N. 131 zu Art. 518 ZGB).';
+    const s = snap({ abschnitte: ERW(t) });
+    // SchKG/49 steht im Erwägungstext und BLEIBT; beide ZGB-Fundstellen fallen weg.
+    expect([...artikelSchluesselVonSnapshot(s)]).toEqual(['SCHKG/49']);
+  });
+
+  it('die Marker greifen auch punktlos («N 51 zu Art.») und als Randziffer («Rz 46 zu Art.»)', () => {
+    // Belege: bs_sozialversicherungsgericht/BV.2026.5 bzw. .../KV.2025.2.
+    expect([...artikelSchluesselVonSnapshot(snap({
+      abschnitte: ERW('(STAUFFER, 2. Aufl., Bern 2019, N 51 zu Art. 26 BVG).'),
+    }))]).toEqual([]);
+    expect([...artikelSchluesselVonSnapshot(snap({
+      abschnitte: ERW('(EUGSTER, Basel 2020, Rz 46 zu Art. 64a KVG).'),
+    }))]).toEqual([]);
+  });
+
+  // ── GEGENPROBE (Pflicht): ein ECHTES Zitat in der NÄHE eines Markers bleibt ──
+  it('Gegenprobe 1: die Nennung VOR der Klammer bleibt, die darin fällt weg', () => {
+    const s = snap({
+      abschnitte: ERW('Gestützt auf Art. 41 OR (vgl. NIGGLI, Kommentar zu Art. 41 OR) '
+        + 'haftet die Beklagte.'),
+    });
+    expect([...artikelSchluesselVonSnapshot(s)]).toEqual(['OR/41']);
+    expect(normKeysVonSnapshot(s)).toEqual(['OR']);
+  });
+
+  it('Gegenprobe 2: nach dem Semikolon endet die Spanne — das Folgezitat bleibt', () => {
+    const s = snap({
+      abschnitte: ERW('(KÜNZLE, N. 12 zu Art. 517 ZGB; im Ergebnis ist Art. 138 ZPO '
+        + 'massgebend).'),
+    });
+    expect([...artikelSchluesselVonSnapshot(s)]).toEqual(['ZPO/138']);
+  });
+
+  it('Gegenprobe 3: die nächste ZEILE ist nie Teil der Spanne', () => {
+    const s = snap({
+      abschnitte: ERW('Dazu MARKWALDER, n° 2 ad art. 123c Cst.\n'
+        + 'Nach Art. 17 ATSG sind die revisionsrechtlichen Grundsätze anwendbar.'),
+    });
+    expect([...artikelSchluesselVonSnapshot(s)]).toEqual(['ATSG/17']);
+  });
+
+  it('KEINE Schwelle mehr: eine EINZELNE Nennung im Erwägungstext trägt wieder', () => {
+    // Genau die Klasse, die die zurückgebaute Häufigkeits-Regel gelöscht hat.
+    const faelle: Array<[string, string]> = [
+      ['Es sind die in Art. 17 ATSG verankerten Grundsätze sinngemäss anwendbar.', 'ATSG/17'],
+      ['Die Zustellfiktion nach Art. 138 Abs. 3 lit. a ZPO greift.', 'ZPO/138'],
+      ['Eine Furchterregung im Sinne von Art. 30 OR liegt nicht vor.', 'OR/30'],
+      ['Die Kostenfolge richtet sich nach Art. 428 StPO.', 'STPO/428'],
+      ['Art. 6 Ziff. 1 EMRK ist auf Steuerverfahren nicht anwendbar.', 'EMRK/6'],
+      ['Vgl. Art. 50 f. DBG zur interkantonalen Zuteilung.', 'DBG/50'],
+      ['Der Tatbestand von Art. 179 septies StGB ist erfüllt.', 'STGB/179septies'],
+    ];
+    for (const [text, key] of faelle) {
+      expect([...artikelSchluesselVonSnapshot(snap({ abschnitte: ERW(text) }))]).toEqual([key]);
+    }
+  });
+
+  it('der statutes-Zweig bleibt roh und ungefiltert (dort steht kein Apparat)', () => {
     const s = snap({ zitierteNormen: ['Art. 41 OR', 'Art. 12 StG'], abschnitte: ERW(IPRG_TEXT) });
     // 'StG' bleibt ausgeschlossen (föderal/kantonal mehrdeutig) — Regel unberührt.
-    expect([...artikelSchluesselVonSnapshot(s)].sort()).toEqual(['OR/41']);
+    expect([...artikelSchluesselVonSnapshot(s)].sort()).toEqual(['IPRG/126', 'OR/41']);
   });
 
-  it('(ii) die Regeste trägt eine EINZELNE Nennung (amtlicher Leitsatz)', () => {
+  it('der Verwurf wird GEZÄHLT zurückgegeben (§6.7, kein stiller Filter)', () => {
     const s = snap({
-      regeste: { text: 'Art. 126 IPRG; Stellvertretung.', quelle: 'opencaselaw', sprachfassungen: [] },
-      abschnitte: ERW('Ohne weitere Nennung.'),
+      abschnitte: ERW('Haftung nach Art. 41 OR (KÜNZLE, N. 508/509 zu Art. 517-518 ZGB).'),
     });
+    const b = artikelSchluesselMitBefund(s);
+    expect([...b.schluessel]).toEqual(['OR/41']);
+    expect(b.literaturVerworfen).toEqual(['ZGB/517']);
+    expect(b.literaturSpannenZahl).toBe(1);
+    expect(b.literaturNennungen).toBe(1);
+    // Die Schlüssel-Menge ist bitgleich die der Produktions-Funktion (§5).
+    expect([...b.schluessel]).toEqual([...artikelSchluesselVonSnapshot(s)]);
+  });
+
+  it('literaturEntfernteNormKeys belegt die Ursache mechanisch (Beleg statt Annahme)', () => {
+    const t = 'NIGGLI, Rassendiskriminierung, Ein Kommentar zu Art. 261bis StGB und '
+      + 'Art. 171c MStG, 2a ed. 2007). Der Tatbestand von Art. 261bis StGB ist erfüllt.';
+    const s = snap({ abschnitte: ERW(t) });
+    // 'MSTG' verschwindet durch die Regel; 'STGB' steht auch im Erwägungstext.
+    expect(literaturEntfernteNormKeys(s)).toEqual(['MSTG']);
+    expect(normKeysVonSnapshot(s)).toEqual(['STGB']);
+    // Was der statutes-Zweig trägt, gilt nie als literatur-entfernt.
+    const mitStatutes = snap({ ...s, zitierteNormen: ['Art. 171c MStG'] });
+    expect(literaturEntfernteNormKeys(mitStatutes)).toEqual([]);
+  });
+
+  it('BEIDE Ebenen lesen denselben bereinigten Text — keine Divergenz mehr', () => {
+    const s = snap({ abschnitte: ERW(IPRG_TEXT) });
+    expect(normKeysVonSnapshot(s)).toEqual(['IPRG']);
     expect([...artikelSchluesselVonSnapshot(s)]).toEqual(['IPRG/126']);
-  });
-
-  it('(B) Volltext und BGE-Auszug werden MAXIMIERT, nicht addiert', () => {
-    // Der Auszug ist eine zweite Darstellung DESSELBEN Urteils. Würde addiert,
-    // käme jede Einzelnennung auf 2 und die Schwelle wäre wirkungslos — genau
-    // so überlebte das Literatur-Phantom MSTG/171c (nachgestellt am Korpus).
-    const eine = 'Der Kommentar zu Art. 171c MStG erwähnt dies.';
-    const s = snap({ abschnitte: ERW(eine), auszugAbschnitte: ERW(eine) });
-    expect([...artikelSchluesselVonSnapshot(s)]).toEqual([]);
-    // Zwei Nennungen INNERHALB einer Fassung tragen dagegen:
-    const s2 = snap({ abschnitte: ERW(eine + '\n' + eine), auszugAbschnitte: ERW(eine) });
-    expect([...artikelSchluesselVonSnapshot(s2)]).toEqual(['MSTG/171c']);
-  });
-
-  it('verworfene Singletons werden GEZÄHLT zurückgegeben (§6.7, kein stiller Filter)', () => {
-    const s = snap({ abschnitte: ERW(IPRG_TEXT) });
-    expect(artikelSchluesselMitBefund(s).verworfen).toEqual(['IPRG/126']);
-    expect(KORROBORATIONS_SCHWELLE).toBe(2);
-  });
-
-  it('die ERLASS-Ebene bleibt von der Regel unberührt (bewusste Divergenz)', () => {
-    const s = snap({ abschnitte: ERW(IPRG_TEXT) });
-    expect(normKeysVonSnapshot(s)).toEqual(['IPRG']);       // vollständig, wie dekretiert
-    expect([...artikelSchluesselVonSnapshot(s)]).toEqual([]); // präzise
   });
 });

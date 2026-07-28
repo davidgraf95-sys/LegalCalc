@@ -15,6 +15,30 @@
         "gewicht": 0
       }
     ],
+    "16": [
+      {
+        "key": "bge_150_II_444",
+        "zitierung": "BGE 150 II 444",
+        "regesteKurz": "Art. 82 BV; Art. 3 Abs. 1-4, Art. 32 Abs. 2 und 3 SVG; Art. 1 Abs. 9 und Art. 108 SSV; Anforderungen an ein Gutachten für die Einführung von Tempo 30 auf einem Strassenabschnitt in der Stadt Bern. Ob die Herabsetzung der Höchstgeschwindigk…",
+        "datum": "2024-03-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "19": [
+      {
+        "key": "bge_148_IV_30",
+        "zitierung": "BGE 148 IV 30",
+        "regesteKurz": "§ 229 aZPO/LU; § 20 UeStG/LU, Art. 258 ZPO, Art. 1 SVG, Art. 1 Abs. 2 VRV; allgemeines bzw. gerichtliches Verbot; öffentliche Strasse. Im Rahmen des Strafverfahrens wegen kantonaler Übertretung eines allgemeinen bzw. gerichtlichen Verbots…",
+        "datum": "2021-08-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "22": [
       {
         "key": "bge_151_IV_237",
@@ -31,6 +55,18 @@
         "zitierung": "BGE 149 IV 153",
         "regesteKurz": "Art. 4 Abs. 2 Rahmenabkommen über die Grenzabfertigung mit Deutschland; Art. 3 StGB; Art. 95 Abs. 1 lit. b SVG; Art. 4 SKV; mangelnde Fahrberechtigung beim bevorstehenden Grenzübertritt; örtliche Zuständigkeit und anwendbares Recht. Schwei…",
         "datum": "2023-02-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "30": [
+      {
+        "key": "bge_148_IV_30",
+        "zitierung": "BGE 148 IV 30",
+        "regesteKurz": "§ 229 aZPO/LU; § 20 UeStG/LU, Art. 258 ZPO, Art. 1 SVG, Art. 1 Abs. 2 VRV; allgemeines bzw. gerichtliches Verbot; öffentliche Strasse. Im Rahmen des Strafverfahrens wegen kantonaler Übertretung eines allgemeinen bzw. gerichtlichen Verbots…",
+        "datum": "2021-08-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -61,6 +97,18 @@
         "gewicht": 0
       }
     ],
+    "99": [
+      {
+        "key": "bge_151_I_3",
+        "zitierung": "BGE 151 I 3",
+        "regesteKurz": "Art. 8, 26, 27, 36, und 94 BV; kommunales Reglement über das Verbot betreffend den kommerziellen Plakataushang auf öffentlichem Grund und auf privatem Grund, der von öffentlichem Grund aus sichtbar ist; abstrakte Normenkontrolle. Das strit…",
+        "datum": "2024-06-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "107": [
       {
         "key": "bge_150_II_444",
@@ -79,6 +127,18 @@
         "zitierung": "BGE 150 II 444",
         "regesteKurz": "Art. 82 BV; Art. 3 Abs. 1-4, Art. 32 Abs. 2 und 3 SVG; Art. 1 Abs. 9 und Art. 108 SSV; Anforderungen an ein Gutachten für die Einführung von Tempo 30 auf einem Strassenabschnitt in der Stadt Bern. Ob die Herabsetzung der Höchstgeschwindigk…",
         "datum": "2024-03-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "113": [
+      {
+        "key": "bge_148_IV_30",
+        "zitierung": "BGE 148 IV 30",
+        "regesteKurz": "§ 229 aZPO/LU; § 20 UeStG/LU, Art. 258 ZPO, Art. 1 SVG, Art. 1 Abs. 2 VRV; allgemeines bzw. gerichtliches Verbot; öffentliche Strasse. Im Rahmen des Strafverfahrens wegen kantonaler Übertretung eines allgemeinen bzw. gerichtlichen Verbots…",
+        "datum": "2021-08-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
