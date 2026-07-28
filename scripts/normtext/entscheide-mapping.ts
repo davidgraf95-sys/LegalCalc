@@ -451,6 +451,35 @@ export function remapNormKeys(alt: readonly string[], berechnet: readonly string
 }
 
 /**
+ * Sperre gegen die EINWEG-RATSCHE (Linse 3, 28.7.2026).
+ *
+ * `remapNormKeys` allein kann nicht unterscheiden, ob ein nicht reproduzierter
+ * Alt-Key ein legitimes Roh-Signal ist (nicht persistierte aza-statutes) oder
+ * eine Fehlzuordnung, die ein Korrektheits-Fix soeben entlarvt hat. Bewahrt es
+ * pauschal, schreibt der nächste `--remap` die korrigierten Keys wieder zurück
+ * und der Fix ist am Artefakt wirkungslos — das ist kein hypothetischer Fall:
+ * wäre der W2·6-NKEY-Backfill VOR dem Trunkierungs-Fix gelaufen, hätte er die
+ * fünf falschen MSCHG-Keys als «alt-erhalten» konserviert.
+ *
+ * Die Unterscheidung ist fachlich, nicht maschinell (§1). Diese Funktion trifft
+ * sie darum nicht, sie erzwingt nur, dass sie GETROFFEN wurde: bewahrt werden
+ * darf, was der Aufrufer deklariert hat; alles andere kommt als Befund zurück
+ * und lässt den Lauf abbrechen (fail-closed, §6.7). Rein, sortiert (§2).
+ */
+export function undeklarierteAltKeys(
+  bewahrt: ReadonlyMap<string, readonly string[]>,
+  deklariert: ReadonlyMap<string, readonly string[]>,
+): string[] {
+  const raus: string[] = [];
+  for (const [id, keys] of bewahrt) {
+    const erwartet = deklariert.get(id) ?? [];
+    const fremd = [...new Set(keys.filter((k) => !erwartet.includes(k)))].sort();
+    if (fremd.length) raus.push(`${id}: ${fremd.join(', ')}`);
+  }
+  return raus.sort();
+}
+
+/**
  * (Register-key, Artikel-Token)-Paare, die ein Snapshot zitiert — 'OR/41'-Form,
  * deduppt. Quelle sind die Roh-statutes UND der Fliesstext (Baustein d). Der
  * Ausschluss mehrdeutiger Kürzel wirkt bereits in `normKeyFuerAbk`.

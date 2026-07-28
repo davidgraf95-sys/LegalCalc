@@ -14,7 +14,7 @@ import {
   holeEntscheidOCL, enumeriereNeueste, enumeriereNeuesteAlle, citedRefZuId, enumeriereBge, enumeriereBgeBaender, holeBgeLeitentscheid,
 } from './normtext/adapter-entscheide';
 import { schreibeKorpus, ladeBestandSnapshots } from './normtext/entscheide-schreiben';
-import { normKeysVonSnapshot, remapNormKeys } from './normtext/entscheide-mapping';
+import { normKeysVonSnapshot, remapNormKeys, undeklarierteAltKeys } from './normtext/entscheide-mapping';
 import { sha256EntscheidBloecke } from './normtext/sha-entscheide';
 import { holeRegesteSprachfassungen, holeClirHtml, parseClirUrteilskopf, bgeRefZuClirId } from './normtext/clir-regeste';
 import type { EntscheidSnapshot } from '../src/lib/rechtsprechung/typen';
@@ -97,6 +97,39 @@ const bgeBaender = (arg('--bge-baender') ?? '').split(',').map((s) => Number(s.t
 // den committeten Snapshots — mit gleichem --datum byte-gleich wiederholbar (§2).
 // Berührt `sha` NICHT (der deckt nur `abschnitte`).
 const remap = process.argv.includes('--remap');
+/**
+ * DEKLARIERTE Alt-Key-Bewahrung (Linse 3, 28.7.2026) — die Ratsche bekommt eine
+ * Sperre.
+ *
+ * `remapNormKeys` bewahrt jeden Alt-Key, den die Neuberechnung nicht reproduziert
+ * (Begründung dort: nicht persistierte aza-statutes sind legitime Roh-Signale ohne
+ * Beleg IM Snapshot). Pauschal angewandt ist das eine EINWEG-RATSCHE: sie bewahrt
+ * auch einen Alt-Key, den ein Korrektheits-Fix soeben als FALSCH entlarvt hat.
+ * Beinahe-Fall aus dieser Bau-Einheit: wäre der Backfill VOR dem Trunkierungs-Fix
+ * gelaufen (LPMéd → 'LPM' → MSCHG), hätte ein späterer `--remap` die fünf falschen
+ * MSCHG-Keys als «alt-erhalten» zurückgeschrieben — der Fix wäre am Artefakt
+ * wirkungslos geblieben, und die Zahl in der Log-Zeile hätte wie eine Rettung
+ * ausgesehen statt wie ein Rückfall.
+ *
+ * Bewahrt wird darum nur noch, was hier DEKLARIERT ist. Alles andere bricht den
+ * Lauf ab (fail-closed, §6.7): lieber ein Abbruch mit vollständiger Liste als ein
+ * stiller Rückschreiber. Wächst die Liste, ist das eine bewusste Entscheidung mit
+ * Herkunfts-Beleg — kein Nebeneffekt.
+ *
+ * §6.7-Sabotage-Probe 28.7.2026: mit LEERER Deklaration bricht `--remap` ab und
+ * nennt «bund/bge/152_I_61: ZPO»; der Abbruch erfolgt VOR `schreibeKorpus`, der
+ * committete Korpus blieb byte-gleich (5'254 Dateien geprüft). Die Sperre kann
+ * also scheitern, und ihr Scheitern zerstört nichts.
+ *
+ * HEUTIGER STAND (gemessen am committeten Korpus, 28.7.2026): genau ein Eintrag.
+ * bund/bge/152_I_61 trägt 'ZPO', ohne dass 'ZPO'/'CPC' in `zitierteNormen` oder im
+ * Fliesstext des Snapshots vorkommt — Herkunft ist der frühere BGE-Merge, der die
+ * statutes des unterliegenden aza-Urteils in die normKeys fliessen liess, ohne sie
+ * selbst zu persistieren (seit der Adapter-Härtung passiert das nicht mehr).
+ */
+const ALT_ERHALTEN_ERWARTET: ReadonlyMap<string, readonly string[]> = new Map([
+  ['bund/bge/152_I_61', ['ZPO']],
+]);
 // Cache-Verzeichnis der rohen clir-HTML (gitignored; Re-Parse ohne Re-Crawl).
 const CLIR_CACHE = path.join(process.cwd(), 'daten', 'cache', 'clir-regeste');
 // Court-spezifischer Sachgebiets-Hint (deterministisch, deklariert): Patentstreit =
@@ -247,20 +280,40 @@ async function main() {
     let veraendert = 0;
     // Alt-Keys, die die Neuberechnung nicht reproduziert, werden BEWAHRT statt
     // gelöscht — Regel und Begründung in `remapNormKeys` (§5: eine Stelle).
+    // NUR das in ALT_ERHALTEN_ERWARTET Deklarierte darf so überleben; alles
+    // andere bricht den Lauf ab, statt still zurückgeschrieben zu werden.
     let altErhaltenKeys = 0;
     let altErhaltenSnaps = 0;
+    const bewahrt = new Map<string, readonly string[]>();
     for (const s of basis) {
       const alt = s.normKeys ?? [];
       const { keys: neu, nurAlt } = remapNormKeys(alt, normKeysVonSnapshot(s)); // ohne hint: rein aus dem Snapshot
-      if (nurAlt.length) { altErhaltenKeys += nurAlt.length; altErhaltenSnaps++; }
+      if (nurAlt.length) {
+        altErhaltenKeys += nurAlt.length;
+        altErhaltenSnaps++;
+        bewahrt.set(s.id, nurAlt);
+      }
       if (neu.length !== alt.length || neu.some((k, i) => k !== alt[i])) veraendert++;
       s.normKeys = neu;
+    }
+    const undeklariert = undeklarierteAltKeys(bewahrt, ALT_ERHALTEN_ERWARTET);
+    if (undeklariert.length) {
+      console.error(
+        `\n[remap] ABBRUCH — ${undeklariert.length} Snapshot(s) mit nicht deklarierten `
+        + 'Alt-Keys. Ein Alt-Key, den die Neuberechnung nicht reproduziert, kann ein '
+        + 'legitimes Roh-Signal ODER eine soeben korrigierte Fehlzuordnung sein; '
+        + 'welches von beidem, entscheidet kein Automatismus (§1/§6.7). Prüfen und '
+        + 'entweder in ALT_ERHALTEN_ERWARTET (scripts/normtext-entscheide.ts) mit '
+        + 'Herkunfts-Beleg deklarieren oder die Ursache beheben:',
+      );
+      for (const z of undeklariert) console.error(`  · ${z}`);
+      process.exit(1);
     }
     const nachher = basis.filter((s) => s.normKeys.length > 0).length;
     const res = schreibeKorpus(basis, datum);
     console.log(`[remap] ${basis.length} Snapshots · normKeys verändert: ${veraendert}`);
     console.log(`[remap] mit ≥1 normKey: vorher ${vorher} → nachher ${nachher}`);
-    console.log(`[remap] alt-erhalten: ${altErhaltenKeys} Keys über ${altErhaltenSnaps} Snapshots (nicht aus dem Snapshot rekonstruierbar, siehe Kommentar).`);
+    console.log(`[remap] alt-erhalten: ${altErhaltenKeys} Keys über ${altErhaltenSnaps} Snapshots — alle deklariert (${ALT_ERHALTEN_ERWARTET.size} Eintrag/Einträge in ALT_ERHALTEN_ERWARTET).`);
     console.log(`[remap] geschrieben: ${res.anzahl} Manifest-Einträge, ${res.normBuckets} Norm-Buckets, ${res.artikelBuckets} Artikel-Buckets, ${res.shards} Shards.`);
     return;
   }

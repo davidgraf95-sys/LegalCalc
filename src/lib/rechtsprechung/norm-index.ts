@@ -119,8 +119,16 @@ export function normArtikelToken(artikel: string): string {
  * Absteigend nach topischer In-degree (`gewicht`) vorsortiert. [] wenn unbekannt
  * oder wenn der Index (Alt-Fassung) keine Artikel-Ebene trägt.
  *
- * Liest das GESAMT-JSON (536 KB) — bewusst nur für Tests / server-seitige
- * Gegenprüfung. Die UI nimmt den erlass-lokalen Shard (`leitfaelleFuerArtikel`).
+ * Liest das GESAMT-JSON (6.1 MB, Stand 28.7.2026 nach dem W2·6-NKEY-Backfill;
+ * die frühere Zahl «536 KB» war vor-Backfill) — bewusst nur für Tests /
+ * server-seitige Gegenprüfung. Die UI nimmt den erlass-lokalen Shard
+ * (`leitfaelleFuerArtikel`).
+ *
+ * ACHTUNG, das Gesamt-JSON ist NICHT vom Laufzeitpfad verschwunden: derselbe
+ * `ladeNormIndex()` speist auch `rechtsprechungFuerErlass()`, und das ruft
+ * `kontextEntscheide()` (lib/kontext.ts) fürs Verweis-Popover auf. Wer die
+ * Grösse dieses Artefakts bewertet, bewertet damit echte Nutzlast — nicht bloss
+ * eine Build-Datei (Budget-Kommentare in scripts/normtext/check-entscheide.ts).
  */
 export async function rechtsprechungFuerArtikel(registerKey: string, artikel: string): Promise<LeitfallRef[]> {
   const idx = await ladeNormIndex();

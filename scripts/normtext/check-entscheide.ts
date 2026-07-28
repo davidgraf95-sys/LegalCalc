@@ -44,10 +44,40 @@ const BUDGET_MB = 1024;
 // Fliesstext-Erkennung: der Backfill leitet die normKeys über ALLE 5093 Snapshots ab
 // (vorher 1114), wodurch die Artikel-Ebene von 355 auf 4473 Buckets wächst — das Dekret
 // («vollständig erkennen») ist genau dieser Fan-out, nicht ein Unfall. Ist 28.7.2026 =
-// 6.13 MB, Deckel = Ist + ~25 % Reserve. §15-Logikverlust-Bewertung: keiner — reine
-// Index-Grösse ohne Regeländerung; die Auslieferung erfolgt bereits über die 157 Shards
-// unter public/rechtsprechung/norm-index/, die Lade-Optimierung ist W2·7-VZUI-Thema.
+// 6.13 MB, Deckel = Ist + ~25 % Reserve.
+//
+// WAS DIESER DECKEL IST — und was er NICHT ist (Linse 3, 28.7.2026, korrigiert die
+// §15-Bewertung von ccde5187). Hier stand, die Auslieferung erfolge «bereits über die
+// 157 Shards», die Anhebung sei also laufzeit-neutral. Das ist NACHGEPRÜFT FALSCH:
+// `ladeNormIndex()` in src/lib/rechtsprechung/norm-index.ts fetcht norm-index.json
+// zur LAUFZEIT, und `kontextEntscheide()` (src/lib/kontext.ts) ruft darüber
+// `rechtsprechungFuerErlass()` für das Verweis-Popover auf (KontextPanel.tsx). Der
+// Monolith liegt also auf einem echten Nutzerpfad — die Shards sind die Artikel-,
+// nicht die Erlass-Ebene und ersetzen ihn nicht.
+// Dieser Deckel misst darum die DATEI AUF DER PLATTE (Unfall-Bremse gegen still
+// ballonierenden Fan-out), NICHT die Nutzlast auf dem kritischen Pfad. Dafür
+// zuständig ist check:perf-budget (scripts/check-perf-budget.ts, gzip-Schranke für
+// norm-index.json) — und dort ist der Backfill offen: gzip 205 KB (vor Backfill) →
+// 728 KB gegen eine Schranke von 260 KB. Das Anheben DIESES Deckels hat jene
+// Schranke weder geprüft noch entschärft; die Entscheidung (Schranke anheben vs.
+// eine schlanke proNorm-Projektion für den Laufzeitpfad) steht bei David aus und
+// gehört zu W2·7-VZUI. §15-Logikverlust-Bewertung unverändert: keiner — reine
+// Index-Grösse ohne Regeländerung.
 const NORM_INDEX_BUDGET_MB = 8;
+// Per-Shard-Deckel (Linse 3, 28.7.2026, §15). Der Monolith-Deckel oben sagt NICHTS
+// über die je Seite tatsächlich geladene Menge: der ArtikelLeser (gesetz-leser/
+// inhalt.tsx, KontextPanel.tsx) zieht über `ladeLeitfallShard` genau EINEN Shard
+// je Erlass. Der Backfill hat die grossen Shards ~3.5× wachsen lassen (Ist
+// 28.7.2026, KiB wie unten gemessen: STPO 584, STGB 437, ZPO 426, OR 419,
+// ZGB 398), und für sie gab es bis jetzt gar keinen Deckel: ein weiterer
+// Fan-out-Schritt wäre auf der Leseseite still angekommen. 1024 KB = grösster
+// Ist-Wert + ~75 % Reserve, fliessend nachzuziehen wie BUDGET_MB (Freigabe-Logik
+// David 26.6.2026) — er bremst Unfälle, limitiert nicht künstlich.
+// §6.7-Sabotage-Probe 28.7.2026: mit Deckel 400 KB meldet das Tor genau STPO,
+// STGB, ZPO und OR rot — es kann scheitern, und zwar an den richtigen Dateien.
+// Die eigentliche Lade-Optimierung (Shard-Staffelung/Artikel-Fenster) ist
+// W2·7-VZUI-Thema, nicht diese Bau-Einheit.
+const SHARD_BUDGET_KB = 1024;
 const AHV = /\b756\.\d{4}\.\d{4}\.\d{2}\b/;   // CH-Sozialversicherungsnummer (darf nicht vorkommen)
 
 const fehler: string[] = [];
@@ -236,6 +266,17 @@ function main() {
       const proArtikelSoll = idx.proNormArtikel ?? {};
       const erlasseSoll = new Set(Object.keys(proArtikelSoll).map((k) => k.slice(0, k.indexOf('/'))));
       const shardDateien = readdirSync(shardDir).filter((f) => f.endsWith('.json')).sort();
+      // Grösster Shard sichtbar machen: ein Deckel, dessen Abstand niemand sieht,
+      // wird erst beim Reissen bemerkt (§8).
+      const groesster = shardDateien
+        .map((f) => ({ f, kb: statSync(join(shardDir, f)).size / 1024 }))
+        .sort((a, b) => b.kb - a.kb || (a.f < b.f ? -1 : 1))[0];
+      if (groesster) {
+        console.log(
+          `[check:entscheide] Shards: ${shardDateien.length}, grösster ${groesster.f} `
+          + `${groesster.kb.toFixed(0)} KB (Budget ${SHARD_BUDGET_KB} KB).`,
+        );
+      }
       const erlasseIst = new Set(shardDateien.map((f) => f.slice(0, -5)));
       for (const e of erlasseSoll) if (!erlasseIst.has(e)) fehler.push(`Shard fehlt für Erlass '${e}' (hat Artikel-Treffer im norm-index)`);
       for (const e of erlasseIst) if (!erlasseSoll.has(e)) fehler.push(`Shard '${e}.json' ohne Artikel-Treffer im norm-index (verwaist)`);
@@ -243,7 +284,19 @@ function main() {
       const ohneGewicht = (r: LeitfallRef): string => JSON.stringify({ ...r, gewicht: 0 });
       const gesehen = new Set<string>();
       for (const f of shardDateien) {
-        const s = JSON.parse(readFileSync(join(shardDir, f), 'utf8')) as LeitfallShard;
+        const shardPfad = join(shardDir, f);
+        // Per-Shard-Deckel (§15): dies ist die Menge, die eine EINZELNE Leserseite
+        // wirklich zieht — der Monolith-Deckel oben sieht sie nicht.
+        const shardKb = statSync(shardPfad).size / 1024;
+        if (shardKb > SHARD_BUDGET_KB) {
+          fehler.push(
+            `Shard '${f}' überschreitet das Per-Shard-Budget: ${shardKb.toFixed(0)} KB > `
+            + `${SHARD_BUDGET_KB} KB. Das ist die Nutzlast EINER Erlass-Leserseite `
+            + `(ladeLeitfallShard) — entweder den Fan-out prüfen oder den Deckel `
+            + `deliberat nachziehen (§15; Lade-Optimierung → W2·7-VZUI).`,
+          );
+        }
+        const s = JSON.parse(readFileSync(shardPfad, 'utf8')) as LeitfallShard;
         const erlass = f.slice(0, -5);
         if (s.erlass !== erlass) fehler.push(`Shard '${f}': erlass-Feld '${s.erlass}' ≠ Dateiname '${erlass}'`);
         if (s.gewichtQuelle !== 'alt' && s.gewichtQuelle !== 'e4') fehler.push(`Shard '${f}': gewichtQuelle '${String(s.gewichtQuelle)}' ∉ {alt,e4}`);

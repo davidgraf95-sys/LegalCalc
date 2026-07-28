@@ -99,10 +99,30 @@ const GESETZ_CODE = '[A-Z][A-Z0-9]{1,11}[ÄÖÜ]?(?:/[A-Z0-9]{2,6})?';
 // Der Lookahead deckt darum den Latin-1-Supplement- und Latin-Extended-A/B-
 // Bereich `À-ɏ` ab (die Umlaute ÄÖÜ liegen darin und sind damit
 // weiterhin erfasst). Folge: «LPMéd» erzeugt GAR KEIN Token statt eines
-// falschen — die Nennung ist dann eine benannte Lücke (das Sichtbarkeits-Tor
-// check:normkeys weist sie aus), keine stille Falschzuordnung (§1/§8).
+// falschen — statt einer stillen Falschzuordnung steht dort jetzt eine Lücke
+// (§1/§8).
+//
+// WAS DIESE LÜCKE IST — und was sie NICHT ist (Linse 3, 28.7.2026). Hier stand
+// vorher, das Sichtbarkeits-Tor check:normkeys «weise sie aus». Das war zu
+// grosszügig: die Rot-Liste des Tors zählt TOKEN, die der Extraktor gebildet
+// hat. Was er gar nicht erst tokenisiert, taucht dort weder als ungemappt noch
+// im Nenner der Abdeckungs-Quote auf — die Nennung fällt aus der MESSUNG, sie
+// fällt nicht in die Rot-Liste. Die Quote wird von dieser Lücke also nicht
+// schlechter, sondern blind. Ausgewiesen wird sie darum an der einzigen Stelle,
+// die sie sehen kann: der informativen Unerreichbar-Ausgabe von
+// check-normkeys-abdeckung.ts, die je unerreichbarer Alias-Form die
+// Korpus-Häufigkeit mitzählt (Stand 28.7.2026: 34 Formen, 265 Artikel-Zitate in
+// 207 Snapshots, die dem Nenner fehlen).
+//
 // Die Änderung ist bewusst einseitig: die Wortgrenze wird nur STRENGER, kein
-// Muster wird durchlässiger — sie kann keinen neuen Falsch-Positiven erzeugen.
+// Muster wird durchlässiger. Dass daraus kein neuer Falsch-Positiver folgt, ist
+// allerdings nicht allein aus der Strenge zu schliessen — ein Treffer, der
+// wegfällt, gibt seinen Textbereich für den /g-Scan wieder frei, und ein dort
+// verdeckter Folgetreffer könnte theoretisch neu erscheinen. GEMESSEN am
+// committeten Korpus (5'093 Snapshots, 28.7.2026, alte gegen neue Wortgrenze):
+// 0 gewonnene Refs, 0 gewonnene normKeys, 0 gewonnene Artikel-Schlüssel — 35
+// Refs fielen weg, darunter die 5 MSCHG-Fehlzuordnungen (13 Artikel-Schlüssel).
+// Die Aussage ist damit empirisch belegt, nicht bloss plausibel.
 // (Die Range enthält nebenbei × und ÷; beide folgen nie auf ein Erlass-Kürzel,
 // und auch dort wäre die Wirkung nur «verwirft mehr».)
 const CODE_ENDE = '(?![A-Za-z0-9_\\u00C0-\\u024F])';

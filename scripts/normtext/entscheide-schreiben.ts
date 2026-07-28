@@ -13,6 +13,7 @@ import { parseBesetzung, kanonisiere, bereinigeBesetzungsFreitext, type KanonEin
 import type { EntscheidRef, LeitfallRef, LeitfallShard } from '../../src/lib/rechtsprechung/norm-index';
 import { minteEcliFuerSnapshot } from '../../src/lib/rechtsprechung/ecli';
 import { artikelSchluesselVonSnapshot, AUSGESCHLOSSENE_KEYS } from './entscheide-mapping';
+import { vergleiche } from './vergleich';
 
 export function keyVon(snap: EntscheidSnapshot): { key: string; datei: string } {
   const docketSafe = snap.id.split('/').pop()!;
@@ -358,9 +359,19 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
   const richterObj: RichterRegister = { erzeugt: datum, richter: richterEintraege };
   writeFileSync(join(PUB, 'richter.json'), JSON.stringify(richterObj, null, 2) + '\n', 'utf8');
 
-  // Artikel-Ebene (W3) zusätzlich zur Erlass-Ebene — proNorm bleibt unverändert.
+  // Artikel-Ebene (W3) zusätzlich zur Erlass-Ebene — proNorm bleibt inhaltlich unverändert.
   const proNormArtikel = baueArtikelIndex(auswahl);
-  writeFileSync(join(PUB, 'norm-index.json'), JSON.stringify({ erzeugt: datum, proNorm, proNormArtikel }, null, 2) + '\n', 'utf8');
+  // §2 (Linse 3, 28.7.2026): Die SCHLÜSSELFOLGE von `proNorm` war die Einfüge-
+  // reihenfolge, also die Reihenfolge der Bau-Eingabe (157 Buckets, 63 unsortierte
+  // Übergänge). Vollbau und `--remap` erzeugten damit inhaltsgleiche, aber
+  // BYTE-VERSCHIEDENE Dateien — genau die Abhängigkeit vom Build-Pfad, die die
+  // Sortierung INNERHALB der Buckets (key als totaler Tiebreaker, oben) längst
+  // ausschliesst. Die Artikel-Ebene war bereits sortiert (`baueArtikelIndex`);
+  // hier wird die Erlass-Ebene nachgezogen. Codepoint-Ordnung wie überall in der
+  // Kette (scripts/normtext/vergleich.ts), nicht locale-abhängig.
+  const proNormSortiert: Record<string, EntscheidRef[]> = {};
+  for (const nk of Object.keys(proNorm).sort(vergleiche)) proNormSortiert[nk] = proNorm[nk];
+  writeFileSync(join(PUB, 'norm-index.json'), JSON.stringify({ erzeugt: datum, proNorm: proNormSortiert, proNormArtikel }, null, 2) + '\n', 'utf8');
   // Schaufenster-Shards je Erlass (Weiche B): zusätzliche Projektion, damit der
   // ArtikelLeser nur den Shard seines Erlasses lädt (§15.3). Trailing-Newline +
   // 2-Space wie norm-index.json/register.json (Rechtsprechungs-Serialisierung).

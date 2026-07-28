@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   normalisiereAbk, normKeyFuerAbk, statutesZuNormKeys, fliesstextVon,
-  normKeysVonSnapshot, artikelSchluesselVonSnapshot, remapNormKeys,
+  normKeysVonSnapshot, artikelSchluesselVonSnapshot, remapNormKeys, undeklarierteAltKeys,
   ABK_KOLLISIONEN, ABK_AUSSCHLUSS, AUSGESCHLOSSENE_KEYS,
   ABK_ALIAS_NOTIZEN, ABK_ALIAS_AUSGESCHLOSSEN,
 } from '../../scripts/normtext/entscheide-mapping';
@@ -319,6 +319,43 @@ describe('remapNormKeys — Re-Map bewahrt nicht rekonstruierbare Alt-Keys (B1)'
     const r = remapNormKeys(['ZPO', 'ZPO', 'BGG', 'OR'], ['OR']);
     expect(r.nurAlt).toEqual(['BGG', 'ZPO']);
     expect(r.keys).toEqual(['BGG', 'OR', 'ZPO']);
+  });
+});
+
+describe('undeklarierteAltKeys — die Bewahrung ist deklariert, nicht pauschal (Linse 3)', () => {
+  const DEKLARIERT = new Map<string, readonly string[]>([['bund/bge/152_I_61', ['ZPO']]]);
+
+  it('lässt den deklarierten Alt-Key durch', () => {
+    const bewahrt = new Map<string, readonly string[]>([['bund/bge/152_I_61', ['ZPO']]]);
+    expect(undeklarierteAltKeys(bewahrt, DEKLARIERT)).toEqual([]);
+  });
+
+  it('meldet den Beinahe-Fall: eine korrigierte Fehlzuordnung darf NICHT zurück', () => {
+    // Wäre der Backfill vor dem Trunkierungs-Fix gelaufen (LPMéd → 'LPM' → MSCHG),
+    // hätte die pauschale Bewahrung die fünf falschen MSCHG-Keys konserviert.
+    const bewahrt = new Map<string, readonly string[]>([
+      ['bund/bge/151_I_19', ['MSCHG']],
+      ['bund/bge/148_I_1', ['MSCHG']],
+    ]);
+    expect(undeklarierteAltKeys(bewahrt, DEKLARIERT)).toEqual([
+      'bund/bge/148_I_1: MSCHG',
+      'bund/bge/151_I_19: MSCHG',        // sortiert (§2), vollständige Liste
+    ]);
+  });
+
+  it('meldet auch einen ZUSÄTZLICHEN Key an einem deklarierten Snapshot', () => {
+    // Die Deklaration gilt je Snapshot UND je Key — nicht «dieser Snapshot ist frei».
+    const bewahrt = new Map<string, readonly string[]>([['bund/bge/152_I_61', ['MSCHG', 'ZPO']]]);
+    expect(undeklarierteAltKeys(bewahrt, DEKLARIERT)).toEqual(['bund/bge/152_I_61: MSCHG']);
+  });
+
+  it('leere Deklaration ⇒ jede Bewahrung ist ein Befund (fail-closed, §6.7)', () => {
+    const bewahrt = new Map<string, readonly string[]>([['bund/bge/152_I_61', ['ZPO']]]);
+    expect(undeklarierteAltKeys(bewahrt, new Map())).toEqual(['bund/bge/152_I_61: ZPO']);
+  });
+
+  it('nichts bewahrt ⇒ nichts zu melden', () => {
+    expect(undeklarierteAltKeys(new Map(), DEKLARIERT)).toEqual([]);
   });
 });
 

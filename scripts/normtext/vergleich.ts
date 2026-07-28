@@ -16,10 +16,21 @@
  * einer deutschen Duden-Sortierung (Ä landet hinter Z), und das ist in Ordnung:
  * sortiert werden Erlass-Kürzel und SR-Nummern, keine Fliesstexte für Leser.
  *
- * EINE Stelle (§5): der Generator (abk-aliase-generieren.ts) schreibt damit das
- * Alias-Artefakt, das Tor (check-normkeys-abdeckung.ts) sortiert damit seine
- * Ausgaben. Zwei Kopien derselben Regel wären zwei Regeln, sobald eine gepflegt
- * wird und die andere nicht.
+ * EINE Stelle (§5) FÜR DIE HIER ANGESCHLOSSENEN PFADE: der Generator
+ * (abk-aliase-generieren.ts) schreibt damit das Alias-Artefakt, das Tor
+ * (check-normkeys-abdeckung.ts) sortiert damit seine Ausgaben, der Korpus-Writer
+ * (entscheide-schreiben.ts) die proNorm-Schlüsselfolge des norm-index. Zwei
+ * Kopien derselben Regel wären zwei Regeln, sobald eine gepflegt wird und die
+ * andere nicht.
+ *
+ * BEKANNTE OFFENE STELLE (Linse 3, 28.7.2026): «eine Stelle» gilt NICHT für die
+ * ganze Build-Kette. `scripts/normtext/browse-manifest.ts` sortiert das
+ * Browse-Manifest weiterhin mit `localeCompare` (in seiner eigenen, lokalen
+ * `vergleiche`-Funktion). Das ist hier bewusst NICHT mit angefasst: es ist eine
+ * fremde Artefakt-Kette (Normtext-Browse, nicht Rechtsprechung), eine Umstellung
+ * änderte deren Golden-Ausgabe und gehört damit in einen eigenen, deklarierten
+ * Schritt mit Golden-Beweis (§6.3) — nicht als Nebeneffekt hier hinein. Benannt
+ * statt verschwiegen, damit der Satz oben nicht mehr verspricht, als er hält (§8).
  */
 export function vergleiche(a: string, b: string): number {
   return a < b ? -1 : a > b ? 1 : 0;

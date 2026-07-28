@@ -91,7 +91,7 @@ import {
   normalisiereAbk,
 } from './entscheide-mapping';
 import { ABK_ALIASE } from '../../src/lib/normtext/abk-aliase.generated';
-import { extrahiereStatutRefs } from '../../src/lib/rechtsprechung/zitat-extraktion';
+import { extrahiereStatutRefs, INVALID_LAW_CODES } from '../../src/lib/rechtsprechung/zitat-extraktion';
 import { vergleiche } from './vergleich';
 
 /** Snapshot-Frequenz, ab der ein ungemapptes Token das Tor rot macht. */
@@ -260,7 +260,7 @@ interface TokenZahl {
   snapshots: number;
 }
 
-function erhebe(): { zahlen: Map<string, TokenZahl>; snapshots: number } {
+function erhebe(snaps: readonly ReturnType<typeof ladeBestandSnapshots>[number][]): Map<string, TokenZahl> {
   const zahlen = new Map<string, TokenZahl>();
   const hole = (token: string): TokenZahl => {
     let z = zahlen.get(token);
@@ -268,7 +268,6 @@ function erhebe(): { zahlen: Map<string, TokenZahl>; snapshots: number } {
     return z;
   };
 
-  const snaps = ladeBestandSnapshots();
   for (const snap of snaps) {
     const imSnapshot = new Set<string>();
     for (const zeile of snap.zitierteNormen ?? []) {
@@ -287,7 +286,7 @@ function erhebe(): { zahlen: Map<string, TokenZahl>; snapshots: number } {
     }
     for (const token of imSnapshot) hole(token).snapshots += 1;
   }
-  return { zahlen, snapshots: snaps.length };
+  return zahlen;
 }
 
 function prozent(teil: number, ganz: number): string {
@@ -310,41 +309,161 @@ function umbreche(eintraege: readonly string[], breite: number): string[] {
 /**
  * Aliase, die der FLIESSTEXT-Extraktor strukturell nie erzeugen kann (Linse 2).
  *
- * Der Extraktor liest nur `[A-Z][A-Z0-9]{1,11}[ÄÖÜ]?` als Gesetzes-Code. Eine
- * amtliche Abkürzung mit Akzent oder Leerzeichen — «LPMéd», «OMéd», «BVV 2» —
- * ist in dieser Form nicht treffbar; ihr Alias kann im Fliesstext-Pfad also nie
- * nachgeschlagen werden. Das ist KEIN Fehler: der Eintrag ist tot, aber
- * harmlos (er kann nichts falsch zuordnen), und im statutes-Pfad bleibt er
+ * Der Extraktor liest nur `[A-Z][A-Z0-9]{1,11}[ÄÖÜ]?` als Gesetzes-Code, und er
+ * verwirft danach über Gross-Regel und Sperrliste weiter. Eine amtliche
+ * Abkürzung, die daran scheitert — «BVV 2», «BüG», «GwV-FINMA» —, kann im
+ * Fliesstext-Pfad nie nachgeschlagen werden. Im statutes-Pfad bleibt sie
  * wirksam, weil `abkVonStatut` das Roh-Token samt Akzent liest.
  *
- * Ausgewiesen wird er trotzdem — sonst wächst die Liste still, und niemand
- * merkt, dass ein Erlass im Fliesstext nur über eine ANDERE Sprachfassung
- * gefunden wird (SR 812.212.21 etwa nur über das it-Kürzel «OM», nie über das
- * fr-«OMéd»). Genau diese Asymmetrie wollte man wissen, bevor man aus einer
- * Abdeckungs-Quote Schlüsse zieht (§8).
+ * Ausgewiesen wird das, sonst wächst die Liste still, und niemand merkt, dass
+ * ein Erlass im Fliesstext nur über eine ANDERE Sprachfassung gefunden wird
+ * (SR 812.212.21 etwa nur über das it-Kürzel «OM», nie über das fr-«OMéd»).
+ * Genau diese Asymmetrie wollte man wissen, bevor man aus einer Abdeckungs-
+ * Quote Schlüsse zieht (§8).
  *
  * ERMITTELT MIT DEM ECHTEN EXTRAKTOR, nicht per Zeichen-Heuristik (§5): das
  * Alias wird in ein Minimal-Zitat gesetzt und geprüft, ob dabei sein eigener
  * normalisierter Token herauskommt. Ändert sich die Reichweite des Extraktors,
  * ändert sich diese Liste automatisch mit — eine nachgebaute Regel täte das
  * nicht und driftete weg.
+ *
+ * URSACHE JE EINTRAG (Linse 3, 28.7.2026). Die frühere Doku nannte «Akzent oder
+ * Leerzeichen». Am Bestand sind es FÜNF Ursachen, und die Zuschreibung ist
+ * nicht die naheliegende: Das Muster läuft case-insensitiv (`i`-Flag), medial
+ * kleingeschriebene ASCII-Buchstaben sind also KEIN Hindernis — «Lferr»
+ * scheitert nicht am Muster, sondern an der Gross-Regel (genau ein
+ * Grossbuchstabe bei Länge > 3). Die Reihenfolge unten spiegelt die Reihenfolge,
+ * in der der Extraktor selbst verwirft: Form → Gross-Regel → Sperrliste.
+ * Verteilung 28.7.2026 (62 Einträge): Leerzeichen 32 · Trennzeichen 17 ·
+ * Akzent/Umlaut im Wortinnern 9 · Gross-Regel 3 · Sperrliste 1 («LA», das
+ * amtliche fr-Kürzel des Luftfahrtgesetzes — es steht als frz. Artikel «la» in
+ * INVALID_LAW_CODES, obwohl `normKeyFuerAbk('LA')` auf LFG zeigt; die
+ * Falsch-Positiv-Vermeidung gewinnt hier bewusst gegen den Treffer).
  */
-function unerreichbareAliase(): string[] {
-  const raus: string[] = [];
+type UnerreichbarGrund =
+  | 'Leerzeichen'
+  | 'Trennzeichen kappt den Code'
+  | 'Akzent/Umlaut im Wortinnern'
+  | 'nur 1 Grossbuchstabe bei Länge > 3'
+  | 'Sperrliste INVALID_LAW_CODES'
+  | 'unbekannt';
+
+interface UnerreichbaresAlias {
+  abk: string;
+  sr: string;
+  sprache: string;
+  grund: UnerreichbarGrund;
+}
+
+/** Erste greifende Verwerf-Ursache, in der Reihenfolge des Extraktors. */
+function unerreichbarGrund(abk: string): UnerreichbarGrund {
+  if (/\s/.test(abk)) return 'Leerzeichen';
+  // Ein Nicht-ASCII-Buchstabe ist nur als END-Umlaut zulässig (GESETZ_CODE).
+  if (/[^\x00-\x7F]/.test(abk.replace(/[ÄÖÜ]$/, ''))) return 'Akzent/Umlaut im Wortinnern';
+  // Bindestrich/Punkt: der Code endet dort, der Rest fällt ab («GwV-FINMA» → 'GWV').
+  if (/[^A-Za-z0-9]/.test(abk)) return 'Trennzeichen kappt den Code';
+  if ((abk.match(/[A-ZÄÖÜ]/g) ?? []).length <= 1 && abk.length > 3) {
+    return 'nur 1 Grossbuchstabe bei Länge > 3';
+  }
+  if (INVALID_LAW_CODES.has(abk.toUpperCase())) return 'Sperrliste INVALID_LAW_CODES';
+  return 'unbekannt';
+}
+
+function unerreichbareAliase(): UnerreichbaresAlias[] {
+  const raus: UnerreichbaresAlias[] = [];
   for (const a of ABK_ALIASE) {
     const ziel = normalisiereAbk(a.abk);
     if (!ziel) continue;
     const refs = extrahiereStatutRefs(`Art. 1 ${a.abk}`);
     if (refs.some((r) => normalisiereAbk(r.gesetz) === ziel)) continue;
-    raus.push(`${a.abk} (SR ${a.sr}, ${a.sprache})`);
+    raus.push({ abk: a.abk, sr: a.sr, sprache: a.sprache, grund: unerreichbarGrund(a.abk) });
   }
-  return raus.sort(vergleiche);
+  return raus.sort((x, y) => vergleiche(x.abk, y.abk) || vergleiche(x.sr, y.sr));
+}
+
+/** Roh-Häufigkeit einer unerreichbaren Alias-Form im Korpus. */
+interface UnerreichbarZahl {
+  abk: string;
+  grund: UnerreichbarGrund;
+  /** Identitäts-Treffer der Form im Korpus-Text (Wortgrenze, kein Substring). */
+  roh: number;
+  /** Treffer, die der Extraktor als ARTIKEL-Zitat gelesen hätte — die Fehlmenge. */
+  zitate: number;
+  /** Snapshots, in denen die Form vorkommt. */
+  snapshots: number;
+}
+
+/**
+ * WIE VIEL FEHLT DEM NENNER (Linse 3, 28.7.2026 — bitte nicht wegkürzen).
+ *
+ * Die Quote oben misst Token, die der Extraktor GEBILDET hat. Eine unerreichbare
+ * Alias-Form bildet gar kein Token: ihre Nennungen sind weder gemappt noch
+ * ungemappt, sie stehen überhaupt nicht im Nenner. Die Quote wird von dieser
+ * Lücke also nicht schlechter, sondern BLIND — und eine Kennzahl, deren
+ * Blindfleck man nicht beziffert, liest sich besser als sie ist (§8).
+ *
+ * Zwei Zahlen je Form, weil sie Verschiedenes sagen:
+ *   · `roh`    — Identitäts-Treffer der Form (Wortgrenze `(?<![A-Za-z0-9À-ɏ])…`,
+ *                nie Substring, §7) über zitierteNormen + Fliesstext. OBERGRENZE:
+ *                darin steckt jede Nennung, auch die blosse Erwähnung im Text.
+ *   · `zitate` — davon die, die der Extraktor als Artikel-Zitat gelesen HÄTTE.
+ *                Gemessen mit dem ECHTEN Extraktor (§5), nicht nachgebaut: die
+ *                Form wird im Korpus-Text durch einen erreichbaren Platzhalter
+ *                ersetzt und `extrahiereStatutRefs` erneut gefahren. Das ist die
+ *                Zahl, die dem Nenner tatsächlich fehlt.
+ *
+ * Rein und deterministisch: nur committete Snapshots, sortierte Ausgabe.
+ */
+const PLATZHALTER = 'XQZALIAS';   // erreichbarer Code, kommt im Korpus nicht vor
+
+function zaehleUnerreichbarImKorpus(
+  aliase: readonly UnerreichbaresAlias[],
+  snaps: readonly ReturnType<typeof ladeBestandSnapshots>[number][],
+): { zahlen: UnerreichbarZahl[]; betroffeneSnapshots: number } {
+  const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const grundVon = new Map(aliase.map((a) => [a.abk, a.grund]));
+  const formen = [...grundVon.keys()].sort(vergleiche);
+  if (formen.length === 0) return { zahlen: [], betroffeneSnapshots: 0 };
+  // Sammel-Muster zuerst (ein Scan je Snapshot), Einzel-Muster nur bei Treffer.
+  // Längere Formen voran, damit «OPP 2» nicht von «OPP» verdeckt wird.
+  const sammel = new RegExp(
+    `(?<![A-Za-z0-9À-ɏ])(?:${[...formen].sort((a, b) => b.length - a.length || vergleiche(a, b))
+      .map(escape).join('|')})(?![A-Za-z0-9À-ɏ])`,
+    'g',
+  );
+  const einzeln = new Map(
+    formen.map((f) => [f, new RegExp(`(?<![A-Za-z0-9À-ɏ])${escape(f)}(?![A-Za-z0-9À-ɏ])`, 'g')]),
+  );
+  const acc = new Map(formen.map((f) => [f, { roh: 0, zitate: 0, snapshots: 0 }]));
+  let betroffeneSnapshots = 0;
+  for (const snap of snaps) {
+    const text = (snap.zitierteNormen ?? []).join('\n') + '\n' + fliesstextVon(snap);
+    const treffer = new Set(text.match(sammel) ?? []);
+    if (treffer.size === 0) continue;
+    betroffeneSnapshots += 1;
+    for (const f of treffer) {
+      const rx = einzeln.get(f);
+      const a = acc.get(f);
+      if (!rx || !a) continue;   // Sammel-Treffer ohne Einzel-Form: kann nicht sein
+      a.roh += (text.match(rx) ?? []).length;
+      a.snapshots += 1;
+      a.zitate += extrahiereStatutRefs(text.replace(rx, PLATZHALTER))
+        .filter((r) => r.gesetz === PLATZHALTER).length;
+    }
+  }
+  const zahlen = [...acc.entries()]
+    .filter(([, z]) => z.roh > 0)
+    .map(([abk, z]) => ({ abk, grund: grundVon.get(abk)!, ...z }))
+    .sort((x, y) => y.zitate - x.zitate || y.roh - x.roh || vergleiche(x.abk, y.abk));
+  return { zahlen, betroffeneSnapshots };
 }
 
 function main(): void {
   console.log('\n── Tor: normKeys-Abdeckung (Rechtsprechungs-Korpus → ERLASS_REGISTER) ───');
 
-  const { zahlen, snapshots } = erhebe();
+  const snaps = ladeBestandSnapshots();
+  const snapshots = snaps.length;
+  const zahlen = erhebe(snaps);
   const fehler: string[] = [];
 
   // Leerer Korpus ⇒ jede Quote wäre trivial «vollständig». Ein Tor, das durch
@@ -498,16 +617,48 @@ function main(): void {
     );
   }
   // INFORMATIV, kein Rot: Aliase, die der Fliesstext-Extraktor strukturell nie
-  // trifft (Akzent/Leerzeichen im amtlichen Kürzel). Tote, aber harmlose
-  // Einträge — sichtbar statt still (Begründung bei `unerreichbareAliase`).
+  // trifft. Im statutes-Pfad bleiben sie wirksam — sichtbar statt still
+  // (Begründung bei `unerreichbareAliase`).
   const unerreichbar = unerreichbareAliase();
   console.log(
-    `  Alias im FLIESSTEXT-Pfad strukturell unerreichbar (tot, aber harmlos — `
-    + `im statutes-Pfad wirksam): ${unerreichbar.length} von ${ABK_ALIASE.length}`,
+    `  Alias im FLIESSTEXT-Pfad strukturell unerreichbar (im statutes-Pfad wirksam): `
+    + `${unerreichbar.length} von ${ABK_ALIASE.length}`,
   );
   // Kompakt umbrochen statt eine Zeile je Eintrag — die Liste ist Diagnose, kein
   // Befund, und ein Tor, dessen Ausgabe man scrollen muss, wird nicht gelesen.
-  for (const zeile of umbreche(unerreichbar, 92)) console.log(`    ${zeile}`);
+  for (const zeile of umbreche(
+    unerreichbar.map((u) => `${u.abk} (SR ${u.sr}, ${u.sprache})`), 92,
+  )) console.log(`    ${zeile}`);
+  const proGrund = new Map<UnerreichbarGrund, number>();
+  for (const u of unerreichbar) proGrund.set(u.grund, (proGrund.get(u.grund) ?? 0) + 1);
+  console.log(
+    `    Ursachen: `
+    + [...proGrund.entries()].sort((a, b) => b[1] - a[1] || vergleiche(a[0], b[0]))
+      .map(([g, n]) => `${g} ${n}`).join(' · '),
+  );
+
+  // ── MESSGRENZE: was diesen Formen an Nennungen im Korpus entspricht ──────────
+  //
+  // EHRLICHE MESSGRENZE, kein Befund (§8): Diese Nennungen fehlen im NENNER der
+  // Quote oben. Der Extraktor bildet für sie gar kein Token, sie zählen deshalb
+  // weder als gemappt noch als ungemappt — die Quote ist an dieser Stelle nicht
+  // schlechter, sondern blind. `Zitate` ist die Fehlmenge (mit dem echten
+  // Extraktor gemessen), `roh` die Obergrenze aller Form-Nennungen.
+  const { zahlen: unerreichbarKorpus, betroffeneSnapshots } =
+    zaehleUnerreichbarImKorpus(unerreichbar, snaps);
+  const summeZitate = unerreichbarKorpus.reduce((n, z) => n + z.zitate, 0);
+  const summeRoh = unerreichbarKorpus.reduce((n, z) => n + z.roh, 0);
+  console.log(
+    `  Davon im Korpus belegt: ${unerreichbarKorpus.length} Form(en) in `
+    + `${betroffeneSnapshots} Snapshot(s) — ${summeZitate} Artikel-Zitate fehlen dem `
+    + `Quoten-Nenner (${summeRoh} Roh-Nennungen gesamt):`,
+  );
+  for (const z of unerreichbarKorpus) {
+    console.log(
+      `    ${z.abk.padEnd(14)} Zitate ${String(z.zitate).padStart(4)} · roh `
+      + `${String(z.roh).padStart(5)} · ${String(z.snapshots).padStart(4)} Snapshots · ${z.grund}`,
+    );
+  }
   if (ausgeschlossen.length > 0) {
     console.log(
       '  AUSGESCHLOSSEN (bewusste Lücke, kein Fehler): '
