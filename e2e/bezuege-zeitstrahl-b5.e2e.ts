@@ -217,6 +217,38 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
     await expect(page.getByTitle('Zeitraum aufheben — wieder alle Entscheide zeigen')).toHaveCount(0);
   });
 
+  // ── Bestandsfehler aus B4, in diesem PR mitbehoben ────────────────────────
+  // Wer «Entscheide» VOR B4 abgeschaltet hatte, behielt `leitfaelle:'aus'` im
+  // Speicher. Die CSS-Regel `html[data-leitfaelle="aus"] … [data-leitfall-zeile]`
+  // blendet die Auflistung weiterhin aus, der zugehörige Schalter ist mit B4
+  // entfallen, und KEINE Stelle rief seither `setzeOption('leitfaelle', …)` —
+  // es gab also keinen Weg zurück, und der Hinweistext nannte obendrein ein
+  // Steuerelement, das es nicht mehr gibt (§8/§13 F4).
+  test('B4-Sackgasse: «Entscheide aus» nennt keinen toten Schalter und hat einen Ausweg', async ({ page }) => {
+    await warteReader(page);
+    await page.evaluate(() => {
+      localStorage.setItem('lm.leser.optionen', JSON.stringify({
+        linien: 'auto', fussnoten: 'an', verweise: 'an', leitfaelle: 'aus', hist: 'fussnoten',
+      }));
+    });
+    await page.reload();
+    await expect(page.locator('[data-rechtsprechung-menu]').first()).toBeVisible({ timeout: 20000 });
+    // Ausgangslage reproduziert: unter den Artikeln steht nichts.
+    await expect(page.locator('[data-bezuege-zeile]')).toHaveCount(0);
+
+    await menuOeffnen(page);
+    const panel = page.locator('[aria-label="Auswahl der Rechtsprechung"]').first();
+    // Der tote Verweis ist weg …
+    await expect(panel).not.toContainText('Ansicht ▾ › Entscheide');
+    // … und es gibt einen benannten Ausweg.
+    await panel.locator('[data-entscheide-zurueck]').click();
+
+    // Danach ist die Facetten-Wahl wieder wirksam: eine Instanz einschalten
+    // bringt die Auflistung zurück (vorher blieb sie CSS-seitig unsichtbar).
+    await page.locator('[data-bezug-klasse="bge"]').click();
+    await expect(zeileArt5(page)).toContainText('8 von 16', { timeout: 20000 });
+  });
+
   test('alle Instanzen aus ⇒ kein Zeitstrahl (kein Steuerelement ohne Wirkung, §13 F4)', async ({ page }) => {
     await warteReader(page);
     await menuOeffnen(page);

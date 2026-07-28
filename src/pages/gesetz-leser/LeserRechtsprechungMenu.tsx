@@ -8,9 +8,9 @@
 //
 // ── ARBEITSTEILUNG DER BEIDEN DROPDOWNS ────────────────────────────────────
 // «Ansicht ▾»          — WIE der Gesetzestext dargestellt wird (Linien,
-//                        Fussnoten, Verweise, Entscheide-Zeile an/aus).
-// «Rechtsprechung ▾»   — WELCHE Entscheide die Zeile zeigt (Instanzen, Kantone;
-//                        künftig B5: Zeitstrahl + Von-Bis-Datum).
+//                        Fussnoten, Verweise).
+// «Rechtsprechung ▾»   — WELCHE Entscheide die Zeile zeigt (Instanzen, Kantone,
+//                        seit B5: Zeitraum über Zeitstrahl und Von-Bis-Datum).
 // Die Trennung ist die Frage, die der Nutzer stellt — «wie sieht es aus?» gegen
 // «was steht drin?» —, nicht die Technik dahinter.
 //
@@ -39,7 +39,7 @@ import { useDialogFokus } from '../../components/layout/useDialogFokus';
 import { BezugFacettenWahl } from '../../components/verzahnung/BezugFacettenWahl';
 import { BezugZeitWahl } from '../../components/verzahnung/BezugZeitWahl';
 import {
-  setzeBezugKlassen, setzeBezugKantone, setzeBezugZeit,
+  setzeBezugKlassen, setzeBezugKantone, setzeBezugZeit, setzeOption,
   useBezugKlassen, useBezugKantone, useLeserOptionen,
 } from './leserOptionen';
 import { istErweitert } from './bezugAuswahl';
@@ -204,12 +204,35 @@ export function LeserRechtsprechungMenu({
               )}
             </>
           ) : (
-            // Kein totes Steuerelement (§13 F4): ist die Entscheide-Zeile im
-            // «Ansicht»-Dropdown ganz abgeschaltet, wirkt hier nichts. Das wird
-            // gesagt, statt Schalter zu zeigen, die nichts tun.
-            <p className="px-2.5 pb-1 pt-1 text-micro leading-snug text-ink-500">
-              Die Entscheide-Zeile ist unter «Ansicht ▾ › Entscheide» ausgeschaltet — es wird gerade keine Rechtsprechung am Artikel gezeigt.
-            </p>
+            // ── SACKGASSE AUS B4, hier geschlossen (Befund beim Bau von B5) ──
+            // Kein totes Steuerelement (§13 F4): ist die Kanten-Zeile per
+            // `data-leitfaelle="aus"` CSS-seitig abgeschaltet (index.css), wirkt
+            // die Facetten-Wahl nicht — das wird gesagt, statt Schalter zu
+            // zeigen, die nichts tun. Der Zweig IST erreichbar: die
+            // B4-Migration überführt ein gespeichertes «Entscheide aus» in
+            // `bezugKlassen: []`, lässt `opt.leitfaelle` aber auf 'aus' stehen.
+            //
+            // Bis hierher verwies der Text auf «Ansicht ▾ › Entscheide» — einen
+            // Schalter, den B4 ENTFERNT hat. Die Meldung benannte damit ein
+            // Steuerelement, das es nicht gibt (§8), und weil seither KEINE
+            // Stelle mehr `setzeOption('leitfaelle', …)` aufruft, gab es
+            // buchstäblich keinen Weg zurück: eine Facette wieder einzuschalten
+            // half nichts, weil die CSS-Regel die Zeile weiterhin ausblendete.
+            // Der Ausweg gehört darum genau dorthin, wo der Verlust auffällt.
+            <div className="px-2.5 pb-1 pt-1">
+              <p className="text-micro leading-snug text-ink-500">
+                Die Entscheide am Artikel sind ausgeblendet — aus einer früheren Einstellung, die es so nicht mehr gibt. Es wird gerade keine Rechtsprechung unter den Artikeln gezeigt.
+              </p>
+              <button
+                type="button"
+                data-entscheide-zurueck
+                onClick={() => setzeOption('leitfaelle', 'an')}
+                className="mt-1.5 rounded px-1.5 py-0.5 text-xs text-ink-500 transition-colors hover:bg-brass-100/40 hover:text-brass-700"
+                title="Die Entscheide-Auflistung am Artikel wieder einblenden — danach hier die gewünschten Instanzen wählen"
+              >
+                Entscheide wieder einblenden
+              </button>
+            </div>
           )}
         </div>
       )}
