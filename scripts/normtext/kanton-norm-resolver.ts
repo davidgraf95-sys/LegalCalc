@@ -260,12 +260,11 @@ export function titelWiderspricht(
   // Aufrufpunkt nachzustellen; beide waren falsch. Gemessen mit einem Harness,
   // der den Nummern-Kanal wortgleich repliziert:
   //  · VD.2024.65 — die Achse feuert NICHT, weil das Fenster an «]» endet:
-  //    FENSTER_ENDE (/[\n)\]]/) bricht an der schliessenden eckigen Klammer von
-  //    «[LG]» ab, `weit` endet bei «… des Gesetzes betreffend Einreihung und
-  //    Entlöhnung der Mitarbeiterinne», enthält «SG 164.100» also gar nicht,
-  //    `lm` ist null und der ganze if-Block wird nie betreten. Eine Variable
-  //    `zwischenTitel` existiert dort nicht — die frühere Angabe «zwischenTitel
-  //    = Lohngesetz» war ein Messfehler.
+  //    FENSTER_ENDE (/[\n)\]]/) bricht an der schliessenden eckigen Klammer ab
+  //    (weitStop 127 für die §-7-Gruppe, 161 für die §-13-Gruppe), `weit`
+  //    enthält «SG 164.100» nicht, `lm` ist null und der if-Block wird nie
+  //    betreten. Eine Variable `zwischenTitel` existiert dort nicht — die
+  //    frühere Angabe «zwischenTitel = Lohngesetz» war ein Messfehler.
   //  · VD.2021.146 — «(Lohngesetz, SG 164.100)», Rundklammer ohne Kürzel: hier
   //    trifft `bindungsMuster`, aber `kuerzelAusKlammer('Lohngesetz')` liefert
   //    null (ein Wort mit nur einem Grossbuchstaben ist kein Kürzel-Lauf) ⇒
