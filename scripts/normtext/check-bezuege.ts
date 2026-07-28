@@ -72,9 +72,15 @@ const PUB = join(ROOT, 'public', 'rechtsprechung');
 const BEZ = join(PUB, 'bezuege');
 
 /**
- * Grössen-Deckel je Bezugs-Shard (§15). Ist 28.7.2026: grösster Shard STPO
- * 712 KB (64.9 KB gzip), dahinter STGB 540, ZPO 436, ZGB 388, OR 368.
- * 1024 KB = grösster Ist-Wert + ~44 % Reserve, fliessend nachzuziehen wie die
+ * Grössen-Deckel je Bezugs-Shard (§15).
+ *
+ * MESSVERFAHREN, damit die Zahlen nachprüfbar sind (§7): Dateigrösse in Bytes
+ * (`stat -f%z`), daneben KiB = Bytes/1024, gzip mit Stufe -6 (`gzip -6 -c … | wc -c`).
+ * IST am HEAD-Stand (Runde 7): STPO 734'056 B = 716.8 KiB (gzip 65'147 B) ·
+ * STGB 555'835 B = 542.8 KiB · ZPO 445'690 B = 435.2 KiB · ZGB 396'695 B =
+ * 387.3 KiB · OR 376'991 B = 368.1 KiB. Die früher hier stehenden Werte
+ * (712/540/436/388/368 KB) stammten aus der Fassung VOR den Runden R1–R4.
+ * 1024 KB = grösster Ist-Wert + ~43 % Reserve, fliessend nachzuziehen wie die
  * übrigen Korpus-Deckel (Freigabe-Logik David 26.6.2026) — er bremst Unfälle,
  * limitiert nicht künstlich.
  *

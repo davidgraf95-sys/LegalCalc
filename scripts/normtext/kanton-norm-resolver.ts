@@ -255,18 +255,25 @@ export function titelWiderspricht(
   // (Lohngesetz, SG 164.100)»: der ausgeschriebene Titel ist der alte,
   // «Lohngesetz» der heutige, und die Bindung ist völlig richtig.
   //
-  // WIE WEIT DER BELEG TRÄGT (§7, korrigiert in Runde 6/G2). Der zuvor hier
-  // genannte Korpus-Fall VD.2024.65 belegt die Klasse NICHT — und zwar aus einem
-  // anderen Grund, als hier zwischenzeitlich stand. Am echten Aufrufpunkt
-  // gemessen ist `zwischenTitel` dort «Lohngesetz» (nicht «,»): die eckige
-  // Klammer der Kurzform «(Lohngesetz [LG], SG 164.100)» begrenzt die Phrase auf
-  // den HEUTIGEN Titel. Die Prüfung ist dort also nicht gegenstandslos — sie
-  // greift, findet die Überschneidung und schweigt zu Recht.
-  // Der korpusnahe STRUKTURBELEG ist VD.2021.146: «(Lohngesetz, SG 164.100)» in
-  // Rundklammern ohne Kürzel — dort ergibt `titelWiderspricht` true, und ohne
-  // die Rettung unten wäre eine richtige Bindung gesperrt.
-  // Die Rettung bleibt damit Vorsorge gegen eine belegte STRUKTUR; Live-Wirkung
-  // auf gelieferte Kanten heute: 0.
+  // WIE WEIT DER BELEG TRÄGT (§7, am Aufrufpunkt gemessen — Runde 7/H1). Zwei
+  // frühere Fassungen dieses Kommentars behaupteten Messwerte, ohne den
+  // Aufrufpunkt nachzustellen; beide waren falsch. Gemessen mit einem Harness,
+  // der den Nummern-Kanal wortgleich repliziert:
+  //  · VD.2024.65 — die Achse feuert NICHT, weil das Fenster an «]» endet:
+  //    FENSTER_ENDE (/[\n)\]]/) bricht an der schliessenden eckigen Klammer von
+  //    «[LG]» ab, `weit` endet bei «… des Gesetzes betreffend Einreihung und
+  //    Entlöhnung der Mitarbeiterinne», enthält «SG 164.100» also gar nicht,
+  //    `lm` ist null und der ganze if-Block wird nie betreten. Eine Variable
+  //    `zwischenTitel` existiert dort nicht — die frühere Angabe «zwischenTitel
+  //    = Lohngesetz» war ein Messfehler.
+  //  · VD.2021.146 — «(Lohngesetz, SG 164.100)», Rundklammer ohne Kürzel: hier
+  //    trifft `bindungsMuster`, aber `kuerzelAusKlammer('Lohngesetz')` liefert
+  //    null (ein Wort mit nur einem Grossbuchstaben ist kein Kürzel-Lauf) ⇒
+  //    `continue` VOR der Titel-Achse. `titelWiderspricht` wird nicht aufgerufen.
+  //    KONJUNKTIV, kein Messwert: bei hypothetischem Aufruf mit dem
+  //    ausgeschriebenen Alt-Titel wäre das Ergebnis true.
+  // Die Rettung ist damit Vorsorge gegen eine STRUKTUR, die im heutigen Korpus
+  // an keinem Aufrufpunkt erreicht wird — Live-Wirkung: 0 Kanten.
   // Nennt das Dokument das amtliche KÜRZEL der Nummer, ist die Zuordnung von
   // ihm selbst bestätigt — dann schweigt die Achse. «HBG … (SG 730.110)» wird
   // davon nicht gerettet: dort steht «HBG», das amtliche Kürzel ist «BPV».

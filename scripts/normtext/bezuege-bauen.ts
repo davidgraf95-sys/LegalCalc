@@ -34,6 +34,21 @@
 // `zitierteNormen`-Zweigs. Sichtbar bleibt er über den Bundes-Existenz-Abgleich
 // in check:bezuege; die 26 ausschliesslich-kantonalen Buckets stehen dort.
 //
+// ── FLIESSTEXT-LITERATUR-PHANTOME, benannt (Runde 7/H3, §8) ─────────────────
+// 39 der NEUEN kantonalen Kanten auf Bundes-Shards stehen an einem Artikel, der
+// im Entscheidtext nur als ANFANG eines Bereichszitats im Literatur-Kontext
+// vorkommt: ZGB/1 ← ZB.2023.65 («Handkommentar …, Art. 1-456 ZGB») · DBG/102 ·
+// OR/253 («vor Art. 253-273c OR N 4»). Die Spannen-Regel der Literatur-Klasse
+// fängt sie nicht (kein «zu Art.»-Anker), und der Existenz-Abgleich sieht sie
+// nicht, weil der Artikel real existiert.
+// ABGRENZUNG, weil hier schon einmal falsch attribuiert wurde: diese 39 stammen
+// aus dem FLIESSTEXT-Zweig und sind neu — nicht aus dem `zitierteNormen`-Zweig
+// (bei ZB.2023.65 ist `zitierteNormen` leer) und nicht Teil der 158 Phantome auf
+// main. Es ist eine SCHÄRFUNG derselben benannten Klasse, kein neuer Defekt.
+// Nicht gefixt: ein Marker auf den blossen Werktitel hätte keine verlässliche
+// Spannen-Grenze (Begründung bei LITERATUR_MARKER in entscheide-mapping.ts) —
+// eigener Schritt, gleiche Behandlung wie die übrigen benannten Klassen.
+//
 // ── DREI GRÖSSEN, DIE MAN NICHT VERWECHSELN DARF ────────────────────────────
 //  · `status`         — die Facetten-Klasse einer Kante (bge/bger/eidg/kantonal).
 //                       Sie steuert den DECKEL und die Anzeige-Ordnung.
