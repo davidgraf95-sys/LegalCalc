@@ -73,7 +73,11 @@ describe('extrahiereStatutRefs — Gesetzes-Zitate', () => {
     expect(INVALID_LAW_CODES.has('NR')).toBe(true);
     expect(INVALID_LAW_CODES.has('BGE')).toBe(true);
     expect(INVALID_LAW_CODES.has('CHF')).toBe(true);
-    expect(INVALID_LAW_CODES.size).toBe(160);
+    // Gegenprüfung R1/B1 (28.7.2026): 160 → 167. Bewusste fachliche Änderung, kein
+    // Refactoring (§6.3) — mit ORDINAL_SUFFIX kamen die sieben Ordinalwörter
+    // SEPTIES/OCTIES/NOVIES/NONIES/DECIES/UNDECIES/DUODECIES dazu. Die Sonde hat
+    // hier genau ihren Zweck erfüllt: die Listen-Änderung musste erklärt werden.
+    expect(INVALID_LAW_CODES.size).toBe(167);
   });
 
   it('IT-Bundesverfassung «Cost.» bleibt trotz Filter erhalten (Bug-Check Z1)', () => {
@@ -400,6 +404,130 @@ describe('F2-Fix — Absatz-/Ziffer-Aufzählung erzeugt keine Phantom-Artikel', 
       'ART.90.ATSG',
     ]);
     expect(normen('art. 34 et 2 CP')).toEqual(['ART.34.CP', 'ART.2.CP']);
+  });
+});
+
+// ── Gegenprüfung R1/B1 — Ordinal-Serie über «sexies» hinaus ─────────────────
+// Die Serie endete bei «sexies». Wirkung war NICHT «ein Artikel fehlt», sondern
+// «das ganze Zitat fällt weg»: das unverstandene Ordinalwort wird law-Kandidat,
+// hat nGross 0 und verwirft den Treffer mitsamt allen Kettengliedern.
+describe('Gegenprüfung R1/B1 — lateinische Ordnungszahlen ab «septies»', () => {
+  it('BGE 150 IV 273: Kette «Art. 49, 179 septies und 180 StGB» — alle drei Glieder', () => {
+    expect(normen('Art. 49, 179 septies und 180 StGB')).toEqual([
+      'ART.49.STGB',
+      'ART.179septies.STGB',
+      'ART.180.STGB',
+    ]);
+  });
+
+  it('BGE 150 IV 86: «Art. 322septies Abs. 2 StGB» zusammengeschrieben', () => {
+    const refs = extrahiereStatutRefs('Prüfung der Tatbestandsmerkmale von Art. 322septies Abs. 2 StGB.');
+    expect(refs.length).toBe(1);
+    expect(refs[0]).toMatchObject({
+      gesetz: 'STGB', artikel: '322septies', absatz: '2',
+      normalisiert: 'ART.322septies.ABS.2.STGB',
+    });
+  });
+
+  it('BGE 150 IV 86: getrennt geschriebene Kette «Art. 25 und 322 septies Abs. 2 StGB»', () => {
+    expect(normen('Art. 25 und 322 septies Abs. 2 StGB')).toEqual([
+      'ART.25.STGB',
+      'ART.322septies.ABS.2.STGB',
+    ]);
+  });
+
+  it('belegte Serie octies–duodecies wird als Artikel-Token bewahrt', () => {
+    expect(normen('Art. 322octies StGB')).toEqual(['ART.322octies.STGB']);
+    expect(normen('Art. 179novies StGB')).toEqual(['ART.179novies.STGB']);
+    expect(normen('Art. 322decies Abs. 1 StGB')).toEqual(['ART.322decies.ABS.1.STGB']);
+    expect(normen('Art. 115undecies EG')).toEqual(['ART.115undecies.EG']);
+    expect(normen('Art. 12duodecies OR')).toEqual(['ART.12duodecies.OR']);
+    // «nonies» = belegte kantonale Variantenschreibung zu «novies» (SO 614.11)
+    expect(normen('Art. 115nonies EG')).toEqual(['ART.115nonies.EG']);
+  });
+
+  it('Regressions-Schloss: die Alt-Serie bis «sexies» ist unverändert', () => {
+    expect(normen('Art. 52bis OR')).toEqual(['ART.52bis.OR']);
+    expect(normen('Art. 262ter StGB')).toEqual(['ART.262ter.STGB']);
+    expect(normen('Art. 322quater StGB')).toEqual(['ART.322quater.STGB']);
+    expect(normen('Art. 8quinquies AHVG')).toEqual(['ART.8quinquies.AHVG']);
+    expect(normen('Art. 8sexies AHVG')).toEqual(['ART.8sexies.AHVG']);
+  });
+
+  it('Symmetrie: jedes Serien-Glied steht als eigenes Token in INVALID_LAW_CODES', () => {
+    // Sonst wird ein allein stehendes Ordinalwort selbst zum Erlass-Kandidaten
+    // und erzeugt einen Phantom-Erlass («ART.179.SEPTIES»).
+    for (const w of [
+      'BIS', 'TER', 'QUATER', 'QUINQUIES', 'SEXIES',
+      'SEPTIES', 'OCTIES', 'NOVIES', 'NONIES', 'DECIES', 'UNDECIES', 'DUODECIES',
+    ]) {
+      expect(INVALID_LAW_CODES.has(w)).toBe(true);
+    }
+    // …und wirkt: das Ordinalwort ohne folgendes Kürzel erzeugt keinen Erlass.
+    expect(normen('Der Artikel 179 septies ist einschlägig.')).toEqual([]);
+  });
+
+  it('Monotonie/Bereich bleibt unberührt (Ordinal-Endpunkt)', () => {
+    const refs = extrahiereStatutRefs('vgl. Art. 322ter-322decies StGB');
+    expect(refs.length).toBe(1);
+    expect(refs[0]).toMatchObject({ artikel: '322ter', artikelBis: '322decies' });
+    // absteigend gelesener Binnen-Bindestrich bleibt verworfen
+    expect(extrahiereStatutRefs('art. 227-23 CP')[0].artikelBis).toBeNull();
+  });
+
+  it('bekannte Lücke bleibt Lücke, nicht Fehlzuordnung: Buchstabe+Numerale', () => {
+    // GTR Rz. 309 kennt «Art. 27abis»; dieser Verbund passt in keinen Token-Zweig.
+    // Erwartet wird KEIN Treffer — insbesondere kein falscher Erlass «ABIS»/«DDECIES».
+    expect(normen('Art. 66abis StGB')).toEqual([]);
+    expect(normen('Art. 80ddecies IRSG')).toEqual([]);
+  });
+});
+
+// ── Gegenprüfung R1/B2 — frz. Absatz-Marker «par.» (paragraphe) ─────────────
+describe('Gegenprüfung R1/B2 — «par.» als Absatz-Marker (Staatsverträge)', () => {
+  it('BGE 149 I 343 / 149 II 74 / 148 V 225: «art. 6 par. 1 CEDH»', () => {
+    const refs = extrahiereStatutRefs("violation de l'art. 6 par. 1 CEDH");
+    expect(refs.length).toBe(1);
+    expect(refs[0]).toMatchObject({
+      gesetz: 'CEDH', artikel: '6', absatz: '1', normalisiert: 'ART.6.ABS.1.CEDH',
+    });
+  });
+
+  it('ohne Punkt geschrieben und in weiteren Staatsvertrags-Kürzeln', () => {
+    expect(normen('art. 6 par 1 CEDH')).toEqual(['ART.6.ABS.1.CEDH']);
+    expect(normen('art. 31 par. 1 CV')).toEqual(['ART.31.ABS.1.CV']);
+    expect(normen('art. 16 par. 2 ALCP')).toEqual(['ART.16.ABS.2.ALCP']);
+  });
+
+  it('«para» wird von «par» NICHT angefressen (Reihenfolge-Schloss)', () => {
+    // Stünde «par» vor «para», bliebe bei «para 3» ein «a» stehen und der
+    // Absatz fiele weg — die lett/let-Fehlerklasse.
+    expect(normen('art. 6 para 1 CEDH')).toEqual(['ART.6.ABS.1.CEDH']);
+    expect(normen('art. 6 para. 1 CEDH')).toEqual(['ART.6.ABS.1.CEDH']);
+  });
+
+  it('adversarial: frz. Präposition «par» erzeugt keinen Falsch-Positiven', () => {
+    // «par» als Präposition steht nie zwischen Artikel- und Ziffern-Token mit
+    // folgendem Erlass-Kürzel; wo es doch danach aussieht, ist der Schwanz ein
+    // Kleinwort (nGross 0) und der bestehende Filter verwirft.
+    expect(normen("l'infraction réprimée par la loi")).toEqual([]);
+    expect(normen("l'art. 271 CP a été violé par 3 personnes")).toEqual(['ART.271.CP']);
+    expect(normen('les mesures prévues par 3 des juges')).toEqual([]);
+    expect(normen("l'art. 5 par 2 des dispositions")).toEqual([]);
+    // «PAR» bleibt als Erlass-Kandidat blockiert
+    expect(INVALID_LAW_CODES.has('PAR')).toBe(true);
+    expect(INVALID_LAW_CODES.has('PARA')).toBe(true);
+  });
+
+  it('Regressions-Schloss: die übrigen Absatz-Marker DE/FR/IT bleiben', () => {
+    expect(normen('Art. 34 Abs. 2 BV')).toEqual(['ART.34.ABS.2.BV']);
+    expect(normen('art. 8 al. 2 CEDH')).toEqual(['ART.8.ABS.2.CEDH']);
+    expect(normen('art. 89 cpv. 1 lett. b LTF')).toEqual(['ART.89.ABS.1.LTF']);
+  });
+
+  it('Phantom-Ketten-Schutz greift auch bei «par.»', () => {
+    // «et 3» ist Fortsetzung der Absatz-Aufzählung, kein eigener Artikel 3.
+    expect(normen('art. 6 par. 1 et 3 CEDH')).toEqual(['ART.6.ABS.1.CEDH']);
   });
 });
 

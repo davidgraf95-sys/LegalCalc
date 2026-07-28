@@ -541,6 +541,18 @@
         "gewicht": 0
       }
     ],
+    "1novies": [
+      {
+        "key": "bge_151_V_306",
+        "zitierung": "BGE 151 V 306",
+        "regesteKurz": "Art. 6 f. und Art. 44 ATSG; Art. 1a lit. a, Art. 8 Abs. 1, 1 bis und 1 ter , Art. 28 Abs. 1 lit. a und Abs. 1 bis , Art. 57 Abs. 1 lit. e und f, Art. 59 Abs. 3 IVG; Verlauf der beruflichen Eingliederung im Verhältnis zur Arbeitsfähigkeit a…",
+        "datum": "2025-06-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "20bis": [
       {
         "key": "bge_146_V_271",
@@ -625,6 +637,28 @@
         "zitierung": "BGE 146 V 271",
         "regesteKurz": "Art. 20 sexies Abs. 1 lit. b IVV; Taggelder während Eingliederungsmassnahmen. Art. 20 sexies Abs. 1 lit. b IVV (in Kraft seit 1. Januar 2008), wonach Versicherte als erwerbstätig gelten, wenn sie glaubhaft machen, dass sie nach Eintritt de…",
         "datum": "2020-05-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "21septies": [
+      {
+        "key": "bge_150_V_316",
+        "zitierung": "BGE 150 V 316",
+        "regesteKurz": "Art. 23 Abs. 1 und 3 IVG; Art. 21 quater IVV; Grundentschädigung zur Bemessung des Taggeldes der Invalidenversicherung für Selbständigerwerbende. Aus der Auslegung des Art. 23 Abs. 3 IVG ergibt sich, dass die Berechnung der Grundentschädig…",
+        "datum": "2024-06-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_198",
+        "zitierung": "BGE 151 V 198",
+        "regesteKurz": "Art. 22 bis Abs. 5 und Art. 23 IVG; Art. 20 sexies Abs. 1, Art. 21 septies Abs. 5 und Art. 21 Abs. 3 IVV; Art. 4 und 5 Bst. a der Verordnung (EG) Nr. 883/ 2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung…",
+        "datum": "2024-11-25",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

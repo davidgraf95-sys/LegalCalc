@@ -1827,6 +1827,28 @@
         "gewicht": 0
       }
     ],
+    "42septies": [
+      {
+        "key": "bge_148_V_408",
+        "zitierung": "BGE 148 V 408",
+        "regesteKurz": "Art. 42sexies Abs. 1 IVG; Assistenzbeitrag. BGE 140 V 543 E. 3.2.2 ist in dem Sinne zu präzisieren, als das standardisierte Abklärungsinstrument FAKT2 kein geeignetes Instrument zur Ermittlung des gesamten Hilfebedarfs einer versicherten P…",
+        "datum": "2022-09-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_251",
+        "zitierung": "BGE 147 V 251",
+        "regesteKurz": "Art. 42 quater Abs. 3 IVG; Art. 39a lit. a IVV; Assistenzbeitrag für minderjährige Versicherte. Die Voraussetzung in Art. 39a lit. a IVV, wonach der Anspruch eines minderjährigen Versicherten auf einen Assistenzbeitrag vom Besuch der oblig…",
+        "datum": "2021-06-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "42sexies": [
       {
         "key": "bge_151_V_1",

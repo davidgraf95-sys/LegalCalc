@@ -75,6 +75,30 @@
  * liest sie falsch: sie sagt «wie viel wurde zugeordnet», nie «wie viel wurde
  * richtig zugeordnet».
  *
+ * ── ZWEITE STRUKTURELLE GRENZE: DIE AUFLÖSUNG (Gegenprüfung R1/B3, 28.7.2026) ─
+ *
+ * Dieses Tor misst ausschliesslich die ERLASS-Ebene — Klassen und Quote zählen
+ * `ref.gesetz`, also das Kürzel. Die ARTIKEL-Ebene (`proNormArtikel`, die Shards)
+ * liegt UNTERHALB seiner Auflösung: ob ein Snapshot dem Erlass StGB zugeordnet
+ * wird, sieht es; ob dabei der Artikel-Schlüssel «179septies» entsteht oder
+ * verloren geht, sieht es nicht.
+ *
+ * Das ist keine akademische Grenze. Die beiden Befunde der Gegenprüfung R1 lagen
+ * genau dort: die bei «sexies» abgebrochene Ordinal-Serie und der fehlende frz.
+ * Absatz-Marker «par.». Beide sind für dieses Tor sogar DOPPELT unsichtbar —
+ * erstens, weil sie Artikel-Schlüssel betreffen, und zweitens, weil ein nicht
+ * tokenisiertes Zitat gar kein Kandidaten-Token erzeugt und damit weder in der
+ * Rot-Liste noch im NENNER der Quote auftaucht (dieselbe Blindheit wie bei den
+ * unerreichbaren Alias-Formen, oben). Eine Nennung, die der Extraktor nicht
+ * bildet, macht die Quote nicht schlechter, sondern blinder.
+ *
+ * Daraus folgt AUSDRÜCKLICH KEINE neue Rot-Bedingung hier. Ein Tor, das die
+ * Artikel-Ebene prüfen wollte, bräuchte einen Soll-Bestand je Artikel — den gibt
+ * es nicht, und ein geratener wäre schlimmer als keiner (§6.7). Zuständig für
+ * diese Fehlerklasse ist und bleibt die adversariale Gegenprüfung (§7). Der
+ * Absatz steht hier, damit niemand aus einem grünen check:normkeys schliesst,
+ * die Artikel-Zuordnung sei geprüft.
+ *
  * Offline, deterministisch (§2): liest nur committete Artefakte, sortiert jede
  * Ausgabe, kein Netz, kein Datums-Zugriff in der Prüflogik.
  * Aufruf: vite-node scripts/normtext/check-normkeys-abdeckung.ts

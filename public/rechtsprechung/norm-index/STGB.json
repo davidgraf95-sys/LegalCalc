@@ -1955,20 +1955,20 @@
     ],
     "49": [
       {
-        "key": "bge_146_IV_311",
-        "zitierung": "BGE 146 IV 311",
-        "regesteKurz": "Art. 2 Abs. 1, Art. 49 Abs. 2 und Art. 66a sowie Art. 66b StGB; strafrechtliches Rückwirkungsverbot in Bezug auf die neuen Bestimmungen über die Landesverweisung; Wiederholungsfall; retrospektive Konkurrenz bei Landesverweisung. Das Strafg…",
-        "datum": "2020-09-01",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
         "key": "bge_146_IV_88",
         "zitierung": "BGE 146 IV 88",
         "regesteKurz": "Art. 91a Abs. 1 i.V.m. Art. 55 Abs. 1 und 2 SVG und Art. 10 Abs. 2 SKV; Verweigerung von Massnahmen zur Feststellung der Fahrunfähigkeit; Betäubungsmittelvortests; hinreichende Verdachtsmomente zur Durchführung; Beweiswert. Für die Durchfü…",
         "datum": "2019-12-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
+        "key": "bge_146_IV_311",
+        "zitierung": "BGE 146 IV 311",
+        "regesteKurz": "Art. 2 Abs. 1, Art. 49 Abs. 2 und Art. 66a sowie Art. 66b StGB; strafrechtliches Rückwirkungsverbot in Bezug auf die neuen Bestimmungen über die Landesverweisung; Wiederholungsfall; retrospektive Konkurrenz bei Landesverweisung. Das Strafg…",
+        "datum": "2020-09-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -5983,6 +5983,16 @@
     ],
     "187": [
       {
+        "key": "bge_151_IV_153",
+        "zitierung": "BGE 151 IV 153",
+        "regesteKurz": "Art. 172 und 264 Abs. 1 lit. c StPO; Art. 17 Abs. 3 BV; Art. 10 EMRK; Verbot der Beschlagnahme von Unterlagen aus dem Verkehr des Beschuldigten mit Medienschaffenden. Das Motiv des Informanten, mithin auch ein allfällig \"täuschendes\" Verha…",
+        "datum": "2025-01-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_IV_360",
         "zitierung": "BGE 150 IV 360",
         "regesteKurz": "Art. 221 Abs. 1 bis StPO; Untersuchungshaft; qualifizierte Wiederholungsgefahr. Art. 221 Abs. 1 bis StPO verankert einen ausnahmsweise zulässigen Grund für die Anordnung von Untersuchungshaft. Er sieht im Vergleich zu Art. 221 Abs. 1 lit.…",
@@ -6057,6 +6067,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_151_IV_153",
+        "zitierung": "BGE 151 IV 153",
+        "regesteKurz": "Art. 172 und 264 Abs. 1 lit. c StPO; Art. 17 Abs. 3 BV; Art. 10 EMRK; Verbot der Beschlagnahme von Unterlagen aus dem Verkehr des Beschuldigten mit Medienschaffenden. Das Motiv des Informanten, mithin auch ein allfällig \"täuschendes\" Verha…",
+        "datum": "2025-01-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_IV_10",
         "zitierung": "BGE 151 IV 10",
         "regesteKurz": "Art. 14 Abs. 1 und 2 JStPO; Grundsatz der Nichtöffentlichkeit der Hauptverhandlung im Jugendstrafverfahren. Das Jugendstrafverfahren findet unter Ausschluss der Öffentlichkeit statt. Das Jugendgericht und die Berufungsinstanz können eine ö…",
@@ -6105,16 +6125,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_409",
-        "zitierung": "BGE 147 IV 409",
-        "regesteKurz": "Art. 6, Art. 10 Abs. 2, Art. 350 Abs. 2 und Art. 389 StPO; Art. 189 und Art. 190 StGB; Beweiswürdigung, Ermittlungspflicht des Gerichts; Sexuelle Nötigung und Vergewaltigung, Nötigungsmittel. Das Berufungsgericht muss das entscheiderheblic…",
-        "datum": "2021-06-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "190": [
@@ -6137,6 +6147,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_151_IV_153",
+        "zitierung": "BGE 151 IV 153",
+        "regesteKurz": "Art. 172 und 264 Abs. 1 lit. c StPO; Art. 17 Abs. 3 BV; Art. 10 EMRK; Verbot der Beschlagnahme von Unterlagen aus dem Verkehr des Beschuldigten mit Medienschaffenden. Das Motiv des Informanten, mithin auch ein allfällig \"täuschendes\" Verha…",
+        "datum": "2025-01-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_IV_8",
@@ -6187,16 +6207,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_409",
-        "zitierung": "BGE 147 IV 409",
-        "regesteKurz": "Art. 6, Art. 10 Abs. 2, Art. 350 Abs. 2 und Art. 389 StPO; Art. 189 und Art. 190 StGB; Beweiswürdigung, Ermittlungspflicht des Gerichts; Sexuelle Nötigung und Vergewaltigung, Nötigungsmittel. Das Berufungsgericht muss das entscheiderheblic…",
-        "datum": "2021-06-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "191": [
@@ -6219,6 +6229,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_151_IV_153",
+        "zitierung": "BGE 151 IV 153",
+        "regesteKurz": "Art. 172 und 264 Abs. 1 lit. c StPO; Art. 17 Abs. 3 BV; Art. 10 EMRK; Verbot der Beschlagnahme von Unterlagen aus dem Verkehr des Beschuldigten mit Medienschaffenden. Das Motiv des Informanten, mithin auch ein allfällig \"täuschendes\" Verha…",
+        "datum": "2025-01-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_148_I_295",
@@ -6343,6 +6363,16 @@
         "zitierung": "BGE 152 I 105",
         "regesteKurz": "Art. 8 EMRK; Art. 67 Abs. 3 lit. d StGB; Verbot einer Tätigkeit mit Minderjährigen nach Verurteilung wegen Pornografie, die sexuelle Handlungen mit Minderjährigen zum Gegenstand hatte. Beschränkungen des Zugangs zu einem oder mehreren Beru…",
         "datum": "2025-10-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_IV_153",
+        "zitierung": "BGE 151 IV 153",
+        "regesteKurz": "Art. 172 und 264 Abs. 1 lit. c StPO; Art. 17 Abs. 3 BV; Art. 10 EMRK; Verbot der Beschlagnahme von Unterlagen aus dem Verkehr des Beschuldigten mit Medienschaffenden. Das Motiv des Informanten, mithin auch ein allfällig \"täuschendes\" Verha…",
+        "datum": "2025-01-31",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -8119,6 +8149,18 @@
         "gewicht": 0
       }
     ],
+    "179septies": [
+      {
+        "key": "bge_150_IV_273",
+        "zitierung": "BGE 150 IV 273",
+        "regesteKurz": "Art. 49, 179 septies und 180 StGB; Konkurrenz zwischen Drohung und Missbrauch einer Fernmeldeanlage. Idealkonkurrenz kann angenommen werden, wenn der Täter das Belästigungspotenzial des Telekommunikationsmittels nicht mit den in einigen Na…",
+        "datum": "2024-03-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "179ter": [
       {
         "key": "bge_146_IV_126",
@@ -8547,6 +8589,60 @@
         "gewicht": 0
       }
     ],
+    "322decies": [
+      {
+        "key": "bge_149_IV_57",
+        "zitierung": "BGE 149 IV 57",
+        "regesteKurz": "Art. 322 quinquies und 322 sexies StGB; Vorteilsgewährung und Vorteilsannahme. Prüfung der Tatbestandsmerkmale der Straftaten gemäss Art. 322 quinquies und Art. 322 sexies StGB im Zusammenhang einerseits mit der vorwiegend privaten Einladu…",
+        "datum": "2022-10-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_IV_86",
+        "zitierung": "BGE 150 IV 86",
+        "regesteKurz": "Art. 25 und 322 septies Abs. 2 StGB; passive Bestechung fremder Amtsträger; Gehilfenschaft. Abschluss einer \"Bestechungsvereinbarung\" (\"pacte corruptif\") im Rahmen von Geschäftsverhandlungen zwischen einer norwegischen Gesellschaft, die si…",
+        "datum": "2023-10-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "322octies": [
+      {
+        "key": "bge_149_IV_57",
+        "zitierung": "BGE 149 IV 57",
+        "regesteKurz": "Art. 322 quinquies und 322 sexies StGB; Vorteilsgewährung und Vorteilsannahme. Prüfung der Tatbestandsmerkmale der Straftaten gemäss Art. 322 quinquies und Art. 322 sexies StGB im Zusammenhang einerseits mit der vorwiegend privaten Einladu…",
+        "datum": "2022-10-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_IV_86",
+        "zitierung": "BGE 150 IV 86",
+        "regesteKurz": "Art. 25 und 322 septies Abs. 2 StGB; passive Bestechung fremder Amtsträger; Gehilfenschaft. Abschluss einer \"Bestechungsvereinbarung\" (\"pacte corruptif\") im Rahmen von Geschäftsverhandlungen zwischen einer norwegischen Gesellschaft, die si…",
+        "datum": "2023-10-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_479",
+        "zitierung": "BGE 147 IV 479",
+        "regesteKurz": "Art. 70 Abs. 1, 2 und 5, Art. 71 Abs. 1, Art. 322 septies Abs. 1 StGB; aktive Bestechung; Umfang der Einziehung bei der blossen Beeinflussung von Ermessensentscheiden; Durchgriff. Der Erlös aus einem durch Bestechung zustande gekommenen Re…",
+        "datum": "2021-06-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "322quater": [
       {
         "key": "bge_149_IV_57",
@@ -8585,6 +8681,48 @@
         "zitierung": "BGE 147 IV 479",
         "regesteKurz": "Art. 70 Abs. 1, 2 und 5, Art. 71 Abs. 1, Art. 322 septies Abs. 1 StGB; aktive Bestechung; Umfang der Einziehung bei der blossen Beeinflussung von Ermessensentscheiden; Durchgriff. Der Erlös aus einem durch Bestechung zustande gekommenen Re…",
         "datum": "2021-06-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "322septies": [
+      {
+        "key": "bge_150_IV_86",
+        "zitierung": "BGE 150 IV 86",
+        "regesteKurz": "Art. 25 und 322 septies Abs. 2 StGB; passive Bestechung fremder Amtsträger; Gehilfenschaft. Abschluss einer \"Bestechungsvereinbarung\" (\"pacte corruptif\") im Rahmen von Geschäftsverhandlungen zwischen einer norwegischen Gesellschaft, die si…",
+        "datum": "2023-10-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_385",
+        "zitierung": "BGE 147 IV 385",
+        "regesteKurz": "Art. 264 Abs. 1 lit. d StPO, Art. 2, 4, 13, 21 ff., 27 ff. BGFA, Art. 321 StGB; Tragweite des von Art. 264 Abs. 1 lit. d StPO gewährleisteten Schutzes hinsichtlich des betroffenen Anwalts. Der Schutz des Berufsgeheimnisses, den Art. 264 Ab…",
+        "datum": "2021-06-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_479",
+        "zitierung": "BGE 147 IV 479",
+        "regesteKurz": "Art. 70 Abs. 1, 2 und 5, Art. 71 Abs. 1, Art. 322 septies Abs. 1 StGB; aktive Bestechung; Umfang der Einziehung bei der blossen Beeinflussung von Ermessensentscheiden; Durchgriff. Der Erlös aus einem durch Bestechung zustande gekommenen Re…",
+        "datum": "2021-06-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_361",
+        "zitierung": "BGE 147 IV 361",
+        "regesteKurz": "Art. 127 Abs. 1 StPO; Art. 13 IPRG; Befugnis der Organe einer ausländischen Gesellschaft, einen Rechtsbeistand zu bestellen; Begriff des ausländischen Rechts. Ist eine ausländische Gesellschaft an einem in der Schweiz geführten Strafverfah…",
+        "datum": "2021-01-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

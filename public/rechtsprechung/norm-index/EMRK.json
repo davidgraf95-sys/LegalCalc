@@ -325,6 +325,16 @@
         "gewicht": 4
       },
       {
+        "key": "bge_147_IV_439",
+        "zitierung": "BGE 147 IV 439",
+        "regesteKurz": "Art. 91 Abs. 2 lit. b, Art. 31 Abs. 2 und Art. 55 Abs. 7 lit. a SVG, Art. 2 Abs. 2 lit. a VRV, Art. 34 lit. a VSKV-ASTRA, Art. 12 Abs. 2 StGB; Fahren in fahrunfähigem Zustand nach Cannabiskonsum, Zulässigkeit der auf Verordnungsebene festg…",
+        "datum": "2021-06-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
         "key": "bge_147_I_280",
         "zitierung": "BGE 147 I 280",
         "regesteKurz": "Unterlassungs- und Feststellungsgesuche betreffend Funk- und Kabelaufklärung (Art. 38 ff. NDG); Anspruch auf materielle Beurteilung der Gesuche (Art. 25 Abs. 1 DSG; Art. 13 EMRK). Bei der Funk- und Kabelaufklärung werden Personendaten bear…",
@@ -359,16 +369,6 @@
         "zitierung": "BGE 149 IV 9",
         "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des S…",
         "datum": "2022-09-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 3
-      },
-      {
-        "key": "bge_149_I_14",
-        "zitierung": "BGE 149 I 14",
-        "regesteKurz": "Art. 30 Abs. 1 BV; Art. 6 Ziff. 1 EMRK; Anspruch auf ein unabhängiges Gericht; Gefährdung der internen gerichtlichen Unabhängigkeit durch informelle Hierarchien. Ein aktuelles praktisches Interesse an der Behandlung der Haftbeschwerde lieg…",
-        "datum": "2022-09-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -923,6 +923,26 @@
     ],
     "15": [
       {
+        "key": "bge_149_II_302",
+        "zitierung": "BGE 149 II 302",
+        "regesteKurz": "Multilaterale Vereinbarung vom 29. Oktober 2014 der zuständigen Behörden über den automatischen Informationsaustausch über Finanzkonten; Art. 8 und 13 EMRK; Art. 19 Abs. 2 Satz 2 AIAG; automatischer Informationsaustausch; Recht auf eine En…",
+        "datum": "2023-06-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_II_630",
+        "zitierung": "BGE 151 II 630",
+        "regesteKurz": "Art. 25a Abs. 3 Bst. c DBA CH-RU; Voraussetzungen und Grenzen der Sistierung eines Verfahrens der internationalen Amtshilfe in Steuersachen; Schicksal eines russischen Amtshilfeersuchens im Zusammenhang mit dem Krieg gegen die Ukraine. Ste…",
+        "datum": "2025-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_IV_376",
         "zitierung": "BGE 149 IV 376",
         "regesteKurz": "a Art. 2 IRSG; Rechtshilfeausschlussgrund des Ordre public. Inhalt und Geltung des Ordre-public-Vorbehalts in der internationalen Rechtshilfe in Strafsachen. Anforderungen an den Beweis und an die Intensität der Prüfung durch die schweizer…",
@@ -973,6 +993,18 @@
         "zitierung": "BGE 150 I 99",
         "regesteKurz": "Art. 122 lit. c BGG; Notwendigkeit der Revision zur Beseitigung einer vom EGMR festgestellten Verletzung der EMRK. Erklärt sich die Schweizerische Eidgenossenschaft als Hohe Vertragspartei der EMRK bereit, den Barwert der Leistungen, die d…",
         "datum": "2024-01-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "20": [
+      {
+        "key": "bge_150_II_273",
+        "zitierung": "BGE 150 II 273",
+        "regesteKurz": "a Art. 120 Abs. 1 und 2 BGG; Art. 16 Abs. 1 und 5 SuG; Zulässigkeit der Beschwerde an das Bundesgericht gegen einen Entscheid betreffend eine öffentlich-rechtliche Streitigkeit zwischen einem Kanton und dem Bund. Zuständigkeit des Staatsse…",
+        "datum": "2023-12-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

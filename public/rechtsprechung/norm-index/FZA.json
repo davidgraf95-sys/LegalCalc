@@ -146,6 +146,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_II_213",
+        "zitierung": "BGE 151 II 213",
+        "regesteKurz": "Art. 7 lit. e FZA; Art. 3 Abs. 1 und 5 sowie Art. 7 Anhang I FZA; mit einem französischen Grenzgänger verheiratete Drittenstaatenangehörige; abgeleitetes Recht auf Ausübung einer Erwerbstätigkeit in der Schweiz. Die Staatsangehörige eines…",
+        "datum": "2024-07-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       }
     ],

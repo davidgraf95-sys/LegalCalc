@@ -58,11 +58,82 @@ export interface StatutRef {
 
 // ── Regex-Bausteine (Python-Marker-Konstanten) ──────────────────────────────
 const ARTIKEL_MARKER = '(?:Art\\.?|Artikel)';
-const ABSATZ_MARKER = '(?:Abs\\.?|Absatz|al\\.?|alin(?:ea)?\\.?|cpv\\.?|co\\.?|para\\.?)';
-const ORDINAL_SUFFIX = '(?:bis|ter|quater|quinquies|sexies)';
+// Absatz-Marker DE/FR/IT. Reihenfolge-kritisch am Ende: «para» MUSS vor «par»
+// stehen (Gegenprüfung R1/B2, 28.7.2026) — sonst greift bei «para 3» zuerst das
+// kürzere «par», der Rest-Buchstabe «a» steht dem Absatz-Token im Weg und der
+// Absatz fällt weg. Dieselbe Fehlerklasse wie «lett»/«let» bei SUB_MARKER (Z. 72–76).
+//
+// «par.» (frz. «paragraphe») war bis dahin nicht erfasst — der STANDARD-Marker in
+// Staatsvertrags-Zitaten. Ohne ihn fiel nicht bloss der Absatz weg, sondern das
+// GANZE Zitat: «art. 6 par. 1 CEDH» → law-Kandidat «par» → nGross 0 → verworfen.
+// Amtlich belegt: BGE 149 I 343, 149 II 74, 148 V 225 («art. 6 par. 1 CEDH»).
+// FP-Analyse am committeten Korpus: «par» ist auch frz. Präposition, greift hier
+// aber nur ZWISCHEN Artikel- und Absatz-Token, d.h. es braucht ein folgendes
+// ZIFFERN-Token UND danach einen Gesetzes-Code. Gemessen über alle Snapshots
+// («art. N par. N X»): der Schwanz X ist entweder ein echtes Staatsvertrags-
+// Kürzel (CEDH 339×, CL/CLug, CDI, CV, TCE, ALCP, CBE, MAC, PAII) oder ein
+// Kleinwort (de, du, et, sous, point, annexe, let, convention) — Kleinwörter
+// haben nGross 0 und werden vom bestehenden Filter verworfen. Kein neuer FP.
+// «PAR» steht bereits in INVALID_LAW_CODES (frz. Präposition) → als law-Kandidat
+// weiterhin blockiert; die Symmetrie ist damit schon hergestellt.
+const ABSATZ_MARKER =
+  '(?:Abs\\.?|Absatz|al\\.?|alin(?:ea)?\\.?|cpv\\.?|co\\.?|para\\.?|par\\.?)';
+// Lateinische Ordnungszahl-Zusätze eingeschobener Artikel (GTR Rz. 309:
+// «Art. 262bis», «Art. 262ter», «Art. 262quater» usw. — Gesetzestechnische
+// Richtlinien des Bundes, Stand 16.5.2019, hrsg. Schweizerische Bundeskanzlei).
+//
+// SERIEN-UMFANG (Gegenprüfung R1/B1, 28.7.2026). Die Reihe endete vorher bei
+// «sexies» und riss damit echte Leitnormen aus dem Artikel-Index — und zwar nicht
+// nur den Ordinal-Artikel selbst, sondern das ganze Zitat, weil das unverstandene
+// Ordinalwort als law-Kandidat gelesen wird (nGross 0 → Treffer verworfen).
+// Amtlich belegt: BGE 150 IV 273 («Art. 49, 179 septies und 180 StGB» → auch 49
+// und 180 gingen verloren) und BGE 150 IV 86 («Art. 25 und 322 septies Abs. 2
+// StGB»); Art. 179septies und Art. 322septies StGB sind geltendes Recht.
+//
+// Aufgenommen ist GENAU die am committeten Korpus (Normtext + Rechtsprechung,
+// 28.7.2026) BELEGTE Reihe — Belegzahlen als Vorkommen des Wortes:
+//   bis 22'674 · ter 3'367 · quater 737 · sexies 575 · quinquies 510 ·
+//   septies 467 · octies 141 · novies 47 · decies 24 · undecies 4 · duodecies 1
+// dazu «nonies» als belegte Variantenschreibung zu «novies» (nur kantonal, SO
+// 614.11 §115nonies ff.; der Bund schreibt «novies», so STGB/IVV).
+//
+// NICHT aufgenommen: terdecies, quaterdecies, quindecies, sexdecies, vicies u.ä.
+// Die GTR schliesst die Reihe mit «usw.» und nennt KEIN Endglied; am Korpus haben
+// diese Formen null Belege. Sie hier zu führen wäre eine Behauptung ohne Quelle
+// (§7). Die Erweiterung ist ein Einzeiler an dieser Stelle, sobald ein Beleg da ist.
+//
+// ZWEI SICHERUNGEN für genau diese künftige Erweiterung:
+//  (a) Absteigend nach Länge sortiert. Wo ein Glied Präfix eines anderen ist
+//      (ter ⊂ terdecies, quater ⊂ quaterdecies), müsste sonst das kürzere zuerst
+//      greifen und den Rest («decies») als law-Kandidat zurücklassen — der
+//      bekannte lett/let-Mechanismus. Im aktuellen Satz gibt es keine solche
+//      Präfix-Paarung; die Ordnung ist Vorsorge, keine Notwendigkeit.
+//  (b) Abschluss-Lookahead `(?![a-z])` hinter dem Suffix. Er macht (a) überhaupt
+//      erst unschädlich-redundant: ein Teiltreffer («ter» in «terdecies») wird
+//      dadurch verworfen statt halb konsumiert. Kosten am Korpus GEMESSEN: die
+//      Form «<Ordinal><Code>» ohne Trenner («179septiesCP») kommt in 5'093
+//      Snapshots 0-mal vor — der Lookahead verwirft also keinen echten Treffer.
+//      (Unter dem `i`-Flag deckt `[a-z]` auch Grossbuchstaben ab; das ist hier
+//      gewollt und dank der 0-Messung folgenlos.)
+const ORDINAL_SUFFIX =
+  '(?:quinquies|duodecies|undecies|septies|quater|decies|nonies|novies|octies|sexies|bis|ter)';
 // Artikel-/Absatz-Token: Zahl + optional (Ordinal-Suffix ODER einzelner
 // Buchstabe, der nicht von einem weiteren Buchstaben gefolgt ist).
-const ARTIKEL_TOKEN = `\\d+(?:\\s*${ORDINAL_SUFFIX}|[a-z](?![a-z]))?`;
+//
+// BEKANNTE LÜCKE (Gegenprüfung R1, gemessen 28.7.2026 — bewusst NICHT hier
+// geschlossen): die amtliche Verbund-Form «Buchstabe + Numerale» aus GTR Rz. 309
+// («der bestehende Artikel 65a wird zum Artikel 65abis», Beispiel «Art. 27abis»)
+// passt in keinen der beiden Zweige — «66a» scheitert an `(?![a-z])`, «66bis» am
+// führenden «a». «Art. 66abis StGB» ergibt darum bis heute GAR keinen Treffer.
+// Umfang am Entscheid-Korpus: 517 Nennungen (art. 66abis, 34abis, 41cbis,
+// 314abis, 16cbis, 712ibis, 80dbis …), also grösser als die hier geschlossene
+// Ordinal-Lücke. Sie gehört in einen EIGENEN Schritt, weil sie eine andere
+// Risikoklasse trägt: die belegte Schreibung mit Leerzeichen («art. 34a bis»)
+// kollidiert mit dem deutschen Bereichswort «bis» («Art. 12 bis 14 ZGB») und
+// braucht eine eigene adversariale FP-Analyse. Die hier vorgenommene
+// Serien-Erweiterung ändert an dieser Lücke nichts (geprüft: «Art. 80ddecies»
+// bleibt vorher wie nachher ohne Treffer).
+const ARTIKEL_TOKEN = `\\d+(?:\\s*${ORDINAL_SUFFIX}(?![a-z])|[a-z](?![a-z]))?`;
 const ABSATZ_TOKEN = ARTIKEL_TOKEN;
 // Qualifikatoren zwischen Absatz und Gesetzes-Code
 const FOLGE_MARKER = '(?:ff|ss|segg)\\.?'; // «und folgende»
@@ -275,7 +346,14 @@ const GUELTIGE_AUSNAHMEN: ReadonlySet<string> = new Set(['COST']);
 export const INVALID_LAW_CODES: ReadonlySet<string> = new Set([
   // ── Struktur-Marker ──
   'AL', 'ABS', 'ABSATZ', 'ALIN', 'ALINEA', 'CPV', 'PARA',
+  // Ordinal-Zusätze als eigenständige Tokens (Symmetrie zu ORDINAL_SUFFIX): steht
+  // ein Ordinalwort ausnahmsweise ALLEIN hinter der Artikelnummer — getrennt
+  // geschrieben und ohne folgendes Kürzel, oder nach einem Backtrack —, wird es
+  // sonst selbst zum law-Kandidaten. Die Liste muss darum jedes Glied von
+  // ORDINAL_SUFFIX führen; fehlt eines, entsteht ein Phantom-Erlass wie
+  // «ART.179.SEPTIES» (Gegenprüfung R1/B1, 28.7.2026).
   'BIS', 'TER', 'QUATER', 'QUINQUIES', 'SEXIES',
+  'SEPTIES', 'OCTIES', 'NOVIES', 'NONIES', 'DECIES', 'UNDECIES', 'DUODECIES',
   'FF', 'SS', 'SEGG', 'ZIFF', 'ZIFFER', 'LIT', 'BST', 'BUCHST', 'SATZ',
   // ── Deutsch: Artikel, Präpositionen, Konjunktionen ──
   'AB', 'AM', 'AN', 'AUS', 'BEI', 'BZW', 'DA', 'DAS', 'DEM', 'DEN',

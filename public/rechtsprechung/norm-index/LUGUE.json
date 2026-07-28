@@ -455,6 +455,18 @@
         "gewicht": 0
       }
     ],
+    "36": [
+      {
+        "key": "bge_147_III_491",
+        "zitierung": "BGE 147 III 491",
+        "regesteKurz": "a Art. 32 ff. LugÜ; Anerkennung und Vollstreckung eines englischen Urteils; Folgen des Brexit für die Anwendbarkeit des LugÜ. Das Vereinigte Königreich ist bis zum 31. Dezember 2020 ein an das LugÜ gebundener Staat (E. 6.1.1). Es besteht k…",
+        "datum": "2021-03-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "38": [
       {
         "key": "bge_147_III_491",
@@ -633,6 +645,28 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_147_III_491",
+        "zitierung": "BGE 147 III 491",
+        "regesteKurz": "a Art. 32 ff. LugÜ; Anerkennung und Vollstreckung eines englischen Urteils; Folgen des Brexit für die Anwendbarkeit des LugÜ. Das Vereinigte Königreich ist bis zum 31. Dezember 2020 ein an das LugÜ gebundener Staat (E. 6.1.1). Es besteht k…",
+        "datum": "2021-03-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "46": [
+      {
+        "key": "bge_147_III_491",
+        "zitierung": "BGE 147 III 491",
+        "regesteKurz": "a Art. 32 ff. LugÜ; Anerkennung und Vollstreckung eines englischen Urteils; Folgen des Brexit für die Anwendbarkeit des LugÜ. Das Vereinigte Königreich ist bis zum 31. Dezember 2020 ein an das LugÜ gebundener Staat (E. 6.1.1). Es besteht k…",
+        "datum": "2021-03-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "47": [
@@ -739,6 +773,26 @@
         "zitierung": "BGE 147 III 491",
         "regesteKurz": "a Art. 32 ff. LugÜ; Anerkennung und Vollstreckung eines englischen Urteils; Folgen des Brexit für die Anwendbarkeit des LugÜ. Das Vereinigte Königreich ist bis zum 31. Dezember 2020 ein an das LugÜ gebundener Staat (E. 6.1.1). Es besteht k…",
         "datum": "2021-03-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_III_413",
+        "zitierung": "BGE 150 III 413",
+        "regesteKurz": "Art. 5 Ziff. 3 LugÜ; negative Feststellungsklage des allfälligen Schuldners einer Forderung aus Produktehaftung vor dem Gericht des Handlungsortes. Internationale Zuständigkeit des Gerichts am Handlungsort oder am Erfolgsort sowohl für die…",
+        "datum": "2024-04-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_379",
+        "zitierung": "BGE 149 III 379",
+        "regesteKurz": "Vorrang des vereinbarten Gerichtsstands (Art. 23 Abs. 1 LugÜ) vor dem Gerichtsstand der Streitgenossenschaft (Art. 8a Abs. 1 IPRG). Internationaler Charakter der Sache im Sinne von Art. 1 Abs. 1 IPRG (E. 4). Unterschiedliche Anknüpfungskri…",
+        "datum": "2023-07-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
