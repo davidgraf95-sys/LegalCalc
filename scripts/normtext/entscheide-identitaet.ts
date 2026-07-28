@@ -14,6 +14,16 @@
 // die Bestands-Aufrufer (check-besetzung, check-rangliste-oracle, Tests) merken
 // vom Umzug nichts.
 
+// ── BGE-ZUTEILUNGS-LAG, benannt (Gegenprüfung Runde 6/G3, §8) ───────────────
+// Der Facetten-Status eines Bundesgerichtsurteils hängt an `leitcharakter` und
+// damit daran, ob der Entscheid zum Erfassungszeitpunkt bereits in der amtlichen
+// Sammlung stand. Wird ein heute als «bger» geführtes Urteil später als BGE
+// publiziert, ist der ausgelieferte Status veraltet, bis der Korpus neu gebaut
+// wird — er heilt beim nächsten Lauf von selbst, weil der Status aus dem
+// Snapshot abgeleitet und nie von Hand gesetzt wird. Kein Defekt der Zuordnung,
+// aber eine Aussage mit Verfallsdatum, und die gehört benannt statt stillschweigend
+// als dauerhaft ausgegeben.
+
 import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
 
 export function keyVon(snap: EntscheidSnapshot): { key: string; datei: string } {

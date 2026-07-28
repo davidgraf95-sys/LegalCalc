@@ -255,16 +255,18 @@ export function titelWiderspricht(
   // (Lohngesetz, SG 164.100)»: der ausgeschriebene Titel ist der alte,
   // «Lohngesetz» der heutige, und die Bindung ist völlig richtig.
   //
-  // WIE WEIT DER BELEG TRÄGT (§7, Gegenprüfung Runde 5/F2): die Klasse ist an
-  // der FUNKTION nachgestellt, nicht am Aufrufpunkt. Der zuvor hier genannte
-  // Korpus-Fall VD.2024.65 belegt sie NICHT: dort steht die Kurzform in eckigen
-  // Klammern («… (Lohngesetz [LG], SG 164.100)»), und `titelPhrase` schneidet an
-  // der eckigen Klammer — geprüft wird «,», nie der Alt-Titel. Die Achse feuert
-  // dort also gar nicht, und die fehlende Kante BS-164.100/§ 7 hat einen anderen
-  // Grund (sie fehlt mit und ohne `titel`-Parameter). Am Korpus ist mit dieser
-  // Schreibweise kein Fall bekannt, in dem die Achse für 164.100 feuert — die
-  // Rettung ist Vorsorge gegen eine belegte STRUKTUR, kein Fix eines belegten
-  // Ausfalls (Live-Wirkung heute: 0 Kanten).
+  // WIE WEIT DER BELEG TRÄGT (§7, korrigiert in Runde 6/G2). Der zuvor hier
+  // genannte Korpus-Fall VD.2024.65 belegt die Klasse NICHT — und zwar aus einem
+  // anderen Grund, als hier zwischenzeitlich stand. Am echten Aufrufpunkt
+  // gemessen ist `zwischenTitel` dort «Lohngesetz» (nicht «,»): die eckige
+  // Klammer der Kurzform «(Lohngesetz [LG], SG 164.100)» begrenzt die Phrase auf
+  // den HEUTIGEN Titel. Die Prüfung ist dort also nicht gegenstandslos — sie
+  // greift, findet die Überschneidung und schweigt zu Recht.
+  // Der korpusnahe STRUKTURBELEG ist VD.2021.146: «(Lohngesetz, SG 164.100)» in
+  // Rundklammern ohne Kürzel — dort ergibt `titelWiderspricht` true, und ohne
+  // die Rettung unten wäre eine richtige Bindung gesperrt.
+  // Die Rettung bleibt damit Vorsorge gegen eine belegte STRUKTUR; Live-Wirkung
+  // auf gelieferte Kanten heute: 0.
   // Nennt das Dokument das amtliche KÜRZEL der Nummer, ist die Zuordnung von
   // ihm selbst bestätigt — dann schweigt die Achse. «HBG … (SG 730.110)» wird
   // davon nicht gerettet: dort steht «HBG», das amtliche Kürzel ist «BPV».
