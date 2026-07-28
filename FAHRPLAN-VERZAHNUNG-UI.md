@@ -419,5 +419,24 @@ Entscheidkategorien** erweitert — alles über Filter an- und abwählbar (Kanto
   §15 K7). Trefferzahlen je Facette mit ehrlicher Grundgesamtheit ausweisen (§8). Die
   Interaktions-Grammatik aus §1 (KantenChip, KontextGruppe) gilt unverändert — B4 erweitert sie
   um Facetten-Schalter, ersetzt sie nicht.
-- **Sequenz:** B1 → B2/B3 (parallel möglich) → B4. Kollisions-Abgleich mit `W2·7-VZUI`
+- **B5 · Header-Dropdown «Rechtsprechung» mit Zeitstrahl (David-Auftrag 28.7.2026,
+  Wortlaut: «das ist eine der besten funktionen von lexmetrik sie darf auch ihr eigenes
+  drop down menu im header haben. zeitstrahl und datumseingabe anstatt 5 jahre 10 jahre
+  usw. menu soll interaktiv und innovativ nützlich sein»; Präzisierung David gleichentags:
+  «nur die ansichtsauswahl. artikel sollen trotzdem darunter die entscheide haben»).**
+  Das Header-Dropdown ist AUSSCHLIESSLICH die **Ansichtsauswahl** der Verzahnung — keine
+  eigene Übersichts-/Einstiegswelt: Facetten-Schalter (Instanz/Ebene/Kanton/Status) +
+  **interaktiver Zeitstrahl** über die Entscheiddaten (z. B. Histogramm der Kanten pro
+  Jahr mit Brush-/Zieh-Auswahl) plus **Von-Bis-Datumseingabe** — ausdrücklich KEINE
+  groben Perioden-Buckets («5 Jahre», «10 Jahre»). Die Auswahl wirkt global auf die
+  Entscheid-Anzeige, die **unter den Artikeln bleibt** (B4-Fläche unverändert); B4 hält
+  dafür eine erweiterbare Prädikat-Liste und eine als eigenständige Komponente
+  geschnittene Filter-Steuerung bereit, die B5 in das Header-Dropdown umzieht.
+  Leitplanken unverändert: §15 (on-demand, CLS 0, Header bleibt leicht), §8 (Zähler mit
+  Grundgesamtheit), R16 zu, Minimalismus-Vorgabe David 28.7. («Optik des Gesetzes nicht
+  überladen») gilt auch hier — das Dropdown ist reichhaltig, der Header-Eintrag selbst
+  bleibt ein Wort. Darstellung §3: reine Projektion der B1-Facetten + `datum`-Feld, keine
+  neue Datenschicht.
+- **Sequenz:** B1 → B2/B3 (parallel möglich) → B4 → B5 (nach B4-Landung, eigene
+  Bau-Einheit — Header-Fläche ≠ Leser-Fläche, §14.3). Kollisions-Abgleich mit `W2·7-VZUI`
   (KontextPanel) und `W2·5h-GESETZ-UI` (LeserAnsichtMenu) — Worktree-Pflicht §12.

@@ -1144,7 +1144,10 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   EINE generische «Bezüge am Artikel»-Schicht, an der auch Materialien-Kanten andocken (W2·6a-MAT,
   künftig `W2·6b-MAT-FINMA`), kein Zweitmodell (§5) · **(d)** Filter-UI im Gesetz-Leser
   (Instanz/Ebene/Kanton an-/abwählbar, Default konservativ: Leitentscheide an; Persistenz im
-  Ansicht-Menü). **Abgrenzung (§14.3):** Long-Tail 195k Massen-Entscheide bleibt `W2·6-DATA` E3/E4;
+  Ansicht-Menü) · **(e = B5, §14-Intake David 28.7.2026)** eigenes Header-Dropdown als reine
+  **Ansichtsauswahl** der Verzahnung: Facetten + interaktiver **Zeitstrahl** + Von-Bis-Datumseingabe
+  statt Perioden-Buckets; Entscheide bleiben unter den Artikeln (Detail Fahrplan §9 B5).
+  **Abgrenzung (§14.3):** Long-Tail 195k Massen-Entscheide bleibt `W2·6-DATA` E3/E4;
   UI-Grammatik bleibt `W2·7-VZUI`. Facetten = Datenschicht, Filter = Darstellung (§3). Kantonale
   Zitat-/Norm-Resolver-Extraktion = Risiko-Pfad ⇒ `check:gegenpruefung`; Generator deterministisch,
   2 Läufe byte-gleich. Detail: `FAHRPLAN-VERZAHNUNG-UI.md` §9. Trailer `Roadmap: W2·7-BEZUG`.
