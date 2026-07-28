@@ -5,7 +5,10 @@
 (de 200 · fr 199 · it 198). **Status:** ZWEIFACH GEPRÜFT (Bau + adversariale Gegenprüfung Opus,
 4 Runden, frischer Kontext); fachliche Abnahme durch David offen.
 
-**Nachtrag 28.7.2026 (3 Ergänzungen, Status: gebaut/dokumentiert, Abnahme offen).** (1) Das
+**Nachtrag 28.7.2026 — Status: GEBAUT, EINE GEGENPRÜFUNGS-RUNDE BESTANDEN? NEIN.** Die erste
+adversariale Runde hat das Drift-Tor **widerlegt** (falsch begründete Regel 5, blinde
+Verlust-Gegenprobe); beides ist unten korrigiert und die Widerlegung selbst dokumentiert. Eine
+**zweite Gegenprüfungs-Runde ist offen**, ebenso die fachliche Abnahme durch David. (1) Das
 Artefakt hat jetzt ein **Drift-Tor** `check:fedlex-abk-netz` — damit trägt es das vierte Merkmal
 der Zitat-Ausnahme (§7 lit. d), das ihm bis hierher fehlte; siehe *Drift-Erkennung* unten.
 (2) Die eine offene **Divergenz Register ↔ amtliches Kürzel** (SR 0.142.30) ist unten als
@@ -58,22 +61,34 @@ geltenden Konsolidierung, je Amtssprache; leer, wenn Fedlex für diesen Erlass k
    Global zusätzlich: sinkt die Zeilenzahl unter die des committeten Artefakts, bricht der
    Generator ab — ein Netz-Ausfall darf Bestand nicht löschen.
 
-5. **Ein-Element-Batches sind verboten — NEUER BEFUND 28.7.2026.** Steht in der `VALUES`-Liste
-   genau **eine** treffende SR-Nummer, liefert der Endpoint zusammen mit dem Datums-Filter
-   `FILTER(?von <= "…"^^xsd:date)` **deterministisch 0 Zeilen — und der COUNT stimmt zu.**
-   Isoliert Stufe für Stufe (Abruf 28.7.2026): Notations-Join allein 1 Treffer · plus
-   `ConsolidationAbstract` 25 · plus `dateEntryInForce` 25 · **plus Datums-Filter 0**. Mit einer
-   zweiten, ebenfalls treffenden Nummer bleiben alle 149. Belegt an SR 0.142.30 und SR 0.101 (je
-   5 Läufe, immer `0/0` Zeilen/COUNT; als Paar `4/4`). Ein zweiter, **nicht** existierender Wert
-   hilft nicht (`["0.142.30", "999.999.999"]` ⇒ 0) — nach dem Notations-Join bleibt wieder eine
-   Zeile.
-   **Das ist die gefährlichste Fehlerart, weil Regel 4 sie nicht sehen kann:** Zeilen- und
-   COUNT-Abfrage sind gleich falsch, ein Vergleich zwischen ihnen bestätigt das Teilergebnis
-   (§6.7). Zwei Riegel im Generator: `batchListe()` erzeugt nie einen Batch mit weniger als zwei
-   SR (ein Rest von 1 wandert in den vorherigen Batch), und die Verlust-Gegenprobe des Drift-Tors
-   führt Kanarienvögel mit. Praktisch schlagfähig wäre der Fehler, sobald die Registergrösse
-   ≡ 1 (mod 40) ist — bei 230 SR heute nicht, bei 241 SR wären die Kürzel der letzten SR lautlos
-   verschwunden.
+5. **Stille Kappung — sie hängt an der ZUSAMMENSETZUNG der Abfrage, nicht an ihrer Grösse.**
+   *(Befund 28.7.2026. Diese Regel stand zwischenzeitlich falsch hier — «Ein-Element-Batches
+   liefern 0 Zeilen» —, und zwar in beiden Hälften. Die adversariale Gegenprüfung hat sie
+   widerlegt: die Einzelmessungen waren richtig, der Schluss daraus nicht. Die Korrektur steht
+   hier statt einer stillen Löschung, weil der Fehlschluss selbst die Lehre ist — zwei
+   zusammenpassende Messungen sind noch keine Ursache.)*
+
+   Gemessen (deterministisch über 5–6 Läufe, HTTP 200, COUNT stets = Zeilenzahl):
+
+   | `VALUES`-Liste | Ergebnis |
+   |---|---|
+   | `{281.1}` allein | **3/3** — ein Ein-Element-`VALUES` ist also nicht per se kaputt |
+   | `{0.142.30}` allein | **0/0** — obwohl `dateEntryInForce` = 1955-04-21 |
+   | `{0.142.30, 281.1}` | **3/3**, 6× hintereinander — die `FK`-Zeile fehlt still |
+   | `{0.142.30, 281.1, 220}` | **7/7** — `FK` wieder da |
+   | `{0.101, X}`, X ∈ {221.213.11, 221.411.1, 955.033.0} | je **3/3** über 5 Läufe, X still weg, `0.101` vollständig |
+   | dieselben X im 4er-Batch | **12/12** — X vorhanden |
+
+   Stufenweise isoliert für `{0.142.30}`: Notations-Join 1 → plus `ConsolidationAbstract` 25 →
+   plus `dateEntryInForce` 25 → **plus `FILTER(?von <= "2026-07-28"^^xsd:date)` 0**. Bei einem
+   Inkrafttretens-Datum von 1955 kann dieser Filter logisch nicht greifen: es ist eine daten- und
+   planabhängige Endpoint-Pathologie, keine Semantik.
+
+   **Warum das die gefährlichste Fehlerart ist:** Regel 4 kann sie prinzipiell nicht sehen —
+   Zeilen- und COUNT-Abfrage sind gleich falsch (§6.7). Und **keine Batch-Grösse ist beweisbar
+   sicher**, weil die Kappung an den Werten hängt, nicht an ihrer Anzahl. `batchListe()` hält
+   Batches darum bei ≥ 3 SR als billigen Gürtel **ohne Garantie**; tragend ist allein die
+   Verlust-Gegenprobe des Drift-Tors mit zwei verschieden zusammengesetzten Nachfragen (unten).
 
 **Konflikte werden nicht geraten (§8):** trägt eine `(sr, sprache)` trotz Fenster zwei
 verschiedene Kürzel, bricht der Generator mit Fehler ab, statt still zu tiebreaken.
@@ -114,7 +129,7 @@ Ein gespeicherter Rechtswert ohne Drift-Erkennung ist keine Abschrift, sondern e
 Wahrheit (§5/§7 lit. d): ändert Fedlex ein `titleShort`, wird ein Erlass abgelöst oder kommt ein
 Kürzel hinzu, bliebe das committete Artefakt still falsch. Das Tor ist der **`--check`-Modus
 desselben Generators**, nicht ein zweites Skript — Prüfling und Prüfer benutzen damit dieselbe
-SPARQL-Kette, dieselben vier Regeln und dieselbe Zeilenberechnung (§5). Ein Parallel-Skript
+SPARQL-Kette, dieselben fünf Regeln und dieselbe Zeilenberechnung (§5). Ein Parallel-Skript
 verglich am Ende zwei Abfragen und driftete unbemerkt vom Generator weg (§6.7).
 
 **Regel (Eingabe → Ausgabe).** Eingabe: committetes Artefakt + Live-Abfrage zum Stichtag
@@ -135,16 +150,39 @@ Ein Teilergebnis kann nicht als «kein Drift» durchgehen: es erscheint zwingend
 `WEGGEFALLEN`. Zusätzlich gilt je Batch weiterhin das COUNT-Tor mit frisch geholtem Paar
 (Regel 4 oben).
 
-**Verlust-Gegenprobe (Regel 5, an dieser Stelle gelernt).** Ein weggefallenes Kürzel und ein
-gekapptes Resultat sehen im Vergleich **identisch** aus. Darum wird jeder Verlust-Befund gezielt
-nachgefragt — nur die betroffenen SR-Nummern, mit eigenem COUNT-Tor. Erscheinen die Kürzel dabei
-doch, meldet das Tor «STILLES TEILERGEBNIS statt Drift» und rät ausdrücklich **vom** Regenerieren
-ab. Die erste Fassung dieser Gegenprobe fragte genau **eine** SR nach, bekam wegen Regel 5 immer
-0 Zeilen und «bestätigte» damit jeden Verlust — ein Prüfer, der immer bestätigt, prüft nichts
-(§6.7, im Bau rot gesehen: `Batch Gegenprobe (1 SR): 1 SR → 0/0 Zeilen`). Seither reisen drei
-**Kanarienvögel** mit (Live-Zeilen fremder SR, die im Hauptlauf nachweislich kamen); fehlen sie in
-der Nachfrage, bricht der Lauf mit «GEGENPROBE NICHT AUSSAGEKRÄFTIG» ab, statt ein Urteil zu
-fällen. Auch dieser Riegel wurde einmal rot gezeigt (Kanarienvogel mit erfundenem Kürzel). Der Stichtag ist im Prüf-Modus **absichtlich** der heutige Tag: gegen den
+### Verlust-Gegenprobe — zweimal widerlegt, bevor sie trug
+
+Ein weggefallenes Kürzel und ein still gekapptes Resultat sehen im Vergleich **identisch** aus.
+Die Geschichte dieser Gegenprobe ist die Lehre:
+
+- **Fassung 1** fragte nur die betroffene SR nach. Wegen Regel 5 kam 0/0 zurück — sie
+  «bestätigte» damit **jeden** Verlust. Ein Prüfer, der immer bestätigt, prüft nichts (§6.7).
+- **Fassung 2** nahm «drei Kanarienvögel» dazu — tatsächlich `live.slice(0, 3)`, also die
+  **drei Sprachzeilen EINER fremden SR**, faktisch ein einziger Kanarienvogel. Ergebnis: eine
+  2-SR-Nachfrage, in der die fremde SR lebte und die betroffene still gekappt wurde. Die
+  adversariale Gegenprüfung hat das an drei Fällen belegt (`{0.101, X}` mit
+  X ∈ 221.213.11 / 221.411.1 / 955.033.0, je 5/5 Läufe): das Tor meldete «Verlust in der
+  Gegenprobe bestätigt» für Kürzel, die Fedlex führt — eine **erfundene Rechtsänderung** samt
+  Aufforderung, sie ins Artefakt zu übernehmen (§8). Eine Kontrolle, die systematisch woanders
+  hinschaut als der Prüfling, ist keine.
+
+**Fassung 3 (geltend).** Vier Bedingungen, jede einzeln rot gezeigt:
+
+1. **Zwei verschieden zusammengesetzte Nachfragen** (andere Füll-SR, andere Reihenfolge). Weil
+   die Kappung an der Zusammensetzung hängt, ist Komposition-Vielfalt das einzig wirksame Mittel:
+   zusammen mit dem Hauptlauf muss ein Kürzel in **drei** Zusammensetzungen fehlen.
+2. **Positivkontrollen derselben SR**, kein Fremd-SR-Ersatz: jede Füll-SR bringt eine eigene
+   Live-Zeile mit, jede betroffene SR ihre überlebende Zeile (Teilverlust). Fehlt eine, bricht
+   der Lauf mit «NACHFRAGE … NICHT AUSSAGEKRÄFTIG» ab.
+3. **Nicht absicherbar ⇒ kein Urteil.** Hat der Hauptlauf für eine betroffene SR **gar keine**
+   Zeile geliefert, fehlt das Prüfmittel; dann meldet das Tor «KEIN URTEIL MÖGLICH», rät
+   ausdrücklich vom Regenerieren ab und verlangt die Prüfung von Hand gegen die amtliche Fassung.
+   Fail-closed statt Rateschluss — genau die drei oben genannten Fälle enden jetzt hier.
+4. **Leere Kontroll-Liste ⇒ Abbruch.** Eine Nachfrage ohne Prüfmittel kann nicht scheitern und
+   darf darum nicht urteilen (§6.7).
+
+Auch ein *bestätigter* Verlust führt nicht mehr zur Regenerier-Empfehlung ohne Warnung: die
+Löschung eines amtlichen Kürzels ist eine fachliche Abnahme, kein Build-Schritt (§7/§8). Der Stichtag ist im Prüf-Modus **absichtlich** der heutige Tag: gegen den
 eingefrorenen Artefakt-Stichtag geprüft, könnte das Tor die wichtigste Drift-Art — eine erst
 NACH dem Artefakt-Stand in Kraft getretene Konsolidierung — gar nicht sehen. Wanduhr steckt damit
 nur im Prüf-Pfad, nie im Schreib-Pfad und nie in der Rechenlogik (§2).

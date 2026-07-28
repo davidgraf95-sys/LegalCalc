@@ -45,23 +45,34 @@
  *     die Zeilenzahl unter die des committeten Artefakts, bricht der Generator
  *     ab (Regressions-Tor, §6.7) — ein Netz-Ausfall darf Bestand nicht löschen.
  *
- * (5) EIN-ELEMENT-BATCHES SIND VERBOTEN — der Endpoint liefert dann DETERMINISTISCH
- *     0 Zeilen, und der COUNT stimmt zu (Befund 28.7.2026, hier gemessen). Isoliert
- *     bis auf die Stufe: `VALUES ?sr { <EIN Wert> }` + `FILTER(?von <=
- *     "…"^^xsd:date)` ⇒ aus 25 Treffern werden 0; mit einem ZWEITEN, ebenfalls
- *     treffenden Wert bleiben alle 149. Belegt an SR 0.142.30 und SR 0.101 (je
- *     5 Läufe, immer 0/0 Zeilen/COUNT; zusammen 4/4). Ein zweiter, NICHT
- *     existierender Wert hilft nicht (["0.142.30", "999.999.999"] ⇒ 0): nach dem
- *     Notations-Join bleibt wieder nur eine Zeile.
+ * (5) DIE KAPPUNG HÄNGT AN DER ZUSAMMENSETZUNG DER ABFRAGE, NICHT AN IHRER GRÖSSE.
+ *     Korrigierte Fassung 28.7.2026 nach adversarialer Gegenprüfung; die frühere
+ *     Formulierung («Ein-Element-Batches liefern 0») war in BEIDEN Hälften falsch
+ *     und stand hier nur, weil zwei Einzelmessungen zufällig zusammenpassten.
  *
- *     Das ist die gefährlichste Sorte Fehler, weil das COUNT-Tor aus Regel 4 ihn
- *     NICHT sehen kann — beide Abfragen sind gleich falsch (§6.7). Zwei Riegel:
- *     `batchListe()` erzeugt niemals einen Batch mit weniger als zwei SR (ein
- *     Rest von 1 wandert in den vorherigen Batch), und die Verlust-Gegenprobe im
- *     Prüf-Modus führt KANARIENVÖGEL mit, deren Ausbleiben den Lauf abbricht.
- *     Wirksam wird der erste Riegel, sobald die Registergrösse ≡ 1 (mod 40) ist —
- *     heute 230 SR, also 6 Batches à 40/40/40/40/40/30; bei 241 SR hätte der
- *     letzte Batch EINE Nummer, und deren Kürzel wären lautlos verschwunden.
+ *     Gemessen (je 5–6 Läufe, deterministisch, HTTP 200, COUNT stets = Zeilenzahl):
+ *       · `{281.1}` allein  ⇒ 3/3 Zeilen — ein Ein-Element-VALUES ist also NICHT
+ *         per se kaputt.
+ *       · `{0.142.30}` allein ⇒ 0/0 — obwohl `dateEntryInForce` = 1955-04-21 und
+ *         der Filter `?von <= 2026-07-28` logisch nicht greifen KANN. Stufenweise:
+ *         Notation 1 → +Abstract 25 → +dateEntryInForce 25 → +Datums-FILTER 0.
+ *       · `{0.142.30, 281.1}` ⇒ 6× hintereinander 3/3 — die FK-Zeile fehlt STILL,
+ *         zwei treffende Werte helfen also auch nicht.
+ *       · `{0.142.30, 281.1, 220}` ⇒ 7/7, FK wieder da.
+ *       · `{0.101, X}` für X ∈ {221.213.11, 221.411.1, 955.033.0} ⇒ je 5/5 Läufe
+ *         3/3 Zeilen, X still verschwunden, 0.101 vollständig da; im 4er-Batch
+ *         jeweils 12/12 mit X.
+ *
+ *     Es ist also eine daten- und planabhängige Endpoint-Pathologie: WELCHE
+ *     Werte zusammen in der VALUES-Liste stehen, entscheidet, ob eine SR ihre
+ *     Zeilen bekommt. Regel 4 kann das prinzipiell nicht fangen (beide Abfragen
+ *     sind gleich falsch), und keine Batch-Grösse ist beweisbar sicher.
+ *
+ *     Konsequenz für den Bau: ein Verlust-Befund darf NIE aus EINER Abfrage-
+ *     Zusammensetzung geschlossen werden. `batchListe()` hält Batches bei ≥ 3 SR
+ *     (billiger Gürtel, keine Garantie); tragend ist die Verlust-Gegenprobe, die
+ *     ZWEI unterschiedlich zusammengesetzte Nachfragen fährt und jede davon mit
+ *     Positivkontrollen absichert (siehe `verlustGegenprobe`).
  *
  * KONFLIKTE WERDEN NICHT GERATEN (§8). Trägt eine (sr, sprache) trotz Fenster
  * zwei verschiedene Kürzel, bricht der Generator mit Fehler ab statt still zu
@@ -94,8 +105,9 @@
  *      bricht ein Resultat von 0 Zeilen sofort ab, statt 597 Weggefallene zu
  *      melden — die ehrlichere Diagnose (Endpoint, nicht Recht). Und weil ein
  *      Verlust-Befund und ein gekapptes Resultat gleich AUSSEHEN, wird jeder
- *      Verlust vor der Meldung gezielt nachgefragt (`verlustGegenprobe`): so
- *      behauptet das Tor nie eine Rechtsänderung, die es nicht gesehen hat.
+ *      Verlust vor der Meldung zweimal unterschiedlich nachgefragt
+ *      (`verlustGegenprobe`, Regel 5): so behauptet das Tor nie eine
+ *      Rechtsänderung, die es nicht gesehen hat.
  *  (b) Ein NETZFEHLER ist ein eigener Fehlerpfad, nie grün: die einzige I/O-
  *      Strecke (der Batch-Abruf) liegt in einem try/catch, das über
  *      `netzAbbruch()` Ursache UND Nicht-Aussage ausspricht und mit 1 endet.
@@ -218,29 +230,35 @@ function zaehlAbfrage(srs: string[]): string {
   return `${PREFIXE}\nSELECT (COUNT(*) AS ?n) WHERE { ${PROJEKTION} ${rumpf(srs)} }`;
 }
 
+/** Untergrenze für jede Abfrage-Zusammensetzung (Gürtel, keine Garantie — Regel 5). */
+const MIN_BATCH = 3;
+
 /**
- * Batch-Aufteilung, die NIE einen Ein-Element-Batch erzeugt (Regel 5).
+ * Batch-Aufteilung, die keinen Batch unter `MIN_BATCH` SR erzeugt.
  *
- * Ein Rest von genau einer SR-Nummer wird dem vorherigen Batch angehängt (41
- * statt 40+1). Warum nicht «dann halt ein Batch mit 1»: der Endpoint liefert dazu
- * deterministisch 0 Zeilen MIT passendem COUNT — die Kürzel dieser SR wären
- * lautlos weg, im Prüf-Modus als «weggefallen» fehlinterpretiert. Bei einer
- * einzigen SR-Nummer insgesamt gibt es keinen vorherigen Batch; dann bricht der
- * Lauf ab, statt ein Ergebnis zu liefern, dem nicht zu trauen ist.
+ * WAS DAS IST UND WAS NICHT: ein billiger Gürtel, kein Beweis. Kleine
+ * Zusammensetzungen sind empirisch besonders anfällig für die Kappung aus Regel 5
+ * (`{0.142.30}` ⇒ 0/0, `{0.101, X}` ⇒ X still weg), aber die Kappung hängt an den
+ * WERTEN, nicht an der Anzahl — eine Mindestgrösse kann sie darum nicht
+ * ausschliessen. Tragend gegen falsche Verlust-Urteile ist `verlustGegenprobe()`.
+ *
+ * Ein Rest unter der Grenze wandert in den vorherigen Batch. Bleibt die Gesamtzahl
+ * darunter, bricht der Lauf ab, statt einem Ergebnis zu trauen, für das es keine
+ * Erfahrung gibt.
  */
 function batchListe(srs: string[]): string[][] {
-  if (srs.length === 1) {
+  if (srs.length < MIN_BATCH) {
     console.error(
-      'Nur EINE SR-Nummer im Register: der Endpoint liefert zu einem Ein-Element-VALUES '
-      + 'deterministisch 0 Zeilen mit passendem COUNT (Regel 5) — kein vertrauenswürdiges '
-      + 'Ergebnis möglich, Abbruch.',
+      `Nur ${srs.length} SR-Nummer(n): unter ${MIN_BATCH} ist keine Abfrage-Zusammensetzung `
+      + 'erprobt, und die Kappung aus Regel 5 trifft gerade kleine Mengen — Abbruch statt '
+      + 'eines Ergebnisses, dem nicht zu trauen ist.',
     );
     process.exit(1);
   }
   const batches: string[][] = [];
   for (let i = 0; i < srs.length; i += BATCH) batches.push(srs.slice(i, i + BATCH));
   const letzter = batches[batches.length - 1];
-  if (batches.length > 1 && letzter.length < 2) {
+  if (batches.length > 1 && letzter.length < MIN_BATCH) {
     batches[batches.length - 2].push(...letzter);
     batches.pop();
   }
@@ -426,35 +444,31 @@ function divergenzHinweis(live: AliasZeile[]): void {
  * Fehlklassifikator aus §6.7.
  */
 /**
- * GEGENPROBE GEGEN DAS STILLE TEILERGEBNIS (§0 Ziff. 3 sinngemäss: ein Fehlbestand
- * ist ein VERDACHT, keine Ursache).
+ * EINE Nachfrage-Zusammensetzung, abgesichert durch Positivkontrollen.
  *
- * Ein «weggefallenes» Kürzel und ein still gekapptes SPARQL-Resultat sehen im
- * Vergleich IDENTISCH aus. Der Endpoint liefert nachweislich bei ≈2 von 20 Läufen
- * HTTP 200 mit fehlenden Zeilen (Regel 4 oben, Befund der #397-Session). Das
- * Batch-COUNT-Tor fängt den Normalfall; es fängt NICHT den Fall, in dem COUNT und
- * Zeilen gleichermassen gekappt sind. Ein Tor, das dann «die amtliche Abkürzung
- * ist weggefallen» meldet, behauptet eine Rechtsänderung, die es nicht gesehen hat.
- *
- * Darum wird jeder Verlust-Befund gezielt nachgefragt: nur die betroffenen
- * SR-Nummern, in einem eigenen Batch mit eigenem COUNT-Tor. Tauchen die Kürzel
- * dabei doch auf, war es ein Teilergebnis — dann bleibt der Lauf rot, aber mit der
- * RICHTIGEN Diagnose (Endpoint, nicht Recht) und ohne Aufforderung zum Regenerieren.
- *
- * KANARIENVÖGEL SIND PFLICHT (Regel 5, gelernt an genau dieser Stelle): eine
- * Nachfrage über wenige SR-Nummern läuft in dieselbe Falle, in der der Endpoint zu
- * einem Ein-Element-VALUES deterministisch 0 Zeilen mit passendem COUNT liefert.
- * Die erste Fassung dieser Gegenprobe fragte genau eine SR nach, bekam 0 Zeilen und
- * «bestätigte» den Verlust — ein Prüfer, der IMMER bestätigt, prüft nichts (§6.7).
- * Darum reisen drei Zeilen mit, die im Live-Ergebnis nachweislich vorhanden sind:
- * fehlen sie in der Nachfrage, ist die Nachfrage selbst kaputt und der Lauf bricht
- * ab, statt ein Urteil zu fällen.
+ * `kontrollen` sind Tripel, die der HAUPTLAUF für SR-Nummern DIESER Nachfrage
+ * geliefert hat. Sie müssen wiederkommen; sonst hat die Zusammensetzung selbst
+ * gekappt (Regel 5) und es gibt kein Urteil. Eine leere Kontroll-Liste ist kein
+ * «alles in Ordnung», sondern ein Abbruchgrund: eine Prüfung ohne Prüfmittel ist
+ * das Tor aus §6.7, das nicht scheitern kann.
  */
-async function verlustGegenprobe(betroffen: string[], kanarien: AliasZeile[]): Promise<Set<string>> {
-  const srs = [...new Set([...betroffen, ...kanarien.map((z) => z.sr)])].sort(vergleiche);
+async function nachfrage(
+  srs: string[], etikett: string, kontrollen: AliasZeile[],
+): Promise<Set<string>> {
+  if (srs.length < MIN_BATCH) {
+    console.error(`\nNachfrage ${etikett}: nur ${srs.length} SR — unter ${MIN_BATCH} nicht erprobt (Regel 5). Kein Urteil.`);
+    process.exit(1);
+  }
+  if (kontrollen.length === 0) {
+    console.error(
+      `\nNachfrage ${etikett}: KEINE Positivkontrolle vorhanden — eine Nachfrage ohne Prüfmittel `
+      + 'kann nicht scheitern und darf darum nicht urteilen (§6.7). Abbruch.',
+    );
+    process.exit(1);
+  }
   let roh: SparqlBinding[];
   try {
-    roh = await batchMitZaehltor(srs, `Gegenprobe (${betroffen.length} SR + ${kanarien.length} Kanarienvögel)`);
+    roh = await batchMitZaehltor(srs, `Nachfrage ${etikett} (${srs.length} SR, ${kontrollen.length} Positivkontrollen)`);
   } catch (e) {
     netzAbbruch(e);
   }
@@ -466,17 +480,98 @@ async function verlustGegenprobe(betroffen: string[], kanarien: AliasZeile[]): P
     if (!sr || !sp || abk === '') continue;
     tripel.add(`${sr}|${sp}|${abk}`);
   }
-  const stumm = kanarien.filter((z) => !tripel.has(`${z.sr}|${z.sprache}|${z.abk}`));
+  const stumm = kontrollen.filter((z) => !tripel.has(`${z.sr}|${z.sprache}|${z.abk}`));
   if (stumm.length > 0) {
     console.error(
-      `\nGEGENPROBE NICHT AUSSAGEKRÄFTIG: ${stumm.length} von ${kanarien.length} Kanarienvögeln `
-      + 'fehlen in der Nachfrage, obwohl der Hauptlauf sie geliefert hat — die Nachfrage-Abfrage '
-      + 'selbst ist unzuverlässig (Regel 5: Ein-Element-Falle, Endpoint-Plan). Kein Drift-Urteil:',
+      `\nNACHFRAGE ${etikett} NICHT AUSSAGEKRÄFTIG: ${stumm.length} von ${kontrollen.length} `
+      + 'Positivkontrollen fehlen, obwohl der Hauptlauf sie geliefert hat — diese '
+      + 'Abfrage-Zusammensetzung hat selbst gekappt (Regel 5). Kein Drift-Urteil:',
     );
     for (const z of stumm) console.error(`    • SR ${z.sr} / ${z.sprache}: '${z.abk}' erwartet, nicht geliefert`);
     process.exit(1);
   }
   return tripel;
+}
+
+/**
+ * GEGENPROBE GEGEN DAS STILLE TEILERGEBNIS (§0 Ziff. 3: ein Fehlbestand ist ein
+ * VERDACHT, keine Ursache).
+ *
+ * Ein «weggefallenes» Kürzel und ein still gekapptes Resultat sehen im Vergleich
+ * IDENTISCH aus, und das COUNT-Tor kann sie nicht trennen (Regel 4 fängt nur den
+ * Fall, in dem NUR eine der beiden Abfragen gekappt ist).
+ *
+ * ── Was die adversariale Gegenprüfung an der ersten Fassung widerlegt hat ─────
+ * Fassung 1 fragte die betroffenen SR mit drei «Kanarienvögeln» nach — die aber
+ * aus `live.slice(0, 3)` stammten und damit dieselben drei Sprachzeilen EINER
+ * fremden SR waren. Ergebnis: eine 2-SR-Nachfrage, in der die fremde SR lebte und
+ * die betroffene still gekappt wurde. Empirisch belegt an drei Fällen ({0.101, X}
+ * mit X ∈ 221.213.11 / 221.411.1 / 955.033.0, je 5/5 Läufe): das Tor meldete
+ * «Verlust in der Gegenprobe bestätigt» für Kürzel, die Fedlex führt — also eine
+ * erfundene Rechtsänderung samt Aufforderung, sie ins Artefakt zu übernehmen (§8).
+ * Ein Prüfer, dessen Kontrolle systematisch woanders hinschaut als der Prüfling,
+ * bestätigt bloss (§6.7).
+ *
+ * ── Was jetzt gilt ───────────────────────────────────────────────────────────
+ * (1) ZWEI unterschiedlich zusammengesetzte Nachfragen (andere Füll-SR, andere
+ *     Reihenfolge). Weil die Kappung an der Zusammensetzung hängt (Regel 5), ist
+ *     Komposition-Vielfalt das einzige wirksame Mittel; zusammen mit dem
+ *     Hauptlauf muss ein Kürzel in DREI verschiedenen Zusammensetzungen fehlen.
+ * (2) JEDE SR der Nachfrage trägt eine Positivkontrolle DERSELBEN SR, soweit der
+ *     Hauptlauf eine geliefert hat — Füll-SR immer, betroffene SR bei Teilverlust
+ *     (z. B. `it` fehlt, `de` lebt). Kein Fremd-SR-Ersatz.
+ * (3) Eine betroffene SR OHNE jede Live-Zeile ist nicht absicherbar: dann fehlt
+ *     das Prüfmittel, und es gibt kein Urteil — nur den Auftrag, von Hand gegen
+ *     die amtliche Fassung zu prüfen. Fail-closed statt Rateschluss.
+ * (4) Taucht ein Kürzel in IRGENDEINER Nachfrage auf, ist es kein Verlust,
+ *     sondern ein Teilergebnis — mit ausdrücklicher Warnung, NICHT zu regenerieren.
+ */
+async function verlustGegenprobe(
+  verloren: AliasZeile[], live: AliasZeile[],
+): Promise<{ bestaetigt: AliasZeile[]; aufgetaucht: AliasZeile[] }> {
+  const schl = (z: AliasZeile): string => `${z.sr}|${z.sprache}|${z.abk}`;
+  const betroffen = [...new Set(verloren.map((z) => z.sr))].sort(vergleiche);
+
+  // (3) Absicherbarkeit zuerst — ohne Live-Zeile derselben SR kein Prüfmittel.
+  const liveJeSr = new Map<string, AliasZeile[]>();
+  for (const z of live) liveJeSr.set(z.sr, [...(liveJeSr.get(z.sr) ?? []), z]);
+  const nichtAbsicherbar = betroffen.filter((sr) => !liveJeSr.has(sr));
+  if (nichtAbsicherbar.length > 0) {
+    console.error(
+      `\nKEIN URTEIL MÖGLICH für ${nichtAbsicherbar.length} SR: der Hauptlauf hat für sie GAR `
+      + 'keine Zeile geliefert, also gibt es keine Positivkontrolle derselben SR — und ohne die '
+      + 'ist «weggefallen» von «still gekappt» nicht zu unterscheiden (Regel 5). Betroffen:',
+    );
+    for (const sr of nichtAbsicherbar) {
+      const artefakt = verloren.filter((z) => z.sr === sr).map((z) => `${z.sprache} '${z.abk}'`).join(', ');
+      console.error(`    • SR ${sr}: Artefakt führt ${artefakt}`);
+    }
+    console.error(
+      '\n  → NICHT regenerieren und NICHTS löschen. Von Hand gegen die amtliche Fassung prüfen '
+      + '(fedlex.admin.ch, SR-Nummer suchen: trägt der Erlass noch eine Kurzbezeichnung, und gilt '
+      + 'er noch?) und den Befund fachlich abnehmen (§7/§8). Lauf danach wiederholen.\n',
+    );
+    process.exit(1);
+  }
+
+  // Füll-SR aus zwei verschiedenen Enden der Live-Liste ⇒ zwei Zusammensetzungen.
+  const fremde = [...liveJeSr.keys()].filter((sr) => !betroffen.includes(sr)).sort(vergleiche);
+  const wieViele = Math.max(MIN_BATCH, 3);
+  const fuellA = fremde.slice(0, wieViele);
+  const fuellB = fremde.slice(-wieViele);
+  const kontrollen = (fuell: string[]): AliasZeile[] => [
+    ...fuell.map((sr) => liveJeSr.get(sr)![0]),                    // je Füll-SR eine eigene Zeile
+    ...betroffen.flatMap((sr) => liveJeSr.get(sr)!.slice(0, 1)),   // Teilverlust: überlebende Zeile
+  ];
+
+  const srsA = [...new Set([...betroffen, ...fuellA])].sort(vergleiche);
+  const srsB = [...new Set([...betroffen, ...fuellB])].sort(vergleiche).reverse();
+  const a = await nachfrage(srsA, 'A', kontrollen(fuellA));
+  const b = await nachfrage(srsB, 'B', kontrollen(fuellB));
+
+  const aufgetaucht = verloren.filter((z) => a.has(schl(z)) || b.has(schl(z)));
+  const bestaetigt = verloren.filter((z) => !a.has(schl(z)) && !b.has(schl(z)));
+  return { bestaetigt, aufgetaucht };
 }
 
 async function pruefeDrift(live: AliasZeile[], srAnzahl: number, srMitAlias: number): Promise<never> {
@@ -540,36 +635,33 @@ async function pruefeDrift(live: AliasZeile[], srAnzahl: number, srMitAlias: num
     process.exit(0);
   }
 
-  // Verlust-Befund ⇒ gezielte Gegenprobe, BEVOR er als Rechtsänderung gemeldet wird.
+  // Verlust-Befund ⇒ zwei verschieden zusammengesetzte Nachfragen, BEVOR er als
+  // Rechtsänderung gemeldet wird (Regel 5).
   let gegenprobe = '';
   if (verloren.length > 0) {
     const betroffen = [...new Set(verloren.map((z) => z.sr))].sort(vergleiche);
-    // Kanarienvögel: Live-Zeilen fremder SR — sie MÜSSEN in der Nachfrage wieder
-    // erscheinen, sonst ist die Nachfrage selbst kaputt (Regel 5).
-    const kanarien = live.filter((z) => !betroffen.includes(z.sr)).slice(0, 3);
     console.log(
       `\n  ${verloren.length} Verlust-Befund(e) über ${betroffen.length} SR — Gegenprobe gegen `
-      + `stille Teilergebnisse, betroffene SR + ${kanarien.length} Kanarienvögel:`,
+      + 'stille Kappung: zwei unterschiedlich zusammengesetzte Nachfragen mit Positivkontrollen '
+      + 'derselben SR:',
     );
-    const nach = await verlustGegenprobe(betroffen, kanarien);
-    const widerspruch = verloren.filter((z) => nach.has(`${z.sr}|${z.sprache}|${z.abk}`));
-    if (widerspruch.length > 0) {
+    const { bestaetigt, aufgetaucht } = await verlustGegenprobe(verloren, live);
+    if (aufgetaucht.length > 0) {
       console.error(
-        `\nSTILLES TEILERGEBNIS statt Drift: die Gegenprobe LIEFERT ${widerspruch.length} der `
-        + `${verloren.length} angeblich weggefallenen Kürzel doch — der erste Abruf war gekappt, `
-        + 'obwohl COUNT und Zeilen übereinstimmten. Betroffen:',
+        `\nSTILLE KAPPUNG statt Drift: ${aufgetaucht.length} der ${verloren.length} angeblich `
+        + 'weggefallenen Kürzel liefert die Nachfrage doch — der Hauptlauf war für diese SR '
+        + 'gekappt, obwohl COUNT und Zeilenzahl übereinstimmten. Betroffen:',
       );
-      for (const z of widerspruch.sort((a, b) => vergleiche(a.sr, b.sr) || vergleiche(a.abk, b.abk))) {
-        console.error(`    • SR ${z.sr} / ${z.sprache}: '${z.abk}' — in der Gegenprobe vorhanden`);
+      for (const z of aufgetaucht.sort((a, b) => vergleiche(a.sr, b.sr) || vergleiche(a.abk, b.abk))) {
+        console.error(`    • SR ${z.sr} / ${z.sprache}: '${z.abk}' — in der Nachfrage vorhanden`);
       }
       console.error(
-        '\n  → KEIN Drift-Urteil und NICHT regenerieren: das Artefakt ist unverdächtig, der '
-        + 'Endpoint war unvollständig (§8). Lauf später wiederholen; bleibt der Befund bei '
-        + 'mehreren Läufen bestehen, ist es echte Drift.\n',
+        '\n  → KEIN Drift-Urteil und NICHT regenerieren: das Artefakt ist unverdächtig, die '
+        + 'Abfrage war unvollständig (§8). Lauf später wiederholen.\n',
       );
       process.exit(1);
     }
-    gegenprobe = ` · Verlust in der Gegenprobe bestätigt (${betroffen.length} SR erneut abgefragt)`;
+    gegenprobe = ` · Verlust in ZWEI unabhängigen Zusammensetzungen bestätigt (${bestaetigt.length} Tripel)`;
   }
 
   console.error(
@@ -589,8 +681,17 @@ async function pruefeDrift(live: AliasZeile[], srAnzahl: number, srMitAlias: num
     '\n  → Artefakt neu erzeugen (`npm run gen:abk-aliase -- --datum=$(date +%F)`), Diff '
     + 'BEWUSST abnehmen (§7: die amtliche Fassung ist massgeblich, nicht das Artefakt), '
     + 'danach `npm run check:normkeys` — eine geänderte Abkürzung kann Zuordnungen '
-    + 'verschieben oder neue Kollisionen erzeugen.\n',
+    + 'verschieben oder neue Kollisionen erzeugen.',
   );
+  if (weggefallen.length > 0) {
+    console.error(
+      '  → WEGGEFALLENE Kürzel zuerst VON HAND gegen die amtliche Fassung prüfen: ein Regen-Lauf '
+      + 'löscht sie aus dem Artefakt, und der Endpoint kappt nachweislich still (Regel 5). Zwei '
+      + 'unabhängige Zusammensetzungen sind ein starkes Indiz, kein Beweis — die Löschung eines '
+      + 'amtlichen Kürzels ist eine fachliche Abnahme, kein Build-Schritt (§7/§8).',
+    );
+  }
+  console.error('');
   process.exit(1);
 }
 
