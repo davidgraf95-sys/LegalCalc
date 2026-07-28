@@ -1,15 +1,9 @@
 {
-  "hash": "deba270996b65f45c5ec6cdc1e27dd3efcd1ec5404771ef02456e714a0d85d22",
+  "hash": "7b40c3cf23162f4b3b97198368a2b9c269002d8def228644f9ac448121e5a6de",
   "verdikt": "bestanden",
-  "quellePin": "fedlex dbg 20260101 · sthg 20250101 · rbue 20240606 · hzue 20230612 · vvv 20260101 (HTML-Pins + amtliche PDF-Manifestationen)",
-  "datum": "2026-07-26",
+  "quellePin": "fedlex sparql jolux:titleShort 20260728 + bger.ch amtliche Volltexte 20260728",
+  "datum": "2026-07-28",
   "dateien": [
-    "daten-manifest.json",
-    "public/normtext/bund/DBG.json",
-    "public/normtext/bund/HZUE.json",
-    "public/normtext/bund/RBUE.json",
-    "public/normtext/bund/STHG.json",
-    "public/normtext/bund/VVV.json",
-    "scripts/normtext/extrahiere-fedlex.ts"
+    "daten-manifest.json"
   ]
 }

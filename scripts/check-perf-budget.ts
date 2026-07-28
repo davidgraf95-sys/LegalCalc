@@ -107,9 +107,12 @@ if (entry.length === 1) {
 //    Wechsel des gemessenen Objekts — und der Grund gehört hierher, weil die
 //    naheliegende Lesart («Budget wurde stillschweigend weicher») falsch wäre:
 //      · Der normKeys-Backfill (Dekret W2·6-NKEY: erst vollständig erkennen,
-//        dann kuratieren) hob die Erlass-Buckets von 25 auf 157 und die
-//        Artikel-Buckets von 355 auf 4473. norm-index.json wuchs dadurch von
-//        204 auf 731 KB gzip — gegen diese 260-KB-Schranke.
+//        dann kuratieren) hob die Erlass-Buckets von 25 auf 156 und die
+//        Artikel-Buckets von 355 auf 4452. norm-index.json wuchs dadurch von
+//        204 auf 724 KB gzip — gegen diese 260-KB-Schranke.
+//        (Zahlen am Landungsstand nachgemessen; die Erstfassung dieses
+//        Kommentars trug 157/4473/731 — den Stand VOR dem Rückbau der
+//        Häufigkeits-Schwelle aus Gegenprüfungs-Runde R3.)
 //      · Auf dem Nutzerpfad (kontextEntscheide → Verweis-Popover) braucht aber
 //        nur die ERLASS-Ebene geladen zu werden. Sie liegt seit W2·6-NKEY als
 //        eigene Projektion vor (schreibeKorpus schreibt beide aus derselben
