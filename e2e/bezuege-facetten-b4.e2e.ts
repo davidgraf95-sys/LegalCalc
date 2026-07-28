@@ -35,16 +35,16 @@ function zeileArt5(page: Page) {
 }
 
 test.describe('B4 · Facetten-Filter der Bezüge', () => {
-  test('Grundzustand: nur Leitentscheide, KEINE Bezüge-Zeile, kein Bezugs-Shard', async ({ page }) => {
-    const geholt: string[] = [];
-    page.on('request', (r) => { if (r.url().includes('/rechtsprechung/bezuege/')) geholt.push(r.url()); });
+  test('Grundzustand: die Leitentscheid-Auflistung steht direkt unter dem Artikel', async ({ page }) => {
     await warteReader(page);
-    await page.waitForTimeout(2500);
-    // Der Grundzustand rendert die unveränderte Leitfall-Zeile — die neue,
-    // gruppierte Form erscheint gar nicht.
-    await expect(page.locator('[data-bezuege-zeile]')).toHaveCount(0);
-    // Und er zahlt für die Facetten nichts (§15): der grosse Shard bleibt aus.
-    expect(geholt).toEqual([]);
+    const zeile = zeileArt5(page);
+    await expect(zeile).toBeVisible({ timeout: 20000 });
+    await expect(zeile.locator('[data-bezug-gruppe="bge"]')).toBeVisible();
+    await expect(zeile).toContainText('8 von 16');
+    // Kein Zwischenzustand: keine Aufklapp-Zeile, keine «Bezüge»-Overline.
+    await expect(zeile.locator('[data-bezuege-schalter]')).toHaveCount(0);
+    // Nur Leitentscheide — kantonale Praxis ist nicht vorausgewählt.
+    await expect(zeile.locator('[data-bezug-gruppe="kantonal"]')).toHaveCount(0);
     await menuOeffnen(page);
     await expect(page.locator('[data-bezug-klasse="bge"]')).toHaveAttribute('aria-pressed', 'true');
     for (const k of ['bger', 'eidg', 'kantonal']) {
@@ -60,37 +60,27 @@ test.describe('B4 · Facetten-Filter der Bezüge', () => {
     await expect(zeile).toBeVisible({ timeout: 20000 });
     // §8: die Zahl nennt Gezeigtes UND Erfasstes — «8» allein wäre die
     // Vollständigkeits-Behauptung, die §8 verbietet.
-    await expect(zeile).toContainText('8 von 115 Kantonal');
-    await expect(zeile).toContainText('8 von 16 Leitentscheide');
+    await expect(zeile.locator('[data-bezug-gruppe="kantonal"]')).toContainText('8 von 115');
+    await expect(zeile.locator('[data-bezug-gruppe="bge"]')).toContainText('8 von 16');
   });
 
-  test('eingeklappt bleibt der Artikelfuss ruhig — Chips erst auf Klick', async ({ page }) => {
+  test('Rang bleibt getrennt: der ★ hängt nur an den Leitentscheiden', async ({ page }) => {
     await warteReader(page);
     await menuOeffnen(page);
     await page.locator('[data-bezug-klasse="kantonal"]').click();
     const zeile = zeileArt5(page);
-    await expect(zeile).toBeVisible({ timeout: 20000 });
-    await page.keyboard.press('Escape');
-    // Vorgabe David 28.7.2026: keine Chip-Batterie vor dem Öffnen.
-    await expect(zeile.locator('[data-bezug-gruppe]')).toHaveCount(0);
-    await zeile.locator('[data-bezuege-schalter]').click();
-    await expect(zeile.locator('[data-bezug-gruppe="bge"]')).toBeVisible();
-    await expect(zeile.locator('[data-bezug-gruppe="kantonal"]')).toBeVisible();
-    // Rang bleibt sichtbar getrennt: der ★ hängt nur an den Leitentscheiden.
+    await expect(zeile.locator('[data-bezug-gruppe="kantonal"]')).toBeVisible({ timeout: 20000 });
+    await expect(zeile.locator('[data-bezug-gruppe="bge"]')).toContainText('★');
     await expect(zeile.locator('[data-bezug-gruppe="kantonal"]')).not.toContainText('★');
   });
 
-  test('alles abwählen zeigt NICHTS und sagt es — nicht plötzlich alles', async ({ page }) => {
+  test('alle Facetten aus ⇒ NICHTS unter dem Artikel — und nicht plötzlich alles', async ({ page }) => {
     await warteReader(page);
-    await menuOeffnen(page);
-    await page.locator('[data-bezug-klasse="kantonal"]').click();
     await expect(zeileArt5(page)).toBeVisible({ timeout: 20000 });
+    await menuOeffnen(page);
     await page.locator('[data-bezug-klasse="bge"]').click();
-    await page.locator('[data-bezug-klasse="kantonal"]').click();
-    const zeile = zeileArt5(page);
-    await expect(zeile).toContainText('ausgeblendet');
-    await expect(zeile).toContainText('Leitentscheide zeigen');
-    await expect(zeile.locator('[data-bezug-gruppe]')).toHaveCount(0);
+    // Null Pixel Verzahnungs-UI im Lesetext-Bereich (Vorgabe David 28.7.2026).
+    await expect(page.locator('[data-bezuege-zeile]')).toHaveCount(0, { timeout: 20000 });
   });
 
   test('die Wahl überlebt einen Neuladen (Persistenz im Leser-Options-Store)', async ({ page }) => {

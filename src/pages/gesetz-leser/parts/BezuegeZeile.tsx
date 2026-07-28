@@ -47,8 +47,6 @@ import { KLASSE_KURZ } from '../bezugAuswahl';
 import {
   klassifiziereFassungsBezug, entscheidDatum, type ArtikelRevision,
 } from '../../../lib/verzahnung/artikel-revisionen';
-import { setzeBezugKlassen } from '../leserOptionen';
-import { DEFAULT_KLASSEN } from '../bezugAuswahl';
 
 /** Sichtbare Chips JE GRUPPE. Bewusst kleiner als die 10 der flachen
  *  Leitfall-Zeile: bei vier Klassen stünden sonst bis zu 40 Chips am
@@ -141,110 +139,42 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, nor
  * aus — er muss die erweiterte Form genauso treffen wie die schlanke, sonst
  * hätte das Zuschalten einer Facette einen Schalter still ausgehebelt (§13 F4).
  */
-export const BezuegeZeile = memo(function BezuegeZeile({ kanten, gesamt, ausgeblendet, normZitat, revision, vorgabeOffen = false }: {
+export const BezuegeZeile = memo(function BezuegeZeile({ kanten, gesamt, normZitat, revision }: {
   /** Kanten dieses Artikels NACH Facetten-Filter, in Shard-Ordnung. */
   kanten?: readonly Bezug[];
   /** Vor-Deckel-Grundgesamtheit je Status an diesem Artikel (§8). */
   gesamt?: Partial<Record<BezugStatus, number>>;
-  /** Wie viele Kanten der Filter weggenommen hat (für den §8-Hinweis). */
-  ausgeblendet: number;
   /** Voll zitierfähige Norm («Art. 429 StPO») für den Fundstellen-Sprung. */
   normZitat: string;
   revision?: ArtikelRevision | null;
-  /** Anfangszustand der Sektion. Default ZU (Vorgabe David 28.7.2026 — der
-   *  Artikelfuss bleibt ruhig). Als Prop und nicht fest verdrahtet, damit die
-   *  aufgeklappte Form ohne Klick-Simulation prüfbar ist (renderToString). */
-  vorgabeOffen?: boolean;
 }) {
-  const [offen, setOffen] = useState(vorgabeOffen);
-  const ueberschrift = (
-    <span className="lc-overline mr-1" title="Maschinell aus den zitierten Normen zugeordnet — keine redaktionelle Präjudizienauswahl. Entscheide beziehen sich auf die im Entscheidzeitpunkt geltende Fassung.">
-      <span className="lc-punkt lc-punkt-entscheid" aria-hidden />Bezüge
-    </span>
-  );
-
-  // Ohne Kanten UND ohne Ausgeblendetes: gar keine Zeile — kein reservierter
-  // Leerraum (§15.2), wie bei der «Verweise»- und der Leitfall-Zeile.
-  if ((!kanten || kanten.length === 0) && ausgeblendet === 0) return null;
-
-  // §8-Härtung (wie beim Zeitraum-Filter): hat der FILTER alles weggenommen,
-  // verschwindet die Zeile NICHT kommentarlos — sie weist die ausgeblendete
-  // Menge aus und bietet den Weg zurück in den Grundzustand an.
-  if (!kanten || kanten.length === 0) {
-    return (
-      <div data-leitfall-zeile data-bezuege-zeile className="mt-4 flex flex-wrap items-center gap-2">
-        {ueberschrift}
-        <button
-          type="button"
-          onClick={() => setzeBezugKlassen(DEFAULT_KLASSEN)}
-          className="lc-chip hover:text-brass-700"
-          title="Facetten-Filter (Rubrik Ansicht) auf die Grundeinstellung «nur Leitentscheide» zurücksetzen"
-        >
-          <span className="num tabular-nums">{ausgeblendet}</span>
-          {ausgeblendet === 1 ? ' Bezug ausgeblendet' : ' Bezüge ausgeblendet'} · Leitentscheide zeigen
-        </button>
-      </div>
-    );
-  }
+  // Keine Kanten ⇒ NICHTS. Kein Platzhalter, kein Hinweis, keine Overline —
+  // null Pixel Verzahnungs-UI im Lesetext-Bereich (Vorgabe David 28.7.2026:
+  // «bezüge kann weg. nur auflistung wenn aktiviert.»). Das gilt auch, wenn der
+  // Nutzer alle Facetten abgewählt hat: er hat die Auflistung abgeschaltet, und
+  // ein Rest-Hinweis wäre genau die Zeile, die weg soll. Der Weg zurück steht im
+  // Dropdown «Rechtsprechung ▾», wo er abgeschaltet wurde — dort trägt der
+  // Zähler auch die ehrliche Grundgesamtheit (§8), nicht mehr der Artikelfuss.
+  if (!kanten || kanten.length === 0) return null;
 
   // Nach Status-Klasse gruppieren, Reihenfolge INNERHALB der Klasse = Shard-
   // Ordnung (Gewicht/Leitcharakter/Datum) — die Datenschicht hat sie gesetzt,
-  // hier wird sie nur erhalten (§5: keine zweite Sortier-Wahrheit).
+  // hier wird sie nur erhalten (§5: keine zweite Sortier-Wahrheit). Klassen ohne
+  // Treffer erscheinen gar nicht.
   const gruppen = new Map<BezugStatus, Bezug[]>();
   for (const b of kanten) {
     const liste = gruppen.get(b.facetten.status);
     if (liste) liste.push(b);
     else gruppen.set(b.facetten.status, [b]);
   }
-  // Klassen OHNE Treffer erscheinen gar nicht — eine Gruppe «Eidg. Gerichte 0»
-  // wäre Rauschen, das die Fläche belastet, ohne etwas zu sagen (Vorgabe David
-  // 28.7.2026: leere Facetten weglassen, nie als Rauschen).
   const geordnet = [...gruppen.entries()].sort((a, b) => STATUS_RANG[a[0]] - STATUS_RANG[b[0]]);
 
-  // ── EINGEKLAPPT: EINE ruhige Zeile (Vorgabe David 28.7.2026) ──────────────
-  // «achte darauf dass es minimalistisch und trotzdem intuitiv ist. es soll die
-  // optik des gesetzes nicht überladen.» Vier Klassen à sechs Chips wären bis zu
-  // 24 Chips am Artikelfuss — genau die Chip-Batterie, die den Lesefluss
-  // erschlägt. Der Grundzustand der Sektion ist darum eine einzige Textzeile aus
-  // Overline + Zählern; die Chips kommen auf Klick. Rangordnung und ehrliche
-  // Grundgesamtheit stehen schon in dieser Zeile — sie ist kürzer, nicht ärmer.
-  // Farbe trägt hier nichts: die Klassen werden über ihr WORT unterschieden,
-  // nicht über einen Farbschlüssel (R16 bleibt zu).
-  const zusammenfassung = geordnet
-    .map(([status, liste]) => `${zahlText(liste.length, Math.max(gesamt?.[status] ?? liste.length, liste.length))} ${KLASSE_KURZ[status]}`)
-    .join(' · ');
-
+  // Direkt die Auflistung, ohne Zwischenzustand: was aktiviert ist, steht da.
+  // Die ehrliche Zahl sitzt als dezenter Kopf AN DER GRUPPE, zu der sie gehört
+  // («Kantonal 8 von 115») — nicht als eigene Dauerzeile darüber.
   return (
     <div data-leitfall-zeile data-bezuege-zeile className="mt-4 flex flex-col gap-1.5">
-      <div className="flex flex-wrap items-center gap-2">
-        {ueberschrift}
-        <button
-          type="button"
-          onClick={() => setOffen((o) => !o)}
-          aria-expanded={offen}
-          data-bezuege-schalter
-          className="text-micro text-ink-500 hover:text-brass-700 transition-colors"
-          title={offen ? 'Bezüge wieder einklappen' : 'Die einzelnen Entscheide zu diesem Artikel zeigen'}
-        >
-          <span className="num tabular-nums">{zusammenfassung}</span>
-          <span aria-hidden className="ml-1">{offen ? '▾' : '▸'}</span>
-        </button>
-        {ausgeblendet > 0 && (
-          <button
-            type="button"
-            onClick={() => setzeBezugKlassen(DEFAULT_KLASSEN)}
-            className="text-micro text-ink-500 underline decoration-dotted underline-offset-2 hover:text-brass-700"
-            title="Facetten-Filter (Rubrik Ansicht) auf die Grundeinstellung «nur Leitentscheide» zurücksetzen"
-          >
-            <span className="num tabular-nums">{ausgeblendet}</span> durch Filter ausgeblendet
-          </button>
-        )}
-      </div>
-      {/* Die Chips liegen NICHT im DOM, solange die Sektion zu ist: sie sind das
-          Teure (bis 24 Links je Artikel × ~1000 Artikel) und das optisch
-          Lauteste. Aufklappen ist eine Nutzereingabe — der dabei entstehende
-          Zuwachs zählt nicht in die CLS (hadRecentInput). */}
-      {offen && geordnet.map(([status, liste]) => (
+      {geordnet.map(([status, liste]) => (
         <StatusGruppe key={status} status={status} kanten={liste} gesamtRoh={gesamt?.[status]}
           normZitat={normZitat} revision={revision} />
       ))}

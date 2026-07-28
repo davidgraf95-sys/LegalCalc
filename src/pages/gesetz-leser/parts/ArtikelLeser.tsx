@@ -156,7 +156,15 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
    *  byte-gleich, nur Markup/Klassen. Delimitation über Typo + Struktur-Trenner
    *  (Linien-Kanon «Ruhe durch Reduktion» — keine Farb-/Box-Sprache). */
   istAnhang?: boolean;
-  /** Leitfälle dieses Artikels (Reader lädt den erlass-lokalen Shard einmal). */
+  /** Leitfälle dieses Artikels (V1a-Form, flache BGE-Chip-Reihe).
+   *
+   *  W2·7-BEZUG/B4: DER READER SETZT DIESE PROP NICHT MEHR. Seit der Vorgabe
+   *  David 28.7.2026 speist sich der Artikelfuss ausschliesslich aus `bezuege`
+   *  (facettierte Auflistung; der Bezugs-Shard ist die Obermenge des schlanken
+   *  Leitfall-Shards). Die Prop und `LeitfallZeile` bleiben als unveränderte
+   *  Darstellungsform bestehen — sie werden weiterhin direkt konsumiert (u. a.
+   *  vom Farbwörterbuch-Test) und sind kein toter Zweig, sondern ein nicht mehr
+   *  vom Reader bedienter Eingang. */
   leitfaelle?: LeitfallRef[];
   /** W2·7-BEZUG/B4: facettierte Bezüge dieses Artikels, sobald der Nutzer die
    *  Facetten erweitert hat. Gesetzt ⇒ die `BezuegeZeile` tritt AN DIE STELLE
@@ -511,15 +519,15 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               aus dem erlass-lokalen Shard. Verdrahtet das bisher tote proNormArtikel-
               Modell (norm-index.ts) sichtbar — vom Artikel direkt zur Rechtsprechung.
 
-              W2·7-BEZUG/B4: hat der Nutzer die Facetten erweitert, tritt die nach
-              Instanz gruppierte `BezuegeZeile` AN DIE STELLE dieser Zeile — der
-              Bezugs-Shard ist die Obermenge (§5). ENTWEDER/ODER, nie beides: sonst
-              stünden dieselben BGE zweimal am Artikel, und die zweite Zeile wüchse
-              nach dem ersten Layout ein (Sprung). Im Grundzustand ist `bezuege`
-              undefined ⇒ dieser Zweig ist die unveränderte heutige Darstellung. */}
+              W2·7-BEZUG/B4: der Reader liefert `bezuege` — die nach Instanz
+              gruppierte Auflistung aus dem Bezugs-Shard. Sie tritt AN DIE STELLE
+              der V1a-Zeile (Obermenge, §5): nie beide, sonst stünden dieselben
+              BGE zweimal am Artikel. Ist keine Facette aktiv, ist `bezuege`
+              undefined UND `leitfaelle` ungesetzt ⇒ unter dem Artikel steht
+              nichts (Vorgabe David 28.7.2026). */}
           {bezuege
             ? <BezuegeZeile kanten={bezuege.kanten} gesamt={bezuege.gesamt}
-                ausgeblendet={bezuege.ausgeblendet} normZitat={zitat} revision={revision} />
+                normZitat={zitat} revision={revision} />
             : <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />}
           {/* G-HIST-UI: «Gilt seit»-Badge + aufklappbare Fassungs-Timeline dieses
               Artikels (aus dem erlass-lokalen Historie-Shard, idle geladen). Am

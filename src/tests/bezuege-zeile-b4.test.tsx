@@ -48,26 +48,26 @@ describe('B4 · Rang-Trennung im Markup (§8)', () => {
   ];
 
   it('rendert je Status-Klasse eine eigene, markierte Gruppe', () => {
-    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} ausgeblendet={0} normZitat="Art. 5 StPO" vorgabeOffen />);
+    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} normZitat="Art. 5 StPO" />);
     expect(s).toContain('data-bezug-gruppe="bge"');
     expect(s).toContain('data-bezug-gruppe="bger"');
     expect(s).toContain('data-bezug-gruppe="kantonal"');
   });
 
   it('hält die deklarierte Rang-Ordnung ein: BGE vor BGer vor kantonal (§2)', () => {
-    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} ausgeblendet={0} normZitat="Art. 5 StPO" vorgabeOffen />);
+    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} normZitat="Art. 5 StPO" />);
     expect(s.indexOf('data-bezug-gruppe="bge"')).toBeLessThan(s.indexOf('data-bezug-gruppe="bger"'));
     expect(s.indexOf('data-bezug-gruppe="bger"')).toBeLessThan(s.indexOf('data-bezug-gruppe="kantonal"'));
   });
 
   it('★ trägt NUR der amtlich publizierte Leitentscheid — genau einmal', () => {
-    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} ausgeblendet={0} normZitat="Art. 5 StPO" vorgabeOffen />);
+    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} normZitat="Art. 5 StPO" />);
     expect(s.match(/★/g)).toHaveLength(1);
   });
 
   it('bleibt vom bestehenden «Entscheide»-Schalter erfasst (data-leitfall-zeile)', () => {
     // Sonst hätte das Zuschalten einer Facette einen Schalter still ausgehebelt.
-    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} ausgeblendet={0} normZitat="Art. 5 StPO" vorgabeOffen />);
+    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} normZitat="Art. 5 StPO" />);
     expect(s).toContain('data-leitfall-zeile');
   });
 });
@@ -89,7 +89,7 @@ describe('B4 · ehrliche Grundgesamtheit gegen den ausgelieferten Shard (§8)', 
     const kanten = waehleBezuege(alle, ['bge', 'bger', 'kantonal'], []);
     const s = html(
       <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']}
-        ausgeblendet={alle.length - kanten.length} normZitat="Art. 5 StPO" vorgabeOffen />,
+        normZitat="Art. 5 StPO" />,
     );
     expect(s).toContain('8 von 115');   // kantonal: gedeckelt ⇒ Grundgesamtheit dazu
     expect(s).toContain('8 von 16');    // bge: ebenfalls gedeckelt
@@ -102,76 +102,49 @@ describe('B4 · ehrliche Grundgesamtheit gegen den ausgelieferten Shard (§8)', 
     // Vorbefund: kantonale Kanten tragen gewicht:null (der Zitier-Graph erkennt
     // ihre Geschäftsnummern nicht).
     expect(kantonal.every((b) => b.gewicht === null)).toBe(true);
-    const s = html(<BezuegeZeile kanten={kantonal} gesamt={{ kantonal: 115 }} ausgeblendet={0} normZitat="Art. 5 StPO" vorgabeOffen />);
+    const s = html(<BezuegeZeile kanten={kantonal} gesamt={{ kantonal: 115 }} normZitat="Art. 5 StPO" />);
     expect(s).not.toContain('>0<');
     expect(s).not.toContain('null');
   });
 });
 
-describe('B4 · kein stilles Nichts (§8)', () => {
-  it('filtert der Nutzer alles weg, weist die Zeile die ausgeblendete Menge aus', () => {
-    const s = html(<BezuegeZeile kanten={[]} gesamt={{}} ausgeblendet={12} normZitat="Art. 5 StPO" />);
-    expect(s).toContain('12');
-    expect(s).toContain('ausgeblendet');
-    expect(s).toContain('Leitentscheide zeigen');
-  });
-
-  it('ohne Kanten UND ohne Ausgeblendetes: gar keine Zeile (§15.2, kein Leerraum)', () => {
-    expect(html(<BezuegeZeile kanten={[]} gesamt={{}} ausgeblendet={0} normZitat="Art. 5 StPO" />))
-      .not.toContain('data-bezuege-zeile');
-  });
-
-  it('§7-Wortfeld: kein «geprüft»/«verifiziert» in der gerenderten Zeile', () => {
-    const s = html(
-      <BezuegeZeile kanten={[kante('bs_1', 'BES.2024.15', 'kantonal', 'BS')]}
-        gesamt={{ kantonal: 115 }} ausgeblendet={3} normZitat="Art. 5 StPO" vorgabeOffen />,
-    );
-    expect(s).not.toMatch(/gepr(ü|&#x[0-9a-f]+;|ue)ft|verifiziert|gegengepr/i);
-  });
-});
-
-describe('B4 · Ruhe am Artikelfuss (Vorgabe David 28.7.2026)', () => {
+describe('B4 · nur Auflistung, wenn aktiviert (Vorgabe David 28.7.2026)', () => {
   const shard = JSON.parse(
     readFileSync('public/rechtsprechung/bezuege/STPO.json', 'utf8'),
   ) as BezugsShard;
   const kanten = waehleBezuege(bezuegeFuerArtikel(shard, '5'), ['bge', 'bger', 'kantonal'], []);
 
-  it('eingeklappt: KEIN Chip im DOM — nur die Zusammenfassungs-Zeile', () => {
-    // 18 Kanten an Art. 5 StPO; eingeklappt darf davon nichts als Link stehen,
-    // sonst ist es die Chip-Batterie, die die Optik des Gesetzes überlädt.
+  it('aktivierte Facetten ⇒ die Auflistung steht DIREKT da, ohne Zwischenzustand', () => {
     const s = html(
-      <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} ausgeblendet={0}
-        normZitat="Art. 5 StPO" />,
-    );
-    expect(kanten.length).toBeGreaterThan(10);
-    expect(s).not.toContain('lc-chip');
-    expect(s).not.toContain('data-bezug-gruppe');
-    expect(s.match(/<a /g) ?? []).toHaveLength(0);
-  });
-
-  it('eingeklappt trägt Rang UND ehrliche Zahl schon im Text', () => {
-    const s = html(
-      <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} ausgeblendet={0}
-        normZitat="Art. 5 StPO" />,
-    );
-    expect(s).toContain('8 von 16 Leitentscheide');
-    expect(s).toContain('8 von 115 Kantonal');
-    expect(s).toContain('aria-expanded="false"');
-  });
-
-  it('aufgeklappt kommen die Chips dazu — dieselbe Zeile, ein Klick weiter', () => {
-    const s = html(
-      <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} ausgeblendet={0}
-        normZitat="Art. 5 StPO" vorgabeOffen />,
+      <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} normZitat="Art. 5 StPO" />,
     );
     expect(s).toContain('lc-chip');
-    expect(s).toContain('aria-expanded="true"');
+    expect(s).toContain('data-bezug-gruppe="bge"');
+    // Kein Aufklapp-Schalter und keine Zusammenfassungs-Zeile mehr.
+    expect(s).not.toContain('data-bezuege-schalter');
+    expect(s).not.toContain('aria-expanded');
+  });
+
+  it('keine Kante ⇒ NICHTS: null Pixel Verzahnungs-UI unter dem Artikel', () => {
+    // Gilt auch für «alle Facetten abgewählt» — der Aufrufer liefert dann eine
+    // leere Menge. Kein Hinweis, keine Overline, kein Platzhalter.
+    const s = html(<BezuegeZeile kanten={[]} gesamt={{}} normZitat="Art. 5 StPO" />);
+    expect(s).not.toContain('data-bezuege-zeile');
+    expect(s).not.toContain('BEZÜGE');
+    expect(s).not.toContain('Bezüge');
+  });
+
+  it('die ehrliche Zahl sitzt am Gruppenkopf, nicht in einer eigenen Dauerzeile', () => {
+    const s = html(
+      <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} normZitat="Art. 5 StPO" />,
+    );
+    expect(s).toContain('8 von 16');
+    expect(s).toContain('8 von 115');
   });
 
   it('leere Klassen erscheinen gar nicht — kein «Eidg. Gerichte 0» als Rauschen', () => {
     const s = html(
-      <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} ausgeblendet={0}
-        normZitat="Art. 5 StPO" />,
+      <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} normZitat="Art. 5 StPO" />,
     );
     expect(s).not.toContain('Eidg. Gerichte');
   });

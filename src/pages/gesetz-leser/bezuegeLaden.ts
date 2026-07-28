@@ -41,7 +41,7 @@ import {
   type Bezug, type BezugsShard,
 } from '../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
-import { istErweitert, waehleBezuege } from './bezugAuswahl';
+import { waehleBezuege } from './bezugAuswahl';
 import { holeBezugKlassen, useBezugKantone, useBezugKlassen } from './leserOptionen';
 import { beiLeerlauf } from '../../lib/leerlauf';
 
@@ -51,8 +51,6 @@ export interface ArtikelBezuege {
   kanten: Bezug[];
   /** Vor-Deckel-Grundgesamtheit je Status an diesem Artikel (§8). */
   gesamt: Partial<Record<BezugStatus, number>>;
-  /** Wie viele Kanten der Filter weggenommen hat (§8-Hinweis, kein stilles Nichts). */
-  ausgeblendet: number;
 }
 
 /**
@@ -71,7 +69,8 @@ export interface ArtikelBezuege {
  * Pane-/Erlass-Wechsel liefert nie fremde Kanten.
  */
 export function useBezuege(erlassKey: string | undefined): {
-  erweitert: boolean;
+  /** Ist überhaupt eine Facette aktiv? Nur dann wird geladen und gerendert. */
+  aktiv: boolean;
   bezuegeFuer: (artikel: string) => ArtikelBezuege | undefined;
   /** Kantone, zu denen dieser Erlass wirklich Kanten hat (leer, solange der
    *  Shard nicht geladen ist) — speist den Kanton-Schalter im «Ansicht ▾». */
@@ -79,7 +78,13 @@ export function useBezuege(erlassKey: string | undefined): {
 } {
   const klassen = useBezugKlassen();
   const kantone = useBezugKantone();
-  const erweitert = istErweitert(klassen);
+  // Vorgabe David 28.7.2026 («nur auflistung wenn aktiviert»): geladen wird,
+  // sobald ÜBERHAUPT eine Facette aktiv ist — auch im Default (nur
+  // Leitentscheide). Das ist kein Rückschritt gegenüber dem Bestand: die alte
+  // V1a-Chip-Reihe lud dort faktisch ebenfalls einen Shard, nur den schlanken.
+  // Sind ALLE Facetten aus, wird nichts geladen und nichts gerendert — dann
+  // kostet die Verzahnung null Byte und null Pixel.
+  const aktiv = klassen.length > 0;
   const [shard, setShard] = useState<{ key: string; shard: BezugsShard | null } | null>(null);
 
   useEffect(() => {
@@ -93,14 +98,14 @@ export function useBezuege(erlassKey: string | undefined): {
       // Hydration liefert der Store noch den Default (Begründung an
       // `holeBezugKlassen`). Der Effekt läuft trotzdem auf `erweitert` als
       // Abhängigkeit — er soll ja erneut anlaufen, wenn der Nutzer umschaltet.
-      if (!istErweitert(holeBezugKlassen())) return;
+      if (holeBezugKlassen().length === 0) return;
       void ladeBezugsShard(erlassKey).then((s) => { if (lebt) setShard({ key: erlassKey, shard: s }); });
     });
     return () => { lebt = false; abbrechen(); };
-  }, [erlassKey, erweitert]);
+  }, [erlassKey, aktiv]);
 
   const bezuegeFuer = useCallback((artikel: string): ArtikelBezuege | undefined => {
-    if (!erweitert || !erlassKey || shard?.key !== erlassKey || !shard.shard) return undefined;
+    if (!aktiv || !erlassKey || shard?.key !== erlassKey || !shard.shard) return undefined;
     const s = shard.shard;
     const token = normArtikelToken(artikel);
     const alle = bezuegeFuerArtikel(s, token);
@@ -114,9 +119,8 @@ export function useBezuege(erlassKey: string | undefined): {
       // Grundgesamtheit AUS DEM SHARD (Vor-Deckel), nicht aus der gerenderten
       // Liste — sonst wäre «8 von 8» das Beste, was die Zahl je sagen könnte.
       gesamt: s.gesamtProArtikel?.[token] ?? {},
-      ausgeblendet: alle.length - kanten.length,
     };
-  }, [erweitert, erlassKey, shard, klassen, kantone]);
+  }, [aktiv, erlassKey, shard, klassen, kantone]);
 
   // useMemo, nicht bei jedem Render neu: die Ableitung geht über ALLE Dokumente
   // des Shards (bis ~1200 bei der StPO) und das Ergebnis hängt an einem Prop-
@@ -133,7 +137,7 @@ export function useBezuege(erlassKey: string | undefined): {
     [shard, erlassKey],
   );
 
-  return { erweitert, bezuegeFuer, kantoneVerfuegbar };
+  return { aktiv, bezuegeFuer, kantoneVerfuegbar };
 }
 
 /**
