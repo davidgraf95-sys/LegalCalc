@@ -1,0 +1,71 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-832.720",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_sozialversicherungsgericht_EL.2021.10": {
+      "zitierung": "Sozialversicherungsgericht BS EL.2021.10 vom 31.08.2022",
+      "regesteKurz": "Übernahme von Kosten für zahnärztliche Behandlung (in casu Behandlung mit einer Gold-Teilkrone)",
+      "datum": "2022-08-31",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_EL.2021.11": {
+      "zitierung": "Sozialversicherungsgericht BS EL.2021.11 vom 06.09.2023",
+      "regesteKurz": "Beschränkung der Vergütung für Hilfe und Betreuung zu Hause im Rahmen der jährlichen Krankheits- und Behinderungskosten…",
+      "datum": "2023-09-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "2": [
+      {
+        "key": "bs_sozialversicherungsgericht_EL.2021.11",
+        "gewicht": null
+      }
+    ],
+    "8": [
+      {
+        "key": "bs_sozialversicherungsgericht_EL.2021.10",
+        "gewicht": null
+      }
+    ],
+    "13": [
+      {
+        "key": "bs_sozialversicherungsgericht_EL.2021.11",
+        "gewicht": null
+      }
+    ],
+    "14": [
+      {
+        "key": "bs_sozialversicherungsgericht_EL.2021.11",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "2": {
+      "kantonal": 1
+    },
+    "8": {
+      "kantonal": 1
+    },
+    "13": {
+      "kantonal": 1
+    },
+    "14": {
+      "kantonal": 1
+    }
+  }
+}

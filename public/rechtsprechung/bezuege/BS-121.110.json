@@ -1,0 +1,80 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-121.110",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2023.122": {
+      "zitierung": "Appellationsgericht BS VD.2023.122 vom 13.01.2024",
+      "regesteKurz": "Erlass bzw. Rückerstattung der bereits bezahlten kantonalen Einbürgerungsgebühr",
+      "datum": "2024-01-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.93": {
+      "zitierung": "Appellationsgericht BS VD.2023.93 vom 31.10.2023",
+      "regesteKurz": "Feststellung der Nichtigkeit des Einbürgerungsentscheids (BGer 1D_9/2023 vom 14.2.2024)",
+      "datum": "2023-10-31",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "13": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.93",
+        "gewicht": null
+      }
+    ],
+    "30": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.122",
+        "gewicht": null
+      }
+    ],
+    "31": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.122",
+        "gewicht": null
+      }
+    ],
+    "32": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.122",
+        "gewicht": null
+      }
+    ],
+    "30a": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.122",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "13": {
+      "kantonal": 1
+    },
+    "30": {
+      "kantonal": 1
+    },
+    "31": {
+      "kantonal": 1
+    },
+    "32": {
+      "kantonal": 1
+    },
+    "30a": {
+      "kantonal": 1
+    }
+  }
+}

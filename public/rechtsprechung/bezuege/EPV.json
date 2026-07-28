@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "EPV",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bge_149_I_191": {
+      "zitierung": "BGE 149 I 191",
+      "regesteKurz": "Art. 8 EMRK; Art. 10 Abs. 2 und Art. 36 BV; Art. 40 EpG; abstrakte Normenkontrolle von Art. 2 der Verordnung vom 14. September 2021 über die Covid-19-Zertifikatspflicht für den Studienbetrieb an Hochschulen des Kantons Freiburg. Rechtslage…",
+      "datum": "2023-03-31",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    }
+  },
+  "proArtikel": {
+    "38": [
+      {
+        "key": "bge_149_I_191",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "38": {
+      "bge": 1
+    }
+  }
+}

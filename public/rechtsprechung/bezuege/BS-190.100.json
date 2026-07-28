@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-190.100",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2021.238": {
+      "zitierung": "Appellationsgericht BS VD.2021.238 vom 25.01.2022",
+      "regesteKurz": "Kirchensteuer pro 2020",
+      "datum": "2022-01-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "6": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.238",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "6": {
+      "kantonal": 1
+    }
+  }
+}

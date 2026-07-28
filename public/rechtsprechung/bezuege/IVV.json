@@ -1,0 +1,3223 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "IVV",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "be_verwaltungsgericht_2002025599": {
+      "zitierung": "Verwaltungsgericht BE 200 2025 599 vom 09.06.2026",
+      "regesteKurz": null,
+      "datum": "2026-06-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BE",
+        "gericht": "be_verwaltungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "be_verwaltungsgericht_200202620": {
+      "zitierung": "Verwaltungsgericht BE 200 2026 20 vom 04.06.2026",
+      "regesteKurz": null,
+      "datum": "2026-06-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BE",
+        "gericht": "be_verwaltungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bge_146_V_121": {
+      "zitierung": "BGE 146 V 121",
+      "regesteKurz": "Art. 89 BGG; Art. 62 Abs. 1 bis ATSG; Beschwerdelegitimation der Suva, Abteilung Militärversicherung. Die Beschwerdelegitimation der Suva, Abteilung Militärversicherung, ergibt sich weder aus der allgemeinen Legitimationsklausel noch aus e…",
+      "datum": "2020-04-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_146_V_129": {
+      "zitierung": "BGE 146 V 129",
+      "regesteKurz": "Art. 70 Abs. 2 ATSG; Vorleistungspflicht; Gesetzeslücke. In Ergänzung von Art. 70 Abs. 2 ATSG ist die Invalidenversicherung vorleistungspflichtig für Hilfsmittel, deren Übernahme durch die Invaliden- oder Unfallversicherung umstritten (und…",
+      "datum": "2020-05-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_146_V_217": {
+      "zitierung": "BGE 146 V 217",
+      "regesteKurz": "Art. 25 Abs. 2 erster Satz ATSG; Rückerstattung unrechtmässig bezogener Leistungen; Auslösung der Verwirkungsfrist. Beruht die unrechtmässige Leistungsausrichtung auf einem Fehler der Verwaltung, wird die einjährige relative Verwirkungsfri…",
+      "datum": "2020-05-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_146_V_233": {
+      "zitierung": "BGE 146 V 233",
+      "regesteKurz": "Art. 8, 21 IVG und Art. 14 IVV; Ziff. 14.04 Anhang HVI und Rz. 2162 des Kreisschreibens des BSV über die Abgabe von Hilfsmitteln durch die Invalidenversicherung (KHMI); Kostenübernahme durch die IV für invaliditätsbedingte bauliche Änderun…",
+      "datum": "2020-06-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_146_V_271": {
+      "zitierung": "BGE 146 V 271",
+      "regesteKurz": "Art. 20 sexies Abs. 1 lit. b IVV; Taggelder während Eingliederungsmassnahmen. Art. 20 sexies Abs. 1 lit. b IVV (in Kraft seit 1. Januar 2008), wonach Versicherte als erwerbstätig gelten, wenn sie glaubhaft machen, dass sie nach Eintritt de…",
+      "datum": "2020-05-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_146_V_322": {
+      "zitierung": "BGE 146 V 322",
+      "regesteKurz": "Art. 42 Abs. 1-3 IVG; Art. 35 ter , Art. 37 Abs. 3 lit. e und Art. 38 IVV; invalidenversicherungsrechtliche Heimdefinition im Zusammenhang mit lebenspraktischer Begleitung. Bei der Prüfung der Frage, ob einer Einrichtung Heimcharakter beiz…",
+      "datum": "2020-08-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_147_V_124": {
+      "zitierung": "BGE 147 V 124",
+      "regesteKurz": "Art. 17 Abs. 1 ATSG; Art. 28a Abs. 3 IVG; Art. 27 bis Abs. 2-4 IVV (in Kraft seit 1. Januar 2018); gemischte Bemessungsmethode. Ein familiär bedingter Statuswechsel hin zu einer teilzeitlichen Erwerbstätigkeit gilt seit der am 1. Januar 20…",
+      "datum": "2020-10-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_147_V_133": {
+      "zitierung": "BGE 147 V 133",
+      "regesteKurz": "Art. 29 bis Abs. 1 AHVG i.V.m. Art. 36 Abs. 2 IVG; Art. 8 Abs. 2 BV; Berechnungsgrundlage des Betrags der Invalidenrente bei Revision des Rentenanspruchs einer Person, die an einem Geburtsgebrechen leidet. Die Änderung des Invaliditätsgrad…",
+      "datum": "2020-11-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_147_V_16": {
+      "zitierung": "BGE 147 V 16",
+      "regesteKurz": "a Art. 43 ATSG; Art. 18 Abs. 1 UVV in der bis am 31. Dezember 2016 gültig gewesenen Fassung; Abklärung des Anspruchs auf Hauspflegeleistungen. Art. 43 ATSG statuiert keine Rechtspflicht, eine bestimmte Methode, genau definierte Verfahren o…",
+      "datum": "2020-08-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_147_V_2": {
+      "zitierung": "BGE 147 V 2",
+      "regesteKurz": "Art. 25, Art. 73 Abs. 1 und 2 BVG; Art. 71 ter Abs. 3 AHVV; Invalidenkinderrente; Aktivlegitimation; Drittauszahlung. Weder das Personalvorsorgereglement der Sammelstiftung (gültig ab 1. Januar 2002) noch Art. 25 BVG bieten dem volljährige…",
+      "datum": "2020-09-03",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_147_V_234": {
+      "zitierung": "BGE 147 V 234",
+      "regesteKurz": "Art. 4 IVG; Art. 87 Abs. 2 und 3 IVV; Art. 6-8, 17 Abs. 1 und Art. 53 Abs. 2 ATSG; Präxisänderung; Neuanmeldung. Die neue Rechtsprechung gemäss BGE 145 V 215 bildet keinen hinreichenden Anlass, um vom Grundsatz der Nichtanpassung eines for…",
+      "datum": "2021-06-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_147_V_242": {
+      "zitierung": "BGE 147 V 242",
+      "regesteKurz": "Art. 21 ter Abs. 4 IVG und Art. 9 Abs. 2 HVI; monatliche Vergütung für von Dritten erbrachte Dienstleistungen. Soweit Art. 9 Abs. 2 HVI vorsieht, dass die monatliche Vergütung für von Dritten erbrachte Dienstleistungen den Betrag des monat…",
+      "datum": "2021-05-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_147_V_251": {
+      "zitierung": "BGE 147 V 251",
+      "regesteKurz": "Art. 42 quater Abs. 3 IVG; Art. 39a lit. a IVV; Assistenzbeitrag für minderjährige Versicherte. Die Voraussetzung in Art. 39a lit. a IVV, wonach der Anspruch eines minderjährigen Versicherten auf einen Assistenzbeitrag vom Besuch der oblig…",
+      "datum": "2021-06-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_147_V_308": {
+      "zitierung": "BGE 147 V 308",
+      "regesteKurz": "Ziff. 14.05 HVI-Anhang (in der seit 1. Juli 2020 geltenden Fassung); zeitliche Anwendbarkeit. Wird der Hilfsmittelanspruch erst nach dem 30. Juni 2020 erstmals von der Verwaltung beurteilt, gelangen die neuen, ab 1. Juli 2020 geltenden Ver…",
+      "datum": "2021-06-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_147_V_55": {
+      "zitierung": "BGE 147 V 55",
+      "regesteKurz": "Art. 51 Abs. 2 UVV; Anmeldung bei einer anderen Sozialversicherung. Die Aufforderung zur Anmeldung bei einer anderen, möglicherweise leistungspflichtigen Sozialversicherung ist nicht bloss einmalig und auch nicht nur vor der erstmaligen Le…",
+      "datum": "2020-08-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_147_V_73": {
+      "zitierung": "BGE 147 V 73",
+      "regesteKurz": "Art. 42 ter Abs. 3 IVG; Art. 39 IVV; Intensivpflegezuschlag zur Hilflosenentschädigung. Die Überwachung der Atmung über eine Trachealkanüle, die eine stetige unmittelbare Interventionsbereitschaft durch medizinisch geschultes Personal erfo…",
+      "datum": "2020-11-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_147_V_79": {
+      "zitierung": "BGE 147 V 79",
+      "regesteKurz": "Art. 72 bis IVV; polydisziplinäre Verlaufsgutachten. Eine Gutachterstelle darf im Rahmen eines laufenden Abklärungsverfahrens ohne Zuhilfenahme des Zufallsprinzips mit dem polydisziplinären Verlaufsgutachten beauftragt werden, wenn die von…",
+      "datum": "2020-11-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_148_V_174": {
+      "zitierung": "BGE 148 V 174",
+      "regesteKurz": "Art. 28a Abs. 1 IVG in der bis 31. Dezember 2021 gültig gewesenen Fassung; Art. 16 ATSG; Bemessung des Invalideneinkommens anhand der Schweizerischen Lohnstrukturerhebung (LSE). Im heutigen Zeitpunkt besteht kein ernsthafter sachlicher Gru…",
+      "datum": "2022-03-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_148_V_408": {
+      "zitierung": "BGE 148 V 408",
+      "regesteKurz": "Art. 42sexies Abs. 1 IVG; Assistenzbeitrag. BGE 140 V 543 E. 3.2.2 ist in dem Sinne zu präzisieren, als das standardisierte Abklärungsinstrument FAKT2 kein geeignetes Instrument zur Ermittlung des gesamten Hilfebedarfs einer versicherten P…",
+      "datum": "2022-09-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_148_V_7": {
+      "zitierung": "BGE 148 V 7",
+      "regesteKurz": "Art. 13 Abs. 1, Art. 14 Abs. 1, Art. 26 bis und Art. 27 Abs. 1 IVG; Art. 24 Abs. 2 IVV; Tarif für die zahnärztliche Behandlung eines Geburtsgebrechens; Fallpauschale. Da sich aus der freien Wahl des Leistungserbringers gemäss Art. 26 bis A…",
+      "datum": "2021-10-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_148_V_84": {
+      "zitierung": "BGE 148 V 84",
+      "regesteKurz": "Art. 15 Abs. 2 UVG; Art. 22 Abs. 4 und Art. 24 Abs. 3 UVV; Bestimmung des versicherten Verdienstes zur Bemessung der Rente eines Werkstudenten. Versicherter Verdienst von Werkstudenten. Übersicht über die Rechtsprechung (E. 4) und die im S…",
+      "datum": "2021-11-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_149_III_297": {
+      "zitierung": "BGE 149 III 297",
+      "regesteKurz": "Art. 285 Abs. 2 ZGB; Art. 9 ATSG; Art. 42 und 42 bis IVG; Hilflosenentschädigung und Betreuungsbeitrag. Die Hilflosenentschädigung des minderjährigen Kindes darf nicht vom Betreuungsunterhalt abgezogen werden, der im Rahmen des Unterhaltsb…",
+      "datum": "2023-03-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_149_V_177": {
+      "zitierung": "BGE 149 V 177",
+      "regesteKurz": "Art. 17 ATSG; Art. 87 Abs. 3 i.V.m. Abs. 2 IVV; Neuanmeldung zum Bezug von Eingliederungsmassnahmen; Glaubhaftmachung einer erheblichen Änderung der tatsächlichen Verhältnisse. Bestätigung der langjährigen Rechtsprechung, wonach auch bei E…",
+      "datum": "2023-06-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_149_V_49": {
+      "zitierung": "BGE 149 V 49",
+      "regesteKurz": "Art. 59 ATSG; Art. 66 Abs. 1 IVV; Beschwerdelegitimation der Sozialhilfebehörde. Die Sozialhilfebehörde, die eine versicherte Person regelmässig unterstützt, ist legitimiert, die den Rentenanspruch ablehnende Verfügung der IV-Stelle in eig…",
+      "datum": "2023-03-22",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_150_V_316": {
+      "zitierung": "BGE 150 V 316",
+      "regesteKurz": "Art. 23 Abs. 1 und 3 IVG; Art. 21 quater IVV; Grundentschädigung zur Bemessung des Taggeldes der Invalidenversicherung für Selbständigerwerbende. Aus der Auslegung des Art. 23 Abs. 3 IVG ergibt sich, dass die Berechnung der Grundentschädig…",
+      "datum": "2024-06-05",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_150_V_323": {
+      "zitierung": "BGE 150 V 323",
+      "regesteKurz": "Art. 26 Abs. 6 IVV und lit. b ÜbBest. IVV WEIV; anwendbares Recht bei intertemporalem Sachverhalt. Bei einer versicherten Person, die wegen der Invalidität keine zureichenden beruflichen Kenntnisse erwerben, vor 1. Januar 2022 gemäss aArt.…",
+      "datum": "2024-05-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_150_V_334": {
+      "zitierung": "BGE 150 V 334",
+      "regesteKurz": "Art. 26 f. UVG i.V.m. Art. 38 Abs. 2 UVV; Art. 42 Abs. 3 IVG (in der seit Januar 2022 geltenden Fassung) i.V.m. Art. 38 Abs. 1 IVV; Art. 66 Abs. 3 ATSG; Leistungskoordination zwischen der Invalidenversicherung und der Unfallversicherung; H…",
+      "datum": "2024-06-14",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_150_V_363": {
+      "zitierung": "BGE 150 V 363",
+      "regesteKurz": "Art. 123 Abs. 2 lit. a BGG; Revisionsgrund (Gutachten der Gutachterstelle PMEDA Polydisziplinäre Medizinische Abklärungen, Zürich). Der von der Eidgenössischen Kommission für Qualitätssicherung in der medizinischen Begutachtung (EKQMB) ver…",
+      "datum": "2024-06-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_150_V_410": {
+      "zitierung": "BGE 150 V 410",
+      "regesteKurz": "Art. 16 ATSG; Art. 28a Abs. 1 IVG; Art. 26 Abs. 2, Art. 26 bis Abs. 3 und Art. 49 Abs. 1 bis IVV (in der Fassung vom 3. November 2021, in Kraft vom 1. Januar 2022 bis 31. Dezember 2023); Invalideneinkommen; Abzug vom Tabellenlohn. Die mit…",
+      "datum": "2024-07-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_150_V_447": {
+      "zitierung": "BGE 150 V 447",
+      "regesteKurz": "Art. 25 Abs. 1 und Art. 35a BVG; Rückforderung einer unrechtmässig erwirkten Invalidenkinderrente, welche gestützt auf eine Zahlungsanweisung direkt an die nicht an der Stammrente berechtigte Kindsmutter ausbezahlt wurde; Begriff des Leist…",
+      "datum": "2024-07-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_150_V_67": {
+      "zitierung": "BGE 150 V 67",
+      "regesteKurz": "Art. 16 ATSG; Festsetzung des Validen- und Invalideneinkommens anhand der vom Bundesamt für Statistik herausgegebenen Schweizerischen Lohnstrukturerhebung (LSE); massgebliche statistische Grundlage bei Einholung eines Gerichtsgutachtens mi…",
+      "datum": "2024-03-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_150_V_83": {
+      "zitierung": "BGE 150 V 83",
+      "regesteKurz": "Art. 9 ATSG; Art. 42 Abs. 1 und 2 IVG; Art. 37 Abs. 1-3 IVV; Hilflosigkeit; Anspruch auf Hilflosenentschädigung. Kann eine versicherte Person eine alltägliche Lebensverrichtung nur in einer unüblichen Weise oder nur mit unzumutbarem Aufwan…",
+      "datum": "2023-12-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_151_V_1": {
+      "zitierung": "BGE 151 V 1",
+      "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der obligator…",
+      "datum": "2024-08-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_151_V_194": {
+      "zitierung": "BGE 151 V 194",
+      "regesteKurz": "Art. 6 und 7 Abs. 1, Art. 21 Abs. 4 ATSG; Art. 1a, 4 Abs. 1, Art. 28 Abs. 1 lit. a und Art. 28 Abs. 1 bis IVG; Therapierbarkeit der Gesundheitsschädigung und Rentenanspruch. Die Behandelbarkeit des Leidens tangiert den (koordinationsrechtl…",
+      "datum": "2025-02-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_151_V_198": {
+      "zitierung": "BGE 151 V 198",
+      "regesteKurz": "Art. 22 bis Abs. 5 und Art. 23 IVG; Art. 20 sexies Abs. 1, Art. 21 septies Abs. 5 und Art. 21 Abs. 3 IVV; Art. 4 und 5 Bst. a der Verordnung (EG) Nr. 883/ 2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung…",
+      "datum": "2024-11-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_151_V_212": {
+      "zitierung": "BGE 151 V 212",
+      "regesteKurz": "Art. 42 Abs. 1-3 und Art. 42 ter Abs. 1 und 2 IVG; Art. 35 ter , Art. 37 Abs. 2 lit. c und Art. 38 IVV; invalidenversicherungsrechtliche Heimdefinition im Zusammenhang mit lebenspraktischer Begleitung. Auch eine einzelne Wohnung in einem M…",
+      "datum": "2024-12-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_151_V_306": {
+      "zitierung": "BGE 151 V 306",
+      "regesteKurz": "Art. 6 f. und Art. 44 ATSG; Art. 1a lit. a, Art. 8 Abs. 1, 1 bis und 1 ter , Art. 28 Abs. 1 lit. a und Abs. 1 bis , Art. 57 Abs. 1 lit. e und f, Art. 59 Abs. 3 IVG; Verlauf der beruflichen Eingliederung im Verhältnis zur Arbeitsfähigkeit a…",
+      "datum": "2025-06-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_151_V_315": {
+      "zitierung": "BGE 151 V 315",
+      "regesteKurz": "Art. 9 Abs. 1 IVG; Art. 23 bis Abs. 1-3, Art. 14 Abs. 1 lit. b IVV; Anhang II FZA; Verordnung (EG) Nr. 883/2004; kein Anspruch auf Übernahme von invaliditätsbedingten baulichen Anpassungen an Immobilien im Ausland. Weder die Zuständigkeits…",
+      "datum": "2025-09-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_151_V_322": {
+      "zitierung": "BGE 151 V 322",
+      "regesteKurz": "Art. 13 Abs. 1 IVG; Ziff. 205 Anhang GgV-EDI; angeborene Dysplasie der Zähne als Geburtsgebrechen. Die versicherte Person hat bereits dann Anspruch auf medizinische Massnahmen zur Behandlung einer angeborenen Dysplasie der Zähne (Ziff. 205…",
+      "datum": "2025-08-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_151_V_66": {
+      "zitierung": "BGE 151 V 66",
+      "regesteKurz": "Art. 8 Abs. 1 BV; Art. 4 Abs. 1 IVG in Verbindung mit Art. 6-8 ATSG; Art. 28 Abs. 1 IVG; invalidisierende Wirkung der Adipositas. Eine Adipositas kann eine zu Rentenleistungen berechtigende Invalidität bewirken, auch wenn sie grundsätzlich…",
+      "datum": "2024-10-22",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_151_V_79": {
+      "zitierung": "BGE 151 V 79",
+      "regesteKurz": "Art. 1a lit. a, Art. 15 sowie Art. 27 IVG in Verbindung mit Art. 41 Abs. 1 lit. l IVV; Übernahme von Aufenthaltskosten in einer Institution bei gleichzeitiger beruflicher Abklärung bzw. erstmaliger beruflicher Eingliederung (Vorlehrjahr) i…",
+      "datum": "2024-11-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_151_V_88": {
+      "zitierung": "BGE 151 V 88",
+      "regesteKurz": "Art. 25a Abs. 2 ELV; keine (analoge) Anwendung dieser Bestimmung im Falle der Hilflosigkeit wegen des Bedarfs an lebenspraktischer Begleitung bei der EL-Berechnung einer Einzelperson, welche in einer gemeinschaftlichen Wohnform gemäss Art.…",
+      "datum": "2024-10-10",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bger_8C_559_2025": {
+      "zitierung": "BGer 8C_559/2025 vom 12. Juni 2026",
+      "regesteKurz": null,
+      "datum": "2026-06-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bger",
+        "status": "bger"
+      }
+    },
+    "bs_sozialversicherungsgericht_AH.2023.10": {
+      "zitierung": "Sozialversicherungsgericht BS AH.2023.10 vom 18.01.2024",
+      "regesteKurz": "Hilflosenentschädigung bei COPD verneint",
+      "datum": "2024-01-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_AH.2023.5": {
+      "zitierung": "Sozialversicherungsgericht BS AH.2023.5 vom 24.01.2024",
+      "regesteKurz": "AHVG",
+      "datum": "2024-01-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_AH.2023.6": {
+      "zitierung": "Sozialversicherungsgericht BS AH.2023.6 vom 26.03.2024",
+      "regesteKurz": "Erhöhung der Hilflosenentschädigung zur AHV-Rente",
+      "datum": "2024-03-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_AH.2024.8": {
+      "zitierung": "Sozialversicherungsgericht BS AH.2024.8 vom 15.04.2025",
+      "regesteKurz": "AHVG Beschwerdegutheissung; weitere Abklärungen erforderlich.",
+      "datum": "2025-04-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_AH.2025.11": {
+      "zitierung": "Sozialversicherungsgericht BS AH.2025.11 vom 29.04.2026",
+      "regesteKurz": "Formelle Rechtskraft formloser Mitteilungen. Wiedererwägung. Unterschiedlicher Fristenlauf bei formlosen Mitteilungen.",
+      "datum": "2026-04-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_AL.2023.15": {
+      "zitierung": "Sozialversicherungsgericht BS AL.2023.15 vom 23.04.2024",
+      "regesteKurz": "AVIG (Bundesgerichtsurteil 8C597/2024 vom 28.08.2025) Rückforderung von im Rahmen einer Vorleistung ausgerichteten Arbe…",
+      "datum": "2024-04-23",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_BV.2021.18": {
+      "zitierung": "Sozialversicherungsgericht BS BV.2021.18 vom 20.12.2022",
+      "regesteKurz": "Kein Einfluss auf die Invalidenrente bei Ablösung der IV-Rente durch IV-Taggelder; Überentschädigungsberechnung; Verzug…",
+      "datum": "2022-12-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_BV.2021.23": {
+      "zitierung": "Sozialversicherungsgericht BS BV.2021.23 vom 11.05.2022",
+      "regesteKurz": "Bei Teilzeiterwerbstätigkeit ist zur Vermeidung unbilliger Ergebnisse eine proportionale Kürzung des Invalideneinkommen…",
+      "datum": "2022-05-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_BV.2023.15": {
+      "zitierung": "Sozialversicherungsgericht BS BV.2023.15 vom 27.06.2024",
+      "regesteKurz": "BVG Klage abgewiesen. Vorleistungspflicht verneint.",
+      "datum": "2024-06-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_BV.2023.18": {
+      "zitierung": "Sozialversicherungsgericht BS BV.2023.18 vom 29.08.2024",
+      "regesteKurz": "Keine Unterbrechung des zeitlichen und sachlichen Konnexes. Rentenanspruch bejaht.",
+      "datum": "2024-08-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2020.129": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2020.129 vom 14.02.2023",
+      "regesteKurz": "IVG, Rente",
+      "datum": "2023-02-14",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2020.138": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2020.138 vom 20.12.2022",
+      "regesteKurz": "IVG (Bundesgerichtsurteil 8C_166/2023) vom 06.03.2024",
+      "datum": "2022-12-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2021.102": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2021.102 vom 15.06.2022",
+      "regesteKurz": "Verrechnung der rückwirkend ausgerichteten Invalidenrente mit Krankentaggeldern und Lohnfortzahlungen",
+      "datum": "2022-06-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2021.134": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2021.134 vom 17.02.2022",
+      "regesteKurz": "Abschluss der Frühintervention und Verneinung von Eingliederungsmassnahmen und Rente",
+      "datum": "2022-02-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2021.14": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2021.14 vom 06.12.2022",
+      "regesteKurz": "Rückwirkende Rentenaufhebung. Zulässige Verwendung von Observationsmaterial eines Drittversicherers. Verlängerung der a…",
+      "datum": "2022-12-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2021.147": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2021.147 vom 07.04.2022",
+      "regesteKurz": "Kein Anspruch auf Eingliederungsmassnahmen",
+      "datum": "2022-04-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2021.180": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2021.180 vom 07.04.2022",
+      "regesteKurz": "Unrechtmässiger Leistungsbezug; wiedererwägungsweise Aufhebung einer Rentenverfügung (Bundesgerichtsurteil 8C_624/2022…",
+      "datum": "2022-04-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2021.187": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2021.187 vom 20.04.2022",
+      "regesteKurz": "Gutachten nicht beweiskräftig; erneute Abklärung notwendig",
+      "datum": "2022-04-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2021.194": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2021.194 vom 15.03.2022",
+      "regesteKurz": "IVG",
+      "datum": "2022-03-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2021.81": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2021.81 vom 13.04.2022",
+      "regesteKurz": "Die IV stellt auf eine medizinische Beurteilung des Unfallversicherers ab, die ihrerseits in einem Parallelprozess als…",
+      "datum": "2022-04-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2022.102": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2022.102 vom 26.01.2023",
+      "regesteKurz": "Geringe Zweifel an der Zuverlässigkeit und Schlüssigkeit versicherungsinterner ärztlicher Feststellungen bejaht. Rückwe…",
+      "datum": "2023-01-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2022.106": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2022.106 vom 31.05.2023",
+      "regesteKurz": "Rentenaufhebung; vorgängig Durchführung von Eingliederungsmassnahmen",
+      "datum": "2023-05-31",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2022.11": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2022.11 vom 26.04.2022",
+      "regesteKurz": "Übergangsleistung(Beschwerde beim Bundesgericht hängig)",
+      "datum": "2022-04-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2022.17": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2022.17 vom 12.07.2022",
+      "regesteKurz": "Vorläufigen Sistierung der Leistungen nach Art. 52a ATSG zu Recht erfolgt",
+      "datum": "2022-07-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2022.4": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2022.4 vom 17.08.2022",
+      "regesteKurz": "Rentenrevision nach Art. 17 ATSG, Beweiswert Gutachten, Aggravation",
+      "datum": "2022-08-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2022.41": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2022.41 vom 29.11.2022",
+      "regesteKurz": "Anordnung eines polydisziplinären Gutachtens. Eintreten, soweit dessen Notwendigkeit bestritten wird. Nichteintreten, s…",
+      "datum": "2022-11-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2022.44": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2022.44 vom 20.09.2022",
+      "regesteKurz": "Beweiskraft bidisziplinärer Begutachtungen bestätigt. In casu Weiterleistung der Rente an die über 55-jährige Versicher…",
+      "datum": "2022-09-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2022.55": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2022.55 vom 09.01.2024",
+      "regesteKurz": "IVG",
+      "datum": "2024-01-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2022.6": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2022.6 vom 07.07.2022",
+      "regesteKurz": "Drittauszahlung einer Invalidenrente an Krankentaggeldversicherungen",
+      "datum": "2022-07-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2022.70": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2022.70 vom 01.11.2022",
+      "regesteKurz": "Hilflosenentschädigung Minderjährige; Rückweisung zur weiteren Abklärung.",
+      "datum": "2022-11-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2022.71": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2022.71 vom 01.12.2022",
+      "regesteKurz": "Gutachten beweiskräftig; Beschwerdeabweisung.",
+      "datum": "2022-12-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2022.77": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2022.77 vom 15.12.2022",
+      "regesteKurz": "Kein Abweichen von der gutachterlichen Beurteilung der Leistungsfähigkeit, Gutheissung",
+      "datum": "2022-12-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2022.89": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2022.89 vom 17.01.2023",
+      "regesteKurz": "IVG",
+      "datum": "2023-01-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2023.113": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2023.113 vom 13.06.2024",
+      "regesteKurz": "IVG Beschwerde abgewiesen. Voraussetzungen für Gewährung beruflicher Massnahmen nicht gegeben.",
+      "datum": "2024-06-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2023.119": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2023.119 vom 19.12.2024",
+      "regesteKurz": "IVG Integrationsmassnahmen; weitere medizinische Abklärungen notwendig",
+      "datum": "2024-12-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2023.15": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2023.15 vom 29.08.2023",
+      "regesteKurz": "Hypothetische Vollerwerbstätigkeit im Gesundheitsfall überwiegend wahrscheinlich, keine Anwendung der gemischten Method…",
+      "datum": "2023-08-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2023.16": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2023.16 vom 27.03.2025",
+      "regesteKurz": "IVG IV-Rente",
+      "datum": "2025-03-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2023.19": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2023.19 vom 14.09.2023",
+      "regesteKurz": "Beschwerde abgewiesen. Kein Anspruch auf Umschulung.",
+      "datum": "2023-09-14",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2023.20": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2023.20 vom 12.07.2023",
+      "regesteKurz": "IVG",
+      "datum": "2023-07-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2023.3": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2023.3 vom 06.06.2023",
+      "regesteKurz": "Anordnung einer medizinischen Begutachtung",
+      "datum": "2023-06-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2023.51": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2023.51 vom 26.09.2023",
+      "regesteKurz": "Hilflosenentschädigung",
+      "datum": "2023-09-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2023.55": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2023.55 vom 30.01.2024",
+      "regesteKurz": "Beweistauglichkeit des Gutachtens; Anspruch auf eine befristete Rente",
+      "datum": "2024-01-30",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2023.76": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2023.76 vom 05.11.2025",
+      "regesteKurz": "Restarbeitsfähigkeit; Einkommensvergleich",
+      "datum": "2025-11-05",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2023.90": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2023.90 vom 10.04.2025",
+      "regesteKurz": "Anspruch auf eine Invalidenrente; Gerichtsgutachten (Beschwerde beim Bundesgericht hängig)",
+      "datum": "2025-04-10",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2023.96": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2023.96 vom 20.03.2025",
+      "regesteKurz": "IVG Rente",
+      "datum": "2025-03-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.1": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.1 vom 15.01.2025",
+      "regesteKurz": "IVG Bestimmung des Valideneinkommens strittig, Ausdehnung des Streitgegenstands in zeitlicher Hinsicht abgelehnt",
+      "datum": "2025-01-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.104": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.104 vom 25.03.2025",
+      "regesteKurz": "IVG Invaliditätsgrad zu Unrecht anhand der gemischten Methode berechnet; Anspruch auf eine ganze IV-Rente; Gutheissung…",
+      "datum": "2025-03-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.109": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.109 vom 27.05.2025",
+      "regesteKurz": "Weitere Abklärungen zur Hilflosigkeit notwendig",
+      "datum": "2025-05-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.13": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.13 vom 27.11.2024",
+      "regesteKurz": "IVG Auf die Beschwerde gegen eine Zwischenverfügung betreffend die Anordnung eines Gutachtens wird eingetreten; Notwend…",
+      "datum": "2024-11-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.15": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.15 vom 11.04.2024",
+      "regesteKurz": "Gutachten beweiskräftig; Gemischte Methode korrekt.",
+      "datum": "2024-04-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.26": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.26 vom 17.07.2024",
+      "regesteKurz": "IVG Von Invalidität bedrohte junge erwachsene Person: Stabilisierungsmassnahmen und erstmalige berufliche Ausbildung",
+      "datum": "2024-07-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.29": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.29",
+      "regesteKurz": "IVG",
+      "datum": "2024-01-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.31": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.31 vom 11.09.2024",
+      "regesteKurz": "IVG Reisefähigkeit;Begutachtung bei ausserkantonaler Begutachtungsstelle",
+      "datum": "2024-09-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.32": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.32 vom 10.09.2024",
+      "regesteKurz": "IVG Anspruch auf medizinische Massnahmen zur Behandlung von Geburtsgebrechen (Art. 13 IVG) zu Unrecht verneint; Rückwei…",
+      "datum": "2024-09-10",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.41": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.41 vom 12.11.2024",
+      "regesteKurz": "IVG",
+      "datum": "2024-11-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.5": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.5 vom 13.08.2024",
+      "regesteKurz": "Versicherungsexternes Gutachten beweiskräftig; Meldepflichtverletzung gegeben; Beschwerdeabweisung",
+      "datum": "2024-08-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.55": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.55 vom 10.03.2026",
+      "regesteKurz": "IVG, IV-Rente; psychiatrisches Gerichtsgutachten",
+      "datum": "2026-03-10",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.59": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.59 vom 29.10.2024",
+      "regesteKurz": "IVG",
+      "datum": "2024-10-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.6": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.6 vom 13.06.2024",
+      "regesteKurz": "IVG, Beschwerde gutgeheissen. Heimcharakter der Wohngruppe verneint. (Bundesgerichtsurteil 8C_527/2024 vom 13.03.2025)",
+      "datum": "2024-06-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.62": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.62 vom 20.10.2025",
+      "regesteKurz": "Observation rechtmässig; Stellungnahme von Gutachterin notwendig",
+      "datum": "2025-10-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.63": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.63 vom 27.09.2024",
+      "regesteKurz": "IVG Neuanmeldung; Glaubhaft machen einer Verschlechterung des Gesundheitszustandes",
+      "datum": "2024-09-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.66": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.66 vom 24.10.2024",
+      "regesteKurz": "IVG Wiederanmeldung: keine Verschlechterung eingetreten, Abweisung",
+      "datum": "2024-10-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.69": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.69 vom 24.10.2024",
+      "regesteKurz": "IVG Dermoidzyste als Geburtsgebrechen bejaht",
+      "datum": "2024-10-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.70": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.70 vom 30.01.2025",
+      "regesteKurz": "IVG Berechnung einer Nachzahlung von Invalidenrenten unter Berücksichtigung von Drittauszahlungen und zu verrechnenden…",
+      "datum": "2025-01-30",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.79": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.79 vom 15.01.2025",
+      "regesteKurz": "Veränderung der Verhältnisse bezüglich subjektive Eingliederungsfähigkeit nicht glaubhaft gemacht. Beschwerde abgewiese…",
+      "datum": "2025-01-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.84": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.84 vom 15.01.2025",
+      "regesteKurz": "Verhältnis Hilflosenentschädigung UV und Hilflosenentschädigung IV; Abklärungspflicht",
+      "datum": "2025-01-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.88": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.88 vom 12.02.2025",
+      "regesteKurz": "Invaliditätsbemessung und Status; Beschwerdegutheissung",
+      "datum": "2025-02-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.90": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.90 vom 18.08.2025",
+      "regesteKurz": "Reduktion der Invalidenrente nach einer Begutachtung",
+      "datum": "2025-08-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.92": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.92 vom 28.01.2025",
+      "regesteKurz": "Zu Recht auf polydisziplinäres Gutachten und Haushaltsabklärungsbericht abgestellt sowie unbefristeten Rentenanspruch a…",
+      "datum": "2025-01-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.93": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.93 vom 08.05.2025",
+      "regesteKurz": "IVG Rentenanspruch",
+      "datum": "2025-05-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.94": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.94 vom 09.04.2025",
+      "regesteKurz": "IVG Zu Unrecht Glaubhaftmachung von gesundheitlicher Verschlechterung im Rahmen von Neuanmeldung verneint; Gutheissung…",
+      "datum": "2025-04-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.97": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.97 vom 09.04.2025",
+      "regesteKurz": "Keine konkreten Indizien gegen die Zuverlässigkeit der Einschätzungen vom psychiatrischen Teilgutachter und keine Gründ…",
+      "datum": "2025-04-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2024.99": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2024.99 vom 08.05.2025",
+      "regesteKurz": "IVG Rente",
+      "datum": "2025-05-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.1": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.1 vom 14.11.2025",
+      "regesteKurz": "Abweichen von gutachterlicher Einschätzung der Leistungsfähigkeit nicht geschützt. Gutheissung",
+      "datum": "2025-11-14",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.116": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.116 vom 11.02.2026",
+      "regesteKurz": "Hilflosenentschädigung: relevanter zeitlicher Anknüpfungspunkt für die Wartefrist ab Einleitung pädagogisch-therapeutis…",
+      "datum": "2026-02-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.15": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.15 vom 11.09.2025",
+      "regesteKurz": "IVG Rente; Befristung (Beschwerde beim Bundesgericht hängig)",
+      "datum": "2025-09-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.16": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.16 vom 18.06.2025",
+      "regesteKurz": "Befristete Rente; weitere Abklärung der Vergleichseinkommen; Gutheissung der Beschwerde",
+      "datum": "2025-06-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.19": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.19 vom 27.01.2026",
+      "regesteKurz": "IVG, Zu Recht auf versicherungsmedizinische Beurteilungen abgestellt und erhebliche Veränderung des Gesundheitszustands…",
+      "datum": "2026-01-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.2": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.2 vom 13.05.2025",
+      "regesteKurz": "Zu Recht auf verwaltungsexternes Gutachten abgestellt und Anspruch auf Eingliederungsmassnahmen/Rentenleistungen abgele…",
+      "datum": "2025-05-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.37": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.37 vom 10.12.2025",
+      "regesteKurz": "IVG Abschluss der Frühintervention; Anspruch auf Eingliederungsmassnahmen",
+      "datum": "2025-12-10",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.39": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.39 vom 23.10.2025",
+      "regesteKurz": "Hilflosenentschädigung",
+      "datum": "2025-10-23",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.4": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.4 vom 02.07.2025",
+      "regesteKurz": "Zu Recht Invaliditätsgrad anhand der gemischten Methode berechnet und Rentenanspruch verneint; Beschwerde abgewiesen",
+      "datum": "2025-07-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.43": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.43 vom 08.01.2026",
+      "regesteKurz": "Rechtsschutzinteresse; vorliegend bejaht im Hinblick auf Überentschädigungsberechnung",
+      "datum": "2026-01-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.45": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.45 vom 23.10.2025",
+      "regesteKurz": "Neuanmeldung",
+      "datum": "2025-10-23",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.47": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.47 vom 19.08.2025",
+      "regesteKurz": "Neuanmeldung: Keine Verschlechterung des Gesundheitszustandes ausgewiesen.",
+      "datum": "2025-08-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.57": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.57 vom 17.02.2026",
+      "regesteKurz": "Voraussetzungen für Neuanmeldung bei bereits verweigertem IV-Rentenanspruch; Anforderungen an das Glaubhaftmachen einer…",
+      "datum": "2026-02-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.58": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.58 vom 15.10.2025",
+      "regesteKurz": "IV-Rente; Statusfrage",
+      "datum": "2025-10-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.59": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.59 vom 30.09.2025",
+      "regesteKurz": "Keine erhebliche Veränderung des Gesundheitszustands; Rentenanspruch dennoch bejaht wegen Anwendung des neu ab 1. Janua…",
+      "datum": "2025-09-30",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.60": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.60 vom 15.10.2025",
+      "regesteKurz": "IV-Taggeld; letztes ohne gesundheitliche Einschränkung erzieltes Erwerbseinkommen",
+      "datum": "2025-10-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.64": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.64 vom 25.03.2026",
+      "regesteKurz": "IVG Unverwertbarkeit der Arbeitsfähigkeit infolge fortgeschrittenen Alters bejaht",
+      "datum": "2026-03-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.66": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.66 vom 21.10.2025",
+      "regesteKurz": "Wartejahr nicht erfüllt; kein Rentenanspruch",
+      "datum": "2025-10-21",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.73": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.73 vom 10.02.2026",
+      "regesteKurz": "IVG, Drittauszahlung einer rückwirkend zugesprochenen Invalidenrente an den Krankentaggeldversicherer (Beschwerde beim…",
+      "datum": "2026-02-10",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.79": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.79 vom 05.02.2026",
+      "regesteKurz": "IVG, IV-Rente; Statusfrage",
+      "datum": "2026-02-05",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.85": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.85 vom 26.03.2026",
+      "regesteKurz": "IVG Hilflosenentschädigung aufgrund lebenspraktischer Begleitung beim Geburtsgebrechen 404",
+      "datum": "2026-03-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.87": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.87 vom 11.11.2025",
+      "regesteKurz": "Keine erhebliche Veränderung des Gesundheitszustands; Rentenanspruch bejaht wegen Anwendung des neu ab 1. Januar 2024 g…",
+      "datum": "2025-11-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.9": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.9 vom 11.09.2025",
+      "regesteKurz": "IV-Rente",
+      "datum": "2025-09-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_IV.2025.91": {
+      "zitierung": "Sozialversicherungsgericht BS IV.2025.91 vom 26.11.2025",
+      "regesteKurz": "IVG IV-Rente; berufliche Massnahmen",
+      "datum": "2025-11-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_UV.2022.27": {
+      "zitierung": "Sozialversicherungsgericht BS UV.2022.27 vom 06.12.2022",
+      "regesteKurz": "Verwertbarkeit einer verbleibenden medizinisch-theoretischen Restarbeitsfähigkeit wegen des fortgeschrittenen Alters, l…",
+      "datum": "2022-12-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_UV.2022.9": {
+      "zitierung": "Sozialversicherungsgericht BS UV.2022.9 vom 28.06.2022",
+      "regesteKurz": "Bemessung des Invaliditätsgrades bei Verbleib an der bisherigen Stelle in einem reduzierten Pensum",
+      "datum": "2022-06-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_UV.2024.17": {
+      "zitierung": "Sozialversicherungsgericht BS UV.2024.17 vom 02.06.2025",
+      "regesteKurz": "Rückerstattung nach Art. 25 ATSG; Meldepflichtverletzung; Beginn der relativen Verwirkungsfrist",
+      "datum": "2025-06-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_UV.2025.24": {
+      "zitierung": "Sozialversicherungsgericht BS UV.2025.24 vom 18.09.2025",
+      "regesteKurz": "UVG Fallabschluss zu Recht erfolgt; keine konkrete Indizien gegen die Schlüssigkeit des verwaltungsexternen Gutachtens…",
+      "datum": "2025-09-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_UV.2025.40": {
+      "zitierung": "Sozialversicherungsgericht BS UV.2025.40 vom 26.11.2025",
+      "regesteKurz": "Anspruch auf ein Teiltaggeld gemäss Art. 23 Abs. 9 UVV bei Abbruch und Wiederaufnahme der Berufsausbildung",
+      "datum": "2025-11-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_UV.2025.6": {
+      "zitierung": "Sozialversicherungsgericht BS UV.2025.6 vom 28.08.2025",
+      "regesteKurz": "Zumutbarkeitsprofil nicht zu beanstanden; Anwendbarkeit eines Pauschalabzugs i.S.v. Art. 26bis Abs. 3 IVV im Unfallvers…",
+      "datum": "2025-08-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_UV.2025.9": {
+      "zitierung": "Sozialversicherungsgericht BS UV.2025.9 vom 24.03.2026",
+      "regesteKurz": "UVG, Rente; Integritätsentschädigung",
+      "datum": "2026-03-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "3": [
+      {
+        "key": "bge_151_V_322",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_410",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.69",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.32",
+        "gewicht": null
+      }
+    ],
+    "5": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.26",
+        "gewicht": null
+      }
+    ],
+    "6": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.113",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.19",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2021.134",
+        "gewicht": null
+      }
+    ],
+    "14": [
+      {
+        "key": "bge_151_V_315",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_308",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_242",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_233",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_129",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2023.5",
+        "gewicht": null
+      }
+    ],
+    "17": [
+      {
+        "key": "bge_150_V_316",
+        "gewicht": 0
+      }
+    ],
+    "18": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.79",
+        "gewicht": null
+      }
+    ],
+    "21": [
+      {
+        "key": "bge_150_V_316",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_198",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_271",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.60",
+        "gewicht": null
+      }
+    ],
+    "23": [
+      {
+        "key": "bs_sozialversicherungsgericht_UV.2025.40",
+        "gewicht": null
+      }
+    ],
+    "24": [
+      {
+        "key": "bge_148_V_7",
+        "gewicht": 0
+      }
+    ],
+    "25": [
+      {
+        "key": "bge_150_V_410",
+        "gewicht": 0
+      },
+      {
+        "key": "be_verwaltungsgericht_2002025599",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_UV.2025.9",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.55",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.91",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.58",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_UV.2025.24",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.9",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_UV.2025.6",
+        "gewicht": null
+      }
+    ],
+    "26": [
+      {
+        "key": "bge_151_V_194",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_410",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_323",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_84",
+        "gewicht": 0
+      },
+      {
+        "key": "be_verwaltungsgericht_2002025599",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.55",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.43",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.91",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.59",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.9",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.16",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.2",
+        "gewicht": null
+      }
+    ],
+    "27": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.79",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.9",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.104",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.96",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.15",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2020.129",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.89",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2020.138",
+        "gewicht": null
+      }
+    ],
+    "30": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.11",
+        "gewicht": null
+      }
+    ],
+    "32": [
+      {
+        "key": "bge_147_V_133",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_UV.2022.9",
+        "gewicht": null
+      }
+    ],
+    "33": [
+      {
+        "key": "bge_147_V_133",
+        "gewicht": 0
+      }
+    ],
+    "35": [
+      {
+        "key": "bge_150_V_83",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.85",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.39",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.109",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2024.8",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.84",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.6",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2023.10",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.51",
+        "gewicht": null
+      }
+    ],
+    "36": [
+      {
+        "key": "bge_151_V_1",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_73",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2021.194",
+        "gewicht": null
+      }
+    ],
+    "37": [
+      {
+        "key": "bge_146_V_322",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_151_V_212",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_1",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_334",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_83",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_297",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_73",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.116",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.39",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.109",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2024.8",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.84",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.6",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2023.6",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2023.10",
+        "gewicht": null
+      }
+    ],
+    "38": [
+      {
+        "key": "bge_146_V_322",
+        "gewicht": 3
+      },
+      {
+        "key": "bge_151_V_88",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_212",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_334",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.85",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.39",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.109",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.84",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.6",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.51",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.20",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.70",
+        "gewicht": null
+      }
+    ],
+    "39": [
+      {
+        "key": "bge_151_V_1",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_73",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.51",
+        "gewicht": null
+      }
+    ],
+    "40": [
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2023.5",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.77",
+        "gewicht": null
+      }
+    ],
+    "41": [
+      {
+        "key": "bge_151_V_79",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_121",
+        "gewicht": 0
+      }
+    ],
+    "48": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.102",
+        "gewicht": null
+      }
+    ],
+    "49": [
+      {
+        "key": "bge_150_V_410",
+        "gewicht": 0
+      },
+      {
+        "key": "be_verwaltungsgericht_2002025599",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.64",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.19",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.43",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.87",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.66",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.62",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.59",
+        "gewicht": null
+      }
+    ],
+    "57": [
+      {
+        "key": "bge_147_V_16",
+        "gewicht": 0
+      }
+    ],
+    "65": [
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2025.11",
+        "gewicht": null
+      }
+    ],
+    "66": [
+      {
+        "key": "bge_149_V_49",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_55",
+        "gewicht": 0
+      }
+    ],
+    "69": [
+      {
+        "key": "bge_147_V_16",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.62",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.4",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.109",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2024.8",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.90",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.96",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.92",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.119",
+        "gewicht": null
+      }
+    ],
+    "73": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.57",
+        "gewicht": null
+      }
+    ],
+    "77": [
+      {
+        "key": "bge_150_V_363",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.1",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.5",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2021.14",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.4",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.17",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2021.180",
+        "gewicht": null
+      }
+    ],
+    "78": [
+      {
+        "key": "bge_151_V_79",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_UV.2022.27",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.71",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2021.187",
+        "gewicht": null
+      }
+    ],
+    "82": [
+      {
+        "key": "bge_147_V_2",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_V_447",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.55",
+        "gewicht": null
+      }
+    ],
+    "87": [
+      {
+        "key": "bge_151_V_66",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_V_177",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_234",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.85",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.57",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.47",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.94",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.1",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.66",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.63",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2023.6",
+        "gewicht": null
+      }
+    ],
+    "88": [
+      {
+        "key": "bs_sozialversicherungsgericht_AL.2023.15",
+        "gewicht": null
+      }
+    ],
+    "89": [
+      {
+        "key": "bge_150_V_410",
+        "gewicht": 0
+      }
+    ],
+    "17bis": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.41",
+        "gewicht": null
+      }
+    ],
+    "18d": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2021.134",
+        "gewicht": null
+      }
+    ],
+    "1novies": [
+      {
+        "key": "bge_151_V_306",
+        "gewicht": 0
+      }
+    ],
+    "1septies": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.37",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.59",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.15",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2021.81",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2021.147",
+        "gewicht": null
+      }
+    ],
+    "20bis": [
+      {
+        "key": "bge_146_V_271",
+        "gewicht": 0
+      }
+    ],
+    "20quater": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.99",
+        "gewicht": null
+      }
+    ],
+    "20sexies": [
+      {
+        "key": "bge_151_V_198",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_271",
+        "gewicht": 0
+      }
+    ],
+    "20ter": [
+      {
+        "key": "bs_sozialversicherungsgericht_BV.2021.18",
+        "gewicht": null
+      }
+    ],
+    "21bis": [
+      {
+        "key": "bge_146_V_271",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.60",
+        "gewicht": null
+      }
+    ],
+    "21quater": [
+      {
+        "key": "bge_150_V_316",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_198",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_271",
+        "gewicht": 0
+      }
+    ],
+    "21quinquies": [
+      {
+        "key": "bge_146_V_271",
+        "gewicht": 0
+      }
+    ],
+    "21septies": [
+      {
+        "key": "bge_150_V_316",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_198",
+        "gewicht": 0
+      }
+    ],
+    "21sexies": [
+      {
+        "key": "bge_150_V_316",
+        "gewicht": 0
+      }
+    ],
+    "21ter": [
+      {
+        "key": "bge_146_V_271",
+        "gewicht": 0
+      }
+    ],
+    "23bis": [
+      {
+        "key": "bge_151_V_315",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_73",
+        "gewicht": 0
+      }
+    ],
+    "24septies": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.55",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.91",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.106",
+        "gewicht": null
+      }
+    ],
+    "26bis": [
+      {
+        "key": "bge_150_V_410",
+        "gewicht": 0
+      },
+      {
+        "key": "be_verwaltungsgericht_2002025599",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_UV.2025.9",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.79",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.43",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.37",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.91",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.1",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.87",
+        "gewicht": null
+      }
+    ],
+    "27bis": [
+      {
+        "key": "bge_151_V_66",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_124",
+        "gewicht": 0
+      },
+      {
+        "key": "bger_8C_559_2025",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.79",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.9",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.4",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.90",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.104",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.96",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.88",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.92",
+        "gewicht": null
+      }
+    ],
+    "29bis": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.55",
+        "gewicht": null
+      }
+    ],
+    "32bis": [
+      {
+        "key": "bge_147_V_133",
+        "gewicht": 0
+      }
+    ],
+    "35ter": [
+      {
+        "key": "bge_146_V_322",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_151_V_88",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_212",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.6",
+        "gewicht": null
+      }
+    ],
+    "39a": [
+      {
+        "key": "bge_150_V_410",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_251",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_73",
+        "gewicht": 0
+      }
+    ],
+    "39c": [
+      {
+        "key": "bge_148_V_408",
+        "gewicht": 0
+      }
+    ],
+    "39e": [
+      {
+        "key": "bge_148_V_408",
+        "gewicht": 0
+      }
+    ],
+    "39f": [
+      {
+        "key": "bge_148_V_408",
+        "gewicht": 0
+      }
+    ],
+    "39g": [
+      {
+        "key": "bge_148_V_408",
+        "gewicht": 0
+      }
+    ],
+    "39i": [
+      {
+        "key": "bge_148_V_408",
+        "gewicht": 0
+      }
+    ],
+    "39k": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.84",
+        "gewicht": null
+      }
+    ],
+    "3bis": [
+      {
+        "key": "bge_151_V_322",
+        "gewicht": 0
+      },
+      {
+        "key": "be_verwaltungsgericht_200202620",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.69",
+        "gewicht": null
+      }
+    ],
+    "3ter": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.32",
+        "gewicht": null
+      }
+    ],
+    "41b": [
+      {
+        "key": "bge_150_V_363",
+        "gewicht": 0
+      }
+    ],
+    "72bis": [
+      {
+        "key": "bge_147_V_79",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.13",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.31",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.3",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.41",
+        "gewicht": null
+      }
+    ],
+    "73bis": [
+      {
+        "key": "bge_146_V_217",
+        "gewicht": 0
+      }
+    ],
+    "73ter": [
+      {
+        "key": "bs_sozialversicherungsgericht_BV.2023.18",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_BV.2023.15",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_BV.2021.23",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2021.194",
+        "gewicht": null
+      }
+    ],
+    "74ter": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.96",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.44",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.4",
+        "gewicht": null
+      }
+    ],
+    "85bis": [
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.73",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.70",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.55",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2022.6",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2021.102",
+        "gewicht": null
+      }
+    ],
+    "88a": [
+      {
+        "key": "bge_148_V_174",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_V_67",
+        "gewicht": 0
+      },
+      {
+        "key": "bger_8C_559_2025",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.91",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.45",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.15",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2025.9",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.93",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.97",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.16",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.96",
+        "gewicht": null
+      }
+    ],
+    "88bis": [
+      {
+        "key": "bge_150_V_363",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.76",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.90",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_UV.2024.17",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.109",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2023.90",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.5",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.6",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_IV.2024.29",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "3": {
+      "bge": 2,
+      "kantonal": 2
+    },
+    "5": {
+      "kantonal": 1
+    },
+    "6": {
+      "kantonal": 3
+    },
+    "14": {
+      "bge": 5,
+      "kantonal": 1
+    },
+    "17": {
+      "bge": 1
+    },
+    "18": {
+      "kantonal": 1
+    },
+    "21": {
+      "bge": 3,
+      "kantonal": 1
+    },
+    "23": {
+      "kantonal": 1
+    },
+    "24": {
+      "bge": 1
+    },
+    "25": {
+      "bge": 1,
+      "kantonal": 22
+    },
+    "26": {
+      "bge": 4,
+      "kantonal": 20
+    },
+    "27": {
+      "kantonal": 10
+    },
+    "30": {
+      "kantonal": 1
+    },
+    "32": {
+      "bge": 1,
+      "kantonal": 1
+    },
+    "33": {
+      "bge": 1
+    },
+    "35": {
+      "bge": 1,
+      "kantonal": 12
+    },
+    "36": {
+      "bge": 2,
+      "kantonal": 1
+    },
+    "37": {
+      "bge": 7,
+      "kantonal": 16
+    },
+    "38": {
+      "bge": 4,
+      "kantonal": 11
+    },
+    "39": {
+      "bge": 2,
+      "kantonal": 1
+    },
+    "40": {
+      "kantonal": 2
+    },
+    "41": {
+      "bge": 2
+    },
+    "48": {
+      "kantonal": 1
+    },
+    "49": {
+      "bge": 1,
+      "kantonal": 48
+    },
+    "57": {
+      "bge": 1
+    },
+    "65": {
+      "kantonal": 1
+    },
+    "66": {
+      "bge": 2
+    },
+    "69": {
+      "bge": 1,
+      "kantonal": 27
+    },
+    "73": {
+      "kantonal": 1
+    },
+    "77": {
+      "bge": 1,
+      "kantonal": 6
+    },
+    "78": {
+      "bge": 1,
+      "kantonal": 3
+    },
+    "82": {
+      "bge": 2,
+      "kantonal": 1
+    },
+    "87": {
+      "bge": 3,
+      "kantonal": 21
+    },
+    "88": {
+      "kantonal": 1
+    },
+    "89": {
+      "bge": 1
+    },
+    "17bis": {
+      "kantonal": 1
+    },
+    "18d": {
+      "kantonal": 1
+    },
+    "1novies": {
+      "bge": 1
+    },
+    "1septies": {
+      "kantonal": 5
+    },
+    "20bis": {
+      "bge": 1
+    },
+    "20quater": {
+      "kantonal": 1
+    },
+    "20sexies": {
+      "bge": 2
+    },
+    "20ter": {
+      "kantonal": 1
+    },
+    "21bis": {
+      "bge": 1,
+      "kantonal": 1
+    },
+    "21quater": {
+      "bge": 3
+    },
+    "21quinquies": {
+      "bge": 1
+    },
+    "21septies": {
+      "bge": 2
+    },
+    "21sexies": {
+      "bge": 1
+    },
+    "21ter": {
+      "bge": 1
+    },
+    "23bis": {
+      "bge": 2
+    },
+    "24septies": {
+      "kantonal": 3
+    },
+    "26bis": {
+      "bge": 1,
+      "kantonal": 47
+    },
+    "27bis": {
+      "bge": 2,
+      "bger": 1,
+      "kantonal": 29
+    },
+    "29bis": {
+      "kantonal": 1
+    },
+    "32bis": {
+      "bge": 1
+    },
+    "35ter": {
+      "bge": 3,
+      "kantonal": 1
+    },
+    "39a": {
+      "bge": 3
+    },
+    "39c": {
+      "bge": 1
+    },
+    "39e": {
+      "bge": 1
+    },
+    "39f": {
+      "bge": 1
+    },
+    "39g": {
+      "bge": 1
+    },
+    "39i": {
+      "bge": 1
+    },
+    "39k": {
+      "kantonal": 1
+    },
+    "3bis": {
+      "bge": 1,
+      "kantonal": 2
+    },
+    "3ter": {
+      "kantonal": 1
+    },
+    "41b": {
+      "bge": 1
+    },
+    "72bis": {
+      "bge": 1,
+      "kantonal": 4
+    },
+    "73bis": {
+      "bge": 1
+    },
+    "73ter": {
+      "kantonal": 4
+    },
+    "74ter": {
+      "kantonal": 3
+    },
+    "85bis": {
+      "kantonal": 5
+    },
+    "88a": {
+      "bge": 2,
+      "bger": 1,
+      "kantonal": 63
+    },
+    "88bis": {
+      "bge": 1,
+      "kantonal": 22
+    }
+  }
+}

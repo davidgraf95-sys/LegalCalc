@@ -1,0 +1,64 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-258.500",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_BO.2021.4": {
+      "zitierung": "Appellationsgericht BS BO.2021.4 vom 26.01.2022",
+      "regesteKurz": "Rechtsfolge einer festgestellten Rechtsverweigerung",
+      "datum": "2022-01-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BO.2022.1": {
+      "zitierung": "Appellationsgericht BS BO.2022.1 vom 26.01.2024",
+      "regesteKurz": "Disziplinarvergehen (Tätlichkeit)",
+      "datum": "2024-01-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BO.2023.1": {
+      "zitierung": "Appellationsgericht BS BO.2023.1 vom 12.02.2024",
+      "regesteKurz": "Disziplinarmassnahme bzw. besondere Sicherheitsmassnahme",
+      "datum": "2024-02-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "18": [
+      {
+        "key": "bs_appellationsgericht_BO.2023.1",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BO.2022.1",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BO.2021.4",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "18": {
+      "kantonal": 3
+    }
+  }
+}

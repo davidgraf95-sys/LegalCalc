@@ -1,0 +1,71 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "FINFRAG",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bge_147_II_432": {
+      "zitierung": "BGE 147 II 432",
+      "regesteKurz": "Art. 2 Abs. 1 und Art. 23 AVUS; Art. 8 und 35 Abs. 1 IRSG; Art. 154 FinfraG; Auslieferung an die USA; beidseitige Strafbarkeit; Insidertatbestand; Günstigkeitsprinzip. Art. 154 Abs. 3 FinfraG ermöglicht a priori wie seine Vorgängerbestimmu…",
+      "datum": "2021-05-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_148_II_444": {
+      "zitierung": "BGE 148 II 444",
+      "regesteKurz": "Art. 120 Abs. 1 und 3, Art. 123 Abs. 1 lit. a FinfraG und Art. 10 und 18 FinfraV-FINMA (in der bis am 31. Dezember 2020 in Kraft stehenden Fassung); Meldepflicht für Beteiligungen; Kollektive Kapitalanlagen. Art. 120 Abs. 1 FinfraG ist nic…",
+      "datum": "2022-08-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    }
+  },
+  "proArtikel": {
+    "120": [
+      {
+        "key": "bge_148_II_444",
+        "gewicht": 0
+      }
+    ],
+    "123": [
+      {
+        "key": "bge_148_II_444",
+        "gewicht": 0
+      }
+    ],
+    "151": [
+      {
+        "key": "bge_148_II_444",
+        "gewicht": 0
+      }
+    ],
+    "154": [
+      {
+        "key": "bge_147_II_432",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "120": {
+      "bge": 1
+    },
+    "123": {
+      "bge": 1
+    },
+    "151": {
+      "bge": 1
+    },
+    "154": {
+      "bge": 1
+    }
+  }
+}

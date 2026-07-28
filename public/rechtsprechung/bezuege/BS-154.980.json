@@ -1,0 +1,228 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-154.980",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_BES.2021.106": {
+      "zitierung": "Appellationsgericht BS BES.2021.106 vom 13.04.2022",
+      "regesteKurz": "Gebühren für Akteneinsicht (BGer 1B_281/2022 vom 21. März 2023)",
+      "datum": "2022-04-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2021.110": {
+      "zitierung": "Appellationsgericht BS BES.2021.110 vom 08.02.2022",
+      "regesteKurz": "Kostenauflage bei Verfahrenseinstellung",
+      "datum": "2022-02-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2021.37": {
+      "zitierung": "Appellationsgericht BS BES.2021.37 vom 03.02.2022",
+      "regesteKurz": "Beschlagnahme und Verfahrenseinstellung (BGer 6B_417/2022 vom 22. April 2022)",
+      "datum": "2022-02-03",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2022.22": {
+      "zitierung": "Appellationsgericht BS BES.2022.22 vom 18.05.2022",
+      "regesteKurz": "Verfahrenskosten",
+      "datum": "2022-05-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2023.175": {
+      "zitierung": "Appellationsgericht BS BES.2023.175 vom 15.03.2024",
+      "regesteKurz": "Verfahrenskosten",
+      "datum": "2024-03-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2024.35": {
+      "zitierung": "Appellationsgericht BS BES.2024.35 vom 07.06.2024",
+      "regesteKurz": "Verfahrenskosten",
+      "datum": "2024-06-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2024.37": {
+      "zitierung": "Appellationsgericht BS BES.2024.37 vom 17.04.2024",
+      "regesteKurz": "Verfahrenskosten",
+      "datum": "2024-04-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2024.38": {
+      "zitierung": "Appellationsgericht BS BES.2024.38 vom 17.04.2024",
+      "regesteKurz": "Verfahrenskosten (BGer vom 10.02.2025 6B_474/2024)",
+      "datum": "2024-04-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2024.60": {
+      "zitierung": "Appellationsgericht BS BES.2024.60 vom 17.12.2024",
+      "regesteKurz": "Verfahrenskosten",
+      "datum": "2024-12-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2024.85": {
+      "zitierung": "Appellationsgericht BS BES.2024.85 vom 25.08.2025",
+      "regesteKurz": "Anonymisierung von Adresse und Kontoverbindungen eines Zeugen, Zeugenentschädigung",
+      "datum": "2025-08-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2025.29": {
+      "zitierung": "Appellationsgericht BS BES.2025.29 vom 11.04.2025",
+      "regesteKurz": "Verfahrenskosten (Urteil des BGer 6B_427/2025 vom 02.06.2025)",
+      "datum": "2025-04-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2023.53": {
+      "zitierung": "Appellationsgericht BS SB.2023.53 vom 06.11.2024",
+      "regesteKurz": "Landfriedensbruch, Hinderung einer Amtshandlung, Störung von Betrieben, die der Allgemeinheit dienen, mehrfache üble Na…",
+      "datum": "2024-11-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "3": [
+      {
+        "key": "bs_appellationsgericht_BES.2024.85",
+        "gewicht": null
+      }
+    ],
+    "5": [
+      {
+        "key": "bs_appellationsgericht_BES.2021.110",
+        "gewicht": null
+      }
+    ],
+    "6": [
+      {
+        "key": "bs_appellationsgericht_SB.2023.53",
+        "gewicht": null
+      }
+    ],
+    "7": [
+      {
+        "key": "bs_appellationsgericht_BES.2025.29",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2024.60",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2024.35",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2024.37",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2024.38",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.175",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2022.22",
+        "gewicht": null
+      }
+    ],
+    "10": [
+      {
+        "key": "bs_appellationsgericht_BES.2021.106",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2021.37",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "3": {
+      "kantonal": 1
+    },
+    "5": {
+      "kantonal": 1
+    },
+    "6": {
+      "kantonal": 1
+    },
+    "7": {
+      "kantonal": 7
+    },
+    "10": {
+      "kantonal": 2
+    }
+  }
+}

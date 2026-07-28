@@ -1,0 +1,689 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-510.100",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_BES.2018.187": {
+      "zitierung": "Appellationsgericht BS BES.2018.187 vom 16.02.2023",
+      "regesteKurz": "Verfahrenseinstellung (BGer 7B_93/2023 vom 4. April 2024)",
+      "datum": "2023-02-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2021.113": {
+      "zitierung": "Appellationsgericht BS BES.2021.113 vom 05.04.2023",
+      "regesteKurz": "Verfahrenseinstellung",
+      "datum": "2023-04-05",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2021.134": {
+      "zitierung": "Appellationsgericht BS BES.2021.134 vom 25.05.2023",
+      "regesteKurz": "Verfahrenshandlung der Kantonspolizei vom 22. Oktober 2021",
+      "datum": "2023-05-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2021.155": {
+      "zitierung": "Appellationsgericht BS BES.2021.155 vom 20.07.2022",
+      "regesteKurz": "Polizeigewahrsam",
+      "datum": "2022-07-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2022.115": {
+      "zitierung": "Appellationsgericht BS BES.2022.115 vom 19.12.2022",
+      "regesteKurz": "Befehl für erkennungsdienstliche Erfassung (Art. 260 StPO/§ PolG)",
+      "datum": "2022-12-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2022.120": {
+      "zitierung": "Appellationsgericht BS BES.2022.120 vom 12.12.2022",
+      "regesteKurz": "Sicherstellung",
+      "datum": "2022-12-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2022.137": {
+      "zitierung": "Appellationsgericht BS BES.2022.137 vom 23.12.2022",
+      "regesteKurz": "Sicherstellung",
+      "datum": "2022-12-23",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2022.82": {
+      "zitierung": "Appellationsgericht BS BES.2022.82 vom 13.12.2022",
+      "regesteKurz": "Befehl für Erkennungsdienstliche Erfassung (Art. 260 StPO / § 39 PolG)",
+      "datum": "2022-12-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2023.10": {
+      "zitierung": "Appellationsgericht BS BES.2023.10 vom 27.02.2024",
+      "regesteKurz": "Hausdurchsuchung",
+      "datum": "2024-02-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2023.173": {
+      "zitierung": "Appellationsgericht BS BES.2023.173 vom 28.07.2025",
+      "regesteKurz": "Nichtanhandnahme",
+      "datum": "2025-07-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2023.53": {
+      "zitierung": "Appellationsgericht BS BES.2023.53 vom 31.05.2024",
+      "regesteKurz": "fotografische Aufnahmen anlässlich einer Kundgebung",
+      "datum": "2024-05-31",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2023.61": {
+      "zitierung": "Appellationsgericht BS BES.2023.61 vom 08.04.2024",
+      "regesteKurz": "Durchsuchungen und Sicherstellungen",
+      "datum": "2024-04-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2023.95": {
+      "zitierung": "Appellationsgericht BS BES.2023.95 vom 25.10.2023",
+      "regesteKurz": "Sicherstellung",
+      "datum": "2023-10-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2024.146": {
+      "zitierung": "Appellationsgericht BS BES.2024.146 vom 18.06.2025",
+      "regesteKurz": "Sicherstellung",
+      "datum": "2025-06-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2024.94": {
+      "zitierung": "Appellationsgericht BS BES.2024.94 vom 29.11.2024",
+      "regesteKurz": "Sicherstellung",
+      "datum": "2024-11-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2025.53": {
+      "zitierung": "Appellationsgericht BS BES.2025.53 vom 10.11.2025",
+      "regesteKurz": "Erkennungsdienstliche Erfassung, nichtinvasive Probenahme WSA sowie DNA-Analyse (Beschwerde bei BG hängig)",
+      "datum": "2025-11-10",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2025.72": {
+      "zitierung": "Appellationsgericht BS BES.2025.72 vom 18.12.2025",
+      "regesteKurz": "Sicherstellung",
+      "datum": "2025-12-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2018.45": {
+      "zitierung": "Appellationsgericht BS SB.2018.45 vom 15.06.2022",
+      "regesteKurz": "ad 1: Sachbeschädigung (öffentliche Zusammenrottung und grosser Schaden), mehrfacher Landfriedensbruch, Freiheitsberaub…",
+      "datum": "2022-06-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2021.54": {
+      "zitierung": "Appellationsgericht BS SB.2021.54 vom 20.01.2023",
+      "regesteKurz": "mehrfache einfache Körperverletzung, Sachbeschädigung, Beschimpfung, Gewalt und Drohung gegen Behörden und Beamte, Verg…",
+      "datum": "2023-01-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2021.57": {
+      "zitierung": "Appellationsgericht BS SB.2021.57 vom 06.02.2024",
+      "regesteKurz": "ad 1: Amtsmissbrauch und Urkundenfälschung ad 2: Amtsmissbrauch und Urkundenfälschung ad 3: Amtsbissbrauch",
+      "datum": "2024-02-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2021.67": {
+      "zitierung": "Appellationsgericht BS SB.2021.67 vom 13.05.2022",
+      "regesteKurz": "Erwerbstätigkeit ohne Bewilligung (aufgehoben durch BGer 6B_1295/2022 vom 29. Januar 2024; neuer Entscheid ZS.2024.3 vo…",
+      "datum": "2022-05-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2021.79": {
+      "zitierung": "Appellationsgericht BS SB.2021.79 vom 13.08.2024",
+      "regesteKurz": "ad 1: versuchte einfache Körperverletzung (mit gefährlichem Gegenstand), mehrfache Sachbeschädigung (öffentliche Zusamm…",
+      "datum": "2024-08-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2022.101": {
+      "zitierung": "Appellationsgericht BS SB.2022.101 vom 10.11.2023",
+      "regesteKurz": "Hinderung einer Amtshandlung und Diensterschwerung (Beschwerde am BG hängig)",
+      "datum": "2023-11-10",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2022.14": {
+      "zitierung": "Appellationsgericht BS SB.2022.14 vom 15.08.2023",
+      "regesteKurz": "Widerhandlung gegen das Strassenverkehrsgesetz (SVG)",
+      "datum": "2023-08-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2022.41": {
+      "zitierung": "Appellationsgericht BS SB.2022.41 vom 11.08.2023",
+      "regesteKurz": "Vereitelung von Massnahmen zur Feststellung der Fahrunfähigkeit (Motorfahrzeugführer), Hinderung einer Amtshandlung sow…",
+      "datum": "2023-08-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2022.79": {
+      "zitierung": "Appellationsgericht BS SB.2022.79 vom 12.09.2023",
+      "regesteKurz": "mehrfache Gewalt und Drohung gegen Behörden und Beamte",
+      "datum": "2023-09-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2023.53": {
+      "zitierung": "Appellationsgericht BS SB.2023.53 vom 06.11.2024",
+      "regesteKurz": "Landfriedensbruch, Hinderung einer Amtshandlung, Störung von Betrieben, die der Allgemeinheit dienen, mehrfache üble Na…",
+      "datum": "2024-11-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.31": {
+      "zitierung": "Appellationsgericht BS VD.2023.31 vom 01.11.2023",
+      "regesteKurz": "Rückzahlung von Ausbildungskosten",
+      "datum": "2023-11-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_ZS.2024.3": {
+      "zitierung": "Appellationsgericht BS ZS.2024.3 vom 04.09.2024",
+      "regesteKurz": "Erwerbstätigkeit ohne Bewilligung (Beschwerde am BG hängig)",
+      "datum": "2024-09-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_appellationsgericht_SB.2021.79",
+        "gewicht": null
+      }
+    ],
+    "2": [
+      {
+        "key": "bs_appellationsgericht_SB.2021.79",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.61",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.101",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.14",
+        "gewicht": null
+      }
+    ],
+    "9": [
+      {
+        "key": "bs_appellationsgericht_SB.2021.57",
+        "gewicht": null
+      }
+    ],
+    "10": [
+      {
+        "key": "bs_appellationsgericht_SB.2021.57",
+        "gewicht": null
+      }
+    ],
+    "28": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.31",
+        "gewicht": null
+      }
+    ],
+    "34": [
+      {
+        "key": "bs_appellationsgericht_SB.2023.53",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.101",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.14",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2021.113",
+        "gewicht": null
+      }
+    ],
+    "35": [
+      {
+        "key": "bs_appellationsgericht_SB.2021.57",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.101",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.14",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2021.54",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2021.155",
+        "gewicht": null
+      }
+    ],
+    "37": [
+      {
+        "key": "bs_appellationsgericht_BES.2023.10",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2021.155",
+        "gewicht": null
+      }
+    ],
+    "39": [
+      {
+        "key": "bs_appellationsgericht_BES.2025.53",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.53",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2022.115",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2022.82",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2018.45",
+        "gewicht": null
+      }
+    ],
+    "40": [
+      {
+        "key": "bs_appellationsgericht_SB.2018.45",
+        "gewicht": null
+      }
+    ],
+    "42": [
+      {
+        "key": "bs_appellationsgericht_BES.2021.134",
+        "gewicht": null
+      }
+    ],
+    "45": [
+      {
+        "key": "bs_appellationsgericht_BES.2023.61",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2021.57",
+        "gewicht": null
+      }
+    ],
+    "46": [
+      {
+        "key": "bs_appellationsgericht_BES.2023.173",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2021.79",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.14",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2018.187",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2021.54",
+        "gewicht": null
+      }
+    ],
+    "47": [
+      {
+        "key": "bs_appellationsgericht_BES.2018.187",
+        "gewicht": null
+      }
+    ],
+    "51": [
+      {
+        "key": "bs_appellationsgericht_SB.2021.79",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.61",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.41",
+        "gewicht": null
+      }
+    ],
+    "52": [
+      {
+        "key": "bs_appellationsgericht_BES.2025.72",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2024.146",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2024.94",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2022.137",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2022.120",
+        "gewicht": null
+      }
+    ],
+    "53": [
+      {
+        "key": "bs_appellationsgericht_BES.2025.72",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2024.146",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2022.137",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2022.120",
+        "gewicht": null
+      }
+    ],
+    "54": [
+      {
+        "key": "bs_appellationsgericht_BES.2023.95",
+        "gewicht": null
+      }
+    ],
+    "58": [
+      {
+        "key": "bs_appellationsgericht_SB.2021.79",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.53",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2022.79",
+        "gewicht": null
+      }
+    ],
+    "66": [
+      {
+        "key": "bs_appellationsgericht_SB.2021.79",
+        "gewicht": null
+      }
+    ],
+    "33a": [
+      {
+        "key": "bs_appellationsgericht_ZS.2024.3",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2021.67",
+        "gewicht": null
+      }
+    ],
+    "33b": [
+      {
+        "key": "bs_appellationsgericht_ZS.2024.3",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2021.67",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 1
+    },
+    "2": {
+      "kantonal": 4
+    },
+    "9": {
+      "kantonal": 1
+    },
+    "10": {
+      "kantonal": 1
+    },
+    "28": {
+      "kantonal": 1
+    },
+    "34": {
+      "kantonal": 4
+    },
+    "35": {
+      "kantonal": 5
+    },
+    "37": {
+      "kantonal": 2
+    },
+    "39": {
+      "kantonal": 5
+    },
+    "40": {
+      "kantonal": 1
+    },
+    "42": {
+      "kantonal": 1
+    },
+    "45": {
+      "kantonal": 2
+    },
+    "46": {
+      "kantonal": 5
+    },
+    "47": {
+      "kantonal": 1
+    },
+    "51": {
+      "kantonal": 3
+    },
+    "52": {
+      "kantonal": 5
+    },
+    "53": {
+      "kantonal": 4
+    },
+    "54": {
+      "kantonal": 1
+    },
+    "58": {
+      "kantonal": 3
+    },
+    "66": {
+      "kantonal": 1
+    },
+    "33a": {
+      "kantonal": 2
+    },
+    "33b": {
+      "kantonal": 2
+    }
+  }
+}

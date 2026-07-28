@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-365.100",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2022.256": {
+      "zitierung": "Appellationsgericht BS VD.2022.256 vom 24.03.2023",
+      "regesteKurz": "Maulkorb- und Leinenzwang für Hündin B____ (Mikrochip-Nr. [...]), Gebühren und Kosten",
+      "datum": "2023-03-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "17": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.256",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "17": {
+      "kantonal": 1
+    }
+  }
+}

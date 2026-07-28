@@ -1,0 +1,204 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-861.540",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_DGV.2023.1": {
+      "zitierung": "Appellationsgericht BS DGV.2023.1 vom 24.03.2023",
+      "regesteKurz": "Revisionsgesuch",
+      "datum": "2023-03-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.257": {
+      "zitierung": "Appellationsgericht BS VD.2022.257 vom 04.07.2023",
+      "regesteKurz": "Wahl in die Wohnschutzkommission",
+      "datum": "2023-07-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.102": {
+      "zitierung": "Appellationsgericht BS VD.2023.102 vom 19.09.2024",
+      "regesteKurz": "Sanierung im vereinfachten Bewilligungsverfahren",
+      "datum": "2024-09-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.105": {
+      "zitierung": "Appellationsgericht BS VD.2023.105 vom 10.12.2024",
+      "regesteKurz": "Renovation im vereinfachten Bewilligungsverfahren (WRFG)",
+      "datum": "2024-12-10",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.136": {
+      "zitierung": "Appellationsgericht BS VD.2023.136 vom 06.01.2025",
+      "regesteKurz": "Bauentscheid Nr. BBG [...] vom 16. November 2022 in Sachen Sanierung und Umbau Mehrfamilienhaus mit Ausbau Dachgeschoss…",
+      "datum": "2025-01-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_AH.2024.10": {
+      "zitierung": "Sozialversicherungsgericht BS AH.2024.10 vom 04.06.2025",
+      "regesteKurz": "Die Mitglieder der Wohnschutzkommission sind als Behördenmitglieder im Sinne von Art. 7 lit. i AHVV zu qualifizieren, w…",
+      "datum": "2025-06-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "2": [
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2024.10",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.136",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.102",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.257",
+        "gewicht": null
+      }
+    ],
+    "14": [
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2024.10",
+        "gewicht": null
+      }
+    ],
+    "15": [
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2024.10",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.102",
+        "gewicht": null
+      }
+    ],
+    "16": [
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2024.10",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.136",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.105",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.102",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.257",
+        "gewicht": null
+      }
+    ],
+    "21": [
+      {
+        "key": "bs_appellationsgericht_DGV.2023.1",
+        "gewicht": null
+      }
+    ],
+    "23": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.136",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.102",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.257",
+        "gewicht": null
+      }
+    ],
+    "24": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.102",
+        "gewicht": null
+      }
+    ],
+    "26": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.102",
+        "gewicht": null
+      }
+    ],
+    "3a": [
+      {
+        "key": "bs_sozialversicherungsgericht_AH.2024.10",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "2": {
+      "kantonal": 4
+    },
+    "14": {
+      "kantonal": 1
+    },
+    "15": {
+      "kantonal": 2
+    },
+    "16": {
+      "kantonal": 5
+    },
+    "21": {
+      "kantonal": 1
+    },
+    "23": {
+      "kantonal": 3
+    },
+    "24": {
+      "kantonal": 1
+    },
+    "26": {
+      "kantonal": 1
+    },
+    "3a": {
+      "kantonal": 1
+    }
+  }
+}

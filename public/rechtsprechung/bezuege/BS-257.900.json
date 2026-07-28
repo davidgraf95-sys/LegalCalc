@@ -1,0 +1,128 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-257.900",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2024.169": {
+      "zitierung": "Appellationsgericht BS VD.2024.169 vom 25.01.2025",
+      "regesteKurz": "Gesuch um Entschädigung und Genugtuung gemäss Opferhilfegesetz",
+      "datum": "2025-01-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.170": {
+      "zitierung": "Appellationsgericht BS VD.2024.170 vom 25.01.2025",
+      "regesteKurz": "Gesuch um Entschädigung und Genugtuung gemäss Opferhilfegesetz (BGer 1C_128/2025 vom 21.7.2025)",
+      "datum": "2025-01-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.171": {
+      "zitierung": "Appellationsgericht BS VD.2024.171 vom 25.01.2025",
+      "regesteKurz": "Gesuch um Entschädigung und Genugtuung gemäss Opferhilfegesetz",
+      "datum": "2025-01-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.172": {
+      "zitierung": "Appellationsgericht BS VD.2024.172 vom 25.01.2025",
+      "regesteKurz": "Gesuch um Entschädigung und Genugtuung gemäss Opferhilfegesetz",
+      "datum": "2025-01-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.173": {
+      "zitierung": "Appellationsgericht BS VD.2024.173 vom 25.01.2025",
+      "regesteKurz": "Gesuch um Entschädigung und Genugtuung gemäss Opferhilfegesetz",
+      "datum": "2025-01-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.18": {
+      "zitierung": "Appellationsgericht BS VD.2024.18 vom 14.08.2024",
+      "regesteKurz": "Gesuch um Entschädigung gemäss Opferhilfegesetz (Beschwerde beim BGer hängig)",
+      "datum": "2024-08-14",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.68": {
+      "zitierung": "Appellationsgericht BS VD.2025.68 vom 13.08.2025",
+      "regesteKurz": "Genugtuung gemäss Opferhilfegesetz",
+      "datum": "2025-08-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "3": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.68",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.169",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.170",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.171",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.172",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.173",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.18",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "3": {
+      "kantonal": 7
+    }
+  }
+}

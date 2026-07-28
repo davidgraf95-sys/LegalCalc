@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-411.400",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2024.42": {
+      "zitierung": "Appellationsgericht BS VD.2024.42 vom 06.01.2025",
+      "regesteKurz": "Kündigung des Arbeitsverhältnisses",
+      "datum": "2025-01-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "13": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.42",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "13": {
+      "kantonal": 1
+    }
+  }
+}

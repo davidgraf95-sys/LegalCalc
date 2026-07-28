@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-510.110",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2023.31": {
+      "zitierung": "Appellationsgericht BS VD.2023.31 vom 01.11.2023",
+      "regesteKurz": "Rückzahlung von Ausbildungskosten",
+      "datum": "2023-11-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "7": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.31",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "7": {
+      "kantonal": 1
+    }
+  }
+}

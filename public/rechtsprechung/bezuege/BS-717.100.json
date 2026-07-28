@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-717.100",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2023.110": {
+      "zitierung": "Appellationsgericht BS VD.2023.110 vom 11.07.2024",
+      "regesteKurz": "Ermittlung des Verkehrswerts des Bodens von Grundstücken durch die Bewertungskommission Basel-Stadt",
+      "datum": "2024-07-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "6": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.110",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "6": {
+      "kantonal": 1
+    }
+  }
+}

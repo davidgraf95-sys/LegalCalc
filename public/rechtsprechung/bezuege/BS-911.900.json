@@ -1,0 +1,85 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-911.900",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_BEZ.2023.39": {
+      "zitierung": "Appellationsgericht BS BEZ.2023.39 vom 26.10.2023",
+      "regesteKurz": "Nichteintreten",
+      "datum": "2023-10-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.59": {
+      "zitierung": "Appellationsgericht BS VD.2024.59 vom 21.01.2025",
+      "regesteKurz": "Kündigung des Freizeitgartens",
+      "datum": "2025-01-21",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.2": {
+      "zitierung": "Appellationsgericht BS VD.2025.2 vom 05.06.2025",
+      "regesteKurz": "Kündigung des Freizeitgartens",
+      "datum": "2025-06-05",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.4": {
+      "zitierung": "Appellationsgericht BS VD.2025.4 vom 02.09.2025",
+      "regesteKurz": "Kündigung des Freizeitgartens",
+      "datum": "2025-09-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "11": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.4",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.2",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.59",
+        "gewicht": null
+      }
+    ],
+    "13": [
+      {
+        "key": "bs_appellationsgericht_BEZ.2023.39",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "11": {
+      "kantonal": 3
+    },
+    "13": {
+      "kantonal": 1
+    }
+  }
+}

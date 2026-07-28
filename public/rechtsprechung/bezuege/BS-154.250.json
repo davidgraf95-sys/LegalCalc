@@ -1,0 +1,48 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-154.250",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_sozialversicherungsgericht_SG.2019.2": {
+      "zitierung": "Sozialversicherungsgericht BS SG.2019.2 vom 08.04.2022",
+      "regesteKurz": "Kumulierte Abrechnung zweier Tarifpositionen, Prüfung insbesondere der Zweckmässigkeit der zusätzlich verrechneten Tari…",
+      "datum": "2022-04-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_SG.2019.7": {
+      "zitierung": "Sozialversicherungsgericht BS SG.2019.7 vom 16.08.2022",
+      "regesteKurz": "Leistungen gemäss Arzneimittelliste mit Tarif (ALT) (Bundesgerichtsurteil 9C_65/2023 vom 18.3.2024) Entschädigungspflic…",
+      "datum": "2022-08-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "9": [
+      {
+        "key": "bs_sozialversicherungsgericht_SG.2019.7",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_SG.2019.2",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "9": {
+      "kantonal": 2
+    }
+  }
+}

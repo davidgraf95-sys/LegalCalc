@@ -1,0 +1,667 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-258.200",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_AUS.2024.28": {
+      "zitierung": "Appellationsgericht BS AUS.2024.28 vom 12.06.2024",
+      "regesteKurz": "Verlängerung Ausschaffungshaft (Art. 76 Abs. 3 AIG)",
+      "datum": "2024-06-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_AUS.2026.33": {
+      "zitierung": "Appellationsgericht BS AUS.2026.33 vom 16.04.2026",
+      "regesteKurz": "Verlängerung der Ausschaffungshaft (Art. 76 Abs. 3 AIG)",
+      "datum": "2026-04-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.128": {
+      "zitierung": "Appellationsgericht BS VD.2022.128 vom 29.07.2022",
+      "regesteKurz": "Vollzugsbefehl",
+      "datum": "2022-07-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.186": {
+      "zitierung": "Appellationsgericht BS VD.2022.186 vom 04.05.2023",
+      "regesteKurz": "Gesuche um Strafverbüssung in der Form der elektronischen Überwa-chung bzw. Halbgefangenschaft und um Strafaufschub",
+      "datum": "2023-05-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.260": {
+      "zitierung": "Appellationsgericht BS VD.2022.260 vom 24.08.2023",
+      "regesteKurz": "Beschlagnahme Gebetskette und Zurückweisung von Hygiene- und Gesundheitsartikeln, Rechtsverweigerung (BGer 7B_755/2023…",
+      "datum": "2023-08-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.38": {
+      "zitierung": "Appellationsgericht BS VD.2022.38 vom 08.08.2022",
+      "regesteKurz": "Vollzugsbefehl",
+      "datum": "2022-08-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.87": {
+      "zitierung": "Appellationsgericht BS VD.2022.87 vom 24.04.2023",
+      "regesteKurz": "Gesuch um Aufschub Strafvollzug zufolge Hafterstehungsunfähigkeit (BGer 7B_277/2023 vom 19.9.2023)",
+      "datum": "2023-04-24",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.119": {
+      "zitierung": "Appellationsgericht BS VD.2023.119 vom 09.11.2023",
+      "regesteKurz": "Einweisung in die Sicherheitsabteilung II (Kleingruppenvollzug) der Justizvollzugsanstalt Lenzburg",
+      "datum": "2023-11-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.168": {
+      "zitierung": "Appellationsgericht BS VD.2023.168 vom 15.06.2024",
+      "regesteKurz": "Versetzung in eine offene Justizvollzugsanstalt",
+      "datum": "2024-06-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.36": {
+      "zitierung": "Appellationsgericht BS VD.2023.36 vom 03.04.2023",
+      "regesteKurz": "Vollzugsbefehl",
+      "datum": "2023-04-03",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.39": {
+      "zitierung": "Appellationsgericht BS VD.2023.39 vom 09.11.2023",
+      "regesteKurz": "bedingte Entlassung aus dem Massnahmenvollzug nach Art. 62 StGB",
+      "datum": "2023-11-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.40": {
+      "zitierung": "Appellationsgericht BS VD.2023.40 vom 09.08.2023",
+      "regesteKurz": "Vollzugsbefehl",
+      "datum": "2023-08-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.41": {
+      "zitierung": "Appellationsgericht BS VD.2023.41 vom 19.06.2023",
+      "regesteKurz": "Aufschub des Strafvollzugs (BGer vom 2.10.2023 7B_391/2023)",
+      "datum": "2023-06-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.74": {
+      "zitierung": "Appellationsgericht BS VD.2023.74 vom 26.06.2023",
+      "regesteKurz": "Versetzung in die Justizvollzugsanstalt Hindelbank (Urteil BGer 7B_421/2023 vom 29. September 2023)",
+      "datum": "2023-06-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.85": {
+      "zitierung": "Appellationsgericht BS VD.2023.85 vom 23.06.2023",
+      "regesteKurz": "Vollzugsbefehl",
+      "datum": "2023-06-23",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.87": {
+      "zitierung": "Appellationsgericht BS VD.2023.87 vom 06.12.2023",
+      "regesteKurz": "Zwangsmedikation (Anordnung im Rahmen einer stationären therapeutischen Massnahme gemäss Art. 59 StGB)",
+      "datum": "2023-12-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.97": {
+      "zitierung": "Appellationsgericht BS VD.2023.97 vom 04.03.2024",
+      "regesteKurz": "Zwei Tage Arrest in einer besonderen Zelle sowie Entzug der Arbeitsbeschäftigungsmöglichkeiten",
+      "datum": "2024-03-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.181": {
+      "zitierung": "Appellationsgericht BS VD.2024.181",
+      "regesteKurz": "Einweisung in die Sicherheitsabteilung 1 (Einzelhaft) der Justizvollzugsanstalt Pöschwies",
+      "datum": "2024-01-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.54": {
+      "zitierung": "Appellationsgericht BS VD.2024.54 vom 19.08.2024",
+      "regesteKurz": "Versetzung in den offenen Strafvollzug, begleitete Ausgänge (BGer 7B_941/2024 vom 29. Oktober 2024)",
+      "datum": "2024-08-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.64": {
+      "zitierung": "Appellationsgericht BS VD.2024.64 vom 15.07.2024",
+      "regesteKurz": "Durchführung der stationären therapeutischen Massnahme nach Art. 59 StGB (BGer 7B_1017/2024 vom 29.10.2024)",
+      "datum": "2024-07-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.94": {
+      "zitierung": "Appellationsgericht BS VD.2024.94 vom 22.10.2024",
+      "regesteKurz": "Verlängerung der Zwangsmassnahme in Form von Zwangsmedikation",
+      "datum": "2024-10-22",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.95": {
+      "zitierung": "Appellationsgericht BS VD.2024.95 vom 15.01.2025",
+      "regesteKurz": "Verweigerung der Aufhebung der stationären Suchtbehandlung mit Vollzug der Reststrafe",
+      "datum": "2025-01-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.103": {
+      "zitierung": "Appellationsgericht BS VD.2025.103 vom 13.12.2025",
+      "regesteKurz": "forensisch-psychiatrisches Gutachten",
+      "datum": "2025-12-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.151": {
+      "zitierung": "Appellationsgericht BS VD.2025.151 vom 18.06.2026",
+      "regesteKurz": "Gesuch vom 26. September 2025 um unverzügliche Entlassung aus dem Untersuchungsgefängnis Basel-Stadt, um unverzügliche…",
+      "datum": "2026-06-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.24": {
+      "zitierung": "Appellationsgericht BS VD.2025.24 vom 22.10.2025",
+      "regesteKurz": "Einweisung in die Sicherheitsabteilung B der Justizvollzugsanstalt Bostadel",
+      "datum": "2025-10-22",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.39": {
+      "zitierung": "Appellationsgericht BS VD.2025.39 vom 08.09.2025",
+      "regesteKurz": "Vollzugsunterbrechung und unentgeltliche Rechtspflege",
+      "datum": "2025-09-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.42": {
+      "zitierung": "Appellationsgericht BS VD.2025.42 vom 02.05.2025",
+      "regesteKurz": "Aufschub des Strafvollzugs",
+      "datum": "2025-05-02",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.45": {
+      "zitierung": "Appellationsgericht BS VD.2025.45 vom 12.12.2025",
+      "regesteKurz": "Anordnung von massnahmenindizierten Zwangsmassnahmen in Form der Zwangsmedikation und Unterbringung im Isolationszimmer…",
+      "datum": "2025-12-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.61": {
+      "zitierung": "Appellationsgericht BS VD.2025.61 vom 25.09.2025",
+      "regesteKurz": "Verlängerung des Aufenthalts in der Sicherheitsabteilung B der JVA Bostadel",
+      "datum": "2025-09-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.98": {
+      "zitierung": "Appellationsgericht BS VD.2025.98 vom 18.12.2025",
+      "regesteKurz": "Bedingte Entlassung aus dem Strafvollzug nach Art. 86 StGB",
+      "datum": "2025-12-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.99": {
+      "zitierung": "Appellationsgericht BS VD.2025.99 vom 18.12.2025",
+      "regesteKurz": "unentgeltliche Rechtspflege",
+      "datum": "2025-12-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2026.31": {
+      "zitierung": "Appellationsgericht BS VD.2026.31 vom 15.06.2026",
+      "regesteKurz": "bedingte Entlassung aus dem Strafvollzug nach Art. 86 StGB (noch nicht rechtskräftig)",
+      "datum": "2026-06-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.103",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_AUS.2024.28",
+        "gewicht": null
+      }
+    ],
+    "3": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.24",
+        "gewicht": null
+      }
+    ],
+    "4": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.39",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.87",
+        "gewicht": null
+      }
+    ],
+    "5": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.95",
+        "gewicht": null
+      }
+    ],
+    "6": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.260",
+        "gewicht": null
+      }
+    ],
+    "7": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.40",
+        "gewicht": null
+      }
+    ],
+    "12": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.24",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.61",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.181",
+        "gewicht": null
+      }
+    ],
+    "15": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.45",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.94",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.64",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.87",
+        "gewicht": null
+      }
+    ],
+    "17": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.97",
+        "gewicht": null
+      }
+    ],
+    "18": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.97",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.119",
+        "gewicht": null
+      }
+    ],
+    "19": [
+      {
+        "key": "bs_appellationsgericht_AUS.2026.33",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.97",
+        "gewicht": null
+      }
+    ],
+    "20": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.54",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.168",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.74",
+        "gewicht": null
+      }
+    ],
+    "21": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.39",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.42",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.40",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.74",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.85",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.41",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.87",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.36",
+        "gewicht": null
+      }
+    ],
+    "22": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.39",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.42",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.85",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.41",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.186",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.87",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.38",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.128",
+        "gewicht": null
+      }
+    ],
+    "32": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.39",
+        "gewicht": null
+      }
+    ],
+    "33": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.151",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2026.31",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.98",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.99",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.103",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.45",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.24",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2025.61",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 2
+    },
+    "3": {
+      "kantonal": 1
+    },
+    "4": {
+      "kantonal": 2
+    },
+    "5": {
+      "kantonal": 1
+    },
+    "6": {
+      "kantonal": 1
+    },
+    "7": {
+      "kantonal": 1
+    },
+    "12": {
+      "kantonal": 3
+    },
+    "15": {
+      "kantonal": 4
+    },
+    "17": {
+      "kantonal": 1
+    },
+    "18": {
+      "kantonal": 2
+    },
+    "19": {
+      "kantonal": 2
+    },
+    "20": {
+      "kantonal": 3
+    },
+    "21": {
+      "kantonal": 10
+    },
+    "22": {
+      "kantonal": 12
+    },
+    "32": {
+      "kantonal": 1
+    },
+    "33": {
+      "kantonal": 121
+    }
+  }
+}

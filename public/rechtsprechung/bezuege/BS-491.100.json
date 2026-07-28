@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-491.100",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2025.85": {
+      "zitierung": "Appellationsgericht BS VD.2025.85 vom 28.10.2025",
+      "regesteKurz": "Entzug der aufschiebenden Wirkung",
+      "datum": "2025-10-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "21": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.85",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "21": {
+      "kantonal": 1
+    }
+  }
+}

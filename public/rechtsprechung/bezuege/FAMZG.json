@@ -1,0 +1,469 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "FAMZG",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bge_147_III_265": {
+      "zitierung": "BGE 147 III 265",
+      "regesteKurz": "Art. 276, 276a, 285 und 286a ZGB; Berechnung des Kindesunterhaltes; Verbindlichkeit der zweistufigen Methode mit Überschussverteilung. Grundsätze des Kindesunterhaltes (E. 5). Das Kind hat Anspruch auf gebührenden Unterhalt (E. 5.1 und 5.2…",
+      "datum": "2020-11-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_147_V_285": {
+      "zitierung": "BGE 147 V 285",
+      "regesteKurz": "Art. 4 Abs. 3 und Art. 7 Abs. 2 FamZG; Art. 7 Abs. 1 FamZV; Art. 67 und 68 der Verordnung (EG) Nr. 883/2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung der Systeme der sozialen Sicherheit; Art. 60 der Ver…",
+      "datum": "2021-05-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_148_V_334": {
+      "zitierung": "BGE 148 V 334",
+      "regesteKurz": "Art. 22 Abs. 3 lit. a BVG; Art. 25 Abs. 5 AHVG; Art. 49 bis Abs. 3 AHVV; Untergang des Anspruchs auf eine Waisenrente der beruflichen Vorsorge bei Ausbildung. Auslegung des Begriffs der Ausbildung im Sinne von Art. 22 Abs. 3 lit. a BVG. Di…",
+      "datum": "2022-07-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_148_V_385": {
+      "zitierung": "BGE 148 V 385",
+      "regesteKurz": "Art. 5 Abs. 2 und 4 AHVG; Art. 6 Abs. 2 lit. f AHVV; AHV-Beitragspflicht; Ausnahme; Subvention einer Kindertagesstätte. Die Subvention des Arbeitgebers für die betriebseigene oder eine angeschlossene Kindertagesstätte gehört zum massgebend…",
+      "datum": "2022-10-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bs_appellationsgericht_ZB.2023.62": {
+      "zitierung": "Appellationsgericht BS ZB.2023.62",
+      "regesteKurz": "Kindesunterhalt",
+      "datum": "2023-01-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_AL.2022.5": {
+      "zitierung": "Sozialversicherungsgericht BS AL.2022.5 vom 25.08.2022",
+      "regesteKurz": "Rückerstattung von zu Unrecht bezogener ALE",
+      "datum": "2022-08-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_FZ.2022.1": {
+      "zitierung": "Sozialversicherungsgericht BS FZ.2022.1 vom 26.07.2022",
+      "regesteKurz": "Drittauszahlung Differenzzahlung",
+      "datum": "2022-07-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_FZ.2022.2": {
+      "zitierung": "Sozialversicherungsgericht BS FZ.2022.2 vom 01.12.2022",
+      "regesteKurz": "Rückforderung von Ausbildungsbeiträgen; guter Glaube bejaht.",
+      "datum": "2022-12-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_FZ.2022.4": {
+      "zitierung": "Sozialversicherungsgericht BS FZ.2022.4 vom 29.11.2022",
+      "regesteKurz": "Nachweis der tatsächlichen Bezahlung der Zulagen gemäss Familienzulagengesetz; Beweislast.",
+      "datum": "2022-11-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_FZ.2022.6": {
+      "zitierung": "Sozialversicherungsgericht BS FZ.2022.6 vom 20.04.2023",
+      "regesteKurz": "FLG",
+      "datum": "2023-04-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_FZ.2022.7": {
+      "zitierung": "Sozialversicherungsgericht BS FZ.2022.7 vom 25.01.2023",
+      "regesteKurz": "FLG Ausbildungsbegriff nach Art. 49bis AHVV, gesundheitliche Situation nicht ausreichend abegklärt",
+      "datum": "2023-01-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_FZ.2022.8": {
+      "zitierung": "Sozialversicherungsgericht BS FZ.2022.8 vom 06.06.2023",
+      "regesteKurz": "Ausbildungscharakter bejaht",
+      "datum": "2023-06-06",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_FZ.2023.2": {
+      "zitierung": "Sozialversicherungsgericht BS FZ.2023.2 vom 10.05.2023",
+      "regesteKurz": "FLG",
+      "datum": "2023-05-10",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_FZ.2023.4": {
+      "zitierung": "Sozialversicherungsgericht BS FZ.2023.4 vom 21.05.2024",
+      "regesteKurz": "Ausbildungszulagen: Es fehlt an einem systematischen Vorbereitungsaufwand auf ein anerkanntes Ausbildungsziel im Umfang…",
+      "datum": "2024-05-21",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_FZ.2024.1": {
+      "zitierung": "Sozialversicherungsgericht BS FZ.2024.1 vom 07.11.2024",
+      "regesteKurz": "FLG Ausbildungscharakter einer «Pre-Professional Dancing Education»",
+      "datum": "2024-11-07",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_sozialversicherungsgericht_FZ.2025.1": {
+      "zitierung": "Sozialversicherungsgericht BS FZ.2025.1 vom 10.04.2025",
+      "regesteKurz": "FLG Ausbildungszulage",
+      "datum": "2025-04-10",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_appellationsgericht_ZB.2023.62",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.2",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AL.2022.5",
+        "gewicht": null
+      }
+    ],
+    "2": [
+      {
+        "key": "bge_148_V_385",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2024.1",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2023.2",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.7",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AL.2022.5",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.1",
+        "gewicht": null
+      }
+    ],
+    "3": [
+      {
+        "key": "bge_148_V_385",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_334",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2025.1",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2024.1",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2023.4",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.8",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.6",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.7",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_ZB.2023.62",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AL.2022.5",
+        "gewicht": null
+      }
+    ],
+    "4": [
+      {
+        "key": "bge_147_V_285",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2023.2",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_ZB.2023.62",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AL.2022.5",
+        "gewicht": null
+      }
+    ],
+    "5": [
+      {
+        "key": "bge_148_V_385",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_ZB.2023.62",
+        "gewicht": null
+      }
+    ],
+    "6": [
+      {
+        "key": "bge_147_V_285",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2023.2",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AL.2022.5",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.1",
+        "gewicht": null
+      }
+    ],
+    "7": [
+      {
+        "key": "bge_147_V_285",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_III_265",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2023.2",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_ZB.2023.62",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AL.2022.5",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.1",
+        "gewicht": null
+      }
+    ],
+    "8": [
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2024.1",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.8",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.1",
+        "gewicht": null
+      }
+    ],
+    "9": [
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.1",
+        "gewicht": null
+      }
+    ],
+    "12": [
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2025.1",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2024.1",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2023.4",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.8",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2023.2",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.6",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_ZB.2023.62",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_FZ.2022.4",
+        "gewicht": null
+      }
+    ],
+    "13": [
+      {
+        "key": "bs_appellationsgericht_ZB.2023.62",
+        "gewicht": null
+      },
+      {
+        "key": "bs_sozialversicherungsgericht_AL.2022.5",
+        "gewicht": null
+      }
+    ],
+    "19": [
+      {
+        "key": "bge_148_V_385",
+        "gewicht": 0
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 3
+    },
+    "2": {
+      "bge": 1,
+      "kantonal": 5
+    },
+    "3": {
+      "bge": 2,
+      "kantonal": 10
+    },
+    "4": {
+      "bge": 1,
+      "kantonal": 3
+    },
+    "5": {
+      "bge": 1,
+      "kantonal": 1
+    },
+    "6": {
+      "bge": 1,
+      "kantonal": 3
+    },
+    "7": {
+      "bge": 2,
+      "kantonal": 4
+    },
+    "8": {
+      "kantonal": 3
+    },
+    "9": {
+      "kantonal": 1
+    },
+    "12": {
+      "kantonal": 9
+    },
+    "13": {
+      "kantonal": 2
+    },
+    "19": {
+      "bge": 1
+    }
+  }
+}

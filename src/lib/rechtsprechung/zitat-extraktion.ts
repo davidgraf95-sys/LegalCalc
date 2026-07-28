@@ -62,16 +62,21 @@
 //      braucht und die Verbund-Form die Sortier-/Anzeige-Ordnung des
 //      Artikel-Index ändert.
 //
-// L2 · PARAGRAPHENZEICHEN «§» ist kein Artikel-Marker. ARTIKEL_MARKER kennt nur
-//      «Art.»/«Artikel»; «§ 12 Abs. 2 EG ZGB» ergibt [].
+// L2 · PARAGRAPHENZEICHEN «§» ist in `extrahiereStatutRefs` kein Artikel-Marker
+//      und bleibt es. ARTIKEL_MARKER kennt nur «Art.»/«Artikel»; «§ 12 Abs. 2
+//      EG ZGB» ergibt dort weiterhin [].
 //      KORPUS: 26'311 «§»-Zeichen in 4'141 Snapshots; als Zitat-Form
 //      («§ N [Abs./lit. …] <CODE>») 19'320 Vorkommen in 3'869 Snapshots.
 //      EINORDNUNG, damit die Zahl nicht grösser wirkt als die Wirkung: «§» ist
 //      die KANTONALE Zählweise (BS, ZH, AG, SO …), und das ERLASS_REGISTER führt
 //      Bundesrecht. Der weit überwiegende Teil dieser Nennungen fände auch bei
-//      erkanntem Marker keinen Register-key. Die Lücke wird erst mit dem
-//      kantonalen Erlass-Bestand fachlich relevant — dann als eigener Schritt
-//      mit eigener FP-Analyse («§» steht auch in Fussnoten und Randziffern).
+//      erkanntem Marker keinen BUNDES-Register-key.
+//      TEILWEISE GESCHLOSSEN (W2·7-BEZUG/B2, 28.7.2026) — auf einem EIGENEN Pfad:
+//      `extrahiereParagraphGruppen` (unten) liest die Artikel-Seite von
+//      «§»-Zitaten, die Erlass-Seite löst der kantonale Resolver über die
+//      amtliche Systematik-Nummer auf. Dass `extrahiereStatutRefs` unverändert
+//      bleibt, ist die eigentliche Sicherung: es gibt keinen Weg von einem
+//      «§»-Zitat zu einem Bundes-Register-key (Begründung bei PARAGRAPH_PATTERN).
 //
 // L3 · EINBUCHSTABIGER FOLGE-MARKER ZUSAMMENGESCHRIEBEN («Art. 205f. LIFD») →
 //      bewusst KEIN Treffer. FOLGE_MARKER_EIN verlangt Punkt UND Leerzeichen,
@@ -587,6 +592,62 @@ export interface StatutRefZahl extends StatutRef {
  * Implementierung (§5). `extrahiereStatutRefs` ist die Projektion davon und bleibt
  * verhaltensgleich (gleiche Objekte, gleiche Reihenfolge, `anzahl` weggelassen).
  */
+/**
+ * EIN Glied einer Artikel-Liste, roh zerlegt — ohne Erlass-Bindung.
+ *
+ * HERAUSGEZOGEN (W2·7-BEZUG/B2, §5): die Zerlegung stand inline in
+ * `extrahiereStatutRefsMitAnzahl` und ist damit für den zweiten Aufrufer
+ * (`extrahiereParagraphGruppen`, kantonale «§»-Zitate) nicht erreichbar gewesen.
+ * Eine Kopie hiesse: die kantonale Ebene liest Ketten, Bereiche und den
+ * Phantom-Ketten-Schutz nach ANDEREN Regeln als die Bundes-Ebene — genau die
+ * Art stiller Divergenz, gegen die §5 steht. Verhaltensneutral: identischer
+ * Code, nur verschoben (Beweis = unveränderte Tests + byte-gleiche Artefakte).
+ */
+interface ArtikelGlied {
+  artikel: string;
+  artikelBis: string | null;
+  absatz: string | null;
+}
+
+/**
+ * Artikel-Liste («95 und 96», «100 Abs. 1 und 2», «641-654a») in Glieder
+ * zerlegen. Trägt den Phantom-Ketten-Schutz (F2-Fix) und die Bereichs-Monotonie
+ * (F2-V10) — Begründungen an den jeweiligen Zeilen. Rein (§2).
+ */
+function zerlegeArtikelListe(liste: string): ArtikelGlied[] {
+  const out: ArtikelGlied[] = [];
+  // F2-Fix: `vorgliedTraegtMarker` merkt, ob das jeweils zuletzt als Artikel
+  // gelesene (oder übersprungene) Glied einen Abs./Sub-Marker trug — nur dann wird
+  // ein nacktes Folgeglied als Absatz-/Ziffer-Fortsetzung verworfen.
+  let vorgliedTraegtMarker = false;
+  const stuecke = (liste ?? '').split(KETTEN_TRENNER);
+  for (let i = 0; i < stuecke.length; i++) {
+    const stueck = stuecke[i];
+    const km = GLIED_KOPF.exec(stueck);
+    if (!km?.groups) continue;
+    const kg = km.groups;
+    const artikel = (kg.article ?? '').toLowerCase().replace(/\s+/g, '');
+    if (!artikel) continue;
+    // Phantom-Ketten-Schutz: ein Fortsetzungsglied nach einem markierten Vorglied
+    // gehört zur Absatz-/Ziffer-Aufzählung (kein eigener Artikel) → verwerfen,
+    // AUSSER es trägt einen eigenen Absatz-Marker («… und 106 Abs. 2» = Art. 106).
+    // Ein blosser Sub-Marker der Fortsetzung rettet sie NICHT (Unter-Gliederung).
+    if (i > 0 && vorgliedTraegtMarker && !gliedTraegtAbsatz(stueck)) continue;
+    // Für das nächste Glied merken, ob DIESES einen Abs.-/Sub-Marker trug (nur
+    // dann ist die Aufzählung «offen» — «Abs. 1, 2 und 3» verwirft auch 2 u. 3).
+    vorgliedTraegtMarker = gliedTraegtUnterMarker(stueck);
+    const absatz = kg.paragraph ? kg.paragraph.toLowerCase().replace(/\s+/g, '') : null;
+    // Bereichs-Endpunkt (F2-V10) nur bei Monotonie bewahren: ein Rechtsartikel-
+    // Bereich steigt nie ab → verwirft die FR-Binnen-Bindestrich-Falle
+    // («art. 227-23 CP»/«Art. 6-1 EMRK», absteigend gelesen). `bis` fliesst NIE
+    // in den Norm-Key (nur Start-Artikel), nur zur treuen Anzeige.
+    let artikelBis = kg.articleBis ? kg.articleBis.toLowerCase().replace(/\s+/g, '') : null;
+    if (artikelBis && !(artikelNummer(artikelBis) >= artikelNummer(artikel))) artikelBis = null;
+    out.push({ artikel, artikelBis, absatz });
+  }
+  return out;
+}
+
 export function extrahiereStatutRefsMitAnzahl(text: string): StatutRefZahl[] {
   if (!text) return [];
 
@@ -611,34 +672,7 @@ export function extrahiereStatutRefsMitAnzahl(text: string): StatutRefZahl[] {
 
     // Trefferliste in einzelne Artikel-Glieder zerlegen (F2-V6/V8: Mehrfach-Zitat
     // mit gemeinsamem Code) — jedes Glied trägt dieselbe Gesetzes-Abkürzung.
-    // F2-Fix: `vorgliedTraegtMarker` merkt, ob das jeweils zuletzt als Artikel
-    // gelesene (oder übersprungene) Glied einen Abs./Sub-Marker trug — nur dann wird
-    // ein nacktes Folgeglied als Absatz-/Ziffer-Fortsetzung verworfen.
-    let vorgliedTraegtMarker = false;
-    const stuecke = (g.liste ?? '').split(KETTEN_TRENNER);
-    for (let i = 0; i < stuecke.length; i++) {
-      const stueck = stuecke[i];
-      const km = GLIED_KOPF.exec(stueck);
-      if (!km?.groups) continue;
-      const kg = km.groups;
-      const artikel = (kg.article ?? '').toLowerCase().replace(/\s+/g, '');
-      if (!artikel) continue;
-      // Phantom-Ketten-Schutz: ein Fortsetzungsglied nach einem markierten Vorglied
-      // gehört zur Absatz-/Ziffer-Aufzählung (kein eigener Artikel) → verwerfen,
-      // AUSSER es trägt einen eigenen Absatz-Marker («… und 106 Abs. 2» = Art. 106).
-      // Ein blosser Sub-Marker der Fortsetzung rettet sie NICHT (Unter-Gliederung).
-      if (i > 0 && vorgliedTraegtMarker && !gliedTraegtAbsatz(stueck)) continue;
-      // Für das nächste Glied merken, ob DIESES einen Abs.-/Sub-Marker trug (nur
-      // dann ist die Aufzählung «offen» — «Abs. 1, 2 und 3» verwirft auch 2 u. 3).
-      vorgliedTraegtMarker = gliedTraegtUnterMarker(stueck);
-      const absatz = kg.paragraph ? kg.paragraph.toLowerCase().replace(/\s+/g, '') : null;
-      // Bereichs-Endpunkt (F2-V10) nur bei Monotonie bewahren: ein Rechtsartikel-
-      // Bereich steigt nie ab → verwirft die FR-Binnen-Bindestrich-Falle
-      // («art. 227-23 CP»/«Art. 6-1 EMRK», absteigend gelesen). `bis` fliesst NIE
-      // in den Norm-Key (nur Start-Artikel), nur zur treuen Anzeige.
-      let artikelBis = kg.articleBis ? kg.articleBis.toLowerCase().replace(/\s+/g, '') : null;
-      if (artikelBis && !(artikelNummer(artikelBis) >= artikelNummer(artikel))) artikelBis = null;
-
+    for (const { artikel, artikelBis, absatz } of zerlegeArtikelListe(g.liste ?? '')) {
       const normalisiert = normalisiereStatut(artikel, absatz, gesetz);
       const bisher = gesehen.get(normalisiert);
       if (bisher) { bisher.anzahl += 1; continue; }
@@ -648,6 +682,75 @@ export function extrahiereStatutRefsMitAnzahl(text: string): StatutRefZahl[] {
     }
   }
   return refs;
+}
+
+// ─── Paragraphen-Zitate «§ N» (kantonale Zählweise, W2·7-BEZUG/B2) ───────────
+//
+// SCHLIESST LÜCKE L2 (Modul-Kopf) — aber NUR HALB, und das mit Absicht.
+//
+// L2 hielt fest: «§» ist kein Artikel-Marker, und die Lücke werde «erst mit dem
+// kantonalen Erlass-Bestand fachlich relevant — dann als eigener Schritt mit
+// eigener FP-Analyse». Dieser Schritt ist es. Die andere Hälfte bleibt offen und
+// zwar bewusst: `extrahiereStatutRefs` bleibt UNVERÄNDERT und kennt weiterhin
+// kein «§». Grund ist §1, nicht Bequemlichkeit — «§ 12 StG» ist KANTONALES
+// Steuerrecht; würde der bestehende Extraktor das «§» mitlesen, liefe die
+// Nennung durch `normKeyFuerAbk` und landete auf einem BUNDES-Register-key. Die
+// beiden Zählweisen dürfen sich darum nicht denselben Auflösungspfad teilen.
+//
+// WAS DIESE FUNKTION TUT: sie liefert nur die ARTIKEL-SEITE eines §-Zitats plus
+// die Textstelle, an der die Gruppe endet. WELCHER Erlass gemeint ist, entscheidet
+// der kantonale Resolver (scripts/normtext/kanton-norm-resolver.ts) über die
+// amtliche Systematik-Nummer im selben Zitat — nicht über eine Abkürzungs-Tabelle.
+// Auf DIESEM Pfad ist die föderal/kantonale Verwechslung darum nicht
+// «gefiltert», sondern strukturell ausgeschlossen: von hier führt kein Weg zu
+// einem Bundes-Register-key.
+//
+// KEINE AUSSAGE ÜBER DEN «Art.»-KANAL (Gegenprüfung Runde 1/B4). Kantonale
+// Entscheide erzeugen daneben auch bundesrechtliche «Art.»-Zitate, und die
+// laufen über die Abkürzungs-Tabelle wie eh und je — für sie gilt der Satz oben
+// ausdrücklich NICHT. Ihre Begrenzung steht bei `fremdDefinierteKeys`
+// (scripts/normtext/entscheide-mapping.ts), samt Messung und benannter Restlücke.
+//
+// Die Grammatik der Artikel-Liste ist DIESELBE wie bei «Art.» (`ARTIKEL_GLIED` +
+// `KETTEN_GLIED` + `zerlegeArtikelListe`, §5) — Ketten («§§ 88 Abs. 1 und 93»),
+// Bereiche, Absätze und der Phantom-Ketten-Schutz gelten unverändert.
+
+/** Eine zusammenhängende «§»-Zitatgruppe mit ihren Artikel-Tokens. */
+export interface ParagraphGruppe {
+  /** Roh-Treffer, z.B. '§§ 88 Abs. 1 und 93 Abs. 1 Ziff. 1'. */
+  raw: string;
+  /** Artikel-Tokens der Gruppe in Reihenfolge, dedupliziert ('88', '93'). */
+  artikel: string[];
+  /** Index im Eingabetext unmittelbar NACH der Gruppe (Start des Erlass-Fensters). */
+  ende: number;
+}
+
+// «§» und «§§» (Mehrzahl bei Ketten). Kein `\b` davor: «§» ist kein Wortzeichen,
+// eine Wortgrenze wäre dort nie erfüllt bzw. immer — je nach Vorzeichen.
+const PARAGRAPH_PATTERN = new RegExp(
+  `§{1,2}\\s*(?<liste>${ARTIKEL_GLIED}(?:${KETTEN_GLIED})*)`,
+  'g',
+);
+
+/**
+ * «§»-Zitatgruppen eines Textes, in Textreihenfolge. Rein und deterministisch (§2):
+ * kein Zustand über Aufrufe hinweg (`matchAll` setzt `lastIndex` selbst zurück).
+ */
+export function extrahiereParagraphGruppen(text: string): ParagraphGruppe[] {
+  if (!text) return [];
+  const out: ParagraphGruppe[] = [];
+  for (const match of text.matchAll(PARAGRAPH_PATTERN)) {
+    const glieder = zerlegeArtikelListe(match.groups?.liste ?? '');
+    if (!glieder.length) continue;
+    const artikel: string[] = [];
+    for (const g of glieder) if (!artikel.includes(g.artikel)) artikel.push(g.artikel);
+    out.push({
+      raw: match[0].trim(),
+      artikel,
+      ende: (match.index ?? 0) + match[0].length,
+    });
+  }
+  return out;
 }
 
 /**

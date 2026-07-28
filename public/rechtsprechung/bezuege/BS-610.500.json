@@ -1,0 +1,62 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-610.500",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2023.172": {
+      "zitierung": "Appellationsgericht BS VD.2023.172 vom 15.07.2024",
+      "regesteKurz": "Rückforderung Härtefallbeiträge",
+      "datum": "2024-07-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.9": {
+      "zitierung": "Appellationsgericht BS VD.2023.9 vom 14.04.2024",
+      "regesteKurz": "Übernahme der Kosten für Schallschutzfenster",
+      "datum": "2024-04-14",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "3": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.172",
+        "gewicht": null
+      }
+    ],
+    "4": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.9",
+        "gewicht": null
+      }
+    ],
+    "5": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.9",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "3": {
+      "kantonal": 1
+    },
+    "4": {
+      "kantonal": 1
+    },
+    "5": {
+      "kantonal": 1
+    }
+  }
+}

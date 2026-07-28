@@ -1,0 +1,48 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-772.300",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2023.82": {
+      "zitierung": "Appellationsgericht BS VD.2023.82 vom 15.11.2023",
+      "regesteKurz": "Unterbrechung der Energielieferung",
+      "datum": "2023-11-15",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.62": {
+      "zitierung": "Appellationsgericht BS VD.2024.62 vom 16.01.2025",
+      "regesteKurz": "Rechnung Nr. 150005463585 vom 6. Februar 2024",
+      "datum": "2025-01-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "37": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.62",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.82",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "37": {
+      "kantonal": 2
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-819.179",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2022.267": {
+      "zitierung": "Appellationsgericht BS VD.2022.267 vom 28.09.2023",
+      "regesteKurz": "Covid-19-Härtefallbeiträge für das 1. Quartal 2022",
+      "datum": "2023-09-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "3": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.267",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "3": {
+      "kantonal": 1
+    }
+  }
+}

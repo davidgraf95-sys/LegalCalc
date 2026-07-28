@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "PAVO",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2022.132": {
+      "zitierung": "Appellationsgericht BS VD.2022.132 vom 22.03.2023",
+      "regesteKurz": "Bewilligung einer Kindertagesstätte",
+      "datum": "2023-03-22",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "15": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.132",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "15": {
+      "kantonal": 1
+    }
+  }
+}

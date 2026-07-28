@@ -1,0 +1,53 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-569.500",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2021.279": {
+      "zitierung": "Appellationsgericht BS VD.2021.279 vom 05.08.2022",
+      "regesteKurz": "Nutzung zentraler mobiler Plakatständer vor der Volksabstimmung vom 28. November 2021",
+      "datum": "2022-08-05",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.16": {
+      "zitierung": "Appellationsgericht BS VD.2025.16 vom 23.09.2025",
+      "regesteKurz": "Plakat-Aushang",
+      "datum": "2025-09-23",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.279",
+        "gewicht": null
+      }
+    ],
+    "9": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.16",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 1
+    },
+    "9": {
+      "kantonal": 1
+    }
+  }
+}

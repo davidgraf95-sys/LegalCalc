@@ -1,0 +1,50 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-412.750",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2023.142": {
+      "zitierung": "Appellationsgericht BS VD.2023.142 vom 19.03.2024",
+      "regesteKurz": "zusätzliche Unterstützung für die Schulung von B____ in einem Spezialangebot der Sekundarschule",
+      "datum": "2024-03-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "9": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.142",
+        "gewicht": null
+      }
+    ],
+    "10": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.142",
+        "gewicht": null
+      }
+    ],
+    "11": [
+      {
+        "key": "bs_appellationsgericht_VD.2023.142",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "9": {
+      "kantonal": 1
+    },
+    "10": {
+      "kantonal": 1
+    },
+    "11": {
+      "kantonal": 1
+    }
+  }
+}

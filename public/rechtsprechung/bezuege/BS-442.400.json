@@ -1,0 +1,165 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-442.400",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2021.291": {
+      "zitierung": "Appellationsgericht BS VD.2021.291 vom 19.03.2023",
+      "regesteKurz": "Verletzung der wissenschaftlichen Integrität (BGer 8C_321/2023)",
+      "datum": "2023-03-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.59": {
+      "zitierung": "Appellationsgericht BS VD.2023.59 vom 09.11.2023",
+      "regesteKurz": "Rekurs gegen die Verfügung vom 1. Februar 2022 (BGer 2C_688/2023 vom 13. September 2024)",
+      "datum": "2023-11-09",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.60": {
+      "zitierung": "Appellationsgericht BS VD.2023.60 vom 18.11.2023",
+      "regesteKurz": "Anrechnung von Studienleistungen (BGer vom 9.2.2024 2C_12/2024))",
+      "datum": "2023-11-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.10": {
+      "zitierung": "Appellationsgericht BS VD.2024.10 vom 29.06.2024",
+      "regesteKurz": "Beendigung des Arbeitsverhältnisses",
+      "datum": "2024-06-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.101": {
+      "zitierung": "Appellationsgericht BS VD.2024.101 vom 18.02.2025",
+      "regesteKurz": "Nichtbestehen der Repetitionsprüfung der Vorlesung [...] vom 5. Juli 2023",
+      "datum": "2025-02-18",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.141": {
+      "zitierung": "Appellationsgericht BS VD.2024.141 vom 10.11.2024",
+      "regesteKurz": "Nichtbestehen einer schriftlichen Leistungsüberprüfung im Studiengang Bachelor Medizin (BGer 2C_51/2025 vom 26. Februar…",
+      "datum": "2024-11-10",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.163": {
+      "zitierung": "Appellationsgericht BS VD.2024.163 vom 27.05.2025",
+      "regesteKurz": "fristlose Auflösung des Arbeitsverhältnisses",
+      "datum": "2025-05-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.62": {
+      "zitierung": "Appellationsgericht BS VD.2025.62 vom 04.08.2025",
+      "regesteKurz": "Ausschluss vom Bachelorstudium Rechtswissenschaft",
+      "datum": "2025-08-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VG.2021.3": {
+      "zitierung": "Appellationsgericht BS VG.2021.3 vom 29.05.2022",
+      "regesteKurz": "besondere Massnahmen im Zusammenhang mit der Covid-19-Epidemie (Urteil BGer 2C_571/2022 vom 13. September 2023)",
+      "datum": "2022-05-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_appellationsgericht_VG.2021.3",
+        "gewicht": null
+      }
+    ],
+    "41": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.62",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.163",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.101",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.141",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2024.10",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.60",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.59",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2021.291",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 1
+    },
+    "41": {
+      "kantonal": 13
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-740.100",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2021.219": {
+      "zitierung": "Appellationsgericht BS VD.2021.219 vom 08.02.2023",
+      "regesteKurz": "Entschädigung aus materieller Enteignung (BGer 1C_61/2023 vom 23. Februar 2023)",
+      "datum": "2023-02-08",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2025.104": {
+      "zitierung": "Appellationsgericht BS VD.2025.104 vom 16.12.2025",
+      "regesteKurz": "Rechtsverzögerungsbeschwerde im Verfahren PE.2019.1 der Expropriationskommission",
+      "datum": "2025-12-16",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "9": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.104",
+        "gewicht": null
+      }
+    ],
+    "38": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.219",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "9": {
+      "kantonal": 1
+    },
+    "38": {
+      "kantonal": 1
+    }
+  }
+}

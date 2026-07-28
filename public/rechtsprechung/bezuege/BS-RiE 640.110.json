@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-RiE 640.110",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2025.53": {
+      "zitierung": "Appellationsgericht BS VD.2025.53 vom 19.09.2025",
+      "regesteKurz": "Gemeindesteuern pro 2008 bis 2017",
+      "datum": "2025-09-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "5": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.53",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "5": {
+      "kantonal": 1
+    }
+  }
+}

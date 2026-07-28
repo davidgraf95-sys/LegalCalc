@@ -1,0 +1,192 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "SKV",
+  "erlassEbene": "bund",
+  "dokumente": {
+    "bge_146_IV_88": {
+      "zitierung": "BGE 146 IV 88",
+      "regesteKurz": "Art. 91a Abs. 1 i.V.m. Art. 55 Abs. 1 und 2 SVG und Art. 10 Abs. 2 SKV; Verweigerung von Massnahmen zur Feststellung der Fahrunfähigkeit; Betäubungsmittelvortests; hinreichende Verdachtsmomente zur Durchführung; Beweiswert. Für die Durchfü…",
+      "datum": "2019-12-03",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_149_IV_153": {
+      "zitierung": "BGE 149 IV 153",
+      "regesteKurz": "Art. 4 Abs. 2 Rahmenabkommen über die Grenzabfertigung mit Deutschland; Art. 3 StGB; Art. 95 Abs. 1 lit. b SVG; Art. 4 SKV; mangelnde Fahrberechtigung beim bevorstehenden Grenzübertritt; örtliche Zuständigkeit und anwendbares Recht. Schwei…",
+      "datum": "2023-02-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bge_150_IV_242": {
+      "zitierung": "BGE 150 IV 242",
+      "regesteKurz": "Art. 90 Abs. 2 und Art. 106 Abs. 1 SVG; Art. 9 Abs. 2 SKV; Art. 6 ff. VSKV-ASTRA; Geschwindigkeitskontrolle durch eine Nachfahrmessung ohne kalibriertes Nachfahrmesssystem mittels Ablesung des Geschwindigkeitsmessers. Eine Geschwindigkeits…",
+      "datum": "2024-05-17",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "bund",
+        "kanton": "CH",
+        "gericht": "bge",
+        "status": "bge"
+      }
+    },
+    "bs_appellationsgericht_BES.2021.134": {
+      "zitierung": "Appellationsgericht BS BES.2021.134 vom 25.05.2023",
+      "regesteKurz": "Verfahrenshandlung der Kantonspolizei vom 22. Oktober 2021",
+      "datum": "2023-05-25",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2023.125": {
+      "zitierung": "Appellationsgericht BS BES.2023.125 vom 29.01.2024",
+      "regesteKurz": "Untersuchungsbefehl",
+      "datum": "2024-01-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_BES.2023.47": {
+      "zitierung": "Appellationsgericht BS BES.2023.47 vom 14.11.2023",
+      "regesteKurz": "Untersuchung der Fahrfähigkeit bei schwerem Verkehrsunfall",
+      "datum": "2023-11-14",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2021.4": {
+      "zitierung": "Appellationsgericht BS SB.2021.4 vom 28.01.2025",
+      "regesteKurz": "Fahren in fahrunfähigem Zustand (Motorfahrzeug, andere Gründe)",
+      "datum": "2025-01-28",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_SB.2021.96": {
+      "zitierung": "Appellationsgericht BS SB.2021.96 vom 20.09.2022",
+      "regesteKurz": "grobe Verletzung der Verkehrsregeln",
+      "datum": "2022-09-20",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bge_150_IV_242",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2021.96",
+        "gewicht": null
+      }
+    ],
+    "4": [
+      {
+        "key": "bge_149_IV_153",
+        "gewicht": 0
+      }
+    ],
+    "9": [
+      {
+        "key": "bge_150_IV_242",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2021.96",
+        "gewicht": null
+      }
+    ],
+    "10": [
+      {
+        "key": "bge_146_IV_88",
+        "gewicht": 0
+      },
+      {
+        "key": "bs_appellationsgericht_SB.2021.4",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2021.134",
+        "gewicht": null
+      }
+    ],
+    "13": [
+      {
+        "key": "bge_146_IV_88",
+        "gewicht": 0
+      }
+    ],
+    "12a": [
+      {
+        "key": "bs_appellationsgericht_SB.2021.4",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.125",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2023.47",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_BES.2021.134",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "bge": 1,
+      "kantonal": 1
+    },
+    "4": {
+      "bge": 1
+    },
+    "9": {
+      "bge": 1,
+      "kantonal": 1
+    },
+    "10": {
+      "bge": 1,
+      "kantonal": 2
+    },
+    "13": {
+      "bge": 1
+    },
+    "12a": {
+      "kantonal": 4
+    }
+  }
+}

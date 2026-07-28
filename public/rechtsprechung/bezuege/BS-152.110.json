@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-152.110",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_sozialversicherungsgericht_AL.2021.26": {
+      "zitierung": "Sozialversicherungsgericht BS AL.2021.26 vom 12.05.2022",
+      "regesteKurz": "Steigerung einer Nebenerwerbstätigkeit/Zwischenverdienst (Bundesgerichtsurteil 8C_504/2022 vom 23.12.2022)",
+      "datum": "2022-05-12",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "11": [
+      {
+        "key": "bs_sozialversicherungsgericht_AL.2021.26",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "11": {
+      "kantonal": 1
+    }
+  }
+}

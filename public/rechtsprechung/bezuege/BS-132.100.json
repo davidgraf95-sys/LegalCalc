@@ -1,0 +1,91 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-132.100",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_DGS.2023.6": {
+      "zitierung": "Appellationsgericht BS DGS.2023.6 vom 19.10.2023",
+      "regesteKurz": "Ausstandsbegehren Urteil BG vom 06.06.2024 (7B_959/2023, 7B_528/2024)",
+      "datum": "2023-10-19",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2022.276": {
+      "zitierung": "Appellationsgericht BS VD.2022.276 vom 11.04.2023",
+      "regesteKurz": "Abstimmungsbeschwerde vom 9. November 2022 in Sachen Investitionskredit zum Neubau Doppelkindergarten Siegwaldweg",
+      "datum": "2023-04-11",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VG.2022.2": {
+      "zitierung": "Appellationsgericht BS VG.2022.2 vom 03.01.2023",
+      "regesteKurz": "Stimmrechtsbeschwerde betreffend Abstimmungserläuterungen zur Volksabstimmung vom 25. September 2022 in Bezug auf die V…",
+      "datum": "2023-01-03",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.276",
+        "gewicht": null
+      }
+    ],
+    "81": [
+      {
+        "key": "bs_appellationsgericht_DGS.2023.6",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2022.276",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VG.2022.2",
+        "gewicht": null
+      }
+    ],
+    "83": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.276",
+        "gewicht": null
+      }
+    ],
+    "84": [
+      {
+        "key": "bs_appellationsgericht_VD.2022.276",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "1": {
+      "kantonal": 1
+    },
+    "81": {
+      "kantonal": 3
+    },
+    "83": {
+      "kantonal": 1
+    },
+    "84": {
+      "kantonal": 1
+    }
+  }
+}

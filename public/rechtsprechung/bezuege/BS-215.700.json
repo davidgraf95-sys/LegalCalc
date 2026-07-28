@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-215.700",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_sozialversicherungsgericht_AL.2022.10": {
+      "zitierung": "Sozialversicherungsgericht BS AL.2022.10 vom 01.11.2022",
+      "regesteKurz": "Versicherte Verdienst wurde von Beschwerdegegnerin falsch festgelegt; auch unter Berücksichtigung des korrekten höheren…",
+      "datum": "2022-11-01",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_sozialversicherungsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "7": [
+      {
+        "key": "bs_sozialversicherungsgericht_AL.2022.10",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "7": {
+      "kantonal": 1
+    }
+  }
+}

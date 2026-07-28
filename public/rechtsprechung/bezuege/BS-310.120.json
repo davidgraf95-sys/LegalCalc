@@ -1,0 +1,32 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-310.120",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_VD.2025.49": {
+      "zitierung": "Appellationsgericht BS VD.2025.49 vom 04.09.2025",
+      "regesteKurz": "Personalverleih",
+      "datum": "2025-09-04",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "11": [
+      {
+        "key": "bs_appellationsgericht_VD.2025.49",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "11": {
+      "kantonal": 1
+    }
+  }
+}

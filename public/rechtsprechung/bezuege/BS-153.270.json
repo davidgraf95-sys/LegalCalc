@@ -1,0 +1,120 @@
+{
+  "erzeugt": "2026-07-28",
+  "erlass": "BS-153.270",
+  "erlassEbene": "kanton",
+  "dokumente": {
+    "bs_appellationsgericht_BES.2022.130": {
+      "zitierung": "Appellationsgericht BS BES.2022.130 vom 26.01.2023",
+      "regesteKurz": "abgewiesene Verfahrensanträge",
+      "datum": "2023-01-26",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2021.148": {
+      "zitierung": "Appellationsgericht BS VD.2021.148 vom 29.06.2022",
+      "regesteKurz": "Informationszugang",
+      "datum": "2022-06-29",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2023.17": {
+      "zitierung": "Appellationsgericht BS VD.2023.17 vom 31.08.2023",
+      "regesteKurz": "Informationszugang",
+      "datum": "2023-08-31",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.51": {
+      "zitierung": "Appellationsgericht BS VD.2024.51 vom 13.09.2024",
+      "regesteKurz": "Zugang zu nicht publizierten Informationen (BGer 1C_637/2024 vom 30. Oktober 2025)",
+      "datum": "2024-09-13",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    },
+    "bs_appellationsgericht_VD.2024.98": {
+      "zitierung": "Appellationsgericht BS VD.2024.98 vom 27.02.2025",
+      "regesteKurz": "Ablehnung des Informationszugangs",
+      "datum": "2025-02-27",
+      "facetten": {
+        "quelltyp": "rechtsprechung",
+        "ebene": "kanton",
+        "kanton": "BS",
+        "gericht": "bs_appellationsgericht",
+        "status": "kantonal"
+      }
+    }
+  },
+  "proArtikel": {
+    "12": [
+      {
+        "key": "bs_appellationsgericht_BES.2022.130",
+        "gewicht": null
+      }
+    ],
+    "20": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.148",
+        "gewicht": null
+      }
+    ],
+    "23": [
+      {
+        "key": "bs_appellationsgericht_VD.2021.148",
+        "gewicht": null
+      }
+    ],
+    "24": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.51",
+        "gewicht": null
+      },
+      {
+        "key": "bs_appellationsgericht_VD.2023.17",
+        "gewicht": null
+      }
+    ],
+    "30": [
+      {
+        "key": "bs_appellationsgericht_VD.2024.98",
+        "gewicht": null
+      }
+    ]
+  },
+  "gesamtProArtikel": {
+    "12": {
+      "kantonal": 1
+    },
+    "20": {
+      "kantonal": 1
+    },
+    "23": {
+      "kantonal": 1
+    },
+    "24": {
+      "kantonal": 2
+    },
+    "30": {
+      "kantonal": 1
+    }
+  }
+}
