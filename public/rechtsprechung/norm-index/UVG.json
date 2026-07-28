@@ -99,6 +99,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_149_V_203",
+        "zitierung": "BGE 149 V 203",
+        "regesteKurz": "Art. 4, 5 und 18 Abs. 1 UVG; Art. 134-140 UVV; Art. 27 ATSG; Art. 9 BV; freiwillige Unfallversicherung; Anspruch auf eine Invalidenrente bei einem Unfall nach Eintritt des ordentlichen Rentenalters; Auslegung eines verwaltungsrechtlichen V…",
+        "datum": "2023-08-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "6": [
@@ -127,6 +137,16 @@
         "zitierung": "BGE 151 V 244",
         "regesteKurz": "Art. 6 Abs. 2 UVG; unfallähnliche Körperschädigung. Risse im Muskelgewebe von Hohlorganen (glatte Muskulatur) sind nicht von Art. 6 Abs. 2 lit. d UVG erfasst. Der im Rahmen einer Geburt per Kaiserschnitt aufgetretene Riss in der Hinterwand…",
         "datum": "2024-11-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_229",
+        "zitierung": "BGE 150 V 229",
+        "regesteKurz": "Art. 4 ATSG; Art. 6 Abs. 1 UVG; Begriff der \"unfallbedingten\" Infektion. Erfolgt die Ansteckung mit dem HI-Virus durch ungeschützten Geschlechtsverkehr und damit in typischer Weise, liegt mangels Ungewöhnlichkeit des äusseren Faktors kein…",
+        "datum": "2024-05-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -363,6 +383,18 @@
         "gewicht": 0
       }
     ],
+    "17": [
+      {
+        "key": "bge_150_V_316",
+        "zitierung": "BGE 150 V 316",
+        "regesteKurz": "Art. 23 Abs. 1 und 3 IVG; Art. 21 quater IVV; Grundentschädigung zur Bemessung des Taggeldes der Invalidenversicherung für Selbständigerwerbende. Aus der Auslegung des Art. 23 Abs. 3 IVG ergibt sich, dass die Berechnung der Grundentschädig…",
+        "datum": "2024-06-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "18": [
       {
         "key": "bge_148_V_174",
@@ -389,6 +421,16 @@
         "zitierung": "BGE 149 V 224",
         "regesteKurz": "Art. 21 Abs. 1 lit. c UVG; Art. 17 Abs. 2 ATSG; Anspruch auf Heilbehandlung bei Teilrentenbeziehenden nach Eintritt ins AHV-Rentenalter. Aus Art. 21 Abs. 1 lit. c UVG ergibt sich keine Leistungsbefristung auf den Eintritt ins AHV-Rentenalt…",
         "datum": "2023-09-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_V_203",
+        "zitierung": "BGE 149 V 203",
+        "regesteKurz": "Art. 4, 5 und 18 Abs. 1 UVG; Art. 134-140 UVV; Art. 27 ATSG; Art. 9 BV; freiwillige Unfallversicherung; Anspruch auf eine Invalidenrente bei einem Unfall nach Eintritt des ordentlichen Rentenalters; Auslegung eines verwaltungsrechtlichen V…",
+        "datum": "2023-08-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

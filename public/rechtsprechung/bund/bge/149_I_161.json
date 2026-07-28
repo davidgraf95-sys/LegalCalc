@@ -233,7 +233,9 @@
         "Art. 13 CST"
       ],
       "normKeys": [
-        "BV"
+        "BV",
+        "EPG",
+        "STPO"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

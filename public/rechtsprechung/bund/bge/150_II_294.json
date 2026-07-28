@@ -257,7 +257,9 @@
         "Art. 5 OA",
         "Art. 5 OASI"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "VWVG"
+      ],
       "zitierteEntscheide": [
         "2A.406/1998",
         "2C_12/2017",

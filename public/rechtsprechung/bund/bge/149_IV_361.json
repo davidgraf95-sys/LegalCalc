@@ -177,7 +177,13 @@
         "Art. 67 LEI",
         "Art. 7 CEDH"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STGB",
+        "STPO",
+        "BV",
+        "AIG",
+        "EMRK"
+      ],
       "zitierteEntscheide": [
         "6B_1495/2022",
         "6B_403/2022",

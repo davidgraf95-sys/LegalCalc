@@ -1,0 +1,29 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "MVV",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "29": [
+      {
+        "key": "bge_147_V_55",
+        "zitierung": "BGE 147 V 55",
+        "regesteKurz": "Art. 51 Abs. 2 UVV; Anmeldung bei einer anderen Sozialversicherung. Die Aufforderung zur Anmeldung bei einer anderen, möglicherweise leistungspflichtigen Sozialversicherung ist nicht bloss einmalig und auch nicht nur vor der erstmaligen Le…",
+        "datum": "2020-08-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_74",
+        "zitierung": "BGE 146 V 74",
+        "regesteKurz": "Art. 69 Abs. 2 ATSG; zum Begriff des Erwerbsausfalls nach Art. 69 Abs. 2 ATSG. Ein Erwerbsausfall von Angehörigen der verunfallten Person kann nur dann im Rahmen von Art. 69 Abs. 2 ATSG als Mehrkosten berücksichtigt werden, wenn er darauf…",
+        "datum": "2020-01-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

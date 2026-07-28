@@ -232,7 +232,10 @@
         "Art. 20a Abs. 1 LIFD",
         "Art. 21 Abs. 1 LIA"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "VSTG",
+        "DBG"
+      ],
       "zitierteEntscheide": [
         "2A.11/1994",
         "2A.660/2006",

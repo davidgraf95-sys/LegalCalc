@@ -277,7 +277,10 @@
         "Art. 201 Abs. 2 CST",
         "Art. 202 CST"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "OR",
+        "BV"
+      ],
       "zitierteEntscheide": [
         "2C_254/2018",
         "2C_665/2017",

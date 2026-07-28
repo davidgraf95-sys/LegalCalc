@@ -228,7 +228,9 @@
         "Art. 3 EMRK"
       ],
       "normKeys": [
-        "OR"
+        "OR",
+        "BV",
+        "EMRK"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

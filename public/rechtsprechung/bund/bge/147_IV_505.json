@@ -310,7 +310,10 @@
         "Art. 381 CPP",
         "Art. 382 Abs. 1 CPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

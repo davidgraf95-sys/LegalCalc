@@ -3,6 +3,18 @@
   "erlass": "AIG",
   "gewichtQuelle": "alt",
   "proArtikel": {
+    "2": [
+      {
+        "key": "bge_147_II_1",
+        "zitierung": "BGE 147 II 1",
+        "regesteKurz": "Art. 2 Abs. 1 Unterabs. 2 und Art. 6 Abs. 6 Anhang I FZA; Art. 61a Abs. 1 AIG; Auslegung des Freizügigkeitsabkommens; Ende des Aufenthaltsrechts bei unfreiwilliger Arbeitslosigkeit, wenn die Arbeitstätigkeit weniger als ein Jahr gedauert h…",
+        "datum": "2021-01-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "5": [
       {
         "key": "bge_151_I_248",
@@ -27,7 +39,53 @@
         "gewicht": 0
       }
     ],
+    "17": [
+      {
+        "key": "bge_151_I_306",
+        "zitierung": "BGE 151 I 306",
+        "regesteKurz": "Art. 14 BV; Art. 12 EMRK; Art. 98 Abs. 4 ZGB; Recht auf Ehe; illegal anwesende Personen. Zusammenfassung der Rechtsprechung zum Recht auf Ehe in Zusammenhang mit dem Aufenthaltsrecht in der Schweiz (E. 5.1-5.4). Die Nichterteilung von Kurz…",
+        "datum": "2025-05-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "25": [
+      {
+        "key": "bge_151_II_213",
+        "zitierung": "BGE 151 II 213",
+        "regesteKurz": "Art. 7 lit. e FZA; Art. 3 Abs. 1 und 5 sowie Art. 7 Anhang I FZA; mit einem französischen Grenzgänger verheiratete Drittenstaatenangehörige; abgeleitetes Recht auf Ausübung einer Erwerbstätigkeit in der Schweiz. Die Staatsangehörige eines…",
+        "datum": "2024-07-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "27": [
+      {
+        "key": "bge_147_I_89",
+        "zitierung": "BGE 147 I 89",
+        "regesteKurz": "Art. 8 Abs. 2 BV; Art. 27 AIG; Verweigerung einer Aufenthaltsbewilligung zu Studienzwecken; Diskriminierung aufgrund des Alters. Zusammenfassung der Rechtsprechung zum Schutzbereich von Art. 8 Abs. 2 BV betreffend Diskriminierung aufgrund…",
+        "datum": "2020-02-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "30": [
+      {
+        "key": "bge_151_I_62",
+        "zitierung": "BGE 151 I 62",
+        "regesteKurz": "Art. 8 EMRK; Art. 3 KRK; Art. 13 BV; Art. 84 Abs. 5 AIG; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Verhältnis zwischen Art. 3 KRK und Art. 8 EMRK (E. 5.1). Beeinträchtigung des Privatlebens durch einen…",
+        "datum": "2024-07-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_I_66",
         "zitierung": "BGE 149 I 66",
@@ -145,6 +203,16 @@
     ],
     "61": [
       {
+        "key": "bge_149_I_207",
+        "zitierung": "BGE 149 I 207",
+        "regesteKurz": "Art. 8 EMRK; mögliche Anrufung des Rechts auf Achtung des Privatlebens, um nach einem längeren illegalen Aufenthalt in der Schweiz eine Aufenthaltsbewilligung zu erhalten. Präzisierung der Rechtsprechung. Es ist nicht ausgeschlossen, nach…",
+        "datum": "2023-05-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_I_66",
         "zitierung": "BGE 149 I 66",
         "regesteKurz": "Art. 8 EMRK; Art. 30 Abs. 1 lit. k und Art. 61 Abs. 2 AIG; Umfang des Aufenthaltsrechts gestützt auf das Privatleben nach Erlöschen der Aufenthaltsbewilligung. Hinweis auf die Rechtsprechung, wonach sich ein Ausländer nach einem rechtmässi…",
@@ -171,6 +239,16 @@
         "zitierung": "BGE 151 II 237",
         "regesteKurz": "Art. 42 Abs. 1, Art. 51 Abs. 1 lit. b und Art. 83 Abs. 2 AIG; Art. 97 Abs. 1 BGG; Gesuch um Wiedererwägung der Verweigerung des Familiennachzugs wegen des Vorliegens von Widerrufsgründen; Pflicht zur Ermittlung des entscheiderheblichen Sac…",
         "datum": "2024-09-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_II_321",
+        "zitierung": "BGE 146 II 321",
+        "regesteKurz": "Art. 62 Abs. 2 und Art. 63 Abs. 3 AIG; Art. 66a Abs. 2 und Art. 66abis StGB; Zulässigkeit eines Widerrufs einer Aufenthaltsbewilligung wenn ein Strafurteil sich mit der Landesverweisung nicht auseinandersetzt. Wird ein Ausländer für Delikt…",
+        "datum": "2020-08-20",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -209,10 +287,32 @@
         "gewicht": 0
       },
       {
+        "key": "bge_146_II_321",
+        "zitierung": "BGE 146 II 321",
+        "regesteKurz": "Art. 62 Abs. 2 und Art. 63 Abs. 3 AIG; Art. 66a Abs. 2 und Art. 66abis StGB; Zulässigkeit eines Widerrufs einer Aufenthaltsbewilligung wenn ein Strafurteil sich mit der Landesverweisung nicht auseinandersetzt. Wird ein Ausländer für Delikt…",
+        "datum": "2020-08-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_146_II_1",
         "zitierung": "BGE 146 II 1",
         "regesteKurz": "Art. 63 Abs. 3 AIG; Art. 66a Abs. 2 StGB; Rechtmässigkeit des Widerrufs einer Niederlassungsbewilligung, wenn der Strafrichter von einer Landesverweisung abgesehen hat. Art. 66a StGB findet nur auf Straftaten Anwendung, die nach dem 1. Okt…",
         "datum": "2019-11-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "67": [
+      {
+        "key": "bge_149_IV_361",
+        "zitierung": "BGE 149 IV 361",
+        "regesteKurz": "Verordnung (EU) 2018/1861; Art. 2 Abs. 1 und 2 StGB; Eintrag der Landesverweisung in das Schengener Informationssystem (SIS); Grundsätze des strafrechtlichen Rückwirkungsverbots und der lex mitior. Die Ausschreibung in das SIS-Register ist…",
+        "datum": "2023-05-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -289,6 +389,18 @@
         "gewicht": 0
       }
     ],
+    "83": [
+      {
+        "key": "bge_147_II_421",
+        "zitierung": "BGE 147 II 421",
+        "regesteKurz": "Art. 1 Abs. 1 des Übereinkommens über die Rechtsstellung der Staatenlosen; Anerkennung des Status der Staatenlosigkeit für Personen der kurdischen Minderheit der Ajanib der Provinz al-Hasaka in Syrien und vorläufige Aufnahme in der Schweiz…",
+        "datum": "2021-04-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "112": [
       {
         "key": "bge_146_IV_172",
@@ -310,10 +422,40 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_IV_329",
+        "zitierung": "BGE 150 IV 329",
+        "regesteKurz": "Art. 291 Abs. 1 StGB; Art. 19a BetmG; Rückführungsrichtlinie 2008/115/EG; Art. 124a AIG; Verweisungsbruch; Strafart. Zusammenfassung der Rechtsprechung zur Rückführungsrichtlinie und zum Tatbestand des Verweisungsbruchs (E. 1.2). Art. 124a…",
+        "datum": "2024-06-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_253",
+        "zitierung": "BGE 147 IV 253",
+        "regesteKurz": "Art. 291 Abs. 1 StGB, Art. 119 Abs. 1 i.V.m. Art. 74 Abs. 1 lit. a AIG; Konkurrenz zwischen dem Verweisungsbruch und der Missachtung einer Ausgrenzung. Der Straftatbestand der Missachtung einer Ausgrenzung nach Art. 74 Abs. 1 lit. a AIG sc…",
+        "datum": "2021-05-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       }
     ],
     "116": [
+      {
+        "key": "bge_151_IV_265",
+        "zitierung": "BGE 151 IV 265",
+        "regesteKurz": "Art. 182 StGB; Menschenhandel zum Zwecke der Ausbeutung der Arbeitskraft. Prüfung des Rechtsbegriffs der Ausbeutung der Arbeitskraft als Zweck von Menschenhandel im Sinne von Art. 182 StGB (E. 4.5) und Präzisierung zum Vorliegen einer schw…",
+        "datum": "2025-04-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_146_IV_297",
         "zitierung": "BGE 146 IV 297",
@@ -325,12 +467,44 @@
         "gewicht": 0
       }
     ],
+    "118": [
+      {
+        "key": "bge_150_IV_169",
+        "zitierung": "BGE 150 IV 169",
+        "regesteKurz": "Art. 146 StGB; Covid-19-SBüV; Covid-19-SBüG; Betrug mit \"Covid-19-Krediten\". Beschreibung der \"Covid-19-Kredite (Plus)\" (E. 3). Betrug mit \"Covid-19-Krediten\", mit Bezug auf die Tatbestandsmerkmale der arglistigen Täuschung (E. 5.1) und de…",
+        "datum": "2024-03-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "119": [
+      {
+        "key": "bge_150_IV_377",
+        "zitierung": "BGE 150 IV 377",
+        "regesteKurz": "Art. 51 StGB; Anrechnung der Untersuchungshaft. Unter dem Blickwinkel von Art. 51 Satz 1 StGB ist festzuhalten, dass ein angebrochener (Haft-)Tag grundsätzlich als ganzer Tag zählt, der auf die Strafe anzurechnen ist. Erstreckt sich die Un…",
+        "datum": "2024-07-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_147_IV_253",
         "zitierung": "BGE 147 IV 253",
         "regesteKurz": "Art. 291 Abs. 1 StGB, Art. 119 Abs. 1 i.V.m. Art. 74 Abs. 1 lit. a AIG; Konkurrenz zwischen dem Verweisungsbruch und der Missachtung einer Ausgrenzung. Der Straftatbestand der Missachtung einer Ausgrenzung nach Art. 74 Abs. 1 lit. a AIG sc…",
         "datum": "2021-05-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_232",
+        "zitierung": "BGE 147 IV 232",
+        "regesteKurz": "Art. 291 StGB, Art. 115 AIG, Rückführungsrichtlinie 2008/115/CE; Verweisungsbruch, Freiheitsstrafe. Der Straftatbestand des Verweisungsbruchs (Art. 291 StGB) kann nur durch ausländische Staatsangehörige begangen werden. Art. 115 Abs. 1 lit…",
+        "datum": "2021-03-10",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -423,6 +597,16 @@
         "zitierung": "BGE 147 II 1",
         "regesteKurz": "Art. 2 Abs. 1 Unterabs. 2 und Art. 6 Abs. 6 Anhang I FZA; Art. 61a Abs. 1 AIG; Auslegung des Freizügigkeitsabkommens; Ende des Aufenthaltsrechts bei unfreiwilliger Arbeitslosigkeit, wenn die Arbeitstätigkeit weniger als ein Jahr gedauert h…",
         "datum": "2021-01-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_II_277",
+        "zitierung": "BGE 151 II 277",
+        "regesteKurz": "Art. 4 und 6 FZA; Art. 4 Abs. 1 und 6 Anhang I FZA; Art. 61a AIG; Art. 18 IVG; Arbeitnehmereigenschaft und Arbeitsvermittlung gemäss IVG; Verbleiberecht in der Schweiz bei Arbeitsunfähigkeit; Verhältnis zum IV-Verfahren. Wird eine Integrat…",
+        "datum": "2025-01-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

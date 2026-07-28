@@ -332,7 +332,9 @@
         "Art. 13 CST",
         "Art. 20 EG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

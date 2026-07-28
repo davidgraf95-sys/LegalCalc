@@ -237,7 +237,10 @@
         "Art. 359 Abs. 1 CPP",
         "Art. 359 Abs. 2 CPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STPO",
+        "STGB"
+      ],
       "zitierteEntscheide": [
         "6B_1100/2023",
         "6B_170/2024",

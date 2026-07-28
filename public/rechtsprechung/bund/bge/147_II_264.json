@@ -309,7 +309,12 @@
         "Art. 8 Abs. 1 AIMP",
         "Art. 80 CC"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGBM",
+        "OR",
+        "IRSG",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "2C_1060/2017",
         "2C_196/2017",

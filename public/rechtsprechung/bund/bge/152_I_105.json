@@ -302,7 +302,12 @@
         "Art. 600quater CP",
         "Art. 67 Abs. 3 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "EMRK"
+      ],
       "zitierteEntscheide": [
         "6B_1027/2021",
         "6B_194/2024",

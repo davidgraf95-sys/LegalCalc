@@ -184,7 +184,9 @@
         "Art. 225 Abs. 1 CP",
         "Art. 225 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -262,7 +262,10 @@
         "Art. 28 Abs. 1 LPAV/VD",
         "Art. 30 Abs. 3 LPAV/VD"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "2C_1034/2017",
         "2C_300/2019",

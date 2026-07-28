@@ -14,6 +14,42 @@
         "kanton": "CH",
         "gewicht": 0
       }
+    ],
+    "6": [
+      {
+        "key": "bge_149_V_14",
+        "zitierung": "BGE 149 V 14",
+        "regesteKurz": "Art. 15 Abs. 1 des Bundesgesetzes vom 25. September 2020 über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (rückwirkend in Kraft getreten am 17. September 2020; in der vom 1. April 2021…",
+        "datum": "2023-01-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "18": [
+      {
+        "key": "bge_151_II_699",
+        "zitierung": "BGE 151 II 699",
+        "regesteKurz": "Art. 39 Abs. 1 und 3 EBG; Art. 18 Abs. 1 und Art. 27 Abs. 1 ArG; Art. 26 Abs. 2 und 4 ArGV 2; koordinierte Auslegung von Art. 39 Abs. 1 und 3 EBG sowie von Art. 26 Abs. 2 und 4 ArGV 2 betreffend die Sonntagsarbeit an Bahnhöfen. Bei Nebenbe…",
+        "datum": "2025-02-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "19": [
+      {
+        "key": "bge_151_II_699",
+        "zitierung": "BGE 151 II 699",
+        "regesteKurz": "Art. 39 Abs. 1 und 3 EBG; Art. 18 Abs. 1 und Art. 27 Abs. 1 ArG; Art. 26 Abs. 2 und 4 ArGV 2; koordinierte Auslegung von Art. 39 Abs. 1 und 3 EBG sowie von Art. 26 Abs. 2 und 4 ArGV 2 betreffend die Sonntagsarbeit an Bahnhöfen. Bei Nebenbe…",
+        "datum": "2025-02-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
     ]
   }
 }

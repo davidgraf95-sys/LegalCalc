@@ -347,7 +347,9 @@
         "Art. 19 LSE",
         "Art. 22 LSE"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [
         "2C_206/2023",
         "2C_34/2021",

@@ -143,7 +143,9 @@
       ],
       "normKeys": [
         "ZPO",
-        "BV"
+        "BV",
+        "STGB",
+        "EMRK"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

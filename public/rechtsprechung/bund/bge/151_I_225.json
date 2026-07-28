@@ -316,7 +316,11 @@
         "Art. 5 CST",
         "Art. 8 Abs. 1 CST"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "BPR",
+        "BV"
+      ],
       "zitierteEntscheide": [
         "1C_385/2012",
         "1C_393/2022",

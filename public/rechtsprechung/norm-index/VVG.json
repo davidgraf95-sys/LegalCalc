@@ -25,6 +25,18 @@
         "gewicht": 0
       }
     ],
+    "12": [
+      {
+        "key": "bge_151_III_591",
+        "zitierung": "BGE 151 III 591",
+        "regesteKurz": "Art. 73 Abs. 1 lit. b BVG; sachliche Zuständigkeit des kantonalen Gerichts für Streitigkeiten im Bereich der beruflichen Vorsorge; Klage auf Rückerstattung von Prämien der gebundenen Selbstvorsorge. Die Klage auf Rückerstattung von Prämien…",
+        "datum": "2025-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "33": [
       {
         "key": "bge_148_III_57",
@@ -125,6 +137,18 @@
         "gewicht": 0
       }
     ],
+    "72": [
+      {
+        "key": "bge_146_III_339",
+        "zitierung": "BGE 146 III 339",
+        "regesteKurz": "VVG; Kollektivkrankentaggeldversicherung. Abgrenzung zwischen einer Summen- und einer Schadensversicherung. In casu fällt die abgeschlossene Versicherung in die zweite Kategorie (E. 5.1, 5.2.3 und 5.2.4). Regeste LCA; assurance collective…",
+        "datum": "2020-07-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "94": [
       {
         "key": "bge_148_III_201",
@@ -147,9 +171,29 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_339",
+        "zitierung": "BGE 146 III 339",
+        "regesteKurz": "VVG; Kollektivkrankentaggeldversicherung. Abgrenzung zwischen einer Summen- und einer Schadensversicherung. In casu fällt die abgeschlossene Versicherung in die zweite Kategorie (E. 5.1, 5.2.3 und 5.2.4). Regeste LCA; assurance collective…",
+        "datum": "2020-07-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "100": [
+      {
+        "key": "bge_149_III_242",
+        "zitierung": "BGE 149 III 242",
+        "regesteKurz": "Art. 46 Abs. 1 VVG; Art. 127 OR; Rechtsschutzversicherung; Verjährung des Haftungsanspruchs für die Beratung durch den Versicherer. Auf die Schadenersatzforderung des Versicherten für die juristische Beratung durch die Rechtsschutzversiche…",
+        "datum": "2023-02-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_III_105",
         "zitierung": "BGE 148 III 105",

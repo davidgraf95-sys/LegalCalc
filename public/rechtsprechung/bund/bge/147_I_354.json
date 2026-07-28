@@ -326,7 +326,10 @@
         "Art. 20 Abs. 3 LSAN/TI"
       ],
       "normKeys": [
-        "BV"
+        "BV",
+        "STGB",
+        "EPG",
+        "SVG"
       ],
       "zitierteEntscheide": [
         "1B_545/2019",

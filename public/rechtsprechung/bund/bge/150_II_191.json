@@ -218,7 +218,12 @@
         "Art. 36 Abs. 3 CST",
         "Art. 4 LTRANS"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "DBG",
+        "BV",
+        "BGOE"
+      ],
       "zitierteEntscheide": [
         "1C_272/2022",
         "1C_532/2016",

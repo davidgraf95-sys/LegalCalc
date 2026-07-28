@@ -5,10 +5,40 @@
   "proArtikel": {
     "1": [
       {
+        "key": "bge_151_V_368",
+        "zitierung": "BGE 151 V 368",
+        "regesteKurz": "Art. 31 Abs. 1 AVIG; Art. 46 AVIV; Kurzarbeitsentschädigung; normale Arbeitszeit und flexibles Arbeitszeitsystem; Auslegung eines Arbeitsvertrags. Zusammenfassung der Rechtsprechung zur Gleitzeitarbeit (E. 5.2). Die Auslegung des Arbeitsve…",
+        "datum": "2025-06-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_IV_188",
         "zitierung": "BGE 150 IV 188",
         "regesteKurz": "Art. 1 ff. und 184 Abs. 1 OR; Art. 146 Abs. 1 und Art. 147 Abs. 1 StGB; Online-Bestellung von Waren auf Rechnung; Täuschung über den Zahlungswillen; Abgrenzung des Betrugs zum betrügerischen Missbrauch einer Datenverarbeitungsanlage. Zusta…",
         "datum": "2024-04-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_II_390",
+        "zitierung": "BGE 150 II 390",
+        "regesteKurz": "Art. 10-13 CO 2 -Gesetz; Art. 17 Abs. 3, Art. 20 und 29 CO 2 -Verordnung; Auslegung des Begriffs des Importeurs; Zuordnung anhand des Typengenehmigungsinhabercodes; Zulässigkeit von CO 2 -Börsen; Übertragung und Zurechnung von CO 2 -Emissi…",
+        "datum": "2024-03-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_225",
+        "zitierung": "BGE 149 II 225",
+        "regesteKurz": "Art. 9 BV; Art. 132 Abs. 2 und 3 des Genfer Gesetzes vom 26. September 2010 über die Gerichtsorganisation; Art. 6 des Genfer Gesetzes vom 12. Dezember 2019 über die vorschulische Betreuung; Art. 13 des Reglements der Stadt Genf über die vo…",
+        "datum": "2023-01-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -25,12 +55,34 @@
         "gewicht": 0
       }
     ],
+    "10": [
+      {
+        "key": "bge_150_II_390",
+        "zitierung": "BGE 150 II 390",
+        "regesteKurz": "Art. 10-13 CO 2 -Gesetz; Art. 17 Abs. 3, Art. 20 und 29 CO 2 -Verordnung; Auslegung des Begriffs des Importeurs; Zuordnung anhand des Typengenehmigungsinhabercodes; Zulässigkeit von CO 2 -Börsen; Übertragung und Zurechnung von CO 2 -Emissi…",
+        "datum": "2024-03-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "11": [
       {
         "key": "bge_151_II_494",
         "zitierung": "BGE 151 II 494",
         "regesteKurz": "Art. 31 und 32 VRK; Art. 11 Abs. 1 DBA CH-DK; Nutzungsberechtigung an Zinsen; Rechtsmissbrauch im Völkerrecht. Die Auslegung von Art. 11 Abs. 1 DBA CH-DK ergibt, dass nur gesetzliche und vertragliche Weiterleitungsverpflichtungen die Nutzu…",
         "datum": "2024-10-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_II_390",
+        "zitierung": "BGE 150 II 390",
+        "regesteKurz": "Art. 10-13 CO 2 -Gesetz; Art. 17 Abs. 3, Art. 20 und 29 CO 2 -Verordnung; Auslegung des Begriffs des Importeurs; Zuordnung anhand des Typengenehmigungsinhabercodes; Zulässigkeit von CO 2 -Börsen; Übertragung und Zurechnung von CO 2 -Emissi…",
+        "datum": "2024-03-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -47,9 +99,71 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_37",
+        "zitierung": "BGE 146 III 37",
+        "regesteKurz": "Art. 32 ff., 718 und 721 OR; Vertretung der Aktiengesellschaft, faktisches Organ. Vertretung der AG durch ihre Organe (E. 5.1), Prokuristen und andere Handlungsbevollmächtigte (E. 5.2) sowie durch ihre rechtsgeschäftlichen Stellvertreter (…",
+        "datum": "2019-10-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "16": [
+      {
+        "key": "bge_146_III_37",
+        "zitierung": "BGE 146 III 37",
+        "regesteKurz": "Art. 32 ff., 718 und 721 OR; Vertretung der Aktiengesellschaft, faktisches Organ. Vertretung der AG durch ihre Organe (E. 5.1), Prokuristen und andere Handlungsbevollmächtigte (E. 5.2) sowie durch ihre rechtsgeschäftlichen Stellvertreter (…",
+        "datum": "2019-10-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "18": [
+      {
+        "key": "bge_150_II_83",
+        "zitierung": "BGE 150 II 83",
+        "regesteKurz": "Art. 49 Abs. 1 und 2, Art. 51 Abs. 1 und 3 WRG; Art. 66 Abs. 1 und Art. 71 Abs. 1 kWRG; Art. 18 OR; Gegenstand der Konzession bildendes Wasser, welches nicht durch die in der Konzession vorgesehenen Anlagen aufgenommen werden kann, unterli…",
+        "datum": "2024-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_II_320",
+        "zitierung": "BGE 149 II 320",
+        "regesteKurz": "aArt. 54 WRG; Art. 45, 46 und 54 WRG; Wasserkraftwerk Emosson; aufeinanderfolgende Konzessionen; wohlerworbenes Recht; Rückgabevertrag; Auslegung der Konzessionen. Anwendbares Recht (E. 3). Schicksal des Rechts zur Nutzung der Wasserkraft,…",
+        "datum": "2023-08-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_III_153",
+        "zitierung": "BGE 147 III 153",
+        "regesteKurz": "Art. 17 Abs. 1 ZPO; Gerichtsstandsvereinbarung, Culpa in contrahendo. Grundsätze der Auslegung einer Gerichtsstandsvereinbarung (E. 5). Unmöglichkeit, den tatsächlichen übereinstimmenden Parteiwillen festzustellen (E. 6). Objektivierte Aus…",
+        "datum": "2021-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_368",
+        "zitierung": "BGE 151 V 368",
+        "regesteKurz": "Art. 31 Abs. 1 AVIG; Art. 46 AVIV; Kurzarbeitsentschädigung; normale Arbeitszeit und flexibles Arbeitszeitsystem; Auslegung eines Arbeitsvertrags. Zusammenfassung der Rechtsprechung zur Gleitzeitarbeit (E. 5.2). Die Auslegung des Arbeitsve…",
+        "datum": "2025-06-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_II_794",
         "zitierung": "BGE 151 II 794",
@@ -85,26 +199,6 @@
         "zitierung": "BGE 151 III 45",
         "regesteKurz": "a Art. 51 Abs. 4 BGG; Streitwert bei Rechtsöffnung für Unterhaltsbeiträge; keine Kapitalisierung. Künftige Unterhaltsbeiträge sind noch nicht fällig und können daher vom Rechtsöffnungsbegehren nicht erfasst werden. Entsprechend steht im Re…",
         "datum": "2024-08-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_V_235",
-        "zitierung": "BGE 150 V 235",
-        "regesteKurz": "Art. 8 Abs. 1, Art. 24 Abs. 1 und 3 AVIG; Höhe des anzurechnenden Zwischenverdienstes. Unter dem erzielten Zwischenverdienst gemäss Art. 24 Abs. 1 und 3 AVIG ist nicht der arbeitgeberseitig ausbezahlte Geldbetrag, sondern der arbeitsvertra…",
-        "datum": "2024-04-26",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_II_83",
-        "zitierung": "BGE 150 II 83",
-        "regesteKurz": "Art. 49 Abs. 1 und 2, Art. 51 Abs. 1 und 3 WRG; Art. 66 Abs. 1 und Art. 71 Abs. 1 kWRG; Art. 18 OR; Gegenstand der Konzession bildendes Wasser, welches nicht durch die in der Konzession vorgesehenen Anlagen aufgenommen werden kann, unterli…",
-        "datum": "2024-01-05",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -211,10 +305,62 @@
     ],
     "32": [
       {
+        "key": "bge_146_III_37",
+        "zitierung": "BGE 146 III 37",
+        "regesteKurz": "Art. 32 ff., 718 und 721 OR; Vertretung der Aktiengesellschaft, faktisches Organ. Vertretung der AG durch ihre Organe (E. 5.1), Prokuristen und andere Handlungsbevollmächtigte (E. 5.2) sowie durch ihre rechtsgeschäftlichen Stellvertreter (…",
+        "datum": "2019-10-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_146_III_121",
+        "zitierung": "BGE 146 III 121",
+        "regesteKurz": "Art. 32, 33, 38, 97 Abs. 1, 107 Abs. 1, 402 OR, Art. 3 ZGB; Banküberweisungen; allgemeine und unlimitierte Bankvollmacht des Vertreters; Selbstkontrahieren; fehlende Legitimation des Vertreters; Schaden. Ermittlung in drei Schritten wer, d…",
+        "datum": "2019-12-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_IV_465",
         "zitierung": "BGE 147 IV 465",
         "regesteKurz": "Art. 70 StGB; Art. 127 Abs. 1 StPO; Art. 35 Abs. 1 und Art. 405 Abs. 1 OR; Einziehung von Vermögenswerten gegenüber den Erben der beschuldigten Person; Prozessvollmacht über den Tod hinaus. Prozessvollmachten über den Tod hinaus (sog. tran…",
         "datum": "2021-08-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_387",
+        "zitierung": "BGE 146 III 387",
+        "regesteKurz": "Art. 32 Abs. 1, 44 Abs. 1, 97 Abs. 1, 99 Abs. 3, 101, 107 Abs. 1 OR; Banküberweisungen im Namen einer AG; Vollmacht mit Kollektivunterschrift zu zweien oder Zahlungsaufträge per e-banking, welche zu zweien zu visieren sind; Zahlungsmodalit…",
+        "datum": "2020-08-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "33": [
+      {
+        "key": "bge_146_III_37",
+        "zitierung": "BGE 146 III 37",
+        "regesteKurz": "Art. 32 ff., 718 und 721 OR; Vertretung der Aktiengesellschaft, faktisches Organ. Vertretung der AG durch ihre Organe (E. 5.1), Prokuristen und andere Handlungsbevollmächtigte (E. 5.2) sowie durch ihre rechtsgeschäftlichen Stellvertreter (…",
+        "datum": "2019-10-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_146_III_387",
+        "zitierung": "BGE 146 III 387",
+        "regesteKurz": "Art. 32 Abs. 1, 44 Abs. 1, 97 Abs. 1, 99 Abs. 3, 101, 107 Abs. 1 OR; Banküberweisungen im Namen einer AG; Vollmacht mit Kollektivunterschrift zu zweien oder Zahlungsaufträge per e-banking, welche zu zweien zu visieren sind; Zahlungsmodalit…",
+        "datum": "2020-08-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -234,6 +380,16 @@
       }
     ],
     "41": [
+      {
+        "key": "bge_147_III_463",
+        "zitierung": "BGE 147 III 463",
+        "regesteKurz": "Art. 42, 97 und 398 OR; Art. 8 ZGB; Art. 55 Abs. 1 ZPO; Verantwortlichkeit der Bank; Bestimmung des Schadens. Voraussetzungen der Verantwortlichkeit der Bank bei Nichterfüllung von punktuellen Investitionsanweisungen des Kunden (E. 4.1). S…",
+        "datum": "2021-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_146_III_25",
         "zitierung": "BGE 146 III 25",
@@ -265,6 +421,26 @@
         "gewicht": 0
       },
       {
+        "key": "bge_149_IV_289",
+        "zitierung": "BGE 149 IV 289",
+        "regesteKurz": "Art. 431 Abs. 2 und 3 StPO; Art. 66a f. StGB; Entschädigung für immateriellen Schaden wegen übermässigen Freiheitsentzuges; Berücksichtigung der niedrigeren Lebenshaltungskosten in dem Land, in das die berechtigte Person ausgewiesen werden…",
+        "datum": "2023-05-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_105",
+        "zitierung": "BGE 149 III 105",
+        "regesteKurz": "Vertrag \"execution only\"; Veruntreuung von Kundenguthaben durch einen Bankangestellten. Die verschiedenen im Rahmen einer Bankbeziehung abgeschlossenen Verträge bilden einen gemischten Vertrag (E. 4.1). Im Falle der Veruntreuung von Kunden…",
+        "datum": "2022-09-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_III_11",
         "zitierung": "BGE 148 III 11",
         "regesteKurz": "Art. 754 ff. OR; aktienrechtliche Verantwortlichkeit; Klagebefugnis. In der Konstellation, in der sowohl die Gesellschaft als auch der Gläubiger und/oder Aktionär unmittelbar bzw. direkt geschädigt sind, besteht, solange die Gesellschaft a…",
@@ -283,44 +459,44 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_47",
-        "zitierung": "BGE 147 IV 47",
-        "regesteKurz": "a Art. 81 Abs. 1 lit. b BGG; Art. 426 Abs. 2, Art. 433 Abs. 1 lit. b StPO; Beschwerdelegitimation der Privatklägerschaft bezüglich der Kostentragungspflicht einer beschuldigten Person, deren Verfahren eingestellt wurde. Das rechtlich gesch…",
-        "datum": "2020-12-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_IV_320",
-        "zitierung": "BGE 146 IV 320",
-        "regesteKurz": "Art. 186 StGB, Art. 30 Abs. 1 StGB; Hausfriedensbruch, Strafantragsberechtigung. Der Eigentümer einer Mietsache ist gegenüber Personen ohne durch ein Mietverhältnis gedecktes Gebrauchsrecht strafantragsberechtigt. Dies gilt unabhängig davo…",
-        "datum": "2020-08-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_IV_211",
-        "zitierung": "BGE 146 IV 211",
-        "regesteKurz": "Art. 122 Abs. 1, 126 Abs. 1 lit. a StPO; Art. 305 bis Ziff. 2 StGB; Art. 41, 50 Abs. 3 OR; Zivilklage, Schadenersatzforderung aus Geldwäscherei. Soweit das Gericht die beschuldigte Person schuldig spricht, ist der Entscheid über die anhäng…",
-        "datum": "2020-07-09",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "42": [
+      {
+        "key": "bge_147_III_463",
+        "zitierung": "BGE 147 III 463",
+        "regesteKurz": "Art. 42, 97 und 398 OR; Art. 8 ZGB; Art. 55 Abs. 1 ZPO; Verantwortlichkeit der Bank; Bestimmung des Schadens. Voraussetzungen der Verantwortlichkeit der Bank bei Nichterfüllung von punktuellen Investitionsanweisungen des Kunden (E. 4.1). S…",
+        "datum": "2021-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_151_III_95",
         "zitierung": "BGE 151 III 95",
         "regesteKurz": "a Art. 423 OR und Art. 2 Abs. 2 lit. f URG; Gewinnherausgabeanspruch bei Urheberrechtsverletzungen; böser Glaube des Urheberrechtsverletzers bei Werken der angewandten Kunst. An den Beweis des Kennenmüssens von Bestand und Schutzumfang des…",
         "datum": "2024-09-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_54",
+        "zitierung": "BGE 149 III 54",
+        "regesteKurz": "Art. 84 Abs. 1 und Art. 135 Ziff. 2 OR; Forderung in Euro; Unterbrechung der Verjährung durch ein Schlichtungsgesuch, worin die Forderung in Schweizer Franken beziffert ist. Hinweis auf die Rechtsprechung bezüglich der Währung, in der der…",
+        "datum": "2022-11-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_105",
+        "zitierung": "BGE 149 III 105",
+        "regesteKurz": "Vertrag \"execution only\"; Veruntreuung von Kundenguthaben durch einen Bankangestellten. Die verschiedenen im Rahmen einer Bankbeziehung abgeschlossenen Verträge bilden einen gemischten Vertrag (E. 4.1). Im Falle der Veruntreuung von Kunden…",
+        "datum": "2022-09-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -483,7 +659,53 @@
         "gewicht": 0
       }
     ],
+    "60": [
+      {
+        "key": "bge_146_III_14",
+        "zitierung": "BGE 146 III 14",
+        "regesteKurz": "Art. 60 Abs. 1 OR; Art. 127 i.V.m. Art. 130 Abs. 1 OR; Schadenersatzansprüche der Erben eines Asbestopfers; Beginn der absoluten Verjährung vertraglicher und ausservertraglicher Ansprüche. Keine Änderung der Rechtsprechung nach dem Urteil…",
+        "datum": "2019-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "62": [
+      {
+        "key": "bge_151_III_591",
+        "zitierung": "BGE 151 III 591",
+        "regesteKurz": "Art. 73 Abs. 1 lit. b BVG; sachliche Zuständigkeit des kantonalen Gerichts für Streitigkeiten im Bereich der beruflichen Vorsorge; Klage auf Rückerstattung von Prämien der gebundenen Selbstvorsorge. Die Klage auf Rückerstattung von Prämien…",
+        "datum": "2025-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "63": [
+      {
+        "key": "bge_147_III_153",
+        "zitierung": "BGE 147 III 153",
+        "regesteKurz": "Art. 17 Abs. 1 ZPO; Gerichtsstandsvereinbarung, Culpa in contrahendo. Grundsätze der Auslegung einer Gerichtsstandsvereinbarung (E. 5). Unmöglichkeit, den tatsächlichen übereinstimmenden Parteiwillen festzustellen (E. 6). Objektivierte Aus…",
+        "datum": "2021-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "67": [
+      {
+        "key": "bge_146_III_82",
+        "zitierung": "BGE 146 III 82",
+        "regesteKurz": "Art. 67 Abs. 1 und 130 Abs. 1 OR; Nichtigkeit des Anfangsmietzinses; Beginn der absoluten Verjährungsfrist für die Rückerstattungsforderung. Ist die Festsetzung des Anfangsmietzinses nichtig, beginnt die absolute Verjährungsfrist für den A…",
+        "datum": "2020-02-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_152_III_1",
         "zitierung": "BGE 152 III 1",
@@ -527,12 +749,48 @@
         "gewicht": 0
       }
     ],
+    "75": [
+      {
+        "key": "bge_148_III_145",
+        "zitierung": "BGE 148 III 145",
+        "regesteKurz": "Art. 82 Abs. 1 SchKG; Art. 75, 82 und 211 Abs. 1 OR; provisorische Rechtsöffnung. Grundstückkauf. Voraussetzung der Fälligkeit der Forderung auf Zahlung des Preises. Natur des Anbietens eigener Erfüllung. In der Vollstreckung des Grundstüc…",
+        "datum": "2021-12-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "77": [
       {
         "key": "bge_148_III_126",
         "zitierung": "BGE 148 III 126",
         "regesteKurz": "Ziff. 1 Abs. 3 und Ziff. 22 Gesamtarbeitsvertrag 2019 der SBB (GAV) i.V.m. Art. 335b Abs. 3 OR; Verlängerung der Probezeit bei Krankheit. Bei krankheitsbedingtem Arbeitsausfall während der Probezeit verlängert sich diese um die Anzahl der…",
         "datum": "2022-03-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "78": [
+      {
+        "key": "bge_148_III_126",
+        "zitierung": "BGE 148 III 126",
+        "regesteKurz": "Ziff. 1 Abs. 3 und Ziff. 22 Gesamtarbeitsvertrag 2019 der SBB (GAV) i.V.m. Art. 335b Abs. 3 OR; Verlängerung der Probezeit bei Krankheit. Bei krankheitsbedingtem Arbeitsausfall während der Probezeit verlängert sich diese um die Anzahl der…",
+        "datum": "2022-03-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "79": [
+      {
+        "key": "bge_148_III_145",
+        "zitierung": "BGE 148 III 145",
+        "regesteKurz": "Art. 82 Abs. 1 SchKG; Art. 75, 82 und 211 Abs. 1 OR; provisorische Rechtsöffnung. Grundstückkauf. Voraussetzung der Fälligkeit der Forderung auf Zahlung des Preises. Natur des Anbietens eigener Erfüllung. In der Vollstreckung des Grundstüc…",
+        "datum": "2021-12-14",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -563,12 +821,120 @@
         "gewicht": 0
       }
     ],
+    "91": [
+      {
+        "key": "bge_150_III_22",
+        "zitierung": "BGE 150 III 22",
+        "regesteKurz": "Art. 324 und 91 OR; Annahmeverzug des Arbeitgebers; ungerechtfertigte Verweigerung der gehörig angebotenen Leistung; Betriebsschliessungen zur Bekämpfung des Coronavirus. Die Arbeitsverhinderung als Folge von Massnahmen zur Bekämpfung des…",
+        "datum": "2023-08-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "97": [
+      {
+        "key": "bge_146_III_326",
+        "zitierung": "BGE 146 III 326",
+        "regesteKurz": "Art. 100 Abs. 1, 101 Abs. 3, 107 Abs. 1, 402 OR; Banküberweisungen; fehlende Legitimation des Auftraggebers oder Fälschung von Überweisungsaufträgen; Risikotransferklausel für per E-Mail erteilte Aufträge; grobes Verschulden der Finanzdien…",
+        "datum": "2020-07-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "100": [
+      {
+        "key": "bge_146_III_326",
+        "zitierung": "BGE 146 III 326",
+        "regesteKurz": "Art. 100 Abs. 1, 101 Abs. 3, 107 Abs. 1, 402 OR; Banküberweisungen; fehlende Legitimation des Auftraggebers oder Fälschung von Überweisungsaufträgen; Risikotransferklausel für per E-Mail erteilte Aufträge; grobes Verschulden der Finanzdien…",
+        "datum": "2020-07-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "101": [
+      {
+        "key": "bge_146_III_387",
+        "zitierung": "BGE 146 III 387",
+        "regesteKurz": "Art. 32 Abs. 1, 44 Abs. 1, 97 Abs. 1, 99 Abs. 3, 101, 107 Abs. 1 OR; Banküberweisungen im Namen einer AG; Vollmacht mit Kollektivunterschrift zu zweien oder Zahlungsaufträge per e-banking, welche zu zweien zu visieren sind; Zahlungsmodalit…",
+        "datum": "2020-08-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_146_III_121",
+        "zitierung": "BGE 146 III 121",
+        "regesteKurz": "Art. 32, 33, 38, 97 Abs. 1, 107 Abs. 1, 402 OR, Art. 3 ZGB; Banküberweisungen; allgemeine und unlimitierte Bankvollmacht des Vertreters; Selbstkontrahieren; fehlende Legitimation des Vertreters; Schaden. Ermittlung in drei Schritten wer, d…",
+        "datum": "2019-12-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_III_105",
+        "zitierung": "BGE 149 III 105",
+        "regesteKurz": "Vertrag \"execution only\"; Veruntreuung von Kundenguthaben durch einen Bankangestellten. Die verschiedenen im Rahmen einer Bankbeziehung abgeschlossenen Verträge bilden einen gemischten Vertrag (E. 4.1). Im Falle der Veruntreuung von Kunden…",
+        "datum": "2022-09-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "102": [
+      {
+        "key": "bge_151_III_405",
+        "zitierung": "BGE 151 III 405",
+        "regesteKurz": "Tragweite einer von einem Generalunternehmer an einen Handwerker ausgestellten Schuldanerkennung bei der definitiven Rechtsöffnung zur Beseitigung des Rechtsvorschlags eines Dritten, der Eigentümer der Liegenschaft ist, in einer vom Handwe…",
+        "datum": "2024-12-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_III_63",
+        "zitierung": "BGE 150 III 63",
+        "regesteKurz": "Art. 779f ff. ZGB; Art. 107 und 108 Ziff. 1 OR analog; Baurecht, für die Ausübung des vorzeitigen Heimfallrechts notwendige formelle Voraussetzungen. In analoger Anwendung von Art. 107 und 108 Ziff. 1 OR muss der Grundeigentümer, welcher s…",
+        "datum": "2023-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_III_322",
         "zitierung": "BGE 148 III 322",
         "regesteKurz": "Art. 84 Abs. 2, Art. 85 Abs. 1, Art. 221 Abs. 1 lit. b und Art. 244 Abs. 1 lit. b ZPO; Rechtsbegehren; unbezifferte Forderungsklage. Beruft sich die klagende Partei auf eine Ausnahme von der Pflicht zur Bezifferung einer Klage auf Bezahlun…",
         "datum": "2022-05-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_145",
+        "zitierung": "BGE 148 III 145",
+        "regesteKurz": "Art. 82 Abs. 1 SchKG; Art. 75, 82 und 211 Abs. 1 OR; provisorische Rechtsöffnung. Grundstückkauf. Voraussetzung der Fälligkeit der Forderung auf Zahlung des Preises. Natur des Anbietens eigener Erfüllung. In der Vollstreckung des Grundstüc…",
+        "datum": "2021-12-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_42",
+        "zitierung": "BGE 148 III 42",
+        "regesteKurz": "Art. 99 Abs. 1 lit. c ZPO; Sicherheit für die Parteientschädigung. Art. 99 Abs. 1 lit. c ZPO setzt dem Wortlaut nach voraus, dass die klagende Partei Prozesskosten aus früheren Verfahren schuldet. Der Begriff der \"Prozesskosten\" umfasst na…",
+        "datum": "2021-09-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -627,6 +993,82 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_225",
+        "zitierung": "BGE 148 III 225",
+        "regesteKurz": "Art. 80 SchKG; definitive Rechtsöffnung; auf einer gesetzlichen Grundlage beruhende Gebühren, die jedoch nicht Gegenstand eines Entscheids waren. Das Bestehen eines Titels steht im Zentrum des Rechtsöffnungsverfahrens. Daher kann die defin…",
+        "datum": "2022-03-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "106": [
+      {
+        "key": "bge_148_III_225",
+        "zitierung": "BGE 148 III 225",
+        "regesteKurz": "Art. 80 SchKG; definitive Rechtsöffnung; auf einer gesetzlichen Grundlage beruhende Gebühren, die jedoch nicht Gegenstand eines Entscheids waren. Das Bestehen eines Titels steht im Zentrum des Rechtsöffnungsverfahrens. Daher kann die defin…",
+        "datum": "2022-03-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "107": [
+      {
+        "key": "bge_146_III_121",
+        "zitierung": "BGE 146 III 121",
+        "regesteKurz": "Art. 32, 33, 38, 97 Abs. 1, 107 Abs. 1, 402 OR, Art. 3 ZGB; Banküberweisungen; allgemeine und unlimitierte Bankvollmacht des Vertreters; Selbstkontrahieren; fehlende Legitimation des Vertreters; Schaden. Ermittlung in drei Schritten wer, d…",
+        "datum": "2019-12-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_146_III_326",
+        "zitierung": "BGE 146 III 326",
+        "regesteKurz": "Art. 100 Abs. 1, 101 Abs. 3, 107 Abs. 1, 402 OR; Banküberweisungen; fehlende Legitimation des Auftraggebers oder Fälschung von Überweisungsaufträgen; Risikotransferklausel für per E-Mail erteilte Aufträge; grobes Verschulden der Finanzdien…",
+        "datum": "2020-07-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_III_63",
+        "zitierung": "BGE 150 III 63",
+        "regesteKurz": "Art. 779f ff. ZGB; Art. 107 und 108 Ziff. 1 OR analog; Baurecht, für die Ausübung des vorzeitigen Heimfallrechts notwendige formelle Voraussetzungen. In analoger Anwendung von Art. 107 und 108 Ziff. 1 OR muss der Grundeigentümer, welcher s…",
+        "datum": "2023-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_387",
+        "zitierung": "BGE 146 III 387",
+        "regesteKurz": "Art. 32 Abs. 1, 44 Abs. 1, 97 Abs. 1, 99 Abs. 3, 101, 107 Abs. 1 OR; Banküberweisungen im Namen einer AG; Vollmacht mit Kollektivunterschrift zu zweien oder Zahlungsaufträge per e-banking, welche zu zweien zu visieren sind; Zahlungsmodalit…",
+        "datum": "2020-08-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "108": [
+      {
+        "key": "bge_150_III_63",
+        "zitierung": "BGE 150 III 63",
+        "regesteKurz": "Art. 779f ff. ZGB; Art. 107 und 108 Ziff. 1 OR analog; Baurecht, für die Ausübung des vorzeitigen Heimfallrechts notwendige formelle Voraussetzungen. In analoger Anwendung von Art. 107 und 108 Ziff. 1 OR muss der Grundeigentümer, welcher s…",
+        "datum": "2023-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "110": [
@@ -635,6 +1077,18 @@
         "zitierung": "BGE 148 III 270",
         "regesteKurz": "Art. 131a Abs. 2 und Art. 289 Abs. 2 ZGB; Passivlegitimation bei der Abänderungsklage für Kindesunterhalt im Bevorschussungsfall; Gegenstand der Subrogation; das bevorschussende Gemeinwesen ist aus materiellen Gründen nicht passivlegitimie…",
         "datum": "2022-01-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "111": [
+      {
+        "key": "bge_151_III_538",
+        "zitierung": "BGE 151 III 538",
+        "regesteKurz": "Art. 82 SchKG; Art. 257e Abs. 4 OR; provisorische Rechtsöffnung; befreiende Einwendung; vom Mieter gestellte Sicherheiten. Im Rahmen einer summarischen Prüfung der rechtlichen Begründetheit der befreienden Einwendung des Betriebenen darf d…",
+        "datum": "2025-07-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -729,10 +1183,30 @@
         "gewicht": 0
       },
       {
+        "key": "bge_148_II_73",
+        "zitierung": "BGE 148 II 73",
+        "regesteKurz": "Art. 3 Abs. 1, Art. 4, Art. 19 Abs. 1 lit. a und Art. 20 Abs. 1 VG; Art. 1 Abs. 1, Art. 10 Abs. 1 und Art. 66 Abs. 2 BVG; Art. 10 BVV 2; Art. 49 Abs. 1 SchlT ZGB; Staatshaftung; Lücke in der beruflichen Vorsorge. Voraussetzungen der Verant…",
+        "datum": "2022-01-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_147_III_553",
         "zitierung": "BGE 147 III 553",
         "regesteKurz": "Art. 647 Abs. 2 Ziff. 2, Art. 647c ff., Art. 712h Abs. 1 und 2 Ziff. 1 sowie Art. 712m Abs. 1 Ziff. 1 ZGB. Für bauliche Massnahmen an gemeinschaftlichen Teilen bedarf es eines Beschlusses (inkl. Kostenbeschluss) der Gemeinschaft, soweit ni…",
         "datum": "2021-06-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_55",
+        "zitierung": "BGE 147 IV 55",
+        "regesteKurz": "Art. 3 EMRK, Art. 431 StPO, Art. 125 Ziff. 2 OR; Entschädigung für rechtswidrige Haftbedingungen im Anschluss an die strafrechtliche Beurteilung; Verpflichtung besonderer Natur; Ausnahme vom Grundsatz der Verrechnung mit den Kosten des Str…",
+        "datum": "2020-11-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -795,10 +1269,60 @@
         "gewicht": 1
       },
       {
+        "key": "bge_146_III_14",
+        "zitierung": "BGE 146 III 14",
+        "regesteKurz": "Art. 60 Abs. 1 OR; Art. 127 i.V.m. Art. 130 Abs. 1 OR; Schadenersatzansprüche der Erben eines Asbestopfers; Beginn der absoluten Verjährung vertraglicher und ausservertraglicher Ansprüche. Keine Änderung der Rechtsprechung nach dem Urteil…",
+        "datum": "2019-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_III_63",
+        "zitierung": "BGE 150 III 63",
+        "regesteKurz": "Art. 779f ff. ZGB; Art. 107 und 108 Ziff. 1 OR analog; Baurecht, für die Ausübung des vorzeitigen Heimfallrechts notwendige formelle Voraussetzungen. In analoger Anwendung von Art. 107 und 108 Ziff. 1 OR muss der Grundeigentümer, welcher s…",
+        "datum": "2023-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_III_242",
         "zitierung": "BGE 149 III 242",
         "regesteKurz": "Art. 46 Abs. 1 VVG; Art. 127 OR; Rechtsschutzversicherung; Verjährung des Haftungsanspruchs für die Beratung durch den Versicherer. Auf die Schadenersatzforderung des Versicherten für die juristische Beratung durch die Rechtsschutzversiche…",
         "datum": "2023-02-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_54",
+        "zitierung": "BGE 149 III 54",
+        "regesteKurz": "Art. 84 Abs. 1 und Art. 135 Ziff. 2 OR; Forderung in Euro; Unterbrechung der Verjährung durch ein Schlichtungsgesuch, worin die Forderung in Schweizer Franken beziffert ist. Hinweis auf die Rechtsprechung bezüglich der Währung, in der der…",
+        "datum": "2022-11-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_401",
+        "zitierung": "BGE 148 III 401",
+        "regesteKurz": "Art. 39 ZPO; Art. 122 Abs. 1 und 3 StPO; Art. 135 Ziff. 2 OR; Auftrag; Klage aus Vertrag; Unzuständigkeit des Strafgerichts; Unterbrechung der Verjährung. Ansprüche aus Vertrag können nicht Gegenstand einer adhäsionsweise erhobenen Zivilkl…",
+        "datum": "2022-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_II_73",
+        "zitierung": "BGE 148 II 73",
+        "regesteKurz": "Art. 3 Abs. 1, Art. 4, Art. 19 Abs. 1 lit. a und Art. 20 Abs. 1 VG; Art. 1 Abs. 1, Art. 10 Abs. 1 und Art. 66 Abs. 2 BVG; Art. 10 BVV 2; Art. 49 Abs. 1 SchlT ZGB; Staatshaftung; Lücke in der beruflichen Vorsorge. Voraussetzungen der Verant…",
+        "datum": "2022-01-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -813,22 +1337,34 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      }
+    ],
+    "128": [
+      {
+        "key": "bge_146_III_82",
+        "zitierung": "BGE 146 III 82",
+        "regesteKurz": "Art. 67 Abs. 1 und 130 Abs. 1 OR; Nichtigkeit des Anfangsmietzinses; Beginn der absoluten Verjährungsfrist für die Rückerstattungsforderung. Ist die Festsetzung des Anfangsmietzinses nichtig, beginnt die absolute Verjährungsfrist für den A…",
+        "datum": "2020-02-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
       },
       {
-        "key": "bge_146_V_1",
-        "zitierung": "BGE 146 V 1",
-        "regesteKurz": "Frist für die Vollstreckungsverwirkung bei rechtskräftig festgesetzten Leistungen; Gesetzeslücke. Wo das massgebliche Einzelgesetz (hier das UVG für eine Rente der Unfallversicherung) keine Regelung enthält, gilt für die Vollstreckung rech…",
-        "datum": "2020-01-14",
+        "key": "bge_148_III_63",
+        "zitierung": "BGE 148 III 63",
+        "regesteKurz": "Art. 67 und 270 Abs. 2 OR; Verjährung der Klage auf Feststellung der Nichtigkeit des Anfangsmietzinses; Beginn der Verjährungsfrist (Präzisierung der Rechtsprechung). Interesse des Mieters, den Anfangsmietzins anzufechten, je nachdem ob di…",
+        "datum": "2022-01-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_146_III_14",
-        "zitierung": "BGE 146 III 14",
-        "regesteKurz": "Art. 60 Abs. 1 OR; Art. 127 i.V.m. Art. 130 Abs. 1 OR; Schadenersatzansprüche der Erben eines Asbestopfers; Beginn der absoluten Verjährung vertraglicher und ausservertraglicher Ansprüche. Keine Änderung der Rechtsprechung nach dem Urteil…",
-        "datum": "2019-11-06",
+        "key": "bge_147_III_78",
+        "zitierung": "BGE 147 III 78",
+        "regesteKurz": "Art. 127, 330a OR; Arbeitszeugnis, Verjährung. Klagen auf Ausstellung bzw. Berichtigung eines Arbeitszeugnisses unterliegen der allgemeinen Verjährungsfrist von zehn Jahren gemäss Art. 127 OR (E. 6.2-6.9). Regeste Art. 127, 330a CO; certif…",
+        "datum": "2020-12-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -857,10 +1393,32 @@
         "gewicht": 0
       },
       {
+        "key": "bge_146_III_82",
+        "zitierung": "BGE 146 III 82",
+        "regesteKurz": "Art. 67 Abs. 1 und 130 Abs. 1 OR; Nichtigkeit des Anfangsmietzinses; Beginn der absoluten Verjährungsfrist für die Rückerstattungsforderung. Ist die Festsetzung des Anfangsmietzinses nichtig, beginnt die absolute Verjährungsfrist für den A…",
+        "datum": "2020-02-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_146_III_14",
         "zitierung": "BGE 146 III 14",
         "regesteKurz": "Art. 60 Abs. 1 OR; Art. 127 i.V.m. Art. 130 Abs. 1 OR; Schadenersatzansprüche der Erben eines Asbestopfers; Beginn der absoluten Verjährung vertraglicher und ausservertraglicher Ansprüche. Keine Änderung der Rechtsprechung nach dem Urteil…",
         "datum": "2019-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "131": [
+      {
+        "key": "bge_146_III_82",
+        "zitierung": "BGE 146 III 82",
+        "regesteKurz": "Art. 67 Abs. 1 und 130 Abs. 1 OR; Nichtigkeit des Anfangsmietzinses; Beginn der absoluten Verjährungsfrist für die Rückerstattungsforderung. Ist die Festsetzung des Anfangsmietzinses nichtig, beginnt die absolute Verjährungsfrist für den A…",
+        "datum": "2020-02-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -893,6 +1451,26 @@
     ],
     "135": [
       {
+        "key": "bge_147_III_166",
+        "zitierung": "BGE 147 III 166",
+        "regesteKurz": "Art. 71 Abs. 1, 81 Abs. 1, 82 Abs. 1, Satz 2, 85 Abs. 1 ZPO; 135 Ziff. 2 OR. Der Antrag auf Zulassung der Streitverkündungsklage muss Rechtsbegehren enthalten, die geeignet sind, die Verjährung zu unterbrechen, sowie eine Begründung, die d…",
+        "datum": "2021-03-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_III_217",
+        "zitierung": "BGE 151 III 217",
+        "regesteKurz": "Art. 494 Abs. 3 i.V.m. Art. 533 Abs. 1 ZGB; Art. 63 und 199 Abs. 1 ZPO; Wahrung der Verwirkungsfrist durch Einreichung eines Schlichtungsgesuchs und anschliessender Klage beim Gericht, nachdem die Parteien gemeinsam auf die Durchführung de…",
+        "datum": "2024-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_V_89",
         "zitierung": "BGE 150 V 89",
         "regesteKurz": "Art. 35a Abs. 2 (in den Fassungen vor und ab 1. Januar 2021), Art. 6 BVG; Art. 135 OR analog; Rückforderung von Rentenleistungen; Kollisionsrecht; Verhältnis Gesetz - Reglement; Beginn der relativen Frist für die Rückforderung; Fristunterb…",
@@ -913,6 +1491,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_149_III_242",
+        "zitierung": "BGE 149 III 242",
+        "regesteKurz": "Art. 46 Abs. 1 VVG; Art. 127 OR; Rechtsschutzversicherung; Verjährung des Haftungsanspruchs für die Beratung durch den Versicherer. Auf die Schadenersatzforderung des Versicherten für die juristische Beratung durch die Rechtsschutzversiche…",
+        "datum": "2023-02-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_III_54",
         "zitierung": "BGE 149 III 54",
         "regesteKurz": "Art. 84 Abs. 1 und Art. 135 Ziff. 2 OR; Forderung in Euro; Unterbrechung der Verjährung durch ein Schlichtungsgesuch, worin die Forderung in Schweizer Franken beziffert ist. Hinweis auf die Rechtsprechung bezüglich der Währung, in der der…",
@@ -923,30 +1511,20 @@
         "gewicht": 0
       },
       {
+        "key": "bge_148_III_401",
+        "zitierung": "BGE 148 III 401",
+        "regesteKurz": "Art. 39 ZPO; Art. 122 Abs. 1 und 3 StPO; Art. 135 Ziff. 2 OR; Auftrag; Klage aus Vertrag; Unzuständigkeit des Strafgerichts; Unterbrechung der Verjährung. Ansprüche aus Vertrag können nicht Gegenstand einer adhäsionsweise erhobenen Zivilkl…",
+        "datum": "2022-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_III_420",
         "zitierung": "BGE 148 III 420",
         "regesteKurz": "Art. 38 LugÜ, Art. 250 Abs. 2 SchKG, Art. 148 Abs. 1 IPRG; vollstreckbar erklärtes ausländisches Urteil, negative Kollokationsklage, Einrede der Verjährung. Im negativen Kollokationsprozess kann der Kläger an Stelle des Gemeinschuldners ge…",
         "datum": "2022-08-02",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_III_322",
-        "zitierung": "BGE 148 III 322",
-        "regesteKurz": "Art. 84 Abs. 2, Art. 85 Abs. 1, Art. 221 Abs. 1 lit. b und Art. 244 Abs. 1 lit. b ZPO; Rechtsbegehren; unbezifferte Forderungsklage. Beruft sich die klagende Partei auf eine Ausnahme von der Pflicht zur Bezifferung einer Klage auf Bezahlun…",
-        "datum": "2022-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_III_419",
-        "zitierung": "BGE 147 III 419",
-        "regesteKurz": "Art. 138 Abs. 1 OR; Unterbrechung der Verjährung durch Schlichtungsgesuch, Klage oder Einrede; Beginn einer neuen Frist; Abschluss des Rechtsstreits vor der befassten Instanz. Wird die Verjährung durch Schlichtungsgesuch, Klage oder Einred…",
-        "datum": "2021-04-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -975,7 +1553,49 @@
         "gewicht": 0
       }
     ],
+    "139": [
+      {
+        "key": "bge_146_III_265",
+        "zitierung": "BGE 146 III 265",
+        "regesteKurz": "Art. 18, 52, 59, 60 und 197 ff. ZPO; örtliche Zuständigkeit; Nichteintretensentscheid; Gültigkeit einer Klagebewilligung, die durch eine örtlich unzuständige Schlichtungsbehörde ausgestellt wurde. Wenn die Schlichtungsbehörde als reine Sch…",
+        "datum": "2020-03-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "142": [
+      {
+        "key": "bge_151_III_405",
+        "zitierung": "BGE 151 III 405",
+        "regesteKurz": "Tragweite einer von einem Generalunternehmer an einen Handwerker ausgestellten Schuldanerkennung bei der definitiven Rechtsöffnung zur Beseitigung des Rechtsvorschlags eines Dritten, der Eigentümer der Liegenschaft ist, in einer vom Handwe…",
+        "datum": "2024-12-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_304",
+        "zitierung": "BGE 149 III 304",
+        "regesteKurz": "Einsprache gegen die missbräuchliche Kündigung (Art. 336b OR). Der Kläger muss die Tatsachen behaupten und beweisen, gestützt auf welche das Gericht schliessen kann, dass er gegen die angeblich missbräuchliche Kündigung Einsprache erhoben…",
+        "datum": "2023-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_63",
+        "zitierung": "BGE 148 III 63",
+        "regesteKurz": "Art. 67 und 270 Abs. 2 OR; Verjährung der Klage auf Feststellung der Nichtigkeit des Anfangsmietzinses; Beginn der Verjährungsfrist (Präzisierung der Rechtsprechung). Interesse des Mieters, den Anfangsmietzins anzufechten, je nachdem ob di…",
+        "datum": "2022-01-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_146_III_25",
         "zitierung": "BGE 146 III 25",
@@ -1029,6 +1649,18 @@
         "zitierung": "BGE 147 III 176",
         "regesteKurz": "Art. 82 Abs. 1 SchKG; Art. 320 lit. a i.V.m. Art. 57 ZPO; Prüfungsbefugnis der Beschwerdeinstanz im Verfahren der provisorischen Rechtsöffnung. Bestreitet die betriebene Partei im Verfahren der provisorischen Rechtsöffnung vor der kantonal…",
         "datum": "2020-11-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "164": [
+      {
+        "key": "bge_151_III_497",
+        "zitierung": "BGE 151 III 497",
+        "regesteKurz": "Prozessstandschaft; Prozessmaxime betreffend die Prozessvoraussetzungen der Klage; gerichtliche Fragepflicht. Die Befugnis, im eigenen Namen das Recht eines Dritten gerichtlich geltend zu machen (Prozessstandschaft), stellt eine Prozessvor…",
+        "datum": "2025-05-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1099,6 +1731,88 @@
         "zitierung": "BGE 150 III 390",
         "regesteKurz": "Art. 8a Abs. 3 lit. d SchKG; Gesuch um Nichtbekanntgabe einer Betreibung an Dritte. Wenn der Schuldner die Forderung bereits vor der Einleitung der Betreibung bezahlt hat, kann er ein Gesuch um Nichtbekanntgabe der Betreibung an Dritte ste…",
         "datum": "2024-08-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "184": [
+      {
+        "key": "bge_150_IV_188",
+        "zitierung": "BGE 150 IV 188",
+        "regesteKurz": "Art. 1 ff. und 184 Abs. 1 OR; Art. 146 Abs. 1 und Art. 147 Abs. 1 StGB; Online-Bestellung von Waren auf Rechnung; Täuschung über den Zahlungswillen; Abgrenzung des Betrugs zum betrügerischen Missbrauch einer Datenverarbeitungsanlage. Zusta…",
+        "datum": "2024-04-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_145",
+        "zitierung": "BGE 148 III 145",
+        "regesteKurz": "Art. 82 Abs. 1 SchKG; Art. 75, 82 und 211 Abs. 1 OR; provisorische Rechtsöffnung. Grundstückkauf. Voraussetzung der Fälligkeit der Forderung auf Zahlung des Preises. Natur des Anbietens eigener Erfüllung. In der Vollstreckung des Grundstüc…",
+        "datum": "2021-12-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "201": [
+      {
+        "key": "bge_149_III_304",
+        "zitierung": "BGE 149 III 304",
+        "regesteKurz": "Einsprache gegen die missbräuchliche Kündigung (Art. 336b OR). Der Kläger muss die Tatsachen behaupten und beweisen, gestützt auf welche das Gericht schliessen kann, dass er gegen die angeblich missbräuchliche Kündigung Einsprache erhoben…",
+        "datum": "2023-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "205": [
+      {
+        "key": "bge_149_III_310",
+        "zitierung": "BGE 149 III 310",
+        "regesteKurz": "Art. 82 SchKG; provisorische Rechtsöffnung und Kaufvertrag. Provisorische Rechtsöffnung gegen einen Schuldner, der sein Recht auf Preisminderung wegen eines Mangels der Kaufsache geltend macht. Einrede gemäss Art. 82 Abs. 2 SchKG oder Best…",
+        "datum": "2023-03-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "211": [
+      {
+        "key": "bge_148_III_145",
+        "zitierung": "BGE 148 III 145",
+        "regesteKurz": "Art. 82 Abs. 1 SchKG; Art. 75, 82 und 211 Abs. 1 OR; provisorische Rechtsöffnung. Grundstückkauf. Voraussetzung der Fälligkeit der Forderung auf Zahlung des Preises. Natur des Anbietens eigener Erfüllung. In der Vollstreckung des Grundstüc…",
+        "datum": "2021-12-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "213": [
+      {
+        "key": "bge_148_III_145",
+        "zitierung": "BGE 148 III 145",
+        "regesteKurz": "Art. 82 Abs. 1 SchKG; Art. 75, 82 und 211 Abs. 1 OR; provisorische Rechtsöffnung. Grundstückkauf. Voraussetzung der Fälligkeit der Forderung auf Zahlung des Preises. Natur des Anbietens eigener Erfüllung. In der Vollstreckung des Grundstüc…",
+        "datum": "2021-12-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "214": [
+      {
+        "key": "bge_150_III_63",
+        "zitierung": "BGE 150 III 63",
+        "regesteKurz": "Art. 779f ff. ZGB; Art. 107 und 108 Ziff. 1 OR analog; Baurecht, für die Ausübung des vorzeitigen Heimfallrechts notwendige formelle Voraussetzungen. In analoger Anwendung von Art. 107 und 108 Ziff. 1 OR muss der Grundeigentümer, welcher s…",
+        "datum": "2023-12-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1187,12 +1901,36 @@
         "gewicht": 0
       }
     ],
+    "256": [
+      {
+        "key": "bge_151_III_16",
+        "zitierung": "BGE 151 III 16",
+        "regesteKurz": "Art. 269b, 269a lit. b OR und Art. 14 Abs. 1 und 4 VMWG; Indexmietverträge; Mietzinserhöhung aufgrund von Mehrleistungen des Vermieters; umfassende Überholungen; Rendite von wertvermehrenden Investitionen. Der zulässige Renditesatz für wer…",
+        "datum": "2024-07-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "258": [
       {
         "key": "bge_146_III_25",
         "zitierung": "BGE 146 III 25",
         "regesteKurz": "Art. 60 Abs. 1 OR; Art. 127 i.V.m. Art. 130 Abs. 1 OR; Art. 6 Ziff. 1 EMRK; Schadenersatzansprüche der Erben eines Asbestopfers; Beginn der absoluten Verjährung vertraglicher und ausservertraglicher Ansprüche; Bedeutung des EGMR-Urteils Ho…",
         "datum": "2019-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "260": [
+      {
+        "key": "bge_151_III_16",
+        "zitierung": "BGE 151 III 16",
+        "regesteKurz": "Art. 269b, 269a lit. b OR und Art. 14 Abs. 1 und 4 VMWG; Indexmietverträge; Mietzinserhöhung aufgrund von Mehrleistungen des Vermieters; umfassende Überholungen; Rendite von wertvermehrenden Investitionen. Der zulässige Renditesatz für wer…",
+        "datum": "2024-07-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1221,7 +1959,59 @@
         "gewicht": 0
       }
     ],
+    "268": [
+      {
+        "key": "bge_146_III_303",
+        "zitierung": "BGE 146 III 303",
+        "regesteKurz": "Art. 95, 98 BGG; Art. 283 SchKG; Rechtsnatur der Aufnahme des Retentionsverzeichnisses; Folgen für die Beschwerde in Zivilsachen. Unterscheidung der Rechtsnatur der Aufnahme des Retentionsverzeichnisses danach, ob die materiellen Vorausset…",
+        "datum": "2020-03-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "269": [
+      {
+        "key": "bge_147_III_14",
+        "zitierung": "BGE 147 III 14",
+        "regesteKurz": "Art. 269, 270 OR; Anfechtung des Anfangsmietzinses; Berechnung der Nettorendite; Teuerungsanpassung des Eigenkapitals und Eigenkapitalrendite (Rechtsprechungsänderung). Absolute Methode und anwendbare Kriterien für die Kontrolle des Anfang…",
+        "datum": "2020-10-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_148_III_209",
+        "zitierung": "BGE 148 III 209",
+        "regesteKurz": "Art. 269a und 270 OR; Anfechtung des Anfangsmietzinses für eine Altbauwohnung; missbräuchlicher Mietzins; Festsetzung des neuen Anfangsmietzinses. Fälle, in denen die Missbräuchlichkeit des Anfangsmietzinses vermutet wird (Zusammenfassung…",
+        "datum": "2022-05-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_III_32",
+        "zitierung": "BGE 147 III 32",
+        "regesteKurz": "Art. 269b, 269d, 270a OR; indexierte Mietzinse; Herabsetzungsbegehren nach Ablauf der Mindestmietdauer; relative Berechnungsmethode und Ablehnung der absoluten Methode. Anwendbarkeit der relativen Berechnungsmethode beim Begehren um Änderu…",
+        "datum": "2021-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_III_201",
+        "zitierung": "BGE 151 III 201",
+        "regesteKurz": "Art. 269a lit. c OR; Art. 58 ZPO; Anfechtung des Anfangsmietzinses; Dispositionsmaxime; Berechnung der Bruttorendite. Berechnung des zulässigen Mietzinses gemäss der Bruttorenditemethode; Grundsätze (E. 4). Das Gericht, das zur Festlegung…",
+        "datum": "2024-10-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_III_16",
         "zitierung": "BGE 151 III 16",
@@ -1245,6 +2035,26 @@
     ],
     "270": [
       {
+        "key": "bge_146_III_82",
+        "zitierung": "BGE 146 III 82",
+        "regesteKurz": "Art. 67 Abs. 1 und 130 Abs. 1 OR; Nichtigkeit des Anfangsmietzinses; Beginn der absoluten Verjährungsfrist für die Rückerstattungsforderung. Ist die Festsetzung des Anfangsmietzinses nichtig, beginnt die absolute Verjährungsfrist für den A…",
+        "datum": "2020-02-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_III_209",
+        "zitierung": "BGE 148 III 209",
+        "regesteKurz": "Art. 269a und 270 OR; Anfechtung des Anfangsmietzinses für eine Altbauwohnung; missbräuchlicher Mietzins; Festsetzung des neuen Anfangsmietzinses. Fälle, in denen die Missbräuchlichkeit des Anfangsmietzinses vermutet wird (Zusammenfassung…",
+        "datum": "2022-05-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_III_63",
         "zitierung": "BGE 148 III 63",
         "regesteKurz": "Art. 67 und 270 Abs. 2 OR; Verjährung der Klage auf Feststellung der Nichtigkeit des Anfangsmietzinses; Beginn der Verjährungsfrist (Präzisierung der Rechtsprechung). Interesse des Mieters, den Anfangsmietzins anzufechten, je nachdem ob di…",
@@ -1267,10 +2077,30 @@
     ],
     "271": [
       {
+        "key": "bge_148_III_215",
+        "zitierung": "BGE 148 III 215",
+        "regesteKurz": "Art. 271 und 271a OR; Kündigung des Mietverhältnisses; Renovationsarbeiten. Zusammenfassung der Regeln und Grundsätze zur ordentlichen Kündigung des Mietverhältnisses (E. 3.1). Diese finden auch auf die Kündigung durch den Vermieter zur Du…",
+        "datum": "2022-05-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_III_481",
         "zitierung": "BGE 151 III 481",
         "regesteKurz": "a Art. 17 Abs. 1 und Art. 21 Abs. 2 BZP i.V.m. Art. 71 BGG; Art. 261 Abs. 1 OR; Art. 83 Abs. 4 ZPO; Art. 17 Abs. 3 BZP. Wechsel des Eigentümers des Mietobjekts während hängigem Verfahren; prozessuale Konsequenzen (E. 1 und 5). Regeste b Ar…",
         "datum": "2025-04-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_III_103",
+        "zitierung": "BGE 150 III 103",
+        "regesteKurz": "Art. 677 ZGB in Verbindung mit Art. 642 und 667 Abs. 1 ZGB; Fahrnisbauten; Miete eines unbebauten Grundstücks am Seeufer, auf dem der Mieter ein Chalet errichtet. Für die in Art. 677 ZGB exemplarisch aufgeführten Bauten, die nach früherem…",
+        "datum": "2023-10-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1311,6 +2141,30 @@
         "gewicht": 0
       }
     ],
+    "321": [
+      {
+        "key": "bge_151_V_368",
+        "zitierung": "BGE 151 V 368",
+        "regesteKurz": "Art. 31 Abs. 1 AVIG; Art. 46 AVIV; Kurzarbeitsentschädigung; normale Arbeitszeit und flexibles Arbeitszeitsystem; Auslegung eines Arbeitsvertrags. Zusammenfassung der Rechtsprechung zur Gleitzeitarbeit (E. 5.2). Die Auslegung des Arbeitsve…",
+        "datum": "2025-06-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "322": [
+      {
+        "key": "bge_149_III_258",
+        "zitierung": "BGE 149 III 258",
+        "regesteKurz": "Art. 80 Abs. 1 und Art. 81 Abs. 1 SchKG; definitive Rechtsöffnung und Leistungsurteil auf Bezahlung eines Bruttolohns; Rechtsöffnungstitel; befreiende Einwendung. Definitive Rechtsöffnung im Fall, dass der betriebene Arbeitgeber zur Zahlun…",
+        "datum": "2023-03-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "324": [
       {
         "key": "bge_151_III_544",
@@ -1343,6 +2197,28 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_150_III_78",
+        "zitierung": "BGE 150 III 78",
+        "regesteKurz": "Art. 336c Abs. 1 lit. b und Art. 336 Abs. 1 lit. a OR; ordentliche Kündigung aufgrund einer andauernden Krankheit. Nach Ablauf der Sperrfrist gemäss Art. 336c Abs. 1 lit. b OR kann der Arbeitgeber den Arbeitsvertrag aufgrund einer andauern…",
+        "datum": "2023-11-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "330": [
+      {
+        "key": "bge_147_III_78",
+        "zitierung": "BGE 147 III 78",
+        "regesteKurz": "Art. 127, 330a OR; Arbeitszeugnis, Verjährung. Klagen auf Ausstellung bzw. Berichtigung eines Arbeitszeugnisses unterliegen der allgemeinen Verjährungsfrist von zehn Jahren gemäss Art. 127 OR (E. 6.2-6.9). Regeste Art. 127, 330a CO; certif…",
+        "datum": "2020-12-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "331": [
@@ -1351,6 +2227,18 @@
         "zitierung": "BGE 147 III 561",
         "regesteKurz": "a Art. 659a Abs. 1 OR; Ruhen des Stimmrechts; patronale Personalfürsorgestiftung. Hält eine patronale Personalfürsorgestiftung Aktien der Gesellschaft, von der sie beherrscht wird, ruht das aus diesen Aktien fliessende Stimmrecht, sofern n…",
         "datum": "2021-10-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "335": [
+      {
+        "key": "bge_150_III_78",
+        "zitierung": "BGE 150 III 78",
+        "regesteKurz": "Art. 336c Abs. 1 lit. b und Art. 336 Abs. 1 lit. a OR; ordentliche Kündigung aufgrund einer andauernden Krankheit. Nach Ablauf der Sperrfrist gemäss Art. 336c Abs. 1 lit. b OR kann der Arbeitgeber den Arbeitsvertrag aufgrund einer andauern…",
+        "datum": "2023-11-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1385,6 +2273,18 @@
         "zitierung": "BGE 151 III 544",
         "regesteKurz": "Art. 340, 340a-c OR; Arbeitsvertrag; Konkurrenzverbot; Karenzentschädigung. Ohne anderslautende Abrede kann die Arbeitgeberin ein entgeltliches Konkurrenzverbot nicht einseitig kündigen (Bestätigung der Rechtsprechung; E. 4). Tatsächliche…",
         "datum": "2025-06-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "356": [
+      {
+        "key": "bge_147_II_397",
+        "zitierung": "BGE 147 II 397",
+        "regesteKurz": "Art. 20 Abs. 3 AVG; Art. 48c AVV; Gesamtarbeitsvertrag über die vorzeitige Pensionierung der Arbeitnehmer im Bauhauptgewerbe und Plattenlegergewerbe des Kantons Wallis (GAV Retabat); Anschlusspflicht und Beitragssätze. Ein Unternehmen, das…",
+        "datum": "2021-05-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1427,12 +2327,112 @@
         "gewicht": 0
       }
     ],
+    "372": [
+      {
+        "key": "bge_149_III_310",
+        "zitierung": "BGE 149 III 310",
+        "regesteKurz": "Art. 82 SchKG; provisorische Rechtsöffnung und Kaufvertrag. Provisorische Rechtsöffnung gegen einen Schuldner, der sein Recht auf Preisminderung wegen eines Mangels der Kaufsache geltend macht. Einrede gemäss Art. 82 Abs. 2 SchKG oder Best…",
+        "datum": "2023-03-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "394": [
+      {
+        "key": "bge_148_III_115",
+        "zitierung": "BGE 148 III 115",
+        "regesteKurz": "Art. 150 Abs. 3 OR; Gemeinschaftskonto; Solidargläubigerschaft. Weigerung einer Bank, zwei miteinander unvereinbare Überweisungsaufträge auszuführen, die am selben Tag nacheinander je von einem der beiden Inhaber eines Gemeinschaftskontos,…",
+        "datum": "2022-03-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "397": [
       {
         "key": "bge_146_V_139",
         "zitierung": "BGE 146 V 139",
         "regesteKurz": "Art. 5 Abs. 1 und 2, Art. 8 und 9 Abs. 1, Art. 13 AHVG; AHV-rechtliches Beitragsstatut. Die Versicherte übt in ihrer Funktion als von der Kindes- und Erwachsenenschutzbehörde ernannte Fachbeiständin (Privatperson mit spezifischen beruflich…",
         "datum": "2020-04-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "398": [
+      {
+        "key": "bge_147_III_463",
+        "zitierung": "BGE 147 III 463",
+        "regesteKurz": "Art. 42, 97 und 398 OR; Art. 8 ZGB; Art. 55 Abs. 1 ZPO; Verantwortlichkeit der Bank; Bestimmung des Schadens. Voraussetzungen der Verantwortlichkeit der Bank bei Nichterfüllung von punktuellen Investitionsanweisungen des Kunden (E. 4.1). S…",
+        "datum": "2021-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_146_III_387",
+        "zitierung": "BGE 146 III 387",
+        "regesteKurz": "Art. 32 Abs. 1, 44 Abs. 1, 97 Abs. 1, 99 Abs. 3, 101, 107 Abs. 1 OR; Banküberweisungen im Namen einer AG; Vollmacht mit Kollektivunterschrift zu zweien oder Zahlungsaufträge per e-banking, welche zu zweien zu visieren sind; Zahlungsmodalit…",
+        "datum": "2020-08-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_III_105",
+        "zitierung": "BGE 149 III 105",
+        "regesteKurz": "Vertrag \"execution only\"; Veruntreuung von Kundenguthaben durch einen Bankangestellten. Die verschiedenen im Rahmen einer Bankbeziehung abgeschlossenen Verträge bilden einen gemischten Vertrag (E. 4.1). Im Falle der Veruntreuung von Kunden…",
+        "datum": "2022-09-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_435",
+        "zitierung": "BGE 146 III 435",
+        "regesteKurz": "Art. 222 Abs. 4 SchKG, Art. 400 OR; Auskunftspflicht des Dritten im Konkurs; Folgen für den Beauftragten. Die Auskunftspflicht des Dritten hat den gleichen Umfang wie diejenige des Schuldners. Der Beauftragte des Konkursiten kann gegenüber…",
+        "datum": "2020-06-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "402": [
+      {
+        "key": "bge_146_III_326",
+        "zitierung": "BGE 146 III 326",
+        "regesteKurz": "Art. 100 Abs. 1, 101 Abs. 3, 107 Abs. 1, 402 OR; Banküberweisungen; fehlende Legitimation des Auftraggebers oder Fälschung von Überweisungsaufträgen; Risikotransferklausel für per E-Mail erteilte Aufträge; grobes Verschulden der Finanzdien…",
+        "datum": "2020-07-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_146_III_387",
+        "zitierung": "BGE 146 III 387",
+        "regesteKurz": "Art. 32 Abs. 1, 44 Abs. 1, 97 Abs. 1, 99 Abs. 3, 101, 107 Abs. 1 OR; Banküberweisungen im Namen einer AG; Vollmacht mit Kollektivunterschrift zu zweien oder Zahlungsaufträge per e-banking, welche zu zweien zu visieren sind; Zahlungsmodalit…",
+        "datum": "2020-08-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "419": [
+      {
+        "key": "bge_149_III_105",
+        "zitierung": "BGE 149 III 105",
+        "regesteKurz": "Vertrag \"execution only\"; Veruntreuung von Kundenguthaben durch einen Bankangestellten. Die verschiedenen im Rahmen einer Bankbeziehung abgeschlossenen Verträge bilden einen gemischten Vertrag (E. 4.1). Im Falle der Veruntreuung von Kunden…",
+        "datum": "2022-09-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1455,6 +2455,18 @@
         "zitierung": "BGE 147 III 553",
         "regesteKurz": "Art. 647 Abs. 2 Ziff. 2, Art. 647c ff., Art. 712h Abs. 1 und 2 Ziff. 1 sowie Art. 712m Abs. 1 Ziff. 1 ZGB. Für bauliche Massnahmen an gemeinschaftlichen Teilen bedarf es eines Beschlusses (inkl. Kostenbeschluss) der Gemeinschaft, soweit ni…",
         "datum": "2021-06-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "472": [
+      {
+        "key": "bge_148_III_115",
+        "zitierung": "BGE 148 III 115",
+        "regesteKurz": "Art. 150 Abs. 3 OR; Gemeinschaftskonto; Solidargläubigerschaft. Weigerung einer Bank, zwei miteinander unvereinbare Überweisungsaufträge auszuführen, die am selben Tag nacheinander je von einem der beiden Inhaber eines Gemeinschaftskontos,…",
+        "datum": "2022-03-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1485,6 +2497,18 @@
         "gewicht": 0
       }
     ],
+    "620": [
+      {
+        "key": "bge_147_II_264",
+        "zitierung": "BGE 147 II 264",
+        "regesteKurz": "Art. 8 Abs. 1 lit. a IVöB; Ziff. 2 des Anhangs 2 und Fussnote 1 des Anhangs 3 der Anlage I des WTO-Übereinkommen über das öffentliche Beschaffungswesen. Umsetzung von Verpflichtungen aus internationalen Verträgen in nationales Recht. Unter…",
+        "datum": "2020-10-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "622": [
       {
         "key": "bge_151_III_490",
@@ -1507,12 +2531,36 @@
         "gewicht": 0
       }
     ],
+    "626": [
+      {
+        "key": "bge_147_I_325",
+        "zitierung": "BGE 147 I 325",
+        "regesteKurz": "Art. 127 Abs. 3 BV; Art. 20 Abs. 1 StHG; Art. 626 Ziff. 1 OR i.V.m. Art. 56 ZGB; Doppelbesteuerungsverbot; Hauptsteuerdomizil und Sitzwechsel. Verwirkung des doppelbesteuerungsrechtlichen Beschwerderechts des Steuerpflichtigen (E. 4.2). Üb…",
+        "datum": "2020-08-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "627": [
       {
         "key": "bge_147_III_126",
         "zitierung": "BGE 147 III 126",
         "regesteKurz": "Missachtung der Vorzugsrechte der Partizipanten. Vorzugsaktionäre und Partizipanten können ihren statutarischen Anspruch auf Zahlung einer Vorzugsdividende nicht direkt gegen die Gesellschaft einklagen, sondern sie haben vielmehr den Besch…",
         "datum": "2021-01-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "633": [
+      {
+        "key": "bge_151_III_538",
+        "zitierung": "BGE 151 III 538",
+        "regesteKurz": "Art. 82 SchKG; Art. 257e Abs. 4 OR; provisorische Rechtsöffnung; befreiende Einwendung; vom Mieter gestellte Sicherheiten. Im Rahmen einer summarischen Prüfung der rechtlichen Begründetheit der befreienden Einwendung des Betriebenen darf d…",
+        "datum": "2025-07-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1547,6 +2595,16 @@
         "zitierung": "BGE 147 III 505",
         "regesteKurz": "Art. 783 und 822 OR; Erwerb eigener Stammanteile; Austritt. Würde das Ausscheiden eines Gesellschafters aus einer GmbH dazu führen, dass die Gesellschaft eigene Stammanteile im Nennwert von über 35 % des Stammkapitals hielte, ist der Austr…",
         "datum": "2021-07-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_II_61",
+        "zitierung": "BGE 147 II 61",
+        "regesteKurz": "Art. 8 Abs. 1 lit. d, Art. 9 und Art. 12 lit. j BGFA; strukturelle Unabhängigkeit einer Anwaltskanzlei, die einem Alleinaktionär gehört; rechtliche und statutarische Auswirkungen des Risikos des Erwerbs von Aktien durch nicht anwaltliche D…",
+        "datum": "2020-11-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1839,6 +2897,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_258",
+        "zitierung": "BGE 146 IV 258",
+        "regesteKurz": "Art. 251 Ziff. 1 StGB; Falschbeurkundung (inhaltlich unrichtiger Kaufvertrag). Ein in einfacher Schriftform abgefasster Vertrag mit unrichtigem Inhalt erfüllt den Tatbestand der Falschbeurkundung grundsätzlich nicht, da ihm keine erhöhte G…",
+        "datum": "2020-05-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "216c": [
@@ -1869,6 +2937,30 @@
         "zitierung": "BGE 146 III 217",
         "regesteKurz": "Art. 681 Abs. 2 ZGB; Entfallen des Vorkaufsrechts; massgebender Zeitpunkt. Zum massgebenden Zeitpunkt für die Bestimmung, ob ein gleich- oder vorrangiges Vorkaufsrecht besteht, welches das gesetzliche Vorkaufsrecht entfallen lässt (E. 4.1,…",
         "datum": "2020-05-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "216e": [
+      {
+        "key": "bge_150_III_63",
+        "zitierung": "BGE 150 III 63",
+        "regesteKurz": "Art. 779f ff. ZGB; Art. 107 und 108 Ziff. 1 OR analog; Baurecht, für die Ausübung des vorzeitigen Heimfallrechts notwendige formelle Voraussetzungen. In analoger Anwendung von Art. 107 und 108 Ziff. 1 OR muss der Grundeigentümer, welcher s…",
+        "datum": "2023-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "257c": [
+      {
+        "key": "bge_146_III_82",
+        "zitierung": "BGE 146 III 82",
+        "regesteKurz": "Art. 67 Abs. 1 und 130 Abs. 1 OR; Nichtigkeit des Anfangsmietzinses; Beginn der absoluten Verjährungsfrist für die Rückerstattungsforderung. Ist die Festsetzung des Anfangsmietzinses nichtig, beginnt die absolute Verjährungsfrist für den A…",
+        "datum": "2020-02-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1915,6 +3007,18 @@
         "zitierung": "BGE 146 III 63",
         "regesteKurz": "Art. 243 Abs. 2 lit. c ZPO; vereinfachtes Verfahren; Hinterlegung von Mietzinsen. Die \"Hinterlegung von Mietzinsen\" nach Art. 243 Abs. 2 lit. c ZPO umfasst streitwertunabhängig alle Mängelrechte nach Art. 259a Abs. 1 OR, welche der Mieter…",
         "datum": "2019-11-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "259b": [
+      {
+        "key": "bge_150_III_257",
+        "zitierung": "BGE 150 III 257",
+        "regesteKurz": "Vereinfachtes Verfahren bei Streitigkeiten aus Miete (Art. 243 Abs. 2 lit. c ZPO). Wenn der Mieter den Mietvertrag kündigt, betrifft der allenfalls daraus resultierende Streit nur die finanziellen Folgen der Kündigung und fällt daher nicht…",
+        "datum": "2024-05-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1969,6 +3073,16 @@
     ],
     "266a": [
       {
+        "key": "bge_148_III_215",
+        "zitierung": "BGE 148 III 215",
+        "regesteKurz": "Art. 271 und 271a OR; Kündigung des Mietverhältnisses; Renovationsarbeiten. Zusammenfassung der Regeln und Grundsätze zur ordentlichen Kündigung des Mietverhältnisses (E. 3.1). Diese finden auch auf die Kündigung durch den Vermieter zur Du…",
+        "datum": "2022-05-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_III_481",
         "zitierung": "BGE 151 III 481",
         "regesteKurz": "a Art. 17 Abs. 1 und Art. 21 Abs. 2 BZP i.V.m. Art. 71 BGG; Art. 261 Abs. 1 OR; Art. 83 Abs. 4 ZPO; Art. 17 Abs. 3 BZP. Wechsel des Eigentümers des Mietobjekts während hängigem Verfahren; prozessuale Konsequenzen (E. 1 und 5). Regeste b Ar…",
@@ -2011,7 +3125,39 @@
         "gewicht": 0
       }
     ],
+    "268b": [
+      {
+        "key": "bge_146_III_303",
+        "zitierung": "BGE 146 III 303",
+        "regesteKurz": "Art. 95, 98 BGG; Art. 283 SchKG; Rechtsnatur der Aufnahme des Retentionsverzeichnisses; Folgen für die Beschwerde in Zivilsachen. Unterscheidung der Rechtsnatur der Aufnahme des Retentionsverzeichnisses danach, ob die materiellen Vorausset…",
+        "datum": "2020-03-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "269a": [
+      {
+        "key": "bge_148_III_209",
+        "zitierung": "BGE 148 III 209",
+        "regesteKurz": "Art. 269a und 270 OR; Anfechtung des Anfangsmietzinses für eine Altbauwohnung; missbräuchlicher Mietzins; Festsetzung des neuen Anfangsmietzinses. Fälle, in denen die Missbräuchlichkeit des Anfangsmietzinses vermutet wird (Zusammenfassung…",
+        "datum": "2022-05-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_III_14",
+        "zitierung": "BGE 147 III 14",
+        "regesteKurz": "Art. 269, 270 OR; Anfechtung des Anfangsmietzinses; Berechnung der Nettorendite; Teuerungsanpassung des Eigenkapitals und Eigenkapitalrendite (Rechtsprechungsänderung). Absolute Methode und anwendbare Kriterien für die Kontrolle des Anfang…",
+        "datum": "2020-10-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_151_III_201",
         "zitierung": "BGE 151 III 201",
@@ -2035,10 +3181,32 @@
     ],
     "269b": [
       {
+        "key": "bge_147_III_32",
+        "zitierung": "BGE 147 III 32",
+        "regesteKurz": "Art. 269b, 269d, 270a OR; indexierte Mietzinse; Herabsetzungsbegehren nach Ablauf der Mindestmietdauer; relative Berechnungsmethode und Ablehnung der absoluten Methode. Anwendbarkeit der relativen Berechnungsmethode beim Begehren um Änderu…",
+        "datum": "2021-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_150_III_71",
         "zitierung": "BGE 150 III 71",
         "regesteKurz": "Art. 269b, 269d, 270a und 270c OR; Art. 13 Abs. 4 VMWG; indexierte Mietzinse; Anpassungen nach Ablauf der Indexdauer. Die Parteien eines indexierten Mietverhältnisses müssen Mietzinsanpassungen - darunter solche wegen Änderungen des hypoth…",
         "datum": "2023-10-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "269c": [
+      {
+        "key": "bge_147_III_32",
+        "zitierung": "BGE 147 III 32",
+        "regesteKurz": "Art. 269b, 269d, 270a OR; indexierte Mietzinse; Herabsetzungsbegehren nach Ablauf der Mindestmietdauer; relative Berechnungsmethode und Ablehnung der absoluten Methode. Anwendbarkeit der relativen Berechnungsmethode beim Begehren um Änderu…",
+        "datum": "2021-01-05",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2063,6 +3231,28 @@
         "zitierung": "BGE 150 III 71",
         "regesteKurz": "Art. 269b, 269d, 270a und 270c OR; Art. 13 Abs. 4 VMWG; indexierte Mietzinse; Anpassungen nach Ablauf der Indexdauer. Die Parteien eines indexierten Mietverhältnisses müssen Mietzinsanpassungen - darunter solche wegen Änderungen des hypoth…",
         "datum": "2023-10-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_346",
+        "zitierung": "BGE 146 III 346",
+        "regesteKurz": "a Art. 70 Abs. 1 ZPO, Art. 270a Abs. 2 OR; Mietzinsherabsetzungsbegehren, Mitmieter, Abschwächung des Erfordernisses der gemeinsamen Klage. Gemeinsame Mieter bilden eine notwendige materielle Streitgenossenschaft hinsichtlich der Mietzinsh…",
+        "datum": "2020-04-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "270b": [
+      {
+        "key": "bge_149_III_304",
+        "zitierung": "BGE 149 III 304",
+        "regesteKurz": "Einsprache gegen die missbräuchliche Kündigung (Art. 336b OR). Der Kläger muss die Tatsachen behaupten und beweisen, gestützt auf welche das Gericht schliessen kann, dass er gegen die angeblich missbräuchliche Kündigung Einsprache erhoben…",
+        "datum": "2023-05-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2115,6 +3305,18 @@
         "gewicht": 0
       }
     ],
+    "321e": [
+      {
+        "key": "bge_147_III_463",
+        "zitierung": "BGE 147 III 463",
+        "regesteKurz": "Art. 42, 97 und 398 OR; Art. 8 ZGB; Art. 55 Abs. 1 ZPO; Verantwortlichkeit der Bank; Bestimmung des Schadens. Voraussetzungen der Verantwortlichkeit der Bank bei Nichterfüllung von punktuellen Investitionsanweisungen des Kunden (E. 4.1). S…",
+        "datum": "2021-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "324a": [
       {
         "key": "bge_152_III_23",
@@ -2131,6 +3333,28 @@
         "zitierung": "BGE 150 II 11",
         "regesteKurz": "Art. 25-33a DBG; Gewinnungskosten. Zur Beurteilung, ob es sich bei den Prämien für die Krankentaggeldversicherung um Gewinnungskosten handelt, ist das Kriterium der Freiwilligkeit zur Bezahlung der Prämien massgebend. Aufgrund der einschlä…",
         "datum": "2023-12-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_339",
+        "zitierung": "BGE 146 III 339",
+        "regesteKurz": "VVG; Kollektivkrankentaggeldversicherung. Abgrenzung zwischen einer Summen- und einer Schadensversicherung. In casu fällt die abgeschlossene Versicherung in die zweite Kategorie (E. 5.1, 5.2.3 und 5.2.4). Regeste LCA; assurance collective…",
+        "datum": "2020-07-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "327a": [
+      {
+        "key": "bge_148_II_504",
+        "zitierung": "BGE 148 II 504",
+        "regesteKurz": "Art. 16 Abs. 1 und Art. 17 Abs. 1 DBG; Art. 327a Abs. 1 OR; Spesenreglement für Unternehmen (Kreisschreiben Nr. 25 der Schweizerischen Steuerkonferenz in der Fassung vom 18. Januar 2008); Genehmigung durch die Steuerbehörde des Sitzkantons…",
+        "datum": "2022-10-14",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2153,6 +3377,18 @@
         "zitierung": "BGE 148 V 144",
         "regesteKurz": "Art. 34 Abs. 2 AVIG; Art. 17 Abs. 1 lit. d des Bundesgesetzes vom 25. September 2020 über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie; Art. 8i der Verordnung vom 20. März 2020 über Mas…",
         "datum": "2021-11-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "330a": [
+      {
+        "key": "bge_147_III_78",
+        "zitierung": "BGE 147 III 78",
+        "regesteKurz": "Art. 127, 330a OR; Arbeitszeugnis, Verjährung. Klagen auf Ausstellung bzw. Berichtigung eines Arbeitszeugnisses unterliegen der allgemeinen Verjährungsfrist von zehn Jahren gemäss Art. 127 OR (E. 6.2-6.9). Regeste Art. 127, 330a CO; certif…",
+        "datum": "2020-12-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2183,12 +3419,56 @@
         "gewicht": 0
       }
     ],
+    "335i": [
+      {
+        "key": "bge_149_III_98",
+        "zitierung": "BGE 149 III 98",
+        "regesteKurz": "Art. 335d OR; Begriff des Betriebs bei einer Massenentlassung. Begriff des Betriebs gemäss Art. 335d OR (E. 5.1-5.4). Unternehmen des gleichen Arbeitgebers, die sich in geografischer Nähe zueinander befinden, bilden je einen Betrieb (E. 5.…",
+        "datum": "2022-07-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "336a": [
+      {
+        "key": "bge_148_II_551",
+        "zitierung": "BGE 148 II 551",
+        "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 18 und 336a OR; steuerliche Behandlung einer Entschädigung, die im Rahmen einer arbeitsrechtlichen Streitigkeit wegen missbräuchlicher Kündigung gestützt auf einen gerichtlichen Vergleich vereinb…",
+        "datum": "2022-10-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_152_II_19",
         "zitierung": "BGE 152 II 19",
         "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 337c Abs. 3 OR; steuerliche Behandlung einer Entschädigung wegen unrechtmässiger fristloser Kündigung nach öffentlichem Personalrecht. Die Entschädigung für…",
         "datum": "2026-01-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_304",
+        "zitierung": "BGE 149 III 304",
+        "regesteKurz": "Einsprache gegen die missbräuchliche Kündigung (Art. 336b OR). Der Kläger muss die Tatsachen behaupten und beweisen, gestützt auf welche das Gericht schliessen kann, dass er gegen die angeblich missbräuchliche Kündigung Einsprache erhoben…",
+        "datum": "2023-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "336b": [
+      {
+        "key": "bge_149_III_304",
+        "zitierung": "BGE 149 III 304",
+        "regesteKurz": "Einsprache gegen die missbräuchliche Kündigung (Art. 336b OR). Der Kläger muss die Tatsachen behaupten und beweisen, gestützt auf welche das Gericht schliessen kann, dass er gegen die angeblich missbräuchliche Kündigung Einsprache erhoben…",
+        "datum": "2023-05-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2225,6 +3505,30 @@
         "zitierung": "BGE 151 III 544",
         "regesteKurz": "Art. 340, 340a-c OR; Arbeitsvertrag; Konkurrenzverbot; Karenzentschädigung. Ohne anderslautende Abrede kann die Arbeitgeberin ein entgeltliches Konkurrenzverbot nicht einseitig kündigen (Bestätigung der Rechtsprechung; E. 4). Tatsächliche…",
         "datum": "2025-06-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "356a": [
+      {
+        "key": "bge_148_I_198",
+        "zitierung": "BGE 148 I 198",
+        "regesteKurz": "Art. 49 Abs. 1 BV; Art. 23 Abs. 1 des Tessiner Ladenöffnungsgesetzes (LAN/ TI); Prinzip des Vorrangs des Bundesrechts; Bestimmung, welche den Schutz des Arbeitnehmers bezweckt. Kognition des Bundesgerichts im Rahmen der abstrakten Normenko…",
+        "datum": "2021-12-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "356b": [
+      {
+        "key": "bge_148_I_198",
+        "zitierung": "BGE 148 I 198",
+        "regesteKurz": "Art. 49 Abs. 1 BV; Art. 23 Abs. 1 des Tessiner Ladenöffnungsgesetzes (LAN/ TI); Prinzip des Vorrangs des Bundesrechts; Bestimmung, welche den Schutz des Arbeitnehmers bezweckt. Kognition des Bundesgerichts im Rahmen der abstrakten Normenko…",
+        "datum": "2021-12-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2273,6 +3577,30 @@
         "zitierung": "BGE 147 III 561",
         "regesteKurz": "a Art. 659a Abs. 1 OR; Ruhen des Stimmrechts; patronale Personalfürsorgestiftung. Hält eine patronale Personalfürsorgestiftung Aktien der Gesellschaft, von der sie beherrscht wird, ruht das aus diesen Aktien fliessende Stimmrecht, sofern n…",
         "datum": "2021-10-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "685a": [
+      {
+        "key": "bge_147_II_61",
+        "zitierung": "BGE 147 II 61",
+        "regesteKurz": "Art. 8 Abs. 1 lit. d, Art. 9 und Art. 12 lit. j BGFA; strukturelle Unabhängigkeit einer Anwaltskanzlei, die einem Alleinaktionär gehört; rechtliche und statutarische Auswirkungen des Risikos des Erwerbs von Aktien durch nicht anwaltliche D…",
+        "datum": "2020-11-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "685b": [
+      {
+        "key": "bge_147_II_61",
+        "zitierung": "BGE 147 II 61",
+        "regesteKurz": "Art. 8 Abs. 1 lit. d, Art. 9 und Art. 12 lit. j BGFA; strukturelle Unabhängigkeit einer Anwaltskanzlei, die einem Alleinaktionär gehört; rechtliche und statutarische Auswirkungen des Risikos des Erwerbs von Aktien durch nicht anwaltliche D…",
+        "datum": "2020-11-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2447,6 +3775,18 @@
         "zitierung": "BGE 147 III 505",
         "regesteKurz": "Art. 783 und 822 OR; Erwerb eigener Stammanteile; Austritt. Würde das Ausscheiden eines Gesellschafters aus einer GmbH dazu führen, dass die Gesellschaft eigene Stammanteile im Nennwert von über 35 % des Stammkapitals hielte, ist der Austr…",
         "datum": "2021-07-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "958a": [
+      {
+        "key": "bge_146_IV_258",
+        "zitierung": "BGE 146 IV 258",
+        "regesteKurz": "Art. 251 Ziff. 1 StGB; Falschbeurkundung (inhaltlich unrichtiger Kaufvertrag). Ein in einfacher Schriftform abgefasster Vertrag mit unrichtigem Inhalt erfüllt den Tatbestand der Falschbeurkundung grundsätzlich nicht, da ihm keine erhöhte G…",
+        "datum": "2020-05-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

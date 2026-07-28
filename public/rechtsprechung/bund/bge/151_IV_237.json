@@ -242,7 +242,12 @@
         "Art. 22 Abs. 1 OSR",
         "Art. 27 Abs. 1 LCR"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STGB",
+        "BV",
+        "SSV",
+        "SVG"
+      ],
       "zitierteEntscheide": [
         "1B_115/2017",
         "1C_396/2015",

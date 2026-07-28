@@ -1,0 +1,97 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "ENG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "10": [
+      {
+        "key": "bge_147_II_164",
+        "zitierung": "BGE 147 II 164",
+        "regesteKurz": "a Art. 8 und 8b RPG; Art. 10 und 12 EnG; Art. 6 NHG; Art. 29 NHV; Art. 54 lit. h WRG; Ausbau des Grimselstausees; Kantonaler Richtplan, Erweiterung erneuerbarer Stromproduktion, Beeinträchtigung eines neuen potenziellen Schutzgebiets, Real…",
+        "datum": "2020-11-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "12": [
+      {
+        "key": "bge_147_II_164",
+        "zitierung": "BGE 147 II 164",
+        "regesteKurz": "a Art. 8 und 8b RPG; Art. 10 und 12 EnG; Art. 6 NHG; Art. 29 NHV; Art. 54 lit. h WRG; Ausbau des Grimselstausees; Kantonaler Richtplan, Erweiterung erneuerbarer Stromproduktion, Beeinträchtigung eines neuen potenziellen Schutzgebiets, Real…",
+        "datum": "2020-11-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
+        "key": "bge_147_II_319",
+        "zitierung": "BGE 147 II 319",
+        "regesteKurz": "Art. 18 NHG, Art. 14 NHV, Art. 12 EnG und Art. 9 EnV; Art. 11 und 25 USG, Art. 7 LSV; Windpark Sainte-Croix; Begriff des nationalen Interesses; Lärmschutz. Art. 9 Abs. 2 EnV, der für die jährliche Energieproduktion einen Schwellenwert von…",
+        "datum": "2021-03-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_148_II_36",
+        "zitierung": "BGE 148 II 36",
+        "regesteKurz": "a Windpark Grenchenberg; Richtplanpflicht (Art. 8 Abs. 2 RPG). Anforderungen an die auf Stufe Richtplan nötigen Abklärungen. Dazu gehört das Vorkommen gefährdeter und national prioritärer Arten, die ein Konfliktpotenzial mit Windenergieanl…",
+        "datum": "2021-11-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_II_86",
+        "zitierung": "BGE 149 II 86",
+        "regesteKurz": "Art. 8 Abs. 2, 8b, 9, 11 und 12 RPG, Art. 5 Abs. 2 lit. a RPV; Windpark Eoljoux; Aufhebung des Nutzungsplans; Weigerung des Bundesrats, die Richtplanfestsetzung für das Vorhaben zu genehmigen; Rechtsschutz. Richtplanvorbehalt; Verankerung…",
+        "datum": "2023-01-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "14": [
+      {
+        "key": "bge_149_II_86",
+        "zitierung": "BGE 149 II 86",
+        "regesteKurz": "Art. 8 Abs. 2, 8b, 9, 11 und 12 RPG, Art. 5 Abs. 2 lit. a RPV; Windpark Eoljoux; Aufhebung des Nutzungsplans; Weigerung des Bundesrats, die Richtplanfestsetzung für das Vorhaben zu genehmigen; Rechtsschutz. Richtplanvorbehalt; Verankerung…",
+        "datum": "2023-01-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "35": [
+      {
+        "key": "bge_151_II_312",
+        "zitierung": "BGE 151 II 312",
+        "regesteKurz": "Art. 39 Abs. 3 Satz 1 und 75 EnG und 80 EnV; neue Energiegesetzgebung; Übergangsrecht; Rückerstattung des bezahlten Zuschlags für die Nutzung des Übertragungsnetzes für Elektrizität. Die Rückerstattung des Netzzuschlags wird jährlich festg…",
+        "datum": "2024-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "39": [
+      {
+        "key": "bge_151_II_312",
+        "zitierung": "BGE 151 II 312",
+        "regesteKurz": "Art. 39 Abs. 3 Satz 1 und 75 EnG und 80 EnV; neue Energiegesetzgebung; Übergangsrecht; Rückerstattung des bezahlten Zuschlags für die Nutzung des Übertragungsnetzes für Elektrizität. Die Rückerstattung des Netzzuschlags wird jährlich festg…",
+        "datum": "2024-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

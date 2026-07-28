@@ -196,7 +196,11 @@
         "Art. 3 LTRANS",
         "Art. 42 Abs. 2 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "BGOE"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

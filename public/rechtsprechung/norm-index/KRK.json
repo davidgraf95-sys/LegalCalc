@@ -1,0 +1,63 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "KRK",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "3": [
+      {
+        "key": "bge_150_I_93",
+        "zitierung": "BGE 150 I 93",
+        "regesteKurz": "Art. 8 Ziff. 1 EMRK; Art. 13 BV; Art. 3 KRK; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Die Nachteile, die mit dem Status der vorläufigen Aufnahme im Vergleich zur Aufenthaltsbewilligung für Kinder im Al…",
+        "datum": "2024-02-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_I_62",
+        "zitierung": "BGE 151 I 62",
+        "regesteKurz": "Art. 8 EMRK; Art. 3 KRK; Art. 13 BV; Art. 84 Abs. 5 AIG; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Verhältnis zwischen Art. 3 KRK und Art. 8 EMRK (E. 5.1). Beeinträchtigung des Privatlebens durch einen…",
+        "datum": "2024-07-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_267",
+        "zitierung": "BGE 146 IV 267",
+        "regesteKurz": "Art. 5 Ziff. 1 EMRK; Art. 11 BV; Art. 3 Abs. 1 und Art. 4 KRK; Art. 372 Abs. 1 und 3 StGB; Art. 439 Abs. 2 StPO; Strafvollzug, Vollzugsbefehl, Kindeswohl. Der Strafvollzug ist die zwingende gesetzliche Rechtsfolge der Straftat (E. 3.2.1).…",
+        "datum": "2020-08-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "12": [
+      {
+        "key": "bge_147_I_149",
+        "zitierung": "BGE 147 I 149",
+        "regesteKurz": "Art. 12 KRK; Art. 8 EMRK; persönliches Anhörungsrecht des Kindes; umgekehrter Familiennachzug. Grundsätzlich besteht kein persönliches Anhörungsrecht, namentlich bei gleichläufigen Interessen mit dem betroffenen Elternteil. Hier war aber n…",
+        "datum": "2020-07-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "14": [
+      {
+        "key": "bge_151_I_314",
+        "zitierung": "BGE 151 I 314",
+        "regesteKurz": "Art. 8 Abs. 2 und 3, Art. 15 und 35 BV; Übertragung der Führung einer öffentlichen Mädchensekundarschule an die Stiftung Schule St. Katharina. (Grundrechtliche) Gewährleistungsverantwortung des Gemeinwesens bei der Übertragung der öffentli…",
+        "datum": "2025-01-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

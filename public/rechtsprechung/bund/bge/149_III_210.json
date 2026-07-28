@@ -217,7 +217,11 @@
         "Art. 62 Abs. 1 OELP",
         "Art. 68 Abs. 2 LP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "ZPO",
+        "SCHKG",
+        "GEBV_SCHKG"
+      ],
       "zitierteEntscheide": [
         "5A_19/2016",
         "5A_314/2019",

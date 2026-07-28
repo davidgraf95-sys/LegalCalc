@@ -237,7 +237,10 @@
         "Art. 37m LFG"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "USG",
+        "VIL",
+        "LFG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

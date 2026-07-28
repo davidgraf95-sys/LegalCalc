@@ -209,7 +209,9 @@
       ],
       "normKeys": [
         "AVIG",
-        "BGG"
+        "BGG",
+        "EOV",
+        "EOG"
       ],
       "zitierteEntscheide": [
         "8C_542/2021",

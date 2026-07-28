@@ -242,7 +242,11 @@
         "Art. 7 CEDH",
         "Art. 8 CEDH"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STGB",
+        "BGG",
+        "EMRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

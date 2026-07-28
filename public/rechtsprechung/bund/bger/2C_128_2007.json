@@ -143,7 +143,9 @@
       ],
       "normKeys": [
         "BGG",
-        "BV"
+        "BV",
+        "VGG",
+        "VWVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

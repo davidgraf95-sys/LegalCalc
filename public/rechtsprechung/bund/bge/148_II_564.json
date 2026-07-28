@@ -327,7 +327,11 @@
         "Art. 9 Abs. 3 LMI",
         "Art. 94 Abs. 1 CST"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGBM",
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [
         "1C_741/2013",
         "2C_1021/2016",

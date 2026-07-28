@@ -220,7 +220,10 @@
         "Art. 18 LPGA",
         "Art. 18a LACI"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "AVIG",
+        "ATSG"
+      ],
       "zitierteEntscheide": [
         "8C_455/2008",
         "8C_610/2022",

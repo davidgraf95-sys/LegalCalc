@@ -231,7 +231,11 @@
         "Art. 31 CP",
         "Art. 32 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STPO",
+        "JSTPO",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

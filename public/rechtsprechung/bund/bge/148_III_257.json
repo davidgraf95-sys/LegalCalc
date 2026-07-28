@@ -292,7 +292,9 @@
       "normKeys": [
         "STGB",
         "ZPO",
-        "BGG"
+        "BGG",
+        "MSCHG",
+        "UWG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

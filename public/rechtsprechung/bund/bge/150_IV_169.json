@@ -161,7 +161,10 @@
         "Art. 118 Abs. 1 LSTRI",
         "Art. 14 LFIS"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STGB",
+        "AIG"
+      ],
       "zitierteEntscheide": [
         "2C_308/2017",
         "2P.112/2004",

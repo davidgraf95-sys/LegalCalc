@@ -515,7 +515,9 @@
         "Art. 5 Abs. 4 LCART",
         "Art. 5 LCART"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "KG"
+      ],
       "zitierteEntscheide": [
         "2A.492/2002",
         "2C_1017/2014",

@@ -275,7 +275,9 @@
       "normKeys": [
         "BGG",
         "STHG",
-        "DBG"
+        "DBG",
+        "FZG",
+        "BPG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

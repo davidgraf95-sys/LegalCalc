@@ -338,7 +338,12 @@
         "Art. 17 Abs. 2 CST",
         "Art. 28 CC"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "EMRK",
+        "BGG",
+        "BV",
+        "ZGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

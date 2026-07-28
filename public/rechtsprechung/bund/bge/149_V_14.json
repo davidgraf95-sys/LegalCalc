@@ -212,7 +212,10 @@
         "Art. 12 LPGA",
         "Art. 6 LTR"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "ARG"
+      ],
       "zitierteEntscheide": [
         "2C_825/2019",
         "9C_326/2022",

@@ -228,7 +228,9 @@
         "Art. 9 Abs. 1 LFAIE"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "BEWG",
+        "BEWV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

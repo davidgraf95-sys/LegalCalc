@@ -169,7 +169,11 @@
         "Art. 8 CEDH",
         "Art. 8 CST"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "IPRG",
+        "BV",
+        "EMRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

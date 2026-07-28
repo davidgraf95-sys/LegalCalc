@@ -188,7 +188,9 @@
       "normKeys": [
         "STGB",
         "STPO",
-        "BGG"
+        "BGG",
+        "SVG",
+        "VRV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

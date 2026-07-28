@@ -202,7 +202,9 @@
         "Art. 27 LAT",
         "Art. 27 LPT"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "RPG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -204,7 +204,9 @@
       ],
       "normKeys": [
         "IVG",
-        "BGG"
+        "BGG",
+        "KLV",
+        "KVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

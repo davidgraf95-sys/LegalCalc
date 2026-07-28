@@ -376,7 +376,9 @@
         "Art. 12 Abs. 2 USG",
         "Art. 12 OPAN"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "USG"
+      ],
       "zitierteEntscheide": [
         "1A.248/1994",
         "1A.39/2004",

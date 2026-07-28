@@ -353,7 +353,10 @@
         "Art. 15 LPM",
         "Art. 2 LCD"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "MSCHG",
+        "UWG"
+      ],
       "zitierteEntscheide": [
         "4A_122/2023",
         "4A_128/2012",

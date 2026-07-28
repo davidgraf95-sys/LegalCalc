@@ -262,7 +262,10 @@
         "Art. 45 LFH",
         "Art. 46 LFH"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR"
+      ],
       "zitierteEntscheide": [
         "1C_494/2015",
         "2A.453/2002",

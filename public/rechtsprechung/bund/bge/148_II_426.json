@@ -352,7 +352,9 @@
         "Art. 12 LC",
         "Art. 12 LSE"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

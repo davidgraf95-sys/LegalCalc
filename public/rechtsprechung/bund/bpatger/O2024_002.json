@@ -451,7 +451,9 @@
         "Art. 156 ZPO"
       ],
       "normKeys": [
-        "ZPO"
+        "ZPO",
+        "PATG",
+        "IPRG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

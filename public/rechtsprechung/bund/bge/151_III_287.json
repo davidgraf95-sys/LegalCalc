@@ -217,7 +217,10 @@
         "Art. 231 CPC",
         "Art. 236 CPC"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "zitierteEntscheide": [
         "4A_131/2013",
         "4A_143/2014",

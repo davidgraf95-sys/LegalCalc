@@ -182,7 +182,11 @@
         "Art. 277 Abs. 1 CPP",
         "Art. 280 CPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "IRSG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [
         "1B_164/2019",
         "1B_57/2008",

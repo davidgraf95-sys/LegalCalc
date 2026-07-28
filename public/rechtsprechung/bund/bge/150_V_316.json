@@ -218,7 +218,12 @@
         "Art. 21quater Abs. 1 RAI",
         "Art. 21quater Abs. 2 RAI"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "UVG",
+        "IVV",
+        "IVG"
+      ],
       "zitierteEntscheide": [
         "9C_126/2010",
         "9C_141/2023",

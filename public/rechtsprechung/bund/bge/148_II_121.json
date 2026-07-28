@@ -296,7 +296,12 @@
         "Art. 106 Abs. 2 LTF",
         "Art. 11 LPCC"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STHG",
+        "KAG",
+        "FUSG",
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

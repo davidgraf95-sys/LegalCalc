@@ -242,7 +242,9 @@
         "Art. 75 CO",
         "Art. 79 CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "OR"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -465,7 +465,10 @@
         "Art. 12 ENG",
         "Art. 12 LENE"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "USG",
+        "ENG"
+      ],
       "zitierteEntscheide": [
         "1A.168/2005",
         "1A.25/2006",

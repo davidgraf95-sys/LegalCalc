@@ -253,7 +253,10 @@
         "Art. 2 Abs. 1bis LFLP",
         "Art. 33a LPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BVG",
+        "FZG"
+      ],
       "zitierteEntscheide": [
         "9C_430/2022",
         "BGE 138 V 227",

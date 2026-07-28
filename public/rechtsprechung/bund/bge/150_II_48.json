@@ -198,7 +198,9 @@
         "Art. 16a Abs. 3 LAT",
         "Art. 16a Abs. 3 LPT"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "RPG"
+      ],
       "zitierteEntscheide": [
         "1A.187/1998",
         "1C_157/2009",

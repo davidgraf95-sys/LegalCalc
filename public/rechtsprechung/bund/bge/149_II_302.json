@@ -338,7 +338,9 @@
         "Art. 19 Abs. 2 AIAG",
         "Art. 19 Abs. 2 LEAR"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "EMRK"
+      ],
       "zitierteEntscheide": [
         "2C_101/2022",
         "2C_236/2022",

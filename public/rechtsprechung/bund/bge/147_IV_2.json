@@ -168,7 +168,9 @@
         "Art. 17 CPP",
         "Art. 17 RLALPS/TI"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

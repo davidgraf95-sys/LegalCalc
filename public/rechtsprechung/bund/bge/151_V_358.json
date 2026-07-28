@@ -201,7 +201,9 @@
         "Art. 59 Abs. 1 LAMAL",
         "Art. 59 LAMAL"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "KVG"
+      ],
       "zitierteEntscheide": [
         "9C_569/2023",
         "9C_774/2020",

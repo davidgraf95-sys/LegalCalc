@@ -187,7 +187,11 @@
         "Art. 12 KRK",
         "Art. 12 VWVG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "ASYLG",
+        "KRK",
+        "VWVG"
+      ],
       "zitierteEntscheide": [
         "D-4601/2025",
         "D-7483/2024",

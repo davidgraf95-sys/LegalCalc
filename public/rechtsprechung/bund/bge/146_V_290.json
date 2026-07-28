@@ -235,7 +235,10 @@
         "Art. 3 Abs. 2 LAMAL",
         "Art. 6 LAMAL"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "KVV",
+        "KVG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

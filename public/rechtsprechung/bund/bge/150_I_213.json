@@ -314,7 +314,9 @@
         "Art. 14 Abs. 2 WAG",
         "Art. 14 LFO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "WAG"
+      ],
       "zitierteEntscheide": [
         "2C_134/2018",
         "2C_397/2023",

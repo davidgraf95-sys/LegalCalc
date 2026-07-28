@@ -285,7 +285,10 @@
         "Art. 40 Abs. 3 LEP",
         "Art. 40 LEP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EPG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

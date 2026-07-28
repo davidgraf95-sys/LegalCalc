@@ -264,7 +264,10 @@
         "Art. 13 CST"
       ],
       "normKeys": [
-        "BV"
+        "BV",
+        "EPG",
+        "STPO",
+        "BGG"
       ],
       "zitierteEntscheide": [
         "1B_146/2019",

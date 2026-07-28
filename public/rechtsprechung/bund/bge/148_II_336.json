@@ -328,7 +328,9 @@
         "Art. 26 OCDE",
         "Art. 8 LAAF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [
         "2C_1162/2016",
         "2C_481/2021",

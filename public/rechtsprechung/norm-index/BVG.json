@@ -5,9 +5,29 @@
   "proArtikel": {
     "1": [
       {
+        "key": "bge_148_V_114",
+        "zitierung": "BGE 148 V 114",
+        "regesteKurz": "Art. 113 BV; § 20 Abs. 1 des Gesetzes des Kantons Aargau vom 6. März 2001 über die öffentliche Sozialhilfe und die soziale Prävention; § 20 Abs. 1 der Sozialhilfe- und Präventionsverordnung des Kantons Aargau vom 28. August 2002; Art. 16 A…",
+        "datum": "2021-11-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_146_V_331",
         "zitierung": "BGE 146 V 331",
         "regesteKurz": "Art. 11 Abs. 1 lit. c ELG; Art. 16 Abs. 2 FZV; Zeitpunkt der Anrechnung von Guthaben eines Freizügigkeitskontos bei rückwirkender Ausrichtung von Ergänzungsleistungen zur Invalidenrente. Übersicht über die Rechtsprechung. Ein verzehrbarer…",
+        "datum": "2020-09-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_146_V_341",
+        "zitierung": "BGE 146 V 341",
+        "regesteKurz": "a Art. 61 BVG; Art. 3 BVV 1; Zuständigkeit der kantonalen BVG-Aufsichtsbehörde. Seit dem Inkrafttreten von Art. 3 BVV 1 in der per 1. Januar 2012 geltenden Fassung (nach der Änderung des BVG vom 19. März 2010 [Strukturreform]) gibt es neu…",
         "datum": "2020-09-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
@@ -25,30 +45,40 @@
         "gewicht": 0
       },
       {
+        "key": "bge_150_V_12",
+        "zitierung": "BGE 150 V 12",
+        "regesteKurz": "Art. 47 BVG; Weiterführung der Vorsorge nach Erreichen des 58. Altersjahres; Gesetzesauslegung; Eintritt des Vorsorgefalles \"Alter\" vor Erreichen des ordentlichen Rentenalters. Der Versicherte, welcher nach Erreichen des 58. Altersjahres s…",
+        "datum": "2023-11-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_334",
+        "zitierung": "BGE 148 V 334",
+        "regesteKurz": "Art. 22 Abs. 3 lit. a BVG; Art. 25 Abs. 5 AHVG; Art. 49 bis Abs. 3 AHVV; Untergang des Anspruchs auf eine Waisenrente der beruflichen Vorsorge bei Ausbildung. Auslegung des Begriffs der Ausbildung im Sinne von Art. 22 Abs. 3 lit. a BVG. Di…",
+        "datum": "2022-07-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_232",
+        "zitierung": "BGE 148 III 232",
+        "regesteKurz": "Art. 92 Abs. 1 Ziff. 10 und Art. 275 SchKG; Art. 4 Abs. 1 FZG; Art. 16 Abs. 1 FZV; Verarrestierung von Guthaben der beruflichen Vorsorge; auf ein Konto bei einer Freizügigkeitseinrichtung überwiesene Austrittsleistung; Eintritt der Fälligk…",
+        "datum": "2022-04-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_V_234",
         "zitierung": "BGE 148 V 234",
         "regesteKurz": "Art. 2 Abs. 1 und 4 BVG; Art. 1j Abs. 1 lit. c BVV 2. In Fällen, in denen ein Arbeitnehmer beim gleichen Arbeitgeber sowohl im Haupt- als auch im Nebenerwerb tätig ist, findet Art. 1j Abs. 1 lit. c BVV 2 keine Anwendung. Vielmehr sind in d…",
         "datum": "2022-04-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_V_58",
-        "zitierung": "BGE 148 V 58",
-        "regesteKurz": "Art. 34a BVG (je in der vom 1. Januar 2003 bis 31. Dezember 2016 in Kraft gestandenen und in der ab 1. Januar 2017 geltenden Fassung); Art. 24 (in der vom 1. Januar 2011 bis 31. Dezember 2016 in Kraft gestandenen Fassung), Art. 24a BVV 2 (…",
-        "datum": "2022-01-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_V_114",
-        "zitierung": "BGE 148 V 114",
-        "regesteKurz": "Art. 113 BV; § 20 Abs. 1 des Gesetzes des Kantons Aargau vom 6. März 2001 über die öffentliche Sozialhilfe und die soziale Prävention; § 20 Abs. 1 der Sozialhilfe- und Präventionsverordnung des Kantons Aargau vom 28. August 2002; Art. 16 A…",
-        "datum": "2021-11-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -78,6 +108,16 @@
       }
     ],
     "10": [
+      {
+        "key": "bge_148_II_73",
+        "zitierung": "BGE 148 II 73",
+        "regesteKurz": "Art. 3 Abs. 1, Art. 4, Art. 19 Abs. 1 lit. a und Art. 20 Abs. 1 VG; Art. 1 Abs. 1, Art. 10 Abs. 1 und Art. 66 Abs. 2 BVG; Art. 10 BVV 2; Art. 49 Abs. 1 SchlT ZGB; Staatshaftung; Lücke in der beruflichen Vorsorge. Voraussetzungen der Verant…",
+        "datum": "2022-01-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_147_V_322",
         "zitierung": "BGE 147 V 322",
@@ -127,6 +167,26 @@
         "zitierung": "BGE 150 V 89",
         "regesteKurz": "Art. 35a Abs. 2 (in den Fassungen vor und ab 1. Januar 2021), Art. 6 BVG; Art. 135 OR analog; Rückforderung von Rentenleistungen; Kollisionsrecht; Verhältnis Gesetz - Reglement; Beginn der relativen Frist für die Rückforderung; Fristunterb…",
         "datum": "2023-11-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_12",
+        "zitierung": "BGE 150 V 12",
+        "regesteKurz": "Art. 47 BVG; Weiterführung der Vorsorge nach Erreichen des 58. Altersjahres; Gesetzesauslegung; Eintritt des Vorsorgefalles \"Alter\" vor Erreichen des ordentlichen Rentenalters. Der Versicherte, welcher nach Erreichen des 58. Altersjahres s…",
+        "datum": "2023-11-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_232",
+        "zitierung": "BGE 148 III 232",
+        "regesteKurz": "Art. 92 Abs. 1 Ziff. 10 und Art. 275 SchKG; Art. 4 Abs. 1 FZG; Art. 16 Abs. 1 FZV; Verarrestierung von Guthaben der beruflichen Vorsorge; auf ein Konto bei einer Freizügigkeitseinrichtung überwiesene Austrittsleistung; Eintritt der Fälligk…",
+        "datum": "2022-04-20",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -185,6 +245,18 @@
         "gewicht": 0
       }
     ],
+    "16": [
+      {
+        "key": "bge_149_III_258",
+        "zitierung": "BGE 149 III 258",
+        "regesteKurz": "Art. 80 Abs. 1 und Art. 81 Abs. 1 SchKG; definitive Rechtsöffnung und Leistungsurteil auf Bezahlung eines Bruttolohns; Rechtsöffnungstitel; befreiende Einwendung. Definitive Rechtsöffnung im Fall, dass der betriebene Arbeitgeber zur Zahlun…",
+        "datum": "2023-03-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "17": [
       {
         "key": "bge_147_V_2",
@@ -203,6 +275,18 @@
         "zitierung": "BGE 151 V 333",
         "regesteKurz": "Art. 19 BVG; Art. 20 BVV 2; Art. 15 Abs. 1 lit. b FZV; vorrangige Begünstigte hinsichtlich der Erhaltung des Vorsorgeschutzes im Todesfall; geschiedener Ehegatte. Geschiedene Ehegatten gehören gemäss Art. 19 BVG zum Kreis der überlebenden…",
         "datum": "2025-07-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "20": [
+      {
+        "key": "bge_148_V_334",
+        "zitierung": "BGE 148 V 334",
+        "regesteKurz": "Art. 22 Abs. 3 lit. a BVG; Art. 25 Abs. 5 AHVG; Art. 49 bis Abs. 3 AHVV; Untergang des Anspruchs auf eine Waisenrente der beruflichen Vorsorge bei Ausbildung. Auslegung des Begriffs der Ausbildung im Sinne von Art. 22 Abs. 3 lit. a BVG. Di…",
+        "datum": "2022-07-20",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -365,6 +449,18 @@
         "gewicht": 0
       }
     ],
+    "67": [
+      {
+        "key": "bge_151_III_591",
+        "zitierung": "BGE 151 III 591",
+        "regesteKurz": "Art. 73 Abs. 1 lit. b BVG; sachliche Zuständigkeit des kantonalen Gerichts für Streitigkeiten im Bereich der beruflichen Vorsorge; Klage auf Rückerstattung von Prämien der gebundenen Selbstvorsorge. Die Klage auf Rückerstattung von Prämien…",
+        "datum": "2025-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "73": [
       {
         "key": "bge_151_III_591",
@@ -447,6 +543,18 @@
         "gewicht": 0
       }
     ],
+    "33a": [
+      {
+        "key": "bge_150_V_12",
+        "zitierung": "BGE 150 V 12",
+        "regesteKurz": "Art. 47 BVG; Weiterführung der Vorsorge nach Erreichen des 58. Altersjahres; Gesetzesauslegung; Eintritt des Vorsorgefalles \"Alter\" vor Erreichen des ordentlichen Rentenalters. Der Versicherte, welcher nach Erreichen des 58. Altersjahres s…",
+        "datum": "2023-11-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "34a": [
       {
         "key": "bge_147_V_146",
@@ -472,6 +580,16 @@
       }
     ],
     "35a": [
+      {
+        "key": "bge_151_III_591",
+        "zitierung": "BGE 151 III 591",
+        "regesteKurz": "Art. 73 Abs. 1 lit. b BVG; sachliche Zuständigkeit des kantonalen Gerichts für Streitigkeiten im Bereich der beruflichen Vorsorge; Klage auf Rückerstattung von Prämien der gebundenen Selbstvorsorge. Die Klage auf Rückerstattung von Prämien…",
+        "datum": "2025-06-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_150_V_447",
         "zitierung": "BGE 150 V 447",

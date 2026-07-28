@@ -383,7 +383,11 @@
         "Art. 26 LMP",
         "Art. 27 Abs. 1 LMP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGBM",
+        "FZA",
+        "BOEB"
+      ],
       "zitierteEntscheide": [
         "1C_303/2010",
         "1C_759/2021",

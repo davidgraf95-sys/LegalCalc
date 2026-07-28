@@ -273,7 +273,9 @@
         "Art. 16c EOG"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "PRG",
+        "EOG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

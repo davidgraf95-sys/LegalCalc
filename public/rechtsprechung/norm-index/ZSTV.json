@@ -1,0 +1,55 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "ZSTV",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "11": [
+      {
+        "key": "bge_148_III_384",
+        "zitierung": "BGE 148 III 384",
+        "regesteKurz": "Art. 32, 68, 70, 72, 73 IPRG; Art. 252 ZGB; Art. 8 EMRK; Eintragung einer georgischen Geburtsurkunde in das Personenstandsregister im Fall von Leihmutterschaft. Eine georgische Geburtsurkunde stellt keine ausländische Entscheidung im Sinne…",
+        "datum": "2022-07-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "16": [
+      {
+        "key": "bge_151_III_1",
+        "zitierung": "BGE 151 III 1",
+        "regesteKurz": "Art. 30b Abs. 1 und 4 Ziff. 1 ZGB in Verbindung mit Art. 16 ZGB; Art. 16 ZStV; Aushändigung von Identitätsdokumenten des Kindes, Änderung des Geschlechtseintrages im Personenstandsregister; Prüfung der Urteilsfähigkeit der erklärenden Pers…",
+        "datum": "2024-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "23": [
+      {
+        "key": "bge_152_III_127",
+        "zitierung": "BGE 152 III 127",
+        "regesteKurz": "Art. 44 und 45 IPRG; Ort der Eheschliessung, wenn sich eine der betroffenen Personen im Zeitpunkt des amtlichen Rechtsaktes in der Schweiz befindet und die andere im Ausland. Gibt die Verlobte ihr Eheversprechen in Anwesenheit von Zeugen v…",
+        "datum": "2025-09-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "15a": [
+      {
+        "key": "bge_148_III_384",
+        "zitierung": "BGE 148 III 384",
+        "regesteKurz": "Art. 32, 68, 70, 72, 73 IPRG; Art. 252 ZGB; Art. 8 EMRK; Eintragung einer georgischen Geburtsurkunde in das Personenstandsregister im Fall von Leihmutterschaft. Eine georgische Geburtsurkunde stellt keine ausländische Entscheidung im Sinne…",
+        "datum": "2022-07-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

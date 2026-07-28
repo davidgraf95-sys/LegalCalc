@@ -158,7 +158,13 @@
         "Art. 45 CIAP",
         "Art. 45 LAPUB"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "ZGB",
+        "STGB",
+        "BGG",
+        "VSTRR",
+        "BOEB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

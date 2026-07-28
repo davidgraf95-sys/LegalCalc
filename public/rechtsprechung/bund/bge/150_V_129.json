@@ -445,7 +445,9 @@
       ],
       "normKeys": [
         "BGG",
-        "ATSG"
+        "ATSG",
+        "KVG",
+        "KVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

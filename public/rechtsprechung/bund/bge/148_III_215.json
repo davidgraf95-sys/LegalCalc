@@ -228,7 +228,12 @@
         "Art. 266a Abs. 1 CO",
         "Art. 271 Abs. 1 CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO",
+        "ZGB",
+        "OR"
+      ],
       "zitierteEntscheide": [
         "4A_113/2019",
         "4A_127/2017",

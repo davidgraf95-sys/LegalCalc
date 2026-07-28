@@ -142,7 +142,11 @@
         "Art. 44 ASYLG",
         "Art. 48 Abs. 1 VWVG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "ASYLG",
+        "VGG",
+        "VWVG"
+      ],
       "zitierteEntscheide": [
         "2C_697/2023",
         "F-3139/2026",

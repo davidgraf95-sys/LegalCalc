@@ -293,7 +293,9 @@
         "Art. 13a RVV",
         "Art. 18 Abs. 1 RVV"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [
         "1C_315/2021",
         "2C_1023/2017",

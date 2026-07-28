@@ -205,7 +205,10 @@
         "Art. 29 LVLENE",
         "Art. 3 Abs. 2 LAT"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "RPG",
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

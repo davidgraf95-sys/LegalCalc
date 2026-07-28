@@ -361,7 +361,9 @@
         "Art. 2 NR"
       ],
       "normKeys": [
-        "ZPO"
+        "ZPO",
+        "PATG",
+        "IPRG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

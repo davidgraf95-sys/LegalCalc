@@ -512,7 +512,9 @@
         "Art. 5 Abs. 1 LCART",
         "Art. 5 Abs. 4 KG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "KG"
+      ],
       "zitierteEntscheide": [
         "2A.492/2002",
         "2C_101/2016",

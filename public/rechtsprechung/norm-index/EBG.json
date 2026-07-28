@@ -1,0 +1,31 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "EBG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "40b": [
+      {
+        "key": "bge_148_III_343",
+        "zitierung": "BGE 148 III 343",
+        "regesteKurz": "Art. 40b Abs. 1 EBG; Gefährdungshaftung nach Eisenbahngesetz; Art. 40c EBG; Entlastungsgründe. Nach Art. 40c EBG wird der Inhaber eines Eisenbahnunternehmens von der Haftpflicht für den Schaden aus dem Betrieb der Eisenbahn entlastet, wenn…",
+        "datum": "2022-05-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "40c": [
+      {
+        "key": "bge_148_III_343",
+        "zitierung": "BGE 148 III 343",
+        "regesteKurz": "Art. 40b Abs. 1 EBG; Gefährdungshaftung nach Eisenbahngesetz; Art. 40c EBG; Entlastungsgründe. Nach Art. 40c EBG wird der Inhaber eines Eisenbahnunternehmens von der Haftpflicht für den Schaden aus dem Betrieb der Eisenbahn entlastet, wenn…",
+        "datum": "2022-05-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

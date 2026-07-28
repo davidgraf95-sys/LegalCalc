@@ -290,7 +290,10 @@
       ],
       "normKeys": [
         "BV",
-        "BGG"
+        "BGG",
+        "URV",
+        "URG",
+        "VGG"
       ],
       "zitierteEntscheide": [
         "1C_333/2020",

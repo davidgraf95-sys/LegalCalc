@@ -189,7 +189,9 @@
         "Art. 69 LAMAL"
       ],
       "normKeys": [
-        "DSG"
+        "DSG",
+        "KVG",
+        "ATSG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -1,0 +1,31 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "VSTV",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "21": [
+      {
+        "key": "bge_150_II_437",
+        "zitierung": "BGE 150 II 437",
+        "regesteKurz": "Art. 12 Abs. 1, Art. 16 Abs. 1 lit. c und Abs. 2 VStG; Art. 21 Abs. 2 VStV; Beginn des Verzugszinsenlaufs auf geldwerten Leistungen. Rechtsprechung und Lehre gehen in verschiedenen Situationen von unterschiedlichen Zeitpunkten für die Fäll…",
+        "datum": "2024-03-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "26a": [
+      {
+        "key": "bge_151_II_827",
+        "zitierung": "BGE 151 II 827",
+        "regesteKurz": "Art. 5 aAbs. 1 bis VStG; Kapitaleinlageprinzip; gesonderte Verbuchung in der Handelsbilanz und Meldung an die ESTV; Vermächtnis. Wenn Inhaber von Beteiligungsrechten der Gesellschaft vermächtnisweise Aktiven zuwenden, liegt eine Kapitalein…",
+        "datum": "2025-03-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

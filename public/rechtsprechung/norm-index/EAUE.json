@@ -1,0 +1,53 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "EAUE",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bge_148_IV_314",
+        "zitierung": "BGE 148 IV 314",
+        "regesteKurz": "Art. 3 EMRK; Art. 10 Abs. 1 UNO-Pakt II; Art. 10 Abs. 3 BV; Art. 1, 26 Ziff. 1 und 3 EAUe; Art. 84 BGG; Auslieferung an Armenien; reziproke Anwendung eines Vorbehalts; Gesundheitszustand; diplomatische Garantien. Besonders bedeutender Fall…",
+        "datum": "2022-03-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_338",
+        "zitierung": "BGE 146 IV 338",
+        "regesteKurz": "Art. 2 Ziff. 1 und Art. 3 Ziff. 1 EAUe, Art. 3 Abs. 1 und Art. 35 Abs. 1 lit. a IRSG, Art. 260ter Ziff. 1 StGB; Auslieferung an Deutschland wegen mutmasslicher Unterstützung einer kriminellen Organisation. Beidseitige Strafbarkeit; Einrede…",
+        "datum": "2020-06-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "2": [
+      {
+        "key": "bge_146_IV_338",
+        "zitierung": "BGE 146 IV 338",
+        "regesteKurz": "Art. 2 Ziff. 1 und Art. 3 Ziff. 1 EAUe, Art. 3 Abs. 1 und Art. 35 Abs. 1 lit. a IRSG, Art. 260ter Ziff. 1 StGB; Auslieferung an Deutschland wegen mutmasslicher Unterstützung einer kriminellen Organisation. Beidseitige Strafbarkeit; Einrede…",
+        "datum": "2020-06-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "26": [
+      {
+        "key": "bge_148_IV_314",
+        "zitierung": "BGE 148 IV 314",
+        "regesteKurz": "Art. 3 EMRK; Art. 10 Abs. 1 UNO-Pakt II; Art. 10 Abs. 3 BV; Art. 1, 26 Ziff. 1 und 3 EAUe; Art. 84 BGG; Auslieferung an Armenien; reziproke Anwendung eines Vorbehalts; Gesundheitszustand; diplomatische Garantien. Besonders bedeutender Fall…",
+        "datum": "2022-03-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

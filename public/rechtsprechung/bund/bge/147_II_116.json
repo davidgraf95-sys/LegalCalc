@@ -271,7 +271,10 @@
         "Art. 4 Abs. 1 LAAF",
         "Art. 4 Abs. 2 LBA"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "VRK",
+        "GWG"
+      ],
       "zitierteEntscheide": [
         "2A.458/2001",
         "2C_1037/2019",

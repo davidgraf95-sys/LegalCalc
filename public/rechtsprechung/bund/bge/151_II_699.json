@@ -302,7 +302,11 @@
         "Art. 26 OLT",
         "Art. 26a Abs. 2 OLT"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "ARG"
+      ],
       "zitierteEntscheide": [
         "2A.211/2006",
         "2A.256/2001",

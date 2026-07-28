@@ -34,6 +34,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_98",
+        "zitierung": "BGE 152 II 98",
+        "regesteKurz": "Art. 127 Abs. 1 und 2 BV; Art. 7 Abs. 1, Art. 8 und 40 Abs. 3 DBG; Art. 1 Abs. 3 und Art. 15 Abs. 3 StHG; Besteuerung einer natürlichen Person, deren Steuerpflicht sich während der Steuerperiode ändert; Aufteilung der Steuerperiode. Fall e…",
+        "datum": "2025-08-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       },
       {
@@ -131,10 +141,30 @@
     ],
     "16": [
       {
+        "key": "bge_148_I_286",
+        "zitierung": "BGE 148 I 286",
+        "regesteKurz": "Art. 8 Abs. 1 und Art. 127 Abs. 2 BV; Art. 7 Abs. 1 StHG; \"Begrenzung der Auswirkung des Eigenmietwerts\"; abstrakte Kontrolle von Art. 20 Abs. 4 des Tessiner Steuergesetzes vom 21. Juni 1994 (StG/TI), wonach der steuerbare Eigenmietwert be…",
+        "datum": "2022-08-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_148_II_378",
         "zitierung": "BGE 148 II 378",
         "regesteKurz": "Art. 16 Abs. 1, Abs. 3 und Art. 21 Abs. 1 DBG; Art. 12 Abs. 2 lit. c StHG; Steuerfolgen einer Entschädigung für die Eintragung einer Bauhöhenbeschränkung; Begriffe der \"wesentlichen Beeinträchtigung\" und des \"Aktiventauschs\". Wird ein Grun…",
         "datum": "2022-05-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_146_II_6",
+        "zitierung": "BGE 146 II 6",
+        "regesteKurz": "Art. 16 Abs. 1, Art. 24 lit. a und d DBG; Art. 7 Abs. 1 und 4 lit. c und f StHG; Unterschied zwischen einer Steuerbefreiung von Schenkungen und einer solchen von Unterstützungen aus öffentlichen oder privaten Mitteln. Die Beträge, die eine…",
+        "datum": "2020-01-31",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -151,10 +181,20 @@
         "gewicht": 1
       },
       {
-        "key": "bge_146_II_6",
-        "zitierung": "BGE 146 II 6",
-        "regesteKurz": "Art. 16 Abs. 1, Art. 24 lit. a und d DBG; Art. 7 Abs. 1 und 4 lit. c und f StHG; Unterschied zwischen einer Steuerbefreiung von Schenkungen und einer solchen von Unterstützungen aus öffentlichen oder privaten Mitteln. Die Beträge, die eine…",
-        "datum": "2020-01-31",
+        "key": "bge_148_II_551",
+        "zitierung": "BGE 148 II 551",
+        "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 18 und 336a OR; steuerliche Behandlung einer Entschädigung, die im Rahmen einer arbeitsrechtlichen Streitigkeit wegen missbräuchlicher Kündigung gestützt auf einen gerichtlichen Vergleich vereinb…",
+        "datum": "2022-10-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_II_19",
+        "zitierung": "BGE 149 II 19",
+        "regesteKurz": "Art. 25 DBG i.V.m. Art. 23 lit. f und Art. 33 Abs. 1 lit. c DBG; Besteuerung von Unterhaltsbeiträgen als Einkommen; Begriff der Gewinnungskosten; keine Abzugsfähigkeit von zwecks Erlangung von Unterhaltsbeiträgen aufgewendeten Anwaltskoste…",
+        "datum": "2022-09-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -179,44 +219,34 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_154",
-        "zitierung": "BGE 151 II 154",
-        "regesteKurz": "Art. 33 Abs. 1 lit. a und c, Art. 35 Abs. 3 DBG; Ausscheidung von Unterhaltsbeiträgen und Schuldzinsen bei Ehegatten mit getrennten Wohnsitzen. Grundsätzlich erfolgt die internationale Ausscheidung von steuerlichen Abzügen bei Privatperson…",
-        "datum": "2024-09-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_II_202",
-        "zitierung": "BGE 150 II 202",
-        "regesteKurz": "a Art. 22 Abs. 1 DBG; Einkünfte aus Vorsorge. Steuerliche Einordnung von Renten (Beiträge wie Auszahlungen) aus einem ausländischen Vorsorgewerk in die Systematik von Art. 22 Abs. 1 DBG (E. 4). Regeste b Art. 204 DBG; Übergangslösung für A…",
-        "datum": "2023-12-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_97",
-        "zitierung": "BGE 146 II 97",
-        "regesteKurz": "Art. 127 Abs. 1 BV; Art. 16 Abs. 1 und 2 DBG; Art. 7 Abs. 1 StHG. \"Ist-Besteuerung\" im harmonisierten Steuerrecht, soweit weder Steuerumgehung noch Simulation vorliegen. Das harmonisierte Steuerrecht schreibt - unter Vorbehalt von Steuerum…",
-        "datum": "2020-02-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "17": [
+      {
+        "key": "bge_148_II_551",
+        "zitierung": "BGE 148 II 551",
+        "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 18 und 336a OR; steuerliche Behandlung einer Entschädigung, die im Rahmen einer arbeitsrechtlichen Streitigkeit wegen missbräuchlicher Kündigung gestützt auf einen gerichtlichen Vergleich vereinb…",
+        "datum": "2022-10-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_152_II_19",
         "zitierung": "BGE 152 II 19",
         "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 337c Abs. 3 OR; steuerliche Behandlung einer Entschädigung wegen unrechtmässiger fristloser Kündigung nach öffentlichem Personalrecht. Die Entschädigung für…",
         "datum": "2026-01-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_454",
+        "zitierung": "BGE 149 II 454",
+        "regesteKurz": "Art. 26 Abs. 1 lit. c DBG; Anspruch auf Pauschalabzug für \"übrige Berufskosten\" bei Vorliegen eines von der Steuerbehörde genehmigten Spesenreglements. Verweigerung des Abzugs für \"übrige Berufskosten\" durch die kantonalen Behörden, da der…",
+        "datum": "2023-07-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -245,6 +275,36 @@
     ],
     "18": [
       {
+        "key": "bge_150_II_265",
+        "zitierung": "BGE 150 II 265",
+        "regesteKurz": "Art. 37b DBG; gesonderte Besteuerung des Liquidationsgewinns aus der Auflösung stiller Reserven infolge einer buchhalterischen Neubewertung von Anlagevermögen. Der Liquidationsgewinn aus einer buchhalterischen Neubewertung von Anlagevermög…",
+        "datum": "2024-04-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_II_299",
+        "zitierung": "BGE 148 II 299",
+        "regesteKurz": "Art. 18a Abs. 1 DBG; Art. 8 Abs. 2 bis StHG; Begriff der \"Veräusserung\"; Schenkung. Der Begriff \"Veräusserung\" gemäss Art. 18a Abs. 1 DBG und Art. 8 Abs. 2 bis StHG umfasst die Schenkung (E. 5, 7, 9 und 13). Regeste Art. 18a al. 1 LIFD; ar…",
+        "datum": "2022-04-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_242",
+        "zitierung": "BGE 147 V 242",
+        "regesteKurz": "Art. 21 ter Abs. 4 IVG und Art. 9 Abs. 2 HVI; monatliche Vergütung für von Dritten erbrachte Dienstleistungen. Soweit Art. 9 Abs. 2 HVI vorsieht, dass die monatliche Vergütung für von Dritten erbrachte Dienstleistungen den Betrag des monat…",
+        "datum": "2021-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_147_V_114",
         "zitierung": "BGE 147 V 114",
         "regesteKurz": "Art. 9 Abs. 3 AHVG; Art. 23 Abs. 4 AHVV; Bindungswirkung der Steuermeldung. Die Angaben der Steuerbehörde, die steuerrechtliche Auswirkungen haben, sind für die AHV-Behörden hinsichtlich der Frage, ob überhaupt Erwerbseinkommen und gegeben…",
@@ -263,9 +323,29 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_II_6",
+        "zitierung": "BGE 146 II 6",
+        "regesteKurz": "Art. 16 Abs. 1, Art. 24 lit. a und d DBG; Art. 7 Abs. 1 und 4 lit. c und f StHG; Unterschied zwischen einer Steuerbefreiung von Schenkungen und einer solchen von Unterstützungen aus öffentlichen oder privaten Mitteln. Die Beträge, die eine…",
+        "datum": "2020-01-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "19": [
+      {
+        "key": "bge_150_II_265",
+        "zitierung": "BGE 150 II 265",
+        "regesteKurz": "Art. 37b DBG; gesonderte Besteuerung des Liquidationsgewinns aus der Auflösung stiller Reserven infolge einer buchhalterischen Neubewertung von Anlagevermögen. Der Liquidationsgewinn aus einer buchhalterischen Neubewertung von Anlagevermög…",
+        "datum": "2024-04-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_150_II_40",
         "zitierung": "BGE 150 II 40",
@@ -309,6 +389,28 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_151_II_262",
+        "zitierung": "BGE 151 II 262",
+        "regesteKurz": "Art. 9 BV; Art. 13 Abs. 2 StHG; Art. 76 Abs. 6 des Gesetzes des Kantons Genf vom 9. November 1887 über öffentliche Abgaben; steuerliche Zuordnung einer mit einem Wohnrecht belasteten Liegenschaft; Vermögenssteuer; ergänzende Genfer Immobil…",
+        "datum": "2024-10-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "22": [
+      {
+        "key": "bge_151_V_343",
+        "zitierung": "BGE 151 V 343",
+        "regesteKurz": "Art. 21 Abs. 3 FZA; Art. 79b Abs. 2 BVG; Art. 60b Abs. 1 BVV 2; quantitative und zeitliche Begrenzung der jährlichen Einkaufssumme der beruflichen Vorsorge. Art. 60b Abs. 1 BVV 2 begrenzt die jährliche Einkaufssumme quantitativ (20 % des v…",
+        "datum": "2025-07-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "23": [
@@ -317,6 +419,16 @@
         "zitierung": "BGE 152 II 19",
         "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 337c Abs. 3 OR; steuerliche Behandlung einer Entschädigung wegen unrechtmässiger fristloser Kündigung nach öffentlichem Personalrecht. Die Entschädigung für…",
         "datum": "2026-01-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_19",
+        "zitierung": "BGE 149 II 19",
+        "regesteKurz": "Art. 25 DBG i.V.m. Art. 23 lit. f und Art. 33 Abs. 1 lit. c DBG; Besteuerung von Unterhaltsbeiträgen als Einkommen; Begriff der Gewinnungskosten; keine Abzugsfähigkeit von zwecks Erlangung von Unterhaltsbeiträgen aufgewendeten Anwaltskoste…",
+        "datum": "2022-09-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -335,10 +447,30 @@
         "gewicht": 1
       },
       {
+        "key": "bge_149_II_19",
+        "zitierung": "BGE 149 II 19",
+        "regesteKurz": "Art. 25 DBG i.V.m. Art. 23 lit. f und Art. 33 Abs. 1 lit. c DBG; Besteuerung von Unterhaltsbeiträgen als Einkommen; Begriff der Gewinnungskosten; keine Abzugsfähigkeit von zwecks Erlangung von Unterhaltsbeiträgen aufgewendeten Anwaltskoste…",
+        "datum": "2022-09-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_152_II_19",
         "zitierung": "BGE 152 II 19",
         "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 337c Abs. 3 OR; steuerliche Behandlung einer Entschädigung wegen unrechtmässiger fristloser Kündigung nach öffentlichem Personalrecht. Die Entschädigung für…",
         "datum": "2026-01-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_II_818",
+        "zitierung": "BGE 151 II 818",
+        "regesteKurz": "Art. 12 Abs. 3 lit. a StHG; Art. 58 Abs. 3 und 4 des Gesetzes der Republik und des Kantons Neuenburg vom 21. März 2000 über die direkten Steuern (LCdir); Aufschub der Besteuerung von Grundstückgewinnen bei Übertragung der Liegenschaft als…",
+        "datum": "2025-03-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -531,6 +663,16 @@
     ],
     "36": [
       {
+        "key": "bge_151_V_343",
+        "zitierung": "BGE 151 V 343",
+        "regesteKurz": "Art. 21 Abs. 3 FZA; Art. 79b Abs. 2 BVG; Art. 60b Abs. 1 BVV 2; quantitative und zeitliche Begrenzung der jährlichen Einkaufssumme der beruflichen Vorsorge. Art. 60b Abs. 1 BVV 2 begrenzt die jährliche Einkaufssumme quantitativ (20 % des v…",
+        "datum": "2025-07-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_147_III_457",
         "zitierung": "BGE 147 III 457",
         "regesteKurz": "Art. 276 Abs. 1 und 2, Art. 285 Abs. 1 ZGB; Unterhaltsberechnung; Berücksichtigung eines Steueranteils im Barbedarf des Kindes. Stehen genügend Mittel zur Verfügung, um bei der Unterhaltsberechnung über das betreibungsrechtliche Existenzmi…",
@@ -541,7 +683,29 @@
         "gewicht": 0
       }
     ],
+    "38": [
+      {
+        "key": "bge_151_V_343",
+        "zitierung": "BGE 151 V 343",
+        "regesteKurz": "Art. 21 Abs. 3 FZA; Art. 79b Abs. 2 BVG; Art. 60b Abs. 1 BVV 2; quantitative und zeitliche Begrenzung der jährlichen Einkaufssumme der beruflichen Vorsorge. Art. 60b Abs. 1 BVV 2 begrenzt die jährliche Einkaufssumme quantitativ (20 % des v…",
+        "datum": "2025-07-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "40": [
+      {
+        "key": "bge_152_II_98",
+        "zitierung": "BGE 152 II 98",
+        "regesteKurz": "Art. 127 Abs. 1 und 2 BV; Art. 7 Abs. 1, Art. 8 und 40 Abs. 3 DBG; Art. 1 Abs. 3 und Art. 15 Abs. 3 StHG; Besteuerung einer natürlichen Person, deren Steuerpflicht sich während der Steuerperiode ändert; Aufteilung der Steuerperiode. Fall e…",
+        "datum": "2025-08-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_II_34",
         "zitierung": "BGE 149 II 34",
@@ -615,6 +779,16 @@
         "zitierung": "BGE 151 II 802",
         "regesteKurz": "Art. 63 Abs. 1 lit. b DBG; Art. 960b Abs. 2 OR; mit Aktiven des Umlaufvermögens verbundene Verlustrisiken; Wertschwankungsreserven. Bei Rückstellungen zu Lasten der Erfolgsrechnung im Sinne von Art. 63 Abs. 1 lit. b DBG handelt es sich u.a…",
         "datum": "2025-02-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_II_155",
+        "zitierung": "BGE 147 II 155",
+        "regesteKurz": "Auslegung von Art. 62 Abs. 4 DBG (Art. 28 Abs. 1 ter StHG). Art. 62 Abs. 4 DBG ist eine steuerrechtliche Berichtigungsbestimmung. Sie ermöglicht, beim steuerbaren Gewinn der geprüften Periode nicht begründete Abschreibungen oder Wertberich…",
+        "datum": "2020-11-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -777,6 +951,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_150_II_191",
+        "zitierung": "BGE 150 II 191",
+        "regesteKurz": "Art. 4 lit. a BGÖ; Art. 74 MWSTG; Zugang zu Dokumenten des Bundesamts für Zoll und Grenzsicherheit (BAZG) über die Einfuhr von Gold in die Schweiz. Verhältnis zwischen dem Steuergeheimnis und dem Öffentlichkeitsprinzip (E. 3.1-3.4). Die st…",
+        "datum": "2023-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "111": [
@@ -802,6 +986,16 @@
       }
     ],
     "113": [
+      {
+        "key": "bge_152_II_98",
+        "zitierung": "BGE 152 II 98",
+        "regesteKurz": "Art. 127 Abs. 1 und 2 BV; Art. 7 Abs. 1, Art. 8 und 40 Abs. 3 DBG; Art. 1 Abs. 3 und Art. 15 Abs. 3 StHG; Besteuerung einer natürlichen Person, deren Steuerpflicht sich während der Steuerperiode ändert; Aufteilung der Steuerperiode. Fall e…",
+        "datum": "2025-08-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_II_442",
         "zitierung": "BGE 149 II 442",
@@ -853,6 +1047,18 @@
         "zitierung": "BGE 150 II 26",
         "regesteKurz": "Art. 117 Abs. 1 und Art. 120 Abs. 3 lit. a DBG; Unterbrechung der Verjährung; Steuervertretungsverhältnisse und Wissenszurechnung. Die Wendung \"zur Kenntnis gebracht\" in Art. 120 Abs. 3 lit. a DBG ist analog zum Begriff der Zustellung ausz…",
         "datum": "2023-11-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "122": [
+      {
+        "key": "bge_148_II_504",
+        "zitierung": "BGE 148 II 504",
+        "regesteKurz": "Art. 16 Abs. 1 und Art. 17 Abs. 1 DBG; Art. 327a Abs. 1 OR; Spesenreglement für Unternehmen (Kreisschreiben Nr. 25 der Schweizerischen Steuerkonferenz in der Fassung vom 18. Januar 2008); Genehmigung durch die Steuerbehörde des Sitzkantons…",
+        "datum": "2022-10-14",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1039,6 +1245,40 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_277",
+        "zitierung": "BGE 148 V 277",
+        "regesteKurz": "Art. 16 Abs. 1 Satz 2 AHVG; Art. 53 Abs. 1 ATSG i.V.m. Art. 67 VwVG; Befristung des Rechts zur Beitragsfestsetzung in Folge eines Steuerhinterziehungverfahrens. Der Bundesgesetzgeber hat in Art. 16 Abs. 1 AHVG eine Spezialregelung getroffe…",
+        "datum": "2022-05-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "152": [
+      {
+        "key": "bge_148_V_277",
+        "zitierung": "BGE 148 V 277",
+        "regesteKurz": "Art. 16 Abs. 1 Satz 2 AHVG; Art. 53 Abs. 1 ATSG i.V.m. Art. 67 VwVG; Befristung des Rechts zur Beitragsfestsetzung in Folge eines Steuerhinterziehungverfahrens. Der Bundesgesetzgeber hat in Art. 16 Abs. 1 AHVG eine Spezialregelung getroffe…",
+        "datum": "2022-05-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "162": [
+      {
+        "key": "bge_150_II_73",
+        "zitierung": "BGE 150 II 73",
+        "regesteKurz": "Art. 151 Abs. 1 DBG und Art. 53 Abs. 1 StHG; Nachsteuerverfahren durch einen Kanton, in dem eine Gesellschaft eine Zweigniederlassung betreibt, nachdem der Sitzkanton seine Veranlagungsverfügung erlassen hat (Änderung der Rechtsprechung).…",
+        "datum": "2023-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "165": [
@@ -1147,6 +1387,28 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_74",
+        "zitierung": "BGE 149 II 74",
+        "regesteKurz": "Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Art. 177 und Art. 181 Abs. 3 DBG; Steuerhinterziehung, persönliche Strafbarkeit von Organen der juristischen Person, Prinzip ne bis in idem. Keine Verletzung des Prinzips ne…",
+        "datum": "2022-08-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "177": [
+      {
+        "key": "bge_149_II_74",
+        "zitierung": "BGE 149 II 74",
+        "regesteKurz": "Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Art. 177 und Art. 181 Abs. 3 DBG; Steuerhinterziehung, persönliche Strafbarkeit von Organen der juristischen Person, Prinzip ne bis in idem. Keine Verletzung des Prinzips ne…",
+        "datum": "2022-08-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "181": [
@@ -1155,6 +1417,18 @@
         "zitierung": "BGE 149 II 74",
         "regesteKurz": "Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Art. 177 und Art. 181 Abs. 3 DBG; Steuerhinterziehung, persönliche Strafbarkeit von Organen der juristischen Person, Prinzip ne bis in idem. Keine Verletzung des Prinzips ne…",
         "datum": "2022-08-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "209": [
+      {
+        "key": "bge_149_II_177",
+        "zitierung": "BGE 149 II 177",
+        "regesteKurz": "Art. 127 Abs. 1 BV; Art. 85 und 86 DBG sowie Art. 32 und 33 StHG (in der bis 31. Dezember 2020 gültigen Fassung); Quellensteuer; Fehlen einer gesetzlichen Grundlage für eine Hochrechnung des Einkommens, welches ein Arbeitnehmer erzielt hat…",
+        "datum": "2023-04-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1191,6 +1465,18 @@
         "zitierung": "BGE 147 V 114",
         "regesteKurz": "Art. 9 Abs. 3 AHVG; Art. 23 Abs. 4 AHVV; Bindungswirkung der Steuermeldung. Die Angaben der Steuerbehörde, die steuerrechtliche Auswirkungen haben, sind für die AHV-Behörden hinsichtlich der Frage, ob überhaupt Erwerbseinkommen und gegeben…",
         "datum": "2021-02-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "20a": [
+      {
+        "key": "bge_147_II_338",
+        "zitierung": "BGE 147 II 338",
+        "regesteKurz": "Rückerstattung der Verrechnungssteuer; Steuerumgehung (Art. 21 Abs. 2 VStG); Tragweite der im Jahr 1990 publizierten Praxis der ESTV zum \"Kauf eines vollen Portemonnaies\". Voraussetzungen für die Rückerstattung der Verrechnungssteuer (E. 2…",
+        "datum": "2021-07-29",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

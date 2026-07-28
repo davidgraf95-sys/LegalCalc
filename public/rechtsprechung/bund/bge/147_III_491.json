@@ -320,7 +320,12 @@
         "Art. 271 Abs. 3 LP",
         "Art. 271 LP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "LUGUE",
+        "BGG",
+        "IPRG",
+        "SCHKG"
+      ],
       "zitierteEntscheide": [
         "4A_156/2020",
         "4A_305/2012",

@@ -142,7 +142,11 @@
         "Art. 48 Abs. 2 LTF",
         "Art. 50 Abs. 1 PA"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "IRSG",
+        "BGG",
+        "VWVG"
+      ],
       "zitierteEntscheide": [
         "1C_425/2023",
         "BGE 122 II 373",

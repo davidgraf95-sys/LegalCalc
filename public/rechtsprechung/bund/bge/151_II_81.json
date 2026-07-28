@@ -303,7 +303,11 @@
         "Art. 183 LSP",
         "Art. 36 Abs. 1 RUPH"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "IRSG",
+        "BOEB",
+        "BGG"
+      ],
       "zitierteEntscheide": [
         "1C_303/2010",
         "2C_1009/2021",

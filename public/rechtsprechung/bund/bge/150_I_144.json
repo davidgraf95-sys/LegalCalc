@@ -243,7 +243,9 @@
         "Art. 3 Abs. 1 LTEO",
         "Art. 3 LTEO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "EMRK"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

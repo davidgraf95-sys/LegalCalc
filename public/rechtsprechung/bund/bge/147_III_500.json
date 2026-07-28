@@ -211,7 +211,11 @@
         "Art. 77 Abs. 2 LTF",
         "Art. 77 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "IPRG",
+        "ZPO",
+        "BGG"
+      ],
       "zitierteEntscheide": [
         "4A_222/2015",
         "4A_476/2020",

@@ -211,7 +211,9 @@
         "Art. 72 Abs. 1 LTF"
       ],
       "normKeys": [
-        "ZPO"
+        "ZPO",
+        "BGG",
+        "ZGB"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

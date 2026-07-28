@@ -190,7 +190,13 @@
         "Art. 5 Abs. 2 CST",
         "Art. 5 Abs. 2 LASI"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "VZAE",
+        "ASYLG"
+      ],
       "zitierteEntscheide": [
         "6B_1015/2021",
         "6B_38/2021",

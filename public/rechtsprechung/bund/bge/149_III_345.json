@@ -197,7 +197,11 @@
         "Art. 566 Abs. 1 CC",
         "Art. 566 Abs. 2 CC"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "SCHKG",
+        "ZPO",
+        "ZGB"
+      ],
       "zitierteEntscheide": [
         "5A_304/2018",
         "5A_961/2022",

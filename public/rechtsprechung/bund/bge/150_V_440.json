@@ -175,7 +175,11 @@
         "Art. 3 Abs. 3 LFLP",
         "Art. 9a Abs. 1 LPC"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "FZV",
+        "FZG",
+        "ELG"
+      ],
       "zitierteEntscheide": [
         "8C_690/2023",
         "9C_333/2016",

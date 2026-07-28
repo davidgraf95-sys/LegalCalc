@@ -137,7 +137,11 @@
         "Art. 88 Abs. 1 LTF",
         "Art. 88 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BV",
+        "BPR",
+        "BGG"
+      ],
       "zitierteEntscheide": [
         "1C_134/2020",
         "BGE 138 I 171",

@@ -73,6 +73,16 @@
     ],
     "10": [
       {
+        "key": "bge_147_V_242",
+        "zitierung": "BGE 147 V 242",
+        "regesteKurz": "Art. 21 ter Abs. 4 IVG und Art. 9 Abs. 2 HVI; monatliche Vergütung für von Dritten erbrachte Dienstleistungen. Soweit Art. 9 Abs. 2 HVI vorsieht, dass die monatliche Vergütung für von Dritten erbrachte Dienstleistungen den Betrag des monat…",
+        "datum": "2021-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_146_V_313",
         "zitierung": "BGE 146 V 313",
         "regesteKurz": "Art. 30 ter Abs. 3 AHVG; Eintragung beitragspflichtiger Einkommen Unselbständigerwerbender. Für die ausnahmsweise Anwendung des Erwerbsjahrsprinzips ist einzig relevant, ob der Arbeitnehmer einerseits im Zeitpunkt der nachträglichen Zahlun…",
@@ -87,6 +97,18 @@
         "zitierung": "BGE 146 V 224",
         "regesteKurz": "Art. 4 Abs. 2 lit. a und Art. 10 Abs. 1 AHVG; Art. 6ter lit. a und Art. 28 Abs. 1 AHVV; Beitragsfestsetzung. Das Erwerbseinkommen, das Personen mit Wohnsitz in der Schweiz als Inhaber oder Teilhaber von Betrieben oder von Betriebsstätten i…",
         "datum": "2020-06-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "11": [
+      {
+        "key": "bge_150_V_316",
+        "zitierung": "BGE 150 V 316",
+        "regesteKurz": "Art. 23 Abs. 1 und 3 IVG; Art. 21 quater IVV; Grundentschädigung zur Bemessung des Taggeldes der Invalidenversicherung für Selbständigerwerbende. Aus der Auslegung des Art. 23 Abs. 3 IVG ergibt sich, dass die Berechnung der Grundentschädig…",
+        "datum": "2024-06-05",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -149,10 +171,30 @@
     ],
     "14": [
       {
+        "key": "bge_149_III_258",
+        "zitierung": "BGE 149 III 258",
+        "regesteKurz": "Art. 80 Abs. 1 und Art. 81 Abs. 1 SchKG; definitive Rechtsöffnung und Leistungsurteil auf Bezahlung eines Bruttolohns; Rechtsöffnungstitel; befreiende Einwendung. Definitive Rechtsöffnung im Fall, dass der betriebene Arbeitgeber zur Zahlun…",
+        "datum": "2023-03-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_V_21",
         "zitierung": "BGE 149 V 21",
         "regesteKurz": "Art. 25 Abs. 3 ATSG; Art. 16 Abs. 3 AHVG; Art. 25 Abs. 3 AHVV; Rückerstattung von Akontobeiträgen. Akontobeiträge, die auf der Grundlage von Art. 24 AHVV von Selbstständigerwerbenden erhoben wurden, können nicht als \"zuviel bezahlte Beiträ…",
         "datum": "2023-03-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_277",
+        "zitierung": "BGE 148 V 277",
+        "regesteKurz": "Art. 16 Abs. 1 Satz 2 AHVG; Art. 53 Abs. 1 ATSG i.V.m. Art. 67 VwVG; Befristung des Rechts zur Beitragsfestsetzung in Folge eines Steuerhinterziehungverfahrens. Der Bundesgesetzgeber hat in Art. 16 Abs. 1 AHVG eine Spezialregelung getroffe…",
+        "datum": "2022-05-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -321,12 +363,34 @@
         "gewicht": 0
       }
     ],
+    "25": [
+      {
+        "key": "bge_149_III_297",
+        "zitierung": "BGE 149 III 297",
+        "regesteKurz": "Art. 285 Abs. 2 ZGB; Art. 9 ATSG; Art. 42 und 42 bis IVG; Hilflosenentschädigung und Betreuungsbeitrag. Die Hilflosenentschädigung des minderjährigen Kindes darf nicht vom Betreuungsunterhalt abgezogen werden, der im Rahmen des Unterhaltsb…",
+        "datum": "2023-03-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "29": [
       {
         "key": "bge_150_V_257",
         "zitierung": "BGE 150 V 257",
         "regesteKurz": "Art. 39 Abs. 1 AHVG; Art. 55 bis lit. b AHVV (je in der vom 1. Januar 1997 bis Ende 2023 geltenden Fassung); Aufschub der Altersrente, die eine Invalidenrente ablöst. Laut Art. 55 bis lit. b AHVV sind Altersrenten, die eine Invalidenrente…",
         "datum": "2024-06-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_146",
+        "zitierung": "BGE 147 V 146",
+        "regesteKurz": "Art. 34a BVG und Art. 24 BVV 2 in der bis zum 31. Dezember 2016 in Kraft gestandenen Fassung; Bestimmung der Höhe einer Invalidenrente der beruflichen Vorsorge im Rahmen einer Überentschädigungsberechnung angesichts einer Rente aus der ers…",
+        "datum": "2021-02-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -389,6 +453,30 @@
         "gewicht": 0
       }
     ],
+    "107": [
+      {
+        "key": "bge_151_I_225",
+        "zitierung": "BGE 151 I 225",
+        "regesteKurz": "Art. 5, 8 Abs. 1 und 34 Abs. 2, Art. 130 Abs. 3 ter und 3 quater BV, Art. 10a und 11 BPR; Eidgenössische Volksabstimmung vom September 2022 über die Reform der Alters- und Hinterlassenenversicherung (AHV 21), allgemeine Informationslage de…",
+        "datum": "2024-12-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "153b": [
+      {
+        "key": "bge_150_I_80",
+        "zitierung": "BGE 150 I 80",
+        "regesteKurz": "Art. 141 Abs. 2 KV/FR; Art. 153c Abs. 1 lit. a AHVG; Autonomie der öffentlich-rechtlich anerkannten Kirchen; Zugang zu Personendaten; systematische Verwendung der AHV-Nummer durch die öffentlich-rechtlichen kirchlichen Körperschaften. Die…",
+        "datum": "2024-01-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "153c": [
       {
         "key": "bge_150_I_80",
@@ -445,7 +533,29 @@
         "gewicht": 0
       }
     ],
+    "29ter": [
+      {
+        "key": "bge_147_V_146",
+        "zitierung": "BGE 147 V 146",
+        "regesteKurz": "Art. 34a BVG und Art. 24 BVV 2 in der bis zum 31. Dezember 2016 in Kraft gestandenen Fassung; Bestimmung der Höhe einer Invalidenrente der beruflichen Vorsorge im Rahmen einer Überentschädigungsberechnung angesichts einer Rente aus der ers…",
+        "datum": "2021-02-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "30ter": [
+      {
+        "key": "bge_149_III_258",
+        "zitierung": "BGE 149 III 258",
+        "regesteKurz": "Art. 80 Abs. 1 und Art. 81 Abs. 1 SchKG; definitive Rechtsöffnung und Leistungsurteil auf Bezahlung eines Bruttolohns; Rechtsöffnungstitel; befreiende Einwendung. Definitive Rechtsöffnung im Fall, dass der betriebene Arbeitgeber zur Zahlun…",
+        "datum": "2023-03-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_146_V_104",
         "zitierung": "BGE 146 V 104",

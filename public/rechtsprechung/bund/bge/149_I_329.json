@@ -322,7 +322,10 @@
         "Art. 19 LGEPA",
         "Art. 2 LGEPA"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [
         "1C_251/2014",
         "1C_418/2021",

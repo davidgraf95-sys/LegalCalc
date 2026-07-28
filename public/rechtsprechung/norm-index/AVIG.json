@@ -69,6 +69,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_150_V_44",
+        "zitierung": "BGE 150 V 44",
+        "regesteKurz": "Art. 10 Abs. 2 lit. b, Art. 16 Abs. 2 lit. i und Art. 24 AVIG; Art. 41a Abs. 1 AVIV; Anspruch auf Kompensationszahlungen bei teilweiser Arbeitslosigkeit. Begriff des Zwischenverdienstes bei Ausübung mehrerer Teilzeitbeschäftigungen vor Ein…",
+        "datum": "2023-09-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_V_373",
         "zitierung": "BGE 148 V 373",
         "regesteKurz": "Art. 4 Abs. 2 EOV; Berechnung der Erwerbsausfallentschädigung anhand des ortsüblichen Anfangslohns im betreffenden Beruf. Eröffnet eine Ausbildung Zugang zu mehreren Berufen beziehungsweise zu verschiedenen Einstiegsformen in die Berufswel…",
@@ -91,10 +101,30 @@
         "gewicht": 1
       },
       {
+        "key": "bge_151_V_296",
+        "zitierung": "BGE 151 V 296",
+        "regesteKurz": "Art. 15 Abs. 2 AVIG; Art. 40b AVIV; Vermittlungsfähigkeit und versicherter Verdienst von behinderten Arbeitslosen. Nach der Regelung von Art. 15 Abs. 2 AVIG schliesst auch ein Invaliditätsgrad von mehr als 80 % die Vermittlungsfähigkeit ni…",
+        "datum": "2025-04-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_V_235",
         "zitierung": "BGE 150 V 235",
         "regesteKurz": "Art. 8 Abs. 1, Art. 24 Abs. 1 und 3 AVIG; Höhe des anzurechnenden Zwischenverdienstes. Unter dem erzielten Zwischenverdienst gemäss Art. 24 Abs. 1 und 3 AVIG ist nicht der arbeitgeberseitig ausbezahlte Geldbetrag, sondern der arbeitsvertra…",
         "datum": "2024-04-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_44",
+        "zitierung": "BGE 150 V 44",
+        "regesteKurz": "Art. 10 Abs. 2 lit. b, Art. 16 Abs. 2 lit. i und Art. 24 AVIG; Art. 41a Abs. 1 AVIV; Anspruch auf Kompensationszahlungen bei teilweiser Arbeitslosigkeit. Begriff des Zwischenverdienstes bei Ausübung mehrerer Teilzeitbeschäftigungen vor Ein…",
+        "datum": "2023-09-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -133,6 +163,18 @@
         "gewicht": 0
       }
     ],
+    "14": [
+      {
+        "key": "bge_150_V_44",
+        "zitierung": "BGE 150 V 44",
+        "regesteKurz": "Art. 10 Abs. 2 lit. b, Art. 16 Abs. 2 lit. i und Art. 24 AVIG; Art. 41a Abs. 1 AVIV; Anspruch auf Kompensationszahlungen bei teilweiser Arbeitslosigkeit. Begriff des Zwischenverdienstes bei Ausübung mehrerer Teilzeitbeschäftigungen vor Ein…",
+        "datum": "2023-09-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "15": [
       {
         "key": "bge_146_V_210",
@@ -149,6 +191,18 @@
         "zitierung": "BGE 151 V 296",
         "regesteKurz": "Art. 15 Abs. 2 AVIG; Art. 40b AVIV; Vermittlungsfähigkeit und versicherter Verdienst von behinderten Arbeitslosen. Nach der Regelung von Art. 15 Abs. 2 AVIG schliesst auch ein Invaliditätsgrad von mehr als 80 % die Vermittlungsfähigkeit ni…",
         "datum": "2025-04-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "16": [
+      {
+        "key": "bge_150_V_44",
+        "zitierung": "BGE 150 V 44",
+        "regesteKurz": "Art. 10 Abs. 2 lit. b, Art. 16 Abs. 2 lit. i und Art. 24 AVIG; Art. 41a Abs. 1 AVIV; Anspruch auf Kompensationszahlungen bei teilweiser Arbeitslosigkeit. Begriff des Zwischenverdienstes bei Ausübung mehrerer Teilzeitbeschäftigungen vor Ein…",
+        "datum": "2023-09-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -341,6 +395,18 @@
         "zitierung": "BGE 147 V 225",
         "regesteKurz": "Art. 11 Abs. 1 i.V.m. Art. 13 Abs. 1 und Art. 65 der Verordnung (EG) Nr. 883/ 2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung der Systeme der sozialen Sicherheit und Verordnung (EG) Nr. 987/2009 des Euro…",
         "datum": "2021-04-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "18a": [
+      {
+        "key": "bge_150_V_44",
+        "zitierung": "BGE 150 V 44",
+        "regesteKurz": "Art. 10 Abs. 2 lit. b, Art. 16 Abs. 2 lit. i und Art. 24 AVIG; Art. 41a Abs. 1 AVIV; Anspruch auf Kompensationszahlungen bei teilweiser Arbeitslosigkeit. Begriff des Zwischenverdienstes bei Ausübung mehrerer Teilzeitbeschäftigungen vor Ein…",
+        "datum": "2023-09-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

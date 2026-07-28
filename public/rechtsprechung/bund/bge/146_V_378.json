@@ -202,7 +202,9 @@
       ],
       "normKeys": [
         "BV",
-        "BGG"
+        "BGG",
+        "EMRK",
+        "EOG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

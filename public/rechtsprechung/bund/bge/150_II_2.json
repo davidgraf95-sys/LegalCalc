@@ -227,7 +227,10 @@
         "Art. 20 Abs. 1 LPNMS",
         "Art. 20 LPNMS"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "RPG",
+        "RPV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

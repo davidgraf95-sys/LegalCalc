@@ -362,7 +362,9 @@
       ],
       "normKeys": [
         "ZGB",
-        "BGG"
+        "BGG",
+        "KVV",
+        "KVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

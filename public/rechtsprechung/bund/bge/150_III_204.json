@@ -185,7 +185,9 @@
         "Art. 75 LTF"
       ],
       "normKeys": [
-        "ZPO"
+        "ZPO",
+        "KVG",
+        "BGG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

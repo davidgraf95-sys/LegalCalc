@@ -208,7 +208,9 @@
         "Art. 38 Abs. 1 IVV"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "ELV",
+        "IVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

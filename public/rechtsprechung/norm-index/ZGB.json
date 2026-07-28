@@ -45,6 +45,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_151_III_297",
+        "zitierung": "BGE 151 III 297",
+        "regesteKurz": "Internationale Schiedsgerichtsbarkeit; gerichtliche Ernennung eines Schiedsrichters (Art. 179 IPRG und 356 Abs. 2 ZPO); Rechtsmittel; Notzuständigkeit (Art. 3 IPRG); gerichtliche Immunität des Staates. Grundsätzlich steht kein Rechtsmittel…",
+        "datum": "2025-01-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_II_345",
         "zitierung": "BGE 151 II 345",
         "regesteKurz": "Art. 5 Abs. 1, Art. 127 Abs. 1 BV; Art. 85 MWSTG 2009; Ausschluss von Wiedererwägung und Widerruf gegenüber rechtskräftigen mehrwertsteuerrechtlichen Entscheiden. Im Abgaberecht herrscht ein Numerus clausus von Rechtsgründen, die es erlaub…",
@@ -65,20 +75,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_II_309",
-        "zitierung": "BGE 147 II 309",
-        "regesteKurz": "Wiederherstellung des rechtmässigen Zustands bei illegalen Bauten ausserhalb der Bauzone; keine Verwirkung dieses Anspruchs bzw. dieser Pflicht nach 30 Jahren. Bundesgerichtliche Rechtsprechung zur Verwirkung des Anspruchs bzw. der Pflicht…",
-        "datum": "2021-04-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_111",
-        "zitierung": "BGE 146 II 111",
-        "regesteKurz": "a Art. 105 Abs. 3 DBG; örtliche Zuständigkeit für Veranlagung, wenn Sitz und tatsächliche Verwaltung der juristischen Person auseinanderfallen. Obschon der Ort der tatsächlichen Verwaltung im interkantonalen Verhältnis das Hauptsteuerdomiz…",
-        "datum": "2019-12-16",
+        "key": "bge_148_II_106",
+        "zitierung": "BGE 148 II 106",
+        "regesteKurz": "Art. 45 und 45a des früheren Gesetzes über die öffentlichen Aufträge des Kantons Tessin vom 20. Februar 2001 (aGöA) und Art. 45a und 45b desselben derzeit in Kraft stehenden Gesetzes (GöA). Öffentliche Beschaffung: Geldstrafe nach Vergabe…",
+        "datum": "2021-12-14",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -87,10 +87,30 @@
     ],
     "2": [
       {
+        "key": "bge_146_III_265",
+        "zitierung": "BGE 146 III 265",
+        "regesteKurz": "Art. 18, 52, 59, 60 und 197 ff. ZPO; örtliche Zuständigkeit; Nichteintretensentscheid; Gültigkeit einer Klagebewilligung, die durch eine örtlich unzuständige Schlichtungsbehörde ausgestellt wurde. Wenn die Schlichtungsbehörde als reine Sch…",
+        "datum": "2020-03-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_III_440",
         "zitierung": "BGE 151 III 440",
         "regesteKurz": "Art. 219 Abs. 4, Art. 250 SchKG; Art. 18 Abs. 1, Art. 312 OR; Art. 2 Abs. 2 ZGB; Kollokation einer Darlehensforderung im Konkurs; Rangrücktritt. Über den Rangrücktritt ist bei der Kollokation der Forderung und nicht erst bei der Verteilung…",
         "datum": "2025-03-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_III_1",
+        "zitierung": "BGE 151 III 1",
+        "regesteKurz": "Art. 30b Abs. 1 und 4 Ziff. 1 ZGB in Verbindung mit Art. 16 ZGB; Art. 16 ZStV; Aushändigung von Identitätsdokumenten des Kindes, Änderung des Geschlechtseintrages im Personenstandsregister; Prüfung der Urteilsfähigkeit der erklärenden Pers…",
+        "datum": "2024-11-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -117,6 +137,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_150_III_17",
+        "zitierung": "BGE 150 III 17",
+        "regesteKurz": "Art. 694 Abs. 1 ZGB; Anspruch auf einen Notweg; zur Frage der Anrechenbarkeit des missbräuchlichen Verhaltens des für die Abgeschnittenheit verantwortlichen früheren Eigentümers. Dem Erben des Eigentümers, der die Abgeschnittenheit verursa…",
+        "datum": "2024-01-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_V_26",
         "zitierung": "BGE 150 V 26",
         "regesteKurz": "Art. 62 Abs. 1 und Art. 73 BVG; Zuständigkeiten im Streit betreffend die Sanierung einer Vorsorgeeinrichtung. Bestätigung der Rechtsprechung, wonach es keine Kompetenzattraktion des kantonalen Berufsvorsorgegerichts in Bezug auf rein aufsi…",
@@ -131,36 +161,6 @@
         "zitierung": "BGE 149 III 12",
         "regesteKurz": "a Art. 519 ff. und 540 ZGB; Art. 71 und 206 Abs. 2 ZPO; Ungültigkeitsklage und Klage auf Feststellung der Erbunwürdigkeit; Schlichtungsverfahren. Klagen mehrere Kläger gegen mehrere Beklagte auf Ungültigkeit einer letztwilligen Verfügung o…",
         "datum": "2022-11-02",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_III_126",
-        "zitierung": "BGE 148 III 126",
-        "regesteKurz": "Ziff. 1 Abs. 3 und Ziff. 22 Gesamtarbeitsvertrag 2019 der SBB (GAV) i.V.m. Art. 335b Abs. 3 OR; Verlängerung der Probezeit bei Krankheit. Bei krankheitsbedingtem Arbeitsausfall während der Probezeit verlängert sich diese um die Anzahl der…",
-        "datum": "2022-03-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_III_254",
-        "zitierung": "BGE 146 III 254",
-        "regesteKurz": "Voraussetzungen für die Zulässigkeit einer Beschwerde in Zivilsachen: Abgrenzung zwischen einem Teilentscheid (Art. 91 lit. a BGG) und einem Zwischenentscheid (Art. 93 BGG). Wie ist bei eventualgehäuften Rechtsbegehren der selbständig eröf…",
-        "datum": "2020-05-11",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_V_169",
-        "zitierung": "BGE 146 V 169",
-        "regesteKurz": "Art. 11 Abs. 3 bis und Art. 53b Abs. 1 BVG; Teilliquidation der Sammelstiftung infolge Kündigung des Anschlussvertrags. In concreto hat die Sammelstiftung die Kündigung des Anschlussvertrags durch die Gründerverbände eines Vorsorgewerks au…",
-        "datum": "2020-05-05",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -191,6 +191,16 @@
     ],
     "4": [
       {
+        "key": "bge_147_III_209",
+        "zitierung": "BGE 147 III 209",
+        "regesteKurz": "Art. 274a ZGB und Art. 27 Abs. 2 PartG. Voraussetzungen, unter denen einer Drittperson, insbesondere dem früheren eingetragenen Partner des Vaters oder der früheren eingetragenen Partnerin der Mutter, ein Anspruch auf persönlichen Verkehr…",
+        "datum": "2021-03-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_146_IV_231",
         "zitierung": "BGE 146 IV 231",
         "regesteKurz": "Art. 429 Abs. 1 lit. c StPO; Anspruch auf Genugtuung bei ungerechtfertigtem Freiheitsentzug. Eine Anhaltung gefolgt von einer Festnahme, die sich auf eine Gesamtdauer von mehr als drei Stunden erstreckt, stellt einen Eingriff in die persön…",
@@ -211,10 +221,30 @@
         "gewicht": 0
       },
       {
+        "key": "bge_151_III_160",
+        "zitierung": "BGE 151 III 160",
+        "regesteKurz": "Art. 274a ZGB; Umfang des Rechts eines Dritten auf persönlichen Verkehr. Bei der Festlegung der Dauer und Häufigkeit des Rechts eines Dritten auf persönlichen Verkehr mit einem Kind muss das Gericht das Interesse dieses Kindes im konkreten…",
+        "datum": "2024-10-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_II_245",
         "zitierung": "BGE 151 II 245",
         "regesteKurz": "Art. 6 Abs. 1 und 2 VG; Genugtuungsanspruch des Ehemanns in Zusammenhang mit der Verweigerung des Schweizer Grenzwachtkorps, medizinische Hilfe für seine schwangere Frau beizuziehen. Anwendbare Bestimmungen des Verantwortlichkeitsgesetzes…",
         "datum": "2024-09-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_II_551",
+        "zitierung": "BGE 148 II 551",
+        "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 18 und 336a OR; steuerliche Behandlung einer Entschädigung, die im Rahmen einer arbeitsrechtlichen Streitigkeit wegen missbräuchlicher Kündigung gestützt auf einen gerichtlichen Vergleich vereinb…",
+        "datum": "2022-10-31",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -389,6 +419,18 @@
         "gewicht": 0
       }
     ],
+    "13": [
+      {
+        "key": "bge_147_V_251",
+        "zitierung": "BGE 147 V 251",
+        "regesteKurz": "Art. 42 quater Abs. 3 IVG; Art. 39a lit. a IVV; Assistenzbeitrag für minderjährige Versicherte. Die Voraussetzung in Art. 39a lit. a IVV, wonach der Anspruch eines minderjährigen Versicherten auf einen Assistenzbeitrag vom Besuch der oblig…",
+        "datum": "2021-06-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "16": [
       {
         "key": "bge_151_III_1",
@@ -402,6 +444,26 @@
       }
     ],
     "23": [
+      {
+        "key": "bge_147_V_156",
+        "zitierung": "BGE 147 V 156",
+        "regesteKurz": "Art. 25a Abs. 5 KVG; Restfinanzierung der Pflegekosten; Zuständigkeit. Bei im Zeitpunkt des Inkrafttretens der neuen Fassung von Art. 25a Abs. 5 KVG am 1. Januar 2019 bereits bestehendem Pflegeverhältnis mit Wohnsitzverlegung an den Stando…",
+        "datum": "2021-02-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_V_242",
+        "zitierung": "BGE 148 V 242",
+        "regesteKurz": "Art. 25a Abs. 5 KVG; Übernahme der Kosten durch die obligatorische Krankenpflegeversicherung; Zuständigkeit für die Restfinanzierung bei einer nicht im Wohnsitzkanton in einem Pflegeheim untergebrachten versicherten Person. Zusammenfassung…",
+        "datum": "2022-04-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_V_209",
         "zitierung": "BGE 148 V 209",
@@ -417,16 +479,6 @@
         "zitierung": "BGE 148 II 285",
         "regesteKurz": "Art. 3 Abs. 1 und 2 sowie Art. 4b Abs. 1 StHG; Art. 127 Abs. 3 BV; § 8 Abs. 1 und 2 StG/LU; Wohnsitz bei einer Patchwork-Familie; leitender Angestellter; alternierender Wohnsitz. Grundsätze der Untersuchung, Mitwirkung und Beweislastvertei…",
         "datum": "2021-12-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_V_156",
-        "zitierung": "BGE 147 V 156",
-        "regesteKurz": "Art. 25a Abs. 5 KVG; Restfinanzierung der Pflegekosten; Zuständigkeit. Bei im Zeitpunkt des Inkrafttretens der neuen Fassung von Art. 25a Abs. 5 KVG am 1. Januar 2019 bereits bestehendem Pflegeverhältnis mit Wohnsitzverlegung an den Stando…",
-        "datum": "2021-02-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -469,10 +521,30 @@
     ],
     "27": [
       {
+        "key": "bge_148_I_1",
+        "zitierung": "BGE 148 I 1",
+        "regesteKurz": "Art. 426 ZGB; Art. 5 Ziff. 1 lit. e EMRK; disziplinarische Massnahme gegen einen Arzt aufgrund der Anordnung einer ungerechtfertigten fürsorgerischen Unterbringung einer Patientin in einer Einrichtung. Das Recht auf Selbstbestimmung, welch…",
+        "datum": "2021-06-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_152_I_9",
         "zitierung": "BGE 152 I 9",
         "regesteKurz": "Art. 5 Abs. 3, Art. 9 und 29 Abs. 1 und 2 BV; Art. 321 Ziff. 3 StGB; § 21 und 33 VRP/SZ; Nichtigkeit einer Entbindung von der ärztlichen Schweigepflicht wegen schwerer Verfahrensmängel. Streitgegenstand sowie Erwägungen der Vorinstanz (E.…",
         "datum": "2025-07-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_109",
+        "zitierung": "BGE 149 II 109",
+        "regesteKurz": "Art. 40 lit. a und c MedBG; Berufspflichten der Ärztinnen und Ärzte; Disziplinarmassnahme; Diagnosefehler, der dazu führte, dass einer Patientin die Gebärmutter entfernt wurde. Anwendbares Recht (E. 7). Die Pflicht, die Tätigkeit sorgfälti…",
+        "datum": "2022-11-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -529,6 +601,26 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_145",
+        "zitierung": "BGE 147 IV 145",
+        "regesteKurz": "a Art. 292 StGB, Art. 70 Abs. 1 und Abs. 3, Art. 80 Abs. 3 StPO; formelle Gültigkeitsvoraussetzungen und Tragweite eines Beschlusses, welcher den Zugang von Gerichtsberichterstattern zu einer unter Ausschluss der Öffentlichkeit geführten V…",
+        "datum": "2021-01-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_126",
+        "zitierung": "BGE 146 IV 126",
+        "regesteKurz": "Art. 179 ter StGB; Aufnehmen von Gesprächen ohne Einwilligung der anderen Gesprächsteilnehmer; Begriff des \"nichtöffentlichen Gesprächs\". Die Würdigung eines Gesprächs als \"nichtöffentlich\" im Sinne von Art. 179 bis und 179 ter StGB erford…",
+        "datum": "2020-02-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "29": [
@@ -561,6 +653,30 @@
         "zitierung": "BGE 147 I 325",
         "regesteKurz": "Art. 127 Abs. 3 BV; Art. 20 Abs. 1 StHG; Art. 626 Ziff. 1 OR i.V.m. Art. 56 ZGB; Doppelbesteuerungsverbot; Hauptsteuerdomizil und Sitzwechsel. Verwirkung des doppelbesteuerungsrechtlichen Beschwerderechts des Steuerpflichtigen (E. 4.2). Üb…",
         "datum": "2020-08-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "80": [
+      {
+        "key": "bge_147_II_264",
+        "zitierung": "BGE 147 II 264",
+        "regesteKurz": "Art. 8 Abs. 1 lit. a IVöB; Ziff. 2 des Anhangs 2 und Fussnote 1 des Anhangs 3 der Anlage I des WTO-Übereinkommen über das öffentliche Beschaffungswesen. Umsetzung von Verpflichtungen aus internationalen Verträgen in nationales Recht. Unter…",
+        "datum": "2020-10-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "84": [
+      {
+        "key": "bge_147_II_287",
+        "zitierung": "BGE 147 II 287",
+        "regesteKurz": "Art. 56 lit. g DBG; Art. 23 Abs. 1 lit. f StHG; direkte Steuer; Steuerbefreiung; juristische Person; öffentlicher oder gemeinnütziger Zweck; unternehmerischer Zweck; Stiftung; Holdinggesellschaft. Voraussetzungen der Steuerbefreiung einer…",
+        "datum": "2021-05-10",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1165,9 +1281,29 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_73",
+        "zitierung": "BGE 146 III 73",
+        "regesteKurz": "Art. 122 f., 207 Abs. 1 und Art. 208 Abs. 1 Ziff. 2 ZGB; Art. 331 Abs. 3 OR; Ehescheidung; Vorsorgeausgleich und güterrechtliche Auseinandersetzung (Errungenschaftsbeteiligung); Berücksichtigung von Arbeitgeberbeitragsreserven. Bei Einleit…",
+        "datum": "2019-12-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "252": [
+      {
+        "key": "bge_150_V_400",
+        "zitierung": "BGE 150 V 400",
+        "regesteKurz": "Art. 16i Abs. 1 lit. a EOG (in der vom 1. Januar 2021 bis 31. Dezember 2023 in Kraft gestandenen Fassung); Vaterschaftsentschädigung bei Anerkennung des Kindes nach dessen Geburt. Die in Art. 16i Abs. 1 lit. a EOG ab dem Zeitpunkt der Gebu…",
+        "datum": "2024-07-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_III_245",
         "zitierung": "BGE 148 III 245",
@@ -1191,6 +1327,18 @@
         "gewicht": 0
       }
     ],
+    "262": [
+      {
+        "key": "bge_149_III_304",
+        "zitierung": "BGE 149 III 304",
+        "regesteKurz": "Einsprache gegen die missbräuchliche Kündigung (Art. 336b OR). Der Kläger muss die Tatsachen behaupten und beweisen, gestützt auf welche das Gericht schliessen kann, dass er gegen die angeblich missbräuchliche Kündigung Einsprache erhoben…",
+        "datum": "2023-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "266": [
       {
         "key": "bge_151_III_153",
@@ -1204,6 +1352,16 @@
       }
     ],
     "273": [
+      {
+        "key": "bge_151_III_160",
+        "zitierung": "BGE 151 III 160",
+        "regesteKurz": "Art. 274a ZGB; Umfang des Rechts eines Dritten auf persönlichen Verkehr. Bei der Festlegung der Dauer und Häufigkeit des Rechts eines Dritten auf persönlichen Verkehr mit einem Kind muss das Gericht das Interesse dieses Kindes im konkreten…",
+        "datum": "2024-10-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_150_III_49",
         "zitierung": "BGE 150 III 49",
@@ -1281,6 +1439,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_149_III_297",
+        "zitierung": "BGE 149 III 297",
+        "regesteKurz": "Art. 285 Abs. 2 ZGB; Art. 9 ATSG; Art. 42 und 42 bis IVG; Hilflosenentschädigung und Betreuungsbeitrag. Die Hilflosenentschädigung des minderjährigen Kindes darf nicht vom Betreuungsunterhalt abgezogen werden, der im Rahmen des Unterhaltsb…",
+        "datum": "2023-03-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_III_172",
         "zitierung": "BGE 149 III 172",
         "regesteKurz": "Art. 176 Abs. 1 Ziff. 1 und Abs. 3 i.V.m. Art. 285 Abs. 2 ZGB; Art. 58 Abs. 1 und Art. 314 Abs. 2 i.V.m. Art. 271 lit. a ZPO; Art. 9 BV; Schutz der ehelichen Gemeinschaft; Ehegattenunterhalt und Dispositionsgrundsatz im Berufungsverfahren.…",
@@ -1317,6 +1485,16 @@
         "zitierung": "BGE 151 III 45",
         "regesteKurz": "a Art. 51 Abs. 4 BGG; Streitwert bei Rechtsöffnung für Unterhaltsbeiträge; keine Kapitalisierung. Künftige Unterhaltsbeiträge sind noch nicht fällig und können daher vom Rechtsöffnungsbegehren nicht erfasst werden. Entsprechend steht im Re…",
         "datum": "2024-08-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_169",
+        "zitierung": "BGE 146 III 169",
+        "regesteKurz": "Art. 125 und 276a ZGB; Unterhaltsbeitrag zugunsten des Ex-Ehegatten. Auch mit Inkrafttreten des Art. 276a Abs. 2 ZGB geht die Unterhaltspflicht gegenüber dem Ex-Ehegatten weiterhin derjenigen gegenüber dem volljährigen, in Ausbildung stehe…",
+        "datum": "2020-02-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1555,6 +1733,40 @@
         "zitierung": "BGE 146 III 313",
         "regesteKurz": "Art. 301 Abs. 1, Art. 307 Abs. 1 ZGB; Uneinigkeit der Eltern über die Masernimpfung für die gemeinsamen Kinder; Gefährdung des Kindeswohls. Sind die sorgeberechtigten Eltern darüber entzweit (vgl. Art. 301 Abs. 1 ZGB), ob ihr Kind gegen di…",
         "datum": "2020-06-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "307": [
+      {
+        "key": "bge_151_III_160",
+        "zitierung": "BGE 151 III 160",
+        "regesteKurz": "Art. 274a ZGB; Umfang des Rechts eines Dritten auf persönlichen Verkehr. Bei der Festlegung der Dauer und Häufigkeit des Rechts eines Dritten auf persönlichen Verkehr mit einem Kind muss das Gericht das Interesse dieses Kindes im konkreten…",
+        "datum": "2024-10-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_313",
+        "zitierung": "BGE 146 III 313",
+        "regesteKurz": "Art. 301 Abs. 1, Art. 307 Abs. 1 ZGB; Uneinigkeit der Eltern über die Masernimpfung für die gemeinsamen Kinder; Gefährdung des Kindeswohls. Sind die sorgeberechtigten Eltern darüber entzweit (vgl. Art. 301 Abs. 1 ZGB), ob ihr Kind gegen di…",
+        "datum": "2020-06-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "308": [
+      {
+        "key": "bge_147_III_451",
+        "zitierung": "BGE 147 III 451",
+        "regesteKurz": "Art. 93 Abs. 1 lit. a BGG; Art. 299 Abs. 3 ZPO; Ernennung eines Vertretungsbeistands in einer familienrechtlichen Angelegenheit. Qualifikation eines kantonalen Entscheids, der eine das Gesuch eines Kindes um Ernennung eines Vertretungsbeis…",
+        "datum": "2020-10-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1843,6 +2055,18 @@
         "gewicht": 0
       }
     ],
+    "457": [
+      {
+        "key": "bge_149_III_345",
+        "zitierung": "BGE 149 III 345",
+        "regesteKurz": "Art. 573 Abs. 2 ZGB; Zuweisung des Überschusses der Liquidation einer Erbschaft, die durch sämtliche Erben ausgeschlagenen wurde, wenn ein eingesetzter Erbe vorhanden ist. Ergibt sich aus der Liquidation einer durch sämtliche (eingesetzten…",
+        "datum": "2023-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "470": [
       {
         "key": "bge_151_V_264",
@@ -1951,6 +2175,16 @@
     ],
     "518": [
       {
+        "key": "bge_147_III_537",
+        "zitierung": "BGE 147 III 537",
+        "regesteKurz": "Art. 731b OR; Art. 74 ZPO; Organisationsmängelverfahren gegen eine zu den Aktiven eines Nachlasses gehörende Aktiengesellschaft. Klageberechtigung des Willensvollstreckers. Berechtigung eines einzelnen Erben, als Nebenintervenient in das V…",
+        "datum": "2021-10-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_146_III_106",
         "zitierung": "BGE 146 III 106",
         "regesteKurz": "Art. 49, 65 Abs. 3 SchKG; Art. 518 ZGB; Betreibung des Erbschaftsgläubigers gegen den Willensvollstrecker; Betreibungsort. Der Betreibungsort der unverteilten Erbschaft bestimmt sich nach Art. 49 SchKG. Dies gilt auch bei einer gegen den W…",
@@ -2029,6 +2263,28 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_345",
+        "zitierung": "BGE 149 III 345",
+        "regesteKurz": "Art. 573 Abs. 2 ZGB; Zuweisung des Überschusses der Liquidation einer Erbschaft, die durch sämtliche Erben ausgeschlagenen wurde, wenn ein eingesetzter Erbe vorhanden ist. Ergibt sich aus der Liquidation einer durch sämtliche (eingesetzten…",
+        "datum": "2023-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "566": [
+      {
+        "key": "bge_149_III_345",
+        "zitierung": "BGE 149 III 345",
+        "regesteKurz": "Art. 573 Abs. 2 ZGB; Zuweisung des Überschusses der Liquidation einer Erbschaft, die durch sämtliche Erben ausgeschlagenen wurde, wenn ein eingesetzter Erbe vorhanden ist. Ergibt sich aus der Liquidation einer durch sämtliche (eingesetzten…",
+        "datum": "2023-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "602": [
@@ -2037,6 +2293,16 @@
         "zitierung": "BGE 151 III 239",
         "regesteKurz": "Art. 49, 65 Abs. 3 und Art. 67 Abs. 1 Ziff. 2 SchKG; Betreibung einer Erbschaft. Eine unverteilte Erbschaft kann gestützt auf Art. 49 SchKG als solche betrieben werden. Die Betreibung kann auch auf Pfandverwertung gehen (E. 2.1-2.3). Betre…",
         "datum": "2024-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_III_537",
+        "zitierung": "BGE 147 III 537",
+        "regesteKurz": "Art. 731b OR; Art. 74 ZPO; Organisationsmängelverfahren gegen eine zu den Aktiven eines Nachlasses gehörende Aktiengesellschaft. Klageberechtigung des Willensvollstreckers. Berechtigung eines einzelnen Erben, als Nebenintervenient in das V…",
+        "datum": "2021-10-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2067,6 +2333,18 @@
         "gewicht": 0
       }
     ],
+    "620": [
+      {
+        "key": "bge_150_II_168",
+        "zitierung": "BGE 150 II 168",
+        "regesteKurz": "Art. 9 BGBB; Bewilligung zum Erwerb eines landwirtschaftlichen Grundstücks; Begriff des Selbstbewirtschafters. Einschlägige Bestimmungen und Rechtsprechung zum Begriff des Selbstbewirtschafters (E. 4.1). Die Grundsätze, die zur Anerkennung…",
+        "datum": "2024-03-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "641": [
       {
         "key": "bge_152_II_33",
@@ -2089,12 +2367,36 @@
         "gewicht": 0
       }
     ],
+    "642": [
+      {
+        "key": "bge_150_III_103",
+        "zitierung": "BGE 150 III 103",
+        "regesteKurz": "Art. 677 ZGB in Verbindung mit Art. 642 und 667 Abs. 1 ZGB; Fahrnisbauten; Miete eines unbebauten Grundstücks am Seeufer, auf dem der Mieter ein Chalet errichtet. Für die in Art. 677 ZGB exemplarisch aufgeführten Bauten, die nach früherem…",
+        "datum": "2023-10-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "647": [
       {
         "key": "bge_147_III_553",
         "zitierung": "BGE 147 III 553",
         "regesteKurz": "Art. 647 Abs. 2 Ziff. 2, Art. 647c ff., Art. 712h Abs. 1 und 2 Ziff. 1 sowie Art. 712m Abs. 1 Ziff. 1 ZGB. Für bauliche Massnahmen an gemeinschaftlichen Teilen bedarf es eines Beschlusses (inkl. Kostenbeschluss) der Gemeinschaft, soweit ni…",
         "datum": "2021-06-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "661": [
+      {
+        "key": "bge_149_II_433",
+        "zitierung": "BGE 149 II 433",
+        "regesteKurz": "a Art. 71 Abs. 2 und Art. 72 Abs. 3 BGBB; Widerruf einer Bewilligung zum Erwerb eines landwirtschaftlichen Grundstücks; Berichtigung des Grundbuchs; Verjährung. Zusammenhang zwischen den Fristen von Art. 71 Abs. 2 BGBB und Art. 72 Abs. 3 B…",
+        "datum": "2023-09-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2119,6 +2421,18 @@
         "zitierung": "BGE 149 III 49",
         "regesteKurz": "Art. 664 Abs. 2 und Art. 704 Abs. 1 ZGB; Eigentum an Quelle; Abgrenzung zwischen privaten und öffentlichen Quellen. Voraussetzungen der Qualifikation als öffentliche Quelle (E. 3). Kriterien der Mächtigkeit und der Stetigkeit im Verhältnis…",
         "datum": "2022-12-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "667": [
+      {
+        "key": "bge_150_III_103",
+        "zitierung": "BGE 150 III 103",
+        "regesteKurz": "Art. 677 ZGB in Verbindung mit Art. 642 und 667 Abs. 1 ZGB; Fahrnisbauten; Miete eines unbebauten Grundstücks am Seeufer, auf dem der Mieter ein Chalet errichtet. Für die in Art. 677 ZGB exemplarisch aufgeführten Bauten, die nach früherem…",
+        "datum": "2023-10-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2287,6 +2601,18 @@
         "gewicht": 0
       }
     ],
+    "798": [
+      {
+        "key": "bge_146_III_7",
+        "zitierung": "BGE 146 III 7",
+        "regesteKurz": "Art. 837 Abs. 1 Ziff. 3 und 798 Abs. 2 ZGB; Bauhandwerkerpfandrecht; Stockwerkeigentum. Verteilung des Bauhandwerkerpfandrechts bei Bauarbeiten an mehreren Stockwerkeinheiten (E. 2, 4.1 und 4.4.1). Regeste Art. 837 al. 1 ch. 3 et 798 al. 2…",
+        "datum": "2019-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "816": [
       {
         "key": "bge_146_III_426",
@@ -2301,6 +2627,16 @@
     ],
     "837": [
       {
+        "key": "bge_146_III_7",
+        "zitierung": "BGE 146 III 7",
+        "regesteKurz": "Art. 837 Abs. 1 Ziff. 3 und 798 Abs. 2 ZGB; Bauhandwerkerpfandrecht; Stockwerkeigentum. Verteilung des Bauhandwerkerpfandrechts bei Bauarbeiten an mehreren Stockwerkeinheiten (E. 2, 4.1 und 4.4.1). Regeste Art. 837 al. 1 ch. 3 et 798 al. 2…",
+        "datum": "2019-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_150_III_113",
         "zitierung": "BGE 150 III 113",
         "regesteKurz": "Art. 712i Abs. 1 ZGB; Gemeinschaftspfandrecht; Berechnung der Dreijahresfrist für Beitragsforderungen. Massgebend für die Rückrechnung zur Ermittlung der drei Jahresbeiträge, für welche die Stockwerkeigentümergemeinschaft die Errichtung ei…",
@@ -2309,6 +2645,28 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_451",
+        "zitierung": "BGE 149 III 451",
+        "regesteKurz": "Art. 837 Abs. 1 Ziff. 3 ZGB; Arbeiten, die zur Eintragung eines Bauhandwerkerpfandrechts berechtigen. Abgrenzung der pfandgeschützten Arbeiten nach der per 1. Januar 2012 in Kraft getretenen Revision des Zivilgesetzbuches. Transportleistun…",
+        "datum": "2023-04-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "839": [
+      {
+        "key": "bge_146_III_7",
+        "zitierung": "BGE 146 III 7",
+        "regesteKurz": "Art. 837 Abs. 1 Ziff. 3 und 798 Abs. 2 ZGB; Bauhandwerkerpfandrecht; Stockwerkeigentum. Verteilung des Bauhandwerkerpfandrechts bei Bauarbeiten an mehreren Stockwerkeinheiten (E. 2, 4.1 und 4.4.1). Regeste Art. 837 al. 1 ch. 3 et 798 al. 2…",
+        "datum": "2019-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
       },
       {
         "key": "bge_149_III_451",
@@ -2333,7 +2691,31 @@
         "gewicht": 0
       }
     ],
+    "959": [
+      {
+        "key": "bge_148_III_109",
+        "zitierung": "BGE 148 III 109",
+        "regesteKurz": "Art. 960 Abs. 1 Ziff. 1 und Abs. 2 ZGB. Vormerkung einer vom Fiduzianten erwirkten Verfügungsbeschränkung; Wirkung der Vormerkung in der Zwangsvollstreckung, wenn das Eigentum am Grundstück vor der Versteigerung anerkannt wird. Ist eine Ve…",
+        "datum": "2022-02-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "960": [
+      {
+        "key": "bge_148_III_109",
+        "zitierung": "BGE 148 III 109",
+        "regesteKurz": "Art. 960 Abs. 1 Ziff. 1 und Abs. 2 ZGB. Vormerkung einer vom Fiduzianten erwirkten Verfügungsbeschränkung; Wirkung der Vormerkung in der Zwangsvollstreckung, wenn das Eigentum am Grundstück vor der Versteigerung anerkannt wird. Ist eine Ve…",
+        "datum": "2022-02-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "961": [
       {
         "key": "bge_148_III_109",
         "zitierung": "BGE 148 III 109",
@@ -2447,6 +2829,18 @@
         "gewicht": 0
       }
     ],
+    "285a": [
+      {
+        "key": "bge_149_III_297",
+        "zitierung": "BGE 149 III 297",
+        "regesteKurz": "Art. 285 Abs. 2 ZGB; Art. 9 ATSG; Art. 42 und 42 bis IVG; Hilflosenentschädigung und Betreuungsbeitrag. Die Hilflosenentschädigung des minderjährigen Kindes darf nicht vom Betreuungsunterhalt abgezogen werden, der im Rahmen des Unterhaltsb…",
+        "datum": "2023-03-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "28a": [
       {
         "key": "bge_147_III_185",
@@ -2463,6 +2857,18 @@
         "zitierung": "BGE 146 IV 231",
         "regesteKurz": "Art. 429 Abs. 1 lit. c StPO; Anspruch auf Genugtuung bei ungerechtfertigtem Freiheitsentzug. Eine Anhaltung gefolgt von einer Festnahme, die sich auf eine Gesamtdauer von mehr als drei Stunden erstreckt, stellt einen Eingriff in die persön…",
         "datum": "2020-07-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "28b": [
+      {
+        "key": "bge_149_III_193",
+        "zitierung": "BGE 149 III 193",
+        "regesteKurz": "Art. 28c ZGB; Modalitäten der zivilrechtlichen elektronischen Überwachung und Voraussetzungen, unter denen sie angeordnet werden kann. Die Anordnung einer elektronischen Überwachung gemäss Art. 28c ZGB setzt namentlich die Erfüllung der Vo…",
+        "datum": "2023-02-02",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2631,6 +3037,18 @@
         "gewicht": 0
       }
     ],
+    "712h": [
+      {
+        "key": "bge_149_III_393",
+        "zitierung": "BGE 149 III 393",
+        "regesteKurz": "Art. 712g Abs. 3 ZGB; Stockwerkeigentum; Mehrheitserfordernis für die Änderung eines Reglements über die Verwaltung und Benutzung. Änderungen eines Reglements über die Verwaltung und Benutzung von Stockwerkeigentum können in gewissen Grenz…",
+        "datum": "2023-08-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "712i": [
       {
         "key": "bge_150_III_113",
@@ -2669,10 +3087,30 @@
     ],
     "712m": [
       {
+        "key": "bge_149_III_393",
+        "zitierung": "BGE 149 III 393",
+        "regesteKurz": "Art. 712g Abs. 3 ZGB; Stockwerkeigentum; Mehrheitserfordernis für die Änderung eines Reglements über die Verwaltung und Benutzung. Änderungen eines Reglements über die Verwaltung und Benutzung von Stockwerkeigentum können in gewissen Grenz…",
+        "datum": "2023-08-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_III_377",
         "zitierung": "BGE 151 III 377",
         "regesteKurz": "Art. 712m Abs. 1 Ziff. 2, Art. 712s Abs. 3, Art. 712t Abs. 2 ZGB; Durchsetzung der Einhaltung des Reglements der Stockwerkeigentümergemeinschaft. Zur Frage, ob die Versammlung der Stockwerkeigentümer gestützt auf einen entsprechenden Antra…",
         "datum": "2025-02-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_7",
+        "zitierung": "BGE 146 III 7",
+        "regesteKurz": "Art. 837 Abs. 1 Ziff. 3 und 798 Abs. 2 ZGB; Bauhandwerkerpfandrecht; Stockwerkeigentum. Verteilung des Bauhandwerkerpfandrechts bei Bauarbeiten an mehreren Stockwerkeinheiten (E. 2, 4.1 und 4.4.1). Regeste Art. 837 al. 1 ch. 3 et 798 al. 2…",
+        "datum": "2019-11-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

@@ -1,0 +1,43 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "VRV",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bge_148_IV_30",
+        "zitierung": "BGE 148 IV 30",
+        "regesteKurz": "§ 229 aZPO/LU; § 20 UeStG/LU, Art. 258 ZPO, Art. 1 SVG, Art. 1 Abs. 2 VRV; allgemeines bzw. gerichtliches Verbot; öffentliche Strasse. Im Rahmen des Strafverfahrens wegen kantonaler Übertretung eines allgemeinen bzw. gerichtlichen Verbots…",
+        "datum": "2021-08-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "2": [
+      {
+        "key": "bge_147_IV_225",
+        "zitierung": "BGE 147 IV 225",
+        "regesteKurz": "Art. 91 Abs. 2 lit. a und Art. 91 Abs. 2 lit. b SVG; Konkurrenz zwischen Fahren in fahrunfähigem Zustand unter qualifiziertem Alkoholeinfluss und Fahren in fahrunfähigem Zustand aus anderen Gründen. Infolge des zugrunde liegenden unterschi…",
+        "datum": "2021-04-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "36": [
+      {
+        "key": "bge_148_IV_374",
+        "zitierung": "BGE 148 IV 374",
+        "regesteKurz": "Art. 2 Abs. 1 und 2 StGB; Art. 36 Abs. 5 lit. a VRV; Rückwirkung neuen Rechts; lex mitior; Ausnahme vom Verbot des Rechtsüberholens auf Autobahnen \"beim Fahren in parallelen Kolonnen\" (sog. Rechtsvorbeifahren). Ob das neue im Vergleich zum…",
+        "datum": "2022-06-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

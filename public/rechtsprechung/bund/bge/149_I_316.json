@@ -237,7 +237,11 @@
         "Art. 32 Abs. 1 LTAF",
         "Art. 32 Abs. 1 VGG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "EMRK",
+        "BV",
+        "VGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

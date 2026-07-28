@@ -307,7 +307,9 @@
         "Art. 17 Abs. 1 LAAF",
         "Art. 17 Abs. 3 LAAF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

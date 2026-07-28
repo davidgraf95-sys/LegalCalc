@@ -406,7 +406,11 @@
         "Art. 13 Abs. 1 CP",
         "Art. 13 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "EMRK",
+        "BGG",
+        "STGB"
+      ],
       "zitierteEntscheide": [
         "1B_81/2020",
         "1C_616/2018",

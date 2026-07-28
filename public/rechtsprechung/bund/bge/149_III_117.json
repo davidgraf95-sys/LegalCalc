@@ -168,7 +168,10 @@
         "Art. 153 Abs. 2bis LP"
       ],
       "normKeys": [
-        "SCHKG"
+        "SCHKG",
+        "BGG",
+        "EMRK",
+        "PARTG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

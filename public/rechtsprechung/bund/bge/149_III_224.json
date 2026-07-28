@@ -212,7 +212,11 @@
         "Art. 39 Abs. 2 CL",
         "Art. 39 CL"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "SCHKG",
+        "ZPO",
+        "LUGUE"
+      ],
       "zitierteEntscheide": [
         "4A_428/2018",
         "4A_440/2014",

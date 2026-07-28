@@ -341,7 +341,9 @@
         "Art. 21 CP"
       ],
       "normKeys": [
-        "BV"
+        "BV",
+        "STGB",
+        "BGG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

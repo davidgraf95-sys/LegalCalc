@@ -382,7 +382,10 @@
         "Art. 4 Abs. 2 LHID"
       ],
       "normKeys": [
-        "BV"
+        "BV",
+        "QSTV",
+        "STHG",
+        "DBG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

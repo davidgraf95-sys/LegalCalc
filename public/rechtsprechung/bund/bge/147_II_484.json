@@ -213,7 +213,10 @@
         "Art. 24 Abs. 1 USG"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "USG",
+        "RPG",
+        "LSV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

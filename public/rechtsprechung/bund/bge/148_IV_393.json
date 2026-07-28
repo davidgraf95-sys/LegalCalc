@@ -227,7 +227,9 @@
         "Art. 63 CP",
         "Art. 68 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STGB"
+      ],
       "zitierteEntscheide": [
         "1B_188/2012",
         "6B_1029/2021",

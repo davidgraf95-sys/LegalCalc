@@ -301,7 +301,10 @@
         "Art. 106 Abs. 1 LTF",
         "Art. 108 Abs. 1 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BPG",
+        "BGG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

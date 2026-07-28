@@ -307,7 +307,12 @@
         "Art. 2 EIMP",
         "Art. 292 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IRSG",
+        "BETMG",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

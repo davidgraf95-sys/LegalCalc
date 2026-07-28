@@ -376,7 +376,10 @@
         "Art. 18 Abs. 1 OLAA"
       ],
       "normKeys": [
-        "UVG"
+        "UVG",
+        "BGG",
+        "ATSG",
+        "UVV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

@@ -1,0 +1,87 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "ASYLG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bge_148_IV_281",
+        "zitierung": "BGE 148 IV 281",
+        "regesteKurz": "Art. 8 Abs. 4 AsylG; Verletzung der Mitwirkungspflicht zur Beschaffung von Reisepapieren; Vorrang des AsylG gegenüber dem AuG bzw. AIG; Legalitätsprinzip. Schuldspruch wegen Verletzung der Mitwirkungspflicht zur Beschaffung von Reisepapier…",
+        "datum": "2022-03-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "5": [
+      {
+        "key": "bge_149_IV_231",
+        "zitierung": "BGE 149 IV 231",
+        "regesteKurz": "Art. 66a und 66d StGB; strafrechtliche Landesverweisung. Bestätigung der Grundzüge der strafrechtlichen Landesverweisung (E. 2.1). Allfällige Vollzugshindernisse der Landesverweisung im Sinne von Art. 66d Abs. 1 StGB müssen bereits im Zeit…",
+        "datum": "2023-03-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "14": [
+      {
+        "key": "bge_149_I_72",
+        "zitierung": "BGE 149 I 72",
+        "regesteKurz": "Art. 8 und 13 EMRK; Art. 13 und 29a BV; Art. 14 Abs. 1, 2 und 4 AsylG; Art. 83 lit. c Ziff. 2 BGG; Anspruch auf eine asylrechtliche Härtefallbewilligung; Vorrang des Asylverfahrens; Rechtsweggarantie. Damit die Beschwerde in öffentlich-rec…",
+        "datum": "2022-11-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_281",
+        "zitierung": "BGE 148 IV 281",
+        "regesteKurz": "Art. 8 Abs. 4 AsylG; Verletzung der Mitwirkungspflicht zur Beschaffung von Reisepapieren; Vorrang des AsylG gegenüber dem AuG bzw. AIG; Legalitätsprinzip. Schuldspruch wegen Verletzung der Mitwirkungspflicht zur Beschaffung von Reisepapier…",
+        "datum": "2022-03-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "116": [
+      {
+        "key": "bge_148_IV_281",
+        "zitierung": "BGE 148 IV 281",
+        "regesteKurz": "Art. 8 Abs. 4 AsylG; Verletzung der Mitwirkungspflicht zur Beschaffung von Reisepapieren; Vorrang des AsylG gegenüber dem AuG bzw. AIG; Legalitätsprinzip. Schuldspruch wegen Verletzung der Mitwirkungspflicht zur Beschaffung von Reisepapier…",
+        "datum": "2022-03-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "109a": [
+      {
+        "key": "bger_12T_3_2025",
+        "zitierung": "BGer 12T_3/2025 vom 15. Juni 2026",
+        "regesteKurz": null,
+        "datum": "2026-06-15",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bger_12T_4_2025",
+        "zitierung": "BGer 12T_4/2025 vom 15. Juni 2026",
+        "regesteKurz": null,
+        "datum": "2026-06-15",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

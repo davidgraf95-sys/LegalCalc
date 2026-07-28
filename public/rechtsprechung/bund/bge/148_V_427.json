@@ -260,7 +260,10 @@
         "Art. 16a EOG",
         "Art. 1a Abs. 1 EOG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "EOV",
+        "EOG"
+      ],
       "zitierteEntscheide": [
         "8C_136/2021",
         "8C_373/2021",

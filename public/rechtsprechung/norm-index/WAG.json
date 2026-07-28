@@ -1,0 +1,41 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "WAG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bge_150_I_213",
+        "zitierung": "BGE 150 I 213",
+        "regesteKurz": "Art. 49 Abs. 1 und Art. 77 BV; Art. 699 ZGB; Art. 14 WaG; Art. 19 Abs. 1 WaldG/GE; Art. 23 Abs. 3 WaldV/GE; Grundsatz des Vorrangs des Bundesrechts; Unterstellung von Lasergame-Spielen im Wald unter eine vorherige punktuelle Bewilligungspf…",
+        "datum": "2024-05-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "14": [
+      {
+        "key": "bge_151_II_304",
+        "zitierung": "BGE 151 II 304",
+        "regesteKurz": "Art. 18 Abs. 1 ter NHG; Art. 14 Abs. 6 NHV; Art. 7 Abs. 4 JSG; Fuss- und Wanderwegprojekt in einem der letzten nicht erschlossenen Tobel der Region; Autonomiebeschwerde der Gemeinden gegen die teilweise Aufhebung dieses Projekts durch das…",
+        "datum": "2024-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_I_213",
+        "zitierung": "BGE 150 I 213",
+        "regesteKurz": "Art. 49 Abs. 1 und Art. 77 BV; Art. 699 ZGB; Art. 14 WaG; Art. 19 Abs. 1 WaldG/GE; Art. 23 Abs. 3 WaldV/GE; Grundsatz des Vorrangs des Bundesrechts; Unterstellung von Lasergame-Spielen im Wald unter eine vorherige punktuelle Bewilligungspf…",
+        "datum": "2024-05-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

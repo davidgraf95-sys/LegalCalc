@@ -258,7 +258,10 @@
         "Art. 269a CO",
         "Art. 270 Abs. 1 CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "VMWG",
+        "OR"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -261,7 +261,11 @@
         "Art. 8 CEDU",
         "Art. 8 EMRK"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "AIG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -258,7 +258,11 @@
         "Art. 3 LPM",
         "Art. 98 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "MSCHG",
+        "ZGB",
+        "BGG"
+      ],
       "zitierteEntscheide": [
         "4A_178/2011",
         "4A_20/2012",

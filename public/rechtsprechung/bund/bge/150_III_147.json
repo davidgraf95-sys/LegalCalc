@@ -261,7 +261,9 @@
         "Art. 190 Abs. 2 LDIP",
         "Art. 33 LDIP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "IPRG"
+      ],
       "zitierteEntscheide": [
         "4A_118/2014",
         "4A_144/2023",

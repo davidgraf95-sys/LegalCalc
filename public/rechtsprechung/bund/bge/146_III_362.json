@@ -287,7 +287,8 @@
       ],
       "normKeys": [
         "OR",
-        "BGG"
+        "BGG",
+        "SVG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

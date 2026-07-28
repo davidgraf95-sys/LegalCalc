@@ -287,7 +287,10 @@
         "Art. 4 Abs. 2 LAAF",
         "Art. 58 CEDH"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BV",
+        "EMRK"
+      ],
       "zitierteEntscheide": [
         "1C_477/2022",
         "1C_543/2023",

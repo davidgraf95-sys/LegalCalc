@@ -1,0 +1,65 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "RPV",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "2": [
+      {
+        "key": "bge_150_II_133",
+        "zitierung": "BGE 150 II 133",
+        "regesteKurz": "Art. 3 Abs. 1 und Art. 6 Abs. 1 und 2 NHG; Art. 6 Abs. 1 und 2 VBLN; Art. 10a Abs. 1 und Art. 10b USG; Art. 5 Abs. 3 UVPV; Art. 25a RPG; Art. 3 RPV; Ausscheidung einer kantonalen Nutzungszone für die Errichtung einer Deponie im Perimeter e…",
+        "datum": "2023-11-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "11": [
+      {
+        "key": "bge_150_II_2",
+        "zitierung": "BGE 150 II 2",
+        "regesteKurz": "Art. 23e und 23h NHG; Art. 7, 8, 9 Abs. 1, Art. 23 Abs. 1 lit. a-f, Art. 24 lit. b, 25, 26 Abs. 1 und Art. 27 PäV; Festsetzung der Kernzone des Naturerlebnisparks Jorat (Parc naturel périurbain du Jorat). Die Errichtung eines Naturerlebnis…",
+        "datum": "2023-04-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_I_36",
+        "zitierung": "BGE 146 I 36",
+        "regesteKurz": "Art. 50 Abs. 1 BV, Art. 86 Abs. 3, Art. 87 Abs. 1, Art. 89 Abs. 2 lit. c, Art. 90 und 93 BGG, Art. 8 ff. und 26 RPG, Art. 5 Abs. 2 RPV; Gemeindeautonomie im Zusammenhang mit der Fortschreibung eines Richtplans. Anfechtbarkeit von kantonale…",
+        "datum": "2019-10-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "26": [
+      {
+        "key": "bge_146_II_134",
+        "zitierung": "BGE 146 II 134",
+        "regesteKurz": "Art. 36a Abs. 3 GSchG; Art. 41cbis GSchV; Art. 26 ff. RPV; Ausscheidung von Gewässerräumen in der Landwirtschaftszone: Inwiefern müssen Fruchtfolgeflächen kompensiert werden? Auslegung von Art. 36a Abs. 3 GSchG nach Wortlaut (E. 9.1), Ents…",
+        "datum": "2019-12-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "30": [
+      {
+        "key": "bge_146_II_134",
+        "zitierung": "BGE 146 II 134",
+        "regesteKurz": "Art. 36a Abs. 3 GSchG; Art. 41cbis GSchV; Art. 26 ff. RPV; Ausscheidung von Gewässerräumen in der Landwirtschaftszone: Inwiefern müssen Fruchtfolgeflächen kompensiert werden? Auslegung von Art. 36a Abs. 3 GSchG nach Wortlaut (E. 9.1), Ents…",
+        "datum": "2019-12-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

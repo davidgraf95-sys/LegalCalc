@@ -273,7 +273,10 @@
         "Art. 39 LENE",
         "Art. 39 OEN"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ENG"
+      ],
       "zitierteEntscheide": [
         "2C_153/2022",
         "2C_455/2023",

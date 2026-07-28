@@ -172,7 +172,10 @@
         "Art. 82 Abs. 2 CPC",
         "Art. 82 Abs. 3 CPC"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "OR",
+        "ZPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -196,7 +196,9 @@
         "Art. 190 Abs. 2 IPRG",
         "Art. 190 Abs. 2 LDIP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "IPRG"
+      ],
       "zitierteEntscheide": [
         "4A_306/2019",
         "4A_616/2015",

@@ -187,7 +187,12 @@
         "Art. 90 Abs. 2 LCR",
         "Art. 90 Abs. 3 LCR"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STGB",
+        "SVG",
+        "STPO",
+        "BGG"
+      ],
       "zitierteEntscheide": [
         "6B_1100/2023",
         "6B_1236/2023",

@@ -258,7 +258,9 @@
       "zitierteNormen": [
         "Art. 121 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "zitierteEntscheide": [
         "4A_110/2012",
         "4A_192/2020",

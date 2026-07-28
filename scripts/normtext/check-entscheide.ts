@@ -40,7 +40,12 @@ const BUDGET_MB = 1024;
 // der Fan-out still ballooniert. Ist 2.7.2026 ≈ 0.53 MB (Erlass- + Artikel-Ebene);
 // Deckel bewusst fliessend (Ist + grosszügige Reserve, bei Korpus-Ausbau nachziehen),
 // bremst Unfälle, limitiert nicht künstlich (analog BUDGET_MB).
-const NORM_INDEX_BUDGET_MB = 3;
+// 28.7.2026 (W2·6-NKEY): 3 → 6 MB. Die normKeys-Abdeckung stieg von 43 % auf 89 %
+// (Register-Ableitung + amtliche Fedlex-Aliase), damit die Artikel-Buckets von
+// 1 316 auf 2 327 und die Datei auf 2.83 MB — der alte Deckel war nach dem Backfill
+// zu 94 % ausgeschöpft und hätte den nächsten Korpus-Zuwachs aus einem Grund
+// gestoppt, der mit einem Fan-out-Unfall nichts zu tun hat. Bewusst nachgezogen.
+const NORM_INDEX_BUDGET_MB = 6;
 const AHV = /\b756\.\d{4}\.\d{4}\.\d{2}\b/;   // CH-Sozialversicherungsnummer (darf nicht vorkommen)
 
 const fehler: string[] = [];

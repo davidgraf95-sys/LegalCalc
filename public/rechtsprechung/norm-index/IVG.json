@@ -3,6 +3,30 @@
   "erlass": "IVG",
   "gewichtQuelle": "alt",
   "proArtikel": {
+    "2": [
+      {
+        "key": "bge_150_V_316",
+        "zitierung": "BGE 150 V 316",
+        "regesteKurz": "Art. 23 Abs. 1 und 3 IVG; Art. 21 quater IVV; Grundentschädigung zur Bemessung des Taggeldes der Invalidenversicherung für Selbständigerwerbende. Aus der Auslegung des Art. 23 Abs. 3 IVG ergibt sich, dass die Berechnung der Grundentschädig…",
+        "datum": "2024-06-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "3": [
+      {
+        "key": "bge_149_III_258",
+        "zitierung": "BGE 149 III 258",
+        "regesteKurz": "Art. 80 Abs. 1 und Art. 81 Abs. 1 SchKG; definitive Rechtsöffnung und Leistungsurteil auf Bezahlung eines Bruttolohns; Rechtsöffnungstitel; befreiende Einwendung. Definitive Rechtsöffnung im Fall, dass der betriebene Arbeitgeber zur Zahlun…",
+        "datum": "2023-03-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "4": [
       {
         "key": "bge_151_V_306",
@@ -61,6 +85,18 @@
         "zitierung": "BGE 147 V 234",
         "regesteKurz": "Art. 4 IVG; Art. 87 Abs. 2 und 3 IVV; Art. 6-8, 17 Abs. 1 und Art. 53 Abs. 2 ATSG; Präxisänderung; Neuanmeldung. Die neue Rechtsprechung gemäss BGE 145 V 215 bildet keinen hinreichenden Anlass, um vom Grundsatz der Nichtanpassung eines for…",
         "datum": "2021-06-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "8": [
+      {
+        "key": "bge_146_V_233",
+        "zitierung": "BGE 146 V 233",
+        "regesteKurz": "Art. 8, 21 IVG und Art. 14 IVV; Ziff. 14.04 Anhang HVI und Rz. 2162 des Kreisschreibens des BSV über die Abgabe von Hilfsmitteln durch die Invalidenversicherung (KHMI); Kostenübernahme durch die IV für invaliditätsbedingte bauliche Änderun…",
+        "datum": "2020-06-16",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -263,6 +299,18 @@
         "gewicht": 0
       }
     ],
+    "21": [
+      {
+        "key": "bge_147_V_242",
+        "zitierung": "BGE 147 V 242",
+        "regesteKurz": "Art. 21 ter Abs. 4 IVG und Art. 9 Abs. 2 HVI; monatliche Vergütung für von Dritten erbrachte Dienstleistungen. Soweit Art. 9 Abs. 2 HVI vorsieht, dass die monatliche Vergütung für von Dritten erbrachte Dienstleistungen den Betrag des monat…",
+        "datum": "2021-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "22": [
       {
         "key": "bge_148_V_397",
@@ -359,12 +407,12 @@
         "gewicht": 0
       },
       {
-        "key": "bger_8C_559_2025",
-        "zitierung": "BGer 8C_559/2025 vom 12. Juni 2026",
-        "regesteKurz": null,
-        "datum": "2026-06-12",
-        "leitcharakter": "routine",
-        "gericht": "bger",
+        "key": "bge_147_V_133",
+        "zitierung": "BGE 147 V 133",
+        "regesteKurz": "Art. 29 bis Abs. 1 AHVG i.V.m. Art. 36 Abs. 2 IVG; Art. 8 Abs. 2 BV; Berechnungsgrundlage des Betrags der Invalidenrente bei Revision des Rentenanspruchs einer Person, die an einem Geburtsgebrechen leidet. Die Änderung des Invaliditätsgrad…",
+        "datum": "2020-11-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -382,6 +430,16 @@
       }
     ],
     "35": [
+      {
+        "key": "bge_149_V_185",
+        "zitierung": "BGE 149 V 185",
+        "regesteKurz": "Art. 9, 10 und 11 ELG; Art. 4, 5, 11a und 14a ELV; gemeinsame Berechnung der Ergänzungsleistungen einer Bezügerin von Leistungen der IV und ihres Kindes, welches eine Kinderrente der IV bezieht und mit ihr in einem gemeinsamen Haushalt leb…",
+        "datum": "2023-05-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_147_V_2",
         "zitierung": "BGE 147 V 2",
@@ -525,6 +583,18 @@
         "zitierung": "BGE 151 V 79",
         "regesteKurz": "Art. 1a lit. a, Art. 15 sowie Art. 27 IVG in Verbindung mit Art. 41 Abs. 1 lit. l IVV; Übernahme von Aufenthaltskosten in einer Institution bei gleichzeitiger beruflicher Abklärung bzw. erstmaliger beruflicher Eingliederung (Vorlehrjahr) i…",
         "datum": "2024-11-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "21bis": [
+      {
+        "key": "bge_147_V_242",
+        "zitierung": "BGE 147 V 242",
+        "regesteKurz": "Art. 21 ter Abs. 4 IVG und Art. 9 Abs. 2 HVI; monatliche Vergütung für von Dritten erbrachte Dienstleistungen. Soweit Art. 9 Abs. 2 HVI vorsieht, dass die monatliche Vergütung für von Dritten erbrachte Dienstleistungen den Betrag des monat…",
+        "datum": "2021-05-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

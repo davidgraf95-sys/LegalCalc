@@ -243,7 +243,9 @@
         "Art. 20 LTVA",
         "Art. 20 MWSTG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "MWSTG"
+      ],
       "zitierteEntscheide": [
         "2C_727/2021",
         "9C_433/2024",

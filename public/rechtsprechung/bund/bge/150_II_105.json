@@ -358,7 +358,11 @@
         "Art. 2 LMP",
         "Art. 21 Abs. 2 LMP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IRSG",
+        "BOEB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -1,0 +1,53 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "BGOE",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "2": [
+      {
+        "key": "bge_150_II_191",
+        "zitierung": "BGE 150 II 191",
+        "regesteKurz": "Art. 4 lit. a BGÖ; Art. 74 MWSTG; Zugang zu Dokumenten des Bundesamts für Zoll und Grenzsicherheit (BAZG) über die Einfuhr von Gold in die Schweiz. Verhältnis zwischen dem Steuergeheimnis und dem Öffentlichkeitsprinzip (E. 3.1-3.4). Die st…",
+        "datum": "2023-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_II_137",
+        "zitierung": "BGE 147 II 137",
+        "regesteKurz": "Art. 2 Abs. 1 lit. b BGÖ; Dokumente zur Wahl und zur Zusammenstellung einer NFP-Leitungsgruppe des SNF unterstehen dem BGÖ. Soweit der Schweizerische Nationalfonds zur Förderung der wissenschaftlichen Forschung (SNF) erstinstanzlich Verfüg…",
+        "datum": "2020-08-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "3": [
+      {
+        "key": "bge_147_I_47",
+        "zitierung": "BGE 147 I 47",
+        "regesteKurz": "Art. 69 Abs. 2 der Interkantonalen Vereinbarung über den Datenschutz und das Öffentlichkeitsprinzip in den Kantonen Jura und Neuenburg (CPDT-JUNE), Art. 18 KV/NE; Zugang zu einem vom Staatsrat des Kantons Neuenburg in Auftrag gegebenen Unt…",
+        "datum": "2021-01-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "4": [
+      {
+        "key": "bge_150_II_191",
+        "zitierung": "BGE 150 II 191",
+        "regesteKurz": "Art. 4 lit. a BGÖ; Art. 74 MWSTG; Zugang zu Dokumenten des Bundesamts für Zoll und Grenzsicherheit (BAZG) über die Einfuhr von Gold in die Schweiz. Verhältnis zwischen dem Steuergeheimnis und dem Öffentlichkeitsprinzip (E. 3.1-3.4). Die st…",
+        "datum": "2023-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

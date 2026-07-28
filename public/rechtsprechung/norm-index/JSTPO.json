@@ -1,0 +1,77 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "JSTPO",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bge_151_IV_10",
+        "zitierung": "BGE 151 IV 10",
+        "regesteKurz": "Art. 14 Abs. 1 und 2 JStPO; Grundsatz der Nichtöffentlichkeit der Hauptverhandlung im Jugendstrafverfahren. Das Jugendstrafverfahren findet unter Ausschluss der Öffentlichkeit statt. Das Jugendgericht und die Berufungsinstanz können eine ö…",
+        "datum": "2024-10-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "11": [
+      {
+        "key": "bge_146_IV_164",
+        "zitierung": "BGE 146 IV 164",
+        "regesteKurz": "Art. 9 Abs. 2 StGB, Art. 3 Abs. 2 JStG, Art. 29 Abs. 1 StPO, Art. 11 JStPO; Zuständigkeit des Jugendgerichts. Die Rechtsprechung anerkennt Ausnahmen von der Anwendung des Art. 3 Abs. 2 vierter Satz JStG (darunter die Schwere der neuen Stra…",
+        "datum": "2020-03-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "14": [
+      {
+        "key": "bge_151_IV_10",
+        "zitierung": "BGE 151 IV 10",
+        "regesteKurz": "Art. 14 Abs. 1 und 2 JStPO; Grundsatz der Nichtöffentlichkeit der Hauptverhandlung im Jugendstrafverfahren. Das Jugendstrafverfahren findet unter Ausschluss der Öffentlichkeit statt. Das Jugendgericht und die Berufungsinstanz können eine ö…",
+        "datum": "2024-10-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "16": [
+      {
+        "key": "bge_146_IV_238",
+        "zitierung": "BGE 146 IV 238",
+        "regesteKurz": "Art. 17 JStPO; Gelingen oder Scheitern der Mediation. Die in Art. 17 JStPO vorgesehene Mediation stellt der Jugendstrafbehörde ein Instrument zur Verfügung, um auf Konfliktbeziehungen zwischen Tätern und Opfern reagieren zu können (E. 3.2.…",
+        "datum": "2020-06-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "17": [
+      {
+        "key": "bge_149_IV_105",
+        "zitierung": "BGE 149 IV 105",
+        "regesteKurz": "Art. 32 und Art. 33 Abs. 1 und 3 StGB; Art. 392 StPO; Rückzug des Strafantrags; Folgen des Prinzips der Unteilbarkeit des Strafantrags. Wenn in einem Strafverfahren, das wegen einer nur auf Antrag hin zu verfolgenden Straftat eröffnet wurd…",
+        "datum": "2022-12-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_238",
+        "zitierung": "BGE 146 IV 238",
+        "regesteKurz": "Art. 17 JStPO; Gelingen oder Scheitern der Mediation. Die in Art. 17 JStPO vorgesehene Mediation stellt der Jugendstrafbehörde ein Instrument zur Verfügung, um auf Konfliktbeziehungen zwischen Tätern und Opfern reagieren zu können (E. 3.2.…",
+        "datum": "2020-06-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

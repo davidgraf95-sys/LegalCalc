@@ -196,7 +196,11 @@
         "Art. 82 Abs. 2 LEF",
         "Art. 82 Abs. 2 LP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "OR",
+        "ZPO",
+        "SCHKG"
+      ],
       "zitierteEntscheide": [
         "4A_306/2008",
         "4C.469/2004",

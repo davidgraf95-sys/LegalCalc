@@ -462,7 +462,11 @@
         "Art. 49a Abs. 1 LCART",
         "Art. 49a LCART"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "VWVG",
+        "KG"
+      ],
       "zitierteEntscheide": [
         "2A.492/2002",
         "2C_113/2017",

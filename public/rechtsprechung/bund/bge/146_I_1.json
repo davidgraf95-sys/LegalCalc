@@ -233,7 +233,9 @@
         "Art. 115 CST",
         "Art. 12 Abs. 2 LIASI"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BV"
+      ],
       "zitierteEntscheide": [
         "2A.485/2005",
         "8C_100/2017",

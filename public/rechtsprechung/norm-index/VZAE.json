@@ -1,0 +1,53 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "VZAE",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "23": [
+      {
+        "key": "bge_147_I_89",
+        "zitierung": "BGE 147 I 89",
+        "regesteKurz": "Art. 8 Abs. 2 BV; Art. 27 AIG; Verweigerung einer Aufenthaltsbewilligung zu Studienzwecken; Diskriminierung aufgrund des Alters. Zusammenfassung der Rechtsprechung zum Schutzbereich von Art. 8 Abs. 2 BV betreffend Diskriminierung aufgrund…",
+        "datum": "2020-02-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "31": [
+      {
+        "key": "bge_147_IV_453",
+        "zitierung": "BGE 147 IV 453",
+        "regesteKurz": "Art. 66a und 66d StGB; Art. 42 Abs. 2, Art. 78 Abs. 2 lit. b und Art. 81 Abs. 1 lit. b BGG; Zulässigkeit der Beschwerde in Strafsachen gegen einen Entscheid, in dem der Aufschub des Vollzugs der obligatorischen Landesverweisung abgewiesen…",
+        "datum": "2021-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_IV_231",
+        "zitierung": "BGE 149 IV 231",
+        "regesteKurz": "Art. 66a und 66d StGB; strafrechtliche Landesverweisung. Bestätigung der Grundzüge der strafrechtlichen Landesverweisung (E. 2.1). Allfällige Vollzugshindernisse der Landesverweisung im Sinne von Art. 66d Abs. 1 StGB müssen bereits im Zeit…",
+        "datum": "2023-03-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "63": [
+      {
+        "key": "bger_2C_1060_2020",
+        "zitierung": "BGer 2C_1060/2020 vom 19. Februar 2021",
+        "regesteKurz": "Niederlassungsbewilligung; Nichteintreten",
+        "datum": "2021-02-19",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

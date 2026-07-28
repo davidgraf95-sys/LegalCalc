@@ -217,7 +217,12 @@
         "Art. 106 Abs. 2 LTF",
         "Art. 6 OOCCR"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "SKV",
+        "STPO",
+        "SVG",
+        "BGG"
+      ],
       "zitierteEntscheide": [
         "6B_1065/2023",
         "6B_1177/2013",

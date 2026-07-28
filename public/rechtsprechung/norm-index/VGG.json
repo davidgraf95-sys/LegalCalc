@@ -1,0 +1,97 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "VGG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "3": [
+      {
+        "key": "bger_12T_3_2025",
+        "zitierung": "BGer 12T_3/2025 vom 15. Juni 2026",
+        "regesteKurz": null,
+        "datum": "2026-06-15",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bger_12T_4_2025",
+        "zitierung": "BGer 12T_4/2025 vom 15. Juni 2026",
+        "regesteKurz": null,
+        "datum": "2026-06-15",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "25": [
+      {
+        "key": "bge_148_II_92",
+        "zitierung": "BGE 148 II 92",
+        "regesteKurz": "Art. 2 Abs. 1 lit. a und Art. 3 Abs. 1 lit. a BGÖ; Art. 55 URG; Anwendung des BGÖ auf die Schiedskommission im Tarifgenehmigungsverfahren mit Einigungstarif. Die Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und ve…",
+        "datum": "2021-10-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "31": [
+      {
+        "key": "bge_149_I_316",
+        "zitierung": "BGE 149 I 316",
+        "regesteKurz": "Art. 83 lit. a BGG; Art. 32 Abs. 1 lit. a VGG; Art. 8 und 13 EMRK; Verletzung des Spezialitätsprinzips bei der internationalen Amtshilfe; Beschwerdelegitimation gegen Akte des Bundesrates im Bereich der Aussenbeziehungen; positive Verpflic…",
+        "datum": "2023-05-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "32": [
+      {
+        "key": "bge_149_I_316",
+        "zitierung": "BGE 149 I 316",
+        "regesteKurz": "Art. 83 lit. a BGG; Art. 32 Abs. 1 lit. a VGG; Art. 8 und 13 EMRK; Verletzung des Spezialitätsprinzips bei der internationalen Amtshilfe; Beschwerdelegitimation gegen Akte des Bundesrates im Bereich der Aussenbeziehungen; positive Verpflic…",
+        "datum": "2023-05-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_I_294",
+        "zitierung": "BGE 151 I 294",
+        "regesteKurz": "Art. 83 lit. a BGG; konsularischer Schutz. Hinweis auf die uneinheitliche bundesgerichtliche Rechtsprechung zu doppelrelevanten Fragen bei der Anwendung von Art. 83 BGG (E. 1.2). Ein Gesuch um konsularischen Schutz fällt nicht unter den Be…",
+        "datum": "2024-12-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_I_91",
+        "zitierung": "BGE 149 I 91",
+        "regesteKurz": "Art. 29 Abs. 2 BV; Art. 83 lit. b und Art. 90 BGG; Art. 14 lit. c und d aBüG; Beschwerde ans Bundesgericht gegen einen Entscheid des Bundesverwaltungsgerichts, mit dem dieses eine Beschwerde gegen die Verweigerung der eidgenössischen Einbü…",
+        "datum": "2022-12-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "37": [
+      {
+        "key": "bger_2C_128_2007",
+        "zitierung": "BGer 2C_128/2007 vom 17. Oktober 2007",
+        "regesteKurz": "Aufenthaltsbewilligung",
+        "datum": "2007-10-17",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

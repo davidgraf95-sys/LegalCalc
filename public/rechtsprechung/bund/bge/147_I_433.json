@@ -263,7 +263,11 @@
         "Art. 31 Abs. 2 USG",
         "Art. 4 Abs. 1 VVEA"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "RPG",
+        "USG",
+        "VVEA"
+      ],
       "zitierteEntscheide": [
         "1C_644/2019",
         "1C_648/2019",

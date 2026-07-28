@@ -205,7 +205,10 @@
         "Art. 127 CO",
         "Art. 135 CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STPO",
+        "OR"
+      ],
       "zitierteEntscheide": [
         "4A_417/2021",
         "4A_543/2013",

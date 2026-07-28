@@ -246,7 +246,9 @@
       ],
       "normKeys": [
         "BGG",
-        "ZGB"
+        "ZGB",
+        "EMRK",
+        "EPG"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

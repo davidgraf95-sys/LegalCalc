@@ -264,7 +264,9 @@
         "Art. 17 RELHACOPS",
         "Art. 2 LHACOPS"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BV"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

@@ -310,7 +310,10 @@
         "Art. 10 OIMF",
         "Art. 120 Abs. 1 FINFRAG"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "FINFRAV",
+        "FINFRAG"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

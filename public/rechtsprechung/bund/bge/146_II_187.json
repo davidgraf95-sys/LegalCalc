@@ -212,7 +212,11 @@
         "Art. 31 Abs. 2 OIF",
         "Art. 31 Abs. 2 OPB"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "USG",
+        "LSV"
+      ],
       "zitierteEntscheide": [
         "1C_212/2018",
         "1C_429/2016",

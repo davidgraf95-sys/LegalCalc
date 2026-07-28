@@ -247,7 +247,9 @@
         "Art. 181 CP",
         "Art. 198 Abs. 2 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STGB"
+      ],
       "zitierteEntscheide": [
         "6B_1093/2023",
         "6B_1183/2021",

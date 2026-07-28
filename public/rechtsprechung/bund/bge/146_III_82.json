@@ -237,7 +237,9 @@
         "Art. 49 TIT",
         "Art. 67 Abs. 1 CO"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "OR"
+      ],
       "zitierteEntscheide": [
         "4A_254/2016",
         "4A_398/2015",

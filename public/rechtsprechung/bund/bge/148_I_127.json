@@ -280,7 +280,11 @@
         "Art. 55 Abs. 2 EIMP",
         "Art. 80p EIMP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "IRSG"
+      ],
       "zitierteEntscheide": [
         "1C_209/2014",
         "1C_228/2020",

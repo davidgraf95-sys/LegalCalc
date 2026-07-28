@@ -190,7 +190,10 @@
         "Art. 118 Abs. 1 CPP",
         "Art. 217 Abs. 2 CP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "STPO",
+        "STGB"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

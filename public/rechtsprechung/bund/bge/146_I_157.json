@@ -317,7 +317,10 @@
         "Art. 27 CST",
         "Art. 3 Abs. 2 LVP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "zitierteEntscheide": [
         "1C_6/2016",
         "2C_349/2012",

@@ -457,7 +457,9 @@
         "Art. 45 TCE",
         "Art. 50 TCE"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "IPRG"
+      ],
       "zitierteEntscheide": [
         "4A_116/2016",
         "4A_157/2017",

@@ -1,0 +1,89 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "VG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "1": [
+      {
+        "key": "bge_148_II_218",
+        "zitierung": "BGE 148 II 218",
+        "regesteKurz": "Art. 178 Abs. 3 und Art. 146 BV; Art. 19 VG; aArt. 26 AsylG; Art. 22 und 23 BWIS; Frage, ob die Securitas AG in Bezug auf potentielle Haftungsansprüche in Zusammenhang mit einer tätlichen Auseinandersetzung im EVZ Kreuzlingen Haftungssubje…",
+        "datum": "2021-12-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "3": [
+      {
+        "key": "bge_150_II_225",
+        "zitierung": "BGE 150 II 225",
+        "regesteKurz": "Art. 3 Abs. 1 und 2 VG; Art. 34 und 35 aBöB; Anwendbarkeit des Verantwortlichkeitsgesetzes bei Staatshaftungsansprüchen in Zusammenhang mit Vergabeverfahren nach dem (alten) Beschaffungsrecht des Bundes. Grundsätze der Haftung nach Art. 3…",
+        "datum": "2024-02-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_II_245",
+        "zitierung": "BGE 151 II 245",
+        "regesteKurz": "Art. 6 Abs. 1 und 2 VG; Genugtuungsanspruch des Ehemanns in Zusammenhang mit der Verweigerung des Schweizer Grenzwachtkorps, medizinische Hilfe für seine schwangere Frau beizuziehen. Anwendbare Bestimmungen des Verantwortlichkeitsgesetzes…",
+        "datum": "2024-09-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "5": [
+      {
+        "key": "bge_151_II_245",
+        "zitierung": "BGE 151 II 245",
+        "regesteKurz": "Art. 6 Abs. 1 und 2 VG; Genugtuungsanspruch des Ehemanns in Zusammenhang mit der Verweigerung des Schweizer Grenzwachtkorps, medizinische Hilfe für seine schwangere Frau beizuziehen. Anwendbare Bestimmungen des Verantwortlichkeitsgesetzes…",
+        "datum": "2024-09-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "6": [
+      {
+        "key": "bge_151_II_245",
+        "zitierung": "BGE 151 II 245",
+        "regesteKurz": "Art. 6 Abs. 1 und 2 VG; Genugtuungsanspruch des Ehemanns in Zusammenhang mit der Verweigerung des Schweizer Grenzwachtkorps, medizinische Hilfe für seine schwangere Frau beizuziehen. Anwendbare Bestimmungen des Verantwortlichkeitsgesetzes…",
+        "datum": "2024-09-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "11": [
+      {
+        "key": "bge_150_III_332",
+        "zitierung": "BGE 150 III 332",
+        "regesteKurz": "Art. 273 SchKG; Art. 170 DBG; Art. 78 StHG; Haftung für Arrestschaden; Steuerarrest. Die Steuerbehörden haften wie jeder andere Gläubiger nach Art. 273 Abs. 1 SchKG für den aus einem ungerechtfertigten Steuerarrest entstandenen Schaden (E.…",
+        "datum": "2024-04-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "12": [
+      {
+        "key": "bge_150_II_225",
+        "zitierung": "BGE 150 II 225",
+        "regesteKurz": "Art. 3 Abs. 1 und 2 VG; Art. 34 und 35 aBöB; Anwendbarkeit des Verantwortlichkeitsgesetzes bei Staatshaftungsansprüchen in Zusammenhang mit Vergabeverfahren nach dem (alten) Beschaffungsrecht des Bundes. Grundsätze der Haftung nach Art. 3…",
+        "datum": "2024-02-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}

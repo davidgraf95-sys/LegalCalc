@@ -213,7 +213,14 @@
         "Art. 21 LAI",
         "Art. 21bis Abs. 3 LAI"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "ATSG",
+        "AHVV",
+        "DBG",
+        "BV",
+        "IVG"
+      ],
       "zitierteEntscheide": [
         "9C_177/2020",
         "9C_573/2016",

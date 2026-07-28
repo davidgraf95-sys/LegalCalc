@@ -5,10 +5,40 @@
   "proArtikel": {
     "1": [
       {
+        "key": "bge_149_I_161",
+        "zitierung": "BGE 149 I 161",
+        "regesteKurz": "Art. 10 Abs. 2, 13 Abs. 1, 36 BV; Art. 8 EMRK; Art. 75 Abs. 3 StGB; Art. 35 lit. j und Art. 89 des Waadtländer Reglements vom 16. August 2017 über die Stellung verurteilter Personen im Straf- oder Massnahmenvollzug (RSPC); Kontrolle der Ko…",
+        "datum": "2023-03-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_I_137",
         "zitierung": "BGE 151 I 137",
         "regesteKurz": "a Automatische Fahrzeugfahndung und Verkehrsüberwachung (AFV) gemäss § 4 quinquies PolG/LU; Gesetzgebungskompetenz (Art. 3 und 123 BV; Art. 15 Abs. 1 StPO); Verhältnismässigkeit des Grundrechtseingriffs (Art. 13 Abs. 2 und Art. 36 BV; Art.…",
         "datum": "2024-10-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_I_50",
+        "zitierung": "BGE 150 I 50",
+        "regesteKurz": "Art. 10 Abs. 2, Art. 13 und 36 BV, Art. 8 EMRK, Art. 236 StPO, Art. 74 und 84 StGB sowie Art. 82 des Reglements des Kantons Waadt über den Status verurteilter Personen, die sich im Straf- oder Massnahmenvollzug befinden (RSPC); Prüfung, ob…",
+        "datum": "2024-01-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_2",
+        "zitierung": "BGE 147 IV 2",
+        "regesteKurz": "Art. 81 BGG; Art. 17, 357 Abs. 1 und Art. 381 Abs. 3 StPO; Berechtigung zur Beschwerde in Strafsachen. Die für die Verfolgung von Übertretungen zuständigen kantonalen Verwaltungsbehörden sind nicht zur Erhebung der Beschwerde in Strafsache…",
+        "datum": "2021-01-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -69,6 +99,16 @@
     ],
     "3": [
       {
+        "key": "bge_146_IV_30",
+        "zitierung": "BGE 146 IV 30",
+        "regesteKurz": "Art. 85 Abs. 4 lit. a und 356 Abs. 4 StPO; Einsprache gegen einen Strafbefehl, Nichterscheinen an der Hauptverhandlung im Verfahren vor dem erstinstanzlichen Gericht, Rückzugsfiktion der Einsprache. Die gesetzliche Fiktion, wonach bei unen…",
+        "datum": "2019-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_152_IV_118",
         "zitierung": "BGE 152 IV 118",
         "regesteKurz": "Art. 399 Abs. 4 lit. b StPO (Berufungserklärung); Beschränkung der Berufung auf die Strafzumessung; Sachverhaltskognition des Berufungsgerichts. Wird die Berufung auf die Strafzumessung beschränkt, erwächst der nicht angefochtene erstinsta…",
@@ -79,10 +119,30 @@
         "gewicht": 0
       },
       {
+        "key": "bge_147_IV_505",
+        "zitierung": "BGE 147 IV 505",
+        "regesteKurz": "Art. 3 Abs. 2 lit. a, Art. 381 Abs. 1, Art. 391 Abs. 2, Art. 401 StPO; Zulässigkeit der Anschlussberufung; Grundsatz von Treu und Glauben im Strafverfahren. Legitimation der Staatsanwaltschaft, Anschlussberufung zu erheben, um damit das Ve…",
+        "datum": "2021-11-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_147_IV_479",
         "zitierung": "BGE 147 IV 479",
         "regesteKurz": "Art. 70 Abs. 1, 2 und 5, Art. 71 Abs. 1, Art. 322 septies Abs. 1 StGB; aktive Bestechung; Umfang der Einziehung bei der blossen Beeinflussung von Ermessensentscheiden; Durchgriff. Der Erlös aus einem durch Bestechung zustande gekommenen Re…",
         "datum": "2021-06-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_286",
+        "zitierung": "BGE 146 IV 286",
+        "regesteKurz": "Art. 356 Abs. 3 StPO; Strafbefehl; Rückzug der Einsprache durch konkludente Handlung. Der Rückzug der Einsprache gegen einen Strafbefehl kann durch konkludentes Handeln erfolgen. Wenn die einsprechende Person die im Strafbefehl der festges…",
+        "datum": "2020-08-10",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -165,6 +225,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_150_IV_242",
+        "zitierung": "BGE 150 IV 242",
+        "regesteKurz": "Art. 90 Abs. 2 und Art. 106 Abs. 1 SVG; Art. 9 Abs. 2 SKV; Art. 6 ff. VSKV-ASTRA; Geschwindigkeitskontrolle durch eine Nachfahrmessung ohne kalibriertes Nachfahrmesssystem mittels Ablesung des Geschwindigkeitsmessers. Eine Geschwindigkeits…",
+        "datum": "2024-05-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_IV_1",
         "zitierung": "BGE 150 IV 1",
         "regesteKurz": "Art. 61 StGB; Massnahmen für junge Erwachsene, Untermassverbot. Das aus dem Verhältnismässigkeitsprinzip abgeleitete Untermassverbot, wonach Dauer und Eingriffsintensität der Massnahme im Verhältnis zur aufgeschobenen Strafe nicht zu gerin…",
@@ -175,50 +245,40 @@
         "gewicht": 0
       },
       {
+        "key": "bge_150_IV_86",
+        "zitierung": "BGE 150 IV 86",
+        "regesteKurz": "Art. 25 und 322 septies Abs. 2 StGB; passive Bestechung fremder Amtsträger; Gehilfenschaft. Abschluss einer \"Bestechungsvereinbarung\" (\"pacte corruptif\") im Rahmen von Geschäftsverhandlungen zwischen einer norwegischen Gesellschaft, die si…",
+        "datum": "2023-10-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_409",
+        "zitierung": "BGE 148 IV 409",
+        "regesteKurz": "Art. 173 ff. StGB; Ehrverletzungen; Äusserungen gegenüber einem Rechtsanwalt. Die Bedeutung von Äusserungen, die ein Mandant gegenüber seinem Rechtsanwalt tätigt, ist nicht auf die gleiche Weise zu beurteilen wie die Bedeutung von Äusserun…",
+        "datum": "2022-08-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_I_295",
+        "zitierung": "BGE 148 I 295",
+        "regesteKurz": "Art. 6 Ziff. 3 lit. d EMRK, Art. 29 Abs. 2 und Art. 32 Abs. 2 BV; Unmöglichkeit der Konfrontation mit dem Belastungszeugen; Zeugnis vom Hörensagen; Sicherstellung eines fairen Verfahrens. Das Opfer war verstorben, bevor das Konfrontationsr…",
+        "datum": "2022-06-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_IV_205",
         "zitierung": "BGE 148 IV 205",
         "regesteKurz": "Art. 3, Art. 113, Art. 140 Abs. 1, Art. 141 Abs. 1 und Art. 293 Abs. 4 StPO; Art. 6 Ziff. 1 EMRK; verdeckte Ermittlung; Selbstbelastungsfreiheit; Beweisverwertungsverbot. Die Verwertbarkeit von Beweismitteln, die im Rahmen einer verdeckten…",
         "datum": "2022-03-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_534",
-        "zitierung": "BGE 147 IV 534",
-        "regesteKurz": "Art. 139 Abs. 2, Art. 164 Abs. 1 und 2, Art. 177 Abs. 2 StPO; Abklärungen zum Vorleben und den persönlichen Verhältnissen von Zeugen. Art. 164 Abs. 1 StPO dient dem Schutz der Persönlichkeit von Zeuginnen und Zeugen (E. 2.3.2). Über die Fr…",
-        "datum": "2021-08-11",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_409",
-        "zitierung": "BGE 147 IV 409",
-        "regesteKurz": "Art. 6, Art. 10 Abs. 2, Art. 350 Abs. 2 und Art. 389 StPO; Art. 189 und Art. 190 StGB; Beweiswürdigung, Ermittlungspflicht des Gerichts; Sexuelle Nötigung und Vergewaltigung, Nötigungsmittel. Das Berufungsgericht muss das entscheiderheblic…",
-        "datum": "2021-06-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_439",
-        "zitierung": "BGE 147 IV 439",
-        "regesteKurz": "Art. 91 Abs. 2 lit. b, Art. 31 Abs. 2 und Art. 55 Abs. 7 lit. a SVG, Art. 2 Abs. 2 lit. a VRV, Art. 34 lit. a VSKV-ASTRA, Art. 12 Abs. 2 StGB; Fahren in fahrunfähigem Zustand nach Cannabiskonsum, Zulässigkeit der auf Verordnungsebene festg…",
-        "datum": "2021-06-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_I_386",
-        "zitierung": "BGE 147 I 386",
-        "regesteKurz": "Art. 6 Ziff. 2 EMRK; Art. 10 Abs. 1 StPO; Art. 319 Abs. 1 lit. c StPO; Art. 15 StGB; Unschuldsvermutung; Einstellungsverfügung; Rechtfertigende Notwehr. Beschwerdelegitimation des Beschwerdeführers, welcher einerseits Privatkläger und ande…",
-        "datum": "2021-06-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -301,6 +361,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_147_IV_2",
+        "zitierung": "BGE 147 IV 2",
+        "regesteKurz": "Art. 81 BGG; Art. 17, 357 Abs. 1 und Art. 381 Abs. 3 StPO; Berechtigung zur Beschwerde in Strafsachen. Die für die Verfolgung von Übertretungen zuständigen kantonalen Verwaltungsbehörden sind nicht zur Erhebung der Beschwerde in Strafsache…",
+        "datum": "2021-01-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_147_IV_36",
         "zitierung": "BGE 147 IV 36",
         "regesteKurz": "Art. 400 Abs. 3 lit. b und Art. 401 StPO; Art. 15 Abs. 2 StBOG; Umwandlung der Berufung in eine Anschlussberufung. Die gleichen Anträge einer Partei können nicht parallel Gegenstand einer Berufung und einer Anschlussberufung zur Berufung e…",
@@ -323,6 +393,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_147_IV_2",
+        "zitierung": "BGE 147 IV 2",
+        "regesteKurz": "Art. 81 BGG; Art. 17, 357 Abs. 1 und Art. 381 Abs. 3 StPO; Berechtigung zur Beschwerde in Strafsachen. Die für die Verfolgung von Übertretungen zuständigen kantonalen Verwaltungsbehörden sind nicht zur Erhebung der Beschwerde in Strafsache…",
+        "datum": "2021-01-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_147_IV_123",
         "zitierung": "BGE 147 IV 123",
         "regesteKurz": "Art. 222 und 237 Abs. 4 StPO; Nichtanordnung von Ersatzmassnahmen anstelle von Untersuchungshaft; Beschwerdelegitimation der Staatsanwaltschaft. Die Staatsanwaltschaft ist berechtigt, den Entscheid des Zwangsmassnahmengerichts, mit welchem…",
@@ -339,6 +419,18 @@
         "datum": "2026-06-16",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "17": [
+      {
+        "key": "bge_147_IV_2",
+        "zitierung": "BGE 147 IV 2",
+        "regesteKurz": "Art. 81 BGG; Art. 17, 357 Abs. 1 und Art. 381 Abs. 3 StPO; Berechtigung zur Beschwerde in Strafsachen. Die für die Verfolgung von Übertretungen zuständigen kantonalen Verwaltungsbehörden sind nicht zur Erhebung der Beschwerde in Strafsache…",
+        "datum": "2021-01-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -404,6 +496,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_IV_338",
+        "zitierung": "BGE 151 IV 338",
+        "regesteKurz": "Art. 393 Abs. 1 lit. c StPO; Rechtsmittel gegen Entscheide des Zwangsmassnahmengerichts. In seiner seit dem 1. Juli 2024 geltenden Fassung ist Art. 393 Abs. 1 lit. c StPO dahingehend zu verstehen, dass gegen Entscheide des Zwangsmassnahmen…",
+        "datum": "2025-07-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       },
       {
@@ -421,6 +523,18 @@
         "zitierung": "BGE 147 IV 123",
         "regesteKurz": "Art. 222 und 237 Abs. 4 StPO; Nichtanordnung von Ersatzmassnahmen anstelle von Untersuchungshaft; Beschwerdelegitimation der Staatsanwaltschaft. Die Staatsanwaltschaft ist berechtigt, den Entscheid des Zwangsmassnahmengerichts, mit welchem…",
         "datum": "2020-11-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "28": [
+      {
+        "key": "bge_147_IV_65",
+        "zitierung": "BGE 147 IV 65",
+        "regesteKurz": "Art. 28 Abs. 1 StGB; Strafbarkeit der Medien; keine Anwendbarkeit von Art. 28 Abs. 1 StGB beim \"Teilen\" und Kommentieren eines fremden Beitrags auf Facebook. Grundsatz der exklusiven Strafbarkeit des Autors bei Mediendelikten (E. 5.1-5.3).…",
+        "datum": "2020-11-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -523,6 +637,30 @@
         "gewicht": 0
       }
     ],
+    "91": [
+      {
+        "key": "bge_147_IV_526",
+        "zitierung": "BGE 147 IV 526",
+        "regesteKurz": "a Art. 91 Abs. 2 StPO; Art. 48 BGG; Nachweis der Einhaltung der Beschwerdefrist durch Vorlage eines Videos. Das Datum, an welchem eine Rechtsschrift eingereicht wird, entspricht vermutungsweise demjenigen des Poststempels. Möchte eine Part…",
+        "datum": "2021-10-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "92": [
+      {
+        "key": "bge_147_IV_188",
+        "zitierung": "BGE 147 IV 188",
+        "regesteKurz": "Art. 29 f. StPO, Art. 92 und 93 Abs. 1 lit. a BGG; Eintretensfrage bei Trennung von Strafverfahren. Darstellung der früheren, uneinheitlichen Rechtsprechung (E. 1.2). Art. 92 BGG ist bei Verfahrenstrennungen nur anwendbar, wenn im konkrete…",
+        "datum": "2020-12-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "100": [
       {
         "key": "bge_151_IV_18",
@@ -539,6 +677,16 @@
         "zitierung": "BGE 147 IV 167",
         "regesteKurz": "Art. 404 Abs. 1 StPO; Art. 329 Abs. 1 lit. a und Abs. 2 zweiter Satz, Art. 333 Abs. 1 und 2, je in Verbindung mit Art. 379 StPO; Art. 391 Abs. 1 und 2 StPO; Unzulässigkeit eines zusätzlichen Schuldspruchs aufgrund eines im Berufungsverfahr…",
         "datum": "2021-03-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_218",
+        "zitierung": "BGE 146 IV 218",
+        "regesteKurz": "Akteneinsichtsrecht; Geheimhaltungspflicht betreffend das Verfahren und die davon betroffenen Personen; Kommunikation zwischen der Verteidigung und ihrer Mandantschaft (Art. 73 Abs. 2, 101 Abs. 1, 102 Abs. 1, 108 und 128 StPO; Art. 398 Abs…",
+        "datum": "2020-05-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -565,6 +713,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_218",
+        "zitierung": "BGE 146 IV 218",
+        "regesteKurz": "Akteneinsichtsrecht; Geheimhaltungspflicht betreffend das Verfahren und die davon betroffenen Personen; Kommunikation zwischen der Verteidigung und ihrer Mandantschaft (Art. 73 Abs. 2, 101 Abs. 1, 102 Abs. 1, 108 und 128 StPO; Art. 398 Abs…",
+        "datum": "2020-05-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "102": [
@@ -587,9 +745,29 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_218",
+        "zitierung": "BGE 146 IV 218",
+        "regesteKurz": "Akteneinsichtsrecht; Geheimhaltungspflicht betreffend das Verfahren und die davon betroffenen Personen; Kommunikation zwischen der Verteidigung und ihrer Mandantschaft (Art. 73 Abs. 2, 101 Abs. 1, 102 Abs. 1, 108 und 128 StPO; Art. 398 Abs…",
+        "datum": "2020-05-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "104": [
+      {
+        "key": "bge_146_IV_76",
+        "zitierung": "BGE 146 IV 76",
+        "regesteKurz": "a Art. 110 Abs. 1 StGB; Art. 118, 121 Abs. 1 und 382 Abs. 1 StPO; Legitimation der Angehörigen einer verstorbenen geschädigten Person zur Anfechtung einer Verfahrenseinstellung. Die Angehörigen der verstorbenen geschädigten Person, die sic…",
+        "datum": "2019-11-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
       {
         "key": "bge_150_IV_225",
         "zitierung": "BGE 150 IV 225",
@@ -625,6 +803,28 @@
         "zitierung": "BGE 148 IV 124",
         "regesteKurz": "Art. 11 Abs. 1, Art. 119 Abs. 2 lit. a, Art. 319 Abs. 1 lit. a, Art. 320 Abs. 4, Art. 324 Abs. 2, Art. 333 Abs. 1 StPO; Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Teileinstellungsverfügung; Grundsatz \"ne bis in idem\"…",
         "datum": "2022-01-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_269",
+        "zitierung": "BGE 147 IV 269",
+        "regesteKurz": "Art. 104, 115 und 118 Abs. 1 StPO; Art. 317 StGB; Urkundenfälschung im Amt, Geschädigtenstellung. Massgebende Prinzipien für die Zulassung als Privatklägerschaft (E. 3.1 und 3.2). Die beschwerdeführende Gesellschaft wurde durch den Gebrauc…",
+        "datum": "2021-04-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "106": [
+      {
+        "key": "bge_147_IV_361",
+        "zitierung": "BGE 147 IV 361",
+        "regesteKurz": "Art. 127 Abs. 1 StPO; Art. 13 IPRG; Befugnis der Organe einer ausländischen Gesellschaft, einen Rechtsbeistand zu bestellen; Begriff des ausländischen Rechts. Ist eine ausländische Gesellschaft an einem in der Schweiz geführten Strafverfah…",
+        "datum": "2021-01-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -673,6 +873,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_218",
+        "zitierung": "BGE 146 IV 218",
+        "regesteKurz": "Akteneinsichtsrecht; Geheimhaltungspflicht betreffend das Verfahren und die davon betroffenen Personen; Kommunikation zwischen der Verteidigung und ihrer Mandantschaft (Art. 73 Abs. 2, 101 Abs. 1, 102 Abs. 1, 108 und 128 StPO; Art. 398 Abs…",
+        "datum": "2020-05-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "110": [
@@ -681,6 +891,28 @@
         "zitierung": "BGE 148 IV 445",
         "regesteKurz": "Art. 353 Abs. 1 lit. k und Art. 80 Abs. 2 StPO; auch beim Erlass eines Strafbefehls stellt die persönliche handschriftliche Unterschrift ein formelles Gültigkeitserfordernis im Interesse der Rechtssicherheit dar. Das Anbringen eines \"Faksi…",
         "datum": "2022-06-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_IV_9",
+        "zitierung": "BGE 149 IV 9",
+        "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des S…",
+        "datum": "2022-09-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "111": [
+      {
+        "key": "bge_149_IV_105",
+        "zitierung": "BGE 149 IV 105",
+        "regesteKurz": "Art. 32 und Art. 33 Abs. 1 und 3 StGB; Art. 392 StPO; Rückzug des Strafantrags; Folgen des Prinzips der Unteilbarkeit des Strafantrags. Wenn in einem Strafverfahren, das wegen einer nur auf Antrag hin zu verfolgenden Straftat eröffnet wurd…",
+        "datum": "2022-12-16",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -711,6 +943,16 @@
     ],
     "115": [
       {
+        "key": "bge_146_IV_76",
+        "zitierung": "BGE 146 IV 76",
+        "regesteKurz": "a Art. 110 Abs. 1 StGB; Art. 118, 121 Abs. 1 und 382 Abs. 1 StPO; Legitimation der Angehörigen einer verstorbenen geschädigten Person zur Anfechtung einer Verfahrenseinstellung. Die Angehörigen der verstorbenen geschädigten Person, die sic…",
+        "datum": "2019-11-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_150_IV_405",
         "zitierung": "BGE 150 IV 405",
         "regesteKurz": "Art. 118 Abs. 3 StGB; Art. 115-118, 122 Abs. 1 und 2 StPO; Art. 31 ZGB; Beschwerdelegitimation des Erzeugers bei Verfahrenseinstellung wegen strafbaren Schwangerschaftsabbruchs. Der Erzeuger eines abgetriebenen Fötus ist nicht selber Träge…",
@@ -721,10 +963,50 @@
         "gewicht": 0
       },
       {
+        "key": "bge_150_IV_255",
+        "zitierung": "BGE 150 IV 255",
+        "regesteKurz": "Art. 1 StGB; Art. 10, 11 Abs. 1 und Art. 20 Abs. 1 lit. e BetmG; Beihilfe zum Suizid; Verschreibung einer tödlich wirkenden Substanz (Natriumpentobarbital); Legalitätsprinzip. Die Verschreibung von Natriumpentobarbital durch einen Arzt an…",
+        "datum": "2024-03-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_432",
+        "zitierung": "BGE 148 IV 432",
+        "regesteKurz": "Art. 115 Abs. 1, Art. 122 Abs. 1, Art. 126 Abs. 1 lit. b und Abs. 2 lit. d StPO; adhäsionsweise erhobene Zivilklage im Strafverfahren; Zivilforderungen bei Freispruch der beschuldigten Person; vertragliche Ansprüche. Zivilansprüche, die au…",
+        "datum": "2022-08-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_256",
+        "zitierung": "BGE 148 IV 256",
+        "regesteKurz": "Art. 81 Abs. 1 lit. b Ziff. 5 BGG; Art. 115, 118 und 121 StPO; Art. 110 Abs. 1 StGB; Stellung der geschädigten Person und Beschwerdelegitimation der Erben mit nachrangiger Erbberechtigung; Übergang der Verfahrensrechte. Die Rechtsnachfolge…",
+        "datum": "2022-04-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_IV_170",
         "zitierung": "BGE 148 IV 170",
         "regesteKurz": "a Art. 115 Abs. 1 StPO; Begriff des Geschädigten. Geschädigtenstellung bei Vermögensdelikten (E. 3.3.1 und 3.3.2), Konkursdelikten (E. 3.4.1) und Urkundendelikten (E. 3.5.1; je Bestätigung der Rechtsprechung). Regeste b Art. 163-167 StGB;…",
         "datum": "2022-04-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_269",
+        "zitierung": "BGE 147 IV 269",
+        "regesteKurz": "Art. 104, 115 und 118 Abs. 1 StPO; Art. 317 StGB; Urkundenfälschung im Amt, Geschädigtenstellung. Massgebende Prinzipien für die Zulassung als Privatklägerschaft (E. 3.1 und 3.2). Die beschwerdeführende Gesellschaft wurde durch den Gebrauc…",
+        "datum": "2021-04-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -785,7 +1067,99 @@
         "gewicht": 0
       }
     ],
+    "118": [
+      {
+        "key": "bge_148_IV_432",
+        "zitierung": "BGE 148 IV 432",
+        "regesteKurz": "Art. 115 Abs. 1, Art. 122 Abs. 1, Art. 126 Abs. 1 lit. b und Abs. 2 lit. d StPO; adhäsionsweise erhobene Zivilklage im Strafverfahren; Zivilforderungen bei Freispruch der beschuldigten Person; vertragliche Ansprüche. Zivilansprüche, die au…",
+        "datum": "2022-08-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_III_401",
+        "zitierung": "BGE 148 III 401",
+        "regesteKurz": "Art. 39 ZPO; Art. 122 Abs. 1 und 3 StPO; Art. 135 Ziff. 2 OR; Auftrag; Klage aus Vertrag; Unzuständigkeit des Strafgerichts; Unterbrechung der Verjährung. Ansprüche aus Vertrag können nicht Gegenstand einer adhäsionsweise erhobenen Zivilkl…",
+        "datum": "2022-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_256",
+        "zitierung": "BGE 148 IV 256",
+        "regesteKurz": "Art. 81 Abs. 1 lit. b Ziff. 5 BGG; Art. 115, 118 und 121 StPO; Art. 110 Abs. 1 StGB; Stellung der geschädigten Person und Beschwerdelegitimation der Erben mit nachrangiger Erbberechtigung; Übergang der Verfahrensrechte. Die Rechtsnachfolge…",
+        "datum": "2022-04-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_269",
+        "zitierung": "BGE 147 IV 269",
+        "regesteKurz": "Art. 104, 115 und 118 Abs. 1 StPO; Art. 317 StGB; Urkundenfälschung im Amt, Geschädigtenstellung. Massgebende Prinzipien für die Zulassung als Privatklägerschaft (E. 3.1 und 3.2). Die beschwerdeführende Gesellschaft wurde durch den Gebrauc…",
+        "datum": "2021-04-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_361",
+        "zitierung": "BGE 147 IV 361",
+        "regesteKurz": "Art. 127 Abs. 1 StPO; Art. 13 IPRG; Befugnis der Organe einer ausländischen Gesellschaft, einen Rechtsbeistand zu bestellen; Begriff des ausländischen Rechts. Ist eine ausländische Gesellschaft an einem in der Schweiz geführten Strafverfah…",
+        "datum": "2021-01-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_76",
+        "zitierung": "BGE 146 IV 76",
+        "regesteKurz": "a Art. 110 Abs. 1 StGB; Art. 118, 121 Abs. 1 und 382 Abs. 1 StPO; Legitimation der Angehörigen einer verstorbenen geschädigten Person zur Anfechtung einer Verfahrenseinstellung. Die Angehörigen der verstorbenen geschädigten Person, die sic…",
+        "datum": "2019-11-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "119": [
+      {
+        "key": "bge_146_IV_76",
+        "zitierung": "BGE 146 IV 76",
+        "regesteKurz": "a Art. 110 Abs. 1 StGB; Art. 118, 121 Abs. 1 und 382 Abs. 1 StPO; Legitimation der Angehörigen einer verstorbenen geschädigten Person zur Anfechtung einer Verfahrenseinstellung. Die Angehörigen der verstorbenen geschädigten Person, die sic…",
+        "datum": "2019-11-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_IV_46",
+        "zitierung": "BGE 151 IV 46",
+        "regesteKurz": "Art. 360 StPO; Auslegung; Umfang des Rechts der Privatklägerschaft, die Anklageschrift im abgekürzten Verfahren abzulehnen. Die Ablehnung einer im abgekürzten Verfahren ergangenen Anklageschrift durch die Privatklägerschaft (Art. 360 Abs.…",
+        "datum": "2024-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_401",
+        "zitierung": "BGE 148 III 401",
+        "regesteKurz": "Art. 39 ZPO; Art. 122 Abs. 1 und 3 StPO; Art. 135 Ziff. 2 OR; Auftrag; Klage aus Vertrag; Unzuständigkeit des Strafgerichts; Unterbrechung der Verjährung. Ansprüche aus Vertrag können nicht Gegenstand einer adhäsionsweise erhobenen Zivilkl…",
+        "datum": "2022-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_IV_124",
         "zitierung": "BGE 148 IV 124",
@@ -821,20 +1195,30 @@
     ],
     "122": [
       {
-        "key": "bge_151_III_418",
-        "zitierung": "BGE 151 III 418",
-        "regesteKurz": "Art. 59 Abs. 2 lit. d, Art. 64 Abs. 1 lit. a ZPO; Art. 122 Abs. 3 StPO; Rechtshängigkeit, Streitgegenstand, Adhäsionsklage. Dem Strafgericht ist es verwehrt, im Rahmen der Adhäsionsklage vertragliche Ansprüche zu beurteilen. In einer solch…",
-        "datum": "2025-03-04",
+        "key": "bge_148_III_401",
+        "zitierung": "BGE 148 III 401",
+        "regesteKurz": "Art. 39 ZPO; Art. 122 Abs. 1 und 3 StPO; Art. 135 Ziff. 2 OR; Auftrag; Klage aus Vertrag; Unzuständigkeit des Strafgerichts; Unterbrechung der Verjährung. Ansprüche aus Vertrag können nicht Gegenstand einer adhäsionsweise erhobenen Zivilkl…",
+        "datum": "2022-09-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 0
+        "gewicht": 1
       },
       {
         "key": "bge_148_IV_432",
         "zitierung": "BGE 148 IV 432",
         "regesteKurz": "Art. 115 Abs. 1, Art. 122 Abs. 1, Art. 126 Abs. 1 lit. b und Abs. 2 lit. d StPO; adhäsionsweise erhobene Zivilklage im Strafverfahren; Zivilforderungen bei Freispruch der beschuldigten Person; vertragliche Ansprüche. Zivilansprüche, die au…",
         "datum": "2022-08-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_III_418",
+        "zitierung": "BGE 151 III 418",
+        "regesteKurz": "Art. 59 Abs. 2 lit. d, Art. 64 Abs. 1 lit. a ZPO; Art. 122 Abs. 3 StPO; Rechtshängigkeit, Streitgegenstand, Adhäsionsklage. Dem Strafgericht ist es verwehrt, im Rahmen der Adhäsionsklage vertragliche Ansprüche zu beurteilen. In einer solch…",
+        "datum": "2025-03-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -863,7 +1247,39 @@
         "gewicht": 0
       }
     ],
+    "124": [
+      {
+        "key": "bge_148_III_401",
+        "zitierung": "BGE 148 III 401",
+        "regesteKurz": "Art. 39 ZPO; Art. 122 Abs. 1 und 3 StPO; Art. 135 Ziff. 2 OR; Auftrag; Klage aus Vertrag; Unzuständigkeit des Strafgerichts; Unterbrechung der Verjährung. Ansprüche aus Vertrag können nicht Gegenstand einer adhäsionsweise erhobenen Zivilkl…",
+        "datum": "2022-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "126": [
+      {
+        "key": "bge_148_IV_432",
+        "zitierung": "BGE 148 IV 432",
+        "regesteKurz": "Art. 115 Abs. 1, Art. 122 Abs. 1, Art. 126 Abs. 1 lit. b und Abs. 2 lit. d StPO; adhäsionsweise erhobene Zivilklage im Strafverfahren; Zivilforderungen bei Freispruch der beschuldigten Person; vertragliche Ansprüche. Zivilansprüche, die au…",
+        "datum": "2022-08-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_III_401",
+        "zitierung": "BGE 148 III 401",
+        "regesteKurz": "Art. 39 ZPO; Art. 122 Abs. 1 und 3 StPO; Art. 135 Ziff. 2 OR; Auftrag; Klage aus Vertrag; Unzuständigkeit des Strafgerichts; Unterbrechung der Verjährung. Ansprüche aus Vertrag können nicht Gegenstand einer adhäsionsweise erhobenen Zivilkl…",
+        "datum": "2022-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_146_IV_211",
         "zitierung": "BGE 146 IV 211",
@@ -876,6 +1292,16 @@
       }
     ],
     "127": [
+      {
+        "key": "bge_147_IV_385",
+        "zitierung": "BGE 147 IV 385",
+        "regesteKurz": "Art. 264 Abs. 1 lit. d StPO, Art. 2, 4, 13, 21 ff., 27 ff. BGFA, Art. 321 StGB; Tragweite des von Art. 264 Abs. 1 lit. d StPO gewährleisteten Schutzes hinsichtlich des betroffenen Anwalts. Der Schutz des Berufsgeheimnisses, den Art. 264 Ab…",
+        "datum": "2021-06-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_151_I_285",
         "zitierung": "BGE 151 I 285",
@@ -891,6 +1317,16 @@
         "zitierung": "BGE 150 IV 470",
         "regesteKurz": "Art. 264 Abs. 1 und Art. 171 Abs. 1 StPO; Geltungsbereich des Anwaltsgeheimnisses; Begriff der Anwaltskorrespondenz. Der Schutz des Anwaltsgeheimnisses beschränkt sich nicht auf den Monopolbereich der Anwaltstätigkeit, sondern umfasst sämt…",
         "datum": "2024-08-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_9",
+        "zitierung": "BGE 149 IV 9",
+        "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des S…",
+        "datum": "2022-09-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -925,9 +1361,61 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_II_309",
+        "zitierung": "BGE 146 II 309",
+        "regesteKurz": "Art. 7 Abs. 3 BGFA; Art. 21 LPAv/VD; Bedingungen für die Eintragung in das kantonale Register für Anwaltspraktikanten. Art. 7 Abs. 3 BGFA ist so auszulegen, dass für die Anmeldung zum Anwaltspraktikum ein Bachelorabschluss im Schweizer Rec…",
+        "datum": "2020-01-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "129": [
+      {
+        "key": "bge_149_IV_196",
+        "zitierung": "BGE 149 IV 196",
+        "regesteKurz": "Art. 94 und 130 StPO; Wiederherstellung einer aufgrund eines schwerwiegenden Fehlers des Anwalts versäumten Frist, wenn keine notwendige Verteidigung vorliegt. Die notwendige Verteidigung ist eine conditio sine qua non für die Ausnahme der…",
+        "datum": "2023-01-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_9",
+        "zitierung": "BGE 149 IV 9",
+        "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des S…",
+        "datum": "2022-09-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "130": [
+      {
+        "key": "bge_149_IV_97",
+        "zitierung": "BGE 149 IV 97",
+        "regesteKurz": "Art. 100 und 50 BGG; Art. 130 StPO; Art. 6 Ziff. 1 und 3 lit. c EMRK; verspätete Beschwerde ans Bundesgericht; Wiederherstellung der Beschwerdefrist; notwendige Verteidigung; Recht auf ein faires Verfahren und eine effektive Verteidigung.…",
+        "datum": "2021-11-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_146_IV_364",
+        "zitierung": "BGE 146 IV 364",
+        "regesteKurz": "Art. 40 Abs. 2 und 41 Abs. 1 BGG; notwendige Verteidigung, fehlende Vollmacht. Das BGG kennt das Institut der notwendigen Verteidigung im Sinne von Art. 130 f. StPO nicht. Ohne entsprechenden Auftrag kann ein Anwalt nicht geltend machen, e…",
+        "datum": "2020-09-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_150_IV_447",
         "zitierung": "BGE 150 IV 447",
@@ -949,20 +1437,20 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_IV_456",
-        "zitierung": "BGE 148 IV 456",
-        "regesteKurz": "Art. 337 Abs. 3 und Art. 405 Abs. 3 StPO; persönliches Erscheinen der Staatsanwaltschaft an der Berufungsverhandlung. Art. 405 Abs. 3 StPO schreibt für das mündliche Verfahren vor, dass die Verfahrensleitung die Staatsanwaltschaft in den i…",
-        "datum": "2022-09-14",
+        "key": "bge_149_IV_196",
+        "zitierung": "BGE 149 IV 196",
+        "regesteKurz": "Art. 94 und 130 StPO; Wiederherstellung einer aufgrund eines schwerwiegenden Fehlers des Anwalts versäumten Frist, wenn keine notwendige Verteidigung vorliegt. Die notwendige Verteidigung ist eine conditio sine qua non für die Ausnahme der…",
+        "datum": "2023-01-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_149_IV_97",
-        "zitierung": "BGE 149 IV 97",
-        "regesteKurz": "Art. 100 und 50 BGG; Art. 130 StPO; Art. 6 Ziff. 1 und 3 lit. c EMRK; verspätete Beschwerde ans Bundesgericht; Wiederherstellung der Beschwerdefrist; notwendige Verteidigung; Recht auf ein faires Verfahren und eine effektive Verteidigung.…",
-        "datum": "2021-11-22",
+        "key": "bge_148_IV_456",
+        "zitierung": "BGE 148 IV 456",
+        "regesteKurz": "Art. 337 Abs. 3 und Art. 405 Abs. 3 StPO; persönliches Erscheinen der Staatsanwaltschaft an der Berufungsverhandlung. Art. 405 Abs. 3 StPO schreibt für das mündliche Verfahren vor, dass die Verfahrensleitung die Staatsanwaltschaft in den i…",
+        "datum": "2022-09-14",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -979,7 +1467,51 @@
         "gewicht": 0
       }
     ],
+    "132": [
+      {
+        "key": "bge_149_IV_196",
+        "zitierung": "BGE 149 IV 196",
+        "regesteKurz": "Art. 94 und 130 StPO; Wiederherstellung einer aufgrund eines schwerwiegenden Fehlers des Anwalts versäumten Frist, wenn keine notwendige Verteidigung vorliegt. Die notwendige Verteidigung ist eine conditio sine qua non für die Ausnahme der…",
+        "datum": "2023-01-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_91",
+        "zitierung": "BGE 149 IV 91",
+        "regesteKurz": "Art. 135 Abs. 3, Art. 391 Abs. 1 lit. b, Abs. 2 erster Satz und Abs. 3 StPO; Beschwerde des amtlichen Verteidigers gegen die Festsetzung seiner Entschädigung; Verbot der reformatio in peius . Erhebt der amtliche Verteidiger Beschwerde gege…",
+        "datum": "2023-01-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "133": [
+      {
+        "key": "bge_146_II_309",
+        "zitierung": "BGE 146 II 309",
+        "regesteKurz": "Art. 7 Abs. 3 BGFA; Art. 21 LPAv/VD; Bedingungen für die Eintragung in das kantonale Register für Anwaltspraktikanten. Art. 7 Abs. 3 BGFA ist so auszulegen, dass für die Anmeldung zum Anwaltspraktikum ein Bachelorabschluss im Schweizer Rec…",
+        "datum": "2020-01-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "135": [
+      {
+        "key": "bge_149_IV_91",
+        "zitierung": "BGE 149 IV 91",
+        "regesteKurz": "Art. 135 Abs. 3, Art. 391 Abs. 1 lit. b, Abs. 2 erster Satz und Abs. 3 StPO; Beschwerde des amtlichen Verteidigers gegen die Festsetzung seiner Entschädigung; Verbot der reformatio in peius . Erhebt der amtliche Verteidiger Beschwerde gege…",
+        "datum": "2023-01-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_IV_275",
         "zitierung": "BGE 148 IV 275",
@@ -1014,6 +1546,16 @@
       }
     ],
     "139": [
+      {
+        "key": "bge_151_IV_303",
+        "zitierung": "BGE 151 IV 303",
+        "regesteKurz": "Art. 60 Abs. 1, Art. 398 Abs. 2 und 3, Art. 409 Abs. 1 und 2 StPO; Folgen der Verletzung der Bestimmungen zum Ausstand und Zuständigkeit bei deren Geltendmachung im Berufungsverfahren. Der Ausstand wirkt nur für die Zukunft. Die Amtshandlu…",
+        "datum": "2025-06-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_147_IV_534",
         "zitierung": "BGE 147 IV 534",
@@ -1067,6 +1609,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_150_IV_308",
+        "zitierung": "BGE 150 IV 308",
+        "regesteKurz": "Art. 140, 141, 285a ff. StPO; verdeckte Ermittlung und Territorialitätsprinzip. Im Rahmen einer durch das Zwangsmassnahmengericht rechtsgültig genehmigten verdeckten Ermittlung (gestützt auf Art. 285a ff. StPO; E. 2.3) stellt das Versenden…",
+        "datum": "2024-05-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_IV_139",
         "zitierung": "BGE 150 IV 139",
         "regesteKurz": "Art. 141, 274, 277 und 278 StPO; Zuständigkeit zur Genehmigung eines Zufallsfundes aus einer rechtshilfeweise erwirkten Überwachung einer verschlüsselten Kommunikationsplattform im Rahmen einer international koordinierten Strafverfolgungsa…",
@@ -1105,16 +1657,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_146_I_11",
-        "zitierung": "BGE 146 I 11",
-        "regesteKurz": "Art. 13 Abs. 2, Art. 36 Abs. 1 BV; Art. 141 Abs. 2 StPO; Verwertbarkeit von polizeilichen Aufzeichnungen der automatischen Fahrzeugfahndung und Verkehrsüberwachung (AFV). Die Erhebung und die Aufbewahrung von Aufzeichnungen der AFV stellen…",
-        "datum": "2019-10-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "141": [
@@ -1139,10 +1681,30 @@
         "gewicht": 1
       },
       {
+        "key": "bge_148_IV_205",
+        "zitierung": "BGE 148 IV 205",
+        "regesteKurz": "Art. 3, Art. 113, Art. 140 Abs. 1, Art. 141 Abs. 1 und Art. 293 Abs. 4 StPO; Art. 6 Ziff. 1 EMRK; verdeckte Ermittlung; Selbstbelastungsfreiheit; Beweisverwertungsverbot. Die Verwertbarkeit von Beweismitteln, die im Rahmen einer verdeckten…",
+        "datum": "2022-03-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_148_IV_22",
         "zitierung": "BGE 148 IV 22",
         "regesteKurz": "Art. 184 Abs. 3 StPO; Gehörsanspruch betreffend sachverständige Person und Gutachterfragen; Verzicht. Der aus Art. 184 Abs. 3 Satz 1 StPO fliessende Anspruch, sich zur sachverständigen Person und zu den Gutachterfragen zu äussern, besteht…",
         "datum": "2022-01-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_IV_82",
+        "zitierung": "BGE 148 IV 82",
+        "regesteKurz": "Art. 298a ff. StPO; Art. 93 Abs. 1 lit. a BGG; Zulässigkeit der Beschwerde in Strafsachen gegen einen Entscheid über die Verwertbarkeit von Beweisen, die im Rahmen einer angeblich rechtswidrigen verdeckten Fahndung erhoben wurden. Gesetzli…",
+        "datum": "2021-10-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1177,26 +1739,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_151_IV_303",
-        "zitierung": "BGE 151 IV 303",
-        "regesteKurz": "Art. 60 Abs. 1, Art. 398 Abs. 2 und 3, Art. 409 Abs. 1 und 2 StPO; Folgen der Verletzung der Bestimmungen zum Ausstand und Zuständigkeit bei deren Geltendmachung im Berufungsverfahren. Der Ausstand wirkt nur für die Zukunft. Die Amtshandlu…",
-        "datum": "2025-06-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_IV_73",
-        "zitierung": "BGE 151 IV 73",
-        "regesteKurz": "Art. 157 f., insb. Art. 158 Abs. 1 und 2, Art. 141 Abs. 1 und 4 StPO; Erfragung des Zugangscodes zu einem Mobiltelefon im Rahmen einer Hausdurchsuchung; materieller Begriff der Beschuldigteneinvernahme; \"nemo tenetur\"-Grundsatz; Unverwertb…",
-        "datum": "2025-01-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "147": [
@@ -1235,6 +1777,18 @@
         "zitierung": "BGE 146 IV 1",
         "regesteKurz": "a Art. 56 Abs. 3 StGB, Art. 184 f. und 189 StPO; Verwertbarkeit und Beweiswert eines forensisch-psychiatrischen Aktengutachtens; Einholung einer Zweitexpertise; fremdanamnestische Erhebungen des Gutachters. Anforderungen an ein Aktengutach…",
         "datum": "2019-10-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "150": [
+      {
+        "key": "bge_151_IV_338",
+        "zitierung": "BGE 151 IV 338",
+        "regesteKurz": "Art. 393 Abs. 1 lit. c StPO; Rechtsmittel gegen Entscheide des Zwangsmassnahmengerichts. In seiner seit dem 1. Juli 2024 geltenden Fassung ist Art. 393 Abs. 1 lit. c StPO dahingehend zu verstehen, dass gegen Entscheide des Zwangsmassnahmen…",
+        "datum": "2025-07-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1485,6 +2039,26 @@
         "zitierung": "BGE 149 IV 205",
         "regesteKurz": "Art. 93 Abs. 1 lit. a BGG; Art. 182 ff., Art. 393 Abs. 1 lit. a und Art. 394 lit. b StPO; Art. 10 Abs. 2 und Art. 13 Abs. 1 BV; Ablehnung eines Beweisantrags der beschuldigten Person durch die Staatsanwaltschaft; nicht wieder gutzumachende…",
         "datum": "2023-02-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_114",
+        "zitierung": "BGE 146 IV 114",
+        "regesteKurz": "Art. 116 StGB; Kindstötung. Tötet eine Mutter ihr Kind nach der Geburt, setzt der privilegierende Tatbestand der Kindstötung voraus, dass sie unter dem Einfluss des Geburtsvorganges handelte, welcher bis zur Nachgeburt unwiderlegbar vermut…",
+        "datum": "2020-03-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_1",
+        "zitierung": "BGE 146 IV 1",
+        "regesteKurz": "a Art. 56 Abs. 3 StGB, Art. 184 f. und 189 StPO; Verwertbarkeit und Beweiswert eines forensisch-psychiatrischen Aktengutachtens; Einholung einer Zweitexpertise; fremdanamnestische Erhebungen des Gutachters. Anforderungen an ein Aktengutach…",
+        "datum": "2019-10-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1863,20 +2437,30 @@
     ],
     "222": [
       {
-        "key": "bge_150_IV_38",
-        "zitierung": "BGE 150 IV 38",
-        "regesteKurz": "a Art. 78 ff. BGG; Art. 222 und 429-431 StPO; Zulässigkeit der Beschwerde in Strafsachen. Gegen kantonal letztinstanzliche Entscheide über die Anordnung von Sicherheitshaft im selbstständigen gerichtlichen Nachverfahren betreffend die nach…",
-        "datum": "2023-11-20",
+        "key": "bge_149_IV_135",
+        "zitierung": "BGE 149 IV 135",
+        "regesteKurz": "Art. 222 StPO; kein Beschwerderecht der Staatsanwaltschaft gegen Haftentlassungsentscheide; Änderung der Rechtsprechung. Darlegung der bisherigen bundesgerichtlichen Rechtsprechung, wonach die Staatsanwaltschaft - entgegen dem Wortlaut von…",
+        "datum": "2023-01-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_IV_338",
+        "zitierung": "BGE 151 IV 338",
+        "regesteKurz": "Art. 393 Abs. 1 lit. c StPO; Rechtsmittel gegen Entscheide des Zwangsmassnahmengerichts. In seiner seit dem 1. Juli 2024 geltenden Fassung ist Art. 393 Abs. 1 lit. c StPO dahingehend zu verstehen, dass gegen Entscheide des Zwangsmassnahmen…",
+        "datum": "2025-07-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_149_IV_135",
-        "zitierung": "BGE 149 IV 135",
-        "regesteKurz": "Art. 222 StPO; kein Beschwerderecht der Staatsanwaltschaft gegen Haftentlassungsentscheide; Änderung der Rechtsprechung. Darlegung der bisherigen bundesgerichtlichen Rechtsprechung, wonach die Staatsanwaltschaft - entgegen dem Wortlaut von…",
-        "datum": "2023-01-10",
+        "key": "bge_150_IV_38",
+        "zitierung": "BGE 150 IV 38",
+        "regesteKurz": "a Art. 78 ff. BGG; Art. 222 und 429-431 StPO; Zulässigkeit der Beschwerde in Strafsachen. Gegen kantonal letztinstanzliche Entscheide über die Anordnung von Sicherheitshaft im selbstständigen gerichtlichen Nachverfahren betreffend die nach…",
+        "datum": "2023-11-20",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2113,6 +2697,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_147_IV_336",
+        "zitierung": "BGE 147 IV 336",
+        "regesteKurz": "Art. 226 Abs. 4 lit. a StPO. Das Zwangsmassnahmengericht kann keine auf drei Monate befristete Untersuchungshaft anordnen, wenn die Staatsanwaltschaft nur zwei Monate Haft beantragt hat (E. 2.3 und 2.4). Regeste Art. 226 al. 4 let. a CPP.…",
+        "datum": "2021-04-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_147_IV_209",
         "zitierung": "BGE 147 IV 209",
         "regesteKurz": "Art. 63 Abs. 4 StGB; Anordnung einer ambulanten Behandlung von psychischen Störungen; Beginn der (Fünfjahres-)Frist. Wird eine ambulante Behandlung von psychischen Störungen erst nach deren rechtskräftigen Anordnung angetreten, beginnt die…",
@@ -2339,6 +2933,18 @@
         "gewicht": 0
       }
     ],
+    "256": [
+      {
+        "key": "bge_151_IV_338",
+        "zitierung": "BGE 151 IV 338",
+        "regesteKurz": "Art. 393 Abs. 1 lit. c StPO; Rechtsmittel gegen Entscheide des Zwangsmassnahmengerichts. In seiner seit dem 1. Juli 2024 geltenden Fassung ist Art. 393 Abs. 1 lit. c StPO dahingehend zu verstehen, dass gegen Entscheide des Zwangsmassnahmen…",
+        "datum": "2025-07-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "263": [
       {
         "key": "bge_151_IV_30",
@@ -2382,6 +2988,16 @@
       }
     ],
     "264": [
+      {
+        "key": "bge_151_IV_30",
+        "zitierung": "BGE 151 IV 30",
+        "regesteKurz": "Art. 197 Abs. 1 lit. b und c sowie Art. 248 Abs. 1 und Art. 264 StPO in der am 1. Januar 2024 in Kraft getretenen revidierten Fassung; Entsiegelung; Geschäftsgeheimnisse; Bankkundengeheimnis; Rechtsweg. In der neuen Fassung von Art. 248 Ab…",
+        "datum": "2024-09-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
       {
         "key": "bge_151_IV_344",
         "zitierung": "BGE 151 IV 344",
@@ -2497,7 +3113,29 @@
         "gewicht": 0
       }
     ],
+    "272": [
+      {
+        "key": "bge_146_IV_36",
+        "zitierung": "BGE 146 IV 36",
+        "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des Terri…",
+        "datum": "2019-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "274": [
+      {
+        "key": "bge_151_IV_338",
+        "zitierung": "BGE 151 IV 338",
+        "regesteKurz": "Art. 393 Abs. 1 lit. c StPO; Rechtsmittel gegen Entscheide des Zwangsmassnahmengerichts. In seiner seit dem 1. Juli 2024 geltenden Fassung ist Art. 393 Abs. 1 lit. c StPO dahingehend zu verstehen, dass gegen Entscheide des Zwangsmassnahmen…",
+        "datum": "2025-07-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_IV_35",
         "zitierung": "BGE 149 IV 35",
@@ -2509,12 +3147,152 @@
         "gewicht": 0
       }
     ],
+    "277": [
+      {
+        "key": "bge_146_IV_36",
+        "zitierung": "BGE 146 IV 36",
+        "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des Terri…",
+        "datum": "2019-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "278": [
+      {
+        "key": "bge_147_IV_402",
+        "zitierung": "BGE 147 IV 402",
+        "regesteKurz": "Art. 278 Abs. 2, Art. 281 Abs. 3 lit. a StPO; Art. 10 Abs. 2 und Art. 13 BV; Bedingungen für die Verwendung von Zufallsfunden aus technischen Überwachungsmassnahmen, die im Besuchszimmer einer Strafanstalt durchgeführt wurden. Das Verbot,…",
+        "datum": "2021-06-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "279": [
+      {
+        "key": "bge_151_IV_338",
+        "zitierung": "BGE 151 IV 338",
+        "regesteKurz": "Art. 393 Abs. 1 lit. c StPO; Rechtsmittel gegen Entscheide des Zwangsmassnahmengerichts. In seiner seit dem 1. Juli 2024 geltenden Fassung ist Art. 393 Abs. 1 lit. c StPO dahingehend zu verstehen, dass gegen Entscheide des Zwangsmassnahmen…",
+        "datum": "2025-07-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "280": [
+      {
+        "key": "bge_146_IV_36",
+        "zitierung": "BGE 146 IV 36",
+        "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des Terri…",
+        "datum": "2019-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "282": [
+      {
+        "key": "bge_148_IV_82",
+        "zitierung": "BGE 148 IV 82",
+        "regesteKurz": "Art. 298a ff. StPO; Art. 93 Abs. 1 lit. a BGG; Zulässigkeit der Beschwerde in Strafsachen gegen einen Entscheid über die Verwertbarkeit von Beweisen, die im Rahmen einer angeblich rechtswidrigen verdeckten Fahndung erhoben wurden. Gesetzli…",
+        "datum": "2021-10-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_IV_211",
+        "zitierung": "BGE 151 IV 211",
+        "regesteKurz": "Art. 36 BV; Art. 298b Abs. 1 StPO und Art. 33b Abs. 1 des Gesetzes des Kantons Freiburg vom 15. November 1990 über die Kantonspolizei; verdeckte Fahndung und präventive verdeckte Fahndung. Präventive verdeckte Fahndungen der Polizei vor Be…",
+        "datum": "2025-01-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_IV_124",
         "zitierung": "BGE 151 IV 124",
         "regesteKurz": "Art. 141 StPO; Verwertbarkeit von Beweisen, die durch Private rechtswidrig beschafft worden sind; Voraussetzung der hypothetisch rechtmässigen Erlangbarkeit durch die Strafbehörden. Bei der Prüfung des Erfordernisses, ob die Strafbehörden…",
         "datum": "2024-09-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "283": [
+      {
+        "key": "bge_148_IV_82",
+        "zitierung": "BGE 148 IV 82",
+        "regesteKurz": "Art. 298a ff. StPO; Art. 93 Abs. 1 lit. a BGG; Zulässigkeit der Beschwerde in Strafsachen gegen einen Entscheid über die Verwertbarkeit von Beweisen, die im Rahmen einer angeblich rechtswidrigen verdeckten Fahndung erhoben wurden. Gesetzli…",
+        "datum": "2021-10-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "289": [
+      {
+        "key": "bge_148_IV_82",
+        "zitierung": "BGE 148 IV 82",
+        "regesteKurz": "Art. 298a ff. StPO; Art. 93 Abs. 1 lit. a BGG; Zulässigkeit der Beschwerde in Strafsachen gegen einen Entscheid über die Verwertbarkeit von Beweisen, die im Rahmen einer angeblich rechtswidrigen verdeckten Fahndung erhoben wurden. Gesetzli…",
+        "datum": "2021-10-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "293": [
+      {
+        "key": "bge_151_IV_211",
+        "zitierung": "BGE 151 IV 211",
+        "regesteKurz": "Art. 36 BV; Art. 298b Abs. 1 StPO und Art. 33b Abs. 1 des Gesetzes des Kantons Freiburg vom 15. November 1990 über die Kantonspolizei; verdeckte Fahndung und präventive verdeckte Fahndung. Präventive verdeckte Fahndungen der Polizei vor Be…",
+        "datum": "2025-01-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "298": [
+      {
+        "key": "bge_151_IV_211",
+        "zitierung": "BGE 151 IV 211",
+        "regesteKurz": "Art. 36 BV; Art. 298b Abs. 1 StPO und Art. 33b Abs. 1 des Gesetzes des Kantons Freiburg vom 15. November 1990 über die Kantonspolizei; verdeckte Fahndung und präventive verdeckte Fahndung. Präventive verdeckte Fahndungen der Polizei vor Be…",
+        "datum": "2025-01-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "300": [
+      {
+        "key": "bge_150_IV_409",
+        "zitierung": "BGE 150 IV 409",
+        "regesteKurz": "Art. 55a StGB; Art. 382 Abs. 1 und Art. 393 Abs. 1 lit. a StPO; kantonale Beschwerde gegen einen die Sistierung des Verfahrens ablehnenden Entscheid; Rechtsweg und Beschwerdelegitimation des Beschuldigten. Bei der auf Art. 55a StGB gestütz…",
+        "datum": "2024-07-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "304": [
+      {
+        "key": "bge_151_IV_98",
+        "zitierung": "BGE 151 IV 98",
+        "regesteKurz": "Art. 81 Abs. 1 lit. b Ziff. 3 BGG; Beschwerdelegitimation der Staatsanwaltschaft; Gültigkeit des Strafantrags. Die Staatsanwaltschaft ist in Bezug auf die Frage der Gültigkeit des Strafantrags nicht zur Beschwerde an das Bundesgericht legi…",
+        "datum": "2024-11-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2531,9 +3309,29 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_30",
+        "zitierung": "BGE 146 IV 30",
+        "regesteKurz": "Art. 85 Abs. 4 lit. a und 356 Abs. 4 StPO; Einsprache gegen einen Strafbefehl, Nichterscheinen an der Hauptverhandlung im Verfahren vor dem erstinstanzlichen Gericht, Rückzugsfiktion der Einsprache. Die gesetzliche Fiktion, wonach bei unen…",
+        "datum": "2019-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "310": [
+      {
+        "key": "bge_148_IV_409",
+        "zitierung": "BGE 148 IV 409",
+        "regesteKurz": "Art. 173 ff. StGB; Ehrverletzungen; Äusserungen gegenüber einem Rechtsanwalt. Die Bedeutung von Äusserungen, die ein Mandant gegenüber seinem Rechtsanwalt tätigt, ist nicht auf die gleiche Weise zu beurteilen wie die Bedeutung von Äusserun…",
+        "datum": "2022-08-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_IV_1",
         "zitierung": "BGE 148 IV 1",
@@ -2555,6 +3353,28 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_150_IV_409",
+        "zitierung": "BGE 150 IV 409",
+        "regesteKurz": "Art. 55a StGB; Art. 382 Abs. 1 und Art. 393 Abs. 1 lit. a StPO; kantonale Beschwerde gegen einen die Sistierung des Verfahrens ablehnenden Entscheid; Rechtsweg und Beschwerdelegitimation des Beschuldigten. Bei der auf Art. 55a StGB gestütz…",
+        "datum": "2024-07-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "315": [
+      {
+        "key": "bge_150_IV_409",
+        "zitierung": "BGE 150 IV 409",
+        "regesteKurz": "Art. 55a StGB; Art. 382 Abs. 1 und Art. 393 Abs. 1 lit. a StPO; kantonale Beschwerde gegen einen die Sistierung des Verfahrens ablehnenden Entscheid; Rechtsweg und Beschwerdelegitimation des Beschuldigten. Bei der auf Art. 55a StGB gestütz…",
+        "datum": "2024-07-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "316": [
@@ -2563,6 +3383,18 @@
         "zitierung": "BGE 150 IV 196",
         "regesteKurz": "Art. 316 StPO; Entschädigung bei Einstellung des Strafverfahrens durch Vergleich. Wollen sich die Parteien in einem Vergleich Entschädigungen zulasten der Staatskasse vorbehalten, bedarf dieser der Genehmigung der Behörden (E. 2.2). Regest…",
         "datum": "2024-04-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "318": [
+      {
+        "key": "bge_150_IV_409",
+        "zitierung": "BGE 150 IV 409",
+        "regesteKurz": "Art. 55a StGB; Art. 382 Abs. 1 und Art. 393 Abs. 1 lit. a StPO; kantonale Beschwerde gegen einen die Sistierung des Verfahrens ablehnenden Entscheid; Rechtsweg und Beschwerdelegitimation des Beschuldigten. Bei der auf Art. 55a StGB gestütz…",
+        "datum": "2024-07-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2593,6 +3425,16 @@
     ],
     "324": [
       {
+        "key": "bge_150_IV_409",
+        "zitierung": "BGE 150 IV 409",
+        "regesteKurz": "Art. 55a StGB; Art. 382 Abs. 1 und Art. 393 Abs. 1 lit. a StPO; kantonale Beschwerde gegen einen die Sistierung des Verfahrens ablehnenden Entscheid; Rechtsweg und Beschwerdelegitimation des Beschuldigten. Bei der auf Art. 55a StGB gestütz…",
+        "datum": "2024-07-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_IV_50",
         "zitierung": "BGE 149 IV 50",
         "regesteKurz": "Art. 355 und 356 StPO; Einsprache gegen einen Strafbefehl, Rückzug der Einsprache. Die beschuldigte Person kann die Einsprache nur zurückziehen, wenn die Staatsanwaltschaft nach Abnahme der Beweise am ursprünglichen Strafbefehl festhält. D…",
@@ -2604,6 +3446,16 @@
       }
     ],
     "325": [
+      {
+        "key": "bge_151_IV_46",
+        "zitierung": "BGE 151 IV 46",
+        "regesteKurz": "Art. 360 StPO; Auslegung; Umfang des Rechts der Privatklägerschaft, die Anklageschrift im abgekürzten Verfahren abzulehnen. Die Ablehnung einer im abgekürzten Verfahren ergangenen Anklageschrift durch die Privatklägerschaft (Art. 360 Abs.…",
+        "datum": "2024-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_IV_445",
         "zitierung": "BGE 148 IV 445",
@@ -2619,6 +3471,18 @@
         "zitierung": "BGE 147 IV 167",
         "regesteKurz": "Art. 404 Abs. 1 StPO; Art. 329 Abs. 1 lit. a und Abs. 2 zweiter Satz, Art. 333 Abs. 1 und 2, je in Verbindung mit Art. 379 StPO; Art. 391 Abs. 1 und 2 StPO; Unzulässigkeit eines zusätzlichen Schuldspruchs aufgrund eines im Berufungsverfahr…",
         "datum": "2021-03-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "328": [
+      {
+        "key": "bge_151_IV_303",
+        "zitierung": "BGE 151 IV 303",
+        "regesteKurz": "Art. 60 Abs. 1, Art. 398 Abs. 2 und 3, Art. 409 Abs. 1 und 2 StPO; Folgen der Verletzung der Bestimmungen zum Ausstand und Zuständigkeit bei deren Geltendmachung im Berufungsverfahren. Der Ausstand wirkt nur für die Zukunft. Die Amtshandlu…",
+        "datum": "2025-06-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2819,6 +3683,16 @@
     ],
     "352": [
       {
+        "key": "bge_151_IV_46",
+        "zitierung": "BGE 151 IV 46",
+        "regesteKurz": "Art. 360 StPO; Auslegung; Umfang des Rechts der Privatklägerschaft, die Anklageschrift im abgekürzten Verfahren abzulehnen. Die Ablehnung einer im abgekürzten Verfahren ergangenen Anklageschrift durch die Privatklägerschaft (Art. 360 Abs.…",
+        "datum": "2024-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_II_519",
         "zitierung": "BGE 150 II 519",
         "regesteKurz": "Art. 31 WG; Art. 54 WV; Art. 69 StGB; Verhältnis der strafrechtlichen Sicherungseinziehung zur Einziehung und Beschlagnahme nach den verwaltungsrechtlichen Bestimmungen des Waffengesetzes. Zusammenfassung des angefochtenen Urteils und der…",
@@ -2833,6 +3707,16 @@
         "zitierung": "BGE 149 IV 50",
         "regesteKurz": "Art. 355 und 356 StPO; Einsprache gegen einen Strafbefehl, Rückzug der Einsprache. Die beschuldigte Person kann die Einsprache nur zurückziehen, wenn die Staatsanwaltschaft nach Abnahme der Beweise am ursprünglichen Strafbefehl festhält. D…",
         "datum": "2023-01-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_265",
+        "zitierung": "BGE 148 IV 265",
+        "regesteKurz": "Art. 355 Abs. 3, Art. 356 Abs. 7 und Art. 392 StPO; Strafbefehlsverfahren; Antrag auf Aufhebung des Strafbefehls gestützt auf Art. 392 StPO; Zuständigkeit der Staatsanwaltschaft und der Erstinstanz. Art. 356 Abs. 7 StPO, soweit er eine sin…",
+        "datum": "2022-07-14",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2881,9 +3765,29 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_30",
+        "zitierung": "BGE 146 IV 30",
+        "regesteKurz": "Art. 85 Abs. 4 lit. a und 356 Abs. 4 StPO; Einsprache gegen einen Strafbefehl, Nichterscheinen an der Hauptverhandlung im Verfahren vor dem erstinstanzlichen Gericht, Rückzugsfiktion der Einsprache. Die gesetzliche Fiktion, wonach bei unen…",
+        "datum": "2019-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "355": [
+      {
+        "key": "bge_146_IV_30",
+        "zitierung": "BGE 146 IV 30",
+        "regesteKurz": "Art. 85 Abs. 4 lit. a und 356 Abs. 4 StPO; Einsprache gegen einen Strafbefehl, Nichterscheinen an der Hauptverhandlung im Verfahren vor dem erstinstanzlichen Gericht, Rückzugsfiktion der Einsprache. Die gesetzliche Fiktion, wonach bei unen…",
+        "datum": "2019-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_148_IV_265",
         "zitierung": "BGE 148 IV 265",
@@ -2893,9 +3797,29 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_286",
+        "zitierung": "BGE 146 IV 286",
+        "regesteKurz": "Art. 356 Abs. 3 StPO; Strafbefehl; Rückzug der Einsprache durch konkludente Handlung. Der Rückzug der Einsprache gegen einen Strafbefehl kann durch konkludentes Handeln erfolgen. Wenn die einsprechende Person die im Strafbefehl der festges…",
+        "datum": "2020-08-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "356": [
+      {
+        "key": "bge_146_IV_30",
+        "zitierung": "BGE 146 IV 30",
+        "regesteKurz": "Art. 85 Abs. 4 lit. a und 356 Abs. 4 StPO; Einsprache gegen einen Strafbefehl, Nichterscheinen an der Hauptverhandlung im Verfahren vor dem erstinstanzlichen Gericht, Rückzugsfiktion der Einsprache. Die gesetzliche Fiktion, wonach bei unen…",
+        "datum": "2019-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_148_IV_265",
         "zitierung": "BGE 148 IV 265",
@@ -2919,6 +3843,16 @@
     ],
     "358": [
       {
+        "key": "bge_151_IV_46",
+        "zitierung": "BGE 151 IV 46",
+        "regesteKurz": "Art. 360 StPO; Auslegung; Umfang des Rechts der Privatklägerschaft, die Anklageschrift im abgekürzten Verfahren abzulehnen. Die Ablehnung einer im abgekürzten Verfahren ergangenen Anklageschrift durch die Privatklägerschaft (Art. 360 Abs.…",
+        "datum": "2024-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_IV_137",
         "zitierung": "BGE 148 IV 137",
         "regesteKurz": "Art. 30 Abs. 1 BV; Art. 6 Ziff. 1 EMRK; Art. 56 lit. f und Art. 358 ff. StPO; Ausstand, Mehrfachbefassung. Eine Richterin bzw. ein Richter ist nicht allein deshalb zum Ausstand verpflichtet, weil sie bzw. er sich im gescheiterten abgekürzt…",
@@ -2933,6 +3867,18 @@
         "zitierung": "BGE 146 II 49",
         "regesteKurz": "Art. 62 Abs. 2 AIG: Widerruf/Nichtverlängerung einer Aufenthaltsbewilligung gestützt auf ein Delikt, für das ein Strafgericht von einer Landesverweisung abgesehen hat. Art. 62 Abs. 2 AIG will verhindern, dass verschiedene Behörden (Strafge…",
         "datum": "2019-11-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "359": [
+      {
+        "key": "bge_151_IV_46",
+        "zitierung": "BGE 151 IV 46",
+        "regesteKurz": "Art. 360 StPO; Auslegung; Umfang des Rechts der Privatklägerschaft, die Anklageschrift im abgekürzten Verfahren abzulehnen. Die Ablehnung einer im abgekürzten Verfahren ergangenen Anklageschrift durch die Privatklägerschaft (Art. 360 Abs.…",
+        "datum": "2024-11-15",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2965,6 +3911,16 @@
         "zitierung": "BGE 149 IV 325",
         "regesteKurz": "Art. 63b Abs. 5, Art. 56 Abs. 3 StGB; Prognoseinstrumente sind immer nur Bestandteil der klinischen Einschätzung des Sachverständigen; die Anwendung eines aktuarischen (statischen) Prognoseinstruments für eine Person fortgeschrittenen Alte…",
         "datum": "2023-05-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_108",
+        "zitierung": "BGE 147 IV 108",
+        "regesteKurz": "Art. 34 Abs. 3 StPO; nachträgliche Gesamtstrafenbildung. Art. 34 Abs. 3 StPO stellt sicher, dass die materiell-rechtlichen Vorschriften der Gesamtstrafenbildung von der verurteilten Person wirksam durchgesetzt werden können (E. 2.2.1). Das…",
+        "datum": "2020-08-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3021,6 +3977,16 @@
     ],
     "380": [
       {
+        "key": "bge_150_IV_409",
+        "zitierung": "BGE 150 IV 409",
+        "regesteKurz": "Art. 55a StGB; Art. 382 Abs. 1 und Art. 393 Abs. 1 lit. a StPO; kantonale Beschwerde gegen einen die Sistierung des Verfahrens ablehnenden Entscheid; Rechtsweg und Beschwerdelegitimation des Beschuldigten. Bei der auf Art. 55a StGB gestütz…",
+        "datum": "2024-07-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_IV_213",
         "zitierung": "BGE 149 IV 213",
         "regesteKurz": "Art. 81 Abs. 1 BGG; Beschwerderecht im Ausstandsverfahren. Der Richter oder die Richterin kann den Entscheid, mit dem ein gegen ihn bzw. sie eingereichtes Ablehnungsbegehren gutgeheissen wurde, nicht mit Beschwerde in Strafsachen anfechten…",
@@ -3060,6 +4026,26 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_IV_505",
+        "zitierung": "BGE 147 IV 505",
+        "regesteKurz": "Art. 3 Abs. 2 lit. a, Art. 381 Abs. 1, Art. 391 Abs. 2, Art. 401 StPO; Zulässigkeit der Anschlussberufung; Grundsatz von Treu und Glauben im Strafverfahren. Legitimation der Staatsanwaltschaft, Anschlussberufung zu erheben, um damit das Ve…",
+        "datum": "2021-11-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_IV_98",
+        "zitierung": "BGE 151 IV 98",
+        "regesteKurz": "Art. 81 Abs. 1 lit. b Ziff. 3 BGG; Beschwerdelegitimation der Staatsanwaltschaft; Gültigkeit des Strafantrags. Die Staatsanwaltschaft ist in Bezug auf die Frage der Gültigkeit des Strafantrags nicht zur Beschwerde an das Bundesgericht legi…",
+        "datum": "2024-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       },
       {
@@ -3074,6 +4060,46 @@
       }
     ],
     "382": [
+      {
+        "key": "bge_149_IV_91",
+        "zitierung": "BGE 149 IV 91",
+        "regesteKurz": "Art. 135 Abs. 3, Art. 391 Abs. 1 lit. b, Abs. 2 erster Satz und Abs. 3 StPO; Beschwerde des amtlichen Verteidigers gegen die Festsetzung seiner Entschädigung; Verbot der reformatio in peius . Erhebt der amtliche Verteidiger Beschwerde gege…",
+        "datum": "2023-01-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_IV_505",
+        "zitierung": "BGE 147 IV 505",
+        "regesteKurz": "Art. 3 Abs. 2 lit. a, Art. 381 Abs. 1, Art. 391 Abs. 2, Art. 401 StPO; Zulässigkeit der Anschlussberufung; Grundsatz von Treu und Glauben im Strafverfahren. Legitimation der Staatsanwaltschaft, Anschlussberufung zu erheben, um damit das Ve…",
+        "datum": "2021-11-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_IV_219",
+        "zitierung": "BGE 151 IV 219",
+        "regesteKurz": "Art. 401 StPO; Anschlussberufung; Ausschluss der Anschlussberufung auf eine Anschlussberufung. Wer Hauptberufung erhoben hat, kann gegen die hiergegen geführte Anschlussberufung nicht seinerseits Anschlussberufung erklären. Eine Anschlussb…",
+        "datum": "2025-02-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_IV_98",
+        "zitierung": "BGE 151 IV 98",
+        "regesteKurz": "Art. 81 Abs. 1 lit. b Ziff. 3 BGG; Beschwerdelegitimation der Staatsanwaltschaft; Gültigkeit des Strafantrags. Die Staatsanwaltschaft ist in Bezug auf die Frage der Gültigkeit des Strafantrags nicht zur Beschwerde an das Bundesgericht legi…",
+        "datum": "2024-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_IV_205",
         "zitierung": "BGE 149 IV 205",
@@ -3129,6 +4155,16 @@
     ],
     "389": [
       {
+        "key": "bge_151_IV_303",
+        "zitierung": "BGE 151 IV 303",
+        "regesteKurz": "Art. 60 Abs. 1, Art. 398 Abs. 2 und 3, Art. 409 Abs. 1 und 2 StPO; Folgen der Verletzung der Bestimmungen zum Ausstand und Zuständigkeit bei deren Geltendmachung im Berufungsverfahren. Der Ausstand wirkt nur für die Zukunft. Die Amtshandlu…",
+        "datum": "2025-06-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_147_IV_409",
         "zitierung": "BGE 147 IV 409",
         "regesteKurz": "Art. 6, Art. 10 Abs. 2, Art. 350 Abs. 2 und Art. 389 StPO; Art. 189 und Art. 190 StGB; Beweiswürdigung, Ermittlungspflicht des Gerichts; Sexuelle Nötigung und Vergewaltigung, Nötigungsmittel. Das Berufungsgericht muss das entscheiderheblic…",
@@ -3171,10 +4207,40 @@
         "gewicht": 1
       },
       {
+        "key": "bge_146_IV_311",
+        "zitierung": "BGE 146 IV 311",
+        "regesteKurz": "Art. 2 Abs. 1, Art. 49 Abs. 2 und Art. 66a sowie Art. 66b StGB; strafrechtliches Rückwirkungsverbot in Bezug auf die neuen Bestimmungen über die Landesverweisung; Wiederholungsfall; retrospektive Konkurrenz bei Landesverweisung. Das Strafg…",
+        "datum": "2020-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_IV_297",
         "zitierung": "BGE 151 IV 297",
         "regesteKurz": "Art. 19 Abs. 2, Art. 398 Abs. 2 StPO; die erstinstanzliche Zuständigkeit eines Einzelgerichts begründet keine Einschränkung des berufungsgerichtlichen Ermessens bei der Strafzumessung. Das Berufungsgericht kann - unabhängig davon, ob das e…",
         "datum": "2025-07-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_IV_88",
+        "zitierung": "BGE 151 IV 88",
+        "regesteKurz": "Art. 90 Abs. 3 ter SVG; Strafzumessung; vorsätzliche Verletzung elementarer Verkehrsregeln. Art. 90 Abs. 3 ter SVG ist eine \"Kann-Vorschrift\". Die Prüfung der \"innerhalb der letzten zehn Jahre vor der Tat erfolgten Verurteilungen\" eines Tä…",
+        "datum": "2024-11-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_361",
+        "zitierung": "BGE 149 IV 361",
+        "regesteKurz": "Verordnung (EU) 2018/1861; Art. 2 Abs. 1 und 2 StGB; Eintrag der Landesverweisung in das Schengener Informationssystem (SIS); Grundsätze des strafrechtlichen Rückwirkungsverbots und der lex mitior. Die Ausschreibung in das SIS-Register ist…",
+        "datum": "2023-05-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3191,20 +4257,20 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_IV_456",
-        "zitierung": "BGE 148 IV 456",
-        "regesteKurz": "Art. 337 Abs. 3 und Art. 405 Abs. 3 StPO; persönliches Erscheinen der Staatsanwaltschaft an der Berufungsverhandlung. Art. 405 Abs. 3 StPO schreibt für das mündliche Verfahren vor, dass die Verfahrensleitung die Staatsanwaltschaft in den i…",
-        "datum": "2022-09-14",
+        "key": "bge_149_IV_91",
+        "zitierung": "BGE 149 IV 91",
+        "regesteKurz": "Art. 135 Abs. 3, Art. 391 Abs. 1 lit. b, Abs. 2 erster Satz und Abs. 3 StPO; Beschwerde des amtlichen Verteidigers gegen die Festsetzung seiner Entschädigung; Verbot der reformatio in peius . Erhebt der amtliche Verteidiger Beschwerde gege…",
+        "datum": "2023-01-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_146_IV_311",
-        "zitierung": "BGE 146 IV 311",
-        "regesteKurz": "Art. 2 Abs. 1, Art. 49 Abs. 2 und Art. 66a sowie Art. 66b StGB; strafrechtliches Rückwirkungsverbot in Bezug auf die neuen Bestimmungen über die Landesverweisung; Wiederholungsfall; retrospektive Konkurrenz bei Landesverweisung. Das Strafg…",
-        "datum": "2020-09-01",
+        "key": "bge_148_IV_456",
+        "zitierung": "BGE 148 IV 456",
+        "regesteKurz": "Art. 337 Abs. 3 und Art. 405 Abs. 3 StPO; persönliches Erscheinen der Staatsanwaltschaft an der Berufungsverhandlung. Art. 405 Abs. 3 StPO schreibt für das mündliche Verfahren vor, dass die Verfahrensleitung die Staatsanwaltschaft in den i…",
+        "datum": "2022-09-14",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3235,6 +4301,26 @@
     ],
     "393": [
       {
+        "key": "bge_151_IV_98",
+        "zitierung": "BGE 151 IV 98",
+        "regesteKurz": "Art. 81 Abs. 1 lit. b Ziff. 3 BGG; Beschwerdelegitimation der Staatsanwaltschaft; Gültigkeit des Strafantrags. Die Staatsanwaltschaft ist in Bezug auf die Frage der Gültigkeit des Strafantrags nicht zur Beschwerde an das Bundesgericht legi…",
+        "datum": "2024-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_91",
+        "zitierung": "BGE 149 IV 91",
+        "regesteKurz": "Art. 135 Abs. 3, Art. 391 Abs. 1 lit. b, Abs. 2 erster Satz und Abs. 3 StPO; Beschwerde des amtlichen Verteidigers gegen die Festsetzung seiner Entschädigung; Verbot der reformatio in peius . Erhebt der amtliche Verteidiger Beschwerde gege…",
+        "datum": "2023-01-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_147_IV_465",
         "zitierung": "BGE 147 IV 465",
         "regesteKurz": "Art. 70 StGB; Art. 127 Abs. 1 StPO; Art. 35 Abs. 1 und Art. 405 Abs. 1 OR; Einziehung von Vermögenswerten gegenüber den Erben der beschuldigten Person; Prozessvollmacht über den Tod hinaus. Prozessvollmachten über den Tod hinaus (sog. tran…",
@@ -3255,7 +4341,29 @@
         "gewicht": 0
       }
     ],
+    "396": [
+      {
+        "key": "bge_147_IV_526",
+        "zitierung": "BGE 147 IV 526",
+        "regesteKurz": "a Art. 91 Abs. 2 StPO; Art. 48 BGG; Nachweis der Einhaltung der Beschwerdefrist durch Vorlage eines Videos. Das Datum, an welchem eine Rechtsschrift eingereicht wird, entspricht vermutungsweise demjenigen des Poststempels. Möchte eine Part…",
+        "datum": "2021-10-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "398": [
+      {
+        "key": "bge_151_IV_219",
+        "zitierung": "BGE 151 IV 219",
+        "regesteKurz": "Art. 401 StPO; Anschlussberufung; Ausschluss der Anschlussberufung auf eine Anschlussberufung. Wer Hauptberufung erhoben hat, kann gegen die hiergegen geführte Anschlussberufung nicht seinerseits Anschlussberufung erklären. Eine Anschlussb…",
+        "datum": "2025-02-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_IV_284",
         "zitierung": "BGE 149 IV 284",
@@ -3309,6 +4417,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_151_IV_219",
+        "zitierung": "BGE 151 IV 219",
+        "regesteKurz": "Art. 401 StPO; Anschlussberufung; Ausschluss der Anschlussberufung auf eine Anschlussberufung. Wer Hauptberufung erhoben hat, kann gegen die hiergegen geführte Anschlussberufung nicht seinerseits Anschlussberufung erklären. Eine Anschlussb…",
+        "datum": "2025-02-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_IV_342",
         "zitierung": "BGE 150 IV 342",
         "regesteKurz": "Art. 82 Abs. 1 und 2, Art. 399 Abs. 2 und Art. 403 Abs. 1 lit. a StPO; Zuständigkeit zum Entscheid über die Rechtzeitigkeit der Berufungsanmeldung. Über die Rechtzeitigkeit der Berufungsanmeldung hat das Berufungsgericht zu entscheiden (Ar…",
@@ -3331,6 +4449,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_151_IV_219",
+        "zitierung": "BGE 151 IV 219",
+        "regesteKurz": "Art. 401 StPO; Anschlussberufung; Ausschluss der Anschlussberufung auf eine Anschlussberufung. Wer Hauptberufung erhoben hat, kann gegen die hiergegen geführte Anschlussberufung nicht seinerseits Anschlussberufung erklären. Eine Anschlussb…",
+        "datum": "2025-02-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_IV_284",
         "zitierung": "BGE 149 IV 284",
         "regesteKurz": "Aufhebung und Rückweisung im Berufungsverfahren; Vorprüfung (Art. 400 und 409 StPO); Verschlechterungsverbot (Art. 391 Abs. 2 StPO). Hebt das Berufungsgericht das erstinstanzliche Urteil aufgrund offensichtlicher wesentlicher Mängel auf, n…",
@@ -3342,6 +4470,16 @@
       }
     ],
     "401": [
+      {
+        "key": "bge_151_IV_219",
+        "zitierung": "BGE 151 IV 219",
+        "regesteKurz": "Art. 401 StPO; Anschlussberufung; Ausschluss der Anschlussberufung auf eine Anschlussberufung. Wer Hauptberufung erhoben hat, kann gegen die hiergegen geführte Anschlussberufung nicht seinerseits Anschlussberufung erklären. Eine Anschlussb…",
+        "datum": "2025-02-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_IV_284",
         "zitierung": "BGE 149 IV 284",
@@ -3497,6 +4635,38 @@
         "gewicht": 0
       }
     ],
+    "410": [
+      {
+        "key": "bge_149_IV_97",
+        "zitierung": "BGE 149 IV 97",
+        "regesteKurz": "Art. 100 und 50 BGG; Art. 130 StPO; Art. 6 Ziff. 1 und 3 lit. c EMRK; verspätete Beschwerde ans Bundesgericht; Wiederherstellung der Beschwerdefrist; notwendige Verteidigung; Recht auf ein faires Verfahren und eine effektive Verteidigung.…",
+        "datum": "2021-11-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_148",
+        "zitierung": "BGE 148 IV 148",
+        "regesteKurz": "Art. 392 Abs.1 StPO; Ausdehnung gutheissender Rechtsmittelentscheide; Tragweite von Art. 392 Abs. 1 lit. a StPO. Art. 392 StPO findet lediglich Anwendung, wenn die Rechtsmittelinstanz von einem anderen Sachverhalt ausgeht, nicht jedoch, we…",
+        "datum": "2021-10-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_453",
+        "zitierung": "BGE 147 IV 453",
+        "regesteKurz": "Art. 66a und 66d StGB; Art. 42 Abs. 2, Art. 78 Abs. 2 lit. b und Art. 81 Abs. 1 lit. b BGG; Zulässigkeit der Beschwerde in Strafsachen gegen einen Entscheid, in dem der Aufschub des Vollzugs der obligatorischen Landesverweisung abgewiesen…",
+        "datum": "2021-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "411": [
       {
         "key": "bge_146_IV_293",
@@ -3539,6 +4709,16 @@
         "zitierung": "BGE 147 IV 47",
         "regesteKurz": "a Art. 81 Abs. 1 lit. b BGG; Art. 426 Abs. 2, Art. 433 Abs. 1 lit. b StPO; Beschwerdelegitimation der Privatklägerschaft bezüglich der Kostentragungspflicht einer beschuldigten Person, deren Verfahren eingestellt wurde. Das rechtlich gesch…",
         "datum": "2020-12-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_126",
+        "zitierung": "BGE 146 IV 126",
+        "regesteKurz": "Art. 179 ter StGB; Aufnehmen von Gesprächen ohne Einwilligung der anderen Gesprächsteilnehmer; Begriff des \"nichtöffentlichen Gesprächs\". Die Würdigung eines Gesprächs als \"nichtöffentlich\" im Sinne von Art. 179 bis und 179 ter StGB erford…",
+        "datum": "2020-02-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3605,6 +4785,26 @@
         "zitierung": "BGE 150 IV 196",
         "regesteKurz": "Art. 316 StPO; Entschädigung bei Einstellung des Strafverfahrens durch Vergleich. Wollen sich die Parteien in einem Vergleich Entschädigungen zulasten der Staatskasse vorbehalten, bedarf dieser der Genehmigung der Behörden (E. 2.2). Regest…",
         "datum": "2024-04-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_289",
+        "zitierung": "BGE 149 IV 289",
+        "regesteKurz": "Art. 431 Abs. 2 und 3 StPO; Art. 66a f. StGB; Entschädigung für immateriellen Schaden wegen übermässigen Freiheitsentzuges; Berücksichtigung der niedrigeren Lebenshaltungskosten in dem Land, in das die berechtigte Person ausgewiesen werden…",
+        "datum": "2023-05-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_188",
+        "zitierung": "BGE 148 IV 188",
+        "regesteKurz": "Art. 261 bis Abs. 1 und 4 StGB; Prüfung der möglichen strafrechtlichen Verantwortlichkeit des Inhabers eines Kontos in einem sozialen Netzwerk für rassistische Kommentare, die Dritte auf seiner Seite veröffentlichen. Indem der Kontoinhaber…",
+        "datum": "2022-04-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3685,6 +4885,18 @@
         "gewicht": 0
       }
     ],
+    "434": [
+      {
+        "key": "bge_148_IV_275",
+        "zitierung": "BGE 148 IV 275",
+        "regesteKurz": "Art. 81 Abs. 1 lit. b Ziff. 3 BGG; Art. 135 Abs. 3 lit. b, Art. 135 Abs. 4 lit. a und b, Art. 429 Abs. 1 lit. a, Art. 434 Abs. 1 und 2 StPO; Entschädigungsansprüche von Drittpersonen; Beschwerdelegitimation der Staatsanwaltschaft. Die Staa…",
+        "datum": "2022-03-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "448": [
       {
         "key": "bge_151_IV_84",
@@ -3709,12 +4921,46 @@
         "gewicht": 0
       }
     ],
+    "248a": [
+      {
+        "key": "bge_151_IV_338",
+        "zitierung": "BGE 151 IV 338",
+        "regesteKurz": "Art. 393 Abs. 1 lit. c StPO; Rechtsmittel gegen Entscheide des Zwangsmassnahmengerichts. In seiner seit dem 1. Juli 2024 geltenden Fassung ist Art. 393 Abs. 1 lit. c StPO dahingehend zu verstehen, dass gegen Entscheide des Zwangsmassnahmen…",
+        "datum": "2025-07-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "269ter": [
       {
         "key": "bge_147_IV_424",
         "zitierung": "BGE 147 IV 424",
         "regesteKurz": "Art. 269, Art. 269ter, Art. 280 lit. b StPO; Software-basierter Keylogger als Überwachungsgerät. Keylogger gelten grundsätzlich als Überwachungsgeräte i.S.v. Art. 280 lit. b StPO. Eine Unterscheidung zwischen mechanischen bzw. physischen u…",
         "datum": "2020-06-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "285a": [
+      {
+        "key": "bge_148_IV_82",
+        "zitierung": "BGE 148 IV 82",
+        "regesteKurz": "Art. 298a ff. StPO; Art. 93 Abs. 1 lit. a BGG; Zulässigkeit der Beschwerde in Strafsachen gegen einen Entscheid über die Verwertbarkeit von Beweisen, die im Rahmen einer angeblich rechtswidrigen verdeckten Fahndung erhoben wurden. Gesetzli…",
+        "datum": "2021-10-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_IV_211",
+        "zitierung": "BGE 151 IV 211",
+        "regesteKurz": "Art. 36 BV; Art. 298b Abs. 1 StPO und Art. 33b Abs. 1 des Gesetzes des Kantons Freiburg vom 15. November 1990 über die Kantonspolizei; verdeckte Fahndung und präventive verdeckte Fahndung. Präventive verdeckte Fahndungen der Polizei vor Be…",
+        "datum": "2025-01-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

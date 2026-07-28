@@ -177,7 +177,10 @@
         "Art. 355 Abs. 2 CPP",
         "Art. 356 Abs. 1 CPP"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BV",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",

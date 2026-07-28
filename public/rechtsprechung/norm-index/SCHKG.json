@@ -59,6 +59,18 @@
         "gewicht": 0
       }
     ],
+    "16": [
+      {
+        "key": "bge_149_III_210",
+        "zitierung": "BGE 149 III 210",
+        "regesteKurz": "Art. 68 und 80 f. SchKG; Betreibung für mit definitivem Rechtsöffnungsentscheid zugesprochene Kosten und Parteientschädigung; Rechtsöffnungstitel; Einwendung des Schuldners. Der Rechtsöffnungsentscheid, welcher dem Gläubiger Kosten und ein…",
+        "datum": "2022-11-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "17": [
       {
         "key": "bge_150_III_219",
@@ -101,6 +113,26 @@
         "gewicht": 0
       },
       {
+        "key": "bge_147_III_365",
+        "zitierung": "BGE 147 III 365",
+        "regesteKurz": "Art. 166 Abs. 1 IPRG; Art. 250 SchKG; Anerkennung des ausländischen Konkursdekretes; Kollokationsklage der schweizerischen Hilfskonkursmasse. Grundsätze betreffend die Anerkennung des ausländischen Konkursdekretes und die Befugnisse der au…",
+        "datum": "2021-03-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_303",
+        "zitierung": "BGE 146 III 303",
+        "regesteKurz": "Art. 95, 98 BGG; Art. 283 SchKG; Rechtsnatur der Aufnahme des Retentionsverzeichnisses; Folgen für die Beschwerde in Zivilsachen. Unterscheidung der Rechtsnatur der Aufnahme des Retentionsverzeichnisses danach, ob die materiellen Vorausset…",
+        "datum": "2020-03-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_146_III_113",
         "zitierung": "BGE 146 III 113",
         "regesteKurz": "Art. 250 SchKG, Art. 59 Abs. 2 lit. a ZPO; Kollokationsklage, Nulldividende und schutzwürdiges Interesse. Das schutzwürdige Interesse an der Kollokationsklage kann gegeben sein, wenn die mutmassliche Konkursdividende Null beträgt und der k…",
@@ -115,26 +147,6 @@
         "zitierung": "BGer 5A_678/2025 vom 11. Juni 2026",
         "regesteKurz": null,
         "datum": "2026-06-11",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bger_5A_543_2017",
-        "zitierung": "BGer 5A_543/2017 vom 6. Februar 2018",
-        "regesteKurz": "ustellung eines Zahlungsbefehls, Gesuch um Wiederherstellung der Rechtsvorschlagsfrist",
-        "datum": "2018-02-06",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bger_5A_229_2017",
-        "zitierung": "BGer 5A_229/2017 vom 13. November 2017",
-        "regesteKurz": "Zuschlag (Versteigerung eines Miteigentumsanteils)",
-        "datum": "2017-11-13",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -159,6 +171,18 @@
         "zitierung": "BGE 147 III 226",
         "regesteKurz": "Art. 293a, Art. 294 Abs. 3, Art. 298 Abs. 2 SchKG; Nachlassstundung; Unternehmensverkauf während der provisorischen Stundung. Frage der Nichtigkeit der provisorischen Stundung. Wird die definitive Stundung von der Beschwerdeinstanz verweig…",
         "datum": "2021-03-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "24": [
+      {
+        "key": "bge_148_III_194",
+        "zitierung": "BGE 148 III 194",
+        "regesteKurz": "Art. 17 SchKG; Art. 731b OR; Rolle des Konkursamts bei Vorliegen eines Aktivenüberschusses nach Auflösung und Liquidation einer Aktiengesellschaft gemäss den Vorschriften über den Konkurs. Der Aktivenüberschuss, welcher nach Auflösung und…",
+        "datum": "2022-01-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -264,6 +288,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_149_III_34",
+        "zitierung": "BGE 149 III 34",
+        "regesteKurz": "Art. 39 Abs. 2 LugÜ; Art. 49 und 52 SchKG; Exequatur- und Arrestbegehren, unverteilte Erbschaft; Betreibungsort des Arrestes. Prüfung und Kognition mit Bezug auf den Arrestort als Ort gemäss Art. 39 Abs. 2 LugÜ, wo die Zwangsvollstreckung…",
+        "datum": "2022-10-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 1
       },
       {
@@ -356,6 +390,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_III_210",
+        "zitierung": "BGE 149 III 210",
+        "regesteKurz": "Art. 68 und 80 f. SchKG; Betreibung für mit definitivem Rechtsöffnungsentscheid zugesprochene Kosten und Parteientschädigung; Rechtsöffnungstitel; Einwendung des Schuldners. Der Rechtsöffnungsentscheid, welcher dem Gläubiger Kosten und ein…",
+        "datum": "2022-11-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       }
     ],
@@ -375,6 +419,16 @@
         "zitierung": "BGE 149 III 268",
         "regesteKurz": "Art. 58 Abs. 1 ZPO; Art. 83 Abs. 2 SchKG; Dispositionsmaxime; Streitgegenstand des Aberkennungsverfahrens. Die Dispositionsmaxime wird verletzt, wenn das Gericht seinen Entscheid auf einen Lebenssachverhalt stützt, der ausserhalb des Strei…",
         "datum": "2023-03-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_225",
+        "zitierung": "BGE 148 III 225",
+        "regesteKurz": "Art. 80 SchKG; definitive Rechtsöffnung; auf einer gesetzlichen Grundlage beruhende Gebühren, die jedoch nicht Gegenstand eines Entscheids waren. Das Bestehen eines Titels steht im Zentrum des Rechtsöffnungsverfahrens. Daher kann die defin…",
+        "datum": "2022-03-31",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -441,6 +495,16 @@
     ],
     "79": [
       {
+        "key": "bge_149_III_23",
+        "zitierung": "BGE 149 III 23",
+        "regesteKurz": "Art. 83 Abs. 2 SchKG; Art. 90 und 198 ZPO; Aberkennungsklage; objektive Klagenhäufung; Schlichtungsverfahren. Prüfung der Zulässigkeit, eine Aberkennungsklage, die dem Erfordernis eines vorgängigen Schlichtungsverfahrens nicht unterworfen…",
+        "datum": "2022-07-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_147_III_41",
         "zitierung": "BGE 147 III 41",
         "regesteKurz": "Art. 8a Abs. 3 lit. d SchKG; Gesuch um Nichtbekanntgabe der Betreibung an Dritte. Hat der Betreibungsgläubiger ein Verfahren zur Beseitigung des Rechtsvorschlages (Art. 79-84 SchKG) eingeleitet, gibt das Betreibungsamt Dritten von der Betr…",
@@ -503,6 +567,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_225",
+        "zitierung": "BGE 148 III 225",
+        "regesteKurz": "Art. 80 SchKG; definitive Rechtsöffnung; auf einer gesetzlichen Grundlage beruhende Gebühren, die jedoch nicht Gegenstand eines Entscheids waren. Das Bestehen eines Titels steht im Zentrum des Rechtsöffnungsverfahrens. Daher kann die defin…",
+        "datum": "2022-03-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "82": [
@@ -511,6 +585,16 @@
         "zitierung": "BGE 151 III 402",
         "regesteKurz": "Art. 842 ff. ZGB; Art. 82 SchKG; Schuldbrief zur Sicherung einer Steuerforderung; Betreibung auf Grundpfandverwertung; Rechtsöffnung. Eine Schuldbriefforderung nimmt keinen öffentlich-rechtlichen Charakter an, auch wenn sie eine öffentlich…",
         "datum": "2024-12-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_310",
+        "zitierung": "BGE 149 III 310",
+        "regesteKurz": "Art. 82 SchKG; provisorische Rechtsöffnung und Kaufvertrag. Provisorische Rechtsöffnung gegen einen Schuldner, der sein Recht auf Preisminderung wegen eines Mangels der Kaufsache geltend macht. Einrede gemäss Art. 82 Abs. 2 SchKG oder Best…",
+        "datum": "2023-03-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -579,6 +663,40 @@
         "zitierung": "BGE 150 III 408",
         "regesteKurz": "Art. 92 Abs. 1 Ziff. 9a SchKG; Pfändung von Sparguthaben aus Sozialversicherungsleistungen. Zur Frage, ob der Pfändung auch Sparguthaben unterliegen, die aus unpfändbaren AHV- oder IV-Renten, Ergänzungsleistungen oder Leistungen der Famili…",
         "datum": "2024-08-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "106": [
+      {
+        "key": "bge_148_III_109",
+        "zitierung": "BGE 148 III 109",
+        "regesteKurz": "Art. 960 Abs. 1 Ziff. 1 und Abs. 2 ZGB. Vormerkung einer vom Fiduzianten erwirkten Verfügungsbeschränkung; Wirkung der Vormerkung in der Zwangsvollstreckung, wenn das Eigentum am Grundstück vor der Versteigerung anerkannt wird. Ist eine Ve…",
+        "datum": "2022-02-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "107": [
+      {
+        "key": "bge_151_III_505",
+        "zitierung": "BGE 151 III 505",
+        "regesteKurz": "Art. 140 Abs. 1 SchKG; Art. 712i ZGB; Vollstreckung auf dem Weg der Pfändung; Lastenverzeichnis; gesetzliches Grundpfandrecht zur Sicherung des Anspruchs der Stockwerkeigentümergemeinschaft auf die Beitragsforderungen der letzten drei Jahr…",
+        "datum": "2025-04-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_109",
+        "zitierung": "BGE 148 III 109",
+        "regesteKurz": "Art. 960 Abs. 1 Ziff. 1 und Abs. 2 ZGB. Vormerkung einer vom Fiduzianten erwirkten Verfügungsbeschränkung; Wirkung der Vormerkung in der Zwangsvollstreckung, wenn das Eigentum am Grundstück vor der Versteigerung anerkannt wird. Ist eine Ve…",
+        "datum": "2022-02-02",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -701,12 +819,58 @@
         "gewicht": 0
       }
     ],
+    "133": [
+      {
+        "key": "bge_151_III_505",
+        "zitierung": "BGE 151 III 505",
+        "regesteKurz": "Art. 140 Abs. 1 SchKG; Art. 712i ZGB; Vollstreckung auf dem Weg der Pfändung; Lastenverzeichnis; gesetzliches Grundpfandrecht zur Sicherung des Anspruchs der Stockwerkeigentümergemeinschaft auf die Beitragsforderungen der letzten drei Jahr…",
+        "datum": "2025-04-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "135": [
+      {
+        "key": "bge_151_III_505",
+        "zitierung": "BGE 151 III 505",
+        "regesteKurz": "Art. 140 Abs. 1 SchKG; Art. 712i ZGB; Vollstreckung auf dem Weg der Pfändung; Lastenverzeichnis; gesetzliches Grundpfandrecht zur Sicherung des Anspruchs der Stockwerkeigentümergemeinschaft auf die Beitragsforderungen der letzten drei Jahr…",
+        "datum": "2025-04-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "138": [
+      {
+        "key": "bge_151_III_505",
+        "zitierung": "BGE 151 III 505",
+        "regesteKurz": "Art. 140 Abs. 1 SchKG; Art. 712i ZGB; Vollstreckung auf dem Weg der Pfändung; Lastenverzeichnis; gesetzliches Grundpfandrecht zur Sicherung des Anspruchs der Stockwerkeigentümergemeinschaft auf die Beitragsforderungen der letzten drei Jahr…",
+        "datum": "2025-04-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "140": [
       {
         "key": "bge_151_III_505",
         "zitierung": "BGE 151 III 505",
         "regesteKurz": "Art. 140 Abs. 1 SchKG; Art. 712i ZGB; Vollstreckung auf dem Weg der Pfändung; Lastenverzeichnis; gesetzliches Grundpfandrecht zur Sicherung des Anspruchs der Stockwerkeigentümergemeinschaft auf die Beitragsforderungen der letzten drei Jahr…",
         "datum": "2025-04-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_46",
+        "zitierung": "BGE 148 III 46",
+        "regesteKurz": "Art. 56 Ziff. 3, 62 und 140 Abs. 2, 1. Satz, SchKG; Art. 37 VZG; Mitteilung des Lastenverzeichnisses während der Dauer eines durch die Coronavirus-Pandemie bedingten Rechtsstillstandes. Qualifikation der Mitteilung des Lastenverzeichnisses…",
+        "datum": "2022-01-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -735,6 +899,26 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_117",
+        "zitierung": "BGE 149 III 117",
+        "regesteKurz": "Art. 153 Abs. 2 lit. b SchKG; Betreibung auf Grundpfandverwertung; von den Ehegatten zusammen bewirtschaftetes landwirtschaftliches Gewerbe; Zustellung des Zahlungsbefehls. Der Ehegatte des Betriebenen, der mit diesem zusammen ein landwirt…",
+        "datum": "2022-10-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_303",
+        "zitierung": "BGE 146 III 303",
+        "regesteKurz": "Art. 95, 98 BGG; Art. 283 SchKG; Rechtsnatur der Aufnahme des Retentionsverzeichnisses; Folgen für die Beschwerde in Zivilsachen. Unterscheidung der Rechtsnatur der Aufnahme des Retentionsverzeichnisses danach, ob die materiellen Vorausset…",
+        "datum": "2020-03-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "153": [
@@ -753,6 +937,28 @@
         "zitierung": "BGE 152 III 103",
         "regesteKurz": "Art. 153 Abs. 2 SchKG; Zustellung des Zahlungsbefehls an den Ehegatten des Schuldners. Zur Frage, ob der Ehegatte, dem gestützt auf Art. 153 Abs. 2 lit. a SchKG ein Zahlungsbefehl zugestellt wurde, unter den Voraussetzungen von Art. 153 Ab…",
         "datum": "2025-08-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_III_405",
+        "zitierung": "BGE 151 III 405",
+        "regesteKurz": "Tragweite einer von einem Generalunternehmer an einen Handwerker ausgestellten Schuldanerkennung bei der definitiven Rechtsöffnung zur Beseitigung des Rechtsvorschlags eines Dritten, der Eigentümer der Liegenschaft ist, in einer vom Handwe…",
+        "datum": "2024-12-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "154": [
+      {
+        "key": "bge_149_III_410",
+        "zitierung": "BGE 149 III 410",
+        "regesteKurz": "Art. 166 Abs. 2 SchKG; Art. 239 Abs. 1 i.V.m. Art. 219 ZPO; Verwirkung des Rechts zur Stellung des Konkursbegehrens; Stillstand der Verwirkungsfrist. Zusammenfassung der allgemeinen Grundsätze betreffend die Berechnung der Verwirkungsfrist…",
+        "datum": "2023-08-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -789,6 +995,28 @@
         "zitierung": "BGE 150 III 219",
         "regesteKurz": "Art. 116 Abs. 1 SchKG; Art. 9 Abs. 2 und 3 VFRR; Bedeutung der Minimalfrist zur Stellung des Verwertungsbegehrens. Bei der Regelung von Art. 9 Abs. 2 und 3 VFRR handelt es sich um eine blosse Ordnungsvorschrift. Weist das Betreibungsamt ei…",
         "datum": "2024-03-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_III_410",
+        "zitierung": "BGE 149 III 410",
+        "regesteKurz": "Art. 166 Abs. 2 SchKG; Art. 239 Abs. 1 i.V.m. Art. 219 ZPO; Verwirkung des Rechts zur Stellung des Konkursbegehrens; Stillstand der Verwirkungsfrist. Zusammenfassung der allgemeinen Grundsätze betreffend die Berechnung der Verwirkungsfrist…",
+        "datum": "2023-08-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "162": [
+      {
+        "key": "bge_146_III_157",
+        "zitierung": "BGE 146 III 157",
+        "regesteKurz": "Art. 80 f. und 279 SchKG; Art. 33, 38 und 47 LugÜ; Arrestprosequierung; definitive Rechtsöffnung. Solange der ausländische Entscheid in der Sache nicht zugestellt wird, muss der Gläubiger den Arrest in der Schweiz nicht prosequieren, welch…",
+        "datum": "2020-01-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -919,12 +1147,36 @@
         "gewicht": 0
       }
     ],
+    "193": [
+      {
+        "key": "bge_149_III_345",
+        "zitierung": "BGE 149 III 345",
+        "regesteKurz": "Art. 573 Abs. 2 ZGB; Zuweisung des Überschusses der Liquidation einer Erbschaft, die durch sämtliche Erben ausgeschlagenen wurde, wenn ein eingesetzter Erbe vorhanden ist. Ergibt sich aus der Liquidation einer durch sämtliche (eingesetzten…",
+        "datum": "2023-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "194": [
       {
         "key": "bge_149_III_186",
         "zitierung": "BGE 149 III 186",
         "regesteKurz": "Art. 191, Art. 194 i.V.m. Art. 174 SchKG; Konkurseröffnung auf Antrag des Schuldners, Beschwerdelegitimation der Gläubiger. Die Gläubiger können mit Beschwerde nach ZPO die Aufhebung der Konkurseröffnung gemäss Art. 191 SchKG verlangen, we…",
         "datum": "2022-12-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "195": [
+      {
+        "key": "bge_148_III_194",
+        "zitierung": "BGE 148 III 194",
+        "regesteKurz": "Art. 17 SchKG; Art. 731b OR; Rolle des Konkursamts bei Vorliegen eines Aktivenüberschusses nach Auflösung und Liquidation einer Aktiengesellschaft gemäss den Vorschriften über den Konkurs. Der Aktivenüberschuss, welcher nach Auflösung und…",
+        "datum": "2022-01-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -973,6 +1225,16 @@
         "zitierung": "BGE 149 III 28",
         "regesteKurz": "Art. 93, 197 Abs. 2 und Art. 221 SchKG; Konkursinventar, Pfändbarkeit eines Vorsorgeguthabens der Säule 3a. Art. 93 SchKG ist im Konkurs zu beachten und Vermögenswerte, die nach Massgabe dieser Vorschrift nicht gepfändet werden dürfen, kön…",
         "datum": "2022-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_194",
+        "zitierung": "BGE 148 III 194",
+        "regesteKurz": "Art. 17 SchKG; Art. 731b OR; Rolle des Konkursamts bei Vorliegen eines Aktivenüberschusses nach Auflösung und Liquidation einer Aktiengesellschaft gemäss den Vorschriften über den Konkurs. Der Aktivenüberschuss, welcher nach Auflösung und…",
+        "datum": "2022-01-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1067,6 +1329,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_420",
+        "zitierung": "BGE 148 III 420",
+        "regesteKurz": "Art. 38 LugÜ, Art. 250 Abs. 2 SchKG, Art. 148 Abs. 1 IPRG; vollstreckbar erklärtes ausländisches Urteil, negative Kollokationsklage, Einrede der Verjährung. Im negativen Kollokationsprozess kann der Kläger an Stelle des Gemeinschuldners ge…",
+        "datum": "2022-08-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "256": [
@@ -1083,6 +1355,26 @@
     ],
     "260": [
       {
+        "key": "bge_146_III_113",
+        "zitierung": "BGE 146 III 113",
+        "regesteKurz": "Art. 250 SchKG, Art. 59 Abs. 2 lit. a ZPO; Kollokationsklage, Nulldividende und schutzwürdiges Interesse. Das schutzwürdige Interesse an der Kollokationsklage kann gegeben sein, wenn die mutmassliche Konkursdividende Null beträgt und der k…",
+        "datum": "2020-01-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_149_III_422",
+        "zitierung": "BGE 149 III 422",
+        "regesteKurz": "Art. 260 SchKG; bedingte Abtretung. Prozessführungsbefugnis des Abtretungsgläubigers bei einer bedingten Abtretung (E. 3). Regeste Art. 260 LP; cession conditionnelle. Faculté du créancier cessionnaire de conduire le procès comme partie en…",
+        "datum": "2023-05-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_146_III_441",
         "zitierung": "BGE 146 III 441",
         "regesteKurz": "Löschung der konkursiten Gesellschaft im Handelsregister/Abtretung von Ansprüchen nach Art. 260 SchKG. Die Löschung der konkursiten Gesellschaft im Handelsregister hat keinen Einfluss auf die Aktivlegitimation der Abtretungsgläubiger nach…",
@@ -1091,6 +1383,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_151_III_497",
+        "zitierung": "BGE 151 III 497",
+        "regesteKurz": "Prozessstandschaft; Prozessmaxime betreffend die Prozessvoraussetzungen der Klage; gerichtliche Fragepflicht. Die Befugnis, im eigenen Namen das Recht eines Dritten gerichtlich geltend zu machen (Prozessstandschaft), stellt eine Prozessvor…",
+        "datum": "2025-05-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_III_348",
@@ -1103,20 +1405,20 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_III_422",
-        "zitierung": "BGE 149 III 422",
-        "regesteKurz": "Art. 260 SchKG; bedingte Abtretung. Prozessführungsbefugnis des Abtretungsgläubigers bei einer bedingten Abtretung (E. 3). Regeste Art. 260 LP; cession conditionnelle. Faculté du créancier cessionnaire de conduire le procès comme partie en…",
-        "datum": "2023-05-30",
+        "key": "bge_149_III_362",
+        "zitierung": "BGE 149 III 362",
+        "regesteKurz": "Art. 250 SchKG, Art. 59 Abs. 2 lit. a ZPO; Kollokationsklage, schutzwürdiges Interesse. Konstellationen im Konkurs der juristischen Person, in welchen bei mutmasslicher Nulldividende ein schutzwürdiges Interesse an der Klage auf Wegweisung…",
+        "datum": "2023-04-25",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_149_III_362",
-        "zitierung": "BGE 149 III 362",
-        "regesteKurz": "Art. 250 SchKG, Art. 59 Abs. 2 lit. a ZPO; Kollokationsklage, schutzwürdiges Interesse. Konstellationen im Konkurs der juristischen Person, in welchen bei mutmasslicher Nulldividende ein schutzwürdiges Interesse an der Klage auf Wegweisung…",
-        "datum": "2023-04-25",
+        "key": "bge_146_III_435",
+        "zitierung": "BGE 146 III 435",
+        "regesteKurz": "Art. 222 Abs. 4 SchKG, Art. 400 OR; Auskunftspflicht des Dritten im Konkurs; Folgen für den Beauftragten. Die Auskunftspflicht des Dritten hat den gleichen Umfang wie diejenige des Schuldners. Der Beauftragte des Konkursiten kann gegenüber…",
+        "datum": "2020-06-08",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1161,6 +1463,28 @@
     ],
     "268": [
       {
+        "key": "bge_148_III_194",
+        "zitierung": "BGE 148 III 194",
+        "regesteKurz": "Art. 17 SchKG; Art. 731b OR; Rolle des Konkursamts bei Vorliegen eines Aktivenüberschusses nach Auflösung und Liquidation einer Aktiengesellschaft gemäss den Vorschriften über den Konkurs. Der Aktivenüberschuss, welcher nach Auflösung und…",
+        "datum": "2022-01-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_441",
+        "zitierung": "BGE 146 III 441",
+        "regesteKurz": "Löschung der konkursiten Gesellschaft im Handelsregister/Abtretung von Ansprüchen nach Art. 260 SchKG. Die Löschung der konkursiten Gesellschaft im Handelsregister hat keinen Einfluss auf die Aktivlegitimation der Abtretungsgläubiger nach…",
+        "datum": "2020-08-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "269": [
+      {
         "key": "bge_146_III_441",
         "zitierung": "BGE 146 III 441",
         "regesteKurz": "Löschung der konkursiten Gesellschaft im Handelsregister/Abtretung von Ansprüchen nach Art. 260 SchKG. Die Löschung der konkursiten Gesellschaft im Handelsregister hat keinen Einfluss auf die Aktivlegitimation der Abtretungsgläubiger nach…",
@@ -1172,6 +1496,36 @@
       }
     ],
     "271": [
+      {
+        "key": "bge_147_III_491",
+        "zitierung": "BGE 147 III 491",
+        "regesteKurz": "a Art. 32 ff. LugÜ; Anerkennung und Vollstreckung eines englischen Urteils; Folgen des Brexit für die Anwendbarkeit des LugÜ. Das Vereinigte Königreich ist bis zum 31. Dezember 2020 ein an das LugÜ gebundener Staat (E. 6.1.1). Es besteht k…",
+        "datum": "2021-03-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_146_III_157",
+        "zitierung": "BGE 146 III 157",
+        "regesteKurz": "Art. 80 f. und 279 SchKG; Art. 33, 38 und 47 LugÜ; Arrestprosequierung; definitive Rechtsöffnung. Solange der ausländische Entscheid in der Sache nicht zugestellt wird, muss der Gläubiger den Arrest in der Schweiz nicht prosequieren, welch…",
+        "datum": "2020-01-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_149_III_34",
+        "zitierung": "BGE 149 III 34",
+        "regesteKurz": "Art. 39 Abs. 2 LugÜ; Art. 49 und 52 SchKG; Exequatur- und Arrestbegehren, unverteilte Erbschaft; Betreibungsort des Arrestes. Prüfung und Kognition mit Bezug auf den Arrestort als Ort gemäss Art. 39 Abs. 2 LugÜ, wo die Zwangsvollstreckung…",
+        "datum": "2022-10-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_148_III_138",
         "zitierung": "BGE 148 III 138",
@@ -1193,6 +1547,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_150_III_345",
+        "zitierung": "BGE 150 III 345",
+        "regesteKurz": "Art. 32 LugÜ; Anerkennbarkeit und Vollstreckbarerklärung eines italienischen Mahnbescheids (decreto ingiuntivo). Ein sofort mit seinem Erlass für vollstreckbar erklärter italienischer Mahnbescheid, stellt eine Entscheidung im Sinne von Art…",
+        "datum": "2024-08-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_III_318",
         "zitierung": "BGE 149 III 318",
         "regesteKurz": "Art. 271 Abs. 1 Ziff. 6 SchKG; Art. 54 f. des Übereinkommens vom 18. März 1965 zur Beilegung von Investitionsstreitigkeiten zwischen Staaten und Angehörigen anderer Staaten (nachfolgend: ICSID-Übereinkommen); Art. 9 BV; Gesuch um Arrestier…",
@@ -1203,30 +1567,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_III_124",
-        "zitierung": "BGE 149 III 124",
-        "regesteKurz": "Art. 17, 274 und 275 SchKG; Art. 170 DBG; federführendes Betreibungsamt (Lead-Amt); Steuerarrest. Die Bestimmung des federführenden Betreibungsamtes (Lead-Amtes) erfolgt durch das Arrestgericht oder das Steueramt als Arrestbehörde und stel…",
-        "datum": "2023-01-09",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_III_34",
-        "zitierung": "BGE 149 III 34",
-        "regesteKurz": "Art. 39 Abs. 2 LugÜ; Art. 49 und 52 SchKG; Exequatur- und Arrestbegehren, unverteilte Erbschaft; Betreibungsort des Arrestes. Prüfung und Kognition mit Bezug auf den Arrestort als Ort gemäss Art. 39 Abs. 2 LugÜ, wo die Zwangsvollstreckung…",
-        "datum": "2022-10-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_V_174",
-        "zitierung": "BGE 147 V 174",
-        "regesteKurz": "Art. 12 Abs. 2 AHVG; Beitragspflicht des Arbeitgebers; Betriebsstätte. Art. 12 Abs. 2 AHVG schafft nicht mehrere in Frage kommende Schuldner, sondern knüpft für die Beitragspflicht ausschliesslich beim Arbeitgeber an (E. 6). Regeste Art. 1…",
-        "datum": "2021-03-29",
+        "key": "bge_149_III_224",
+        "zitierung": "BGE 149 III 224",
+        "regesteKurz": "Art. 271 Abs. 1 Ziff. 6 und Abs. 3 SchKG; Art. 38 Abs. 1, Art. 41, Art. 47 Abs. 2, Art. 53 f. LugÜ; Art. 58 Abs. 1 ZPO; Arrest gestützt auf ein \"Lugano\"-Urteil; Exequatur dieses Urteils; Dispositionsgrundsatz. Der Richter, der den gestützt…",
+        "datum": "2023-01-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1253,6 +1597,26 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_148_III_377",
+        "zitierung": "BGE 148 III 377",
+        "regesteKurz": "Art. 271 Abs. 1 Ziff. 4, Art. 272 Abs. 1 und Art. 278 SchKG; Art. 305bis StGB; Art. 9 BV; Verarrestierung von Guthaben, die auf Bankkonten in der Schweiz deponiert sind; Arresteinsprache. Verletzung des Willkürverbotes durch die kantonale…",
+        "datum": "2022-07-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_303",
+        "zitierung": "BGE 146 III 303",
+        "regesteKurz": "Art. 95, 98 BGG; Art. 283 SchKG; Rechtsnatur der Aufnahme des Retentionsverzeichnisses; Folgen für die Beschwerde in Zivilsachen. Unterscheidung der Rechtsnatur der Aufnahme des Retentionsverzeichnisses danach, ob die materiellen Vorausset…",
+        "datum": "2020-03-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "274": [
@@ -1271,6 +1635,16 @@
         "zitierung": "BGE 148 III 138",
         "regesteKurz": "Art. 274 und 275 SchKG, Art. 78 StHG; Vollzug des Arrestbefehls; Rechtshilfe beim Arrestvollzug; Steuerarrest. Der schweizweite Arrestvollzug ist durch Rechtshilfe in Analogie zum Pfändungsvollzug gemäss Art. 89 SchKG möglich. Das federfüh…",
         "datum": "2022-02-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_303",
+        "zitierung": "BGE 146 III 303",
+        "regesteKurz": "Art. 95, 98 BGG; Art. 283 SchKG; Rechtsnatur der Aufnahme des Retentionsverzeichnisses; Folgen für die Beschwerde in Zivilsachen. Unterscheidung der Rechtsnatur der Aufnahme des Retentionsverzeichnisses danach, ob die materiellen Vorausset…",
+        "datum": "2020-03-10",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1295,6 +1669,16 @@
         "zitierung": "BGE 151 III 563",
         "regesteKurz": "Art. 46, 52 f., 89, 272 SchKG; Prosequierung eines schweizweiten Arrestes; Pfändung. Der schweizweite Arrest ermöglicht die Prosequierung des Arrestes durch ein einziges Betreibungs- und Fortsetzungsbegehren. Das Betreibungsamt hat die Pfä…",
         "datum": "2025-07-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_III_157",
+        "zitierung": "BGE 146 III 157",
+        "regesteKurz": "Art. 80 f. und 279 SchKG; Art. 33, 38 und 47 LugÜ; Arrestprosequierung; definitive Rechtsöffnung. Solange der ausländische Entscheid in der Sache nicht zugestellt wird, muss der Gläubiger den Arrest in der Schweiz nicht prosequieren, welch…",
+        "datum": "2020-01-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1366,7 +1750,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_150_III_137",
+        "zitierung": "BGE 150 III 137",
+        "regesteKurz": "Art. 295b SchKG; Verlängerung der Stundung. Nur der Sachwalter ist berechtigt, beim Nachlassgericht einen Antrag gemäss Art. 295b SchKG zur Verlängerung der definitiven Stundung zu stellen. Wird vor Ablauf der bewilligten Stundungsdauer ke…",
+        "datum": "2024-01-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bger_5A_898_2024",
@@ -1425,6 +1819,18 @@
         "gewicht": 0
       }
     ],
+    "333": [
+      {
+        "key": "bge_150_III_262",
+        "zitierung": "BGE 150 III 262",
+        "regesteKurz": "Art. 191 SchKG; Konkurseröffnung auf Antrag des Schuldners; Beschwerderecht von Drittgläubigern zur Geltendmachung eines Rechtsmissbrauchs des Schuldners. Die Beschwerdelegitimation von Gläubigern gegen ein auf Verlangen des Schuldners erg…",
+        "datum": "2024-04-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "132a": [
       {
         "key": "bger_5A_229_2017",
@@ -1445,6 +1851,18 @@
         "datum": "2017-11-13",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "143b": [
+      {
+        "key": "bge_148_III_46",
+        "zitierung": "BGE 148 III 46",
+        "regesteKurz": "Art. 56 Ziff. 3, 62 und 140 Abs. 2, 1. Satz, SchKG; Art. 37 VZG; Mitteilung des Lastenverzeichnisses während der Dauer eines durch die Coronavirus-Pandemie bedingten Rechtsstillstandes. Qualifikation der Mitteilung des Lastenverzeichnisses…",
+        "datum": "2022-01-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1537,6 +1955,18 @@
         "datum": "2025-05-19",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "295c": [
+      {
+        "key": "bge_150_III_262",
+        "zitierung": "BGE 150 III 262",
+        "regesteKurz": "Art. 191 SchKG; Konkurseröffnung auf Antrag des Schuldners; Beschwerderecht von Drittgläubigern zur Geltendmachung eines Rechtsmissbrauchs des Schuldners. Die Beschwerdelegitimation von Gläubigern gegen ein auf Verlangen des Schuldners erg…",
+        "datum": "2024-04-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }

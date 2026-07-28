@@ -5,10 +5,40 @@
   "proArtikel": {
     "1": [
       {
+        "key": "bge_152_II_98",
+        "zitierung": "BGE 152 II 98",
+        "regesteKurz": "Art. 127 Abs. 1 und 2 BV; Art. 7 Abs. 1, Art. 8 und 40 Abs. 3 DBG; Art. 1 Abs. 3 und Art. 15 Abs. 3 StHG; Besteuerung einer natürlichen Person, deren Steuerpflicht sich während der Steuerperiode ändert; Aufteilung der Steuerperiode. Fall e…",
+        "datum": "2025-08-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_II_615",
         "zitierung": "BGE 151 II 615",
         "regesteKurz": "Art. 8 Abs. 1, Art. 9 und 127 Abs. 2 BV; Art. 83a Abs. 2 BVG; Art. 11 Abs. 3 StHG; Wohneigentumsförderung; Vorbezug aus beruflicher Vorsorge; Berechnung der Steuerrückerstattung bei Wiedereinzahlung des Vorbezugs. Steuerliche Behandlung de…",
         "datum": "2025-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_II_478",
+        "zitierung": "BGE 150 II 478",
+        "regesteKurz": "Art. 23 Abs. 1 lit. f und Abs. 4 StHG; Art. 80 Abs. 2 BVG; Rechtsnatur der Grundstückgewinnsteuer im Sinne des StHG, die beim Verkauf eines Grundstücks durch eine steuerbefreite Vorsorgeeinrichtung erhoben wird. Darlegung der allgemeinen G…",
+        "datum": "2024-06-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_II_121",
+        "zitierung": "BGE 148 II 121",
+        "regesteKurz": "Art. 9, 27, 49, 94 Abs. 1, 127 BV; Art. 34 KAG; Art. 39 FINIG; Art. 103 FusG; Handänderungsabgabe, die anlässlich des Wechsels der Leitung eines Immobilien-Anlagefonds erhoben wird; Wirtschaftsfreiheit und Wettbewerbsneutralität; Vorrang d…",
+        "datum": "2022-03-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -43,6 +73,28 @@
         "zitierung": "BGE 150 II 40",
         "regesteKurz": "Art. 8 Abs. 3 lit. b und Art. 12 Abs. 4 lit. a StHG; Aufschub der Grundstückgewinnsteuer infolge Umstrukturierung eines Personenunternehmens; Immobilienverwaltung; Betriebsbegriff. Damit Liegenschaften einen Betrieb im Sinn von Art. 8 Abs.…",
         "datum": "2023-11-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_177",
+        "zitierung": "BGE 149 II 177",
+        "regesteKurz": "Art. 127 Abs. 1 BV; Art. 85 und 86 DBG sowie Art. 32 und 33 StHG (in der bis 31. Dezember 2020 gültigen Fassung); Quellensteuer; Fehlen einer gesetzlichen Grundlage für eine Hochrechnung des Einkommens, welches ein Arbeitnehmer erzielt hat…",
+        "datum": "2023-04-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "5": [
+      {
+        "key": "bge_147_II_454",
+        "zitierung": "BGE 147 II 454",
+        "regesteKurz": "Art. 23 Abs. 3 und Art. 53 StHG; Art. 91 des waadtländischen Gesetzes vom 4. Juli 2000 über die direkten kantonalen Steuern; vorübergehende Steuerbefreiung; Unternehmen; verwaltungsrechtlicher Vertrag; Sitzverlegung; Widerruf; Rückwirkung;…",
+        "datum": "2021-12-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -107,6 +159,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_150_II_265",
+        "zitierung": "BGE 150 II 265",
+        "regesteKurz": "Art. 37b DBG; gesonderte Besteuerung des Liquidationsgewinns aus der Auflösung stiller Reserven infolge einer buchhalterischen Neubewertung von Anlagevermögen. Der Liquidationsgewinn aus einer buchhalterischen Neubewertung von Anlagevermög…",
+        "datum": "2024-04-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_II_313",
         "zitierung": "BGE 148 II 313",
         "regesteKurz": "Art. 82 BVG i.V.m. Art. 7 Abs. 1 lit. b BVV 3; Art. 37a DBG bzw. Art. 11 Abs. 4 StHG; Berücksichtigung von BGSA-Einkünften beim Abzug des sog. grossen Säule 3a-Beitrags. Angesichts der Bedeutung des Aufbaus einer gebundenen Selbstvorsorge…",
@@ -139,6 +201,16 @@
     ],
     "12": [
       {
+        "key": "bge_150_II_478",
+        "zitierung": "BGE 150 II 478",
+        "regesteKurz": "Art. 23 Abs. 1 lit. f und Abs. 4 StHG; Art. 80 Abs. 2 BVG; Rechtsnatur der Grundstückgewinnsteuer im Sinne des StHG, die beim Verkauf eines Grundstücks durch eine steuerbefreite Vorsorgeeinrichtung erhoben wird. Darlegung der allgemeinen G…",
+        "datum": "2024-06-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_151_II_818",
         "zitierung": "BGE 151 II 818",
         "regesteKurz": "Art. 12 Abs. 3 lit. a StHG; Art. 58 Abs. 3 und 4 des Gesetzes der Republik und des Kantons Neuenburg vom 21. März 2000 über die direkten Steuern (LCdir); Aufschub der Besteuerung von Grundstückgewinnen bei Übertragung der Liegenschaft als…",
@@ -153,6 +225,16 @@
         "zitierung": "BGE 148 II 378",
         "regesteKurz": "Art. 16 Abs. 1, Abs. 3 und Art. 21 Abs. 1 DBG; Art. 12 Abs. 2 lit. c StHG; Steuerfolgen einer Entschädigung für die Eintragung einer Bauhöhenbeschränkung; Begriffe der \"wesentlichen Beeinträchtigung\" und des \"Aktiventauschs\". Wird ein Grun…",
         "datum": "2022-05-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_II_299",
+        "zitierung": "BGE 148 II 299",
+        "regesteKurz": "Art. 18a Abs. 1 DBG; Art. 8 Abs. 2 bis StHG; Begriff der \"Veräusserung\"; Schenkung. Der Begriff \"Veräusserung\" gemäss Art. 18a Abs. 1 DBG und Art. 8 Abs. 2 bis StHG umfasst die Schenkung (E. 5, 7, 9 und 13). Regeste Art. 18a al. 1 LIFD; ar…",
+        "datum": "2022-04-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -197,26 +279,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_150_II_40",
-        "zitierung": "BGE 150 II 40",
-        "regesteKurz": "Art. 8 Abs. 3 lit. b und Art. 12 Abs. 4 lit. a StHG; Aufschub der Grundstückgewinnsteuer infolge Umstrukturierung eines Personenunternehmens; Immobilienverwaltung; Betriebsbegriff. Damit Liegenschaften einen Betrieb im Sinn von Art. 8 Abs.…",
-        "datum": "2023-11-13",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_II_259",
-        "zitierung": "BGE 148 II 259",
-        "regesteKurz": "Art. 24 Abs. 3 StHG; Art. 80 Abs. 4 BVG; Aufschub der Grundstückgewinnsteuer bei Übertragung des Immobilienbestands einer Pensionskasse auf eine Anlagestiftung im Austausch gegen Beteiligungsrechte am Immobilienportfolio dieser Anlagestift…",
-        "datum": "2022-02-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "13": [
@@ -252,6 +314,16 @@
       }
     ],
     "14": [
+      {
+        "key": "bge_148_I_210",
+        "zitierung": "BGE 148 I 210",
+        "regesteKurz": "Art. 8 Abs. 1, Art. 49, Art. 108 Abs. 1, Art. 127 Abs. 1 BV; Art. 14 Abs. 1 StHG; Art. 56 Abs. 1 lit. d und Art. 182 Abs. 1 StG/BE bzw. Art. 2 Abs. 4 AND/BE, je in der Fassung vom 9. März 2020; verfassungsrechtliche Unhaltbarkeit eines Med…",
+        "datum": "2021-12-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
       {
         "key": "bge_148_I_65",
         "zitierung": "BGE 148 I 65",
@@ -294,6 +366,28 @@
       }
     ],
     "15": [
+      {
+        "key": "bge_149_II_177",
+        "zitierung": "BGE 149 II 177",
+        "regesteKurz": "Art. 127 Abs. 1 BV; Art. 85 und 86 DBG sowie Art. 32 und 33 StHG (in der bis 31. Dezember 2020 gültigen Fassung); Quellensteuer; Fehlen einer gesetzlichen Grundlage für eine Hochrechnung des Einkommens, welches ein Arbeitnehmer erzielt hat…",
+        "datum": "2023-04-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_98",
+        "zitierung": "BGE 152 II 98",
+        "regesteKurz": "Art. 127 Abs. 1 und 2 BV; Art. 7 Abs. 1, Art. 8 und 40 Abs. 3 DBG; Art. 1 Abs. 3 und Art. 15 Abs. 3 StHG; Besteuerung einer natürlichen Person, deren Steuerpflicht sich während der Steuerperiode ändert; Aufteilung der Steuerperiode. Fall e…",
+        "datum": "2025-08-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "18": [
       {
         "key": "bge_152_II_98",
         "zitierung": "BGE 152 II 98",
@@ -348,6 +442,16 @@
       }
     ],
     "21": [
+      {
+        "key": "bge_150_II_73",
+        "zitierung": "BGE 150 II 73",
+        "regesteKurz": "Art. 151 Abs. 1 DBG und Art. 53 Abs. 1 StHG; Nachsteuerverfahren durch einen Kanton, in dem eine Gesellschaft eine Zweigniederlassung betreibt, nachdem der Sitzkanton seine Veranlagungsverfügung erlassen hat (Änderung der Rechtsprechung).…",
+        "datum": "2023-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_I_65",
         "zitierung": "BGE 148 I 65",
@@ -477,6 +581,18 @@
         "gewicht": 0
       }
     ],
+    "39": [
+      {
+        "key": "bge_150_II_73",
+        "zitierung": "BGE 150 II 73",
+        "regesteKurz": "Art. 151 Abs. 1 DBG und Art. 53 Abs. 1 StHG; Nachsteuerverfahren durch einen Kanton, in dem eine Gesellschaft eine Zweigniederlassung betreibt, nachdem der Sitzkanton seine Veranlagungsverfügung erlassen hat (Änderung der Rechtsprechung).…",
+        "datum": "2023-11-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "42": [
       {
         "key": "bge_151_II_657",
@@ -495,6 +611,18 @@
         "zitierung": "BGE 150 II 321",
         "regesteKurz": "Art. 127 Abs. 3 BV; Art. 20 Abs. 1 StHG; interkantonale Doppelbesteuerung; tatsächliche Verwaltung einer Aktiengesellschaft; Beweismass; Rückerstattung von zu Unrecht bezogenen Steuern. Ob sich die tatsächliche Verwaltung einer Aktiengesel…",
         "datum": "2024-04-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "53": [
+      {
+        "key": "bge_147_II_454",
+        "zitierung": "BGE 147 II 454",
+        "regesteKurz": "Art. 23 Abs. 3 und Art. 53 StHG; Art. 91 des waadtländischen Gesetzes vom 4. Juli 2000 über die direkten kantonalen Steuern; vorübergehende Steuerbefreiung; Unternehmen; verwaltungsrechtlicher Vertrag; Sitzverlegung; Widerruf; Rückwirkung;…",
+        "datum": "2021-12-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

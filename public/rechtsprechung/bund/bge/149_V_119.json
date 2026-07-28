@@ -303,7 +303,9 @@
         "Art. 37e Abs. 7 KLV"
       ],
       "normKeys": [
-        "BGG"
+        "BGG",
+        "KVG",
+        "KLV"
       ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",

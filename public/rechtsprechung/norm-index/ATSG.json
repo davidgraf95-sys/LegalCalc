@@ -69,6 +69,16 @@
     ],
     "4": [
       {
+        "key": "bge_147_V_207",
+        "zitierung": "BGE 147 V 207",
+        "regesteKurz": "Art. 6 UVG; Kausalitätsbeurteilung bei psychischen Unfallfolgen. Die Anerkennung der adäquaten Kausalität allfälliger psychischer Beschwerden eines Versicherten ist unzulässig, wenn die sich in tatsächlicher Hinsicht stellenden Fragen bezü…",
+        "datum": "2021-02-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_146_V_51",
         "zitierung": "BGE 146 V 51",
         "regesteKurz": "Art. 6 Abs. 1 und Abs. 2 UVG (in der ab 1. Januar 2017 geltenden Fassung); Art. 4 ATSG; 1. UVG-Revision; unfallähnliche Körperschädigung. Nach Art. 6 Abs. 2 UVG (in der ab 1. Januar 2017 geltenden Fassung) wird der Unfallversicherer bei Vo…",
@@ -211,10 +221,30 @@
         "gewicht": 0
       },
       {
+        "key": "bge_150_V_400",
+        "zitierung": "BGE 150 V 400",
+        "regesteKurz": "Art. 16i Abs. 1 lit. a EOG (in der vom 1. Januar 2021 bis 31. Dezember 2023 in Kraft gestandenen Fassung); Vaterschaftsentschädigung bei Anerkennung des Kindes nach dessen Geburt. Die in Art. 16i Abs. 1 lit. a EOG ab dem Zeitpunkt der Gebu…",
+        "datum": "2024-07-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_V_1",
         "zitierung": "BGE 150 V 1",
         "regesteKurz": "Art. 15 Abs. 1 Satz 1 und Abs. 2 Covid-19-Gesetz; Art. 2 Abs. 3 bis und Art. 5 Abs. 3 Covid-19-Verordnung Erwerbsausfall (sämtliche Bestimmungen in den vom 17. September 2020 bis 30. Juni 2021 geltenden Fassungen); arbeitgeberähnliche Stel…",
         "datum": "2023-12-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_242",
+        "zitierung": "BGE 147 V 242",
+        "regesteKurz": "Art. 21 ter Abs. 4 IVG und Art. 9 Abs. 2 HVI; monatliche Vergütung für von Dritten erbrachte Dienstleistungen. Soweit Art. 9 Abs. 2 HVI vorsieht, dass die monatliche Vergütung für von Dritten erbrachte Dienstleistungen den Betrag des monat…",
+        "datum": "2021-05-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -255,10 +285,30 @@
     ],
     "12": [
       {
+        "key": "bge_148_V_162",
+        "zitierung": "BGE 148 V 162",
+        "regesteKurz": "a Art. 10c Abs. 2 der Verordnung vom 20. März 2020 über Massnahmen bei Erwerbsausfall im Zusammenhang mit dem Coronavirus (Covid-19; Covid-19-Verordnung Erwerbsausfall; \"Stand am 8. Oktober 2020\"); Corona-Erwerbsersatz, anwendbares Recht b…",
+        "datum": "2022-02-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_V_129",
         "zitierung": "BGE 151 V 129",
         "regesteKurz": "Art. 16g Abs. 1 lit. f und Art. 16n-16s EOG; Koordination der Betreuungsentschädigung mit der Mutterschaftsentschädigung. Es besteht kein triftiger Grund für ein Abweichen vom grundsätzlich klaren Wortlaut von Art. 16g Abs. 1 lit. f EOG, w…",
         "datum": "2024-08-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_400",
+        "zitierung": "BGE 150 V 400",
+        "regesteKurz": "Art. 16i Abs. 1 lit. a EOG (in der vom 1. Januar 2021 bis 31. Dezember 2023 in Kraft gestandenen Fassung); Vaterschaftsentschädigung bei Anerkennung des Kindes nach dessen Geburt. Die in Art. 16i Abs. 1 lit. a EOG ab dem Zeitpunkt der Gebu…",
+        "datum": "2024-07-31",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -275,10 +325,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_V_162",
-        "zitierung": "BGE 148 V 162",
-        "regesteKurz": "a Art. 10c Abs. 2 der Verordnung vom 20. März 2020 über Massnahmen bei Erwerbsausfall im Zusammenhang mit dem Coronavirus (Covid-19; Covid-19-Verordnung Erwerbsausfall; \"Stand am 8. Oktober 2020\"); Corona-Erwerbsersatz, anwendbares Recht b…",
-        "datum": "2022-02-08",
+        "key": "bge_149_V_14",
+        "zitierung": "BGE 149 V 14",
+        "regesteKurz": "Art. 15 Abs. 1 des Bundesgesetzes vom 25. September 2020 über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (rückwirkend in Kraft getreten am 17. September 2020; in der vom 1. April 2021…",
+        "datum": "2023-01-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -289,6 +339,16 @@
         "zitierung": "BGE 147 V 423",
         "regesteKurz": "a Art. 1 Covid-19-Verordnung Erwerbsausfall; Art. 1 EOG i.V.m. Art. 58 Abs. 1 ATSG und Art. 24 Abs. 1 EOG (e contrario). Im Gegensatz zur Zuständigkeit bei Beschwerden gegen Verfügungen und Einspracheentscheide kantonaler Ausgleichskassen…",
         "datum": "2021-09-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_242",
+        "zitierung": "BGE 147 V 242",
+        "regesteKurz": "Art. 21 ter Abs. 4 IVG und Art. 9 Abs. 2 HVI; monatliche Vergütung für von Dritten erbrachte Dienstleistungen. Soweit Art. 9 Abs. 2 HVI vorsieht, dass die monatliche Vergütung für von Dritten erbrachte Dienstleistungen den Betrag des monat…",
+        "datum": "2021-05-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -333,6 +393,16 @@
         "zitierung": "BGE 151 V 1",
         "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der obligator…",
         "datum": "2024-08-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_35",
+        "zitierung": "BGE 147 V 35",
+        "regesteKurz": "Art. 10 Abs. 3 Satz 2 UVG (in der seit 1. Januar 2017 geltenden Fassung); Art. 18 UVV (in der seit 1. Januar 2017 geltenden Fassung); Hilfe und Pflege zu Hause. Überprüfungsbefugnis des Bundesgerichts (E. 4). Definition des Begriffs der Hi…",
+        "datum": "2020-09-14",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -391,6 +461,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_151_V_198",
+        "zitierung": "BGE 151 V 198",
+        "regesteKurz": "Art. 22 bis Abs. 5 und Art. 23 IVG; Art. 20 sexies Abs. 1, Art. 21 septies Abs. 5 und Art. 21 Abs. 3 IVV; Art. 4 und 5 Bst. a der Verordnung (EG) Nr. 883/ 2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung…",
+        "datum": "2024-11-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_V_410",
         "zitierung": "BGE 150 V 410",
         "regesteKurz": "Art. 16 ATSG; Art. 28a Abs. 1 IVG; Art. 26 Abs. 2, Art. 26 bis Abs. 3 und Art. 49 Abs. 1 bis IVV (in der Fassung vom 3. November 2021, in Kraft vom 1. Januar 2022 bis 31. Dezember 2023); Invalideneinkommen; Abzug vom Tabellenlohn. Die mit…",
@@ -405,16 +485,6 @@
         "zitierung": "BGE 150 V 354",
         "regesteKurz": "Art. 16 ATSG; Invaliditätsgrad; Berücksichtigung einer lohnmässigen Weiterentwicklung bei der Bestimmung des Valideneinkommens; Abgrenzung zwischen Kompetenzniveau 2 und 3 bei der Bemessung des Invalideneinkommens gestützt auf die Schweize…",
         "datum": "2024-06-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_V_323",
-        "zitierung": "BGE 150 V 323",
-        "regesteKurz": "Art. 26 Abs. 6 IVV und lit. b ÜbBest. IVV WEIV; anwendbares Recht bei intertemporalem Sachverhalt. Bei einer versicherten Person, die wegen der Invalidität keine zureichenden beruflichen Kenntnisse erwerben, vor 1. Januar 2022 gemäss aArt.…",
-        "datum": "2024-05-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -509,6 +579,16 @@
         "zitierung": "BGE 150 V 33",
         "regesteKurz": "Art. 15 UVG; Art. 13 Abs. 1, aArt. 22 Abs. 4, aArt. 23 Abs. 5, Art. 24 und aArt. 99 UVV; Berechnung des für die Invalidenrente massgeblichen versicherten Verdienstes bei Mehrfachbeschäftigung. In der UVV wird der versicherte Verdienst bei…",
         "datum": "2023-11-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_44",
+        "zitierung": "BGE 150 V 44",
+        "regesteKurz": "Art. 10 Abs. 2 lit. b, Art. 16 Abs. 2 lit. i und Art. 24 AVIG; Art. 41a Abs. 1 AVIV; Anspruch auf Kompensationszahlungen bei teilweiser Arbeitslosigkeit. Begriff des Zwischenverdienstes bei Ausübung mehrerer Teilzeitbeschäftigungen vor Ein…",
+        "datum": "2023-09-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -853,12 +933,48 @@
         "gewicht": 0
       }
     ],
+    "31": [
+      {
+        "key": "bge_149_V_2",
+        "zitierung": "BGE 149 V 2",
+        "regesteKurz": "Art. 185 Abs. 3 BV; Art. 5 Abs. 2 der Covid-19-Verordnung Erwerbsausfall; Entschädigung für den Erwerbsausfall einer selbständigerwerbenden Person aufgrund des Coronavirus; Gesetz- und Verfassungsmässigkeit der Bestimmungen der Covid-19-Ve…",
+        "datum": "2022-11-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "33": [
+      {
+        "key": "bge_149_V_29",
+        "zitierung": "BGE 149 V 29",
+        "regesteKurz": "Art. 67, 69 und 84a Abs. 5 KVG; Art. 13 Abs. 1 DSG; Frist zur Anbringung eines Krankheitsvorbehalts von Seiten der Krankenversicherung im Falle einer Verletzung der Anzeigepflicht; Zeitpunkt, in dem die Krankenversicherung von gewissen Tat…",
+        "datum": "2022-11-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "34": [
       {
         "key": "bge_147_V_55",
         "zitierung": "BGE 147 V 55",
         "regesteKurz": "Art. 51 Abs. 2 UVV; Anmeldung bei einer anderen Sozialversicherung. Die Aufforderung zur Anmeldung bei einer anderen, möglicherweise leistungspflichtigen Sozialversicherung ist nicht bloss einmalig und auch nicht nur vor der erstmaligen Le…",
         "datum": "2020-08-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "36": [
+      {
+        "key": "bge_148_V_225",
+        "zitierung": "BGE 148 V 225",
+        "regesteKurz": "Art. 44 ATSG; Ablehnung eines Sachverständigen im Bereich der Unfallversicherung. Zusammenfassung der Rechtsprechung betreffend die Ablehnung eines medizinischen Sachverständigen (E. 3). Arbeiten zwei Ärzte tagtäglich in den gleichen Räuml…",
+        "datum": "2022-04-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1025,6 +1141,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_2",
+        "zitierung": "BGE 148 V 2",
+        "regesteKurz": "Art. 89 Abs. 1 lit. a BGG; Art. 48 Abs. 1 lit. a VwVG; Art. 59 ATSG; formelle Beschwer einer Partei, die selber keine Einsprache erhoben hat, vor dem kantonalen Versicherungsgericht. Grundsätzlich ist zum Beschwerdeverfahren nur zugelassen…",
+        "datum": "2022-01-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "53": [
@@ -1053,6 +1179,16 @@
         "zitierung": "BGE 147 V 234",
         "regesteKurz": "Art. 4 IVG; Art. 87 Abs. 2 und 3 IVV; Art. 6-8, 17 Abs. 1 und Art. 53 Abs. 2 ATSG; Präxisänderung; Neuanmeldung. Die neue Rechtsprechung gemäss BGE 145 V 215 bildet keinen hinreichenden Anlass, um vom Grundsatz der Nichtanpassung eines for…",
         "datum": "2021-06-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_167",
+        "zitierung": "BGE 147 V 167",
+        "regesteKurz": "Art. 53 Abs. 2 und Art. 17 Abs. 1 ATSG; Wiedererwägung oder Revision einer Revisionsverfügung. Gegenstand einer Wiedererwägung oder Revision kann nur die Revisionsverfügung bilden, sofern sie auf einer materiellen Prüfung des Rentenanspruc…",
+        "datum": "2021-02-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1087,6 +1223,30 @@
         "zitierung": "BGE 146 V 1",
         "regesteKurz": "Frist für die Vollstreckungsverwirkung bei rechtskräftig festgesetzten Leistungen; Gesetzeslücke. Wo das massgebliche Einzelgesetz (hier das UVG für eine Rente der Unfallversicherung) keine Regelung enthält, gilt für die Vollstreckung rech…",
         "datum": "2020-01-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "56": [
+      {
+        "key": "bge_148_V_2",
+        "zitierung": "BGE 148 V 2",
+        "regesteKurz": "Art. 89 Abs. 1 lit. a BGG; Art. 48 Abs. 1 lit. a VwVG; Art. 59 ATSG; formelle Beschwer einer Partei, die selber keine Einsprache erhoben hat, vor dem kantonalen Versicherungsgericht. Grundsätzlich ist zum Beschwerdeverfahren nur zugelassen…",
+        "datum": "2022-01-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "57": [
+      {
+        "key": "bge_148_V_2",
+        "zitierung": "BGE 148 V 2",
+        "regesteKurz": "Art. 89 Abs. 1 lit. a BGG; Art. 48 Abs. 1 lit. a VwVG; Art. 59 ATSG; formelle Beschwer einer Partei, die selber keine Einsprache erhoben hat, vor dem kantonalen Versicherungsgericht. Grundsätzlich ist zum Beschwerdeverfahren nur zugelassen…",
+        "datum": "2022-01-10",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

@@ -232,7 +232,10 @@
         "Art. 59 Abs. 1 LTF",
         "Art. 59 Abs. 2 LTF"
       ],
-      "normKeys": [],
+      "normKeys": [
+        "BV",
+        "BGG"
+      ],
       "zitierteEntscheide": [
         "1B_69/2009",
         "1P.347/2002",

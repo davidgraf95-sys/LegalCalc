@@ -1,0 +1,65 @@
+{
+  "erzeugt": "2026-07-20",
+  "erlass": "URG",
+  "gewichtQuelle": "alt",
+  "proArtikel": {
+    "2": [
+      {
+        "key": "bge_148_III_305",
+        "zitierung": "BGE 148 III 305",
+        "regesteKurz": "Art. 2 Abs. 1 und Abs. 2 lit. f URG; Urheberrechtsschutz; Werk-Individualität. Anforderungen an die urheberrechtliche Individualität eines Werks der angewandten Kunst (Präzisierung der Rechtsprechung; E. 5). Regeste Art. 2 al. 1 et al. 2 l…",
+        "datum": "2022-06-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_III_95",
+        "zitierung": "BGE 151 III 95",
+        "regesteKurz": "a Art. 423 OR und Art. 2 Abs. 2 lit. f URG; Gewinnherausgabeanspruch bei Urheberrechtsverletzungen; böser Glaube des Urheberrechtsverletzers bei Werken der angewandten Kunst. An den Beweis des Kennenmüssens von Bestand und Schutzumfang des…",
+        "datum": "2024-09-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "10": [
+      {
+        "key": "bge_151_II_742",
+        "zitierung": "BGE 151 II 742",
+        "regesteKurz": "Art. 3 Abs. 1 lit. a und Abs. 2, Art. 4 Abs. 2, Art. 7 Abs. 1 und 2 lit. e und f, Art. 49a KG; Art. 3 SVKG; Art. 5 Abs. 2 der Verordnung über die Kontrolle von Unternehmenszusammenschlüssen; Wettbewerbsbeeinträchtigung als Voraussetzung fü…",
+        "datum": "2025-01-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "20": [
+      {
+        "key": "bge_148_II_92",
+        "zitierung": "BGE 148 II 92",
+        "regesteKurz": "Art. 2 Abs. 1 lit. a und Art. 3 Abs. 1 lit. a BGÖ; Art. 55 URG; Anwendung des BGÖ auf die Schiedskommission im Tarifgenehmigungsverfahren mit Einigungstarif. Die Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und ve…",
+        "datum": "2021-10-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "29": [
+      {
+        "key": "bge_148_III_305",
+        "zitierung": "BGE 148 III 305",
+        "regesteKurz": "Art. 2 Abs. 1 und Abs. 2 lit. f URG; Urheberrechtsschutz; Werk-Individualität. Anforderungen an die urheberrechtliche Individualität eines Werks der angewandten Kunst (Präzisierung der Rechtsprechung; E. 5). Regeste Art. 2 al. 1 et al. 2 l…",
+        "datum": "2022-06-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ]
+  }
+}
