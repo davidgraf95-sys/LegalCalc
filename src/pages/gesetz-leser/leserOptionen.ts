@@ -123,9 +123,16 @@ function lade(): GeladenerZustand {
     // Steht dort ein leeres Array, ist das eine bewusste Nutzerwahl («alles
     // abgewählt») und bleibt erhalten — normalisiereKlassen setzt sie NICHT
     // still auf den Default zurück (§8, siehe bezugAuswahl.ts).
+    // MIGRATION (W2·7-BEZUG/B4, einmalig): der frühere Schalter «Entscheide»
+    // ist entfallen (ersetzt durch das Dropdown «Rechtsprechung ▾»). Wer ihn auf
+    // 'aus' gestellt hatte, wollte keine Entscheide am Artikel sehen — dieser
+    // Wille wird übernommen, indem alle Facetten abgewählt starten, statt ihm
+    // die Auflistung mit der neuen Voreinstellung wieder einzublenden (§8: eine
+    // Umstellung darf eine getroffene Nutzerwahl nicht stillschweigend kippen).
+    // Greift NUR, solange keine Facetten-Wahl gespeichert ist, also genau einmal.
     const bezugKlassen = Array.isArray(o.bezugKlassen)
       ? normalisiereKlassen(o.bezugKlassen)
-      : DEFAULT_BEZUG_KLASSEN;
+      : (opt.leitfaelle === 'aus' ? [] : DEFAULT_BEZUG_KLASSEN);
     const bezugKantone = Array.isArray(o.bezugKantone) ? normalisiereKantone(o.bezugKantone) : KEINE_KANTONE;
     return { opt, zeitraum, hist, bezugKlassen, bezugKantone };
   } catch {

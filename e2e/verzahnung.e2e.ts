@@ -126,9 +126,14 @@ test('MM4: ★-aria-label textgleich in Reader, Panel, Leitfall-Zeile und Suche;
   // Scroll+Sicht als Poll (Hydrations-Drift, s. leitfaelle-chips.e2e.ts) — erst
   // der Zeilen-Container (klareres Fehlersignal), dann der ★-Glyph mit dem
   // geteilten aria-label.
+  //
+  // §6.3-DEKLARATION (28.7.2026, W2·7-BEZUG/B4): die Overline «Leitfälle» der
+  // V1a-Chip-Reihe ist entfallen; der Container ist jetzt die bge-Gruppe der
+  // facettierten Auflistung. Geprüfter Sachverhalt unverändert — der ★-Glyph mit
+  // dem geteilten aria-label steht am Leitentscheid-Chip.
   await expect(async () => {
     await art.scrollIntoViewIfNeeded()
-    await expect(art.getByText('Leitfälle', { exact: true })).toBeVisible({ timeout: 2000 })
+    await expect(art.locator('[data-bezug-gruppe="bge"]')).toBeVisible({ timeout: 2000 })
   }).toPass({ timeout: 20_000 })
   await expect(art.locator(`[role="img"][aria-label="${LEIT_ARIA}"]`).first()).toBeVisible({ timeout: 15_000 })
 
