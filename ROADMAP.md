@@ -1147,7 +1147,9 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   Ansicht-Menü) · **(e = B5, §14-Intake David 28.7.2026)** eigenes Rechtsprechungs-Dropdown in der
   **Leser-Werkzeugleiste** (analog «Ansicht ▾») als reine **Ansichtsauswahl** der Verzahnung:
   Facetten + interaktiver **Zeitstrahl** + Von-Bis-Datumseingabe statt Perioden-Buckets;
-  Entscheide bleiben unter den Artikeln (Detail Fahrplan §9 B5).
+  Entscheide bleiben unter den Artikeln (Detail Fahrplan §9 B5) · **(f = B6, §14-Intake David
+  28.7.2026)** Gesamtüberarbeitung der Leser-Werkzeugleiste — minimalistischer und praktischer,
+  ohne Funktionsabbau (Detail Fahrplan §9 B6; seriell nach B5, gleiche Fläche).
   **Abgrenzung (§14.3):** Long-Tail 195k Massen-Entscheide bleibt `W2·6-DATA` E3/E4;
   UI-Grammatik bleibt `W2·7-VZUI`. Facetten = Datenschicht, Filter = Darstellung (§3). Kantonale
   Zitat-/Norm-Resolver-Extraktion = Risiko-Pfad ⇒ `check:gegenpruefung`; Generator deterministisch,

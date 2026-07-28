@@ -440,6 +440,17 @@ Entscheidkategorien** erweitert — alles über Filter an- und abwählbar (Kanto
   überladen») gilt auch hier — das Dropdown ist reichhaltig, der Header-Eintrag selbst
   bleibt ein Wort. Darstellung §3: reine Projektion der B1-Facetten + `datum`-Feld, keine
   neue Datenschicht.
-- **Sequenz:** B1 → B2/B3 (parallel möglich) → B4 → B5 (nach B4-Landung, eigene
-  Bau-Einheit — Header-Fläche ≠ Leser-Fläche, §14.3). Kollisions-Abgleich mit `W2·7-VZUI`
-  (KontextPanel) und `W2·5h-GESETZ-UI` (LeserAnsichtMenu) — Worktree-Pflicht §12.
+- **B6 · Werkzeugleisten-Gesamtüberarbeitung (David-Auftrag 28.7.2026, Wortlaut: «b6 soll
+  auch noch die gesamte werkzeugsleiste überarbeiten und minimalistischer und praktischer
+  darstellen»).** Die ganze Leser-Werkzeugleiste (Brotkrumen · Artikel-Anzeige · Suche ·
+  Ansicht ▾ · Rechtsprechung ▾ · Stand · Schliessen) wird als EIN Wurf neu geordnet:
+  minimalistischer (weniger konkurrierende Elemente, ruhigere Typo-Hierarchie, konsistente
+  Abstände) und praktischer (häufige Griffe vorn, Seltenes ins Menü). Bestehende
+  Funktionen bleiben vollständig erreichbar (kein Feature-Abbau ohne David-Entscheid);
+  Persistenz-Verhalten unverändert. DESIGN-REGLEMENT als Dach; Vorher/Nachher-Screenshots
+  Pflicht (hell/dunkel, Desktop/mobil, schmale Breiten — Brotkrumen-Verhalten). Reine
+  Darstellung (§3), golden byte-gleich, CLS 0 auf der Leiste selbst.
+- **Sequenz:** B1 → B2/B3 (parallel möglich) → B4 → B5 → B6 (je nach B-Landung des
+  Vorgängers, eigene Bau-Einheiten; B5/B6 teilen die Werkzeugleisten-Fläche ⇒ seriell,
+  §14.3/§12). Kollisions-Abgleich mit `W2·7-VZUI` (KontextPanel) und `W2·5h-GESETZ-UI`
+  (LeserAnsichtMenu) — Worktree-Pflicht §12.
