@@ -191,6 +191,7 @@ export function baueArtikelIndex(auswahl: EntscheidSnapshot[], root = process.cw
     ladeBestaende(root, kantone),
     vergleicheLeitfaelle,
     manifestRegesteKurz,
+    root,
   );
   index.befund.kantoneOhneResolver = kantoneOhneResolver(kantone);
   letzterBezugsIndex = index;

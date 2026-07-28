@@ -17,7 +17,7 @@
     }
   },
   "proArtikel": {
-    "15a": [
+    "5": [
       {
         "key": "bs_appellationsgericht_VD.2021.145",
         "gewicht": null
@@ -25,7 +25,7 @@
     ]
   },
   "gesamtProArtikel": {
-    "15a": {
+    "5": {
       "kantonal": 1
     }
   }

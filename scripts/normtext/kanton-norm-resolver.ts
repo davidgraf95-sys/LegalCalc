@@ -22,8 +22,8 @@
 // ── REICHWEITE DIESER AUSSAGE, eng gefasst (Gegenprüfung Runde 1/B4) ────────
 // Sie gilt für den «§»-KANAL, den dieses Modul bedient — und NUR für ihn.
 // W2·7-BEZUG lässt kantonale Entscheide daneben auch BUNDESRECHTLICHE
-// «Art.»-Zitate erzeugen (der grössere Teil: 10'040 der 12'316 kantonalen
-// Kanten). Dieser zweite Kanal läuft über `artikelSchluesselMitBefund` und
+// «Art.»-Zitate erzeugen (der grössere Teil: 10'038 der 12'299 kantonalen
+// Kanten, Stand nach den Riegeln der Gegenprüfung Runde 2). Dieser zweite Kanal läuft über `artikelSchluesselMitBefund` und
 // damit sehr wohl über die Abkürzungs-Tabelle; für ihn ist die Verwechslung
 // NICHT strukturell ausgeschlossen, sondern durch eine eigene Regel begrenzt
 // (`fremdDefinierteKeys`, entscheide-mapping.ts — dort steht die Messung).
@@ -52,7 +52,7 @@
 //  still ausgeführt — eine Lücke, die niemand sieht, lässt sich nicht schliessen
 //  (§6.7/§8).
 
-import { readdirSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   extrahiereParagraphGruppen, INVALID_LAW_CODES,
@@ -140,6 +140,112 @@ export function ladeKantonBestand(root: string, kanton: string): KantonBestand {
 }
 
 /**
+ * Amtlicher Erlass-String je Systematik-Nummer, aus DEMSELBEN Snapshot, aus dem
+ * `ladeKantonBestand` die Nummer nimmt: `eintraege[0].erlass`, z.B.
+ * «Bau- und Planungsverordnung, BPV (730.110)».
+ *
+ * QUELLE UND STAND (§7): der Snapshot selbst — committet, offline, mit
+ * Abrufdatum und amtlicher Quelle-URL des Erlasses (public/normtext/kanton/
+ * <key>.json, quelleUrl auf gesetzessammlung.bs.ch). KEIN Live-Fetch im
+ * Generator-Pfad, kein zusätzliches Artefakt, keine zweite Wahrheit (§5): die
+ * Angabe steht längst im Bestand, sie wurde bloss nie gelesen.
+ */
+export function ladeKantonTitel(root: string, kanton: string): Map<string, string> {
+  const dir = join(root, 'public', 'normtext', 'kanton');
+  const out = new Map<string, string>();
+  let dateien: string[];
+  try { dateien = readdirSync(dir).filter((f) => f.endsWith('.json')).sort(); } catch { return out; }
+  const praefix = `${kanton}-`;
+  for (const datei of dateien) {
+    if (!datei.startsWith(praefix)) continue;
+    const sr = datei.slice(praefix.length, -'.json'.length);
+    if (!sr) continue;
+    try {
+      const j = JSON.parse(readFileSync(join(dir, datei), 'utf8')) as { eintraege?: Array<{ erlass?: unknown }> };
+      const e = j.eintraege?.[0]?.erlass;
+      if (typeof e === 'string' && e) out.set(sr, e);
+    } catch { /* unlesbar → keine Angabe, kein Riegel */ }
+  }
+  return out;
+}
+
+/**
+ * Amtliches Kürzel aus dem Erlass-String: letztes Komma-Segment vor der
+ * Nummern-Klammer, sofern es wie eine Abkürzung aussieht (ein Wort, ≥2
+ * Grossbuchstaben). «Bau- und Planungsverordnung, BPV (730.110)» → 'BPV';
+ * «Verfassung des Kantons Basel-Stadt (111.100)» → null.
+ */
+export function amtlichesKuerzel(erlass: string): string | null {
+  const ohne = erlass.replace(/\s*\((?:SG\s+)?[\d.]+\)\s*$/, '').trim();
+  const seg = ohne.split(',').map((x) => x.trim());
+  const letzt = seg[seg.length - 1] ?? '';
+  if (!letzt || letzt.includes(' ')) return null;
+  return (letzt.match(/[A-ZÄÖÜ]/g) ?? []).length >= 2 ? letzt : null;
+}
+
+/** Vergleichsform für Kürzel: gross, Umlaute ausgeschrieben, nur A–Z0–9. */
+function faltung(s: string): string {
+  return s.toUpperCase()
+    .replace(/Ä/g, 'AE').replace(/Ö/g, 'OE').replace(/Ü/g, 'UE')
+    .replace(/[^A-Z0-9]/g, '');
+}
+
+/**
+ * Passt die im Dokument verwendete Abkürzung zum amtlichen Kürzel der Nummer?
+ *
+ * DIE ZWEITE ACHSE gegen Quell-Tippfehler (Gegenprüfung Runde 2/B2). Die
+ * Korpus-Mehrheit (`baueNummernDominanz`) versagt, sobald eine falsche Bindung
+ * die EINZIGE ihrer Abkürzung ist — belegt an «(HBG, SG 730.110)»: 730.110 ist
+ * die Bau- und PlanungsVERORDNUNG (amtlich «BPV»), «HBG» das aufgehobene
+ * Hochbaugesetz. Eine Mehrheit von eins ist keine Mehrheit. Diese Achse braucht
+ * keinen zweiten Beleg — sie fragt die Nummer selbst.
+ *
+ * NUR WENN DIE NUMMER EIN EIGENES KÜRZEL FÜHRT. Trägt der amtliche Titel keines
+ * («Verfassung des Kantons Basel-Stadt»), sagt er nichts über die im Urteil
+ * übliche Kurzform («KV») — dann schweigt der Riegel. Sonst verlöre der Korpus
+ * 361 RICHTIGE Bindungen (KV, AdvG, PG, SHG, EG SchKG …; gemessen 28.7.2026).
+ *
+ * TEILWORT UND UMLAUT-FALTUNG, ebenfalls gemessen: ohne sie sperrte die Regel
+ * 80 statt 29 Bindungen und träfe durchweg RICHTIGE — «VRPG BS», «aBüRG» (alte
+ * Fassung), «UeStG» (Umlaut ausgeschrieben), «Gerichtsorganisationsgesetz GOG»
+ * (Titel und Kürzel als ein Lauf). Mit Faltung bleiben 29 von 6'151 (0.47 %),
+ * sämtlich Vertauschungen oder falsche Erlasse: GRR/GRG↛GGR · VPRG↛VRPG ·
+ * BPG/HBG↛BPV · JVG/JW↛JVV · WRSchV↛WRFV · PV↛VPG · StO RiE↛StG/StV.
+ */
+export function kuerzelKonsistent(abk: string, erlassString: string | undefined): boolean {
+  if (!erlassString) return true;                 // keine Angabe → kein Riegel
+  const k = amtlichesKuerzel(erlassString);
+  if (!k) return true;                            // Nummer führt kein Kürzel → schweigen
+  const a = faltung(abk), b = faltung(k);
+  return a.includes(b) || b.includes(a);
+}
+
+/**
+ * «§»-Tokens im amtlichen TITEL eines Erlasses, je mit dem folgenden Wort:
+ * «Verordnung betreffend Zulagen gemäss § 15a Lohngesetz» → { '15a' → 'lohngesetz' }.
+ *
+ * WOZU (Gegenprüfung Runde 2/B1): fünf BS-Erlasse tragen ein FREMDES «§» im
+ * eigenen amtlichen Titel. Damit kehrt sich der wichtigste Schutz des Resolvers
+ * um — die Regel «nur die letzte §-Gruppe vor dem Locator bindet» zeigt dann auf
+ * das § DES TITELS statt auf das Zitat des Gerichts. Belegt an VD.2021.145:
+ * «Gemäss § 5 der Verordnung betreffend Zulagen gemäss § 15a Lohngesetz
+ * (Zulagenverordnung, SG 164.410)» band § 15a an BS-164.410 — ein Paragraph, den
+ * dieser Erlass gar nicht hat (er führt §§ 1–14) —, während die richtige Kante
+ * § 5 verloren ging. Der ganze Shard bestand aus dieser einen Fehlbindung.
+ *
+ * Betroffen (Titel-Scan über alle BS-Erlasse): BS-164.160 (§ 10 Lohngesetz) ·
+ * BS-164.250 (§ 23 Lohngesetz) · BS-164.410 (§ 15a Lohngesetz) · BS-390.720 und
+ * BS-390.760 (§ 17 Bestattungsgesetz bzw. § 1 Begräbnis-/Vollziehungsverordnung).
+ */
+export function titelParagraphen(erlass: string): Map<string, string> {
+  const out = new Map<string, string>();
+  for (const m of erlass.matchAll(/§{1,2}\s*(\d+[a-z]*)\s+([A-Za-zÄÖÜäöü]{3,})/g)) {
+    out.set(m[1].toLowerCase(), m[2].toLowerCase());
+  }
+  return out;
+}
+
+/**
  * Kantone, für die es zwar Entscheide, aber (noch) keinen deklarierten
  * Systematik-Präfix gibt. Benannte Lücke statt stiller (§8).
  */
@@ -186,20 +292,27 @@ export interface AufloesungsBefund {
 const FENSTER = 180;
 
 /**
- * Zeichen, die das Fenster BEENDEN — jedes davon ist ein belegter Falsch-Positiv-
- * Kanal, kein vorsorglicher Zaun (FP-Analyse am BS-Korpus, 28.7.2026):
+ * Zeichen, die das Fenster BEENDEN — jedes ein belegter Falsch-Positiv-Kanal,
+ * kein vorsorglicher Zaun (FP-Analyse am BS-Korpus, 28.7.2026):
  *
- *  · `§`   — zwischen zwei §-Zitaten steht nie EIN Erlass. Wirkung: nur die
- *            LETZTE §-Gruppe vor einem Locator kann ihn binden. Das ist der
- *            wichtigste Einzelschutz der ganzen Regel.
  *  · `\n`  — Absatzgrenze.
  *  · `)`/`]` — die schliessende Klammer beendet das Zitat. BELEG:
  *            «§ 71 Abs. 1 Ziffer 1 lit. b GOG). Weder aus dem GOG noch aus dem
  *            Organisationsreglement des Zivilgerichts (SG 154.170)» — ohne diese
  *            Grenze hinge § 71 GOG am Organisationsreglement. Zwei weitere
  *            Belege derselben Form im Korpus.
+ *
+ * ── «§» IST HIER NICHT MEHR AUFGEFÜHRT (Gegenprüfung Runde 2/B1) ────────────
+ * Es war der wichtigste Einzelschutz — «nur die letzte §-Gruppe vor dem Locator
+ * bindet» — und genau darum die grösste Falle, sobald der amtliche TITEL eines
+ * Erlasses selbst ein «§» trägt: dann ist die «letzte §-Gruppe» das § des
+ * Titels. Der Schutz bleibt in voller Schärfe bestehen, wird aber nicht mehr
+ * blind über das Zeichen ausgeübt, sondern nach der Frage, ob das «§» zum Titel
+ * DIESES Erlasses gehört (Nummer und Folgewort wie im amtlichen Titel) oder zu
+ * einem fremden Zitat. Der Code steht in `loeseKantonZitate`, die Erklärung
+ * dort und bei `titelParagraphen`.
  */
-const FENSTER_ENDE = /[§\n)\]]/;
+const FENSTER_ENDE = /[\n)\]]/;
 
 /**
  * Ein Erlass-Kürzel VOR der ersten öffnenden Klammer beendet das Zitat ebenfalls
@@ -233,12 +346,27 @@ function locatorMuster(praefix: string): RegExp {
  * Dokumentlokale Abkürzungs-Bindung: «(GOG, SG 154.100)», «[Honorarreglement,
  * HoR; SG 291.400]». Gefangen wird der Klammer-Inhalt VOR dem Locator; daraus
  * nimmt `kuerzelAusKlammer` den abschliessenden Kürzel-Lauf.
+ *
+ * GEMEINDE-PRÄFIX WIRD GEFANGEN (Gegenprüfung Runde 2/B5). Die Gruppe war
+ * `(?:…)`, also nicht-fangend — der Aufrufer nahm dann `m[2]` als Nummer und
+ * verlor «BeE»/«RiE». Folge: «[StO RiE, SG RiE 640.100]» band die Abkürzung an
+ * die Nummer '640.100' statt an 'RiE 640.100', und «§ 22 StO RiE» landete
+ * anschliessend auf dem KANTONALEN STEUERGESETZ. Im heutigen Korpus wirkungslos
+ * (die zwei vorhandenen Gemeinde-Locatoren neutralisieren sich gegenseitig über
+ * die Mehrdeutigkeits-Regel), aber scharf, sobald ein dritter dazukommt — und
+ * eine Falle, die nur heute zufällig nicht zuschnappt, ist eine Falle (§6.7).
+ * Der Locator-Pfad fing den Präfix von Anfang an; hier war die Symmetrie verletzt.
  */
 function bindungsMuster(praefix: string): RegExp {
   return new RegExp(
-    `[([]([^()\\[\\]\\n]{0,80}?)[;,]\\s*${praefix}\\s+(?:${GEMEINDE_PRAEFIX}\\s+)?(\\d{3}\\.\\d{2,3})\\b`,
+    `[([]([^()\\[\\]\\n]{0,80}?)[;,]\\s*${praefix}\\s+(?:(${GEMEINDE_PRAEFIX})\\s+)?(\\d{3}\\.\\d{2,3})\\b`,
     'g',
   );
+}
+
+/** Volle Systematik-Nummer aus einem Bindungs-Treffer (mit Gemeinde-Präfix). */
+function nummerAusBindung(m: RegExpMatchArray): string {
+  return (m[2] ? `${m[2]} ` : '') + m[3];
 }
 
 /**
@@ -305,6 +433,13 @@ export function loeseKantonZitate(
    * Der Verwurf wird ausgewiesen (`nummerMinderheit`), nie still ausgeführt (§6.7).
    */
   dominanz?: ReadonlyMap<string, string>,
+  /**
+   * Amtlicher Erlass-String je Systematik-Nummer (`ladeKantonTitel`). Speist
+   * zwei Riegel der Gegenprüfung Runde 2: die Kürzel-Konsistenz (B2) und die
+   * Titel-«§»-Erkennung (B1). Optional — fehlt sie, verhält sich der Resolver
+   * wie zuvor, und beide Riegel schweigen.
+   */
+  titel?: ReadonlyMap<string, string>,
 ): AufloesungsBefund {
   const leer: AufloesungsBefund = {
     zitate: [], ohneErlass: 0, abkAusgeschlossen: [], nummerOhneBestand: [], nummerMinderheit: [],
@@ -321,19 +456,28 @@ export function loeseKantonZitate(
   const mehrdeutig = new Set<string>();
   const tippfehlerNummern = new Set<string>();
   for (const m of text.matchAll(bindungsMuster(sys.praefix))) {
-    const sr = m[2];
+    const sr = nummerAusBindung(m);
     const key = bestand.get(sr);
     if (!key) { nummerOhneBestand.add(sr); continue; }
     const abk = kuerzelAusKlammer(m[1]);
     if (!abk) continue;
     const norm = normalisiereAbk(abk);
     if (INVALID_LAW_CODES.has(norm)) continue;
-    // Tippfehler-Riegel: der Korpus bindet diese Abkürzung mehrheitlich an eine
-    // andere Nummer → diese Nummer hier NICHT verwenden, weder für die
-    // Abkürzungs- noch für den Nummern-Kanal desselben Zitats.
+    // Tippfehler-Riegel, ACHSE 1 (Korpus-Mehrheit): der Korpus bindet diese
+    // Abkürzung mehrheitlich an eine andere Nummer → diese Nummer hier NICHT
+    // verwenden, weder für den Abkürzungs- noch für den Nummern-Kanal.
     const dom = dominanz?.get(norm);
     if (dom !== undefined && dom !== sr) {
       nummerMinderheit.add(`${abk}: ${sr} (Korpus-Mehrheit ${dom})`);
+      tippfehlerNummern.add(sr);
+      continue;
+    }
+    // ACHSE 2 (amtliches Kürzel der Nummer): greift dort, wo Achse 1 blind ist —
+    // wenn die falsche Bindung die einzige ihrer Abkürzung ist und es folglich
+    // keine Mehrheit gibt. Anlassfall «(HBG, SG 730.110)», Begründung und
+    // Messung bei `kuerzelKonsistent`.
+    if (!kuerzelKonsistent(abk, titel?.get(sr))) {
+      nummerMinderheit.add(`${abk}: ${sr} (amtlich «${amtlichesKuerzel(titel!.get(sr)!)}»)`);
       tippfehlerNummern.add(sr);
       continue;
     }
@@ -356,23 +500,51 @@ export function loeseKantonZitate(
 
   for (const gruppe of extrahiereParagraphGruppen(text)) {
     const roh = text.slice(gruppe.ende, gruppe.ende + FENSTER);
-    const stop = roh.search(FENSTER_ENDE);
-    const fenster = stop >= 0 ? roh.slice(0, stop) : roh;
 
     let erlass: string | null = null;
     let kanal: KantonZitat['kanal'] = 'nummer';
 
-    const lm = locator.exec(fenster);
-    if (lm && !traegtKuerzelVorKlammer(fenster.slice(0, lm.index))) {
+    // ── TITEL-«§»-BEHANDLUNG (Gegenprüfung Runde 2/B1) ──────────────────────
+    // Das Fenster wird ZWEIMAL gelesen. Erst OHNE den «§»-Stopp, nur bis zur
+    // Absatz-/Klammergrenze: so ist die Nummer überhaupt sichtbar, auch wenn
+    // der amtliche Titel des Erlasses selbst ein «§» enthält. Erst mit der
+    // Nummer in der Hand lässt sich entscheiden, ob ein dazwischenliegendes «§»
+    // zum TITEL dieses Erlasses gehört (dann ist es kein fremdes Zitat und darf
+    // das Fenster nicht beenden) oder zu einem anderen (dann schon).
+    // Ohne diese Reihenfolge ist die Frage nicht beantwortbar — man müsste den
+    // Erlass kennen, bevor man ihn gefunden hat.
+    const weitStop = roh.search(FENSTER_ENDE);
+    const weit = weitStop >= 0 ? roh.slice(0, weitStop) : roh;
+    const lm = locator.exec(weit);
+    if (lm && !traegtKuerzelVorKlammer(weit.slice(0, lm.index))) {
       const sr = (lm[1] ? `${lm[1]} ` : '') + lm[2];
-      // Als Tippfehler erkannte Nummern wirken auch hier: sonst käme dieselbe
-      // Fehlbindung über den Nummern-Kanal zurück, die Durchgang 1 gerade
-      // verworfen hat (§5 — eine Regel, beide Kanäle).
-      if (tippfehlerNummern.has(sr)) { /* verworfen, in nummerMinderheit ausgewiesen */ }
-      else {
-        const key = bestand.get(sr);
-        if (key) erlass = key;
-        else nummerOhneBestand.add(sr);
+      const titelPar = titelParagraphen(titel?.get(sr) ?? '');
+      const zwischen = weit.slice(0, lm.index);
+      // Jedes «§» zwischen Zitat und Locator muss sich als Titel-«§» dieses
+      // Erlasses ausweisen — Nummer UND Folgewort wie im amtlichen Titel.
+      // Sonst steht dort ein fremdes Zitat, und die Bindung gehört ihm.
+      let fremdesParagraph = false;
+      for (const p of zwischen.matchAll(/§{1,2}\s*(\d+[a-z]*)(?:\s+([A-Za-zÄÖÜäöü]{3,}))?/g)) {
+        const folgewort = (p[2] ?? '').toLowerCase();
+        if (titelPar.get(p[1].toLowerCase()) !== folgewort || !folgewort) { fremdesParagraph = true; break; }
+      }
+      // Die zitierende Gruppe SELBST darf nicht das Titel-«§» sein: «§ 15a
+      // Lohngesetz» IST der Titel von BS-164.410 und zitiert ihn nicht.
+      const eigenesFolgewort = /^\s*([A-Za-zÄÖÜäöü]{3,})/.exec(roh)?.[1]?.toLowerCase();
+      const istTitelParagraph = gruppe.artikel.length === 1
+        && eigenesFolgewort !== undefined
+        && titelPar.get(gruppe.artikel[0]) === eigenesFolgewort;
+
+      if (!fremdesParagraph && !istTitelParagraph) {
+        // Als Tippfehler erkannte Nummern wirken auch hier: sonst käme dieselbe
+        // Fehlbindung über den Nummern-Kanal zurück, die Durchgang 1 gerade
+        // verworfen hat (§5 — eine Regel, beide Kanäle).
+        if (tippfehlerNummern.has(sr)) { /* verworfen, in nummerMinderheit ausgewiesen */ }
+        else {
+          const key = bestand.get(sr);
+          if (key) erlass = key;
+          else nummerOhneBestand.add(sr);
+        }
       }
     }
 
@@ -424,7 +596,11 @@ export function baueNummernDominanz(texte: Iterable<string>, kanton: string): Ma
       const norm = normalisiereAbk(abk);
       if (INVALID_LAW_CODES.has(norm)) continue;
       const je = zaehler.get(norm) ?? (zaehler.set(norm, new Map()), zaehler.get(norm)!);
-      je.set(m[2], (je.get(m[2]) ?? 0) + 1);
+      // Volle Nummer INKLUSIVE Gemeinde-Präfix (B5): «RiE 640.100» ist ein
+      // anderer Erlass als «640.100». Vor dem Fix zählte hier m[2] — nach dem
+      // Fangen der Gemeinde-Gruppe wäre das der Präfix selbst gewesen.
+      const nr = nummerAusBindung(m);
+      je.set(nr, (je.get(nr) ?? 0) + 1);
     }
   }
   const out = new Map<string, string>();

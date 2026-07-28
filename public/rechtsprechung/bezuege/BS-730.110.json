@@ -15,18 +15,6 @@
         "status": "kantonal"
       }
     },
-    "bs_appellationsgericht_VD.2021.219": {
-      "zitierung": "Appellationsgericht BS VD.2021.219 vom 08.02.2023",
-      "regesteKurz": "Entschädigung aus materieller Enteignung (BGer 1C_61/2023 vom 23. Februar 2023)",
-      "datum": "2023-02-08",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
     "bs_appellationsgericht_VD.2023.105": {
       "zitierung": "Appellationsgericht BS VD.2023.105 vom 10.12.2024",
       "regesteKurz": "Renovation im vereinfachten Bewilligungsverfahren (WRFG)",
@@ -113,12 +101,6 @@
     }
   },
   "proArtikel": {
-    "8": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": null
-      }
-    ],
     "12": [
       {
         "key": "bs_appellationsgericht_VD.2023.161",
@@ -171,29 +153,14 @@
         "gewicht": null
       }
     ],
-    "87": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": null
-      }
-    ],
     "12a": [
       {
         "key": "bs_appellationsgericht_VD.2023.161",
         "gewicht": null
       }
-    ],
-    "8b": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": null
-      }
     ]
   },
   "gesamtProArtikel": {
-    "8": {
-      "kantonal": 1
-    },
     "12": {
       "kantonal": 1
     },
@@ -218,13 +185,7 @@
     "81": {
       "kantonal": 1
     },
-    "87": {
-      "kantonal": 1
-    },
     "12a": {
-      "kantonal": 1
-    },
-    "8b": {
       "kantonal": 1
     }
   }

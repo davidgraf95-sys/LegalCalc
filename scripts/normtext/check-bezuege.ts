@@ -237,6 +237,21 @@ function main(): void {
         }
         letzterRang = rang;
 
+        // T5 — gewicht darf in nicht messbaren Klassen NICHT als Zahl erscheinen
+        // (Gegenprüfung Runde 2, Tor-Auflage). Der Zitier-Graph erkennt nur
+        // BGE-Fundstellen und Bundesgerichts-Aktenzeichen; für kantonale und
+        // eidgenössische Entscheide ist die In-degree strukturell nicht messbar
+        // und wird als `null` ausgeliefert. Fiele das je auf 0 zurück, sähe die
+        // Zahl wie ein Messergebnis aus und niemand würde es bemerken — genau
+        // die stille Rückfall-Klasse, gegen die §6.7 steht.
+        const messbar = f.status === 'bge' || f.status === 'bger';
+        if (messbar && typeof e.gewicht !== 'number') {
+          fehler.push(`${erlass}/${token}/${e.key}: gewicht ist in der Klasse '${f.status}' messbar, aber nicht gesetzt.`);
+        }
+        if (!messbar && e.gewicht !== null) {
+          fehler.push(`${erlass}/${token}/${e.key}: gewicht=${JSON.stringify(e.gewicht)} in der Klasse '${f.status}', wo es NICHT messbar ist — muss null sein (§8).`);
+        }
+
         zaehler[f.status] = (zaehler[f.status] ?? 0) + 1;
         kantenJeStatus[f.status] = (kantenJeStatus[f.status] ?? 0) + 1;
         kantenJeEbene[f.ebene] = (kantenJeEbene[f.ebene] ?? 0) + 1;
@@ -326,11 +341,14 @@ function main(): void {
     for (const token of Object.keys(shard.proArtikel)) {
       if (!vorhanden.has(token)) {
         warn.push(`${shard.erlass}: § ${token} kommt im Normtext-Snapshot nicht vor `
-          + `(${(shard.proArtikel[token] ?? []).length} Kante(n)) — Alt-Fassung oder Fehlbindung.`);
+          + `(${(shard.proArtikel[token] ?? []).length} Kante(n)).`);
       }
     }
   }
   console.log(`  Artikel-Existenz-Abgleich: ${existenzGeprueft} kantonale Erlass-Shards gegen ihren Normtext-Snapshot geprüft.`);
+  console.log('    (UNTERE SCHRANKE, §8: der Abgleich sieht nur Bindungen auf §§, die es im heutigen '
+    + 'Snapshot NICHT gibt. Eine Fehlbindung auf einen §, den der falsche Erlass zufällig auch führt, '
+    + 'bleibt unsichtbar — so war «HBG → BS-730.110 § 8» nur über § 8b auffällig.)');
 
   if (warn.length) {
     console.log(`\ncheck:bezuege — ${warn.length} Hinweis(e), kein Fehler:`);

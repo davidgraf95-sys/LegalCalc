@@ -802,8 +802,25 @@ export function artikelSchluesselVonSnapshot(snap: EntscheidSnapshot): Set<strin
 //     zu 905/906 selbstkonsistent.
 //   · 1'283 bundesgerichtliche Snapshots → 31 Definitionen, 14 auflösbar,
 //     NULL Abweichungen dieser Form.
-// Wirkung am Ende beider Arme: 2 gesperrte (Dokument, Key)-Paare, BPR und KAG —
-// beide unten belegt, kein einziger richtiger Treffer mitgenommen.
+// Wirkung am Ende beider Arme, EHRLICH GETRENNT (§8): 70 (Dokument, Key)-Paare
+// werden gesperrt, davon 2 mit sichtbarer Wirkung auf die ausgelieferten Kanten
+// (BPR und KAG, beide unten belegt). Die übrigen 68 sperren Keys, die dieses
+// Dokument ohnehin an keinem Artikel getragen hätte — die Sperre greift dort ins
+// Leere. «2» ist die Wirkung, «70» die Reichweite; wer nur eine der beiden Zahlen
+// nennt, sagt entweder die Regel sei folgenloser oder schärfer, als sie ist.
+//
+// ── BENANNTE LÜCKE, NICHT VON DIESER REGEL GEDECKT (Gegenprüfung Runde 2/B6) ─
+// Der `zitierteNormen`-Zweig (OCL statutes[]) wird NICHT vom Literatur-Kontext
+// bereinigt — er ist Roh-Drittextraktion und trägt darum Literatur-Phantome in
+// die Erlass-Ebene: Kommentar-Titel wie «… Kommentar zu Art. 261bis StGB und
+// Art. 171c MStG» erzeugen einen MSTG-Eintrag, obwohl das Gericht die Norm nie
+// anwendet. GEMESSEN: 158 solcher Paare stehen bereits auf `main`, 4 kommen mit
+// dieser Bau-Einheit dazu. Sie zu entfernen hiesse, den bestehenden
+// `zitierteNormen`-Zweig zu ändern und damit `normKeys`/`proNorm` — ein
+// AUSGELIEFERTES Bestands-Artefakt. Das ist eine fachliche Korrektur am
+// W2·6-NKEY-Kanal und gehört in einen eigenen, deklarierten Schritt (§14/§6.3),
+// wie die beiden Namensvetter-Fälle EPG/IRSG (siehe bezuege-bauen.ts). Hier
+// benannt, damit die Lücke beauftragt werden kann statt verloren zu gehen.
 //
 // WAS SIE NICHT MISST, ausdrücklich (§8): Fehlzuordnungen in Entscheiden, die
 // die Abkürzung weder definieren noch mit einem Sammlungs-Sigel versehen. Diese

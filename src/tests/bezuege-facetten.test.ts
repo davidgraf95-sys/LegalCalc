@@ -5,7 +5,8 @@ import {
 } from '../lib/verzahnung/facetten';
 import { extrahiereParagraphGruppen, extrahiereStatutRefs } from '../lib/rechtsprechung/zitat-extraktion';
 import {
-  SYSTEMATIK_PRAEFIX, baueNummernDominanz, kantoneOhneResolver, loeseKantonZitate,
+  SYSTEMATIK_PRAEFIX, amtlichesKuerzel, baueNummernDominanz, kantoneOhneResolver,
+  kuerzelKonsistent, loeseKantonZitate, titelParagraphen,
 } from '../../scripts/normtext/kanton-norm-resolver';
 import { fremdDefinierteKeys } from '../../scripts/normtext/entscheide-mapping';
 import type { EntscheidSnapshot } from '../lib/rechtsprechung/typen';
@@ -268,6 +269,109 @@ describe('B2-Riegel · Quell-Tippfehler in der Systematik-Nummer (Gegenprüfung 
   it('ohne Dominanz-Karte verhält sich der Resolver wie zuvor', () => {
     const b = loeseKantonZitate('§ 92 des Gerichtsorganisationsgesetzes (GOG, SG 153.100)', 'BS', bestand);
     expect(b.zitate).toEqual([{ erlass: 'BS-153.100', artikel: '92', kanal: 'nummer' }]);
+  });
+});
+
+describe('B1/R2 · Erlass-Titel mit eigenem «§» (Gegenprüfung Runde 2)', () => {
+  // Fuenf BS-Erlasse tragen ein FREMDES «§» im amtlichen Titel. Ohne Sonder-
+  // behandlung bindet die Regel «letzte §-Gruppe vor dem Locator» das § DES
+  // TITELS — und die richtige Kante geht verloren.
+  const bestand = new Map([
+    ['164.410', 'BS-164.410'], ['164.160', 'BS-164.160'], ['164.250', 'BS-164.250'],
+    ['390.720', 'BS-390.720'], ['390.760', 'BS-390.760'],
+  ]);
+  const titel = new Map([
+    ['164.410', 'Verordnung betreffend Zulagen gemäss § 15a Lohngesetz, Zulagenverordnung (164.410)'],
+    ['164.160', 'Verordnung über die Beschleunigung des Stufenaufstiegs gemäss § 10 des Lohngesetzes (164.160)'],
+    ['164.250', 'Verordnung über das Dienstaltersgeschenk gemäss § 23 Lohngesetz, Dienstaltersgeschenkverordnung (164.250)'],
+    ['390.720', 'Vertrag betreffend die Kremation aufgrund von § 17 des Gesetzes betreffend die Bestattungen (390.720)'],
+    ['390.760', 'Vertrag betreffend die Kremation gemäss § 1 der Vollziehungsverordnung (390.760)'],
+  ]);
+
+  it('titelParagraphen liest Nummer UND Folgewort aus dem amtlichen Titel', () => {
+    expect(titelParagraphen(titel.get('164.410')!).get('15a')).toBe('lohngesetz');
+    expect(titelParagraphen(titel.get('164.250')!).get('23')).toBe('lohngesetz');
+    expect(titelParagraphen('Advokaturgesetz (291.100)').size).toBe(0);
+  });
+
+  it('ANLASSFALL VD.2021.145: § 15a wird NICHT gebunden, § 5 schon', () => {
+    const t = 'Gemäss § 5 der Verordnung betreffend Zulagen gemäss § 15a Lohngesetz '
+      + '(Zulagenverordnung, SG 164.410) haben Mitarbeiterinnen Anspruch.';
+    const z = loeseKantonZitate(t, 'BS', bestand, undefined, titel);
+    expect(z.zitate).toEqual([{ erlass: 'BS-164.410', artikel: '5', kanal: 'nummer' }]);
+  });
+
+  it('gilt für alle fuenf Titel-§-Erlasse', () => {
+    const faelle: Array<[string, string, string, string]> = [
+      ['164.410', '15a Lohngesetz', '5', 'BS-164.410'],
+      ['164.160', '10 des Lohngesetzes', '3', 'BS-164.160'],
+      ['164.250', '23 Lohngesetz', '4', 'BS-164.250'],
+      ['390.720', '17 des Gesetzes', '2', 'BS-390.720'],
+      ['390.760', '1 der Vollziehungsverordnung', '6', 'BS-390.760'],
+    ];
+    for (const [nr, titelPar, echt, key] of faelle) {
+      const t = `Nach § ${echt} der Verordnung gemäss § ${titelPar} (Kurzform, SG ${nr}) gilt`;
+      const z = loeseKantonZitate(t, 'BS', bestand, undefined, titel);
+      expect(z.zitate.map((x) => x.artikel)).toEqual([echt]);
+      expect(z.zitate[0].erlass).toBe(key);
+    }
+  });
+
+  it('ein FREMDES § dazwischen bindet weiterhin NICHT (Schutz bleibt scharf)', () => {
+    const t = 'Nach § 5 VRPG und § 99 Bundesgesetz (Zulagenverordnung, SG 164.410) folgt';
+    const z = loeseKantonZitate(t, 'BS', bestand, undefined, titel);
+    expect(z.zitate.some((x) => x.artikel === '5')).toBe(false);
+  });
+});
+
+describe('B2/R2 · zweite Achse: amtliches Kürzel der Nummer', () => {
+  const bestand = new Map([['730.110', 'BS-730.110'], ['291.100', 'BS-291.100']]);
+  const titel = new Map([
+    ['730.110', 'Bau- und Planungsverordnung, BPV (730.110)'],
+    ['291.100', 'Advokaturgesetz (291.100)'],
+  ]);
+
+  it('amtlichesKuerzel liest nur echte Kürzel', () => {
+    expect(amtlichesKuerzel('Bau- und Planungsverordnung, BPV (730.110)')).toBe('BPV');
+    expect(amtlichesKuerzel('Verfassung des Kantons Basel-Stadt (111.100)')).toBeNull();
+  });
+
+  it('ANLASSFALL HBG: einzige Bindung, also keine Mehrheit — Kürzel-Achse greift', () => {
+    const t = '§ 8 des Hochbaugesetzes (HBG, SG 730.110) sieht vor';
+    const b = loeseKantonZitate(t, 'BS', bestand, undefined, titel);
+    expect(b.zitate).toEqual([]);
+    expect(b.nummerMinderheit).toEqual(['HBG: 730.110 (amtlich «BPV»)']);
+  });
+
+  it('schweigt, wo die Nummer kein eigenes Kürzel führt (sonst 361 Fehl-Sperren)', () => {
+    expect(kuerzelKonsistent('KV', 'Verfassung des Kantons Basel-Stadt (111.100)')).toBe(true);
+    const t = '§ 18 des Advokaturgesetzes (AdvG, SG 291.100) bestimmt';
+    expect(loeseKantonZitate(t, 'BS', bestand, undefined, titel).zitate.length).toBe(1);
+  });
+
+  it('Teilwort und Umlaut-Faltung retten richtige Varianten', () => {
+    expect(kuerzelKonsistent('VRPG BS', 'Gesetz, VRPG (270.100)')).toBe(true);
+    expect(kuerzelKonsistent('aBüRG', 'Bürgerrechtsgesetz, BüRG (121.100)')).toBe(true);
+    expect(kuerzelKonsistent('UeStG', 'Übertretungsstrafgesetz, ÜStG (253.100)')).toBe(true);
+    expect(kuerzelKonsistent('JVG', 'Justizvollzugsverordnung, JVV (258.210)')).toBe(false);
+  });
+});
+
+describe('B5/R2 · Gemeinde-Präfix ist Teil der Erlass-Identität', () => {
+  const bestand = new Map([
+    ['640.100', 'BS-640.100'],
+    ['RiE 640.100', 'BS-RiE 640.100'],
+  ]);
+
+  it('TESTPIN: «StO RiE» kollabiert NICHT auf die kantonale Nummer', () => {
+    const t = 'Nach der Steuerordnung Riehen [StO RiE, SG RiE 640.100] gilt § 22 StO RiE.';
+    const z = loeseKantonZitate(t, 'BS', bestand);
+    for (const x of z.zitate) expect(x.erlass).not.toBe('BS-640.100');
+  });
+
+  it('die Dominanz-Karte zählt die volle Nummer samt Präfix', () => {
+    const dom = baueNummernDominanz(['(StO RiE, SG RiE 640.100)', '(StO RiE, SG RiE 640.100)'], 'BS');
+    expect(dom.get('STORIE')).toBe('RiE 640.100');
   });
 });
 

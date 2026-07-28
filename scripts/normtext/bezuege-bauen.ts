@@ -43,7 +43,7 @@ import {
 } from '../../src/lib/verzahnung/facetten';
 import { artikelSchluesselMitBefund, fliesstextOhneApparat, fremdDefinierteKeys } from './entscheide-mapping';
 import { keyVon, kanonZitat, selbstTokens } from './entscheide-identitaet';
-import { baueNummernDominanz, ladeKantonBestand, loeseKantonZitate, type KantonBestand } from './kanton-norm-resolver';
+import { baueNummernDominanz, ladeKantonBestand, ladeKantonTitel, loeseKantonZitate, type KantonBestand } from './kanton-norm-resolver';
 
 /** EINE Kante Norm-Artikel → Dokument, mit ihren Facetten (B1). */
 export interface BezugsKante {
@@ -218,6 +218,8 @@ export function baueBezugsIndex(
    * einmal alle 3765 BS-Kurzzeilen gelöscht.
    */
   kurzzeile: (s: EntscheidSnapshot) => string | null,
+  /** Repo-Wurzel — für die amtlichen Erlass-Titel der kantonalen Riegel (B1/B2). */
+  wurzel: string = process.cwd(),
 ): BezugsIndex {
   const snapshotsJeStatus: Record<string, number> = {};
   const kantenJeStatus: Record<string, number> = {};
@@ -233,10 +235,12 @@ export function baueBezugsIndex(
   // (Tippfehler-Riegel B2). Zwei Durchgänge, weil «mehrheitlich» eine Aussage
   // über den Korpus ist und kein Dokument sie allein treffen kann.
   const dominanz = new Map<string, Map<string, string>>();
+  const kantonTitel = new Map<string, Map<string, string>>();
   for (const kanton of kantonBestaende.keys()) {
     const texte: string[] = [];
     for (const s of auswahl) if (s.kanton === kanton) texte.push(fliesstextOhneApparat(s));
     dominanz.set(kanton, baueNummernDominanz(texte, kanton));
+    kantonTitel.set(kanton, ladeKantonTitel(wurzel, kanton));
   }
 
   // ── Durchgang 1: je Snapshot Facetten, Artikel-Schlüssel und Selbst-Tokens ──
@@ -302,7 +306,8 @@ export function baueBezugsIndex(
     const bestand = s.kanton !== 'CH' ? kantonBestaende.get(s.kanton) : undefined;
     if (bestand && bestand.size) {
       const kb = loeseKantonZitate(
-        fliesstextOhneApparat(s), s.kanton, bestand, dominanz.get(s.kanton),
+        fliesstextOhneApparat(s), s.kanton, bestand,
+        dominanz.get(s.kanton), kantonTitel.get(s.kanton),
       );
       for (const z of kb.zitate) {
         schluessel.add(`${z.erlass}/${z.artikel}`);
