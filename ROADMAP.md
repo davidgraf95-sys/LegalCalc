@@ -509,7 +509,14 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   (Gegenprüfung #393 live belegt) ·
   **(F-d)** NBSP-Faltung in `bereinige()` (adapter-lexwork) UND Sidecar-Pfad: `\s+`-Kollaps
   frisst U+00A0 — Verstoss gegen die Verbatim-Regel (Skill scraping-swiss-official-sources);
-  Umfang korpusweit erheben, dann Fix + Regeneration. Beleg SO-614.11 §256bis.
+  Umfang korpusweit erheben, dann Fix + Regeneration. Beleg SO-614.11 §256bis. ·
+  **(F-e)** Vier fail-closed-Auflagen aus GP-Runde 3 zu PR #400 (`check:fedlex-abk-netz`,
+  Register 28.7.2026; keine erzeugt ein Falsch-Urteil, am Live-Korpus mit 197 fremden SR
+  unerreichbar): `noetigeFremde` 6 → `FUELLUNG+1` heben + Meldung «keine zweite Wertemenge
+  konstruierbar» von «Endpoint kappt» trennen (§8) · Doku-Wortlaut «irgendeiner Nachfrage» an
+  Code («aussagekräftige») angleichen · `nichtAbsicherbar` maskiert danebenliegende
+  Befunde (8 über 4 SR gemeldet, 3 gelistet) — itemisieren · Hauptlauf nutzt feste
+  Batch-Komposition ohne Selbstheilung, falls sie je deterministisch kappt.
   Zusätzlich notiert (§8, kein Bau): `erzeugt`-Stempel bedeutet «Inhalt zuletzt geändert»,
   nicht «zuletzt gegen die Quelle geprüft» — bei einem künftigen Kanton-Currency-Tor (F-b)
   sauber trennen.
