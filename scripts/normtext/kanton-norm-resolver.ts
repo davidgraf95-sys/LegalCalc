@@ -251,13 +251,32 @@ export function titelWiderspricht(
   // heute einen Titel, der mit ihrem FRÜHEREN keine Wortüberschneidung hat —
   // 154.300 · 164.100 · 212.400 · 300.100 · 610.500 · 789.700 · 911.900. Zitiert
   // ein Entscheid den damaligen Titel, sieht die Achse einen Widerspruch, wo
-  // keiner ist: «§ 7 Abs. 4 des Gesetzes betreffend Einreihung und Entlöhnung …
-  // (Lohngesetz [LG], SG 164.100)» — «Lohngesetz» ist der HEUTIGE Titel, der
-  // ausgeschriebene der alte, und die Bindung ist völlig richtig
-  // (reproduziert an VD.2024.65; heute ohne gelieferte Kante, aber latent).
+  // keiner ist — Muster «des Gesetzes betreffend Einreihung und Entlöhnung …
+  // (Lohngesetz, SG 164.100)»: der ausgeschriebene Titel ist der alte,
+  // «Lohngesetz» der heutige, und die Bindung ist völlig richtig.
+  //
+  // WIE WEIT DER BELEG TRÄGT (§7, Gegenprüfung Runde 5/F2): die Klasse ist an
+  // der FUNKTION nachgestellt, nicht am Aufrufpunkt. Der zuvor hier genannte
+  // Korpus-Fall VD.2024.65 belegt sie NICHT: dort steht die Kurzform in eckigen
+  // Klammern («… (Lohngesetz [LG], SG 164.100)»), und `titelPhrase` schneidet an
+  // der eckigen Klammer — geprüft wird «,», nie der Alt-Titel. Die Achse feuert
+  // dort also gar nicht, und die fehlende Kante BS-164.100/§ 7 hat einen anderen
+  // Grund (sie fehlt mit und ohne `titel`-Parameter). Am Korpus ist mit dieser
+  // Schreibweise kein Fall bekannt, in dem die Achse für 164.100 feuert — die
+  // Rettung ist Vorsorge gegen eine belegte STRUKTUR, kein Fix eines belegten
+  // Ausfalls (Live-Wirkung heute: 0 Kanten).
   // Nennt das Dokument das amtliche KÜRZEL der Nummer, ist die Zuordnung von
   // ihm selbst bestätigt — dann schweigt die Achse. «HBG … (SG 730.110)» wird
   // davon nicht gerettet: dort steht «HBG», das amtliche Kürzel ist «BPV».
+  //
+  // GEGENRICHTUNG, ausdrücklich in Kauf genommen (Gegenprüfung Runde 5/F1):
+  // steht das RICHTIGE Kürzel neben einem WIDERSPRECHENDEN Titel, schweigt die
+  // Achse ebenfalls — «des Hochbautengesetzes (BPV, SG 730.110)» ergibt false.
+  // Das ist gewollt: Kürzel und Nummer stammen aus derselben amtlichen Angabe
+  // und stützen sich gegenseitig, der ausgeschriebene Titel ist die Prosa des
+  // Gerichts und die häufigere Fehlerquelle (Alt-Titel, Paraphrase, Tippfehler).
+  // Wer hier umgekehrt entscheidet, holt sich die 24 Fehl-Sperren der Runde 3
+  // zurück. Live-Wirkung dieser Richtung heute: 0 Kanten.
   const k = amtlichesKuerzel(amtlicherTitel);
   if (k && new RegExp(`(?:^|[^A-Za-zÄÖÜäöü0-9])${k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![A-Za-zÄÖÜäöü0-9])`).test(umfeld)) return false;
   // Nur das Textstück UNMITTELBAR vor der Klammer zählt: der Erlass-Titel hängt
@@ -642,7 +661,13 @@ export function loeseKantonZitate(
         // abgeschnitten, sonst bliebe als «Titel» bloss die Kurzform übrig und
         // der Widerspruch wäre unsichtbar.
         const zwischenTitel = titelPhrase(zwischen.replace(/[([][^([]*$/, ''));
-        if (titelWiderspricht(zwischenTitel, titel?.get(sr), zwischen)) {
+        // Umfeld ist NUR die Bindungsklammer, nicht das ganze Fenster
+        // (Gegenprüfung Runde 5/F1): die Rettung beruht darauf, dass Kürzel und
+        // Nummer AUS DERSELBEN amtlichen Angabe stammen. Ein Kürzel, das
+        // irgendwo sonst im Fenster steht, bestätigt diese Bindung nicht — es
+        // stünde dort auch, wenn es zu einem anderen Erlass gehört.
+        const bindungsKlammer = /[([][^([]*$/.exec(zwischen)?.[0] ?? '';
+        if (titelWiderspricht(zwischenTitel, titel?.get(sr), bindungsKlammer)) {
           nummerMinderheit.add(`${sr} (genannter Titel widerspricht)`);
         } else if (domF !== undefined && domF !== sr) {
           nummerMinderheit.add(`${abkImFenster}: ${sr} (Korpus-Mehrheit ${domF})`);

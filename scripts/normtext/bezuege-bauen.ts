@@ -23,6 +23,17 @@
 // Shard bleibt darum exakt so schwer wie vorher, und der neue wird erst geladen,
 // wenn jemand die Facetten einschaltet.
 //
+// ── BENANNTE FUNDSTELLE, NICHT HIER GEFIXT (Gegenprüfung Runde 5/F3) ────────
+// `bezuege/BETMG.json` führt an Art. 305bis den Basler Entscheid SB.2020.92 —
+// das BetmG hat keinen Art. 305bis (das ist die Geldwäscherei-Norm des StGB).
+// Ursache liegt NICHT in dieser Bau-Einheit: der vorbestehende Kanal
+// `artikelSchluesselMitBefund` (W2·6-NKEY) erzeugt aus einer Nennung der Form
+// «Art. 305bis … StGB» im selben Glied BEIDE Register-keys, STGB und BETMG.
+// Der Fix gehört in diesen Kanal und ändert `proNormArtikel` — also ein eigener,
+// deklarierter Schritt (§14/§6.3), wie EPG/IRSG und die Literatur-Phantome des
+// `zitierteNormen`-Zweigs. Sichtbar bleibt er über den Bundes-Existenz-Abgleich
+// in check:bezuege; die 26 ausschliesslich-kantonalen Buckets stehen dort.
+//
 // ── DREI GRÖSSEN, DIE MAN NICHT VERWECHSELN DARF ────────────────────────────
 //  · `status`         — die Facetten-Klasse einer Kante (bge/bger/eidg/kantonal).
 //                       Sie steuert den DECKEL und die Anzeige-Ordnung.

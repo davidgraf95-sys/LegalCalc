@@ -343,24 +343,47 @@ function main(): void {
   //      korrigieren hiesse, die Quelle zu überschreiben.
   // Rot wäre hier ein Tor, das die falsche Frage stellt; sichtbar muss die Zahl
   // trotzdem sein (§6.7).
-  let existenzGeprueft = 0;
+  let existenzGeprueft = 0, bundOhneBestand = 0, bundNurKantonal = 0;
   for (const datei of dateien) {
     const shard = JSON.parse(readFileSync(join(BEZ, datei), 'utf8')) as BezugsShard;
-    if (shard.erlassEbene !== 'kanton') continue;
-    const snapPfad = join(ROOT, 'public', 'normtext', 'kanton', `${shard.erlass}.json`);
-    if (!existsSync(snapPfad)) continue;   // T2 hat das bereits rot gemeldet
+    const kantonal = shard.erlassEbene === 'kanton';
+    // SPIEGELBILDLICH AUCH FÜR BUNDES-SHARDS (Gegenprüfung Runde 5/F3). Der
+    // Abgleich lief nur kantonal — dabei entsteht dieselbe Klasse auf der
+    // Bundesseite, und ein Teil davon liefert dieser PR NEU aus (kantonale
+    // Entscheide an Bundesartikeln). Ein Abgleich, der nur eine Hälfte seiner
+    // Fläche ansieht, misst nicht den Bestand, sondern seine eigene Reichweite.
+    const snapPfad = kantonal
+      ? join(ROOT, 'public', 'normtext', 'kanton', `${shard.erlass}.json`)
+      : join(ROOT, 'public', 'normtext', 'bund', `${shard.erlass}.json`);
+    if (!existsSync(snapPfad)) continue;   // T2 meldet fehlende kantonale Snapshots rot
     const vorhanden = artikelTokensVonErlass(snapPfad);
     if (!vorhanden.size) continue;         // Snapshot ohne lesbare Artikel — nichts zu sagen
     existenzGeprueft++;
     for (const token of Object.keys(shard.proArtikel)) {
-      if (!vorhanden.has(token)) {
+      if (vorhanden.has(token)) continue;
+      const kanten = shard.proArtikel[token] ?? [];
+      if (kantonal) {
         warn.push(`${shard.erlass}: § ${token} kommt im Normtext-Snapshot nicht vor `
-          + `(${(shard.proArtikel[token] ?? []).length} Kante(n)) — Alt-Fassung ODER `
-          + `Zitierfehler der Quelle.`);
+          + `(${kanten.length} Kante(n)) — Alt-Fassung ODER Zitierfehler der Quelle.`);
+      } else {
+        bundOhneBestand++;
+        // Trennen, was DIESER PR neu ausliefert: Buckets, die ausschliesslich
+        // aus kantonalen Kanten bestehen, gab es vorher nicht (§8 — die eigene
+        // Zutat nicht im Bestandsrauschen verstecken).
+        const nurKantonal = kanten.length > 0
+          && kanten.every((e) => shard.dokumente?.[e.key]?.facetten.status === 'kantonal');
+        if (nurKantonal) {
+          bundNurKantonal++;
+          warn.push(`${shard.erlass}: Art. ${token} kommt im Bundes-Snapshot nicht vor `
+            + `(${kanten.length} Kante(n), ausschliesslich kantonal) — Zitierfehler der Quelle, `
+            + `Kommentar-Apparat ODER Alt-Fassung.`);
+        }
       }
     }
   }
-  console.log(`  Artikel-Existenz-Abgleich: ${existenzGeprueft} kantonale Erlass-Shards gegen ihren Normtext-Snapshot geprüft.`);
+  console.log(`  Artikel-Existenz-Abgleich: ${existenzGeprueft} Erlass-Shards (kantonal UND Bund) gegen ihren Normtext-Snapshot geprüft.`);
+  console.log(`    Bundes-Shards: ${bundOhneBestand} Artikel-Buckets ohne Entsprechung im Snapshot, `
+    + `davon ${bundNurKantonal} ausschliesslich aus kantonalen Kanten (von dieser Bau-Einheit neu geliefert).`);
   console.log('    (UNTERE SCHRANKE, §8: der Abgleich sieht nur Bindungen auf §§, die es im heutigen '
     + 'Snapshot NICHT gibt. Eine Fehlbindung auf einen §, den der falsche Erlass zufällig auch führt, '
     + 'bleibt unsichtbar — so war «HBG → BS-730.110 § 8» nur über § 8b auffällig.)');
