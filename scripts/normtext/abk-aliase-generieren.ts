@@ -52,6 +52,40 @@
  * Aufruf: npm run gen:abk-aliase -- --datum=YYYY-MM-DD
  *   Der Stichtag ist PFLICHT (§2): er geht in das Currency-Fenster ein, ist im
  *   Datei-Kopf dokumentiert und macht den Lauf reproduzierbar. Kein Date.now().
+ *
+ * ── DRIFT-TOR: npm run check:fedlex-abk-netz  (= dieses Skript mit --check) ──
+ *
+ * ANLASS (28.7.2026). Das Artefakt trug bis hierher KEINE Drift-Erkennung. Damit
+ * fehlte ihm das vierte Merkmal der Zitat-Ausnahme (§7 lit. d): ändert Fedlex
+ * eine amtliche Kurzbezeichnung, wird ein Erlass abgelöst oder kommt ein Kürzel
+ * hinzu, blieb die committete Abschrift still falsch — eine zweite Wahrheit (§5),
+ * die niemand meldet. `--check` schliesst genau diese Lücke: dieselbe Abfrage,
+ * dieselben vier Regeln, aber statt zu schreiben wird VERGLICHEN.
+ *
+ * WARUM ALS MODUS UND NICHT ALS ZWEITES SKRIPT (§5): Prüfling und Prüfer müssen
+ * dieselbe SPARQL-Kette benutzen. Ein Parallel-Skript mit eigener Abfrage prüfte
+ * am Ende die Übereinstimmung zweier Abfragen und nicht die des Artefakts mit der
+ * Amtsquelle — und driftete unbemerkt vom Generator weg (§6.7).
+ *
+ * DREI EIGENSCHAFTEN, DIE DAS TOR TRAGEN:
+ *  (a) Ein STILL PARTIELLES ODER LEERES SPARQL-Resultat kann nie grün werden.
+ *      Erstens greift auch im Prüf-Modus je Batch das COUNT-Tor mit frischem
+ *      Paar (Regel 4). Zweitens ist jede fehlende Zeile per Konstruktion ROT:
+ *      der Vergleich ist mengengleich in BEIDE Richtungen, ein Teilergebnis
+ *      erscheint also als «weggefallen» und nicht als «kein Drift». Drittens
+ *      bricht ein Resultat von 0 Zeilen sofort ab, statt 597 Weggefallene zu
+ *      melden — die ehrlichere Diagnose (Endpoint, nicht Recht).
+ *  (b) Ein NETZFEHLER ist ein eigener Fehlerpfad, nie grün: die einzige I/O-
+ *      Strecke (der Batch-Abruf) liegt in einem try/catch, das über
+ *      `netzAbbruch()` Ursache UND Nicht-Aussage ausspricht und mit 1 endet.
+ *      Belegt am 28.7.2026 gegen einen unerreichbaren Host («fetch failed») und
+ *      gegen eine falsche Endpoint-Adresse («antwortet 405»).
+ *  (c) Der Stichtag ist im Prüf-Modus OPTIONAL und dann der heutige Tag (UTC).
+ *      Das ist bewusst: ein Drift-Tor, das gegen den EINGEFRORENEN Stichtag des
+ *      Artefakts prüfte, könnte die wichtigste Drift-Art gar nicht sehen — eine
+ *      Konsolidierung, die NACH dem Artefakt-Stand in Kraft trat. Wanduhr steckt
+ *      damit nur im Prüf-Pfad (Frage: «gilt das heute noch?»), nie im
+ *      Schreib-Pfad und nie in der Rechenlogik (§2).
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -91,9 +125,14 @@ const SPRACHE: Record<string, 'de' | 'fr' | 'it'> = { DEU: 'de', FRA: 'fr', ITA:
 
 export interface AliasZeile { sr: string; sprache: 'de' | 'fr' | 'it'; abk: string }
 
-// ── Argument ────────────────────────────────────────────────────────────────
+// ── Argumente ───────────────────────────────────────────────────────────────
+/** `--check`: nicht schreiben, sondern gegen die Amtsquelle vergleichen (Drift-Tor). */
+const NUR_PRUEFEN = process.argv.includes('--check');
 const datumArg = process.argv.find((a) => a.startsWith('--datum='));
-const STICHTAG = datumArg ? datumArg.slice('--datum='.length) : '';
+const STICHTAG = datumArg
+  ? datumArg.slice('--datum='.length)
+  // Prüf-Modus ohne --datum: heute (UTC). Begründung (c) im Datei-Kopf.
+  : (NUR_PRUEFEN ? new Date().toISOString().slice(0, 10) : '');
 if (!/^\d{4}-\d{2}-\d{2}$/.test(STICHTAG)) {
   console.error('--datum=YYYY-MM-DD ist Pflicht (§2: reproduzierbarer Stand, kein Date.now()).');
   process.exit(1);
@@ -243,14 +282,210 @@ function bestandZeilen(): number {
   return n;
 }
 
+/** Eine Artefakt-Zeile, exakt so wie `schreibeArtefakt()` sie rendert. */
+const ZEILEN_MUSTER = /^ {2}\{ sr: "([^"]+)", sprache: '(de|fr|it)', abk: ("(?:[^"\\]|\\.)*") \},$/;
+
+/**
+ * Die committeten Alias-Zeilen — die PRÜFLING-Seite des Drift-Tors.
+ *
+ * Anders als `bestandZeilen()` ist ein FEHLENDES Artefakt hier kein Erstlauf,
+ * sondern rot: ohne committete Seite gibt es nichts zu vergleichen, und ein Tor,
+ * das ohne Prüfling grün meldet, ist genau das Tor aus §6.7. Ebenso rot ist eine
+ * Zeile, die das Muster nicht trifft: dann hat entweder eine Hand-Edition das
+ * Artefakt verändert (verboten) oder das Render-Format des Generators hat sich
+ * geändert, ohne dass der Parser mitgezogen wurde — in beiden Fällen verglich
+ * das Tor sonst gegen eine Teilmenge und schwiege über den Rest.
+ */
+function bestandLesen(): AliasZeile[] {
+  if (!existsSync(ZIEL)) {
+    console.error(
+      `PRÜFUNG UNMÖGLICH: ${ZIEL} existiert nicht. Ohne committetes Artefakt gibt es keinen `
+      + 'Prüfling — erst `npm run gen:abk-aliase -- --datum=$(date +%F)` fahren.',
+    );
+    process.exit(1);
+  }
+  const inhalt = readFileSync(ZIEL, 'utf8');
+  const kandidaten = inhalt.split('\n').filter((z) => z.startsWith('  { sr: '));
+  const zeilen: AliasZeile[] = [];
+  for (const z of kandidaten) {
+    const m = ZEILEN_MUSTER.exec(z);
+    if (!m) {
+      console.error(
+        `Artefakt-Zeile trifft das erwartete Format NICHT: ${z}\n`
+        + `  → ${ZIEL} von Hand editiert oder Render-Format geändert. Abbruch statt Teilvergleich (§6.7).`,
+      );
+      process.exit(1);
+    }
+    zeilen.push({ sr: m[1], sprache: m[2] as 'de' | 'fr' | 'it', abk: JSON.parse(m[3]) as string });
+  }
+  if (zeilen.length === 0) {
+    console.error(`Artefakt ${ZIEL} enthält KEINE Alias-Zeile — Abbruch (kaputtes Artefakt, §6.7).`);
+    process.exit(1);
+  }
+  return zeilen;
+}
+
+// ── Drift-Vergleich (nur --check) ───────────────────────────────────────────
+
+/**
+ * HINWEIS, KEIN TOR: deutsche Anzeige-Abkürzung im ERLASS_REGISTER ≠ amtliches
+ * `titleShort` derselben SR-Nummer.
+ *
+ * Warum sichtbar: eine solche Divergenz ist eine offene FACHLICHE Frage (§7/§8) —
+ * das Register führt die im Schrifttum gebräuchliche Anzeigeform, Fedlex die
+ * amtliche Kurzbezeichnung; welche im UI stehen soll, entscheidet nicht ein
+ * Build-Schritt. Belegter Fall (28.7.2026): SR 0.142.30 — Register «GFK»
+ * (Genfer Flüchtlingskonvention), Fedlex «FK».
+ *
+ * Warum trotzdem kein Tor: rot machen hiesse, eine Antwort zu erzwingen, die nur
+ * David geben kann; still lassen hiesse, sie zu vergessen. Darum ausgewiesen mit
+ * Verweis auf die Aktenlage — Entscheid offen in
+ * bibliothek/recherche/fedlex-abkuerzungen-titleshort.md.
+ */
+function divergenzHinweis(live: AliasZeile[]): void {
+  const amtlichDe = new Map<string, string>();
+  for (const z of live) if (z.sprache === 'de') amtlichDe.set(z.sr, z.abk);
+  // Vergleich auf Buchstaben/Ziffern reduziert: «BVV 2» vs «BVV2» oder «Cst.» vs
+  // «CST» sind Schreibvarianten desselben Kürzels und keine Divergenz.
+  const kern = (s: string): string => s.toUpperCase().replace(/[^A-Z0-9ÄÖÜ]/g, '');
+  const zeilen: string[] = [];
+  for (const e of ERLASS_REGISTER) {
+    if (e.ebene !== 'bund' || !e.sr) continue;
+    const amtlich = amtlichDe.get(e.sr);
+    if (!amtlich || kern(e.kuerzel) === kern(amtlich)) continue;
+    zeilen.push(`SR ${e.sr} (key ${e.key}): Register '${e.kuerzel}' ≠ Fedlex '${amtlich}'`);
+  }
+  if (zeilen.length === 0) return;
+  console.log(
+    `\n  HINWEIS (kein Tor) — ${zeilen.length} DE-Divergenz(en) Register ↔ amtliches titleShort. `
+    + 'Anzeigeform ist ein fachlicher Entscheid (§7/§8), kein Build-Fakt; Aktenlage in '
+    + 'bibliothek/recherche/fedlex-abkuerzungen-titleshort.md:',
+  );
+  for (const z of zeilen.sort(vergleiche)) console.log(`    · ${z}`);
+}
+
+/**
+ * Vergleicht die LIVE geholten Zeilen mengengleich mit dem committeten Artefakt
+ * und endet selbst — grün nur bei Deckungsgleichheit.
+ *
+ * Der Vergleich läuft in BEIDE Richtungen über das Tripel (sr, sprache, abk).
+ * Das ist nicht Kosmetik, sondern das zweite Count-Tor: eine still gekappte
+ * SPARQL-Antwort erscheint dann zwingend als «weggefallen» und kann nicht als
+ * «kein Drift» durchgehen. Ein Vergleich nur in Richtung live→Artefakt («ist
+ * alles Geholte bekannt?») wäre bei jedem Teilergebnis grün — genau der
+ * Fehlklassifikator aus §6.7.
+ */
+function pruefeDrift(live: AliasZeile[], srAnzahl: number, srMitAlias: number): never {
+  // Null-Resultat: das ist ein Endpoint-Befund, keine Rechtsänderung. Ohne diesen
+  // Riegel meldete das Tor 597 «weggefallene» Kürzel und behauptete damit etwas
+  // über das Recht, was in Wahrheit eine Aussage über die Leitung ist (§8).
+  if (live.length === 0) {
+    console.error(
+      '\nENDPOINT LIEFERTE 0 ZEILEN bei nicht-leerem Register — das ist ein Quellen-, kein '
+      + 'Rechts-Befund. Kein Drift-Urteil (§8): Abfrage/Endpoint prüfen und erneut fahren.',
+    );
+    process.exit(1);
+  }
+
+  divergenzHinweis(live);
+
+  const bestand = bestandLesen();
+  const tripel = (z: AliasZeile): string => `${z.sr}|${z.sprache}|${z.abk}`;
+  const paar = (z: AliasZeile): string => `${z.sr}|${z.sprache}`;
+
+  const liveTripel = new Set(live.map(tripel));
+  const bestandTripel = new Set(bestand.map(tripel));
+  const livePaare = new Map<string, string[]>();
+  const bestandPaare = new Map<string, string[]>();
+  for (const z of live) livePaare.set(paar(z), [...(livePaare.get(paar(z)) ?? []), z.abk].sort(vergleiche));
+  for (const z of bestand) bestandPaare.set(paar(z), [...(bestandPaare.get(paar(z)) ?? []), z.abk].sort(vergleiche));
+
+  const geaendert: string[] = [];
+  const neu: string[] = [];
+  const weggefallen: string[] = [];
+
+  for (const [p, liveAbk] of livePaare) {
+    const bestandAbk = bestandPaare.get(p);
+    const [sr, sprache] = p.split('|');
+    if (!bestandAbk) {
+      neu.push(`SR ${sr} / ${sprache}: Fedlex führt '${liveAbk.join("', '")}' — im Artefakt fehlt die Zeile`);
+    } else if (liveAbk.join(' ') !== bestandAbk.join(' ')) {
+      geaendert.push(`SR ${sr} / ${sprache}: Artefakt '${bestandAbk.join("', '")}' → Fedlex '${liveAbk.join("', '")}'`);
+    }
+  }
+  for (const [p, bestandAbk] of bestandPaare) {
+    if (livePaare.has(p)) continue;
+    const [sr, sprache] = p.split('|');
+    weggefallen.push(
+      `SR ${sr} / ${sprache}: Artefakt führt '${bestandAbk.join("', '")}', Fedlex führt am ${STICHTAG} `
+      + 'KEIN Kürzel mehr (aufgehoben, abgelöst oder titleShort entfernt)',
+    );
+  }
+
+  console.log(`\n  Live:     ${live.length} Zeilen (${srMitAlias}/${srAnzahl} SR mit Alias)`);
+  console.log(`  Artefakt: ${bestand.length} Zeilen (${ZIEL})`);
+
+  const summe = geaendert.length + neu.length + weggefallen.length;
+  if (summe === 0) {
+    console.log(
+      `  OK — Artefakt deckungsgleich mit der Amtsquelle (Stand ${STICHTAG}), `
+      + `${liveTripel.size} Tripel beidseitig, ${bestandTripel.size} committet.\n`,
+    );
+    process.exit(0);
+  }
+
+  console.error(
+    `\nDRIFT gegen die amtliche Quelle: ${geaendert.length} geändert · ${neu.length} neu · `
+    + `${weggefallen.length} weggefallen (Stichtag ${STICHTAG}, Fedlex-SPARQL jolux:titleShort).`,
+  );
+  const block = (titel: string, zeilen: string[]): void => {
+    if (zeilen.length === 0) return;
+    console.error(`\n  ${titel} (${zeilen.length}):`);
+    for (const z of zeilen.sort(vergleiche)) console.error(`    • ${z}`);
+  };
+  block('GEÄNDERTE amtliche Abkürzung', geaendert);
+  block('NEUE amtliche Abkürzung', neu);
+  block('WEGGEFALLENE amtliche Abkürzung', weggefallen);
+  console.error(
+    '\n  → Artefakt neu erzeugen (`npm run gen:abk-aliase -- --datum=$(date +%F)`), Diff '
+    + 'BEWUSST abnehmen (§7: die amtliche Fassung ist massgeblich, nicht das Artefakt), '
+    + 'danach `npm run check:normkeys` — eine geänderte Abkürzung kann Zuordnungen '
+    + 'verschieben oder neue Kollisionen erzeugen.\n',
+  );
+  process.exit(1);
+}
+
 // ── Hauptlauf ───────────────────────────────────────────────────────────────
 
 const srs = srListe();
-console.log(`\n── gen:abk-aliase — Stand ${STICHTAG}, ${srs.length} SR-Nummern aus dem Register ──`);
+const modus = NUR_PRUEFEN ? 'check:fedlex-abk-netz (Drift-Prüfung, schreibt nicht)' : 'gen:abk-aliase';
+console.log(`\n── ${modus} — Stand ${STICHTAG}, ${srs.length} SR-Nummern aus dem Register ──`);
+
+/**
+ * Netzfehler sind ein EIGENER, ehrlicher Fehlerpfad — nie grün und nie stumm
+ * (§8). Ohne diesen Riegel entschied die Laufzeit, was ein nicht erreichbarer
+ * Endpoint bedeutet; ein Prüf-Modus, der bei DNS-Fehler oder HTTP 500 mit
+ * unklarem Stack endet, wird im Cron-Log leicht als «rot wegen Infrastruktur,
+ * schon gut» weggelesen. Darum wird hier ausgesprochen, was der Lauf NICHT
+ * aussagt: er ist keine Entlastung des Artefakts.
+ */
+function netzAbbruch(e: unknown): never {
+  console.error(
+    `\nNETZFEHLER gegen die Amtsquelle: ${e instanceof Error ? e.message : String(e)}\n`
+    + '  → Der Lauf hat NICHTS festgestellt: kein Drift-Freispruch und '
+    + `${NUR_PRUEFEN ? 'keine Abnahme' : 'kein geschriebenes Artefakt'}. `
+    + 'Ein unerreichbarer Endpoint darf nie grün werden (§6.7/§8) — später erneut fahren.',
+  );
+  process.exit(1);
+}
 
 const roh: SparqlBinding[] = [];
-for (let i = 0; i < srs.length; i += BATCH) {
-  roh.push(...await batchMitZaehltor(srs.slice(i, i + BATCH), i / BATCH + 1));
+try {
+  for (let i = 0; i < srs.length; i += BATCH) {
+    roh.push(...await batchMitZaehltor(srs.slice(i, i + BATCH), i / BATCH + 1));
+  }
+} catch (e) {
+  netzAbbruch(e);
 }
 
 // ── Filter + Konflikt-Prüfung ───────────────────────────────────────────────
@@ -306,6 +541,15 @@ for (const [sr, proSprache] of jeSrSprache) {
 zeilen.sort((a, b) => vergleiche(a.sr, b.sr)
   || RANG[a.sprache] - RANG[b.sprache]
   || vergleiche(a.abk, b.abk));
+
+// ── Prüf-Modus: vergleichen statt schreiben; endet in pruefeDrift ───────────
+//
+// Der Prüf-Modus verzweigt ERST HIER, nach Abfrage, COUNT-Tor, Trim/Leerstring-
+// Verwurf und Konflikt-Prüfung: er sieht damit genau dieselben Zeilen, die ein
+// Schreib-Lauf schreiben würde. Jede frühere Verzweigung hätte einen zweiten,
+// nur ähnlichen Pfad geschaffen — und ein Prüfer, der etwas anderes berechnet
+// als der Generator, prüft den Generator nicht (§5/§6.7).
+if (NUR_PRUEFEN) pruefeDrift(zeilen, srs.length, jeSrSprache.size);
 
 // ── Regressions-Tor: weniger Zeilen als committet ⇒ Abbruch (§6.7) ──────────
 const alt = bestandZeilen();
