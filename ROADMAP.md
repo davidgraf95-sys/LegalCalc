@@ -510,6 +510,15 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   **(F-d)** NBSP-Faltung in `bereinige()` (adapter-lexwork) UND Sidecar-Pfad: `\s+`-Kollaps
   frisst U+00A0 — Verstoss gegen die Verbatim-Regel (Skill scraping-swiss-official-sources);
   Umfang korpusweit erheben, dann Fix + Regeneration. Beleg SO-614.11 §256bis. ·
+  **(F-d-Bund, Nachtrag 28.7.2026)** Die NBSP-Faltung betrifft nicht nur den Kanton-Pfad:
+  alle 227 Bund-Snapshots enthalten **null U+00A0** (ChemRRV amtlich allein 2359 `&nbsp;`) —
+  Entscheid nötig, ob die Faltung gewollt ist; Umfangserhebung von F-d auf Bund ausweiten. ·
+  **(F-f)** Hochgestelltes `bis`/`ter` in **Gliederungs-Überschriften** wird verschluckt —
+  zwei rechtlich verschiedene Ziffern tragen dieselbe Nummer (ChemRRV Anh. 2.15 zweimal «6.6»:
+  amtlich `6.6` Zahlungen an Dritte und `6.6bis` Rückerstattung; Breite über alle 227
+  Bund-Caches: **6 Erlasse, 33 Überschriften** — CHEMRRV 26/27 · IVG 1/17 · ENTG 1/4 ·
+  GSCHV 2/2 · LRV 2/2 · AMBV 1/2; Artikel-Ebene korrekt, keine Regression, vor/nach #383
+  identisch). Fix ändert Golden ⇒ eigener fachlicher Schritt (§6.3), Risikopfad ⇒ `QS-GP`. ·
   **(F-e)** Vier fail-closed-Auflagen aus GP-Runde 3 zu PR #400 (`check:fedlex-abk-netz`,
   Register 28.7.2026; keine erzeugt ein Falsch-Urteil, am Live-Korpus mit 197 fremden SR
   unerreichbar): `noetigeFremde` 6 → `FUELLUNG+1` heben + Meldung «keine zweite Wertemenge
