@@ -68,11 +68,21 @@
  *     Zeilen bekommt. Regel 4 kann das prinzipiell nicht fangen (beide Abfragen
  *     sind gleich falsch), und keine Batch-Grösse ist beweisbar sicher.
  *
+ *     NACHTRAG RUNDE 2 (28.7.2026), eigene Nachmessung: die Pathologie ist NICHT
+ *     auf «nur 0.*-Füller» beschränkt — auch `{0.101, 220}` und `{220, 210}`
+ *     kappen SR 251 (je 6/6). Und die feste Füllung `fremde.slice(0, 3)` =
+ *     `{0.101, 0.142.112.681, 0.142.30}` kappt deterministisch SECHS SR:
+ *     142.204 · 161.1 · 170.512 · 211.412.411 · 251 · 946.512 (je 5/5 Läufe MISS
+ *     bei 7/7 Zeilen/COUNT; in einer anderen Zusammensetzung derselben SR HIT
+ *     12/12). Es gibt also keine «gesunde» Wertemenge, die man einmal festlegen
+ *     könnte. Die REIHENFOLGE ist ebenfalls kein Wirkmittel: dieselbe Wertemenge
+ *     kappt vorwärts wie rückwärts identisch (7/7, X beide Male weg).
+ *
  *     Konsequenz für den Bau: ein Verlust-Befund darf NIE aus EINER Abfrage-
  *     Zusammensetzung geschlossen werden. `batchListe()` hält Batches bei ≥ 3 SR
  *     (billiger Gürtel, keine Garantie); tragend ist die Verlust-Gegenprobe, die
- *     ZWEI unterschiedlich zusammengesetzte Nachfragen fährt und jede davon mit
- *     Positivkontrollen absichert (siehe `verlustGegenprobe`).
+ *     MEHRERE gestreute Zusammensetzungen versucht und jede mit Positivkontrollen
+ *     DERSELBEN SR absichert (siehe `verlustGegenprobe`).
  *
  * KONFLIKTE WERDEN NICHT GERATEN (§8). Trägt eine (sr, sprache) trotz Fenster
  * zwei verschiedene Kürzel, bricht der Generator mit Fehler ab statt still zu
@@ -443,28 +453,39 @@ function divergenzHinweis(live: AliasZeile[]): void {
  * alles Geholte bekannt?») wäre bei jedem Teilergebnis grün — genau der
  * Fehlklassifikator aus §6.7.
  */
+/** Wie viele Zusammensetzungen versucht werden, bis «kein Urteil» gilt. */
+const KOMPOSITIONEN = 4;
+/** Wie viele davon aussagekräftig sein müssen, damit ein Verlust bestätigt wird. */
+const NOETIGE_KOMPOSITIONEN = 2;
+/** Füll-SR je Nachfrage. Grosse Mengen liefern empirisch zuverlässiger als kleine. */
+const FUELLUNG = 12;
+
 /**
  * EINE Nachfrage-Zusammensetzung, abgesichert durch Positivkontrollen.
  *
- * `kontrollen` sind Tripel, die der HAUPTLAUF für SR-Nummern DIESER Nachfrage
- * geliefert hat. Sie müssen wiederkommen; sonst hat die Zusammensetzung selbst
- * gekappt (Regel 5) und es gibt kein Urteil. Eine leere Kontroll-Liste ist kein
- * «alles in Ordnung», sondern ein Abbruchgrund: eine Prüfung ohne Prüfmittel ist
- * das Tor aus §6.7, das nicht scheitern kann.
+ * BEENDET DEN PROZESS NICHT (Befund Runde 2). Vorher stand hier bei fehlenden
+ * Kontrollen ein `process.exit(1)` — damit war jede weitere Zusammensetzung toter
+ * Code, sobald die erste kappte, und sechs SR waren dauerhaft unbeurteilbar. Eine
+ * nicht aussagekräftige Zusammensetzung ist kein Endzustand, sondern ein Grund,
+ * die nächste zu versuchen.
+ *
+ * `kontrollen` sind Tripel, die der HAUPTLAUF für SR DIESER Nachfrage geliefert
+ * hat; sie müssen wiederkommen, sonst hat die Zusammensetzung selbst gekappt.
  */
 async function nachfrage(
   srs: string[], etikett: string, kontrollen: AliasZeile[],
-): Promise<Set<string>> {
-  if (srs.length < MIN_BATCH) {
-    console.error(`\nNachfrage ${etikett}: nur ${srs.length} SR — unter ${MIN_BATCH} nicht erprobt (Regel 5). Kein Urteil.`);
-    process.exit(1);
-  }
+): Promise<{ tripel: Set<string>; stumm: AliasZeile[] }> {
+  // KONSTRUKTIONS-ZUSICHERUNG, kein rot gezeigter Riegel (Ehrlichkeit §6.7):
+  // `verlustGegenprobe` schliesst SR ohne Live-Zeile vorher aus, darum ist diese
+  // Liste heute nie leer — die Bedingung ist unerreichbar und wird auch nicht als
+  // Nachweis geführt. Sie bleibt als Absturzsicherung für künftige Umbauten: wer
+  // die Reihenfolge ändert, bekommt einen klaren Fehler statt einer Nachfrage,
+  // die nichts prüfen kann.
   if (kontrollen.length === 0) {
-    console.error(
-      `\nNachfrage ${etikett}: KEINE Positivkontrolle vorhanden — eine Nachfrage ohne Prüfmittel `
-      + 'kann nicht scheitern und darf darum nicht urteilen (§6.7). Abbruch.',
+    throw new Error(
+      `Nachfrage ${etikett} ohne Positivkontrolle aufgerufen — programmatisch unmöglich, solange `
+      + 'nur absicherbare SR hierher kommen. Kein Urteil ohne Prüfmittel (§6.7).',
     );
-    process.exit(1);
   }
   let roh: SparqlBinding[];
   try {
@@ -482,15 +503,35 @@ async function nachfrage(
   }
   const stumm = kontrollen.filter((z) => !tripel.has(`${z.sr}|${z.sprache}|${z.abk}`));
   if (stumm.length > 0) {
-    console.error(
-      `\nNACHFRAGE ${etikett} NICHT AUSSAGEKRÄFTIG: ${stumm.length} von ${kontrollen.length} `
-      + 'Positivkontrollen fehlen, obwohl der Hauptlauf sie geliefert hat — diese '
-      + 'Abfrage-Zusammensetzung hat selbst gekappt (Regel 5). Kein Drift-Urteil:',
+    console.log(
+      `    Nachfrage ${etikett} NICHT aussagekräftig: ${stumm.length}/${kontrollen.length} `
+      + `Positivkontrollen fehlen (z.B. SR ${stumm[0].sr}/${stumm[0].sprache} '${stumm[0].abk}') — `
+      + 'diese Zusammensetzung hat selbst gekappt (Regel 5), nächste versuchen.',
     );
-    for (const z of stumm) console.error(`    • SR ${z.sr} / ${z.sprache}: '${z.abk}' erwartet, nicht geliefert`);
-    process.exit(1);
   }
-  return tripel;
+  return { tripel, stumm };
+}
+
+/**
+ * Füll-SR für Zusammensetzung `nr`, GESTREUT über den SR-Raum.
+ *
+ * Warum nicht `slice(0, n)`: das nahm immer die codepoint-kleinsten SR und war
+ * damit eine feste, nachweislich pathologische Wertemenge — sie kappt sechs der
+ * 200 Alias-SR deterministisch (Regel 5, Nachtrag Runde 2). Gleichmässige
+ * Schritte mit Offset je Zusammensetzung liefern verschiedene, über den ganzen
+ * Raum verteilte Mengen: deterministisch und reproduzierbar, aber nicht immer
+ * dieselbe Falle. Eine «gesunde» Auswahl gibt es nicht — wirksam ist nur die
+ * Vielfalt plus Positivkontrolle.
+ */
+function fuellSr(fremde: string[], nr: number, wieViele: number): string[] {
+  const n = Math.min(wieViele, fremde.length);
+  const schritt = Math.max(1, Math.floor(fremde.length / n));
+  const raus: string[] = [];
+  for (let j = 0; raus.length < n && j < fremde.length * 2; j += 1) {
+    const kandidat = fremde[(nr + j * schritt) % fremde.length];
+    if (!raus.includes(kandidat)) raus.push(kandidat);
+  }
+  return raus.sort(vergleiche);
 }
 
 /**
@@ -512,19 +553,31 @@ async function nachfrage(
  * Ein Prüfer, dessen Kontrolle systematisch woanders hinschaut als der Prüfling,
  * bestätigt bloss (§6.7).
  *
+ * ── Was Runde 2 an Fassung 3 widerlegt hat ───────────────────────────────────
+ * Fassung 3 füllte mit `fremde.slice(0, 3)` — immer denselben drei codepoint-
+ * kleinsten SR. Diese Wertemenge kappt deterministisch sechs SR (Regel 5,
+ * Nachtrag), und weil eine nicht aussagekräftige Nachfrage den Prozess BEENDETE,
+ * kam die zweite Zusammensetzung nie zum Zug: für diese sechs SR hätte es niemals
+ * ein Urteil gegeben. Echter Drift auf SR 251 (KG) hätte den Wochen-Cron dauerhaft
+ * rot gefahren — mit Schuldzuweisung an den Endpoint und ohne Heilungsweg.
+ *
  * ── Was jetzt gilt ───────────────────────────────────────────────────────────
- * (1) ZWEI unterschiedlich zusammengesetzte Nachfragen (andere Füll-SR, andere
- *     Reihenfolge). Weil die Kappung an der Zusammensetzung hängt (Regel 5), ist
- *     Komposition-Vielfalt das einzige wirksame Mittel; zusammen mit dem
- *     Hauptlauf muss ein Kürzel in DREI verschiedenen Zusammensetzungen fehlen.
- * (2) JEDE SR der Nachfrage trägt eine Positivkontrolle DERSELBEN SR, soweit der
- *     Hauptlauf eine geliefert hat — Füll-SR immer, betroffene SR bei Teilverlust
- *     (z. B. `it` fehlt, `de` lebt). Kein Fremd-SR-Ersatz.
- * (3) Eine betroffene SR OHNE jede Live-Zeile ist nicht absicherbar: dann fehlt
- *     das Prüfmittel, und es gibt kein Urteil — nur den Auftrag, von Hand gegen
+ * (1) BIS ZU `KOMPOSITIONEN` Versuche, jeder mit anderer, GESTREUTER Füllung.
+ *     Eine nicht aussagekräftige Nachfrage beendet nichts mehr — sie wird
+ *     übersprungen und die nächste Wertemenge versucht.
+ * (2) Ein Verlust gilt erst als bestätigt, wenn `NOETIGE_KOMPOSITIONEN`
+ *     aussagekräftige, VERSCHIEDENE Wertemengen ihn einig vermissen (der
+ *     Hauptlauf ist eine weitere, unabhängige Zusammensetzung).
+ * (3) JEDE SR der Nachfrage trägt eine Positivkontrolle DERSELBEN SR — Füll-SR
+ *     immer, betroffene SR bei Teilverlust (`it` fehlt, `de` lebt). Kein
+ *     Fremd-SR-Ersatz: genau daran ist Fassung 2 gescheitert.
+ * (4) Eine betroffene SR OHNE jede Live-Zeile ist nicht absicherbar: dann fehlt
+ *     das Prüfmittel, und es gibt kein Urteil — nur der Auftrag, von Hand gegen
  *     die amtliche Fassung zu prüfen. Fail-closed statt Rateschluss.
- * (4) Taucht ein Kürzel in IRGENDEINER Nachfrage auf, ist es kein Verlust,
- *     sondern ein Teilergebnis — mit ausdrücklicher Warnung, NICHT zu regenerieren.
+ * (5) Taucht ein Kürzel in IRGENDEINER Nachfrage auf, ist es kein Verlust,
+ *     sondern eine Kappung — mit ausdrücklicher Warnung, NICHT zu regenerieren.
+ * (6) Zu wenige fremde SR für verschiedene Wertemengen ⇒ ehrlicher Abbruch statt
+ *     zweier identischer «unabhängiger» Nachfragen (die Fehlerklasse aus Runde 1).
  */
 async function verlustGegenprobe(
   verloren: AliasZeile[], live: AliasZeile[],
@@ -554,23 +607,57 @@ async function verlustGegenprobe(
     process.exit(1);
   }
 
-  // Füll-SR aus zwei verschiedenen Enden der Live-Liste ⇒ zwei Zusammensetzungen.
   const fremde = [...liveJeSr.keys()].filter((sr) => !betroffen.includes(sr)).sort(vergleiche);
-  const wieViele = Math.max(MIN_BATCH, 3);
-  const fuellA = fremde.slice(0, wieViele);
-  const fuellB = fremde.slice(-wieViele);
   const kontrollen = (fuell: string[]): AliasZeile[] => [
     ...fuell.map((sr) => liveJeSr.get(sr)![0]),                    // je Füll-SR eine eigene Zeile
     ...betroffen.flatMap((sr) => liveJeSr.get(sr)!.slice(0, 1)),   // Teilverlust: überlebende Zeile
   ];
 
-  const srsA = [...new Set([...betroffen, ...fuellA])].sort(vergleiche);
-  const srsB = [...new Set([...betroffen, ...fuellB])].sort(vergleiche).reverse();
-  const a = await nachfrage(srsA, 'A', kontrollen(fuellA));
-  const b = await nachfrage(srsB, 'B', kontrollen(fuellB));
+  // (6) Ohne genügend fremde SR gäbe es keine VERSCHIEDENEN Wertemengen — dann
+  // wäre die «unabhängige Bestätigung» dieselbe Abfrage zweimal (Fehlerklasse
+  // Runde 1). Lieber ehrlich abbrechen als Unabhängigkeit behaupten.
+  const noetigeFremde = NOETIGE_KOMPOSITIONEN * MIN_BATCH;
+  if (fremde.length < noetigeFremde) {
+    console.error(
+      `\nKEIN URTEIL MÖGLICH: nur ${fremde.length} fremde SR mit Live-Zeile, nötig sind `
+      + `${noetigeFremde} für ${NOETIGE_KOMPOSITIONEN} wirklich verschiedene Wertemengen. Zwei `
+      + 'gleiche Nachfragen wären keine unabhängige Bestätigung (§6.7) — kein Verlust-Urteil.\n',
+    );
+    process.exit(1);
+  }
 
-  const aufgetaucht = verloren.filter((z) => a.has(schl(z)) || b.has(schl(z)));
-  const bestaetigt = verloren.filter((z) => !a.has(schl(z)) && !b.has(schl(z)));
+  // (1)+(2) Mehrere gestreute Zusammensetzungen, bis genügend aussagekräftig sind.
+  const aussagekraeftig: Array<Set<string>> = [];
+  const wertemengen: string[] = [];
+  for (let nr = 0; nr < KOMPOSITIONEN && aussagekraeftig.length < NOETIGE_KOMPOSITIONEN; nr += 1) {
+    const fuell = fuellSr(fremde, nr, FUELLUNG);
+    const srs = [...new Set([...betroffen, ...fuell])].sort(vergleiche);
+    const kennung = srs.join(',');
+    if (wertemengen.includes(kennung)) continue;   // identische Wertemenge zählt nicht doppelt
+    wertemengen.push(kennung);
+    const { tripel, stumm } = await nachfrage(srs, String(nr + 1), kontrollen(fuell));
+    if (stumm.length === 0) aussagekraeftig.push(tripel);
+  }
+
+  if (aussagekraeftig.length < NOETIGE_KOMPOSITIONEN) {
+    console.error(
+      `\nKEIN URTEIL MÖGLICH: nur ${aussagekraeftig.length} von ${wertemengen.length} versuchten `
+      + `Zusammensetzungen waren aussagekräftig, nötig sind ${NOETIGE_KOMPOSITIONEN}. Der Endpoint `
+      + 'kappt derzeit zu breit, um «weggefallen» von «gekappt» zu trennen (Regel 5). Betroffen:',
+    );
+    for (const sr of betroffen) {
+      const artefakt = verloren.filter((z) => z.sr === sr).map((z) => `${z.sprache} '${z.abk}'`).join(', ');
+      console.error(`    • SR ${sr}: Artefakt führt ${artefakt}`);
+    }
+    console.error(
+      '\n  → NICHTS löschen und NICHT regenerieren. Lauf später wiederholen; hält der Befund an, '
+      + 'von Hand gegen die amtliche Fassung prüfen und fachlich abnehmen (§7/§8).\n',
+    );
+    process.exit(1);
+  }
+
+  const aufgetaucht = verloren.filter((z) => aussagekraeftig.some((t) => t.has(schl(z))));
+  const bestaetigt = verloren.filter((z) => aussagekraeftig.every((t) => !t.has(schl(z))));
   return { bestaetigt, aufgetaucht };
 }
 
@@ -642,8 +729,7 @@ async function pruefeDrift(live: AliasZeile[], srAnzahl: number, srMitAlias: num
     const betroffen = [...new Set(verloren.map((z) => z.sr))].sort(vergleiche);
     console.log(
       `\n  ${verloren.length} Verlust-Befund(e) über ${betroffen.length} SR — Gegenprobe gegen `
-      + 'stille Kappung: zwei unterschiedlich zusammengesetzte Nachfragen mit Positivkontrollen '
-      + 'derselben SR:',
+      + `stille Kappung: bis zu ${KOMPOSITIONEN} gestreute Zusammensetzungen, ${NOETIGE_KOMPOSITIONEN} müssen aussagekräftig sein:`,
     );
     const { bestaetigt, aufgetaucht } = await verlustGegenprobe(verloren, live);
     if (aufgetaucht.length > 0) {
@@ -661,7 +747,7 @@ async function pruefeDrift(live: AliasZeile[], srAnzahl: number, srMitAlias: num
       );
       process.exit(1);
     }
-    gegenprobe = ` · Verlust in ZWEI unabhängigen Zusammensetzungen bestätigt (${bestaetigt.length} Tripel)`;
+    gegenprobe = ` · Verlust in ${NOETIGE_KOMPOSITIONEN} aussagekräftigen, verschiedenen Zusammensetzungen bestätigt (${bestaetigt.length} Tripel)`;
   }
 
   console.error(

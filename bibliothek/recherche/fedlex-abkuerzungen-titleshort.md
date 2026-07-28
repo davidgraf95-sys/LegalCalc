@@ -5,10 +5,13 @@
 (de 200 · fr 199 · it 198). **Status:** ZWEIFACH GEPRÜFT (Bau + adversariale Gegenprüfung Opus,
 4 Runden, frischer Kontext); fachliche Abnahme durch David offen.
 
-**Nachtrag 28.7.2026 — Status: GEBAUT, EINE GEGENPRÜFUNGS-RUNDE BESTANDEN? NEIN.** Die erste
-adversariale Runde hat das Drift-Tor **widerlegt** (falsch begründete Regel 5, blinde
-Verlust-Gegenprobe); beides ist unten korrigiert und die Widerlegung selbst dokumentiert. Eine
-**zweite Gegenprüfungs-Runde ist offen**, ebenso die fachliche Abnahme durch David. (1) Das
+**Nachtrag 28.7.2026 — Status: GEBAUT, ZWEI GEGENPRÜFUNGS-RUNDEN WIDERLEGT.** Runde 1 widerlegte
+die Begründung von Regel 5 und die blinde Verlust-Gegenprobe; Runde 2 widerlegte die feste
+Füll-Auswahl und den Prozess-Exit vor der zweiten Nachfrage (sechs SR wären dauerhaft
+unbeurteilbar geblieben). Beides ist unten korrigiert, beide Widerlegungen sind als Lehre
+festgehalten. **Runde 3 ist offen**, ebenso die fachliche Abnahme durch David.
+
+Drei Ergänzungen gegenüber #397: (1) Das
 Artefakt hat jetzt ein **Drift-Tor** `check:fedlex-abk-netz` — damit trägt es das vierte Merkmal
 der Zitat-Ausnahme (§7 lit. d), das ihm bis hierher fehlte; siehe *Drift-Erkennung* unten.
 (2) Die eine offene **Divergenz Register ↔ amtliches Kürzel** (SR 0.142.30) ist unten als
@@ -78,6 +81,10 @@ geltenden Konsolidierung, je Amtssprache; leer, wenn Fedlex für diesen Erlass k
    | `{0.142.30, 281.1, 220}` | **7/7** — `FK` wieder da |
    | `{0.101, X}`, X ∈ {221.213.11, 221.411.1, 955.033.0} | je **3/3** über 5 Läufe, X still weg, `0.101` vollständig |
    | dieselben X im 4er-Batch | **12/12** — X vorhanden |
+   | `{0.101, 0.142.112.681, 0.142.30, X}` (= die alte Füllung `slice(0,3)`), X ∈ {142.204, 161.1, 170.512, 211.412.411, 251, 946.512} | je **7/7** über 5 Läufe, X still weg — **sechs** von 200 Alias-SR |
+   | dieselben sechs X in gestreuter Füllung (13 SR) | **HIT** — X vorhanden |
+   | `{0.101, 220, 251}` und `{220, 210, 251}` | je **6/6**, 251 weg — die Pathologie ist NICHT auf `0.*`-Füller beschränkt |
+   | identische Wertemenge vorwärts vs. rückwärts | beide **7/7**, X beide Male weg — **Reihenfolge ist kein Wirkmittel** |
 
    Stufenweise isoliert für `{0.142.30}`: Notations-Join 1 → plus `ConsolidationAbstract` 25 →
    plus `dateEntryInForce` 25 → **plus `FILTER(?von <= "2026-07-28"^^xsd:date)` 0**. Bei einem
@@ -88,7 +95,7 @@ geltenden Konsolidierung, je Amtssprache; leer, wenn Fedlex für diesen Erlass k
    Zeilen- und COUNT-Abfrage sind gleich falsch (§6.7). Und **keine Batch-Grösse ist beweisbar
    sicher**, weil die Kappung an den Werten hängt, nicht an ihrer Anzahl. `batchListe()` hält
    Batches darum bei ≥ 3 SR als billigen Gürtel **ohne Garantie**; tragend ist allein die
-   Verlust-Gegenprobe des Drift-Tors mit zwei verschieden zusammengesetzten Nachfragen (unten).
+   Verlust-Gegenprobe des Drift-Tors mit mehreren gestreuten Zusammensetzungen (unten).
 
 **Konflikte werden nicht geraten (§8):** trägt eine `(sr, sprache)` trotz Fenster zwei
 verschiedene Kürzel, bricht der Generator mit Fehler ab, statt still zu tiebreaken.
@@ -166,20 +173,30 @@ Die Geschichte dieser Gegenprobe ist die Lehre:
   Aufforderung, sie ins Artefakt zu übernehmen (§8). Eine Kontrolle, die systematisch woanders
   hinschaut als der Prüfling, ist keine.
 
-**Fassung 3 (geltend).** Vier Bedingungen, jede einzeln rot gezeigt:
+- **Fassung 3** streute nicht: sie füllte mit `fremde.slice(0, 3)`, also immer denselben drei
+  codepoint-kleinsten SR — einer nachweislich pathologischen Wertemenge (Regel 5, Nachtrag: sechs
+  SR werden davon deterministisch gekappt). Schlimmer war die Kontrollstruktur: eine nicht
+  aussagekräftige Nachfrage **beendete den Prozess**, womit jede weitere Zusammensetzung toter
+  Code war. Für diese sechs SR — darunter **SR 251 (KG)** — hätte es damit *nie* ein Urteil
+  gegeben: echter Drift hätte den Wochen-Cron dauerhaft rot gefahren, mit Schuldzuweisung an den
+  Endpoint und ohne Heilungsweg. Ein Tor, das nicht heilen kann, ist kein Tor, sondern ein Alarm,
+  den man abstellt.
 
-1. **Zwei verschieden zusammengesetzte Nachfragen** (andere Füll-SR, andere Reihenfolge). Weil
-   die Kappung an der Zusammensetzung hängt, ist Komposition-Vielfalt das einzig wirksame Mittel:
-   zusammen mit dem Hauptlauf muss ein Kürzel in **drei** Zusammensetzungen fehlen.
-2. **Positivkontrollen derselben SR**, kein Fremd-SR-Ersatz: jede Füll-SR bringt eine eigene
-   Live-Zeile mit, jede betroffene SR ihre überlebende Zeile (Teilverlust). Fehlt eine, bricht
-   der Lauf mit «NACHFRAGE … NICHT AUSSAGEKRÄFTIG» ab.
-3. **Nicht absicherbar ⇒ kein Urteil.** Hat der Hauptlauf für eine betroffene SR **gar keine**
-   Zeile geliefert, fehlt das Prüfmittel; dann meldet das Tor «KEIN URTEIL MÖGLICH», rät
-   ausdrücklich vom Regenerieren ab und verlangt die Prüfung von Hand gegen die amtliche Fassung.
-   Fail-closed statt Rateschluss — genau die drei oben genannten Fälle enden jetzt hier.
-4. **Leere Kontroll-Liste ⇒ Abbruch.** Eine Nachfrage ohne Prüfmittel kann nicht scheitern und
-   darf darum nicht urteilen (§6.7).
+**Fassung 4 (geltend).** Sechs Bedingungen; welche davon rot gezeigt sind, steht in der Spalte —
+die frühere Behauptung «jede Bedingung einzeln rot gezeigt» war zu weit gefasst:
+
+| # | Bedingung | Nachweis |
+|---|---|---|
+| 1 | Bis zu **4 gestreute** Zusammensetzungen (gleichmässige Schritte mit Offset, nicht der Listenanfang); eine nicht aussagekräftige wird **übersprungen**, nicht abgebrochen | rot gezeigt: erzwungene pathologische Komposition 1 → `Nachfrage 1 NICHT aussagekräftig … nächste versuchen`, Kompositionen 2 + 3 tragen das Urteil |
+| 2 | Verlust erst bestätigt, wenn **2 aussagekräftige, verschiedene** Wertemengen ihn einig vermissen (Hauptlauf = weitere Zusammensetzung) | rot gezeigt: Phantom-Zeile → `Verlust in 2 aussagekräftigen, verschiedenen Zusammensetzungen bestätigt` |
+| 3 | **Positivkontrollen derselben SR**, kein Fremd-SR-Ersatz | rot gezeigt (Fassung 2 fiel genau hier durch) |
+| 4 | Nicht absicherbar (keine Live-Zeile der SR) ⇒ **kein Urteil**, «nichts löschen» | rot gezeigt an je 3 + 6 SR |
+| 5 | Zu wenige fremde SR für verschiedene Wertemengen ⇒ ehrlicher Abbruch | rot gezeigt: `nur 3 fremde SR … nötig sind 6` |
+| 6 | Leere Kontroll-Liste ⇒ Abbruch | **nicht rot gezeigt, weil unerreichbar** — Bedingung 4 filtert vorher jede SR ohne Live-Zeile. Steht als Konstruktions-Zusicherung (`throw`) für künftige Umbauten, nicht als geprüfter Riegel (§6.7-Ehrlichkeit) |
+
+Die **Reihenfolge** der Werte ist gemessen wirkungslos (identische Wertemenge kappt vorwärts wie
+rückwärts identisch) und wird darum nicht mehr als Diversifizierung behauptet; es zählt allein die
+Wertemenge.
 
 Auch ein *bestätigter* Verlust führt nicht mehr zur Regenerier-Empfehlung ohne Warnung: die
 Löschung eines amtlichen Kürzels ist eine fachliche Abnahme, kein Build-Schritt (§7/§8). Der Stichtag ist im Prüf-Modus **absichtlich** der heutige Tag: gegen den
@@ -312,7 +329,7 @@ die sonst mit dem Branch verschwindet (§11).
 
 **Verifikation (§7).** SR-Nummer ↔ Kürzel je Zeile live gegen Fedlex-SPARQL geprüft (Abruf
 28.7.2026, `jolux:titleShort` am Konsolidierungs-Abstract im Currency-Fenster; dieselbe Kette wie
-oben) — alle 20 SR-Nummern belegt und **keine** davon im `ERLASS_REGISTER`. Nennungszahlen mit der
+oben) — 22 Kandidaten-Zeilen über **18 distinkte SR-Nummern** (vier SR tragen je ein deutsches und ein fremdsprachiges Kürzel: 455, 651.1, 823.11, 851.1); der Abruf umfasste 20 SR, davon sind BZP/273 und WG/514.54 bereits im Tor deklariert. Keine der 20 steht im `ERLASS_REGISTER`. Nennungszahlen mit der
 Messmechanik des Tors selbst erhoben (`check:normkeys`, committeter Korpus, 5 093 Snapshots):
 `Snapshots` = in wie vielen Entscheiden das Token vorkommt, `roh` = Roh-Nennungen
 statutes-/Fliesstext-Pfad.
