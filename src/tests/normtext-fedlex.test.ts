@@ -815,3 +815,126 @@ describe('anhangLabelVonAnker (M13-Annex)', () => {
     expect(anhangLabelVonAnker('annex_4_a')).toBe('Anhang 4a');
   });
 });
+
+// ── F-f (QS-OPT, 28.7.2026): lat. Ordinal-<sup> in Anhang-Überschriften ───────
+//
+// DEKLARIERTE fachliche Änderung (§6.3, Golden-Update begründet): Der frühere
+// pauschale <sup>-Strip in `anhangUeberschrift` warf das Ordinal-Suffix weg, das
+// TEIL DER NUMMER ist. Zwei rechtlich verschiedene Ziffern trugen dieselbe Nummer.
+// Fixtures sind ECHTE Ausschnitte aus den Fedlex-Filestore-Caches
+// (/tmp/chemrrv.html, Kons. 20260716, SR 814.81 · /tmp/vzv.html, SR 741.51).
+describe('anhangUeberschrift — lat. Ordinal-Suffix bleibt Teil der Nummer (F-f)', () => {
+  const wrapF = (inner: string) => `<div id="annex">${inner}</div>`;
+
+  // ChemRRV Anhang 2.15 Ziff. 6.6 vs. 6.6bis — die beiden Bestimmungen sind
+  // rechtlich verschieden («Zahlungen an Dritte» vs. «Rückerstattung der Gebühr»).
+  const CHEMRRV_2_15_6_6 =
+    '<h4 class="heading" role="heading" aria-level="4"><span class="display-icon"></span>' +
+    '<span class="external-link-icon"></span>' +
+    '<a href="#annex_2_15/lvl_u1/lvl_6/lvl_6_6">6.6 Zahlungen an Dritte</a></h4>';
+  const CHEMRRV_2_15_6_6_BIS =
+    '<h4 class="heading" role="heading" aria-level="4"><span class="display-icon"></span>' +
+    '<span class="external-link-icon"></span>' +
+    '<a href="#annex_2_15/lvl_u1/lvl_6/lvl_6_6_bis">6.6<span class="man-font-weight-normal">' +
+    '<sup>bis</sup></span> Rückerstattung der Gebühr</a></h4>';
+
+  it('ChemRRV Anh. 2.15: 6.6 und 6.6bis bleiben zwei verschiedene Nummern', () => {
+    const html = wrapF(
+      '<section id="annex_2_15"><h1 class="heading"><a href="#annex_2_15">Anhang 2.15</a></h1>' +
+        '<div class="collapseable">' +
+        CHEMRRV_2_15_6_6 +
+        '<p class="absatz">Die Organisation leistet Zahlungen an Dritte.</p>' +
+        CHEMRRV_2_15_6_6_BIS +
+        '<p class="absatz">Die Gebühr wird auf Gesuch hin zurückerstattet.</p>' +
+        '</div></section>',
+    );
+    const ex = extrahiereAnhang(html, 'annex_2_15')!;
+    const titel = ex.bloecke.filter((b) => b.titel !== undefined).map((b) => b.text);
+    expect(titel).toEqual(['6.6 Zahlungen an Dritte', '6.6bis Rückerstattung der Gebühr']);
+    // Kernaussage: KEINE zwei Überschriften mit derselben Nummer.
+    const nummern = titel.map((t) => t.split(' ')[0]);
+    expect(new Set(nummern).size).toBe(nummern.length);
+  });
+
+  // ChemRRV Anhang 2.4: die 4bis-/4ter-Serie. Der 4bis-Kopf trägt ZUSÄTZLICH
+  // einen redaktionellen Fussnoten-<sup><a>175</a></sup> — der muss weiterhin
+  // samt Ziffer verschwinden, während «bis» bleibt (die beiden <sup>-Rollen
+  // sind nach Eltern-Kontext zu unterscheiden).
+  it('ChemRRV Anh. 2.4: 4bis-/4ter-Serie vollständig, Fussnoten-Ziffer bleibt getilgt', () => {
+    const html = wrapF(
+      '<section id="annex_2_4"><h1 class="heading"><a href="#annex_2_4">Anhang 2.4</a></h1>' +
+        '<div class="collapseable">' +
+        '<h4 class="heading"><a href="#a">4.1 Begriff</a></h4>' +
+        '<h4 class="heading"><a href="#b">4.2 Verbot</a></h4>' +
+        '<h3 class="heading" role="heading" aria-level="3"><span class="display-icon"></span>' +
+        '<span class="external-link-icon"></span>' +
+        '<a href="#annex_2_4/lvl_u1/lvl_4_bis">4<sup>bis </sup></a>' +
+        '<span class="man-font-weight-normal"><sup><a href="#fn-d278902e14472" ' +
+        'id="fnbck-d278902e14472">175</a></sup></span>' +
+        '<a href="#annex_2_4/lvl_u1/lvl_4_bis"><span class="man-font-weight-normal"></span> ' +
+        '<span class="man-font-weight-normal"></span>Biozidprodukte gegen Algen und Moose</a></h3>' +
+        '<h4 class="heading"><a href="#c">4<sup>bis</sup>.1 Begriffe</a></h4>' +
+        '<h4 class="heading"><a href="#d">4<sup>bis</sup>.2 Verbote</a></h4>' +
+        '<h4 class="heading"><a href="#e">4<sup>ter</sup>.1 Begriffe</a></h4>' +
+        '<h4 class="heading"><a href="#f">4<sup>ter</sup>.2 Bewilligung für die Anwendung im Wald</a></h4>' +
+        '</div></section>',
+    );
+    const ex = extrahiereAnhang(html, 'annex_2_4')!;
+    const titel = ex.bloecke.filter((b) => b.titel !== undefined).map((b) => b.text);
+    expect(titel).toEqual([
+      '4.1 Begriff',
+      '4.2 Verbot',
+      '4bis Biozidprodukte gegen Algen und Moose',
+      '4bis.1 Begriffe',
+      '4bis.2 Verbote',
+      '4ter.1 Begriffe',
+      '4ter.2 Bewilligung für die Anwendung im Wald',
+    ]);
+    // Die Fussnoten-Ziffer 175 darf NIRGENDS in den Normtext leaken (§1/§8).
+    expect(titel.some((t) => /175/.test(t))).toBe(false);
+  });
+
+  // VZV: annex_1 und annex_1_bis sind ZWEI Anhänge. Vor dem Fix trugen beide
+  // den Titel «Anhang 1» — ein Zitat traf den falschen Anhang.
+  it('VZV: «Anhang 1» und «Anhang 1bis» tragen verschiedene Titel', () => {
+    const html = wrapF(
+      '<section id="annex_1"><h1 class="heading" role="heading" aria-level="1">' +
+        '<span class="display-icon"></span><span class="external-link-icon"></span>' +
+        '<a href="#annex_1">Anhang 1</a><span class="man-font-style-normal"><sup>' +
+        '<a href="#fn-d367056e13718" id="fnbck-d367056e13718">480</a></sup></span></h1>' +
+        '<div class="collapseable"><p class="absatz">Kategorien und Unterkategorien.</p></div></section>' +
+        '<section id="annex_1_bis"><h1 class="heading" role="heading" aria-level="1">' +
+        '<span class="display-icon"></span><span class="external-link-icon"></span>' +
+        '<a href="#annex_1_bis">Anhang 1<sup>bis</sup><sup> </sup></a>' +
+        '<span class="man-font-style-normal"><sup>' +
+        '<a href="#fn-d367056e14294" id="fnbck-d367056e14294">481</a></sup></span></h1>' +
+        '<div class="collapseable"><p class="absatz">Ausbildung der Fahrlehrer.</p></div></section>',
+    );
+    expect(alleAnhangAnker(html)).toEqual(['annex_1', 'annex_1_bis']);
+    const a1 = extrahiereAnhang(html, 'annex_1')!;
+    const a1bis = extrahiereAnhang(html, 'annex_1_bis')!;
+    expect(a1.titel).toBe('Anhang 1');
+    expect(a1bis.titel).toBe('Anhang 1bis');
+    expect(a1.titel).not.toBe(a1bis.titel);
+  });
+
+  // Gegenprobe (unbetroffener Fall): Überschriften OHNE lat. Ordinal bleiben
+  // zeichengleich zum Verhalten vor dem Fix — insbesondere werden reine
+  // Fussnoten-<sup><a>N</a></sup> weiterhin samt Ziffer getilgt.
+  it('unbetroffene Überschriften bleiben unverändert (kein Fussnoten-Leak)', () => {
+    const html = wrapF(
+      '<section id="annex_3"><h1 class="heading"><span class="display-icon"></span>' +
+        '<a href="#annex_3">Anhang 3</a><sup><a href="#fn-x" id="fnbck-x">99</a></sup></h1>' +
+        '<div class="collapseable">' +
+        '<h2 class="heading"><a href="#y">1 Oberirdische Gewässer</a></h2>' +
+        '<h3 class="heading"><a href="#z">1.1 Begriffe<sup><a href="#fn-q" id="fnbck-q">100</a></sup></a></h3>' +
+        '</div></section>',
+    );
+    const ex = extrahiereAnhang(html, 'annex_3')!;
+    expect(ex.titel).toBe('Anhang 3');
+    expect(ex.bloecke.filter((b) => b.titel !== undefined).map((b) => b.text)).toEqual([
+      '1 Oberirdische Gewässer',
+      '1.1 Begriffe',
+    ]);
+  });
+});
