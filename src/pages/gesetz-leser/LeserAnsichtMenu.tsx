@@ -20,8 +20,13 @@ import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
 import {
   setzeOption, setzeZeitraum, setzeHistAnsicht, useLeserOptionen, useLeitfallZeitraum, useHistAnsicht,
+  setzeBezugKlassen, setzeBezugKantone, useBezugKlassen, useBezugKantone,
   type OptFeld, type LeitfallZeitraum, type HistAnsicht,
 } from './leserOptionen';
+import {
+  BEDIENBARE_KLASSEN, KLASSE_SCHALTER, istErweitert, schalteKlasse, schalteKanton,
+} from './bezugAuswahl';
+import { STATUS_LABEL } from '../../lib/verzahnung/facetten';
 
 function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz }: {
   feld: OptFeld;
@@ -100,6 +105,107 @@ function ZeitraumWahl() {
 }
 
 /**
+ * W2·7-BEZUG/B4: Facetten-Wahl der Bezüge — «welche Instanzen zeigen?».
+ *
+ * Bedienmuster = `ZeitraumWahl` (role="group" + `aria-pressed`, KEIN
+ * `role=radiogroup`/`menu` — die versprächen eine Pfeiltasten-Bedienung, die es
+ * nicht gibt; dieselbe Ehrlichkeits-Lehre wie beim Dropdown selbst). Anders als
+ * die Zeitraum-Wahl ist es eine MEHRFACH-Auswahl: jeder Schalter steht für sich.
+ *
+ * ── DER GRUNDZUSTAND IST «NUR BGE», UND DAS IST DIE TEURE ZUSAGE (§8/§15) ───
+ * Die drei zuschaltbaren Klassen kosten einen deutlich grösseren Shard (bis
+ * 717 KB / 65 KB gzip an der StPO). Darum sind sie AUS, bis jemand sie will —
+ * und der Hinweistext sagt das, statt es zu verschweigen. Umgekehrt gilt: was
+ * hier zugeschaltet wird, erscheint am Artikel als EIGENE, benannte Gruppe.
+ * Ein kantonaler Entscheid wird nie unter die Leitentscheide gemischt (§8 —
+ * die stillschweigende Gleichstellung, die `facetten.ts` ausdrücklich verbietet).
+ *
+ * Das ausgeschriebene `STATUS_LABEL` (facetten.ts) trägt Tooltip UND
+ * Accessible-Name; sichtbar steht die Kurzform, weil das Panel 13 rem breit ist.
+ */
+function BezugKlassenWahl() {
+  const klassen = useBezugKlassen();
+  return (
+    <div role="group" aria-label="Instanzen der Bezüge" className="flex flex-wrap items-center gap-1 px-2.5 pt-1.5 pb-0.5">
+      <span className="lc-overline mr-1">Instanzen</span>
+      {BEDIENBARE_KLASSEN.map((k) => {
+        const aktiv = klassen.includes(k);
+        return (
+          <button
+            key={k}
+            type="button"
+            aria-pressed={aktiv}
+            aria-label={STATUS_LABEL[k]}
+            data-bezug-klasse={k}
+            onClick={() => setzeBezugKlassen(schalteKlasse(klassen, k))}
+            title={STATUS_LABEL[k]}
+            className={`rounded px-1.5 py-0.5 text-xs transition-colors ${
+              aktiv ? 'bg-brass-100/60 font-medium text-ink-900' : 'text-ink-500 hover:bg-brass-100/40'
+            }`}
+          >
+            {KLASSE_SCHALTER[k]}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+/**
+ * B4: Kantons-Feinschnitt INNERHALB der kantonalen Klasse.
+ *
+ * Die Liste kommt aus dem geladenen Shard (`kantoneVerfuegbar`), nicht aus einer
+ * Kantonstabelle: ein Schalter für einen Kanton, zu dem DIESER Erlass keine
+ * Kante hat, fände garantiert nichts (totes Steuerelement, §13 F4) und behauptete
+ * zugleich, dort gäbe es Praxis, die wir bloss ausblenden (§8). Umgekehrt ist die
+ * angezeigte Liste damit eine ehrliche Aussage über die Abdeckung: was hier steht,
+ * ist das, was der Korpus für diesen Erlass hergibt.
+ *
+ * Sichtbar nur, wenn die kantonale Klasse überhaupt AN ist — sonst wirkungslos
+ * (gleiches Muster wie ZeitraumWahl unter «Entscheide», §13 F4). Keine Auswahl
+ * = alle Kantone (Konvention der Datenschicht: leere Achse = keine Einschränkung).
+ */
+function BezugKantonWahl({ verfuegbar }: { verfuegbar: string[] }) {
+  const kantone = useBezugKantone();
+  if (verfuegbar.length === 0) return null;
+  const alle = kantone.length === 0;
+  return (
+    <div role="group" aria-label="Kantone der kantonalen Entscheide" className="flex flex-wrap items-center gap-1 px-2.5 pt-1.5 pb-0.5">
+      <span className="lc-overline mr-1">Kantone</span>
+      <button
+        type="button"
+        aria-pressed={alle}
+        onClick={() => setzeBezugKantone([])}
+        title="Kantonale Entscheide aus allen erfassten Kantonen zeigen"
+        className={`rounded px-1.5 py-0.5 text-xs transition-colors ${
+          alle ? 'bg-brass-100/60 font-medium text-ink-900' : 'text-ink-500 hover:bg-brass-100/40'
+        }`}
+      >
+        alle
+      </button>
+      {verfuegbar.map((k) => {
+        const aktiv = kantone.includes(k);
+        return (
+          <button
+            key={k}
+            type="button"
+            aria-pressed={aktiv}
+            data-bezug-kanton={k}
+            onClick={() => setzeBezugKantone(schalteKanton(kantone, k))}
+            title={`Nur kantonale Entscheide aus ${k} zeigen`}
+            className={`num rounded px-1.5 py-0.5 text-xs transition-colors ${
+              aktiv ? 'bg-brass-100/60 font-medium text-ink-900' : 'text-ink-500 hover:bg-brass-100/40'
+            }`}
+          >
+            {k}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+/**
  * W2·5i-HIST-ANSICHT: dreiwertige Wahl «Änderungshistorie: aus · als Fussnoten ·
  * als Chronologie». Bedienmuster = `ZeitraumWahl` (role="group" + `aria-pressed`,
  * KEIN `role=radiogroup` — das verspräche eine Pfeiltasten-Bedienung, die es hier
@@ -159,8 +265,15 @@ function HistAnsichtWahl() {
  *  nicht geladen ⇒ Zähler erscheint erst danach; da er in einem geschlossenen,
  *  absolut positionierten Panel steckt, wächst im sichtbaren Kopf keine Zahl nach
  *  (CLS 0). */
-export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenAnzahl = null }: { zeigeLinien: boolean; linienAutoAn?: boolean; fussnotenAnzahl?: number | null }) {
+export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenAnzahl = null, kantoneVerfuegbar = [] }: {
+  zeigeLinien: boolean; linienAutoAn?: boolean; fussnotenAnzahl?: number | null;
+  /** W2·7-BEZUG/B4: Kantone, zu denen DIESER Erlass Kanten hat (aus dem geladenen
+   *  Bezugs-Shard). Leer, solange nicht erweitert/geladen ⇒ kein Kanton-Streifen. */
+  kantoneVerfuegbar?: string[];
+}) {
   const opt = useLeserOptionen();
+  const bezugKlassen = useBezugKlassen();
+  const bezugErweitert = istErweitert(bezugKlassen);
   const [offen, setOffen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -259,6 +372,22 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
             titel="Verlinkte Bundesgerichts-Leitfälle unter den Artikeln ein- oder ausblenden"
           />
           {opt.leitfaelle === 'an' && <ZeitraumWahl />}
+          {/* W2·7-BEZUG/B4: Instanz- und Kantons-Facetten sitzen UNTER dem
+              «Entscheide»-Schalter, weil sie ihn verfeinern — er blendet die
+              ganze Zeile aus, sie entscheiden, was in ihr steht. Bei
+              «Entscheide aus» wirkungslos → nicht gerendert (§13 F4, gleiches
+              Muster wie ZeitraumWahl und HistAnsichtWahl). */}
+          {opt.leitfaelle === 'an' && <BezugKlassenWahl />}
+          {opt.leitfaelle === 'an' && bezugKlassen.includes('kantonal') && (
+            <BezugKantonWahl verfuegbar={kantoneVerfuegbar} />
+          )}
+          {opt.leitfaelle === 'an' && (
+            <p className="px-2.5 pb-1 pt-1 text-micro leading-snug text-ink-500">
+              {bezugErweitert
+                ? 'Zugeschaltete Instanzen werden am Artikel als eigene, benannte Gruppe gezeigt — nie unter die Leitentscheide gemischt. Die Zahl nennt die gezeigten und die insgesamt erfassten Entscheide.'
+                : 'Grundeinstellung: nur amtlich publizierte Leitentscheide. Weitere Instanzen laden zusätzliche Daten nach.'}
+            </p>
+          )}
         </div>
       )}
     </div>

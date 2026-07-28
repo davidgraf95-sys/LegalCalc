@@ -24,6 +24,8 @@ import { zitatMitAusweis, heuteIso, fmtDatumLang } from '../../../lib/format';
 import { schaetzeArtikelHoehe, baueChronologie, fnNrSortKey } from '../berechnungen';
 import { setzeZeitraum, useLeitfallZeitraum } from '../leserOptionen';
 import { filtereLeitfaelleNachZeitraum, zeitraumLabel } from '../leitfallFilter';
+import { BezuegeZeile } from './BezuegeZeile';
+import type { ArtikelBezuege } from '../bezuegeLaden';
 
 // Schaufenster-Chips: nur die zentralen Leitfälle direkt zeigen (Reihenfolge =
 // `gewicht` aus dem Shard), Rest hinter «+n weitere». V2·B-2 (David 10.7.2026,
@@ -141,7 +143,7 @@ const LeitfallZeile = memo(function LeitfallZeile({ refs, normZitat, revision }:
 // links «Art. N» als ruhiger Anker mit den Randtiteln darunter (rechtsbündig, nur die
 // gegenüber dem Vorartikel GEÄNDERTEN Stufen, `marg`), rechts der Serif-
 // Bestimmungstext. Ersetzt den früheren fliegenden Standort-Tracker. Reine Darstellung.
-export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, revision, historie, istAnhang = false }: {
+export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, revision, historie, istAnhang = false }: {
   e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: InternRefs;
   marg?: string[];
   /** G-HIST-UI: Fassungshistorie dieses Artikels aus dem erlass-lokalen Shard
@@ -156,6 +158,11 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   istAnhang?: boolean;
   /** Leitfälle dieses Artikels (Reader lädt den erlass-lokalen Shard einmal). */
   leitfaelle?: LeitfallRef[];
+  /** W2·7-BEZUG/B4: facettierte Bezüge dieses Artikels, sobald der Nutzer die
+   *  Facetten erweitert hat. Gesetzt ⇒ die `BezuegeZeile` tritt AN DIE STELLE
+   *  der `LeitfallZeile` (der Bezugs-Shard ist deren Obermenge, §5 — nie beide
+   *  nebeneinander, das wären zwei Wahrheiten am selben Artikel). */
+  bezuege?: ArtikelBezuege;
   /** Revision r(a) dieses Artikels (§V1c) — an die LeitfallZeile durchgereicht. */
   revision?: ArtikelRevision | null;
   // Absolute Tiefe der ERSTEN gezeigten Randtitel-Stufe (Delta-Offset). Damit
@@ -502,8 +509,18 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           )}
           {/* LEITFÄLLE (§11.2): Bundesgerichtsentscheide zu genau diesem Artikel, lazy
               aus dem erlass-lokalen Shard. Verdrahtet das bisher tote proNormArtikel-
-              Modell (norm-index.ts) sichtbar — vom Artikel direkt zur Rechtsprechung. */}
-          <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />
+              Modell (norm-index.ts) sichtbar — vom Artikel direkt zur Rechtsprechung.
+
+              W2·7-BEZUG/B4: hat der Nutzer die Facetten erweitert, tritt die nach
+              Instanz gruppierte `BezuegeZeile` AN DIE STELLE dieser Zeile — der
+              Bezugs-Shard ist die Obermenge (§5). ENTWEDER/ODER, nie beides: sonst
+              stünden dieselben BGE zweimal am Artikel, und die zweite Zeile wüchse
+              nach dem ersten Layout ein (Sprung). Im Grundzustand ist `bezuege`
+              undefined ⇒ dieser Zweig ist die unveränderte heutige Darstellung. */}
+          {bezuege
+            ? <BezuegeZeile kanten={bezuege.kanten} gesamt={bezuege.gesamt}
+                ausgeblendet={bezuege.ausgeblendet} normZitat={zitat} revision={revision} />
+            : <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />}
           {/* G-HIST-UI: «Gilt seit»-Badge + aufklappbare Fassungs-Timeline dieses
               Artikels (aus dem erlass-lokalen Historie-Shard, idle geladen). Am
               Artikel-Fuss wie Verweise/Leitfälle. §15.2: der Slot steht ab dem

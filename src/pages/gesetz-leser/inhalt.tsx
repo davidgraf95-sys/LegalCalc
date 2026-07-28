@@ -19,6 +19,7 @@ import { passtAufSuche, pfadZu, grundartMeta } from './helpers';
 import { ArtikelLeser, SektionKopf, SektionBaumTOC } from './parts';
 import { beiLeerlauf } from '../../lib/leerlauf';
 import { ladeLeitfallShard, normArtikelToken, type LeitfallShard } from '../../lib/rechtsprechung/norm-index';
+import { useBezuege } from './bezuegeLaden';
 import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
 import {
@@ -67,6 +68,11 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // durchgereicht (die ArtikelHistorieZeile ist ein reiner Renderer). An den Erlass-
   // Key gebunden — ein Pane-/Erlass-Wechsel liefert nie fremde Historie.
   const [historieShard, setHistorieShard] = useState<{ key: string; shard: HistorieShard | null } | null>(null);
+  // W2·7-BEZUG/B4: facettierte Bezüge. `useBezuege` lädt den (deutlich grösseren)
+  // Bezugs-Shard NUR im erweiterten Facetten-Zustand und im Leerlauf — im
+  // Grundzustand fasst der Reader ihn nie an (§15). `erweitert` steuert zugleich,
+  // ob der schlanke Leitfall-Shard überhaupt noch geladen wird (Entweder/Oder, §5).
+  const { erweitert: bezuegeErweitert, bezuegeFuer, kantoneVerfuegbar } = useBezuege(erlass?.key);
   const [fehler, setFehler] = useState(false);
   // W2·10-UI-NAV/N0d·O3: kurze Bestätigung nach «In neuem Reiter» — der Reader
   // wird bei der ?r-Instanz-Navigation NICHT neu gemountet (gleicher key=schluessel),
@@ -104,13 +110,20 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     if (!key) return;
     let lebt = true;
     const abbrechen = beiLeerlauf(() => {
-      void ladeLeitfallShard(key).then((shard) => { if (lebt) setLeitfallShard({ key, shard }); });
+      // W2·7-BEZUG/B4: im ERWEITERTEN Facetten-Zustand lädt `useBezuege` den
+      // Bezugs-Shard (Obermenge) — dann bleibt der schlanke Leitfall-Shard
+      // ungeladen. Nicht aus Sparsamkeit allein: beide zu laden brächte
+      // dieselben BGE-Kanten zweimal über die Leitung und liesse die Zeile
+      // zweimal einwachsen (zweiter Layout-Sprung, §15/CLS).
+      if (!bezuegeErweitert) {
+        void ladeLeitfallShard(key).then((shard) => { if (lebt) setLeitfallShard({ key, shard }); });
+      }
       void ladeRevisionShard(key).then((shard) => { if (lebt) setRevisionShard({ key, shard }); });
       // G-HIST-UI: Historie-Shard (Bund; Kanton 404 → null → still kein Badge, §8).
       void ladeHistorieShard(key).then((shard) => { if (lebt) setHistorieShard({ key, shard }); });
     });
     return () => { lebt = false; abbrechen(); };
-  }, [erlass?.key]);
+  }, [erlass?.key, bezuegeErweitert]);
   // Artikel-Token → Leitfälle des AKTUELLEN Erlasses (sonst undefined = keine Zeile).
   const leitfaelleFuer = useCallback((artikel: string) => (
     erlass && leitfallShard?.key === erlass.key
@@ -335,6 +348,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // NACH `linien`/`fussnotenAnzahl` (TDZ des A26-Ansicht-Slots), wie zuvor inline.
   useInhaltsKopfMeldung({
     erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl,
+    kantoneVerfuegbar,
     suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf, sektionen,
   });
 
@@ -713,7 +727,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
           ...s.kinder.map((k) => ({ pos: sekPos.get(k.id) ?? Infinity, el: renderSektion(k, true, tiefe + 1) })),
           ...s.artikel.map((e) => ({
             pos: artIndex.get(e.artikel) ?? 0,
-            el: <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={margAnzeige.get(e.artikel)?.teile} margBasis={margAnzeige.get(e.artikel)?.ab} leitfaelle={leitfaelleFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />,
+            el: <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={margAnzeige.get(e.artikel)?.teile} margBasis={margAnzeige.get(e.artikel)?.ab} leitfaelle={leitfaelleFuer(e.artikel)} bezuege={bezuegeFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />,
           })),
         ].sort((a, b) => a.pos - b.pos)
       : [];
@@ -784,7 +798,8 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
         treffer={treffer} suche={suche} sucheDebounced={sucheDebounced} setSuche={setSuche}
         tocBaumEl={tocBaumEl} tocOffen={tocOffen} tocAuf={tocAuf} setTocOffen={setTocOffen} setTocAuf={setTocAuf}
         springeZuArtikel={springeZuArtikel}
-        leitfaelleFuer={leitfaelleFuer} revisionFuer={revisionFuer} historieFuer={historieFuer}
+        leitfaelleFuer={leitfaelleFuer} bezuegeFuer={bezuegeFuer} revisionFuer={revisionFuer} historieFuer={historieFuer}
+        kantoneVerfuegbar={kantoneVerfuegbar}
         reiterToast={reiterToast} setReiterToast={setReiterToast} reiterToastTimerRef={reiterToastTimer}
         tocDrawerRef={tocDrawerRef} trefferRef={trefferRef} navigate={navigate}
       />

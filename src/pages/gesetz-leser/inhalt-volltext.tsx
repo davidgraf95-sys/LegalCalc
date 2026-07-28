@@ -36,7 +36,7 @@ export function LeserVolltextInhalt({
   internRefs, margAnzeige, kantonSys, basisPfad, renderSektion,
   imPane, istXl, overlayWurzel, treffer, suche, sucheDebounced, setSuche,
   tocBaumEl, tocOffen, tocAuf, setTocOffen, setTocAuf, springeZuArtikel,
-  leitfaelleFuer, revisionFuer, historieFuer,
+  leitfaelleFuer, bezuegeFuer, revisionFuer, historieFuer, kantoneVerfuegbar,
   reiterToast, setReiterToast, reiterToastTimerRef,
   tocDrawerRef, trefferRef, navigate,
 }: {
@@ -71,8 +71,12 @@ export function LeserVolltextInhalt({
   setTocAuf: Dispatch<SetStateAction<boolean>>;
   springeZuArtikel: (token: string) => void;
   leitfaelleFuer: (artikel: string) => ArtikelLeserProps['leitfaelle'];
+  /** W2·7-BEZUG/B4: facettierte Bezüge je Artikel (nur im erweiterten Zustand). */
+  bezuegeFuer: (artikel: string) => ArtikelLeserProps['bezuege'];
   revisionFuer: (artikel: string) => ArtikelLeserProps['revision'];
   historieFuer: (artikel: string) => ArtikelLeserProps['historie'];
+  /** B4: Kantone, zu denen DIESER Erlass Kanten hat — speist den Kanton-Schalter. */
+  kantoneVerfuegbar: string[];
   reiterToast: boolean;
   setReiterToast: Dispatch<SetStateAction<boolean>>;
   reiterToastTimerRef: MutableRefObject<number | null>;
@@ -131,7 +135,7 @@ export function LeserVolltextInhalt({
   // einheitlich an EINER Stelle — nie zwei Menüs gleichzeitig. In der Einzelansicht
   // (!imPane) trägt der sticky Inhalts-Kopf das Menü (A26) → hier `null`, kein Doppel.
   const ansichtMenuPane = imPane
-    ? <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />
+    ? <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null} linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} kantoneVerfuegbar={kantoneVerfuegbar} />
     : null;
 
   return (
@@ -346,14 +350,14 @@ export function LeserVolltextInhalt({
           {treffer ? (
             <div ref={trefferRef} className="space-y-4">
               <p className="text-body-s text-ink-500"><span className="num">{treffer.length}</span> Treffer für «{sucheDebounced.trim()}»</p>
-              {treffer.map((e) => <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={struktur?.[e.artikel]?.marginalie} imTreffer onSpringe={springeZuArtikel} leitfaelle={leitfaelleFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />)}
+              {treffer.map((e) => <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={struktur?.[e.artikel]?.marginalie} imTreffer onSpringe={springeZuArtikel} leitfaelle={leitfaelleFuer(e.artikel)} bezuege={bezuegeFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />)}
               {treffer.length === 0 && <p className="text-body-s text-ink-500">Kein Artikel gefunden.</p>}
             </div>
           ) : (
             <div className="space-y-2">
               {ohneGliederung.length > 0 && (
                 <div className="space-y-5 mb-6">
-                  {ohneGliederung.map((e) => <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={margAnzeige.get(e.artikel)?.teile} margBasis={margAnzeige.get(e.artikel)?.ab} leitfaelle={leitfaelleFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />)}
+                  {ohneGliederung.map((e) => <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={margAnzeige.get(e.artikel)?.teile} margBasis={margAnzeige.get(e.artikel)?.ab} leitfaelle={leitfaelleFuer(e.artikel)} bezuege={bezuegeFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />)}
                 </div>
               )}
               {sektionen.map((s) => renderSektion(s, true, 0))}
