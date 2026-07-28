@@ -323,6 +323,27 @@ export function useBezugKlassen(): readonly BezugStatus[] {
   return useSyncExternalStore(abonniere, getKlassenSnapshot, getKlassenServerSnapshot);
 }
 
+/**
+ * Die Klassen NICHT-reaktiv lesen — für Entscheidungen INNERHALB eines Effekts.
+ *
+ * Warum das nötig ist (Befund 28.7.2026, an der Netzwerk-Sonde gemessen): der
+ * Reader ist prerendert und wird hydriert. Während der Hydration liefert
+ * `useSyncExternalStore` bewusst den SERVER-Snapshot, also den Default — auch
+ * wenn im localStorage längst ein erweiterter Zustand steht und
+ * `wendeLeserOptionenAn()` ihn vor dem ersten Render ins Modul geschrieben hat.
+ * Ein Effekt, der in diesem Moment «bin ich erweitert?» am gerenderten Wert
+ * fragt, bekommt «nein» und lädt den schlanken Shard — den er im erweiterten
+ * Zustand gerade NICHT laden soll. Gemessen kamen dann beide Shards über die
+ * Leitung, und die Zusage «an die Stelle, nie zusätzlich» war falsch.
+ *
+ * Der Modulwert kennt diese Verzögerung nicht: er steht seit `wendeLeserOptionenAn`
+ * richtig. Für die RENDER-Ausgabe bleibt der Hook massgeblich (sonst entstünde
+ * ein Hydration-Mismatch) — dieser Getter ist ausschliesslich für Effekte.
+ */
+export function holeBezugKlassen(): readonly BezugStatus[] {
+  return aktuellKlassen;
+}
+
 function getKantoneSnapshot(): readonly string[] {
   return aktuellKantone;
 }

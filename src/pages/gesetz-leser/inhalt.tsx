@@ -20,6 +20,8 @@ import { ArtikelLeser, SektionKopf, SektionBaumTOC } from './parts';
 import { beiLeerlauf } from '../../lib/leerlauf';
 import { ladeLeitfallShard, normArtikelToken, type LeitfallShard } from '../../lib/rechtsprechung/norm-index';
 import { useBezuege } from './bezuegeLaden';
+import { holeBezugKlassen } from './leserOptionen';
+import { istErweitert } from './bezugAuswahl';
 import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
 import {
@@ -111,11 +113,17 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     let lebt = true;
     const abbrechen = beiLeerlauf(() => {
       // W2·7-BEZUG/B4: im ERWEITERTEN Facetten-Zustand lädt `useBezuege` den
-      // Bezugs-Shard (Obermenge) — dann bleibt der schlanke Leitfall-Shard
-      // ungeladen. Nicht aus Sparsamkeit allein: beide zu laden brächte
-      // dieselben BGE-Kanten zweimal über die Leitung und liesse die Zeile
-      // zweimal einwachsen (zweiter Layout-Sprung, §15/CLS).
-      if (!bezuegeErweitert) {
+      // Bezugs-Shard (Obermenge) — dann holt DIESER Effekt den schlanken
+      // Leitfall-Shard nicht mehr. Nicht aus Sparsamkeit allein: beide für
+      // dieselbe Zeile zu laden brächte dieselben BGE-Kanten zweimal über die
+      // Leitung und liesse die Zeile zweimal einwachsen (zweiter Layout-Sprung,
+      // §15/CLS). Das KontextPanel lädt den norm-index-Shard weiterhin für
+      // seinen eigenen Zweck — siehe die Einschränkung in `bezuegeLaden.ts`.
+      // Nicht `bezuegeErweitert` (der gerenderte Wert) abfragen, sondern den
+      // Modulwert: während der Hydration liefert der Store bewusst noch den
+      // Default, und der Effekt lüde dann BEIDE Shards (an der Netzwerk-Sonde
+      // gemessen, 28.7.2026). Begründung an `holeBezugKlassen`.
+      if (!istErweitert(holeBezugKlassen())) {
         void ladeLeitfallShard(key).then((shard) => { if (lebt) setLeitfallShard({ key, shard }); });
       }
       void ladeRevisionShard(key).then((shard) => { if (lebt) setRevisionShard({ key, shard }); });

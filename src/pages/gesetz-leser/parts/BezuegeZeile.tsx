@@ -141,7 +141,7 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, nor
  * aus — er muss die erweiterte Form genauso treffen wie die schlanke, sonst
  * hätte das Zuschalten einer Facette einen Schalter still ausgehebelt (§13 F4).
  */
-export const BezuegeZeile = memo(function BezuegeZeile({ kanten, gesamt, ausgeblendet, normZitat, revision }: {
+export const BezuegeZeile = memo(function BezuegeZeile({ kanten, gesamt, ausgeblendet, normZitat, revision, vorgabeOffen = false }: {
   /** Kanten dieses Artikels NACH Facetten-Filter, in Shard-Ordnung. */
   kanten?: readonly Bezug[];
   /** Vor-Deckel-Grundgesamtheit je Status an diesem Artikel (§8). */
@@ -151,7 +151,12 @@ export const BezuegeZeile = memo(function BezuegeZeile({ kanten, gesamt, ausgebl
   /** Voll zitierfähige Norm («Art. 429 StPO») für den Fundstellen-Sprung. */
   normZitat: string;
   revision?: ArtikelRevision | null;
+  /** Anfangszustand der Sektion. Default ZU (Vorgabe David 28.7.2026 — der
+   *  Artikelfuss bleibt ruhig). Als Prop und nicht fest verdrahtet, damit die
+   *  aufgeklappte Form ohne Klick-Simulation prüfbar ist (renderToString). */
+  vorgabeOffen?: boolean;
 }) {
+  const [offen, setOffen] = useState(vorgabeOffen);
   const ueberschrift = (
     <span className="lc-overline mr-1" title="Maschinell aus den zitierten Normen zugeordnet — keine redaktionelle Präjudizienauswahl. Entscheide beziehen sich auf die im Entscheidzeitpunkt geltende Fassung.">
       <span className="lc-punkt lc-punkt-entscheid" aria-hidden />Bezüge
@@ -191,12 +196,39 @@ export const BezuegeZeile = memo(function BezuegeZeile({ kanten, gesamt, ausgebl
     if (liste) liste.push(b);
     else gruppen.set(b.facetten.status, [b]);
   }
+  // Klassen OHNE Treffer erscheinen gar nicht — eine Gruppe «Eidg. Gerichte 0»
+  // wäre Rauschen, das die Fläche belastet, ohne etwas zu sagen (Vorgabe David
+  // 28.7.2026: leere Facetten weglassen, nie als Rauschen).
   const geordnet = [...gruppen.entries()].sort((a, b) => STATUS_RANG[a[0]] - STATUS_RANG[b[0]]);
+
+  // ── EINGEKLAPPT: EINE ruhige Zeile (Vorgabe David 28.7.2026) ──────────────
+  // «achte darauf dass es minimalistisch und trotzdem intuitiv ist. es soll die
+  // optik des gesetzes nicht überladen.» Vier Klassen à sechs Chips wären bis zu
+  // 24 Chips am Artikelfuss — genau die Chip-Batterie, die den Lesefluss
+  // erschlägt. Der Grundzustand der Sektion ist darum eine einzige Textzeile aus
+  // Overline + Zählern; die Chips kommen auf Klick. Rangordnung und ehrliche
+  // Grundgesamtheit stehen schon in dieser Zeile — sie ist kürzer, nicht ärmer.
+  // Farbe trägt hier nichts: die Klassen werden über ihr WORT unterschieden,
+  // nicht über einen Farbschlüssel (R16 bleibt zu).
+  const zusammenfassung = geordnet
+    .map(([status, liste]) => `${zahlText(liste.length, Math.max(gesamt?.[status] ?? liste.length, liste.length))} ${KLASSE_KURZ[status]}`)
+    .join(' · ');
 
   return (
     <div data-leitfall-zeile data-bezuege-zeile className="mt-4 flex flex-col gap-1.5">
       <div className="flex flex-wrap items-center gap-2">
         {ueberschrift}
+        <button
+          type="button"
+          onClick={() => setOffen((o) => !o)}
+          aria-expanded={offen}
+          data-bezuege-schalter
+          className="text-micro text-ink-500 hover:text-brass-700 transition-colors"
+          title={offen ? 'Bezüge wieder einklappen' : 'Die einzelnen Entscheide zu diesem Artikel zeigen'}
+        >
+          <span className="num tabular-nums">{zusammenfassung}</span>
+          <span aria-hidden className="ml-1">{offen ? '▾' : '▸'}</span>
+        </button>
         {ausgeblendet > 0 && (
           <button
             type="button"
@@ -208,7 +240,11 @@ export const BezuegeZeile = memo(function BezuegeZeile({ kanten, gesamt, ausgebl
           </button>
         )}
       </div>
-      {geordnet.map(([status, liste]) => (
+      {/* Die Chips liegen NICHT im DOM, solange die Sektion zu ist: sie sind das
+          Teure (bis 24 Links je Artikel × ~1000 Artikel) und das optisch
+          Lauteste. Aufklappen ist eine Nutzereingabe — der dabei entstehende
+          Zuwachs zählt nicht in die CLS (hadRecentInput). */}
+      {offen && geordnet.map(([status, liste]) => (
         <StatusGruppe key={status} status={status} kanten={liste} gesamtRoh={gesamt?.[status]}
           normZitat={normZitat} revision={revision} />
       ))}

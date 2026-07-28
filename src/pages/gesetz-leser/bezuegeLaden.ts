@@ -21,11 +21,19 @@
 //
 // ── WARUM «STATT», NICHT «ZUSÄTZLICH» (§5) ─────────────────────────────────
 // Der Bezugs-Shard ist die OBERMENGE des Leitfall-Shards (Abgrenzungs-Kommentar
-// in bezuege.ts). Beide zu laden hiesse, dieselben BGE-Kanten zweimal über die
-// Leitung zu holen und zwei Wahrheiten am selben Artikel zu haben. Der Reader
-// lädt deshalb GENAU EINEN der beiden — und wechselt mit der Facetten-Wahl.
-// Nebeneffekt, der zählt: es gibt nur EIN Einwachsen der Zeile, also keinen
-// zweiten Layout-Sprung beim Nachladen (CLS).
+// in bezuege.ts). Beide für DIESELBE Zeile zu laden hiesse, dieselben BGE-Kanten
+// zweimal über die Leitung zu holen und zwei Wahrheiten am selben Artikel zu
+// haben. Der ARTIKEL-FUSS speist sich deshalb aus genau einem der beiden und
+// wechselt mit der Facetten-Wahl; es gibt nur EIN Einwachsen der Zeile, also
+// keinen zweiten Layout-Sprung (CLS).
+//
+// EHRLICHE EINSCHRÄNKUNG (an der Netzwerk-Sonde gemessen, 28.7.2026): «kein
+// norm-index-Fetch mehr» gilt NICHT für die Seite als Ganzes. Das KontextPanel
+// (`components/kontext/KontextPanel.tsx`) lädt denselben Shard für seinen
+// eigenen Zweck und ist von B4 unberührt — im erweiterten Zustand gehen daher
+// weiterhin beide Dateien über die Leitung, nur eben für zwei verschiedene
+// Flächen. Wer das zusammenlegen will, muss das KontextPanel umstellen; das ist
+// bewusst NICHT Teil von B4 (fremde Fläche, eigener Schritt).
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
@@ -34,7 +42,7 @@ import {
 } from '../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import { istErweitert, waehleBezuege } from './bezugAuswahl';
-import { useBezugKantone, useBezugKlassen } from './leserOptionen';
+import { holeBezugKlassen, useBezugKantone, useBezugKlassen } from './leserOptionen';
 import { beiLeerlauf } from '../../lib/leerlauf';
 
 /** Was ein Artikel-Fuss zum Rendern braucht (siehe `BezuegeZeile`). */
@@ -75,11 +83,17 @@ export function useBezuege(erlassKey: string | undefined): {
   const [shard, setShard] = useState<{ key: string; shard: BezugsShard | null } | null>(null);
 
   useEffect(() => {
-    // Grundzustand ⇒ GAR NICHT laden. Das ist der Kern der §15-Zusage: wer die
-    // Facetten nie anfasst, zahlt für sie auch nichts.
-    if (!erlassKey || !erweitert) return;
+    if (!erlassKey) return;
     let lebt = true;
     const abbrechen = beiLeerlauf(() => {
+      // Grundzustand ⇒ GAR NICHT laden. Das ist der Kern der §15-Zusage: wer die
+      // Facetten nie anfasst, zahlt für sie auch nichts.
+      //
+      // Gefragt wird der MODULWERT, nicht der gerenderte `erweitert`: während der
+      // Hydration liefert der Store noch den Default (Begründung an
+      // `holeBezugKlassen`). Der Effekt läuft trotzdem auf `erweitert` als
+      // Abhängigkeit — er soll ja erneut anlaufen, wenn der Nutzer umschaltet.
+      if (!istErweitert(holeBezugKlassen())) return;
       void ladeBezugsShard(erlassKey).then((s) => { if (lebt) setShard({ key: erlassKey, shard: s }); });
     });
     return () => { lebt = false; abbrechen(); };
@@ -108,8 +122,14 @@ export function useBezuege(erlassKey: string | undefined): {
   // des Shards (bis ~1200 bei der StPO) und das Ergebnis hängt an einem Prop-
   // Pfad bis ins «Ansicht ▾»-Menü — eine neue Array-Identität je Render machte
   // dessen memo-Wrapper wirkungslos (§15.4).
+  //
+  // `shard != null` MUSS zuerst stehen und nicht bloss `shard?.key === erlassKey`:
+  // solange kein Erlass geladen ist, sind BEIDE Seiten `undefined`, der Vergleich
+  // ist wahr und der Zugriff auf `shard.shard` lief auf null («Cannot read
+  // properties of null (reading 'shard')» — reproduziert 28.7.2026 im Dev-Server,
+  // die ganze Leser-Seite fiel in die Fehlergrenze).
   const kantoneVerfuegbar = useMemo(
-    () => (shard?.key === erlassKey ? kantoneImShard(shard.shard) : []),
+    () => (shard && erlassKey && shard.key === erlassKey ? kantoneImShard(shard.shard) : []),
     [shard, erlassKey],
   );
 

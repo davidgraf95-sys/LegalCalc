@@ -8,6 +8,9 @@
  *       stammt aus `gesamtProArtikel` des Shards, nicht aus der gezeigten Liste.
  *   (3) §8 kein stilles Nichts: nimmt der Filter alles weg, weist die Zeile die
  *       ausgeblendete Menge aus, statt zu verschwinden.
+ *   (4) Vorgabe David 28.7.2026 («nicht überladen»): eingeklappt steht EINE
+ *       Textzeile am Artikelfuss, keine Chips — die Chips liegen dann nicht
+ *       einmal im DOM.
  *
  * Der Beleg zu (2) läuft gegen den ECHTEN Shard (`public/rechtsprechung/
  * bezuege/STPO.json`), nicht gegen eine Attrappe: eine Attrappe könnte nur
@@ -45,26 +48,26 @@ describe('B4 · Rang-Trennung im Markup (§8)', () => {
   ];
 
   it('rendert je Status-Klasse eine eigene, markierte Gruppe', () => {
-    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} ausgeblendet={0} normZitat="Art. 5 StPO" />);
+    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} ausgeblendet={0} normZitat="Art. 5 StPO" vorgabeOffen />);
     expect(s).toContain('data-bezug-gruppe="bge"');
     expect(s).toContain('data-bezug-gruppe="bger"');
     expect(s).toContain('data-bezug-gruppe="kantonal"');
   });
 
   it('hält die deklarierte Rang-Ordnung ein: BGE vor BGer vor kantonal (§2)', () => {
-    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} ausgeblendet={0} normZitat="Art. 5 StPO" />);
+    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} ausgeblendet={0} normZitat="Art. 5 StPO" vorgabeOffen />);
     expect(s.indexOf('data-bezug-gruppe="bge"')).toBeLessThan(s.indexOf('data-bezug-gruppe="bger"'));
     expect(s.indexOf('data-bezug-gruppe="bger"')).toBeLessThan(s.indexOf('data-bezug-gruppe="kantonal"'));
   });
 
   it('★ trägt NUR der amtlich publizierte Leitentscheid — genau einmal', () => {
-    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} ausgeblendet={0} normZitat="Art. 5 StPO" />);
+    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} ausgeblendet={0} normZitat="Art. 5 StPO" vorgabeOffen />);
     expect(s.match(/★/g)).toHaveLength(1);
   });
 
   it('bleibt vom bestehenden «Entscheide»-Schalter erfasst (data-leitfall-zeile)', () => {
     // Sonst hätte das Zuschalten einer Facette einen Schalter still ausgehebelt.
-    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} ausgeblendet={0} normZitat="Art. 5 StPO" />);
+    const s = html(<BezuegeZeile kanten={kanten} gesamt={{}} ausgeblendet={0} normZitat="Art. 5 StPO" vorgabeOffen />);
     expect(s).toContain('data-leitfall-zeile');
   });
 });
@@ -86,7 +89,7 @@ describe('B4 · ehrliche Grundgesamtheit gegen den ausgelieferten Shard (§8)', 
     const kanten = waehleBezuege(alle, ['bge', 'bger', 'kantonal'], []);
     const s = html(
       <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']}
-        ausgeblendet={alle.length - kanten.length} normZitat="Art. 5 StPO" />,
+        ausgeblendet={alle.length - kanten.length} normZitat="Art. 5 StPO" vorgabeOffen />,
     );
     expect(s).toContain('8 von 115');   // kantonal: gedeckelt ⇒ Grundgesamtheit dazu
     expect(s).toContain('8 von 16');    // bge: ebenfalls gedeckelt
@@ -99,7 +102,7 @@ describe('B4 · ehrliche Grundgesamtheit gegen den ausgelieferten Shard (§8)', 
     // Vorbefund: kantonale Kanten tragen gewicht:null (der Zitier-Graph erkennt
     // ihre Geschäftsnummern nicht).
     expect(kantonal.every((b) => b.gewicht === null)).toBe(true);
-    const s = html(<BezuegeZeile kanten={kantonal} gesamt={{ kantonal: 115 }} ausgeblendet={0} normZitat="Art. 5 StPO" />);
+    const s = html(<BezuegeZeile kanten={kantonal} gesamt={{ kantonal: 115 }} ausgeblendet={0} normZitat="Art. 5 StPO" vorgabeOffen />);
     expect(s).not.toContain('>0<');
     expect(s).not.toContain('null');
   });
@@ -121,8 +124,55 @@ describe('B4 · kein stilles Nichts (§8)', () => {
   it('§7-Wortfeld: kein «geprüft»/«verifiziert» in der gerenderten Zeile', () => {
     const s = html(
       <BezuegeZeile kanten={[kante('bs_1', 'BES.2024.15', 'kantonal', 'BS')]}
-        gesamt={{ kantonal: 115 }} ausgeblendet={3} normZitat="Art. 5 StPO" />,
+        gesamt={{ kantonal: 115 }} ausgeblendet={3} normZitat="Art. 5 StPO" vorgabeOffen />,
     );
     expect(s).not.toMatch(/gepr(ü|&#x[0-9a-f]+;|ue)ft|verifiziert|gegengepr/i);
+  });
+});
+
+describe('B4 · Ruhe am Artikelfuss (Vorgabe David 28.7.2026)', () => {
+  const shard = JSON.parse(
+    readFileSync('public/rechtsprechung/bezuege/STPO.json', 'utf8'),
+  ) as BezugsShard;
+  const kanten = waehleBezuege(bezuegeFuerArtikel(shard, '5'), ['bge', 'bger', 'kantonal'], []);
+
+  it('eingeklappt: KEIN Chip im DOM — nur die Zusammenfassungs-Zeile', () => {
+    // 18 Kanten an Art. 5 StPO; eingeklappt darf davon nichts als Link stehen,
+    // sonst ist es die Chip-Batterie, die die Optik des Gesetzes überlädt.
+    const s = html(
+      <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} ausgeblendet={0}
+        normZitat="Art. 5 StPO" />,
+    );
+    expect(kanten.length).toBeGreaterThan(10);
+    expect(s).not.toContain('lc-chip');
+    expect(s).not.toContain('data-bezug-gruppe');
+    expect(s.match(/<a /g) ?? []).toHaveLength(0);
+  });
+
+  it('eingeklappt trägt Rang UND ehrliche Zahl schon im Text', () => {
+    const s = html(
+      <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} ausgeblendet={0}
+        normZitat="Art. 5 StPO" />,
+    );
+    expect(s).toContain('8 von 16 Leitentscheide');
+    expect(s).toContain('8 von 115 Kantonal');
+    expect(s).toContain('aria-expanded="false"');
+  });
+
+  it('aufgeklappt kommen die Chips dazu — dieselbe Zeile, ein Klick weiter', () => {
+    const s = html(
+      <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} ausgeblendet={0}
+        normZitat="Art. 5 StPO" vorgabeOffen />,
+    );
+    expect(s).toContain('lc-chip');
+    expect(s).toContain('aria-expanded="true"');
+  });
+
+  it('leere Klassen erscheinen gar nicht — kein «Eidg. Gerichte 0» als Rauschen', () => {
+    const s = html(
+      <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} ausgeblendet={0}
+        normZitat="Art. 5 StPO" />,
+    );
+    expect(s).not.toContain('Eidg. Gerichte');
   });
 });
