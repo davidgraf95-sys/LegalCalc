@@ -1,345 +1,56 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-790.100",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_VD.2022.207": {
-      "zitierung": "Appellationsgericht BS VD.2022.207 vom 06.02.2023",
-      "regesteKurz": "Vertretung durch den Mieterinnen- und Mieterverband vor der Baurekurskommission (BGer 2C_29/2025 vom 27. März 2025)",
-      "datum": "2023-02-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.218": {
-      "zitierung": "Appellationsgericht BS VD.2022.218 vom 15.09.2023",
-      "regesteKurz": "Vertretung durch den Mieterinnen- und Mieterverband vor der Baurekurskommission",
-      "datum": "2023-09-15",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.257": {
-      "zitierung": "Appellationsgericht BS VD.2022.257 vom 04.07.2023",
-      "regesteKurz": "Wahl in die Wohnschutzkommission",
-      "datum": "2023-07-04",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.59": {
-      "zitierung": "Appellationsgericht BS VD.2022.59 vom 21.06.2022",
-      "regesteKurz": "Nichteintretensentscheid",
-      "datum": "2022-06-21",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.105": {
-      "zitierung": "Appellationsgericht BS VD.2023.105 vom 10.12.2024",
-      "regesteKurz": "Renovation im vereinfachten Bewilligungsverfahren (WRFG)",
-      "datum": "2024-12-10",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.136": {
-      "zitierung": "Appellationsgericht BS VD.2023.136 vom 06.01.2025",
-      "regesteKurz": "Bauentscheid Nr. BBG [...] vom 16. November 2022 in Sachen Sanierung und Umbau Mehrfamilienhaus mit Ausbau Dachgeschoss…",
-      "datum": "2025-01-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.166": {
-      "zitierung": "Appellationsgericht BS VD.2023.166 vom 04.07.2024",
-      "regesteKurz": "Bauentscheid Nr. [...] vom 15. Februar 2022 in Sachen Umbau und Sanierung der Wohnungen, Sanierung Gebäudehülle, [...]",
-      "datum": "2024-07-04",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.107": {
-      "zitierung": "Appellationsgericht BS VD.2024.107 vom 19.06.2025",
-      "regesteKurz": "Abbruch von zwei Doppelmehrfamilienhäusern und Neubau von zwei Mehrfamilienhäusern und drei Reiheneinfamilienhäusern (B…",
-      "datum": "2025-06-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.155": {
-      "zitierung": "Appellationsgericht BS VD.2024.155 vom 25.07.2025",
-      "regesteKurz": "Rekurs gegen einen Entscheid der Baurekurskommission",
-      "datum": "2025-07-25",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.164": {
-      "zitierung": "Appellationsgericht BS VD.2024.164 vom 06.10.2025",
-      "regesteKurz": "Einspracheentscheid zum Bauentscheid Nr. BBG [...] vom 14. September 2022 in Sachen Umbau und Sanierung Mehrfamilienhau…",
-      "datum": "2025-10-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.166": {
-      "zitierung": "Appellationsgericht BS VD.2024.166 vom 06.10.2025",
-      "regesteKurz": "Bauentscheid Nr. BBG [...] vom 14. September 2022 in Sachen Umbau und Sanierung Mehrfamilienhaus mit Ausbau des Dachges…",
-      "datum": "2025-10-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.45": {
-      "zitierung": "Appellationsgericht BS VD.2024.45 vom 09.09.2025",
-      "regesteKurz": "Bauentscheid in Sachen 7 Standorte für Unterflurcontainer",
-      "datum": "2025-09-09",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2025.59": {
-      "zitierung": "Appellationsgericht BS VD.2025.59 vom 13.02.2026",
-      "regesteKurz": "Vorentscheid Generelles Baubegehren Nr. [...] (1) vom 3. Juni 2024 in Sachen Grundsatzfragen zum Vorhaben: Abbruch und…",
-      "datum": "2026-02-13",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2025.69": {
-      "zitierung": "Appellationsgericht BS VD.2025.69 vom 12.12.2025",
-      "regesteKurz": "Besichtigungstermin / Nutzungsprüfung",
-      "datum": "2025-12-12",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2025.8": {
-      "zitierung": "Appellationsgericht BS VD.2025.8 vom 22.04.2026",
-      "regesteKurz": "Abbruch der bestehende Häuser und Garagen; Neubau MFH mit Autoeinstellhalle, Neubadstrasse 107-115, Laupenring 131, Bas…",
-      "datum": "2026-04-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "1": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.218",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.207",
-        "gewicht": null
-      }
-    ],
-    "2": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.8",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.69",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.164",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.166",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.45",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.155",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.136",
-        "gewicht": null
-      }
-    ],
-    "3": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.218",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.207",
-        "gewicht": null
-      }
-    ],
-    "4": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.218",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.207",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.59",
-        "gewicht": null
-      }
-    ],
-    "5": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.8",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.59",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.69",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.136",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.166",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.257",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.59",
-        "gewicht": null
-      }
-    ],
-    "6": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.8",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.59",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.69",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.164",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.166",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.45",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.155",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "1": {
-      "kantonal": 2
-    },
-    "2": {
-      "kantonal": 18
-    },
-    "3": {
-      "kantonal": 2
-    },
-    "4": {
-      "kantonal": 3
-    },
-    "5": {
-      "kantonal": 8
-    },
-    "6": {
-      "kantonal": 31
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-790.100",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_VD.2021.109":{"zitierung":"Appellationsgericht BS VD.2021.109 vom 14.02.2022","regesteKurz":"Umbau und Sanierung EFH mit Balkonanbau und neuer Dachgaube, Wärmepumpe sowie Velounterstand im Vorgarten (BGer-Nr. 1C_…","datum":"2022-02-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.120":{"zitierung":"Appellationsgericht BS VD.2021.120 vom 01.02.2022","regesteKurz":"betreffend Sanierung und Erweiterung Mobilfunkanlage","datum":"2022-02-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.126":{"zitierung":"Appellationsgericht BS VD.2021.126 vom 17.05.2022","regesteKurz":"betreffend Einspracheentscheide zum Bauentscheid Nr. BBG [...] (1) vom 5. Oktober 2020 in Sachen Abbruch [...], Neubau…","datum":"2022-05-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.141":{"zitierung":"Appellationsgericht BS VD.2021.141 vom 04.05.2022","regesteKurz":"Anbau für Lagernutzung im Hinterhof (nachträgliches Baubegehren)","datum":"2022-05-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.236":{"zitierung":"Appellationsgericht BS VD.2021.236 vom 03.02.2023","regesteKurz":"Neubau Trinkwasser Reservoir, Ausnahmeantrag (RPG)","datum":"2023-02-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.55":{"zitierung":"Appellationsgericht BS VD.2021.55 vom 18.03.2022","regesteKurz":"Baurechtliche Erhebung, Nutzungserklärung (Nichteintreten)","datum":"2022-03-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.8":{"zitierung":"Appellationsgericht BS VD.2021.8 vom 01.02.2022","regesteKurz":"Betreffend Ersatz einer Antennenanlage für Mobilfunkkommunikation","datum":"2022-02-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.158":{"zitierung":"Appellationsgericht BS VD.2022.158 vom 16.08.2022","regesteKurz":"Ersatz von Fenstern","datum":"2022-08-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.207":{"zitierung":"Appellationsgericht BS VD.2022.207 vom 06.02.2023","regesteKurz":"Vertretung durch den Mieterinnen- und Mieterverband vor der Baurekurskommission (BGer 2C_29/2025 vom 27. März 2025)","datum":"2023-02-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.218":{"zitierung":"Appellationsgericht BS VD.2022.218 vom 15.09.2023","regesteKurz":"Vertretung durch den Mieterinnen- und Mieterverband vor der Baurekurskommission","datum":"2023-09-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.240":{"zitierung":"Appellationsgericht BS VD.2022.240 vom 01.12.2023","regesteKurz":"Umnutzung von Lagerraum zu Bandraum und Tonstudio im UG Hinterhaus (nachträgliches Baubegehren), C____strasse [...]","datum":"2023-12-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.257":{"zitierung":"Appellationsgericht BS VD.2022.257 vom 04.07.2023","regesteKurz":"Wahl in die Wohnschutzkommission","datum":"2023-07-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.264":{"zitierung":"Appellationsgericht BS VD.2022.264 vom 27.11.2023","regesteKurz":"Bauentscheid Nr. BBG 9'122'923 (1) vom 25. Mai 2021 in Sachen Neubau Mehrfamilienhaus mit 8 Wohnungen, Maiengasse 52, B…","datum":"2023-11-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.279":{"zitierung":"Appellationsgericht BS VD.2022.279 vom 06.06.2023","regesteKurz":"Umbau Mehrfamilienhaus mit Dachausbau mit Dacheinschnitt und Dachterrasse, [...]","datum":"2023-06-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.59":{"zitierung":"Appellationsgericht BS VD.2022.59 vom 21.06.2022","regesteKurz":"Nichteintretensentscheid","datum":"2022-06-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.83":{"zitierung":"Appellationsgericht BS VD.2022.83 vom 22.11.2022","regesteKurz":"Vorentscheid Generelles Baubegehren Nr. G-BBG [...] (1) vom 12. November 2021 in Sachen Grundsatzfragen zum Bauvorhaben…","datum":"2022-11-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.105":{"zitierung":"Appellationsgericht BS VD.2023.105 vom 10.12.2024","regesteKurz":"Renovation im vereinfachten Bewilligungsverfahren (WRFG)","datum":"2024-12-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.136":{"zitierung":"Appellationsgericht BS VD.2023.136 vom 06.01.2025","regesteKurz":"Bauentscheid Nr. BBG [...] vom 16. November 2022 in Sachen Sanierung und Umbau Mehrfamilienhaus mit Ausbau Dachgeschoss…","datum":"2025-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.161":{"zitierung":"Appellationsgericht BS VD.2023.161 vom 22.03.2024","regesteKurz":"Reklameentscheid Nr. [...] vom 7. Dezember 2022 in Sachen digitaler Screen an Hausfassade, [...], Basel","datum":"2024-03-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.166":{"zitierung":"Appellationsgericht BS VD.2023.166 vom 04.07.2024","regesteKurz":"Bauentscheid Nr. [...] vom 15. Februar 2022 in Sachen Umbau und Sanierung der Wohnungen, Sanierung Gebäudehülle, [...]","datum":"2024-07-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.89":{"zitierung":"Appellationsgericht BS VD.2023.89 vom 12.03.2024","regesteKurz":"Denkmalschutz, Abbruch Wohnhaus D____, Riehen","datum":"2024-03-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.99":{"zitierung":"Appellationsgericht BS VD.2023.99 vom 04.06.2024","regesteKurz":"Gartenterrasse","datum":"2024-06-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.107":{"zitierung":"Appellationsgericht BS VD.2024.107 vom 19.06.2025","regesteKurz":"Abbruch von zwei Doppelmehrfamilienhäusern und Neubau von zwei Mehrfamilienhäusern und drei Reiheneinfamilienhäusern (B…","datum":"2025-06-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.127":{"zitierung":"Appellationsgericht BS VD.2024.127","regesteKurz":"Einspracheentscheid zum Bauentscheid in Sachen Umbau einer Mobilfunkanlage","datum":"2024-01-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.155":{"zitierung":"Appellationsgericht BS VD.2024.155 vom 25.07.2025","regesteKurz":"Rekurs gegen einen Entscheid der Baurekurskommission","datum":"2025-07-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.164":{"zitierung":"Appellationsgericht BS VD.2024.164 vom 06.10.2025","regesteKurz":"Einspracheentscheid zum Bauentscheid Nr. BBG [...] vom 14. September 2022 in Sachen Umbau und Sanierung Mehrfamilienhau…","datum":"2025-10-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.166":{"zitierung":"Appellationsgericht BS VD.2024.166 vom 06.10.2025","regesteKurz":"Bauentscheid Nr. BBG [...] vom 14. September 2022 in Sachen Umbau und Sanierung Mehrfamilienhaus mit Ausbau des Dachges…","datum":"2025-10-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.23":{"zitierung":"Appellationsgericht BS VD.2024.23 vom 02.12.2024","regesteKurz":"Vorentscheid Generelles Baubegehren Nr. [...] vom 13. Februar 2023 in Sachen Grundsatzfragen zum Bauvorhaben Renovation…","datum":"2024-12-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.39":{"zitierung":"Appellationsgericht BS VD.2024.39 vom 28.06.2024","regesteKurz":"Bauentscheid Nr. [...] vom 19. Juni 2023","datum":"2024-06-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.45":{"zitierung":"Appellationsgericht BS VD.2024.45 vom 09.09.2025","regesteKurz":"Bauentscheid in Sachen 7 Standorte für Unterflurcontainer","datum":"2025-09-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.59":{"zitierung":"Appellationsgericht BS VD.2025.59 vom 13.02.2026","regesteKurz":"Vorentscheid Generelles Baubegehren Nr. [...] (1) vom 3. Juni 2024 in Sachen Grundsatzfragen zum Vorhaben: Abbruch und…","datum":"2026-02-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.69":{"zitierung":"Appellationsgericht BS VD.2025.69 vom 12.12.2025","regesteKurz":"Besichtigungstermin / Nutzungsprüfung","datum":"2025-12-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.8":{"zitierung":"Appellationsgericht BS VD.2025.8 vom 22.04.2026","regesteKurz":"Abbruch der bestehende Häuser und Garagen; Neubau MFH mit Autoeinstellhalle, Neubadstrasse 107-115, Laupenring 131, Bas…","datum":"2026-04-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"1":[{"key":"bs_appellationsgericht_VD.2022.218","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.207","gewicht":null}],
+"2":[{"key":"bs_appellationsgericht_VD.2025.8","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.69","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.164","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.45","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.155","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.136","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.161","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.218","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.279","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.207","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.236","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.158","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.59","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.126","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.109","gewicht":null}],
+"3":[{"key":"bs_appellationsgericht_VD.2022.218","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.207","gewicht":null}],
+"4":[{"key":"bs_appellationsgericht_VD.2022.218","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.207","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.59","gewicht":null}],
+"5":[{"key":"bs_appellationsgericht_VD.2025.8","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.59","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.69","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.136","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.105","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.257","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.59","gewicht":null}],
+"6":[{"key":"bs_appellationsgericht_VD.2025.8","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.59","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.69","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.164","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.45","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.155","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.136","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.23","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.39","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.99","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.161","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.89","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.127","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.240","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.264","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.218","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.279","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.207","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.236","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.83","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.158","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.59","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.126","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.141","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.109","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.120","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.8","gewicht":null}]
+},
+"gesamtProArtikel":{
+"1":{"kantonal":2},
+"2":{"kantonal":18},
+"3":{"kantonal":2},
+"4":{"kantonal":3},
+"5":{"kantonal":8},
+"6":{"kantonal":31}
+}
 }

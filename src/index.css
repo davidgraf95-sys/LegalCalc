@@ -699,6 +699,54 @@
   .lc-chip-geltend { border-left-color: var(--sage-500); }
   .lc-chip-vorbehalt { border-left-color: var(--warn-500); }
 
+  /* ─── Die scrollbare Instanz-Linie (W2·7-BEZUG/B7, David 28.7.2026) ────────
+     «je eine linie für jede instanz und alle sichtbar» — eine Klasse, eine
+     Linie, waagrecht durchscrollbar.
+
+     SCROLL-AFFORDANZ OHNE SCROLLBALKEN-LÄRM und OHNE JavaScript: die klassische
+     Schatten-Technik aus zwei Verlaufs-Paaren. Das erste Paar ist in `local`
+     verankert (scrollt MIT dem Inhalt) und deckt in Papierfarbe ab; das zweite
+     ist in `scroll` verankert (bleibt am Rand stehen) und zeichnet den Schatten.
+     Wo nichts mehr kommt, schiebt die Abdeckung den Schatten weg — der Hinweis
+     erscheint also genau dann, wenn es etwas zu holen gibt, und verschwindet am
+     Ende von selbst. Eine JS-Variante bräuchte einen Scroll-Listener JE LINIE,
+     bei 1'000 Artikeln also Tausende; das wäre die Idle-Herde aus W2·7-VZUI
+     (§15.4) für einen Verlauf.
+
+     Der Balken selbst bleibt dünn und farblos (`scrollbar-width: thin`,
+     transparenter Track): sichtbar genug, dass die Geste erkennbar ist, leise
+     genug, dass vier Linien untereinander nicht wie ein Gitter aussehen
+     (DESIGN-REGLEMENT F1: Gruppierung über Weissraum, nicht über Rahmen).
+
+     `overscroll-behavior-x: contain` verhindert, dass ein Wisch am Ende der
+     Linie die Seite mitzieht oder die Browser-Zurück-Geste auslöst — auf dem
+     Telefon sonst der sichere Weg versehentlich aus dem Artikel heraus.
+     `scroll-padding-inline` hält den Chip, den die Tab-Taste anspringt, vom
+     Rand weg. */
+  .lc-bezug-linie {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
+    overscroll-behavior-x: contain;
+    scroll-padding-inline: 8px;
+    background:
+      linear-gradient(to right, var(--paper) 40%, transparent) left center / 20px 100% no-repeat local,
+      linear-gradient(to left, var(--paper) 40%, transparent) right center / 20px 100% no-repeat local,
+      radial-gradient(farthest-side at 0 50%, rgb(0 0 0 / .10), transparent) left center / 10px 100% no-repeat scroll,
+      radial-gradient(farthest-side at 100% 50%, rgb(0 0 0 / .10), transparent) right center / 10px 100% no-repeat scroll;
+  }
+  /* Dunkel: der Schatten muss HELL sein, sonst ist er auf dunklem Papier
+     unsichtbar — dieselbe Geometrie, umgekehrte Tinte. */
+  html.dark .lc-bezug-linie {
+    background:
+      linear-gradient(to right, var(--paper) 40%, transparent) left center / 20px 100% no-repeat local,
+      linear-gradient(to left, var(--paper) 40%, transparent) right center / 20px 100% no-repeat local,
+      radial-gradient(farthest-side at 0 50%, rgb(255 255 255 / .12), transparent) left center / 10px 100% no-repeat scroll,
+      radial-gradient(farthest-side at 100% 50%, rgb(255 255 255 / .12), transparent) right center / 10px 100% no-repeat scroll;
+  }
+  .lc-bezug-linie::-webkit-scrollbar { height: 4px; }
+  .lc-bezug-linie::-webkit-scrollbar-track { background: transparent; }
+  .lc-bezug-linie::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
+
   /* ─── Griffe der Leser-Werkzeugleiste (W2·7-BEZUG/B6, Auftrag David 28.7.2026) ──
      EINE Anatomie für ALLE Bedien-Elemente der Leiste «Gesetze › Bund › ZGB ·
      Art. 212 · Im Gesetz suchen … · Rechtsprechung ▾ · Ansicht ▾ · Stand · ✕».

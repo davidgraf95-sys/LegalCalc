@@ -1,71 +1,21 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-162.200",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_VD.2021.146": {
-      "zitierung": "Appellationsgericht BS VD.2021.146 vom 28.01.2022",
-      "regesteKurz": "Pikettdienstzulagen",
-      "datum": "2022-01-28",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.140": {
-      "zitierung": "Appellationsgericht BS VD.2023.140 vom 24.04.2024",
-      "regesteKurz": "Rückerstattung von Ausbildungskosten",
-      "datum": "2024-04-24",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "19": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.140",
-        "gewicht": null
-      }
-    ],
-    "31": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.146",
-        "gewicht": null
-      }
-    ],
-    "39": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.146",
-        "gewicht": null
-      }
-    ],
-    "39a": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.146",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "19": {
-      "kantonal": 1
-    },
-    "31": {
-      "kantonal": 1
-    },
-    "39": {
-      "kantonal": 1
-    },
-    "39a": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-162.200",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_VD.2021.146":{"zitierung":"Appellationsgericht BS VD.2021.146 vom 28.01.2022","regesteKurz":"Pikettdienstzulagen","datum":"2022-01-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.140":{"zitierung":"Appellationsgericht BS VD.2023.140 vom 24.04.2024","regesteKurz":"Rückerstattung von Ausbildungskosten","datum":"2024-04-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"19":[{"key":"bs_appellationsgericht_VD.2023.140","gewicht":null}],
+"31":[{"key":"bs_appellationsgericht_VD.2021.146","gewicht":null}],
+"39":[{"key":"bs_appellationsgericht_VD.2021.146","gewicht":null}],
+"39a":[{"key":"bs_appellationsgericht_VD.2021.146","gewicht":null}]
+},
+"gesamtProArtikel":{
+"19":{"kantonal":1},
+"31":{"kantonal":1},
+"39":{"kantonal":1},
+"39a":{"kantonal":1}
+}
 }

@@ -1,632 +1,76 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-162.100",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_BEZ.2025.25": {
-      "zitierung": "Appellationsgericht BS BEZ.2025.25 vom 06.11.2025",
-      "regesteKurz": "Ausstandsbegehren",
-      "datum": "2025-11-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2022.20": {
-      "zitierung": "Appellationsgericht BS SB.2022.20 vom 03.02.2023",
-      "regesteKurz": "mehrfacher Betrug",
-      "datum": "2023-02-03",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2021.146": {
-      "zitierung": "Appellationsgericht BS VD.2021.146 vom 28.01.2022",
-      "regesteKurz": "Pikettdienstzulagen",
-      "datum": "2022-01-28",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2021.216": {
-      "zitierung": "Appellationsgericht BS VD.2021.216 vom 25.05.2022",
-      "regesteKurz": "Rechtsverzögerung",
-      "datum": "2022-05-25",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2021.219": {
-      "zitierung": "Appellationsgericht BS VD.2021.219 vom 08.02.2023",
-      "regesteKurz": "Entschädigung aus materieller Enteignung (BGer 1C_61/2023 vom 23. Februar 2023)",
-      "datum": "2023-02-08",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2021.246": {
-      "zitierung": "Appellationsgericht BS VD.2021.246 vom 19.04.2022",
-      "regesteKurz": "Kündigung des Arbeitsverhältnisses",
-      "datum": "2022-04-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.241": {
-      "zitierung": "Appellationsgericht BS VD.2022.241 vom 26.07.2023",
-      "regesteKurz": "Kündigung des Arbeitsverhältnisses",
-      "datum": "2023-07-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.247": {
-      "zitierung": "Appellationsgericht BS VD.2022.247 vom 01.06.2023",
-      "regesteKurz": "Lohneinstufung",
-      "datum": "2023-06-01",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.253": {
-      "zitierung": "Appellationsgericht BS VD.2022.253 vom 26.10.2023",
-      "regesteKurz": "Kündigung des Arbeitsverhältnisses",
-      "datum": "2023-10-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.257": {
-      "zitierung": "Appellationsgericht BS VD.2022.257 vom 04.07.2023",
-      "regesteKurz": "Wahl in die Wohnschutzkommission",
-      "datum": "2023-07-04",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.266": {
-      "zitierung": "Appellationsgericht BS VD.2022.266 vom 11.11.2023",
-      "regesteKurz": "Kündigung des Arbeitsverhältnisses",
-      "datum": "2023-11-11",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.134": {
-      "zitierung": "Appellationsgericht BS VD.2023.134 vom 27.09.2024",
-      "regesteKurz": "Änderung des Aufgabengebietes",
-      "datum": "2024-09-27",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.140": {
-      "zitierung": "Appellationsgericht BS VD.2023.140 vom 24.04.2024",
-      "regesteKurz": "Rückerstattung von Ausbildungskosten",
-      "datum": "2024-04-24",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.165": {
-      "zitierung": "Appellationsgericht BS VD.2023.165 vom 23.10.2024",
-      "regesteKurz": "Kündigung des Arbeitsverhältnisses",
-      "datum": "2024-10-23",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.180": {
-      "zitierung": "Appellationsgericht BS VD.2023.180 vom 24.10.2024",
-      "regesteKurz": "Kündigung des Arbeitsverhältnisses",
-      "datum": "2024-10-24",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.163": {
-      "zitierung": "Appellationsgericht BS VD.2024.163 vom 27.05.2025",
-      "regesteKurz": "fristlose Auflösung des Arbeitsverhältnisses",
-      "datum": "2025-05-27",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.42": {
-      "zitierung": "Appellationsgericht BS VD.2024.42 vom 06.01.2025",
-      "regesteKurz": "Kündigung des Arbeitsverhältnisses",
-      "datum": "2025-01-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2025.145": {
-      "zitierung": "Appellationsgericht BS VD.2025.145 vom 11.06.2026",
-      "regesteKurz": "Freistellung und Änderung des Aufgabengebiets (noch nicht rechtskräftig)",
-      "datum": "2026-06-11",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2025.86": {
-      "zitierung": "Appellationsgericht BS VD.2025.86 vom 21.08.2025",
-      "regesteKurz": "Kostengutsprache",
-      "datum": "2025-08-21",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2025.97": {
-      "zitierung": "Appellationsgericht BS VD.2025.97 vom 03.06.2026",
-      "regesteKurz": "Freistellung und Ordentliche Kündigung aufgrund schwerer Pflichtverletzungen",
-      "datum": "2026-06-03",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_sozialversicherungsgericht_AH.2024.10": {
-      "zitierung": "Sozialversicherungsgericht BS AH.2024.10 vom 04.06.2025",
-      "regesteKurz": "Die Mitglieder der Wohnschutzkommission sind als Behördenmitglieder im Sinne von Art. 7 lit. i AHVV zu qualifizieren, w…",
-      "datum": "2025-06-04",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_sozialversicherungsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "2": [
-      {
-        "key": "bs_sozialversicherungsgericht_AH.2024.10",
-        "gewicht": null
-      }
-    ],
-    "4": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.140",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.247",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2022.20",
-        "gewicht": null
-      }
-    ],
-    "9": [
-      {
-        "key": "bs_appellationsgericht_BEZ.2025.25",
-        "gewicht": null
-      }
-    ],
-    "12": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.97",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.134",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.146",
-        "gewicht": null
-      }
-    ],
-    "14": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.180",
-        "gewicht": null
-      }
-    ],
-    "20": [
-      {
-        "key": "bs_appellationsgericht_SB.2022.20",
-        "gewicht": null
-      }
-    ],
-    "21": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.42",
-        "gewicht": null
-      }
-    ],
-    "22": [
-      {
-        "key": "bs_sozialversicherungsgericht_AH.2024.10",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.42",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.257",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.216",
-        "gewicht": null
-      }
-    ],
-    "24": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.97",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.86",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.163",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.134",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.266",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.253",
-        "gewicht": null
-      }
-    ],
-    "25": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.97",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.86",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.163",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.134",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.266",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.253",
-        "gewicht": null
-      }
-    ],
-    "28": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.165",
-        "gewicht": null
-      }
-    ],
-    "30": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.97",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.42",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.165",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.134",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.266",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.253",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.241",
-        "gewicht": null
-      }
-    ],
-    "31": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.42",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.134",
-        "gewicht": null
-      }
-    ],
-    "34": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.241",
-        "gewicht": null
-      }
-    ],
-    "35": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": null
-      }
-    ],
-    "36": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.86",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.163",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.165",
-        "gewicht": null
-      }
-    ],
-    "37": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.97",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.241",
-        "gewicht": null
-      }
-    ],
-    "38": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.165",
-        "gewicht": null
-      }
-    ],
-    "40": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.145",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.97",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.86",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.163",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.42",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.165",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.134",
-        "gewicht": null
-      }
-    ],
-    "41": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.145",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.246",
-        "gewicht": null
-      }
-    ],
-    "43": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.145",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.97",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.42",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.165",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.134",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.266",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.253",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "2": {
-      "kantonal": 1
-    },
-    "4": {
-      "kantonal": 4
-    },
-    "9": {
-      "kantonal": 1
-    },
-    "12": {
-      "kantonal": 3
-    },
-    "14": {
-      "kantonal": 1
-    },
-    "20": {
-      "kantonal": 1
-    },
-    "21": {
-      "kantonal": 1
-    },
-    "22": {
-      "kantonal": 4
-    },
-    "24": {
-      "kantonal": 6
-    },
-    "25": {
-      "kantonal": 6
-    },
-    "28": {
-      "kantonal": 1
-    },
-    "30": {
-      "kantonal": 9
-    },
-    "31": {
-      "kantonal": 2
-    },
-    "34": {
-      "kantonal": 1
-    },
-    "35": {
-      "kantonal": 1
-    },
-    "36": {
-      "kantonal": 3
-    },
-    "37": {
-      "kantonal": 3
-    },
-    "38": {
-      "kantonal": 1
-    },
-    "40": {
-      "kantonal": 16
-    },
-    "41": {
-      "kantonal": 2
-    },
-    "43": {
-      "kantonal": 10
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-162.100",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_BEZ.2025.25":{"zitierung":"Appellationsgericht BS BEZ.2025.25 vom 06.11.2025","regesteKurz":"Ausstandsbegehren","datum":"2025-11-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2022.20":{"zitierung":"Appellationsgericht BS SB.2022.20 vom 03.02.2023","regesteKurz":"mehrfacher Betrug","datum":"2023-02-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.146":{"zitierung":"Appellationsgericht BS VD.2021.146 vom 28.01.2022","regesteKurz":"Pikettdienstzulagen","datum":"2022-01-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.216":{"zitierung":"Appellationsgericht BS VD.2021.216 vom 25.05.2022","regesteKurz":"Rechtsverzögerung","datum":"2022-05-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.219":{"zitierung":"Appellationsgericht BS VD.2021.219 vom 08.02.2023","regesteKurz":"Entschädigung aus materieller Enteignung (BGer 1C_61/2023 vom 23. Februar 2023)","datum":"2023-02-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.237":{"zitierung":"Appellationsgericht BS VD.2021.237 vom 03.05.2022","regesteKurz":"Ablehnung des Anspruchs auf Unterhaltszulagen (BGer 8C_378/2022 vom 30. Juni 2022)","datum":"2022-05-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.246":{"zitierung":"Appellationsgericht BS VD.2021.246 vom 19.04.2022","regesteKurz":"Kündigung des Arbeitsverhältnisses","datum":"2022-04-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.256":{"zitierung":"Appellationsgericht BS VD.2021.256 vom 14.06.2022","regesteKurz":"Kündigung","datum":"2022-06-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.241":{"zitierung":"Appellationsgericht BS VD.2022.241 vom 26.07.2023","regesteKurz":"Kündigung des Arbeitsverhältnisses","datum":"2023-07-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.247":{"zitierung":"Appellationsgericht BS VD.2022.247 vom 01.06.2023","regesteKurz":"Lohneinstufung","datum":"2023-06-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.253":{"zitierung":"Appellationsgericht BS VD.2022.253 vom 26.10.2023","regesteKurz":"Kündigung des Arbeitsverhältnisses","datum":"2023-10-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.257":{"zitierung":"Appellationsgericht BS VD.2022.257 vom 04.07.2023","regesteKurz":"Wahl in die Wohnschutzkommission","datum":"2023-07-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.266":{"zitierung":"Appellationsgericht BS VD.2022.266 vom 11.11.2023","regesteKurz":"Kündigung des Arbeitsverhältnisses","datum":"2023-11-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.134":{"zitierung":"Appellationsgericht BS VD.2023.134 vom 27.09.2024","regesteKurz":"Änderung des Aufgabengebietes","datum":"2024-09-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.140":{"zitierung":"Appellationsgericht BS VD.2023.140 vom 24.04.2024","regesteKurz":"Rückerstattung von Ausbildungskosten","datum":"2024-04-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.165":{"zitierung":"Appellationsgericht BS VD.2023.165 vom 23.10.2024","regesteKurz":"Kündigung des Arbeitsverhältnisses","datum":"2024-10-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.180":{"zitierung":"Appellationsgericht BS VD.2023.180 vom 24.10.2024","regesteKurz":"Kündigung des Arbeitsverhältnisses","datum":"2024-10-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.163":{"zitierung":"Appellationsgericht BS VD.2024.163 vom 27.05.2025","regesteKurz":"fristlose Auflösung des Arbeitsverhältnisses","datum":"2025-05-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.42":{"zitierung":"Appellationsgericht BS VD.2024.42 vom 06.01.2025","regesteKurz":"Kündigung des Arbeitsverhältnisses","datum":"2025-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.145":{"zitierung":"Appellationsgericht BS VD.2025.145 vom 11.06.2026","regesteKurz":"Freistellung und Änderung des Aufgabengebiets (noch nicht rechtskräftig)","datum":"2026-06-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.86":{"zitierung":"Appellationsgericht BS VD.2025.86 vom 21.08.2025","regesteKurz":"Kostengutsprache","datum":"2025-08-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.97":{"zitierung":"Appellationsgericht BS VD.2025.97 vom 03.06.2026","regesteKurz":"Freistellung und Ordentliche Kündigung aufgrund schwerer Pflichtverletzungen","datum":"2026-06-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_sozialversicherungsgericht_AH.2024.10":{"zitierung":"Sozialversicherungsgericht BS AH.2024.10 vom 04.06.2025","regesteKurz":"Die Mitglieder der Wohnschutzkommission sind als Behördenmitglieder im Sinne von Art. 7 lit. i AHVV zu qualifizieren, w…","datum":"2025-06-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"2":[{"key":"bs_sozialversicherungsgericht_AH.2024.10","gewicht":null}],
+"4":[{"key":"bs_appellationsgericht_VD.2023.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.140","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.247","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.20","gewicht":null}],
+"9":[{"key":"bs_appellationsgericht_BEZ.2025.25","gewicht":null}],
+"12":[{"key":"bs_appellationsgericht_VD.2025.97","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.134","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.146","gewicht":null}],
+"14":[{"key":"bs_appellationsgericht_VD.2023.180","gewicht":null}],
+"20":[{"key":"bs_appellationsgericht_SB.2022.20","gewicht":null}],
+"21":[{"key":"bs_appellationsgericht_VD.2024.42","gewicht":null}],
+"22":[{"key":"bs_sozialversicherungsgericht_AH.2024.10","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.42","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.257","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.216","gewicht":null}],
+"24":[{"key":"bs_appellationsgericht_VD.2025.97","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.86","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.163","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.134","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.266","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.253","gewicht":null}],
+"25":[{"key":"bs_appellationsgericht_VD.2025.97","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.86","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.163","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.134","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.266","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.253","gewicht":null}],
+"28":[{"key":"bs_appellationsgericht_VD.2023.165","gewicht":null}],
+"30":[{"key":"bs_appellationsgericht_VD.2025.97","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.42","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.165","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.134","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.266","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.253","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.241","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.256","gewicht":null}],
+"31":[{"key":"bs_appellationsgericht_VD.2024.42","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.134","gewicht":null}],
+"34":[{"key":"bs_appellationsgericht_VD.2022.241","gewicht":null}],
+"35":[{"key":"bs_appellationsgericht_VD.2021.219","gewicht":null}],
+"36":[{"key":"bs_appellationsgericht_VD.2025.86","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.163","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.165","gewicht":null}],
+"37":[{"key":"bs_appellationsgericht_VD.2025.97","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.241","gewicht":null}],
+"38":[{"key":"bs_appellationsgericht_VD.2023.165","gewicht":null}],
+"40":[{"key":"bs_appellationsgericht_VD.2025.145","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.97","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.86","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.163","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.42","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.165","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.134","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.266","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.253","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.241","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.256","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.216","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.237","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.246","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.146","gewicht":null}],
+"41":[{"key":"bs_appellationsgericht_VD.2025.145","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.246","gewicht":null}],
+"43":[{"key":"bs_appellationsgericht_VD.2025.145","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.97","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.42","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.165","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.134","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.266","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.253","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.241","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.246","gewicht":null}]
+},
+"gesamtProArtikel":{
+"2":{"kantonal":1},
+"4":{"kantonal":4},
+"9":{"kantonal":1},
+"12":{"kantonal":3},
+"14":{"kantonal":1},
+"20":{"kantonal":1},
+"21":{"kantonal":1},
+"22":{"kantonal":4},
+"24":{"kantonal":6},
+"25":{"kantonal":6},
+"28":{"kantonal":1},
+"30":{"kantonal":9},
+"31":{"kantonal":2},
+"34":{"kantonal":1},
+"35":{"kantonal":1},
+"36":{"kantonal":3},
+"37":{"kantonal":3},
+"38":{"kantonal":1},
+"40":{"kantonal":16},
+"41":{"kantonal":2},
+"43":{"kantonal":10}
+}
 }

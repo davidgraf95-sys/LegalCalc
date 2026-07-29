@@ -1,165 +1,24 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-154.125",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_BEZ.2023.50": {
-      "zitierung": "Appellationsgericht BS BEZ.2023.50 vom 23.10.2023",
-      "regesteKurz": "Nachzahlung der Prozesskosten",
-      "datum": "2023-10-23",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_BEZ.2025.16": {
-      "zitierung": "Appellationsgericht BS BEZ.2025.16 vom 19.06.2025",
-      "regesteKurz": "Nachzahlung",
-      "datum": "2025-06-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_BEZ.2025.7": {
-      "zitierung": "Appellationsgericht BS BEZ.2025.7 vom 19.06.2025",
-      "regesteKurz": "Nachzahlung",
-      "datum": "2025-06-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_DGZ.2022.3": {
-      "zitierung": "Appellationsgericht BS DGZ.2022.3 vom 02.12.2022",
-      "regesteKurz": "Gesuch um vorsorglichen Aufschub der Vollstreckung betreffend Regelung des Getrenntlebens",
-      "datum": "2022-12-02",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2021.125": {
-      "zitierung": "Appellationsgericht BS VD.2021.125 vom 18.02.2022",
-      "regesteKurz": "Gesuche um Ratenzahlungen sowie um Aufschub des Strafvollzugs",
-      "datum": "2022-02-18",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2023.26": {
-      "zitierung": "Appellationsgericht BS ZB.2023.26 vom 29.09.2023",
-      "regesteKurz": "Zuteilung der elterlichen Sorge (BGer 5A_853/2023 vom 12.06.2024)",
-      "datum": "2023-09-29",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2023.34": {
-      "zitierung": "Appellationsgericht BS ZB.2023.34 vom 20.02.2024",
-      "regesteKurz": "Scheidung",
-      "datum": "2024-02-20",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2023.48": {
-      "zitierung": "Appellationsgericht BS ZB.2023.48 vom 21.01.2024",
-      "regesteKurz": "Getrenntleben",
-      "datum": "2024-01-21",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2023.64": {
-      "zitierung": "Appellationsgericht BS ZB.2023.64 vom 13.02.2024",
-      "regesteKurz": "Abänderung vorsorglicher Unterhaltsbeiträge",
-      "datum": "2024-02-13",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "5": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.125",
-        "gewicht": null
-      }
-    ],
-    "9": [
-      {
-        "key": "bs_appellationsgericht_BEZ.2025.16",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_BEZ.2025.7",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZB.2023.34",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZB.2023.64",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZB.2023.48",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_BEZ.2023.50",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZB.2023.26",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_DGZ.2022.3",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "5": {
-      "kantonal": 1
-    },
-    "9": {
-      "kantonal": 8
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-154.125",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_BEZ.2023.50":{"zitierung":"Appellationsgericht BS BEZ.2023.50 vom 23.10.2023","regesteKurz":"Nachzahlung der Prozesskosten","datum":"2023-10-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_BEZ.2025.16":{"zitierung":"Appellationsgericht BS BEZ.2025.16 vom 19.06.2025","regesteKurz":"Nachzahlung","datum":"2025-06-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_BEZ.2025.7":{"zitierung":"Appellationsgericht BS BEZ.2025.7 vom 19.06.2025","regesteKurz":"Nachzahlung","datum":"2025-06-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_DGZ.2022.3":{"zitierung":"Appellationsgericht BS DGZ.2022.3 vom 02.12.2022","regesteKurz":"Gesuch um vorsorglichen Aufschub der Vollstreckung betreffend Regelung des Getrenntlebens","datum":"2022-12-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.125":{"zitierung":"Appellationsgericht BS VD.2021.125 vom 18.02.2022","regesteKurz":"Gesuche um Ratenzahlungen sowie um Aufschub des Strafvollzugs","datum":"2022-02-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.26":{"zitierung":"Appellationsgericht BS ZB.2023.26 vom 29.09.2023","regesteKurz":"Zuteilung der elterlichen Sorge (BGer 5A_853/2023 vom 12.06.2024)","datum":"2023-09-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.34":{"zitierung":"Appellationsgericht BS ZB.2023.34 vom 20.02.2024","regesteKurz":"Scheidung","datum":"2024-02-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.48":{"zitierung":"Appellationsgericht BS ZB.2023.48 vom 21.01.2024","regesteKurz":"Getrenntleben","datum":"2024-01-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.64":{"zitierung":"Appellationsgericht BS ZB.2023.64 vom 13.02.2024","regesteKurz":"Abänderung vorsorglicher Unterhaltsbeiträge","datum":"2024-02-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"5":[{"key":"bs_appellationsgericht_VD.2021.125","gewicht":null}],
+"9":[{"key":"bs_appellationsgericht_BEZ.2025.16","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2025.7","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.34","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.64","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.48","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2023.50","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.26","gewicht":null},{"key":"bs_appellationsgericht_DGZ.2022.3","gewicht":null}]
+},
+"gesamtProArtikel":{
+"5":{"kantonal":1},
+"9":{"kantonal":8}
+}
 }

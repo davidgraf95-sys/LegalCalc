@@ -16,31 +16,43 @@
 //         · norm-index: EIN Topf «Bundesgericht», Deckel 8. Ein unpubliziertes
 //           Urteil steht darin nur, wenn es sich gegen acht BGE durchsetzt —
 //           praktisch nie (Ist: 61 von 11'491 Kanten).
-//         · bezuege: Deckel 8 JE STATUS. Genau das ist B3: die übrigen
-//           BGer-Urteile bekommen einen eigenen Platz, statt hinter den BGE zu
-//           verschwinden (Ist: 272 bger-Kanten statt 61).
-//       Die richtige Invariante ist darum nicht «gleiche Liste», sondern:
-//       bge- und bger-Kanten des Shards zusammengeworfen, nach der BESTANDS-
-//       Ordnung sortiert und auf 8 gekappt == norm-index. Das ist beweisbar
-//       hinreichend: die Bestands-Ordnung ist total, also ist die Reihenfolge
-//       innerhalb jeder Status-Klasse eine Teilfolge der gemeinsamen — die
-//       gemeinsamen Top-8 können daher nie einen Eintrag enthalten, der in
-//       seiner eigenen Klasse hinter Platz 8 läge und im Shard fehlt.
+//         · bezuege: bis B6 Deckel 8 JE STATUS, SEIT B7 GAR KEIN DECKEL.
+//       Die Invariante lautet darum: bge- und bger-Kanten des Shards
+//       zusammengeworfen, nach der BESTANDS-Ordnung sortiert und auf 8 gekappt
+//       == norm-index.
+//
+//       B7 MACHT DIESE PRÜFUNG SCHÄRFER, nicht schwächer — und das ist der
+//       Punkt, an dem man sich täuschen könnte. Bis B6 stützte sie sich auf ein
+//       Teilfolgen-Argument: der Shard enthielt nur je acht bge und acht bger,
+//       die gemeinsamen Top-8 konnten aber nie einen Eintrag brauchen, der in
+//       seiner eigenen Klasse hinter Platz 8 lag. Das Argument war richtig, aber
+//       es war ein Argument. Seit B7 liegen ALLE bundesgerichtlichen Kanten im
+//       Shard; die Prüfung rechnet damit buchstäblich dieselbe Menge durch
+//       dieselbe totale Ordnung wie der Schreiber. Sie braucht keine Annahme
+//       mehr — und dass die CHRONOLOGISCHE Vorsortierung des Shards die
+//       Projektion nicht verschiebt, ist genau das, was sie mitprüft.
 //  T2 · REFERENZIELLE INTEGRITÄT (§7). Jeder Dokument-key existiert im
 //       Entscheid-Manifest; jeder kantonale Erlass-key hat einen Normtext-
 //       Snapshot. Ein Chip, der ins Leere zeigt, ist schlimmer als kein Chip.
-//  T3 · FACETTEN-VOLLSTÄNDIGKEIT + DECKEL (§8). Jede Kante trägt alle fünf
-//       Facetten, `status` ist konsistent mit `ebene`/`kanton`, kein Deckel ist
-//       überschritten, und `gesamtProArtikel` ist NIE kleiner als das, was im
-//       Shard steht — eine Grundgesamtheit unter der Anzeige wäre eine Zahl, die
-//       ihre eigene Liste dementiert.
+//  T3 · FACETTEN- UND AUSLIEFERUNGS-VOLLSTÄNDIGKEIT (§8). Jede Kante trägt alle
+//       fünf Facetten, `status` ist konsistent mit `ebene`/`kanton`, die
+//       Status-Klassen sind nicht verschränkt, INNERHALB der Klasse läuft die
+//       Ordnung chronologisch neu→alt (B7), und die gelieferten Kanten je Status
+//       sind GENAU `gesamtProArtikel` — nicht «höchstens», sondern gleich. Die
+//       frühere Deckel-Prüfung («nicht mehr als 8») ist durch diese
+//       Gleichheits-Prüfung ERSETZT: sie ist die Umkehrung derselben Frage und
+//       fängt zusätzlich den Fall, dass eine Kante verloren geht.
+//  T6 · BILANZ-GLEICHHEIT (§5, B7/c). `bezuege-bilanz.json` wird aus den Shards
+//       neu gerechnet und verglichen. Die Datei speist die korpusweiten Zahlen
+//       im Rechtsprechungs-Dropdown; driftete sie, behauptete die Bedienfläche
+//       eine Bestandslage, die die Shards nicht decken.
 //
 // Dazu ein Grössen-Deckel je Shard (§15) und die ehrliche Facetten-Bilanz im
 // Protokoll (§8: Zahlen mit Grundgesamtheit, nicht bloss «grün»).
 //
-// ── §6.7-SABOTAGE-PROBE (28.7.2026) ─────────────────────────────────────────
-// Jede der vier Prüfungen wurde einmal ROT gesehen; hier steht der WÖRTLICHE
-// Befund des Laufs, nicht eine Beschreibung davon (§7):
+// ── §6.7-SABOTAGE-PROBE (28.7.2026, B1–B3) ─────────────────────────────────
+// Jede der vier damaligen Prüfungen wurde einmal ROT gesehen; hier steht der
+// WÖRTLICHE Befund des Laufs, nicht eine Beschreibung davon (§7):
 //  · T1 — erste Kante an STGB/1 aus dem Shard entfernt:
 //    «T1 STGB/1: Bundesgerichts-Projektion weicht ab — norm-index
 //     [bge_147_IV_274, bge_148_IV_329, …] vs. bezuege [bge_148_IV_329, …]»
@@ -49,20 +61,42 @@
 //  · T3 — OR/41 auf 11 bge-Kanten aufgebläht, Grundgesamtheit auf 1 gesetzt:
 //    «OR/41: Deckel bge überschritten (11 > 8).» +
 //    «OR/41: Grundgesamtheit bge=1 kleiner als das Gezeigte (11).»
-//    (T1 wurde im selben Lauf ebenfalls rot — die Prüfungen überschneiden sich,
-//     das ist gewollt: eine aufgeblähte Klasse verschiebt auch die Projektion.)
 //  · Grössen-Deckel — SHARD_BUDGET_KB testweise auf 100: 12 Shards rot
 //    (STPO 711, STGB 539, ZPO 432, ZGB 385, OR 367, BV 316, BGG 292, ATSG 223,
 //     SCHKG 171, AIG 139, IVG 137, DBG 103 KB).
+//
+// ── §6.7-SABOTAGE-PROBE DER NEUEN PRÜFUNGEN (29.7.2026, B7) ────────────────
+// Ein Tor, das nicht scheitern kann, ist gefährlicher als keines. Die drei mit
+// B7 hinzugekommenen bzw. umgestellten Prüfungen wurden je einmal rot gesehen;
+// wörtliche Befunde des Laufs:
+//  · T3e (Vollständigkeit statt Deckel) — an OR/41 die letzten drei kantonalen
+//    Kanten aus `proArtikel` entfernt (51 → 48), `gesamtProArtikel` unverändert:
+//    «OR/41: kantonal — 18 Kanten geliefert, gesamtProArtikel sagt 21. Seit B7
+//     wird JEDE Kante ausgeliefert; eine Differenz heisst, dass wieder gesiebt
+//     wird (§8).»
+//    Im selben Lauf schlug T6 mit an — gewollt: eine fehlende Kante verschiebt
+//    auch die Korpus-Bilanz («kantenJeStatus.kantonal = 50341, aus den Shards
+//    gerechnet 50338»).
+//  · T3g (chronologische Ordnung) — an OR/41 die ersten beiden bge-Kanten
+//    vertauscht:
+//    «OR/41: Ordnung innerhalb 'bge' nicht chronologisch — 'bge_152_III_7'
+//     (2025-03-13) steht vor 'bge_151_IV_265' (2025-04-07), das jünger ist
+//     (B7: neu→alt).»
+//  · T6 (Bilanz) — `kantenJeStatus.eidg` in bezuege-bilanz.json von 164 auf 99
+//    von Hand verstellt:
+//    «bezuege-bilanz.json: kantenJeStatus.eidg = 99, aus den Shards gerechnet
+//     164 — die Bilanz ist eine Projektion der Shards, keine zweite Wahrheit (§5).»
+//  · Grössen-Deckel neu — SHARD_BUDGET_KB testweise auf 700: 5 Shards rot
+//    (BGG 2504, STPO 1194, BS-154.100 1083, BV 746, STGB 714 KB).
 
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import type { EntscheidManifest } from '../../src/lib/rechtsprechung/register';
 import type { NormEntscheidIndex } from '../../src/lib/rechtsprechung/norm-index';
 import { normArtikelToken } from '../../src/lib/rechtsprechung/norm-index';
-import type { BezugsShard } from './bezuege-bauen';
+import { baueBezugsBilanz, type BezugsBilanz, type BezugsShard } from './bezuege-bauen';
 import {
-  DECKEL_JE_STATUS, STATUS_RANG, bezugStatusFuerEntscheid,
+  STATUS_RANG, bezugStatusFuerEntscheid, vergleicheDatumAbsteigend,
   type BezugStatus,
 } from '../../src/lib/verzahnung/facetten';
 import { SYSTEMATIK_PRAEFIX } from './kanton-norm-resolver';
@@ -76,21 +110,52 @@ const BEZ = join(PUB, 'bezuege');
  *
  * MESSVERFAHREN, damit die Zahlen nachprüfbar sind (§7): Dateigrösse in Bytes
  * (`stat -f%z`), daneben KiB = Bytes/1024, gzip mit Stufe -6 (`gzip -6 -c … | wc -c`).
- * IST am HEAD-Stand (Runde 7): STPO 734'056 B = 716.8 KiB (gzip 65'147 B) ·
- * STGB 555'835 B = 542.8 KiB · ZPO 445'690 B = 435.2 KiB · ZGB 396'695 B =
- * 387.3 KiB · OR 376'991 B = 368.1 KiB. Die früher hier stehenden Werte
- * (712/540/436/388/368 KB) stammten aus der Fassung VOR den Runden R1–R4.
- * 1024 KB = grösster Ist-Wert + ~43 % Reserve, fliessend nachzuziehen wie die
- * übrigen Korpus-Deckel (Freigabe-Logik David 26.6.2026) — er bremst Unfälle,
- * limitiert nicht künstlich.
  *
- * Der Wert ist bewusst DERSELBE wie `SHARD_BUDGET_KB` in check-entscheide.ts,
- * obwohl die Datei mehr Klassen trägt: sie ist durch die ausgelagerten
- * Dokument-Köpfe kompakter serialisiert, und beide Shards liegen auf demselben
- * Lade-Pfad (einer je geöffnetem Erlass). Zwei verschiedene Deckel für dieselbe
- * Lade-Situation wären eine Behauptung über einen Unterschied, den es nicht gibt.
+ * ── B7 HAT DIE SHARDS WACHSEN LASSEN, UND ZWAR ABSICHTLICH ─────────────────
+ * Der Auslieferungs-Deckel «8 je Status» ist aufgehoben (David-Auftrag
+ * 28.7.2026): statt 24'173 stehen jetzt 75'365 Kanten in den Shards. Das Budget
+ * wird deshalb angehoben — NICHT weil man an eine Schranke gestossen ist,
+ * sondern weil die Schranke für eine andere Datenmenge bemessen war. Der
+ * Unterschied ist der ganze §8-Punkt: eine Schranke anzuheben, weil man sie
+ * reisst, ist keine Massnahme; eine Schranke einem deklarierten
+ * Umfangs-Entscheid nachzuziehen, ist eine.
+ *
+ * IST-WERTE, gemessen am regenerierten Stand 29.7.2026 — roh / gzip -6, die
+ * B1–B6-Rohwerte daneben, damit der Sprung sichtbar bleibt:
+ *   BGG          2'504.5 KiB / 300.2 KiB gzip  (vorher   291.9 KiB)
+ *   STPO         1'193.9      / 102.0          (vorher   716.8)
+ *   BS-154.100   1'083.0      /  97.0          (vorher   139.6)
+ *   BV             746.1      / 123.3          (vorher   315.8)
+ *   STGB           714.2      /  77.8          (vorher   542.8)
+ * Verzeichnis gesamt 13 MB (vorher 7.5 MB) über 311 Shards. Die Rohwerte
+ * enthalten bereits die kompaktere Serialisierung (`serialisiereShard`,
+ * Begründung dort) — ohne sie stünde BGG bei 3'578.5 KiB.
+ * (Die aktuellen Werte gibt jeder Lauf dieses Tors aus — die Liste ist der
+ * Stand bei der Festlegung, nicht die laufende Wahrheit.)
+ *
+ * 3200 KB = grösster Ist-Wert (BGG) + ~28 % Reserve — etwas knapper als die
+ * bisherigen 43 %, und zwar mit Absicht: BGG ist der Ausreisser, nicht der
+ * Normalfall (Art. 42 BGG allein trägt 4'140 Kanten, weil ihn praktisch jedes
+ * Bundesgerichtsurteil zur Beschwerdebegründung zitiert). Bei diesem Artefakt
+ * SOLL das Tor früh anschlagen und eine Entscheidung erzwingen, statt weiter
+ * mitzuwachsen. Fliessend nachzuziehen wie die übrigen Korpus-Deckel
+ * (Freigabe-Logik David 26.6.2026), aber nicht stillschweigend.
+ *
+ * WARUM DAS TRAGBAR IST (§15, Logikverlust-Bewertung: KEINER): der Bezugs-Shard
+ * liegt nicht auf dem kritischen Pfad. Er wird nur geladen, wenn überhaupt eine
+ * Instanz-Facette aktiv ist, dann im Leerlauf und AN DER STELLE des schlanken
+ * norm-index-Shards (`bezuegeLaden.ts`), nie zusätzlich. Gemessen zählt für den
+ * Nutzer der gzip-Wert seines EINEN Erlasses, nicht die Summe.
+ *
+ * Der Wert ist damit NICHT mehr derselbe wie `SHARD_BUDGET_KB` in
+ * check-entscheide.ts (dort 1024). Die frühere Begründung — «beide Shards
+ * liegen auf demselben Lade-Pfad, zwei Deckel wären eine Behauptung über einen
+ * Unterschied, den es nicht gibt» — trägt seit B7 nicht mehr: der Unterschied
+ * IST jetzt da. Der Entscheid-Shard ist eine gedeckelte Auswahl, der
+ * Bezugs-Shard eine Vollliste. Sie gleich zu deckeln hiesse, die Vollliste an
+ * einer Zahl zu messen, die für eine Auswahl bemessen wurde.
  */
-const SHARD_BUDGET_KB = 1024;
+const SHARD_BUDGET_KB = 3200;
 
 /**
  * Deckel der Bestands-Artikel-Ebene. NACHGEBILDET statt importiert: der Wert
@@ -185,6 +250,9 @@ function main(): void {
 
   // T1: Bundesgerichts-Kanten einsammeln (ungekappt-je-Status), später projizieren.
   const projektion = new Map<string, BgKante[]>();   // 'ERLASS/artikel' → Kanten
+  // T6: die gelesenen Shards für die Bilanz-Gegenrechnung. Gehalten statt neu
+  // gelesen — sonst gäbe es einen dritten Lesevorgang derselben 311 Dateien.
+  const shards = new Map<string, BezugsShard>();
 
   for (const datei of dateien) {
     const pfad = join(BEZ, datei);
@@ -195,6 +263,7 @@ function main(): void {
     const shard = JSON.parse(readFileSync(pfad, 'utf8')) as BezugsShard;
     const erlass = datei.slice(0, -'.json'.length);
     if (shard.erlass !== erlass) fehler.push(`${datei}: erlass-Feld '${shard.erlass}' ≠ Dateiname '${erlass}'.`);
+    shards.set(erlass, shard);
 
     if (shard.erlassEbene === 'kanton') {
       shardsKanton++;
@@ -209,6 +278,8 @@ function main(): void {
       artikelBuckets++;
       const zaehler: Partial<Record<BezugStatus, number>> = {};
       let letzterRang = -1;
+      /** Vorgänger-Kante INNERHALB der laufenden Status-Klasse (T3g, B7). */
+      let vorher: { key: string; datum: string } | null = null;
       const bgProjektion: BgKante[] = [];
       for (const e of eintraege) {
         kantenGesamt++;
@@ -246,6 +317,18 @@ function main(): void {
         if (rang < letzterRang) {
           fehler.push(`${erlass}/${token}: Status-Klassen verschränkt ('${f.status}' nach Rang ${letzterRang}) — die Klassentrennung wäre damit weg (§8).`);
         }
+        // T3g (B7): INNERHALB einer Klasse chronologisch neu→alt. Der Nutzer
+        // scrollt seit B7 eine Linie mit allen Entscheiden ab; läuft die Zeit
+        // darin nicht monoton, ist die Linie unlesbar, ohne dass irgendetwas
+        // sichtbar kaputt wäre — genau die stille Klasse, gegen die §6.7 steht.
+        // Geprüft wird nur die Zeit-Achse: der Gleichstand wird vom Generator
+        // über die Bestands-Ordnung aufgelöst und ist hier bewusst nicht
+        // nachgebildet (eine zweite Kopie derselben Ordnung wäre §5-Doppelung).
+        if (rang === letzterRang && vorher && vergleicheDatumAbsteigend(vorher.datum, kopf.datum) > 0) {
+          fehler.push(`${erlass}/${token}: Ordnung innerhalb '${f.status}' nicht chronologisch — `
+            + `'${vorher.key}' (${vorher.datum}) steht vor '${e.key}' (${kopf.datum}), das jünger ist (B7: neu→alt).`);
+        }
+        vorher = { key: e.key, datum: kopf.datum };
         letzterRang = rang;
 
         // T5 — gewicht darf in nicht messbaren Klassen NICHT als Zahl erscheinen
@@ -276,20 +359,34 @@ function main(): void {
         }
       }
 
-      // T3e: Deckel je Status.
-      for (const [st, n] of Object.entries(zaehler) as Array<[BezugStatus, number]>) {
-        if (n > DECKEL_JE_STATUS[st]) {
-          fehler.push(`${erlass}/${token}: Deckel ${st} überschritten (${n} > ${DECKEL_JE_STATUS[st]}).`);
-        }
-      }
-      // T3f: Grundgesamtheit nie kleiner als das Gezeigte (§8).
+      // ── T3e (B7): VOLLSTÄNDIGKEIT statt Deckel ──────────────────────────
+      //
+      // Bis B6 stand hier «nicht mehr als DECKEL_JE_STATUS». Seit der Deckel
+      // aufgehoben ist, wäre eine Obergrenzen-Prüfung die falsche Frage: zu
+      // prüfen ist, dass NICHTS FEHLT. Die Gleichheit gegen `gesamtProArtikel`
+      // fängt beide Richtungen — zu viele Kanten (Doppelung) genauso wie zu
+      // wenige (irgendwo siebt wieder jemand).
+      //
+      // Die frühere T3f («Grundgesamtheit nie KLEINER als das Gezeigte») geht
+      // darin auf: `g < n` ist ein Sonderfall von `g !== n`. Der Fall
+      // «Grundgesamtheit fehlt ganz» bleibt eigenständig gemeldet, weil er eine
+      // andere Ursache hat (Alt-Shard ohne das Feld) als ein Zahlen-Auseinander.
       const gesamt = shard.gesamtProArtikel?.[token] ?? {};
       for (const [st, n] of Object.entries(zaehler) as Array<[BezugStatus, number]>) {
         const g = gesamt[st];
         if (g === undefined) {
-          fehler.push(`${erlass}/${token}: Grundgesamtheit für '${st}' fehlt — ein gedeckelter Block ohne «von N» liest sich als Vollliste (§8).`);
-        } else if (g < n) {
-          fehler.push(`${erlass}/${token}: Grundgesamtheit ${st}=${g} kleiner als das Gezeigte (${n}).`);
+          fehler.push(`${erlass}/${token}: Grundgesamtheit für '${st}' fehlt — ohne sie ist die Vollständigkeit der Linie nicht gegenzurechnen (§8).`);
+        } else if (g !== n) {
+          fehler.push(`${erlass}/${token}: ${st} — ${n} Kanten geliefert, gesamtProArtikel sagt ${g}. `
+            + 'Seit B7 wird JEDE Kante ausgeliefert; eine Differenz heisst, dass wieder gesiebt wird (§8).');
+        }
+      }
+      // Gegenrichtung: eine Klasse, die in `gesamtProArtikel` steht, aber in der
+      // Liste gar nicht vorkommt. Ohne diese Schleife bliebe genau der Fall
+      // still, der am meisten wehtut — eine komplett verschwundene Klasse.
+      for (const [st, g] of Object.entries(gesamt) as Array<[BezugStatus, number]>) {
+        if (zaehler[st] === undefined && g > 0) {
+          fehler.push(`${erlass}/${token}: ${st} — 0 Kanten geliefert, gesamtProArtikel sagt ${g} (§8).`);
         }
       }
 
@@ -315,6 +412,41 @@ function main(): void {
   for (const ak of projektion.keys()) {
     if (!(ak in bestand)) {
       fehler.push(`T1 ${ak}: Bundesgerichts-Kante in den Bezugs-Shards, aber nicht im norm-index.`);
+    }
+  }
+
+  // ── T6 (B7/c): bezuege-bilanz.json ist eine PROJEKTION der Shards (§5) ─────
+  //
+  // Die Datei liefert dem Rechtsprechungs-Dropdown die korpusweiten Zahlen je
+  // Instanz-Klasse («Eidg. — korpusweit 164 Kanten an 93 Artikeln»). Genau weil
+  // sie eine Aussage über den BESTAND macht, darf sie nicht selbst gepflegt
+  // werden: hier wird sie aus den Shards neu gerechnet und zeichengleich
+  // verglichen. Fehlt sie, ist das rot — eine Bedienfläche, die eine Zahl
+  // erwartet und keine bekommt, zeigt sonst still gar nichts.
+  const bilanzPfad = join(PUB, 'bezuege-bilanz.json');
+  if (!existsSync(bilanzPfad)) {
+    fehler.push('bezuege-bilanz.json fehlt — die korpusweiten Facetten-Zahlen des Dropdowns hätten keine Quelle (§5/§8).');
+  } else {
+    const ist = JSON.parse(readFileSync(bilanzPfad, 'utf8')) as BezugsBilanz;
+    const soll = baueBezugsBilanz(shards, ist.erzeugt);
+    for (const feld of ['kantenJeStatus', 'artikelJeStatus', 'erlasseJeStatus'] as const) {
+      const a = soll[feld], b = ist[feld] ?? {};
+      for (const st of new Set([...Object.keys(a), ...Object.keys(b)]) as Set<BezugStatus>) {
+        if (a[st] !== b[st]) {
+          fehler.push(`bezuege-bilanz.json: ${feld}.${st} = ${b[st] ?? '–'}, aus den Shards gerechnet ${a[st] ?? '–'} `
+            + '— die Bilanz ist eine Projektion der Shards, keine zweite Wahrheit (§5).');
+        }
+      }
+    }
+    if (soll.artikelGesamt !== ist.artikelGesamt) {
+      fehler.push(`bezuege-bilanz.json: artikelGesamt = ${ist.artikelGesamt}, aus den Shards gerechnet ${soll.artikelGesamt} (§5).`);
+    }
+    if (soll.erlasseGesamt !== ist.erlasseGesamt) {
+      fehler.push(`bezuege-bilanz.json: erlasseGesamt = ${ist.erlasseGesamt}, aus den Shards gerechnet ${soll.erlasseGesamt} (§5).`);
+    }
+    console.log(`  Korpusweite Facetten-Bilanz (bezuege-bilanz.json, ${ist.artikelGesamt} Artikel-Buckets über ${ist.erlasseGesamt} Erlasse):`);
+    for (const st of Object.keys(soll.kantenJeStatus) as BezugStatus[]) {
+      console.log(`    ${st.padEnd(9)} ${String(soll.kantenJeStatus[st]).padStart(6)} Kanten an ${soll.artikelJeStatus[st]} Artikeln, ${soll.erlasseJeStatus[st]} Erlassen`);
     }
   }
 
@@ -405,7 +537,8 @@ function main(): void {
     if (fehler.length > 40) console.error(`  … und ${fehler.length - 40} weitere.`);
     process.exit(1);
   }
-  console.log('\ncheck:bezuege GRÜN — Projektion gleich, Referenzen aufgelöst, Facetten vollständig, Deckel eingehalten.');
+  console.log('\ncheck:bezuege GRÜN — Projektion gleich, Referenzen aufgelöst, Facetten vollständig, '
+    + 'Auslieferung vollständig (keine Kante gesiebt), Ordnung chronologisch, Bilanz deckungsgleich.');
 }
 
 main();

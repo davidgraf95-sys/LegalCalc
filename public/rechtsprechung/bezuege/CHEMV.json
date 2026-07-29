@@ -1,98 +1,27 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "CHEMV",
-  "erlassEbene": "bund",
-  "dokumente": {
-    "bs_appellationsgericht_VD.2022.269": {
-      "zitierung": "Appellationsgericht BS VD.2022.269 vom 13.11.2023",
-      "regesteKurz": "Verbot der gewerblichen Abgabe von mit Lachgas gefüllten Ballonen (Verfügungen vom 26. August 2021 und 19. November 202…",
-      "datum": "2023-11-13",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2025.5": {
-      "zitierung": "Appellationsgericht BS VD.2025.5 vom 03.06.2025",
-      "regesteKurz": "Luftreinigungsgerät, Vollzug Chemikaliengesetzgebung",
-      "datum": "2025-06-03",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "1": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.269",
-        "gewicht": null
-      }
-    ],
-    "3": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.269",
-        "gewicht": null
-      }
-    ],
-    "48": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.269",
-        "gewicht": null
-      }
-    ],
-    "55": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.269",
-        "gewicht": null
-      }
-    ],
-    "57": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.269",
-        "gewicht": null
-      }
-    ],
-    "60": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.269",
-        "gewicht": null
-      }
-    ],
-    "90a": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.5",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "1": {
-      "kantonal": 1
-    },
-    "3": {
-      "kantonal": 1
-    },
-    "48": {
-      "kantonal": 1
-    },
-    "55": {
-      "kantonal": 1
-    },
-    "57": {
-      "kantonal": 1
-    },
-    "60": {
-      "kantonal": 1
-    },
-    "90a": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"CHEMV",
+"erlassEbene":"bund",
+"dokumente":{
+"bs_appellationsgericht_VD.2022.269":{"zitierung":"Appellationsgericht BS VD.2022.269 vom 13.11.2023","regesteKurz":"Verbot der gewerblichen Abgabe von mit Lachgas gefüllten Ballonen (Verfügungen vom 26. August 2021 und 19. November 202…","datum":"2023-11-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.5":{"zitierung":"Appellationsgericht BS VD.2025.5 vom 03.06.2025","regesteKurz":"Luftreinigungsgerät, Vollzug Chemikaliengesetzgebung","datum":"2025-06-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"1":[{"key":"bs_appellationsgericht_VD.2022.269","gewicht":null}],
+"3":[{"key":"bs_appellationsgericht_VD.2022.269","gewicht":null}],
+"48":[{"key":"bs_appellationsgericht_VD.2022.269","gewicht":null}],
+"55":[{"key":"bs_appellationsgericht_VD.2022.269","gewicht":null}],
+"57":[{"key":"bs_appellationsgericht_VD.2022.269","gewicht":null}],
+"60":[{"key":"bs_appellationsgericht_VD.2022.269","gewicht":null}],
+"90a":[{"key":"bs_appellationsgericht_VD.2025.5","gewicht":null}]
+},
+"gesamtProArtikel":{
+"1":{"kantonal":1},
+"3":{"kantonal":1},
+"48":{"kantonal":1},
+"55":{"kantonal":1},
+"57":{"kantonal":1},
+"60":{"kantonal":1},
+"90a":{"kantonal":1}
+}
 }

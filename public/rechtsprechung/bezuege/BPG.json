@@ -1,292 +1,53 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BPG",
-  "erlassEbene": "bund",
-  "dokumente": {
-    "bge_148_III_126": {
-      "zitierung": "BGE 148 III 126",
-      "regesteKurz": "Ziff. 1 Abs. 3 und Ziff. 22 Gesamtarbeitsvertrag 2019 der SBB (GAV) i.V.m. Art. 335b Abs. 3 OR; Verlängerung der Probezeit bei Krankheit. Bei krankheitsbedingtem Arbeitsausfall während der Probezeit verlängert sich diese um die Anzahl der…",
-      "datum": "2022-03-08",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_148_II_16": {
-      "zitierung": "BGE 148 II 16",
-      "regesteKurz": "Art. 86 BVG; Art. 4 lit. a BGÖ; Art. 26 Abs. 4 des Genfer Öffentlichkeits- und Datenschutzgesetzes vom 5. Oktober 2001 (LIPAD/GE); Gesuch um Zugang zum Sitzungsprotokoll der Verwaltungskommission der Personalvorsorgekasse des Kantons Genf…",
-      "datum": "2022-03-03",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_148_II_189": {
-      "zitierung": "BGE 148 II 189",
-      "regesteKurz": "Art. 32k Abs. 1 Satz 3 BPG; Art. 33 Abs. 1 lit. d DBG; Art. 9 Abs. 2 lit. d StHG; Art. 79b Abs. 3 BVG; die Kapitaleinlage seitens der Arbeitnehmerin oder des Arbeitnehmers zwecks Äufnung einer Überbrückungsrente bei vorzeitigem Altersrückt…",
-      "datum": "2021-12-28",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_149_II_337": {
-      "zitierung": "BGE 149 II 337",
-      "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2, Ar…",
-      "datum": "2023-08-21",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_149_IV_57": {
-      "zitierung": "BGE 149 IV 57",
-      "regesteKurz": "Art. 322 quinquies und 322 sexies StGB; Vorteilsgewährung und Vorteilsannahme. Prüfung der Tatbestandsmerkmale der Straftaten gemäss Art. 322 quinquies und Art. 322 sexies StGB im Zusammenhang einerseits mit der vorwiegend privaten Einladu…",
-      "datum": "2022-10-31",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_149_I_129": {
-      "zitierung": "BGE 149 I 129",
-      "regesteKurz": "Art. 10 Abs. 2 und Art. 36 BV; Art. 47 MG; Art. 20 Abs. 1, Art. 10 Abs. 3 und Art. 37 Abs. 1 BPG; Art. 7 Abs. 1 PVSPA; Auflösung des Arbeitsverhältnisses eines Angehörigen der Spezialkräfte der Armee wegen der Weigerung, sich der für oblig…",
-      "datum": "2023-02-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_152_II_19": {
-      "zitierung": "BGE 152 II 19",
-      "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 337c Abs. 3 OR; steuerliche Behandlung einer Entschädigung wegen unrechtmässiger fristloser Kündigung nach öffentlichem Personalrecht. Die Entschädigung für…",
-      "datum": "2026-01-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.8": {
-      "zitierung": "Appellationsgericht BS VD.2022.8 vom 19.10.2022",
-      "regesteKurz": "Ordentliche Kündigung wegen mangelhaften Verhaltens",
-      "datum": "2022-10-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "1": [
-      {
-        "key": "bge_149_I_129",
-        "gewicht": 0
-      }
-    ],
-    "2": [
-      {
-        "key": "bge_149_I_129",
-        "gewicht": 0
-      }
-    ],
-    "6": [
-      {
-        "key": "bge_152_II_19",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_337",
-        "gewicht": 0
-      }
-    ],
-    "10": [
-      {
-        "key": "bge_152_II_19",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_337",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_I_129",
-        "gewicht": 0
-      }
-    ],
-    "12": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.8",
-        "gewicht": null
-      }
-    ],
-    "19": [
-      {
-        "key": "bge_149_I_129",
-        "gewicht": 0
-      }
-    ],
-    "20": [
-      {
-        "key": "bge_149_II_337",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_I_129",
-        "gewicht": 0
-      }
-    ],
-    "21": [
-      {
-        "key": "bge_149_IV_57",
-        "gewicht": 0
-      }
-    ],
-    "22": [
-      {
-        "key": "bge_148_II_16",
-        "gewicht": 0
-      }
-    ],
-    "27": [
-      {
-        "key": "bge_149_II_337",
-        "gewicht": 0
-      }
-    ],
-    "28": [
-      {
-        "key": "bge_149_II_337",
-        "gewicht": 0
-      }
-    ],
-    "36": [
-      {
-        "key": "bge_152_II_19",
-        "gewicht": 0
-      }
-    ],
-    "37": [
-      {
-        "key": "bge_149_I_129",
-        "gewicht": 0
-      }
-    ],
-    "38": [
-      {
-        "key": "bge_149_II_337",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_III_126",
-        "gewicht": 0
-      }
-    ],
-    "32k": [
-      {
-        "key": "bge_148_II_189",
-        "gewicht": 0
-      }
-    ],
-    "34b": [
-      {
-        "key": "bge_152_II_19",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_337",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_I_129",
-        "gewicht": 0
-      }
-    ],
-    "34c": [
-      {
-        "key": "bge_152_II_19",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_337",
-        "gewicht": 0
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "1": {
-      "bge": 1
-    },
-    "2": {
-      "bge": 1
-    },
-    "6": {
-      "bge": 2
-    },
-    "10": {
-      "bge": 3
-    },
-    "12": {
-      "kantonal": 1
-    },
-    "19": {
-      "bge": 1
-    },
-    "20": {
-      "bge": 2
-    },
-    "21": {
-      "bge": 1
-    },
-    "22": {
-      "bge": 1
-    },
-    "27": {
-      "bge": 1
-    },
-    "28": {
-      "bge": 1
-    },
-    "36": {
-      "bge": 1
-    },
-    "37": {
-      "bge": 1
-    },
-    "38": {
-      "bge": 2
-    },
-    "32k": {
-      "bge": 1
-    },
-    "34b": {
-      "bge": 3
-    },
-    "34c": {
-      "bge": 2
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BPG",
+"erlassEbene":"bund",
+"dokumente":{
+"bge_148_III_126":{"zitierung":"BGE 148 III 126","regesteKurz":"Ziff. 1 Abs. 3 und Ziff. 22 Gesamtarbeitsvertrag 2019 der SBB (GAV) i.V.m. Art. 335b Abs. 3 OR; Verlängerung der Probezeit bei Krankheit. Bei krankheitsbedingtem Arbeitsausfall während der Probezeit verlängert sich diese um die Anzahl der…","datum":"2022-03-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_148_II_16":{"zitierung":"BGE 148 II 16","regesteKurz":"Art. 86 BVG; Art. 4 lit. a BGÖ; Art. 26 Abs. 4 des Genfer Öffentlichkeits- und Datenschutzgesetzes vom 5. Oktober 2001 (LIPAD/GE); Gesuch um Zugang zum Sitzungsprotokoll der Verwaltungskommission der Personalvorsorgekasse des Kantons Genf…","datum":"2022-03-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_148_II_189":{"zitierung":"BGE 148 II 189","regesteKurz":"Art. 32k Abs. 1 Satz 3 BPG; Art. 33 Abs. 1 lit. d DBG; Art. 9 Abs. 2 lit. d StHG; Art. 79b Abs. 3 BVG; die Kapitaleinlage seitens der Arbeitnehmerin oder des Arbeitnehmers zwecks Äufnung einer Überbrückungsrente bei vorzeitigem Altersrückt…","datum":"2021-12-28","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_149_II_337":{"zitierung":"BGE 149 II 337","regesteKurz":"Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2, Ar…","datum":"2023-08-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_149_IV_57":{"zitierung":"BGE 149 IV 57","regesteKurz":"Art. 322 quinquies und 322 sexies StGB; Vorteilsgewährung und Vorteilsannahme. Prüfung der Tatbestandsmerkmale der Straftaten gemäss Art. 322 quinquies und Art. 322 sexies StGB im Zusammenhang einerseits mit der vorwiegend privaten Einladu…","datum":"2022-10-31","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_149_I_129":{"zitierung":"BGE 149 I 129","regesteKurz":"Art. 10 Abs. 2 und Art. 36 BV; Art. 47 MG; Art. 20 Abs. 1, Art. 10 Abs. 3 und Art. 37 Abs. 1 BPG; Art. 7 Abs. 1 PVSPA; Auflösung des Arbeitsverhältnisses eines Angehörigen der Spezialkräfte der Armee wegen der Weigerung, sich der für oblig…","datum":"2023-02-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_II_19":{"zitierung":"BGE 152 II 19","regesteKurz":"Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 337c Abs. 3 OR; steuerliche Behandlung einer Entschädigung wegen unrechtmässiger fristloser Kündigung nach öffentlichem Personalrecht. Die Entschädigung für…","datum":"2026-01-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bs_appellationsgericht_VD.2022.8":{"zitierung":"Appellationsgericht BS VD.2022.8 vom 19.10.2022","regesteKurz":"Ordentliche Kündigung wegen mangelhaften Verhaltens","datum":"2022-10-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"1":[{"key":"bge_149_I_129","gewicht":0}],
+"2":[{"key":"bge_149_I_129","gewicht":0}],
+"6":[{"key":"bge_152_II_19","gewicht":0},{"key":"bge_149_II_337","gewicht":0}],
+"10":[{"key":"bge_152_II_19","gewicht":0},{"key":"bge_149_II_337","gewicht":0},{"key":"bge_149_I_129","gewicht":0}],
+"12":[{"key":"bs_appellationsgericht_VD.2022.8","gewicht":null}],
+"19":[{"key":"bge_149_I_129","gewicht":0}],
+"20":[{"key":"bge_149_II_337","gewicht":0},{"key":"bge_149_I_129","gewicht":0}],
+"21":[{"key":"bge_149_IV_57","gewicht":0}],
+"22":[{"key":"bge_148_II_16","gewicht":0}],
+"27":[{"key":"bge_149_II_337","gewicht":0}],
+"28":[{"key":"bge_149_II_337","gewicht":0}],
+"36":[{"key":"bge_152_II_19","gewicht":0}],
+"37":[{"key":"bge_149_I_129","gewicht":0}],
+"38":[{"key":"bge_149_II_337","gewicht":0},{"key":"bge_148_III_126","gewicht":0}],
+"32k":[{"key":"bge_148_II_189","gewicht":0}],
+"34b":[{"key":"bge_152_II_19","gewicht":0},{"key":"bge_149_II_337","gewicht":0},{"key":"bge_149_I_129","gewicht":0}],
+"34c":[{"key":"bge_152_II_19","gewicht":0},{"key":"bge_149_II_337","gewicht":0}]
+},
+"gesamtProArtikel":{
+"1":{"bge":1},
+"2":{"bge":1},
+"6":{"bge":2},
+"10":{"bge":3},
+"12":{"kantonal":1},
+"19":{"bge":1},
+"20":{"bge":2},
+"21":{"bge":1},
+"22":{"bge":1},
+"27":{"bge":1},
+"28":{"bge":1},
+"36":{"bge":1},
+"37":{"bge":1},
+"38":{"bge":2},
+"32k":{"bge":1},
+"34b":{"bge":3},
+"34c":{"bge":2}
+}
 }

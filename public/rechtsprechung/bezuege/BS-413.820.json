@@ -1,41 +1,16 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-413.820",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_VD.2022.71": {
-      "zitierung": "Appellationsgericht BS VD.2022.71 vom 04.04.2022",
-      "regesteKurz": "Nichtzulassung zu den Maturitätsprüfungen 2022",
-      "datum": "2022-04-04",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "9": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.71",
-        "gewicht": null
-      }
-    ],
-    "22": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.71",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "9": {
-      "kantonal": 1
-    },
-    "22": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-413.820",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_VD.2022.71":{"zitierung":"Appellationsgericht BS VD.2022.71 vom 04.04.2022","regesteKurz":"Nichtzulassung zu den Maturitätsprüfungen 2022","datum":"2022-04-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"9":[{"key":"bs_appellationsgericht_VD.2022.71","gewicht":null}],
+"22":[{"key":"bs_appellationsgericht_VD.2022.71","gewicht":null}]
+},
+"gesamtProArtikel":{
+"9":{"kantonal":1},
+"22":{"kantonal":1}
+}
 }

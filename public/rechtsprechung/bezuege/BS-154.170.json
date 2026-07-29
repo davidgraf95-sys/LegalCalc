@@ -1,64 +1,16 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-154.170",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_BEZ.2022.36": {
-      "zitierung": "Appellationsgericht BS BEZ.2022.36 vom 15.12.2022",
-      "regesteKurz": "Abweisung des Wiederherstellungsgesuchs (BGer4A_94/2023 vom 19. April 2023)",
-      "datum": "2022-12-15",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_BEZ.2023.49": {
-      "zitierung": "Appellationsgericht BS BEZ.2023.49 vom 20.10.2023",
-      "regesteKurz": "Pfändung",
-      "datum": "2023-10-20",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2022.30": {
-      "zitierung": "Appellationsgericht BS ZB.2022.30 vom 08.12.2022",
-      "regesteKurz": "Auskunftsrecht",
-      "datum": "2022-12-08",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "6": [
-      {
-        "key": "bs_appellationsgericht_BEZ.2023.49",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_BEZ.2022.36",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZB.2022.30",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "6": {
-      "kantonal": 3
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-154.170",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_BEZ.2022.36":{"zitierung":"Appellationsgericht BS BEZ.2022.36 vom 15.12.2022","regesteKurz":"Abweisung des Wiederherstellungsgesuchs (BGer4A_94/2023 vom 19. April 2023)","datum":"2022-12-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_BEZ.2023.49":{"zitierung":"Appellationsgericht BS BEZ.2023.49 vom 20.10.2023","regesteKurz":"Pfändung","datum":"2023-10-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2022.30":{"zitierung":"Appellationsgericht BS ZB.2022.30 vom 08.12.2022","regesteKurz":"Auskunftsrecht","datum":"2022-12-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"6":[{"key":"bs_appellationsgericht_BEZ.2023.49","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2022.36","gewicht":null},{"key":"bs_appellationsgericht_ZB.2022.30","gewicht":null}]
+},
+"gesamtProArtikel":{
+"6":{"kantonal":3}
+}
 }

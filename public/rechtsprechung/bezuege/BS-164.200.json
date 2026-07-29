@@ -1,32 +1,14 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-164.200",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_SB.2022.10-20250213": {
-      "zitierung": "Appellationsgericht BS SB.2022.10 vom 13.02.2025",
-      "regesteKurz": "Mehrfache ungetreue Geschäftsbesorgung",
-      "datum": "2025-02-13",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "5": [
-      {
-        "key": "bs_appellationsgericht_SB.2022.10-20250213",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "5": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-164.200",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_SB.2022.10-20250213":{"zitierung":"Appellationsgericht BS SB.2022.10 vom 13.02.2025","regesteKurz":"Mehrfache ungetreue Geschäftsbesorgung","datum":"2025-02-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"5":[{"key":"bs_appellationsgericht_SB.2022.10-20250213","gewicht":null}]
+},
+"gesamtProArtikel":{
+"5":{"kantonal":1}
+}
 }

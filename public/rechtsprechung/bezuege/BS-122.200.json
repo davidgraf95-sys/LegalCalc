@@ -1,232 +1,38 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-122.200",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_BES.2023.21": {
-      "zitierung": "Appellationsgericht BS BES.2023.21 vom 18.01.2024",
-      "regesteKurz": "Nichtanhandnahme (BGer 7B_187/2024 vom 5. März 2024)",
-      "datum": "2024-01-18",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_DGS.2023.16": {
-      "zitierung": "Appellationsgericht BS DGS.2023.16 vom 19.07.2023",
-      "regesteKurz": "Ausstandsbegehren gegen den Strafgerichtspräsidenten",
-      "datum": "2023-07-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2020.63": {
-      "zitierung": "Appellationsgericht BS SB.2020.63 vom 28.01.2022",
-      "regesteKurz": "versuchte vorsätzliche Tötung, versuchte schwere Körperverletzung, mehrfache einfache Körperverletzung, Zechprellerei,…",
-      "datum": "2022-01-28",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2021.125": {
-      "zitierung": "Appellationsgericht BS SB.2021.125 vom 30.06.2022",
-      "regesteKurz": "Widerhandlung gegen das Gesetz über Niederlassung und Aufenthalt",
-      "datum": "2022-06-30",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.115": {
-      "zitierung": "Appellationsgericht BS VD.2023.115 vom 13.03.2024",
-      "regesteKurz": "Steuerpflicht (BGer vom 20.11.2024 2C_265/2024)",
-      "datum": "2024-03-13",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.116": {
-      "zitierung": "Appellationsgericht BS VD.2023.116 vom 13.03.2024",
-      "regesteKurz": "Steuerpflicht (BGer vom 20.11.2024 2C_266/2024)",
-      "datum": "2024-03-13",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.63": {
-      "zitierung": "Appellationsgericht BS VD.2023.63 vom 12.09.2023",
-      "regesteKurz": "Gesuch um Wochenaufenthalt in Basel",
-      "datum": "2023-09-12",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.151": {
-      "zitierung": "Appellationsgericht BS VD.2024.151 vom 01.11.2024",
-      "regesteKurz": "Nichteintreten",
-      "datum": "2024-11-01",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_sozialversicherungsgericht_EL.2025.6": {
-      "zitierung": "Sozialversicherungsgericht BS EL.2025.6 vom 16.04.2026",
-      "regesteKurz": "Sachurteilsvoraussetzungen; Verfahrensrechte; Ergänzungsleistungen des Kindes",
-      "datum": "2026-04-16",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_sozialversicherungsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "2": [
-      {
-        "key": "bs_sozialversicherungsgericht_EL.2025.6",
-        "gewicht": null
-      }
-    ],
-    "3": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.151",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.63",
-        "gewicht": null
-      }
-    ],
-    "4": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.151",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.115",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.116",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.63",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2021.125",
-        "gewicht": null
-      }
-    ],
-    "5": [
-      {
-        "key": "bs_appellationsgericht_DGS.2023.16",
-        "gewicht": null
-      }
-    ],
-    "6": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.151",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2021.125",
-        "gewicht": null
-      }
-    ],
-    "7": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.115",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.116",
-        "gewicht": null
-      }
-    ],
-    "11": [
-      {
-        "key": "bs_appellationsgericht_BES.2023.21",
-        "gewicht": null
-      }
-    ],
-    "13": [
-      {
-        "key": "bs_appellationsgericht_SB.2021.125",
-        "gewicht": null
-      }
-    ],
-    "14": [
-      {
-        "key": "bs_appellationsgericht_SB.2021.125",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2020.63",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "2": {
-      "kantonal": 1
-    },
-    "3": {
-      "kantonal": 2
-    },
-    "4": {
-      "kantonal": 5
-    },
-    "5": {
-      "kantonal": 1
-    },
-    "6": {
-      "kantonal": 2
-    },
-    "7": {
-      "kantonal": 2
-    },
-    "11": {
-      "kantonal": 1
-    },
-    "13": {
-      "kantonal": 1
-    },
-    "14": {
-      "kantonal": 2
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-122.200",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_BES.2023.21":{"zitierung":"Appellationsgericht BS BES.2023.21 vom 18.01.2024","regesteKurz":"Nichtanhandnahme (BGer 7B_187/2024 vom 5. März 2024)","datum":"2024-01-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_DGS.2023.16":{"zitierung":"Appellationsgericht BS DGS.2023.16 vom 19.07.2023","regesteKurz":"Ausstandsbegehren gegen den Strafgerichtspräsidenten","datum":"2023-07-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2020.63":{"zitierung":"Appellationsgericht BS SB.2020.63 vom 28.01.2022","regesteKurz":"versuchte vorsätzliche Tötung, versuchte schwere Körperverletzung, mehrfache einfache Körperverletzung, Zechprellerei,…","datum":"2022-01-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2021.125":{"zitierung":"Appellationsgericht BS SB.2021.125 vom 30.06.2022","regesteKurz":"Widerhandlung gegen das Gesetz über Niederlassung und Aufenthalt","datum":"2022-06-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.115":{"zitierung":"Appellationsgericht BS VD.2023.115 vom 13.03.2024","regesteKurz":"Steuerpflicht (BGer vom 20.11.2024 2C_265/2024)","datum":"2024-03-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.116":{"zitierung":"Appellationsgericht BS VD.2023.116 vom 13.03.2024","regesteKurz":"Steuerpflicht (BGer vom 20.11.2024 2C_266/2024)","datum":"2024-03-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.63":{"zitierung":"Appellationsgericht BS VD.2023.63 vom 12.09.2023","regesteKurz":"Gesuch um Wochenaufenthalt in Basel","datum":"2023-09-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.151":{"zitierung":"Appellationsgericht BS VD.2024.151 vom 01.11.2024","regesteKurz":"Nichteintreten","datum":"2024-11-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_sozialversicherungsgericht_EL.2025.6":{"zitierung":"Sozialversicherungsgericht BS EL.2025.6 vom 16.04.2026","regesteKurz":"Sachurteilsvoraussetzungen; Verfahrensrechte; Ergänzungsleistungen des Kindes","datum":"2026-04-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"2":[{"key":"bs_sozialversicherungsgericht_EL.2025.6","gewicht":null}],
+"3":[{"key":"bs_appellationsgericht_VD.2024.151","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.63","gewicht":null}],
+"4":[{"key":"bs_appellationsgericht_VD.2024.151","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.115","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.116","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.63","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.125","gewicht":null}],
+"5":[{"key":"bs_appellationsgericht_DGS.2023.16","gewicht":null}],
+"6":[{"key":"bs_appellationsgericht_VD.2024.151","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.125","gewicht":null}],
+"7":[{"key":"bs_appellationsgericht_VD.2023.115","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.116","gewicht":null}],
+"11":[{"key":"bs_appellationsgericht_BES.2023.21","gewicht":null}],
+"13":[{"key":"bs_appellationsgericht_SB.2021.125","gewicht":null}],
+"14":[{"key":"bs_appellationsgericht_SB.2021.125","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.63","gewicht":null}]
+},
+"gesamtProArtikel":{
+"2":{"kantonal":1},
+"3":{"kantonal":2},
+"4":{"kantonal":5},
+"5":{"kantonal":1},
+"6":{"kantonal":2},
+"7":{"kantonal":2},
+"11":{"kantonal":1},
+"13":{"kantonal":1},
+"14":{"kantonal":2}
+}
 }

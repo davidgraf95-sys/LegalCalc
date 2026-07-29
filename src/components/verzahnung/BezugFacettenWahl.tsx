@@ -26,13 +26,49 @@
 
 import { BEDIENBARE_KLASSEN, KLASSE_SCHALTER, istErweitert, schalteKlasse, schalteKanton } from '../../pages/gesetz-leser/bezugAuswahl';
 import { STATUS_LABEL, type BezugStatus } from '../../lib/verzahnung/facetten';
+import type { BezugsBilanz } from '../../lib/rechtsprechung/bezuege';
 
 /** Gemeinsame Schalter-Optik der Streifen (identisch zu ZeitraumWahl/HistAnsichtWahl). */
 const KNOPF = 'rounded px-1.5 py-0.5 text-xs transition-colors';
 const AKTIV = 'bg-brass-100/60 font-medium text-ink-900';
 const RUHIG = 'text-ink-500 hover:bg-brass-100/40';
+/** Klasse ohne eine einzige Kante in DIESEM Erlass — bedienbar, aber sichtbar leer. */
+const LEER = 'text-ink-400 opacity-60 hover:bg-brass-100/30';
 
-export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, onKlassen, onKantone }: {
+/**
+ * Der Titel eines Instanz-Schalters — die ganze Auskunft in einem Satz (B7/c, §8).
+ *
+ * ── DER BEFUND, DEN DAS BEHEBT ─────────────────────────────────────────────
+ * David 28.7.2026 zum Schalter «Eidg.»: «das scheint keine funktion zu haben?»
+ * Diagnose (reproduziert, siehe `klassenImShard` in bezuege.ts): das Prädikat
+ * ist korrekt verdrahtet — die Klasse hat an fast jedem Artikel schlicht keine
+ * Kante. Korpusweit 164 von 75'365, an 93 von 6'217 Artikeln, in 18 von 311
+ * Erlassen; an Art. 41 OR null. Es war also KEIN Bug, sondern eine
+ * Bestandslage, die die Bedienfläche verschwiegen hat.
+ *
+ * Die Antwort ist deshalb nicht ein Fix, sondern Ehrlichkeit: der Schalter
+ * trägt die Zahl seines Erlasses, und wo sie 0 ist, sagt der Titel zusätzlich
+ * die korpusweite — sonst hielte man «0» für ein Datenloch statt für die
+ * seltene Zuständigkeit dieser Gerichte.
+ *
+ * NICHT DEAKTIVIERT, nur gedämpft: ein `disabled`-Schalter liesse sich nicht
+ * mehr fokussieren, verschwände für Screenreader-Nutzer aus der Bedienreihe und
+ * machte die 0 damit unlesbar. Wer eine leere Klasse zuschaltet, sieht am
+ * Artikel dasselbe wie vorher — das ist kein Schaden, sondern die Bestätigung
+ * der Auskunft.
+ */
+function schalterTitel(k: BezugStatus, imErlass: number | undefined, bilanz: BezugsBilanz | null): string {
+  const name = STATUS_LABEL[k];
+  if (imErlass === undefined) return name;
+  if (imErlass > 0) return `${name} — ${imErlass} Kante(n) in diesem Erlass`;
+  const korpus = bilanz?.kantenJeStatus[k];
+  const artikel = bilanz?.artikelJeStatus[k];
+  if (korpus === undefined) return `${name} — keine Entscheide dieser Instanz in diesem Erlass`;
+  return `${name} — keine in diesem Erlass. Korpusweit ${korpus} Kante(n) an ${artikel ?? 0} von `
+    + `${bilanz?.artikelGesamt ?? 0} Artikeln: diese Instanz trägt selten.`;
+}
+
+export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassenImErlass, bilanz = null, onKlassen, onKantone }: {
   /** Gewählte Instanz-Klassen (leer = nichts gewählt, siehe bezugAuswahl.ts). */
   klassen: readonly BezugStatus[];
   /** Gewählte Kantone; leer = keine Einschränkung. */
@@ -42,11 +78,21 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, onKlass
    *  fände garantiert nichts (§13 F4) und behauptete, dort gäbe es Praxis, die
    *  wir bloss ausblenden (§8). Leer ⇒ kein Kanton-Streifen. */
   kantoneVerfuegbar: readonly string[];
+  /** B7/c: Kanten je Klasse in DIESEM Erlass. Leeres Objekt = Shard noch nicht
+   *  geladen ⇒ es steht gar keine Zahl da, statt einer erfundenen 0. */
+  klassenImErlass?: Partial<Record<BezugStatus, number>>;
+  /** B7/c: korpusweite Bilanz für die Erklärung leerer Klassen. Optional —
+   *  fehlt sie, entfällt nur der Zusatzsatz, nie die Zahl des Erlasses. */
+  bilanz?: BezugsBilanz | null;
   onKlassen: (neu: BezugStatus[]) => void;
   onKantone: (neu: string[]) => void;
 }) {
   const erweitert = istErweitert(klassen);
   const alleKantone = kantone.length === 0;
+  // Solange kein Shard geladen ist, ist das Objekt leer und JEDE Klasse
+  // `undefined` — dann steht keine Zahl da. Eine 0 zu zeigen, weil man noch
+  // nichts weiss, wäre eine Behauptung über den Bestand (§8).
+  const gezaehlt = klassenImErlass && Object.keys(klassenImErlass).length > 0;
 
   return (
     <>
@@ -54,12 +100,17 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, onKlass
         <span className="lc-overline mr-1">Instanzen</span>
         {BEDIENBARE_KLASSEN.map((k) => {
           const aktiv = klassen.includes(k);
+          const n = gezaehlt ? (klassenImErlass?.[k] ?? 0) : undefined;
+          const titel = schalterTitel(k, n, bilanz);
           return (
-            <button key={k} type="button" aria-pressed={aktiv} aria-label={STATUS_LABEL[k]}
-              data-bezug-klasse={k} title={STATUS_LABEL[k]}
+            <button key={k} type="button" aria-pressed={aktiv} aria-label={titel}
+              data-bezug-klasse={k} data-bezug-klasse-zahl={n} title={titel}
               onClick={() => onKlassen(schalteKlasse(klassen, k))}
-              className={`${KNOPF} ${aktiv ? AKTIV : RUHIG}`}>
+              className={`${KNOPF} ${aktiv ? AKTIV : n === 0 ? LEER : RUHIG}`}>
               {KLASSE_SCHALTER[k]}
+              {n !== undefined && (
+                <span className="num tabular-nums ml-1 text-micro font-normal text-ink-500">{n}</span>
+              )}
             </button>
           );
         })}
@@ -93,8 +144,8 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, onKlass
           da — nicht als Kleingedrucktes anderswo. */}
       <p className="px-2.5 pb-1 pt-1 text-micro leading-snug text-ink-500">
         {erweitert
-          ? 'Zugeschaltete Instanzen stehen am Artikel als eigene, benannte Gruppe — nie unter die Leitentscheide gemischt. Die Zahl nennt die gezeigten und die insgesamt erfassten Entscheide.'
-          : 'Grundeinstellung: nur amtlich publizierte Leitentscheide. Weitere Instanzen laden zusätzliche Daten nach.'}
+          ? 'Jede zugeschaltete Instanz steht am Artikel als eigene, waagrecht scrollbare Linie — nie unter die Leitentscheide gemischt, chronologisch vom neusten zum ältesten. Die Zahl am Schalter nennt die Entscheide dieser Instanz im ganzen Erlass.'
+          : 'Grundeinstellung: nur amtlich publizierte Leitentscheide. Weitere Instanzen laden zusätzliche Daten nach; die Zahl am Schalter sagt vorher, wie viel dieser Erlass davon führt.'}
       </p>
     </>
   );

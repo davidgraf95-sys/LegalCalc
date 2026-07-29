@@ -1,32 +1,14 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-740.500",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_VD.2021.219": {
-      "zitierung": "Appellationsgericht BS VD.2021.219 vom 08.02.2023",
-      "regesteKurz": "Entschädigung aus materieller Enteignung (BGer 1C_61/2023 vom 23. Februar 2023)",
-      "datum": "2023-02-08",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "1": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "1": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-740.500",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_VD.2021.219":{"zitierung":"Appellationsgericht BS VD.2021.219 vom 08.02.2023","regesteKurz":"Entschädigung aus materieller Enteignung (BGer 1C_61/2023 vom 23. Februar 2023)","datum":"2023-02-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"1":[{"key":"bs_appellationsgericht_VD.2021.219","gewicht":null}]
+},
+"gesamtProArtikel":{
+"1":{"kantonal":1}
+}
 }

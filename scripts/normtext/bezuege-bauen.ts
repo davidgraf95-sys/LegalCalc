@@ -49,9 +49,20 @@
 // Spannen-Grenze (Begründung bei LITERATUR_MARKER in entscheide-mapping.ts) —
 // eigener Schritt, gleiche Behandlung wie die übrigen benannten Klassen.
 //
+// ── B7: DER AUSLIEFERUNGS-DECKEL «8 JE STATUS» IST WEG ──────────────────────
+// `baueBezugsShards` liefert seit B7 JEDE Kante eines Artikels aus; die
+// Anzeige-Ordnung innerhalb einer Status-Klasse ist rein CHRONOLOGISCH
+// (neu → alt), nicht mehr «gewicht, dann Datum». Begründung, Abgrenzung zur
+// Bundesgerichts-Projektion und die Herkunft des Auftrags stehen an den beiden
+// Stellen, die es angeht: `vergleicheDatumAbsteigend` (facetten.ts) für die
+// Ordnung, der Kommentarblock anstelle von `DECKEL_JE_STATUS` (ebenda) für den
+// Deckel. Die Bundesgerichts-Projektion (`projiziereBundesgericht`) ist davon
+// UNBERÜHRT — sie sortiert die gefilterte Menge selbst mit der Bestands-Ordnung
+// und kappt weiterhin auf acht; norm-index.json bleibt byte-gleich.
+//
 // ── DREI GRÖSSEN, DIE MAN NICHT VERWECHSELN DARF ────────────────────────────
 //  · `status`         — die Facetten-Klasse einer Kante (bge/bger/eidg/kantonal).
-//                       Sie steuert den DECKEL und die Anzeige-Ordnung.
+//                       Sie steuert die Gruppierung und die Anzeige-Ordnung.
 //  · `gewichtsGruppe` — innerhalb welcher Menge die topische In-degree gezählt
 //                       wird. NICHT dasselbe wie `status`: bge und bger zählen
 //                       GEMEINSAM (beide sind das Bundesgericht, und ein BGE, der
@@ -64,7 +75,7 @@
 import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
 import type { LeitfallRef } from '../../src/lib/rechtsprechung/norm-index';
 import {
-  DECKEL_JE_STATUS, STATUS_RANG, facettenFuerEntscheid,
+  STATUS_RANG, facettenFuerEntscheid, vergleicheDatumAbsteigend,
   type BezugStatus, type BezugsFacetten,
 } from '../../src/lib/verzahnung/facetten';
 import { artikelSchluesselMitBefund, fliesstextOhneApparat, fremdDefinierteKeys } from './entscheide-mapping';
@@ -142,15 +153,21 @@ export interface BezugsShard {
   erlassEbene: 'bund' | 'kanton';
   /** Dokument-key → Kopf. Enthält genau die im Shard referenzierten Dokumente. */
   dokumente: Record<string, BezugsDokument>;
-  /** Artikel-Token → Kanten in Anzeige-Ordnung (Status-Rang, dann Bestands-Ordnung). */
+  /** Artikel-Token → ALLE Kanten in Anzeige-Ordnung (Status-Rang, dann Datum ↓). */
   proArtikel: Record<string, BezugsEintrag[]>;
   /**
-   * Ehrliche Grundgesamtheit je Artikel und Status (§8): wie viele Kanten es VOR
-   * dem Deckel gab. Ohne diese Zahl liest sich ein gedeckelter Achterblock wie
-   * eine Vollliste — «8 kantonale Entscheide zu § 93» statt «8 von 214». Der
-   * Deckel ist eine Anzeige-Entscheidung; sie darf die Datenlage nicht
-   * überschreiben (FAHRPLAN §9/B4: «Trefferzahlen je Facette mit ehrlicher
-   * Grundgesamtheit ausweisen»).
+   * Kanten je Artikel und Status. Seit B7 (Deckel aufgehoben) ist die Zahl
+   * IDENTISCH mit der Länge der ausgelieferten Liste dieser Klasse — und genau
+   * so prüft sie das Tor check:bezuege: `gelieferte Kanten je Status ==
+   * gesamtProArtikel`. Eine Abweichung heisst, dass irgendwo doch wieder
+   * ausgesiebt wird, und das soll rot werden, nicht still bleiben (§6.7).
+   *
+   * WARUM DAS FELD TROTZDEM BLEIBT, obwohl es nichts mehr einschränkt:
+   *  1. Es ist die GEGENRECHNUNG zur Liste — eine Vollständigkeits-Behauptung,
+   *     die sich prüfen lässt, statt einer, die man glauben muss (§6).
+   *  2. Es ist die BEZUGSGRÖSSE der UI-Zähler, sobald ein Zeit- oder
+   *     Kantonsfilter die Anzeige verkürzt: «12 von 30 im Zeitraum» braucht die
+   *     30, und die 30 darf nicht mit dem Filter mitschrumpfen (§8).
    */
   gesamtProArtikel: Record<string, Partial<Record<BezugStatus, number>>>;
 }
@@ -413,10 +430,14 @@ export function baueBezugsIndex(
       ...e.ref,
       gewicht: gewichtMessbar(e.gruppe) ? (gewicht.get(e.key) ?? 0) : null,
     }));
-    // Erst Status-Klasse (deklarierte Rangordnung), dann die Bestands-Ordnung
-    // INNERHALB der Klasse. Nie über Klassen hinweg nach Gewicht sortieren (§8).
+    // Erst Status-Klasse (deklarierte Rangordnung), dann CHRONOLOGISCH neu→alt
+    // INNERHALB der Klasse (B7), Gleichstand über die bestehende Bestands-Ordnung
+    // — so bleibt die Ordnung total (§2) und der Tiebreak hat genau EINE Stelle
+    // (§5: `vergleicheLeitfaelle`, hereingereicht als `ordnung`).
+    // Nie über Klassen hinweg sortieren (§8) — die Klassentrennung ist der Punkt.
     kanten.sort((a, b) =>
       STATUS_RANG[a.facetten.status] - STATUS_RANG[b.facetten.status]
+      || vergleicheDatumAbsteigend(a.datum, b.datum)
       || ordnung(alsLeitfall(a), alsLeitfall(b)));
     for (const k of kanten) kantenJeStatus[k.facetten.status] = (kantenJeStatus[k.facetten.status] ?? 0) + 1;
     proArtikel.set(artikel, kanten);
@@ -447,6 +468,15 @@ export function baueBezugsIndex(
  *     sonst stünden erst alle BGE und dann alle BGer statt nach Gewicht;
  *  3. Deckel 8 über die GEMEINSAME Liste, nicht je Status.
  * Artikel ohne bundesgerichtliche Kante entfallen ganz (kein leerer Bucket).
+ *
+ * B7-VERTRÄGLICHKEIT, weil hier die Verhaltensneutralität hängt: dass der
+ * generische Bau seit B7 CHRONOLOGISCH vorsortiert statt nach Gewicht, ist für
+ * diese Projektion folgenlos — `bg.sort(ordnung)` sortiert die gefilterte Menge
+ * vollständig neu, und `vergleicheLeitfaelle` ist eine TOTALE Ordnung (letzter
+ * Schlüssel: key). Bei einer totalen Ordnung ist das Ergebnis von `sort`
+ * eindeutig und damit unabhängig von der Eingabereihenfolge. Der Beweis ist
+ * nicht dieses Argument, sondern der byte-gleiche Regen von norm-index.json und
+ * der 156 Shards (§6).
  */
 export function projiziereBundesgericht(
   index: BezugsIndex,
@@ -466,9 +496,11 @@ export function projiziereBundesgericht(
 }
 
 /**
- * Bezugs-Shards je Erlass — die B4-Nutzlast. Deckel je Status-Klasse
- * (`DECKEL_JE_STATUS`, Begründung in facetten.ts), Grundgesamtheit VOR dem
- * Deckel je Artikel und Status mitgeführt (§8).
+ * Bezugs-Shards je Erlass — die Nutzlast der Auflistung am Artikel.
+ *
+ * SEIT B7 OHNE DECKEL: jede Kante des Artikels wird ausgeliefert, in der
+ * Anzeige-Ordnung des Index (Status-Rang, dann Datum ↓). `gesamtProArtikel`
+ * bleibt als Gegenrechnung und als Bezugsgrösse der UI-Zähler (§8).
  */
 export function baueBezugsShards(index: BezugsIndex, datum: string): Map<string, BezugsShard> {
   const proErlass = new Map<string, Map<string, BezugsKante[]>>();
@@ -489,23 +521,19 @@ export function baueBezugsShards(index: BezugsIndex, datum: string): Map<string,
     for (const token of [...roh.keys()].sort()) {
       const kanten = roh.get(token)!;
       const gesamt: Partial<Record<BezugStatus, number>> = {};
-      const zaehler: Partial<Record<BezugStatus, number>> = {};
-      const behalten: BezugsEintrag[] = [];
+      const alle: BezugsEintrag[] = [];
       for (const k of kanten) {
         const st = k.facetten.status;
         gesamt[st] = (gesamt[st] ?? 0) + 1;
-        const n = (zaehler[st] ?? 0);
-        if (n >= DECKEL_JE_STATUS[st]) continue;
-        zaehler[st] = n + 1;
         if (!koepfe.has(k.key)) {
           koepfe.set(k.key, {
             zitierung: k.zitierung, regesteKurz: k.regesteKurz,
             datum: k.datum, facetten: k.facetten,
           });
         }
-        behalten.push({ key: k.key, gewicht: k.gewicht });
+        alle.push({ key: k.key, gewicht: k.gewicht });
       }
-      proArtikel[token] = behalten;
+      proArtikel[token] = alle;
       gesamtProArtikel[token] = gesamt;
     }
     // Schlüssel sortiert (§2): sonst hinge die Datei an der Artikel-Reihenfolge,
@@ -526,6 +554,125 @@ export function baueBezugsShards(index: BezugsIndex, datum: string): Map<string,
     });
   }
   return out;
+}
+
+/**
+ * Serialisierung EINES Bezugs-Shards — eine Zeile je Eintrag statt zwei
+ * Leerzeichen Einrückung je Feld (§15, Logikverlust-Bewertung: KEINER).
+ *
+ * ── WARUM DAS MIT B7 NÖTIG WURDE ───────────────────────────────────────────
+ * Mit dem aufgehobenen Deckel wächst der grösste Shard von 291.9 auf 3'578.5 KiB
+ * (BGG, gemessen 29.7.2026). Rund 30 % davon sind reiner Weissraum der
+ * `JSON.stringify(o, null, 2)`-Form: 4'693 Dokument-Köpfe mit je sechs
+ * eingerückten Feldern und 18'571 Kanten-Objekte mit je zwei. Kompakt sind es
+ * 2'490.4 KiB (gzip 318.3 → 300.2 KiB).
+ *
+ * VOLLSTÄNDIG KOMPAKT wäre es noch einmal weniger — aber dann stünde eine
+ * 2.5-MB-Datei auf EINER Zeile. Diese Artefakte werden committet; ein Diff, der
+ * nur «eine Zeile geändert» sagen kann, macht jede Gegenprüfung blind. Eine
+ * Zeile JE DOKUMENT und JE ARTIKEL hält den Diff lesbar und holt den Weissraum
+ * trotzdem. Der Preis sind ~25 KB Zeilenumbrüche.
+ *
+ * DIE DATEN SIND IDENTISCH: dieselben Schlüssel, dieselbe Reihenfolge,
+ * dieselben Werte — `JSON.parse` liefert das gleiche Objekt wie zuvor. Was sich
+ * ändert, ist ausschliesslich der Weissraum zwischen den Zeichen. Der Beweis
+ * ist der Test `bezuege-facetten.test.ts` (Rundlauf parse(serialisiere(x)) ≡ x)
+ * plus das Tor check:bezuege, das jede Datei wieder einliest.
+ *
+ * NICHT für die Bestands-Artefakte: `serialisiere` (entscheide-schreiben.ts)
+ * bleibt unangetastet, sonst wäre norm-index.json und wären die 156 Shards
+ * nicht mehr byte-gleich (§6).
+ */
+export function serialisiereShard(shard: BezugsShard): string {
+  const z = (v: unknown): string => JSON.stringify(v);
+  const zeilen: string[] = ['{'];
+  zeilen.push(`"erzeugt":${z(shard.erzeugt)},`);
+  zeilen.push(`"erlass":${z(shard.erlass)},`);
+  zeilen.push(`"erlassEbene":${z(shard.erlassEbene)},`);
+  const block = (name: string, obj: Record<string, unknown>, komma: boolean): void => {
+    const keys = Object.keys(obj);
+    zeilen.push(`"${name}":{`);
+    keys.forEach((k, i) => zeilen.push(`${z(k)}:${z(obj[k])}${i < keys.length - 1 ? ',' : ''}`));
+    zeilen.push(`}${komma ? ',' : ''}`);
+  };
+  block('dokumente', shard.dokumente, true);
+  block('proArtikel', shard.proArtikel, true);
+  block('gesamtProArtikel', shard.gesamtProArtikel, false);
+  zeilen.push('}');
+  return zeilen.join('\n') + '\n';
+}
+
+/**
+ * Korpusweite Facetten-Bilanz — die eine Zahl, die eine Facette EHRLICH macht
+ * (B7 Teil c, §8).
+ *
+ * ── DER BEFUND, DER SIE NÖTIG MACHT (reproduziert 28.7.2026) ────────────────
+ * David: «Eidg. das scheint keine funktion zu haben?» Gemessen am committeten
+ * Korpus: die Klasse `eidg` trägt 164 Kanten an 93 von 6217 Artikel-Buckets,
+ * verteilt auf 18 von 311 Erlassen. An Art. 41 OR — dem Artikel, an dem der
+ * Befund entstand — sind es null. Der Schalter WAR verdrahtet; er hatte an
+ * fast jedem Artikel nur nichts zu zeigen. Ein Steuerelement, das in 98,5 % der
+ * Fälle wirkungslos aussieht, ohne zu sagen warum, ist von einem kaputten nicht
+ * zu unterscheiden — und der Nutzer schliesst auf «kaputt» (§13 F4).
+ *
+ * Diese Bilanz gibt der Bedien-Oberfläche die Zahl, mit der sie das sagen kann:
+ * «Eidg. 0 — korpusweit 164 Kanten an 93 Artikeln». Sie ist eine reine
+ * PROJEKTION der Shards (§5) und wird vom Tor check:bezuege daraus neu
+ * gerechnet und verglichen; sie kann also nicht von den Shards wegdriften.
+ *
+ * Rein und deterministisch (§2): Schlüssel sortiert, Zahlen abgeleitet.
+ */
+export interface BezugsBilanz {
+  erzeugt: string;
+  /** Kanten je Status über ALLE Shards. */
+  kantenJeStatus: Partial<Record<BezugStatus, number>>;
+  /** Artikel-Buckets, an denen die Klasse ÜBERHAUPT eine Kante hat. */
+  artikelJeStatus: Partial<Record<BezugStatus, number>>;
+  /** Erlasse, in deren Shard die Klasse vorkommt. */
+  erlasseJeStatus: Partial<Record<BezugStatus, number>>;
+  /** Artikel-Buckets insgesamt — die Bezugsgrösse der drei Zahlen darüber. */
+  artikelGesamt: number;
+  /** Erlass-Shards insgesamt. */
+  erlasseGesamt: number;
+}
+
+export function baueBezugsBilanz(shards: ReadonlyMap<string, BezugsShard>, datum: string): BezugsBilanz {
+  const kantenJeStatus: Partial<Record<BezugStatus, number>> = {};
+  const artikelJeStatus: Partial<Record<BezugStatus, number>> = {};
+  const erlasseJeStatus: Partial<Record<BezugStatus, number>> = {};
+  let artikelGesamt = 0;
+  for (const erlass of [...shards.keys()].sort()) {
+    const shard = shards.get(erlass)!;
+    const imErlass = new Set<BezugStatus>();
+    for (const token of Object.keys(shard.proArtikel).sort()) {
+      artikelGesamt++;
+      const imArtikel = new Set<BezugStatus>();
+      for (const e of shard.proArtikel[token]) {
+        const st = shard.dokumente[e.key]?.facetten.status;
+        if (!st) continue;
+        kantenJeStatus[st] = (kantenJeStatus[st] ?? 0) + 1;
+        imArtikel.add(st);
+        imErlass.add(st);
+      }
+      for (const st of imArtikel) artikelJeStatus[st] = (artikelJeStatus[st] ?? 0) + 1;
+    }
+    for (const st of imErlass) erlasseJeStatus[st] = (erlasseJeStatus[st] ?? 0) + 1;
+  }
+  const sortiert = (o: Partial<Record<BezugStatus, number>>): Partial<Record<BezugStatus, number>> => {
+    const aus: Partial<Record<BezugStatus, number>> = {};
+    for (const st of (Object.keys(o) as BezugStatus[]).sort((a, b) => STATUS_RANG[a] - STATUS_RANG[b])) {
+      aus[st] = o[st];
+    }
+    return aus;
+  };
+  return {
+    erzeugt: datum,
+    kantenJeStatus: sortiert(kantenJeStatus),
+    artikelJeStatus: sortiert(artikelJeStatus),
+    erlasseJeStatus: sortiert(erlasseJeStatus),
+    artikelGesamt,
+    erlasseGesamt: shards.size,
+  };
 }
 
 /** Kantonale Erlass-Bestände für alle Kantone einer Auswahl laden. */

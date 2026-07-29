@@ -1,1124 +1,127 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "VZAE",
-  "erlassEbene": "bund",
-  "dokumente": {
-    "bge_146_IV_105": {
-      "zitierung": "BGE 146 IV 105",
-      "regesteKurz": "Art. 66a Abs. 2 StGB, Art. 8 EMRK; Landesverweis, Härtefallprüfung bei in der Schweiz geborenen oder aufgewachsenen Ausländern, Vereinbarkeit mit dem Konventionsrecht. Ob ein Härtefall vorliegt, bestimmt sich weder anhand von starren Alter…",
-      "datum": "2019-12-04",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_146_I_185": {
-      "zitierung": "BGE 146 I 185",
-      "regesteKurz": "Art. 8 EMRK, Art. 13 BV, Art. 44 und 47 AuG; nachträglicher Familiennachzug; Ehegatte mit gefestigtem Anwesenheitsrecht in der Schweiz. Verschlechtert sich der Gesundheitszustand eines Ehegatten erheblich, liegt darin eine wesentliche Ände…",
-      "datum": "2020-02-28",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_147_IV_340": {
-      "zitierung": "BGE 147 IV 340",
-      "regesteKurz": "Art. 21 und 24 der Verordnung (EG) Nr. 1987/2006 (SIS-II-Verordnung) und der Verordnung (EU) 2018/1861; Voraussetzungen für die Ausschreibung von Einreiseverboten im Schengener Informationssystem (SIS). Art. 24 Abs. 2 Bst. a SIS-II-Verordn…",
-      "datum": "2021-03-10",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_147_IV_453": {
-      "zitierung": "BGE 147 IV 453",
-      "regesteKurz": "Art. 66a und 66d StGB; Art. 42 Abs. 2, Art. 78 Abs. 2 lit. b und Art. 81 Abs. 1 lit. b BGG; Zulässigkeit der Beschwerde in Strafsachen gegen einen Entscheid, in dem der Aufschub des Vollzugs der obligatorischen Landesverweisung abgewiesen…",
-      "datum": "2021-09-01",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_147_I_89": {
-      "zitierung": "BGE 147 I 89",
-      "regesteKurz": "Art. 8 Abs. 2 BV; Art. 27 AIG; Verweigerung einer Aufenthaltsbewilligung zu Studienzwecken; Diskriminierung aufgrund des Alters. Zusammenfassung der Rechtsprechung zum Schutzbereich von Art. 8 Abs. 2 BV betreffend Diskriminierung aufgrund…",
-      "datum": "2020-02-13",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_148_II_1": {
-      "zitierung": "BGE 148 II 1",
-      "regesteKurz": "Art. 34 Abs. 1, Art. 58a, Art. 62 Abs. 1 lit. d und g, Art. 63 Abs. 2 und 3, Art. 96 Abs. 2 und Art. 99 AIG; Art. 62a, Art. 77a ff. und Art. 85 Abs. 1 VZAE; Art. 3 lit. g ZV-EJPD; Rückstufung von einer altrechtlich erteilten Niederlassungs…",
-      "datum": "2021-10-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_149_IV_231": {
-      "zitierung": "BGE 149 IV 231",
-      "regesteKurz": "Art. 66a und 66d StGB; strafrechtliche Landesverweisung. Bestätigung der Grundzüge der strafrechtlichen Landesverweisung (E. 2.1). Allfällige Vollzugshindernisse der Landesverweisung im Sinne von Art. 66d Abs. 1 StGB müssen bereits im Zeit…",
-      "datum": "2023-03-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_149_IV_266": {
-      "zitierung": "BGE 149 IV 266",
-      "regesteKurz": "Art. 431 Abs. 1 StPO; zuständige Behörde für den Entscheid betreffend die Entschädigung wegen rechtswidriger Haftbedingungen. Welche Behörde für den Entscheid betreffend die Entschädigung wegen rechtswidriger Haftbedingungen zuständig ist,…",
-      "datum": "2023-05-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_149_I_207": {
-      "zitierung": "BGE 149 I 207",
-      "regesteKurz": "Art. 8 EMRK; mögliche Anrufung des Rechts auf Achtung des Privatlebens, um nach einem längeren illegalen Aufenthalt in der Schweiz eine Aufenthaltsbewilligung zu erhalten. Präzisierung der Rechtsprechung. Es ist nicht ausgeschlossen, nach…",
-      "datum": "2023-05-03",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bger_2C_1060_2020": {
-      "zitierung": "BGer 2C_1060/2020 vom 19. Februar 2021",
-      "regesteKurz": "Niederlassungsbewilligung; Nichteintreten",
-      "datum": "2021-02-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bger",
-        "status": "bger"
-      }
-    },
-    "bs_appellationsgericht_BES.2023.167": {
-      "zitierung": "Appellationsgericht BS BES.2023.167 vom 12.09.2024",
-      "regesteKurz": "Amtliche Verteidigung",
-      "datum": "2024-09-12",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2020.70": {
-      "zitierung": "Appellationsgericht BS SB.2020.70 vom 17.11.2023",
-      "regesteKurz": "Menschenhandel, Förderung der Prostitution, einfache Körperverletzung, Drohung, Förderung der rechtswidrigen Ein-, Ausr…",
-      "datum": "2023-11-17",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2023.48": {
-      "zitierung": "Appellationsgericht BS SB.2023.48 vom 03.10.2025",
-      "regesteKurz": "Verbrechen gegen das Betäubungsmittelgesetz (mit Gefährdung der Gesundheit vieler Menschen, Bandenmässigkeit und Gewerb…",
-      "datum": "2025-10-03",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2023.65": {
-      "zitierung": "Appellationsgericht BS SB.2023.65 vom 29.04.2024",
-      "regesteKurz": "Vergewaltigung, Drohung (Versuch), Tätlichkeiten, Beschimpfung",
-      "datum": "2024-04-29",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2021.181": {
-      "zitierung": "Appellationsgericht BS VD.2021.181 vom 29.06.2022",
-      "regesteKurz": "Familiennachzug und Wegweisung",
-      "datum": "2022-06-29",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2021.203": {
-      "zitierung": "Appellationsgericht BS VD.2021.203 vom 07.07.2022",
-      "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung",
-      "datum": "2022-07-07",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2021.245": {
-      "zitierung": "Appellationsgericht BS VD.2021.245 vom 26.07.2022",
-      "regesteKurz": "Widerruf der Niederlassungsbewilligung und Wegweisung",
-      "datum": "2022-07-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2021.276": {
-      "zitierung": "Appellationsgericht BS VD.2021.276 vom 08.03.2023",
-      "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung",
-      "datum": "2023-03-08",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.117": {
-      "zitierung": "Appellationsgericht BS VD.2022.117",
-      "regesteKurz": "Familiennachzug und Wegweisung",
-      "datum": "2022-01-01",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.121": {
-      "zitierung": "Appellationsgericht BS VD.2022.121 vom 24.03.2023",
-      "regesteKurz": "Widerruf der Aufenthaltsbewilligung und Wegweisung",
-      "datum": "2023-03-24",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.135": {
-      "zitierung": "Appellationsgericht BS VD.2022.135 vom 27.09.2022",
-      "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung",
-      "datum": "2022-09-27",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.163": {
-      "zitierung": "Appellationsgericht BS VD.2022.163 vom 22.11.2022",
-      "regesteKurz": "Gesuch um Wohnsitznahme im Kanton Basel-Stadt",
-      "datum": "2022-11-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.212": {
-      "zitierung": "Appellationsgericht BS VD.2022.212 vom 26.01.2023",
-      "regesteKurz": "Familiennachzug",
-      "datum": "2023-01-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.236": {
-      "zitierung": "Appellationsgericht BS VD.2022.236 vom 28.11.2022",
-      "regesteKurz": "Wegweisung",
-      "datum": "2022-11-28",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.24": {
-      "zitierung": "Appellationsgericht BS VD.2022.24 vom 24.09.2022",
-      "regesteKurz": "Familiennachzug und Wegweisung",
-      "datum": "2022-09-24",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.3": {
-      "zitierung": "Appellationsgericht BS VD.2022.3 vom 28.08.2022",
-      "regesteKurz": "Nichtverlängerung der Auftenthaltsbewilligung und Wegweisung",
-      "datum": "2022-08-28",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.11": {
-      "zitierung": "Appellationsgericht BS VD.2023.11 vom 06.09.2023",
-      "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung (BGer 2C_590/2023)",
-      "datum": "2023-09-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.129": {
-      "zitierung": "Appellationsgericht BS VD.2023.129 vom 06.04.2024",
-      "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung",
-      "datum": "2024-04-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.133": {
-      "zitierung": "Appellationsgericht BS VD.2023.133 vom 22.02.2024",
-      "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung (BGer 2C_201/2024 vom 28.05.2025)",
-      "datum": "2024-02-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.139": {
-      "zitierung": "Appellationsgericht BS VD.2023.139 vom 25.02.2024",
-      "regesteKurz": "Erteilung einer Härtefallbewilligung",
-      "datum": "2024-02-25",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.141": {
-      "zitierung": "Appellationsgericht BS VD.2023.141 vom 25.02.2024",
-      "regesteKurz": "Erteilung einer Härtefallbewilligung",
-      "datum": "2024-02-25",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.147": {
-      "zitierung": "Appellationsgericht BS VD.2023.147 vom 03.05.2024",
-      "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung",
-      "datum": "2024-05-03",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.170": {
-      "zitierung": "Appellationsgericht BS VD.2023.170 vom 30.06.2024",
-      "regesteKurz": "Widerruf der Niederlassungsbewilligung und Wegweisung",
-      "datum": "2024-06-30",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.175": {
-      "zitierung": "Appellationsgericht BS VD.2023.175 vom 17.05.2024",
-      "regesteKurz": "Gesuch um Familiennachzug (BGer 2C_324/2024 vom 22. Januar 2025)",
-      "datum": "2024-05-17",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.26": {
-      "zitierung": "Appellationsgericht BS VD.2023.26 vom 05.08.2023",
-      "regesteKurz": "Erlöschen der Niederlassungsbewilligung und Wegweisung (BGer 2C_521/2023 vom 29.9.2023)",
-      "datum": "2023-08-05",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.46": {
-      "zitierung": "Appellationsgericht BS VD.2023.46 vom 21.09.2023",
-      "regesteKurz": "Familiennachzug",
-      "datum": "2023-09-21",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.83": {
-      "zitierung": "Appellationsgericht BS VD.2023.83 vom 09.01.2024",
-      "regesteKurz": "Erlöschen der Aufenthaltsbewilligung und Wegweisung (BGer 2C_124/2024 vom 27.2.2024)",
-      "datum": "2024-01-09",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.91": {
-      "zitierung": "Appellationsgericht BS VD.2023.91 vom 26.10.2023",
-      "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung (BGer 2C_679/2023 vom 14.12.2023)",
-      "datum": "2023-10-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.123": {
-      "zitierung": "Appellationsgericht BS VD.2024.123 vom 13.12.2024",
-      "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung (BGer 2C_85/2025 vom 19.3.2025)",
-      "datum": "2024-12-13",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.160": {
-      "zitierung": "Appellationsgericht BS VD.2024.160 vom 14.11.2024",
-      "regesteKurz": "Familiennachzug und Wegweisung",
-      "datum": "2024-11-14",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.168": {
-      "zitierung": "Appellationsgericht BS VD.2024.168 vom 30.06.2025",
-      "regesteKurz": "Widerruf der Niederlassungsbewilligung und Rückstufung auf eine Aufenthaltsbewilligung (BGer 2C_426/2025 vom 24. Septem…",
-      "datum": "2025-06-30",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.178": {
-      "zitierung": "Appellationsgericht BS VD.2024.178 vom 09.12.2024",
-      "regesteKurz": "Wegweisung (BGer 2C_50/2025 vom 3. September 2025)",
-      "datum": "2024-12-09",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.2": {
-      "zitierung": "Appellationsgericht BS VD.2024.2 vom 19.06.2024",
-      "regesteKurz": "Nichtverlängerung der Härtefallbewilligung und Wegweisung (BGer-Nr.: 2C_408/2024)",
-      "datum": "2024-06-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.24": {
-      "zitierung": "Appellationsgericht BS VD.2024.24 vom 18.08.2024",
-      "regesteKurz": "Widerruf der Niederlassungsbewilligung und Wegweisung",
-      "datum": "2024-08-18",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.52": {
-      "zitierung": "Appellationsgericht BS VD.2024.52 vom 07.10.2024",
-      "regesteKurz": "Widerruf der Aufenthaltsbewilligung und Wegweisung",
-      "datum": "2024-10-07",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.55": {
-      "zitierung": "Appellationsgericht BS VD.2024.55 vom 10.07.2024",
-      "regesteKurz": "Wegweisung",
-      "datum": "2024-07-10",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.78": {
-      "zitierung": "Appellationsgericht BS VD.2024.78 vom 06.12.2024",
-      "regesteKurz": "Widerruf der Niederlassungsbewilligung und Wegweisung",
-      "datum": "2024-12-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2025.114": {
-      "zitierung": "Appellationsgericht BS VD.2025.114 vom 19.11.2025",
-      "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung",
-      "datum": "2025-11-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2025.172": {
-      "zitierung": "Appellationsgericht BS VD.2025.172 vom 07.05.2026",
-      "regesteKurz": "Widerruf der Niederlassungsbewilligung und Rückstufung auf eine Aufenthaltsbewilligung (nicht rechtskräftig)",
-      "datum": "2026-05-07",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2025.205": {
-      "zitierung": "Appellationsgericht BS VD.2025.205 vom 02.03.2026",
-      "regesteKurz": "Familiennachzug",
-      "datum": "2026-03-02",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2025.57": {
-      "zitierung": "Appellationsgericht BS VD.2025.57 vom 17.10.2025",
-      "regesteKurz": "Widerruf der Aufenthaltsbewilligung EU/EFTA und Wegweisung",
-      "datum": "2025-10-17",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2025.6": {
-      "zitierung": "Appellationsgericht BS VD.2025.6 vom 20.05.2025",
-      "regesteKurz": "Widerruf der Niederlassungsbewilligung und Rückstufung auf eine Aufenthaltsbewilligung",
-      "datum": "2025-05-20",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2025.7": {
-      "zitierung": "Appellationsgericht BS VD.2025.7 vom 12.06.2025",
-      "regesteKurz": "Familiennachzug",
-      "datum": "2025-06-12",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "5": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.175",
-        "gewicht": null
-      }
-    ],
-    "6": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.178",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.160",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.55",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.236",
-        "gewicht": null
-      }
-    ],
-    "23": [
-      {
-        "key": "bge_147_I_89",
-        "gewicht": 0
-      }
-    ],
-    "31": [
-      {
-        "key": "bge_147_IV_453",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_149_IV_266",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_IV_231",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2023.48",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.123",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.52",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_BES.2023.167",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.55",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.2",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2023.65",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.133",
-        "gewicht": null
-      }
-    ],
-    "32": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.2",
-        "gewicht": null
-      }
-    ],
-    "36": [
-      {
-        "key": "bs_appellationsgericht_SB.2020.70",
-        "gewicht": null
-      }
-    ],
-    "47": [
-      {
-        "key": "bge_146_I_185",
-        "gewicht": 0
-      }
-    ],
-    "48": [
-      {
-        "key": "bge_147_I_89",
-        "gewicht": 0
-      }
-    ],
-    "49": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.83",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.26",
-        "gewicht": null
-      }
-    ],
-    "59": [
-      {
-        "key": "bge_149_I_207",
-        "gewicht": 0
-      }
-    ],
-    "62": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.91",
-        "gewicht": null
-      }
-    ],
-    "63": [
-      {
-        "key": "bger_2C_1060_2020",
-        "gewicht": 0
-      }
-    ],
-    "70": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.91",
-        "gewicht": null
-      }
-    ],
-    "73": [
-      {
-        "key": "bge_146_I_185",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_IV_105",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.46",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.212",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.181",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.117",
-        "gewicht": null
-      }
-    ],
-    "74": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.181",
-        "gewicht": null
-      }
-    ],
-    "75": [
-      {
-        "key": "bge_146_I_185",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.205",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.7",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.175",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.46",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.212",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.181",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.117",
-        "gewicht": null
-      }
-    ],
-    "76": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.11",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.135",
-        "gewicht": null
-      }
-    ],
-    "77": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.57",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.129",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.91",
-        "gewicht": null
-      }
-    ],
-    "82": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.139",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.141",
-        "gewicht": null
-      }
-    ],
-    "85": [
-      {
-        "key": "bge_148_II_1",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.57",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.78",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.203",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.181",
-        "gewicht": null
-      }
-    ],
-    "86": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.121",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.24",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.3",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.203",
-        "gewicht": null
-      }
-    ],
-    "62a": [
-      {
-        "key": "bge_148_II_1",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.78",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.170",
-        "gewicht": null
-      }
-    ],
-    "77a": [
-      {
-        "key": "bge_148_II_1",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_340",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.172",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.114",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.57",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.6",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_BES.2023.167",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.24",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.170",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.129",
-        "gewicht": null
-      }
-    ],
-    "77d": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.276",
-        "gewicht": null
-      }
-    ],
-    "77e": [
-      {
-        "key": "bs_appellationsgericht_VD.2025.172",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.168",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.6",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.24",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.170",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.147",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.129",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.163",
-        "gewicht": null
-      }
-    ],
-    "77f": [
-      {
-        "key": "bge_148_II_1",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2025.6",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.147",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.276",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.245",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "5": {
-      "kantonal": 1
-    },
-    "6": {
-      "kantonal": 4
-    },
-    "23": {
-      "bge": 1
-    },
-    "31": {
-      "bge": 3,
-      "kantonal": 22
-    },
-    "32": {
-      "kantonal": 1
-    },
-    "36": {
-      "kantonal": 1
-    },
-    "47": {
-      "bge": 1
-    },
-    "48": {
-      "bge": 1
-    },
-    "49": {
-      "kantonal": 2
-    },
-    "59": {
-      "bge": 1
-    },
-    "62": {
-      "kantonal": 1
-    },
-    "63": {
-      "bger": 1
-    },
-    "70": {
-      "kantonal": 1
-    },
-    "73": {
-      "bge": 2,
-      "kantonal": 4
-    },
-    "74": {
-      "kantonal": 1
-    },
-    "75": {
-      "bge": 1,
-      "kantonal": 7
-    },
-    "76": {
-      "kantonal": 2
-    },
-    "77": {
-      "kantonal": 3
-    },
-    "82": {
-      "kantonal": 2
-    },
-    "85": {
-      "bge": 1,
-      "kantonal": 4
-    },
-    "86": {
-      "kantonal": 4
-    },
-    "62a": {
-      "bge": 1,
-      "kantonal": 2
-    },
-    "77a": {
-      "bge": 2,
-      "kantonal": 14
-    },
-    "77d": {
-      "kantonal": 1
-    },
-    "77e": {
-      "kantonal": 10
-    },
-    "77f": {
-      "bge": 1,
-      "kantonal": 4
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"VZAE",
+"erlassEbene":"bund",
+"dokumente":{
+"bge_146_IV_105":{"zitierung":"BGE 146 IV 105","regesteKurz":"Art. 66a Abs. 2 StGB, Art. 8 EMRK; Landesverweis, Härtefallprüfung bei in der Schweiz geborenen oder aufgewachsenen Ausländern, Vereinbarkeit mit dem Konventionsrecht. Ob ein Härtefall vorliegt, bestimmt sich weder anhand von starren Alter…","datum":"2019-12-04","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_146_I_185":{"zitierung":"BGE 146 I 185","regesteKurz":"Art. 8 EMRK, Art. 13 BV, Art. 44 und 47 AuG; nachträglicher Familiennachzug; Ehegatte mit gefestigtem Anwesenheitsrecht in der Schweiz. Verschlechtert sich der Gesundheitszustand eines Ehegatten erheblich, liegt darin eine wesentliche Ände…","datum":"2020-02-28","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_147_IV_340":{"zitierung":"BGE 147 IV 340","regesteKurz":"Art. 21 und 24 der Verordnung (EG) Nr. 1987/2006 (SIS-II-Verordnung) und der Verordnung (EU) 2018/1861; Voraussetzungen für die Ausschreibung von Einreiseverboten im Schengener Informationssystem (SIS). Art. 24 Abs. 2 Bst. a SIS-II-Verordn…","datum":"2021-03-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_147_IV_453":{"zitierung":"BGE 147 IV 453","regesteKurz":"Art. 66a und 66d StGB; Art. 42 Abs. 2, Art. 78 Abs. 2 lit. b und Art. 81 Abs. 1 lit. b BGG; Zulässigkeit der Beschwerde in Strafsachen gegen einen Entscheid, in dem der Aufschub des Vollzugs der obligatorischen Landesverweisung abgewiesen…","datum":"2021-09-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_147_I_89":{"zitierung":"BGE 147 I 89","regesteKurz":"Art. 8 Abs. 2 BV; Art. 27 AIG; Verweigerung einer Aufenthaltsbewilligung zu Studienzwecken; Diskriminierung aufgrund des Alters. Zusammenfassung der Rechtsprechung zum Schutzbereich von Art. 8 Abs. 2 BV betreffend Diskriminierung aufgrund…","datum":"2020-02-13","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_148_II_1":{"zitierung":"BGE 148 II 1","regesteKurz":"Art. 34 Abs. 1, Art. 58a, Art. 62 Abs. 1 lit. d und g, Art. 63 Abs. 2 und 3, Art. 96 Abs. 2 und Art. 99 AIG; Art. 62a, Art. 77a ff. und Art. 85 Abs. 1 VZAE; Art. 3 lit. g ZV-EJPD; Rückstufung von einer altrechtlich erteilten Niederlassungs…","datum":"2021-10-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_149_IV_231":{"zitierung":"BGE 149 IV 231","regesteKurz":"Art. 66a und 66d StGB; strafrechtliche Landesverweisung. Bestätigung der Grundzüge der strafrechtlichen Landesverweisung (E. 2.1). Allfällige Vollzugshindernisse der Landesverweisung im Sinne von Art. 66d Abs. 1 StGB müssen bereits im Zeit…","datum":"2023-03-06","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_149_IV_266":{"zitierung":"BGE 149 IV 266","regesteKurz":"Art. 431 Abs. 1 StPO; zuständige Behörde für den Entscheid betreffend die Entschädigung wegen rechtswidriger Haftbedingungen. Welche Behörde für den Entscheid betreffend die Entschädigung wegen rechtswidriger Haftbedingungen zuständig ist,…","datum":"2023-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_149_I_207":{"zitierung":"BGE 149 I 207","regesteKurz":"Art. 8 EMRK; mögliche Anrufung des Rechts auf Achtung des Privatlebens, um nach einem längeren illegalen Aufenthalt in der Schweiz eine Aufenthaltsbewilligung zu erhalten. Präzisierung der Rechtsprechung. Es ist nicht ausgeschlossen, nach…","datum":"2023-05-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bger_2C_1060_2020":{"zitierung":"BGer 2C_1060/2020 vom 19. Februar 2021","regesteKurz":"Niederlassungsbewilligung; Nichteintreten","datum":"2021-02-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"}},
+"bs_appellationsgericht_BES.2023.167":{"zitierung":"Appellationsgericht BS BES.2023.167 vom 12.09.2024","regesteKurz":"Amtliche Verteidigung","datum":"2024-09-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2020.70":{"zitierung":"Appellationsgericht BS SB.2020.70 vom 17.11.2023","regesteKurz":"Menschenhandel, Förderung der Prostitution, einfache Körperverletzung, Drohung, Förderung der rechtswidrigen Ein-, Ausr…","datum":"2023-11-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2022.95":{"zitierung":"Appellationsgericht BS SB.2022.95 vom 08.11.2023","regesteKurz":"Landesverweisung","datum":"2023-11-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2023.48":{"zitierung":"Appellationsgericht BS SB.2023.48 vom 03.10.2025","regesteKurz":"Verbrechen gegen das Betäubungsmittelgesetz (mit Gefährdung der Gesundheit vieler Menschen, Bandenmässigkeit und Gewerb…","datum":"2025-10-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2023.65":{"zitierung":"Appellationsgericht BS SB.2023.65 vom 29.04.2024","regesteKurz":"Vergewaltigung, Drohung (Versuch), Tätlichkeiten, Beschimpfung","datum":"2024-04-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.147":{"zitierung":"Appellationsgericht BS VD.2021.147 vom 18.02.2022","regesteKurz":"Gesuch um Erteilung einer Härtefallbewilligung (BGer 2C_260/2022 vom 23. August 2022)","datum":"2022-02-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.181":{"zitierung":"Appellationsgericht BS VD.2021.181 vom 29.06.2022","regesteKurz":"Familiennachzug und Wegweisung","datum":"2022-06-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.194":{"zitierung":"Appellationsgericht BS VD.2021.194 vom 02.05.2022","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung (BGer 2C_484/2022 vom 15.5.2023)","datum":"2022-05-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.203":{"zitierung":"Appellationsgericht BS VD.2021.203 vom 07.07.2022","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung","datum":"2022-07-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.245":{"zitierung":"Appellationsgericht BS VD.2021.245 vom 26.07.2022","regesteKurz":"Widerruf der Niederlassungsbewilligung und Wegweisung","datum":"2022-07-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.269":{"zitierung":"Appellationsgericht BS VD.2021.269 vom 09.08.2022","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung","datum":"2022-08-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.276":{"zitierung":"Appellationsgericht BS VD.2021.276 vom 08.03.2023","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung","datum":"2023-03-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.117":{"zitierung":"Appellationsgericht BS VD.2022.117","regesteKurz":"Familiennachzug und Wegweisung","datum":"2022-01-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.121":{"zitierung":"Appellationsgericht BS VD.2022.121 vom 24.03.2023","regesteKurz":"Widerruf der Aufenthaltsbewilligung und Wegweisung","datum":"2023-03-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.135":{"zitierung":"Appellationsgericht BS VD.2022.135 vom 27.09.2022","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung","datum":"2022-09-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.149":{"zitierung":"Appellationsgericht BS VD.2022.149 vom 29.12.2022","regesteKurz":"Widerruf der Niederlassungsbewilligung und Wegweisung","datum":"2022-12-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.155":{"zitierung":"Appellationsgericht BS VD.2022.155 vom 17.10.2022","regesteKurz":"Widerruf der Niederlassungsbewilligung und Wegweisung (BGer 2C_970/2022 vom 3.5.2023)","datum":"2022-10-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.163":{"zitierung":"Appellationsgericht BS VD.2022.163 vom 22.11.2022","regesteKurz":"Gesuch um Wohnsitznahme im Kanton Basel-Stadt","datum":"2022-11-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.192":{"zitierung":"Appellationsgericht BS VD.2022.192 vom 06.03.2023","regesteKurz":"Widerruf der Niederlassungsbewilligung bzw. Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung","datum":"2023-03-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.212":{"zitierung":"Appellationsgericht BS VD.2022.212 vom 26.01.2023","regesteKurz":"Familiennachzug","datum":"2023-01-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.233":{"zitierung":"Appellationsgericht BS VD.2022.233 vom 10.01.2023","regesteKurz":"Wegweisung","datum":"2023-01-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.236":{"zitierung":"Appellationsgericht BS VD.2022.236 vom 28.11.2022","regesteKurz":"Wegweisung","datum":"2022-11-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.24":{"zitierung":"Appellationsgericht BS VD.2022.24 vom 24.09.2022","regesteKurz":"Familiennachzug und Wegweisung","datum":"2022-09-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.244":{"zitierung":"Appellationsgericht BS VD.2022.244 vom 11.09.2023","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung","datum":"2023-09-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.3":{"zitierung":"Appellationsgericht BS VD.2022.3 vom 28.08.2022","regesteKurz":"Nichtverlängerung der Auftenthaltsbewilligung und Wegweisung","datum":"2022-08-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.4":{"zitierung":"Appellationsgericht BS VD.2022.4 vom 16.02.2023","regesteKurz":"Widerruf der Niederlassungsbewilligung bzw. Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung","datum":"2023-02-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.11":{"zitierung":"Appellationsgericht BS VD.2023.11 vom 06.09.2023","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung (BGer 2C_590/2023)","datum":"2023-09-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.129":{"zitierung":"Appellationsgericht BS VD.2023.129 vom 06.04.2024","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung","datum":"2024-04-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.133":{"zitierung":"Appellationsgericht BS VD.2023.133 vom 22.02.2024","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung (BGer 2C_201/2024 vom 28.05.2025)","datum":"2024-02-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.139":{"zitierung":"Appellationsgericht BS VD.2023.139 vom 25.02.2024","regesteKurz":"Erteilung einer Härtefallbewilligung","datum":"2024-02-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.141":{"zitierung":"Appellationsgericht BS VD.2023.141 vom 25.02.2024","regesteKurz":"Erteilung einer Härtefallbewilligung","datum":"2024-02-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.147":{"zitierung":"Appellationsgericht BS VD.2023.147 vom 03.05.2024","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung","datum":"2024-05-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.149":{"zitierung":"Appellationsgericht BS VD.2023.149 vom 25.01.2024","regesteKurz":"Nichterteilung einer Härtefallbewilligung","datum":"2024-01-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.170":{"zitierung":"Appellationsgericht BS VD.2023.170 vom 30.06.2024","regesteKurz":"Widerruf der Niederlassungsbewilligung und Wegweisung","datum":"2024-06-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.175":{"zitierung":"Appellationsgericht BS VD.2023.175 vom 17.05.2024","regesteKurz":"Gesuch um Familiennachzug (BGer 2C_324/2024 vom 22. Januar 2025)","datum":"2024-05-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.26":{"zitierung":"Appellationsgericht BS VD.2023.26 vom 05.08.2023","regesteKurz":"Erlöschen der Niederlassungsbewilligung und Wegweisung (BGer 2C_521/2023 vom 29.9.2023)","datum":"2023-08-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.46":{"zitierung":"Appellationsgericht BS VD.2023.46 vom 21.09.2023","regesteKurz":"Familiennachzug","datum":"2023-09-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.83":{"zitierung":"Appellationsgericht BS VD.2023.83 vom 09.01.2024","regesteKurz":"Erlöschen der Aufenthaltsbewilligung und Wegweisung (BGer 2C_124/2024 vom 27.2.2024)","datum":"2024-01-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.91":{"zitierung":"Appellationsgericht BS VD.2023.91 vom 26.10.2023","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung (BGer 2C_679/2023 vom 14.12.2023)","datum":"2023-10-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.123":{"zitierung":"Appellationsgericht BS VD.2024.123 vom 13.12.2024","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung (BGer 2C_85/2025 vom 19.3.2025)","datum":"2024-12-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.160":{"zitierung":"Appellationsgericht BS VD.2024.160 vom 14.11.2024","regesteKurz":"Familiennachzug und Wegweisung","datum":"2024-11-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.168":{"zitierung":"Appellationsgericht BS VD.2024.168 vom 30.06.2025","regesteKurz":"Widerruf der Niederlassungsbewilligung und Rückstufung auf eine Aufenthaltsbewilligung (BGer 2C_426/2025 vom 24. Septem…","datum":"2025-06-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.178":{"zitierung":"Appellationsgericht BS VD.2024.178 vom 09.12.2024","regesteKurz":"Wegweisung (BGer 2C_50/2025 vom 3. September 2025)","datum":"2024-12-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.2":{"zitierung":"Appellationsgericht BS VD.2024.2 vom 19.06.2024","regesteKurz":"Nichtverlängerung der Härtefallbewilligung und Wegweisung (BGer-Nr.: 2C_408/2024)","datum":"2024-06-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.24":{"zitierung":"Appellationsgericht BS VD.2024.24 vom 18.08.2024","regesteKurz":"Widerruf der Niederlassungsbewilligung und Wegweisung","datum":"2024-08-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.52":{"zitierung":"Appellationsgericht BS VD.2024.52 vom 07.10.2024","regesteKurz":"Widerruf der Aufenthaltsbewilligung und Wegweisung","datum":"2024-10-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.55":{"zitierung":"Appellationsgericht BS VD.2024.55 vom 10.07.2024","regesteKurz":"Wegweisung","datum":"2024-07-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.78":{"zitierung":"Appellationsgericht BS VD.2024.78 vom 06.12.2024","regesteKurz":"Widerruf der Niederlassungsbewilligung und Wegweisung","datum":"2024-12-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.114":{"zitierung":"Appellationsgericht BS VD.2025.114 vom 19.11.2025","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung","datum":"2025-11-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.172":{"zitierung":"Appellationsgericht BS VD.2025.172 vom 07.05.2026","regesteKurz":"Widerruf der Niederlassungsbewilligung und Rückstufung auf eine Aufenthaltsbewilligung (nicht rechtskräftig)","datum":"2026-05-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.205":{"zitierung":"Appellationsgericht BS VD.2025.205 vom 02.03.2026","regesteKurz":"Familiennachzug","datum":"2026-03-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.57":{"zitierung":"Appellationsgericht BS VD.2025.57 vom 17.10.2025","regesteKurz":"Widerruf der Aufenthaltsbewilligung EU/EFTA und Wegweisung","datum":"2025-10-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.6":{"zitierung":"Appellationsgericht BS VD.2025.6 vom 20.05.2025","regesteKurz":"Widerruf der Niederlassungsbewilligung und Rückstufung auf eine Aufenthaltsbewilligung","datum":"2025-05-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.7":{"zitierung":"Appellationsgericht BS VD.2025.7 vom 12.06.2025","regesteKurz":"Familiennachzug","datum":"2025-06-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"5":[{"key":"bs_appellationsgericht_VD.2023.175","gewicht":null}],
+"6":[{"key":"bs_appellationsgericht_VD.2024.178","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.160","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.236","gewicht":null}],
+"23":[{"key":"bge_147_I_89","gewicht":0}],
+"31":[{"key":"bge_149_IV_266","gewicht":0},{"key":"bge_149_IV_231","gewicht":0},{"key":"bge_147_IV_453","gewicht":1},{"key":"bs_appellationsgericht_SB.2023.48","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.123","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.52","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.167","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.2","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.65","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.133","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.149","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.83","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.70","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.95","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.244","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.11","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.26","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.121","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.276","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.135","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.269","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.203","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.181","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.147","gewicht":null}],
+"32":[{"key":"bs_appellationsgericht_VD.2024.2","gewicht":null}],
+"36":[{"key":"bs_appellationsgericht_SB.2020.70","gewicht":null}],
+"47":[{"key":"bge_146_I_185","gewicht":0}],
+"48":[{"key":"bge_147_I_89","gewicht":0}],
+"49":[{"key":"bs_appellationsgericht_VD.2023.83","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.26","gewicht":null}],
+"59":[{"key":"bge_149_I_207","gewicht":0}],
+"62":[{"key":"bs_appellationsgericht_VD.2023.91","gewicht":null}],
+"63":[{"key":"bger_2C_1060_2020","gewicht":0}],
+"70":[{"key":"bs_appellationsgericht_VD.2023.91","gewicht":null}],
+"73":[{"key":"bge_146_I_185","gewicht":0},{"key":"bge_146_IV_105","gewicht":0},{"key":"bs_appellationsgericht_VD.2023.46","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.212","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.181","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.117","gewicht":null}],
+"74":[{"key":"bs_appellationsgericht_VD.2021.181","gewicht":null}],
+"75":[{"key":"bge_146_I_185","gewicht":0},{"key":"bs_appellationsgericht_VD.2025.205","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.7","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.175","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.46","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.212","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.181","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.117","gewicht":null}],
+"76":[{"key":"bs_appellationsgericht_VD.2023.11","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.135","gewicht":null}],
+"77":[{"key":"bs_appellationsgericht_VD.2025.57","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.129","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.91","gewicht":null}],
+"82":[{"key":"bs_appellationsgericht_VD.2023.139","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.141","gewicht":null}],
+"85":[{"key":"bge_148_II_1","gewicht":0},{"key":"bs_appellationsgericht_VD.2025.57","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.78","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.203","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.181","gewicht":null}],
+"86":[{"key":"bs_appellationsgericht_VD.2022.121","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.24","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.3","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.203","gewicht":null}],
+"62a":[{"key":"bge_148_II_1","gewicht":0},{"key":"bs_appellationsgericht_VD.2024.78","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.170","gewicht":null}],
+"77a":[{"key":"bge_148_II_1","gewicht":0},{"key":"bge_147_IV_340","gewicht":0},{"key":"bs_appellationsgericht_VD.2025.172","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.114","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.57","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.6","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.167","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.24","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.170","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.129","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.192","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.4","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.233","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.149","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.155","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.147","gewicht":null}],
+"77d":[{"key":"bs_appellationsgericht_VD.2021.276","gewicht":null}],
+"77e":[{"key":"bs_appellationsgericht_VD.2025.172","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.168","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.6","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.24","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.170","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.147","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.129","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.163","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.3","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.194","gewicht":null}],
+"77f":[{"key":"bge_148_II_1","gewicht":0},{"key":"bs_appellationsgericht_VD.2025.6","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.147","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.276","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.245","gewicht":null}]
+},
+"gesamtProArtikel":{
+"5":{"kantonal":1},
+"6":{"kantonal":4},
+"23":{"bge":1},
+"31":{"bge":3,"kantonal":22},
+"32":{"kantonal":1},
+"36":{"kantonal":1},
+"47":{"bge":1},
+"48":{"bge":1},
+"49":{"kantonal":2},
+"59":{"bge":1},
+"62":{"kantonal":1},
+"63":{"bger":1},
+"70":{"kantonal":1},
+"73":{"bge":2,"kantonal":4},
+"74":{"kantonal":1},
+"75":{"bge":1,"kantonal":7},
+"76":{"kantonal":2},
+"77":{"kantonal":3},
+"82":{"kantonal":2},
+"85":{"bge":1,"kantonal":4},
+"86":{"kantonal":4},
+"62a":{"bge":1,"kantonal":2},
+"77a":{"bge":2,"kantonal":14},
+"77d":{"kantonal":1},
+"77e":{"kantonal":10},
+"77f":{"bge":1,"kantonal":4}
+}
 }

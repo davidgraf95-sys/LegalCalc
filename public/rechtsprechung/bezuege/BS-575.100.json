@@ -1,32 +1,14 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-575.100",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_VD.2023.144": {
-      "zitierung": "Appellationsgericht BS VD.2023.144 vom 15.04.2024",
-      "regesteKurz": "Wehrpflichtersatzabgabe pro 2018 und 2019",
-      "datum": "2024-04-15",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "1": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.144",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "1": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-575.100",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_VD.2023.144":{"zitierung":"Appellationsgericht BS VD.2023.144 vom 15.04.2024","regesteKurz":"Wehrpflichtersatzabgabe pro 2018 und 2019","datum":"2024-04-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"1":[{"key":"bs_appellationsgericht_VD.2023.144","gewicht":null}]
+},
+"gesamtProArtikel":{
+"1":{"kantonal":1}
+}
 }

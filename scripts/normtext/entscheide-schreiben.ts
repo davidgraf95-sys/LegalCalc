@@ -16,8 +16,8 @@ import { minteEcliFuerSnapshot } from '../../src/lib/rechtsprechung/ecli';
 import { artikelSchluesselMitBefund, AUSGESCHLOSSENE_KEYS } from './entscheide-mapping';
 import { vergleiche } from './vergleich';
 import {
-  baueBezugsIndex, baueBezugsShards, ladeBestaende, projiziereBundesgericht,
-  type BezugsIndex,
+  baueBezugsBilanz, baueBezugsIndex, baueBezugsShards, ladeBestaende, projiziereBundesgericht,
+  serialisiereShard, type BezugsIndex,
 } from './bezuege-bauen';
 import { kantoneOhneResolver } from './kanton-norm-resolver';
 
@@ -461,7 +461,18 @@ export function schreibeKorpus(auswahl: EntscheidSnapshot[], datum: string, root
   const bezugDir = join(PUB, 'bezuege');
   mkdirSync(bezugDir, { recursive: true });
   for (const [erlass, shard] of bezuege) {
-    writeFileSync(join(bezugDir, `${erlass}.json`), serialisiere(shard), 'utf8');
+    // `serialisiereShard` statt `serialisiere`: eine Zeile je Dokument/Artikel
+    // statt eingerückter Felder (§15, Begründung und Messung dort). Die
+    // Bestands-Artefakte oben nutzen weiter `serialisiere` und bleiben
+    // byte-gleich (§6).
+    writeFileSync(join(bezugDir, `${erlass}.json`), serialisiereShard(shard), 'utf8');
+  }
+  // B7/c: korpusweite Facetten-Bilanz NEBEN dem Shard-Verzeichnis, nicht darin —
+  // `check:bezuege` liest `bezuege/*.json` als Shards ein, eine Fremddatei im
+  // selben Ordner liefe dort als kaputter Shard auf (Lehre #404: Pfad-Literale
+  // gegen die tatsächliche Verzeichnis-Lesung prüfen, nicht gegen die Absicht).
+  if (bezugsBau) {
+    writeFileSync(join(PUB, 'bezuege-bilanz.json'), serialisiere(baueBezugsBilanz(bezuege, datum)), 'utf8');
   }
 
   const keys = manifest.map((m) => m.key).sort();
@@ -501,7 +512,10 @@ export function berichteBezuege(shards: number, befund: BezugsIndex['befund'] | 
     Object.keys(o).sort().map((k) => `${k} ${o[k]}`).join(' · ') || '–';
   console.log(`[bezuege] ${shards} Erlass-Shards geschrieben.`);
   console.log(`[bezuege] Snapshots je Status: ${j(befund.snapshotsJeStatus)}`);
-  console.log(`[bezuege] Kanten je Status (VOR Deckel): ${j(befund.kantenJeStatus)}`);
+  // B7: «VOR Deckel» ist entfallen, weil der Deckel entfallen ist — diese Zahl
+  // IST seither die ausgelieferte Menge. Der Klammerzusatz stehen zu lassen wäre
+  // ein Hinweis auf einen Mechanismus, den es nicht mehr gibt (§8).
+  console.log(`[bezuege] Kanten je Status (= ausgeliefert, ohne Deckel): ${j(befund.kantenJeStatus)}`);
   console.log(`[bezuege] kantonale Zitate je Kanal: ${j(befund.kantonalJeKanal)} · §-Gruppen ohne Erlass-Seite: ${befund.kantonalOhneErlass}`);
   console.log(`[bezuege] Ausschluss-Bilanz — Abkürzungen mit Bundes-Namensvetter NICHT gebunden (${befund.abkAusgeschlossen.length}): ${befund.abkAusgeschlossen.join(', ') || '–'}`);
   console.log(`[bezuege] Systematik-Nummern ohne Normtext-Snapshot (${befund.nummerOhneBestand.length}): ${befund.nummerOhneBestand.join(', ') || '–'}`);

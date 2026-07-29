@@ -1,218 +1,45 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-154.800",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_SB.2022.48": {
-      "zitierung": "Appellationsgericht BS SB.2022.48",
-      "regesteKurz": "Widersetzung gegen Massnahmen gegenüber der Bevölkerung i.S. des Epidemiengesetzes",
-      "datum": "2022-01-01",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2022.77": {
-      "zitierung": "Appellationsgericht BS SB.2022.77 vom 15.05.2023",
-      "regesteKurz": "Widersetzung gegen Massnahmen gegenüber der Bevölkerung i.S. des Epidemiengesetzess",
-      "datum": "2023-05-15",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2022.38": {
-      "zitierung": "Appellationsgericht BS ZB.2022.38 vom 08.02.2023",
-      "regesteKurz": "Forderung aus Mietvertrag",
-      "datum": "2023-02-08",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2023.31": {
-      "zitierung": "Appellationsgericht BS ZB.2023.31 vom 05.02.2024",
-      "regesteKurz": "Kündigung und Erstreckung des Mietverhältnisses",
-      "datum": "2024-02-05",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2023.32": {
-      "zitierung": "Appellationsgericht BS ZB.2023.32 vom 07.02.2024",
-      "regesteKurz": "Kündigung und Erstreckung des Mietverhältnisses",
-      "datum": "2024-02-07",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2023.33": {
-      "zitierung": "Appellationsgericht BS ZB.2023.33 vom 07.02.2024",
-      "regesteKurz": "Kündigung und Erstreckung des Mietverhältnisses",
-      "datum": "2024-02-07",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2023.39": {
-      "zitierung": "Appellationsgericht BS ZB.2023.39 vom 27.05.2024",
-      "regesteKurz": "Forderung aus Mietvertrag",
-      "datum": "2024-05-27",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2023.63": {
-      "zitierung": "Appellationsgericht BS ZB.2023.63 vom 22.03.2024",
-      "regesteKurz": "Kündigung und Erstreckung des Mietverhältnisses (BGer 4A_255/2024 vom 20. August 2024)",
-      "datum": "2024-03-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2024.41": {
-      "zitierung": "Appellationsgericht BS ZB.2024.41 vom 31.01.2025",
-      "regesteKurz": "Kündigung des Mietvertrages",
-      "datum": "2025-01-31",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2024.5": {
-      "zitierung": "Appellationsgericht BS ZB.2024.5 vom 18.07.2024",
-      "regesteKurz": "Kündigung des Mietverhältnisses (BGer 4A_481/2024 vom 03.12.2024)",
-      "datum": "2024-07-18",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZB.2025.24": {
-      "zitierung": "Appellationsgericht BS ZB.2025.24 vom 13.06.2025",
-      "regesteKurz": "Wiederherstellung",
-      "datum": "2025-06-13",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_sozialversicherungsgericht_SG.2019.2": {
-      "zitierung": "Sozialversicherungsgericht BS SG.2019.2 vom 08.04.2022",
-      "regesteKurz": "Kumulierte Abrechnung zweier Tarifpositionen, Prüfung insbesondere der Zweckmässigkeit der zusätzlich verrechneten Tari…",
-      "datum": "2022-04-08",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_sozialversicherungsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "1": [
-      {
-        "key": "bs_appellationsgericht_SB.2022.77",
-        "gewicht": null
-      },
-      {
-        "key": "bs_sozialversicherungsgericht_SG.2019.2",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2022.48",
-        "gewicht": null
-      }
-    ],
-    "2": [
-      {
-        "key": "bs_appellationsgericht_ZB.2022.38",
-        "gewicht": null
-      }
-    ],
-    "2a": [
-      {
-        "key": "bs_appellationsgericht_ZB.2025.24",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZB.2024.41",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZB.2024.5",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZB.2023.39",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZB.2023.63",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZB.2023.32",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZB.2023.33",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZB.2023.31",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "1": {
-      "kantonal": 3
-    },
-    "2": {
-      "kantonal": 1
-    },
-    "2a": {
-      "kantonal": 24
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-154.800",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_BEZ.2023.33":{"zitierung":"Appellationsgericht BS BEZ.2023.33 vom 29.08.2023","regesteKurz":"Kündigung und Erstreckung des Mietverhältnisses","datum":"2023-08-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_BEZ.2023.39":{"zitierung":"Appellationsgericht BS BEZ.2023.39 vom 26.10.2023","regesteKurz":"Nichteintreten","datum":"2023-10-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_BEZ.2023.74":{"zitierung":"Appellationsgericht BS BEZ.2023.74","regesteKurz":"Forderung aus Mietvertrag","datum":"2023-01-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2022.48":{"zitierung":"Appellationsgericht BS SB.2022.48","regesteKurz":"Widersetzung gegen Massnahmen gegenüber der Bevölkerung i.S. des Epidemiengesetzes","datum":"2022-01-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2022.77":{"zitierung":"Appellationsgericht BS SB.2022.77 vom 15.05.2023","regesteKurz":"Widersetzung gegen Massnahmen gegenüber der Bevölkerung i.S. des Epidemiengesetzess","datum":"2023-05-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2021.38":{"zitierung":"Appellationsgericht BS ZB.2021.38 vom 07.07.2022","regesteKurz":"Forderung aus Mietvertrag","datum":"2022-07-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2021.48":{"zitierung":"Appellationsgericht BS ZB.2021.48 vom 26.01.2022","regesteKurz":"Kündigung und Erstreckung des Mietvertrags","datum":"2022-01-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2021.49":{"zitierung":"Appellationsgericht BS ZB.2021.49 vom 23.11.2022","regesteKurz":"Mietvertrag","datum":"2022-11-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2022.17":{"zitierung":"Appellationsgericht BS ZB.2022.17 vom 29.01.2023","regesteKurz":"Forderung aus Mietvertrag (BGer 4A_153/2023 vom 3. Juli 2023)","datum":"2023-01-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2022.23":{"zitierung":"Appellationsgericht BS ZB.2022.23 vom 01.11.2022","regesteKurz":"Ausweisung (BGer 4A_524/2022 vom 11. Januar 2023)","datum":"2022-11-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2022.34":{"zitierung":"Appellationsgericht BS ZB.2022.34 vom 24.02.2023","regesteKurz":"persönliches Erscheinen zur Schlichtungsverhandlung (BGer 4A_201/2023)","datum":"2023-02-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2022.38":{"zitierung":"Appellationsgericht BS ZB.2022.38 vom 08.02.2023","regesteKurz":"Forderung aus Mietvertrag","datum":"2023-02-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2022.6":{"zitierung":"Appellationsgericht BS ZB.2022.6 vom 08.08.2022","regesteKurz":"Herabsetzung des Mietzinses (BGer-Nr. 4A_419/2022 vom 1. Dezember 2022)","datum":"2022-08-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.14":{"zitierung":"Appellationsgericht BS ZB.2023.14 vom 30.06.2023","regesteKurz":"Kündigung des Mietverhältnisses (BGer 4A_390/2023 vom 22. November 2023)","datum":"2023-06-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.20":{"zitierung":"Appellationsgericht BS ZB.2023.20 vom 29.06.2023","regesteKurz":"Forderung aus Mietvertrag (BGer 4A_385/2023)","datum":"2023-06-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.24":{"zitierung":"Appellationsgericht BS ZB.2023.24 vom 02.02.2024","regesteKurz":"Kündigung und Erstreckung des Mietverhältnisses","datum":"2024-02-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.27":{"zitierung":"Appellationsgericht BS ZB.2023.27 vom 03.02.2024","regesteKurz":"Kündigung und Erstreckung des Mietverhältnisses","datum":"2024-02-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.29":{"zitierung":"Appellationsgericht BS ZB.2023.29 vom 03.02.2024","regesteKurz":"Kündigung und Erstreckung des Mietverhältnisses","datum":"2024-02-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.30":{"zitierung":"Appellationsgericht BS ZB.2023.30 vom 04.02.2024","regesteKurz":"Kündigung und Erstreckung des Mietverhältnisses","datum":"2024-02-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.31":{"zitierung":"Appellationsgericht BS ZB.2023.31 vom 05.02.2024","regesteKurz":"Kündigung und Erstreckung des Mietverhältnisses","datum":"2024-02-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.32":{"zitierung":"Appellationsgericht BS ZB.2023.32 vom 07.02.2024","regesteKurz":"Kündigung und Erstreckung des Mietverhältnisses","datum":"2024-02-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.33":{"zitierung":"Appellationsgericht BS ZB.2023.33 vom 07.02.2024","regesteKurz":"Kündigung und Erstreckung des Mietverhältnisses","datum":"2024-02-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.39":{"zitierung":"Appellationsgericht BS ZB.2023.39 vom 27.05.2024","regesteKurz":"Forderung aus Mietvertrag","datum":"2024-05-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.63":{"zitierung":"Appellationsgericht BS ZB.2023.63 vom 22.03.2024","regesteKurz":"Kündigung und Erstreckung des Mietverhältnisses (BGer 4A_255/2024 vom 20. August 2024)","datum":"2024-03-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2024.41":{"zitierung":"Appellationsgericht BS ZB.2024.41 vom 31.01.2025","regesteKurz":"Kündigung des Mietvertrages","datum":"2025-01-31","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2024.5":{"zitierung":"Appellationsgericht BS ZB.2024.5 vom 18.07.2024","regesteKurz":"Kündigung des Mietverhältnisses (BGer 4A_481/2024 vom 03.12.2024)","datum":"2024-07-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2025.24":{"zitierung":"Appellationsgericht BS ZB.2025.24 vom 13.06.2025","regesteKurz":"Wiederherstellung","datum":"2025-06-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_sozialversicherungsgericht_SG.2019.2":{"zitierung":"Sozialversicherungsgericht BS SG.2019.2 vom 08.04.2022","regesteKurz":"Kumulierte Abrechnung zweier Tarifpositionen, Prüfung insbesondere der Zweckmässigkeit der zusätzlich verrechneten Tari…","datum":"2022-04-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"1":[{"key":"bs_appellationsgericht_SB.2022.77","gewicht":null},{"key":"bs_sozialversicherungsgericht_SG.2019.2","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.48","gewicht":null}],
+"2":[{"key":"bs_appellationsgericht_ZB.2022.38","gewicht":null}],
+"2a":[{"key":"bs_appellationsgericht_ZB.2025.24","gewicht":null},{"key":"bs_appellationsgericht_ZB.2024.41","gewicht":null},{"key":"bs_appellationsgericht_ZB.2024.5","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.39","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.63","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.32","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.33","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.31","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.30","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.27","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.29","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.24","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2023.39","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2023.33","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.14","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.20","gewicht":null},{"key":"bs_appellationsgericht_ZB.2022.34","gewicht":null},{"key":"bs_appellationsgericht_ZB.2022.17","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2023.74","gewicht":null},{"key":"bs_appellationsgericht_ZB.2021.49","gewicht":null},{"key":"bs_appellationsgericht_ZB.2022.23","gewicht":null},{"key":"bs_appellationsgericht_ZB.2022.6","gewicht":null},{"key":"bs_appellationsgericht_ZB.2021.38","gewicht":null},{"key":"bs_appellationsgericht_ZB.2021.48","gewicht":null}]
+},
+"gesamtProArtikel":{
+"1":{"kantonal":3},
+"2":{"kantonal":1},
+"2a":{"kantonal":24}
+}
 }

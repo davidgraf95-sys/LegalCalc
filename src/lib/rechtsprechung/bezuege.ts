@@ -173,7 +173,84 @@ export function trefferJeStatus(shard: BezugsShard, artikelToken: string): Array
     }));
 }
 
+/**
+ * Kanten JE STATUS-KLASSE über den GANZEN Shard eines Erlasses (B7/c).
+ *
+ * ── DER BEFUND, DEN DIESE FUNKTION BEANTWORTET ─────────────────────────────
+ * David 28.7.2026 zum Instanz-Schalter «Eidg.»: «das scheint keine funktion zu
+ * haben?» Er war verdrahtet — er hatte nur nichts zu zeigen. Gemessen am
+ * committeten Korpus trägt die Klasse `eidg` 164 Kanten an 93 von 6'217
+ * Artikel-Buckets; an Art. 41 OR sind es null, und an fast jedem Artikel
+ * ausserhalb von ASYLG/VWVG/PATG ebenso. Ein Schalter, der nichts bewirkt und
+ * nicht sagt warum, ist von einem kaputten nicht zu unterscheiden (§13 F4).
+ *
+ * Diese Zählung gibt dem Schalter die Zahl, mit der er ehrlich sein kann
+ * («Eidg. 0» am geladenen Erlass). Sie zählt KANTEN, nicht Dokumente: ein
+ * Entscheid, der fünf Artikel dieses Erlasses auslegt, ist hier fünfmal
+ * einschlägig — dieselbe Zähleinheit wie die Auflistung am Artikel und wie der
+ * Zeitstrahl, sonst gäbe es drei Zahlen für dasselbe (§5).
+ *
+ * Rein (§2). Kein Filter: die Zahl sagt, was der Erlass HAT, nicht was gerade
+ * eingestellt ist — sonst zeigte ein abgeschalteter Schalter immer 0 und
+ * bewiese sich damit selbst.
+ */
+export function klassenImShard(shard: BezugsShard | null | undefined): Partial<Record<BezugStatus, number>> {
+  const aus: Partial<Record<BezugStatus, number>> = {};
+  if (!shard) return aus;
+  for (const eintraege of Object.values(shard.proArtikel)) {
+    for (const e of eintraege) {
+      const st = shard.dokumente[e.key]?.facetten.status;
+      if (!st) continue;
+      aus[st] = (aus[st] ?? 0) + 1;
+    }
+  }
+  return aus;
+}
+
+/**
+ * Korpusweite Facetten-Bilanz (`public/rechtsprechung/bezuege-bilanz.json`).
+ *
+ * Erzeugt vom selben Lauf wie die Shards und vom Tor check:bezuege aus ihnen
+ * nachgerechnet — also eine Projektion, keine zweite Wahrheit (§5). Sie liefert
+ * dem Rechtsprechungs-Dropdown die Aussage, die der Einzel-Erlass nicht machen
+ * kann: dass eine Klasse KORPUSWEIT selten trägt und nicht bloss hier gerade.
+ */
+export interface BezugsBilanz {
+  erzeugt: string;
+  kantenJeStatus: Partial<Record<BezugStatus, number>>;
+  artikelJeStatus: Partial<Record<BezugStatus, number>>;
+  erlasseJeStatus: Partial<Record<BezugStatus, number>>;
+  artikelGesamt: number;
+  erlasseGesamt: number;
+}
+
+let bilanzPromise: Promise<BezugsBilanz | null> | null = null;
+
+/**
+ * Bilanz laden — EIN Fetch je Sitzung, gecacht wie die Shards. Fehlschläge
+ * werden NICHT gecacht (gleiche Härtung wie `ladeBezugsShard`): ohne die Datei
+ * zeigt das Dropdown die korpusweite Zahl schlicht nicht, statt eine falsche zu
+ * zeigen — aber der nächste Versuch soll sie wieder holen dürfen.
+ */
+export async function ladeBezugsBilanz(): Promise<BezugsBilanz | null> {
+  if (!bilanzPromise) {
+    bilanzPromise = (async () => {
+      try {
+        const res = await fetch('/rechtsprechung/bezuege-bilanz.json');
+        if (res.status === 404) return null;
+        if (!res.ok) { bilanzPromise = null; return null; }
+        return (await res.json()) as BezugsBilanz;
+      } catch {
+        bilanzPromise = null;
+        return null;
+      }
+    })();
+  }
+  return bilanzPromise;
+}
+
 /** Nur für Tests: den Shard-Promise-Cache leeren (sonst leckt er über Testfälle). */
 export function _leereBezugsCache(): void {
   shardPromises.clear();
+  bilanzPromise = null;
 }

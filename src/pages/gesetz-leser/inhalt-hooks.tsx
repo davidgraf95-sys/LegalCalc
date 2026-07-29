@@ -12,6 +12,7 @@ import type { KantonSystematik } from '../../lib/normtext/systematik';
 import { formatiereDatum, pfadZu } from './helpers';
 import { LeserMenuPaar } from './LeserMenuPaar';
 import type { Histogramm, Zeitbereich } from './bezugZeit';
+import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import { InGesetzSuche } from './parts/InGesetzSuche';
 import { paneRoot, findeArt } from './berechnungen';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
@@ -133,6 +134,8 @@ export function useInhaltsKopfMeldung(opts: {
   /** W2·7-BEZUG/B4: Kantone, zu denen dieser Erlass Kanten hat (Kanton-Schalter).
    *  OPTIONAL: leer = noch kein Bezugs-Shard geladen ⇒ kein Kanton-Streifen. */
   kantoneVerfuegbar?: string[];
+  /** B7/c: Kanten je Instanz-Klasse in diesem Erlass (Zahl am Instanz-Schalter). */
+  klassenImErlass?: Partial<Record<BezugStatus, number>>;
   /** W2·7-BEZUG/B5: Jahres-Verteilung der Kanten (Zeitstrahl im Dropdown).
    *  OPTIONAL: leer = noch kein Shard ⇒ der Streifen sagt das ehrlich. */
   bezugHistogramm?: Histogramm;
@@ -148,7 +151,7 @@ export function useInhaltsKopfMeldung(opts: {
   sektionen: Sektion[];
 }): void {
   const {
-    erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl, kantoneVerfuegbar = [],
+    erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl, kantoneVerfuegbar = [], klassenImErlass,
     bezugHistogramm, bezugBereich,
     suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf, sektionen,
   } = opts;
@@ -204,7 +207,7 @@ export function useInhaltsKopfMeldung(opts: {
           // B6: die Paarung selbst liegt in `LeserMenuPaar` (§5) — sie stand
           // vorher als identisches Fragment an ZWEI Stellen (hier und in der
           // Pane-Suchleiste) und lief in den Label-Schwellen auseinander.
-          <LeserMenuPaar kantoneVerfuegbar={kantoneVerfuegbar}
+          <LeserMenuPaar kantoneVerfuegbar={kantoneVerfuegbar} klassenImErlass={klassenImErlass}
             bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}
             linien={linien} fussnotenAnzahl={fussnotenAnzahl} />
         )
@@ -219,7 +222,7 @@ export function useInhaltsKopfMeldung(opts: {
     // früheren Inline-Effekt.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl,
-      kantoneVerfuegbar, bezugHistogramm, bezugBereich,
+      kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
       suche, istXl, tocOffen, tocAuf, sektionen.length]);
 }
 

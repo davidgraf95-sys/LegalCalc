@@ -1,41 +1,16 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BVV_2",
-  "erlassEbene": "bund",
-  "dokumente": {
-    "bge_148_V_58": {
-      "zitierung": "BGE 148 V 58",
-      "regesteKurz": "Art. 34a BVG (je in der vom 1. Januar 2003 bis 31. Dezember 2016 in Kraft gestandenen und in der ab 1. Januar 2017 geltenden Fassung); Art. 24 (in der vom 1. Januar 2011 bis 31. Dezember 2016 in Kraft gestandenen Fassung), Art. 24a BVV 2 (…",
-      "datum": "2022-01-12",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    }
-  },
-  "proArtikel": {
-    "24": [
-      {
-        "key": "bge_148_V_58",
-        "gewicht": 0
-      }
-    ],
-    "24a": [
-      {
-        "key": "bge_148_V_58",
-        "gewicht": 0
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "24": {
-      "bge": 1
-    },
-    "24a": {
-      "bge": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BVV_2",
+"erlassEbene":"bund",
+"dokumente":{
+"bge_148_V_58":{"zitierung":"BGE 148 V 58","regesteKurz":"Art. 34a BVG (je in der vom 1. Januar 2003 bis 31. Dezember 2016 in Kraft gestandenen und in der ab 1. Januar 2017 geltenden Fassung); Art. 24 (in der vom 1. Januar 2011 bis 31. Dezember 2016 in Kraft gestandenen Fassung), Art. 24a BVV 2 (…","datum":"2022-01-12","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+},
+"proArtikel":{
+"24":[{"key":"bge_148_V_58","gewicht":0}],
+"24a":[{"key":"bge_148_V_58","gewicht":0}]
+},
+"gesamtProArtikel":{
+"24":{"bge":1},
+"24a":{"bge":1}
+}
 }

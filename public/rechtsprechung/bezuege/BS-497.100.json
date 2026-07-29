@@ -1,511 +1,72 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-497.100",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_VD.2021.141": {
-      "zitierung": "Appellationsgericht BS VD.2021.141 vom 04.05.2022",
-      "regesteKurz": "Anbau für Lagernutzung im Hinterhof (nachträgliches Baubegehren)",
-      "datum": "2022-05-04",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2021.2": {
-      "zitierung": "Appellationsgericht BS VD.2021.2 vom 07.01.2022",
-      "regesteKurz": "Teiländerung Nutzungsplanung Gebiet Dorf, Bettingen (BGer 1C_185/2022 vom 14.2.2024 )",
-      "datum": "2022-01-07",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2021.219": {
-      "zitierung": "Appellationsgericht BS VD.2021.219 vom 08.02.2023",
-      "regesteKurz": "Entschädigung aus materieller Enteignung (BGer 1C_61/2023 vom 23. Februar 2023)",
-      "datum": "2023-02-08",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.151": {
-      "zitierung": "Appellationsgericht BS VD.2022.151 vom 26.10.2022",
-      "regesteKurz": "Regierungsratsbeschluss vom 28. Juni 2022 betreffend Reparatur- und Instandsetzungsmassnahmen des im Denkmalverzeichnis…",
-      "datum": "2022-10-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.180": {
-      "zitierung": "Appellationsgericht BS VD.2022.180 vom 29.09.2023",
-      "regesteKurz": "Eintragung in das Inventar der schützenswerten Bauten",
-      "datum": "2023-09-29",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.279": {
-      "zitierung": "Appellationsgericht BS VD.2022.279 vom 06.06.2023",
-      "regesteKurz": "Umbau Mehrfamilienhaus mit Dachausbau mit Dacheinschnitt und Dachterrasse, [...]",
-      "datum": "2023-06-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.47": {
-      "zitierung": "Appellationsgericht BS VD.2022.47 vom 28.04.2023",
-      "regesteKurz": "Eintragung der Liegenschaft Höhenstrasse 15, Riehen in das Denkmalverzeichnis",
-      "datum": "2023-04-28",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.83": {
-      "zitierung": "Appellationsgericht BS VD.2022.83 vom 22.11.2022",
-      "regesteKurz": "Vorentscheid Generelles Baubegehren Nr. G-BBG [...] (1) vom 12. November 2021 in Sachen Grundsatzfragen zum Bauvorhaben…",
-      "datum": "2022-11-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.61": {
-      "zitierung": "Appellationsgericht BS VD.2023.61 vom 05.04.2024",
-      "regesteKurz": "Denkmalsubventionen",
-      "datum": "2024-04-05",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.89": {
-      "zitierung": "Appellationsgericht BS VD.2023.89 vom 12.03.2024",
-      "regesteKurz": "Denkmalschutz, Abbruch Wohnhaus D____, Riehen",
-      "datum": "2024-03-12",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.107": {
-      "zitierung": "Appellationsgericht BS VD.2024.107 vom 19.06.2025",
-      "regesteKurz": "Abbruch von zwei Doppelmehrfamilienhäusern und Neubau von zwei Mehrfamilienhäusern und drei Reiheneinfamilienhäusern (B…",
-      "datum": "2025-06-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.148": {
-      "zitierung": "Appellationsgericht BS VD.2024.148 vom 14.02.2025",
-      "regesteKurz": "Denkmalsubvention […], Basel, Fensterersatz Hinterhof-Seite ([…])",
-      "datum": "2025-02-14",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.23": {
-      "zitierung": "Appellationsgericht BS VD.2024.23 vom 02.12.2024",
-      "regesteKurz": "Vorentscheid Generelles Baubegehren Nr. [...] vom 13. Februar 2023 in Sachen Grundsatzfragen zum Bauvorhaben Renovation…",
-      "datum": "2024-12-02",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "2": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.89",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.47",
-        "gewicht": null
-      }
-    ],
-    "3": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.89",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.47",
-        "gewicht": null
-      }
-    ],
-    "4": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.151",
-        "gewicht": null
-      }
-    ],
-    "5": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.89",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.47",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.2",
-        "gewicht": null
-      }
-    ],
-    "6": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.47",
-        "gewicht": null
-      }
-    ],
-    "7": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.151",
-        "gewicht": null
-      }
-    ],
-    "11": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.148",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.61",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.47",
-        "gewicht": null
-      }
-    ],
-    "12": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.148",
-        "gewicht": null
-      }
-    ],
-    "13": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.83",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.141",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.2",
-        "gewicht": null
-      }
-    ],
-    "14": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.89",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.47",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": null
-      }
-    ],
-    "15": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": null
-      }
-    ],
-    "16": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.47",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": null
-      }
-    ],
-    "17": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.151",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.2",
-        "gewicht": null
-      }
-    ],
-    "18": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.2",
-        "gewicht": null
-      }
-    ],
-    "19": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.47",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.2",
-        "gewicht": null
-      }
-    ],
-    "22": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.47",
-        "gewicht": null
-      }
-    ],
-    "23": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": null
-      }
-    ],
-    "24": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.89",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.180",
-        "gewicht": null
-      }
-    ],
-    "26": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.151",
-        "gewicht": null
-      }
-    ],
-    "27": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.180",
-        "gewicht": null
-      }
-    ],
-    "28": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.148",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.23",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.61",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.279",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.47",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.83",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.151",
-        "gewicht": null
-      }
-    ],
-    "29": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.47",
-        "gewicht": null
-      }
-    ],
-    "16a": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.219",
-        "gewicht": null
-      }
-    ],
-    "24a": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.89",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.180",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "2": {
-      "kantonal": 2
-    },
-    "3": {
-      "kantonal": 2
-    },
-    "4": {
-      "kantonal": 1
-    },
-    "5": {
-      "kantonal": 4
-    },
-    "6": {
-      "kantonal": 2
-    },
-    "7": {
-      "kantonal": 1
-    },
-    "11": {
-      "kantonal": 3
-    },
-    "12": {
-      "kantonal": 1
-    },
-    "13": {
-      "kantonal": 5
-    },
-    "14": {
-      "kantonal": 4
-    },
-    "15": {
-      "kantonal": 2
-    },
-    "16": {
-      "kantonal": 2
-    },
-    "17": {
-      "kantonal": 3
-    },
-    "18": {
-      "kantonal": 2
-    },
-    "19": {
-      "kantonal": 3
-    },
-    "22": {
-      "kantonal": 1
-    },
-    "23": {
-      "kantonal": 1
-    },
-    "24": {
-      "kantonal": 2
-    },
-    "26": {
-      "kantonal": 1
-    },
-    "27": {
-      "kantonal": 1
-    },
-    "28": {
-      "kantonal": 9
-    },
-    "29": {
-      "kantonal": 2
-    },
-    "16a": {
-      "kantonal": 1
-    },
-    "24a": {
-      "kantonal": 2
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-497.100",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_VD.2021.141":{"zitierung":"Appellationsgericht BS VD.2021.141 vom 04.05.2022","regesteKurz":"Anbau für Lagernutzung im Hinterhof (nachträgliches Baubegehren)","datum":"2022-05-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.2":{"zitierung":"Appellationsgericht BS VD.2021.2 vom 07.01.2022","regesteKurz":"Teiländerung Nutzungsplanung Gebiet Dorf, Bettingen (BGer 1C_185/2022 vom 14.2.2024 )","datum":"2022-01-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.219":{"zitierung":"Appellationsgericht BS VD.2021.219 vom 08.02.2023","regesteKurz":"Entschädigung aus materieller Enteignung (BGer 1C_61/2023 vom 23. Februar 2023)","datum":"2023-02-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.151":{"zitierung":"Appellationsgericht BS VD.2022.151 vom 26.10.2022","regesteKurz":"Regierungsratsbeschluss vom 28. Juni 2022 betreffend Reparatur- und Instandsetzungsmassnahmen des im Denkmalverzeichnis…","datum":"2022-10-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.180":{"zitierung":"Appellationsgericht BS VD.2022.180 vom 29.09.2023","regesteKurz":"Eintragung in das Inventar der schützenswerten Bauten","datum":"2023-09-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.279":{"zitierung":"Appellationsgericht BS VD.2022.279 vom 06.06.2023","regesteKurz":"Umbau Mehrfamilienhaus mit Dachausbau mit Dacheinschnitt und Dachterrasse, [...]","datum":"2023-06-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.47":{"zitierung":"Appellationsgericht BS VD.2022.47 vom 28.04.2023","regesteKurz":"Eintragung der Liegenschaft Höhenstrasse 15, Riehen in das Denkmalverzeichnis","datum":"2023-04-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.83":{"zitierung":"Appellationsgericht BS VD.2022.83 vom 22.11.2022","regesteKurz":"Vorentscheid Generelles Baubegehren Nr. G-BBG [...] (1) vom 12. November 2021 in Sachen Grundsatzfragen zum Bauvorhaben…","datum":"2022-11-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.61":{"zitierung":"Appellationsgericht BS VD.2023.61 vom 05.04.2024","regesteKurz":"Denkmalsubventionen","datum":"2024-04-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.89":{"zitierung":"Appellationsgericht BS VD.2023.89 vom 12.03.2024","regesteKurz":"Denkmalschutz, Abbruch Wohnhaus D____, Riehen","datum":"2024-03-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.107":{"zitierung":"Appellationsgericht BS VD.2024.107 vom 19.06.2025","regesteKurz":"Abbruch von zwei Doppelmehrfamilienhäusern und Neubau von zwei Mehrfamilienhäusern und drei Reiheneinfamilienhäusern (B…","datum":"2025-06-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.148":{"zitierung":"Appellationsgericht BS VD.2024.148 vom 14.02.2025","regesteKurz":"Denkmalsubvention […], Basel, Fensterersatz Hinterhof-Seite ([…])","datum":"2025-02-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.23":{"zitierung":"Appellationsgericht BS VD.2024.23 vom 02.12.2024","regesteKurz":"Vorentscheid Generelles Baubegehren Nr. [...] vom 13. Februar 2023 in Sachen Grundsatzfragen zum Bauvorhaben Renovation…","datum":"2024-12-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"2":[{"key":"bs_appellationsgericht_VD.2023.89","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.47","gewicht":null}],
+"3":[{"key":"bs_appellationsgericht_VD.2023.89","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.47","gewicht":null}],
+"4":[{"key":"bs_appellationsgericht_VD.2022.151","gewicht":null}],
+"5":[{"key":"bs_appellationsgericht_VD.2023.89","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.47","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.2","gewicht":null}],
+"6":[{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.47","gewicht":null}],
+"7":[{"key":"bs_appellationsgericht_VD.2022.151","gewicht":null}],
+"11":[{"key":"bs_appellationsgericht_VD.2024.148","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.61","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.47","gewicht":null}],
+"12":[{"key":"bs_appellationsgericht_VD.2024.148","gewicht":null}],
+"13":[{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.219","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.83","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.141","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.2","gewicht":null}],
+"14":[{"key":"bs_appellationsgericht_VD.2023.89","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.47","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.219","gewicht":null}],
+"15":[{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.219","gewicht":null}],
+"16":[{"key":"bs_appellationsgericht_VD.2022.47","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.219","gewicht":null}],
+"17":[{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.151","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.2","gewicht":null}],
+"18":[{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.2","gewicht":null}],
+"19":[{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.47","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.2","gewicht":null}],
+"22":[{"key":"bs_appellationsgericht_VD.2022.47","gewicht":null}],
+"23":[{"key":"bs_appellationsgericht_VD.2021.219","gewicht":null}],
+"24":[{"key":"bs_appellationsgericht_VD.2023.89","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null}],
+"26":[{"key":"bs_appellationsgericht_VD.2022.151","gewicht":null}],
+"27":[{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null}],
+"28":[{"key":"bs_appellationsgericht_VD.2024.148","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.23","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.61","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.279","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.47","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.83","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.151","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.141","gewicht":null}],
+"29":[{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.47","gewicht":null}],
+"16a":[{"key":"bs_appellationsgericht_VD.2021.219","gewicht":null}],
+"24a":[{"key":"bs_appellationsgericht_VD.2023.89","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null}]
+},
+"gesamtProArtikel":{
+"2":{"kantonal":2},
+"3":{"kantonal":2},
+"4":{"kantonal":1},
+"5":{"kantonal":4},
+"6":{"kantonal":2},
+"7":{"kantonal":1},
+"11":{"kantonal":3},
+"12":{"kantonal":1},
+"13":{"kantonal":5},
+"14":{"kantonal":4},
+"15":{"kantonal":2},
+"16":{"kantonal":2},
+"17":{"kantonal":3},
+"18":{"kantonal":2},
+"19":{"kantonal":3},
+"22":{"kantonal":1},
+"23":{"kantonal":1},
+"24":{"kantonal":2},
+"26":{"kantonal":1},
+"27":{"kantonal":1},
+"28":{"kantonal":9},
+"29":{"kantonal":2},
+"16a":{"kantonal":1},
+"24a":{"kantonal":2}
+}
 }

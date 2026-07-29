@@ -14,6 +14,7 @@ import { kopfOverline, grundartMeta } from './helpers';
 import { ArtikelLeser, ErlassKopfBlock, ErlassLeserKopf } from './parts';
 import { LeserMenuPaar } from './LeserMenuPaar';
 import type { Histogramm, Zeitbereich } from './bezugZeit';
+import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import { istAnhangToken } from './berechnungen';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
 
@@ -37,7 +38,7 @@ export function LeserVolltextInhalt({
   internRefs, margAnzeige, kantonSys, basisPfad, renderSektion,
   imPane, istXl, overlayWurzel, treffer, suche, sucheDebounced, setSuche,
   tocBaumEl, tocOffen, tocAuf, setTocOffen, setTocAuf, springeZuArtikel,
-  leitfaelleFuer, bezuegeFuer = () => undefined, revisionFuer, historieFuer, kantoneVerfuegbar = [],
+  leitfaelleFuer, bezuegeFuer = () => undefined, revisionFuer, historieFuer, kantoneVerfuegbar = [], klassenImErlass,
   bezugHistogramm, bezugBereich,
   reiterToast, setReiterToast, reiterToastTimerRef,
   tocDrawerRef, trefferRef, navigate,
@@ -86,6 +87,8 @@ export function LeserVolltextInhalt({
   /** B4: Kantone, zu denen DIESER Erlass Kanten hat — speist den Kanton-Schalter.
    *  OPTIONAL: leer heisst schlicht «noch kein Shard geladen» (kein Streifen). */
   kantoneVerfuegbar?: string[];
+  /** B7/c: Kanten je Instanz-Klasse in diesem Erlass (Zahl am Instanz-Schalter). */
+  klassenImErlass?: Partial<Record<BezugStatus, number>>;
   /** B5: Jahres-Verteilung der Kanten — speist den Zeitstrahl im Pane-Dropdown.
    *  OPTIONAL: ohne sie zeigt der Streifen seinen ehrlichen Leer-Hinweis. */
   bezugHistogramm?: Histogramm;
@@ -153,7 +156,7 @@ export function LeserVolltextInhalt({
       // B4: dieselbe Paarung wie in der Einzelansicht — im Pane trägt sie die
       // pane-lokale Such-Leiste statt des Inhalts-Kopfs. B6: buchstäblich
       // dieselbe Komponente, nicht mehr eine zweite Kopie (§5).
-      <LeserMenuPaar kantoneVerfuegbar={kantoneVerfuegbar}
+      <LeserMenuPaar kantoneVerfuegbar={kantoneVerfuegbar} klassenImErlass={klassenImErlass}
         bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}
         linien={linien} fussnotenAnzahl={fussnotenAnzahl} />
     )

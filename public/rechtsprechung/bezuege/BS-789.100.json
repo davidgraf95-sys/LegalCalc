@@ -1,53 +1,17 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-789.100",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_VD.2021.236": {
-      "zitierung": "Appellationsgericht BS VD.2021.236 vom 03.02.2023",
-      "regesteKurz": "Neubau Trinkwasser Reservoir, Ausnahmeantrag (RPG)",
-      "datum": "2023-02-03",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.107": {
-      "zitierung": "Appellationsgericht BS VD.2024.107 vom 19.06.2025",
-      "regesteKurz": "Abbruch von zwei Doppelmehrfamilienhäusern und Neubau von zwei Mehrfamilienhäusern und drei Reiheneinfamilienhäusern (B…",
-      "datum": "2025-06-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "8": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.236",
-        "gewicht": null
-      }
-    ],
-    "26": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "8": {
-      "kantonal": 1
-    },
-    "26": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-789.100",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_VD.2021.236":{"zitierung":"Appellationsgericht BS VD.2021.236 vom 03.02.2023","regesteKurz":"Neubau Trinkwasser Reservoir, Ausnahmeantrag (RPG)","datum":"2023-02-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.107":{"zitierung":"Appellationsgericht BS VD.2024.107 vom 19.06.2025","regesteKurz":"Abbruch von zwei Doppelmehrfamilienhäusern und Neubau von zwei Mehrfamilienhäusern und drei Reiheneinfamilienhäusern (B…","datum":"2025-06-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"8":[{"key":"bs_appellationsgericht_VD.2021.236","gewicht":null}],
+"26":[{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null}]
+},
+"gesamtProArtikel":{
+"8":{"kantonal":1},
+"26":{"kantonal":1}
+}
 }

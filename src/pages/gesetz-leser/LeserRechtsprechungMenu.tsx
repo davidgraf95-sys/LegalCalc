@@ -44,9 +44,12 @@ import {
 } from './leserOptionen';
 import { istErweitert } from './bezugAuswahl';
 import { istBereichOffen, type Histogramm, type Zeitbereich } from './bezugZeit';
+import { ladeBezugsBilanz, type BezugsBilanz } from '../../lib/rechtsprechung/bezuege';
+import type { BezugStatus } from '../../lib/verzahnung/facetten';
 
 const LEERES_HISTOGRAMM: Histogramm = { balken: [], ohneJahr: 0 };
 const OFFEN: Zeitbereich = { von: '', bis: '' };
+const LEERE_KLASSEN: Partial<Record<BezugStatus, number>> = {};
 
 /**
  * Panelbreite in px — EINE Zahl, aus der sowohl die CSS-Breite als auch die
@@ -66,11 +69,15 @@ const RAND_PX = 8;
 const FENSTER_RESERVE_PX = 32;
 
 export function LeserRechtsprechungMenu({
-  kantoneVerfuegbar = [], histogramm = LEERES_HISTOGRAMM, bereich = OFFEN,
+  kantoneVerfuegbar = [], klassenImErlass = LEERE_KLASSEN,
+  histogramm = LEERES_HISTOGRAMM, bereich = OFFEN,
 }: {
   /** Kantone, zu denen DIESER Erlass Kanten hat (aus dem geladenen Bezugs-Shard).
    *  Leer ⇒ kein Kanton-Streifen (nichts zu filtern, §13 F4). */
   kantoneVerfuegbar?: string[];
+  /** B7/c: Kanten je Instanz-Klasse in DIESEM Erlass — die Zahl am Schalter.
+   *  Leer ⇒ es steht keine Zahl da (Shard noch nicht geladen), nie eine 0. */
+  klassenImErlass?: Partial<Record<BezugStatus, number>>;
   /** B5: Jahres-Verteilung der Kanten dieses Erlasses (Zeitstrahl). Leer =
    *  Shard noch nicht geladen ⇒ der Streifen sagt das, statt eine Grafik ohne
    *  Inhalt zu zeigen. */
@@ -90,6 +97,20 @@ export function LeserRechtsprechungMenu({
   const panelId = useId();
 
   useDialogFokus(offen, panelRef, () => setOffen(false));
+
+  // B7/c: die korpusweite Facetten-Bilanz erklärt eine LEERE Klasse («Eidg. 0 —
+  // korpusweit 164 Kanten an 93 Artikeln»). Geladen wird sie erst beim ÖFFNEN
+  // des Panels und genau einmal je Sitzung (Cache in `ladeBezugsBilanz`): sie
+  // beantwortet eine Frage, die man nur im geöffneten Menü stellt, und darf
+  // darum nichts kosten, solange es zu ist (§15). Bleibt sie aus, fehlt nur der
+  // erklärende Zusatz — die Zahl des Erlasses steht trotzdem da.
+  const [bilanz, setBilanz] = useState<BezugsBilanz | null>(null);
+  useEffect(() => {
+    if (!offen || bilanz) return;
+    let lebt = true;
+    void ladeBezugsBilanz().then((b) => { if (lebt && b) setBilanz(b); });
+    return () => { lebt = false; };
+  }, [offen, bilanz]);
 
   /**
    * Öffnen mit Randklemmung.
@@ -191,6 +212,8 @@ export function LeserRechtsprechungMenu({
                 klassen={klassen}
                 kantone={kantone}
                 kantoneVerfuegbar={kantoneVerfuegbar}
+                klassenImErlass={klassenImErlass}
+                bilanz={bilanz}
                 onKlassen={setzeBezugKlassen}
                 onKantone={setzeBezugKantone}
               />

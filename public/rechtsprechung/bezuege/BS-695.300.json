@@ -1,32 +1,14 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-695.300",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_VD.2021.186": {
-      "zitierung": "Appellationsgericht BS VD.2021.186 vom 20.03.2022",
-      "regesteKurz": "Grundstückgewinnsteuer",
-      "datum": "2022-03-20",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "3": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.186",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "3": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-695.300",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_VD.2021.186":{"zitierung":"Appellationsgericht BS VD.2021.186 vom 20.03.2022","regesteKurz":"Grundstückgewinnsteuer","datum":"2022-03-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"3":[{"key":"bs_appellationsgericht_VD.2021.186","gewicht":null}]
+},
+"gesamtProArtikel":{
+"3":{"kantonal":1}
+}
 }

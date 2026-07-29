@@ -1,149 +1,23 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "GFK",
-  "erlassEbene": "bund",
-  "dokumente": {
-    "bs_appellationsgericht_SB.2021.37": {
-      "zitierung": "Appellationsgericht BS SB.2021.37 vom 09.06.2022",
-      "regesteKurz": "ad 1: versuchte vorsätzliche Tötung, mehrfacher Raufhandel und Unterlassung der Buchführung etc. ad 2: versuchte vorsät…",
-      "datum": "2022-06-09",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2021.82": {
-      "zitierung": "Appellationsgericht BS SB.2021.82 vom 07.03.2024",
-      "regesteKurz": "ad1: versuchte vorsätzliche Tötung, Sachbeschädigung (grosser Schaden), Gewalt und Drohung gegen Behörden und Beamte (q…",
-      "datum": "2024-03-07",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2022.95": {
-      "zitierung": "Appellationsgericht BS SB.2022.95 vom 08.11.2023",
-      "regesteKurz": "Landesverweisung",
-      "datum": "2023-11-08",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2023.19": {
-      "zitierung": "Appellationsgericht BS SB.2023.19 vom 16.10.2024",
-      "regesteKurz": "ad Bkl. 1: mehrfache versuchte schwere Körperverletzung, Nötigung, mehrfache Gefährdung des Lebens, Widerhandlung gegen…",
-      "datum": "2024-10-16",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2023.35": {
-      "zitierung": "Appellationsgericht BS SB.2023.35 vom 22.04.2024",
-      "regesteKurz": "Landesverweisung",
-      "datum": "2024-04-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2023.87": {
-      "zitierung": "Appellationsgericht BS SB.2023.87 vom 26.11.2024",
-      "regesteKurz": "versuchte vorsätzliche Tötung",
-      "datum": "2024-11-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2024.36": {
-      "zitierung": "Appellationsgericht BS SB.2024.36 vom 18.02.2025",
-      "regesteKurz": "versuchte vorsätzliche Tötung",
-      "datum": "2025-02-18",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.26": {
-      "zitierung": "Appellationsgericht BS VD.2023.26 vom 05.08.2023",
-      "regesteKurz": "Erlöschen der Niederlassungsbewilligung und Wegweisung (BGer 2C_521/2023 vom 29.9.2023)",
-      "datum": "2023-08-05",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "32": [
-      {
-        "key": "bs_appellationsgericht_SB.2023.87",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2023.19",
-        "gewicht": null
-      }
-    ],
-    "33": [
-      {
-        "key": "bs_appellationsgericht_SB.2024.36",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2023.35",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2021.82",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2022.95",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.26",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2021.37",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "32": {
-      "kantonal": 2
-    },
-    "33": {
-      "kantonal": 6
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"GFK",
+"erlassEbene":"bund",
+"dokumente":{
+"bs_appellationsgericht_SB.2021.37":{"zitierung":"Appellationsgericht BS SB.2021.37 vom 09.06.2022","regesteKurz":"ad 1: versuchte vorsätzliche Tötung, mehrfacher Raufhandel und Unterlassung der Buchführung etc. ad 2: versuchte vorsät…","datum":"2022-06-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2021.82":{"zitierung":"Appellationsgericht BS SB.2021.82 vom 07.03.2024","regesteKurz":"ad1: versuchte vorsätzliche Tötung, Sachbeschädigung (grosser Schaden), Gewalt und Drohung gegen Behörden und Beamte (q…","datum":"2024-03-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2022.95":{"zitierung":"Appellationsgericht BS SB.2022.95 vom 08.11.2023","regesteKurz":"Landesverweisung","datum":"2023-11-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2023.19":{"zitierung":"Appellationsgericht BS SB.2023.19 vom 16.10.2024","regesteKurz":"ad Bkl. 1: mehrfache versuchte schwere Körperverletzung, Nötigung, mehrfache Gefährdung des Lebens, Widerhandlung gegen…","datum":"2024-10-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2023.35":{"zitierung":"Appellationsgericht BS SB.2023.35 vom 22.04.2024","regesteKurz":"Landesverweisung","datum":"2024-04-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2023.87":{"zitierung":"Appellationsgericht BS SB.2023.87 vom 26.11.2024","regesteKurz":"versuchte vorsätzliche Tötung","datum":"2024-11-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2024.36":{"zitierung":"Appellationsgericht BS SB.2024.36 vom 18.02.2025","regesteKurz":"versuchte vorsätzliche Tötung","datum":"2025-02-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.26":{"zitierung":"Appellationsgericht BS VD.2023.26 vom 05.08.2023","regesteKurz":"Erlöschen der Niederlassungsbewilligung und Wegweisung (BGer 2C_521/2023 vom 29.9.2023)","datum":"2023-08-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"32":[{"key":"bs_appellationsgericht_SB.2023.87","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.19","gewicht":null}],
+"33":[{"key":"bs_appellationsgericht_SB.2024.36","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.35","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.82","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.95","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.26","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.37","gewicht":null}]
+},
+"gesamtProArtikel":{
+"32":{"kantonal":2},
+"33":{"kantonal":6}
+}
 }
