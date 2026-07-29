@@ -15,6 +15,7 @@ import { ArtikelLeser, ErlassKopfBlock, ErlassLeserKopf } from './parts';
 import { LeserMenuPaar } from './LeserMenuPaar';
 import type { Histogramm, Zeitbereich } from './bezugZeit';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
+import type { KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 import { istAnhangToken } from './berechnungen';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
 
@@ -88,7 +89,7 @@ export function LeserVolltextInhalt({
    *  OPTIONAL: leer heisst schlicht «noch kein Shard geladen» (kein Streifen). */
   kantoneVerfuegbar?: string[];
   /** B7/c: Kanten je Instanz-Klasse in diesem Erlass (Zahl am Instanz-Schalter). */
-  klassenImErlass?: Partial<Record<BezugStatus, number>>;
+  klassenImErlass?: Partial<Record<BezugStatus, KlassenZahlen>>;
   /** B5: Jahres-Verteilung der Kanten — speist den Zeitstrahl im Pane-Dropdown.
    *  OPTIONAL: ohne sie zeigt der Streifen seinen ehrlichen Leer-Hinweis. */
   bezugHistogramm?: Histogramm;

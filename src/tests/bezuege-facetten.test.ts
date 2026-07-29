@@ -606,14 +606,27 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     expect(eidg.every((b) => b.facetten.status === 'eidg')).toBe(true);
   });
 
-  it('klassenImShard zählt je Klasse — die Zahl am Instanz-Schalter', () => {
+  it('klassenImShard zählt je Klasse — Entscheide UND Fundstellen getrennt', () => {
     const s = JSON.parse(readFileSync('public/rechtsprechung/bezuege/OR.json', 'utf8')) as BezugsShard;
     const n = klassenImShard(s);
-    expect(n.eidg).toBeUndefined();          // 0 Kanten ⇒ gar kein Eintrag
-    expect(n.bge).toBeGreaterThan(0);
-    // Summe über alle Klassen == Kanten des Shards (keine doppelte Zählung).
-    const summe = Object.values(n).reduce((a, b) => a + b, 0);
+    expect(n.eidg).toBeUndefined();          // 0 Fundstellen ⇒ gar kein Eintrag
+    expect(n.bge!.dokumente).toBeGreaterThan(0);
+    // Summe der KANTEN == Kanten des Shards (keine doppelte Zählung).
+    const summe = Object.values(n).reduce((a, b) => a + b.kanten, 0);
     const kanten = Object.values(s.proArtikel).reduce((a, e) => a + e.length, 0);
     expect(summe).toBe(kanten);
+    // Und die Entscheide sind NIE mehr als die Fundstellen — je Klasse.
+    for (const z of Object.values(n)) expect(z.dokumente).toBeLessThanOrEqual(z.kanten);
+  });
+
+  it('BEFUND I1 (Gegenprüfung R1): Fundstellen ≠ Entscheide, gemessen am BGG', () => {
+    // Der Schalter beschriftete bis zur Gegenprüfung die KANTEN als «Entscheide».
+    // Am einzelnen Artikel ist das dasselbe, über einen Erlass nicht — hier steht
+    // die Zahl, die es widerlegt hat (§8): 10'559 gegen 1'253, Faktor 8,4, bei
+    // einem Korpus von insgesamt 1'259 BGE.
+    const s = JSON.parse(readFileSync('public/rechtsprechung/bezuege/BGG.json', 'utf8')) as BezugsShard;
+    const n = klassenImShard(s);
+    expect(n.bge!.kanten).toBe(10_559);
+    expect(n.bge!.dokumente).toBe(1253);
   });
 });

@@ -40,7 +40,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ladeBezugsShard, bezuegeFuerArtikel, klassenImShard, normArtikelToken,
-  type Bezug, type BezugsShard,
+  type Bezug, type BezugsShard, type KlassenZahlen,
 } from '../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import { bauePraedikate, waehleBezuege } from './bezugAuswahl';
@@ -52,7 +52,10 @@ import { beiLeerlauf } from '../../lib/leerlauf';
 export interface ArtikelBezuege {
   /** Kanten NACH Facetten-Filter, in Shard-Ordnung. */
   kanten: Bezug[];
-  /** Kanten je Status an diesem Artikel OHNE UI-Filter — die Bezugsgrösse (§8). */
+  /** Kanten je Status an diesem Artikel OHNE UI-Filter — die Bezugsgrösse (§8).
+   *  AM ARTIKEL ist «Kante» = «Entscheid» (ein Dokument steht dort genau
+   *  einmal); der Unterschied entsteht erst beim Aufsummieren über einen ganzen
+   *  Erlass, siehe `KlassenZahlen` in bezuege.ts. */
   gesamt: Partial<Record<BezugStatus, number>>;
   /**
    * Ist ein Zeitraum-Filter aktiv? B7: seit der Deckel weg ist, kann eine
@@ -88,7 +91,7 @@ export function useBezuege(erlassKey: string | undefined): {
   kantoneVerfuegbar: string[];
   /** B7/c: Kanten je Instanz-Klasse in DIESEM Erlass — die Zahl am
    *  Instanz-Schalter. Leer, solange kein Shard geladen ist. */
-  klassenImErlass: Partial<Record<BezugStatus, number>>;
+  klassenImErlass: Partial<Record<BezugStatus, KlassenZahlen>>;
   /** B5: Jahres-Verteilung der Kanten DIESES Erlasses für den Zeitstrahl. */
   histogramm: Histogramm;
   /** B5: der aktive Von-Bis-Bereich, für Steuerung und Kanten-Auswahl. */
@@ -213,7 +216,7 @@ export function useBezuege(erlassKey: string | undefined): {
  *  ist — eine neue Objekt-Identität je Render machte die memo-Wrapper auf dem
  *  Prop-Pfad bis ins Dropdown wirkungslos (§15.4). */
 const LEERES_HISTOGRAMM: Histogramm = { balken: [], ohneJahr: 0 };
-const LEERE_KLASSEN: Partial<Record<BezugStatus, number>> = {};
+const LEERE_KLASSEN: Partial<Record<BezugStatus, KlassenZahlen>> = {};
 
 /**
  * Jahres-Verteilung ALLER Kanten eines Shards, gefiltert nach den aktiven

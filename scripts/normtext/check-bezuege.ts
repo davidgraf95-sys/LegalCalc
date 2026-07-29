@@ -122,11 +122,11 @@ const BEZ = join(PUB, 'bezuege');
  *
  * IST-WERTE, gemessen am regenerierten Stand 29.7.2026 — roh / gzip -6, die
  * B1–B6-Rohwerte daneben, damit der Sprung sichtbar bleibt:
- *   BGG          2'504.5 KiB / 300.2 KiB gzip  (vorher   291.9 KiB)
- *   STPO         1'193.9      / 102.0          (vorher   716.8)
- *   BS-154.100   1'083.0      /  97.0          (vorher   139.6)
- *   BV             746.1      / 123.3          (vorher   315.8)
- *   STGB           714.2      /  77.8          (vorher   542.8)
+ *   BGG          2'504.5 KiB / 300.2 KiB gzip  (vorher 291.9 KiB / 44.1 gzip)
+ *   STPO         1'193.9      / 102.0          (vorher 716.8      / 63.6)
+ *   BS-154.100   1'083.0      /  97.0          (vorher 139.6)
+ *   BV             746.1      / 123.3          (vorher 315.8      / 46.8)
+ *   STGB           714.2      /  77.8          (vorher 542.8      / 56.3)
  * Verzeichnis gesamt 13 MB (vorher 7.5 MB) über 311 Shards. Die Rohwerte
  * enthalten bereits die kompaktere Serialisierung (`serialisiereShard`,
  * Begründung dort) — ohne sie stünde BGG bei 3'578.5 KiB.

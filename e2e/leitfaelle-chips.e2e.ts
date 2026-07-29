@@ -14,8 +14,16 @@
 // Aufweichen des Tests: der GEPRÜFTE SACHVERHALT bleibt identisch (Artikel mit
 // Treffern zeigt verlinkte Entscheide · Artikel ohne Treffer erzeugt keinen
 // Leerraum), nur die Darstellung, an der er gemessen wird, ist die neue.
-// Anker am Bestand verifiziert (public/rechtsprechung/bezuege/OR.json, 28.7.2026):
-// OR/41 führt 8 von 30 Leitentscheiden, Rang 1 unverändert BGE 146 IV 76;
+// §6.3-NACHTRAG (29.7.2026, W2·7-BEZUG/B7): der Anker lautete «8 von 30» und
+// mass den ENTFERNTEN Auslieferungs-Deckel «8 je Status». Der Shard liefert
+// jetzt alle 30 Leitentscheide zu OR/41; die Linie zeigt davon 5 auf einmal und
+// lädt auf Klick die nächsten 5 (David 29.7.2026). Der geprüfte Sachverhalt ist
+// unverändert — ein Artikel mit Treffern zeigt verlinkte Entscheide —, nur die
+// Zahl daneben ist die neue.
+// Anker am Bestand verifiziert (public/rechtsprechung/bezuege/OR.json, 29.7.2026):
+// OR/41 führt 30 Leitentscheide, gezeigt werden 5; Rang 1 der CHRONOLOGISCHEN
+// Ordnung ist nicht mehr BGE 146 IV 76 (das war die Gewichts-Ordnung), sondern
+// der jüngste — geprüft wird darum die Existenz des Chips, nicht sein Platz.
 // OR Art. 4 trägt weiterhin keinen Bucket.
 import { test, expect, type Page } from '@playwright/test'
 
@@ -37,8 +45,14 @@ test.describe('Rechtsprechungs-Auflistung im ArtikelLeser (OR)', () => {
     // bge-Gruppe mit ihrem Kopf und den Chip-Links auf die einschlägigen BGE.
     const bgeGruppe = art41.locator('[data-bezug-gruppe="bge"]')
     await expect(bgeGruppe).toBeVisible()
-    // Ehrliche Grundgesamtheit am Gruppenkopf (§8): gezeigt UND erfasst.
-    await expect(bgeGruppe).toContainText('8 von 30')
+    // Ehrliche Zahl am Gruppenkopf (§8): gezeigt UND Grundmenge.
+    await expect(bgeGruppe).toContainText('5 von 30')
+    // BGE 146 IV 76 ist unter den 30 — chronologisch aber weit hinten. Erst
+    // «weitere» klicken, bis er geladen ist; genau das ist die B7-Zusage
+    // «alles erreichbar, nichts versteckt».
+    const weitere = bgeGruppe.locator('[data-bezug-weitere="bge"]')
+    for (let i = 0; i < 5; i++) await weitere.click()
+    await expect(bgeGruppe).toContainText('30')
     await expect(art41.getByRole('link', { name: /BGE 146 IV 76/ })).toBeVisible()
     // Der Chip führt in die Rechtsprechungs-Detailseite.
     await expect(art41.getByRole('link', { name: /BGE 146 IV 76/ })).toHaveAttribute('href', /\/rechtsprechung\/bge_146_IV_76/)

@@ -1,6 +1,6 @@
 // ─── B4/B7: «Bezüge» am Artikel — je Instanz EINE scrollbare Linie ───────────
 //
-// W2·7-BEZUG/B4 (FAHRPLAN-VERZAHNUNG-UI §9), B7 (David-Auftrag 28.7.2026). Der
+// W2·7-BEZUG/B4 (FAHRPLAN-VERZAHNUNG-UI §9), B7 (David-Auftrag 28.7./29.7.2026). Der
 // ERWEITERTE Zustand der Kanten-Zeile: sobald der Nutzer im Dropdown
 // «Rechtsprechung ▾» eine Klasse zuschaltet, rendert der Artikel-Fuss diese
 // Zeile statt der bestehenden `LeitfallZeile` — aus dem Bezugs-Shard (Obermenge)
@@ -16,6 +16,11 @@
 // ist eine waagrecht scrollbare Linie über die volle Menge, chronologisch
 // neu → alt.
 //
+// PRÄZISIERUNG DAVID 29.7.2026: «es soll einfach 5 entscheide pro linie sein und
+// mit klick lädt es die nächsten 5.» Die Linie beginnt bei den fünf NEUSTEN und
+// wächst nur auf Klick — Begründung und die abgelöste Scroll-Automatik bei
+// `PRO_SCHRITT`.
+//
 // ── WARUM GRUPPIERT UND NICHT EINE REIHE (§8, der tragende Entwurf) ─────────
 // `facetten.ts` hält fest: «Wer die drei in EINE Liste kippt und nur nach Datum
 // sortiert, behauptet stillschweigend Gleichrang.» Genau das würde eine flache
@@ -28,12 +33,13 @@
 // Gleichrangiges, nie über Klassen hinweg.
 //
 // ── EHRLICHE ZAHL AM GRUPPENKOPF (§8) ──────────────────────────────────────
-// Ohne Filter steht die schlichte Gesamtzahl da («Leitentscheide 30») — seit
-// B7 ist sie die Vollzahl, kein «gezeigt von». Verkürzt ein Zeitraum- oder
-// Kantons-Filter die Linie, steht «12 von 30 im Zeitraum» bzw. «12 von 30»:
-// die Bezugsgrösse kommt aus `gesamtProArtikel` des Shards und schrumpft NICHT
-// mit dem Filter mit — sonst behauptete sie, es gäbe weniger Praxis, als es
-// gibt.
+// Der Kopf sagt jederzeit, WIE VIEL VON WIE VIEL gerade in der Linie steht:
+// «5 von 4'140», nach zwei Klicks «15 von 4'140», und wenn alles geladen ist
+// schlicht «4'140» (ein «4'140 von 4'140» wäre Lärm). Ein aktiver Zeitraum
+// macht die Bezugsgrösse zur gefilterten Menge und sagt das dazu: «5 von 12 im
+// Zeitraum». Die dritte Zahl — wie viele es OHNE Filter insgesamt gibt — steht
+// im `title` des Kopfes, damit die Zeile bei zwei Zahlen bleibt und die
+// Grundgesamtheit trotzdem nicht verschwiegen wird.
 //
 // ── `gewicht: null` WIRD NIE ZU 0 (§8) ─────────────────────────────────────
 // Der Zitier-Graph erkennt nur BGE-Fundstellen und Bundesgerichts-Aktenzeichen;
@@ -50,51 +56,13 @@ import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../../lib/verzahnung/facetten';
 import { STATUS_LABEL, STATUS_RANG } from '../../../lib/verzahnung/facetten';
 import { KLASSE_KURZ } from '../bezugAuswahl';
+// Die rechnende Hälfte der Linie (Portionsgrösse, Schritt, Zähler-Text) lebt in
+// `bezugPortion.ts` — reine Arithmetik, dort ohne Komponente prüfbar (§3/§6;
+// Begründung im Kopf jener Datei).
+import { PRO_SCHRITT, naechsteSichtbar, zahl, zahlText } from '../bezugPortion';
 import {
   klassifiziereFassungsBezug, entscheidDatum, type ArtikelRevision,
 } from '../../../lib/verzahnung/artikel-revisionen';
-
-/**
- * Wie viele Chips einer Linie SOFORT im DOM stehen — und wie viele beim
- * Weiterscrollen dazukommen (§15, Lazy-Rendering statt echter Virtualisierung).
- *
- * ── WARUM ÜBERHAUPT GESTÜCKELT (die Zahl, die es erzwingt) ─────────────────
- * Art. 42 BGG trägt 4'140 Kanten an EINEM Artikel (Beschwerdebegründung — den
- * zitiert praktisch jedes Bundesgerichtsurteil); Art. 5 StPO 115 kantonale,
- * Art. 41 OR 30 Leitentscheide. Alle Chips eines Erlasses auf einmal zu
- * rendern, hiesse im BGG-Leser fünfstellig viele DOM-Knoten aufzubauen, von
- * denen ein Nutzer vielleicht acht ansieht. Das ist genau die Idle-Herde aus
- * W2·7-VZUI (§15.4), nur an anderer Stelle.
- *
- * ── WARUM NICHT ECHTE VIRTUALISIERUNG (absolute Positionierung + Fenster) ──
- * Die Chips sind VERSCHIEDEN BREIT («BGE 146 IV 76» gegen «Appellationsgericht
- * BS SB.2024.85 vom 17.11.2025»). Echte Virtualisierung bräuchte darum entweder
- * gemessene Breiten (ein Layout-Durchgang je Chip — teurer als das Rendern) oder
- * eine erzwungene Einheitsbreite (die Zitierung würde abgeschnitten, und eine
- * abgeschnittene Fundstelle ist keine Fundstelle mehr, §7). Anhängen ist die
- * Bauform, die zur Datenform passt.
- *
- * ERSTE_SICHTBAR = 12 füllt jede realistische Linienbreite (~8 Chips sichtbar)
- * und lässt genug Rest, dass die Scroll-Affordanz erscheint. NACHLADE_SCHRITT
- * = 36 heisst: dreimal Wischen, bevor wieder nachgeladen wird.
- */
-const ERSTE_SICHTBAR = 12;
-const NACHLADE_SCHRITT = 36;
-/** Abstand zum rechten Ende, ab dem nachgeladen wird (px). */
-const NACHLADE_SCHWELLE_PX = 240;
-
-/**
- * Zahl am Gruppenkopf mit ehrlicher Bezugsgrösse (§8).
- *
- * `gezeigt === gesamt` ⇒ nur die eine Zahl. Das ist seit B7 der NORMALFALL —
- * die Linie zeigt alles, und ein «30 von 30» wäre Lärm ohne Erkenntnis.
- * `gezeigt < gesamt` kann nur noch ein UI-Filter verursacht haben; welcher, sagt
- * der Zusatz, damit niemand die Verkürzung für die Datenlage hält.
- */
-function zahlText(gezeigt: number, gesamt: number, zeitAktiv: boolean): string {
-  if (gesamt <= gezeigt) return String(gezeigt);
-  return zeitAktiv ? `${gezeigt} von ${gesamt} im Zeitraum` : `${gezeigt} von ${gesamt}`;
-}
 
 /**
  * Eine Status-Gruppe: Label + ehrliche Zahl + EINE waagrecht scrollbare Linie.
@@ -122,24 +90,27 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, zei
   normZitat: string;
   revision?: ArtikelRevision | null;
 }) {
-  const [sichtbar, setSichtbar] = useState(ERSTE_SICHTBAR);
+  const [sichtbar, setSichtbar] = useState(PRO_SCHRITT);
   const { oeffneDaneben, kannOeffnen, istOffen } = usePaneSteuerung();
   const anzahl = kanten.length;
 
-  // Nachladen beim Scrollen. Der Handler hängt AN DIESER Linie, nicht am
-  // Fenster — er kostet nichts, solange niemand hier wischt (§15.4). Er wird
-  // zudem nur gesetzt, wenn es überhaupt etwas nachzuladen gibt.
-  const beiScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
-    const el = e.currentTarget;
-    if (el.scrollWidth - el.scrollLeft - el.clientWidth > NACHLADE_SCHWELLE_PX) return;
-    setSichtbar((n) => (n >= anzahl ? n : Math.min(n + NACHLADE_SCHRITT, anzahl)));
+  const weitere = useCallback(() => {
+    setSichtbar((n) => naechsteSichtbar(n, anzahl));
   }, [anzahl]);
 
   if (anzahl === 0) return null;
 
-  const liste = sichtbar >= anzahl ? kanten : kanten.slice(0, sichtbar);
+  const gezeigt = Math.min(sichtbar, anzahl);
+  const liste = gezeigt >= anzahl ? kanten : kanten.slice(0, gezeigt);
+  const rest = anzahl - gezeigt;
+  // Grundgesamtheit OHNE UI-Filter — nur für den `title`, damit die sichtbare
+  // Zeile bei zwei Zahlen bleibt und die dritte trotzdem nicht verschwiegen wird.
   const gesamt = Math.max(gesamtRoh ?? anzahl, anzahl);
-  const zahl = zahlText(anzahl, gesamt, zeitAktiv);
+  const zahlZeile = zahlText(gezeigt, anzahl, zeitAktiv);
+  const kopfTitel = gesamt > anzahl
+    ? `${STATUS_LABEL[status]} — ${zahl(gezeigt)} gezeigt, ${zahl(anzahl)} im gewählten Zeitraum, `
+      + `${zahl(gesamt)} insgesamt an diesem Artikel`
+    : `${STATUS_LABEL[status]} — ${zahl(gezeigt)} von ${zahl(anzahl)} gezeigt`;
 
   return (
     <div data-bezug-gruppe={status} className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-2">
@@ -155,17 +126,16 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, zei
           zu knappe schnitte wieder ab. So fluchten die kurzen und die langen
           nehmen, was sie brauchen. `whitespace-nowrap`, weil ein umbrechender
           Gruppenkopf die feste Zeilenhöhe (CLS 0) sprengte. */}
-      <span className="lc-overline shrink-0 whitespace-nowrap sm:min-w-[11rem]" title={STATUS_LABEL[status]}>
+      <span className="lc-overline shrink-0 whitespace-nowrap sm:min-w-[11rem]" title={kopfTitel}>
         {KLASSE_KURZ[status]}
-        <span className="num tabular-nums ml-1 font-normal normal-case text-ink-500">{zahl}</span>
+        <span className="num tabular-nums ml-1 font-normal normal-case text-ink-500">{zahlZeile}</span>
       </span>
       <div
         data-bezug-linie={status}
         className="lc-bezug-linie flex h-7 min-w-0 flex-1 items-center gap-1.5 overflow-x-auto overflow-y-hidden"
         tabIndex={0}
         role="group"
-        aria-label={`${zahl} — ${STATUS_LABEL[status]}, waagrecht scrollbare Liste, chronologisch vom neusten zum ältesten`}
-        onScroll={anzahl > ERSTE_SICHTBAR ? beiScroll : undefined}
+        aria-label={`${zahlZeile} — ${STATUS_LABEL[status]}, waagrecht scrollbare Liste, chronologisch vom neusten zum ältesten`}
       >
         {liste.map((b) => {
           // ?norm= trägt die Fundstellen-Absicht (wie in der LeitfallZeile): das
@@ -191,6 +161,33 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, zei
             </span>
           );
         })}
+        {/* ── «weitere 5» — das eine Klick-Element am Linienende ──────────────
+            Vorgabe David: «mit klick lädt es die nächsten 5». Es steht IN der
+            Linie, am Ende der bereits geladenen Chips: dort, wo der Blick beim
+            Durchscrollen ankommt, und nicht an einem Rand, den man erst suchen
+            muss. Bei ≤ 5 Kanten gibt es kein Element — ein Steuerelement ohne
+            Wirkung wäre Lärm (§13 F4).
+
+            DEZENT, ein Wort und eine Zahl, kein Knopf-Rahmen: die Linie soll
+            ruhig bleiben (Minimalismus-Vorgabe David 28.7.2026). Der letzte
+            Schritt nennt den echten Rest («weitere 3»), nicht stur 5 — sonst
+            versprächen die letzten Klicks mehr, als noch da ist (§8).
+
+            Tastatur: ein echter `button` in der Tab-Folge; der Browser scrollt
+            ihn beim Tabben in die Linie. Nach dem Klick bleibt er an derselben
+            Stelle in der Reihenfolge stehen, wandert also mit dem Fokus mit. */}
+        {rest > 0 && (
+          <button
+            type="button"
+            data-bezug-weitere={status}
+            onClick={weitere}
+            title={`${zahl(rest)} weitere ${STATUS_LABEL[status]} laden`}
+            aria-label={`${zahl(Math.min(PRO_SCHRITT, rest))} weitere laden — ${zahlZeile} gezeigt, ${STATUS_LABEL[status]}`}
+            className="lc-overline shrink-0 whitespace-nowrap rounded px-1.5 py-0.5 transition-colors hover:bg-brass-100/40 hover:text-brass-700"
+          >
+            weitere <span className="num tabular-nums">{Math.min(PRO_SCHRITT, rest)}</span>
+          </button>
+        )}
       </div>
     </div>
   );

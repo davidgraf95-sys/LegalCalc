@@ -174,34 +174,51 @@ export function trefferJeStatus(shard: BezugsShard, artikelToken: string): Array
 }
 
 /**
- * Kanten JE STATUS-KLASSE über den GANZEN Shard eines Erlasses (B7/c).
+ * Zwei Zahlen je Status-Klasse über den GANZEN Shard eines Erlasses (B7/c).
  *
  * ── DER BEFUND, DEN DIESE FUNKTION BEANTWORTET ─────────────────────────────
  * David 28.7.2026 zum Instanz-Schalter «Eidg.»: «das scheint keine funktion zu
  * haben?» Er war verdrahtet — er hatte nur nichts zu zeigen. Gemessen am
- * committeten Korpus trägt die Klasse `eidg` 164 Kanten an 93 von 6'217
- * Artikel-Buckets; an Art. 41 OR sind es null, und an fast jedem Artikel
- * ausserhalb von ASYLG/VWVG/PATG ebenso. Ein Schalter, der nichts bewirkt und
- * nicht sagt warum, ist von einem kaputten nicht zu unterscheiden (§13 F4).
+ * committeten Korpus trägt die Klasse `eidg` 164 Fundstellen an 93 von 6'217
+ * Artikel-Buckets; an Art. 41 OR sind es null. Ein Steuerelement, das in 98,5 %
+ * der Fälle wirkungslos aussieht, ohne zu sagen warum, ist von einem kaputten
+ * nicht zu unterscheiden (§13 F4).
  *
- * Diese Zählung gibt dem Schalter die Zahl, mit der er ehrlich sein kann
- * («Eidg. 0» am geladenen Erlass). Sie zählt KANTEN, nicht Dokumente: ein
- * Entscheid, der fünf Artikel dieses Erlasses auslegt, ist hier fünfmal
- * einschlägig — dieselbe Zähleinheit wie die Auflistung am Artikel und wie der
- * Zeitstrahl, sonst gäbe es drei Zahlen für dasselbe (§5).
+ * ── WARUM ZWEI ZAHLEN UND NICHT EINE (Gegenprüfung Runde 1/I1, §8) ─────────
+ * Die erste Fassung gab nur die KANTEN zurück und beschriftete sie im Panel als
+ * «Entscheide». Das ist am einzelnen Artikel dasselbe (dort steht ein Entscheid
+ * genau einmal), über einen ganzen Erlass aber nicht: ein BGE, der zwanzig
+ * Artikel des BGG auslegt, ist EIN Entscheid und zwanzig Fundstellen. Gemessen
+ * am BGG-Shard: 10'559 bge-Kanten gegen 1'253 verschiedene BGE — Faktor 8,4.
+ * Der Korpus führt insgesamt nur 1'259 BGE; die Schalterzahl behauptete also
+ * fast das Achtfache des gesamten Bestands. Das ist keine Ungenauigkeit,
+ * sondern eine falsche Aussage über die Datenlage.
+ * Seither trägt die Funktion beides, und die Bedienfläche benennt beides mit
+ * seinem eigenen Wort: `dokumente` sind ENTSCHEIDE, `kanten` sind FUNDSTELLEN.
  *
- * Rein (§2). Kein Filter: die Zahl sagt, was der Erlass HAT, nicht was gerade
- * eingestellt ist — sonst zeigte ein abgeschalteter Schalter immer 0 und
+ * Rein (§2). Kein Filter: die Zahlen sagen, was der Erlass HAT, nicht was
+ * gerade eingestellt ist — sonst zeigte ein abgeschalteter Schalter immer 0 und
  * bewiese sich damit selbst.
  */
-export function klassenImShard(shard: BezugsShard | null | undefined): Partial<Record<BezugStatus, number>> {
-  const aus: Partial<Record<BezugStatus, number>> = {};
+export interface KlassenZahlen {
+  /** Verschiedene Dokumente dieser Klasse im Erlass — «Entscheide». */
+  dokumente: number;
+  /** (Artikel, Dokument)-Paare — «Fundstellen». Immer ≥ `dokumente`. */
+  kanten: number;
+}
+
+export function klassenImShard(shard: BezugsShard | null | undefined): Partial<Record<BezugStatus, KlassenZahlen>> {
+  const aus: Partial<Record<BezugStatus, KlassenZahlen>> = {};
   if (!shard) return aus;
+  const gesehen: Partial<Record<BezugStatus, Set<string>>> = {};
   for (const eintraege of Object.values(shard.proArtikel)) {
     for (const e of eintraege) {
       const st = shard.dokumente[e.key]?.facetten.status;
       if (!st) continue;
-      aus[st] = (aus[st] ?? 0) + 1;
+      const z = aus[st] ?? (aus[st] = { dokumente: 0, kanten: 0 });
+      z.kanten += 1;
+      const set = gesehen[st] ?? (gesehen[st] = new Set());
+      if (!set.has(e.key)) { set.add(e.key); z.dokumente += 1; }
     }
   }
   return aus;
@@ -217,6 +234,8 @@ export function klassenImShard(shard: BezugsShard | null | undefined): Partial<R
  */
 export interface BezugsBilanz {
   erzeugt: string;
+  /** Fundstellen ((Artikel, Dokument)-Paare) je Klasse — NICHT Entscheide.
+   *  Der Unterschied ist in `klassenImShard` gemessen und begründet (§8). */
   kantenJeStatus: Partial<Record<BezugStatus, number>>;
   artikelJeStatus: Partial<Record<BezugStatus, number>>;
   erlasseJeStatus: Partial<Record<BezugStatus, number>>;

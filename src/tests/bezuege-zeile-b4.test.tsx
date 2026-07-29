@@ -4,8 +4,8 @@
  * Die Zusagen, die nur am gerenderten Markup prüfbar sind:
  *   (1) §8 Rang-Trennung: Leitentscheid und übriges/kantonales Urteil stehen in
  *       EIGENEN, benannten Gruppen — nie in einer gemeinsamen Reihe.
- *   (2) B7 Vollständigkeit: die Linie zeigt ALLE Kanten der Klasse, und die Zahl
- *       am Gruppenkopf ist die Vollzahl aus `gesamtProArtikel` — kein «8 von N».
+ *   (2) B7 Vollständigkeit: die Linie führt ALLE Kanten der Klasse; gezeigt
+ *       werden 5 auf einmal, ein Klick lädt die nächsten 5 (David 29.7.2026).
  *   (3) B7 Scrollbarkeit + CLS: je Klasse EINE Linie fester Höhe, waagrecht
  *       scrollbar, tastaturerreichbar.
  *   (4) §8 kein stilles Nichts / keine erfundene Zahl.
@@ -15,9 +15,11 @@
  * massen den Auslieferungs-Deckel «8 je Status», den dieser Schritt AUFHEBT.
  *   · «Art. 5 StPO: der Shard deckelt 115 kantonale Entscheide auf 8» — der
  *     Vorbefund misst jetzt das Gegenteil: 115 geliefert von 115 erfassten.
- *   · «zeigt ‹8 von 115›, nicht ‹8›» → «zeigt ‹115›, nicht ‹8 von 115›»: seit
- *     die Linie alles zeigt, wäre «115 von 115» Lärm ohne Erkenntnis, und ein
- *     «8 von 115» wäre schlicht falsch.
+ *   · «zeigt ‹8 von 115›, nicht ‹8›» → «zeigt ‹5 von 115›»: die Linie FÜHRT
+ *     alle 115, zeigt aber 5 auf einmal (David 29.7.2026: «es soll einfach 5
+ *     entscheide pro linie sein und mit klick lädt es die nächsten 5»). Der
+ *     Deckel ist damit nicht zurück — er war eine AUSLIEFERUNGS-Grenze in den
+ *     Shards, dies ist eine Anzeige-Portion, die ein Klick beliebig weit öffnet.
  *   · «die ehrliche Zahl sitzt am Gruppenkopf» — bleibt, mit den neuen Zahlen.
  *   · Der Fall «Zahl MIT Grundgesamtheit» ist nicht verschwunden, sondern hat
  *     eine andere Ursache: den Zeit-/Kantonsfilter. Er ist unten eigens geprüft
@@ -30,6 +32,7 @@ import { readFileSync } from 'node:fs';
 import { renderToString } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
 import { BezuegeZeile } from '../pages/gesetz-leser/parts/BezuegeZeile';
+import { PRO_SCHRITT, naechsteSichtbar, zahlText } from '../pages/gesetz-leser/bezugPortion';
 import { bezuegeFuerArtikel, type Bezug, type BezugsShard } from '../lib/rechtsprechung/bezuege';
 import { waehleBezuege } from '../pages/gesetz-leser/bezugAuswahl';
 import type { BezugStatus } from '../lib/verzahnung/facetten';
@@ -120,20 +123,76 @@ describe('B7 · je Instanz EINE scrollbare Linie, alle Entscheide (David 28.7.20
     expect(s).not.toContain('flex-wrap');
   });
 
-  it('rendert nicht alle 115 Chips sofort — Lazy-Anhängen beim Scrollen (§15)', () => {
+  it('zeigt 5 Chips je Linie, nicht alle 115 (David 29.7.2026)', () => {
     const kanten = waehleBezuege(bezuegeFuerArtikel(shard, '5'), ['kantonal'], []);
     const s = html(<BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} normZitat="Art. 5 StPO" />);
-    const chips = s.match(/lc-chip /g) ?? [];
-    expect(chips.length).toBeLessThan(kanten.length);
-    expect(chips.length).toBeGreaterThan(0);
-    // Die ZAHL nennt trotzdem alle — die Linie ist gestückelt, die Auskunft nicht.
-    expect(s).toContain('115');
+    expect(s.match(/lc-chip /g) ?? []).toHaveLength(5);
+    // Die ZAHL nennt trotzdem die volle Menge — die Linie ist portioniert, die
+    // Auskunft nicht.
+    expect(s).toContain('5 von 115');
   });
 
-  it('«+n weitere» gibt es nicht mehr — der Rest ist erscrollbar, nicht versteckt', () => {
+  it('«weitere 5» steht am Linienende und ist ein echter, benannter Knopf', () => {
     const kanten = waehleBezuege(bezuegeFuerArtikel(shard, '5'), ['kantonal'], []);
     const s = html(<BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} normZitat="Art. 5 StPO" />);
-    expect(s).not.toContain('weitere');
+    expect(s).toContain('data-bezug-weitere="kantonal"');
+    expect(s).toContain('weitere ');
+    expect(s).toContain('5 weitere laden');          // aria-label, tastaturerreichbar
+    // Es steht IN der Linie, nicht daneben.
+    expect(s.indexOf('data-bezug-weitere')).toBeGreaterThan(s.indexOf('data-bezug-linie="kantonal"'));
+  });
+
+  it('«+n weitere» der alten Kanten-Grammatik gibt es hier nicht mehr', () => {
+    const kanten = waehleBezuege(bezuegeFuerArtikel(shard, '5'), ['kantonal'], []);
+    const s = html(<BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} normZitat="Art. 5 StPO" />);
+    expect(s).not.toContain('weitere anzeigen');
+    expect(s).not.toContain('+');
+  });
+});
+
+describe('B7 · 5er-Portionen: die Schwellenfälle (David 29.7.2026)', () => {
+  const kunst = (n: number): Bezug[] =>
+    Array.from({ length: n }, (_, i) => kante(
+      `k_${i}`, `BGE 150 II ${100 + i}`, 'bge', 'CH',
+      // absteigend, wie der Shard sie liefert
+      `2025-${String(12 - (i % 12)).padStart(2, '0')}-01`,
+    ));
+
+  it('4 Kanten: alle 4 stehen da, KEIN Klick-Element', () => {
+    const s = html(<BezuegeZeile kanten={kunst(4)} gesamt={{ bge: 4 }} normZitat="Art. 1 X" />);
+    expect(s.match(/lc-chip /g) ?? []).toHaveLength(4);
+    expect(s).not.toContain('data-bezug-weitere');
+    expect(s).toContain('>4</span>');               // «4», nicht «4 von 4»
+  });
+
+  it('5 Kanten: genau voll, KEIN Klick-Element — es gäbe nichts zu laden (§13 F4)', () => {
+    const s = html(<BezuegeZeile kanten={kunst(5)} gesamt={{ bge: 5 }} normZitat="Art. 1 X" />);
+    expect(s.match(/lc-chip /g) ?? []).toHaveLength(5);
+    expect(s).not.toContain('data-bezug-weitere');
+    expect(s).toContain('>5</span>');
+  });
+
+  it('6 Kanten: 5 gezeigt, das Element bietet die EINE übrige an — nicht stur 5', () => {
+    const s = html(<BezuegeZeile kanten={kunst(6)} gesamt={{ bge: 6 }} normZitat="Art. 1 X" />);
+    expect(s.match(/lc-chip /g) ?? []).toHaveLength(5);
+    expect(s).toContain('data-bezug-weitere="bge"');
+    expect(s).toContain('5 von 6');
+    expect(s).toContain('1 weitere laden');
+  });
+
+  it('11 Kanten: 5 gezeigt, Element bietet 5 an', () => {
+    const s = html(<BezuegeZeile kanten={kunst(11)} gesamt={{ bge: 11 }} normZitat="Art. 1 X" />);
+    expect(s.match(/lc-chip /g) ?? []).toHaveLength(5);
+    expect(s).toContain('5 von 11');
+    expect(s).toContain('5 weitere laden');
+  });
+
+  it('grosse Zahlen tragen die Schweizer Tausendertrennung', () => {
+    const s = html(<BezuegeZeile kanten={kunst(20)} gesamt={{ bge: 4140 }} normZitat="Art. 42 BGG" />);
+    // Die Grundmenge der LINIE ist 20 (das ist die gefilterte Menge); die 4'140
+    // stehen im title des Kopfes — beides mit Trennzeichen, wo nötig.
+    expect(s).toContain('5 von 20');
+    expect((4140).toLocaleString('de-CH')).toBe("4'140");
   });
 });
 
@@ -143,31 +202,41 @@ describe('B7 · die Zahl am Gruppenkopf (§8)', () => {
   ) as BezugsShard;
   const kanten = waehleBezuege(bezuegeFuerArtikel(shard, '5'), ['bge', 'bger', 'kantonal'], []);
 
-  it('ohne Filter: die schlichte Vollzahl — «115», nie «8 von 115» und nie «115 von 115»', () => {
+  it('ohne Filter: «5 von 115» — die Portion vorn, die volle Menge hinten', () => {
     const s = html(
       <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} normZitat="Art. 5 StPO" />,
     );
-    expect(s).toContain('>115</span>');
-    expect(s).not.toContain('von 115');
-    expect(s).not.toContain('von 16');
+    expect(s).toContain('5 von 115');
+    expect(s).toContain('5 von 16');
+    // «8 von …» wäre der alte Deckel — der ist weg.
+    expect(s).not.toContain('8 von');
   });
 
-  it('mit Zeitfilter: «12 von 30 im Zeitraum» — die Bezugsgrösse schrumpft nicht mit', () => {
-    // Die verkürzte Menge simuliert, was der Zeit-Filter liefert; `gesamt` bleibt
-    // die Zahl OHNE Filter (so reicht `bezuegeLaden` sie durch).
+  it('mit Zeitfilter: «5 von 12 im Zeitraum» — die Bezugsgrösse ist die gefilterte Menge', () => {
     const gekuerzt = kanten.filter((b) => b.facetten.status === 'kantonal').slice(0, 12);
     const s = html(
-      <BezuegeZeile kanten={gekuerzt} gesamt={{ kantonal: 30 }} zeitAktiv normZitat="Art. 5 StPO" />,
+      <BezuegeZeile kanten={gekuerzt} gesamt={{ kantonal: 115 }} zeitAktiv normZitat="Art. 5 StPO" />,
     );
-    expect(s).toContain('12 von 30 im Zeitraum');
+    expect(s).toContain('5 von 12 im Zeitraum');
+    // §8: die Zahl OHNE Filter verschwindet nicht, sie steht im title des Kopfes.
+    expect(s).toContain('12 im gewählten Zeitraum, 115 insgesamt an diesem Artikel');
   });
 
-  it('mit Kantonsfilter (ohne Zeit): «12 von 30» ohne den Zeitraum-Zusatz', () => {
+  it('alles geladen UND Zeitfilter: «12 von 12 im Zeitraum» statt bloss «12»', () => {
+    // Sonst läse sich die gefilterte Menge wie die Datenlage (§8).
+    const gekuerzt = kanten.filter((b) => b.facetten.status === 'kantonal').slice(0, 3);
+    const s = html(
+      <BezuegeZeile kanten={gekuerzt} gesamt={{ kantonal: 115 }} zeitAktiv normZitat="Art. 5 StPO" />,
+    );
+    expect(s).toContain('3 von 3 im Zeitraum');
+  });
+
+  it('mit Kantonsfilter (ohne Zeit): kein «im Zeitraum»-Zusatz', () => {
     const gekuerzt = kanten.filter((b) => b.facetten.status === 'kantonal').slice(0, 12);
     const s = html(
-      <BezuegeZeile kanten={gekuerzt} gesamt={{ kantonal: 30 }} normZitat="Art. 5 StPO" />,
+      <BezuegeZeile kanten={gekuerzt} gesamt={{ kantonal: 115 }} normZitat="Art. 5 StPO" />,
     );
-    expect(s).toContain('12 von 30');
+    expect(s).toContain('5 von 12');
     expect(s).not.toContain('im Zeitraum');
   });
 
@@ -213,5 +282,24 @@ describe('B4 · nur Auflistung, wenn aktiviert (Vorgabe David 28.7.2026)', () =>
       <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} normZitat="Art. 5 StPO" />,
     );
     expect(s).not.toContain('Eidg. Gerichte');
+  });
+});
+
+describe('B7 · die Schritt-Arithmetik selbst (rein, §2)', () => {
+  it('5 → 10 → 15 und klemmt am Rest, statt darüber hinauszuzählen', () => {
+    expect(PRO_SCHRITT).toBe(5);
+    expect(naechsteSichtbar(5, 4140)).toBe(10);
+    expect(naechsteSichtbar(10, 4140)).toBe(15);
+    expect(naechsteSichtbar(5, 6)).toBe(6);        // letzter Schritt: nur der Rest
+    expect(naechsteSichtbar(11, 11)).toBe(11);     // nichts mehr da ⇒ unverändert
+  });
+
+  it('zahlText: drei Formen, keine vierte', () => {
+    expect(zahlText(4140, 4140, false)).toBe("4'140");        // alles da, kein Filter
+    expect(zahlText(5, 4140, false)).toBe("5 von 4'140");     // portioniert
+    expect(zahlText(5, 12, true)).toBe('5 von 12 im Zeitraum');
+    // Mit Filter steht das «von» AUCH, wenn alles geladen ist — sonst läse sich
+    // die gefilterte Menge wie die Datenlage (§8).
+    expect(zahlText(12, 12, true)).toBe('12 von 12 im Zeitraum');
   });
 });

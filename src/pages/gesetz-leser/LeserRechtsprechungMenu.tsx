@@ -44,12 +44,12 @@ import {
 } from './leserOptionen';
 import { istErweitert } from './bezugAuswahl';
 import { istBereichOffen, type Histogramm, type Zeitbereich } from './bezugZeit';
-import { ladeBezugsBilanz, type BezugsBilanz } from '../../lib/rechtsprechung/bezuege';
+import { ladeBezugsBilanz, type BezugsBilanz, type KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
 
 const LEERES_HISTOGRAMM: Histogramm = { balken: [], ohneJahr: 0 };
 const OFFEN: Zeitbereich = { von: '', bis: '' };
-const LEERE_KLASSEN: Partial<Record<BezugStatus, number>> = {};
+const LEERE_KLASSEN: Partial<Record<BezugStatus, KlassenZahlen>> = {};
 
 /**
  * Panelbreite in px — EINE Zahl, aus der sowohl die CSS-Breite als auch die
@@ -77,7 +77,7 @@ export function LeserRechtsprechungMenu({
   kantoneVerfuegbar?: string[];
   /** B7/c: Kanten je Instanz-Klasse in DIESEM Erlass — die Zahl am Schalter.
    *  Leer ⇒ es steht keine Zahl da (Shard noch nicht geladen), nie eine 0. */
-  klassenImErlass?: Partial<Record<BezugStatus, number>>;
+  klassenImErlass?: Partial<Record<BezugStatus, KlassenZahlen>>;
   /** B5: Jahres-Verteilung der Kanten dieses Erlasses (Zeitstrahl). Leer =
    *  Shard noch nicht geladen ⇒ der Streifen sagt das, statt eine Grafik ohne
    *  Inhalt zu zeigen. */

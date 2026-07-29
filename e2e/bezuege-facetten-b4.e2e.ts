@@ -10,8 +10,17 @@ import { test, expect, type Page } from '@playwright/test';
 // der Grundzustand dabei unangetastet bleibt.
 //
 // Träger ist die StPO, weil sie den grössten Klassen-Mix hat (verifiziert am
-// ausgelieferten Shard, 28.7.2026): Art. 5 trägt 8 von 16 Leitentscheiden,
-// 2 übrige Bundesgerichtsurteile und 8 von 115 kantonalen Entscheiden.
+// ausgelieferten Shard, 29.7.2026 nach B7): Art. 5 trägt 16 Leitentscheide,
+// 2 übrige Bundesgerichtsurteile und 115 kantonale Entscheide — alle
+// ausgeliefert, der Deckel «8 je Status» ist mit B7 aufgehoben.
+//
+// §6.3-DEKLARATION (29.7.2026, W2·7-BEZUG/B7): die Zähler-Anker dieser Datei
+// lauteten «8 von 16» und «8 von 115» und massen damit den ENTFERNTEN
+// Auslieferungs-Deckel. Sie lauten jetzt «5 von 16» / «5 von 115» — die 5 ist
+// keine neue Grenze, sondern die Anzeige-Portion der Linie (David 29.7.2026:
+// «es soll einfach 5 entscheide pro linie sein und mit klick lädt es die
+// nächsten 5»), die ein Klick beliebig weit öffnet. Der GEPRÜFTE SACHVERHALT
+// ist unverändert: die Zahl nennt Gezeigtes UND die Grundmenge (§8).
 const STPO = '/gesetze/bund/STPO';
 
 async function warteReader(page: Page): Promise<void> {
@@ -40,7 +49,7 @@ test.describe('B4 · Facetten-Filter der Bezüge', () => {
     const zeile = zeileArt5(page);
     await expect(zeile).toBeVisible({ timeout: 20000 });
     await expect(zeile.locator('[data-bezug-gruppe="bge"]')).toBeVisible();
-    await expect(zeile).toContainText('8 von 16');
+    await expect(zeile).toContainText('5 von 16');
     // Kein Zwischenzustand: keine Aufklapp-Zeile, keine «Bezüge»-Overline.
     await expect(zeile.locator('[data-bezuege-schalter]')).toHaveCount(0);
     // Nur Leitentscheide — kantonale Praxis ist nicht vorausgewählt.
@@ -58,10 +67,14 @@ test.describe('B4 · Facetten-Filter der Bezüge', () => {
     await page.locator('[data-bezug-klasse="kantonal"]').click();
     const zeile = zeileArt5(page);
     await expect(zeile).toBeVisible({ timeout: 20000 });
-    // §8: die Zahl nennt Gezeigtes UND Erfasstes — «8» allein wäre die
+    // §8: die Zahl nennt Gezeigtes UND Erfasstes — «5» allein wäre die
     // Vollständigkeits-Behauptung, die §8 verbietet.
-    await expect(zeile.locator('[data-bezug-gruppe="kantonal"]')).toContainText('8 von 115');
-    await expect(zeile.locator('[data-bezug-gruppe="bge"]')).toContainText('8 von 16');
+    await expect(zeile.locator('[data-bezug-gruppe="kantonal"]')).toContainText('5 von 115');
+    await expect(zeile.locator('[data-bezug-gruppe="bge"]')).toContainText('5 von 16');
+    // B7: der Rest ist erreichbar, nicht versteckt — ein Klick lädt die
+    // nächsten fünf, und der Zähler zählt sichtbar mit.
+    await zeile.locator('[data-bezug-weitere="kantonal"]').click();
+    await expect(zeile.locator('[data-bezug-gruppe="kantonal"]')).toContainText('10 von 115');
   });
 
   test('Rang bleibt getrennt: der ★ hängt nur an den Leitentscheiden', async ({ page }) => {

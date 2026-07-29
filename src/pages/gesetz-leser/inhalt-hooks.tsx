@@ -13,6 +13,7 @@ import { formatiereDatum, pfadZu } from './helpers';
 import { LeserMenuPaar } from './LeserMenuPaar';
 import type { Histogramm, Zeitbereich } from './bezugZeit';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
+import type { KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 import { InGesetzSuche } from './parts/InGesetzSuche';
 import { paneRoot, findeArt } from './berechnungen';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
@@ -135,7 +136,7 @@ export function useInhaltsKopfMeldung(opts: {
    *  OPTIONAL: leer = noch kein Bezugs-Shard geladen ⇒ kein Kanton-Streifen. */
   kantoneVerfuegbar?: string[];
   /** B7/c: Kanten je Instanz-Klasse in diesem Erlass (Zahl am Instanz-Schalter). */
-  klassenImErlass?: Partial<Record<BezugStatus, number>>;
+  klassenImErlass?: Partial<Record<BezugStatus, KlassenZahlen>>;
   /** W2·7-BEZUG/B5: Jahres-Verteilung der Kanten (Zeitstrahl im Dropdown).
    *  OPTIONAL: leer = noch kein Shard ⇒ der Streifen sagt das ehrlich. */
   bezugHistogramm?: Histogramm;
