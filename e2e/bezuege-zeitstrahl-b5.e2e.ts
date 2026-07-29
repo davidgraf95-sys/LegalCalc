@@ -12,12 +12,24 @@ import { test, expect, type Page } from '@playwright/test';
 //   · die EINMALIGE Migration der Alt-Stufe greift beim ersten Laden,
 //   · die Wahl überlebt einen Neuladen.
 //
+// §6.3-DEKLARATION (29.7.2026, W2·7-BEZUG/B7): die Zähler-Anker dieser Datei
+// lauteten «8 von 16» und massen den ENTFERNTEN Auslieferungs-Deckel. Der Shard
+// liefert jetzt alle 16 Leitentscheide; die Linie zeigt 5 davon auf einmal
+// (David 29.7.2026). Die §8-ZUSAGE dieser Suite — «die Grundgesamtheit
+// schrumpft nicht mit dem Filter mit» — ist NICHT entfallen, sie ist nur
+// umgezogen: sichtbar steht jetzt die gefilterte Grundmenge («5 von 5 im
+// Zeitraum»), die ungefilterte Zahl trägt der `title` des Gruppenkopfs. Genau
+// dort wird sie unten weiterhin geprüft — der Sachverhalt bleibt gemessen, nicht
+// bloss die Formulierung geändert.
+//
 // Träger ist wieder die StPO (wie B4). Verifiziert am ausgelieferten Shard
-// `public/rechtsprechung/bezuege/STPO.json`, 28.7.2026:
-//   · Art. 5 trägt 8 gezeigte von 16 erfassten Leitentscheiden. Deren Daten:
-//     2019-10-03 · 2022-01-12 · 2023-02-17 · 2024-04-25 · 2024-09-04 ·
-//     2024-11-19 · 2025-02-05 · 2025-02-06 — kein Bandjahr-Platzhalter darunter.
-//     Ab 2024 bleiben also 5, im Jahr 2024 allein 3, ab 2025 genau 2.
+// `public/rechtsprechung/bezuege/STPO.json`, 29.7.2026 nach B7:
+//   · Art. 5 trägt 16 Leitentscheide, alle ausgeliefert, chronologisch neu→alt:
+//     2025-02-06 · 2025-02-05 · 2024-11-19 · 2024-09-04 · 2024-04-25 ·
+//     2023-02-17 · 2023-02-01 · 2022-09-09 · 2022-09-05 · 2022-01-12 ·
+//     2021-09-14 · 2021-04-27 · 2020-10-14 · 2020-07-06 · 2020-03-23 ·
+//     2019-10-03 — kein Bandjahr-Platzhalter darunter.
+//     Ab 2024 bleiben 5, im Jahr 2024 allein 3, ab 2025 genau 2.
 //   · Der Strahl im Grundzustand (nur Leitentscheide) reicht 2019–2026.
 const STPO = '/gesetze/bund/STPO';
 
@@ -48,7 +60,7 @@ async function warteStrahl(page: Page): Promise<void> {
 test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
   test('Grundzustand: Strahl da, Zeitraum offen, Auflistung ungeschnitten', async ({ page }) => {
     await warteReader(page);
-    await expect(zeileArt5(page)).toContainText('8 von 16', { timeout: 20000 });
+    await expect(zeileArt5(page)).toContainText('5 von 16', { timeout: 20000 });
     await menuOeffnen(page);
     await warteStrahl(page);
     // Die Balken decken die belegten Jahre lückenlos ab — 2019 bis 2026.
@@ -63,14 +75,18 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
 
   test('Datumsfeld «von» schneidet die Auflistung — der Zähler bleibt ehrlich (§8)', async ({ page }) => {
     await warteReader(page);
-    await expect(zeileArt5(page)).toContainText('8 von 16', { timeout: 20000 });
+    await expect(zeileArt5(page)).toContainText('5 von 16', { timeout: 20000 });
     await menuOeffnen(page);
     await warteStrahl(page);
     await page.locator('[data-zeit-feld="von"]').fill('2024-01-01');
-    // 5 der 8 Leitentscheide zu Art. 5 sind von 2024 oder jünger.
-    // ENTSCHEIDEND: die Grundgesamtheit bleibt 16 — sie schrumpft NICHT mit dem
-    // Filter mit, sonst behauptete sie weniger Praxis, als es gibt.
-    await expect(zeileArt5(page)).toContainText('5 von 16', { timeout: 20000 });
+    // 5 der 16 Leitentscheide zu Art. 5 sind von 2024 oder jünger.
+    await expect(zeileArt5(page)).toContainText('5 von 5 im Zeitraum', { timeout: 20000 });
+    // ENTSCHEIDEND (§8): die Grundgesamtheit OHNE Filter bleibt 16 — sie
+    // schrumpft NICHT mit, sonst behauptete sie weniger Praxis, als es gibt.
+    // Sie steht seit B7 im `title` des Gruppenkopfs, damit die sichtbare Zeile
+    // bei zwei Zahlen bleibt; geprüft wird sie deshalb dort.
+    await expect(zeileArt5(page).locator('[data-bezug-gruppe="bge"] > span').first())
+      .toHaveAttribute('title', /16 insgesamt an diesem Artikel/);
   });
 
   test('beide Felder zusammen grenzen auf ein Jahr ein', async ({ page }) => {
@@ -79,7 +95,7 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
     await warteStrahl(page);
     await page.locator('[data-zeit-feld="von"]').fill('2024-01-01');
     await page.locator('[data-zeit-feld="bis"]').fill('2024-12-31');
-    await expect(zeileArt5(page)).toContainText('3 von 16', { timeout: 20000 });
+    await expect(zeileArt5(page)).toContainText('3 von 3 im Zeitraum', { timeout: 20000 });
   });
 
   test('verdrehte Eingabe wird getauscht, nicht als leere Menge gedeutet', async ({ page }) => {
@@ -90,7 +106,7 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
     // dasselbe Jahresfenster wie oben, nicht eine leere Auflistung.
     await page.locator('[data-zeit-feld="bis"]').fill('2024-01-01');
     await page.locator('[data-zeit-feld="von"]').fill('2024-12-31');
-    await expect(zeileArt5(page)).toContainText('3 von 16', { timeout: 20000 });
+    await expect(zeileArt5(page)).toContainText('3 von 3 im Zeitraum', { timeout: 20000 });
   });
 
   test('Zieh-Auswahl über den Strahl setzt den Bereich', async ({ page }) => {
@@ -107,7 +123,7 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
     await page.mouse.move(b.x + b.width / 2, b.y + b.height / 2, { steps: 5 });
     await page.mouse.up();
     // 2025–2026: zwei Leitentscheide zu Art. 5 (05.02. und 06.02.2025).
-    await expect(zeileArt5(page)).toContainText('2 von 16', { timeout: 20000 });
+    await expect(zeileArt5(page)).toContainText('2 von 2 im Zeitraum', { timeout: 20000 });
     // Der aktive Bereich wird BENANNT — ein Filter, der still wirkt, ist der
     // §8-Verstoss, den das Signal verhindert.
     await expect(page.getByTitle('Zeitraum aufheben — wieder alle Entscheide zeigen'))
@@ -128,7 +144,7 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
     await page.mouse.up();
     // Offener Bereich ⇒ kein Rücksetz-Knopf, volle Auflistung.
     await expect(page.getByTitle('Zeitraum aufheben — wieder alle Entscheide zeigen')).toHaveCount(0);
-    await expect(zeileArt5(page)).toContainText('8 von 16', { timeout: 20000 });
+    await expect(zeileArt5(page)).toContainText('5 von 16', { timeout: 20000 });
   });
 
   test('Zurücksetzen hebt den Zeitraum auf', async ({ page }) => {
@@ -136,9 +152,9 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
     await menuOeffnen(page);
     await warteStrahl(page);
     await page.locator('[data-zeit-feld="von"]').fill('2025-01-01');
-    await expect(zeileArt5(page)).toContainText('2 von 16', { timeout: 20000 });
+    await expect(zeileArt5(page)).toContainText('2 von 2 im Zeitraum', { timeout: 20000 });
     await page.getByTitle('Zeitraum aufheben — wieder alle Entscheide zeigen').click();
-    await expect(zeileArt5(page)).toContainText('8 von 16', { timeout: 20000 });
+    await expect(zeileArt5(page)).toContainText('5 von 16', { timeout: 20000 });
     await expect(page.locator('[data-zeit-feld="von"]')).toHaveValue('');
   });
 
@@ -147,11 +163,11 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
     await menuOeffnen(page);
     await warteStrahl(page);
     await page.locator('[data-zeit-feld="von"]').fill('2024-01-01');
-    await expect(zeileArt5(page)).toContainText('5 von 16', { timeout: 20000 });
+    await expect(zeileArt5(page)).toContainText('5 von 5 im Zeitraum', { timeout: 20000 });
 
     await page.reload();
     await expect(page.locator('[data-rechtsprechung-menu]').first()).toBeVisible({ timeout: 20000 });
-    await expect(zeileArt5(page)).toContainText('5 von 16', { timeout: 20000 });
+    await expect(zeileArt5(page)).toContainText('5 von 5 im Zeitraum', { timeout: 20000 });
     // §8: der Auslöser trägt den Punkt, sonst wirkte ein Filter unsichtbar —
     // die Auflistung wäre bloss kürzer, ohne dass irgendwo etwas anders aussähe.
     await expect(page.locator('[data-rechtsprechung-menu] .lc-punkt-entscheid')).toHaveCount(1);
@@ -211,7 +227,7 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
     });
     await page.reload();
     await expect(page.locator('[data-rechtsprechung-menu]').first()).toBeVisible({ timeout: 20000 });
-    await expect(zeileArt5(page)).toContainText('8 von 16', { timeout: 20000 });
+    await expect(zeileArt5(page)).toContainText('5 von 16', { timeout: 20000 });
     await menuOeffnen(page);
     await expect(page.locator('[data-zeit-feld="von"]')).toHaveValue('');
     await expect(page.getByTitle('Zeitraum aufheben — wieder alle Entscheide zeigen')).toHaveCount(0);
@@ -246,7 +262,7 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
     // Danach ist die Facetten-Wahl wieder wirksam: eine Instanz einschalten
     // bringt die Auflistung zurück (vorher blieb sie CSS-seitig unsichtbar).
     await page.locator('[data-bezug-klasse="bge"]').click();
-    await expect(zeileArt5(page)).toContainText('8 von 16', { timeout: 20000 });
+    await expect(zeileArt5(page)).toContainText('5 von 16', { timeout: 20000 });
   });
 
   test('alle Instanzen aus ⇒ kein Zeitstrahl (kein Steuerelement ohne Wirkung, §13 F4)', async ({ page }) => {

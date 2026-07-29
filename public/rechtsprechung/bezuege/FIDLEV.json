@@ -1,32 +1,14 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "FIDLEV",
-  "erlassEbene": "bund",
-  "dokumente": {
-    "bs_sozialversicherungsgericht_AL.2024.18": {
-      "zitierung": "Sozialversicherungsgericht BS AL.2024.18 vom 18.12.2024",
-      "regesteKurz": "AVIG Selbstverschuldete Arbeitslosigkeit",
-      "datum": "2024-12-18",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_sozialversicherungsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "17": [
-      {
-        "key": "bs_sozialversicherungsgericht_AL.2024.18",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "17": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"FIDLEV",
+"erlassEbene":"bund",
+"dokumente":{
+"bs_sozialversicherungsgericht_AL.2024.18":{"zitierung":"Sozialversicherungsgericht BS AL.2024.18 vom 18.12.2024","regesteKurz":"AVIG Selbstverschuldete Arbeitslosigkeit","datum":"2024-12-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"17":[{"key":"bs_sozialversicherungsgericht_AL.2024.18","gewicht":null}]
+},
+"gesamtProArtikel":{
+"17":{"kantonal":1}
+}
 }

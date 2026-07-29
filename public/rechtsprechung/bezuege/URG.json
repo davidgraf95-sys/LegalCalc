@@ -1,611 +1,78 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "URG",
-  "erlassEbene": "bund",
-  "dokumente": {
-    "bge_148_III_305": {
-      "zitierung": "BGE 148 III 305",
-      "regesteKurz": "Art. 2 Abs. 1 und Abs. 2 lit. f URG; Urheberrechtsschutz; Werk-Individualität. Anforderungen an die urheberrechtliche Individualität eines Werks der angewandten Kunst (Präzisierung der Rechtsprechung; E. 5). Regeste Art. 2 al. 1 et al. 2 l…",
-      "datum": "2022-06-17",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_148_II_92": {
-      "zitierung": "BGE 148 II 92",
-      "regesteKurz": "Art. 2 Abs. 1 lit. a und Art. 3 Abs. 1 lit. a BGÖ; Art. 55 URG; Anwendung des BGÖ auf die Schiedskommission im Tarifgenehmigungsverfahren mit Einigungstarif. Die Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und ve…",
-      "datum": "2021-10-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_150_II_153": {
-      "zitierung": "BGE 150 II 153",
-      "regesteKurz": "Art. 63 Abs. 4 bis VwVG; Art. 16a Abs. 1 URV; Art. 2 Abs. 2 der Verordnung vom 10. September 1969 über Kosten und Entschädigungen im Verwaltungsverfahren; Bemessung der Spruchgebühr der Eidgenössischen Schiedskommission für die Verwertung…",
-      "datum": "2023-10-10",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_151_III_95": {
-      "zitierung": "BGE 151 III 95",
-      "regesteKurz": "a Art. 423 OR und Art. 2 Abs. 2 lit. f URG; Gewinnherausgabeanspruch bei Urheberrechtsverletzungen; böser Glaube des Urheberrechtsverletzers bei Werken der angewandten Kunst. An den Beweis des Kennenmüssens von Bestand und Schutzumfang des…",
-      "datum": "2024-09-11",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_151_II_742": {
-      "zitierung": "BGE 151 II 742",
-      "regesteKurz": "Art. 3 Abs. 1 lit. a und Abs. 2, Art. 4 Abs. 2, Art. 7 Abs. 1 und 2 lit. e und f, Art. 49a KG; Art. 3 SVKG; Art. 5 Abs. 2 der Verordnung über die Kontrolle von Unternehmenszusammenschlüssen; Wettbewerbsbeeinträchtigung als Voraussetzung fü…",
-      "datum": "2025-01-23",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bs_appellationsgericht_BES.2024.91": {
-      "zitierung": "Appellationsgericht BS BES.2024.91 vom 24.10.2025",
-      "regesteKurz": "Nichtanhandnahme",
-      "datum": "2025-10-24",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2021.124": {
-      "zitierung": "Appellationsgericht BS VD.2021.124 vom 29.01.2022",
-      "regesteKurz": "Gesuch um Ausfallentschädigung im Kulturbereich",
-      "datum": "2022-01-29",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZK.2021.1": {
-      "zitierung": "Appellationsgericht BS ZK.2021.1 vom 07.03.2022",
-      "regesteKurz": "Urheberrecht",
-      "datum": "2022-03-07",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZK.2021.4": {
-      "zitierung": "Appellationsgericht BS ZK.2021.4 vom 02.03.2022",
-      "regesteKurz": "Urheberrecht und verwandte Schutzrechte",
-      "datum": "2022-03-02",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZK.2021.5": {
-      "zitierung": "Appellationsgericht BS ZK.2021.5 vom 02.03.2022",
-      "regesteKurz": "Urheberrecht und verwandte Schutzrechte",
-      "datum": "2022-03-02",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZK.2021.7": {
-      "zitierung": "Appellationsgericht BS ZK.2021.7 vom 02.03.2022",
-      "regesteKurz": "Urheberrecht und verwandte Schutzrechte",
-      "datum": "2022-03-02",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZK.2022.10": {
-      "zitierung": "Appellationsgericht BS ZK.2022.10 vom 26.09.2023",
-      "regesteKurz": "Klage betreffend Urheberrecht",
-      "datum": "2023-09-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZK.2022.11": {
-      "zitierung": "Appellationsgericht BS ZK.2022.11 vom 26.09.2023",
-      "regesteKurz": "Urheberrecht (BGer 4A_509/2023)",
-      "datum": "2023-09-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZK.2022.12": {
-      "zitierung": "Appellationsgericht BS ZK.2022.12 vom 26.09.2023",
-      "regesteKurz": "Urheberrecht",
-      "datum": "2023-09-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZK.2022.9": {
-      "zitierung": "Appellationsgericht BS ZK.2022.9 vom 26.09.2023",
-      "regesteKurz": "Klage betreffend Urheberrecht",
-      "datum": "2023-09-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZK.2023.1": {
-      "zitierung": "Appellationsgericht BS ZK.2023.1 vom 26.09.2023",
-      "regesteKurz": "Urheberrecht",
-      "datum": "2023-09-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZK.2023.3": {
-      "zitierung": "Appellationsgericht BS ZK.2023.3 vom 26.09.2023",
-      "regesteKurz": "Urheberrecht",
-      "datum": "2023-09-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZK.2023.6": {
-      "zitierung": "Appellationsgericht BS ZK.2023.6 vom 26.09.2023",
-      "regesteKurz": "Urheberrecht",
-      "datum": "2023-09-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_ZK.2023.7": {
-      "zitierung": "Appellationsgericht BS ZK.2023.7 vom 19.03.2024",
-      "regesteKurz": "Urheberrecht",
-      "datum": "2024-03-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "2": [
-      {
-        "key": "bge_148_III_305",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_151_III_95",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_BES.2024.91",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2021.124",
-        "gewicht": null
-      }
-    ],
-    "3": [
-      {
-        "key": "bs_appellationsgericht_BES.2024.91",
-        "gewicht": null
-      }
-    ],
-    "10": [
-      {
-        "key": "bge_151_II_742",
-        "gewicht": 0
-      }
-    ],
-    "19": [
-      {
-        "key": "bs_appellationsgericht_ZK.2023.7",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2022.10",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2022.11",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2022.12",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2022.9",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2023.1",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2023.3",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2023.6",
-        "gewicht": null
-      }
-    ],
-    "20": [
-      {
-        "key": "bge_148_II_92",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_150_II_153",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2023.7",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2022.10",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2022.11",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2022.12",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2022.9",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2023.1",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2023.3",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2023.6",
-        "gewicht": null
-      }
-    ],
-    "21": [
-      {
-        "key": "bs_appellationsgericht_BES.2024.91",
-        "gewicht": null
-      }
-    ],
-    "22": [
-      {
-        "key": "bs_appellationsgericht_ZK.2021.4",
-        "gewicht": null
-      }
-    ],
-    "29": [
-      {
-        "key": "bge_148_III_305",
-        "gewicht": 0
-      }
-    ],
-    "36": [
-      {
-        "key": "bs_appellationsgericht_ZK.2021.4",
-        "gewicht": null
-      }
-    ],
-    "37": [
-      {
-        "key": "bs_appellationsgericht_ZK.2021.5",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2021.7",
-        "gewicht": null
-      }
-    ],
-    "40": [
-      {
-        "key": "bge_150_II_153",
-        "gewicht": 0
-      }
-    ],
-    "44": [
-      {
-        "key": "bge_150_II_153",
-        "gewicht": 0
-      }
-    ],
-    "46": [
-      {
-        "key": "bge_148_II_92",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_150_II_153",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2021.4",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2021.5",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2021.7",
-        "gewicht": null
-      }
-    ],
-    "47": [
-      {
-        "key": "bs_appellationsgericht_ZK.2021.4",
-        "gewicht": null
-      }
-    ],
-    "51": [
-      {
-        "key": "bs_appellationsgericht_ZK.2023.7",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2021.1",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2021.5",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2021.7",
-        "gewicht": null
-      }
-    ],
-    "55": [
-      {
-        "key": "bge_148_II_92",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_150_II_153",
-        "gewicht": 0
-      }
-    ],
-    "58": [
-      {
-        "key": "bge_148_II_92",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_150_II_153",
-        "gewicht": 0
-      }
-    ],
-    "59": [
-      {
-        "key": "bge_148_II_92",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_150_II_153",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2023.7",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2022.10",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2022.11",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2022.12",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2022.9",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2023.1",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2023.3",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_ZK.2023.6",
-        "gewicht": null
-      }
-    ],
-    "60": [
-      {
-        "key": "bge_150_II_153",
-        "gewicht": 0
-      }
-    ],
-    "62": [
-      {
-        "key": "bge_151_III_95",
-        "gewicht": 0
-      }
-    ],
-    "67": [
-      {
-        "key": "bs_appellationsgericht_BES.2024.91",
-        "gewicht": null
-      }
-    ],
-    "71": [
-      {
-        "key": "bs_appellationsgericht_BES.2024.91",
-        "gewicht": null
-      }
-    ],
-    "74": [
-      {
-        "key": "bge_148_II_92",
-        "gewicht": 0
-      }
-    ],
-    "24b": [
-      {
-        "key": "bs_appellationsgericht_ZK.2021.4",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "2": {
-      "bge": 2,
-      "kantonal": 2
-    },
-    "3": {
-      "kantonal": 1
-    },
-    "10": {
-      "bge": 1
-    },
-    "19": {
-      "kantonal": 9
-    },
-    "20": {
-      "bge": 2,
-      "kantonal": 9
-    },
-    "21": {
-      "kantonal": 1
-    },
-    "22": {
-      "kantonal": 1
-    },
-    "29": {
-      "bge": 1
-    },
-    "36": {
-      "kantonal": 1
-    },
-    "37": {
-      "kantonal": 2
-    },
-    "40": {
-      "bge": 1
-    },
-    "44": {
-      "bge": 1
-    },
-    "46": {
-      "bge": 2,
-      "kantonal": 3
-    },
-    "47": {
-      "kantonal": 1
-    },
-    "51": {
-      "kantonal": 4
-    },
-    "55": {
-      "bge": 2
-    },
-    "58": {
-      "bge": 2
-    },
-    "59": {
-      "bge": 2,
-      "kantonal": 12
-    },
-    "60": {
-      "bge": 1
-    },
-    "62": {
-      "bge": 1
-    },
-    "67": {
-      "kantonal": 1
-    },
-    "71": {
-      "kantonal": 1
-    },
-    "74": {
-      "bge": 1
-    },
-    "24b": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"URG",
+"erlassEbene":"bund",
+"dokumente":{
+"bge_148_III_305":{"zitierung":"BGE 148 III 305","regesteKurz":"Art. 2 Abs. 1 und Abs. 2 lit. f URG; Urheberrechtsschutz; Werk-Individualität. Anforderungen an die urheberrechtliche Individualität eines Werks der angewandten Kunst (Präzisierung der Rechtsprechung; E. 5). Regeste Art. 2 al. 1 et al. 2 l…","datum":"2022-06-17","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_148_II_92":{"zitierung":"BGE 148 II 92","regesteKurz":"Art. 2 Abs. 1 lit. a und Art. 3 Abs. 1 lit. a BGÖ; Art. 55 URG; Anwendung des BGÖ auf die Schiedskommission im Tarifgenehmigungsverfahren mit Einigungstarif. Die Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und ve…","datum":"2021-10-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_150_II_153":{"zitierung":"BGE 150 II 153","regesteKurz":"Art. 63 Abs. 4 bis VwVG; Art. 16a Abs. 1 URV; Art. 2 Abs. 2 der Verordnung vom 10. September 1969 über Kosten und Entschädigungen im Verwaltungsverfahren; Bemessung der Spruchgebühr der Eidgenössischen Schiedskommission für die Verwertung…","datum":"2023-10-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_151_III_95":{"zitierung":"BGE 151 III 95","regesteKurz":"a Art. 423 OR und Art. 2 Abs. 2 lit. f URG; Gewinnherausgabeanspruch bei Urheberrechtsverletzungen; böser Glaube des Urheberrechtsverletzers bei Werken der angewandten Kunst. An den Beweis des Kennenmüssens von Bestand und Schutzumfang des…","datum":"2024-09-11","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_151_II_742":{"zitierung":"BGE 151 II 742","regesteKurz":"Art. 3 Abs. 1 lit. a und Abs. 2, Art. 4 Abs. 2, Art. 7 Abs. 1 und 2 lit. e und f, Art. 49a KG; Art. 3 SVKG; Art. 5 Abs. 2 der Verordnung über die Kontrolle von Unternehmenszusammenschlüssen; Wettbewerbsbeeinträchtigung als Voraussetzung fü…","datum":"2025-01-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bs_appellationsgericht_BES.2024.91":{"zitierung":"Appellationsgericht BS BES.2024.91 vom 24.10.2025","regesteKurz":"Nichtanhandnahme","datum":"2025-10-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.124":{"zitierung":"Appellationsgericht BS VD.2021.124 vom 29.01.2022","regesteKurz":"Gesuch um Ausfallentschädigung im Kulturbereich","datum":"2022-01-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZK.2021.1":{"zitierung":"Appellationsgericht BS ZK.2021.1 vom 07.03.2022","regesteKurz":"Urheberrecht","datum":"2022-03-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZK.2021.4":{"zitierung":"Appellationsgericht BS ZK.2021.4 vom 02.03.2022","regesteKurz":"Urheberrecht und verwandte Schutzrechte","datum":"2022-03-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZK.2021.5":{"zitierung":"Appellationsgericht BS ZK.2021.5 vom 02.03.2022","regesteKurz":"Urheberrecht und verwandte Schutzrechte","datum":"2022-03-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZK.2021.7":{"zitierung":"Appellationsgericht BS ZK.2021.7 vom 02.03.2022","regesteKurz":"Urheberrecht und verwandte Schutzrechte","datum":"2022-03-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZK.2022.10":{"zitierung":"Appellationsgericht BS ZK.2022.10 vom 26.09.2023","regesteKurz":"Klage betreffend Urheberrecht","datum":"2023-09-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZK.2022.11":{"zitierung":"Appellationsgericht BS ZK.2022.11 vom 26.09.2023","regesteKurz":"Urheberrecht (BGer 4A_509/2023)","datum":"2023-09-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZK.2022.12":{"zitierung":"Appellationsgericht BS ZK.2022.12 vom 26.09.2023","regesteKurz":"Urheberrecht","datum":"2023-09-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZK.2022.9":{"zitierung":"Appellationsgericht BS ZK.2022.9 vom 26.09.2023","regesteKurz":"Klage betreffend Urheberrecht","datum":"2023-09-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZK.2023.1":{"zitierung":"Appellationsgericht BS ZK.2023.1 vom 26.09.2023","regesteKurz":"Urheberrecht","datum":"2023-09-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZK.2023.3":{"zitierung":"Appellationsgericht BS ZK.2023.3 vom 26.09.2023","regesteKurz":"Urheberrecht","datum":"2023-09-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZK.2023.6":{"zitierung":"Appellationsgericht BS ZK.2023.6 vom 26.09.2023","regesteKurz":"Urheberrecht","datum":"2023-09-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZK.2023.7":{"zitierung":"Appellationsgericht BS ZK.2023.7 vom 19.03.2024","regesteKurz":"Urheberrecht","datum":"2024-03-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"2":[{"key":"bge_151_III_95","gewicht":0},{"key":"bge_148_III_305","gewicht":1},{"key":"bs_appellationsgericht_BES.2024.91","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.124","gewicht":null}],
+"3":[{"key":"bs_appellationsgericht_BES.2024.91","gewicht":null}],
+"10":[{"key":"bge_151_II_742","gewicht":0}],
+"19":[{"key":"bs_appellationsgericht_ZK.2023.7","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.10","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.11","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.12","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.9","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.1","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.3","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.6","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.1","gewicht":null}],
+"20":[{"key":"bge_150_II_153","gewicht":0},{"key":"bge_148_II_92","gewicht":1},{"key":"bs_appellationsgericht_ZK.2023.7","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.10","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.11","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.12","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.9","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.1","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.3","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.6","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.1","gewicht":null}],
+"21":[{"key":"bs_appellationsgericht_BES.2024.91","gewicht":null}],
+"22":[{"key":"bs_appellationsgericht_ZK.2021.4","gewicht":null}],
+"29":[{"key":"bge_148_III_305","gewicht":0}],
+"36":[{"key":"bs_appellationsgericht_ZK.2021.4","gewicht":null}],
+"37":[{"key":"bs_appellationsgericht_ZK.2021.5","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.7","gewicht":null}],
+"40":[{"key":"bge_150_II_153","gewicht":0}],
+"44":[{"key":"bge_150_II_153","gewicht":0}],
+"46":[{"key":"bge_150_II_153","gewicht":0},{"key":"bge_148_II_92","gewicht":1},{"key":"bs_appellationsgericht_ZK.2021.4","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.5","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.7","gewicht":null}],
+"47":[{"key":"bs_appellationsgericht_ZK.2021.4","gewicht":null}],
+"51":[{"key":"bs_appellationsgericht_ZK.2023.7","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.1","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.5","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.7","gewicht":null}],
+"55":[{"key":"bge_150_II_153","gewicht":0},{"key":"bge_148_II_92","gewicht":1}],
+"58":[{"key":"bge_150_II_153","gewicht":0},{"key":"bge_148_II_92","gewicht":1}],
+"59":[{"key":"bge_150_II_153","gewicht":0},{"key":"bge_148_II_92","gewicht":1},{"key":"bs_appellationsgericht_ZK.2023.7","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.10","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.11","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.12","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.9","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.1","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.3","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.6","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.1","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.4","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.5","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.7","gewicht":null}],
+"60":[{"key":"bge_150_II_153","gewicht":0}],
+"62":[{"key":"bge_151_III_95","gewicht":0}],
+"67":[{"key":"bs_appellationsgericht_BES.2024.91","gewicht":null}],
+"71":[{"key":"bs_appellationsgericht_BES.2024.91","gewicht":null}],
+"74":[{"key":"bge_148_II_92","gewicht":0}],
+"24b":[{"key":"bs_appellationsgericht_ZK.2021.4","gewicht":null}]
+},
+"gesamtProArtikel":{
+"2":{"bge":2,"kantonal":2},
+"3":{"kantonal":1},
+"10":{"bge":1},
+"19":{"kantonal":9},
+"20":{"bge":2,"kantonal":9},
+"21":{"kantonal":1},
+"22":{"kantonal":1},
+"29":{"bge":1},
+"36":{"kantonal":1},
+"37":{"kantonal":2},
+"40":{"bge":1},
+"44":{"bge":1},
+"46":{"bge":2,"kantonal":3},
+"47":{"kantonal":1},
+"51":{"kantonal":4},
+"55":{"bge":2},
+"58":{"bge":2},
+"59":{"bge":2,"kantonal":12},
+"60":{"bge":1},
+"62":{"bge":1},
+"67":{"kantonal":1},
+"71":{"kantonal":1},
+"74":{"bge":1},
+"24b":{"kantonal":1}
+}
 }

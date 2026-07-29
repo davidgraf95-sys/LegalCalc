@@ -1,122 +1,34 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "GBV",
-  "erlassEbene": "bund",
-  "dokumente": {
-    "bge_147_III_1": {
-      "zitierung": "BGE 147 III 1",
-      "regesteKurz": "Art. 655 Abs. 2 Ziff. 2 und Abs. 3 ZGB; Teilung eines in das Grundbuch aufgenommenen selbständigen und dauernden Baurechts. Zulässigkeit und Voraussetzungen der flächenmässigen Aufteilung eines in das Grundbuch aufgenommenen selbständigen…",
-      "datum": "2020-10-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    }
-  },
-  "proArtikel": {
-    "1": [
-      {
-        "key": "bge_147_III_1",
-        "gewicht": 0
-      }
-    ],
-    "6": [
-      {
-        "key": "bge_147_III_1",
-        "gewicht": 0
-      }
-    ],
-    "7": [
-      {
-        "key": "bge_147_III_1",
-        "gewicht": 0
-      }
-    ],
-    "22": [
-      {
-        "key": "bge_147_III_1",
-        "gewicht": 0
-      }
-    ],
-    "98": [
-      {
-        "key": "bge_147_III_1",
-        "gewicht": 0
-      }
-    ],
-    "122": [
-      {
-        "key": "bge_147_III_1",
-        "gewicht": 0
-      }
-    ],
-    "131": [
-      {
-        "key": "bge_147_III_1",
-        "gewicht": 0
-      }
-    ],
-    "133": [
-      {
-        "key": "bge_147_III_1",
-        "gewicht": 0
-      }
-    ],
-    "135": [
-      {
-        "key": "bge_147_III_1",
-        "gewicht": 0
-      }
-    ],
-    "150": [
-      {
-        "key": "bge_147_III_1",
-        "gewicht": 0
-      }
-    ],
-    "153": [
-      {
-        "key": "bge_147_III_1",
-        "gewicht": 0
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "1": {
-      "bge": 1
-    },
-    "6": {
-      "bge": 1
-    },
-    "7": {
-      "bge": 1
-    },
-    "22": {
-      "bge": 1
-    },
-    "98": {
-      "bge": 1
-    },
-    "122": {
-      "bge": 1
-    },
-    "131": {
-      "bge": 1
-    },
-    "133": {
-      "bge": 1
-    },
-    "135": {
-      "bge": 1
-    },
-    "150": {
-      "bge": 1
-    },
-    "153": {
-      "bge": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"GBV",
+"erlassEbene":"bund",
+"dokumente":{
+"bge_147_III_1":{"zitierung":"BGE 147 III 1","regesteKurz":"Art. 655 Abs. 2 Ziff. 2 und Abs. 3 ZGB; Teilung eines in das Grundbuch aufgenommenen selbständigen und dauernden Baurechts. Zulässigkeit und Voraussetzungen der flächenmässigen Aufteilung eines in das Grundbuch aufgenommenen selbständigen…","datum":"2020-10-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+},
+"proArtikel":{
+"1":[{"key":"bge_147_III_1","gewicht":0}],
+"6":[{"key":"bge_147_III_1","gewicht":0}],
+"7":[{"key":"bge_147_III_1","gewicht":0}],
+"22":[{"key":"bge_147_III_1","gewicht":0}],
+"98":[{"key":"bge_147_III_1","gewicht":0}],
+"122":[{"key":"bge_147_III_1","gewicht":0}],
+"131":[{"key":"bge_147_III_1","gewicht":0}],
+"133":[{"key":"bge_147_III_1","gewicht":0}],
+"135":[{"key":"bge_147_III_1","gewicht":0}],
+"150":[{"key":"bge_147_III_1","gewicht":0}],
+"153":[{"key":"bge_147_III_1","gewicht":0}]
+},
+"gesamtProArtikel":{
+"1":{"bge":1},
+"6":{"bge":1},
+"7":{"bge":1},
+"22":{"bge":1},
+"98":{"bge":1},
+"122":{"bge":1},
+"131":{"bge":1},
+"133":{"bge":1},
+"135":{"bge":1},
+"150":{"bge":1},
+"153":{"bge":1}
+}
 }

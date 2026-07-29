@@ -1,64 +1,16 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-811.100",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_BES.2023.105": {
-      "zitierung": "Appellationsgericht BS BES.2023.105 vom 25.09.2023",
-      "regesteKurz": "Nichteintreten auf Einsprache infolge Verspätung und Wiederherstellung der Einsprachefrist",
-      "datum": "2023-09-25",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_BES.2023.66": {
-      "zitierung": "Appellationsgericht BS BES.2023.66 vom 29.01.2024",
-      "regesteKurz": "Rückzugsfiktion",
-      "datum": "2024-01-29",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_BES.2023.93": {
-      "zitierung": "Appellationsgericht BS BES.2023.93 vom 28.06.2023",
-      "regesteKurz": "Nichteintreten auf Einsprache infolge Verspätung",
-      "datum": "2023-06-28",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "2": [
-      {
-        "key": "bs_appellationsgericht_BES.2023.66",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_BES.2023.105",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_BES.2023.93",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "2": {
-      "kantonal": 3
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-811.100",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_BES.2023.105":{"zitierung":"Appellationsgericht BS BES.2023.105 vom 25.09.2023","regesteKurz":"Nichteintreten auf Einsprache infolge Verspätung und Wiederherstellung der Einsprachefrist","datum":"2023-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_BES.2023.66":{"zitierung":"Appellationsgericht BS BES.2023.66 vom 29.01.2024","regesteKurz":"Rückzugsfiktion","datum":"2024-01-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_BES.2023.93":{"zitierung":"Appellationsgericht BS BES.2023.93 vom 28.06.2023","regesteKurz":"Nichteintreten auf Einsprache infolge Verspätung","datum":"2023-06-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"2":[{"key":"bs_appellationsgericht_BES.2023.66","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.105","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.93","gewicht":null}]
+},
+"gesamtProArtikel":{
+"2":{"kantonal":3}
+}
 }

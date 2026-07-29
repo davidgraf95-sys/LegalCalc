@@ -1,41 +1,16 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "VVV",
-  "erlassEbene": "bund",
-  "dokumente": {
-    "bge_152_III_7": {
-      "zitierung": "BGE 152 III 7",
-      "regesteKurz": "Art. 75 Abs. 3 ATSG; Art. 63 SVG; Ausnahme vom Regressprivileg des Arbeitgebers; Begriff der obligatorischen Haftpflichtversicherung; Unfall mit einem Bagger. Der in Art. 75 Abs. 3 ATSG statuierte Ausschluss des Regressprivilegs des Arbeit…",
-      "datum": "2025-03-13",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    }
-  },
-  "proArtikel": {
-    "32": [
-      {
-        "key": "bge_152_III_7",
-        "gewicht": 0
-      }
-    ],
-    "38": [
-      {
-        "key": "bge_152_III_7",
-        "gewicht": 0
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "32": {
-      "bge": 1
-    },
-    "38": {
-      "bge": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"VVV",
+"erlassEbene":"bund",
+"dokumente":{
+"bge_152_III_7":{"zitierung":"BGE 152 III 7","regesteKurz":"Art. 75 Abs. 3 ATSG; Art. 63 SVG; Ausnahme vom Regressprivileg des Arbeitgebers; Begriff der obligatorischen Haftpflichtversicherung; Unfall mit einem Bagger. Der in Art. 75 Abs. 3 ATSG statuierte Ausschluss des Regressprivilegs des Arbeit…","datum":"2025-03-13","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+},
+"proArtikel":{
+"32":[{"key":"bge_152_III_7","gewicht":0}],
+"38":[{"key":"bge_152_III_7","gewicht":0}]
+},
+"gesamtProArtikel":{
+"32":{"bge":1},
+"38":{"bge":1}
+}
 }

@@ -72,7 +72,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // Grundzustand fasst der Reader ihn nie an (§15). `erweitert` steuert zugleich,
   // ob der schlanke Leitfall-Shard überhaupt noch geladen wird (Entweder/Oder, §5).
   const {
-    aktiv: bezuegeAktiv, bezuegeFuer, kantoneVerfuegbar, histogramm: bezugHistogramm,
+    aktiv: bezuegeAktiv, bezuegeFuer, kantoneVerfuegbar, klassenImErlass, histogramm: bezugHistogramm,
     bereich: bezugBereich,
   } = useBezuege(erlass?.key);
   const [fehler, setFehler] = useState(false);
@@ -345,7 +345,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // NACH `linien`/`fussnotenAnzahl` (TDZ des A26-Ansicht-Slots), wie zuvor inline.
   useInhaltsKopfMeldung({
     erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl,
-    kantoneVerfuegbar, bezugHistogramm, bezugBereich,
+    kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
     suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf, sektionen,
   });
 
@@ -796,7 +796,8 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
         tocBaumEl={tocBaumEl} tocOffen={tocOffen} tocAuf={tocAuf} setTocOffen={setTocOffen} setTocAuf={setTocAuf}
         springeZuArtikel={springeZuArtikel}
         bezuegeFuer={bezuegeFuer} revisionFuer={revisionFuer} historieFuer={historieFuer}
-        kantoneVerfuegbar={kantoneVerfuegbar} bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}
+        kantoneVerfuegbar={kantoneVerfuegbar} klassenImErlass={klassenImErlass}
+        bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}
         reiterToast={reiterToast} setReiterToast={setReiterToast} reiterToastTimerRef={reiterToastTimer}
         tocDrawerRef={tocDrawerRef} trefferRef={trefferRef} navigate={navigate}
       />

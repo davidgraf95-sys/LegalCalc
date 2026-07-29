@@ -1,249 +1,47 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "ENG",
-  "erlassEbene": "bund",
-  "dokumente": {
-    "bge_147_II_164": {
-      "zitierung": "BGE 147 II 164",
-      "regesteKurz": "a Art. 8 und 8b RPG; Art. 10 und 12 EnG; Art. 6 NHG; Art. 29 NHV; Art. 54 lit. h WRG; Ausbau des Grimselstausees; Kantonaler Richtplan, Erweiterung erneuerbarer Stromproduktion, Beeinträchtigung eines neuen potenziellen Schutzgebiets, Real…",
-      "datum": "2020-11-04",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_147_II_319": {
-      "zitierung": "BGE 147 II 319",
-      "regesteKurz": "Art. 18 NHG, Art. 14 NHV, Art. 12 EnG und Art. 9 EnV; Art. 11 und 25 USG, Art. 7 LSV; Windpark Sainte-Croix; Begriff des nationalen Interesses; Lärmschutz. Art. 9 Abs. 2 EnV, der für die jährliche Energieproduktion einen Schwellenwert von…",
-      "datum": "2021-03-18",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_148_II_36": {
-      "zitierung": "BGE 148 II 36",
-      "regesteKurz": "a Windpark Grenchenberg; Richtplanpflicht (Art. 8 Abs. 2 RPG). Anforderungen an die auf Stufe Richtplan nötigen Abklärungen. Dazu gehört das Vorkommen gefährdeter und national prioritärer Arten, die ein Konfliktpotenzial mit Windenergieanl…",
-      "datum": "2021-11-24",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_149_II_86": {
-      "zitierung": "BGE 149 II 86",
-      "regesteKurz": "Art. 8 Abs. 2, 8b, 9, 11 und 12 RPG, Art. 5 Abs. 2 lit. a RPV; Windpark Eoljoux; Aufhebung des Nutzungsplans; Weigerung des Bundesrats, die Richtplanfestsetzung für das Vorhaben zu genehmigen; Rechtsschutz. Richtplanvorbehalt; Verankerung…",
-      "datum": "2023-01-27",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_150_II_334": {
-      "zitierung": "BGE 150 II 334",
-      "regesteKurz": "Art. 19 Abs. 1 lit. e, Art. 19 Abs. 4 lit. d und Art. 72 Abs. 1 EnG; Art. 2 lit. a, Art. 16 Abs. 2 und Anhang 1.5 Ziff. 2.1.2 lit. g EnFV; Unterscheidung zwischen \"Mischanlagen\" und Hybridanlagen; Klärgas als nicht förderungsberechtigter e…",
-      "datum": "2024-03-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_150_I_106": {
-      "zitierung": "BGE 150 I 106",
-      "regesteKurz": "Art. 26 und 36 BV; Tragweite der Eigentumsgarantie bei der Sanierung von Gebäuden mit elektrischer Heizung; abstrakte Normenkontrolle. Die Sanierungspflicht von Gebäuden mit dezentraler Elektroheizung schränkt die Eigentumsgarantie (Art. 2…",
-      "datum": "2024-04-26",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_151_II_136": {
-      "zitierung": "BGE 151 II 136",
-      "regesteKurz": "Art. 5 Abs. 1 und Art. 44 Abs. 3 BV; Art. 34 und 62 Abs. 2 EnG; Art. 83a GSchG; Art. 10 BGF; Art. 28 ff. und Ziff. 3.2 lit. b Anhang 3 EnV; Grundsatz der vollständigen Kostenerstattung; Anrechenbarkeit von (wiederkehrenden) Unterhalts- und…",
-      "datum": "2025-01-21",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_151_II_312": {
-      "zitierung": "BGE 151 II 312",
-      "regesteKurz": "Art. 39 Abs. 3 Satz 1 und 75 EnG und 80 EnV; neue Energiegesetzgebung; Übergangsrecht; Rückerstattung des bezahlten Zuschlags für die Nutzung des Übertragungsnetzes für Elektrizität. Die Rückerstattung des Netzzuschlags wird jährlich festg…",
-      "datum": "2024-11-21",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    }
-  },
-  "proArtikel": {
-    "10": [
-      {
-        "key": "bge_147_II_164",
-        "gewicht": 0
-      }
-    ],
-    "12": [
-      {
-        "key": "bge_147_II_164",
-        "gewicht": 3
-      },
-      {
-        "key": "bge_147_II_319",
-        "gewicht": 2
-      },
-      {
-        "key": "bge_148_II_36",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_149_II_86",
-        "gewicht": 0
-      }
-    ],
-    "14": [
-      {
-        "key": "bge_149_II_86",
-        "gewicht": 0
-      }
-    ],
-    "19": [
-      {
-        "key": "bge_150_II_334",
-        "gewicht": 0
-      }
-    ],
-    "22": [
-      {
-        "key": "bge_150_II_334",
-        "gewicht": 0
-      }
-    ],
-    "34": [
-      {
-        "key": "bge_151_II_136",
-        "gewicht": 0
-      }
-    ],
-    "35": [
-      {
-        "key": "bge_151_II_312",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_II_334",
-        "gewicht": 0
-      }
-    ],
-    "39": [
-      {
-        "key": "bge_151_II_312",
-        "gewicht": 0
-      }
-    ],
-    "40": [
-      {
-        "key": "bge_151_II_312",
-        "gewicht": 0
-      }
-    ],
-    "41": [
-      {
-        "key": "bge_151_II_312",
-        "gewicht": 0
-      }
-    ],
-    "62": [
-      {
-        "key": "bge_151_II_136",
-        "gewicht": 0
-      }
-    ],
-    "72": [
-      {
-        "key": "bge_150_II_334",
-        "gewicht": 0
-      }
-    ],
-    "75": [
-      {
-        "key": "bge_151_II_312",
-        "gewicht": 0
-      }
-    ],
-    "50a": [
-      {
-        "key": "bge_150_I_106",
-        "gewicht": 0
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "10": {
-      "bge": 1
-    },
-    "12": {
-      "bge": 4
-    },
-    "14": {
-      "bge": 1
-    },
-    "19": {
-      "bge": 1
-    },
-    "22": {
-      "bge": 1
-    },
-    "34": {
-      "bge": 1
-    },
-    "35": {
-      "bge": 2
-    },
-    "39": {
-      "bge": 1
-    },
-    "40": {
-      "bge": 1
-    },
-    "41": {
-      "bge": 1
-    },
-    "62": {
-      "bge": 1
-    },
-    "72": {
-      "bge": 1
-    },
-    "75": {
-      "bge": 1
-    },
-    "50a": {
-      "bge": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"ENG",
+"erlassEbene":"bund",
+"dokumente":{
+"bge_147_II_164":{"zitierung":"BGE 147 II 164","regesteKurz":"a Art. 8 und 8b RPG; Art. 10 und 12 EnG; Art. 6 NHG; Art. 29 NHV; Art. 54 lit. h WRG; Ausbau des Grimselstausees; Kantonaler Richtplan, Erweiterung erneuerbarer Stromproduktion, Beeinträchtigung eines neuen potenziellen Schutzgebiets, Real…","datum":"2020-11-04","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_147_II_319":{"zitierung":"BGE 147 II 319","regesteKurz":"Art. 18 NHG, Art. 14 NHV, Art. 12 EnG und Art. 9 EnV; Art. 11 und 25 USG, Art. 7 LSV; Windpark Sainte-Croix; Begriff des nationalen Interesses; Lärmschutz. Art. 9 Abs. 2 EnV, der für die jährliche Energieproduktion einen Schwellenwert von…","datum":"2021-03-18","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_148_II_36":{"zitierung":"BGE 148 II 36","regesteKurz":"a Windpark Grenchenberg; Richtplanpflicht (Art. 8 Abs. 2 RPG). Anforderungen an die auf Stufe Richtplan nötigen Abklärungen. Dazu gehört das Vorkommen gefährdeter und national prioritärer Arten, die ein Konfliktpotenzial mit Windenergieanl…","datum":"2021-11-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_149_II_86":{"zitierung":"BGE 149 II 86","regesteKurz":"Art. 8 Abs. 2, 8b, 9, 11 und 12 RPG, Art. 5 Abs. 2 lit. a RPV; Windpark Eoljoux; Aufhebung des Nutzungsplans; Weigerung des Bundesrats, die Richtplanfestsetzung für das Vorhaben zu genehmigen; Rechtsschutz. Richtplanvorbehalt; Verankerung…","datum":"2023-01-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_150_II_334":{"zitierung":"BGE 150 II 334","regesteKurz":"Art. 19 Abs. 1 lit. e, Art. 19 Abs. 4 lit. d und Art. 72 Abs. 1 EnG; Art. 2 lit. a, Art. 16 Abs. 2 und Anhang 1.5 Ziff. 2.1.2 lit. g EnFV; Unterscheidung zwischen \"Mischanlagen\" und Hybridanlagen; Klärgas als nicht förderungsberechtigter e…","datum":"2024-03-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_150_I_106":{"zitierung":"BGE 150 I 106","regesteKurz":"Art. 26 und 36 BV; Tragweite der Eigentumsgarantie bei der Sanierung von Gebäuden mit elektrischer Heizung; abstrakte Normenkontrolle. Die Sanierungspflicht von Gebäuden mit dezentraler Elektroheizung schränkt die Eigentumsgarantie (Art. 2…","datum":"2024-04-26","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_151_II_136":{"zitierung":"BGE 151 II 136","regesteKurz":"Art. 5 Abs. 1 und Art. 44 Abs. 3 BV; Art. 34 und 62 Abs. 2 EnG; Art. 83a GSchG; Art. 10 BGF; Art. 28 ff. und Ziff. 3.2 lit. b Anhang 3 EnV; Grundsatz der vollständigen Kostenerstattung; Anrechenbarkeit von (wiederkehrenden) Unterhalts- und…","datum":"2025-01-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_151_II_312":{"zitierung":"BGE 151 II 312","regesteKurz":"Art. 39 Abs. 3 Satz 1 und 75 EnG und 80 EnV; neue Energiegesetzgebung; Übergangsrecht; Rückerstattung des bezahlten Zuschlags für die Nutzung des Übertragungsnetzes für Elektrizität. Die Rückerstattung des Netzzuschlags wird jährlich festg…","datum":"2024-11-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+},
+"proArtikel":{
+"10":[{"key":"bge_147_II_164","gewicht":0}],
+"12":[{"key":"bge_149_II_86","gewicht":0},{"key":"bge_148_II_36","gewicht":1},{"key":"bge_147_II_319","gewicht":2},{"key":"bge_147_II_164","gewicht":3}],
+"14":[{"key":"bge_149_II_86","gewicht":0}],
+"19":[{"key":"bge_150_II_334","gewicht":0}],
+"22":[{"key":"bge_150_II_334","gewicht":0}],
+"34":[{"key":"bge_151_II_136","gewicht":0}],
+"35":[{"key":"bge_151_II_312","gewicht":0},{"key":"bge_150_II_334","gewicht":0}],
+"39":[{"key":"bge_151_II_312","gewicht":0}],
+"40":[{"key":"bge_151_II_312","gewicht":0}],
+"41":[{"key":"bge_151_II_312","gewicht":0}],
+"62":[{"key":"bge_151_II_136","gewicht":0}],
+"72":[{"key":"bge_150_II_334","gewicht":0}],
+"75":[{"key":"bge_151_II_312","gewicht":0}],
+"50a":[{"key":"bge_150_I_106","gewicht":0}]
+},
+"gesamtProArtikel":{
+"10":{"bge":1},
+"12":{"bge":4},
+"14":{"bge":1},
+"19":{"bge":1},
+"22":{"bge":1},
+"34":{"bge":1},
+"35":{"bge":2},
+"39":{"bge":1},
+"40":{"bge":1},
+"41":{"bge":1},
+"62":{"bge":1},
+"72":{"bge":1},
+"75":{"bge":1},
+"50a":{"bge":1}
+}
 }

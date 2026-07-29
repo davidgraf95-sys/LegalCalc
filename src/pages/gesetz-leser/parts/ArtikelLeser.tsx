@@ -495,6 +495,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               nichts (Vorgabe David 28.7.2026). */}
           {bezuege
             ? <BezuegeZeile kanten={bezuege.kanten} gesamt={bezuege.gesamt}
+                zeitAktiv={bezuege.zeitAktiv} kantonAktiv={bezuege.kantonAktiv}
                 normZitat={zitat} revision={revision} />
             : <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />}
           {/* G-HIST-UI: «Gilt seit»-Badge + aufklappbare Fassungs-Timeline dieses

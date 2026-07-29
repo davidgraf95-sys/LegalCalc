@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
-  DECKEL_JE_STATUS, STATUS_RANG, bezugStatusFuerEntscheid, facettenFuerEntscheid,
-  facettenFuerMaterial, vergleicheStatus, zaehleFacetten,
+  STATUS_RANG, bezugStatusFuerEntscheid, facettenFuerEntscheid,
+  facettenFuerMaterial, vergleicheDatumAbsteigend, vergleicheStatus, zaehleFacetten,
 } from '../lib/verzahnung/facetten';
 import { extrahiereParagraphGruppen, extrahiereStatutRefs } from '../lib/rechtsprechung/zitat-extraktion';
 import {
@@ -10,7 +10,9 @@ import {
 } from '../../scripts/normtext/kanton-norm-resolver';
 import { fremdDefinierteKeys } from '../../scripts/normtext/entscheide-mapping';
 import type { EntscheidSnapshot } from '../lib/rechtsprechung/typen';
-import { bezuegeFuerArtikel, filtereBezuege, trefferJeStatus } from '../lib/rechtsprechung/bezuege';
+import { readFileSync } from 'node:fs';
+import { bezuegeFuerArtikel, filtereBezuege, klassenImShard, trefferJeStatus } from '../lib/rechtsprechung/bezuege';
+import { waehleBezuege } from '../pages/gesetz-leser/bezugAuswahl';
 import type { BezugsShard } from '../lib/rechtsprechung/bezuege';
 
 // W2·7-BEZUG B1–B3, Datenschicht. Getestet wird das, was fachlich falsch werden
@@ -57,13 +59,19 @@ describe('B1 · Status-Achse trennt, was rechtlich verschieden ist (§8)', () =>
 });
 
 describe('B1 · die Schicht ist generisch, nicht nur so genannt (§5)', () => {
-  it('Materialien-Kanten durchlaufen dieselben Facetten, denselben Deckel, dieselbe Ordnung', () => {
+  // §6.3-DEKLARATION (B7): dieser Test hiess «… denselben Deckel …» und prüfte
+  // `DECKEL_JE_STATUS.material > 0`. Der Deckel ist mit B7 ERSATZLOS entfallen
+  // (David-Auftrag 28.7.2026, Begründung in facetten.ts) — die Konstante gibt es
+  // nicht mehr, die Zusicherung wäre also nicht «angepasst», sondern gegenstandslos.
+  // Der TRAGENDE Teil der Aussage bleibt unverändert stehen und ist es auch, was
+  // der Test je gemeint hat: Materialien laufen ohne Sonderweg durch dieselbe
+  // Schicht. Getreten wird die Stelle mit dem Rang, der weiterhin existiert.
+  it('Materialien-Kanten durchlaufen dieselben Facetten und dieselbe Ordnung', () => {
     const m = facettenFuerMaterial('seco');
     expect(m.quelltyp).toBe('materialien');
     expect(m.ebene).toBe('bund');
     expect(m.status).toBe('material');
-    // Kein Sonderweg: der Status hat einen Deckel und einen Rang wie jeder andere.
-    expect(DECKEL_JE_STATUS.material).toBeGreaterThan(0);
+    // Kein Sonderweg: der Status hat einen Rang wie jeder andere.
     expect(STATUS_RANG.material).toBeGreaterThan(STATUS_RANG.kantonal);
   });
 
@@ -491,5 +499,134 @@ describe('Ladeschicht · Auflösung, Filter und ehrliche Grundgesamtheit (§8)',
   it('fehlende Grundgesamtheit wird gleichgesetzt, nie erfunden', () => {
     const ohne = { ...shard, gesamtProArtikel: {} };
     expect(trefferJeStatus(ohne, '41').every((t) => t.gesamt === t.gezeigt)).toBe(true);
+  });
+});
+
+// ─── B7: Deckel aufgehoben, Ordnung chronologisch (David-Auftrag 28.7.2026) ──
+//
+// Diese Zusagen laufen gegen die AUSGELIEFERTEN Shards, nicht gegen Attrappen:
+// prüfenswert ist nicht, dass eine Funktion tut, was sie tut, sondern dass das,
+// was ein Nutzer bekommt, vollständig und chronologisch ist (§6, §7).
+describe('B7 · Vollständigkeit und Ordnung der ausgelieferten Shards', () => {
+  const bezugsShard = (erlass: string): BezugsShard =>
+    JSON.parse(readFileSync(`public/rechtsprechung/bezuege/${erlass}.json`, 'utf8')) as BezugsShard;
+
+  it('chronologische Ordnung: Datum absteigend, Unbekanntes ans Ende (rein, §2)', () => {
+    expect(vergleicheDatumAbsteigend('2025-01-01', '2020-01-01')).toBeLessThan(0);
+    expect(vergleicheDatumAbsteigend('2020-01-01', '2025-01-01')).toBeGreaterThan(0);
+    expect(vergleicheDatumAbsteigend('2020-01-01', '2020-01-01')).toBe(0);
+    // Ein Entscheid ohne Datum ist nicht «von 0001», er ist unbekannt — und
+    // Unbekanntes besetzt nie die Spitze der Zeitachse (§8).
+    expect(vergleicheDatumAbsteigend('', '2020-01-01')).toBeGreaterThan(0);
+    expect(vergleicheDatumAbsteigend('2020-01-01', '')).toBeLessThan(0);
+  });
+
+  it('OR/41 — David-Befund: ALLE Kanten geliefert, keine mehr gedeckelt', () => {
+    const s = bezugsShard('OR');
+    const kanten = bezuegeFuerArtikel(s, '41');
+    const je: Record<string, number> = {};
+    for (const b of kanten) je[b.facetten.status] = (je[b.facetten.status] ?? 0) + 1;
+    // Bis B6 standen hier 8 bge und 8 kantonale von 30 bzw. 21 (der Befund, der
+    // den Auftrag ausgelöst hat: «dort sind nur ein teil der entscheide verlinkt»).
+    expect(je).toEqual(s.gesamtProArtikel['41']);
+    expect(je.bge).toBeGreaterThan(8);
+  });
+
+  it('jede Klasse jedes Artikels: geliefert == gesamtProArtikel (Stichprobe über 4 Erlasse)', () => {
+    for (const erlass of ['OR', 'STPO', 'ZGB', 'BS-154.100']) {
+      const s = bezugsShard(erlass);
+      for (const [token, eintraege] of Object.entries(s.proArtikel)) {
+        const je: Record<string, number> = {};
+        for (const e of eintraege) {
+          const st = s.dokumente[e.key]?.facetten.status;
+          if (st) je[st] = (je[st] ?? 0) + 1;
+        }
+        expect({ erlass, token, je }).toEqual({ erlass, token, je: s.gesamtProArtikel[token] });
+      }
+    }
+  });
+
+  it('innerhalb jeder Status-Klasse läuft die Zeit monoton rückwärts', () => {
+    for (const erlass of ['OR', 'STPO', 'BGG']) {
+      const s = bezugsShard(erlass);
+      for (const [token, eintraege] of Object.entries(s.proArtikel)) {
+        const jeKlasse = new Map<string, string[]>();
+        for (const e of eintraege) {
+          const k = s.dokumente[e.key];
+          if (!k) continue;
+          const liste = jeKlasse.get(k.facetten.status) ?? [];
+          liste.push(k.datum);
+          jeKlasse.set(k.facetten.status, liste);
+        }
+        for (const [status, daten] of jeKlasse) {
+          expect({ erlass, token, status, daten }).toEqual(
+            { erlass, token, status, daten: [...daten].sort().reverse() },
+          );
+        }
+      }
+    }
+  });
+});
+
+// ─── B7/c: die «Eidg.»-Facette — Diagnose und Ehrlichkeit ───────────────────
+//
+// David 28.7.2026: «Eidg. das scheint keine funktion zu haben?» Der Befund ist
+// unten festgehalten, damit er nicht als Vermutung im Chat verloren geht: das
+// Prädikat IST verdrahtet, die Klasse hat nur fast nirgends eine Kante. Wird
+// eines der beiden je anders, meldet sich dieser Test.
+describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () => {
+  const bilanz = JSON.parse(
+    readFileSync('public/rechtsprechung/bezuege-bilanz.json', 'utf8'),
+  ) as { kantenJeStatus: Record<string, number>; artikelJeStatus: Record<string, number>;
+        erlasseJeStatus: Record<string, number>; artikelGesamt: number; erlasseGesamt: number };
+
+  it('BEFUND: die Klasse trägt korpusweit 164 Kanten an 93 von 6217 Artikeln', () => {
+    expect(bilanz.kantenJeStatus.eidg).toBe(164);
+    expect(bilanz.artikelJeStatus.eidg).toBe(93);
+    expect(bilanz.erlasseJeStatus.eidg).toBe(18);
+    expect(bilanz.artikelGesamt).toBe(6217);
+    // Zum Vergleich, damit die Grössenordnung nicht im Ungefähren bleibt:
+    expect(bilanz.kantenJeStatus.kantonal).toBeGreaterThan(50_000);
+  });
+
+  it('BEFUND: an Art. 41 OR — dem Artikel des Auftrags — hat sie null Kanten', () => {
+    const s = JSON.parse(readFileSync('public/rechtsprechung/bezuege/OR.json', 'utf8')) as BezugsShard;
+    expect(bezuegeFuerArtikel(s, '41').some((b) => b.facetten.status === 'eidg')).toBe(false);
+    // KEIN Bug im Filter: dieselbe Auswahl findet an demselben Artikel die
+    // Klassen, die es dort gibt. Das Prädikat arbeitet — es hat nur nichts.
+    expect(waehleBezuege(bezuegeFuerArtikel(s, '41'), ['eidg'], [])).toEqual([]);
+    expect(waehleBezuege(bezuegeFuerArtikel(s, '41'), ['bge'], []).length).toBeGreaterThan(0);
+  });
+
+  it('das Prädikat greift, wo es etwas gibt — Gegenprobe an einem eidg-tragenden Erlass', () => {
+    const s = JSON.parse(readFileSync('public/rechtsprechung/bezuege/ASYLG.json', 'utf8')) as BezugsShard;
+    const eidg = Object.keys(s.proArtikel)
+      .flatMap((t) => waehleBezuege(bezuegeFuerArtikel(s, t), ['eidg'], []));
+    expect(eidg.length).toBeGreaterThan(0);
+    expect(eidg.every((b) => b.facetten.status === 'eidg')).toBe(true);
+  });
+
+  it('klassenImShard zählt je Klasse — Entscheide UND Fundstellen getrennt', () => {
+    const s = JSON.parse(readFileSync('public/rechtsprechung/bezuege/OR.json', 'utf8')) as BezugsShard;
+    const n = klassenImShard(s);
+    expect(n.eidg).toBeUndefined();          // 0 Fundstellen ⇒ gar kein Eintrag
+    expect(n.bge!.dokumente).toBeGreaterThan(0);
+    // Summe der KANTEN == Kanten des Shards (keine doppelte Zählung).
+    const summe = Object.values(n).reduce((a, b) => a + b.kanten, 0);
+    const kanten = Object.values(s.proArtikel).reduce((a, e) => a + e.length, 0);
+    expect(summe).toBe(kanten);
+    // Und die Entscheide sind NIE mehr als die Fundstellen — je Klasse.
+    for (const z of Object.values(n)) expect(z.dokumente).toBeLessThanOrEqual(z.kanten);
+  });
+
+  it('BEFUND I1 (Gegenprüfung R1): Fundstellen ≠ Entscheide, gemessen am BGG', () => {
+    // Der Schalter beschriftete bis zur Gegenprüfung die KANTEN als «Entscheide».
+    // Am einzelnen Artikel ist das dasselbe, über einen Erlass nicht — hier steht
+    // die Zahl, die es widerlegt hat (§8): 10'559 gegen 1'253, Faktor 8,4, bei
+    // einem Korpus von insgesamt 1'259 BGE.
+    const s = JSON.parse(readFileSync('public/rechtsprechung/bezuege/BGG.json', 'utf8')) as BezugsShard;
+    const n = klassenImShard(s);
+    expect(n.bge!.kanten).toBe(10_559);
+    expect(n.bge!.dokumente).toBe(1253);
   });
 });

@@ -1,0 +1,23 @@
+{
+  "erzeugt": "2026-07-28",
+  "kantenJeStatus": {
+    "bge": 24573,
+    "bger": 287,
+    "eidg": 164,
+    "kantonal": 50341
+  },
+  "artikelJeStatus": {
+    "bge": 4440,
+    "bger": 123,
+    "eidg": 93,
+    "kantonal": 3712
+  },
+  "erlasseJeStatus": {
+    "bge": 156,
+    "bger": 16,
+    "eidg": 18,
+    "kantonal": 253
+  },
+  "artikelGesamt": 6217,
+  "erlasseGesamt": 311
+}

@@ -1,107 +1,29 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "URV",
-  "erlassEbene": "bund",
-  "dokumente": {
-    "bge_148_II_92": {
-      "zitierung": "BGE 148 II 92",
-      "regesteKurz": "Art. 2 Abs. 1 lit. a und Art. 3 Abs. 1 lit. a BGÖ; Art. 55 URG; Anwendung des BGÖ auf die Schiedskommission im Tarifgenehmigungsverfahren mit Einigungstarif. Die Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und ve…",
-      "datum": "2021-10-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_150_II_153": {
-      "zitierung": "BGE 150 II 153",
-      "regesteKurz": "Art. 63 Abs. 4 bis VwVG; Art. 16a Abs. 1 URV; Art. 2 Abs. 2 der Verordnung vom 10. September 1969 über Kosten und Entschädigungen im Verwaltungsverfahren; Bemessung der Spruchgebühr der Eidgenössischen Schiedskommission für die Verwertung…",
-      "datum": "2023-10-10",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    }
-  },
-  "proArtikel": {
-    "9": [
-      {
-        "key": "bge_148_II_92",
-        "gewicht": 0
-      }
-    ],
-    "10": [
-      {
-        "key": "bge_148_II_92",
-        "gewicht": 0
-      }
-    ],
-    "11": [
-      {
-        "key": "bge_148_II_92",
-        "gewicht": 0
-      }
-    ],
-    "12": [
-      {
-        "key": "bge_148_II_92",
-        "gewicht": 0
-      }
-    ],
-    "13": [
-      {
-        "key": "bge_148_II_92",
-        "gewicht": 0
-      }
-    ],
-    "14": [
-      {
-        "key": "bge_148_II_92",
-        "gewicht": 0
-      }
-    ],
-    "15": [
-      {
-        "key": "bge_148_II_92",
-        "gewicht": 0
-      }
-    ],
-    "16a": [
-      {
-        "key": "bge_150_II_153",
-        "gewicht": 0
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "9": {
-      "bge": 1
-    },
-    "10": {
-      "bge": 1
-    },
-    "11": {
-      "bge": 1
-    },
-    "12": {
-      "bge": 1
-    },
-    "13": {
-      "bge": 1
-    },
-    "14": {
-      "bge": 1
-    },
-    "15": {
-      "bge": 1
-    },
-    "16a": {
-      "bge": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"URV",
+"erlassEbene":"bund",
+"dokumente":{
+"bge_148_II_92":{"zitierung":"BGE 148 II 92","regesteKurz":"Art. 2 Abs. 1 lit. a und Art. 3 Abs. 1 lit. a BGÖ; Art. 55 URG; Anwendung des BGÖ auf die Schiedskommission im Tarifgenehmigungsverfahren mit Einigungstarif. Die Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und ve…","datum":"2021-10-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_150_II_153":{"zitierung":"BGE 150 II 153","regesteKurz":"Art. 63 Abs. 4 bis VwVG; Art. 16a Abs. 1 URV; Art. 2 Abs. 2 der Verordnung vom 10. September 1969 über Kosten und Entschädigungen im Verwaltungsverfahren; Bemessung der Spruchgebühr der Eidgenössischen Schiedskommission für die Verwertung…","datum":"2023-10-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+},
+"proArtikel":{
+"9":[{"key":"bge_148_II_92","gewicht":0}],
+"10":[{"key":"bge_148_II_92","gewicht":0}],
+"11":[{"key":"bge_148_II_92","gewicht":0}],
+"12":[{"key":"bge_148_II_92","gewicht":0}],
+"13":[{"key":"bge_148_II_92","gewicht":0}],
+"14":[{"key":"bge_148_II_92","gewicht":0}],
+"15":[{"key":"bge_148_II_92","gewicht":0}],
+"16a":[{"key":"bge_150_II_153","gewicht":0}]
+},
+"gesamtProArtikel":{
+"9":{"bge":1},
+"10":{"bge":1},
+"11":{"bge":1},
+"12":{"bge":1},
+"13":{"bge":1},
+"14":{"bge":1},
+"15":{"bge":1},
+"16a":{"bge":1}
+}
 }

@@ -1,204 +1,37 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "EOV",
-  "erlassEbene": "bund",
-  "dokumente": {
-    "bge_146_V_121": {
-      "zitierung": "BGE 146 V 121",
-      "regesteKurz": "Art. 89 BGG; Art. 62 Abs. 1 bis ATSG; Beschwerdelegitimation der Suva, Abteilung Militärversicherung. Die Beschwerdelegitimation der Suva, Abteilung Militärversicherung, ergibt sich weder aus der allgemeinen Legitimationsklausel noch aus e…",
-      "datum": "2020-04-08",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_147_V_278": {
-      "zitierung": "BGE 147 V 278",
-      "regesteKurz": "Art. 2 Abs. 3 bis und Art. 5 Abs. 2 Covid-19-Verordnung Erwerbsausfall in der vom 23. April bis 5. Juli 2020 in Kraft stehenden Fassung; Art. 11 Abs. 1 EOG; Art. 7 Abs. 1 EOV; Anspruchsgrundlagen Corona-Erwerbsersatz für Selbständigerwerbe…",
-      "datum": "2021-06-30",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_148_V_253": {
-      "zitierung": "BGE 148 V 253",
-      "regesteKurz": "Art. 16d Abs. 3 EOG; Art. 25 EOV; Mutterschaftsentschädigung; Nationalrätin. Das Parlamentsmandat einer Nationalrätin stellt eine Erwerbstätigkeit im Sinne von Art. 16d Abs. 3 EOG dar. Nimmt die Mutter diese Tätigkeit vorzeitig wieder auf,…",
-      "datum": "2022-03-08",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_148_V_373": {
-      "zitierung": "BGE 148 V 373",
-      "regesteKurz": "Art. 4 Abs. 2 EOV; Berechnung der Erwerbsausfallentschädigung anhand des ortsüblichen Anfangslohns im betreffenden Beruf. Eröffnet eine Ausbildung Zugang zu mehreren Berufen beziehungsweise zu verschiedenen Einstiegsformen in die Berufswel…",
-      "datum": "2022-08-02",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_148_V_427": {
-      "zitierung": "BGE 148 V 427",
-      "regesteKurz": "Art. 1a Abs. 1 und Art. 10 Abs. 1 und 2 EOG; Art. 1 Abs. 2 lit. b und Art. 4 Abs. 2 EOV; Art. 27 Abs. 1 und 2 ATSG; Bemessungsgrundlage der Erwerbsausfallentschädigung; Personen, die glaubhaft machen, dass sie eine Erwerbstätigkeit von län…",
-      "datum": "2022-08-11",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_149_V_2": {
-      "zitierung": "BGE 149 V 2",
-      "regesteKurz": "Art. 185 Abs. 3 BV; Art. 5 Abs. 2 der Covid-19-Verordnung Erwerbsausfall; Entschädigung für den Erwerbsausfall einer selbständigerwerbenden Person aufgrund des Coronavirus; Gesetz- und Verfassungsmässigkeit der Bestimmungen der Covid-19-Ve…",
-      "datum": "2022-11-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bge_150_V_474": {
-      "zitierung": "BGE 150 V 474",
-      "regesteKurz": "Art. 16d Abs. 3 Teilsatz 1 EOG; Art. 25 EOV; Mutterschaftsentschädigung. Der Anspruch auf Mutterschaftsentschädigung endet vorzeitig, wenn die Mutter ihre Erwerbstätigkeit wieder aufnimmt (Art. 16d Abs. 3 Teilsatz 1 EOG) resp. am Tag der W…",
-      "datum": "2024-10-03",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bs_sozialversicherungsgericht_EO.2025.1": {
-      "zitierung": "Sozialversicherungsgericht BS EO.2025.1",
-      "regesteKurz": "EOG Betreuungsentschädigung bei arbeitsrechtlicher Freistellung",
-      "datum": "2025-01-01",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_sozialversicherungsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "1": [
-      {
-        "key": "bge_148_V_427",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_V_373",
-        "gewicht": 0
-      }
-    ],
-    "2": [
-      {
-        "key": "bge_148_V_373",
-        "gewicht": 0
-      }
-    ],
-    "4": [
-      {
-        "key": "bge_148_V_427",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_V_373",
-        "gewicht": 0
-      }
-    ],
-    "7": [
-      {
-        "key": "bge_149_V_2",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_V_278",
-        "gewicht": 0
-      }
-    ],
-    "25": [
-      {
-        "key": "bge_148_V_253",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_150_V_474",
-        "gewicht": 0
-      }
-    ],
-    "42": [
-      {
-        "key": "bge_146_V_121",
-        "gewicht": 0
-      }
-    ],
-    "35c": [
-      {
-        "key": "bs_sozialversicherungsgericht_EO.2025.1",
-        "gewicht": null
-      }
-    ],
-    "35e": [
-      {
-        "key": "bs_sozialversicherungsgericht_EO.2025.1",
-        "gewicht": null
-      }
-    ],
-    "35k": [
-      {
-        "key": "bge_148_V_427",
-        "gewicht": 0
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "1": {
-      "bge": 2
-    },
-    "2": {
-      "bge": 1
-    },
-    "4": {
-      "bge": 2
-    },
-    "7": {
-      "bge": 2
-    },
-    "25": {
-      "bge": 2
-    },
-    "42": {
-      "bge": 1
-    },
-    "35c": {
-      "kantonal": 1
-    },
-    "35e": {
-      "kantonal": 1
-    },
-    "35k": {
-      "bge": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"EOV",
+"erlassEbene":"bund",
+"dokumente":{
+"bge_146_V_121":{"zitierung":"BGE 146 V 121","regesteKurz":"Art. 89 BGG; Art. 62 Abs. 1 bis ATSG; Beschwerdelegitimation der Suva, Abteilung Militärversicherung. Die Beschwerdelegitimation der Suva, Abteilung Militärversicherung, ergibt sich weder aus der allgemeinen Legitimationsklausel noch aus e…","datum":"2020-04-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_147_V_278":{"zitierung":"BGE 147 V 278","regesteKurz":"Art. 2 Abs. 3 bis und Art. 5 Abs. 2 Covid-19-Verordnung Erwerbsausfall in der vom 23. April bis 5. Juli 2020 in Kraft stehenden Fassung; Art. 11 Abs. 1 EOG; Art. 7 Abs. 1 EOV; Anspruchsgrundlagen Corona-Erwerbsersatz für Selbständigerwerbe…","datum":"2021-06-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_148_V_253":{"zitierung":"BGE 148 V 253","regesteKurz":"Art. 16d Abs. 3 EOG; Art. 25 EOV; Mutterschaftsentschädigung; Nationalrätin. Das Parlamentsmandat einer Nationalrätin stellt eine Erwerbstätigkeit im Sinne von Art. 16d Abs. 3 EOG dar. Nimmt die Mutter diese Tätigkeit vorzeitig wieder auf,…","datum":"2022-03-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_148_V_373":{"zitierung":"BGE 148 V 373","regesteKurz":"Art. 4 Abs. 2 EOV; Berechnung der Erwerbsausfallentschädigung anhand des ortsüblichen Anfangslohns im betreffenden Beruf. Eröffnet eine Ausbildung Zugang zu mehreren Berufen beziehungsweise zu verschiedenen Einstiegsformen in die Berufswel…","datum":"2022-08-02","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_148_V_427":{"zitierung":"BGE 148 V 427","regesteKurz":"Art. 1a Abs. 1 und Art. 10 Abs. 1 und 2 EOG; Art. 1 Abs. 2 lit. b und Art. 4 Abs. 2 EOV; Art. 27 Abs. 1 und 2 ATSG; Bemessungsgrundlage der Erwerbsausfallentschädigung; Personen, die glaubhaft machen, dass sie eine Erwerbstätigkeit von län…","datum":"2022-08-11","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_149_V_2":{"zitierung":"BGE 149 V 2","regesteKurz":"Art. 185 Abs. 3 BV; Art. 5 Abs. 2 der Covid-19-Verordnung Erwerbsausfall; Entschädigung für den Erwerbsausfall einer selbständigerwerbenden Person aufgrund des Coronavirus; Gesetz- und Verfassungsmässigkeit der Bestimmungen der Covid-19-Ve…","datum":"2022-11-06","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_150_V_474":{"zitierung":"BGE 150 V 474","regesteKurz":"Art. 16d Abs. 3 Teilsatz 1 EOG; Art. 25 EOV; Mutterschaftsentschädigung. Der Anspruch auf Mutterschaftsentschädigung endet vorzeitig, wenn die Mutter ihre Erwerbstätigkeit wieder aufnimmt (Art. 16d Abs. 3 Teilsatz 1 EOG) resp. am Tag der W…","datum":"2024-10-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bs_sozialversicherungsgericht_EO.2025.1":{"zitierung":"Sozialversicherungsgericht BS EO.2025.1","regesteKurz":"EOG Betreuungsentschädigung bei arbeitsrechtlicher Freistellung","datum":"2025-01-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"1":[{"key":"bge_148_V_427","gewicht":0},{"key":"bge_148_V_373","gewicht":0}],
+"2":[{"key":"bge_148_V_373","gewicht":0}],
+"4":[{"key":"bge_148_V_427","gewicht":0},{"key":"bge_148_V_373","gewicht":0}],
+"7":[{"key":"bge_149_V_2","gewicht":0},{"key":"bge_147_V_278","gewicht":0}],
+"25":[{"key":"bge_150_V_474","gewicht":0},{"key":"bge_148_V_253","gewicht":1}],
+"42":[{"key":"bge_146_V_121","gewicht":0}],
+"35c":[{"key":"bs_sozialversicherungsgericht_EO.2025.1","gewicht":null}],
+"35e":[{"key":"bs_sozialversicherungsgericht_EO.2025.1","gewicht":null}],
+"35k":[{"key":"bge_148_V_427","gewicht":0}]
+},
+"gesamtProArtikel":{
+"1":{"bge":2},
+"2":{"bge":1},
+"4":{"bge":2},
+"7":{"bge":2},
+"25":{"bge":2},
+"42":{"bge":1},
+"35c":{"kantonal":1},
+"35e":{"kantonal":1},
+"35k":{"bge":1}
+}
 }

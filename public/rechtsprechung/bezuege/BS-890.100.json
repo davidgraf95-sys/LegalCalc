@@ -1,339 +1,47 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-890.100",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_SB.2020.50": {
-      "zitierung": "Appellationsgericht BS SB.2020.50 vom 22.06.2022",
-      "regesteKurz": "mehrfacher Betrug",
-      "datum": "2022-06-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2021.29": {
-      "zitierung": "Appellationsgericht BS SB.2021.29 vom 14.08.2023",
-      "regesteKurz": "unrechtmässiger Bezug von Leistungen einer Sozialversicherung oder der Sozialhilfe",
-      "datum": "2023-08-14",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.106": {
-      "zitierung": "Appellationsgericht BS VD.2022.106 vom 16.08.2022",
-      "regesteKurz": "Mietkosten",
-      "datum": "2022-08-16",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.193": {
-      "zitierung": "Appellationsgericht BS VD.2022.193 vom 30.01.2023",
-      "regesteKurz": "Nichteintreten",
-      "datum": "2023-01-30",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.25": {
-      "zitierung": "Appellationsgericht BS VD.2022.25 vom 09.11.2022",
-      "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung",
-      "datum": "2022-11-09",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.85": {
-      "zitierung": "Appellationsgericht BS VD.2022.85 vom 12.09.2022",
-      "regesteKurz": "Ablösung",
-      "datum": "2022-09-12",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.117": {
-      "zitierung": "Appellationsgericht BS VD.2023.117 vom 25.09.2023",
-      "regesteKurz": "Einstellung der Unterstützungsleistungen (BGer: 8C_699/2023 vom 6.2.2024)",
-      "datum": "2023-09-25",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.112": {
-      "zitierung": "Appellationsgericht BS VD.2024.112 vom 07.02.2025",
-      "regesteKurz": "Rückerstattung von Unterstützungsleistungen aufgrund wirtschaftlicher Verhältnisse",
-      "datum": "2025-02-07",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.180": {
-      "zitierung": "Appellationsgericht BS VD.2024.180",
-      "regesteKurz": "Rückerstattung von Sozialhilfeleistungen",
-      "datum": "2024-01-01",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.187": {
-      "zitierung": "Appellationsgericht BS VD.2024.187 vom 03.04.2025",
-      "regesteKurz": "Rückerstattung von Unterstützungsleistungen",
-      "datum": "2025-04-03",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_sozialversicherungsgericht_IV.2022.55": {
-      "zitierung": "Sozialversicherungsgericht BS IV.2022.55 vom 09.01.2024",
-      "regesteKurz": "IVG",
-      "datum": "2024-01-09",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_sozialversicherungsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_sozialversicherungsgericht_IV.2024.70": {
-      "zitierung": "Sozialversicherungsgericht BS IV.2024.70 vom 30.01.2025",
-      "regesteKurz": "IVG Berechnung einer Nachzahlung von Invalidenrenten unter Berücksichtigung von Drittauszahlungen und zu verrechnenden…",
-      "datum": "2025-01-30",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_sozialversicherungsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "2": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.117",
-        "gewicht": null
-      }
-    ],
-    "3": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.117",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.85",
-        "gewicht": null
-      }
-    ],
-    "4": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.117",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.85",
-        "gewicht": null
-      }
-    ],
-    "5": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.193",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.85",
-        "gewicht": null
-      }
-    ],
-    "7": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.117",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.85",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.106",
-        "gewicht": null
-      }
-    ],
-    "8": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.193",
-        "gewicht": null
-      }
-    ],
-    "12": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.25",
-        "gewicht": null
-      }
-    ],
-    "14": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.187",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.112",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2021.29",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_SB.2020.50",
-        "gewicht": null
-      }
-    ],
-    "16": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.187",
-        "gewicht": null
-      },
-      {
-        "key": "bs_sozialversicherungsgericht_IV.2024.70",
-        "gewicht": null
-      }
-    ],
-    "17": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.187",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.112",
-        "gewicht": null
-      },
-      {
-        "key": "bs_sozialversicherungsgericht_IV.2022.55",
-        "gewicht": null
-      }
-    ],
-    "19": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.187",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.180",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.193",
-        "gewicht": null
-      }
-    ],
-    "21": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.180",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "2": {
-      "kantonal": 1
-    },
-    "3": {
-      "kantonal": 3
-    },
-    "4": {
-      "kantonal": 3
-    },
-    "5": {
-      "kantonal": 3
-    },
-    "7": {
-      "kantonal": 4
-    },
-    "8": {
-      "kantonal": 2
-    },
-    "12": {
-      "kantonal": 1
-    },
-    "14": {
-      "kantonal": 5
-    },
-    "16": {
-      "kantonal": 2
-    },
-    "17": {
-      "kantonal": 3
-    },
-    "19": {
-      "kantonal": 3
-    },
-    "21": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-890.100",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_SB.2020.50":{"zitierung":"Appellationsgericht BS SB.2020.50 vom 22.06.2022","regesteKurz":"mehrfacher Betrug","datum":"2022-06-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2021.29":{"zitierung":"Appellationsgericht BS SB.2021.29 vom 14.08.2023","regesteKurz":"unrechtmässiger Bezug von Leistungen einer Sozialversicherung oder der Sozialhilfe","datum":"2023-08-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.106":{"zitierung":"Appellationsgericht BS VD.2022.106 vom 16.08.2022","regesteKurz":"Mietkosten","datum":"2022-08-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.193":{"zitierung":"Appellationsgericht BS VD.2022.193 vom 30.01.2023","regesteKurz":"Nichteintreten","datum":"2023-01-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.25":{"zitierung":"Appellationsgericht BS VD.2022.25 vom 09.11.2022","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung","datum":"2022-11-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.85":{"zitierung":"Appellationsgericht BS VD.2022.85 vom 12.09.2022","regesteKurz":"Ablösung","datum":"2022-09-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.117":{"zitierung":"Appellationsgericht BS VD.2023.117 vom 25.09.2023","regesteKurz":"Einstellung der Unterstützungsleistungen (BGer: 8C_699/2023 vom 6.2.2024)","datum":"2023-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.112":{"zitierung":"Appellationsgericht BS VD.2024.112 vom 07.02.2025","regesteKurz":"Rückerstattung von Unterstützungsleistungen aufgrund wirtschaftlicher Verhältnisse","datum":"2025-02-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.180":{"zitierung":"Appellationsgericht BS VD.2024.180","regesteKurz":"Rückerstattung von Sozialhilfeleistungen","datum":"2024-01-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.187":{"zitierung":"Appellationsgericht BS VD.2024.187 vom 03.04.2025","regesteKurz":"Rückerstattung von Unterstützungsleistungen","datum":"2025-04-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_sozialversicherungsgericht_IV.2022.55":{"zitierung":"Sozialversicherungsgericht BS IV.2022.55 vom 09.01.2024","regesteKurz":"IVG","datum":"2024-01-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"bs_sozialversicherungsgericht_IV.2024.70":{"zitierung":"Sozialversicherungsgericht BS IV.2024.70 vom 30.01.2025","regesteKurz":"IVG Berechnung einer Nachzahlung von Invalidenrenten unter Berücksichtigung von Drittauszahlungen und zu verrechnenden…","datum":"2025-01-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"2":[{"key":"bs_appellationsgericht_VD.2023.117","gewicht":null}],
+"3":[{"key":"bs_appellationsgericht_VD.2024.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.117","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.85","gewicht":null}],
+"4":[{"key":"bs_appellationsgericht_VD.2024.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.117","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.85","gewicht":null}],
+"5":[{"key":"bs_appellationsgericht_VD.2024.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.193","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.85","gewicht":null}],
+"7":[{"key":"bs_appellationsgericht_VD.2024.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.117","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.85","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.106","gewicht":null}],
+"8":[{"key":"bs_appellationsgericht_VD.2024.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.193","gewicht":null}],
+"12":[{"key":"bs_appellationsgericht_VD.2022.25","gewicht":null}],
+"14":[{"key":"bs_appellationsgericht_VD.2024.187","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.112","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.180","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.29","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.50","gewicht":null}],
+"16":[{"key":"bs_appellationsgericht_VD.2024.187","gewicht":null},{"key":"bs_sozialversicherungsgericht_IV.2024.70","gewicht":null}],
+"17":[{"key":"bs_appellationsgericht_VD.2024.187","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.112","gewicht":null},{"key":"bs_sozialversicherungsgericht_IV.2022.55","gewicht":null}],
+"19":[{"key":"bs_appellationsgericht_VD.2024.187","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.180","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.193","gewicht":null}],
+"21":[{"key":"bs_appellationsgericht_VD.2024.180","gewicht":null}]
+},
+"gesamtProArtikel":{
+"2":{"kantonal":1},
+"3":{"kantonal":3},
+"4":{"kantonal":3},
+"5":{"kantonal":3},
+"7":{"kantonal":4},
+"8":{"kantonal":2},
+"12":{"kantonal":1},
+"14":{"kantonal":5},
+"16":{"kantonal":2},
+"17":{"kantonal":3},
+"19":{"kantonal":3},
+"21":{"kantonal":1}
+}
 }

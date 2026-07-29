@@ -1,94 +1,25 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "ENTSG",
-  "erlassEbene": "bund",
-  "dokumente": {
-    "bge_147_II_375": {
-      "zitierung": "BGE 147 II 375",
-      "regesteKurz": "a Art. 2 Abs. 3 und Art. 3 Satz 2 EntsG; Voraussetzungen für den Abzug von Unterkunfts- und Verpflegungskosten vom Lohn im ortsüblichen Mass. Das Abzugsverbot von Unterkunfts- und Verpflegungskosten gemäss Art. 2 Abs. 3 EntsG gilt für alle…",
-      "datum": "2021-03-12",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "bund",
-        "kanton": "CH",
-        "gericht": "bge",
-        "status": "bge"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.252": {
-      "zitierung": "Appellationsgericht BS VD.2022.252 vom 15.01.2024",
-      "regesteKurz": "Verstoss gegen das Entsendegesetz (Verfügung vom 17. August 2021)",
-      "datum": "2024-01-15",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "1": [
-      {
-        "key": "bge_147_II_375",
-        "gewicht": 0
-      }
-    ],
-    "2": [
-      {
-        "key": "bge_147_II_375",
-        "gewicht": 0
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.252",
-        "gewicht": null
-      }
-    ],
-    "3": [
-      {
-        "key": "bge_147_II_375",
-        "gewicht": 0
-      }
-    ],
-    "7": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.252",
-        "gewicht": null
-      }
-    ],
-    "9": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.252",
-        "gewicht": null
-      }
-    ],
-    "12": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.252",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "1": {
-      "bge": 1
-    },
-    "2": {
-      "bge": 1,
-      "kantonal": 1
-    },
-    "3": {
-      "bge": 1
-    },
-    "7": {
-      "kantonal": 1
-    },
-    "9": {
-      "kantonal": 1
-    },
-    "12": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"ENTSG",
+"erlassEbene":"bund",
+"dokumente":{
+"bge_147_II_375":{"zitierung":"BGE 147 II 375","regesteKurz":"a Art. 2 Abs. 3 und Art. 3 Satz 2 EntsG; Voraussetzungen für den Abzug von Unterkunfts- und Verpflegungskosten vom Lohn im ortsüblichen Mass. Das Abzugsverbot von Unterkunfts- und Verpflegungskosten gemäss Art. 2 Abs. 3 EntsG gilt für alle…","datum":"2021-03-12","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bs_appellationsgericht_VD.2022.252":{"zitierung":"Appellationsgericht BS VD.2022.252 vom 15.01.2024","regesteKurz":"Verstoss gegen das Entsendegesetz (Verfügung vom 17. August 2021)","datum":"2024-01-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"1":[{"key":"bge_147_II_375","gewicht":0}],
+"2":[{"key":"bge_147_II_375","gewicht":0},{"key":"bs_appellationsgericht_VD.2022.252","gewicht":null}],
+"3":[{"key":"bge_147_II_375","gewicht":0}],
+"7":[{"key":"bs_appellationsgericht_VD.2022.252","gewicht":null}],
+"9":[{"key":"bs_appellationsgericht_VD.2022.252","gewicht":null}],
+"12":[{"key":"bs_appellationsgericht_VD.2022.252","gewicht":null}]
+},
+"gesamtProArtikel":{
+"1":{"bge":1},
+"2":{"bge":1,"kantonal":1},
+"3":{"bge":1},
+"7":{"kantonal":1},
+"9":{"kantonal":1},
+"12":{"kantonal":1}
+}
 }

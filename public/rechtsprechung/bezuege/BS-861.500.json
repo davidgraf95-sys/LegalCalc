@@ -1,451 +1,55 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-861.500",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_DGV.2023.1": {
-      "zitierung": "Appellationsgericht BS DGV.2023.1 vom 24.03.2023",
-      "regesteKurz": "Revisionsgesuch",
-      "datum": "2023-03-24",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.257": {
-      "zitierung": "Appellationsgericht BS VD.2022.257 vom 04.07.2023",
-      "regesteKurz": "Wahl in die Wohnschutzkommission",
-      "datum": "2023-07-04",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.102": {
-      "zitierung": "Appellationsgericht BS VD.2023.102 vom 19.09.2024",
-      "regesteKurz": "Sanierung im vereinfachten Bewilligungsverfahren",
-      "datum": "2024-09-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.105": {
-      "zitierung": "Appellationsgericht BS VD.2023.105 vom 10.12.2024",
-      "regesteKurz": "Renovation im vereinfachten Bewilligungsverfahren (WRFG)",
-      "datum": "2024-12-10",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2023.136": {
-      "zitierung": "Appellationsgericht BS VD.2023.136 vom 06.01.2025",
-      "regesteKurz": "Bauentscheid Nr. BBG [...] vom 16. November 2022 in Sachen Sanierung und Umbau Mehrfamilienhaus mit Ausbau Dachgeschoss…",
-      "datum": "2025-01-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.107": {
-      "zitierung": "Appellationsgericht BS VD.2024.107 vom 19.06.2025",
-      "regesteKurz": "Abbruch von zwei Doppelmehrfamilienhäusern und Neubau von zwei Mehrfamilienhäusern und drei Reiheneinfamilienhäusern (B…",
-      "datum": "2025-06-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.155": {
-      "zitierung": "Appellationsgericht BS VD.2024.155 vom 25.07.2025",
-      "regesteKurz": "Rekurs gegen einen Entscheid der Baurekurskommission",
-      "datum": "2025-07-25",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.164": {
-      "zitierung": "Appellationsgericht BS VD.2024.164 vom 06.10.2025",
-      "regesteKurz": "Einspracheentscheid zum Bauentscheid Nr. BBG [...] vom 14. September 2022 in Sachen Umbau und Sanierung Mehrfamilienhau…",
-      "datum": "2025-10-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.166": {
-      "zitierung": "Appellationsgericht BS VD.2024.166 vom 06.10.2025",
-      "regesteKurz": "Bauentscheid Nr. BBG [...] vom 14. September 2022 in Sachen Umbau und Sanierung Mehrfamilienhaus mit Ausbau des Dachges…",
-      "datum": "2025-10-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2024.23": {
-      "zitierung": "Appellationsgericht BS VD.2024.23 vom 02.12.2024",
-      "regesteKurz": "Vorentscheid Generelles Baubegehren Nr. [...] vom 13. Februar 2023 in Sachen Grundsatzfragen zum Bauvorhaben Renovation…",
-      "datum": "2024-12-02",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VG.2020.10": {
-      "zitierung": "Appellationsgericht BS VG.2020.10 vom 07.02.2022",
-      "regesteKurz": "Zulässigkeit der kantonalen Volksinitiative \"Basel baut Zukunft\"",
-      "datum": "2022-02-07",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_sozialversicherungsgericht_AH.2024.10": {
-      "zitierung": "Sozialversicherungsgericht BS AH.2024.10 vom 04.06.2025",
-      "regesteKurz": "Die Mitglieder der Wohnschutzkommission sind als Behördenmitglieder im Sinne von Art. 7 lit. i AHVV zu qualifizieren, w…",
-      "datum": "2025-06-04",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_sozialversicherungsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "1": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.102",
-        "gewicht": null
-      }
-    ],
-    "4": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.102",
-        "gewicht": null
-      }
-    ],
-    "7": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_sozialversicherungsgericht_AH.2024.10",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.257",
-        "gewicht": null
-      }
-    ],
-    "8": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": null
-      }
-    ],
-    "9": [
-      {
-        "key": "bs_appellationsgericht_VG.2020.10",
-        "gewicht": null
-      }
-    ],
-    "20": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.102",
-        "gewicht": null
-      }
-    ],
-    "21": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.166",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.102",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.257",
-        "gewicht": null
-      }
-    ],
-    "22": [
-      {
-        "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": null
-      }
-    ],
-    "22a": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.164",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.166",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.155",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.136",
-        "gewicht": null
-      }
-    ],
-    "3a": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_sozialversicherungsgericht_AH.2024.10",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.102",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.257",
-        "gewicht": null
-      }
-    ],
-    "8a": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.136",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.23",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.102",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_DGV.2023.1",
-        "gewicht": null
-      }
-    ],
-    "8b": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.102",
-        "gewicht": null
-      }
-    ],
-    "8c": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.102",
-        "gewicht": null
-      }
-    ],
-    "8d": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.164",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.166",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.155",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.136",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.102",
-        "gewicht": null
-      }
-    ],
-    "8e": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.166",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.105",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2023.102",
-        "gewicht": null
-      }
-    ],
-    "8f": [
-      {
-        "key": "bs_appellationsgericht_VD.2024.107",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_VD.2022.257",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "1": {
-      "kantonal": 3
-    },
-    "4": {
-      "kantonal": 3
-    },
-    "7": {
-      "kantonal": 3
-    },
-    "8": {
-      "kantonal": 2
-    },
-    "9": {
-      "kantonal": 1
-    },
-    "20": {
-      "kantonal": 2
-    },
-    "21": {
-      "kantonal": 5
-    },
-    "22": {
-      "kantonal": 1
-    },
-    "22a": {
-      "kantonal": 4
-    },
-    "3a": {
-      "kantonal": 5
-    },
-    "8a": {
-      "kantonal": 6
-    },
-    "8b": {
-      "kantonal": 3
-    },
-    "8c": {
-      "kantonal": 3
-    },
-    "8d": {
-      "kantonal": 7
-    },
-    "8e": {
-      "kantonal": 4
-    },
-    "8f": {
-      "kantonal": 2
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-861.500",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_DGV.2023.1":{"zitierung":"Appellationsgericht BS DGV.2023.1 vom 24.03.2023","regesteKurz":"Revisionsgesuch","datum":"2023-03-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.257":{"zitierung":"Appellationsgericht BS VD.2022.257 vom 04.07.2023","regesteKurz":"Wahl in die Wohnschutzkommission","datum":"2023-07-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.102":{"zitierung":"Appellationsgericht BS VD.2023.102 vom 19.09.2024","regesteKurz":"Sanierung im vereinfachten Bewilligungsverfahren","datum":"2024-09-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.105":{"zitierung":"Appellationsgericht BS VD.2023.105 vom 10.12.2024","regesteKurz":"Renovation im vereinfachten Bewilligungsverfahren (WRFG)","datum":"2024-12-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2023.136":{"zitierung":"Appellationsgericht BS VD.2023.136 vom 06.01.2025","regesteKurz":"Bauentscheid Nr. BBG [...] vom 16. November 2022 in Sachen Sanierung und Umbau Mehrfamilienhaus mit Ausbau Dachgeschoss…","datum":"2025-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.107":{"zitierung":"Appellationsgericht BS VD.2024.107 vom 19.06.2025","regesteKurz":"Abbruch von zwei Doppelmehrfamilienhäusern und Neubau von zwei Mehrfamilienhäusern und drei Reiheneinfamilienhäusern (B…","datum":"2025-06-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.155":{"zitierung":"Appellationsgericht BS VD.2024.155 vom 25.07.2025","regesteKurz":"Rekurs gegen einen Entscheid der Baurekurskommission","datum":"2025-07-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.164":{"zitierung":"Appellationsgericht BS VD.2024.164 vom 06.10.2025","regesteKurz":"Einspracheentscheid zum Bauentscheid Nr. BBG [...] vom 14. September 2022 in Sachen Umbau und Sanierung Mehrfamilienhau…","datum":"2025-10-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.166":{"zitierung":"Appellationsgericht BS VD.2024.166 vom 06.10.2025","regesteKurz":"Bauentscheid Nr. BBG [...] vom 14. September 2022 in Sachen Umbau und Sanierung Mehrfamilienhaus mit Ausbau des Dachges…","datum":"2025-10-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2024.23":{"zitierung":"Appellationsgericht BS VD.2024.23 vom 02.12.2024","regesteKurz":"Vorentscheid Generelles Baubegehren Nr. [...] vom 13. Februar 2023 in Sachen Grundsatzfragen zum Bauvorhaben Renovation…","datum":"2024-12-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VG.2020.10":{"zitierung":"Appellationsgericht BS VG.2020.10 vom 07.02.2022","regesteKurz":"Zulässigkeit der kantonalen Volksinitiative \"Basel baut Zukunft\"","datum":"2022-02-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_sozialversicherungsgericht_AH.2024.10":{"zitierung":"Sozialversicherungsgericht BS AH.2024.10 vom 04.06.2025","regesteKurz":"Die Mitglieder der Wohnschutzkommission sind als Behördenmitglieder im Sinne von Art. 7 lit. i AHVV zu qualifizieren, w…","datum":"2025-06-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"1":[{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.105","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null}],
+"4":[{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.105","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null}],
+"7":[{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_sozialversicherungsgericht_AH.2024.10","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.257","gewicht":null}],
+"8":[{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.105","gewicht":null}],
+"9":[{"key":"bs_appellationsgericht_VG.2020.10","gewicht":null}],
+"20":[{"key":"bs_appellationsgericht_VD.2023.105","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null}],
+"21":[{"key":"bs_appellationsgericht_VD.2024.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.105","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.257","gewicht":null}],
+"22":[{"key":"bs_appellationsgericht_VD.2023.105","gewicht":null}],
+"22a":[{"key":"bs_appellationsgericht_VD.2024.164","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.155","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.136","gewicht":null}],
+"3a":[{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_sozialversicherungsgericht_AH.2024.10","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.105","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.257","gewicht":null}],
+"8a":[{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.136","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.105","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.23","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null},{"key":"bs_appellationsgericht_DGV.2023.1","gewicht":null}],
+"8b":[{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.105","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null}],
+"8c":[{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.105","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null}],
+"8d":[{"key":"bs_appellationsgericht_VD.2024.164","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.155","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.136","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.105","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null}],
+"8e":[{"key":"bs_appellationsgericht_VD.2024.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.105","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null}],
+"8f":[{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.257","gewicht":null}]
+},
+"gesamtProArtikel":{
+"1":{"kantonal":3},
+"4":{"kantonal":3},
+"7":{"kantonal":3},
+"8":{"kantonal":2},
+"9":{"kantonal":1},
+"20":{"kantonal":2},
+"21":{"kantonal":5},
+"22":{"kantonal":1},
+"22a":{"kantonal":4},
+"3a":{"kantonal":5},
+"8a":{"kantonal":6},
+"8b":{"kantonal":3},
+"8c":{"kantonal":3},
+"8d":{"kantonal":7},
+"8e":{"kantonal":4},
+"8f":{"kantonal":2}
+}
 }

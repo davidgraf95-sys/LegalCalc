@@ -150,28 +150,51 @@ const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/richter.json', 24 * 1024],
   ['public/rechtsprechung/norm-index-erlasse.json', 120 * 1024],
   ['public/such-index/artikel.json', 10_400 * 1024],
-  // W2·7-BEZUG/B4 (#401 hat den Eintrag bewusst dem UI-Schritt überlassen):
-  // der GRÖSSTE Bezugs-Shard. Gemessen 28.7.2026 über alle 311 Shards:
-  // StPO 716.9 KB roh / 63.5 KB gzip; dahinter StGB 56.1 · OR 47.2 · ZGB 45.1 ·
-  // ZPO 45.0 KB gzip. Der Grösste ist die richtige Schranke, weil ein Nutzer
-  // immer genau EINEN Shard lädt (den seines Erlasses), nie die Summe.
+  // ── W2·7-BEZUG: die drei grössten Bezugs-Shards ───────────────────────────
   //
-  // Budget 80 KB gzip = ~26 % Luft über dem heutigen Grössten. Bewusst so
-  // bemessen und nicht knapper: der Deckel im Generator ist KLASSENWEISE
-  // (DECKEL_JE_STATUS = 8 je Status), ein Shard wächst also mit jeder neuen
-  // Klasse und mit jedem neu erfassten Kanton. B2 deckt heute im Wesentlichen
-  // BS ab (5815 von 5896 kantonalen Kanten korpusweit). Ein zweiter grosser
-  // Kantonskorpus SOLL das Tor rot machen und eine Entscheidung erzwingen
-  // (Deckel senken? Felder auslagern?) statt unbemerkt durchzurutschen — aber
-  // nicht schon der nächste Nachtrag von ein paar Dutzend Entscheiden.
+  // Ein Nutzer lädt immer genau EINEN Shard (den seines Erlasses), nie die
+  // Summe — die richtige Schranke ist darum der Grösste, nicht das Verzeichnis.
   //
-  // WARUM DAS TRAGBAR IST, obwohl es nach dem Such-Index das grösste
-  // Einzel-Artefakt ist: der Shard liegt NICHT auf dem kritischen Pfad. Er wird
-  // nur geladen, wenn der Nutzer im «Ansicht ▾» eine Instanz jenseits der
-  // Leitentscheide zuschaltet (`istErweitert`, `bezuegeLaden.ts`) — dann im
-  // Leerlauf und AN DER STELLE des schlanken norm-index-Shards, nie zusätzlich.
-  // Im Grundzustand kostet er null Byte.
-  ['public/rechtsprechung/bezuege/STPO.json', 80 * 1024],
+  // DREI Einträge, nicht zwei (Gegenprüfung Runde 1/I3): die erste Fassung
+  // nannte StPO den «grössten Normalfall» und liess BV ungedeckelt — obwohl BV
+  // mit 123.3 KB gzip GRÖSSER ist als StPO mit 102.0. Der Satz widersprach der
+  // Tabelle, die zwei Zeilen darunter stand, und das Loch, das er begründete,
+  // war das grösste der drei. Jetzt steht jede der drei Grössenordnungen unter
+  // eigener Schranke: BGG als Ausreisser, BV und StPO als das, was ein grosser
+  // Erlass normalerweise kostet.
+  //
+  // B7 (David-Auftrag 28.7.2026) hat den Auslieferungs-Deckel «8 je Status»
+  // aufgehoben: statt 24'173 stehen 75'365 Kanten in den Shards, weil jetzt
+  // JEDE Kante eines Artikels ausgeliefert wird. Die Budgets werden deshalb
+  // angehoben — nicht, weil man an sie gestossen ist, sondern weil sie für eine
+  // Datenmenge bemessen waren, die es so nicht mehr gibt (§8: das ist der
+  // Unterschied zwischen einer Massnahme und ihrem Gegenteil).
+  //
+  // GEMESSEN 29.7.2026 (`gzip -6 -c … | wc -c`, Bytes/1024), nach der
+  // kompakteren Serialisierung (`serialisiereShard`, bezuege-bauen.ts). Die
+  // Vorher-Werte sind aus `git show origin/main:<pfad>` durch dieselbe Pipe
+  // gemessen, nicht erinnert (Gegenprüfung Runde 1/I2 — dort stand für BGG
+  // «25.1», eine Zahl, die sich bei keiner gzip-Stufe reproduzieren liess):
+  //   BGG   307'390 B = 300.2 KB   (vorher  45'136 B = 44.1 KB) — Faktor 6.8
+  //   BV    126'210 B = 123.3 KB   (vorher  47'952 B = 46.8 KB) — Faktor 2.6
+  //   StPO  104'483 B = 102.0 KB   (vorher  65'137 B = 63.6 KB) — Faktor 1.6
+  //   StGB   79'663 B =  77.8 KB   (vorher  57'644 B = 56.3 KB)
+  // BGG ist der Ausreisser, weil Art. 42 BGG allein 4'140 Kanten trägt: ihn
+  // zitiert praktisch jedes Bundesgerichtsurteil zur Beschwerdebegründung.
+  //
+  // WARUM 300 KB gzip TRAGBAR SIND (§15, Logikverlust-Bewertung: KEINER — es
+  // wird nichts weggelassen, nur mehr geliefert): der Shard liegt NICHT auf dem
+  // kritischen Pfad. Er wird nur geladen, wenn überhaupt eine Instanz-Facette
+  // aktiv ist (`bezuegeLaden.ts`), dann im Leerlauf und AN DER STELLE des
+  // schlanken norm-index-Shards, nie zusätzlich. Sind alle Facetten aus, kostet
+  // er null Byte. Was er kostet, kostet er dem, der die Vollliste verlangt hat.
+  //
+  // Budgets = Ist + ~28 %. Ein weiterer grosser Kantonskorpus SOLL das Tor rot
+  // machen und eine Entscheidung erzwingen (Kanten je Artikel seitenweise
+  // nachladen? Köpfe weiter auslagern?), statt unbemerkt durchzurutschen.
+  ['public/rechtsprechung/bezuege/BGG.json', 384 * 1024],
+  ['public/rechtsprechung/bezuege/BV.json', 160 * 1024],
+  ['public/rechtsprechung/bezuege/STPO.json', 132 * 1024],
 ];
 // GEMESSEN WIRD DIE AUSGELIEFERTE KOPIE in dist/ — mit public/ nur als Rückfall.
 // Grund (CI-Befund 25.7.2026): `public/such-index/artikel.json` ist gitignored und

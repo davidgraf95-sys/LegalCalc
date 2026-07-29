@@ -1,344 +1,149 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-212.400",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_HB.2022.26": {
-      "zitierung": "Appellationsgericht BS HB.2022.26 vom 11.07.2022",
-      "regesteKurz": "Anordnung der Untersuchungshaft bis zum 2. August 2022",
-      "datum": "2022-07-11",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_KE.2023.28": {
-      "zitierung": "Appellationsgericht BS KE.2023.28 vom 15.05.2024",
-      "regesteKurz": "unentgeltliche Rechtspflege",
-      "datum": "2024-05-15",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_KE.2024.15": {
-      "zitierung": "Appellationsgericht BS KE.2024.15 vom 07.08.2024",
-      "regesteKurz": "Errichtung einer Beistandschaft (BGer 5A_566/2024 vom 10.9.2024) Entzug des Kontozugriffs gestützt auf Art. 395 Abs. 3…",
-      "datum": "2024-08-07",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_KE.2024.4": {
-      "zitierung": "Appellationsgericht BS KE.2024.4 vom 19.06.2024",
-      "regesteKurz": "Regelung des persönlichen Verkehrs gemäss Art. 273–275 ZGB, Sistierung des Verfahrens betreffend Antrag auf Erteilung d…",
-      "datum": "2024-06-19",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_KE.2025.25": {
-      "zitierung": "Appellationsgericht BS KE.2025.25 vom 17.10.2025",
-      "regesteKurz": "Aufhebung des Aufenthaltsbestimmungsrechts sowie Regelung des persönlichen Verkehrs",
-      "datum": "2025-10-17",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_KE.2025.29": {
-      "zitierung": "Appellationsgericht BS KE.2025.29 vom 29.10.2025",
-      "regesteKurz": "Errichtung einer Beistandschaft und Entzug des Kontozugriffs",
-      "datum": "2025-10-29",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_KE.2025.32": {
-      "zitierung": "Appellationsgericht BS KE.2025.32 vom 28.08.2025",
-      "regesteKurz": "Zustimmung zur Wohnungskündigung und Haushaltsauflösung gemäss Art. 416 Abs. 1 Ziff. 1 ZGB",
-      "datum": "2025-08-28",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_KE.2025.33": {
-      "zitierung": "Appellationsgericht BS KE.2025.33 vom 06.02.2026",
-      "regesteKurz": "Ernennung Beistandsperson, Festlegung Platzierungsort",
-      "datum": "2026-02-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_KE.2025.36": {
-      "zitierung": "Appellationsgericht BS KE.2025.36 vom 22.01.2026",
-      "regesteKurz": "Errichtung einer Beistandschaft / Entzug des Kontozugriffs gestützt auf Art. 395 Abs. 3 ZGB",
-      "datum": "2026-01-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_KE.2025.38": {
-      "zitierung": "Appellationsgericht BS KE.2025.38 vom 02.12.2025",
-      "regesteKurz": "Beistandschaft",
-      "datum": "2025-12-02",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_KE.2025.44": {
-      "zitierung": "Appellationsgericht BS KE.2025.44 vom 06.02.2026",
-      "regesteKurz": "vorsorgliche Regelung des persönlichen Verkehrs, Feststellung der Kompetenz der Beistandsperson betreffend eine kinderp…",
-      "datum": "2026-02-06",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_KE.2025.45": {
-      "zitierung": "Appellationsgericht BS KE.2025.45 vom 09.02.2026",
-      "regesteKurz": "vorsorgliche Regelung des persönlichen Verkehrs, Feststellung der Kompetenz der Beistandsperson betreffend eine kinderp…",
-      "datum": "2026-02-09",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_KE.2025.52": {
-      "zitierung": "Appellationsgericht BS KE.2025.52 vom 02.03.2026",
-      "regesteKurz": "Rechtsverzögerung/Rechtsverweigerung",
-      "datum": "2026-03-02",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_SB.2022.5": {
-      "zitierung": "Appellationsgericht BS SB.2022.5 vom 27.09.2024",
-      "regesteKurz": "einfache Körperverletzung, Widerhandlung gegen das Waffengesetz, qualifizierte grobe Verletzung der Verkehrsregeln, Fah…",
-      "datum": "2024-09-27",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2021.220": {
-      "zitierung": "Appellationsgericht BS VD.2021.220 vom 05.08.2022",
-      "regesteKurz": "Aufhebung der vorsorglichen Massnahmen, Errichtung einer Beistandschaft",
-      "datum": "2022-08-05",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_VD.2022.262": {
-      "zitierung": "Appellationsgericht BS VD.2022.262 vom 17.04.2023",
-      "regesteKurz": "Errichtung einer Beistandschaft und Entzug des Kontozugriffs",
-      "datum": "2023-04-17",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "2": [
-      {
-        "key": "bs_appellationsgericht_KE.2023.28",
-        "gewicht": null
-      }
-    ],
-    "6": [
-      {
-        "key": "bs_appellationsgericht_HB.2022.26",
-        "gewicht": null
-      }
-    ],
-    "7": [
-      {
-        "key": "bs_appellationsgericht_VD.2022.262",
-        "gewicht": null
-      }
-    ],
-    "9": [
-      {
-        "key": "bs_appellationsgericht_VD.2021.220",
-        "gewicht": null
-      }
-    ],
-    "14": [
-      {
-        "key": "bs_appellationsgericht_SB.2022.5",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2024.15",
-        "gewicht": null
-      }
-    ],
-    "17": [
-      {
-        "key": "bs_appellationsgericht_KE.2025.52",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.45",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.33",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.44",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.36",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.38",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.29",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.25",
-        "gewicht": null
-      }
-    ],
-    "19": [
-      {
-        "key": "bs_appellationsgericht_KE.2025.45",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.33",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.44",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.36",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.38",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.29",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.25",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_KE.2025.32",
-        "gewicht": null
-      }
-    ],
-    "20": [
-      {
-        "key": "bs_appellationsgericht_KE.2025.52",
-        "gewicht": null
-      }
-    ],
-    "24": [
-      {
-        "key": "bs_appellationsgericht_KE.2024.4",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "2": {
-      "kantonal": 1
-    },
-    "6": {
-      "kantonal": 1
-    },
-    "7": {
-      "kantonal": 1
-    },
-    "9": {
-      "kantonal": 1
-    },
-    "14": {
-      "kantonal": 2
-    },
-    "17": {
-      "kantonal": 118
-    },
-    "19": {
-      "kantonal": 109
-    },
-    "20": {
-      "kantonal": 1
-    },
-    "24": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-212.400",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_HB.2022.26":{"zitierung":"Appellationsgericht BS HB.2022.26 vom 11.07.2022","regesteKurz":"Anordnung der Untersuchungshaft bis zum 2. August 2022","datum":"2022-07-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.12":{"zitierung":"Appellationsgericht BS KE.2023.12 vom 25.09.2023","regesteKurz":"Weisung, Errichtung einer Beistandschaft, Regelung der Kinderbetreuung","datum":"2023-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.14":{"zitierung":"Appellationsgericht BS KE.2023.14 vom 31.08.2023","regesteKurz":"Umwandlung der superprovisorischen Massnahmen in vorsorgliche Massnahme (Aufhebung des Aufenthaltsbestimmungsrechts und…","datum":"2023-08-31","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.16":{"zitierung":"Appellationsgericht BS KE.2023.16 vom 19.03.2024","regesteKurz":"Errichtung einer Beistandschaft","datum":"2024-03-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.17":{"zitierung":"Appellationsgericht BS KE.2023.17 vom 27.09.2023","regesteKurz":"Rechtsverweigerung/Rechtsverzögerung","datum":"2023-09-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.18":{"zitierung":"Appellationsgericht BS KE.2023.18 vom 31.07.2023","regesteKurz":"Zustimmung zum Wechsel des Aufenthaltsorts / Regelung des persönlichen Verkehrs","datum":"2023-07-31","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.2":{"zitierung":"Appellationsgericht BS KE.2023.2 vom 04.07.2023","regesteKurz":"Wechsel der Beistandsperson","datum":"2023-07-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.22":{"zitierung":"Appellationsgericht BS KE.2023.22 vom 02.11.2023","regesteKurz":"Errichtung einer Beistandschaft / Entzug des Kontozugriffs","datum":"2023-11-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.23":{"zitierung":"Appellationsgericht BS KE.2023.23 vom 22.09.2023","regesteKurz":"Zustimmung zur Wohnungskündigung und Haushaltsauflösung","datum":"2023-09-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.24":{"zitierung":"Appellationsgericht BS KE.2023.24 vom 02.10.2023","regesteKurz":"Sistierung des persönlichen Verkehrs / Regelung der Kontakte via Videotelefonie","datum":"2023-10-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.25":{"zitierung":"Appellationsgericht BS KE.2023.25 vom 28.09.2023","regesteKurz":"Errichtung einer Beistandschaft","datum":"2023-09-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.26":{"zitierung":"Appellationsgericht BS KE.2023.26 vom 14.11.2023","regesteKurz":"Regelung Besuchskontakte (Bestätigung vorsorgliche Massnahme)","datum":"2023-11-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.27":{"zitierung":"Appellationsgericht BS KE.2023.27 vom 12.12.2023","regesteKurz":"Wechsel der Beistandsperson","datum":"2023-12-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.28":{"zitierung":"Appellationsgericht BS KE.2023.28 vom 15.05.2024","regesteKurz":"unentgeltliche Rechtspflege","datum":"2024-05-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.29":{"zitierung":"Appellationsgericht BS KE.2023.29 vom 15.12.2023","regesteKurz":"Regelung des persönlichen Verkehrs mit Weisung und Strafandrohung","datum":"2023-12-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.3":{"zitierung":"Appellationsgericht BS KE.2023.3 vom 25.09.2023","regesteKurz":"Errichtung einer Beistandschaft für E____ (BGer 5A_870/2023 vom 6.12.2023)","datum":"2023-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.30":{"zitierung":"Appellationsgericht BS KE.2023.30 vom 16.09.2023","regesteKurz":"Beistandschaft: Abweisung des Aufhebungsantrags / Anpassung des Auftrags (verspätete Beschwerde)","datum":"2023-09-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.32":{"zitierung":"Appellationsgericht BS KE.2023.32 vom 10.04.2024","regesteKurz":"Kindesschutzverfahren: Verzicht auf weitere Massnahmen","datum":"2024-04-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.34":{"zitierung":"Appellationsgericht BS KE.2023.34 vom 26.10.2023","regesteKurz":"Errichtung einer Beistandschaft / Entzug des Kontozugriffs","datum":"2023-10-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.35":{"zitierung":"Appellationsgericht BS KE.2023.35 vom 26.01.2024","regesteKurz":"Errichtung einer Beistandschaft / Entzug des Kontozugriffs","datum":"2024-01-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.37":{"zitierung":"Appellationsgericht BS KE.2023.37 vom 13.02.2024","regesteKurz":"Aufhebung des Aufenthaltsbestimmungsrechts Verzicht auf eine Beistandschaft Weisung","datum":"2024-02-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.39":{"zitierung":"Appellationsgericht BS KE.2023.39 vom 27.06.2024","regesteKurz":"Errichtung einer Beistandschaft / Entzug des Kontozugriffs","datum":"2024-06-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.4":{"zitierung":"Appellationsgericht BS KE.2023.4 vom 20.04.2023","regesteKurz":"Errichtung einer Beistandschaft","datum":"2023-04-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.40":{"zitierung":"Appellationsgericht BS KE.2023.40 vom 02.02.2024","regesteKurz":"Errichtung einer Beistandschaft (BGer: 5A_174/2024 vom 15.3.2024)","datum":"2024-02-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.41":{"zitierung":"Appellationsgericht BS KE.2023.41 vom 11.01.2024","regesteKurz":"Aufhebung des Aufenthaltsbestimmungsrechtes, Errichtung einer Beistandschaft","datum":"2024-01-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.43":{"zitierung":"Appellationsgericht BS KE.2023.43 vom 02.02.2024","regesteKurz":"Errichtung einer Beistandschaft / Entzug des Kontozugriffs","datum":"2024-02-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.44":{"zitierung":"Appellationsgericht BS KE.2023.44 vom 23.11.2023","regesteKurz":"Errichtung einer Beistandschaft","datum":"2023-11-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.45":{"zitierung":"Appellationsgericht BS KE.2023.45 vom 08.03.2024","regesteKurz":"Regelung des persönlichen Verkehrs (BGer 5A_265/2024 vom 30. Juli 2024)","datum":"2024-03-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.47":{"zitierung":"Appellationsgericht BS KE.2023.47 vom 04.03.2025","regesteKurz":"Aufenthaltsbestimmungsrecht / Änderung der Kompetenzen des Beistands","datum":"2025-03-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.49":{"zitierung":"Appellationsgericht BS KE.2023.49 vom 22.04.2024","regesteKurz":"Genehmigung Schlussbericht und Abrechnung","datum":"2024-04-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.51":{"zitierung":"Appellationsgericht BS KE.2023.51 vom 14.03.2024","regesteKurz":"Errichtung einer Beistandschaft, Entzug des Kontozugriffs","datum":"2024-03-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.52":{"zitierung":"Appellationsgericht BS KE.2023.52 vom 10.04.2024","regesteKurz":"Errichtung einer Beistandschaft und Entzug des Kontozugriffs","datum":"2024-04-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.53":{"zitierung":"Appellationsgericht BS KE.2023.53 vom 07.05.2024","regesteKurz":"Errichtung einer Beistandschaft Entzug des Kontozugriffs gestützt auf Art. 395 Abs. 3 ZGB Ermächtigung zur Wohnungskünd…","datum":"2024-05-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2023.8":{"zitierung":"Appellationsgericht BS KE.2023.8 vom 07.06.2023","regesteKurz":"Wechsel des Aufenthaltsortes des Kindes (BGer 5A_536/2023 vom 7.11.2023)","datum":"2023-06-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.11":{"zitierung":"Appellationsgericht BS KE.2024.11 vom 01.07.2024","regesteKurz":"vorsorgliche Aufhebung des Aufenthaltsbestimmungsrechts und Platzierung","datum":"2024-07-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.15":{"zitierung":"Appellationsgericht BS KE.2024.15 vom 07.08.2024","regesteKurz":"Errichtung einer Beistandschaft (BGer 5A_566/2024 vom 10.9.2024) Entzug des Kontozugriffs gestützt auf Art. 395 Abs. 3…","datum":"2024-08-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.16":{"zitierung":"Appellationsgericht BS KE.2024.16 vom 24.10.2024","regesteKurz":"Wechsel der Beistandsperson und Regelung des persönlichen Verkehrs","datum":"2024-10-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.17":{"zitierung":"Appellationsgericht BS KE.2024.17 vom 04.11.2024","regesteKurz":"Nichtanerkennung des Urteils des Tribunal Judiciaire de Paris vom 13. März 2024 gestützt auf Art. 24 HKsÜ (BGer 5A_858/…","datum":"2024-11-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.18":{"zitierung":"Appellationsgericht BS KE.2024.18 vom 06.10.2024","regesteKurz":"Errichtung einer Beistandschaft für A____ und Entzug des Kontozugriffs","datum":"2024-10-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.19":{"zitierung":"Appellationsgericht BS KE.2024.19 vom 06.10.2024","regesteKurz":"Errichtung einer Beistandschaft für A____ und Entzug des Kontozugriffs","datum":"2024-10-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.2":{"zitierung":"Appellationsgericht BS KE.2024.2 vom 05.04.2024","regesteKurz":"Kindesschutzmassnahmen","datum":"2024-04-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.21":{"zitierung":"Appellationsgericht BS KE.2024.21 vom 10.11.2024","regesteKurz":"Genehmigung Honorarnote Kindesvertreterin","datum":"2024-11-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.24":{"zitierung":"Appellationsgericht BS KE.2024.24 vom 29.10.2024","regesteKurz":"Aufhebung der Beistandschaft und Handlungen der Beistandsperson","datum":"2024-10-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.25":{"zitierung":"Appellationsgericht BS KE.2024.25 vom 27.05.2025","regesteKurz":"Errichtung einer Beistandschaft / Entzug des Kontozugriffs gestützt auf Art. 395 Abs. 3 ZGB","datum":"2025-05-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.26":{"zitierung":"Appellationsgericht BS KE.2024.26 vom 09.12.2024","regesteKurz":"Errichtung einer Beistandschaft und Entzug des Kontozugriffs","datum":"2024-12-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.28":{"zitierung":"Appellationsgericht BS KE.2024.28 vom 22.11.2024","regesteKurz":"Umwandlung der superprovisorischen Massnahme in vorsorgliche Massnahmen gemäss Art. 445 Abs. 1 ZGB: Aufhebung des Aufen…","datum":"2024-11-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.29":{"zitierung":"Appellationsgericht BS KE.2024.29 vom 18.12.2024","regesteKurz":"Errichtung einer Beistandschaft","datum":"2024-12-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.31":{"zitierung":"Appellationsgericht BS KE.2024.31 vom 16.12.2024","regesteKurz":"Aufhebung des elterlichen Aufenthaltsbestimmungsrechts und Unterbringung in einem Heim","datum":"2024-12-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.32":{"zitierung":"Appellationsgericht BS KE.2024.32 vom 17.01.2025","regesteKurz":"Errichtung einer Beistandschaft und Entzug des Kontozugriffs","datum":"2025-01-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.34":{"zitierung":"Appellationsgericht BS KE.2024.34 vom 20.01.2025","regesteKurz":"Feststellung des Dahinfallens der Kindesschutzmassnahme infolge Volljährigkeit","datum":"2025-01-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.35":{"zitierung":"Appellationsgericht BS KE.2024.35 vom 03.04.2025","regesteKurz":"Errichtung einer Beistandschaft sowie Entzug des Kontozugriffs gestützt auf Art. 395 Abs. 3 ZGB","datum":"2025-04-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.36":{"zitierung":"Appellationsgericht BS KE.2024.36 vom 23.01.2025","regesteKurz":"Anordnung vorsorglicher Massnahmen (Aufhebung des Aufenthaltsbe-stimmungsrechtes und Regelung des persönlichen Verkehrs)","datum":"2025-01-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.37":{"zitierung":"Appellationsgericht BS KE.2024.37 vom 11.04.2025","regesteKurz":"Aufhebung der Beistandschaft, Wechsel der Beistandsperson, Erweiterung des Auftrags","datum":"2025-04-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.38":{"zitierung":"Appellationsgericht BS KE.2024.38 vom 08.05.2025","regesteKurz":"Zustimmung zur Haushaltsauflösung gemäss Art. 416 Abs. 1 Ziff. 1 ZGB","datum":"2025-05-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.4":{"zitierung":"Appellationsgericht BS KE.2024.4 vom 19.06.2024","regesteKurz":"Regelung des persönlichen Verkehrs gemäss Art. 273–275 ZGB, Sistierung des Verfahrens betreffend Antrag auf Erteilung d…","datum":"2024-06-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.40":{"zitierung":"Appellationsgericht BS KE.2024.40 vom 07.08.2025","regesteKurz":"Kostenentscheid Gutachten","datum":"2025-08-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.41":{"zitierung":"Appellationsgericht BS KE.2024.41 vom 29.07.2025","regesteKurz":"Genehmigung Honorarnote Kindesvertreterin","datum":"2025-07-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.6":{"zitierung":"Appellationsgericht BS KE.2024.6 vom 31.10.2024","regesteKurz":"unentgeltliche Rechtspflege","datum":"2024-10-31","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2024.7":{"zitierung":"Appellationsgericht BS KE.2024.7 vom 14.07.2024","regesteKurz":"Ablehnung der Gesuche um Akteneinsicht, Wechsel der Vormundsperson, Besuchsregelung sowie Platzierung von C____ bei ihr…","datum":"2024-07-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.1":{"zitierung":"Appellationsgericht BS KE.2025.1 vom 27.05.2025","regesteKurz":"Erteilung einer Weisung an die Eltern und Errichtung einer Erziehungsaufsicht (BGer_568/2025 vom 29. August 2025)","datum":"2025-05-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.10":{"zitierung":"Appellationsgericht BS KE.2025.10 vom 23.06.2025","regesteKurz":"- Vorsorgliche Aufhebung des Aufenthaltsbestimmungsrechtes gemäss Art. 310 Abs. 1 ZGB i.V.m. Art. 445 Abs. 1 ZGB (BGer…","datum":"2025-06-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.19":{"zitierung":"Appellationsgericht BS KE.2025.19 vom 03.06.2025","regesteKurz":"Superprovisorische Aufhebung des Aufenthaltsbestimmungsrechts gemäss Art. 310 Abs. 1 i.V.m. Art. 445 Abs. 2 ZGB","datum":"2025-06-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.23":{"zitierung":"Appellationsgericht BS KE.2025.23 vom 12.08.2025","regesteKurz":"Ernennung","datum":"2025-08-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.25":{"zitierung":"Appellationsgericht BS KE.2025.25 vom 17.10.2025","regesteKurz":"Aufhebung des Aufenthaltsbestimmungsrechts sowie Regelung des persönlichen Verkehrs","datum":"2025-10-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.29":{"zitierung":"Appellationsgericht BS KE.2025.29 vom 29.10.2025","regesteKurz":"Errichtung einer Beistandschaft und Entzug des Kontozugriffs","datum":"2025-10-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.3":{"zitierung":"Appellationsgericht BS KE.2025.3 vom 13.05.2025","regesteKurz":"Abklärungsauftrag im Kindesschutzverfahren","datum":"2025-05-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.30":{"zitierung":"Appellationsgericht BS KE.2025.30 vom 31.07.2025","regesteKurz":"Wiederaufnahme der Kontakte zum Vater","datum":"2025-07-31","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.32":{"zitierung":"Appellationsgericht BS KE.2025.32 vom 28.08.2025","regesteKurz":"Zustimmung zur Wohnungskündigung und Haushaltsauflösung gemäss Art. 416 Abs. 1 Ziff. 1 ZGB","datum":"2025-08-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.33":{"zitierung":"Appellationsgericht BS KE.2025.33 vom 06.02.2026","regesteKurz":"Ernennung Beistandsperson, Festlegung Platzierungsort","datum":"2026-02-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.36":{"zitierung":"Appellationsgericht BS KE.2025.36 vom 22.01.2026","regesteKurz":"Errichtung einer Beistandschaft / Entzug des Kontozugriffs gestützt auf Art. 395 Abs. 3 ZGB","datum":"2026-01-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.38":{"zitierung":"Appellationsgericht BS KE.2025.38 vom 02.12.2025","regesteKurz":"Beistandschaft","datum":"2025-12-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.44":{"zitierung":"Appellationsgericht BS KE.2025.44 vom 06.02.2026","regesteKurz":"vorsorgliche Regelung des persönlichen Verkehrs, Feststellung der Kompetenz der Beistandsperson betreffend eine kinderp…","datum":"2026-02-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.45":{"zitierung":"Appellationsgericht BS KE.2025.45 vom 09.02.2026","regesteKurz":"vorsorgliche Regelung des persönlichen Verkehrs, Feststellung der Kompetenz der Beistandsperson betreffend eine kinderp…","datum":"2026-02-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.52":{"zitierung":"Appellationsgericht BS KE.2025.52 vom 02.03.2026","regesteKurz":"Rechtsverzögerung/Rechtsverweigerung","datum":"2026-03-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.7":{"zitierung":"Appellationsgericht BS KE.2025.7 vom 22.08.2025","regesteKurz":"Errichtung einer Vormundschaft gemäss Art. 327a ZGB","datum":"2025-08-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_KE.2025.9":{"zitierung":"Appellationsgericht BS KE.2025.9 vom 28.08.2025","regesteKurz":"Aufhebung des Aufenthaltsbestimmungsrechts, verdeckte Platzierung, Regelung des persönlichen Verkehrs","datum":"2025-08-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2022.5":{"zitierung":"Appellationsgericht BS SB.2022.5 vom 27.09.2024","regesteKurz":"einfache Körperverletzung, Widerhandlung gegen das Waffengesetz, qualifizierte grobe Verletzung der Verkehrsregeln, Fah…","datum":"2024-09-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.100":{"zitierung":"Appellationsgericht BS VD.2021.100 vom 02.12.2022","regesteKurz":"Erteilung der gemeinsamen elterlichen Sorge, Betreuungsregelung (Entscheid der KESB Basel-Stadt vom 8. April 2021)","datum":"2022-12-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.166":{"zitierung":"Appellationsgericht BS VD.2021.166 vom 17.08.2022","regesteKurz":"Errichtung einer Beistandschaft","datum":"2022-08-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.178":{"zitierung":"Appellationsgericht BS VD.2021.178 vom 03.02.2022","regesteKurz":"Aufenthaltsbestimmungsrecht und Platzierung","datum":"2022-02-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.178-20230117":{"zitierung":"Appellationsgericht BS VD.2021.178 vom 17.01.2023","regesteKurz":"Aufenthaltsbestimmungsrecht und Platzierung","datum":"2023-01-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.188":{"zitierung":"Appellationsgericht BS VD.2021.188 vom 30.11.2022","regesteKurz":"Errichtung einer Beistandschaft","datum":"2022-11-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.192":{"zitierung":"Appellationsgericht BS VD.2021.192 vom 31.10.2022","regesteKurz":"Unentgeltliche Rechtspflege","datum":"2022-10-31","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.215":{"zitierung":"Appellationsgericht BS VD.2021.215 vom 28.06.2022","regesteKurz":"Errichtung einer Beistandschaft","datum":"2022-06-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.220":{"zitierung":"Appellationsgericht BS VD.2021.220 vom 05.08.2022","regesteKurz":"Aufhebung der vorsorglichen Massnahmen, Errichtung einer Beistandschaft","datum":"2022-08-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.250":{"zitierung":"Appellationsgericht BS VD.2021.250 vom 08.07.2022","regesteKurz":"Rechtsverweigerung/Rechtsverzögerung","datum":"2022-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.270":{"zitierung":"Appellationsgericht BS VD.2021.270 vom 08.12.2022","regesteKurz":"Ablehnung Antrag des Vaters auf geteilte Obhut (BGer 5A_192/2023)","datum":"2022-12-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.281":{"zitierung":"Appellationsgericht BS VD.2021.281 vom 24.05.2022","regesteKurz":"Regelung des persönlichen Verkehrs, Weisungen und Errichtung einer Beistandschaft","datum":"2022-05-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.284":{"zitierung":"Appellationsgericht BS VD.2021.284 vom 16.02.2023","regesteKurz":"Aufhebung des Aufenthaltsbestimmungsrechts / Errichtung einer Erziehungsbeistandschaft / Erteilung einer Weisung bzw. E…","datum":"2023-02-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.87":{"zitierung":"Appellationsgericht BS VD.2021.87 vom 14.02.2022","regesteKurz":"Errichtung einer Mitwirkungsbeistandschaft gemäss Art. 396 ZGB und Ermächtigung zur Kontoeröffnung gemäss Art. 392 Ziff…","datum":"2022-02-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2021.88":{"zitierung":"Appellationsgericht BS VD.2021.88 vom 01.06.2022","regesteKurz":"Errichtung einer Beistandschaft","datum":"2022-06-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.103":{"zitierung":"Appellationsgericht BS VD.2022.103 vom 29.06.2023","regesteKurz":"Bestätigung der Beiständin, Sistierung des persönlichen Verkehrs und Anordnung eines Annäherungs- und Kontaktverbots (B…","datum":"2023-06-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.105":{"zitierung":"Appellationsgericht BS VD.2022.105 vom 25.07.2022","regesteKurz":"Beschwerdefrist","datum":"2022-07-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.133":{"zitierung":"Appellationsgericht BS VD.2022.133 vom 01.09.2022","regesteKurz":"Regelung des persönlichen Verkehrs","datum":"2022-09-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.140":{"zitierung":"Appellationsgericht BS VD.2022.140 vom 26.09.2022","regesteKurz":"Aufhebung des Aufenthaltsbestimmungsrechts und Unterbringung","datum":"2022-09-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.145":{"zitierung":"Appellationsgericht BS VD.2022.145 vom 29.11.2022","regesteKurz":"Aufenthaltsbestimmungsrecht und Platzierung","datum":"2022-11-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.164":{"zitierung":"Appellationsgericht BS VD.2022.164 vom 08.11.2022","regesteKurz":"Erteilung der gemeinsamen elterlichen Sorge (VD.2021.167) Erweiterung der Aufgaben und Befugnisse der Beistandschaft un…","datum":"2022-11-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.171":{"zitierung":"Appellationsgericht BS VD.2022.171 vom 19.01.2023","regesteKurz":"Erteilung der gemeinsamen elterlichen Sorge","datum":"2023-01-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.177":{"zitierung":"Appellationsgericht BS VD.2022.177 vom 19.10.2022","regesteKurz":"Anordnung von vorsorglichen Massnahmen (Regelung des persönlichen Umgangs zwischen Eltern und Kind gemäss Art. 273-275…","datum":"2022-10-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.187":{"zitierung":"Appellationsgericht BS VD.2022.187 vom 24.11.2022","regesteKurz":"Errichtung einer Beistandschaft","datum":"2022-11-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.198":{"zitierung":"Appellationsgericht BS VD.2022.198 vom 25.11.2022","regesteKurz":"Anordnung von vorsorglichen Massnahmen: Zuteilung der Obhut an die Mutter, Regelung des persönlichen Verkehrs, Ausreise…","datum":"2022-11-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.201":{"zitierung":"Appellationsgericht BS VD.2022.201 vom 09.02.2023","regesteKurz":"Errichtung von zwei Beistandschaften gemäss Art. 308 Abs. 1 und 2 ZGB (VD.2022.51) Aufhebung des Aufenthaltsbestimmungs…","datum":"2023-02-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.203":{"zitierung":"Appellationsgericht BS VD.2022.203 vom 20.01.2023","regesteKurz":"Errichtung einer Beistandschaft","datum":"2023-01-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.208":{"zitierung":"Appellationsgericht BS VD.2022.208 vom 14.12.2022","regesteKurz":"Zustimmung zu einem Liegenschaftsverkauf gemäss Art. 416 Abs. 1 Ziff. 4 ZGB","datum":"2022-12-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.210":{"zitierung":"Appellationsgericht BS VD.2022.210 vom 06.11.2024","regesteKurz":"Errichtung einer Beistandschaft","datum":"2024-11-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.216":{"zitierung":"Appellationsgericht BS VD.2022.216 vom 19.04.2024","regesteKurz":"Aufhebung des Aufenthaltsbestimmungsrechts und weitere Massnahmen","datum":"2024-04-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.255":{"zitierung":"Appellationsgericht BS VD.2022.255 vom 16.02.2023","regesteKurz":"Errichtung einer Beistandschaft gemäss Art. 308 Abs. 1 und 2 ZGB und Erteilung der gemeinsamen elterlichen Sorge (BGer…","datum":"2023-02-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.262":{"zitierung":"Appellationsgericht BS VD.2022.262 vom 17.04.2023","regesteKurz":"Errichtung einer Beistandschaft und Entzug des Kontozugriffs","datum":"2023-04-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.275":{"zitierung":"Appellationsgericht BS VD.2022.275 vom 02.06.2023","regesteKurz":"Aufhebung der Beistandschaft","datum":"2023-06-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.28":{"zitierung":"Appellationsgericht BS VD.2022.28 vom 08.08.2022","regesteKurz":"Errichtung einer Beistandschaft / Entzug des Kontozugriffs","datum":"2022-08-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.284":{"zitierung":"Appellationsgericht BS VD.2022.284 vom 17.05.2023","regesteKurz":"vorsorgliche Massnahmen","datum":"2023-05-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.33":{"zitierung":"Appellationsgericht BS VD.2022.33 vom 28.09.2022","regesteKurz":"Ernennungsentscheid","datum":"2022-09-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.39":{"zitierung":"Appellationsgericht BS VD.2022.39 vom 06.05.2022","regesteKurz":"Anordnung von vorsorglichen Massnahmen (Errichtung einer Beistandschaft, Einschränkung der elterlichen Sorge hinsichtli…","datum":"2022-05-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.58":{"zitierung":"Appellationsgericht BS VD.2022.58 vom 30.08.2022","regesteKurz":"Ablehnung des Antrags auf Erteilung der gemeinsamen elterlichen Sorge / Regelung des persönlichen Verkehrs","datum":"2022-08-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.63":{"zitierung":"Appellationsgericht BS VD.2022.63 vom 03.11.2022","regesteKurz":"Errichtung einer Beistandschaft","datum":"2022-11-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.74":{"zitierung":"Appellationsgericht BS VD.2022.74 vom 14.06.2022","regesteKurz":"Sistierung des persönlichen Verkehrs des Vaters / Erteilung einer Weisung","datum":"2022-06-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.86":{"zitierung":"Appellationsgericht BS VD.2022.86 vom 23.09.2022","regesteKurz":"Errichtung einer Beistandschaft","datum":"2022-09-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.88":{"zitierung":"Appellationsgericht BS VD.2022.88 vom 20.12.2022","regesteKurz":"Errichtung einer Beistandschaft / Entzug des Kontozugriffs / Einschränkung der Handlungsfähigkeit","datum":"2022-12-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.9":{"zitierung":"Appellationsgericht BS VD.2022.9 vom 26.04.2022","regesteKurz":"Aufhebung des Aufenthaltsbestimmungsrechts gem. Art. 310 Abs.1 ZBG Regelung des Besuchsrechts gem. Art. 274 Abs. 2 ZGB…","datum":"2022-04-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.94":{"zitierung":"Appellationsgericht BS VD.2022.94 vom 27.09.2022","regesteKurz":"Errichtung einer Beistandschaft / Entzug des Kontozugriffs","datum":"2022-09-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"2":[{"key":"bs_appellationsgericht_KE.2023.28","gewicht":null}],
+"6":[{"key":"bs_appellationsgericht_HB.2022.26","gewicht":null}],
+"7":[{"key":"bs_appellationsgericht_VD.2022.262","gewicht":null}],
+"9":[{"key":"bs_appellationsgericht_VD.2021.220","gewicht":null}],
+"14":[{"key":"bs_appellationsgericht_SB.2022.5","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.15","gewicht":null}],
+"17":[{"key":"bs_appellationsgericht_KE.2025.52","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.45","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.33","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.44","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.36","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.38","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.29","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.25","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.32","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.9","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.7","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.23","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.40","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.30","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.41","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.10","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.19","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.25","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.1","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.3","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.38","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.37","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.35","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.47","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.36","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.34","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.32","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.29","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.31","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.26","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.28","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.21","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.210","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.17","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.6","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.24","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.16","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.18","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.19","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.15","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.7","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.11","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.39","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.4","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.28","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.53","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.49","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.216","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.32","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.52","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.2","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.16","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.51","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.45","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.37","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.40","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.43","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.35","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.41","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.29","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.27","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.44","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.26","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.22","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.34","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.24","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.25","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.17","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.12","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.3","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.23","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.30","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.14","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.18","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.2","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.103","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.8","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.275","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.284","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.4","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.262","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.284","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.255","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.201","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.203","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.171","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.178-20230117","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.88","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.208","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.270","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.100","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.188","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.145","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.198","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.187","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.164","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.63","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.192","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.177","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.33","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.94","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.140","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.86","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.133","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.58","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.28","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.220","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.105","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.250","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.215","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.74","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.88","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.281","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.39","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.9","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.87","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.178","gewicht":null}],
+"19":[{"key":"bs_appellationsgericht_KE.2025.45","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.33","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.44","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.36","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.38","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.29","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.25","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.32","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.9","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.7","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.23","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.40","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.41","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.10","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.25","gewicht":null},{"key":"bs_appellationsgericht_KE.2025.1","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.38","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.37","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.35","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.47","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.36","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.34","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.32","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.29","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.31","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.26","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.28","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.21","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.210","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.6","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.24","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.16","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.18","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.19","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.15","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.7","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.11","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.39","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.4","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.28","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.53","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.49","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.216","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.32","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.52","gewicht":null},{"key":"bs_appellationsgericht_KE.2024.2","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.16","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.51","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.45","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.37","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.40","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.43","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.35","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.41","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.29","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.27","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.44","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.26","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.22","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.34","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.24","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.25","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.12","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.3","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.23","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.30","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.14","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.18","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.2","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.103","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.8","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.275","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.284","gewicht":null},{"key":"bs_appellationsgericht_KE.2023.4","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.262","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.284","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.255","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.201","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.203","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.171","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.178-20230117","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.88","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.208","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.270","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.100","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.188","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.145","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.198","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.164","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.63","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.177","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.94","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.140","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.86","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.133","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.58","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.166","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.28","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.220","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.105","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.250","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.215","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.74","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.88","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.281","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.39","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.9","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.87","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.178","gewicht":null}],
+"20":[{"key":"bs_appellationsgericht_KE.2025.52","gewicht":null}],
+"24":[{"key":"bs_appellationsgericht_KE.2024.4","gewicht":null}]
+},
+"gesamtProArtikel":{
+"2":{"kantonal":1},
+"6":{"kantonal":1},
+"7":{"kantonal":1},
+"9":{"kantonal":1},
+"14":{"kantonal":2},
+"17":{"kantonal":118},
+"19":{"kantonal":109},
+"20":{"kantonal":1},
+"24":{"kantonal":1}
+}
 }

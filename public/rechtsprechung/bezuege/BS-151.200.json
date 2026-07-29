@@ -1,32 +1,14 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-151.200",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_SB.2020.102": {
-      "zitierung": "Appellationsgericht BS SB.2020.102 vom 18.01.2023",
-      "regesteKurz": "Geldwäscherei",
-      "datum": "2023-01-18",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "2": [
-      {
-        "key": "bs_appellationsgericht_SB.2020.102",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "2": {
-      "kantonal": 1
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-151.200",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_SB.2020.102":{"zitierung":"Appellationsgericht BS SB.2020.102 vom 18.01.2023","regesteKurz":"Geldwäscherei","datum":"2023-01-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"2":[{"key":"bs_appellationsgericht_SB.2020.102","gewicht":null}]
+},
+"gesamtProArtikel":{
+"2":{"kantonal":1}
+}
 }

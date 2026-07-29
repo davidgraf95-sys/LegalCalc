@@ -1,48 +1,15 @@
 {
-  "erzeugt": "2026-07-28",
-  "erlass": "BS-258.100",
-  "erlassEbene": "kanton",
-  "dokumente": {
-    "bs_appellationsgericht_DGS.2025.11": {
-      "zitierung": "Appellationsgericht BS DGS.2025.11 vom 22.05.2025",
-      "regesteKurz": "Gesuch um Erlass der Verfahrenskosten (Entscheid Appellationsgericht SB.2022.130 vom 1. Februar 2024)",
-      "datum": "2025-05-22",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    },
-    "bs_appellationsgericht_DGS.2025.6": {
-      "zitierung": "Appellationsgericht BS DGS.2025.6 vom 10.03.2025",
-      "regesteKurz": "Gesuch um Erlass der Verfahrenskosten (Entscheid des Appellationsgerichts SB.2019.93 + SB.2020.64 vom 28. April 2022)",
-      "datum": "2025-03-10",
-      "facetten": {
-        "quelltyp": "rechtsprechung",
-        "ebene": "kanton",
-        "kanton": "BS",
-        "gericht": "bs_appellationsgericht",
-        "status": "kantonal"
-      }
-    }
-  },
-  "proArtikel": {
-    "6": [
-      {
-        "key": "bs_appellationsgericht_DGS.2025.11",
-        "gewicht": null
-      },
-      {
-        "key": "bs_appellationsgericht_DGS.2025.6",
-        "gewicht": null
-      }
-    ]
-  },
-  "gesamtProArtikel": {
-    "6": {
-      "kantonal": 2
-    }
-  }
+"erzeugt":"2026-07-28",
+"erlass":"BS-258.100",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_DGS.2025.11":{"zitierung":"Appellationsgericht BS DGS.2025.11 vom 22.05.2025","regesteKurz":"Gesuch um Erlass der Verfahrenskosten (Entscheid Appellationsgericht SB.2022.130 vom 1. Februar 2024)","datum":"2025-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_DGS.2025.6":{"zitierung":"Appellationsgericht BS DGS.2025.6 vom 10.03.2025","regesteKurz":"Gesuch um Erlass der Verfahrenskosten (Entscheid des Appellationsgerichts SB.2019.93 + SB.2020.64 vom 28. April 2022)","datum":"2025-03-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"6":[{"key":"bs_appellationsgericht_DGS.2025.11","gewicht":null},{"key":"bs_appellationsgericht_DGS.2025.6","gewicht":null}]
+},
+"gesamtProArtikel":{
+"6":{"kantonal":2}
+}
 }

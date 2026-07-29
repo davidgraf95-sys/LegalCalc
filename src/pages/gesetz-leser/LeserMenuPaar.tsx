@@ -20,12 +20,16 @@ import { LeserAnsichtMenu } from './LeserAnsichtMenu';
 import { LeserRechtsprechungMenu } from './LeserRechtsprechungMenu';
 import type { LinienProfil } from './linienAufbau';
 import type { Histogramm, Zeitbereich } from './bezugZeit';
+import type { BezugStatus } from '../../lib/verzahnung/facetten';
+import type { KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 
 export function LeserMenuPaar({
-  kantoneVerfuegbar, bezugHistogramm, bezugBereich, linien, fussnotenAnzahl,
+  kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich, linien, fussnotenAnzahl,
 }: {
   /** B4: Kantone, zu denen dieser Erlass Kanten hat (Kanton-Schalter). */
   kantoneVerfuegbar?: string[];
+  /** B7/c: Kanten je Instanz-Klasse in diesem Erlass (Zahl am Schalter). */
+  klassenImErlass?: Partial<Record<BezugStatus, KlassenZahlen>>;
   /** B5: Jahres-Verteilung der Kanten (Zeitstrahl). */
   bezugHistogramm?: Histogramm;
   /** B5: aktiver Von-Bis-Bereich. */
@@ -36,6 +40,7 @@ export function LeserMenuPaar({
   return (
     <div className="flex items-center gap-1">
       <LeserRechtsprechungMenu kantoneVerfuegbar={kantoneVerfuegbar}
+        klassenImErlass={klassenImErlass}
         histogramm={bezugHistogramm} bereich={bezugBereich} />
       <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null}
         linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />

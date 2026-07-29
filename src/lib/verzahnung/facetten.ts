@@ -60,30 +60,32 @@ export interface BezugsFacetten {
   status: BezugStatus;
 }
 
-/**
- * Deckel je Status-Klasse. Bewusst KLASSENWEISE und nicht global:
- *
- * Ein gemeinsamer Deckel über alle Klassen wäre kein Deckel, sondern eine
- * Verdrängung. Die Rangordnung stellt Leitentscheide nach vorn (richtig, §8) —
- * mit EINEM Topf von 8 stünden nach dem Backfill an einem viel zitierten Artikel
- * acht BGE, und der erste kantonale Entscheid käme nie in Sichtweite. Die
- * Facette wäre dann formal vorhanden und praktisch leer: ein Filter, der nichts
- * zu filtern hat. Je Klasse ein eigener Deckel heisst: jede Klasse ist mit ihren
- * stärksten Vertretern präsent, und der Nutzer entscheidet über den Filter (B4),
- * was er sehen will — nicht die Sortierung für ihn.
- *
- * Der Wert 8 ist bewusst derselbe wie `LEITFAELLE_PRO_ARTIKEL` im Bestand
- * (entscheide-schreiben.ts) — die Bundesgerichts-Projektion des generischen
- * Index muss byte-gleich zum bestehenden `proNormArtikel` bleiben (§6), und das
- * geht nur mit identischem Deckel.
- */
-export const DECKEL_JE_STATUS: Readonly<Record<BezugStatus, number>> = {
-  bge: 8,
-  bger: 8,
-  eidg: 8,
-  kantonal: 8,
-  material: 8,
-};
+// ── DER DECKEL «8 JE STATUS» IST AUFGEHOBEN (B7, David-Auftrag 28.7.2026) ────
+//
+// `DECKEL_JE_STATUS` stand bis B6 hier und begrenzte die AUSGELIEFERTEN Kanten
+// je Status-Klasse und Artikel auf acht. Die Konstante ist ERSATZLOS entfernt,
+// nicht auf einen höheren Wert gesetzt — ein Deckel mit grösserer Zahl wäre
+// derselbe Mechanismus und dieselbe stille Auswahl, nur später sichtbar.
+//
+// WORTLAUT DES AUFTRAGS: «or 41 dort sind nur ein teil der entscheide verlinkt
+// … mach es so dass man durchscrollen kann und dann je eine linie für jede
+// instanz und alle sichtbar.» Der Deckel war eine ANZEIGE-Entscheidung, die in
+// der Datenschicht getroffen wurde; damit konnte die Anzeige sie nicht mehr
+// revidieren. Sie liegt jetzt dort, wo sie hingehört: die Shards liefern jede
+// Kante, die Linie am Artikel scrollt.
+//
+// `gesamtProArtikel` BLEIBT im Shard (siehe `BezugsShard` im Generator). Die
+// Zahl ist jetzt gleich der gelieferten Menge, und genau das prüft das Tor
+// check:bezuege als Vollständigkeits-Invariante: gelieferte Kanten je Status ==
+// gesamtProArtikel. Ein Feld, das nichts mehr einschränkt, ist damit kein
+// totes Feld, sondern die Gegenrechnung — und es bleibt die Bezugsgrösse für
+// die UI-Zähler, sobald ein Zeit- oder Kantonsfilter die Anzeige verkürzt
+// («12 von 30 im Zeitraum», §8).
+//
+// NICHT BETROFFEN: der Deckel `LEITFAELLE_PRO_ARTIKEL` = 8 der
+// BUNDESGERICHTS-PROJEKTION (entscheide-schreiben.ts). Er gehört zum
+// Bestands-Artefakt norm-index.json und bleibt unverändert — sonst hätte dieser
+// Schritt ein ausgeliefertes Bestands-Artefakt verändert (§6).
 
 /**
  * Anzeige-Reihenfolge der Status-Klassen (deklariert, §2 — nie aus Zähler oder
@@ -181,6 +183,39 @@ export function facettenFuerMaterial(herausgeber: string, kanton = 'CH'): Bezugs
  */
 export function vergleicheStatus(a: BezugStatus, b: BezugStatus): number {
   return STATUS_RANG[a] - STATUS_RANG[b];
+}
+
+/**
+ * Anzeige-Ordnung INNERHALB einer Status-Klasse: chronologisch, neuestes zuerst
+ * (B7, David-Wortlaut «chronologisch vom neusten zum ältesten»).
+ *
+ * ── WAS SICH GEGENÜBER B1–B6 GEÄNDERT HAT, ausdrücklich benannt (§8) ────────
+ * Bis B6 war die Ordnung innerhalb der Klasse die BESTANDS-Ordnung
+ * `vergleicheLeitfaelle`: gewicht ↓, Leitentscheid vor Routine, Datum ↓, key.
+ * Sie ist eine RELEVANZ-Ordnung, und sie war richtig, solange nur acht Kanten je
+ * Klasse ausgeliefert wurden — bei einer Auswahl entscheidet, WAS oben steht.
+ * Wird ALLES ausgeliefert, entscheidet nur noch, WORAN man sich beim Scrollen
+ * orientiert, und das ist die Zeitachse: eine Linie, die mit dem neuesten
+ * Entscheid beginnt und rückwärts läuft, ist ohne Legende lesbar. Eine
+ * Gewichts-Ordnung über 315 kantonale Kanten wäre es nicht — sie sähe aus wie
+ * eine Rangliste, obwohl `gewicht` in der kantonalen und der eidgenössischen
+ * Klasse gar nicht messbar ist (null, siehe `BezugsKante.gewicht`).
+ *
+ * Diese Funktion ordnet AUSSCHLIESSLICH nach Datum; den Gleichstand löst der
+ * Aufrufer mit der bestehenden deterministischen Ordnung auf (§2: die Ordnung
+ * bleibt total, kein Rückfall auf die Eingabereihenfolge). Sie ersetzt
+ * `vergleicheLeitfaelle` NICHT — die Bundesgerichts-Projektion (norm-index)
+ * ordnet unverändert nach Relevanz, denn dort wird weiterhin auf acht gekappt.
+ *
+ * Leere/fehlende Daten sortieren ans ENDE: ein Entscheid ohne Datum ist nicht
+ * «von 0001», er ist unbekannt — und Unbekanntes darf die Spitze der Zeitachse
+ * nicht besetzen (§8).
+ */
+export function vergleicheDatumAbsteigend(a: string, b: string): number {
+  if (a === b) return 0;
+  if (!a) return 1;
+  if (!b) return -1;
+  return a < b ? 1 : -1;
 }
 
 /**
