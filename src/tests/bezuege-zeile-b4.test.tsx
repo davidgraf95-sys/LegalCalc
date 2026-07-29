@@ -339,6 +339,10 @@ describe('B7 · Kantons-Filter: Verkürzung wird benannt (J1/J2/J3)', () => {
     expect(s).not.toMatch(/in der gewählten Auswahl/);
     expect(s).not.toMatch(/ im Zeitraum/);
     expect(s).not.toMatch(/ im Kanton/);
+    // Gegenprüfung Runde 3/B-2: die dritte KURZform (`URSACHE_KURZ.beide`) fehlte.
+    // Der Wächter deckte 5 der 6 Formulierungen ab und hätte ein «in der Auswahl»
+    // am ungefilterten Kopf durchgelassen — jetzt 6/6 (3 lang, 3 kurz).
+    expect(s).not.toMatch(/ in der Auswahl/);
   });
 });
 
