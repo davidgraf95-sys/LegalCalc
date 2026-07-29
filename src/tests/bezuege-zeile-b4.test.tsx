@@ -32,7 +32,7 @@ import { readFileSync } from 'node:fs';
 import { renderToString } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
 import { BezuegeZeile } from '../pages/gesetz-leser/parts/BezuegeZeile';
-import { PRO_SCHRITT, naechsteSichtbar, zahlText } from '../pages/gesetz-leser/bezugPortion';
+import { PRO_SCHRITT, istLetzterSchritt, naechsteSichtbar, verkuerzungAus, zahlText } from '../pages/gesetz-leser/bezugPortion';
 import { bezuegeFuerArtikel, type Bezug, type BezugsShard } from '../lib/rechtsprechung/bezuege';
 import { waehleBezuege } from '../pages/gesetz-leser/bezugAuswahl';
 import type { BezugStatus } from '../lib/verzahnung/facetten';
@@ -48,6 +48,23 @@ function kante(key: string, zitierung: string, status: BezugStatus, kanton: stri
 }
 
 const html = (el: React.ReactElement) => renderToString(<MemoryRouter>{el}</MemoryRouter>);
+
+/**
+ * Der Zähler-Text EINER Gruppe, aus dem SSR-Markup gelesen.
+ *
+ * Gegenprüfung Runde 2/J3 (§6.7, Fehlerklasse F2d): die abgelösten Wächter
+ * arbeiteten mit `toContain`/`not.toContain` auf dem ganzen Dokument. Eine
+ * Teilkette beweist aber weder, dass die Zahl an der richtigen Gruppe steht,
+ * noch — im negativen Fall — dass die gesuchte Formulierung fehlt: der Titel
+ * sagt «im GEWÄHLTEN Zeitraum», und `not.toContain('im Zeitraum')` traf ihn
+ * nie. Dieser Helfer schneidet genau den Zähler heraus, damit die Tests unten
+ * auf IDENTITÄT prüfen können.
+ */
+function zaehlerText(markup: string, status: string): string {
+  const gruppe = markup.split(`data-bezug-gruppe="${status}"`)[1] ?? '';
+  const treffer = gruppe.match(/tabular-nums[^>]*>([^<]*)</);
+  return treffer ? treffer[1].replace(/&#x27;/g, "'").replace(/&#39;/g, "'") : '';
+}
 
 describe('B4 · Rang-Trennung im Markup (§8)', () => {
   const kanten = [
@@ -212,32 +229,22 @@ describe('B7 · die Zahl am Gruppenkopf (§8)', () => {
     expect(s).not.toContain('8 von');
   });
 
-  it('mit Zeitfilter: «5 von 12 im Zeitraum» — die Bezugsgrösse ist die gefilterte Menge', () => {
+  it('mit Zeitfilter: «5 von 12 im Zeitraum» — Ursache benannt, dritte Zahl im title', () => {
     const gekuerzt = kanten.filter((b) => b.facetten.status === 'kantonal').slice(0, 12);
     const s = html(
       <BezuegeZeile kanten={gekuerzt} gesamt={{ kantonal: 115 }} zeitAktiv normZitat="Art. 5 StPO" />,
     );
     expect(s).toContain('5 von 12 im Zeitraum');
-    // §8: die Zahl OHNE Filter verschwindet nicht, sie steht im title des Kopfes.
     expect(s).toContain('12 im gewählten Zeitraum, 115 insgesamt an diesem Artikel');
   });
 
-  it('alles geladen UND Zeitfilter: «12 von 12 im Zeitraum» statt bloss «12»', () => {
+  it('alles geladen UND Zeitfilter: «3 von 3 im Zeitraum» statt bloss «3»', () => {
     // Sonst läse sich die gefilterte Menge wie die Datenlage (§8).
     const gekuerzt = kanten.filter((b) => b.facetten.status === 'kantonal').slice(0, 3);
     const s = html(
       <BezuegeZeile kanten={gekuerzt} gesamt={{ kantonal: 115 }} zeitAktiv normZitat="Art. 5 StPO" />,
     );
     expect(s).toContain('3 von 3 im Zeitraum');
-  });
-
-  it('mit Kantonsfilter (ohne Zeit): kein «im Zeitraum»-Zusatz', () => {
-    const gekuerzt = kanten.filter((b) => b.facetten.status === 'kantonal').slice(0, 12);
-    const s = html(
-      <BezuegeZeile kanten={gekuerzt} gesamt={{ kantonal: 115 }} normZitat="Art. 5 StPO" />,
-    );
-    expect(s).toContain('5 von 12');
-    expect(s).not.toContain('im Zeitraum');
   });
 
   it('rendert `gewicht` nirgends als Zahl — «nicht messbar» wird nie zu 0 (§8)', () => {
@@ -248,6 +255,90 @@ describe('B7 · die Zahl am Gruppenkopf (§8)', () => {
     const s = html(<BezuegeZeile kanten={kantonal} gesamt={{ kantonal: 115 }} normZitat="Art. 5 StPO" />);
     expect(s).not.toContain('>0<');
     expect(s).not.toContain('null');
+  });
+});
+
+// ─── Gegenprüfung Runde 2/J1+J2: der KANTONS-Filter verkürzt genauso ────────
+//
+// REPRODUKTION vor dem Fix (am ausgelieferten Shard, 29.7.2026): StPO Art. 428
+// führt 882 kantonale Entscheide — 879 aus BS, je einer aus GR, ZH und AG. Mit
+// Kantonswahl «GR» und offenem Zeitraum stand am Gruppenkopf die nackte «1».
+// Eine Zahl ohne «von» heisst in dieser Zeile «das ist alles»; sie behauptete
+// also, der Artikel habe genau einen kantonalen Entscheid. Ursache: `zahlText`
+// kannte nur die Zeitachse.
+//
+// J3 (§6.7/F2d): der abgelöste Wächter lautete `not.toContain('im Zeitraum')`
+// und lief gegen einen Titel, der «im GEWÄHLTEN Zeitraum» sagt — die Teilkette
+// trifft nicht, der Test war grün und der Befund stand trotzdem im Markup.
+// Hier wird darum auf IDENTITÄT geprüft (`toBe` auf dem Zähler-Text) bzw. mit
+// einem Muster, das die tatsächliche Schreibweise trifft.
+describe('B7 · Kantons-Filter: Verkürzung wird benannt (J1/J2/J3)', () => {
+  const shard = JSON.parse(
+    readFileSync('public/rechtsprechung/bezuege/STPO.json', 'utf8'),
+  ) as BezugsShard;
+
+  it('VORBEFUND: StPO/428 führt 882 kantonale Entscheide, davon 1 aus GR', () => {
+    expect(shard.gesamtProArtikel['428']).toMatchObject({ kantonal: 882 });
+    const gr = waehleBezuege(bezuegeFuerArtikel(shard, '428'), ['kantonal'], ['GR']);
+    expect(gr).toHaveLength(1);
+  });
+
+  // ── ABWEICHUNG vom Beispiel der Fix-Richtung, deklariert (§14.7) ──────────
+  // Der Prüfer nannte als Sollform «1 von 882 im gewählten Kanton». Die zweite
+  // Zahl dieser Zeile ist aber durchgängig die GRUNDMENGE DER LINIE — das, was
+  // der «weitere»-Knopf noch laden kann (so schon «5 von 12 im Zeitraum», wo 12
+  // die gefilterte und 115 die volle Menge ist). Stünde dort 882, versprächen
+  // Zähler und Knopf 881 Entscheide, die diese Linie nie liefert: die eine
+  // falsche Aussage wäre durch eine andere ersetzt. Die 882 gehört deshalb in
+  // den `title` — geprüft wird sie unten in derselben Zusicherung.
+  it('«1 von 1 im Kanton» + «882 insgesamt» im title — nicht die nackte «1» (§8)', () => {
+    const gr = waehleBezuege(bezuegeFuerArtikel(shard, '428'), ['kantonal'], ['GR']);
+    const s = html(
+      <BezuegeZeile kanten={gr} gesamt={shard.gesamtProArtikel['428']} kantonAktiv
+        normZitat="Art. 428 StPO" />,
+    );
+    expect(zaehlerText(s, 'kantonal')).toBe('1 von 1 im Kanton');
+    expect(s).toContain('1 im gewählten Kanton, 882 insgesamt an diesem Artikel');
+  });
+
+  it('beide Filter zusammen: «in der Auswahl», nicht eine der beiden Ursachen allein', () => {
+    const gr = waehleBezuege(bezuegeFuerArtikel(shard, '428'), ['kantonal'], ['GR']);
+    const s = html(
+      <BezuegeZeile kanten={gr} gesamt={shard.gesamtProArtikel['428']} zeitAktiv kantonAktiv
+        normZitat="Art. 428 StPO" />,
+    );
+    expect(zaehlerText(s, 'kantonal')).toBe('1 von 1 in der Auswahl');
+    expect(s).toContain('1 in der gewählten Auswahl, 882 insgesamt an diesem Artikel');
+  });
+
+  it('der Kantons-Schnitt beschriftet NUR die verkürzte Gruppe, nicht die anderen', () => {
+    // Er wirkt ausschliesslich in der kantonalen Klasse (`bauePraedikate` führt
+    // 'CH' im Schnitt mit). Die bge-Gruppe ist vollständig — ihr den Zusatz
+    // anzuhängen wäre eine zweite falsche Aussage anstelle der ersten.
+    const alle = waehleBezuege(bezuegeFuerArtikel(shard, '428'), ['bge', 'kantonal'], ['GR']);
+    const s = html(
+      <BezuegeZeile kanten={alle} gesamt={shard.gesamtProArtikel['428']} kantonAktiv
+        normZitat="Art. 428 StPO" />,
+    );
+    expect(zaehlerText(s, 'bge')).toBe('5');                 // 5 von 5, unverkürzt
+    expect(zaehlerText(s, 'kantonal')).toBe('1 von 1 im Kanton');
+    // Und die 882 steht genau EINMAL da, an der Gruppe, die verkürzt wurde.
+    expect(s).toContain('882 insgesamt an diesem Artikel');
+  });
+
+  it('J3-WÄCHTER: ohne aktiven Filter steht NIRGENDS eine Ursache — auch nicht im title', () => {
+    // Identität statt Teilkette: der abgelöste `not.toContain('im Zeitraum')`
+    // hätte «im gewählten Zeitraum» nie gesehen (F2d).
+    const kanten = waehleBezuege(bezuegeFuerArtikel(shard, '5'), ['kantonal'], []);
+    const s = html(
+      <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} normZitat="Art. 5 StPO" />,
+    );
+    expect(zaehlerText(s, 'kantonal')).toBe('5 von 115');
+    expect(s).not.toMatch(/im gewählten Zeitraum/);
+    expect(s).not.toMatch(/im gewählten Kanton/);
+    expect(s).not.toMatch(/in der gewählten Auswahl/);
+    expect(s).not.toMatch(/ im Zeitraum/);
+    expect(s).not.toMatch(/ im Kanton/);
   });
 });
 
@@ -294,12 +385,32 @@ describe('B7 · die Schritt-Arithmetik selbst (rein, §2)', () => {
     expect(naechsteSichtbar(11, 11)).toBe(11);     // nichts mehr da ⇒ unverändert
   });
 
-  it('zahlText: drei Formen, keine vierte', () => {
-    expect(zahlText(4140, 4140, false)).toBe("4'140");        // alles da, kein Filter
-    expect(zahlText(5, 4140, false)).toBe("5 von 4'140");     // portioniert
-    expect(zahlText(5, 12, true)).toBe('5 von 12 im Zeitraum');
-    // Mit Filter steht das «von» AUCH, wenn alles geladen ist — sonst läse sich
-    // die gefilterte Menge wie die Datenlage (§8).
-    expect(zahlText(12, 12, true)).toBe('12 von 12 im Zeitraum');
+  it('zahlText: drei Formen, und die Ursache steht dabei', () => {
+    expect(zahlText(4140, 4140, null)).toBe("4'140");          // alles da, kein Filter
+    expect(zahlText(5, 4140, null)).toBe("5 von 4'140");       // portioniert
+    expect(zahlText(5, 12, 'zeit')).toBe('5 von 12 im Zeitraum');
+    expect(zahlText(1, 882, 'kanton')).toBe('1 von 882 im Kanton');
+    expect(zahlText(1, 882, 'beide')).toBe('1 von 882 in der Auswahl');
+    // Ist die Linie verkürzt, steht das «von» AUCH, wenn alles geladen ist —
+    // sonst läse sich die gefilterte Menge wie die Datenlage (§8). Genau dieser
+    // Zweig fehlte für den Kanton und liess die Zahl auf «1» kollabieren (J1).
+    expect(zahlText(12, 12, 'zeit')).toBe('12 von 12 im Zeitraum');
+    expect(zahlText(1, 1, 'kanton')).toBe('1 von 1 im Kanton');
+  });
+
+  it('verkuerzungAus: beide Achsen, jede Kombination genau einmal', () => {
+    expect(verkuerzungAus(false, false)).toBeNull();
+    expect(verkuerzungAus(true, false)).toBe('zeit');
+    expect(verkuerzungAus(false, true)).toBe('kanton');
+    expect(verkuerzungAus(true, true)).toBe('beide');
+  });
+
+  it('istLetzterSchritt: nur der Klick, der die Linie erschöpft (WCAG 2.4.3/J4)', () => {
+    // Genau dann verschwindet der Knopf — und genau dann muss der Fokus vorher
+    // auf die Linie wandern, sonst fällt er auf `document.body`.
+    expect(istLetzterSchritt(5, 6)).toBe(true);
+    expect(istLetzterSchritt(5, 10)).toBe(true);
+    expect(istLetzterSchritt(5, 11)).toBe(false);
+    expect(istLetzterSchritt(10, 11)).toBe(true);
   });
 });

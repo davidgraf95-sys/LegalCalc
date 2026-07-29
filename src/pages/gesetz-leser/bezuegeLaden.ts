@@ -65,6 +65,18 @@ export interface ArtikelBezuege {
    * Datenlage (§8).
    */
   zeitAktiv: boolean;
+  /**
+   * Ist ein Kantons-Filter aktiv? Dieselbe Frage, zweite Achse — und der
+   * Befund, der sie nachträglich erzwungen hat: ohne dieses Feld fiel der
+   * Zähler an StPO/428 mit Kanton «GR» auf «1» zurück, obwohl der Artikel 882
+   * kantonale Entscheide führt (Gegenprüfung Runde 2/J1).
+   *
+   * Die Bedingung ist DIESELBE wie in `bauePraedikate` (§5): eine Kantonswahl
+   * wirkt nur, solange die kantonale Klasse überhaupt eingeschaltet ist —
+   * sonst gäbe es nichts zu schneiden, und der Zusatz behauptete eine
+   * Einschränkung, die gar nicht greift.
+   */
+  kantonAktiv: boolean;
 }
 
 /**
@@ -161,6 +173,7 @@ export function useBezuege(erlassKey: string | undefined): {
       // steht das «von» überhaupt da.
       gesamt: s.gesamtProArtikel?.[token] ?? {},
       zeitAktiv: !istBereichOffen(bereich),
+      kantonAktiv: kantone.length > 0 && klassen.includes('kantonal'),
     };
   }, [aktiv, erlassKey, shard, klassen, kantone, bereich]);
 

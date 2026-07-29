@@ -120,16 +120,25 @@ const BEZ = join(PUB, 'bezuege');
  * reisst, ist keine Massnahme; eine Schranke einem deklarierten
  * Umfangs-Entscheid nachzuziehen, ist eine.
  *
- * IST-WERTE, gemessen am regenerierten Stand 29.7.2026 — roh / gzip -6, die
- * B1–B6-Rohwerte daneben, damit der Sprung sichtbar bleibt:
- *   BGG          2'504.5 KiB / 300.2 KiB gzip  (vorher 291.9 KiB / 44.1 gzip)
- *   STPO         1'193.9      / 102.0          (vorher 716.8      / 63.6)
- *   BS-154.100   1'083.0      /  97.0          (vorher 139.6)
- *   BV             746.1      / 123.3          (vorher 315.8      / 46.8)
- *   STGB           714.2      /  77.8          (vorher 542.8      / 56.3)
- * Verzeichnis gesamt 13 MB (vorher 7.5 MB) über 311 Shards. Die Rohwerte
- * enthalten bereits die kompaktere Serialisierung (`serialisiereShard`,
- * Begründung dort) — ohne sie stünde BGG bei 3'578.5 KiB.
+ * IST-WERTE, MESSLAUF vom 29.7.2026 — roh (`stat -f%z`, KiB = B/1024) und
+ * gzip -6, die B1–B6-Werte aus `git show origin/main:<pfad>` durch dieselbe
+ * Pipe. NICHT aus Erinnerung: die erste Fassung dieser Tabelle nannte für BGG
+ * «291.9» und für BS-154.100 «139.6»; beide liessen sich nicht reproduzieren
+ * (Gegenprüfung Runde 1/I2 und Runde 2/J5 — zweimal dieselbe Klasse, darum
+ * steht das Messkommando jetzt hier und die Bytes daneben):
+ *   BGG         299'226 B =   292.2 KiB /  44.1 gzip  →  2'564'602 B = 2'504.5 KiB / 300.2
+ *   STPO        734'056 B =   716.9     /  63.6       →  1'222'589 B = 1'193.9     / 102.0
+ *   BS-154.100   87'539 B =    85.5     /   —         →  1'108'953 B = 1'083.0     /  97.0
+ *   BV          324'851 B =   317.2     /  46.8       →    764'047 B =   746.1     / 123.3
+ *   STGB        555'835 B =   542.8     /  56.3       →    731'389 B =   714.2     /  77.8
+ *   ATSG        229'326 B =   224.0                   →    560'469 B =   547.3
+ *   ZPO         445'690 B =   435.2                   →    541'025 B =   528.3
+ *   ZGB         396'695 B =   387.4                   →    388'167 B =   379.1
+ *   OR          376'991 B =   368.2                   →    290'514 B =   283.7
+ * ZGB und OR SCHRUMPFEN trotz aufgehobenem Deckel — dort spart die kompaktere
+ * Serialisierung mehr, als die zusätzlichen Kanten kosten. Verzeichnis gesamt
+ * 13 MB (vorher 7.5 MB) über 311 Shards. Ohne `serialisiereShard` (Begründung
+ * dort) stünde BGG bei 3'578.5 KiB.
  * (Die aktuellen Werte gibt jeder Lauf dieses Tors aus — die Liste ist der
  * Stand bei der Festlegung, nicht die laufende Wahrheit.)
  *

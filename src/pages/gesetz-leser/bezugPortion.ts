@@ -63,21 +63,83 @@ export function naechsteSichtbar(bisher: number, anzahl: number): number {
 }
 
 /**
+ * WARUM eine Linie kürzer ist, als der Artikel hergibt (§8).
+ *
+ * ── DER BEFUND, DER DIESE ACHSE ERZWUNGEN HAT (Gegenprüfung Runde 2/J1) ────
+ * Die erste Fassung kannte nur `zeitAktiv: boolean`. Der KANTONS-Schnitt
+ * verkürzt die Linie aber genauso — und weil er kein Flag setzte, fiel der
+ * Zähler in den «alles gezeigt»-Zweig und schrieb die verkürzte Menge als
+ * Vollzahl hin. Reproduziert am ausgelieferten Bestand:
+ *   · StPO Art. 428, Kanton «GR», Zeitraum offen → sichtbar «1». Tatsächlich
+ *     hat der Artikel 882 kantonale Entscheide; einer davon ist aus GR.
+ *   · BGG Art. 42, Kanton «AG» → «5» statt eines Hinweises auf 3'398.
+ * Eine Zahl ohne «von» heisst in dieser Zeile «das ist alles» — genau die
+ * Vollständigkeits-Behauptung, die der Kopf dieser Datei verbietet. Der Fehler
+ * war nicht die Formel, sondern dass sie nur EINE von zwei Ursachen kannte.
+ *
+ * Die Ursache wird BENANNT und nicht bloss gezählt: «5 von 12 im Zeitraum» und
+ * «1 von 882 im Kanton» sind verschiedene Aussagen, und wer die Verkürzung
+ * aufheben will, muss wissen, welchen Schalter er sucht.
+ */
+export type Verkuerzung = 'zeit' | 'kanton' | 'beide';
+
+/** Kurzform für die sichtbare Zeile — knapp, weil daneben zwei Zahlen stehen. */
+const URSACHE_KURZ: Readonly<Record<Verkuerzung, string>> = {
+  zeit: 'im Zeitraum',
+  kanton: 'im Kanton',
+  beide: 'in der Auswahl',
+};
+
+/** Langform für den `title` — dort ist Platz, und dort steht die dritte Zahl. */
+export const URSACHE_LANG: Readonly<Record<Verkuerzung, string>> = {
+  zeit: 'im gewählten Zeitraum',
+  kanton: 'im gewählten Kanton',
+  beide: 'in der gewählten Auswahl',
+};
+
+/**
+ * Welche Ursache trifft zu? `null`, wenn kein einschränkender Schalter aktiv
+ * ist. Rein (§2) — die Frage, OB eine bestimmte Gruppe wirklich verkürzt wurde,
+ * beantwortet der Aufrufer aus den Zahlen (siehe `StatusGruppe`), nicht diese
+ * Funktion aus den Schalterstellungen.
+ */
+export function verkuerzungAus(zeit: boolean, kanton: boolean): Verkuerzung | null {
+  if (zeit && kanton) return 'beide';
+  if (zeit) return 'zeit';
+  if (kanton) return 'kanton';
+  return null;
+}
+
+/**
  * Zahl am Gruppenkopf: WIE VIEL VON WIE VIEL steht gerade in der Linie (§8).
  *
  * Drei Fälle, drei Formen:
- *  · alles gezeigt, kein Filter   ⇒ «4'140»   (ein «4'140 von 4'140» wäre Lärm)
- *  · gestückelt                   ⇒ «5 von 4'140»
- *  · Zeitfilter aktiv             ⇒ «5 von 12 im Zeitraum»
+ *  · alles gezeigt, nichts verkürzt ⇒ «4'140»   (ein «4'140 von 4'140» wäre Lärm)
+ *  · gestückelt                     ⇒ «5 von 4'140»
+ *  · Filter hat verkürzt            ⇒ «5 von 12 im Zeitraum» / «1 von 882 im Kanton»
  *
  * Die Bezugsgrösse ist die GRUNDMENGE DER LINIE, also das, was nach dem Filter
- * überhaupt zu holen wäre — nie die Zahl der gerade gerenderten Chips. Mit
- * aktivem Filter steht das «von» AUCH dann, wenn alles geladen ist: sonst läse
+ * überhaupt zu holen wäre — nie die Zahl der gerade gerenderten Chips. Ist die
+ * Linie verkürzt, steht das «von» AUCH dann, wenn alles geladen ist: sonst läse
  * sich die gefilterte Menge wie die Datenlage. Dass es ohne Filter insgesamt
  * mehr gibt, nennt der `title` des Kopfes; die sichtbare Zeile bleibt bei zwei
  * Zahlen (Minimalismus-Vorgabe David).
  */
-export function zahlText(gezeigt: number, grundmenge: number, zeitAktiv: boolean): string {
-  if (gezeigt >= grundmenge && !zeitAktiv) return zahl(grundmenge);
-  return `${zahl(gezeigt)} von ${zahl(grundmenge)}${zeitAktiv ? ' im Zeitraum' : ''}`;
+export function zahlText(gezeigt: number, grundmenge: number, verkuerzt: Verkuerzung | null): string {
+  if (gezeigt >= grundmenge && !verkuerzt) return zahl(grundmenge);
+  return `${zahl(gezeigt)} von ${zahl(grundmenge)}${verkuerzt ? ` ${URSACHE_KURZ[verkuerzt]}` : ''}`;
+}
+
+/**
+ * Ist DIESER Klick der letzte — verschwindet das «weitere»-Element danach?
+ *
+ * Eigene Funktion, weil daran eine Fokus-Entscheidung hängt (WCAG 2.4.3,
+ * Gegenprüfung Runde 2/J4): wer das Element per Tastatur bedient, verlöre beim
+ * letzten Klick den Fokus ins Nichts, weil der Knopf unmountet. Die Komponente
+ * setzt den Fokus deshalb VORHER auf die Linie — und die Bedingung dafür ist
+ * hier prüfbar, statt in einem Klick-Handler zu verschwinden, den diese
+ * node-Testumgebung nicht auslösen kann.
+ */
+export function istLetzterSchritt(sichtbar: number, anzahl: number): boolean {
+  return naechsteSichtbar(sichtbar, anzahl) >= anzahl;
 }

@@ -49,7 +49,7 @@
 // als Reihenfolge: die Linie ist chronologisch geordnet, und das ist die
 // einzige Achse, die in allen vier Klassen wirklich messbar ist.
 
-import { memo, useCallback, useState } from 'react';
+import { memo, useRef, useState } from 'react';
 import { KantenChip } from '../../../components/verzahnung/KantenChip';
 import { usePaneSteuerung } from '../../../components/layout/usePaneLayout';
 import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
@@ -59,7 +59,10 @@ import { KLASSE_KURZ } from '../bezugAuswahl';
 // Die rechnende Hälfte der Linie (Portionsgrösse, Schritt, Zähler-Text) lebt in
 // `bezugPortion.ts` — reine Arithmetik, dort ohne Komponente prüfbar (§3/§6;
 // Begründung im Kopf jener Datei).
-import { PRO_SCHRITT, naechsteSichtbar, zahl, zahlText } from '../bezugPortion';
+import {
+  PRO_SCHRITT, URSACHE_LANG, istLetzterSchritt, naechsteSichtbar, verkuerzungAus, zahl, zahlText,
+  type Verkuerzung,
+} from '../bezugPortion';
 import {
   klassifiziereFassungsBezug, entscheidDatum, type ArtikelRevision,
 } from '../../../lib/verzahnung/artikel-revisionen';
@@ -82,21 +85,34 @@ import {
  * Beides zusammen, nicht eines statt des anderen: wer nur tabbt, käme sonst nur
  * an die bereits gerenderten Chips.
  */
-const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, zeitAktiv, normZitat, revision }: {
+const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, filter, normZitat, revision }: {
   status: BezugStatus;
   kanten: readonly Bezug[];
   gesamtRoh: number | undefined;
-  zeitAktiv: boolean;
+  /** Welche einschränkenden Schalter sind AKTIV (nicht: haben gewirkt)? */
+  filter: Verkuerzung | null;
   normZitat: string;
   revision?: ArtikelRevision | null;
 }) {
   const [sichtbar, setSichtbar] = useState(PRO_SCHRITT);
+  const linieRef = useRef<HTMLDivElement>(null);
   const { oeffneDaneben, kannOeffnen, istOffen } = usePaneSteuerung();
   const anzahl = kanten.length;
 
-  const weitere = useCallback(() => {
-    setSichtbar((n) => naechsteSichtbar(n, anzahl));
-  }, [anzahl]);
+  /**
+   * Ein Schritt weiter. WCAG 2.4.3 (Gegenprüfung Runde 2/J4): beim LETZTEN
+   * Klick verschwindet der Knopf, und ein Fokus auf einem entfernten Element
+   * fällt auf `document.body` — eine Tastatur-Bedienung müsste danach von vorn
+   * durch die ganze Seite tabben. Der Fokus wandert darum VOR dem Entfernen auf
+   * die Linie, die ihn ohnehin trägt (`tabIndex=0`): dort steht der Nutzer
+   * genau an den Chips, die er gerade geladen hat.
+   * `preventScroll`, weil der Browser sonst zur Linie springt — sie ist bereits
+   * sichtbar, der Sprung wäre reine Unruhe.
+   */
+  function weitere(): void {
+    if (istLetzterSchritt(sichtbar, anzahl)) linieRef.current?.focus({ preventScroll: true });
+    setSichtbar(naechsteSichtbar(sichtbar, anzahl));
+  }
 
   if (anzahl === 0) return null;
 
@@ -106,9 +122,20 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, zei
   // Grundgesamtheit OHNE UI-Filter — nur für den `title`, damit die sichtbare
   // Zeile bei zwei Zahlen bleibt und die dritte trotzdem nicht verschwiegen wird.
   const gesamt = Math.max(gesamtRoh ?? anzahl, anzahl);
-  const zahlZeile = zahlText(gezeigt, anzahl, zeitAktiv);
-  const kopfTitel = gesamt > anzahl
-    ? `${STATUS_LABEL[status]} — ${zahl(gezeigt)} gezeigt, ${zahl(anzahl)} im gewählten Zeitraum, `
+  // ── ABWEICHUNG von der Fix-Richtung J1, deklariert (§14.7) ────────────────
+  // Vorgegeben war «zahlText bekommt filterAktiv (Zeit ODER Kanton)». Wörtlich
+  // umgesetzt trüge AUCH eine Gruppe den Zusatz, die der Filter gar nicht
+  // angefasst hat: der Kantons-Schnitt wirkt ausschliesslich in der kantonalen
+  // Klasse (`bauePraedikate` führt 'CH' im Schnitt mit), die bge-Gruppe bliebe
+  // vollständig und stünde trotzdem als «5 von 16 im Kanton» da — eine zweite
+  // falsche Aussage anstelle der ersten. Darum entscheidet über das OB die
+  // gemessene Verkürzung dieser Gruppe (`anzahl < gesamt`), über das WARUM der
+  // hereingereichte Schalterstand. Strikt stärker als die Vorgabe: jede
+  // wirkliche Verkürzung wird benannt, keine erfundene.
+  const verkuerzt = anzahl < gesamt ? filter : null;
+  const zahlZeile = zahlText(gezeigt, anzahl, verkuerzt);
+  const kopfTitel = verkuerzt
+    ? `${STATUS_LABEL[status]} — ${zahl(gezeigt)} gezeigt, ${zahl(anzahl)} ${URSACHE_LANG[verkuerzt]}, `
       + `${zahl(gesamt)} insgesamt an diesem Artikel`
     : `${STATUS_LABEL[status]} — ${zahl(gezeigt)} von ${zahl(anzahl)} gezeigt`;
 
@@ -132,6 +159,7 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, zei
       </span>
       <div
         data-bezug-linie={status}
+        ref={linieRef}
         className="lc-bezug-linie flex h-7 min-w-0 flex-1 items-center gap-1.5 overflow-x-auto overflow-y-hidden"
         tabIndex={0}
         role="group"
@@ -208,15 +236,18 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, zei
  * aus — er muss die erweiterte Form genauso treffen wie die schlanke, sonst
  * hätte das Zuschalten einer Facette einen Schalter still ausgehebelt (§13 F4).
  */
-export const BezuegeZeile = memo(function BezuegeZeile({ kanten, gesamt, zeitAktiv = false, normZitat, revision }: {
+export const BezuegeZeile = memo(function BezuegeZeile({ kanten, gesamt, zeitAktiv = false, kantonAktiv = false, normZitat, revision }: {
   /** Kanten dieses Artikels NACH Facetten-Filter, in Shard-Ordnung. */
   kanten?: readonly Bezug[];
   /** Kanten je Status an diesem Artikel, OHNE UI-Filter — die Bezugsgrösse (§8). */
   gesamt?: Partial<Record<BezugStatus, number>>;
-  /** Ist ein Zeitraum-Filter aktiv? Entscheidet nur über den Wortlaut der Zahl
-   *  («12 von 30 im Zeitraum» statt «12 von 30») — eine Verkürzung ohne Grund
-   *  zu zeigen, wäre die halbe Auskunft (§8). */
+  /** Ist ein Zeitraum-Filter aktiv? Entscheidet nur über den WORTLAUT der Zahl
+   *  — eine Verkürzung ohne Grund zu zeigen, wäre die halbe Auskunft (§8). */
   zeitAktiv?: boolean;
+  /** Ist ein Kantons-Filter aktiv? Er verkürzt die kantonale Linie genauso wie
+   *  der Zeitraum die übrigen; ihn nicht mitzuführen hat die Zahl an StPO/428
+   *  auf «1» kollabieren lassen (Gegenprüfung Runde 2/J1). */
+  kantonAktiv?: boolean;
   /** Voll zitierfähige Norm («Art. 429 StPO») für den Fundstellen-Sprung. */
   normZitat: string;
   revision?: ArtikelRevision | null;
@@ -241,12 +272,13 @@ export const BezuegeZeile = memo(function BezuegeZeile({ kanten, gesamt, zeitAkt
     else gruppen.set(b.facetten.status, [b]);
   }
   const geordnet = [...gruppen.entries()].sort((a, b) => STATUS_RANG[a[0]] - STATUS_RANG[b[0]]);
+  const filter = verkuerzungAus(zeitAktiv, kantonAktiv);
 
   return (
     <div data-leitfall-zeile data-bezuege-zeile className="mt-4 flex flex-col gap-1.5">
       {geordnet.map(([status, liste]) => (
         <StatusGruppe key={status} status={status} kanten={liste} gesamtRoh={gesamt?.[status]}
-          zeitAktiv={zeitAktiv} normZitat={normZitat} revision={revision} />
+          filter={filter} normZitat={normZitat} revision={revision} />
       ))}
     </div>
   );
