@@ -25,5 +25,5 @@ export const INVENTAR: readonly string[] = [
   'W2·6-NKEY',
 
   // §14-Intake 24.7.2026 (Anmerkungs-Session David): Verzahnungs-Fundament + FINMA-Materialien.
-  'W2·7-BEZUG', 'W2·6b-MAT-FINMA',
+  'W2·7-BEZUG', 'W2·7-BEZUG-B7', 'W2·6b-MAT-FINMA',
 ];
