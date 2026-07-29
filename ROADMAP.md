@@ -1158,7 +1158,11 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   Zwischenzeile (David-Vorgaben Minimalismus) · Rechtsprechungs-Dropdown in der Werkzeugleiste ·
   interaktiver Zeitstrahl + Von-Bis-Datum statt Perioden-Buckets · Werkzeugleisten-Gesamtüberarbeitung.
   Übergabe-Restposten siehe Block «Folgeaufträge Verzahnungs-Session 28.7.» unter QS-OPT.
-  - [~] **B7 · Voll-Auflistung + Eidg.-Facette** *(§14-Intake David 28.7.2026 abends, klein → inline:
+  - [x] **B7 · Voll-Auflistung + Eidg.-Facette** — **✅ 29.7.2026 GEBAUT** (PR #406 `5a10f8150`, 4
+    GP-Runden: R1–R3 widerlegt+gefixt, R4 bestanden; 75'365 Kanten voll ausgeliefert, Mengen-
+    Invarianz korpusweit 8'368/8'368 bewiesen; 5er-Portionierung mit ehrlichen Filter-Zählern;
+    «Eidg.» = kein Bug, Klasse dünn — Schalter zeigen jetzt distinkte Entscheid-Zahlen)
+    *(§14-Intake David 28.7.2026 abends, klein → inline:
     «or 41 dort sind nur ein teil der entscheide verlinkt … mach es so dass man durchscrollen kann
     und dann je eine linie für jede instanz und alle sichtbar. chronologisch vom neusten zum
     ältesten» + «Eidg. das scheint keine funktion zu haben?»)* — (a) Auslieferungs-Deckel 8 je
@@ -1166,7 +1170,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
     Determinismus + Grössen-Budgets mit Begründung nachziehen, §15 on-demand bleibt); (b) UI: je
     Instanz EINE scrollbare Linie, alle Entscheide sichtbar, chronologisch neu→alt; (c) Diagnose
     «Eidg.»-Facette (funktionslos? leer-Zustand ehrlich zeigen oder Bug fixen).
-    <!-- @meta id: W2·7-BEZUG-B7 · status: wip · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext/bezuege-bauen.ts, public/rechtsprechung/bezuege, src/pages/gesetz-leser, src/components/verzahnung] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
+    <!-- @meta id: W2·7-BEZUG-B7 · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext/bezuege-bauen.ts, public/rechtsprechung/bezuege, src/pages/gesetz-leser, src/components/verzahnung] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
   *(§14-Intake 24.7.2026;
   <!-- @meta id: W2·7-BEZUG · status: done · of: ja · blocker: null · dep: [W2·6-NKEY] · kollision: [scripts/normtext/entscheide-schreiben.ts, src/lib/rechtsprechung/norm-index.ts, src/lib/verzahnung, src/components/kontext/KontextPanel.tsx, src/pages/gesetz-leser/LeserAnsichtMenu.tsx, public/rechtsprechung] · seq-weich: [W2·7-VZUI(KontextPanel.tsx), W2·5h-GESETZ-UI(LeserAnsichtMenu.tsx)] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
   **Fokus-Dekret-Priorität**, Wortlaut David: Verzahnung Gesetz↔Entscheide «sehr gutes Feature, das
