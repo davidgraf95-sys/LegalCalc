@@ -608,6 +608,56 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   Davids Vorgabe wörtlich: **«erst wenn es Sinn ergibt»** — die Anleitung folgt dem Inventar, nicht
   umgekehrt (`dep: [W2·16-INVENTAR]`); bewusst spät, damit sie nichts beschreibt, was sich noch bewegt.
   **Detail:** [FAHRPLAN-UI-QUALITAET.md](FAHRPLAN-UI-QUALITAET.md) §10. Trailer `Roadmap: W2·16-ANLEITUNG`.
+- [ ] **17 · UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)** *(Auftrag David 31.7.2026, Lieferung einer externen Sichtprüfung vom 29.7.)*
+  <!-- @meta id: W2·17-UI-BEFUNDE · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/**] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  Externe Cowork-Sichtprüfung über ~45 Seiten, Breiten 390–2560 px, hell/dunkel, Druck, Tastatur,
+  140 % Schriftskala; geschnitten nach Bauteil K-01…K-20. **Dedup-Triage 31.7.2026** (7 Opus-Agenten
+  gegen den Bestand): **45 NEIN · 144 VERDACHT · 15 BEREITS-GEBAUT · 6 SICHER** — die 6 SICHER werden
+  **nicht** neu eingeplant (LM-202 ist eine **David-Frage**: der Bestand hat den Scroll-Hash-Sync
+  bewusst verworfen, `FAHRPLAN-UI-NAVIGATION.md` §Z Ziff. 7). **20 Batches** — 19 Bau-Batches mit
+  7–16 baubaren Befunden (189) + 1 Prüf-Batch (15). Wortlaut: `docs/ui-befunde-2026-07/`.
+  **Detail:** [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md). Trailer `Roadmap: W2·17-UI-BEFUNDE`.
+  **Reihenfolge-Freigabe (`@queue`) bleibt Davids Entscheid** — darum bewusst NICHT in der Queue.
+  - [ ] **B1 · Chips, Badges und Normzitate (K-05 + K-10)** — 16 Befunde (Blocker 3 · Hoch 3). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §2.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B1 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components/NormText.tsx, src/components/NormPopover.tsx, src/components/verzahnung, src/components/rechtsprechung, src/pages/gesetz-leser] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B2 · Verlauf und Zustand in der URL (K-20)** — 11 Befunde (Blocker 2 · Hoch 5). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §3.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B2 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B1] · kollision: [src/components/layout, src/pages/gesetz-leser, src/pages/EntscheidLeser.tsx, src/pages/Rechtsprechung.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B3 · Klebende Leisten (K-01)** — 7 Befunde (Blocker 2 · Hoch 4). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §4.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B3 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B2] · kollision: [src/components/layout, src/index.css] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §5.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B4 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B3] · kollision: [src/pages/gesetz-leser, src/components/NormText.tsx, src/components/normtext] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B5 · Druck, Farbschema, Reiter- und Split-Ansicht (K-16 + K-17 + K-18)** — 8 Befunde (Blocker 2 · Hoch 2). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §6.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B5 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B4] · kollision: [src/index.css, src/components/layout/Pane.tsx, src/components/layout/TabPanel.tsx, src/components/layout/ThemaUmschalter.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B6 · Fehler-, Leer- und Ladezustände (K-15)** — 14 Befunde (Blocker 1 · Hoch 9). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §7.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B6 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B5] · kollision: [src/components/fehlermeldung.ts, src/components/ErrorBoundary.tsx, src/components/suche/SucheLeerzustand.tsx, src/pages/NotFound.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B7 · Overlays und Menüfenster (K-02)** — 8 Befunde (Blocker 1 · Hoch 3). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §8.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B7 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B6] · kollision: [src/components/layout/HeaderSuche.tsx, src/components/layout/ReiterUebersicht.tsx, src/components/layout/VerlaufUebersicht.tsx, src/components/suche] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B8 · Menüinhalt, Zustandsanzeige und Scrollbereiche (K-03 + K-07)** — 10 Befunde (Blocker 1 · Hoch 3). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §9.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B8 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B7] · kollision: [src/components/layout, src/components/forms, src/index.css] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B9 · Textsatz und Umbruch (K-12)** — 12 Befunde (Blocker 1 · Hoch 2). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §10.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B9 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B8] · kollision: [src/components/typografie.tsx, src/index.css, src/components/NormText.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B10 · Aktions-Anker, Symbolknöpfe und Trefferflächen (K-09b)** — 7 Befunde (Blocker 1 · Hoch 1). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §11.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B10 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B9] · kollision: [src/components/ui, src/pages/gesetz-leser, src/components/rechtsprechung] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B11 · Karten (K-04)** — 13 Befunde (Blocker 0 · Hoch 4). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §12.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B11 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B10] · kollision: [src/components/Katalog.tsx, src/components/start, src/components/ui] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B12 · Eingabe- und Auswahlfelder — Blocker bis Mittel (K-08a)** — 11 Befunde (Blocker 0 · Hoch 4). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §13.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B12 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B11] · kollision: [src/components/forms, src/components/DatumsFeld.tsx, src/components/BetragsFeld.tsx, src/components/ui] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B13 · Zahlen-, Datums- und Zählformate (K-11)** — 12 Befunde (Blocker 0 · Hoch 3). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §14.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B13 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B12] · kollision: [src/components/locale.tsx, src/components/ErgebnisAnzeige.tsx, src/components/forms] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B14 · Brotkrume, Kopfzeilen und Seitenmeta (K-19a)** — 8 Befunde (Blocker 0 · Hoch 3). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §15.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B14 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B13] · kollision: [src/components/layout/InhaltsKopf.tsx, src/components/RouteMeta.tsx, src/pages/Materialien.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B15 · Umschalter, Tabs und Akkordeons (K-06)** — 9 Befunde (Blocker 0 · Hoch 2). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §16.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B15 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B14] · kollision: [src/components/ui, src/components/layout/TabPanel.tsx, src/components/forms] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B16 · Seitengerüst und Inhaltsbreite (K-13)** — 8 Befunde (Blocker 0 · Hoch 2). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §17.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B16 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B15] · kollision: [src/components/layout/Shell.tsx, src/components/layout/Footer.tsx, src/index.css] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B17 · Schaltflächen — Varianten, Gewichtung, Deaktiviert-Zustand (K-09a)** — 8 Befunde (Blocker 0 · Hoch 1). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §18.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B17 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B16] · kollision: [src/components/ui, src/index.css, src/components/vorlagen] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B18 · Listen, Suche und Relevanz (K-19b)** — 8 Befunde (Blocker 0 · Hoch 1). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §19.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B18 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B17] · kollision: [src/pages/Gesetze.tsx, src/components/suche, src/lib/suche] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B19 · Eingabe- und Auswahlfelder — Detail (K-08b)** — 7 Befunde (Blocker 0 · Hoch 0). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §20.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B19 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B18] · kollision: [src/components/forms, src/components/ui] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
+  - [ ] **B20 · Prüf-Batch — «bereits gebaut» am Prod-Stand nachmessen (alle Bauteile)** — 15 Befunde (Blocker 1 · Hoch 5). Detail: [FAHRPLAN-UI-BEFUNDE.md](FAHRPLAN-UI-BEFUNDE.md) §21.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B20 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B19] · kollision: [src/components, src/pages] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-BEFUNDE.md -->
 
 - [ ] **10 · Neue Rechner-Klingen** *(`[OF]`, §2/§7)*: **Zustellfiktions-Engine** (deterministisch,
   <!-- @meta id: W3·10 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->

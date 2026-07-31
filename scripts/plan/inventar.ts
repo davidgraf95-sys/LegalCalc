@@ -26,4 +26,13 @@ export const INVENTAR: readonly string[] = [
 
   // §14-Intake 24.7.2026 (Anmerkungs-Session David): Verzahnungs-Fundament + FINMA-Materialien.
   'W2·7-BEZUG', 'W2·7-BEZUG-B7', 'W2·6b-MAT-FINMA',
+
+  // §14-Intake 31.7.2026 (AP-9, QS-TOK-Aufräumwelle): externe UI-Befundliste (Cowork 29.7.2026,
+  // 210 Befunde) — Dachschritt + 20 Batches (19 Bau + 1 Prüf-Batch), Fahrplan FAHRPLAN-UI-BEFUNDE.md.
+  'W2·17-UI-BEFUNDE', 'W2·17-UI-BEFUNDE-B1', 'W2·17-UI-BEFUNDE-B2', 'W2·17-UI-BEFUNDE-B3',
+  'W2·17-UI-BEFUNDE-B4', 'W2·17-UI-BEFUNDE-B5', 'W2·17-UI-BEFUNDE-B6', 'W2·17-UI-BEFUNDE-B7',
+  'W2·17-UI-BEFUNDE-B8', 'W2·17-UI-BEFUNDE-B9', 'W2·17-UI-BEFUNDE-B10', 'W2·17-UI-BEFUNDE-B11',
+  'W2·17-UI-BEFUNDE-B12', 'W2·17-UI-BEFUNDE-B13', 'W2·17-UI-BEFUNDE-B14', 'W2·17-UI-BEFUNDE-B15',
+  'W2·17-UI-BEFUNDE-B16', 'W2·17-UI-BEFUNDE-B17', 'W2·17-UI-BEFUNDE-B18', 'W2·17-UI-BEFUNDE-B19',
+  'W2·17-UI-BEFUNDE-B20',
 ];
