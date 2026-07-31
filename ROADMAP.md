@@ -33,6 +33,16 @@
    [`ROADMAP-CHRONIK.md`](ROADMAP-CHRONIK.md); hier bleibt nur Checkbox + `@meta` + Einzeiler +
    Pointer. So bläht `ROADMAP.md` (der Session-Einstieg) nicht wieder auf. **Nie zusammenfassen**
    (voller Wortlaut in der Chronik) — nur verschieben.
+   **Nachhalte-Konvention (QS-TOK/AP-11, 31.7.2026): am Zielort schreiben, nicht später
+   umräumen.** Abschluss-/Erledigt-Prosa wird von Anfang an **direkt in `ROADMAP-CHRONIK.md`**
+   verfasst (hier nur Einzeiler + Pointer); die **Spec-Prosa eines neuen Schrittes** ebenso von
+   Anfang an **direkt in die zugehörige `fahrplaene/FAHRPLAN-*.md`** (hier nur Titel, `@meta`,
+   ein bis zwei Sätze Zweck, `**Detail:**`-Link). Wer erst hier ausformuliert und später
+   auslagert, zahlt die Diät zweimal — die Welle vom 31.7.2026 hat genau das gekostet.
+   **Kontrolle ist kein neues Tor**, sondern der bestehende Re-Akkumulations-Wächter
+   `python3 .claude/hooks/struktur-rotieren.py --check` (läuft bei SessionStart; Ceilings
+   `ROADMAP.md` 100 KB · `STRUKTUR.md` 60 KB). Meldet er rot, ist Prosa am falschen Ort
+   gelandet — dann verschieben, nicht das Ceiling heben.
 
 ---
 
@@ -147,9 +157,10 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   gebaut+live (PR #67); **offen bleibt Baustein d** (rückwirkende Kampagne) — davon ist nur Stufe 1
   «Rechnen» gelaufen, offen Stufe 2 (extrahierte Normen), Stufe 3 (Rest) + BGE-Korpus-Regenerierung.
   **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §2.
-- **Plan-Hygiene-Wächter** *(QS-PH, `[OF]`)*. Mechanischer Check nach Vorbild des SessionStart-Hooks
+- **Plan-Hygiene-Wächter** *(QS-PH, `[OF]`)*. Mechanischer Check im Tor `check:plan`
   <!-- @meta id: QS-PH · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
-  `.claude/hooks/struktur-aktuell.py`: meldet **rot**, sobald eine neu hinzugefügte `fahrplaene/FAHRPLAN-*.md`
+  (**Regel 7**, `scripts/plan/check.ts` — *nicht* im SessionStart-Hook `struktur-aktuell.py`;
+  Zuschreibung korrigiert 31.7.2026, QS-TOK/AP-11): meldet **rot**, sobald eine neu hinzugefügte `fahrplaene/FAHRPLAN-*.md`
   **nicht aus `ROADMAP.md` verlinkt** ist — setzt die Plan-Hygiene-Regel durch (jede `fahrplaene/FAHRPLAN-*.md`
   muss aus der ROADMAP referenziert sein, sonst steuert sie unsichtbar; CLAUDE.md §14 Ziff. 1). Detail + Etikett-System: **`FAHRPLAN-PLAN-STEUERUNG.md`** (Tor `check:plan` = Etikett-Konsistenz + FAHRPLAN-Verlinkung der referenzierten Dateien).
 - **Automatik-Gesundheit: läuft unsere Automatik wirklich?** *(QS-AUTOMATIK, `[OF]`, neu 20.7.2026 — §14-Intake)*.
@@ -282,15 +293,17 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
      passt»); will er später die Gesetzesdarstellung vorziehen, W2·12-HYGIENE an den Kopf
      dieser Zeile setzen. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·5d`.** Die Verzahnungs-Stufe `W2·7-BEZUG` ist seit
-> 29.7.2026 **`done`** (B1–B7 gebaut, PRs #401–#406; Vorstufe `W2·6-NKEY` am 28.7.2026
-> erledigt — die normKeys-Abdeckung trägt 99.9 % der Entscheid-Snapshots, das Fundament für
-> die Bezüge-Schicht steht).
-> Vorherige Spitze `QS-TOK` (Priorisierung David 10.7.2026, Wortlaut «oberster
-> schritt soll sein den token verbrauch zu minimieren») rückt dahinter — von David am 27.7.
-> ausdrücklich so verfügt («als erster schritt entscheide noch besser screenen … nächste session
-> baut das als erstes, mit ultracode»); dieser Vorrang ist mit W2·6-NKEY eingelöst.
-> <!-- @meta id: QS-TOK · status: wip · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts, .claude, CLAUDE.md, ROADMAP.md, STRUKTUR.md] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
+> **⬆ OBERSTER OFFENER SCHRITT: `QS-TOK`.** Steht am Kopf der `@queue` (Priorisierung David
+> 10.7.2026, Wortlaut «oberster schritt soll sein den token verbrauch zu minimieren»); die
+> Aufräumwelle vom 31.7.2026 (AP-0…AP-11, PR #407) ist gebaut, der Schritt daher wieder
+> **`ready`** statt `wip`. Offener Rest: **T10 · T12-Stufe-2 · T14 · T16 · T20** (Go David
+> 27.7.2026 erteilt; T16 nur in frischer Session) sowie die ROADMAP unter das 100-KB-Ceiling
+> (aktuell 123.4 KB — der Re-Akkumulations-Wächter meldet rot, Herleitung in
+> [`FAHRPLAN-TOKEN-OEKONOMIE.md`](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §Stand 31.7.2026).
+> Die Verzahnungs-Stufe `W2·7-BEZUG` ist seit 29.7.2026 **`done`** (B1–B7 gebaut, PRs
+> #401–#406; Vorstufe `W2·6-NKEY` am 28.7.2026 erledigt — die normKeys-Abdeckung trägt 99.9 %
+> der Entscheid-Snapshots). Danach folgt `W2·5d` gemäss `@queue`.
+> <!-- @meta id: QS-TOK · status: ready · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts, .claude, CLAUDE.md, ROADMAP.md, STRUKTUR.md] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
 > Bau verbraucht **weniger Tokens** — nur über Effizienz (gezielter lesen, kompakter übergeben,
 > deterministisch statt modellgetrieben, cachen, indizieren); Einmal-Investitionen ok.
 > **Leitplanke (nicht verhandelbar):** keine Massnahme kürzt Beweis, Tor oder Prüfung —

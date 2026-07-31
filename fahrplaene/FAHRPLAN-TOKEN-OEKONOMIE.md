@@ -29,6 +29,52 @@ token verbrauch zu minimieren.»** Damit P0–P5 freigegeben; Start = **P0/T2 To
 Tok ≈ Bytes÷4; Zahlen = Schätzung bis T2 misst; Umsetzung Opus, gate-grün, je PR.
 Notation: M Mechanik · E Ersparnis+Herleitung · R Risiko→Gegenmittel · **K adversariale Korrektur (Spec-Pflicht)** · DoD messbar.
 
+### Stand 31.7.2026 — T7-Fortsetzung «QS-TOK-Aufräumwelle» (PR #407, AP-0…AP-11)
+
+Eine Session-Welle auf `feat/qs-tok-aufraeumwelle`. **Gemessene Endstände** (`wc -c`, Stand
+Commit AP-10/11):
+
+| Datei | vorher | nachher | Budget-Ceiling | Wächter |
+|---|---|---|---|---|
+| `ROADMAP.md` | 162.2 KB | **123.4 KB** (126 407 B) | 100 KB | **ROT** (+23.4 KB) |
+| `STRUKTUR.md` | 81.5 KB | **33.8 KB** (34 624 B) | 60 KB | grün |
+
+**Ehrlichkeitsvermerk zur ROADMAP-Zahl.** Die Diät-Etappen brachten die Datei bis B4
+(`902b287`) auf **83.4 KB** — Budget wäre dort grün gewesen. Danach schrieben zwei
+*inhaltliche* Etappen derselben Session wieder hinein: **AP-9** (W2·17-UI-BEFUNDE,
+210 Befunde in 20 Batches, +10 KB) und **AP-6** (42 Teilschritte aus Mehr-Sessions-Schritten,
++27 KB), dazu AP-8 (+3 KB Pfad-Präfixe `fahrplaene/`). Das ist **genau der Vorgang, für den
+der Re-Akkumulations-Wächter gebaut wurde** — er meldet ihn korrekt, und die Meldung bleibt
+stehen, statt weggerechnet zu werden. Das DoD-Ziel **≤ ~65 KB** ist damit **nicht** erreicht;
+der Rest ist Leitprinzipien-, Protokoll- und offene-Steuerungs-Prosa, deren Auslagerung eine
+eigene Etappe braucht (offener Punkt, s.u.).
+
+**Etappen der Welle (Kurzform).** AP-0 `plan:set`-Blockquote-Härtung (Regressionstest erst rot
+gezeigt) · AP-1 QS-TOK auf `wip` (main) · AP-2 STRUKTUR-Rotation 81.5→33.8 KB + Session-Karte ·
+AP-3/AP-4 Archiv-Wellen (11 + 9 Fahrpläne) · B1 done-Blöcke wörtlich → `ROADMAP-CHRONIK.md` ·
+B2 Archiv-Restpunkte-Datei · B3 Querschnitt-Verdichtung · B4 Spec-Prosa offener Schritte
+wörtlich in ihre Fahrpläne · AP-9 W2·17-UI-BEFUNDE · AP-6 Teilschritt-Zerlegung · AP-7
+Heimat-Zeile + §0-Kopf je aktivem Fahrplan · AP-8 Umzug nach `fahrplaene/` samt Umstellung des
+Link-Tors · AP-10/11 Stand-Nachführung + Nachhalte-Konvention.
+
+**Ablage-Bilanz.** 20 Fahrpläne nach `archiv/`, **29** aktive in `fahrplaene/`, Root von 51 auf
+**22** `.md` gesenkt. Das Link-Tor (`check:plan` Regel 7) scannt seit AP-8 den Ordner statt den
+Repo-Wurzel; der Negativ-Beweis (unverlinkte Datei ⇒ rot) ist in `d7aa4e1` protokolliert.
+
+**Lücke im Rotations-Regex (dokumentiert, nicht gefixt).** `.claude/hooks/struktur-rotieren.py`
+liest das Kartendatum mit `DATUM_RE = ^## Session (\d{1,2})\.(\d{1,2})\.(\d{4})`. Karten mit
+**Doppel-Datum** im Titel («`## Session 24./25.7.2026 …`») matchen nicht; `plane_rotation()`
+behält undatierte Karten bewusst konservativ — sie rotieren daher **nie**. Betroffen sind
+aktuell **3** Karten, die dauerhaft in der Karten-Region von `STRUKTUR.md` liegen bleiben. Kein
+Datenverlust (die Leitplanke «verschieben, nie zusammenfassen» ist unberührt), aber ein
+stiller Boden unter der Rotation. Fix-Skizze für eine spätere Etappe: zweites Muster
+`(\d{1,2})\.(?:/\d{1,2}\.)?(\d{1,2})\.(\d{4})` oder Rückfall auf das **späteste** im Titel
+genannte Datum; vorher einmal rot zeigen (§6.7).
+
+**Offener QS-TOK-Rest — unverändert:** **T10 · T12-Stufe-2 · T14 · T16 · T20** (Go David
+27.7.2026 erteilt; T16 nur in frischer Session gem. T19-Vorbedingung). **Neu offen:** ROADMAP
+von 123.4 KB unter das 100-KB-Ceiling und weiter Richtung DoD ≤ ~65 KB.
+
 ### Stand 24.7.2026 — autonomer Bau-Rest LEER (Nachmessung Session «run till dry»)
 
 Repo-Nachmessung (Session 24.7. III): **gebaut und verifiziert** sind T1 · T2 · T3 · T5 · T6 ·

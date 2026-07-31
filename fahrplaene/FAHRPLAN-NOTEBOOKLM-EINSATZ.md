@@ -1,7 +1,8 @@
 # FAHRPLAN-NOTEBOOKLM-EINSATZ (Plan-Entwurf)
 
 **Status:** Entwurf · Stand 6.7.2026 · nur Plan, kein Code
-**Heimat:** ROADMAP Querschnitt-Band (QS-Werkzeuge) · Schwester zu `[[werkzeuge-zuerst-pruefen]]`
+**Heimat:** ROADMAP Querschnitt-Band, Schritt **`QS-WISSEN`** («Wissens-/Werkzeug-Infrastruktur»;
+ID korrigiert 31.7.2026 — die frühere Angabe «QS-Werkzeuge» ist keine ROADMAP-ID) · Schwester zu `[[werkzeuge-zuerst-pruefen]]`
 **Leitprinzip:** ehrliche Machbarkeit vor Feature-Wunsch; kein ToS-Bruch auf Davids privatem Google-Konto
 **Herkunft:** ultracode-Recherche 6.7.2026 (6 Recherche-Winkel + 4 adversariale Faktenprüfungen); der tragende Befund (Drive-Auto-Sync-Einschränkung) wurde von der Verifikation gegen die Erstrecherche korrigiert.
 
