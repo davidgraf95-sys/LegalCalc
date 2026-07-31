@@ -31,6 +31,8 @@ Nicht nur den eigenen Auftrag lesen, sondern den aktuellen Plan:
 npm run plan:next                # oberster offener Schritt, dep/Blocker, was wip ist
 npm run fahrplan -- fahrplaene/FAHRPLAN-<X>.md <§>   # Detail-Slice statt Volltext
                                  # (Datei steht im fahrplan:-Feld des Schritts)
+npm run plan:set -- <id> status=wip    # vor Baubeginn; status=done zum Abhaken
+                                 # danach immer: npm run check:plan
 ```
 
 **Vor Baubeginn `wip` setzen.** Wer einen Schritt zu bauen beginnt, setzt sein
@@ -69,7 +71,9 @@ dieselbe Bau-Fläche.
    `docs/superpowers/specs/2026-07-01-gegenpruefung-gate-design.md`.
 3. Verhaltensändernd ⇒ golden byte-gleich.
 4. Status-Marker gesetzt (CLAUDE.md §8).
-5. **Session-Karte in `STRUKTUR.md` nachgezogen** — siehe Ziff. 4a.
+5. **Plan zurückgeschrieben:** `npm run plan:set -- <id> status=done`, danach
+   `npm run check:plan` (Checkbox wird mitgezogen; das Tor prüft die Kopplung).
+6. **Session-Karte in `STRUKTUR.md` nachgezogen** — siehe Ziff. 4a.
 
 ### 4a. STRUKTUR-Pflicht
 
