@@ -12,7 +12,7 @@ export function setField(md: string, id: string, feld: string, wert: string): st
   if (idx < 0) throw new Error(`Schritt-id "${id}" nicht gefunden`);
 
   // Zeile normalisieren (kanonische Feld-Reihenfolge), dann das eine Feld ersetzen.
-  const indent = zeilen[idx].match(/^(\s*)/)![1];
+  const indent = zeilen[idx].match(/^([ \t]*(?:>[ \t]*)*)/)![1];
   const normalisiert = serializeEtikett(parseEtikett(zeilen[idx]), indent);
   const ersetzt = normalisiert.replace(new RegExp(`(\\b${feld}): .*?(?= ·| -->)`), (_m, g1) => `${g1}: ${wert}`);
   const neu = parseEtikett(ersetzt); // validiert den neuen Wert (wirft bei ungültig)

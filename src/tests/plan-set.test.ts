@@ -44,4 +44,15 @@ describe('setField', () => {
     const out = setField(md, 'A', 'kollision', '[src/$1/x.ts]');
     expect(out).toContain('kollision: [src/$1/x.ts]');
   });
+
+  it('erhält den Blockquote-Präfix (> ) der @meta-Zeile', () => {
+    const md = [
+      '> **⬆ Prosa**',
+      '> <!-- @meta id: QS-TOK · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n');
+    const out = setField(md, 'QS-TOK', 'status', 'wip');
+    const metaZeile = out.split('\n').find((z) => z.includes('@meta'))!;
+    expect(metaZeile.startsWith('> ')).toBe(true);
+    expect(metaZeile).toContain('status: wip');
+  });
 });
