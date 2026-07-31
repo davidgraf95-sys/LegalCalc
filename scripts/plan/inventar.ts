@@ -1,5 +1,5 @@
 // scripts/plan/inventar.ts
-// Kanonische ID-Liste der etikettierbaren Einheiten (Geltungsbereich, FAHRPLAN-PLAN-STEUERUNG.md).
+// Kanonische ID-Liste der etikettierbaren Einheiten (Geltungsbereich, fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md).
 export const INVENTAR: readonly string[] = [
   'S0',
   'W1·1', 'W1·2', 'W1·3', 'W1·4',

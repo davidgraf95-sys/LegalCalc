@@ -18,7 +18,7 @@ Kopfzeile ist unverändert übernommen (Wortlaut-Treue); massgeblich ist die Zah
 Abnahme-Berichte): 45 NEIN · 144 VERDACHT · 15 BEREITS-GEBAUT · 6 SICHER.
 
 **Bau-Spec ist nicht hier.** Steuerung, Batch-Schnitt, Risiko-Klassen und Quer-Lektionen stehen
-in [`FAHRPLAN-UI-BEFUNDE.md`](../../FAHRPLAN-UI-BEFUNDE.md) (ROADMAP-Schritt `W2·17-UI-BEFUNDE`).
+in [`FAHRPLAN-UI-BEFUNDE.md`](../../fahrplaene/FAHRPLAN-UI-BEFUNDE.md) (ROADMAP-Schritt `W2·17-UI-BEFUNDE`).
 
 **Der Status-Fortschritt wird NICHT hier geführt** — abgehakt wird im Fahrplan (Checkboxen je
 Batch) und in `ROADMAP.md` (`@meta status`). Eine Wahrheit je Feld (§5): dieser Ordner bleibt

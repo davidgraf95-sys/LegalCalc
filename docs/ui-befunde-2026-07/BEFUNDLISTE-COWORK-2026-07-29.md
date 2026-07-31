@@ -1,7 +1,7 @@
 # LexMetrik — Befundliste UI
 
 > **Wortlaut-Quelle, unverändert.** Dieser Ordner hält den gelieferten Text fest;
-> gesteuert wird der Bau in [FAHRPLAN-UI-BEFUNDE.md](../../FAHRPLAN-UI-BEFUNDE.md) (§5).
+> gesteuert wird der Bau in [FAHRPLAN-UI-BEFUNDE.md](../../fahrplaene/FAHRPLAN-UI-BEFUNDE.md) (§5).
 
 Externe Sichtprüfung, Stand 29.07.2026 · 161 Befunde, geschnitten nach berührtem Bauteil · rund 45 Seiten, Breiten 390–2560 px, hell und dunkel, Druck, Tastatur, Schriftskala 140 %, Fehler- und Leerzustände, Menüs, Reiter- und Split-Ansicht, Gliederung, Browser-Verlauf, Norm-Entscheid-Verknüpfung, Adresszeile, Kantone, International, Assistenten, Tastatur
 

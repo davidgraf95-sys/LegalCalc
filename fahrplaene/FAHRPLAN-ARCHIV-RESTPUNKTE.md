@@ -6,7 +6,7 @@ Fahrpläne nach `archiv/` sonst verloren ginge.
 
 Jeder `## §<n>` entspricht **genau einem** archivierten Strang (Reihenfolge wie in der
 ROADMAP-Sektion) und lässt sich einzeln ziehen:
-`npm run fahrplan -- FAHRPLAN-ARCHIV-RESTPUNKTE.md <n>` — das liefert Kopf + §0 + den
+`npm run fahrplan -- fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md <n>` — das liefert Kopf + §0 + den
 gewünschten §, statt der ganzen Datei.
 
 *Je Datei prüfte ein Nur-Lese-Opus-Agent, ob ALLE offenen Punkte in `ROADMAP.md` stehen; alle

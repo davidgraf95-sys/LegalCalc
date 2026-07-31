@@ -824,7 +824,7 @@ am Code verifiziert (`parts.tsx:183`, `inhalt.tsx:453/510/571`).
 
 **Quelle (WÖRTLICH massgeblich):** Davids Anmerkungen zur Gesetzesdarstellung,
 Sammlung 5.7.2026 — im Repo persistiert als
-[`docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-05.md`](docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-05.md)
+[`docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-05.md`](../docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-05.md)
 (per Pathspec committet, §12 Ziff. 2; die ursprüngliche Job-tmp-Ablage ist flüchtig
 und zählt nicht als Quelle §14). Die Datei endet mit «(weitere Anmerkungen folgen)»
 → **dieser Abschnitt fixiert den Stand A1–A18 (5.7. 13:02)**; Nachzügler erhalten
@@ -1408,7 +1408,7 @@ Barrel, berechnungen.ts, CLS-Härtung), nicht dagegen. Reine Darstellung/Interak
 ### 10.8 · Anmerkungs-Nachzug A19–A25 (David 10.7.2026) — Einordnung, Spec-Heimat V2
 
 **Quelle (WÖRTLICH massgeblich):** Davids Anmerkungen 10.7.2026, im Repo persistiert
-als [`docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-10.md`](docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-10.md)
+als [`docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-10.md`](../docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-10.md)
 (per Pathspec committet, §12 Ziff. 2, KA5-Muster). **Spec-Heimat = `FAHRPLAN-GESETZESDARSTELLUNG-V2.md`**
 (Ultracode-Recherche 10.7., 17 Agenten, read-only + Fable-Verifikation): dort stehen
 alle Befund-Root-Causes (§1), Massnahmen mit file:line-Belegen (§2), Entscheidungsliste
@@ -1556,7 +1556,7 @@ sind Skizze; kein Bau ohne separaten David-Entscheid.**
 ### 10.10 · Anmerkungs-Nachzug A29–A40 (David 16.7.2026) — Einordnung + Bau-Go
 
 **Quelle (WÖRTLICH massgeblich):** Davids Anmerkungen 16.7.2026, persistiert als
-[`docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-16.md`](docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-16.md).
+[`docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-16.md`](../docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-16.md).
 **Bau-Go liegt vor** (gleiche Session: «run till dry» + «und dann wie immer alles mit
 opus bauen») — anders als beim §10.8-Nachzug ist dieser Batch sofort baubar.
 Fable orchestriert, jede Einheit = Opus-Agent; Ultracode-Einsätze nach

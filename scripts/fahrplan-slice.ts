@@ -7,10 +7,10 @@
 // Querkontext-Blindheit). «Ganzdatei bei Unklarheit» bleibt der Rückfall.
 //
 //   npm run fahrplan -- <FAHRPLAN-Datei> <§...>
-//   npm run fahrplan -- FAHRPLAN-GESETZES-UX.md 10          → Kopf + §0 + §10 + ToC
-//   npm run fahrplan -- FAHRPLAN-TOKEN-OEKONOMIE.md §3 §8   → Kopf + §0/Stand + §3 + §8
-//   npm run fahrplan -- FAHRPLAN-GESETZES-UX.md 10.7        → Unter-§ (### 10.7)
-//   npm run fahrplan -- FAHRPLAN-X.md                       → nur Kopf + §0 + ToC
+//   npm run fahrplan -- fahrplaene/FAHRPLAN-GESETZES-UX.md 10          → Kopf + §0 + §10 + ToC
+//   npm run fahrplan -- fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md §3 §8   → Kopf + §0/Stand + §3 + §8
+//   npm run fahrplan -- fahrplaene/FAHRPLAN-GESETZES-UX.md 10.7        → Unter-§ (### 10.7)
+//   npm run fahrplan -- fahrplaene/FAHRPLAN-X.md                       → nur Kopf + §0 + ToC
 //
 // Verschiedene FAHRPLAN-Dateien nummerieren unterschiedlich (`## §1`, `## 1 ·`,
 // `### 10.7`). Der Matcher normalisiert: führendes «§» und Whitespace weg, dann
@@ -109,7 +109,7 @@ if (!process.env.VITEST) {
   if (!datei) {
     console.error(
       'Aufruf: npm run fahrplan -- <FAHRPLAN-Datei> [<§...>]\n' +
-        '  z. B. npm run fahrplan -- FAHRPLAN-GESETZES-UX.md 10',
+        '  z. B. npm run fahrplan -- fahrplaene/FAHRPLAN-GESETZES-UX.md 10',
     );
     process.exit(2);
   }

@@ -117,7 +117,7 @@ sucht der Sub-Agent breit statt gezielt (Exploration-Kosten) oder liefert Prosa 
 ```
 Rolle/Ziel:   <ein Satz: was gebaut/geprüft/recherchiert wird>
 Modell/Effort: <model=… effort=…>            ← Pflicht, siehe §2 (T15)
-§-Slice:      npm run fahrplan -- <Datei> <§>  ← nur die zuständigen §§, nicht die Ganzdatei (T3)
+§-Slice:      npm run fahrplan -- fahrplaene/<Datei> <§>  ← nur die zuständigen §§, nicht die Ganzdatei (T3)
               Orchestrator nennt ALLE zuständigen §§; Quer-Lektionen stehen in §0.
 Whitelist:    <Arbeitsflächen, an denen der Agent schreiben darf>
               + Erweiterungs-Klausel: darüber hinaus nur mit kurzer Begründung in der Rückgabe.
@@ -154,8 +154,8 @@ Parallel-Läufe halten zusätzlich `CLAUDE.md` §12 ein (Worktree-Isolation, Pat
 
 ### 1.3 · §-Slice statt Ganzdatei (T3)
 
-Statt eine 100-KB-`FAHRPLAN-*.md` komplett in den Sub-Agenten zu kippen, referenziert der
-Dispatch die zuständigen §§ und lässt den Agenten `npm run fahrplan -- <Datei> <§>` fahren
+Statt eine 100-KB-`fahrplaene/FAHRPLAN-*.md` komplett in den Sub-Agenten zu kippen, referenziert der
+Dispatch die zuständigen §§ und lässt den Agenten `npm run fahrplan -- fahrplaene/<Datei> <§>` fahren
 (druckt Kopf + §0 + Ziel-§ + das komplette ##/###-Inventar als ToC). Der Orchestrator nennt
 **alle** zuständigen §§; bei echter Unklarheit über den Querkontext bleibt die Ganzdatei erlaubt.
 

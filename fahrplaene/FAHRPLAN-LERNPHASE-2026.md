@@ -142,8 +142,8 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
   Opus-Agent, frischer Kontext, Auftrag: Output gegen die amtliche Quelle **widerlegen**) fing real
   die teuersten Bugs (Tabellen-Drop, Footnote-Leak, `bis`/`ter`-Verlust), hängt aber bisher an
   Session-Disziplin statt an einem Tor. **Design-Detailquelle:**
-  [`docs/superpowers/specs/2026-07-01-gegenpruefung-gate-design.md`](docs/superpowers/specs/2026-07-01-gegenpruefung-gate-design.md);
-  Nachweis-Register [`bibliothek/register/gegenpruefung-register.md`](bibliothek/register/gegenpruefung-register.md).
+  [`docs/superpowers/specs/2026-07-01-gegenpruefung-gate-design.md`](../docs/superpowers/specs/2026-07-01-gegenpruefung-gate-design.md);
+  Nachweis-Register [`bibliothek/register/gegenpruefung-register.md`](../bibliothek/register/gegenpruefung-register.md).
   **Stand 1.7.2026: Bausteine a+b+c gebaut, gemergt PR #67 (`252731bd`) + prod-live** (Tor
   `check:gegenpruefung` in `npm run gate`, Skill »gegenpruefung«, Register + Quittier-Helfer
   `npm run gegenpruefung:ok`); offen nur Baustein d (rückwirkende Kampagne).

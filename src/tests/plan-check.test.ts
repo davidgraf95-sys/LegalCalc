@@ -1,4 +1,4 @@
-import { pruefe } from '../../scripts/plan/check';
+import { pruefe, fahrplanScan } from '../../scripts/plan/check';
 
 const OK = `## Die geordnete Abarbeitung
 <!-- @blockers
@@ -193,6 +193,41 @@ describe('pruefe — Regel 8 @queue-Integrität', () => {
   it('8.4: Backtick-Fragment VOR dem Marker bindet nicht (Marker-verankerte ID)', () => {
     const md = mitQueue('W1·5', '> Datei `foo.ts` gefixt. **⬆ OBERSTER OFFENER SCHRITT:** `W1·5` zuerst.\n' + READY);
     expect(pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, invR)).toEqual([]);
+  });
+});
+
+// AP-8 (QS-TOK, 31.7.2026): Die aktiven Fahrpläne sind aus dem Repo-Wurzel nach
+// `fahrplaene/` gezogen. Der Link-Check (Regel 7) scannt seither jenen Ordner statt
+// `.`. Zwei Dinge müssen dabei bewiesen sein — sonst ist das Tor nach dem Umzug
+// still grün und prüft nichts mehr (§6.7: «ein Tor, das nicht scheitern kann, ist
+// gefährlicher als keines»):
+//   1. der Scan findet die Dateien im NEUEN Ordner (und stürzt nicht ab, wenn er fehlt);
+//   2. eine gefundene, aber unverlinkte Datei erzeugt weiterhin ein Problem.
+// Regel 7 vergleicht bewusst gegen den BASENAMEN (`md.includes(f)`): ROADMAP-Verweise
+// tragen den Dateinamen — als Link `](fahrplaene/FAHRPLAN-X.md)`, als `fahrplan:`-Feld
+// oder in Prosa. Der Basename trifft alle drei Formen, ein Pfad-Vergleich nur die
+// ersten beiden.
+describe('fahrplanScan — Ordner-Scan des Link-Tors (AP-8)', () => {
+  it('liest die FAHRPLAN-*.md des angegebenen Ordners (nicht der Wurzel)', () => {
+    const leser = (d: string) =>
+      d === 'fahrplaene' ? ['FAHRPLAN-A.md', 'FAHRPLAN-B.md', 'README.md', 'notiz.txt'] : ['FAHRPLAN-WURZEL.md'];
+    expect(fahrplanScan('fahrplaene', leser, () => true)).toEqual(['FAHRPLAN-A.md', 'FAHRPLAN-B.md']);
+  });
+
+  it('fehlender Ordner → leere Liste statt Absturz', () => {
+    const leser = () => { throw new Error('ENOENT'); };
+    expect(fahrplanScan('fahrplaene', leser, () => false)).toEqual([]);
+  });
+
+  it('NEGATIV-TEST: unverlinkte Datei aus dem fahrplaene-Scan → Tor meldet Problem', () => {
+    const gescannt = fahrplanScan('fahrplaene', () => ['FAHRPLAN-PLAN-STEUERUNG.md', 'FAHRPLAN-ZZZZ-PROBE.md'], () => true);
+    const p = pruefe(OK, gescannt, existiert, inv);
+    expect(p.map((x) => x.meldung)).toContain('FAHRPLAN-ZZZZ-PROBE.md ist nicht aus ROADMAP.md verlinkt');
+  });
+
+  it('verlinkte Datei aus dem fahrplaene-Scan → kein Problem (Gegenprobe)', () => {
+    const gescannt = fahrplanScan('fahrplaene', () => ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true);
+    expect(pruefe(OK, gescannt, existiert, inv)).toEqual([]);
   });
 });
 

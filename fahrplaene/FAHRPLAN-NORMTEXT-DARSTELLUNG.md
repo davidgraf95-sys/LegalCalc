@@ -200,7 +200,7 @@ B3 = M15 (FR/IT G29) + M16 (Versionierung #2, G28/G30-33) — eigene Initiativen
 > `lexmetrik-akn-xml-architektur-entscheid`.
 >
 > **Ausgearbeitetes Umwandlungs-Regelwerk (Fable-Ultracode 2.7.2026):**
-> [`docs/superpowers/specs/2026-07-02-verlaessliche-normtext-umwandlung-bund.md`](docs/superpowers/specs/2026-07-02-verlaessliche-normtext-umwandlung-bund.md)
+> [`docs/superpowers/specs/2026-07-02-verlaessliche-normtext-umwandlung-bund.md`](../docs/superpowers/specs/2026-07-02-verlaessliche-normtext-umwandlung-bund.md)
 > — 30 Fable-Agenten, 7 Bug-Klassen-Gegenprüfungen + Design-Panel. **Verdikt: Hybrid «XML-Träger,
 > HTML-Arbiter»** (pro Erlass genau eine Quelle `source=akn|html`); neues Tor `check:akn-containment`;
 > Nordstern = einwandfreie Tabellen + zielgenaue Links, besser als Fedlex (§0 der Spec). Erster

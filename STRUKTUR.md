@@ -6,12 +6,14 @@ Refactoring-Protokoll) — dieses Dokument hier beschreibt den Zustand.
 **Dokument-Ordnung im Root (Aufräumung 10.6.2026, Auftrag David):** Im Root
 liegen nur AKTIVE Steuerungsdokumente — CLAUDE/README/STRUKTUR/HANDLUNGSPLAN,
 Projekt- und Strategie-Papiere (PROJEKTBESCHRIEB, STRATEGIE-PLATTFORM,
-WACHSTUM-REGLEMENT, BETRIEB, KATALOG-ROADMAP, ABNAHME-AG-BAUSTEINE) und die
-laufenden Fahrpläne (Stand 31.7.2026: 36 `FAHRPLAN-*.md` im Root, geführt über
-`ROADMAP.md` / `npm run plan:next` — aus der früheren Aufzählung ist nur noch
-VORLAGEN-AUSBAU hier; GRUNDLAGEN, GMBH-GRUENDUNG, BGER-RECHTSWEG,
+WACHSTUM-REGLEMENT, BETRIEB, KATALOG-ROADMAP, ABNAHME-AG-BAUSTEINE). Die
+laufenden Fahrpläne liegen seit AP-8 der QS-TOK-Aufräumwelle (31.7.2026) NICHT
+mehr im Root, sondern in **`fahrplaene/`** (Stand 31.7.2026: 29 Dateien,
+Dateinamen unverändert, geführt über `ROADMAP.md` / `npm run plan:next`; das
+Link-Tor `check:plan` scannt genau diesen Ordner). Aus der früheren Aufzählung
+ist nur noch VORLAGEN-AUSBAU aktiv; GRUNDLAGEN, GMBH-GRUENDUNG, BGER-RECHTSWEG,
 VERTRAGS-VARIANTEN und FUNDAMENT-UMBAU sind mit der Archiv-Welle 31.7.2026
-nach `archiv/` gewandert, AG-GRUENDUNG schon am 7.6.2026). Abgeschlossene
+nach `archiv/` gewandert, AG-GRUENDUNG schon am 7.6.2026. Abgeschlossene
 Fahrpläne (DESIGN, RECHNER-DESIGN, VEREINHEITLICHUNG, TOKEN-DISZIPLIN — ins
 Archiv 13.6.2026; die 11 verwaisten Fahrpläne der QS-TOK-Aufräumwelle —
 31.7.2026) und historische Dokumente liegen in

@@ -32,6 +32,30 @@ const CHECKBOX_STATUS: Record<string, string[]> = {
   '[d]': ['parked', 'blocked'], // Legenden-Status «geparkt/zurückgestellt» — nie auf ready/wip/done
 };
 
+// Ordner der aktiven Fahrpläne. Bis 31.7.2026 lag jede `FAHRPLAN-*.md` im Repo-Wurzel;
+// AP-8 (QS-TOK) hat sie nach `fahrplaene/` gezogen, das Archiv bleibt in `archiv/`.
+export const FAHRPLAN_ORDNER = 'fahrplaene';
+
+/**
+ * Listet die zu prüfenden FAHRPLAN-Dateien eines Ordners (Basenamen, sortiert).
+ *
+ * Fehlt der Ordner, ist das Ergebnis eine LEERE LISTE statt eines Absturzes — der
+ * Rest von check:plan (Etikett-, dep-, Queue-Regeln) muss auch in einem Baum ohne
+ * `fahrplaene/` prüfbar bleiben. Das ist bewusst KEIN stilles Grün-Machen des
+ * Link-Tors: existiert der Ordner, wird jede Datei darin geprüft (s. Regel 7 und
+ * den Negativ-Test in src/tests/plan-check.test.ts).
+ */
+export function fahrplanScan(
+  dir: string = FAHRPLAN_ORDNER,
+  leser: (d: string) => string[] = (d) => readdirSync(d),
+  dirExists: (d: string) => boolean = (d) => existsSync(d),
+): string[] {
+  if (!dirExists(dir)) return [];
+  return leser(dir)
+    .filter((f) => /^FAHRPLAN-.*\.md$/.test(f))
+    .sort();
+}
+
 function zyklus(einheiten: Einheit[]): string | null {
   const dep = new Map(einheiten.map((e) => [e.id, e.etikett.dep]));
   const farbe = new Map<string, number>(); // 0=weiss 1=grau 2=schwarz
@@ -169,11 +193,14 @@ export function pruefe(
 // CLI
 if (!process.env.VITEST) {
   const md = readFileSync('ROADMAP.md', 'utf8');
-  // FAHRPLAN-Link-Check (QS-PH): JEDE FAHRPLAN-*.md im Repo-Wurzel muss aus ROADMAP.md
+  // FAHRPLAN-Link-Check (QS-PH): JEDE FAHRPLAN-*.md in `fahrplaene/` muss aus ROADMAP.md
   // verlinkt sein — AUSSER den in ARCHIV_BACKLOG grandfatherten Altlasten (Archiv-Kandidaten).
   // So meldet der Check eine NEU hinzugefügte/neu referenzierte unverlinkte FAHRPLAN rot,
   // ohne die historische Altlast jedesmal rotzumachen.
-  const alle = readdirSync('.').filter((f) => /^FAHRPLAN-.*\.md$/.test(f));
+  // AP-8 (31.7.2026): Scan-Ort vom Repo-Wurzel auf `fahrplaene/` umgestellt (Umzug der
+  // aktiven Fahrpläne). Verglichen wird weiterhin der BASENAME gegen den ROADMAP-Volltext —
+  // Verweise tragen ihn in jeder Form (Link, `fahrplan:`-Feld, Prosa).
+  const alle = fahrplanScan();
   const zuPruefen = alle.filter((f) => !ARCHIV_BACKLOG.has(f));
   let probleme: Problem[];
   try {

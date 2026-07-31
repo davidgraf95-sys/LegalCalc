@@ -2,7 +2,7 @@
 
 **Heimat: ROADMAP-Schritt `W2·17-UI-BEFUNDE`** · Stand 31.7.2026 (Anlage AP-9, QS-TOK-Aufräumwelle).
 
-Wortlaut aller 210 Befunde: [`docs/ui-befunde-2026-07/BEFUNDLISTE-COWORK-2026-07-29.md`](docs/ui-befunde-2026-07/BEFUNDLISTE-COWORK-2026-07-29.md).
+Wortlaut aller 210 Befunde: [`docs/ui-befunde-2026-07/BEFUNDLISTE-COWORK-2026-07-29.md`](../docs/ui-befunde-2026-07/BEFUNDLISTE-COWORK-2026-07-29.md).
 Hier steht **nur die Steuerung** — kein Volltext, keine zweite Wahrheit (§5).
 
 ---
