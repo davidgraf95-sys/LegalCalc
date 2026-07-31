@@ -622,7 +622,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
      dieser Zeile setzen. -->
 
 > **⬆ OBERSTER OFFENER SCHRITT: `W2·5d`.** Die Verzahnungs-Stufe `W2·7-BEZUG` ist seit
-> 28.7.2026 **`wip`** (Bau in der Orchestrierungs-Session; Vorstufe `W2·6-NKEY` am 28.7.2026
+> 29.7.2026 **`done`** (B1–B7 gebaut, PRs #401–#406; Vorstufe `W2·6-NKEY` am 28.7.2026
 > erledigt — die normKeys-Abdeckung trägt 99.9 % der Entscheid-Snapshots, das Fundament für
 > die Bezüge-Schicht steht).
 > Vorherige Spitze `QS-TOK` (Priorisierung David 10.7.2026, Wortlaut «oberster
@@ -660,6 +660,8 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > **FINMA-Materialien `W2·6b-MAT-FINMA`** (Bewerbungs-Kontext: Bewerbung FINMA mit Verweis auf
 > LexMetrik — der Bereich muss vorzeigbar sein). **SSoT der Reihenfolge = `@queue`-Zeile oben** —
 > dieser Block ist die Begründung, nicht die Mechanik.
+> **Stand 31.7.2026 zu (3):** `W2·7-BEZUG` ist eingelöst und `done` (B1–B7, PRs #401–#406);
+> offen bleibt aus diesem Punkt nur `W2·6b-MAT-FINMA`.
 
 > **■ Auftrags-Eingang 30.6.2026 (David) — §14 gebündelt + verortet.** 13 Aufträge, alle `[OF]`
 > (reine Darstellung oder amtliche Daten, keine Davids-Fachzeit). **Risiko-Klassen getrennt halten**
@@ -682,18 +684,10 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > G-PRERENDER → `FAHRPLAN-SEO-A11Y-GOVERNANCE.md §11`); abgelöster Wortlaut → `ROADMAP-CHRONIK.md`
 > → Steuerungs-Prosa (24.7.2026).
 >
-> **Bündel B · Rechtsprechungs-Leser → Schritt 6 / W2·6-BGE:**
-> - **B1 BGE ohne «vollständiges Urteil»** (Bsp. BGE 152 V 2): `azaUrteil:null` + kein
->   `auszugAbschnitte` ⇒ `switcherSichtbar=false`, Ansicht fest auf «Auszug». **12/272 BGE** betroffen
->   (151_I_73, 151_III_336, 152_V_20, 152_V_2, 150_I_183, 151_V_30, 151_I_41, 150_II_334, 151_II_475,
->   151_V_100, 151_IV_316, 151_II_710). *Daten/Pipeline (AZA-Resolver, vgl. W2·6-Id-Disambiguierung) → `QS-GP`.*
-> - **B2 Regeste wie amtlich:** **Absätze + massgebliche Artikel FETT**. Heute `regeste.text` flacher
->   String ohne `\n`/Markup → Struktur **aus der Quelle nachextrahieren** (kein Raten, §1/§2). *Daten/
->   Pipeline → `QS-GP`; Geschwister von B1 (gemeinsamer Korpus-Re-Lauf denkbar).*
-> - **B3 Sticky-Kopf überdeckt Body** im Entscheid-Leser (Screenshot BGE 152 I 65): Hintergrund nicht
->   deckend / z-index / scroll-margin in `EntscheidLeser.tsx`. *Reine UI (§13-F) — eigener Commit, NICHT mit B1/B2.*
->   ✅ **10.7.2026 — bereits behoben, empirisch verifiziert** (U-KOPF/Split-View-Refactor `60988318`,
->   Playwright-Beweis BGE 152 I 65). Wortlaut → `ROADMAP-CHRONIK.md` → Eingang-30.6. (22.7.2026).
+> **Bündel B · Rechtsprechungs-Leser → Schritt 6 / W2·6-BGE:** B1 (BGE ohne «vollständiges Urteil»)
+> und B2 (Regeste wie amtlich) ✅ 5.7.2026 in `W2·6-B`, B3 (Sticky-Kopf überdeckt Body) ✅ 10.7.2026
+> via U-KOPF-Refactor `60988318` — alle drei erledigt. Detail: `ROADMAP-CHRONIK.md` →
+> Auftrags-Eingang 30.6.2026 / Bündel B (31.7.2026).
 >
 > **Bündel S · Split-View → Schritt 14** *(SPLIT-VIEW, eigener Worktree):*
 > - **S1 Breadcrumbs in der Pane:** `InhaltsKopf.tsx` Z.30 nutzt globalen Router-`<Link to>` → zielt
@@ -1151,50 +1145,14 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   `parts.tsx`-Eigentümerschaft geklärt (W2·5c fertig). Kein 26×-Bezug — parallel zu E3 fahrbar.
   Startseiten-Kachel «Meistzitierte Artikel» = Andockpunkt (W2·5c fertig, Fläche frei).
   **Detailquelle:** `FAHRPLAN-VERZAHNUNG-UI.md`.
-- [x] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** — **✅ 28.7.2026 GEBAUT,
-  B1–B6 komplett** (PRs #401 `5e461f5f5` · #403 `4e160737b` · #404 `d42322ed1` · #405 `efba2dceb`):
-  Facetten-Datenmodell + BS-Korpus + BGer-Nicht-Leitentscheide (24'173 Kanten, 311 Shards, **9
-  Gegenprüfungs-Runden**, R1–R8 widerlegt+gefixt, R9 bestanden) · Auflistung direkt am Artikel ohne
-  Zwischenzeile (David-Vorgaben Minimalismus) · Rechtsprechungs-Dropdown in der Werkzeugleiste ·
-  interaktiver Zeitstrahl + Von-Bis-Datum statt Perioden-Buckets · Werkzeugleisten-Gesamtüberarbeitung.
+- [x] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** — ✅ **done 28.7.2026**,
+  B1–B6 + B7 komplett (PRs #401–#406).
   Übergabe-Restposten siehe Block «Folgeaufträge Verzahnungs-Session 28.7.» unter QS-OPT.
-  - [x] **B7 · Voll-Auflistung + Eidg.-Facette** — **✅ 29.7.2026 GEBAUT** (PR #406 `5a10f8150`, 4
-    GP-Runden: R1–R3 widerlegt+gefixt, R4 bestanden; 75'365 Kanten voll ausgeliefert, Mengen-
-    Invarianz korpusweit 8'368/8'368 bewiesen; 5er-Portionierung mit ehrlichen Filter-Zählern;
-    «Eidg.» = kein Bug, Klasse dünn — Schalter zeigen jetzt distinkte Entscheid-Zahlen)
-    *(§14-Intake David 28.7.2026 abends, klein → inline:
-    «or 41 dort sind nur ein teil der entscheide verlinkt … mach es so dass man durchscrollen kann
-    und dann je eine linie für jede instanz und alle sichtbar. chronologisch vom neusten zum
-    ältesten» + «Eidg. das scheint keine funktion zu haben?»)* — (a) Auslieferungs-Deckel 8 je
-    Status aufheben: ALLE Kanten je Artikel in den Shards (Generator-Änderung ⇒ Risikopfad-Fläche,
-    Determinismus + Grössen-Budgets mit Begründung nachziehen, §15 on-demand bleibt); (b) UI: je
-    Instanz EINE scrollbare Linie, alle Entscheide sichtbar, chronologisch neu→alt; (c) Diagnose
-    «Eidg.»-Facette (funktionslos? leer-Zustand ehrlich zeigen oder Bug fixen).
+  - [x] **B7 · Voll-Auflistung + Eidg.-Facette** — ✅ **done 29.7.2026** (PR #406 `5a10f8150`,
+    4 GP-Runden; Voll-Auslieferung ohne Deckel, 5er-Portionierung, «Eidg.»-Facette ehrlich).
     <!-- @meta id: W2·7-BEZUG-B7 · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext/bezuege-bauen.ts, public/rechtsprechung/bezuege, src/pages/gesetz-leser, src/components/verzahnung] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
-  *(§14-Intake 24.7.2026;
+  Detail: `ROADMAP-CHRONIK.md` → W2·7-BEZUG.
   <!-- @meta id: W2·7-BEZUG · status: done · of: ja · blocker: null · dep: [W2·6-NKEY] · kollision: [scripts/normtext/entscheide-schreiben.ts, src/lib/rechtsprechung/norm-index.ts, src/lib/verzahnung, src/components/kontext/KontextPanel.tsx, src/pages/gesetz-leser/LeserAnsichtMenu.tsx, public/rechtsprechung] · seq-weich: [W2·7-VZUI(KontextPanel.tsx), W2·5h-GESETZ-UI(LeserAnsichtMenu.tsx)] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
-  **Fokus-Dekret-Priorität**, Wortlaut David: Verzahnung Gesetz↔Entscheide «sehr gutes Feature, das
-  ich mit Priorität einbauen will»; **Dekret David 27.7.2026: Vorstufe ist `W2·6-NKEY`** — erst das
-  Entscheid-Screening generalisieren, damit ALLE Norm-Zitate erkannt und zugeordnet sind (heute 43 %),
-  dann erst die Bezüge-Schicht darauf bauen; darum `dep: [W2·6-NKEY]` + Queue-Platz davor)* — das Verzahnungs-Fundament wird von «BGE-Leitfälle an
-  Bundesnormen» auf **alle Instanzen und Entscheidkategorien** erweitert: **(a)** kantonale
-  Entscheide am Artikel (Start BS-Korpus 3765 aus W2·6-BS; kantonaler Norm-Resolver/P0 zuerst) ·
-  **(b)** BGer-**Nicht-Leitentscheide** aus dem kuratierten Korpus — Leitentscheid vs. übriges
-  Urteil bleibt als Status **unterschieden** (§8, nie stillschweigend gleichgestellt) · **(c)** jede
-  Kante trägt **filterbare Facetten** (Quelltyp · Ebene · Kanton · Gericht · Leitentscheid-Status) —
-  EINE generische «Bezüge am Artikel»-Schicht, an der auch Materialien-Kanten andocken (W2·6a-MAT,
-  künftig `W2·6b-MAT-FINMA`), kein Zweitmodell (§5) · **(d)** Filter-UI im Gesetz-Leser
-  (Instanz/Ebene/Kanton an-/abwählbar, Default konservativ: Leitentscheide an; Persistenz im
-  Ansicht-Menü) · **(e = B5, §14-Intake David 28.7.2026)** eigenes Rechtsprechungs-Dropdown in der
-  **Leser-Werkzeugleiste** (analog «Ansicht ▾») als reine **Ansichtsauswahl** der Verzahnung:
-  Facetten + interaktiver **Zeitstrahl** + Von-Bis-Datumseingabe statt Perioden-Buckets;
-  Entscheide bleiben unter den Artikeln (Detail Fahrplan §9 B5) · **(f = B6, §14-Intake David
-  28.7.2026)** Gesamtüberarbeitung der Leser-Werkzeugleiste — minimalistischer und praktischer,
-  ohne Funktionsabbau (Detail Fahrplan §9 B6; seriell nach B5, gleiche Fläche).
-  **Abgrenzung (§14.3):** Long-Tail 195k Massen-Entscheide bleibt `W2·6-DATA` E3/E4;
-  UI-Grammatik bleibt `W2·7-VZUI`. Facetten = Datenschicht, Filter = Darstellung (§3). Kantonale
-  Zitat-/Norm-Resolver-Extraktion = Risiko-Pfad ⇒ `check:gegenpruefung`; Generator deterministisch,
-  2 Läufe byte-gleich. Detail: `FAHRPLAN-VERZAHNUNG-UI.md` §9. Trailer `Roadmap: W2·7-BEZUG`.
 - [x] **6a-MAT · Materialien-Verzahnung Stufe 1** *(DATA+UI, Worktree)* — Verwaltungsverordnungen/Wegleitungen als Kanten am Norm-Artikel (E6a Stufe 1 = nur Verweis-/Register-Ebene, §7 a–d). Komplett 4.7.2026 (M0–M5, PRs #126/#127/#128 + ESTV-KS/MWST + UI-Delta; 4 Quellen SECO/EDÖB/ESTV-KS/ESTV-MWST, Cutoff-Revisions-Invariante, Gegenprüfung bestanden, CLS 0). Kein 26×-Bezug. Spec `FAHRPLAN-MATERIALIEN-VERZAHNUNG.md`. **Chronik:** `ROADMAP-CHRONIK.md` → W2·6a-MAT.
   <!-- @meta id: W2·6a-MAT · status: done · of: ja · blocker: null · dep: [W2·7] · kollision: [scripts/materialien/**, public/materialien/**, src/lib/materialien/typen.ts, src/lib/materialien/register.ts, src/pages/Materialien.tsx, src/lib/kontext.ts, src/components/kontext/KontextPanel.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
 - [ ] **6b-MAT-FINMA · FINMA-Materialien prioritär + Verzahnung** *(§14-Intake 24.7.2026;
