@@ -113,7 +113,7 @@ erkennen). **Aber:** ein Quell- oder Formatwechsel wird per Messung (POC,
 Differenz) belegt, nie angenommen — Fehler sitzen oft in der eigenen
 Transformation, nicht in der Quelle. Wechsel inkrementell, nie Big-Bang.
 Beispiel und Detail: Memory `extraktion-amtliche-quellen-beste-option`,
-`FAHRPLAN-NORMTEXT-DARSTELLUNG.md §Quell-Architektur-Entscheid` (Fedlex-HTML
+`fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md §Quell-Architektur-Entscheid` (Fedlex-HTML
 vs. Akoma-Ntoso-XML).
 
 **Die sechs Build-Regeln.** Die Volltext-Snapshots (`public/normtext/`) werden
@@ -144,7 +144,7 @@ Quelle folgt zwingend diesem Muster:
    `daten/lexmetrik.db` sein. `check:paritaet` beweist die Projektion
    byte-gleich; die Drift-Tore aus Regel 5 bleiben Arbiter gegen die amtliche
    Quelle. Massgeblich ist immer die amtliche Fassung, nie das Artefakt
-   (`CLAUDE.md` §5). Bedingungen im Detail: `FAHRPLAN-DATENHALTUNG.md`.
+   (`CLAUDE.md` §5). Bedingungen im Detail: `fahrplaene/FAHRPLAN-DATENHALTUNG.md`.
 
 Quellen-Priorität und PDF-Extraktionsregeln im Detail:
 `bibliothek/normen/norm-vorschau-snapshot-system.md`.

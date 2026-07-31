@@ -10,7 +10,8 @@ bestehenden §-Verweise in Skills, Fahrplänen und Code-Kommentaren weiterhin au
 
 **Aktueller Stand und nächster Schritt:** `npm run plan:next` (oberster offener
 Schritt, Abhängigkeiten, was bereits `wip` ist), danach der Detail-Slice per
-`npm run fahrplan -- <Schritt>`. `ROADMAP.md` und `STRUKTUR.md` sind
+`npm run fahrplan -- fahrplaene/FAHRPLAN-<X>.md <§>` (Datei aus dem
+`fahrplan:`-Feld des Schritts). `ROADMAP.md` und `STRUKTUR.md` sind
 Nachschlagewerke, keine Pflichtlektüre.
 
 **Leitbild:** «Schweizer Taschenmesser für Juristen» — die eine Anlaufplattform

@@ -191,7 +191,7 @@ Geist verletzen.
    `/rechner/zustaendigkeit`, `/rechner/verjaehrung`,
    `/rechner/mietrecht`, `/vorlagen`, eine Vorlagen-Detailroute.
 4. Lighthouse-Metriken manuell messen (QS-PERF/§15): CLS/LCP/TBT auf
-   `/gesetze/bund/OR` unter 4× CPU — Soll-Werte in `FAHRPLAN-PERFORMANCE.md`;
+   `/gesetze/bund/OR` unter 4× CPU — Soll-Werte in `fahrplaene/FAHRPLAN-PERFORMANCE.md`;
    bleibt manuell, bis ein CI-Chrome verdrahtet ist.
 5. Aufräumen: gemergten Branch + zugehörigen Worktree entfernen
    (Daueranweisung 30.6.).

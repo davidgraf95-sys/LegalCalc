@@ -29,7 +29,8 @@ Nicht nur den eigenen Auftrag lesen, sondern den aktuellen Plan:
 
 ```
 npm run plan:next                # oberster offener Schritt, dep/Blocker, was wip ist
-npm run fahrplan -- <Schritt>    # Detail-Slice statt Volltext
+npm run fahrplan -- fahrplaene/FAHRPLAN-<X>.md <§>   # Detail-Slice statt Volltext
+                                 # (Datei steht im fahrplan:-Feld des Schritts)
 ```
 
 **Vor Baubeginn `wip` setzen.** Wer einen Schritt zu bauen beginnt, setzt sein
