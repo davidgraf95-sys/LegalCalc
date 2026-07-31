@@ -18,23 +18,12 @@ const SLOT_STILLSTAND: readonly Status[] = ['done', 'parked', 'blocked'];
 
 export interface Problem { id: string | null; meldung: string }
 
-// Archiv-Backlog (Stand 1.7.2026): FAHRPLAN-*.md, die historisch nicht aus ROADMAP.md
-// verlinkt sind (Archiv-Kandidaten, s. ROADMAP «Strang-Detailpunkte»). Grandfathered, damit
-// der Link-Check NEU hinzugefügte/referenzierte unverlinkte FAHRPLAN rot meldet, ohne die
-// Altlast jedesmal rotzumachen. Beim Archivieren/Verlinken einer Datei hier streichen.
-const ARCHIV_BACKLOG = new Set<string>([
-  'FAHRPLAN-BEURKUNDUNGS-AUSBAU.md',
-  'FAHRPLAN-BGER-RECHTSWEG.md',
-  'FAHRPLAN-FALL-RUECKGRAT.md',
-  'FAHRPLAN-FUNDAMENT-UMBAU.md',
-  'FAHRPLAN-GMBH-GRUENDUNG.md',
-  'FAHRPLAN-GRUNDLAGEN.md',
-  'FAHRPLAN-INTERNATIONAL-VOLLTEXT.md',
-  'FAHRPLAN-KANTONALE-ENTSCHEIDE.md',
-  'FAHRPLAN-LUECKEN-SCHLIESSEN.md',
-  'FAHRPLAN-NOTARIAT-GRUNDBUCH.md',
-  'FAHRPLAN-VERTRAGS-VARIANTEN.md',
-]);
+// Archiv-Backlog: FAHRPLAN-*.md, die (noch) nicht aus ROADMAP.md verlinkt sind. Grandfathered,
+// damit der Link-Check NEU hinzugefügte/referenzierte unverlinkte FAHRPLAN rot meldet, ohne einen
+// Übergangsfall jedesmal rotzumachen. Beim Archivieren/Verlinken einer Datei hier streichen.
+// Altlast (11 verwaiste Fahrpläne, Stand 1.7.2026) abgetragen 31.7.2026 — QS-TOK-Aufräumwelle;
+// Liste bleibt als Mechanismus für künftige Übergangsfälle.
+const ARCHIV_BACKLOG = new Set<string>([]);
 
 const CHECKBOX_STATUS: Record<string, string[]> = {
   '[x]': ['done'],

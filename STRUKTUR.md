@@ -7,10 +7,14 @@ Refactoring-Protokoll) — dieses Dokument hier beschreibt den Zustand.
 liegen nur AKTIVE Steuerungsdokumente — CLAUDE/README/STRUKTUR/HANDLUNGSPLAN,
 Projekt- und Strategie-Papiere (PROJEKTBESCHRIEB, STRATEGIE-PLATTFORM,
 WACHSTUM-REGLEMENT, BETRIEB, KATALOG-ROADMAP, ABNAHME-AG-BAUSTEINE) und die
-laufenden Fahrpläne (GRUNDLAGEN, AG-/GMBH-GRUENDUNG, BGER-RECHTSWEG,
-VORLAGEN-AUSBAU, VERTRAGS-VARIANTEN, FUNDAMENT-UMBAU). Abgeschlossene
+laufenden Fahrpläne (Stand 31.7.2026: 36 `FAHRPLAN-*.md` im Root, geführt über
+`ROADMAP.md` / `npm run plan:next` — aus der früheren Aufzählung ist nur noch
+VORLAGEN-AUSBAU hier; GRUNDLAGEN, GMBH-GRUENDUNG, BGER-RECHTSWEG,
+VERTRAGS-VARIANTEN und FUNDAMENT-UMBAU sind mit der Archiv-Welle 31.7.2026
+nach `archiv/` gewandert, AG-GRUENDUNG schon am 7.6.2026). Abgeschlossene
 Fahrpläne (DESIGN, RECHNER-DESIGN, VEREINHEITLICHUNG, TOKEN-DISZIPLIN — ins
-Archiv 13.6.2026) und historische Dokumente liegen in
+Archiv 13.6.2026; die 11 verwaisten Fahrpläne der QS-TOK-Aufräumwelle —
+31.7.2026) und historische Dokumente liegen in
 **`archiv/`** (Index: `archiv/README.md`; Dateinamen unverändert, damit
 Verweise in Code-Kommentaren per grep auffindbar bleiben). Wissens-Quellen
 (PDF/DOCX, gitignored) in `bibliothek/quellen/` (`SICHTUNG.md`).

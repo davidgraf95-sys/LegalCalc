@@ -1591,8 +1591,15 @@ harter Auflage.
   gemappte Dateien wandern per `git mv` nach `archiv/` (kein Informationsverlust), der Rest bleibt
   liegen bis gemappt. Reine Doku-Hygiene → kein Deploy/§9, kein Golden/§6, kein Worktree-Zwang
   (keine Kollisionsdatei, §12). `[OF]`
-- **Stale Doku-Köpfe** (in der jeweiligen `FAHRPLAN-*.md` korrigieren): POPUP «27»→218 · VERTRAGS-
-  VARIANTEN «1000» · LUECKEN · NOTARIAT-GRUNDBUCH.
+- **Stale Doku-Köpfe** (in der jeweiligen `FAHRPLAN-*.md` korrigieren): POPUP «27»→218.
+  ~~VERTRAGS-VARIANTEN «1000»~~ · ~~LUECKEN~~ · ~~NOTARIAT-GRUNDBUCH~~ **erledigt durch die
+  Archivierung 31.7.2026** (Dateien nach `archiv/`; die Köpfe bleiben dort byte-genau historisch
+  stehen). Massgeblich sind ab hier die Nachfolge-Träger: `variantenInventar` (Stand 168 erzeugbare
+  Dokumente = 17 %) für die Zähl-Wahrheit, `src/data/tarif/notariat-grundbuch.ts` +
+  `bibliothek/kosten/notariat-grundbuch-kantone.md` für Notariat/Grundbuch (die überholten
+  Kopf-Angaben — Handänderungssteuer-Kantonsliste ohne SZ/NW/OW-Korrektur, Datei-Pfade
+  `notariat.ts`/`grundbuch.ts` — sind damit historisch), `src/data/tarif/beurkundung.ts` für die
+  Lücken-Statusspalte.
 - **Klein-Backlog** (Issue-Ebene): Direktklage Art. 8 ZPO < 100k plausibilisieren · stabile Keys in
   7 Listen-Editoren · Datepicker-Pfeiltasten · Markenschriften in Vorlagen-PDFs · Detailseiten-Titel an
   Katalog-Titel (§13) · CHF-Formatter `chf(n,dez)` als SSoT (nur mit Golden) · Norm-Chip-Kopien auf
@@ -1604,6 +1611,287 @@ harter Auflage.
   `aktenzeichen`/`abteilung`/`titel` `null`, einzelne ohne `rubrum`/`dispositivOrders` (z. B.
   `151_V_30`) — Korpus-weit prüfen, ob aus `full_text`/`citation` nachziehbar (kein Inhalts-/
   Identitätsproblem, rein Metadaten; `[OF]`).
+
+### Nachträge aus der Archiv-Welle 31.7.2026 (11 Fahrpläne, verify-then-archive)
+
+*Je Datei prüfte ein Nur-Lese-Opus-Agent, ob ALLE offenen Punkte in `ROADMAP.md` stehen; alle elf
+Verdikte lauteten NUR-MIT-NACHTRAG. Die folgenden Einzeiler sind dieser Nachtrag — sie steuern nicht,
+sie halten den Rest fest, damit der `git mv` nach `archiv/` informationsverlustfrei ist.*
+
+**Beurkundungs-Ausbau** *(→ `archiv/FAHRPLAN-BEURKUNDUNGS-AUSBAU.md`)*:
+- **BEURKUNDUNG Tarif-Lücken (72 Zellen):** in `src/data/tarif/beurkundung.ts` tragen 72 von 546
+  (Geschäftsart × Kanton)-Kombinationen keinen Sondertarif → Engine `status: 'offen'`, UI «In
+  Recherche» (§8-ehrlich, nie ein Schätzwert). Systematisch fehlen **baurecht/vorkaufsrecht/
+  schuldbrief/verpfruendung/kapitalherabsetzung für LU·GL·ZG·SO·BS·BL·SH·AR·AI·AG**, dazu
+  vorsorgeauftrag (6 Kt) · schuldanerkennung (6) · vollmacht (3) · schenkung (2) ·
+  genossenschaft_gruendung (2) · stiftung/statutenaenderung (je 1) · vorkaufsrecht TI. Mitursache:
+  der im Plan vorgesehene Default `GENERELLER_WERTTARIF` ist ein **leeres** Objekt (Z.31), der
+  Fallback in `tarifFuer()` läuft nie. Je Zelle **erheben oder als tariflos begründen** (freies
+  Notariat ZG/SO/BL: Honorar frei → «nach Vereinbarung» statt «in Recherche»). Heimat
+  `archiv/FAHRPLAN-BEURKUNDUNGS-AUSBAU.md` §3 + `archiv/FAHRPLAN-LUECKEN-SCHLIESSEN.md`
+  (L2-Nachfolge, dort bisher nur die 3 prozeduralen Arten inventarisiert). Risiko-Pfad ⇒ `QS-GP`.
+  `[OF]`
+- **Gründungs-Tarif doppelt gepflegt (§5):** neben der 26-Kt-Schicht `src/lib/beurkundung.ts`/
+  `src/data/tarif/beurkundung.ts` versorgt die 6-Kt-Alt-Engine
+  `src/lib/notariatsgebuehrenGruendung.ts` (Dossier
+  `bibliothek/kosten/notariatstarife-gruendung-kantone.md`) weiterhin
+  `src/pages/vorlage-ag-gruendung/schritte-dokumente.tsx` — die im Plan verlangte
+  Dossier-Integration ist nur inhaltlich, nicht strukturell erfolgt. Zusammenführen **oder** die
+  Regime-Trennung ausdrücklich begründen (§1 vor §6); Divergenz-Präzedenz: BS-Gründung Rahmen
+  750–2000 vs. Punktwert (16.6.2026 behoben).
+- **Stale Register-Einträge Gründungs-Dossier:** `bibliothek/INDEX.md` Z.283,
+  `bibliothek/register/parameter-verfall.md` Z.36 und `bibliothek/register/engine-map.md` Z.95
+  führen ZH-Nachtrag-123 · SG-Brutto/Netto-MwSt · Agio weiter als «offen», obwohl Agio am 7.6.2026
+  auf «belegt» gehoben, die MwSt zentral in `src/lib/beurkundungZusatzkosten.ts` (MWSTG Art. 25 I,
+  8,1 %, nur freies Notariat) gelöst und ZH Ziff. 4.4.3.1 in `beurkundung.ts` mit der
+  Nachtrag-123-Fassung (Stand 1.1.2024) verlinkt ist — nachführen oder den Restzweifel benennen;
+  ZH-123-PDF-Beleg ist von der Aufräumwelle **nicht** am Original nachgeprüft worden.
+- **Klein-Backlog Beurkundung:** «Eintragung Eigentumsvorbehalt» (Plan-Tabelle «alles weitere») ist
+  in keiner Taxonomie abgebildet — fachlich Register beim Betreibungsamt (Art. 715 ZGB, EigVV
+  SR 211.413.1), nicht Notariat/Grundbuch: entweder eigener Kostenblock oder bewusst streichen und
+  in `beurkundung-typen.ts` als Nicht-Gegenstand vermerken.
+
+**BGer-Rechtsweg** *(→ `archiv/FAHRPLAN-BGER-RECHTSWEG.md`)*:
+- **BGER-RECHTSWEG R-3d** (Etappe nie gebaut, Befund 31.7.2026): BGG-Such-Einträge im
+  Preset-Such-Index `src/lib/presetIndex.ts` fehlen — `PresetRegime` kennt nur
+  `allgemein|zpo|schkg`, und `/rechner/bgg-fristen` hat gar keine Presets. Entweder BGG-Presets
+  nachziehen oder den Punkt als gegenstandslos abschreiben; Detail
+  `archiv/FAHRPLAN-BGER-RECHTSWEG.md` R-3d. `[OF]`
+
+**Fall-Rückgrat** *(→ `archiv/FAHRPLAN-FALL-RUECKGRAT.md`)*:
+- **FALL-RUECKGRAT Säule 2 (`.lexmetrik`-Krypto, Konzept, nie gebaut):** verschlüsselter
+  Fall-Export/-Import (AES-GCM-256 + PBKDF2-HMAC-SHA256, `crypto.subtle`, kein Backend) mit den vier
+  Pflicht-Härtungen der Krypto-Linse — Iterations-Floor 600'000 (OWASP 2023) und harte Ablehnung von
+  `iter < MIN_ITER` beim Entschlüsseln · Decrypt-Allowlist
+  `v===1 && alg==='AES-GCM' && kdf==='PBKDF2-SHA256'` · AAD-Bindung der Umschlag-Header ans
+  GCM-Auth-Tag · Chunked Base64 statt `btoa`/Spread; `.lexmetrik` bewusst **nicht** golden-gegated
+  (per Design nicht-deterministisch, IV/salt frisch je Export). Detail
+  `archiv/FAHRPLAN-FALL-RUECKGRAT.md` Phase 3.
+- **FALL-RUECKGRAT — 5 offene David-Entscheide** (reisen mit dem geparkten Strang, vor einer
+  Reaktivierung zu beantworten): ID-Mechanismus `crypto.randomUUID()` vs. Inhalts-Hash ·
+  «Heute»/Fälligkeits-Ampel als reines Darstellungs-Metadatum (§2-Grenze) · Default der
+  `.lexmetrik`-Import-Konfliktstrategie (behalten/überschreiben/zusammenführen) ·
+  Klartext-localStorage für sensible Freitext-Adressen oder nur verschlüsselte Datei (§8,
+  Wipe-Frage) · Sichtbarkeit «Meine Fristen» (Header+Footer vs. zusätzlich Startseiten-Hinweis).
+  Detail `archiv/FAHRPLAN-FALL-RUECKGRAT.md` §Offene David-Entscheide.
+- **FALL-RUECKGRAT Detail-Verweis** (im Geparkt-Block «Dossier / Fall-Rückgrat» nachziehen):
+  Konzept-Spezifikation vom 16.6.2026 → `archiv/FAHRPLAN-FALL-RUECKGRAT.md` (Datenmodell
+  `lexmetrik.fristen.v1`/`lexmetrik.parteien.v1`, Phasen 0–5, §13-Auflage «Permalink ohne `origin`»,
+  `.lexmetrik` nie an ein Backend) — ohne diesen Verweis zeigt der Geparkt-Eintrag nach dem Umzug
+  nur noch auf `archiv/FAHRPLAN-PRODUKTAUSBAU-BURGGRABEN.md` §P2 und die Konzept-Substanz ist aus
+  ROADMAP nicht mehr erreichbar.
+
+**Fundament-Umbau** *(→ `archiv/FAHRPLAN-FUNDAMENT-UMBAU.md`)*:
+- **FUNDAMENT A5/A6** *(Thema A)* — Rest-Rollout der generischen `VorlagenSeite` auf weitere lineare
+  Standard-Briefe (Stand 31.7.: 5 von 34 `Vorlage*.tsx` umgestellt; 25× direkter `useWizardState`,
+  10× kopierte ISO-Regex) + deklarative Optionalfelder/Verzweigungen (A6, z. B. NDA-Richtungs-Toggle)
+  **ohne** `includeIf`-Duplikat in der Config (§3). Opt-in bleibt Pflicht: VariantenKopf-/
+  Mehrschritt-/Eigen-Gate-Seiten (Werkvertrag, Auftrag, NDA, Klagen, Testament, Gründungen) bleiben
+  bewusst handgeschrieben (§1). Beweis je Seite: golden byte-gleich **+** Playwright-DOM
+  byte-identisch. `[OF]`
+- **FUNDAMENT C3** *(Thema C, GEFAHRENZONE)* — Inline-Verbatim aus `basisAntworten()`
+  (`src/lib/vorlagen/gruendungAgDokumente.ts`: Stichentscheid-Satz, Agio-Zusatz u. a.) in den
+  Schema-`text:`-Kanal heben; **je Fragment ein Commit**, `golden:diff` byte-gleich, sonst sofort
+  zurück. Berechnete Werte bleiben in `basisAntworten` (Logik ≠ Wortlaut). Solange offen, erscheinen
+  diese Fragmente in den Abnahme-Dossiers nur als Platzhalter — der Wortlaut entzieht sich Davids
+  §7-Abnahme.
+- **FUNDAMENT C4** *(optional)* — additives `verified?: boolean` am Baustein-Typ (von `assemble`
+  nicht gelesen → Golden byte-gleich); nur falls David Schemas nach der Wortlaut-Abnahme markieren
+  will. Nie automatisch setzen (§7).
+- **FUNDAMENT E3/E4** *(Thema E, **Davids Entscheid**)* — `scripts/lik-reihe-generieren.py` nach TS
+  portieren **nur** mit byte-identischer `src/data/likReihe.ts` gegen sha256-Snapshot, erst danach
+  Python + `requirements.txt` entfernen. Konflikt-Register: `openpyxl`-float vs. TS-Reader-Rundung
+  könnte Teuerung/Verzugszins kippen (§1 vor §6) — bei Zweifel bei E1 stehenbleiben. E1
+  (`requirements.txt`) ist erledigt.
+- **FUNDAMENT F1/F2/F3/F5** *(Thema F)* — §8-Hinweis «nur dieser Browser» am Vorlagen-Wizard selbst
+  (heute nur global auf `/einstellungen`) · Export/Import der Antworten als lokale JSON-Datei über
+  den **bestehenden** `normalisieren()`-Pfad (§5, kein zweiter Lade-Pfad) · Norm-Bezeichnung im
+  Schema vom Klauseltext trennen (verhaltensneutraler i18n-Vorbau, golden-gegated) · **Davids
+  Entscheid**, ob/welche Vorlagen amtlich übersetzte fr/it-Klauseln bekommen (nur amtlich, **kein
+  LLM** — §7/§8; ROADMAP-O-4 deckt nur Gesetze/BGer, nicht Vorlagen-Klauseln). F4 (local-only vs.
+  Server-Sync) ist über «Dossier/Fall-Rückgrat» geparkt.
+- **Stale Doku-Kopf FUNDAMENT/GESAMTAUFBAU — mit der Archivierung 31.7.2026 korrigiert:**
+  `FAHRPLAN-GESAMTAUFBAU.md` Z.85 führte «(iv) FUNDAMENT-UMBAU Thema B+C Go/No-Go» als einzigen
+  offenen T0b-Punkt, der Fahrplan-Kopf selbst (Z.16–19) behauptet «Themen B–F unberührt offen
+  (3.7.2026)». Beides ist überholt: Thema B (Routen-SSoT) und C1–C2 (Abnahme-Dossiers) sind seit
+  13.6.2026 gebaut (`src/routesManifest.ts`, `src/tests/routenManifest.test.ts`,
+  `scripts/abnahmeDossier.ts`). Das T0b-Gate ist beim Archivieren mitkorrigiert worden — es wartete
+  auf eine längst getroffene Entscheidung; der Fahrplan-Kopf selbst bleibt im Archiv byte-genau
+  historisch stehen.
+
+**Grundlagen** *(→ `archiv/FAHRPLAN-GRUNDLAGEN.md`)*:
+- **GRUNDLAGEN G3.2a · Katalog-Konsolidierung** *(Heimat `archiv/FAHRPLAN-GRUNDLAGEN.md`)*:
+  `startseiteConfig.ts` + `katalogSuche.ts` — «ein Einstieg pro Rechtsfrage», Thema-Bündel,
+  `szenarien[]`/`imKatalog:false`, Umlaut-Suche, sichtbare Kartenzahl weiter senken;
+  **Verb-Titel-Entscheid David (E1.1, `archiv/FAHRPLAN-KATALOG-UI.md`)** in derselben Welle.
+  Auffindbarkeits-Hälfte ist mit W2·5/W2·5c erledigt — offen ist nur die Katalog-Seite. `[OF]` ausser
+  dem Verb-Titel-Entscheid `[D]`.
+- **GRUNDLAGEN G3.2b · Engine-Verschmelzung** *(Entscheid David 8.6.2026, CLAUDE.md §4)*: erlaubt,
+  aber **golden-gegated (§6) und regime-treu** (interne Verzweigung statt Kollaps); risikoärmster
+  Merge zuerst = Fristen-Infrastruktur `fristenEngine.ts`/`datumsUtils.ts` hinter den
+  Regime-Engines, `golden:vergleich` byte-gleich als Tor. Wiedervorlage mit §0a-Öffnung;
+  Vorgeschichte `archiv/FAHRPLAN-VEREINHEITLICHUNG.md` V5 (zurückgestellt), Protokoll = Skill
+  `refactoring`. `[OF]`
+- **GRUNDLAGEN G4.1-Rest · Bibliothek-Dossier-Reife (§11/S9)**: zu gebauten Engines gehörende
+  Dossiers auf **Decision-Tree-Form** heben (Eingabe→Ausgabe statt Prosa),
+  `engine-map.md`-«Dossier-only»/Abnahme-Blocker nachführen. Gebaut sind bereits S6-Schärfung
+  (`scripts/bibliothek-check.sh`) und die bidirektionalen Dossier-Köpfe
+  (`src/tests/dossierVerweise.test.ts`); S9 bleibt per Entscheid **nicht** maschinell prüfbar
+  (`bibliothek/STANDARDS.md` S10) → Abnahme/adversariale Durchgänge. `[OF]`
+- **GRUNDLAGEN A3-Restbefunde** *(3 Stück, je «klein», Output-wirksam → Wortlaut-Verifikation +
+  Golden-Deklaration in eigener Welle; Detail `archiv/HANDLUNGSPLAN.md` B.4b)*:
+  Art.-40/41-StPO-Zitatschärfe in der Gerichtsstands-Weiche
+  (`src/lib/strafZustaendigkeit.ts:138`) · Erbschaft+Pfand-Kombination ohne Vorrang-Klärung
+  (`schkgZustaendigkeit.ts`, Art. 49 vs. 51 SchKG) · Widerspruch-Fahrplantext ignoriert
+  `grundstueck`-Konstellation (Parteirollen nach Grundbuch-Eintrag, Art. 109 Abs. 3 / 107 f. SchKG).
+  `[OF]`
+
+**International-Volltext** *(→ `archiv/FAHRPLAN-INTERNATIONAL-VOLLTEXT.md`)*:
+- **INTERNATIONAL-VOLLTEXT IV-1 — Extraktor-Rest `scope_*`/`decl_*` korpusweit** *(aus
+  P4-Gegenprüfung 10.7.2026; Detail `archiv/FAHRPLAN-INTERNATIONAL-VOLLTEXT.md`)*: Der Nachzug
+  `9a144596a` (11.7.) nahm «scope|decl» in `alleAnhangAnker()` auf, scannt aber erst ab
+  `<div id="annex">` und liefert ohne Annex-Container nichts ⇒ **14/27 Staatsverträge tragen
+  `scope_*`, 7/27 `decl_*`; 13 (u. a. KRK, CISG, CEDAW, UNO-Pakt I/II, UNO-BRK) droppen
+  Geltungsbereich und CH-Vorbehalte weiterhin**. Offen: Scanner auch ohne/vor dem Annex-Container in
+  `scripts/normtext/extrahiere-fedlex.ts`, dann Re-Extraktion **aller 27** (je eigener Golden-Diff,
+  §6/§14.2). **`decl_*` zuerst** — «Vorbehalte und Erklärungen Schweiz» sind für die CH materiell
+  verbindliches Recht, die `scope_*`-Parteien-Tabelle ist zeitveränderliche Verwaltungsdaten.
+  Extraktions-Risikopfad ⇒ `QS-GP`-Gegenprüfung Pflicht, Opus. Bis dahin volle Fassung inkl.
+  Geltungsbereich/Vorbehalten über den amtlichen Live-Link (§7c/§8, dokumentiert, nicht stumm).
+  `[OF]`
+- **INTERNATIONAL-VOLLTEXT IV-2 — weitere SR 0.\* als Volltext** *(optional, Backlog; gleiche
+  konsolidierte `eli/cc`-Mechanik + Gehalt-Test, kein neues Format/Skript)*: Rechtshilfe Strafsachen
+  (0.351.\*) · **DBA-Paket kohärent statt einzeln** · weitere Bilaterale CH–EU · WÜD/WÜK
+  (0.191.01/.02). Bewusst **nicht** gebaut bleiben ESÜ (0.211.230.01, durch HKsÜ überholt), DBA-DE
+  (0.672.913.62, Scope-Creep) und EPÜ 2000 (0.232.142.2, weder HTML noch PDF/A → nur Live-Link);
+  §11-Beleg `bibliothek/register/fedlex-staatsvertraege-2026-07-10.md`. Stand 10.7.2026:
+  International-Volltext 27.
+
+**Kantonale Entscheide** *(→ `archiv/FAHRPLAN-KANTONALE-ENTSCHEIDE.md`)*:
+- **KANTONALE P0-Rest** (Bugfix-Klasse neben dem gemappten SG-Regeste-Fix, öffnet keinen 26×-Slot):
+  AG/BE/GR/ZH je 6 Pilot-Entscheide **ohne Regeste-Feld** (Übersicht zeigt Synth-Leitzeile) ·
+  **`rubrum: null` bei allen 30 Pilot-Entscheiden** (BS-Tranche hat Rubrum) — Stand 31.7.2026
+  nachgezählt. Detail `archiv/FAHRPLAN-KANTONALE-ENTSCHEIDE.md` §0 + §7a F3 (Parteien/Kammer;
+  Besetzung ist über R-RICHTER erledigt).
+- **KANTONALE P3 · PDF-Fallback statt Pseudo-Struktur**: für die sperrigen Quellen den bestehenden
+  pdf-embed-Pfad (EMRK-Muster, `GesetzLeser.tsx`) wiederverwenden — TG
+  (Confluence-Jahres-Sammel-PDFs, nicht parsen) · VS (Nuxt-SPA) · **GE als Pilot** (einzige
+  sprechende PDF-Permalinks); dazu die Sonderfälle **GR-Strukturbruch 2025** (KG+VG → Obergericht,
+  Gerichtscodes neu mappen) und **ZH** (drei getrennte DBs = drei Quellen), je mit Marker «als
+  amtliches PDF dargestellt» (§8). Detail `archiv/FAHRPLAN-KANTONALE-ENTSCHEIDE.md` §4/§5-P3;
+  Bahn-Einordnung `FAHRPLAN-GESAMTAUFBAU.md` Bahn B.
+- **KANTONALE P2-Auflagen (vor jeder Breiten-Ingestion, gilt an E5)**:
+  **Anonymisierungs-Stichprobe + DSG-/Haftungsbetrachtung VOR der Ausweitung** (R1; im Zweifel
+  PDF-embed statt Re-Hosting) und die **§8-Dauerauflage R4** — die quell-bedingt selektive,
+  durchgängig anonymisierte kantonale Abdeckung nie als «vollständig» ausgeben (struktureller
+  Befund, kein behebbarer Bug). Detail `archiv/FAHRPLAN-KANTONALE-ENTSCHEIDE.md` §5-P2/§6.
+- **KANTONALE F1/F5/F6 (Folge-Einheiten der BS-Tranche, nicht gebaut)**: **F1** BS-Bestand vor 2022
+  (~7'000 Dok.) · **F5** Register-Sharding der Rechtsprechung (≠ `register.json`-Sharding unter
+  QS-PERF) · **F6** weitere Findinfo-Kantone auf demselben `bs-client`-Kern (Vendor-Hebel §2; die ID
+  ist in `src/lib/rechtsprechung/browse.ts` verankert). Detail
+  `archiv/FAHRPLAN-KANTONALE-ENTSCHEIDE.md` §7a +
+  `bibliothek/register/BS-RECHTSPRECHUNG-QUELLE-2026-07.md`.
+- **KANTONALE P4 · Kuratierung + Abnahme**: kantonale Entscheide sind durchgehend
+  `leitcharakter:'routine'`/`kuratierung:'maschinell'` (3795/3795, Stand 31.7.2026) — Kuratierung
+  kantonaler Leitentscheide erst mit Davids Fachzeit; die Erstrecherche (zwei unabhängige
+  Web-Agenten) und die BS-Tranche warten auf die fachliche Abnahme → in die
+  **Abnahme-Warteschlange** aufnehmen. Detail `archiv/FAHRPLAN-KANTONALE-ENTSCHEIDE.md` §5-P4 +
+  Schlussabschnitt «Abnahme-Status».
+
+**Lücken schliessen** *(→ `archiv/FAHRPLAN-LUECKEN-SCHLIESSEN.md`)*:
+- **LUECKEN L2-Restlücke** (Beurkundungstarif, 3 von 78 Kanton×Art-Zellen): JU bei
+  `genossenschaft_gruendung` + `statutenaenderung`, SG bei `genossenschaft_gruendung` ohne
+  Sondertarif; beide Arten sind `bemessung: 'fix'` und `GENERELLER_WERTTARIF` ist leer →
+  `berechneBeurkundung()` liefert `status:'offen'`, die UI zeigt dort «in Recherche»
+  (`src/data/tarif/beurkundung.ts`). Detail `archiv/FAHRPLAN-LUECKEN-SCHLIESSEN.md` L2.
+- **LUECKEN L4/L5 Methodik-Grenzen** (bestehen fort, nur offengelegt — §8, kein Bau-Auftrag):
+  SZ-Stockwerkeigentum als 0,63‰-Näherung statt exakter Ceil-Stufe Fr. 45 je angefangene
+  Fr. 50'000 von 70 % (`src/data/tarif/grundbuch.ts` STWE/SZ; <500k leicht zu tief) · Schenkung ohne
+  Substrat-Split (Engine rechnet Grundstück-Regel, Fahrnis-Auffangnorm nur im Hinweis: ZH Ziff. 4.6 /
+  TG § 16 / SZ Nr. 3). Träger nach der Archivierung = die Code-Hinweise; Detail
+  `archiv/FAHRPLAN-LUECKEN-SCHLIESSEN.md` L4/L5.
+
+**Notariat & Grundbuch** *(→ `archiv/FAHRPLAN-NOTARIAT-GRUNDBUCH.md`)*:
+- **NOTARIAT Restscope Beurkundungs-Geschäftsarten:** **Erbteilung** ist als beurkundbare
+  Geschäftsart weder in `src/data/tarif/beurkundung-typen.ts` (22 Arten) noch in der
+  Geschäftsart-Tabelle von `archiv/FAHRPLAN-BEURKUNDUNGS-AUSBAU.md` abgebildet — Erweiterung über
+  dieselbe Engine, vor dem Bau fachlich klären, ob überhaupt beurkundungsbedürftig (Art. 634 ZGB =
+  Schriftform) `[OF]`.
+- **NOTARIAT §8-Ehrlichkeit im Bestandstext:** `archiv/FAHRPLAN-BEURKUNDUNGS-AUSBAU.md` Z.11–12
+  bezeichnet die Grundstückkauf-Schicht als «doppelt verifiziert», obwohl alle Einträge in
+  `src/data/tarif/notariat-grundbuch.ts` auf `recherche` stehen und NG-4 offen ist. Mit der
+  Archivierung 31.7.2026 bleibt der Satz dort byte-genau historisch stehen — **massgeblich ist ab
+  hier: erstrecherchiert, Doppelcheck offen (NG-4)**, damit der falsche Stand die Archivierung des
+  Ursprungsplans nicht überlebt.
+- **Stale Doku-Kopf NOTARIAT-GRUNDBUCH — erledigt durch die Archivierung 31.7.2026** (Datei nach
+  `archiv/`; die überholten Kopf-Angaben — Handänderungssteuer-Kantonsliste ohne
+  SZ/NW/OW-Korrektur, Datei-Pfade `notariat.ts`/`grundbuch.ts` — sind damit historisch, massgeblich
+  ist `src/data/tarif/notariat-grundbuch.ts` + `bibliothek/kosten/notariat-grundbuch-kantone.md`).
+
+**Vertrags-Varianten** *(→ `archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md`)*:
+- **VERTRAGS-VARIANTEN — Restbestand neuer Basistypen** *(Heimat
+  `archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` §2/§5; Bau-Anker `W3·13`)*: **P3-Rest** Tausch (237) ·
+  Gebrauchsleihe (305) · Miet-Untertypen Parkplatz/möbliert — **P4-Rest** Schuldanerkennung
+  (82 SchKG) · Garantievertrag (111) — **P5** Mäkler (412 ff.) · Agentur (418a ff.) · Kommission
+  (425) · Lizenz (innominat) · Kooperation/JV · Franchise — **P6** einfache Gesellschaft (530 ff.)
+  als eigene Karte · Aufhebungsvereinbarung (Feld A, Saldoklausel-Module). Je eigenes OR-Regime →
+  eigenes Schema/eigene Engine (§4), nie in eine bestehende Karte kollabieren; jede neue Karte
+  trifft `startseiteConfig`/`vorlagenRegistry` → Worktree (§12).
+- **VERTRAGS-VARIANTEN P2-Rest (Untertypen, nicht Detailgrad)**: der Detailgrad-Rollout ist auf allen
+  sechs Vertrags-Karten durch, der **Untertyp**-Rollout nicht — offen: Auftrag
+  (Beratung/Treuhand/Inkasso/Mandat) · NDA (Personal/M&A/IT) · Werkvertrag-Experte-Module
+  (Zahlungsplan/Bauhandwerkerpfand-Hinweis/Pönale/Abnahmeprotokoll) · Konkubinat-Module. Detail
+  `archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` §2/§5-P2.
+- **VERTRAGS-VARIANTEN P1f — Zähl-Hygiene**: `src/lib/vorlagen/variantenInventar.ts` +
+  `src/tests/variantenInventar.test.ts` sind der ehrliche Fortschrittszähler (Stand 168 erzeugbare
+  Dokumente = 17 % des 1000-Ziels) — **bei jeder neuen Vertrags-Karte und jedem neuen Untertyp
+  Inventar UND Test nachführen** (§8, kein stiller Schwund). «1000» ist die kombinatorische
+  Dokumentenmenge (Typ × Untertyp × Detailgrad × Module), nie eine Kartenzahl.
+- **Abnahme-Warteschlange, Ergänzung Rang 2 (Form-Gate-Vorlagen)**: Lehrvertrag
+  (Schriftform-Gültigkeit Art. 344a I) · Handelsreisendenvertrag (347–350a) · Heimarbeitsvertrag
+  (351–354) — gebaut 14.6.2026, Anker am Fedlex-Cache 20260101 verifiziert, golden additiv;
+  **fachliche Abnahme David ausstehend** (Detail `archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` §7).
+- **Stale Doku-Köpfe**: Teileintrag «VERTRAGS-VARIANTEN «1000»» ist mit der Archivierung 31.7.2026
+  **gestrichen** — der Kopf bleibt im Archiv byte-genau stehen, die Zähl-Wahrheit trägt jetzt
+  `variantenInventar` (Stand 168 = 17 %).
+- **W3·13 @meta**: nach der Archivierung `fahrplan: archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` ergänzen
+  (Feld fehlt heute, anders als bei W3·12/W3·14) —
+  `npm run fahrplan -- archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md §2` löst den Pfad auf, der Slice bleibt
+  damit erreichbar.
+
+**GmbH-Gründung** *(→ `archiv/FAHRPLAN-GMBH-GRUENDUNG.md`)*:
+- **GMBH-GRUENDUNG G0** *(Detail: `archiv/FAHRPLAN-GMBH-GRUENDUNG.md`)* — Korrektheits-Abgleich am
+  Original: Singular-Urkunde verbatim (`bibliothek/muster/zh-gmbh-gruendung-1person-bar.txt`) ·
+  Vorsitz-/Ernennungs-Beschluss-Formalia (Beginn/Ende/Abwesend) · Zeichnungsarten
+  ohne/Kollektivprokura · Statuten-kurz Geschäftsjahr-/Beschlussfassungsarten
+  (805 V Ziff. 2bis / 701 III OR) · Wahlannahme Revisionsstelle · Anmeldungs-Hinweise 24a HRegV ·
+  Nachtragsvollmacht.
+- **GMBH-GRUENDUNG G1** — Statuten kurz/lang aus `bibliothek/muster/zh-gmbh-statuten-lang.txt`;
+  Binnenverweise nummerierungsfest; bestehende `statutKlauseln` (Nachschuss etc.) bleiben Weichen.
+- **GMBH-GRUENDUNG G3** — Fremdwährung (Art. 773 II OR, Gegenwert CHF 20'000, Anhang 3 HRegV) + Agio
+  (Ausgabebetrag, unter pari 777c I sinngemäss/624); **keine Teilliberierung** (777c I: volle
+  Liberierung jedes Stammanteils zwingend).
+- **GMBH-GRUENDUNG G4** — Urkunden-Optionen: Wahlannahme GF · Vorsitz-/Zeichnungsregelung (Gate
+  GF ⊆ Gründer, AG-Befund 1) · Domizil nur in der Anmeldung · Lex-Koller-Dokument ·
+  Gründungs-Nachtrag (GmbH-Vorlage existiert nicht → Haus-Fassung offenlegen, §8).
+- **GMBH-GRUENDUNG G5** — Info-Schicht: GF-Pflichten (Art. 820 OR → 725 ff.) · private Register ·
+  FINMA-Wortprüfung · Übersetzungen.
+- **GMBH-GRUENDUNG G6** — Wizard-Umbau `VorlageGmbhGruendung` (6 Schritte analog AG) +
+  Sammel-Download; teilt sich den Rahmen mit dem Klein-Backlog-Punkt «Gründungs-Rahmen GmbH/AG
+  teilen».
+- **GMBH-GRUENDUNG G7** — Sammel-Bug-Check §9 (2 Agents: Kombinatorik-Sweep + Wortlaut gegen die
+  GmbH-Originale in `bibliothek/muster/`); AG-Sammelcheck-Befunde als Checkliste
+  (Satz|Zeile-Fragmente · Agio-Gegenwert auf GELEISTETEN Einlagen · VR/GF⊆Gründer-Gate ·
+  Beilagen-Listen ehrlich filtern · Konventions-Testfälle je Numerus/Variante).
+- **GMBH-GRUENDUNG — David-Gate:** Bau **pausiert seit 7.6.2026** («warte noch mit dem bau der gmbh,
+  mach nur recherche»); G0–G7 starten erst auf ausdrückliches Go. W3·13 (`GMBH G2`) trägt den
+  Blocker noch nicht — beim Aufgreifen `blocker` setzen oder das Gate bewusst als aufgehoben
+  vermerken.
+- **GMBH-GRUENDUNG — Wortlaut-Basis:** die Originale liegen committet in `bibliothek/muster/`
+  (+ `MANIFEST.md` mit Quell-URLs), Klausel-Katalog S1–S20 in
+  `bibliothek/recherche/gruendungsdokumente-wortlaute.md`, Recherche-Stand in
+  `gmbh-gruendung-deltas-g0.md` (GD1–GD8) + `gmbh-qualifizierte-gruendung.md`. Der Fahrplan-Zeiger
+  auf `.scratch/gmbh-knowledge/` ist **tot** (gitignored, gelöscht) — nicht mehr verwenden.
 
 ---
 *Konsolidiert 28.6.2026 aus den 26 `FAHRPLAN-*.md` + Strategie-Dokumenten + dem früheren

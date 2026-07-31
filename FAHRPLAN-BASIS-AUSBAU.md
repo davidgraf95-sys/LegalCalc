@@ -256,7 +256,7 @@ Spätere Gates (nicht in diesem Panel): Kantonswahl Pilot-Ausbau (default-bar ZH
 - **M15 (DE/FR/IT-Verlinkung) + M16 (Point-in-Time-Darstellung)** → `FAHRPLAN-NORMTEXT-DARSTELLUNG.md` B3,
   AKN-gegated; B-6/B-8/B-9 sind bewusst nur die S/M-grossen **Vorstufen** ohne Duplikat.
 - **SEO-A11Y-Ausbau** → eigener Schritt SEO-A11Y (Domain-UMZUG dort als W3.4; B-4 ist nur der Registrierungs-Entscheid).
-- **Fall-Rückgrat / Fristenbuch / Mandat / Arbeitsmappe** → `FAHRPLAN-FALL-RUECKGRAT.md`, strategisch geparkt
+- **Fall-Rückgrat / Fristenbuch / Mandat / Arbeitsmappe** → `archiv/FAHRPLAN-FALL-RUECKGRAT.md` (Archiv-Welle 31.7.2026), strategisch geparkt
   bis ≥1.12.2026 — nicht vorziehen (die Unverzichtbarkeits-Schicht, aber Parkung auf Nutzerfeedback vertretbar,
   solange B-1…B-10 stehen).
 - **`/api/fehler`-Rückkanal** → O-1.9 offen; nur Anhebung, hängt in B-11 ein statt Neu-Posten.
