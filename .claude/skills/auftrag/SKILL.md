@@ -72,7 +72,10 @@ dieselbe Bau-Fläche.
 3. Verhaltensändernd ⇒ golden byte-gleich.
 4. Status-Marker gesetzt (CLAUDE.md §8).
 5. **Plan zurückgeschrieben:** `npm run plan:set -- <id> status=done`, danach
-   `npm run check:plan` (Checkbox wird mitgezogen; das Tor prüft die Kopplung).
+   `npm run check:plan` (bei Einheiten mit Checkbox wird sie mitgezogen und das
+   Tor prüft die Kopplung; checkbox-lose Einheiten — Querschnitt-Band, S0,
+   QS-TOK — haben keine Kopplungs-Prüfung, dort ist `status` die alleinige
+   Wahrheit).
 6. **Session-Karte in `STRUKTUR.md` nachgezogen** — siehe Ziff. 4a.
 
 ### 4a. STRUKTUR-Pflicht
