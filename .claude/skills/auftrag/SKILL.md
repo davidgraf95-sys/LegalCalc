@@ -13,11 +13,15 @@ nie als loses Dokument danebengelegt.
 Die «Geordnete Abarbeitung» (Wellen und Schritte), bei begleitenden Aufgaben das
 Querschnitt-Band. Eine neue `FAHRPLAN-*.md` entsteht **nur** als Detailquelle,
 verlinkt aus einem Roadmap-Schritt — nie als zweiter Einstieg. Klein → inline im
-Schritt, gross → in die verlinkte Detaildatei. Der Wächter `QS-PH` meldet jede
-neu hinzugefügte, unverlinkte `FAHRPLAN-*.md` rot.
+Schritt, gross → in die verlinkte Detaildatei. **Ablageort ist seit 31.7.2026
+`fahrplaene/`** (nicht mehr der Root); erledigte Fahrpläne wandern nach
+`archiv/`. Der Wächter `QS-PH` (`check:plan` Regel 7) meldet jede neu
+hinzugefügte, unverlinkte Datei in `fahrplaene/` rot. Slicer-Aufruf:
+`npm run fahrplan -- fahrplaene/FAHRPLAN-<X>.md <§>`.
 
-**Deckel:** Root-Markdown bleibt bei rund 20 Dateien. Neue Erkenntnisse gehen in
-`bibliothek/` (CLAUDE.md §11), nicht in einen neuen Root-Fahrplan.
+**Deckel:** Root-Markdown bleibt bei rund 20 Dateien (Stand 31.7.2026: 22).
+Neue Erkenntnisse gehen in `bibliothek/` (CLAUDE.md §11), nicht in einen neuen
+Fahrplan.
 
 ## 2. Vor dem Start: Plan-Stand abfragen
 
