@@ -414,6 +414,19 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   `check:gegenpruefung`, §15-Anteile nur-visuell/golden byte-gleich.
   **Detail (Spec wörtlich, inkl. Nachzug-Wellen A19–A25/A29–A40, IA-Reihe §11, eId-Reihe §12):**
   [FAHRPLAN-GESETZES-UX.md](FAHRPLAN-GESETZES-UX.md) §16. Trailer `Roadmap: W2·5d`.
+  **Session-Granularität (AP-6, 31.7.2026):** der offene Rest ist in die vier Teilschritte unten
+  zerlegt; dieser Schritt bleibt das Dach. **Bewusst NICHT als Teilschritt:** EID-3 Teil (a)
+  (Sektions-Deep-Links) re-öffnet die A27-/§11.7-Entscheidung «kein SektionKontextKopf-Revival» —
+  David-Vorlage, kein autonomer Bau; ebenso die `ELI_FORM`-Präfix-Regex-Härtung («Kandidat bei
+  nächster Berührung», kein eigener Slot) und die per Task-Chip ausgelagerten Flake-/CLS-Härtungen.
+  - [ ] **5d-EID3 · EID-3 Teil (b): Linien-Tiefe aus der eId-Pfadlänge** — Guide-/Einzugstiefe aus dem kumulativen eId-Pfad statt aus der Sidecar-Rekursionstiefe; golden-neutral, Tor `check:linien-kanon`. Detail: [FAHRPLAN-GESETZES-UX.md](FAHRPLAN-GESETZES-UX.md) §12.2/§12.3. Trailer `Roadmap: W2·5d-EID3`.
+    <!-- @meta id: W2·5d-EID3 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/linienAufbau.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZES-UX.md -->
+  - [ ] **5d-ANNEX · eId-Anker für Annex-Sections** — die aus EID-1 bekannte Grenze schliessen: Container-eIds auch auf dem separaten Anhang-Pfad mitschneiden. **Extraktion = Risikopfad** ⇒ `check:gegenpruefung` + golden byte-gleich, EINE gebündelte Regeneration (§12.3 Ziff. 4). Detail: [FAHRPLAN-GESETZES-UX.md](FAHRPLAN-GESETZES-UX.md) §12.2. Trailer `Roadmap: W2·5d-ANNEX`.
+    <!-- @meta id: W2·5d-ANNEX · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext/struktur-extrahiere.ts, public/normtext/bund] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZES-UX.md -->
+  - [ ] **5d-SPY · V3/H6 — Scroll-Spy-Härtung (rootMargin ↔ Bezugslinie)** — der einzige wörtlich so benannte «offene Härtungs-Posten» der E-Reihe; **erst reproduzieren, dann fixen** (H6 ist unreproduziert, kein Eingriff am Spy-Kern ohne Beleg). Detail: [FAHRPLAN-GESETZES-UX.md](FAHRPLAN-GESETZES-UX.md) §10.10. Trailer `Roadmap: W2·5d-SPY`.
+    <!-- @meta id: W2·5d-SPY · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts/SektionBaumTOC.tsx, src/pages/gesetz-leser/scrollAnker.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZES-UX.md -->
+  - [ ] **5d-YC · IA-Rest Y-C: `/international` Stufe 2** — echter Redirect mit Hash-Mapping; §11 ist sonst komplett (IA-1…IA-7 + Y-A/Y-B gebaut), Stufe 2 war ausdrücklich dem Stufe-1-Betrieb nachgelagert. Detail: [FAHRPLAN-GESETZES-UX.md](FAHRPLAN-GESETZES-UX.md) §11.8/§11.10. Trailer `Roadmap: W2·5d-YC`.
+    <!-- @meta id: W2·5d-YC · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/seo.ts, src/lib/navigation.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZES-UX.md -->
   - [x] **A19** (FN-1+FN-2 + Drop-Fix `disp_*`) — **✅ GEBAUT 10.7.2026** (`feat/v2-fn1-fn2`). Wortlaut → `ROADMAP-CHRONIK.md` → W2·5d/A19–A25 (26.7.2026). V2 §2 F1.
   - [x] **A20** (FN-3): Präambel-Fussnoten inline (nach U-VERWEIS-Merge). V2 §2 F1.
     **✅ GEBAUT 12.7.2026 (`feat/v2-fn3`, PR #212).** Detail §10.8.
@@ -442,11 +455,56 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   Priorisierter UI-Verbesserungs-Plan aus 60 empirischen Befunden + 3 Kritik-Linsen — Suche, Navigation
   und Auffindbarkeit über alle Oberflächen, reine Darstellungsschicht (§3), keine Rechtslogik.
   **Detail:** [FAHRPLAN-UI-NAVIGATION.md](FAHRPLAN-UI-NAVIGATION.md) §8. Trailer `Roadmap: W2·10-UI-NAV`.
+  **Session-Granularität (AP-6, 31.7.2026):** N0a–N0d, S2–S5, V1 und O1 sind gebaut; der offene Rest
+  (25 Einheiten) ist unten in elf session-grosse Teilschritte gebündelt — geschnitten nach Datei-Fläche
+  entlang der Fahrplan-Blöcke §2/§3/§4/§6/§7 und der Rangfolge §R, dieser Schritt bleibt das Dach.
+  **Jeder Teilschritt erbt `dep: [W2·5d]` vom Dach** — die §0.2-Sequenzierung («Reader-Flächen hart
+  HINTER den A-Restposten») wird hier nicht gelockert. **Bewusst NICHT als Teilschritt:** `G-SUCH`
+  (Bau-GO David ausstehend), die 6 §Y-Entscheid-Posten und die 4 §X-gegateten Vorhaben.
+  - [ ] **UI-NAV-S · Suche-Rest (S1 + S6)** — Query-Durchreichung `?q=` in die Browse-Pages + mobiler Such-Fokusmodus (≥16 px gegen iOS-Zoom). Detail: [FAHRPLAN-UI-NAVIGATION.md](FAHRPLAN-UI-NAVIGATION.md) §2. Trailer `Roadmap: W2·10-UI-NAV-S`.
+    <!-- @meta id: W2·10-UI-NAV-S · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/lib/universalSuche.ts, src/components/suche, src/components/layout/HeaderSuche.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-NAVIGATION.md -->
+  - [ ] **UI-NAV-V · Verzahnung ohne Reader-Fläche (V2 + V4 + V6)** — Hover-Trigger am bestehenden NormPopover · NormChip-`href` intern (Cmd-Klick landet intern) · Vorlage↔Rechner-Kreuzlinks. Detail: [FAHRPLAN-UI-NAVIGATION.md](FAHRPLAN-UI-NAVIGATION.md) §3. Trailer `Roadmap: W2·10-UI-NAV-V`.
+    <!-- @meta id: W2·10-UI-NAV-V · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/components/NormPopover.tsx, src/lib/vorlagen] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-NAVIGATION.md -->
+  - [ ] **UI-NAV-VR · Verzahnung auf Reader-Fläche (V3 + V5)** — Regeste-Popover am KantenChip + Erwägungs-Navigation im Entscheid-Leser; `parts.tsx`-Kollisions-Precheck Pflicht (§0.2). Detail: [FAHRPLAN-UI-NAVIGATION.md](FAHRPLAN-UI-NAVIGATION.md) §3. Trailer `Roadmap: W2·10-UI-NAV-VR`.
+    <!-- @meta id: W2·10-UI-NAV-VR · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/pages/EntscheidLeser.tsx, src/lib/rechtsprechung/abschnitte.ts, src/pages/gesetz-leser/parts.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-NAVIGATION.md -->
+  - [ ] **UI-NAV-R1 · Reader: Finden im Gesetz (R1 + R2)** — In-Gesetz-Suche mit Treffer-Highlight + mobile Gliederung als Bottom-Sheet mit «Sie sind hier». Detail: [FAHRPLAN-UI-NAVIGATION.md](FAHRPLAN-UI-NAVIGATION.md) §4. Trailer `Roadmap: W2·10-UI-NAV-R1`.
+    <!-- @meta id: W2·10-UI-NAV-R1 · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/pages/gesetz-leser/inhalt.tsx, src/pages/gesetz-leser/parts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-NAVIGATION.md -->
+  - [ ] **UI-NAV-R2 · Reader: Zitieren und Zurückspringen (R3 + R5 + R7)** — zitierfähige Referenz mit Permalink · Rücksprung-Chip-Restscope · Deep-Link-Skeleton «Springe zu Art. X …». Detail: [FAHRPLAN-UI-NAVIGATION.md](FAHRPLAN-UI-NAVIGATION.md) §4. Trailer `Roadmap: W2·10-UI-NAV-R2`.
+    <!-- @meta id: W2·10-UI-NAV-R2 · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/pages/gesetz-leser/scrollAnker.ts, src/components/layout/InhaltsKopf.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-NAVIGATION.md -->
+  - [ ] **UI-NAV-R3 · Reader: Weiterlesen und Tastatur (R4 + R8)** — Positions-Persistenz «Weiterlesen bei Art. X» + Tastatur-Navigation j/k mit «?»-Overlay (R8 = niedrigste Priorität der Reihe). Detail: [FAHRPLAN-UI-NAVIGATION.md](FAHRPLAN-UI-NAVIGATION.md) §4. Trailer `Roadmap: W2·10-UI-NAV-R3`.
+    <!-- @meta id: W2·10-UI-NAV-R3 · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/pages/gesetz-leser/inhalt.tsx, src/lib/zuletztVerwendet.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-NAVIGATION.md -->
+  - [ ] **UI-NAV-R4 · Trefferflächen und a11y (R6 + E4)** — Tap-Target-Sammelticket mit Token-Regel ins `DESIGN-REGLEMENT.md` + a11y-Prüfauftrag der Linsen. Detail: [FAHRPLAN-UI-NAVIGATION.md](FAHRPLAN-UI-NAVIGATION.md) §4/§7. Trailer `Roadmap: W2·10-UI-NAV-R4`.
+    <!-- @meta id: W2·10-UI-NAV-R4 · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/index.css, e2e/a11y.e2e.ts, DESIGN-REGLEMENT.md] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-NAVIGATION.md -->
+  - [ ] **UI-NAV-J · Rechtsprechungs-Seiten (J1 + J2 + J4)** — Browse-Liste mit Batching und Band-Sprungleiste · Mobil-Filter als Bottom-Sheet · «Neues vom Bundesgericht»-Karten. Detail: [FAHRPLAN-UI-NAVIGATION.md](FAHRPLAN-UI-NAVIGATION.md) §6. Trailer `Roadmap: W2·10-UI-NAV-J`.
+    <!-- @meta id: W2·10-UI-NAV-J · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/pages/Rechtsprechung.tsx, src/components/rechtsprechung] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-NAVIGATION.md -->
+  - [ ] **UI-NAV-J3 · Sachgebiets-Pipeline verfeinern (J3)** — **bewusst allein**, weil Risiko-Pfad: `QS-GP` Pflicht + golden byte-gleich, eigene Gegenprüfungs-Runde. Detail: [FAHRPLAN-UI-NAVIGATION.md](FAHRPLAN-UI-NAVIGATION.md) §6. Trailer `Roadmap: W2·10-UI-NAV-J3`.
+    <!-- @meta id: W2·10-UI-NAV-J3 · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [scripts/rechtsprechung, public/rechtsprechung/register.json, src/lib/normtext/browse.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-NAVIGATION.md -->
+  - [ ] **UI-NAV-O · Übersichten und Sidebar (O2 + O4 + O5)** — Sidebar-Konsistenz · Kantons-Einstieg mit Abdeckung vor dem Klick · Scope-Labels der lokalen Suchfelder; alle drei S. Detail: [FAHRPLAN-UI-NAVIGATION.md](FAHRPLAN-UI-NAVIGATION.md) §6. Trailer `Roadmap: W2·10-UI-NAV-O`.
+    <!-- @meta id: W2·10-UI-NAV-O · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/components/layout/Sidebar.tsx, src/pages/Gesetze.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-NAVIGATION.md -->
+  - [ ] **UI-NAV-Z · Zusatzposten Ausleitung (Z1 + Z2)** — ICS-/Kalender-Export der Fristergebnisse + Print-CSS für Fundstellen; Ist-Stand vor dem Bau erheben. Detail: [FAHRPLAN-UI-NAVIGATION.md](FAHRPLAN-UI-NAVIGATION.md) §7. Trailer `Roadmap: W2·10-UI-NAV-Z`.
+    <!-- @meta id: W2·10-UI-NAV-Z · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/lib/icsExport.ts, src/index.css] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-UI-NAVIGATION.md -->
 - [ ] **5f · Design-Wärme & Atmosphäre (Ultracode-Synthese 11.7.)** *(`[OF]`, reine Darstellung/Token-Schicht)*:
   <!-- @meta id: W2·11-DESIGN · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/index.css, tailwind.config.js, DESIGN-REGLEMENT.md, scripts/check-design-tokens.ts, src/components/rechtsprechung, src/pages/EntscheidLeser.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-DESIGN-WAERME.md -->
   Farbklima/Wärme/Typografie-Plan aus 48 Ultracode-Befunden + 3 Kritik-Linsen — Token-Schicht nach
   §13, Normtext-Körper bleibt farbfrei, golden byte-gleich.
   **Detail:** [FAHRPLAN-DESIGN-WAERME.md](FAHRPLAN-DESIGN-WAERME.md) §5. Trailer `Roadmap: W2·11-DESIGN`.
+  **Session-Granularität (AP-6, 31.7.2026):** D-0…D-5 sind gebaut; offen bleiben D-6, D-7 und D-8.
+  Die Teilschritte unten folgen der **harten Kette** des Fahrplans (`D-6 → D-7 → D-8`) und der Regel
+  «**nie zwei Token-Einheiten in einem PR**»; D-8 ist entlang seiner eigenen Nummerierung 1/2/3
+  geschnitten, weil es als einzige Einheit **nicht flip-reversibel** ist (Call-Site-Arbeit, Pilot
+  zuerst). Dieser Schritt bleibt das Dach. **Bewusst NICHT als Teilschritt:** die 5 D-9-Posten
+  (David-Entscheid-Mappe, Abnahme-Zeitsperre bis 1.12.2026).
+  - [ ] **DESIGN-D6 · Dunkel-Paket: Elevation, Schatten, Scrims (EIN PR)** — surface dunkel heben · warme Schattenbasis · Lichtkante · Scrim-Audit; Token-only, flip-reversibel, `check:farbwelt` + axe dunkel. Detail: [FAHRPLAN-DESIGN-WAERME.md](FAHRPLAN-DESIGN-WAERME.md) §2 (D-6). Trailer `Roadmap: W2·11-DESIGN-D6`.
+    <!-- @meta id: W2·11-DESIGN-D6 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/index.css] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-DESIGN-WAERME.md -->
+  - [ ] **DESIGN-D7 · Ein Lese-Register (`--reading-ink`, `--lese-fs`/`--lese-lh`)** — Lese-Basis + Entscheid-Stepper als Multiplikatoren, CPL-Messung, Regel in beide Domänen-Reglemente; golden neutral. Detail: [FAHRPLAN-DESIGN-WAERME.md](FAHRPLAN-DESIGN-WAERME.md) §2 (D-7). Trailer `Roadmap: W2·11-DESIGN-D7`.
+    <!-- @meta id: W2·11-DESIGN-D7 · status: ready · of: ja · blocker: null · dep: [W2·11-DESIGN-D6] · kollision: [src/index.css, src/pages/EntscheidLeser.tsx, src/components/rechtsprechung, DESIGN-REGLEMENT.md] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-DESIGN-WAERME.md -->
+  - [ ] **DESIGN-D8a · Wörterbuch auf die Fläche: slate auf Entscheid-Flächen (D-8.1)** — Entscheid-Leser-Chrome und Rubrik-Label auf die Rollen-Schicht ziehen; Playwright-Screens in die Abnahme-Mappe. Detail: [FAHRPLAN-DESIGN-WAERME.md](FAHRPLAN-DESIGN-WAERME.md) §2 (D-8.1). Trailer `Roadmap: W2·11-DESIGN-D8a`.
+    <!-- @meta id: W2·11-DESIGN-D8a · status: ready · of: ja · blocker: null · dep: [W2·11-DESIGN-D7] · kollision: [src/components/rechtsprechung, src/pages/EntscheidLeser.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-DESIGN-WAERME.md -->
+  - [ ] **DESIGN-D8b · Mono-Diät — Pilot, dann mechanischer Rest (D-8.2)** — ~50 verteilte Fundstellen; **Pilot zuerst** (Startseite + 1 Rechner) mit Vorher/Nachher-Screens, danach der Rest. Nicht flip-reversibel. Detail: [FAHRPLAN-DESIGN-WAERME.md](FAHRPLAN-DESIGN-WAERME.md) §2 (D-8.2). Trailer `Roadmap: W2·11-DESIGN-D8b`.
+    <!-- @meta id: W2·11-DESIGN-D8b · status: ready · of: ja · blocker: null · dep: [W2·11-DESIGN-D8a] · kollision: [src/components/forms, src/components/DatumsFeld.tsx, src/components/BetragsFeld.tsx, src/pages/Startseite.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-DESIGN-WAERME.md -->
+  - [ ] **DESIGN-D8c · Motiv-Katalog (D-8.3)** — `scale-rule`-Motiv an 2–3 Sektions-Orten, Abschluss der Anwendungs-Schicht. Detail: [FAHRPLAN-DESIGN-WAERME.md](FAHRPLAN-DESIGN-WAERME.md) §2 (D-8.3). Trailer `Roadmap: W2·11-DESIGN-D8c`.
+    <!-- @meta id: W2·11-DESIGN-D8c · status: ready · of: ja · blocker: null · dep: [W2·11-DESIGN-D8b] · kollision: [src/components/start, src/index.css] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-DESIGN-WAERME.md -->
+
 - [ ] **5g-ZEIT · Norm-Zeitmaschine + Fassungs-Diff** *(Ideen-Intake 20.7.2026 · Extraktion, `QS-GP`)*:
   **Status 20.7.2026 (David):** «irgendwann, aktuell nicht relevant» → von `blocked` auf `parked`; der Blocker `zeit-historik-poc` bleibt bestehen. Damit verschwindet der Schritt aus der aktiven Entscheidungslast, ohne dass die Vorbedingungen verloren gehen.
   <!-- @meta id: W2·5g-ZEIT · status: parked · of: ja · blocker: zeit-historik-poc · dep: [] · kollision: [scripts/normtext, src/lib/normtext, public/normtext] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
@@ -481,6 +539,20 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
     Duplikat) · **BGE-Band-Nachzug 146–149** (PR-A 146+147 ✅, PR-B 148+149 offen) · **Rechtsprechungs-
     Übersicht** (P0-Fix SG-Regeste + kant. Norm-Resolver, Korpus-Breite `[OF]`).
     **Detail:** [FAHRPLAN-RECHTSPRECHUNG.md](FAHRPLAN-RECHTSPRECHUNG.md) §13.
+    **Session-Granularität (AP-6, 31.7.2026):** §13 ist eine unsortierte Postenliste ohne eigene
+    Reihenfolge — die vier Posten unten tragen je ein eigenes `@meta`, dieser Schritt bleibt das Dach.
+    **Bewusst NICHT als Teilschritt:** der **BGE-Band-Nachzug 146–149** (der Plantext führt PR-B als
+    offen, Korpus und Commit `eb80eeb10` weisen 148/149 als gebaut aus — **Plan-Nachführung offen,
+    §7-Befund**, kein Bau) und **R-RICHTER Block B** (gehört planerisch nach `W2·6-FILTER`, nicht
+    doppelt planen).
+    - [ ] **6-MEHRSPRACH · Mehrsprachiger Normvergleich DE/FR/IT** — Auslegungswerkzeug nach Art. 14 PublG: je Erlass drei Sprachfassungen aus der amtlichen Fedlex-Stelle + Synopse-UI im Gesetzleser; heute ist nur `de` befüllt. Detail: [FAHRPLAN-RECHTSPRECHUNG.md](FAHRPLAN-RECHTSPRECHUNG.md) §13. Trailer `Roadmap: W2·6-MEHRSPRACH`.
+      <!-- @meta id: W2·6-MEHRSPRACH · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext/bund, src/pages/gesetz-leser] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-RECHTSPRECHUNG.md -->
+    - [ ] **6-RESOLVER · Kantonaler Norm-Resolver → Kantonalnorm-Buckets (P0-Kern)** — `norm-index` füllt heute nur Bundesnorm-Buckets; der Resolver ist die belegte Voraussetzung der kantonalen Stufe. **Mapping = Risikopfad** ⇒ `QS-GP`. Detail: [FAHRPLAN-RECHTSPRECHUNG.md](FAHRPLAN-RECHTSPRECHUNG.md) §13. Trailer `Roadmap: W2·6-RESOLVER`.
+      <!-- @meta id: W2·6-RESOLVER · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/rechtsprechung/norm-index.ts, public/rechtsprechung/norm-index] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-RECHTSPRECHUNG.md -->
+    - [ ] **6-ADRESSEN · Gerichts-/Behörden-Adressregister** — Lese-/Index-Schicht über die bestehenden Bestände, **kein Datenduplikat** (§5); Abnahme-Status + Verfallsregister je Eintrag, Zuständigkeits-Schluss bleibt im Navigator. Quelle `bibliothek/behoerden/`. Detail: [FAHRPLAN-RECHTSPRECHUNG.md](FAHRPLAN-RECHTSPRECHUNG.md) §13. Trailer `Roadmap: W2·6-ADRESSEN`.
+      <!-- @meta id: W2·6-ADRESSEN · status: ready · of: ja · blocker: null · dep: [] · kollision: [bibliothek/behoerden, src/lib/kontext.ts, src/pages/RechnerUebersicht.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-RECHTSPRECHUNG.md -->
+    - [ ] **6-UEBERSICHT · Rechtsprechungs-Übersicht: P0-Rest + Korpus-Breite** — SG-Regeste-Rest und die Übersichts-/Facetten-Breite; die Kantons-Ausweitung setzt den Resolver voraus (darum `dep`) und verlangt vorher eine abnahmepflichtige Anonymisierungs-Stichprobe. Detail: [FAHRPLAN-RECHTSPRECHUNG.md](FAHRPLAN-RECHTSPRECHUNG.md) §13. Trailer `Roadmap: W2·6-UEBERSICHT`.
+      <!-- @meta id: W2·6-UEBERSICHT · status: ready · of: ja · blocker: null · dep: [W2·6-RESOLVER] · kollision: [src/pages/Rechtsprechung.tsx, src/components/rechtsprechung, public/rechtsprechung/register.json] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-RECHTSPRECHUNG.md -->
     - [x] **Kanton BS: Rechtsprechungs-Vollimport seit 2022 (amtliches Portal)** *(Direktauftrag David 19.7.2026)* — ✅; ~3'765 Dokumente (2022–2026) aller 4 BS-Instanzen, Tor `check:bs-entscheide`. Wortlaut → `ROADMAP-CHRONIK.md` → W2·6-BS (26.7.2026). Trailer `Roadmap: W2·6-BS`.
     - [~] **Richter-/Spruchkörper-Filter — Fundament** *(`R-RICHTER`, Direktauftrag David 20.7.2026;
       dieselbe Pipeline/dasselbe Datenasset wie die BS-Tranche darüber, §14.2)*: **Block A (Daten) ✅
@@ -587,12 +659,57 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   baubare Einheiten K-1…K-14** (kantons-einzelne Fixes + Display-/UI-Schicht, slot-frei);
   Extraktions-Anteile sind Risikopfad ⇒ `QS-GP` + golden byte-gleich.
   **Detail:** [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §2. Trailer `Roadmap: W2·13-KANTONE`.
+  **Session-Granularität (AP-6, 31.7.2026):** je Einheit ein Teilschritt, dieser Schritt bleibt das
+  Dach. Die `dep`-Kette K-1 → … → K-14 bildet die Vorgabe des Fahrplans **«Ausführungsreihenfolge =
+  Tabellen-Reihenfolge»** (§1-A) maschinenlesbar ab und erfüllt damit zugleich den harten
+  G4-Constraint «K-7a F20-Gate vor jedem FR/VS/AR-PDF-Nachzug» (betrifft K-12a). **Bewusst NICHT
+  als Teilschritt:** K-G1…K-G5 (gegatet bis zur E3-Slot-Freigabe, Leitprinzip 4), K-15 (David:
+  «später»), K-16/K-17/K-18 (§14-Intake-Nachträge, bleiben vorerst unter dem Dach).
+  - [ ] **K-1 · Reader-Treue P0** *(F24/F25/F28/F33/F29-Display/F5, M)* — Lesereihenfolge, Doppel-Decode, «SR»-Label, Titel-Dopplung, Fussnoten-Stern-Strip, A14-Relevanz fr/it; reine Display-Schicht. Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K1`.
+    <!-- @meta id: W2·13-KANTONE-K1 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/inhalt.tsx, src/pages/GesetzLeser.tsx, src/pages/gesetz-leser/parts/ErlassLeserKopf.tsx, src/lib/normtext/relevanz.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
+  - [ ] **K-2 · §8-Ehrlichkeit UI** *(F26-UI/F37/F44/F27-Rest, S–M)* — zweistufiger Currency-Chip, Kanton-Hinweis im KontextPanel, Abdeckungs-Kontextzeile, «Stand unbekannt», Systematik-Hinweis; reine Anzeige. Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K2`.
+    <!-- @meta id: W2·13-KANTONE-K2 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K1] · kollision: [src/components/kontext/KontextPanel.tsx, src/components/NormText.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
+  - [ ] **K-3 · Suche: Kanton-Treffer auf die richtige Ebene** *(F35/F36, S)* — Edge-DTO um `ebene`/`kanton`, Treffer-Href auf `/gesetze/<ebene>/…`, Kanton-Marke, Reader-Redirect als Defense-in-depth. **`api/suche`-Änderung geht erst mit Davids §9-Ja live.** Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K3`.
+    <!-- @meta id: W2·13-KANTONE-K3 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K2] · kollision: [src/lib/suche/onlineVolltext.ts, api/suche.ts, src/components/suche] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
+  - [ ] **K-4 · Einzel-Nachzüge Stand/Currency** *(F14/F9 + SO-Lektion, S — **Risikopfad**, `QS-GP`)* — ZG-161.7 nachziehen, SZ-Stand klären, Invariante «stand ≤ Generierungsdatum» ins Tor `check:normtext`, Vollständigkeits-Invariante gegen den strukturell blinden Drift-Check. Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K4`.
+    <!-- @meta id: W2·13-KANTONE-K4 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K3] · kollision: [scripts/normtext/check-drift.ts, public/normtext/kanton] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
+  - [ ] **K-5 · NormText-Verweise Kanton** *(F41 → F40 → F42, M)* — **EINE Einheit (gleiche Datei)**, golden-neutral; harte Binnenfolge **F41 vor F40** (sonst fehlt der Ersatz), F42 nachrangig. Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K5`.
+    <!-- @meta id: W2·13-KANTONE-K5 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K4] · kollision: [src/components/NormText.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
+  - [ ] **K-6 · Quellen-Hygiene: lexfind → amtlich + Dedupe** *(F7/F8/F15/F11/F25-Keys/F22, M — **Risikopfad**, `QS-GP`)* — **pro Kanton eine Tranche**; Binnenfolge K-6a (Dedupe) vor K-6d (GL-Key-Migration). Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K6`.
+    <!-- @meta id: W2·13-KANTONE-K6 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K5] · kollision: [public/normtext/kanton, scripts/normtext/lexfind-discovery.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
+  - [ ] **K-7 · PDF-Werkstatt VD/SZ/ZH + Range-Platzhalter** *(F20-GATE/F17a/F18/F16/F19/F23/F13, M — **Risikopfad**, `QS-GP` + pdfplumber-Gegenprobe)* — Teil a ist das **harte Dehyphenations-Gate**; ohne es bleibt jeder FR/VS/AR-PDF-Nachzug gesperrt. Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K7`.
+    <!-- @meta id: W2·13-KANTONE-K7 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K6] · kollision: [scripts/normtext, public/normtext/kanton] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
+  - [ ] **K-8 · xhtml-`<p>`-Strukturerhalt** *(F21, M)* — `parseSegment` im LexWork-Adapter, Schema nur additiv, Golden-Diff korpusweit offline; **Regeneration kantonsweise, > 2 Kantone → in K-G1 einhängen**. Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K8`.
+    <!-- @meta id: W2·13-KANTONE-K8 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K7] · kollision: [scripts/normtext/adapter-lexwork.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
+  - [ ] **K-9 · Erlass→Werkzeug-Brücke Kanton** *(F38, M)* — Build-Zeit-Inversion der Tarif-`quelleUrl`s zu `KANTON_ERLASS_WERKZEUGE`, Mapping nur bei exaktem Match, Konsistenz-Tor; reine Metadaten, kein Slot. Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K9`.
+    <!-- @meta id: W2·13-KANTONE-K9 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K8] · kollision: [src/lib/startseiteConfig.ts, public/normtext/register.json] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
+  - [ ] **K-10 · AR-Sidecar-Batch** *(F30-AR, M)* — 263 der 314 fehlenden Struktur-Sidecars sind AR; nur amtliche Überschriften, **Einzel-Erlass-POC vor dem Batch**; 1 Kanton = slot-frei. Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K10`.
+    <!-- @meta id: W2·13-KANTONE-K10 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K9] · kollision: [public/normtext/struktur, scripts/normtext/struktur-extrahiere.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
+  - [ ] **K-11 · Kanton-Reader-Performance profilieren** *(F32, M)* — **erst messen**: `check:perf-budget` um den Kanton-Leserpfad erweitern, nichts «fixen» vor dem Profil (Ursache unbewiesen). Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K11`.
+    <!-- @meta id: W2·13-KANTONE-K11 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K10] · kollision: [src/pages/gesetz-leser] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
+  - [ ] **K-12 · Reports & kuratierte Listen** *(F3-Report/F4-Liste/F33-Daten, S–M)* — lesend/planend; K-12b ist reine Planung ohne Fetch, K-12a-AR-Anteile erst nach dem F20-Gate aus K-7. Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K12`.
+    <!-- @meta id: W2·13-KANTONE-K12 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K11] · kollision: [scripts/normtext/inventar-kanton.ts, scripts/normtext/lexfind-discovery.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
+  - [ ] **K-13 · Systematik-Bäume 7 Kantone** *(F6≡F43, M)* — ZH/GE/VD/TI/SZ/NE/JU fehlen (19 von 26 vorhanden); Quell-Erhebung je Kanton empirisch und browserlos, kantons-einzeln frei. Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K13`.
+    <!-- @meta id: W2·13-KANTONE-K13 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K12] · kollision: [scripts/normtext/kanton-systematik-run.ts, public/normtext/kanton-systematik.json] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
+  - [ ] **K-14 · Kantonales Zitat-Vokabular — POC** *(F39, L — **Risikopfad**, `QS-GP`)* — POC über 5 Gerichts-Kantone × 6 Entscheide, nur exakte Sammlungsnummer-Matches, additiver Extraktions-Pass. **Prämisse «Entscheid-`normKeys` sind Bund-only» vor dem Bau gegen `W2·6-NKEY` nachmessen.** Detail: [FAHRPLAN-KANTONE.md](FAHRPLAN-KANTONE.md) §1-A. Trailer `Roadmap: W2·13-KANTONE-K14`.
+    <!-- @meta id: W2·13-KANTONE-K14 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K13] · kollision: [scripts/rechtsprechung, public/rechtsprechung, src/lib/rechtsprechung] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-KANTONE.md -->
 - [ ] **14-SIGNAL · Watchlist & Änderungs-Signale** *(Ideen-Intake 20.7.2026 · Infra/UI, kein Rechtsinhalt)*:
   <!-- @meta id: W2·14-SIGNAL · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-wiedervorlage-generieren.ts, public/normtext/currency.json, public/rechtsprechung/register.json, src/lib/zuletztVerwendet.ts, src/pages/Startseite.tsx, src/pages/Einstellungen.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-FEDLEX-PORTFOLIO.md -->
   «Sag mir, wenn sich Norm Y ändert / Gericht X neu entscheidet.» **Baut ausschliesslich auf vorhandenen
   Signalen** (Currency/Register/Wiedervorlage) — kein neuer Rechtsinhalt, keine Beratung; Speicherung
   lokal, Werkzeuge bleiben zustandslos (Leitbild).
   **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](FAHRPLAN-FEDLEX-PORTFOLIO.md) §16. Trailer `Roadmap: W2·14-SIGNAL`.
+  **Session-Granularität (AP-6, 31.7.2026):** die Spec portioniert selbst in B1 · B2 · Gerichts-Hälfte;
+  die drei Teilschritte unten folgen dieser Reihenfolge (B2 prüft gegen das Build-Artefakt aus B1, das
+  Gerichts-Signal hängt sich an die Watchlist aus B2). Dieser Schritt bleibt das Dach. **Bewusst NICHT
+  als Teilschritt:** das 🟠 Push-/E-Mail-Abo — Architektur-BRUCH gegen «Werkzeuge bleiben zustandslos»,
+  kein Bau ohne ausdrücklichen Architektur-Entscheid Davids und **nicht** in B1/B2 hineinziehen.
+  - [ ] **14-SIGNAL-B1 · Statischer Änderungs-Feed (🟢)** — RSS/Atom/JSON zur Build-Zeit aus `currency.json` + Verfallsregister, analog `gen:fedlex-wiedervorlage`; **nur der VORWÄRTS-Fall** (`naechsteFassungAb`). DoD: Generator deterministisch, 2 Läufe byte-gleich. Detail: [FAHRPLAN-FEDLEX-PORTFOLIO.md](FAHRPLAN-FEDLEX-PORTFOLIO.md) §7.1. Trailer `Roadmap: W2·14-SIGNAL-B1`.
+    <!-- @meta id: W2·14-SIGNAL-B1 · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-wiedervorlage-generieren.ts, public/normtext/currency.json] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-FEDLEX-PORTFOLIO.md -->
+  - [ ] **14-SIGNAL-B2 · Client-Watchlist (🟢)** — localStorage-Liste gemerkter Normen, beim Besuch gegen die statischen Build-Artefakte geprüft (`zuletztVerwendet`-Muster). **Rückblick-Flag zwingend gegen `fassungsToken`/`sha`, nie gegen `geprueftAm`** (sonst systematische Falschmeldungen); keine Mandats-/Personendaten in localStorage (§8). Detail: [FAHRPLAN-FEDLEX-PORTFOLIO.md](FAHRPLAN-FEDLEX-PORTFOLIO.md) §7.0/§7.1. Trailer `Roadmap: W2·14-SIGNAL-B2`.
+    <!-- @meta id: W2·14-SIGNAL-B2 · status: ready · of: ja · blocker: null · dep: [W2·14-SIGNAL-B1] · kollision: [src/lib/zuletztVerwendet.ts, src/pages/Startseite.tsx, src/pages/Einstellungen.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-FEDLEX-PORTFOLIO.md -->
+  - [ ] **14-SIGNAL-GER · Gerichts-Delta mit ehrlicher Latenz (🟡)** — Build-Zeit-Delta über `register.json` (neue Einträge je Gericht/Norm seit Datum X); **eigenes Verdikt, nicht unter dem Fedlex-🟢 mitgeführt**. Es gibt keinen Live-Gerichts-Feed — die Import-Kadenz wird als «Stand des Entscheid-Bestands» sichtbar ausgeliefert (§8). Detail: [FAHRPLAN-FEDLEX-PORTFOLIO.md](FAHRPLAN-FEDLEX-PORTFOLIO.md) §7.2. Trailer `Roadmap: W2·14-SIGNAL-GER`.
+    <!-- @meta id: W2·14-SIGNAL-GER · status: ready · of: ja · blocker: null · dep: [W2·14-SIGNAL-B2] · kollision: [public/rechtsprechung/register.json, scripts/rechtsprechung] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-FEDLEX-PORTFOLIO.md -->
 - [ ] **15-CLS · Echter CLS-Defekt auf `/gesetze` (0.109 @8× CPU)** *(§14-Intake 20.7.2026 · **Produktfehler**, reine UI)*
   <!-- @meta id: W2·15-CLS · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/Gesetze.tsx, src/components/start] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-PERFORMANCE.md -->
   **Bewusst ein eigener Schritt und NICHT unter `QS-PERF` mitgeführt** — ein gemessener Produktfehler
@@ -692,6 +809,12 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   sichtbar** (Gesetz | Rechner | Begründungs-Absatz). **Erst Strang A** (Inhaltsbreite-Umschalter),
   dann der Fundament-Umbau; eigener Worktree (§12).
   **Detail:** [FAHRPLAN-SPLIT-VIEW.md](FAHRPLAN-SPLIT-VIEW.md) §1. Trailer `Roadmap: W3·14`.
+  **Session-Granularität (AP-6, 31.7.2026):** Strang A sowie B-0/B-0b/B-1/B-2/B-2.5/B-4/B-5 sind
+  gebaut; `W3·14-S` (Bündel S) und `W3·14-a11y` tragen bereits eigene `@meta`. Der einzige noch
+  unetikettierte Rest — **B-3** — bekommt unten sein eigenes Etikett; damit ist dieser Schritt
+  vollständig Dach über drei abschliessbare Teilschritte.
+  - [ ] **14-B3 · Scroll & Fokus pro Pane — Restposten** — pro-Pane-Scroll und Spy laufen bereits; **offen**: Scroll-POSITIONS-Wiederherstellung (`ScrollWiederherstellung`/`ScrollZuHash` sind in `App.tsx` weiterhin window-basiert und im Multipane-Primär ohne Wirkung) + Tastatur-Pane-Wechsel. Detail: [FAHRPLAN-SPLIT-VIEW.md](FAHRPLAN-SPLIT-VIEW.md) §STRANG B (B-3). Trailer `Roadmap: W3·14-B3`.
+    <!-- @meta id: W3·14-B3 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/App.tsx, src/components/layout/usePaneLayout.ts, src/components/layout/Pane.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-SPLIT-VIEW.md -->
   - [x] **Gebündelt (Auftrag David 29.6.2026): Bildschirm-/Responsive-Audit** *(SPLIT-VIEW, `[OF]`)* — AUDIT GEFAHREN 5.7.2026 (rein lesend, PR `chore/responsive-audit`): 30 Motive × 5 Breiten = 150 Aufnahmen, 0 Seiten-Overflow, 12 Defekte geflaggt; Befund `abnahme/responsive-audit/BERICHT.md`, Fixes = spätere Schritt-14-Einheiten. **Chronik:** `ROADMAP-CHRONIK.md` → W3·14-Responsive-Audit.
     <!-- @meta id: W3·14-Responsive-Audit · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein -->
   - [x] **Responsive-Audit-Defekte D1–D10 abgearbeitet** *(reines UI, Go David 10.7.2026, Branch `fix/responsive-audit-defekte`)* — ✅; Status je Defekt in `abnahme/responsive-audit/BERICHT.md`. Wortlaut → `ROADMAP-CHRONIK.md` → W3·14-Responsive-Defekte (26.7.2026).

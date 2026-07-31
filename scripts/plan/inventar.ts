@@ -10,7 +10,10 @@ export const INVENTAR: readonly string[] = [
   'W3·14-Responsive-Audit', 'W3·14-Responsive-Defekte', 'W3·14-S', 'W3·14-a11y', 'QS-WISSEN',
   'W2·12-HYGIENE', 'QS-OPT', 'QS-BASIS',
 
-  'W2·12-HYGIENE', 'W2·13-KANTONE',
+  // 'W2·12-HYGIENE' stand hier ein zweites Mal — Dublette entfernt 31.7.2026 (AP-6, QS-TOK).
+  // Rein mechanisch: check.ts Regel 1 iteriert das Inventar und prüft nur die Existenz eines
+  // @meta je ID, ein Doppeleintrag prüfte also zweimal dasselbe. Kein Verhaltensunterschied.
+  'W2·13-KANTONE',
 
   // Ideen-Intake 20.7.2026 (§14): 8 Alleinstellungs-Ideen verortet.
   'W1·5-PRAXIS', 'W2·5g-ZEIT', 'W2·5h-GESETZ-UI', 'W2·6-ZNETZ', 'W2·14-SIGNAL', 'W3·15-RICHTER', 'QS-UI',
@@ -35,4 +38,20 @@ export const INVENTAR: readonly string[] = [
   'W2·17-UI-BEFUNDE-B12', 'W2·17-UI-BEFUNDE-B13', 'W2·17-UI-BEFUNDE-B14', 'W2·17-UI-BEFUNDE-B15',
   'W2·17-UI-BEFUNDE-B16', 'W2·17-UI-BEFUNDE-B17', 'W2·17-UI-BEFUNDE-B18', 'W2·17-UI-BEFUNDE-B19',
   'W2·17-UI-BEFUNDE-B20',
+
+  // AP-6 (QS-TOK-Aufräumwelle, 31.7.2026): Session-Granularität — offene Mehr-Sessions-Schritte
+  // in Teilschritte zerlegt, die plan:next einzeln ausgibt und EINE Session abschliessen kann.
+  // Der jeweilige Elter behält sein @meta und bleibt das Dach.
+  'W2·5d-EID3', 'W2·5d-ANNEX', 'W2·5d-SPY', 'W2·5d-YC',
+  'W2·6-MEHRSPRACH', 'W2·6-RESOLVER', 'W2·6-ADRESSEN', 'W2·6-UEBERSICHT',
+  'W2·10-UI-NAV-S', 'W2·10-UI-NAV-V', 'W2·10-UI-NAV-VR', 'W2·10-UI-NAV-R1', 'W2·10-UI-NAV-R2',
+  'W2·10-UI-NAV-R3', 'W2·10-UI-NAV-R4', 'W2·10-UI-NAV-J', 'W2·10-UI-NAV-J3', 'W2·10-UI-NAV-O',
+  'W2·10-UI-NAV-Z',
+  'W2·11-DESIGN-D6', 'W2·11-DESIGN-D7', 'W2·11-DESIGN-D8a', 'W2·11-DESIGN-D8b', 'W2·11-DESIGN-D8c',
+  'W2·13-KANTONE-K1', 'W2·13-KANTONE-K2', 'W2·13-KANTONE-K3', 'W2·13-KANTONE-K4',
+  'W2·13-KANTONE-K5', 'W2·13-KANTONE-K6', 'W2·13-KANTONE-K7', 'W2·13-KANTONE-K8',
+  'W2·13-KANTONE-K9', 'W2·13-KANTONE-K10', 'W2·13-KANTONE-K11', 'W2·13-KANTONE-K12',
+  'W2·13-KANTONE-K13', 'W2·13-KANTONE-K14',
+  'W2·14-SIGNAL-B1', 'W2·14-SIGNAL-B2', 'W2·14-SIGNAL-GER',
+  'W3·14-B3',
 ];
