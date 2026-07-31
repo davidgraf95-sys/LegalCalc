@@ -1370,7 +1370,8 @@ Externe Sichtprüfung, Stand 29.07.2026 · 161 Befunde, geschnitten nach berühr
 - **Status:** offen
 - **Bemerkung:** —
 - **Dedup-Triage 31.7.2026:** VERDACHT
-- **Dedup-Referenz:** FAHRPLAN-VERZAHNUNG-UI.md §0 Kritik-Tabelle Zeile 3b (Grammatik-Regel 1: «⧉ nur auf KontextPanel-Chips + NormPopover, unter dem Gating kannOeffnen && !istOffen») + FAHRPLAN-UI-NAVIGATION.md §3 V3 («⧉ an jedem Chip bleibt VERWORFEN», A6 «keine Sekundär-Buttons je Zeile») + FAHRPLAN-GESETZES-UX.md Z.1092-1094
+- **Dedup-Referenz:** FAHRPLAN-VERZAHNUNG-UI.md **§0. Kritik-Einarbeitung**, Tabellenzeile 3b (Slicer-Schlüssel `"0. Kritik-Einarbeitung"`; Grammatik-Regel 1: «⧉ nur auf KontextPanel-Chips + NormPopover, unter dem Gating kannOeffnen && !istOffen») + FAHRPLAN-UI-NAVIGATION.md §3 V3 («⧉ an jedem Chip bleibt VERWORFEN», A6 «keine Sekundär-Buttons je Zeile») + FAHRPLAN-GESETZES-UX.md §10.7 · Ausführungsvermerke der §10-Einheiten, Gruppen-Reihenfolge-Absatz (Z.1092-1094)
+  *(Anker 31.7.2026 korrigiert, Endprüfungs-Fund R2-20: «§0 Kritik-Tabelle» war mehrdeutig — die Zieldatei hat ZWEI Sektionen mit «0», nämlich `## §0 · Zweck und Leitplanken` (ohne Tabelle) und `## 0. Kritik-Einarbeitung` (mit Tabelle). Der Slicer hätte den Schlüssel «0» auf die erste aufgelöst und sie ohnehin als `stets`-Sektion mitgeliefert — wer dem alten Anker folgte, landete garantiert in der Sektion ohne die Tabelle.)*
 - **Dedup-Notiz:** Beobachtung in der Sache widerlegt: das Symbol ist kein Kopiersymbol, sondern der ⧉-«nebeneinander öffnen»-Knopf — src/components/kontext/KontextPanel.tsx:93-102: h-6 w-6 (=24 px, WCAG 2.5.8), border, title UND aria-label «… nebeneinander öffnen». Der verbleibende Punkt («nicht mehrfach je Zeile») steht gegen einen dokumentierten Entscheid → Entscheid-Frage, nicht Bug.
 
 #### LM-097 · 3 Mittel

@@ -104,7 +104,16 @@ Checkbox-lose Einheiten tragen es analog direkt unter Überschrift/Bullet (S0, Q
 | `kollision` | repo-relative Dateien/Globs, die sie anfasst | Liste, z. B. `[src/lib/norm-index.ts]` |
 | `worktree` | Braucht eigenen Worktree (§12)? | `ja` / `nein` |
 | `26x` | Eines der 5 grossen Datenassets? | `ja` / `nein` |
-| `fahrplan` | Detail-Datei (optional) | Dateiname oder leer |
+| `fahrplan` | Detail-Datei (optional) | Pfad (`fahrplaene/…` bzw. `archiv/…`) oder leer |
+| `slot` | 26×-Slot-Inhaberschaft (optional) | `inhaber` oder leer |
+| `seq-hart` | Harte Reihenfolge auf geteilten Dateien, §12 (optional) | Liste, z. B. `[QS-PERF(ArtikelBody.tsx)]` |
+| `seq-weich` | Weiche Reihenfolge-Empfehlung (optional) | Liste, analog |
+
+*(Die drei optionalen Felder standen faktisch längst im Bestand; `seq-hart`/`seq-weich` kannte
+der Etikett-Typ bis zum 31.7.2026 aber nicht und `serializeEtikett` verwarf sie beim
+Neu-Schreiben — `plan:set` löschte die Kollisionsreihenfolge damit still mit, Endprüfungs-Fund
+R2-16. Seither Teil des Typs, byte-treuer Round-Trip. **Die Tabellen-Überschrift «9 Felder» ist
+die historische Zählung der Pflichtfelder + `fahrplan`; die drei optionalen kommen hinzu.**)*
 
 **Status-Grammatik (Befund #11):** `status := <wert> ('(' <agent/worktree> ')')?`. Der Schema-Check
 prüft nur den `<wert>` vor der Klammer gegen die erlaubte Menge; die optionale Klammer-Annotation hält
@@ -135,10 +144,28 @@ Wo eine Einheit eine Checkbox hat, gilt die Kopplung — und **nur dort**:
 | `[x]` | `done` |
 | `[~]` | `wip` |
 | `[ ]` | `ready` · `blocked` · `parked` |
+| `[d]` / `[D]` | `parked` · `blocked` (Legendenmarke «geparkt/zurückgestellt») |
 
 Checkbox-lose Einheiten (S0-Überschrift, Querschnitt-Stränge) haben **keine** Kopplungs-Prüfung; ihr
 `status` ist die alleinige Wahrheit (kein Häkchen-Konflikt möglich). `[~]` wird als gültiger
 Checkbox-Zustand anerkannt (real bei Schritt 5).
+
+**Wie die Checkbox gefunden wird (Neufassung 31.7.2026, Endprüfungs-Fund R2-1/R2-10).** Bis dahin
+galt «die nächste nicht-leere Zeile über dem `@meta`». Eine einzige Prosa-Zeile dazwischen kappte
+die Bindung — `checkbox = null` —, und weil die Kopplungsregel nur *bei vorhandener* Checkbox
+prüft, war das Tor genau dort blind: `plan:set … status=done` schrieb das `@meta`, die sichtbare
+Liste blieb auf «offen», `check:plan` blieb grün. Gültig ist jetzt:
+
+> Rückwärts vom `@meta` bis zur **ersten Listen-Bullet-Zeile**; deren Checkbox bindet. Trägt sie
+> keine, bindet nichts (Querschnitt-Fall). Abbruch an Überschrift, Kommentar-Grenze (`<!--`/`-->`,
+> also auch an einem fremden `@meta`) und an einer doppelten Leerzeile.
+
+Dieselbe Funktion (`bindeCheckbox` in `scripts/plan/parse.ts`) bedient Parser UND `plan:set` — zwei
+Kopien derselben Nachbarschafts-Regel wären zwei Wahrheiten (§5). Gegenprobe von vorn erzwingt
+**Regel 10** in `check:plan`: steht unter einer Checkbox-Bullet ein `@meta`, bevor die nächste
+Bindungs-Einheit beginnt, MUSS es daran gebunden sein — sonst rot. Praktische Folge für Autoren:
+**`@meta` gehört unmittelbar unter seine Bullet-Zeile**; Begründungs-Prosa steht darunter, nicht
+dazwischen.
 
 ---
 
@@ -304,3 +331,34 @@ Nach der Erst-Befüllung gilt: **Plan == Realität**, und der Wächter hält es 
 - Keine automatische ROADMAP-Generierung aus den Etiketten (Prosa bleibt handgeschrieben).
 - Keine CI-Verdrahtung (`check:plan` bleibt **lokal**, wie die Geschwister-Tore).
 - Kein Fix der CLAUDE.md-«Wellen 1–13»-Drift (fremde Datei) — nur notiert.
+
+---
+
+## Selbstverweise in Fahrplänen — Konvention (AP-11, Nachtrag 31.7.2026)
+
+Der AP-8-Umzug nach `fahrplaene/` hat in den Fahrplänen selbst Links hinterlassen, die auf die
+eigene Datei zeigten und nach dem Umzug ins Leere liefen. Die Fix-Runde 1 hat 68 solcher Stellen
+auf «diese Datei» neutralisiert — jedoch nicht regelgeleitet: in
+`FAHRPLAN-FEDLEX-PORTFOLIO.md` blieben zwei Zeilen weiter unten und in derselben Datei drei
+weitere Selbstnamen bar stehen (Endprüfungs-Fund R2-24). Damit war für Leser unklar, welchen
+Status die jeweils andere Form hat.
+
+**Konvention (ab 31.7.2026 verbindlich):**
+
+1. Der **bare Selbstname** ist zulässig und die Normalform: `` `FAHRPLAN-X.md` `` innerhalb von
+   `FAHRPLAN-X.md`. Er ist stabil, umzugsfest und für die Suche auffindbar.
+2. Gestrippt wird ausschliesslich der **tote Selbst-Link**: `[FAHRPLAN-X.md](fahrplaene/FAHRPLAN-X.md)`
+   → `` `FAHRPLAN-X.md` ``. Ein Link, dessen Ziel die Datei ist, in der er steht, ist kein Zeiger,
+   sondern eine Schleife.
+3. Formulierungen wie «diese Datei» sind **erlaubt, aber nicht Pflicht**. Wo sie in einem Block
+   stehen, der sich als wortgleiche ROADMAP-Kopie deklariert, trägt der Block eine
+   Deklarationszeile («Wörtlich bis auf die Selbstverweise …») — sonst behauptet er eine
+   Provenienz, die er nicht mehr hat (§8, Fund R2-18).
+4. **Abschnitts-Anker** in Selbstverweisen nennen die Überschrift, nie eine Zeilennummer
+   (§0.2-Anker-Regel aus `FAHRPLAN-UI-BEFUNDE.md`, hier als Konvention für alle Fahrpläne
+   übernommen — die Fehlerklasse ist repo-weit, s. Fund R2-2/R2-20).
+
+**Restbestand:** Die Durchsicht des 31.7.2026 hat die Deklarationszeilen gesetzt und die
+FEDLEX-Portfolio-Inkonsistenz auf Form 1 vereinheitlicht. Ein flächiger Durchgang über alle
+Fahrpläne ist **nicht** gelaufen und wird nicht behauptet; er läuft mit, wenn eine Datei ohnehin
+angefasst wird.

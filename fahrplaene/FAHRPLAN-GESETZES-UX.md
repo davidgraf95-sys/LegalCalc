@@ -2084,7 +2084,7 @@ dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (a
 
 > **→ Bau-Spec: «6 · Etappierung», «10 · Anmerkungs-Welle A1–A18» und «11 · Gesetze-Aufteilung Bund/Kantone V2» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
-*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.* *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   **§14-Intake 20.7.2026 (David):** Fassungshistorie im Ansicht-Menü an-/abwählbar (#27).
   **Stand 26.7.2026 (Nachmessung):** G0–G6, A1–A18, A19–A25 (ohne zurückgezogenes L-3/A28),
@@ -2162,7 +2162,7 @@ dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (a
 *Ausführungs-Protokoll Ziff. 6). Die ROADMAP führt je Teilschritt nur noch Checkbox,*
 *`@meta` und einen Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
 
-**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:**
+**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   **Session-Granularität (AP-6, 31.7.2026):** der offene Rest ist in die vier Teilschritte unten
   zerlegt; dieser Schritt bleibt das Dach. **Bewusst NICHT als Teilschritt:** EID-3 Teil (a)
@@ -2170,7 +2170,7 @@ dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (a
   David-Vorlage, kein autonomer Bau; ebenso die `ELI_FORM`-Präfix-Regex-Härtung («Kandidat bei
   nächster Berührung», kein eigener Slot) und die per Task-Chip ausgelagerten Flake-/CLS-Härtungen.
 
-**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
+**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   - [ ] **5d-EID3 · EID-3 Teil (b): Linien-Tiefe aus der eId-Pfadlänge** — Guide-/Einzugstiefe aus dem kumulativen eId-Pfad statt aus der Sidecar-Rekursionstiefe; golden-neutral, Tor `check:linien-kanon`. Detail: diese Datei §12.2/§12.3. Trailer `Roadmap: W2·5d-EID3`.
   - [ ] **5d-ANNEX · eId-Anker für Annex-Sections** — die aus EID-1 bekannte Grenze schliessen: Container-eIds auch auf dem separaten Anhang-Pfad mitschneiden. **Extraktion = Risikopfad** ⇒ `check:gegenpruefung` + golden byte-gleich, EINE gebündelte Regeneration (§12.3 Ziff. 4). Detail: diese Datei §12.2. Trailer `Roadmap: W2·5d-ANNEX`.
@@ -2193,7 +2193,7 @@ dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (a
 
 > **→ Bau-Spec: «13 · Gesetzes-Webseite UX-Pass «8b»» und «15 · Gesetzes-Kopfzeile & Gliederungs-Default» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
-*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.* *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   **Folgeschritt aus `QS-UI`** (Davids Sequenz: erst app-weit, dann die Gesetzes-Fläche): die Rubrik
   `/gesetze` und der Gesetz-Leser maximal tauglich für die tägliche Norm-Arbeit — Normtext-Darstellung,

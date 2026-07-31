@@ -195,7 +195,7 @@ jede Phase `npm run gate` grün + Default Golden byte-gleich; visuell breit/2-/3
 
 > **→ Bau-Spec: «STRANG B — Split-View (2–3 Panes)», «Reihenfolge & Tore» und «Entscheide (alle getroffen 29.6.2026)» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
-*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.* *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   David 29.6.2026)*. 2–3 „Engines" nebeneinander **wie im Browser** → der **Verzahnungs-Burggraben
   sichtbar** (Gesetz | Rechner | Begründungs-Absatz). **Erst Strang A** (Inhaltsbreite-Umschalter
@@ -222,14 +222,14 @@ jede Phase `npm run gate` grün + Default Golden byte-gleich; visuell breit/2-/3
 *Ausführungs-Protokoll Ziff. 6). Die ROADMAP führt je Teilschritt nur noch Checkbox,*
 *`@meta` und einen Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
 
-**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:**
+**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   **Session-Granularität (AP-6, 31.7.2026):** Strang A sowie B-0/B-0b/B-1/B-2/B-2.5/B-4/B-5 sind
   gebaut; `W3·14-S` (Bündel S) und `W3·14-a11y` tragen bereits eigene `@meta`. Der einzige noch
   unetikettierte Rest — **B-3** — bekommt unten sein eigenes Etikett; damit ist dieser Schritt
   vollständig Dach über drei abschliessbare Teilschritte.
 
-**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
+**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   - [ ] **14-B3 · Scroll & Fokus pro Pane — Restposten** — pro-Pane-Scroll und Spy laufen bereits; **offen**: Scroll-POSITIONS-Wiederherstellung (`ScrollWiederherstellung`/`ScrollZuHash` sind in `App.tsx` weiterhin window-basiert und im Multipane-Primär ohne Wirkung) + Tastatur-Pane-Wechsel. Detail: diese Datei §STRANG B (B-3). Trailer `Roadmap: W3·14-B3`.
 

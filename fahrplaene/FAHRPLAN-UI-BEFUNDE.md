@@ -26,6 +26,15 @@ oder er wird ausdrücklich und begründet geändert (§14).
 > Nachdiät), eine (LM-124) traf von Anfang an die falsche Stelle. Jede `dedup_referenz` nennt
 > darum einen **§-, Überschriften- oder `@meta`-Anker**; eine Zeilenangabe darf nur
 > *zusätzlich* danebenstehen und ist nie der Anker selbst.
+>
+> **Geltungsbereich — ehrlich begrenzt (Nachtrag 31.7.2026, Endprüfungs-Fund R2-21).** Die
+> Regel gilt **ab sofort für jeden neuen Eintrag**. Der **Altbestand** ist NICHT vollständig
+> umgestellt: in dieser Datei stehen weiterhin Referenzen mit blosser `Z.`-Angabe (u. a.
+> LM-025, LM-095, LM-098). Umgestellt wurden bisher die sieben nachweislich verrutschten plus
+> LM-124 und LM-096. **Auflage für den Altbestand:** jede noch vorhandene Zeilenangabe trägt
+> beim nächsten Anfassen zusätzlich den §-/Überschriften-Kontext, und zwar im Batch, der den
+> Befund baut (`B1`…`B20`) — nicht in einem eigenen Durchgang. Bis dahin ist die Regel eine
+> **Vorwärts-Regel**, keine erfüllte Bestands-Aussage (§8: nicht mehr behaupten, als gedeckt ist).
 
 **§0.3 Risiko-Trennung.** Der grösste Teil ist reine Darstellung (§3) und läuft ohne
 Gegenprüfung. Drei Klassen laufen anders: **Such-/Query-Logik** (Relevanz, Ranking,
@@ -294,7 +303,7 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 - [ ] **LM-090** · Mittel · Jede Zeile trägt vier Symbolknöpfe (▲ ▼ ⧉ ✕) von je … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §4 R6 (Tap-Target-Pass) und §1 N0d/O3 (Reiter-Tracker); abnahme/respo…]
 - [ ] **LM-091** · Mittel · Beim Überfahren erscheint rechts oben eine Leiste «Zitat | Link | … [Verdacht → FAHRPLAN-GESETZES-UX.md §12.5 (EID-2 ✅ 25.7., PR #349 — «David-Gate Platzierung … Sichtprüfung…]
 - [ ] **LM-095** · Mittel · Der gewählte Name steht als Chip «C. Müller ×» rechts neben … [Verdacht → ROADMAP.md Z.485-489 R-RICHTER «Block B offen, reines UI (Autocomplete-Facette + ?richter-URL-A…]
-- [ ] **LM-096** · Mittel · Neben jedem Normchip steht ein eigenes, etwa 16 px grosses Kopiersymbol … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §0 Kritik-Tabelle Zeile 3b (Grammatik-Regel 1: «⧉ nur auf KontextPanel-Chips + NormPopover…]
+- [ ] **LM-096** · Mittel · Neben jedem Normchip steht ein eigenes, etwa 16 px grosses Kopiersymbol … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md **§0. Kritik-Einarbeitung**, Tabellenzeile 3b (Grammatik-Regel 1: «⧉ nur auf KontextPanel-Chips + NormPopover…]
 - [ ] **LM-098** · Mittel · Zwei Paare «A− A+» sind gleichzeitig sichtbar: eines links in der … [Verdacht → Reglement-Konflikt: DESIGN-REGLEMENT-RECHTSPRECHUNG.md Z.200-203 R17 (Reader-eigener A−/A+) geg…]
 
 **Code-Flächen (grob, aus den Routen):** `src/components/ui`, `src/pages/gesetz-leser`, `src/components/rechtsprechung`.

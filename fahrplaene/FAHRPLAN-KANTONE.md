@@ -76,9 +76,9 @@ Schwerste §1-Verstösse des Laufs, alle live belegt, alle ohne Slot/Fachzeit:
 
 | Teil | Fix | Beweis |
 |---|---|---|
-| a | **F24 Lesereihenfolge** (404/917 Erlasse, AG-291.150: § 6 vor § 1): `inhalt.tsx:1220–1226` rendert `ohneGliederung` vor `sektionen` → dokumentlinear interleaven nach Original-Index der `eintraege`. **Korrektur beleg-haerte:** Auslöser ist fehlende ODER nur **einteilige** Marginalie (Ahnen-lose Artikel, § 9 «Bemessung» landet ebenfalls dort) — Fix muss beide Fälle interleaven. | Golden-Test DOM-Reihenfolge == Snapshot-Reihenfolge (AG-291.150 + 2–3 weitere); **Bund golden byte-gleich beweisen, nicht annehmen** |
+| a | **F24 Lesereihenfolge** (404/917 Erlasse, AG-291.150: § 6 vor § 1): in `src/pages/gesetz-leser/inhalt-volltext.tsx`, Render-Zweig `ohneGliederung.length > 0` unmittelbar vor `{sektionen.map((s) => renderSektion(s, true, 0))}` → dokumentlinear interleaven nach Original-Index der `eintraege`. *(Anker 31.7.2026 geheilt: die frühere Angabe `inhalt.tsx:1220–1226` zeigte seit dem §6.6-Split `b56b9193f` (24.7.2026, inhalt.tsx 1494→806 Z.) ins Leere; `inhalt.tsx` hält nur noch die Berechnung `baueGliederungsbaum` und die Weitergabe als Prop. Symbol-Anker statt Zeilennummer — §0.2-Anker-Regel.)* **Korrektur beleg-haerte:** Auslöser ist fehlende ODER nur **einteilige** Marginalie (Ahnen-lose Artikel, § 9 «Bemessung» landet ebenfalls dort) — Fix muss beide Fälle interleaven. | Golden-Test DOM-Reihenfolge == Snapshot-Reihenfolge (AG-291.150 + 2–3 weitere); **Bund golden byte-gleich beweisen, nicht annehmen** |
 | b | **F25 Doppel-Decode** (`GesetzLeser.tsx:6`, react-router v7 liefert dekodiert): `decodeURIComponent` entfernen → 3 tote GL-Erlasse wieder erreichbar. Die GL-**Key-Migration** (%-freie Kanonik) läuft separat in K-6d. | e2e-Tor: jeder Register-Key über `/gesetze/kanton/<encodeURIComponent(key)>` erreichbar |
-| c | **F28 «SR»-Label** (`ErlassLeserKopf.tsx:37`): bei `ebene='kanton'` Präfix weg (SAR/LS/BLV/GS tragen ihr Kürzel selbst). Ein-Zeiler, höchste Glaubwürdigkeits-ROI. | Snapshot-Test |
+| c | **F28 «SR»-Label** (`src/pages/gesetz-leser/parts/ErlassLeserKopf.tsx`, Zeile mit `{erlass.sr && <span>SR <span className="num">{erlass.sr}</span></span>}` in der Meta-Zeile — Zeilenangabe `:37` war schon beim Schreiben daneben, dort steht das `<h1>`; Ist 31.7.2026: Z.41): bei `ebene='kanton'` Präfix weg (SAR/LS/BLV/GS tragen ihr Kürzel selbst). Ein-Zeiler, höchste Glaubwürdigkeits-ROI. | Snapshot-Test |
 | d | **F33 Titel-Dopplung AI** («GebT — GebT»): Kopf-Logik Dopplung unterdrücken, wenn titel ohne Klammerzusatz == kuerzel; `formatiereDatum` auch im Verweis-/Fallback-Pfad. Echter Fix (AI-Volltitel datenseitig) → K-12-Liste. | Sichtprüfung 4 AI-Erlasse |
 | e | **F29 Fussnoten-Stern Display-Strip** (589 Randtitel/186 Erlasse): NUR trailing «␣*» in **Marginalien** strippen — NIE generell «*» im Normtext (amtlicher Fussnotenmarker, §1). Extraktorseitiger Nachzug → K-G3. | Fixture mit AG-291.150/BS-413.820-Marginalien |
 | f | **F5 A14-Relevanz fr/it** (`relevanz.ts:82-110`, 39 Latin-Erlasse + AG 0/4 ohne Kategorie): Muster um émolument(s)/tarif des frais/tariffa/legge tributaria/Anwaltstarif/Dekret erweitern. | Fixture-Test mit den 106 echten Dünn-Kanton-Titeln (`relevanz.test.ts`) |
@@ -516,7 +516,7 @@ Dokument-/Engine-Änderung) · Tore grün. Trailer `Roadmap: W2·13-KANTONE`.
 
 > **→ Bau-Spec: «§1-A · SOFORT BAUBARE EINHEITEN» (K-1…K-14), dazu §1-B/§1-C/§1-D dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
-*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.* *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   44 Befunde + 3 Kritik-Linsen, davon 10 live an Amtsquellen re-verifiziert)* — **14 sofort
   baubare Einheiten K-1…K-14** (kantons-einzelne Fixes + Display-/UI-Schicht, slot-frei):
@@ -584,7 +584,7 @@ Dokument-/Engine-Änderung) · Tore grün. Trailer `Roadmap: W2·13-KANTONE`.
 *Ausführungs-Protokoll Ziff. 6). Die ROADMAP führt je Teilschritt nur noch Checkbox,*
 *`@meta` und einen Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
 
-**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:**
+**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   **Session-Granularität (AP-6, 31.7.2026):** je Einheit ein Teilschritt, dieser Schritt bleibt das
   Dach. Die `dep`-Kette K-1 → … → K-14 bildet die Vorgabe des Fahrplans **«Ausführungsreihenfolge =
@@ -593,7 +593,7 @@ Dokument-/Engine-Änderung) · Tore grün. Trailer `Roadmap: W2·13-KANTONE`.
   als Teilschritt:** K-G1…K-G5 (gegatet bis zur E3-Slot-Freigabe, Leitprinzip 4), K-15 (David:
   «später»), K-16/K-17/K-18 (§14-Intake-Nachträge, bleiben vorerst unter dem Dach).
 
-**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
+**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   - [ ] **K-1 · Reader-Treue P0** *(F24/F25/F28/F33/F29-Display/F5, M)* — Lesereihenfolge, Doppel-Decode, «SR»-Label, Titel-Dopplung, Fussnoten-Stern-Strip, A14-Relevanz fr/it; reine Display-Schicht. Detail: diese Datei §1-A. Trailer `Roadmap: W2·13-KANTONE-K1`.
   - [ ] **K-2 · §8-Ehrlichkeit UI** *(F26-UI/F37/F44/F27-Rest, S–M)* — zweistufiger Currency-Chip, Kanton-Hinweis im KontextPanel, Abdeckungs-Kontextzeile, «Stand unbekannt», Systematik-Hinweis; reine Anzeige. Detail: diese Datei §1-A. Trailer `Roadmap: W2·13-KANTONE-K2`.
@@ -610,7 +610,7 @@ Dokument-/Engine-Änderung) · Tore grün. Trailer `Roadmap: W2·13-KANTONE`.
   - [ ] **K-13 · Systematik-Bäume 7 Kantone** *(F6≡F43, M)* — ZH/GE/VD/TI/SZ/NE/JU fehlen (19 von 26 vorhanden); Quell-Erhebung je Kanton empirisch und browserlos, kantons-einzeln frei. Detail: diese Datei §1-A. Trailer `Roadmap: W2·13-KANTONE-K13`.
   - [ ] **K-14 · Kantonales Zitat-Vokabular — POC** *(F39, L — **Risikopfad**, `QS-GP`)* — POC über 5 Gerichts-Kantone × 6 Entscheide, nur exakte Sammlungsnummer-Matches, additiver Extraktions-Pass. **Prämisse «Entscheid-`normKeys` sind Bund-only» vor dem Bau gegen `W2·6-NKEY` nachmessen.** Detail: diese Datei §1-A. Trailer `Roadmap: W2·13-KANTONE-K14`.
 
-### Dach-Prosa W2·13-KANTONE im Wortlaut (verschoben 31.7.2026)
+### Dach-Prosa W2·13-KANTONE im Wortlaut (verschoben 31.7.2026) *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
 *Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026); massgebliche Fassung.*
 

@@ -645,7 +645,7 @@ Gegenproben und Zahlen: `bibliothek/rechtsprechung/besetzung-extraktion-2026-07-
 
 > **→ Bau-Spec: «10. Etappierung P0→Pn» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
-*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.* *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   - **Mehrsprachiger Normvergleich DE/FR/IT** (Auslegungswerkzeug, Art. 14 PublG — alle drei
     Fassungen gleich verbindlich). Heute nur `de` befüllt. *Aufbau:* Generator je Erlass 3
@@ -691,7 +691,7 @@ Gegenproben und Zahlen: `bibliothek/rechtsprechung/besetzung-extraktion-2026-07-
 *Ausführungs-Protokoll Ziff. 6). Die ROADMAP führt je Teilschritt nur noch Checkbox,*
 *`@meta` und einen Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
 
-**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:**
+**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
     **Session-Granularität (AP-6, 31.7.2026):** §13 ist eine unsortierte Postenliste ohne eigene
     Reihenfolge — die vier Posten unten tragen je ein eigenes `@meta`, dieser Schritt bleibt das Dach.
@@ -700,7 +700,7 @@ Gegenproben und Zahlen: `bibliothek/rechtsprechung/besetzung-extraktion-2026-07-
     §7-Befund**, kein Bau) und **R-RICHTER Block B** (gehört planerisch nach `W2·6-FILTER`, nicht
     doppelt planen).
 
-**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
+**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
     - [ ] **6-MEHRSPRACH · Mehrsprachiger Normvergleich DE/FR/IT** — Auslegungswerkzeug nach Art. 14 PublG: je Erlass drei Sprachfassungen aus der amtlichen Fedlex-Stelle + Synopse-UI im Gesetzleser; heute ist nur `de` befüllt. Detail: diese Datei §13. Trailer `Roadmap: W2·6-MEHRSPRACH`.
     - [ ] **6-RESOLVER · Kantonaler Norm-Resolver → Kantonalnorm-Buckets (P0-Kern)** — `norm-index` füllt heute nur Bundesnorm-Buckets; der Resolver ist die belegte Voraussetzung der kantonalen Stufe. **Mapping = Risikopfad** ⇒ `QS-GP`. Detail: diese Datei §13. Trailer `Roadmap: W2·6-RESOLVER`.

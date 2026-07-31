@@ -297,6 +297,8 @@ Das fertig gebaute 26×-Asset **Beurkundung** wird in Phase 0 per Batch-Deploy a
 
 ## §1 · ROADMAP-Spec Funktions-Katalog/Kern-Auflagen (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «Phase 0» … «Phase 7» dieser Datei** (chronologische Bau-Reihenfolge; Kurzfassung in «Übersichtstabelle», Reihenfolge-Auflagen in «Die 5 grössten Reihenfolge-Risiken»). Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln. *(Zeiger nachgetragen 31.7.2026, Endprüfungs-Fund R2-23: 33 der 35 ROADMAP-Spec-§§ trugen ihn, diese zwei nicht — ohne dokumentierte Begründung, obwohl GESAMTAUFBAU mit Phase 0…7 sehr wohl eine Bau-Spec in derselben Datei hat.)*
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
 **Kern-Auflagen (§1/§2/§8-kritisch):**
@@ -323,6 +325,8 @@ Das fertig gebaute 26×-Asset **Beurkundung** wird in Phase 0 per Batch-Deploy a
 ---
 
 ## §2 · ROADMAP-Spec Strang-Detailpunkte (wörtlich verschoben 31.7.2026)
+
+> **→ Bau-Spec: «Phase 0» … «Phase 7» dieser Datei** (chronologische Bau-Reihenfolge; Kurzfassung in «Übersichtstabelle», Reihenfolge-Auflagen in «Die 5 grössten Reihenfolge-Risiken»). Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln. *(Zeiger nachgetragen 31.7.2026, Endprüfungs-Fund R2-23: 33 der 35 ROADMAP-Spec-§§ trugen ihn, diese zwei nicht — ohne dokumentierte Begründung, obwohl GESAMTAUFBAU mit Phase 0…7 sehr wohl eine Bau-Spec in derselben Datei hat.)*
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 

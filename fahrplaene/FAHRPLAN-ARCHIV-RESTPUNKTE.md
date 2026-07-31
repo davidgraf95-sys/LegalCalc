@@ -638,6 +638,12 @@ offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage v
 
 *(→ `archiv/FAHRPLAN-UX-PUNKTELISTE.md`)*
 
+**Zählung (31.7.2026, R2-22):** **2 Restpunkte** (A3-Abnahme · E-Optional), **dazu 1
+Statusbefund** (der dritte Spiegelstrich stellt nur fest, dass `W2·9` auf genau diese zwei
+verengt ist — er ist kein eigener Bau-Posten). Die ROADMAP-Zeile nennt darum «2 Restpunkte
++ 1 Statusbefund»; die frühere Angabe «3 Restpunkte» widersprach dem Verengungs-Satz zwei
+Sektionen weiter oben.
+
 - **UX-PUNKTELISTE A3 · Betreibungskosten-Kacheln, Anweisung und Umsetzung zeigen in verschiedene
   Richtungen** *(Anw. 18, David-Abnahme offen seit 26.6.2026)*: verlangt war «Kacheln einer Reihe
   gleich hoch» (`auto-rows-fr` + `h-full`), gebaut wurde in

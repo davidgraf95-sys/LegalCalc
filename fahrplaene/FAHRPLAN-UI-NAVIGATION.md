@@ -606,7 +606,7 @@ main@38e1300c− → §0.1 gilt vor jedem Schnitt.*
 
 > **→ Bau-Spec: §0–§7b und «§R · Empfohlene Bau-Reihenfolge» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
-*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.* *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   Priorisierter UI-Verbesserungs-Plan aus 60 empirischen Befunden + 3 Kritik-Linsen
   (david-treue · repo-realität · praxis-nutzen; Bilanz 44 übernommen / 32 geändert / 4
@@ -642,7 +642,7 @@ main@38e1300c− → §0.1 gilt vor jedem Schnitt.*
 *Ausführungs-Protokoll Ziff. 6). Die ROADMAP führt je Teilschritt nur noch Checkbox,*
 *`@meta` und einen Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
 
-**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:**
+**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   **Session-Granularität (AP-6, 31.7.2026):** N0a–N0d, S2–S5, V1 und O1 sind gebaut; der offene Rest
   (25 Einheiten) ist unten in elf session-grosse Teilschritte gebündelt — geschnitten nach Datei-Fläche
@@ -651,7 +651,7 @@ main@38e1300c− → §0.1 gilt vor jedem Schnitt.*
   HINTER den A-Restposten») wird hier nicht gelockert. **Bewusst NICHT als Teilschritt:** `G-SUCH`
   (Bau-GO David ausstehend), die 6 §Y-Entscheid-Posten und die 4 §X-gegateten Vorhaben.
 
-**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
+**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   - [ ] **UI-NAV-S · Suche-Rest (S1 + S6)** — Query-Durchreichung `?q=` in die Browse-Pages + mobiler Such-Fokusmodus (≥16 px gegen iOS-Zoom). Detail: diese Datei §2. Trailer `Roadmap: W2·10-UI-NAV-S`.
   - [ ] **UI-NAV-V · Verzahnung ohne Reader-Fläche (V2 + V4 + V6)** — Hover-Trigger am bestehenden NormPopover · NormChip-`href` intern (Cmd-Klick landet intern) · Vorlage↔Rechner-Kreuzlinks. Detail: diese Datei §3. Trailer `Roadmap: W2·10-UI-NAV-V`.
@@ -665,7 +665,7 @@ main@38e1300c− → §0.1 gilt vor jedem Schnitt.*
   - [ ] **UI-NAV-O · Übersichten und Sidebar (O2 + O4 + O5)** — Sidebar-Konsistenz · Kantons-Einstieg mit Abdeckung vor dem Klick · Scope-Labels der lokalen Suchfelder; alle drei S. Detail: diese Datei §6. Trailer `Roadmap: W2·10-UI-NAV-O`.
   - [ ] **UI-NAV-Z · Zusatzposten Ausleitung (Z1 + Z2)** — ICS-/Kalender-Export der Fristergebnisse + Print-CSS für Fundstellen; Ist-Stand vor dem Bau erheben. Detail: diese Datei §7. Trailer `Roadmap: W2·10-UI-NAV-Z`.
 
-### Dach-Prosa W2·10-UI-NAV im Wortlaut (verschoben 31.7.2026)
+### Dach-Prosa W2·10-UI-NAV im Wortlaut (verschoben 31.7.2026) *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
 *Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026); massgebliche Fassung.*
 

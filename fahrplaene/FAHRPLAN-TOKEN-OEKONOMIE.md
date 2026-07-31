@@ -40,18 +40,27 @@ Endprüfung, 31.7.2026** — nicht mehr Stand AP-10/11):
 | `ROADMAP.md` | 162.2 KB | **110.0 KB** (112 682 B) | 100 KB | **ROT** (+10.0 KB) |
 | `STRUKTUR.md` | 81.5 KB | **36.1 KB** (36 994 B) | 60 KB | grün |
 
-> **Warum die Zahl hier zweimal falsch war (Endprüfungs-Funde 6/12/31).** Die Tabelle trug bis
-> zur Fix-Runde `123.4 KB (126 407 B) · ROT (+23.4 KB)` und war damit doppelt unrichtig:
-> (a) sie war seit dem Nachdiät-Commit `07bef2dee` («124.6 → 108.6 KB») nicht nachgeführt, und
-> (b) sie stimmte nicht einmal für den Referenz-Commit, den sie nannte —
-> `git show 35ed91c8b:ROADMAP.md | wc -c` = **127 607 B** (124.6 KB), nicht 126 407 B
-> (Ziffernvertauschung). Die verbleibende Diät-Arbeit erschien dadurch rund dreimal so gross
-> wie sie ist. **Regel daraus:** die Kennzahl wird an genau EINER Stelle geführt (hier), überall
-> sonst steht der Verweis auf die Wächter-Ausgabe (§5); und jeder Eintrag nennt den Stand, für
-> den er gilt, samt Messbefehl.
+> **Warum die Zahl hier falsch war (Endprüfungs-Funde 6/12/31, richtiggestellt R2-8).** Die
+> Tabelle trug bis zur Fix-Runde `123.4 KB (126 407 B) · ROT (+23.4 KB)`. Ursache ist **eine**:
+> sie war seit dem Nachdiät-Commit `07bef2dee` («124.6 → 108.6 KB») nicht nachgeführt. Die
+> verbleibende Diät-Arbeit erschien dadurch rund dreimal so gross wie sie ist.
+>
+> Die Fix-Runde 1 hatte hier eine **zweite** Ursache behauptet — «sie stimmte nicht einmal für
+> den Referenz-Commit … 127 607 B, nicht 126 407 B (Ziffernvertauschung)». Das ist falsch und
+> ist am 31.7.2026 zurückgenommen: `git show d7aa4e158:ROADMAP.md | wc -c` = **126 407 B** — der
+> Wert war der exakte Ist-Stand bei **AP-8** (`d7aa4e158`), dem unmittelbaren Vorgänger des
+> genannten Referenz-Commits `35ed91c8b` (**127 607 B**). Der Eintrag war also **um einen Commit
+> versetzt, nicht verschrieben**; 126407 vs. 127607 ist auch mechanisch keine Ziffernvertauschung.
+> Deltas: AP-8 123 789 → 126 407 (+2 618 B), AP-10/11 126 407 → 127 607 (+1 200 B).
+>
+> **Regel daraus** (steht damit auf dem richtigen Befund): die Kennzahl wird an genau EINER
+> Stelle geführt (hier), überall sonst steht der Verweis auf die Wächter-Ausgabe (§5); und jeder
+> Eintrag nennt den Stand, für den er gilt, samt Messbefehl.
 
 **Ehrlichkeitsvermerk zur ROADMAP-Zahl.** Die Diät-Etappen brachten die Datei bis B4
-(`902b287`) auf **83.4 KB** — Budget wäre dort grün gewesen. Danach schrieben zwei
+(`902b287c4`) auf **83.7 KB** (85 731 B; Messbefehl `git show 902b287c4:ROADMAP.md | wc -c`)
+— Budget wäre dort grün gewesen. *(31.7.2026, R2-11: hier stand «83.4 KB»; der Commit
+`07bef2dee`, aus dem die Rechnung stammt, nannte selbst korrekt 83.7 KB.)* Danach schrieben zwei
 *inhaltliche* Etappen derselben Session wieder hinein: **AP-9** (W2·17-UI-BEFUNDE,
 210 Befunde in 20 Batches, +10 KB) und **AP-6** (42 Teilschritte aus Mehr-Sessions-Schritten,
 +27 KB), dazu AP-8 (+3 KB Pfad-Präfixe `fahrplaene/`). Das ist **genau der Vorgang, für den
@@ -402,8 +411,8 @@ offset/limit. E: ~10–25k je Session an diesen Dateien (Vollread 10–18k, oft 
 keines; Kommentare verhaltensneutral (golden + e2e beweisen). DoD: Anker in 6 Dateien; golden
 + e2e grün; Stichproben-Grep trifft.
 
-**T14 Churn-Hotspots splitten, gestuft (mittel/L).** M: Stufe 1 inhalt.tsx (1199 Z.)
-+ parts.tsx (660 Z., 23 Commits/400) in Module ≤200–300 Z. (UI; Netz: golden byte-gleich +
+**T14 Churn-Hotspots splitten, gestuft (mittel/L).** M: Stufe 1 inhalt.tsx
++ parts.tsx (23 Commits/400) in Module ≤200–300 Z. (UI; Netz: golden byte-gleich +
 89 e2e; §6.6 deckt Splits >~800 Z.); Stufe 2 optional extrahiere-fedlex.ts (Churn 7/400
 [korrigiert]) / ingest.ts: Risikopfad, volle adversariale Gegenprüfung. E: ~10–20k je Session, bedingt
 durch KÜNFTIGE Edit-Frequenz (Churn = Vergangenheit). **K (Timing):** T13
@@ -411,6 +420,11 @@ sofort; Stufe 1 erst NACH der U-Kette (Worktree feat/u-verweis läuft JETZT dort
 Split jetzt = Konflikt-Kaskade); Vorbedingung T2-Frequenz-Beleg; Stufe 2 nur bei
 nachgewiesener Frequenz, sonst dauerhaft T13-Anker. DoD: golden byte-gleich + e2e + §6-Beweis;
 Stufe 2 mit check:gegenpruefung bestanden.
+*(31.7.2026, Endprüfung R2-2: Die Zeilenzahlen «1199 Z.» / «660 Z.» sind gestrichen statt
+nachgeführt — sie waren durch den §6.6-Split `b56b9193f` überholt (inhalt.tsx 1494→806 Z.,
+parts.tsx auf 12 Z. ausgedünnt) und wären es mit dem nächsten Commit wieder. Die Zahl gehört
+nicht in die Spec: `wc -l` liefert sie im Moment des Baus. Dieselbe «Regel daraus» wie im
+Kasten zu §Stand 31.7.2026 — jeder Eintrag nennt den Stand, für den er gilt, samt Messbefehl.)*
 
 ## §8 Reihenfolge/Abhängigkeiten
 

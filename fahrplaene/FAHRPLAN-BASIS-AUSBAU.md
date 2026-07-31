@@ -32,7 +32,13 @@ die David-Gates sind reine Beschaffungs-/Freigabe-Handschritte (fachzeit-arm).
 
 ---
 
-# §A — Agent-baubar OHNE David (Bau-Reihenfolge, autonom)
+## §A — Agent-baubar OHNE David (Bau-Reihenfolge, autonom)
+
+*(Ebene 31.7.2026 von `#` auf `##` gehoben, Endprüfungs-Fund R2-17: `HEADING_RE` in
+`scripts/fahrplan-slice.ts` erfasst `#{2,3}`. Als H1 fanden weder der Slicer noch das
+mitgelieferte Inventar §A und §B — genau die zwei Zeiger, deren Satz lautet «wer nur ihn
+slict, baut ohne die verbindlichen Einheiten». Probe nach der Hebung: beide lösen auf und
+stehen im Inventar.)*
 
 Diese Kette wird **jetzt** gebaut, in genau dieser Reihenfolge, je Einheit eigener Worktree + PR +
 Auto-Merge. Terminkritisches zuerst (B-3 vor dem 1.8.-Berg). Kein Posten hier wartet auf David.
@@ -227,7 +233,7 @@ nie). Kein Code-Rückbau nötig.
 
 ---
 
-# §B — David-Schlussblock (alle Handschritte gebündelt, ans Ende)
+## §B — David-Schlussblock (alle Handschritte gebündelt, ans Ende)
 
 **NUR David, fachzeit-arm, empfohlen als EIN gebündelter ~30–45-Min-Block.** Alles Beschaffung/Freigabe,
 **keine fachliche Abnahme.** Jeder §A-Baustein oben ist so gebaut, dass er OHNE diese Schritte fertig und

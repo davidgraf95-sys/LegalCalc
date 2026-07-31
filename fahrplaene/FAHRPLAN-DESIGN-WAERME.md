@@ -425,7 +425,7 @@ Gesamtbild-Touchpoint statt 40 Einzeländerungen.
 
 > **→ Bau-Spec: «2 · Bau-Einheiten (Reihenfolge ist harte Abhängigkeit)» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
-*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.* *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   Farbklima/Wärme/Typografie-Plan aus 48 Ultracode-Befunden + 3 Kritik-Linsen (reglement-treue ·
   umsetzbarkeit · geschmacks-kohärenz). Fünf tragende Entscheide: **E1** Ein Papier, eine Tinte,
@@ -449,7 +449,7 @@ Gesamtbild-Touchpoint statt 40 Einzeländerungen.
 *Ausführungs-Protokoll Ziff. 6). Die ROADMAP führt je Teilschritt nur noch Checkbox,*
 *`@meta` und einen Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
 
-**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:**
+**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   **Session-Granularität (AP-6, 31.7.2026):** D-0…D-5 sind gebaut; offen bleiben D-6, D-7 und D-8.
   Die Teilschritte unten folgen der **harten Kette** des Fahrplans (`D-6 → D-7 → D-8`) und der Regel
@@ -458,7 +458,7 @@ Gesamtbild-Touchpoint statt 40 Einzeländerungen.
   zuerst). Dieser Schritt bleibt das Dach. **Bewusst NICHT als Teilschritt:** die 5 D-9-Posten
   (David-Entscheid-Mappe, Abnahme-Zeitsperre bis 1.12.2026).
 
-**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
+**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   - [ ] **DESIGN-D6 · Dunkel-Paket: Elevation, Schatten, Scrims (EIN PR)** — surface dunkel heben · warme Schattenbasis · Lichtkante · Scrim-Audit; Token-only, flip-reversibel, `check:farbwelt` + axe dunkel. Detail: diese Datei §2 (D-6). Trailer `Roadmap: W2·11-DESIGN-D6`.
   - [ ] **DESIGN-D7 · Ein Lese-Register (`--reading-ink`, `--lese-fs`/`--lese-lh`)** — Lese-Basis + Entscheid-Stepper als Multiplikatoren, CPL-Messung, Regel in beide Domänen-Reglemente; golden neutral. Detail: diese Datei §2 (D-7). Trailer `Roadmap: W2·11-DESIGN-D7`.
@@ -466,7 +466,7 @@ Gesamtbild-Touchpoint statt 40 Einzeländerungen.
   - [ ] **DESIGN-D8b · Mono-Diät — Pilot, dann mechanischer Rest (D-8.2)** — ~50 verteilte Fundstellen; **Pilot zuerst** (Startseite + 1 Rechner) mit Vorher/Nachher-Screens, danach der Rest. Nicht flip-reversibel. Detail: diese Datei §2 (D-8.2). Trailer `Roadmap: W2·11-DESIGN-D8b`.
   - [ ] **DESIGN-D8c · Motiv-Katalog (D-8.3)** — `scale-rule`-Motiv an 2–3 Sektions-Orten, Abschluss der Anwendungs-Schicht. Detail: diese Datei §2 (D-8.3). Trailer `Roadmap: W2·11-DESIGN-D8c`.
 
-### Dach-Prosa W2·11-DESIGN im Wortlaut (verschoben 31.7.2026)
+### Dach-Prosa W2·11-DESIGN im Wortlaut (verschoben 31.7.2026) *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
 *Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026); massgebliche Fassung.*
 

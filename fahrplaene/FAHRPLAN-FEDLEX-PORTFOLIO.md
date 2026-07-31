@@ -880,7 +880,7 @@ Trailer `Roadmap: W2·14-SIGNAL`.
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
       Fedlex-Datenarten (Erlasse/Materialien/Verfahren/Staatsverträge u.a.), ausschliesslich amtliche Fedlex-Stelle
-      (SPARQL + Filestore, nie Dritt-Repo). **Detailquelle:** diese Datei.
+      (SPARQL + Filestore, nie Dritt-Repo). **Detailquelle:** `FAHRPLAN-FEDLEX-PORTFOLIO.md`.
       **Alle 5 Pakete (1 Currency · 2 Botschaften · 5 AS-Revisionen · 3 Vernehmlassungen · 4 Staats-
       verträge) ✅ AUSGEFÜHRT (Stand 10.7.2026)** — Detail `FAHRPLAN-FEDLEX-PORTFOLIO.md`; Wortlaut →
       `ROADMAP-CHRONIK.md` → Fedlex-Portfolio (22.7.2026).
@@ -891,7 +891,7 @@ Trailer `Roadmap: W2·14-SIGNAL`.
 
 > **→ Bau-Spec: «Paket 7 — Watchlist & Änderungs-Signale» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
-*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.* *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   «Sag mir, wenn sich Norm Y ändert / Gericht X neu entscheidet.» **Baut auf** vorhandener Currency-/
   Drift-Infra: `check:fedlex-versionen`, `check:rss-oc`, `scripts/fedlex-wiedervorlage-generieren.ts`,
@@ -940,7 +940,7 @@ Trailer `Roadmap: W2·14-SIGNAL`.
 *Ausführungs-Protokoll Ziff. 6). Die ROADMAP führt je Teilschritt nur noch Checkbox,*
 *`@meta` und einen Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
 
-**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:**
+**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   **Session-Granularität (AP-6, 31.7.2026):** die Spec portioniert selbst in B1 · B2 · Gerichts-Hälfte;
   die drei Teilschritte unten folgen dieser Reihenfolge (B2 prüft gegen das Build-Artefakt aus B1, das
@@ -948,13 +948,13 @@ Trailer `Roadmap: W2·14-SIGNAL`.
   als Teilschritt:** das 🟠 Push-/E-Mail-Abo — Architektur-BRUCH gegen «Werkzeuge bleiben zustandslos»,
   kein Bau ohne ausdrücklichen Architektur-Entscheid Davids und **nicht** in B1/B2 hineinziehen.
 
-**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
+**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   - [ ] **14-SIGNAL-B1 · Statischer Änderungs-Feed (🟢)** — RSS/Atom/JSON zur Build-Zeit aus `currency.json` + Verfallsregister, analog `gen:fedlex-wiedervorlage`; **nur der VORWÄRTS-Fall** (`naechsteFassungAb`). DoD: Generator deterministisch, 2 Läufe byte-gleich. Detail: diese Datei §7.1. Trailer `Roadmap: W2·14-SIGNAL-B1`.
   - [ ] **14-SIGNAL-B2 · Client-Watchlist (🟢)** — localStorage-Liste gemerkter Normen, beim Besuch gegen die statischen Build-Artefakte geprüft (`zuletztVerwendet`-Muster). **Rückblick-Flag zwingend gegen `fassungsToken`/`sha`, nie gegen `geprueftAm`** (sonst systematische Falschmeldungen); keine Mandats-/Personendaten in localStorage (§8). Detail: diese Datei §7.0/§7.1. Trailer `Roadmap: W2·14-SIGNAL-B2`.
   - [ ] **14-SIGNAL-GER · Gerichts-Delta mit ehrlicher Latenz (🟡)** — Build-Zeit-Delta über `register.json` (neue Einträge je Gericht/Norm seit Datum X); **eigenes Verdikt, nicht unter dem Fedlex-🟢 mitgeführt**. Es gibt keinen Live-Gerichts-Feed — die Import-Kadenz wird als «Stand des Entscheid-Bestands» sichtbar ausgeliefert (§8). Detail: diese Datei §7.2. Trailer `Roadmap: W2·14-SIGNAL-GER`.
 
-### Dach-Prosa W2·14-SIGNAL im Wortlaut (verschoben 31.7.2026)
+### Dach-Prosa W2·14-SIGNAL im Wortlaut (verschoben 31.7.2026) *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
 *Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026); massgebliche Fassung.*
 
