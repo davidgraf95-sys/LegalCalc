@@ -1,8 +1,8 @@
 // scripts/plan/check.ts
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
-import { parseRoadmap, type Einheit } from './parse';
+import { parseRoadmap, bindeCheckbox, bulletEinzug, BULLET_RE, CHECKBOX_RE, CHECKBOX_STATUS, type Einheit } from './parse';
 import { resolve } from './aufloesen';
-import { type Status } from './etikett';
+import { parseEtikett, type Status } from './etikett';
 import { INVENTAR } from './inventar';
 
 // (5c) Status, die den 26×-Slot halten, ohne ihn je zurückzugeben. next.ts sperrt
@@ -16,32 +16,46 @@ import { INVENTAR } from './inventar';
 // über den eigenen Abschluss hinaus; weder next.ts noch check.ts sah es.
 const SLOT_STILLSTAND: readonly Status[] = ['done', 'parked', 'blocked'];
 
+// (8.3) Status, die einen Schritt als Queue-Eintrag wertlos machen: er wird nicht
+// gebaut, hält aber einen Platz in der EINEN Prioritäts-Quelle. `blocked` gehört
+// dazu — ein blockierter Kopf ist ebenso wenig baubar wie ein erledigter.
+const QUEUE_STALE: readonly Status[] = ['done', 'parked', 'blocked'];
+
 export interface Problem { id: string | null; meldung: string }
 
-// Archiv-Backlog (Stand 1.7.2026): FAHRPLAN-*.md, die historisch nicht aus ROADMAP.md
-// verlinkt sind (Archiv-Kandidaten, s. ROADMAP «Strang-Detailpunkte»). Grandfathered, damit
-// der Link-Check NEU hinzugefügte/referenzierte unverlinkte FAHRPLAN rot meldet, ohne die
-// Altlast jedesmal rotzumachen. Beim Archivieren/Verlinken einer Datei hier streichen.
-const ARCHIV_BACKLOG = new Set<string>([
-  'FAHRPLAN-BEURKUNDUNGS-AUSBAU.md',
-  'FAHRPLAN-BGER-RECHTSWEG.md',
-  'FAHRPLAN-FALL-RUECKGRAT.md',
-  'FAHRPLAN-FUNDAMENT-UMBAU.md',
-  'FAHRPLAN-GMBH-GRUENDUNG.md',
-  'FAHRPLAN-GRUNDLAGEN.md',
-  'FAHRPLAN-INTERNATIONAL-VOLLTEXT.md',
-  'FAHRPLAN-KANTONALE-ENTSCHEIDE.md',
-  'FAHRPLAN-LUECKEN-SCHLIESSEN.md',
-  'FAHRPLAN-NOTARIAT-GRUNDBUCH.md',
-  'FAHRPLAN-VERTRAGS-VARIANTEN.md',
-]);
+// Archiv-Backlog: FAHRPLAN-*.md, die (noch) nicht aus ROADMAP.md verlinkt sind. Grandfathered,
+// damit der Link-Check NEU hinzugefügte/referenzierte unverlinkte FAHRPLAN rot meldet, ohne einen
+// Übergangsfall jedesmal rotzumachen. Beim Archivieren/Verlinken einer Datei hier streichen.
+// Altlast (11 verwaiste Fahrpläne, Stand 1.7.2026) abgetragen 31.7.2026 — QS-TOK-Aufräumwelle;
+// Liste bleibt als Mechanismus für künftige Übergangsfälle.
+const ARCHIV_BACKLOG = new Set<string>([]);
 
-const CHECKBOX_STATUS: Record<string, string[]> = {
-  '[x]': ['done'],
-  '[~]': ['wip'],
-  '[ ]': ['ready', 'blocked', 'parked'],
-  '[d]': ['parked', 'blocked'], // Legenden-Status «geparkt/zurückgestellt» — nie auf ready/wip/done
-};
+// CHECKBOX_STATUS liegt seit 31.7.2026 in scripts/plan/parse.ts — set.ts braucht
+// dieselbe Tabelle, und zwei Kopien wären zwei Wahrheiten (§5, Fund R2-9/R2-15).
+
+// Ordner der aktiven Fahrpläne. Bis 31.7.2026 lag jede `FAHRPLAN-*.md` im Repo-Wurzel;
+// AP-8 (QS-TOK) hat sie nach `fahrplaene/` gezogen, das Archiv bleibt in `archiv/`.
+export const FAHRPLAN_ORDNER = 'fahrplaene';
+
+/**
+ * Listet die zu prüfenden FAHRPLAN-Dateien eines Ordners (Basenamen, sortiert).
+ *
+ * Fehlt der Ordner, ist das Ergebnis eine LEERE LISTE statt eines Absturzes — der
+ * Rest von check:plan (Etikett-, dep-, Queue-Regeln) muss auch in einem Baum ohne
+ * `fahrplaene/` prüfbar bleiben. Das ist bewusst KEIN stilles Grün-Machen des
+ * Link-Tors: existiert der Ordner, wird jede Datei darin geprüft (s. Regel 7 und
+ * den Negativ-Test in src/tests/plan-check.test.ts).
+ */
+export function fahrplanScan(
+  dir: string = FAHRPLAN_ORDNER,
+  leser: (d: string) => string[] = (d) => readdirSync(d),
+  dirExists: (d: string) => boolean = (d) => existsSync(d),
+): string[] {
+  if (!dirExists(dir)) return [];
+  return leser(dir)
+    .filter((f) => /^FAHRPLAN-.*\.md$/.test(f))
+    .sort();
+}
 
 function zyklus(einheiten: Einheit[]): string | null {
   const dep = new Map(einheiten.map((e) => [e.id, e.etikett.dep]));
@@ -112,7 +126,71 @@ export function pruefe(
       const basis = k.replace(/[*?{[].*$/, '');
       if (!fileExists(basis)) probleme.push({ id: e.id, meldung: `kollision-Pfad "${k}" existiert nicht` });
     }
+    // (9) fahrplan:-Pfad existiert. Bis AP-8 (31.7.2026) war das Feld ein blosser
+    // Basename im Repo-Wurzel; seither trägt jeder Wert ein Verzeichnis-Präfix
+    // (`fahrplaene/` bzw. `archiv/`). Damit ist eine Fehlerklasse entstanden —
+    // falsches/fehlendes Präfix —, die keine Regel sehen konnte: Regel 7 prüft nur
+    // die Gegenrichtung (Datei→ROADMAP, per Basename), Regel 6 nur `kollision`.
+    // Ein toter `fahrplan:`-Zeiger schickt die Bau-Session in ein ENOENT des
+    // Slicers, ohne dass ein Tor rot wird (Endprüfungs-Funde 11/21, 31.7.2026).
+    if (t.fahrplan && !fileExists(t.fahrplan)) {
+      probleme.push({ id: e.id, meldung: `fahrplan "${t.fahrplan}" existiert nicht` });
+    }
   }
+  // (10) Checkbox-Bullet ohne gebundenes @meta — der Nullfall von Regel 2.
+  //
+  // Regel 2 prüft `if (e.checkbox && …)`. Wo parse.ts die Checkbox NICHT binden
+  // kann, ist das Tor deshalb blind, und genau dort entsteht die Drift: `plan:set
+  // <id> status=done` schreibt das @meta, die sichtbare Liste bleibt auf «offen»,
+  // check:plan bleibt grün. Ein Tor, das an dieser Stelle nicht scheitern kann,
+  // ist gefährlicher als keines (§6.7) — belegt an `W2·17-UI-BEFUNDE-B20`, wo ein
+  // eingezogener Prosa-Block die Kopplung kappte, ohne dass es je auffiel
+  // (Fund R2-1/R2-10 der Endprüfung Runde 2, 31.7.2026).
+  //
+  // Blickrichtung darum umgekehrt: von der Checkbox-Bullet nach UNTEN. Trifft der
+  // Blick ein @meta, bevor eine neue Bindungs-Einheit beginnt (eine gleich- oder
+  // höherrangige Bullet, eine Überschrift oder eine doppelte Leerzeile), MUSS
+  // dieses @meta an genau diese Zeile gebunden sein.
+  //
+  // Fund R3-1/R3-9 (Endprüfung Runde 3, 31.7.2026, KRITISCH): Bis dahin beendete
+  // JEDE Checkbox-Bullet die Bindungs-Einheit — auch eine TIEFER eingezogene. Eine
+  // Dach-Bullet, deren eigenes @meta hinter dem @meta ihres Unterschritts steht,
+  // fiel damit durch beide Netze: der Vorwärts-Blick brach an der Unter-Bullet ab,
+  // die Rückwärts-Bindung am @meta des Unterschritts. Im Bestand LIVE an
+  // `W2·7-BEZUG` — `plan:set … status=wip` schrieb das @meta, `- [x]` blieb
+  // stehen, `check:plan` meldete null Probleme. Also: nur `bulletEinzug(z) <=
+  // einzug` beendet die Einheit; ein tiefer eingezogener Unterschritt gehört noch
+  // zum Block der Dach-Bullet, und sein bereits gebundenes @meta wird dabei
+  // ÜBERSPRUNGEN statt zum Abbruch genommen. Was danach ungebunden bleibt, ist
+  // genau der Fall, den die Regel sehen soll.
+  const zeilen = md.split(/\r?\n/);
+  for (let k = 0; k < zeilen.length; k++) {
+    if (!CHECKBOX_RE.test(zeilen[k])) continue;
+    const einzug = bulletEinzug(zeilen[k]);
+    let leerFolge = 0;
+    for (let j = k + 1; j < zeilen.length; j++) {
+      const z = zeilen[j];
+      if (z.trim() === '') { if (++leerFolge >= 2) break; continue; }
+      leerFolge = 0;
+      if (/^[ \t]*(?:>[ \t]*)*#{1,6}[ \t]/.test(z)) break;
+      // Eine gleich- oder höherrangige Bullet eröffnet die nächste Bindungs-Einheit
+      // — ab da gilt Zeile k nicht mehr. Tiefer eingezogene Bullets tun das nicht.
+      if (BULLET_RE.test(z) && bulletEinzug(z) <= einzug) break;
+      if (z.includes('<!-- @meta')) {
+        const { zeile } = bindeCheckbox(zeilen, j);
+        if (zeile === k) break; // gebunden — Zweck erfüllt
+        // Fremdes, aber sauber gebundenes @meta eines TIEFER eingezogenen
+        // Unterschritts innerhalb des Blocks: nicht unser Fall, weiterlaufen.
+        if (zeile !== null && zeile > k && bulletEinzug(zeilen[zeile]) > einzug) continue;
+        probleme.push({
+          id: parseEtikett(z).id,
+          meldung: `Checkbox-Zeile «${zeilen[k].trim().slice(0, 60)}» (Z.${k + 1}) steht über dem @meta auf Z.${j + 1}, ist aber nicht an die Checkbox gebunden — plan:set würde sie stehen lassen`,
+        });
+        break;
+      }
+    }
+  }
+
   // (4b) Azyklie
   const z = zyklus(einheiten);
   if (z) probleme.push({ id: z, meldung: `dep-Graph hat einen Zyklus bei "${z}"` });
@@ -144,10 +222,14 @@ export function pruefe(
     // (8.2) keine Dublette
     if (inQueue.has(id)) probleme.push({ id, meldung: `@queue-ID "${id}" mehrfach in @queue` });
     inQueue.add(id);
-    // (8.3) Stale-Guard: erledigte/geparkte Schritte haben in der Queue nichts verloren
-    // (§14.2 «Plan in beide Richtungen pflegen», maschinell erzwungen)
+    // (8.3) Stale-Guard: erledigte/geparkte/blockierte Schritte haben in der Queue
+    // nichts verloren (§14.2 «Plan in beide Richtungen pflegen», maschinell erzwungen).
+    // `blocked` ergänzt 31.7.2026 (Endprüfungs-Fund 15): ein blockierter Queue-Kopf
+    // ist unbaubar und blieb still grün — 8.4 greift dort nicht, weil er gar nicht
+    // erst in readyNow landet und readyNow[0] darum unverändert bleibt. Genau die
+    // Fehlerklasse des Ur-Befunds vom 24.7.2026, nur über `blocked` statt über `dep`.
     const ziel = einheiten.find((e) => e.id === id);
-    if (ziel && (ziel.etikett.status === 'done' || ziel.etikett.status === 'parked')) {
+    if (ziel && QUEUE_STALE.includes(ziel.etikett.status)) {
       probleme.push({ id, meldung: `@queue-ID "${id}" ist ${ziel.etikett.status} — veraltete Steuerung, aus @queue entfernen` });
     }
   }
@@ -180,11 +262,14 @@ export function pruefe(
 // CLI
 if (!process.env.VITEST) {
   const md = readFileSync('ROADMAP.md', 'utf8');
-  // FAHRPLAN-Link-Check (QS-PH): JEDE FAHRPLAN-*.md im Repo-Wurzel muss aus ROADMAP.md
+  // FAHRPLAN-Link-Check (QS-PH): JEDE FAHRPLAN-*.md in `fahrplaene/` muss aus ROADMAP.md
   // verlinkt sein — AUSSER den in ARCHIV_BACKLOG grandfatherten Altlasten (Archiv-Kandidaten).
   // So meldet der Check eine NEU hinzugefügte/neu referenzierte unverlinkte FAHRPLAN rot,
   // ohne die historische Altlast jedesmal rotzumachen.
-  const alle = readdirSync('.').filter((f) => /^FAHRPLAN-.*\.md$/.test(f));
+  // AP-8 (31.7.2026): Scan-Ort vom Repo-Wurzel auf `fahrplaene/` umgestellt (Umzug der
+  // aktiven Fahrpläne). Verglichen wird weiterhin der BASENAME gegen den ROADMAP-Volltext —
+  // Verweise tragen ihn in jeder Form (Link, `fahrplan:`-Feld, Prosa).
+  const alle = fahrplanScan();
   const zuPruefen = alle.filter((f) => !ARCHIV_BACKLOG.has(f));
   let probleme: Problem[];
   try {

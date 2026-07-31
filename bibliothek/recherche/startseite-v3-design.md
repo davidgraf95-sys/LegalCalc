@@ -5,7 +5,7 @@
 Delegation David) — Wort-für-Wort-Abnahme der sichtbaren Texte durch David ausstehend.
 
 **Zweck:** Herleitung und bindender Entscheid für den Startseiten-Neubau + Branding I2
-(ROADMAP **W2·5c**, Bau-Spec **`FAHRPLAN-STARTSEITE-V3.md`** — die Spec ist die operative
+(ROADMAP **W2·5c**, Bau-Spec **`archiv/FAHRPLAN-STARTSEITE-V3.md`** — die Spec ist die operative
 Wahrheit; dieses Dossier ist die Begründungs- und Provenienz-Schicht, §11).
 
 **Quelle + Stand:** Eigene Erhebung 3.7.2026 — Fable-Ultracode-Workflow (11 Agenten: 5
@@ -26,7 +26,7 @@ verbindlich · Scope Startseite + Einstiegs-Navigation · I2 mitgebündelt.
 ## Regel (deterministisch): der Entscheid
 
 **Hybrid «A-Basis + Brass-Hero»** — als Schalter-Liste, bindend (Details/Begründung im
-Verdikt unten, operative Fassung in `FAHRPLAN-STARTSEITE-V3.md` §0):
+Verdikt unten, operative Fassung in `archiv/FAHRPLAN-STARTSEITE-V3.md` §0):
 
 | Schalter | Entscheid |
 |---|---|
@@ -62,7 +62,7 @@ Verdikt unten, operative Fassung in `FAHRPLAN-STARTSEITE-V3.md` §0):
 ## Council-Verdikt (Chairman-Synthese, 3.7.2026 — BINDEND, ungekürzt)
 
 > Nachstehend das vollständige Verdikt; die Schalter-Tabelle und die 10 Auflagen sind in
-> `FAHRPLAN-STARTSEITE-V3.md` §0/§9 operativ übernommen.
+> `archiv/FAHRPLAN-STARTSEITE-V3.md` §0/§9 operativ übernommen.
 
 ### Where the Council Agrees
 1. ~90 % der Substanz beider Konzepte ist identisch — die A-vs-B-Frage ist keine Richtungs-,
@@ -162,5 +162,5 @@ Devil's-Advocate-Durchgang; Design-Entscheid durch Council-Delegation Davids VER
 Die vollständigen Arbeitsdokumente (5 Recherche-Berichte, 2 Vollkonzepte, 4 Kritiken,
 Council-Transkript) entstanden im Session-Scratchpad der Fable-Session vom 3.7.2026
 (Workflow-Run `wf_20bbdf4e-e4b`); ihre entscheidungsrelevanten Inhalte sind vollständig in
-dieses Dossier + `FAHRPLAN-STARTSEITE-V3.md` übernommen. Kondensierung ist bewusst: die Spec
+dieses Dossier + `archiv/FAHRPLAN-STARTSEITE-V3.md` übernommen. Kondensierung ist bewusst: die Spec
 ist die eine operative Quelle (§5), das Scratchpad kein Referenzort.

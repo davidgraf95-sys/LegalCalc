@@ -119,6 +119,7 @@
     "abnahme:dossiers": "vite-node scripts/abnahme-dossiers.ts",
     "plan:next": "vite-node scripts/plan/next.ts",
     "plan:set": "vite-node scripts/plan/set.ts",
+    "plan:dump": "vite-node scripts/plan/dump.ts",
     "check:plan": "vite-node scripts/plan/check.ts",
     "struktur:rotieren": "python3 .claude/hooks/struktur-rotieren.py",
     "struktur:aktuell": "python3 .claude/hooks/struktur-aktuell.py",

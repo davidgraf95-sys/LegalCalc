@@ -13,9 +13,78 @@ export interface Einheit {
   pos: number;
 }
 
-function checkboxAus(zeile: string): Checkbox {
-  const m = zeile.match(/^\s*[-*+]\s*\[([ xX~Dd])\]/);
+/** Erlaubte Kombinationen Checkbox × Status — die EINE Quelle (§5). check.ts
+ *  Regel 2 prüft damit die Kopplung, set.ts entscheidet damit, ob der
+ *  Checkbox-Nachzug überhaupt greifen muss. Lag bis 31.7.2026 nur in check.ts;
+ *  set.ts führte mit CHECKBOX_FUER eine zweite, unvollständige Wahrheit
+ *  (Fund R2-9/R2-15: der Legenden-Marker `[d]` ging beim Setzen still verloren). */
+export const CHECKBOX_STATUS: Record<string, string[]> = {
+  '[x]': ['done'],
+  '[~]': ['wip'],
+  '[ ]': ['ready', 'blocked', 'parked'],
+  '[d]': ['parked', 'blocked'], // Legenden-Status «geparkt/zurückgestellt» — nie auf ready/wip/done
+};
+
+/** Listen-Bullet (auch im Blockquote), mit oder ohne Checkbox. */
+export const BULLET_RE = /^[ \t]*(?:>[ \t]*)*[-*+][ \t]/;
+/** Listen-Bullet MIT Checkbox — die Zeichenklasse spiegelt CHECKBOX_STATUS. */
+export const CHECKBOX_RE = /^[ \t]*(?:>[ \t]*)*[-*+][ \t]*\[([ xX~Dd])\]/;
+
+export function checkboxAus(zeile: string): Checkbox {
+  const m = zeile.match(CHECKBOX_RE);
   return m ? (`[${m[1].toLowerCase()}]` as Checkbox) : null;
+}
+
+/** Einrückung einer Bullet-Zeile in Zeichen (Blockquote-Präfix zählt mit). */
+export function bulletEinzug(zeile: string): number {
+  return zeile.match(/^[ \t]*(?:>[ \t]*)*/)![0].length;
+}
+
+/**
+ * Bindet die Checkbox-Zeile an ein @meta.
+ *
+ * Fund R2-1/R2-10 der QS-TOK-Endprüfung (31.7.2026, KRITISCH): Die frühere Regel
+ * las die Checkbox aus der «nächsten nicht-leeren Zeile DARÜBER» und brach dort
+ * ab. Steht zwischen Bullet und @meta auch nur EINE Prosa-Zeile — im Bestand bei
+ * `W2·17-UI-BEFUNDE-B20` (5 Zeilen) und `W2·5g-ZEIT` (1 Zeile) —, blieb
+ * `checkbox = null`. Da check.ts Regel 2 nur `if (e.checkbox && …)` prüft und
+ * set.ts dieselbe Annahme spiegelte, schrieb `plan:set … status=done` das @meta,
+ * liess die menschenlesbare Liste auf «offen» stehen, und KEIN Tor sah es (§6.7).
+ *
+ * Neue Regel: rückwärts bis zur ERSTEN Listen-Bullet-Zeile; deren Checkbox bindet
+ * (trägt sie keine, bindet nichts — die Bullet gehört dann zu einer Liste ohne
+ * Checkboxen, etwa dem Querschnitt-Band). Die «erste Bullet gewinnt»-Klausel ist
+ * der Schutz gegen die Gegenrichtung: sonst bände ein checkbox-loser
+ * Querschnitt-Eintrag an die Checkbox der darüberliegenden Nachbarliste.
+ * Abbruch zusätzlich an Überschrift, Kommentar-Grenze (`<!--`/`-->`, damit auch
+ * an einem fremden @meta) und an einer doppelten Leerzeile.
+ *
+ * Fund R3-7 (Endprüfung Runde 3, 31.7.2026): Der Bullet-Test steht seither VOR
+ * der Kommentar-Grenze. `z.includes('-->')` trifft auch dann, wenn die
+ * Zeichenfolge blosser Fliesstext der Bullet selbst ist — ein Pfeil im
+ * Schritt-Titel genügte, um die Bindung zu kappen und check.ts Regel 10
+ * falsch-positiv rot zu machen, mit einer Meldung, die auf die falsche Ursache
+ * zeigt. Eine Bullet-Zeile ist nie eine Kommentar-Grenze. (Die ROADMAP trägt kein
+ * @meta auf einer Bullet-Zeile — nachgemessen 0 Treffer —, die Umkehrung ist
+ * darum auch am Bestand folgenlos.)
+ */
+export function bindeCheckbox(zeilen: string[], metaIdx: number): { checkbox: Checkbox; zeile: number | null } {
+  let leerFolge = 0;
+  for (let j = metaIdx - 1; j >= 0; j--) {
+    const z = zeilen[j];
+    if (z.trim() === '') {
+      if (++leerFolge >= 2) break;
+      continue;
+    }
+    leerFolge = 0;
+    if (/^[ \t]*(?:>[ \t]*)*#{1,6}[ \t]/.test(z)) break; // Überschrift
+    if (BULLET_RE.test(z)) {
+      const cb = checkboxAus(z);
+      return cb ? { checkbox: cb, zeile: j } : { checkbox: null, zeile: null };
+    }
+    if (z.includes('<!--') || z.includes('-->')) break; // fremdes @meta / Kommentar-Grenze
+  }
+  return { checkbox: null, zeile: null };
 }
 
 export function parseRoadmap(md: string): { einheiten: Einheit[]; blockers: Record<string, string>; queue: string[] } {
@@ -60,14 +129,8 @@ export function parseRoadmap(md: string): { einheiten: Einheit[]; blockers: Reco
     }
     if (z.includes('<!-- @meta')) {
       const etikett = parseEtikett(z);
-      // Checkbox aus der nächsten nicht-leeren Zeile DARÜBER
-      let cb: Checkbox = null;
-      for (let j = i - 1; j >= 0; j--) {
-        if (zeilen[j].trim() === '') continue;
-        cb = checkboxAus(zeilen[j]);
-        break;
-      }
-      einheiten.push({ id: etikett.id, etikett, checkbox: cb, sektion, pos: einheiten.length });
+      const { checkbox } = bindeCheckbox(zeilen, i);
+      einheiten.push({ id: etikett.id, etikett, checkbox, sektion, pos: einheiten.length });
     }
   }
   return { einheiten, blockers, queue };

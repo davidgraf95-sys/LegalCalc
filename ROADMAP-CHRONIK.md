@@ -39,11 +39,20 @@ ab 1.7. «verfallen». `npm run gate` grün, Golden byte-gleich. Deployt 2.7.202
 
 ## W1·1 — Begründungs-Absatz *(BEGRUENDUNGS-ABSATZ, done)*
 
-Aus dem Rechen-Ergebnis ein **kopierfertiger, normgestützter Absatz** (UI **und** PDF), jeder Wert
-mit Norm+Link+Stand (schliesst die Rückrichtung *Werkzeug→Norm*). **Erst EIN Flaggschiff-
-Vertikalschnitt komplett** (Prozesskosten): Ergebnis → Absatz → PDF-Block → Kopier-Hook; dann
-Rollout. *Nächster Schritt:* PDF-Block (`pdfModel.ts`) + Kopier-Hook am Prozesskosten-Rechner; die 4
-David-Entscheide als **Default-und-Flag** setzen. §8-Rahmung «keine Rechtsberatung».
+Aus dem Rechen-Ergebnis ein **kopierfertiger, normgestützter Absatz**, jeder Wert mit
+Norm+Link+Stand (schliesst die Rückrichtung *Werkzeug→Norm*). **Erst EIN Flaggschiff-
+Vertikalschnitt komplett** (Prozesskosten), dann Rollout. §8-Rahmung «keine Rechtsberatung».
+
+**Abschluss-Stand 28.6.2026 (deployt im §9-Batch 2.7.2026, `a3769d72`):** Phasen 0–2 umgesetzt —
+`begruendungsAbsatz()` / `fristbeginnZusatz` / `BEGRUENDUNG_VORBEHALT`, `BegruendungSlot` als EINE
+Aufrufstelle in 16 Forms, `useKopieren`-Hook, benanntes Engine-Feld `fristbeginnNorm` an ZPO/SchKG
+(Magic-Index dort geschlossen, Wächter `src/tests/fristbeginnNorm.test.ts`), 14 `absatz:`-Goldens +
+Linter über 14 Engines. Die 4 David-Entscheide sind gefallen; **Entscheid #3 = PDF-Absatz AUS**
+(«Ansatz in UI reicht») ⇒ der frühere «nächste Schritt» PDF-Block + Kopier-Hook ist **erledigt bzw.
+entfallen**: `PdfDocConfig.begruendung` in `src/lib/pdf/pdfModel.ts` bleibt gebaute, bewusst
+abgeschaltete Kapazität ohne Aufrufer (weder entfernen noch stillschweigend anschalten — ein
+Wiedereinschalten wäre ein eigener §6-deklarierter Schritt). Restpunkte → `ROADMAP.md`
+«Nachträge aus der Archiv-Welle 31.7.2026»; Detail `archiv/FAHRPLAN-BEGRUENDUNGS-ABSATZ.md`.
 
 ## W1·2 — Norm↔Werkzeug-Brücke *(RECHTSSAMMLUNG P4/D1, done)*
 
@@ -101,7 +110,7 @@ neues Tor `check:seo-index`. **Bündelt:** geparkten Startseiten-Merker (30.6.) 
 Sidebar-Reihenfolge + I2 Branding + W2·5-Startseiten-Modul-Rahmen + Redesign-zurückgestellt
 (16.6., Kernideen im Council verwertet). **Bau-Spec (bau-fertig für autonome Opus-Session,
 10 verbindliche Auflagen + erzwungene Bausequenz Plumbing→Hero-zuletzt):**
-`FAHRPLAN-STARTSEITE-V3.md`; Herleitung + volles Council-Verdikt:
+`archiv/FAHRPLAN-STARTSEITE-V3.md`; Herleitung + volles Council-Verdikt:
 `bibliothek/recherche/startseite-v3-design.md`. **Auflagen-Kern:** Status-Wording §8-ehrlich
 (kein «jede Angabe»-Absolutum, kein «geprüfte Bausteine»), Kontrast-MESSUNG vor Merge,
 golden byte-gleich, e2e-Anker erhalten, §12-Koordination (tailwind↔W3·14, seo/prerender↔SEO-A11Y,
@@ -633,6 +642,26 @@ Kanton 29 055 aus allen 26 Kantonen** (1 231 kantonale Erlasse). Prod-Smoke-Pfad
     Start-LCP 11000 → **10000** (sd nur 37 ms über alle 16 Runner!), OR-TTI 15000 → **13000**,
     Start-Score 40 → **55**. **Unverändert** OR-TBT 6500 (siehe Schritt oben) und CLS 0.05.
 
+  - **b · Billig & verlustfrei zuerst** — Wortlaut der Quick-Win-Liste *(wörtlich verschoben 31.7.2026)*
+
+    `React.memo(ArtikelLeser)` + `SektionBaumTOC` (`parts.tsx`),
+    token-Mindesthöhen (`min-h-screen` Suspense-Fallback `App.tsx` + Reader-Ladezustand `inhalt.tsx`,
+    `min-h-modul-news` `NewsHeader`), Reader-Chunk-Vorladen, `vendor-react`-manualChunks (`vite.config.ts`).
+
+  - [x] **Bimodaler ~48-s-Stall in der ersten gedrosselten Such-Interaktion — AUFGEKLÄRT + BEHOBEN** *(26.7.2026, PR #382; Wortlaut wörtlich verschoben 31.7.2026)*
+
+    `norm-sprung`
+    A9 war als 2-vCPU-Flake gemeldet; gemessen war es ein **Messfehler des Tests**: der Warmlauf
+    wartete auf den «Sprung»-Treffer, der aus Register/Parser deterministisch berechnet wird und
+    schon steht, **während der Artikel-Suchindex noch aufgebaut wird**. Nach dem Erscheinen von
+    «Sprung» waren gemessen noch **11 586 – 14 484 ms** Ladearbeit offen; diese Restlast fiel in die
+    GEDROSSELTE Messphase und erschien dort ×4 als ~48-s-Stall — streng bimodal, weil es ein Rennen
+    zwischen Einmal-Load und Query-Reset ist (zwei Zustände, kein Kontinuum). Auf dem Runner riss das
+    alle drei Versuche (PR #382 Shard 7/8). **Fix:** der Warmlauf wartet jetzt auf den Ladezustand,
+    den er zu erreichen behauptet — Ergebnis-Kopfzeile sichtbar UND Vorbehalt «wird noch ergänzt»
+    weg (letzteres deckt die gestaffelte 2. Aufbaustufe, die `unvollstaendig` statt `laedt` setzt und
+    von `allesGeladen` NICHT erfasst wird).
+
 ## W2·6-B — Bündel B: B1 aza-Resolver + B2/A18 Regeste dreisprachig + B3 *(done; Prosa wörtlich verschoben 22.7.2026)*
 
     - [x] **+ Auftrags-Eingang 30.6.: Bündel B** — **B1+B2+A18 ✅ GEBAUT 5.7.2026** (Branch
@@ -830,11 +859,11 @@ nachgemessenen 156/4452/724 richtiggestellt, mit Vermerk warum.
 
 > - **I1 Seitenleisten-/Rubriken-Reihenfolge** → **✅ gebündelt in W2·5c (3.7.2026):** `navigation.ts`-
 >   SSoT-Array auf **Gesetze → Rechtsprechung → Materialien → Rechner → Vorlagen** — Bau im
->   Plumbing-Schritt von `FAHRPLAN-STARTSEITE-V3.md` §10 (treibt Sidebar UND Startseiten-Kacheln).
+>   Plumbing-Schritt von `archiv/FAHRPLAN-STARTSEITE-V3.md` §10 (treibt Sidebar UND Startseiten-Kacheln).
 > - **I2 Branding-Neuausrichtung** → **✅ gebündelt in W2·5c (3.7.2026):** das geforderte
 >   **Messaging-Konzept ist erledigt** (Ultracode-Recherche + DMAD-Council, gegen «nicht nach KI
 >   klingen» geprüft; Wortlaut + SSoT-Architektur `seo.ts`→Projektionen + Tor `check:seo-index` in
->   `FAHRPLAN-STARTSEITE-V3.md` §6, Herleitung `bibliothek/recherche/startseite-v3-design.md`);
+>   `archiv/FAHRPLAN-STARTSEITE-V3.md` §6, Herleitung `bibliothek/recherche/startseite-v3-design.md`);
 >   Ausrollen = Bausequenz-Schritt 1 des W2·5c. *(Ursprünglicher Auftragstext:)* weg von
 >   «Berechnen statt KI» → **KI-freies Übersichtstool über amtliche Quellen, inkl. Rechner + Vorlagen**;
 >   «KI-frei» als Vertrauensmerkmal (positiv), nicht als Headline. Surfaces ohne SSoT (§5-Geruch,
@@ -926,7 +955,7 @@ Aus `ROADMAP.md` Schritt 5b; im Plan verbleiben Checkbox + `@meta` + Einzeiler +
   `ArtikelBody.tsx`** abstimmen → C Suche/Layout → D Popover). **Auflagen:** zuerst nur Bund;
   **Renderer abwärtskompatibel** (Kanton-Altdaten nicht brechen); golden byte-gleich + §6.3;
   neuer `check:tabellen`-Validator. Tabellen-Detail quer in `FAHRPLAN-TARIF-TABELLEN-STUFE2.md`,
-  Layout/a11y in `DESIGN-REGLEMENT-NORMTEXT.md`, Popover in `FAHRPLAN-GESETZESTEXT-POPUP.md`.
+  Layout/a11y in `DESIGN-REGLEMENT-NORMTEXT.md`, Popover in `archiv/FAHRPLAN-GESETZESTEXT-POPUP.md`.
   - **Gebaut (✅; Wortlaut → `ROADMAP-CHRONIK.md` → W2·5b, 22.7.2026):** Bündel R (Scroll-Spy/
     Gliederung/A−A+, PR #59, prod 30.6.) · Bündel N (N1 zerrissene Artikelnummern am Extraktor +
     N2 Self-Link-Unterdrückung + Tor `check:invarianten`, deployt 2.7.) · Phase-1-Fundament-Batch
@@ -1035,7 +1064,7 @@ Aus `ROADMAP.md` Schritt 12 (Kopfzeile, `@meta`, ABGESCHLOSSEN-Einzeiler und die
   Divergenz, Entscheid-Queue). **Eskaliert (scope-fremd):** NE-Umzugsprüfung (per 12.7.
   FÄLLIG) + 10 Fedlex-Wiedervorlagen 1.8. → Currency-Slot, s. «Pflege & Termine».
   Beweisregeln G1–G3 (richtiger Beweis-Anker je Fläche, keine Beweisklassen-Mischung pro PR,
-  Gegenprüfungs-Pflicht Risikopfade) im Plan. Detail: **`FAHRPLAN-CODE-HYGIENE.md`**.
+  Gegenprüfungs-Pflicht Risikopfade) im Plan. Detail: **`archiv/FAHRPLAN-CODE-HYGIENE.md`**.
   Trailer `Roadmap: W2·12-HYGIENE`.
 
 ## W3·11 — Teil-Erledigt: Vernehmlassungen (Fedlex-Portfolio Paket 3) *(offener Schritt; ✅-Prosa wörtlich verschoben 26.7.2026)*
@@ -1179,3 +1208,132 @@ Abdeckung BS 98.6 % · Bund 96.1 %, 511 Slugs (208 Richter:innen, 303 Gerichtssc
 
 *(Nachtrag 26.7.2026: «Merge steht aus» ist überholt — PR #375 wurde nach 4 Gegenprüfungs-Runden
 (R1/Delta/Delta-2 inkl. #376-Konfliktauflösung als reine Verschiebung) gemergt und deployt.)*
+
+## Auftrags-Eingang 30.6.2026 / Bündel B — Detail-Wortlaut B1 · B2 · B3 *(erledigt via `W2·6-B` 5.7.2026 und `W2·6-BGE`/U-KOPF 10.7.2026; Wortlaut wörtlich verschoben 31.7.2026)*
+
+> **Bündel B · Rechtsprechungs-Leser → Schritt 6 / W2·6-BGE:**
+> - **B1 BGE ohne «vollständiges Urteil»** (Bsp. BGE 152 V 2): `azaUrteil:null` + kein
+>   `auszugAbschnitte` ⇒ `switcherSichtbar=false`, Ansicht fest auf «Auszug». **12/272 BGE** betroffen
+>   (151_I_73, 151_III_336, 152_V_20, 152_V_2, 150_I_183, 151_V_30, 151_I_41, 150_II_334, 151_II_475,
+>   151_V_100, 151_IV_316, 151_II_710). *Daten/Pipeline (AZA-Resolver, vgl. W2·6-Id-Disambiguierung) → `QS-GP`.*
+> - **B2 Regeste wie amtlich:** **Absätze + massgebliche Artikel FETT**. Heute `regeste.text` flacher
+>   String ohne `\n`/Markup → Struktur **aus der Quelle nachextrahieren** (kein Raten, §1/§2). *Daten/
+>   Pipeline → `QS-GP`; Geschwister von B1 (gemeinsamer Korpus-Re-Lauf denkbar).*
+> - **B3 Sticky-Kopf überdeckt Body** im Entscheid-Leser (Screenshot BGE 152 I 65): Hintergrund nicht
+>   deckend / z-index / scroll-margin in `EntscheidLeser.tsx`. *Reine UI (§13-F) — eigener Commit, NICHT mit B1/B2.*
+>   ✅ **10.7.2026 — bereits behoben, empirisch verifiziert** (U-KOPF/Split-View-Refactor `60988318`,
+>   Playwright-Beweis BGE 152 I 65). Wortlaut → `ROADMAP-CHRONIK.md` → Eingang-30.6. (22.7.2026).
+
+## W2·7-BEZUG — Bezüge am Artikel: Facetten-Fundament alle Instanzen (inkl. B7) *(done 28./29.7.2026, PRs #401–#406; Wortlaut wörtlich verschoben 31.7.2026)*
+
+- [x] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** — **✅ 28.7.2026 GEBAUT,
+  B1–B6 komplett** (PRs #401 `5e461f5f5` · #403 `4e160737b` · #404 `d42322ed1` · #405 `efba2dceb`):
+  Facetten-Datenmodell + BS-Korpus + BGer-Nicht-Leitentscheide (24'173 Kanten, 311 Shards, **9
+  Gegenprüfungs-Runden**, R1–R8 widerlegt+gefixt, R9 bestanden) · Auflistung direkt am Artikel ohne
+  Zwischenzeile (David-Vorgaben Minimalismus) · Rechtsprechungs-Dropdown in der Werkzeugleiste ·
+  interaktiver Zeitstrahl + Von-Bis-Datum statt Perioden-Buckets · Werkzeugleisten-Gesamtüberarbeitung.
+  Übergabe-Restposten siehe Block «Folgeaufträge Verzahnungs-Session 28.7.» unter QS-OPT.
+  - [x] **B7 · Voll-Auflistung + Eidg.-Facette** — **✅ 29.7.2026 GEBAUT** (PR #406 `5a10f8150`, 4
+    GP-Runden: R1–R3 widerlegt+gefixt, R4 bestanden; 75'365 Kanten voll ausgeliefert, Mengen-
+    Invarianz korpusweit 8'368/8'368 bewiesen; 5er-Portionierung mit ehrlichen Filter-Zählern;
+    «Eidg.» = kein Bug, Klasse dünn — Schalter zeigen jetzt distinkte Entscheid-Zahlen)
+    *(§14-Intake David 28.7.2026 abends, klein → inline:
+    «or 41 dort sind nur ein teil der entscheide verlinkt … mach es so dass man durchscrollen kann
+    und dann je eine linie für jede instanz und alle sichtbar. chronologisch vom neusten zum
+    ältesten» + «Eidg. das scheint keine funktion zu haben?»)* — (a) Auslieferungs-Deckel 8 je
+    Status aufheben: ALLE Kanten je Artikel in den Shards (Generator-Änderung ⇒ Risikopfad-Fläche,
+    Determinismus + Grössen-Budgets mit Begründung nachziehen, §15 on-demand bleibt); (b) UI: je
+    Instanz EINE scrollbare Linie, alle Entscheide sichtbar, chronologisch neu→alt; (c) Diagnose
+    «Eidg.»-Facette (funktionslos? leer-Zustand ehrlich zeigen oder Bug fixen).
+  *(§14-Intake 24.7.2026;
+  **Fokus-Dekret-Priorität**, Wortlaut David: Verzahnung Gesetz↔Entscheide «sehr gutes Feature, das
+  ich mit Priorität einbauen will»; **Dekret David 27.7.2026: Vorstufe ist `W2·6-NKEY`** — erst das
+  Entscheid-Screening generalisieren, damit ALLE Norm-Zitate erkannt und zugeordnet sind (heute 43 %),
+  dann erst die Bezüge-Schicht darauf bauen; darum `dep: [W2·6-NKEY]` + Queue-Platz davor)* — das Verzahnungs-Fundament wird von «BGE-Leitfälle an
+  Bundesnormen» auf **alle Instanzen und Entscheidkategorien** erweitert: **(a)** kantonale
+  Entscheide am Artikel (Start BS-Korpus 3765 aus W2·6-BS; kantonaler Norm-Resolver/P0 zuerst) ·
+  **(b)** BGer-**Nicht-Leitentscheide** aus dem kuratierten Korpus — Leitentscheid vs. übriges
+  Urteil bleibt als Status **unterschieden** (§8, nie stillschweigend gleichgestellt) · **(c)** jede
+  Kante trägt **filterbare Facetten** (Quelltyp · Ebene · Kanton · Gericht · Leitentscheid-Status) —
+  EINE generische «Bezüge am Artikel»-Schicht, an der auch Materialien-Kanten andocken (W2·6a-MAT,
+  künftig `W2·6b-MAT-FINMA`), kein Zweitmodell (§5) · **(d)** Filter-UI im Gesetz-Leser
+  (Instanz/Ebene/Kanton an-/abwählbar, Default konservativ: Leitentscheide an; Persistenz im
+  Ansicht-Menü) · **(e = B5, §14-Intake David 28.7.2026)** eigenes Rechtsprechungs-Dropdown in der
+  **Leser-Werkzeugleiste** (analog «Ansicht ▾») als reine **Ansichtsauswahl** der Verzahnung:
+  Facetten + interaktiver **Zeitstrahl** + Von-Bis-Datumseingabe statt Perioden-Buckets;
+  Entscheide bleiben unter den Artikeln (Detail Fahrplan §9 B5) · **(f = B6, §14-Intake David
+  28.7.2026)** Gesamtüberarbeitung der Leser-Werkzeugleiste — minimalistischer und praktischer,
+  ohne Funktionsabbau (Detail Fahrplan §9 B6; seriell nach B5, gleiche Fläche).
+  **Abgrenzung (§14.3):** Long-Tail 195k Massen-Entscheide bleibt `W2·6-DATA` E3/E4;
+  UI-Grammatik bleibt `W2·7-VZUI`. Facetten = Datenschicht, Filter = Darstellung (§3). Kantonale
+  Zitat-/Norm-Resolver-Extraktion = Risiko-Pfad ⇒ `check:gegenpruefung`; Generator deterministisch,
+  2 Läufe byte-gleich. Detail: `FAHRPLAN-VERZAHNUNG-UI.md` §9. Trailer `Roadmap: W2·7-BEZUG`.
+
+## LERNPHASE-AB — Werkzeug-Andockung Audit 1: die drei erfüllten Andockungen *(offener Schritt; Erledigt-Prosa wörtlich verschoben 31.7.2026)*
+
+  **Stand 5.7.2026 (PR `feat/lernphase-verifikations-infra`): alle drei
+  Werkzeug-Andockungen erfüllt** — (1) Property-Tests um 3 Klassen erweitert (`tarifStaffel.property.test.ts`, jetzt 9
+  Tests: Stetigkeit/Sprung an der `abChf`-Kante inkl. Hinweis-Sprache · Rahmen nie invertiert · Rundungs-Invarianz; alle
+  grün, keine Engine-Änderung) · (2) Gate-Parallelisierung nachgemessen (seriell 16,2 s → parallel 6,5 s, 10-Kern; durch
+  langsamsten Einzel-Check gedeckelt; Rot-Propagation adversarial bewiesen) · (3) B6 Myers-`diff` in `golden:diff` (Gate
+  bleibt Byte-Vergleich).
+
+## QS-GP — Bausteine a·b·c (gebaut/gemergt 1.7.2026, PR #67) samt Glob-Hinweis *(offener Schritt; Erledigt-Prosa wörtlich verschoben 31.7.2026)*
+
+  **Hinweis:** die
+  Risiko-Glob-Formen unten sind der *ursprüngliche Plan* — beim Bau korrigiert (verschachtelte
+  `public/normtext/**` statt Top-Level-`*.json`, hand-gerolltes Pfad-Prädikat statt kaputter
+  `*(a|b)*`-Alternation, `git status -uall`); die **as-built**-Wahrheit steht in
+  `scripts/gegenpruefung/kern.ts` + der Spec. Bausteine:
+  - **a · Gegenprüfungs-Gate `check:gegenpruefung`** — eingehängt in `npm run gate` (**nur lokal**,
+    CI unverändert). Schneidet `git diff` ∩ Risiko-Pfade: **Extraktion** `scripts/normtext/**`,
+    `src/lib/normtext/**`, `public/normtext/*.json` · **Rechnen** `src/lib/*(tarif|kosten|gebuehr|`
+    `zustaendigkeit|frist|verjaehr|streitwert|beurkund|gruendung|schkg|straf|bger)*.ts` plus die
+    Engine-Verzeichnisse `src/lib/tarif/**`, `src/lib/fristenspiegel/**` · **Norm/Tarif**
+    `src/data/tarif/**`, `src/lib/vorlagen/**`. Trifft der Diff diese Globs, verlangt das Tor einen
+    **Nachweis** (Commit-Trailer `Gegenpruefung:`; vor dem Commit liegt das Token in
+    `bibliothek/.gegenpruefung-pending`, **gitignored** — Eintrag in `.gitignore` ergänzen), sonst
+    **rot**. Über-Triggerung auf reine Tor-/Test-Änderungen wird mit Trailer
+    `Gegenpruefung: n/a — reine Prüflogik` quittiert. **ERSTE AKTION beim Bau:** die Glob-Form gegen
+    den real existierenden Baum prüfen (Verzeichnisse vs. `*.ts` — `src/lib/tarif`/`fristenspiegel`
+    sind Ordner), sonst läuft das Tor leer. Das Tor selbst ist reine Prüflogik → golden byte-gleich (§6).
+  - **b · Adversariales Protokoll als feste Skill** — unabhängiger Opus-Agent, frischer Kontext, vor
+    sich Output **und** amtliche Quelle, Auftrag: widerlegen; **beim Rechnen** unabhängig aus der
+    Norm nachrechnen (nicht den Code lesen). Gibt dem Trailer `Gegenpruefung:` überall dieselbe,
+    nachvollziehbare Bedeutung.
+  - **c · Gegenprüfungs-Register mit «Stand»** (`bibliothek/`, §11) — hält je Snapshot/Engine fest,
+    welcher protokollierte Durchgang vorliegt (Datum, Verdikt, **gepinnte Quell-Version**) →
+    Rück-Prüfung als Burn-down. Gekoppelt an `check:fedlex-versionen`: überholter Pin ⇒ Eintrag wird
+    «**neu fällig**».
+
+## QS-DATA — Stand 3.7.2026 (E0…E2, §11.2-Chips) + Sync-Reparatur 20.7.2026 *(offener/blockierter Schritt; Erledigt-Prosa wörtlich verschoben 31.7.2026)*
+
+  **(a) Detail zu «Stand 3.7.2026: E0/E0+/E1/E1-Rest-A + E2-Vorarbeiten durch»:**
+  (E1 = Generator-Flip Bund + Tor `check:datenhaltung`; **E2-Vorarbeiten = hot-FTS build-time [`fts_artikel` external content + `fts_entscheide_schaufenster` standalone, Tokenizer `unicode61 remove_diacritics 2`, HOT-Replika 178 MiB/1 GB] + Such-Query-Modul `scripts/datenhaltung/suche.ts` mit Pagination-by-design + Edge-Funktion `api/suche.ts` [503 ohne Turso]**; **E2-Anbindung ✅ 3.7.2026 = Gruppe «Volltext-Suche (online)» im geteilten `useUniversalSuche`/`SuchResultate` [`src/lib/suche/onlineVolltext.ts`, debounced Fetch, AbortController ~4 s, §8-Offenlegung, ehrliches Degradieren bei 503/Netz/Timeout/200-leer, 5-min-Feature-Cache]**)
+
+  **(b) Detail zu «§11.2 Leitfälle-Chips (3.7.2026): das tote `proNormArtikel`-Modell ist verdrahtet»:**
+  — Schaufenster-Shards je Erlass (`public/rechtsprechung/norm-index/<ERLASS>.json`, 19) + `leitfaelleFuerArtikel`-Lazy-Lader + Chip-Zeile im `ArtikelLeser` (Chip → Entscheid + «⧉ daneben öffnen»)
+
+  **Reparatur 20.7.2026 — Sync-Transport + Frische-Wächter (E2 betriebsfest).** Der Workflow
+  `turso-sync.yml` lief seit dem 18.7. sechsmal in den 20-min-Job-Timeout und wurde jedes Mal
+  `cancelled` (grau, nicht rot) — BS-Import #300, G-REF #299, ASYLV2 #304, Richter #309/#310
+  erreichten die Suche nie. Ursache war NICHT der Timeout: der Sync schickte je Zeile ein eigenes
+  Hrana-`execute`, also einen durablen Commit pro Zeile (**gemessen 33 Zeilen/s** → ~46 min für
+  61k Zeilen). Behoben durch **Mehrzeilen-INSERT in BEGIN/COMMIT** (gemessen **1429 Zeilen/s**,
+  43×) + **Schatten-Tabellen mit atomarem Tausch** (ein Abbruch lässt den alten Stand stehen,
+  statt wie bisher eine halb gedroppte Prod-Replika zu hinterlassen — genau das lag tagelang live:
+  `artikel` 16'400 von 55'822, `fts_entscheide_schaufenster` gar nicht vorhanden). Die Atomarität
+  trägt erst über den Hrana-**`baton`** (BEGIN und COMMIT in getrennten Requests): ein einzelner
+  Request mit `BEGIN/…/COMMIT` ist NICHT atomar — die Pipeline bricht bei einem fehlgeschlagenen
+  Statement nicht ab und das COMMIT schreibt den Teilzustand fest (von der Gegenprüfung empirisch
+  widerlegt, im Wegwerf-Test verschwand eine Live-Tabelle dauerhaft). Neu:
+  **`check:turso-frische`** — vierfach: Struktur · **Vollständigkeit** (Ist-Zeilenzahl gegen die
+  vom letzten Sync protokollierten Soll-Zahlen; eine reine «nicht leer»-Prüfung hätte den
+  historischen Schaden von 16'400 statt 55'822 Zeilen passieren lassen) · `manifest_sha` gegen
+  `daten-manifest.json` · Alter — als harter Schritt im Sync **und** als täglicher cron-Job mit
+  eigenem Token-Riegel; bewusst NICHT in `check:netz` (dort ohne Token = Schein-Abdeckung).
+  Ein abgebrochener Sync schweigt nicht mehr (§8).
+
+## QS-BASIS — Tor-Parität: Stand 20.7.2026 (16/36 in CI) *(offener Schritt; Erledigt-Prosa wörtlich verschoben 31.7.2026)*
+
+  **Stand 20.7.2026 (PR `docs/bau-fundament`): 16/36 in CI** — `check:merge-schutz` · `check:tor-paritaet` · `check:dispatch-klausel` · `check:besetzung` · `check:entscheide` · `check:bs-entscheide` neu verdrahtet; die drei Rechtsprechungs-Tore standen mit der sachlich FALSCHEN Begründung «braucht rechtsprechung.db (488 MB)» auf der Allowlist, sie lesen in Wahrheit die committeten Projektionen (je ~1 s grün unter `CI=1`).

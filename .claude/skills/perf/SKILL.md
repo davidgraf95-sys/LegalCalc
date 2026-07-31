@@ -65,4 +65,4 @@ grün beweist also kein Perf-Budget.**
 Gegengekoppelt an `golden:vergleich` sowie `check:normtext` und
 `check:struktur-konsistenz`: **Tempo zählt nur, wenn die Treue grün bleibt.**
 
-Detail-Begründungen je Regel: `FAHRPLAN-PERFORMANCE.md` (Querschnitt `QS-PERF`).
+Detail-Begründungen je Regel: `fahrplaene/FAHRPLAN-PERFORMANCE.md` (Querschnitt `QS-PERF`).

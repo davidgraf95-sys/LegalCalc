@@ -7,7 +7,7 @@ soll mindestens die Qualitätserfordernisse von Fedlex haben». Geltungsbereich
 Gesetzes-/Normtext** im Gesetzleser (`src/pages/gesetz-leser/*`,
 `src/components/normtext/*`, `src/lib/normtext/*`) und die Extraktion, die ihn
 speist (`scripts/normtext*`). Detail-/Bau-Spec der UX-Reform:
-`FAHRPLAN-GESETZES-UX.md`.
+`fahrplaene/FAHRPLAN-GESETZES-UX.md`.
 
 Dieses Reglement hängt unter `DESIGN-REGLEMENT.md` (Dach) und konkretisiert es
 für den Normtext — parallel zu `-RECHNER`, `-RECHTSPRECHUNG`, `-VORLAGEN`. Bei
@@ -20,7 +20,7 @@ Evidenz: das Fedlex-Datenmodell selbst (gecachte amtliche Konsolidierungs-HTMLs
 unter `/tmp/*.html`, Struktur `div#preface` / `div#preamble` / `article` /
 `div.dispositions` / `div.annex` / `div.footnotes`) sowie das
 Vollständigkeits-Audit `AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md` (33 Lücken
-bestätigt). Umbau-Plan: `FAHRPLAN-NORMTEXT-DARSTELLUNG.md`.
+bestätigt). Umbau-Plan: `fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md`.
 
 ---
 
@@ -119,7 +119,7 @@ solches markiert — nie als Vollständigkeit ausgegeben.
 
 ### §4a · Suche, Gliederung & Tabellen (QA-Sweep David 29.6.2026)
 
-Detailplan: `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` (M4/M5/M7/M8/M10).
+Detailplan: `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` (M4/M5/M7/M8/M10).
 
 - **Suche ↔ Gliederung responsiv (M4/M5/M7).** Über alle Breakpoints: die Gliederung
   darf das **Suchfeld und die gefundenen Artikel nicht verdecken** (schmaler Viewport →
@@ -251,7 +251,7 @@ zum aufgedrängten Guide. Jede verbleibende Auto-Heuristik (Dichte/Tiefe/Kategor
 bliebe eine Wette gegen dieses Urteil. Der konservative Zustand ist: nicht aufdrängen.
 Weitere Justage nur auf neues, positives David-Signal. Alternativen für echte
 Struktur-Übersicht (Typo-Hierarchie · Sticky-Mini-Kontext · TOC-Scroll-Spy ·
-Abschnitts-Rhythmus) sind in `FAHRPLAN-GESETZES-UX.md §10.9` skizziert (nur Doku).
+Abschnitts-Rhythmus) sind in `fahrplaene/FAHRPLAN-GESETZES-UX.md §10.9` skizziert (nur Doku).
 
 **Referenz-Verdikte** (im Tor gegated): ZGB (Tiefe 5) → **Auto-Guide AUS** · OR
 (Tiefe 4) → **AUS** · ArG (Tiefe 2) → **AUS** · VMWG (Tiefe 0) → **kein Guide** ·
@@ -582,4 +582,4 @@ Tabelle → ehrlicher Text-Fallback), «N.—»-Spacing,
 > die 6 Datenzellen sind colspan-los → Kopf 2 ≠ Zeile 6 = zerrissen. Neue Regel:
 > `colspan` wird in **beiden** Markup-Varianten expandiert und die Staffel-Spanne zu
 > einer logischen Zelle verdichtet (Tabellen-Regelwerk T-A2/T-A3/T-A6 in
-> `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md`). Nur `rowspan`/Verschachtelung bleibt Fallback.
+> `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md`). Nur `rowspan`/Verschachtelung bleibt Fallback.

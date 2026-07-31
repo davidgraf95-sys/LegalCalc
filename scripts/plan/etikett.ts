@@ -10,6 +10,10 @@ export interface Etikett {
   blocker: string | null;
   dep: string[];
   kollision: string[];
+  /** Harte Reihenfolge auf geteilten Dateien (§12) — «X muss VOR mir landen». */
+  seqHart: string[];
+  /** Weiche Reihenfolge-Empfehlung auf geteilten Dateien. */
+  seqWeich: string[];
   worktree: boolean;
   asset26x: boolean;
   fahrplan: string | null;
@@ -54,6 +58,13 @@ export function parseEtikett(line: string): Etikett {
     blocker: nullbar(feld.blocker),
     dep: liste(feld.dep),
     kollision: liste(feld.kollision),
+    // Fund R2-16 (31.7.2026): `seq-hart`/`seq-weich` standen seit jeher in der
+    // ROADMAP, waren dem Etikett-Typ aber unbekannt — serializeEtikett verwarf sie
+    // beim Neu-Serialisieren, `plan:set` löschte sie also still mit. `seq-hart`
+    // steuert die Kollisionsreihenfolge auf geteilten Dateien; sein Verlust kann
+    // zwei Sessions auf dieselbe Datei laufen lassen (§12).
+    seqHart: 'seq-hart' in feld ? liste(feld['seq-hart']) : [],
+    seqWeich: 'seq-weich' in feld ? liste(feld['seq-weich']) : [],
     worktree: ja(feld.worktree),
     asset26x: ja(feld['26x']),
     fahrplan: 'fahrplan' in feld ? nullbar(feld.fahrplan) : null,
@@ -70,9 +81,15 @@ export function serializeEtikett(e: Etikett, indent: string): string {
     `blocker: ${e.blocker ?? 'null'}`,
     `dep: [${e.dep.join(', ')}]`,
     `kollision: [${e.kollision.join(', ')}]`,
+  ];
+  // Position wie im Bestand: nach `kollision`, vor `worktree` — sonst ist der
+  // Round-Trip nicht byte-gleich und jeder plan:set-Aufruf erzeugt Diff-Rauschen.
+  if (e.seqHart.length) teile.push(`seq-hart: [${e.seqHart.join(', ')}]`);
+  if (e.seqWeich.length) teile.push(`seq-weich: [${e.seqWeich.join(', ')}]`);
+  teile.push(
     `worktree: ${e.worktree ? 'ja' : 'nein'}`,
     `26x: ${e.asset26x ? 'ja' : 'nein'}`,
-  ];
+  );
   if (e.fahrplan) teile.push(`fahrplan: ${e.fahrplan}`);
   if (e.slot) teile.push(`slot: ${e.slot}`);
   return `${indent}<!-- @meta ${teile.join(' · ')} -->`;

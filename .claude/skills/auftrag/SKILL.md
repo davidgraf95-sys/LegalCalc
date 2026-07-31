@@ -13,11 +13,15 @@ nie als loses Dokument danebengelegt.
 Die «Geordnete Abarbeitung» (Wellen und Schritte), bei begleitenden Aufgaben das
 Querschnitt-Band. Eine neue `FAHRPLAN-*.md` entsteht **nur** als Detailquelle,
 verlinkt aus einem Roadmap-Schritt — nie als zweiter Einstieg. Klein → inline im
-Schritt, gross → in die verlinkte Detaildatei. Der Wächter `QS-PH` meldet jede
-neu hinzugefügte, unverlinkte `FAHRPLAN-*.md` rot.
+Schritt, gross → in die verlinkte Detaildatei. **Ablageort ist seit 31.7.2026
+`fahrplaene/`** (nicht mehr der Root); erledigte Fahrpläne wandern nach
+`archiv/`. Der Wächter `QS-PH` (`check:plan` Regel 7) meldet jede neu
+hinzugefügte, unverlinkte Datei in `fahrplaene/` rot. Slicer-Aufruf:
+`npm run fahrplan -- fahrplaene/FAHRPLAN-<X>.md <§>`.
 
-**Deckel:** Root-Markdown bleibt bei rund 20 Dateien. Neue Erkenntnisse gehen in
-`bibliothek/` (CLAUDE.md §11), nicht in einen neuen Root-Fahrplan.
+**Deckel:** Root-Markdown bleibt bei rund 20 Dateien (Stand 31.7.2026: 22).
+Neue Erkenntnisse gehen in `bibliothek/` (CLAUDE.md §11), nicht in einen neuen
+Fahrplan.
 
 ## 2. Vor dem Start: Plan-Stand abfragen
 
@@ -25,7 +29,10 @@ Nicht nur den eigenen Auftrag lesen, sondern den aktuellen Plan:
 
 ```
 npm run plan:next                # oberster offener Schritt, dep/Blocker, was wip ist
-npm run fahrplan -- <Schritt>    # Detail-Slice statt Volltext
+npm run fahrplan -- fahrplaene/FAHRPLAN-<X>.md <§>   # Detail-Slice statt Volltext
+                                 # (Datei steht im fahrplan:-Feld des Schritts)
+npm run plan:set -- <id> status=wip    # vor Baubeginn; status=done zum Abhaken
+                                 # danach immer: npm run check:plan
 ```
 
 **Vor Baubeginn `wip` setzen.** Wer einen Schritt zu bauen beginnt, setzt sein
@@ -64,7 +71,12 @@ dieselbe Bau-Fläche.
    `docs/superpowers/specs/2026-07-01-gegenpruefung-gate-design.md`.
 3. Verhaltensändernd ⇒ golden byte-gleich.
 4. Status-Marker gesetzt (CLAUDE.md §8).
-5. **Session-Karte in `STRUKTUR.md` nachgezogen** — siehe Ziff. 4a.
+5. **Plan zurückgeschrieben:** `npm run plan:set -- <id> status=done`, danach
+   `npm run check:plan` (bei Einheiten mit Checkbox wird sie mitgezogen und das
+   Tor prüft die Kopplung; checkbox-lose Einheiten — Querschnitt-Band, S0,
+   QS-TOK — haben keine Kopplungs-Prüfung, dort ist `status` die alleinige
+   Wahrheit).
+6. **Session-Karte in `STRUKTUR.md` nachgezogen** — siehe Ziff. 4a.
 
 ### 4a. STRUKTUR-Pflicht
 

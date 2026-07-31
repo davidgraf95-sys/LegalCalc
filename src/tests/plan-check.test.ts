@@ -1,4 +1,4 @@
-import { pruefe } from '../../scripts/plan/check';
+import { pruefe, fahrplanScan } from '../../scripts/plan/check';
 
 const OK = `## Die geordnete Abarbeitung
 <!-- @blockers
@@ -150,7 +150,13 @@ describe('pruefe — Regel 8 @queue-Integrität', () => {
     `## Die geordnete Abarbeitung\n<!-- @queue: ${queue} -->\n${extra}` + OK.replace('## Die geordnete Abarbeitung\n', '');
 
   it('konsistente Queue → kein Problem', () => {
-    expect(pruefe(mitQueue('W1·4'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4'])).toEqual([]);
+    // W1·4 ist im OK-Fixture `blocked` und damit seit der 8.3-Erweiterung (Fund 15
+    // der QS-TOK-Endprüfung, 31.7.2026) selbst ein Stale-Fall. Die Gegenprobe
+    // «konsistente Queue» braucht darum einen BAUBAREN Schritt; die Aussage des
+    // Tests bleibt unverändert — nur das Fixture hatte den Zustand mitkodiert,
+    // den die neue Regel gerade als Fehler ausweist.
+    const baubar = mitQueue('W1·4').replace('status: blocked · of: ja · blocker: wbqdyap3x', 'status: ready · of: ja · blocker: null');
+    expect(pruefe(baubar, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4'])).toEqual([]);
   });
   it('8.1: Queue-ID ohne @meta → Problem', () => {
     const p = pruefe(mitQueue('GEIST'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
@@ -196,16 +202,229 @@ describe('pruefe — Regel 8 @queue-Integrität', () => {
   });
 });
 
+// AP-8 (QS-TOK, 31.7.2026): Die aktiven Fahrpläne sind aus dem Repo-Wurzel nach
+// `fahrplaene/` gezogen. Der Link-Check (Regel 7) scannt seither jenen Ordner statt
+// `.`. Zwei Dinge müssen dabei bewiesen sein — sonst ist das Tor nach dem Umzug
+// still grün und prüft nichts mehr (§6.7: «ein Tor, das nicht scheitern kann, ist
+// gefährlicher als keines»):
+//   1. der Scan findet die Dateien im NEUEN Ordner (und stürzt nicht ab, wenn er fehlt);
+//   2. eine gefundene, aber unverlinkte Datei erzeugt weiterhin ein Problem.
+// Regel 7 vergleicht bewusst gegen den BASENAMEN (`md.includes(f)`): ROADMAP-Verweise
+// tragen den Dateinamen — als Link `](fahrplaene/FAHRPLAN-X.md)`, als `fahrplan:`-Feld
+// oder in Prosa. Der Basename trifft alle drei Formen, ein Pfad-Vergleich nur die
+// ersten beiden.
+describe('fahrplanScan — Ordner-Scan des Link-Tors (AP-8)', () => {
+  it('liest die FAHRPLAN-*.md des angegebenen Ordners (nicht der Wurzel)', () => {
+    const leser = (d: string) =>
+      d === 'fahrplaene' ? ['FAHRPLAN-A.md', 'FAHRPLAN-B.md', 'README.md', 'notiz.txt'] : ['FAHRPLAN-WURZEL.md'];
+    expect(fahrplanScan('fahrplaene', leser, () => true)).toEqual(['FAHRPLAN-A.md', 'FAHRPLAN-B.md']);
+  });
+
+  it('fehlender Ordner → leere Liste statt Absturz', () => {
+    const leser = () => { throw new Error('ENOENT'); };
+    expect(fahrplanScan('fahrplaene', leser, () => false)).toEqual([]);
+  });
+
+  it('NEGATIV-TEST: unverlinkte Datei aus dem fahrplaene-Scan → Tor meldet Problem', () => {
+    const gescannt = fahrplanScan('fahrplaene', () => ['FAHRPLAN-PLAN-STEUERUNG.md', 'FAHRPLAN-ZZZZ-PROBE.md'], () => true);
+    const p = pruefe(OK, gescannt, existiert, inv);
+    expect(p.map((x) => x.meldung)).toContain('FAHRPLAN-ZZZZ-PROBE.md ist nicht aus ROADMAP.md verlinkt');
+  });
+
+  it('verlinkte Datei aus dem fahrplaene-Scan → kein Problem (Gegenprobe)', () => {
+    const gescannt = fahrplanScan('fahrplaene', () => ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true);
+    expect(pruefe(OK, gescannt, existiert, inv)).toEqual([]);
+  });
+});
+
 // Verify-Befund 24.7.2026: Querschnitt-Filter darf of/dep-Signale nicht schlucken.
 describe('resolve-Kopplung — Querschnitt mit offener Voraussetzung', () => {
   it('Querschnitt-ready mit offener dep landet in wartetDep, nicht still in begleitend', async () => {
     const { resolve } = await import('../../scripts/plan/next');
     const qs = {
       id: 'QS-X', checkbox: null, sektion: 'Querschnitt-Band (läuft begleitend', pos: 0,
-      etikett: { id: 'QS-X', status: 'ready' as const, statusAgent: null, of: true, blocker: null, dep: ['FEHLT'], kollision: [], worktree: false, asset26x: false, fahrplan: null },
+      etikett: { id: 'QS-X', status: 'ready' as const, statusAgent: null, of: true, blocker: null, dep: ['FEHLT'], kollision: [], seqHart: [], seqWeich: [], worktree: false, asset26x: false, fahrplan: null },
     };
     const b = resolve([qs]);
     expect(b.wartetDep).toEqual([{ id: 'QS-X', offen: ['FEHLT'] }]);
     expect(b.begleitend).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Fix-Runde 1 nach der Endprüfung der QS-TOK-Aufräumwelle.
+// ---------------------------------------------------------------------------
+
+// Regel 9 (Funde 11/21): Bis AP-8 trug kein `fahrplan:`-Feld ein Verzeichnis-Präfix;
+// seither tragen es alle. Damit ist eine neue Fehlerklasse entstanden (falsches oder
+// fehlendes Präfix), die das Tor NICHT sehen konnte: Regel 7 prüft nur die
+// Gegenrichtung (jede Datei in fahrplaene/ muss als Basename irgendwo im
+// ROADMAP-Volltext vorkommen), die einzige Existenzprüfung galt `kollision`.
+// Mutations-Beweis gegen die echte ROADMAP vor dem Fix: `fahrplan:` auf einen
+// erfundenen Pfad gesetzt → pruefe() lieferte []. §6.7: erst rot zeigen.
+describe('Regel 9 — fahrplan:-Pfad muss existieren', () => {
+  const MIT_FAHRPLAN = OK.replace(
+    'id: W1·1 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein',
+    'id: W1·1 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md',
+  );
+
+  it('NEGATIV: fahrplan: zeigt auf eine nicht existierende Datei → Problem', () => {
+    const nur = (p: string) => p === 'fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md';
+    const bad = MIT_FAHRPLAN.replace('fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md', 'fahrplaene/FAHRPLAN-GIBTSNICHT.md');
+    const p = pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], nur, inv);
+    expect(p.map((x) => x.meldung)).toContain('fahrplan "fahrplaene/FAHRPLAN-GIBTSNICHT.md" existiert nicht');
+  });
+
+  it('GEGENPROBE: existierender fahrplan:-Pfad → kein Problem', () => {
+    const nur = (p: string) => p === 'fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md';
+    expect(pruefe(MIT_FAHRPLAN, ['FAHRPLAN-PLAN-STEUERUNG.md'], nur, inv)).toEqual([]);
+  });
+
+  it('ohne fahrplan:-Feld wird nichts geprüft (kein Fehlalarm)', () => {
+    expect(pruefe(OK, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => false, inv).filter((p) => /^fahrplan /.test(p.meldung))).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Regel 10 (Fund R2-1/R2-10 der Endprüfung Runde 2, 31.7.2026) — KRITISCH.
+//
+// Regel 2 prüft die Checkbox-Kopplung nur `if (e.checkbox && …)`. Wo parse.ts die
+// Checkbox nicht binden kann, ist das Tor deshalb blind: `plan:set <id> status=done`
+// schreibt das @meta, die sichtbare Liste bleibt auf «offen», check:plan bleibt
+// grün. Das ist ein Tor, das an dieser Stelle nicht scheitern KANN (§6.7).
+//
+// Regel 10 schliesst den Nullfall von vorn: Steht unter einer Checkbox-Bullet ein
+// @meta, bevor die nächste Checkbox-Bullet, eine gleich- oder höherrangige Bullet
+// oder eine Überschrift kommt, MUSS dieses @meta genau an diese Checkbox gebunden
+// sein. Ist es das nicht, driften Steuerung und sichtbarer Plan still auseinander.
+// ---------------------------------------------------------------------------
+describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
+  const plan10 = (units: string) =>
+    `## Die geordnete Abarbeitung\n<!-- @blockers\nb1: grund\n-->\n${units}\n\nSiehe FAHRPLAN-PLAN-STEUERUNG.md.\n`;
+  const lauf = (md: string, inv: string[]) => pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, inv);
+
+  it('NEGATIV: Checkbox-Bullet, dazwischen eine checkbox-lose Unter-Bullet, dann @meta → Problem', () => {
+    const md = plan10([
+      '- [ ] **B20 · Prüf-Batch**',
+      '  - Unter-Bullet ohne Checkbox kappt die Bindung.',
+      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A']).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
+  });
+
+  it('NEGATIV: Checkbox-Bullet, dazwischen ein fremder Kommentar, dann @meta → Problem', () => {
+    const md = plan10([
+      '- [ ] **B20 · Prüf-Batch**',
+      '  <!-- Notiz, die die Rückwärts-Bindung kappt -->',
+      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A']).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
+  });
+
+  // Ehrliche Grenze der Regel (§8): Eine doppelte Leerzeile trennt Blöcke in
+  // BEIDEN Richtungen — die Rückwärts-Bindung bricht ab, und der Vorwärts-Blick
+  // dieser Regel ebenso. Der Fall ist damit kein Befund, sondern ausserhalb des
+  // Geltungsbereichs; hier festgehalten, damit niemand mehr Deckung annimmt, als
+  // die Regel gibt.
+  it('GRENZE: doppelte Leerzeile trennt den Block — bewusst kein Problem', () => {
+    const md = plan10([
+      '- [ ] **B20 · Prüf-Batch**',
+      '',
+      '',
+      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A'])).toEqual([]);
+  });
+
+  it('GEGENPROBE: B20-Layout (Bullet, Prosa, @meta) → kein Problem', () => {
+    const md = plan10([
+      '- [ ] **B20 · Prüf-Batch**',
+      '  Prosa-Zeile eins.',
+      '  Prosa-Zeile zwei.',
+      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A'])).toEqual([]);
+  });
+
+  // Fund R3-1/R3-9 (Endprüfung Runde 3, 31.7.2026, KRITISCH). Die erste Fassung
+  // dieses Tests stand hier als «GEGENPROBE: … → kein Problem (Unter-Bullet stoppt
+  // die Sicht)», also als GEWOLLTES Verhalten. Das war unehrlich (§8): Regel 10
+  // brach an JEDER Checkbox-Bullet ab, auch an einer tiefer eingezogenen, und die
+  // Rückwärts-Bindung brach am @meta des Unterschritts ab. Eine Dach-Bullet, deren
+  // eigenes @meta NACH dem @meta ihres Unterschritts steht, fiel damit durch beide
+  // Netze — dieselbe stille Drift wie R2-1, nur über eine Unter-Bullet statt über
+  // eine Prosa-Zeile, und im Bestand LIVE an `W2·7-BEZUG`. Belegt vor dem Fix:
+  // `parseRoadmap` lieferte dort `checkbox = null`, `setField(md,'W2·7-BEZUG',
+  // 'status','wip')` schrieb `status: wip` und liess `- [x]` stehen, und
+  // `pruefe()` auf dem mutierten Text meldete NULL Probleme.
+  //
+  // Fixture = das echte ALTE ROADMAP-Layout (Z.549–556 vor der Heilung).
+  it('NEGATIV: Dach-@meta hinter dem @meta seines Unterschritts → Problem (echtes W2·7-BEZUG-Layout)', () => {
+    const md = plan10([
+      '- [x] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** — ✅ **done 28.7.2026**,',
+      '  B1–B6 + B7 komplett (PRs #401–#406).',
+      '  - [x] **B7 · Voll-Auflistung + Eidg.-Facette** — ✅ **done 29.7.2026**',
+      '    <!-- @meta id: B · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  Detail: Chronik.',
+      '  <!-- @meta id: A · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A', 'B']).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
+  });
+
+  // Gegenprobe zum vorigen Fall: das Dach-@meta unmittelbar unter seiner Bullet —
+  // die Normalform, die FAHRPLAN-PLAN-STEUERUNG.md von Autoren verlangt und die
+  // ROADMAP.md für W2·7-BEZUG in derselben Runde hergestellt hat. Der Unterschritt
+  // behält sein eigenes @meta; beide binden, kein Problem.
+  it('GEGENPROBE: Dach-@meta unmittelbar unter der Dach-Bullet → kein Problem', () => {
+    const md = plan10([
+      '- [x] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** — ✅ **done 28.7.2026**,',
+      '  <!-- @meta id: A · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  B1–B6 + B7 komplett (PRs #401–#406).',
+      '  - [x] **B7 · Voll-Auflistung + Eidg.-Facette** — ✅ **done 29.7.2026**',
+      '    <!-- @meta id: B · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  Detail: Chronik.',
+    ].join('\n'));
+    expect(lauf(md, ['A', 'B'])).toEqual([]);
+  });
+
+  // Fund R3-7: `bindeCheckbox` prüfte die Kommentar-Grenze VOR dem Bullet-Test.
+  // Eine Bullet, die `-->` oder `<!--` bloss als Fliesstext im eigenen Titel führt
+  // (ein Pfeil im Schritt-Namen genügt), galt damit als Kommentar-Grenze: die
+  // Bindung brach ab, und Regel 10 wurde falsch-positiv rot — mit einer Meldung,
+  // die auf die falsche Ursache zeigt. Eine Bullet-Zeile ist nie eine
+  // Kommentar-Grenze; der Bullet-Test gehört darum zuerst.
+  it('GEGENPROBE: Bullet mit «-->» im eigenen Titel bindet ihre Checkbox → kein Problem', () => {
+    const md = plan10([
+      '- [ ] **A · Migration (Pfeil: alt --> neu)**',
+      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A'])).toEqual([]);
+  });
+
+  it('GEGENPROBE: checkbox-lose Querschnitt-Bullet unter fremder Checkbox-Liste → kein Problem', () => {
+    const md = plan10([
+      '  - [ ] **fremde Checkbox der Nachbarliste**',
+      '- **Datenhaltung / Single-Source-DB** *(QS-DATA)*.',
+      '  <!-- @meta id: A · status: blocked · of: ja · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A'])).toEqual([]);
+  });
+});
+
+// Regel 8.3 (Fund 15): Der Stale-Guard nannte nur `done` und `parked`. Ein
+// `blocked`-Schritt am Queue-Kopf blieb still grün — auch 8.4 greift nicht, weil ein
+// blockierter Kopf gar nicht erst in readyNow landet und readyNow[0] unverändert
+// bleibt. Dieselbe Fehlerklasse wie der Ur-Befund vom 24.7.2026, nur über `blocked`.
+describe('Regel 8.3 — Stale-Guard deckt auch blocked', () => {
+  const MIT_QUEUE = `## Die geordnete Abarbeitung\n<!-- @queue: W1·4 -->\n` + OK.replace('## Die geordnete Abarbeitung\n', '');
+
+  it('NEGATIV: blockierter Schritt am Queue-Kopf → Problem', () => {
+    const p = pruefe(MIT_QUEUE, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv);
+    expect(p.map((x) => x.meldung)).toContain('@queue-ID "W1·4" ist blocked — veraltete Steuerung, aus @queue entfernen');
+  });
+
+  it('GEGENPROBE: ready-Schritt in der Queue → kein Problem', () => {
+    const gut = MIT_QUEUE.replace('status: blocked · of: ja · blocker: wbqdyap3x', 'status: ready · of: ja · blocker: null');
+    expect(pruefe(gut, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv)).toEqual([]);
   });
 });
