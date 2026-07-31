@@ -460,6 +460,61 @@ Tor-Kalibrierung den Defekt — exakt das ist am 20.7. passiert.
 
 ---
 
+### QS-PERF · §14-Intakes und Perf-Posten im Wortlaut (verschoben 31.7.2026)
+
+*Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026). Die ROADMAP führt*
+*den Posten seither als Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
+
+>   **§14-Intake 20.7.2026 (David):** TBT-Budget `/gesetze/bund/OR` (#28) — VOR jeder Feature-Zuschreibung Nullprobe + Streuung (Dispatch §0 Ziff. 3): das Budget ist der einzige Job mit Rot im Sample, die Rausch-Rotquote allein erklärt den Grossteil. Lighthouse-Median n≥3 statt Einzelwert gehört in `scripts/perf/` (Worktree `lm-ci`).
+>   **§14-Intake 24.7.2026 (David, «ja nimm den pfad-filter als intake auf»): CI-Pfad-Filter für
+>   Doku-/Plan-PRs.** Anlass gemessen: reine Plan-/Doku-PRs (#332/#333, nur `*.md` + `scripts/plan/`)
+>   durchlaufen die vollen Browser-Smoke-Shards + Perf-Budget, obwohl kein `src/`-Pfad berührt ist.
+>   **Bau:** in `ci.yml` beide hinter einen Pfad-Filter legen, bei Nicht-Lauf **protokolliertes SKIP**
+>   (§6 Ziff. 7 lit. b — nie still grün); der Tore-Job läuft IMMER. **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
+> <!-- @meta-Zeile bleibt in ROADMAP.md -->
+>   Lexmetrik soll Computer **nicht merklich langsamer** machen, **ohne Logikverlust** (Treue gewinnt
+>   immer, §15). Reihenfolge a–e: a Tor `check:perf-budget` ✅ · b billige Quick-Wins ✅ · **c M-Daten-Pfad**
+>   (Idle-Defer, Suchindex in Worker/`export()`, `register.json` sharden) · **d Render-/Split-View-Feinschliff**
+>   · e CLS-Race-Härtung ✅. **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
+>   - [~] **TBT-Deckel je Job normieren statt absolut prüfen** *(gebaut, gemessen, VERWORFEN
+>     20.7.2026)*. Zwei 8er-Runner-Reihen widersprechen sich; die unterstellte Proportionalität
+>     besteht nicht. **Assertiert wird darum weiter der Rohwert**; Kalibrierung bleibt als
+>     Diagnose-Ausgabe. **«TBT auf OR wieder scharf» ist damit NICHT erreicht und bleibt offen**
+>     (§8). Mess-Detail → `ROADMAP-CHRONIK.md` → QS-PERF (22.7.2026).
+>   - [x] **Chrome-Isolation je Lighthouse-Lauf + Neukalibrierung** *(erledigt 20.7.2026)* —
+>     frische Instanz je Messung; Schwellen über 16 Runner neu erhoben und verschärft (Start-TBT
+>     400 · Start-LCP 10000 · OR-TTI 13000 · Start-Score 55; OR-TBT 6500 und CLS 0.05 unverändert).
+>     Wortlaut → `ROADMAP-CHRONIK.md` → QS-PERF (22.7.2026).
+>   - [ ] **OR-LCP ist bimodal — Ursache offen** *(neuer Befund 20.7.2026)*. In der 8er-Messreihe misst
+>     `/gesetze/bund/OR` LCP entweder ~3.5 s oder ~11.3–11.6 s, nichts dazwischen und unabhängig von der
+>     Runner-Geschwindigkeit; Deckel 13500 ist sicher, wird aber erst nach verstandener Bimodalität verschärft (§8).
+>   - [x] **Bimodaler ~48-s-Stall in der ersten gedrosselten Such-Interaktion — AUFGEKLÄRT + BEHOBEN**
+>     *(26.7.2026, `bibliothek/betrieb/e2e-flake-forensik-2026-07-26.md` §3, PR #382)*. Wortlaut →
+>     `ROADMAP-CHRONIK.md` → QS-PERF (31.7.2026). **Deckel byte-gleich** (12 000/15 000 ms), Latte löst
+>     jetzt in 0.36–0.54 s statt im Münzwurf auf, Spec 44/44 grün bei `--retries=0`. Die Pfeil-Latte
+>     (`aria-activedescendant`), vorher bei 56–99 % ihres Budgets, ist damit ebenfalls entlastet und
+>     braucht **keine** Kalibrierung.
+>   - [ ] **Der Artikel-Suchindex kostet ~28.5 s Main-Thread-Aufbau — struktureller Perf-Posten**
+>     *(Befund 26.7.2026, Dossier `bibliothek/betrieb/e2e-flake-forensik-2026-07-26.md`)* — Client-Rebuild
+>     des Index, kein Flake. **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
+>   - [ ] **§8-Auskunftslücke im Fehlerpfad der Artikel-Suche** *(neuer Befund 26.7.2026, ebd.)*.
+>     Der Fehlschlag wird still geschluckt statt ausgewiesen. **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
+>   - [ ] **«~4 MB Artikel-Index» ist in ~10 Kommentaren falsch — real 45.7 MiB**
+>     *(Befund 26.7.2026, ebd.)*. `public/such-index/artikel.json` = 47 964 020 Bytes, 54 444 Einträge
+>     (~9.7 MB gzip, so auch in `scripts/check-perf-budget.ts:92` beziffert). Die Zahl «~4 MB» steht
+>     u. a. in `src/components/suche/useUniversalSuche.ts:128,131`, `e2e/norm-sprung.e2e.ts` und
+>     `e2e/gesetze-ia-v2-walks.e2e.ts:18,45`. Sie hat die Flake-Suche in die falsche Grössenordnung
+>     gelenkt (§5: eine Zahl, zehnfach kopiert und nirgends nachgeführt). Reine Kommentar-Korrektur.
+>   - [ ] **Dauer-rAF-Sampler in `e2e/helpers/cls.ts` ohne Abschalt-Bedingung** *(Nebenbefund 26.7.2026,
+>     Dossier ebd.)*. `clsBeobachtenInstallieren` startet eine unbegrenzte `requestAnimationFrame`-Schleife,
+>     die pro Frame `getBoundingClientRect()` auf 13 Elementen aufruft (erzwungenes Layout je Frame) und
+>     bis Test-Ende läuft. Als Wachser-Diagnose gebaut (19.7.), belastet sie jede gedrosselte Messung nach
+>     ihrer Installation. **Nicht** Ursache des Stalls oben (gegengemessen), aber ein eigener
+>     Prüf-Genauigkeits-Posten: eine Abschalt-Bedingung nach dem Auslesen wäre verlustfrei.
+>   - [ ] **e2e-Shard-Balance gegen GEMESSENE CI-Dauern packen** *(vorbereitet 20.7.2026; CI-Messwerte
+>     da 21.7.2026 — geparkt, gekoppelt an Davids Merge-Queue-Entscheid)*. Mit den weiteren offenen
+>     Perf-Posten (Mess-Forensik, Budget-Politur, Serif-Preload): **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
+
 ## §2 · ROADMAP-Spec W2·15-CLS (wörtlich verschoben 31.7.2026)
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*

@@ -213,3 +213,32 @@ jede Phase `npm run gate` grün + Default Golden byte-gleich; visuell breit/2-/3
     nur `aria-modal="true"`); Fix = Guard auf offenen fokus-gefangenen Drawer weiten. **#7**
     `Shell.tsx` F6-Handler ordnet Fokus auf PaneKopf-Knopf/Gutter dem falschen Pane zu; Fix =
     `data-pane-root`-Marker + `closest()`. (#1/#2 MITTEL + #3/#5 NIEDRIG am 29.6. gefixt + deployt.)
+
+### Teilschritt-Spezifikation W3·14 (verschoben 31.7.2026)
+
+*Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026, Nachhalte-Konvention*
+*Ausführungs-Protokoll Ziff. 6). Die ROADMAP führt je Teilschritt nur noch Checkbox,*
+*`@meta` und einen Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
+
+**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:**
+
+  **Session-Granularität (AP-6, 31.7.2026):** Strang A sowie B-0/B-0b/B-1/B-2/B-2.5/B-4/B-5 sind
+  gebaut; `W3·14-S` (Bündel S) und `W3·14-a11y` tragen bereits eigene `@meta`. Der einzige noch
+  unetikettierte Rest — **B-3** — bekommt unten sein eigenes Etikett; damit ist dieser Schritt
+  vollständig Dach über drei abschliessbare Teilschritte.
+
+**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
+
+  - [ ] **14-B3 · Scroll & Fokus pro Pane — Restposten** — pro-Pane-Scroll und Spy laufen bereits; **offen**: Scroll-POSITIONS-Wiederherstellung (`ScrollWiederherstellung`/`ScrollZuHash` sind in `App.tsx` weiterhin window-basiert und im Multipane-Primär ohne Wirkung) + Tastatur-Pane-Wechsel. Detail: [FAHRPLAN-SPLIT-VIEW.md](fahrplaene/FAHRPLAN-SPLIT-VIEW.md) §STRANG B (B-3). Trailer `Roadmap: W3·14-B3`.
+
+### Bündel S (Auftrags-Eingang 30.6.2026) im Wortlaut (verschoben 31.7.2026)
+
+*Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026); massgebliche Fassung.*
+
+> > **Bündel S · Split-View → Schritt 14** *(SPLIT-VIEW, eigener Worktree):*
+> > - **S1 Breadcrumbs in der Pane:** `InhaltsKopf.tsx` Z.30 nutzt globalen Router-`<Link to>` → zielt
+> >   aufs Hauptfenster statt in die autonome Pane. Fix über `PaneKontext`-Navigator.
+> > - **S2 Tracker «alles schliessen» schliesst auch Panes:** Panes leben in `usePaneLayout`
+> >   (localStorage `lexmetrik-panes`), separater Store von den Tabs → Close-all muss `usePaneLayout`
+> >   mit-resetten. *(S1+S2 bündeln, gleiches Subsystem.)*
+

@@ -2150,6 +2150,39 @@ dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (a
 
 ---
 
+### Teilschritt-Spezifikation W2·5d (verschoben 31.7.2026)
+
+*Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026, Nachhalte-Konvention*
+*Ausführungs-Protokoll Ziff. 6). Die ROADMAP führt je Teilschritt nur noch Checkbox,*
+*`@meta` und einen Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
+
+**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:**
+
+  **Session-Granularität (AP-6, 31.7.2026):** der offene Rest ist in die vier Teilschritte unten
+  zerlegt; dieser Schritt bleibt das Dach. **Bewusst NICHT als Teilschritt:** EID-3 Teil (a)
+  (Sektions-Deep-Links) re-öffnet die A27-/§11.7-Entscheidung «kein SektionKontextKopf-Revival» —
+  David-Vorlage, kein autonomer Bau; ebenso die `ELI_FORM`-Präfix-Regex-Härtung («Kandidat bei
+  nächster Berührung», kein eigener Slot) und die per Task-Chip ausgelagerten Flake-/CLS-Härtungen.
+
+**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
+
+  - [ ] **5d-EID3 · EID-3 Teil (b): Linien-Tiefe aus der eId-Pfadlänge** — Guide-/Einzugstiefe aus dem kumulativen eId-Pfad statt aus der Sidecar-Rekursionstiefe; golden-neutral, Tor `check:linien-kanon`. Detail: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §12.2/§12.3. Trailer `Roadmap: W2·5d-EID3`.
+  - [ ] **5d-ANNEX · eId-Anker für Annex-Sections** — die aus EID-1 bekannte Grenze schliessen: Container-eIds auch auf dem separaten Anhang-Pfad mitschneiden. **Extraktion = Risikopfad** ⇒ `check:gegenpruefung` + golden byte-gleich, EINE gebündelte Regeneration (§12.3 Ziff. 4). Detail: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §12.2. Trailer `Roadmap: W2·5d-ANNEX`.
+  - [ ] **5d-SPY · V3/H6 — Scroll-Spy-Härtung (rootMargin ↔ Bezugslinie)** — der einzige wörtlich so benannte «offene Härtungs-Posten» der E-Reihe; **erst reproduzieren, dann fixen** (H6 ist unreproduziert, kein Eingriff am Spy-Kern ohne Beleg). Detail: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §10.10. Trailer `Roadmap: W2·5d-SPY`.
+  - [ ] **5d-YC · IA-Rest Y-C: `/international` Stufe 2** — echter Redirect mit Hash-Mapping; §11 ist sonst komplett (IA-1…IA-7 + Y-A/Y-B gebaut), Stufe 2 war ausdrücklich dem Stufe-1-Betrieb nachgelagert. Detail: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §11.8/§11.10. Trailer `Roadmap: W2·5d-YC`.
+
+### Dach-Prosa W2·5d im Wortlaut (verschoben 31.7.2026)
+
+*Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026); massgebliche Fassung.*
+
+>   UX/Lesbarkeit des Gesetz-Lesers auf State-of-the-Art heben (Fedlex = Mindestlatte): EINE Linien-Sprache,
+>   Lesespalte `max-w-reading`, Leser-Kopf-Options-Leiste (Fussnoten-«AUS» dämpft, versteckt keine amtliche
+>   Substanz), je Grundart eine Designvorschrift; G3b (Anhang/Tarif-Extraktion) ist Risiko-Pfad mit
+>   `check:gegenpruefung`, §15-Anteile nur-visuell/golden byte-gleich.
+>   **Detail (Spec wörtlich, inkl. Nachzug-Wellen A19–A25/A29–A40, IA-Reihe §11, eId-Reihe §12):**
+>   [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §16. Trailer `Roadmap: W2·5d`.
+
+
 ## §17 · ROADMAP-Spec W2·5h-GESETZ-UI (wörtlich verschoben 31.7.2026)
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*

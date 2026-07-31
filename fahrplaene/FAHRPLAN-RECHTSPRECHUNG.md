@@ -683,6 +683,29 @@ Gegenproben und Zahlen: `bibliothek/rechtsprechung/besetzung-extraktion-2026-07-
 
 ---
 
+### Teilschritt-Spezifikation W2·6 (verschoben 31.7.2026)
+
+*Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026, Nachhalte-Konvention*
+*Ausführungs-Protokoll Ziff. 6). Die ROADMAP führt je Teilschritt nur noch Checkbox,*
+*`@meta` und einen Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
+
+**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:**
+
+    **Session-Granularität (AP-6, 31.7.2026):** §13 ist eine unsortierte Postenliste ohne eigene
+    Reihenfolge — die vier Posten unten tragen je ein eigenes `@meta`, dieser Schritt bleibt das Dach.
+    **Bewusst NICHT als Teilschritt:** der **BGE-Band-Nachzug 146–149** (der Plantext führt PR-B als
+    offen, Korpus und Commit `eb80eeb10` weisen 148/149 als gebaut aus — **Plan-Nachführung offen,
+    §7-Befund**, kein Bau) und **R-RICHTER Block B** (gehört planerisch nach `W2·6-FILTER`, nicht
+    doppelt planen).
+
+**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
+
+    - [ ] **6-MEHRSPRACH · Mehrsprachiger Normvergleich DE/FR/IT** — Auslegungswerkzeug nach Art. 14 PublG: je Erlass drei Sprachfassungen aus der amtlichen Fedlex-Stelle + Synopse-UI im Gesetzleser; heute ist nur `de` befüllt. Detail: [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13. Trailer `Roadmap: W2·6-MEHRSPRACH`.
+    - [ ] **6-RESOLVER · Kantonaler Norm-Resolver → Kantonalnorm-Buckets (P0-Kern)** — `norm-index` füllt heute nur Bundesnorm-Buckets; der Resolver ist die belegte Voraussetzung der kantonalen Stufe. **Mapping = Risikopfad** ⇒ `QS-GP`. Detail: [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13. Trailer `Roadmap: W2·6-RESOLVER`.
+    - [ ] **6-ADRESSEN · Gerichts-/Behörden-Adressregister** — Lese-/Index-Schicht über die bestehenden Bestände, **kein Datenduplikat** (§5); Abnahme-Status + Verfallsregister je Eintrag, Zuständigkeits-Schluss bleibt im Navigator. Quelle `bibliothek/behoerden/`. Detail: [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13. Trailer `Roadmap: W2·6-ADRESSEN`.
+    - [ ] **6-UEBERSICHT · Rechtsprechungs-Übersicht: P0-Rest + Korpus-Breite** — SG-Regeste-Rest und die Übersichts-/Facetten-Breite; die Kantons-Ausweitung setzt den Resolver voraus (darum `dep`) und verlangt vorher eine abnahmepflichtige Anonymisierungs-Stichprobe. Detail: [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13. Trailer `Roadmap: W2·6-UEBERSICHT`.
+
+
 ## §14 · ROADMAP-Spec W3·15-RICHTER (wörtlich verschoben 31.7.2026)
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*

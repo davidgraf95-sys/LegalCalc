@@ -633,3 +633,41 @@ main@38e1300c− → §0.1 gilt vor jedem Schnitt.*
   (normzitat/bge 0.83), **umgangssprachliche Mehrwort-/Kompositum-Fragen = grösste Lücke**
   (Recall@10 0.18) → priorisiert die S-Kette (Dekompositions-/Synonym-Hebel · FR/SR-Alias
   Cst/LDIP im Norm-Sprung). Vorher-Stand für jede künftige Recall-/Ranking-Änderung.
+
+### Teilschritt-Spezifikation W2·10-UI-NAV (verschoben 31.7.2026)
+
+*Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026, Nachhalte-Konvention*
+*Ausführungs-Protokoll Ziff. 6). Die ROADMAP führt je Teilschritt nur noch Checkbox,*
+*`@meta` und einen Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
+
+**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:**
+
+  **Session-Granularität (AP-6, 31.7.2026):** N0a–N0d, S2–S5, V1 und O1 sind gebaut; der offene Rest
+  (25 Einheiten) ist unten in elf session-grosse Teilschritte gebündelt — geschnitten nach Datei-Fläche
+  entlang der Fahrplan-Blöcke §2/§3/§4/§6/§7 und der Rangfolge §R, dieser Schritt bleibt das Dach.
+  **Jeder Teilschritt erbt `dep: [W2·5d]` vom Dach** — die §0.2-Sequenzierung («Reader-Flächen hart
+  HINTER den A-Restposten») wird hier nicht gelockert. **Bewusst NICHT als Teilschritt:** `G-SUCH`
+  (Bau-GO David ausstehend), die 6 §Y-Entscheid-Posten und die 4 §X-gegateten Vorhaben.
+
+**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
+
+  - [ ] **UI-NAV-S · Suche-Rest (S1 + S6)** — Query-Durchreichung `?q=` in die Browse-Pages + mobiler Such-Fokusmodus (≥16 px gegen iOS-Zoom). Detail: [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §2. Trailer `Roadmap: W2·10-UI-NAV-S`.
+  - [ ] **UI-NAV-V · Verzahnung ohne Reader-Fläche (V2 + V4 + V6)** — Hover-Trigger am bestehenden NormPopover · NormChip-`href` intern (Cmd-Klick landet intern) · Vorlage↔Rechner-Kreuzlinks. Detail: [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §3. Trailer `Roadmap: W2·10-UI-NAV-V`.
+  - [ ] **UI-NAV-VR · Verzahnung auf Reader-Fläche (V3 + V5)** — Regeste-Popover am KantenChip + Erwägungs-Navigation im Entscheid-Leser; `parts.tsx`-Kollisions-Precheck Pflicht (§0.2). Detail: [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §3. Trailer `Roadmap: W2·10-UI-NAV-VR`.
+  - [ ] **UI-NAV-R1 · Reader: Finden im Gesetz (R1 + R2)** — In-Gesetz-Suche mit Treffer-Highlight + mobile Gliederung als Bottom-Sheet mit «Sie sind hier». Detail: [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §4. Trailer `Roadmap: W2·10-UI-NAV-R1`.
+  - [ ] **UI-NAV-R2 · Reader: Zitieren und Zurückspringen (R3 + R5 + R7)** — zitierfähige Referenz mit Permalink · Rücksprung-Chip-Restscope · Deep-Link-Skeleton «Springe zu Art. X …». Detail: [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §4. Trailer `Roadmap: W2·10-UI-NAV-R2`.
+  - [ ] **UI-NAV-R3 · Reader: Weiterlesen und Tastatur (R4 + R8)** — Positions-Persistenz «Weiterlesen bei Art. X» + Tastatur-Navigation j/k mit «?»-Overlay (R8 = niedrigste Priorität der Reihe). Detail: [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §4. Trailer `Roadmap: W2·10-UI-NAV-R3`.
+  - [ ] **UI-NAV-R4 · Trefferflächen und a11y (R6 + E4)** — Tap-Target-Sammelticket mit Token-Regel ins `DESIGN-REGLEMENT.md` + a11y-Prüfauftrag der Linsen. Detail: [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §4/§7. Trailer `Roadmap: W2·10-UI-NAV-R4`.
+  - [ ] **UI-NAV-J · Rechtsprechungs-Seiten (J1 + J2 + J4)** — Browse-Liste mit Batching und Band-Sprungleiste · Mobil-Filter als Bottom-Sheet · «Neues vom Bundesgericht»-Karten. Detail: [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §6. Trailer `Roadmap: W2·10-UI-NAV-J`.
+  - [ ] **UI-NAV-J3 · Sachgebiets-Pipeline verfeinern (J3)** — **bewusst allein**, weil Risiko-Pfad: `QS-GP` Pflicht + golden byte-gleich, eigene Gegenprüfungs-Runde. Detail: [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §6. Trailer `Roadmap: W2·10-UI-NAV-J3`.
+  - [ ] **UI-NAV-O · Übersichten und Sidebar (O2 + O4 + O5)** — Sidebar-Konsistenz · Kantons-Einstieg mit Abdeckung vor dem Klick · Scope-Labels der lokalen Suchfelder; alle drei S. Detail: [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §6. Trailer `Roadmap: W2·10-UI-NAV-O`.
+  - [ ] **UI-NAV-Z · Zusatzposten Ausleitung (Z1 + Z2)** — ICS-/Kalender-Export der Fristergebnisse + Print-CSS für Fundstellen; Ist-Stand vor dem Bau erheben. Detail: [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §7. Trailer `Roadmap: W2·10-UI-NAV-Z`.
+
+### Dach-Prosa W2·10-UI-NAV im Wortlaut (verschoben 31.7.2026)
+
+*Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026); massgebliche Fassung.*
+
+>   Priorisierter UI-Verbesserungs-Plan aus 60 empirischen Befunden + 3 Kritik-Linsen — Suche, Navigation
+>   und Auffindbarkeit über alle Oberflächen, reine Darstellungsschicht (§3), keine Rechtslogik.
+>   **Detail:** [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §8. Trailer `Roadmap: W2·10-UI-NAV`.
+

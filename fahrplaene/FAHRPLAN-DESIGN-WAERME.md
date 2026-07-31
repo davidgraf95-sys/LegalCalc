@@ -440,3 +440,35 @@ Gesamtbild-Touchpoint statt 40 Einzeländerungen.
   (Befund-Vintage teils vor #201). Verworfen mit Grund (`--paper-warm`, Dark-Brass-Tausch,
   Elevation-Neubau, Sepia-Modus u. a.). Detail: **[`FAHRPLAN-DESIGN-WAERME.md`](FAHRPLAN-DESIGN-WAERME.md)**.
   Trailer `Roadmap: W2·11-DESIGN`.
+
+### Teilschritt-Spezifikation W2·11-DESIGN (verschoben 31.7.2026)
+
+*Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026, Nachhalte-Konvention*
+*Ausführungs-Protokoll Ziff. 6). Die ROADMAP führt je Teilschritt nur noch Checkbox,*
+*`@meta` und einen Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
+
+**Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:**
+
+  **Session-Granularität (AP-6, 31.7.2026):** D-0…D-5 sind gebaut; offen bleiben D-6, D-7 und D-8.
+  Die Teilschritte unten folgen der **harten Kette** des Fahrplans (`D-6 → D-7 → D-8`) und der Regel
+  «**nie zwei Token-Einheiten in einem PR**»; D-8 ist entlang seiner eigenen Nummerierung 1/2/3
+  geschnitten, weil es als einzige Einheit **nicht flip-reversibel** ist (Call-Site-Arbeit, Pilot
+  zuerst). Dieser Schritt bleibt das Dach. **Bewusst NICHT als Teilschritt:** die 5 D-9-Posten
+  (David-Entscheid-Mappe, Abnahme-Zeitsperre bis 1.12.2026).
+
+**Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
+
+  - [ ] **DESIGN-D6 · Dunkel-Paket: Elevation, Schatten, Scrims (EIN PR)** — surface dunkel heben · warme Schattenbasis · Lichtkante · Scrim-Audit; Token-only, flip-reversibel, `check:farbwelt` + axe dunkel. Detail: [FAHRPLAN-DESIGN-WAERME.md](fahrplaene/FAHRPLAN-DESIGN-WAERME.md) §2 (D-6). Trailer `Roadmap: W2·11-DESIGN-D6`.
+  - [ ] **DESIGN-D7 · Ein Lese-Register (`--reading-ink`, `--lese-fs`/`--lese-lh`)** — Lese-Basis + Entscheid-Stepper als Multiplikatoren, CPL-Messung, Regel in beide Domänen-Reglemente; golden neutral. Detail: [FAHRPLAN-DESIGN-WAERME.md](fahrplaene/FAHRPLAN-DESIGN-WAERME.md) §2 (D-7). Trailer `Roadmap: W2·11-DESIGN-D7`.
+  - [ ] **DESIGN-D8a · Wörterbuch auf die Fläche: slate auf Entscheid-Flächen (D-8.1)** — Entscheid-Leser-Chrome und Rubrik-Label auf die Rollen-Schicht ziehen; Playwright-Screens in die Abnahme-Mappe. Detail: [FAHRPLAN-DESIGN-WAERME.md](fahrplaene/FAHRPLAN-DESIGN-WAERME.md) §2 (D-8.1). Trailer `Roadmap: W2·11-DESIGN-D8a`.
+  - [ ] **DESIGN-D8b · Mono-Diät — Pilot, dann mechanischer Rest (D-8.2)** — ~50 verteilte Fundstellen; **Pilot zuerst** (Startseite + 1 Rechner) mit Vorher/Nachher-Screens, danach der Rest. Nicht flip-reversibel. Detail: [FAHRPLAN-DESIGN-WAERME.md](fahrplaene/FAHRPLAN-DESIGN-WAERME.md) §2 (D-8.2). Trailer `Roadmap: W2·11-DESIGN-D8b`.
+  - [ ] **DESIGN-D8c · Motiv-Katalog (D-8.3)** — `scale-rule`-Motiv an 2–3 Sektions-Orten, Abschluss der Anwendungs-Schicht. Detail: [FAHRPLAN-DESIGN-WAERME.md](fahrplaene/FAHRPLAN-DESIGN-WAERME.md) §2 (D-8.3). Trailer `Roadmap: W2·11-DESIGN-D8c`.
+
+### Dach-Prosa W2·11-DESIGN im Wortlaut (verschoben 31.7.2026)
+
+*Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026); massgebliche Fassung.*
+
+>   Farbklima/Wärme/Typografie-Plan aus 48 Ultracode-Befunden + 3 Kritik-Linsen — Token-Schicht nach
+>   §13, Normtext-Körper bleibt farbfrei, golden byte-gleich.
+>   **Detail:** [FAHRPLAN-DESIGN-WAERME.md](fahrplaene/FAHRPLAN-DESIGN-WAERME.md) §5. Trailer `Roadmap: W2·11-DESIGN`.
+

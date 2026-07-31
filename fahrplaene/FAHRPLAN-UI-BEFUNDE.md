@@ -33,6 +33,18 @@ ausschliesslich hier (Checkboxen) und in `ROADMAP.md` (`@meta status`). Kein Fel
 
 ## §1 · Triage-Ergebnis 31.7.2026
 
+### §1.0 · Herkunft der Sichtprüfung (aus `ROADMAP.md` verschoben 31.7.2026)
+
+*Wörtlicher ROADMAP-Wortlaut, QS-TOK-Nachdiät 31.7.2026 — die ROADMAP führt den Schritt
+seither nur noch mit Triage-Zahlen und Pointer hierher:*
+
+> Externe Cowork-Sichtprüfung über ~45 Seiten, Breiten 390–2560 px, hell/dunkel, Druck, Tastatur,
+> 140 % Schriftskala; geschnitten nach Bauteil K-01…K-20. **Dedup-Triage 31.7.2026** (7 Opus-Agenten
+> gegen den Bestand): **45 NEIN · 144 VERDACHT · 15 BEREITS-GEBAUT · 6 SICHER** — die 6 SICHER werden
+> **nicht** neu eingeplant (LM-202 ist eine **David-Frage**: der Bestand hat den Scroll-Hash-Sync
+> bewusst verworfen, `FAHRPLAN-UI-NAVIGATION.md` §Z Ziff. 7). **20 Batches** — 19 Bau-Batches mit
+> 7–16 baubaren Befunden (189) + 1 Prüf-Batch (15). Wortlaut: `docs/ui-befunde-2026-07/`.
+
 210 Befunde, geprüft von 7 Opus-Agenten gegen den Bestand (Fahrpläne, Code, Abnahme-Berichte):
 
 | Marke | Anzahl | Bedeutung |

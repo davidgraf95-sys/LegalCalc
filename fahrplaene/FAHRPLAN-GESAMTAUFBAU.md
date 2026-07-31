@@ -363,3 +363,43 @@ Das fertig gebaute 26×-Asset **Beurkundung** wird in Phase 0 per Batch-Deploy a
   `aktenzeichen`/`abteilung`/`titel` `null`, einzelne ohne `rubrum`/`dispositivOrders` (z. B.
   `151_V_30`) — Korpus-weit prüfen, ob aus `full_text`/`citation` nachziehbar (kein Inhalts-/
   Identitätsproblem, rein Metadaten; `[OF]`).
+
+### Auftrags-Eingang 30.6.2026 (David) im Wortlaut (verschoben 31.7.2026)
+
+*Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026); massgebliche Fassung.*
+
+> > **■ Auftrags-Eingang 30.6.2026 (David) — §14 gebündelt + verortet.** 13 Aufträge, alle `[OF]`
+> > (reine Darstellung oder amtliche Daten, keine Davids-Fachzeit). **Risiko-Klassen getrennt halten**
+> > (§14.2: reines UI ≠ Daten/Pipeline ≠ §1-nahe Verweis-Logik — nicht in EINEN Commit mischen). Daten-/
+> > Verweis-Pfade ⇒ adversariale Gegenprüfung (`QS-GP`) + golden byte-gleich.
+> >
+> > **Bündel R · Reader-Lesesteuerung** und **Bündel N · Normtext-Fidelity/Verweise** → beide in
+> > **Schritt 5b gebaut** (R ✅ 30.6. prod · N ✅ 1.7., inkl. Ursachen-Proben N1 Inline-Tag-Strip /
+> > N2 ELI-Ziel-lesen-statt-raten). Wortlaut inkl. Befunde → `ROADMAP-CHRONIK.md` → Eingang-30.6. (22.7.2026).
+> >
+> > **Quell-Architektur-Entscheid (Council 30.6.2026):** Phase 0 = N1/N2 + Containment-Tor +
+> > Status-Marker; HTML→AKN-XML = Phase 1, inkrementell, nie Big-Bang; M16 als `W2·5g-ZEIT`
+> > getrackt. **Vollinhalt (verifiziert 24.7.2026, kein Info-Verlust): `FAHRPLAN-NORMTEXT-DARSTELLUNG.md
+> > §Quell-Architektur-Entscheid`** + Memory `lexmetrik-akn-xml-architektur-entscheid`; abgelöster
+> > ROADMAP-Wortlaut → `ROADMAP-CHRONIK.md` → Steuerungs-Prosa (24.7.2026).
+> >
+> > **Intake «Informations-Nutzung der Gesetze» (David 17.7.2026):** Lücken G-REF/G-HIST =
+> > Extraktions-Risikopfad, **Bau-GO je Kandidat ausstehend (David)**. **Vollinhalt (verifiziert
+> > 24.7.2026): `FAHRPLAN-NORMTEXT-DARSTELLUNG.md §Intake`** (G-SUCH → `FAHRPLAN-UI-NAVIGATION.md §7b`,
+> > G-PRERENDER → `FAHRPLAN-SEO-A11Y-GOVERNANCE.md §11`); abgelöster Wortlaut → `ROADMAP-CHRONIK.md`
+> > → Steuerungs-Prosa (24.7.2026).
+> >
+> > **Bündel B · Rechtsprechungs-Leser → Schritt 6 / W2·6-BGE:** B1 (BGE ohne «vollständiges Urteil»)
+> > und B2 (Regeste wie amtlich) ✅ 5.7.2026 in `W2·6-B`, B3 (Sticky-Kopf überdeckt Body) ✅ 10.7.2026
+> > via U-KOPF-Refactor `60988318` — alle drei erledigt. Detail: `ROADMAP-CHRONIK.md` →
+> > Auftrags-Eingang 30.6.2026 / Bündel B (31.7.2026).
+> >
+> > **Bündel S · Split-View → Schritt 14** *(SPLIT-VIEW, eigener Worktree):*
+> > - **S1 Breadcrumbs in der Pane:** `InhaltsKopf.tsx` Z.30 nutzt globalen Router-`<Link to>` → zielt
+> >   aufs Hauptfenster statt in die autonome Pane. Fix über `PaneKontext`-Navigator.
+> > - **S2 Tracker «alles schliessen» schliesst auch Panes:** Panes leben in `usePaneLayout`
+> >   (localStorage `lexmetrik-panes`), separater Store von den Tabs → Close-all muss `usePaneLayout`
+> >   mit-resetten. *(S1+S2 bündeln, gleiches Subsystem.)*
+> >
+> > **Einzeln:** I1 + I2 ✅ in W2·5c gebaut · Merker Startseite ✅ entparkt → W2·5c. Wortlaut →
+> > `ROADMAP-CHRONIK.md` → Eingang-30.6. bzw. Steuerungs-Prosa (24.7.2026).
