@@ -203,6 +203,34 @@ describe('setField — seq-hart/seq-weich überleben den Round-Trip (Fund R2-16)
     expect(zeile).toBe(W2_5D.replace('worktree: ja', 'worktree: nein'));
   });
 
+  // Beim Nachtragen der `fahrplan:`-Felder für W3·10/W3·11/W3·14-S/W3·14-a11y
+  // aufgefallen (31.7.2026): `setField` ersetzte das Feld per Regex in der
+  // normalisierten Zeile. Fehlte das OPTIONALE Feld dort, traf die Regex nichts —
+  // die Zeile blieb unverändert, und die CLI meldete trotzdem «gesetzt: …».
+  // Dieselbe Fehlerklasse wie die Funde dieser Runde: ein Werkzeug, das seinen
+  // Nicht-Erfolg als Erfolg meldet. Optionale Felder werden jetzt angehängt;
+  // parseEtikett liest reihenfolge-unabhängig, serializeEtikett normalisiert.
+  it('trägt ein fehlendes optionales Feld nach, statt still nichts zu tun', () => {
+    const md = [
+      '- [ ] **10 · X**',
+      '  <!-- @meta id: W3·10 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n');
+    const out = setField(md, 'W3·10', 'fahrplan', 'fahrplaene/FAHRPLAN-X.md');
+    expect(out).not.toBe(md);
+    expect(out.split('\n')[1]).toBe(
+      '  <!-- @meta id: W3·10 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-X.md -->');
+  });
+
+  it('trägt ein fehlendes seq-hart in kanonischer Position nach', () => {
+    const md = [
+      '- [ ] **10 · X**',
+      '  <!-- @meta id: W3·10 · status: ready · of: ja · blocker: null · dep: [] · kollision: [a.ts] · worktree: nein · 26x: nein -->',
+    ].join('\n');
+    const out = setField(md, 'W3·10', 'seq-hart', '[QS-PERF(a.ts)]');
+    expect(out.split('\n')[1]).toBe(
+      '  <!-- @meta id: W3·10 · status: ready · of: ja · blocker: null · dep: [] · kollision: [a.ts] · seq-hart: [QS-PERF(a.ts)] · worktree: nein · 26x: nein -->');
+  });
+
   it('seq-hart ist als Feld setzbar', () => {
     const out = setField(MD_5D, 'W2·5d', 'seq-hart', '[QS-PERF(ArtikelBody.tsx), W2·5b-L0(x)]');
     expect(out).toContain('seq-hart: [QS-PERF(ArtikelBody.tsx), W2·5b-L0(x)]');

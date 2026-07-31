@@ -19,7 +19,14 @@ export function setField(md: string, id: string, feld: string, wert: string): st
   // Zeile normalisieren (kanonische Feld-Reihenfolge), dann das eine Feld ersetzen.
   const indent = zeilen[idx].match(/^([ \t]*(?:>[ \t]*)*)/)![1];
   const normalisiert = serializeEtikett(parseEtikett(zeilen[idx]), indent);
-  const ersetzt = normalisiert.replace(new RegExp(`(\\b${feld}): .*?(?= ·| -->)`), (_m, g1) => `${g1}: ${wert}`);
+  let ersetzt = normalisiert.replace(new RegExp(`(\\b${feld}): .*?(?= ·| -->)`), (_m, g1) => `${g1}: ${wert}`);
+  // Fehlt ein OPTIONALES Feld (`fahrplan`, `slot`, `seq-hart`, `seq-weich`), trifft
+  // die Regex nichts — bis 31.7.2026 blieb die Zeile dann unverändert, und die CLI
+  // meldete trotzdem «gesetzt: …». Ein Werkzeug, das seinen Nicht-Erfolg als Erfolg
+  // meldet, ist dieselbe Fehlerklasse wie die Funde dieser Runde. Darum anhängen:
+  // parseEtikett liest reihenfolge-unabhängig, serializeEtikett stellt die
+  // kanonische Position her.
+  if (ersetzt === normalisiert) ersetzt = normalisiert.replace(/ -->$/, ` · ${feld}: ${wert} -->`);
   const neu = parseEtikett(ersetzt); // validiert den neuen Wert (wirft bei ungültig)
   zeilen[idx] = serializeEtikett(neu, indent);
 
