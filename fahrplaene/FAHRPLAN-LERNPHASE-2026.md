@@ -115,6 +115,8 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
 
 ## §1 · ROADMAP-Spec LERNPHASE-AB (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «Strang A», «Strang B», «Strang C» und «Erster Schritt am 1. Dezember 2026» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   trägt sichtbaren ehrlichen Status (`verified`/`entwurf`/`geplant`) + Stand; Golden-Abdeckung &
@@ -135,6 +137,8 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
 ---
 
 ## §2 · ROADMAP-Spec QS-GP (wörtlich verschoben 31.7.2026)
+
+> **→ Bau-Spec: «Strang B — Verifikations-Infrastruktur» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 

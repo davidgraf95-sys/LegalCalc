@@ -321,9 +321,13 @@ Kommentar-Konvention `// Erweiterungspunkt V2/V3: …` (Weiche-B-Stil), keine to
 
 **1) Neuer ROADMAP-Schritt — exakter Text.** Einfügen in `ROADMAP.md`, **Welle 2, direkt NACH dem kompletten Schritt-6-Block** (d. h. nach dem letzten W2·6-Unterpunkt «BGE-Auszug abgeschnitten …», derzeit vor Zeile «- [ ] **7 · Verzahnungs-Klingen**») **und VOR Schritt 7** — damit steht er nach dem W2·6-DATA-Kontext und vor den Serving-Konsumenten:
 
+> **Zitat, nicht Steuerung (§5).** Der Block unten ist der *historische Einfüge-Text* vom
+> 3.7.2026. Massgeblich ist ausschliesslich das `@meta` von `W2·7-VZUI` in `ROADMAP.md`;
+> dessen `kollision`/`seq-hart` sind seither gewachsen. Nie von hier zurückkopieren.
+
 ```markdown
 - [ ] **6-VZUI · Verzahnung sichtbar machen** *(David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)*:
-  <!-- @meta id: W2·7-VZUI · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/components/kontext/KontextPanel.tsx, src/pages/EntscheidLeser.tsx, src/components/NormPopover.tsx, src/components/suche/SuchResultate.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
+  <!-- @meta id: W2·7-VZUI · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/components/kontext/KontextPanel.tsx, src/pages/EntscheidLeser.tsx, src/components/NormPopover.tsx, src/components/suche/SuchResultate.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   EINE Interaktions-Grammatik (KantenChip · StatusBadge nur-Abweichung · KontextGruppe-Overlines ·
   MehrKante · FundstellenAnker · Begriff-Glossar) über GesetzLeser/EntscheidLeser/MaterialLeser/Suche/
   Split-View. **V1a JETZT vor VPS** (4 Leitentscheid-Darstellungen vereinheitlicht, EntscheidLeser beide
@@ -334,7 +338,7 @@ Kommentar-Konvention `// Erweiterungspunkt V2/V3: …` (Weiche-B-Stil), keine to
   **Sequenz:** erst `fix/leitentscheid-stern-tooltip` + `feat/entscheid-verweis-praezision` mergen;
   `parts.tsx`-Eigentümerschaft mit W2·5b klären. Kein 26×-Bezug — parallel zu E3 fahrbar.
   Startseiten-Kachel «Meistzitierte Artikel» = nur Andockpunkt (nach W2·5c), Sperrfläche.
-  **Detailquelle:** `FAHRPLAN-VERZAHNUNG-UI.md`.
+  **Detailquelle:** diese Datei.
 ```
 
 (ID-Wahl `W2·7-VZUI`: gegen `scripts/plan/inventar.ts` geprüft — nicht vorhanden, kollisionsfrei; lehnt sich an W2·7 «Verzahnungs-Klingen» an, dem der Schritt thematisch vorgelagert ist.)
@@ -464,6 +468,8 @@ Entscheidkategorien** erweitert — alles über Filter an- und abwählbar (Kanto
 
 ## §10 · ROADMAP-Spec W2·6-ZNETZ (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «8. Zitationsnetz — Rückwärts-Zitate + Leitentscheid-Score» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   «Welche Entscheide zitieren diesen?» (Rückwärts-Kanten) + **Leitentscheid-Score nach Zitierhäufigkeit**.
@@ -488,6 +494,8 @@ Entscheidkategorien** erweitert — alles über Filter an- und abwählbar (Kanto
 
 ## §11 · ROADMAP-Spec W2·7-VZUI (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «1. Die Interaktions-Grammatik», «3. Etappen» und «9. Bezüge am Artikel» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   EINE Interaktions-Grammatik (KantenChip · StatusBadge nur-Abweichung · KontextGruppe-Overlines ·
@@ -504,4 +512,4 @@ Entscheidkategorien** erweitert — alles über Filter an- und abwählbar (Kanto
   **Sequenz:** erst `fix/leitentscheid-stern-tooltip` + `feat/entscheid-verweis-praezision` mergen;
   `parts.tsx`-Eigentümerschaft geklärt (W2·5c fertig). Kein 26×-Bezug — parallel zu E3 fahrbar.
   Startseiten-Kachel «Meistzitierte Artikel» = Andockpunkt (W2·5c fertig, Fläche frei).
-  **Detailquelle:** `FAHRPLAN-VERZAHNUNG-UI.md`.
+  **Detailquelle:** diese Datei.

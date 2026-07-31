@@ -330,6 +330,8 @@ Tor-Kalibrierung den Defekt — exakt das ist am 20.7. passiert.
 
 ## §1 · ROADMAP-Spec QS-PERF (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «Bau-Grundsatz», «Das Tor «perf-budget»» und «Die priorisierte Abarbeitung» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   durchlaufen die vollen Browser-Smoke-Shards + Perf-Budget (~20–25 min Wall-Clock je Push, plus
@@ -343,7 +345,7 @@ Tor-Kalibrierung den Defekt — exakt das ist am 20.7. passiert.
   Merge-Queue-Entscheid gekoppelte Posten (s. u.) — hier nur die Auslöse-Bedingung.
 
   Lexmetrik soll Computer **nicht merklich langsamer** machen, **ohne Logikverlust** (Treue gewinnt
-  immer). Detailquelle: **`FAHRPLAN-PERFORMANCE.md`** (ultracode-Audit 30.6.2026, 25 verifizierte,
+  immer). Detailquelle: diese Datei (ultracode-Audit 30.6.2026, 25 verifizierte,
   logik-sichere Befunde; adversarial gegen Logikverlust geprüft). Gemessener Anlass: `/gesetze/bund/OR`
   unter 4× CPU Score **42**, **CLS 0,64**; Startseite CLS 0,57. **Empfohlene Reihenfolge:**
   - **a · Tor `check:perf-budget`** — **`[✓]` KOMPLETT (5.7.2026, PR feat/qs-perf-a-b):**
@@ -470,12 +472,12 @@ Tor-Kalibrierung den Defekt — exakt das ist am 20.7. passiert.
 >   Doku-/Plan-PRs.** Anlass gemessen: reine Plan-/Doku-PRs (#332/#333, nur `*.md` + `scripts/plan/`)
 >   durchlaufen die vollen Browser-Smoke-Shards + Perf-Budget, obwohl kein `src/`-Pfad berührt ist.
 >   **Bau:** in `ci.yml` beide hinter einen Pfad-Filter legen, bei Nicht-Lauf **protokolliertes SKIP**
->   (§6 Ziff. 7 lit. b — nie still grün); der Tore-Job läuft IMMER. **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
+>   (§6 Ziff. 7 lit. b — nie still grün); der Tore-Job läuft IMMER. **Detail:** diese Datei §1.
 > <!-- @meta-Zeile bleibt in ROADMAP.md -->
 >   Lexmetrik soll Computer **nicht merklich langsamer** machen, **ohne Logikverlust** (Treue gewinnt
 >   immer, §15). Reihenfolge a–e: a Tor `check:perf-budget` ✅ · b billige Quick-Wins ✅ · **c M-Daten-Pfad**
 >   (Idle-Defer, Suchindex in Worker/`export()`, `register.json` sharden) · **d Render-/Split-View-Feinschliff**
->   · e CLS-Race-Härtung ✅. **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
+>   · e CLS-Race-Härtung ✅. **Detail:** diese Datei §1.
 >   - [~] **TBT-Deckel je Job normieren statt absolut prüfen** *(gebaut, gemessen, VERWORFEN
 >     20.7.2026)*. Zwei 8er-Runner-Reihen widersprechen sich; die unterstellte Proportionalität
 >     besteht nicht. **Assertiert wird darum weiter der Rohwert**; Kalibrierung bleibt als
@@ -496,9 +498,9 @@ Tor-Kalibrierung den Defekt — exakt das ist am 20.7. passiert.
 >     braucht **keine** Kalibrierung.
 >   - [ ] **Der Artikel-Suchindex kostet ~28.5 s Main-Thread-Aufbau — struktureller Perf-Posten**
 >     *(Befund 26.7.2026, Dossier `bibliothek/betrieb/e2e-flake-forensik-2026-07-26.md`)* — Client-Rebuild
->     des Index, kein Flake. **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
+>     des Index, kein Flake. **Detail:** diese Datei §1.
 >   - [ ] **§8-Auskunftslücke im Fehlerpfad der Artikel-Suche** *(neuer Befund 26.7.2026, ebd.)*.
->     Der Fehlschlag wird still geschluckt statt ausgewiesen. **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
+>     Der Fehlschlag wird still geschluckt statt ausgewiesen. **Detail:** diese Datei §1.
 >   - [ ] **«~4 MB Artikel-Index» ist in ~10 Kommentaren falsch — real 45.7 MiB**
 >     *(Befund 26.7.2026, ebd.)*. `public/such-index/artikel.json` = 47 964 020 Bytes, 54 444 Einträge
 >     (~9.7 MB gzip, so auch in `scripts/check-perf-budget.ts:92` beziffert). Die Zahl «~4 MB» steht
@@ -513,9 +515,11 @@ Tor-Kalibrierung den Defekt — exakt das ist am 20.7. passiert.
 >     Prüf-Genauigkeits-Posten: eine Abschalt-Bedingung nach dem Auslesen wäre verlustfrei.
 >   - [ ] **e2e-Shard-Balance gegen GEMESSENE CI-Dauern packen** *(vorbereitet 20.7.2026; CI-Messwerte
 >     da 21.7.2026 — geparkt, gekoppelt an Davids Merge-Queue-Entscheid)*. Mit den weiteren offenen
->     Perf-Posten (Mess-Forensik, Budget-Politur, Serif-Preload): **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
+>     Perf-Posten (Mess-Forensik, Budget-Politur, Serif-Preload): **Detail:** diese Datei §1.
 
 ## §2 · ROADMAP-Spec W2·15-CLS (wörtlich verschoben 31.7.2026)
+
+> **→ Bau-Spec: «Nachlese aus #312/#314 + echter CLS-Defekt» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 

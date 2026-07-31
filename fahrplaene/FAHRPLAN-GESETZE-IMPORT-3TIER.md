@@ -145,6 +145,8 @@ Im Kern goldrichtig — aber als **Prüf-Werkzeug**, nicht als Anzeigeformat:
 
 ## §6 · ROADMAP-Spec W3·12 (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «3. Nächste Phasen» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   **SLOT-ÜBERGABE 20.7.2026: dieser Schritt hält jetzt den 26×-Slot.** E3 (`W2·6-DATA`) hatte ihn seit

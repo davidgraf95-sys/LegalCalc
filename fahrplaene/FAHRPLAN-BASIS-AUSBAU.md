@@ -334,6 +334,8 @@ E3/E4 seit 3.7. lokal fertig, einziger Blocker VPS-Bestellung als blosse Memory-
 
 ## §1 · ROADMAP-Spec QS-AUTOMATIK (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «§A — Agent-baubar OHNE David» (A1–A11) dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   **Gebündelt aus zwei Befunden vom 20.7., weil sie dieselbe Prüf-Fläche und dieselbe Risiko-Klasse haben**
@@ -382,6 +384,8 @@ E3/E4 seit 3.7. lokal fertig, einziger Blocker VPS-Bestellung als blosse Memory-
 ---
 
 ## §2 · ROADMAP-Spec QS-BASIS (wörtlich verschoben 31.7.2026)
+
+> **→ Bau-Spec: «§A — Agent-baubar OHNE David» + «§B — David-Schlussblock» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 

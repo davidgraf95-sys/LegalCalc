@@ -193,6 +193,8 @@ jede Phase `npm run gate` grün + Default Golden byte-gleich; visuell breit/2-/3
 
 ## §1 · ROADMAP-Spec W3·14 (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «STRANG B — Split-View (2–3 Panes)», «Reihenfolge & Tore» und «Entscheide (alle getroffen 29.6.2026)» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   David 29.6.2026)*. 2–3 „Engines" nebeneinander **wie im Browser** → der **Verzahnungs-Burggraben
@@ -229,7 +231,7 @@ jede Phase `npm run gate` grün + Default Golden byte-gleich; visuell breit/2-/3
 
 **Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
 
-  - [ ] **14-B3 · Scroll & Fokus pro Pane — Restposten** — pro-Pane-Scroll und Spy laufen bereits; **offen**: Scroll-POSITIONS-Wiederherstellung (`ScrollWiederherstellung`/`ScrollZuHash` sind in `App.tsx` weiterhin window-basiert und im Multipane-Primär ohne Wirkung) + Tastatur-Pane-Wechsel. Detail: [FAHRPLAN-SPLIT-VIEW.md](fahrplaene/FAHRPLAN-SPLIT-VIEW.md) §STRANG B (B-3). Trailer `Roadmap: W3·14-B3`.
+  - [ ] **14-B3 · Scroll & Fokus pro Pane — Restposten** — pro-Pane-Scroll und Spy laufen bereits; **offen**: Scroll-POSITIONS-Wiederherstellung (`ScrollWiederherstellung`/`ScrollZuHash` sind in `App.tsx` weiterhin window-basiert und im Multipane-Primär ohne Wirkung) + Tastatur-Pane-Wechsel. Detail: diese Datei §STRANG B (B-3). Trailer `Roadmap: W3·14-B3`.
 
 ### Bündel S (Auftrags-Eingang 30.6.2026) im Wortlaut (verschoben 31.7.2026)
 

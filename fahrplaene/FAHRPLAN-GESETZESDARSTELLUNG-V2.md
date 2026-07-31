@@ -253,6 +253,8 @@ wirksam und gilt danach fort.
 
 ## §8 · ROADMAP-Spec W2·5g-ZEIT (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «§6 Norm-Zeitmaschine + Fassungs-Diff» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   «Art. X, wie er am Tag Y galt» (verknüpft mit dem Entscheiddatum) + **visueller Diff zweier

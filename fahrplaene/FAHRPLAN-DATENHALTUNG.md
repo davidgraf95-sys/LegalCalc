@@ -1026,6 +1026,8 @@ liegen lassen, nicht treiben.
 
 ## §13 · ROADMAP-Spec QS-DATA (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «4. Tore», «5. Etappen» und «12. Datenhaltungs-Optimierung» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   Für die Korpus-Inhalte (Normtext · Rechtsprechung · Materialien) wird ein **generator-erzeugtes
@@ -1053,6 +1055,8 @@ liegen lassen, nicht treiben.
 ---
 
 ## §14 · ROADMAP-Spec W2·6-DATA (wörtlich verschoben 31.7.2026)
+
+> **→ Bau-Spec: «5. Etappen (jede mit Tor; nie Big-Bang)» und «10. Entscheide» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 

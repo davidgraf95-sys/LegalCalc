@@ -548,7 +548,7 @@ Generator (Pfad b + Cross-Check, Paket-2-Pipeline geerbt) ~1 Session · Sidecar-
 
 ### §14-Intake
 ROADMAP **W2·6** (Konsultieren-Klingen, Schwester zu W2·6-BOT), Detailquelle `FAHRPLAN-FEDLEX-PORTFOLIO.md`. Kein 26×-Bezug, kein Worktree.
-`<!-- @meta id: W2·6-REV · status: done · of: ja · blocker: null · dep: [W2·6-BOT] · kollision: [] · worktree: nein · 26x: nein · fahrplan: FAHRPLAN-FEDLEX-PORTFOLIO.md -->` — **✅ 10.7.2026 ausgeführt (siehe Stand-Block oben).**
+`<!-- @meta id: W2·6-REV · status: done · of: ja · blocker: null · dep: [W2·6-BOT] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->` — **✅ 10.7.2026 ausgeführt (siehe Stand-Block oben).** *(Zitat, nicht Steuerung — massgeblich ist das `@meta` in `ROADMAP.md`, §5.)*
 **Trailer:** `Roadmap: W2·6` + `Gegenpruefung: …`.
 
 **Historie-Modell vereinheitlicht (Fundament-Plan §4.4/§7 Punkt 5, David 3.7.2026 — verbindlich):** Der hier vorgeschlagene File-Sidecar `public/normtext/revisionen/<KEY>.json` ist eine **Übergangslösung**. **Zielsenke ist die Tabelle `erlass_fassungen` ab E1** (`FAHRPLAN-DATENHALTUNG.md §3`; §5-Doktrin «nie zwei Wahrheiten»: `erlass_fassungen` ist DAS Historie-Modell, kein paralleler Revisions-Sidecar). Wird Paket 5 VOR E1 gebaut, bleibt der Sidecar zulässig, ist aber im Generator **explizit als Übergangslösung zu markieren** + Migrationsnotiz «schreibt ab E1 in `erlass_fassungen`, Sidecar wird dann Projektion». Fundstellen-Rohstoff (`jolux:dateEntryInForce`, AS-`historicalId`) ist deckungsgleich. **Zusatznutzen:** dieselben Historie-Daten speisen die Artikel-Stabilitäts-Messung (Fundament-Plan §3.2 — Anteil `art_id`s stabil/verändert/verschwunden über die letzten N Revisionen von OR/ZGB/StGB), die das versionslose Verzahnungs-Kanten-Modell empirisch absichert, statt es nur zu behaupten.
@@ -875,10 +875,12 @@ Trailer `Roadmap: W2·14-SIGNAL`.
 
 ## §15 · ROADMAP-Spec W2·6/FEDLEX-PORTFOLIO (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «Paket 1» … «Paket 6» und «Priorisierte Gesamt-Reihenfolge» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
       Fedlex-Datenarten (Erlasse/Materialien/Verfahren/Staatsverträge u.a.), ausschliesslich amtliche Fedlex-Stelle
-      (SPARQL + Filestore, nie Dritt-Repo). **Detailquelle:** `FAHRPLAN-FEDLEX-PORTFOLIO.md`.
+      (SPARQL + Filestore, nie Dritt-Repo). **Detailquelle:** diese Datei.
       **Alle 5 Pakete (1 Currency · 2 Botschaften · 5 AS-Revisionen · 3 Vernehmlassungen · 4 Staats-
       verträge) ✅ AUSGEFÜHRT (Stand 10.7.2026)** — Detail `FAHRPLAN-FEDLEX-PORTFOLIO.md`; Wortlaut →
       `ROADMAP-CHRONIK.md` → Fedlex-Portfolio (22.7.2026).
@@ -886,6 +888,8 @@ Trailer `Roadmap: W2·14-SIGNAL`.
 ---
 
 ## §16 · ROADMAP-Spec W2·14-SIGNAL (wörtlich verschoben 31.7.2026)
+
+> **→ Bau-Spec: «Paket 7 — Watchlist & Änderungs-Signale» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
@@ -946,9 +950,9 @@ Trailer `Roadmap: W2·14-SIGNAL`.
 
 **Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
 
-  - [ ] **14-SIGNAL-B1 · Statischer Änderungs-Feed (🟢)** — RSS/Atom/JSON zur Build-Zeit aus `currency.json` + Verfallsregister, analog `gen:fedlex-wiedervorlage`; **nur der VORWÄRTS-Fall** (`naechsteFassungAb`). DoD: Generator deterministisch, 2 Läufe byte-gleich. Detail: [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §7.1. Trailer `Roadmap: W2·14-SIGNAL-B1`.
-  - [ ] **14-SIGNAL-B2 · Client-Watchlist (🟢)** — localStorage-Liste gemerkter Normen, beim Besuch gegen die statischen Build-Artefakte geprüft (`zuletztVerwendet`-Muster). **Rückblick-Flag zwingend gegen `fassungsToken`/`sha`, nie gegen `geprueftAm`** (sonst systematische Falschmeldungen); keine Mandats-/Personendaten in localStorage (§8). Detail: [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §7.0/§7.1. Trailer `Roadmap: W2·14-SIGNAL-B2`.
-  - [ ] **14-SIGNAL-GER · Gerichts-Delta mit ehrlicher Latenz (🟡)** — Build-Zeit-Delta über `register.json` (neue Einträge je Gericht/Norm seit Datum X); **eigenes Verdikt, nicht unter dem Fedlex-🟢 mitgeführt**. Es gibt keinen Live-Gerichts-Feed — die Import-Kadenz wird als «Stand des Entscheid-Bestands» sichtbar ausgeliefert (§8). Detail: [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §7.2. Trailer `Roadmap: W2·14-SIGNAL-GER`.
+  - [ ] **14-SIGNAL-B1 · Statischer Änderungs-Feed (🟢)** — RSS/Atom/JSON zur Build-Zeit aus `currency.json` + Verfallsregister, analog `gen:fedlex-wiedervorlage`; **nur der VORWÄRTS-Fall** (`naechsteFassungAb`). DoD: Generator deterministisch, 2 Läufe byte-gleich. Detail: diese Datei §7.1. Trailer `Roadmap: W2·14-SIGNAL-B1`.
+  - [ ] **14-SIGNAL-B2 · Client-Watchlist (🟢)** — localStorage-Liste gemerkter Normen, beim Besuch gegen die statischen Build-Artefakte geprüft (`zuletztVerwendet`-Muster). **Rückblick-Flag zwingend gegen `fassungsToken`/`sha`, nie gegen `geprueftAm`** (sonst systematische Falschmeldungen); keine Mandats-/Personendaten in localStorage (§8). Detail: diese Datei §7.0/§7.1. Trailer `Roadmap: W2·14-SIGNAL-B2`.
+  - [ ] **14-SIGNAL-GER · Gerichts-Delta mit ehrlicher Latenz (🟡)** — Build-Zeit-Delta über `register.json` (neue Einträge je Gericht/Norm seit Datum X); **eigenes Verdikt, nicht unter dem Fedlex-🟢 mitgeführt**. Es gibt keinen Live-Gerichts-Feed — die Import-Kadenz wird als «Stand des Entscheid-Bestands» sichtbar ausgeliefert (§8). Detail: diese Datei §7.2. Trailer `Roadmap: W2·14-SIGNAL-GER`.
 
 ### Dach-Prosa W2·14-SIGNAL im Wortlaut (verschoben 31.7.2026)
 
@@ -957,5 +961,5 @@ Trailer `Roadmap: W2·14-SIGNAL`.
 >   «Sag mir, wenn sich Norm Y ändert / Gericht X neu entscheidet.» **Baut ausschliesslich auf vorhandenen
 >   Signalen** (Currency/Register/Wiedervorlage) — kein neuer Rechtsinhalt, keine Beratung; Speicherung
 >   lokal, Werkzeuge bleiben zustandslos (Leitbild).
->   **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §16. Trailer `Roadmap: W2·14-SIGNAL`.
+>   **Detail:** diese Datei §16. Trailer `Roadmap: W2·14-SIGNAL`.
 

@@ -643,6 +643,8 @@ Gegenproben und Zahlen: `bibliothek/rechtsprechung/besetzung-extraktion-2026-07-
 
 ## §13 · ROADMAP-Spec W2·6 (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «10. Etappierung P0→Pn» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   - **Mehrsprachiger Normvergleich DE/FR/IT** (Auslegungswerkzeug, Art. 14 PublG — alle drei
@@ -678,7 +680,7 @@ Gegenproben und Zahlen: `bibliothek/rechtsprechung/besetzung-extraktion-2026-07-
       **Block B (offen, reines UI):** Facette als Autocomplete/Combobox + `?richter`-URL-Achse
       + e2e/axe/perf — bewusst getrennt, um Risiko-Klassen nicht zu mischen (§14.2).
       **Spätere Politur:** Gerichtsschreiber:in als eigene Achse, Spruchkörper-Anzeige im Reader,
-      Richter-Profilseite. Detail: `FAHRPLAN-RECHTSPRECHUNG.md` §12. Dossier
+      Richter-Profilseite. Detail: diese Datei §12. Dossier
       `bibliothek/rechtsprechung/besetzung-extraktion-2026-07-20.md`. Trailer `Roadmap: R-RICHTER`.
 
 ---
@@ -700,13 +702,15 @@ Gegenproben und Zahlen: `bibliothek/rechtsprechung/besetzung-extraktion-2026-07-
 
 **Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
 
-    - [ ] **6-MEHRSPRACH · Mehrsprachiger Normvergleich DE/FR/IT** — Auslegungswerkzeug nach Art. 14 PublG: je Erlass drei Sprachfassungen aus der amtlichen Fedlex-Stelle + Synopse-UI im Gesetzleser; heute ist nur `de` befüllt. Detail: [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13. Trailer `Roadmap: W2·6-MEHRSPRACH`.
-    - [ ] **6-RESOLVER · Kantonaler Norm-Resolver → Kantonalnorm-Buckets (P0-Kern)** — `norm-index` füllt heute nur Bundesnorm-Buckets; der Resolver ist die belegte Voraussetzung der kantonalen Stufe. **Mapping = Risikopfad** ⇒ `QS-GP`. Detail: [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13. Trailer `Roadmap: W2·6-RESOLVER`.
-    - [ ] **6-ADRESSEN · Gerichts-/Behörden-Adressregister** — Lese-/Index-Schicht über die bestehenden Bestände, **kein Datenduplikat** (§5); Abnahme-Status + Verfallsregister je Eintrag, Zuständigkeits-Schluss bleibt im Navigator. Quelle `bibliothek/behoerden/`. Detail: [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13. Trailer `Roadmap: W2·6-ADRESSEN`.
-    - [ ] **6-UEBERSICHT · Rechtsprechungs-Übersicht: P0-Rest + Korpus-Breite** — SG-Regeste-Rest und die Übersichts-/Facetten-Breite; die Kantons-Ausweitung setzt den Resolver voraus (darum `dep`) und verlangt vorher eine abnahmepflichtige Anonymisierungs-Stichprobe. Detail: [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13. Trailer `Roadmap: W2·6-UEBERSICHT`.
+    - [ ] **6-MEHRSPRACH · Mehrsprachiger Normvergleich DE/FR/IT** — Auslegungswerkzeug nach Art. 14 PublG: je Erlass drei Sprachfassungen aus der amtlichen Fedlex-Stelle + Synopse-UI im Gesetzleser; heute ist nur `de` befüllt. Detail: diese Datei §13. Trailer `Roadmap: W2·6-MEHRSPRACH`.
+    - [ ] **6-RESOLVER · Kantonaler Norm-Resolver → Kantonalnorm-Buckets (P0-Kern)** — `norm-index` füllt heute nur Bundesnorm-Buckets; der Resolver ist die belegte Voraussetzung der kantonalen Stufe. **Mapping = Risikopfad** ⇒ `QS-GP`. Detail: diese Datei §13. Trailer `Roadmap: W2·6-RESOLVER`.
+    - [ ] **6-ADRESSEN · Gerichts-/Behörden-Adressregister** — Lese-/Index-Schicht über die bestehenden Bestände, **kein Datenduplikat** (§5); Abnahme-Status + Verfallsregister je Eintrag, Zuständigkeits-Schluss bleibt im Navigator. Quelle `bibliothek/behoerden/`. Detail: diese Datei §13. Trailer `Roadmap: W2·6-ADRESSEN`.
+    - [ ] **6-UEBERSICHT · Rechtsprechungs-Übersicht: P0-Rest + Korpus-Breite** — SG-Regeste-Rest und die Übersichts-/Facetten-Breite; die Kantons-Ausweitung setzt den Resolver voraus (darum `dep`) und verlangt vorher eine abnahmepflichtige Anonymisierungs-Stichprobe. Detail: diese Datei §13. Trailer `Roadmap: W2·6-UEBERSICHT`.
 
 
 ## §14 · ROADMAP-Spec W3·15-RICHTER (wörtlich verschoben 31.7.2026)
+
+> **→ Bau-Spec: «12. `R-RICHTER` — Richter-/Spruchkörper-Filter» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 

@@ -276,12 +276,14 @@ Der grösste ungenutzte Hebel ist **NICHT Scraper**, sondern **Technik-Ports bui
 
 ## §1 · ROADMAP-Spec W2·6/OCL (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «Verwertungs-Matrix» und «Empfohlene Reihenfolge» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
       von opencaselaw.ch/`caselaw-repo-1` (Daten CC0, Code MIT): was für LexMetrik verwertbar ist
       (LexWork-Kantons-API · Fedlex-SPARQL-Eigenheiten · Zitat-Regexes/ECLI · Verifikations-Rails →
       Gegenprüfung). Leit-Doktrin: OCL nie load-bearing, nur Seed/Diff-Orakel + Endpunkt-Wissen selbst
-      gegen amtliche Quelle nachbauen. **Detailquelle:** `FAHRPLAN-OPENCASELAW-QUELLEN.md`.
+      gegen amtliche Quelle nachbauen. **Detailquelle:** diese Datei.
       **Baustein ① LexWork-Kantons-API ✅ verifiziert 11.7.2026** (POC/Mess über alle 19 Kantone
       live): war **bereits gebaut+live** (Adapter/Discovery/1232 Snapshots/`check:normtext-netz`) → kein
       Neubau (§1/§6). 18/19 voll nutzbar; **GL teilweise** (Migration `gesetze.gl.ch`, `xhtml_tol`-Endpunkt

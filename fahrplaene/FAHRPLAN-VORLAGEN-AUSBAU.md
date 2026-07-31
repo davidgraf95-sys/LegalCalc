@@ -304,6 +304,8 @@ nicht gegen das Modellgedächtnis) · Tore grün. Trailer `Roadmap: W2·8`.
 
 ## §1 · ROADMAP-Spec W2·8 (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «V8 — Zitat-Export & Fussnoten-Ausgabe» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
     Ein-Klick-Zitat in korrekter amtlicher Form (`BGE 148 III 1 E. 2.3` · `BGer 5A_691/2023 vom …`)

@@ -766,8 +766,12 @@ V1c/V1b: diese **vor** G1 abschliessen **oder** G1–G3a in Worktree
 
 ## 8 · ROADMAP-Schritt-Text (zum Einfügen in ROADMAP.md, Welle 2)
 
+> **Zitat, nicht Steuerung (§5).** Der Block unten ist der *historische Einfüge-Text*.
+> Massgeblich ist ausschliesslich das `@meta` von `W2·5d` in `ROADMAP.md`; dessen
+> `kollision`/`seq-hart` sind seither gewachsen. Nie von hier zurückkopieren.
+
 ```
-  <!-- @meta id: W2·5d · status: ready · of: ja · blocker: null · dep: [W2·5c] · kollision: [src/pages/gesetz-leser/parts.tsx, src/pages/gesetz-leser/inhalt.tsx, src/components/normtext/ArtikelBody.tsx, src/lib/normtext/register.ts] · seq-hart: [W2·7-VZUI(parts.tsx)] · seq-weich: [W2·6a-MAT/M5(KontextPanel, nur G2)] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZES-UX.md -->
+  <!-- @meta id: W2·5d · status: ready · of: ja · blocker: null · dep: [W2·5c] · kollision: [src/pages/gesetz-leser/parts.tsx, src/pages/gesetz-leser/inhalt.tsx, src/components/normtext/ArtikelBody.tsx, src/lib/normtext/register.ts] · seq-hart: [W2·7-VZUI(parts.tsx)] · seq-weich: [W2·6a-MAT/M5(KontextPanel, nur G2)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
 - **W2·5d — Gesetzes-UX & Darstellungs-Reglement** *(GESETZES-UX)*. Auftrag David
   4.7.: UX/Lesbarkeit des Gesetz-Lesers auf State-of-the-Art heben (Fedlex =
   Mindestlatte). **EINE Linien-Sprache** (3 benannte Rollen `--guide-gliederung`/
@@ -785,7 +789,7 @@ V1c/V1b: diese **vor** G1 abschliessen **oder** G1–G3a in Worktree
   gegen M5 (KontextPanel, nur G2); V1a erledigt. Etappen G0/G1/G2a/G2b/G3a/G3b/
   G4/G5/G6, Tore `check:grundart`/`check:linien-kanon`/`e2e/leser-lesemass` +
   bestehendes `check:perf-budget`; G3b (Anhang/Tarif-Extraktion) ist Risiko-Pfad
-  mit `check:gegenpruefung`. Detail: **`FAHRPLAN-GESETZES-UX.md`**.
+  mit `check:gegenpruefung`. Detail: diese Datei.
 ```
 
 @meta-Erläuterung: `dep: [W2·5c]` (Startseite-V3 fertig, teilt Kopf-/Token-
@@ -2078,6 +2082,8 @@ dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (a
 
 ## §16 · ROADMAP-Spec W2·5d (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «6 · Etappierung», «10 · Anmerkungs-Welle A1–A18» und «11 · Gesetze-Aufteilung Bund/Kantone V2» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   **§14-Intake 20.7.2026 (David):** Fassungshistorie im Ansicht-Menü an-/abwählbar (#27).
@@ -2102,7 +2108,7 @@ dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (a
   gegen M5 (KontextPanel, nur G2); V1a erledigt. Etappen G0/G1/G2a/G2b/G3a/G3b/
   G4/G5/G6, Tore `check:grundart`/`check:linien-kanon`/`e2e/leser-lesemass` +
   bestehendes `check:perf-budget`; G3b (Anhang/Tarif-Extraktion) ist Risiko-Pfad
-  mit `check:gegenpruefung`. Detail: **`FAHRPLAN-GESETZES-UX.md`**. Trailer `Roadmap: W2·5d`.
+  mit `check:gegenpruefung`. Detail: diese Datei. Trailer `Roadmap: W2·5d`.
   **Gebaut (✅-Teilerfolge; Wortlaut verschoben → `ROADMAP-CHRONIK.md` → W2·5d, 22.7.2026):**
   Etappen **G0–G6 komplett gemergt** (Stand 5.7., PRs #132–#149) inkl. G3b Schritt 1–3
   (Kanton-Tarif-Tabellen Stufe 2 Klasse A–D · Anhang-Block-Rendering · SG-Füllpunkt-Rest;
@@ -2166,10 +2172,10 @@ dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (a
 
 **Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:**
 
-  - [ ] **5d-EID3 · EID-3 Teil (b): Linien-Tiefe aus der eId-Pfadlänge** — Guide-/Einzugstiefe aus dem kumulativen eId-Pfad statt aus der Sidecar-Rekursionstiefe; golden-neutral, Tor `check:linien-kanon`. Detail: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §12.2/§12.3. Trailer `Roadmap: W2·5d-EID3`.
-  - [ ] **5d-ANNEX · eId-Anker für Annex-Sections** — die aus EID-1 bekannte Grenze schliessen: Container-eIds auch auf dem separaten Anhang-Pfad mitschneiden. **Extraktion = Risikopfad** ⇒ `check:gegenpruefung` + golden byte-gleich, EINE gebündelte Regeneration (§12.3 Ziff. 4). Detail: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §12.2. Trailer `Roadmap: W2·5d-ANNEX`.
-  - [ ] **5d-SPY · V3/H6 — Scroll-Spy-Härtung (rootMargin ↔ Bezugslinie)** — der einzige wörtlich so benannte «offene Härtungs-Posten» der E-Reihe; **erst reproduzieren, dann fixen** (H6 ist unreproduziert, kein Eingriff am Spy-Kern ohne Beleg). Detail: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §10.10. Trailer `Roadmap: W2·5d-SPY`.
-  - [ ] **5d-YC · IA-Rest Y-C: `/international` Stufe 2** — echter Redirect mit Hash-Mapping; §11 ist sonst komplett (IA-1…IA-7 + Y-A/Y-B gebaut), Stufe 2 war ausdrücklich dem Stufe-1-Betrieb nachgelagert. Detail: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §11.8/§11.10. Trailer `Roadmap: W2·5d-YC`.
+  - [ ] **5d-EID3 · EID-3 Teil (b): Linien-Tiefe aus der eId-Pfadlänge** — Guide-/Einzugstiefe aus dem kumulativen eId-Pfad statt aus der Sidecar-Rekursionstiefe; golden-neutral, Tor `check:linien-kanon`. Detail: diese Datei §12.2/§12.3. Trailer `Roadmap: W2·5d-EID3`.
+  - [ ] **5d-ANNEX · eId-Anker für Annex-Sections** — die aus EID-1 bekannte Grenze schliessen: Container-eIds auch auf dem separaten Anhang-Pfad mitschneiden. **Extraktion = Risikopfad** ⇒ `check:gegenpruefung` + golden byte-gleich, EINE gebündelte Regeneration (§12.3 Ziff. 4). Detail: diese Datei §12.2. Trailer `Roadmap: W2·5d-ANNEX`.
+  - [ ] **5d-SPY · V3/H6 — Scroll-Spy-Härtung (rootMargin ↔ Bezugslinie)** — der einzige wörtlich so benannte «offene Härtungs-Posten» der E-Reihe; **erst reproduzieren, dann fixen** (H6 ist unreproduziert, kein Eingriff am Spy-Kern ohne Beleg). Detail: diese Datei §10.10. Trailer `Roadmap: W2·5d-SPY`.
+  - [ ] **5d-YC · IA-Rest Y-C: `/international` Stufe 2** — echter Redirect mit Hash-Mapping; §11 ist sonst komplett (IA-1…IA-7 + Y-A/Y-B gebaut), Stufe 2 war ausdrücklich dem Stufe-1-Betrieb nachgelagert. Detail: diese Datei §11.8/§11.10. Trailer `Roadmap: W2·5d-YC`.
 
 ### Dach-Prosa W2·5d im Wortlaut (verschoben 31.7.2026)
 
@@ -2180,10 +2186,12 @@ dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (a
 >   Substanz), je Grundart eine Designvorschrift; G3b (Anhang/Tarif-Extraktion) ist Risiko-Pfad mit
 >   `check:gegenpruefung`, §15-Anteile nur-visuell/golden byte-gleich.
 >   **Detail (Spec wörtlich, inkl. Nachzug-Wellen A19–A25/A29–A40, IA-Reihe §11, eId-Reihe §12):**
->   [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §16. Trailer `Roadmap: W2·5d`.
+>   [FAHRPLAN-GESETZES-UX.md](FAHRPLAN-GESETZES-UX.md) §16. Trailer `Roadmap: W2·5d`.
 
 
 ## §17 · ROADMAP-Spec W2·5h-GESETZ-UI (wörtlich verschoben 31.7.2026)
+
+> **→ Bau-Spec: «13 · Gesetzes-Webseite UX-Pass «8b»» und «15 · Gesetzes-Kopfzeile & Gliederungs-Default» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
@@ -2214,11 +2222,13 @@ dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (a
   `content-visibility`-Nachschub-Shift verifizieren; gilt auch für `#art-`-Deep-Links) · K6 Kopfzeile
   gesamthaft (Ordnung/Responsive/§13 F) · K7 «Ansicht ▾» als Personalisierungs-Zentrum (Kanton u. a.;
   Andockpunkt für `W2·7-BEZUG`-Facetten-Filter). Prior-Art (M4/M5/M7/M8, U-SUCHE/U-KOPF, PRs
-  #284/#301) erst nachmessen, dann Delta bauen. Detail: `FAHRPLAN-GESETZES-UX.md` §15.
+  #284/#301) erst nachmessen, dann Delta bauen. Detail: diese Datei §15.
 
 ---
 
 ## §18 · ROADMAP-Spec W2·5j-TABELLEN (wörtlich verschoben 31.7.2026)
+
+> **→ Bau-Spec: «14 · Tabellen in Gesetzen lesbar machen» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 

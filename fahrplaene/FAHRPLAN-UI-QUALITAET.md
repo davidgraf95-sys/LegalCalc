@@ -156,6 +156,8 @@ W2·5h-GESETZ-UI(8b)]`.
 
 ## §8 · ROADMAP-Spec QS-UI (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: §1–§6 dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   **Kein Einzel-Redesign und kein Reihenfolge-Slot**, sondern ein **kontinuierlicher, mess-getriebener
@@ -171,7 +173,7 @@ W2·5h-GESETZ-UI(8b)]`.
   verbindlich):** `QS-UI` **koordiniert und härtet**, es **dupliziert nicht** `W2·10-UI-NAV`
   (Navigations-Plumbing), `W2·11-DESIGN` (Farbwärme) oder `W3·14` (Split/Responsive) — diese bleiben die
   konkreten Sub-Efforts, die dieser Strang treibt und einfordert. Nachgelagert hängt
-  **`W2·5h-GESETZ-UI`** (Gesetzes-Fläche) an diesem Fundament. Detailquelle: **`FAHRPLAN-UI-QUALITAET.md`**.
+  **`W2·5h-GESETZ-UI`** (Gesetzes-Fläche) an diesem Fundament. Detailquelle: diese Datei.
   **DoD je Teil-Schritt:** §13-Tore grün (`check:farbwelt`, axe) · golden byte-gleich, wo die Änderung
   verhaltensrelevant ist. Trailer `Roadmap: QS-UI`.
 
@@ -181,13 +183,15 @@ W2·5h-GESETZ-UI(8b)]`.
 
 ## §9 · ROADMAP-Spec W2·16-INVENTAR (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: §7.1 «Schritt 1 — Funktions-Inventar» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   Vollständige, ehrliche Aufnahme dessen, **was Lexmetrik heute kann** — je Werkzeug/Fläche: Zweck,
   Eingaben, Grenzen, Status (§8 `verified`/`entwurf`/`geplant`), Fundort. **Der Nutzen liegt VOR der
   Anleitung:** das Inventar ist **Input für `QS-UI`** — man kann eine Oberfläche nicht konsistent machen,
   solange niemand die Funktionsmenge aufgeschrieben hat. Darum **früh** und **nicht** an die Anleitung
-  gekettet. Quelle ist der bestehende **Funktions-Katalog** (unten in dieser Datei) + `src/lib/startseiteConfig.ts`
+  gekettet. Quelle ist der bestehende **Funktions-Katalog** (`ROADMAP.md` §Funktions-Katalog) + `src/lib/startseiteConfig.ts`
   (§5-SSoT); Heimat des Ergebnisses: `bibliothek/` nach §11.
   **DoD:** jede Karte aus `src/lib/startseiteConfig.ts` erfasst · Status-Marker gegen die Realität geprüft, nicht
   abgeschrieben (§8) · `check:bibliothek` grün · Eintrag in `bibliothek/INDEX.md`.
@@ -196,6 +200,8 @@ W2·5h-GESETZ-UI(8b)]`.
 ---
 
 ## §10 · ROADMAP-Spec W2·16-ANLEITUNG (wörtlich verschoben 31.7.2026)
+
+> **→ Bau-Spec: §7.2 «Schritt 2 — Bedienungsanleitung / Onboarding» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
@@ -209,5 +215,3 @@ W2·5h-GESETZ-UI(8b)]`.
   **DoD:** deckt die Funktionsmenge aus `W2·16-INVENTAR` **vollständig** ab (keine stille Auslassung, §8) ·
   Sprache nach §13 Ziff. 3 (Fach **und** Laie) · axe · golden byte-gleich.
   Trailer `Roadmap: W2·16-ANLEITUNG`.
-
-### Welle 3 — Tiefe / Breite (opportunistisch)

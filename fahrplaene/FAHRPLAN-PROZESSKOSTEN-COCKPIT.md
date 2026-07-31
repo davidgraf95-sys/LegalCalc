@@ -172,6 +172,8 @@ Chaining vermeidet das. Trailer `Roadmap: W1·5-PRAXIS`.
 
 ## §1 · ROADMAP-Spec W1·5-PRAXIS (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «§Verzahnung — Frist × Kosten als Praxis-Workflow» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   Die heute isoliert nebeneinander stehenden Rechner zu **einem Praxis-Workflow verketten**:
@@ -186,8 +188,6 @@ Chaining vermeidet das. Trailer `Roadmap: W1·5-PRAXIS`.
   Cockpit-Interna und Reduktionsfaktoren und ist blockiert — W1·5-PRAXIS ist die cross-Rechner-
   Verzahnungsschicht darüber und **unblockiert**; kein Parallel-Schritt zur selben Bau-Fläche (§14.3).
   Offen ist allein die Formfrage (eigene «Kosten-Cockpit»-Fläche vs. Prefill-Deep-Links) — Entscheid
-  beim Bau, kein Blocker. Detail: `FAHRPLAN-PROZESSKOSTEN-COCKPIT.md` §Verzahnung. **DoD:** §6-/§9-Tore
+  beim Bau, kein Blocker. Detail: diese Datei §Verzahnung. **DoD:** §6-/§9-Tore
   grün · **golden byte-gleich** (Engines bleiben unberührt) · `check:gegenpruefung` nur, falls doch ein
   Risiko-Glob berührt wird — sauberes Chaining vermeidet das. Trailer `Roadmap: W1·5-PRAXIS`.
-
-### Welle 2 — Griff (Auffindbarkeit) + Konsultieren + mehr Klingen

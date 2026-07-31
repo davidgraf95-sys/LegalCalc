@@ -485,6 +485,8 @@ prioritär behandelt.
 
 ## §10 · ROADMAP-Spec W2·6b-MAT-FINMA (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «§9 · Stufe 2 — FINMA prioritär» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   **Fokus-Dekret-Priorität** — Kontext: Bewerbung David bei der FINMA mit Verweis auf LexMetrik,
@@ -494,5 +496,5 @@ prioritär behandelt.
   Endpunkte vs. PDF empirisch erheben). **F2 (evtl., David «wenn möglich»):** direkte Verzahnung
   FINMA-Schreiben ↔ Erlass-Artikel (FINMAG/FIDLEG/FINIG/KAG/BankG/GwG/VAG) via Referenz-Extraktion —
   VOR Bau H0-Machbarkeits-Verdikt mit Zahlen; Extraktion ⇒ `check:gegenpruefung`. Kanten tragen die
-  `W2·7-BEZUG`-Facetten (`quelltyp: materialien`). Detail: `FAHRPLAN-MATERIALIEN-VERZAHNUNG.md` §9.
+  `W2·7-BEZUG`-Facetten (`quelltyp: materialien`). Detail: diese Datei §9.
   Trailer `Roadmap: W2·6b-MAT-FINMA`.

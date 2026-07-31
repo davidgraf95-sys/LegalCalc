@@ -343,6 +343,8 @@ Bau-Agent-Kette 16.7.2026 (Opus, abends — Fortsetzung nach den David-Gate-Frei
 
 ## §1 · ROADMAP-Spec QS-OPT (wörtlich verschoben 31.7.2026)
 
+> **→ Bau-Spec: «O-1» … «O-6» und «Empfohlene Reihenfolge» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
+
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
 
   Kritik-gefilterte Ablage des allgemeinen Ultracode-Optimierungs-Research (Auftrag David
