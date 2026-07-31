@@ -509,3 +509,69 @@ Wirkung. Kein Korpus-Rebuild (reiner Reader-/Erkenner-Pass, Snapshots unberührt
 **DoD:** Unit-Tests für die drei Muster + Negativfälle (bestehende Treffer bleiben byte-gleich
 erkannt) · Anlassfälle § 92 lit. d/f + Ziff. 5 verlinkt · golden byte-gleich (keine
 Dokument-/Engine-Änderung) · Tore grün. Trailer `Roadmap: W2·13-KANTONE`.
+
+---
+
+## §2 · ROADMAP-Spec W2·13-KANTONE (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  44 Befunde + 3 Kritik-Linsen, davon 10 live an Amtsquellen re-verifiziert)* — **14 sofort
+  baubare Einheiten K-1…K-14** (kantons-einzelne Fixes + Display-/UI-Schicht, slot-frei):
+  P0 Reader-Treue (Lesereihenfolge in 404 Erlassen zerrissen · GL-Routen tot · falsches
+  «SR»-Label) → §8-Ehrlichkeit (Currency-Chip «Geltung ungeprüft», Kontext-Panel-Hinweis,
+  Abdeckungs-Ausweis) → Suche-Ebenen-Fix (Kanton-Treffer landen auf `/gesetze/bund/`) →
+  Einzel-Nachzüge (ZG-161.7 stale seit 1.7.! · SZ-Stand-2027 · Invariante «stand ≤ heute») →
+  NormText-§-Verweise (F41 vor F40) → Quellen-Hygiene (9 lexfind-quelleUrls = §7-Verstoss →
+  amtliche Portale, Dedupe-Tor) → PDF-Werkstatt (Dehyphenation-**GATE** vor jedem
+  FR/VS/AR-PDF-Nachzug; VD/SZ/ZH-Profile) → Werkzeug-Brücke, AR-Sidecars, Perf-Profil,
+  Reports, Systematik-7, Zitat-Vokabular-POC. **Gegatet dahinter (26×-Slot durch E3 belegt,
+  nur ausgewiesen): K-G1…K-G5** — pre-S1-Regenerationswelle (93 Snapshots/23 Kantone),
+  Currency-/Juli-Drift-Läufer, Gliederungs-Extraktion korpusweit, Tabellen/Barème,
+  Vollkorpus-Ausbau (BS+AR = 91,4 % des Korpus, ZH 3/~940) — **K-G5 hängt in `W3·12` ein,
+  kein Parallel-Schritt** (§14.3). Risikopfade (Tarif/Extraktion) je Opus + `gegenpruefung`.
+  Verworfen u. a. Client-Kanton-Suchindex (K10/§15-Arbiter). Detail: **`FAHRPLAN-KANTONE.md`**.
+  **§14-Intake 20.7.2026 (David) — zwei Punkte HIER eingegliedert statt danebengelegt (§14.3), weil sie
+  exakt dieselbe Bau-Fläche treffen (`scripts/normtext`, `public/normtext/kanton`, kantonale Adapter):**
+  - **K-15 · Kantonale Extraktionstiefe** *(**ULTRACODE**, David: später)*. **Befund, nicht Vermutung:**
+    **BS hat 41 % Erlasse ohne Gliederung** · kantonale Fussnoten sind **um Faktor ~40 dünner als beim
+    Bund** · **ZH hat 0 Struktur-Dateien**. **Hypothese** (ausdrücklich als solche markiert): Quellen-
+    Priorität bzw. PDF-Tier — kantonale Erlasse werden aus schwächeren Quellformaten gezogen als die
+    Bundes-Erlasse. **DIAGNOSE VOR FIX, verbindlich:** erst je Kanton erheben, **welches Quellformat**
+    tatsächlich verwendet wird und **wo** die Struktur verloren geht (Quelle dünn? Adapter dünn?
+    Nachbearbeitung?). Ein Fix ohne diese Zuordnung repariert die falsche Schicht. Passt zur bestehenden
+    Leitplanke «korpusweiter Adapter-Hebel VOR jedem Bulk» (`archiv/FAHRPLAN-BS-VORBILDKANTON.md`) und zu
+    K-G3 (Gliederungs-Extraktion korpusweit) — dort einhängen, nicht doppelt planen.
+  - **K-16 · Kantonale Änderungshistorie + Fundstelle im Kantonsblatt** *(David: «wenn möglich»)*.
+    **Feasibility 🟢, belegt:** die kantonale Quelle liefert das **strukturiert** — `change_documents`
+    und `history_information_map`. Es ist also Mapping-Arbeit, keine Text-Heuristik. **Zwei Auflagen:**
+    (i) §7 Norm + Link + **Stand** je Fundstelle; (ii) die Kantonsblatt-Fundstelle ist eine amtliche
+    Referenz — **stichprobenweise gegen das Kantonsblatt selbst verifizieren**, nicht der API blind
+    glauben. Beide Punkte sind Risikopfad (Extraktion) ⇒ `check:gegenpruefung`, Opus.
+  **§14-Intake 21.7.2026 (David) — hier eingegliedert (§14.3, gleiche Bau-Fläche `scripts/normtext` +
+  `public/normtext/kanton`):**
+  - **K-17 · enumeration_item-Verschachtelung: explizite `tiefe` im LexWork-Adapter** *(Anlassfall
+    `BS-154.100` § 71 GOG, David: «Tabelle nicht stimmig»)*. **Kette komplett diagnostiziert (nicht
+    Hypothese):** die amtliche LexWork-Quelle TRÄGT die Stufe (Unterpunkt = leere erste Nummernzelle
+    + zweite `number`-Zelle im `enumeration_item`-Markup), `adapter-lexwork.ts` flacht beim
+    Extrahieren ab (`items` ohne `tiefe` — das Feld existiert seit M6 nur für Bund/Fedlex), und die
+    Renderer-Fallback-Heuristik (`ArtikelBody.tsx`) rät die Stufen mit der **inversen** Annahme
+    (lit.=Hauptstufe, Ziff. danach=Unterstufe) → § 71 rückt «2. das Dreiergericht» UNTER lit. a/b
+    ein, Haupt- und Unterpunkte erscheinen vertauscht. **§1-Folge, darum kein Kosmetik-Punkt: die
+    Zitat-Kette der Zitierknöpfe baut auf den geratenen Stufen** — präzise Zitate («§ 71 Abs. 1
+    Ziff. 2 lit. b GOG») können falsch zusammengesetzt werden. Konkreter, **sofort baubarer**
+    Einzelfall der K-15-Klasse mit bereits erfüllter Diagnose-Auflage (richtige Schicht = Adapter,
+    Quelle ist nachweislich reich genug); NICHT K-G4 (das ist die andere Block-Klasse
+    `enumeration_tabular`/Barème). Risikopfad (Extraktion) ⇒ `check:gegenpruefung`, Opus.
+    Detail: `FAHRPLAN-KANTONE.md` §1-D.
+  - **K-18 · Verweis-Erkenner: zusammengesetzte Abs.-/Art.-Angaben** *(Anlassfall `BS-154.100`
+    § 92 Abs. 1 lit. d/f GOG, David: StGB-Verweise nicht verlinkt)*. **Am Erkenner reproduziert:**
+    `normVerweiseImText` (geteilt, `src/lib/fedlex.ts`) erkennt «Art. 62c **Abs. 1-3 und Abs. 6**
+    StGB», «Art. 63b **Abs. 2, 3 und 5** StGB» und «(Art. 7 **Abs. 3, 39 und 40** JStPO)» NICHT
+    (je 0 Treffer); einfache Formen inkl. Buchstaben-Artikel (62a/62c) treffen. **Wirkung
+    site-weit, nicht kantonsspezifisch** — Ausmass obere Schranke ~117 Stellen / **72 Erlasse**
+    (Bund + Kanton). Vorbild für den Fix: `artikelnPluralVerweise` (Plural-Formen sind gelöst).
+    Eigene Einheit statt K-5-Anbau (K-5 = «EINE Einheit, gleiche Datei» für §-Verweise); kein
+    Korpus-Rebuild, golden-neutral; Leitplanke «kein Link besser als falscher Link» (§1).
+    Detail: `FAHRPLAN-KANTONE.md` §1-D/K-18.
+  Trailer `Roadmap: W2·13-KANTONE`.

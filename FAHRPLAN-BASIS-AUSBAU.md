@@ -320,3 +320,78 @@ FR/IT-Erlasse als «de» fehl-getaggt (de=1467, fr=2) (→ B-8). Golden-/Determi
 Zitat-Kopie ohne Fassungs-/Abrufdatum (→ B-6). Permalink technisch stark, aber ohne Beständigkeits-Versprechen (→ B-10).
 E3/E4 seit 3.7. lokal fertig, einziger Blocker VPS-Bestellung als blosse Memory-Notiz (→ B-5).
 </content>
+
+---
+
+## §1 · ROADMAP-Spec QS-AUTOMATIK (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  **Gebündelt aus zwei Befunden vom 20.7., weil sie dieselbe Prüf-Fläche und dieselbe Risiko-Klasse haben**
+  (Tor-/Automatik-Logik, kein Rechtsinhalt) — §14.2. Der Anlass ist die **zentrale Lektion des 20.7.:**
+  *ein Tor, das sich gegen die eigene Ladung prüft, ist kein Tor* — dreimal an einem Tag aufgetreten
+  (Turso-Sync→Marke→Wächter · selbst-attestierter Gegenprüfungs-Trailer · Hook-Probe mit selbstgebautem
+  stdin). Dieser Querschnitt hält die Gegenfrage dauerhaft offen: **läuft die Automatik, und würde sie
+  scheitern können?**
+  - **a · Zwei tote Workflows** (gefunden von `waechter.yml`, sofort beim ersten Lauf):
+    **`normen-monitor.yml` — letzter Erfolgslauf 22.6.2026, seither failure/cancelled, also ~4 Wochen
+    still tot.** **`fedlex-frische.yml` — jüngster Lauf failure.** Der zweite wiegt schwerer, als er
+    aussieht: er ist der benannte **Ersatz-Arbiter für neun nur-lokale Tore** — solange er rot ist,
+    **läuft deren Allowlist-Begründung leer** (s. `QS-BASIS`, Tor-Parität 16/36). Erst diagnostizieren,
+    dann fixen; nicht raten.
+    - **a′ · `normen-monitor.yml` — Ursache diagnostiziert (20.7.2026, doppelt verifiziert, Beleg
+      CI-Run `29727448005`).** Der Monitor ist seit 29.6. rot; die **aktuelle** Ursache liegt in
+      `check:netz`/Kanonik-Arbiter: **`chemrrv`** (SR 814.81, `eli/cc/2005/478`, Konsolidierung
+      `20260716`, gepinnt 16.7.) zeigt auf die **nicht-kanonische** Revisions-Wurzel `html-0`,
+      kanonisch ist `html-1`. **Reparatur (offener Bau-Schritt, NICHT im reinen Doku-Schritt
+      ausgeführt):** Re-Pin nur für `chemrrv` via `scripts/fedlex-repin-kanonik.ts` → Snapshot-
+      Regeneration über den Generator → **Inhalts-Treue-Diff** (gleiche Konsolidierung ⇒ substanziell
+      identischer Text; ~31 mehrspaltig-Tabellenblöcke stichprobenhaft) → dann `workflow_dispatch` des
+      Normen-Monitors als Echt-Beweis. **Dringlichkeit:** die Rechtsstand-Wache ist bis zur Reparatur
+      faktisch **blind**, weil das Dauer-Rot jede neue Drift maskiert. **Risiko-Klasse abweichend von
+      der DoD dieses Querschnitts:** dieser Re-Pin ist ein **Extraktions-Risikopfad** (Fedlex-Snapshot,
+      berührt `scripts/fedlex-*`/`public/normtext/**`) ⇒ **`QS-GP`-Gegenprüfung Pflicht, kein
+      Auto-Merge vor Verdikt** (§14.4) — anders als die reine Workflow-Plumbing-Arbeit unter a/b. Die
+      Re-Pin-Mechanik teilt sich mit **`QS-CURRENCY`** (Korpus-Pflege) und **`QS-OPT` O-2** (Batch-
+      Re-Pin vor dem 1.8.-Berg); der `chemrrv`-Fix ist deren terminnahes Geschwister, wird aber hier
+      geführt, weil er den Monitor entsperrt.
+  - **b · Turso-Wächter-Abdeckung ausdehnen.** `check:turso-frische` (aus #313) prüft vierfach
+    (Struktur · Vollständigkeit gegen Soll-Zahlen · `manifest_sha` · Alter) — offen bleibt: **wo überall**
+    geprüft wird, eine **Laufzeit-Prüfung in `api/suche`** (der Ausfall vom 20.7. war im Betrieb
+    unsichtbar: ein halber Gesetzesindex und **null** Entscheide, ohne je rot zu werden), ein definierter
+    **Alarmpfad** (wer erfährt es, wie?) und **Wachstums-Schwellen** (Budget-Ist 652/1024 MiB = 64 %;
+    ab welchem Füllstand wird gewarnt, bevor der Sync an die Wand fährt?).
+  **Leitplanke für JEDE Massnahme hier (aus derselben Lektion):** das neue/erweiterte Tor gegen eine
+  **unabhängige** Referenz prüfen und seine **Scheiterns-Fähigkeit an einem ECHTEN Aufruf** belegen —
+  nicht an einer Nachbildung mit selbstgebauter Eingabe (CLAUDE.md §6 Ziff. 7).
+  **DoD:** beide Workflows nachweislich wieder grün **mit protokollierter Ursache** (nicht durch Rerun
+  grün gemacht) · `check:ci-laeufe` grün · Alarmpfad dokumentiert. Die Workflow-/Tor-Plumbing-Anteile
+  (a/b) sind **reine Prüflogik ⇒ golden byte-gleich, `Gegenpruefung: n/a`**; der `chemrrv`-Re-Pin (a′)
+  ist die **Ausnahme** — Extraktions-Risikopfad ⇒ eigener Commit mit `QS-GP`-Verdikt, kein Auto-Merge.
+  Trailer `Roadmap: QS-AUTOMATIK`.
+
+---
+
+## §2 · ROADMAP-Spec QS-BASIS (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  Kritik-gefilterte Ablage des Ultracode-Fundament-Research (Auftrag David 17.7.2026: «was ich an der
+  Basis von LexMetrik verbessern kann»; 5 Miner + 3 Fable-Strategen + Fable-Judge, dedupliziert gegen den
+  Plan-Bestand nach §14). Detailquelle **`FAHRPLAN-BASIS-AUSBAU.md`** — 12 B-Einheiten (Wirkung÷Aufwand):
+  **B-1** Betreiber-Identität (DS-Platzhalter + Impressum) · **B-2** Off-site-Backup + Restore-Probe für
+  `daten/` (6,9 GB, heute **null Backup** = höchstes Einzelrisiko) · **B-3** Bund-Currency-Kette vor dem
+  **1.8.-Verfall-Berg** (terminkritisch; Prämisse P1-a/b evtl. schon ✅, vor Bau festnageln) · **B-4** Domain
+  `lexmetrik.ch` registrieren (Entscheid; Umzug bleibt SEO-A11Y W3.4) · **B-5** VPS-Bestell-Dossier +
+  Blocker-Zeile (Serving = QS-DATA) · **B-6** Stand-Ausweis (Fassung/Abruf/Permalink) in jeder Kopie/Export ·
+  **B-7** öffentlicher Determinismus-Nachweis auf `/methodik` (maschinell, nie fachlich) · **B-8**
+  Kantons-Currency-Wachhund + FR/IT-Sprach-Label-Fix · **B-9** append-only Fassungs-Archiv (nach B-2) ·
+  **B-10** Permalink-Beständigkeits-Vertrag (nach B-4) · **B-11** Prod-Watchdog (Delta zu QS-OPT O-1, +
+  PR #244) · **B-12** Merge Queue (zuletzt, nach O-3.2/O-3.3).
+  **Neu strukturiert (Daueranweisung David 17.7. «handlungsschritte von meiner seite erst am schluss …
+  du alles baust was du kannst ohne mich»):** Plan in **§A Agent-baubar ohne David** (autonome Bau-Reihenfolge
+  A1→A11: B-3→B-5-Dossier→B-6→B-8→B-11-Cron→B-1-Entwurf→B-2-Vorbereitung→B-10-Vorbereitung→B-7→B-9-Design→
+  B-12-Vorbereitung) + **§B David-Schlussblock** (G1–G7 gebündelt am Ende, ~30–45-Min-Beschaffungs-/Freigabe-Block,
+  je Gate notiert was danach noch zu VERDRAHTEN bleibt). Teilbare Einheiten gesplittet: Dossier/Entwurf/Skript/Tor
+  = §A (jetzt), Bestellung/Freigabe/Kauf = §B. **§A wird jetzt autonom gebaut** (je Einheit Worktree+PR+Auto-Merge);
+  Trailer `Roadmap: QS-BASIS`.

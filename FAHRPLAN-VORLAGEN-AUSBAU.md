@@ -286,3 +286,21 @@ serverseitige Zitat-Bibliothek.
 
 golden byte-gleich · Zitierform **stichprobenweise gegen die amtliche Fundstelle geprüft** (§7 —
 nicht gegen das Modellgedächtnis) · Tore grün. Trailer `Roadmap: W2·8`.
+
+---
+
+## §1 · ROADMAP-Spec W2·8 (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+    Ein-Klick-Zitat in korrekter amtlicher Form (`BGE 148 III 1 E. 2.3` · `BGer 5A_691/2023 vom …`)
+    plus **Word-Fussnoten-Export** einer gesammelten Zitatliste. **Baut auf** fertigem Bestand:
+    `src/lib/gerichtszitat.ts` (deterministischer BGE/BGer-Formatierer),
+    `src/lib/rechtsprechung/ecli.ts` (ECLI-Minting), `src/lib/rechtsprechung/zitat-extraktion.ts`,
+    `src/components/useKopieren.ts`, `src/lib/vorlagen/vorlagenDocx.ts` (produktiver docx-Renderer, `docx ^9.7.1`) und dem
+    bereits gebauten Gerichts-Baustein-Set aus `W2·7` (Zitierer + Rubrum). **Feasibility 🟢
+    aus-Bestand:** nur ein **dünner Renderer** (docx-Fussnoten über die vorhandenen
+    `gerichtszitat`/`ecli`-Ausgaben) + Verdrahtung an Entscheid- und Norm-Ansichten — keine neue
+    Abhängigkeit, kein neues Fundament. Detail in `FAHRPLAN-VORLAGEN-AUSBAU.md`. **DoD:** golden
+    byte-gleich · Zitierform stichprobenweise gegen die amtliche Fundstelle geprüft · Tore grün.
+    Trailer `Roadmap: W2·8`.

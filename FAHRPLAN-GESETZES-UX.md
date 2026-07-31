@@ -2073,3 +2073,128 @@ Scroll-Offset nach Suche · Treffer-Highlight) sowie U-SUCHE/U-KOPF (§10) über
 PRs #284/#301 haben Teile davon vermutlich schon gebaut. Erst am heutigen Reader verifizieren,
 dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (axe,
 `check:perf-budget`, e2e; K5 mit eigenem e2e-Nachweis Sprung→Überschrift vollständig sichtbar).
+
+---
+
+## §16 · ROADMAP-Spec W2·5d (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  **§14-Intake 20.7.2026 (David):** Fassungshistorie im Ansicht-Menü an-/abwählbar (#27).
+  **Stand 26.7.2026 (Nachmessung):** G0–G6, A1–A18, A19–A25 (ohne zurückgezogenes L-3/A28),
+  E-Reihe A29–A40 E1–E7, §11 IA-1–IA-7, EID-1/EID-2 und FN-5/M14 sind gebaut — **offener
+  Rest = EID-3** (Folge-Härtungen; Teil-Grenze: A27-Revival bleibt per Rückzug David 12.7.
+  ausgeschlossen) sowie die im Fahrplan geführten Härtungs-/Politur-Posten.
+
+  UX/Lesbarkeit des Gesetz-Lesers auf State-of-the-Art heben (Fedlex =
+  Mindestlatte). **EINE Linien-Sprache** (3 benannte Rollen `--guide-gliederung`/
+  `--rule-artikel`/`--rule-struktur` statt 4 Ad-hoc-Opazitäten; max 1 Guide,
+  Tiefe über Einzug — Semantik-Refactor, kein Farb-Bug), Lesespalte hart auf
+  `max-w-reading` (Mobil-Fix ~16→≥40 ch), **Leser-Kopf Options-Leiste**
+  (Linien/Fussnoten/Verweise; Fussnoten-«AUS» dämpft nur, versteckt keine
+  amtliche Substanz; §15 nur-visuell/golden byte-gleich in G2a), **je Grundart
+  eine Designvorschrift** (8 Grundarten aus `erlass-klassifikation.json` →
+  Register-Feld `grundart`, Pflicht + Tor `check:grundart`; Kanton-§-Label ≠
+  Anker: `#art-` bleibt). Übersichten Bund/Kanton entrümpelt + Cmd/Ctrl-K-Einstieg
+  auf dem BESTEHENDEN Suchindex (Artikel in ≤2 Interaktionen) +
+  **Rechtsgebiets-Sicht als Gerüst** (Auto-Grundgerüst jetzt, Vollkuration nach
+  Abnahme-Zeitsperre). **Sequenzieren:** hart gegen V1c/V1b (parts.tsx), weich
+  gegen M5 (KontextPanel, nur G2); V1a erledigt. Etappen G0/G1/G2a/G2b/G3a/G3b/
+  G4/G5/G6, Tore `check:grundart`/`check:linien-kanon`/`e2e/leser-lesemass` +
+  bestehendes `check:perf-budget`; G3b (Anhang/Tarif-Extraktion) ist Risiko-Pfad
+  mit `check:gegenpruefung`. Detail: **`FAHRPLAN-GESETZES-UX.md`**. Trailer `Roadmap: W2·5d`.
+  **Gebaut (✅-Teilerfolge; Wortlaut verschoben → `ROADMAP-CHRONIK.md` → W2·5d, 22.7.2026):**
+  Etappen **G0–G6 komplett gemergt** (Stand 5.7., PRs #132–#149) inkl. G3b Schritt 1–3
+  (Kanton-Tarif-Tabellen Stufe 2 Klasse A–D · Anhang-Block-Rendering · SG-Füllpunkt-Rest;
+  Gegenprüfungen bestanden) · **Anmerkungs-Welle A1–A18**: U-LINIEN, U-KOPF, U-VERWEIS,
+  U-POSITION, U-SUCHE, U-PDF, U-UEBERSICHT alle ✅ gebaut/gemergt (Stand 11.7.).
+  **Aktiv bleibt:** A18 (BGE-Regeste nach Sprachen) → W2·6-B B2 · A9 = DoD-Querschnitt
+  (CPU-Throttle-Beweis) in jedem Bau-Prompt · **Kollisions-Precheck gegen laufende
+  Worktrees vor jeder Einheit.** Trailer `Roadmap: W2·5d`.
+  **Nachzug-Welle A19–A25 (David 10.7.2026 — Ultracode-Recherche, Bau-Go David
+  ausstehend):** eingeordnet in `FAHRPLAN-GESETZES-UX.md` §10.8; Spec-Heimat
+  `FAHRPLAN-GESETZESDARSTELLUNG-V2.md`; Wortlaut
+  `docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-10.md`. Offene Schritte:
+
+
+  **Nachzug-Welle A29–A40 (David 16.7.2026 — BAU-GO in derselben Session: «run till
+  dry» + «und dann wie immer alles mit opus bauen»):** eingeordnet in
+  `FAHRPLAN-GESETZES-UX.md` §10.10; Wortlaut
+  `docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-16.md`. Einheiten E1–E7:
+  E1/A29 Regesten-Extraktions-Fix BGE 147 III 121 (Risiko-Pfad, Gegenprüfung) ·
+  E2/A30+A31 Marginalien-Superscript + Fussnoten im Fliesstext/Abstände ·
+  E3/A34 Split-View-Bugs (Scroll-Sprung, Ansicht-Menü) · E4/A32+A36 Kontextfenster-
+  Position + ZGB-TOC-Kuration · E5/A35+A40 Suche in Kopfzeile + Treffer-Highlight +
+  BGer-Deep-Link-Bug · E6/A37 Reader-Layout-Breite · E7/A33 Gliederungs-Scroll-Spy
+  (explizites Ultracode-Opt-in, QS-TOK/T20). Ausserdem: A38 «ganze Website heller
+  und weisser» → Design-Kette D-5 (`FAHRPLAN-DESIGN-WAERME.md`) · A39 BGE-Band-Lücke
+  (150 II 308 fehlt) → W2·6 PR-B (148/149) + PR-C (150/151).
+  **Gesetze-Aufteilung Bund/Kantone V2 «Erfassungsgrad-Staffel» (David-Auftrag 16.7.2026:
+  «sinnvoller und praxistauglicher aufbau … schnell relevantes finden»; Ultracode-Panel
+  5 Miner/3 Entwürfe/3 Judges) → Bau-Spec `FAHRPLAN-GESETZES-UX.md` §11. Bau-Einheiten:
+  IA-1 Named-Article-Garantie+Dedup (Engine, Gegenprüfung, vorgezogen, nach #232) · IA-2
+  Erfassungsgrad-Badges/SSoT `erfassungsgrad.ts` (Gegenprüfung) · IA-3 A–Z-Register · IA-4
+  Scope-Chip · IA-5 Rechtsgebiet-Kanonisierung · IA-6 /international-Kanonik Stufe 1 · IA-7
+  Sidebar-Badges. David-Fragen Y-A/Y-B/Y-C (§11.8). Trailer `Roadmap: W2·5d`.
+  **Fedlex-eId-Anker & Verifizier-Deep-Links (Intake, Live-Verifikation 17.7.2026; David-GO
+  17.7. = Aufnahme als Bau-Einheit) → Bau-Spec `FAHRPLAN-GESETZES-UX.md` §12.** Befund:
+  Fedlex-Fragmente = AKN-eIds (Container kumulativ `book_2/…/chap_4/lvl_D`, Artikel flach
+  `art_712_a`, sprach-invariant DE/FR/IT); zitierfähig NUR als ELI-Form `…/de#<eId>`, nie
+  Filestore-URL. Grundsatz: kumulative Pfade sind revisions-brüchig ⇒ eIds NUR als regenerierte
+  Outbound-Links, NIE als eigene Anker; `#art-` unangetastet (K2/R8). Einheiten: EID-1 Enabler
+  (Container-eIds im Struktur-Sidecar mitschneiden statt wegwerfen, `scripts/normtext`,
+  additiv/verhaltensneutral, `check:gegenpruefung`+Golden byte-gleich) · EID-2 Verifizier-Deep-Links
+  «amtliche Fassung an genau dieser Stelle» (ELI-Form; je Artikel sofort, je Sektion nach EID-1;
+  David-Gate Platzierung) · EID-3 Folge-Härtungen (Breadcrumb-eIds → teilbare Sektions-Deep-Links,
+  Linien-Tiefe aus eId-Pfadlänge; optional, David-Gate wegen A27/§11.7 SektionKontextKopf).
+  Bau-Go der Einheiten ausstehend (§12.5, David-Gates ans Ende). Trailer `Roadmap: W2·5d`.
+
+---
+
+## §17 · ROADMAP-Spec W2·5h-GESETZ-UI (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  **Folgeschritt aus `QS-UI`** (Davids Sequenz: erst app-weit, dann die Gesetzes-Fläche): die Rubrik
+  `/gesetze` und der Gesetz-Leser maximal tauglich für die tägliche Norm-Arbeit — Normtext-Darstellung,
+  Gliederung/TOC, Split-View im Leser, Suche im Gesetz, Fussnoten und Marginalien. **Baut auf** `W2·5d`
+  (Gesetzes-UX, G0/G1/G2a gebaut) und `W3·14` (Split-View). **Feasibility 🟢 aus-Bestand.**
+  **Sequenz maschinenlesbar (§12/§14.3) — bewusst NICHT als `dep`:** `QS-UI` ist ein
+  **kontinuierlicher Querschnitt-Strang ohne Endzustand**; ein `dep` darauf wäre nie erfüllbar und
+  machte diesen Schritt dauerhaft nicht startbar. Massgeblich ist darum `seq-hart` auf die konkreten
+  QS-UI-**Teil**-Schritte (a) Fundament-Pass und (b) Informationshierarchie-Pass — erst wenn diese
+  beiden stehen, wird die Gesetzes-Fläche angefasst. `dep` bleibt allein `W2·5d` (echte
+  Bau-Voraussetzung). **Datei-Überschneidungen ausgewiesen statt nur in Prosa behauptet:**
+  `W2·5b` (Reader-Dateien, `wip`) hart sequenziert; `W2·10-UI-NAV` (`gesetz-leser`,
+  `GesetzLeser.tsx`, `components/suche`) und `W3·14` (Split-View-Rahmen) weich — Worktree-Isolation
+  §12 ist hier Pflicht, nicht Kür.
+  **Detailquellen sind die bestehenden Gesetzes-Fahrpläne — hier bewusst NICHT dupliziert (§14.3):**
+  `FAHRPLAN-GESETZES-UX.md` (G-Etappen) und `FAHRPLAN-NORMTEXT-DARSTELLUNG.md`; diese Einheit bündelt
+  allein den 8b-UX-Pass darauf. Sequenz-Begründung: erst müssen die gemeinsamen Muster und die
+  Informationshierarchie aus `QS-UI` stehen, sonst wird die Gesetzes-Fläche zweimal angefasst.
+  **DoD:** `check:perf-budget` · `check:linien-kanon` · `e2e/leser-lesemass` · axe · **golden byte-gleich
+  (Normtext-Treue §15 — Tempo gewinnt nie gegen Treue)**. Trailer `Roadmap: W2·5h-GESETZ-UI`.
+  **§14-Intake 24.7.2026 (David, Anm. 6–12 — Fokus-Dekret-Priorität): Bündel «Gesetzes-Kopfzeile &
+  Gliederungs-Default»** — K1 Default-Aufklappzustand kompakter (Treue §15 unberührt) · K2 Abstand
+  Gliederung↔Kopfzeile · K3 Suche als **Lupe** in die Sticky-Werkzeugleiste (statt Feld in eigener
+  Zeile, beide Zustände) · K4 Gliederungs-Toggle in der Kopfzeile (eingeklappt = geparkt, nie weg) ·
+  K5 Scroll-Ziel nie von der Sticky-Leiste verdeckt (intermittierend; `scroll-margin` vs.
+  `content-visibility`-Nachschub-Shift verifizieren; gilt auch für `#art-`-Deep-Links) · K6 Kopfzeile
+  gesamthaft (Ordnung/Responsive/§13 F) · K7 «Ansicht ▾» als Personalisierungs-Zentrum (Kanton u. a.;
+  Andockpunkt für `W2·7-BEZUG`-Facetten-Filter). Prior-Art (M4/M5/M7/M8, U-SUCHE/U-KOPF, PRs
+  #284/#301) erst nachmessen, dann Delta bauen. Detail: `FAHRPLAN-GESETZES-UX.md` §15.
+
+---
+
+## §18 · ROADMAP-Spec W2·5j-TABELLEN (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  Beispiel `/gesetze/kanton/BS-154.810#art-29`. **Datenlage erhoben — die Daten sind GUT:** strukturiert als
+  Block-Feld `mehrspaltig` mit `spalten[{typ,titel}]` + `zeilen[[…]]`. Es ist ein **reines Darstellungs-
+  Problem**, keine Extraktions-Lücke — darum bewusst **nicht** mit `W2·13-KANTONE` (Extraktionstiefe)
+  gebündelt: andere Risiko-Klasse (§14.2). **Fläche: 656 `mehrspaltig`-Blöcke in 137 Erlassen** (VTS 68 ·
+  CHEMRRV 31 · VZV 30 · NBV 26 · VVV 25 · LRV 21). **Beim Bau zu beachten:** Lesespalte 42rem vs. breite
+  Tarif-Tabellen · §15.1 (kein DOM-Entfernen; Ctrl+F und Print müssen vollständig bleiben) · Mobil @390.
+  **Parkgrund, ehrlich:** kein technischer Blocker — David hat den Punkt am 20.7. ausdrücklich zurückgestellt.
+  Umparken auf `ready` ist ein Einzeiler, sobald er ihn zieht. Trailer `Roadmap: W2·5j-TABELLEN`.

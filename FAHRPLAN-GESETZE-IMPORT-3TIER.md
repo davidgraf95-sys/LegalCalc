@@ -131,3 +131,28 @@ Im Kern goldrichtig — aber als **Prüf-Werkzeug**, nicht als Anzeigeformat:
   geraten. LexFind/MultiLegalPile = Komfortschicht.
 - **Zuständigkeitsengine (Geo + Norm)** = eigener Strang (nicht hier). Schnittstelle:
   die Norm-Schicht (Gemeinde→Gericht aus GOG) zitiert über denselben Norm-Anker.
+
+---
+
+## §6 · ROADMAP-Spec W3·12 (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  **SLOT-ÜBERGABE 20.7.2026: dieser Schritt hält jetzt den 26×-Slot.** E3 (`W2·6-DATA`) hatte ihn seit
+  3.7.2026 belegt, war aber am selben Tag fertig — der Slot wurde 17 Tage lang nur nicht zurückgegeben und
+  hat W3·12 grundlos geparkt gehalten. Übergabe folgt der `@slot-kette` und Davids Reihenfolge-Entscheid
+  2.7.2026 («E3 zuerst, W3·12 danach»); Blocker `26x-slot` damit aufgelöst, Status `parked` → `ready`.
+  **Achtung Umfang (§8, keine Schönung):** «ready» heisst hier *slot-frei und startbar*, nicht *klein*.
+  Dies ist ein 26×-Massenimport; er steht bewusst weit unten in Welle 3 und läuft **nicht** an Davids
+  laufender Queue vorbei. Vor dem Start gilt Leitprinzip 4 (nie zwei 26×-Assets parallel).
+  §14-gebündelt (Phase 0): führende Detailquelle
+  `FAHRPLAN-GESETZE-IMPORT-3TIER.md`; **BS-Sofortfixes S1–S13** = `archiv/FAHRPLAN-BS-VORBILDKANTON.md`
+  (**S1–S13 sind gebaut** — die Datei trägt hier nur noch die Leitplanke «korpusweiter Adapter-Hebel
+  VOR jedem Bulk», keine offene Arbeitsliste); Volltext-Kanton = `archiv/FAHRPLAN-RECHTSSAMMLUNG.md` (P6).
+  BS-Pilot; Kantonale-Entscheide-Import hart **nachgelagert**, nie gleichzeitig. *Werkzeug-Funde (Audit 1):
+  LexWork-Adapter auf dieselbe DOM-Parser-Infra wie der linkedom-POC heben (strikt NACH dessen Bestehen, B5);
+  `pdfplumber` (Python) NUR als nicht-lasttragendes Gegenprüf-Skript, falls die TS-PDF-Extraktion
+  (pdfjs-Koordinaten) belegt versagt (B3) — kein Sprachwechsel am Produktpfad.*
+  **Zubringer (12.7.2026):** `FAHRPLAN-KANTONE.md §K-G5` liefert Priorisierung
+  (ZH→BE→VD→AG→SG→LU→GE), Kern-Erlass-Inventarquelle und §7-Quell-Menü-Auflagen
+  (kein Headless, lexfind nur Fakten-Signal) — dort einhängen, kein Parallel-Schritt.

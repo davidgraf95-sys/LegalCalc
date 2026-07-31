@@ -858,3 +858,62 @@ localStorage** (§8, Berufsgeheimnis) · Rückblick-Flag nachweislich gegen `fas
 gebildet, **nicht** gegen `geprueftAm` · Gerichts-Signal mit sichtbarem Bestands-Stand
 ausgeliefert (§8-Offenlegung der Import-Latenz) · Tore grün.
 Trailer `Roadmap: W2·14-SIGNAL`.
+
+---
+
+## §15 · ROADMAP-Spec W2·6/FEDLEX-PORTFOLIO (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+      Fedlex-Datenarten (Erlasse/Materialien/Verfahren/Staatsverträge u.a.), ausschliesslich amtliche Fedlex-Stelle
+      (SPARQL + Filestore, nie Dritt-Repo). **Detailquelle:** `FAHRPLAN-FEDLEX-PORTFOLIO.md`.
+      **Alle 5 Pakete (1 Currency · 2 Botschaften · 5 AS-Revisionen · 3 Vernehmlassungen · 4 Staats-
+      verträge) ✅ AUSGEFÜHRT (Stand 10.7.2026)** — Detail `FAHRPLAN-FEDLEX-PORTFOLIO.md`; Wortlaut →
+      `ROADMAP-CHRONIK.md` → Fedlex-Portfolio (22.7.2026).
+
+---
+
+## §16 · ROADMAP-Spec W2·14-SIGNAL (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  «Sag mir, wenn sich Norm Y ändert / Gericht X neu entscheidet.» **Baut auf** vorhandener Currency-/
+  Drift-Infra: `check:fedlex-versionen`, `check:rss-oc`, `scripts/fedlex-wiedervorlage-generieren.ts`,
+  `register/parameter-verfall.md`, `public/normtext/currency.json`, Muster `src/lib/zuletztVerwendet.ts`.
+  **Feasibility bewusst gespalten (§8) — die zwei baubaren Stufen sind NICHT das, wonach es klingt:**
+  **B1 🟢 statischer Änderungs-Feed** (RSS/Atom/JSON, zur Build-Zeit aus `currency.json` + Verfallsregister
+  erzeugt, analog `gen:fedlex-wiedervorlage`) · **B2 🟢 Client-Watchlist** (localStorage-Liste gemerkter
+  Normen/Gerichte, beim Besuch gegen die statischen Build-Artefakte geprüft → «seit deinem letzten Besuch
+  geändert»-Flag; exakt das `zuletztVerwendet`-Muster). Beide sind **zustandslos-konform** und aus dem
+  Bestand baubar.
+  **Welches Feld das Rückblick-Signal WIRKLICH trägt (empirisch nachgelesen, §7 — Korrektur zum
+  Erst-Intake):** `public/normtext/currency.json` führt je Erlass nur `{geprueftAm, naechsteFassungAb?}`.
+  `geprueftAm` ist das Datum **unseres Currency-Laufs**, kein Norm-Änderungsdatum — es wandert bei jedem
+  Re-Check auch ohne jede Änderung (→ Falschmeldungen) und markiert eine echte Änderung nicht als solche.
+  **Tragfähig ist es nur für den VORWÄRTS-Fall** (`naechsteFassungAb`, «ab wann kommt eine neue Fassung»).
+  Das **RÜCKBLICK-Signal kommt aus den Normtext-Snapshots**: `public/normtext/**/<ERLASS>.json` führt je
+  Artikel `stand` (In-Kraft-Datum) + `fassungsToken` + `sha` (§7 Build-Regel 4) — nachgeprüft an
+  `bund/ADOV` Art. 1 (`stand: 2023-01-23`, `fassungsToken: 20230123`). Der Watchlist-Vergleich läuft
+  darum gegen `fassungsToken`/`sha`, nicht gegen `geprueftAm`.
+  **Gerichts-Hälfte — eigenes Verdikt, nicht unter dem Fedlex-🟢 mitgeführt (§8, Korrektur zum
+  Erst-Intake):** die oben genannten Belege (`check:fedlex-versionen`, `check:rss-oc`,
+  `fedlex-wiedervorlage-generieren.ts`, `currency.json`) sind **ausnahmslos Norm-seitig** — auch
+  `check:rss-oc` prüft den Amtliche-Sammlung-RSS, nicht Gerichte. Der Bestand, der «Gericht X entscheidet
+  neu» trägt, ist ein **anderer**: `public/rechtsprechung/register.json` (6341 Einträge, je Eintrag
+  `gericht`/`gerichtstyp`/`kanton`/`datum`/`normKeys`/`fassungsToken`) plus die Import-Strecke
+  `scripts/rechtsprechung/` (BS) und `scripts/normtext-entscheide.ts`. **Verdikt darauf: 🟡 baubar mit
+  ehrlicher Einschränkung** — ein Build-Zeit-Delta über `register.json` (neue Einträge je Gericht/Norm
+  seit Datum X) ist deterministisch und billig; es gibt aber **keinen Live-Gerichts-Feed**: das Signal
+  feuert erst, wenn WIR neu importieren. Die Latenz ist damit die Import-Kadenz, nicht die Publikations-
+  geschwindigkeit des Gerichts — **das wird in der UI offengelegt** («Stand des Entscheid-Bestands: …»),
+  sonst suggeriert die Funktion eine Aktualität, die der Korpus nicht trägt.
+  **🟠 Echtes Push-/E-Mail-Abo ist ein Architektur-BRUCH** — es verlangt Nutzeridentität,
+  serverseitigen Subscription-State und einen Sendedienst und verletzt damit «Werkzeuge bleiben zustandslos»
+  (CLAUDE.md §5): **kein Bau ohne ausdrücklichen Architektur-Entscheid Davids**, und **nicht** in den
+  B1/B2-Bau mischen. Optionen-Vergleich (B1/B2/Push, mit Kosten und Bruchstellen):
+  `bibliothek/recherche/watchlist-signale-architektur.md`. Currency-Fläche: `FAHRPLAN-FEDLEX-PORTFOLIO.md`;
+  lose an `QS-CURRENCY`. **DoD:** Feed-Generator deterministisch (2 Läufe byte-gleich) · **keine
+  Mandats-/Personendaten in localStorage** (§8, Berufsgeheimnis) · Rückblick-Flag nachweislich gegen
+  `fassungsToken`/`sha` gebildet, **nicht** gegen `geprueftAm` (sonst Falschmeldungen) · Gerichts-Signal
+  mit sichtbarem Bestands-Stand ausgeliefert (§8-Offenlegung der Import-Latenz) · Tore grün.
+  Trailer `Roadmap: W2·14-SIGNAL`.

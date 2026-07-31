@@ -599,3 +599,37 @@ Gegenprüfungs-Auflage trotz kleinem Diff.
 *Erstellt 11.7.2026 (Synthese-Architekt, Ultracode-Recherche). Verdikt-Grundlage: 3
 Kritik-Linsen mit Repo-Spot-Checks auf main@952146e1; Beobachtungs-Vintage teils
 main@38e1300c− → §0.1 gilt vor jedem Schnitt.*
+
+---
+
+## §8 · ROADMAP-Spec W2·10-UI-NAV (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  Priorisierter UI-Verbesserungs-Plan aus 60 empirischen Befunden + 3 Kritik-Linsen
+  (david-treue · repo-realität · praxis-nutzen; Bilanz 44 übernommen / 32 geändert / 4
+  verworfen): Quick-Win-Paket «tote Rückwege/Anker/Key-Normalisierung» → Suche-Kette
+  (Query-Durchreichung `?q=` · BGE-Zitations-Direktsprung + §8-«nicht im Bestand» ·
+  Dropdown-Ehrlichkeit/Enter-Puffer/Meinten-Sie · Ranking-Kernerlasse · /suche-Seite
+  [David-Go] · Mobil-Fokusmodus) → Verzahnungs-Politur (Artikel↔Werkzeug-Map beidseitig,
+  Hover-Preview am NormPopover, Leitfall-Regeste-Popover, Erwägungs-TOC) → Reader-/
+  Wiedereinstiegs-Welle (In-Gesetz-Highlight, Mobile-Gliederung+Quickjump, Zitat+Permalink,
+  Weiterlesen-Chip, Verlauf-Initiative, Tap-Target-Pass) → Rechtsprechungs-/Rechner-Politur
+  (Pagination, Mobil-Filter, Sachgebiets-Pipeline [Risiko → `QS-GP`], News-Karten). Leitthema
+  «gebaut ≠ gefunden». **Vor jedem Schnitt Prod-Re-Audit** (Befund-Vintage teils vor den
+  Merges 10./11.7.); Reader-Flächen **hart HINTER die offenen A20–A25**; 6 Posten =
+  David-Entscheid (A6-Werkzeug-Chip · Arbeitsmappe · V3-Cockpit-Fragen · Lese-Toggles ·
+  /suche-Go · Zitiert-Chips); hart gegated: Zitiert-von=VZUI-V2 (VPS), Fassungsvergleich
+  (Fedlex-P1a/b + Freigabe). Verworfen mit Grund (Command-Palette [A5-Entscheid],
+  Normtext-Virtualisierung [§15.1], Minimap, Scroll-Hash-Sync u. a.).
+  Detail: **[`FAHRPLAN-UI-NAVIGATION.md`](FAHRPLAN-UI-NAVIGATION.md)**. Trailer `Roadmap: W2·10-UI-NAV`.
+  **Teillieferung 12.7.2026 (`fix/suche-aktivindex-race`):** Such-Dropdown-Race gegen die deferred Artikelgruppe an der Wurzel geschlossen (stabiler Treffer-Key `trefferAuswahl.ts`). Wortlaut → `ROADMAP-CHRONIK.md` → W2·10-UI-NAV (26.7.2026).
+  **Stand 11.7.:** Einheit **N0 (Quick-Win-Paket, N0a–N0d) ✅ gebaut+belegt**; Rest der Kette (Suche S1–S6 …) offen. Wortlaut → `ROADMAP-CHRONIK.md` → W2·10-UI-NAV (26.7.2026).
+  **Mess-Werkzeug 16.7. (advisory, kein Gate):** `npm run eval:suche` (`scripts/suche-eval.ts` +
+  Gold `scripts/suche-eval-gold.json`, 69 verifizierte Paare) misst die ECHTE Produkt-Suche
+  deterministisch/LLM-frei (Recall@1/5/10·MRR·NDCG@10 je Klasse) — ruft die Produktions-Pipeline
+  (Sprung-Parser + FlexSearch-Recall + `artikelRanking`), kein Parallel-Index (§5). Baseline
+  16.7. (`bibliothek/werkzeuge/suche-eval-baseline-2026-07-16.md`): Rang-1-Zitate stark
+  (normzitat/bge 0.83), **umgangssprachliche Mehrwort-/Kompositum-Fragen = grösste Lücke**
+  (Recall@10 0.18) → priorisiert die S-Kette (Dekompositions-/Synonym-Hebel · FR/SR-Alias
+  Cst/LDIP im Norm-Sprung). Vorher-Stand für jede künftige Recall-/Ranking-Änderung.

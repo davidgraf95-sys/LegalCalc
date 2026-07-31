@@ -478,3 +478,19 @@ prioritär behandelt.
 - **Abgrenzung:** kein LLM-Ranking, keine Zusammenfassungen (§2); Anzeige-Grammatik bleibt
   `FAHRPLAN-VERZAHNUNG-UI.md` (V3 Soft-Law); Stufe-1-Scope-Grenzen (§7 dieses Fahrplans) gelten
   weiter, soweit hier nicht ausdrücklich erweitert.
+
+---
+
+## §10 · ROADMAP-Spec W2·6b-MAT-FINMA (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  **Fokus-Dekret-Priorität** — Kontext: Bewerbung David bei der FINMA mit Verweis auf LexMetrik,
+  der Bereich muss vorzeigbar sein)* — **F1:** FINMA als nächste Quelle der bestehenden
+  Stufe-1-Pipeline (Rundschreiben/Wegleitungen/Aufsichtsmitteilungen, amtlich Art. 5 URG;
+  browserloser Adapter nach §3-Muster, Provenienz §7 a–d; Quell-Wahl zuerst: strukturierte
+  Endpunkte vs. PDF empirisch erheben). **F2 (evtl., David «wenn möglich»):** direkte Verzahnung
+  FINMA-Schreiben ↔ Erlass-Artikel (FINMAG/FIDLEG/FINIG/KAG/BankG/GwG/VAG) via Referenz-Extraktion —
+  VOR Bau H0-Machbarkeits-Verdikt mit Zahlen; Extraktion ⇒ `check:gegenpruefung`. Kanten tragen die
+  `W2·7-BEZUG`-Facetten (`quelltyp: materialien`). Detail: `FAHRPLAN-MATERIALIEN-VERZAHNUNG.md` §9.
+  Trailer `Roadmap: W2·6b-MAT-FINMA`.

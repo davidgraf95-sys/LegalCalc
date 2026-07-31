@@ -157,3 +157,27 @@ Fristenüberwachung und kein Anschein davon (§8) · keine neuen Tarif-Parameter
 §6-/§9-Tore grün · **golden byte-gleich** (Engines unberührt — das ist der Beweis, dass nur
 orchestriert wurde) · `check:gegenpruefung` nur, falls doch ein Risiko-Glob berührt wird; sauberes
 Chaining vermeidet das. Trailer `Roadmap: W1·5-PRAXIS`.
+
+---
+
+## §1 · ROADMAP-Spec W1·5-PRAXIS (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  Die heute isoliert nebeneinander stehenden Rechner zu **einem Praxis-Workflow verketten**:
+  Streitwert-Ergebnis → Gerichtskosten + Parteientschädigung; Rechtsmittelfrist ab Entscheiddatum ×
+  Kanton × Gerichtsferien → in denselben Kostenfluss und in den `.ics`-Export. **Baut vollständig auf
+  Gebautem:** `prozesskosten.ts` (Art. 95 ZPO, alle 26 Kantone), `streitwert.ts`, `staffel.ts`,
+  `zpoFeiertage.ts`/`schkgFeiertage.ts` (Computus + 26-Kantone-Feiertagsmatrix, BJ-verifiziert),
+  `fristenEngine.ts` + Fachlader, `rechnerPermalinks.ts`/`permalink.ts` (Prefill), `icsExport.ts`.
+  **Feasibility 🟢 aus-Bestand — ehrlich:** es fehlt **nur eine dünne UI-Orchestrierungs-/Prefill-Schicht**
+  (Ergebnis-Übergabe zwischen Rechnern), **kein neues Rechenfundament**; keine offene technische Frage.
+  **Nicht zu verwechseln mit `W1·4`** (Prozesskosten-Cockpit, `parked` auf `wbqdyap3x`): W1·4 betrifft
+  Cockpit-Interna und Reduktionsfaktoren und ist blockiert — W1·5-PRAXIS ist die cross-Rechner-
+  Verzahnungsschicht darüber und **unblockiert**; kein Parallel-Schritt zur selben Bau-Fläche (§14.3).
+  Offen ist allein die Formfrage (eigene «Kosten-Cockpit»-Fläche vs. Prefill-Deep-Links) — Entscheid
+  beim Bau, kein Blocker. Detail: `FAHRPLAN-PROZESSKOSTEN-COCKPIT.md` §Verzahnung. **DoD:** §6-/§9-Tore
+  grün · **golden byte-gleich** (Engines bleiben unberührt) · `check:gegenpruefung` nur, falls doch ein
+  Risiko-Glob berührt wird — sauberes Chaining vermeidet das. Trailer `Roadmap: W1·5-PRAXIS`.
+
+### Welle 2 — Griff (Auffindbarkeit) + Konsultieren + mehr Klingen

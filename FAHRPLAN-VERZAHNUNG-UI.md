@@ -454,3 +454,49 @@ Entscheidkategorien** erweitert — alles über Filter an- und abwählbar (Kanto
   Vorgängers, eigene Bau-Einheiten; B5/B6 teilen die Werkzeugleisten-Fläche ⇒ seriell,
   §14.3/§12). Kollisions-Abgleich mit `W2·7-VZUI` (KontextPanel) und `W2·5h-GESETZ-UI`
   (LeserAnsichtMenu) — Worktree-Pflicht §12.
+
+---
+
+## §10 · ROADMAP-Spec W2·6-ZNETZ (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  «Welche Entscheide zitieren diesen?» (Rückwärts-Kanten) + **Leitentscheid-Score nach Zitierhäufigkeit**.
+  **Baut auf** hartem Bestand: jeder Entscheid-Snapshot trägt bereits `zitierteEntscheide` (BGE-Zitate UND
+  Geschäftsnummern; 200-BGE-Stichprobe = 2566 Kanten), die Vorwärts-Auflösung läuft schon zur Laufzeit
+  (`src/lib/verzahnung/entscheid-kanten.ts` gegen `register.json`), und ein **1:1-Vorbild für den
+  Build-Zeit-Rückwärts-Index existiert**: `scripts/normtext/entscheide-schreiben.ts` schreibt bereits
+  `register.json` + `norm-index.json` + Leitfall-Shards (Typen `src/lib/rechtsprechung/norm-index.ts`).
+  **Feasibility ehrlich zweistufig:**
+  🟢 **kuratierter Korpus** (5093 Snapshots auf Platte) ist jetzt baubar — der neue Build-Generator ist
+  der Spiegel des norm-index-Generators (+ Shards + UI-Chip). 🟠 **Long-Tail über die 195k Massen-Entscheide
+  ist es NICHT:** er hängt am nicht ausgelieferten ~5,7-GB-Artefakt `masse.db` (dort liegt `zitat_kanten`
+  mit `ix_zitat_nach` bereits vor) und fällt damit in **`W2·6-DATA` E3-Serving/E4** — kein Parallel-Schritt
+  (§14.3). **UI läuft in `W2·7-VZUI` V2 ein** («Wird zitiert von» + Startseiten-Kachel «Meistzitierte
+  Artikel») und wird hier **nicht doppelt geplant**. **Score bleibt deskriptiv** — reine Zählhäufigkeit mit
+  ausgewiesener Grundgesamtheit, kein LLM-Ranking und keine Qualitätsaussage (§2/§8). Feasibility-Beleg:
+  `bibliothek/recherche/zitationsnetz-feasibility.md`. **DoD:** Generator deterministisch (2 Läufe
+  byte-gleich) · `check:gegenpruefung` bestanden · golden byte-gleich · Tore grün. Trailer
+  `Roadmap: W2·6-ZNETZ` + `Gegenpruefung: <Verdikt>`.
+
+---
+
+## §11 · ROADMAP-Spec W2·7-VZUI (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  EINE Interaktions-Grammatik (KantenChip · StatusBadge nur-Abweichung · KontextGruppe-Overlines ·
+  MehrKante · FundstellenAnker · Begriff-Glossar) über GesetzLeser/EntscheidLeser/MaterialLeser/Suche/
+  Split-View. **V1a JETZT vor VPS** (4 Leitentscheid-Darstellungen vereinheitlicht, EntscheidLeser beide
+  Richtungen am Fuss, Artikel-Sublabels, ⧉ Panel+Popover unter Pane-Gating; Zusatzaufträge David 3.7.:
+  Fundstellen-Sprung zur massgeblichen Erwägung an ALLEN eingehenden Entscheid-Links + Popover-Verankerung
+  am Link) · **V1c** Normrevisions-Ehrlichkeit (David 3.7.: alter Entscheid nie unbesehen an revidierte
+  Norm — `fassungsBezug` aus Sidecar-Revisions-Fussnoten, `StatusBadge revidiert`; Extraktions-Risikopfad
+  ⇒ `check:gegenpruefung`) · **V1b** Rangliste-Einbacken
+  (gated: law-code-Kanonisierung ✅ E4 3.7.; Provenienz nie gemischt; `check:gegenpruefung`) · **V2** Masse/Edge
+  (Registry + «Wird zitiert von» + `masse`-Badge, mit E3-Serving) · **V3** Soft-Law (E6a-Anschluss,
+  `nur-verweis`, VersionsLeiste). §7-Wortfeld-Tor («geprüft» verboten), R16 zu, Q1 Bandjahr, CLS 0.
+  **Sequenz:** erst `fix/leitentscheid-stern-tooltip` + `feat/entscheid-verweis-praezision` mergen;
+  `parts.tsx`-Eigentümerschaft geklärt (W2·5c fertig). Kein 26×-Bezug — parallel zu E3 fahrbar.
+  Startseiten-Kachel «Meistzitierte Artikel» = Andockpunkt (W2·5c fertig, Fläche frei).
+  **Detailquelle:** `FAHRPLAN-VERZAHNUNG-UI.md`.

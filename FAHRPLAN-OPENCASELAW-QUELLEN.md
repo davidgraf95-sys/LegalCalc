@@ -261,3 +261,20 @@ Der grösste ungenutzte Hebel ist **NICHT Scraper**, sondern **Technik-Ports bui
 1. **Vernehmlassungen** via `jolux:Consultation` am Fedlex-SPARQL: Fristen-Monitoring mit `deadline`, `days_remaining` (Europe/Zurich berechnet), abgeleitetem Status (abgelaufene erscheinen nie als laufend). Fertiges Muster, falls je ein **Kanzlei-Rechtsmonitoring**-Feature gebaut wird (Nordstern Kanzlei-Praxistauglichkeit, `[[lexmetrik-praxis-handlungsplan]]`).
 2. **TERMDAT** über LINDAS-SPARQL: amtliche Terminologie der Bundeskanzlei, Begriff → DE/FR/IT/RM/EN inkl. Definition. **Bisher nicht in unserem Steinbruch** — neue Quelle.
 3. **Monitoring-Queries** als Vergleichsmaterial für `normen-monitor.yml`: `jolux:Act` + `publicationDate >= heute−N` (neueste AS-Publikationen) und `dateEntryInForce > heute` (bevorstehende Inkraftsetzungen).
+
+---
+
+## §1 · ROADMAP-Spec W2·6/OCL (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+      von opencaselaw.ch/`caselaw-repo-1` (Daten CC0, Code MIT): was für LexMetrik verwertbar ist
+      (LexWork-Kantons-API · Fedlex-SPARQL-Eigenheiten · Zitat-Regexes/ECLI · Verifikations-Rails →
+      Gegenprüfung). Leit-Doktrin: OCL nie load-bearing, nur Seed/Diff-Orakel + Endpunkt-Wissen selbst
+      gegen amtliche Quelle nachbauen. **Detailquelle:** `FAHRPLAN-OPENCASELAW-QUELLEN.md`.
+      **Baustein ① LexWork-Kantons-API ✅ verifiziert 11.7.2026** (POC/Mess über alle 19 Kantone
+      live): war **bereits gebaut+live** (Adapter/Discovery/1232 Snapshots/`check:normtext-netz`) → kein
+      Neubau (§1/§6). 18/19 voll nutzbar; **GL teilweise** (Migration `gesetze.gl.ch`, `xhtml_tol`-Endpunkt
+      tot → Currency-Befund, Verfallsregister). Gegenprüfung SO/AR-future/BS-abrogated bestanden. Doc-only.
+      Verdikt-Tabelle `bibliothek/normen/lexwork-kantone-poc-19-verdikt.md`. Offen: GL-`json_content`-
+      Andockung + David-SCHEMA-ENTSCHEID (`json_content` vs. `xhtml_tol`, Golden-Churn 1232 Snapshots).

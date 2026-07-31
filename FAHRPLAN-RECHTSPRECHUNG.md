@@ -628,3 +628,78 @@ Vier Annahmen des ursprünglichen Bauplans waren am Korpus widerlegt (Hidden-Spa
 kleben statt zu zerreissen · Initial-Slug verschmilzt Patrizia/Patrick Schmid ·
 Absatzgrenze ist ein Trenner · sie ist es aber **nicht immer**). Messungen,
 Gegenproben und Zahlen: `bibliothek/rechtsprechung/besetzung-extraktion-2026-07-20.md`.
+
+---
+
+## §13 · ROADMAP-Spec W2·6 (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  - **Mehrsprachiger Normvergleich DE/FR/IT** (Auslegungswerkzeug, Art. 14 PublG — alle drei
+    Fassungen gleich verbindlich). Heute nur `de` befüllt. *Aufbau:* Generator je Erlass 3
+    Sprachfassungen aus Fedlex → `…<lang>.json`; Synopse-UI im Gesetzleser (Spalten + Diff).
+  - **Recherche Norm → amtlicher Entscheid** (`norm-index.ts`, deterministisch, kein LLM-Ranking;
+    Regeste nur amtlich oder eigene maschinelle, «maschinell»-Marker behalten).
+  - **Gerichts-/Behörden-Adressregister** (Lese-/Index-Schicht über bestehende Stores, kein
+    Duplikat; Abnahme-Status + Verfallsregister je Eintrag).
+  - **BGE-Band-Nachzug 146–149 (Jahrgänge 2020–2023) [Auftrag David 12.7.2026 «bge bis 2020»]:**
+    **PR-A (146+147 = 404 BGE, alle Sprachen) 12.7.2026** — band-basierte de/fr/it-Enumeration
+    (`enumeriereBgeBaender`; Q1-Bandjahr-Quirk + Sprachfilter-Falle: `language=de` verlöre 247
+    fr/it-BGE), additiv (Bestand byte-treu), aza-Bindung + Urteilsdatum aus dem AMTLICHEN
+    clir-Urteilskopf (`parseClirUrteilskopf`; Fix nach Gegenprüfungs-R1 `widerlegt`: 31 Streudaten +
+    2 aza-Fehlzuordnungen + fehlende fr/it-BGE), clir-Regeste dreisprachig, BUDGET_MB 35→100,
+    Determinismus 2 Läufe byte-gleich, VOLLE Gegenprüfungs-Runde 2 (Opus) je PR. **PR-B
+    (148+149 = 384 BGE)** gleiche Mechanik, band-weise (Datenmenge/Crawl-Risiko).
+    Beleg `bibliothek/rechtsprechung/bge-baender-146-149-nachzug-2026-07-12.md`.
+  - **Rechtsprechungs-Übersicht** *(KANTONALE/ENTSCHEIDSUCHE/RECHTSPRECHUNG)*: **P0-Fix** SG-Regeste
+    + kant. Norm-Resolver (Bugfix, **öffnet keinen 26×-Slot**); **Korpus-/Übersichts-Breite [OF]**
+    (Facetten/Sprachfilter-Vorbereitung). Live-Adapter §4-blockiert → geparkt. §14-gebündelt (Phase 0):
+    führende Detailquelle für Live-/Volltextsuche (`livesuche.ts`, P1–P6) = `FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md`;
+    nicht doppelt planen (BGE-Darstellung-Teil B ist Verweis).
+
+      gebündelt mit der BS-Tranche darüber: dieselbe Pipeline, dasselbe Datenasset — kein
+      Parallel-Schritt, §14.2)*: der amtliche Spruchkörper wird aus dem Rubrum extrahiert und
+      korpusweit zu Kanon-Slugs normalisiert, damit die Rechtsprechung nach Richter:in filterbar
+      wird. **Block A (Daten/Risiko) ✅ erledigt 20.7.2026** — Extraktion + Kanon + `richter.json`
+      + Tor `check:besetzung`; Abdeckung BS 98.6 % / Bund 96.1 %, Leak-Scan korpusweit 0.
+      Wortlaut → `ROADMAP-CHRONIK.md` → R-RICHTER (26.7.2026).
+      **Block B (offen, reines UI):** Facette als Autocomplete/Combobox + `?richter`-URL-Achse
+      + e2e/axe/perf — bewusst getrennt, um Risiko-Klassen nicht zu mischen (§14.2).
+      **Spätere Politur:** Gerichtsschreiber:in als eigene Achse, Spruchkörper-Anzeige im Reader,
+      Richter-Profilseite. Detail: `FAHRPLAN-RECHTSPRECHUNG.md` §12. Dossier
+      `bibliothek/rechtsprechung/besetzung-extraktion-2026-07-20.md`. Trailer `Roadmap: R-RICHTER`.
+
+---
+
+## §14 · ROADMAP-Spec W3·15-RICHTER (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  Ziel = **ausschliesslich deskriptive** Spruchkörper-Muster auf Entscheid-Metadaten (z. B. Verteilung
+  von **Sachgebieten und Formalien** je Kammer und Zeitraum). **Verfahrensausgänge sind bewusst NICHT
+  im Scope** (Korrektur 20.7.2026): eine Ausgangs-Verteilung je Kammer ist genau das Rohmaterial, aus
+  dem die unten verbotene Erfolgs-/Trefferquote entsteht — es fehlt nur ein Aggregationsschritt, und die
+  Kammer→Personen-Zuordnung liefert das Richter-Filter-Fundament separat. Eine Ausweitung auf
+  Verfahrensausgänge wäre eine **eigene, ausdrücklich zu begründende David-Entscheidung** und ist mit
+  der blossen Freigabe dieses Schritts NICHT mitgegeben. **Harte Leitplanke, die
+  den Bau bindet:** **kein** Erfolgs-/Trefferquoten-Ranking einzelner Richterinnen und Richter, **keine**
+  Prognose («wie entscheidet X wohl»), **keine** Bewertung von Personen — nur ehrliche, quellengestützte
+  Deskription mit ausgewiesener Grundgesamtheit und offengelegten Grenzen (§8). Richterliche Unabhängigkeit,
+  Persönlichkeitsschutz und Standesrecht gehen der Auswertbarkeit vor; im Zweifel wird weggelassen.
+  **Baut auf** dem separat laufenden **Richter-Filter-Fundament** (Branch `feat/richter-fundament`,
+  Auftrag David 20.7.2026) — dessen Intake wird hier **nicht dupliziert** (§14.3), diese Einheit ist
+  allein die *darauf aufsetzende Analytik-Schicht*. **Feasibility: 🔴 technisch nachgelagert machbar,
+  aber gesperrt** — Bau erst nach ausdrücklicher Freigabe Davids (`richter-analytik-gate`). Detailquelle
+  vorerst `bibliothek/recherche/richter-analytik-leitplanken.md` (Leitplanken + deskriptiver Scope);
+  eine `FAHRPLAN-RICHTER-ANALYTIK.md` entsteht **erst nach** der Freigabe. **DoD:** Freigabe dokumentiert ·
+  adversariale Prüfung «kein verstecktes Ranking» bestanden · §8-Offenlegung der Aussagegrenzen.
+  Trailer `Roadmap: W3·15-RICHTER`.
+
+### Studierende-Layer (querliegend, `[OF]`, billig)
+
+Kaum eigene Engines — **Erklär-/Übungs-Schichten** auf amtlicher Substanz (§3, Darstellungsschicht):
+ausklappbarer **Rechenweg/«Warum»** an den Rechnern (Begründungs-Baustein), der **Mehrsprach-Vergleich**
+(Schritt 6) als Auslegungsübung, **amtliche Zitierhilfe** (aus Schritt 7), der **Norm↔Entscheid↔
+Rechner-Lernpfad** (Schritt 2/6). Einbau jeweils im Mutter-Schritt, nicht als eigener Strang. Gilt
+sinngemäss für jeden fachfremden Rechtsanwender (Ämter/Steuerbehörden/Treuhänder — Nordstern 3.7.);
+Sprachregel bleibt CLAUDE.md §13.3 (klar für Fach UND Laie) — keine parallele «Nicht-Juristen-Layer» erfinden.

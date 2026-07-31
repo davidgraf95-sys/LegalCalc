@@ -1014,3 +1014,63 @@ serverlosen Korpus-Serving-Vorhabens** hierher (Datenhaltungs-Optimierung, §14-
 Bau-Strang `W2·6-DATA`, E3/E4-Nachbarschaft) — sinnvoll erst, wenn das Serving-Ziel ohnehin die
 Korpus-Artefakte aus dem Repo herauslöst, nicht als isolierter git-Eingriff davor. Bis dahin: bewusst
 liegen lassen, nicht treiben.
+
+---
+
+## §13 · ROADMAP-Spec QS-DATA (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  Für die Korpus-Inhalte (Normtext · Rechtsprechung · Materialien) wird ein **generator-erzeugtes
+  DB-Artefakt die EINE Wahrheit (§5)**; `public/*.json` + prerenderte Seiten sind fortan
+  **byte-gleiche Projektion** daraus — nie parallel gepflegt. Amtlicher Arbiter bleiben
+  Fedlex/bger.ch (§7 a–d je Zeile); voilaj/swiss-caselaw (CC0) wird KONSUMIERT, nie gescrapt
+  (Scraper-Verdikt `FAHRPLAN-OPENCASELAW-QUELLEN.md`). Zwei Dauer-Tore: **`check:paritaet`**
+  (Projektion byte-gleich gegen den bisherigen Generator-Output) + **Drift-Tor** (DB-Manifest
+  sha/Zeilenzahlen vs. committete Projektion; bestehende `check:*-netz` bleiben Quellen-Arbiter).
+  Kuratiertes Schaufenster bleibt prerendert (§15); Long-Tail on-demand inhaltsvollständig (§15 Regel 6).
+  Bau-Strang = **W2·6-DATA**; Detailquelle **`FAHRPLAN-DATENHALTUNG.md`**. **Stand 3.7.2026: E0/E0+/E1/E1-Rest-A + E2-Vorarbeiten durch** — **E2 offen NUR: Turso-Hot-Daten laden/synchronisieren [David-Handschritt; Prod-Edge liefert aktuell 200-leer] → dann perf-budget/Payload-Grenz-Test greifen**. **§11.2 Leitfälle-Chips (3.7.2026): das tote `proNormArtikel`-Modell ist verdrahtet; Weiche-B-Masse-Anteil «+n weitere (online)» offen bis E2-live.** Details am Schritt W2·6-DATA. Trailer `Roadmap: W2·6-DATA`.
+  **Sync-Transport + Frische-Wächter repariert 20.7.2026 — E2 betriebsfest** (Mehrzeilen-INSERT in
+  BEGIN/COMMIT über den Hrana-`baton`, 33 → 1429 Zeilen/s, Schatten-Tabellen mit atomarem Tausch,
+  neues vierfaches Tor **`check:turso-frische`**). Detail: `ROADMAP-CHRONIK.md` → QS-DATA.
+  HOT-Artefakte (lokal gebaute FTS-DBs, das Budget-Mass aus `build.ts`) **651.99 MiB / 1024 MiB (63.7 %)** — Treiber ist die
+  `eintrag`-Tabelle der rechtsprechung.db (465.93 MiB). **Gekoppelter Folgeschritt:** der
+  Quell-Riegel hasht via `manifestDb()` die ganze DB (~1.9 GiB Spitzen-Heap, Reserve 2.3× zum
+  4288-MiB-Limit); auf die vier geprüften Tabellen einschränken, sobald der Entscheid-Korpus
+  sich verdoppelt, die Heap-Reserve unter 1.5× fällt ODER das 1-GB-Budget reisst — gleicher
+  Treiber, darum gemeinsam prüfen. Doku-Korrektur in `fts.ts`/`turso-sync.ts`:
+  die «342 kuratierten Schaufenster-Entscheide» waren seit langem falsch — der Code filtert nicht,
+  es sind alle `eintrag`-Zeilen (Stand 5093).
+  **🔒 BLOCKER: VPS-Bestellung (David, ~15 Min) — entsperrt E3-Serving (195 342 Entscheide, cold-FTS 58-GB-Klasse) + E4-Zitatgraph + VZUI-V2 «Zitiert-von».** Bestell-Dossier mit 3 live-verifizierten Angeboten (17.7.2026, Empfehlung **netcup RS 4000 G12 · 32 GB/1 TB NVMe · ~€40/Mt**) + Setup-Plan + Schritt-für-Schritt-Anleitung: **`bibliothek/betrieb/vps-bestell-dossier-2026-07-17.md`** (QS-BASIS B-5). Serving-Bau bleibt QS-DATA. Synergie: derselbe VPS = Backup-Zweitziel (QS-BASIS B-2) + Fassungs-Archiv (B-9).
+
+---
+
+## §14 · ROADMAP-Spec W2·6-DATA (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+      Andockpunkt **eine Schicht UNTER dem heutigen Generator** — die bestehenden Adapter befüllen
+      ein libSQL/SQLite-Artefakt, `public/*.json` + Prerender werden Projektion (Tor `check:paritaet`,
+      §7 Build-Regel 6). Etappen (Detail `FAHRPLAN-DATENHALTUNG.md`): **E0** Fundament/Reverse-
+      Befüllung+Parität → **E1** Generator-Flip → **E2** Edge-Suche-POC (alle BGE + alle Bund-Gesetze)
+      → **E3** BGer-Massen-Import (voilaj-Konsum; **HÄLT den 26×-Slot seit 3.7.2026** — Reihenfolge ENTSCHIEDEN:
+      E3 zuerst, W3·12 danach, David 2.7., `FAHRPLAN-DATENHALTUNG.md` §10(1)) → **E4** Zitat-Graph → **E5** Kanton-Rechtsprechung (26×, Slot-Kette #4) → **E6a**
+      Verwaltungsverordnungen (Kreisschreiben — Bund-Strang, kein Slot; Nordstern-Doktyp) → **E6b**
+      Materialien-Vollausbau (Detail `FAHRPLAN-DATENHALTUNG.md` §5). E0–E2 golden-neutral zu den Gesetzen; jede Projektions-
+      Änderung golden byte-gleich (§6) + `QS-GP`; OCL-Pakete W12 (Bulk-Parquet) + F2 gehen hier auf. **E0 ✅ 2.7. (PR #80/81, check:paritaet in der Gate-Kette) · E0+ ✅ 3.7. (Ziel-Schema §3, Partitionierung je Doktyp, Parität 1796 Dateien) · E1 (Generator-Flip Bund + Tor `check:datenhaltung`) ✅ 3.7. · E2 (Edge-Suche `api/suche.ts` + Turso; Sync-Timeout-Wurzel behoben 20.7., PR #313) ✅ · E3 (`rechtsprechung.db`, 488 MB) ✅** — Wortlaut/Beweise → `ROADMAP-CHRONIK.md` → W2·6-DATA (22.7.2026). **VORBEHALT:** alter Direktpfad bleibt Wächter (Entfernen = eigener §6-Schritt); Kanton/Rechtsprechung/Materialien noch Blob-Weg. **Weichen entschieden 3.7.:** Kontext-Auslieferung = Hybrid (Shards+Edge, §10(6)/§11.5) · Massen-Rebuild = Voll-Rebuild (§10(7)). **Klarstellung Leitprinzip 4:** Reverse-Ingest committeter Daten öffnet KEINEN 26×-Slot.
+      **Korrektur 20.7.2026 (§8 — die alte Zeile «Nächstes: E4 — hält den 26×-Slot» war doppelt falsch):**
+      **E4 ist seit 3.7.2026 LOKAL FERTIG** (`FAHRPLAN-DATENHALTUNG.md` §5/E4, Bericht
+      `bibliothek/register/e4-lokal-2026-07-03.md`, Oracle-Tor grün, 0 UNERKLÄRT) — E0/E0+/E1/E2/E3/E4 sind
+      damit alle gebaut. Und der Schritt **hält den 26×-Slot nicht mehr** (am 20.7. an `W3·12` übergeben, s.
+      `@slot-kette`). **Was wirklich offen ist, zerfällt in zwei Klassen:** (i) **VPS-gebunden**
+      (David-Gate `vps-bestellung-david`): E3-Serving (rsync + cold-FTS `fts_entscheide_masse`, 58-GB-Klasse,
+      Read-API, Long-Tail-Route `/rechtsprechung/:key`) und die E4-UI-Panels · (ii) **frei baubar, ohne VPS:**
+      die **Datenhaltungs-Optimierung** (§14-Intake David 20.7., verortet in `QS-BASIS` (d), Bau-Strang hier —
+      inkrementeller Sync · contentless-FTS · Index-Strategie · **Heiss/Kalt-Grenze = DAVID-GATE**, s. unten).
+      Nachgelagert bleiben **E5** (Kanton-Rechtsprechung, 26× — braucht den Slot zurück) und E6a/E6b.
+      **Heiss/Kalt-Grenze als DAVID-GATE (§8-Frage, nicht technisch entscheidbar):** 195 000 Massen-Entscheide
+      passen **nie** in die 1-GB-Turso-Replika (Budget-Ist 20.7.: 652/1024 MiB bei 5093 kuratierten Entscheiden).
+      Es muss darum entschieden werden, **was die Suche behaupten darf**, wenn der Long-Tail kalt liegt:
+      schweigen, «nur kuratierter Korpus durchsucht» ausweisen, oder kalt nachladen mit spürbarer Latenz.
+      Ein stiller Teiltreffer wäre der Fehler aus PR #313 in neuer Form (dort servierte `api/suche` einen halben
+      Index, **ohne je rot zu werden**). Entscheid gehört David; bis dahin nicht implementieren.

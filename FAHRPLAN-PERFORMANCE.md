@@ -315,3 +315,154 @@ Tor-Kalibrierung den Defekt — exakt das ist am 20.7. passiert.
 - **Zweiter, gleich wichtiger Teil: `/gesetze` in die gemessenen Routen aufnehmen.** Ohne das fällt
   dieselbe Klasse beim nächsten Mal wieder durch — ein Defekt, den kein Tor beobachtet, ist ein Defekt,
   der wiederkommt.
+
+---
+
+## §1 · ROADMAP-Spec QS-PERF (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  durchlaufen die vollen Browser-Smoke-Shards + Perf-Budget (~20–25 min Wall-Clock je Push, plus
+  Flake-Reruns wie A35 auf Shard 3), obwohl kein `src/`-/`public/`-Pfad berührt ist. **Bau:** In
+  `ci.yml` Browser-Smoke + Perf-Budget hinter einen Pfad-Filter legen (laufen nur bei Berührung von
+  `src/`, `public/`, `index.html`, `vite.config*`, `tailwind.config*`, `package*.json`, `e2e/`,
+  `scripts/` AUSSER `scripts/plan/`); bei Nicht-Lauf **protokolliertes SKIP** (§6 Ziff. 7 lit. b —
+  sichtbarer Job-Status «skipped wegen Pfad-Filter», nie still grün; `check:ci-laeufe`-Verträglichkeit
+  prüfen). Tore-Job (tsc/vitest/golden/lint/checks) läuft IMMER. Sabotage-Probe: ein `src/`-Diff muss
+  die Shards nachweislich wieder auslösen. Abgrenzung: Shard-Neupackung bleibt der eigene, an den
+  Merge-Queue-Entscheid gekoppelte Posten (s. u.) — hier nur die Auslöse-Bedingung.
+
+  Lexmetrik soll Computer **nicht merklich langsamer** machen, **ohne Logikverlust** (Treue gewinnt
+  immer). Detailquelle: **`FAHRPLAN-PERFORMANCE.md`** (ultracode-Audit 30.6.2026, 25 verifizierte,
+  logik-sichere Befunde; adversarial gegen Logikverlust geprüft). Gemessener Anlass: `/gesetze/bund/OR`
+  unter 4× CPU Score **42**, **CLS 0,64**; Startseite CLS 0,57. **Empfohlene Reihenfolge:**
+  - **a · Tor `check:perf-budget`** — **`[✓]` KOMPLETT (5.7.2026, PR feat/qs-perf-a-b):**
+    Bundle-Teil + `check:perf-lighthouse` (Mobil-Preset, Median aus 3, letzte CI-Stufe nach den
+    Treue-Toren = §15-Gegenkopplung). Wortlaut → `ROADMAP-CHRONIK.md` → QS-PERF (22.7.2026).
+  - **b · Billig & verlustfrei zuerst** — **`[✓]` bereits in `main`** (Quick-Win-Batches 30.6./1.7., hier
+    nur verifiziert + durch das Tor abgesichert).
+    Wortlaut → `ROADMAP-CHRONIK.md` → QS-PERF (31.7.2026).
+  - **c · M-Daten-Pfad** *(adopt-with-care, golden-gegated)*: OR-Fetch/Struktur-Parse per
+    `requestIdleCallback` defern (vollen Parse behalten) · Suchindex (16 MiB) in Web-Worker (bzw. **FlexSearch `export()`/`import()`** — Index build-time serialisieren statt Client-Rebuild, Audit-1-B4; entfällt evtl. via E2-Edge-Suche, `FAHRPLAN-DATENHALTUNG.md` §8) ·
+    `register.json` in Bund/Kanton sharden · Snapshot-Format verschlanken (Provenienz-Header-Hoist).
+  - **d · Render-/Split-View-Feinschliff** *(zuletzt — nach den Memos marginal)*: TOC stabilisieren,
+    `aktArtikel`-Tracker auslagern, Pane-Open-Guard + Such-Debounce, Fallback-Font-Metriken.
+  - **e · CLS-Race-Härtung Reader-e2e** — **`[✓]` KOMPLETT (10.7.2026, `fix/cls-race-haertung`):**
+    drei CI-Parallel-Last-Rotfälle an der Wurzel gefixt, Schwellen UNVERÄNDERT. Wortlaut →
+    `ROADMAP-CHRONIK.md` → QS-PERF (22.7.2026); Detail STRUKTUR-Karte 10.7.
+
+    `/gesetze/bund/OR` LCP entweder **~3.5 s** (4×) oder **~11.3–11.6 s** (4×), nichts dazwischen,
+    **unabhängig von der Runner-Geschwindigkeit** (die Kalibrier-Referenz korreliert nicht mit dem
+    Modus). Der naheliegende Verdacht «warm/kalt geladen» ist durch die Chrome-Isolation
+    ausgeschlossen — jeder Lauf ist kalt. Vermutung, ungeprüft: Lighthouse wählt je nach Timing ein
+    anderes LCP-Element. Der Deckel 13500 liegt ~16 % über dem hohen Modus und ist damit sicher;
+    bevor er verschärft wird, muss die Bimodalität verstanden sein (sonst deckelt man sie nur weg, §8).
+
+    *(neuer Befund 26.7.2026, Messung durch delegierte Analyse; Dossier ebd. §3.5)*. Der Fix oben
+    korrigiert die MESSUNG, nicht die Ladekosten. Gemessen auf 4 vCPU @2.1 GHz, un-gedrosselt:
+    `ergaenze('bund')` **13 480 ms als EIN einziger, nicht unterbrechbarer Task**
+    (`src/lib/suche/artikelVolltext.ts:308`, via `:249–253` ohne Yield) +
+    `ergaenzeGestaffelt('kanton')` **15 023 ms in 16 Häppchen à 324–1 386 ms** (`:320–328`).
+    Un-gedrosselt liegen die Häppchen schon über dem 200-ms-Reaktionsanspruch, unter 4× Drossel bei
+    1.3–5.5 s je Block — die Zusicherung «Tippen/Scrollen bleibt flüssig» (`:112–113`) ist damit
+    **nicht eingehalten**. **Hebel (gehört zu Strang c):** Aufbau in einen Worker, oder den Index
+    build-time serialisieren (FlexSearch `export()`/`import()` — steht in Strang c schon als
+    Audit-1-B4). **Nicht ermittelt:** ob im langsamen Modus Stufe 1 oder Stufe 2 im Drossel-Fenster
+    lag (13.5 vs. 15.0 s passen beide numerisch) — das entscheidet nur ein Chromium-Trace mit
+    Long-Task-Attribution.
+
+    `src/components/suche/useUniversalSuche.ts:88` fängt einen gescheiterten Index-Load mit
+    `.catch(() => setArtikelSuche({ suche: () => [], fehlendeEbenen: [] }))` ab. Wegen
+    `fehlendeEbenen: []` ist `unvollstaendig` falsy (`src/lib/universalSuche.ts:292`) ⇒ die
+    Oberfläche meldet «0 Artikel, fertig durchsucht», obwohl **nichts** indexiert wurde. Genau der
+    Fehlschluss, gegen den `artikelVolltext.ts:30–34` und `src/tests/suche/gestaffelterIndex.test.ts`
+    argumentieren — im Fehlerfall aber nicht abgedeckt. **Zweiter Defekt am selben Pfad:**
+    `artikelVolltext.ts:60` räumt `ladePromise` bei Rejection nicht (ein Netz-Blip auf 46 MB
+    degradiert die Suche bis zum Reload permanent) — die repo-eigene Regel O-1.7 in
+    `src/lib/normtext/laden.ts:44–52` macht es ausdrücklich anders. Klein, eigener Commit.
+
+    da 21.7.2026 — geparkt, gekoppelt an Davids Merge-Queue-Entscheid)*.
+    Die Gruppen in `e2e/shard-gruppen.json` sind gegen LOKALE Dauern gepackt (Spread <0.1 %), die
+    aber nicht uniform auf den CI-Runner skalieren: `leser-gliederung-a33.e2e.ts` braucht lokal 92 s,
+    auf CI ~360 s (**Faktor ~3.7–3.9**), andere Specs weit weniger. **CI-Messbefund (Lauf
+    `29779602507`): 283 Tests / 2100 s bei `workers:1`; die Top-10-Specs tragen 66 % der Zeit;
+    `leser-gliederung-a33.e2e.ts` allein 342 s = 16 % der Gesamtzeit in nur 4 Tests; Shard 3 ist
+    systematisch am längsten**, weil die Packung nach lokalen Zeiten geschah. Eine Neupackung auf
+    geschätzter Grundlage wurde bewusst UNTERLASSEN (kann die Balance ebenso gut verschlechtern,
+    §14.2) — jetzt liegen die CI-echten Per-Spec-Zeiten als `playwright-report.json`-Artefakte je
+    Shard-Job vor, damit ist die Packung **gemessen**. **Hebel:** Neupackung nach CI-Messwerten,
+    optional **`a33`-Split in zwei Spec-Dateien** (Tests byte-gleich, Anzahl 283 vorher = nachher)
+    bzw. feineres Sharding — **kein Prüfumfang-Abbau (§6.3)**. **Strukturelle Grenze:** a33 ist mit
+    ~342–360 s bereits grösser als das Shard-Drittel; Datei-Granularität allein löst das nicht (der
+    Spec-Split ist der eigentliche Hebel). **Kopplung (§14.2):** ausdrücklich an den noch offenen
+    **Merge-Queue-Entscheid Davids** gebunden (`QS-BASIS` B-12 / `QS-OPT` O-3.2/O-3.3) — ein CI-Umbau,
+    nicht zwei; erst zusammen mit der Merge-Queue-Richtung neu packen.
+  - **Constraints:** alles `[OF]`/zeitsperre-konform (Darstellungs-/Lade-/Build-Schicht); **kein**
+    DOM-entfernendes Virtualisieren/`hydrateRoot`/Teilparse (Treue-Verlust, verworfen); Snapshot-
+    Regenerierung (c) öffnet **keinen** 26×-Slot (nur Format, Union byte-gleich); Worktree-Isolation
+    bei `vite.config.ts`/Generatoren/`public/normtext/**` (§12).
+  - **e · Tor-Nachlese aus #312/#314 (§14-Intake 20.7.2026) — fünf offene Posten.** Der Tag hat das Tor
+    kalibriert, aber in einem **bewusst stumpfen Übergangszustand** hinterlassen; das darf nicht
+    einschlafen. **Reihenfolge nach Hebel:**
+    1. **LCP-Element-Attribution — die DRINGENDSTE Einzeländerung, ~5 Zeilen, reine Diagnose.**
+       `largest-contentful-paint-element` aus dem LHR ins Log **und** in `dist/_perf/lighthouse.json`.
+       Sie entscheidet, ob die **OR-LCP-Bimodalität** (8× ~3,5 s / 8× ~11,4 s) ein Messartefakt ist oder
+       der **Replace-Repaint als LCP-Element** — im zweiten Fall wäre der 11,4-s-Modus **reales
+       Nutzererleben** und der 3,5-s-Modus misst schlicht das falsche Ereignis. **Jede Messreihe ohne
+       diese Angabe ist verschenkt** — darum vor allen weiteren Messungen.
+    2. **TBT auf OR wieder scharf stellen.** Heute **6500 = bewusst stumpf**; CLS (0,05) trägt derzeit
+       **allein** die Regressions-Last. Erst nach (1) und nach neu erhobener Verteilung.
+    3. **Zwei NEUE blinde Flecken, die #314 selbst erzeugt hat** (ehrlich mitführen, nicht verschweigen):
+       **(a)** Die Chrome-Isolation macht jeden Lauf **kalt** — die entfernte «Drift» war zugleich ein
+       **akzidenteller Detektor für aufschaukelnde Degradation** (Lecks, Listener, Cache-Bloat).
+       Defekte ab der **2. Navigation** werden jetzt **nie** gemessen. **(b)** `nurAbInstall` verbannt
+       **Layout-Sprünge >500 ms nach Interaktion** aus **jedem** Budget — auf langsamen Geräten real
+       sichtbar. Beide brauchen eine bewusste Antwort (eigene Warm-/Interaktions-Messreihe), nicht ein
+       Achselzucken.
+    4. **Versions-Pinning der Deckel dokumentieren — gebündelt mit dem Lighthouse-Major-Bump
+       (§14-Intake 22.7.2026, David).** Die Schwellen sind implizit **Lighthouse-versions-gepinnt** —
+       bisher **undokumentiert**. Ein Lighthouse-Upgrade verschiebt sie still. **Anlass des Bündels:**
+       `npm audit` meldet **17 moderate Findings**, alle EINE Wurzel — `@opentelemetry/core` < 2.8.0
+       ([GHSA-8988-4f7v-96qf](https://github.com/advisories/GHSA-8988-4f7v-96qf), Baggage-DoS) über die Kette
+       instrumentation-\* → `@sentry/node` → **`lighthouse`** (reine Dev-Dependency, keine Prod-Exposition —
+       die App ist statisch/clientseitig; der Code liefe nur im CI-Runner). Fix erfordert
+       `npm audit fix --force` = **Lighthouse-Major-Bump** ⇒ genau der Fall dieses Postens. **DoD des
+       Bündels:** (a) Lighthouse-Major heben · (b) Schwellen NICHT übernehmen, sondern **neu vermessen**
+       (16-Runner-Reihe wie 20.7., `perf-kalibrierung.yml`) · (c) Pinning ab dann **explizit dokumentiert**
+       (Lighthouse-Version neben den Deckeln in `scripts/perf/lighthouse-budget.ts`) · (d) `npm audit`
+       moderate = 0. **Vorsicht Lockfile:** lokales npm 11 prunt bei jedem Tree-Write den von CIs npm 10
+       verlangten verschachtelten `typescript@5.9.3`-Eintrag (Vorfall 21./22.7., PR #326) — Diff vor dem
+       Commit prüfen, ggf. chirurgisch setzen.
+    5. **Revisions-Politik für legitimes Wachstum.** Vorschlag: **Deckel = Ist + max(3 sd, ~25 %)**,
+       **Anhebung nur mit Mess-Beleg**. Ohne solche Politik wird jeder Deckel irgendwann «mal eben»
+       hochgesetzt — und misst danach nichts mehr (Lektion 20.7.).
+    **Abgrenzung:** Der **echte CLS-Defekt auf `/gesetze` (0.109 @8×)** gehört **NICHT hierher**, sondern
+    ist ein Produktfehler mit eigenem Schritt **`W2·15-CLS`** — Tor-Arbeit und Defekt-Behebung dürfen sich
+    nicht gegenseitig verdecken (§14.2).
+  - **f · Serif-Preload nachziehen** *(§14-Intake 20.7.2026 — kleiner UX-Trade-off, Folge von
+    `font-display:optional`)*. `font-display:optional` hat die CLS-Ursache (Serif-Font-Swap unter Linux)
+    beseitigt — **um den Preis**, dass die Serif-Schrift bei langsamer Verbindung im ersten Paint
+    **gar nicht** erscheint und der Wechsel erst beim nächsten Besuch sichtbar wird. Ein gezielter
+    `preload` der tatsächlich im ersten Viewport benutzten Schnitte holt den Trade-off zurück, **ohne**
+    den CLS-Gewinn aufzugeben. **Auflage:** mit CLS-Messung **vorher/nachher** belegen — eine
+    Preload-Änderung, die CLS wieder hebt, ist keine Verbesserung. Klein, eigener Commit.
+    Trailer `Roadmap: QS-PERF`.
+
+---
+
+## §2 · ROADMAP-Spec W2·15-CLS (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+  **Bewusst ein eigener Schritt und NICHT unter `QS-PERF` mitgeführt (§14.2):** `QS-PERF` ist die Arbeit am
+  **Tor**; dies hier ist ein **Defekt im Produkt**, den Nutzer:innen sehen. Die beiden dürfen sich nicht
+  gegenseitig verdecken — genau das ist am 20.7. passiert, als die Tor-Kalibrierung die ganze
+  Aufmerksamkeit band.
+  **Befund:** `/gesetze` misst **CLS 0.109 unter 8× CPU**; Ursache sind **zwei unreservierte Platzhalter**,
+  die asynchron einwachsen. **Kein Tor deckt das ab:** der CLS-Deckel läuft auf `/gesetze/bund/OR` und der
+  Startseite, nicht auf der Übersicht `/gesetze` — der Defekt ist an allen Budgets vorbeigelaufen.
+  **Fix nach §15.2:** Platz **reservieren** (token-basierte Mindesthöhe am **prerenderten** Element),
+  **nie** weniger Inhalt zeigen. **Zweiter, gleich wichtiger Teil: `/gesetze` in die Perf-Messung aufnehmen**,
+  sonst fällt derselbe Defekt beim nächsten Mal wieder durch.
+  **DoD:** CLS auf `/gesetze` unter dem geltenden Deckel, gemessen unter 8× **und** 4× · `/gesetze` als
+  gemessene Route im Tor verdrahtet · golden byte-gleich · axe. Trailer `Roadmap: W2·15-CLS`.

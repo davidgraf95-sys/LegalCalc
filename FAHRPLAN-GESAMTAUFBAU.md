@@ -280,3 +280,74 @@ Das fertig gebaute 26×-Asset **Beurkundung** wird in Phase 0 per Batch-Deploy a
 - **Mapping:** Phase 1–3 ≙ W2·6-DATA (E0–E4) + W2·5b/W2·6-Reste + NORMTEXT-Vollständigkeits-Audit; Phase 2 deckt zusätzlich Fedlex-Portfolio-Pakete 1/2/5 ([D]-Schritt) und OCL-W12; Phase 4 ≙ W3·12 (+BS/3-Tier-Bündel) + Vendor-Sondierungs-Tor; Phase 5 ≙ Tarif-Stränge + Abnahme-Paket-Schnürung; Phase 6 ≙ Abnahme-Warteschlange (Wellen 1+2) + E5/E6 + W3·11 + RECHTSPRECHUNG-P-Kette + Pakete 3/4 + Gerichtsferien-Matrix; das Querschnitt-Band (QS-PERF/QS-GP/QS-PH, SEO-A11y, UX, Lernphase) läuft als Bahn D **durch alle Phasen** und wird — gemäss Daueranweisung «beide Zonen» — bei jedem Überblick gleichwertig mitgeführt.
 - **Einpflege:** Je Phase werden die Etappen als ROADMAP-Schritte mit Link auf ihren Herkunfts-FAHRPLAN geführt (kein FAHRPLAN ohne ROADMAP-Anker — QS-PH-Regel); der Phasen-Takt selbst wird als @meta-Etikett (`plan:next`) abgebildet, das **Slot-Inhaber-Etikett** kommt als zweites Etikett dazu — beide prüft `check:plan`, sobald das Phase-0-Etikettensystem steht.
 - **Konfliktauflösung:** Wo dieser Plan und ROADMAP-Fliesstext divergieren (z. B. 26×-Slot-Status, Abnahme-Welle-Startdatum), gilt ROADMAP nach Davids T0b-Entscheid — dieser Plan liefert nur den Entscheidungsvorschlag und die Begründungsordnung.
+
+---
+
+## §1 · ROADMAP-Spec Funktions-Katalog/Kern-Auflagen (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+**Kern-Auflagen (§1/§2/§8-kritisch):**
+- **Fristen-Cockpit:** Vorwärts nur mit *bestehenden* Auslösern bündeln (jede neue Ereignis→Frist-
+  Abbildung ist verifikationspflichtiger Rechtsregel-Code → bricht `[OF]`); stateless.
+- **Streitwert:** ZPO-Streitwert ≠ BGG-Schwelle (Art. 51–53 vs. 74 BGG); `kostenBasisCHF` nur ins
+  Kosten-Cockpit, `streitwertVerfahrenCHF` nur in Zuständigkeit/Rechtsmittel; Ermessen → `null`, nie 0.
+- **Rechtsmittelprüfung:** BGG-Schicht an `berechneBgerRechtsweg()` **delegieren**, nicht neu codieren;
+  nicht-rechenbare Tore (Art. 74 II lit. a, Art.-83-Katalog) als «selbst prüfen», keine Scheinpräzision.
+- **Prozesskosten:** Dispositiv bei Ermessenstarif nur Spanne+Kriterien; bei `quote=null` keinen Saldo
+  erzwingen; §8-Disclaimer auch im Gericht-Modus; MwSt nur auf Schalter.
+- **Recherche/Gerichts-Set (grenzwertig):** nur amtliche Regeste **oder** eigene maschinelle (Marker
+  «maschinell»); kein fremdverfasster Drittleitsatz; `statutes[]` = «genannt/zitiert», nicht «einschlägig».
+- **Adressregister:** Lese-Schicht, kein Datenduplikat; Zuständigkeits-Schluss bleibt im Navigator;
+  «noch nicht erfasst» statt raten; Stand + Verfallsregister.
+- **Verzug/Inkasso:** Reverse-Reader nur strukturierte Eingabe (kein Freitext/LLM); Mahnung ruft Engine,
+  rechnet 5 % nicht nach (§5).
+- **B2B-Vertrag (grenzwertig):** vorhandene Schemas (NDA/Auftrag/Zession) nicht neu bauen (§5); nicht-
+  dispositive Klauseln nur an konkrete Norm verankert oder mit §8-Offenlegung weglassen — kein
+  Kommentar-/Verlagswortlaut.
+- **Schwellen-Module:** OR 727 I = 2 von 3 Schwellen in **zwei** Folgejahren; DSG kennt keine 72h-Frist
+  («so rasch als möglich») → kein numerischer Wert, nur Zitat + §8.
+
+---
+
+## §2 · ROADMAP-Spec Strang-Detailpunkte (wörtlich verschoben 31.7.2026)
+
+*Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
+
+- **Offene Detailpunkte:** GRUNDLAGEN G3.4 kant. Stammdaten · BS C3/§-Verlinkung/N5/D3 · POPUP
+  PDF-only-Kantone/Token-Lücken · LUECKEN L7 Konfidenz-UI/L8 · NOTARIAT NG-4 Zweitpass · TARIF G3b
+  komplett (A+B+C+D); Residuum = 32 mehrdeutige SG-Restblöcke (faithful Plaintext, §1) + eigener
+  ZH-PDF-Strang (ZH-243 NotGebV §17 / hierarchische Ziffer-Tarife, andere Risiko-Klasse).
+  **ERLEDIGT 5.7. (SG-2935-Rohtext-Reparatur, Branch `fix/sg2935-x-spalten`).** Wortlaut → `ROADMAP-CHRONIK.md` → Strang-Detailpunkte/SG-2935 (26.7.2026); Detail `archiv/FAHRPLAN-TARIF-TABELLEN-STUFE2.md` §SG-2935-Reparatur.
+- **Infrastruktur-Fundament:** GESETZESTEXT-POPUP (Snapshot/Drift) trägt RECHTSSAMMLUNG/Rechtsprechungs-
+  Verzahnung/GESETZE-IMPORT → vor aufsetzenden Strängen mitdenken.
+- **Archiv-Kandidaten**: INTERNATIONAL-VOLLTEXT-Rest. RECHTSPRECHUNG-Dach/TARIF-STUFE2/
+  BGER-RECHTSWEG deployt → nur Abnahme. **Erledigt 31.7.2026:** die Archiv-Welle hat 11 verwaiste
+  Fahrpläne verify-then-archive ins Archiv gebracht (je ein Opus-Verdikt NUR-MIT-NACHTRAG), 45
+  Nachtrag-Einzeiler unter «Nachträge aus der Archiv-Welle 31.7.2026» ergänzt, `ARCHIV_BACKLOG`
+  geleert. Methode bleibt für künftige Fälle: je Datei ein Opus-Verdikt, erst mappen, dann
+  verschieben.
+- **Stale Doku-Köpfe** (in der jeweiligen `FAHRPLAN-*.md` korrigieren):
+  ~~POPUP «27»→218~~ **erledigt durch die Archivierung 31.7.2026** (Datei nach
+  `archiv/FAHRPLAN-GESETZESTEXT-POPUP.md`, Kopf bleibt byte-genau historisch stehen); Nebenbefund:
+  der Zielwert 218 war selbst überholt — `public/normtext/bund/` trägt am 31.7.2026 **227** Dateien,
+  massgeblich ist ab hier der §11-Träger `bibliothek/normen/norm-vorschau-snapshot-system.md`.
+  ~~VERTRAGS-VARIANTEN «1000»~~ · ~~LUECKEN~~ · ~~NOTARIAT-GRUNDBUCH~~ **erledigt durch die
+  Archivierung 31.7.2026** (Dateien nach `archiv/`; die Köpfe bleiben dort byte-genau historisch
+  stehen). Massgeblich sind ab hier die Nachfolge-Träger: `variantenInventar` (Stand 168 erzeugbare
+  Dokumente = 17 %) für die Zähl-Wahrheit, `src/data/tarif/notariat-grundbuch.ts` +
+  `bibliothek/kosten/notariat-grundbuch-kantone.md` für Notariat/Grundbuch (die überholten
+  Kopf-Angaben — Handänderungssteuer-Kantonsliste ohne SZ/NW/OW-Korrektur, Datei-Pfade
+  `notariat.ts`/`grundbuch.ts` — sind damit historisch), `src/data/tarif/beurkundung.ts` für die
+  Lücken-Statusspalte.
+- **Klein-Backlog** (Issue-Ebene): Direktklage Art. 8 ZPO < 100k plausibilisieren · stabile Keys in
+  7 Listen-Editoren · Datepicker-Pfeiltasten · Markenschriften in Vorlagen-PDFs · Detailseiten-Titel an
+  Katalog-Titel (§13) · CHF-Formatter `chf(n,dez)` als SSoT (nur mit Golden) · Norm-Chip-Kopien auf
+  geteilten NormLink · Gründungs-Rahmen GmbH/AG teilen · 4× `MONATE`-Array → eine lib-Konstante ·
+  GebV-SchKG: lokalen `staffel()`-Helfer (`gebvKosten.ts`) nur nach Charakterisierungs-Test der
+  Bandgrenzen-Semantik aufs `tarif/staffel.ts`-Primitiv heben — bei Nicht-Deckung NICHT
+  vereinheitlichen (§1 vor §6; `archiv/FAHRPLAN-PRODUKTAUSBAU-BURGGRABEN.md` §P4) ·
+  **BGE-Metadaten-Asymmetrie** (OCL-Quelle, Befund Gegenprüfung 30.6.): bei manchen BGE
+  `aktenzeichen`/`abteilung`/`titel` `null`, einzelne ohne `rubrum`/`dispositivOrders` (z. B.
+  `151_V_30`) — Korpus-weit prüfen, ob aus `full_text`/`citation` nachziehbar (kein Inhalts-/
+  Identitätsproblem, rein Metadaten; `[OF]`).
