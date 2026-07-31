@@ -20,6 +20,13 @@ mit einer Zeile, warum. Nie blind bauen: ein Fix ohne vorher gesehenen Fehlschla
 aufgeschoben mit Grund), wird dieser Entscheid **nicht still gekippt** — entweder er trägt,
 oder er wird ausdrücklich und begründet geändert (§14).
 
+> **Anker-Form (Nachtrag 31.7.2026, Endprüfungs-Funde 16/17).** Eine **blosse Zeilenangabe
+> ist kein gültiger Anker.** Sieben Referenzen waren schon zwei Commits nach dem Schreiben der
+> Befundliste auf den Nachbarabsatz gerutscht (Kopfzeilen-Einschübe aus AP-7 und der
+> Nachdiät), eine (LM-124) traf von Anfang an die falsche Stelle. Jede `dedup_referenz` nennt
+> darum einen **§-, Überschriften- oder `@meta`-Anker**; eine Zeilenangabe darf nur
+> *zusätzlich* danebenstehen und ist nie der Anker selbst.
+
 **§0.3 Risiko-Trennung.** Der grösste Teil ist reine Darstellung (§3) und läuft ohne
 Gegenprüfung. Drei Klassen laufen anders: **Such-/Query-Logik** (Relevanz, Ranking,
 Substring-Treffer) — nie «UI-Fix», sondern eigener Nachweis; **§1-nahe Logik** (Eingabe-Parsing,
@@ -64,7 +71,7 @@ Je Eintrag: Referenz aus dem Bestand + der Ein-Zeilen-Grund, warum kein Neubau.
 - **LM-020** (Mittel, K-02) — gemischte Richternamen-Formen: identischer Defekt an derselben Stelle; `W2·6-RNAME` hat
   dafür bereits eine verbindliche Regel (Auflösung nur bei Eindeutigkeit, Kollisions-Report,
   Risikopfad nach dem #309-Vorfall). Dort abarbeiten, nicht doppelt einplanen.
-  Referenz: `FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md §6 «Richternamen gegen den Staatskalender auflösen» (W2·6-RNAME, Z.157–184); ROADMAP.md:519`
+  Referenz: `FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md §6 «Richternamen gegen den Staatskalender auflösen» (W2·6-RNAME); ROADMAP.md → @meta W2·6-RNAME`
 - **LM-104** (Hoch, K-10) — «SR»-Präfix an kantonalem Erlass: identische Stelle
   (`src/pages/gesetz-leser/parts/ErlassLeserKopf.tsx`), im Bestand als **F28** mit
   Snapshot-Tor geführt. Als F28 abarbeiten.
@@ -95,7 +102,7 @@ Je Eintrag: Referenz aus dem Bestand + der Ein-Zeilen-Grund, warum kein Neubau.
 **16 Befunde** · Blocker 3 · Hoch 3 · Mittel 7 · Detail 3 · `W2·17-UI-BEFUNDE-B1`
 
 - [ ] **LM-040** · Blocker · Der gewählte Chip unterscheidet sich vom ungewählten nur in der Rahmenfarbe … [Verdacht → DESIGN-REGLEMENT.md F4 «selected» + FAHRPLAN-UI-QUALITAET.md §3(c) Muster-/Zustands-Konsistenz…]
-- [ ] **LM-041** · Hoch · Der Chip unterscheidet nicht, in welcher Rolle die Norm im Entscheid … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §9/B1 Facetten-Datenmodell (Z.402–410) + §1.2 KantenChip-Dichteregel…]
+- [ ] **LM-041** · Hoch · Der Chip unterscheidet nicht, in welcher Rolle die Norm im Entscheid … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §9/B1 Facetten-Datenmodell + §1.2 KantenChip-Dichteregel…]
 - [ ] **LM-044** · Mittel · Normverweis, Statusbadge («Entwurf», «Zu unterzeichnen»), Standangabe, Sprache, Instanz und Gemeinwesen sehen … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3 (Z.1429: «NormChip/Materialien (DEFER, U-VERWEIS-Kollisio…]
 - [ ] **LM-045** · Mittel · Fünf gleich aussehende Chips sind drei verschiedene Dinge: «↗ geltende Fassung» … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 A25/C-2 (Currency-Tonung) + src/index.css:692–700; Code src/pages…]
 - [ ] **LM-046** · Mittel · Der Chip sieht wie die naheliegendste Aktion aus, ist aber ein … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §X «Fassungsvergleich/Zeitreise» (hart gegated: Fedlex-P1a/b + David-…]
@@ -241,9 +248,9 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 **10 Befunde** · Blocker 1 · Hoch 3 · Mittel 4 · Detail 2 · `W2·17-UI-BEFUNDE-B8`
 
 - [ ] **LM-021** · Hoch · Das Menü enthält zwei Erklärabsätze in 11 px Grauschrift, zusammen rund … [Verdacht → src/components/verzahnung/BezugFacettenWahl.tsx:152–158; src/components/verzahnung/BezugZeitWah…]
-- [ ] **LM-022** · Hoch · Die Filterschalter zeigen keinen erkennbaren Aktivzustand: «alle» sieht aus wie «AG». … [Verdacht → ROADMAP.md:544 + ROADMAP-CHRONIK.md:1236–1247 (W2·7-BEZUG B7, done 29.7.2026); src/components/v…]
+- [ ] **LM-022** · Hoch · Die Filterschalter zeigen keinen erkennbaren Aktivzustand: «alle» sieht aus wie «AG». … [Verdacht → ROADMAP.md → W2·7-BEZUG B7 + ROADMAP-CHRONIK.md → W2·7-BEZUG (B7, done 29.7.2026); src/components/v…]
 - [ ] **LM-023** · Mittel · «Linien», «Fussnoten» und «Verweise» tragen rechts ein ausgeschriebenes «✓ an» bzw. … [Verdacht → FAHRPLAN-UI-QUALITAET.md §3 (Muster-Konsistenz, §13-F4-Zustandsmatrix, Z.65–72); src/pages/gese…]
-- [ ] **LM-024** · Mittel · Das Balkendiagramm zeigt sechs verschieden hohe Balken ohne Werte, ohne Achsenbeschriftung … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §9 B5 (Z.422–441); src/components/verzahnung/BezugZeitWahl.tsx:1–34 +…]
+- [ ] **LM-024** · Mittel · Das Balkendiagramm zeigt sechs verschieden hohe Balken ohne Werte, ohne Achsenbeschriftung … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §9 B5; src/components/verzahnung/BezugZeitWahl.tsx:1–34 +…]
 - [ ] **LM-025** · Detail · Neben «Fussnoten» steht eine unerklärte Zahl (932); bei «Linien» und «Verweise» … [Verdacht → FAHRPLAN-GESETZES-UX.md Z.1430 (A26, David 11.7.2026); src/pages/gesetz-leser/LeserAnsichtMenu.…]
 - [ ] **LM-026** · Detail · «aus» und «Fussnoten» stehen inline nebeneinander, «Chronologie» steht darunter in eigener … [neu]
 - [ ] **LM-061** · Blocker · Die letzte Karte bzw. der letzte Chip wird am rechten Containerrand … [Verdacht → abnahme/responsive-audit/BERICHT.md D10 + D11 + Systematik-Befund S-B; FAHRPLAN-UI-NAVIGATION.m…]
@@ -266,7 +273,7 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 - [ ] **LM-125** · Mittel · Der Hinweis läuft über rund 1070 px bei 11 px Schriftgrösse … [Verdacht → DESIGN-REGLEMENT.md §B2b-Zeile der Audit-Tabelle («Lesespalte ✅ erfüllt, 38× max-w-reading») +…]
 - [ ] **LM-126** · Mittel · 19 verschiedene Schriftgrössen über 41 Seiten, darunter Paare wie 14 und … [Verdacht → DESIGN-REGLEMENT.md §B2-Zeile der Audit-Tabelle («🟡 teilweise … 22× text-[…rem] + 6× text-sm/ba…]
 - [ ] **LM-127** · Mittel · Vor einem Komma steht ein Leerzeichen: «Dr. A. Pfleiderer (Vorsitz), C. … [Verdacht → public/rechtsprechung/kanton/BS/bs_sozialversicherungsgericht/AH.2025.7.json (Feld rubrum.beset…]
-- [ ] **LM-129** · Mittel · Die Regeste-Auszüge brechen mitten im Wort mit Auslassungspunkten ab («… gehören … [Verdacht → ROADMAP.md:512 (W2·6-BGE «BGE-Auszug abgeschnitten — vollständig gefixt 34/34», Schutz-Tor U+20…]
+- [ ] **LM-129** · Mittel · Die Regeste-Auszüge brechen mitten im Wort mit Auslassungspunkten ab («… gehören … [Verdacht → ROADMAP.md → W2·6-BGE, Chronik `ROADMAP-CHRONIK.md` → W2·6/BGE-Auszug («BGE-Auszug abgeschnitten — vollständig gefixt 34/34», Schutz-Tor U+20…]
 - [ ] **LM-130** · Detail · Text läuft aus der Karte heraus: «Grundausstattung» ragt über den Rand. [Verdacht → abnahme/responsive-audit/BERICHT.md Defekt D1 + Systematik-Befund S-C («Grid-Fremdkinder auf Mo…]
 - [ ] **LM-131** · Detail · Label-Stile gemischt: oben Monospace-Versalien («DATUM (EREIGNIS)», «FRIST»), im unteren Rechnerteil Grotesk … [Verdacht → DESIGN-REGLEMENT.md §e «Zwei-Stimmen-Regel» (Z.393-399: Mono nur Zahlen/Aktenzeichen) + src/ind…]
 - [ ] **LM-132** · Detail · Leerzeichen vor dem Komma: «Dr. med. R. von Aarburg , Dr. … [Verdacht → public/rechtsprechung/kanton/BS/bs_sozialversicherungsgericht/UV.2023.8.json (rubrum.besetzung:…]
@@ -287,7 +294,7 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 - [ ] **LM-090** · Mittel · Jede Zeile trägt vier Symbolknöpfe (▲ ▼ ⧉ ✕) von je … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §4 R6 (Tap-Target-Pass) und §1 N0d/O3 (Reiter-Tracker); abnahme/respo…]
 - [ ] **LM-091** · Mittel · Beim Überfahren erscheint rechts oben eine Leiste «Zitat | Link | … [Verdacht → FAHRPLAN-GESETZES-UX.md §12.5 (EID-2 ✅ 25.7., PR #349 — «David-Gate Platzierung … Sichtprüfung…]
 - [ ] **LM-095** · Mittel · Der gewählte Name steht als Chip «C. Müller ×» rechts neben … [Verdacht → ROADMAP.md Z.485-489 R-RICHTER «Block B offen, reines UI (Autocomplete-Facette + ?richter-URL-A…]
-- [ ] **LM-096** · Mittel · Neben jedem Normchip steht ein eigenes, etwa 16 px grosses Kopiersymbol … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md Z.28 (Grammatik-Regel 1: «⧉ nur auf KontextPanel-Chips + NormPopover…]
+- [ ] **LM-096** · Mittel · Neben jedem Normchip steht ein eigenes, etwa 16 px grosses Kopiersymbol … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §0 Kritik-Tabelle Zeile 3b (Grammatik-Regel 1: «⧉ nur auf KontextPanel-Chips + NormPopover…]
 - [ ] **LM-098** · Mittel · Zwei Paare «A− A+» sind gleichzeitig sichtbar: eines links in der … [Verdacht → Reglement-Konflikt: DESIGN-REGLEMENT-RECHTSPRECHUNG.md Z.200-203 R17 (Reader-eigener A−/A+) geg…]
 
 **Code-Flächen (grob, aus den Routen):** `src/components/ui`, `src/pages/gesetz-leser`, `src/components/rechtsprechung`.
@@ -478,7 +485,7 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 - [ ] **LM-013** · Hoch · «A+» ist im Moment des Öffnens bereits gesperrt (disabled), «A−» nicht. … [bereits gebaut → src/pages/EntscheidLeser.tsx:157–169 (FS_STUFEN, ladeFsIdx) + 232–236 (setFs, localStorage rsp-…]
 - [ ] **LM-017** · Mittel · Beide Panels sind ebenfalls weit links vom Auslöser verankert und überlagern … [bereits gebaut → src/components/layout/ReiterUebersicht.tsx:35–46 + 163; src/components/layout/VerlaufUebersicht…]
 - [ ] **LM-042** · Hoch · Ein «ff.»-Zitat wird auf mehrere Einzelartikel gebucht: Derselbe Entscheid (Sozialversicherungsgericht BS … [bereits gebaut → src/lib/rechtsprechung/zitat-extraktion.ts:365 (GLIED_KOPF: «Sub-Marker/ff. werden bewusst NICH…]
-- [ ] **LM-043** · Hoch · Am Verweis ist nicht erkennbar, ob der Entscheid zur geltenden Fassung … [bereits gebaut → FAHRPLAN-VERZAHNUNG-UI.md §V1c «Normrevisions-Ehrlichkeit» (Z.187–232); Code src/lib/verzahnung…]
+- [ ] **LM-043** · Hoch · Am Verweis ist nicht erkennbar, ob der Entscheid zur geltenden Fassung … [bereits gebaut → FAHRPLAN-VERZAHNUNG-UI.md §V1c «Normrevisions-Ehrlichkeit»; Code src/lib/verzahnung…]
 - [ ] **LM-062** · Blocker · Die Tabelle wird rechts abgeschnitten, ohne Scrollbereich und ohne Hinweis. Die … [bereits gebaut → src/components/forms/ErbteilungForm.tsx:305 (lc-card p-5 overflow-x-auto) + :307 (table min-w-[…]
 - [ ] **LM-092** · Mittel · Der Erklärtext ist gepunktet unterstrichen, aber nicht klickbar, und steht auf … [bereits gebaut → src/components/EntwurfLegende.tsx:33-42; FAHRPLAN-UI-NAVIGATION.md §1 N0d·W3 (✅ gebaut 11.7.202…]
 - [ ] **LM-100** · Detail · Zwei Links in derselben Zeile in zwei Stilen: «Kantonale Gesetzessammlungen (lexfind) … [bereits gebaut → src/pages/Gesetze.tsx:538-545 (auch :425-426)]

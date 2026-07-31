@@ -292,7 +292,7 @@ Externe Sichtprüfung, Stand 29.07.2026 · 161 Befunde, geschnitten nach berühr
 - **Status:** offen
 - **Bemerkung:** —
 - **Dedup-Triage 31.7.2026:** SICHER
-- **Dedup-Referenz:** FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md §6 «Richternamen gegen den Staatskalender auflösen» (`W2·6-RNAME`, Z.157–184); ROADMAP.md:519
+- **Dedup-Referenz:** FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md §6 «Richternamen gegen den Staatskalender auflösen» (`W2·6-RNAME`); ROADMAP.md → @meta `W2·6-RNAME`
 - **Dedup-Notiz:** Derselbe konkrete Defekt an derselben Stelle: gemischte Namensformen in der Richter-Auswahl («P. Kaderli» → «Kaderli Peter»), inkl. der Frage, ob abgekürzt und ausgeschrieben dieselbe Person meinen. RNAME hat dafür bereits eine verbindliche Regel (Auflösung NUR bei Eindeutigkeit, Kollisions-Report, Risikopfad `QS-GP` nach dem #309-Vorfall mit 11 erfundenen Amtsträger:innen). NICHT doppelt einplanen. Nicht gedeckt ist allein der Nebensatz «Vorschlagsliste verdeckt die erweiterten Filter» (reines UI).
 
 ### K-03 · Menüinhalt und Zustandsanzeige
@@ -322,7 +322,7 @@ Externe Sichtprüfung, Stand 29.07.2026 · 161 Befunde, geschnitten nach berühr
 - **Status:** offen
 - **Bemerkung:** —
 - **Dedup-Triage 31.7.2026:** VERDACHT
-- **Dedup-Referenz:** ROADMAP.md:544 + ROADMAP-CHRONIK.md:1236–1247 (W2·7-BEZUG B7, done 29.7.2026); src/components/verzahnung/BezugFacettenWahl.tsx:35–76 + 109–125; FAHRPLAN-UI-QUALITAET.md §3 (§13-F4-Zustandsmatrix)
+- **Dedup-Referenz:** ROADMAP.md → W2·7-BEZUG B7 + ROADMAP-CHRONIK.md → W2·7-BEZUG (B7, done 29.7.2026); src/components/verzahnung/BezugFacettenWahl.tsx:35–76 + 109–125; FAHRPLAN-UI-QUALITAET.md §3 (§13-F4-Zustandsmatrix)
 - **Dedup-Notiz:** Der «Eidg.»-Teil ist bereits abgearbeitet: B7/c (David 28.7. «Eidg. das scheint keine funktion zu haben?») hat reproduziert, dass es kein Bug ist (164 von 75'365 Kanten), und die Ehrlichkeit gebaut — gedämpfte LEER-Optik + erklärender Titel. Das Nicht-Deaktivieren ist dort ein begründeter a11y-Entscheid (ein `disabled` nähme Screenreadern die 0). Offen bleibt allein die Kontrast-/Erkennbarkeitsfrage des Aktivzustands (AKTIV = bg-brass-100/60 + font-medium) → Heimat QS-UI §3 Zustandsmatrix.
 
 #### LM-023 · 3 Mittel
@@ -350,7 +350,7 @@ Externe Sichtprüfung, Stand 29.07.2026 · 161 Befunde, geschnitten nach berühr
 - **Status:** offen
 - **Bemerkung:** —
 - **Dedup-Triage 31.7.2026:** VERDACHT
-- **Dedup-Referenz:** FAHRPLAN-VERZAHNUNG-UI.md §9 B5 (Z.422–441); src/components/verzahnung/BezugZeitWahl.tsx:1–34 + 153–195 + 218–232
+- **Dedup-Referenz:** FAHRPLAN-VERZAHNUNG-UI.md §9 B5; src/components/verzahnung/BezugZeitWahl.tsx:1–34 + 153–195 + 218–232
 - **Dedup-Notiz:** Der geforderte Zustand ist teilweise da und im Übrigen bewusst so entschieden: je Balken ein `title` «Jahr: N Verknüpfungen», Einheit + Grundgesamtheit im Fusssatz, Bedienbarkeit über `cursor-ew-resize` + aria-label «Ziehen wählt einen Bereich». «Keine zweite Achse, keine Legende, kein Dashboard» ist Davids Minimalismus-Vorgabe vom 28.7.2026 ⇒ sichtbare Achsenbeschriftung wäre eine Entscheid-Änderung, kein Bugfix.
 
 #### LM-025 · 4 Detail
@@ -592,7 +592,7 @@ Externe Sichtprüfung, Stand 29.07.2026 · 161 Befunde, geschnitten nach berühr
 - **Status:** offen
 - **Bemerkung:** —
 - **Dedup-Triage 31.7.2026:** VERDACHT
-- **Dedup-Referenz:** FAHRPLAN-VERZAHNUNG-UI.md §9/B1 Facetten-Datenmodell (Z.402–410) + §1.2 KantenChip-Dichteregel + Grammatik-Regel 5
+- **Dedup-Referenz:** FAHRPLAN-VERZAHNUNG-UI.md §9/B1 Facetten-Datenmodell + §1.2 KantenChip-Dichteregel + Grammatik-Regel 5
 - **Dedup-Notiz:** B1 deklariert die Facetten abschliessend: quelltyp · ebene · kanton · gericht/Instanz · Leitentscheid-Status — Sachgebiet und Zitier-ROLLE (tragende Erwägung vs. Klammerhinweis) sind NICHT dabei. Der Befund ist damit eine Erweiterung des B1-Modells, kein Anzeigefehler; Regel 5 verlangt Prop am bestehenden KantenChip, die Dichte-Regel §1.2 lässt nur EINEN Zusatz je Chip zu.
 
 #### LM-042 · 2 Hoch
@@ -620,7 +620,7 @@ Externe Sichtprüfung, Stand 29.07.2026 · 161 Befunde, geschnitten nach berühr
 - **Status:** offen
 - **Bemerkung:** —
 - **Dedup-Triage 31.7.2026:** BEREITS-GEBAUT
-- **Dedup-Referenz:** FAHRPLAN-VERZAHNUNG-UI.md §V1c «Normrevisions-Ehrlichkeit» (Z.187–232); Code src/lib/verzahnung/revisionen-extrakt.ts + src/pages/gesetz-leser/parts/BezuegeZeile.tsx:172–180; Artefakt public/verzahnung/artikel-revisionen/OR.json
+- **Dedup-Referenz:** FAHRPLAN-VERZAHNUNG-UI.md §V1c «Normrevisions-Ehrlichkeit»; Code src/lib/verzahnung/revisionen-extrakt.ts + src/pages/gesetz-leser/parts/BezuegeZeile.tsx:172–180; Artefakt public/verzahnung/artikel-revisionen/OR.json
 - **Dedup-Notiz:** V1c ist gebaut UND im neuen Bezüge-Pfad (B4/B7) verdrahtet: `klassifiziereFassungsBezug(entscheidDatum, revision)` setzt am Chip den ↻-StatusBadge «Norm revidiert seit Entscheid» mit Revisionsdatum + AS-Fundstelle. Am Artefakt geprüft: OR Art. 367 → {iso 2026-01-01, as «AS 2025 270»}, Art. 370 identisch — der Verweis von 2023 MUSS also ↻ tragen. Dass der Prüfer ihn nicht erkannte, ist LM-050 (Glyph ohne Legende). Rest der Erwartung («und wenn nicht, zu WELCHER Fassung») = FAHRPLAN-UI-NAVIGATION.md §X Fassungsvergleich/Zeitreise, hart gegated (Fedlex P1a/b + David-Freigabe).
 
 #### LM-044 · 3 Mittel
@@ -1370,7 +1370,7 @@ Externe Sichtprüfung, Stand 29.07.2026 · 161 Befunde, geschnitten nach berühr
 - **Status:** offen
 - **Bemerkung:** —
 - **Dedup-Triage 31.7.2026:** VERDACHT
-- **Dedup-Referenz:** FAHRPLAN-VERZAHNUNG-UI.md Z.28 (Grammatik-Regel 1: «⧉ nur auf KontextPanel-Chips + NormPopover, unter dem Gating kannOeffnen && !istOffen») + FAHRPLAN-UI-NAVIGATION.md §3 V3 («⧉ an jedem Chip bleibt VERWORFEN», A6 «keine Sekundär-Buttons je Zeile») + FAHRPLAN-GESETZES-UX.md Z.1092-1094
+- **Dedup-Referenz:** FAHRPLAN-VERZAHNUNG-UI.md §0 Kritik-Tabelle Zeile 3b (Grammatik-Regel 1: «⧉ nur auf KontextPanel-Chips + NormPopover, unter dem Gating kannOeffnen && !istOffen») + FAHRPLAN-UI-NAVIGATION.md §3 V3 («⧉ an jedem Chip bleibt VERWORFEN», A6 «keine Sekundär-Buttons je Zeile») + FAHRPLAN-GESETZES-UX.md Z.1092-1094
 - **Dedup-Notiz:** Beobachtung in der Sache widerlegt: das Symbol ist kein Kopiersymbol, sondern der ⧉-«nebeneinander öffnen»-Knopf — src/components/kontext/KontextPanel.tsx:93-102: h-6 w-6 (=24 px, WCAG 2.5.8), border, title UND aria-label «… nebeneinander öffnen». Der verbleibende Punkt («nicht mehrfach je Zeile») steht gegen einen dokumentierten Entscheid → Entscheid-Frage, nicht Bug.
 
 #### LM-097 · 3 Mittel
@@ -1768,7 +1768,7 @@ Externe Sichtprüfung, Stand 29.07.2026 · 161 Befunde, geschnitten nach berühr
 - **Status:** offen
 - **Bemerkung:** —
 - **Dedup-Triage 31.7.2026:** VERDACHT
-- **Dedup-Referenz:** abnahme/responsive-audit/BERICHT.md Defekt D5 (A−/A+-Steller beschnitten, Such-Placeholder auf «Suc» gequetscht) — W3·14-Responsive-Audit, ROADMAP.md:645-647
+- **Dedup-Referenz:** abnahme/responsive-audit/BERICHT.md Defekt D5 (A−/A+-Steller beschnitten, Such-Placeholder auf «Suc» gequetscht) — ROADMAP.md → @meta `W3·14-Responsive-Defekte` (dort ist D5 ausdrücklich als «gefixt» geführt), Wortlaut `ROADMAP-CHRONIK.md` → W3·14-Responsive-Defekte
 - **Dedup-Notiz:** Gleiche Klasse (Beschriftung/Placeholder überläuft den reservierten Platz), dort @390 im Entscheid-Kopf, hier bei Skalenstufe 140 %. Zusatz-Beleg: src/components/layout/useSchriftskala.ts:25-26 begründet das Stufenband 0.9–1.4 ausdrücklich damit, dass «Tap-Ziele und Layout nicht brechen» — der Befund widerlegt diese Annahme an ihrem Maximum.
 
 #### LM-125 · 3 Mittel
@@ -1838,7 +1838,7 @@ Externe Sichtprüfung, Stand 29.07.2026 · 161 Befunde, geschnitten nach berühr
 - **Status:** offen
 - **Bemerkung:** —
 - **Dedup-Triage 31.7.2026:** VERDACHT
-- **Dedup-Referenz:** ROADMAP.md:512 (W2·6-BGE «BGE-Auszug abgeschnitten — vollständig gefixt 34/34», Schutz-Tor U+2026 in `check:entscheide`) + src/lib/rechtsprechung/browse.ts:208-231 (`regesteLeitsatz`, Trunkierungs-Krümel-Schutz) + FAHRPLAN-GESETZES-UX.md §10.10 E1/A29 (Mehrfach-Regesten «Regeste a/b», gebaut)
+- **Dedup-Referenz:** ROADMAP.md → W2·6-BGE, Chronik `ROADMAP-CHRONIK.md` → W2·6/BGE-Auszug («BGE-Auszug abgeschnitten — vollständig gefixt 34/34», Schutz-Tor U+2026 in `check:entscheide`) + src/lib/rechtsprechung/browse.ts:208-231 (`regesteLeitsatz`, Trunkierungs-Krümel-Schutz) + FAHRPLAN-GESETZES-UX.md §10.10 E1/A29 (Mehrfach-Regesten «Regeste a/b», gebaut)
 - **Dedup-Notiz:** Gleiche Fehlerklasse (Auszug bricht mitten im Wort mit «…»), aber anderer Ort: der Bestandsfix sass in der BGE-Extraktion, LM-129 beobachtet es in der Bezüge-Liste des Material-Lesers. `regesteLeitsatz` hat einen Krümel-Schutz — er greift hier offenbar nicht. Das einzelne «a» nach dem Gedankenstrich ist ein durchgereichtes Regeste-Teil-Label aus A29; das Kopiersymbol im Fliesstext ist neu.
 
 #### LM-130 · 4 Detail

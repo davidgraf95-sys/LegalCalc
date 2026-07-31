@@ -266,7 +266,9 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > Aufräumwelle vom 31.7.2026 (AP-0…AP-11, PR #407) ist gebaut, der Schritt daher wieder
 > **`ready`** statt `wip`. Offener Rest: **T10 · T12-Stufe-2 · T14 · T16 · T20** (Go David
 > 27.7.2026 erteilt; T16 nur in frischer Session) sowie die ROADMAP unter das 100-KB-Ceiling
-> (aktuell 123.4 KB — der Re-Akkumulations-Wächter meldet rot, Herleitung in
+> (der Re-Akkumulations-Wächter meldet rot; die Ist-Zahl liefert
+> `python3 .claude/hooks/struktur-rotieren.py --check` und wird hier bewusst **nicht**
+> zweitgeführt — die frühere fixe Zahl war 15 KB zu hoch, Endprüfungs-Funde 6/12/31. Herleitung in
 > [`fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md`](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §Stand 31.7.2026).
 > Die Verzahnungs-Stufe `W2·7-BEZUG` ist seit 29.7.2026 **`done`** (B1–B7 gebaut, PRs
 > #401–#406; Vorstufe `W2·6-NKEY` am 28.7.2026 erledigt — die normKeys-Abdeckung trägt 99.9 %
@@ -568,8 +570,12 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
     Ein-Klick-Zitat in korrekter amtlicher Form (`BGE 148 III 1 E. 2.3`) + Fussnoten-Ausgabe; Formvorschriften
     bestimmen die angebotenen Exportformate (§8). **Detail:** [FAHRPLAN-VORLAGEN-AUSBAU.md](fahrplaene/FAHRPLAN-VORLAGEN-AUSBAU.md) §1.
 - [ ] **9 · Aufräum-Item** *(UX-PUNKTELISTE ⚫ überholt)*. **Verengt 31.7.2026 auf zwei Restpunkte.**
+  **Detail:** [FAHRPLAN-ARCHIV-RESTPUNKTE.md](fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md) §20 — dort steht
+  die massgebliche Fassung der zwei Restpunkte (A3 / E-Optional) samt Herkunftsbeleg auf
+  `archiv/FAHRPLAN-UX-PUNKTELISTE.md`. Der frühere `fahrplan:`-Zeiger auf die Archivdatei lieferte
+  die überholte 20-Punkte-Liste statt der Verengung (Endprüfungs-Fund 14, 31.7.2026).
   **§14-Intake 20.7.2026 (David):** Bedienungsanleitung/Onboarding für LexMetrik — Ersteinstieg «was kann das Werkzeug», je Rubrik ein Kurzpfad; **Träger sind `W2·16-INVENTAR` und `W2·16-ANLEITUNG`** (`fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md`), **nicht** dieser Schritt — die UX-Punkteliste enthält zu Bedienungsanleitung/Onboarding kein Wort (Grep-Befund 31.7.2026), der frühere Zeiger hierher war faktisch falsch.
-  <!-- @meta id: W2·9 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: archiv/FAHRPLAN-UX-PUNKTELISTE.md -->
+  <!-- @meta id: W2·9 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md -->
   **Restbestand:** (a) **A3** — Anw. 18 «Kacheln einer Reihe gleich hoch» vs. gebautes `items-start`
   (`src/components/forms/GebvKostenForm.tsx:97`), zur David-Abnahme geflaggt; (b) **E-Optional** —
   globaler Schalter «aufgehobene Normen ausblenden» nie gebaut. Die Prämisse «*bevor* Restpunkte
@@ -692,7 +698,12 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   - [ ] **B19 · Eingabe- und Auswahlfelder — Detail (K-08b)** — 7 Befunde (Blocker 0 · Hoch 0). §20.
     <!-- @meta id: W2·17-UI-BEFUNDE-B19 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B18] · kollision: [src/components/forms, src/components/ui] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B20 · Prüf-Batch — «bereits gebaut» am Prod-Stand nachmessen (alle Bauteile)** — 15 Befunde (Blocker 1 · Hoch 5). §21.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B20 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B19] · kollision: [src/components, src/pages] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
+    **`dep: []` seit 31.7.2026 (Endprüfungs-Fund 18):** B20 ist kein Neubau, sondern Nachmessung,
+    und trägt mit LM-062 den einzigen Blocker der «bereits gebaut»-Klasse. Am Kettenende hätte die
+    Behauptung «ist gebaut» erst nach 19 Bau-Batches geprüft — erwiese sie sich als falsch, entstünde
+    der Bau-Posten am spätesten möglichen Punkt. B20 ist damit **unabhängig und vorziehbar**; die
+    Bau-Kette B1→…→B19 bleibt unverändert seriell. `plan:next` führt B20 dadurch gewollt in ready-now.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B20 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
 
 ### Welle 3 — Tiefe / Breite (opportunistisch)
 

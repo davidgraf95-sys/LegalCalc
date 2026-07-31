@@ -31,13 +31,24 @@ Notation: M Mechanik · E Ersparnis+Herleitung · R Risiko→Gegenmittel · **K 
 
 ### Stand 31.7.2026 — T7-Fortsetzung «QS-TOK-Aufräumwelle» (PR #407, AP-0…AP-11)
 
-Eine Session-Welle auf `feat/qs-tok-aufraeumwelle`. **Gemessene Endstände** (`wc -c`, Stand
-Commit AP-10/11):
+Eine Session-Welle auf `feat/qs-tok-aufraeumwelle`. **Gemessene Endstände** (`wc -c` +
+`python3 .claude/hooks/struktur-rotieren.py --check`, Stand **Fix-Runde 1 nach der
+Endprüfung, 31.7.2026** — nicht mehr Stand AP-10/11):
 
 | Datei | vorher | nachher | Budget-Ceiling | Wächter |
 |---|---|---|---|---|
-| `ROADMAP.md` | 162.2 KB | **123.4 KB** (126 407 B) | 100 KB | **ROT** (+23.4 KB) |
-| `STRUKTUR.md` | 81.5 KB | **33.8 KB** (34 624 B) | 60 KB | grün |
+| `ROADMAP.md` | 162.2 KB | **110.0 KB** (112 682 B) | 100 KB | **ROT** (+10.0 KB) |
+| `STRUKTUR.md` | 81.5 KB | **36.1 KB** (36 994 B) | 60 KB | grün |
+
+> **Warum die Zahl hier zweimal falsch war (Endprüfungs-Funde 6/12/31).** Die Tabelle trug bis
+> zur Fix-Runde `123.4 KB (126 407 B) · ROT (+23.4 KB)` und war damit doppelt unrichtig:
+> (a) sie war seit dem Nachdiät-Commit `07bef2dee` («124.6 → 108.6 KB») nicht nachgeführt, und
+> (b) sie stimmte nicht einmal für den Referenz-Commit, den sie nannte —
+> `git show 35ed91c8b:ROADMAP.md | wc -c` = **127 607 B** (124.6 KB), nicht 126 407 B
+> (Ziffernvertauschung). Die verbleibende Diät-Arbeit erschien dadurch rund dreimal so gross
+> wie sie ist. **Regel daraus:** die Kennzahl wird an genau EINER Stelle geführt (hier), überall
+> sonst steht der Verweis auf die Wächter-Ausgabe (§5); und jeder Eintrag nennt den Stand, für
+> den er gilt, samt Messbefehl.
 
 **Ehrlichkeitsvermerk zur ROADMAP-Zahl.** Die Diät-Etappen brachten die Datei bis B4
 (`902b287`) auf **83.4 KB** — Budget wäre dort grün gewesen. Danach schrieben zwei
@@ -73,7 +84,12 @@ genannte Datum; vorher einmal rot zeigen (§6.7).
 
 **Offener QS-TOK-Rest — unverändert:** **T10 · T12-Stufe-2 · T14 · T16 · T20** (Go David
 27.7.2026 erteilt; T16 nur in frischer Session gem. T19-Vorbedingung). **Neu offen:** ROADMAP
-von 123.4 KB unter das 100-KB-Ceiling und weiter Richtung DoD ≤ ~65 KB.
+von **110.0 KB** (Stand Fix-Runde 1, 31.7.2026 — Ist-Zahl immer aus
+`python3 .claude/hooks/struktur-rotieren.py --check`) unter das 100-KB-Ceiling und weiter
+Richtung DoD ≤ ~65 KB. Die Rechnung aus `07bef2dee` bleibt der Rahmen: die 62 `@meta`-Etiketten
+aus AP-6/AP-9 kosten allein 17.2 KB und sind unantastbar, das rechnerische Minimum liegt damit
+bei **103.7 KB** — das Ceiling ist ohne einen der drei genannten Hebel (Budget begründet anheben ·
+`@meta`-Grammatik verschlanken · Teilschritt-Familien samt `@meta` auslagern) nicht erreichbar.
 
 ### Stand 24.7.2026 — autonomer Bau-Rest LEER (Nachmessung Session «run till dry»)
 
