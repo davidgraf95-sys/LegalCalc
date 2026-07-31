@@ -69,6 +69,119 @@ describe('parseRoadmap — Robustheit', () => {
   });
 });
 
+// ---------------------------------------------------------------------------
+// Fund R2-1/R2-10 der Endprüfung Runde 2 (31.7.2026) — KRITISCH.
+//
+// Die Checkbox wurde in der «nächsten nicht-leeren Zeile DARÜBER» gesucht und die
+// Suche dort abgebrochen. Steht zwischen Bullet und @meta auch nur EINE Prosa-
+// Zeile, bindet parse.ts die Checkbox nicht mehr (`checkbox = null`) — und
+// check.ts Regel 2 prüft nur `if (e.checkbox && …)`, ist also genau dort blind.
+// Folge: `plan:set <id> status=done` schreibt das @meta, lässt die sichtbare
+// Liste auf «offen» stehen, und kein Tor sieht es (§6.7).
+//
+// Belegt am echten Bestand (31.7.2026):
+//   W2·17-UI-BEFUNDE-B20 — Bullet, 5 Prosa-Zeilen, @meta  → checkbox = null
+//   W2·5g-ZEIT           — Bullet, 1 Prosa-Zeile,  @meta  → checkbox = null
+// Beide Layouts stehen unten WÖRTLICH als Fixture; sie sind der Rot-Beweis.
+//
+// Neue Regel: rückwärts bis zur ersten Listen-Bullet-Zeile im selben Block; deren
+// Checkbox bindet (hat sie keine, bindet nichts). Abbruch an Überschrift,
+// Kommentar-Grenze (`<!--`/`-->`, also auch an einem fremden @meta) und an einer
+// doppelten Leerzeile.
+// ---------------------------------------------------------------------------
+describe('parseRoadmap — Checkbox-Bindung über Prosa hinweg (Fund R2-1/R2-10)', () => {
+  const META_B20 =
+    '    <!-- @meta id: W2·17-UI-BEFUNDE-B20 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein -->';
+
+  // Wörtlich aus ROADMAP.md Z.700-706 (Stand f9d7fbb74).
+  const B20_LAYOUT = [
+    '## Die geordnete Abarbeitung',
+    '  - [ ] **B20 · Prüf-Batch — «bereits gebaut» am Prod-Stand nachmessen (alle Bauteile)** — 15 Befunde (Blocker 1 · Hoch 5). §21.',
+    '    **`dep: []` seit 31.7.2026 (Endprüfungs-Fund 18):** B20 ist kein Neubau, sondern Nachmessung,',
+    '    und trägt mit LM-062 den einzigen Blocker der «bereits gebaut»-Klasse. Am Kettenende hätte die',
+    '    Behauptung «ist gebaut» erst nach 19 Bau-Batches geprüft — erwiese sie sich als falsch, entstünde',
+    '    der Bau-Posten am spätesten möglichen Punkt. B20 ist damit **unabhängig und vorziehbar**; die',
+    '    Bau-Kette B1→…→B19 bleibt unverändert seriell. `plan:next` führt B20 dadurch gewollt in ready-now.',
+    META_B20,
+  ].join('\n');
+
+  // Wörtlich aus ROADMAP.md Z.448-450.
+  const ZEIT_LAYOUT = [
+    '## Die geordnete Abarbeitung',
+    '- [ ] **5g-ZEIT · Norm-Zeitmaschine + Fassungs-Diff** *(Ideen-Intake 20.7.2026 · Extraktion, `QS-GP`)*:',
+    '  **Status 20.7.2026 (David):** «irgendwann, aktuell nicht relevant» → von `blocked` auf `parked`; der Blocker `zeit-historik-poc` bleibt bestehen.',
+    '  <!-- @meta id: W2·5g-ZEIT · status: parked · of: ja · blocker: zeit-historik-poc · dep: [] · kollision: [] · worktree: ja · 26x: nein -->',
+  ].join('\n');
+
+  it('B20-Layout (Bullet, 5 Prosa-Zeilen, @meta) bindet die Checkbox', () => {
+    expect(parseRoadmap(B20_LAYOUT).einheiten[0].checkbox).toBe('[ ]');
+  });
+
+  it('W2·5g-ZEIT-Layout (Bullet, 1 Prosa-Zeile, @meta) bindet die Checkbox', () => {
+    expect(parseRoadmap(ZEIT_LAYOUT).einheiten[0].checkbox).toBe('[ ]');
+  });
+
+  // Gegenprobe zur Gegenrichtung: die neue Suche darf NICHT über eine fremde
+  // Bullet-Zeile hinweg an eine beliebige Checkbox weiter oben binden. Layout
+  // wörtlich nach ROADMAP.md Z.212-214 (QS-DATA unter der QS-PERF-Befundliste):
+  // eine Checkbox-Bullet der Nachbar-Liste steht direkt über der eigenen,
+  // checkbox-losen Querschnitt-Bullet.
+  it('bindet NICHT an die Checkbox einer fremden Bullet-Zeile darüber', () => {
+    const md = [
+      '## Querschnitt-Band',
+      '  - [ ] **e2e-Shard-Balance gegen GEMESSENE CI-Dauern packen** — geparkt.',
+      '- **Datenhaltung / Single-Source-DB** *(QS-DATA)*.',
+      '  <!-- @meta id: QS-DATA · status: blocked · of: ja · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n');
+    expect(parseRoadmap(md).einheiten[0].checkbox).toBeNull();
+  });
+
+  it('bricht an einer Überschrift ab', () => {
+    const md = [
+      '- [x] **weit oben**',
+      '',
+      '## ⚡ S0 — fristgetrieben',
+      '<!-- @meta id: S0 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n');
+    expect(parseRoadmap(md).einheiten[0].checkbox).toBeNull();
+  });
+
+  it('bricht an einer fremden Kommentar-Grenze (@meta darüber) ab', () => {
+    const md = [
+      '## Die geordnete Abarbeitung',
+      '- [x] **7-BEZUG · Dach**',
+      '  - [x] **B7 · Unterschritt**',
+      '    <!-- @meta id: B7 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  Detail: Chronik.',
+      '  <!-- @meta id: BEZUG · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n');
+    const e = parseRoadmap(md).einheiten;
+    expect(e.find((x) => x.id === 'B7')!.checkbox).toBe('[x]');
+    expect(e.find((x) => x.id === 'BEZUG')!.checkbox).toBeNull();
+  });
+
+  it('bricht an einer doppelten Leerzeile ab', () => {
+    const md = [
+      '## Die geordnete Abarbeitung',
+      '- [x] **weit oben**',
+      '',
+      '',
+      '  <!-- @meta id: A · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n');
+    expect(parseRoadmap(md).einheiten[0].checkbox).toBeNull();
+  });
+
+  it('EINE Leerzeile zwischen Bullet und @meta bindet weiterhin', () => {
+    const md = [
+      '## Die geordnete Abarbeitung',
+      '- [~] **läuft**',
+      '',
+      '  <!-- @meta id: A · status: wip · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n');
+    expect(parseRoadmap(md).einheiten[0].checkbox).toBe('[~]');
+  });
+});
+
 // @queue-Direktive (Einbau 24.7.2026): die EINE maschinenlesbare Prioritäts-Quelle.
 describe('parseRoadmap — @queue', () => {
   it('liest die @queue-Direktive als ID-Liste', () => {

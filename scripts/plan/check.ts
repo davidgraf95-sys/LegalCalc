@@ -1,8 +1,8 @@
 // scripts/plan/check.ts
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
-import { parseRoadmap, type Einheit } from './parse';
+import { parseRoadmap, bindeCheckbox, bulletEinzug, BULLET_RE, CHECKBOX_RE, CHECKBOX_STATUS, type Einheit } from './parse';
 import { resolve } from './aufloesen';
-import { type Status } from './etikett';
+import { parseEtikett, type Status } from './etikett';
 import { INVENTAR } from './inventar';
 
 // (5c) Status, die den 26×-Slot halten, ohne ihn je zurückzugeben. next.ts sperrt
@@ -30,12 +30,8 @@ export interface Problem { id: string | null; meldung: string }
 // Liste bleibt als Mechanismus für künftige Übergangsfälle.
 const ARCHIV_BACKLOG = new Set<string>([]);
 
-const CHECKBOX_STATUS: Record<string, string[]> = {
-  '[x]': ['done'],
-  '[~]': ['wip'],
-  '[ ]': ['ready', 'blocked', 'parked'],
-  '[d]': ['parked', 'blocked'], // Legenden-Status «geparkt/zurückgestellt» — nie auf ready/wip/done
-};
+// CHECKBOX_STATUS liegt seit 31.7.2026 in scripts/plan/parse.ts — set.ts braucht
+// dieselbe Tabelle, und zwei Kopien wären zwei Wahrheiten (§5, Fund R2-9/R2-15).
 
 // Ordner der aktiven Fahrpläne. Bis 31.7.2026 lag jede `FAHRPLAN-*.md` im Repo-Wurzel;
 // AP-8 (QS-TOK) hat sie nach `fahrplaene/` gezogen, das Archiv bleibt in `archiv/`.
@@ -141,6 +137,47 @@ export function pruefe(
       probleme.push({ id: e.id, meldung: `fahrplan "${t.fahrplan}" existiert nicht` });
     }
   }
+  // (10) Checkbox-Bullet ohne gebundenes @meta — der Nullfall von Regel 2.
+  //
+  // Regel 2 prüft `if (e.checkbox && …)`. Wo parse.ts die Checkbox NICHT binden
+  // kann, ist das Tor deshalb blind, und genau dort entsteht die Drift: `plan:set
+  // <id> status=done` schreibt das @meta, die sichtbare Liste bleibt auf «offen»,
+  // check:plan bleibt grün. Ein Tor, das an dieser Stelle nicht scheitern kann,
+  // ist gefährlicher als keines (§6.7) — belegt an `W2·17-UI-BEFUNDE-B20`, wo ein
+  // eingezogener Prosa-Block die Kopplung kappte, ohne dass es je auffiel
+  // (Fund R2-1/R2-10 der Endprüfung Runde 2, 31.7.2026).
+  //
+  // Blickrichtung darum umgekehrt: von der Checkbox-Bullet nach UNTEN. Trifft der
+  // Blick ein @meta, bevor eine neue Bindungs-Einheit beginnt (eine eigene
+  // Checkbox-Bullet, eine gleich- oder höherrangige Bullet, eine Überschrift oder
+  // eine doppelte Leerzeile), MUSS dieses @meta an genau diese Zeile gebunden sein.
+  const zeilen = md.split(/\r?\n/);
+  for (let k = 0; k < zeilen.length; k++) {
+    if (!CHECKBOX_RE.test(zeilen[k])) continue;
+    const einzug = bulletEinzug(zeilen[k]);
+    let leerFolge = 0;
+    for (let j = k + 1; j < zeilen.length; j++) {
+      const z = zeilen[j];
+      if (z.trim() === '') { if (++leerFolge >= 2) break; continue; }
+      leerFolge = 0;
+      if (/^[ \t]*(?:>[ \t]*)*#{1,6}[ \t]/.test(z)) break;
+      // Eine eigene Checkbox-Bullet (jeder Tiefe) oder eine gleich-/höherrangige
+      // Bullet eröffnet die nächste Bindungs-Einheit — ab da gilt Zeile k nicht mehr.
+      if (CHECKBOX_RE.test(z)) break;
+      if (BULLET_RE.test(z) && bulletEinzug(z) <= einzug) break;
+      if (z.includes('<!-- @meta')) {
+        const { zeile } = bindeCheckbox(zeilen, j);
+        if (zeile !== k) {
+          probleme.push({
+            id: parseEtikett(z).id,
+            meldung: `Checkbox-Zeile «${zeilen[k].trim().slice(0, 60)}» (Z.${k + 1}) steht über dem @meta auf Z.${j + 1}, ist aber nicht an die Checkbox gebunden — plan:set würde sie stehen lassen`,
+          });
+        }
+        break;
+      }
+    }
+  }
+
   // (4b) Azyklie
   const z = zyklus(einheiten);
   if (z) probleme.push({ id: z, meldung: `dep-Graph hat einen Zyklus bei "${z}"` });

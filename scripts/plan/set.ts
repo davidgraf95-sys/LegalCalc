@@ -1,13 +1,14 @@
 // scripts/plan/set.ts
 import { readFileSync, writeFileSync } from 'node:fs';
 import { parseEtikett, serializeEtikett } from './etikett';
+import { bindeCheckbox, checkboxAus, CHECKBOX_STATUS } from './parse';
 
-const FELDER = new Set(['id', 'status', 'of', 'blocker', 'dep', 'kollision', 'worktree', '26x', 'fahrplan', 'slot']);
-const CHECKBOX_FUER: Record<string, string> = { done: '[x]', wip: '[~]' };
-// Alle in ROADMAP.md vorkommenden Checkbox-Marken — Spiegel von CHECKBOX_STATUS in
-// scripts/plan/check.ts. `d`/`D` ist der Legenden-Status «geparkt/zurückgestellt».
-const CHECKBOX_RE = /^\s*-\s*\[[ xX~dD]\]/;
-const CHECKBOX_ERSATZ_RE = /(-\s*)\[[ xX~dD]\]/;
+const FELDER = new Set(['id', 'status', 'of', 'blocker', 'dep', 'kollision', 'seq-hart', 'seq-weich', 'worktree', '26x', 'fahrplan', 'slot']);
+// Marke, die ein Statuswechsel setzt, WENN die bestehende nicht schon passt.
+// `parked`/`blocked` ergänzt 31.7.2026 (Fund R2-9/R2-15): vorher griff dort der
+// Fallback `'[ ]'` und löschte die Legendenmarke `[d]` still.
+const CHECKBOX_FUER: Record<string, string> = { done: '[x]', wip: '[~]', parked: '[d]', blocked: '[d]' };
+const CHECKBOX_ERSATZ_RE = /([-*+][ \t]*)\[[ xX~dD]\]/;
 
 export function setField(md: string, id: string, feld: string, wert: string): string {
   if (!FELDER.has(feld)) throw new Error(`Unbekanntes Feld "${feld}"`);
@@ -25,14 +26,27 @@ export function setField(md: string, id: string, feld: string, wert: string): st
   if (feld === 'status') {
     // Fund 27 der QS-TOK-Endprüfung (31.7.2026): Die Zeichenklasse kannte nur
     // `[ ]`, `[x]`, `[~]` — der Legenden-Status `[d]`/`[D]` («geparkt/zurück-
-    // gestellt», check.ts CHECKBOX_STATUS) fehlte. `plan:set <geparkt> status=ready`
+    // gestellt», CHECKBOX_STATUS) fehlte. `plan:set <geparkt> status=ready`
     // setzte darum das @meta, liess die Checkbox aber auf `[d]` stehen und machte
     // `check:plan` — Pflichtglied von `npm run gate` — beim Entparken rot.
-    const cb = CHECKBOX_FUER[neu.status] ?? '[ ]';
-    for (let j = idx - 1; j >= 0; j--) {
-      if (zeilen[j].trim() === '') continue;
-      if (CHECKBOX_RE.test(zeilen[j])) zeilen[j] = zeilen[j].replace(CHECKBOX_ERSATZ_RE, `$1${cb}`);
-      break;
+    //
+    // Fund R2-1/R2-10 (Runde 2): Die Suche nach der Checkbox teilt sich jetzt die
+    // EINE Implementierung mit parse.ts (`bindeCheckbox`) — die frühere Kopie hier
+    // brach wie parse.ts an der ersten nicht-leeren Zeile ab und liess die Checkbox
+    // bei B20/W2·5g-ZEIT unangetastet. Zwei Kopien derselben Nachbarschafts-Regel
+    // wären zwei Wahrheiten (§5); auseinanderlaufen können sie nur still.
+    //
+    // Fund R2-9/R2-15 (Runde 2): Der Nachzug greift NUR, wenn die bestehende Marke
+    // nicht schon zum neuen Status passt. `[d]` + parked/blocked bleibt damit
+    // `[d]` (bzw. `[D]`), `[ ]` + parked bleibt `[ ]` — vorher überschrieb der
+    // Fallback beides mit `[ ]` und löschte die Legendenmarke unwiederbringlich.
+    const { zeile: cbIdx } = bindeCheckbox(zeilen, idx);
+    if (cbIdx !== null) {
+      const bestehend = checkboxAus(zeilen[cbIdx])!;
+      if (!CHECKBOX_STATUS[bestehend].includes(neu.status)) {
+        const cb = CHECKBOX_FUER[neu.status] ?? '[ ]';
+        zeilen[cbIdx] = zeilen[cbIdx].replace(CHECKBOX_ERSATZ_RE, `$1${cb}`);
+      }
     }
     // Zweiter Halbsatz desselben Funds: `ready` mit gesetztem `blocker` ist nach
     // check.ts Regel 3 ein Problem. Wer entparkt, hat den Blocker aufgelöst — der

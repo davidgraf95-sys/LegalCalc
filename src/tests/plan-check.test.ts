@@ -243,7 +243,7 @@ describe('resolve-Kopplung — Querschnitt mit offener Voraussetzung', () => {
     const { resolve } = await import('../../scripts/plan/next');
     const qs = {
       id: 'QS-X', checkbox: null, sektion: 'Querschnitt-Band (läuft begleitend', pos: 0,
-      etikett: { id: 'QS-X', status: 'ready' as const, statusAgent: null, of: true, blocker: null, dep: ['FEHLT'], kollision: [], worktree: false, asset26x: false, fahrplan: null },
+      etikett: { id: 'QS-X', status: 'ready' as const, statusAgent: null, of: true, blocker: null, dep: ['FEHLT'], kollision: [], seqHart: [], seqWeich: [], worktree: false, asset26x: false, fahrplan: null },
     };
     const b = resolve([qs]);
     expect(b.wartetDep).toEqual([{ id: 'QS-X', offen: ['FEHLT'] }]);
@@ -282,6 +282,89 @@ describe('Regel 9 — fahrplan:-Pfad muss existieren', () => {
 
   it('ohne fahrplan:-Feld wird nichts geprüft (kein Fehlalarm)', () => {
     expect(pruefe(OK, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => false, inv).filter((p) => /^fahrplan /.test(p.meldung))).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Regel 10 (Fund R2-1/R2-10 der Endprüfung Runde 2, 31.7.2026) — KRITISCH.
+//
+// Regel 2 prüft die Checkbox-Kopplung nur `if (e.checkbox && …)`. Wo parse.ts die
+// Checkbox nicht binden kann, ist das Tor deshalb blind: `plan:set <id> status=done`
+// schreibt das @meta, die sichtbare Liste bleibt auf «offen», check:plan bleibt
+// grün. Das ist ein Tor, das an dieser Stelle nicht scheitern KANN (§6.7).
+//
+// Regel 10 schliesst den Nullfall von vorn: Steht unter einer Checkbox-Bullet ein
+// @meta, bevor die nächste Checkbox-Bullet, eine gleich- oder höherrangige Bullet
+// oder eine Überschrift kommt, MUSS dieses @meta genau an diese Checkbox gebunden
+// sein. Ist es das nicht, driften Steuerung und sichtbarer Plan still auseinander.
+// ---------------------------------------------------------------------------
+describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
+  const plan10 = (units: string) =>
+    `## Die geordnete Abarbeitung\n<!-- @blockers\nb1: grund\n-->\n${units}\n\nSiehe FAHRPLAN-PLAN-STEUERUNG.md.\n`;
+  const lauf = (md: string, inv: string[]) => pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, inv);
+
+  it('NEGATIV: Checkbox-Bullet, dazwischen eine checkbox-lose Unter-Bullet, dann @meta → Problem', () => {
+    const md = plan10([
+      '- [ ] **B20 · Prüf-Batch**',
+      '  - Unter-Bullet ohne Checkbox kappt die Bindung.',
+      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A']).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
+  });
+
+  it('NEGATIV: Checkbox-Bullet, dazwischen ein fremder Kommentar, dann @meta → Problem', () => {
+    const md = plan10([
+      '- [ ] **B20 · Prüf-Batch**',
+      '  <!-- Notiz, die die Rückwärts-Bindung kappt -->',
+      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A']).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
+  });
+
+  // Ehrliche Grenze der Regel (§8): Eine doppelte Leerzeile trennt Blöcke in
+  // BEIDEN Richtungen — die Rückwärts-Bindung bricht ab, und der Vorwärts-Blick
+  // dieser Regel ebenso. Der Fall ist damit kein Befund, sondern ausserhalb des
+  // Geltungsbereichs; hier festgehalten, damit niemand mehr Deckung annimmt, als
+  // die Regel gibt.
+  it('GRENZE: doppelte Leerzeile trennt den Block — bewusst kein Problem', () => {
+    const md = plan10([
+      '- [ ] **B20 · Prüf-Batch**',
+      '',
+      '',
+      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A'])).toEqual([]);
+  });
+
+  it('GEGENPROBE: B20-Layout (Bullet, Prosa, @meta) → kein Problem', () => {
+    const md = plan10([
+      '- [ ] **B20 · Prüf-Batch**',
+      '  Prosa-Zeile eins.',
+      '  Prosa-Zeile zwei.',
+      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A'])).toEqual([]);
+  });
+
+  it('GEGENPROBE: Dach-Bullet mit eigener Checkbox-Unter-Bullet → kein Problem (Unter-Bullet stoppt die Sicht)', () => {
+    const md = plan10([
+      '- [x] **7-BEZUG · Dach**',
+      '  Prosa.',
+      '  - [x] **B7 · Unterschritt**',
+      '    <!-- @meta id: B · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  Detail: Chronik.',
+      '  <!-- @meta id: A · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A', 'B'])).toEqual([]);
+  });
+
+  it('GEGENPROBE: checkbox-lose Querschnitt-Bullet unter fremder Checkbox-Liste → kein Problem', () => {
+    const md = plan10([
+      '  - [ ] **fremde Checkbox der Nachbarliste**',
+      '- **Datenhaltung / Single-Source-DB** *(QS-DATA)*.',
+      '  <!-- @meta id: A · status: blocked · of: ja · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A'])).toEqual([]);
   });
 });
 
