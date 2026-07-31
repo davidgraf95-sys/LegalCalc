@@ -806,7 +806,7 @@ Prinzip: strukturiert/homogen/klein zuerst; PDF-lastig/heterogen/gross zuletzt; 
 | `FAHRPLAN-RECHTSPRECHUNG.md` | §6.5-Budget-Stufen + §8.4-Stufe-C + P2/P3-Mengengrenzen werden durch DB/Edge abgelöst; Schema/Reader/Tore bleiben |
 | `FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md` | P5-Senke = DB (E3); Live-Suche P1–P4 bleiben, langfristig ergänzt durch eigene Edge-Suche (E2) |
 | `FAHRPLAN-FEDLEX-PORTFOLIO.md` | Paket 1 (Currency) speist ab E1 die DB; Projektion identisch |
-| `FAHRPLAN-RECHTSSAMMLUNG.md` P4 / `FAHRPLAN-PERFORMANCE.md` | Client-FlexSearch bleibt Fallback; 16-MiB-Worker-Punkt evtl. hinfällig; perf-budget = Abnahme-Tor |
+| `archiv/FAHRPLAN-RECHTSSAMMLUNG.md` P4 / `FAHRPLAN-PERFORMANCE.md` | Client-FlexSearch bleibt Fallback; 16-MiB-Worker-Punkt evtl. hinfällig; perf-budget = Abnahme-Tor |
 | `FAHRPLAN-GESETZE-IMPORT-3TIER.md` / W3·12 | Kantons-Breite später in dieselbe DB; 26×-Reihenfolge vs. E3 = David |
 | `FAHRPLAN-NORMTEXT-DARSTELLUNG.md` (AKN Phase 1) | orthogonal: AKN ändert die Adapter-Quelle, DB die Senke; eId/ELI-Spalten vorbereitet |
 

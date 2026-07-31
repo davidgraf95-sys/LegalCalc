@@ -158,4 +158,4 @@ unter einem Dach).
 - Kantonale Fussnoten (LexWork-Markup; Marker-Zuordnung war fehlerhaft → zurückgenommen).
 - Artikel-Themen-Suche (über Marginalien) statt nur Erlass-Suche · kantonale Werkzeug-Brücke.
 - B3 (kosmetisch, 0/73 ausgelöst): LexWork-Sparse-Array bei Level-Sprung — bei Bedarf Level-Stack.
-- Deploy nur auf Davids frisches Ja (§9). Fahrplan: `FAHRPLAN-RECHTSSAMMLUNG.md`.
+- Deploy nur auf Davids frisches Ja (§9). Fahrplan: `archiv/FAHRPLAN-RECHTSSAMMLUNG.md`.

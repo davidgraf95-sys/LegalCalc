@@ -5,7 +5,7 @@
 > vollständig erarbeitetes **Tabellen-Regelwerk** (ultracode) und dessen seitenweiten Bund-Umsetzungsplan.
 > Dieser Fahrplan ist die **Detailquelle (das «Wie»)**; der Steuer-Slot steht in `ROADMAP.md`
 > (Welle 2 · Reader), Layout-/a11y-Regeln in `DESIGN-REGLEMENT-NORMTEXT.md`, Tabellen-Umsetzung
-> quer in `FAHRPLAN-TARIF-TABELLEN-STUFE2.md`, Popover in `FAHRPLAN-GESETZESTEXT-POPUP.md`.
+> quer in `archiv/FAHRPLAN-TARIF-TABELLEN-STUFE2.md`, Popover in `archiv/FAHRPLAN-GESETZESTEXT-POPUP.md`.
 
 ---
 
@@ -212,7 +212,7 @@ Abweichungen nur (a) inhaltsgetrieben und (b) generations-/jahrgangsbedingt.
   neues `scripts/normtext/tabelle-normalisieren.ts`, `src/lib/normtext/typen.ts`, `ArtikelBody.tsx`,
   28 Bund-Snapshots. **Gate:** neuer `check:tabellen`-Validator (blockierend, zuerst nur Bund) +
   golden byte-gleich + §6.3-Deklaration. **Detail = Anhang 1 (Regelwerk) + Anhang 2 (Plan); Umsetzung
-  quer in `FAHRPLAN-TARIF-TABELLEN-STUFE2.md`.**
+  quer in `archiv/FAHRPLAN-TARIF-TABELLEN-STUFE2.md`.**
 
 ### M11 · Verweis-Popup (Norm-Vorschau) + Artikel-Bezeichnung — Batch D
 - [x] **GEBAUT + GEGENGEPRÜFT (3 Runden) + GEMERGT 24.7.2026** (Worktree `lm-m11`, **PR #342**,
@@ -227,7 +227,7 @@ Abweichungen nur (a) inhaltsgetrieben und (b) generations-/jahrgangsbedingt.
   0 Fehl-/0 Verlust-Auflösungen). Register-Hash `d57eb5ba`. Gate voll grün, e2e 18/18,
   Sichtprüfung am Dev-Server (Popover-Inhalt/Position DOM-verifiziert; Hinweis: Browser-
   Pane-Screenshots bei tiefem Scroll schwarz = Capture-Artefakt des Tools, nicht der App).
-  *Ursprüngliche Quelle:* Popover-Infra (`FAHRPLAN-GESETZESTEXT-POPUP.md`); `data-rs`/ELI + `<h6>`-Sachtitel.
+  *Ursprüngliche Quelle:* Popover-Infra (`archiv/FAHRPLAN-GESETZESTEXT-POPUP.md`); `data-rs`/ELI + `<h6>`-Sachtitel.
   **Soll:** (a) bei einem gesetzesübergreifenden Verweis erscheint ein **Popup mit Norm-Vorschau**
   (Testfall: Art. 24 GebV SchKG → Art. 112/113 SchKG); (b) die Vorschau enthält die **Artikel-Bezeichnung**,
   z. B. **«Art. 113 SchKG – Nachträge»** (Sachtitel aus `<h6>`/Section). **Datei:** Popover-Pfad +
@@ -323,7 +323,7 @@ Abweichungen nur (a) inhaltsgetrieben und (b) generations-/jahrgangsbedingt.
 ## Anhang 1 — TABELLEN-REGELWERK (kanonische SSoT, T-A…T-F)
 
 > Erarbeitet per ultracode (8 Agenten), abgeglichen mit der verifizierten Filestore-HTML-Struktur.
-> Übernahme: Abschnitte C/D/E → `DESIGN-REGLEMENT-NORMTEXT.md`; A/B/F → `FAHRPLAN-TARIF-TABELLEN-STUFE2.md`.
+> Übernahme: Abschnitte C/D/E → `DESIGN-REGLEMENT-NORMTEXT.md`; A/B/F → `archiv/FAHRPLAN-TARIF-TABELLEN-STUFE2.md`.
 
 # REGELWERK — Tabellendarstellung in Gesetzen (Bund) — KANONISCHE SSoT
 
@@ -439,7 +439,7 @@ Ort: `src/tests/normtext-fedlex.test.ts` (M7 :206-235, falsche Annahme :268-274)
 - **Render-Schwachstellen S1–S6:** S1 keine colspan-Logik → T-A2/T-B1; S2 Phantomspalte → T-A7; S3 zellweise Ausrichtung → T-C2; S4 Tausender-Heuristik fragil → T-B4; S5 kein Aritätsschutz → T-B2/T-F1; S6 keine Ersatzform → T-E4/T-E6.
 - **Gegenstandslos im Bund-Korpus (Nachweis, kein Fix nötig):** fehlende Tausendertrenner = 0, verklebte Zahl/Buchstabe = 0, colspan-Reste in `tabelle` = 0 (Feld ungenutzt). Bleiben durch T-F1/T-F3 überwacht.
 
-Übernahme nach `DESIGN-REGLEMENT-NORMTEXT.md` (Abschnitte C/D/E) und `FAHRPLAN-TARIF-TABELLEN-STUFE2.md` (Abschnitte A/B/F als Umsetzungs-/Test-Reihenfolge). Schlüsseldateien: `scripts/normtext/extrahiere-fedlex.ts` (A), `src/lib/normtext/typen.ts` (B), `src/components/normtext/ArtikelBody.tsx` (C/D), `src/lib/normtext/darstellung.ts` (E), `src/tests/normtext-fedlex.test.ts` + `check:normtext` (F).
+Übernahme nach `DESIGN-REGLEMENT-NORMTEXT.md` (Abschnitte C/D/E) und `archiv/FAHRPLAN-TARIF-TABELLEN-STUFE2.md` (Abschnitte A/B/F als Umsetzungs-/Test-Reihenfolge). Schlüsseldateien: `scripts/normtext/extrahiere-fedlex.ts` (A), `src/lib/normtext/typen.ts` (B), `src/components/normtext/ArtikelBody.tsx` (C/D), `src/lib/normtext/darstellung.ts` (E), `src/tests/normtext-fedlex.test.ts` + `check:normtext` (F).
 ---
 
 ## Anhang 2 — SEITENWEITER BUND-UMSETZUNGSPLAN (Tabellen)

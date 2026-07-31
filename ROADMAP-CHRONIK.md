@@ -39,11 +39,20 @@ ab 1.7. «verfallen». `npm run gate` grün, Golden byte-gleich. Deployt 2.7.202
 
 ## W1·1 — Begründungs-Absatz *(BEGRUENDUNGS-ABSATZ, done)*
 
-Aus dem Rechen-Ergebnis ein **kopierfertiger, normgestützter Absatz** (UI **und** PDF), jeder Wert
-mit Norm+Link+Stand (schliesst die Rückrichtung *Werkzeug→Norm*). **Erst EIN Flaggschiff-
-Vertikalschnitt komplett** (Prozesskosten): Ergebnis → Absatz → PDF-Block → Kopier-Hook; dann
-Rollout. *Nächster Schritt:* PDF-Block (`pdfModel.ts`) + Kopier-Hook am Prozesskosten-Rechner; die 4
-David-Entscheide als **Default-und-Flag** setzen. §8-Rahmung «keine Rechtsberatung».
+Aus dem Rechen-Ergebnis ein **kopierfertiger, normgestützter Absatz**, jeder Wert mit
+Norm+Link+Stand (schliesst die Rückrichtung *Werkzeug→Norm*). **Erst EIN Flaggschiff-
+Vertikalschnitt komplett** (Prozesskosten), dann Rollout. §8-Rahmung «keine Rechtsberatung».
+
+**Abschluss-Stand 28.6.2026 (deployt im §9-Batch 2.7.2026, `a3769d72`):** Phasen 0–2 umgesetzt —
+`begruendungsAbsatz()` / `fristbeginnZusatz` / `BEGRUENDUNG_VORBEHALT`, `BegruendungSlot` als EINE
+Aufrufstelle in 16 Forms, `useKopieren`-Hook, benanntes Engine-Feld `fristbeginnNorm` an ZPO/SchKG
+(Magic-Index dort geschlossen, Wächter `src/tests/fristbeginnNorm.test.ts`), 14 `absatz:`-Goldens +
+Linter über 14 Engines. Die 4 David-Entscheide sind gefallen; **Entscheid #3 = PDF-Absatz AUS**
+(«Ansatz in UI reicht») ⇒ der frühere «nächste Schritt» PDF-Block + Kopier-Hook ist **erledigt bzw.
+entfallen**: `PdfDocConfig.begruendung` in `src/lib/pdf/pdfModel.ts` bleibt gebaute, bewusst
+abgeschaltete Kapazität ohne Aufrufer (weder entfernen noch stillschweigend anschalten — ein
+Wiedereinschalten wäre ein eigener §6-deklarierter Schritt). Restpunkte → `ROADMAP.md`
+«Nachträge aus der Archiv-Welle 31.7.2026»; Detail `archiv/FAHRPLAN-BEGRUENDUNGS-ABSATZ.md`.
 
 ## W1·2 — Norm↔Werkzeug-Brücke *(RECHTSSAMMLUNG P4/D1, done)*
 
@@ -101,7 +110,7 @@ neues Tor `check:seo-index`. **Bündelt:** geparkten Startseiten-Merker (30.6.) 
 Sidebar-Reihenfolge + I2 Branding + W2·5-Startseiten-Modul-Rahmen + Redesign-zurückgestellt
 (16.6., Kernideen im Council verwertet). **Bau-Spec (bau-fertig für autonome Opus-Session,
 10 verbindliche Auflagen + erzwungene Bausequenz Plumbing→Hero-zuletzt):**
-`FAHRPLAN-STARTSEITE-V3.md`; Herleitung + volles Council-Verdikt:
+`archiv/FAHRPLAN-STARTSEITE-V3.md`; Herleitung + volles Council-Verdikt:
 `bibliothek/recherche/startseite-v3-design.md`. **Auflagen-Kern:** Status-Wording §8-ehrlich
 (kein «jede Angabe»-Absolutum, kein «geprüfte Bausteine»), Kontrast-MESSUNG vor Merge,
 golden byte-gleich, e2e-Anker erhalten, §12-Koordination (tailwind↔W3·14, seo/prerender↔SEO-A11Y,
@@ -830,11 +839,11 @@ nachgemessenen 156/4452/724 richtiggestellt, mit Vermerk warum.
 
 > - **I1 Seitenleisten-/Rubriken-Reihenfolge** → **✅ gebündelt in W2·5c (3.7.2026):** `navigation.ts`-
 >   SSoT-Array auf **Gesetze → Rechtsprechung → Materialien → Rechner → Vorlagen** — Bau im
->   Plumbing-Schritt von `FAHRPLAN-STARTSEITE-V3.md` §10 (treibt Sidebar UND Startseiten-Kacheln).
+>   Plumbing-Schritt von `archiv/FAHRPLAN-STARTSEITE-V3.md` §10 (treibt Sidebar UND Startseiten-Kacheln).
 > - **I2 Branding-Neuausrichtung** → **✅ gebündelt in W2·5c (3.7.2026):** das geforderte
 >   **Messaging-Konzept ist erledigt** (Ultracode-Recherche + DMAD-Council, gegen «nicht nach KI
 >   klingen» geprüft; Wortlaut + SSoT-Architektur `seo.ts`→Projektionen + Tor `check:seo-index` in
->   `FAHRPLAN-STARTSEITE-V3.md` §6, Herleitung `bibliothek/recherche/startseite-v3-design.md`);
+>   `archiv/FAHRPLAN-STARTSEITE-V3.md` §6, Herleitung `bibliothek/recherche/startseite-v3-design.md`);
 >   Ausrollen = Bausequenz-Schritt 1 des W2·5c. *(Ursprünglicher Auftragstext:)* weg von
 >   «Berechnen statt KI» → **KI-freies Übersichtstool über amtliche Quellen, inkl. Rechner + Vorlagen**;
 >   «KI-frei» als Vertrauensmerkmal (positiv), nicht als Headline. Surfaces ohne SSoT (§5-Geruch,
@@ -926,7 +935,7 @@ Aus `ROADMAP.md` Schritt 5b; im Plan verbleiben Checkbox + `@meta` + Einzeiler +
   `ArtikelBody.tsx`** abstimmen → C Suche/Layout → D Popover). **Auflagen:** zuerst nur Bund;
   **Renderer abwärtskompatibel** (Kanton-Altdaten nicht brechen); golden byte-gleich + §6.3;
   neuer `check:tabellen`-Validator. Tabellen-Detail quer in `FAHRPLAN-TARIF-TABELLEN-STUFE2.md`,
-  Layout/a11y in `DESIGN-REGLEMENT-NORMTEXT.md`, Popover in `FAHRPLAN-GESETZESTEXT-POPUP.md`.
+  Layout/a11y in `DESIGN-REGLEMENT-NORMTEXT.md`, Popover in `archiv/FAHRPLAN-GESETZESTEXT-POPUP.md`.
   - **Gebaut (✅; Wortlaut → `ROADMAP-CHRONIK.md` → W2·5b, 22.7.2026):** Bündel R (Scroll-Spy/
     Gliederung/A−A+, PR #59, prod 30.6.) · Bündel N (N1 zerrissene Artikelnummern am Extraktor +
     N2 Self-Link-Unterdrückung + Tor `check:invarianten`, deployt 2.7.) · Phase-1-Fundament-Batch
@@ -1035,7 +1044,7 @@ Aus `ROADMAP.md` Schritt 12 (Kopfzeile, `@meta`, ABGESCHLOSSEN-Einzeiler und die
   Divergenz, Entscheid-Queue). **Eskaliert (scope-fremd):** NE-Umzugsprüfung (per 12.7.
   FÄLLIG) + 10 Fedlex-Wiedervorlagen 1.8. → Currency-Slot, s. «Pflege & Termine».
   Beweisregeln G1–G3 (richtiger Beweis-Anker je Fläche, keine Beweisklassen-Mischung pro PR,
-  Gegenprüfungs-Pflicht Risikopfade) im Plan. Detail: **`FAHRPLAN-CODE-HYGIENE.md`**.
+  Gegenprüfungs-Pflicht Risikopfade) im Plan. Detail: **`archiv/FAHRPLAN-CODE-HYGIENE.md`**.
   Trailer `Roadmap: W2·12-HYGIENE`.
 
 ## W3·11 — Teil-Erledigt: Vernehmlassungen (Fedlex-Portfolio Paket 3) *(offener Schritt; ✅-Prosa wörtlich verschoben 26.7.2026)*

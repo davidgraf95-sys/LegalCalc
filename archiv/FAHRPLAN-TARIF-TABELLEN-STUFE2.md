@@ -2,7 +2,7 @@
 
 > **Update 29.6.2026 — BUND-Tabellen separat erfasst:** Ein eigenständiges, vollständiges
 > **Tabellen-Regelwerk (T-A…T-F) + seitenweiter Bund-Umsetzungsplan** liegt in
-> `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` (Anhang 1+2, Milestone M10). Es betrifft den **Fedlex**-
+> `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` (Anhang 1+2, Milestone M10). Es betrifft den **Fedlex**-
 > Extraktor (`extrahiere-fedlex.ts`, 28 Bund-Erlasse mit `mehrspaltig`) und ist von DIESEM
 > Kanton-Fahrplan getrennt; Schema (`spalten`-Modell) + Renderer + Validator `check:tabellen`
 > werden aber **geteilt** → der Renderer muss kanton-abwärtskompatibel bleiben. Kern-Befund:

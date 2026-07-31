@@ -233,7 +233,9 @@ Notiz-Block in `KATALOG-ROADMAP.md` §B eingetragen (12.7.2026):
 BE-Rechtsmittel-Topf bekannt unsauber) = **FAHRPLAN-PROZESSKOSTEN-COCKPIT I2/I3** — dort
 Priorität heben, `[OF]`-fähig (unabhängige Doppel-Verifikation ≠ Abnahme). ·
 Zuständigkeits-Behördenadressen über BS hinaus (L, Pflegelast → Verfallsregister-Folgekosten)
-= **geparkt hinter `FAHRPLAN-BS-VORBILDKANTON.md`**; Erstlisten liegen in `bibliothek/behoerden/`.
+= **geparkt hinter `archiv/FAHRPLAN-BS-VORBILDKANTON.md`**; Erstlisten liegen in `bibliothek/behoerden/`.
+*Richtigstellung 31.7.2026 (§8):* jener Fahrplan enthält **keinen** Behörden-/Zuständigkeits-Inhalt —
+das Parken hängt faktisch am BS-Fokus, nicht an dieser Datei.
 
 ---
 

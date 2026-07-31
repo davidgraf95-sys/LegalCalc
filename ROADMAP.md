@@ -707,8 +707,8 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 
 ### Welle 1 — Kern: Norm → Werkzeug → Schriftsatz + die Alltags-Klingen
 
-- [x] **1 · Begründungs-Absatz** *(BEGRUENDUNGS-ABSATZ, ~5 %)*. Kopierfertiger, normgestützter Absatz (UI+PDF), jeder Wert mit Norm+Link+Stand; schliesst die Rückrichtung Werkzeug→Norm. **Chronik:** `ROADMAP-CHRONIK.md` → W1·1.
-  <!-- @meta id: W1·1 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: FAHRPLAN-BEGRUENDUNGS-ABSATZ.md -->
+- [x] **1 · Begründungs-Absatz** *(BEGRUENDUNGS-ABSATZ, ~5 %)*. Kopierfertiger, normgestützter Absatz (UI; PDF-Kapazität bewusst aus — David-Entscheid #3 vom 28.6.2026), jeder Wert mit Norm+Link+Stand; schliesst die Rückrichtung Werkzeug→Norm. **Chronik:** `ROADMAP-CHRONIK.md` → W1·1.
+  <!-- @meta id: W1·1 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: archiv/FAHRPLAN-BEGRUENDUNGS-ABSATZ.md -->
 - [x] **2 · Norm↔Werkzeug-Brücke** *(RECHTSSAMMLUNG P4/D1)* — Index-Teil erledigt 28.6.2026 (gegated, deployt 2.7.2026): `werkzeugeFuerNorm` + `ERLASS_WERKZEUGE` + Konsistenz-Tor; «N passende Werkzeuge»-Hinweis auf der Erlass-Karte. **Chronik:** `ROADMAP-CHRONIK.md` → W1·2.
   <!-- @meta id: W1·2 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
 - [x] **3 · Alltags-Rechner als Cockpits** *(neu-Verpackung vorhandener Engines, `[OF]`)* — abgearbeitet 28.6.2026: Streitwert-Grenzwert-Abgleich neu gebaut (gegated, deployt 2.7.2026); Zuständigkeits-Navigator + Rechtsmittelprüfung bestanden bereits (kein §5-Duplikat); Fristen-Cockpit zurückgestellt (S-5c-Konflikt). **Chronik:** `ROADMAP-CHRONIK.md` → W1·3.
@@ -748,21 +748,21 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   Ebene ist Generator-Parameter statt Literal, Treffer nennt seinen Kanton, Recall je Ebene getrennt).
   Wortlaut → `ROADMAP-CHRONIK.md` → W2·5 (22.7. + 25.7.2026).
   **ABGESCHLOSSEN 25.7.2026.** ~~Startseiten-Modul-Rahmen~~ → **wird in W2·5c gebaut**
-  (Modul-Registry, `FAHRPLAN-STARTSEITE-V3.md` §4 — FUNDAMENT-Vorleistung), gehörte nie hierher.
+  (Modul-Registry, `archiv/FAHRPLAN-STARTSEITE-V3.md` §4 — FUNDAMENT-Vorleistung), gehörte nie hierher.
   **Zur Klarstellung (Befund 20.7.):** `W2·5b`/`5c`/`5d`/`5g`/`5h` sind **keine Kinder** dieses Schritts —
   `scripts/plan/*` kennt kein Eltern-/Kind-Konzept, jeder trägt eigenes `@meta` mit eigenem Status. Es ist
   eine **Nummern-Familie, keine Hierarchie**; W2·5 ist selbsttragend und wurde eigenständig abgeschlossen.
 - [x] **5b · Reader-Darstellung Bund** *(GESETZESDARSTELLUNG-BUND, `[OF]`)* —
-  <!-- @meta id: W2·5b · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZESDARSTELLUNG-BUND.md -->
-  **ABGESCHLOSSEN 25.7.2026** — alle Einheiten M1–M12 des QA-Sweeps ✅ (zuletzt M12 PR #340 · M11+M6-D PR #342 · HAENGEND-Folge-Härtung PR #343). Wortlaut (inkl. QA-Sweep-Spec, Status-Korrektur 20.7., Nachmess-Warnung Batch C/D) → `ROADMAP-CHRONIK.md` → W2·5b (26.7.2026); Tabellen-Detail quer in `FAHRPLAN-TARIF-TABELLEN-STUFE2.md`, Popover in `FAHRPLAN-GESETZESTEXT-POPUP.md`.
+  <!-- @meta id: W2·5b · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · fahrplan: archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md -->
+  **ABGESCHLOSSEN 25.7.2026** — alle Einheiten M1–M12 des QA-Sweeps ✅ (zuletzt M12 PR #340 · M11+M6-D PR #342 · HAENGEND-Folge-Härtung PR #343). Wortlaut (inkl. QA-Sweep-Spec, Status-Korrektur 20.7., Nachmess-Warnung Batch C/D) → `ROADMAP-CHRONIK.md` → W2·5b (26.7.2026); Tabellen-Detail quer in `archiv/FAHRPLAN-TARIF-TABELLEN-STUFE2.md`, Popover in `archiv/FAHRPLAN-GESETZESTEXT-POPUP.md`.
   - [x] **M12 · Randtitel-Leerzeichen-Verklebung** — **✅ GEBAUT + GEGENGEPRÜFT + GEMERGT
     24./25.7.2026** (PR #340 `c872e4a9` + Folge-Härtung PR #343 `e3622991`): Generator-Fix am
     Join (`loeseTrennung`/`biErsetzung`), Tor `check:verklebung` (Sabotage rot gezeigt),
     231 Sidecars regeneriert, 2+2 Opus-Gegenprüfungs-Durchgänge (Register `ce06aa72`/`e964599c`).
     Dieser Marker stand stale auf offen (Etikett-Korrektur 26.7.); Wortlaut + Beweise:
-    `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` §M12.
-- [x] **5c · Startseite V3 + Branding I2** *(STARTSEITE-V3, done)* — ✅ GEBAUT 3.7.2026 (Bausequenz S1–S5 komplett, PRs #106/#107/#108/#111 + S5 Brass-Hero) + Zuletzt-Tracker. **Rest offen (kein Blocker):** Wash-Ton-Veto `bg-surface`-Fallback in `Hero.tsx`. Spec `FAHRPLAN-STARTSEITE-V3.md`. Trailer `Roadmap: W2·5c`. **Chronik:** `ROADMAP-CHRONIK.md` → W2·5c.
-  <!-- @meta id: W2·5c · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/Startseite.tsx, src/components/start, src/lib/navigation.ts, src/lib/seo.ts, index.html, tailwind.config.js, src/components/layout/Topbar.tsx, scripts/prerender.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-STARTSEITE-V3.md -->
+    `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` §M12.
+- [x] **5c · Startseite V3 + Branding I2** *(STARTSEITE-V3, done)* — ✅ GEBAUT 3.7.2026 (Bausequenz S1–S5 komplett, PRs #106/#107/#108/#111 + S5 Brass-Hero) + Zuletzt-Tracker. **Rest offen (kein Blocker):** Wash-Ton-Veto `bg-surface`-Fallback in `Hero.tsx`. Spec `archiv/FAHRPLAN-STARTSEITE-V3.md`. Trailer `Roadmap: W2·5c`. **Chronik:** `ROADMAP-CHRONIK.md` → W2·5c.
+  <!-- @meta id: W2·5c · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/Startseite.tsx, src/components/start, src/lib/navigation.ts, src/lib/seo.ts, index.html, tailwind.config.js, src/components/layout/Topbar.tsx, scripts/prerender.ts] · worktree: ja · 26x: nein · fahrplan: archiv/FAHRPLAN-STARTSEITE-V3.md -->
 - [ ] **5d · Gesetzes-UX & Darstellungs-Reglement** *(GESETZES-UX, `[OF]`, eigener Worktree; Auftrag David 4.7.)*:
   **§14-Intake 20.7.2026 (David):** Fassungshistorie im Ansicht-Menü an-/abwählbar (#27).
   **Stand 26.7.2026 (Nachmessung):** G0–G6, A1–A18, A19–A25 (ohne zurückgezogenes L-3/A28),
@@ -1225,15 +1225,22 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
     Abhängigkeit, kein neues Fundament. Detail in `FAHRPLAN-VORLAGEN-AUSBAU.md`. **DoD:** golden
     byte-gleich · Zitierform stichprobenweise gegen die amtliche Fundstelle geprüft · Tore grün.
     Trailer `Roadmap: W2·8`.
-- [ ] **9 · Aufräum-Item** *(UX-PUNKTELISTE ⚫ überholt)*. Deliverable = Mapping-Tabelle
-  **§14-Intake 20.7.2026 (David):** Bedienungsanleitung/Onboarding für LexMetrik — Ersteinstieg «was kann das Werkzeug», je Rubrik ein Kurzpfad; kein eigener FAHRPLAN, Detail inline in `FAHRPLAN-UX-PUNKTELISTE.md`.
-  <!-- @meta id: W2·9 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: FAHRPLAN-UX-PUNKTELISTE.md -->
-  **alt-Punkt → Code-Pfad → Status**, *bevor* Restpunkte C2/C5 angefasst werden.
+- [ ] **9 · Aufräum-Item** *(UX-PUNKTELISTE ⚫ überholt)*. **Verengt 31.7.2026 auf zwei Restpunkte.**
+  **§14-Intake 20.7.2026 (David):** Bedienungsanleitung/Onboarding für LexMetrik — Ersteinstieg «was kann das Werkzeug», je Rubrik ein Kurzpfad; **Träger sind `W2·16-INVENTAR` und `W2·16-ANLEITUNG`** (`fahrplan: FAHRPLAN-UI-QUALITAET.md`), **nicht** dieser Schritt — die UX-Punkteliste enthält zu Bedienungsanleitung/Onboarding kein Wort (Grep-Befund 31.7.2026), der frühere Zeiger hierher war faktisch falsch.
+  <!-- @meta id: W2·9 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: archiv/FAHRPLAN-UX-PUNKTELISTE.md -->
+  **Restbestand:** (a) **A3** — Anw. 18 «Kacheln einer Reihe gleich hoch» vs. gebautes `items-start`
+  (`src/components/forms/GebvKostenForm.tsx:97`), zur David-Abnahme geflaggt; (b) **E-Optional** —
+  globaler Schalter «aufgehobene Normen ausblenden» nie gebaut. Die Prämisse «*bevor* Restpunkte
+  C2/C5 angefasst werden» ist aufgelöst: C2 und C5 sind gebaut. Das Deliverable **Mapping-Tabelle
+  alt-Punkt → Code-Pfad → Status** ist durch das Archiv-Verdikt 31.7.2026 geliefert (18/20 live,
+  Batch D über IV-1/IV-2, Batch F über `archiv/FAHRPLAN-KANTONALE-ENTSCHEIDE.md`) — **das Abhaken
+  bleibt David-Entscheid** (Status-Hoheit), darum steht `status` unverändert auf `ready`.
+  Detail `archiv/FAHRPLAN-UX-PUNKTELISTE.md`.
 - [x] **12 · Code- & Bibliothek-Hygiene** *(Auftrag David 12.7.2026, `[OF]`; Ultracode-Audit
-  <!-- @meta id: W2·12-HYGIENE · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-CODE-HYGIENE.md -->
+  <!-- @meta id: W2·12-HYGIENE · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · fahrplan: archiv/FAHRPLAN-CODE-HYGIENE.md -->
   **ABGESCHLOSSEN 24.7.2026** — alle baubaren Einheiten H-1…H-14 + B24 ✅ (zuletzt B24
   inhalt.tsx-Split 1494→781 Z., PR #338 `b56b9193`; H-3 No-op, Git-Stand bereits sauber).
-  Status-Log je Einheit: `FAHRPLAN-CODE-HYGIENE.md §S`. Gesperrt-/Eskaliert-Posten laufen
+  Status-Log je Einheit: `archiv/FAHRPLAN-CODE-HYGIENE.md §S`. Gesperrt-/Eskaliert-Posten laufen
   ausserhalb weiter: Alt-Engine-Ablösung Gründungsgebühren (Entscheid-Queue David) ·
   NE-Umzugsprüfung + Fedlex-Wiedervorlagen (Currency-Slot, «Pflege & Termine»).
   41 Befunde + 3 Kritik-Linsen mit Repo-Stichproben)* — Plan-Prosa-Wortlaut (14 Bau-Einheiten H-1…H-14, Beweisregeln G1–G3) → `ROADMAP-CHRONIK.md` → W2·12-HYGIENE (26.7.2026).
@@ -1263,7 +1270,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
     Bundes-Erlasse. **DIAGNOSE VOR FIX, verbindlich:** erst je Kanton erheben, **welches Quellformat**
     tatsächlich verwendet wird und **wo** die Struktur verloren geht (Quelle dünn? Adapter dünn?
     Nachbearbeitung?). Ein Fix ohne diese Zuordnung repariert die falsche Schicht. Passt zur bestehenden
-    Leitplanke «korpusweiter Adapter-Hebel VOR jedem Bulk» (`FAHRPLAN-BS-VORBILDKANTON.md`) und zu
+    Leitplanke «korpusweiter Adapter-Hebel VOR jedem Bulk» (`archiv/FAHRPLAN-BS-VORBILDKANTON.md`) und zu
     K-G3 (Gliederungs-Extraktion korpusweit) — dort einhängen, nicht doppelt planen.
   - **K-16 · Kantonale Änderungshistorie + Fundstelle im Kantonsblatt** *(David: «wenn möglich»)*.
     **Feasibility 🟢, belegt:** die kantonale Quelle liefert das **strukturiert** — `change_documents`
@@ -1407,8 +1414,9 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   Dies ist ein 26×-Massenimport; er steht bewusst weit unten in Welle 3 und läuft **nicht** an Davids
   laufender Queue vorbei. Vor dem Start gilt Leitprinzip 4 (nie zwei 26×-Assets parallel).
   §14-gebündelt (Phase 0): führende Detailquelle
-  `FAHRPLAN-GESETZE-IMPORT-3TIER.md`; **BS-Sofortfixes S1–S13** = `FAHRPLAN-BS-VORBILDKANTON.md`
-  (korpusweiter Adapter-Hebel VOR jedem Bulk); Volltext-Kanton = `FAHRPLAN-RECHTSSAMMLUNG.md` (P6).
+  `FAHRPLAN-GESETZE-IMPORT-3TIER.md`; **BS-Sofortfixes S1–S13** = `archiv/FAHRPLAN-BS-VORBILDKANTON.md`
+  (**S1–S13 sind gebaut** — die Datei trägt hier nur noch die Leitplanke «korpusweiter Adapter-Hebel
+  VOR jedem Bulk», keine offene Arbeitsliste); Volltext-Kanton = `archiv/FAHRPLAN-RECHTSSAMMLUNG.md` (P6).
   BS-Pilot; Kantonale-Entscheide-Import hart **nachgelagert**, nie gleichzeitig. *Werkzeug-Funde (Audit 1):
   LexWork-Adapter auf dieselbe DOM-Parser-Infra wie der linkedom-POC heben (strikt NACH dessen Bestehen, B5);
   `pdfplumber` (Python) NUR als nicht-lasttragendes Gegenprüf-Skript, falls die TS-PDF-Extraktion
@@ -1502,7 +1510,7 @@ Ja** (§9), aus sauberem HEAD-Worktree (§12).
   Login/Pro.
 - ~~Grundsätzliche Startseiten-Überarbeitung~~ — **✅ ENTPARKT 3.7.2026 → Welle 2 · Schritt 5c**
   (Ultracode-Recherche + bindendes Council-Verdikt; bündelt Redesign-zurückgestellt 16.6.,
-  FUNDAMENT-Startseitenrahmen, I1 + I2; Spec `FAHRPLAN-STARTSEITE-V3.md`).
+  FUNDAMENT-Startseitenrahmen, I1 + I2; Spec `archiv/FAHRPLAN-STARTSEITE-V3.md`).
 - **Live-Rechtsprechung** — §4-blockiert (s. Verifikations-Blockaden).
 - **Betriebs-Instrumente (später):** Sentry (erst bei Traffic; A5-Fehler-Link deckt jetzt) · CodeQL ·
   `npm audit` als Prüf-**Meldung** (nie Stopper) · Claude-Code-PR-Action (bewusster Entscheid) —
@@ -1580,7 +1588,7 @@ harter Auflage.
   PDF-only-Kantone/Token-Lücken · LUECKEN L7 Konfidenz-UI/L8 · NOTARIAT NG-4 Zweitpass · TARIF G3b
   komplett (A+B+C+D); Residuum = 32 mehrdeutige SG-Restblöcke (faithful Plaintext, §1) + eigener
   ZH-PDF-Strang (ZH-243 NotGebV §17 / hierarchische Ziffer-Tarife, andere Risiko-Klasse).
-  **ERLEDIGT 5.7. (SG-2935-Rohtext-Reparatur, Branch `fix/sg2935-x-spalten`).** Wortlaut → `ROADMAP-CHRONIK.md` → Strang-Detailpunkte/SG-2935 (26.7.2026); Detail `FAHRPLAN-TARIF-TABELLEN-STUFE2.md` §SG-2935-Reparatur.
+  **ERLEDIGT 5.7. (SG-2935-Rohtext-Reparatur, Branch `fix/sg2935-x-spalten`).** Wortlaut → `ROADMAP-CHRONIK.md` → Strang-Detailpunkte/SG-2935 (26.7.2026); Detail `archiv/FAHRPLAN-TARIF-TABELLEN-STUFE2.md` §SG-2935-Reparatur.
 - **Infrastruktur-Fundament:** GESETZESTEXT-POPUP (Snapshot/Drift) trägt RECHTSSAMMLUNG/Rechtsprechungs-
   Verzahnung/GESETZE-IMPORT → vor aufsetzenden Strängen mitdenken.
 - **Archiv-Kandidaten**: INTERNATIONAL-VOLLTEXT-Rest. RECHTSPRECHUNG-Dach/TARIF-STUFE2/
@@ -1589,7 +1597,11 @@ harter Auflage.
   Nachtrag-Einzeiler unter «Nachträge aus der Archiv-Welle 31.7.2026» ergänzt, `ARCHIV_BACKLOG`
   geleert. Methode bleibt für künftige Fälle: je Datei ein Opus-Verdikt, erst mappen, dann
   verschieben.
-- **Stale Doku-Köpfe** (in der jeweiligen `FAHRPLAN-*.md` korrigieren): POPUP «27»→218.
+- **Stale Doku-Köpfe** (in der jeweiligen `FAHRPLAN-*.md` korrigieren):
+  ~~POPUP «27»→218~~ **erledigt durch die Archivierung 31.7.2026** (Datei nach
+  `archiv/FAHRPLAN-GESETZESTEXT-POPUP.md`, Kopf bleibt byte-genau historisch stehen); Nebenbefund:
+  der Zielwert 218 war selbst überholt — `public/normtext/bund/` trägt am 31.7.2026 **227** Dateien,
+  massgeblich ist ab hier der §11-Träger `bibliothek/normen/norm-vorschau-snapshot-system.md`.
   ~~VERTRAGS-VARIANTEN «1000»~~ · ~~LUECKEN~~ · ~~NOTARIAT-GRUNDBUCH~~ **erledigt durch die
   Archivierung 31.7.2026** (Dateien nach `archiv/`; die Köpfe bleiben dort byte-genau historisch
   stehen). Massgeblich sind ab hier die Nachfolge-Träger: `variantenInventar` (Stand 168 erzeugbare
@@ -1610,11 +1622,18 @@ harter Auflage.
   `151_V_30`) — Korpus-weit prüfen, ob aus `full_text`/`citation` nachziehbar (kein Inhalts-/
   Identitätsproblem, rein Metadaten; `[OF]`).
 
-### Nachträge aus der Archiv-Welle 31.7.2026 (11 Fahrpläne, verify-then-archive)
+### Nachträge aus der Archiv-Welle 31.7.2026 (20 Fahrpläne, verify-then-archive)
 
-*Je Datei prüfte ein Nur-Lese-Opus-Agent, ob ALLE offenen Punkte in `ROADMAP.md` stehen; alle elf
+*Je Datei prüfte ein Nur-Lese-Opus-Agent, ob ALLE offenen Punkte in `ROADMAP.md` stehen; alle
 Verdikte lauteten NUR-MIT-NACHTRAG. Die folgenden Einzeiler sind dieser Nachtrag — sie steuern nicht,
 sie halten den Rest fest, damit der `git mv` nach `archiv/` informationsverlustfrei ist.*
+
+*Zwei Wellen: **AP-3** (11 verwaiste Fahrpläne, 45 Einzeiler — ab «Beurkundungs-Ausbau») und
+**AP-4** (9 Fahrpläne erledigter/überholter Schritte, 36 Einzeiler — ab «Rechtssammlung»). In AP-4
+prüften 12 Agenten; **drei Dateien bleiben begründet im Root**: `FAHRPLAN-PLAN-STEUERUNG.md` (einzige
+Doku der `@meta`-DSL, keine Ersatz-Heimat), `FAHRPLAN-RECHTSPRECHUNG.md` (Detailquelle des noch
+offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage von
+`PLAN-OCL-ABBAU.md`).*
 
 **Beurkundungs-Ausbau** *(→ `archiv/FAHRPLAN-BEURKUNDUNGS-AUSBAU.md`)*:
 - **BEURKUNDUNG Tarif-Lücken (72 Zellen):** in `src/data/tarif/beurkundung.ts` tragen 72 von 546
@@ -1890,6 +1909,303 @@ sie halten den Rest fest, damit der `git mv` nach `archiv/` informationsverlustf
   `bibliothek/recherche/gruendungsdokumente-wortlaute.md`, Recherche-Stand in
   `gmbh-gruendung-deltas-g0.md` (GD1–GD8) + `gmbh-qualifizierte-gruendung.md`. Der Fahrplan-Zeiger
   auf `.scratch/gmbh-knowledge/` ist **tot** (gitignored, gelöscht) — nicht mehr verwenden.
+
+**Rechtssammlung (Rubrik V «Gesetze»)** *(→ `archiv/FAHRPLAN-RECHTSSAMMLUNG.md`)*:
+- **RECHTSSAMMLUNG O6 — Generator-Steuerung verstreut, «eine Zeile pro Gesetz» nur halb wahr:**
+  die ELI-/Konsolidierungs-Pins leben weiterhin NEBEN dem Register — `scripts/fedlex-cache.sh`
+  trägt 227 `EINTRAEGE`-Zeilen im Format `name|eli|kons(YYYYMMDD)|html-N|pflicht-anker|SR`,
+  kantonale `lawId`/`pdfProfil`-Angaben liegen in den Tarif-/Adapter-Tabellen;
+  `src/lib/normtext/register.ts` kennt davon nur die Zeiger `fedlexKey`/`pdfPfad`
+  (`register-typen.ts:59,65`). Der geplante deklarative `bezug`-Block (EIN Steuerpult für Aufnahme
+  + Pflege) ist nie gebaut — bewusst nicht im MVP (vergrössert das Register, riskiert Golden),
+  aber auch in keinem Nachfolge-Fahrplan geführt: `FAHRPLAN-FEDLEX-PORTFOLIO.md` §72 beschreibt
+  `fedlex-cache.sh` nur als Ist-Zustand. Entweder als eigener verhaltensneutraler Refactor nach §6
+  einplanen (Golden byte-gleich, `check:caches` mitziehen) **oder** ausdrücklich verwerfen und die
+  Zwei-Orte-Pflege als bewusste Regime-Trennung begründen (§5). Detail
+  `archiv/FAHRPLAN-RECHTSSAMMLUNG.md` §O6. `[OF]`
+- **RECHTSSAMMLUNG — Absatz-tiefe Permalinks (`#art-{token}-abs-{n}`) offen, Zitat-Seite ist
+  gebaut:** die absatz-/lit.-/ziffern-genaue **Zitat**-Kette existiert
+  (`src/components/normtext/ArtikelBody.tsx:19,621` «Art. X Abs. Y lit. z ERLASS», W2·5d G2b), der
+  geteilte **Anker** bleibt aber artikel-grob (`permalinkBasis` = `#art-${e.artikel}`,
+  `src/pages/gesetz-leser/parts/ArtikelLeser.tsx:329,473`; korpusweit 0 `-abs-`-Anker). Folge: ein
+  kopierter Link auf einen langen Artikel (z. B. OR 336c, ZPO 198) springt nur an den Artikelkopf,
+  während das mitkopierte Zitat den Absatz nennt — Zitat und Link zeigen unterschiedlich tief. Der
+  im Plan als «später» markierte ELI-Geist-Ausbau ist in keinem Schritt geführt; nächstgelegene
+  Bau-Fläche = `W2·10-UI-NAV` (Reader-Welle «Zitat+Permalink») bzw. `W2·5d`. Detail
+  `archiv/FAHRPLAN-RECHTSSAMMLUNG.md` Task 3.6 (c) + «Übernommene Muster» Ziff. 5.
+- **RECHTSSAMMLUNG — stale Zahlen im Nachfolge-Dossier (§11-Träger, gehört zu «Stale
+  Doku-Köpfe»):** nach der Archivierung ist `bibliothek/normen/gesetzessammlung-rubrik-v.md` die
+  einzige lebende Wissensablage der Rubrik V, steht aber unverändert auf dem Erstellungsstand
+  17.6.2026 — «27 Bundesgesetze + 113 kantonale Erlasse» (Z.24 f.), «Bund-Breite: 27 Volltext + 30
+  verifizierte Stubs = 57 Bund» (Z.146 f.), Status «ERSTRECHERCHE … Branch `feat/rechtssammlung`,
+  ungepusht» (Z.9–11) und «LexWork = EIN Adapter deckt 73/113 Erlasse» (Z.141). Ist-Stand
+  `public/normtext/register.json` (erzeugt 2026-07-27): **238 Bund + 1231 Kanton = 1469 Erlasse,
+  davon 11 `nur-live-link`**; der Branch ist seit 19.6.2026 entfernt, die Rubrik ist prod-live.
+  Zahlen, Statuszeile und Adapter-Quote nachführen (die inhaltlichen Regeln a–e bleiben gültig) —
+  sonst führt der einzige verbliebene Träger überholte Mengen als Wahrheit.
+
+**Begründungs-Absatz** *(→ `archiv/FAHRPLAN-BEGRUENDUNGS-ABSATZ.md`)*:
+- **BEGRUENDUNG B0-2-Rest + B1-Rest** (Beweis-Lücke, Stand 31.7.2026 nachgezählt):
+  `scripts/golden-outputs.ts` trägt **14** `absatz:`-Goldens — es fehlen `allg`/`zust`/`rm`, weil
+  diese drei ihr Ergebnis UI-seitig wickeln. Damit hängt zusammen, dass
+  `AllgemeineFristForm.tsx:310` die Fristbeginn-Norm weiterhin über den **Magic-Index**
+  `ergebnis.normverweise[0]?.artikel` zieht (Kritik-5 «Deploy-Bug-#5-Klasse» ist nur für
+  `ZpoErgebnis`/`SchkgErgebnis` über das benannte Feld `fristbeginnNorm` geschlossen).
+  Fix-Reihenfolge: benanntes Feld an `allgemeineFrist.ts`, dann Golden nachziehen (byte-Gleichheit
+  des alten Ausdrucks als Beweis, Muster B1-1). Detail `archiv/FAHRPLAN-BEGRUENDUNGS-ABSATZ.md`
+  B0-2/B1-1. `[OF]`
+- **BEGRUENDUNG B4-1 · Zuständigkeit ohne prosa-tauglichen Ergebnissatz** (§8, bewusst nicht
+  verdrahtet): `schkgZustaendigkeitBericht().ergebnis` ist ein telegrafisches «·»-Fragment
+  (`src/lib/schkgZustaendigkeit.ts:377`, «Betreibungsamt Zürich · Betreibungsbegehren»),
+  `strafZustaendigkeitBericht().ergebnis` = `forum.text` (satz-näher, inhaltsabhängig) — ein
+  Rechtsschrift-Absatz darüber wäre irreführend. Vor der Verdrahtung braucht es je einen eigenen
+  prosa-tauglichen Ergebnissatz im `lib` (Rechtsfrage-nah, nicht clean `[OF]`); die
+  Zivil-Zuständigkeit ist über `ZustErgebnisEinleitung.tsx` bereits am Slot. Behandlung wie der
+  Kosten-Entscheid. Detail `archiv/FAHRPLAN-BEGRUENDUNGS-ABSATZ.md` B4-1.
+- **BEGRUENDUNG B4-2 · Kosten-Rechner = offener David-Entscheid** (Default gesetzt 28.6.2026,
+  Bestätigung offen): Prozesskosten/Beurkundung/Notariat-Grundbuch bekommen **keinen**
+  Rechtsschrift-Absatz, weil ihr `ergebnis`-Satz eine Kostenzeile ist, kein Rechtsschrift-Text
+  (die `*Bericht()`-Adapter existieren, es fehlt nur die Prosa). Optionen: (a) separater
+  «Kosten-Begründungs»-Satz im jeweiligen `lib` mit eigenem Titel, (b) bewusst ausnehmen
+  (konservativer Default). Bei (a) muss für Prozesskosten der `zusatz`
+  **Kostenrisiko/Instanzenzug/MwSt/Kaution** in die Quelle eingehen, sonst wird der Absatz
+  irreführend unvollständig (§8). Der bestehende UI-Absatz von `GebvKostenForm` bleibt unberührt.
+  `[D]`
+- **BEGRUENDUNG B4-3 · EinfacheFrist / GrundbuchEintrag**: `GrundbuchEintragForm` nutzt
+  `grundbuchgebuehrBericht()` heute nur für die PDF-`sections` (Z.81) → am `BegruendungSlot`
+  trivial nachziehbar, Behandlung wie der Kosten-Entscheid. `EinfacheFristForm` mischt **vier**
+  Engines (`allgemeineFrist`/`zpoFristen`/`bggVwvgFristen`/`schkgFristen`) ohne einheitliches
+  Bericht-Resultat → erst klären, welcher Ergebnistyp den Absatz speist, sonst bewusst ausnehmen
+  (§8). `[OF]`
+- **BEGRUENDUNG PDF-Block = bewusst abgeschaltete Kapazität, kein toter Code** (David-Entscheid
+  28.6.2026: «AUS — Ansatz in UI reicht»): `PdfDocConfig.begruendung` und der «Für die
+  Rechtsschrift»-Block in `src/lib/pdf/pdfModel.ts:46/190–192` sind gebaut und getestet
+  (`src/tests/pdfBegruendung.test.ts`), aber **keine** Form setzt das Feld — einziger Aufrufer ist
+  der Test. Damit sind B3-2/B3-3 (Rollout) und der B5-2-UI↔PDF-Konsistenz-Wächter **entfallen,
+  nicht offen**. Ein künftiger Hygiene-Durchgang darf die Kapazität weder als «unbenutzt»
+  entfernen noch stillschweigend anschalten; Wiedereinschalten wäre ein eigener §6-deklarierter
+  Schritt mit Snapshot je Form. Folgerichtig zu korrigieren: die ROADMAP-Zeile zu W1·1 beschreibt
+  den Absatz noch als «(UI+PDF)», `ROADMAP-CHRONIK.md` → W1·1 nennt als «Nächster Schritt» den
+  längst entschiedenen PDF-Block + Kopier-Hook.
+- **BEGRUENDUNG · offene Formulierungs-/Abnahmefragen an David** (alle NIEDRIG, kein
+  Handlungsdruck): (1) **Monats-/Jahresfrist-Satz** — `fristbeginnZusatz` erzeugt «Der Fristenlauf
+  begann am <Ereignistag> (Art. 142 Abs. 2 ZPO)»; Abs. 2 regelt das Frist*ende*
+  (gleichbezeichneter Tag), der Beginn steht in Abs. 1 → die Zitierung ist doktrinär lose, auch
+  wenn die Engine-Sachfrage korrekt ist (Ereignistag = dies a quo seit BGer 5A_691/2023, belegt in
+  `bibliothek/normen/zpo-fristen-bk-abgleich.md` R-142.3, Verdikt «Engine korrekt»; das
+  Frist*ende* stimmt). Entscheid: Satz so lassen oder für Monats-/Jahresfristen schärfen. (2)
+  `MAX_NORMEN=6` + «u. a.»-Kappung als sichtbares Kappungs-Signal beibehalten (Default) —
+  pro-Engine-Konfiguration erst auf Bedarf. (3) SchKG-Zitierstil «Art. 31 SchKG i.V.m. …» im Feld
+  `fristbeginnNorm` (Default: übernommen). (4) **B5-3** optionaler Playwright-Smoke auf «Absatz
+  kopieren» je Rechtsgebiet — nie gebaut, in `e2e/` existiert kein Test darauf. `[D]` ausser B5-3
+  `[OF]`
+
+**BS-Vorbildkanton** *(→ `archiv/FAHRPLAN-BS-VORBILDKANTON.md`)*:
+- **BS-VORBILD D3 · Prüfstand-Ehrlichkeit im Gesetzeskorpus (nie gebaut, Befund 31.7.2026):**
+  `public/normtext/confidence.json` deckt 150 Erlasse (115 kantonal), davon **5 von 859 BS**; der
+  Wert wird in `src/` **nirgends geladen**, und alle 859 BS-Registereinträge tragen
+  ununterscheidbar `status:'snapshot'` — ein ungeprüfter Auto-Import sieht damit aus wie ein
+  abgenommener (§8). Offen: `check:confidence` (`scripts/normtext/check-confidence.ts`,
+  `package.json:84`) auf alle 859 BS ausweiten, Ergebnis in `browse.ts` laden, Marker «automatisch
+  importiert · fachlich nicht abgenommen» vs. «abgenommen» in SysZeile + Leser-Kopf. **Nicht
+  deckungsgleich** mit dem Currency-Chip (`W2·13-KANTONE` K-2a = Geltungs-, nicht
+  Extraktions-Konfidenz). Heimat `archiv/FAHRPLAN-BS-VORBILDKANTON.md` §D3. `[OF]`
+- **BS-VORBILD D4 · 51 unsichtbare BS-Erlasse + fehlendes Abdeckungs-Drift-Tor (nie gebaut):** in
+  Kraft stehende BS-Erlasse ohne Registereintrag werden in `scripts/normtext-snapshot.ts` still
+  `continue`-übersprungen (**auch der `uebersprungen`-Pfad**, sonst bleibt die Lücke teils offen)
+  statt als `status:'nur-live-link'` emittiert — Belegstand 31.7.2026: BS-Register **859/859
+  `snapshot`, 0 `nur-live-link`**, obwohl die Mechanik für den Bund existiert
+  (`scripts/fedlex-eli-aufloesen.ts:27`, `register.ts`, `ErlassKarte.tsx` nur-live-link-Pfad).
+  Zusätzlich fehlt das Tor: `enumeriereKanton`-Sollzahl gegen die Registereinträge in `check:netz`
+  warnen + datierten Discovery-Snapshot ins Repo schreiben, damit die wachsende Lücke (48→51)
+  **diffbar** statt flüchtig auf der Konsole ist. `W2·13-KANTONE` K-2c (F44) deckt nur die
+  Anzeige-Kontextzeile, **nicht** die Register-Emission und **nicht** das Tor. Randmaterie ⇒
+  niedrig ranggewichten, damit Kern-Statute nicht verwässern (§8). `[OF]`
+- **BS-VORBILD F7 · offener David-Entscheid «Randtitel bei aufgehobenen Artikeln»:** 70 von 962
+  ganz aufgehobenen Artikeln tragen einen Randtitel, die übrigen nicht — quellenbedingt, visuell
+  uneinheitlich. Quellentreu belassen ist nach §7 vertretbar; vor einer Vereinheitlichung oder
+  Ausgrauung ist **Davids Entscheid einzuholen, nicht eigenmächtig zu handeln**. Heimat
+  `archiv/FAHRPLAN-BS-VORBILDKANTON.md` §F7 (Befund 19 der 2. Ultra-Check-Liste).
+- **BS-VORBILD N12 · strukturierte `erlassart` fehlt (Filter unbrauchbar):** die Erlassart wird
+  heute allein über die Titel-Regex `istVerordnung` geraten
+  (`src/pages/gesetze-teile/geteilt.tsx:22`, `/verordnung|reglement/i`), und `rechtsgebiet` ist
+  bei **allen 859 BS-Erlassen** `'oeffentlich'` — als Ordnungsmerkmal wertlos. Offen: `erlassart`
+  (Gesetz/Verordnung/Staatsvertrag/Konkordat/Tarif) im Generator aus Titel + SR-Systematik
+  ableiten und als Filter-Chip in der Kanton-Ansicht anbieten (würde die BS-Liste ~halbieren).
+  Komfort, nachrangig; Heimat `archiv/FAHRPLAN-BS-VORBILDKANTON.md` §N12/§N5-2.
+
+**Code- & Bibliothek-Hygiene** *(→ `archiv/FAHRPLAN-CODE-HYGIENE.md`)*:
+- **HYGIENE — Abnahme-Dossier-Drift + Drift-Guard-PR** *(H-5/B29-Restposten, Befund 12.7.2026)*:
+  der `abnahme:dossiers`-Probelauf zeigte **5 gedriftete Dossiers** (ARBEITSVERTRAG · EHESCHUTZ ·
+  MIET · SCHEIDUNG ×2); die Regeneration wurde bewusst NICHT mitcommittet, weil sie eine eigene
+  Beweisklasse ist (§14.2). Offen sind beide Hälften: `abnahme/dossiers/*` regenerieren **und**
+  den im Plan vorgesehenen Drift-Guard (`vite-node scripts/abnahme-dossiers.ts` + `git diff
+  --exit-code`) als eigenes kleines Tor bauen — heute existiert nur `npm run abnahme:dossiers`
+  (`package.json` Z.119), kein `check:*`. Plan-Bedingung: nur wenn die Regeneration < 60 s läuft,
+  und als **eigener kleiner PR** mit einmal rot gezeigtem Tor (§6.7). Drift-Stand am 31.7.2026
+  nicht nachgemessen (Nur-Lese-Verdikt). `[OF]`
+- **HYGIENE — `bund-stubs.generated.ts` nie mit Netz regeneriert** *(H-8/B22-Nachtrag)*: der
+  Zyklen-Umbau passte korrekt das Generator-Template `scripts/normtext/bund-stubs-generieren.ts`
+  an, konnte `src/lib/normtext/bund-stubs.generated.ts` aber mangels Fedlex-SPARQL-Zugriff nicht
+  echt neu erzeugen (ein Sandbox-Testlauf leerte den einzigen PrHG-Eintrag auf 0); die
+  Import-Zeile wurde 1:1 dem fixierten Template-Output nachgezogen, der Rest blieb byte-identisch.
+  Die Datei ist seither unberührt (letzter Commit `a5ed2cfcb`, 13.7.2026). **Bei der nächsten
+  echten Regenerierung mit Netz verifizieren, dass der Output unverändert bleibt** — eine
+  Abweichung wäre ein stiller Template-Fehler, den kein Tor fängt.
+- **HYGIENE — SG Stiftung: Zeilenminimum 330 vs. Code-Sockel 385** *(Rand-Befund der
+  H-7-Gegenprüfung 12.7.2026, **vorbestehend**, nicht vom Staffel-Generator verursacht)*: GebT sGS
+  821.5 Nr. 60.01 nennt für die Stiftungsurkunde amtlich «330 bis 3850»,
+  `src/data/tarif/beurkundung.ts` startet über die «wie 60.13»-Ansätze bei 385; `origin/main` trug
+  385 identisch ⇒ kein H-7-Regress, aber ein offener Tarif-Befund. Beleg
+  `bibliothek/register/gegenpruefung-register.md` Z.87. Klärung am Original (LexWork-Fassung) und
+  eine allfällige Korrektur liegen im Risikopfad `src/data/tarif` ⇒ `QS-GP`-Gegenprüfung Pflicht.
+  `[OF]`
+- **HYGIENE — ESLint `@typescript-eslint/consistent-type-imports` bleibt uneingelöst**: der
+  repo-weite Autofix-Sweep war ausschliesslich wegen der PR-Kette #164/#165 deferiert (Plan-Regel
+  G2); die Kette ist längst gelandet, die Regel steht bis heute nicht in `eslint.config.js`
+  (verifiziert 31.7.2026, repo-weiter Grep: kein Treffer ausserhalb des archivierten Fahrplans).
+  Entweder als **warn-only** einführen (eigener PR, Autofix-Churn nie mit einer anderen
+  Beweisklasse mischen) oder den Punkt ausdrücklich als gegenstandslos abschreiben.
+
+**Gesetzesdarstellung Bund** *(→ `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md`)*:
+- **Tabellen-Regelwerk T-A…T-F bleibt materiell in Kraft (§5-Merker, kein Bau-Schritt):** die
+  kanonische SSoT der Tabellen-Normalisierung (Anhang 1, Konflikte K1–K4, Regeln T-A1–A9 · T-B1–B6
+  · T-C1–C7 · T-D1–D7 · T-E1–E7 · T-F1–F9) liegt ab 31.7.2026 in
+  `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` und gilt fachlich unverändert fort. Sie ist von
+  aktivem Bestand referenziert: `scripts/normtext/tabelle-normalisieren.ts` Z.25 («Regeln A/B/E»),
+  `FAHRPLAN-TARIF-TABELLEN-STUFE2.md` Z.5-11/85, `DESIGN-REGLEMENT-NORMTEXT.md` §4a +
+  Korrektur-Kasten, und sie ist die Detailquelle für `W2·5j-TABELLEN` beim Entparken. Der
+  Übernahme-Auftrag «A/B/F → STUFE2» (Anhang 1, Kopf) ist bis heute **nicht** vollzogen — der
+  STUFE2-Fahrplan verweist nur; C/D **sind** in `DESIGN-REGLEMENT-NORMTEXT.md` §4a angekommen.
+  Entweder A/B/F nachziehen oder die Verweis-Lösung ausdrücklich als gewollt festhalten. `[OF]`
+- **TABELLEN Legacy-Fallback-Fläche (Nachmessung 31.7.2026, überholt die 9er-Liste von 30.6.):**
+  `check:tabellen` ist für Bund blockierend, wertet aber nicht-kanonisierte Blöcke als «ehrlichen
+  Legacy-Fallback» (T-E4) und zählt sie nur — heute **146 Legacy-`mehrspaltig`-Blöcke in 40
+  Bund-Dateien** (gegen 383 kanonische; Spitzen VVV 19 · VTS 13 · VZV 12 · LRV 11 · CHEMRRV/VVEA
+  je 10 · RVOV/SSV je 8) und **59 in 28 Kanton-Dateien** (gegen 71 kanonische; BS-772.420 14 ·
+  AR-833.151/BS-786.150 je 5). Das im Fahrplan genannte Residuum (AHVV Art. 52 Caption-Lücke;
+  BV.196 · DBG.36 · FZA.10 · VGKE.4 · VTS.94 · GEBV Art. 37) ist darin nur noch der historische
+  Kern — der Bund-Korpus wuchs seither von 28 auf 218+ Erlasse. Je Block entscheiden: kanonisieren
+  (T-A2–A7) oder als ragged/Prosa begründet belassen (T-E4/T-E6, §8-ehrlich). Detail
+  `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` M10 + Anhang 1 (A)/(E). `[OF]`
+- **TABELLEN §7-Faithfulness im Legacy-Render-Pfad (Befund 31.7.2026, Code + Korpus belegt):**
+  `LegacyMehrspaltigeTabelle` (`src/components/normtext/ArtikelBody.tsx` Z.393-430) schickt in
+  Z.425 **jede** Zelle durch `gruppiereTausender`; dessen Pass 2
+  (`src/lib/normtext/darstellung.ts` Z.180-195) gruppiert jeden ≥4-stelligen Ziffernlauf. Über die
+  oben gezählten Legacy-Blöcke tragen **1948 Zellen eine nackte Jahreszahl** (z.B.
+  `bund/APOSTILLE/scope_u1`: 2004 · 1996 · 1981 · 1988) → angezeigt als «2'004». Exakt dieselbe
+  Klasse ist für Kanton bereits als §7-Bug belegt und geheilt worden — aber nur für die 6
+  kanonisierten Klasse-A-Dateien (`FAHRPLAN-TARIF-TABELLEN-STUFE2.md` Z.71-84, BS-154.810 §19/§20
+  «1937»→«1'937»). Der kanonische Pfad ist korrekt (typgesteuert, `ArtikelBody.tsx` Z.380, T-C5) —
+  der Defekt lebt allein im Legacy-Zweig. Zwei Wege, beide zulässig: Legacy-Blöcke kanonisieren
+  **oder** die Gruppierung im Legacy-Renderer auf Geld-Kontext einengen (Muster
+  `gruppiereBetraege`, `darstellung.ts` Z.197-213). Reine Darstellung, kein Snapshot-Wert
+  betroffen (§7: Snapshot bleibt byte-treu). Risiko-Pfad-nah bei Kanonisierung ⇒ `QS-GP`. `[OF]`
+- **TABELLEN Validator-Scharfschaltung + Schema-Finalisierung (Umsetzungsplan Schritt 8, nie
+  ausgeführt):** `scripts/normtext/check-tabellen.ts` Z.104-120 fährt Kanton weiterhin im
+  **Report-Modus** (warnend), Bund blockierend — so vorgesehen «bis der Kanton-Generator-Pfad
+  nachgezogen ist»; der Nachzug ist seit 5.7.2026 nur für 6 von 34 Kanton-Dateien erfolgt. Ebenso
+  steht der als deprecated geplante Alias `kopf?` unverändert in `src/lib/normtext/typen.ts`
+  Z.79-88. Beide Punkte hängen an der Legacy-Fläche oben und sind erst danach schaltbar; bis dahin
+  ist der Ist-Zustand bewusst und dokumentiert, nicht vergessen. `[OF]`
+- **Abnahme-Warteschlange, Ergänzung: Reader-Darstellung Bund (M9/M10 visuell).** Der Fahrplan
+  führt für M9 (aufgehobene Artikel bündig auf einer Ebene) und für die neu kanonisierten Tabellen
+  ausdrücklich eine **visuelle Schluss-Abnahme bei David** (`abnahme-david-selbst`) — sie steht
+  bis heute in keiner Warteschlange. Kein Bau-Schritt, kein Blocker: Sichtprüfung am Reader
+  (Leitfall GebV SchKG Art. 20 · ein aufgehobener Artikel · ein Legacy-Fallback-Block), Rang 3
+  (Beträge). Detail `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` M9/M10.
+
+**Gesetzestext-Popup (Norm-Vorschau)** *(→ `archiv/FAHRPLAN-GESETZESTEXT-POPUP.md`)*:
+- **POPUP Volltext-Restlücken** (Ziel des Plans «alle Tarif-Quellen zeigen Volltext», Mess-Stand
+  17.6.2026: 219/253): ohne strukturierten Snapshot bleiben die nurPdf-/Nicht-LexWork-Erlasse **SG
+  941.12 · SG 914.5 · OW 210.32 · AR 153.2 · NW 265.51** sowie 14 Anhang-/Tarif-Ziffer-Tokens
+  (**BE 154.21** Ziff. 1.6/2.1/3.1.1/3.2/3.3.1/3.4/3.5 · **SG 914.5** Nr. 10.01/11.01/60.01.01 ·
+  **GL III B/3/2** Ziff. 1.1/8.1 · **NW 265.51** Nr. 2.6.1.1) und das Fremd-Erlass-Zitat **SH
+  211.433 § 13** (unter der quelleUrl von 221.101). Jede Lücke ist mit Grund deklariert in
+  `scripts/normtext/check-vollstaendigkeit.ts` (`BEKANNTE_LUECKEN` / `BEKANNTE_LUECKEN_HTMZH`) und
+  zeigt im Popover den ehrlichen Live-Link statt Text (§8). Der Anhang-Segmentierer wurde für
+  LexWork/HTM **bewusst nicht** verdrahtet — BE 154.21 führt den Tarif-Anhang nur als Querverweis
+  im Artikeltext, ein Segmentierer griffe die Verweiszeile statt des Tarifs (§1: ehrliche Lücke
+  vor verstümmeltem Gesetzestext). Schliessen heisst: je Layout ein `PdfProfil` in
+  `scripts/normtext/adapter-pdf.ts` ergänzen (Qualitäts-Tor: kein plausibler Artikel → nicht
+  speichern) und den Eintrag aus der Lücken-Liste streichen. Heimat
+  `archiv/FAHRPLAN-GESETZESTEXT-POPUP.md` §HANDOVER Schritt 3 +
+  `bibliothek/normen/norm-vorschau-snapshot-system.md` §Genuine Lücken / §Regel PDF. `[OF]`
+
+**Startseite V3 + Branding I2** *(→ `archiv/FAHRPLAN-STARTSEITE-V3.md`)*:
+- **STARTSEITE-V3 Kontrast-Rest «Input-Ruhe-Grenze» (Auflage §8/§9 Ziff. 8 nicht erfüllt,
+  deklariert abgehakt 3.7.2026):** die Ruhezustand-Grenze des Hero-Suchfelds auf dem Brass-Wash
+  erreicht die 3:1-Nicht-Text-Schwelle (WCAG 1.4.11) in KEINEM Modus — Rand `--line` kompositiert
+  1.22:1 hell / 1.48:1 dunkel, Füllung `well` gegen `brass-100` 1.06:1 / 1.28:1; der
+  aktive/fokussierte Zustand besteht dagegen klar (`--focus` 4.63:1 / 5.39:1) und axe ist grün
+  (critical/serious = 0). Als «strukturell, ausweich-unlösbar, nicht-regressiv» dokumentiert, weil
+  kein heller eingabetauglicher Flächen-Token 3:1 gegen `brass-100` erreicht und `lc-input`
+  app-weit geteilt ist. **Der einzige Beleg liegt gitignored**
+  (`abnahme/startseite-v3/KONTRAST-PROTOKOLL.md`, Zeilen f/g/h + Befund-Abschnitt) — bei Verlust
+  der Arbeitskopie ist die Messung weg. Zu tun: entweder beim nächsten `lc-input`-Anfassen eine
+  echte Rand-Verstärkung auf Brass-Flächen (dunklerer Grenz-Token nur im Hero-Kontext) oder die
+  Ruhe-Grenze als bewusste, begründete Ausnahme ins DESIGN-REGLEMENT heben; drittens greift
+  ersatzweise der dokumentierte Ein-Klassen-Fallback `HERO_FLAECHE = 'bg-surface'`
+  (`src/components/start/Hero.tsx:18`). Detail `archiv/FAHRPLAN-STARTSEITE-V3.md` §8/§9 Ziff. 8.
+  `[OF]`
+- **STARTSEITE-V3 Abnahme-Mappe — Detail-Verweis** (am W2·5c-Schritt und in der
+  Abnahme-Warteschlange mitführen): Davids spätere Sichtung läuft über `abnahme/startseite-v3/`
+  (**gitignored, nur lokal**: `ABNAHME-MAPPE.md`, `BASELINE.md`, `KONTRAST-PROTOKOLL.md`,
+  Screenshot-Serien `baseline`/`s2`/`s3`/`s4`/`final`, Desktop 1280 + Mobil 390 × hell/dunkel).
+  Zwei Schalter warten dort auf ein Wort: **Wash-Ton-Veto** ⇒ Ein-Klassen-Rückstellung
+  `bg-brass-100` → `bg-surface` in `src/components/start/Hero.tsx:18` (kein weiterer Umbau) und
+  die **V3-Cockpit-Fragen** (#3 Umplatzierung der Zuletzt-Rubrik · #9 Hero-Suche-Vereinheitlichung
+  · #55 hide-on-scroll-Header) aus `FAHRPLAN-UI-NAVIGATION.md` §Y Ziff. 3 — deren Optionen gehören
+  in dieselbe Mappe, nicht vorab gebaut. Zeitsperre gilt: aufreihen, nicht drängen. Detail
+  `archiv/FAHRPLAN-STARTSEITE-V3.md` §13.
+
+**Tarif-Tabellen Stufe 2** *(→ `archiv/FAHRPLAN-TARIF-TABELLEN-STUFE2.md`)*:
+- **SZ-280.411 Absatz-/Überschriften-Klebeklasse (pdfjs, pre-existing, von F19 NICHT gedeckt):**
+  im regenerierten Snapshot ist **§18 Abs 2 in Abs 1 verklebt** und der Übergangsbestimmungs-Titel
+  sitzt in Abs 3; **Abschnitts-Überschriften** («V. Ausnahmen» …) kleben generell an Absatz-Enden.
+  `FAHRPLAN-KANTONE.md` K-7d/**F19** löst ausdrücklich nur die **Glyph-Umordnung** (x-Sortierung,
+  drei Fixture-Stellen «Fr. 1 - 000.bis» / «zua- m chen» / «e-B zirksgericht») — die
+  **Absatz-Segmentierung + Überschriften-Abgrenzung im PDF-Adapter** bleibt offen: entweder als
+  F19-Teilauflage mitnehmen oder als eigene Klasse erheben (Muster: F22/TI-Absatz-Marker,
+  F18-Randtitel-Abgrenzung). Risiko-Pfad (Extraktion) ⇒ Opus + `check:gegenpruefung` +
+  pdfplumber-Gegenprobe. Detail `archiv/FAHRPLAN-TARIF-TABELLEN-STUFE2.md` §Nachzug SZ-280.411.
+  `[OF]`
+- **SG-2935 `art_17` Tabellen-Schnitt (kosmetisch, kein Wortlaut-Verlust):** eine Prosa-Notiz
+  zwischen Tarif-Position **26.01 und 26.02** bricht den Füllpunkt-Block, wodurch **26.02 samt
+  intaktem «50.–» in den `nachtext`** statt in die Tarif-Tabelle wandert — die Gebühr bleibt
+  lesbar, die Tabelle ist aber unvollständig. NICHT identisch mit den 32 §1-konservativ als
+  Plaintext belassenen SG-Restblöcken (dieser Block IST tableisiert, nur falsch geschnitten). Beim
+  nächsten SG-Anfassen (K-G4-Tranche) mitnehmen **oder** ausdrücklich als §1-konservativ belassen
+  quittieren. Detail `archiv/FAHRPLAN-TARIF-TABELLEN-STUFE2.md` §Schritt 3, Nebenbefund.
+
+**UX-Punkteliste** *(→ `archiv/FAHRPLAN-UX-PUNKTELISTE.md`)*:
+- **UX-PUNKTELISTE A3 · Betreibungskosten-Kacheln, Anweisung und Umsetzung zeigen in verschiedene
+  Richtungen** *(Anw. 18, David-Abnahme offen seit 26.6.2026)*: verlangt war «Kacheln einer Reihe
+  gleich hoch» (`auto-rows-fr` + `h-full`), gebaut wurde in
+  `src/components/forms/GebvKostenForm.tsx:97` `items-start` — also ausdrücklich **ungleiche**
+  Höhen; der Commit `3ccfd9d7e` deklariert das selbst offen («Felder bereits zeilen-aligned an
+  Desktop/Tablet verifiziert — zur Abnahme geflaggt»). Entweder David nimmt die abweichende Lösung
+  ab oder `auto-rows-fr`/`h-full` nachziehen. Reine Darstellung (§3), kein Risiko-Pfad. Detail
+  `archiv/FAHRPLAN-UX-PUNKTELISTE.md` A3.
+- **UX-PUNKTELISTE E-Optional · globaler Schalter «aufgehobene Normen ausblenden» nie gebaut**
+  *(Batch E «Optional», verzahnt mit C2)*: das Ansicht-Menü des Lesers kennt nur
+  `linien|fussnoten|verweise|leitfaelle` (`src/pages/gesetz-leser/leserOptionen.ts:65`,
+  `LeserAnsichtMenu.tsx`); aufgehobene Artikel sind heute fix eine gedämpfte Einzeile mit
+  AS-Aufhebungsnotiz (`ArtikelLeser.tsx:431/450`), ohne Ausblende-Option. Entweder als fünftes
+  `OptFeld` nachziehen **oder** bewusst streichen mit der Begründung, dass eine ausgeblendete Norm
+  dem Leser eine Lücke verschweigt (§8). Detail `archiv/FAHRPLAN-UX-PUNKTELISTE.md` Batch E,
+  letzter Spiegelstrich. `[OF]`
+- **UX-PUNKTELISTE · `W2·9` ist gegenstandslos geworden** *(Befund 31.7.2026)*: Der Schritt
+  verlangt eine Mapping-Tabelle «alt-Punkt → Code-Pfad → Status», *bevor* die Restpunkte **C2/C5**
+  angefasst werden — beide sind längst gebaut (C2 = `artikelGanzAufgehoben` + Aufhebungsnotiz,
+  `ArtikelLeser.tsx:169/450`; C5 = Ingress/Erlassformel als M5,
+  `scripts/normtext/kopf-extrahiere.ts` + `parts/ErlassKopfBlock.tsx`). Von den 20 Anweisungen
+  sind 18 live, Batch D ist über IV-1/IV-2 gemappt, Batch F über
+  `archiv/FAHRPLAN-KANTONALE-ENTSCHEIDE.md`. **Verbleibender Restbestand = genau die beiden Zeilen
+  oben (A3-Abnahme, E-Optional).** `W2·9` darum abhaken oder auf diese zwei Punkte verengen; der
+  Datei-Kopf «Status: reiner Plan. Noch nichts umgesetzt.» ist seit dem 26.6.2026 stale und bleibt
+  im Archiv nur historisch stehen — die Status-Wahrheit trägt die Session-Karte
+  `archiv/STRUKTUR-SESSIONKARTEN.md` («16/20 live + D-Teil + 2 Pläne»).
 
 ---
 *Konsolidiert 28.6.2026 aus den 26 `FAHRPLAN-*.md` + Strategie-Dokumenten + dem früheren

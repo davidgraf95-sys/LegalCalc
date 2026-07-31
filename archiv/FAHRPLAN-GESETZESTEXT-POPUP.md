@@ -25,7 +25,7 @@ Filestore-HTML (`id="art_…"`), LexWork-SPA-Backend (clex.ch u. a.).
 
 ---
 
-> **Erweiterung 29.6.2026 (aus QA-Sweep, → `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` M11/M6):**
+> **Erweiterung 29.6.2026 (aus QA-Sweep, → `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` M11/M6):**
 > - **Verweis löst Popup aus (M11a):** ein gesetzesübergreifender Verweis erzeugt das Norm-Vorschau-
 >   Popover. Testfall **Art. 24 GebV SchKG → Art. 112/113 SchKG** (prüfen, ob es dort entsteht).
 > - **Artikel-Bezeichnung im Popover (M11b):** die Vorschau zeigt zusätzlich den **Sachtitel**, z. B.

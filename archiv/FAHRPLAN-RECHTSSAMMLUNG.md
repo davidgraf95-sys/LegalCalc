@@ -8,7 +8,7 @@
 > (empfohlen) oder `superpowers:executing-plans`, Task für Task. Schritte nutzen
 > Checkbox-Syntax (`- [ ]`). Vor jeder Struktur-Arbeit: `CLAUDE.md` §1–§12 und
 > `STRUKTUR.md` lesen. Bei mehreren Sessions: §12 (Worktree-Isolation).
-> Verwandter Fahrplan (Datengrundlage): `FAHRPLAN-GESETZESTEXT-POPUP.md` (Norm-
+> Verwandter Fahrplan (Datengrundlage): `archiv/FAHRPLAN-GESETZESTEXT-POPUP.md` (Norm-
 > Snapshot-System — diese Rubrik baut darauf auf, ersetzt es nicht).
 
 **Stand: Entwurf 17.6.2026 (Ultra-Workflow, 8 Agenten: 4 Exploration → 3
@@ -52,7 +52,7 @@ System für **einfache Wartung** mitzudenken.
 ## Architektur-Kern: der schlaue Weg (kein Brute-Force)
 
 Die **Datengrundlage existiert bereits** (Norm-Snapshot-System, siehe
-`FAHRPLAN-GESETZESTEXT-POPUP.md`): `public/normtext/bund/*.json` (27 Bundes-
+`archiv/FAHRPLAN-GESETZESTEXT-POPUP.md`): `public/normtext/bund/*.json` (27 Bundes-
 gesetze, je Artikel Volltext + Stand + Quelle + Drift-Token) und
 `public/normtext/kanton/*.json` (115 kantonale Erlass-Dateien). Bisher nur über
 **Popover bei Zitaten** erreichbar — es fehlt eine **browsbare Gesamtsicht**.
@@ -572,7 +572,7 @@ ohnehin in die Phasen, andere sind als Backlog markiert (Mehrwert ohne MVP-Risik
 **Synergie-Backlog (eigener, gegateter Schritt nach MVP — hoher Hebel):**
 
 - **O5 — Inline-Linker `NormText` erreicht kantonale Verweise nicht (~60 % der
-  «§ N»-Nennungen unauflösbar, siehe `FAHRPLAN-GESETZESTEXT-POPUP.md`).** Das
+  «§ N»-Nennungen unauflösbar, siehe `archiv/FAHRPLAN-GESETZESTEXT-POPUP.md`).** Das
   Register kennt je Kanton/Erlass den Kontext. Ein **register-gestützter kantonaler
   Resolver** könnte deutlich mehr Inline-Normen klickbar machen → direkter Mehrwert
   für *alle* Rechner/Vorlagen, nicht nur die Rubrik. *Backlog P5+.*

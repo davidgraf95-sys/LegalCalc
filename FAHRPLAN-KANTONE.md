@@ -402,7 +402,7 @@ vgl. Daueranweisung «an höchste Struktur andocken»).
    anderen Defekt aus als BS mit 41 % — sie dürfen nicht als ein Problem behandelt werden.
 
 Ein Fix ohne diese Zuordnung repariert die falsche Schicht. Passt zur bestehenden §0-Leitplanke
-«korpusweiter Adapter-Hebel VOR jedem Bulk» (`FAHRPLAN-BS-VORBILDKANTON.md`) und zu **K-G3**
+«korpusweiter Adapter-Hebel VOR jedem Bulk» (`archiv/FAHRPLAN-BS-VORBILDKANTON.md`) und zu **K-G3**
 (Gliederungs-Extraktion korpusweit, §1-B) — dort einhängen, **nicht** doppelt planen.
 
 **Risiko-Einstufung:** Extraktion ⇒ Opus + `check:gegenpruefung`.

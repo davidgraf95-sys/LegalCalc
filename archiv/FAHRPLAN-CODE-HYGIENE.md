@@ -113,7 +113,7 @@
     §6.3-Verstoss). Commit-Offenlegung: «David-Auftrag 7.6., abgelöst durch Startseite V2/V3;
     bei V3-Abnahme-Veto via git-Historie wiederherstellbar» (V3-Abnahme steht noch aus).
   - **B4:** `src/components/RechnerKarte.tsx` + nur die RechnerKarte-Assertions in
-    `katalog.test.tsx`. **Pflicht-Vorcheck** (nicht «kurz»): `FAHRPLAN-STARTSEITE-V3.md`
+    `katalog.test.tsx`. **Pflicht-Vorcheck** (nicht «kurz»): `archiv/FAHRPLAN-STARTSEITE-V3.md`
     (Rest: Zuletzt-Titel) auf geplante Wiederverwendung prüfen, Negativ-Beleg in den Commit.
   - **B5:** `browse.ts`: `gruppiereNachGebiet`/`baueBaender`/`bandFuerToken` + `interface Band`
     + zugehörige Testfälle; genutzte Nachbarn (`gruppiereNachKanton`, `filtern`, Lade-Funktionen)
@@ -384,7 +384,7 @@
   (Branch `chore/h4-tot-sweep`): B1 `internerRechtsprechungLink`+`_leereRevisionCache`+
   `vergissAnker` entfernt (Geschwister-Seams `_leereShardCache`/`_leereKantenShardCache`
   bewusst unangetastet) · B3 `haeufigGebraucht.ts` + Test komplett weg · B4 `RechnerKarte.tsx`
-  + Assertions weg (Vorcheck FAHRPLAN-STARTSEITE-V3.md: kein Wiederverwendungs-Treffer) ·
+  + Assertions weg (Vorcheck archiv/FAHRPLAN-STARTSEITE-V3.md: kein Wiederverwendungs-Treffer) ·
   B5 `browse.ts`: `gruppiereNachGebiet`/`baueBaender`/`bandFuerToken`/`interface Band`/
   `GebietGruppe` weg, genutzte Nachbarn unangetastet · B6 (eigener Commit) `ZIEL_DOKUMENTE`/
   `fortschrittProzent` weg (Davids gestrichenes 1000er-Ziel) · B8 `konventionen.ts` NICHT

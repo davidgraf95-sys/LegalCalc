@@ -63,7 +63,7 @@ Vom Vollständigkeits-Check (`check:vollstaendigkeit`) als GENUIN bestätigt:
 - **Nicht-LexWork**: NW 265.51; sowie generell ZH (zhlex), UR/SZ-PDF (lexfind),
   TI/VD/NE/GE/JU (Eigenformate) — bleiben Live-Link bis ein Adapter existiert.
 
-## Build-Regel (verbindlich — CLAUDE.md §7, Detail FAHRPLAN-GESETZESTEXT-POPUP.md)
+## Build-Regel (verbindlich — CLAUDE.md §7, Detail archiv/FAHRPLAN-GESETZESTEXT-POPUP.md)
 
 Snapshots NUR via `npm run normtext -- --datum=$(date +%F)`, nie von Hand. Muster:
 (1) Vollabdeckung aller Artikel je Erlass; (2) Aufzählungen (lit./Ziff.) als items

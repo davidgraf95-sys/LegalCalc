@@ -365,8 +365,11 @@ präzisiert, nie autonom gekippt.
 > natürlicher Landeplatz `/suche` ist David-gegatet (S5); ins Route-Store zu falten
 > würde §14.2 (Belange nicht mischen, Einheit klein für EIN Gate) verletzen → eigener
 > Posten, wenn S5 freigegeben ist. Schritt 2/3/4 der Spec brauchen es nicht.
-- **Engpass zuerst:** `zuletztVerwendet.ts` trackt nur Rechner/Vorlagen — «Gesetze/Entscheide
-  = eigenes Arbeitspaket» steht wörtlich im Code (FAHRPLAN-STARTSEITE-V3 §3 #5, ~½ Session).
+- **Engpass zuerst:** ~~`zuletztVerwendet.ts` trackt nur Rechner/Vorlagen — «Gesetze/Entscheide
+  = eigenes Arbeitspaket» steht wörtlich im Code (archiv/FAHRPLAN-STARTSEITE-V3 §3 #5, ~½ Session).~~
+  **Überholt seit 3.7.2026** (Befund 31.7.2026): Gesetz-/Entscheid-/Material-Titel werden getrackt
+  (`src/lib/zuletztTitel.ts`, `ZuletztTyp` in `zuletztVerwendet.ts:22`); O1 weiter unten sagt das
+  bereits. Der Engpass ist damit weg — Schritt (1) der Reihenfolge ist erledigt.
   **Reihenfolge:** (1) Tracking auf alle Inhaltstypen ausdehnen (Gesetz-Artikel, BGE,
   Materialien, Suchanfragen) → (2) Cmd/⌘K-**Leerzustand** zeigt Zuletzt-Liste + 3–5 kuratierte
   Einstiege (synchron aus localStorage, CLS-frei) → (3) globaler Zugriff: Topbar-«Verlauf»

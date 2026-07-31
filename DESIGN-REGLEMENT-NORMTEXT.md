@@ -119,7 +119,7 @@ solches markiert — nie als Vollständigkeit ausgegeben.
 
 ### §4a · Suche, Gliederung & Tabellen (QA-Sweep David 29.6.2026)
 
-Detailplan: `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` (M4/M5/M7/M8/M10).
+Detailplan: `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` (M4/M5/M7/M8/M10).
 
 - **Suche ↔ Gliederung responsiv (M4/M5/M7).** Über alle Breakpoints: die Gliederung
   darf das **Suchfeld und die gefundenen Artikel nicht verdecken** (schmaler Viewport →
@@ -582,4 +582,4 @@ Tabelle → ehrlicher Text-Fallback), «N.—»-Spacing,
 > die 6 Datenzellen sind colspan-los → Kopf 2 ≠ Zeile 6 = zerrissen. Neue Regel:
 > `colspan` wird in **beiden** Markup-Varianten expandiert und die Staffel-Spanne zu
 > einer logischen Zelle verdichtet (Tabellen-Regelwerk T-A2/T-A3/T-A6 in
-> `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md`). Nur `rowspan`/Verschachtelung bleibt Fallback.
+> `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md`). Nur `rowspan`/Verschachtelung bleibt Fallback.
