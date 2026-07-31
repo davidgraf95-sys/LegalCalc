@@ -1417,7 +1417,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   (ZH→BE→VD→AG→SG→LU→GE), Kern-Erlass-Inventarquelle und §7-Quell-Menü-Auflagen
   (kein Headless, lexfind nur Fakten-Signal) — dort einhängen, kein Parallel-Schritt.
 - [ ] **13 · Vorlagen-Breite** *(VORLAGEN V5/V6/V8, GMBH G2, VERTRAGS-VARIANTEN P3; Worktree)*.
-  <!-- @meta id: W3·13 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/vorlagen] · worktree: ja · 26x: nein -->
+  <!-- @meta id: W3·13 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/vorlagen] · worktree: ja · 26x: nein · fahrplan: archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md -->
   Tiefe vor Stückzahl. GmbH qualifizierte Gründung (777c II) · Musterklagen (Bauhandwerkerpfand) ·
   Basistypen (Kauf/Fahrniskauf Art. 184 ff. dispositiv, Schenkung/Pacht/Darlehen/Bürgschaft).
 - [ ] **14 · Multi-Pane / Split-View** *(SPLIT-VIEW, Fundament-Umbau, eigener Worktree; Auftrag
@@ -1583,14 +1583,12 @@ harter Auflage.
   **ERLEDIGT 5.7. (SG-2935-Rohtext-Reparatur, Branch `fix/sg2935-x-spalten`).** Wortlaut → `ROADMAP-CHRONIK.md` → Strang-Detailpunkte/SG-2935 (26.7.2026); Detail `FAHRPLAN-TARIF-TABELLEN-STUFE2.md` §SG-2935-Reparatur.
 - **Infrastruktur-Fundament:** GESETZESTEXT-POPUP (Snapshot/Drift) trägt RECHTSSAMMLUNG/Rechtsprechungs-
   Verzahnung/GESETZE-IMPORT → vor aufsetzenden Strängen mitdenken.
-- **Archiv-Kandidaten** (Code-Stand prüfen): INTERNATIONAL-VOLLTEXT-Rest.
-  RECHTSPRECHUNG-Dach/TARIF-STUFE2/BGER-RECHTSWEG deployt → nur Abnahme.
-  **Methode** (verify-then-archive, ultracode): die 28→`ROADMAP.md`-Konsolidierung ist seit 28.6.
-  erledigt — offen ist nur das Archivieren obsoleter `FAHRPLAN-*.md` (Repo-Wurzel). Je FAHRPLAN
-  prüft **ein Opus-Agent**, ob ALLE offenen Punkte bereits in `ROADMAP.md` stehen; nur zu 100%
-  gemappte Dateien wandern per `git mv` nach `archiv/` (kein Informationsverlust), der Rest bleibt
-  liegen bis gemappt. Reine Doku-Hygiene → kein Deploy/§9, kein Golden/§6, kein Worktree-Zwang
-  (keine Kollisionsdatei, §12). `[OF]`
+- **Archiv-Kandidaten**: INTERNATIONAL-VOLLTEXT-Rest. RECHTSPRECHUNG-Dach/TARIF-STUFE2/
+  BGER-RECHTSWEG deployt → nur Abnahme. **Erledigt 31.7.2026:** die Archiv-Welle hat 11 verwaiste
+  Fahrpläne verify-then-archive ins Archiv gebracht (je ein Opus-Verdikt NUR-MIT-NACHTRAG), 45
+  Nachtrag-Einzeiler unter «Nachträge aus der Archiv-Welle 31.7.2026» ergänzt, `ARCHIV_BACKLOG`
+  geleert. Methode bleibt für künftige Fälle: je Datei ein Opus-Verdikt, erst mappen, dann
+  verschieben.
 - **Stale Doku-Köpfe** (in der jeweiligen `FAHRPLAN-*.md` korrigieren): POPUP «27»→218.
   ~~VERTRAGS-VARIANTEN «1000»~~ · ~~LUECKEN~~ · ~~NOTARIAT-GRUNDBUCH~~ **erledigt durch die
   Archivierung 31.7.2026** (Dateien nach `archiv/`; die Köpfe bleiben dort byte-genau historisch
