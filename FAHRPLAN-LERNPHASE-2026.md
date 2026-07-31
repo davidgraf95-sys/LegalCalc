@@ -1,5 +1,13 @@
 # Fahrplan Lernphase 2026 — Bauen ohne Davids Fachzeit (bis 1.12.2026)
 
+**Heimat: ROADMAP-Schritte `LERNPHASE-AB` und `QS-GP`.**
+
+## §0 · Zweck
+
+Detailquelle zu `LERNPHASE-AB`/`QS-GP` — was ohne Davids fachliche Detail-Abnahme
+gebaut werden kann, bis zur Anwaltsprüfung (harte Zeitsperre bis 1.12.2026, **keine
+Vermeidung**: Abnahme bis dahin nicht proaktiv vorschlagen/drängen).
+
 **Auftrag David (22.6.2026):** Bis zur Anwaltsprüfung (**läuft bis 1.12.2026**) hat David **keine
 Zeit für die fachliche Detail-Abnahme**. Das ist eine harte Zeitsperre, **keine Vermeidung** —
 Abnahme bis dahin NICHT proaktiv vorschlagen/drängen (vgl. Memory `lexmetrik-abnahme-zeitsperre`,

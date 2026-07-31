@@ -28,6 +28,16 @@ in CI sind eine **neue §9-Qualität** → einmaliges Rahmen-Gate David in O-2.
 
 ---
 
+## §0 · Zweck
+
+Detailquelle zu `QS-OPT` — Ablage des allgemeinen Ultracode-Optimierungs-Research
+Juli 2026, **nur Plan, kein Bau**. Bereits abgedeckte Flächen werden **nur
+referenziert, nie dupliziert**: UI-Navigation (W2·10), Design/Wärme (W2·11),
+Code-Hygiene (W2·12), Token-Ökonomie (QS-TOK), Performance (QS-PERF), SEO/A11y,
+Prozesskosten, Currency (QS-CURRENCY), Katalog-Triage.
+
+---
+
 ## O-1 · Betrieb & Wachhund — SOFORT BAUBAR
 
 **Kern:** Prod ist heute strukturell blind — ein seit Wochen totes Feature (CSP frisst

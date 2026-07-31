@@ -1,5 +1,14 @@
 # FAHRPLAN — Kantonale Gesetze: 3-Tier-Import + Confidence-Quarantäne
 
+**Heimat: ROADMAP-Schritt `W3·12`.**
+
+## §0 · Zweck
+
+Detailquelle zu `W3·12` — alle kantonalen Gesetze sauber + klickbar abbilden, ohne
+jedes Gesetz einzeln prüfen zu müssen. Datei-spezifisch: Auto-akzeptierte Imports
+bleiben Status «entwurf», **nie** «geprüft»/«verified» ohne Davids Abnahme (§7/§8);
+passt zur Abnahme-Zeitsperre bis 1.12.2026 (`FAHRPLAN-LERNPHASE-2026.md`).
+
 **Auftrag David (22./23.6.2026):** alle kantonalen Gesetze sauber + klickbar auf
 LexMetrik abbilden, OHNE jedes Gesetz einzeln prüfen zu müssen — besser als reines
 PDF (klickbare Normen, Querverweise, mobil).

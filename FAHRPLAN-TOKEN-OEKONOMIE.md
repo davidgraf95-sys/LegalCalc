@@ -12,6 +12,14 @@
 > Gegenprüfung auf Risikopfaden, doppelt verifizieren, iterative Bug-Checks, golden byte-gleich,
 > Treue vor Tempo. Keine Massnahme kürzt Beweis, Tor oder Prüfung.
 
+## §0 · Zweck
+
+Detailquelle zu `QS-TOK` — Token-Verbrauch des Agenten-Baus senken, ausschliesslich
+über Effizienz (gezielter lesen, kompakter übergeben, deterministisch statt
+modellgetrieben, cachen, indizieren). **LEITPLANKE nicht verhandelbar:** keine
+Massnahme kürzt Beweis, Tor oder Prüfung — Gegenprüfung/golden byte-gleich/Treue
+vor Tempo bleiben unangetastet.
+
 ## Stand
 
 **GO + OBERSTE PRIORITÄT erteilt (David, Chat 10.7.2026): «oberster schritt soll sein den

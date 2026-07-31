@@ -1,5 +1,15 @@
 # FAHRPLAN — Prozesskosten-Cockpit (Vertiefung & Ausbau)
 
+**Heimat: ROADMAP-Schritte `W1·4` und `W1·5-PRAXIS`.**
+
+## §0 · Zweck und Disziplin
+
+Detailquelle zu `W1·4`/`W1·5-PRAXIS` — den Prozesskostenrechner (P1-Hauptmoat) zum
+Kostenrisiko-Cockpit über die volle Matrix vertiefen. Jede Etappe: §7 (amtlich
+verifiziert, mit Link) · §2/§8 (Ermessen = Spanne + Kriterien, kein erfundener
+Punktwert) · §6 (Gate grün, golden) · §9 (Bug-Check + Deploy nur auf Davids
+frisches Ja). Engine bleibt dünner Lader; keine Rechtslogik in der UI (§3).
+
 **Anlass:** Direktive David (14.6.2026) — den Prozesskostenrechner (P1-Hauptmoat,
 bereits live auf lexmetrik.vercel.app) „insgesamt noch viel vertiefen und
 umfangreicher gestalten". Ziel: das umfassendste, amtlich belegte und

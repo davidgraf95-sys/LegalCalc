@@ -1,5 +1,15 @@
 # FAHRPLAN — Webseite verbessern mit SEO / A11y / Skill-Governance (Stand 25.6.2026)
 
+**Heimat: ROADMAP-Schritt `SEO-A11Y`.**
+
+## §0 · Zweck
+
+Detailquelle zu `SEO-A11Y` — LexMetrik bei Schweizer Rechtsanfragen besser
+auffindbar und zugänglicher machen als `fedlex.admin.ch`/`entscheidsuche.ch`.
+Bis 1.12.2026 priorisiert dieser Fahrplan alles, was **ohne Davids Fachzeit**
+umsetzbar ist (Technik-/Struktur-/Verifikations-Layer); inhaltliche Rechts-
+aussagen bleiben `TODO(David)`-Gerüst bis zur Abnahme-Welle.
+
 > Read-only erstellt. Andere Agenten arbeiten parallel im Repo `/Users/david/Developer/LexMetrik` — dieser Fahrplan ändert nichts, er ist Ablage-Dokument. Empfohlener Ablageort: neuer `FAHRPLAN-SEO-A11Y-GOVERNANCE.md` (dockt thematisch an `FAHRPLAN-LERNPHASE-2026.md` Strang B = Verifikations-/Infrastruktur an). Überschneidet sich nur mit `FAHRPLAN-RECHTSPRECHUNG.md` (W1.1 revidiert dessen Annahme „nicht prerenderbar" — siehe §9), dupliziert sonst keinen der 24 Root-Fahrpläne.
 
 ## 1. Kurz-Kontext & Nordstern

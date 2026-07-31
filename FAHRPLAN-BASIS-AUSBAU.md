@@ -248,6 +248,16 @@ Spätere Gates (nicht in diesem Panel): Kantonswahl Pilot-Ausbau (default-bar ZH
 
 ---
 
+## §0 · Zweck
+
+Detailquelle zu `QS-BASIS` und `QS-AUTOMATIK` — was an der Basis von LexMetrik
+verbessert werden kann. **Plan-Prinzip (Daueranweisung David, 17.7.2026, wörtlich):**
+«handlungsschritte von meiner seite erst am schluss» — **§A Agent-baubar ohne
+David** (autonome Bau-Reihenfolge) + **§B David-Schlussblock** (Freigabe-/
+Beschaffungs-Handschritte gebündelt ans Ende), je Gate mit VERDRAHTEN-Rest notiert.
+
+---
+
 ## §Verworfen (mit Grund)
 
 ### Schon geplant mit ID — nur referenzieren, NICHT neu aufnehmen (§14)
@@ -319,7 +329,6 @@ wird ergänzt]», kein Impressum (→ B-1). `currency.json` deckt nur die 227 Bu
 FR/IT-Erlasse als «de» fehl-getaggt (de=1467, fr=2) (→ B-8). Golden-/Determinismus-Nachweise nicht nutzer-sichtbar (→ B-7).
 Zitat-Kopie ohne Fassungs-/Abrufdatum (→ B-6). Permalink technisch stark, aber ohne Beständigkeits-Versprechen (→ B-10).
 E3/E4 seit 3.7. lokal fertig, einziger Blocker VPS-Bestellung als blosse Memory-Notiz (→ B-5).
-</content>
 
 ---
 

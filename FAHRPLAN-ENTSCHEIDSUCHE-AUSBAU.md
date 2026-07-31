@@ -1,9 +1,18 @@
 # Fahrplan — entscheidsuche voll ausschöpfen (Teil-B-Ausbau)
 
+**Heimat: ROADMAP-Schritte `W2·6-FILTER` und `W2·6-RNAME`.**
+
 **Auftrag David (24.6.2026):** Den vollen Mehrwert von entscheidsuche
 (`https://mcp.entscheidsuche.ch/` + darunterliegende API) für LexMetrik heben.
 Dieser Plan priorisiert die noch ungenutzten Hebel und gibt je Phase konkrete
 Dateien, Tore und Risiken. **Reiner Plan — nichts hier ist umgesetzt** (§9).
+
+## §0 · Zweck
+
+Detailquelle zu `W2·6-FILTER`/`W2·6-RNAME` — entscheidsuche.ch (MCP + Live-Suche)
+für LexMetrik voll ausschöpfen. Steuert nicht; kein zweiter Einstieg (§14). Datei-
+spezifisch: **reiner Plan, nichts hier ist umgesetzt** (§9) — Umsetzungsstand steht
+allein in `ROADMAP.md`/`STRUKTUR.md`, nicht in diesem Dokument.
 
 ## 0. Ausgangslage (Stand 24.6.2026)
 

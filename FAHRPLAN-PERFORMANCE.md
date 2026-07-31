@@ -11,6 +11,16 @@
 
 ---
 
+## §0 · Zweck
+
+Detailquelle zu `QS-PERF`/`W2·15-CLS` — Geräte-Last und Performance-Massnahmen.
+Nie zweiter Einstieg (§14). Bau-Grundsatz verbindlich in CLAUDE.md §15: nicht
+merklich langsamer werden, **solange daraus kein Logikverlust entsteht** — bei
+Konflikt gewinnt immer die Treue, nie das Tempo (§1). Jede Massnahme trägt eine
+explizite Logikverlust-Bewertung.
+
+---
+
 ## Stand (Bau-Fortschritt)
 
 **30.6.2026 — Quick-Win-Batch 1 gebaut** (Commit `9e914242`, golden 201 byte-identisch,

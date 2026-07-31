@@ -2,6 +2,11 @@
 
 **Stand:** 3.7.2026 · **Auftrag:** David 3.7.2026 («Verzahnung sichtbar machen») · **Erarbeitet:** Fable (Konzept + adversariale Gegenprüfung eingearbeitet) · **Rolle:** Detailquelle der `ROADMAP.md` für Schritt **W2·7-VZUI** (§14 — die ROADMAP bleibt die eine Steuerungsquelle, dieser Fahrplan trägt das Wie).
 
+## §0 · Zweck und Leitplanken
+
+Detailquelle zu `W2·7-VZUI` (auch `W2·6-ZNETZ`/`W2·7-BEZUG`) — die Verzahnung
+Norm↔Rechtsprechung sichtbar machen (V1 vor VPS · V2 Masse · V3 Soft-Law).
+
 **Leitplanken (bindend):**
 - **§7 Status-Modell:** Kein Element behauptet je «geprüft»/`verified` — das ist Davids Abnahme vorbehalten (gesperrt bis 1.12.2026). Wortfeld «geprüft/gegengeprüft/verifiziert» ist in JEDEM Nutzertext dieses Fahrplans verboten.
 - **§8 Ehrlichkeit:** Herkunft (amtlich/kuratiert/maschinell) wird nie verschwiegen; Zähler nennen Erfassungsgrenzen («n **erfasste** Urteile»), nie Vollzähligkeit.

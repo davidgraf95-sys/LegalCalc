@@ -1,5 +1,15 @@
 # FAHRPLAN — OpenCaseLaw als Quellen-Steinbruch (Analyse 2.7.2026)
 
+**Heimat: ROADMAP-Schritt `W2·6`** (Datenausbau-Unterschritte — Quellen-Steinbruch
+OpenCaseLaw); geltende Grundlage von `PLAN-OCL-ABBAU.md`. Kein eigener `@meta`-Schritt.
+
+## §0 · Zweck
+
+Konsolidierter Befund, was aus `caselaw-repo-1`/opencaselaw.ch für LexMetrik
+verwertbar ist. **Noch kein Code umgesetzt.** Leit-Doktrin: bei *load-bearing*
+Rechtsanzeige darf OCL nie zum Mittelsmann werden — Endpunkt-Wissen selbst gegen
+die amtliche Quelle nachbauen, OCL-Daten nur als Seed + Diff-Orakel.
+
 **Anlass:** David hat `github.com/jonashertner/caselaw-repo-1` (= Code hinter **opencaselaw.ch** / HF-Dataset `voilaj/swiss-caselaw`) gefunden und gefragt, *was wir daraus für Lexmetrik verwenden können*. Fünf parallele Explore-Agents haben je ein Subsystem im geklonten Repo (143k LOC Python) durchleuchtet. Dieses Dokument = konsolidierter Befund. **Noch kein Code umgesetzt.**
 
 **Lizenz-Lage:** Daten **CC0-1.0** (keine Attributionspflicht, kommerziell frei, redistribuierbar), Code **MIT** (bei Code-Kopie Notice behalten), gehostete API ohne Keys/Paywall (Fair-Use). Gerichtsentscheide/Gesetze sind in CH ohnehin URG-frei (Art. 5 URG).

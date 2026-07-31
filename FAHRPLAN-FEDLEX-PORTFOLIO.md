@@ -1,5 +1,17 @@
 # FAHRPLAN-FEDLEX-PORTFOLIO — Nützliche Fedlex-Datenarten für LexMetrik
 
+**Heimat: ROADMAP-Schritte `QS-CURRENCY`, `W2·14-SIGNAL`, `W2·14-SIGNAL-B1`,
+`W2·14-SIGNAL-B2`, `W2·14-SIGNAL-GER`** (je Paket am Ende dieses Dokuments benannt).
+
+## §0 · Zweck und Quer-Regeln
+
+Detailquelle (§14) zu den oben genannten ROADMAP-Schritten — sechs verwertbare
+Fedlex-Datenarten für LexMetrik, Paket für Paket. Kein zweiter Einstieg.
+**Fable plant, Opus baut** — jedes Paket ist Risiko-Pfad (Extraktion/Norm) ⇒
+`check:gegenpruefung` Pflicht (§14 DoD), §7-Verifikation, §9-Deploy nur mit
+Davids Ja. **Quellen-Hygiene (für ALLE Pakete):** ausschliesslich die amtliche
+Fedlex-Stelle (SPARQL-Endpoint + Filestore-HTML) — nie ein Dritt-Repo.
+
 > **Rolle dieses Dokuments:** Detailquelle (§14) zu den ROADMAP-Schritten, die am Ende je Paket benannt sind. **Kein** zweiter Einstieg. **Fable plant, Opus baut** — jedes Paket ist Risiko-Pfad (Extraktion/Norm) → `check:gegenpruefung` Pflicht (§14 DoD), §7-Verifikation, §9-Deploy nur mit Davids Ja.
 > **Quellen-Hygiene (für ALLE Pakete):** ausschliesslich die amtliche Fedlex-Stelle — SPARQL `https://fedlex.data.admin.ch/sparqlendpoint` (POST, `Accept: application/sparql-results+json`, `curl --data-urlencode`) + Filestore-HTML. **Nie** das Dritt-Repo `droid-f/fedlex` (CC BY-NC-SA, kommerziell verboten). Kein fremdes Byte fliesst ins Produkt.
 >

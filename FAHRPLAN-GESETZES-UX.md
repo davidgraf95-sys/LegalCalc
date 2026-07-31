@@ -2114,9 +2114,8 @@ dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (a
   **Nachzug-Welle A19–A25 (David 10.7.2026 — Ultracode-Recherche, Bau-Go David
   ausstehend):** eingeordnet in `FAHRPLAN-GESETZES-UX.md` §10.8; Spec-Heimat
   `FAHRPLAN-GESETZESDARSTELLUNG-V2.md`; Wortlaut
-  `docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-10.md`. Offene Schritte:
-
-
+  `docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-10.md`. Offene Schritte: siehe Teilschritte
+  W2·5d-EID3/-ANNEX/-SPY/-YC in ROADMAP.
   **Nachzug-Welle A29–A40 (David 16.7.2026 — BAU-GO in derselben Session: «run till
   dry» + «und dann wie immer alles mit opus bauen»):** eingeordnet in
   `FAHRPLAN-GESETZES-UX.md` §10.10; Wortlaut

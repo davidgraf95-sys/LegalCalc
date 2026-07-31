@@ -7,6 +7,14 @@
 
 ---
 
+## §0 · Zweck
+
+Detailquelle zu `QS-WISSEN` — ob und wie NotebookLM den LexMetrik-Doku-Korpus
+erschliessen kann, für David (Recall/Recherche) und ehrlich geprüft für den
+Assistenten (kein ToS-konformer Consumer-API, daher keine Session-Nutzung).
+**Leitprinzip:** ehrliche Machbarkeit vor Feature-Wunsch; kein ToS-Bruch auf
+Davids privatem Google-Konto.
+
 ## 1. Ziel & zwei getrennte Nutzungsarten
 
 NotebookLM soll **den LexMetrik-Doku-Korpus** (FAHRPLÄNE, ROADMAP, Register, Dossiers) als durchsuchbaren, zitatgestützten Wissensspeicher erschliessen. Zwei sauber getrennte Nutzungsarten:

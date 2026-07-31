@@ -1,5 +1,13 @@
 # FAHRPLAN-GESETZESDARSTELLUNG-V2 — Nützlicher, fehlerfreier, farbiger
 
+**Heimat: ROADMAP-Schritte `W2·5g-ZEIT` und `W2·5i-HIST-ANSICHT`.**
+
+## §0 · Zweck
+
+Detailquelle zu `W2·5g-ZEIT`/`W2·5i-HIST-ANSICHT` — Gesetzesdarstellung nützlicher,
+fehlerfreier, farbiger (VZG-Fussnoten, Kopf, BGE-Filter, Liniengliederung, Farben).
+**NUR PLAN — Einbau erst mit Davids Go.**
+
 **Recherche 10.7.2026 (Ultracode, 17 Agenten, strikt read-only; kritische Verifikationen durch Fable).
 NUR PLAN — Einbau erst mit Davids Go.** Auftrag Davids (wörtlich, 10.7.): VZG-Fussnoten nicht verklinkt · Kopf nützlicher + Fussnoten-Anwahl · BGE-Abwahl + «wie lange zurück»-Filter in Rubrik Ansicht · Liniengliederung «funktioniert praktisch nicht» · Präambel-Fussnoten unverlinkt · mehr Farben · generell nützlicher/fehlerfreier.
 

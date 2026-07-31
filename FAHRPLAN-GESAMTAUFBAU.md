@@ -1,5 +1,17 @@
 # FAHRPLAN-GESAMTAUFBAU - Chronologischer Zukunfts-Ausbau der LexMetrik-Website
 
+**Heimat: ROADMAP «Funktions-Katalog (Aufbau + Auflagen je Werkzeug)» §1 (Kern-Auflagen je
+Werkzeug) und «Strang-Detailpunkte & Hygiene» §2** (Offene Detailpunkte · Infrastruktur-
+Fundament · Archiv-Kandidaten · Stale Doku-Köpfe · Klein-Backlog) — kein eigener `@meta`-Schritt,
+nur Prosa-Verweis aus der ROADMAP.
+
+## §0 · Zweck
+
+ORDNET die bestehenden FAHRPLÄNE und die `ROADMAP.md` (§14) chronologisch — **ersetzt die
+ROADMAP nicht**; sie bleibt die eine Steuerungsquelle. Der Plan ist **nicht zeitgebunden**
+(Monatslabels sind indikativ); einzige harte Zeitschranke: Davids fachliche Abnahme erst ab
+Dezember 2026.
+
 **Stand:** 2.7.2026 · **Erarbeitet:** Council + Fable (Kritik-Runde eingearbeitet) · **Status:** ORDNET die bestehenden FAHRPLÄNE und die `ROADMAP.md` (§14) chronologisch — **ersetzt die ROADMAP nicht**; sie bleibt die eine Steuerungsquelle. · **Ist-Stand-Nachtrag 3.7.2026** (E0 gemergt, Phase 0 vollzogen, Betriebs-Fixes A2–A6 — s. Abschnitt «Ist-Stand-Nachtrag (3.7.2026)» unten).
 **Nordstern (geschärft David 3.7.2026):** DIE EINE Anlaufplattform für JEDEN Rechtsanwender — Gerichte, Steuerbehörden, Ämter/Verwaltung, Studierende, Notariate, Treuhänder, nicht nur Anwältinnen. Übersichtliches Zuhause für JEGLICHE amtlichen Materialien von Bund + 26 Kantonen (inkl. Verwaltungsverordnungen/amtliche Praxis) — DB = die EINE Wahrheit, selbst gehostet, immer geltender Stand, transparent mit Fundstelle, Historie. *(Wortlaut-SSoT = ROADMAP-Produktvision; hier nur nachzitiert.)*
 

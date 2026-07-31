@@ -1,5 +1,7 @@
 # FAHRPLAN-MATERIALIEN-VERZAHNUNG — E6a Stufe 1 vorgezogen
 
+**Heimat: ROADMAP-Schritte `W2·6a-MAT` und `W2·6b-MAT-FINMA`.**
+
 **Auftrag:** David 3.7.2026 — «Fundament, dass zukünftige Materialien direkt verlinkt sind: Wegleitungen
 SECO für ArG, EDÖB für DSG, ESTV für MWSTG usw.» Vorgezogen VOR VPS.
 **Stufe 1 = Verweis-/Register-Ebene:** pro Dokument eine Index-Karte (Nr./Titel/Datum/Behörde/PDF- bzw.

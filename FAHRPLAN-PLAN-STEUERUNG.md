@@ -11,6 +11,15 @@
 
 ---
 
+## §0 · Zweck
+
+Detailquelle zu `QS-PH` — die `@meta`-DSL (Etiketten, Felder, Tor `check:plan`),
+mit der `ROADMAP.md` ihren Zustand deterministisch statt in Prosa trägt. **Das
+Wie steht hier; gesteuert wird über `ROADMAP.md`.** Einzige Doku der `@meta`-DSL —
+keine Ersatz-Heimat (vgl. `FAHRPLAN-ARCHIV-RESTPUNKTE.md`).
+
+---
+
 ## Anlass (gemessen in dieser Session, 30.6.2026)
 
 Der Bauplan kodiert den Schritt-Zustand in **Prosa**, die gelesen und interpretiert werden muss. Reale

@@ -1,6 +1,16 @@
 # FAHRPLAN-RECHTSPRECHUNG.md
 
+**Heimat: ROADMAP-Schritte `W2·6` und `W3·15-RICHTER`** (Detail auch für
+`R-RICHTER`/Direktauftrag, §12/§13).
+
 > **Status: Entwurf / Strang-0-Konsolidierung.** Dieses Dokument führt fünf parallel entworfene Design-Stränge zu **einem** verbindlichen Umsetzungsplan zusammen. Die Stränge widersprachen sich an load-bearing Stellen (Statusmodell, Schema, Routenwort, CLI-Flag, sync/async-Brücke). Hier ist jede dieser Entscheidungen **einmal** getroffen — sie sind verbindlich, abweichende Formulierungen aus den Einzel-Strängen sind ungültig. Vor der ersten Codezeile gilt Abschnitt 0.
+
+## §0 · Zweck
+
+Detailquelle zu `W2·6`/`W3·15-RICHTER` — konsolidiert fünf parallel entworfene
+Design-Stränge der Rechtsprechungs-Fläche zu einem verbindlichen Plan. Die
+kanonischen Vor-Entscheidungen (Statusmodell, Schema, Routenwort, …) stehen in
+Abschnitt «0. Strang-0» unten — vor der ersten Codezeile gelesen werden.
 
 ---
 
@@ -657,6 +667,8 @@ Gegenproben und Zahlen: `bibliothek/rechtsprechung/besetzung-extraktion-2026-07-
     führende Detailquelle für Live-/Volltextsuche (`livesuche.ts`, P1–P6) = `FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md`;
     nicht doppelt planen (BGE-Darstellung-Teil B ist Verweis).
 
+      **R-RICHTER (W3·15-RICHTER) — Fortsetzung des in ROADMAP verbliebenen Kopfes** *(Richter-/
+      Spruchkörper-Filter — Fundament, Direktauftrag David 20.7.2026;
       gebündelt mit der BS-Tranche darüber: dieselbe Pipeline, dasselbe Datenasset — kein
       Parallel-Schritt, §14.2)*: der amtliche Spruchkörper wird aus dem Rubrum extrahiert und
       korpusweit zu Kanon-Slugs normalisiert, damit die Rechtsprechung nach Richter:in filterbar

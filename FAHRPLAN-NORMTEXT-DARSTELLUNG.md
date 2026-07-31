@@ -1,5 +1,16 @@
 # Fahrplan — Gesetzesdarstellung Bund/DE (Normtext-Umbau)
 
+**Heimat: ROADMAP «Querschnitt-Band»** — Quell-Architektur-Entscheid + Intake
+(«Informations-Nutzung der Gesetze») verlinkt aus `W2·5d`; SIDECAR-Spec (§M14)
+zusätzlich Grundlage für `W2·5g-ZEIT` (zeit-historik-poc). Kein eigener `@meta`-Schritt.
+
+## §0 · Zweck
+
+Konsolidierter Masterplan für den Normtext-Umbau Bund/DE: Davids 12 Punch-Punkte +
+33 Audit-Lücken (`AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md`). **Scope: Bund, DE.**
+Kein Deploy (bauen+gaten), isolierter Worktree `feat/normtext-bund-de`. Regelwerk:
+`DESIGN-REGLEMENT-NORMTEXT.md`.
+
 > **Stand 28.6.2026.** Konsolidierter Masterplan (ultracode: 5 Oberflächen-Karten → 3 unabhängige
 > Cluster-Strategien → Synthese). Deckt Davids 12 Punch-Punkte + 33 Audit-Lücken
 > (`AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md`). **Scope: Bund, DE.** Kein Deploy (bauen+gaten),

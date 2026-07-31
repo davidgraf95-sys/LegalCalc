@@ -1,5 +1,9 @@
 # FAHRPLAN VORLAGEN-AUSBAU — Verträge-Rahmen, P1-Vorlagen, Rechner-Erweiterungen
 
+**Heimat: ROADMAP-Schritt `W2·8`.** (Der separat genannte `ROADMAP-Anker: W3·13`
+unten betrifft nur die hier mitgeführte Bürgschaft/Ehevertrag/ABV-Planung, nicht
+die Heimat dieser Datei selbst.)
+
 > **§14-gebündelt (Phase 0, 2.7.2026):** **Einzige Planungs-Heimat für Bürgschaft/Ehevertrag/ABV**
 > (V5/V6). Die entsprechenden `FAHRPLAN-VERTRAGS-VARIANTEN.md`-Punkte (F/H/I) sind nur Verweis.
 > ROADMAP-Anker: `W3·13`.
@@ -36,6 +40,15 @@ V5/V6 danach (Form-Weiche bzw. grosser Einzelposten), V7 unabhängig
 (Rechner-Erweiterungen, jederzeit einschiebbar). Abhängigkeiten: V3→V1,
 V4→V3 (Pilot Arbeitsvertrag geht schon nach V1), V5/V6→V1; V0 ist
 Pflichtteil JEDER bauenden Phase.
+
+---
+
+## §0 · Zweck
+
+Detailquelle zu `W2·8` — Verträge-Rahmen, P1-Vorlagen und Rechner-Erweiterungen
+nach Wettbewerbsanalyse 12.6.2026. Leitplanken (jede Phase): Normentreue §7 ·
+Determinismus §2 (kein LLM) · eine Engine pro Rechtsgebiet §4 · SSoT §5 · neue
+Einträge starten `geplant`, gebaut = `entwurf`, nie `geprüft` ohne Davids Abnahme.
 
 ---
 

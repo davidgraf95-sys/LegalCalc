@@ -6,6 +6,13 @@
 > (§AUSFÜHRUNGS-STAND + §OFFENE PUNKTE: Zitations-Graph 8,7M · Parquet als Volltext-Quelle ·
 > Breiten-Korpus) auf. Fable plant, Opus baut. Trailer `Roadmap: QS-DATA`.
 
+## §0 · Zweck
+
+Detailquelle zu `QS-DATA`/`W2·6-DATA` — die DB als die EINE Wahrheit, Projektion,
+Massen-Korpus, Edge-Suche. Nie zweiter Einstieg. Die bindenden Richtungs-
+Entscheide (SSoT, Andockpunkt, Quellen) stehen im nachfolgenden Abschnitt
+«0. Entschiedene Richtung».
+
 ## 0. Entschiedene Richtung (bindend)
 
 1. **DB = Single Source of Truth (§5)** für die Korpus-Inhalte (Normtext Bund → später Kantone,

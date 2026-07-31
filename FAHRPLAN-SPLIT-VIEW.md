@@ -1,5 +1,7 @@
 # FAHRPLAN — Multi-Pane / Split-View (+ Breiten-Umschalter)
 
+**Heimat: ROADMAP-Schritte `W3·14` und `W3·14-B3`.**
+
 > **Stand 29.6.2026 · KOMPLETT: A + B-0 + B-0b + B-1 + B-2 + B-2.5 + B-4 + B-5 (Branch
 > `feat/split-view-strang-a`).** A/B-0/B-0b + B-1/B-2 auf **Prod** (`bec0ecb7`); B-2.5/B-4/B-5
 > committet (`c9a8cca9`), Deploy ausstehend. Zwei ultracode-Bugchecks (B-1; B-2.5/B-4/B-5) —
@@ -20,6 +22,15 @@
 > (unten „Offene Entscheide"). B-0b ist der Hauptaufwand → eigene fokussierte Session.
 > Bau weiter in **eigenem Worktree** (`Shell.tsx`/`Topbar.tsx`/`App.tsx`/
 > `tailwind.config.js` = §12-Kollisionsdateien), nie parallel auf denselben Dateien.
+
+---
+
+## §0 · Zweck
+
+Detailquelle zu `W3·14`/`W3·14-B3` — zwei oder drei „Engines" nebeneinander wie
+im Browser (Gesetz | Rechner | Begründungs-Absatz). Steuerung (Reihenfolge/Park)
+bleibt in `ROADMAP.md`; Ist-Zustand/Deploy in `STRUKTUR.md`. Bau in eigenem
+Worktree, nie parallel auf denselben Kollisionsdateien (§12).
 
 ---
 
