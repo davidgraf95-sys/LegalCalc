@@ -621,7 +621,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
      passt»); will er später die Gesetzesdarstellung vorziehen, W2·12-HYGIENE an den Kopf
      dieser Zeile setzen. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `QS-TOK`.** Die Verzahnungs-Stufe `W2·7-BEZUG` ist seit
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·5d`.** Die Verzahnungs-Stufe `W2·7-BEZUG` ist seit
 > 28.7.2026 **`wip`** (Bau in der Orchestrierungs-Session; Vorstufe `W2·6-NKEY` am 28.7.2026
 > erledigt — die normKeys-Abdeckung trägt 99.9 % der Entscheid-Snapshots, das Fundament für
 > die Bezüge-Schicht steht).
@@ -629,7 +629,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > schritt soll sein den token verbrauch zu minimieren») rückt dahinter — von David am 27.7.
 > ausdrücklich so verfügt («als erster schritt entscheide noch besser screenen … nächste session
 > baut das als erstes, mit ultracode»); dieser Vorrang ist mit W2·6-NKEY eingelöst.
-> <!-- @meta id: QS-TOK · status: ready · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts, .claude, CLAUDE.md, ROADMAP.md, STRUKTUR.md] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-TOKEN-OEKONOMIE.md -->
+> <!-- @meta id: QS-TOK · status: wip · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts, .claude, CLAUDE.md, ROADMAP.md, STRUKTUR.md] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-TOKEN-OEKONOMIE.md -->
 > Bau verbraucht **weniger Tokens** — nur über Effizienz (gezielter lesen, kompakter übergeben,
 > deterministisch statt modellgetrieben, cachen, indizieren); Einmal-Investitionen ok.
 > **Leitplanke (nicht verhandelbar):** keine Massnahme kürzt Beweis, Tor oder Prüfung —
