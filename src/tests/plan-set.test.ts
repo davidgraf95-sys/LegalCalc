@@ -128,11 +128,45 @@ describe('setField — Entparken (Fund 27)', () => {
     expect(out.split('\n')[0]).toBe('- [D] **5j-TABELLEN · X**');
   });
 
-  // Gegenprobe: passt die vorhandene Marke NICHT zum neuen Status, wird sie
-  // nachgezogen — sonst wäre der Nachzug wirkungslos statt schonend.
-  it('[x] → parked wird auf die geparkt-Marke [d] nachgezogen', () => {
-    const out = setField(geparkt('[x]').replace('status: parked', 'status: done'), 'W2·5j', 'status', 'parked');
+  // Fund R3-2 (Endprüfung Runde 3, 31.7.2026) — fachliche Richtigstellung, kein
+  // Refactoring (§6.3): Der R2-9/R2-15-Fix hatte `parked: '[d]'` und
+  // `blocked: '[d]'` in `CHECKBOX_FUER` aufgenommen. Begründet war nur das
+  // BEWAHREN einer vorhandenen `[d]`-Marke — das hängt aber an der
+  // `CHECKBOX_STATUS`-Abfrage, nicht an `CHECKBOX_FUER`. Der Eintrag ERZEUGTE die
+  // Legendenmarke darum auch neu: ein bloss blockierter Schritt wurde in der
+  // menschenlesbaren Liste als «geparkt/zurückgestellt» beschriftet (§8), und
+  // derselbe Status `blocked` erschien je nach Vorzustand als `[ ]` ODER `[d]`
+  // (gemessen: `[~]`→blocked ⇒ `[d]`, `[ ]`→blocked ⇒ `[ ]`). Kein Tor sah es,
+  // weil `CHECKBOX_STATUS['[d]']` beide Status duldet. Normalform ist `[ ]`.
+  it('[~] + blocked ⇒ [ ] (Normalform, nicht die Legendenmarke)', () => {
+    const out = setField(geparkt('[~]').replace('status: parked', 'status: wip'), 'W2·5j', 'status', 'blocked');
+    expect(out.split('\n')[0]).toBe('- [ ] **5j-TABELLEN · X**');
+  });
+
+  it('[x] + blocked ⇒ [ ] (Normalform, nicht die Legendenmarke)', () => {
+    const out = setField(geparkt('[x]').replace('status: parked', 'status: done'), 'W2·5j', 'status', 'blocked');
+    expect(out.split('\n')[0]).toBe('- [ ] **5j-TABELLEN · X**');
+  });
+
+  // Gegenprobe zur Rücknahme: das BEWAHREN bleibt unangetastet — es hängt an der
+  // CHECKBOX_STATUS-Abfrage, die `[d]`/`[D]` für parked und blocked duldet.
+  it('[D] + blocked bleibt [D] (Bewahrung unangetastet)', () => {
+    const out = setField(geparkt('[D]'), 'W2·5j', 'status', 'blocked');
+    expect(out.split('\n')[0]).toBe('- [D] **5j-TABELLEN · X**');
+  });
+
+  it('[d] + parked bleibt [d] (Bewahrung unangetastet)', () => {
+    const out = setField(geparkt('[d]'), 'W2·5j', 'status', 'parked');
     expect(out.split('\n')[0]).toBe('- [d] **5j-TABELLEN · X**');
+  });
+
+  // Gegenprobe: passt die vorhandene Marke NICHT zum neuen Status, wird sie
+  // nachgezogen — sonst wäre der Nachzug wirkungslos statt schonend. Ziel ist seit
+  // R3-2 die Normalform `[ ]`, nicht mehr die Legendenmarke `[d]`: wer parken
+  // WILL, setzt die Marke von Hand; `plan:set` erfindet sie nicht.
+  it('[x] → parked wird auf die Normalform [ ] nachgezogen', () => {
+    const out = setField(geparkt('[x]').replace('status: parked', 'status: done'), 'W2·5j', 'status', 'parked');
+    expect(out.split('\n')[0]).toBe('- [ ] **5j-TABELLEN · X**');
   });
 });
 

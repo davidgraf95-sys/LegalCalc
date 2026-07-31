@@ -148,9 +148,21 @@ export function pruefe(
   // (Fund R2-1/R2-10 der Endprüfung Runde 2, 31.7.2026).
   //
   // Blickrichtung darum umgekehrt: von der Checkbox-Bullet nach UNTEN. Trifft der
-  // Blick ein @meta, bevor eine neue Bindungs-Einheit beginnt (eine eigene
-  // Checkbox-Bullet, eine gleich- oder höherrangige Bullet, eine Überschrift oder
-  // eine doppelte Leerzeile), MUSS dieses @meta an genau diese Zeile gebunden sein.
+  // Blick ein @meta, bevor eine neue Bindungs-Einheit beginnt (eine gleich- oder
+  // höherrangige Bullet, eine Überschrift oder eine doppelte Leerzeile), MUSS
+  // dieses @meta an genau diese Zeile gebunden sein.
+  //
+  // Fund R3-1/R3-9 (Endprüfung Runde 3, 31.7.2026, KRITISCH): Bis dahin beendete
+  // JEDE Checkbox-Bullet die Bindungs-Einheit — auch eine TIEFER eingezogene. Eine
+  // Dach-Bullet, deren eigenes @meta hinter dem @meta ihres Unterschritts steht,
+  // fiel damit durch beide Netze: der Vorwärts-Blick brach an der Unter-Bullet ab,
+  // die Rückwärts-Bindung am @meta des Unterschritts. Im Bestand LIVE an
+  // `W2·7-BEZUG` — `plan:set … status=wip` schrieb das @meta, `- [x]` blieb
+  // stehen, `check:plan` meldete null Probleme. Also: nur `bulletEinzug(z) <=
+  // einzug` beendet die Einheit; ein tiefer eingezogener Unterschritt gehört noch
+  // zum Block der Dach-Bullet, und sein bereits gebundenes @meta wird dabei
+  // ÜBERSPRUNGEN statt zum Abbruch genommen. Was danach ungebunden bleibt, ist
+  // genau der Fall, den die Regel sehen soll.
   const zeilen = md.split(/\r?\n/);
   for (let k = 0; k < zeilen.length; k++) {
     if (!CHECKBOX_RE.test(zeilen[k])) continue;
@@ -161,18 +173,19 @@ export function pruefe(
       if (z.trim() === '') { if (++leerFolge >= 2) break; continue; }
       leerFolge = 0;
       if (/^[ \t]*(?:>[ \t]*)*#{1,6}[ \t]/.test(z)) break;
-      // Eine eigene Checkbox-Bullet (jeder Tiefe) oder eine gleich-/höherrangige
-      // Bullet eröffnet die nächste Bindungs-Einheit — ab da gilt Zeile k nicht mehr.
-      if (CHECKBOX_RE.test(z)) break;
+      // Eine gleich- oder höherrangige Bullet eröffnet die nächste Bindungs-Einheit
+      // — ab da gilt Zeile k nicht mehr. Tiefer eingezogene Bullets tun das nicht.
       if (BULLET_RE.test(z) && bulletEinzug(z) <= einzug) break;
       if (z.includes('<!-- @meta')) {
         const { zeile } = bindeCheckbox(zeilen, j);
-        if (zeile !== k) {
-          probleme.push({
-            id: parseEtikett(z).id,
-            meldung: `Checkbox-Zeile «${zeilen[k].trim().slice(0, 60)}» (Z.${k + 1}) steht über dem @meta auf Z.${j + 1}, ist aber nicht an die Checkbox gebunden — plan:set würde sie stehen lassen`,
-          });
-        }
+        if (zeile === k) break; // gebunden — Zweck erfüllt
+        // Fremdes, aber sauber gebundenes @meta eines TIEFER eingezogenen
+        // Unterschritts innerhalb des Blocks: nicht unser Fall, weiterlaufen.
+        if (zeile !== null && zeile > k && bulletEinzug(zeilen[zeile]) > einzug) continue;
+        probleme.push({
+          id: parseEtikett(z).id,
+          meldung: `Checkbox-Zeile «${zeilen[k].trim().slice(0, 60)}» (Z.${k + 1}) steht über dem @meta auf Z.${j + 1}, ist aber nicht an die Checkbox gebunden — plan:set würde sie stehen lassen`,
+        });
         break;
       }
     }

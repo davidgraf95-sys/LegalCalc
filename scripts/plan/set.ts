@@ -5,9 +5,16 @@ import { bindeCheckbox, checkboxAus, CHECKBOX_STATUS } from './parse';
 
 const FELDER = new Set(['id', 'status', 'of', 'blocker', 'dep', 'kollision', 'seq-hart', 'seq-weich', 'worktree', '26x', 'fahrplan', 'slot']);
 // Marke, die ein Statuswechsel setzt, WENN die bestehende nicht schon passt.
-// `parked`/`blocked` ergänzt 31.7.2026 (Fund R2-9/R2-15): vorher griff dort der
-// Fallback `'[ ]'` und löschte die Legendenmarke `[d]` still.
-const CHECKBOX_FUER: Record<string, string> = { done: '[x]', wip: '[~]', parked: '[d]', blocked: '[d]' };
+//
+// `parked: '[d]'`/`blocked: '[d]'` waren am 31.7.2026 kurzzeitig hier (Fund
+// R2-9/R2-15) und sind am selben Tag wieder zurückgenommen (Fund R3-2): Begründet
+// war nur das BEWAHREN einer vorhandenen `[d]`-Marke, und das hängt an der
+// CHECKBOX_STATUS-Abfrage unten, nicht an dieser Tabelle. Als ERZEUGER richtete
+// der Eintrag Schaden an — ein bloss blockierter Schritt trug danach die Legende
+// «geparkt/zurückgestellt» (§8), und derselbe Status `blocked` erschien je nach
+// Vorzustand als `[ ]` oder `[d]`; kein Tor sah es, weil CHECKBOX_STATUS beide
+// duldet. Normalform ist `[ ]`; wer parken WILL, setzt `[d]` von Hand.
+const CHECKBOX_FUER: Record<string, string> = { done: '[x]', wip: '[~]' };
 const CHECKBOX_ERSATZ_RE = /([-*+][ \t]*)\[[ xX~dD]\]/;
 
 export function setField(md: string, id: string, feld: string, wert: string): string {
@@ -47,6 +54,8 @@ export function setField(md: string, id: string, feld: string, wert: string): st
     // nicht schon zum neuen Status passt. `[d]` + parked/blocked bleibt damit
     // `[d]` (bzw. `[D]`), `[ ]` + parked bleibt `[ ]` — vorher überschrieb der
     // Fallback beides mit `[ ]` und löschte die Legendenmarke unwiederbringlich.
+    // Genau HIER sitzt die Bewahrung (Fund R3-2), nicht in CHECKBOX_FUER: passt
+    // die vorhandene Marke NICHT, ist das Ziel die Normalform `[ ]`.
     const { zeile: cbIdx } = bindeCheckbox(zeilen, idx);
     if (cbIdx !== null) {
       const bestehend = checkboxAus(zeilen[cbIdx])!;

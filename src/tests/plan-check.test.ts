@@ -346,16 +346,59 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
     expect(lauf(md, ['A'])).toEqual([]);
   });
 
-  it('GEGENPROBE: Dach-Bullet mit eigener Checkbox-Unter-Bullet → kein Problem (Unter-Bullet stoppt die Sicht)', () => {
+  // Fund R3-1/R3-9 (Endprüfung Runde 3, 31.7.2026, KRITISCH). Die erste Fassung
+  // dieses Tests stand hier als «GEGENPROBE: … → kein Problem (Unter-Bullet stoppt
+  // die Sicht)», also als GEWOLLTES Verhalten. Das war unehrlich (§8): Regel 10
+  // brach an JEDER Checkbox-Bullet ab, auch an einer tiefer eingezogenen, und die
+  // Rückwärts-Bindung brach am @meta des Unterschritts ab. Eine Dach-Bullet, deren
+  // eigenes @meta NACH dem @meta ihres Unterschritts steht, fiel damit durch beide
+  // Netze — dieselbe stille Drift wie R2-1, nur über eine Unter-Bullet statt über
+  // eine Prosa-Zeile, und im Bestand LIVE an `W2·7-BEZUG`. Belegt vor dem Fix:
+  // `parseRoadmap` lieferte dort `checkbox = null`, `setField(md,'W2·7-BEZUG',
+  // 'status','wip')` schrieb `status: wip` und liess `- [x]` stehen, und
+  // `pruefe()` auf dem mutierten Text meldete NULL Probleme.
+  //
+  // Fixture = das echte ALTE ROADMAP-Layout (Z.549–556 vor der Heilung).
+  it('NEGATIV: Dach-@meta hinter dem @meta seines Unterschritts → Problem (echtes W2·7-BEZUG-Layout)', () => {
     const md = plan10([
-      '- [x] **7-BEZUG · Dach**',
-      '  Prosa.',
-      '  - [x] **B7 · Unterschritt**',
+      '- [x] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** — ✅ **done 28.7.2026**,',
+      '  B1–B6 + B7 komplett (PRs #401–#406).',
+      '  - [x] **B7 · Voll-Auflistung + Eidg.-Facette** — ✅ **done 29.7.2026**',
       '    <!-- @meta id: B · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
       '  Detail: Chronik.',
       '  <!-- @meta id: A · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n'));
+    expect(lauf(md, ['A', 'B']).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
+  });
+
+  // Gegenprobe zum vorigen Fall: das Dach-@meta unmittelbar unter seiner Bullet —
+  // die Normalform, die FAHRPLAN-PLAN-STEUERUNG.md von Autoren verlangt und die
+  // ROADMAP.md für W2·7-BEZUG in derselben Runde hergestellt hat. Der Unterschritt
+  // behält sein eigenes @meta; beide binden, kein Problem.
+  it('GEGENPROBE: Dach-@meta unmittelbar unter der Dach-Bullet → kein Problem', () => {
+    const md = plan10([
+      '- [x] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** — ✅ **done 28.7.2026**,',
+      '  <!-- @meta id: A · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  B1–B6 + B7 komplett (PRs #401–#406).',
+      '  - [x] **B7 · Voll-Auflistung + Eidg.-Facette** — ✅ **done 29.7.2026**',
+      '    <!-- @meta id: B · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  Detail: Chronik.',
+    ].join('\n'));
     expect(lauf(md, ['A', 'B'])).toEqual([]);
+  });
+
+  // Fund R3-7: `bindeCheckbox` prüfte die Kommentar-Grenze VOR dem Bullet-Test.
+  // Eine Bullet, die `-->` oder `<!--` bloss als Fliesstext im eigenen Titel führt
+  // (ein Pfeil im Schritt-Namen genügt), galt damit als Kommentar-Grenze: die
+  // Bindung brach ab, und Regel 10 wurde falsch-positiv rot — mit einer Meldung,
+  // die auf die falsche Ursache zeigt. Eine Bullet-Zeile ist nie eine
+  // Kommentar-Grenze; der Bullet-Test gehört darum zuerst.
+  it('GEGENPROBE: Bullet mit «-->» im eigenen Titel bindet ihre Checkbox → kein Problem', () => {
+    const md = plan10([
+      '- [ ] **A · Migration (Pfeil: alt --> neu)**',
+      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n'));
+    expect(lauf(md, ['A'])).toEqual([]);
   });
 
   it('GEGENPROBE: checkbox-lose Querschnitt-Bullet unter fremder Checkbox-Liste → kein Problem', () => {

@@ -171,6 +171,30 @@ describe('parseRoadmap — Checkbox-Bindung über Prosa hinweg (Fund R2-1/R2-10)
     expect(parseRoadmap(md).einheiten[0].checkbox).toBeNull();
   });
 
+  // Fund R3-7 (Endprüfung Runde 3): Die Kommentar-Grenzen-Prüfung stand VOR dem
+  // Bullet-Test. `z.includes('-->')` trifft aber auch, wenn die Zeichenfolge
+  // blosser Fliesstext der Bullet selbst ist — ein Pfeil im Schritt-Titel genügt.
+  // Folge: die Bindung brach ab (`checkbox = null`), und Regel 10 wurde
+  // falsch-positiv rot mit einer Meldung, die auf die falsche Ursache zeigt.
+  // Eine Bullet-Zeile ist nie eine Kommentar-Grenze.
+  it('bindet auch, wenn die Bullet «-->» im eigenen Titel führt (Fund R3-7)', () => {
+    const md = [
+      '## Die geordnete Abarbeitung',
+      '- [ ] **A · Migration (Pfeil: alt --> neu)**',
+      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n');
+    expect(parseRoadmap(md).einheiten[0].checkbox).toBe('[ ]');
+  });
+
+  it('bindet auch, wenn die Bullet «<!--» im eigenen Titel führt (Fund R3-7)', () => {
+    const md = [
+      '## Die geordnete Abarbeitung',
+      '- [~] **A · Kommentar-Syntax «<!--» im Titel**',
+      '  <!-- @meta id: A · status: wip · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n');
+    expect(parseRoadmap(md).einheiten[0].checkbox).toBe('[~]');
+  });
+
   it('EINE Leerzeile zwischen Bullet und @meta bindet weiterhin', () => {
     const md = [
       '## Die geordnete Abarbeitung',

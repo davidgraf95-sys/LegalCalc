@@ -58,6 +58,15 @@ export function bulletEinzug(zeile: string): number {
  * Querschnitt-Eintrag an die Checkbox der darüberliegenden Nachbarliste.
  * Abbruch zusätzlich an Überschrift, Kommentar-Grenze (`<!--`/`-->`, damit auch
  * an einem fremden @meta) und an einer doppelten Leerzeile.
+ *
+ * Fund R3-7 (Endprüfung Runde 3, 31.7.2026): Der Bullet-Test steht seither VOR
+ * der Kommentar-Grenze. `z.includes('-->')` trifft auch dann, wenn die
+ * Zeichenfolge blosser Fliesstext der Bullet selbst ist — ein Pfeil im
+ * Schritt-Titel genügte, um die Bindung zu kappen und check.ts Regel 10
+ * falsch-positiv rot zu machen, mit einer Meldung, die auf die falsche Ursache
+ * zeigt. Eine Bullet-Zeile ist nie eine Kommentar-Grenze. (Die ROADMAP trägt kein
+ * @meta auf einer Bullet-Zeile — nachgemessen 0 Treffer —, die Umkehrung ist
+ * darum auch am Bestand folgenlos.)
  */
 export function bindeCheckbox(zeilen: string[], metaIdx: number): { checkbox: Checkbox; zeile: number | null } {
   let leerFolge = 0;
@@ -69,11 +78,11 @@ export function bindeCheckbox(zeilen: string[], metaIdx: number): { checkbox: Ch
     }
     leerFolge = 0;
     if (/^[ \t]*(?:>[ \t]*)*#{1,6}[ \t]/.test(z)) break; // Überschrift
-    if (z.includes('<!--') || z.includes('-->')) break; // fremdes @meta / Kommentar-Grenze
     if (BULLET_RE.test(z)) {
       const cb = checkboxAus(z);
       return cb ? { checkbox: cb, zeile: j } : { checkbox: null, zeile: null };
     }
+    if (z.includes('<!--') || z.includes('-->')) break; // fremdes @meta / Kommentar-Grenze
   }
   return { checkbox: null, zeile: null };
 }
