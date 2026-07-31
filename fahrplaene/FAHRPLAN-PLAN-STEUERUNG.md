@@ -146,6 +146,14 @@ Wo eine Einheit eine Checkbox hat, gilt die Kopplung — und **nur dort**:
 | `[ ]` | `ready` · `blocked` · `parked` |
 | `[d]` / `[D]` | `parked` · `blocked` (Legendenmarke «geparkt/zurückgestellt») |
 
+**Normalform ist `[ ]`** (Richtigstellung 31.7.2026, Endprüfungs-Fund R3-2). `plan:set` **erzeugt**
+die Legendenmarke `[d]` nie — es **bewahrt** sie nur: eine vorhandene `[d]`/`[D]` überlebt einen
+Wechsel nach `parked` oder `blocked`, eine nicht passende Marke wird auf `[ ]` nachgezogen. Kurzzeitig
+galt am selben Tag das Gegenteil (`CHECKBOX_FUER` erzeugte `[d]` für beide Status); das beschriftete
+einen bloss blockierten Schritt als «geparkt/zurückgestellt» (§8) und liess denselben Status je nach
+Vorzustand als `[ ]` **oder** `[d]` erscheinen, ohne dass ein Tor es sah — die Tabelle duldet beides.
+Wer parken **will**, setzt `[d]` von Hand.
+
 Checkbox-lose Einheiten (S0-Überschrift, Querschnitt-Stränge) haben **keine** Kopplungs-Prüfung; ihr
 `status` ist die alleinige Wahrheit (kein Häkchen-Konflikt möglich). `[~]` wird als gültiger
 Checkbox-Zustand anerkannt (real bei Schritt 5).
@@ -158,7 +166,10 @@ Liste blieb auf «offen», `check:plan` blieb grün. Gültig ist jetzt:
 
 > Rückwärts vom `@meta` bis zur **ersten Listen-Bullet-Zeile**; deren Checkbox bindet. Trägt sie
 > keine, bindet nichts (Querschnitt-Fall). Abbruch an Überschrift, Kommentar-Grenze (`<!--`/`-->`,
-> also auch an einem fremden `@meta`) und an einer doppelten Leerzeile.
+> also auch an einem fremden `@meta`) und an einer doppelten Leerzeile. Der Bullet-Test läuft
+> **vor** der Kommentar-Grenze: eine Bullet-Zeile ist nie eine Kommentar-Grenze, auch wenn sie
+> `-->` oder `<!--` als Fliesstext im eigenen Titel führt (Fund R3-7 — ein Pfeil im Schritt-Namen
+> kappte sonst die Bindung und machte Regel 10 falsch-positiv rot).
 
 Dieselbe Funktion (`bindeCheckbox` in `scripts/plan/parse.ts`) bedient Parser UND `plan:set` — zwei
 Kopien derselben Nachbarschafts-Regel wären zwei Wahrheiten (§5). Gegenprobe von vorn erzwingt
@@ -166,6 +177,18 @@ Kopien derselben Nachbarschafts-Regel wären zwei Wahrheiten (§5). Gegenprobe v
 Bindungs-Einheit beginnt, MUSS es daran gebunden sein — sonst rot. Praktische Folge für Autoren:
 **`@meta` gehört unmittelbar unter seine Bullet-Zeile**; Begründungs-Prosa steht darunter, nicht
 dazwischen.
+
+**Was die Bindungs-Einheit beendet (Nachschärfung 31.7.2026, Endprüfungs-Fund R3-1/R3-9).** Nur eine
+**gleich- oder höherrangige** Bullet, eine Überschrift oder eine doppelte Leerzeile. Eine **tiefer
+eingezogene** Unter-Bullet tut es nicht — sie gehört noch zum Block ihrer Dach-Bullet, und ihr
+bereits gebundenes `@meta` wird beim Weiterlaufen übersprungen statt zum Abbruch genommen. Vorher
+beendete jede Checkbox-Bullet jeder Tiefe die Einheit; eine Dach-Bullet, deren eigenes `@meta`
+**hinter** dem `@meta` ihres Unterschritts stand, fiel damit durch beide Netze — der Vorwärts-Blick
+brach an der Unter-Bullet ab, die Rückwärts-Bindung am `@meta` des Unterschritts. Genau diese Drift
+war im Bestand **live** an `W2·7-BEZUG`: `plan:set … status=wip` schrieb das `@meta`, die sichtbare
+`- [x]` blieb stehen, und `check:plan` meldete null Probleme. Der Test-Satz führt das alte
+ROADMAP-Layout jetzt als **Negativ**-Fixture (es stand dort zuvor als «GEGENPROBE», also als
+gewolltes Verhalten — eine Grenze, die keine war).
 
 ---
 

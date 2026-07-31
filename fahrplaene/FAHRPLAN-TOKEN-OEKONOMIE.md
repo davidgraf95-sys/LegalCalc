@@ -31,14 +31,28 @@ Notation: M Mechanik · E Ersparnis+Herleitung · R Risiko→Gegenmittel · **K 
 
 ### Stand 31.7.2026 — T7-Fortsetzung «QS-TOK-Aufräumwelle» (PR #407, AP-0…AP-11)
 
-Eine Session-Welle auf `feat/qs-tok-aufraeumwelle`. **Gemessene Endstände** (`wc -c` +
-`python3 .claude/hooks/struktur-rotieren.py --check`, Stand **Fix-Runde 1 nach der
-Endprüfung, 31.7.2026** — nicht mehr Stand AP-10/11):
+Eine Session-Welle auf `feat/qs-tok-aufraeumwelle`. **Gemessene Endstände**, Stand **Fix-Runde 3
+(final), 31.7.2026**. Messbefehle, nachrechenbar:
+
+```
+wc -c ROADMAP.md STRUKTUR.md
+python3 .claude/hooks/struktur-rotieren.py --check
+```
 
 | Datei | vorher | nachher | Budget-Ceiling | Wächter |
 |---|---|---|---|---|
-| `ROADMAP.md` | 162.2 KB | **110.0 KB** (112 682 B) | 100 KB | **ROT** (+10.0 KB) |
-| `STRUKTUR.md` | 81.5 KB | **36.1 KB** (36 994 B) | 60 KB | grün |
+| `ROADMAP.md` | 162.2 KB | **111.7 KB** (114 339 B) | 100 KB | **ROT** (+11.7 KB) |
+| `STRUKTUR.md` | 81.5 KB | **46.0 KB** (47 094 B) | 60 KB | grün |
+
+Zwischenstände derselben Welle, damit die Bewegung nachvollziehbar bleibt (jeweils
+`git show <sha>:ROADMAP.md | wc -c`): Fix-Runde 1 `357eb3179` **110.0 KB** (112 682 B) ·
+Fix-Runde 2 `73a376fdf` **111.0 KB** (113 679 B). Das Wachstum ist Begründungs-Prosa der
+Zeiger- und Ehrlichkeits-Korrekturen; es wird **nicht** weggerechnet. Die Diät-Etappe für die
+restlichen ~11.7 KB (Leitprinzipien, Ausführungs-Protokoll) steht aus. *(Nachgeführt in
+Fix-Runde 3, Fund R3-5: die Tabelle stand auf dem Stand der Fix-Runde 1, während die
+Session-Karte in `STRUKTUR.md` bereits den Wert der Runde 2 führte — die eine Zeile darunter
+deklarierte «genau EINE Stelle» wies damit den älteren Wert aus. Die zweite geführte Zahl in
+der Session-Karte ist in derselben Runde durch den Wächter-Verweis ersetzt.)*
 
 > **Warum die Zahl hier falsch war (Endprüfungs-Funde 6/12/31, richtiggestellt R2-8).** Die
 > Tabelle trug bis zur Fix-Runde `123.4 KB (126 407 B) · ROT (+23.4 KB)`. Ursache ist **eine**:
