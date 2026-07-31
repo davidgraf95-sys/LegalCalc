@@ -16,6 +16,11 @@ import { INVENTAR } from './inventar';
 // über den eigenen Abschluss hinaus; weder next.ts noch check.ts sah es.
 const SLOT_STILLSTAND: readonly Status[] = ['done', 'parked', 'blocked'];
 
+// (8.3) Status, die einen Schritt als Queue-Eintrag wertlos machen: er wird nicht
+// gebaut, hält aber einen Platz in der EINEN Prioritäts-Quelle. `blocked` gehört
+// dazu — ein blockierter Kopf ist ebenso wenig baubar wie ein erledigter.
+const QUEUE_STALE: readonly Status[] = ['done', 'parked', 'blocked'];
+
 export interface Problem { id: string | null; meldung: string }
 
 // Archiv-Backlog: FAHRPLAN-*.md, die (noch) nicht aus ROADMAP.md verlinkt sind. Grandfathered,
@@ -125,6 +130,16 @@ export function pruefe(
       const basis = k.replace(/[*?{[].*$/, '');
       if (!fileExists(basis)) probleme.push({ id: e.id, meldung: `kollision-Pfad "${k}" existiert nicht` });
     }
+    // (9) fahrplan:-Pfad existiert. Bis AP-8 (31.7.2026) war das Feld ein blosser
+    // Basename im Repo-Wurzel; seither trägt jeder Wert ein Verzeichnis-Präfix
+    // (`fahrplaene/` bzw. `archiv/`). Damit ist eine Fehlerklasse entstanden —
+    // falsches/fehlendes Präfix —, die keine Regel sehen konnte: Regel 7 prüft nur
+    // die Gegenrichtung (Datei→ROADMAP, per Basename), Regel 6 nur `kollision`.
+    // Ein toter `fahrplan:`-Zeiger schickt die Bau-Session in ein ENOENT des
+    // Slicers, ohne dass ein Tor rot wird (Endprüfungs-Funde 11/21, 31.7.2026).
+    if (t.fahrplan && !fileExists(t.fahrplan)) {
+      probleme.push({ id: e.id, meldung: `fahrplan "${t.fahrplan}" existiert nicht` });
+    }
   }
   // (4b) Azyklie
   const z = zyklus(einheiten);
@@ -157,10 +172,14 @@ export function pruefe(
     // (8.2) keine Dublette
     if (inQueue.has(id)) probleme.push({ id, meldung: `@queue-ID "${id}" mehrfach in @queue` });
     inQueue.add(id);
-    // (8.3) Stale-Guard: erledigte/geparkte Schritte haben in der Queue nichts verloren
-    // (§14.2 «Plan in beide Richtungen pflegen», maschinell erzwungen)
+    // (8.3) Stale-Guard: erledigte/geparkte/blockierte Schritte haben in der Queue
+    // nichts verloren (§14.2 «Plan in beide Richtungen pflegen», maschinell erzwungen).
+    // `blocked` ergänzt 31.7.2026 (Endprüfungs-Fund 15): ein blockierter Queue-Kopf
+    // ist unbaubar und blieb still grün — 8.4 greift dort nicht, weil er gar nicht
+    // erst in readyNow landet und readyNow[0] darum unverändert bleibt. Genau die
+    // Fehlerklasse des Ur-Befunds vom 24.7.2026, nur über `blocked` statt über `dep`.
     const ziel = einheiten.find((e) => e.id === id);
-    if (ziel && (ziel.etikett.status === 'done' || ziel.etikett.status === 'parked')) {
+    if (ziel && QUEUE_STALE.includes(ziel.etikett.status)) {
       probleme.push({ id, meldung: `@queue-ID "${id}" ist ${ziel.etikett.status} — veraltete Steuerung, aus @queue entfernen` });
     }
   }

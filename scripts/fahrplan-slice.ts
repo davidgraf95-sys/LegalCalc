@@ -11,11 +11,47 @@
 //   npm run fahrplan -- fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md §3 §8   → Kopf + §0/Stand + §3 + §8
 //   npm run fahrplan -- fahrplaene/FAHRPLAN-GESETZES-UX.md 10.7        → Unter-§ (### 10.7)
 //   npm run fahrplan -- fahrplaene/FAHRPLAN-X.md                       → nur Kopf + §0 + ToC
+//   npm run fahrplan -- fahrplaene/FAHRPLAN-SPLIT-VIEW.md "§STRANG B"  → mehrwortiger Zeiger
+//   npm run fahrplan -- FAHRPLAN-PERFORMANCE.md 1                      → barer Name wird aufgelöst
 //
 // Verschiedene FAHRPLAN-Dateien nummerieren unterschiedlich (`## §1`, `## 1 ·`,
-// `### 10.7`). Der Matcher normalisiert: führendes «§» und Whitespace weg, dann
-// Vergleich des ersten Wort-Tokens der Überschrift.
-import { readFileSync } from 'node:fs';
+// `### 10.7`, `## STRANG B`, `## Paket 3`). Der Matcher normalisiert: führendes «§»
+// und Whitespace weg, dann Vergleich des ersten Wort-Tokens der Überschrift; greift
+// das nicht, ein Präfix-Vergleich gegen den vollen Überschriften-Text (mehrwortige
+// Zeiger). Trifft ein Schlüssel MEHRERE Überschriften, kommen ALLE in den Slice und
+// die Mehrdeutigkeit steht in der Kopfzeile — nie still die erste (Fund 26).
+// Mehrwortige Zeiger in Anführungszeichen übergeben, sonst splittet die Shell.
+import { existsSync, readFileSync } from 'node:fs';
+
+// Ablageorte, in denen ein BARER Dateiname gesucht wird. Reihenfolge = Vorrang:
+// die aktive Fassung schlägt die archivierte.
+const SUCHORTE = ['fahrplaene', 'archiv'] as const;
+
+/**
+ * Löst einen Slicer-Dateiargument auf.
+ *
+ * Fund 4/5 der QS-TOK-Endprüfung (31.7.2026): Vier Skills (`perf`, `deploy-check`,
+ * `korpus-werkstatt`, `abnahme`) nennen Fahrpläne weiterhin ohne Ordner — vor dem
+ * AP-8-Umzug waren das gültige Wurzel-Pfade. Wer den dort genannten Namen 1:1
+ * einsetzt, lief in `ENOENT` (reproduziert: `npm run fahrplan -- FAHRPLAN-PERFORMANCE.md 1`,
+ * Exit 2). Enthält das Argument KEINEN Pfadtrenner und liegt es nicht im
+ * Arbeitsverzeichnis, wird es in `fahrplaene/` und danach in `archiv/` gesucht.
+ * Ein bereits qualifizierter Pfad wird nie umgebogen.
+ *
+ * @returns den auflösbaren Pfad oder `null` (dann meldet der Aufrufer wie bisher).
+ */
+export function aufloesenDatei(
+  arg: string,
+  da: (p: string) => boolean = (p) => existsSync(p),
+): string | null {
+  if (da(arg)) return arg;
+  if (/[\\/]/.test(arg)) return null;
+  for (const ort of SUCHORTE) {
+    const kandidat = `${ort}/${arg}`;
+    if (da(kandidat)) return kandidat;
+  }
+  return null;
+}
 
 export interface Heading {
   level: number; // 2 = ##, 3 = ###
@@ -53,6 +89,31 @@ export interface SliceResult {
   text: string;
   gefunden: string[]; // aufgelöste Token
   fehlend: string[]; // angefragte, nicht gefundene Token
+  mehrdeutig: { key: string; treffer: string[] }[]; // Token trifft mehrere Überschriften
+}
+
+/**
+ * Findet ALLE Überschriften zu einem §-Schlüssel.
+ *
+ * Fund 26 der QS-TOK-Endprüfung (31.7.2026): `hs.find(x => x.token === k)` nahm den
+ * ERSTEN Treffer und lieferte damit still die falsche Sektion — `§STRANG B` gab
+ * «## STRANG A (✅ FERTIG)», `§Paket 3` gab «## Paket 1». Zwei Ursachen, beide hier
+ * behoben:
+ *  1. mehrteilige Zeiger («STRANG B», «Paket 3») trafen gar nichts, weil nur das
+ *     ERSTE Wort der Überschrift als Token geführt wird → zusätzlich Präfix-Match
+ *     auf den vollen Überschriften-Text;
+ *  2. mehrdeutige Ein-Wort-Token wählten still den ersten → jetzt kommen ALLE
+ *     Treffer in den Slice und die Mehrdeutigkeit wird in der Kopfzeile gemeldet.
+ * Eindeutige Token verhalten sich unverändert (bestehende Fälle bleiben grün).
+ */
+export function trefferFuer(hs: Heading[], key: string): Heading[] {
+  const exakt = hs.filter((x) => x.token === key);
+  if (exakt.length) return exakt;
+  const norm = key.toLowerCase();
+  return hs.filter((x) => {
+    const titel = normKey(x.title).toLowerCase();
+    return titel === norm || titel.startsWith(`${norm} `);
+  });
 }
 
 /**
@@ -69,15 +130,18 @@ export function slice(md: string, keys: string[], datei = 'FAHRPLAN'): SliceResu
 
   const gefunden: string[] = [];
   const fehlend: string[] = [];
+  const mehrdeutig: { key: string; treffer: string[] }[] = [];
   const gewaehlt: Heading[] = [...stets];
   for (const k of gewuenscht) {
-    const h = hs.find((x) => x.token === k);
-    if (h) {
-      if (!gewaehlt.includes(h)) gewaehlt.push(h);
-      gefunden.push(k);
-    } else {
+    const treffer = trefferFuer(hs, k);
+    if (!treffer.length) {
       fehlend.push(k);
+      continue;
     }
+    // Alle Treffer aufnehmen — nie still den ersten wählen (Fund 26).
+    for (const h of treffer) if (!gewaehlt.includes(h)) gewaehlt.push(h);
+    gefunden.push(k);
+    if (treffer.length > 1) mehrdeutig.push({ key: k, treffer: treffer.map((h) => h.title) });
   }
   // Nach Dokumentreihenfolge sortieren, Duplikate raus.
   const einzig = [...new Set(gewaehlt)].sort((a, b) => a.start - b.start);
@@ -93,23 +157,37 @@ export function slice(md: string, keys: string[], datei = 'FAHRPLAN'): SliceResu
       `Kopf${stets.length ? ' + §0' : ''}${
         gefunden.length ? ' + §' + gefunden.join(' §') : ''
       }. **Ganzdatei bei Unklarheit:** \`cat ${datei}\` bzw. den ganzen §.` +
-      (fehlend.length ? ` ⚠️ Nicht gefunden: ${fehlend.join(', ')}.` : ''),
+      (fehlend.length ? ` ⚠️ Nicht gefunden: ${fehlend.join(', ')}.` : '') +
+      (mehrdeutig.length
+        ? ` ⚠️ ${mehrdeutig
+            .map((m) => `§${m.key} ist mehrdeutig (${m.treffer.length} Treffer: ${m.treffer.join(' · ')}) — ALLE enthalten`)
+            .join('; ')}.`
+        : ''),
   );
   teile.push(`\n## Inhalt — vollständiges ##/###-Inventar\n\n${toc}\n`);
   teile.push(`\n---\n\n${kopf.trimEnd()}\n`);
   for (const h of einzig) {
     teile.push(`\n${md.slice(h.start, sektionEnde(hs, hs.indexOf(h), md.length)).trimEnd()}\n`);
   }
-  return { text: teile.join('\n'), gefunden, fehlend };
+  return { text: teile.join('\n'), gefunden, fehlend, mehrdeutig };
 }
 
 // CLI
 if (!process.env.VITEST) {
-  const [datei, ...keys] = process.argv.slice(2).filter((a) => a !== '--');
-  if (!datei) {
+  const [arg, ...keys] = process.argv.slice(2).filter((a) => a !== '--');
+  if (!arg) {
     console.error(
       'Aufruf: npm run fahrplan -- <FAHRPLAN-Datei> [<§...>]\n' +
-        '  z. B. npm run fahrplan -- fahrplaene/FAHRPLAN-GESETZES-UX.md 10',
+        '  z. B. npm run fahrplan -- fahrplaene/FAHRPLAN-GESETZES-UX.md 10\n' +
+        '  Mehrwortige §-Zeiger in Anführungszeichen: -- <Datei> "§STRANG B"',
+    );
+    process.exit(2);
+  }
+  const datei = aufloesenDatei(arg);
+  if (!datei) {
+    console.error(
+      `Datei nicht lesbar: ${arg} — weder im Arbeitsverzeichnis noch unter ${SUCHORTE.map((o) => `${o}/`).join(' oder ')}.\n` +
+        '  Hinweis: seit AP-8 (31.7.2026) liegen die aktiven Fahrpläne in `fahrplaene/`, die archivierten in `archiv/`.',
     );
     process.exit(2);
   }

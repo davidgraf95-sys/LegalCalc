@@ -4,6 +4,10 @@ import { parseEtikett, serializeEtikett } from './etikett';
 
 const FELDER = new Set(['id', 'status', 'of', 'blocker', 'dep', 'kollision', 'worktree', '26x', 'fahrplan', 'slot']);
 const CHECKBOX_FUER: Record<string, string> = { done: '[x]', wip: '[~]' };
+// Alle in ROADMAP.md vorkommenden Checkbox-Marken — Spiegel von CHECKBOX_STATUS in
+// scripts/plan/check.ts. `d`/`D` ist der Legenden-Status «geparkt/zurückgestellt».
+const CHECKBOX_RE = /^\s*-\s*\[[ xX~dD]\]/;
+const CHECKBOX_ERSATZ_RE = /(-\s*)\[[ xX~dD]\]/;
 
 export function setField(md: string, id: string, feld: string, wert: string): string {
   if (!FELDER.has(feld)) throw new Error(`Unbekanntes Feld "${feld}"`);
@@ -19,11 +23,23 @@ export function setField(md: string, id: string, feld: string, wert: string): st
   zeilen[idx] = serializeEtikett(neu, indent);
 
   if (feld === 'status') {
+    // Fund 27 der QS-TOK-Endprüfung (31.7.2026): Die Zeichenklasse kannte nur
+    // `[ ]`, `[x]`, `[~]` — der Legenden-Status `[d]`/`[D]` («geparkt/zurück-
+    // gestellt», check.ts CHECKBOX_STATUS) fehlte. `plan:set <geparkt> status=ready`
+    // setzte darum das @meta, liess die Checkbox aber auf `[d]` stehen und machte
+    // `check:plan` — Pflichtglied von `npm run gate` — beim Entparken rot.
     const cb = CHECKBOX_FUER[neu.status] ?? '[ ]';
     for (let j = idx - 1; j >= 0; j--) {
       if (zeilen[j].trim() === '') continue;
-      if (/^\s*-\s*\[[ x~]\]/.test(zeilen[j])) zeilen[j] = zeilen[j].replace(/(-\s*)\[[ x~]\]/, `$1${cb}`);
+      if (CHECKBOX_RE.test(zeilen[j])) zeilen[j] = zeilen[j].replace(CHECKBOX_ERSATZ_RE, `$1${cb}`);
       break;
+    }
+    // Zweiter Halbsatz desselben Funds: `ready` mit gesetztem `blocker` ist nach
+    // check.ts Regel 3 ein Problem. Wer entparkt, hat den Blocker aufgelöst — der
+    // Eintrag im @blockers-Register bleibt als Beleg stehen, die Bindung fällt.
+    if (neu.status === 'ready' && neu.blocker) {
+      zeilen[idx] = serializeEtikett({ ...neu, blocker: null }, indent);
+      console.error(`Hinweis: blocker "${neu.blocker}" bei ${id} mit entfernt (status ready duldet keinen blocker).`);
     }
   }
   return zeilen.join('\n');

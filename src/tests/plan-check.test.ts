@@ -150,7 +150,13 @@ describe('pruefe — Regel 8 @queue-Integrität', () => {
     `## Die geordnete Abarbeitung\n<!-- @queue: ${queue} -->\n${extra}` + OK.replace('## Die geordnete Abarbeitung\n', '');
 
   it('konsistente Queue → kein Problem', () => {
-    expect(pruefe(mitQueue('W1·4'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4'])).toEqual([]);
+    // W1·4 ist im OK-Fixture `blocked` und damit seit der 8.3-Erweiterung (Fund 15
+    // der QS-TOK-Endprüfung, 31.7.2026) selbst ein Stale-Fall. Die Gegenprobe
+    // «konsistente Queue» braucht darum einen BAUBAREN Schritt; die Aussage des
+    // Tests bleibt unverändert — nur das Fixture hatte den Zustand mitkodiert,
+    // den die neue Regel gerade als Fehler ausweist.
+    const baubar = mitQueue('W1·4').replace('status: blocked · of: ja · blocker: wbqdyap3x', 'status: ready · of: ja · blocker: null');
+    expect(pruefe(baubar, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4'])).toEqual([]);
   });
   it('8.1: Queue-ID ohne @meta → Problem', () => {
     const p = pruefe(mitQueue('GEIST'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
@@ -242,5 +248,57 @@ describe('resolve-Kopplung — Querschnitt mit offener Voraussetzung', () => {
     const b = resolve([qs]);
     expect(b.wartetDep).toEqual([{ id: 'QS-X', offen: ['FEHLT'] }]);
     expect(b.begleitend).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Fix-Runde 1 nach der Endprüfung der QS-TOK-Aufräumwelle.
+// ---------------------------------------------------------------------------
+
+// Regel 9 (Funde 11/21): Bis AP-8 trug kein `fahrplan:`-Feld ein Verzeichnis-Präfix;
+// seither tragen es alle. Damit ist eine neue Fehlerklasse entstanden (falsches oder
+// fehlendes Präfix), die das Tor NICHT sehen konnte: Regel 7 prüft nur die
+// Gegenrichtung (jede Datei in fahrplaene/ muss als Basename irgendwo im
+// ROADMAP-Volltext vorkommen), die einzige Existenzprüfung galt `kollision`.
+// Mutations-Beweis gegen die echte ROADMAP vor dem Fix: `fahrplan:` auf einen
+// erfundenen Pfad gesetzt → pruefe() lieferte []. §6.7: erst rot zeigen.
+describe('Regel 9 — fahrplan:-Pfad muss existieren', () => {
+  const MIT_FAHRPLAN = OK.replace(
+    'id: W1·1 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein',
+    'id: W1·1 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md',
+  );
+
+  it('NEGATIV: fahrplan: zeigt auf eine nicht existierende Datei → Problem', () => {
+    const nur = (p: string) => p === 'fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md';
+    const bad = MIT_FAHRPLAN.replace('fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md', 'fahrplaene/FAHRPLAN-GIBTSNICHT.md');
+    const p = pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], nur, inv);
+    expect(p.map((x) => x.meldung)).toContain('fahrplan "fahrplaene/FAHRPLAN-GIBTSNICHT.md" existiert nicht');
+  });
+
+  it('GEGENPROBE: existierender fahrplan:-Pfad → kein Problem', () => {
+    const nur = (p: string) => p === 'fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md';
+    expect(pruefe(MIT_FAHRPLAN, ['FAHRPLAN-PLAN-STEUERUNG.md'], nur, inv)).toEqual([]);
+  });
+
+  it('ohne fahrplan:-Feld wird nichts geprüft (kein Fehlalarm)', () => {
+    expect(pruefe(OK, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => false, inv).filter((p) => /^fahrplan /.test(p.meldung))).toEqual([]);
+  });
+});
+
+// Regel 8.3 (Fund 15): Der Stale-Guard nannte nur `done` und `parked`. Ein
+// `blocked`-Schritt am Queue-Kopf blieb still grün — auch 8.4 greift nicht, weil ein
+// blockierter Kopf gar nicht erst in readyNow landet und readyNow[0] unverändert
+// bleibt. Dieselbe Fehlerklasse wie der Ur-Befund vom 24.7.2026, nur über `blocked`.
+describe('Regel 8.3 — Stale-Guard deckt auch blocked', () => {
+  const MIT_QUEUE = `## Die geordnete Abarbeitung\n<!-- @queue: W1·4 -->\n` + OK.replace('## Die geordnete Abarbeitung\n', '');
+
+  it('NEGATIV: blockierter Schritt am Queue-Kopf → Problem', () => {
+    const p = pruefe(MIT_QUEUE, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv);
+    expect(p.map((x) => x.meldung)).toContain('@queue-ID "W1·4" ist blocked — veraltete Steuerung, aus @queue entfernen');
+  });
+
+  it('GEGENPROBE: ready-Schritt in der Queue → kein Problem', () => {
+    const gut = MIT_QUEUE.replace('status: blocked · of: ja · blocker: wbqdyap3x', 'status: ready · of: ja · blocker: null');
+    expect(pruefe(gut, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv)).toEqual([]);
   });
 });

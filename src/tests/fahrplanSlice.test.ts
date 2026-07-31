@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { headings, normKey, slice } from '../../scripts/fahrplan-slice';
+import { aufloesenDatei, headings, normKey, slice } from '../../scripts/fahrplan-slice';
 
 // QS-TOK / FAHRPLAN-TOKEN-OEKONOMIE.md §3 T3: der Slicer druckt Kopf + §0 + Ziel-§§
 // + IMMER das vollständige ##/###-Inventar (ToC), byte-treu, deterministisch. Test
@@ -130,5 +130,103 @@ describe('slice', () => {
     expect(i1).toBeLessThan(i10); // Reihenfolge = Dokument, nicht Argument
     // Byte-treu: die Original-Überschrift steht wörtlich im Slice.
     expect(r.text).toContain('## §1 Erstes');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Fix-Runde 1 nach der Endprüfung der QS-TOK-Aufräumwelle (31.7.2026).
+// Die bestehenden Fälle oben bleiben unverändert — die neuen Fälle stehen hier.
+// ---------------------------------------------------------------------------
+
+// Fund 26: Mehrwort-§-Zeiger lieferten STILL die falsche Sektion. Reproduziert am
+// echten Bestand: `npm run fahrplan -- fahrplaene/FAHRPLAN-SPLIT-VIEW.md §STRANG B`
+// druckte «## STRANG A — Inhaltsbreite-Umschalter (✅ FERTIG …)», die Kopfzeile
+// behauptete «Enthalten: Kopf + §0 + §STRANG», die Warnung nannte nur «Nicht
+// gefunden: B». Gleiches bei `§Paket 3` → «## Paket 1». Ursache: die CLI splittet
+// an Leerzeichen und `hs.find(x => x.token === k)` nimmt den ERSTEN Token-Treffer.
+const MEHRDEUTIG = `# FAHRPLAN Split-View
+
+Kopf.
+
+## §0 Zweck
+Quer-Regel.
+
+## STRANG A — Umschalter
+Inhalt Strang A.
+
+## STRANG B — Split-View
+Inhalt Strang B.
+
+## Paket 1 — Currency
+Inhalt Paket eins.
+
+## Paket 3 — Vernehmlassungen
+Inhalt Paket drei.
+`;
+
+describe('slice — mehrdeutige und mehrteilige §-Zeiger (Fund 26)', () => {
+  it('mehrdeutiges Ein-Wort-Token liefert ALLE Treffer statt still den ersten', () => {
+    const r = slice(MEHRDEUTIG, ['STRANG']);
+    expect(r.text).toContain('Inhalt Strang A.');
+    expect(r.text).toContain('Inhalt Strang B.');
+  });
+
+  it('mehrdeutiges Token wird in der Kopfzeile sichtbar gemeldet', () => {
+    const r = slice(MEHRDEUTIG, ['STRANG']);
+    expect(r.mehrdeutig).toEqual([{ key: 'STRANG', treffer: ['STRANG A — Umschalter', 'STRANG B — Split-View'] }]);
+    expect(r.text).toContain('mehrdeutig');
+  });
+
+  it('mehrteiliger Zeiger «STRANG B» trifft genau die gemeinte Sektion', () => {
+    const r = slice(MEHRDEUTIG, ['§STRANG B']);
+    expect(r.gefunden).toEqual(['STRANG B']);
+    expect(r.text).toContain('Inhalt Strang B.');
+    expect(r.text).not.toContain('Inhalt Strang A.');
+  });
+
+  it('mehrteiliger Zeiger «Paket 3» trifft Paket 3, nicht Paket 1', () => {
+    const r = slice(MEHRDEUTIG, ['§Paket 3']);
+    expect(r.text).toContain('Inhalt Paket drei.');
+    expect(r.text).not.toContain('Inhalt Paket eins.');
+  });
+
+  it('eindeutiges Token bleibt unverändert eindeutig (keine Mehrdeutigkeits-Meldung)', () => {
+    const r = slice(MEHRDEUTIG, ['0']);
+    expect(r.mehrdeutig).toEqual([]);
+    expect(r.text).not.toContain('mehrdeutig');
+  });
+});
+
+// Fund 4/5: Vier Skills nennen Fahrpläne weiterhin ohne Ordner. Wer den dort
+// genannten Namen 1:1 in den Slicer gibt, läuft in ENOENT (reproduziert:
+// `npm run fahrplan -- FAHRPLAN-PERFORMANCE.md 1` → Exit 2). Der Slicer soll
+// einen baren Namen selbst auflösen, statt die Session in die Sackgasse zu schicken.
+describe('aufloesenDatei — Fallback für bare Dateinamen (Fund 4/5)', () => {
+  it('bare Name → fahrplaene/<name>, wenn es dort liegt', () => {
+    const da = (p: string) => p === 'fahrplaene/FAHRPLAN-PERFORMANCE.md';
+    expect(aufloesenDatei('FAHRPLAN-PERFORMANCE.md', da)).toBe('fahrplaene/FAHRPLAN-PERFORMANCE.md');
+  });
+
+  it('bare Name → archiv/<name>, wenn er nur dort liegt', () => {
+    const da = (p: string) => p === 'archiv/FAHRPLAN-DESIGN.md';
+    expect(aufloesenDatei('FAHRPLAN-DESIGN.md', da)).toBe('archiv/FAHRPLAN-DESIGN.md');
+  });
+
+  it('liegt der Name in BEIDEN Ordnern, gewinnt fahrplaene/ (aktive Fassung zuerst)', () => {
+    const da = (p: string) => p === 'fahrplaene/FAHRPLAN-X.md' || p === 'archiv/FAHRPLAN-X.md';
+    expect(aufloesenDatei('FAHRPLAN-X.md', da)).toBe('fahrplaene/FAHRPLAN-X.md');
+  });
+
+  it('liegt der Name im Arbeitsverzeichnis, bleibt er unverändert (kein Umbiegen)', () => {
+    expect(aufloesenDatei('FAHRPLAN-X.md', () => true)).toBe('FAHRPLAN-X.md');
+  });
+
+  it('bereits qualifizierter Pfad wird NICHT umgebogen', () => {
+    const da = (p: string) => p === 'archiv/FAHRPLAN-DESIGN.md';
+    expect(aufloesenDatei('archiv/FAHRPLAN-DESIGN.md', da)).toBe('archiv/FAHRPLAN-DESIGN.md');
+  });
+
+  it('nirgends auffindbar → null (Aufrufer meldet die bisherige Fehlermeldung)', () => {
+    expect(aufloesenDatei('FAHRPLAN-GIBTSNICHT.md', () => false)).toBe(null);
   });
 });
