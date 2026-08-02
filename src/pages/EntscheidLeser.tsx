@@ -17,6 +17,7 @@ import { kopfModell, type KopfLabelKey } from '../lib/rechtsprechung/kopf';
 import { normalisiereRegeste, type BrowseEntscheid, type RichterRef } from '../lib/rechtsprechung/register';
 import { besetzungsTeile } from '../lib/rechtsprechung/besetzung-verlinkung';
 import { GEBIET_LABEL } from '../lib/normtext/register';
+import { urlMitHash } from './entscheidLeserRegeln';
 import { usePaneKontext } from '../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 import type { EntscheidSnapshot, EntscheidSprache, Abschnittstyp, Entscheidquelle } from '../lib/rechtsprechung/typen';
@@ -172,7 +173,17 @@ function ladeFsIdx(): number {
 // Reine Chip-Reihe (Sprung-Ziele). Der sticky-Rahmen liegt im gemeinsamen
 // Kopf-Block (zusammen mit den BGE-Tabs), damit sich nicht zwei sticky-Leisten
 // überlagern (Bug-Fix: Sprung-Leiste verdeckte die Tab-Leiste beim Scrollen).
-function SprungNavigation({ ziele }: { ziele: { anker: string; label: string }[] }) {
+// LM-209 (Prod-Messung 2.8.2026): als nackte `<a href="#…">` pushte JEDER
+// Reiter-Klick browsernativ einen History-Eintrag (`history.length` 4→5→6→7);
+// nach drei Klicks war man vier «Zurück» vom Gesetz entfernt, ohne die Seite je
+// verlassen zu haben. Der `href` BLEIBT (Teilbarkeit, Mittelklick, Kontextmenü),
+// der normale Linksklick wird jedoch selbst bedient: scrollen + Hash per
+// `replaceState` — dasselbe Muster wie die `?ansicht=`-Spiegelung (N0d·J5).
+// Modifier-/Mittelklicks bleiben dem Browser überlassen (neuer Tab/Fenster).
+function SprungNavigation({ ziele, springe }: {
+  ziele: { anker: string; label: string }[];
+  springe: (anker: string) => void;
+}) {
   if (ziele.length === 0) return null;
   return (
     <nav aria-label="Abschnitte">
@@ -180,6 +191,11 @@ function SprungNavigation({ ziele }: { ziele: { anker: string; label: string }[]
       <div className="flex gap-2 overflow-x-auto pb-0.5 -mb-0.5 pr-5 sm:pr-0 sm:flex-wrap sm:overflow-visible [scrollbar-width:thin]">
         {ziele.map((z) => (
           <a key={z.anker} href={`#${z.anker}`}
+            onClick={(e) => {
+              if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+              e.preventDefault();
+              springe(z.anker);
+            }}
             className="lc-chip shrink-0 whitespace-nowrap no-underline hover:text-brass-700 hover:border-brass-400">
             {z.label}
           </a>
@@ -229,6 +245,16 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam }: { schlues
     if (imPane) wurzel?.current?.scrollTo({ top: 0, behavior: 'smooth' });
     else if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [imPane, wurzel]);
+  // LM-209: Sprung zu einem Abschnitt/Anker OHNE Verlaufseintrag. Der Hash bleibt
+  // in der Adresse (teilbar), wird aber per replaceState gesetzt — die Verlaufs-
+  // Ökonomie gehört den echten Ortswechseln. Kein Scroll-Ereignis schreibt hier je
+  // in die URL (§Z Ziff. 7 bleibt gewahrt: verworfen war der LAUFENDE Hash-Sync).
+  // Im Pane bleibt die Haupt-URL unberührt (Konvention von `wechsleTab`).
+  const springeZuAbschnitt = useCallback((anker: string) => {
+    if (!springeZuAnker(anker)) return;   // kein Ziel im DOM ⇒ auch kein Hash (§8)
+    if (imPane || typeof window === 'undefined' || !window.history) return;
+    window.history.replaceState(window.history.state, '', urlMitHash(window.location.href, anker));
+  }, [imPane]);
   const [fsIdx, setFsIdx] = useState<number>(ladeFsIdx);
   const setFs = (i: number) => {
     const x = Math.max(0, Math.min(FS_STUFEN.length - 1, i));
@@ -552,7 +578,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam }: { schlues
               ariaLabel="Textfassung des Entscheids"
             />
           )}
-          <SprungNavigation ziele={navZiele} />
+          <SprungNavigation ziele={navZiele} springe={springeZuAbschnitt} />
         </div>
       )}
 
