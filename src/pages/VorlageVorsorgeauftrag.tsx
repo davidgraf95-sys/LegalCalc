@@ -236,7 +236,18 @@ export function VorlageVorsorgeauftrag() {
         <div className="space-y-5">
           <div className="space-y-3">
             <GruppenTitel>Beauftragte Person(en)</GruppenTitel>
-            <p className="text-xs text-ink-500">Pro Aufgabenbereich kann dieselbe oder eine andere Person bestimmt werden. Medizinische Vertretung nur durch natürliche Personen.</p>
+            {/* W2·8/Gegenprüfung B1: «Medizinische Vertretung nur durch
+                natürliche Personen» war kategorisch falsch — Art. 378 Abs. 1
+                Ziff. 1 ZGB nennt schlicht «die in einer Patientenverfügung oder
+                in einem Vorsorgeauftrag bezeichnete Person» und kennt keine
+                Natürlichkeits-Schranke; diese steht wörtlich nur in Art. 370
+                Abs. 2 ZGB — und dort für die PATIENTENVERFÜGUNG. Die Zeile gibt
+                jetzt dieselbe Lehre-Position wieder wie die Engine-Warnung
+                (§5: eine Aussage), als Empfehlung statt als Verbot. */}
+            <p className="text-xs text-ink-500">
+              Pro Aufgabenbereich kann dieselbe oder eine andere Person bestimmt werden.
+              <NormText text={` Für die medizinische Vertretung nach verbreiteter Lehre eine natürliche Person bezeichnen (vgl. Art. 370 Abs. 2 ZGB zur Patientenverfügung).`} />
+            </p>
             {a.beauftragte.map((b, i) => (
               <div key={i} className="lc-card p-4 space-y-3">
                 <div className="grid grid-cols-1 sm:grid-cols-[1fr_10rem] gap-3">
@@ -477,7 +488,23 @@ export function VorlageVorsorgeauftrag() {
                   (es ist ein Fixtarif) und «Bestätigung +CHF 30» (kein Tatbestand im
                   Anhang – die Ziff.-1.1-Gebühr betrifft beurkundete Personenstandsdaten,
                   der VA-Eintrag ist nach Art. 8a ZStV gerade nicht beurkundet). */}
-              <li><strong>Auffindbarkeit:</strong><NormText text={` Errichtung und Hinterlegungsort auf Antrag bei einem beliebigen Zivilstandsamt eintragen lassen (Art. 361 Abs. 3 ZGB; Art. 23a ZStV). Gebühr CHF 75 (Anhang 1 Ziff. 23 ZStGV, Stand 11.11.2024); eingetragen wird nur die Tatsache der Errichtung und der Hinterlegungsort, nicht der Inhalt. Die KESB anerkennt nur das Original; beauftragte Person informieren und Aufbewahrungsort mitteilen (nicht ins alleinige Bankschliessfach).`} /></li>
+              {/* W2·8/Gegenprüfung B4 (D1): Die ZStGV-Angabe trug Norm und
+                  Stand, aber KEINEN Live-Link zur geltenden Fassung — ein
+                  gespeicherter Rechtswert ohne Weg zur Quelle. Die Zitat-Stelle
+                  ist jetzt ein externer Link auf die geltende Fassung; Muster
+                  übernommen von den «amtliche Quelle ↗»-Links der
+                  BeurkundungsHinweis-Komponente oben. Ziel-ELI live über den
+                  Fedlex-SPARQL-Endpunkt aufgelöst (3.8.2026): SR 172.042.110 →
+                  eli/cc/1999/490, aktive Konsolidierung seit 11.11.2024 ohne
+                  Endedatum und ohne dateNoLongerInForce — der angezeigte Stand
+                  ist damit der geltende. NormText verlinkt die Stelle nicht
+                  selbst: «Anhang 1 Ziff. 23» ist kein «Art. N GESETZ»-Verweis,
+                  und die ZStGV steht bewusst nicht im Norm-Register. */}
+              <li><strong>Auffindbarkeit:</strong>
+                <NormText text={` Errichtung und Hinterlegungsort auf Antrag bei einem beliebigen Zivilstandsamt eintragen lassen (Art. 361 Abs. 3 ZGB; Art. 23a ZStV). Gebühr CHF 75 (`} />
+                <a href="https://www.fedlex.admin.ch/eli/cc/1999/490/de" target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-800">Anhang 1 Ziff. 23 ZStGV ↗</a>
+                <NormText text={`, SR 172.042.110, Stand 11.11.2024); eingetragen wird nur die Tatsache der Errichtung und der Hinterlegungsort, nicht der Inhalt. Die KESB anerkennt nur das Original; beauftragte Person informieren und Aufbewahrungsort mitteilen (nicht ins alleinige Bankschliessfach).`} />
+              </li>
               <li><strong>Widerruf:</strong><NormText text={` jederzeit in einer Errichtungsform oder durch Vernichtung der Urkunde (Art. 362 ZGB).`} /></li>
             </ul>
             <label className="flex items-start gap-2.5 py-1.5 text-body-s cursor-pointer text-ink-900 font-medium pt-1">
