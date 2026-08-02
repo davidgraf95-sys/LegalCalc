@@ -267,8 +267,14 @@ export function pruefeVaGates(a: VaAntworten): VaGateErgebnis {
   // wenn die Leistungen der beauftragten Person üblicherweise entgeltlich
   // sind.» Die Kostentragung steht in Abs. 2 und bleibt als eigener Anker
   // sichtbar — sonst läse sich Abs. 1 als Träger beider Aussagen (§7/§8).
+  // W2·8/Gegenprüfung Runde 2, L1–L3 (drei Abweichungen vom Wortlaut):
+  // L1 «angemessene» fehlte — der Massstab gehört zur Rechtsfolge von Abs. 1.
+  // L2 «bei der Validierung» steht nicht in Art. 366 ZGB; die Norm nennt
+  //    keinen Zeitpunkt, die Zuschreibung an Art. 363 wäre unbelegt.
+  // L3 Abs. 2 belastet «die Entschädigung und die notwendigen Spesen» — die
+  //    Spesen fehlten, der Satz las sich als reine Entschädigungs-Kostenregel.
   if (a.entschaedigung === 'keine_angabe') {
-    hinweise.push('Ohne Entschädigungsregelung legt die KESB bei der Validierung eine Entschädigung fest, wenn dies nach dem Umfang der Aufgaben gerechtfertigt erscheint oder die Leistungen üblicherweise entgeltlich sind (Art. 366 Abs. 1 ZGB), zulasten der auftraggebenden Person (Abs. 2).');
+    hinweise.push('Ohne Entschädigungsregelung legt die KESB eine angemessene Entschädigung fest, wenn dies nach dem Umfang der Aufgaben gerechtfertigt erscheint oder die Leistungen üblicherweise entgeltlich sind (Art. 366 Abs. 1 ZGB); Entschädigung und notwendige Spesen werden der auftraggebenden Person belastet (Abs. 2).');
   }
 
   // Wirksamkeit erst nach KESB-Validierung – immer
@@ -570,9 +576,17 @@ export function vaZusammenstellen(a: VaAntworten) {
     pvHinterlegungZeile: a.pvHinterlegung?.trim() ? ` (Hinterlegungsort: ${a.pvHinterlegung.trim()})` : '',
     // W2·8/Gegenprüfung B7: Ohne Ort stand hier ein hängendes «den 15.06.2026».
     // «den» ist der Anschluss an den Ort («Basel, den …»), nicht Teil des
-    // Datums – fehlt der Ort, steht nur das Datum (bzw. der Ausfüll-Strich,
-    // wenn auch das Datum fehlt; Platzhalter-Konvention der Engine).
-    ortDatumZeile: a.ort?.trim() ? `${a.ort.trim()}, den ${datum}` : datum,
+    // Datums – fehlt der Ort, steht nur das Datum.
+    // W2·8/Gegenprüfung Runde 2, B8: Fehlen Ort UND Datum, stand hier ein
+    // nackter Strich «________» unmittelbar über der Unterschriftslinie und
+    // war von dieser nicht zu unterscheiden. Im Abschreibe-Muster hätte die
+    // abschreibende Person ihn als Teil der Unterschrift lesen und das Datum
+    // weglassen können — das Datum ist nach Art. 361 Abs. 2 ZGB
+    // Gültigkeitserfordernis der eigenhändigen Errichtung («… von Hand
+    // niederzuschreiben, zu datieren und zu unterzeichnen», ZGB-Snapshot
+    // Stand 1.7.2026). Der Strich wird deshalb beschriftet; der Ort bleibt
+    // unbeschriftet, weil ihn Art. 361 Abs. 2 ZGB nicht verlangt.
+    ortDatumZeile: a.ort?.trim() ? `${a.ort.trim()}, den ${datum}` : (a.datum ? datum : 'Datum: ________'),
   };
   const erg = assemble(VA_SCHEMA, antworten);
   // Form-Gate-Matrix: Beurkundungs-Variante ist ein ENTWURF für die

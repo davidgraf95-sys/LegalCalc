@@ -469,7 +469,7 @@ export function VorlageVorsorgeauftrag() {
             <p className="lc-overline text-brass-700">Form-Gate – damit Ihr Vorsorgeauftrag gültig wird</p>
             {eigenhaendig ? (
               <ul className="lc-list space-y-2 text-body-s text-ink-700">
-                <li><strong>Vollständig von Hand abschreiben:</strong><NormText text={` Der ganze Text – einschliesslich Ort, Datum und Unterschrift – muss eigenhändig geschrieben sein (Art. 361 Abs. 2 ZGB). Ein am Computer erstellter und nur unterschriebener Text ist UNGÜLTIG; auch eine bloss beglaubigte Unterschrift genügt nicht.`} /></li>
+                <li><strong>Vollständig von Hand abschreiben:</strong><NormText text={` Der ganze Text – einschliesslich Datum und Unterschrift – muss eigenhändig geschrieben sein (Art. 361 Abs. 2 ZGB). Ein am Computer erstellter und nur unterschriebener Text ist UNGÜLTIG; auch eine bloss beglaubigte Unterschrift genügt nicht.`} /></li>
                 <li><strong>Alternative:</strong><NormText text={` öffentliche Beurkundung bei der Urkundsperson (Art. 361 Abs. 1 ZGB).`} /></li>
               </ul>
             ) : (

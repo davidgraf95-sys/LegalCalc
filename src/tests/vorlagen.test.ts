@@ -511,10 +511,17 @@ describe('Vorlage Vorsorgeauftrag', () => {
     expect(h).toContain('wenn dies nach dem Umfang der Aufgaben gerechtfertigt erscheint');
     expect(h).toContain('die Leistungen üblicherweise entgeltlich sind');
     expect(h).toContain('(Art. 366 Abs. 1 ZGB)');
-    // Kostentragung bleibt belegt (Abs. 2), aber als eigener Anker.
-    expect(h).toContain('zulasten der auftraggebenden Person (Abs. 2)');
-    // Die unbedingte Fassung ist weg.
-    expect(h).not.toContain('legt die KESB bei der Validierung eine angemessene Entschädigung fest (');
+    // W2·8 / Gegenprüfung Runde 2, L1: Der Massstab «angemessen» ist Teil der
+    // Rechtsfolge von Abs. 1 und darf nicht weggelassen werden.
+    expect(h).toContain('legt die KESB eine angemessene Entschädigung fest');
+    // L2: «bei der Validierung» steht nicht in Art. 366 ZGB — die Norm nennt
+    // keinen Zeitpunkt; die Zuschreibung an die Validierung (Art. 363) wäre
+    // eine zweite, unbelegte Aussage.
+    expect(h).not.toContain('bei der Validierung');
+    // L3: Abs. 2 belastet Entschädigung UND notwendige Spesen — beides gehört
+    // in den Anker, sonst liest sich der Satz als blosse Kostentragungsregel
+    // für die Entschädigung.
+    expect(h).toContain('Entschädigung und notwendige Spesen werden der auftraggebenden Person belastet (Abs. 2)');
     // Bei getroffener Regelung entfällt der Hinweis (Art. 366 greift nur ohne Anordnung).
     const mit = pruefeVaGates(va({ entschaedigung: 'unentgeltlich' }));
     expect(mit.hinweise.some((x) => x.startsWith('Ohne Entschädigungsregelung'))).toBe(false);
@@ -572,8 +579,13 @@ describe('Vorlage Vorsorgeauftrag', () => {
     expect(zeile({ ort: undefined })).toBe('04.06.2026');
     expect(zeile({ ort: '   ' })).toBe('04.06.2026');
     expect(zeile({ ort: 'Basel' })).toBe('Basel, den 04.06.2026');
-    // Fehlt auch das Datum, bleibt der Ausfüll-Strich – ohne «den».
-    expect(zeile({ ort: undefined, datum: '' })).toBe('________');
+    // Fehlt auch das Datum, bleibt der Ausfüll-Strich – ohne «den», aber
+    // beschriftet: W2·8 / Gegenprüfung Runde 2, B8. Der nackte Strich stand
+    // unmittelbar über der Unterschriftslinie und war von ihr nicht zu
+    // unterscheiden — im Abschreibe-Muster hätte die abschreibende Person das
+    // Datum weglassen können, das nach Art. 361 Abs. 2 ZGB Gültigkeits-
+    // erfordernis ist.
+    expect(zeile({ ort: undefined, datum: '' })).toBe('Datum: ________');
     expect(zeile({ ort: 'Basel', datum: '' })).toBe('Basel, den ________');
   });
 
