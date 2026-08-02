@@ -619,3 +619,46 @@ Dokument-/Engine-Änderung) · Tore grün. Trailer `Roadmap: W2·13-KANTONE`.
 >   Extraktions-Anteile sind Risikopfad ⇒ `QS-GP` + golden byte-gleich.
 >   **Detail:** diese Datei §2. Trailer `Roadmap: W2·13-KANTONE`.
 
+
+---
+
+## §3 · Inhaltsdrift der kantonalen Snapshots gegen die Quellen (`W2·13-KANTONE-DRIFT`, Befund 2.8.2026)
+
+**Befund (Herkunft ehrlich ausgewiesen).** Beim Nachführungs-Durchgang vom 2.8.2026 wurde die
+Bundes-Ebene bewusst allein bearbeitet (`--nur=bund`). Der Drift-Abgleich meldete dabei für die
+**kantonale Ebene rund 28 Snapshots mit echter Inhaltsdrift** gegenüber den Amtsquellen, unter
+anderem:
+
+- **BE 154.21** — neue Fassung per **1.8.2026**;
+- **AG 291.150** — neu **aufgehobene Artikel**.
+
+**Verifikations-Stand: UNVERIFIZIERT.** Die Zahl 28 und die beiden Beispiele stammen aus dem
+Lauf-Protokoll jenes Durchgangs und sind hier als **Anlass** festgehalten, nicht als Ergebnis. Sie
+werden im Schritt selbst **neu erhoben** (`npm run check:normtext-netz`, nackt, volle Ausgabe
+lesen) — die Liste wird sich bis dahin bewegt haben, und eine übernommene Zahl wäre eine zweite
+Wahrheit (§5) plus eine Behauptung ohne eigenen Beleg (§7). Ausgangspunkt ist der Lauf, nicht
+dieser Absatz.
+
+**Warum ein eigener Schritt und kein Anhängsel.** Kantonale Nachführung ist **Korpus-Produktion**,
+nicht Darstellung: pro Erlass Quelle mit Stand, Anker-Prüfung, Re-Extraktion, Snapshot-Neubau.
+Das ist ein **Risiko-Pfad** und wird nach Skill **`korpus-werkstatt`** gefahren, mit
+`npm run check:gegenpruefung` als Tor. An einen UI- oder Currency-Schritt angehängt, liefe es
+ungegated mit — genau die Vermischung von Risiko-Klassen, die §14.2 untersagt.
+
+**Auflagen (bindend).**
+
+1. **Je Erlass ein Beleg:** amtliche Quelle-URL + Konsolidierungs-/Abrufdatum, sichtbarer
+   Live-Link im UI, Drift-Erkennung aktiv — die vier Merkmale der Zitat-Ausnahme (CLAUDE.md §7).
+   Fehlt eines, wird der Snapshot **nicht** aktualisiert, sondern der Erlass als offen ausgewiesen.
+2. **Aufgehobene Artikel** (AG-Fall) sind ein §8-Thema, kein Löschthema: die Aufhebung wird
+   **sichtbar** gemacht, nicht der Artikel stillschweigend entfernt.
+3. **Determinismus:** Generator zwei Läufe byte-gleich; Diffs an unbeteiligten Kantonen sind ein
+   Fehlschlag, kein Rauschen.
+4. **`verified: true` / Status «geprüft» setzt niemand automatisch** — fachliche Abnahme David
+   (§7/§8).
+5. **Portionierung:** kanton-weise, nicht in einem Rutsch — ein Sammel-Commit über 28 Erlasse ist
+   nicht mehr prüfbar.
+
+*Hinweis zur Herkunft: Zu diesem Punkt hat ein Sub-Agent am 2.8.2026 einen Task-Chip angelegt.
+Der Chip ist durch diesen Plan-Eintrag **ersetzt** (Vorgabe David: keine Chips) — massgeblich ist
+allein dieser §.*

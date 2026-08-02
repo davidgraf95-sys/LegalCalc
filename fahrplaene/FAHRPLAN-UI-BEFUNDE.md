@@ -113,13 +113,22 @@ Je Eintrag: Referenz aus dem Bestand + der Ein-Zeilen-Grund, warum kein Neubau.
 **Prod-Re-Audit 2.8.2026: 16/16 reproduziert (12 voll, 4 teilweise); 13 gebaut, 3 zurückgestellt
 (Bestands-Entscheide).**
 
+> **Nachtrag 2.8.2026 — David-Entscheid über die drei Zurückgestellten (§0.2 «entweder er trägt,
+> oder er wird ausdrücklich und begründet geändert»).** Damit ist keiner der drei mehr «offen ohne
+> Adresse»: **LM-048 verworfen** (Bestands-Entscheid W2·7-BEZUG trägt, abgehakt) · **LM-041
+> geöffnet** als eigener Schritt `W2·7-VZUI-SACHGEBIET` (nur die Sachgebiet-Achse, deterministisch;
+> die Zitier-Rolle bleibt ausdrücklich zu) · **LM-044 geöffnet** als eigener Schritt
+> `W2·17-UI-BEFUNDE-N1`, nachdem die Prüfung den DEFER-Grund als **stale Kopie** entlarvt hat
+> (§5-Heilung, s. dort). Bau-Stand dieses Batches unverändert: **13 gebaut**; die zwei geöffneten
+> Befunde werden **nicht** hier gebaut, sondern in ihren eigenen Schritten.
+
 - [x] **LM-040** · Blocker · Der gewählte Chip unterscheidet sich vom ungewählten nur in der Rahmenfarbe … [Verdacht → DESIGN-REGLEMENT.md F4 «selected» + FAHRPLAN-UI-QUALITAET.md §3(c) Muster-/Zustands-Konsistenz…] — gebaut: `.lc-chip-selected` (gefüllte Fläche + ✓, hell/dunkel), Commit 0844615c4.
-- [ ] **LM-041** · Hoch · Der Chip unterscheidet nicht, in welcher Rolle die Norm im Entscheid … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §9/B1 Facetten-Datenmodell + §1.2 KantenChip-Dichteregel…] — ⛔ zurückgestellt — Bestands-Entscheid trägt (FAHRPLAN-VERZAHNUNG-UI.md §9/B1 + §1.2: Facetten-Modell abschliessend definiert, Sachgebiet/Zitier-Rolle nicht enthalten, Dichte-Regel EIN Zusatz je Chip); Öffnung nur per David-Entscheid.
-- [ ] **LM-044** · Mittel · Normverweis, Statusbadge («Entwurf», «Zu unterzeichnen»), Standangabe, Sprache, Instanz und Gemeinwesen sehen … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3 (Z.1429: «NormChip/Materialien (DEFER, U-VERWEIS-Kollisio…] — ⛔ zurückgestellt — Bestands-Entscheid trägt (FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3: ausdrücklich DEFER, Grund U-VERWEIS-Kollision); Öffnung nur per David-Entscheid.
+- [ ] **LM-041** · Hoch · Der Chip unterscheidet nicht, in welcher Rolle die Norm im Entscheid … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §9/B1 Facetten-Datenmodell + §1.2 KantenChip-Dichteregel…] — → **geöffnet per David-Entscheid 2.8.2026 als `W2·7-VZUI-SACHGEBIET`** (nur Sachgebiet, deterministisch aus der amtlichen BGE-Bandnummer; Rolle bleibt zu). Der Bestands-Entscheid (FAHRPLAN-VERZAHNUNG-UI.md §9/B1 + §1.2: Facetten-Modell abschliessend definiert, Dichte-Regel EIN Zusatz je Chip) wird nicht still gekippt, sondern ausdrücklich um EINE Dimension erweitert — Nachtrag dort, Spec in §12 derselben Datei. Die Zitier-**Rolle** bleibt zu: nicht deterministisch ableitbar (§2).
+- [ ] **LM-044** · Mittel · Normverweis, Statusbadge («Entwurf», «Zu unterzeichnen»), Standangabe, Sprache, Instanz und Gemeinwesen sehen … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3 (Z.1429: «NormChip/Materialien (DEFER, U-VERWEIS-Kollisio…] — → **geöffnet per David-Entscheid 2.8.2026** (U-VERWEIS-Prüfung: Sperrgrund seit 10.7.2026 weg — `#170` gemergt `7f6b9a17b` —, C-3 war am 11.7.2026 gebaut `13fee95ed`; der DEFER-Vermerk in FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3 war eine **stale Kopie**, §5-geheilt) → **`W2·17-UI-BEFUNDE-N1`** (§23).
 - [x] **LM-045** · Mittel · Fünf gleich aussehende Chips sind drei verschiedene Dinge: «↗ geltende Fassung» … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 A25/C-2 (Currency-Tonung) + src/index.css:699–700 (`.lc-chip-geltend`/`.lc-chip-vorbehalt`); Code src/pages…] — gebaut zusammen mit LM-046/LM-047: Chip-Grammatik (Link/Knopf/Angabe) über Container-Klasse `lc-chip-zeile`, Commit fd68383da.
 - [x] **LM-046** · Mittel · Der Chip sieht wie die naheliegendste Aktion aus, ist aber ein … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §X «Fassungsvergleich/Zeitreise» (hart gegated: Fedlex-P1a/b + David-…] — gebaut: Form-Korrektur (kein Linkziel vorgetäuscht), §X-Fassungs-Gate unangetastet, Commit fd68383da.
 - [x] **LM-047** · Mittel · Sechs Elemente in einer Zeile, drei Formensprachen: «★ Leitentscheid» (grüne Pille), … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §1.2/§1.3 (KantenChip vs. StatusBadge = zwei bewusste Anatomien) + FA…] — gebaut: Aktion/externer Link/Angabe an der Container-Klasse `lc-chip-zeile` getrennt, Commit fd68383da.
-- [ ] **LM-048** · Mittel · Je Verweis ist bereits eine Gewichtung erfasst: im OR 768× Wert … [Verdacht → src/pages/gesetz-leser/parts/BezuegeZeile.tsx:44–51 (Komponente `BezuegeZeile`) + src/lib/rechtsprechung/bezuege.ts:36–45 (Interface `BezugsEintrag`)…] — ⛔ zurückgestellt — Bestands-Entscheid trägt (W2·7-BEZUG-Entscheid, Gegenprüfung Runde 1/B3 + B7: `gewicht:null` = «nicht messbar», R16-Ampel/Treatment-Darstellung gesperrt); Öffnung nur per David-Entscheid.
+- [x] **LM-048** · Mittel · Je Verweis ist bereits eine Gewichtung erfasst: im OR 768× Wert … [Verdacht → src/pages/gesetz-leser/parts/BezuegeZeile.tsx:44–51 (Komponente `BezuegeZeile`) + src/lib/rechtsprechung/bezuege.ts:36–45 (Interface `BezugsEintrag`)…] — **erledigt (verworfen) — David-Entscheid 2.8.2026: W2·7-Entscheid bestätigt, wird nicht umgesetzt** (Gegenprüfung Runde 1/B3 + B7: `gewicht:null` = «nicht messbar», R16-Ampel/Treatment-Darstellung bleibt gesperrt). Kein Nachfolge-Schritt, keine Wiedervorlage.
 - [x] **LM-049** · Mittel · Der Überlaufhinweis «+2» (bzw. «+5», «+6») steht als blosser Text neben … [neu] — gebaut: «+N weitere» statt reinem Zähler-Text, Commit 0966c0f28.
 - [x] **LM-050** · Detail · An den Entscheid-Chips stehen bis zu drei Symbole hintereinander: «★» hinter … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §1.3 StatusBadge (★ «verliert sein aria-hidden-ohne-Erklärung-Dasein»…] — gebaut: ZeichenLegende als Toggletip ohne `aria-expanded`, B4-Wächtertest 32/32 grün, Commits 5960f032c + 64b80f3ac + 4f7b2a45f.
 - [x] **LM-051** · Detail · Beschriftung und Zahl stehen im Text ohne Trenner aneinander: kopiert ergibt … [Verdacht → Code src/components/rechtsprechung/EntscheidFilter.tsx:36–42 (Funktion `FacettenGruppe`)] — gebaut: Trenner-Leerzeichen als eigener Textknoten, Commit 0966c0f28.
@@ -519,9 +528,74 @@ am Prod-Stand wiederholen; verschwunden ⇒ abhaken, sonst als Bau-Posten neu au
 
 1. Ein erledigter Befund wird **in seinem Batch-§ abgehakt** (`- [ ]` → `- [x]`), mit
    einem Halbsatz dahinter, was gebaut wurde bzw. warum er überholt war.
+   **Drei Erledigt-Formen (Ergänzung 2.8.2026, Anlass LM-048/041/044):** *gebaut* ·
+   *erledigt (überholt)* nach §0.1 · **erledigt (verworfen)** — der Befund wird bewusst NICHT
+   umgesetzt, weil ein Bestands-Entscheid trägt (§0.2). «Verworfen» wird ebenfalls **abgehakt**,
+   mit Entscheid-Datum und Entscheider im Halbsatz; ein unerledigtes Kästchen für etwas, das
+   niemand mehr baut, ist eine Unwahrheit im Fortschritt (§8). Wird ein Befund dagegen in einen
+   **eigenen Schritt** ausgelagert, bleibt das Kästchen offen und die Zeile nennt die Ziel-ID —
+   er ist dann nicht erledigt, sondern umgezogen.
 2. Ist ein Batch vollständig abgehakt, wird der ROADMAP-Teilschritt gesetzt:
    `npm run plan:set -- W2·17-UI-BEFUNDE-B<k> status=done` — danach `npm run check:plan`.
 3. **Session-Karte Pflicht** (Übergabe-Block: was gebaut, was überholt, was offen blieb).
 4. Sind alle Batches done, wird `W2·17-UI-BEFUNDE` selbst auf `done` gesetzt.
 5. Der Wortlaut in `docs/ui-befunde-2026-07/` wird dabei **nicht** angefasst — er ist die
    Quelle, nicht der Stand (§5).
+
+---
+
+## §23 · N1 — LM-044-Nachzug: Chip-Grammatik `lc-chip-zeile` ausrollen
+
+**1 Befund (LM-044, Mittel, K-05/K-10)** · `W2·17-UI-BEFUNDE-N1` · reines UI (§3)
+
+**Herkunft.** LM-044 stand in §2 als «⛔ zurückgestellt» mit dem Grund «Bestands-Entscheid trägt:
+`FAHRPLAN-GESETZES-UX.md` §10.8 A25/C-3 = ausdrücklich DEFER, U-VERWEIS-Kollision». Die Prüfung
+vom 2.8.2026 hat diesen Grund widerlegt: **U-VERWEIS (#170) ist am 10.7.2026 gemergt**
+(`7f6b9a17b`), **C-3 selbst am 11.7.2026 gebaut** (`feat/v2-c3`, `13fee95ed`), und die Spec-Heimat
+[`FAHRPLAN-GESETZESDARSTELLUNG-V2.md`](FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §2/F5 (C-3-Zeile) sagt
+das seit demselben Tag wörtlich («Deferral-Grund weg»). Der DEFER-Vermerk in §10.8 war eine **stale
+Kopie** — zwei Wahrheiten über denselben Sachverhalt (§5). Die Kopie ist am 2.8.2026 geheilt
+worden; der Bestands-Entscheid, auf den sich die Zurückstellung berief, existierte zum Zeitpunkt
+der Zurückstellung schon nicht mehr. **David-Entscheid 2.8.2026: geöffnet.**
+
+**Auftrag (klein, abgeschlossen).** Die in B1 gebaute Container-Klasse **`lc-chip-zeile`**
+(`src/index.css:742–755`) auf die übrigen Chip-Reihen ausrollen, damit dieselbe Form überall
+dasselbe bedeutet:
+
+- **Fläche a — Filter-Chips Rechtsprechung:** `src/components/rechtsprechung/EntscheidFilter.tsx`
+  (Facetten-Knöpfe `FacettenGruppe` :36–42 und die Aktiv-Filter-Chips :275–279 — beides
+  `button.lc-chip`).
+- **Fläche b — Materialien-/Vorlagen-Routen:** die Chip-Reihen der `src/pages/Materialien.tsx`-
+  und Vorlagen-Strecken samt `src/components/vorlagen/NormChip.tsx`.
+
+**Was schon von allein trägt und was nicht (Prüfbefund 2.8.2026, §8).** Es gibt **zwei**
+Komponenten namens `NormChip`, und nur eine erbt automatisch:
+
+| Komponente | Element | Verhalten unter `lc-chip-zeile` |
+|---|---|---|
+| `src/components/vorlagen/NormChip.tsx` (`CHIP_LINK_CLASS`, :48/:50) | `<a>` | **erbt automatisch** die Link-Unterstreichung |
+| `src/components/rechtsprechung/NormChip.tsx` (:11) | `<span role="button">` | **erbt NICHTS** — die Grammatik-Selektoren heissen `a.lc-chip` / `button.lc-chip` |
+
+Der `span` ist dort **kein Versehen, sondern begründet** (Kommentar :4–10: der Chip liegt als
+Nachkomme in einem Karten-`<a>`; ein `<a>`/`<button>` darin wäre ungültiges Inhaltsmodell). Die
+Auftragsannahme «NormChip rendert als `<a>` und erbt automatisch» trifft darum nur auf die
+Vorlagen-Variante zu. **Zu entscheiden im Bau, nicht vorher anzunehmen:** entweder die Grammatik
+bekommt eine dritte Regel `[role="button"].lc-chip` mit derselben Optik wie `button.lc-chip`
+(dann sieht die Aktions-Achse überall gleich aus) — oder die Rechtsprechungs-Karte bleibt
+ausdrücklich ausserhalb der Grammatik, mit einer Zeile, warum.
+
+**Ehrliche Abgrenzung (bindend).** Dieser Schritt deckt **nur die Element-Art-Achse**
+(Link `a` / Aktion `button` / Angabe `span`). Die **Metadatum-Achse** — also welche Angaben
+überhaupt als Chip auftreten dürfen und welche als Fliesstext (Normverweis vs. Statusbadge vs.
+Standangabe vs. Sprache vs. Instanz vs. Gemeinwesen, der eigentliche Kern von LM-044) — gehört zu
+[`FAHRPLAN-UI-QUALITAET.md`](FAHRPLAN-UI-QUALITAET.md) §3(c) / `W2·10-UI-NAV` und wird hier
+**nicht vorgegriffen**. Wer sie hier mitbaut, greift einem anderen Schritt vor (§14.3).
+
+**Sequenz (§12).** Bau erst **nach der Landung von PR #408** (`lc-chip-zeile` entsteht dort — vorher
+existiert die Klasse auf `main` nicht) **und PR #409** (Flächen-Überschneidung Vorlagen/Normzitate).
+Beides ist eine PR-Landung, keine Plan-ID, und darum als `seq-hart`-Vermerk am `@meta` geführt, nicht
+als `dep` — `dep` kennt nur Schritt-IDs.
+
+**DoD.** Golden byte-gleich · CLS 0 · hell/dunkel je Fläche gesichtet · Gegenprüfung `n/a`
+(reines UI, kein Risiko-Pfad) · die Grammatik-Entscheidung zum `span[role=button]` steht danach
+als Satz in `src/index.css` beim Regelblock, nicht nur im Fahrplan.
