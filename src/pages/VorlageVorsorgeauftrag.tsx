@@ -355,7 +355,17 @@ export function VorlageVorsorgeauftrag() {
           <Checkbox
             checked={a.ersetztFruehere}
             onChange={(v) => set('ersetztFruehere', v)}
-            label={<><span>Frühere Vorsorgeaufträge ersetzen <span className="text-ink-500"><NormText text={`(Art. 362 Abs. 3 ZGB)`} /></span></span></>} />
+            label={<><span>Frühere Vorsorgeaufträge ersetzen <span className="text-ink-500"><NormText text={`(Widerruf in Errichtungsform, Art. 362 Abs. 1 ZGB)`} /></span></span></>} />
+          {!a.ersetztFruehere && (
+            <div className="space-y-2 pl-6">
+              <p className="text-xs text-ink-500">
+                <NormText text={`Nicht angekreuzt = dieser Vorsorgeauftrag ergänzt den früheren Auftrag und lässt ihn im Übrigen unberührt. Die Ergänzungs-Klausel wird aufgenommen; ohne sie träte der neue Auftrag von Gesetzes wegen an die Stelle des früheren (Art. 362 Abs. 3 ZGB).`} />
+              </p>
+              <Field label="Früherer Vorsorgeauftrag vom" optional hint="ohne Datum bleibt in der Klausel ein Ausfüll-Strich stehen">
+                <DatumsFeld value={a.fruehererVaDatum ?? ''} onChange={(v) => set('fruehererVaDatum', v || undefined)} className={inputCls} />
+              </Field>
+            </div>
+          )}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field label="Ort" optional><input className={inputCls} value={a.ort ?? ''} onChange={(e) => set('ort', e.target.value)} placeholder="z. B. Basel" /></Field>
             {eigenhaendig ? (

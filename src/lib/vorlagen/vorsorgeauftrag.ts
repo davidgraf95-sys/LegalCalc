@@ -108,6 +108,12 @@ export type VaAntworten = {
   pvVorhanden: boolean;
   pvHinterlegung?: string;
   ersetztFruehere: boolean;
+  /** Datum des FRÜHEREN Vorsorgeauftrags (ISO), nur bei der Ergänzungs-Variante
+   *  (`ersetztFruehere: false`). Bewusst OHNE Default: fehlt das Datum, zeigt die
+   *  Ergänzungs-Klausel den Ausfüll-Strich «________» statt eines falschen Datums
+   *  (Platzhalter-Konvention der Engine; der Feldname trägt bewusst kein
+   *  «Satz»/«Zeile»-Suffix, sonst verschwände der Strich ersatzlos). */
+  fruehererVaDatum?: string;
   ort?: string;
   datum: string;              // nur eigenhändig zwingend (wird mit abgeschrieben)
 };
@@ -413,11 +419,22 @@ export const VA_SCHEMA: VorlageSchema = {
     },
     {
       id: 'V13_ersetzt',
-      text: 'Dieser Vorsorgeauftrag ersetzt alle früheren Vorsorgeaufträge.',
+      text: 'Ich widerrufe hiermit alle früheren Vorsorgeaufträge. Dieser Vorsorgeauftrag tritt an ihre Stelle.',
       includeIf: { feld: 'ersetztFruehere', eq: true },
       nummeriert: true,
-      begruendung: 'Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich ersetzt werden sollen.',
+      begruendung:
+        'Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich aufgehoben werden sollen: Der Widerruf wird in einer Errichtungsform ausgesprochen (Art. 362 Abs. 1 ZGB) statt bloss angedeutet.',
+      norm: 'Art. 362 Abs. 1 ZGB',
+    },
+    {
+      id: 'V13b_ergaenzung',
+      text: 'Dieser Vorsorgeauftrag ergänzt meinen Vorsorgeauftrag vom {{fruehererVaDatum}} und lässt ihn im Übrigen unberührt.',
+      includeIf: { feld: 'ersetztFruehere', eq: false },
+      nummeriert: true,
+      begruendung:
+        'Aufgenommen, weil der frühere Vorsorgeauftrag bestehen bleiben soll: Die Klausel stellt die Ausnahme «zweifellos eine blosse Ergänzung» (Art. 362 Abs. 3 ZGB) ausdrücklich her.',
       norm: 'Art. 362 Abs. 3 ZGB',
+      hinweis: 'Ohne diese Klausel gälte die gesetzliche Ersetzungsvermutung: Ein neuer Vorsorgeauftrag tritt an die Stelle des früheren, sofern er nicht zweifellos eine blosse Ergänzung darstellt (Art. 362 Abs. 3 ZGB).',
     },
     {
       id: 'V14_schluss_eigenhaendig', rolle: 'unterschrift',
