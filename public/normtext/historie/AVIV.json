@@ -5139,7 +5139,7 @@
    ]
   },
   "57_b": {
-   "giltSeit": "2025-11-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -5156,12 +5156,12 @@
     },
     {
      "typ": "fassung",
-     "datum": "2025-11-01",
+     "datum": "2026-08-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2025 617",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/617"
+       "label": "AS 2026 258",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/258"
       }
      ],
      "absatz": null,

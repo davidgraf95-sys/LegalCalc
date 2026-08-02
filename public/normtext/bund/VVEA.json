@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-08-02",
   "eintraege": [
     {
       "id": "bund/VVEA/art_1",
@@ -28,10 +28,10 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_1",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "9fa5dad738042222762c9387e532783ee279535625095cf3df24069e8d1d48a9"
     },
     {
@@ -47,10 +47,10 @@
           "text": "Diese Verordnung gilt für die Vermeidung und Entsorgung von Abfällen sowie für das Errichten und Betreiben von Abfallanlagen. Spezielle Vorschriften zu einzelnen Abfallarten in anderen Gesetzen und Verordnungen des Bundes bleiben vorbehalten."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_2",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "8abc3528600961fb960f63d5be86972dfcc55fcefce65ebc9c4b26e3e9fc077e"
     },
     {
@@ -81,7 +81,12 @@
             },
             {
               "marke": "3",
-              "text": "aus öffentlichen Verwaltungen stammende Abfälle, deren Zusammensetzung betreffend Inhaltsstoffe und Mengenverhältnisse mit Abfällen aus Haushalten vergleichbar ist;",
+              "text": "aus öffentlichen Verwaltungen stammende Abfälle, deren Zusammensetzung betreffend Inhaltsstoffe und Mengenverhältnisse mit Abfällen aus Haushalten vergleichbar ist,",
+              "tiefe": 1
+            },
+            {
+              "marke": "4",
+              "text": "alle Rückstände, die in Anlagen zur thermischen Behandlung von Abfällen nach den Ziffern 1–3 anfallen, bis sie verwertet oder abgelagert worden sind;",
               "tiefe": 1
             },
             {
@@ -158,17 +163,37 @@
             },
             {
               "marke": "2",
-              "text": "für einen mittleren und wirtschaftlich gesunden Betrieb der betreffenden Branche wirtschaftlich tragbar ist.",
+              "text": "für einen mittleren und wirtschaftlich gesunden Betrieb der betreffenden Branche wirtschaftlich tragbar ist;",
               "tiefe": 1
+            },
+            {
+              "marke": "n",
+              "text": "Wiederverwendung: Verfahren, bei dem Gegenstände und deren Bestandteile, die keine Abfälle sind oder ihre Abfalleigenschaft nach dem Durchlaufen eines Verwertungsverfahrens verloren haben, wieder für denselben Zweck, für den sie ursprünglich bestimmt waren, oder einen vergleichbaren Zweck eingesetzt werden;"
+            },
+            {
+              "marke": "o",
+              "text": "Vorbereitung zur Wiederverwendung: Verwertungsverfahren, bei dem Abfälle durch Behandlungsschritte wie Prüfung, Reinigung, Reparatur so aufbereitet werden, dass sie wiederverwendet werden können;"
+            },
+            {
+              "marke": "p",
+              "text": "stoffliche Verwertung: Verwertungsverfahren, bei dem die stofflichen Eigenschaften von Abfällen genutzt werden, indem die Abfälle so behandelt werden, dass sie als Sekundärrohstoffe wieder eingesetzt werden können;"
+            },
+            {
+              "marke": "q",
+              "text": "stofflich-energetische Verwertung: Verwertungsverfahren, bei dem Abfälle gleichzeitig sowohl stofflich als auch energetisch verwertet werden;"
+            },
+            {
+              "marke": "r",
+              "text": "energetische Verwertung: Verwertungsverfahren, bei dem Abfälle im Rahmen ihrer Entsorgung als Energiequelle genutzt werden."
             }
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_3",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "2d3b2f81226a4bfc257f887195b630f92b1aa7889785750949be5892ff553d71"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "564b67a1fb247099a236f84a158efeee20801cbf9fe1c5a00f4175f782529cd4"
     },
     {
       "id": "bund/VVEA/art_4",
@@ -225,10 +250,10 @@
           "text": "Die Kantone übermitteln die Abfallplanung und die umfassenden Überarbeitungen dem Bundesamt für Umwelt (BAFU)."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_4",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "6b5a146360bdc262ad3d3d065c558cd8dfe45704fc4f34c5eeadfee000159c0b"
     },
     {
@@ -248,10 +273,10 @@
           "text": "Sie weisen die in der Deponieplanung vorgesehenen Standorte von Deponien in ihren Richtplänen aus und sorgen für die Ausscheidung der erforderlichen Nutzungszonen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_5",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "4e83806c4247f398ab8f13438c43c3e193e3b3744977601398aa4666b3ce0d91"
     },
     {
@@ -303,10 +328,10 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_6",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "a702f3a06bf7fcaab1581cbcdf956581d644e7df14fb47c74ea8c510e26ef5f6"
     },
     {
@@ -326,10 +351,10 @@
           "text": "Auf der Grundlage der Berichterstattung der Kantone (Art. 6 Abs. 1) veröffentlicht das BAFU Berichte über die schweizweit entsorgten Abfallmengen sowie die in der Schweiz bestehenden Abfallanlagen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_7",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "bd41656287285773a353a514e85576f07fb27c7ccbed1410ee3d3341fc4945eb"
     },
     {
@@ -345,10 +370,10 @@
           "text": "Der Bund sorgt in Zusammenarbeit mit den Kantonen und den Organisationen der Arbeitswelt dafür, dass bei der Aus- und Weiterbildung von Personen, die Tätigkeiten im Zusammenhang mit der Entsorgung von Abfällen ausüben, der Stand der Technik vermittelt wird."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_8",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "0ab9eaa7091a7cb3531495359c8abae075fd2b4ab309a9a3dad9b2b0553a3441"
     },
     {
@@ -364,10 +389,10 @@
           "text": "Abfälle dürfen nicht mit anderen Abfällen oder mit Zuschlagstoffen vermischt werden, wenn dies in erster Linie dazu dient, den Schadstoff- oder Fremdstoffgehalt der Abfälle durch Verdünnen herabzusetzen und dadurch Vorschriften über die Abgabe, die Verwertung oder die Ablagerung einzuhalten."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_9",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "61f955e97ed4219abad97caef7c4af7468e46c24b0a13829e34b46690fd3af73"
     },
     {
@@ -380,14 +405,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Siedlungsabfälle und Abfälle vergleichbarer Zusammensetzung, Klärschlamm, brennbare Anteile von Bauabfällen und andere brennbare Abfälle müssen in geeigneten Anlagen thermisch behandelt werden, soweit sie nicht stofflich verwertet werden können."
+          "text": "Siedlungsabfälle nach Artikel 3 Buchstabe a Ziffern 1–3 und Abfälle vergleichbarer Zusammensetzung, Klärschlamm, brennbare Anteile von Bauabfällen und andere brennbare Abfälle müssen in geeigneten Anlagen thermisch behandelt werden, soweit sie nicht der Wiederverwendung zugeführt oder stofflich oder zumindest stofflich-energetisch verwertet werden können."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_10",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "2bee51a0a9d1ce8bc3487b34e892b2ddb31a0c63bb032c10c898c2b60d5587ae"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "d5a439179ceeb8d90c79c807675c176b3e6df95a7a06b71070b0697c80e2c19b"
     },
     {
       "id": "bund/VVEA/art_11",
@@ -406,10 +431,10 @@
           "text": "Wer Produkte herstellt, muss die Produktionsprozesse nach dem Stand der Technik so ausgestalten, dass möglichst wenig Abfälle anfallen und die anfallenden Abfälle möglichst wenig Stoffe enthalten, welche die Umwelt belasten."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_11",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "cb119f6a3d403c91313272b946732f94a52387df1839b005d6c8670e16371926"
     },
     {
@@ -421,29 +446,15 @@
       "artikelLabel": "Art. 12",
       "bloecke": [
         {
-          "absatz": "1",
-          "text": "Abfälle sind stofflich oder energetisch zu verwerten, wenn eine Verwertung die Umwelt weniger belastet als:",
-          "items": [
-            {
-              "marke": "a",
-              "text": "eine andere Entsorgung; und"
-            },
-            {
-              "marke": "b",
-              "text": "die Herstellung neuer Produkte oder die Beschaffung anderer Brennstoffe."
-            }
-          ]
-        },
-        {
-          "absatz": "2",
-          "text": "Die Verwertung muss nach dem Stand der Technik erfolgen."
+          "absatz": null,
+          "text": "Jede Verwertung nach Artikel 30d Absätze 1–3 USG muss nach dem Stand der Technik erfolgen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_12",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "cead9b6493ea5ddcab9fde44dfa99855f707825a8dee6c0ada34423716d3c304"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "90374b3ed467bfda86a5f1a52bc9861191be72b8e1d0c330f7d187f13c7bb5c2"
     },
     {
       "id": "bund/VVEA/art_13",
@@ -455,7 +466,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die Kantone sorgen dafür, dass verwertbare Anteile von Siedlungsabfällen wie Glas, Papier, Karton, Metalle, Grünabfälle und Textilien so weit wie möglich getrennt gesammelt und stofflich verwertet werden."
+          "text": "Die Kantone sorgen dafür, dass verwertbare Anteile von Siedlungsabfällen nach Artikel 3 Buchstabe a Ziffern 1–3 wie Glas, Papier, Karton, Metalle, biogene Abfälle und Textilien so weit wie möglich getrennt gesammelt und für die Wiederverwendung vorbereitet oder stofflich verwertet werden."
         },
         {
           "absatz": "2",
@@ -477,14 +488,14 @@
         },
         {
           "absatz": "4",
-          "text": "Die Inhaberinnen und Inhaber von Abfällen aus Unternehmen mit 250 oder mehr Vollzeitstellen müssen verwertbare Anteile ihrer Abfälle, die von der Zusammensetzung her mit Siedlungsabfällen vergleichbar sind, so weit wie möglich und sinnvoll getrennt sammeln und stofflich verwerten."
+          "text": "Die Inhaberinnen und Inhaber von Abfällen aus Unternehmen mit 250 oder mehr Vollzeitstellen müssen verwertbare Anteile ihrer Abfälle, die von der Zusammensetzung her mit Siedlungsabfällen nach Artikel 3 Buchstabe a Ziffern 1–3 vergleichbar sind, so weit wie möglich und sinnvoll getrennt sammeln und für die Wiederverwendung vorbereiten oder stofflich verwerten."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_13",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "eb79fcd93a351dd7feb7738f60c50a63299e88e859706d355d368f88c25d9a47"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "5c2a2b570026eb2146487e57951687262f0ee47c38ba9113ea4f9666580e6147"
     },
     {
       "id": "bund/VVEA/art_14",
@@ -496,32 +507,32 @@
       "bloecke": [
         {
           "absatz": "1",
+          "text": "Biogene Abfälle, die sich für eine Verwertung nach Absatz 2 eignen, sind separat zu sammeln und Fremdstoffe sind so früh wie möglich zu entfernen."
+        },
+        {
+          "absatz": "2",
           "text": "Biogene Abfälle sind rein stofflich oder durch Vergären zu verwerten, sofern:",
           "items": [
             {
               "marke": "a",
-              "text": "sie sich aufgrund ihrer Eigenschaften, insbesondere ihrer Nährstoff- und Schadstoffgehalte, dafür eignen;"
+              "text": "sie sich aufgrund ihrer Eigenschaften, insbesondere ihrer Nährstoff- und Schadstoffgehalte, dafür eignen; und"
             },
             {
               "marke": "b",
-              "text": "sie separat gesammelt wurden; und"
-            },
-            {
-              "marke": "c",
               "text": "die Verwertung nicht durch andere Vorschriften des Bundesrechts untersagt ist."
             }
           ]
         },
         {
-          "absatz": "2",
-          "text": "Biogene Abfälle, die nicht nach Absatz 1 verwertet werden müssen, sind so weit wie möglich und sinnvoll rein energetisch zu verwerten oder in geeigneten Anlagen thermisch zu behandeln. Dabei ist deren Energiegehalt zu nutzen."
+          "absatz": "3",
+          "text": "Biogene Abfälle, die nicht nach Absatz 2 verwertet werden müssen, sind so weit wie möglich und sinnvoll rein energetisch zu verwerten oder in geeigneten Anlagen thermisch zu behandeln. Dabei ist deren Energiegehalt zu nutzen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_14",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "4f7085ac5569d5b928a5cfb6792b118898972338c4eb165540a786e27419fb53"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "0f5765741e0daff4c6b359ea33433e4dbcbb30ffb7e7dcc98424acd81292b63e"
     },
     {
       "id": "bund/VVEA/art_14_a",
@@ -537,14 +548,14 @@
         },
         {
           "absatz": "2",
-          "text": "Holzabfälle, welche die Anforderungen nach Anhang 7 Ziffer 2 erfüllen, dürfen in Altholzfeuerungen thermisch verwertet werden."
+          "text": "Holzabfälle, welche die Anforderungen nach Anhang 7 Ziffer 2 erfüllen, dürfen in Altholzfeuerungen energetisch verwertet werden."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_14_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "e9944842fae9c65bca0e330a20f1603507d353c16275cbb93eb71e17627133b5"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "5f1b60f9b84e87e7ed240eea7dee265cfeafe022fafe1b22df3fbb189a0628c6"
     },
     {
       "id": "bund/VVEA/art_15",
@@ -567,10 +578,10 @@
           "text": "Die Bestimmungen über die Verwertung phosphorreicher Abfälle gelten auch für importierten Klärschlamm und importiertes Tier- und Knochenmehl."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_15",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "9d2a0c16aaa15617d8992fb3ea64b81325393795c04f693a91de694a6b16cf26"
     },
     {
@@ -594,10 +605,10 @@
           "text": "Phosphor aus Tier- und Knochenmehl ist vollständig zurückzugewinnen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_15_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "a20b23232d21e473d1c55fe3cfa3a7c7251a91a3c6f38b7f7f835012cef301a9"
     },
     {
@@ -621,10 +632,10 @@
           "text": "Reichen die inländischen Behandlungskapazitäten zur Rückgewinnung von Phosphor nicht aus, um den Nachweis nach den Absätzen 1 und 2 zu erbringen, so weisen die Abgeber von Abfällen den kantonalen Behörden die fehlende Behandlungskapazität nach. Die Vollzugsbehörde kann in diesen Fällen vorrangig die stofflich-energetische und sekundär die rein energetische Verwertung von Klärschlamm oder von Tier- und Knochenmehl genehmigen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_15_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "0507985fed608ec1d01b2ae084e204295c1db1afab7ab6d2dcdb64383c5bd8e9"
     },
     {
@@ -658,10 +669,10 @@
           "text": "Das BAFU überprüft unter Einbezug der Kantone und der Branchen alle 8–10 Jahre die Zweckmässigkeit der nach Artikel 15a Absätze 2 und 3 zurückzugewinnenden Menge an Phosphor; es schlägt dem UVEK entsprechende Massnahmen vor."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_15_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "43a78ad495e05fb033d99133a94b01b6c6f176a760c8b0198f8c7664f6dd8c11"
     },
     {
@@ -691,10 +702,10 @@
           "text": "Sofern die Bauherrschaft ein Entsorgungskonzept nach Absatz 1 erstellt hat, muss sie der für die Baubewilligung zuständigen Behörde auf deren Verlangen nach Abschluss der Bauarbeiten nachweisen, dass die angefallenen Abfälle entsprechend den Vorgaben der Behörde entsorgt wurden."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_16",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "13b94cef6e193363b63e27f84c2826160f83152a46399561f565bd4770016141"
     },
     {
@@ -744,10 +755,10 @@
           "text": "Die Behörde kann eine weitergehende Trennung verlangen, wenn dadurch zusätzliche Anteile der Abfälle verwertet werden können."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_17",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "84eddfc01696e34776a659a47db7becb25e1ce9b4e4adf8798c9963bbde53995"
     },
     {
@@ -781,10 +792,10 @@
           "text": "Bei der Verwertung ist mit dem Ober- und Unterboden gemäss den Artikeln 6 und 7 VBBo umzugehen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_18",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "08a402dfab2c613cb7fd3a7981bff5cf3e9ef7a21a6cbdd2f3dc2846bc9cfbda"
     },
     {
@@ -854,10 +865,10 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_19",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "e5b453198d88536203fb223d5397d0aac43a509e8c0737b788d0de5ebc301096"
     },
     {
@@ -881,10 +892,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_20",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "e450cccec2515b08f19ce751f12ffd41cb53fee3a9d5675dce7874f06cbad825"
     },
     {
@@ -900,10 +911,10 @@
           "text": "Aus der leichtesten Fraktion, die bei der Zerkleinerung von metallhaltigen Abfällen entsteht (Leichtfraktion), sind Metallstücke zu entfernen und stofflich zu verwerten."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_21",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "47dde8741f3bad1457482a20c943222230afea1efb1941bd6997e6162d994f94"
     },
     {
@@ -920,14 +931,14 @@
         },
         {
           "absatz": "2",
-          "text": "Die restlichen Anteile von Strassenwischgut nach Absatz 1 sowie anderes Strassenwischgut, das Siedlungsabfälle oder Abfälle vergleichbarer Zusammensetzung oder einen hohen biogenen Anteil enthält, müssen in geeigneten Anlagen thermisch behandelt werden."
+          "text": "Die restlichen Anteile von Strassenwischgut nach Absatz 1 sowie anderes Strassenwischgut, das Siedlungsabfälle nach Artikel 3 Buchstabe a Ziffern 1–3 oder Abfälle vergleichbarer Zusammensetzung oder einen hohen biogenen Anteil enthält, müssen in geeigneten Anlagen thermisch behandelt werden."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_22",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "39c6bca4f8e2538cec66f0196df04efa90c6ec4c59f50252b19f8791b37f1ed4"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "8d8f65b45ea919868827f42dbd393eb140e5ff2c10281e862ff96ed415c5ad79"
     },
     {
       "id": "bund/VVEA/art_23",
@@ -952,10 +963,10 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_23",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "39b0b0a146ff1741a26ced0b8032f87265bc5c65a23e26b113f249131bba4297"
     },
     {
@@ -968,18 +979,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Abfälle dürfen als Rohmaterial, als Rohmehlkorrekturstoffe, als Brennstoffe oder als Zumahl- oder Zuschlagstoffe bei der Herstellung von Zement und Beton verwendet werden, wenn sie die Anforderungen nach Anhang 4 erfüllen. Als Rohmaterial oder als Brennstoffe dürfen jedoch keine gemischten Siedlungsabfälle und keine gemischt gesammelten und nachträglich sortierten Siedlungsabfälle verwendet werden. Sortierreste, die sich aus der Behandlung von getrennt gesammelten Siedlungsabfällen ergeben und die nicht stofflich verwertet werden können, dürfen bei der Herstellung von Zement und Beton als Brennstoff verwendet werden."
+          "text": "Abfälle dürfen als Rohmaterial, als Rohmehlkorrekturstoffe, als Brennstoffe oder als Zumahl- oder Zuschlagstoffe bei der Herstellung von Zement und Beton verwendet werden, wenn sie die Anforderungen nach Anhang 4 erfüllen. Als Rohmaterial oder als Brennstoffe dürfen jedoch keine gemischten und keine gemischt gesammelten und nachträglich sortierten Siedlungsabfälle nach Artikel 3 Buchstabe a Ziffern 1–3 verwendet werden. Sortierreste, die sich aus der Behandlung von getrennt gesammelten Siedlungsabfällen ergeben und die nicht stofflich verwertet werden können, dürfen bei der Herstellung von Zement und Beton als Brennstoff verwendet werden."
         },
         {
           "absatz": "2",
           "text": "Stäube aus der Abluftfilterung von Anlagen zur Herstellung von Zementklinker müssen als Zumahlstoffe beim Mahlen von Zementklinker oder als Zuschlagstoffe bei der Herstellung von Zement verwertet werden. Dabei darf der Schwermetallgehalt des hergestellten Zements die Grenzwerte nach Anhang 4 Ziffer 3.2 nicht überschreiten."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_24",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "cf063b49058e76589262dc02c63f07abec6080f5af692b458095e29fa5b5aad7"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "76add5068a1e8509600cdb7110ee16ddc87595d8ecd3e03188c336ccd9333837"
     },
     {
       "id": "bund/VVEA/art_25",
@@ -1002,10 +1013,10 @@
           "text": "Flüssige, explosive, infektiöse und brennbare Abfälle dürfen nicht abgelagert werden."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_25",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "917e386b8fac2a572f92e8777759727086bbc78e3da31e8b463e5d37138dbe0d"
     },
     {
@@ -1025,10 +1036,10 @@
           "text": "Quecksilberabfälle nach Artikel 3 Buchstabe fbis Ziffer 3 sind umweltverträglich und nach dem Stand der Technik zu behandeln und abzulagern."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_25_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "85bc01395fe3fe889182f311a2134b8ebf4cd9a1ff23f89bad3782896ebc3d0a"
     },
     {
@@ -1048,10 +1059,10 @@
           "text": "Inhaberinnen und Inhaber von Abfallanlagen müssen alle zehn Jahre prüfen, ob die Anlage dem Stand der Technik entspricht, und die nötigen Anpassungen vornehmen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_26",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "83c9a01fcdaea3cf95894c7b631904a00691aef387f28d893c68fee3801c071f"
     },
     {
@@ -1105,10 +1116,10 @@
           "text": "Inhaberinnen und Inhaber von Abfallanlagen, in denen jährlich mehr als 100 t Abfälle entsorgt werden, müssen ein Betriebsreglement erstellen, das insbesondere die Anforderungen an den Betrieb der Anlagen konkretisiert. Sie unterbreiten das Reglement der Behörde zur Stellungnahme."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_27",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "380fbdb1c82c985d604b537de1ff5fa1dc6cbd02ea1a41633d0294a2d9feb96a"
     },
     {
@@ -1128,10 +1139,10 @@
           "text": "Stellt sie Mängel fest, fordert sie die Inhaberin oder den Inhaber der Anlage auf, diese innert angemessener Frist zu beheben."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_28",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "97aaaa91b8078404433cf775747867003b88fc444153b3e96ac885db323112f5"
     },
     {
@@ -1155,10 +1166,10 @@
           "text": "Die Zwischenlagerung von Abfällen muss getrennt von den abgelagerten Abfällen erfolgen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_29",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b611be76e96a6124f5e85e0642ca7d1d75b3249ab037f5f9a5efe34935a7b9b7"
     },
     {
@@ -1186,10 +1197,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_30",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "28fefda27b5b2ccc2025f481bb6fddc107d4c551859372999bfe7ca2ad1a82b3"
     },
     {
@@ -1214,16 +1225,16 @@
             },
             {
               "marke": "c",
-              "text": "bei Anlagen, in denen Siedlungsabfälle oder Abfälle vergleichbarer Zusammensetzung verbrannt werden, mindestens 80 Prozent des Energiegehalts ausserhalb der Anlagen genutzt wird; die Nutzung von Energie zur Abscheidung von CO 2 aus dem Rauchgas gilt als Nutzung ausserhalb der Anlagen."
+              "text": "bei Anlagen, in denen Siedlungsabfälle nach Artikel 3 Buchstabe a Ziffern 1–3 oder Abfälle vergleichbarer Zusammensetzung verbrannt werden, mindestens 80 Prozent des Energiegehalts ausserhalb der Anlagen genutzt wird; die Nutzung von Energie zur Abscheidung von CO 2 aus dem Rauchgas gilt als Nutzung ausserhalb der Anlagen."
             }
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_31",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "9d05a81ce975d7568d7988f5ccd0022383c1d073a90b2eb3f99aaab17b763b9c"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "eb1a44cf8ffafdcfd67cc37ba519d90fa7b0a797f66efcd55e8abafd06a64b61"
     },
     {
       "id": "bund/VVEA/art_32",
@@ -1243,7 +1254,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "von Siedlungsabfällen und Abfällen vergleichbarer Zusammensetzung mindestens 55 Prozent des Energiegehalts ausserhalb der Anlagen genutzt wird; die Nutzung von Energie zur Abscheidung von CO 2 aus dem Rauchgas gilt als Nutzung ausserhalb der Anlagen;"
+              "text": "von Siedlungsabfällen nach Artikel 3 Buchstabe a Ziffern 1–3 und Abfällen vergleichbarer Zusammensetzung mindestens 55 Prozent des Energiegehalts ausserhalb der Anlagen genutzt wird; die Nutzung von Energie zur Abscheidung von CO 2 aus dem Rauchgas gilt als Nutzung ausserhalb der Anlagen;"
             },
             {
               "marke": "b",
@@ -1267,7 +1278,7 @@
             },
             {
               "marke": "g",
-              "text": "bei Anlagen, in denen Siedlungsabfälle oder Abfälle vergleichbarer Zusammensetzung verbrannt werden, Metalle aus der Filterasche zurückgewonnen werden;"
+              "text": "bei Anlagen, in denen Siedlungsabfälle nach Artikel 3 Buchstabe a Ziffern 1–3 oder Abfälle vergleichbarer Zusammensetzung verbrannt werden, Metalle aus der Filterasche zurückgewonnen werden;"
             },
             {
               "marke": "h",
@@ -1276,11 +1287,11 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_32",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "cff9af5187e3ae2c926111fa0b94baf48e3828621d7683b929413d2a1b6ce8f5"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "1a6f912b9e600142015d90817f7ff2cd59230f8aa80c4fc4318c4c5a889e5f11"
     },
     {
       "id": "bund/VVEA/art_33",
@@ -1317,10 +1328,10 @@
           "text": "Für Kompost und festes Gärgut muss eine Lagerkapazität von mindestens drei Monaten und für flüssiges Gärgut von mindestens fünf Monaten in der Anlage vorhanden oder vertraglich gesichert sein. Die Behörde kann für Anlagen im Berggebiet oder in ungünstigen klimatischen oder besonderen pflanzenbaulichen Verhältnissen eine grössere Lagerkapazität anordnen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_33",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "5c5367c556e31bbbbbe4f4c9d8b8765b0caa4c83e3af02ae0f8917ec890bf0da"
     },
     {
@@ -1333,32 +1344,36 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "In Kompostierungs- und Vergärungsanlagen, die jährlich mehr als 100 t Abfälle annehmen, dürfen nur biogene Abfälle verrottet oder vergärt werden, die sich aufgrund ihrer Eigenschaften, insbesondere ihrer Nähr- und Schadstoffgehalte, für das entsprechende Verfahren und für die Verwertung als Dünger im Sinne von Artikel 5 der Dünger-Verordnung vom 10. Januar 2001 (DüV) eignen. Ausgenommen vom Erfordernis der Eignung als Dünger sind Abfälle, die in Anlagen zur Co-Vergärung in Abwasserreinigungsanlagen vergärt werden."
+          "text": "In Kompostierungs- und Vergärungsanlagen müssen biogene Abfälle kompostiert oder vergärt werden, die sich aufgrund ihrer Eigenschaften, insbesondere ihrer Nährstoff-, Schadstoff- und Fremdstoffgehalte, für das entsprechende Verfahren und für die Verwertung als Dünger im Sinne von Artikel 2 Absatz 1 Buchstabe a der Dünger-Verordnung vom 1. November 2023 (DüV) eignen. Ausgenommen vom Erfordernis der Eignung als Dünger sind Abfälle, die in Anlagen zur Co-Vergärung in Abwasserreinigungsanlagen vergärt werden."
         },
         {
           "absatz": "2",
-          "text": "Verpackte biogene Abfälle dürfen in Kompostierungs- und Vergärungsanlagen nach Absatz 1 ausserhalb von Abwasserreinigungsanlagen nur verrottet oder vergärt werden, wenn:",
+          "text": "Sortenreine sowie nährstoffreiche biogene Abfälle müssen vorrangig in Kompostierungs- und Vergärungsanlagen ausserhalb von Abwasserreinigungsanlagen verwertet werden."
+        },
+        {
+          "absatz": "3",
+          "text": "Verpackte biogene Abfälle dürfen in Kompostierungs- und Vergärungsanlagen nach Absatz 1 ausserhalb von Abwasserreinigungsanlagen nur kompostiert oder vergärt werden, wenn:",
           "items": [
             {
               "marke": "a",
-              "text": "die Verpackung biologisch abbaubar ist und sich für das entsprechende Verfahren eignet; oder"
+              "text": "die Verpackung sowie die Kennzeichnung biologisch abbaubar sind und sich für das entsprechende Verfahren eignen; oder"
             },
             {
               "marke": "b",
-              "text": "die Verpackung vor oder während der Verrottung oder Vergärung möglichst vollständig entfernt wird."
+              "text": "die Verpackung sowie die Kennzeichnung vorrangig vor oder spätestens während der Kompostierung oder Vergärung möglichst vollständig entfernt werden."
             }
           ]
         },
         {
-          "absatz": "3",
+          "absatz": "4",
           "text": "Im Übrigen gelten die Vorschriften der DüV und der ChemRRV betreffend Kompost und Gärgut."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_34",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "d32c8a5ba71e645e99034e9f099c743292514cbc7f8def81ff06ecb3640c70c5"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "2cd4db83892c0230636f86ea2141cca6996894d7a04d98e794840704b4cb821e"
     },
     {
       "id": "bund/VVEA/art_35",
@@ -1403,10 +1418,10 @@
           "text": "Bestehen Deponien aus mehreren Kompartimenten, so gelten für jedes Kompartiment die für den jeweiligen Typ massgeblichen Anforderungen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_35",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "f8c8ed3d06534011379df73de2859f3415404b6c9c9a09d908b805b5ca7a5bb6"
     },
     {
@@ -1435,7 +1450,7 @@
             },
             {
               "marke": "c",
-              "text": "auf Deponien des Typs D ausschliesslich Schlacke abgelagert wird, die aus Anlagen stammt, in denen Siedlungsabfälle oder Abfälle vergleichbarer Zusammensetzung verbrannt werden und die Entwicklung von Gasen mit geeigneten Massnahmen verhindert wird."
+              "text": "auf Deponien des Typs D ausschliesslich Schlacke abgelagert wird, die aus Anlagen stammt, in denen Siedlungsabfälle nach Artikel 3 Buchstabe a Ziffern 1–3 oder Abfälle vergleichbarer Zusammensetzung verbrannt werden und die Entwicklung von Gasen mit geeigneten Massnahmen verhindert wird."
             }
           ]
         },
@@ -1454,11 +1469,11 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_36",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "21e4748b2f8afab41c4a20db03a93c7f10e996584fedef65230f14eb12d2f40a"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "9551c3c243d90c4da3d29efbd7f1497b19bfbc31f8757ace4aa80c354e5e2c40"
     },
     {
       "id": "bund/VVEA/art_37",
@@ -1495,10 +1510,10 @@
           "text": "Die kantonalen Behörden können mit Zustimmung des BAFU die Errichtung von Deponien mit geringerem Volumen bewilligen, wenn dies aufgrund der geografischen Gegebenheiten sinnvoll ist."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_37",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "c4f4803935a7e4e93bb8fe7de5110ba25dad097e1bfab47d91d0182940ecd9a1"
     },
     {
@@ -1518,10 +1533,10 @@
           "text": "Wer eine Deponie oder ein Kompartiment betreiben will, benötigt eine Betriebsbewilligung der kantonalen Behörde."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_38",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "5bcc2a90cb35753702f40114f4527fd3dcf98e62c5f5156d87380e93c912f54f"
     },
     {
@@ -1565,10 +1580,10 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_39",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "8a5871aa642c674de6cd2768df051be4125b70bc1dbb3d0025c46e45c2bd81bc"
     },
     {
@@ -1640,10 +1655,10 @@
           "text": "Die Behörde befristet die Betriebsbewilligung auf höchstens fünf Jahre."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_40",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "af61e0f5b866fbc9b46c48dd7045ce4a0374af5d5ab3e68546900de04b368a66"
     },
     {
@@ -1671,10 +1686,10 @@
           "text": "Sie müssen die Untersuchungen dokumentieren und der Behörde zustellen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_41",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "dcee8a64e4eb8d6416c4eff347b1549cf20787784ea541b017ab3b42823ab03f"
     },
     {
@@ -1708,10 +1723,10 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_42",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "dcbfdd12a2c2103755ff480ae7fdf7fcf4aa671786e40981cc49485f36ea6d6b"
     },
     {
@@ -1759,10 +1774,10 @@
           "text": "Die kantonale Behörde legt anlässlich der letzten Betriebsbewilligung einer Deponie oder eines Kompartiments die Dauer der Nachsorgephase und die Pflichten der Inhaberin oder des Inhabers der Deponie gemäss den Absätzen 2 und 3 fest. Sie kann Deponien oder Kompartimente des Typs A von den Anforderungen der Absätze 2 und 3 ausnehmen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_43",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "a235f0bd249c1266f0f8f2053e1f6c29a54286a5c17d15685f7132d462558447"
     },
     {
@@ -1782,10 +1797,10 @@
           "text": "Wenden Bundesbehörden andere Bundesgesetze oder völkerrechtliche Vereinbarungen oder Beschlüsse an, die Gegenstände dieser Verordnung betreffen, so vollziehen sie dabei auch diese Verordnung. Für die Mitwirkung des BAFU und der Kantone gilt Artikel 41 Absätze 2 und 4 USG; gesetzliche Geheimhaltungspflichten bleiben vorbehalten."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_44",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "dc6f358fb16598ae2132a7fbf4aac3dd0734380064fed5fca027239fe0f2a45e"
     },
     {
@@ -1801,10 +1816,10 @@
           "text": "Das BAFU gibt die minimalen Geodatenmodelle und Darstellungsmodelle für Geobasisdaten nach dieser Verordnung vor, für die es im Anhang 1 der Geoinformationsverordnung vom 21. Mai 2008 als Fachstelle des Bundes bezeichnet ist."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_45",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1dd5f76eec3f30255252ff96838190644dde04402eccdd1f6d4592885d5ed484"
     },
     {
@@ -1820,10 +1835,10 @@
           "text": "Das BAFU erarbeitet zur Anwendung dieser Verordnung, insbesondere zum Stand der Technik der Abfallentsorgung, eine Vollzugshilfe. Es arbeitet dabei mit den betroffenen Bundesstellen, den Kantonen und den betroffenen Organisationen der Wirtschaft zusammen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_46",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "02a26b5b2742df79a3b4e591446369ab90fc2e504b3d5ac931b79f6f355aa1e7"
     },
     {
@@ -1839,10 +1854,10 @@
           "text": "Die Technische Verordnung vom 10. Dezember 1990 über Abfälle wird aufgehoben."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_47",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "66c416f6b5f66eb2810f75461092f781588137113a59518c4da270a22732e31e"
     },
     {
@@ -1858,10 +1873,10 @@
           "text": "Die Änderung anderer Erlasse wird in Anhang 6 geregelt."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_48",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "4981d26b098440031b057831c9c3d8af713ef4b2b99521643fc5b4b7125f39ab"
     },
     {
@@ -1877,10 +1892,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_49_50",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1900,10 +1915,10 @@
           "text": "Ab diesem Zeitpunkt müssen die Abgeber von Klärschlamm sowie von Tier- und Knochenmehl der zuständigen kantonalen Behörde den Nachweis nach Artikel 15b erbringen."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_51",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "038ff25aca439b76e69a215359395833bd13b7b1d4902583b39804998cd33ad0"
     },
     {
@@ -1937,10 +1952,10 @@
           "text": "Ausbauasphalt mit einem Gehalt von bis zu 250 mg PAK pro kg darf bis zum 31. Dezember 2027 auf einer Deponie des Typs B abgelagert werden."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_52",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b3238d165550c6f187d273b7aec173cb5bf7a9c59d6524e6506bfe777477e73c"
     },
     {
@@ -1956,10 +1971,10 @@
           "text": "Filteraschen und -stäube aus der thermischen Behandlung von Holz, welches gemäss Anhang 5 Ziffer 31 Absatz 2 der Luftreinhalte-Verordnung vom 16. Dezember 1985 (LRV) nicht als Holzbrennstoff gilt, dürfen bis 31. Dezember 2033 auf Deponien der Typen D und E (Anhang 5 Ziffer 4.1 und 5.1) abgelagert werden."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_52_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "46cef26e6ad138918f2c5805a0113264c63cf3b76e0ae515f3549ee162afa41a"
     },
     {
@@ -1975,10 +1990,10 @@
           "text": "Rückstände aus der thermischen Behandlung von Abfällen sollen so wenig an Dioxinen (PCDD) und Furanen (PCDF) enthalten, als nach dem Stand der Technik möglich ist (Anhang 5 Ziffern 3.3 und 4.2). Bis zum 31. Dezember 2026 dürfen sie höchstens 3 µg Toxizitätsäquivalente (TEQ) pro kg enthalten."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_52_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "d7246838472e0d8068b1f4e4a364784593c9ac4094f7ada518b78d40a3c4161c"
     },
     {
@@ -2010,10 +2025,10 @@
           "text": "Die Inhaberin oder der Inhaber einer bestehenden Deponie oder eines bestehenden Kompartiments mit Entgasungsanlagen muss diese Anlagen bis zum Ende der Betriebszeit regelmässig von einer sachverständigen Person kontrollieren lassen und mindestens zweimal jährlich die Deponiegase analysieren."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_53",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1a9f430ef4135c32c215cff1c1491cd41967cd5b109ce88430334d6ba1d83f23"
     },
     {
@@ -2037,10 +2052,10 @@
           "text": "Die Pflicht nach Artikel 32 Absatz 2 Buchstabe g zur Rückgewinnung von Metallen aus Filterasche, die bei der Behandlung von Siedlungsabfällen und Abfällen vergleichbarer Zusammensetzung anfällt, gilt ab dem 1. Januar 2028. Filterasche darf bis zu diesem Zeitpunkt ohne Rückgewinnung von Metallen in hydraulisch gebundener Form auf Deponien oder Kompartimenten des Typs C abgelagert werden, sofern die vorhandenen Behandlungskapazitäten für die Rückgewinnung ausgelastet sind."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_54",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "a0a7737d21dbe68cd67732d7450fe21fcb8f06b3914bbdbe6980640ee04474de"
     },
     {
@@ -2056,10 +2071,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_54_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -2075,10 +2090,10 @@
           "text": "Diese Verordnung tritt am 1. Januar 2016 in Kraft."
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#art_55",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "db9a6670ff2c4f562e07dd0a9776dd18fa7cdf8951d920151d67aaa4701808d6"
     },
     {
@@ -2525,10 +2540,10 @@
           }
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#annex_1",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "fe10ee5e0e242e5f3e0a0e52475850d57d4a68211061a1c6fb0c5e0432d3ebf5"
     },
     {
@@ -2888,10 +2903,10 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#annex_2",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1f0288ce8fb9ea415cb00228e7f926ffce3c5efc3bec4f070d0b7ad1f35ce014"
     },
     {
@@ -3166,10 +3181,10 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#annex_3",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "bbee4dd5892e35bb01a1c5517d367ad3ce8fd028b4a4690631e98e498335def3"
     },
     {
@@ -3650,6 +3665,16 @@
         },
         {
           "absatz": null,
+          "text": "",
+          "items": [
+            {
+              "marke": "2.4",
+              "text": "Werden Abfälle bei ihrer Verwendung als Brennstoffe zu mindestens 20 Gewichtsprozent stofflich verwertet, so gilt dies als stofflich-energetische Verwertung."
+            }
+          ]
+        },
+        {
+          "absatz": null,
           "text": "3 Verwendung von Abfällen als Zumahl- und Zuschlagstoffe",
           "titel": 3
         },
@@ -3757,11 +3782,11 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#annex_4",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "e90e9e81b50655722b5d7b9cf6dc50a18c083c5d0ac4521e3e66b95e0e31a4e0"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "cf6464aeaa575b919dcc04aee2586bbe18f69ace29ad84426b7026b64ae7d965"
     },
     {
       "id": "bund/VVEA/annex_5",
@@ -4137,12 +4162,12 @@
             },
             {
               "marke": "a",
-              "text": "Rauchgasreinigungsrückstände aus Anlagen, in denen Siedlungsabfälle oder Abfälle vergleichbarer Zusammensetzung verbrannt werden, sofern Metalle gemäss Artikel 32 Absatz 2 Buchstabe g vorgängig zurückgewonnen wurden;",
+              "text": "Rauchgasreinigungsrückstände aus Anlagen, in denen Siedlungsabfälle nach Artikel 3 Buchstabe a Ziffern 1–3 oder Abfälle vergleichbarer Zusammensetzung verbrannt werden, sofern Metalle gemäss Artikel 32 Absatz 2 Buchstabe g vorgängig zurückgewonnen wurden;",
               "tiefe": 1
             },
             {
               "marke": "b",
-              "text": "Rauchgasreinigungsrückstände aus der thermischen Behandlung von Abfällen aus Industrie und Gewerbe, die nicht mit Siedlungsabfällen vergleichbar sind;",
+              "text": "Rauchgasreinigungsrückstände aus der thermischen Behandlung von Abfällen aus Industrie und Gewerbe, die nicht mit Siedlungsabfällen nach Artikel 3 Buchstabe a Ziffern 1–3 vergleichbar sind;",
               "tiefe": 1
             },
             {
@@ -4409,7 +4434,7 @@
             },
             {
               "marke": "a",
-              "text": "Filterasche aus Anlagen, in denen Siedlungsabfälle oder Abfälle vergleichbarer Zusammensetzung verbrannt werden, sofern Metalle gemäss Artikel 32 Absatz 2 Buchstabe g vorgängig zurückgewonnen wurden;",
+              "text": "Filterasche aus Anlagen, in denen Siedlungsabfälle nach Artikel 3 Buchstabe a Ziffern 1–3 oder Abfälle vergleichbarer Zusammensetzung verbrannt werden, sofern Metalle gemäss Artikel 32 Absatz 2 Buchstabe g vorgängig zurückgewonnen wurden;",
               "tiefe": 1
             },
             {
@@ -4453,7 +4478,7 @@
             },
             {
               "marke": "4.3",
-              "text": "Schlacke aus Anlagen, in denen Siedlungsabfälle oder Abfälle vergleichbarer Zusammensetzung verbrannt werden, darf auf Deponien oder Kompartimenten des Typs D abgelagert werden, wenn:"
+              "text": "Schlacke aus Anlagen, in denen Siedlungsabfälle nach Artikel 3 Buchstabe a Ziffern 1–3 oder Abfälle vergleichbarer Zusammensetzung verbrannt werden, darf auf Deponien oder Kompartimenten des Typs D abgelagert werden, wenn:"
             },
             {
               "marke": "a",
@@ -4773,11 +4798,11 @@
           ]
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#annex_5",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "b9e8d4aca0c80a015b24b2acd7d2da0f351c784b07c97b2ebc760a400b19b1e3"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "f53540cfeaf9261a464fb5c97157ff8bddd2f1ec6535e787498dd96e9fe8d19c"
     },
     {
       "id": "bund/VVEA/annex_6",
@@ -4805,10 +4830,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#annex_6",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "ce639e0b4747fb4f381b5ab8918db71a042d00e162b22b5d592b429a96ee03f6"
     },
     {
@@ -4825,7 +4850,7 @@
         },
         {
           "absatz": null,
-          "text": "Anforderungen an Holzabfälle zur stofflichen und thermischen Verwertung",
+          "text": "Anforderungen an Holzabfälle zur stofflichen und energetischen Verwertung",
           "titel": 2
         },
         {
@@ -4905,12 +4930,12 @@
         },
         {
           "absatz": null,
-          "text": "2 Thermische Verwertung von Holzabfällen",
+          "text": "2 Energetische Verwertung von Holzabfällen",
           "titel": 3
         },
         {
           "absatz": null,
-          "text": "Holzabfälle dürfen in Altholzfeuerungen thermisch verwertet werden, wenn sie die nachfolgenden Grenzwerte (Gesamtgehalte) nicht überschreiten:"
+          "text": "Holzabfälle dürfen in Altholzfeuerungen energetisch verwertet werden, wenn sie die nachfolgenden Grenzwerte (Gesamtgehalte) nicht überschreiten:"
         },
         {
           "absatz": null,
@@ -4976,11 +5001,11 @@
           }
         }
       ],
-      "stand": "2026-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2015/891/de#annex_7",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260101",
-      "sha": "e27b824db055521faa0eed3e981b01968ea3769d5ee59bb4dcd50af7397f3d46"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "5b7bc7ce437646ede67616bde6418ffc3d44dcfaebc0f484f2558bb832c9559b"
     }
   ]
 }
