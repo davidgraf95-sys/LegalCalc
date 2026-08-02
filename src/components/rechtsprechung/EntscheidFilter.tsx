@@ -35,7 +35,7 @@ function FacettenGruppe({ label, optionen }: {
       {optionen.map((o) => (
         <button key={o.id} type="button" aria-pressed={o.aktiv} onClick={o.waehle}
           aria-label={`${label}: ${o.voll ?? o.text} (${o.n})`} title={o.voll}
-          className={`lc-chip ${o.aktiv ? 'border-brass-400 text-brass-700' : ''}`}>
+          className={`lc-chip ${o.aktiv ? 'lc-chip-selected' : ''}`}>
           {/* ink-600 (nicht ink-500): 12px-Ziffer auf --well ≥4.5:1 (R4/WCAG 1.4.3,
               Werte nicht runden — ink-500 lag bei 4.47:1). Aktiv erbt brass-700. */}
           {/* LM-051: Beschriftung und Zahl brauchen einen Trenner im TEXTKNOTEN,

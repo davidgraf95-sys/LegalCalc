@@ -698,6 +698,26 @@
      --warn-500 in html.dark bewusst NICHT überschrieben (Tick-Kontrast gehalten). */
   .lc-chip-geltend { border-left-color: var(--sage-500); }
   .lc-chip-vorbehalt { border-left-color: var(--warn-500); }
+  /* Selected-Zustand für Toggle-Chips (W2·17-UI-BEFUNDE-B1, LM-040 · F4
+     «selected»): der gewählte Chip einer Facetten-Reihe muss OHNE Farbvergleich
+     erkennbar sein — vorher trug er nur eine Rahmen-/Textfarbnuance auf
+     identischer Fläche. Jetzt ADDIERT die Auswahl zwei Form-Signale statt eine
+     Auszeichnung zu nehmen: gefüllte Fläche (brass-100) + ✓-Präfix (Glyphe =
+     Form, nicht Farbe). Farben sind das tor-geprüfte Paar brass-800/brass-100
+     (F2b-Pflichtpaar, hell UND dunkel via html.dark-Token); Tick brass-700
+     (≥4.63:1 auf brass-100 hell, s. Token-Kommentar). Das ✓ lebt im ::before —
+     rein visuell; die Semantik trägt weiterhin aria-pressed + aria-label
+     (Screenreader lesen das aria-label des Buttons, nie das Pseudo-Element).
+     ABGRENZUNG: bewusst NUR der Selected-Fix — die vollständige Chip-
+     Zustandsmatrix (F4 gesamt) ist deklarierter Bau von W2·10-UI-NAV
+     (FAHRPLAN-UI-QUALITAET §3c), hier kein Vorgriff darauf.
+     Muss NACH .lc-chip stehen (gleiche Spezifität → Quellreihenfolge gewinnt). */
+  .lc-chip-selected {
+    background: var(--brass-100);
+    border-left-color: var(--brass-700);
+    color: var(--brass-800);
+  }
+  .lc-chip-selected::before { content: '✓'; margin-right: .375em; font-weight: 600; }
 
   /* ─── Die scrollbare Instanz-Linie (W2·7-BEZUG/B7, David 28.7.2026) ────────
      «je eine linie für jede instanz und alle sichtbar» — eine Klasse, eine
