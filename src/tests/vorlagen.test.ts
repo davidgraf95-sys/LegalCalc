@@ -354,6 +354,25 @@ describe('Vorlage Vorsorgeauftrag', () => {
     expect(g.hinweise.some(jpPersonensorge)).toBe(false);
   });
 
+  it('eigenhändige Form ohne Datum warnt (Art. 361 Abs. 2 ZGB), mit Datum nicht', () => {
+    const ohne = pruefeVaGates(va({ datum: '' }));
+    expect(ohne.warnungen.some((w) => w.includes('Ohne Datum ist der eigenhändige Vorsorgeauftrag ungültig'))).toBe(true);
+    const mit = pruefeVaGates(va({}));
+    expect(mit.warnungen.some((w) => w.includes('Ohne Datum'))).toBe(false);
+    // Beurkundete Form: Ort/Datum entstehen erst vor der Urkundsperson
+    const notariell = pruefeVaGates(va({ formMode: 'oeffentlich_beurkundet', datum: '' }));
+    expect(notariell.warnungen.some((w) => w.includes('Ohne Datum'))).toBe(false);
+  });
+
+  it('Interessenkollisions-Hinweis, sobald ein Bereich übertragen ist (Art. 365 Abs. 2/3 ZGB)', () => {
+    const g = pruefeVaGates(va({}));
+    expect(g.hinweise.some((h) => h.includes('Art. 365 Abs. 3 ZGB') && h.includes('Art. 365 Abs. 2 ZGB'))).toBe(true);
+    // Er ersetzt keinen bestehenden Hinweis
+    expect(g.hinweise.some((h) => h.includes('Validierung'))).toBe(true);
+    const ohneBereich = pruefeVaGates(va({ beauftragte: [] }));
+    expect(ohneBereich.hinweise.some((h) => h.includes('Art. 365 Abs. 3 ZGB'))).toBe(false);
+  });
+
   it('ohne beauftragte Person blockiert; KESB-Validierungs-Hinweis immer', () => {
     const g = pruefeVaGates(va({ beauftragte: [] }));
     expect(g.blocker.some((b) => b.includes('360'))).toBe(true);

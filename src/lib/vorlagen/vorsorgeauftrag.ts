@@ -214,6 +214,27 @@ export function pruefeVaGates(a: VaAntworten): VaGateErgebnis {
     }
   }
 
+  // Eigenhändige Form ohne Datum → Warnung. Das Datum ist beim eigenhändigen
+  // Vorsorgeauftrag GÜLTIGKEITSBESTANDTEIL (Art. 361 Abs. 2 ZGB: von Anfang bis
+  // Ende von Hand niedergeschrieben, datiert, unterzeichnet). Bisher erzwang das
+  // nur die UI als Schritt-Fehler — die Rechtsregel lebte damit allein in der
+  // Darstellungsschicht (§3-Verstoss); sie gehört in die Engine.
+  if (a.formMode === 'eigenhaendig' && !a.datum) {
+    warnungen.push(
+      'Ohne Datum ist der eigenhändige Vorsorgeauftrag ungültig – der ganze Text einschliesslich Datum und Unterschrift wird von Hand abgeschrieben (Art. 361 Abs. 2 ZGB).',
+    );
+  }
+
+  // Interessenkollision bei der Personenwahl. Praktisch wichtigste Regel der
+  // Personenwahl (Erbin zugleich Vermögenssorgerin, Geschäftspartner): Bei
+  // Interessenkollision entfallen die Befugnisse VON GESETZES WEGEN
+  // (Art. 365 Abs. 3 ZGB) — der Auftrag läuft dann insoweit leer.
+  if (aktiveBereiche.size > 0) {
+    hinweise.push(
+      'Bei der Wahl der beauftragten Person Interessenkonflikte bedenken: Bei Interessenkollision entfallen ihre Befugnisse von Gesetzes wegen (Art. 365 Abs. 3 ZGB); nicht erfasste Geschäfte und widerstreitende Interessen sind der KESB zu melden (Art. 365 Abs. 2 ZGB).',
+    );
+  }
+
   // Liegenschaften → ausdrückliche Sondervollmacht (wird automatisch aufgenommen)
   if (a.module.vermoegenssorge.includes('liegenschaften')) {
     hinweise.push('Liegenschaften gewählt: Die ausdrückliche Sondervollmacht für Erwerb, Belastung und Veräusserung von Grundstücken wird automatisch aufgenommen (Art. 396 Abs. 3 OR – analoge Anwendung in der Lehre umstritten, von der Praxis aber empfohlen).');
