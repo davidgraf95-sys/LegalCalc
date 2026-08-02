@@ -718,6 +718,40 @@
     color: var(--brass-800);
   }
   .lc-chip-selected::before { content: '✓'; margin-right: .375em; font-weight: 600; }
+  /* ─── Chip-Grammatik der Kopf-Metazeilen (W2·17-UI-BEFUNDE-B1: LM-045/046/047) ──
+     In den Metazeilen von Erlass- und Entscheid-Kopf trägt derselbe `.lc-chip`
+     drei verschiedene Dinge: externen Link (↗ geltende/massgebliche Fassung,
+     ⬇ Amtliches PDF), Knopf (⧉ In neuem Reiter, ⧉ Zitat kopieren, ▭ Lesemodus)
+     und reine Angabe (Currency-Chips «geltend geprüft …»/«nächste Fassung ab …»).
+     Vorher unterschied nur die Tick-FARBE — die kodiert aber ZUSTAND (A25/C-2,
+     bleibt unangetastet), nicht die Element-Art. Neu trennt die FORM entlang der
+     Element-Art, EINE Systematik für beide Einsatzorte (Container-Klasse
+     `lc-chip-zeile` an der Metazeile, Element-Selektor entscheidet):
+       · <a>      = unterstrichen (die universelle Link-Form; Glyphe ↗/⬇ bleibt
+                    als Ziel-Hinweis erhalten),
+       · <button> = geschlossener Hairline-Rahmen + leicht erhabene Fläche
+                    (drückbare Form; --line ist der Standard-Rahmenton, gleiche
+                    Optik wie die bordierte A−/A+-Gruppe derselben Zeile),
+       · <span>   = flach wie bisher = reine Angabe (LM-046: der «nächste
+                    Fassung»-Vorbehalt sieht damit NICHT mehr wie eine Aktion
+                    aus — bewusst KEIN Linkziel: Fassungsvergleich/Zeitreise ist
+                    hart gegated, FAHRPLAN-UI-NAVIGATION §X).
+     Alle Werte sind Theme-Token (hell/dunkel via :root / html.dark, F2/F7);
+     Tick-Farben und Anatomie von .lc-chip bleiben byte-gleich — ausserhalb
+     einer .lc-chip-zeile ändert sich NICHTS. */
+  .lc-chip-zeile a.lc-chip {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-color: color-mix(in oklab, currentColor 55%, transparent);
+  }
+  .lc-chip-zeile a.lc-chip:hover { text-decoration-color: currentColor; }
+  .lc-chip-zeile button.lc-chip {
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
 
   /* ─── Die scrollbare Instanz-Linie (W2·7-BEZUG/B7, David 28.7.2026) ────────
      «je eine linie für jede instanz und alle sichtbar» — eine Klasse, eine
