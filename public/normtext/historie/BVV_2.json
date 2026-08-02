@@ -1,15 +1,28 @@
 {
  "erlass": "BVV_2",
  "abdeckung": {
-  "fussnoten": 243,
-  "ereignis": 205,
-  "referenz": 36,
+  "fussnoten": 252,
+  "ereignis": 211,
+  "referenz": 39,
   "unparsed": 2
  },
  "artikel": {
   "1": {
-   "giltSeit": "2017-10-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 325",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/325"
+      }
+     ],
+     "absatz": "3",
+     "item": null
+    },
     {
      "typ": "eingefuegt",
      "datum": "2017-10-01",
@@ -1389,7 +1402,7 @@
    ]
   },
   "53": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1507,6 +1520,32 @@
      ],
      "absatz": "5",
      "item": "e"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 325",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/325"
+      }
+     ],
+     "absatz": "6",
+     "item": "b"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 325",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/325"
+      }
+     ],
+     "absatz": "7",
+     "item": null
     }
    ]
   },
@@ -1529,7 +1568,7 @@
    ]
   },
   "55": {
-   "giltSeit": "2022-01-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1556,6 +1595,19 @@
      ],
      "absatz": null,
      "item": "a"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 325",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/325"
+      }
+     ],
+     "absatz": null,
+     "item": "e"
     },
     {
      "typ": "eingefuegt",
@@ -3320,8 +3372,21 @@
    ]
   },
   "62_a": {
-   "giltSeit": "2005-01-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 325",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/325"
+      }
+     ],
+     "absatz": "1",
+     "item": null
+    },
     {
      "typ": "eingefuegt",
      "datum": "2005-01-01",
@@ -3356,8 +3421,21 @@
    ]
   },
   "62_d": {
-   "giltSeit": "2024-01-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 325",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/325"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
     {
      "typ": "eingefuegt",
      "datum": "2024-01-01",
@@ -3377,12 +3455,12 @@
  "residuum": [
   {
    "token": "26",
-   "nr": "91",
+   "nr": "93",
    "roh": "Bisheriger Art. 27"
   },
   {
    "token": "61",
-   "nr": "241",
+   "nr": "247",
    "roh": "Die Änd. können unter AS 1984 543 konsultiert werden."
   }
  ]
