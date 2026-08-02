@@ -36,6 +36,25 @@ export function leseAnker(key: string): ScrollAnker | undefined {
   return anker.get(key);
 }
 
+// LM-199 (W2·17-UI-BEFUNDE-B2): Verdikt «der Einstiegs-Hash der aktuellen
+// History-Position ist VERBRAUCHT». Entscheider ist App.tsx:useVerbrauchterHash
+// (dort steht die Herleitung: POP aus einer anderen Reiter-Identität, Anker
+// vorhanden). Der Reader hat NEBEN App.tsx:ScrollZuHash eigene Hash-Springer
+// (Seed-Sprung beim Erlass-Laden, letzteNavKey-Instanzwechsel) — die müssen
+// dasselbe Verdikt lesen, sonst kapert der Seed-Sprung nach dem Remount die
+// von A16 restaurierte Rückkehr-Position erneut (genau der LM-199-Fehler).
+// EIN Verdikt, EINE Quelle (§5); nur Fenster-/Primär-Navigation, Panes haben
+// ihre eigene lokale History und bleiben unberührt.
+let hashVerbraucht = false;
+
+export function setzeHashVerbraucht(wert: boolean): void {
+  hashVerbraucht = wert;
+}
+
+export function istHashVerbraucht(): boolean {
+  return hashVerbraucht;
+}
+
 /**
  * Bezugslinie (px ab Container-Oberkante), an der «der oberste angeschnittene
  * Artikel» gemessen wird — deckungsgleich mit dem Scroll-Spy (`inhalt.tsx`) und

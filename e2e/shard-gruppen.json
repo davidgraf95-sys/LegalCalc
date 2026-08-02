@@ -10,6 +10,7 @@
     "2": [
       "gesetze-ia4-scope.e2e.ts",
       "gesetze-ux-9punkte.e2e.ts",
+      "leser-history-hash.e2e.ts",
       "materialien-m1-estv-mwst.e2e.ts",
       "materialien-m3-edoeb.e2e.ts",
       "smoke.e2e.ts",

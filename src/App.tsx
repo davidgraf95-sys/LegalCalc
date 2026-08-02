@@ -1,5 +1,5 @@
-import { Suspense, useEffect, useLayoutEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useLocation, useNavigationType } from 'react-router-dom';
 import { Shell } from './components/layout/Shell';
 import { LocaleProvider } from './components/locale';
 import { ErrorBoundary } from './components/ErrorBoundary';
@@ -9,7 +9,7 @@ import { ZuletztTracker } from './components/ZuletztTracker';
 import { RouteSwitch } from './RouteSwitch';
 import { prefetchLeser } from './leserPrefetch';
 import { tabSchluessel } from './lib/tabs';
-import { leseAnker, aufloeseAnkerY } from './pages/gesetz-leser/scrollAnker';
+import { leseAnker, aufloeseAnkerY, setzeHashVerbraucht } from './pages/gesetz-leser/scrollAnker';
 
 // SPA-Scroll-Reset: Beim Routenwechsel nach oben scrollen (sonst behält die
 // neue Seite die alte Scrollposition und man «landet unten»). Trägt die Route
@@ -23,8 +23,55 @@ import { leseAnker, aufloeseAnkerY } from './pages/gesetz-leser/scrollAnker';
 // keinen Layout-Effekt; useEffect ist der harmlose Fallback).
 const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
-function ScrollWiederherstellung() {
-  const { pathname, hash, search } = useLocation();
+// LM-199 (W2·17-UI-BEFUNDE-B2): Ein #hash ist beim Deep-Link/Klick GENAU EINMAL
+// Sprungziel. Kehrt man per Zurück/Vorwärts (POP) aus einer ANDEREN Route auf
+// einen History-Eintrag zurück, der den Einstiegs-Hash noch trägt, ist der Hash
+// VERBRAUCHT: massgeblich ist dann die A16-Anker-Restauration (letzte Lese-
+// position), nicht der Einstiegs-Anker (Prod-Messung 2.8.2026: «Zurück» landete
+// mit stehendem #art-257_d ~149'000 px daneben — am Hash-Artikel statt an der
+// verlassenen Stelle; ohne Hash war A16 korrekt). Intra-Dokument-POPs (gleiche
+// Reiter-Identität, #art-5 → #art-31 → zurück) behalten den Hash-Sprung — dort
+// IST der Hash die Position (e2e leser-position-u, A16 bleibt unberührt).
+// Ohne Anker-Eintrag (z. B. nach Vollreload, Registry leer) bleibt der Hash das
+// beste verfügbare Ziel → keine Unterdrückung. Die URL wird hier NIE beschrieben
+// (kein Scroll-Hash-Sync, FAHRPLAN-UI-NAVIGATION §Z Ziff. 7).
+// Entscheid je History-Eintrag EINMAL (location.key) und dann fest — sonst
+// würde ein späterer, location-fremder Re-Render (der gemerkte Vorgänger-
+// Schlüssel ist inzwischen nachgeführt) das Verdikt kippen und den
+// verbrauchten Hash doch noch springen.
+function useVerbrauchterHash(): boolean {
+  const { pathname, search, hash, key } = useLocation();
+  const navTyp = useNavigationType();
+  const schluessel = tabSchluessel(pathname + search);
+  // «Zustand aus dem vorherigen Render» (offizielles React-Muster, kein Ref im
+  // Render): merkt je History-Eintrag (location.key) das Verdikt und den
+  // Schlüssel — der gemerkte Schlüssel des VORHERIGEN Eintrags speist die
+  // Cross-Route-Erkennung des nächsten.
+  const [merk, setMerk] = useState<{ key: string; schluessel: string | null; wert: boolean }>(
+    { key: '', schluessel: null, wert: false },
+  );
+  if (merk.key !== key) {
+    const wert =
+      navTyp === 'POP' &&
+      hash !== '' &&
+      merk.schluessel !== null &&
+      merk.schluessel !== schluessel &&
+      leseAnker(schluessel) !== undefined;
+    // Modul-Flag SOFORT (im Render, vor jedem Kind-Mount) nachführen: der
+    // Reader-Seed-Sprung liest es in seinem Mount-Effekt — der läuft VOR den
+    // App-Effekten (Kind vor Elter), ein useEffect hier käme zu spät.
+    // Idempotent je location.key (deterministisch bei Render-Wiederholung).
+    setzeHashVerbraucht(wert);
+    setMerk({ key, schluessel, wert });
+  }
+  return merk.wert;
+}
+
+function ScrollWiederherstellung({ hashVerbraucht }: { hashVerbraucht: boolean }) {
+  const { pathname, hash: hashRoh, search } = useLocation();
+  // Verbrauchter Hash (LM-199) zählt hier als «kein Hash»: die Anker-/Positions-
+  // Restauration übernimmt, und nachfolgende Scrolls werden wieder gespeichert.
+  const hash = hashVerbraucht ? '' : hashRoh;
   // Positions-Schlüssel = Reiter-Identität (pathname + ?r), NICHT pathname allein:
   // dasselbe Gesetz kann mehrfach offen sein (?r=<n>), jede Instanz hält ihre
   // eigene Scrollposition. tabSchluessel ignoriert #Anker und ?preset (gehören
@@ -86,7 +133,11 @@ function ScrollWiederherstellung() {
     // geschickt» — der Reader remountet ohnehin oben, das genügt). Ein zweiter
     // raf fängt den Fall, dass der lazy Chunk im selben Frame noch nicht montiert
     // ist und der Browser eine Rest-Scrollposition hält.
-    if ((gespeichert === undefined && !hatAnker) || (ziel === 0 && aufloeseAnkerY(schluessel) == null)) {
+    // Bei VORHANDENEM Anker gehört der Fall in die Konvergenz-Schleife, auch wenn
+    // er (noch) nicht auflösbar ist und kein scrollY-Fallback existiert (LM-199:
+    // auf Hash-Routen wird KEIN scrollY gespeichert — der Anker ist dann die
+    // einzige Restaurations-Quelle und materialisiert erst mit den Artikeln).
+    if (!hatAnker && (gespeichert === undefined || ziel === 0)) {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
       const raf = requestAnimationFrame(() => {
         if (window.scrollY > 0) window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
@@ -116,7 +167,12 @@ function ScrollWiederherstellung() {
       const geladen = hoehe > window.innerHeight * 1.5;
       stabil = (geladen && hoehe === letzteHoehe) ? stabil + 1 : 0;
       letzteHoehe = hoehe;
-      if (!erreicht && frames++ < 360 && stabil < 12) raf = requestAnimationFrame(versuche);
+      // «erreicht» zählt NICHT, solange ein vorhandener Anker noch unauflösbar
+      // ist (Ladephase, zielJetzt() fällt derweil auf gespeichert/0 zurück):
+      // ohne scrollY-Fallback wäre das Zwischenziel 0 sofort «erreicht» und die
+      // Schleife bräche ab, bevor die Artikel materialisieren (LM-199).
+      const ankerOffen = hatAnker && aufloeseAnkerY(schluessel) == null;
+      if ((!erreicht || ankerOffen) && frames++ < 360 && stabil < 12) raf = requestAnimationFrame(versuche);
       else wiederherstellend.current = false;
     });
     return () => { cancelAnimationFrame(raf); wiederherstellend.current = false; };
@@ -128,10 +184,13 @@ function ScrollWiederherstellung() {
 // react-router scrollt nicht von selbst zum #hash; und das Ziel-Element steckt
 // hinter einer lazy()-Seite, die erst einen Tick später montiert — darum mit
 // requestAnimationFrame ein paar Frames lang erneut versuchen, dann aufgeben.
-function ScrollZuHash() {
+function ScrollZuHash({ hashVerbraucht }: { hashVerbraucht: boolean }) {
   const { hash, pathname, search } = useLocation();
   useEffect(() => {
-    if (!hash) return;
+    // Verbrauchter Hash (LM-199): beim Zurück/Vorwärts aus einer anderen Route
+    // gewinnt die Anker-Restauration (ScrollWiederherstellung), nicht der
+    // Einstiegs-Anker — sonst kapert der stehende #hash die Rückkehr-Position.
+    if (!hash || hashVerbraucht) return;
     const id = decodeURIComponent(hash.slice(1));
     let frames = 0;
     let raf = requestAnimationFrame(function versuche() {
@@ -140,7 +199,7 @@ function ScrollZuHash() {
       if (frames++ < 30) raf = requestAnimationFrame(versuche);
     });
     return () => cancelAnimationFrame(raf);
-  }, [hash, pathname, search]);
+  }, [hash, pathname, search, hashVerbraucht]);
   return null;
 }
 
@@ -149,6 +208,10 @@ export default function App() {
   // (Redesign E8). Der Such-Parameter (?q= der Hero-Suche) ändert den
   // pathname NICHT → kein Remount, der Katalog-Zustand bleibt erhalten.
   const { pathname } = useLocation();
+  // LM-199: EIN Verdikt für beide Scroll-Komponenten (ScrollWiederherstellung
+  // übernimmt die Restauration, ScrollZuHash lässt den verbrauchten Hash aus) —
+  // zweimal berechnet könnten die Instanzen auseinanderlaufen (§5).
+  const hashVerbraucht = useVerbrauchterHash();
   // Rank 2 (QS-PERF): schwere Leser-Chunks nach dem Erstpaint idle vorwärmen, damit
   // das erste Gesetz/Entscheid ohne Chunk-Parse-Wartezeit öffnet. requestIdleCallback
   // hält es vom kritischen Pfad fern (setTimeout-Fallback, garantiert feuernd, §15/3).
@@ -169,8 +232,8 @@ export default function App() {
   return (
     <LocaleProvider>
     <Shell>
-      <ScrollWiederherstellung />
-      <ScrollZuHash />
+      <ScrollWiederherstellung hashVerbraucht={hashVerbraucht} />
+      <ScrollZuHash hashVerbraucht={hashVerbraucht} />
       <RouteMeta />
       {/* Öffnet je Inhalts-Route einen Reiter im In-App-Tab-Streifen */}
       <TabTracker />

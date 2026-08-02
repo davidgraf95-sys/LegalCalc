@@ -13,6 +13,7 @@ import {
 import { type KantonSystematik } from '../../lib/normtext/systematik';
 import { verifizierLinkSektion } from '../../lib/normtext/verifikationslink';
 import { linienProfil } from './linienAufbau';
+import { istHashVerbraucht } from './scrollAnker';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { passtAufSuche, pfadZu, grundartMeta } from './helpers';
@@ -512,6 +513,10 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     const erstmalig = letzteNavKey.current === null;
     letzteNavKey.current = location.key;
     if (erstmalig) return;
+    // LM-199 (W2·17-UI-BEFUNDE-B2): verbrauchter Einstiegs-Hash (Browser-Zurück
+    // über eine Reiter-Identitätsgrenze, z. B. ?r-Instanzwechsel ohne Remount) —
+    // die A16-Anker-Restauration (App.tsx) übernimmt, kein Hash-Sprung.
+    if (istHashVerbraucht()) return;
     const m = location.hash.match(/^#art-(.+)$/);
     if (!m) return;
     const token = decodeURIComponent(m[1]);
