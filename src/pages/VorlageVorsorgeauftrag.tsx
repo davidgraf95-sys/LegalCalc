@@ -341,6 +341,7 @@ export function VorlageVorsorgeauftrag() {
               </div>
               {VA_MODULE[ber.id].map((m) => (
                 <Checkbox
+                  key={m.id}
                   checked={a.module[ber.id].includes(m.id)}
                   onChange={() => toggleModul(ber.id, m.id)}
                   label={<>{m.label}</>} />
@@ -350,7 +351,7 @@ export function VorlageVorsorgeauftrag() {
           {a.module.vermoegenssorge.includes('liegenschaften') && (
             <p className="lc-notice text-body-s">
               Liegenschaften gewählt: Die ausdrückliche Grundstück-Sondervollmacht wird automatisch
-              aufgenommen (Art. 396 Abs. 3 OR – analoge Anwendung umstritten, Praxis empfiehlt sie).
+              aufgenommen (Art. 396 Abs. 3 OR i.V.m. Art. 365 Abs. 1 ZGB – Details im Prüfschritt).
             </p>
           )}
         </div>
