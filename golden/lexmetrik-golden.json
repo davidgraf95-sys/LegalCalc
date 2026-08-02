@@ -9247,13 +9247,17 @@
      "text": "– C (geb. 1990) für: Personensorge, Vermögenssorge, Vertretung im Rechtsverkehr;\n– Treuhand AG (Basel) für: Vermögenssorge;"
     },
     {
+     "bausteinId": "V02c_einzeln",
+     "text": "2. Sind mehrere Personen beauftragt, ist jede im ihr übertragenen Aufgabenbereich einzeln zur Vertretung berechtigt."
+    },
+    {
      "bausteinId": "V03_ersatz",
-     "text": "2. Ist eine beauftragte Person für die Aufgaben nicht geeignet, nimmt sie den Auftrag nicht an oder kündigt sie ihn, setze ich als Ersatz ein (in dieser Reihenfolge): 1. D (geb. 1992); 2. E."
+     "text": "3. Ist eine beauftragte Person für die Aufgaben nicht geeignet, nimmt sie den Auftrag nicht an oder kündigt sie ihn, setze ich als Ersatz ein (in dieser Reihenfolge): 1. D (geb. 1992); 2. E."
     },
     {
      "bausteinId": "V04_personensorge",
      "ueberschrift": "Personensorge",
-     "text": "3. Im Bereich der Personensorge umfasst der Auftrag insbesondere:"
+     "text": "4. Im Bereich der Personensorge umfasst der Auftrag insbesondere:"
     },
     {
      "bausteinId": "V04b_personensorgeliste",
@@ -9262,7 +9266,7 @@
     {
      "bausteinId": "V05_vermoegenssorge",
      "ueberschrift": "Vermögenssorge",
-     "text": "4. Im Bereich der Vermögenssorge umfasst der Auftrag insbesondere:"
+     "text": "5. Im Bereich der Vermögenssorge umfasst der Auftrag insbesondere:"
     },
     {
      "bausteinId": "V05b_vermoegenssorgeliste",
@@ -9271,7 +9275,7 @@
     {
      "bausteinId": "V06_rechtsverkehr",
      "ueberschrift": "Vertretung im Rechtsverkehr",
-     "text": "5. Im Rechtsverkehr umfasst der Auftrag insbesondere:"
+     "text": "6. Im Rechtsverkehr umfasst der Auftrag insbesondere:"
     },
     {
      "bausteinId": "V06b_rechtsverkehrliste",
@@ -9279,33 +9283,33 @@
     },
     {
      "bausteinId": "V07_grundstueck",
-     "text": "6. Die beauftragte Person ist ausdrücklich ermächtigt, Grundeigentum zu erwerben, zu belasten und zu veräussern sowie die entsprechenden Grundbucheinschreibungen zu veranlassen."
+     "text": "7. Die beauftragte Person ist ausdrücklich ermächtigt, Grundeigentum zu erwerben, zu belasten und zu veräussern sowie die entsprechenden Grundbucheinschreibungen zu veranlassen."
     },
     {
      "bausteinId": "V08_schenkungen",
-     "text": "7. Die beauftragte Person ist befugt, übliche Gelegenheitsgeschenke auszurichten und Zuwendungen zur Erfüllung einer sittlichen Pflicht vorzunehmen."
+     "text": "8. Die beauftragte Person ist befugt, übliche Gelegenheitsgeschenke auszurichten und Zuwendungen zur Erfüllung einer sittlichen Pflicht vorzunehmen."
     },
     {
      "bausteinId": "V09_besondere",
-     "text": "8. Die beauftragte Person ist ausdrücklich ermächtigt, Vergleiche abzuschliessen, Schiedsvereinbarungen einzugehen und Wechselverbindlichkeiten einzugehen."
+     "text": "9. Die beauftragte Person ist ausdrücklich ermächtigt, Vergleiche abzuschliessen, Schiedsvereinbarungen einzugehen und Wechselverbindlichkeiten einzugehen."
     },
     {
      "bausteinId": "V10_weisungen",
      "ueberschrift": "Weisungen",
-     "text": "9. Wohnung möglichst lange behalten."
+     "text": "10. Wohnung möglichst lange behalten."
     },
     {
      "bausteinId": "V11_entschaedigung",
      "ueberschrift": "Entschädigung",
-     "text": "10. Die beauftragte Person erhält eine pauschale Entschädigung von CHF 5000 pro Jahr; notwendige Spesen werden ihr zusätzlich ersetzt."
+     "text": "11. Die beauftragte Person erhält eine pauschale Entschädigung von CHF 5000 pro Jahr; notwendige Spesen werden ihr zusätzlich ersetzt."
     },
     {
      "bausteinId": "V12_pv",
-     "text": "11. Ich habe eine separate Patientenverfügung errichtet (Hinterlegungsort: Hausarztpraxis Dr. X); für medizinische Massnahmen geht diese vor."
+     "text": "12. Ich habe eine separate Patientenverfügung errichtet (Hinterlegungsort: Hausarztpraxis Dr. X); für medizinische Massnahmen geht diese vor."
     },
     {
      "bausteinId": "V13_ersetzt",
-     "text": "12. Dieser Vorsorgeauftrag ersetzt alle früheren Vorsorgeaufträge."
+     "text": "13. Dieser Vorsorgeauftrag ersetzt alle früheren Vorsorgeaufträge."
     },
     {
      "bausteinId": "V14_schluss_eigenhaendig",
@@ -9321,6 +9325,7 @@
    "V01_identifikation",
    "V02_beauftragte",
    "V02b_beauftragteliste",
+   "V02c_einzeln",
    "V03_ersatz",
    "V04_personensorge",
    "V04b_personensorgeliste",
@@ -9352,6 +9357,12 @@
     "bausteinId": "V02b_beauftragteliste",
     "begruendung": "Je beauftragte Person eine Zeile mit den übertragenen Aufgabenbereichen.",
     "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V02c_einzeln",
+    "begruendung": "Aufgenommen, weil mehrere Personen beauftragt sind und Einzelvertretung gewählt wurde.",
+    "norm": "Art. 360 Abs. 1 ZGB",
+    "hinweis": "Das Gesetz regelt das Zusammenwirken mehrerer beauftragter Personen nicht ausdrücklich; die ausdrückliche Anordnung im Auftrag schafft Klarheit für KESB, Banken und Behörden."
    },
    {
     "bausteinId": "V03_ersatz",
