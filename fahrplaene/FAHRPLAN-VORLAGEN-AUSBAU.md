@@ -353,3 +353,11 @@ kein Merge vor Davids Review. Trailer `Roadmap: W2·8`.
   Abwägung: Grundlage Ziff. 8.
 - **V9.2 BGE 151 III 81 verifizieren** (BGE-Register-Status «zu verifizieren»)
   vor fachlicher Abnahme der Beurkundungs-Hinweise.
+- **V9.3 `formel_extern` strukturell härten** (Gegenprüfungs-Befund B3,
+  3.8.2026): Kantonale Beurkundungs-Tarife mit gesetzlichem Minimum/Stunden-
+  rahmen (z.B. BE Art. 8a Abs. 1 GebVN: «mindestens 300 Franken») rendern heute
+  als «nach Vereinbarung/Aufwand» — das Minimum erreicht die Nutzerin nie.
+  Fix gehört in `notariatGrundbuch.ts`/`ngPostenText` + Stammdaten
+  (`beurkundung.ts`: min/rahmen strukturiert statt Freitext-`hinweis`),
+  betrifft Beurkundungs-Rechner UND VA-Seite. Eigener Risiko-Pfad-Auftrag
+  mit kantonaler Norm-Verifikation.
