@@ -128,7 +128,15 @@ const MARG_ORD = /^((?:[IVXLCDM]+|\d+))(bis|ter|quater|quinquies|sexies|septies|
 const MARG_BUCHST = /^((?:[IVXLCDM]+|\d+))([a-z])(?=[.\s]|$)/;
 export function margLabel(label: string): ReactNode {
   const ord = label.match(MARG_ORD);
-  if (ord) return <Fragment>{ord[1]}<sup>{ord[2]}</sup>{label.slice(ord[0].length)}</Fragment>;
+  // LM-107: der nackte <sup> übernahm bislang den Browser-Default
+  // `font-size: smaller` (browserabhängig, ~0.75em der jeweils UMGEBENDEN
+  // Schrift) — dadurch erscheint dasselbe «bis»/«ter» im Gliederungsbaum
+  // (text-xs-Kontext → 9px) und in der Artikel-Überschrift (text-base-Kontext
+  // → 12px) in zwei Grössen derselben Ansicht. Fix: derselbe deterministische
+  // Multiplikator wie bei den bestehenden hochgestellten Fussnoten-Markern
+  // (ArtikelBody.tsx FnRef-Button, `text-[0.62em]`) statt des UA-Defaults —
+  // keine neue Grössen-Systematik, nur der bereits etablierte Wert.
+  if (ord) return <Fragment>{ord[1]}<sup className="text-[0.62em]">{ord[2]}</sup>{label.slice(ord[0].length)}</Fragment>;
   const bu = label.match(MARG_BUCHST);
   if (bu) return <Fragment>{bu[1]}<em>{bu[2]}</em>{label.slice(bu[0].length)}</Fragment>;
   return label;

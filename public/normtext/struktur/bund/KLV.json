@@ -1,9 +1,9 @@
 {
- "erzeugt": "2026-07-27",
+ "erzeugt": "2026-08-02",
  "kopf": {
   "srNummer": "832.112.31",
   "titel": "Verordnung des EDI über Leistungen in der obligatorischen Krankenpflegeversicherung",
-  "erlassdatum": "vom 29. September 1995 (Stand am 1. Juli 2026)",
+  "erlassdatum": "vom 29. September 1995 (Stand am 1. August 2026)",
   "praeambel": [
    {
     "rolle": "autor",
@@ -1182,7 +1182,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "83",
+     "nr": "85",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 2. Juli 2019, in Kraft seit 1. Jan. 2020 (AS <b>2019</b> 2145).",
      "links": [
       {
@@ -1195,7 +1195,7 @@
      "kl": "A"
     },
     {
-     "nr": "84",
+     "nr": "86",
      "text": "SR <b>832.10</b>",
      "links": [
       {
@@ -1214,7 +1214,7 @@
      "kl": "V"
     },
     {
-     "nr": "85",
+     "nr": "87",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 8. Mai 2024, in Kraft seit 1. Juli 2024 (AS <b>2024</b> 221).",
      "links": [
       {
@@ -1232,7 +1232,7 @@
      "kl": "A"
     },
     {
-     "nr": "86",
+     "nr": "88",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 8. Mai 2024, in Kraft seit 1. Juli 2024 (AS <b>2024</b> 221).",
      "links": [
       {
@@ -1269,7 +1269,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "94",
+     "nr": "96",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 24. Juni 2009, in Kraft seit 1. Jan. 2011 (AS <b>2009</b> 3527, 6849 Ziff. I).",
      "links": [
       {
@@ -1310,7 +1310,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "107",
+     "nr": "109",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 7. Febr. 2020, in Kraft seit 1. April 2020 (AS <b>2020</b> 519).",
      "links": [
       {
@@ -1323,7 +1323,7 @@
      "kl": "A"
     },
     {
-     "nr": "108",
+     "nr": "110",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 23. Juni 2021, in Kraft seit 1. Jan. 2022 (AS <b>2021</b> 440).",
      "links": [
       {
@@ -1366,7 +1366,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "109",
+     "nr": "111",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 20. Juni 2016, in Kraft seit 1. Aug. 2016 (AS <b>2016</b> 2537).",
      "links": [
       {
@@ -1384,7 +1384,7 @@
      "kl": "A"
     },
     {
-     "nr": "110",
+     "nr": "112",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 16. Mai 2014, in Kraft seit 1. Juli 2014 (AS <b>2014</b> 1251).",
      "links": [
       {
@@ -1421,7 +1421,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "117",
+     "nr": "119",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 21. Nov. 2007, in Kraft seit 1. Jan. 2008 (AS <b>2007 </b>6839).",
      "links": [
       {
@@ -1434,7 +1434,7 @@
      "kl": "A"
     },
     {
-     "nr": "118",
+     "nr": "120",
      "text": "SR <b>832.10</b>",
      "links": [
       {
@@ -1473,7 +1473,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "162",
+     "nr": "164",
      "text": "SR <b>832.10</b>",
      "links": [
       {
@@ -1493,7 +1493,7 @@
      "kl": "V"
     },
     {
-     "nr": "163",
+     "nr": "165",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 1. Dez. 2021, in Kraft seit 1. Jan. 2022 (AS <b>2021</b> 885).",
      "links": [
       {
@@ -1506,33 +1506,33 @@
      "kl": "A"
     },
     {
-     "nr": "164",
-     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref",
-     "links": [
-      {
-       "label": "www.bag.admin.ch/ref",
-       "url": "http://www.bag.admin.ch/ref"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "kl": "V"
-    },
-    {
-     "nr": "165",
-     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref",
-     "links": [
-      {
-       "label": "www.bag.admin.ch/ref",
-       "url": "http://www.bag.admin.ch/ref"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "kl": "V"
-    },
-    {
      "nr": "166",
+     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref",
+     "links": [
+      {
+       "label": "www.bag.admin.ch/ref",
+       "url": "http://www.bag.admin.ch/ref"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "V"
+    },
+    {
+     "nr": "167",
+     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref",
+     "links": [
+      {
+       "label": "www.bag.admin.ch/ref",
+       "url": "http://www.bag.admin.ch/ref"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "V"
+    },
+    {
+     "nr": "168",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 29. Nov. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 807).",
      "links": [
       {
@@ -1545,7 +1545,7 @@
      "kl": "A"
     },
     {
-     "nr": "167",
+     "nr": "169",
      "text": "SR <b>810.12</b>",
      "links": [
       {
@@ -1559,7 +1559,7 @@
      "kl": "V"
     },
     {
-     "nr": "168",
+     "nr": "170",
      "text": "Das Dokument ist einsehbar unter www.bag.admin.ch/ref",
      "links": [
       {
@@ -1572,7 +1572,7 @@
      "kl": "V"
     },
     {
-     "nr": "169",
+     "nr": "171",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 29. Nov. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 807).",
      "links": [
       {
@@ -1585,43 +1585,17 @@
      "kl": "A"
     },
     {
-     "nr": "170",
-     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
-     "links": [
-      {
-       "label": "www.bag.admin.ch/ref",
-       "url": "http://www.bag.admin.ch/ref"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "kl": "V"
-    },
-    {
-     "nr": "171",
-     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
-     "links": [
-      {
-       "label": "www.bag.admin.ch/ref",
-       "url": "http://www.bag.admin.ch/ref"
-      }
-     ],
-     "absatz": null,
-     "item": null,
-     "kl": "V"
-    },
-    {
      "nr": "172",
-     "text": "Eingefügt durch Ziff. I der V des EDI vom 9. Juni 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 336).",
+     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
      "links": [
       {
-       "label": "AS <b>2026</b> 336",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2026/336"
+       "label": "www.bag.admin.ch/ref",
+       "url": "http://www.bag.admin.ch/ref"
       }
      ],
      "absatz": null,
-     "item": "bquater",
-     "kl": "A"
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "173",
@@ -1638,6 +1612,19 @@
     },
     {
      "nr": "174",
+     "text": "Eingefügt durch Ziff. I der V des EDI vom 9. Juni 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 336).",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 336",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/336"
+      }
+     ],
+     "absatz": null,
+     "item": "bquater",
+     "kl": "A"
+    },
+    {
+     "nr": "175",
      "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
      "links": [
       {
@@ -1650,7 +1637,20 @@
      "kl": "V"
     },
     {
-     "nr": "175",
+     "nr": "176",
+     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
+     "links": [
+      {
+       "label": "www.bag.admin.ch/ref",
+       "url": "http://www.bag.admin.ch/ref"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "V"
+    },
+    {
+     "nr": "177",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 30. Nov. 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 6327).",
      "links": [
       {
@@ -1682,7 +1682,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "176",
+     "nr": "178",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 9. Dez. 2016, in Kraft seit 1. Jan. 2017 (AS <b>2016</b> 4933).",
      "links": [
       {
@@ -1714,7 +1714,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "177",
+     "nr": "179",
      "text": "SR <b>832.10</b>",
      "links": [
       {
@@ -1733,7 +1733,7 @@
      "kl": "V"
     },
     {
-     "nr": "178",
+     "nr": "180",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 9. Dez. 2016, in Kraft seit 1. Jan. 2017 (AS <b>2016</b> 4933).",
      "links": [
       {
@@ -1770,7 +1770,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "179",
+     "nr": "181",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 9. Dez. 2016, in Kraft seit 1. Jan. 2017 (AS <b>2016</b> 4933).",
      "links": [
       {
@@ -1783,7 +1783,7 @@
      "kl": "A"
     },
     {
-     "nr": "180",
+     "nr": "182",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 23. Juni 2021, in Kraft seit 1. Jan. 2022 (AS <b>2021</b> 440).",
      "links": [
       {
@@ -1801,7 +1801,7 @@
      "kl": "A"
     },
     {
-     "nr": "181",
+     "nr": "183",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 6. Juni 2019, in Kraft seit 1. Juli 2019 (AS <b>2019</b> 1931).",
      "links": [
       {
@@ -1833,7 +1833,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "182",
+     "nr": "184",
      "text": "SR <b>832.10</b>",
      "links": [
       {
@@ -1872,7 +1872,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "183",
+     "nr": "185",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 9. Juli 1998, in Kraft seit 1. Jan. 1999 (AS <b>1998</b> 2923).",
      "links": [
       {
@@ -1885,7 +1885,7 @@
      "kl": "A"
     },
     {
-     "nr": "184",
+     "nr": "186",
      "text": "SR <b>832.10</b>",
      "links": [
       {
@@ -1904,7 +1904,7 @@
      "kl": "V"
     },
     {
-     "nr": "185",
+     "nr": "187",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 9. Juli 1998, in Kraft seit 1. Jan. 1999 (AS <b>1998</b> 2923).",
      "links": [
       {
@@ -1917,7 +1917,7 @@
      "kl": "A"
     },
     {
-     "nr": "186",
+     "nr": "188",
      "text": "Aufgehoben durch Ziff. I der V des EDI vom 9. Juli 1998, mit Wirkung seit 1. Jan. 1999 (AS <b>1998</b> 2923).",
      "links": [
       {
@@ -1930,7 +1930,7 @@
      "kl": "A"
     },
     {
-     "nr": "187",
+     "nr": "189",
      "text": "Eingefügt durch Ziff. I der V vom 2. Juli 2002 (AS <b>2002</b> 3013). Fassung gemäss Ziff. I der V des EDI vom 28. Nov. 2017, in Kraft seit 1. Jan. 2018 (AS <b>2017</b> 7151).",
      "links": [
       {
@@ -1971,7 +1971,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "188",
+     "nr": "190",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 9. Juli 1998, in Kraft seit 1. Jan. 1999 (AS <b>1998</b> 2923).",
      "links": [
       {
@@ -1984,7 +1984,7 @@
      "kl": "A"
     },
     {
-     "nr": "189",
+     "nr": "191",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 16. Mai 2014, in Kraft seit 1. Juli 2014 (AS <b>2014</b> 1251).",
      "links": [
       {
@@ -1997,7 +1997,7 @@
      "kl": "A"
     },
     {
-     "nr": "190",
+     "nr": "192",
      "text": "SR <b>832.10</b>",
      "links": [
       {
@@ -2017,7 +2017,7 @@
      "kl": "V"
     },
     {
-     "nr": "191",
+     "nr": "193",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 16. Mai 2014, in Kraft seit 1. Juli 2014 (AS <b>2014</b> 1251).",
      "links": [
       {
@@ -2049,7 +2049,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "200",
+     "nr": "202",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 4. Juni 2021, in Kraft seit 1. Okt. 2021 (AS<b> 2021</b> 347).",
      "links": [
       {
@@ -2062,7 +2062,7 @@
      "kl": "A"
     },
     {
-     "nr": "201",
+     "nr": "203",
      "text": "SR <b>832.10</b>",
      "links": [
       {
@@ -2101,7 +2101,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "207",
+     "nr": "209",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 28. Juni 2007, in Kraft seit 1. Jan. 2008 (AS<b> 2007</b> 3581).",
      "links": [
       {
@@ -2167,7 +2167,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "208",
+     "nr": "210",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 4. Juni 2021, in Kraft seit 1. Okt. 2021 (AS<b> 2021</b> 347).",
      "links": [
       {
@@ -2180,7 +2180,7 @@
      "kl": "A"
     },
     {
-     "nr": "209",
+     "nr": "211",
      "text": "SR <b>832.10</b>",
      "links": [
       {
@@ -2272,7 +2272,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "210",
+     "nr": "212",
      "text": "SR <b>832.10</b>",
      "links": [
       {
@@ -2291,7 +2291,7 @@
      "kl": "V"
     },
     {
-     "nr": "211",
+     "nr": "213",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 10. Juli 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 2546).",
      "links": [
       {
@@ -2309,7 +2309,7 @@
      "kl": "A"
     },
     {
-     "nr": "212",
+     "nr": "214",
      "text": "www.bag.admin.ch > Versicherungen > Krankenversicherung > Leistungen und Tarife > Analysenliste (AL)",
      "links": [
       {
@@ -2327,7 +2327,7 @@
      "kl": "U"
     },
     {
-     "nr": "213",
+     "nr": "215",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 7. Febr. 2020, in Kraft seit 1. Juli 2020 (AS <b>2020</b> 529).",
      "links": [
       {
@@ -2345,7 +2345,7 @@
      "kl": "A"
     },
     {
-     "nr": "214",
+     "nr": "216",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 4. Juni 2021 (AS<b> 2021</b> 347). Fassung gemäss Ziff. I der V des EDI vom 9. Juni 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 336).",
      "links": [
       {
@@ -2389,7 +2389,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "215",
+     "nr": "217",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 26. Febr. 1996, in Kraft seit 1. Juni 1996 (AS <b>1996</b> 1232).",
      "links": [
       {
@@ -2402,7 +2402,7 @@
      "kl": "A"
     },
     {
-     "nr": "216",
+     "nr": "218",
      "text": "SR <b>832.10</b>",
      "links": [
       {
@@ -2421,7 +2421,7 @@
      "kl": "V"
     },
     {
-     "nr": "217",
+     "nr": "219",
      "text": "www.bag.admin.ch > Versicherungen > Krankenversicherung > Leistungen und Tarife > Arzneimittel > Arzneimittelliste mit Tarif (ALT)",
      "links": [
       {
@@ -2439,7 +2439,7 @@
      "kl": "U"
     },
     {
-     "nr": "218",
+     "nr": "220",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 7. Febr. 2020, in Kraft seit 1. Juli 2020 (AS <b>2020</b> 529).",
      "links": [
       {
@@ -2481,7 +2481,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "219",
+     "nr": "221",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 27. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 3088).",
      "links": [
       {
@@ -2499,7 +2499,7 @@
      "kl": "A"
     },
     {
-     "nr": "220",
+     "nr": "222",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 27. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 3088).",
      "links": [
       {
@@ -2512,7 +2512,7 @@
      "kl": "A"
     },
     {
-     "nr": "221",
+     "nr": "223",
      "text": "Fassung gemäss Ziff. I der V vom 2. Juli 2002, in Kraft seit 1. Juli 2002 (AS <b>2002</b> 3013).",
      "links": [
       {
@@ -2525,7 +2525,7 @@
      "kl": "A"
     },
     {
-     "nr": "222",
+     "nr": "224",
      "text": "Aufgehoben durch Ziff. II 2 der V des EDI vom 26. Okt. 2001, mit Wirkung seit 1. Jan. 2002 (AS <b>2001</b> 3397).",
      "links": [
       {
@@ -2567,7 +2567,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "230",
+     "nr": "232",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 29. April 2015, in Kraft seit 1. Juni 2015 (AS <b>2015</b> 1359).",
      "links": [
       {
@@ -2580,7 +2580,7 @@
      "kl": "A"
     },
     {
-     "nr": "231",
+     "nr": "233",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 1. Febr. 2017, in Kraft seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -2593,7 +2593,7 @@
      "kl": "A"
     },
     {
-     "nr": "232",
+     "nr": "234",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 571).",
      "links": [
       {
@@ -2606,7 +2606,7 @@
      "kl": "A"
     },
     {
-     "nr": "233",
+     "nr": "235",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 1. Febr. 2017, in Kraft seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -2619,7 +2619,7 @@
      "kl": "A"
     },
     {
-     "nr": "234",
+     "nr": "236",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 1. Febr. 2017, in Kraft seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -2632,7 +2632,7 @@
      "kl": "A"
     },
     {
-     "nr": "235",
+     "nr": "237",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 571).",
      "links": [
       {
@@ -2645,7 +2645,7 @@
      "kl": "A"
     },
     {
-     "nr": "236",
+     "nr": "238",
      "text": "SR <b>812.21</b>",
      "links": [
       {
@@ -2689,7 +2689,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "243",
+     "nr": "245",
      "text": "Fassung gemäss Ziff. I der V vom 2. Juli 2002, in Kraft seit 1. Juli 2002 (AS <b>2002</b> 3013).",
      "links": [
       {
@@ -2726,7 +2726,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "244",
+     "nr": "246",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 27. Nov. 2000, in Kraft seit 1. Jan. 2001 (AS <b>2000</b> 3088).",
      "links": [
       {
@@ -2739,7 +2739,7 @@
      "kl": "A"
     },
     {
-     "nr": "245",
+     "nr": "247",
      "text": "Fassung gemäss Ziff. I der V vom 2. Juli 2002, in Kraft seit 1. Juli 2002 (AS <b>2002</b> 3013).",
      "links": [
       {
@@ -2779,7 +2779,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "246",
+     "nr": "248",
      "text": "Aufgehoben durch Ziff. I der V des EDI vom 1. Febr. 2017, mit Wirkung seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -2816,7 +2816,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "269",
+     "nr": "271",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft vom 1. Jan. 2024 bis zum 31. Dez. 2024, verlängert bis zum 31. Dez. 2025 und bis zum 31. Dez. 2026 (AS <b>2023</b> 571, 807 Ziff. IV Abs. 5; AS <b>2024</b> 788 Ziff. III Abs. 2; <b>2025 </b>851 Ziff. III Abs. 3).",
      "links": [
       {
@@ -2865,7 +2865,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "273",
+     "nr": "275",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 26. April 2006, in Kraft seit 10. Mai 2006 (AS <b>2006</b> 1757).",
      "links": [
       {
@@ -2878,7 +2878,7 @@
      "kl": "A"
     },
     {
-     "nr": "274",
+     "nr": "276",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 571).",
      "links": [
       {
@@ -2896,7 +2896,7 @@
      "kl": "A"
     },
     {
-     "nr": "275",
+     "nr": "277",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 8. Mai 2013, in Kraft seit 1. Juni 2013 (AS <b>2013</b> 1357).",
      "links": [
       {
@@ -2938,7 +2938,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "276",
+     "nr": "278",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 29. April 2015, in Kraft seit 1. Juni 2015 (AS <b>2015</b> 1359).",
      "links": [
       {
@@ -2975,7 +2975,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "285",
+     "nr": "287",
      "text": "Ursprünglich: Art. 35<i>a</i>. Eingefügt durch Ziff. I der V des EDI vom 27. Nov. 2000 (AS <b>2000</b> 3088). Fassung gemäss Ziff. I der V des EDI vom 8. Dez. 2023, in Kraft seit 1. Juli 2024 (AS <b>2023</b> 773). Siehe auch die UeB am Schluss des Textes.",
      "links": [
       {
@@ -3009,7 +3009,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "291",
+     "nr": "293",
      "text": "Aufgehoben durch Ziff. I der V vom 2. Juli 2002, mit Wirkung seit 1. Juli 2002 (AS <b>2002</b> 3013).",
      "links": [
       {
@@ -3039,7 +3039,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "292",
+     "nr": "294",
      "text": "Aufgehoben durch Ziff. I der V des EDI vom 23. Juni 2021, mit Wirkung seit 1. Jan. 2022 (AS <b>2021</b> 440).",
      "links": [
       {
@@ -3069,7 +3069,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "293",
+     "nr": "295",
      "text": "Aufgehoben durch Ziff. I der V des EDI vom 29. Juni 1999, mit Wirkung seit 1. Jan. 2000 (AS <b>1999</b> 2517).",
      "links": [
       {
@@ -3101,7 +3101,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "294",
+     "nr": "296",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 2. Dez. 2025, in Kraft seit 1. Jan. 2026 (AS <b>2025 </b>851).",
      "links": [
       {
@@ -3119,7 +3119,7 @@
      "kl": "A"
     },
     {
-     "nr": "295",
+     "nr": "297",
      "text": "www.bag.admin.ch > Versicherungen > Krankenversicherung > Leistungen und Tarife > Analysenliste (AL) > Laboratorien und Laborleiter > Weitere Informationen > Dokumente > Anforderungen an die Hochschulausbildung.",
      "links": [
       {
@@ -3137,7 +3137,7 @@
      "kl": "U"
     },
     {
-     "nr": "296",
+     "nr": "298",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 2. Dez. 2025, in Kraft seit 1. Jan. 2026 (AS <b>2025 </b>851).",
      "links": [
       {
@@ -3155,7 +3155,7 @@
      "kl": "A"
     },
     {
-     "nr": "297",
+     "nr": "299",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 16. Mai 2014, in Kraft seit 1. Juli 2014 (AS <b>2014</b> 1251).",
      "links": [
       {
@@ -3174,7 +3174,7 @@
      "kl": "A"
     },
     {
-     "nr": "298",
+     "nr": "300",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 9. Dez. 2016, in Kraft seit 1. Jan. 2017 (AS <b>2016</b> 4933).",
      "links": [
       {
@@ -3192,7 +3192,7 @@
      "kl": "A"
     },
     {
-     "nr": "299",
+     "nr": "301",
      "text": "Aufgehoben durch Ziff. I der V des EDI vom 4. April 2007, mit Wirkung seit 1. April 2007 (AS <b>2007 </b>1367).",
      "links": [
       {
@@ -3229,7 +3229,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "300",
+     "nr": "302",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 9. Dez. 2016, in Kraft seit 1. Jan. 2017 (AS <b>2016</b> 4933).",
      "links": [
       {
@@ -3242,7 +3242,7 @@
      "kl": "A"
     },
     {
-     "nr": "301",
+     "nr": "303",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 29. Nov. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 807).",
      "links": [
       {
@@ -3255,7 +3255,7 @@
      "kl": "A"
     },
     {
-     "nr": "302",
+     "nr": "304",
      "text": "SR <b>810.12</b>",
      "links": [
       {
@@ -3275,7 +3275,7 @@
      "kl": "V"
     },
     {
-     "nr": "303",
+     "nr": "305",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 29. Nov. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 807).",
      "links": [
       {
@@ -3302,7 +3302,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "304",
+     "nr": "306",
      "text": "[AS <b>1965</b> 127; <b>1970</b> 949; <b>1971</b> 1714; <b>1986</b> 1487 Ziff. II]",
      "links": [
       {
@@ -3333,7 +3333,7 @@
      "kl": "Z"
     },
     {
-     "nr": "305",
+     "nr": "307",
      "text": "[AS <b>1965</b> 425; <b>1968</b> 1012; <b>1974 </b>688; <b>1986</b> 891]",
      "links": [
       {
@@ -3364,7 +3364,7 @@
      "kl": "Z"
     },
     {
-     "nr": "306",
+     "nr": "308",
      "text": "[AS <b>1965</b> 613; <b>1986</b> 1487 Ziff. II]",
      "links": [
       {
@@ -3387,7 +3387,7 @@
      "kl": "Z"
     },
     {
-     "nr": "307",
+     "nr": "309",
      "text": "[AS <b>1965</b> 1199; <b>1986</b> 1487 Ziff. II; <b>1988</b> 973]",
      "links": [
       {
@@ -3414,7 +3414,7 @@
      "kl": "Z"
     },
     {
-     "nr": "308",
+     "nr": "310",
      "text": "[AS <b>1965</b> 1201; <b>1968</b> 798; <b>1971</b> 1262; <b>1986</b> 1487 Ziff. II; <b>1988</b> 2012; <b>1993 </b>349; <b>1995 </b>890]",
      "links": [
       {
@@ -3457,7 +3457,7 @@
      "kl": "Z"
     },
     {
-     "nr": "309",
+     "nr": "311",
      "text": "[AS <b>1986</b> 87]",
      "links": [
       {
@@ -3476,7 +3476,7 @@
      "kl": "Z"
     },
     {
-     "nr": "310",
+     "nr": "312",
      "text": "[AS <b>1991</b> 519; <b>1995</b> 891]",
      "links": [
       {
@@ -3499,7 +3499,7 @@
      "kl": "Z"
     },
     {
-     "nr": "311",
+     "nr": "313",
      "text": "[AS <b>1968</b> 1496; <b>1986</b> 1487]",
      "links": [
       {
@@ -3522,7 +3522,7 @@
      "kl": "Z"
     },
     {
-     "nr": "312",
+     "nr": "314",
      "text": "[AS <b>1990</b> 127; <b>1991</b> 959; <b>1994</b> 765]",
      "links": [
       {
@@ -3549,7 +3549,7 @@
      "kl": "Z"
     },
     {
-     "nr": "313",
+     "nr": "315",
      "text": "[AS <b>1989</b> 374; <b>1995</b> 750, 3688]",
      "links": [
       {
@@ -3588,7 +3588,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "314",
+     "nr": "316",
      "text": "Aufgehoben durch Ziff. I der V des EDI vom 27. Nov. 2000, mit Wirkung seit 1. Jan. 2001 (AS <b>2000</b> 3088).",
      "links": [
       {
@@ -3615,7 +3615,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "315",
+     "nr": "317",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 26. Febr. 1996, in Kraft seit 1. Juni 1996 (AS <b>1996</b> 1232).",
      "links": [
       {
@@ -3628,7 +3628,7 @@
      "kl": "A"
     },
     {
-     "nr": "316",
+     "nr": "318",
      "text": "Aufgehoben durch Ziff. I der V des EDI vom 15. Jan. 1996, mit Wirkung seit 1. Mai 1996 (AS <b>1996</b> 909).",
      "links": [
       {
@@ -3646,7 +3646,7 @@
      "kl": "A"
     },
     {
-     "nr": "317",
+     "nr": "319",
      "text": "Aufgehoben durch Ziff. I der V des EDI vom 26. Febr. 1996, mit Wirkung seit 1. Juni 1996 (AS <b>1996</b> 1232).",
      "links": [
       {
@@ -3686,7 +3686,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "112",
+     "nr": "114",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 23. Juni 2021, in Kraft seit 1. Jan. 2022 (AS <b>2021</b> 440).",
      "links": [
       {
@@ -3704,7 +3704,7 @@
      "kl": "A"
     },
     {
-     "nr": "111",
+     "nr": "113",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 9. Dez. 2016, in Kraft seit 1. Juli 2017 (AS <b>2016</b> 4933).",
      "links": [
       {
@@ -3740,7 +3740,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "114",
+     "nr": "116",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 28. Nov. 2022, in Kraft seit 1. Jan. 2023 (AS <b>2022</b> 840).",
      "links": [
       {
@@ -3758,7 +3758,7 @@
      "kl": "A"
     },
     {
-     "nr": "115",
+     "nr": "117",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 28. Nov. 2022, in Kraft seit 1. Jan. 2023 (AS <b>2022</b> 840).",
      "links": [
       {
@@ -3776,7 +3776,7 @@
      "kl": "A"
     },
     {
-     "nr": "113",
+     "nr": "115",
      "text": "Eingefügt durch Ziff. I der V vom 19. März 2021 (AS <b>2021</b> 189). Fassung gemäss Ziff. I der V des EDI vom 23. Juni 2021, in Kraft seit 1. Juli 2022 (AS <b>2021</b> 440). Siehe auch die UeB dieser Änd. am Schluss des Textes.",
      "links": [
       {
@@ -3816,7 +3816,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "116",
+     "nr": "118",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 26. Mai 2021 (AS <b>2021</b> 324). Fassung gemäss Ziff. I der V des EDI vom 23. Juni 2021, in Kraft seit 1. Jan. 2022 (AS <b>2021</b> 440).",
      "links": [
       {
@@ -3853,7 +3853,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "119",
+     "nr": "121",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 21. Nov. 2007 (AS <b>2007 </b>6839). Fassung gemäss Ziff. I der V des EDI vom 2. Dez. 2025, in Kraft seit 1. Jan. 2026 (AS <b>2025 </b>851).",
      "links": [
       {
@@ -3870,7 +3870,7 @@
      "kl": "A"
     },
     {
-     "nr": "120",
+     "nr": "122",
      "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
      "links": [
       {
@@ -3888,7 +3888,7 @@
      "kl": "V"
     },
     {
-     "nr": "121",
+     "nr": "123",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 9. Juni 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 336).",
      "links": [
       {
@@ -3906,7 +3906,7 @@
      "kl": "A"
     },
     {
-     "nr": "122",
+     "nr": "124",
      "text": "Berichtigung vom 11. Mai 2026 (AS <b>2026</b> 209).",
      "links": [
       {
@@ -3938,7 +3938,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "123",
+     "nr": "125",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 21. Nov. 2007 (AS <b>2007 </b>6839). Fassung gemäss Ziff. I der V des EDI vom 28. Nov. 2022, in Kraft seit 1. Jan. 2023 (AS <b>2022</b> 840).",
      "links": [
       {
@@ -3955,7 +3955,7 @@
      "kl": "A"
     },
     {
-     "nr": "124",
+     "nr": "126",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 5. Juni 2009 (AS <b>2009</b> 2821). Fassung gemäss Ziff. I der V des EDI vom 9. Juni 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 336).",
      "links": [
       {
@@ -3972,7 +3972,7 @@
      "kl": "A"
     },
     {
-     "nr": "125",
+     "nr": "127",
      "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
      "links": [
       {
@@ -3985,7 +3985,7 @@
      "kl": "V"
     },
     {
-     "nr": "126",
+     "nr": "128",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 5. Juni 2009 (AS <b>2009</b> 2821). Fassung gemäss Ziff. I der V des EDI vom 31. Mai 2011, in Kraft seit 1. Juli 2011 (AS <b>2011</b> 2669).",
      "links": [
       {
@@ -4002,7 +4002,7 @@
      "kl": "A"
     },
     {
-     "nr": "127",
+     "nr": "129",
      "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref",
      "links": [
       {
@@ -4015,7 +4015,7 @@
      "kl": "V"
     },
     {
-     "nr": "128",
+     "nr": "130",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 5. Dez. 2011 (AS <b>2011</b> 6487). Fassung gemäss Ziff. I der V des EDI vom 4. Juni 2025, in Kraft seit 1. Juli 2025 (AS <b>2025</b> 419).",
      "links": [
       {
@@ -4032,7 +4032,7 @@
      "kl": "A"
     },
     {
-     "nr": "129",
+     "nr": "131",
      "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
      "links": [
       {
@@ -4045,7 +4045,7 @@
      "kl": "V"
     },
     {
-     "nr": "130",
+     "nr": "132",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 8. Juni 2021, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 392).",
      "links": [
       {
@@ -4058,7 +4058,7 @@
      "kl": "A"
     },
     {
-     "nr": "131",
+     "nr": "133",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 2. Juni 2022 (AS <b>2022</b> 369). Fassung gemäss Ziff. I der V des EDI vom 9. Juni 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 336).",
      "links": [
       {
@@ -4075,7 +4075,7 @@
      "kl": "A"
     },
     {
-     "nr": "132",
+     "nr": "134",
      "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
      "links": [
       {
@@ -4088,33 +4088,33 @@
      "kl": "V"
     },
     {
-     "nr": "133",
-     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
-     "links": [
-      {
-       "label": "www.bag.admin.ch/ref",
-       "url": "http://www.bag.admin.ch/ref"
-      }
-     ],
-     "absatz": null,
-     "item": "b",
-     "kl": "V"
-    },
-    {
-     "nr": "134",
-     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
-     "links": [
-      {
-       "label": "www.bag.admin.ch/ref",
-       "url": "http://www.bag.admin.ch/ref"
-      }
-     ],
-     "absatz": null,
-     "item": "b",
-     "kl": "V"
-    },
-    {
      "nr": "135",
+     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
+     "links": [
+      {
+       "label": "www.bag.admin.ch/ref",
+       "url": "http://www.bag.admin.ch/ref"
+      }
+     ],
+     "absatz": null,
+     "item": "b",
+     "kl": "V"
+    },
+    {
+     "nr": "136",
+     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
+     "links": [
+      {
+       "label": "www.bag.admin.ch/ref",
+       "url": "http://www.bag.admin.ch/ref"
+      }
+     ],
+     "absatz": null,
+     "item": "b",
+     "kl": "V"
+    },
+    {
+     "nr": "137",
      "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
      "links": [
       {
@@ -4127,7 +4127,7 @@
      "kl": "V"
     },
     {
-     "nr": "136",
+     "nr": "138",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 2. Juni 2022, in Kraft seit 1. Juli 2022 (AS <b>2022</b> 369).",
      "links": [
       {
@@ -4140,7 +4140,7 @@
      "kl": "A"
     },
     {
-     "nr": "137",
+     "nr": "139",
      "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref",
      "links": [
       {
@@ -4153,7 +4153,7 @@
      "kl": "V"
     },
     {
-     "nr": "138",
+     "nr": "140",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 29. Nov. 2023 (AS <b>2023</b> 807). Fassung gemäss Ziff. I der V des EDI vom 17. Juni 2024, in Kraft seit 1. Juli 2024 (AS <b>2024</b> 303).",
      "links": [
       {
@@ -4170,7 +4170,7 @@
      "kl": "A"
     },
     {
-     "nr": "139",
+     "nr": "141",
      "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref .",
      "links": [
       {
@@ -4202,7 +4202,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "140",
+     "nr": "142",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 21. Nov. 2007, in Kraft seit 1. Jan. 2008 (AS <b>2007 </b>6839).",
      "links": [
       {
@@ -4215,7 +4215,7 @@
      "kl": "A"
     },
     {
-     "nr": "141",
+     "nr": "143",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 25. Nov. 2016, in Kraft seit 1. Jan. 2017 (AS <b>2016</b> 4639).",
      "links": [
       {
@@ -4228,7 +4228,7 @@
      "kl": "A"
     },
     {
-     "nr": "142",
+     "nr": "144",
      "text": "Die Checklisten sind einsehbar unter: www.bag.admin.ch/ref",
      "links": [
       {
@@ -4260,7 +4260,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "143",
+     "nr": "145",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 21. Nov. 2007, in Kraft seit 1. Jan. 2008 (AS <b>2007 </b>6839).",
      "links": [
       {
@@ -4273,7 +4273,7 @@
      "kl": "A"
     },
     {
-     "nr": "144",
+     "nr": "146",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 16. Jan. 2019, in Kraft seit 1. März 2019 (AS <b>2019</b> 439).",
      "links": [
       {
@@ -4286,7 +4286,7 @@
      "kl": "A"
     },
     {
-     "nr": "145",
+     "nr": "147",
      "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref",
      "links": [
       {
@@ -4299,7 +4299,7 @@
      "kl": "V"
     },
     {
-     "nr": "146",
+     "nr": "148",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 16. Mai 2014, in Kraft seit 1. Juli 2014 (AS <b>2014</b> 1251).",
      "links": [
       {
@@ -4312,7 +4312,7 @@
      "kl": "A"
     },
     {
-     "nr": "147",
+     "nr": "149",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 28. Nov. 2017, in Kraft seit 1. Jan. 2018 (AS <b>2017</b> 7151).",
      "links": [
       {
@@ -4325,7 +4325,7 @@
      "kl": "A"
     },
     {
-     "nr": "148",
+     "nr": "150",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 30. Nov. 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 6327).",
      "links": [
       {
@@ -4338,32 +4338,6 @@
      "kl": "A"
     },
     {
-     "nr": "149",
-     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref",
-     "links": [
-      {
-       "label": "www.bag.admin.ch/ref",
-       "url": "http://www.bag.admin.ch/ref"
-      }
-     ],
-     "absatz": "1",
-     "item": null,
-     "kl": "V"
-    },
-    {
-     "nr": "150",
-     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref",
-     "links": [
-      {
-       "label": "www.bag.admin.ch/ref",
-       "url": "http://www.bag.admin.ch/ref"
-      }
-     ],
-     "absatz": "1",
-     "item": "2",
-     "kl": "V"
-    },
-    {
      "nr": "151",
      "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref",
      "links": [
@@ -4373,7 +4347,7 @@
       }
      ],
      "absatz": "1",
-     "item": "2",
+     "item": null,
      "kl": "V"
     },
     {
@@ -4391,6 +4365,32 @@
     },
     {
      "nr": "153",
+     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref",
+     "links": [
+      {
+       "label": "www.bag.admin.ch/ref",
+       "url": "http://www.bag.admin.ch/ref"
+      }
+     ],
+     "absatz": "1",
+     "item": "2",
+     "kl": "V"
+    },
+    {
+     "nr": "154",
+     "text": "Das Dokument ist einsehbar unter: www.bag.admin.ch/ref",
+     "links": [
+      {
+       "label": "www.bag.admin.ch/ref",
+       "url": "http://www.bag.admin.ch/ref"
+      }
+     ],
+     "absatz": "1",
+     "item": "2",
+     "kl": "V"
+    },
+    {
+     "nr": "155",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 5. Dez. 2011, in Kraft seit 1. Jan. 2012 (AS <b>2011</b> 6487).",
      "links": [
       {
@@ -4403,7 +4403,7 @@
      "kl": "A"
     },
     {
-     "nr": "154",
+     "nr": "156",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 20. Juni 2016, in Kraft seit 1. Aug. 2016 (AS <b>2016</b> 2537).",
      "links": [
       {
@@ -4416,7 +4416,7 @@
      "kl": "A"
     },
     {
-     "nr": "155",
+     "nr": "157",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 17. Juni 2015, in Kraft seit 15. Juli 2015 (AS <b>2015</b> 2197).",
      "links": [
       {
@@ -4453,7 +4453,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "156",
+     "nr": "158",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 21. Nov. 2007, in Kraft seit 1. Jan. 2008 (AS <b>2007 </b>6839).",
      "links": [
       {
@@ -4466,7 +4466,7 @@
      "kl": "A"
     },
     {
-     "nr": "157",
+     "nr": "159",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 17. Juni 2024, in Kraft seit 1. Juli 2024 (AS <b>2024</b> 303).",
      "links": [
       {
@@ -4479,7 +4479,7 @@
      "kl": "A"
     },
     {
-     "nr": "158",
+     "nr": "160",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 30. Nov. 2020, in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 6327).",
      "links": [
       {
@@ -4492,7 +4492,7 @@
      "kl": "A"
     },
     {
-     "nr": "159",
+     "nr": "161",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 27. Nov. 2015, in Kraft seit 1. Jan. 2016 (AS <b>2015</b> 5125).",
      "links": [
       {
@@ -4505,7 +4505,7 @@
      "kl": "A"
     },
     {
-     "nr": "160",
+     "nr": "162",
      "text": "SR <b>832.102.4</b>",
      "links": [
       {
@@ -4519,7 +4519,7 @@
      "kl": "V"
     },
     {
-     "nr": "161",
+     "nr": "163",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 10. Juni 2013 (AS <b>2013 </b>1925). Fassung gemäss Ziff. I der V des EDI vom 9. Juni 2026, in Kraft seit 1. Juli 2026 (AS <b>2026</b> 336).",
      "links": [
       {
@@ -4555,7 +4555,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "192",
+     "nr": "194",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 13. Dez. 1996, in Kraft seit 1. Jan. 1997 (AS <b>1997</b> 564).",
      "links": [
       {
@@ -4568,7 +4568,7 @@
      "kl": "A"
     },
     {
-     "nr": "193",
+     "nr": "195",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 4. Juli 1997, in Kraft seit 1. Jan. 1998 (AS <b>1997</b> 2697).",
      "links": [
       {
@@ -4586,7 +4586,7 @@
      "kl": "A"
     },
     {
-     "nr": "194",
+     "nr": "196",
      "text": "SR <b>832.10</b>",
      "links": [
       {
@@ -4606,7 +4606,7 @@
      "kl": "V"
     },
     {
-     "nr": "195",
+     "nr": "197",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 9. Juli 1998, in Kraft seit 1. Jan. 1998 (AS <b>1998</b> 2923).",
      "links": [
       {
@@ -4619,7 +4619,7 @@
      "kl": "A"
     },
     {
-     "nr": "196",
+     "nr": "198",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 9. Juli 1998, in Kraft seit 1. Jan. 1998 (AS <b>1998</b> 2923).",
      "links": [
       {
@@ -4632,7 +4632,7 @@
      "kl": "A"
     },
     {
-     "nr": "197",
+     "nr": "199",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 9. Juli 2001, in Kraft seit 1. Jan. 2001 (AS <b>2001</b> 2150).",
      "links": [
       {
@@ -4645,7 +4645,7 @@
      "kl": "A"
     },
     {
-     "nr": "198",
+     "nr": "200",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 9. Juli 1998 (AS <b>1998</b> 2923). Fassung gemäss Ziff. I der V des EDI vom 9. Juli 2001, in Kraft seit 1. Jan. 2001 (AS <b>2001</b> 2150).",
      "links": [
       {
@@ -4681,7 +4681,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "199",
+     "nr": "201",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 27. Mai 2020, in Kraft seit 1. Juli 2020 (AS <b>2020</b> 2539).",
      "links": [
       {
@@ -4713,7 +4713,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "202",
+     "nr": "204",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 28. Juni 2007, in Kraft seit 1. Aug. 2007 (AS<b> 2007</b> 3581).",
      "links": [
       {
@@ -4726,7 +4726,7 @@
      "kl": "A"
     },
     {
-     "nr": "203",
+     "nr": "205",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 4. Juni 2021, in Kraft seit 1. Okt. 2021 (AS<b> 2021</b> 347).",
      "links": [
       {
@@ -4744,7 +4744,7 @@
      "kl": "A"
     },
     {
-     "nr": "204",
+     "nr": "206",
      "text": "Aufgehoben durch Ziff. I der V des EDI vom 4. Juni 2021, mit Wirkung seit 1. Okt. 2021 (AS<b> 2021</b> 347).",
      "links": [
       {
@@ -4762,7 +4762,7 @@
      "kl": "A"
     },
     {
-     "nr": "205",
+     "nr": "207",
      "text": "www.bag.admin.ch > Versicherungen > Krankenversicherung > Leistungen und Tarife > Liste der Mittel und Gegenstände (MiGeL)",
      "links": [
       {
@@ -4780,7 +4780,7 @@
      "kl": "U"
     },
     {
-     "nr": "206",
+     "nr": "208",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 7. Febr. 2020, in Kraft seit 1. Juli 2020 (AS <b>2020</b> 529).",
      "links": [
       {
@@ -4822,7 +4822,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "223",
+     "nr": "225",
      "text": "Eingefügt durch Ziff. I der V vom 2. Juli 2002, in Kraft seit 1. Juli 2002 (AS <b>2002</b> 3013). Siehe auch die UeB Änd. 21.3.2012 am Schluss dieses Textes.",
      "links": [
       {
@@ -4835,7 +4835,7 @@
      "kl": "G"
     },
     {
-     "nr": "224",
+     "nr": "226",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 571).",
      "links": [
       {
@@ -4848,7 +4848,7 @@
      "kl": "A"
     },
     {
-     "nr": "225",
+     "nr": "227",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 1. Febr. 2017 (AS <b>2017</b> 633). Fassung gemäss Ziff. I der V des EDI vom 2. Juni 2022, in Kraft seit 1. Juli 2022 (AS <b>2022</b> 369).",
      "links": [
       {
@@ -4865,7 +4865,7 @@
      "kl": "A"
     },
     {
-     "nr": "226",
+     "nr": "228",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 26. April 2006, in Kraft seit 10. Mai 2006 (AS <b>2006</b> 1757).",
      "links": [
       {
@@ -4878,7 +4878,7 @@
      "kl": "A"
     },
     {
-     "nr": "227",
+     "nr": "229",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 1. Febr. 2017, in Kraft seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -4891,7 +4891,7 @@
      "kl": "A"
     },
     {
-     "nr": "228",
+     "nr": "230",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 1. Febr. 2017, in Kraft seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -4904,7 +4904,7 @@
      "kl": "A"
     },
     {
-     "nr": "229",
+     "nr": "231",
      "text": "Aufgehoben durch Ziff. I der V des EDI vom 8. Mai 2013, mit Wirkung seit 1. Juni 2013 (AS <b>2013</b> 1357).",
      "links": [
       {
@@ -4941,7 +4941,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "237",
+     "nr": "239",
      "text": "Eingefügt durch Ziff. I der V vom 2. Juli 2002 (AS <b>2002</b> 3013). Fassung gemäss Ziff. I der V des EDI vom 29. April 2015, in Kraft seit 1. Juni 2015 (AS <b>2015</b> 1359).",
      "links": [
       {
@@ -4958,7 +4958,7 @@
      "kl": "A"
     },
     {
-     "nr": "238",
+     "nr": "240",
      "text": "SR <b>812.212.21</b>. Der Verweis wurde in Anwendung von Art. 12 Abs. 2 des Publikationsgesetzes vom 18. Juni 2004 (SR <b>170.512</b>) auf den 1. Jan. 2019 angepasst.",
      "links": [
       {
@@ -5006,7 +5006,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "239",
+     "nr": "241",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 29. April 2015, in Kraft seit 1. Juni 2015 (AS <b>2015</b> 1359).",
      "links": [
       {
@@ -5043,7 +5043,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "240",
+     "nr": "242",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 571).",
      "links": [
       {
@@ -5080,7 +5080,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "241",
+     "nr": "243",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 571).",
      "links": [
       {
@@ -5093,7 +5093,7 @@
      "kl": "A"
     },
     {
-     "nr": "242",
+     "nr": "244",
      "text": "SR <b>812.21</b>",
      "links": [
       {
@@ -5137,7 +5137,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "247",
+     "nr": "249",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 21. Okt. 2015 (AS <b>2015</b> 4189). Fassung gemäss Ziff. I der V des EDI vom 1. Febr. 2017, in Kraft seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -5178,7 +5178,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "248",
+     "nr": "250",
      "text": "Ursprünglich: Art. 34<i>a</i>. Eingefügt durch Ziff. I der V des EDI vom 29. April 2015 (AS <b>2015</b> 1359). Fassung gemäss Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 571).",
      "links": [
       {
@@ -5219,7 +5219,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "249",
+     "nr": "251",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 29. April 2015 (AS <b>2015</b> 1359). Fassung gemäss Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 571).",
      "links": [
       {
@@ -5236,7 +5236,7 @@
      "kl": "A"
     },
     {
-     "nr": "250",
+     "nr": "252",
      "text": "Siehe auch die UeB Änd. 29.11.2023 am Schluss des Textes.",
      "links": [],
      "absatz": "2",
@@ -5244,7 +5244,7 @@
      "kl": "V"
     },
     {
-     "nr": "251",
+     "nr": "253",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 29. Nov. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 807).",
      "links": [
       {
@@ -5263,7 +5263,7 @@
      "kl": "A"
     },
     {
-     "nr": "252",
+     "nr": "254",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 29. Nov. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 807).",
      "links": [
       {
@@ -5305,7 +5305,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "253",
+     "nr": "255",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 29. April 2015, in Kraft seit 1. Juni 2015 (AS <b>2015</b> 1359).",
      "links": [
       {
@@ -5318,7 +5318,7 @@
      "kl": "A"
     },
     {
-     "nr": "254",
+     "nr": "256",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 571).",
      "links": [
       {
@@ -5360,7 +5360,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "255",
+     "nr": "257",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 29. April 2015, in Kraft seit 1. Juni 2015 (AS <b>2015</b> 1359). Siehe auch die UeB Änd. 29.4.2015, Änd. 1.2.2017 und Änd. 22.9.2023 am Ende dieses Textes.",
      "links": [
       {
@@ -5373,7 +5373,7 @@
      "kl": "G"
     },
     {
-     "nr": "256",
+     "nr": "258",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 1. Febr. 2017, in Kraft seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -5386,7 +5386,7 @@
      "kl": "A"
     },
     {
-     "nr": "257",
+     "nr": "259",
      "text": "Aufgehoben durch Ziff. I der V des EDI vom 1. Febr. 2017, mit Wirkung seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -5399,7 +5399,7 @@
      "kl": "A"
     },
     {
-     "nr": "258",
+     "nr": "260",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 8. Juni 2021, in Kraft seit 1. Juli 2021 (AS <b>2021</b> 392).",
      "links": [
       {
@@ -5412,7 +5412,7 @@
      "kl": "A"
     },
     {
-     "nr": "259",
+     "nr": "261",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 21. Okt. 2015, in Kraft seit 15. Nov. 2015 (AS <b>2015</b> 4189). Siehe auch die UeB dieser Änd. am Ende dieses Textes.",
      "links": [
       {
@@ -5431,7 +5431,7 @@
      "kl": "G"
     },
     {
-     "nr": "260",
+     "nr": "262",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 1. Febr. 2017, in Kraft seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -5444,7 +5444,7 @@
      "kl": "A"
     },
     {
-     "nr": "261",
+     "nr": "263",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 571). Siehe auch die UeB Änd. 22.9.2023 am Ende dieses Textes.",
      "links": [
       {
@@ -5481,7 +5481,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "262",
+     "nr": "264",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 29. April 2015, in Kraft seit 1. Juni 2015 (AS <b>2015</b> 1359). Siehe auch die UeB der Änd. 29.4.15 und 1.2.2017 am Ende dieses Textes.",
      "links": [
       {
@@ -5494,7 +5494,7 @@
      "kl": "G"
     },
     {
-     "nr": "263",
+     "nr": "265",
      "text": "Aufgehoben durch Ziff. I der V des EDI vom 1. Febr. 2017, mit Wirkung seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -5536,7 +5536,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "264",
+     "nr": "266",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 29. April 2015 (AS <b>2015</b> 1359). Fassung gemäss Ziff. I der V des EDI vom 1. Febr. 2017, in Kraft seit 1. März 2017 (AS <b>2017</b> 633). Siehe auch die UeB dieser Änd. am Ende dieses Textes.",
      "links": [
       {
@@ -5553,7 +5553,7 @@
      "kl": "G"
     },
     {
-     "nr": "265",
+     "nr": "267",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 571).",
      "links": [
       {
@@ -5593,7 +5593,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "266",
+     "nr": "268",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 29. April 2015 (AS <b>2015</b> 1359). Aufgehoben durch Ziff. I der V des EDI vom 22. Sept. 2023, mit Wirkung seit 1. Jan. 2024 (AS <b>2023</b> 571).",
      "links": [
       {
@@ -5634,7 +5634,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "267",
+     "nr": "269",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 29. April 2015, in Kraft seit 1. Juni 2015 (AS <b>2015</b> 1359). Siehe auch die UeB dieser Änd. am Ende dieses Textes.",
      "links": [
       {
@@ -5647,7 +5647,7 @@
      "kl": "G"
     },
     {
-     "nr": "268",
+     "nr": "270",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 1. Febr. 2017, in Kraft seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -5687,7 +5687,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "270",
+     "nr": "272",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 27. Nov. 2000 (AS <b>2000</b> 3088). Aufgehoben durch Ziff. I der V des EDI vom 29. April 2015, mit Wirkung seit 1. Juni 2015 (AS <b>2015</b> 1359).",
      "links": [
       {
@@ -5726,7 +5726,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "271",
+     "nr": "273",
      "text": "Eingefügt durch Ziff. I der V vom 2. Juli 2002 (AS <b>2002</b> 3013). Aufgehoben durch Ziff. I der V des EDI vom 29. April 2015, mit Wirkung seit 1. Juni 2015 (AS <b>2015</b> 1359).",
      "links": [
       {
@@ -5765,7 +5765,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "272",
+     "nr": "274",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 30. Juni 2010 (AS <b>2010</b> 3249). Aufgehoben durch Ziff. I der V des EDI vom 29. April 2015, mit Wirkung seit 1. Juni 2015 (AS <b>2015</b> 1359).",
      "links": [
       {
@@ -5806,7 +5806,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "277",
+     "nr": "279",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 26. April 2006 (AS <b>2006</b> 1757). Fassung gemäss Ziff. I der V des EDI vom 1. Febr. 2017, in Kraft seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -5847,7 +5847,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "278",
+     "nr": "280",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 26. April 2006 (AS <b>2006</b> 1757). Fassung gemäss Ziff. I der V des EDI vom 29. April 2015, in Kraft seit 1. Juni 2015 (AS <b>2015</b> 1359).",
      "links": [
       {
@@ -5864,7 +5864,7 @@
      "kl": "A"
     },
     {
-     "nr": "279",
+     "nr": "281",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 1. Febr. 2017, in Kraft seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -5904,7 +5904,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "280",
+     "nr": "282",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 26. April 2006 (AS <b>2006</b> 1757). Aufgehoben durch Ziff. I der V des EDI vom 24. Sept. 2007, mit Wirkung seit 1. Okt. 2007 (AS<b> 2007</b> 4443 4633).",
      "links": [
       {
@@ -5949,7 +5949,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "281",
+     "nr": "283",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 26. April 2006, in Kraft seit 10. Mai 2006 (AS <b>2006</b> 1757).",
      "links": [
       {
@@ -5962,7 +5962,7 @@
      "kl": "A"
     },
     {
-     "nr": "282",
+     "nr": "284",
      "text": "Aufgehoben durch Ziff. I der V des EDI vom 29. April 2015, mit Wirkung seit 1. Juni 2015 (AS <b>2015</b> 1359).",
      "links": [
       {
@@ -6004,7 +6004,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "283",
+     "nr": "285",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 29. April 2015, in Kraft seit 1. Juni 2015 (AS <b>2015</b> 1359).",
      "links": [
       {
@@ -6017,7 +6017,7 @@
      "kl": "A"
     },
     {
-     "nr": "284",
+     "nr": "286",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 1. Febr. 2017, in Kraft seit 1. März 2017 (AS <b>2017</b> 633).",
      "links": [
       {
@@ -6057,7 +6057,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "287",
+     "nr": "289",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 1. Feb. 2017 (AS <b>2017</b> 633). Fassung gemäss Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 571).",
      "links": [
       {
@@ -6074,7 +6074,7 @@
      "kl": "A"
     },
     {
-     "nr": "288",
+     "nr": "290",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 8. Dez. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 773).",
      "links": [
       {
@@ -6092,7 +6092,7 @@
      "kl": "A"
     },
     {
-     "nr": "286",
+     "nr": "288",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 9. Nov. 2005 (AS <b>2006</b> 23). Fassung gemäss Ziff. I der V des EDI vom 2. Febr. 2011, in Kraft seit 1. März 2011 (AS <b>2011</b> 657).",
      "links": [
       {
@@ -6134,7 +6134,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "289",
+     "nr": "291",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 22. Sept. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 571).",
      "links": [
       {
@@ -6238,7 +6238,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "290",
+     "nr": "292",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 8. Dez. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 773).",
      "links": [
       {
@@ -6862,6 +6862,62 @@
     }
    ]
   },
+  "7_c": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
+    },
+    {
+     "ebene": 2,
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
+    },
+    {
+     "ebene": 3,
+     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim",
+     "eId": "tit_1/chap_2/sec_3"
+    }
+   ],
+   "marginalie": [
+    "Beteiligung der versicherten Person an den Pflegekosten"
+   ],
+   "fussnoten": [
+    {
+     "nr": "83",
+     "text": "Eingefügt durch Ziff. I der V des EDI vom 12. Juni 2026, Abs. 1 Bst. a und c in Kraft seit 1. Aug. 2026 (AS <b>2026</b> 348). Die anderen Bestimmungen treten zu einem späteren Zeitpunkt in Kraft.",
+     "links": [
+      {
+       "label": "AS <b>2026</b> 348",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/348"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    },
+    {
+     "nr": "84",
+     "text": "SR <b>832.10</b>",
+     "links": [
+      {
+       "label": "SR <b>832.10</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/1995/1328_1328_1328",
+       "rs": "832.10"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 118,
+      "l": 152
+     },
+     "kl": "V"
+    }
+   ]
+  },
   "8_a": {
    "gliederung": [
     {
@@ -6885,7 +6941,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "87",
+     "nr": "89",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 3. Juli 1997 (AS <b>1997</b> 2039). Fassung gemäss Ziff. I der V des EDI vom 2. Juli 2019, in Kraft seit 1. Jan. 2020 (AS <b>2019</b> 2145).",
      "links": [
       {
@@ -6902,7 +6958,7 @@
      "kl": "A"
     },
     {
-     "nr": "88",
+     "nr": "90",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 8. Mai 2024, in Kraft seit 1. Juli 2024 (AS <b>2024</b> 221).",
      "links": [
       {
@@ -6920,7 +6976,7 @@
      "kl": "A"
     },
     {
-     "nr": "89",
+     "nr": "91",
      "text": "SR<b> 832.10</b>",
      "links": [
       {
@@ -6939,7 +6995,7 @@
      "kl": "V"
     },
     {
-     "nr": "90",
+     "nr": "92",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 8. Mai 2024, in Kraft seit 1. Juli 2024 (AS <b>2024</b> 221).",
      "links": [
       {
@@ -6981,7 +7037,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "91",
+     "nr": "93",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 2. Juli 2019, in Kraft seit 1. Jan. 2020 (AS <b>2019</b> 2145). Siehe auch die UeB dieser Änd. am Ende dieses Textes.",
      "links": [
       {
@@ -7018,7 +7074,7 @@
    ],
    "fussnoten": [
     {
-     "nr": "92",
+     "nr": "94",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 2. Juli 2019, in Kraft seit 1. Jan. 2020 (AS <b>2019</b> 2145).",
      "links": [
       {
@@ -7031,7 +7087,7 @@
      "kl": "A"
     },
     {
-     "nr": "93",
+     "nr": "95",
      "text": "SR<b> 832.10</b>",
      "links": [
       {
@@ -7073,7 +7129,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "95",
+     "nr": "97",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 18. Sept. 1997 (AS <b>1997</b> 2436). Aufgehoben durch Ziff. I der V des EDI vom 24. Juni 2009, mit Wirkung seit 1. Jan. 2011 (AS <b>2009</b> 3527, 6849 Ziff. I).",
      "links": [
       {
@@ -7116,7 +7172,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "97",
+     "nr": "99",
      "text": "Ursprünglich Art. 9<i>a</i>.",
      "links": [],
      "absatz": null,
@@ -7124,7 +7180,7 @@
      "kl": "A"
     },
     {
-     "nr": "98",
+     "nr": "100",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 23. Juni 2021, in Kraft seit 1. Jan. 2022 (AS <b>2021</b> 440).",
      "links": [
       {
@@ -7142,7 +7198,7 @@
      "kl": "A"
     },
     {
-     "nr": "99",
+     "nr": "101",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 18. Nov. 1998, in Kraft seit 1. Jan. 1999 (AS <b>1999</b> 528).",
      "links": [
       {
@@ -7155,7 +7211,7 @@
      "kl": "A"
     },
     {
-     "nr": "100",
+     "nr": "102",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 29. Nov. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 807).",
      "links": [
       {
@@ -7168,7 +7224,7 @@
      "kl": "A"
     },
     {
-     "nr": "101",
+     "nr": "103",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 6. Dez. 2013, in Kraft seit 1. Jan. 2014 (AS <b>2013</b> 5329).",
      "links": [
       {
@@ -7181,7 +7237,7 @@
      "kl": "A"
     },
     {
-     "nr": "102",
+     "nr": "104",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 18. Nov. 1998, in Kraft seit 1. Jan. 1999 (AS <b>1999</b> 528).",
      "links": [
       {
@@ -7199,7 +7255,7 @@
      "kl": "A"
     },
     {
-     "nr": "103",
+     "nr": "105",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 16. Mai 2014, in Kraft seit 1. Juli 2014 (AS <b>2014</b> 1251).",
      "links": [
       {
@@ -7217,7 +7273,7 @@
      "kl": "A"
     },
     {
-     "nr": "96",
+     "nr": "98",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 13. Dez. 1996, in Kraft seit 1. Jan. 1997 (AS <b>1997</b> 564).",
      "links": [
       {
@@ -7253,7 +7309,7 @@
    "marginalie": [],
    "fussnoten": [
     {
-     "nr": "105",
+     "nr": "107",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 30. Nov. 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004 </b>5401).",
      "links": [
       {
@@ -7272,7 +7328,7 @@
      "kl": "A"
     },
     {
-     "nr": "106",
+     "nr": "108",
      "text": "Fassung gemäss Ziff. I der V des EDI vom 16. Mai 2014, in Kraft seit 1. Juli 2014 (AS <b>2014</b> 1251).",
      "links": [
       {
@@ -7290,7 +7346,7 @@
      "kl": "A"
     },
     {
-     "nr": "104",
+     "nr": "106",
      "text": "Eingefügt durch Ziff. I der V des EDI vom 18. Nov. 1998, in Kraft seit 1. Jan. 1999 (AS <b>1999</b> 528).",
      "links": [
       {

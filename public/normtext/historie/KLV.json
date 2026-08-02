@@ -1,9 +1,9 @@
 {
  "erlass": "KLV",
  "abdeckung": {
-  "fussnoten": 314,
-  "ereignis": 241,
-  "referenz": 72,
+  "fussnoten": 316,
+  "ereignis": 242,
+  "referenz": 73,
   "unparsed": 1
  },
  "artikel": {
@@ -3925,6 +3925,24 @@
     }
    ]
   },
+  "7_c": {
+   "giltSeit": "2026-08-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 348",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/348"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
   "8_a": {
    "giltSeit": "2024-07-01",
    "ereignisse": [
@@ -4202,7 +4220,7 @@
  "residuum": [
   {
    "token": "12_c",
-   "nr": "142",
+   "nr": "144",
    "roh": "Die Checklisten sind einsehbar unter: www.bag.admin.ch/ref"
   }
  ]

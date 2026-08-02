@@ -1,8 +1,8 @@
 {
  "erlass": "KVV",
  "abdeckung": {
-  "fussnoten": 513,
-  "ereignis": 439,
+  "fussnoten": 514,
+  "ereignis": 440,
   "referenz": 74,
   "unparsed": 0
  },
@@ -1172,7 +1172,7 @@
    ]
   },
   "33": {
-   "giltSeit": "2016-01-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -1225,6 +1225,19 @@
      ],
      "absatz": null,
      "item": "i"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 347",
+       "url": ""
+      }
+     ],
+     "absatz": null,
+     "item": "j"
     }
    ]
   },

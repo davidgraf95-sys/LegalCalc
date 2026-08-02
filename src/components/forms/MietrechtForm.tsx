@@ -254,7 +254,12 @@ export function MietrechtForm() {
       {/* Form-/Nichtigkeitsprüfung */}
       {istRaum && (
         <div className="space-y-2">
-          <GruppenTitel>Form (Art. 266l–266o OR)</GruppenTitel>
+          {/* LM-101: Buchstabenzusätze (266l/266o) dürfen die uppercase-Overline
+              nicht durchlaufen — sonst wird «l»→«L»/«o»→«O» im Mono-Font zur
+              Ziffer-0-Verwechslung und das Zitat sinnentstellt. Norm-Teil bleibt
+              per normal-case in Originalschreibweise (Muster wie
+              VorlageKlageOrdentlich.tsx:305). */}
+          <GruppenTitel>Form <span className="normal-case">(Art. 266l–266o OR)</span></GruppenTitel>
           {partei === 'vermieter' && (
             <Checkbox checked={formular} onChange={setFormular} label="Amtlich genehmigtes Kündigungsformular verwendet (Art. 266l Abs. 2 OR)" />
           )}

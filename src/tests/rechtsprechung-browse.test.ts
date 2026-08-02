@@ -27,6 +27,28 @@ describe('normLabel', () => {
     expect(normLabel('OR-336')).toBe('OR Art. 336');
     expect(normLabel('BGG_90')).toBe('BGG Art. 90');
   });
+  // LM-102/LM-106: die normKeys sind build-time versal (Schlüssel, kein
+  // Anzeigetext). Die Anzeige führt die amtliche Schreibweise aus dem
+  // ERLASS_REGISTER (§5/§7) — inkl. Umlaut, der beim Key verlorenging.
+  it('stellt die amtliche Schreibweise aus dem Register her', () => {
+    expect(normLabel('SCHKG')).toBe('SchKG');
+    expect(normLabel('STGB')).toBe('StGB');
+    expect(normLabel('STPO')).toBe('StPO');
+    expect(normLabel('ASYLG')).toBe('AsylG');
+    expect(normLabel('VWVG')).toBe('VwVG');
+  });
+  it('holt den Umlaut des amtlichen Kürzels zurück (LUGUE → LugÜ)', () => {
+    expect(normLabel('LUGUE')).toBe('LugÜ');
+  });
+  it('nimmt den Register-Eintrag vor der Artikel-Zerlegung (BVV_2 ist ein Erlass, kein Art. 2)', () => {
+    expect(normLabel('BVV_2')).toBe('BVV 2');
+  });
+  it('mappt auch den Erlass-Teil eines Artikel-Keys', () => {
+    expect(normLabel('SCHKG-88')).toBe('SchKG Art. 88');
+  });
+  it('zeigt einen unbekannten Key unverändert (§8: keine Schreibweise erfinden)', () => {
+    expect(normLabel('GIBTSNICHT')).toBe('GIBTSNICHT');
+  });
 });
 
 describe('themaText / synthThema / istSynth', () => {

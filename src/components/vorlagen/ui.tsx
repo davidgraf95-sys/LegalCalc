@@ -89,7 +89,13 @@ export function NormLink({ artikel, title, bemerkung }: { artikel: string; title
       title={istLink ? (title ?? `${artikel} auf Fedlex öffnen`) : title}
       anzeige={
         <>
-          {artikel}
+          {/* LM-103: das Zitat selbst («Art. 60 Abs. 1bis OR») darf am
+              Zeilenende nie mitten im Erlasskürzel brechen — whitespace-nowrap
+              NUR auf den Zitat-Teil, nicht auf eine allfällige `bemerkung`
+              (die kann lang sein und soll normal umbrechen dürfen; einziger
+              zentraler Fix-Ort, da NormLink von allen betroffenen Rechnern
+              geteilt wird, §5). */}
+          <span className="whitespace-nowrap">{artikel}</span>
           {bemerkung && <span className="text-ink-600"> · {bemerkung}</span>}
         </>
       }
