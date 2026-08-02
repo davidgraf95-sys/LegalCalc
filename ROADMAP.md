@@ -675,8 +675,8 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   **Reihenfolge-Freigabe (`@queue`) bleibt Davids Entscheid** — darum bewusst NICHT in der Queue.
   - [x] **B1 · Chips, Badges und Normzitate (K-05 + K-10)** — 16 Befunde (Blocker 3 · Hoch 3). §2.
     <!-- @meta id: W2·17-UI-BEFUNDE-B1 · status: done · of: ja · blocker: null · dep: [] · kollision: [src/components/NormText.tsx, src/components/NormPopover.tsx, src/components/verzahnung, src/components/rechtsprechung, src/pages/gesetz-leser] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
-  - [ ] **B2 · Verlauf und Zustand in der URL (K-20)** — 11 Befunde (Blocker 2 · Hoch 5). §3.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B2 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B1] · kollision: [src/components/layout, src/pages/gesetz-leser, src/pages/EntscheidLeser.tsx, src/pages/Rechtsprechung.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
+  - [~] **B2 · Verlauf und Zustand in der URL (K-20)** — 11 Befunde (Blocker 2 · Hoch 5). §3.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B2 · status: wip · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B1] · kollision: [src/components/layout, src/pages/gesetz-leser, src/pages/EntscheidLeser.tsx, src/pages/Rechtsprechung.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B3 · Klebende Leisten (K-01)** — 7 Befunde (Blocker 2 · Hoch 4). §4.
     <!-- @meta id: W2·17-UI-BEFUNDE-B3 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B2] · kollision: [src/components/layout, src/index.css] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). §5.
