@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-08-02",
   "eintraege": [
     {
       "id": "bund/USG/art_1",
@@ -18,10 +18,10 @@
           "text": "Im Sinne der Vorsorge sind Einwirkungen, die schädlich oder lästig werden könnten, frühzeitig zu begrenzen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_1",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "efdd3befffa66ad717d6c649876020650ff451afb5d15b3e00b7a3165b01dd1f"
     },
     {
@@ -37,10 +37,10 @@
           "text": "Wer Massnahmen nach diesem Gesetz verursacht, trägt die Kosten dafür."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_2",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "eb078958ede9b447224550c81db2a7cc75f565064d7819a29069f85cdf52650c"
     },
     {
@@ -60,10 +60,10 @@
           "text": "Für radioaktive Stoffe und ionisierende Strahlen gelten die Strahlenschutz- und die Atomgesetzgebung."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_3",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "cd8b16574f0b5385bf2fee4415e4fb248a2b8f89505f3a9447dd650f85e7a972"
     },
     {
@@ -83,10 +83,10 @@
           "text": "Vorschriften über den Umgang mit Stoffen und Organismen, die sich auf andere Bundesgesetze stützen, müssen den Grundsätzen über den Umgang mit Stoffen (Art. 26–28) und Organismen (Art. 29a–29h) entsprechen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_4",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "c4367925ff23f5d962579a252ff17d35ecbb7dcc4e6e2853c74c4e13d8765d1c"
     },
     {
@@ -102,10 +102,10 @@
           "text": "Soweit die Gesamtverteidigung es erfordert, regelt der Bundesrat durch Verordnung die Ausnahmen von Bestimmungen dieses Gesetzes."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_5",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "49580ae85b4ad7391ca0a2ab012fb7d1668408e9022dd8ee4a5ce65bcad988c2"
     },
     {
@@ -121,10 +121,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_6",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -200,10 +200,10 @@
           "text": "Erneuerbare Brennstoffe sind feste, flüssige oder gasförmige Brennstoffe, die aus Biomasse oder unter Verwendung anderer erneuerbarer Energieträger hergestellt werden."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_7",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "bcfe2b86c2f5c51c3f102aaf1f83b42c6a39bd593d30ba39bd106b865d53eeaa"
     },
     {
@@ -219,10 +219,10 @@
           "text": "Einwirkungen werden sowohl einzeln als auch gesamthaft und nach ihrem Zusammenwirken beurteilt."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_8",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "10009b947cb2efb47716b88e77acfb694db8c2cf322279b8163199ed03d63960"
     },
     {
@@ -238,10 +238,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_9",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -269,10 +269,10 @@
           "text": "Der Bundesrat kann durch Verordnung bestimmte Produktionsverfahren oder Lagerhaltungen verbieten, wenn die Bevölkerung und die natürliche Umwelt auf keine andere Weise ausreichend geschützt werden können."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_10",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "029d6d93f0f0e457e3e5af9cc7abb298c3e149629c9f91a0e4fe6b79577ca6fe"
     },
     {
@@ -296,10 +296,10 @@
           "text": "Der Bundesrat bezeichnet die Anlagetypen, die der Umweltverträglichkeitsprüfung unterstehen; er kann Schwellenwerte festlegen, ab denen die Prüfung durchzuführen ist. Er überprüft die Anlagetypen und die Schwellenwerte periodisch und passt sie gegebenenfalls an."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_10_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1481e073ea323af28c3625fcaa2f80f6cfe7c90daa27f13f3bbdb1e6cebd3d94"
     },
     {
@@ -341,10 +341,10 @@
           "text": "Die zuständige Behörde kann Auskünfte oder ergänzende Abklärungen verlangen. Sie kann Gutachten erstellen lassen; vorher gibt sie den Interessierten Gelegenheit zur Stellungnahme."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_10_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "c6167742bc5cf87f28ee985ae2d680940a035b0737accada7707352a1aff0ce7"
     },
     {
@@ -364,10 +364,10 @@
           "text": "Für die Beurteilung von Raffinerien, Aluminiumhütten, thermischen Kraftwerken oder grossen Kühltürmen hört die zuständige Behörde das Bundesamt für Umwelt (Bundesamt) an. Der Bundesrat kann die Pflicht zur Anhörung auf weitere Anlagen ausdehnen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_10_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "33dd6ab5d873fd1f430c2121063c2e21237f3dbdd5b4ad1639b6bef320a405b0"
     },
     {
@@ -387,10 +387,10 @@
           "text": "Das Fabrikations- und Geschäftsgeheimnis bleibt in jedem Fall gewahrt."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_10_d",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "e69f2c4f02367672368f6fafb4fe2a46ca83140d1ff5cd56d4e3cfca3736742e"
     },
     {
@@ -443,10 +443,10 @@
           "text": "Die Umweltinformationen sind wenn möglich als offene digitale Datensätze zur Verfügung zu stellen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_10_e",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "971471899b8638717d0068b7d6444406245c7a98086d58e4fb46aa88d0b12e54"
     },
     {
@@ -462,10 +462,10 @@
           "text": "Der Bundesrat beurteilt mindestens alle vier Jahre den Zustand der Umwelt in der Schweiz und erstattet der Bundesversammlung über die Ergebnisse Bericht."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_10_f",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "44b854407fbda02ddecd6001771ab72f54e8cec0084ee41748ef1c126a05fc58"
     },
     {
@@ -493,10 +493,10 @@
           "text": "Bei Behörden der Kantone richtet sich der Anspruch nach dem kantonalen Recht. Soweit die Kantone noch keine Bestimmungen über den Zugang zu Dokumenten erlassen haben, wenden sie die Bestimmungen dieses Gesetzes und des BGÖ sinngemäss an."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_10_g",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "fa3ab24c0bf5edc1531d80835ddd694a0c990f0aed11c11fd7f65a70877e25df"
     },
     {
@@ -520,10 +520,10 @@
           "text": "Der Bund und die Kantone prüfen regelmässig, ob das von ihnen erlassene Recht Initiativen der Wirtschaft zur Ressourcenschonung und Stärkung der Kreislaufwirtschaft behindert."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_10_h",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "d8d9c3ef03af04a8ffb24eef391c5eae7747010d9faaa0f7b8b4c4f1902cf71f"
     },
     {
@@ -547,10 +547,10 @@
           "text": "Die Emissionsbegrenzungen werden verschärft, wenn feststeht oder zu erwarten ist, dass die Einwirkungen unter Berücksichtigung der bestehenden Umweltbelastung schädlich oder lästig werden."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_11",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "345f2139d562c4149c68dc59f6dc3c076da3925b3a85a44e2807250f795ce0e0"
     },
     {
@@ -592,10 +592,10 @@
           "text": "Begrenzungen werden durch Verordnungen oder, soweit diese nichts vorsehen, durch unmittelbar auf dieses Gesetz abgestützte Verfügungen vorgeschrieben."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_12",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "cc722dfd46ef6efc1f0743a036485f33812fe45238301af3cecc0f9e976134bf"
     },
     {
@@ -615,10 +615,10 @@
           "text": "Er berücksichtigt dabei auch die Wirkungen der Immissionen auf Personengruppen mit erhöhter Empfindlichkeit, wie Kinder, Kranke, Betagte und Schwangere."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_13",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "99aac96345528133fed44c366a7c38e8be36385850ef19b344065e198adc6d14"
     },
     {
@@ -652,10 +652,10 @@
           ]
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_14",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b3a46cf6ed9c4dcba07286081aa33b22c7d087ca9792c386e02a9ed7b87c80d4"
     },
     {
@@ -671,10 +671,10 @@
           "text": "Die Immissionsgrenzwerte für Lärm und Erschütterungen sind so festzulegen, dass nach dem Stand der Wissenschaft oder der Erfahrung Immissionen unterhalb dieser Werte die Bevölkerung in ihrem Wohlbefinden nicht erheblich stören."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_15",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "85605fd99de9f7f1467763cbeb4094860abd1fa104b5c298c5a059bf130fdec3"
     },
     {
@@ -702,10 +702,10 @@
           "text": "In dringenden Fällen ordnen die Behörden die Sanierung vorsorglich an. Notfalls können sie die Stilllegung einer Anlage verfügen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_16",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b081c0d76dc3c4782f40aba3f5259e710e35be497364731faaf2159786b1ac00"
     },
     {
@@ -725,10 +725,10 @@
           "text": "Die Immissionsgrenzwerte für Luftverunreinigungen sowie der Alarmwert für Lärmimmissionen dürfen jedoch nicht überschritten werden."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_17",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "cdea2d0b4e9f55ea04279c92cddfcdaefb6561424b74edfd9ebe0c33ec89eb02"
     },
     {
@@ -748,10 +748,10 @@
           "text": "Erleichterungen nach Artikel 17 können eingeschränkt oder aufgehoben werden."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_18",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "8d17b89798c60fdb3da87f5791ed80023e0b10d5cb0a4fb35712bc33f8e7b4a9"
     },
     {
@@ -767,10 +767,10 @@
           "text": "Zur Beurteilung der Dringlichkeit von Sanierungen (Art. 16 Abs. 2 und Art. 20) kann der Bundesrat für Lärmimmissionen Alarmwerte festlegen, die über den Immissionsgrenzwerten (Art. 15) liegen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_19",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "6699eb6a06a0dd8b75b8364500f16815790ee317ba58273af1f90ec9985c199c"
     },
     {
@@ -800,10 +800,10 @@
           ]
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_20",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "d271420bcd864044f7c97c42a1b32fe3ee25aac11088ada3905621baf80d29c5"
     },
     {
@@ -823,10 +823,10 @@
           "text": "Der Bundesrat bestimmt durch Verordnung den Mindestschutz."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_21",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "6bed10bbe61fe036ef1043ba034fd6e5dbb8d17971e644caaeb07385d4beb330"
     },
     {
@@ -889,10 +889,10 @@
           "text": "Die Pflicht der Inhaber von Anlagen zur Begrenzung der Emissionen bleibt auch bei Erteilung einer Baubewilligung nach den Absätzen 2 und 3 bestehen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_22",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "9aec25494020d845bbcf090e9f59502f6f07367206c2bed67519965c525c916e"
     },
     {
@@ -908,10 +908,10 @@
           "text": "Für die Planung neuer Bauzonen und für den Schutz vor neuen lärmigen ortsfesten Anlagen legt der Bundesrat Planungswerte für Lärm fest. Diese Planungswerte liegen unter den Immissionsgrenzwerten."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_23",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "220d01b505059ef82830414cb5f6c330b66005553bc5da96e92cf3a811895789"
     },
     {
@@ -949,10 +949,10 @@
           ]
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_24",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "60b4d47e830f14969b253ad81ebb650d7c14ab9347acb3b3115a49773250bb38"
     },
     {
@@ -976,10 +976,10 @@
           "text": "Können bei der Errichtung von Strassen, Flughäfen, Eisenbahnanlagen oder anderen öffentlichen oder konzessionierten ortsfesten Anlagen durch Massnahmen bei der Quelle die Immissionsgrenzwerte nicht eingehalten werden, müssen auf Kosten des Eigentümers der Anlage die vom Lärm betroffenen Gebäude durch Schallschutzfenster oder ähnliche bauliche Massnahmen geschützt werden."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_25",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "13520c140a61425a0be7a6fa4627c7fb35839d945588bb0c06bf8221ec1c3ea4"
     },
     {
@@ -1003,10 +1003,10 @@
           "text": "Der Bundesrat erlässt Vorschriften über Art, Umfang und Überprüfung der Selbstkontrolle."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_26",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "da5910dc4f5846e83f40e3b20322452353fe806253138a44ab0778c77538a10b"
     },
     {
@@ -1036,10 +1036,10 @@
           "text": "Der Bundesrat erlässt Vorschriften über Art, Inhalt und Umfang der Information der Abnehmer."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_27",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "fc8f9fece98870f45a4272b3e79fbee8c788fc636da4b7bba964e878be73de3c"
     },
     {
@@ -1059,10 +1059,10 @@
           "text": "Anweisungen von Herstellern oder Importeuren sind einzuhalten."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_28",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "d8024977738a59a0a6c7785d54fdce60b59820e271934439dcaf8e86e32ccd32"
     },
     {
@@ -1092,10 +1092,10 @@
           ]
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_29",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "bc6f2331bcf791640c4307167d430a0157a5e6ed92ad66ec962e1549aae487e2"
     },
     {
@@ -1129,10 +1129,10 @@
           "text": "Vorschriften in anderen Bundesgesetzen, die den Schutz der Gesundheit des Menschen vor unmittelbaren Gefährdungen durch Organismen bezwecken, bleiben vorbehalten."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_29_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "59095d44249153443c6d92ccaad8951966c5e2c74a7bcf20d353289052ed7d23"
     },
     {
@@ -1156,10 +1156,10 @@
           "text": "Für bestimmte pathogene Organismen und Tätigkeiten kann er Vereinfachungen der Melde- oder Bewilligungspflicht oder Ausnahmen davon vorsehen, wenn nach dem Stand der Wissenschaft oder nach der Erfahrung eine Verletzung der Grundsätze von Artikel 29a ausgeschlossen ist."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_29_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "9885947c306cd79fe9952b36403e2ac1692dfb21cb0449548f8130848e2e5f3c"
     },
     {
@@ -1197,10 +1197,10 @@
           "text": "Für bestimmte pathogene Organismen kann er Vereinfachungen der Bewilligungspflicht oder Ausnahmen davon vorsehen, wenn nach dem Stand der Wissenschaft oder nach der Erfahrung eine Verletzung der Grundsätze von Artikel 29a ausgeschlossen ist."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_29_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "98b9a70e3b86c2befe550053d55306343fa7c50ab1a17351cdeb8d8246a27c1e"
     },
     {
@@ -1228,10 +1228,10 @@
           "text": "Der Bundesrat bestimmt die Anforderungen und das Verfahren und regelt die Information der Öffentlichkeit. Für bestimmte pathogene Organismen kann er Vereinfachungen der Bewilligungspflicht oder Ausnahmen davon vorsehen, wenn nach dem Stand der Wissenschaft oder nach der Erfahrung eine Verletzung der Grundsätze von Artikel 29a ausgeschlossen ist."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_29_d",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "45d20f713b1e4ef37846e257f382acaa3c9906a38aaef6ce1037bce97313e10e"
     },
     {
@@ -1251,10 +1251,10 @@
           "text": "Wer nach den Vorschriften des Bundesgesetzes vom 20. Dezember 1968 über das Verwaltungsverfahren Partei ist, kann während der Auflagefrist bei der Bewilligungsbehörde Einsprache erheben. Wer keine Einsprache erhebt, ist vom weiteren Verfahren ausgeschlossen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_29_d_bis",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "96f12797c882d06bf353d550eb3037f06f92f1dc27a2091bc2e6ae1e6dcfa79d"
     },
     {
@@ -1284,10 +1284,10 @@
           "text": "Anweisungen von Herstellern und Importeuren sind einzuhalten."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_29_e",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "166433cf582b863da9cc132ca96cfeb1e22495279f9bc72796934e82f9e07f50"
     },
     {
@@ -1333,10 +1333,10 @@
           ]
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_29_f",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "d53147fa038ce4905a673e3ec22f19748d897f6b6845074d3b9ef9d049235545"
     },
     {
@@ -1352,10 +1352,10 @@
           "text": "Die Eidgenössische Fachkommission für die biologische Sicherheit und die Eidgenössische Ethikkommission für die Biotechnologie im Ausserhumanbereich (Art. 22 und 23 Gentechnikgesetz vom 21. März 2003) beraten den Bundesrat beim Erlass von Vorschriften und beim Vollzug der Bestimmungen über Organismen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_29_g",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "eccd5643a9af62dd0f85d3e1f0b912ba493fb589d7451cb6eecafd5196f2cf8b"
     },
     {
@@ -1371,10 +1371,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_29_h",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1398,10 +1398,10 @@
           "text": "Abfälle müssen umweltverträglich und, soweit es möglich und sinnvoll ist, im Inland entsorgt werden."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_30",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "8503f5776409d609e76b041120fa34b76394cd601958b76215cc1059f0c1acf3"
     },
     {
@@ -1431,10 +1431,10 @@
           ]
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_30_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "7dd7112492775b05181a34c365d203b833a823ea277c300ac68fe08e729d44d8"
     },
     {
@@ -1478,10 +1478,10 @@
           ]
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_30_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "a18fb03c5bc013bf71c391207fa81e6806fd26bfbd465fc155f02f21534c16c2"
     },
     {
@@ -1505,10 +1505,10 @@
           "text": "Der Bundesrat kann für bestimmte Abfälle weitere Vorschriften über die Behandlung erlassen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_30_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "3618b150b6534806cc9cafdb802579fede5d12de2d3e86fa5249f3e04c5863bb"
     },
     {
@@ -1570,10 +1570,10 @@
           "text": "Der Bundesrat kann die Verwendung von Materialien und Produkten für bestimmte Zwecke einschränken, wenn dadurch der Absatz von entsprechenden Produkten aus der Abfallverwertung gefördert wird und dies ohne wesentliche Qualitätseinbusse und Mehrkosten möglich ist."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_30_d",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "9e4ab92d8c600cd07c764bf4484a5705695d9c1af0348c083f1cca0b385fc02a"
     },
     {
@@ -1593,10 +1593,10 @@
           "text": "Wer eine Deponie errichten oder betreiben will, braucht eine Bewilligung des Kantons; sie wird ihm nur erteilt, wenn er nachweist, dass die Deponie nötig ist. In der Bewilligung werden die zur Ablagerung zugelassenen Abfälle umschrieben."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_30_e",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "e6ae303a5467fdc5783de702b8fa50fa146a10d9e0a2ff029bea5e15a750182e"
     },
     {
@@ -1642,10 +1642,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_30_f",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1aba6e63d4a4f72b3f616d54adc2b73f736971a93f189fb34b73d7a958432399"
     },
     {
@@ -1665,10 +1665,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_30_g",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1741266a2feb2d0c7b51c346f05858651796a7038ea38e31d5fda7ca37eef949"
     },
     {
@@ -1688,10 +1688,10 @@
           "text": "Die Behörde kann den Betrieb von Abfallanlagen befristen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_30_h",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "f71bf72146158966aca1b11580f9f8379206eb9b2b3916dca6d83c82f4fde433"
     },
     {
@@ -1711,10 +1711,10 @@
           "text": "Sie übermitteln ihre Abfallplanung dem Bund."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_31",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "88e013cd5dc99f296fadff92daf004f4bfd64de7a3b2ed46cc295fda440ea812"
     },
     {
@@ -1748,10 +1748,10 @@
           ]
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_31_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "10c72fbd84fef2e0278dc875a2a7897fa54c6903208a56e8b4724f3596e6e4f6"
     },
     {
@@ -1773,13 +1773,21 @@
         {
           "absatz": "3",
           "text": "Der Inhaber muss die Abfälle den von den Kantonen vorgesehenen Sammlungen oder Sammelstellen übergeben."
+        },
+        {
+          "absatz": null,
+          "text": "4-6 …"
+        },
+        {
+          "absatz": "7",
+          "text": "Selbst kleine Mengen von Abfällen, wie Verpackungen oder Zigarettenstummel, dürfen nicht ausserhalb der vorgesehenen Sammlungen weggeworfen oder liegengelassen werden. Die Kantone können bei bewilligungspflichtigen Veranstaltungen Ausnahmen von diesem Verbot vorsehen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_31_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
-      "sha": "9c9358827e5715104dd480e74ddccb93e4917ac324f2ad8f456138b37be341a3"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "a1947a62e2fffa2ab63fcb93d54dc1563eb6a8780356cfbf2c84d1ae9368eea6"
     },
     {
       "id": "bund/USG/art_31_c",
@@ -1802,10 +1810,10 @@
           "text": "Erfordert die Entsorgung dieser Abfälle gesamtschweizerisch nur wenige Einzugsgebiete, so kann der Bundesrat diese festlegen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_31_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "9dba7a3e4e12227fb8682fc7060e035147e884d4c1c3c1a46e23a9ec39b15466"
     },
     {
@@ -1825,10 +1833,10 @@
           "text": "Kann der Inhaber nicht ermittelt werden oder kann er die Pflicht nach Absatz 1 wegen Zahlungsunfähigkeit nicht erfüllen, so tragen die Kantone die Kosten der Entsorgung."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "50af99f02b44dd93b98dcf88abca2a9b5165084c4ebf1bd8f471f11ea212acf7"
     },
     {
@@ -1878,10 +1886,10 @@
           "text": "Die Grundlagen für die Berechnung der Abgaben sind öffentlich zugänglich."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "ad45c36d2042b688f507a8fcc71e2aeaf6ad5f97172329b15f30f096de6e0878"
     },
     {
@@ -1917,10 +1925,10 @@
           "text": "Die Einfuhr der gebührenbelasteten Produkte nach Absatz 1 ist von der vereinfachten Warenanmeldung nach der Zollgesetzgebung ausgeschlossen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_a_bis",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "60badc974a87ff92d84e33888af6d2670c6194e11fb34f523c676ead90831d46"
     },
     {
@@ -1936,10 +1944,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_a_ter",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1955,10 +1963,10 @@
           "text": "Der Bundesrat ergreift Massnahmen, namentlich die Pflicht zur Bezeichnung einer Vertretung im Inland, um sicherzustellen, dass die ausländischen Online-Versandhandelsunternehmen ihre Abgabepflichten erfüllen. Er berücksichtigt dabei die internationalen Verpflichtungen der Schweiz."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_a_quater",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "e6410d97186c9cee1173c5c88a73eeef4aa2e0083a249b34775e87903c60dd86"
     },
     {
@@ -1974,10 +1982,10 @@
           "text": "Wird als Massnahme nach Artikel 32aquater die Pflicht zur Bezeichnung einer Vertretung im Inland bestimmt, so haftet diese für die Gebühr nach Artikel 32abis beziehungsweise für den Beitrag nach Artikel 32ater solidarisch."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_a_quinquies",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "29a7eddc778263b96661b18746245b78e8a2c8451fbfe4f5bccdf448d82407d4"
     },
     {
@@ -2001,10 +2009,10 @@
           "text": "Als Betreiber elektronischer Plattformen gilt, wer eine Plattform nach Artikel 20a des Mehrwertsteuergesetzes vom 12. Juni 2009 betreibt."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_a_sexies",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "d899633ce86a44e876133f78f44d33a6743cf2ab8621c915b194d87ca3a02ca1"
     },
     {
@@ -2062,10 +2070,10 @@
           "text": "Die Massnahmen nach Absatz 2 Buchstaben b und e werden vom BAZG vollzogen, jene nach Absatz 2 Buchstaben a, c und d vom Bundesamt. Zwecks Vollzugs der Massnahmen nach Absatz 2 Buchstaben c und d übergibt das BAZG die an der Grenze vorläufig sichergestellten Produkte dem Bundesamt."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_a_septies",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "2ede7c4f7531e256f561ab297881ec2c62a87dd1d21b4fdd6680b8c366db9eb1"
     },
     {
@@ -2081,10 +2089,10 @@
           "text": "Der Bundesrat berücksichtigt bei der Umsetzung der Artikel 32abis–32asepties die Regelungen der wichtigsten Handelspartner der Schweiz."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_a_octies",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "ca0062fd7f62f84c66003cc2f08ea0f2b6a71c33214ff2ebebb4222fe26810dd"
     },
     {
@@ -2122,10 +2130,10 @@
           ]
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "27df32354f049b8c9bbf3c713c4d664344ce09e97a45cd2b6d86b486200e6d4b"
     },
     {
@@ -2163,10 +2171,10 @@
           "text": "Ansprüche nach Absatz 1 können längstens bis zum 1. November 2021 geltend gemacht werden."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_b_bis",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "5df61ad0535bef55f355cffc7b9b461308cf4a673f7c7898cc6137ad89ad7aed"
     },
     {
@@ -2232,10 +2240,10 @@
           "text": "Der Bundesrat kann für Standorte gemäss Absatz 1 Vorschriften über die Sanierungsbedürftigkeit sowie über die Ziele und die Dringlichkeit von Sanierungen erlassen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "c3ab9941859d1503ac0381d0a8db69a1d79a26f7484b41504461d54efc3d69b8"
     },
     {
@@ -2267,10 +2275,10 @@
           "text": "Ergibt die Untersuchung eines im Kataster (Art. 32c Abs. 2) eingetragenen oder für den Eintrag vorgesehenen Standortes, dass dieser nicht belastet ist, so trägt das zuständige Gemeinwesen die Kosten für die notwendigen Untersuchungsmassnahmen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_d",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "ecf395776184d137ba8037fa026124a42b4ebcf6b6767004b7690404da2fdc62"
     },
     {
@@ -2312,10 +2320,10 @@
           "text": "Die kantonale Behörde kann im Grundbuch auf dem betroffenen Grundstück die Eintragung im Kataster anmerken lassen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_d_bis",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "fcb3c0e313f5fc58c064d1d77c93c06ba05224c479bf297ca9be9a483db7edf6"
     },
     {
@@ -2387,10 +2395,10 @@
           "text": "3–6 …"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_e",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "bd87854eab6f7c6dfc19cb00c8aaa34b65cb03ff86cbd62a9c43b40f85cd2284"
     },
     {
@@ -2524,10 +2532,10 @@
           ]
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_e_bis",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "5784da5534bf170105e12c3161a780b9b38e140fee6db76346c25c94594228b7"
     },
     {
@@ -2621,10 +2629,10 @@
           "text": "Das kantonale Recht kann zur Finanzierung der Untersuchung, Überwachung und Sanierung von belasteten Standorten eigene Abgaben vorsehen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_32_e_ter",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "daeab48b4d8c5a3c6bd9dd6a200109ee8566922ad497483f36f1e9cdd62d4bd7"
     },
     {
@@ -2644,10 +2652,10 @@
           "text": "Der Boden darf nur so weit physikalisch belastet werden, dass seine Fruchtbarkeit nicht nachhaltig beeinträchtigt wird; dies gilt nicht für die bauliche Nutzung des Bodens. Der Bundesrat kann über Massnahmen gegen physikalische Belastungen wie die Erosion oder die Verdichtung Vorschriften oder Empfehlungen erlassen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_33",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "6d200211da16a51804c9d5dbb06009f2434ad4474d0b4ecd46d886d35872e500"
     },
     {
@@ -2671,10 +2679,10 @@
           "text": "Soll der Boden gartenbaulich, land- oder waldwirtschaftlich genutzt werden und ist eine standortübliche Bewirtschaftung ohne Gefährdung von Menschen, Tieren oder Pflanzen nicht möglich, so ordnen die Kantone Massnahmen an, mit denen die Bodenbelastung mindestens so weit vermindert wird, dass eine ungefährliche Bewirtschaftung möglich ist."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_34",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1e6e429a5a17c2fe803a67be478cec49da92a52e58b879d2a4cc99b45e469857"
     },
     {
@@ -2698,10 +2706,10 @@
           "text": "Die Sanierungswerte geben die Belastung an, bei deren Überschreitung nach dem Stand der Wissenschaft oder der Erfahrung bestimmte Nutzungen ohne Gefährdung von Menschen, Tieren oder Pflanzen nicht möglich sind."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_35",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "790f067c679d2677263e3738cf169aa06d879d5b3cf7214cd4272838275a3730"
     },
     {
@@ -2781,10 +2789,10 @@
           "text": "Der Ertrag der Abgabe wird einschliesslich Zinsen nach Abzug der Vollzugskosten gleichmässig an die Bevölkerung verteilt. Der Bundesrat regelt Art und Verfahren der Verteilung. Er kann die Kantone, öffentlichrechtliche Körperschaften oder Private mit der Verteilung beauftragen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_35_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "485b222f1d5fe6720176e656d2357c3e23906ba70a257e73f849fecfb5479863"
     },
     {
@@ -2800,10 +2808,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_35_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -2819,10 +2827,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_35_b_bis",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -2854,10 +2862,10 @@
           "text": "Wer Stoffe oder Organismen, die der Abgabe unterworfen sind, im Inland herstellt oder erzeugt, muss diese deklarieren."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_35_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1c21a52ba8ceec1d1114f1a17277034ea713ed6d0c39fc68dfe83970e283f76c"
     },
     {
@@ -2903,10 +2911,10 @@
           "text": "Er kann weitere Ausnahmen vorsehen, sofern dies aufgrund der Marktgegebenheiten erforderlich ist."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_35_d",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "63dbd5bf63be7846b90d6172b7b09dd6d528664ef4db6f0bac997d761587d7e0"
     },
     {
@@ -2930,10 +2938,10 @@
           "text": "Er kann im Einklang mit internationalen Standards Anforderungen an das Inverkehrbringen von weiteren Rohstoffen und Produkten stellen oder deren Inverkehrbringen verbieten, wenn der Anbau, der Abbau oder die Herstellung die Umwelt erheblich belastet oder die nachhaltige Nutzung der natürlichen Ressourcen erheblich gefährdet."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_35_e",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "099b06fefc624108ab20177a05502599da9104a8e0f7c88076f3405dcecfe21a"
     },
     {
@@ -2975,10 +2983,10 @@
           "text": "Er kann vorsehen, dass in Fällen der Verletzung der Absätze 1 und 2 und von Artikel 35e Holz oder Holzerzeugnisse sowie weitere vom ihm nach Artikel 35e Absatz 3 bezeichnete Rohstoffe und Produkte zurückgesandt, beschlagnahmt oder eingezogen werden. Für Holz oder Holzerzeugnisse kann er zudem vorsehen, dass in besonders schwerwiegenden Fällen ein Verbot der Vermarktung von Holz oder Holzerzeugnissen ausgesprochen wird."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_35_f",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "3492a71e386baae53e502b97c2a4d65164f2f64e1a677b97d1c0d7f92f544317"
     },
     {
@@ -2998,10 +3006,10 @@
           "text": "Jede Person, die Holz oder Holzerzeugnisse an den Konsumenten abgibt, muss die Holzart und die Herkunft des Holzes deklarieren. Der Bundesrat bestimmt das Holz und die Holzerzeugnisse, für die diese Deklarationspflicht gilt."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_35_g",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "f492f94343131548bb332b77e68541e88ca810b86629aa84f11e1758c25fbba1"
     },
     {
@@ -3021,10 +3029,10 @@
           "text": "Die inländischen Behörden können Personendaten, einschliesslich besonders schützenswerter Personendaten über administrative oder strafrechtliche Sanktionen, ausländischen Behörden und internationalen Institutionen für den Vollzug der Bestimmungen der Europäischen Union über das Inverkehrbringen von Holz und Holzerzeugnissen bekannt geben."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_35_h",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "7adf6027c50ecfcba4dbfadb80a275090f565d41d956400afbeec5ca7fee7794"
     },
     {
@@ -3062,10 +3070,10 @@
           "text": "Der Bundesrat berücksichtigt bei der Umsetzung von Absatz 1 die Regelungen der wichtigsten Handelspartner der Schweiz."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_35_i",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "481cb158b4841fbff527606ba0f6aafdbd8076ba7cbb6a66fe37ac5d37e0c720"
     },
     {
@@ -3103,10 +3111,10 @@
           "text": "Der Bund nimmt bei der Planung, der Errichtung, dem Betrieb, der Erneuerung und dem Rückbau eigener Bauwerke eine Vorbildfunktion wahr. Er berücksichtigt dazu erhöhte Anforderungen an das ressourcenschonende Bauen und innovative Lösungen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_35_j",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "70ffa34f897f9f294d91191e6c4efa86fd1e778ac92ea0f7c934b819c443b8ac"
     },
     {
@@ -3122,10 +3130,10 @@
           "text": "Unter Vorbehalt von Artikel 41 obliegt der Vollzug dieses Gesetzes den Kantonen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_36",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "74fb2676ecd745181f9adac464765ba2c30b5861c10addc48f772d3023cf18fc"
     },
     {
@@ -3141,10 +3149,10 @@
           "text": "Ausführungsvorschriften der Kantone über den Katastrophenschutz (Art. 10), die Umweltverträglichkeitsprüfung (Art. 10a–10d), die Sanierung (Art. 16–18), den Schallschutz bei Gebäuden (Art. 20 und 21) sowie die Abfälle (Art. 30–32, 32abis–32e) bedürfen zu ihrer Gültigkeit der Genehmigung des Bundes."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_37",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "2f2815f53df5033adaa908cdeae1eec3ef82b218ba7e829c17f07a113e29e4ef"
     },
     {
@@ -3168,10 +3176,10 @@
           "text": "Der Bundesrat bestimmt, welche Prüf‑, Mess- und Berechnungsmethoden anzuwenden sind."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_38",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "cdf784334033d58e649eed64f971e01c40cea4249c583973a6805c821dc858da"
     },
     {
@@ -3235,10 +3243,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_39",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "8207a9102ca1fa6ade40d476800112801c686954e6e135b1d853bd618283cd72"
     },
     {
@@ -3258,10 +3266,10 @@
           "text": "Er kann ausländische Prüfungen, Konformitätsbewertungen, Kennzeichnungen, Anmeldungen und Zulassungen anerkennen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_40",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "ee0aa25b76f16aa97ae3330346b60b395edeaad6062c5cbef8371f7d9116b385"
     },
     {
@@ -3289,10 +3297,10 @@
           "text": "Die Vollzugsbehörden des Bundes berücksichtigen die Umweltschutzmassnahmen der Kantone."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_41",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "3f79ae6f2d67b2c6ff72417696ae982120c815c4476ccf670903974b0633ead9"
     },
     {
@@ -3320,10 +3328,10 @@
           "text": "Beim Erlass der Ausführungsvorschriften berücksichtigen sie bereits ergriffene freiwillige Massnahmen von Unternehmen, sofern diese mindestens die gleiche Wirkung zum Schutz der Umwelt erzielen wie das Ausführungsrecht."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_41_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "a8f6e08daa390f96813cb7eda15076efa13f0ffc27978a70007ba04fee812773"
     },
     {
@@ -3343,10 +3351,10 @@
           "text": "Das Bundesamt ist die Fachstelle des Bundes."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_42",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "a2f6a51f7b502cbeb2e53053eea46524e2d1e21b2845309add505a5729bfefc1"
     },
     {
@@ -3362,10 +3370,10 @@
           "text": "Die Vollzugsbehörden können öffentlichrechtliche Körperschaften oder Private mit Vollzugsaufgaben betrauen, insbesondere mit der Kontrolle und Überwachung."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_43",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1e5075816e05ed329b8455a8b2aea924add5dc13abda45041c2475625f0a456a"
     },
     {
@@ -3395,10 +3403,10 @@
           "text": "Er berücksichtigt dabei das internationale Recht und die international anerkannten technischen Normen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_43_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "19a67b97fbc40f70f1d74e6223e680c88ed2be888cee022cf47300483be916db"
     },
     {
@@ -3422,10 +3430,10 @@
           "text": "Er bestimmt, welche Angaben, die auf Grund der Gentechnik‑, Lebensmittel‑, Heilmittel‑, Chemikalien‑, Landwirtschafts‑, Epidemien- und Tierseuchengesetzgebung über Stoffe und Organismen erhoben werden, dem Bundesamt zur Verfügung zu stellen sind."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_44",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "f9c1526a487948373cd04f06b9efc4c45fe3b23b2ec07b4c6ad5cc442cb0e718"
     },
     {
@@ -3449,10 +3457,10 @@
           "text": "Sieht ein Plan Massnahmen vor, die in die Zuständigkeit des Bundes fallen, so stellen die Kantone dem Bundesrat die entsprechenden Anträge."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_44_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b456ae4798913a7b1f21f513e1235714f412e8956c55f8f10d59b79e30dc7aaa"
     },
     {
@@ -3468,10 +3476,10 @@
           "text": "Der Bundesrat kann die regelmässige Kontrolle von Anlagen wie Ölfeuerungen, Abfallanlagen und Baumaschinen vorschreiben."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_45",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1697f16651d870053ea473359e945a2caed14ae7c6c1599873aad8acf7bb7811"
     },
     {
@@ -3495,10 +3503,10 @@
           "text": "Der Bundesrat kann anordnen, dass Angaben gemacht werden über Stoffe oder Organismen, welche die Umwelt gefährden können oder erstmals in Verkehr gebracht werden sollen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_46",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "dc1c989c5af2f1cf27e083ce51f1c536df835cf46116c32c0c28ae7f59a45933"
     },
     {
@@ -3522,10 +3530,10 @@
           "text": "Vertrauliche Informationen, die beim Vollzug dieses Gesetzes erhoben werden, dürfen an ausländische Behörden und internationale Organisationen nur dann weitergegeben werden, wenn eine völkerrechtliche Vereinbarung, Beschlüsse internationaler Organisationen oder ein Bundesgesetz dies bestimmen. Der Bundesrat regelt die Zuständigkeiten und das Verfahren."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_47",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "3938dac301d7c9ef704deb763030e1f6ba2f9dfd93512318bccd024c59f94bfa"
     },
     {
@@ -3545,10 +3553,10 @@
           "text": "Im Bund bestimmt der Bundesrat, in den Kantonen die nach kantonalem Recht zuständige Behörde die Ansätze."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_48",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "ba9bf2fd24e28ebf34e7ca4b122f12c8faaf4a9cd1ff078c8945b7e11b672a0f"
     },
     {
@@ -3564,10 +3572,10 @@
           "text": "Der Bundesrat kann für die Durchführung von innovativen Pilotprojekten Bestimmungen erlassen, die von diesem Gesetz abweichen, sofern diese Bestimmungen in zeitlicher, örtlicher und sachlicher Hinsicht begrenzt sind und dazu dienen, Erfahrungen für die Weiterentwicklung dieses Gesetzes und dessen Vollzug zu sammeln."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_48_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "c187c100838e6aefee2329684b99c8aca12911e9f6c132a294c5718972e6cd69"
     },
     {
@@ -3595,10 +3603,10 @@
           "text": "Er kann die Entwicklung, Zertifizierung und Verifizierung sowie die Markteinführung von Anlagen und Verfahren fördern, mit denen die Umweltbelastung im öffentlichen Interesse vermindert werden kann. Die Finanzhilfen dürfen in der Regel 50 Prozent der Kosten nicht überschreiten. Sie müssen bei einer kommerziellen Verwertung der Entwicklungsergebnisse nach Massgabe der erzielten Erträge zurückerstattet werden. Der Bundesrat beurteilt alle fünf Jahre generell die Wirkung der Förderung und erstattet den eidgenössischen Räten über die Ergebnisse Bericht."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_49",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "3c105ab7ddca9c79b119e58625c66c35a4612ba70c29d7f7809ed3cc96311553"
     },
     {
@@ -3628,10 +3636,10 @@
           "text": "Die Finanzhilfen dürfen 50 Prozent der Kosten nicht überschreiten."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_49_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "076d765929ede43a1ef7f70c0f06d79301811a3f69fd94c39dc5289d54d3e01a"
     },
     {
@@ -3661,10 +3669,10 @@
           "text": "Die Kantone erstatten dem Bund Bericht über die Verwendung der Beiträge für die Umweltschutzmassnahmen bei den Hauptstrassen, die mit Bundeshilfe auszubauen sind, und bei den übrigen Strassen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_50",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "4f77ff89c22e6dff2cbb94a09d903b168774ca1f41c761f0ec77190923f25c72"
     },
     {
@@ -3680,10 +3688,10 @@
           "text": "Der Bund kann Beiträge an die Kosten für den Bau und die Ausrüstung der zur Durchführung dieses Gesetzes erforderlichen Mess‑, Kontroll- und Überwachungseinrichtungen gewähren, soweit diese Einrichtungen mehreren Kantonen dienen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_51",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "5acf02cb9cce3693cd720538563b008d857e211c31bb9b29c06954c8a7a18331"
     },
     {
@@ -3699,10 +3707,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_52",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -3744,10 +3752,10 @@
           "text": "Der Bundesrat wacht über die wirksame Verwendung der nach diesem Gesetz bewilligten Mittel und erstattet der Bundesversammlung darüber Bericht."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_53",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "9b71716c97c7b51c7ccfbb7fc92326b26c2eb5fbea5dd2afded051b0f7ca303f"
     },
     {
@@ -3777,10 +3785,10 @@
           "text": "Er kann für die elektronische Einreichung von Eingaben, deren Unterzeichnung gesetzlich vorgeschrieben ist, anstelle der qualifizierten elektronischen Signatur eine andere Bestätigung der Angaben durch die Partei anerkennen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_53_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "dc0d26e334e8a17be9ef93f5a72f69eaa4c955b4e91512c4777602549d1f7b0b"
     },
     {
@@ -3796,10 +3804,10 @@
           "text": "Das Beschwerdeverfahren richtet sich nach den allgemeinen Bestimmungen über die Bundesrechtspflege."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_54",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "609789e8018db2173460f8d5a037e5e08960f9224febe953a43dfa082652f1c2"
     },
     {
@@ -3841,10 +3849,10 @@
           "text": "Die Organisationen können ihre rechtlich selbständigen kantonalen und überkantonalen Unterorganisationen für deren örtliches Tätigkeitsgebiet generell zur Erhebung von Einsprachen und im Einzelfall zur Erhebung von Beschwerden ermächtigen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_55",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b9ff67ac341a951c072e199a818a9e1fe795642f56ce41a7febc6ce27ee8a894"
     },
     {
@@ -3864,10 +3872,10 @@
           "text": "Sieht das Bundesrecht oder das kantonale Recht ein Einspracheverfahren vor, so sind auch die Gesuche nach Absatz 1 zu veröffentlichen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_55_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "7e1098a41f21bc2d1d75b2aaf16308927d39cc32c0a9de1ad090da8cbf29934a"
     },
     {
@@ -3895,10 +3903,10 @@
           "text": "Die Absätze 2 und 3 gelten auch für Einsprachen und Beschwerden nach kantonalem Recht gegen Nutzungspläne."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_55_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "446f0e8d4a10e3601c5c44b0521f2ec11478db88feac88f35cfb64f06903e411"
     },
     {
@@ -3936,10 +3944,10 @@
           "text": "Die Rechtsmittelbehörde tritt auf eine Beschwerde nicht ein, wenn diese rechtsmissbräuchlich ist oder die Organisation unzulässige Leistungen im Sinne von Absatz 2 gefordert hat."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_55_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "d1c076fc94d495335522778abc3398e7fed5a5a14008fa4b8d54334f3bdaeb9c"
     },
     {
@@ -3955,10 +3963,10 @@
           "text": "Mit Bauarbeiten kann vor Abschluss des Verfahrens begonnen werden, soweit der Ausgang des Verfahrens die Arbeiten nicht beeinflussen kann."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_55_d",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "611927e762e89b9467d85c28bf16626da54e0eb105c34afa9c4c12b256ff4eb9"
     },
     {
@@ -3974,10 +3982,10 @@
           "text": "Unterliegt die Organisation im Verfahren, so werden ihr für die Beschwerdeführung vor Bundesbehörden die Kosten auferlegt."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_55_e",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "82e64a130596560f50991bedfd1dfc7a4cd00c78d633ba535b56a0bf60e150b6"
     },
     {
@@ -4011,10 +4019,10 @@
           "text": "Die Artikel 55a und 55b Absätze 1 und 2 sind anwendbar."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_55_f",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "032f0f1feb857ec0f8ba3ce3e0b8fc43c42888778ead6d4576119d42790c6969"
     },
     {
@@ -4038,10 +4046,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_56",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "6102b062136dc621c00a83c4e99726e1e1a87a0214908d472db8cac0fd8c5802"
     },
     {
@@ -4057,10 +4065,10 @@
           "text": "Die Gemeinden sind berechtigt, gegen Verfügungen der kantonalen und der Bundesbehörden in Anwendung dieses Gesetzes die Rechtsmittel des eidgenössischen und kantonalen Rechts zu ergreifen, sofern sie dadurch berührt werden und ein schutzwürdiges Interesse an der Aufhebung oder Änderung haben."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_57",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "265c00fe8cf7614b5bcfa3cb4fe14ab20c2d30ab1ac91b79fb714b4a66845113"
     },
     {
@@ -4084,10 +4092,10 @@
           "text": "Für Werke, die das Gebiet mehrerer Kantone beanspruchen, gilt das eidgenössische Enteignungsrecht. Das Eidgenössische Departement für Umwelt, Verkehr, Energie und Kommunikation entscheidet über die Enteignung."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_58",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "3122c695aa7cb68af1e7631461692fb0ffbf18b06322b935a4add98e4c421a31"
     },
     {
@@ -4103,10 +4111,10 @@
           "text": "Die Kosten von Massnahmen, welche die Behörden zur Abwehr einer unmittelbar drohenden Einwirkung sowie zu deren Feststellung und Behebung treffen, werden dem Verursacher überbunden."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_58_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "950127a1debd9b6d9c83311f09f9a5a3cdac4159d60acd2ddd73da81a6a6e4ea"
     },
     {
@@ -4152,10 +4160,10 @@
           "text": "Die in Absatz 3 genannten Stellen und Personen können aus den Informations- und Dokumentationssystemen Personendaten abrufen und diese bearbeiten, soweit dies für die Erfüllung ihrer Aufgaben und Pflichten nach diesem Gesetz erforderlich ist. Das Abrufen und die Bearbeitung von besonders schützenswerten Personendaten über verwaltungs- und strafrechtliche Verfolgungen oder Sanktionen sind den Stellen und Personen gemäss Absatz 3 Buchstaben a, b und d vorbehalten."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_59",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "ca3b70d948786b6e54961b930146175e27e71bea5ed3b324308e19f23ec65a6f"
     },
     {
@@ -4209,10 +4217,10 @@
           "text": "Bund, Kantone und Gemeinden haften ebenfalls nach den Absätzen 1–5."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_59_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "f9e4d10f6d0e10f86f670ee39e1cd605acaf381069283e82a338e7b0672526c1"
     },
     {
@@ -4296,10 +4304,10 @@
           "text": "Bund, Kantone und Gemeinden haften ebenfalls nach den Absätzen 1–11."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_59_a_bis",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "826a74b82f410a7f389ffd1cfb2c0e4c998d131779fbf67bec9795f3f289c2c2"
     },
     {
@@ -4337,10 +4345,10 @@
           ]
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_59_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "d0897c25afb0b914caee0dda513843187ebb74a06a1f86823f61738c9f9acc60"
     },
     {
@@ -4370,10 +4378,10 @@
           ]
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_59_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "31db88acfcd326c1d99906b9cfc84e38cd85c18cb1eb160c1a52136f00d3d821"
     },
     {
@@ -4389,10 +4397,10 @@
           "text": "Das Rückgriffsrecht verjährt nach Artikel 59c. Die dreijährige Frist beginnt zu laufen, sobald die Ersatzleistung vollständig erbracht und die mithaftpflichtige Person bekannt ist."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_59_d",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "38bbe65bc44d0fad6fbdb9fdc9a2699acc5b41a5fb2a6bfc6d4ce04dbd2bbbe7"
     },
     {
@@ -4520,10 +4528,10 @@
           "text": "Das BAZG verfolgt und beurteilt Vergehen nach Absatz 1 Buchstaben t und u."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_60",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "c92fbff90ee7929308cf637fc23c28475f8543128946aa3a20fb268cf5dedbab"
     },
     {
@@ -4615,13 +4623,17 @@
         {
           "absatz": "3",
           "text": "Versuch und Gehilfenschaft sind strafbar."
+        },
+        {
+          "absatz": "4",
+          "text": "Mit Busse bis zu 300 Franken wird bestraft, wer widerrechtlich vorsätzlich oder fahrlässig Abfälle, selbst kleine Mengen, wegwirft oder liegenlässt (Art. 31b Abs. 7)."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_61",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
-      "sha": "37332434462f7a6c895f11a7b74f0608ca875979c3a8f42d2c22129bd9973ea7"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "a56fb22e4aefecc79372da83b9c4fcf3344bebeae3962334930a2d7341a50ae6"
     },
     {
       "id": "bund/USG/art_61_a",
@@ -4652,10 +4664,10 @@
           "text": "Verfolgende und urteilende Behörde ist das BAZG."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_61_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1d8b437e25a51a7e3576d4a18ad3271c0eac19c650cfa1af1977ae9041a59ef1"
     },
     {
@@ -4709,10 +4721,10 @@
           "text": "Verfolgende und urteilende Behörde ist das BAZG."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_61_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "5d647fcc9fb77e355748d76bad25d63de26483b90ce5b02c6720f6dcbaf5ae10"
     },
     {
@@ -4732,10 +4744,10 @@
           "text": "Für Widerhandlungen nach den Artikeln 61a und 61b gelten zudem die übrigen Bestimmungen des Bundesgesetzes über das Verwaltungsstrafrecht."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_62",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "07c1c8bcacca7c2edca01eee2227b02910e3b866423d6fa04e67ee98b4b17357"
     },
     {
@@ -4789,10 +4801,10 @@
           "text": "Weitergehende Bestimmungen des Bundes und der Kantone bleiben vorbehalten."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_62_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "75d165c02f30b89690045db5622be7b77db1c90a5487d8eec7c492192697b7e1"
     },
     {
@@ -4808,10 +4820,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_63",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -4827,10 +4839,10 @@
           "text": "Wenn aufgrund anderer Bundesgesetze erlassene Umweltvorschriften diesem Gesetz widersprechen oder ihm nicht genügen, sind sie nach einem vom Bundesrat festzulegenden Programm anzupassen oder zu ergänzen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_64",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "288e0ca3de92045346f7aeb94b4c8b47af42fdb6c700fbc932faf0bdeef379ac"
     },
     {
@@ -4850,10 +4862,10 @@
           "text": "Die Kantone dürfen keine neuen Immissionsgrenzwerte, Alarmwerte oder Planungswerte festlegen und keine neuen Bestimmungen über Konformitätsbewertungen serienmässig hergestellter Anlagen sowie über den Umgang mit Stoffen oder Organismen erlassen. Bestehende kantonale Vorschriften gelten bis zum Inkrafttreten entsprechender Vorschriften des Bundesrates."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_65",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "505448b46771aab3ec4c2daaaf17cbe64c8a2564e12b76ea973b6fb47698928b"
     },
     {
@@ -4869,10 +4881,10 @@
           "text": "Gesuche um Abgeltungen an die Kosten von Massnahmen nach Artikel 32ebis Absätze 3, 4 Buchstabe a, 5 und 12 werden in Abweichung von Artikel 36 des Subventionsgesetzes vom 5. Oktober 1990 nach dem im Zeitpunkt der Gesuchseinreichung geltenden Recht beurteilt, wenn mit den Massnahmen vor Inkrafttreten der Änderung vom 27. September 2024 begonnen wurde oder diese bereits abgeschlossen sind. Sie sind spätestens bis zwei Jahre nach Inkrafttreten dieser Änderung beim Bundesamt einzureichen."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_65_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "168e2e31047763eaa868a83dcc21905ec61acd1c90626d9a78eb2733eb8dbc2c"
     },
     {
@@ -4888,10 +4900,10 @@
           "text": "…"
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_66",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -4911,10 +4923,10 @@
           "text": "Der Bundesrat bestimmt das Inkrafttreten."
         }
       ],
-      "stand": "2026-04-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/de#art_67",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20260401",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "917f2b9dc0ea8d81aa43538af7c6943f35d4219aa1a845ffaf8965b1017bf238"
     }
   ]
