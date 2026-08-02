@@ -3,13 +3,13 @@ import { assemble } from './engine';
 
 // ─── Vorsorgeauftrag (Art. 360–369 ZGB) – dritte Vorlage ────────────────────
 //
-// Gemäss normverifizierter Implementierungs-Anweisung (in Kraft seit 1.1.2013,
-// seither nicht revidiert). Zentrale Determinismus-Weiche: formMode —
+// Rechtsstand gemäss Normtext-Snapshot, Stand 1.7.2026 (public/normtext/bund/
+// ZGB.json; OR-Snapshot Stand 1.1.2026). Zentrale Determinismus-Weiche: formMode —
 // EIGENHÄNDIG (von Anfang bis Ende von Hand, datiert, unterzeichnet,
 // Art. 361 Abs. 2 ZGB → Ausgabe nur als Abschreib-Mustertext) ODER
 // ÖFFENTLICH BEURKUNDET (Entwurf für die Urkundsperson; Verfahren kantonal,
 // BGE 151 III 81). Errichtung verlangt HANDLUNGSFÄHIGKEIT (volljährig +
-// urteilsfähig, Art. 13 ZGB; keine umfassende Beistandschaft, Art. 398 ZGB).
+// urteilsfähig, Art. 13 ZGB; keine umfassende Beistandschaft, Art. 398 Abs. 3 ZGB).
 // Wirksam wird der Auftrag erst durch KESB-Validierung (Art. 363 ZGB).
 
 export type VaFormMode = 'eigenhaendig' | 'oeffentlich_beurkundet';
@@ -26,7 +26,7 @@ export const VA_MODULE: Record<VaBereich, { id: string; label: string }[]> = {
   personensorge: [
     { id: 'wohnsituation', label: 'Entscheid über Wohnsituation und Aufenthalt (inkl. Heim-/Pflegeeintritt)' },
     { id: 'pflege', label: 'Organisation von Pflege und alltäglicher Betreuung' },
-    { id: 'medizin', label: 'Vertretung bei medizinischen Massnahmen (Art. 377 f. ZGB); eine Patientenverfügung geht vor' },
+    { id: 'medizin', label: 'Vertretung bei medizinischen Massnahmen (Art. 378 Abs. 1 Ziff. 1 i.V.m. Art. 377 ZGB); eine Patientenverfügung geht vor' },
     { id: 'post', label: 'Entgegennahme und Erledigung der Post' },
     { id: 'teilhabe', label: 'Sicherstellung der Teilhabe am gesellschaftlichen Leben' },
   ],
@@ -159,7 +159,7 @@ export function pruefeVaGates(a: VaAntworten): VaGateErgebnis {
   // Eligibility-Gate (Art. 13/14/16/398 ZGB) – hart
   if (!a.volljaehrig || !a.urteilsfaehigBestaetigt || !a.keineUmfassendeBeistandschaft) {
     blocker.push(
-      'Errichtungsvoraussetzungen nicht bestätigt: Der Vorsorgeauftrag verlangt Handlungsfähigkeit – Volljährigkeit (Art. 14 ZGB), Urteilsfähigkeit (Art. 16 ZGB) und keine umfassende Beistandschaft (Art. 398 ZGB).',
+      'Errichtungsvoraussetzungen nicht bestätigt: Der Vorsorgeauftrag verlangt Handlungsfähigkeit – Volljährigkeit (Art. 14 ZGB), Urteilsfähigkeit (Art. 16 ZGB) und keine umfassende Beistandschaft (Art. 398 Abs. 3 ZGB).',
     );
   }
 
@@ -251,7 +251,7 @@ export function pruefeVaGates(a: VaAntworten): VaGateErgebnis {
   }
 
   // Wirksamkeit erst nach KESB-Validierung – immer
-  hinweise.push('Wirksam wird der Vorsorgeauftrag erst, wenn die KESB am Wohnsitz (Art. 442 ZGB) bei eingetretener Urteilsunfähigkeit Gültigkeit, Voraussetzungen und Eignung geprüft hat (Validierung, Art. 363 ZGB).');
+  hinweise.push('Wirksam wird der Vorsorgeauftrag erst, wenn die KESB am Wohnsitz (Art. 442 Abs. 1 ZGB) bei eingetretener Urteilsunfähigkeit Gültigkeit, Voraussetzungen und Eignung geprüft hat (Validierung, Art. 363 ZGB).');
 
   return { blocker, warnungen, hinweise };
 }
@@ -273,7 +273,7 @@ const ERSATZ_BEREICH_LABEL: Record<VaBereich, string> = {
 
 export const VA_SCHEMA: VorlageSchema = {
   id: 'vorsorgeauftrag',
-  version: '1.0.0 (Rechtsstand Art. 360–369 ZGB, in Kraft seit 1.1.2013)',
+  version: '1.1.0 (Rechtsstand Art. 360–369 ZGB, Snapshot-Stand 1.7.2026)',
   titel: 'Vorsorgeauftrag',
   ausgabeArt: 'abschrift',  // eigenhändig Art. 361 Abs. 2 ZGB; bei Beurkundung → 'entwurf' (zusammenstellen)
   disclaimer:
@@ -397,7 +397,7 @@ export const VA_SCHEMA: VorlageSchema = {
       nummeriert: true,
       begruendung: 'Automatisch aufgenommen, weil das Modul «Liegenschaften» gewählt wurde – ausdrückliche Sondervollmacht.',
       norm: 'Art. 396 Abs. 3 OR',
-      hinweis: 'Ob Art. 396 Abs. 3 OR auf den Vorsorgeauftrag analog anwendbar ist, ist in der Lehre umstritten; die Praxis empfiehlt die ausdrückliche Sondervollmacht dennoch.',
+      hinweis: 'Art. 396 Abs. 3 OR deckt Veräusserung und Belastung; der Erwerb bedarf keiner besonderen Ermächtigung und wird zur Klarstellung im Grundbuchverkehr mitgenannt. Die Brücke ins Erwachsenenschutzrecht schlägt Art. 365 Abs. 1 ZGB (Auftragsrecht-Verweisung).',
     },
     {
       id: 'V08_schenkungen',
@@ -407,7 +407,7 @@ export const VA_SCHEMA: VorlageSchema = {
       includeIf: { feld: 'schenkungenErlaubt', eq: true },
       nummeriert: true,
       begruendung: 'Aufgenommen, weil Gelegenheitsgeschenke erlaubt werden sollen.',
-      norm: 'Art. 240 Abs. 2 OR',
+      norm: 'Art. 240 Abs. 2 und Art. 239 Abs. 3 OR',
       hinweis: 'Aus dem Vermögen einer handlungsunfähigen Person dürfen nur übliche Gelegenheitsgeschenke ausgerichtet werden – weitergehende Schenkungen sind problematisch.',
     },
     {
@@ -436,7 +436,7 @@ export const VA_SCHEMA: VorlageSchema = {
       includeIf: { feld: 'entschaedigungText', nichtLeer: true },
       nummeriert: true,
       begruendung: 'Aufgenommen, weil eine Entschädigungsregelung getroffen wurde (sonst legt die KESB sie fest).',
-      norm: 'Art. 366 ZGB',
+      norm: 'Art. 366 Abs. 1 ZGB (e contrario)',
     },
     {
       id: 'V12_pv',
@@ -444,7 +444,7 @@ export const VA_SCHEMA: VorlageSchema = {
       includeIf: { feld: 'pvVorhanden', eq: true },
       nummeriert: true,
       begruendung: 'Aufgenommen, weil auf eine bestehende Patientenverfügung verwiesen wird.',
-      norm: 'Art. 370 ZGB',
+      norm: 'Art. 372 Abs. 2 i.V.m. Art. 377 Abs. 1 ZGB',
     },
     {
       id: 'V13_ersetzt',

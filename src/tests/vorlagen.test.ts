@@ -297,7 +297,11 @@ describe('Vorlage Vorsorgeauftrag', () => {
     expect(ohne.aufgenommen).not.toContain('V07_grundstueck');
     const mit = vaZusammenstellen(va({ module: { personensorge: [], vermoegenssorge: ['liegenschaften'], rechtsverkehr: [] } }));
     expect(mit.aufgenommen).toContain('V07_grundstueck');
-    expect(mit.protokoll.find((p) => p.bausteinId === 'V07_grundstueck')!.hinweis).toContain('umstritten');
+    // W2·8/B4 (Befund V-3): Der Hinweis benennt neu den Wortlaut-Befund —
+    // Art. 396 Abs. 3 OR deckt veräussern/belasten, der Erwerb bedarf keiner
+    // besonderen Ermächtigung; Brücke ist Art. 365 Abs. 1 ZGB.
+    expect(mit.protokoll.find((p) => p.bausteinId === 'V07_grundstueck')!.hinweis)
+      .toContain('Art. 365 Abs. 1 ZGB');
   });
 
   it('Bereichs-Module erscheinen nur, wenn der Bereich auch übertragen ist', () => {
