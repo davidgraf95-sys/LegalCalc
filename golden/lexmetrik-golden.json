@@ -9227,6 +9227,517 @@
    }
   ]
  },
+ "vorl:va-voll": {
+  "dokument": {
+   "titel": "Vorsorgeauftrag",
+   "format": "verfuegung",
+   "ausgabeArt": "abschrift",
+   "absaetze": [
+    {
+     "bausteinId": "V01_identifikation",
+     "text": "Ich, A B, geboren am 01.01.1960, von Basel, wohnhaft X 1, errichte hiermit – handlungsfähig im Sinne von Art. 13 ZGB – für den Fall meiner Urteilsunfähigkeit den folgenden Vorsorgeauftrag:"
+    },
+    {
+     "bausteinId": "V02_beauftragte",
+     "ueberschrift": "Beauftragte Person(en)",
+     "text": "1. Ich beauftrage:"
+    },
+    {
+     "bausteinId": "V02b_beauftragteliste",
+     "text": "– C (geb. 1990) für: Personensorge, Vermögenssorge, Vertretung im Rechtsverkehr;\n– Treuhand AG (Basel) für: Vermögenssorge;"
+    },
+    {
+     "bausteinId": "V03_ersatz",
+     "text": "2. Ist eine beauftragte Person für die Aufgaben nicht geeignet, nimmt sie den Auftrag nicht an oder kündigt sie ihn, setze ich als Ersatz ein (in dieser Reihenfolge): 1. D (geb. 1992); 2. E."
+    },
+    {
+     "bausteinId": "V04_personensorge",
+     "ueberschrift": "Personensorge",
+     "text": "3. Im Bereich der Personensorge umfasst der Auftrag insbesondere:"
+    },
+    {
+     "bausteinId": "V04b_personensorgeliste",
+     "text": "– Entscheid über Wohnsituation und Aufenthalt (inkl. Heim-/Pflegeeintritt);\n– Vertretung bei medizinischen Massnahmen (Art. 377 f. ZGB); eine Patientenverfügung geht vor;"
+    },
+    {
+     "bausteinId": "V05_vermoegenssorge",
+     "ueberschrift": "Vermögenssorge",
+     "text": "4. Im Bereich der Vermögenssorge umfasst der Auftrag insbesondere:"
+    },
+    {
+     "bausteinId": "V05b_vermoegenssorgeliste",
+     "text": "– Verwaltung von Einkommen und Vermögen;\n– Verwaltung von Liegenschaften;"
+    },
+    {
+     "bausteinId": "V06_rechtsverkehr",
+     "ueberschrift": "Vertretung im Rechtsverkehr",
+     "text": "5. Im Rechtsverkehr umfasst der Auftrag insbesondere:"
+    },
+    {
+     "bausteinId": "V06b_rechtsverkehrliste",
+     "text": "– Vertretung gegenüber Behörden, Gerichten, Banken und Versicherungen;"
+    },
+    {
+     "bausteinId": "V07_grundstueck",
+     "text": "6. Die beauftragte Person ist ausdrücklich ermächtigt, Grundeigentum zu erwerben, zu belasten und zu veräussern sowie die entsprechenden Grundbucheinschreibungen zu veranlassen."
+    },
+    {
+     "bausteinId": "V08_schenkungen",
+     "text": "7. Die beauftragte Person ist befugt, übliche Gelegenheitsgeschenke auszurichten und Zuwendungen zur Erfüllung einer sittlichen Pflicht vorzunehmen."
+    },
+    {
+     "bausteinId": "V09_besondere",
+     "text": "8. Die beauftragte Person ist ausdrücklich ermächtigt, Vergleiche abzuschliessen, Schiedsvereinbarungen einzugehen und Wechselverbindlichkeiten einzugehen."
+    },
+    {
+     "bausteinId": "V10_weisungen",
+     "ueberschrift": "Weisungen",
+     "text": "9. Wohnung möglichst lange behalten."
+    },
+    {
+     "bausteinId": "V11_entschaedigung",
+     "ueberschrift": "Entschädigung",
+     "text": "10. Die beauftragte Person erhält eine pauschale Entschädigung von CHF 5000 pro Jahr; notwendige Spesen werden ihr zusätzlich ersetzt."
+    },
+    {
+     "bausteinId": "V12_pv",
+     "text": "11. Ich habe eine separate Patientenverfügung errichtet (Hinterlegungsort: Hausarztpraxis Dr. X); für medizinische Massnahmen geht diese vor."
+    },
+    {
+     "bausteinId": "V13_ersetzt",
+     "text": "12. Dieser Vorsorgeauftrag ersetzt alle früheren Vorsorgeaufträge."
+    },
+    {
+     "bausteinId": "V14_schluss_eigenhaendig",
+     "text": "Basel, den 15.06.2026\n\n\n_________________________________\n(eigenhändige Unterschrift: A B)",
+     "rolle": "unterschrift",
+     "stricheErlaubt": true
+    }
+   ],
+   "disclaimer": "Entwurf – erstellt mit LexMetrik. Keine Rechtsberatung. Gültig ist der Vorsorgeauftrag nur vollständig eigenhändig (von Hand geschrieben, datiert, unterzeichnet, Art. 361 Abs. 2 ZGB) oder öffentlich beurkundet (Art. 361 Abs. 1 ZGB); wirksam erst nach Validierung durch die KESB (Art. 363 ZGB). Bei komplexen Vermögensverhältnissen oder Unternehmen: Notariat bzw. Fachberatung beiziehen.",
+   "version": "1.0.0 (Rechtsstand Art. 360–369 ZGB, in Kraft seit 1.1.2013)"
+  },
+  "aufgenommen": [
+   "V01_identifikation",
+   "V02_beauftragte",
+   "V02b_beauftragteliste",
+   "V03_ersatz",
+   "V04_personensorge",
+   "V04b_personensorgeliste",
+   "V05_vermoegenssorge",
+   "V05b_vermoegenssorgeliste",
+   "V06_rechtsverkehr",
+   "V06b_rechtsverkehrliste",
+   "V07_grundstueck",
+   "V08_schenkungen",
+   "V09_besondere",
+   "V10_weisungen",
+   "V11_entschaedigung",
+   "V12_pv",
+   "V13_ersetzt",
+   "V14_schluss_eigenhaendig"
+  ],
+  "protokoll": [
+   {
+    "bausteinId": "V01_identifikation",
+    "begruendung": "Identifikation und Handlungsfähigkeits-Präambel – immer enthalten.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V02_beauftragte",
+    "begruendung": "Aufgenommen, weil mindestens eine beauftragte Person bezeichnet wurde.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V02b_beauftragteliste",
+    "begruendung": "Je beauftragte Person eine Zeile mit den übertragenen Aufgabenbereichen.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V03_ersatz",
+    "begruendung": "Aufgenommen, weil Ersatzpersonen bezeichnet wurden (Ersatzverfügung).",
+    "norm": "Art. 360 Abs. 3 ZGB"
+   },
+   {
+    "bausteinId": "V04_personensorge",
+    "begruendung": "Aufgenommen, weil der Bereich Personensorge übertragen und Module gewählt wurden.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V04b_personensorgeliste",
+    "begruendung": "Je gewähltes Personensorge-Modul eine Zeile.",
+    "norm": "Art. 360 Abs. 2 ZGB"
+   },
+   {
+    "bausteinId": "V05_vermoegenssorge",
+    "begruendung": "Aufgenommen, weil der Bereich Vermögenssorge übertragen und Module gewählt wurden.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V05b_vermoegenssorgeliste",
+    "begruendung": "Je gewähltes Vermögenssorge-Modul eine Zeile.",
+    "norm": "Art. 360 Abs. 2 ZGB"
+   },
+   {
+    "bausteinId": "V06_rechtsverkehr",
+    "begruendung": "Aufgenommen, weil der Bereich Rechtsverkehr übertragen und Module gewählt wurden.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V06b_rechtsverkehrliste",
+    "begruendung": "Je gewähltes Rechtsverkehr-Modul eine Zeile.",
+    "norm": "Art. 360 Abs. 2 ZGB"
+   },
+   {
+    "bausteinId": "V07_grundstueck",
+    "begruendung": "Automatisch aufgenommen, weil das Modul «Liegenschaften» gewählt wurde – ausdrückliche Sondervollmacht.",
+    "norm": "Art. 396 Abs. 3 OR",
+    "hinweis": "Ob Art. 396 Abs. 3 OR auf den Vorsorgeauftrag analog anwendbar ist, ist in der Lehre umstritten; die Praxis empfiehlt die ausdrückliche Sondervollmacht dennoch."
+   },
+   {
+    "bausteinId": "V08_schenkungen",
+    "begruendung": "Aufgenommen, weil Gelegenheitsgeschenke erlaubt werden sollen.",
+    "norm": "Art. 240 Abs. 2 OR",
+    "hinweis": "Aus dem Vermögen einer handlungsunfähigen Person dürfen nur übliche Gelegenheitsgeschenke ausgerichtet werden – weitergehende Schenkungen sind problematisch."
+   },
+   {
+    "bausteinId": "V09_besondere",
+    "begruendung": "Aufgenommen, weil besondere Geschäfte ausdrücklich ermächtigt werden sollen.",
+    "norm": "Art. 396 Abs. 3 OR"
+   },
+   {
+    "bausteinId": "V10_weisungen",
+    "begruendung": "Aufgenommen, weil Weisungen für die Erfüllung der Aufgaben erteilt wurden.",
+    "norm": "Art. 360 Abs. 2 ZGB"
+   },
+   {
+    "bausteinId": "V11_entschaedigung",
+    "begruendung": "Aufgenommen, weil eine Entschädigungsregelung getroffen wurde (sonst legt die KESB sie fest).",
+    "norm": "Art. 366 ZGB"
+   },
+   {
+    "bausteinId": "V12_pv",
+    "begruendung": "Aufgenommen, weil auf eine bestehende Patientenverfügung verwiesen wird.",
+    "norm": "Art. 370 ZGB"
+   },
+   {
+    "bausteinId": "V13_ersetzt",
+    "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich ersetzt werden sollen.",
+    "norm": "Art. 362 Abs. 3 ZGB"
+   },
+   {
+    "bausteinId": "V14_schluss_eigenhaendig",
+    "begruendung": "Schlussformel der eigenhändigen Form: Ort/Datum und Unterschrift werden – wie der ganze Text – von Hand geschrieben.",
+    "norm": "Art. 361 Abs. 2 ZGB"
+   }
+  ]
+ },
+ "vorl:va-entsch-aufwand": {
+  "dokument": {
+   "titel": "Vorsorgeauftrag",
+   "format": "verfuegung",
+   "ausgabeArt": "abschrift",
+   "absaetze": [
+    {
+     "bausteinId": "V01_identifikation",
+     "text": "Ich, A B, geboren am 01.01.1960, von Basel, wohnhaft X 1, errichte hiermit – handlungsfähig im Sinne von Art. 13 ZGB – für den Fall meiner Urteilsunfähigkeit den folgenden Vorsorgeauftrag:"
+    },
+    {
+     "bausteinId": "V02_beauftragte",
+     "ueberschrift": "Beauftragte Person(en)",
+     "text": "1. Ich beauftrage:"
+    },
+    {
+     "bausteinId": "V02b_beauftragteliste",
+     "text": "– C (geb. 1990) für: Personensorge, Vermögenssorge, Vertretung im Rechtsverkehr;"
+    },
+    {
+     "bausteinId": "V04_personensorge",
+     "ueberschrift": "Personensorge",
+     "text": "2. Im Bereich der Personensorge umfasst der Auftrag insbesondere:"
+    },
+    {
+     "bausteinId": "V04b_personensorgeliste",
+     "text": "– Entscheid über Wohnsituation und Aufenthalt (inkl. Heim-/Pflegeeintritt);\n– Vertretung bei medizinischen Massnahmen (Art. 377 f. ZGB); eine Patientenverfügung geht vor;"
+    },
+    {
+     "bausteinId": "V05_vermoegenssorge",
+     "ueberschrift": "Vermögenssorge",
+     "text": "3. Im Bereich der Vermögenssorge umfasst der Auftrag insbesondere:"
+    },
+    {
+     "bausteinId": "V05b_vermoegenssorgeliste",
+     "text": "– Verwaltung von Einkommen und Vermögen;\n– Verwaltung von Liegenschaften;"
+    },
+    {
+     "bausteinId": "V06_rechtsverkehr",
+     "ueberschrift": "Vertretung im Rechtsverkehr",
+     "text": "4. Im Rechtsverkehr umfasst der Auftrag insbesondere:"
+    },
+    {
+     "bausteinId": "V06b_rechtsverkehrliste",
+     "text": "– Vertretung gegenüber Behörden, Gerichten, Banken und Versicherungen;"
+    },
+    {
+     "bausteinId": "V07_grundstueck",
+     "text": "5. Die beauftragte Person ist ausdrücklich ermächtigt, Grundeigentum zu erwerben, zu belasten und zu veräussern sowie die entsprechenden Grundbucheinschreibungen zu veranlassen."
+    },
+    {
+     "bausteinId": "V11_entschaedigung",
+     "ueberschrift": "Entschädigung",
+     "text": "6. Die beauftragte Person wird nach Zeitaufwand zu einem Ansatz von CHF 120 pro Stunde entschädigt; notwendige Spesen werden ihr ersetzt."
+    },
+    {
+     "bausteinId": "V13_ersetzt",
+     "text": "7. Dieser Vorsorgeauftrag ersetzt alle früheren Vorsorgeaufträge."
+    },
+    {
+     "bausteinId": "V14_schluss_eigenhaendig",
+     "text": "den 15.06.2026\n\n\n_________________________________\n(eigenhändige Unterschrift: A B)",
+     "rolle": "unterschrift",
+     "stricheErlaubt": true
+    }
+   ],
+   "disclaimer": "Entwurf – erstellt mit LexMetrik. Keine Rechtsberatung. Gültig ist der Vorsorgeauftrag nur vollständig eigenhändig (von Hand geschrieben, datiert, unterzeichnet, Art. 361 Abs. 2 ZGB) oder öffentlich beurkundet (Art. 361 Abs. 1 ZGB); wirksam erst nach Validierung durch die KESB (Art. 363 ZGB). Bei komplexen Vermögensverhältnissen oder Unternehmen: Notariat bzw. Fachberatung beiziehen.",
+   "version": "1.0.0 (Rechtsstand Art. 360–369 ZGB, in Kraft seit 1.1.2013)"
+  },
+  "aufgenommen": [
+   "V01_identifikation",
+   "V02_beauftragte",
+   "V02b_beauftragteliste",
+   "V04_personensorge",
+   "V04b_personensorgeliste",
+   "V05_vermoegenssorge",
+   "V05b_vermoegenssorgeliste",
+   "V06_rechtsverkehr",
+   "V06b_rechtsverkehrliste",
+   "V07_grundstueck",
+   "V11_entschaedigung",
+   "V13_ersetzt",
+   "V14_schluss_eigenhaendig"
+  ],
+  "protokoll": [
+   {
+    "bausteinId": "V01_identifikation",
+    "begruendung": "Identifikation und Handlungsfähigkeits-Präambel – immer enthalten.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V02_beauftragte",
+    "begruendung": "Aufgenommen, weil mindestens eine beauftragte Person bezeichnet wurde.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V02b_beauftragteliste",
+    "begruendung": "Je beauftragte Person eine Zeile mit den übertragenen Aufgabenbereichen.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V04_personensorge",
+    "begruendung": "Aufgenommen, weil der Bereich Personensorge übertragen und Module gewählt wurden.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V04b_personensorgeliste",
+    "begruendung": "Je gewähltes Personensorge-Modul eine Zeile.",
+    "norm": "Art. 360 Abs. 2 ZGB"
+   },
+   {
+    "bausteinId": "V05_vermoegenssorge",
+    "begruendung": "Aufgenommen, weil der Bereich Vermögenssorge übertragen und Module gewählt wurden.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V05b_vermoegenssorgeliste",
+    "begruendung": "Je gewähltes Vermögenssorge-Modul eine Zeile.",
+    "norm": "Art. 360 Abs. 2 ZGB"
+   },
+   {
+    "bausteinId": "V06_rechtsverkehr",
+    "begruendung": "Aufgenommen, weil der Bereich Rechtsverkehr übertragen und Module gewählt wurden.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V06b_rechtsverkehrliste",
+    "begruendung": "Je gewähltes Rechtsverkehr-Modul eine Zeile.",
+    "norm": "Art. 360 Abs. 2 ZGB"
+   },
+   {
+    "bausteinId": "V07_grundstueck",
+    "begruendung": "Automatisch aufgenommen, weil das Modul «Liegenschaften» gewählt wurde – ausdrückliche Sondervollmacht.",
+    "norm": "Art. 396 Abs. 3 OR",
+    "hinweis": "Ob Art. 396 Abs. 3 OR auf den Vorsorgeauftrag analog anwendbar ist, ist in der Lehre umstritten; die Praxis empfiehlt die ausdrückliche Sondervollmacht dennoch."
+   },
+   {
+    "bausteinId": "V11_entschaedigung",
+    "begruendung": "Aufgenommen, weil eine Entschädigungsregelung getroffen wurde (sonst legt die KESB sie fest).",
+    "norm": "Art. 366 ZGB"
+   },
+   {
+    "bausteinId": "V13_ersetzt",
+    "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich ersetzt werden sollen.",
+    "norm": "Art. 362 Abs. 3 ZGB"
+   },
+   {
+    "bausteinId": "V14_schluss_eigenhaendig",
+    "begruendung": "Schlussformel der eigenhändigen Form: Ort/Datum und Unterschrift werden – wie der ganze Text – von Hand geschrieben.",
+    "norm": "Art. 361 Abs. 2 ZGB"
+   }
+  ]
+ },
+ "vorl:va-ohne-ersetzt": {
+  "dokument": {
+   "titel": "Vorsorgeauftrag",
+   "format": "verfuegung",
+   "ausgabeArt": "abschrift",
+   "absaetze": [
+    {
+     "bausteinId": "V01_identifikation",
+     "text": "Ich, A B, geboren am 01.01.1960, von Basel, wohnhaft X 1, errichte hiermit – handlungsfähig im Sinne von Art. 13 ZGB – für den Fall meiner Urteilsunfähigkeit den folgenden Vorsorgeauftrag:"
+    },
+    {
+     "bausteinId": "V02_beauftragte",
+     "ueberschrift": "Beauftragte Person(en)",
+     "text": "1. Ich beauftrage:"
+    },
+    {
+     "bausteinId": "V02b_beauftragteliste",
+     "text": "– C (geb. 1990) für: Personensorge, Vermögenssorge, Vertretung im Rechtsverkehr;"
+    },
+    {
+     "bausteinId": "V04_personensorge",
+     "ueberschrift": "Personensorge",
+     "text": "2. Im Bereich der Personensorge umfasst der Auftrag insbesondere:"
+    },
+    {
+     "bausteinId": "V04b_personensorgeliste",
+     "text": "– Entscheid über Wohnsituation und Aufenthalt (inkl. Heim-/Pflegeeintritt);\n– Vertretung bei medizinischen Massnahmen (Art. 377 f. ZGB); eine Patientenverfügung geht vor;"
+    },
+    {
+     "bausteinId": "V05_vermoegenssorge",
+     "ueberschrift": "Vermögenssorge",
+     "text": "3. Im Bereich der Vermögenssorge umfasst der Auftrag insbesondere:"
+    },
+    {
+     "bausteinId": "V05b_vermoegenssorgeliste",
+     "text": "– Verwaltung von Einkommen und Vermögen;\n– Verwaltung von Liegenschaften;"
+    },
+    {
+     "bausteinId": "V06_rechtsverkehr",
+     "ueberschrift": "Vertretung im Rechtsverkehr",
+     "text": "4. Im Rechtsverkehr umfasst der Auftrag insbesondere:"
+    },
+    {
+     "bausteinId": "V06b_rechtsverkehrliste",
+     "text": "– Vertretung gegenüber Behörden, Gerichten, Banken und Versicherungen;"
+    },
+    {
+     "bausteinId": "V07_grundstueck",
+     "text": "5. Die beauftragte Person ist ausdrücklich ermächtigt, Grundeigentum zu erwerben, zu belasten und zu veräussern sowie die entsprechenden Grundbucheinschreibungen zu veranlassen."
+    },
+    {
+     "bausteinId": "V14_schluss_eigenhaendig",
+     "text": "den 15.06.2026\n\n\n_________________________________\n(eigenhändige Unterschrift: A B)",
+     "rolle": "unterschrift",
+     "stricheErlaubt": true
+    }
+   ],
+   "disclaimer": "Entwurf – erstellt mit LexMetrik. Keine Rechtsberatung. Gültig ist der Vorsorgeauftrag nur vollständig eigenhändig (von Hand geschrieben, datiert, unterzeichnet, Art. 361 Abs. 2 ZGB) oder öffentlich beurkundet (Art. 361 Abs. 1 ZGB); wirksam erst nach Validierung durch die KESB (Art. 363 ZGB). Bei komplexen Vermögensverhältnissen oder Unternehmen: Notariat bzw. Fachberatung beiziehen.",
+   "version": "1.0.0 (Rechtsstand Art. 360–369 ZGB, in Kraft seit 1.1.2013)"
+  },
+  "aufgenommen": [
+   "V01_identifikation",
+   "V02_beauftragte",
+   "V02b_beauftragteliste",
+   "V04_personensorge",
+   "V04b_personensorgeliste",
+   "V05_vermoegenssorge",
+   "V05b_vermoegenssorgeliste",
+   "V06_rechtsverkehr",
+   "V06b_rechtsverkehrliste",
+   "V07_grundstueck",
+   "V14_schluss_eigenhaendig"
+  ],
+  "protokoll": [
+   {
+    "bausteinId": "V01_identifikation",
+    "begruendung": "Identifikation und Handlungsfähigkeits-Präambel – immer enthalten.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V02_beauftragte",
+    "begruendung": "Aufgenommen, weil mindestens eine beauftragte Person bezeichnet wurde.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V02b_beauftragteliste",
+    "begruendung": "Je beauftragte Person eine Zeile mit den übertragenen Aufgabenbereichen.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V04_personensorge",
+    "begruendung": "Aufgenommen, weil der Bereich Personensorge übertragen und Module gewählt wurden.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V04b_personensorgeliste",
+    "begruendung": "Je gewähltes Personensorge-Modul eine Zeile.",
+    "norm": "Art. 360 Abs. 2 ZGB"
+   },
+   {
+    "bausteinId": "V05_vermoegenssorge",
+    "begruendung": "Aufgenommen, weil der Bereich Vermögenssorge übertragen und Module gewählt wurden.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V05b_vermoegenssorgeliste",
+    "begruendung": "Je gewähltes Vermögenssorge-Modul eine Zeile.",
+    "norm": "Art. 360 Abs. 2 ZGB"
+   },
+   {
+    "bausteinId": "V06_rechtsverkehr",
+    "begruendung": "Aufgenommen, weil der Bereich Rechtsverkehr übertragen und Module gewählt wurden.",
+    "norm": "Art. 360 Abs. 1 ZGB"
+   },
+   {
+    "bausteinId": "V06b_rechtsverkehrliste",
+    "begruendung": "Je gewähltes Rechtsverkehr-Modul eine Zeile.",
+    "norm": "Art. 360 Abs. 2 ZGB"
+   },
+   {
+    "bausteinId": "V07_grundstueck",
+    "begruendung": "Automatisch aufgenommen, weil das Modul «Liegenschaften» gewählt wurde – ausdrückliche Sondervollmacht.",
+    "norm": "Art. 396 Abs. 3 OR",
+    "hinweis": "Ob Art. 396 Abs. 3 OR auf den Vorsorgeauftrag analog anwendbar ist, ist in der Lehre umstritten; die Praxis empfiehlt die ausdrückliche Sondervollmacht dennoch."
+   },
+   {
+    "bausteinId": "V14_schluss_eigenhaendig",
+    "begruendung": "Schlussformel der eigenhändigen Form: Ort/Datum und Unterschrift werden – wie der ganze Text – von Hand geschrieben.",
+    "norm": "Art. 361 Abs. 2 ZGB"
+   }
+  ]
+ },
+ "vorl:va-gates-basis": {
+  "blocker": [],
+  "warnungen": [],
+  "hinweise": [
+   "Liegenschaften gewählt: Die ausdrückliche Sondervollmacht für Erwerb, Belastung und Veräusserung von Grundstücken wird automatisch aufgenommen (Art. 396 Abs. 3 OR – analoge Anwendung in der Lehre umstritten, von der Praxis aber empfohlen).",
+   "Eine Ersatzverfügung ist empfohlen, falls die beauftragte Person ungeeignet ist, ablehnt oder kündigt (Art. 360 Abs. 3 ZGB) – idealerweise eine Person ausserhalb möglicher Interessenkonflikte.",
+   "Ohne Entschädigungsregelung legt die KESB bei der Validierung eine angemessene Entschädigung fest (Art. 366 ZGB), zulasten der auftraggebenden Person.",
+   "Wirksam wird der Vorsorgeauftrag erst, wenn die KESB am Wohnsitz (Art. 442 ZGB) bei eingetretener Urteilsunfähigkeit Gültigkeit, Voraussetzungen und Eignung geprüft hat (Validierung, Art. 363 ZGB)."
+  ]
+ },
+ "vorl:va-gates-jp-personensorge": {
+  "blocker": [
+   "Die Personensorge ist höchstpersönlich und kann nur einer NATÜRLICHEN Person übertragen werden (Art. 360 ZGB); eine juristische Person kommt nur für die Vermögenssorge oder die Vertretung im Rechtsverkehr in Betracht."
+  ],
+  "warnungen": [],
+  "hinweise": [
+   "Eine Ersatzverfügung ist empfohlen, falls die beauftragte Person ungeeignet ist, ablehnt oder kündigt (Art. 360 Abs. 3 ZGB) – idealerweise eine Person ausserhalb möglicher Interessenkonflikte.",
+   "Ohne Entschädigungsregelung legt die KESB bei der Validierung eine angemessene Entschädigung fest (Art. 366 ZGB), zulasten der auftraggebenden Person.",
+   "Wirksam wird der Vorsorgeauftrag erst, wenn die KESB am Wohnsitz (Art. 442 ZGB) bei eingetretener Urteilsunfähigkeit Gültigkeit, Voraussetzungen und Eignung geprüft hat (Validierung, Art. 363 ZGB)."
+  ]
+ },
  "vorl:sg": {
   "dokument": {
    "titel": "Schlichtungsgesuch nach Art. 202 ZPO",
