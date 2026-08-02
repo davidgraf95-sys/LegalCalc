@@ -241,7 +241,7 @@ const vaBasis = {
 f('vorl:va-voll', () => vaZusammenstellen({
   ...vaBasis,
   beauftragte: [...vaBasis.beauftragte, { name: 'Treuhand AG', angaben: 'Basel', typ: 'juristisch' as const, bereiche: ['vermoegenssorge'] as ('personensorge' | 'vermoegenssorge' | 'rechtsverkehr')[] }],
-  ersatzpersonen: [{ name: 'D', angaben: 'geb. 1992' }, { name: 'E', angaben: '' }],
+  ersatzpersonen: [{ name: 'D', angaben: 'geb. 1992', typ: 'natuerlich' as const }, { name: 'E', angaben: '', typ: 'natuerlich' as const }],
   schenkungenErlaubt: true, besondereGeschaefte: true, weisungen: 'Wohnung möglichst lange behalten.',
   entschaedigung: 'pauschale' as const, entschaedigungBetrag: 5000,
   pvVorhanden: true, pvHinterlegung: 'Hausarztpraxis Dr. X', ort: 'Basel',

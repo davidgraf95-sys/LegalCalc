@@ -341,6 +341,83 @@ describe('Vorlage Vorsorgeauftrag', () => {
       expect(b.norm, b.id).toBeTruthy();
     });
   });
+
+  // ── W2·8 / F2: Einzel- ↔ Kollektivvertretung ───────────────────────────────
+
+  const zweiBeauftragte = [
+    { name: 'Ben Muster', typ: 'natuerlich' as const, angaben: 'geb. 01.01.1985', bereiche: ['personensorge' as const] },
+    { name: 'Cara Muster', typ: 'natuerlich' as const, angaben: 'geb. 02.02.1987', bereiche: ['vermoegenssorge' as const] },
+  ];
+
+  it('zwei Beauftragte + Kollektivvertretung: V02d aufgenommen, V02c nicht', () => {
+    const r = vaZusammenstellen(va({ beauftragte: zweiBeauftragte, vertretung: 'gemeinsam' }));
+    expect(r.aufgenommen).toContain('V02d_gemeinsam');
+    expect(r.aufgenommen).not.toContain('V02c_einzeln');
+    expect(r.dokument.absaetze.find((x) => x.bausteinId === 'V02d_gemeinsam')!.text).toContain('nur gemeinsam');
+  });
+
+  it('zwei Beauftragte + Einzelvertretung (Default): V02c aufgenommen, V02d nicht', () => {
+    const r = vaZusammenstellen(va({ beauftragte: zweiBeauftragte }));
+    expect(r.aufgenommen).toContain('V02c_einzeln');
+    expect(r.aufgenommen).not.toContain('V02d_gemeinsam');
+    expect(r.protokoll.find((p) => p.bausteinId === 'V02c_einzeln')!.hinweis).toContain('nicht ausdrücklich');
+  });
+
+  it('nur eine beauftragte Person: keine Vertretungsklausel – unabhängig von der Wahl', () => {
+    const einzeln = vaZusammenstellen(va({}));
+    expect(einzeln.aufgenommen).not.toContain('V02c_einzeln');
+    expect(einzeln.aufgenommen).not.toContain('V02d_gemeinsam');
+    const gemeinsam = vaZusammenstellen(va({ vertretung: 'gemeinsam' }));
+    expect(gemeinsam.aufgenommen).not.toContain('V02c_einzeln');
+    expect(gemeinsam.aufgenommen).not.toContain('V02d_gemeinsam');
+  });
+
+  // ── W2·8 / F1: Ersatzpersonen strukturell wie Hauptbeauftragte ─────────────
+
+  it('juristische Ersatzperson für die Personensorge blockiert', () => {
+    const g = pruefeVaGates(va({
+      ersatzpersonen: [{ name: 'Treuhand AG', typ: 'juristisch', angaben: 'Basel', bereiche: ['personensorge'] }],
+    }));
+    expect(g.blocker.some((b) => b.includes('NATÜRLICHEN') && b.includes('auch als Ersatzperson'))).toBe(true);
+  });
+
+  it('juristische Ersatzperson nur für die Vermögenssorge blockiert nicht', () => {
+    const g = pruefeVaGates(va({
+      ersatzpersonen: [{ name: 'Treuhand AG', typ: 'juristisch', angaben: 'Basel', bereiche: ['vermoegenssorge'] }],
+    }));
+    expect(g.blocker.some((b) => b.includes('auch als Ersatzperson'))).toBe(false);
+  });
+
+  it('juristische Ersatzperson ohne Bereichs-Wahl blockiert, wenn Personensorge übertragen ist (implizit alle)', () => {
+    const mitPersonensorge = pruefeVaGates(va({
+      ersatzpersonen: [{ name: 'Treuhand AG', typ: 'juristisch', angaben: 'Basel' }],
+    }));
+    expect(mitPersonensorge.blocker.some((b) => b.includes('auch als Ersatzperson'))).toBe(true);
+    // Gegenprobe: ohne übertragene Personensorge greift die Schranke nicht
+    const ohnePersonensorge = pruefeVaGates(va({
+      beauftragte: [{ name: 'Ben', typ: 'natuerlich', angaben: 'x', bereiche: ['vermoegenssorge'] }],
+      ersatzpersonen: [{ name: 'Treuhand AG', typ: 'juristisch', angaben: 'Basel' }],
+    }));
+    expect(ohnePersonensorge.blocker.some((b) => b.includes('auch als Ersatzperson'))).toBe(false);
+  });
+
+  it('fehlendes typ-Feld (Alt-Stand) wird wie «natuerlich» gelesen – kein Blocker aus dem Speicher', () => {
+    const alt = { name: 'D', angaben: 'geb. 1992' } as unknown as VaAntworten['ersatzpersonen'][number];
+    const g = pruefeVaGates(va({ ersatzpersonen: [alt] }));
+    expect(g.blocker.some((b) => b.includes('auch als Ersatzperson'))).toBe(false);
+  });
+
+  it('ersatzText: explizite Bereiche erscheinen im Satz, ohne Bereiche bleibt er unverändert', () => {
+    const mit = vaZusammenstellen(va({
+      ersatzpersonen: [{ name: 'D', typ: 'natuerlich', angaben: 'geb. 1992', bereiche: ['personensorge', 'vermoegenssorge'] }],
+    }));
+    const textMit = mit.dokument.absaetze.find((x) => x.bausteinId === 'V03_ersatz')!.text;
+    expect(textMit).toContain('1. D (geb. 1992) für die Personensorge, die Vermögenssorge');
+    const ohne = vaZusammenstellen(va({
+      ersatzpersonen: [{ name: 'D', typ: 'natuerlich', angaben: 'geb. 1992' }],
+    }));
+    expect(ohne.dokument.absaetze.find((x) => x.bausteinId === 'V03_ersatz')!.text).toContain('1. D (geb. 1992).');
+  });
 });
 
 // ─── DOCX-Renderer (Teil II «Ausgabe & Export») ──────────────────────────────

@@ -52,6 +52,32 @@ export type VaBeauftragte = {
   bereiche: VaBereich[];
 };
 
+/** Ersatzperson (Ersatzverfügung, Art. 360 Abs. 3 ZGB) – strukturell wie die
+ *  Hauptbeauftragten, damit dieselben Schranken greifen (Personensorge nur
+ *  natürliche Person). `bereiche` ist OPTIONAL: leer oder fehlend bedeutet
+ *  Ersatz für ALLE übertragenen Aufgabenbereiche (bisherige Semantik – der
+ *  Klauseltext bleibt dann wortgleich wie vor W2·8). */
+export type VaErsatzperson = {
+  name: string;
+  typ: 'natuerlich' | 'juristisch';
+  angaben: string;            // Geburtsdatum/Adresse bzw. Sitz
+  bereiche?: VaBereich[];
+};
+
+/** Zusammenwirken mehrerer beauftragter Personen. Das Gesetz regelt es nicht
+ *  ausdrücklich (Art. 360 ZGB nennt nur die Übertragung); die ausdrückliche
+ *  Anordnung im Auftrag schafft Klarheit gegenüber KESB, Banken und Behörden.
+ *  Muster: VmVertretung in vollmacht.ts (dort Art. 33 Abs. 2 OR). */
+export type VaVertretung = 'einzeln' | 'gemeinsam';
+
+/** Alte gespeicherte Stände (localStorage vor W2·8) kennen `typ` bei
+ *  Ersatzpersonen noch nicht. Fehlendes Feld wird wie 'natuerlich' gelesen –
+ *  nie wie 'juristisch': sonst entstünde aus einem Altstand ein Blocker, den
+ *  die Nutzerin nie ausgelöst hat. */
+function ersatzTyp(e: VaErsatzperson): 'natuerlich' | 'juristisch' {
+  return e.typ === 'juristisch' ? 'juristisch' : 'natuerlich';
+}
+
 export type VaAntworten = {
   // Step 0 – Eligibility (Art. 13/14/16/398 ZGB)
   volljaehrig: boolean;
@@ -68,7 +94,8 @@ export type VaAntworten = {
   adresse: string;
   // Beauftragte + Ersatz
   beauftragte: VaBeauftragte[];
-  ersatzpersonen: { name: string; angaben: string }[];  // Reihenfolge = Rang
+  ersatzpersonen: VaErsatzperson[];  // Reihenfolge = Rang
+  vertretung: VaVertretung;          // nur relevant bei mehreren Beauftragten
   // Module je Bereich (gewählte Modul-IDs)
   module: Record<VaBereich, string[]>;
   // Sondervollmachten / Weisungen / Entschädigung
@@ -91,6 +118,7 @@ export const VA_DEFAULTS: VaAntworten = {
   vorname: '', nachname: '', geburtsdatum: '', heimatort: '', adresse: '',
   beauftragte: [],
   ersatzpersonen: [],
+  vertretung: 'einzeln',
   module: { personensorge: [], vermoegenssorge: [], rechtsverkehr: [] },
   schenkungenErlaubt: false,
   besondereGeschaefte: false,
@@ -154,6 +182,24 @@ export function pruefeVaGates(a: VaAntworten): VaGateErgebnis {
     );
   }
 
+  // Dieselbe Schranke gilt für die ERSATZPERSON (W2·8/F1): Wer im Ersatzfall
+  // einrückt, übernimmt die Aufgabe selbst – die Höchstpersönlichkeit der
+  // Personensorge hängt nicht am Rang. Ohne ausdrückliche Bereichs-Wahl gilt
+  // die Ersatzverfügung für ALLE übertragenen Bereiche; dann greift die
+  // Schranke, sobald die Personensorge überhaupt übertragen ist.
+  const ersatzBereiche = (e: VaErsatzperson): VaBereich[] =>
+    e.bereiche && e.bereiche.length > 0 ? e.bereiche : [...aktiveBereiche];
+  const personensorgeJuristischErsatz = a.ersatzpersonen.some(
+    (e) => e.name.trim() && ersatzTyp(e) === 'juristisch' && ersatzBereiche(e).includes('personensorge'),
+  );
+  if (personensorgeJuristischErsatz) {
+    blocker.push(
+      a.module.personensorge.includes('medizin')
+        ? 'Die Vertretung bei medizinischen Massnahmen kann nur einer NATÜRLICHEN Person übertragen werden (Art. 378 Abs. 1 Ziff. 1 ZGB) – bitte Person oder Modulauswahl anpassen (auch als Ersatzperson).'
+        : 'Die Personensorge ist höchstpersönlich und kann nur einer NATÜRLICHEN Person übertragen werden (Art. 360 ZGB); eine juristische Person kommt nur für die Vermögenssorge oder die Vertretung im Rechtsverkehr in Betracht (auch als Ersatzperson).',
+    );
+  }
+
   // Liegenschaften → ausdrückliche Sondervollmacht (wird automatisch aufgenommen)
   if (a.module.vermoegenssorge.includes('liegenschaften')) {
     hinweise.push('Liegenschaften gewählt: Die ausdrückliche Sondervollmacht für Erwerb, Belastung und Veräusserung von Grundstücken wird automatisch aufgenommen (Art. 396 Abs. 3 OR – analoge Anwendung in der Lehre umstritten, von der Praxis aber empfohlen).');
@@ -181,6 +227,13 @@ const BEREICH_LABEL: Record<VaBereich, string> = {
   personensorge: 'Personensorge',
   vermoegenssorge: 'Vermögenssorge',
   rechtsverkehr: 'Vertretung im Rechtsverkehr',
+};
+
+// Satzform «… für die Personensorge» (Ersatzverfügung mit Bereichs-Wahl).
+const ERSATZ_BEREICH_LABEL: Record<VaBereich, string> = {
+  personensorge: 'die Personensorge',
+  vermoegenssorge: 'die Vermögenssorge',
+  rechtsverkehr: 'die Vertretung im Rechtsverkehr',
 };
 
 export const VA_SCHEMA: VorlageSchema = {
@@ -220,6 +273,24 @@ export const VA_SCHEMA: VorlageSchema = {
       wiederholeUeber: 'beauftragteListe',
       begruendung: 'Je beauftragte Person eine Zeile mit den übertragenen Aufgabenbereichen.',
       norm: 'Art. 360 Abs. 1 ZGB',
+    },
+    {
+      id: 'V02c_einzeln',
+      text: 'Sind mehrere Personen beauftragt, ist jede im ihr übertragenen Aufgabenbereich einzeln zur Vertretung berechtigt.',
+      includeIf: { and: [{ feld: 'mehrereBeauftragte', eq: true }, { feld: 'vertretung', eq: 'einzeln' }] },
+      nummeriert: true,
+      begruendung: 'Aufgenommen, weil mehrere Personen beauftragt sind und Einzelvertretung gewählt wurde.',
+      norm: 'Art. 360 Abs. 1 ZGB',
+      hinweis: 'Das Gesetz regelt das Zusammenwirken mehrerer beauftragter Personen nicht ausdrücklich; die ausdrückliche Anordnung im Auftrag schafft Klarheit für KESB, Banken und Behörden.',
+    },
+    {
+      id: 'V02d_gemeinsam',
+      text: 'Sind mehrere Personen im selben Aufgabenbereich beauftragt, handeln sie in diesem Bereich nur gemeinsam (Kollektivvertretung).',
+      includeIf: { and: [{ feld: 'mehrereBeauftragte', eq: true }, { feld: 'vertretung', eq: 'gemeinsam' }] },
+      nummeriert: true,
+      begruendung: 'Aufgenommen, weil mehrere Personen beauftragt sind und Kollektivvertretung gewählt wurde.',
+      norm: 'Art. 360 Abs. 1 ZGB',
+      hinweis: 'Das Gesetz regelt das Zusammenwirken mehrerer beauftragter Personen nicht ausdrücklich; die ausdrückliche Anordnung im Auftrag schafft Klarheit für KESB, Banken und Behörden.',
     },
     {
       id: 'V03_ersatz',
@@ -395,12 +466,22 @@ export function vaZusammenstellen(a: VaAntworten) {
           ? `Die beauftragte Person wird nach Zeitaufwand zu einem Ansatz von CHF ${a.entschaedigungBetrag ?? '________'} pro Stunde entschädigt; notwendige Spesen werden ihr ersetzt.`
           : '';
 
+  // Bereichs-Zusatz der Ersatzverfügung (W2·8/F1): NUR bei ausdrücklicher
+  // Bereichs-Wahl. Ohne Wahl gilt der Ersatz für alle übertragenen Bereiche –
+  // dann bleibt der Satz wortgleich wie vor W2·8 (keine stille Textänderung
+  // bestehender Aufträge).
+  const ersatzBereicheText = (e: VaErsatzperson) =>
+    e.bereiche && e.bereiche.length > 0
+      ? ` für ${e.bereiche.map((x) => ERSATZ_BEREICH_LABEL[x]).join(', ')}`
+      : '';
+
   const antworten: Antworten = {
     ...a,
     beauftragteListe,
+    mehrereBeauftragte: beauftragteListe.length > 1,
     ersatzText: a.ersatzpersonen
       .filter((e) => e.name.trim())
-      .map((e, i) => `${i + 1}. ${e.name}${e.angaben ? ` (${e.angaben})` : ''}`)
+      .map((e, i) => `${i + 1}. ${e.name}${e.angaben ? ` (${e.angaben})` : ''}${ersatzBereicheText(e)}`)
       .join('; '),
     personensorgeListe: modulListe('personensorge'),
     vermoegenssorgeListe: modulListe('vermoegenssorge'),

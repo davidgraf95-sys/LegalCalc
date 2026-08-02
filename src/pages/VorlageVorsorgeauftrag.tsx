@@ -2,7 +2,8 @@ import { useMemo } from 'react';
 import { NormText } from '../components/NormText';
 import {
   VA_DEFAULTS, VA_BEREICHE, VA_MODULE, vaZusammenstellen, pruefeVaGates, beurkundungsHinweis,
-  type VaAntworten, type VaBereich, type VaBeauftragte, type VaFormMode,
+  type VaAntworten, type VaBereich, type VaBeauftragte, type VaErsatzperson, type VaFormMode,
+  type VaVertretung,
 } from '../lib/vorlagen/vorsorgeauftrag';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import { DatumsFeld } from '../components/DatumsFeld';
@@ -48,7 +49,19 @@ export function VorlageVorsorgeauftrag() {
       normalisieren: (g) => ({
         ...g,
         beauftragte: Array.isArray(g.beauftragte) ? g.beauftragte : [],
-        ersatzpersonen: Array.isArray(g.ersatzpersonen) ? g.ersatzpersonen : [],
+        // Alt-Stände (vor W2·8) kennen weder `typ` noch `bereiche` bei den
+        // Ersatzpersonen: fehlendes typ → 'natuerlich' (nie 'juristisch',
+        // sonst entstünde ein Blocker aus einem Altstand); fehlende bereiche
+        // bleiben undefined = Ersatz für alle übertragenen Bereiche.
+        ersatzpersonen: Array.isArray(g.ersatzpersonen)
+          ? (g.ersatzpersonen as Partial<VaErsatzperson>[]).map((e): VaErsatzperson => ({
+            name: e.name ?? '',
+            typ: e.typ === 'juristisch' ? 'juristisch' : 'natuerlich',
+            angaben: e.angaben ?? '',
+            bereiche: Array.isArray(e.bereiche) ? e.bereiche : undefined,
+          }))
+          : [],
+        vertretung: g.vertretung === 'gemeinsam' ? 'gemeinsam' : 'einzeln',
         module: {
           personensorge: Array.isArray(g.module?.personensorge) ? g.module.personensorge : [],
           vermoegenssorge: Array.isArray(g.module?.vermoegenssorge) ? g.module.vermoegenssorge : [],
@@ -86,6 +99,15 @@ export function VorlageVorsorgeauftrag() {
   const toggleBereich = (i: number, ber: VaBereich) => {
     const b = a.beauftragte[i];
     setBeauftragte(i, { bereiche: b.bereiche.includes(ber) ? b.bereiche.filter((x) => x !== ber) : [...b.bereiche, ber] });
+  };
+  const setErsatz = (i: number, patch: Partial<VaErsatzperson>) =>
+    set('ersatzpersonen', a.ersatzpersonen.map((x, j) => (j === i ? { ...x, ...patch } : x)));
+  // Bereichs-Wahl der Ersatzperson: leere Auswahl bleibt `undefined`
+  // (= Ersatz für alle übertragenen Bereiche, unveränderter Klauseltext).
+  const toggleErsatzBereich = (i: number, ber: VaBereich) => {
+    const cur = a.ersatzpersonen[i].bereiche ?? [];
+    const neu = cur.includes(ber) ? cur.filter((x) => x !== ber) : [...cur, ber];
+    setErsatz(i, { bereiche: neu.length > 0 ? neu : undefined });
   };
   const toggleModul = (ber: VaBereich, id: string) =>
     set('module', { ...a.module, [ber]: a.module[ber].includes(id) ? a.module[ber].filter((x) => x !== id) : [...a.module[ber], id] });
@@ -189,24 +211,55 @@ export function VorlageVorsorgeauftrag() {
               className="lc-btn-outline">+ Beauftragte Person hinzufügen</button>
           </div>
 
-          <div className="space-y-2">
+          {a.beauftragte.filter((b) => b.name.trim() && b.bereiche.length > 0).length > 1 && (
+            <div className="space-y-2">
+              <GruppenTitel>Zusammenwirken mehrerer beauftragter Personen</GruppenTitel>
+              <SelectionGrid
+                className="grid grid-cols-1 sm:grid-cols-2 gap-2"
+                items={([
+                  ['einzeln', 'Einzelvertretung (empfohlen)', 'Jede Person handelt im ihr übertragenen Bereich allein'],
+                  ['gemeinsam', 'Kollektivvertretung (nur gemeinsam)', 'Im selben Bereich beauftragte Personen handeln nur zusammen'],
+                ] as [VaVertretung, string, string][]).map(([code, label, sub]) => ({ code, label, sub }))}
+                value={a.vertretung}
+                onSelect={(code) => set('vertretung', code)}
+              />
+              <p className="text-xs text-ink-500">Das Gesetz regelt das Zusammenwirken nicht ausdrücklich; die ausdrückliche Anordnung schafft Klarheit für KESB, Banken und Behörden.</p>
+            </div>
+          )}
+
+          <div className="space-y-3">
             <GruppenTitel><NormText text={`Ersatzpersonen (Art. 360 Abs. 3 ZGB)`} /></GruppenTitel>
             {a.ersatzpersonen.map((e, i) => (
-              <div key={i} className="flex flex-wrap items-end gap-2">
-                <span className="num text-body-s text-ink-500 pb-2.5">{i + 1}.</span>
-                <div className="flex-1 min-w-[10rem]">
-                  <Field label="Name"><input className={inputCls} value={e.name}
-                    onChange={(ev) => set('ersatzpersonen', a.ersatzpersonen.map((x, j) => j === i ? { ...x, name: ev.target.value } : x))} /></Field>
+              <div key={i} className="lc-card p-4 space-y-3">
+                <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr_10rem] gap-3 items-end">
+                  <span className="num text-body-s text-ink-500 pb-2.5">{i + 1}.</span>
+                  <Field label="Name (Person oder Organisation)">
+                    <input className={inputCls} value={e.name} onChange={(ev) => setErsatz(i, { name: ev.target.value })} />
+                  </Field>
+                  <Field label="Typ">
+                    <select className={inputCls} value={e.typ} onChange={(ev) => setErsatz(i, { typ: ev.target.value as VaErsatzperson['typ'] })}>
+                      <option value="natuerlich">natürliche Person</option>
+                      <option value="juristisch">juristische Person</option>
+                    </select>
+                  </Field>
                 </div>
-                <div className="flex-1 min-w-[12rem]">
-                  <Field label="Geburtsdatum / Adresse" optional><input className={inputCls} value={e.angaben}
-                    onChange={(ev) => set('ersatzpersonen', a.ersatzpersonen.map((x, j) => j === i ? { ...x, angaben: ev.target.value } : x))} /></Field>
+                <Field label={e.typ === 'juristisch' ? 'Sitz / Adresse' : 'Geburtsdatum / Adresse'} optional>
+                  <input className={inputCls} value={e.angaben} onChange={(ev) => setErsatz(i, { angaben: ev.target.value })} />
+                </Field>
+                <div className="flex flex-wrap items-center gap-3">
+                  {VA_BEREICHE.map((ber) => (
+                    <label key={ber.id} className="flex items-center gap-1.5 text-body-s cursor-pointer text-ink-700">
+                      <input type="checkbox" checked={(e.bereiche ?? []).includes(ber.id)} onChange={() => toggleErsatzBereich(i, ber.id)} />
+                      {ber.label}
+                    </label>
+                  ))}
+                  <button type="button" onClick={() => set('ersatzpersonen', a.ersatzpersonen.filter((_, j) => j !== i))}
+                    className="ml-auto text-body-s text-danger-700 hover:underline">entfernen</button>
                 </div>
-                <button type="button" onClick={() => set('ersatzpersonen', a.ersatzpersonen.filter((_, j) => j !== i))}
-                  className="text-body-s text-danger-700 hover:underline pb-2.5">entfernen</button>
+                <p className="text-xs text-ink-500">Bereiche leer lassen = Ersatz für alle übertragenen Bereiche.</p>
               </div>
             ))}
-            <button type="button" onClick={() => set('ersatzpersonen', [...a.ersatzpersonen, { name: '', angaben: '' }])}
+            <button type="button" onClick={() => set('ersatzpersonen', [...a.ersatzpersonen, { name: '', typ: 'natuerlich', angaben: '' }])}
               className="lc-btn-outline">+ Ersatzperson hinzufügen</button>
             <p className="text-xs text-ink-500">Empfehlung: Ersatzperson ausserhalb der Familie für Interessenkonfliktfälle.</p>
           </div>
