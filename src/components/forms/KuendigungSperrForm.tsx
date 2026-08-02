@@ -258,7 +258,8 @@ export function KuendigungSperrForm({ onBeendigung }: {
           {/* Querverbindung (nur informativ, bei Sperrereignissen) */}
           {hatEreignisse && (
             <div className="lc-notice">
-              <p className="lc-overline mb-1">Querverbindung: Art. 336c ↔ Art. 324a</p>
+              {/* LM-101-Muster: Buchstabenzusätze (336c/324a) dürfen die uppercase-Overline nicht durchlaufen. */}
+              <p className="lc-overline mb-1">Querverbindung: <span className="normal-case">Art. 336c ↔ Art. 324a</span></p>
               <p className="text-body-s text-ink-600">
                 Sperrfrist (Art. 336c OR) und Lohnfortzahlung (Art. 324a OR) sind <strong>voneinander unabhängig</strong>:
                 Eine Sperrfrist von z.B. 90 Tagen bedeutet nicht 90 Tage Lohnfortzahlung. Beide sind separat zu prüfen (Modul A).
