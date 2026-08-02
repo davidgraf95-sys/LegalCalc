@@ -17,7 +17,10 @@ import { kopfModell, type KopfLabelKey } from '../lib/rechtsprechung/kopf';
 import { normalisiereRegeste, type BrowseEntscheid, type RichterRef } from '../lib/rechtsprechung/register';
 import { besetzungsTeile } from '../lib/rechtsprechung/besetzung-verlinkung';
 import { GEBIET_LABEL } from '../lib/normtext/register';
-import { LESE_PARAM, leseAusParam, urlMitHash, urlMitLese } from './entscheidLeserRegeln';
+import {
+  LESE_PARAM, leseAusParam, loescheNennungen, maleNennungen, nennungsAnker,
+  urlMitHash, urlMitLese, zaehleNennungen,
+} from './entscheidLeserRegeln';
 import { usePaneKontext } from '../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 import type { EntscheidSnapshot, EntscheidSprache, Abschnittstyp, Entscheidquelle } from '../lib/rechtsprechung/typen';
@@ -272,6 +275,8 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
     if (imPane || typeof window === 'undefined' || !window.history) return;
     window.history.replaceState(window.history.state, '', urlMitHash(window.location.href, anker));
   }, [imPane]);
+  // Laufindex des «nächste Fundstelle»-Knopfes (LM-208), zyklisch über die Ziele.
+  const [fundIdx, setFundIdx] = useState(0);
   const [fsIdx, setFsIdx] = useState<number>(ladeFsIdx);
   const setFs = (i: number) => {
     const x = Math.max(0, Math.min(FS_STUFEN.length - 1, i));
@@ -377,6 +382,18 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
     // bodyTab bewusst NICHT in den Deps: der Sprung gilt der Start-Ansicht.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [zustand, snap, normParam, schluessel]);
+  // LM-208: die wörtlichen Nennungen der HERKUNFTS-Norm im Lesetext markieren.
+  // Erst nach einem Frame — der Body wird beim Fassungswechsel neu aufgebaut, und
+  // ein synchrones setState im Effekt-Rumpf wäre ohnehin unzulässig. Der Lesemodus
+  // zeigt einen EIGENEN Body: dann Markierung zurücknehmen statt auf abgehängte
+  // Knoten zeigen zu lassen.
+  const koerperRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (zustand !== 'da' || !normParam || lese) { loescheNennungen(); return; }
+    maleNennungen(koerperRef.current, normParam);
+    return () => loescheNennungen();
+  }, [zustand, snap, normParam, lese, bodyTab]);
+
   useEffect(() => {
     if (zustand !== 'da' || typeof window === 'undefined') return;
     if (!hashRoh) return;
@@ -459,6 +476,24 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
       label: t === 'regeste' && !snap.regesteAmtlich ? 'Zusammenfassung' : ABSCHNITT_TITEL[t],
     }));
 
+  // ── LM-208 · Herkunft der Ankunft (nur bei ?norm=) ────────────────────────
+  // Beide Zahlen kommen aus DEMSELBEN Muster wie die Markierung im Text (§5,
+  // entscheidLeserRegeln): `ziele` sind die anspringbaren Erwägungs-Blöcke,
+  // `gesamt` alle wörtlichen Nennungen der sichtbaren Fassung. Aus den Daten
+  // gerechnet, nicht aus dem DOM — die Zeile steht damit im ersten Render
+  // richtig da (kein Nachwachsen/Umspringen, §15.2). Linearer Regex-Lauf über
+  // die Blöcke der aktiven Fassung; nur bei gesetztem ?norm=.
+  const herkunft = normParam ? {
+    ziele: nennungsAnker(aktiveAbschnitte, normParam),
+    gesamt: aktiveAbschnitte.reduce(
+      (n, a) => n + a.bloecke.reduce((m, b) => m + zaehleNennungen(b.text, normParam), 0), 0),
+  } : null;
+  const springeZuFundstelle = () => {
+    if (!herkunft || herkunft.ziele.length === 0) return;
+    springeZuAbschnitt(herkunft.ziele[fundIdx % herkunft.ziele.length]);
+    setFundIdx((n) => (n + 1) % herkunft.ziele.length);
+  };
+
   // R12 «Kopieren mit Fundstelle»: Zitierung + Stand-Ausweis in die Zwischenablage.
   // B-6 (QS-BASIS): Abrufdatum + Permalink (§7 a–d); ein Entscheid hat keine
   // Konsolidierung → keine «Fassung» (§8). Ohne origin (SSR/kein window): nur die
@@ -497,6 +532,42 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
           <div className="space-y-0.5">
             <p className="text-body-s leading-snug text-ink-700">{kopf.leitzeile}</p>
             <p className="text-micro italic text-ink-500">{SYNTH_MARKER[snap.sprache]}</p>
+          </div>
+        )}
+
+        {/* 3b LM-208 · Herkunfts-Hinweis: wer über einen Norm-Chip hierher kam, sah
+            bisher nirgends, über welche Norm — und musste die Stelle in einem
+            24'000-Zeichen-Urteil selbst suchen. Chip-Grammatik der Metazeile
+            (<span> flach, <button> gerahmt); die Norm selbst über NormText, damit
+            der Rückweg ein lebender Link ist (§13-D1). Der A17-Seitenanfang bleibt
+            unangetastet — hier kommt nur eine Zeile hinzu, kein Sprungverhalten. */}
+        {herkunft && normParam && (
+          <div className="lc-chip-zeile flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-xs text-ink-500">
+            <span>Aufgerufen über <NormText text={normParam} /></span>
+            {herkunft.ziele.length > 0 ? (
+              <button type="button" onClick={springeZuFundstelle}
+                className="lc-chip hover:text-brass-700 hover:border-brass-400"
+                title="Zur nächsten wörtlichen Nennung in den Erwägungen springen">
+                {/* Abstand als Klasse, nicht als Leerzeichen: `.lc-chip` ist ein
+                    Flex-Container, dort fallen reine Whitespace-Knoten zwischen
+                    zwei Flex-Items weg (Screenshot-Befund «Fundstelle1/2»). */}
+                ↓ Fundstelle
+                <span className="num ml-1">{(fundIdx % herkunft.ziele.length) + 1}/{herkunft.ziele.length}</span>
+              </button>
+            ) : herkunft.gesamt > 0 ? (
+              // Genannt, aber ausserhalb der Erwägungen (Sachverhalt/Dispositiv):
+              // markiert ja, anspringbarer Anker nein — ehrlich benannt (§8).
+              <span title="Die Nennung liegt ausserhalb der Erwägungen und ist im Text markiert">
+                im Text markiert, kein Erwägungs-Anker
+              </span>
+            ) : (
+              // Der reproduzierte Fall: der Entscheid schreibt «Art. 367 ff. OR».
+              // Das «ff.» aufzulösen wäre geraten (§1/§8) — also ehrlich sagen,
+              // dass die Norm nicht wörtlich in dieser Form im Text steht.
+              <span title="Der Entscheid nennt diese Norm nicht in exakt dieser Form (z. B. nur als «… ff.» oder mit Absatz-Angabe)">
+                im Text nicht wörtlich genannt
+              </span>
+            )}
           </div>
         )}
 
@@ -632,7 +703,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
           der Overlay zeigt denselben EntscheidBody; doppelte Abschnitts-`id` wären
           ungültiges HTML + bräche Anker-Sprünge. */}
       {!lese && (
-        <article className="rsp-anker mx-auto w-full max-w-reading" style={{ '--rsp-fs': `${FS_STUFEN[fsIdx]}rem` } as CSSProperties}>
+        <article ref={koerperRef} className="rsp-anker mx-auto w-full max-w-reading" style={{ '--rsp-fs': `${FS_STUFEN[fsIdx]}rem` } as CSSProperties}>
           <EntscheidBody abschnitte={aktiveAbschnitte} zitierung={snap.zitierung} bgeReferenz={snap.bgeReferenz} />
         </article>
       )}
