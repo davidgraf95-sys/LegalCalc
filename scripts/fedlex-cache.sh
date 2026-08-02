@@ -131,7 +131,7 @@ EINTRAEGE=(
   "kvg|cc/1995/1328_1328_1328|20260701|1|art_7,art_62,art_64_a|832.10"
   # KVV: gepinnt 11.6.2026 (besondere Versicherungsformen: Art. 94 Abs. 2 /
   # Art. 100 Abs. 3 — Wechsel nur auf Jahresende, Fassung AS 2024 697).
-  "kvv|cc/1995/3867_3867_3867|20260701|1|art_94,art_99,art_100|832.102"
+  "kvv|cc/1995/3867_3867_3867|20260801|0|art_94,art_99,art_100|832.102"
   # ── Erweiterung 17.6.2026 (jedes zitierte Bundesgesetz mit Volltext-Snapshot,
   # Auftrag David). ELI + geltende Konsolidierung via Fedlex-SPARQL ermittelt,
   # SR-Nr. + Pflicht-Anker am Filestore-HTML empirisch verifiziert (§7). Alle n=0.
