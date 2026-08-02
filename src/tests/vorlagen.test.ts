@@ -259,6 +259,9 @@ import {
   VA_DEFAULTS, VA_SCHEMA, vaZusammenstellen, pruefeVaGates,
   type VaAntworten,
 } from '../lib/vorlagen/vorsorgeauftrag';
+import { NOTARIATE, NOTARIAT_SYSTEM_LABEL } from '../lib/notariate';
+import { berechneBeurkundung } from '../lib/beurkundung';
+import { KANTONE } from '../lib/kantone';
 
 const va = (over: Partial<VaAntworten>): VaAntworten => ({
   ...VA_DEFAULTS,
@@ -477,6 +480,72 @@ describe('Vorlage Vorsorgeauftrag', () => {
       ersatzpersonen: [{ name: 'D', typ: 'natuerlich', angaben: 'geb. 1992' }],
     }));
     expect(ohne.dokument.absaetze.find((x) => x.bausteinId === 'V03_ersatz')!.text).toContain('1. D (geb. 1992).');
+  });
+
+  // ── W2·8 / B5: Gate-Hinweise normtreu (Restbefund aus B3/B4) ───────────────
+
+  it('Liegenschaften-Hinweis nennt die Auftragsrecht-Brücke statt «umstritten» (Befund V-3)', () => {
+    const g = pruefeVaGates(va({ module: { personensorge: [], vermoegenssorge: ['liegenschaften'], rechtsverkehr: [] } }));
+    const h = g.hinweise.find((x) => x.startsWith('Liegenschaften gewählt:'));
+    expect(h).toBeDefined();
+    expect(h).toContain('Art. 396 Abs. 3 OR i.V.m. Art. 365 Abs. 1 ZGB');
+    expect(h).toContain('der Erwerb bedarf keiner solchen');
+    // Die frühere, den Rechtsstand verzeichnende Formulierung ist weg.
+    expect(h).not.toContain('umstritten');
+    // Deckungsgleich mit dem Baustein-Hinweis der Urkunde (§5: eine Aussage).
+    const r = vaZusammenstellen(va({ module: { personensorge: [], vermoegenssorge: ['liegenschaften'], rechtsverkehr: [] } }));
+    expect(r.protokoll.find((p) => p.bausteinId === 'V07_grundstueck')!.hinweis).toContain('Art. 365 Abs. 1 ZGB');
+  });
+
+  it('Entschädigungs-Hinweis zitiert Art. 366 Abs. 1 und 2 ZGB (Festsetzung + Kostentragung)', () => {
+    const g = pruefeVaGates(va({ entschaedigung: 'keine_angabe' }));
+    const h = g.hinweise.find((x) => x.startsWith('Ohne Entschädigungsregelung'));
+    expect(h).toBeDefined();
+    expect(h).toContain('Art. 366 Abs. 1 und 2 ZGB');
+    // Bei getroffener Regelung entfällt der Hinweis (Art. 366 greift nur ohne Anordnung).
+    const mit = pruefeVaGates(va({ entschaedigung: 'unentgeltlich' }));
+    expect(mit.hinweise.some((x) => x.startsWith('Ohne Entschädigungsregelung'))).toBe(false);
+  });
+
+  // ── W2·8 / B5: SSoT-Verdrahtung Beurkundung (Befund F6) ────────────────────
+  //
+  // Die Vorlagen-Engine führt keinen eigenen Kantons-Katalog mehr. Der Beleg
+  // dafür ist kein Text-Vergleich, sondern die Deckungsgleichheit der beiden
+  // Stammdaten-Quellen, aus denen die UI den Hinweis speist: für jeden Kanton
+  // muss ein Notariats-Eintrag existieren und die Beurkundungs-Engine ein
+  // Ergebnis liefern (ok mit Norm+Stand ODER ehrliches «offen», nie leer).
+  it('Beurkundungs-Hinweis speist sich aus den Stammdaten – für alle 26 Kantone auflösbar', () => {
+    KANTONE.forEach((k) => {
+      const n = NOTARIATE[k];
+      expect(n?.stelle, k).toBeTruthy();
+      expect(NOTARIAT_SYSTEM_LABEL[n.system], k).toBeTruthy();
+      const r = berechneBeurkundung({ geschaeftsart: 'vorsorgeauftrag', kanton: k });
+      if (r.status === 'ok') {
+        expect(r.posten, k).not.toBeNull();
+        expect(r.posten!.quelle.erlassName, k).toBeTruthy();
+        expect(r.posten!.quelle.artikel, k).toBeTruthy();
+        expect(r.posten!.quelle.stand, k).toBeTruthy();
+      } else {
+        expect(r.posten, k).toBeNull();
+        expect(r.hinweise.length, k).toBeGreaterThan(0);
+      }
+    });
+  });
+
+  it('die drei belegten Abweichungen des gestrichenen Katalogs sind aufgelöst (TG/BE/SG)', () => {
+    // TG: der alte Katalog behauptete «gemischtes System» – Stammdatum ist Amtsnotariat.
+    expect(NOTARIATE.TG.system).toBe('amtsnotariat');
+    // BE: alter Richtwert «ab ca. CHF 500» – der Tarif nennt ein Minimum von CHF 300.
+    const be = berechneBeurkundung({ geschaeftsart: 'vorsorgeauftrag', kanton: 'BE' });
+    expect(be.status).toBe('ok');
+    expect(be.posten!.quelle.erlassNr).toBe('BSG 169.81');
+    expect(be.posten!.ergebnis.deterministisch ? '' : be.posten!.ergebnis.hinweis).toContain('300');
+    // SG: alter Richtwert «ca. CHF 400» – der Tarif nennt den Rahmen 110–1100.
+    const sg = berechneBeurkundung({ geschaeftsart: 'vorsorgeauftrag', kanton: 'SG' });
+    expect(sg.status).toBe('ok');
+    expect(sg.posten!.ergebnis.deterministisch).toBe(false);
+    expect(sg.posten!.ergebnis.deterministisch ? undefined : sg.posten!.ergebnis.vonChf).toBe(110);
+    expect(sg.posten!.ergebnis.deterministisch ? undefined : sg.posten!.ergebnis.bisChf).toBe(1100);
   });
 });
 

@@ -134,18 +134,18 @@ export const VA_DEFAULTS: VaAntworten = {
   datum: '',
 };
 
-// Dokumentierte Beurkundungs-Hinweise je Kanton (nur belegte Beispiele —
-// keine erfundene Vollabdeckung; sonst generischer Hinweis).
-export function beurkundungsHinweis(kanton?: string): string {
-  const k = (kanton ?? '').toUpperCase();
-  if (k === 'ZH') return 'Zürich: Amtsnotariat – ausschliessliche Zuständigkeit der Notariate.';
-  if (k === 'BE') return 'Bern: freies Notariat (Richtwert gemäss Praxis ab ca. CHF 500).';
-  if (k === 'TI') return 'Tessin: freies (lateinisches) Notariat.';
-  if (k === 'SG') return 'St. Gallen: gemischtes System – auch Anwältinnen/Anwälte beurkundungsbefugt (Amtsnotariat Richtwert ca. CHF 400 zzgl. MwSt).';
-  if (k === 'TG' || k === 'AR' || k === 'AI') return `${k}: gemischtes System – auch Anwältinnen/Anwälte beurkundungsbefugt.`;
-  if (k === 'SZ') return 'Schwyz: auch Gemeinde-/Landschreiber beurkundungsbefugt.';
-  return 'Das Beurkundungsverfahren richtet sich nach kantonalem Recht (Art. 55 SchlT ZGB; BGE 151 III 81) – zuständige Urkundsperson am Wohnsitz erfragen.';
-}
+// W2·8/B5 (Befund F6): Die frühere Funktion `beurkundungsHinweis(kanton)`
+// pflegte eine ZWEITE WAHRHEIT über Notariatssystem und Gebühren-Richtwerte
+// (§5-Verstoss) — mit drei belegten Abweichungen von den eigenen Stammdaten:
+// TG «gemischt» gegen `NOTARIATE.TG.system === 'amtsnotariat'`, BE «ab ca.
+// CHF 500» gegen das Tarif-Minimum von CHF 300 (Art. 8a Abs. 1 GebVN,
+// BSG 169.81) und SG «ca. CHF 400» ohne Beleg gegen den Rahmen 110–1100
+// (GebT sGS 821.5 Nr. 60.05.01). Sie ist ersatzlos gestrichen; die UI speist
+// den Hinweis aus den beiden bestehenden Einzelquellen: `NOTARIATE`
+// (src/lib/notariate.ts) für System und Anlaufstelle, `berechneBeurkundung`
+// (src/lib/beurkundung.ts) für die Gebühr mit Norm, Link und Stand (D1) bzw.
+// für das ehrliche «offen», solange ein kantonaler Tarif fehlt (§8).
+// Grundlage: bibliothek/recherche/vorsorgeauftrag-inhalte.md Ziff. 7.
 
 // ── Gates ───────────────────────────────────────────────────────────────────
 
@@ -237,7 +237,11 @@ export function pruefeVaGates(a: VaAntworten): VaGateErgebnis {
 
   // Liegenschaften → ausdrückliche Sondervollmacht (wird automatisch aufgenommen)
   if (a.module.vermoegenssorge.includes('liegenschaften')) {
-    hinweise.push('Liegenschaften gewählt: Die ausdrückliche Sondervollmacht für Erwerb, Belastung und Veräusserung von Grundstücken wird automatisch aufgenommen (Art. 396 Abs. 3 OR – analoge Anwendung in der Lehre umstritten, von der Praxis aber empfohlen).');
+    // W2·8/B5 (Restbefund aus B3/B4): Formulierung an den V07-Baustein-Hinweis
+    // angeglichen. Die Auftragsrecht-Verweisung des Art. 365 Abs. 1 ZGB trägt
+    // die besondere Ermächtigung — «analoge Anwendung umstritten» beschrieb den
+    // Rechtsstand unzutreffend (Befund V-3).
+    hinweise.push('Liegenschaften gewählt: Die ausdrückliche Sondervollmacht für Erwerb, Belastung und Veräusserung von Grundstücken wird automatisch aufgenommen (Art. 396 Abs. 3 OR i.V.m. Art. 365 Abs. 1 ZGB – die Auftragsrecht-Verweisung trägt die besondere Ermächtigung; der Erwerb bedarf keiner solchen und wird zur Klarstellung mitgenannt).');
   }
 
   // Ersatzperson empfohlen
@@ -245,9 +249,11 @@ export function pruefeVaGates(a: VaAntworten): VaGateErgebnis {
     hinweise.push('Eine Ersatzverfügung ist empfohlen, falls die beauftragte Person ungeeignet ist, ablehnt oder kündigt (Art. 360 Abs. 3 ZGB) – idealerweise eine Person ausserhalb möglicher Interessenkonflikte.');
   }
 
-  // Entschädigung offen → KESB legt fest
+  // Entschädigung offen → KESB legt fest. Absatz-Präzisierung W2·8/B5: Die
+  // Festsetzung durch die KESB steht in Art. 366 Abs. 1, die Tragung durch die
+  // auftraggebende Person in Abs. 2 — der Satz stützt sich auf beide.
   if (a.entschaedigung === 'keine_angabe') {
-    hinweise.push('Ohne Entschädigungsregelung legt die KESB bei der Validierung eine angemessene Entschädigung fest (Art. 366 ZGB), zulasten der auftraggebenden Person.');
+    hinweise.push('Ohne Entschädigungsregelung legt die KESB bei der Validierung eine angemessene Entschädigung fest (Art. 366 Abs. 1 und 2 ZGB), zulasten der auftraggebenden Person.');
   }
 
   // Wirksamkeit erst nach KESB-Validierung – immer

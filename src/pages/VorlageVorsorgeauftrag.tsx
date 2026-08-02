@@ -1,10 +1,16 @@
 import { useMemo } from 'react';
 import { NormText } from '../components/NormText';
+import { KantonArtikelTrigger } from '../components/KantonQuelleLink';
 import {
-  VA_DEFAULTS, VA_BEREICHE, VA_MODULE, vaZusammenstellen, pruefeVaGates, beurkundungsHinweis,
+  VA_DEFAULTS, VA_BEREICHE, VA_MODULE, vaZusammenstellen, pruefeVaGates,
   type VaAntworten, type VaBereich, type VaBeauftragte, type VaErsatzperson, type VaFormMode,
   type VaVertretung,
 } from '../lib/vorlagen/vorsorgeauftrag';
+import { NOTARIATE, NOTARIAT_SYSTEM_LABEL } from '../lib/notariate';
+import { berechneBeurkundung } from '../lib/beurkundung';
+import { ngPostenText } from '../lib/notariatGrundbuch';
+import { KANTONE as KANTON_CODES } from '../lib/kantone';
+import type { KantonCode } from '../data/tarif/typen';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, GruppenTitel, inputCls } from '../components/vorlagen/ui';
@@ -40,6 +46,59 @@ const BANNER_VA_BEURKUNDUNG: PdfBanner = {
   titel: 'ENTWURF FÜR DIE ÖFFENTLICHE BEURKUNDUNG',
   text: 'Vorlage zur Besprechung mit der Urkundsperson. Rechtsgültig wird der Vorsorgeauftrag erst mit der öffentlichen Beurkundung nach kantonalem Recht (Art. 361 Abs. 1 ZGB; BGE 151 III 81).',
 };
+
+// ─── Beurkundungs-Hinweis aus den Stammdaten (SSoT, W2·8/B5, Befund F6) ─────
+//
+// Bis hierher speiste die Vorlagen-Engine diese Zeile aus einem eigenen
+// Kantons-Katalog (`beurkundungsHinweis()`) — eine zweite Wahrheit mit drei
+// belegten Abweichungen von den Stammdaten (TG-System, BE- und SG-Gebühren).
+// Der Katalog ist gestrichen; die Zeile kommt jetzt aus den beiden bestehenden
+// Einzelquellen: `NOTARIATE` für Notariatssystem und Anlaufstelle,
+// `berechneBeurkundung` für die Gebühr mit Norm, Stand und amtlichem Link (D1).
+// Fehlt der kantonale Tarif, zeigt die Engine ein ehrliches «offen» — hier wird
+// nie ein Richtwert erfunden (§8). Render-Muster übernommen aus PostenAnzeige
+// in components/forms/BeurkundungForm.tsx (gleiche Engine-Rückgabe, gleiche
+// Darstellung: Betrag · Rahmen-Vorbehalt · Erlass/Artikel/Stand/Quelle).
+const istKanton = (k?: string): k is KantonCode =>
+  !!k && (KANTON_CODES as readonly string[]).includes(k);
+
+const BEURKUNDUNG_GENERISCH =
+  'Das Beurkundungsverfahren richtet sich nach kantonalem Recht (Art. 55 SchlT ZGB) – zuständige Urkundsperson am Wohnsitz erfragen.';
+
+function BeurkundungsHinweis({ kanton }: { kanton?: string }) {
+  const kt = istKanton(kanton) ? kanton : undefined;
+  const kosten = useMemo(
+    () => (kt ? berechneBeurkundung({ geschaeftsart: 'vorsorgeauftrag', kanton: kt }) : null),
+    [kt],
+  );
+  if (!kt || !kosten) return <NormText text={BEURKUNDUNG_GENERISCH} />;
+
+  const n = NOTARIATE[kt];
+  const p = kosten.posten;
+  return (
+    <span className="block space-y-1">
+      <span className="block">
+        {kt}: {NOTARIAT_SYSTEM_LABEL[n.system]} – Anlaufstelle{' '}
+        <a href={n.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-800">{n.stelle} ↗</a>
+        {!n.urlBelegt ? ' (Angabe ohne Gewähr)' : ''}
+        {n.hinweis ? ` ${n.hinweis}` : ''}
+      </span>
+      {p ? (
+        <span className="block">
+          Beurkundungsgebühr <span className="num">{ngPostenText(p)}</span>
+          {!p.ergebnis.deterministisch ? ' – Rahmen bzw. aufwandabhängig, die konkrete Festsetzung erfolgt im Einzelfall' : ''}
+          {' · '}{p.quelle.erlassName} ({p.quelle.erlassNr}), <KantonArtikelTrigger quelle={p.quelle} /> · Stand {p.quelle.stand}
+          {p.quelle.verifiziert === 'recherche' ? ' · nicht abgenommen' : ''}
+          {p.quelle.quelleUrl
+            ? <> · <a href={p.quelle.quelleUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-800">amtliche Quelle ↗</a></>
+            : null}
+        </span>
+      ) : (
+        <span className="block">{kosten.hinweise.join(' ')}</span>
+      )}
+    </span>
+  );
+}
 
 export function VorlageVorsorgeauftrag() {
   const { a, set, schritt, setSchritt, bestaetigt, setBestaetigt, kopiert, kopieren, zuruecksetzen } =
@@ -154,7 +213,7 @@ export function VorlageVorsorgeauftrag() {
                     {KANTONE.map((k) => <option key={k} value={k}>{k === '' ? '– wählen –' : k}</option>)}
                   </select>
                 </Field>
-                <p className="text-xs text-ink-500">{beurkundungsHinweis(a.kanton)} Gebührenangaben sind Richtwerte und stellenabhängig.</p>
+                <div className="text-xs text-ink-500"><BeurkundungsHinweis kanton={a.kanton} /></div>
               </div>
             )}
           </div>
@@ -403,12 +462,21 @@ export function VorlageVorsorgeauftrag() {
               </ul>
             ) : (
               <ul className="lc-list space-y-2 text-body-s text-ink-700">
-                <li><strong>Beurkundung:</strong> Diesen Entwurf mit der Urkundsperson besprechen; das Verfahren richtet sich nach kantonalem Recht (BGE 151 III 81 – keine Zeugen erforderlich). {beurkundungsHinweis(a.kanton)}</li>
+                <li><strong>Beurkundung:</strong> Diesen Entwurf mit der Urkundsperson besprechen; das Verfahren richtet sich nach kantonalem Recht (BGE 151 III 81 – keine Zeugen erforderlich). <BeurkundungsHinweis kanton={a.kanton} /></li>
               </ul>
             )}
             <ul className="lc-list space-y-2 text-body-s text-ink-700">
               <li><strong>Wirksamkeit:</strong><NormText text={` Der Vorsorgeauftrag wird erst wirksam, wenn die KESB ihn bei eingetretener Urteilsunfähigkeit validiert (Art. 363 ZGB).`} /></li>
-              <li><strong>Auffindbarkeit:</strong><NormText text={` Errichtung und Hinterlegungsort beim Zivilstandsamt eintragen lassen (Art. 361 Abs. 3 ZGB; Gebühr CHF 75, Bestätigung +CHF 30 – Richtwerte). Die KESB anerkennt nur das Original; beauftragte Person informieren und Aufbewahrungsort mitteilen (nicht ins alleinige Bankschliessfach).`} /></li>
+              {/* W2·8/B5 (Befund N1, Fedlex-AKN-Verifikation 2.8.2026): Der Eintrag
+                  erfolgt auf Antrag bei einem BELIEBIGEN Zivilstandsamt (Art. 23a ZStV,
+                  SR 211.112.2) und umfasst nur Tatsache und Hinterlegungsort, nie den
+                  Inhalt. Die Gebühr von CHF 75 ist ein FIXER Bundestarif (Anhang 1
+                  Ziff. 23 ZStGV, SR 172.042.110); weitere Gebühren sind unzulässig
+                  (Art. 1 Abs. 2 ZStGV). Die frühere Zeile war doppelt falsch: «Richtwerte»
+                  (es ist ein Fixtarif) und «Bestätigung +CHF 30» (kein Tatbestand im
+                  Anhang – die Ziff.-1.1-Gebühr betrifft beurkundete Personenstandsdaten,
+                  der VA-Eintrag ist nach Art. 8a ZStV gerade nicht beurkundet). */}
+              <li><strong>Auffindbarkeit:</strong><NormText text={` Errichtung und Hinterlegungsort auf Antrag bei einem beliebigen Zivilstandsamt eintragen lassen (Art. 361 Abs. 3 ZGB; Art. 23a ZStV). Gebühr CHF 75 (Anhang 1 Ziff. 23 ZStGV, Stand 11.11.2024); eingetragen wird nur die Tatsache der Errichtung und der Hinterlegungsort, nicht der Inhalt. Die KESB anerkennt nur das Original; beauftragte Person informieren und Aufbewahrungsort mitteilen (nicht ins alleinige Bankschliessfach).`} /></li>
               <li><strong>Widerruf:</strong><NormText text={` jederzeit in einer Errichtungsform oder durch Vernichtung der Urkunde (Art. 362 ZGB).`} /></li>
             </ul>
             <label className="flex items-start gap-2.5 py-1.5 text-body-s cursor-pointer text-ink-900 font-medium pt-1">
