@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { usePaneSteuerung } from '../layout/usePaneLayout';
-import { GLYPH_LEGENDE } from './StatusBadge';
+import { GLYPH_LEGENDE } from './statusRezept';
 
 // ─── ZeichenLegende — sichtbare Erklärung der Chip-Glyphen (LM-050) ──────────
 //
@@ -15,7 +15,7 @@ import { GLYPH_LEGENDE } from './StatusBadge';
 // — nicht Begriff selbst, weil das Glossar EINEN Begriff erklärt, hier aber
 // eine Zeichen-LISTE steht).
 //
-// Die Texte kommen aus GLYPH_LEGENDE (StatusBadge.tsx) — dieselbe Quelle wie
+// Die Texte kommen aus GLYPH_LEGENDE (statusRezept.ts) — dieselbe Quelle wie
 // die aria-label/title der Glyphen selbst (§5, Magic Moment 4: textgleich).
 // Der ⧉-Eintrag erscheint NUR, wenn die Nebeneinander-Buttons überhaupt
 // gerendert werden (kannOeffnen, ≥lg + freie Pane-Kapazität) — eine Erklärung
