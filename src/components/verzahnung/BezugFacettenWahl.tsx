@@ -27,6 +27,7 @@
 import { BEDIENBARE_KLASSEN, KLASSE_SCHALTER, istErweitert, schalteKlasse, schalteKanton } from '../../pages/gesetz-leser/bezugAuswahl';
 import { STATUS_LABEL, type BezugStatus } from '../../lib/verzahnung/facetten';
 import type { BezugsBilanz, KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
+import { ZeichenLegende } from './ZeichenLegende';
 
 /** Gemeinsame Schalter-Optik der Streifen (identisch zu ZeitraumWahl/HistAnsichtWahl). */
 const KNOPF = 'rounded px-1.5 py-0.5 text-xs transition-colors';
@@ -156,6 +157,18 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
           ? 'Jede zugeschaltete Instanz steht am Artikel als eigene Linie — nie unter die Leitentscheide gemischt, chronologisch vom neusten zum ältesten; gezeigt werden fünf, ein Klick lädt die nächsten fünf. Die Zahl am Schalter nennt die verschiedenen Entscheide dieser Instanz im ganzen Erlass; ein Entscheid kann an mehreren Artikeln stehen.'
           : 'Grundeinstellung: nur amtlich publizierte Leitentscheide. Weitere Instanzen laden zusätzliche Daten nach; die Zahl am Schalter sagt vorher, wie viele verschiedene Entscheide dieser Erlass davon führt.'}
       </p>
+
+      {/* LM-050-Nachzug (W2·17-UI-BEFUNDE-B1, David-Entscheid 2.8.2026 «mach es
+          still»): die Zeichenerklärung für ★/↻/⧉ stand bis hierher JE
+          Bezüge-Linie am Artikel — auf /gesetze/bund/OR dadurch ~376×. Sie
+          erklärt Chips, die es nur zu sehen gibt, wenn hier eine Instanz
+          zugeschaltet ist — darum EIN Ort statt vieler: am Ende genau der
+          Steuerung, die diese Chips überhaupt erst zuschaltet. Die Komponente
+          selbst bleibt unverändert (Toggletip-Muster, Begründung dort); nur
+          der Mount-Punkt hat sich verschoben. */}
+      <div className="px-2.5 pb-1">
+        <ZeichenLegende />
+      </div>
     </>
   );
 }
