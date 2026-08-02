@@ -9111,7 +9111,7 @@
     },
     {
      "bausteinId": "V13_ersetzt",
-     "text": "2. Dieser Vorsorgeauftrag ersetzt alle früheren Vorsorgeaufträge."
+     "text": "2. Ich widerrufe hiermit alle früheren Vorsorgeaufträge. Dieser Vorsorgeauftrag tritt an ihre Stelle."
     },
     {
      "bausteinId": "V14_schluss_eigenhaendig",
@@ -9121,7 +9121,7 @@
     }
    ],
    "disclaimer": "Entwurf – erstellt mit LexMetrik. Keine Rechtsberatung. Gültig ist der Vorsorgeauftrag nur vollständig eigenhändig (von Hand geschrieben, datiert, unterzeichnet, Art. 361 Abs. 2 ZGB) oder öffentlich beurkundet (Art. 361 Abs. 1 ZGB); wirksam erst nach Validierung durch die KESB (Art. 363 ZGB). Bei komplexen Vermögensverhältnissen oder Unternehmen: Notariat bzw. Fachberatung beiziehen.",
-   "version": "1.0.0 (Rechtsstand Art. 360–369 ZGB, in Kraft seit 1.1.2013)"
+   "version": "1.1.0 (Rechtsstand Art. 360–369 ZGB, Snapshot-Stand 1.7.2026)"
   },
   "aufgenommen": [
    "V01_identifikation",
@@ -9148,8 +9148,8 @@
    },
    {
     "bausteinId": "V13_ersetzt",
-    "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich ersetzt werden sollen.",
-    "norm": "Art. 362 Abs. 3 ZGB"
+    "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich aufgehoben werden sollen: Der Widerruf wird in einer Errichtungsform ausgesprochen (Art. 362 Abs. 1 ZGB) statt bloss angedeutet.",
+    "norm": "Art. 362 Abs. 1 ZGB"
    },
    {
     "bausteinId": "V14_schluss_eigenhaendig",
@@ -9179,7 +9179,7 @@
     },
     {
      "bausteinId": "V13_ersetzt",
-     "text": "2. Dieser Vorsorgeauftrag ersetzt alle früheren Vorsorgeaufträge."
+     "text": "2. Ich widerrufe hiermit alle früheren Vorsorgeaufträge. Dieser Vorsorgeauftrag tritt an ihre Stelle."
     },
     {
      "bausteinId": "V14_schluss_beurkundung",
@@ -9189,7 +9189,7 @@
     }
    ],
    "disclaimer": "Entwurf – erstellt mit LexMetrik. Keine Rechtsberatung. Gültig ist der Vorsorgeauftrag nur vollständig eigenhändig (von Hand geschrieben, datiert, unterzeichnet, Art. 361 Abs. 2 ZGB) oder öffentlich beurkundet (Art. 361 Abs. 1 ZGB); wirksam erst nach Validierung durch die KESB (Art. 363 ZGB). Bei komplexen Vermögensverhältnissen oder Unternehmen: Notariat bzw. Fachberatung beiziehen.",
-   "version": "1.0.0 (Rechtsstand Art. 360–369 ZGB, in Kraft seit 1.1.2013)"
+   "version": "1.1.0 (Rechtsstand Art. 360–369 ZGB, Snapshot-Stand 1.7.2026)"
   },
   "aufgenommen": [
    "V01_identifikation",
@@ -9216,8 +9216,8 @@
    },
    {
     "bausteinId": "V13_ersetzt",
-    "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich ersetzt werden sollen.",
-    "norm": "Art. 362 Abs. 3 ZGB"
+    "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich aufgehoben werden sollen: Der Widerruf wird in einer Errichtungsform ausgesprochen (Art. 362 Abs. 1 ZGB) statt bloss angedeutet.",
+    "norm": "Art. 362 Abs. 1 ZGB"
    },
    {
     "bausteinId": "V14_schluss_beurkundung",
@@ -9261,7 +9261,7 @@
     },
     {
      "bausteinId": "V04b_personensorgeliste",
-     "text": "– Entscheid über Wohnsituation und Aufenthalt (inkl. Heim-/Pflegeeintritt);\n– Vertretung bei medizinischen Massnahmen (Art. 377 f. ZGB); eine Patientenverfügung geht vor;"
+     "text": "– Entscheid über Wohnsituation und Aufenthalt (inkl. Heim-/Pflegeeintritt);\n– Vertretung bei medizinischen Massnahmen (Art. 378 Abs. 1 Ziff. 1 i.V.m. Art. 377 ZGB); eine Patientenverfügung geht vor;"
     },
     {
      "bausteinId": "V05_vermoegenssorge",
@@ -9309,7 +9309,7 @@
     },
     {
      "bausteinId": "V13_ersetzt",
-     "text": "13. Dieser Vorsorgeauftrag ersetzt alle früheren Vorsorgeaufträge."
+     "text": "13. Ich widerrufe hiermit alle früheren Vorsorgeaufträge. Dieser Vorsorgeauftrag tritt an ihre Stelle."
     },
     {
      "bausteinId": "V14_schluss_eigenhaendig",
@@ -9319,7 +9319,7 @@
     }
    ],
    "disclaimer": "Entwurf – erstellt mit LexMetrik. Keine Rechtsberatung. Gültig ist der Vorsorgeauftrag nur vollständig eigenhändig (von Hand geschrieben, datiert, unterzeichnet, Art. 361 Abs. 2 ZGB) oder öffentlich beurkundet (Art. 361 Abs. 1 ZGB); wirksam erst nach Validierung durch die KESB (Art. 363 ZGB). Bei komplexen Vermögensverhältnissen oder Unternehmen: Notariat bzw. Fachberatung beiziehen.",
-   "version": "1.0.0 (Rechtsstand Art. 360–369 ZGB, in Kraft seit 1.1.2013)"
+   "version": "1.1.0 (Rechtsstand Art. 360–369 ZGB, Snapshot-Stand 1.7.2026)"
   },
   "aufgenommen": [
    "V01_identifikation",
@@ -9403,12 +9403,12 @@
     "bausteinId": "V07_grundstueck",
     "begruendung": "Automatisch aufgenommen, weil das Modul «Liegenschaften» gewählt wurde – ausdrückliche Sondervollmacht.",
     "norm": "Art. 396 Abs. 3 OR",
-    "hinweis": "Ob Art. 396 Abs. 3 OR auf den Vorsorgeauftrag analog anwendbar ist, ist in der Lehre umstritten; die Praxis empfiehlt die ausdrückliche Sondervollmacht dennoch."
+    "hinweis": "Art. 396 Abs. 3 OR deckt Veräusserung und Belastung; der Erwerb bedarf keiner besonderen Ermächtigung und wird zur Klarstellung im Grundbuchverkehr mitgenannt. Die Brücke ins Erwachsenenschutzrecht schlägt Art. 365 Abs. 1 ZGB (Auftragsrecht-Verweisung)."
    },
    {
     "bausteinId": "V08_schenkungen",
     "begruendung": "Aufgenommen, weil Gelegenheitsgeschenke erlaubt werden sollen.",
-    "norm": "Art. 240 Abs. 2 OR",
+    "norm": "Art. 240 Abs. 2 und Art. 239 Abs. 3 OR",
     "hinweis": "Aus dem Vermögen einer handlungsunfähigen Person dürfen nur übliche Gelegenheitsgeschenke ausgerichtet werden – weitergehende Schenkungen sind problematisch."
    },
    {
@@ -9424,17 +9424,17 @@
    {
     "bausteinId": "V11_entschaedigung",
     "begruendung": "Aufgenommen, weil eine Entschädigungsregelung getroffen wurde (sonst legt die KESB sie fest).",
-    "norm": "Art. 366 ZGB"
+    "norm": "Art. 366 Abs. 1 ZGB (e contrario)"
    },
    {
     "bausteinId": "V12_pv",
     "begruendung": "Aufgenommen, weil auf eine bestehende Patientenverfügung verwiesen wird.",
-    "norm": "Art. 370 ZGB"
+    "norm": "Art. 372 Abs. 2 i.V.m. Art. 377 Abs. 1 ZGB"
    },
    {
     "bausteinId": "V13_ersetzt",
-    "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich ersetzt werden sollen.",
-    "norm": "Art. 362 Abs. 3 ZGB"
+    "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich aufgehoben werden sollen: Der Widerruf wird in einer Errichtungsform ausgesprochen (Art. 362 Abs. 1 ZGB) statt bloss angedeutet.",
+    "norm": "Art. 362 Abs. 1 ZGB"
    },
    {
     "bausteinId": "V14_schluss_eigenhaendig",
@@ -9469,7 +9469,7 @@
     },
     {
      "bausteinId": "V04b_personensorgeliste",
-     "text": "– Entscheid über Wohnsituation und Aufenthalt (inkl. Heim-/Pflegeeintritt);\n– Vertretung bei medizinischen Massnahmen (Art. 377 f. ZGB); eine Patientenverfügung geht vor;"
+     "text": "– Entscheid über Wohnsituation und Aufenthalt (inkl. Heim-/Pflegeeintritt);\n– Vertretung bei medizinischen Massnahmen (Art. 378 Abs. 1 Ziff. 1 i.V.m. Art. 377 ZGB); eine Patientenverfügung geht vor;"
     },
     {
      "bausteinId": "V05_vermoegenssorge",
@@ -9500,7 +9500,7 @@
     },
     {
      "bausteinId": "V13_ersetzt",
-     "text": "7. Dieser Vorsorgeauftrag ersetzt alle früheren Vorsorgeaufträge."
+     "text": "7. Ich widerrufe hiermit alle früheren Vorsorgeaufträge. Dieser Vorsorgeauftrag tritt an ihre Stelle."
     },
     {
      "bausteinId": "V14_schluss_eigenhaendig",
@@ -9510,7 +9510,7 @@
     }
    ],
    "disclaimer": "Entwurf – erstellt mit LexMetrik. Keine Rechtsberatung. Gültig ist der Vorsorgeauftrag nur vollständig eigenhändig (von Hand geschrieben, datiert, unterzeichnet, Art. 361 Abs. 2 ZGB) oder öffentlich beurkundet (Art. 361 Abs. 1 ZGB); wirksam erst nach Validierung durch die KESB (Art. 363 ZGB). Bei komplexen Vermögensverhältnissen oder Unternehmen: Notariat bzw. Fachberatung beiziehen.",
-   "version": "1.0.0 (Rechtsstand Art. 360–369 ZGB, in Kraft seit 1.1.2013)"
+   "version": "1.1.0 (Rechtsstand Art. 360–369 ZGB, Snapshot-Stand 1.7.2026)"
   },
   "aufgenommen": [
    "V01_identifikation",
@@ -9577,17 +9577,17 @@
     "bausteinId": "V07_grundstueck",
     "begruendung": "Automatisch aufgenommen, weil das Modul «Liegenschaften» gewählt wurde – ausdrückliche Sondervollmacht.",
     "norm": "Art. 396 Abs. 3 OR",
-    "hinweis": "Ob Art. 396 Abs. 3 OR auf den Vorsorgeauftrag analog anwendbar ist, ist in der Lehre umstritten; die Praxis empfiehlt die ausdrückliche Sondervollmacht dennoch."
+    "hinweis": "Art. 396 Abs. 3 OR deckt Veräusserung und Belastung; der Erwerb bedarf keiner besonderen Ermächtigung und wird zur Klarstellung im Grundbuchverkehr mitgenannt. Die Brücke ins Erwachsenenschutzrecht schlägt Art. 365 Abs. 1 ZGB (Auftragsrecht-Verweisung)."
    },
    {
     "bausteinId": "V11_entschaedigung",
     "begruendung": "Aufgenommen, weil eine Entschädigungsregelung getroffen wurde (sonst legt die KESB sie fest).",
-    "norm": "Art. 366 ZGB"
+    "norm": "Art. 366 Abs. 1 ZGB (e contrario)"
    },
    {
     "bausteinId": "V13_ersetzt",
-    "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich ersetzt werden sollen.",
-    "norm": "Art. 362 Abs. 3 ZGB"
+    "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich aufgehoben werden sollen: Der Widerruf wird in einer Errichtungsform ausgesprochen (Art. 362 Abs. 1 ZGB) statt bloss angedeutet.",
+    "norm": "Art. 362 Abs. 1 ZGB"
    },
    {
     "bausteinId": "V14_schluss_eigenhaendig",
@@ -9622,7 +9622,7 @@
     },
     {
      "bausteinId": "V04b_personensorgeliste",
-     "text": "– Entscheid über Wohnsituation und Aufenthalt (inkl. Heim-/Pflegeeintritt);\n– Vertretung bei medizinischen Massnahmen (Art. 377 f. ZGB); eine Patientenverfügung geht vor;"
+     "text": "– Entscheid über Wohnsituation und Aufenthalt (inkl. Heim-/Pflegeeintritt);\n– Vertretung bei medizinischen Massnahmen (Art. 378 Abs. 1 Ziff. 1 i.V.m. Art. 377 ZGB); eine Patientenverfügung geht vor;"
     },
     {
      "bausteinId": "V05_vermoegenssorge",
@@ -9647,6 +9647,10 @@
      "text": "5. Die beauftragte Person ist ausdrücklich ermächtigt, Grundeigentum zu erwerben, zu belasten und zu veräussern sowie die entsprechenden Grundbucheinschreibungen zu veranlassen."
     },
     {
+     "bausteinId": "V13b_ergaenzung",
+     "text": "6. Dieser Vorsorgeauftrag ergänzt meinen Vorsorgeauftrag vom ________ und lässt ihn im Übrigen unberührt."
+    },
+    {
      "bausteinId": "V14_schluss_eigenhaendig",
      "text": "den 15.06.2026\n\n\n_________________________________\n(eigenhändige Unterschrift: A B)",
      "rolle": "unterschrift",
@@ -9654,7 +9658,7 @@
     }
    ],
    "disclaimer": "Entwurf – erstellt mit LexMetrik. Keine Rechtsberatung. Gültig ist der Vorsorgeauftrag nur vollständig eigenhändig (von Hand geschrieben, datiert, unterzeichnet, Art. 361 Abs. 2 ZGB) oder öffentlich beurkundet (Art. 361 Abs. 1 ZGB); wirksam erst nach Validierung durch die KESB (Art. 363 ZGB). Bei komplexen Vermögensverhältnissen oder Unternehmen: Notariat bzw. Fachberatung beiziehen.",
-   "version": "1.0.0 (Rechtsstand Art. 360–369 ZGB, in Kraft seit 1.1.2013)"
+   "version": "1.1.0 (Rechtsstand Art. 360–369 ZGB, Snapshot-Stand 1.7.2026)"
   },
   "aufgenommen": [
    "V01_identifikation",
@@ -9667,6 +9671,7 @@
    "V06_rechtsverkehr",
    "V06b_rechtsverkehrliste",
    "V07_grundstueck",
+   "V13b_ergaenzung",
    "V14_schluss_eigenhaendig"
   ],
   "protokoll": [
@@ -9719,7 +9724,13 @@
     "bausteinId": "V07_grundstueck",
     "begruendung": "Automatisch aufgenommen, weil das Modul «Liegenschaften» gewählt wurde – ausdrückliche Sondervollmacht.",
     "norm": "Art. 396 Abs. 3 OR",
-    "hinweis": "Ob Art. 396 Abs. 3 OR auf den Vorsorgeauftrag analog anwendbar ist, ist in der Lehre umstritten; die Praxis empfiehlt die ausdrückliche Sondervollmacht dennoch."
+    "hinweis": "Art. 396 Abs. 3 OR deckt Veräusserung und Belastung; der Erwerb bedarf keiner besonderen Ermächtigung und wird zur Klarstellung im Grundbuchverkehr mitgenannt. Die Brücke ins Erwachsenenschutzrecht schlägt Art. 365 Abs. 1 ZGB (Auftragsrecht-Verweisung)."
+   },
+   {
+    "bausteinId": "V13b_ergaenzung",
+    "begruendung": "Aufgenommen, weil der frühere Vorsorgeauftrag bestehen bleiben soll: Die Klausel stellt die Ausnahme «zweifellos eine blosse Ergänzung» (Art. 362 Abs. 3 ZGB) ausdrücklich her.",
+    "norm": "Art. 362 Abs. 3 ZGB",
+    "hinweis": "Ohne diese Klausel gälte die gesetzliche Ersetzungsvermutung: Ein neuer Vorsorgeauftrag tritt an die Stelle des früheren, sofern er nicht zweifellos eine blosse Ergänzung darstellt (Art. 362 Abs. 3 ZGB)."
    },
    {
     "bausteinId": "V14_schluss_eigenhaendig",
@@ -9732,21 +9743,22 @@
   "blocker": [],
   "warnungen": [],
   "hinweise": [
+   "Bei der Wahl der beauftragten Person Interessenkonflikte bedenken: Bei Interessenkollision entfallen ihre Befugnisse von Gesetzes wegen (Art. 365 Abs. 3 ZGB); nicht erfasste Geschäfte und widerstreitende Interessen sind der KESB zu melden (Art. 365 Abs. 2 ZGB).",
    "Liegenschaften gewählt: Die ausdrückliche Sondervollmacht für Erwerb, Belastung und Veräusserung von Grundstücken wird automatisch aufgenommen (Art. 396 Abs. 3 OR – analoge Anwendung in der Lehre umstritten, von der Praxis aber empfohlen).",
    "Eine Ersatzverfügung ist empfohlen, falls die beauftragte Person ungeeignet ist, ablehnt oder kündigt (Art. 360 Abs. 3 ZGB) – idealerweise eine Person ausserhalb möglicher Interessenkonflikte.",
    "Ohne Entschädigungsregelung legt die KESB bei der Validierung eine angemessene Entschädigung fest (Art. 366 ZGB), zulasten der auftraggebenden Person.",
-   "Wirksam wird der Vorsorgeauftrag erst, wenn die KESB am Wohnsitz (Art. 442 ZGB) bei eingetretener Urteilsunfähigkeit Gültigkeit, Voraussetzungen und Eignung geprüft hat (Validierung, Art. 363 ZGB)."
+   "Wirksam wird der Vorsorgeauftrag erst, wenn die KESB am Wohnsitz (Art. 442 Abs. 1 ZGB) bei eingetretener Urteilsunfähigkeit Gültigkeit, Voraussetzungen und Eignung geprüft hat (Validierung, Art. 363 ZGB)."
   ]
  },
  "vorl:va-gates-jp-personensorge": {
-  "blocker": [
-   "Die Personensorge ist höchstpersönlich und kann nur einer NATÜRLICHEN Person übertragen werden (Art. 360 ZGB); eine juristische Person kommt nur für die Vermögenssorge oder die Vertretung im Rechtsverkehr in Betracht."
-  ],
+  "blocker": [],
   "warnungen": [],
   "hinweise": [
+   "Die Beauftragung einer juristischen Person ist auch für die Personensorge zulässig (Art. 360 Abs. 1 ZGB); die KESB prüft ihre Eignung bei der Validierung (Art. 363 Abs. 2 Ziff. 3 ZGB). Einzelne höchstpersönliche Handlungen werden faktisch durch natürliche Hilfspersonen wahrgenommen.",
+   "Bei der Wahl der beauftragten Person Interessenkonflikte bedenken: Bei Interessenkollision entfallen ihre Befugnisse von Gesetzes wegen (Art. 365 Abs. 3 ZGB); nicht erfasste Geschäfte und widerstreitende Interessen sind der KESB zu melden (Art. 365 Abs. 2 ZGB).",
    "Eine Ersatzverfügung ist empfohlen, falls die beauftragte Person ungeeignet ist, ablehnt oder kündigt (Art. 360 Abs. 3 ZGB) – idealerweise eine Person ausserhalb möglicher Interessenkonflikte.",
    "Ohne Entschädigungsregelung legt die KESB bei der Validierung eine angemessene Entschädigung fest (Art. 366 ZGB), zulasten der auftraggebenden Person.",
-   "Wirksam wird der Vorsorgeauftrag erst, wenn die KESB am Wohnsitz (Art. 442 ZGB) bei eingetretener Urteilsunfähigkeit Gültigkeit, Voraussetzungen und Eignung geprüft hat (Validierung, Art. 363 ZGB)."
+   "Wirksam wird der Vorsorgeauftrag erst, wenn die KESB am Wohnsitz (Art. 442 Abs. 1 ZGB) bei eingetretener Urteilsunfähigkeit Gültigkeit, Voraussetzungen und Eignung geprüft hat (Validierung, Art. 363 ZGB)."
   ]
  },
  "vorl:sg": {
