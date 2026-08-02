@@ -23,6 +23,16 @@ import { GLYPH_LEGENDE } from './statusRezept';
 //
 // Reine Darstellung (§3), nur bestehende Tokens (§13). Kein Listener, solange
 // zu (gleiches Sparsamkeits-Muster wie Begriff.tsx, §15.4).
+//
+// ── WARUM TOGGLETIP (role="status") UND NICHT aria-expanded ─────────────────
+// Der B4-Wächter (bezuege-zeile-b4.test.tsx, David-Vorgabe 28.7.2026: die
+// Auflistung steht DIREKT da, ohne Aufklapp-Zwischenzustand) verbietet JEDES
+// `aria-expanded` im data-bezuege-zeile-Container — der Test bleibt unangetastet
+// (§6.3). Die Legende nutzt darum das Toggletip-Muster: Button ohne
+// expanded-Zustand + stets vorhandene role="status"-Live-Region, in die der
+// Erklärtext beim Öffnen eingesetzt wird. Screenreader bekommen den Inhalt über
+// die Live-Region angesagt (a11y-gleichwertig zur describedby-Variante); Touch
+// und Tastatur bedienen denselben Button, Escape/Aussenklick schliessen.
 
 export function ZeichenLegende() {
   const { kannOeffnen } = usePaneSteuerung();
@@ -57,29 +67,34 @@ export function ZeichenLegende() {
     <span ref={wrapRef} className="relative inline-block self-start">
       <button
         type="button"
-        aria-expanded={offen}
-        aria-describedby={offen ? id : undefined}
+        aria-controls={id}
         onClick={() => setOffen((v) => !v)}
         className="cursor-help text-micro text-ink-500 underline decoration-dotted decoration-ink-300 underline-offset-2 hover:text-brass-700 hover:decoration-brass-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brass-600"
       >
         Zeichenerklärung
       </button>
-      {offen && (
-        <span
-          role="tooltip"
-          id={id}
-          className="lc-card absolute left-0 top-full z-30 mt-1 block w-72 max-w-[80vw] p-3 text-left text-body-s font-normal normal-case tracking-normal text-ink-700"
-        >
-          <span className="lc-overline mb-1 block text-brass-700">Zeichen an den Entscheid-Verweisen</span>
-          {eintraege.map((e) => (
-            <span key={e.glyph} className="mt-1 block leading-snug">
-              <span aria-hidden className={`mr-1.5 ${e.ton}`}>{e.glyph}</span>
-              <span className="font-medium">{e.label}</span>
-              <span className="block text-ink-600">{e.erklaerung}</span>
-            </span>
-          ))}
-        </span>
-      )}
+      {/* Live-Region IMMER im DOM (Toggletip-Muster): leer, bis geöffnet wird —
+          erst dann trägt sie Karte + Inhalt und wird von Screenreadern angesagt. */}
+      <span
+        role="status"
+        id={id}
+        className={offen
+          ? 'lc-card absolute left-0 top-full z-30 mt-1 block w-72 max-w-[80vw] p-3 text-left text-body-s font-normal normal-case tracking-normal text-ink-700'
+          : undefined}
+      >
+        {offen && (
+          <>
+            <span className="lc-overline mb-1 block text-brass-700">Zeichen an den Entscheid-Verweisen</span>
+            {eintraege.map((e) => (
+              <span key={e.glyph} className="mt-1 block leading-snug">
+                <span aria-hidden className={`mr-1.5 ${e.ton}`}>{e.glyph}</span>
+                <span className="font-medium">{e.label}</span>
+                <span className="block text-ink-600">{e.erklaerung}</span>
+              </span>
+            ))}
+          </>
+        )}
+      </span>
     </span>
   );
 }
