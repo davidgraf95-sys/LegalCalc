@@ -1,7 +1,7 @@
 import { useEffect, useRef, type Dispatch, type MutableRefObject, type RefObject, type SetStateAction } from 'react';
 import type { NavigateFunction } from 'react-router-dom';
 import { aktualisiereTabArtikel, tabSchluessel } from '../../lib/tabs';
-import { merkeAnker, bezugslinie } from './scrollAnker';
+import { merkeAnker, bezugslinie, istHashVerbraucht } from './scrollAnker';
 import { aktiverArtikel } from '../../lib/normtext/aktuellerArtikel';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
 import {
@@ -305,6 +305,13 @@ export function useLeserSprungSpy(opts: {
     // Test setzen, damit auch ein hashloser Erststart den späteren Re-Lauf sperrt.
     if (hashSeedGetan.current) return;
     hashSeedGetan.current = true;
+    // LM-199 (W2·17-UI-BEFUNDE-B2): VERBRAUCHTER Einstiegs-Hash — beim Browser-
+    // Zurück aus einer anderen Route steht der alte «#art-…» noch in der URL,
+    // massgeblich ist aber die A16-Anker-Restauration (App.tsx). Ohne diesen
+    // Wächter kaperte der Seed-Sprung nach dem Remount die Rückkehr-Position
+    // erneut (Prod-Messung 2.8.2026: ~149'000 px daneben). Nur Primär — das
+    // sekundäre Pane hat seine eigene, frisch geseedete Location (A17).
+    if (!istSekundaer && istHashVerbraucht()) return;
     const hashQuelle = istSekundaer ? paneLocationHash : window.location.hash;
     const m = hashQuelle.match(/^#art-(.+)$/);
     if (!m) return;
