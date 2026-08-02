@@ -37,7 +37,9 @@ export function ErlassLeserKopf({ erlass, overline, artikelAnzahl, bestimmungsWo
       <h1 className="text-h2 sm:text-h1 font-display font-semibold text-ink-900 [overflow-wrap:anywhere] hyphens-auto min-h-titel-2z">
         {erlass.kuerzel}{!titelRedundant && <span className="text-ink-500 font-normal"> — {erlass.titel}</span>}
       </h1>
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
+      {/* lc-chip-zeile (LM-045/046): Chip-Grammatik der Metazeile — <a> unter-
+          strichen, <button> gerahmt, <span> flach; Systematik in index.css. */}
+      <div className="lc-chip-zeile flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
         {erlass.sr && <span>SR <span className="num">{erlass.sr}</span></span>}
         {artikelAnzahl != null && (
           <>
@@ -59,7 +61,7 @@ export function ErlassLeserKopf({ erlass, overline, artikelAnzahl, bestimmungsWo
         {/* §8: bei GANZ aufgehobenem Erlass NIE «geltende Fassung» verlinken (der
             Link führte auf die aufgehobene Konsolidierung) — der amtliche Link
             liegt ehrlich beschriftet im Aufhebungs-Banner unten. */}
-        {erlass.quelleUrl && !erlass.aufgehoben && <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="lc-chip no-underline hover:text-brass-700">↗ geltende Fassung</a>}
+        {erlass.quelleUrl && !erlass.aufgehoben && <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="lc-chip hover:text-brass-700">↗ geltende Fassung</a>}
         {/* P1-d Currency-Chips (Moat-Hebel 3): maschineller Freshness-Beweis + angekündigte
             Fassung. Prerender-stabil (Sidecar zur Bauzeit erhoben, keine Client-Datums-Logik,
             §15/2 CLS=0). Wortfeld «geltend geprüft am … (maschinell)» ist die zugelassene Formel.

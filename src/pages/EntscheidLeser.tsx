@@ -475,8 +475,11 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam }: { schlues
           </dl>
         )}
 
-        {/* 5 Meta + Badges + Lese-Steuerung — gedämpfte Schlusszeile */}
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
+        {/* 5 Meta + Badges + Lese-Steuerung — gedämpfte Schlusszeile.
+            lc-chip-zeile (LM-047): Chip-Grammatik wie im Erlasskopf (LM-045) —
+            <a> unterstrichen, <button> gerahmt, <span> flach; die gewollte
+            Badge↔Chip-Trennung (VZUI §1.2/§1.3) bleibt unberührt. */}
+        <div className="lc-chip-zeile flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
           <DatumMeta snap={snap} />
           {snap.bgeReferenz && (
             <>
@@ -502,7 +505,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam }: { schlues
             {/* Amtliche Quelle direkt oben erreichbar (massgebliche Fassung, §8) —
                 folgt der Ansicht (Voll → Urteil/aza, Auszug → BGE-Sammlung). */}
             <a href={massgeblicheUrl} target="_blank" rel="noopener noreferrer"
-              className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400"
+              className="lc-chip hover:text-brass-700 hover:border-brass-400"
               title={massgeblichTitel}>
               ↗ massgebliche Fassung{massgeblichFehlt && <span className="text-ink-500"> (Urteil n. v.)</span>}
             </a>
@@ -517,12 +520,12 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam }: { schlues
                 className="min-h-6 px-2 py-1 text-ink-600 hover:bg-paper-sunken disabled:opacity-40 border-l border-line" title="Schrift grösser">A+</button>
             </span>
             <button type="button" onClick={kopiereZitat}
-              className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400"
+              className="lc-chip hover:text-brass-700 hover:border-brass-400"
               title="Zitierung + Link in die Zwischenablage kopieren">
               {kopiert ? '✓ kopiert' : '⧉ Zitat kopieren'}
             </button>
             <button type="button" onClick={() => setLese(true)}
-              className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400"
+              className="lc-chip hover:text-brass-700 hover:border-brass-400"
               title="Ablenkungsfreier Lesemodus">
               ▭ Lesemodus
             </button>

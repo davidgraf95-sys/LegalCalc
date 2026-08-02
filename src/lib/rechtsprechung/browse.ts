@@ -6,7 +6,7 @@
 
 import type { EntscheidManifest, BrowseEntscheid, RichterRegister } from './register';
 import type { EntscheidSnapshot, EntscheidSnapshotDatei, Gerichtstyp } from './typen';
-import { GEBIETE, GEBIET_LABEL, type Rechtsgebiet } from '../normtext/register';
+import { ERLASS_REGISTER, GEBIETE, GEBIET_LABEL, type Rechtsgebiet } from '../normtext/register';
 
 // ── Manifest (einmal, gecacht als laufende Promise) ──────────────────────────
 let manifestPromise: Promise<EntscheidManifest | null> | null = null;
@@ -124,10 +124,43 @@ export function hauptIdentitaet(e: BrowseEntscheid): string {
   return e.bgeReferenz ? `BGE ${e.bgeReferenz}` : e.nummer;
 }
 
-/** Erlass-/Norm-Key lesbar machen: 'OR' → 'OR', 'OR-336' → 'OR Art. 336'. Rein, kein Normtext. */
+// ── Anzeige-Kürzel: Register-key → amtliche Schreibweise (LM-102/LM-106) ─────
+//
+// Die normKeys entstehen build-time VERSAL (zitat-extraktion.ts: `lawRaw
+// .toUpperCase()`), weil sie Schlüssel sind — nicht Anzeigetext. Ungemappt
+// erschienen sie am Chip als «SCHKG», «STGB», «VWVG», «LUGUE»; das ist keine
+// amtliche Abkürzung mehr (der Umlaut von LugÜ ging dabei ganz verloren).
+// Gemappt wird ausschliesslich auf das `kuerzel` des ERLASS_REGISTER — dort
+// steht die amtliche Schreibweise genau einmal (§5). KEINE zweite Kürzel-
+// Tabelle, und kein Eingriff in die Extraktion (Risiko-Pfad): Key und URL
+// bleiben unverändert versal, nur die Darstellung wird amtlich.
+//
+// §7-Verifikation der Schreibweisen, Abruf 02.08.2026 gegen Fedlex-SPARQL
+// (https://fedlex.data.admin.ch/sparqlendpoint, jolux:titleShort am deutschen
+// Ausdruck der ConsolidationAbstract je skos:notation = SR-Nummer):
+//   SchKG 281.1 · StGB 311.0 · StPO 312.0 · JStPO 312.1 · StHG 642.14 ·
+//   BetmG 812.121 · AsylG 142.31 · BewG 211.412.41 · BGerR 173.110.131 ·
+//   StBOG 173.71 · VStrR 313.0 · VStG 642.21 · MStG 321.0 · ParlG 171.10 ·
+//   HRegV 221.411 · GwG 955.0 · PatG 232.14 · VwVG 172.021 · LugÜ 0.275.12
+// Alle 19 amtlich bestätigt und identisch mit dem Register-`kuerzel`. Zwei
+// SR-Nummern tragen zusätzlich das Kürzel des AUFGEHOBENEN Vorgänger-Erlasses
+// (173.71 «SGG» = Strafgerichtsgesetz 2002; 312.0 «BStP» = Bundesstrafrechts-
+// pflege 1934) — massgeblich ist der geltende Erlass, also StBOG bzw. StPO.
+// Massgeblich bleibt stets die amtliche Fassung, nicht dieser Kommentar (§7).
+const ANZEIGE_KUERZEL: ReadonlyMap<string, string> =
+  new Map(ERLASS_REGISTER.map((e) => [e.key, e.kuerzel]));
+
+/**
+ * Erlass-/Norm-Key lesbar machen: 'SCHKG' → 'SchKG', 'LUGUE' → 'LugÜ',
+ * 'OR-336' → 'OR Art. 336'. Rein, kein Normtext. Ein Key ohne Register-Eintrag
+ * wird unverändert gezeigt (§8: nie eine Schreibweise erfinden).
+ */
 export function normLabel(key: string): string {
+  const direkt = ANZEIGE_KUERZEL.get(key);
+  if (direkt) return direkt;
   const m = /^([A-Za-zÄÖÜäöü]+)[-_](\d+\w*)$/.exec(key);
-  return m ? `${m[1]} Art. ${m[2]}` : key;
+  if (!m) return key;
+  return `${ANZEIGE_KUERZEL.get(m[1]) ?? m[1]} Art. ${m[2]}`;
 }
 
 function jahr(iso: string): string {

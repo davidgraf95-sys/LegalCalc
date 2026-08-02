@@ -35,10 +35,18 @@ function FacettenGruppe({ label, optionen }: {
       {optionen.map((o) => (
         <button key={o.id} type="button" aria-pressed={o.aktiv} onClick={o.waehle}
           aria-label={`${label}: ${o.voll ?? o.text} (${o.n})`} title={o.voll}
-          className={`lc-chip ${o.aktiv ? 'border-brass-400 text-brass-700' : ''}`}>
+          className={`lc-chip ${o.aktiv ? 'lc-chip-selected' : ''}`}>
           {/* ink-600 (nicht ink-500): 12px-Ziffer auf --well ≥4.5:1 (R4/WCAG 1.4.3,
               Werte nicht runden — ink-500 lag bei 4.47:1). Aktiv erbt brass-700. */}
-          {o.text}<span className={`num ml-1.5 ${o.aktiv ? '' : 'text-ink-600'}`}>{o.n}</span>
+          {/* LM-051: Beschriftung und Zahl brauchen einen Trenner im TEXTKNOTEN,
+              nicht nur den optischen Abstand (ml-1.5) — sonst liest/kopiert man
+              «BS3765». Das explizite Leerzeichen steht als eigener Textknoten
+              zwischen den beiden Flex-Items: es fällt mit dem vorangehenden
+              Label zu EINEM anonymen Flex-Item zusammen und wird dort als
+              Zeilenend-Leerraum entfernt — textContent «BS 3765», Darstellung
+              unverändert. Die aria-labels («Gemeinwesen: BS (3765)») bleiben
+              wie sie sind; sie waren nie das Problem. */}
+          {o.text}{' '}<span className={`num ml-1.5 ${o.aktiv ? '' : 'text-ink-600'}`}>{o.n}</span>
         </button>
       ))}
     </div>
