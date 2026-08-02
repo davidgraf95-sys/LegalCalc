@@ -1,8 +1,8 @@
 {
  "erlass": "BUEV",
  "abdeckung": {
-  "fussnoten": 10,
-  "ereignis": 6,
+  "fussnoten": 11,
+  "ereignis": 7,
   "referenz": 4,
   "unparsed": 0
  },
@@ -40,6 +40,24 @@
      ],
      "absatz": "2",
      "item": "d"
+    }
+   ]
+  },
+  "17": {
+   "giltSeit": "2026-08-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 344",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/344"
+      }
+     ],
+     "absatz": "1",
+     "item": "7"
     }
    ]
   },

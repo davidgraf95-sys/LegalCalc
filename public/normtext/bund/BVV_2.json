@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-08-02",
   "eintraege": [
     {
       "id": "bund/BVV_2/art_1",
@@ -30,7 +30,7 @@
         },
         {
           "absatz": "3",
-          "text": "Bei Löhnen, die über dem oberen Grenzbetrag nach Artikel 8 Absatz 1 BVG liegen, betragen gemäss Berechnungsmodell die Altersleistungen aus der beruflichen Vorsorge und der AHV zusammen nicht mehr als 85 Prozent des letzten versicherbaren AHV-pflichtigen Lohns oder Einkommens vor der Pensionierung."
+          "text": "Bei Löhnen, die über dem oberen Grenzbetrag nach Artikel 8 Absatz 1 BVG liegen, betragen gemäss Berechnungsmodell die Altersleistungen aus der beruflichen Vorsorge und der AHV zusammen nicht mehr als 85 Prozent des letzten versicherbaren AHV-pflichtigen Lohns oder Einkommens vor der Pensionierung. Die 13. Altersrente nach Artikel 34ter des Bundesgesetzes vom 20. Dezember 1946 über die Alters- und Hinterlassenenversicherung (AHVG) wird bei der Bewertung der Angemessenheit eines Vorsorgeplans nicht berücksichtigt."
         },
         {
           "absatz": "4",
@@ -51,11 +51,11 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_1",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
-      "sha": "d449043357b48f90d5a6fd86d59373c5a8e0dad4a2942711ff324469c68d75cf"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "084a9971da7d689533a7221f34867cd4d5af395bd4d324db6b1052dfb50959b4"
     },
     {
       "id": "bund/BVV_2/art_1_a",
@@ -75,10 +75,10 @@
           "text": "Selbstständigerwerbende, die ihr Einkommen in mehreren Vorsorgeeinrichtungen versichern lassen, müssen die notwendigen Massnahmen treffen, dass Artikel 1 sinngemäss für die Gesamtheit ihrer Vorsorgeverhältnisse eingehalten wird."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_1_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "9d40aea95beba2717ae85b21b61b9b01a4633a225daeb2b3e31275d9f0e4950c"
     },
     {
@@ -99,10 +99,10 @@
           "text": "Vorsorgeeinrichtungen, welche Einkäufe für den vorzeitigen Altersrücktritt nach Absatz 1 zulassen, haben ihre Vorsorgepläne so auszugestalten, dass bei einem Verzicht auf den vorzeitigen Altersrücktritt das reglementarische Leistungsziel höchstens um 5 Prozent überschritten wird."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_1_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "070fff47d69889e77962c2d3c8cfadcb9fd70a4065f28d782c56351e8e5f75ec"
     },
     {
@@ -123,10 +123,10 @@
           "text": "Die Kollektivität ist auch im Fall der Versicherung einer einzelnen Person eingehalten, wenn gemäss Reglement die Aufnahme weiterer Personen grundsätzlich möglich ist. Dies gilt jedoch nicht für die freiwillige Versicherung von Selbständigerwerbenden nach Artikel 44 BVG."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_1_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "5b7dc07ec8c23434c7ca7aba01a228ab64b19113259747cbef17085ed473a19a"
     },
     {
@@ -147,10 +147,10 @@
           "text": "Die Summe der Beitragsanteile von Arbeitgeber und Arbeitnehmern in Lohnprozenten muss beim Vorsorgeplan mit den niedrigsten Beitragsanteilen mindestens 2 / 3 der Beitragsanteile beim Vorsorgeplan mit den höchsten Beitragsanteilen betragen. Der Beitragssatz des Arbeitgebers muss in jedem Plan gleich hoch sein."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_1_d",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "7df18ffed1e7082f171ce0b147c50c6ab3823c7685c72b5888a707bb64885663"
     },
     {
@@ -183,10 +183,10 @@
           "text": "Innerhalb eines Kollektivs müssen die Anlagestrategien allen Versicherten angeboten werden. Das Anlageergebnis einer Anlagestrategie muss den Guthaben derjenigen Versicherten eines Kollektivs, die diese Strategie gewählt haben, nach einheitlichen Kriterien zugeschrieben werden."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_1_e",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "5653901394033dfdcf59f992278ece5ea7fe86d1c43ab5cd34832d92b2965570"
     },
     {
@@ -202,10 +202,10 @@
           "text": "Der Grundsatz der Gleichbehandlung ist eingehalten, wenn für alle Versicherten eines Kollektivs die gleichen reglementarischen Bedingungen im Vorsorgeplan gelten."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_1_f",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "f1f7bdf5b94678946e33826b17530c66491d8e92bbd029c2f34ac1ced5a16cd1"
     },
     {
@@ -221,10 +221,10 @@
           "text": "Der Grundsatz der Planmässigkeit ist eingehalten, wenn die Vorsorgeeinrichtung in ihrem Reglement die verschiedenen Leistungen, die Art ihrer Finanzierung und die Anspruchsvoraussetzungen, die Vorsorgepläne sowie die verschiedenen Versichertenkollektive, für welche unterschiedliche Pläne gelten, genau festlegt. Der Vorsorgeplan muss sich auf Parameter stützen, die nach fachlich anerkannten Grundsätzen festgelegt werden."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_1_g",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "167f59037e9d4e2a8ab7b1075baac7cc73a929812c31cbeec1e59539c338ad93"
     },
     {
@@ -244,10 +244,10 @@
           "text": "In Vorsorgeeinrichtungen, welche ausschliesslich die weitergehende und ausserobligatorische Vorsorge betreiben, ist das Versicherungsprinzip auch dann eingehalten, wenn gemäss Reglement das Altersguthaben ohne Risikoschutz geäufnet wird in Fällen, in denen sich aufgrund einer ärztlichen Gesundheitsprüfung ein wesentlich erhöhtes Risiko ergibt und deshalb die Versicherung der Risiken Tod und Invalidität abgelehnt wird. In diesen Fällen kann die Altersleistung nur in Rentenform bezogen werden."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_1_h",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "bc4edbe76f7cd1f424c70a2b7fbc6be4926f40e72026a7c2c109d599d33e8c6a"
     },
     {
@@ -277,10 +277,10 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_1_i",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "28654096c49ec439d1a38f219f60380ecc690906a2aaefcb6d9b003e8930418e"
     },
     {
@@ -341,10 +341,10 @@
           "text": "Arbeitnehmer, die nach Absatz 1 Buchstaben b und c der obligatorischen Versicherung nicht unterstellt sind, können sich im Rahmen von Artikel 46 BVG versichern lassen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_1_j",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "d1d603e70b4a442726224081e6f85d3bf854aba0d652139bdfb399e26924724b"
     },
     {
@@ -371,10 +371,10 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_1_k",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "82d353c5edde267cb64c2da56d97b78253fd3acbc109b0e3cb5ed96eacf92c22"
     },
     {
@@ -391,10 +391,10 @@
           "text": "Arbeitnehmer, welche im Rahmen eines Personalverleihs gemäss dem Bundesgesetz vom 6. Oktober 1989 über die Arbeitsvermittlung und den Personalverleih in einem Einsatzbetrieb beschäftigt sind, gelten als Angestellte des verleihenden Unternehmens."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_2",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "de5879597c5f6cd9cc47d0ccb044a98cc0a454bfcef122eb1ba82f504632f149"
     },
     {
@@ -429,10 +429,10 @@
           "text": "Die Vorsorgeeinrichtung kann bei der Bestimmung des koordinierten Lohnes ferner vom Jahreslohn abweichen und dafür auf den für eine bestimmte Zahlungsperiode ausgerichteten Lohn abstellen. Die in den Artikeln 2, 7, 8 und 46 BVG aufgeführten Beträge werden dann auf die entsprechende Zahlungsperiode umgerechnet. Sinkt der Lohn vorübergehend unter den gesetzlichen Mindestbetrag, so bleibt der Arbeitnehmer dennoch der obligatorischen Versicherung unterstellt."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_3",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "56c82716f1c4a945bcacb911774772c6427a553f82e46c03df615ecee8396f8a"
     },
     {
@@ -453,10 +453,10 @@
           "text": "Der versicherte Mindestlohn nach Absatz 1 gilt auch für die obligatorische Versicherung von Personen, bei denen die Grenzbeträge nach Artikel 4 gekürzt werden."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_3_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "12aba91a093b3e91a3327350e28363cb55381beaeebfb6ab5c33816800afdd81"
     },
     {
@@ -473,10 +473,10 @@
           "text": "Für Personen, die im Sinne des Bundesgesetzes vom 19. Juni 1959 über die Invalidenversicherung (IVG) teilweise invalid sind, werden die Grenzbeträge nach den Artikeln 2, 7, 8 Absatz 1 und 46 BVG entsprechend dem prozentualen Anteil ihres Teilrentenanspruchs gekürzt."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_4",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "51e0e3efbd4af7f56632f5220d78eaecfaea2db788cd157e5fc28a9d42d5f8f1"
     },
     {
@@ -527,10 +527,10 @@
           }
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_5",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "f074d869c14ec8dcf885740fb15251fd3b8462326b506f25a3f41ebfd76d6130"
     },
     {
@@ -551,10 +551,10 @@
           "text": "Für arbeitslose Personen beginnt die Versicherung mit dem Tag, an dem erstmals die Anspruchsvoraussetzungen nach Artikel 8 des Bundesgesetzes vom 25. Juni 1982 über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG) erfüllt sind oder Entschädigungen nach Artikel 29 AVIG bezogen werden."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_6",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "e2b1b2d5731f1df51339ba190184459565d1c25fc52eb8f7bdcfc68733956e19"
     },
     {
@@ -575,10 +575,10 @@
           "text": "Will sich der Arbeitgeber verschiedenen registrierten Vorsorgeeinrichtungen anschliessen, so muss er die Gruppen der Versicherten so bestimmen, dass alle dem Gesetz unterstellten Arbeitnehmer versichert sind. Entstehen bei der Umschreibung der Gruppen Lücken, so haften die Vorsorgeeinrichtungen für die gesetzlichen Leistungen solidarisch. Sie können gegen den Arbeitgeber Rückgriff nehmen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_7",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "8e8d1e2a233e845a9620c224111c0d332a7b1ab075bfa5a5f0f68eee23c0d30c"
     },
     {
@@ -594,10 +594,10 @@
           "text": "…"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_8",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -630,10 +630,10 @@
           "text": "Der Sicherheitsfonds entrichtet den AHV-Ausgleichskassen für die Überprüfung des Anschlusses der von ihnen erfassten Arbeitgeber (Art. 11 Abs. 4 BVG) eine Entschädigung von 9 Franken pro überprüften Fall. Die AHV-Ausgleichskassen melden dem Sicherheitsfonds bis zum 31. März des folgenden Jahres die von ihnen durchgeführten Überprüfungen auf dem vom BSV vorgeschriebenen Formular."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_9",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "953f55c10155511ae952507dadcba22234b05dd152272b3fbe89374749bb19e4"
     },
     {
@@ -650,10 +650,10 @@
           "text": "Der Arbeitgeber muss der Vorsorgeeinrichtung alle versicherungspflichtigen Arbeitnehmer melden und alle Angaben machen, die zur Führung der Alterskonten und zur Berechnung der Beiträge nötig sind. Er muss ausserdem der Revisionsstelle alle Auskünfte erteilen, die sie zur Erfüllung ihrer Aufgaben benötigt."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_10",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "56ac69e4853fd45085311a5e73aac9633aee2a17541860adfff39af09b7d2478"
     },
     {
@@ -716,10 +716,10 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_11",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "110a0dc0c56b18908796dfbc8a1f7f3f1d64ab1229da988239b5cce5b23145c9"
     },
     {
@@ -782,10 +782,10 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_12",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "543ed4c21eae9d299dae5c3ffd4f912ad86eadbe57190926ab8003d8a5085f65"
     },
     {
@@ -801,10 +801,10 @@
           "text": "…"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_12_a_12_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -821,10 +821,10 @@
           "text": "Das für die Berechnung der Altersgutschrift massgebende Alter des Versicherten ergibt sich aus der Differenz zwischen dem laufenden Kalenderjahr und dem Geburtsjahr."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_13",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "acb2d0e0c5a0ae4fe9b82a75dac418bf8d08acb5ebf3bb75d789671cf11893c3"
     },
     {
@@ -853,10 +853,10 @@
           "text": "Erlischt der Anspruch auf eine Invalidenrente, weil der Versicherte nicht mehr invalid ist, so hat er Anspruch auf eine Freizügigkeitsleistung in der Höhe seines weitergeführten Altersguthabens."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_14",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "d65b6e90ae7cf78a55cd902b1c3bfbbc158c53b2a4861c1f3aff4ff2a63294aa"
     },
     {
@@ -877,10 +877,10 @@
           "text": "Das auf die Teilinvalidität entfallende Altersguthaben ist nach Artikel 14 zu behandeln. Das auf die weitergeführte Erwerbstätigkeit entfallende Altersguthaben ist dem Altersguthaben eines voll erwerbstätigen Versicherten gleichgestellt und wird bei Beendigung des Arbeitsverhältnisses nach den Artikeln 3–5 FZG behandelt."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_15",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "4dc22952b827c6437b3614f4f7a5958d27eaaf07b90e3f9be83b3f052b512ef7"
     },
     {
@@ -915,10 +915,10 @@
           "text": "Bei der Übertragung der Freizügigkeitsleistung auf eine neue Vorsorge- oder Freizügigkeitseinrichtung muss die bisherige Vorsorge- oder Freizügigkeitseinrichtung der neuen Einrichtung die Angaben nach Absatz 1 mitteilen. Fehlen diese Angaben, so muss die neue Einrichtung sie von der bisherigen Einrichtung verlangen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_15_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "93d20146675d738dddec3ad30840f38cf923d499195fca4b7139d4306e638812"
     },
     {
@@ -939,10 +939,10 @@
           "text": "Nicht ermittelt werden kann ein Altersguthaben, wenn die dafür notwendigen Angaben bei den bisherigen Einrichtungen und der neuen Einrichtung fehlen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_15_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "14542ce00d11c26ce51894a471d69effa218cf2b831dee4330941a4173411bfa"
     },
     {
@@ -963,10 +963,10 @@
           "text": "Bei der Verzinsung durch eine Freizügigkeitseinrichtung werden die Zinsen anteilsmässig dem Altersguthaben und dem übrigen Vorsorgeguthaben gutgeschrieben. Erträge und Verluste aus dem Wertschriftensparen nach Artikel 13 Absatz 5 der Freizügigkeitsverordnung vom 3. Oktober 1994 (FZV) werden ebenfalls anteilsmässig auf das Altersguthaben und das übrige Vorsorgeguthaben aufgeteilt."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_16",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "fc7698f93d85b4d2c34923f624d6a984d9f9e49232c8a4a687bb74f7f9fd27f3"
     },
     {
@@ -991,10 +991,10 @@
           "text": "Die Vorsorgeeinrichtung, welche Rentner an eine andere Vorsorgeeinrichtung abgibt, muss dieser sämtliche Auskünfte erteilen, welche diese zur Berechnung und Ausrichtung der Leistungen benötigt."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_16_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "e3c99e3d54b4246d85b3e1f5c336c4e9d4f9ae757ff5a4d0c00c316e45334335"
     },
     {
@@ -1011,10 +1011,10 @@
           "text": "Wird der Anschlussvertrag wegen Zahlungsunfähigkeit des Arbeitgebers aufgelöst, so bleiben die Rentenbezüger bei der bisherigen Vorsorgeeinrichtung; diese richtet die laufenden Renten entsprechend den bisherigen reglementarischen Bestimmungen weiter aus."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_16_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "9b50f37dce3d42786c8940a58c777755135ee4ba978c1671785b9c2fd97e178c"
     },
     {
@@ -1043,10 +1043,10 @@
           "text": "Die Vorsorgekapitalien invalider Versicherter, die das reglementarische Referenzalter noch nicht erreicht haben, werden bei der Beurteilung der Rentnerlastigkeit nicht berücksichtigt."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_17",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "d43b45444fcf454ee4b5905ffb1a3e6917c2fd73084e785cb67d9a41cd07ca52"
     },
     {
@@ -1093,10 +1093,10 @@
           "text": "Verantwortlich für die Beurteilung der ausreichenden Finanzierung ist der Experte für berufliche Vorsorge der übernehmenden Vorsorgeeinrichtung. Er berücksichtigt bei der Beurteilung die Entwicklung des Bestands, insbesondere absehbare Pensionierungen sowie pendente und latente Invaliditätsfälle."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_17_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "fadc0131e9afa1f3d3c0ea7a70677a825083966a3fb5e084bd25e9b682651afa"
     },
     {
@@ -1121,10 +1121,10 @@
           "text": "War der Versicherte während des Jahres vor dem Versicherungsfall wegen Krankheit, Unfall oder aus ähnlichen Gründen nicht voll erwerbsfähig, so wird der koordinierte Jahreslohn aufgrund des Lohnes bei voller Erwerbsfähigkeit berechnet."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_18",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "457df9af199033ff9cd5d7d12009d638ff86659c0f95ad79be60e63ac784e238"
     },
     {
@@ -1149,10 +1149,10 @@
           "text": "Die Kürzung wird nach den reglementarischen Bestimmungen berechnet, die der Berechnung der Invalidenrente zugrunde liegen. Für die Berechnung der Kürzung massgebend ist der Zeitpunkt der Einleitung des Scheidungsverfahrens."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_19",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "dbb0e440202b3a8b14763629724d2339184e142724ec3b4245dcd31401805331"
     },
     {
@@ -1201,10 +1201,10 @@
           "text": "Die Hinterlassenenleistungen der Vorsorgeeinrichtung können um den Betrag gekürzt werden, um den sie zusammen mit den Hinterlassenenleistungen der AHV den Anspruch aus dem Scheidungsurteil oder dem Urteil über die Auflösung der eingetragenen Partnerschaft übersteigen. Hinterlassenenrenten der AHV werden dabei nur so weit angerechnet, als sie höher sind als ein eigener Anspruch auf eine Invalidenrente der IV oder eine Altersrente der AHV."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_20",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "8858833e5d71984fd167e5bad7ffd609f8b546fb1225514a303c245fc11b0fd7"
     },
     {
@@ -1221,10 +1221,10 @@
           "text": "Unter die von der versicherten Person einbezahlten Beiträge nach Artikel 20a Absatz 1 Buchstabe c BVG fallen auch die von ihr geleisteten Einkaufssummen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_20_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "57a0fb7fd0277d59323f7674d45b95702928aef8889e1ba36f29f15fdad2da69"
     },
     {
@@ -1240,10 +1240,10 @@
           "text": "…"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_21_23",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -1308,10 +1308,10 @@
           "text": "Der mutmasslich entgangene Verdienst entspricht dem gesamten Erwerbs- oder Ersatzeinkommen, das die versicherte Person ohne das schädigende Ereignis mutmasslich erzielen würde."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_24",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "990cadd6f0ddf3fd2106ee4918341217bca7ba20a6b1228d2ee50fcfdc2ac697"
     },
     {
@@ -1362,10 +1362,10 @@
           "text": "Wird bei einer Scheidung eine Invalidenrente nach dem Erreichen des reglementarischen Referenzalters geteilt, so wird der Rentenanteil, der dem berechtigten Ehegatten zugesprochen wurde, bei der Berechnung einer allfälligen Kürzung der Invalidenrente des verpflichteten Ehegatten weiterhin angerechnet."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_24_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "8f1edd2ccf54e2afb460915ac311d306d9939125cfa606107558b6ad9af3ea96"
     },
     {
@@ -1390,10 +1390,10 @@
           "text": "…"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_25",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1ee86704c300de5d09baaf363359eb15001c7d0a3e6810a163c05317a46e10b7"
     },
     {
@@ -1420,10 +1420,10 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_26",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "2d039908a9254f423b9d6af0ae42a8327f4a48e0d4114f7a010d98b3ecb0ce34"
     },
     {
@@ -1444,10 +1444,10 @@
           "text": "Der Betrag kann jedoch für den Vorsorgeausgleich verwendet werden, wenn die Invalidenrente ohne Anspruch auf Kinderrenten nicht gekürzt würde."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_26_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "167b8e03c3cdcf1932ad8d6f9beae27e93185885dc61ecb27be3d0107b3584ca"
     },
     {
@@ -1490,10 +1490,10 @@
           "text": "Wird ein zugesprochener Rentenanteil nach Artikel 124c ZGB verrechnet, so ist für die Anwendung der Absätze 2 und 3 der Differenzbetrag zwischen den gegenseitigen Ansprüchen der Ehegatten massgebend."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_26_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "4747077eb4d5b4e8ceb717da0c273c611906dc22fd5e40c74369c9359dba55af"
     },
     {
@@ -1518,10 +1518,10 @@
           "text": "Besteht ein direktes Forderungsrecht der geschädigten Person gegenüber dem Haftpflichtversicherer, so steht dieses auch der in ihre Rechte eingetretenen Vorsorgeeinrichtung zu. Einreden aus dem Versicherungsvertrag, die der geschädigten Person nicht entgegengehalten werden dürfen, können auch gegenüber dem Regressanspruch der Vorsorgeeinrichtung nicht vorgebracht werden."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_27",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "3ac67b9a706b1449160ddb5a5dff6589f6594af7c1bd44280293d87d806939f7"
     },
     {
@@ -1546,10 +1546,10 @@
           "text": "Die Ansprüche, die nicht auf die Vorsorgeeinrichtung übergehen, bleiben der versicherten Person, ihren Hinterlassenen und weiteren Begünstigten nach Artikel 20a BVG gewahrt. Kann nur ein Teil des vom Dritten geschuldeten Ersatzes eingebracht werden, so sind daraus zuerst die Ansprüche der versicherten Person, ihrer Hinterlassenen und weiterer Begünstigter nach Artikel 20a BVG zu befriedigen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_27_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "82f6d0243085412b2f79f7d6c2be0ac48f7912c3067f3769654ab67413500e7d"
     },
     {
@@ -1580,10 +1580,10 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_27_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "c8267b20b981d290bf3ea97015d32829acec8dc6239535c7dd1698c9a02a4688"
     },
     {
@@ -1608,10 +1608,10 @@
           "text": "Die Einschränkung des Rückgriffsrechts der Vorsorgeeinrichtung entfällt, wenn und soweit die Person, gegen welche Rückgriff genommen wird, obligatorisch haftpflichtversichert ist."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_27_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "5b1f4528424a3839364864441f88d3dfe70f00f29a7a410dee747ef06304b521"
     },
     {
@@ -1628,10 +1628,10 @@
           "text": "Die Vorsorgeeinrichtung, der das Rückgriffsrecht nach Artikel 34b BVG zusteht, kann mit Sozialversicherungen, denen das Rückgriffsrecht nach Artikeln 72–75 ATSG zusteht und mit anderen Beteiligten Vereinbarungen treffen, um die Erledigung der Regressfälle zu vereinfachen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_27_d",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "0e1cc9fc5ccfccc8d88fa52537cfcaa6838f87069ffab1f5ed922bec05cf20f8"
     },
     {
@@ -1648,10 +1648,10 @@
           "text": "Ist die Vorsorgeeinrichtung nebst anderen Sozialversicherungen am Rückgriff gemäss den Artikeln 72–75 ATSG in Verbindung mit Artikel 34b BVG beteiligt, so sind die Versicherungen einander im Verhältnis der von ihnen erbrachten sowie zu erbringenden kongruenten Leistungen ausgleichspflichtig."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_27_e",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "9478244f812be2f64f252fa5cae0651f2ae8c063eb6ba2fd4e10cba3148d451d"
     },
     {
@@ -1686,10 +1686,10 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_27_f",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "0bc6cc08a60b86c20a20083e3d2f1e74c33425c8d588c1e88c03d9b0848b187a"
     },
     {
@@ -1718,10 +1718,10 @@
           "text": "Die versicherungstechnischen Fehlbeträge werden nach Artikel 44 ermittelt. Ein allfälliger Abzug eines versicherungstechnischen Fehlbetrages erfolgt individuell bei der Austrittsleistung. Wurde die ungekürzte Austrittsleistung bereits überwiesen, muss die versicherte Person den zuviel überwiesenen Betrag zurückerstatten."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_27_g",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "4cde31e82f528437f1429b35f7ef3941313702c34fd787ff8ec7090f9e303b53"
     },
     {
@@ -1754,10 +1754,10 @@
           "text": "Der kollektive Anspruch auf Rückstellungen und Schwankungsreserven besteht nicht, wenn die Teil- oder Gesamtliquidation der Vorsorgeeinrichtung durch die Gruppe, welche kollektiv austritt, verursacht wurde."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_27_h",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "98b01aa3906ee8a618794fcf3ec0aab60f93f6115c5e84cc482f79f794694e3a"
     },
     {
@@ -1808,10 +1808,10 @@
           "text": "Die Unterlagen können auf anderen Datenträgern als auf Papier aufbewahrt werden, sofern sie jederzeit lesbar gemacht werden können."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_27_i",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "61e697199d3f001b34a560679337137e8f79a7aac7ff92eb6f3bed8a02cb8562"
     },
     {
@@ -1836,10 +1836,10 @@
           "text": "Im Freizügigkeitsfall endet die Aufbewahrungspflicht für die massgebenden Vorsorgeunterlagen bei der bisherigen Vorsorgeeinrichtung zehn Jahre nach der Überweisung der Austrittsleistung der versicherten Person auf die neue Vorsorgeeinrichtung oder auf eine Einrichtung, welche Freizügigkeitskonten oder ‑policen führt."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_27_j",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "23a9fff6b10b358d113274c0c927425ab4837f5c597c4e2afb68f0dee383a150"
     },
     {
@@ -1856,10 +1856,10 @@
           "text": "Bei Liquidation einer Einrichtung der beruflichen Vorsorge ist es Aufgabe der Liquidatoren, für die korrekte Aufbewahrung der Unterlagen besorgt zu sein."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_27_k",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "f93588863b776f4f7111fe7bef85838bbb3655552a55d59764a2256c3ef5c032"
     },
     {
@@ -1876,10 +1876,10 @@
           "text": "Wer sich nach dem BVG freiwillig versichern lassen will, muss dies der Auffangeinrichtung oder einer anderen zuständigen Vorsorgeeinrichtung beantragen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_28",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "e5a5ac544896083d876cab55f515f77552582c05e4c60dc1aaa669477fd14645"
     },
     {
@@ -1904,10 +1904,10 @@
           "text": "Der Versicherte muss der Vorsorgeeinrichtung seine gesamten Erwerbseinkünfte aus unselbständiger und aus selbständiger Erwerbstätigkeit angeben."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_29",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "83d5ac5e5f2bb620949e09c9080b9a12608eab269bbc35336f4d90645dd50156"
     },
     {
@@ -1928,10 +1928,10 @@
           "text": "Der Versicherte kann nur dann verlangen, dass sich der Arbeitgeber an den Beiträgen beteiligt, wenn er ihn über seinen Beitritt zur freiwilligen Versicherung informiert hat. Der Arbeitgeber ist erst für die Versicherungszeit nach der Mitteilung beitragspflichtig."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_30",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "95d75bb75b876abad827ecbe4c80c2a18c37457a561c6c783309960c54caacf4"
     },
     {
@@ -1978,10 +1978,10 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_31",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "19739240bdc172b7bfe233e1e5b2db896a668dd1c5af128ceb1479fa15bb4a06"
     },
     {
@@ -2002,10 +2002,10 @@
           "text": "Die Kosten für das Inkasso gehen zu Lasten des Arbeitnehmers."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_32",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "52c61775a8771fb3f6ae4747dca8cf4e2c5bcff2ded4e494882af56f5cd5dc9d"
     },
     {
@@ -2022,10 +2022,10 @@
           "text": "Das oberste Organ einer Vorsorgeeinrichtung muss aus mindestens vier Mitgliedern bestehen. In begründeten Einzelfällen, insbesondere während einer Liquidation, kann die Aufsichtsbehörde ausnahmsweise weniger Mitglieder bewilligen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_33",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "982b2ac8021eaffa431f0e6509c46a602fc449c90054488006906a608008110b"
     },
     {
@@ -2080,10 +2080,10 @@
           "text": "Die Bestimmungen über die Unabhängigkeit gelten für alle an der Revision beteiligten Personen. Ist die Revisionsstelle eine Personengesellschaft oder eine juristische Person, so gelten die Bestimmungen über die Unabhängigkeit auch für die Mitglieder des obersten Leitungs- oder Verwaltungsorgans und für andere Personen mit Entscheidfunktion."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_34",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "8797cce809f736441db58b2736ff6eec5ae27634f30a5ad043ba0a678d6cfc21"
     },
     {
@@ -2108,10 +2108,10 @@
           "text": "Ist die Geschäftsführung, Verwaltung oder Vermögensverwaltung einer Vorsorgeeinrichtung ganz oder teilweise Dritten übertragen, so prüft die Revisionsstelle auch deren Tätigkeit ordnungsgemäss."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_35",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "787539ddedc2294c85d0a041ec1e42e6c32108d8f3c9cc895e7620ed9b798c71"
     },
     {
@@ -2150,10 +2150,10 @@
           "text": "Sie weist das oberste paritätische Organ auf festgestellte Mängel im Massnahmenkonzept hin."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_35_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "17f2b096ddb8765ca55ffea5ad8478822d5bf47afeb156fe5643817884270c07"
     },
     {
@@ -2192,10 +2192,10 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_36",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "7339a0d5cf08808577fc5c560cbaf28e3de4fe8a3a6955d04ee4afed65d7c39d"
     },
     {
@@ -2211,10 +2211,10 @@
           "text": "…"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_37",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -2230,10 +2230,10 @@
           "text": "…"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_38",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -2249,10 +2249,10 @@
           "text": "…"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_39",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -2307,10 +2307,10 @@
           "text": "Die Bestimmungen über die Unabhängigkeit gelten für alle an der Prüfung beteiligten Personen. Ist der Experte eine Personengesellschaft oder eine juristische Person, so gelten die Bestimmungen über die Unabhängigkeit auch für die Mitglieder des obersten Leitungs- oder Verwaltungsorgans und für andere Personen mit Entscheidfunktion."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_40",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "cc80e7cb5d2c4f548f01b2ad2a2c89b9800f22274c39d15e487c88a9eef5c38c"
     },
     {
@@ -2327,10 +2327,10 @@
           "text": "Der Experte muss bei der Ausübung seines Mandates die Weisungen der Aufsichtsbehörde befolgen. Er muss die Aufsichtsbehörde unverzüglich orientieren, wenn die Lage der Vorsorgeeinrichtung ein rasches Einschreiten erfordert oder wenn sein Mandat abläuft."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_41",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "04adeba51aec69d65f6c66151d49aeda235184542b9edafa2dc9f1ed4a2b4a2e"
     },
     {
@@ -2355,10 +2355,10 @@
           "text": "Er erstattet der Aufsichtsbehörde Bericht, wenn eine Vorsorgeeinrichtung keine oder ungenügende Massnahmen ergreift, um die Unterdeckung zu beheben."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_41_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "ed0e02325eac45836ff6ba21bce2816b94d3f048dc70527c932766c492b39bba"
     },
     {
@@ -2375,10 +2375,10 @@
           "text": "Als Risiken nach Artikel 67 BVG gelten die Risiken Alter, Tod und Invalidität."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_42",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1df74e75e3f60cadf14a8d6ac479395ed62e1c3d0013bea3791f3449b2b522e0"
     },
     {
@@ -2417,10 +2417,10 @@
           "text": "Besteht die Rückdeckung in einer zusätzlichen Reserve, so ist diese gesondert auszuweisen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_43",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b5f4e2df931b78c4cd591dbd52525cd700dc3d378f3f9820fd15704e57f9f39d"
     },
     {
@@ -2459,10 +2459,10 @@
           "text": "Bei Unterschreitung des Mindestzinssatzes nach Artikel 65d Absatz 4 BVG muss die Vorsorgeeinrichtung zusätzlich darlegen, dass die Massnahmen nach Artikel 65d Absatz 3 Buchstaben a und b BVG für die Behebung der Unterdeckung ungenügend sind."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_44",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "5933125e7f22280c9232a2e2cd953ebd1eb3cf66e59ac918a5f2116186fb9237"
     },
     {
@@ -2491,10 +2491,10 @@
           "text": "Besteht eine AGBR mit Verwendungsverzicht, berechnet der Experte je einen Deckungsgrad mit und ohne Zurechnung dieser Reserve zum verfügbaren Vermögen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_44_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "12be388dc22cd9a27900031e364d82cc11a30a47857c8ef0a57fb064d390542d"
     },
     {
@@ -2515,10 +2515,10 @@
           "text": "Im Fall einer Teilliquidation der Vorsorgeeinrichtung in Unterdeckung ist die AGBR mit Verwendungsverzicht soweit zugunsten der Anspruchsberechtigten aufzulösen, als sie sich auf das zu übertragende, ungedeckte Vorsorgekapital bezieht."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_44_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "12d29faab66566e01d7bc1943c126724bd2e0f3c6478f2b538ee7b3236f873e9"
     },
     {
@@ -2534,10 +2534,10 @@
           "text": "…"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_44_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -2553,10 +2553,10 @@
           "text": "…"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_45",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -2591,10 +2591,10 @@
           "text": "Nicht unter diese Bestimmung fallen Verbandseinrichtungen sowie Vorsorgeeinrichtungen mit mehreren wirtschaftlich oder finanziell eng miteinander verbundenen Arbeitgebern."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_46",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "76e1c361342773b01f22dd17151a4d33db5514dc39e31117057273750a6c0ed8"
     },
     {
@@ -2623,10 +2623,10 @@
           "text": "Im Übrigen gelten die Artikel 957a, 958 Absatz 3, 958c Absätze 1 und 2 sowie 958f des Obligationenrechts über die kaufmännische Buchführung."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_47",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "f9c2426f78bd628b6bb0fe21fb2eca713a670f7b3905aaf8577ae8f79ab8dd20"
     },
     {
@@ -2643,10 +2643,10 @@
           "text": "Die Aktiven und die Passiven sind nach den Fachempfehlungen zur Rechnungslegung Swiss GAAP FER 26 zu bewerten. Für die für versicherungstechnische Risiken notwendigen Rückstellungen ist die aktuelle Berechnung des Experten für berufliche Vorsorge nach Artikel 52e BVG massgebend."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_48",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "42d13e1150987f31243aea3514d2e171e91091e323462be4986f72bfe1a0962e"
     },
     {
@@ -2697,10 +2697,10 @@
           "text": "Können die Vermögensverwaltungskosten bei einer oder mehreren Anlagen nicht ausgewiesen werden, so muss die Höhe des in diese Anlagen investierten Vermögens im Anhang der Jahresrechnung separat ausgewiesen werden. Die betreffenden Anlagen sind einzeln unter Angabe der ISIN (International Securities Identification Number), des Anbieters, des Produktenamens, des Bestandes und des Marktwertes per Stichtag aufzuführen. Das oberste Organ muss jährlich die Gewichtung analysieren und über die Weiterführung dieser Anlagepolitik befinden."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_48_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "ed67effd6ae02fcd33f3fc68d98eba9bc6ced79b1ff0a63554cf70f278bbe7fd"
     },
     {
@@ -2745,10 +2745,10 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_48_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "f0148ac9961071d398c9ac4e17b27c912f84af53f086febdc390139548a8314a"
     },
     {
@@ -2769,10 +2769,10 @@
           "text": "Die Vorsorgekommission muss Informationen, die das Vorsorgewerk betreffen, den Versicherten auf Anfrage hin schriftlich mitteilen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_48_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "ee800efec17a2a83ae76f8f391ccbca8ad35ab8a2331d522574bf9793598d82e"
     },
     {
@@ -2788,10 +2788,10 @@
           "text": "…"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_48_d",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -2808,10 +2808,10 @@
           "text": "Die Vorsorgeeinrichtung legt in einem Reglement Regeln zur Bildung von Rückstellungen und Schwankungsreserven fest. Dabei ist der Grundsatz der Stetigkeit zu beachten."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_48_e",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "882a7649c30a72ee8421d41e35ecb15c7186a43f4e512eb64202add4d5c04570"
     },
     {
@@ -2886,10 +2886,10 @@
           "text": "5–7 …"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_48_f",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "2b8205d35800bdb92d5358db329a4412108e6ed54daadc2c1c777c34bb2b2e5e"
     },
     {
@@ -2910,10 +2910,10 @@
           "text": "Personelle Wechsel im obersten Organ, in der Geschäftsführung, Verwaltung oder Vermögensverwaltung sind der zuständigen Aufsichtsbehörde umgehend zu melden. Diese kann eine Prüfung der Integrität und Loyalität durchführen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_48_g",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "a6c084268f64daa2f65feafe9292642ce9b7f871ab98ec1cebf5c9e774b58141"
     },
     {
@@ -2934,10 +2934,10 @@
           "text": "Vermögensverwaltungs-, Versicherungs- und Verwaltungsverträge, welche die Einrichtung zur Durchführung der beruflichen Vorsorge abschliesst, müssen spätestens fünf Jahre nach Abschluss ohne Nachteile für die Einrichtung aufgelöst werden können."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_48_h",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "a334ea9ff436ef95ddb6e9208761473b84395214061272143fb2869518293aea"
     },
     {
@@ -2958,10 +2958,10 @@
           "text": "Als nahestehende Personen gelten insbesondere der Ehegatte oder die Ehegattin, der eingetragene Partner oder die eingetragene Partnerin, der Lebenspartner oder die Lebenspartnerin und Verwandte bis zum zweiten Grad sowie juristische Personen, an denen eine wirtschaftliche Berechtigung besteht."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_48_i",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "76b151032e024c9fcafc1a1398bf36400005d0fea691f3e1714764c57af96b28"
     },
     {
@@ -2992,10 +2992,10 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_48_j",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "44eebf59f88b05512a56f14006f12092df3762014ea9dafc1317e34577f7a4b9"
     },
     {
@@ -3016,10 +3016,10 @@
           "text": "Werden externe Personen und Institutionen mit der Vermittlung von Vorsorgegeschäften beauftragt, so müssen sie beim ersten Kundenkontakt über die Art und Herkunft sämtlicher Entschädigungen für ihre Vermittlungstätigkeit informieren. Die Art und Weise der Entschädigung sind zwingend in einer schriftlichen Vereinbarung zu regeln, die der Vorsorgeeinrichtung und dem Arbeitgeber offenzulegen ist. Die Bezahlung und die Entgegennahme von zusätzlichen volumen-, wachstums- oder schadenabhängigen Entschädigungen sind untersagt."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_48_k",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "32a59b95d7b5c4822fbf258f67b136890542f30fc34bcdfca6f2ecaef51b1479"
     },
     {
@@ -3040,10 +3040,10 @@
           "text": "Personen und Institutionen, die mit der Geschäftsführung, Verwaltung oder Vermögensverwaltung der Einrichtung betraut sind, müssen dem obersten Organ jährlich eine schriftliche Erklärung darüber abgeben, dass sie sämtliche Vermögensvorteile nach Artikel 48k abgeliefert haben."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_48_l",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "47d1e5323e5cc8dec9ee4def362220ddb3e8424a6eafaee517c356b498eb24d2"
     },
     {
@@ -3064,10 +3064,10 @@
           "text": "Zum Vermögen können auch Rückkaufswerte aus Kollektivversicherungsverträgen hinzugerechnet werden."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_49",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1acf8b329051498d71ad84fe8f998e96b6253a4f49d6b349997a8a9f66d0b1b3"
     },
     {
@@ -3110,10 +3110,10 @@
           "text": "Beim Erlass der Vorschriften nach Absatz 2 Buchstaben c und d kann es sich auf Normen und Regelwerke von allgemein anerkannten Organisationen und Verbänden beziehen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_49_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "23576340cbae913db7d60a118d678a491d32ea972272ad7c1a8b7b6010d1c5a8"
     },
     {
@@ -3154,10 +3154,10 @@
           "text": "Die Einhaltung der Artikel 53–57 entbindet nicht von der Beachtung der Vorschriften nach den Absätzen 1–3. Dies gilt nicht für Anlagen nach Artikel 54 Absatz 2 Buchstaben c und d."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_50",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "1ee41e234bf0350d5b0a4decbaa16a6ee90ccaf336a91ac18fee57142fd12375"
     },
     {
@@ -3174,10 +3174,10 @@
           "text": "Die Vorsorgeeinrichtung muss einen dem Geld-, Kapital- und Immobilienmarkt entsprechenden Ertrag anstreben."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_51",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "250bccd5f5fb83f7a58373b4a7814692092e3b89a6bc1b2e6fa87e86793d281c"
     },
     {
@@ -3194,10 +3194,10 @@
           "text": "Die Vorsorgeeinrichtung muss darauf achten, dass sie die Versicherungs- und die Freizügigkeitsleistungen bei deren Fälligkeit erbringen kann. Sie sorgt für eine entsprechende Aufteilung ihres Vermögens in kurz‑, mittel- und langfristige Anlagen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_52",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "f76490fd0c31814c43ae0c763220cfacc8bee06b1f3da863530281b63e028019"
     },
     {
@@ -3356,14 +3356,28 @@
         },
         {
           "absatz": "6",
-          "text": "Im Falle von Effektenleihe und Pensionsgeschäften gelten das Kollektivanlagegesetz vom 23. Juni 2006 und seine Ausführungsbestimmungen sinngemäss. Pensionsgeschäfte, bei denen die Vorsorgeeinrichtung als Pensionsgeberin handelt, sind unzulässig."
+          "text": "Im Falle von Effektenleihe und Pensionsgeschäften gelten das Kollektivanlagegesetz vom 23. Juni 2006 und seine Ausführungsbestimmungen sinngemäss, insbesondere die Verordnung der Eidgenössischen Finanzmarktaufsicht vom 27. August 2014 über die kollektiven Kapitalanlagen. Für Pensionsgeschäfte, bei denen die Vorsorgeeinrichtung als Pensionsgeberin handelt, dürfen die folgenden Anteile des Gesamtvermögens der Vorsorgeeinrichtung eingesetzt werden:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "bis maximal 1 Prozent für das Liquiditätsmanagement, insbesondere zur Deckung von entstehenden Verpflichtungen aus Absicherungsgeschäften;"
+            },
+            {
+              "marke": "b",
+              "text": "bis maximal 3 Prozent für längstens 30 Kalendertage zur Deckung eines Liquiditätsbedarfs aus Währungsabsicherungen."
+            }
+          ]
+        },
+        {
+          "absatz": "7",
+          "text": "Pensionsgeschäfte, bei denen die Vorsorgeeinrichtung als Pensionsgeberin handelt, dürfen keine systematische Hebelwirkung auf das Gesamtvermögen ausüben."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_53",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
-      "sha": "2070053154a6890590f9e9876a6aa915b94e12415de03474f4ede421bc72819b"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "f0fd1f8000f0009bb98dcaad51d35b109a2a90505ab12c9f1d0076ab1aa545cf"
     },
     {
       "id": "bund/BVV_2/art_53_a",
@@ -3393,10 +3407,10 @@
           "text": "Die durchschnittliche Laufzeit aller Forderungen darf nicht mehr als fünf Jahre betragen. Derivate sind nur zur Absicherung von Forderungen in Fremdwährung zulässig."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_53_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "288822730214052c521dbc998b19cd9582dab7065634e02c8dd38ae9275e92b3"
     },
     {
@@ -3439,10 +3453,10 @@
           "text": "Die Absätze 1 und 2 gelten auch im Falle derivativer Produkte wie strukturierte Produkte oder Zertifikate."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_54",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "eb8e4ba710f8ec8d1707b3665308d6f1b7c90ab59b9b8ebf2a77a3ae2067de9b"
     },
     {
@@ -3459,10 +3473,10 @@
           "text": "Anlagen in Beteiligungen nach Artikel 53 Absatz 1 Buchstabe d dürfen sich bezogen auf das Gesamtvermögen höchstens auf 5 Prozent pro Gesellschaft belaufen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_54_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "043005343972f830cca9aded05a864f8c241f09c9fe405fd2c1558e23703bc6e"
     },
     {
@@ -3487,10 +3501,10 @@
           "text": "Eine Vorsorgeeinrichtung, die innerhalb eines Vorsorgeplans unterschiedliche Anlagestrategien anbietet, darf Immobilien nicht belehnen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_54_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "a64f209c5ae110f6d1cea0ff7e589aa526f3ee3bedf7ca176e694ee461f1af6b"
     },
     {
@@ -3524,7 +3538,7 @@
             },
             {
               "marke": "e",
-              "text": "30 Prozent: für Fremdwährungen ohne Währungssicherung;"
+              "text": "30 Prozent: für Fremdwährungen ohne Währungsabsicherung;"
             },
             {
               "marke": "f",
@@ -3537,11 +3551,11 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_55",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
-      "sha": "1a6145785e53018344dc5d78166bbfe86a03040a96b792eebc691ac734b0ce6a"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "64dfba0a6609e1c49b3bccb2ad2d8299f8ff75db4541933c56aa62b917488f7b"
     },
     {
       "id": "bund/BVV_2/art_56",
@@ -3593,10 +3607,10 @@
           "text": "Beteiligungen an kollektiven Anlagen sind den direkten Anlagen gleichgestellt, wenn sie die Anforderungen nach den Absätzen 2 und 3 einhalten."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_56",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "75a42142b2942d7360aef1ddca98a720182354dd09c3038421fdcdbeb54ab268"
     },
     {
@@ -3637,10 +3651,10 @@
           "text": "In der Jahresrechnung müssen alle laufenden derivativen Finanzinstrumente vollumfänglich dargestellt werden."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_56_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "c8806f946dad1c01d69129c5a8afffd10b4d3eb0dd492187bb6e4690d0e7c756"
     },
     {
@@ -3669,10 +3683,10 @@
           "text": "Die Forderungen der Vorsorgeeinrichtung gegenüber dem Arbeitgeber sind zu marktüblichen Ansätzen zu verzinsen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_57",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "997ad7b11f2e94f02ce7a8e7ce32d0a92ddac6739619f8f163c7bc106665726a"
     },
     {
@@ -3707,10 +3721,10 @@
           "text": "Die Aufsichtsbehörde kann im Einzelfall andere Arten der Sicherstellung zulassen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_58",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "5c43965f0b05b61afdc3894e77b43080add3f74f2f0e4fb9a88cc1435f08a9d7"
     },
     {
@@ -3735,10 +3749,10 @@
           "text": "Die Vorsorgeeinrichtung muss ihre Revisionsstelle über Meldungen nach den Absätzen 1 und 2 unverzüglich informieren."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_58_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "8bd88baa2219470e8299c3f0acb861ffc82cf72874843307fc64d5817f464257"
     },
     {
@@ -3765,10 +3779,10 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_59",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "212ef2fd46aec26ef289889570dfaa69fb99320819cf11f5d315453dcd4c1135"
     },
     {
@@ -3784,10 +3798,10 @@
           "text": "…"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_60",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -3816,10 +3830,10 @@
           "text": "Für eine versicherte Person, die bereits Altersleistungen bezieht oder bezogen hat und die in der Folge die Erwerbstätigkeit wieder aufnimmt oder ihren Beschäftigungsgrad wieder erhöht, reduziert sich der Höchstbetrag der Einkaufssumme im Umfang der bereits bezogenen Altersleistungen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_60_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "e3ec6da26c5cfb7f29d0a64cbdb6d01d3ed6fea19e290e7cdf11c6278173b443"
     },
     {
@@ -3854,10 +3868,10 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_60_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "94d47086e027a8cf1e0ae9fe00376306c34f38c2917b4be8fa5e3a9116f71070"
     },
     {
@@ -3882,10 +3896,10 @@
           "text": "Für Versicherte, die am 1. Januar 2006 das 50. Altersjahr vollendet haben, gilt bei zu diesem Zeitpunkt bestehenden Vorsorgeverhältnissen die Begrenzung des versicherbaren Lohns oder des versicherbaren Einkommens für die Risiken Tod und Invalidität nach Artikel 79c BVG nicht."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_60_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "08049ddef77134770d2672e3caf8bc9cab3e0a8d22d301f9ae03ad1a0133fda4"
     },
     {
@@ -3902,10 +3916,10 @@
           "text": "In den Fällen, in denen eine Rückzahlung des Vorbezugs für die Wohneigentumsförderung nach Artikel 30d Absatz 3 Buchstabe a BVG nicht mehr zulässig ist, darf das Reglement der Vorsorgeeinrichtung freiwillige Einkäufe zulassen, soweit sie zusammen mit den Vorbezügen die reglementarisch maximal zulässigen Vorsorgeansprüche nicht überschreiten."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_60_d",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "8251e00fb4b5273a022609edceced3259d394fd370d1e8a76a149d0fe8b20c81"
     },
     {
@@ -3929,10 +3943,10 @@
           "text": "Die Gebühr kann wegen Bedürftigkeit der gebührenpflichtigen Person oder aus anderen wichtigen Gründen ermässigt oder erlassen werden."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_60_e",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "021855af88663466938095b7c5dd8e70520a82b98dce9859fb7e6d5613f9e4a9"
     },
     {
@@ -3948,10 +3962,10 @@
           "text": "Das BSV ist berechtigt, gegen Entscheide der kantonalen Gerichte und des Bundesverwaltungsgerichts beim Bundesgericht Beschwerde zu erheben."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_60_e_bis",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "6e7801f244e24f8da92dbb8466379415d68b5eae86cd07dddb7e74f5731d2871"
     },
     {
@@ -3971,10 +3985,10 @@
           "text": "Die Verordnung vom 17. Februar 1988 über die Verpfändung von Ansprüchen einer Vorsorgeeinrichtung wird aufgehoben."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_60_f",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "50f821520898bfe85cc17bccb21b940402771ce1138e8dcfd4bcacd0426bb041"
     },
     {
@@ -3994,10 +4008,10 @@
           "text": "…"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_61",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "3d0114c8daa52de18f4eb28bd751c2aee8b313e5bfff33bedb680f1d7889a987"
     },
     {
@@ -4013,10 +4027,10 @@
           "text": "…"
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_62",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
     {
@@ -4029,7 +4043,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Das ordentliche Rentenalter der Frauen im AHVG gilt auch als ordentliches BVG-Rentenalter der Frauen (Art. 13 BVG)."
+          "text": "Das ordentliche Rentenalter der Frauen im AHVG gilt auch als ordentliches BVG-Rentenalter der Frauen (Art. 13 Abs. 1 BVG)."
         },
         {
           "absatz": "2",
@@ -4050,11 +4064,11 @@
           ]
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_62_a",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
-      "sha": "a01a037197715189e61788c6258ce20f2b04efa3523d2f26f314b0723ccd924b"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "ea4e946813286588e88b8ea462da31216257158ca186f8900f3a4a7187de3efd"
     },
     {
       "id": "bund/BVV_2/art_62_b",
@@ -4077,10 +4091,10 @@
           "text": "Für Frauen mit Jahrgang 1943, welche sich vorzeitig pensionieren lassen, wird der Umwandlungssatz für die Rente entsprechend angepasst."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_62_b",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "8222d8bdd5bb79ffa101993052468ad5077654c24eecebc5449544c2ed012eea"
     },
     {
@@ -4159,10 +4173,10 @@
           }
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_62_c",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "cb91cb4a75470b76be7ccac18abc3fe487d06a1f26968b3879bcb0cb34596cbb"
     },
     {
@@ -4175,14 +4189,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Das in Buchstabe a Buchstaben a–d der Übergangsbestimmungen der Änderung vom 17. Dezember 2021 des Bundesgesetzes vom 20. Dezember 1946 über die Alters- und Hinterlassenenversicherung festgelegte Referenzalter gilt auch als BVG-Referenzalter der Frauen."
+          "text": "Das in Buchstabe a Buchstaben a–d der Übergangsbestimmungen zur Änderung vom 17. Dezember 2021 des AHVG festgelegte Referenzalter gilt auch als BVG-Referenzalter der Frauen."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_62_d",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
-      "sha": "36ea940d123846d573e50f9802723427145201de8662a59cdf158f2b4c07a09e"
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
+      "sha": "fa7f94a9c79be5c26f61a73c3930b2c56d5fe4f14e093bf6984b15f403e8a9a1"
     },
     {
       "id": "bund/BVV_2/art_63",
@@ -4197,10 +4211,10 @@
           "text": "Diese Verordnung tritt am 1. Januar 1985 in Kraft."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#art_63",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "f0fff1f8a89f54b2f7bb92999dd1a45bfb12c501312b39b54a70c2ddf7b1aa70"
     },
     {
@@ -4249,10 +4263,10 @@
           "text": "Ist der so berechnete Deckungsgrad kleiner als 100 Prozent, so liegt eine Unterdeckung im Sinne von Artikel 44 Absatz 1 vor."
         }
       ],
-      "stand": "2025-01-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/543_543_543/de#annex_u1",
-      "abgerufen": "2026-07-27",
-      "fassungsToken": "20250101",
+      "abgerufen": "2026-08-02",
+      "fassungsToken": "20260801",
       "sha": "bb7148c81b8ea7456118f726441961f0773f814d0b35599e9cdf2f7b23bab27b"
     }
   ]

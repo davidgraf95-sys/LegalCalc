@@ -1,9 +1,9 @@
 {
- "erzeugt": "2026-07-27",
+ "erzeugt": "2026-08-02",
  "kopf": {
   "srNummer": "831.425",
   "titel": "Verordnung über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge",
-  "erlassdatum": "vom 3. Oktober 1994 (Stand am 1. März 2024)",
+  "erlassdatum": "vom 3. Oktober 1994 (Stand am 1. August 2026)",
   "praeambel": [
    {
     "rolle": "autor",
@@ -1700,12 +1700,13 @@
        "rs": "831.441.1"
       }
      ],
-     "absatz": "1",
+     "absatz": null,
      "item": null,
+     "absatzIndex": 0,
      "pos": {
       "b": 0,
-      "o": 325,
-      "l": 382
+      "o": 350,
+      "l": 407
      },
      "kl": "V"
     },
@@ -1719,30 +1720,32 @@
        "rs": "831.40"
       }
      ],
-     "absatz": "1",
+     "absatz": null,
      "item": null,
+     "absatzIndex": 0,
      "pos": {
       "b": 0,
-      "o": 361,
-      "l": 382
+      "o": 386,
+      "l": 407
      },
      "kl": "V"
     },
     {
      "nr": "20",
-     "text": "Fassung gemäss Anhang Ziff. 3 der V vom 27. Okt. 2004, in Kraft seit 1. Jan. 2005 (AS <b>2004</b> 4643).",
+     "text": "Fassung gemäss Ziff. I 3 der V vom 12. Juni 2026, in Kraft seit 1. Aug. 2026 (AS <b>2026</b> 325).",
      "links": [
       {
-       "label": "AS <b>2004</b> 4643",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/712"
+       "label": "AS <b>2026</b> 325",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/325"
       }
      ],
-     "absatz": "1",
+     "absatz": null,
      "item": null,
+     "absatzIndex": 0,
      "pos": {
       "b": 0,
-      "o": 382,
-      "l": 382
+      "o": 407,
+      "l": 407
      },
      "kl": "A"
     },

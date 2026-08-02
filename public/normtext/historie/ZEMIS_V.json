@@ -1,8 +1,8 @@
 {
  "erlass": "ZEMIS_V",
  "abdeckung": {
-  "fussnoten": 170,
-  "ereignis": 96,
+  "fussnoten": 169,
+  "ereignis": 95,
   "referenz": 74,
   "unparsed": 0
  },
@@ -104,29 +104,16 @@
    ]
   },
   "3": {
-   "giltSeit": "2023-10-15",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
     {
-     "typ": "aufgehoben",
-     "datum": "2014-01-20",
-     "wirkung": true,
-     "quellen": [
-      {
-       "label": "AS 2014 3",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2014/2"
-      }
-     ],
-     "absatz": "1",
-     "item": "a"
-    },
-    {
      "typ": "fassung",
-     "datum": "2022-03-01",
+     "datum": "2026-08-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2022 73",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/73"
+       "label": "AS 2026 341",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/341"
       }
      ],
      "absatz": "1",
