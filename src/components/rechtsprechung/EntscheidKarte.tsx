@@ -74,7 +74,16 @@ export function EntscheidKarte({ e, onNorm }: {
       {e.normKeys.length > 0 && (
         <div className="relative mt-3 flex flex-wrap items-center gap-1.5">
           {e.normKeys.slice(0, 4).map((k) => <NormChip key={k} normKey={k} onWaehle={onNorm} />)}
-          {e.normKeys.length > 4 && <span className="num text-micro text-ink-500">+{e.normKeys.length - 4}</span>}
+          {/* LM-049: der Überlaufhinweis ist ein ZÄHLER, kein Bedienelement — die
+              nackte «+2» war neben den gerahmten Chips nicht als Text erkennbar.
+              «+2 weitere» benennt sich selbst (Muster wie RichterFilter) und
+              bekommt bewusst KEINEN Rahmen, kein role/tabindex: was nicht
+              klickbar ist, sieht auch nicht klickbar aus (§8). */}
+          {e.normKeys.length > 4 && (
+            <span className="text-micro text-ink-500">
+              <span className="num">+{e.normKeys.length - 4}</span> weitere
+            </span>
+          )}
         </div>
       )}
       </div>
@@ -93,7 +102,14 @@ export function EntscheidKarte({ e, onNorm }: {
           <span className="num" title={e.datumUnbekannt ? DATUM_UNBEKANNT_TITEL : undefined}>
             {datumAnzeige(e.datum, e.datumUnbekannt)}
           </span>
-          {istBge(e) && <span className="num text-ink-500" title="Aktenzeichen">({e.nummer})</span>}
+          {/* LM-105: EIN Zitat je Karte. Bei BGE-Einträgen IST `nummer` die
+              BGE-Referenz — die «Aktenzeichen»-Klammer wiederholte damit nur
+              die Zeile links davon. Sie erscheint jetzt genau dann, wenn sie
+              etwas Neues sagt: ein vom BGE abweichendes Aktenzeichen (heute
+              0/1259, aber die Daten dürfen es tragen). */}
+          {istBge(e) && e.nummer !== e.bgeReferenz && (
+            <span className="num text-ink-500" title="Aktenzeichen">({e.nummer})</span>
+          )}
           {e.sprache !== 'de' && <span className="lc-badge lc-badge-soft uppercase" title={spracheBadgeTitel(e.sprache)}>{e.sprache}</span>}
         </div>
         <a href={e.quelleUrl} target="_blank" rel="noopener noreferrer"
