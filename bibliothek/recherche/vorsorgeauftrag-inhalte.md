@@ -118,10 +118,14 @@ Aufgaben präzise zu umschreiben, aber keine Angst vor Randlücken zu haben.
   Das ist die praktisch wichtigste Regel bei der **Personenwahl** (Erbin und
   Vermögenssorgerin in einer Person; Geschäftspartner) — heute nirgends in
   Engine oder UI. → EIN neuer Gate-Hinweis (Ziff. 9: Warnungs-Ökonomie).
-- **Entschädigung:** Ohne Anordnung legt die KESB sie fest, wenn gerechtfertigt
-  (Art. 366 Abs. 1); Entschädigung und Spesen zulasten der auftraggebenden
-  Person (Abs. 2). Der heutige Gate-Hinweis stimmt; das Baustein-Zitat trägt
-  nur e contrario (Befund V-7).
+- **Entschädigung:** Ohne Anordnung legt die KESB eine **angemessene**
+  Entschädigung fest, wenn dies nach dem Umfang der Aufgaben gerechtfertigt
+  erscheint oder die Leistungen üblicherweise entgeltlich sind (Art. 366
+  Abs. 1); Entschädigung und **notwendige** Spesen zulasten der
+  auftraggebenden Person (Abs. 2). Das Baustein-Zitat trägt nur e contrario
+  (Befund V-7). *(Nachtrag GP-Runde 2, L1–L3: der Gate-Hinweis wurde auf
+  diesen Wortlaut präzisiert — «bei der Validierung» war von Art. 366 nicht
+  gedeckt.)*
 - **Kündigung:** jederzeit mit zweimonatiger Frist, schriftlich an die KESB;
   fristlos aus wichtigen Gründen (Art. 367). Wissen für die beauftragte Person,
   nicht für die Urkunde → Beiblatt (Ziff. 8).

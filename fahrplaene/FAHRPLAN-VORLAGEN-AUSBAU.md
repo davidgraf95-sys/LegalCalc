@@ -368,3 +368,10 @@ kein Merge vor Davids Review. Trailer `Roadmap: W2·8`.
   Zitat-Ausnahme, Merkmal d). Brisanz: Teilrevision der ZStGV in
   Vernehmlassung bis 15.10.2026 (`VERN-2026-32`). Pin ergänzen
   (Korpus-Werkstatt-Fläche).
+- **V9.5 GP-Runde-3-Nebenfunde N1–N4** (3.8.2026, alle NIEDRIG/MITTEL,
+  UI-unerreichbar bzw. kosmetisch): N1 `datum` ohne `.trim()` geprüft
+  (Whitespace-Datum umgeht B8-Zweig + Warnung; via UI nicht erreichbar) ·
+  N2 V14-`begruendung` nennt noch «Ort» als Formbestandteil · N3 Doppelkomma
+  bei `ort='Basel,'` · N4 Golden-Fall für den «Datum: ________»-Zweig
+  (vorl:va-ohne-ort-ohne-datum) ergänzen. Ein kleiner Sammel-Schritt,
+  löst neuen GP-Durchgang aus.
