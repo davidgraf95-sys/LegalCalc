@@ -51,6 +51,7 @@
 
 import { memo, useRef, useState } from 'react';
 import { KantenChip } from '../../../components/verzahnung/KantenChip';
+import { ZeichenLegende } from '../../../components/verzahnung/ZeichenLegende';
 import { usePaneSteuerung } from '../../../components/layout/usePaneLayout';
 import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../../lib/verzahnung/facetten';
@@ -280,6 +281,12 @@ export const BezuegeZeile = memo(function BezuegeZeile({ kanten, gesamt, zeitAkt
         <StatusGruppe key={status} status={status} kanten={liste} gesamtRoh={gesamt?.[status]}
           filter={filter} normZitat={normZitat} revision={revision} />
       ))}
+      {/* LM-050 (W2·17-UI-BEFUNDE-B1): sichtbare, touch-taugliche Erklärung der
+          Chip-Glyphen ★/↻/⧉ nach dem §1.7-Muster (VZUI) — vorher existierte die
+          Erklärung nur als title/aria-label (auf Touch unerreichbar, nirgends
+          sichtbar). Dezent als text-micro-Zeile unter den Linien, fluchtend mit
+          der Label-Spalte; Popover nur auf Klick/Enter. */}
+      <ZeichenLegende />
     </div>
   );
 });

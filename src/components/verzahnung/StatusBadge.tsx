@@ -71,6 +71,17 @@ const REZEPT: Partial<Record<StatusPraedikat, Rezept>> = {
   //   erfassten 195'000 Urteilen (lc-badge-soft, gestrichelt).
 };
 
+/** LM-050 (W2·17-UI-BEFUNDE-B1): die Glyph-Prädikate mit Erklärtext für die
+ *  sichtbare Zeichenerklärung (ZeichenLegende). DIESELBE Quelle wie aria-label/
+ *  title der Glyphen (Magic Moment 4: textgleich an allen Fundorten, §5) —
+ *  keine zweite Formulierung pflegen. */
+export const GLYPH_LEGENDE = (['leitentscheid', 'revidiert'] as const).flatMap((p) => {
+  const r = REZEPT[p];
+  return r?.glyph
+    ? [{ glyph: r.glyph, ton: r.glyphTon ?? 'text-brass-700', label: r.label, erklaerung: r.erklaerung }]
+    : [];
+});
+
 export function StatusBadge({ praedikat, variant = 'voll', interaktiv = false, detail, className = '' }: {
   praedikat: StatusPraedikat;
   /** 'voll' = ausgeschriebenes Badge (Reader-Kopf/Suche); 'glyph' = blanker ★ mit aria-label (Chip-Reihen). */
