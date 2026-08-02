@@ -1,7 +1,7 @@
 # Vorsorgeauftrag — fachliche Grundlage für den Umbau
 
-Erstellt: 2.8.2026 (Nachtlauf-Session W2·8) · Stand der Normprüfung: Snapshots
-1.7.2026 (ZGB) / 1.1.2026 (OR), ZStV/ZStGV live 2.8.2026.
+**Erstellt:** 2.8.2026 (Nachtlauf-Session W2·8) · **Stand** der Normprüfung:
+Snapshots 1.7.2026 (ZGB) / 1.1.2026 (OR), ZStV/ZStGV live 2.8.2026.
 
 Inhaltliche Zusammenstellung für die Überarbeitung der Vorsorgeauftrags-Vorlage
 (`src/lib/vorlagen/vorsorgeauftrag.ts`): was rechtlich gilt, was heute unrichtig
