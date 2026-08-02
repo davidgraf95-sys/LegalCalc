@@ -108,9 +108,30 @@ function ScrollWiederherstellung({ hashVerbraucht }: { hashVerbraucht: boolean }
   // → beim Zurückwechseln landete man am Anfang («ab und zu», timing-abhängig;
   // das war die Wurzel hinter den früheren Teil-Fixes). useLayoutEffect
   // garantiert die Reihenfolge unabhängig vom Timing.
+  const vorherSchluessel = useRef<string | null>(null);
   useIsoLayoutEffect(() => {
     wiederherstellend.current = true;       // Clamp-/Transient-Scrolls NICHT speichern
     aktiv.current = hash ? '' : schluessel;  // ab sofort gehört jeder Save dem NEUEN Reiter
+    // LM-201 (W2·17-UI-BEFUNDE-B2): Routenwechsel OHNE anstehende Restauration
+    // (kein Hash-Ziel, keine gespeicherte Position, kein Anker) beginnt oben —
+    // SYNCHRON im Commit, vor dem ersten Paint der neuen Route. Der bisherige
+    // Reset lief erst im useEffect + rAF (nach dem Paint): beim Wechsel auf eine
+    // kürzere Seite war einen Moment die alte, nur geklemmte Scrollposition
+    // sichtbar (Prod-Messung 2.8.2026: Ankunft bei y=2'520 auf 3'249 px Dokument-
+    // höhe; Zwischenzustand +15 ms belegt). Restaurations-Fälle (Anker/Position/
+    // Hash) bleiben unberührt — dort übernimmt wie bisher die Konvergenz-Schleife
+    // bzw. ScrollZuHash. Erst-Mount ausgenommen (vorherSchluessel === null):
+    // den Initial-Load verwaltet der Browser.
+    if (
+      !hash &&
+      vorherSchluessel.current !== null &&
+      vorherSchluessel.current !== schluessel &&
+      positionen.current.get(schluessel) === undefined &&
+      leseAnker(schluessel) === undefined
+    ) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+    }
+    vorherSchluessel.current = schluessel;
   }, [schluessel, hash]);
   useEffect(() => {
     if (hash) { wiederherstellend.current = false; return; } // Anker-Sprung übernimmt ScrollZuHash

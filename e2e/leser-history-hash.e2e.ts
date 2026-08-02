@@ -83,3 +83,51 @@ test.describe('LM-199 — Zurück mit stehendem #hash: Leseposition, nicht Einst
   })
 })
 
+// ── LM-201: Wechsel auf kürzere Seite beginnt oben, ohne Zwischenzustand ─────
+test.describe('LM-201 — Routenwechsel auf kürzere Seite: kein Frame mit alter Scrollposition', () => {
+  test('SCHKG (tief) → Startseite: jeder Frame mit neuem (kurzem) Dokument hat scrollY 0', async ({ page }) => {
+    test.slow()
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    // CPU-Drossel weitet das Zeitfenster zwischen Commit und nachlaufendem
+    // Effekt — genau dort sass der Prod-Zwischenzustand (+15 ms).
+    const client = await page.context().newCDPSession(page)
+    await client.send('Emulation.setCPUThrottlingRate', { rate: 4 })
+
+    // Tief in einem langen Erlass stehen (SCHKG Art. 312, weit unten).
+    await page.goto('/gesetze/bund/SCHKG#art-312')
+    await expect(page.locator('#art-312')).toBeInViewport({ timeout: 20000 })
+    const yVorher = await page.evaluate(() => window.scrollY)
+    expect(yVorher, `Ausgangs-scrollY ${yVorher}`).toBeGreaterThan(100_000)
+
+    // Frame-Sampler scharf schalten: je rAF-Frame (= unmittelbar vor dem Paint)
+    // scrollY + Dokumenthöhe festhalten, sobald das Dokument auf die neue, kurze
+    // Seite gewechselt hat (< 30 % der alten Höhe). Ein Frame mit kurzem Dokument
+    // UND alter/geklemmter Scrollposition IST der LM-201-Zwischenzustand.
+    await page.evaluate(() => {
+      const w = window as unknown as { __lm201: { y: number; h: number }[] }
+      w.__lm201 = []
+      const alteHoehe = document.documentElement.scrollHeight
+      let frames = 0
+      const tick = () => {
+        const h = document.documentElement.scrollHeight
+        if (h < alteHoehe * 0.3) w.__lm201.push({ y: window.scrollY, h })
+        if (w.__lm201.length < 8 && frames++ < 900) requestAnimationFrame(tick)
+      }
+      requestAnimationFrame(tick)
+    })
+
+    // Navigation auf eine kürzere, nie besuchte Seite (Startseite) — per Klick
+    // (echte SPA-Navigation), nicht per goto (Vollreload hätte keine alte Position).
+    await page.locator('nav[aria-label="Hauptnavigation"] a[aria-label="LexMetrik – Startseite"]').click()
+    await expect(page).toHaveURL(/\/$/, { timeout: 15000 })
+    await page.waitForFunction(() => (window as unknown as { __lm201?: unknown[] }).__lm201!.length >= 4, undefined, { timeout: 15000 })
+
+    const proben = await page.evaluate(() => (window as unknown as { __lm201: { y: number; h: number }[] }).__lm201)
+    for (const p of proben) {
+      expect(p.y, `Frame mit kurzem Dokument (h=${p.h}) bei scrollY=${p.y} — Zwischenzustand sichtbar`).toBeLessThanOrEqual(2)
+    }
+    await client.send('Emulation.setCPUThrottlingRate', { rate: 1 })
+    expect(fehler).toEqual([])
+  })
+})
