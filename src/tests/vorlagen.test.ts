@@ -321,12 +321,37 @@ describe('Vorlage Vorsorgeauftrag', () => {
     expect(g.blocker.some((b) => b.includes('Handlungsfähigkeit'))).toBe(true);
   });
 
-  it('medizinische Vertretung durch juristische Person blockiert', () => {
+  // W2·8/B4 (Befunde V-1/V-2): Die juristische Person ist für die
+  // Personensorge KEIN Blocker mehr – Art. 360 Abs. 1 ZGB erlaubt sie
+  // ausdrücklich. Medizin-Fall = Warnung (Lehre + Validierungsrisiko),
+  // sonst = Hinweis.
+  const jpMedizin = (h: string) => h.includes('medizinischen Massnahmen') && h.includes('Art. 370 Abs. 2 ZGB');
+  const jpPersonensorge = (h: string) => h.includes('auch für die Personensorge zulässig');
+
+  it('medizinische Vertretung durch juristische Person: Warnung, kein Blocker (Art. 360 Abs. 1 ZGB)', () => {
     const g = pruefeVaGates(va({
       beauftragte: [{ name: 'Treuhand AG', typ: 'juristisch', angaben: 'Basel', bereiche: ['personensorge'] }],
       module: { personensorge: ['medizin'], vermoegenssorge: [], rechtsverkehr: [] },
     }));
-    expect(g.blocker.some((b) => b.includes('NATÜRLICHEN'))).toBe(true);
+    expect(g.warnungen.some(jpMedizin)).toBe(true);
+    expect(g.hinweise.some(jpPersonensorge)).toBe(false);
+    expect(g.blocker).toEqual([]);
+  });
+
+  it('juristische Person für die Personensorge ohne Medizin-Modul: Hinweis, kein Blocker', () => {
+    const g = pruefeVaGates(va({
+      beauftragte: [{ name: 'Treuhand AG', typ: 'juristisch', angaben: 'Basel', bereiche: ['personensorge'] }],
+      module: { personensorge: ['wohnsituation'], vermoegenssorge: [], rechtsverkehr: [] },
+    }));
+    expect(g.hinweise.some(jpPersonensorge)).toBe(true);
+    expect(g.warnungen.some(jpMedizin)).toBe(false);
+    expect(g.blocker).toEqual([]);
+  });
+
+  it('natürliche Person: weder Warnung noch Hinweis zur juristischen Person', () => {
+    const g = pruefeVaGates(va({ module: { personensorge: ['medizin'], vermoegenssorge: [], rechtsverkehr: [] } }));
+    expect(g.warnungen.some(jpMedizin)).toBe(false);
+    expect(g.hinweise.some(jpPersonensorge)).toBe(false);
   });
 
   it('ohne beauftragte Person blockiert; KESB-Validierungs-Hinweis immer', () => {
@@ -374,37 +399,49 @@ describe('Vorlage Vorsorgeauftrag', () => {
 
   // ── W2·8 / F1: Ersatzpersonen strukturell wie Hauptbeauftragte ─────────────
 
-  it('juristische Ersatzperson für die Personensorge blockiert', () => {
+  it('juristische Ersatzperson für die Personensorge: Hinweis wie bei der Hauptbeauftragten, kein Blocker', () => {
     const g = pruefeVaGates(va({
       ersatzpersonen: [{ name: 'Treuhand AG', typ: 'juristisch', angaben: 'Basel', bereiche: ['personensorge'] }],
     }));
-    expect(g.blocker.some((b) => b.includes('NATÜRLICHEN') && b.includes('auch als Ersatzperson'))).toBe(true);
+    expect(g.hinweise.some(jpPersonensorge)).toBe(true);
+    expect(g.blocker).toEqual([]);
   });
 
-  it('juristische Ersatzperson nur für die Vermögenssorge blockiert nicht', () => {
+  it('juristische Ersatzperson für die Personensorge + Medizin-Modul: Warnung (Ersatz ist mit erfasst)', () => {
+    const g = pruefeVaGates(va({
+      ersatzpersonen: [{ name: 'Treuhand AG', typ: 'juristisch', angaben: 'Basel', bereiche: ['personensorge'] }],
+      module: { personensorge: ['medizin'], vermoegenssorge: [], rechtsverkehr: [] },
+    }));
+    expect(g.warnungen.some(jpMedizin)).toBe(true);
+    expect(g.blocker).toEqual([]);
+  });
+
+  it('juristische Ersatzperson nur für die Vermögenssorge: keine Meldung zur juristischen Person', () => {
     const g = pruefeVaGates(va({
       ersatzpersonen: [{ name: 'Treuhand AG', typ: 'juristisch', angaben: 'Basel', bereiche: ['vermoegenssorge'] }],
     }));
-    expect(g.blocker.some((b) => b.includes('auch als Ersatzperson'))).toBe(false);
+    expect(g.hinweise.some(jpPersonensorge)).toBe(false);
+    expect(g.warnungen.some(jpMedizin)).toBe(false);
   });
 
-  it('juristische Ersatzperson ohne Bereichs-Wahl blockiert, wenn Personensorge übertragen ist (implizit alle)', () => {
+  it('juristische Ersatzperson ohne Bereichs-Wahl: Meldung, wenn Personensorge übertragen ist (implizit alle)', () => {
     const mitPersonensorge = pruefeVaGates(va({
       ersatzpersonen: [{ name: 'Treuhand AG', typ: 'juristisch', angaben: 'Basel' }],
     }));
-    expect(mitPersonensorge.blocker.some((b) => b.includes('auch als Ersatzperson'))).toBe(true);
-    // Gegenprobe: ohne übertragene Personensorge greift die Schranke nicht
+    expect(mitPersonensorge.hinweise.some(jpPersonensorge)).toBe(true);
+    // Gegenprobe: ohne übertragene Personensorge greift die Prüfung nicht
     const ohnePersonensorge = pruefeVaGates(va({
       beauftragte: [{ name: 'Ben', typ: 'natuerlich', angaben: 'x', bereiche: ['vermoegenssorge'] }],
       ersatzpersonen: [{ name: 'Treuhand AG', typ: 'juristisch', angaben: 'Basel' }],
     }));
-    expect(ohnePersonensorge.blocker.some((b) => b.includes('auch als Ersatzperson'))).toBe(false);
+    expect(ohnePersonensorge.hinweise.some(jpPersonensorge)).toBe(false);
   });
 
-  it('fehlendes typ-Feld (Alt-Stand) wird wie «natuerlich» gelesen – kein Blocker aus dem Speicher', () => {
+  it('fehlendes typ-Feld (Alt-Stand) wird wie «natuerlich» gelesen – keine Meldung aus dem Speicher', () => {
     const alt = { name: 'D', angaben: 'geb. 1992' } as unknown as VaAntworten['ersatzpersonen'][number];
     const g = pruefeVaGates(va({ ersatzpersonen: [alt] }));
-    expect(g.blocker.some((b) => b.includes('auch als Ersatzperson'))).toBe(false);
+    expect(g.hinweise.some(jpPersonensorge)).toBe(false);
+    expect(g.warnungen.some(jpMedizin)).toBe(false);
   });
 
   it('ersatzText: explizite Bereiche erscheinen im Satz, ohne Bereiche bleibt er unverändert', () => {

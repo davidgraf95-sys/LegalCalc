@@ -169,41 +169,49 @@ export function pruefeVaGates(a: VaAntworten): VaGateErgebnis {
     blocker.push('Mindestens eine beauftragte Person mit mindestens einem Aufgabenbereich bezeichnen (Art. 360 Abs. 1 ZGB).');
   }
 
-  // Personensorge nur durch natürliche Person (Korrektheits-Schwelle, §1).
-  // Die Personensorge (Art. 360 ZGB) ist höchstpersönlich; eine juristische
-  // Person kommt nur für Vermögenssorge/Vertretung im Rechtsverkehr in Betracht
-  // (h.L.). Der schärfste Teilfall — medizinische Vertretung (Art. 378 Abs. 1
-  // Ziff. 1 ZGB) — wird mit der spezifischeren Meldung benannt; sonst die
-  // allgemeine Personensorge-Meldung. (Befund Vorlagen-Audit 25.6.2026: vorher
-  // nur der medizin-Teilfall geblockt → juristische Personensorge ohne
-  // medizin-Modul lief durch.)
-  const personensorgeJuristisch = a.beauftragte.some(
-    (b) => b.typ === 'juristisch' && b.bereiche.includes('personensorge'),
-  );
-  if (personensorgeJuristisch) {
-    blocker.push(
-      a.module.personensorge.includes('medizin')
-        ? 'Die Vertretung bei medizinischen Massnahmen kann nur einer NATÜRLICHEN Person übertragen werden (Art. 378 Abs. 1 Ziff. 1 ZGB) – bitte Person oder Modulauswahl anpassen.'
-        : 'Die Personensorge ist höchstpersönlich und kann nur einer NATÜRLICHEN Person übertragen werden (Art. 360 ZGB); eine juristische Person kommt nur für die Vermögenssorge oder die Vertretung im Rechtsverkehr in Betracht.',
-    );
-  }
-
-  // Dieselbe Schranke gilt für die ERSATZPERSON (W2·8/F1): Wer im Ersatzfall
-  // einrückt, übernimmt die Aufgabe selbst – die Höchstpersönlichkeit der
-  // Personensorge hängt nicht am Rang. Ohne ausdrückliche Bereichs-Wahl gilt
-  // die Ersatzverfügung für ALLE übertragenen Bereiche; dann greift die
-  // Schranke, sobald die Personensorge überhaupt übertragen ist.
+  // Juristische Person und Personensorge — KEIN Blocker (W2·8, Befunde V-1/V-2).
+  //
+  // Wortlaut-Befund am Snapshot (ZGB, Stand 1.7.2026): Art. 360 Abs. 1 erlaubt
+  // AUSDRÜCKLICH, «eine natürliche oder juristische Person» mit der
+  // Personensorge zu beauftragen. Der frühere harte Blocker zitierte Art. 360
+  // ZGB damit contra legem (V-1). Auch die Medizin-Variante trug ihr Zitat
+  // nicht: Art. 378 Abs. 1 Ziff. 1 nennt schlicht «die in einer
+  // Patientenverfügung oder in einem Vorsorgeauftrag bezeichnete Person» und
+  // enthält keine Natürlichkeits-Schranke; diese steht wörtlich nur in
+  // Art. 370 Abs. 2 — und dort für die PATIENTENVERFÜGUNG (V-2).
+  //
+  // Offengelegte Lehre-Position: Für die medizinische Vertretung kommt nach
+  // verbreiteter Lehre nur eine natürliche Person in Betracht (Anlehnung an
+  // Art. 370 Abs. 2). Das ist Lehre, kein Gesetzesbefehl — deshalb WARNUNG mit
+  // Validierungs-Risiko (Art. 363 Abs. 2 Ziff. 3), nicht Blocker: Das Werkzeug
+  // sperrt nicht, was das Gesetz erlaubt (§1/§8).
+  //
+  // Historie: Der Vorlagen-Audit 25.6.2026 hatte den Blocker vom medizin-
+  // Teilfall auf die ganze Personensorge AUSGEWEITET — gestützt auf ebenjenes
+  // contra-legem-Zitat. Diese Ausweitung entfällt mit der Herabstufung.
+  // Grundlage: bibliothek/recherche/vorsorgeauftrag-inhalte.md Ziff. 5,
+  // Befundregister V-1/V-2.
+  //
+  // Ersatzpersonen sind mit erfasst (W2·8/F1): Wer im Ersatzfall einrückt,
+  // übernimmt die Aufgabe selbst. Ohne ausdrückliche Bereichs-Wahl gilt die
+  // Ersatzverfügung für ALLE übertragenen Bereiche.
   const ersatzBereiche = (e: VaErsatzperson): VaBereich[] =>
     e.bereiche && e.bereiche.length > 0 ? e.bereiche : [...aktiveBereiche];
-  const personensorgeJuristischErsatz = a.ersatzpersonen.some(
-    (e) => e.name.trim() && ersatzTyp(e) === 'juristisch' && ersatzBereiche(e).includes('personensorge'),
-  );
-  if (personensorgeJuristischErsatz) {
-    blocker.push(
-      a.module.personensorge.includes('medizin')
-        ? 'Die Vertretung bei medizinischen Massnahmen kann nur einer NATÜRLICHEN Person übertragen werden (Art. 378 Abs. 1 Ziff. 1 ZGB) – bitte Person oder Modulauswahl anpassen (auch als Ersatzperson).'
-        : 'Die Personensorge ist höchstpersönlich und kann nur einer NATÜRLICHEN Person übertragen werden (Art. 360 ZGB); eine juristische Person kommt nur für die Vermögenssorge oder die Vertretung im Rechtsverkehr in Betracht (auch als Ersatzperson).',
+  const personensorgeJuristisch =
+    a.beauftragte.some((b) => b.typ === 'juristisch' && b.bereiche.includes('personensorge')) ||
+    a.ersatzpersonen.some(
+      (e) => e.name.trim() && ersatzTyp(e) === 'juristisch' && ersatzBereiche(e).includes('personensorge'),
     );
+  if (personensorgeJuristisch) {
+    if (a.module.personensorge.includes('medizin')) {
+      warnungen.push(
+        'Für die Vertretung bei medizinischen Massnahmen kommt nach verbreiteter Lehre nur eine natürliche Person in Betracht (vgl. Art. 370 Abs. 2 ZGB zur Patientenverfügung); es besteht das Risiko, dass die KESB die Einsetzung insoweit nicht validiert (Art. 363 Abs. 2 Ziff. 3 ZGB). Empfehlung: für die medizinische Vertretung eine natürliche Person bezeichnen.',
+      );
+    } else {
+      hinweise.push(
+        'Die Beauftragung einer juristischen Person ist auch für die Personensorge zulässig (Art. 360 Abs. 1 ZGB); die KESB prüft ihre Eignung bei der Validierung (Art. 363 Abs. 2 Ziff. 3 ZGB). Einzelne höchstpersönliche Handlungen werden faktisch durch natürliche Hilfspersonen wahrgenommen.',
+      );
+    }
   }
 
   // Liegenschaften → ausdrückliche Sondervollmacht (wird automatisch aufgenommen)
