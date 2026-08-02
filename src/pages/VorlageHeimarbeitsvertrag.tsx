@@ -106,7 +106,11 @@ export function VorlageHeimarbeitsvertrag({ kopf }: { kopf: ReactNode }) {
             <Field label="Einheit"><input className={inputCls} value={a.lohnEinheit} onChange={(e) => set('lohnEinheit', e.target.value)} placeholder="pro Stück" /></Field>
           </div>
           <div className="space-y-2">
-            <GruppenTitel>Dienstverhältnis (Art. 353a/353b/354 OR)</GruppenTitel>
+            {/* LM-101: Buchstabenzusätze (353a/353b) dürfen die uppercase-Overline
+                nicht durchlaufen — sonst wird «a»/«b»→«A»/«B» und das Zitat
+                sinnentstellt. Norm-Teil bleibt per normal-case in
+                Originalschreibweise (Muster wie MietrechtForm.tsx / VorlageKlageOrdentlich.tsx:305). */}
+            <GruppenTitel>Dienstverhältnis <span className="normal-case">(Art. 353a/353b/354 OR)</span></GruppenTitel>
             <SelectionGrid
               className="grid grid-cols-1 sm:grid-cols-2 gap-2"
               items={([

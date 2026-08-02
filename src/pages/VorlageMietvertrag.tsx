@@ -328,7 +328,8 @@ export function VorlageMietvertrag() {
             )}
           </div>
           <div className="space-y-2">
-            <GruppenTitel><NormText text={`Nebenkosten (Art. 257a OR)`} /></GruppenTitel>
+            {/* LM-101-Muster: Buchstabenzusatz (257a) darf die uppercase-Overline nicht durchlaufen. */}
+            <GruppenTitel><NormText text={`Nebenkosten `} /><span className="normal-case"><NormText text={`(Art. 257a OR)`} /></span></GruppenTitel>
             <SelectionGrid
               className={pk('grid grid-cols-1 sm:grid-cols-3 gap-2', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-2')}
               items={([

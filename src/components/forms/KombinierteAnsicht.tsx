@@ -225,7 +225,8 @@ export function KombinierteAnsicht() {
 
       {(form.sperrereignisse ?? []).length > 0 && (ergebnisse.lohnfortzahlung || ergebnisse.kuendigung) && (
         <div className="lc-notice">
-          <p className="lc-overline mb-1">Querverbindung: Art. 336c ↔ Art. 324a</p>
+          {/* LM-101-Muster: Buchstabenzusätze (336c/324a) dürfen die uppercase-Overline nicht durchlaufen. */}
+          <p className="lc-overline mb-1">Querverbindung: <span className="normal-case">Art. 336c ↔ Art. 324a</span></p>
           <p className="text-body-s text-ink-600">
             Sperrfrist/Hemmung (Art. 336c OR) und Lohnfortzahlung (Art. 324a OR) sind <strong>voneinander unabhängig</strong>:
             Modul A bestimmt die Lohn-Dauer, die Sperrfrist die Gültigkeit/Verlängerung der Kündigung. Für die gehemmte/verlängerte

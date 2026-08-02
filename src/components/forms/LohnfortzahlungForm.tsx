@@ -231,7 +231,9 @@ export function LohnfortzahlungForm() {
       {/* §2.6 KTG-Gleichwertigkeits-Checkliste */}
       {form.ktgGleichwertigVorhanden && (
         <div className="lc-card p-4 space-y-3">
-          <GruppenTitel><NormText text={`Gleichwertigkeits-Checkliste (Art. 324a Abs. 4 OR, Orientierung)`} /></GruppenTitel>
+          {/* LM-101-Muster: Buchstabenzusatz (324a) darf die uppercase-Overline
+              nicht durchlaufen (Muster wie MietrechtForm.tsx / VorlageKlageOrdentlich.tsx:305). */}
+          <GruppenTitel><NormText text={`Gleichwertigkeits-Checkliste `} /><span className="normal-case"><NormText text={`(Art. 324a Abs. 4 OR, Orientierung)`} /></span></GruppenTitel>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <Field label="Taggeld (% des Lohnes)" hint="Richtwert ≥ 80 %">
               <input type="number" inputMode="decimal" min={0} max={100} className={inputCls}

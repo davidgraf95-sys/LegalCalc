@@ -202,7 +202,8 @@ function EinzelKaderWizard({ untertyp, regime, setRegime }: { untertyp: AvUntert
           {/* Probezeit ist auch beim befristeten Verhältnis vereinbar */}
           {(
             <div className="space-y-3 pt-1">
-              <GruppenTitel><NormText text={`Probezeit (Art. 335b OR)`} /></GruppenTitel>
+              {/* LM-101-Muster: Buchstabenzusatz (335b) darf die uppercase-Overline nicht durchlaufen. */}
+              <GruppenTitel><NormText text={`Probezeit `} /><span className="normal-case"><NormText text={`(Art. 335b OR)`} /></span></GruppenTitel>
               <SelectionGrid
                 className={pk('grid grid-cols-1 sm:grid-cols-3 gap-2', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-2')}
                 items={([
@@ -271,7 +272,8 @@ function EinzelKaderWizard({ untertyp, regime, setRegime }: { untertyp: AvUntert
             </Field>
           </div>
           <div className="space-y-2">
-            <GruppenTitel><NormText text={`Überstunden (Art. 321c OR)`} /></GruppenTitel>
+            {/* LM-101-Muster: Buchstabenzusatz (321c) darf die uppercase-Overline nicht durchlaufen. */}
+            <GruppenTitel><NormText text={`Überstunden `} /><span className="normal-case"><NormText text={`(Art. 321c OR)`} /></span></GruppenTitel>
             <SelectionGrid
               className={pk('grid grid-cols-1 sm:grid-cols-3 gap-2', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-2')}
               items={([
@@ -296,7 +298,8 @@ function EinzelKaderWizard({ untertyp, regime, setRegime }: { untertyp: AvUntert
           </Field>
           {!a.befristet && (
             <div className="space-y-2 pt-1">
-              <GruppenTitel><NormText text={`Kündigungsfrist nach der Probezeit (Art. 335c OR)`} /></GruppenTitel>
+              {/* LM-101-Muster: Buchstabenzusatz (335c) darf die uppercase-Overline nicht durchlaufen. */}
+              <GruppenTitel><NormText text={`Kündigungsfrist nach der Probezeit `} /><span className="normal-case"><NormText text={`(Art. 335c OR)`} /></span></GruppenTitel>
               <SelectionGrid
                 className={pk('grid grid-cols-1 sm:grid-cols-2 gap-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-2')}
                 items={([
@@ -320,7 +323,8 @@ function EinzelKaderWizard({ untertyp, regime, setRegime }: { untertyp: AvUntert
       case 'absicherung': return (
         <div className="space-y-4">
           <div className="space-y-2">
-            <GruppenTitel><NormText text={`Lohnfortzahlung bei Krankheit (Art. 324a OR)`} /></GruppenTitel>
+            {/* LM-101-Muster: Buchstabenzusatz (324a) darf die uppercase-Overline nicht durchlaufen. */}
+            <GruppenTitel><NormText text={`Lohnfortzahlung bei Krankheit `} /><span className="normal-case"><NormText text={`(Art. 324a OR)`} /></span></GruppenTitel>
             <SelectionGrid
               className={pk('grid grid-cols-1 sm:grid-cols-2 gap-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-2')}
               items={([
@@ -347,7 +351,8 @@ function EinzelKaderWizard({ untertyp, regime, setRegime }: { untertyp: AvUntert
             )}
           </div>
           <div className="space-y-2">
-            <GruppenTitel><NormText text={`Spesen (Art. 327a OR)`} /></GruppenTitel>
+            {/* LM-101-Muster: Buchstabenzusatz (327a) darf die uppercase-Overline nicht durchlaufen. */}
+            <GruppenTitel><NormText text={`Spesen `} /><span className="normal-case"><NormText text={`(Art. 327a OR)`} /></span></GruppenTitel>
             <SelectionGrid
               className={pk('grid grid-cols-1 sm:grid-cols-2 gap-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-2')}
               items={([

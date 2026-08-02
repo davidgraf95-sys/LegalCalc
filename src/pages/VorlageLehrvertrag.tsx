@@ -125,7 +125,8 @@ export function VorlageLehrvertrag({ kopf }: { kopf: ReactNode }) {
             <Field label="Dauer (Jahre)" hint="koppelt die Lohnstaffel"><input type="number" min={1} max={5} className={inputCls + ' num w-28'} value={a.dauerJahre} onChange={(e) => setDauer(Number(e.target.value))} /></Field>
           </div>
           <div className="space-y-2">
-            <GruppenTitel><NormText text={`Probezeit (Art. 344a Abs. 3 OR)`} /></GruppenTitel>
+            {/* LM-101-Muster: Buchstabenzusatz (344a) darf die uppercase-Overline nicht durchlaufen. */}
+            <GruppenTitel><NormText text={`Probezeit `} /><span className="normal-case"><NormText text={`(Art. 344a Abs. 3 OR)`} /></span></GruppenTitel>
             <Field label="Probezeit (Monate)" hint="ein bis drei Monate; ohne Abrede gilt von Gesetzes wegen drei Monate">
               <input type="number" min={1} max={6} className={inputCls + ' num w-28'} value={a.probezeitMonate} onChange={(e) => set('probezeitMonate', Number(e.target.value))} />
             </Field>
@@ -142,7 +143,8 @@ export function VorlageLehrvertrag({ kopf }: { kopf: ReactNode }) {
       case 'lohn': return (
         <div className="space-y-4">
           <div className="space-y-2">
-            <GruppenTitel><NormText text={`Lohn je Lehrjahr (Art. 344a Abs. 2 OR)`} /></GruppenTitel>
+            {/* LM-101-Muster: Buchstabenzusatz (344a) darf die uppercase-Overline nicht durchlaufen. */}
+            <GruppenTitel><NormText text={`Lohn je Lehrjahr `} /><span className="normal-case"><NormText text={`(Art. 344a Abs. 2 OR)`} /></span></GruppenTitel>
             <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-3')}>
               {a.lohnLehrjahre.map((l, i) => (
                 <Field key={l.jahr} label={`${l.jahr}. Lehrjahr (CHF / Monat)`}>
@@ -158,7 +160,8 @@ export function VorlageLehrvertrag({ kopf }: { kopf: ReactNode }) {
           <Field label="Berufsfachschule" optional><input className={inputCls} value={a.berufsfachschule} onChange={(e) => set('berufsfachschule', e.target.value)} placeholder="z. B. BFS Basel" /></Field>
           {a.detailgrad === 'experte' && (
             <div className="space-y-2 pt-1">
-              <GruppenTitel><NormText text={`Weitere Leistungen (Art. 344a Abs. 5 OR)`} /></GruppenTitel>
+              {/* LM-101-Muster: Buchstabenzusatz (344a) darf die uppercase-Overline nicht durchlaufen. */}
+              <GruppenTitel><NormText text={`Weitere Leistungen `} /><span className="normal-case"><NormText text={`(Art. 344a Abs. 5 OR)`} /></span></GruppenTitel>
               <Checkbox
                 checked={a.berufswerkzeuge}
                 onChange={(v) => set('berufswerkzeuge', v)}

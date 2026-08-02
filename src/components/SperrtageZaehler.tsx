@@ -26,7 +26,8 @@ export function SperrtageZaehler({ sperrtage }: { sperrtage: NonNullable<Sperrfr
       <div className="flex items-center gap-4">
         <h3 className="lc-overline text-ink-700">Sperrtage-Zähler</h3>
         <div className="flex-1 h-px bg-line" />
-        <span className="lc-overline"><NormText text={`Art. 336c OR`} /></span>
+        {/* LM-101-Muster: Buchstabenzusatz (336c) darf die uppercase-Overline nicht durchlaufen. */}
+        <span className="lc-overline normal-case"><NormText text={`Art. 336c OR`} /></span>
       </div>
 
       <ul className="space-y-3">
