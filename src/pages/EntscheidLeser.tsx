@@ -17,7 +17,7 @@ import { kopfModell, type KopfLabelKey } from '../lib/rechtsprechung/kopf';
 import { normalisiereRegeste, type BrowseEntscheid, type RichterRef } from '../lib/rechtsprechung/register';
 import { besetzungsTeile } from '../lib/rechtsprechung/besetzung-verlinkung';
 import { GEBIET_LABEL } from '../lib/normtext/register';
-import { urlMitHash } from './entscheidLeserRegeln';
+import { LESE_PARAM, leseAusParam, urlMitHash, urlMitLese } from './entscheidLeserRegeln';
 import { usePaneKontext } from '../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 import type { EntscheidSnapshot, EntscheidSprache, Abschnittstyp, Entscheidquelle } from '../lib/rechtsprechung/typen';
@@ -205,7 +205,12 @@ function SprungNavigation({ ziele, springe }: {
   );
 }
 
-function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam }: { schluessel: string; ansichtParam: string | null; normParam: string | null }) {
+function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }: {
+  schluessel: string;
+  ansichtParam: string | null;
+  normParam: string | null;
+  leseParam: string | null;
+}) {
   const navigate = useNavigate();
   const { imPane, wurzel } = usePaneKontext();
   // W2·5d U-POSITION/A17: im SEKUNDÄREN Pane ist die massgebliche Fundstelle-/
@@ -226,10 +231,22 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam }: { schlues
   const [eintrag, setEintrag] = useState<BrowseEntscheid | null>(null);
   const [zustand, setZustand] = useState<'laden' | 'fehlt' | 'da'>('laden');
   const [kopiert, setKopiert] = useState(false);
-  const [lese, setLese] = useState(false);
+  // LM-210: der Lesemodus lag bisher nur im lokalen State — nicht teilbar, nach
+  // dem Neuladen weg. Er steht jetzt als `?lese=1` in der Adresse (Start-Zustand
+  // von dort, Spiegelung per replaceState), nach dem gebauten `?ansicht=`-Muster
+  // (N0d·J5): kein Router-Rerender, kein Neulauf des Lade-Effekts, kein
+  // Verlaufseintrag fürs Umschalten einer Ansicht derselben Seite.
+  const [lese, setLese] = useState(() => leseAusParam(leseParam));
   // BGE-Umschalter: 'voll' = vollständiges Urteil (Default), 'auszug' = amtl. BGE-Sammlungstext.
   const [bodyTab, setBodyTab] = useState<'voll' | 'auszug'>('voll');
-  const closeLese = useCallback(() => setLese(false), []);
+  // Im Pane bleibt die Haupt-URL unberührt (dieselbe Grenze wie bei `wechsleTab`):
+  // ein Overlay über dem Nebenpane darf die Adresse des Haupt-Dokuments nicht umschreiben.
+  const spiegleLese = useCallback((offen: boolean) => {
+    if (imPane || typeof window === 'undefined' || !window.history) return;
+    window.history.replaceState(window.history.state, '', urlMitLese(window.location.href, offen));
+  }, [imPane]);
+  const oeffneLese = useCallback(() => { setLese(true); spiegleLese(true); }, [spiegleLese]);
+  const closeLese = useCallback(() => { setLese(false); spiegleLese(false); }, [spiegleLese]);
   // W2·10-UI-NAV/N0d·J5: Tab-Klick spiegelt die gewählte Fassung als ?ansicht=
   // (teilbar/reload-fest — die Start-Ansicht-Weiche liest sie beim Laden) und
   // scrollt an den Dokumentanfang (neuer Fassungstext, oben beginnen). Die URL
@@ -550,7 +567,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam }: { schlues
               title="Zitierung + Link in die Zwischenablage kopieren">
               {kopiert ? '✓ kopiert' : '⧉ Zitat kopieren'}
             </button>
-            <button type="button" onClick={() => setLese(true)}
+            <button type="button" onClick={oeffneLese}
               className="lc-chip hover:text-brass-700 hover:border-brass-400"
               title="Ablenkungsfreier Lesemodus">
               ▭ Lesemodus
@@ -799,5 +816,7 @@ export function EntscheidLeser() {
   const [sp] = useSearchParams();
   const ansichtParam = sp.get('ansicht');
   const normParam = sp.get('norm');
-  return <EntscheidLeserInhalt key={schluessel} schluessel={schluessel} ansichtParam={ansichtParam} normParam={normParam} />;
+  // LM-210: `?lese=1` öffnet den Lesemodus direkt beim Laden (teilbar, reload-fest).
+  const leseParam = sp.get(LESE_PARAM);
+  return <EntscheidLeserInhalt key={schluessel} schluessel={schluessel} ansichtParam={ansichtParam} normParam={normParam} leseParam={leseParam} />;
 }

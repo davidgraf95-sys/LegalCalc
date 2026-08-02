@@ -28,3 +28,33 @@ export function urlMitHash(href: string, anker: string): string {
   u.hash = anker;
   return u.toString();
 }
+
+// ── LM-210 · Lesemodus in der Adresse ───────────────────────────────────────
+//
+// Befund (Prod, 2.8.2026): der Lesemodus war reiner lokaler State — weder URL
+// noch localStorage noch sessionStorage trugen ihn. Eine Vollbild-Ansicht liess
+// sich damit nicht weitergeben und überlebte kein Neuladen.
+//
+// Gebaut nach dem dokumentierten Präzedenzmuster N0d·J5 (`?ansicht=voll|auszug`
+// wird per replaceState in die Adresse zurückgeschrieben und beim Laden gelesen).
+// Wertform folgt der Bestands-Konvention für Ja/Nein-Achsen (`?leit=1`,
+// EntscheidFilter): gesetzt = «1», ausgeschaltet = Parameter FEHLT — so trägt die
+// Adresse nie ein totes «lese=0» mit.
+
+/** Name der Lesemodus-Achse in der Adresse. */
+export const LESE_PARAM = 'lese';
+const LESE_AN = '1';
+
+/** Lesemodus-Zustand aus dem rohen Query-Wert (alles ausser «1» = zu). */
+export function leseAusParam(wert: string | null): boolean {
+  return wert === LESE_AN;
+}
+
+/** Adresse mit gesetztem/entferntem Lesemodus-Flag; übrige Parameter und Hash
+ *  bleiben unberührt (der Fassungs-Parameter `?ansicht=` überlebt das Öffnen). */
+export function urlMitLese(href: string, offen: boolean): string {
+  const u = new URL(href);
+  if (offen) u.searchParams.set(LESE_PARAM, LESE_AN);
+  else u.searchParams.delete(LESE_PARAM);
+  return u.toString();
+}
