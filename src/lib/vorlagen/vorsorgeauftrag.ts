@@ -197,8 +197,17 @@ export function pruefeVaGates(a: VaAntworten): VaGateErgebnis {
   // Ersatzverfügung für ALLE übertragenen Bereiche.
   const ersatzBereiche = (e: VaErsatzperson): VaBereich[] =>
     e.bereiche && e.bereiche.length > 0 ? e.bereiche : [...aktiveBereiche];
+  //
+  // W2·8/Gegenprüfung B2 — Namens-Filter-Asymmetrie behoben: Die Prüfung der
+  // HAUPTBEAUFTRAGTEN wertete auch Zeilen ohne Namen. Eine frisch hinzugefügte,
+  // noch leere Beauftragten-Zeile mit Typ «juristisch» erzeugte damit eine
+  // Warnung über eine Person, die im Dokument gar nie erscheint: sowohl
+  // `beauftragteListe` (vaZusammenstellen) als auch `aktiveBereiche` oben und
+  // die Ersatzpersonen-Prüfung unten filtern seit je auf `name.trim()`. Der
+  // Filter gilt jetzt an allen vier Stellen gleich (§5: eine Aussage darüber,
+  // wer «bezeichnet» ist).
   const personensorgeJuristisch =
-    a.beauftragte.some((b) => b.typ === 'juristisch' && b.bereiche.includes('personensorge')) ||
+    a.beauftragte.some((b) => b.name.trim() && b.typ === 'juristisch' && b.bereiche.includes('personensorge')) ||
     a.ersatzpersonen.some(
       (e) => e.name.trim() && ersatzTyp(e) === 'juristisch' && ersatzBereiche(e).includes('personensorge'),
     );
@@ -249,11 +258,17 @@ export function pruefeVaGates(a: VaAntworten): VaGateErgebnis {
     hinweise.push('Eine Ersatzverfügung ist empfohlen, falls die beauftragte Person ungeeignet ist, ablehnt oder kündigt (Art. 360 Abs. 3 ZGB) – idealerweise eine Person ausserhalb möglicher Interessenkonflikte.');
   }
 
-  // Entschädigung offen → KESB legt fest. Absatz-Präzisierung W2·8/B5: Die
-  // Festsetzung durch die KESB steht in Art. 366 Abs. 1, die Tragung durch die
-  // auftraggebende Person in Abs. 2 — der Satz stützt sich auf beide.
+  // Entschädigung offen → KESB legt fest, ABER NUR UNTER VORAUSSETZUNGEN.
+  // W2·8/Gegenprüfung B5: Der frühere Satz stellte die Festsetzung unbedingt
+  // dar («legt die KESB … fest»). Der Wortlaut knüpft sie an zwei alternative
+  // Voraussetzungen (ZGB-Snapshot Stand 1.7.2026, Art. 366 Abs. 1): «… so legt
+  // die Erwachsenenschutzbehörde eine angemessene Entschädigung fest, wenn dies
+  // mit Rücksicht auf den Umfang der Aufgaben als gerechtfertigt erscheint oder
+  // wenn die Leistungen der beauftragten Person üblicherweise entgeltlich
+  // sind.» Die Kostentragung steht in Abs. 2 und bleibt als eigener Anker
+  // sichtbar — sonst läse sich Abs. 1 als Träger beider Aussagen (§7/§8).
   if (a.entschaedigung === 'keine_angabe') {
-    hinweise.push('Ohne Entschädigungsregelung legt die KESB bei der Validierung eine angemessene Entschädigung fest (Art. 366 Abs. 1 und 2 ZGB), zulasten der auftraggebenden Person.');
+    hinweise.push('Ohne Entschädigungsregelung legt die KESB bei der Validierung eine Entschädigung fest, wenn dies nach dem Umfang der Aufgaben gerechtfertigt erscheint oder die Leistungen üblicherweise entgeltlich sind (Art. 366 Abs. 1 ZGB), zulasten der auftraggebenden Person (Abs. 2).');
   }
 
   // Wirksamkeit erst nach KESB-Validierung – immer
@@ -321,7 +336,11 @@ export const VA_SCHEMA: VorlageSchema = {
       includeIf: { and: [{ feld: 'mehrereBeauftragte', eq: true }, { feld: 'vertretung', eq: 'einzeln' }] },
       nummeriert: true,
       begruendung: 'Aufgenommen, weil mehrere Personen beauftragt sind und Einzelvertretung gewählt wurde.',
-      norm: 'Art. 360 Abs. 1 ZGB',
+      // W2·8/Gegenprüfung B6: Anker-Präzision. Der Baustein regelt nicht die
+      // ÜBERTRAGUNG (Abs. 1), sondern die ART der Aufgabenerfüllung — dafür
+      // trägt Abs. 2 (Umschreibung der Aufgaben, Weisungen für die Erfüllung).
+      // Damit konsistent zu V04b/V05b/V06b, die schon auf Abs. 2 zeigen.
+      norm: 'Art. 360 Abs. 2 ZGB',
       hinweis: 'Das Gesetz regelt das Zusammenwirken mehrerer beauftragter Personen nicht ausdrücklich; die ausdrückliche Anordnung im Auftrag schafft Klarheit für KESB, Banken und Behörden.',
     },
     {
@@ -330,7 +349,9 @@ export const VA_SCHEMA: VorlageSchema = {
       includeIf: { and: [{ feld: 'mehrereBeauftragte', eq: true }, { feld: 'vertretung', eq: 'gemeinsam' }] },
       nummeriert: true,
       begruendung: 'Aufgenommen, weil mehrere Personen beauftragt sind und Kollektivvertretung gewählt wurde.',
-      norm: 'Art. 360 Abs. 1 ZGB',
+      // W2·8/Gegenprüfung B6 — wie V02c: Art der Aufgabenerfüllung, nicht die
+      // Übertragung selbst.
+      norm: 'Art. 360 Abs. 2 ZGB',
       hinweis: 'Das Gesetz regelt das Zusammenwirken mehrerer beauftragter Personen nicht ausdrücklich; die ausdrückliche Anordnung im Auftrag schafft Klarheit für KESB, Banken und Behörden.',
     },
     {
@@ -459,7 +480,11 @@ export const VA_SCHEMA: VorlageSchema = {
       nummeriert: true,
       begruendung:
         'Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich aufgehoben werden sollen: Der Widerruf wird in einer Errichtungsform ausgesprochen (Art. 362 Abs. 1 ZGB) statt bloss angedeutet.',
-      norm: 'Art. 362 Abs. 1 ZGB',
+      // W2·8/Gegenprüfung B6: Der Baustein spricht ZWEI Sätze aus — den
+      // Widerruf (Abs. 1: Widerruf in einer Errichtungsform) und die Rechtsfolge
+      // «tritt an ihre Stelle» (Abs. 3). Der Anker trägt beide, sonst stünde der
+      // zweite Satz ohne Norm da (D1/§13).
+      norm: 'Art. 362 Abs. 1 und 3 ZGB',
     },
     {
       id: 'V13b_ergaenzung',
@@ -543,7 +568,11 @@ export function vaZusammenstellen(a: VaAntworten) {
       a.beauftragte.some((b) => b.name.trim() && b.bereiche.includes('vermoegenssorge')),
     entschaedigungText,
     pvHinterlegungZeile: a.pvHinterlegung?.trim() ? ` (Hinterlegungsort: ${a.pvHinterlegung.trim()})` : '',
-    ortDatumZeile: `${a.ort?.trim() ? a.ort.trim() + ', ' : ''}den ${datum}`,
+    // W2·8/Gegenprüfung B7: Ohne Ort stand hier ein hängendes «den 15.06.2026».
+    // «den» ist der Anschluss an den Ort («Basel, den …»), nicht Teil des
+    // Datums – fehlt der Ort, steht nur das Datum (bzw. der Ausfüll-Strich,
+    // wenn auch das Datum fehlt; Platzhalter-Konvention der Engine).
+    ortDatumZeile: a.ort?.trim() ? `${a.ort.trim()}, den ${datum}` : datum,
   };
   const erg = assemble(VA_SCHEMA, antworten);
   // Form-Gate-Matrix: Beurkundungs-Variante ist ein ENTWURF für die

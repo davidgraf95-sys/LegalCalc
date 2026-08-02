@@ -283,7 +283,9 @@ describe('Vorlage Vorsorgeauftrag', () => {
       'V06_rechtsverkehr', 'V13_ersetzt', 'V14_schluss_eigenhaendig',
     ]));
     expect(r.aufgenommen).not.toContain('V14_schluss_beurkundung');
-    expect(r.dokument.absaetze.at(-1)!.text).toContain('den 04.06.2026');
+    // Fachänderung B7: der Grundfall trägt keinen Ort – die Schlusszeile beginnt
+    // deshalb direkt mit dem Datum (früher: «den 04.06.2026» mit hängendem «den»).
+    expect(r.dokument.absaetze.at(-1)!.text.startsWith('04.06.2026')).toBe(true);
     expect(r.dokument.absaetze.find((x) => x.bausteinId === 'V02b_beauftragteliste')!.text)
       .toContain('Personensorge, Vermögenssorge, Vertretung im Rechtsverkehr');
   });
@@ -497,14 +499,82 @@ describe('Vorlage Vorsorgeauftrag', () => {
     expect(r.protokoll.find((p) => p.bausteinId === 'V07_grundstueck')!.hinweis).toContain('Art. 365 Abs. 1 ZGB');
   });
 
-  it('Entschädigungs-Hinweis zitiert Art. 366 Abs. 1 und 2 ZGB (Festsetzung + Kostentragung)', () => {
+  // W2·8 / Gegenprüfung B5 (Fachänderung, deklariert): Der Hinweis behauptete
+  // die KESB-Festsetzung UNBEDINGT. Art. 366 Abs. 1 ZGB knüpft sie an zwei
+  // alternative Voraussetzungen (Umfang der Aufgaben ODER üblicherweise
+  // entgeltliche Leistungen) — die frühere Assertion auf «Art. 366 Abs. 1 und 2
+  // ZGB» hätte den zu kategorischen Satz durchgelassen und wird ersetzt.
+  it('Entschädigungs-Hinweis nennt die beiden Voraussetzungen von Art. 366 Abs. 1 ZGB (Befund B5)', () => {
     const g = pruefeVaGates(va({ entschaedigung: 'keine_angabe' }));
     const h = g.hinweise.find((x) => x.startsWith('Ohne Entschädigungsregelung'));
     expect(h).toBeDefined();
-    expect(h).toContain('Art. 366 Abs. 1 und 2 ZGB');
+    expect(h).toContain('wenn dies nach dem Umfang der Aufgaben gerechtfertigt erscheint');
+    expect(h).toContain('die Leistungen üblicherweise entgeltlich sind');
+    expect(h).toContain('(Art. 366 Abs. 1 ZGB)');
+    // Kostentragung bleibt belegt (Abs. 2), aber als eigener Anker.
+    expect(h).toContain('zulasten der auftraggebenden Person (Abs. 2)');
+    // Die unbedingte Fassung ist weg.
+    expect(h).not.toContain('legt die KESB bei der Validierung eine angemessene Entschädigung fest (');
     // Bei getroffener Regelung entfällt der Hinweis (Art. 366 greift nur ohne Anordnung).
     const mit = pruefeVaGates(va({ entschaedigung: 'unentgeltlich' }));
     expect(mit.hinweise.some((x) => x.startsWith('Ohne Entschädigungsregelung'))).toBe(false);
+  });
+
+  // ── W2·8 / Gegenprüfung: Befunde B2, B6, B7 ────────────────────────────────
+
+  // B2: Die JP-Prüfung wertete Beauftragte, die im Dokument gar nie erscheinen.
+  // Dokumentliste (vaZusammenstellen) und Ersatzpersonen filtern seit je auf
+  // `name.trim()`; die Gate-Prüfung der Hauptbeauftragten tat es nicht — eine
+  // Zeile «+ Beauftragte Person hinzufügen» mit Typ «juristisch» erzeugte damit
+  // eine Warnung über eine Person, die nirgends steht.
+  it('B2: Beauftragte ohne Namen lösen keine Meldung zur juristischen Person aus', () => {
+    const mitLeerzeile = {
+      beauftragte: [
+        { name: 'Ben Muster', typ: 'natuerlich' as const, angaben: 'geb. 01.01.1985', bereiche: ['personensorge' as const] },
+        { name: '   ', typ: 'juristisch' as const, angaben: '', bereiche: ['personensorge' as const] },
+      ],
+      module: { personensorge: ['medizin'], vermoegenssorge: [], rechtsverkehr: [] },
+    };
+    const g = pruefeVaGates(va(mitLeerzeile));
+    expect(g.warnungen.some(jpMedizin)).toBe(false);
+    expect(g.hinweise.some(jpPersonensorge)).toBe(false);
+    // Der Beleg der Asymmetrie: die namenlose Zeile steht in keinem Absatz.
+    const r = vaZusammenstellen(va(mitLeerzeile));
+    expect(r.dokument.absaetze.filter((x) => x.bausteinId === 'V02b_beauftragteliste')).toHaveLength(1);
+    // Gegenprobe: mit Namen greift die Warnung weiterhin.
+    const mitName = pruefeVaGates(va({
+      ...mitLeerzeile,
+      beauftragte: [mitLeerzeile.beauftragte[0], { ...mitLeerzeile.beauftragte[1], name: 'Treuhand AG' }],
+    }));
+    expect(mitName.warnungen.some(jpMedizin)).toBe(true);
+  });
+
+  // B6: Anker-Präzision. V02c/V02d regeln die ART der Aufgabenerfüllung
+  // (Art. 360 Abs. 2 ZGB — Umschreibung der Aufgaben und Weisungen), nicht die
+  // Übertragung selbst (Abs. 1); konsistent mit V04b/V05b/V06b. V13_ersetzt
+  // trägt beide Absätze: Abs. 1 den Widerruf in Errichtungsform, Abs. 3 die
+  // Rechtsfolge «tritt an die Stelle des früheren».
+  it('B6: Norm-Anker von V02c/V02d (Art. 360 Abs. 2) und V13_ersetzt (Art. 362 Abs. 1 und 3)', () => {
+    const norm = (id: string) => VA_SCHEMA.bausteine.find((b) => b.id === id)!.norm;
+    expect(norm('V02c_einzeln')).toBe('Art. 360 Abs. 2 ZGB');
+    expect(norm('V02d_gemeinsam')).toBe('Art. 360 Abs. 2 ZGB');
+    expect(norm('V13_ersetzt')).toBe('Art. 362 Abs. 1 und 3 ZGB');
+    // Gegenprobe: die Übertragungs-Bausteine bleiben bei Abs. 1.
+    expect(norm('V02_beauftragte')).toBe('Art. 360 Abs. 1 ZGB');
+    expect(norm('V04_personensorge')).toBe('Art. 360 Abs. 1 ZGB');
+  });
+
+  // B7: Ohne Ort rendert die Schlusszeile kein hängendes «den».
+  it('B7: ortDatumZeile — ohne Ort nur das Datum, mit Ort «Ort, den Datum»', () => {
+    const zeile = (over: Partial<VaAntworten>) =>
+      vaZusammenstellen(va(over)).dokument.absaetze
+        .find((x) => x.bausteinId === 'V14_schluss_eigenhaendig')!.text.split('\n')[0];
+    expect(zeile({ ort: undefined })).toBe('04.06.2026');
+    expect(zeile({ ort: '   ' })).toBe('04.06.2026');
+    expect(zeile({ ort: 'Basel' })).toBe('Basel, den 04.06.2026');
+    // Fehlt auch das Datum, bleibt der Ausfüll-Strich – ohne «den».
+    expect(zeile({ ort: undefined, datum: '' })).toBe('________');
+    expect(zeile({ ort: 'Basel', datum: '' })).toBe('Basel, den ________');
   });
 
   // ── W2·8 / B5: SSoT-Verdrahtung Beurkundung (Befund F6) ────────────────────

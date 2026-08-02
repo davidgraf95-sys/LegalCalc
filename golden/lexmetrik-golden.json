@@ -9115,7 +9115,7 @@
     },
     {
      "bausteinId": "V14_schluss_eigenhaendig",
-     "text": "den 15.06.2026\n\n\n_________________________________\n(eigenhändige Unterschrift: A B)",
+     "text": "15.06.2026\n\n\n_________________________________\n(eigenhändige Unterschrift: A B)",
      "rolle": "unterschrift",
      "stricheErlaubt": true
     }
@@ -9149,7 +9149,7 @@
    {
     "bausteinId": "V13_ersetzt",
     "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich aufgehoben werden sollen: Der Widerruf wird in einer Errichtungsform ausgesprochen (Art. 362 Abs. 1 ZGB) statt bloss angedeutet.",
-    "norm": "Art. 362 Abs. 1 ZGB"
+    "norm": "Art. 362 Abs. 1 und 3 ZGB"
    },
    {
     "bausteinId": "V14_schluss_eigenhaendig",
@@ -9217,7 +9217,7 @@
    {
     "bausteinId": "V13_ersetzt",
     "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich aufgehoben werden sollen: Der Widerruf wird in einer Errichtungsform ausgesprochen (Art. 362 Abs. 1 ZGB) statt bloss angedeutet.",
-    "norm": "Art. 362 Abs. 1 ZGB"
+    "norm": "Art. 362 Abs. 1 und 3 ZGB"
    },
    {
     "bausteinId": "V14_schluss_beurkundung",
@@ -9361,7 +9361,7 @@
    {
     "bausteinId": "V02c_einzeln",
     "begruendung": "Aufgenommen, weil mehrere Personen beauftragt sind und Einzelvertretung gewählt wurde.",
-    "norm": "Art. 360 Abs. 1 ZGB",
+    "norm": "Art. 360 Abs. 2 ZGB",
     "hinweis": "Das Gesetz regelt das Zusammenwirken mehrerer beauftragter Personen nicht ausdrücklich; die ausdrückliche Anordnung im Auftrag schafft Klarheit für KESB, Banken und Behörden."
    },
    {
@@ -9434,7 +9434,7 @@
    {
     "bausteinId": "V13_ersetzt",
     "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich aufgehoben werden sollen: Der Widerruf wird in einer Errichtungsform ausgesprochen (Art. 362 Abs. 1 ZGB) statt bloss angedeutet.",
-    "norm": "Art. 362 Abs. 1 ZGB"
+    "norm": "Art. 362 Abs. 1 und 3 ZGB"
    },
    {
     "bausteinId": "V14_schluss_eigenhaendig",
@@ -9504,7 +9504,7 @@
     },
     {
      "bausteinId": "V14_schluss_eigenhaendig",
-     "text": "den 15.06.2026\n\n\n_________________________________\n(eigenhändige Unterschrift: A B)",
+     "text": "15.06.2026\n\n\n_________________________________\n(eigenhändige Unterschrift: A B)",
      "rolle": "unterschrift",
      "stricheErlaubt": true
     }
@@ -9587,7 +9587,7 @@
    {
     "bausteinId": "V13_ersetzt",
     "begruendung": "Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich aufgehoben werden sollen: Der Widerruf wird in einer Errichtungsform ausgesprochen (Art. 362 Abs. 1 ZGB) statt bloss angedeutet.",
-    "norm": "Art. 362 Abs. 1 ZGB"
+    "norm": "Art. 362 Abs. 1 und 3 ZGB"
    },
    {
     "bausteinId": "V14_schluss_eigenhaendig",
@@ -9652,7 +9652,7 @@
     },
     {
      "bausteinId": "V14_schluss_eigenhaendig",
-     "text": "den 15.06.2026\n\n\n_________________________________\n(eigenhändige Unterschrift: A B)",
+     "text": "15.06.2026\n\n\n_________________________________\n(eigenhändige Unterschrift: A B)",
      "rolle": "unterschrift",
      "stricheErlaubt": true
     }
@@ -9746,7 +9746,7 @@
    "Bei der Wahl der beauftragten Person Interessenkonflikte bedenken: Bei Interessenkollision entfallen ihre Befugnisse von Gesetzes wegen (Art. 365 Abs. 3 ZGB); nicht erfasste Geschäfte und widerstreitende Interessen sind der KESB zu melden (Art. 365 Abs. 2 ZGB).",
    "Liegenschaften gewählt: Die ausdrückliche Sondervollmacht für Erwerb, Belastung und Veräusserung von Grundstücken wird automatisch aufgenommen (Art. 396 Abs. 3 OR i.V.m. Art. 365 Abs. 1 ZGB – die Auftragsrecht-Verweisung trägt die besondere Ermächtigung; der Erwerb bedarf keiner solchen und wird zur Klarstellung mitgenannt).",
    "Eine Ersatzverfügung ist empfohlen, falls die beauftragte Person ungeeignet ist, ablehnt oder kündigt (Art. 360 Abs. 3 ZGB) – idealerweise eine Person ausserhalb möglicher Interessenkonflikte.",
-   "Ohne Entschädigungsregelung legt die KESB bei der Validierung eine angemessene Entschädigung fest (Art. 366 Abs. 1 und 2 ZGB), zulasten der auftraggebenden Person.",
+   "Ohne Entschädigungsregelung legt die KESB bei der Validierung eine Entschädigung fest, wenn dies nach dem Umfang der Aufgaben gerechtfertigt erscheint oder die Leistungen üblicherweise entgeltlich sind (Art. 366 Abs. 1 ZGB), zulasten der auftraggebenden Person (Abs. 2).",
    "Wirksam wird der Vorsorgeauftrag erst, wenn die KESB am Wohnsitz (Art. 442 Abs. 1 ZGB) bei eingetretener Urteilsunfähigkeit Gültigkeit, Voraussetzungen und Eignung geprüft hat (Validierung, Art. 363 ZGB)."
   ]
  },
@@ -9757,7 +9757,7 @@
    "Die Beauftragung einer juristischen Person ist auch für die Personensorge zulässig (Art. 360 Abs. 1 ZGB); die KESB prüft ihre Eignung bei der Validierung (Art. 363 Abs. 2 Ziff. 3 ZGB). Einzelne höchstpersönliche Handlungen werden faktisch durch natürliche Hilfspersonen wahrgenommen.",
    "Bei der Wahl der beauftragten Person Interessenkonflikte bedenken: Bei Interessenkollision entfallen ihre Befugnisse von Gesetzes wegen (Art. 365 Abs. 3 ZGB); nicht erfasste Geschäfte und widerstreitende Interessen sind der KESB zu melden (Art. 365 Abs. 2 ZGB).",
    "Eine Ersatzverfügung ist empfohlen, falls die beauftragte Person ungeeignet ist, ablehnt oder kündigt (Art. 360 Abs. 3 ZGB) – idealerweise eine Person ausserhalb möglicher Interessenkonflikte.",
-   "Ohne Entschädigungsregelung legt die KESB bei der Validierung eine angemessene Entschädigung fest (Art. 366 Abs. 1 und 2 ZGB), zulasten der auftraggebenden Person.",
+   "Ohne Entschädigungsregelung legt die KESB bei der Validierung eine Entschädigung fest, wenn dies nach dem Umfang der Aufgaben gerechtfertigt erscheint oder die Leistungen üblicherweise entgeltlich sind (Art. 366 Abs. 1 ZGB), zulasten der auftraggebenden Person (Abs. 2).",
    "Wirksam wird der Vorsorgeauftrag erst, wenn die KESB am Wohnsitz (Art. 442 Abs. 1 ZGB) bei eingetretener Urteilsunfähigkeit Gültigkeit, Voraussetzungen und Eignung geprüft hat (Validierung, Art. 363 ZGB)."
   ]
  },
@@ -9770,7 +9770,7 @@
    "Bei der Wahl der beauftragten Person Interessenkonflikte bedenken: Bei Interessenkollision entfallen ihre Befugnisse von Gesetzes wegen (Art. 365 Abs. 3 ZGB); nicht erfasste Geschäfte und widerstreitende Interessen sind der KESB zu melden (Art. 365 Abs. 2 ZGB).",
    "Liegenschaften gewählt: Die ausdrückliche Sondervollmacht für Erwerb, Belastung und Veräusserung von Grundstücken wird automatisch aufgenommen (Art. 396 Abs. 3 OR i.V.m. Art. 365 Abs. 1 ZGB – die Auftragsrecht-Verweisung trägt die besondere Ermächtigung; der Erwerb bedarf keiner solchen und wird zur Klarstellung mitgenannt).",
    "Eine Ersatzverfügung ist empfohlen, falls die beauftragte Person ungeeignet ist, ablehnt oder kündigt (Art. 360 Abs. 3 ZGB) – idealerweise eine Person ausserhalb möglicher Interessenkonflikte.",
-   "Ohne Entschädigungsregelung legt die KESB bei der Validierung eine angemessene Entschädigung fest (Art. 366 Abs. 1 und 2 ZGB), zulasten der auftraggebenden Person.",
+   "Ohne Entschädigungsregelung legt die KESB bei der Validierung eine Entschädigung fest, wenn dies nach dem Umfang der Aufgaben gerechtfertigt erscheint oder die Leistungen üblicherweise entgeltlich sind (Art. 366 Abs. 1 ZGB), zulasten der auftraggebenden Person (Abs. 2).",
    "Wirksam wird der Vorsorgeauftrag erst, wenn die KESB am Wohnsitz (Art. 442 Abs. 1 ZGB) bei eingetretener Urteilsunfähigkeit Gültigkeit, Voraussetzungen und Eignung geprüft hat (Validierung, Art. 363 ZGB)."
   ]
  },

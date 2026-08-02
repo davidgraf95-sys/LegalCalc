@@ -61,7 +61,7 @@ Schema `vorsorgeauftrag` · Version 1.1.0 (Rechtsstand Art. 360–369 ZGB, Snaps
 ### 4. `V02c_einzeln`
 
 - [ ] **abgenommen** (David)
-- **Norm:** Art. 360 Abs. 1 ZGB
+- **Norm:** Art. 360 Abs. 2 ZGB
 - **Aufnahme:** mehrereBeauftragte = true UND vertretung = "einzeln"
 - **Nummeriert** (fortlaufende Ziffer im Dokument)
 - **Begründung (Protokoll):** Aufgenommen, weil mehrere Personen beauftragt sind und Einzelvertretung gewählt wurde.
@@ -74,7 +74,7 @@ Schema `vorsorgeauftrag` · Version 1.1.0 (Rechtsstand Art. 360–369 ZGB, Snaps
 ### 5. `V02d_gemeinsam`
 
 - [ ] **abgenommen** (David)
-- **Norm:** Art. 360 Abs. 1 ZGB
+- **Norm:** Art. 360 Abs. 2 ZGB
 - **Aufnahme:** mehrereBeauftragte = true UND vertretung = "gemeinsam"
 - **Nummeriert** (fortlaufende Ziffer im Dokument)
 - **Begründung (Protokoll):** Aufgenommen, weil mehrere Personen beauftragt sind und Kollektivvertretung gewählt wurde.
@@ -245,7 +245,7 @@ Schema `vorsorgeauftrag` · Version 1.1.0 (Rechtsstand Art. 360–369 ZGB, Snaps
 ### 19. `V13_ersetzt`
 
 - [ ] **abgenommen** (David)
-- **Norm:** Art. 362 Abs. 1 ZGB
+- **Norm:** Art. 362 Abs. 1 und 3 ZGB
 - **Aufnahme:** ersetztFruehere = true
 - **Nummeriert** (fortlaufende Ziffer im Dokument)
 - **Begründung (Protokoll):** Aufgenommen, weil frühere Vorsorgeaufträge ausdrücklich aufgehoben werden sollen: Der Widerruf wird in einer Errichtungsform ausgesprochen (Art. 362 Abs. 1 ZGB) statt bloss angedeutet.
