@@ -27,6 +27,37 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 2.8.2026 — W2·17-UI-BEFUNDE-B1: Chips, Badges und Normzitate, 13/16 gebaut (Parallel-Worktree, Branch `claude/sleepy-mestorf-5dbea7`)
+**Auftrag:** Batch B1 (16 UI-Befunde, K-05+K-10, §2) in einem eigenen Worktree parallel zum
+Hauptzweig bauen — Prod-Re-Audit vor Baubeginn (§0.1), drei Lose (Fable 5 / Opus / Sonnet 5),
+Doku-Abschluss und PR dieser Session.
+- **Prod-Re-Audit 2.8.2026** (lexmetrik.vercel.app, DOM + `getComputedStyle`): **16/16
+  reproduziert** — 12 voll, 4 teilweise (LM-041/044/050/051; Fundort teils überholt, Grunddefekt
+  bestätigt).
+- **13 gebaut** (10 Commits): LM-101 Blocker (266l/266o nicht mehr uppercase-entstellt) ·
+  LM-103 (Normzitate `whitespace-nowrap`) · LM-107 (`margLabel`-`<sup>` vereinheitlicht) ·
+  LM-102+LM-106 (`normLabel()` löst via `ERLASS_REGISTER` auf, 60 Kürzel korrigiert, 19
+  Schreibweisen live gegen Fedlex-SPARQL verifiziert) · LM-105+LM-049+LM-051 (Aktenzeichen nur
+  bei Abweichung vom BGE-Zitat, «+N weitere», Trenner-Textknoten) · LM-040
+  (`.lc-chip-selected`, gefüllte Fläche + ✓) · LM-045+LM-046+LM-047 (Chip-Grammatik über
+  Container-Klasse `lc-chip-zeile`) · LM-050 (ZeichenLegende als Toggletip, B4-Wächter 32/32
+  grün, Test nicht angepasst).
+- **3 zurückgestellt** (Bestands-Entscheide, §0.2 — Öffnung nur per David-Entscheid): LM-041
+  (Facetten-Modell FAHRPLAN-VERZAHNUNG-UI.md §9/B1 abschliessend definiert, kein
+  Sachgebiet/Zitier-Rolle) · LM-044 (FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3 ausdrücklich DEFER,
+  U-VERWEIS-Kollision) · LM-048 (`gewicht:null` = «nicht messbar», W2·7-BEZUG-Entscheid, R16-
+  Ampel gesperrt).
+- **Tore (2.8.2026):** tsc ok · vitest ok (4859, inkl. B4-Wächter) · `golden:vergleich`
+  byte-gleich · lint ok · `check` 39/40 — einzig `check:verfall` rot, und zwar als
+  **vorbestehender Bestandsdefekt** belegt (Nullprobe im sauberen `main`-Checkout am 2.8.2026
+  identisch rot: 10 «Künftige Fassung»-Termine per 1.8.2026 kalendarisch verfallen, unabhängig
+  von B1, separat geflaggt).
+- **Nebenbefund** (separat geflaggt, nicht Teil des PR): Prod zeigt auf `/gesetze/bund/OR` keine
+  kantonalen Bezüge mehr im OR-Leser und deckelt BGE-Gruppen — Spannung zum
+  W2·7-BEZUG-B7-Landungsvermerk, zu prüfen.
+- **PR:** dieser Commit/Push (`claude/sleepy-mestorf-5dbea7` → `main`), kein Merge in diesem
+  Auftrag — Landung ist ein eigener, nachgelagerter Schritt (Skill `landung`).
+
 ## Session 31.7.2026 (Nachlauf) — Endprüfung der QS-TOK-Aufräumwelle, Fix-Runden 1 und 2 (Branch `feat/qs-tok-aufraeumwelle`)
 **Auftrag David:** die Aufräumwelle vor der Landung adversarial endprüfen und die Funde abarbeiten. Zwei Runden unabhängiger Nur-Lese-Prüfagenten, danach je eine Fix-Runde.
 - **Fix-Runde 1 (Commits `b329a5ab3`, `4786e3f3c`, `f9d7fbb74`, `357eb3179`):** tote Links + Wurzel-Pfade + Welle-Überschriften + 33 Bau-Spec-Zeiger (A) · vier Steuerskript-Lücken, jede zuerst rot gezeigt (B) · Ist-Kennzahlen, stabile Befund-Anker, W2·9-Zeiger (C/D) · Slicer-Aufruf und `fahrplaene/`-Pfade in CLAUDE.md + 5 Skills nachgezogen.

@@ -110,22 +110,25 @@ Je Eintrag: Referenz aus dem Bestand + der Ein-Zeilen-Grund, warum kein Neubau.
 
 **16 Befunde** · Blocker 3 · Hoch 3 · Mittel 7 · Detail 3 · `W2·17-UI-BEFUNDE-B1`
 
-- [ ] **LM-040** · Blocker · Der gewählte Chip unterscheidet sich vom ungewählten nur in der Rahmenfarbe … [Verdacht → DESIGN-REGLEMENT.md F4 «selected» + FAHRPLAN-UI-QUALITAET.md §3(c) Muster-/Zustands-Konsistenz…]
-- [ ] **LM-041** · Hoch · Der Chip unterscheidet nicht, in welcher Rolle die Norm im Entscheid … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §9/B1 Facetten-Datenmodell + §1.2 KantenChip-Dichteregel…]
-- [ ] **LM-044** · Mittel · Normverweis, Statusbadge («Entwurf», «Zu unterzeichnen»), Standangabe, Sprache, Instanz und Gemeinwesen sehen … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3 (Z.1429: «NormChip/Materialien (DEFER, U-VERWEIS-Kollisio…]
-- [ ] **LM-045** · Mittel · Fünf gleich aussehende Chips sind drei verschiedene Dinge: «↗ geltende Fassung» … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 A25/C-2 (Currency-Tonung) + src/index.css:692–700; Code src/pages…]
-- [ ] **LM-046** · Mittel · Der Chip sieht wie die naheliegendste Aktion aus, ist aber ein … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §X «Fassungsvergleich/Zeitreise» (hart gegated: Fedlex-P1a/b + David-…]
-- [ ] **LM-047** · Mittel · Sechs Elemente in einer Zeile, drei Formensprachen: «★ Leitentscheid» (grüne Pille), … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §1.2/§1.3 (KantenChip vs. StatusBadge = zwei bewusste Anatomien) + FA…]
-- [ ] **LM-048** · Mittel · Je Verweis ist bereits eine Gewichtung erfasst: im OR 768× Wert … [Verdacht → src/pages/gesetz-leser/parts/BezuegeZeile.tsx:44–51 + src/lib/rechtsprechung/bezuege.ts:36–45…]
-- [ ] **LM-049** · Mittel · Der Überlaufhinweis «+2» (bzw. «+5», «+6») steht als blosser Text neben … [neu]
-- [ ] **LM-050** · Detail · An den Entscheid-Chips stehen bis zu drei Symbole hintereinander: «★» hinter … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §1.3 StatusBadge (★ «verliert sein aria-hidden-ohne-Erklärung-Dasein»…]
-- [ ] **LM-051** · Detail · Beschriftung und Zahl stehen im Text ohne Trenner aneinander: kopiert ergibt … [Verdacht → Code src/components/rechtsprechung/EntscheidFilter.tsx:36–42]
-- [ ] **LM-101** · Blocker · Im Markup steht «Form (Art. 266l–266o OR)». Per text-transform uppercase wird … [neu]
-- [ ] **LM-102** · Blocker · Die Erlasskürzel in den Entscheidkarten sind durchgehend versal gesetzt und verlieren … [neu]
-- [ ] **LM-103** · Hoch · Normzitate brechen am Zeilenende um: «Art. 60 Abs. 1 / OR», … [neu]
-- [ ] **LM-105** · Hoch · Das Zitat steht doppelt untereinander: «BGE 152 V 52 · Bundesgericht … [neu]
-- [ ] **LM-106** · Mittel · Das Lugano-Übereinkommen wird als «LUGUE» geführt — der Umlaut des amtlichen … [neu]
-- [ ] **LM-107** · Detail · Hochgestellte «bis» erscheinen in derselben Ansicht in zwei Grössen: 9 px … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.10 E2 = A30 «bis/ter bei 1bis hochgestellt (Fedlex-Referenz)» — geb…]
+**Prod-Re-Audit 2.8.2026: 16/16 reproduziert (12 voll, 4 teilweise); 13 gebaut, 3 zurückgestellt
+(Bestands-Entscheide).**
+
+- [x] **LM-040** · Blocker · Der gewählte Chip unterscheidet sich vom ungewählten nur in der Rahmenfarbe … [Verdacht → DESIGN-REGLEMENT.md F4 «selected» + FAHRPLAN-UI-QUALITAET.md §3(c) Muster-/Zustands-Konsistenz…] — gebaut: `.lc-chip-selected` (gefüllte Fläche + ✓, hell/dunkel), Commit 0844615c4.
+- [ ] **LM-041** · Hoch · Der Chip unterscheidet nicht, in welcher Rolle die Norm im Entscheid … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §9/B1 Facetten-Datenmodell + §1.2 KantenChip-Dichteregel…] — ⛔ zurückgestellt — Bestands-Entscheid trägt (FAHRPLAN-VERZAHNUNG-UI.md §9/B1 + §1.2: Facetten-Modell abschliessend definiert, Sachgebiet/Zitier-Rolle nicht enthalten, Dichte-Regel EIN Zusatz je Chip); Öffnung nur per David-Entscheid.
+- [ ] **LM-044** · Mittel · Normverweis, Statusbadge («Entwurf», «Zu unterzeichnen»), Standangabe, Sprache, Instanz und Gemeinwesen sehen … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3 (Z.1429: «NormChip/Materialien (DEFER, U-VERWEIS-Kollisio…] — ⛔ zurückgestellt — Bestands-Entscheid trägt (FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3: ausdrücklich DEFER, Grund U-VERWEIS-Kollision); Öffnung nur per David-Entscheid.
+- [x] **LM-045** · Mittel · Fünf gleich aussehende Chips sind drei verschiedene Dinge: «↗ geltende Fassung» … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 A25/C-2 (Currency-Tonung) + src/index.css:699–700 (`.lc-chip-geltend`/`.lc-chip-vorbehalt`); Code src/pages…] — gebaut zusammen mit LM-046/LM-047: Chip-Grammatik (Link/Knopf/Angabe) über Container-Klasse `lc-chip-zeile`, Commit fd68383da.
+- [x] **LM-046** · Mittel · Der Chip sieht wie die naheliegendste Aktion aus, ist aber ein … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §X «Fassungsvergleich/Zeitreise» (hart gegated: Fedlex-P1a/b + David-…] — gebaut: Form-Korrektur (kein Linkziel vorgetäuscht), §X-Fassungs-Gate unangetastet, Commit fd68383da.
+- [x] **LM-047** · Mittel · Sechs Elemente in einer Zeile, drei Formensprachen: «★ Leitentscheid» (grüne Pille), … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §1.2/§1.3 (KantenChip vs. StatusBadge = zwei bewusste Anatomien) + FA…] — gebaut: Aktion/externer Link/Angabe an der Container-Klasse `lc-chip-zeile` getrennt, Commit fd68383da.
+- [ ] **LM-048** · Mittel · Je Verweis ist bereits eine Gewichtung erfasst: im OR 768× Wert … [Verdacht → src/pages/gesetz-leser/parts/BezuegeZeile.tsx:44–51 (Komponente `BezuegeZeile`) + src/lib/rechtsprechung/bezuege.ts:36–45 (Interface `BezugsEintrag`)…] — ⛔ zurückgestellt — Bestands-Entscheid trägt (W2·7-BEZUG-Entscheid, Gegenprüfung Runde 1/B3 + B7: `gewicht:null` = «nicht messbar», R16-Ampel/Treatment-Darstellung gesperrt); Öffnung nur per David-Entscheid.
+- [x] **LM-049** · Mittel · Der Überlaufhinweis «+2» (bzw. «+5», «+6») steht als blosser Text neben … [neu] — gebaut: «+N weitere» statt reinem Zähler-Text, Commit 0966c0f28.
+- [x] **LM-050** · Detail · An den Entscheid-Chips stehen bis zu drei Symbole hintereinander: «★» hinter … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §1.3 StatusBadge (★ «verliert sein aria-hidden-ohne-Erklärung-Dasein»…] — gebaut: ZeichenLegende als Toggletip ohne `aria-expanded`, B4-Wächtertest 32/32 grün, Commits 5960f032c + 64b80f3ac + 4f7b2a45f.
+- [x] **LM-051** · Detail · Beschriftung und Zahl stehen im Text ohne Trenner aneinander: kopiert ergibt … [Verdacht → Code src/components/rechtsprechung/EntscheidFilter.tsx:36–42 (Funktion `FacettenGruppe`)] — gebaut: Trenner-Leerzeichen als eigener Textknoten, Commit 0966c0f28.
+- [x] **LM-101** · Blocker · Im Markup steht «Form (Art. 266l–266o OR)». Per text-transform uppercase wird … [neu] — gebaut: 266l/266o nicht mehr uppercase-entstellt, `MietrechtForm.tsx` auf `.lc-overline-soft`, Commit d9af2b128.
+- [x] **LM-102** · Blocker · Die Erlasskürzel in den Entscheidkarten sind durchgehend versal gesetzt und verlieren … [neu] — gebaut: `normLabel()` löst via `ERLASS_REGISTER` auf (60 Kürzel korrigiert, u. a. SchKG/StGB/LugÜ), 19 Schreibweisen live gegen Fedlex-SPARQL verifiziert, Commit a0e80f51c.
+- [x] **LM-103** · Hoch · Normzitate brechen am Zeilenende um: «Art. 60 Abs. 1 / OR», … [neu] — gebaut: `whitespace-nowrap` in `NormLink`/`ui.tsx`, Bemerkung bleibt umbruchfähig, Commit 5ce64b912.
+- [x] **LM-105** · Hoch · Das Zitat steht doppelt untereinander: «BGE 152 V 52 · Bundesgericht … [neu] — gebaut: Aktenzeichen nur bei Abweichung vom BGE-Zitat, Commit 0966c0f28.
+- [x] **LM-106** · Mittel · Das Lugano-Übereinkommen wird als «LUGUE» geführt — der Umlaut des amtlichen … [neu] — gebaut zusammen mit LM-102 (dieselbe `normLabel()`/`ERLASS_REGISTER`-Lösung), Commit a0e80f51c.
+- [x] **LM-107** · Detail · Hochgestellte «bis» erscheinen in derselben Ansicht in zwei Grössen: 9 px … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.10 E2 = A30 «bis/ter bei 1bis hochgestellt (Fedlex-Referenz)» — geb…] — gebaut: `margLabel`-`<sup>` auf `text-[0.62em]` vereinheitlicht (A30-konform), Commit 89ad3ff67.
 
 **Code-Flächen (grob, aus den Routen):** `src/components/NormText.tsx`, `src/components/NormPopover.tsx`, `src/components/verzahnung`, `src/components/rechtsprechung`, `src/pages/gesetz-leser`.
 **Risiko-Klasse:** gemischt — reines UI, ABER die Fundstellen-Beschriftung berührt Norm-Anker (§7/D1).
