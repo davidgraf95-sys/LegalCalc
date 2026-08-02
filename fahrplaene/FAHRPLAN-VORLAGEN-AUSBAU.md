@@ -361,3 +361,10 @@ kein Merge vor Davids Review. Trailer `Roadmap: W2·8`.
   (`beurkundung.ts`: min/rahmen strukturiert statt Freitext-`hinweis`),
   betrifft Beurkundungs-Rechner UND VA-Seite. Eigener Risiko-Pfad-Auftrag
   mit kantonaler Norm-Verifikation.
+- **V9.4 ZStGV in die Drift-Erkennung** (GP-Runde-2-Nebenfund L4, 3.8.2026):
+  Die VA-Seite trägt neu den amtlichen Wert CHF 75 (Anhang 1 Ziff. 23 ZStGV,
+  SR 172.042.110, Stand 11.11.2024) — ZStGV fehlt aber in
+  `scripts/fedlex-cache.sh`, also keine automatische Drift-Erkennung (§7
+  Zitat-Ausnahme, Merkmal d). Brisanz: Teilrevision der ZStGV in
+  Vernehmlassung bis 15.10.2026 (`VERN-2026-32`). Pin ergänzen
+  (Korpus-Werkstatt-Fläche).
