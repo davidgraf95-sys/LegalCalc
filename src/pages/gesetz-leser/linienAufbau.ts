@@ -49,7 +49,8 @@
 // «tiefe Kodifikation» / «trägt-Dichte»), deckeln aber NICHTS mehr am Auto-Default.
 //
 // Gliederungstiefe (max. Sidecar-Verschachtelung) je Erlass, zur Einordnung:
-//   Tiefe 0: 900 (79 %)  ·  1: 64  ·  2: 98  ·  3: 58  ·  4: 12  ·  5: 3
+//   (renderTiefe, Stand 4.8.2026, 1416 Sidecars — Messbefehl: Verteilungs-Sonde
+//   des Bug-Checks #427): 0: 486 · 1: 520 · 2: 284 · 3: 93 · 4: 24 · 5: 9
 //
 // ── EID-3(b) · Tiefe primär aus der eId-Pfadlänge (§12.2, 3.8.2026) ───────────
 // `strukturTiefe` kam bisher allein aus der Sidecar-Rekursionstiefe, und die ist

@@ -173,7 +173,10 @@ const REFERENZ: Record<string, Erwartung> = {
   // Container `tit_3/lvl_u1` («Grundregel») als `div.heading aria-level=2` statt
   // als `h2` führt (amtlich verifiziert, SR 741.01, Konsolidierung 20260701).
   // Fällt die Tiefe hier auf 3 zurück, ist die eId-Primärquelle abgeklemmt —
-  // dieser Fall IST die Rot-Probe des Umbaus. guideEbene bleibt 1 (renderTiefe).
+  // dieser Fall IST die Rot-Probe des Umbaus. guideEbene bleibt 1 — dieses Tor
+  // beweist aber NUR die strukturTiefe-Quelle, NICHT die renderTiefe-Bindung
+  // von guideEbene (Math.min(…,1) deckt beide Ableitungen gleich ab); die
+  // Render-Bindung sichert allein linien-aufbau-eid3.test.ts (Bug-Check B1).
   SVG: { strukturTiefe: 4, guideEbene: 1, autoGuide: false, hinweis: 'EID-3(b): Tiefe aus eId-Pfad (4) statt hN-Ableitung (3)' },
 };
 for (const [key, erw] of Object.entries(REFERENZ)) {
