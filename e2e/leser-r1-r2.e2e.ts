@@ -272,6 +272,46 @@ test.describe('R1 — In-Gesetz-Suche: Trefferzahl + Fundstellen-Navigation', ()
     expect(an.n, 'und wieder genau die sichtbaren').toBe(await sichtbareFundstellen(page, 'Fassung'));
   });
 
+  // ── RV6-Regression (Re-Verifikation §9, 4.8.2026) ──────────────────────────
+  // B2 war nur für den Fall gefixt, dass der Toggle VOR der Suche steht. Schaltet
+  // der Nutzer WÄHREND laufender Suche um, mass der Effekt nicht neu (Deps nur
+  // [treffer, sucheTrim]): gemeldet blieben 111, anspringbar waren sofort 80 —
+  // Anzeige «80/111», und die Gesamtzahl überzeichnete bis zum nächsten
+  // Begriffs-Wechsel. Die EINE Range-Menge muss bei Toggle-Wechsel neu entstehen.
+  test('RV6 — Toggle WÄHREND der Suche: der Zähler misst neu, in beide Richtungen', async ({ page }) => {
+    await page.goto('/gesetze/bund/OR');
+    await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 });
+
+    await page.evaluate(() => { document.documentElement.dataset.fussnoten = 'aus'; });
+    await inGesetzSuche(page).fill('Fassung');
+    await expect(leiste(page)).toBeVisible({ timeout: 20_000 });
+    const aus = (await position(page)).n;
+    expect(aus, 'Ausgangslage «Fussnoten aus»').toBe(await sichtbareFundstellen(page, 'Fassung'));
+
+    // AUS → AN, OHNE die Suche zu verlassen: die Zahl muss ehrlich steigen.
+    await page.evaluate(() => { document.documentElement.dataset.fussnoten = 'an'; });
+    await expect.poll(async () => (await position(page)).n, { timeout: 20_000 })
+      .toBe(await sichtbareFundstellen(page, 'Fassung'));
+    const an = (await position(page)).n;
+    expect(an, `Toggle AN muss mehr Fundstellen zeigen als AUS (${aus})`).toBeGreaterThan(aus);
+
+    // Und wieder zurück AN → AUS, ebenfalls ohne Begriffs-Wechsel.
+    await page.evaluate(() => { document.documentElement.dataset.fussnoten = 'aus'; });
+    await expect.poll(async () => (await position(page)).n, { timeout: 20_000 }).toBe(aus);
+
+    // Die Sprung-Menge folgt mit: kein Klick landet im Unsichtbaren.
+    const vor = page.locator('[data-treffer-vor]');
+    for (let k = 0; k < 10; k++) {
+      await vor.click();
+      const p = await position(page);
+      expect(p.i, `Position ${p.i} über der Gesamtzahl ${p.n} (Klick ${k + 1})`).toBeLessThanOrEqual(p.n);
+      expect(await page.evaluate(() => {
+        const el = document.querySelector('article.lc-ziel-blink');
+        return el ? getComputedStyle(el).display !== 'none' : false;
+      }), `Sprung ${k + 1} nach Toggle landete im Unsichtbaren`).toBe(true);
+    }
+  });
+
   test('Ohne aktive Suche kein Zähler, keine Tasten, kein Highlight — Normtext-DOM unverändert', async ({ page }) => {
     await page.goto('/gesetze/bund/OR');
     await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 });

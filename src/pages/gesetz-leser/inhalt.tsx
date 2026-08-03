@@ -674,17 +674,44 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (!treffer) { setzeSuchHighlight(null, ''); return; }
-    const id = window.requestAnimationFrame(() => {
-      // EIN TreeWalker-Lauf für Malen + Zählen (§15/3: die Suche ist entprellt,
-      // also läuft er einmal je Such-Ruhephase, nicht je Tastendruck).
+    // EIN TreeWalker-Lauf für Malen + Zählen (§15/3: die Suche ist entprellt,
+    // also läuft er einmal je Such-Ruhephase, nicht je Tastendruck).
+    const messe = () => {
       const ranges = sammleTrefferRanges(trefferRef.current, sucheTrim);
       setzeSuchHighlightRanges(ranges);
       setFundstellen({ begriff: sucheTrim, gesamt: ranges.length, proArtikel: trefferProArtikel(ranges) });
+      // Die Menge ist neu — eine alte Laufnummer zeigte sonst auf eine andere Stelle.
       trefferPosRef.current = -1;
       setTrefferPos(-1);
+    };
+    const planen = () => {
+      if (highlightRaf.current !== null) window.cancelAnimationFrame(highlightRaf.current);
+      highlightRaf.current = window.requestAnimationFrame(messe);
+    };
+    planen();
+    // Re-Verifikation §9 vom 4.8.2026 (RV6): Schaltet der Nutzer die Ansicht
+    // WÄHREND laufender Suche um (Fussnoten an/aus, Hist-Ansicht, …), ändert
+    // sich, was überhaupt malbar ist — die gemeldete Zahl überzeichnete bis zum
+    // nächsten Begriffs-Wechsel (gemeldet 111, anspringbar 80, Anzeige «80/111»).
+    // Die Toggles sind BEWUSST reine CSS-/Attribut-Schalter am <html>
+    // («KEIN Artikel-Re-Render», leserOptionen.ts) — sie in React-State zu
+    // ziehen, würde genau diese §15-Zusage aufgeben (der OR-Reader reconciliert
+    // sonst 1686 Artikel je Toggle). Darum hier ein MutationObserver, der NUR im
+    // Suchmodus lebt und nur die Ansicht-Attribute beobachtet: er misst die EINE
+    // Range-Menge neu, sobald sich die Malbarkeit ändert. Der Beobachter kostet
+    // ausserhalb der Suche nichts (der Effekt steigt bei `!treffer` vorher aus),
+    // und im Suchmodus steht nur die kurze Trefferliste im Walker-Bereich.
+    const beob = new MutationObserver(planen);
+    beob.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-fussnoten', 'data-histansicht', 'data-leitfaelle', 'data-linien', 'data-verweise'],
     });
-    highlightRaf.current = id;
-    return () => { window.cancelAnimationFrame(id); highlightRaf.current = null; setzeSuchHighlight(null, ''); };
+    return () => {
+      beob.disconnect();
+      if (highlightRaf.current !== null) window.cancelAnimationFrame(highlightRaf.current);
+      highlightRaf.current = null;
+      setzeSuchHighlight(null, '');
+    };
   }, [treffer, sucheTrim]);
 
   // R1 · Vor/Zurück-Sprungtasten zwischen den Fundstellen. Die Range-Menge wird
