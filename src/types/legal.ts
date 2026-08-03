@@ -150,6 +150,11 @@ export type SkalaDauer =
   | { typ: 'monate'; anzahl: number }
   | { typ: 'tage'; anzahl: number };
 
+// knip meldet SkalaEintrag als «unused exported type» — FALSCH-POSITIV, nicht
+// entfernen. Der Typ wird in src/data/lohnfortzahlungSkalen.ts:88 als INLINE-
+// Import verwendet (`import('../types/legal').SkalaEintrag`); knip löst diese
+// Form nicht auf. Zusätzlich referenziert ihn Skala.eintraege unten.
+// Belegt 3.8.2026 per `grep -rnE "\bSkalaEintrag\b" src/`.
 export type SkalaEintrag = {
   dienstjahrVon: number;
   dienstjahrBis: number | null; // null = unbeschränkt
