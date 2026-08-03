@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-27",
+ "erzeugt": "2026-08-03",
  "kopf": {
   "srNummer": "0.741.611",
   "titel": "Übereinkommen über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
@@ -329,7 +329,8 @@
      "links": [
       {
        "label": "SR <b>0.741.611.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1983/1933_1933_1933"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1983/1933_1933_1933",
+       "rs": "0.741.611.1"
       }
      ],
      "absatz": null,

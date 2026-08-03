@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-27",
+ "erzeugt": "2026-08-03",
  "kopf": {
   "srNummer": "412.10",
   "titel": "Bundesgesetz über die Berufsbildung",
@@ -29,7 +29,8 @@
     "links": [
      {
       "label": "SR <b>101</b>",
-      "url": "https://fedlex.data.admin.ch/eli/cc/1999/404"
+      "url": "https://fedlex.data.admin.ch/eli/cc/1999/404",
+      "rs": "101"
      }
     ],
     "absatz": null,
@@ -268,7 +269,8 @@
      "links": [
       {
        "label": "SR <b>220</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377"
+       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377",
+       "rs": "220"
       }
      ],
      "absatz": "1",
@@ -305,7 +307,8 @@
      "links": [
       {
        "label": "SR <b>415.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2012/460"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2012/460",
+       "rs": "415.0"
       }
      ],
      "absatz": "5",
@@ -599,7 +602,8 @@
      "links": [
       {
        "label": "SR <b>170.512</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2004/745"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2004/745",
+       "rs": "170.512"
       }
      ],
      "absatz": "2",
@@ -709,7 +713,8 @@
      "links": [
       {
        "label": "SR <b>837.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1982/2184_2184_2184"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1982/2184_2184_2184",
+       "rs": "837.0"
       }
      ],
      "absatz": "4",
@@ -1022,7 +1027,8 @@
      "links": [
       {
        "label": "SR <b>412.106</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2021/414"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2021/414",
+       "rs": "412.106"
       }
      ],
      "absatz": "2",
@@ -1078,7 +1084,8 @@
      "links": [
       {
        "label": "SR <b>837.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1982/2184_2184_2184"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1982/2184_2184_2184",
+       "rs": "837.0"
       }
      ],
      "absatz": "2",
@@ -1384,7 +1391,8 @@
      "links": [
       {
        "label": "SR <b>221.215.311</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1956/1543_1645_1658"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1956/1543_1645_1658",
+       "rs": "221.215.311"
       }
      ],
      "absatz": "3",
@@ -1497,7 +1505,8 @@
      "links": [
       {
        "label": "SR <b>241</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1988/223_223_223"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1988/223_223_223",
+       "rs": "241"
       }
      ],
      "absatz": "2",
