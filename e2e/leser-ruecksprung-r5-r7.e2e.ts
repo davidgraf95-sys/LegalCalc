@@ -22,6 +22,14 @@ function fehlerSammeln(page: Page): string[] {
 
 const chip = (page: Page) => page.getByRole('button', { name: /zurück zu/ });
 
+// Die SPRUNG-Knöpfe des Gliederungs-Baums — und nur die. `[data-toc]` enthält
+// ausserdem die Klapp-Chevrons und (unterhalb, `data-toc-kontext`) die
+// «nebeneinander öffnen»-Knöpfe der Leitfall-Chips; beide tragen ein aria-label,
+// der Sprung-Knopf trägt keines. Ohne diese Eingrenzung trifft `.last()` einen
+// Leitfall-Chip, der gar nicht springt (Fehlgriff der ersten Fassung).
+const tocSprung = (page: Page) =>
+  page.locator('[data-toc] li[data-sektion-id] button:not([aria-label])');
+
 // ── R3 · Die Kopie trägt den amtlichen Deep-Link ─────────────────────────────
 test.describe('R3 — zitierfähige Referenz', () => {
   test('«Zitat»-Kopie trägt Fundstelle, Stand, Permalink UND die amtliche Fassung', async ({ page, context }) => {
@@ -71,9 +79,7 @@ test.describe('R5 — Rücksprung-Chip', () => {
     expect(vorher.y).toBeGreaterThan(200);
 
     // Sprung aus dem Gliederungs-Baum — bewusst ein WEIT entfernter Abschnitt.
-    const toc = page.locator('[data-toc]');
-    const ziele = toc.getByRole('button').filter({ hasNotText: /^$/ });
-    await ziele.last().click();
+    await tocSprung(page).last().click();
     await page.waitForTimeout(1200); // Settle-Fenster des Chips (700 ms) + Sprung
 
     const c = chip(page);
@@ -104,31 +110,27 @@ test.describe('R5 — Rücksprung-Chip', () => {
     expect(fehler).toEqual([]);
   });
 
-  test('Sprung, der nichts bewegt (aktiver Abschnitt), erzeugt KEINEN Chip', async ({ page }) => {
-    test.slow();
-    await page.setViewportSize({ width: 1440, height: 900 });
-    await warteReader(page, '/gesetze/bund/BV');
-    const toc = page.locator('[data-toc]');
-    const erstes = toc.getByRole('button').filter({ hasNotText: /^$/ }).first();
-    await erstes.click();
-    await page.waitForTimeout(900);
-    // Zweimal dasselbe Ziel: der zweite Klick bewegt nichts mehr.
-    await erstes.click();
-    await page.waitForTimeout(1400);
-    await expect(chip(page)).toHaveCount(0);
-  });
-
-  test('Chip verfällt von selbst — er bleibt nicht als Dauer-Element stehen', async ({ page }) => {
+  test('Chip verfällt von selbst — und ein Sprung, der nichts bewegt, erzeugt keinen neuen', async ({ page }) => {
     test.slow();
     await page.setViewportSize({ width: 1440, height: 900 });
     await warteReader(page, '/gesetze/bund/BV');
     await page.locator('#art-8').scrollIntoViewIfNeeded();
     await page.waitForTimeout(400);
-    await page.locator('[data-toc]').getByRole('button').filter({ hasNotText: /^$/ }).last().click();
+
+    const ziel = tocSprung(page).last();
+    await ziel.click();
     const c = chip(page);
-    await expect(c).toBeVisible({ timeout: 5000 });
+    await expect(c).toBeVisible({ timeout: 8000 });
     // Lebensdauer 8 s ab Anzeige; grosszügiges Fenster für langsame Runner.
-    await expect(c).toHaveCount(0, { timeout: 20000 });
+    // Er bleibt nicht als Dauer-Element im Blickfeld stehen.
+    await expect(c).toHaveCount(0, { timeout: 25000 });
+
+    // Und jetzt der Leerlauf-Fall: DERSELBE Abschnitt noch einmal. Wir stehen
+    // bereits dort, der Sprung bewegt nichts — ein Chip würde eine Rückkehr an
+    // die Stelle versprechen, an der man schon steht (§8).
+    await ziel.click();
+    await page.waitForTimeout(2000);
+    await expect(chip(page)).toHaveCount(0);
   });
 });
 
@@ -200,7 +202,7 @@ test('A9 — Chip: Tastatur/aria/Tap-Ziel, und der TOC-Sprung bleibt unter 6× D
   await cdp.send('Emulation.setCPUThrottlingRate', { rate: 6 });
   await clsBeobachtenInstallieren(page, true, true);
 
-  await page.locator('[data-toc]').getByRole('button').filter({ hasNotText: /^$/ }).last().click();
+  await tocSprung(page).last().click();
   await page.waitForTimeout(1400);
   const c = chip(page);
   await expect(c).toBeVisible();
