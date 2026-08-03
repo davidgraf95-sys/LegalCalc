@@ -77,7 +77,22 @@ export function DeepLinkSkeleton() {
     // Ladezustand des Dokuments — der Effekt abonniert ihn nur.
     const pruefe = () => {
       const el = document.getElementById(id);
-      if (!el) { setAktiv(true); setLabel(''); return; }
+      if (!el) {
+        // TOTER ANKER (B1). Alt-Permalinks überleben Aufhebungen und Umnumme-
+        // rierungen — gerade die Zitate, die dieses Feature erzeugt, liegen
+        // jahrelang in fremden Akten. Steht der Reader mit seinen Artikeln, das
+        // Ziel fehlt aber, dann kommt es nicht mehr: die Lande-Bedingung könnte
+        // NIE eintreten, und das Overlay stünde bis zur Kappe als deckender
+        // Schleier über der ganzen Lesespalte — es verspräche eine Landung, die
+        // es nicht geben kann (§8), und wäre schlechter als gar kein Feature.
+        // Die Artikel erscheinen gemeinsam (eine Render-Runde, danach nur noch
+        // content-visibility-Materialisierung); «irgendein Artikel da» ist damit
+        // ein verlässliches «der Reader steht». Dann: aufhören und den Blick auf
+        // das Dokument freigeben — der Reader selbst behandelt den unbekannten
+        // Anker weiter wie bisher.
+        if (document.querySelector('article[id^="art-"]')) { schliesse(); return; }
+        setAktiv(true); setLabel(''); return;
+      }
       const top = el.getBoundingClientRect().top;
       // Etikett nachziehen, sobald der Anker da ist (sein Textinhalt IST das
       // Label — der Fussnoten-Marker steht ausserhalb des <a>).

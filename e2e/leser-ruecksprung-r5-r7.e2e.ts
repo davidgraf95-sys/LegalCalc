@@ -216,6 +216,67 @@ test.describe('R7 — Deep-Link-Skeleton', () => {
     await expect(overlay).toHaveCount(0, { timeout: 5000 });
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 1 });
   });
+
+  // ── B1 (§9-Bug-Check zu PR #431) ───────────────────────────────────────────
+  // TOTER ANKER. Alt-Permalinks überleben Aufhebungen und Umnummerierungen —
+  // genau die Zitate, die dieses Feature erzeugt, liegen jahrelang in fremden
+  // Akten. Zeigt so einer ins Leere, kann die Lande-Bedingung NIE eintreten:
+  // das Overlay stand bis zur 6000-ms-Kappe als deckender Schleier über der
+  // ganzen Lesespalte und versprach eine Landung, die es nicht geben kann (§8) —
+  // schlechter als der Zustand ohne das Feature. Sobald der Reader steht, das
+  // Ziel aber fehlt, ist die Antwort bekannt: aufhören.
+  test('Toter Anker: Overlay gibt auf, sobald der Reader steht — kein 6-s-Schleier', async ({ page }) => {
+    test.slow();
+    await page.setViewportSize({ width: 1440, height: 900 });
+    const cdp = await page.context().newCDPSession(page);
+    await cdp.send('Emulation.setCPUThrottlingRate', { rate: 6 });
+
+    // Sampler ab Dokumentstart (Muster wie oben): protokolliert je Frame, ob das
+    // Overlay steht und ob der Reader seine Artikel schon gerendert hat.
+    await page.addInitScript(() => {
+      interface P { t: number; overlay: boolean; artikel: number }
+      const w = window as unknown as { __b1: P[] };
+      w.__b1 = [];
+      const tick = () => {
+        const el = Array.from(document.querySelectorAll('[role="status"]'))
+          .some((e) => /Springe zu/.test(e.textContent ?? ''));
+        w.__b1.push({
+          t: Math.round(performance.now()), overlay: el,
+          artikel: document.querySelectorAll('article[id^="art-"]').length,
+        });
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+
+    await page.goto('/gesetze/bund/BV#art-9999');
+    const overlay = page.getByRole('status').filter({ hasText: /Springe zu/ });
+    // Grosszügig über die alte 6000-ms-Kappe hinaus warten: WÜRDE der Schleier
+    // wieder so lange stehen, liefe dieser Test in die Assertion unten, nicht in
+    // einen Timeout — die Fehlermeldung nennt dann die gemessene Standzeit.
+    await expect(overlay).toHaveCount(0, { timeout: 25000 });
+
+    interface P { t: number; overlay: boolean; artikel: number }
+    const proben: P[] = await page.evaluate(() => (window as unknown as { __b1: P[] }).__b1);
+    const mitOverlay = proben.filter((p) => p.overlay);
+    const standzeit = mitOverlay.length
+      ? mitOverlay[mitOverlay.length - 1].t - mitOverlay[0].t : 0;
+    // Der Beleg: NACHDEM der Reader seine Artikel gerendert hat, darf das Overlay
+    // nur noch einen Wimpernschlag stehen (ein Prüf-Takt = 120 ms, plus Luft für
+    // den Render-Commit unter 6×-Drossel).
+    const ersterMitArtikeln = proben.find((p) => p.artikel > 0);
+    expect(ersterMitArtikeln, 'Reader hat Artikel gerendert').toBeTruthy();
+    const nachRender = mitOverlay.filter((p) => p.t > (ersterMitArtikeln as P).t);
+    const ueberhang = nachRender.length
+      ? nachRender[nachRender.length - 1].t - (ersterMitArtikeln as P).t : 0;
+    expect(
+      ueberhang,
+      `Overlay-Überhang nach Artikel-Render ${ueberhang} ms (Standzeit gesamt ${standzeit} ms)`,
+    ).toBeLessThan(1000);
+    // Und die harte Kappe darf gar nicht erst zum Zuge kommen.
+    expect(standzeit, `Overlay-Standzeit ${standzeit} ms`).toBeLessThan(5000);
+    await cdp.send('Emulation.setCPUThrottlingRate', { rate: 1 });
+  });
 });
 
 // ── A9-DoD: Bedienbarkeit + Flüssigkeit unter CPU-Drossel ────────────────────
