@@ -145,18 +145,48 @@ test.describe('R7 — Deep-Link-Skeleton', () => {
     const cdp = await page.context().newCDPSession(page);
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 6 });
 
+    // Das Overlay ist FLÜCHTIG — es lebt genau so lange wie der Einsprung dauert.
+    // Eine Messung NACH `toBeVisible()` trifft darum je nach Maschine schon das
+    // Nichts (gemessen: Overlay bei t=0 vollständig da, 300 ms später weg). Ein
+    // nachgelagerter Poll ist hier konstruktionsbedingt ein Wettlauf, kein Test.
+    // Darum dasselbe Mittel, das die Specs für Layout-Shifts nutzen: ein
+    // rAF-Sampler ab Dokumentstart protokolliert JEDEN Frame mit; ausgewertet
+    // wird hinterher aus dem Protokoll. Deterministisch statt zufallsabhängig.
+    await page.addInitScript(() => {
+      interface P { t: number; top: number; bottom: number; vh: number; scrollY: number }
+      const w = window as unknown as { __r7: P[] };
+      w.__r7 = [];
+      const tick = () => {
+        const el = Array.from(document.querySelectorAll('[role="status"]'))
+          .find((e) => /Springe zu/.test(e.textContent ?? ''));
+        if (el) {
+          const r = el.getBoundingClientRect();
+          w.__r7.push({
+            t: Math.round(performance.now()), top: Math.round(r.top),
+            bottom: Math.round(r.bottom), vh: window.innerHeight,
+            scrollY: Math.round(window.scrollY),
+          });
+        }
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+
     await page.goto('/gesetze/bund/OR#art-957');
     const overlay = page.getByRole('status').filter({ hasText: /Springe zu/ });
-    await expect(overlay).toBeVisible({ timeout: 10000 });
-    // Es deckt den Dokumentanfang ab — dafür ist es da.
-    const deckt = await overlay.evaluate((el) => {
-      const r = el.getBoundingClientRect();
-      return r.top < window.innerHeight * 0.3 && r.height > window.innerHeight * 0.4;
-    });
-    expect(deckt).toBe(true);
+    // Es verschwindet von selbst, sobald der Sprung gelandet ist.
+    await expect(overlay).toHaveCount(0, { timeout: 25000 });
 
-    // Es verschwindet von selbst, sobald der Sprung gelandet ist …
-    await expect(overlay).toHaveCount(0, { timeout: 20000 });
+    interface P { t: number; top: number; bottom: number; vh: number; scrollY: number }
+    const proben: P[] = await page.evaluate(() => (window as unknown as { __r7: P[] }).__r7);
+    const dauerMs = proben.length ? proben[proben.length - 1].t - proben[0].t : 0;
+    // Es stand überhaupt — und zwar spürbar lang, nicht für einen Frame.
+    expect(proben.length, `Overlay-Frames ${proben.length}`).toBeGreaterThan(3);
+    expect(dauerMs, `Overlay-Standzeit ${dauerMs} ms`).toBeGreaterThan(300);
+    // …und in JEDEM dieser Frames deckte es den Lesebereich ab. Genau das ist die
+    // Behauptung von R7: statt des Dokumentanfangs steht dort die Zielansage.
+    const schlecht = proben.filter((p) => !(p.top < p.vh * 0.4 && p.bottom > p.vh * 0.5));
+    expect(schlecht.length, `Frames ohne Deckung: ${JSON.stringify(schlecht.slice(0, 3))}`).toBe(0);
     // … und dann steht das Ziel wirklich oben (der Sprung ist nicht bloss
     // «weg-animiert» worden).
     const top = await page.evaluate(() => {
