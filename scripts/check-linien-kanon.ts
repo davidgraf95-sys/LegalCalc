@@ -167,6 +167,14 @@ const REFERENZ: Record<string, Erwartung> = {
   VMWG: { strukturTiefe: 0, guideEbene: null, autoGuide: false, hinweis: 'flache Artikelliste — kein Guide möglich' },
   BVV3: { guideEbene: 0, autoGuide: false, hinweis: 'V2·A28: Kurzerlass, Auto-Guide aus (guideEbene 0 für Nutzer-«an»)' },
   HKUE: { guideEbene: 0, autoGuide: false, hinweis: 'V2·A28: Staatsvertrag, Auto-Guide aus (guideEbene 0 für Nutzer-«an»)' },
+  // EID-3(b), 3.8.2026: der EINZIGE Erlass im Korpus (1416 Sidecars), dessen
+  // amtliche eId-Pfadtiefe über die hN-Ableitung hinausgeht — `tit_3/lvl_u1/
+  // chap_2/lvl_I` = 4 Segmente, `gliederung.length` = 3, weil Fedlex den
+  // Container `tit_3/lvl_u1` («Grundregel») als `div.heading aria-level=2` statt
+  // als `h2` führt (amtlich verifiziert, SR 741.01, Konsolidierung 20260701).
+  // Fällt die Tiefe hier auf 3 zurück, ist die eId-Primärquelle abgeklemmt —
+  // dieser Fall IST die Rot-Probe des Umbaus. guideEbene bleibt 1 (renderTiefe).
+  SVG: { strukturTiefe: 4, guideEbene: 1, autoGuide: false, hinweis: 'EID-3(b): Tiefe aus eId-Pfad (4) statt hN-Ableitung (3)' },
 };
 for (const [key, erw] of Object.entries(REFERENZ)) {
   const row = korpus.find((r) => r.key === key);
