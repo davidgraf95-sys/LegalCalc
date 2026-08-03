@@ -217,7 +217,7 @@ bei David.
 | Norm-Extraktion, Adapter, Build-Regeln, Quell-Wahl | Skill `korpus-werkstatt` |
 | Fachliche Abnahme, Status-Hebung | Skill `abnahme` |
 | Adversariale Gegenprüfung auf Risiko-Pfaden | Skill `gegenpruefung` |
-| Postmortem, Fehlerklassen, wo eine Regel hingehört | Skill `lehren` |
+| Postmortem, Fehlerklassen, wo eine Regel hingehört, §17-Fünf-Schritte | Skill `lehren` |
 | Deploy, Merge-Schutz, Risikopfade | Skill `deploy-check` |
 | Parallel-Sessions, Worktrees, serielle Landung | Skill `landung` |
 | Geräte-Last, Performance | Skill `perf` |

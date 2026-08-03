@@ -1,6 +1,6 @@
 ---
 name: lehren
-description: Verwenden, wenn etwas schiefgegangen ist und die Lehre daraus bleiben soll — Trigger «das ist schon wieder passiert», «warum haben wir das nicht gemerkt», «Lehre festhalten», «Postmortem», «das darf nicht nochmal passieren» — oder wenn beim Bau ein wiederkehrendes Fehlermuster auffällt. Enthält das Register der belegten Fehlerklassen F1–F6 samt Mechanismus und die Regel, in welcher FORM eine neue Lehre abzulegen ist.
+description: Verwenden, wenn etwas schiefgegangen ist und die Lehre daraus bleiben soll — Trigger «das ist schon wieder passiert», «warum haben wir das nicht gemerkt», «Lehre festhalten», «Postmortem», «das darf nicht nochmal passieren» — oder wenn beim Bau ein wiederkehrendes Fehlermuster auffällt. AUCH verwenden bei §17-Prozessarbeit — ein CI-/Merge-/Doku-/Werkzeug-Prozess soll an der Wurzel behoben, verschlankt, gelöscht oder automatisiert werden: dafür die Fünf-Schritte-Reihenfolge hier. Enthält zudem das Register der belegten Fehlerklassen F1–F6 samt Mechanismus und die Regel, in welcher FORM eine neue Lehre abzulegen ist.
 ---
 
 # Lehren — belegte Fehlerklassen und wo ihr Gegenmittel sitzt
@@ -57,6 +57,41 @@ den Sabotage-Beweis (§6.7 — Skill `refactoring`, Ziff. 7).
    Schaden). Eine Klasse ohne Vorfall ist eine Vermutung, keine Lehre.
 5. **Zweimal aufgetreten trotz Gegenmittel** ⇒ das Gegenmittel greift nicht;
    Form eskalieren (Prosa → Dispatch → Tor).
+
+## §17-Prozessarbeit: die Fünf-Schritte-Reihenfolge
+
+*Herkunft: zugeschnitten aus `malkreide/musk-algorithm-skill` (Hayal Oezkan,
+Stadt Zürich, MIT-Lizenz; gesichtet 4.8.2026). Entscheid David 4.8.2026: kein
+eigener Skill, nur dieser Anhang — übernommen sind Reihenfolge und Leitplanken,
+nicht das Original-Protokoll.*
+
+**Geltungsbereich — nur Prozess, nie Produkt:** CI/Tore, Merge- und
+Plan-Prozesse, Steuer-Doku, Werkstatt-Scripts. **Nicht anwendbar** auf
+`src/lib/`-Rechtslogik, Engines und alles unter §1/§4/§6 — dort gilt Skill
+`refactoring` (Golden-Beweis), und «lieber 50 Zeilen Duplikat als eine falsche
+Abstraktion» schlägt jede Vereinfachungs-Intuition.
+
+Wer nach §17 ein Prozessproblem an der Wurzel behebt, arbeitet in dieser
+Reihenfolge. **Sie ist nicht verhandelbar** — insbesondere: nie automatisieren,
+was nicht vorher gelöscht, vereinfacht und stabil geworden ist.
+
+1. **Anforderung hinterfragen (Chesterton's Fence).** Erst Provenienz klären:
+   wer hat die Regel/das Tor wann, aus welchem Anlass angelegt (Commit, PR,
+   Vorfall im Register oben)? Eine Regel, deren Anlass niemand benennen kann,
+   ist ein Streichkandidat; eine mit benanntem Anlass fällt erst, wenn der
+   Anlass entfallen ist.
+2. **Löschen.** Was den Zweck nicht mehr erfüllt, wird entfernt — nicht
+   umschifft (§17: Workaround ohne Wurzel-Fix ist ein offener Mangel). git
+   macht Löschen reversibel; tot Mitgeschlepptes kostet jede Session.
+3. **Vereinfachen.** Erst, was das Löschen überlebt hat — nie einen Schritt
+   optimieren, der in Schritt 2 hätte fallen müssen.
+4. **Beschleunigen.** Erst nach Stabilisierung, und Tempo-Diagnosen nur mit
+   Nullprobe (F3): Streuung messen, bevor einer Änderung etwas zugeschrieben
+   wird.
+5. **Automatisieren — zuletzt und nur Stabiles.** Ein automatisierter kaputter
+   Prozess zementiert den Fehler (F2e: der nie-grüne Wächter lief 15× rot, bis
+   «rot» nichts mehr bedeutete). Für neue Tore gilt §6.7: einmal rot UND einmal
+   grün zeigen.
 
 ## Bewusst NICHT geregelt
 
