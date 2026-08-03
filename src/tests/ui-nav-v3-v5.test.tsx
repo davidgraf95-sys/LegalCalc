@@ -147,5 +147,19 @@ describe('V3 — Kanten-Zelle mit Kurztext-Vorschau', () => {
     const s = ssr(<KanteMitVorschau ziel={ZIEL} zitierung="BGer 4A_1/2020" kurztext={null} />);
     expect(s).toContain('BGer 4A_1/2020');
     expect(s).not.toContain('data-regeste-popover');
+    // Ohne Vorschau gibt es nichts aufzuklappen — dann behauptet der Chip auch
+    // nichts (Markup byte-identisch zum Bestand vor V3).
+    expect(s).not.toContain('aria-expanded');
+  });
+
+  it('B2: der geschlossene Chip meldet «zu» und zeigt auf KEINEN Kasten', () => {
+    const s = ssr(<KanteMitVorschau ziel={ZIEL} zitierung="BGE 147 III 209"
+      kurztext="Mietrecht; ausserordentliche Kündigung." />);
+    // Aufklappbar und geschlossen — das WAI-ARIA-Muster für ein Element, das
+    // etwas aufklappt.
+    expect(s).toContain('aria-expanded="false"');
+    // Eine `aria-controls`-Referenz auf einen nicht existierenden Knoten ist ein
+    // a11y-Fehler, keine Auskunft — sie erscheint erst mit dem Kasten.
+    expect(s).not.toContain('aria-controls');
   });
 });

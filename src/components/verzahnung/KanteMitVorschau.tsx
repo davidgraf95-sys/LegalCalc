@@ -1,4 +1,4 @@
-import { memo, useCallback, useRef, useState, lazy, Suspense } from 'react';
+import { memo, useCallback, useId, useRef, useState, lazy, Suspense } from 'react';
 import { KantenChip } from './KantenChip';
 import { usePaneSteuerung } from '../layout/usePaneLayout';
 import type { ArtikelRevision } from '../../lib/verzahnung/artikel-revisionen';
@@ -25,6 +25,23 @@ import type { ArtikelRevision } from '../../lib/verzahnung/artikel-revisionen';
 // Das Popover wird `lazy` geladen: es erscheint frühestens nach einer bewussten
 // Geste (Hover mit Verzögerung / Fokus / ↓) — sein Code gehört nicht in den
 // Erst-Chunk einer Seite mit hunderten Artikeln.
+//
+// ── DER PORTAL-FALLSTRICK, belegt (§9-Bug-Check 4.8.2026, B1) ───────────────
+// Der Kasten hängt im DOM an <body>, im REACT-Baum aber unter dieser Zelle.
+// React leitet Ereignisse dem REACT-Baum entlang weiter — jedes `keydown`,
+// `focus` und `blur` aus dem Kasten läuft also durch die Handler HIER vorbei,
+// obwohl `zelle.contains(ziel)` im DOM false ist. Daraus entstanden zwei
+// Fehler, beide reproduziert (Chip fokussieren → ↓ → Esc):
+//   (1) `onFocus` feuerte, sobald der Fokus IN den Kasten wanderte, und setzte
+//       die Tastatur-Merkung zurück — der Fokus-Rückweg war damit tot Code.
+//   (2) Der Esc-Zweig der Zelle lief vor dem `onClose`-Pfad des Kastens und
+//       schloss OHNE Fokus-Rückgabe: `document.activeElement` war danach
+//       `BODY` (WCAG 2.4.3 gebrochen — die Tastatur stand am Seitenanfang).
+// Gegenmittel: (a) die Tastatur-Merkung liegt in einem `ref`, den kein Re-Render
+// und kein durchgereichtes Fokus-Ereignis überschreibt; (b) Fokus-Ereignisse AUS
+// dem Kasten werden an beiden Enden (`onFocus`/`onBlur`) über die DOM-Zugehörig-
+// keit ausgesiebt; (c) es gibt genau EINEN Schliess-Pfad mit Fokus-Rückgabe, den
+// Esc UND `onClose` gemeinsam benutzen.
 const RegestePopover = lazy(() => import('./RegestePopover').then((m) => ({ default: m.RegestePopover })));
 
 // Hover-Verzögerung: erst nach ruhendem Zeiger. Ohne sie feuerte jedes
@@ -51,22 +68,43 @@ export const KanteMitVorschau = memo(function KanteMitVorschau({
 }) {
   const { oeffneDaneben, kannOeffnen, istOffen } = usePaneSteuerung();
   const zelle = useRef<HTMLSpanElement>(null);
+  // Der Kasten selbst — für die DOM-Zugehörigkeitsprüfung der durchgereichten
+  // Fokus-Ereignisse (er hängt an <body>, nicht in dieser Zelle).
+  const kasten = useRef<HTMLDivElement>(null);
   const uhr = useRef<number | undefined>(undefined);
+  // Tastatur-Merkung als REF: sie überlebt jedes Re-Render und wird von keinem
+  // durchgereichten Fokus-Ereignis überschrieben (B1 (1)).
+  const perTastatur = useRef(false);
   const [rect, setRect] = useState<DOMRect | null>(null);
-  const [tastatur, setTastatur] = useState(false);
+  const [autoFokus, setAutoFokus] = useState(false);
+  const kastenId = useId();
   const hatVorschau = !!kurztext && kurztext.trim() !== '';
 
   const stoppUhr = () => {
     if (uhr.current !== undefined) { window.clearTimeout(uhr.current); uhr.current = undefined; }
   };
-  const oeffne = useCallback((perTastatur: boolean) => {
+  const oeffne = useCallback((mitTastatur: boolean) => {
     stoppUhr();
     const el = zelle.current?.firstElementChild ?? zelle.current;
     if (!el) return;
-    setTastatur(perTastatur);
+    if (mitTastatur) { perTastatur.current = true; setAutoFokus(true); }
     setRect(el.getBoundingClientRect());
   }, []);
-  const schliesse = useCallback(() => { stoppUhr(); setRect(null); setTastatur(false); }, []);
+  /**
+   * DER EINE Schliess-Pfad. `fokusZurueck` = die Schliessung ist eine bewusste
+   * Tastatur-Geste (Esc) — dann muss der Fokus zurück auf den Chip, sonst fällt
+   * er auf `<body>` (B1 (2), WCAG 2.4.3). Beim Weg-Zeigen (`pointerleave`) oder
+   * Weg-Tabben gibt es nichts zurückzugeben: dort steht der Fokus längst woanders.
+   */
+  const schliesse = useCallback((fokusZurueck: boolean) => {
+    stoppUhr();
+    setRect(null);
+    setAutoFokus(false);
+    if (fokusZurueck && perTastatur.current) zelle.current?.querySelector('a')?.focus();
+    perTastatur.current = false;
+  }, []);
+  /** Liegt der Knoten im portalierten Kasten? (Fokus-Aussiebung, siehe Kopf.) */
+  const imKasten = (n: Node | null | undefined) => !!n && !!kasten.current?.contains(n);
 
   if (!hatVorschau) {
     return <Zelle ref={zelle} className={className} {...{ ziel, zitierung, leitentscheid, revidiert, titel, kannOeffnen, istOffen, oeffneDaneben }} />;
@@ -87,25 +125,41 @@ export const KanteMitVorschau = memo(function KanteMitVorschau({
       onPointerLeave={(e) => {
         if (e.pointerType === 'touch') return;
         stoppUhr();
-        uhr.current = window.setTimeout(schliesse, SCHLIESSEN_MS);
+        uhr.current = window.setTimeout(() => schliesse(false), SCHLIESSEN_MS);
       }}
-      onFocus={() => oeffne(false)}
-      onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget as Node | null)) schliesse(); }}
+      onFocus={(e) => {
+        // Fokus IM Kasten ist kein neuer Öffnungsgrund — er würde nur die
+        // Tastatur-Merkung und das Anker-Rechteck neu setzen (B1 (1)).
+        if (imKasten(e.target)) return;
+        oeffne(false);
+      }}
+      onBlur={(e) => {
+        const ziel = e.relatedTarget as Node | null;
+        if (e.currentTarget.contains(ziel) || imKasten(ziel)) return;
+        schliesse(false);
+      }}
       onKeyDown={(e) => {
         if (e.key === 'ArrowDown') { e.preventDefault(); oeffne(true); }
-        else if (e.key === 'Escape' && rect) { e.preventDefault(); schliesse(); }
+        // Esc läuft durch DENSELBEN Pfad wie `onClose` — inklusive Fokus-Rückgabe.
+        else if (e.key === 'Escape' && rect) { e.preventDefault(); schliesse(true); }
       }}
     >
       <KantenChip to={ziel} label={zitierung} kategorie="entscheid"
-        leitentscheid={leitentscheid} revidiert={revidiert} titel={titel ?? zitierung} />
+        leitentscheid={leitentscheid} revidiert={revidiert} titel={titel ?? zitierung}
+        // B2: der Chip sagt, dass er etwas aufgeklappt hat und was. `aria-controls`
+        // NUR im offenen Zustand — eine Referenz auf einen nicht existierenden
+        // Knoten ist ein a11y-Fehler, keine Auskunft.
+        ariaExpanded={rect ? true : false}
+        ariaControls={rect ? kastenId : undefined} />
       {kannOeffnen && !istOffen(ziel) && (
         <SplitKnopf zitierung={zitierung} onClick={() => oeffneDaneben(ziel)} />
       )}
       {rect && (
         <Suspense fallback={null}>
-          <RegestePopover ankerRect={rect} hostRef={zelle} zitierung={zitierung} kurztext={kurztext!}
-            ziel={ziel} statusLabel={statusLabel} autoFokus={tastatur}
-            onClose={() => { schliesse(); if (tastatur) zelle.current?.querySelector('a')?.focus(); }} />
+          <RegestePopover ankerRect={rect} hostRef={zelle} kastenRef={kasten} kastenId={kastenId}
+            zitierung={zitierung} kurztext={kurztext!}
+            ziel={ziel} statusLabel={statusLabel} autoFokus={autoFokus}
+            onClose={() => schliesse(true)} />
         </Suspense>
       )}
     </span>

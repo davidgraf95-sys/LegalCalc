@@ -63,13 +63,18 @@ function berechneLage(rect: DOMRect, hoehe: number, vw: number, vh: number): Lag
   };
 }
 
-export function RegestePopover({ ankerRect, hostRef, zitierung, kurztext, ziel, statusLabel, autoFokus = false, onClose }: {
+export function RegestePopover({ ankerRect, hostRef, kastenRef, kastenId, zitierung, kurztext, ziel, statusLabel, autoFokus = false, onClose }: {
   /** Gemessenes Rechteck des auslösenden Chips (Viewport-Koordinaten). */
   ankerRect: DOMRect;
   /** Die auslösende Zelle (Chip + ⧉). Fokus DARIN schliesst nicht — sonst
    *  schlösse der Kasten sich im selben Moment, in dem der Fokus auf dem Chip
    *  ihn geöffnet hat (belegt: `focusin` am Chip lief nach React-`onFocus`). */
   hostRef: React.RefObject<HTMLElement | null>;
+  /** Wird auf den Kasten gesetzt — die Zelle braucht ihn, um durchgereichte
+   *  Fokus-Ereignisse aus dem Portal auszusieben (Portal-Fallstrick, B1). */
+  kastenRef: React.RefObject<HTMLDivElement | null>;
+  /** DOM-Id des Kastens — Ziel des `aria-controls` am Chip (B2). */
+  kastenId: string;
   zitierung: string;
   /** Bestandstext aus dem Shard (Regeste-Auszug bzw. amtlicher Betreff). */
   kurztext: string;
@@ -81,7 +86,9 @@ export function RegestePopover({ ankerRect, hostRef, zitierung, kurztext, ziel, 
   autoFokus?: boolean;
   onClose: () => void;
 }) {
-  const kasten = useRef<HTMLDivElement>(null);
+  // Der Kasten-Ref kommt von der Zelle (sie prüft damit die DOM-Zugehörigkeit
+  // durchgereichter Fokus-Ereignisse) und wird hier ausschliesslich gelesen.
+  const kasten = kastenRef;
   const erstesZiel = useRef<HTMLAnchorElement>(null);
   const [lage, setLage] = useState<Lage | null>(null);
   const { oeffneDaneben, kannOeffnen, istOffen } = usePaneSteuerung();
@@ -91,7 +98,7 @@ export function RegestePopover({ ankerRect, hostRef, zitierung, kurztext, ziel, 
   useLayoutEffect(() => {
     const h = kasten.current?.offsetHeight ?? 0;
     setLage(berechneLage(ankerRect, h, window.innerWidth, window.innerHeight));
-  }, [ankerRect]);
+  }, [ankerRect, kasten]);
   useEffect(() => {
     let raf = 0;
     const nachfuehren = () => {
@@ -109,7 +116,7 @@ export function RegestePopover({ ankerRect, hostRef, zitierung, kurztext, ziel, 
       if (raf) cancelAnimationFrame(raf);
       window.removeEventListener('scroll', nachfuehren, true);
     };
-  }, [hostRef]);
+  }, [hostRef, kasten]);
 
   // Tastatur-Einstieg: ↓ am Chip öffnet UND setzt den Fokus in die erste Aktion.
   // Ohne das wäre der portalierte Kasten für eine Tastatur-Bedienung unerreichbar
@@ -138,14 +145,22 @@ export function RegestePopover({ ankerRect, hostRef, zitierung, kurztext, ziel, 
       window.removeEventListener('keydown', taste);
       document.removeEventListener('focusin', fokus);
     };
-  }, [onClose, hostRef]);
+  }, [onClose, hostRef, kasten]);
 
   if (typeof document === 'undefined') return null;
   return createPortal(
     <div
       ref={kasten}
+      id={kastenId}
       data-regeste-popover
-      role="dialog"
+      // B2 (§9-Bug-Check 4.8.2026): KEIN `role="dialog"`. Ein Dialog verspricht
+      // Fokus-Fang und einen inerten Hintergrund — beides löst diese Fläche
+      // bewusst nicht ein: sie öffnet auf Hover, sie lässt sich weghovern, und
+      // der Lesetext dahinter bleibt bedienbar. `group` mit Namen beschreibt,
+      // was hier wirklich steht: ein benannter Bereich mit Text und zwei
+      // Aktionen. Wer ihn aufgeklappt hat, sagt der Chip über `aria-expanded`
+      // und `aria-controls`.
+      role="group"
       aria-label={`Kurztext zu ${zitierung}`}
       // `visibility:hidden` im ersten Frame: der Kasten muss gerendert sein, damit
       // seine Höhe messbar ist — sichtbar wird er erst an der berechneten Stelle

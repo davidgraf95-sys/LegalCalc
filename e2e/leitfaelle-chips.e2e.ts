@@ -159,16 +159,38 @@ test.describe('Rechtsprechungs-Auflistung im ArtikelLeser (OR)', () => {
     // ⧉-Glyph an der Zelle, der sein `aria-label` braucht.
     await expect(popover.getByRole('button', { name: /Daneben öffnen/ })).toBeVisible()
 
+    // B2 (§9-Bug-Check 4.8.2026): der Kasten ist KEIN modaler Dialog — er fängt
+    // den Fokus nicht und liegt auf einer Hover-Fläche. Rolle `group` + benannter
+    // Kasten; der Chip sagt über `aria-expanded`/`aria-controls`, dass und was er
+    // aufgeklappt hat. `role="dialog"` wäre ein Versprechen (Fokus-Fang,
+    // Hintergrund inert), das diese Fläche nicht einlöst.
+    await expect(popover).toHaveAttribute('role', 'group')
+    await expect(popover).not.toHaveAttribute('aria-modal', /.*/)
+    await expect(chip).toHaveAttribute('aria-expanded', 'true')
+    const kastenId = (await popover.getAttribute('id'))!
+    expect(kastenId).toBeTruthy()
+    await expect(chip).toHaveAttribute('aria-controls', kastenId)
+
     // Tastatur (WCAG 2.1.1): Fokus auf den Chip öffnet, ↓ setzt den Fokus in die
     // erste Aktion des portalierten Kastens, Esc schliesst wieder.
     await page.keyboard.press('Escape')
     await expect(popover).toHaveCount(0)
+    // Geschlossen darf der Chip weder «offen» behaupten noch auf einen Kasten
+    // zeigen, den es nicht gibt (baumelnde `aria-controls`-Referenz).
+    await expect(chip).toHaveAttribute('aria-expanded', 'false')
+    await expect(chip).not.toHaveAttribute('aria-controls', /.*/)
+
     await chip.focus()
     await expect(popover).toBeVisible({ timeout: 10_000 })
     await page.keyboard.press('ArrowDown')
     await expect(popover.getByRole('link', { name: /Öffnen/ })).toBeFocused()
     await page.keyboard.press('Escape')
     await expect(popover).toHaveCount(0)
+    // B1 (§9-Bug-Check 4.8.2026): WCAG 2.4.3 — nach dem Schliessen darf der Fokus
+    // NICHT auf <body> fallen. Er gehört zurück auf den Chip, von dem aus der
+    // Kasten geöffnet wurde; sonst müsste eine Tastatur-Bedienung von vorn durch
+    // die ganze 500-Artikel-Seite tabben.
+    await expect(chip).toBeFocused()
     expect(fehler).toEqual([])
   })
 })

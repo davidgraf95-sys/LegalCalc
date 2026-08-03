@@ -268,6 +268,28 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
     expect(fehler).toEqual([])
   })
 
+  // B6 (§9-Bug-Check 4.8.2026): im Lesemodus zeigte der Rail weiter Trefferzahlen,
+  // während die Markierung abgeschaltet war und jeder Sprung still ins Leere lief
+  // (der Haupt-Body ist dort ausgehängt). Eine Zahl neben toten Sprungzielen ist
+  // eine Halb-Auskunft (§8) — der Rail verschwindet jetzt mit dem Lesemodus.
+  test('im Lesemodus verschwindet der Rail — keine Zahlen neben toten Sprungzielen (§8)', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/rechtsprechung/bge_152_IV_14')
+    const rail = page.locator('[data-erw-rail]')
+    await expect(rail).toBeVisible()
+    await rail.getByRole('searchbox', { name: 'Im Entscheid suchen' }).fill('Rechtsgut')
+    await expect(rail.locator('[data-erw-treffer]')).toContainText('Treffer in')
+
+    await page.getByRole('button', { name: /Lesemodus/ }).first().click()
+    await expect(page.getByRole('dialog', { name: /Lesemodus/ })).toBeVisible()
+    await expect(rail).toHaveCount(0)
+
+    // Zurück im Leser steht die Suche unverändert da (der Begriff ist nicht verloren).
+    await page.getByRole('button', { name: /schliessen/ }).first().click()
+    await expect(rail).toBeVisible()
+    await expect(rail.getByRole('searchbox', { name: 'Im Entscheid suchen' })).toHaveValue('Rechtsgut')
+  })
+
   test('mobil (390px): Rail ist ein aufklappbarer Block, Tap-Ziele ≥ 24 px, kein Overflow', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto('/rechtsprechung/bge_152_IV_14')

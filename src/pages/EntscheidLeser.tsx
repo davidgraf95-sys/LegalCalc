@@ -758,8 +758,17 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
         <div className={imPane
           ? 'flex flex-col gap-4'
           : 'flex flex-col gap-4 xl:grid xl:grid-cols-[minmax(0,1fr)_15rem] xl:items-start xl:gap-8'}>
-          <ErwRail abschnitte={aktiveAbschnitte} zitierteNormen={snap.zitierteNormen}
-            suche={suche} onSuche={setSuche} springe={springeZuAbschnitt} imPane={imPane} />
+          {/* B6 (§9-Bug-Check 4.8.2026): im LESEMODUS gibt es den Rail nicht.
+              Dort ist der Haupt-Body ausgehängt (der Overlay zeigt seinen
+              eigenen), die Treffer-Markierung ist abgeschaltet und jeder
+              Sprung liefe still ins Leere — eine Trefferzahl neben toten
+              Sprungzielen ist genau die Halb-Auskunft, die §8 verbietet.
+              Der Suchbegriff bleibt im State: wer den Lesemodus schliesst,
+              findet seine Suche unverändert vor. */}
+          {!lese && (
+            <ErwRail abschnitte={aktiveAbschnitte} zitierteNormen={snap.zitierteNormen}
+              suche={suche} onSuche={setSuche} springe={springeZuAbschnitt} imPane={imPane} />
+          )}
           <div className={imPane ? 'order-2 min-w-0' : 'order-2 min-w-0 xl:order-1 xl:col-start-1 xl:row-start-1'}>
             {/* Regeste prominent im Leitentscheid-Auszug (zeigeRegeste). Beim amtlich
                 publizierten BGE «Regeste», sonst maschinelle «Zusammenfassung» — ehrlich
