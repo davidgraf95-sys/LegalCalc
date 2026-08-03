@@ -156,9 +156,9 @@ jobs:
       # `bau` die 8 e2e-Shards über `needs:` mit in den Skip, und die acht
       # Required-Kontexte hingen wieder an einer Bedingung statt an einem Job.
       # Bei art=doku ist er ein Leerlauf von Sekunden.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: needs.diff.outputs.art == 'code'
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         if: needs.diff.outputs.art == 'code'
         with:
           node-version: 22
@@ -197,10 +197,10 @@ jobs:
       # fetch-depth: 0 — check:merge-schutz bildet merge-base(origin/main, HEAD).
       # Mit dem Default (depth 1) gibt es keine gemeinsame Basis und das Tor
       # wuerde (korrekt) rot melden, dass es seine Referenz nicht bilden kann.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -368,9 +368,9 @@ jobs:
       # Wie bei `bau`: der Job selbst läuft IMMER, damit die acht Required-
       # Kontexte «Browser-Smoke Shard N/8 (Playwright)» ereignisunabhängig
       # gemeldet werden. Bei art=doku bleibt davon eine Kurzquittung.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: needs.diff.outputs.art == 'code'
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         if: needs.diff.outputs.art == 'code'
         with:
           node-version: 22
@@ -436,8 +436,8 @@ jobs:
     env:
       TZ: Europe/Zurich
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -471,10 +471,10 @@ jobs:
     name: Merge-Schutz (Required-Kontext)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
