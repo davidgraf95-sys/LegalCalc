@@ -93,30 +93,37 @@ describe('Navigations-SSoT', () => {
     expect(fehlend).toEqual([]);
   });
 
-  // IA-6 Stufe 1 (FAHRPLAN-GESETZES-UX §11.4 Ziff. 3, W2·5d): interne Links
-  // vereinheitlicht — der Gruppen-Kopf «International» zielt wie seine
-  // Geschwister Bund/Kantone auf die kanonische Säule (?ebene=international).
-  // Die 5 Hash-Anker-Kinder bleiben UNVERÄNDERT auf der voll funktionalen
-  // Alias-Seite /international (kein Redirect, keine Hash-Änderung — Stufe 2
-  // nur mit separatem David-Go).
-  it('IA-6: Gesetze › International — Kopf zielt auf die kanonische Säule, die 5 Anker bleiben auf /international', () => {
+  // IA-6 Stufe 2 (FAHRPLAN-GESETZES-UX §11.4 Ziff. 3 / §11.8 Y-C, David-Go
+  // 3.8.2026): Der Alias /international ist zum Redirect aufgelöst — KEIN
+  // interner Link zeigt mehr auf ihn (R-SCOPE-4). Kopf UND alle 5 Anker-Kinder
+  // zielen auf die kanonische Säule. Deklarierte fachliche Änderung dieses
+  // Tests (§6.3, kein Refactoring: Stufe 1 hielt die Kinder bewusst am Alias).
+  it('IA-6 Stufe 2: Gesetze › International — Kopf UND die 5 Anker zielen auf die kanonische Säule', () => {
     const international = abschnitt('Gesetze').kinder[2] as NavGruppe;
     expect(international.art).toBe('gruppe');
     expect(international.label).toBe('International');
     expect(international.ziel).toBe('/gesetze?ebene=international');
     expect(international.kinder.map((k) => (k.art === 'link' ? k.ziel : null))).toEqual([
-      '/international#menschenrechte',
-      '/international#privat-zivil',
-      '/international#rechtshilfe',
-      '/international#schweiz-eu',
-      '/international#eu-verordnungen',
+      '/gesetze?ebene=international#menschenrechte',
+      '/gesetze?ebene=international#privat-zivil',
+      '/gesetze?ebene=international#rechtshilfe',
+      '/gesetze?ebene=international#schweiz-eu',
+      '/gesetze?ebene=international#eu-verordnungen',
     ]);
+  });
+
+  it('IA-6 Stufe 2: kein Nav-Link zeigt mehr auf den Alias /international', () => {
+    for (const l of alleNavLinks()) {
+      expect(l.ziel.split('?')[0].split('#')[0], `${l.label} → ${l.ziel}`).not.toBe('/international');
+    }
   });
 
   it('jedes Blatt-Ziel löst auf eine echte Route auf (keine toten Links)', () => {
     // Statische Seiten + alle Karten-Routen (Rechner/Vorlagen) aus dem Manifest.
     const echteRouten = new Set<string>([
-      '/', '/rechner', '/vorlagen', '/gesetze', '/rechtsprechung', '/international', '/materialien', '/einstellungen', '/methodik', '/ueber', '/kontakt', '/datenschutz',
+      // '/international' steht hier NICHT mehr: seit IA-6 Stufe 2 ist es eine
+      // Redirect-Route, kein Nav-Ziel (der Test oben verbietet es ausdrücklich).
+      '/', '/rechner', '/vorlagen', '/gesetze', '/rechtsprechung', '/materialien', '/einstellungen', '/methodik', '/ueber', '/kontakt', '/datenschutz',
       ...ROUTEN_MANIFEST.map((r) => r.pfad),
     ]);
     for (const l of alleNavLinks()) {

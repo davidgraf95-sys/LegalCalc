@@ -1080,11 +1080,58 @@ export function schlussteilLabelSuffix(anker: string): string {
 // (Tiefe = Heading-Level) erhalten, damit die Ziffern-Struktur im Lesefluss
 // nicht verloren geht.
 
+/** Der amtliche Anhang-Container. EINE Wahrheit (§5) für beide Nutzungen: die
+ *  Anker-Suche in `alleAnhangAnker` UND die Container-eId in `anhangContainerEId`
+ *  — sonst könnten Fundort und mitgeschnittene eId auseinanderlaufen. */
+const ANNEX_CONTAINER = /<div\s+id="(annex)"\s*>/i;
+
 export interface AnhangText {
   /** Echter Fedlex-Titel des Anhangs («Anhang 1», «Anhang 1.1», «Anhang 4a»),
    *  aus der ersten <hN class="heading"> der Sektion. */
   titel: string;
   bloecke: ArtikelText['bloecke'];
+}
+
+/**
+ * W2·5d-ANNEX (EID-1-Nachzug): die Container-eId des Anhang-Blocks — das
+ * Fragment, das auf der amtlichen ELI-Fassung genau an den Anfang der Anhänge
+ * springt (`quelleUrl#annex`).
+ *
+ * Warum GENAU dieser Knoten und kein anderer: Der Anhang-Pfad erzeugt im Sidecar
+ * eine EINZIGE Gliederungsstufe «Anhänge», unter der alle Anhänge eines Erlasses
+ * als Blätter hängen. Ihr amtliches Gegenstück ist der Container <div id="annex">,
+ * nicht ein einzelner Anhang: eine Anhang-eigene eId (annex_1) am Gruppen-Knoten
+ * zeigte für alle übrigen Anhänge auf die falsche Stelle (§8: lieber kein Link
+ * als ein unpräziser). Die eIds der EINZELNEN Anhänge sind kein Verlust — sie
+ * stehen bereits als Fragment in der per-Eintrag-`quelleUrl` des Snapshots
+ * (`…/de#annex_1`, SSoT §5) und speisen dort den Artikel-Verifizierlink (EID-2).
+ *
+ * Korpusweit verifiziert (227 Bund-Caches, 3.8.2026): 143 HTMLs tragen den
+ * Container, ausnahmslos in der Form `<div id="annex">` — keine Variante. Ein
+ * Erlass ohne Anhänge liefert `undefined` (kein Feld, nichts fabrizieren §7).
+ *
+ * Der ChemRRV-Fall zeigt, warum NICHT die Deckblatt-Sektion genommen wird: dort
+ * heisst `<section id="annex_u1">` selbst «Anhänge», existiert aber nur in einem
+ * Teil der Erlasse (GSchV/VZV/AIG/ASYLG beginnen direkt mit annex_1) — der
+ * Container ist der einzige korpusweit einheitliche Knoten.
+ *
+ * OFFENGELEGTE UNSCHÄRFE (§8, nicht wegglätten). `alleAnhangAnker` sammelt ab
+ * dem Container bis zum Dokumentende und fasst deshalb bei 14 Staatsverträgen
+ * auch `scope_u*`/`decl_u*` (Geltungsbereich, CH-Erklärungen) unter «Anhänge» —
+ * korpusweit 21 Sektionen, die als GESCHWISTER NACH `</div>` liegen, nicht darin
+ * (belegt 3.8.2026: apostille, cmr, gfk, haue, heue, hksue96, hkue, hzue, icao,
+ * istanbul, lugue, rbue, staatenlose, vrk). Der Gruppen-Link springt dort an den
+ * Anfang des Anhang-Blocks, der diesen Sektionen im Dokument unmittelbar
+ * VORAUSGEHT — er zeigt also auf den Beginn der Region, nie auf eine fremde
+ * Bestimmung. Punktgenau bleiben diese Einträge über ihren EIGENEN Artikel-Link
+ * erreichbar (`quelleUrl#scope_u1`, EID-2, aus dem Snapshot). Bewusst NICHT
+ * per-Eintrag unterdrückt: der Reader vergibt je Gliederungsknoten genau EINEN
+ * Link (browse.ts «erste vorhandene eId gewinnt»), die Unterscheidung wäre für
+ * den Nutzer unsichtbar und kostete im Risiko-Pfad zusätzliche Parser-Logik.
+ */
+export function anhangContainerEId(html: string): string | undefined {
+  const m = ANNEX_CONTAINER.exec(html);
+  return m ? m[1] : undefined;
 }
 
 /**
@@ -1236,7 +1283,7 @@ function anhangUeberschrift(hInner: string): string {
  * Doppelte ids erhalten — wie alleArtikelTokens — einen Synthese-Suffix «__2».
  */
 export function alleAnhangAnker(html: string): string[] {
-  const divStart = html.search(/<div\s+id="annex"\s*>/i);
+  const divStart = html.search(ANNEX_CONTAINER);
   if (divStart < 0) return [];
   const seg = html.slice(divStart);
   const re = /<section[^>]*\sid="((?:annex|lvl|scope|decl)[^"/]*)"/gi;

@@ -219,3 +219,17 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
 - **Fertig, wenn:** ein Push mit unquittiertem Risiko-Diff **einmal rot** stoppt (§6.7), ein
   quittierter durchgeht, und ein reiner `.md`-Push den Hook ohne spürbare Verzögerung passiert.
 - **Risiko-Klasse:** reine Prüflogik ⇒ `Gegenpruefung: n/a`.
+
+### §3.4 `QS-E2E-STABIL` — lokale e2e-/Test-Budgets an gemessene Streuung binden
+
+- **Anlass (Bug-Checks/Bauläufe 3./4.8.2026, je per Nullprobe auf main verortet — F3-sauber):**
+  (a) `a11y.e2e.ts › Reader BS-640.100` reisst lokal das 60-s-Budget; interleaved A/B beide
+  Arme rot (24.6–>60 s), CI mit 90 s + 2 Retries grün. (b) `scripts/datenhaltung/suche.test.ts`
+  Hook-Timeout nur unter Voll-Parallellast (isoliert 43.1–54.7 s bei 60 s Budget, ~10 % Reserve).
+  Drei unabhängige Prüf-Agenten verloren je einen Diagnose-Zyklus an dieselben zwei Flakes.
+- **Zu bauen (Fünf-Schritte: erst vereinfachen, dann automatisieren):** lokale `schwer`-Budgets
+  an die gemessene Streuung binden ODER den BS-640.100-axe-Lauf teilen; `suche.test.ts`-Hook
+  entlasten oder Budget begründet anheben. KEINE CI-Änderung (CI ist grün und gedämpft).
+- **Fertig, wenn:** fünf parallele Voll-Läufe lokal 0 Timeout-Flakes zeigen und die Budgets
+  eine dokumentierte Streuungs-Begründung tragen (Messwerte im Kommentar).
+- **Dateien:** `playwright.config.ts` / betroffene Spec, `scripts/datenhaltung/suche.test.ts`.
