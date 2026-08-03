@@ -27,7 +27,7 @@ import { bestimmeStrafZustaendigkeit } from '../src/lib/strafZustaendigkeit';
 
 import { testamentZusammenstellen, TESTAMENT_DEFAULTS } from '../src/lib/vorlagen/testament';
 import { pvZusammenstellen, PV_DEFAULTS } from '../src/lib/vorlagen/patientenverfuegung';
-import { vaZusammenstellen, VA_DEFAULTS } from '../src/lib/vorlagen/vorsorgeauftrag';
+import { vaZusammenstellen, pruefeVaGates, VA_DEFAULTS } from '../src/lib/vorlagen/vorsorgeauftrag';
 import { sgZusammenstellen, SG_DEFAULTS, SG_PERSON_NATUERLICH } from '../src/lib/vorlagen/schlichtungsgesuchBs';
 import { koZusammenstellen, KO_DEFAULTS } from '../src/lib/vorlagen/klageOrdentlich';
 import { avZusammenstellen, AV_DEFAULTS, pruefeAvGates } from '../src/lib/vorlagen/arbeitsvertrag';
@@ -230,6 +230,33 @@ f('vorl:testament', () => testamentZusammenstellen({
 f('vorl:pv', () => pvZusammenstellen({ ...PV_DEFAULTS, vorname: 'A', name: 'B', geburtsdatum: '1960-01-01', wohnort: 'Basel', ziel: 'palliativ', situationen: ['terminal'], organspende: 'ja' }));
 f('vorl:va-eigen', () => vaZusammenstellen({ ...VA_DEFAULTS, volljaehrig: true, urteilsfaehigBestaetigt: true, keineUmfassendeBeistandschaft: true, vorname: 'A', nachname: 'B', geburtsdatum: '1960-01-01', heimatort: 'Basel', adresse: 'X 1', beauftragte: [{ name: 'C', angaben: 'geb. 1990', typ: 'natuerlich', bereiche: ['personensorge'] }], datum: '2026-06-15' }));
 f('vorl:va-notar', () => vaZusammenstellen({ ...VA_DEFAULTS, formMode: 'oeffentlich_beurkundet', volljaehrig: true, urteilsfaehigBestaetigt: true, keineUmfassendeBeistandschaft: true, vorname: 'A', nachname: 'B', geburtsdatum: '1960-01-01', heimatort: 'Basel', adresse: 'X 1', beauftragte: [{ name: 'C', angaben: 'geb. 1990', typ: 'natuerlich', bereiche: ['vermoegenssorge'] }], datum: '2026-06-15' }));
+// VA-Basis für Varianten-Fälle (W2·8 VA-Ausbau: Verhalten VOR dem Umbau festhalten, §6)
+const vaBasis = {
+  ...VA_DEFAULTS, volljaehrig: true, urteilsfaehigBestaetigt: true, keineUmfassendeBeistandschaft: true,
+  vorname: 'A', nachname: 'B', geburtsdatum: '1960-01-01', heimatort: 'Basel', adresse: 'X 1',
+  beauftragte: [{ name: 'C', angaben: 'geb. 1990', typ: 'natuerlich' as const, bereiche: ['personensorge', 'vermoegenssorge', 'rechtsverkehr'] as ('personensorge' | 'vermoegenssorge' | 'rechtsverkehr')[] }],
+  module: { personensorge: ['wohnsituation', 'medizin'], vermoegenssorge: ['verwaltung', 'liegenschaften'], rechtsverkehr: ['behoerden'] },
+  datum: '2026-06-15',
+};
+f('vorl:va-voll', () => vaZusammenstellen({
+  ...vaBasis,
+  beauftragte: [...vaBasis.beauftragte, { name: 'Treuhand AG', angaben: 'Basel', typ: 'juristisch' as const, bereiche: ['vermoegenssorge'] as ('personensorge' | 'vermoegenssorge' | 'rechtsverkehr')[] }],
+  ersatzpersonen: [{ name: 'D', angaben: 'geb. 1992', typ: 'natuerlich' as const }, { name: 'E', angaben: '', typ: 'natuerlich' as const }],
+  schenkungenErlaubt: true, besondereGeschaefte: true, weisungen: 'Wohnung möglichst lange behalten.',
+  entschaedigung: 'pauschale' as const, entschaedigungBetrag: 5000,
+  pvVorhanden: true, pvHinterlegung: 'Hausarztpraxis Dr. X', ort: 'Basel',
+}));
+f('vorl:va-entsch-aufwand', () => vaZusammenstellen({ ...vaBasis, entschaedigung: 'nach_aufwand' as const, entschaedigungBetrag: 120 }));
+f('vorl:va-ohne-ersetzt', () => vaZusammenstellen({ ...vaBasis, ersetztFruehere: false }));
+f('vorl:va-gates-basis', () => pruefeVaGates(vaBasis));
+f('vorl:va-gates-jp-personensorge', () => pruefeVaGates({
+  ...vaBasis,
+  beauftragte: [{ name: 'Treuhand AG', angaben: 'Basel', typ: 'juristisch' as const, bereiche: ['personensorge'] as ('personensorge' | 'vermoegenssorge' | 'rechtsverkehr')[] }],
+  module: { personensorge: ['wohnsituation'], vermoegenssorge: [], rechtsverkehr: [] },
+}));
+// W2·8/B5: Golden-Lücke aus B3/B4 geschlossen — die Datums-Warnung der
+// eigenhändigen Form (Art. 361 Abs. 2 ZGB) war in keinem Golden-Fall erfasst.
+f('vorl:va-gates-ohne-datum', () => pruefeVaGates({ ...vaBasis, datum: '' }));
 f('vorl:sg', () => sgZusammenstellen({
   ...SG_DEFAULTS, streitgegenstandTyp: 'geldforderung', baselForumBestaetigt: true,
   klaeger: [{ ...SG_PERSON_NATUERLICH, vorname: 'A', name: 'B', strasse: 'S 1', plz: '4051', ort: 'Basel' }],
