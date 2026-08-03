@@ -246,8 +246,11 @@ test('Rechtsprechung — Entscheid-Reader', async ({ page }, testInfo) => {
   await axePruefen(page, testInfo, 'rechtsprechung-leser')
 })
 
+// IA-6 Stufe 2 (3.8.2026): Die International-Übersicht ist die Säule
+// ?ebene=international; /international leitet nur noch dorthin um. Geprüft wird
+// darum direkt die Säule (dieselbe Fläche, ohne Redirect-Zwischenschritt).
 test('International — Übersicht', async ({ page }, testInfo) => {
-  await oeffnen(page, '/international')
+  await oeffnen(page, '/gesetze?ebene=international')
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
   await axePruefen(page, testInfo, 'international')
 })
@@ -283,7 +286,7 @@ const HEADING_ROUTEN: Array<[string, string]> = [
   ['/gesetze/bund/GEBV_HREG', 'gesetze-leser-bund'],
   ['/rechtsprechung', 'rechtsprechung-uebersicht'],
   ['/rechtsprechung/bger_1B_278_2022', 'entscheid-leser'],
-  ['/international', 'international'],
+  ['/gesetze?ebene=international', 'international'], // IA-6 Stufe 2: Säule statt Alias
   ['/materialien', 'materialien'],
 ]
 for (const [url, name] of HEADING_ROUTEN) {
