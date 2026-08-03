@@ -74,7 +74,7 @@ Schema `eheschutzgesuch` · Version 1.0.0 (Bauspez. familienrecht-klagen-vorlage
 > gegen
 >
 > {{gesuchsgegnerRubrum}}
-> (gesuchsgegnerische Partei)
+> (gesuchsgegnerische Partei){{kinderRubrumZeile}}
 >
 > betreffend Eheschutz
 
