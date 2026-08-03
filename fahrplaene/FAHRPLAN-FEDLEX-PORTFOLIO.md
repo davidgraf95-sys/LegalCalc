@@ -1046,3 +1046,25 @@ allein dieser §.*
 - **Nicht hier:** re-pinnen, regenerieren oder Anker verifizieren — das ist Risikopfad und
   liegt in `QS-CURRENCY-KANON` (§17). Dieser Schritt ändert **keinen Pin**.
 - **Dateien:** `scripts/fedlex-cache.sh`, `src/tests/`.
+
+### §19 `QS-KORPUS-SCOPE` — scope/decl-Sektionen ohne annex-Container ingestieren
+
+- **Anlass (Gegenprüfung zu PR #425 / `W2·5d-ANNEX`, Nebenbefund N2, 3.8.2026):** 12
+  Staatsverträge (cedaw, cisg, eaue, hbewue, huvue, krk, montreal, pvue, uno_antifolter,
+  uno_brk, uno_pakt_i, uno_pakt_ii) tragen amtlich zusammen **23** `scope_`/`decl_`-Sektionen
+  (Geltungsbereich / CH-Erklärungen und Vorbehalte) **ausserhalb** eines `div#annex`-Containers.
+  `alleAnhangAnker` beginnt am Container — diese Inhalte fehlen darum **vollständig** in
+  Snapshot und Sidecar. **Vorbestand** (vor und nach #425 identisch), an CISG/KRK/UNO_PAKT_II/
+  CEDAW belegt. Zum Vergleich: bei den 14 Verträgen MIT Container (LUGUE-Klasse) sind dieselben
+  Sektionstypen erfasst — die Lücke ist ein Container-Artefakt, kein Inhaltsentscheid.
+- **Zu bauen:** Extraktor-Erweiterung, die `scope_*`/`decl_*`-Geschwister auch ohne
+  `div#annex`-Container erfasst (eigener `div#scope`-Pfad); Snapshot + Sidecar der 12 Erlasse
+  regenerieren; §7-Verifikation je Erlass (Identitätstreffer gegen die ELI-Fassung).
+- **Mitnahme (Nebenbefund N1, gleiche Datei):** `ANNEX_CONTAINER`-Regex in
+  `extrahiere-fedlex.ts` — Literal-Capture statt case-insensitivem Capture härten
+  (`getElementById` ist case-sensitiv; Korpus heute 0 Varianten, reine Robustheit).
+- **Risikopfad** (Extraktion) ⇒ adversariale Gegenprüfung Pflicht; golden-Diff ist hier
+  ERWARTET (neue amtliche Substanz) und wird als beabsichtigt abgenommen, Drop/Leak-Prüfung
+  über den textuellen Snapshot-Diff.
+- **Dateien:** `scripts/normtext/extrahiere-fedlex.ts`, `scripts/normtext/struktur-extrahiere.ts`,
+  `public/normtext/bund` (nur via Generator-Lauf).
