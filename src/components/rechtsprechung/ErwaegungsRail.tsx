@@ -187,7 +187,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
         {/* Angewandte Normen — Sprung an die Stelle IM Entscheid (siehe Kopf). */}
         {normen.length > 0 && (
           <div>
-            <p className="lc-overline text-ink-500" title="Im Entscheid wörtlich genannte Normen — der Chip springt an die Erwägung, nicht in die Gesetzessammlung (die steht im Fuss).">
+            <p className="lc-overline" title="Im Entscheid wörtlich genannte Normen — der Chip springt an die Erwägung, nicht in die Gesetzessammlung (die steht im Fuss).">
               Angewandte Normen
             </p>
             <div data-erw-normen className="mt-1 flex flex-wrap gap-1">

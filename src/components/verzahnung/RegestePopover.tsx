@@ -160,7 +160,7 @@ export function RegestePopover({ ankerRect, hostRef, zitierung, kurztext, ziel, 
       }}
       className="lc-card p-3 text-left"
     >
-      <p className="lc-overline text-ink-500" title="Amtliche Regeste bzw. amtlicher Betreff der Quelle — gekürzt übernommen, nie umformuliert. Massgeblich ist der Entscheid selbst.">
+      <p className="lc-overline" title="Amtliche Regeste bzw. amtlicher Betreff der Quelle — gekürzt übernommen, nie umformuliert. Massgeblich ist der Entscheid selbst.">
         Kurztext
         {statusLabel && <span className="ml-1 font-normal normal-case text-ink-500">· {statusLabel}</span>}
       </p>
