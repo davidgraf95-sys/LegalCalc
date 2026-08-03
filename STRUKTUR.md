@@ -28,6 +28,27 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 3.8.2026 (Abend) — Recherche externe Quellen, als Befundliste in den Plan gehoben
+**Eine Doku-Landung auf `main` (`233eb8923`). Kein Bau, keine Bewertung.**
+
+- **Auftrag David, dreistufig:** zwei Repos bewerten (`benjamin-arfa/swiss-law`,
+  `rnckp/awesome-open-legal-switzerland`) → «suche weiter … Liste möglicher Funktionen» →
+  Einschränkung «es soll hauptsächlich Bestehendes unterstützen» → «baue es einfach als findings
+  ein, andere session soll es dann nochmals neu evaluieren».
+- **Ergebnis:** [`bibliothek/recherche/externe-quellen-repos-2026-08-03.md`](bibliothek/recherche/externe-quellen-repos-2026-08-03.md)
+  (~60 Abfragen, 7 Endpunkte live geprüft, HTTP-Code je Zeile) + **ein** Roadmap-Schritt
+  `QS-EXTQUELLEN` im Querschnitt-Band. Vier Befunde stützen Bestehendes (Feiertags-Zweitquelle ·
+  Normtext-Diff-Orakel · BFS-Gemeindeverzeichnis · kantonale Amtskreise), vier sind erweiternd
+  und geparkt (SHAB-API · QR-Rechnung · eSchKG 2.2.01 · PDF/A ab BEKJ 1.7.2027), sechs
+  Negativbefunde nach S5.
+- **Bewusst NICHT getan:** die Befunde an bestehende Schritte angedockt oder in Bau-Schritte
+  zerlegt — das ist Gegenstand von `QS-EXTQUELLEN` selbst (Anordnung David). Fünf offene Fragen
+  im Dossier §5, eine davon an David: kommerzieller Betrieb? Davon hängt ab, ob `droid-f/fedlex`
+  unter CC BY-NC-SA überhaupt berührt werden darf.
+- **Offener Mangel, ehrlich:** `ROADMAP.md` liegt bereits über dem QS-TOK-Budget (100 KB); dieser
+  Eintrag hat sie um rund 2 KB verlängert. Bewusst auf zwei Zeilen begrenzt, die Substanz liegt
+  im Dossier — der Rückbau bleibt Sache von `QS-TOK`.
+
 ## Session 3.8.2026 (Tag) — Aufräum-Tag: CI-Härtung, Totcode, Roadmap-Verschlankung
 **Vier Landungen auf `main`, ein Doku-Finale, ein PR im Anflug. Kein Feature-Bau.**
 

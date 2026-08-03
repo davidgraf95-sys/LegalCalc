@@ -449,7 +449,12 @@ E3/E4 seit 3.7. lokal fertig, einziger Blocker VPS-Bestellung als blosse Memory-
   Datum und **Alter in Tagen** — ein Wächter, der seit Wochen nicht lief, ist so sichtbar wie
   einer, der rot ist. **(b) Verwaiste Worktrees:** für jeden Eintrag aus `git worktree list`
   den Diff des zugehörigen Branches gegen `origin/main`; ist er **leer**, wird der Worktree als
-  «gelandet, nicht abgeräumt» gemeldet.
+  «gelandet, nicht abgeräumt» gemeldet. **Erweitert 3.8.2026 (Bau-Evaluation):** dieselbe Sonde
+  gleicht auch Branches **ohne** Worktree (lokal wie `origin/*`) gegen die offenen PRs ab
+  (`gh pr list`) und meldet Worktrees ausserhalb des Repo-Verzeichnisses (Scratchpad-Pfade
+  beendeter Sessions). Ist-Befund der Evaluation: 9 Worktrees, 6 Feature-Branches — die manuelle
+  Rest-Inventur (Aufräum-Disziplin 27.7.2026) skaliert nicht über parallele Sessions; dieser
+  Befehl macht sie mechanisch, dieselbe Bewegung wie beim Plansystem (Regel → Werkzeug).
 - **Fertig, wenn:** der Befehl beide Abschnitte liefert, ein künstlich angelegter leerer
   Worktree **einmal rot** erscheint (§6.7 — die Sonde muss scheitern können) und die
   Zustandsliste gegen `gh run list` stichprobenweise stimmt.
@@ -479,3 +484,27 @@ E3/E4 seit 3.7. lokal fertig, einziger Blocker VPS-Bestellung als blosse Memory-
   und je Major-Sprung steht ein Ja/Nein mit Begründung.
 - **Abgrenzung:** der Geparkt-Entscheid «Betriebs-Instrumente später» betrifft nur die
   **Stopper**-Variante; die Meldungs-Variante ist genau dieser Schritt.
+
+### §3.4 `QS-BASIS-DOKU-CI` — Doku-Kurzpfad auch für main-Pushes (David-Entscheid)
+
+*Angelegt 3.8.2026 (Bau-Evaluation). Blocker-Slug: `david-entscheid-doku-kurzpfad-main`.*
+
+- **Anlass:** fünf `docs(plan)`-Pushes auf `main` liefen am 3.8.2026 je ~15 Minuten Voll-CI
+  (u. a. Läufe 20:29 / 19:55 / 19:36). Der PR-Kurzpfad (`art=doku`, ci.yml Diff-Klassierung)
+  kürzt reine `.md`-Diffs bereits auf Minuten ab — greift aber bewusst nur bei `pull_request`.
+- **Der Entscheid (darum blockiert):** ci.yml begründet ausdrücklich, dass `push` und
+  `merge_group` nie klassiert werden — «ein Deploy-Stand wird nie nach Dateiendungen
+  abgekürzt». Diesen Grundsatz für den Fall «reiner `.md`-Diff auf `main`» zu lockern, ist
+  ein Sicherheits-Trade (weniger Prüfung auf dem Deploy-Stand gegen täglich ~75 gesparte
+  CI-Minuten bei aktueller Plan-Commit-Frequenz) und liegt bei David.
+- **Zu bauen (nach Freigabe):** die bestehende Klassierung auf `push`-Events ausweiten. Bei
+  push liefert `git diff --name-only` des Push-Bereichs die Dateiliste (der API/`changed_files`-
+  Abgleich des PR-Wegs entfällt); im Zweifel — force-push, leerer Bereich, Sonderzeichen —
+  immer Volllauf. **Keine zweite Workflow-Datei** (die `ci-doku-noop.yml`-Falle ist im
+  ci.yml-Kopf dokumentiert). Prüfungen, die `.md`-Inhalte wirklich lesen (`check:plan`,
+  ggf. `check:bibliothek`), bleiben im Kurzpfad **echt** — das ist Teil des Baus, nicht
+  Verhandlungsmasse.
+- **Fertig, wenn:** ein reiner `.md`-Push auf einem Test-Branch nachweislich im Kurzpfad
+  läuft, ein gemischter Push den Volllauf **einmal** gezeigt behält (§6.7), und der
+  ci.yml-Kopf den gelockerten Grundsatz samt David-Entscheid-Datum dokumentiert.
+- **Risiko-Klasse:** reine CI-/Prüflogik ⇒ `Gegenpruefung: n/a`.
