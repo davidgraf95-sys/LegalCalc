@@ -82,8 +82,16 @@ describe('erhebe()', () => {
       { eli: 'cc/1/1', date: '2026-01-01' },                              // AAA lebt
     ]);
     const r = await erhebe(erl, '2026-07-18', f);
+    // #287-Nachzug: cc/2009/423 IST in aufhebungen.ts deklariert (Datum identisch,
+    // bereits wirksam) ⇒ anerkannt + Nachfolger aus der SSoT. Die Erwartung wurde
+    // mit der deklarierten Verhaltensänderung mitgeführt (§6.3: kein Refactoring,
+    // sondern eine fachliche Änderung in eigenem Schritt).
     expect(r.aufhebungen).toEqual([
-      { key: 'BMV', sr: '412.103.1', kuerzel: 'BMV', gepinnt: '2016-08-23', aufgehobenSeit: '2026-03-01', kuenftig: false },
+      {
+        key: 'BMV', sr: '412.103.1', kuerzel: 'BMV', gepinnt: '2016-08-23',
+        aufgehobenSeit: '2026-03-01', kuenftig: false, anerkannt: true,
+        nachfolger: { sr: '412.103.1', eli: 'cc/2025/408' },
+      },
     ]);
     // §8: kein geprüft-Chip, nicht in Frische-Wiedervorlage, nicht als «überholt».
     expect(r.currency.BMV).toBeUndefined();
@@ -95,11 +103,79 @@ describe('erhebe()', () => {
     // AUTO-Block: Aufhebungs-Posten sichtbar; erfolgte Aufhebung landet in
     // verfall-parse NICHT als «verfallen» (letzte Spalte ohne Datum → manuell).
     const block = baueAutoBlock(r.wiedervorlage, '2026-07-18', r.aufhebungen);
-    expect(block).toContain('Aufgehoben: BMV (SR 412.103.1)');
+    expect(block).toContain('Aufgehoben (anerkannt): BMV (SR 412.103.1)');
     expect(block).toContain('aufgehoben seit 1.3.2026');
+    // §5: nachgeführt ⇒ KEINE offene Pflicht behaupten (check:fedlex-versionen
+    // führt denselben Erlass zeitgleich als «OK (aufgehoben)»).
+    expect(block).toContain('Nachgeführt: als historische Fassung geführt (§8)');
+    expect(block).toContain('Nachfolger SR 412.103.1');
+    expect(block).not.toContain('Aufhebung erfolgt — Massnahme nötig');
     const { termine, manuell } = sammleTermine(block);
     expect(termine.some((t) => t.label.includes('BMV'))).toBe(false); // kein Termin
     expect(manuell.some((m) => m.includes('BMV'))).toBe(true);        // manueller Eintrag
+  });
+
+  it('G-AUFH/#287: UNDEKLARIERTER Repeal bleibt roh und laut («Massnahme nötig»)', async () => {
+    // Der Sinn des SSoT-Filters ist die Unterscheidung, nicht das Stummschalten:
+    // ein Erlass, der amtlich aufgehoben ist, aber NICHT in aufhebungen.ts steht,
+    // muss unverändert als offene Massnahme erscheinen. Ohne diesen Fall könnte
+    // der Filter alle Aufhebungen stillschweigend als erledigt zeigen (§6.7).
+    const erl: ErlassBasis[] = [
+      erlass({ key: 'XXX', sr: '999.9', kuerzel: 'XXX', quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/9/9/de', fassungsToken: '20200101' }),
+    ];
+    const f = fakeFetch([{ eli: 'cc/9/9', date: '2020-01-01', noLonger: '2026-01-01' }]);
+    const r = await erhebe(erl, '2026-07-18', f);
+    expect(r.aufhebungen[0]).toMatchObject({ key: 'XXX', kuenftig: false, anerkannt: false });
+    expect(r.aufhebungen[0].nachfolger).toBeUndefined();
+    const block = baueAutoBlock(r.wiedervorlage, '2026-07-18', r.aufhebungen);
+    expect(block).toContain('Aufgehoben: XXX (SR 999.9)');
+    expect(block).toContain('Aufhebung erfolgt — Massnahme nötig');
+    expect(block).not.toContain('Aufgehoben (anerkannt): XXX');
+  });
+
+  // ─── Anerkennungs-Guards einzeln gebunden (Gegenprüfungs-Befund #422) ───────
+  // Die Bedingung in erhebe() lautet: deklariert UND bereits wirksam UND
+  // datumsgleich. Der Undeklariert-Test oben bindet nur den ERSTEN Guard —
+  // Mutationen, die `!kuenftig` bzw. die Datums-Identität entfernen, blieben
+  // grün. Die beiden folgenden Fälle binden die zwei übrigen Guards; sie
+  // spiegeln die Tor-Seite (src/tests/fedlex-versionen-aufhebung.test.ts), damit
+  // beide Seiten dieselbe Anerkennungs-Semantik beweisen (§5).
+
+  it('R4/#422: deklariert, aber Aufhebung noch KÜNFTIG ⇒ nicht anerkannt (bindet `!kuenftig`)', async () => {
+    // Identität wie die echte Deklaration (cc/2009/423, seit 2026-03-01), aber
+    // Laufdatum VOR dem Aufhebungsdatum: der Erlass gilt noch. Ihn hier schon als
+    // «nachgeführt/erledigt» zu zeigen, hiesse einen geltenden Erlass als
+    // historisch auszugeben (§8) — im Tor ist genau das ROT.
+    const erl: ErlassBasis[] = [
+      erlass({ key: 'BMV', sr: '412.103.1', kuerzel: 'BMV', quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/2009/423/de', fassungsToken: '20160823' }),
+    ];
+    const f = fakeFetch([{ eli: 'cc/2009/423', date: '2016-08-23', noLonger: '2026-03-01' }]);
+    const r = await erhebe(erl, '2026-02-01', f); // Laufdatum VOR der Aufhebung
+    expect(r.aufhebungen[0]).toMatchObject({ key: 'BMV', kuenftig: true, anerkannt: false });
+    expect(r.aufhebungen[0].nachfolger).toBeUndefined();
+    expect(r.currency.BMV).toBeUndefined(); // §8: kein geprüft-Chip
+    const block = baueAutoBlock(r.wiedervorlage, '2026-02-01', r.aufhebungen);
+    expect(block).toContain('Aufhebung angekündigt: BMV (SR 412.103.1)');
+    expect(block).not.toContain('Aufgehoben (anerkannt): BMV');
+  });
+
+  it('R5/#422: deklariert, aber Fedlex-Datum WEICHT AB ⇒ nicht anerkannt (bindet Datums-Identität)', async () => {
+    // Deklaration sagt 2026-03-01, Fedlex meldet 2026-04-01. Dann ist die
+    // Deklaration nachzuführen — im Tor ROT («nachführen!»). Hier darf die Zeile
+    // deshalb NICHT als erledigt erscheinen, sonst deckte das Register einen
+    // Deklarations-Drift zu, den das Tor gleichzeitig anschreit (§5).
+    const erl: ErlassBasis[] = [
+      erlass({ key: 'BMV', sr: '412.103.1', kuerzel: 'BMV', quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/2009/423/de', fassungsToken: '20160823' }),
+    ];
+    const f = fakeFetch([{ eli: 'cc/2009/423', date: '2016-08-23', noLonger: '2026-04-01' }]);
+    const r = await erhebe(erl, '2026-07-18', f);
+    expect(r.aufhebungen[0]).toMatchObject({ key: 'BMV', kuenftig: false, anerkannt: false });
+    expect(r.aufhebungen[0].nachfolger).toBeUndefined();
+    expect(r.currency.BMV).toBeUndefined(); // §8: kein geprüft-Chip
+    const block = baueAutoBlock(r.wiedervorlage, '2026-07-18', r.aufhebungen);
+    expect(block).toContain('Aufgehoben: BMV (SR 412.103.1)');
+    expect(block).toContain('Aufhebung erfolgt — Massnahme nötig');
+    expect(block).not.toContain('Aufgehoben (anerkannt): BMV');
   });
 
   it('G-AUFH: künftig angekündigte Aufhebung trägt terminiertes Datum (Vorwarnung)', async () => {
