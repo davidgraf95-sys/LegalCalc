@@ -306,27 +306,6 @@ EINTRAEGE=(
   "fmg|cc/1997/2187_2187_2187|20260601|1|art_1|784.10"
   "mg|cc/1995/4093_4093_4093|20260601|1|art_1|510.10"
   "zstv|cc/2004/362|20250601|1|art_1|211.112.2"
-  # ZStGV (V über die Gebühren im Zivilstandswesen, SR 172.042.110): gepinnt
-  # 3.8.2026 (W2·8/V9.4, Nebenfund L4 der Gegenprüfung zu PR #411). Die
-  # Vorsorgeauftrag-Seite trägt den amtlichen Wert CHF 75 aus Anhang 1 Ziff. 23
-  # — bis hierhin OHNE Pin und damit ohne die von §7 (Zitat-Ausnahme, Merkmal d)
-  # verlangte automatische Drift-Erkennung; nur der Live-Link stand. Der Pin
-  # hängt die ZStGV an beide Tore: check:caches (Anker + SR-Identität) und
-  # check:fedlex-versionen (SPARQL-Currency — beide lesen die Pin-Liste aus
-  # dieser Datei, §5).
-  # Empirisch 3.8.2026 (§7): SPARQL dateApplicability liefert 20 Konsolidierungen,
-  # GELTEND ist einzig 20241111 (kein dateEndApplicability, keine künftige Fassung,
-  # kein dateNoLongerInForce). html-N = 2 KANONISCH via isExemplifiedBy
-  # (scripts/fedlex-manifest.ts) — nicht die 1–5-Fallback-Heuristik. Filestore-
-  # Sonde: 80 693 B, srnummer 172.042.110, 18 art_- + 4 annex_-Anker, kein
-  # Casemates-Marker. Anhang 1 Ziff. 23 «Vorsorgeauftrag (Art. 23a ZStV)» trägt
-  # dreimal 75 (Eintragung · Änderung · Löschung) — deckt sich mit der UI.
-  # Pflicht-Anker = genau das von der VA-Seite Zitierte: art_1 (Abs. 2, weitere
-  # Gebühren unzulässig), art_4 (anwendbare Gebührensätze → Anhang 1), annex_1.
-  # ACHTUNG: Eine Teilrevision ist in Vernehmlassung bis 15.10.2026
-  # (VERN-2026-32) — sie erzeugt eine neue Konsolidierung, die
-  # check:fedlex-versionen dann als ÜBERHOLT meldet. Das ist erwünscht.
-  "zstgv|cc/1999/490|20241111|2|art_1,art_4,annex_1|172.042.110"
   "thg|cc/1996/1725_1725_1725|20230901|3|art_1|946.51"
   "bgbm|cc/1996/1738_1738_1738|20250101|4|art_1|943.02"
   # ── Punkt 12 Batch 3 (25.6.2026): kuratierte zentrale Bundes-VERORDNUNGEN ──
