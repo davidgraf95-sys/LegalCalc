@@ -240,6 +240,21 @@
     /* Motion – mechanisch-präzise, kein Overshoot */
     --dur-fast:120ms; --dur-base:160ms; --dur-slow:220ms; --dur-stage:420ms;
     --ease:cubic-bezier(.2,.6,.2,1);
+    /* Trefferfläche — EIN Token für die Mindest-Hitbox jedes Bedienelements
+       (W2·10-UI-NAV-R4 / R6, DESIGN-REGLEMENT F9). 24 px ist KEINE Hausnummer,
+       sondern der normative Wert aus WCAG 2.2, Erfolgskriterium 2.5.8 «Target
+       Size (Minimum)», Konformitätsstufe AA (w3.org/TR/WCAG22/#target-size-minimum,
+       W3C Recommendation, Stand 5.10.2023). Der Wert steht EINMAL hier; jede
+       Komponente greift ihn als `var(--tap-ziel)`, nie die Zahl (§5/D2). Das
+       Komfort-Ziel für allein stehende Chrome-Griffe bleibt das bestehende
+       `min-h-11`-Muster (44 px, WCAG 2.5.5 AAA) — dort ist die 44 die ANATOMIE
+       des Knopfes (`.lc-btn` height), nicht eine Untergrenze, darum bewusst
+       kein zweites Token (§13/D2: eine Zahl, eine Bedeutung).
+       WCAG-Ausnahmen von 2.5.8, die die Regel NICHT verletzen und die das Tor
+       darum nicht misst: Inline-Links im Fliesstext («inline»), Ziele, deren
+       Grösse der Browser/UA bestimmt, und Bedienelemente, für die dieselbe
+       Funktion daneben gross genug erreichbar ist («equivalent»). */
+    --tap-ziel:24px;
     /* Typografie */
     --tracking-overline:.12em;
     /* Off-Skala-Schriftgrössen, die bewusst nicht aus der Typo-Skala stammen,
@@ -679,7 +694,7 @@
     border-left: 2px solid var(--brass-500); /* Messing-Tick (gravierte Skala) */
     font-family: var(--font-mono), ui-monospace, monospace;
     font-size: .75rem; font-weight: 500; padding: 2px 8px;
-    min-height: 24px; /* WCAG 2.2 Target-Size (2.5.8): ≥24px Tap-Ziel (Auftrag David 26.6.2026) */
+    min-height: var(--tap-ziel); /* WCAG 2.2 Target-Size (2.5.8): ≥24px Tap-Ziel (Auftrag David 26.6.2026); seit R4 aus dem EINEN Token statt roher Zahl (F9) */
   }
   /* Farb-Wörterbuch V2·C-1 (§4b-B): Rechtsprechungs-Kante = slate-Tick statt
      brass. Nur die Tick-Farbe wechselt (Anatomie identisch); Hover trägt der Chip
@@ -849,7 +864,7 @@
     @apply inline-flex shrink-0 items-center justify-center gap-1 rounded-md text-ink-600 transition-colors;
     font-family: var(--font-mono), ui-monospace, monospace;
     font-size: .6875rem; font-weight: 500; line-height: 1.2;
-    min-height: 24px; min-width: 24px; padding: 0 4px;
+    min-height: var(--tap-ziel); min-width: var(--tap-ziel); padding: 0 4px;
   }
   .lc-leiste-griff:hover { background: var(--well); color: var(--brass-700); }
   .lc-leiste-griff-fest { background: var(--well); color: var(--ink-700); padding: 0 6px; }

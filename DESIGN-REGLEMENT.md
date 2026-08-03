@@ -222,6 +222,22 @@ Fill — sind ausgenommen). Dark-Mode-Parität ist Teil jeder Farb-Entscheidung.
 **F8 — Motion zurückhaltend.** Mechanisch-präzise, kein Overshoot (Token-
 Kurven/-Dauern); `prefers-reduced-motion` wird respektiert (Base-Reset).
 
+**F9 — Trefferfläche aus dem Token, nie aus einer Zahl.** Jedes Bedienelement
+trägt eine Hitbox von mindestens `var(--tap-ziel)` (24 px, WCAG 2.2 SC 2.5.8
+«Target Size (Minimum)», AA) in **beiden** Achsen; wo dicht nebeneinander
+getappt wird, gilt das Komfort-Ziel des bestehenden `min-h-11`-Musters (44 px,
+SC 2.5.5 AAA). Die Vergrösserung geschieht **ohne Optik-Änderung** (Padding
+oder `::after`-Hitbox, nie eine grössere sichtbare Fläche) — golden-neutral.
+Verboten ist die rohe Zahl: `min-height`/`min-width` von Bedienelementen kommen
+aus dem Token (D2). Ausgenommen sind allein die WCAG-Ausnahmen von 2.5.8
+(Inline-Links im Fliesstext, UA-bestimmte Ziele, gleichwertig grosse
+Zweit-Bedienung). Maschinell erzwungen (E1) durch `src/tests/tap-ziel-token.test.ts`
+(Token-Existenz + Zahlen-Verbot in `src/index.css`) und den Trefferflächen-Block
+in `e2e/a11y.e2e.ts` (gemessene Hitboxen der Leser-Werkzeugleiste und der
+Kopf-Metazeilen, hell **und** dunkel). Der Bestand ist noch nicht flächendeckend
+nachgerüstet — die gemessene Nachrüst-Liste führt `W2·17-UI-BEFUNDE-B10`; sie
+darf nur schrumpfen, nie wachsen.
+
 **F2b — Farbwelt-Sollwerte (Mess-Tor `check:farbwelt`, FAHRPLAN-DESIGN-WAERME
 D-0).** F2 wird maschinell erzwungen: `scripts/check-farbwelt.ts` parst die
 `:root`- und `html.dark`-Token aus `src/index.css` (Werte) gegen die Name→`var()`-
