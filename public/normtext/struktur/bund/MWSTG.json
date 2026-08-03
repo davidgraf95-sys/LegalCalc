@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-27",
+ "erzeugt": "2026-08-03",
  "kopf": {
   "srNummer": "641.20",
   "titel": "Bundesgesetz über die Mehrwertsteuer",
@@ -29,7 +29,8 @@
     "links": [
      {
       "label": "SR <b>101</b>",
-      "url": "https://fedlex.data.admin.ch/eli/cc/1999/404"
+      "url": "https://fedlex.data.admin.ch/eli/cc/1999/404",
+      "rs": "101"
      }
     ],
     "absatz": null,
@@ -113,7 +114,8 @@
      "links": [
       {
        "label": "SR <b>631.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249",
+       "rs": "631.0"
       }
      ],
      "absatz": null,
@@ -861,7 +863,8 @@
      "links": [
       {
        "label": "SR <b>313.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857",
+       "rs": "313.0"
       }
      ],
      "absatz": "3",
@@ -1072,7 +1075,8 @@
      "links": [
       {
        "label": "SR <b>783.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2012/585"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2012/585",
+       "rs": "783.0"
       }
      ],
      "absatz": "2",
@@ -1290,7 +1294,8 @@
      "links": [
       {
        "label": "SR <b>231.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1993/1798_1798_1798"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1993/1798_1798_1798",
+       "rs": "231.1"
       }
      ],
      "absatz": "2",
@@ -1364,7 +1369,8 @@
      "links": [
       {
        "label": "SR <b>951.31</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2006/822",
+       "rs": "951.31"
       }
      ],
      "absatz": "2",
@@ -1383,7 +1389,8 @@
      "links": [
       {
        "label": "SR <b>954.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801",
+       "rs": "954.1"
       }
      ],
      "absatz": "2",
@@ -1419,7 +1426,8 @@
      "links": [
       {
        "label": "SR <b>831.40</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1983/797_797_797"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1983/797_797_797",
+       "rs": "831.40"
       }
      ],
      "absatz": "2",
@@ -1455,7 +1463,8 @@
      "links": [
       {
        "label": "SR <b>935.51</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/795"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/795",
+       "rs": "935.51"
       }
      ],
      "absatz": "2",
@@ -1731,7 +1740,8 @@
      "links": [
       {
        "label": "SR <b>631.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249",
+       "rs": "631.0"
       }
      ],
      "absatz": "2",
@@ -1818,7 +1828,8 @@
      "links": [
       {
        "label": "SR <b>632.10</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1987/1871_1871_1871"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1987/1871_1871_1871",
+       "rs": "632.10"
       }
      ],
      "absatz": "2",
@@ -1989,7 +2000,8 @@
      "links": [
       {
        "label": "SR <b>817.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2017/62"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2017/62",
+       "rs": "817.0"
       }
      ],
      "absatz": "2",
@@ -2325,7 +2337,8 @@
      "links": [
       {
        "label": "SR<b> 642.11</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1991/1184_1184_1184"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1991/1184_1184_1184",
+       "rs": "642.11"
       }
      ],
      "absatz": "2",
@@ -2671,7 +2684,8 @@
      "links": [
       {
        "label": "SR <b>642.11</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1991/1184_1184_1184"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1991/1184_1184_1184",
+       "rs": "642.11"
       }
      ],
      "absatz": "1",
@@ -2707,7 +2721,8 @@
      "links": [
       {
        "label": "SR <b>221.301</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2004/320"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2004/320",
+       "rs": "221.301"
       }
      ],
      "absatz": "1",
@@ -3101,7 +3116,8 @@
      "links": [
       {
        "label": "SR <b>631.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249",
+       "rs": "631.0"
       }
      ],
      "absatz": "1",
@@ -3191,7 +3207,8 @@
      "links": [
       {
        "label": "SR <b>631.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249",
+       "rs": "631.0"
       }
      ],
      "absatz": "1",
@@ -3269,7 +3286,8 @@
      "links": [
       {
        "label": "SR <b>631.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249",
+       "rs": "631.0"
       }
      ],
      "absatz": "1",
@@ -3353,7 +3371,8 @@
      "links": [
       {
        "label": "SR <b>631.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249",
+       "rs": "631.0"
       }
      ],
      "absatz": "1",
@@ -3439,7 +3458,8 @@
      "links": [
       {
        "label": "SR <b>631.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249",
+       "rs": "631.0"
       }
      ],
      "absatz": "1",
@@ -3483,7 +3503,8 @@
      "links": [
       {
        "label": "SR <b>631.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249",
+       "rs": "631.0"
       }
      ],
      "absatz": null,
@@ -3567,7 +3588,8 @@
      "links": [
       {
        "label": "SR <b>631.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249",
+       "rs": "631.0"
       }
      ],
      "absatz": "2",
@@ -3599,7 +3621,8 @@
      "links": [
       {
        "label": "SR <b>631.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249",
+       "rs": "631.0"
       }
      ],
      "absatz": "4",
@@ -3631,7 +3654,8 @@
      "links": [
       {
        "label": "SR <b>631.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249",
+       "rs": "631.0"
       }
      ],
      "absatz": "1",
@@ -3650,7 +3674,8 @@
      "links": [
       {
        "label": "SR <b>172.021</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1969/737_757_755"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1969/737_757_755",
+       "rs": "172.021"
       }
      ],
      "absatz": "2",
@@ -3732,7 +3757,8 @@
      "links": [
       {
        "label": "SR <b>631.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249",
+       "rs": "631.0"
       }
      ],
      "absatz": "1",
@@ -3806,7 +3832,8 @@
      "links": [
       {
        "label": "SR <b>431.03</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2010/705"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2010/705",
+       "rs": "431.03"
       }
      ],
      "absatz": "1",
@@ -3962,7 +3989,8 @@
      "links": [
       {
        "label": "SR <b>220</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377"
+       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377",
+       "rs": "220"
       }
      ],
      "absatz": "2",
@@ -4170,7 +4198,8 @@
      "links": [
       {
        "label": "SR <b>784.40</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/150"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/150",
+       "rs": "784.40"
       }
      ],
      "absatz": "2",
@@ -4210,7 +4239,8 @@
      "links": [
       {
        "label": "SR <b>173.110</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2006/218"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2006/218",
+       "rs": "173.110"
       }
      ],
      "absatz": "4",
@@ -4313,7 +4343,8 @@
      "links": [
       {
        "label": "SR <b>235.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2022/491"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2022/491",
+       "rs": "235.1"
       }
      ],
      "absatz": "3",
@@ -4438,7 +4469,8 @@
      "links": [
       {
        "label": "SR <b>952.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129"
+       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129",
+       "rs": "952.0"
       }
      ],
      "absatz": "6",
@@ -4457,7 +4489,8 @@
      "links": [
       {
        "label": "SR <b>954.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/801",
+       "rs": "954.1"
       }
      ],
      "absatz": "6",
@@ -4476,7 +4509,8 @@
      "links": [
       {
        "label": "SR <b>958.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2015/853"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2015/853",
+       "rs": "958.1"
       }
      ],
      "absatz": "6",
@@ -4611,7 +4645,8 @@
      "links": [
       {
        "label": "SR <b>172.021</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1969/737_757_755"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1969/737_757_755",
+       "rs": "172.021"
       }
      ],
      "absatz": "1",
@@ -4699,7 +4734,8 @@
      "links": [
       {
        "label": "SR <b>172.021</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1969/737_757_755"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1969/737_757_755",
+       "rs": "172.021"
       }
      ],
      "absatz": null,
@@ -4737,7 +4773,8 @@
      "links": [
       {
        "label": "SR <b>281.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/11/529_488_529"
+       "url": "https://fedlex.data.admin.ch/eli/cc/11/529_488_529",
+       "rs": "281.1"
       }
      ],
      "absatz": "6",
@@ -5024,7 +5061,8 @@
      "links": [
       {
        "label": "SR <b>281.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/11/529_488_529"
+       "url": "https://fedlex.data.admin.ch/eli/cc/11/529_488_529",
+       "rs": "281.1"
       }
      ],
      "absatz": "6",
@@ -5125,7 +5163,8 @@
      "links": [
       {
        "label": "SR <b>281.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/11/529_488_529"
+       "url": "https://fedlex.data.admin.ch/eli/cc/11/529_488_529",
+       "rs": "281.1"
       }
      ],
      "absatz": "3",
@@ -5227,7 +5266,8 @@
      "links": [
       {
        "label": "SR <b>311.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/54/757_781_799"
+       "url": "https://fedlex.data.admin.ch/eli/cc/54/757_781_799",
+       "rs": "311.0"
       }
      ],
      "absatz": "1",
@@ -5283,7 +5323,8 @@
      "links": [
       {
        "label": "SR <b>313.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857",
+       "rs": "313.0"
       }
      ],
      "absatz": null,
@@ -5316,7 +5357,8 @@
      "links": [
       {
        "label": "SR <b>313.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857",
+       "rs": "313.0"
       }
      ],
      "absatz": "1",
@@ -5348,7 +5390,8 @@
      "links": [
       {
        "label": "SR <b>313.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857",
+       "rs": "313.0"
       }
      ],
      "absatz": "3",
@@ -5380,7 +5423,8 @@
      "links": [
       {
        "label": "SR<b> 313.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857",
+       "rs": "313.0"
       }
      ],
      "absatz": "1",
@@ -5398,7 +5442,8 @@
      "links": [
       {
        "label": "SR<b> 311.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/54/757_781_799"
+       "url": "https://fedlex.data.admin.ch/eli/cc/54/757_781_799",
+       "rs": "311.0"
       }
      ],
      "absatz": "4",
@@ -5459,7 +5504,8 @@
      "links": [
       {
        "label": "SR <b>313.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1974/1857_1857_1857",
+       "rs": "313.0"
       }
      ],
      "absatz": "1",
@@ -5526,7 +5572,8 @@
      "links": [
       {
        "label": "SR <b>311.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/54/757_781_799"
+       "url": "https://fedlex.data.admin.ch/eli/cc/54/757_781_799",
+       "rs": "311.0"
       }
      ],
      "absatz": "1",
@@ -5563,7 +5610,8 @@
      "links": [
       {
        "label": "SR <b>192.12</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/860"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/860",
+       "rs": "192.12"
       }
      ],
      "absatz": "1",
@@ -6296,7 +6344,8 @@
      "links": [
       {
        "label": "SR <b>631.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/249",
+       "rs": "631.0"
       }
      ],
      "absatz": "2",
@@ -6457,7 +6506,8 @@
      "links": [
       {
        "label": "SR <b>614.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1967/1505_1553_1547"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1967/1505_1553_1547",
+       "rs": "614.0"
       }
      ],
      "absatz": "1",
