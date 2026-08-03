@@ -346,10 +346,14 @@ export function useLeserSprungSpy(opts: {
   // Artikel sind nur Platzhalter).
   // R1 (Auftrag David 30.6.2026): NICHT mehr der mittige Artikel, sondern der
   // ZUOBERST angeschnittene — die Bezugslinie sitzt am Sprung-Landepunkt (5rem unter
-  // dem Container-Oberrand, deckungsgleich mit `.nt-anker`), das Beobachtungs-Band
-  // liegt darum oben (rootMargin oben ~45 % statt -45%/-45%). Die Auswahl-Logik bleibt
+  // dem Container-Oberrand, deckungsgleich mit `.nt-anker`). Die Auswahl-Logik bleibt
   // die reine, getestete Funktion aktiverArtikel — sie wählt generisch den Artikel
   // an der Bezugslinie (§2/§3).
+  // V3/H6 (W2·5d-SPY, 3.8.2026): Das Beobachtungs-Band war früher an die Linie
+  // GEKOPPELT (obere ~45 % der Root-Höhe) und verfehlte sie in zwei belegten
+  // Lagen; heute ist es reiner Vorfilter (ganzer Root) und die Linie entscheidet
+  // allein, ausgewertet pro Scroll-Frame. Herleitung + Messprotokoll unten am
+  // Observer.
   const letzterArtToken = useRef<string | null>(null);
   useEffect(() => {
     // C (Auftrag David 26.6.2026): auch starten, wenn der Erlass KEINE Gliederung
@@ -477,14 +481,41 @@ export function useLeserSprungSpy(opts: {
       }, 200);
     };
     const io = new IntersectionObserver((entries) => {
-      for (const en of entries) sichtbar.set(en.target, en);
+      // V3/H6 (W2·5d-SPY): NICHT-schneidende Einträge aus der Karte ENTFERNEN statt
+      // sie mit `isIntersecting:false` liegen zu lassen. Sonst wuchs `sichtbar` über
+      // die Lesedauer auf alle je gesehenen Artikel (OR: 1686) und jede Auswertung
+      // iterierte sie alle. Fachlich identisch (der Filter unten warf sie ohnehin weg),
+      // aber Voraussetzung dafür, dass `auswerten` pro Scroll-Frame billig bleibt.
+      for (const en of entries) { if (en.isIntersecting) sichtbar.set(en.target, en); else sichtbar.delete(en.target); }
       if (!raf) raf = window.requestAnimationFrame(auswerten);
-      // R1: Beobachtungs-Band im oberen Bereich (obere ~45 % der Container-Höhe).
-      // Grosszügig genug, dass die FIXE Bezugslinie (~5rem) bei jeder Viewport-Höhe
-      // und jeder R3-Schriftskala drin liegt; aktiverArtikel wählt daraus exakt den
-      // Artikel an der Linie. Eine schmale %-Bande verfehlte die fixe Linie bei
-      // grossen Schirmen/Zoom.
-    }, { root: paneRoot(imPane, wurzel), rootMargin: '0px 0px -55% 0px', threshold: 0 });
+      // V3/H6 (W2·5d-SPY, 3.8.2026): Das Band ist nur noch VORFILTER (ganzer Root),
+      // die Bezugslinie allein entscheidet. Vorher `0px 0px -55% 0px` — obere 45 %
+      // der Root-Höhe. Diese Kopplung war der Härtungs-Posten aus der E7/A33-Runde
+      // und ist mit Playwright reproduziert (Protokoll im PR):
+      //  H6-a «Band verfehlt die Linie» — 0,45 · H_root < 5rem + 8 (Viewport 320×200
+      //    ≙ 400 % Browser-Zoom nach WCAG 1.4.10, oder R3-Schriftskala 140 % auf
+      //    kleinem Schirm): der Artikel AN der Linie schnitt das Band nicht mehr,
+      //    `aktiverArtikel` bekam ihn gar nicht zu sehen. Gemessen auf /gesetze/bund/OR
+      //    bei 320×200: 3 von 24 Proben mit falschem bzw. LEEREM Kandidatensatz
+      //    (Kopf blieb auf Art. 40 stehen, während Art. 40a an der Linie lag).
+      //  H6-b «Auslöser sitzt am Band, nicht an der Linie» — der Wechsel wurde erst
+      //    beim VERLASSEN des Bandes an dessen Oberkante (y = 0) gemeldet, also erst
+      //    5rem + 8 px Scrollweg NACH dem Überschreiten der Bezugslinie. Gemessen:
+      //    OR 1440×900 3/30 Proben (bis 30 px verspätet, unter 6× CPU-Drossel
+      //    identisch → layout-getrieben, kein Timing-Artefakt), BGFA 5/24 (bis 65 px),
+      //    OR mit Schriftskala 140 % 2/24 (Verzug wächst mit rem, weil die Linie
+      //    5rem + 8 unter der Band-Oberkante sitzt).
+      // Ganzer Root als Band ⇒ der Artikel an der Linie ist IMMER im Kandidatensatz
+      // (Obermenge des bisherigen), und der Satz bleibt klein (Viewport-Höhe ÷
+      // Artikelhöhe ≈ 2–8). Die Auswahl bleibt die reine Funktion `aktiverArtikel`
+      // (§2/§3) — sie wählt weiter «Artikel an der Bezugslinie, sonst kleinste
+      // Distanz», jetzt aber über einen Satz, der die Linie garantiert überdeckt.
+      // Ein rootMargin, der die Linie SELBST nachbildet (`-88px …`), wäre die
+      // scheinbar direktere Kopplung, aber die falsche: rootMargin ist beim
+      // Observer-Bau eingefroren, die Linie hängt an rem (R3-Schriftskala) und an
+      // der Root-Höhe — genau dieses Einfrieren war der Defekt. Darum bleibt der
+      // Zahlenwert der Linie dort, wo er frisch gemessen wird: in `auswerten`.
+    }, { root: paneRoot(imPane, wurzel), rootMargin: '0px', threshold: 0 });
     // Alle aktuell gerenderten Artikel beobachten — im Pane nur die DIESES Panes
     // (B-2.5: sonst beobachtet der Spy auch das andere Pane → falsches Live-Label).
     // Auf-/Zuklappen (offen) und Suche (sucheDebounced) verändern die DOM-Artikelmenge
@@ -492,8 +523,22 @@ export function useLeserSprungSpy(opts: {
     // Rank 9: an sucheDebounced statt suche gekoppelt — der Observer-Neuaufbau (alle
     // art--Knoten neu beobachten) läuft so nicht bei jedem Tastendruck.
     (paneRoot(imPane, wurzel) ?? document).querySelectorAll('[id^="art-"]').forEach((el) => io.observe(el));
+    // V3/H6 (W2·5d-SPY): zweiter Auslöser — jeder Scroll-Frame. Der Observer meldet
+    // NUR Band-Ein-/Austritte; zwischen zwei solchen Ereignissen überquert die
+    // Bezugslinie ungesehen Artikelgrenzen (H6-b). Mit dieser Zeile wird die
+    // Entscheidung dort neu gefällt, wo sie hingehört: an der frisch gemessenen
+    // Linie, bei jedem Frame. §15: derselbe rAF-Kranz wie der Observer (ein `raf`,
+    // ein `auswerten`) — nie zwei Auswertungen pro Frame; `auswerten` liest ~2–8
+    // Rechtecke und bricht beim unveränderten Token vor jedem State-Update ab
+    // (`token === letzterArtToken.current`), erzeugt also im Regelfall NULL Renders.
+    // Passiv registriert (kein Scroll-Blocker). Ziel ist der Scroll-Container des
+    // Panes bzw. das Fenster — dieselbe Quelle, aus der `oben` gemessen wird.
+    const scrollZiel: HTMLElement | Window = paneRoot(imPane, wurzel) ?? window;
+    const beiScroll = () => { if (!raf) raf = window.requestAnimationFrame(auswerten); };
+    scrollZiel.addEventListener('scroll', beiScroll, { passive: true });
     return () => {
       io.disconnect();
+      scrollZiel.removeEventListener('scroll', beiScroll);
       if (raf) cancelAnimationFrame(raf);
       if (tabArtikelTimer.current != null) window.clearTimeout(tabArtikelTimer.current);
       if (aktArtikelTimer.current != null) window.clearTimeout(aktArtikelTimer.current);

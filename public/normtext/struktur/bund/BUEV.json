@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-08-02",
+ "erzeugt": "2026-08-03",
  "kopf": {
   "srNummer": "141.01",
   "titel": "Verordnung über das Schweizer Bürgerrecht",
@@ -804,7 +804,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Anhänge"
+     "label": "Anhänge",
+     "eId": "annex"
     }
    ],
    "marginalie": []

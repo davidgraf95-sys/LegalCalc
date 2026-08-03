@@ -123,13 +123,24 @@ ConsolidationAbstract) geerntet. Diese Erlasse werden GANZ aufgehoben — je
 Zeile entweder bereits erfolgt («aufgehoben seit») oder erst amtlich
 angekündigt und bis dahin geltend («Aufhebung angekündigt per», §8). Der
 Snapshot bleibt allenfalls als historische Fassung nutzbar, darf aber nie mehr
-als geltend dargestellt werden, sobald das Datum erreicht ist. Massnahme:
-Snapshot ersetzen/entfernen, Nachfolge-Erlass prüfen. Roh gemeldet (ohne
-SSoT-Filter aus `src/lib/normtext/aufhebungen.ts` — folgt mit #287).
+als geltend dargestellt werden, sobald das Datum erreicht ist.
+
+Zwei Klassen, gefiltert über die SSoT `src/lib/normtext/aufhebungen.ts`
+(#287-Nachzug):
+
+- **«Aufgehoben (anerkannt)»** — der Repeal ist deklariert und deckt sich mit
+  dem amtlichen `dateNoLongerInForce`. Der Erlass wird bewusst als historische
+  Fassung geführt (§8), Katalog/Reader zeigen das Aufgehoben-Badge und den
+  Nachfolge-Link. Die Massnahme ist ERLEDIGT — dieselbe Beurteilung wie in
+  `check:fedlex-versionen` («OK (aufgehoben)»), damit nicht zwei Register
+  Gegenteiliges über denselben Erlass sagen (§5).
+- **«Aufgehoben» / «Aufhebung angekündigt»** — noch NICHT deklariert. Massnahme
+  offen: Snapshot ersetzen/entfernen, Nachfolge-Erlass prüfen, danach eine Zeile
+  in `aufhebungen.ts` ergänzen.
 
 | Erlass (Aufhebungs-Posten) | Fundstelle | Aufhebungsdatum | Rhythmus | Nächste Prüfung |
 |---|---|---|---|---|
-| Aufgehoben: BMV (SR 412.103.1) | `scripts/fedlex-cache.sh` (BMV) | aufgehoben seit 1.3.2026 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung erfolgt — Massnahme nötig |
+| Aufgehoben (anerkannt): BMV (SR 412.103.1) | `src/lib/normtext/aufhebungen.ts` (BMV) | aufgehoben seit 1.3.2026 | einmalig — erledigt | Nachgeführt: als historische Fassung geführt (§8) — Nachfolger SR 412.103.1 (`cc/2025/408`) |
 | Aufhebung angekündigt: PatV (SR 232.141) | `scripts/fedlex-cache.sh` (PATV) | Aufhebung angekündigt per 1.1.2027 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung angekündigt ab 1.1.2027 |
 | Aufhebung angekündigt: VGV (SR 814.621) | `scripts/fedlex-cache.sh` (VGVP) | Aufhebung angekündigt per 1.1.2027 | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | Aufhebung angekündigt ab 1.1.2027 |
 

@@ -28,6 +28,38 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 4.8.2026 — Sichtung `musk-algorithm-skill` → §17-Fünf-Schritte-Reihenfolge im Skill `lehren`
+**Eine Doku-Landung auf `main`. Kein Bau.**
+
+- **Auftrag David:** externes Skill-Repo `malkreide/musk-algorithm-skill` (5-Schritte-Algorithmus,
+  Hayal Oezkan, MIT) auf LexMetrik-Tauglichkeit sichten. Befund: als Ganzes kollidiert es mit
+  §1/§4 («Vereinfachen/Löschen» vs. Korrektheit vor Eleganz); tragfähig ist nur der Prozess-Kern.
+- **Entscheid David («bau variante 3»):** KEIN neuer Skill — die zugeschnittene
+  Fünf-Schritte-Reihenfolge (hinterfragen → löschen → vereinfachen → beschleunigen →
+  automatisieren) als §17-Anhang im Skill `lehren`, Geltungsbereich hart auf Prozess/CI/Doku
+  begrenzt, `src/lib/` ausgeschlossen; Trigger in der Skill-Description ergänzt, Zeiger in der
+  CLAUDE.md-Skill-Tabelle nachgezogen. Provenienz (Repo, Lizenz, Datum) steht im Anhang selbst. — Entscheide-Paket David: BMV-SSoT #422 gelandet, L-3-Versuch #423 verworfen
+**Fortsetzung der Aufräum-Session (Orchestrator). Zwei PRs, fünf David-Entscheide, zwei neue Schritte.**
+
+- **David-Entscheide umgesetzt:** B3→B19-Kette freigegeben (seriell, Überspring-Erlaubnis) ·
+  LM-202 entschieden → Schritt `W2·10-UI-NAV-URL` · QS-TOK-Reste pauschal frei · BMV nachführen ·
+  L-3 reaktivieren (s.u., am Live-Blick gescheitert).
+- **#422 gelandet (`373d73f7f`):** BMV-SSoT-Wurzelfix — Verfallsregister-Generator keyt gegen dieselbe
+  Aufhebungs-Deklaration wie das Tor (§5/§17); die Aufhebung selbst war seit #287 nachgeführt, der
+  Auftragstext beruhte auf dem Register-Widerspruch. Gegenprüfung Durchgang 1 **widerlegte** eine
+  Testlücke (Mutations-Matrix: 3/4 Guards ungebunden), Fix `856d87c21` (R4/R5), Durchgang 2 bestanden
+  (Register `f4755e386`). Amtlich doppelt belegt: Nachfolge-Totalrevision `cc/2025/408` gleiche SR,
+  in Kraft 1.3.2026 — **fehlt im Korpus** → neuer Schritt `QS-KORPUS-BMV`.
+- **#423 GESCHLOSSEN, nicht gelandet:** L-3-Reaktivierung war voll gebaut+bewiesen (Tor erst rot,
+  840 Auto-Guides, Golden byte-gleich, 15/15 e2e) — Davids Preview-Blick aufs ZGB bestätigte sein
+  12.7.-Urteil («eine einzige linie und unbrauchbar»). A28 bleibt der Stand; neuer KONZEPT-Schritt
+  `W2·5k-LINIEN-KONZEPT` (Prototypen zur David-Abnahme VOR Vollbau, nie wieder blosse Default-Umkehr).
+  Nebenbefunde des Versuchs verwertet: vorbestehender Erlass-Leser-CLS 0.05–0.22 → in `W2·15-CLS`.
+- **Koordination:** 3 Parallel-Sessions aktiv (W2·5d-Lanes + Bauplan-Review); Flächen abgeglichen,
+  Linien-Fläche nach #423-Schliessung freigemeldet. `strict:true` bewährte sich (beide Landungen
+  per update-branch). VPS-Bestellanleitung an David; Memory konsolidiert (10→8), globale
+  Memory-Grundsätze in `~/.claude/CLAUDE.md` angelegt.
+
 ## Session 3.8.2026 (Abend) — Recherche externe Quellen, als Befundliste in den Plan gehoben
 **Eine Doku-Landung auf `main` (`233eb8923`). Kein Bau, keine Bewertung.**
 
