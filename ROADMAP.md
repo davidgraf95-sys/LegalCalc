@@ -192,6 +192,8 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   komplett 5.7.2026 (P1-a–d, Gegenprüfung bestanden); Etikett-Korrektur 20.7.2026 ⇒ `done`,
   kein Rest unter diesem Etikett.** Laufende Korpus-Pflege läuft als Automatik weiter (Gesundheit
   überwacht `QS-AUTOMATIK`). Wortlaut → `ROADMAP-CHRONIK.md` → QS-CURRENCY (26.7.2026).
+  - [ ] **CURRENCY-KANON · `fza`/`cmr` NICHT-KANONISCH klären und kanonisch nachführen** *(Befund 2.8.2026, **Risikopfad**)* — `check:fedlex-versionen` meldet im Kanonik-Arbiter beide Staatsverträge mit falscher `html-N`-Wurzel (`fza` html-5 statt html-9 · `cmr` html-3 statt html-6); die **Fassung** ist aktuell, die **Wurzel** nicht. **Bestandsdefekt auf `main`** — Nullprobe 2.8.2026 im unveränderten Haupt-Checkout ebenfalls Exit 1, `fedlex-cache.sh`-Zeilen byte-identisch zu `origin/main` (§3 Verteilung statt Einzelwert). Erst Ursache klären, dann re-pinnen + regenerieren + §7-Verifikation der Anker. **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §17. Trailer `Roadmap: QS-CURRENCY-KANON`.
+    <!-- @meta id: QS-CURRENCY-KANON · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-cache.sh, scripts/fedlex-repin-kanonik.ts, public/normtext/bund] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
 - **Geräte-Last / Performance** *(QS-PERF, `[OF]`, neu 30.6.2026 — Leitprinzip 7 + CLAUDE.md §15)*.
   **§14-Intake 20.7. + 24.7.2026 (David):** TBT-Budget `/gesetze/bund/OR` (#28) — Nullprobe +
   Streuung VOR jeder Feature-Zuschreibung, Lighthouse-Median n≥3 · CI-Pfad-Filter für Doku-/Plan-PRs
@@ -535,6 +537,11 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   «Welche Entscheide zitieren diesen?» (Rückwärts-Kanten) + **Leitentscheid-Score**, deterministisch
   aus dem Zitat-Graph abgeleitet (§2 — kein Ranking-Modell, kein Bedeutungs-Urteil); Daten-Derivation
   ⇒ `QS-GP`. **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §10. Trailer `Roadmap: W2·6-ZNETZ`.
+  **Merkposten (LM-042, UI-Befunde B20, Prod-Nachmessung 3.8.2026):** Sammelzitate («ff.») werden
+  nicht kenntlich gemacht — `zitat-extraktion.ts` GLIED_KOPF fängt Sub-Marker/ff. bewusst nicht
+  (fliesst nie in den Norm-Key), das Artefakt trägt kein `ff.`-Flag. Fix liegt in der
+  Zitat-Extraktion, nicht in der Darstellung (§0.3 Risiko-Klasse) — bei diesem Schritt als Auflage
+  mitführen, kein eigener Posten.
 - [x] **6-NKEY · normKeys-Abdeckung generalisieren — Register-Ableitung + FR/IT-Aliase + Sichtbarkeits-Tor** *(§14-Intake 21.7.2026, David · Extraktion/Mapping — Risikopfad, `QS-GP`; Dekret David 27.7.2026)* — **✅ 28.7.2026 GEBAUT** (Worktree `w26-nkey`, ULTRACODE): Hand-Whitelist 26 Einträge → Register-Ableitung + Fedlex-Alias-Ebene (597 amtliche DE/FR/IT-Kürzel); Nennungs-Abdeckung 43 % → **93.6 %**, Snapshots mit `normKeys` 21.9 % → **99.9 %** (5093 Entscheide); Sichtbarkeits-Tor `check:normkeys` (Schwelle 20, 11 deklarierte Ignore-Einträge). Gegenprüfung **bestanden** (Opus, 4 Runden). Status `done`. Wortlaut → `ROADMAP-CHRONIK.md` → W2·6-NKEY (28.7.2026).
   <!-- @meta id: W2·6-NKEY · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/rechtsprechung, src/lib/rechtsprechung] · worktree: ja · 26x: nein -->
   **Offen als Folgearbeit (nicht Teil dieses Schritts):** `register.json` trägt `normKeys` je Entscheid
@@ -546,6 +553,8 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   EINE Interaktions-Grammatik für die Verzahnung (KantenChip · StatusBadge nur-Abweichung · KontextPanel),
   reine UI auf vorhandenen Daten (§3). **Offen: V2 (E3-Serving) · V3 (E6a)** — beide an den Datenstrang
   gekoppelt. **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §11. Trailer `Roadmap: W2·7-VZUI`.
+  - [ ] **VZUI-SACHGEBIET · Sachgebiet-Facette an der Norm↔Entscheid-Kante** *(David-Entscheid 2.8.2026 — UI-Befund LM-041 als Variante (b) «nur Sachgebiet» geöffnet)* — EINE neue Facette `sachgebiet`, **deterministisch aus der amtlichen BGE-Bandnummer I–V** (§2, keine Heuristik); Darstellung als **Filter** im «Rechtsprechung ▾», nicht als zweiter Chip-Zusatz (Dichteregel §1.2 bleibt). Die Zitier-**Rolle** bleibt ausdrücklich zu (nicht deterministisch ableitbar). Extraktion = Risiko-Pfad ⇒ Gegenprüfungspflicht. **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §12 (+ Modell-Nachtrag in §9/B1). Trailer `Roadmap: W2·7-VZUI-SACHGEBIET`.
+    <!-- @meta id: W2·7-VZUI-SACHGEBIET · status: ready · of: ja · blocker: null · dep: [W2·7-BEZUG] · kollision: [src/lib/verzahnung/facetten.ts, src/lib/rechtsprechung/bezuege.ts, scripts/normtext/bezuege-bauen.ts, src/pages/gesetz-leser/bezugAuswahl.ts, src/components/verzahnung/BezugFacettenWahl.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
 - [x] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** — ✅ **done 28.7.2026**,
   <!-- @meta id: W2·7-BEZUG · status: done · of: ja · blocker: null · dep: [W2·6-NKEY] · kollision: [scripts/normtext/entscheide-schreiben.ts, src/lib/rechtsprechung/norm-index.ts, src/lib/verzahnung, src/components/kontext/KontextPanel.tsx, src/pages/gesetz-leser/LeserAnsichtMenu.tsx, public/rechtsprechung] · seq-weich: [W2·7-VZUI(KontextPanel.tsx), W2·5h-GESETZ-UI(LeserAnsichtMenu.tsx)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   B1–B6 + B7 komplett (PRs #401–#406).
@@ -553,6 +562,8 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   - [x] **B7 · Voll-Auflistung + Eidg.-Facette** — ✅ **done 29.7.2026** (PR #406 `5a10f8150`,
     4 GP-Runden; Voll-Auslieferung ohne Deckel, 5er-Portionierung, «Eidg.»-Facette ehrlich).
     <!-- @meta id: W2·7-BEZUG-B7 · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext/bezuege-bauen.ts, public/rechtsprechung/bezuege, src/pages/gesetz-leser, src/components/verzahnung] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
+  - [ ] **BEZUG-LADEN · §15-Versprechen «Grundzustand ohne Zusatz-Fetch» wiederherstellen ODER Doku ehrlich machen** *(Entscheid-Schritt, Befund 2.8.2026)* — `bezugAuswahl.ts:18–23` verspricht «kein zusätzlicher Fetch» im Grundzustand, das JSDoc `bezuegeLaden.ts:86` beschreibt ein Feld `erweitert`, **das es nicht gibt**; tatsächlich lädt der Default beide Shards und rendert immer `BezuegeZeile`, `istErweitert()` steuert nur die Menü-Optik. Zwei Wege: **(1)** Code auf das Versprechen zurückbauen (Verhaltensänderung ⇒ §15-Logikverlust-Bewertung, Skill `perf`, golden-gegated) ODER **(2)** Doku/Kommentare nachführen. Status quo — Zusage ohne Deckung — ist keine Option (§5/§8). **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §13 (Referenz B4/B7). Trailer `Roadmap: W2·7-BEZUG-LADEN`.
+    <!-- @meta id: W2·7-BEZUG-LADEN · status: ready · of: ja · blocker: null · dep: [W2·7-BEZUG] · kollision: [src/pages/gesetz-leser/bezugAuswahl.ts, src/pages/gesetz-leser/bezuegeLaden.ts, src/pages/gesetz-leser/inhalt.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   Detail: `ROADMAP-CHRONIK.md` → W2·7-BEZUG.
 - [x] **6a-MAT · Materialien-Verzahnung Stufe 1** *(DATA+UI, Worktree)* — Verwaltungsverordnungen/Wegleitungen als Kanten am Norm-Artikel (E6a Stufe 1 = nur Verweis-/Register-Ebene, §7 a–d). Komplett 4.7.2026 (M0–M5, PRs #126/#127/#128 + ESTV-KS/MWST + UI-Delta; 4 Quellen SECO/EDÖB/ESTV-KS/ESTV-MWST, Cutoff-Revisions-Invariante, Gegenprüfung bestanden, CLS 0). Kein 26×-Bezug. Spec `fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md`. **Chronik:** `ROADMAP-CHRONIK.md` → W2·6a-MAT.
   <!-- @meta id: W2·6a-MAT · status: done · of: ja · blocker: null · dep: [W2·7] · kollision: [scripts/materialien/**, public/materialien/**, src/lib/materialien/typen.ts, src/lib/materialien/register.ts, src/pages/Materialien.tsx, src/lib/kontext.ts, src/components/kontext/KontextPanel.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
@@ -627,6 +638,8 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
     <!-- @meta id: W2·13-KANTONE-K13 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K12] · kollision: [scripts/normtext/kanton-systematik-run.ts, public/normtext/kanton-systematik.json] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   - [ ] **K-14 · Kantonales Zitat-Vokabular — POC** *(F39, L — **Risikopfad**, `QS-GP`)* — POC über 5 Gerichts-Kantone × 6 Entscheide, nur exakte Sammlungsnummer-Matches, additiver Extraktions-Pass. **Prämisse «Entscheid-`normKeys` sind Bund-only» vor dem Bau gegen `W2·6-NKEY` nachmessen.** §1-A.
     <!-- @meta id: W2·13-KANTONE-K14 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K13] · kollision: [scripts/rechtsprechung, public/rechtsprechung, src/lib/rechtsprechung] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
+  - [ ] **KANTONE-DRIFT · Kantonale Snapshots gegen die Quellen nachführen** *(Befund 2.8.2026, **Risikopfad**, Skill `korpus-werkstatt` + `QS-GP`)* — beim Bundes-Durchgang vom 2.8.2026 (`--nur=bund`) meldete der Drift-Abgleich **~28 kantonale Snapshots mit echter Inhaltsdrift** (u. a. BE 154.21 neue Fassung 1.8.2026, AG 291.150 neu aufgehobene Artikel) — bewusst ausgeklammert und **unverifiziert**: Zahl und Liste werden im Schritt neu erhoben (`check:normtext-netz`), nicht übernommen (§5/§7). Kanton-weise portioniert, je Erlass Quelle+Stand+Live-Link, `verified` nie automatisch. **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §3. Trailer `Roadmap: W2·13-KANTONE-DRIFT`.
+    <!-- @meta id: W2·13-KANTONE-DRIFT · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext/kanton] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
 - [ ] **14-SIGNAL · Watchlist & Änderungs-Signale** *(Ideen-Intake 20.7.2026 · Infra/UI, kein Rechtsinhalt)*:
   <!-- @meta id: W2·14-SIGNAL · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-wiedervorlage-generieren.ts, public/normtext/currency.json, public/rechtsprechung/register.json, src/lib/zuletztVerwendet.ts, src/pages/Startseite.tsx, src/pages/Einstellungen.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
   «Sag mir, wenn sich Norm Y ändert / Gericht X neu entscheidet.» **Baut ausschliesslich auf vorhandenen
@@ -660,10 +673,10 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   15 BEREITS-GEBAUT · 6 SICHER**, davon **20 Batches** (19 Bau-Batches mit 189 Befunden + 1 Prüf-Batch, 15).
   **Detail:** [FAHRPLAN-UI-BEFUNDE.md](fahrplaene/FAHRPLAN-UI-BEFUNDE.md) §1. Trailer `Roadmap: W2·17-UI-BEFUNDE`.
   **Reihenfolge-Freigabe (`@queue`) bleibt Davids Entscheid** — darum bewusst NICHT in der Queue.
-  - [~] **B1 · Chips, Badges und Normzitate (K-05 + K-10)** — 16 Befunde (Blocker 3 · Hoch 3). §2.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B1 · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/components/NormText.tsx, src/components/NormPopover.tsx, src/components/verzahnung, src/components/rechtsprechung, src/pages/gesetz-leser] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
-  - [ ] **B2 · Verlauf und Zustand in der URL (K-20)** — 11 Befunde (Blocker 2 · Hoch 5). §3.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B2 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B1] · kollision: [src/components/layout, src/pages/gesetz-leser, src/pages/EntscheidLeser.tsx, src/pages/Rechtsprechung.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
+  - [x] **B1 · Chips, Badges und Normzitate (K-05 + K-10)** — 16 Befunde (Blocker 3 · Hoch 3). §2.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B1 · status: done · of: ja · blocker: null · dep: [] · kollision: [src/components/NormText.tsx, src/components/NormPopover.tsx, src/components/verzahnung, src/components/rechtsprechung, src/pages/gesetz-leser] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
+  - [x] **B2 · Verlauf und Zustand in der URL (K-20)** — 11 Befunde (Blocker 2 · Hoch 5). §3.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B2 · status: done · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B1] · kollision: [src/components/layout, src/pages/gesetz-leser, src/pages/EntscheidLeser.tsx, src/pages/Rechtsprechung.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B3 · Klebende Leisten (K-01)** — 7 Befunde (Blocker 2 · Hoch 4). §4.
     <!-- @meta id: W2·17-UI-BEFUNDE-B3 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B2] · kollision: [src/components/layout, src/index.css] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). §5.
@@ -698,13 +711,18 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
     <!-- @meta id: W2·17-UI-BEFUNDE-B18 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B17] · kollision: [src/pages/Gesetze.tsx, src/components/suche, src/lib/suche] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B19 · Eingabe- und Auswahlfelder — Detail (K-08b)** — 7 Befunde (Blocker 0 · Hoch 0). §20.
     <!-- @meta id: W2·17-UI-BEFUNDE-B19 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B18] · kollision: [src/components/forms, src/components/ui] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
-  - [~] **B20 · Prüf-Batch — «bereits gebaut» am Prod-Stand nachmessen (alle Bauteile)** — 15 Befunde (Blocker 1 · Hoch 5). §21.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B20 · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
+  - [x] **B20 · Prüf-Batch — «bereits gebaut» am Prod-Stand nachmessen (alle Bauteile)** — 15 Befunde (Blocker 1 · Hoch 5). §21.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B20 · status: done · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
     **`dep: []` seit 31.7.2026 (Endprüfungs-Fund 18):** B20 ist kein Neubau, sondern Nachmessung,
     und trägt mit LM-062 den einzigen Blocker der «bereits gebaut»-Klasse. Am Kettenende hätte die
     Behauptung «ist gebaut» erst nach 19 Bau-Batches geprüft — erwiese sie sich als falsch, entstünde
     der Bau-Posten am spätesten möglichen Punkt. B20 ist damit **unabhängig und vorziehbar**; die
     Bau-Kette B1→…→B19 bleibt unverändert seriell. `plan:next` führt B20 dadurch gewollt in ready-now.
+  - [x] **N1 · LM-044-Nachzug: Chip-Grammatik `lc-chip-zeile` ausrollen** *(David-Entscheid 2.8.2026; klein, reines UI)* — Container-Klasse `lc-chip-zeile` (`src/index.css:742–755`, in B1 gebaut) auf die Chip-Reihen der Materialien-/Vorlagen-Routen und `EntscheidFilter.tsx` ziehen. **Ehrliche Abgrenzung:** deckt **nur die Element-Art-Achse** (`a`/`button`/`span`); die **Metadatum-Achse** gehört zu [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §3(c) / `W2·10-UI-NAV` und wird hier **nicht** vorgegriffen. §23.
+    <!-- @meta id: W2·17-UI-BEFUNDE-N1 · status: done · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B1] · kollision: [src/index.css, src/components/rechtsprechung/EntscheidFilter.tsx, src/components/vorlagen/NormChip.tsx, src/pages/Materialien.tsx] · seq-hart: [PR#408(lc-chip-zeile entsteht dort), PR#409(Flächen-Überschneidung Vorlagen)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
+    **`N` statt `B21`:** Nachzug zu B1, **kein** Glied der Bau-Kette B1→…→B19 (B20 bleibt der
+    Prüf-Batch am Ende). **Bau erst nach Landung von PR #408 + #409** — PR-Landungen sind keine
+    Plan-IDs, darum `seq-hart` statt `dep`. Begründung beider Punkte: §23.
 
 ### Welle 3 — Tiefe / Breite (opportunistisch)
 

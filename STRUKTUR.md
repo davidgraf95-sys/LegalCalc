@@ -27,6 +27,57 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 2./3.8.2026 (Nacht) — fünf Landungen: Verfallsregister #410, B1 #408, Uppercase-Sweep #409, B2 #412, N1 #413
+**Kurzkarte der Nacht-Session-Kette (Details in den jeweiligen Einzelkarten/PRs).**
+- **#410 Verfallsregister** — 10 künftige Fassungen nachgeführt, Gegenprüfung bestanden, Squash `849581faa`.
+- **#408 W2·17-UI-BEFUNDE-B1** — 13 von 16 Befunden gebaut (Chips/Badges/Normzitate), 3 per
+  Bestands-Entscheid zurückgestellt; auto-squash-gelandet 22:55Z (Details: Karte unten).
+- **#409 Uppercase-Sweep** — Normzitat-Suffixe an 15 Stellen nicht mehr uppercase-entstellt
+  (Heimarbeitsvertrag + Sweep); auto-gelandet 23:11Z.
+- **#412 W2·17-UI-BEFUNDE-B2** — Verlauf und Zustand in der URL (K-20): 10 von 11 Befunden
+  gebaut in 4 Losen, LM-207 zurückgestellt (QS-PERF-Fläche, Nachmessung 3.8. abgespeckt negativ).
+  Kernstück: eine Zustands-Weiche `src/components/rechtsprechung/zustand.ts`
+  (Inhalt→URL/Darstellung→localStorage, durchgängig `replace`-Politik) erfüllt LM-200/203/206
+  und trägt den Dach-Befund LM-204 mit. Gate voll grün (tsc/vitest/golden/lint/check), Prod-Re-Audit
+  3.8.2026 vorab: 11/11 geprüft (8 voll, 2 teilweise, 1 unklar). Gelandet als Squash `ac44aa937`.
+- **#413 W2·17-UI-BEFUNDE-N1** — LM-044-Nachzug: `lc-chip-zeile`-Grammatik auf NormChip-/Materialien-/
+  Rechner-/Filter-Flächen ausgerollt (12 Dateien, `[role=button]`-Regel, `.lc-chip-selected` per `:not()`
+  geschützt); Metadatum-Achse bleibt bei W2·10-UI-NAV §3(c). Gelandet als Squash `e5b1fb8b5`.
+  Offene Morgen-Vorlagen für David: LM-041-Sachgebiet-Tabelle (§7-Auflage), LM-112, LM-042 (Extraktion),
+  OR-Leser-Default kantonal, W2·7-BEZUG-LADEN (§15), QS-CURRENCY-KANON, W2·13-KANTONE-DRIFT.
+  (`feat/ui-befunde-b2` → `main`), kein Merge in diesem Auftrag.
+
+## Session 2.8.2026 — W2·17-UI-BEFUNDE-B1: Chips, Badges und Normzitate, 13/16 gebaut (Parallel-Worktree, Branch `claude/sleepy-mestorf-5dbea7`)
+**Auftrag:** Batch B1 (16 UI-Befunde, K-05+K-10, §2) in einem eigenen Worktree parallel zum
+Hauptzweig bauen — Prod-Re-Audit vor Baubeginn (§0.1), drei Lose (Fable 5 / Opus / Sonnet 5),
+Doku-Abschluss und PR dieser Session.
+- **Prod-Re-Audit 2.8.2026** (lexmetrik.vercel.app, DOM + `getComputedStyle`): **16/16
+  reproduziert** — 12 voll, 4 teilweise (LM-041/044/050/051; Fundort teils überholt, Grunddefekt
+  bestätigt).
+- **13 gebaut** (10 Commits): LM-101 Blocker (266l/266o nicht mehr uppercase-entstellt) ·
+  LM-103 (Normzitate `whitespace-nowrap`) · LM-107 (`margLabel`-`<sup>` vereinheitlicht) ·
+  LM-102+LM-106 (`normLabel()` löst via `ERLASS_REGISTER` auf, 60 Kürzel korrigiert, 19
+  Schreibweisen live gegen Fedlex-SPARQL verifiziert) · LM-105+LM-049+LM-051 (Aktenzeichen nur
+  bei Abweichung vom BGE-Zitat, «+N weitere», Trenner-Textknoten) · LM-040
+  (`.lc-chip-selected`, gefüllte Fläche + ✓) · LM-045+LM-046+LM-047 (Chip-Grammatik über
+  Container-Klasse `lc-chip-zeile`) · LM-050 (ZeichenLegende als Toggletip, B4-Wächter 32/32
+  grün, Test nicht angepasst).
+- **3 zurückgestellt** (Bestands-Entscheide, §0.2 — Öffnung nur per David-Entscheid): LM-041
+  (Facetten-Modell FAHRPLAN-VERZAHNUNG-UI.md §9/B1 abschliessend definiert, kein
+  Sachgebiet/Zitier-Rolle) · LM-044 (FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3 ausdrücklich DEFER,
+  U-VERWEIS-Kollision) · LM-048 (`gewicht:null` = «nicht messbar», W2·7-BEZUG-Entscheid, R16-
+  Ampel gesperrt).
+- **Tore (2.8.2026):** tsc ok · vitest ok (4859, inkl. B4-Wächter) · `golden:vergleich`
+  byte-gleich · lint ok · `check` 39/40 — einzig `check:verfall` rot, und zwar als
+  **vorbestehender Bestandsdefekt** belegt (Nullprobe im sauberen `main`-Checkout am 2.8.2026
+  identisch rot: 10 «Künftige Fassung»-Termine per 1.8.2026 kalendarisch verfallen, unabhängig
+  von B1, separat geflaggt).
+- **Nebenbefund** (separat geflaggt, nicht Teil des PR): Prod zeigt auf `/gesetze/bund/OR` keine
+  kantonalen Bezüge mehr im OR-Leser und deckelt BGE-Gruppen — Spannung zum
+  W2·7-BEZUG-B7-Landungsvermerk, zu prüfen.
+- **PR:** dieser Commit/Push (`claude/sleepy-mestorf-5dbea7` → `main`), kein Merge in diesem
+  Auftrag — Landung ist ein eigener, nachgelagerter Schritt (Skill `landung`).
+
 ## Session 31.7.2026 (Nachlauf) — Endprüfung der QS-TOK-Aufräumwelle, Fix-Runden 1 und 2 (Branch `feat/qs-tok-aufraeumwelle`)
 **Auftrag David:** die Aufräumwelle vor der Landung adversarial endprüfen und die Funde abarbeiten. Zwei Runden unabhängiger Nur-Lese-Prüfagenten, danach je eine Fix-Runde.
 - **Fix-Runde 1 (Commits `b329a5ab3`, `4786e3f3c`, `f9d7fbb74`, `357eb3179`):** tote Links + Wurzel-Pfade + Welle-Überschriften + 33 Bau-Spec-Zeiger (A) · vier Steuerskript-Lücken, jede zuerst rot gezeigt (B) · Ist-Kennzahlen, stabile Befund-Anker, W2·9-Zeiger (C/D) · Slicer-Aufruf und `fahrplaene/`-Pfade in CLAUDE.md + 5 Skills nachgezogen.

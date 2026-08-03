@@ -415,6 +415,13 @@ Entscheidkategorien** erweitert — alles über Filter an- und abwählbar (Kanto
   künftig FINMA `W2·6b-MAT-FINMA`) docken an derselben Schicht an, kein Parallelmodell (§5).
   Leitentscheid vs. übriges Urteil wird **nie stillschweigend gleichgestellt** (§8) — die Facette
   trägt den Status sichtbar.
+  - **Nachtrag 2.8.2026 (David-Entscheid): das Facetten-Modell ist um EINE Dimension erweitert —
+    `sachgebiet`.** Die Aufzählung oben galt bis dahin als abschliessend; sie wird hiermit
+    ausdrücklich und begründet geändert (§14), nicht still überschrieben. Genau **eine** Dimension
+    kommt hinzu, und nur weil sie **deterministisch aus amtlichen Daten** ableitbar ist (§2). Die
+    ebenfalls erwogene **Zitier-Rolle** (in welcher Rolle eine Norm im Entscheid steht: tragend,
+    beiläufig, abgegrenzt) bleibt **ausdrücklich zu** — sie ist nicht deterministisch ableitbar,
+    sondern wäre Interpretation. Bau-Spec: **§12** dieser Datei, Schritt `W2·7-VZUI-SACHGEBIET`.
 - **B2 · Kantonale Entscheide in den norm-index.** Start: BS-Korpus (3765 Snapshots aus W2·6-BS);
   Voraussetzung ist der kantonale Norm-Resolver (P0-Fix aus W2·6): kantonale Erlass-Referenzen
   (SG-/BGS-Nummern, kantonale Kürzel), nicht nur SR-Nummern. Zitat-Extraktion = Risiko-Pfad ⇒
@@ -513,3 +520,111 @@ Entscheidkategorien** erweitert — alles über Filter an- und abwählbar (Kanto
   `parts.tsx`-Eigentümerschaft geklärt (W2·5c fertig). Kein 26×-Bezug — parallel zu E3 fahrbar.
   Startseiten-Kachel «Meistzitierte Artikel» = Andockpunkt (W2·5c fertig, Fläche frei).
   **Detailquelle:** diese Datei.
+
+---
+
+## §12 · Sachgebiet-Facette an der Norm↔Entscheid-Kante (`W2·7-VZUI-SACHGEBIET`, David-Entscheid 2.8.2026)
+
+**Herkunft.** UI-Befund **LM-041** (`FAHRPLAN-UI-BEFUNDE.md` §2): «Der Chip unterscheidet nicht, in
+welcher Rolle die Norm im Entscheid steht.» Der Befund war am 31.7./1.8.2026 zurückgestellt, weil
+das Facetten-Modell in §9/B1 als abschliessend deklariert war und §1.2 die Dichte-Regel «EIN Zusatz
+je Chip» setzt. **David hat den Befund am 2.8.2026 als Variante (b) geöffnet: nur Sachgebiet.**
+
+### §12.1 Was gebaut wird — und was ausdrücklich nicht
+
+| | Entscheid |
+|---|---|
+| **Sachgebiet** | **GEBAUT.** Eine neue Facette `sachgebiet` an der Kante Norm ↔ Entscheid. |
+| **Zitier-Rolle** | **BLEIBT ZU.** «Tragend / beiläufig / abgegrenzt» ist aus dem Entscheidtext nicht deterministisch ableitbar; jede Ableitung wäre Heuristik oder Schätzung — beides ist nach §2 gesperrt, und eine falsch als «tragend» markierte Fundstelle ist ein fachlicher Fehler, kein Darstellungsfehler (§1). Öffnung nur mit einem Verfahren, das den Determinismus **belegt**, nicht behauptet. |
+
+### §12.2 Herleitung — deterministisch, nicht heuristisch (§2)
+
+Quelle ist die **amtliche BGE-Bandnummer** (römisch **I–V**), die die Zitierform selbst trägt
+(`BGE 148 II 475` → Band II) und die im Korpus bereits im Entscheid-Key steckt
+(`bge_148_II_475`, s. `src/lib/rechtsprechung/erfasste-keys.generated.ts`). Die Abbildung
+Band → Sachgebiet ist eine **feste Tabelle**, kein Modell: gleiche Eingabe, gleiche Ausgabe, kein
+Textverständnis, kein LLM.
+
+**Auflage §7 (bindend, vor dem Bau einzulösen):** Die Tabelle Band → Sachgebiet wird **gegen die
+amtliche Quelle des Bundesgerichts belegt** (Norm/Fundstelle + Abrufdatum im Code als Kommentar,
+CLAUDE.md §11), nicht aus Modellwissen gesetzt. Zwei Punkte sind dabei ausdrücklich **offen und
+nachzuweisen**, nicht anzunehmen:
+
+1. der genaue amtliche Wortlaut je Band (Sachgebiets-Bezeichnung), und
+2. die **Zeitachse**: die Bände sind historisch nicht durchgehend gleich geschnitten
+   (Sozialversicherungsrecht/EVG). Ergibt die Prüfung eine Zäsur, trägt die Tabelle das Jahr —
+   oder die betroffenen Jahrgänge liefern **`sachgebiet: null`** («nicht bestimmbar»), nie einen
+   geratenen Wert (§8).
+
+**Nicht-BGE-Kanten** (BGer-Nicht-Leitentscheide, kantonale Entscheide) haben keine Bandnummer und
+tragen darum `sachgebiet: null`. Das ist der Regelfall, kein Defekt: `null` heisst «nicht
+bestimmbar» und wird als solches angezeigt bzw. weggelassen — **nie** als «alle Sachgebiete» oder
+als leerer Filter, der stillschweigend alles durchlässt. Die Grundgesamtheit wird am Filter ehrlich
+ausgewiesen (§8), wie schon bei den B7-Zählern.
+
+### §12.3 Darstellung — Filter, nicht zweiter Chip-Zusatz
+
+Die Facette erscheint als **Filter-Facette im «Rechtsprechung ▾»-Menü** (B5-Fläche,
+`LeserAnsichtMenu`-Analogie), zusammen mit den bestehenden Schaltern Instanz/Ebene/Kanton/Status
+und dem Zeitstrahl. Sie erscheint **nicht** als zusätzlicher Zusatz am Chip: die Dichte-Regel aus
+**§1.2 gilt unverändert** — EIN Zusatz je Chip (Fundstellen-Sublabel ODER ★-Glyph), sonst wird aus
+der Chip-Reihe wieder die Chip-Wüste, gegen die §0/1c gebaut wurde. Wer die Facette am Chip sehen
+will, sieht sie über den Filter: gefiltert wird die Menge, nicht das einzelne Etikett beschriftet.
+
+### §12.4 Risiko-Klasse und Tore
+
+Die Ableitung berührt die **Extraktions-/Datenschicht** der Kanten ⇒ **Risiko-Pfad**:
+`npm run check:gegenpruefung` **pflichtig** (Skill `gegenpruefung`), Generator deterministisch,
+**zwei Läufe byte-gleich**, golden byte-gleich. Die reine Filter-UI darüber ist Darstellung (§3).
+Sequenz/Kollision: teilt die Fläche mit `W2·7-BEZUG`/B4+B5 (`bezugAuswahl.ts`,
+`BezugFacettenWahl.tsx`, `LeserAnsichtMenu.tsx`) und mit `W2·5h-GESETZ-UI` — Worktree-Pflicht (§12).
+
+### §12.5 DoD
+
+Tabelle mit amtlichem Beleg + Abrufdatum am Fundort · `sachgebiet: null` sichtbar ehrlich
+behandelt · Facette im «Rechtsprechung ▾» bedienbar, Chip-Dichte unverändert · Zähler mit
+Grundgesamtheit · Gegenprüfung bestanden · golden byte-gleich · Zitier-Rolle nachweislich **nicht**
+mitgebaut.
+
+---
+
+## §13 · Bezüge-Laden: das §15-Versprechen «Grundzustand ohne Zusatz-Fetch» (`W2·7-BEZUG-LADEN`, Entscheid-Schritt)
+
+**Befund 2.8.2026 (reproduziert am Code, nicht gemeldet).** Code und Kommentar behaupten
+verschiedene Dinge — eine zweite Wahrheit (§5) an einer §15-Stelle:
+
+- `src/pages/gesetz-leser/bezugAuswahl.ts:18–23` verspricht für den Grundzustand ausdrücklich:
+  «Grundzustand = genau `{bge}` ⇒ heutiger Pfad, heutiger Shard, heutige Darstellung —
+  byte-gleich, **kein zusätzlicher Fetch** (§6, §15)».
+- `src/pages/gesetz-leser/bezuegeLaden.ts:86` beschreibt im JSDoc ein Rückgabe-Feld `erweitert`
+  («ist die Facetten-Wahl vom Grundzustand abgewichen?»), an dem der Reader zwischen schlankem
+  und grossem Shard entscheiden soll. **Dieses Feld gibt es nicht** — der Rückgabetyp
+  (`useBezuege`, :97–110) führt `aktiv`, `bezuegeFuer`, `kantoneVerfuegbar`, `klassenImErlass`,
+  `histogramm`, `bereich`.
+- Tatsächlich gilt `aktiv = klassen.length > 0` (:121), und der Grundzustand `{bge}` ist bereits
+  nicht leer. Der **Bezugs-Shard wird also im Default geladen**, und `BezuegeZeile` rendert
+  immer; das KontextPanel lädt daneben weiterhin den `norm-index`-Shard (`inhalt.tsx:122`).
+  `istErweitert()` steuert nur noch die Menü-Optik, nicht mehr die Ladeweiche.
+
+Es sind damit im Grundzustand **beide** Shards unterwegs (Grössenordnung `norm-index/OR.json`
+~35 KB gz + `bezuege/OR.json` ~49 KB gz — die Zahlen sind vor dem Bau am aktuellen Artefakt
+nachzumessen, nicht aus diesem Absatz zu übernehmen).
+
+**Zu entscheiden (David) — zwei Wege, kein dritter:**
+
+1. **Code auf das Versprechen zurückbauen.** Ladeweiche wieder an `istErweitert()` hängen, im
+   Grundzustand nur den schlanken Shard. Das ist eine **Verhaltensänderung**, kein Refactoring:
+   §15-**Logikverlust-Bewertung Pflicht** (Skill `perf`) — was verschwindet im Grundzustand an
+   Kanten, und ist das ein Informationsverlust oder nur ein nicht angeforderter Zusatz? Die
+   Vorgabe David 28.7.2026 («nur auflistung wenn aktiviert») ist dabei mitzulesen; sie ist der
+   Grund, warum die Weiche überhaupt gefallen ist (Kommentar `bezuegeLaden.ts:124–130`).
+2. **Doku und Kommentare nachführen.** Das Versprechen streichen bzw. auf den wahren Stand
+   bringen, das tote `erweitert`-JSDoc entfernen, und die Mehrladung als bewusste, begründete
+   Entscheidung ausweisen — inklusive der Kosten. Kein Code-Eingriff.
+
+**Nicht zulässig ist der Status quo**: eine Zusage im Kommentar, die der Code nicht hält, ist genau
+die Form von Unehrlichkeit, gegen die §8 steht — und sie führt die nächste Perf-Session in die Irre.
+
+**Referenz:** §9/B4 (Filter-UI, «Default konservativ») und §9/B7 (Voll-Auflistung ohne Deckel) —
+dort liegt die Begründungslinie beider Wege. **Risiko-Klasse:** Weg 1 = Verhaltensänderung,
+golden-gegated + Perf-Messung; Weg 2 = reine Doku. **Gegenprüfung:** `n/a` (kein Risiko-Pfad).

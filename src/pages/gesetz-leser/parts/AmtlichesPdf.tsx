@@ -21,13 +21,15 @@ export function AmtlichesPdf({ href, stand, extern, dateiname }: {
   dateiname?: string;
 }) {
   const fassung = stand ? ` (Fassung vom ${formatiereDatum(stand)})` : '';
+  // LM-045: kein `no-underline` mehr — als externer Link trägt der Chip in der
+  // lc-chip-zeile die Unterstreichung als Form-Merkmal (Chip-Grammatik, index.css).
   return (
     <a
       href={href}
       {...(extern
         ? { target: '_blank', rel: 'noopener noreferrer' }
         : { download: dateiname ?? true })}
-      className="lc-chip no-underline hover:text-brass-700"
+      className="lc-chip hover:text-brass-700"
       aria-label={`Amtliches PDF${fassung} herunterladen${extern ? ' (öffnet in neuem Tab)' : ''}`}
       title="Amtliches PDF der geltenden Fassung — massgeblich ist die amtliche Quelle"
     >

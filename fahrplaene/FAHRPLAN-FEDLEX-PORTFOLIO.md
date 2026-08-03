@@ -963,3 +963,53 @@ Trailer `Roadmap: W2·14-SIGNAL`.
 >   lokal, Werkzeuge bleiben zustandslos (Leitbild).
 >   **Detail:** diese Datei §16. Trailer `Roadmap: W2·14-SIGNAL`.
 
+
+---
+
+## §17 · Kanonik-Arbiter meldet `fza`/`cmr` NICHT-KANONISCH (`QS-CURRENCY-KANON`, Befund 2.8.2026)
+
+**Befund, reproduziert.** `npm run check:fedlex-versionen` endet mit **Exit 1**; im Abschnitt
+«Kanonik-Arbiter (html-N vs. `isExemplifiedBy`)» stehen zwei Erlasse:
+
+```
+NICHT-KANONISCH  fza: gepinnt html-5, kanonisch html-9  → re-pinnen + regenerieren!
+NICHT-KANONISCH  cmr: gepinnt html-3, kanonisch html-6  → re-pinnen + regenerieren!
+```
+
+Beide sind **Staatsverträge** (FZA `cc/2002/243`, Konsolidierung 2020-12-15 · CMR
+`cc/1970/851_851_851`, Konsolidierung 2021-02-10). Die Versionszeile davor meldet für beide `OK`
+(«gepinnt … = neueste Konsolidierung») — es geht also **nicht** um eine veraltete Fassung, sondern
+um die **Alias-/Alt-Revisions-Wurzel innerhalb derselben Konsolidierung**: gepinnt ist eine andere
+`html-N`-Datei als die, die Fedlex über `isExemplifiedBy` als kanonisch ausweist.
+
+**Bestandsdefekt auf `main`, kein Feature-Nebenwirkung (§3 Verteilung statt Einzelwert).**
+Nullprobe am 2.8.2026 im **unveränderten Haupt-Checkout**: derselbe Fehlschlag, Exit 1; die
+betroffenen `scripts/fedlex-cache.sh`-Zeilen sind **byte-identisch zu `origin/main`**. Der Befund
+gehört damit dem Bestand, nicht der laufenden Arbeit — und er ist beim Verfallsregister-Durchgang
+vom 2.8.2026 nur **aufgefallen**, nicht verursacht worden.
+
+**Was zu tun ist.**
+
+1. **Klären, warum** die kanonische Wurzel abweicht — Staatsvertrags-Erlasse tragen bei Fedlex
+   mehrere `html-N`-Ausprägungen derselben Konsolidierung (Sprach-/Ausgabe-Varianten,
+   Nachpublikationen). Die Ursache gehört in die Übersichtsliste (`bibliothek/`, CLAUDE.md §11),
+   nicht nur in einen Commit-Text: ohne verstandene Ursache ist ein Re-Pin ein Ratespiel, und der
+   Arbiter meldet beim nächsten Lauf dasselbe.
+2. **Kanonisch nachführen:** `scripts/fedlex-repin-kanonik.ts` auf beide Erlasse, danach
+   Snapshots/Struktur **regenerieren**.
+3. **§7-Verifikation nach dem Re-Pin:** Anker und Wortlaute der beiden Erlasse gegen die amtliche
+   Fassung nachprüfen — ein Wurzel-Wechsel kann Artikel-Anker verschieben. Extraktions-/
+   Generator-Fläche ⇒ **Risiko-Pfad**, `npm run check:gegenpruefung` pflichtig, golden byte-gleich
+   (Änderungen an FZA/CMR sind erwartbar und müssen als **erklärter** Diff ausgewiesen werden, nicht
+   als «golden angepasst»).
+4. **Abschluss-Kriterium:** `npm run check:fedlex-versionen` meldet für `fza`/`cmr` keine
+   Kanonik-Abweichung mehr. *Das Tor bleibt davon unabhängig rot, solange andere Pins überholt
+   sind — das ist die laufende Currency-Pflege und gehört **nicht** in diesen Schritt (§14.3).*
+
+**Abgrenzung.** Reiner Nachzug an der Kanonik-Wurzel. Keine Portfolio-Erweiterung, kein neuer
+Erlass, keine Änderung am Arbiter selbst — wenn der Arbiter falsch läge, wäre das ein eigener
+Befund und müsste zuerst an einem echten Fehlschlag gezeigt werden (§6.7).
+
+*Hinweis zur Herkunft: Zu diesem Punkt hat ein Sub-Agent am 2.8.2026 einen Task-Chip angelegt.
+Der Chip ist durch diesen Plan-Eintrag **ersetzt** (Vorgabe David: keine Chips) — massgeblich ist
+allein dieser §.*

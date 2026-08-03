@@ -1,14 +1,14 @@
 {
  "erlass": "VVEA",
  "abdeckung": {
-  "fussnoten": 65,
-  "ereignis": 54,
+  "fussnoten": 81,
+  "ereignis": 70,
   "referenz": 10,
   "unparsed": 1
  },
  "artikel": {
   "3": {
-   "giltSeit": "2020-04-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -22,6 +22,19 @@
      ],
      "absatz": null,
      "item": "a"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": null,
+     "item": "4"
     },
     {
      "typ": "eingefuegt",
@@ -61,6 +74,71 @@
      ],
      "absatz": null,
      "item": "j"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": null,
+     "item": "n"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": null,
+     "item": "o"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": null,
+     "item": "p"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": null,
+     "item": "q"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": null,
+     "item": "r"
     }
    ]
   },
@@ -170,9 +248,58 @@
     }
    ]
   },
-  "13": {
-   "giltSeit": "2020-04-01",
+  "10": {
+   "giltSeit": "2026-08-01",
    "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "12": {
+   "giltSeit": "2026-08-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "13": {
+   "giltSeit": "2026-08-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": "1",
+     "item": null
+    },
     {
      "typ": "fassung",
      "datum": "2020-04-01",
@@ -185,6 +312,37 @@
      ],
      "absatz": "2",
      "item": "b"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": "4",
+     "item": null
+    }
+   ]
+  },
+  "14": {
+   "giltSeit": "2026-08-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": null,
+     "item": null
     }
    ]
   },
@@ -325,6 +483,24 @@
     }
    ]
   },
+  "22": {
+   "giltSeit": "2026-08-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": "2",
+     "item": null
+    }
+   ]
+  },
   "23": {
    "giltSeit": null,
    "ereignisse": [
@@ -357,16 +533,16 @@
    ]
   },
   "24": {
-   "giltSeit": "2025-08-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2025-08-01",
+     "datum": "2026-08-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2025 453",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/453"
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
       }
      ],
      "absatz": "1",
@@ -499,7 +675,7 @@
    ]
   },
   "31": {
-   "giltSeit": "2022-04-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -529,7 +705,7 @@
     },
     {
      "typ": "eingefuegt",
-     "datum": "2022-04-01",
+     "datum": null,
      "wirkung": false,
      "quellen": [
       {
@@ -539,20 +715,33 @@
      ],
      "absatz": null,
      "item": "c"
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": null,
+     "item": "c"
     }
    ]
   },
   "32": {
-   "giltSeit": "2025-08-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
     {
      "typ": "fassung",
-     "datum": "2022-04-01",
+     "datum": "2026-08-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2022 161",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2022/161"
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
       }
      ],
      "absatz": "2",
@@ -585,6 +774,19 @@
      "item": "d"
     },
     {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": "2",
+     "item": "g"
+    },
+    {
      "typ": "eingefuegt",
      "datum": "2025-08-01",
      "wirkung": false,
@@ -596,6 +798,42 @@
      ],
      "absatz": "2",
      "item": "h"
+    }
+   ]
+  },
+  "34": {
+   "giltSeit": "2026-08-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "36": {
+   "giltSeit": "2026-08-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": "2",
+     "item": "c"
     }
    ]
   },
@@ -693,7 +931,7 @@
    ]
   },
   "14_a": {
-   "giltSeit": "2023-01-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -706,6 +944,19 @@
       }
      ],
      "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2026 357",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/357"
+      }
+     ],
+     "absatz": "2",
      "item": null
     }
    ]
@@ -872,7 +1123,7 @@
  "residuum": [
   {
    "token": "54_a",
-   "nr": "68",
+   "nr": "84",
    "roh": "Die Änd. kann unter AS 2025 745 konsultiert werden."
   }
  ]

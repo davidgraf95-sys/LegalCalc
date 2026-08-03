@@ -1,10 +1,10 @@
 {
  "erlass": "USG",
  "abdeckung": {
-  "fussnoten": 207,
-  "ereignis": 185,
+  "fussnoten": 210,
+  "ereignis": 187,
   "referenz": 21,
-  "unparsed": 1
+  "unparsed": 2
  },
  "artikel": {
   "1": {
@@ -1937,7 +1937,7 @@
    ]
   },
   "61": {
-   "giltSeit": "2025-04-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2040,6 +2040,23 @@
      ],
      "absatz": "1",
      "item": "p"
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 648",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/648"
+      },
+      {
+       "label": "BBl 2023 13",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/13"
+      }
+     ],
+     "absatz": "4",
+     "item": null
     }
    ]
   },
@@ -2374,7 +2391,7 @@
    ]
   },
   "31_b": {
-   "giltSeit": "1997-11-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
     {
      "typ": "fassung",
@@ -2391,6 +2408,23 @@
       }
      ],
      "absatz": "2",
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2026-08-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2024 648",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2024/648"
+      },
+      {
+       "label": "BBl 2023 13",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2023/13"
+      }
+     ],
+     "absatz": "7",
      "item": null
     }
    ]
@@ -3852,8 +3886,13 @@
  },
  "residuum": [
   {
+   "token": "31_b",
+   "nr": "52",
+   "roh": "Treten zu einem späteren Zeitpunkt in Kraft"
+  },
+  {
    "token": "61",
-   "nr": "197",
+   "nr": "199",
    "roh": "Früher: Typenprüfungen und Kennzeichnungen"
   }
  ]

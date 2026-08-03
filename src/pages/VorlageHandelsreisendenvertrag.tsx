@@ -93,7 +93,8 @@ export function VorlageHandelsreisendenvertrag({ kopf }: { kopf: ReactNode }) {
             onChange={(v) => set('ausschliesslich', v)}
             label={<><span>Gebiet/Kundenkreis <strong>ausschliesslich</strong> zugewiesen <span className="text-ink-500">(Provision dann auf allen Geschäften im Gebiet, Art. 349/349b OR)</span></span></>} />
           <div className="space-y-2">
-            <GruppenTitel><NormText text={`Vollmacht (Art. 348b OR)`} /></GruppenTitel>
+            {/* LM-101-Muster: Buchstabenzusatz (348b) darf die uppercase-Overline nicht durchlaufen. */}
+            <GruppenTitel><NormText text={`Vollmacht `} /><span className="normal-case"><NormText text={`(Art. 348b OR)`} /></span></GruppenTitel>
             <SelectionGrid
               className={pk('grid grid-cols-1 sm:grid-cols-2 gap-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-2')}
               items={([
@@ -111,7 +112,8 @@ export function VorlageHandelsreisendenvertrag({ kopf }: { kopf: ReactNode }) {
       case 'lohn': return (
         <div className="space-y-4">
           <div className="space-y-2">
-            <GruppenTitel><NormText text={`Lohnmodell (Art. 349a OR)`} /></GruppenTitel>
+            {/* LM-101-Muster: Buchstabenzusatz (349a) darf die uppercase-Overline nicht durchlaufen. */}
+            <GruppenTitel><NormText text={`Lohnmodell `} /><span className="normal-case"><NormText text={`(Art. 349a OR)`} /></span></GruppenTitel>
             <SelectionGrid
               className={pk('grid grid-cols-1 sm:grid-cols-3 gap-2', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-2')}
               items={([
@@ -135,7 +137,8 @@ export function VorlageHandelsreisendenvertrag({ kopf }: { kopf: ReactNode }) {
             )}
           </div>
           <div className="space-y-2">
-            <GruppenTitel><NormText text={`Auslagenersatz (Art. 349d OR – stets gesondert)`} /></GruppenTitel>
+            {/* LM-101-Muster: Buchstabenzusatz (349d) darf die uppercase-Overline nicht durchlaufen. */}
+            <GruppenTitel><NormText text={`Auslagenersatz `} /><span className="normal-case"><NormText text={`(Art. 349d OR – stets gesondert)`} /></span></GruppenTitel>
             <SelectionGrid
               className={pk('grid grid-cols-1 sm:grid-cols-2 gap-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-2')}
               items={([

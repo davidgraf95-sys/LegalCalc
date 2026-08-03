@@ -127,7 +127,10 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
                 <div key={i} className="px-4 py-3 space-y-2">
                   <p className="lc-overline">{schritt.beschreibung}</p>
                   <p className="text-body-s text-ink-700 num">{schritt.zwischenergebnis}</p>
-                  <div className="flex flex-wrap gap-1.5">
+                  {/* lc-chip-zeile (LM-044/N1): NormLink rendert ein <a> → Link-
+                      Unterstreichung als Form-Merkmal. Die Rechtsprechungs-Anker
+                      daneben sind lc-badge (andere Achse) und bleiben unberührt. */}
+                  <div className="lc-chip-zeile flex flex-wrap gap-1.5">
                     {schritt.normen.map((n, j) => (
                       <NormLink key={j} artikel={n.artikel} bemerkung={n.bemerkung} />
                     ))}
@@ -171,7 +174,8 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
         {ergebnis.normverweise.length > 0 && (
           <div>
             <p className="lc-overline mb-2">Normverweise</p>
-            <div className="flex flex-wrap gap-1.5">
+            {/* lc-chip-zeile (LM-044/N1): Normverweise sind <a> — unterstrichen. */}
+            <div className="lc-chip-zeile flex flex-wrap gap-1.5">
               {ergebnis.normverweise.map((n, i) => <NormLink key={i} artikel={n.artikel} />)}
             </div>
           </div>

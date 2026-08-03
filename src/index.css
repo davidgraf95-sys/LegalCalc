@@ -698,6 +698,86 @@
      --warn-500 in html.dark bewusst NICHT überschrieben (Tick-Kontrast gehalten). */
   .lc-chip-geltend { border-left-color: var(--sage-500); }
   .lc-chip-vorbehalt { border-left-color: var(--warn-500); }
+  /* Selected-Zustand für Toggle-Chips (W2·17-UI-BEFUNDE-B1, LM-040 · F4
+     «selected»): der gewählte Chip einer Facetten-Reihe muss OHNE Farbvergleich
+     erkennbar sein — vorher trug er nur eine Rahmen-/Textfarbnuance auf
+     identischer Fläche. Jetzt ADDIERT die Auswahl zwei Form-Signale statt eine
+     Auszeichnung zu nehmen: gefüllte Fläche (brass-100) + ✓-Präfix (Glyphe =
+     Form, nicht Farbe). Farben sind das tor-geprüfte Paar brass-800/brass-100
+     (F2b-Pflichtpaar, hell UND dunkel via html.dark-Token); Tick brass-700
+     (≥4.63:1 auf brass-100 hell, s. Token-Kommentar). Das ✓ lebt im ::before —
+     rein visuell; die Semantik trägt weiterhin aria-pressed + aria-label
+     (Screenreader lesen das aria-label des Buttons, nie das Pseudo-Element).
+     ABGRENZUNG: bewusst NUR der Selected-Fix — die vollständige Chip-
+     Zustandsmatrix (F4 gesamt) ist deklarierter Bau von W2·10-UI-NAV
+     (FAHRPLAN-UI-QUALITAET §3c), hier kein Vorgriff darauf.
+     Muss NACH .lc-chip stehen (gleiche Spezifität → Quellreihenfolge gewinnt). */
+  .lc-chip-selected {
+    background: var(--brass-100);
+    border-left-color: var(--brass-700);
+    color: var(--brass-800);
+  }
+  .lc-chip-selected::before { content: '✓'; margin-right: .375em; font-weight: 600; }
+  /* ─── Chip-Grammatik der Kopf-Metazeilen (W2·17-UI-BEFUNDE-B1: LM-045/046/047) ──
+     In den Metazeilen von Erlass- und Entscheid-Kopf trägt derselbe `.lc-chip`
+     drei verschiedene Dinge: externen Link (↗ geltende/massgebliche Fassung,
+     ⬇ Amtliches PDF), Knopf (⧉ In neuem Reiter, ⧉ Zitat kopieren, ▭ Lesemodus)
+     und reine Angabe (Currency-Chips «geltend geprüft …»/«nächste Fassung ab …»).
+     Vorher unterschied nur die Tick-FARBE — die kodiert aber ZUSTAND (A25/C-2,
+     bleibt unangetastet), nicht die Element-Art. Neu trennt die FORM entlang der
+     Element-Art, EINE Systematik für beide Einsatzorte (Container-Klasse
+     `lc-chip-zeile` an der Metazeile, Element-Selektor entscheidet):
+       · <a>      = unterstrichen (die universelle Link-Form; Glyphe ↗/⬇ bleibt
+                    als Ziel-Hinweis erhalten),
+       · <button> = geschlossener Hairline-Rahmen + leicht erhabene Fläche
+                    (drückbare Form; --line ist der Standard-Rahmenton, gleiche
+                    Optik wie die bordierte A−/A+-Gruppe derselben Zeile),
+       · <span>   = flach wie bisher = reine Angabe (LM-046: der «nächste
+                    Fassung»-Vorbehalt sieht damit NICHT mehr wie eine Aktion
+                    aus — bewusst KEIN Linkziel: Fassungsvergleich/Zeitreise ist
+                    hart gegated, FAHRPLAN-UI-NAVIGATION §X).
+     Alle Werte sind Theme-Token (hell/dunkel via :root / html.dark, F2/F7);
+     Tick-Farben und Anatomie von .lc-chip bleiben byte-gleich — ausserhalb
+     einer .lc-chip-zeile ändert sich NICHTS. */
+  .lc-chip-zeile a.lc-chip {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-color: color-mix(in oklab, currentColor 55%, transparent);
+  }
+  .lc-chip-zeile a.lc-chip:hover { text-decoration-color: currentColor; }
+  /* GRAMMATIK-ENTSCHEID zum `span[role="button"]` (W2·17-UI-BEFUNDE-N1, LM-044,
+     FAHRPLAN-UI-BEFUNDE §23 — der Entscheid steht hier, nicht nur im Fahrplan):
+     Die Aktions-Achse wird an der ROLLE festgemacht, nicht am Tag-Namen. Grund:
+     `src/components/rechtsprechung/NormChip.tsx` MUSS ein `span role="button"`
+     sein — der Chip liegt in einer Karte, deren Stretch-Link ein `<a>` ist;
+     `<a>`/`<button>` darin wäre ungültiges Inhaltsmodell (Kommentar dort :4–10).
+     Wäre die Grammatik am Tag festgemacht, sähen auf EINER Seite (/rechtsprechung)
+     zwei Bedienelemente mit derselben Wirkung — Facetten-Filter `button.lc-chip`
+     und Norm-Filter `span[role=button].lc-chip` — verschieden aus; genau die
+     Ununterscheidbarkeit, die LM-044 rügt, nur um eine Stufe verschoben. Für den
+     Nutzer wie für assistive Technik ist die ROLLE die Aussage; das Tag ist eine
+     Inhaltsmodell-Zwangslage. Der `<span>` OHNE role bleibt unberührt flach
+     (reine Angabe, LM-046) — die dritte Regel greift nur bei role="button".
+     Der Rahmen liegt bewusst NICHT auf border-left: dort sitzt der Tick, dessen
+     FARBE den Zustand kodiert (A25/C-1/C-2) und der auf Hover brass-400 wird —
+     Form und Zustand bleiben orthogonal. */
+  .lc-chip-zeile button.lc-chip,
+  .lc-chip-zeile [role="button"].lc-chip {
+    border-top: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  /* Die erhabene Fläche NUR im Ruhezustand: `.lc-chip-selected` (LM-040) trägt
+     die gefüllte brass-100-Fläche als Auswahl-Signal und hat mit (0,1,0) keine
+     Chance gegen (0,2,1)/(0,3,0) — ohne dieses :not() bügelte die Container-
+     Grammatik den Selected-Zustand der Facetten-Chips still weg (hell UND
+     dunkel: --surface/--brass-100 sind beide Theme-Token). Der Rahmen oben gilt
+     weiterhin für BEIDE Zustände — «gewählt» addiert, es nimmt nichts weg. */
+  .lc-chip-zeile button.lc-chip:not(.lc-chip-selected),
+  .lc-chip-zeile [role="button"].lc-chip:not(.lc-chip-selected) {
+    background: var(--surface);
+  }
 
   /* ─── Die scrollbare Instanz-Linie (W2·7-BEZUG/B7, David 28.7.2026) ────────
      «je eine linie für jede instanz und alle sichtbar» — eine Klasse, eine

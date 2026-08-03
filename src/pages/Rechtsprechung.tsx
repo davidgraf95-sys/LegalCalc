@@ -12,23 +12,24 @@ import {
   gruppiereNachInstanz, zaehleSachgebiete, normLabel,
   type EntscheidFilterWerte, type SortModus,
 } from '../lib/rechtsprechung/browse';
+import {
+  achsenDiff, leseFilterAusUrl, lokaleWerte, wendeAchsenAn,
+  leseDichte, schreibeDichte, leseSort, schreibeSort, leseKlappe, schreibeKlappe,
+  type Dichte, type UrlAchse,
+} from '../components/rechtsprechung/zustand';
 import type { BrowseEntscheid, RichterRegister } from '../lib/rechtsprechung/register';
 import type { Rechtsgebiet } from '../lib/normtext/register';
 
 // Übersicht der Rubrik «Rechtsprechung» — kuratierter Einstieg (Sachgebiets-Rail,
 // Leitentscheide-first, Norm-Verzahnung), bessere Übersicht als eine flache
 // Trefferliste. Reine Darstellung (§3): Laden/Sortieren/Filtern/Gruppieren liegen
-// in lib/rechtsprechung/browse.ts; hier nur Anzeige + URL-Zustand (?rg= Sachgebiet,
-// ?norm= angewandte Norm, ?richter= Spruchkörper). Sortierung/Dichte lokal
-// (Dichte in localStorage).
-
-type Dichte = 'liste' | 'karten';
-const DICHTE_KEY = 'rsp:dichte';
-
-function leseDichte(): Dichte {
-  if (typeof localStorage === 'undefined') return 'liste';
-  return localStorage.getItem(DICHTE_KEY) === 'karten' ? 'karten' : 'liste';
-}
+// in lib/rechtsprechung/browse.ts.
+//
+// Wo welcher Zustand liegt — Inhalt (Treffermenge) in der URL, Darstellung
+// (Liste/Karten, Sortierung, Klappe) in localStorage — steht mitsamt Begründung
+// an EINER Stelle: components/rechtsprechung/zustand.ts. Diese Seite wendet die
+// Weiche nur an; neue Filter kommen dort in die Tabelle URL_ACHSEN und sind
+// damit automatisch teilbar und neuladefest.
 
 // DOM-Deckel (BS-Tranche §7.1, axe-Timeout-Lektion): mit ~3'800 BS-Einträgen
 // wüchse eine ungefilterte Sektion sonst auf Tausende DOM-Knoten. Es werden je
@@ -99,35 +100,31 @@ export function Rechtsprechung() {
   const [richterRegister, setRichterRegister] = useState<RichterRegister | null>(null);
   const [fehler, setFehler] = useState(false);
   const [params, setParams] = useSearchParams();
-  // Nicht-URL-gehaltene Filterwerte lokal; Sachgebiet (?rg) und Norm (?norm) in der URL (teilbar).
+  // Nur der Suchbegriff bleibt lokal (S1 baut ihn eigens, entprellt) — alle
+  // übrigen Filter stehen in der URL, s. zustand.ts.
   const [rest, setRest] = useState<EntscheidFilterWerte>({});
-  const [sort, setSort] = useState<SortModus>('relevanz');
+  const [sort, setSortState] = useState<SortModus>(leseSort);
   const [dichte, setDichte] = useState<Dichte>(leseDichte);
+  const [klappeOffen, setKlappeOffen] = useState<boolean>(leseKlappe);
 
-  const sachgebiet = (params.get('rg') as Rechtsgebiet | null) ?? null;
-  const norm = params.get('norm');
-  const richter = params.get('richter');
+  // Alle Inhalts-Achsen aus der Adresse — die Adresse ist die Wahrheit über das,
+  // was gefiltert wird (LM-206: nach dem Neuladen dieselbe Treffermenge).
+  const urlWerte = useMemo(() => leseFilterAusUrl(params), [params]);
+  const sachgebiet = urlWerte.sachgebiet ?? null;
+  const norm = urlWerte.norm ?? null;
 
-  type UrlAchse = 'rg' | 'norm' | 'richter';
-
-  // Mehrere URL-Achsen in EINEM Schreibvorgang. Zwei getrennte setzeUrl-Aufrufe
-  // im selben Handler bauen beide auf demselben — im laufenden Render bereits
-  // VERALTETEN — `params` auf; der zweite Aufruf stellt die Löschung des ersten
-  // wieder her. Bis zur Richter-Achse gab es nie zwei gleichzeitige URL-Achsen,
-  // darum war der Fehler latent; «zurücksetzen» (norm + richter zusammen) hat ihn
-  // real gemacht: `?norm=` kam zurück (empirisch 20.7.2026).
+  // Immer GEMEINSAM schreiben: zwei getrennte Schreibvorgänge im selben Handler
+  // bauen beide auf demselben — im laufenden Render bereits veralteten — `params`
+  // auf (Begründung und Fundstelle in zustand.ts/wendeAchsenAn).
   const setzeUrlAchsen = (achsen: Partial<Record<UrlAchse, string | null>>) => {
-    const p = new URLSearchParams(params);
-    for (const [k, v] of Object.entries(achsen)) {
-      if (v) p.set(k, v); else p.delete(k);
-    }
-    setParams(p, { replace: true });
+    setParams(wendeAchsenAn(params, achsen), { replace: true });
   };
   const setzeUrl = (schluessel: UrlAchse, wert: string | null) => setzeUrlAchsen({ [schluessel]: wert });
-  const setzeDichte = (d: Dichte) => {
-    setDichte(d);
-    if (typeof localStorage !== 'undefined') localStorage.setItem(DICHTE_KEY, d);
-  };
+  // Darstellungs-Zustände: State + localStorage im Gleichschritt (drei gleiche
+  // Fälle, ein Muster).
+  const setzeDichte = (d: Dichte) => { setDichte(d); schreibeDichte(d); };
+  const setzeSort = (s: SortModus) => { setSortState(s); schreibeSort(s); };
+  const setzeKlappe = (offen: boolean) => { setKlappeOffen(offen); schreibeKlappe(offen); };
 
   useEffect(() => {
     let lebt = true;
@@ -141,16 +138,16 @@ export function Rechtsprechung() {
     return () => { lebt = false; };
   }, []);
 
-  // URL-Achsen (Sachgebiet/Norm) + restliche Filter zusammenführen.
+  // URL-Achsen + lokaler Rest (Suchbegriff) zusammenführen.
   const werte: EntscheidFilterWerte = useMemo(
-    () => ({ ...rest, sachgebiet, norm, richter }), [rest, sachgebiet, norm, richter]);
+    () => ({ ...rest, ...urlWerte }), [rest, urlWerte]);
 
   // Rail-Zähler über den vollen Bestand minus Sachgebiet (sonst zeigt die nicht
   // gewählte Kachel «0»); restliche Filter (Suche/Norm/…) dürfen die Zähler aber
   // einschränken, darum ohne sachgebiet.
   const fuerRail = useMemo(
-    () => (alle ? filterEntscheide(alle, { ...rest, norm, richter, sachgebiet: null }) : []),
-    [alle, rest, norm, richter],
+    () => (alle ? filterEntscheide(alle, { ...werte, sachgebiet: null }) : []),
+    [alle, werte],
   );
   const railZaehler = useMemo(() => zaehleSachgebiete(fuerRail), [fuerRail]);
   // «Alle Sachgebiete» = Summe der Kacheln: Verweis-Einträge (vollständige Urteile zu
@@ -173,15 +170,12 @@ export function Rechtsprechung() {
   const gruppen = useMemo(() => gruppiereNachLeit(gefiltert), [gefiltert]);
 
   const onFilter = (w: EntscheidFilterWerte) => {
-    // Sachgebiet & Norm gehören in die URL, der Rest bleibt lokal.
-    const { sachgebiet: rg, norm: n, richter: ri, ...r } = w;
-    // Alle geänderten Achsen sammeln und GEMEINSAM schreiben (s. setzeUrlAchsen).
-    const achsen: Partial<Record<UrlAchse, string | null>> = {};
-    if ((rg ?? null) !== sachgebiet) achsen.rg = rg ?? null;
-    if ((n ?? null) !== norm) achsen.norm = n ?? null;
-    if ((ri ?? null) !== richter) achsen.richter = ri ?? null;
+    // Jeder Inhalts-Filter geht in die URL, der Rest bleibt lokal — die Aufteilung
+    // steht in zustand.ts und nicht hier, damit sie beim nächsten Filter nicht
+    // vergessen wird (genau so entstand die Asymmetrie aus LM-200/203/206).
+    const achsen = achsenDiff(w, params);
     if (Object.keys(achsen).length > 0) setzeUrlAchsen(achsen);
-    setRest(r);
+    setRest(lokaleWerte(w));
   };
   const waehleSachgebiet = (g: Rechtsgebiet | null) => setzeUrl('rg', g);
   const waehleNorm = (k: string) => setzeUrl('norm', k);
@@ -237,9 +231,11 @@ export function Rechtsprechung() {
               bestand={alle}
               richterRegister={richterRegister}
               sort={sort}
-              onSort={setSort}
+              onSort={setzeSort}
               dichte={dichte}
               onDichte={setzeDichte}
+              klappeOffen={klappeOffen}
+              onKlappe={setzeKlappe}
             />
 
             {/* Norm-Kontextstreifen — der explizite Pfad «Rechtsprechung zu Art. X». */}

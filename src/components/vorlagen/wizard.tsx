@@ -96,7 +96,10 @@ export function VorlagenWizardRahmen({
             (Befund David 25.6.2026, nda). Brechen statt überlaufen. */}
         <h1 className="text-h2 sm:text-h1 font-display font-semibold text-ink-900 [overflow-wrap:anywhere] hyphens-auto">{titel}</h1>
         <p className="text-body-l text-ink-600 max-w-reading">{intro}</p>
-        <div className="flex flex-wrap items-center gap-1.5">
+        {/* lc-chip-zeile (LM-044/N1): Norm-Chips sind <a> (unterstrichen); der
+            Status-Badge daneben liegt auf der lc-badge-Achse (Pille, kein Tick)
+            und bleibt von der Chip-Grammatik unberührt. */}
+        <div className="lc-chip-zeile flex flex-wrap items-center gap-1.5">
           {norms.map((n) => (
             <NormChip key={n.label} artikel={n.label} hrefOverride={fedlexLokalisiert(n.url, locale)} />
           ))}

@@ -704,7 +704,7 @@
    ]
   },
   "8_a": {
-   "giltSeit": "2007-01-01",
+   "giltSeit": "2026-08-01",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -734,15 +734,15 @@
     },
     {
      "typ": "fassung",
-     "datum": "2005-01-01",
+     "datum": "2026-08-01",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2004 4643",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2004/712"
+       "label": "AS 2026 325",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/325"
       }
      ],
-     "absatz": "1",
+     "absatz": null,
      "item": null
     },
     {

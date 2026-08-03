@@ -54,4 +54,11 @@ export const INVENTAR: readonly string[] = [
   'W2·13-KANTONE-K13', 'W2·13-KANTONE-K14',
   'W2·14-SIGNAL-B1', 'W2·14-SIGNAL-B2', 'W2·14-SIGNAL-GER',
   'W3·14-B3',
+
+  // David-Entscheide 2.8.2026 (Nutzer-Turn): die drei per Bestands-Entscheid zurückgestellten
+  // UI-Befunde des Batches B1 entschieden (LM-048 verworfen, LM-041/LM-044 geöffnet) + zwei
+  // Nebenfunde des Verfallsregister-Durchgangs vom selben Tag in den Plan gehoben.
+  // `-N1` statt `-B21`: Nachzug zu B1, NICHT Glied der Bau-Kette B1→…→B19 (s. ROADMAP-Prosa).
+  'W2·7-VZUI-SACHGEBIET', 'W2·7-BEZUG-LADEN', 'W2·17-UI-BEFUNDE-N1',
+  'QS-CURRENCY-KANON', 'W2·13-KANTONE-DRIFT',
 ];
