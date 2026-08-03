@@ -20,7 +20,20 @@ import { test, expect, type Page } from '@playwright/test';
 // unter Starvation riss der A35-Highlight-Walk reihum das 30-s-Test-Budget. Budget
 // explizit auf 60 s (Muster gesetze-pdf-download). INFRASTRUKTUR (Zeitbudget), KEIN
 // Assertion-Change (§6.3): Highlight-/Stacking-Assertions unberührt.
-test.describe.configure({ timeout: 60_000 });
+//
+// RUNNER-ROBUSTHEIT 3.8.2026 — 60 s → 120 s. Belegt: der Cleanup-Poll in Zeile ~71
+// riss am 3.8. in ZWEI unabhängigen Läufen (30832252309 Shard 6/8, 30836806866
+// Shard 6/8) je mit «Test timeout of 60000ms exceeded», auf PR-Ständen, die kein
+// src/ berührten; die Reruns liefen grün. Der Runner-Pool ist an diesem Tag messbar
+// langsamer geworden (Perf-Kalibrierlauf 30830332128: OR-TBT-Mittel 4489 → 5290 ms
+// gegenüber Juli, +17.8 %) — der Test hat also nicht seine Funktion verloren,
+// sondern seine Zeitannahme.
+// DEKLARIERTE TEST-INFRASTRUKTUR-ÄNDERUNG, kein Refactoring i. S. v. §6.3: Diese
+// Tests prüfen FUNKTIONALITÄT, nicht Tempo. Tempo prüft das §15-Perf-Budget
+// (check:perf-lighthouse) — ein Timeout, der langsame Runner bestraft, misst den
+// Runner, nicht die Software. Keine Assertion, kein Prüfschritt berührt; das
+// Budget greift nur bei Überschreitung und verlangsamt grüne Läufe nicht.
+test.describe.configure({ timeout: 120_000 });
 
 const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: 'Im Gesetz suchen' });
 const headerFeld = (page: Page) => page.getByRole('combobox', { name: /LexMetrik durchsuchen/ });
@@ -64,11 +77,14 @@ test.describe('A35 — In-Gesetz-Suche in der Kopfzeile + Treffer-Highlight', ()
     // knapp und riss in CI wiederholt (PR #353, 2× identisch; Contention addiert).
     // Die ASSERTION (Highlight wird schliesslich entfernt) bleibt unverändert
     // scharf; nur das Warte-Budget deckt jetzt die reale Dauer + CI-Marge.
+    // 3.8.2026: 45 s → 90 s (Test-Budget 120 s, oben). Genau hier riss der Test am
+    // 3.8. zweimal — der Poll ist die Stelle, an der die Runner-Verlangsamung
+    // ankommt. Assertion (`toBe(false)`) unverändert.
     await suche.fill('');
     await expect.poll(async () => page.evaluate(() => {
       const reg = (globalThis as unknown as { CSS?: { highlights?: Map<string, unknown> } }).CSS?.highlights;
       return reg?.has('lc-such-treffer') ?? false;
-    }), { timeout: 45000 }).toBe(false);
+    }), { timeout: 90000 }).toBe(false);
   });
 });
 

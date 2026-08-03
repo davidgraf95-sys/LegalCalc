@@ -30,7 +30,19 @@ test.describe('Gesetze-UX 9 Punkte', () => {
   // hier, spec-lokal — das Per-Test-Budget grosszügig auf 90 s heben; das lässt die
   // bereits vorhandenen, semantisch korrekten Auto-Waits fertiglaufen. Greift nur bei
   // Überschreitung, verlangsamt grüne Tests nicht. Assertions unverändert (§6.3).
-  test.describe.configure({ timeout: 90_000 });
+  //
+  // RUNNER-ROBUSTHEIT 3.8.2026 — 90 s → 150 s. Belegt: «Screenshots Desktop hell +
+  // dunkel» riss im Lauf 30836806866 (Shard 2/8) mit «page.screenshot: Test timeout
+  // of 90000ms exceeded» an Zeile 122 (dem zweiten Screenshot, nach emulateMedia +
+  // reload), auf einem PR-Stand ohne jede src/-Änderung; der Rerun lief grün. Der
+  // Runner-Pool ist an diesem Tag messbar langsamer geworden (Perf-Kalibrierlauf
+  // 30830332128: OR-TBT-Mittel 4489 → 5290 ms gegenüber Juli, +17.8 %) — dieser Test
+  // lädt OR ZWEIMAL (goto + reload) und trifft die Verlangsamung doppelt.
+  // DEKLARIERTE TEST-INFRASTRUKTUR-ÄNDERUNG, kein Refactoring i. S. v. §6.3: Diese
+  // Tests prüfen FUNKTIONALITÄT, nicht Tempo. Tempo prüft das §15-Perf-Budget
+  // (check:perf-lighthouse) — ein Timeout, der langsame Runner bestraft, misst den
+  // Runner, nicht die Software. Keine Assertion und kein Prüfschritt berührt.
+  test.describe.configure({ timeout: 150_000 });
 
   test('P4: Gliederung/Randtitel steht VOR der Artikelnummer (Fedlex-Reihenfolge)', async ({ page }) => {
     await page.goto('/gesetze/bund/OR');
@@ -115,11 +127,15 @@ test.describe('Gesetze-UX 9 Punkte', () => {
   test('Screenshots Desktop hell + dunkel', async ({ page }) => {
     await page.goto('/gesetze/bund/OR');
     await expect(page.locator('#art-1')).toBeVisible();
-    await page.screenshot({ path: `${SHOT}/leser-desktop-hell.png`, fullPage: false });
+    // Screenshot-Budget explizit auf 60 s (Playwright-Default 30 s). Auf dem
+    // langsamen Runner wartet `page.screenshot` auf einen stabilen Frame der
+    // ~930-KB-OR-Seite; bisher band das 90-s-TEST-Budget vorher (Beleg oben), mit
+    // 150 s käme der 30-s-Default als nächste Kante. Reine Zeitbudget-Zahl.
+    await page.screenshot({ path: `${SHOT}/leser-desktop-hell.png`, fullPage: false, timeout: 60_000 });
     await page.emulateMedia({ colorScheme: 'dark' });
     await page.reload();
     await expect(page.locator('#art-1')).toBeVisible();
-    await page.screenshot({ path: `${SHOT}/leser-desktop-dunkel.png`, fullPage: false });
+    await page.screenshot({ path: `${SHOT}/leser-desktop-dunkel.png`, fullPage: false, timeout: 60_000 });
   });
 
   test('C: aktueller Artikel wird bei KANTONALEM Gesetz verfolgt (Reiter-Anker)', async ({ page }) => {
