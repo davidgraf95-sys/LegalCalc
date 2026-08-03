@@ -105,7 +105,9 @@ export function VorlageGmbhGruendung() {
           (die öffentliche Beurkundung bleibt zwingend), Wahlannahme-/Domizilerklärungen,
           Beschlüsse und die Handelsregister-Anmeldung druckfertig.
         </p>
-        <div className="flex flex-wrap items-center gap-1.5">
+        {/* lc-chip-zeile (LM-044/N1): Norm-Chips sind <a> (unterstrichen); der
+            Status-Badge daneben liegt auf der lc-badge-Achse und bleibt unberührt. */}
+        <div className="lc-chip-zeile flex flex-wrap items-center gap-1.5">
           {(card?.norms ?? []).map((n) => (
             <NormChip key={n.label} artikel={n.label} hrefOverride={fedlexLokalisiert(n.url, locale)} />
           ))}

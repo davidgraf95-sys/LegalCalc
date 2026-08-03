@@ -27,8 +27,13 @@ function FacettenGruppe({ label, optionen }: {
   /** `voll` = ausgeschriebene a11y-/Tooltip-Bezeichnung, falls `text` eine Abkürzung ist. */
   optionen: { id: string; text: string; voll?: string; n: number; aktiv: boolean; waehle: () => void }[];
 }) {
+  // lc-chip-zeile (LM-044/N1): Chip-Grammatik-Container — die Facetten sind
+  // <button>, tragen hier also den geschlossenen Hairline-Rahmen (drückbare Form)
+  // statt nur eine Farbnuance. Der Selected-Zustand (lc-chip-selected) bleibt
+  // unangetastet: die Grammatik setzt die Fläche ausdrücklich nur im Ruhezustand
+  // (:not(.lc-chip-selected) in index.css).
   return (
-    <div role="group" aria-label={label} className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+    <div role="group" aria-label={label} className="lc-chip-zeile flex flex-wrap items-center gap-x-2 gap-y-1.5">
       <span aria-hidden className="lc-overline shrink-0">{label}</span>
       {optionen.map((o) => (
         <button key={o.id} type="button" aria-pressed={o.aktiv} onClick={o.waehle}
@@ -279,8 +284,11 @@ export function EntscheidFilter({
       </details>
 
       {/* Aktiv-Filter-Chips (immer sichtbar, auch bei zugeklapptem Disclosure). */}
+      {/* lc-chip-zeile (LM-044/N1): Chip-Grammatik — die entfernbaren Filter sind
+          <button>, bekommen also den geschlossenen Hairline-Rahmen und sehen damit
+          gleich aus wie die Facetten-Knöpfe darüber und die Norm-Chips der Karten. */}
       {(aktiveChips.length > 0 || suchAktiv || facettenAktiv) && (
-        <div className="flex flex-wrap items-center gap-1.5">
+        <div className="lc-chip-zeile flex flex-wrap items-center gap-1.5">
           {aktiveChips.map((c) => (
             <button key={c.key} type="button" onClick={c.loesche}
               className="lc-chip inline-flex items-center gap-1 hover:border-brass-400 hover:text-brass-700"

@@ -10,7 +10,10 @@ import { datumAnzeige, DATUM_UNBEKANNT_TITEL, spracheBadgeTitel } from './format
 // Metazeile — 0/75 haben eine BGE-Referenz, die Nummer trägt also keinen Scent.
 // Fehlt die amtliche Regeste, zeigt die Karte die deterministische Synth-Zeile
 // (font-sans + Marker, NICHT Serifen-Regeste-Optik → §8 ehrlich). Reine
-// Darstellung (§3); Norm-Chips sind <button> (NormChip), kein <a> im <Link>.
+// Darstellung (§3); Norm-Chips sind span[role=button] (NormChip) — WEDER <a>
+// NOCH <button>, weil beides als «interactive content» im Karten-<a> ungültiges
+// Inhaltsmodell wäre (Begründung dort). Die Chip-Grammatik macht die Aktions-
+// Form darum an der ROLLE fest, nicht am Tag (LM-044/N1, index.css).
 
 export function EntscheidKarte({ e, onNorm }: {
   e: BrowseEntscheid;
@@ -70,9 +73,12 @@ export function EntscheidKarte({ e, onNorm }: {
       </Link>
 
       {/* Norm-Zeile — führend (nicht am Fuss): zweite Navigationsachse.
-          Geschwister des Links (nicht Nachfahre), relativ über dem Stretch-::after. */}
+          Geschwister des Links (nicht Nachfahre), relativ über dem Stretch-::after.
+          lc-chip-zeile (LM-044/N1): die Norm-Chips sind span[role=button] — die
+          Grammatik macht die Aktions-Form an der ROLLE fest, damit sie gleich
+          aussehen wie die Facetten-<button> der Filterleiste (§23). */}
       {e.normKeys.length > 0 && (
-        <div className="relative mt-3 flex flex-wrap items-center gap-1.5">
+        <div className="lc-chip-zeile relative mt-3 flex flex-wrap items-center gap-1.5">
           {e.normKeys.slice(0, 4).map((k) => <NormChip key={k} normKey={k} onWaehle={onNorm} />)}
           {/* LM-049: der Überlaufhinweis ist ein ZÄHLER, kein Bedienelement — die
               nackte «+2» war neben den gerahmten Chips nicht als Text erkennbar.

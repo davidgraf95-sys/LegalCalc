@@ -62,8 +62,10 @@ export function EntscheidZeile({ e, onNorm }: {
             <span className="lc-badge lc-badge-soft" title="Automatisch erfasst, fachlich noch nicht geprüft">ungeprüft</span>
           )}
           {e.sprache !== 'de' && <span className="lc-badge lc-badge-soft uppercase" title={spracheBadgeTitel(e.sprache)}>{e.sprache}</span>}
+          {/* lc-chip-zeile (LM-044/N1): Aktions-Form an der ROLLE (span[role=button]),
+              gleiche Grammatik wie in der Karten-Ansicht und der Filterleiste (§23). */}
           {e.normKeys.length > 0 && (
-            <span className="relative z-10 flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className="lc-chip-zeile relative z-10 flex flex-wrap items-center gap-x-2 gap-y-1">
               {e.normKeys.slice(0, 5).map((k) => <NormChip key={k} normKey={k} onWaehle={onNorm} />)}
               {/* LM-049 (gleiche Formensprache wie die Karte): Zähler, nicht
                   Bedienelement — «+3 weitere» statt nackter «+3». */}
