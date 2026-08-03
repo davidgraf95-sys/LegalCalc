@@ -66,50 +66,38 @@ test('OR Art. 319: höchstens EINE Guide-Linie', async ({ page }) => {
   expect(n, `Guide-Kanten um Art. 319 (${n}) muss ≤ 1 sein`).toBeLessThanOrEqual(1);
 });
 
-// V2·A28 (David 12.7.2026, Live-Verdikt «das mit den linien funktioniert überhaupt
-// nicht» / «also ist überhaupt nicht fördernd für die übersicht») — der Auto-Guide
-// ist KORPUSWEIT zurückgezogen: KEIN Erlass zeigt im Auto-Default eine sichtbare
-// Guide-Linie (deklarierte Verdikt-Änderung, §6.3). Das FEATURE bleibt: der explizite
-// K11-Schalter «Linien AN» zeigt den EINEN Guide wieder — dabei hält die R4-Invariante
-// (≤ 1 Guide-Stapel, kein Barcode) auch bei tiefer Schachtelung (ZGB Art. 684).
-test('ZGB Art. 684: im Auto-Default KEINE sichtbare Guide-Linie (V2·A28, korpusweit aus)', async ({ page }) => {
+// U-LINIEN/A8 + L-3 — der Aufbau-Default heilt Davids A8-Befund («zgb sehr viele,
+// arg fast keine»). Geltend ist seit dem David-Entscheid vom 3.8.2026 wieder die
+// L-3-Regel (sie hebt den A28-Rückzug vom 12.7. auf; Chronik #161 → L-3 → A28 →
+// Reaktivierung im Kopf von linienAufbau.ts): die Tiefe deckelt den Auto-Guide
+// NICHT, ruhig ist allein «dichte < 2». Deklarierte Verdikt-Änderung (§6.3), Quelle
+// ist der David-Entscheid — nicht der Testdruck. POSITIV ZGB + ArG sichtbar,
+// NEGATIV der dichte-arme STG bleibt ruhig — alles bei WEITERHIN ≤ 1 Guide-Stapel
+// (R4-Invariante, kein Barcode trotz tiefer Schachtelung). Der explizite
+// K11-Schalter bleibt in e2e/leser-optionen (BV-Toggle-Zyklus) gegated.
+test('ZGB Art. 684: im Auto-Default GENAU EINE sichtbare Guide-Linie (L-3, tiefe Kodifikation zeigt ihren Guide)', async ({ page }) => {
   await page.goto('/gesetze/bund/ZGB#art-684');
   await expect(page.locator('#art-684')).toBeVisible();
   await page.evaluate(() => document.fonts?.ready);
   await page.waitForTimeout(300);
   expect(await guideKanten(page, 'art-684'), 'R4: ≤ 1 Guide-Stapel').toBeLessThanOrEqual(1);
-  expect(await sichtbareGuides(page, 'art-684'), 'ZGB (A28): kein aufgedrängter Guide').toBe(0);
+  expect(await sichtbareGuides(page, 'art-684'), 'ZGB (L-3): sein EINER Guide ist sichtbar').toBe(1);
 });
 
-test('STG Art. 10: im Auto-Default KEINE sichtbare Guide-Linie (V2·A28, korpusweit aus)', async ({ page }) => {
+test('STG Art. 10: im Auto-Default KEINE sichtbare Guide-Linie (dichte < 2 bleibt ruhig, L-3)', async ({ page }) => {
   await page.goto('/gesetze/bund/STG#art-10');
   await expect(page.locator('#art-10')).toBeVisible();
   await page.evaluate(() => document.fonts?.ready);
   await page.waitForTimeout(300);
   expect(await guideKanten(page, 'art-10'), 'R4: ≤ 1 Guide-Stapel').toBeLessThanOrEqual(1);
-  expect(await sichtbareGuides(page, 'art-10'), 'STG (A28): keine sichtbare Guide-Linie').toBe(0);
+  expect(await sichtbareGuides(page, 'art-10'), 'STG (dichte 1): keine sichtbare Guide-Linie').toBe(0);
 });
 
-test('ArG Art. 9: im Auto-Default KEINE sichtbare Guide-Linie (V2·A28, korpusweit aus)', async ({ page }) => {
+test('ArG Art. 9: im Auto-Default GENAU EINE sichtbare Guide-Linie (flaches Gesetz zeigt seine Ebene)', async ({ page }) => {
   await page.goto('/gesetze/bund/ARG#art-9');
   await expect(page.locator('#art-9')).toBeVisible();
   await page.evaluate(() => document.fonts?.ready);
   await page.waitForTimeout(300);
   expect(await guideKanten(page, 'art-9'), 'R4: ≤ 1 Guide-Stapel').toBeLessThanOrEqual(1);
-  expect(await sichtbareGuides(page, 'art-9'), 'ArG (A28): kein aufgedrängter Guide').toBe(0);
-});
-
-// POSITIV — das FEATURE bleibt: der explizite K11-Schalter «Linien AN» zeigt den
-// EINEN Guide wieder, und die R4-Invariante hält auch bei tiefer Schachtelung
-// (ZGB Art. 684: GENAU EINE sichtbare Guide-Linie, kein Barcode).
-test('ZGB Art. 684: Nutzer-Override «Linien AN» zeigt GENAU EINE sichtbare Guide-Linie (R4 hält)', async ({ page }) => {
-  await page.goto('/gesetze/bund/ZGB#art-684');
-  await expect(page.locator('#art-684')).toBeVisible();
-  await page.evaluate(() => document.fonts?.ready);
-  await page.waitForTimeout(300);
-  await page.getByRole('button', { name: 'Ansicht' }).first().click();
-  await page.getByRole('switch', { name: 'Linien' }).click();
-  await expect(page.locator('html')).toHaveAttribute('data-linien', 'an');
-  expect(await guideKanten(page, 'art-684'), 'R4: ≤ 1 Guide-Stapel').toBeLessThanOrEqual(1);
-  expect(await sichtbareGuides(page, 'art-684'), 'Nutzer-«an»: sein EINER Guide ist sichtbar').toBe(1);
+  expect(await sichtbareGuides(page, 'art-9'), 'ArG: seine EINE Gliederungsebene ist sichtbar').toBe(1);
 });

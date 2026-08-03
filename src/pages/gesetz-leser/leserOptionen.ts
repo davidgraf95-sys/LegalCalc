@@ -22,15 +22,16 @@
 // UND jedes Split-View-Pane) folgen derselben Wahl ohne Re-Render.
 //
 // Fussnoten/Verweise/Entscheide: Default 'an' = heutige Darstellung → data-*="an"
-// ist ein CSS-No-op (R6: Grundzustand byte-gleich). Linien: Default 'auto'. V2·A28
-// (David 12.7.2026, Live-Verdikt «das mit den linien funktioniert überhaupt nicht»):
-// der Auto-Guide ist KORPUSWEIT zurückgezogen — linienAufbau.ts liefert autoGuide=
-// false für jeden Erlass, der Reader schreibt darum data-guide-auto="aus" an den
-// `.lc-leser`-Root, und im Default 'auto' bleibt der vertikale Guide überall aus
-// (Einzug bleibt). Das FEATURE bleibt: ein expliziter Klick «Linien AN» setzt
-// data-linien="an" und zeigt den EINEN Guide auf `guideEbene` wieder (K11-Tri-State,
-// übersteuert den Auto-Default global). Alle CSS-Regeln sind auf `.lc-leser` gescopt
-// (index.css), damit sie NUR den Reader treffen.
+// ist ein CSS-No-op (R6: Grundzustand byte-gleich). Linien: Default 'auto' = AUFBAU-
+// basiert. Geltend seit dem David-Entscheid vom 3.8.2026 ist wieder die L-3-Regel
+// (sie hebt den A28-Rückzug vom 12.7.2026 auf; vollständige Chronik #161 → L-3 → A28
+// → Reaktivierung im Kopf von linienAufbau.ts): `autoGuide = dichteAmGuide ≥ 2` —
+// trägt der Aufbau den EINEN Guide, schreibt der Reader data-guide-auto="an" an den
+// `.lc-leser`-Root und der Guide auf `guideEbene` ist im Default sichtbar; sonst
+// "aus" (Einzug bleibt). Der K11-Tri-State-Schalter «Linien» übersteuert das global
+// in beide Richtungen ('an'/'aus') — er war von keiner der Drehungen betroffen.
+// Alle CSS-Regeln sind auf `.lc-leser` gescopt (index.css), damit sie NUR den Reader
+// treffen.
 //
 // W2·7-BEZUG/B5 (David 28.7.2026): die frühere Stufen-Wahl «alle · 20 · 10 · 5 J.»
 // (V2·B-2) ist ENTFALLEN und durch einen VON-BIS-BEREICH ersetzt — Zeitstrahl mit

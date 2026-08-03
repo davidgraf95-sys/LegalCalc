@@ -218,52 +218,67 @@ an/aus, global) bleibt unangetastet — hier geht es allein um den AUTO-Default.
 Verschachtelung; `guideEbene` = Sektions-tiefe, die den EINEN Guide trägt (`null` =
 flache Artikelliste); `dichteAmGuide` = Median Artikel je Sektion auf `guideEbene`;
 `autoGuide` = zeigt der Guide im Auto-Default? Der Reader schreibt `autoGuide` als
-`data-guide-auto="an|aus"` an den `.lc-leser`-Root; CSS wertet es aus. **V2·A28
-(David 12.7.2026): `autoGuide` ist korpusweit `false` — `data-guide-auto` ist stets
-`"aus"`.**
+`data-guide-auto="an|aus"` an den `.lc-leser`-Root; CSS wertet es aus. **Geltende
+Regel seit dem David-Entscheid vom 3.8.2026 (L-3-Reaktivierung, hebt A28 auf):
+`autoGuide = dichteAmGuide ≥ DICHTE_MIN` — der Dichte-Boden ist der einzige
+Schwellwert, die Tiefe deckelt nicht.**
 
 | Aufbau (`strukturTiefe`) | `guideEbene` | Auto-Default | Wirkung |
 |---|---|---|---|
-| **0** (flache Artikelliste, z. B. VMWG, Kanton-§) | `null` | — | Kein Guide möglich; Artikel trennt der feine Artikel-Trenner. |
-| **1** (eine Gliederungsebene, z. B. Kurzerlass, Staatsvertrag) | 0 | **AUS** (A28) | Kein aufgedrängter Guide; Nutzer-«an» zeigt die EINE Ebene auf `guideEbene 0`. |
-| **2** (zwei Ebenen, z. B. ArG) | 1 | **AUS** (A28) | Kein aufgedrängter Guide; Nutzer-«an» zeigt die innere Gruppierung auf `guideEbene 1`. |
-| **≥ 3** (tiefe Kodifikation, z. B. BV, OR, ZGB) | 1 | **AUS** (A28) | Kein aufgedrängter Guide; Nutzer-«an» zeigt den EINEN Guide auf `guideEbene 1` (≤ 1 Guide-Stapel, kein Barcode; die tieferen Ebenen tragen ihre Tiefe über Einzug + Typo). |
+| **0** (flache Artikelliste, z. B. VMWG, Kanton-§) | `null` | — | Kein Guide möglich; Artikel trennt der feine Artikel-Trenner. **In jeder Fassung unverändert.** |
+| **1** (eine Gliederungsebene, z. B. Kurzerlass, Staatsvertrag) | 0 | **AN**, wenn `dichteAmGuide ≥ 2` | Die EINE Ebene wird sichtbar (`guideEbene 0`). |
+| **2** (zwei Ebenen, z. B. ArG) | 1 | **AN**, wenn `dichteAmGuide ≥ 2` | Die innere Gruppierung wird sichtbar (`guideEbene 1`). |
+| **≥ 3** (tiefe Kodifikation, z. B. BV, OR, ZGB) | 1 | **AN**, wenn `dichteAmGuide ≥ 2` | Der EINE Guide auf `guideEbene 1` (≤ 1 Guide-Stapel, kein Barcode; die tieferen Ebenen tragen ihre Tiefe über Einzug + Typo). Dichte-arm (z. B. STG, Median 1) ⇒ **AUS**. |
 
-**Auto-Default-RÜCKZUG (V2·A28, David 12.7.2026, Live-Feedback auf L-3/#207).** L-3
-(gebaut 11.7.) hatte den Auto-Guide für dichte Erlasse AN geschaltet (inkl. ZGB/OR),
-gestützt auf die Theorie, ein einzelner Guide auf `guideEbene` sei die hilfreiche
-Gliederungshilfe. David hat das **live verworfen**: *«das mit den linien funktioniert
-überhaupt nicht»* / *«also ist überhaupt nicht fördernd für die übersicht»* (Wortlaut
-`docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-12.md`). Das ist ein Total-Urteil
-über den aufgedrängten Guide, kein Schwellwert-Feedback. Konsequenz: der Auto-Default
-wird **korpusweit zurückgezogen** — `autoGuide = false` für JEDEN Erlass. Der Reader
-drängt die Gliederungslinie nie auf.
+**CHRONIK des Auto-Defaults — drei Drehungen, ehrlich ausgewiesen.** Diese Regel ist
+dreimal gedreht worden; die Chronik bleibt vollständig stehen, damit die nächste
+Änderung nicht blind den nächsten Flip-Flop baut (Langfassung im Kopf von
+`linienAufbau.ts`):
 
-**Das FEATURE bleibt — nur das Aufdrängen endet.** Der K11-Tri-State-Nutzer-Schalter
-«Linien» (`data-linien` an/aus/auto, global) ist voll funktionsfähig: ein Klick
-«Linien AN» zeigt den EINEN Guide auf `guideEbene`. `strukturTiefe`/`guideEbene`/
-`dichteAmGuide` bleiben voll berechnet (sie steuern, WO der Guide sitzt und OB der
-Schalter erscheint — `zeigeLinien = guideEbene !== null`). `DICHTE_MIN`/`TIEF_AB`
-bleiben nur noch Diagnose-/Doku-Schwellen (deckeln nichts mehr am Auto-Default).
+1. **#161 (5.7.2026) — Tiefe deckelt.** `strukturTiefe ≥ 3 ⇒ Auto-Guide AUS`, aus
+   Sorge vor einem «Barcode». Folge: genau ZGB/OR standen ohne Gliederungslinie da;
+   David meldete «funktioniert praktisch nicht».
+2. **L-3 (11.7.2026, #207) — Dichte-Boden allein.** Der Denkfehler von #161 war, dass
+   es keinen Strich je Ebene gibt: der Reader emittiert **höchstens EINEN** Guide, fix
+   auf `guideEbene` (R4-gegated). Also Umkehr auf `autoGuide = dichteAmGuide ≥ 2`.
+3. **A28 (12.7.2026, #219) — korpusweit AUS.** David prüfte L-3 live und verwarf es:
+   *«das mit den linien funktioniert überhaupt nicht»* / *«also ist überhaupt nicht
+   fördernd für die übersicht»* (Wortlaut
+   `docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-12.md`). `autoGuide = false`
+   korpusweit.
+4. **L-3-Reaktivierung (3.8.2026) — zurück auf den Dichte-Boden.** David hat den
+   Auto-Default erneut entschieden, **in voller Kenntnis der Chronik**: ihm wurde
+   ausdrücklich vorgehalten, dass sein Live-Urteil vom 12.7. der Grund für A28 war
+   und dass A28 der aktuelle Live-Zustand ist. Er wählte trotzdem bewusst die
+   Reaktivierung. **A28 ist damit aufgehoben.** Tragend ist NICHT eine bessere
+   Theorie über Übersicht — die Theorie von L-3 wurde am 12.7. falsifiziert und wird
+   hier nicht wiederbelebt —, sondern allein Davids späterer, informierter Entscheid
+   als einziger zuständiger Abnehmer (§7/§8: der Entscheid steht offen im Reglement,
+   nicht als stille Umkehr).
 
-**Warum «korpusweit AUS» statt Feinjustage:** Davids Urteil ist ein Grundsatz-Nein
-zum aufgedrängten Guide. Jede verbleibende Auto-Heuristik (Dichte/Tiefe/Kategorie)
-bliebe eine Wette gegen dieses Urteil. Der konservative Zustand ist: nicht aufdrängen.
-Weitere Justage nur auf neues, positives David-Signal. Alternativen für echte
-Struktur-Übersicht (Typo-Hierarchie · Sticky-Mini-Kontext · TOC-Scroll-Spy ·
-Abschnitts-Rhythmus) sind in `fahrplaene/FAHRPLAN-GESETZES-UX.md §10.9` skizziert (nur Doku).
+**Wenn das Ergebnis erneut live nicht überzeugt**, ist der nächste Schritt **nicht**
+ein weiteres Drehen an `DICHTE_MIN`, sondern die Alternativen-Skizze in
+`fahrplaene/FAHRPLAN-GESETZES-UX.md §10.9` (Typo-Hierarchie · Sticky-Mini-Kontext ·
+TOC-Scroll-Spy · Abschnitts-Rhythmus).
 
-**Referenz-Verdikte** (im Tor gegated): ZGB (Tiefe 5) → **Auto-Guide AUS** · OR
-(Tiefe 4) → **AUS** · ArG (Tiefe 2) → **AUS** · VMWG (Tiefe 0) → **kein Guide** ·
-Kurzerlass/Staatsvertrag (Tiefe 1) → **AUS**. `guideEbene`/`strukturTiefe` bleiben
-gegated (Nutzer-«an» trifft denselben Ort).
+**Der K11-Tri-State-Nutzer-Schalter war von keiner Drehung betroffen.** «Linien»
+(`data-linien` an/aus/auto, global) übersteuert den Auto-Default in beide Richtungen.
+`strukturTiefe`/`guideEbene`/`dichteAmGuide` sind durchgehend voll berechnet (sie
+steuern, WO der Guide sitzt und OB der Schalter erscheint — `zeigeLinien =
+guideEbene !== null`). `TIEF_AB` ist seit L-3 nur noch Klassifikations-Schwelle
+(«tiefe Kodifikation», Diagnose/Doku) und deckelt den Auto-Default nicht.
+
+**Referenz-Verdikte** (im Tor gegated): ZGB (Tiefe 5, Dichte 92) → **Auto-Guide AN**
+· OR (Tiefe 4, Dichte 22) → **AN** · ArG (Tiefe 2, Dichte 4) → **AN** ·
+Kurzerlass/Staatsvertrag (Tiefe 1, Dichte 5) → **AN** · STG (Tiefe 3, Dichte 1) →
+**AUS** (der Dichte-Boden greift) · VMWG (Tiefe 0) → **kein Guide**.
 
 **Maschinell gegated:** `check:linien-kanon` (Nachfolger von R1/R4, in `npm run
-gate`) importiert dieselbe `linienProfil`-Funktion, beweist die korpusweiten
-Invarianten (`autoGuide` korpusweit `false`) + die Referenz-Verdikte + die
-Reader-/CSS-Verdrahtung (kein Drift); e2e `gesetze-ux-g3a`/`leser-optionen`/
-`leser-linien-kanon` beweisen das gerenderte Ergebnis (Auto-Default 0 sichtbare
-Guides; Nutzer-«an» ⇒ genau 1 Guide, ≤ 1 Guide-Stapel).
+gate`) importiert dieselbe `linienProfil`-Funktion, beweist die korpusweite
+Invariante (Biconditional `autoGuide ⟺ strukturTiefe ≥ 1 && dichteAmGuide ≥
+DICHTE_MIN`) + die Referenz-Verdikte + die Reader-/CSS-Verdrahtung (kein Drift);
+e2e `gesetze-ux-g3a`/`leser-optionen`/`leser-linien-kanon` beweisen das gerenderte
+Ergebnis (ZGB/ArG je genau 1 sichtbarer Guide, STG 0, BV-Toggle-Zyklus).
 **Wortlaut byte-gleich** (nur Klassen/Attribute), Engine-Golden byte-gleich.
 
 ### §4b-B · Farb-Wörterbuch der Referenzschicht (W2·5d V2·C-1, 10.7.2026, David «go zu allem»)

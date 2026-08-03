@@ -1482,6 +1482,28 @@ als Opus-Einheiten; Fable orchestriert nur.
 
 ### 10.9 · A28 — Auto-Linien-Default korpusweit zurückgezogen (David 12.7.2026, Live-Feedback auf L-3)
 
+> **AUFGEHOBEN am 3.8.2026 (David-Entscheid): L-3 ist reaktiviert.** Der Auto-Guide
+> hängt wieder allein am Dichte-Boden (`autoGuide = dichteAmGuide ≥ 2`); `data-guide-auto`
+> ist nicht mehr korpusweit `"aus"`. David hat den Entscheid **in voller Kenntnis der
+> unten dokumentierten Historie** gefällt — ihm wurde ausdrücklich vorgehalten, dass
+> sein Live-Urteil vom 12.7. («das mit den linien funktioniert überhaupt nicht») der
+> Grund für A28 war und dass A28 der Live-Zustand ist; er wählte trotzdem bewusst die
+> Reaktivierung. Tragend ist damit **nicht** eine widerlegte Theorie, sondern der
+> spätere, informierte Entscheid des einzigen zuständigen Abnehmers.
+>
+> **Dieser Abschnitt bleibt vollständig stehen** (§8/§11): er ist der Beleg dafür,
+> was am 12.7. live geprüft und verworfen wurde. Wer den Auto-Default künftig erneut
+> anfasst, liest ihn zuerst. Geltender Stand steht in `DESIGN-REGLEMENT-NORMTEXT.md`
+> §4b-A und im Kopf von `src/pages/gesetz-leser/linienAufbau.ts`.
+>
+> **Weiterhin gültig aus diesem Abschnitt:** die *A28-Alternativen-Skizze* am Ende
+> (Typo-Hierarchie · Sticky-Mini-Kontext · TOC-Scroll-Spy · Abschnitts-Rhythmus). Sie
+> ist der nächste Schritt, falls das Ergebnis erneut live nicht überzeugt — **nicht**
+> ein weiteres Drehen an `DICHTE_MIN`.
+>
+> **A27 (SektionKontextKopf) ist von der Reaktivierung NICHT berührt** und bleibt
+> zurückgezogen.
+
 **Quelle (WÖRTLICH massgeblich):** Davids Chat-Anmerkung 12.7.2026, im Repo persistiert
 unter `docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-12.md`:
 

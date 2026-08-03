@@ -36,7 +36,11 @@ function profil(struktur) {
   if (tiefe === 0) return { strukturTiefe: 0, guideEbene: null, dichteAmGuide: 0, autoGuide: false };
   const ge = Math.min(tiefe - 1, 1);
   const dg = median([...(aps[ge]?.values() ?? [])]);
-  // V2·L-3 (Umkehr #161): Auto-Guide allein am Dichte-Boden, die Tiefe deckelt nicht mehr.
+  // L-3-Regel (Umkehr #161, gebaut 11.7.2026): Auto-Guide allein am Dichte-Boden, die
+  // Tiefe deckelt nicht mehr. §5-Befund 3.8.2026: A28 (12.7., Auto-Guide korpusweit aus)
+  // wurde hier NIE nachgezogen — diese Diagnose lief 12.7.–3.8. an der SSoT vorbei. Mit
+  // der L-3-Reaktivierung (David-Entscheid 3.8.) stimmt sie wieder überein; das Tor
+  // `check:linien-kanon` importiert ohnehin das echte TS-Modul und beweist die Gleichheit.
   return { strukturTiefe: tiefe, guideEbene: ge, dichteAmGuide: dg, autoGuide: dg >= DICHTE_MIN };
 }
 
@@ -62,7 +66,7 @@ console.log(`Korpus: ${rows.length} Sidecar-Erlasse`);
 console.log('Gliederungstiefe-Verteilung:', JSON.stringify(distTiefe));
 console.log(`  flach (Tiefe 0): ${flach}  ·  tiefe Kodifikation (Tiefe ≥ ${TIEF_AB}): ${tief}`);
 console.log(`Auto-Guide AN: ${autoAn}  ·  AUS: ${rows.length - autoAn}`);
-console.log(`Schwellen: DICHTE_MIN=${DICHTE_MIN} (Median Art./Sektion, EINZIGER Auto-Guide-Boden seit V2·L-3); TIEF_AB=${TIEF_AB} nur noch «tiefe Kodifikation»-Klassifikation`);
+console.log(`Schwellen: DICHTE_MIN=${DICHTE_MIN} (Median Art./Sektion, EINZIGER Auto-Guide-Boden der L-3-Regel); TIEF_AB=${TIEF_AB} nur noch «tiefe Kodifikation»-Klassifikation`);
 for (const k of ['ZGB', 'OR', 'ARG', 'VMWG']) {
   const r = rows.find((x) => x.key === k && x.ebene === 'bund');
   if (r) console.log(`  ${k.padEnd(5)} tiefe=${r.strukturTiefe} dichte@guide=${r.dichteAmGuide} → autoGuide=${r.autoGuide}`);

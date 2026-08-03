@@ -321,24 +321,32 @@ Fedlex-Currency). Jeder trägt seine Bau-Spec im `ROADMAP-Spec`-§ des verlinkte
 ### Welle 2 — Griff (Auffindbarkeit) + Konsultieren + mehr Klingen
 
 - [ ] **5d · Gesetzes-UX & Darstellungs-Reglement** *(GESETZES-UX, `[OF]`, eigener Worktree; Auftrag David 4.7.)*:
-  **Stand 26.7.2026:** G0–G6, A1–A18, A19–A25 (ohne zurückgezogenes L-3/A28), E-Reihe A29–A40/E1–E7,
+  **Stand 3.8.2026:** G0–G6, A1–A18, A19–A25, E-Reihe A29–A40/E1–E7,
   §11 IA-1–IA-7, EID-1/EID-2 und FN-5/M14 gebaut — **offener Rest = EID-3** + Härtungs-/Politur-Posten.
+  **L-3 ist seit dem David-Entscheid vom 3.8.2026 wieder aktiv** (Auto-Guide am Dichte-Boden);
+  **A28 (Rückzug vom 12.7.) ist damit aufgehoben**. **A27 (SektionKontextKopf) bleibt davon
+  UNBERÜHRT zurückgezogen.**
   <!-- @meta id: W2·5d · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/pages/gesetz-leser/inhalt.tsx, src/components/normtext/ArtikelBody.tsx, src/lib/normtext/register.ts, src/components/suche, scripts/normtext] · seq-hart: [QS-PERF(ArtikelBody.tsx)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
   UX/Lesbarkeit des Gesetz-Lesers auf State-of-the-Art (Fedlex = Mindestlatte): EINE Linien-Sprache,
   Lesespalte `max-w-reading`, Leser-Kopf-Optionen, je Grundart eine Designvorschrift; G3b ist Risiko-Pfad.
   **Detail (Spec wörtlich, inkl. Nachzug-Wellen A19–A25/A29–A40, IA-Reihe §11, eId-Reihe §12):** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §16.
   - [ ] **5d-EID3 · EID-3 Teil (b): Linien-Tiefe aus der eId-Pfadlänge** — Guide-/Einzugstiefe aus dem kumulativen eId-Pfad statt aus der Sidecar-Rekursionstiefe; golden-neutral, Tor `check:linien-kanon`.
     <!-- @meta id: W2·5d-EID3 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/linienAufbau.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
-  - [~] **5d-ANNEX · eId-Anker für Annex-Sections** — die aus EID-1 bekannte Grenze schliessen: Container-eIds auch auf dem separaten Anhang-Pfad mitschneiden. **Extraktion = Risikopfad.**
-    <!-- @meta id: W2·5d-ANNEX · status: wip · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext/struktur-extrahiere.ts, public/normtext/bund] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
-  - [~] **5d-SPY · V3/H6 — Scroll-Spy-Härtung (rootMargin ↔ Bezugslinie)** — der einzige offene Härtungs-Posten der E-Reihe; **erst reproduzieren, dann fixen** (H6 ist unreproduziert).
-    <!-- @meta id: W2·5d-SPY · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts/SektionBaumTOC.tsx, src/pages/gesetz-leser/scrollAnker.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
-  - [~] **5d-YC · IA-Rest Y-C: `/international` Stufe 2** — echter Redirect mit Hash-Mapping; §11 ist sonst komplett, Stufe 2 war dem Stufe-1-Betrieb nachgelagert.
-    <!-- @meta id: W2·5d-YC · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/lib/seo.ts, src/lib/navigation.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
-  - [~] **A24** (L-1+L-2+L-3): Linien-Reparatur, Auto-Default-Umkehr ZGB/OR (Umkehr
+  - [ ] **5d-ANNEX · eId-Anker für Annex-Sections** — die aus EID-1 bekannte Grenze schliessen: Container-eIds auch auf dem separaten Anhang-Pfad mitschneiden. **Extraktion = Risikopfad.**
+    <!-- @meta id: W2·5d-ANNEX · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext/struktur-extrahiere.ts, public/normtext/bund] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
+  - [ ] **5d-SPY · V3/H6 — Scroll-Spy-Härtung (rootMargin ↔ Bezugslinie)** — der einzige offene Härtungs-Posten der E-Reihe; **erst reproduzieren, dann fixen** (H6 ist unreproduziert).
+    <!-- @meta id: W2·5d-SPY · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts/SektionBaumTOC.tsx, src/pages/gesetz-leser/scrollAnker.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
+  - [ ] **5d-YC · IA-Rest Y-C: `/international` Stufe 2** — echter Redirect mit Hash-Mapping; §11 ist sonst komplett, Stufe 2 war dem Stufe-1-Betrieb nachgelagert.
+    <!-- @meta id: W2·5d-YC · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/seo.ts, src/lib/navigation.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
+  - [x] **A24** (L-1+L-2+L-3): Linien-Reparatur, Auto-Default-Umkehr ZGB/OR (Umkehr
     #161, David freigegeben); L-4 entfällt. V2 §2 F4.
-    - [ ] **L-3** (Auto-Default-Umkehr): weiterhin **hinter David/Council-Gate** —
-      NICHT in feat/v2-l1-l2 gebaut. V2 §2 F4.
+    - [x] **L-3** (Auto-Default-Umkehr) — **gebaut 11.7. (#207), am 12.7. per A28
+      zurückgezogen (Davids Live-Urteil «funktioniert überhaupt nicht»), am 3.8.2026
+      per David-Entscheid REAKTIVIERT** (er entschied in voller Kenntnis des
+      12.7.-Urteils und des A28-Live-Zustands). Geltende Regel: `autoGuide =
+      dichteAmGuide ≥ 2` (Dichte-Boden allein, Tiefe deckelt nicht). **A28 ist damit
+      aufgehoben; A27 bleibt unberührt zurückgezogen.** Chronik + Rationale:
+      DESIGN-REGLEMENT-NORMTEXT §4b-A, `linienAufbau.ts`-Kopf, V2 §2 F4.
 - [ ] **10-UI-NAV · UI-Nutzwert & Navigation (Ultracode-Synthese 11.7.)** *(`[OF]`, reine UI/Navigation)*:
   <!-- @meta id: W2·10-UI-NAV · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/components/suche, src/lib/suche, src/lib/universalSuche.ts, src/components/layout, src/components/rechtsprechung, src/pages/Rechtsprechung.tsx, src/pages/gesetz-leser, src/pages/GesetzLeser.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
   Priorisierter UI-Plan aus 60 empirischen Befunden + 3 Kritik-Linsen — Suche, Navigation und

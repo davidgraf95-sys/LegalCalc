@@ -779,10 +779,12 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     // `lc-leser`: Scope-Anker für die G2a-Options-CSS (index.css) — die
     // data-linien/-fussnoten/-verweise-Regeln greifen NUR im Reader, nie im
     // Norm-Popover der Rechner o. Ä. `data-guide-auto` (U-LINIEN/A8): der
-    // AUFBAU-abhängige Linien-Default 'auto' wertet CSS hieran aus — 'aus' = tiefe
-    // Kodifikation bleibt ruhig (Guide unsichtbar, Einzug bleibt), 'an' = flaches/
-    // mittleres Gesetz zeigt seine EINE Guide-Ebene. Löst den grundart-Kategorie-
-    // Default (K11) ab. `data-grundart` bleibt als semantischer Marker (§5).
+    // AUFBAU-abhängige Linien-Default 'auto' wertet CSS hieran aus — 'an' = der
+    // Aufbau TRÄGT den EINEN Guide (Dichte-Boden erfüllt; seit der L-3-Reaktivierung
+    // vom 3.8.2026 gilt das auch für die tiefen Kodifikationen ZGB/OR), 'aus' = er
+    // trägt ihn nicht (Guide unsichtbar, Einzug bleibt). Chronik der Drehungen im
+    // Kopf von linienAufbau.ts. Löst den grundart-Kategorie-Default (K11) ab.
+    // `data-grundart` bleibt als semantischer Marker (§5).
     <div className="lc-leser space-y-5" data-grundart={meta.grundart ?? undefined} data-guide-auto={linien.autoGuide ? 'an' : 'aus'}
       // W2·10-UI-NAV/N0c: reale Sticky-Höhe für die .nt-anker-Sprünge. Einzelansicht:
       // Topbar (4rem) + Inhalts-Kopf (2.25rem) — die frühere dritte klebende Such-Zeile
