@@ -201,11 +201,22 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // Default zu, und der Scroll-Spy führt sie erst beim nächsten Scroll nach —
   // beim Öffnen sah man den gelesenen Zweig also gar nicht. Darum den aktiven
   // Pfad beim ÖFFNEN einmalig aufklappen und wie einen Klick-Sprung als MANUELL
-  // behandeln (K): sonst klappte der Spy ihn sofort wieder zu. Läuft nur auf der
-  // steigenden Flanke von `tocAuf` (kein Nachführen während das Sheet offen ist —
-  // das bleibt Sache des Spys, und ein Reflow im offenen Sheet wäre CLS, §15.2).
+  // behandeln (K): sonst klappte der Spy ihn sofort wieder zu.
+  //
+  // GENAU EINMAL je Öffnung (`pfadAufgeklapptRef`), aber MIT NACHLAUF: Bug-Check
+  // §9 vom 4.8.2026 (B5) — wer das Sheet öffnet, BEVOR der Scroll-Spy zum ersten
+  // Mal gefeuert hat (Deep-Link, sofortiges Antippen nach dem Laden), hatte
+  // `aktivIds === []`; der Effekt stieg aus und lief nie nach, weil `aktivIds`
+  // nicht in den Deps stand — das Sheet blieb ohne aufgeklappten Lesepfad. Jetzt
+  // ist `aktivIds` Dependency, und das Ref verhindert das wiederholte Aufklappen
+  // bei jedem Spy-Wechsel im offenen Sheet (kein Reflow im offenen Overlay =
+  // §15.2, und keine Endlos-Schleife: der Effekt setzt nur `tocBaum`, das seine
+  // eigene Dependency nicht ist). Das Ref wird beim Schliessen zurückgesetzt.
+  const pfadAufgeklapptRef = useRef(false);
   useEffect(() => {
-    if (!tocAuf || aktivIds.length === 0) return;
+    if (!tocAuf) { pfadAufgeklapptRef.current = false; return; }
+    if (pfadAufgeklapptRef.current || aktivIds.length === 0) return;
+    pfadAufgeklapptRef.current = true;
     for (const id of aktivIds) {
       autoOffenRef.current.delete(id); autoTickRef.current.delete(id);
       manuellOffenRef.current.add(id); manuellZuRef.current.delete(id);
@@ -216,10 +227,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     const raf = window.requestAnimationFrame(() =>
       setTocBaum((o) => ({ ...o, ...Object.fromEntries(aktivIds.map((id) => [id, true])) })));
     return () => window.cancelAnimationFrame(raf);
-    // `aktivIds` bewusst NICHT in den Deps: der Effekt soll genau beim Öffnen
-    // feuern, nicht bei jedem Scroll-Spy-Wechsel im offenen Sheet.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tocAuf]);
+  }, [tocAuf, aktivIds]);
   const [tocOffen, setTocOffen] = useState(true); // ab lg: Gliederungsspalte ein-/ausklappen
   // 2-Spalten-Erkennung. R2 (Auftrag David 30.6.2026): Schwelle von 1280px auf
   // 1024px (Tailwind lg) gesenkt → die linke Gliederungsspalte erscheint schon auf
@@ -686,6 +694,21 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // sammeln ist deterministisch und kostet nur die (kurze) Trefferliste.
   // Reines Scrollen + eine 2,4-s-Puls-Klasse am Ziel-Artikel — KEINE DOM-Mutation
   // am Wortlaut, kein Reflow (CLS 0, §15/2).
+  // Puls am Ziel-Artikel: Element UND Timer-Handle zusammen halten (Bug-Check §9
+  // vom 4.8.2026, B6a). Beim Unmount wird der Timer abbestellt, sonst liefe der
+  // Callback nach dem Erlass-/Pane-Wechsel gegen ein abgehängtes Element. Das
+  // Element muss mitgeführt werden, weil ein schneller Folge-Klick den alten
+  // Timer verwirft — ohne diese Referenz bliebe die Puls-Klasse am vorherigen
+  // Artikel für immer stehen.
+  const blink = useRef<{ el: HTMLElement; id: number } | null>(null);
+  const blinkAus = useCallback(() => {
+    const b = blink.current;
+    if (!b) return;
+    window.clearTimeout(b.id);
+    b.el.classList.remove('lc-ziel-blink');
+    blink.current = null;
+  }, []);
+  useEffect(() => blinkAus, [blinkAus]);
   const springeZuFundstelle = useCallback((delta: number) => {
     if (typeof window === 'undefined') return;
     const ranges = sammleTrefferRanges(trefferRef.current, sucheTrim);
@@ -701,11 +724,12 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     const el = (start.nodeType === 1 ? start as Element : start.parentElement) as HTMLElement | null;
     el?.scrollIntoView({ block: 'center', behavior: 'auto' });
     const art = el?.closest('article[id^="art-"]') as HTMLElement | null;
+    blinkAus();
     if (art) {
       art.classList.add('lc-ziel-blink');
-      window.setTimeout(() => art.classList.remove('lc-ziel-blink'), 2400);
+      blink.current = { el: art, id: window.setTimeout(() => blinkAus(), 2400) };
     }
-  }, [sucheTrim]);
+  }, [sucheTrim, blinkAus]);
 
   // A35-Sofort-Aufräumer (Befund 20.7.2026, Shard 3/3). Das Löschen der Highlight-
   // Registry hing bisher AUSSCHLIESSLICH am Effekt oben — und der läuft erst, wenn

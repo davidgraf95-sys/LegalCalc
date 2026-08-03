@@ -24,6 +24,48 @@ const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: 'Im Ge
 const leiste = (page: Page) => page.locator('[data-treffer-leiste]');
 const sheet = (page: Page) => page.locator('[data-gliederung-sheet]');
 
+// Unabhängiges Orakel für die Fundstellen-Zahl (§0/2: der Test darf die Regel
+// nicht aus der Implementierung ableiten). Vertrag von R1: gezählt wird, was im
+// Wortlaut der Treffer-Artikel WIRKLICH GERENDERT ist —
+//   · nur innerhalb von `article[id^="art-"]` (Zähler-/Meta-Zeilen der Liste
+//     gehören nicht zum Gesetzestext),
+//   · keine `display:none`-Teilbäume (Fussnoten-Apparat bei «Fussnoten aus»,
+//     Hist-Chronologie) — was nicht gemalt werden kann, ist keine Fundstelle (§8).
+// Genau diese Menge muss die Leiste anzeigen, das Highlight malen und die
+// Vor/Zurück-Navigation ablaufen.
+async function sichtbareFundstellen(page: Page, begriff: string): Promise<number> {
+  return page.evaluate((b) => {
+    const wurzel = document.querySelector('[data-treffer-liste]');
+    if (!wurzel) return -1;
+    const nadel = b.toLowerCase();
+    let n = 0;
+    for (const art of wurzel.querySelectorAll('article[id^="art-"]')) {
+      const w = document.createTreeWalker(art, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          if (node.nodeType === 1) {
+            return getComputedStyle(node as Element).display === 'none'
+              ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_SKIP;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        },
+      });
+      for (let t = w.nextNode(); t; t = w.nextNode()) {
+        const hay = (t.nodeValue ?? '').toLowerCase();
+        let ab = 0;
+        for (;;) { const i = hay.indexOf(nadel, ab); if (i < 0) break; n++; ab = i + nadel.length; }
+      }
+    }
+    return n;
+  }, begriff);
+}
+
+/** Zahl aus «i/n» der Positionsanzeige. */
+async function position(page: Page): Promise<{ i: number; n: number }> {
+  const t = await page.locator('[data-treffer-position]').innerText();
+  const [i, n] = t.split('/').map((s) => Number(s.trim()));
+  return { i, n };
+}
+
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = [];
   page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`));
@@ -154,6 +196,80 @@ test.describe('R1 — In-Gesetz-Suche: Trefferzahl + Fundstellen-Navigation', ()
     // mehr im ersten Viewport).
     const y = await page.evaluate(() => window.scrollY);
     expect(y, 'Sprung hat den Lesefluss bewegt').toBeGreaterThan(0);
+  });
+
+  // ── B1-Regression (Bug-Check §9, 4.8.2026) ─────────────────────────────────
+  // Der Zähler-Absatz «N Fundstellen» lag INNERHALB des Walker-Containers. Bei
+  // einem Suchbegriff, der in diesem Wort selbst vorkommt («stelle»), zählte das
+  // frische Sammeln beim Klick die eigenen Meta-Zeilen mit: gemeldet 425, beim
+  // Sprung 681 ⇒ Anzeige «681/425», und ~1/3 der Klicks landete auf einer
+  // Zeile ohne Markierung. Malen, Zählen und Springen müssen EINE Menge sein.
+  test('B1 — «stelle»: der Zähler zählt sich nicht selbst, Position bleibt ≤ Gesamt', async ({ page }) => {
+    await page.goto('/gesetze/bund/OR');
+    await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 });
+    await inGesetzSuche(page).fill('stelle');
+    await expect(leiste(page)).toBeVisible({ timeout: 20_000 });
+    const vor = page.locator('[data-treffer-vor]');
+    await expect(vor).toBeVisible({ timeout: 20_000 });
+
+    // Gemeldete Gesamtzahl == unabhängig gezählte, sichtbare Fundstellen.
+    const soll = await sichtbareFundstellen(page, 'stelle');
+    expect(soll, 'Orakel muss Fundstellen finden').toBeGreaterThan(0);
+    const { n: gemeldet } = await position(page);
+    expect(gemeldet, 'gemeldete Gesamtzahl vs. sichtbare Fundstellen im Wortlaut').toBe(soll);
+
+    // Durchklicken: die Laufzeit-Menge darf nicht grösser sein als die gemeldete,
+    // und jeder Sprung muss in einem Artikel landen (Puls am Ziel-Artikel).
+    for (let k = 0; k < 30; k++) {
+      await vor.click();
+      const p = await position(page);
+      expect(p.n, `Gesamtzahl darf sich beim Springen nicht ändern (Klick ${k + 1})`).toBe(gemeldet);
+      expect(p.i, `Position ${p.i} über der Gesamtzahl ${p.n} (Klick ${k + 1})`).toBeLessThanOrEqual(p.n);
+      expect(await page.locator('article.lc-ziel-blink').count(),
+        `Sprung ${k + 1} landete nicht in einem Artikel (Meta-Zeile ohne Markierung)`).toBeGreaterThan(0);
+    }
+  });
+
+  // ── B2-Regression (Bug-Check §9, 4.8.2026) ─────────────────────────────────
+  // Der Walker hatte keinen Sichtbarkeitsfilter. Bei «Fussnoten aus»
+  // (html[data-fussnoten="aus"] ⇒ display:none auf dem Apparat) zählte er
+  // unmalbaren Text mit: OR «Fassung» meldete 141, davon 61 (43 %) in
+  // display:none-Teilbäumen — der Sprung dorthin bewegte nichts (§8: die
+  // Anzeige log über den Zustand).
+  test('B2 — «Fussnoten aus»: gezählt wird nur, was auch gemalt werden kann', async ({ page }) => {
+    await page.goto('/gesetze/bund/OR');
+    await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 });
+
+    // Der Fussnoten-Schalter der Options-Leiste schreibt genau dieses Attribut
+    // an <html> (leserOptionen.ts, reiner CSS-Toggle) — hier direkt gesetzt,
+    // damit der Test nicht an der Menü-Bedienung hängt.
+    await page.evaluate(() => { document.documentElement.dataset.fussnoten = 'aus'; });
+    await inGesetzSuche(page).fill('Fassung');
+    await expect(leiste(page)).toBeVisible({ timeout: 20_000 });
+    const aus = await position(page);
+    const sollAus = await sichtbareFundstellen(page, 'Fassung');
+    expect(aus.n, 'bei «Fussnoten aus» nur sichtbare Fundstellen zählen').toBe(sollAus);
+
+    // Und ein Sprung durch die ganze Menge landet nie im Unsichtbaren.
+    const vor = page.locator('[data-treffer-vor]');
+    for (let k = 0; k < 15; k++) {
+      await vor.click();
+      const sichtbar = await page.evaluate(() => {
+        const el = document.querySelector('article.lc-ziel-blink');
+        return el ? getComputedStyle(el).display !== 'none' : false;
+      });
+      expect(sichtbar, `Sprung ${k + 1} bei «Fussnoten aus» landete im Unsichtbaren`).toBe(true);
+    }
+
+    // Toggle AN erhöht die Zahl ehrlich (der Apparat ist wieder malbar).
+    await page.evaluate(() => { document.documentElement.dataset.fussnoten = 'an'; });
+    await inGesetzSuche(page).fill('');
+    await expect(leiste(page)).toHaveCount(0, { timeout: 30_000 });
+    await inGesetzSuche(page).fill('Fassung');
+    await expect(leiste(page)).toBeVisible({ timeout: 20_000 });
+    const an = await position(page);
+    expect(an.n, 'mit sichtbarem Apparat müssen es mehr Fundstellen sein').toBeGreaterThan(aus.n);
+    expect(an.n, 'und wieder genau die sichtbaren').toBe(await sichtbareFundstellen(page, 'Fassung'));
   });
 
   test('Ohne aktive Suche kein Zähler, keine Tasten, kein Highlight — Normtext-DOM unverändert', async ({ page }) => {

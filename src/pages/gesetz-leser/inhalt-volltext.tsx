@@ -17,6 +17,7 @@ import type { Histogramm, Zeitbereich } from './bezugZeit';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import type { KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 import { istAnhangToken } from './berechnungen';
+import { SUCH_META } from './suchHighlight';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
 import { TrefferLeiste } from './parts/TrefferLeiste';
 import { ArtikelSprungFeld } from './parts/ArtikelSprungFeld';
@@ -405,16 +406,20 @@ export function LeserVolltextInhalt({
               <TrefferLeiste begriff={sucheDebounced.trim()} artikelAnzahl={treffer.length}
                 fundstellen={fundstellen?.gesamt ?? null} position={trefferPos}
                 onZurueck={() => springeZuFundstelle?.(-1)} onVor={() => springeZuFundstelle?.(1)} />
-              <div ref={trefferRef} className="space-y-4">
+              <div ref={trefferRef} data-treffer-liste className="space-y-4">
                 {treffer.map((e) => {
                   // R1 «Trefferzahl je Artikel»: gemessen aus derselben Range-Menge
                   // wie die Hervorhebung. Der Zähler-Slot hat feste Höhe (h-4) und
                   // steht ab dem ersten Render — die Zahl wächst hinein, nicht in
                   // den Fluss (§15/2 CLS 0). Noch nicht gemessen ⇒ leer, nie geraten (§8).
+                  // `data-such-meta` (SUCH_META): diese Zeile ist BEDIENUNG, kein
+                  // Gesetzestext — der Treffer-Walker überspringt sie, sonst zählte
+                  // ein Begriff wie «stelle» die eigenen «N Fundstellen»-Zeilen mit
+                  // (Bug-Check §9 vom 4.8.2026, B1).
                   const n = fundstellen?.proArtikel.get(e.artikel) ?? null;
                   return (
                     <div key={e.id} data-treffer-artikel={e.artikel}>
-                      <p data-fundstellen-zahl={n ?? undefined} className="h-4 text-micro leading-4 text-ink-400">
+                      <p {...{ [SUCH_META]: '' }} data-fundstellen-zahl={n ?? undefined} className="h-4 text-micro leading-4 text-ink-400">
                         {n === null ? '' : <><span className="num">{n}</span>{n === 1 ? ' Fundstelle' : ' Fundstellen'}</>}
                       </p>
                       <ArtikelLeser e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={struktur?.[e.artikel]?.marginalie} imTreffer onSpringe={springeZuArtikel} leitfaelle={leitfaelleFuer?.(e.artikel)} bezuege={bezuegeFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />

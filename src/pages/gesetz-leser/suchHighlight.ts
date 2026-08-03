@@ -57,8 +57,53 @@ function highlightApi(): { reg: Map<string, object>; Ctor: HighlightCtor } | nul
 }
 
 /**
+ * Marker-Attribut für Knoten, die zur BEDIENUNG der Trefferliste gehören und
+ * nicht zum Gesetzestext (Fundstellen-Zähler je Artikel, künftige Meta-Zeilen).
+ * `sammleTrefferRanges` überspringt solche Teilbäume vollständig.
+ *
+ * Bug-Check §9 vom 4.8.2026 (B1): der Zähler «N Fundstellen» stand INNERHALB des
+ * Walker-Containers. Bei einem Begriff, der in diesem Wort selbst vorkommt
+ * («stelle»), zählte jedes frische Sammeln die eigenen Zähler-Zeilen mit — die
+ * Liste meldete 425, der Sprung lief über 681, Anzeige «681/425», und rund ein
+ * Drittel der Weiter-Klicks landete auf einer Zeile ohne Markierung. Die
+ * Ausgrenzung gehört genau HIERHIN und nicht in die Aufrufer: Malen, Zählen und
+ * Springen speisen sich aus dieser einen Funktion und bleiben damit per
+ * Konstruktion dieselbe Menge (§5).
+ */
+export const SUCH_META = 'data-such-meta';
+
+/**
+ * Ist der Teilbaum dieses Elements überhaupt darstellbar?
+ *
+ * Bug-Check §9 vom 4.8.2026 (B2): der Walker hatte keinen Sichtbarkeitsfilter.
+ * Schaltet der Nutzer «Fussnoten aus» (`html[data-fussnoten="aus"]` ⇒
+ * `display:none` auf Marker + Apparat, index.css) oder die Hist-Chronologie ab,
+ * lag der Text weiter im DOM — der Zähler meldete für OR «Fassung» 141, wovon 61
+ * (43 %) in `display:none`-Teilbäumen lagen: unmalbar, und der Sprung dorthin
+ * bewegte nichts. Eine Zahl, die Stellen mitzählt, die es auf dem Schirm nicht
+ * gibt, lügt über den Zustand (§8).
+ *
+ * Geprüft wird ausschliesslich «gerendert oder nicht» (display / content-
+ * visibility:hidden) — NICHT `visibility` und NICHT `opacity`: die vererben bzw.
+ * lassen sichtbare Kinder in unsichtbaren Eltern zu, ein Teilbaum-Verwerfen wäre
+ * dort falsch. `content-visibility: auto` (der Reader setzt es je Artikel, §15)
+ * gilt ausdrücklich als SICHTBAR — off-screen ist nicht versteckt; genau das ist
+ * auch die Vorgabe von `checkVisibility()` ohne Optionen.
+ */
+function istGerendert(el: Element): boolean {
+  const e = el as Element & { checkVisibility?: () => boolean };
+  if (typeof e.checkVisibility === 'function') return e.checkVisibility();
+  if (typeof getComputedStyle !== 'function') return true;
+  return getComputedStyle(el).display !== 'none';
+}
+
+/**
  * Sammelt die Treffer-Bereiche des Begriffs in `container` — in DOKUMENT-
  * REIHENFOLGE (TreeWalker). Leerer Begriff / kein Container ⇒ leere Liste.
+ *
+ * Übersprungen werden (jeweils der GANZE Teilbaum): `[data-such-meta]`-Knoten
+ * der Trefferliste selbst und alles, was nicht gerendert ist. Damit gilt für
+ * jeden Toggle-Zustand: gezählte == gemalte == anspringbare Menge.
  *
  * W2·10-UI-NAV/R1: dieser Walker war bisher in `setzeSuchHighlight` eingebacken.
  * Er ist jetzt exportiert, weil die Treffer-NAVIGATION (Vor/Zurück-Sprungtasten)
@@ -72,7 +117,18 @@ export function sammleTrefferRanges(container: HTMLElement | null, begriff: stri
   // Ab-1-Zeichen genügt (passtAufSuche matcht ab 1 Zeichen); leer ⇒ nichts.
   if (!container || b === '' || typeof document === 'undefined') return [];
   const ranges: Range[] = [];
-  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+  // SHOW_ELEMENT mitlaufen lassen, damit FILTER_REJECT einen ganzen Teilbaum
+  // abschneiden kann (ein reiner SHOW_TEXT-Walker sieht die Elemente nicht und
+  // müsste je Textknoten die Vorfahrenkette hochlaufen).
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, {
+    acceptNode(k) {
+      if (k.nodeType !== Node.ELEMENT_NODE) return NodeFilter.FILTER_ACCEPT;
+      const el = k as Element;
+      if (el.hasAttribute(SUCH_META) || !istGerendert(el)) return NodeFilter.FILTER_REJECT;
+      // Das Element selbst trägt keinen Text — nur seine Kinder besuchen.
+      return NodeFilter.FILTER_SKIP;
+    },
+  });
   for (let n = walker.nextNode(); n; n = walker.nextNode()) {
     const text = n.nodeValue ?? '';
     if (text === '') continue;
