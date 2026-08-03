@@ -32,7 +32,11 @@
    Schritt wandert **vollständig** nach [`ROADMAP-CHRONIK.md`](ROADMAP-CHRONIK.md) — wörtlich, nie
    zusammengefasst; die ROADMAP führt nur, was noch steuert. Die **Spec-Prosa eines neuen Schrittes**
    entsteht von Anfang an in der zugehörigen `fahrplaene/FAHRPLAN-*.md` (hier: Titel, `@meta`, ein bis
-   zwei Sätze Zweck + Anlass, `**Detail:**`-Link). **Streichungen** tragen eine Begründungszeile in der
+   zwei Sätze Zweck + Anlass, `**Detail:**`-Link). Dort steht auch die **Schnitt-Begründung** eines
+   in Teilschritte zerlegten Dach-Schrittes (AP-6, 31.7.2026) — im jeweiligen `ROADMAP-Spec`-§ des
+   Fahrplans, nicht hier. **Der Commit-Trailer eines Schrittes ist immer `Roadmap: <@meta id>`**
+   (Skill `auftrag`, Ziff. 5) — er wird darum je Schritt nicht mehr einzeln wiederholt
+   (36 Wiederholungen entfernt 3.8.2026). **Streichungen** tragen eine Begründungszeile in der
    Chronik — es verschwindet nichts stillschweigend. Kontrolle ist kein neues Tor, sondern der
    Re-Akkumulations-Wächter `python3 .claude/hooks/struktur-rotieren.py --check` (Ceilings
    `ROADMAP.md` 100 KB · `STRUKTUR.md` 60 KB): meldet er rot, wird verschoben, nie das Ceiling gehoben.
@@ -153,87 +157,90 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   **Stand 3.8.2026 (PR #419, K1–K13):** die beiden toten Workflows laufen wieder, der Alarmpfad ist
   gebaut (Monitor-Triage: Grün schliesst, 3× Rot eskaliert) und der Wächter zieht fehlende
   Required-Kontexte nach. **Offen bleibt** die Turso-Wächter-Abdeckung samt Wachstums-Schwellen —
-  darum `ready` und nicht `done`. Diagnose-Übersicht: `bibliothek/ci-fehlerklassen-2026-08-03.md`.
-  **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1. Trailer `Roadmap: QS-AUTOMATIK`.
+  darum `ready` und nicht `done`; sie ist zugleich Posten (a) des QS-BASIS-Intakes und wird
+  **allein hier** gebaut (Abgrenzung 3.8.2026, Wächter gegen eine UNABHÄNGIGE Grösse, nie gegen
+  die Sync-Marke). Diagnose-Übersicht: `bibliothek/ci-fehlerklassen-2026-08-03.md`.
+  **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1.
 - **SEO/A11y** *(SEO-A11Y-GOVERNANCE)*. A11y zahlt auf Bedienbarkeit ein → begleitendes Tor
   <!-- @meta id: SEO-A11Y · status: ready · of: ja · blocker: null · dep: [] · kollision: [public/normtext/register.json, src/lib/seo.ts, scripts/prerender.ts, vercel.json] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md -->
   (Tabellen-Semantik, Tastatur-e2e, hreflang). Reines SEO geparkt. **Bedingung der Gleichzeitigkeit:
   eigener Worktree.**
-- [ ] **`QS-CURRENCY-KANON` · `fza`/`cmr` NICHT-KANONISCH klären und kanonisch nachführen** *(Befund 2.8.2026, **Risikopfad**)* — `check:fedlex-versionen` meldet im Kanonik-Arbiter beide Staatsverträge mit falscher `html-N`-Wurzel (`fza` html-5 statt html-9 · `cmr` html-3 statt html-6); die **Fassung** ist aktuell, die **Wurzel** nicht. **Bestandsdefekt auf `main`** — Nullprobe 2.8.2026 im unveränderten Haupt-Checkout ebenfalls Exit 1 (§3 Verteilung statt Einzelwert). Erst Ursache klären, dann re-pinnen + regenerieren + §7-Verifikation der Anker. *(Anmerkung 3.8.2026: die Kanonik-Wurzeln von acht Pins — `zgb`,`mwstg`,`bbg`,`usg`,`gwg`,`kag`,`fza`,`cmr` — sind mit PR #414 nachgeführt; dieser Schritt bleibt offen, bis die Ursache belegt und die Anker §7-verifiziert sind.)* **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §17. Trailer `Roadmap: QS-CURRENCY-KANON`.
+- [ ] **`QS-CURRENCY-KANON` · `fza`/`cmr` NICHT-KANONISCH klären und kanonisch nachführen** *(Befund 2.8.2026, **Risikopfad**)* — `check:fedlex-versionen` meldet im Kanonik-Arbiter beide Staatsverträge mit falscher `html-N`-Wurzel (`fza` html-5 statt html-9 · `cmr` html-3 statt html-6); die **Fassung** ist aktuell, die **Wurzel** nicht. **Bestandsdefekt auf `main`** — Nullprobe 2.8.2026 im unveränderten Haupt-Checkout ebenfalls Exit 1 (§3 Verteilung statt Einzelwert). Erst Ursache klären, dann re-pinnen + regenerieren + §7-Verifikation der Anker. *(Anmerkung 3.8.2026: die Kanonik-Wurzeln von acht Pins — `zgb`,`mwstg`,`bbg`,`usg`,`gwg`,`kag`,`fza`,`cmr` — sind mit PR #414 nachgeführt; dieser Schritt bleibt offen, bis die Ursache belegt und die Anker §7-verifiziert sind.)* **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §17.
   <!-- @meta id: QS-CURRENCY-KANON · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-cache.sh, scripts/fedlex-repin-kanonik.ts, public/normtext/bund] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
 - **Geräte-Last / Performance** *(QS-PERF, `[OF]`, neu 30.6.2026 — Leitprinzip 7 + CLAUDE.md §15)*.
   **§14-Intake 20.7. + 24.7.2026 (David):** TBT-Budget `/gesetze/bund/OR` (#28) — Nullprobe +
   Streuung VOR jeder Feature-Zuschreibung, Lighthouse-Median n≥3 · CI-Pfad-Filter für Doku-/Plan-PRs
   mit **protokolliertem SKIP** (§6 Ziff. 7 lit. b), Tore-Job läuft immer.
-  <!-- @meta id: QS-PERF · status: wip · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
+  <!-- @meta id: QS-PERF · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
   Lexmetrik soll Computer **nicht merklich langsamer** machen, **ohne Logikverlust** (Treue gewinnt
   immer, §15). Reihenfolge a–e: a Tor `check:perf-budget` ✅ · b billige Quick-Wins ✅ · **c M-Daten-Pfad**
   (Idle-Defer, Suchindex in Worker/`export()`, `register.json` sharden) · **d Render-/Split-View-Feinschliff**
   · e CLS-Race-Härtung ✅. **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
-  **Zum `status: wip` (Prüfung 3.8.2026):** der Marker steht seit **1.7.2026** (Einführung der
-  @meta-Etiketten, `927f8c517`) und wurde seither nie freigegeben — er belegt also nicht fünf Wochen
-  Bauarbeit. Er bleibt trotzdem stehen, weil er **heute** wieder zutrifft: die Runner-Robustheit auf
-  `chore/runner-robustheit` baut den TBT-Posten (Normierung) und die OR-e2e-Timeouts. Sie deckt das
-  QS-PERF-Anliegen aber **nicht ab** — c (M-Daten-Pfad), d (Render-/Split-View-Feinschliff) und die
-  fünf offenen Befunde unten bleiben unberührt. Ein Querschnitt-Band-Schritt sollte `wip` ohnehin nur
-  für die Dauer einer Session tragen (Skill `auftrag`, Ziff. 2).
-  - [~] **TBT-Deckel je Job normieren statt absolut prüfen** — 20.7.2026 gebaut, gemessen und
-    **verworfen**; **David-Entscheid 3.8.2026: doch normieren** (Bau läuft auf `chore/runner-robustheit`).
-    Bis zur Landung wird weiter der Rohwert assertiert, «TBT auf OR scharf» bleibt offen (§8).
+  **`wip` freigegeben 3.8.2026:** der Marker stand seit 1.7.2026 unbewegt und trug zuletzt die
+  Runner-Robustheit — die ist mit **PR #421 (`23f4be7fb`) gelandet**, der Anlass damit erledigt.
+  Offen bleiben c, d und die fünf Befunde unten; ein Querschnitt-Schritt trägt `wip` nur für die
+  Dauer einer Session (Skill `auftrag`, Ziff. 2). Wortlaut der Prüfung → `ROADMAP-CHRONIK.md`.
   - [ ] **OR-LCP ist bimodal — Ursache offen** *(20.7.2026)* — ~3.5 s oder ~11.3–11.6 s, nichts dazwischen; Deckel 13500 bleibt bis zur verstandenen Bimodalität (§8).
   - [ ] **Artikel-Suchindex kostet ~28.5 s Main-Thread-Aufbau** *(26.7.2026)* — Client-Rebuild des Index, kein Flake.
   - [ ] **§8-Auskunftslücke im Fehlerpfad der Artikel-Suche** *(26.7.2026)* — der Fehlschlag wird still geschluckt statt ausgewiesen.
   - [ ] **«~4 MB Artikel-Index» ist in ~10 Kommentaren falsch — real 45.7 MiB** *(26.7.2026)* — reine Kommentar-Korrektur (§5).
   - [ ] **Dauer-rAF-Sampler in `e2e/helpers/cls.ts` ohne Abschalt-Bedingung** *(26.7.2026)* — belastet jede gedrosselte Messung; Abschalt-Bedingung wäre verlustfrei.
-  - [ ] **e2e-Shard-Balance gegen GEMESSENE CI-Dauern packen** — **entschieden 3.8.2026 (David):** Merge Queue G7 JA, Aktivierung NACH Landung der Runner-Robustheit; dann packen.
-- **Datenhaltung / Single-Source-DB** *(QS-DATA, `[OF]`, neu 2.7.2026 — Council-Entscheid)*.
+  - [ ] **e2e-Shard-Balance gegen GEMESSENE CI-Dauern packen** — Shards nach gemessener Wanduhr statt nach Datei-Zahl. **Entkoppelt 3.8.2026:** die frühere Kopplung «erst Merge Queue G7, dann packen» ist hinfällig — `QS-BASIS-MQ` ist am 3.8.2026 gestrichen (GitHub-Feature-Gate, nur Org-Repos; Chronik). Der Posten ist damit **jederzeit baubar**, Messgrundlage sind die CI-Dauern der letzten Läufe.
+- **Datenhaltung / VPS-Gate: E3-Serving + E4-UI-Panels** *(QS-DATA, `[OF]`, neu 2.7.2026 — Council-Entscheid)*.
   <!-- @meta id: QS-DATA · status: blocked · of: ja · blocker: vps-bestellung-david · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-DATENHALTUNG.md -->
-  Für die Korpus-Inhalte (Normtext · Rechtsprechung · Materialien) ist das DB-Artefakt die eine Quelle;
-  `public/*.json` + Prerender sind Projektionen (§5/§7 Build-Regel 6). **Blocker: `vps-bestellung-david`**
-  — E3-Serving + E4-UI-Panels hängen daran; frei baubar bleibt die Datenhaltungs-Optimierung.
-  **Detail:** [FAHRPLAN-DATENHALTUNG.md](fahrplaene/FAHRPLAN-DATENHALTUNG.md) §13.
+  **Abgegrenzt 3.8.2026 — dieser Schritt trägt nur noch das David-Gate**, nicht den Datenhaltungs-Bau:
+  er hält sichtbar, dass E3-Serving (rsync + cold-FTS, 195 342 Entscheide) und die E4-UI-Panels an
+  **einer VPS-Bestellung** hängen (~15 Min David, Dossier `bibliothek/betrieb/vps-bestell-dossier-2026-07-17.md`).
+  **Fertig, wenn** der VPS steht und Serving + Panels darauf laufen. Alles andere — DB-Artefakt als
+  eine Quelle (§5), Etappen E0–E6b, Datenhaltungs-Optimierung — liegt in **`W2·6-DATA`** und wird hier
+  nicht zweitgeführt. **Detail:** [FAHRPLAN-DATENHALTUNG.md](fahrplaene/FAHRPLAN-DATENHALTUNG.md) §13.
 - **Optimierungs-Research Juli 2026 — Betrieb/Frische/Prüf-Tore/FR-IT** *(QS-OPT, `[OF]`, neu 12.7.2026)*.
   <!-- @meta id: QS-OPT · status: ready · of: ja · blocker: null · dep: [] · kollision: [vercel.json, .github/workflows/normen-monitor.yml, src/lib/normtext/laden.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-OPTIMIERUNG-2026-07.md -->
   Kritik-gefilterte Ablage des allgemeinen Ultracode-Optimierungs-Research: Betriebs-/Tor-/Bau-
   Optimierungen ohne Rechtsinhalt (O-Reihe). **Leitplanke:** keine Massnahme kürzt Beweis, Tor oder
   Prüfung; jede Einheit golden byte-gleich (§6). **Detail:** [FAHRPLAN-OPTIMIERUNG-2026-07.md](fahrplaene/FAHRPLAN-OPTIMIERUNG-2026-07.md) §1.
 - **Basis-Ausbau — Fundament-Handlungsplan** *(QS-BASIS, `[OF]`, neu 17.7.2026)*.
-  **§14-Intake 20.7.2026 (David), Posten (a)–(d):** Turso-Wächter-Abdeckung · CI-Fehlläufe (#30) · CI/lokal-Tor-Parität (16/36 in CI, Rest-Lücke 20 Tore) · Datenhaltungs-Optimierung (inkl. R6). Wörtlich: [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
   <!-- @meta id: QS-BASIS · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   Kritik-gefilterte Ablage des Ultracode-Fundament-Research (B-Reihe): Tor-Parität lokal/CI,
-  Datenhaltungs-Optimierung, Doku-/Register-Wahrheit — Fundament, kein Feature.
-  **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
+  Doku-/Register-Wahrheit — Fundament, kein Feature. **Eigener Bau-Umfang = Posten (c)** des
+  §14-Intakes 20.7.2026: **CI/lokal-Tor-Parität** (16/36 Tore in CI, Rest-Lücke 20) plus die
+  offenen B-Einheiten. **Nicht hier gebaut** (3.8.2026 abgegrenzt, war dreifach geführt):
+  Posten (a) Turso-Wächter-Abdeckung → **`QS-AUTOMATIK`** · Posten (b) CI-Fehlläufe #30 → mit
+  PR #419 erledigt (Chronik) · Posten (d) Datenhaltungs-Optimierung inkl. R6 → **`W2·6-DATA`**.
+  Wortlaut aller vier Posten: [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
 - [ ] **`QS-UI` — Oberflächen-Qualität app-weit** *(Ideen-Intake 20.7.2026 · reines UI/Design, §13 · kontinuierlich)*
   <!-- @meta id: QS-UI · status: ready · of: ja · blocker: null · dep: [] · kollision: [DESIGN-REGLEMENT.md, src/index.css, tailwind.config.js, scripts/check-farbwelt.ts, e2e/a11y.e2e.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
   **Kein Einzel-Redesign und kein Reihenfolge-Slot**, sondern ein **kontinuierlicher Oberflächen-Pass**
   app-weit (Fundament → Hierarchie → Politur), der VOR den flächigen Gesetzes-UI-Schritten läuft.
-  **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §8. Trailer `Roadmap: QS-UI`.
+  **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §8.
   - [ ] **UI-WARNLINE · `--warn-line`-Kontrast 3.008 minimal abdunkeln** *(Anlass: Kontrast-Messung 3.8.2026 — der Wert liegt 0.008 über der 3:1-Schwelle für nicht-textliche Kontraste, also innerhalb jeder Mess-Streuung; ein Token-Tick Abdunklung macht die Einhaltung robust)* — reine Token-Änderung, `check:farbwelt` + axe, flip-reversibel. Priorität **niedrig**. §13/DESIGN-REGLEMENT.
     <!-- @meta id: QS-UI-WARNLINE · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/index.css, scripts/check-farbwelt.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
 
 **§14-Intake 3.8.2026 (Aufräum-Session — Nebenfunde der CI-Diagnose, der Totcode-Welle und der
 Gegenprüfungen des Tages).** Alle `[OF]`, alle klein; je Schritt steht der **Anlass** dabei, damit
-später prüfbar bleibt, warum es ihn gibt.
+später prüfbar bleibt, warum es ihn gibt. Sie stehen im Querschnitt-Band, weil sie **keinen
+Reihenfolge-Slot** brauchen (klein, jederzeit einschiebbar), nicht weil sie dauerhaft mitlaufen;
+ihr **Dach-Schritt** steht im ID-Präfix (`QS-AUTOMATIK-*` → Automatik-Gesundheit · `QS-BASIS-*` →
+Basis-Ausbau · `QS-GP-*` → Gegenprüfung · `QS-TOK-*` → Token-Ökonomie · `QS-CURRENCY-*` →
+Fedlex-Currency). Jeder trägt seine Bau-Spec im `ROADMAP-Spec`-§ des verlinkten Fahrplans.
 
-- [ ] **`QS-FRIT-DRIFT` · FR/IT-Drift-Wächter Stufe 1 (eId-Mengenvergleich DE/FR/IT)** *(Anlass: sämtliche Norm-Verifikationen vom 3.8.2026 liefen **nur auf DE** — eine französische oder italienische Fassung könnte längst abweichen, ohne dass ein Tor es sieht)* — im Monitor je **~30 Kern-Erlass** die eId-**Mengen** der drei Sprachfassungen vergleichen und Abweichungen melden; Vollausbau auf alle 227 optional. **Ausdrücklich KEIN dreisprachiges Korpus** — das wäre ein eigener Produktentscheid (Speicher, Pflege, §8-Ehrlichkeit) und ist hier nicht mitgemeint. Reine Prüflogik, kein Snapshot-Schreiben. **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md). Trailer `Roadmap: QS-FRIT-DRIFT`.
+- [ ] **`QS-FRIT-DRIFT` · FR/IT-Drift-Wächter Stufe 1 (eId-Mengenvergleich DE/FR/IT)** *(Anlass: sämtliche Norm-Verifikationen vom 3.8.2026 liefen **nur auf DE** — eine französische oder italienische Fassung könnte längst abweichen, ohne dass ein Tor es sieht)* — im Monitor je **~30 Kern-Erlass** die eId-**Mengen** der drei Sprachfassungen vergleichen und Abweichungen melden; Vollausbau auf alle 227 optional. **Ausdrücklich KEIN dreisprachiges Korpus** — dieser Schritt vergleicht nur MENGEN und meldet; das Befüllen der `fr`/`it`-Fassungen ist **`W2·6-MEHRSPRACH`** und bleibt dort. Reine Prüflogik, kein Snapshot-Schreiben. **Fertig, wenn** der Monitor je Kern-Erlass drei eId-Mengen vergleicht und eine künstlich eingebaute Abweichung **einmal rot** zeigt (§6.7). **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §18.
   <!-- @meta id: QS-FRIT-DRIFT · status: ready · of: ja · blocker: null · dep: [] · kollision: [.github/workflows/normen-monitor.yml, scripts/fedlex-versionen-pruefen.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
-- [ ] **`QS-CURRENCY-TESTS` · Testbindung `cacheBefund` + Kanonik-Ausschluss** *(Anlass: Gegenprüfung zu PR #420, Befund 1 — die neue Cache-Inhalts-Sonde und die Kanonik-Ausschlussliste hängen an keinem Test; ein Tor, das nicht scheitern kann, ist gefährlicher als keines, §6.7)* — je einen Negativfall bauen, der die Sonde und den Ausschluss **einmal rot** zeigt, dann grün. Reine Prüflogik (`Gegenpruefung: n/a`). **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §17. Trailer `Roadmap: QS-CURRENCY-TESTS`.
+- [ ] **`QS-CURRENCY-TESTS` · Testbindung `cacheBefund` + Kanonik-Ausschluss** *(Anlass: Gegenprüfung zu PR #420, Befund 1 — die neue Cache-Inhalts-Sonde und die Kanonik-Ausschlussliste hängen an keinem Test; ein Tor, das nicht scheitern kann, ist gefährlicher als keines, §6.7)* — je einen Negativfall bauen, der die Sonde und den Ausschluss **einmal rot** zeigt, dann grün. Reine Prüflogik (`Gegenpruefung: n/a`) — **die Ursachenklärung der `fza`/`cmr`-Wurzeln ist Risikopfad und liegt in `QS-CURRENCY-KANON`**; hier wird nur die Scheiterns-Fähigkeit der Sonde gebaut, kein Pin geändert. **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §17.
   <!-- @meta id: QS-CURRENCY-TESTS · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-cache.sh, src/tests] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
-- [ ] **`QS-GP-BEREICH` · `gegenpruefung:ok --bereich A..B` + `check:gegenpruefung` prüft auch `origin/main..HEAD`** *(Anlass: drei Hand-Hash-Quittungen an einem Tag — 3.8.2026 —, weil das Tor nur den Working Tree sieht; committete Branch-Arbeit muss heute per Hand-Hash quittiert werden)* — Bereichs-Argument + Commit-Bereich-Diff, damit der Regelfall wieder mechanisch quittierbar ist. Tor-Code ohne Inhaltsänderung; **Scheiterns-Fähigkeit einmal rot zeigen** (§6.7). **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §2. Trailer `Roadmap: QS-GP-BEREICH`.
+- [ ] **`QS-GP-BEREICH` · `gegenpruefung:ok --bereich A..B` + `check:gegenpruefung` prüft auch `origin/main..HEAD`** *(Anlass: drei Hand-Hash-Quittungen an einem Tag — 3.8.2026 —, weil das Tor nur den Working Tree sieht; committete Branch-Arbeit muss heute per Hand-Hash quittiert werden)* — Bereichs-Argument + Commit-Bereich-Diff, damit der Regelfall wieder mechanisch quittierbar ist. Tor-Code ohne Inhaltsänderung; **Scheiterns-Fähigkeit einmal rot zeigen** (§6.7). **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §2.
   <!-- @meta id: QS-GP-BEREICH · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/gegenpruefung-ok.ts, scripts/check-gegenpruefung.ts, scripts/gegenpruefung/kern.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
-- [ ] **`QS-GP-PRERENDER` · `check:prerender-golden` als Opt-in-Beweiswerkzeug** *(Anlass: der 8164-Seiten-Byte-Gleichheits-Beweis der Totcode-Gegenprüfung zu PR #418 war Handarbeit — der stärkste Beweis des Tages hatte kein Werkzeug)* — ein **nicht** im Pflicht-Gate verdrahteter Befehl, der zwei Prerender-Läufe byte-vergleicht und die Differenz benennt; wer ihn ruft, bekommt denselben Beweis reproduzierbar. **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §2. Trailer `Roadmap: QS-GP-PRERENDER`.
+- [ ] **`QS-GP-PRERENDER` · `check:prerender-golden` als Opt-in-Beweiswerkzeug** *(Anlass: der 8164-Seiten-Byte-Gleichheits-Beweis der Totcode-Gegenprüfung zu PR #418 war Handarbeit — der stärkste Beweis des Tages hatte kein Werkzeug)* — ein **nicht** im Pflicht-Gate verdrahteter Befehl, der zwei Prerender-Läufe byte-vergleicht und die Differenz benennt; wer ihn ruft, bekommt denselben Beweis reproduzierbar. **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §2.
   <!-- @meta id: QS-GP-PRERENDER · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/prerender.ts, package.json] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
-- [ ] **`QS-AUTOMATIK-WT` · Wächter: Verwaiste-Worktree-Sonde** *(Anlass: PR #417 — der Worktree-Inhalt lag längst über #412/#413 auf `main` (`changed_files=0`), Branch und Worktree standen trotzdem noch; das kostete eine Session-Anfangsstunde Klärung)* — melden, wenn ein Worktree-/Branch-Diff gegen `main` **leer** ist: gelandet, aber nicht abgeräumt. Reine Prüflogik. **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1. Trailer `Roadmap: QS-AUTOMATIK-WT`.
-  <!-- @meta id: QS-AUTOMATIK-WT · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/check-ci-laeufe.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
-- [ ] **`QS-AUTOMATIK-BERICHT` · Wächter-Zustandsbericht (eine Übersicht statt Run-Forensik)** *(Anlass: die CI-Diagnose vom 3.8.2026 musste 80 Läufe einzeln auswerten, um 13 Fehlerklassen zu finden — es gibt keine Stelle, die sagt, wie es den Wächtern gerade geht)* — ein Befehl, der je Wächter/Workflow letzten Lauf, Ergebnis und Alter ausgibt. Reine Prüflogik. **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1. Trailer `Roadmap: QS-AUTOMATIK-BERICHT`.
+- [ ] **`QS-AUTOMATIK-BERICHT` · Wächter-Zustandsbericht + Verwaiste-Worktree-Sonde** *(zwei Anlässe, ein Bau: **(a)** die CI-Diagnose vom 3.8.2026 musste 80 Läufe einzeln auswerten, um 13 Fehlerklassen zu finden — es gibt keine Stelle, die sagt, wie es den Wächtern gerade geht; **(b)** PR #417 — der Worktree-Inhalt lag längst über #412/#413 auf `main` (`changed_files=0`), Branch und Worktree standen trotzdem noch, das kostete eine Session-Anfangsstunde)* — **ein** Befehl in `scripts/check-ci-laeufe.ts`, der (a) je Wächter/Workflow letzten Lauf, Ergebnis und Alter ausgibt und (b) meldet, wenn ein Worktree-/Branch-Diff gegen `main` **leer** ist (gelandet, aber nicht abgeräumt). **Fusioniert 3.8.2026** aus `QS-AUTOMATIK-BERICHT` + `QS-AUTOMATIK-WT`: dieselbe Datei, dieselbe Risiko-Klasse (reine Prüflogik), zweimal denselben Bericht anzufassen wäre doppelte Arbeit (Skill `auftrag`, Ziff. 3). **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1.
   <!-- @meta id: QS-AUTOMATIK-BERICHT · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/check-ci-laeufe.ts, .github/workflows] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
-- [ ] **`QS-BASIS-TOT` · `check:tot` blockierend bei NEUEN Meldungen** *(Anlass: die Totcode-Welle PR #418/#420 hat knip von 162 auf 1 Meldung gesenkt — die Basis ist erstmals klein genug, um Neuzugang hart zu melden, statt wieder anzuwachsen)* — Basislinie = **1 Falsch-Positiv (`SkalaEintrag`)**, deklariert und begründet; alles darüber ist rot. `--no-exit-code` fällt damit weg. Reine Prüflogik. **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2. Trailer `Roadmap: QS-BASIS-TOT`.
+- [ ] **`QS-BASIS-TOT` · `check:tot` blockierend bei NEUEN Meldungen** *(Anlass: die Totcode-Welle PR #418/#420 hat knip von 162 auf 1 Meldung gesenkt — die Basis ist erstmals klein genug, um Neuzugang hart zu melden, statt wieder anzuwachsen)* — Basislinie = **1 Falsch-Positiv (`SkalaEintrag`)**, deklariert und begründet; alles darüber ist rot. `--no-exit-code` fällt damit weg. Reine Prüflogik. **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
   <!-- @meta id: QS-BASIS-TOT · status: ready · of: ja · blocker: null · dep: [] · kollision: [knip.json, package.json] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
-- [ ] **`QS-BASIS-DEPS` · Dependency-Frische: `npm audit` + Majors + knip-Unlisted** *(Anlass: knip meldet `playwright` und `react-router` als unlisted, und der Abhängigkeitsstand wurde seit Monaten nicht systematisch geprüft)* — Audit als **Meldung, nie Stopper** (Geparkt-Entscheid Betriebs-Instrumente bleibt), Major-Sprünge einzeln bewertet. **ACHTUNG Lockfile:** Änderungen nur über `npx npm@10` — lokales npm 11 erzeugt eine CI-inkompatible `package-lock.json`. **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2. Trailer `Roadmap: QS-BASIS-DEPS`.
+- [ ] **`QS-BASIS-DEPS` · Dependency-Frische: `npm audit` + Majors + knip-Unlisted** *(Anlass: knip meldet `playwright` und `react-router` als unlisted, und der Abhängigkeitsstand wurde seit Monaten nicht systematisch geprüft)* — Audit als **Meldung, nie Stopper** (Geparkt-Entscheid Betriebs-Instrumente bleibt), Major-Sprünge einzeln bewertet. **ACHTUNG Lockfile:** Änderungen nur über `npx npm@10` — lokales npm 11 erzeugt eine CI-inkompatible `package-lock.json`. **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
   <!-- @meta id: QS-BASIS-DEPS · status: ready · of: ja · blocker: null · dep: [] · kollision: [package.json, package-lock.json, knip.json] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
-- [ ] **`QS-TOK-DECKEL` · Root-Markdown-Deckel 22 → ~20** *(Anlass: der Deckel «rund 20 Root-Markdown-Dateien» steht seit 31.7.2026 im Skill `auftrag`, der Ist-Stand liegt bei 22 — ein Deckel, der überschritten und nie nachgezogen wird, ist keiner)* — datierte Audit-/Backlog-Dateien nach `archiv/`, Verweise nachziehen. Reine Doku. **Detail:** [FAHRPLAN-TOKEN-OEKONOMIE.md](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §3. Trailer `Roadmap: QS-TOK-DECKEL`.
+- [ ] **`QS-TOK-DECKEL` · Root-Markdown-Deckel 22 → ~20** *(Anlass: der Deckel «rund 20 Root-Markdown-Dateien» steht seit 31.7.2026 im Skill `auftrag`, der Ist-Stand liegt bei 22 — ein Deckel, der überschritten und nie nachgezogen wird, ist keiner)* — datierte Audit-/Backlog-Dateien nach `archiv/`, Verweise nachziehen. Reine Doku. **Detail:** [FAHRPLAN-TOKEN-OEKONOMIE.md](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §3.
   <!-- @meta id: QS-TOK-DECKEL · status: ready · of: ja · blocker: null · dep: [] · kollision: [archiv] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
-- [ ] **`QS-TOK-AUFRAEUMEN` · Skill `aufraeumen` (Playbook der Session vom 3.8.2026)** *(Anlass: die Aufräum-Session hat ein wiederholbares Verfahren erzeugt — Rotation, Chronik-Überführung, Streich-Massstab, Fahrplan-Archivierung, Tor-Reihenfolge —, das heute nur im Kopf steht)* — als Skill ablegen, damit die nächste Aufräumung nicht wieder erfunden wird. Prozedur gehört in einen Skill, nicht ins Reglement (CLAUDE.md-Kopf). **Detail:** [FAHRPLAN-TOKEN-OEKONOMIE.md](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §3. Trailer `Roadmap: QS-TOK-AUFRAEUMEN`.
+- [ ] **`QS-TOK-AUFRAEUMEN` · Skill `aufraeumen` (Playbook der Session vom 3.8.2026)** *(Anlass: die Aufräum-Session hat ein wiederholbares Verfahren erzeugt — Rotation, Chronik-Überführung, Streich-Massstab, Fahrplan-Archivierung, Tor-Reihenfolge —, das heute nur im Kopf steht)* — als Skill ablegen, damit die nächste Aufräumung nicht wieder erfunden wird. Prozedur gehört in einen Skill, nicht ins Reglement (CLAUDE.md-Kopf). **Detail:** [FAHRPLAN-TOKEN-OEKONOMIE.md](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §3.
   <!-- @meta id: QS-TOK-AUFRAEUMEN · status: ready · of: ja · blocker: null · dep: [] · kollision: [.claude/skills] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
 
 ---
@@ -304,23 +311,22 @@ später prüfbar bleibt, warum es ihn gibt.
   QS-GP bestanden) · **I9-Rest ✅** (Notariats-/Grundbuch-Querverweis) — Wortlaut →
   `ROADMAP-CHRONIK.md` → W1·4 (22.7.2026). **26×-Slot bleibt frei** (`26x: nein`); die Tarif-Tranche
   des Schrittes ist Kettenglied 3 der `@slot-kette`. **Detail:** [FAHRPLAN-PROZESSKOSTEN-COCKPIT.md](fahrplaene/FAHRPLAN-PROZESSKOSTEN-COCKPIT.md).
-  Trailer `Roadmap: W1·4`.
+ 
 - [ ] **5-PRAXIS · Frist × Kosten verzahnen** *(Ideen-Intake 20.7.2026 · UI-Orchestrierung, `[OF]`)*:
   <!-- @meta id: W1·5-PRAXIS · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/rechnerPermalinks.ts, src/lib/permalink.ts, src/lib/icsExport.ts, src/pages/RechnerProzesskosten.tsx, src/pages/RechnerStreitwert.tsx, src/pages/RechnerZpo.tsx, src/pages/RechnerUebersicht.tsx, src/components/forms/ProzesskostenForm.tsx, src/components/forms/StreitwertForm.tsx, src/components/forms/ZpoFristenForm.tsx, src/components/forms/VorlagenSprung.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PROZESSKOSTEN-COCKPIT.md -->
   Die heute isoliert nebeneinander stehenden Rechner zu **einem Praxis-Weg** verketten
   (Frist → Kosten → Vorlage), reine UI-Orchestrierung ohne neue Rechtsregel (§3).
-  **Detail:** [FAHRPLAN-PROZESSKOSTEN-COCKPIT.md](fahrplaene/FAHRPLAN-PROZESSKOSTEN-COCKPIT.md) §1. Trailer `Roadmap: W1·5-PRAXIS`.
+  **Detail:** [FAHRPLAN-PROZESSKOSTEN-COCKPIT.md](fahrplaene/FAHRPLAN-PROZESSKOSTEN-COCKPIT.md) §1.
 
 ### Welle 2 — Griff (Auffindbarkeit) + Konsultieren + mehr Klingen
 
 - [ ] **5d · Gesetzes-UX & Darstellungs-Reglement** *(GESETZES-UX, `[OF]`, eigener Worktree; Auftrag David 4.7.)*:
   **Stand 26.7.2026:** G0–G6, A1–A18, A19–A25 (ohne zurückgezogenes L-3/A28), E-Reihe A29–A40/E1–E7,
   §11 IA-1–IA-7, EID-1/EID-2 und FN-5/M14 gebaut — **offener Rest = EID-3** + Härtungs-/Politur-Posten.
-  <!-- @meta id: W2·5d · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/pages/gesetz-leser/inhalt.tsx, src/components/normtext/ArtikelBody.tsx, src/lib/normtext/register.ts, src/components/suche, scripts/normtext] · seq-hart: [QS-PERF(ArtikelBody.tsx)] · seq-weich: [W2·5b-L0(scripts/normtext, nur U-PDF)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
+  <!-- @meta id: W2·5d · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/pages/gesetz-leser/inhalt.tsx, src/components/normtext/ArtikelBody.tsx, src/lib/normtext/register.ts, src/components/suche, scripts/normtext] · seq-hart: [QS-PERF(ArtikelBody.tsx)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
   UX/Lesbarkeit des Gesetz-Lesers auf State-of-the-Art (Fedlex = Mindestlatte): EINE Linien-Sprache,
   Lesespalte `max-w-reading`, Leser-Kopf-Optionen, je Grundart eine Designvorschrift; G3b ist Risiko-Pfad.
   **Detail (Spec wörtlich, inkl. Nachzug-Wellen A19–A25/A29–A40, IA-Reihe §11, eId-Reihe §12):** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §16.
-  **Session-Granularität (AP-6, 31.7.2026):** Schnitt-Begründung und die bewusst nicht portionierten Posten wörtlich in [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §16 (ROADMAP-Spec W2·5d). Trailer `Roadmap: W2·5d`.
   - [ ] **5d-EID3 · EID-3 Teil (b): Linien-Tiefe aus der eId-Pfadlänge** — Guide-/Einzugstiefe aus dem kumulativen eId-Pfad statt aus der Sidecar-Rekursionstiefe; golden-neutral, Tor `check:linien-kanon`.
     <!-- @meta id: W2·5d-EID3 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/linienAufbau.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
   - [ ] **5d-ANNEX · eId-Anker für Annex-Sections** — die aus EID-1 bekannte Grenze schliessen: Container-eIds auch auf dem separaten Anhang-Pfad mitschneiden. **Extraktion = Risikopfad.**
@@ -333,16 +339,22 @@ später prüfbar bleibt, warum es ihn gibt.
     #161, David freigegeben); L-4 entfällt. V2 §2 F4.
     - [ ] **L-3** (Auto-Default-Umkehr): weiterhin **hinter David/Council-Gate** —
       NICHT in feat/v2-l1-l2 gebaut. V2 §2 F4.
-- [ ] **5e · UI-Nutzwert & Navigation (Ultracode-Synthese 11.7.)** *(`[OF]`, reine UI/Navigation)*:
+- [ ] **10-UI-NAV · UI-Nutzwert & Navigation (Ultracode-Synthese 11.7.)** *(`[OF]`, reine UI/Navigation)*:
   <!-- @meta id: W2·10-UI-NAV · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/components/suche, src/lib/suche, src/lib/universalSuche.ts, src/components/layout, src/components/rechtsprechung, src/pages/Rechtsprechung.tsx, src/pages/gesetz-leser, src/pages/GesetzLeser.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
   Priorisierter UI-Plan aus 60 empirischen Befunden + 3 Kritik-Linsen — Suche, Navigation und
   Auffindbarkeit über alle Oberflächen; reine Darstellungsschicht (§3), keine Rechtslogik.
-  **Detail:** [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §8. Trailer `Roadmap: W2·10-UI-NAV`.
-  **Session-Granularität (AP-6, 31.7.2026):** Schnitt-Begründung und die bewusst nicht portionierten Posten wörtlich in [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §8 (ROADMAP-Spec W2·10-UI-NAV). Trailer `Roadmap: W2·10-UI-NAV`.
+  **Detail:** [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §8.
+  **`dep`-Korrektur 3.8.2026:** §0.2 des Fahrplans sequenziert nur die **Reader-Flächen**
+  (`parts.tsx`/`inhalt.tsx`/`ArtikelBody.tsx`/`index.css`) hart hinter die A-Restposten von `W2·5d`
+  und nennt Suche-/Rechtsprechungs-/Sidebar-Einheiten ausdrücklich «weitgehend kollisionsfrei und
+  zuerst schneidbar». Die Teilschritte **-S · -V · -J · -J3 · -O** trugen trotzdem `dep: [W2·5d]`
+  und standen damit hinter einem Dach-Schritt, dessen offener Rest (EID-3, Härtung) sie gar nicht
+  berührt — die dep ist dort gestrichen. Reader-Flächen (**-VR · -R1 · -R2 · -R3 · -R4 · -Z**)
+  behalten sie.
   - [ ] **UI-NAV-S · Suche-Rest (S1 + S6)** — Query-Durchreichung `?q=` in die Browse-Pages + mobiler Such-Fokusmodus (≥16 px gegen iOS-Zoom). §2.
-    <!-- @meta id: W2·10-UI-NAV-S · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/lib/universalSuche.ts, src/components/suche, src/components/layout/HeaderSuche.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+    <!-- @meta id: W2·10-UI-NAV-S · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/universalSuche.ts, src/components/suche, src/components/layout/HeaderSuche.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
   - [ ] **UI-NAV-V · Verzahnung ohne Reader-Fläche (V2 + V4 + V6)** — Hover-Trigger am bestehenden NormPopover · NormChip-`href` intern (Cmd-Klick landet intern) · Vorlage↔Rechner-Kreuzlinks. §3.
-    <!-- @meta id: W2·10-UI-NAV-V · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/components/NormPopover.tsx, src/lib/vorlagen] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+    <!-- @meta id: W2·10-UI-NAV-V · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components/NormPopover.tsx, src/lib/vorlagen] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
   - [ ] **UI-NAV-VR · Verzahnung auf Reader-Fläche (V3 + V5)** — Regeste-Popover am KantenChip + Erwägungs-Navigation im Entscheid-Leser; `parts.tsx`-Kollisions-Precheck Pflicht (§0.2). §3.
     <!-- @meta id: W2·10-UI-NAV-VR · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/pages/EntscheidLeser.tsx, src/lib/rechtsprechung/abschnitte.ts, src/pages/gesetz-leser/parts.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
   - [ ] **UI-NAV-R1 · Reader: Finden im Gesetz (R1 + R2)** — In-Gesetz-Suche mit Treffer-Highlight + mobile Gliederung als Bottom-Sheet mit «Sie sind hier». §4.
@@ -351,22 +363,21 @@ später prüfbar bleibt, warum es ihn gibt.
     <!-- @meta id: W2·10-UI-NAV-R2 · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/pages/gesetz-leser/scrollAnker.ts, src/components/layout/InhaltsKopf.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
   - [ ] **UI-NAV-R3 · Reader: Weiterlesen und Tastatur (R4 + R8)** — Positions-Persistenz «Weiterlesen bei Art. X» + Tastatur-Navigation j/k mit «?»-Overlay (R8 = niedrigste Priorität der Reihe). §4.
     <!-- @meta id: W2·10-UI-NAV-R3 · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/pages/gesetz-leser/inhalt.tsx, src/lib/zuletztVerwendet.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
-  - [ ] **UI-NAV-R4 · Trefferflächen und a11y (R6 + E4)** — Tap-Target-Sammelticket mit Token-Regel ins `DESIGN-REGLEMENT.md` + a11y-Prüfauftrag der Linsen. §4/§7.
+  - [ ] **UI-NAV-R4 · Trefferflächen und a11y (R6 + E4)** — Tap-Target-Sammelticket mit **Token-Regel ins `DESIGN-REGLEMENT.md`** + a11y-Prüfauftrag der Linsen. **Grenze zu `W2·17-UI-BEFUNDE-B10`:** hier entsteht die REGEL (ein Token, eine Reglement-Zeile), dort werden die einzelnen Symbolknöpfe und Aktions-Anker daran angepasst. §4/§7.
     <!-- @meta id: W2·10-UI-NAV-R4 · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/index.css, e2e/a11y.e2e.ts, DESIGN-REGLEMENT.md] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
   - [ ] **UI-NAV-J · Rechtsprechungs-Seiten (J1 + J2 + J4)** — Browse-Liste mit Batching und Band-Sprungleiste · Mobil-Filter als Bottom-Sheet · «Neues vom Bundesgericht»-Karten. §6.
-    <!-- @meta id: W2·10-UI-NAV-J · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/pages/Rechtsprechung.tsx, src/components/rechtsprechung] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+    <!-- @meta id: W2·10-UI-NAV-J · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/Rechtsprechung.tsx, src/components/rechtsprechung] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
   - [ ] **UI-NAV-J3 · Sachgebiets-Pipeline verfeinern (J3)** — **bewusst allein**, weil Risiko-Pfad: `QS-GP` Pflicht + golden byte-gleich, eigene Gegenprüfungs-Runde. §6.
-    <!-- @meta id: W2·10-UI-NAV-J3 · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [scripts/rechtsprechung, public/rechtsprechung/register.json, src/lib/normtext/browse.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+    <!-- @meta id: W2·10-UI-NAV-J3 · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/rechtsprechung, public/rechtsprechung/register.json, src/lib/normtext/browse.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
   - [ ] **UI-NAV-O · Übersichten und Sidebar (O2 + O4 + O5)** — Sidebar-Konsistenz · Kantons-Einstieg mit Abdeckung vor dem Klick · Scope-Labels der lokalen Suchfelder; alle drei S. §6.
-    <!-- @meta id: W2·10-UI-NAV-O · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/components/layout/Sidebar.tsx, src/pages/Gesetze.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+    <!-- @meta id: W2·10-UI-NAV-O · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components/layout/Sidebar.tsx, src/pages/Gesetze.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
   - [ ] **UI-NAV-Z · Zusatzposten Ausleitung (Z1 + Z2)** — ICS-/Kalender-Export der Fristergebnisse + Print-CSS für Fundstellen; Ist-Stand vor dem Bau erheben. §7.
     <!-- @meta id: W2·10-UI-NAV-Z · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/lib/icsExport.ts, src/index.css] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
-- [ ] **5f · Design-Wärme & Atmosphäre (Ultracode-Synthese 11.7.)** *(`[OF]`, reine Darstellung/Token-Schicht)*:
+- [ ] **11-DESIGN · Design-Wärme & Atmosphäre (Ultracode-Synthese 11.7.)** *(`[OF]`, reine Darstellung/Token-Schicht)*:
   <!-- @meta id: W2·11-DESIGN · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/index.css, tailwind.config.js, DESIGN-REGLEMENT.md, scripts/check-design-tokens.ts, src/components/rechtsprechung, src/pages/EntscheidLeser.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-DESIGN-WAERME.md -->
   Farbklima/Wärme/Typografie-Plan aus 48 Ultracode-Befunden + 3 Kritik-Linsen — Token-Schicht nach
   §13, Normtext-Körper bleibt farbfrei, golden byte-gleich.
-  **Detail:** [FAHRPLAN-DESIGN-WAERME.md](fahrplaene/FAHRPLAN-DESIGN-WAERME.md) §5. Trailer `Roadmap: W2·11-DESIGN`.
-  **Session-Granularität (AP-6, 31.7.2026):** Schnitt-Begründung und die bewusst nicht portionierten Posten wörtlich in [FAHRPLAN-DESIGN-WAERME.md](fahrplaene/FAHRPLAN-DESIGN-WAERME.md) §5 (ROADMAP-Spec W2·11-DESIGN). Trailer `Roadmap: W2·11-DESIGN`.
+  **Detail:** [FAHRPLAN-DESIGN-WAERME.md](fahrplaene/FAHRPLAN-DESIGN-WAERME.md) §5.
   - [ ] **DESIGN-D6 · Dunkel-Paket: Elevation, Schatten, Scrims (EIN PR)** — surface dunkel heben · warme Schattenbasis · Lichtkante · Scrim-Audit; Token-only, flip-reversibel, `check:farbwelt` + axe dunkel. §2 (D-6).
     <!-- @meta id: W2·11-DESIGN-D6 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/index.css] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-DESIGN-WAERME.md -->
   - [ ] **DESIGN-D7 · Ein Lese-Register (`--reading-ink`, `--lese-fs`/`--lese-lh`)** — Lese-Basis + Entscheid-Stepper als Multiplikatoren, CPL-Messung, Regel in beide Domänen-Reglemente; golden neutral. §2 (D-7).
@@ -392,12 +403,12 @@ später prüfbar bleibt, warum es ihn gibt.
   abbildbar (Wortlaut: [FAHRPLAN-NORMTEXT-DARSTELLUNG.md](fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md)
   `§Intake`) → **(c)** Bau. Vor (c) je Kandidat das POC-Ergebnis vorlegen (§8: kein Fassungs-Diff auf
   geratener Historie). **Detail:** [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §8.
-  Trailer `Roadmap: W2·5g-ZEIT`.
+ 
 - [ ] **5h-GESETZ-UI · Gesetzes-Webseite: UX-Pass** *(Ideen-Intake 20.7.2026 · reine UI/Darstellung)*:
-  <!-- @meta id: W2·5h-GESETZ-UI · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/pages/gesetz-leser, src/pages/GesetzLeser.tsx, src/components/normtext, src/components/suche] · seq-hart: [QS-UI(a Fundament-Pass + b Hierarchie-Pass), W2·5b(gesetz-leser/parts.tsx, inhalt.tsx, ArtikelBody.tsx)] · seq-weich: [W2·10-UI-NAV(gesetz-leser, GesetzLeser.tsx, components/suche), W3·14(Split-View-Rahmen)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
+  <!-- @meta id: W2·5h-GESETZ-UI · status: ready · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/pages/gesetz-leser, src/pages/GesetzLeser.tsx, src/components/normtext, src/components/suche] · seq-hart: [QS-UI(a Fundament-Pass + b Hierarchie-Pass)] · seq-weich: [W2·10-UI-NAV(gesetz-leser, GesetzLeser.tsx, components/suche), W3·14(Split-View-Rahmen)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
   **Folgeschritt aus `QS-UI`** (Davids Sequenz: erst app-weit, dann die Gesetzes-Seite): UX-Pass auf
   der Gesetzes-Webseite inkl. Kopfzeilen-Bündel — reine UI/Darstellung, amtliche Substanz unangetastet.
-  **Detail:** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §17. Trailer `Roadmap: W2·5h-GESETZ-UI`.
+  **Detail:** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §17.
 - [ ] **5j-TABELLEN · Tabellen in Gesetzen lesbar machen** *(§14-Intake 20.7.2026 · Extraktion + Darstellung, `QS-GP`)* — **ENTPARKT 3.8.2026 (David).**
   <!-- @meta id: W2·5j-TABELLEN · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext/adapter-pdf.ts, src/components/normtext/ArtikelBody.tsx, src/pages/gesetz-leser/inhalt.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
   **Anlass der Entparkung:** der Blocker `david-spaeter-tabellen` war **kein technischer** — Daten und
@@ -405,16 +416,20 @@ später prüfbar bleibt, warum es ihn gibt.
   «später», und das ist am 3.8.2026 aufgehoben. Kein Bau-Vorlauf nötig.
   Beispiel-Defekt `/gesetze/kanton/BS-154.810#art-29`. Extraktion = Risikopfad ⇒ `QS-GP` + golden
   byte-gleich; Zellinhalte exakt wie Quelle, mehrdeutig ⇒ Block als Text belassen (§1).
+  **Grenze zu `W2·13-KANTONE-K7` (PDF-Werkstatt):** dieser Schritt macht **erkannte
+  `mehrspaltig`-Blöcke lesbar** (Tabellen-Semantik + Darstellung); K-7 repariert die **PDF-Extraktion
+  davor** (Dehyphenations-Gate, VD/SZ/ZH). Wer an `adapter-pdf.ts` die Texterkennung ändert, ist in
+  K-7, nicht hier.
   **Detailquellen (fertige Implementation Plans, gestuft):**
   [Stufe 1 · Füllpunkt-Zweispalter (SG)](docs/superpowers/plans/2026-06-22-kantonale-tarif-tabellen.md) ·
   [Stufe 2 · Mehrspalten-Tarif-Tabellen (ZH § 4 x-geometrisch, Klasse A NW/BS/SO/VS)](docs/superpowers/plans/2026-06-22-mehrspalten-tarif-tabellen.md) ·
   [Design-Spec (3 Defektklassen, Ansatz «Generator-Extrakt, gestuft» — von David gewählt)](docs/superpowers/specs/2026-06-22-kantonale-tarif-tabellen-design.md);
-  ROADMAP-Spec: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §18. Trailer `Roadmap: W2·5j-TABELLEN`.
+  ROADMAP-Spec: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §18.
 - [ ] **6 · Konsultieren-Klingen** *(`[OF]`, amtlich)*:
   <!-- @meta id: W2·6 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
   Vier eigenständige Unterschritte tragen den Strang: Mehrsprach-Vergleich · Norm-Resolver ·
   Adressregister · Übersicht/Korpus-Breite (unten). **Detail + Schnitt-Begründung:**
-  [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13. Trailer `Roadmap: W2·6`.
+  [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13.
     - [ ] **6-MEHRSPRACH · Mehrsprachiger Normvergleich DE/FR/IT** — Auslegungswerkzeug nach Art. 14 PublG: drei Sprachfassungen je Erlass + Synopse-UI; heute ist nur `de` befüllt. §13.
       <!-- @meta id: W2·6-MEHRSPRACH · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext/bund, src/pages/gesetz-leser] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
     - [ ] **6-RESOLVER · Kantonaler Norm-Resolver → Kantonalnorm-Buckets (P0-Kern)** — `norm-index` füllt heute nur Bundesnorm-Buckets; der Resolver ist Voraussetzung der kantonalen Stufe. **Risikopfad.** §13.
@@ -423,11 +438,11 @@ später prüfbar bleibt, warum es ihn gibt.
       <!-- @meta id: W2·6-ADRESSEN · status: ready · of: ja · blocker: null · dep: [] · kollision: [bibliothek/behoerden, src/lib/kontext.ts, src/pages/RechnerUebersicht.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
     - [ ] **6-UEBERSICHT · Rechtsprechungs-Übersicht: P0-Rest + Korpus-Breite** — SG-Regeste-Rest und die Übersichts-/Facetten-Breite; Kantons-Ausweitung setzt den Resolver voraus (darum `dep`). §13.
       <!-- @meta id: W2·6-UEBERSICHT · status: ready · of: ja · blocker: null · dep: [W2·6-RESOLVER] · kollision: [src/pages/Rechtsprechung.tsx, src/components/rechtsprechung, public/rechtsprechung/register.json] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
-    - [~] **Richter-/Spruchkörper-Filter — Fundament** *(`R-RICHTER`, Direktauftrag David 20.7.2026;
-      dieselbe Pipeline/dasselbe Datenasset wie die BS-Tranche darüber, §14.2)*: **Block A (Daten) ✅
-      20.7.2026** (Extraktion + Kanon + `richter.json` + Tor `check:besetzung`); **Block B offen, reines
-      UI** (Autocomplete-Facette + `?richter`-URL-Achse + e2e/axe/perf). Detail: `fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md`
-      §12 und §13. Trailer `Roadmap: R-RICHTER`.
+    - [~] **Richter-/Spruchkörper-Filter — Fundament** *(`R-RICHTER`, Direktauftrag David 20.7.2026)*:
+      **Block A (Daten) ✅ 20.7.2026** (Extraktion + Kanon + `richter.json` + Tor `check:besetzung`).
+      **Block B (Facetten-UI) wird von `W2·6-FILTER` getragen** und hier nicht zweitgeführt
+      (Entdopplung 3.8.2026 — er stand als offener Posten an beiden Stellen). Detail:
+      `fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md` §12/§13.
     *— Datenausbau-Unterschritte (Quellen → DB → Korpus = Fundament der Verzahnung):*
     - [ ] **Datenhaltung-Bau: DB-Artefakt + Massen-Korpus + Edge-Suche** *(W2·6-DATA; Council 2.7.2026 — löst die drei OCL-Abbau-„DAVID-ENTSCHEID"-Punkte auf)*.
       <!-- @meta id: W2·6-DATA · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext-snapshot.ts, scripts/prerender.ts, public/normtext/register.json] · worktree: ja · 26x: ja · fahrplan: fahrplaene/FAHRPLAN-DATENHALTUNG.md -->
@@ -442,18 +457,18 @@ später prüfbar bleibt, warum es ihn gibt.
   <!-- @meta id: W2·6-FILTER · status: ready · of: ja · blocker: null · dep: [] · kollision: [api/suche.ts, scripts/datenhaltung, src/components/suche, src/lib/rechtsprechung, public/rechtsprechung] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md -->
   **Gebündelt, weil beide Teile dieselbe Bau-Fläche tragen** (Turso-Schema + `api/suche.ts` + Facetten-UI):
   Richter-Facette (aus `R-RICHTER` Block B) und die allgemeinen Entscheid-Facetten über die API.
-  **Detail:** [FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md](fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md) §7. Trailer `Roadmap: W2·6-FILTER`.
+  **Detail:** [FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md](fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md) §7.
 - [ ] **6-RNAME · Richternamen gegen den Staatskalender auflösen** *(§14-Intake 20.7.2026, David · **Extraktion/Personendaten — Risikopfad**, `QS-GP`)*
   <!-- @meta id: W2·6-RNAME · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/rechtsprechung, public/rechtsprechung, src/lib/rechtsprechung] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md -->
   Abgekürzte Vornamen auflösen: **«P. Kaderli» → «Kaderli Peter»**, Abgleich gegen den amtlichen
   Staatskalender. **Extraktion/Personendaten = Risikopfad** ⇒ `QS-GP` Pflicht, nie raten: ohne
   eindeutigen amtlichen Treffer bleibt die Abkürzung stehen (§8).
-  **Detail:** [FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md](fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md) §8. Trailer `Roadmap: W2·6-RNAME`.
+  **Detail:** [FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md](fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md) §8.
 - [ ] **6-ZNETZ · Zitationsnetz: Rückwärts-Zitate + Leitentscheid-Score** *(Ideen-Intake 20.7.2026 · Daten-Derivation, `QS-GP`)*:
   <!-- @meta id: W2·6-ZNETZ · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/verzahnung, src/lib/verzahnung, src/lib/rechtsprechung, public/rechtsprechung] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   «Welche Entscheide zitieren diesen?» (Rückwärts-Kanten) + **Leitentscheid-Score**, deterministisch
   aus dem Zitat-Graph abgeleitet (§2 — kein Ranking-Modell, kein Bedeutungs-Urteil); Daten-Derivation
-  ⇒ `QS-GP`. **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §10. Trailer `Roadmap: W2·6-ZNETZ`.
+  ⇒ `QS-GP`. **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §10.
   **Merkposten (LM-042, UI-Befunde B20, Prod-Nachmessung 3.8.2026):** Sammelzitate («ff.») werden
   nicht kenntlich gemacht — `zitat-extraktion.ts` GLIED_KOPF fängt Sub-Marker/ff. bewusst nicht
   (fliesst nie in den Norm-Key), das Artefakt trägt kein `ff.`-Flag. Fix liegt in der
@@ -464,21 +479,21 @@ später prüfbar bleibt, warum es ihn gibt.
   (756.9 KB) — die Verschlankung (eigene Projektion, wie `richter.json` sie für die Spruchkörper-Slugs
   vormacht) ist **nicht** durch Anheben der Schranke zu lösen (§8). Wer `register.json` weiter belädt,
   reisst `check:perf-budget`.
-- [ ] **6-VZUI · Verzahnung sichtbar machen** *(David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)* — **V1a ✅ 3.7. · V1c ✅ 4.7. · V1b ✅ 4.7.2026 GEBAUT** (Fundament/Vereinheitlichung · Normrevisions-Ehrlichkeit · E4-Rangliste; Gegenprüfungen bestanden; Wortlaut → `ROADMAP-CHRONIK.md` → W2·7-VZUI, 24.7.2026) · **offen: V2 (E3-Serving) · V3 (E6a)**:
+- [ ] **7-VZUI · Verzahnung sichtbar machen** *(David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)* — **V1a ✅ 3.7. · V1c ✅ 4.7. · V1b ✅ 4.7.2026 GEBAUT** (Fundament/Vereinheitlichung · Normrevisions-Ehrlichkeit · E4-Rangliste; Gegenprüfungen bestanden; Wortlaut → `ROADMAP-CHRONIK.md` → W2·7-VZUI, 24.7.2026) · **offen: V2 (E3-Serving) · V3 (E6a)**:
   <!-- @meta id: W2·7-VZUI · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/components/kontext/KontextPanel.tsx, src/pages/EntscheidLeser.tsx, src/components/NormPopover.tsx, src/components/suche/SuchResultate.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   EINE Interaktions-Grammatik für die Verzahnung (KantenChip · StatusBadge nur-Abweichung · KontextPanel),
   reine UI auf vorhandenen Daten (§3). **Offen: V2 (E3-Serving) · V3 (E6a)** — beide an den Datenstrang
-  gekoppelt. **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §11. Trailer `Roadmap: W2·7-VZUI`.
-  - [ ] **VZUI-SACHGEBIET · Sachgebiet-Facette an der Norm↔Entscheid-Kante** *(David-Entscheid 2.8.2026 — UI-Befund LM-041 als Variante (b) «nur Sachgebiet» geöffnet)* — EINE neue Facette `sachgebiet`, **deterministisch aus der amtlichen BGE-Bandnummer I–V** (§2, keine Heuristik); Darstellung als **Filter** im «Rechtsprechung ▾», nicht als zweiter Chip-Zusatz (Dichteregel §1.2 bleibt). Die Zitier-**Rolle** bleibt ausdrücklich zu (nicht deterministisch ableitbar). Extraktion = Risiko-Pfad ⇒ Gegenprüfungspflicht. **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §12 (+ Modell-Nachtrag in §9/B1). Trailer `Roadmap: W2·7-VZUI-SACHGEBIET`.
+  gekoppelt. **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §11.
+  - [ ] **VZUI-SACHGEBIET · Sachgebiet-Facette an der Norm↔Entscheid-Kante** *(David-Entscheid 2.8.2026 — UI-Befund LM-041 als Variante (b) «nur Sachgebiet» geöffnet)* — EINE neue Facette `sachgebiet`, **deterministisch aus der amtlichen BGE-Bandnummer I–V** (§2, keine Heuristik); Darstellung als **Filter** im «Rechtsprechung ▾», nicht als zweiter Chip-Zusatz (Dichteregel §1.2 bleibt). Die Zitier-**Rolle** bleibt ausdrücklich zu (nicht deterministisch ableitbar). Extraktion = Risiko-Pfad ⇒ Gegenprüfungspflicht. **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §12 (+ Modell-Nachtrag in §9/B1).
     <!-- @meta id: W2·7-VZUI-SACHGEBIET · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/verzahnung/facetten.ts, src/lib/rechtsprechung/bezuege.ts, scripts/normtext/bezuege-bauen.ts, src/pages/gesetz-leser/bezugAuswahl.ts, src/components/verzahnung/BezugFacettenWahl.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
-- [ ] **7-BEZUG-LADEN · §15-Versprechen «Grundzustand ohne Zusatz-Fetch» wiederherstellen ODER Doku ehrlich machen** *(Entscheid-Schritt, Befund 2.8.2026)* — `bezugAuswahl.ts:18–23` verspricht «kein zusätzlicher Fetch» im Grundzustand, das JSDoc `bezuegeLaden.ts:86` beschreibt ein Feld `erweitert`, **das es nicht gibt**; tatsächlich lädt der Default beide Shards und rendert immer `BezuegeZeile`, `istErweitert()` steuert nur die Menü-Optik. Zwei Wege: **(1)** Code auf das Versprechen zurückbauen (Verhaltensänderung ⇒ §15-Logikverlust-Bewertung, Skill `perf`, golden-gegated) ODER **(2)** Doku/Kommentare nachführen. Status quo — Zusage ohne Deckung — ist keine Option (§5/§8). **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §13 (Referenz B4/B7). Trailer `Roadmap: W2·7-BEZUG-LADEN`.
+- [ ] **7-BEZUG-LADEN · §15-Versprechen «Grundzustand ohne Zusatz-Fetch» wiederherstellen ODER Doku ehrlich machen** *(Entscheid-Schritt, Befund 2.8.2026)* — `bezugAuswahl.ts:18–23` verspricht «kein zusätzlicher Fetch» im Grundzustand, das JSDoc `bezuegeLaden.ts:86` beschreibt ein Feld `erweitert`, **das es nicht gibt**; tatsächlich lädt der Default beide Shards und rendert immer `BezuegeZeile`, `istErweitert()` steuert nur die Menü-Optik. Zwei Wege: **(1)** Code auf das Versprechen zurückbauen (Verhaltensänderung ⇒ §15-Logikverlust-Bewertung, Skill `perf`, golden-gegated) ODER **(2)** Doku/Kommentare nachführen. Status quo — Zusage ohne Deckung — ist keine Option (§5/§8). **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §13 (Referenz B4/B7).
   <!-- @meta id: W2·7-BEZUG-LADEN · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/bezugAuswahl.ts, src/pages/gesetz-leser/bezuegeLaden.ts, src/pages/gesetz-leser/inhalt.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
 - [ ] **6b-MAT-FINMA · FINMA-Materialien prioritär + Verzahnung** *(§14-Intake 24.7.2026;
   <!-- @meta id: W2·6b-MAT-FINMA · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/materialien/**, public/materialien/**, src/lib/materialien] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
   **Fokus-Dekret-Priorität**, Kontext Bewerbung David bei der FINMA mit Verweis auf LexMetrik)* —
   FINMA-Rundschreiben/Wegleitungen als nächste Quelle der bestehenden Materialien-Pipeline (E6a
   Stufe 1: Verweis-/Register-Ebene, §7 a–d, kein Volltext-Nachbau).
-  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §10. Trailer `Roadmap: W2·6b-MAT-FINMA`.
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §10.
 - [ ] **8 · Schriften-Baukasten** *(VORLAGEN, Worktree)* — Berufung/BGG-Beschwerde/Sistierung/
   <!-- @meta id: W2·8 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/vorlagen] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-VORLAGEN-AUSBAU.md -->
   Beweisverzeichnis über `vorlagen/engine.ts`; Zulässigkeit nur Hinweis, Status «entwurf».
@@ -499,8 +514,7 @@ später prüfbar bleibt, warum es ihn gibt.
   <!-- @meta id: W2·13-KANTONE · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, src/pages/gesetz-leser/inhalt.tsx, src/pages/GesetzLeser.tsx, src/components/NormText.tsx, src/lib/suche/onlineVolltext.ts, src/lib/normtext/relevanz.ts, public/normtext/kanton] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   44 Befunde + 3 Kritik-Linsen (10 live an Amtsquellen re-verifiziert) — **14 sofort baubare Einheiten
   K-1…K-14**; Extraktions-Anteile sind Risikopfad ⇒ `QS-GP` + golden byte-gleich.
-  **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §2. Trailer `Roadmap: W2·13-KANTONE`.
-  **Session-Granularität (AP-6, 31.7.2026):** Schnitt-Begründung und die bewusst nicht portionierten Posten wörtlich in [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §2 (ROADMAP-Spec W2·13-KANTONE). Trailer `Roadmap: W2·13-KANTONE`.
+  **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §2.
   - [ ] **K-1 · Reader-Treue P0** *(F24/F25/F28/F33/F29-Display/F5, M)* — Lesereihenfolge, Doppel-Decode, «SR»-Label, Titel-Dopplung, Fussnoten-Stern-Strip, A14-Relevanz fr/it; reine Display-Schicht. §1-A.
     <!-- @meta id: W2·13-KANTONE-K1 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/inhalt.tsx, src/pages/gesetz-leser/inhalt-volltext.tsx, src/pages/GesetzLeser.tsx, src/pages/gesetz-leser/parts/ErlassLeserKopf.tsx, src/lib/normtext/relevanz.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   - [ ] **K-2 · §8-Ehrlichkeit UI** *(F26-UI/F37/F44/F27-Rest, S–M)* — zweistufiger Currency-Chip, Kanton-Hinweis im KontextPanel, Abdeckungs-Kontextzeile, «Stand unbekannt», Systematik-Hinweis; reine Anzeige. §1-A.
@@ -529,14 +543,13 @@ später prüfbar bleibt, warum es ihn gibt.
     <!-- @meta id: W2·13-KANTONE-K13 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K12] · kollision: [scripts/normtext/kanton-systematik-run.ts, public/normtext/kanton-systematik.json] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   - [ ] **K-14 · Kantonales Zitat-Vokabular — POC** *(F39, L — **Risikopfad**, `QS-GP`)* — POC über 5 Gerichts-Kantone × 6 Entscheide, nur exakte Sammlungsnummer-Matches, additiver Extraktions-Pass. **Prämisse «Entscheid-`normKeys` sind Bund-only» vor dem Bau gegen `W2·6-NKEY` nachmessen.** §1-A.
     <!-- @meta id: W2·13-KANTONE-K14 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K13] · kollision: [scripts/rechtsprechung, public/rechtsprechung, src/lib/rechtsprechung] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
-  - [ ] **KANTONE-DRIFT · Kantonale Snapshots gegen die Quellen nachführen** *(Befund 2.8.2026, **Risikopfad**, Skill `korpus-werkstatt` + `QS-GP`)* — beim Bundes-Durchgang vom 2.8.2026 (`--nur=bund`) meldete der Drift-Abgleich **~28 kantonale Snapshots mit echter Inhaltsdrift** (u. a. BE 154.21 neue Fassung 1.8.2026, AG 291.150 neu aufgehobene Artikel) — bewusst ausgeklammert und **unverifiziert**: Zahl und Liste werden im Schritt neu erhoben (`check:normtext-netz`), nicht übernommen (§5/§7). Kanton-weise portioniert, je Erlass Quelle+Stand+Live-Link, `verified` nie automatisch. **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §3. Trailer `Roadmap: W2·13-KANTONE-DRIFT`.
+  - [ ] **KANTONE-DRIFT · Kantonale Snapshots gegen die Quellen nachführen** *(Befund 2.8.2026, **Risikopfad**, Skill `korpus-werkstatt` + `QS-GP`)* — beim Bundes-Durchgang vom 2.8.2026 (`--nur=bund`) meldete der Drift-Abgleich **~28 kantonale Snapshots mit echter Inhaltsdrift** (u. a. BE 154.21 neue Fassung 1.8.2026, AG 291.150 neu aufgehobene Artikel) — bewusst ausgeklammert und **unverifiziert**: Zahl und Liste werden im Schritt neu erhoben (`check:normtext-netz`), nicht übernommen (§5/§7). Kanton-weise portioniert, je Erlass Quelle+Stand+Live-Link, `verified` nie automatisch. **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §3.
     <!-- @meta id: W2·13-KANTONE-DRIFT · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext/kanton] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
 - [ ] **14-SIGNAL · Watchlist & Änderungs-Signale** *(Ideen-Intake 20.7.2026 · Infra/UI, kein Rechtsinhalt)*:
   <!-- @meta id: W2·14-SIGNAL · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-wiedervorlage-generieren.ts, public/normtext/currency.json, public/rechtsprechung/register.json, src/lib/zuletztVerwendet.ts, src/pages/Startseite.tsx, src/pages/Einstellungen.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
   «Sag mir, wenn sich Norm Y ändert / Gericht X neu entscheidet.» **Baut ausschliesslich auf vorhandenen
   Signalen** (Currency/Register/Wiedervorlage); Speicherung lokal, Werkzeuge bleiben zustandslos.
-  **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §16. Trailer `Roadmap: W2·14-SIGNAL`.
-  **Session-Granularität (AP-6, 31.7.2026):** Schnitt-Begründung und die bewusst nicht portionierten Posten wörtlich in [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §16 (ROADMAP-Spec W2·14-SIGNAL). Trailer `Roadmap: W2·14-SIGNAL`.
+  **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §16.
   - [ ] **14-SIGNAL-B1 · Statischer Änderungs-Feed (🟢)** — RSS/Atom/JSON zur Build-Zeit aus `currency.json` + Verfallsregister; **nur der VORWÄRTS-Fall** (`naechsteFassungAb`).
     <!-- @meta id: W2·14-SIGNAL-B1 · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-wiedervorlage-generieren.ts, public/normtext/currency.json] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
   - [ ] **14-SIGNAL-B2 · Client-Watchlist (🟢)** — localStorage-Liste gemerkter Normen, beim Besuch gegen die Build-Artefakte geprüft. **Rückblick-Flag gegen `fassungsToken`/`sha`, nie `geprueftAm`.**
@@ -547,26 +560,26 @@ später prüfbar bleibt, warum es ihn gibt.
   <!-- @meta id: W2·15-CLS · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/Gesetze.tsx, src/components/start] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
   **Bewusst ein eigener Schritt und NICHT unter `QS-PERF` mitgeführt** — ein gemessener Produktfehler
   auf `/gesetze` (CLS 0.109 @8× CPU), reine UI, keine Logik-Berührung.
-  **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §2. Trailer `Roadmap: W2·15-CLS`.
+  **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §2.
 - [ ] **16-INVENTAR · Funktions-Inventar (Vorstufe der Bedienungsanleitung)** *(§14-Intake 20.7.2026, David: «erst wenn es Sinn ergibt» → Zweischritt, dies ist Schritt 1)*
   <!-- @meta id: W2·16-INVENTAR · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/startseiteConfig.ts, bibliothek/INDEX.md] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
   Vollständige, **ehrliche** Aufnahme dessen, was Lexmetrik heute kann — Quelle bleibt
   `startseiteConfig.ts` (§5), Status-Modell entwurf/geprüft/geplant ungeschönt (§8).
-  **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §9. Trailer `Roadmap: W2·16-INVENTAR`.
+  **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §9.
 - [ ] **16-ANLEITUNG · Bedienungsanleitung / Onboarding** *(§14-Intake 20.7.2026, David — Schritt 2, **bewusst spät**)*
   <!-- @meta id: W2·16-ANLEITUNG · status: ready · of: ja · blocker: null · dep: [W2·16-INVENTAR] · kollision: [src/pages, src/components/layout] · seq-hart: [QS-UI(8a), W2·5h-GESETZ-UI(8b)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
   Davids Vorgabe wörtlich: **«erst wenn es Sinn ergibt»** — die Anleitung folgt dem Inventar, nicht
   umgekehrt (`dep: [W2·16-INVENTAR]`); bewusst spät, damit sie nichts beschreibt, was sich noch bewegt.
-  **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §10. Trailer `Roadmap: W2·16-ANLEITUNG`.
+  **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §10.
 - [ ] **17 · UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)** *(Auftrag David 31.7.2026, Lieferung einer externen Sichtprüfung vom 29.7.)*
   <!-- @meta id: W2·17-UI-BEFUNDE · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/**] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   Externe Sichtprüfung, geschnitten nach Bauteil K-01…K-20; Triage 31.7.2026: **45 NEIN · 144 VERDACHT ·
   15 BEREITS-GEBAUT · 6 SICHER**, davon **20 Batches** (19 Bau-Batches mit 189 Befunden + 1 Prüf-Batch, 15).
-  **Detail:** [FAHRPLAN-UI-BEFUNDE.md](fahrplaene/FAHRPLAN-UI-BEFUNDE.md) §1. Trailer `Roadmap: W2·17-UI-BEFUNDE`.
+  **Detail:** [FAHRPLAN-UI-BEFUNDE.md](fahrplaene/FAHRPLAN-UI-BEFUNDE.md) §1.
   **Reihenfolge-Freigabe (`@queue`) bleibt Davids Entscheid** — darum bewusst NICHT in der Queue.
   - [ ] **B3 · Klebende Leisten (K-01)** — 7 Befunde (Blocker 2 · Hoch 4). §4.
     <!-- @meta id: W2·17-UI-BEFUNDE-B3 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components/layout, src/index.css] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
-  - [ ] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). §5.
+  - [ ] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). **Grenze:** hier werden nur die 12 extern erhobenen Einzelbefunde abgearbeitet — der flächige UX-Pass derselben Seite ist `W2·5h-GESETZ-UI`, die Darstellungs-Vorschriften sind `W2·5d`. Kollisions-Precheck gegen beide vor dem Bau. §5.
     <!-- @meta id: W2·17-UI-BEFUNDE-B4 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B3] · kollision: [src/pages/gesetz-leser, src/components/NormText.tsx, src/components/normtext] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B5 · Druck, Farbschema, Reiter- und Split-Ansicht (K-16 + K-17 + K-18)** — 8 Befunde (Blocker 2 · Hoch 2). §6.
     <!-- @meta id: W2·17-UI-BEFUNDE-B5 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B4] · kollision: [src/index.css, src/components/layout/Pane.tsx, src/components/layout/TabPanel.tsx, src/components/layout/ThemaUmschalter.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
@@ -610,13 +623,10 @@ später prüfbar bleibt, warum es ihn gibt.
   Strategie, je Kanton eigene Deklaration — **26×-Datenasset, Leitprinzip 4/Slot beachten**;
   Bau-Auflagen Zustellfiktion SchKG strikt trennen, BGE 138 III 225 nur offengelegte Annahme:
   `archiv/FAHRPLAN-PRODUKTAUSBAU-BURGGRABEN.md` §P3).
-  **Zum `fahrplan: archiv/…` (bewusste Ausnahme, deklariert 31.7.2026 — Endprüfungs-Fund R3-3/R3-11):**
-  Für W3·10 gibt es **keinen aktiven Nachfolger** — die 20 §§ von `fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md`
-  decken PRODUKTAUSBAU/BURGGRABEN nicht ab, anders als bei `W3·13`. Der Zeiger bleibt darum auf die
-  Archivdatei; deren Kopf trägt **Stand 14.6.2026** und ist nach §0 der Archiv-Restpunkte **teilweise
-  stale**. Die Restpunkte-Extraktion (Zustellfiktion, OR-Schwellen, IGE-Gebühren, kant. Gerichtsferien)
-  **steht aus** und gehört in den Bau-Batch dieses Schritts. Massgeblich ist bis dahin §P3, gelesen mit
-  diesem Vorbehalt.
+  **`fahrplan: archiv/…` ist eine deklarierte Ausnahme** (31.7.2026): für W3·10 gibt es keinen
+  aktiven Nachfolger, die Archivdatei trägt Stand 14.6.2026 und ist teilweise stale. **Erster
+  Arbeitsschritt** ist darum die Restpunkte-Extraktion aus §P3 in einen aktiven Fahrplan.
+  Begründung wörtlich → `ROADMAP-CHRONIK.md` → W3·10 (3.8.2026).
 - [ ] **11 · Gesetzgebungs-/Rechtsetzungs-Tracking** *(neu, amtlich)*. Übersicht «was kommt»:
   <!-- @meta id: W3·11 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
   Vernehmlassungen (admin.ch), Parlamentsgeschäfte (parlament.ch), in AS/BBl publiziert aber noch
@@ -630,7 +640,7 @@ später prüfbar bleibt, warum es ihn gibt.
   **SLOT-ÜBERGABE 20.7.2026: dieser Schritt hält jetzt den 26×-Slot** (`slot: inhaber`); Reihenfolge
   E3 → W3·12 entschieden (David 2.7.). Kanton-Gesetze-Bündel = 3-Tier-Import + BS-Vorbildkanton +
   Rechtssammlung P6 + POPUP-Kanton-Rest; nie zwei 26×-Assets parallel (Leitprinzip 4).
-  **Detail:** [FAHRPLAN-GESETZE-IMPORT-3TIER.md](fahrplaene/FAHRPLAN-GESETZE-IMPORT-3TIER.md) §6. Trailer `Roadmap: W3·12`.
+  **Detail:** [FAHRPLAN-GESETZE-IMPORT-3TIER.md](fahrplaene/FAHRPLAN-GESETZE-IMPORT-3TIER.md) §6.
 - [ ] **13 · Vorlagen-Breite** *(VORLAGEN V5/V6/V8, GMBH G2, VERTRAGS-VARIANTEN P3; Worktree)*.
   <!-- @meta id: W3·13 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/vorlagen] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md -->
   Tiefe vor Stückzahl. GmbH qualifizierte Gründung (777c II) · Musterklagen (Bauhandwerkerpfand) ·
@@ -646,8 +656,7 @@ später prüfbar bleibt, warum es ihn gibt.
   David 29.6.2026)*. 2–3 „Engines" nebeneinander **wie im Browser** → der **Verzahnungs-Burggraben
   sichtbar** (Gesetz | Rechner | Begründungs-Absatz). **Erst Strang A** (Inhaltsbreite-Umschalter),
   dann der Fundament-Umbau; eigener Worktree (§12).
-  **Detail:** [FAHRPLAN-SPLIT-VIEW.md](fahrplaene/FAHRPLAN-SPLIT-VIEW.md) §1. Trailer `Roadmap: W3·14`.
-  **Session-Granularität (AP-6, 31.7.2026):** Schnitt-Begründung und die bewusst nicht portionierten Posten wörtlich in [FAHRPLAN-SPLIT-VIEW.md](fahrplaene/FAHRPLAN-SPLIT-VIEW.md) §1 (ROADMAP-Spec W3·14). Trailer `Roadmap: W3·14`.
+  **Detail:** [FAHRPLAN-SPLIT-VIEW.md](fahrplaene/FAHRPLAN-SPLIT-VIEW.md) §1.
   - [ ] **14-B3 · Scroll & Fokus pro Pane — Restposten** — pro-Pane-Scroll und Spy laufen; **offen**: Scroll-POSITIONS-Wiederherstellung (`App.tsx` noch window-basiert) + Tastatur-Pane-Wechsel. §STRANG B (B-3).
     <!-- @meta id: W3·14-B3 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/App.tsx, src/components/layout/usePaneLayout.ts, src/components/layout/Pane.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-SPLIT-VIEW.md -->
   - [ ] **+ Auftrags-Eingang 30.6.: Bündel S** — **S1** Breadcrumbs in der Pane laufen über globalen
@@ -680,8 +689,9 @@ später prüfbar bleibt, warum es ihn gibt.
   Login/Pro.
 - **Live-Rechtsprechung** — §4-blockiert (s. Verifikations-Blockaden).
 - **Betriebs-Instrumente (später):** Sentry (erst bei Traffic; A5-Fehler-Link deckt jetzt) · CodeQL ·
-  `npm audit` als Prüf-**Meldung** (nie Stopper) · Claude-Code-PR-Action (bewusster Entscheid) —
-  Detail + Verworfen-Liste: `BACKLOG-AUDIT-WERKZEUGE-2026-07.md`.
+  Claude-Code-PR-Action (bewusster Entscheid) — Detail + Verworfen-Liste:
+  `BACKLOG-AUDIT-WERKZEUGE-2026-07.md`. *(`npm audit` 3.8.2026 aus dieser Liste genommen: die
+  Meldungs-Variante ist als `QS-BASIS-DEPS` in Arbeit; geparkt bleibt nur die Stopper-Variante.)*
 - **Abnahme-Warteschlange** (Haftungsrang: 1 Fristen → 2 Form-Gate-Vorlagen → 3 Beträge; aufgereiht,
   nicht gedrängt): BGER-RECHTSWEG (§7) · BEURKUNDUNGS-AUSBAU · NOTARIAT/LUECKEN (`geprüft`) ·
   GESETZESTEXT-POPUP-Snapshots · GRUNDLAGEN G2/B.

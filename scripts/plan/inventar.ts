@@ -69,6 +69,8 @@ export const INVENTAR: readonly string[] = [
   // (#418/#420) und der Gegenprüfungen des Tages — alle klein, alle mit Anlass-Satz in der ROADMAP.
   'QS-FRIT-DRIFT', 'QS-CURRENCY-TESTS', 'QS-GP-BEREICH', 'QS-GP-PRERENDER',
   // QS-BASIS-MQ gestrichen 3.8.2026 (David-Verzicht Merge Queue, nur Org-Repos; Chronik)
-  'QS-AUTOMATIK-WT', 'QS-AUTOMATIK-BERICHT', 'QS-BASIS-TOT', 'QS-BASIS-DEPS',
+  // QS-AUTOMATIK-WT fusioniert 3.8.2026 in QS-AUTOMATIK-BERICHT (gleiche Datei
+  // scripts/check-ci-laeufe.ts, gleiche Risiko-Klasse; Begründung in der Chronik).
+  'QS-AUTOMATIK-BERICHT', 'QS-BASIS-TOT', 'QS-BASIS-DEPS',
   'QS-TOK-DECKEL', 'QS-TOK-AUFRAEUMEN', 'QS-UI-WARNLINE',
 ];
