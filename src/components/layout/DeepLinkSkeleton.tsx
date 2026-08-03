@@ -51,8 +51,6 @@ export function DeepLinkSkeleton() {
     // Navigation im geladenen Gesetz) — dafür braucht niemand ein Overlay. Das
     // Overlay gehört dem EINSPRUNG von aussen, wo der Reader erst noch entsteht.
     if (document.getElementById(id)) return;
-    setAktiv(true);
-    setLabel('');
 
     // Nutzer-Übernahme beendet das Overlay sofort: wer selbst scrollt, tippt
     // oder klickt, navigiert nicht mehr «hin» — ein Schleier mit «Springe zu …»
@@ -60,20 +58,26 @@ export function DeepLinkSkeleton() {
     const uebernahme = ['wheel', 'touchstart', 'keydown', 'pointerdown'] as const;
     let takt = 0;
     let kappe = 0;
+    let sofort = 0;
     let weg = false;
     const schliesse = () => {
       if (weg) return;
       weg = true;
       window.clearInterval(takt);
       window.clearTimeout(kappe);
+      window.clearTimeout(sofort);
       for (const ev of uebernahme) window.removeEventListener(ev, schliesse);
       setAktiv(false);
     };
     for (const ev of uebernahme) window.addEventListener(ev, schliesse, { passive: true, once: true });
 
-    takt = window.setInterval(() => {
+    // EINE Prüfung des äusseren Zustands (DOM + Sprung-Landung), getaktet
+    // aufgerufen. Auch das Einschalten passiert hier und nicht im Effekt-Rumpf:
+    // ob das Overlay gebraucht wird, entscheidet nicht React, sondern der
+    // Ladezustand des Dokuments — der Effekt abonniert ihn nur.
+    const pruefe = () => {
       const el = document.getElementById(id);
-      if (!el) return;
+      if (!el) { setAktiv(true); setLabel(''); return; }
       const top = el.getBoundingClientRect().top;
       // Etikett nachziehen, sobald der Anker da ist (sein Textinhalt IST das
       // Label — der Fussnoten-Marker steht ausserhalb des <a>).
@@ -84,7 +88,12 @@ export function DeepLinkSkeleton() {
       // bliebe der Dokumentanfang in der Lücke zwischen «Element da» und
       // «Sprung ausgeführt» doch wieder sichtbar (im Audit ~1 s).
       if (top >= -LANDE_TOLERANZ_PX && top <= LANDE_TOLERANZ_PX) schliesse();
-    }, TAKT_MS);
+      else setAktiv(true);
+    };
+    takt = window.setInterval(pruefe, TAKT_MS);
+    // Erste Prüfung ohne Wartetakt — das Overlay soll im selben Wimpernschlag
+    // stehen wie der leere Dokumentanfang, den es ersetzt.
+    sofort = window.setTimeout(pruefe, 0);
     kappe = window.setTimeout(schliesse, KAPPE_MS);
 
     return schliesse;

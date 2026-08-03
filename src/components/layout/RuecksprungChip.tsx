@@ -35,24 +35,36 @@ export function RuecksprungChip() {
   const [ziel, setZiel] = useState<Ruecksprung | null>(null);
   const { pathname } = useLocation();
 
+  // Abo auf die Registry. Steht VOR dem Pfad-Effekt, damit dessen `setzeRuecksprung(null)`
+  // schon beim ersten Lauf hier ankommt (Effekte laufen in Deklarations-Reihenfolge).
+  useEffect(() => {
+    // Der Einschwing-Timer gehört dem Effekt, nicht dem einzelnen Ereignis: ein
+    // zweiter Sprung innerhalb des Fensters muss den ersten verwerfen, und beim
+    // Abbau darf keiner überleben (sonst meldete sich ein Timer an einer
+    // Komponente, die es nicht mehr gibt).
+    let settle = 0;
+    const ab = abonniereRuecksprung((r) => {
+      window.clearTimeout(settle);
+      if (!r) { setZiel(null); return; }
+      // Erst nach dem Einschwingen prüfen, ob der Sprung überhaupt etwas bewegt
+      // hat. Ein Klick auf den Abschnitt, in dem man ohnehin steht, darf keinen
+      // Chip erzeugen — er verspräche eine Rückkehr an die Stelle, an der man
+      // gerade steht (§8: nichts anbieten, was keine ist).
+      settle = window.setTimeout(() => {
+        const jetzt = ermittleLesePosition();
+        if (jetzt?.token === r.token) { setzeRuecksprung(null); return; }
+        setZiel(r);
+      }, SETTLE_MS);
+    });
+    return () => { window.clearTimeout(settle); ab(); };
+  }, []);
+
   // Erlass-Wechsel verwirft einen offenen Rücksprung: das Ziel-Token gehört zum
   // vorigen Dokument und wäre dort drüben entweder tot oder — schlimmer — ein
   // GLEICH benannter, aber anderer Artikel (jedes Gesetz hat einen «Art. 1»).
-  useEffect(() => { setzeRuecksprung(null); setZiel(null); }, [pathname]);
-
-  useEffect(() => abonniereRuecksprung((r) => {
-    if (!r) { setZiel(null); return; }
-    // Erst nach dem Einschwingen prüfen, ob der Sprung überhaupt etwas bewegt
-    // hat. Ein Klick auf den Abschnitt, in dem man ohnehin steht, darf keinen
-    // Chip erzeugen — er verspräche eine Rückkehr an die Stelle, an der man
-    // gerade steht (§8: nichts anbieten, was keine ist).
-    const t = window.setTimeout(() => {
-      const jetzt = ermittleLesePosition();
-      if (jetzt?.token === r.token) { setzeRuecksprung(null); return; }
-      setZiel(r);
-    }, SETTLE_MS);
-    return () => window.clearTimeout(t);
-  }), []);
+  // Das Leeren läuft über die Registry, nicht über ein zweites `setZiel` hier:
+  // so gibt es genau EINEN Weg, auf dem der Chip verschwindet (das Abo oben).
+  useEffect(() => { setzeRuecksprung(null); }, [pathname]);
 
   // Verfall. Hängt an `ziel`, nicht am Abo — jeder neue Rücksprung startet die
   // Frist neu (der vorige Timer wird über den Cleanup verworfen).
