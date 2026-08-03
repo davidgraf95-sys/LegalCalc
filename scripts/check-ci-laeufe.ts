@@ -33,6 +33,25 @@ type Lauf = { conclusion: string | null; status: string; createdAt: string; url:
 const DIR = '.github/workflows';
 const STUNDE = 3_600_000;
 
+// ─── SELBSTAUSSCHLUSS (Reparatur 3.8.2026, Fehlerklasse K6) ──────────────────
+// Dieses Tor läuft SELBST als cron-Workflow (waechter.yml) und fand sich darum
+// in der eigenen Prüfmenge wieder — eine Rückkopplung, die sich nicht mehr
+// öffnen kann: Der GERADE LAUFENDE Lauf ist `status: in_progress` und wird von
+// der `completed`-Filterung unten verworfen; beurteilt wird also stets der
+// VORIGE Lauf. Ist der rot, meldet das Tor «waechter.yml: jüngster Lauf
+// 'failure'», wird dadurch selbst rot — und liefert der nächsten Ausführung
+// erneut ein rotes Vorbild. BELEG: seit Anlage am 20.7.2026 fünfzehn Läufe,
+// fünfzehnmal `failure` (Lauf 30803981348: «waechter.yml: jüngster Lauf
+// 'failure'» als einer von zwei Befunden). Ein Wächter, der nur noch seine
+// eigene Vergangenheit anzeigt, überwacht nichts mehr.
+//
+// Der Ausschluss kostet keine Abdeckung: Der Zustand DIESES Workflows ist
+// nicht auf einen Melder angewiesen, weil er das Melde-Ergebnis selbst ist —
+// scheitert er, steht sein eigener roter Lauf in der Actions-Liste, und das
+// ist genau die Sichtbarkeit, die er für die anderen herstellt. Fremd-
+// überwachung des Wächters bliebe zirkulär, egal wer sie ausspricht.
+const SELBST = 'waechter.yml';
+
 /** Cron-Intervall grob in Stunden — reicht für die Kulanz-Schwelle. */
 function intervallStunden(cron: string): number {
   const [minute, stunde, , , wochentag] = cron.trim().split(/\s+/);
@@ -47,6 +66,7 @@ function geplante(): { datei: string; stunden: number }[] {
   const out: { datei: string; stunden: number }[] = [];
   for (const datei of readdirSync(DIR)) {
     if (!/\.ya?ml$/.test(datei)) continue;
+    if (datei === SELBST) continue; // siehe SELBST oben — Selbstverriegelung K6
     const inhalt = readFileSync(`${DIR}/${datei}`, 'utf8');
     const crons = [...inhalt.matchAll(/^\s*-\s*cron:\s*'([^']+)'/gm)].map((m) => m[1]);
     if (!crons.length) continue;
@@ -65,6 +85,19 @@ try {
   execFileSync('gh', ['auth', 'status'], { stdio: 'ignore' });
 } catch {
   skip('`gh` fehlt oder ist nicht authentisiert');
+}
+
+// Der Selbstausschluss oben ist ein NAME — wird waechter.yml umbenannt, greift
+// er stillschweigend nicht mehr und die Verriegelung kehrt zurück (§6.7 lit. b:
+// nie still). Darum hier hart: existiert die Datei nicht, ist der Ausschluss
+// ins Leere gelaufen und das Tor sagt es, statt weiterzulaufen.
+if (!readdirSync(DIR).includes(SELBST)) {
+  console.log(
+    `check:ci-laeufe ROT — der Selbstausschluss zeigt auf '${DIR}/${SELBST}', ` +
+    `diese Datei existiert nicht (mehr).\n` +
+    `  Wurde der Wächter-Workflow umbenannt, muss SELBST in scripts/check-ci-laeufe.ts ` +
+    `mitgezogen werden — sonst prüft das Tor wieder sich selbst und bleibt für immer rot.`);
+  process.exit(1);
 }
 
 const plaene = geplante();
