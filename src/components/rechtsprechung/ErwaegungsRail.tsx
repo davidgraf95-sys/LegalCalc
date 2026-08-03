@@ -1,0 +1,181 @@
+import { memo, useState } from 'react';
+
+// ─── V5 · Erwägungs-Navigation im Entscheid-Leser (W2·10-UI-NAV) ─────────────
+//
+// «E. 4.5.2 in zwei Klicks» — Juristen navigieren einen Entscheid über
+// Erwägungs-Nummern, nicht über den Scrollbalken. Der Reader trug bisher nur die
+// vier groben Sprung-Chips (Regeste · Sachverhalt · Erwägungen · Dispositiv);
+// innerhalb der Erwägungen gab es keine Navigation, obwohl JEDER Block seit dem
+// Pin-Cite-Schnitt einen stabilen `#e-…`-Anker hat.
+//
+// ── WAS DIESE FLÄCHE IST — UND WAS NICHT (Auflage der Spec, VZUI §0/1d) ─────
+// Der Rail ist NAVIGATION, keine Verzahnungs-Fläche. Die Fuss-Position der
+// Verzahnungs-Blöcke (KontextPanel: zitierte Normen/Entscheide mit Wegen NACH
+// AUSSEN) ist dokumentierter Entscheid und bleibt unangetastet. Die Normen-Chips
+// hier führen ausschliesslich INNERHALB dieses Entscheids an die Stelle, an der
+// die Norm wörtlich genannt wird — sie verlinken bewusst NICHT in die
+// Gesetzessammlung; das tut der Fuss. Zwei verschiedene Fragen, zwei Orte.
+//
+// ── EINE ANKER-WAHRHEIT (§5) ───────────────────────────────────────────────
+// Gliederung und Treffer kommen aus `erwaegungsGliederung` bzw.
+// `trefferInErwaegungen`, beide über `gruppiereErwaegungen` — dieselbe
+// Ankerbildung wie Body, Pin-Cite-Kopie und Fundstellen-Sprung. Ein Rail mit
+// eigener Nummerierung wäre eine zweite Wahrheit und träfe die Ziele daneben.
+//
+// ── §8: nur echte Ziele ────────────────────────────────────────────────────
+// Markenlose Erwägungen (unplausible/kantonale Daten) tragen keinen zitierfähigen
+// Anker und erscheinen darum NICHT als Sprungziel. Die Trefferzahl der Suche
+// nennt getrennt, wie viele Vorkommen es im ganzen Dokument gibt und wie viele
+// davon anspringbar sind — sonst behauptete die Liste Vollständigkeit.
+//
+// ── §15: keine Layout-Verschiebung, keine Dauerrechnung ────────────────────
+// Der Rail steht ab dem ersten Render (er hängt nur am bereits geladenen
+// Snapshot) und ist auf Desktop `sticky` — er wächst nichts ein, CLS 0.
+//
+// REINER RENDERER (wie `BezuegeZeile`): Gliederung, Treffer und Normen-Anker
+// rechnet der Reader EINMAL in `useMemo` und reicht sie durch (React Compiler
+// ist AUS). Die Komponente selbst rechnet nichts — so kann kein zweiter
+// Rechenweg entstehen, und die `memo`-Grenze greift wie gedacht.
+
+/** Einrückung je Gliederungstiefe — Klassen statt Inline-Werten (§13). */
+const EINZUG = ['pl-0', 'pl-3', 'pl-6', 'pl-9'] as const;
+
+function Lupe() {
+  return (
+    <svg aria-hidden viewBox="0 0 16 16" width="14" height="14" fill="none"
+      stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="7" cy="7" r="4.5" />
+      <path d="M11 11l3.5 3.5" />
+    </svg>
+  );
+}
+
+/** Ein Sprungziel der Liste; `anzahl` nur in der Treffer-Sicht. */
+export interface RailPunkt { anker: string; marke: string; tiefe: number; anzahl?: number }
+
+export const ErwaegungsRail = memo(function ErwaegungsRail({
+  gliederung, treffer, normen, suche, onSuche, springe, imPane = false,
+}: {
+  /** Erwägungs-Gliederung der SICHTBAREN Fassung (`erwaegungsGliederung`). */
+  gliederung: readonly RailPunkt[];
+  /** Erwägungen mit Treffern des Suchbegriffs (`trefferInErwaegungen`). */
+  treffer: readonly RailPunkt[];
+  /** Angewandte Normen MIT wörtlicher Fundstelle in einer Erwägung. */
+  normen: readonly { zitat: string; anker: string }[];
+  suche: string;
+  onSuche: (v: string) => void;
+  /** Sprung + Hash-Spiegelung — dieselbe Funktion wie die Abschnitts-Chips. */
+  springe: (anker: string) => void;
+  /** Im Split-View-Pane gibt es keine Rail-Spalte → immer die aufklappbare Form. */
+  imPane?: boolean;
+}) {
+  // Mobil (und im Pane) eingeklappt starten: der Lesetext gehört zuerst ans Auge.
+  // Auf Desktop entscheidet allein CSS — kein Media-Query in JS, damit Server-
+  // und Client-Markup nicht auseinanderlaufen.
+  const [offen, setOffen] = useState(false);
+
+  // Nichts zu navigieren ⇒ gar keine Fläche (kein leerer Kasten, §15.2/§13 F4).
+  if (gliederung.length === 0 && normen.length === 0) return null;
+
+  const trefferGesamt = treffer.reduce((n, t) => n + (t.anzahl ?? 0), 0);
+  const desktop = !imPane;
+  const liste: readonly RailPunkt[] | null = suche.trim() === '' ? null : treffer;
+
+  return (
+    <aside
+      data-erw-rail
+      className={desktop
+        ? 'order-1 min-w-0 xl:order-2 xl:col-start-2 xl:row-start-1 xl:sticky'
+        : 'order-1 min-w-0'}
+      style={desktop ? { top: 'calc(var(--rsp-stick, 7rem) + 0.5rem)' } : undefined}
+      aria-label="Navigation im Entscheid"
+    >
+      {/* Mobil/Pane: ein Griff. Auf Desktop ist der Rail immer offen — der Griff
+          verschwindet dort ganz (kein Steuerelement ohne Wirkung, §13 F4). */}
+      <button type="button" data-erw-rail-griff
+        onClick={() => setOffen((v) => !v)}
+        aria-expanded={offen}
+        className={`lc-chip w-full justify-between ${desktop ? 'xl:hidden' : ''}`}>
+        <span>Erwägungen &amp; Suche</span>
+        <span aria-hidden className="text-base leading-none">{offen ? '▾' : '▸'}</span>
+      </button>
+
+      <div className={`${offen ? 'mt-2 block' : 'hidden'} ${desktop ? 'xl:mt-0 xl:block' : ''} space-y-3`}>
+        {/* «Im Entscheid suchen» — Pendant zur In-Gesetz-Suche (A35). Das Feld
+            markiert im Lesetext (Highlight-API, kein DOM-Eingriff) und listet
+            hier die Erwägungen mit Treffern. */}
+        <div>
+          <label className="flex items-center gap-1.5 rounded-md border border-line px-2">
+            <span className="text-ink-500"><Lupe /></span>
+            <input type="search" value={suche} onChange={(e) => onSuche(e.target.value)}
+              placeholder="Im Entscheid suchen …" aria-label="Im Entscheid suchen"
+              data-erw-suche
+              className="min-h-6 w-full min-w-0 border-0 bg-transparent py-1 text-xs text-ink-800 placeholder:text-ink-500 focus:outline-none" />
+          </label>
+          {suche.trim() !== '' && (
+            // §8: BEIDE Zahlen. «5 Treffer» allein verschwiege, dass drei davon
+            // im Sachverhalt liegen und hier gar nicht anspringbar sind.
+            <p aria-live="polite" className="mt-1 text-micro text-ink-500">
+              {trefferGesamt === 0
+                ? 'Keine Treffer in den Erwägungen.'
+                : <><span className="num">{trefferGesamt}</span> Treffer in{' '}
+                    <span className="num">{treffer.length}</span>
+                    {treffer.length === 1 ? ' Erwägung' : ' Erwägungen'}</>}
+            </p>
+          )}
+        </div>
+
+        {/* Erwägungs-Inhaltsverzeichnis (bzw. die Treffer-Auswahl, sobald gesucht
+            wird — dann ist das Verzeichnis die Ergebnisliste). */}
+        {gliederung.length > 0 && (
+          <nav aria-label="Erwägungen" className="max-h-[45vh] overflow-y-auto pr-1">
+            <ul className="space-y-0.5">
+              {(liste ?? gliederung).map((p) => (
+                <li key={p.anker} className={EINZUG[Math.min(p.tiefe, EINZUG.length - 1)]}>
+                  <a href={`#${p.anker}`}
+                    onClick={(e) => {
+                      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+                      e.preventDefault();
+                      springe(p.anker);
+                    }}
+                    className="num flex min-h-6 items-center gap-1.5 rounded px-1 text-xs tabular-nums text-ink-700 no-underline hover:bg-brass-100/40 hover:text-brass-700">
+                    <span>{p.marke}</span>
+                    {p.anzahl != null && (
+                      <span className="ml-auto text-micro text-ink-500">{p.anzahl}</span>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            {liste !== null && liste.length === 0 && (
+              <p className="px-1 text-micro text-ink-500">Kein Treffer in den Erwägungen.</p>
+            )}
+          </nav>
+        )}
+
+        {/* Angewandte Normen — Sprung an die Stelle IM Entscheid (siehe Kopf). */}
+        {normen.length > 0 && (
+          <div>
+            <p className="lc-overline text-ink-500" title="Im Entscheid wörtlich genannte Normen — der Chip springt an die Erwägung, nicht in die Gesetzessammlung (die steht im Fuss).">
+              Angewandte Normen
+            </p>
+            <div data-erw-normen className="mt-1 flex flex-wrap gap-1">
+              {normen.map((n) => (
+                <a key={n.zitat} href={`#${n.anker}`}
+                  onClick={(e) => {
+                    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+                    e.preventDefault();
+                    springe(n.anker);
+                  }}
+                  title={`Zur Erwägung mit ${n.zitat}`}
+                  className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400">
+                  {n.zitat}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </aside>
+  );
+});
