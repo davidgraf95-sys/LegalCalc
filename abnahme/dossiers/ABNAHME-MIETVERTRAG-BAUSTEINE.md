@@ -165,7 +165,20 @@ Schema `mietvertrag` · Version 1.2.0 (Rechtsstand OR Art. 253 ff./VMWG; + Unter
 
 > – ab {{item.abFmt}}: Erhöhung um CHF {{item.erhoehungFmt}} pro Monat
 
-### 12. `M06_kaution` — «Sicherheitsleistung»
+### 12. `M05c_mietzinsvorbehalt` — «Mietzinsvorbehalt»
+
+- [ ] **abgenommen** (David)
+- **Norm:** Art. 18 VMWG
+- **Aufnahme:** mietzinsvorbehaltZeigen = true
+- **Nummeriert** (fortlaufende Ziffer im Dokument)
+- **Begründung (Protokoll):** Mietzinsvorbehalt bei unvollständiger Mietzinsanpassung, in Prozenten beziffert (Art. 18 VMWG) – Detailgrad «experte».
+- **Hinweis (offengelegt):** Ohne ziffernmässige Festlegung in Franken oder Prozenten geht der Vorbehalt verloren (Art. 18 VMWG).
+
+**Wortlaut:**
+
+> Der Vermieter macht die ihm zustehende Mietzinsanpassung nicht vollständig geltend und behält sich eine spätere Erhöhung im Umfang von {{vorbehaltProzentText}} % des Nettomietzinses vor{{vorbehaltGrundSatz}}. Der Vorbehalt ist in Prozenten des Mietzinses festgelegt (Art. 18 VMWG).
+
+### 13. `M06_kaution` — «Sicherheitsleistung»
 
 - [ ] **abgenommen** (David)
 - **Norm:** Art. 257e OR
@@ -177,19 +190,19 @@ Schema `mietvertrag` · Version 1.2.0 (Rechtsstand OR Art. 253 ff./VMWG; + Unter
 
 > Der Mieter leistet eine Sicherheit von CHF {{kautionFmt}}{{kautionMonateSatz}}. Der Vermieter hinterlegt die Sicherheit bei einer Bank auf einem Sparkonto oder Depot, das auf den Namen des Mieters lautet. Macht der Vermieter innert eines Jahres nach Beendigung des Mietverhältnisses keinen Anspruch gegenüber dem Mieter geltend, kann dieser die Rückerstattung verlangen.
 
-### 13. `M06b_zahlungsverzug` — «Zahlungsverzug»
+### 14. `M06b_zahlungsverzug` — «Zahlungsverzug»
 
 - [ ] **abgenommen** (David)
 - **Norm:** Art. 257d OR
-- **Aufnahme:** immer
+- **Aufnahme:** detailgrad ∈ {"standard", "experte"}
 - **Nummeriert** (fortlaufende Ziffer im Dokument)
-- **Begründung (Protokoll):** Zahlungsverzugs-Folge (deklaratorisch; Art. 257d OR) – immer enthalten.
+- **Begründung (Protokoll):** Zahlungsverzugs-Folge (deklaratorisch; Art. 257d OR) – ab «standard» (in «einfach» ausgeblendet, da Art. 257d ohnehin gilt).
 
 **Wortlaut:**
 
 > Ist der Mieter mit der Zahlung von Mietzins oder Nebenkosten im Rückstand, kann ihm der Vermieter schriftlich eine Zahlungsfrist von mindestens 30 Tagen setzen und ihm für den Fall der Nichtzahlung die Kündigung androhen; bezahlt der Mieter innert Frist nicht, kann der Vermieter mit einer Frist von mindestens 30 Tagen auf das Ende eines Monats kündigen. Bei einer Familienwohnung sind Fristansetzung und Androhung dem Ehegatten bzw. der eingetragenen Partnerin/dem eingetragenen Partner separat zuzustellen.
 
-### 14. `M07_unterhalt` — «Unterhalt und Mängel»
+### 15. `M07_unterhalt` — «Unterhalt und Mängel»
 
 - [ ] **abgenommen** (David)
 - **Norm:** Art. 256 OR
@@ -201,7 +214,19 @@ Schema `mietvertrag` · Version 1.2.0 (Rechtsstand OR Art. 253 ff./VMWG; + Unter
 
 > Der Vermieter erhält das Mietobjekt in einem zum vorausgesetzten Gebrauch tauglichen Zustand. Der Mieter trägt den kleinen Unterhalt, d. h. Reinigungen und Ausbesserungen, die für den gewöhnlichen Gebrauch erforderlich sind und die er ohne besonderen Aufwand selbst vornehmen kann. Mängel sind dem Vermieter unverzüglich zu melden; die gesetzlichen Mängelrechte des Mieters bleiben vorbehalten.
 
-### 15. `M08_gebrauch` — «Gebrauch, Untermiete und bauliche Änderungen»
+### 16. `M07b_duldung` — «Duldung von Arbeiten und Besichtigungen»
+
+- [ ] **abgenommen** (David)
+- **Norm:** Art. 257h OR
+- **Aufnahme:** detailgrad = "experte"
+- **Nummeriert** (fortlaufende Ziffer im Dokument)
+- **Begründung (Protokoll):** Duldungspflicht für Arbeiten/Besichtigungen mit Ankündigung und Rücksichtnahme (Art. 257h OR) – Detailgrad «experte».
+
+**Wortlaut:**
+
+> Der Mieter duldet Arbeiten an der Mietsache, wenn sie zur Beseitigung von Mängeln oder zur Behebung oder Vermeidung von Schäden notwendig sind, und gestattet dem Vermieter die Besichtigung, soweit dies für Unterhalt, Verkauf oder Wiedervermietung notwendig ist. Der Vermieter kündigt Arbeiten und Besichtigungen rechtzeitig an und nimmt bei der Durchführung auf die Interessen des Mieters Rücksicht; allfällige Ansprüche des Mieters auf Herabsetzung des Mietzinses und auf Schadenersatz bleiben vorbehalten (Art. 257h OR).
+
+### 17. `M08_gebrauch` — «Gebrauch, Untermiete und bauliche Änderungen»
 
 - [ ] **abgenommen** (David)
 - **Norm:** Art. 262 OR
@@ -213,7 +238,7 @@ Schema `mietvertrag` · Version 1.2.0 (Rechtsstand OR Art. 253 ff./VMWG; + Unter
 
 > Der Mieter gebraucht das Mietobjekt sorgfältig und nimmt Rücksicht auf Hausbewohner und Nachbarn.{{untermieteSatz}} Erneuerungen und Änderungen am Mietobjekt durch den Mieter bedürfen der schriftlichen Zustimmung des Vermieters; hat der Vermieter zugestimmt, kann er die Wiederherstellung des früheren Zustands nur verlangen, wenn dies schriftlich vereinbart wurde. Weist das Mietobjekt bei Mietende dank solcher Arbeiten einen erheblichen Mehrwert auf, kann der Mieter dafür eine entsprechende Entschädigung verlangen (Art. 260a Abs. 3 OR).{{tierhaltungSatz}}{{hausordnungSatz}}
 
-### 16. `U03_gebrauch_haftung` — «Gebrauchsumfang und Haftung gegenüber dem Hauptvermieter»
+### 18. `U03_gebrauch_haftung` — «Gebrauchsumfang und Haftung gegenüber dem Hauptvermieter»
 
 - [ ] **abgenommen** (David)
 - **Norm:** Art. 262 Abs. 3 OR
@@ -225,7 +250,7 @@ Schema `mietvertrag` · Version 1.2.0 (Rechtsstand OR Art. 253 ff./VMWG; + Unter
 
 > Der Untermieter darf die Mietsache nur in dem Umfang gebrauchen, der dem Untervermieter nach dem Hauptmietvertrag gestattet ist. Der Untervermieter haftet dem Hauptvermieter dafür, dass der Untermieter die Sache nicht anders gebraucht, als es ihm selbst gestattet ist; der Hauptvermieter kann den Untermieter unmittelbar dazu anhalten (Art. 262 Abs. 3 OR). Eine Weitervermietung durch den Untermieter bedarf der Zustimmung des Untervermieters.
 
-### 17. `U04_endigung_hauptmiete` — «Hinweis: Ende des Hauptmietvertrags»
+### 19. `U04_endigung_hauptmiete` — «Hinweis: Ende des Hauptmietvertrags»
 
 - [ ] **abgenommen** (David)
 - **Norm:** Art. 262 OR
@@ -237,7 +262,7 @@ Schema `mietvertrag` · Version 1.2.0 (Rechtsstand OR Art. 253 ff./VMWG; + Unter
 
 > Die Parteien nehmen zur Kenntnis: Endet der Hauptmietvertrag, kann der Untervermieter dem Untermieter den weiteren Gebrauch nicht mehr verschaffen. Der Untermieter hat keinen Anspruch, in den Hauptmietvertrag einzutreten, und keinen Erstreckungsanspruch gegen den Hauptvermieter. Dieser Untermietvertrag endet dadurch jedoch nicht automatisch; er ist eigenständig form- und fristgerecht zu kündigen (Art. 266a ff. OR). Der Untervermieter kann gegenüber dem Untermieter schadenersatzpflichtig werden.
 
-### 18. `M09_versicherung` — «Versicherung»
+### 20. `M09_versicherung` — «Versicherung»
 
 - [ ] **abgenommen** (David)
 - **Norm:** Art. 257f OR
@@ -249,7 +274,7 @@ Schema `mietvertrag` · Version 1.2.0 (Rechtsstand OR Art. 253 ff./VMWG; + Unter
 
 > {{versicherungText}}
 
-### 19. `M10_mwst` — «Mehrwertsteuer»
+### 21. `M10_mwst` — «Mehrwertsteuer»
 
 - [ ] **abgenommen** (David)
 - **Norm:** Art. 22 MWSTG
@@ -261,7 +286,7 @@ Schema `mietvertrag` · Version 1.2.0 (Rechtsstand OR Art. 253 ff./VMWG; + Unter
 
 > Der Vermieter optiert für die Versteuerung der Mietzinseinnahmen (Art. 22 MWSTG). Der Mieter schuldet zusätzlich zum Mietzins und zu den Nebenkosten die gesetzliche Mehrwertsteuer zum jeweils geltenden Satz (zurzeit {{mwstSatz}} %); Satzänderungen berechtigen zur entsprechenden Anpassung.
 
-### 20. `M11_konkurrenzschutz` — «Konkurrenzschutz»
+### 22. `M11_konkurrenzschutz` — «Konkurrenzschutz»
 
 - [ ] **abgenommen** (David)
 - **Norm:** Art. 253 OR
@@ -274,7 +299,7 @@ Schema `mietvertrag` · Version 1.2.0 (Rechtsstand OR Art. 253 ff./VMWG; + Unter
 
 > Der Vermieter verpflichtet sich, in der gleichen Liegenschaft keine Räume an direkte Konkurrenten des Mieters im folgenden Bereich zu vermieten: {{konkurrenzschutzText}}.{{ksStrafeSatz}}
 
-### 21. `M12_kuendigung` — «Kündigung»
+### 23. `M12_kuendigung` — «Kündigung»
 
 - [ ] **abgenommen** (David)
 - **Norm:** Art. 266l OR
@@ -286,7 +311,7 @@ Schema `mietvertrag` · Version 1.2.0 (Rechtsstand OR Art. 253 ff./VMWG; + Unter
 
 > {{kuendigungText}} Die Kündigung bedarf der Schriftform; der Vermieter kündigt mit dem vom Kanton genehmigten amtlichen Formular, sonst ist die Kündigung nichtig.{{familienwohnungSatz}} Vorbehalten bleiben die ausserordentlichen Kündigungsgründe des Gesetzes.
 
-### 22. `M13_rueckgabe` — «Rückgabe»
+### 24. `M13_rueckgabe` — «Rückgabe»
 
 - [ ] **abgenommen** (David)
 - **Norm:** Art. 267 OR
@@ -298,10 +323,10 @@ Schema `mietvertrag` · Version 1.2.0 (Rechtsstand OR Art. 253 ff./VMWG; + Unter
 
 > Bei Beendigung des Mietverhältnisses gibt der Mieter das Mietobjekt in dem Zustand zurück, der sich aus vertragsgemässem Gebrauch ergibt. Über die Rückgabe wird ein gemeinsames Protokoll erstellt; der Vermieter prüft den Zustand sofort und meldet Mängel, für die der Mieter einzustehen hat, umgehend.
 
-### 23. `M14_schluss` — «Schlussbestimmungen»
+### 25. `M14_schluss` — «Schlussbestimmungen»
 
 - [ ] **abgenommen** (David)
-- **Norm:** Art. 274 OR
+- **Norm:** Art. 33 ZPO
 - **Aufnahme:** immer
 - **Nummeriert** (fortlaufende Ziffer im Dokument)
 - **Begründung (Protokoll):** Schriftformvorbehalt, Schlichtung am Ort der Sache, Gesetzesverweis – immer enthalten.
@@ -310,7 +335,7 @@ Schema `mietvertrag` · Version 1.2.0 (Rechtsstand OR Art. 253 ff./VMWG; + Unter
 
 > Änderungen und Ergänzungen dieses Vertrags bedürfen der Schriftform, soweit das Gesetz nichts anderes zulässt. Dieser Vertrag wird in zwei Exemplaren ausgefertigt; jede Partei erhält ein unterzeichnetes Exemplar. Streitigkeiten aus diesem Vertrag werden zunächst der Schlichtungsbehörde am Ort des Mietobjekts unterbreitet. Im Übrigen gelten die Bestimmungen des Obligationenrechts (Art. 253 ff. OR) und der VMWG.
 
-### 24. `M15_unterschriften`
+### 26. `M15_unterschriften`
 
 - [ ] **abgenommen** (David)
 - **Norm:** Art. 255 OR
@@ -336,4 +361,4 @@ Schema `mietvertrag` · Version 1.2.0 (Rechtsstand OR Art. 253 ff./VMWG; + Unter
 
 ---
 
-**Summe:** 24 Bausteine in 1 Schemas.
+**Summe:** 26 Bausteine in 1 Schemas.
