@@ -96,7 +96,7 @@ describe('V5 — Rail-Markup', () => {
 
   it('rendert Suchfeld, Erwägungs-Ziele und die Normen-Chips', () => {
     const s = ssr(
-      <ErwaegungsRail gliederung={gliederung} treffer={[]} normen={[{ zitat: 'Art. 60 OR', anker: 'e-2' }]}
+      <ErwaegungsRail gliederung={gliederung} treffer={[]} trefferGesamt={0} normen={[{ zitat: 'Art. 60 OR', anker: 'e-2' }]}
         suche="" onSuche={() => {}} springe={() => {}} />,
     );
     expect(s).toContain('data-erw-rail');
@@ -109,19 +109,24 @@ describe('V5 — Rail-Markup', () => {
   });
 
   it('ohne Gliederung UND ohne Normen entsteht gar keine Fläche', () => {
-    const s = ssr(<ErwaegungsRail gliederung={[]} treffer={[]} normen={[]}
+    const s = ssr(<ErwaegungsRail gliederung={[]} treffer={[]} trefferGesamt={0} normen={[]}
       suche="" onSuche={() => {}} springe={() => {}} />);
     expect(s).not.toContain('data-erw-rail');
   });
 
   it('zeigt bei aktiver Suche die Treffer-Zahlen statt des vollen Verzeichnisses', () => {
     const treffer = trefferInErwaegungen(BEISPIEL, 'kenntnis');
-    const s = ssr(<ErwaegungsRail gliederung={gliederung} treffer={treffer} normen={[]}
+    const s = ssr(<ErwaegungsRail gliederung={gliederung} treffer={treffer} trefferGesamt={16} normen={[]}
       suche="kenntnis" onSuche={() => {}} springe={() => {}} />);
     expect(s).toContain('Treffer in');
     expect(s).toContain('href="#e-2-1"');
     // E. 1 trägt keinen Treffer und steht in der Ergebnisliste darum nicht mehr.
     expect(s).not.toContain('href="#e-1"');
+    // §8: 3 anspringbare von 16 Vorkommen — die Differenz wird BENANNT, nicht
+    // verschwiegen (sonst läse sich «3 Treffer» als Vollständigkeits-Aussage).
+    expect(s).toContain('>3<');
+    expect(s).toContain('>16<');
+    expect(s).toContain('übrige ausserhalb');
   });
 });
 

@@ -87,16 +87,27 @@ export function RegestePopover({ ankerRect, zitierung, kurztext, ziel, statusLab
   useEffect(() => { if (autoFokus) erstesZiel.current?.focus(); }, [autoFokus]);
 
   // Scroll/Resize schliessen (siehe Kopf); Esc schliesst ebenfalls.
+  // `focusin`: wandert der Fokus AUS dem Kasten hinaus, ist der Kasten fertig.
+  // Ohne das bliebe ein per Tastatur betretenes Popover stehen, nachdem der
+  // Fokus weitergetabbt ist — es hängt am <body> und nicht in der Zelle, deren
+  // `onBlur` sonst schliesst.
   useEffect(() => {
     const zu = () => onClose();
     const taste = (e: KeyboardEvent) => { if (e.key === 'Escape') { e.stopPropagation(); onClose(); } };
+    const fokus = (e: FocusEvent) => {
+      const ziel = e.target as Node | null;
+      if (ziel && kasten.current?.contains(ziel)) return;
+      onClose();
+    };
     window.addEventListener('scroll', zu, true);
     window.addEventListener('resize', zu);
     window.addEventListener('keydown', taste);
+    document.addEventListener('focusin', fokus);
     return () => {
       window.removeEventListener('scroll', zu, true);
       window.removeEventListener('resize', zu);
       window.removeEventListener('keydown', taste);
+      document.removeEventListener('focusin', fokus);
     };
   }, [onClose]);
 

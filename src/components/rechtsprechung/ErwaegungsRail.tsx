@@ -54,12 +54,15 @@ function Lupe() {
 export interface RailPunkt { anker: string; marke: string; tiefe: number; anzahl?: number }
 
 export const ErwaegungsRail = memo(function ErwaegungsRail({
-  gliederung, treffer, normen, suche, onSuche, springe, imPane = false,
+  gliederung, treffer, trefferGesamt, normen, suche, onSuche, springe, imPane = false,
 }: {
   /** Erwägungs-Gliederung der SICHTBAREN Fassung (`erwaegungsGliederung`). */
   gliederung: readonly RailPunkt[];
   /** Erwägungen mit Treffern des Suchbegriffs (`trefferInErwaegungen`). */
   treffer: readonly RailPunkt[];
+  /** Vorkommen in der GANZEN sichtbaren Fassung (`zaehleTreffer`) — die
+   *  Bezugsgrösse: was ausserhalb der Erwägungen liegt, ist nicht anspringbar. */
+  trefferGesamt: number;
   /** Angewandte Normen MIT wörtlicher Fundstelle in einer Erwägung. */
   normen: readonly { zitat: string; anker: string }[];
   suche: string;
@@ -77,7 +80,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
   // Nichts zu navigieren ⇒ gar keine Fläche (kein leerer Kasten, §15.2/§13 F4).
   if (gliederung.length === 0 && normen.length === 0) return null;
 
-  const trefferGesamt = treffer.reduce((n, t) => n + (t.anzahl ?? 0), 0);
+  const trefferErw = treffer.reduce((n, t) => n + (t.anzahl ?? 0), 0);
   const desktop = !imPane;
   const liste: readonly RailPunkt[] | null = suche.trim() === '' ? null : treffer;
 
@@ -96,7 +99,11 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
         onClick={() => setOffen((v) => !v)}
         aria-expanded={offen}
         className={`lc-chip w-full justify-between ${desktop ? 'xl:hidden' : ''}`}>
-        <span>Erwägungen &amp; Suche</span>
+        {/* Wortwahl bewusst «Gliederung» statt «Erwägungen»: der Reader trägt
+            bereits einen Abschnitts-Chip «Erwägungen» in der Sprungleiste; zwei
+            gleichnamige Bedienelemente auf einer Seite sind für Screenreader und
+            Tests nicht unterscheidbar. */}
+        <span>Gliederung &amp; Suche</span>
         <span aria-hidden className="text-base leading-none">{offen ? '▾' : '▸'}</span>
       </button>
 
@@ -105,22 +112,36 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
             markiert im Lesetext (Highlight-API, kein DOM-Eingriff) und listet
             hier die Erwägungen mit Treffern. */}
         <div>
-          <label className="flex items-center gap-1.5 rounded-md border border-line px-2">
-            <span className="text-ink-500"><Lupe /></span>
+          {/* Dasselbe Eingabe-Token wie die In-Gesetz-Suche (`lc-input`, §5/§13);
+              der Fokus-Ring bleibt der globale `:focus-visible`-Outline (F3) —
+              kein `outline-none`, sonst verschwände die Tastatur-Sichtbarkeit. */}
+          <div className="flex items-center gap-1.5">
+            <span aria-hidden className="shrink-0 text-ink-500"><Lupe /></span>
             <input type="search" value={suche} onChange={(e) => onSuche(e.target.value)}
               placeholder="Im Entscheid suchen …" aria-label="Im Entscheid suchen"
               data-erw-suche
-              className="min-h-6 w-full min-w-0 border-0 bg-transparent py-1 text-xs text-ink-800 placeholder:text-ink-500 focus:outline-none" />
-          </label>
+              className="lc-input h-7 w-full min-w-0 px-2 py-0 text-xs" />
+          </div>
           {suche.trim() !== '' && (
-            // §8: BEIDE Zahlen. «5 Treffer» allein verschwiege, dass drei davon
-            // im Sachverhalt liegen und hier gar nicht anspringbar sind.
-            <p aria-live="polite" className="mt-1 text-micro text-ink-500">
+            // §8: BEIDE Zahlen, sobald sie auseinanderfallen. «16 Treffer»
+            // allein verschwiege, dass fünf davon im Sachverhalt liegen und in
+            // dieser Liste gar nicht anspringbar sind.
+            <p aria-live="polite" data-erw-treffer className="mt-1 text-micro text-ink-500">
               {trefferGesamt === 0
-                ? 'Keine Treffer in den Erwägungen.'
-                : <><span className="num">{trefferGesamt}</span> Treffer in{' '}
-                    <span className="num">{treffer.length}</span>
-                    {treffer.length === 1 ? ' Erwägung' : ' Erwägungen'}</>}
+                ? 'Keine Treffer in dieser Fassung.'
+                : (
+                  <>
+                    <span className="num">{trefferErw}</span>
+                    {trefferErw < trefferGesamt && <> von <span className="num">{trefferGesamt}</span></>}
+                    {' '}Treffer in <span className="num">{treffer.length}</span>
+                    {treffer.length === 1 ? ' Erwägung' : ' Erwägungen'}
+                    {trefferErw < trefferGesamt && (
+                      <span title="Vorkommen ausserhalb der Erwägungen (Regeste, Sachverhalt, Dispositiv) tragen keinen zitierfähigen Anker und sind darum kein Sprungziel.">
+                        {' '}· übrige ausserhalb
+                      </span>
+                    )}
+                  </>
+                )}
             </p>
           )}
         </div>

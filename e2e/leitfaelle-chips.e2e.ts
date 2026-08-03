@@ -121,4 +121,47 @@ test.describe('Rechtsprechungs-Auflistung im ArtikelLeser (OR)', () => {
     const artikelZahl = await page.locator('article[id^="art-"]').count()
     expect(artikelZahl).toBeGreaterThan(500)
   })
+
+  // ── V3 (W2·10-UI-NAV): Kurztext-Popover am Entscheid-Chip ──────────────────
+  // Prüfsatz: der Bestandstext des Shards (`regesteKurz`) wird auf eine Geste
+  // hin LESBAR (bisher nur `title`), trägt die beiden Wege «Öffnen»/«Daneben
+  // öffnen», ist per Tastatur erreichbar und wieder schliessbar — und er hängt
+  // NIE im Erst-Markup (§15).
+  test('(d) V3: Chip zeigt den Kurztext auf Hover + Tastatur, Esc schliesst', async ({ page }) => {
+    // Wie (a): die OR-Seite mit ~500 Artikeln + Shard-Resolve reisst auf dem
+    // 2-vCPU-Runner das Default-Budget. Zeitbudget, keine Assertion (§6.3).
+    test.slow()
+    const fehler = fehlerSammeln(page)
+    // ≥ lg, damit das Pane-Gating den «Daneben öffnen»-Weg überhaupt anbietet.
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/OR')
+    const art41 = page.locator('#art-41')
+    await art41.scrollIntoViewIfNeeded()
+    await expect(art41.locator('[data-bezuege-zeile]')).toBeVisible({ timeout: 30_000 })
+
+    // Kein Popover, solange niemand etwas tut (§15: der Kasten ist lazy).
+    await expect(page.locator('[data-regeste-popover]')).toHaveCount(0)
+
+    const chip = art41.locator('[data-bezug-linie="bge"] a.lc-chip').first()
+    await chip.hover()
+    const popover = page.locator('[data-regeste-popover]')
+    await expect(popover).toBeVisible({ timeout: 10_000 })
+    // §8: der Block heisst «Kurztext», NICHT «Regeste» — der Shard führt das
+    // unterscheidende Flag nicht mit (amtliche Regeste ODER amtlicher Betreff).
+    await expect(popover).toContainText('Kurztext')
+    await expect(popover.getByRole('link', { name: /Öffnen/ })).toBeVisible()
+    await expect(popover.getByRole('button', { name: /nebeneinander öffnen/ })).toBeVisible()
+
+    // Tastatur (WCAG 2.1.1): Fokus auf den Chip öffnet, ↓ setzt den Fokus in die
+    // erste Aktion des portalierten Kastens, Esc schliesst wieder.
+    await page.keyboard.press('Escape')
+    await expect(popover).toHaveCount(0)
+    await chip.focus()
+    await expect(popover).toBeVisible({ timeout: 10_000 })
+    await page.keyboard.press('ArrowDown')
+    await expect(popover.getByRole('link', { name: /Öffnen/ })).toBeFocused()
+    await page.keyboard.press('Escape')
+    await expect(popover).toHaveCount(0)
+    expect(fehler).toEqual([])
+  })
 })

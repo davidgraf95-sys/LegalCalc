@@ -20,7 +20,7 @@ import { besetzungsTeile } from '../lib/rechtsprechung/besetzung-verlinkung';
 import { GEBIET_LABEL } from '../lib/normtext/register';
 import {
   LESE_PARAM, leseAusParam, loescheNennungen, maleNennungen, nennungsAnker,
-  trefferInErwaegungen, urlMitHash, urlMitLese, zaehleNennungen,
+  trefferInErwaegungen, urlMitHash, urlMitLese, zaehleNennungen, zaehleTreffer,
 } from './entscheidLeserRegeln';
 import { setzeSuchHighlight } from './gesetz-leser/suchHighlight';
 import { usePaneKontext } from '../components/layout/PaneKontext';
@@ -161,6 +161,7 @@ const ErwRail = memo(function ErwRail({ abschnitte, zitierteNormen, suche, onSuc
 }) {
   const gliederung = useMemo(() => erwaegungsGliederung(abschnitte), [abschnitte]);
   const treffer = useMemo(() => trefferInErwaegungen(abschnitte, suche), [abschnitte, suche]);
+  const trefferGesamt = useMemo(() => zaehleTreffer(abschnitte, suche), [abschnitte, suche]);
   // Angewandte Normen MIT wörtlicher Nennung in einer Erwägung. Ohne Fundstelle
   // KEIN Chip: ein Sprungziel, das es nicht gibt, wird nicht angeboten (§8) —
   // die Norm selbst bleibt im Fuss-Panel («Zitierte Normen») sichtbar.
@@ -176,8 +177,8 @@ const ErwRail = memo(function ErwRail({ abschnitte, zitierteNormen, suche, onSuc
     return out;
   }, [abschnitte, zitierteNormen]);
   return (
-    <ErwaegungsRail gliederung={gliederung} treffer={treffer} normen={normen}
-      suche={suche} onSuche={onSuche} springe={springe} imPane={imPane} />
+    <ErwaegungsRail gliederung={gliederung} treffer={treffer} trefferGesamt={trefferGesamt}
+      normen={normen} suche={suche} onSuche={onSuche} springe={springe} imPane={imPane} />
   );
 });
 
