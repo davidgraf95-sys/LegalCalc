@@ -57,18 +57,20 @@ function highlightApi(): { reg: Map<string, object>; Ctor: HighlightCtor } | nul
 }
 
 /**
- * Setzt (oder löscht) die Treffer-Hervorhebung des Suchbegriffs innerhalb von
- * `container`. Leerer/kurzer Begriff oder fehlende API ⇒ Highlight wird gelöscht.
- * Idempotent: ersetzt stets die volle Highlight-Menge dieses Namens.
+ * Sammelt die Treffer-Bereiche des Begriffs in `container` — in DOKUMENT-
+ * REIHENFOLGE (TreeWalker). Leerer Begriff / kein Container ⇒ leere Liste.
+ *
+ * W2·10-UI-NAV/R1: dieser Walker war bisher in `setzeSuchHighlight` eingebacken.
+ * Er ist jetzt exportiert, weil die Treffer-NAVIGATION (Vor/Zurück-Sprungtasten)
+ * und die Fundstellen-ZÄHLUNG je Artikel exakt dieselbe Treffer-Menge brauchen
+ * wie die Hervorhebung (§5: EINE Treffer-Semantik — sonst zeigte der Zähler eine
+ * andere Zahl, als die Markierung Stellen malt, §8). Rein lesend: es wird kein
+ * Knoten erzeugt, verschoben oder verändert (CLS 0, §15/2).
  */
-export function setzeSuchHighlight(container: HTMLElement | null, begriff: string): void {
-  const api = highlightApi();
-  if (!api) return;
-  const { reg, Ctor } = api;
+export function sammleTrefferRanges(container: HTMLElement | null, begriff: string): Range[] {
   const b = begriff.trim().toLowerCase();
-  // Ab-1-Zeichen genügt (passtAufSuche matcht ab 1 Zeichen); leer ⇒ löschen.
-  if (!container || b === '') { reg.delete(SUCH_HIGHLIGHT); return; }
-
+  // Ab-1-Zeichen genügt (passtAufSuche matcht ab 1 Zeichen); leer ⇒ nichts.
+  if (!container || b === '' || typeof document === 'undefined') return [];
   const ranges: Range[] = [];
   const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
   for (let n = walker.nextNode(); n; n = walker.nextNode()) {
@@ -86,6 +88,47 @@ export function setzeSuchHighlight(container: HTMLElement | null, begriff: strin
       ab = i + b.length;
     }
   }
+  return ranges;
+}
+
+/**
+ * Fundstellen je Artikel-Token, gruppiert aus einer `sammleTrefferRanges`-Menge
+ * über den nächstgelegenen `<article id="art-…">`-Vorfahren (R1: Trefferzahl je
+ * Artikel). Ranges ausserhalb eines Artikels (Listen-Kopf o. Ä.) zählen nicht.
+ */
+export function trefferProArtikel(ranges: readonly Range[]): Map<string, number> {
+  const map = new Map<string, number>();
+  for (const r of ranges) {
+    const start = r.startContainer;
+    const el = start.nodeType === 1 ? (start as Element) : start.parentElement;
+    const art = el?.closest('article[id^="art-"]');
+    if (!art) continue;
+    const token = art.id.slice('art-'.length);
+    map.set(token, (map.get(token) ?? 0) + 1);
+  }
+  return map;
+}
+
+/**
+ * Schreibt eine bereits gesammelte Range-Menge in die Highlight-Registry (bzw.
+ * löscht den Eintrag bei leerer Menge). Getrennt von `sammleTrefferRanges`,
+ * damit der Reader den (teuren) TreeWalker EINMAL laufen lässt und dieselbe
+ * Menge für Malen, Zählen und Springen verwendet.
+ */
+export function setzeSuchHighlightRanges(ranges: readonly Range[]): void {
+  const api = highlightApi();
+  if (!api) return;
+  const { reg, Ctor } = api;
   if (ranges.length === 0) { reg.delete(SUCH_HIGHLIGHT); return; }
   reg.set(SUCH_HIGHLIGHT, new Ctor(...ranges));
+}
+
+/**
+ * Setzt (oder löscht) die Treffer-Hervorhebung des Suchbegriffs innerhalb von
+ * `container`. Leerer/kurzer Begriff oder fehlende API ⇒ Highlight wird gelöscht.
+ * Idempotent: ersetzt stets die volle Highlight-Menge dieses Namens.
+ */
+export function setzeSuchHighlight(container: HTMLElement | null, begriff: string): void {
+  if (!highlightApi()) return;
+  setzeSuchHighlightRanges(sammleTrefferRanges(container, begriff));
 }
