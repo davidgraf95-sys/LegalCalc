@@ -350,7 +350,8 @@ jobs:
       # Verdrahtet 4.8.2026 (F2b-Vorfall #425): 226 geänderte Normtext-Snapshots
       # ohne daten-manifest.json-Nachzug passierten das PR-CI grün — die Drift
       # meldete erst der POST-merge-Wächter turso-sync.yml (rot 21:52, Serving-
-      # Sync blockiert). In-Memory-Ingest, ~2 min, kein daten/*.db nötig.
+      # Sync blockiert). In-Memory-Ingest, ~21 s auf dem CI-Runner (gemessen
+      # Lauf 30856208988), kein daten/*.db nötig.
       - name: Datenhaltungs-Manifest (Determinismus · Drift · Invarianten)
         if: needs.diff.outputs.art == 'code'
         run: npm run check:datenhaltung
