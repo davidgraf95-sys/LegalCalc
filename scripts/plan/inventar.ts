@@ -57,6 +57,10 @@ export const INVENTAR: readonly string[] = [
   'W2·14-SIGNAL-B1', 'W2·14-SIGNAL-B2', 'W2·14-SIGNAL-GER',
   'W3·14-B3',
 
+  // §14-Intake 3.8.2026 (David-Entscheid abends, LM-202): «URL nur bei explizitem
+  // Klick/Teilen aktualisieren» — eigener kleiner Bau-Punkt unter W2·10-UI-NAV.
+  'W2·10-UI-NAV-URL',
+
   // David-Entscheide 2.8.2026 (Nutzer-Turn): die drei per Bestands-Entscheid zurückgestellten
   // UI-Befunde des Batches B1 entschieden (LM-048 verworfen, LM-041/LM-044 geöffnet) + zwei
   // Nebenfunde des Verfallsregister-Durchgangs vom selben Tag in den Plan gehoben.
@@ -73,4 +77,14 @@ export const INVENTAR: readonly string[] = [
   // scripts/check-ci-laeufe.ts, gleiche Risiko-Klasse; Begründung in der Chronik).
   'QS-AUTOMATIK-BERICHT', 'QS-BASIS-TOT', 'QS-BASIS-DEPS',
   'QS-TOK-DECKEL', 'QS-TOK-AUFRAEUMEN', 'QS-UI-WARNLINE',
+
+  // §14-Intake 3.8.2026 (Recherche-Session externe Quellen): Befundliste als EIN Schritt
+  // aufgenommen, Bewertung und Verortung bewusst offen gelassen (Anordnung David) — die
+  // Aufteilung in Bau-Schritte ist Gegenstand des Schritts selbst, nicht seiner Aufnahme.
+  'QS-EXTQUELLEN',
+
+  // Bau-Evaluation 3.8.2026 (Nutzer-Turn): CI-Kosten- und Feedback-Latenz-Befunde.
+  // Die Worktree-/Branch-Inventur aus derselben Evaluation ist KEIN neuer Schritt —
+  // sie erweitert QS-AUTOMATIK-BERICHT (Bündelung, Skill `auftrag` Ziff. 3).
+  'QS-GP-PREPUSH', 'QS-BASIS-DOKU-CI',
 ];
