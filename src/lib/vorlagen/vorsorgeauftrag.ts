@@ -78,6 +78,36 @@ function ersatzTyp(e: VaErsatzperson): 'natuerlich' | 'juristisch' {
   return e.typ === 'juristisch' ? 'juristisch' : 'natuerlich';
 }
 
+/** W2·8/V9.5 (Gegenprüfung Runde 3, Befund N1): Normalisierung des Datums —
+ *  EINE Stelle für alle drei Auswertungen (Zweigwahl der Schlusszeile,
+ *  Formatierung, Datums-Warnung in `pruefeVaGates`). Zuvor prüften alle drei
+ *  den Rohwert auf Wahrheit, während der Ort schon getrimmt wurde: ein Datum
+ *  aus reinem Whitespace («  ») galt damit als vorhanden, die Schlusszeile
+ *  zeigte statt «Datum: ________» eine LEERE Zeile unmittelbar über der
+ *  Unterschriftslinie, und die Gültigkeits-Warnung des Art. 361 Abs. 2 ZGB
+ *  blieb aus — genau der Fehler, den B8 für den fehlenden Wert behoben hatte.
+ *  Über die UI ist der Wert nicht erzeugbar (date-Feld); massgeblich ist
+ *  gleichwohl die Engine, nicht die Darstellungsschicht (§3), und ein
+ *  gespeicherter Altstand oder Import kann ihn tragen.
+ *  Das Feld ist typseitig `string`; `?? ''` fängt Alt-Stände ohne Feld ab. */
+function vaDatumRoh(a: VaAntworten): string {
+  return (a.datum ?? '').trim();
+}
+
+/** W2·8/V9.5 (Befund N3): Der Ort wird für den Anschluss «{Ort}, den {Datum}»
+ *  von abschliessenden KOMMAS und Whitespace befreit — «Basel,» ergab sonst
+ *  «Basel,, den 15.06.2026», weil das Komma im Anschluss schon steckt.
+ *  Rein typografische Normalisierung am RAND: Binnen-Kommas bleiben
+ *  unangetastet («Riehen, BS» bleibt vollständig), der Ortsinhalt wird nicht
+ *  beschnitten. Bewusst NUR Komma+Whitespace (GP-Nebenfund a, 3.8.2026):
+ *  andere Schlusszeichen («Basel.», «Basel;») bleiben stehen — sie erzeugen
+ *  kein Doppelzeichen im Anschluss und ihre Tilgung wäre ein Inhalts-Eingriff.
+ *  Besteht der Wert nur aus Kommas/Whitespace, ist er kein Ort und fällt in
+ *  den B7-Zweig (nur Datum, kein hängendes «den»). */
+function vaOrtNormalisiert(a: VaAntworten): string {
+  return (a.ort ?? '').trim().replace(/[\s,]+$/u, '');
+}
+
 export type VaAntworten = {
   // Step 0 – Eligibility (Art. 13/14/16/398 ZGB)
   volljaehrig: boolean;
@@ -228,7 +258,8 @@ export function pruefeVaGates(a: VaAntworten): VaGateErgebnis {
   // Ende von Hand niedergeschrieben, datiert, unterzeichnet). Bisher erzwang das
   // nur die UI als Schritt-Fehler — die Rechtsregel lebte damit allein in der
   // Darstellungsschicht (§3-Verstoss); sie gehört in die Engine.
-  if (a.formMode === 'eigenhaendig' && !a.datum) {
+  // V9.5/N1: gegen den NORMALISIERTEN Wert prüfen (siehe `vaDatumRoh`).
+  if (a.formMode === 'eigenhaendig' && !vaDatumRoh(a)) {
     warnungen.push(
       'Ohne Datum ist der eigenhändige Vorsorgeauftrag ungültig – der ganze Text einschliesslich Datum und Unterschrift wird von Hand abgeschrieben (Art. 361 Abs. 2 ZGB).',
     );
@@ -506,7 +537,17 @@ export const VA_SCHEMA: VorlageSchema = {
       id: 'V14_schluss_eigenhaendig', rolle: 'unterschrift',
       text: '{{ortDatumZeile}}\n\n\n_________________________________\n(eigenhändige Unterschrift: {{vorname}} {{nachname}})',
       includeIf: { feld: 'formMode', eq: 'eigenhaendig' },
-      begruendung: 'Schlussformel der eigenhändigen Form: Ort/Datum und Unterschrift werden – wie der ganze Text – von Hand geschrieben.',
+      // W2·8/V9.5 (Gegenprüfung Runde 3, Befund N2 — Fachänderung, deklariert):
+      // Die Begründung nannte «Ort/Datum und Unterschrift» als Bestandteile der
+      // eigenhändigen Form und stellte damit den Ort als Formerfordernis dar.
+      // Art. 361 Abs. 2 ZGB verlangt ihn nicht (ZGB-Snapshot Stand 1.7.2026:
+      // «von Anfang bis Ende von Hand niederzuschreiben, zu datieren und zu
+      // unterzeichnen»). Der Baustein rendert den Ort weiterhin, wenn er
+      // erfasst ist — die Begründung sagt jetzt aber, was Gültigkeits-
+      // erfordernis ist und was nicht (§7/§8; konsistent zu `ortDatumZeile`,
+      // die den Strich nur für das Datum beschriftet).
+      begruendung:
+        'Schlussformel der eigenhändigen Form: Datum und Unterschrift sind Gültigkeitserfordernis und werden – wie der ganze Text – von Hand geschrieben; die Ortsangabe verlangt Art. 361 Abs. 2 ZGB nicht, sie ist fakultativ und dient nur der Zuordnung.',
       norm: 'Art. 361 Abs. 2 ZGB',
     },
     {
@@ -525,7 +566,11 @@ export const VA_SCHEMA: VorlageSchema = {
 // ── Antworten aufbereiten und zusammenstellen ───────────────────────────────
 
 export function vaZusammenstellen(a: VaAntworten) {
-  const datum = a.datum ? a.datum.split('-').reverse().join('.') : '________';
+  // V9.5/N1 + N3: Ort und Datum werden EINMAL am Funktionsanfang normalisiert
+  // und danach nur noch in dieser Form ausgewertet.
+  const datumRoh = vaDatumRoh(a);
+  const ort = vaOrtNormalisiert(a);
+  const datum = datumRoh ? datumRoh.split('-').reverse().join('.') : '________';
   const beauftragteListe = a.beauftragte
     .filter((b) => b.name.trim() && b.bereiche.length > 0)
     .map((b) => ({
@@ -586,7 +631,10 @@ export function vaZusammenstellen(a: VaAntworten) {
     // niederzuschreiben, zu datieren und zu unterzeichnen», ZGB-Snapshot
     // Stand 1.7.2026). Der Strich wird deshalb beschriftet; der Ort bleibt
     // unbeschriftet, weil ihn Art. 361 Abs. 2 ZGB nicht verlangt.
-    ortDatumZeile: a.ort?.trim() ? `${a.ort.trim()}, den ${datum}` : (a.datum ? datum : 'Datum: ________'),
+    // W2·8/V9.5, N1+N3: Der Zweig entscheidet über die normalisierten Werte —
+    // Whitespace-Datum fällt in den beschrifteten Strich, «Basel,» erzeugt
+    // kein Doppelkomma.
+    ortDatumZeile: ort ? `${ort}, den ${datum}` : (datumRoh ? datum : 'Datum: ________'),
   };
   const erg = assemble(VA_SCHEMA, antworten);
   // Form-Gate-Matrix: Beurkundungs-Variante ist ein ENTWURF für die

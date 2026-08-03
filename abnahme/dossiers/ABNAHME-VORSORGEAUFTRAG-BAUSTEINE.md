@@ -273,7 +273,7 @@ Schema `vorsorgeauftrag` · Version 1.1.0 (Rechtsstand Art. 360–369 ZGB, Snaps
 - **Norm:** Art. 361 Abs. 2 ZGB
 - **Aufnahme:** formMode = "eigenhaendig"
 - **Layout-Rolle:** unterschrift
-- **Begründung (Protokoll):** Schlussformel der eigenhändigen Form: Ort/Datum und Unterschrift werden – wie der ganze Text – von Hand geschrieben.
+- **Begründung (Protokoll):** Schlussformel der eigenhändigen Form: Datum und Unterschrift sind Gültigkeitserfordernis und werden – wie der ganze Text – von Hand geschrieben; die Ortsangabe verlangt Art. 361 Abs. 2 ZGB nicht, sie ist fakultativ und dient nur der Zuordnung.
 
 **Wortlaut:**
 
