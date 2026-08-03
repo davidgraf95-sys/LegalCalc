@@ -3,11 +3,36 @@
 // gegen `vite preview` (gebautes dist/), in der CI nach dem Build-Schritt.
 // Specs heissen *.e2e.ts, damit Vitest sie nicht aufsammelt.
 import { defineConfig } from '@playwright/test'
+import { createHash } from 'node:crypto'
 
-// Port env-konfigurierbar (Default 4317, CI unverändert): erlaubt parallelen
-// Worktree-Sessions (§12) je einen eigenen preview-Port ohne Kollision, ohne den
-// Standard zu ändern.
-const E2E_PORT = process.env.E2E_PORT ?? '4317'
+// ── Port-Wahl (§17-Wurzelfix, Vorfall 4.8.2026) ──────────────────────────────
+// Bisher: fester Default 4317 + `reuseExistingServer: !CI`. In Parallel-Sessions
+// (§12, mehrere Worktrees) griff der zweite Lauf still auf den preview-Server des
+// ERSTEN zu — also auf dessen `dist/`. Die e2e-Suite testete dann fremden Code,
+// ohne dass irgendetwas rot wurde; das kostete am 4.8.2026 einen vollen
+// Fehldiagnose-Zyklus. Der Workaround («E2E_PORT von Hand setzen») bestand seit
+// je und hat genau deshalb nicht getragen: er verlangt, an die Falle zu denken.
+// Wurzelfix: LOKAL ist der Default deterministisch aus dem Arbeitsverzeichnis
+// abgeleitet — verschiedene Worktrees ⇒ verschiedene Ports ⇒ `reuseExistingServer`
+// kann nur noch den EIGENEN Server wiederverwenden. Derselbe Pfad ergibt immer
+// denselben Port (§2), ein laufender Server wird also weiterhin wiederverwendet.
+// Vorrang-Ordnung: explizites `E2E_PORT` > CI-Standard > Pfad-Ableitung.
+// CI UNVERÄNDERT: dort läuft je Job ein eigener Container, `process.cwd()` ist
+// pfad-gleich, aber die Ableitung wird gar nicht erst betreten — `CI` ⇒ 4317
+// (die CI-Workflows setzen `E2E_PORT` nicht, siehe .github/workflows/ci.yml).
+// Fenster 4400–4799: hält Abstand zu 4317 (CI/Haupt-Checkout) und zu 4319
+// (scripts/messung-cwv.ts). `--strictPort` (unten) macht eine trotzdem belegte
+// Portnummer laut statt still.
+const CI_PORT = '4317'
+const PORT_BASIS = 4400
+const PORT_SPANNE = 400
+
+function portAusPfad(pfad: string): string {
+  const summe = createHash('sha256').update(pfad).digest().readUInt32BE(0)
+  return String(PORT_BASIS + (summe % PORT_SPANNE))
+}
+
+const E2E_PORT = process.env.E2E_PORT ?? (process.env.CI ? CI_PORT : portAusPfad(process.cwd()))
 
 // Bekannt schwere Specs (Forensik 17.7.): erhalten via Projekt-Override ein
 // 60-s-Timeout statt der globalen 30 s (Begründung unten bei `projects`).
