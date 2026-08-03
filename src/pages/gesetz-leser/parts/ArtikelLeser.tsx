@@ -330,8 +330,17 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
     // B-6 (QS-BASIS): die Zitat-Kopie trägt jetzt den Stand-Ausweis (§7 a–d) —
     // `zitatVoll` (baueZitat) liefert bereits «… (Stand …)» = die Fassung, der
     // Baustein ergänzt Abrufdatum + Permalink (kein doppeltes Standdatum, §5).
+    // W2·10-UI-NAV/R3: zusätzlich der amtliche Deep-Link (`amtlich`, EID-2) —
+    // derselbe Wert, den der «amtliche Fassung ↗»-Knopf daneben ansteuert (§5,
+    // EINE Quelle: `verifizierLinkArtikel`). Er stand bisher nur ALS KLICK im
+    // UI; wer das Zitat kopierte, verlor genau den Nachweis, der es überprüfbar
+    // macht. `?? undefined`: liefert der Validator null (Kanton, aufgehoben,
+    // Synthese-Suffix), bleibt die Zeile ohne amtliche Quelle statt mit einer
+    // geratenen (§8).
     const text = was === 'zitat'
-      ? zitatMitAusweis(zitatVoll, { abruf: heuteIso(new Date()), permalink })
+      ? zitatMitAusweis(zitatVoll, {
+          abruf: heuteIso(new Date()), permalink, amtlich: amtlich ?? undefined,
+        })
       : permalink;
     void navigator.clipboard?.writeText(text).then(() => {
       setKopiert(was); window.setTimeout(() => setKopiert(''), 1500);
