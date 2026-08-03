@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-27",
+ "erzeugt": "2026-08-03",
  "kopf": {
   "srNummer": "0.211.232.1",
   "titel": "Übereinkommen über den internationalen Schutz von Erwachsenen",
@@ -689,7 +689,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Anhänge"
+     "label": "Anhänge",
+     "eId": "annex"
     }
    ],
    "marginalie": []
@@ -698,7 +699,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Anhänge"
+     "label": "Anhänge",
+     "eId": "annex"
     }
    ],
    "marginalie": []

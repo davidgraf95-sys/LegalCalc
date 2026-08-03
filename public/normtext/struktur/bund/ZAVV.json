@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-27",
+ "erzeugt": "2026-08-03",
  "kopf": {
   "srNummer": "364.3",
   "titel": "Verordnung über die Anwendung polizeilichen Zwangs und polizeilicher Massnahmen im Zuständigkeitsbereich des Bundes",
@@ -844,7 +844,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Anhänge"
+     "label": "Anhänge",
+     "eId": "annex"
     }
    ],
    "marginalie": []

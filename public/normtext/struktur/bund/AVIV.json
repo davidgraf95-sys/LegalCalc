@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-08-02",
+ "erzeugt": "2026-08-03",
  "kopf": {
   "srNummer": "837.02",
   "titel": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung",
@@ -10234,7 +10234,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Anhänge"
+     "label": "Anhänge",
+     "eId": "annex"
     }
    ],
    "marginalie": []
