@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-08-02",
+ "erzeugt": "2026-08-03",
  "kopf": {
   "srNummer": "831.425",
   "titel": "Verordnung über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge",
@@ -1773,7 +1773,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Anhänge"
+     "label": "Anhänge",
+     "eId": "annex"
     }
    ],
    "marginalie": []
