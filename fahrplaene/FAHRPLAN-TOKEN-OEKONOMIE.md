@@ -106,7 +106,9 @@ stiller Boden unter der Rotation. Fix-Skizze für eine spätere Etappe: zweites 
 genannte Datum; vorher einmal rot zeigen (§6.7).
 
 **Offener QS-TOK-Rest — unverändert:** **T10 · T12-Stufe-2 · T14 · T16 · T20** (Go David
-27.7.2026 erteilt; T16 nur in frischer Session gem. T19-Vorbedingung). **Neu offen:** ROADMAP
+27.7.2026 erteilt; T16 nur in frischer Session gem. T19-Vorbedingung).
+**Pauschal-Freigabe David 3.8.2026** — baubar ohne weitere Rückfrage, Reihenfolge frei.
+**Neu offen:** ROADMAP
 von **110.0 KB** (Stand Fix-Runde 1, 31.7.2026 — Ist-Zahl immer aus
 `python3 .claude/hooks/struktur-rotieren.py --check`) unter das 100-KB-Ceiling und weiter
 Richtung DoD ≤ ~65 KB. Die Rechnung aus `07bef2dee` bleibt der Rahmen: die 62 `@meta`-Etiketten
