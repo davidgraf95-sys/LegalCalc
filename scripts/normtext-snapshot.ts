@@ -337,25 +337,94 @@ function stabelesJson(obj: unknown): string {
   return JSON.stringify(obj, null, 2);
 }
 
+// ── Cache-Inhalts-Sonde ───────────────────────────────────────────────────────
+//
+// Fundort des Defekts: Gegenprüfung #419, Befund N1 (Vorbestand auf main). Bis
+// zum 3.8.2026 prüfte sicherstelleCaches NUR existsSync. Eine als Datei
+// abgelegte Soft-404-«Casemates»-Angular-Shell (HTTP 200, ~9 kB, kein Normtext)
+// galt damit als gültiger Cache — der Snapshot wäre aus einer leeren SPA-Hülle
+// gebaut worden, statt laut zu scheitern (scraping-Fakt: nach Body urteilen,
+// nie nach Status).
+//
+// §5-Hinweis zur Doppelung: dieselbe Sonde steht in scripts/fedlex-cache.sh
+// (Grösse :449, Shell-Marker :463, Anker-Zahl :469). Bash und TypeScript können
+// keine Funktion teilen; die drei Werte sind darum bewusst dupliziert statt
+// wegabstrahiert (§1 — lieber ein sichtbares Duplikat als eine Brücke, die zwei
+// Laufzeiten stillschweigend gleichsetzt). Wer dort schraubt, zieht hier nach.
+// Die Sonde greift dort beim DOWNLOAD, hier beim LESEN eines vorhandenen Caches.
+const CACHE_MINDESTGROESSE = 20_000; // fedlex-cache.sh:449
+const CACHE_SHELL_MARKER = /<title>Casemates<\/title>|ng-version|<app-root/; // :463
+const CACHE_ANKER_MARKER = /id="(art_|annex_|lvl_)/; // :469
+
+export type CacheBefund = { ok: boolean; grund?: string };
+
+/** Urteilt über einen /tmp-HTML-Cache nach INHALT, nicht nach blosser Existenz. */
+export function cacheBefund(name: string): CacheBefund {
+  const pfad = `/tmp/${name}.html`;
+  if (!existsSync(pfad)) return { ok: false, grund: 'fehlt' };
+  let roh: string;
+  try {
+    roh = readFileSync(pfad, 'utf8');
+  } catch (e) {
+    return { ok: false, grund: `unlesbar (${(e as Error).message})` };
+  }
+  const bytes = Buffer.byteLength(roh, 'utf8');
+  if (bytes < CACHE_MINDESTGROESSE)
+    return { ok: false, grund: `nur ${bytes} B < ${CACHE_MINDESTGROESSE} B (SPA-Shell/Fehlerseite?)` };
+  if (CACHE_SHELL_MARKER.test(roh))
+    return { ok: false, grund: 'SOFT-404: Casemates-Angular-Shell statt Normtext' };
+  if (!CACHE_ANKER_MARKER.test(roh))
+    return { ok: false, grund: 'keine art_/annex_/lvl_-Anker (verstümmelter Dump?)' };
+  return { ok: true };
+}
+
 // ── Caches sicherstellen ──────────────────────────────────────────────────────
 function sicherstelleCaches(eintraege: Array<{ name: string }>): void {
-  const fehlende = eintraege.filter((e) => !existsSync(`/tmp/${e.name}.html`));
+  const fehlende = eintraege.filter((e) => !cacheBefund(e.name).ok);
   if (fehlende.length === 0) return;
 
   console.log(
-    `\n[Cache] ${fehlende.length} HTML-Cache(s) fehlen — lade via bash scripts/fedlex-cache.sh …`,
+    `\n[Cache] ${fehlende.length} HTML-Cache(s) fehlen oder sind unbrauchbar — lade via bash scripts/fedlex-cache.sh …`,
   );
+  for (const e of fehlende) {
+    const b = cacheBefund(e.name);
+    if (b.grund && b.grund !== 'fehlt') console.log(`        /tmp/${e.name}.html: ${b.grund}`);
+  }
+
+  // Der Fehlschlag wird gemerkt, nicht geschluckt (N1: der frühere `catch {}`
+  // verwarf Exit 1 ersatzlos, sobald die Dateien nur existierten).
+  let ladeFehler: Error | null = null;
   try {
     execSync('bash scripts/fedlex-cache.sh', { stdio: 'inherit' });
-  } catch {
-    const nochFehlend = fehlende.filter((e) => !existsSync(`/tmp/${e.name}.html`));
-    if (nochFehlend.length > 0) {
-      const liste = nochFehlend.map((e) => `/tmp/${e.name}.html`).join(', ');
-      throw new Error(
-        `BLOCKED: fedlex-cache.sh konnte folgende HTMLs nicht laden: ${liste}\n` +
-          'Netzwerkzugang prüfen.',
-      );
-    }
+  } catch (e) {
+    ladeFehler = e as Error;
+  }
+
+  const nochFehlend = fehlende
+    .map((e) => ({ name: e.name, befund: cacheBefund(e.name) }))
+    .filter((x) => !x.befund.ok);
+  if (nochFehlend.length > 0) {
+    const liste = nochFehlend.map((x) => `/tmp/${x.name}.html (${x.befund.grund})`).join(', ');
+    throw new Error(
+      `BLOCKED: fedlex-cache.sh lieferte für folgende Erlasse keinen brauchbaren Cache: ${liste}\n` +
+        'Netzwerkzugang prüfen. Bei «SOFT-404» ist nicht das Netz schuld, sondern der Pin: ' +
+        'kanonisches html-N in scripts/fedlex-cache.sh nachziehen ' +
+        "('npm run fedlex:repin-kanonik -- --write').",
+    );
+  }
+
+  // Alle ANGEFORDERTEN Erlasse sind brauchbar, das Skript endete trotzdem mit
+  // Fehler: fedlex-cache.sh prüft ALLE gepinnten Erlasse, nicht nur die dieses
+  // Laufs (bei --erlass ist das der Normalfall). Darum kein harter Abbruch —
+  // aber auch kein Schweigen: der Befund wird benannt und bleibt auf stderr
+  // stehen. Wer ihn zum Blocker machen will, entscheidet das bewusst.
+  if (ladeFehler) {
+    console.warn(
+      `\n[Cache] WARNUNG: scripts/fedlex-cache.sh endete mit Fehler (${ladeFehler.message}).\n` +
+        `        Die ${eintraege.length} Erlass(e) DIESES Laufs sind inhaltlich geprüft und brauchbar;\n` +
+        '        der Fehler betrifft also andere gepinnte Erlasse (Ausgabe oben). Dieser Lauf\n' +
+        '        läuft weiter, der Zustand ist aber nicht sauber — Pins nachziehen.',
+    );
   }
 }
 
