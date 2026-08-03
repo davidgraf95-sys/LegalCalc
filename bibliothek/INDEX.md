@@ -65,7 +65,19 @@ fachliche Richtigkeit der Alias-Zusammenführungen ist Davids Abnahme.
 alle 93 im Code zitierten BGE/BGer-Urteile mit amtlichem Link (URL-Schema §7-verifiziert
 6.6.2026: ATF-Permalink bzw. AZA-Suche), Aussage, Code-Fundorten und Status; generiert
 aus der SSoT `src/data/verifikation.ts` via `npx vite-node scripts/bge-register-generieren.ts`
-(meldet Lücken — Stand: 0). Inhaltliche Abnahme der einzelnen Entscheide: David, offen.
+(meldet Lücken — Stand 3.8.2026: 41, alle vorbestehend). Status je Entscheid in drei
+Stufen: «zu verifizieren» → «Quelle geprüft (…)» (§7-Quellenprüfung durch eine Session)
+→ «verifiziert» (Davids fachliche Abnahme, nie automatisch).
+
+**BGE 151 III 81 — Quellenprüfung (Vorsorgeauftrag, Beurkundung):**
+[rechtsprechung/bge-151-iii-81-verifikation-2026-08-03.md](rechtsprechung/bge-151-iii-81-verifikation-2026-08-03.md) —
+Prüfung 3.8.2026 am amtlichen Entscheidtext (W2·8/V9.2): Trägt der Entscheid die von
+Engine und UI behaupteten Aussagen? Verdikt **ja, beide** — E. 3.5.5 (Beurkundung nach
+kantonalem Recht, Art. 55 SchlT ZGB) und E. 3.1/3.6 (zwei Zeugen von Bundesrechts wegen
+nicht erforderlich), mit den tragenden Erwägungen wörtlich. Präzision: das
+Zeugen-Erfordernis entfällt von BUNDESRECHTS wegen — ein kantonales Beurkundungsrecht
+könnte Zeugen vorschreiben (im Fall SG tut es das nicht). Abnahme-Status: Quellenprüfung
+bestanden, fachliche Abnahme David offen.
 
 **BGE-Leitentscheide-Import:** [rechtsprechung/bge-leitentscheide-import.md](rechtsprechung/bge-leitentscheide-import.md) —
 Stufe 1 des Rechtsprechungs-Ausbaus (Auftrag David 23.6.2026): Import der amtlichen

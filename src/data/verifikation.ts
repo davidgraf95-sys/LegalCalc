@@ -10,7 +10,27 @@ import type { Rechtsprechungshinweis } from '../types/legal';
 export type VerifikationsEintrag = {
   aktenzeichen: string;
   aussage: string;
+  /**
+   * FACHLICHE ABNAHME durch David (§7). Wird NIE automatisch gesetzt — auch
+   * dann nicht, wenn eine Session den Entscheidtext gelesen und die Aussage
+   * am Wortlaut bestätigt hat. Dafür gibt es `quelleGeprueft`.
+   */
   verifiziert: boolean;
+  /**
+   * EMPIRISCHE QUELLENPRÜFUNG (§7 «Normen verifizieren, nicht vertrauen»):
+   * eine Session hat den amtlichen Entscheidtext abgerufen und geprüft, dass er
+   * die hier registrierte `aussage` trägt. Wert = Fundstelle + Datum, z. B.
+   * «Session 3.8.2026, E. 3.5.5 und E. 3.6, Urteil vom 17.1.2025». KEINE
+   * Geschäftsnummern in dieses Feld (oder in Kommentare dieser Datei): der
+   * Register-Generator inventarisiert jedes Aktenzeichen unter src/ und meldete
+   * sie sonst als unregistrierte Lücke. Geschäftsnummern gehören ins Dossier.
+   *
+   * Das ist AUSDRÜCKLICH NICHT die fachliche Abnahme: geprüft ist, DASS der
+   * Entscheid das sagt — nicht, ob die Aussage für die Werkzeuge richtig
+   * eingeordnet und formuliert ist. Beide Stufen stehen getrennt im
+   * Rechtsprechungs-Register (§8: den echten Prüfungsstand zeigen).
+   */
+  quelleGeprueft?: string;
 };
 
 export const VERIFIKATION: Record<string, VerifikationsEintrag> = {
@@ -387,12 +407,38 @@ export const VERIFIKATION: Record<string, VerifikationsEintrag> = {
   },
 
   // Vorsorgeauftrag (Art. 360 ff. ZGB)
-  // RESERVE (Audit 5.6.2026): noch unreferenziert.
+  // QUELLENPRÜFUNG 3.8.2026 (§7, W2·8/V9.2): amtlicher Entscheidtext über den
+  // bger.ch-CLIR-Permalink abgerufen (73 kB, ISO-8859-1). BGE 151 III 81 ist das
+  // Urteil der II. zivilrechtlichen Abteilung vom 17. Januar 2025 (Geschäfts-
+  // nummer im Dossier — hier bewusst NICHT ausgeschrieben: der Register-
+  // Generator inventarisiert jedes Aktenzeichen in src/ und meldete sie sonst
+  // als «im Code zitiert, aber nicht registriert», obwohl es derselbe Entscheid
+  // ist). Der Entscheid trägt BEIDE Teilaussagen dieses Eintrags:
+  //  (a) E. 3.5.5 in fine: «Im Ergebnis bleibt damit festzuhalten, dass sich die
+  //      öffentliche Beurkundung des Vorsorgeauftrags nach kantonalem Recht
+  //      richtet.» — hergeleitet aus dem Grundsatz von Art. 55 SchlT ZGB
+  //      (E. 3.3.1, E. 3.5.2), weil Art. 361 Abs. 1 ZGB nicht auf Art. 499 ff.
+  //      ZGB verweist. Regeste nennt Art. 361 Abs. 1, Art. 499 ff. ZGB,
+  //      Art. 55 SchlT ZGB.
+  //  (b) Keine Zeugen: E. 3.6 schützt die vorinstanzliche Erwägung, wonach der
+  //      «Beizug von zwei Zeugen bei der Beurkundung von Bundesrechts wegen
+  //      nicht erforderlich» ist (E. 3.1) — «Damit hat sie … kein Bundesrecht
+  //      verletzt.» Der Entscheid beendet einen Lehrstreit («Das Bundesgericht
+  //      hat die Frage bisher nicht entschieden», E. 3.4).
+  // PRÄZISION (§8, nicht wegglätten): Das Zeugen-Erfordernis entfällt VON
+  // BUNDESRECHTS WEGEN. Da das Verfahren dem kantonalen Recht folgt, könnte ein
+  // kantonales Beurkundungsrecht Zeugen vorschreiben — im beurteilten Fall tat
+  // das st. gallische Recht es nicht (E. 3.6). Die Zeugen-Vorschriften des
+  // öffentlichen Testaments sind Art. 499 und Art. 501 ZGB (nicht 501/502).
+  // Beleg + wörtliche Erwägungen: bibliothek/rechtsprechung/
+  // bge-151-iii-81-verifikation-2026-08-03.md.
+  // `verifiziert` bleibt false: die fachliche Abnahme ist Davids (§7).
   BGE_151_III_81: {
     aktenzeichen: 'BGE 151 III 81',
     aussage:
       'Die öffentliche Beurkundung des Vorsorgeauftrags richtet sich nach kantonalem Recht (Art. 55 SchlT ZGB); kein Beizug zweier Zeugen wie beim öffentlichen Testament erforderlich.',
     verifiziert: false,
+    quelleGeprueft: 'Session 3.8.2026, E. 3.5.5 und E. 3.6, Urteil vom 17.1.2025',
   },
   // RESERVE (Audit 5.6.2026): noch unreferenziert.
   BGer_5A_624_2024: {
