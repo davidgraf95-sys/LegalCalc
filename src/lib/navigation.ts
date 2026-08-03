@@ -103,6 +103,53 @@ const RECHNER_KINDER: NavKnoten[] = OBERKATEGORIEN
 const VORLAGEN_KINDER: NavKnoten[] = VORLAGE_SEKTIONEN
   .map((s) => werkzeugGruppe(s.title, werkzeugeFuer((k) => istVorlage(k) && k.art === s.art)));
 
+// ─── International: Kanonik + Anker-Abbildung (IA-6 Stufe 2, §11.8 Y-C) ─────
+//
+// EINE Quelle (§5) für alles, was die frühere Alias-Seite /international
+// betraf: die kanonische Säulen-URL, die fünf Sach-Anker und ihre Abbildung
+// auf die Ziel-Sektionen der Säule. Konsumenten: die Sidebar-Gruppe hier,
+// der Redirect (src/pages/InternationalRedirect.tsx) und die Tore
+// (src/tests/international-redirect.test.ts).
+//
+// Die Abbildung ist heute die IDENTITÄT — die Ziel-Sektionen der Säule werden
+// von derselben Komponente gerendert wie zuvor die Alias-Seite
+// (InternationalRubriken, §5) und tragen dieselben ids. Sie steht trotzdem
+// explizit da: eine spätere Rubrik-Umbenennung hat damit GENAU EINE Stelle,
+// und der Test prüft jedes Ziel gegen die real gerenderten ids statt gegen
+// eine Annahme (§7 «verifizieren, nicht vertrauen»).
+
+/** Kanonische Säulen-URL der International-Rubrik (Ziel des /international-Redirects). */
+export const INTERNATIONAL_SAEULE = '/gesetze?ebene=international';
+
+/** Alt-Pfad, dessen Link-Erbe der Redirect übernimmt. */
+export const INTERNATIONAL_ALIAS = '/international';
+
+/** Die fünf Sach-Anker der Sidebar samt Ziel-Anker auf der Säule. */
+export const INTERNATIONAL_RUBRIKEN: { label: string; anker: string; zielAnker: string }[] = [
+  { label: 'Menschenrechte', anker: 'menschenrechte', zielAnker: 'menschenrechte' },
+  { label: 'Int. Privat- & Zivilrecht', anker: 'privat-zivil', zielAnker: 'privat-zivil' },
+  { label: 'Rechtshilfe (Haager)', anker: 'rechtshilfe', zielAnker: 'rechtshilfe' },
+  { label: 'Schweiz–EU', anker: 'schweiz-eu', zielAnker: 'schweiz-eu' },
+  { label: 'EU-Verordnungen (DSGVO u. a.)', anker: 'eu-verordnungen', zielAnker: 'eu-verordnungen' },
+];
+
+/** Säulen-URL mit Sach-Anker (leerer Anker → nackte Säule). */
+export function saeulenZiel(zielAnker: string): string {
+  return zielAnker ? `${INTERNATIONAL_SAEULE}#${zielAnker}` : INTERNATIONAL_SAEULE;
+}
+
+/**
+ * Hash eines Alt-Links `/international#<anker>` → Hash auf der Säule.
+ * Unbekannte Anker (Tippfehler, Fremdlinks) verlieren den Hash, statt einen
+ * toten Anker weiterzureichen: die Säule ist dann der ehrliche Landeplatz
+ * (§8 — kein stiller Sprung ins Leere). Ohne Hash bleibt es ohne Hash.
+ */
+export function internationalAnkerAbbildung(hash: string): string {
+  const roh = decodeURIComponent(hash.replace(/^#/, ''));
+  if (!roh) return '';
+  return INTERNATIONAL_RUBRIKEN.find((r) => r.anker === roh)?.zielAnker ?? '';
+}
+
 // Gesetze: «Bund» nach der funktionalen Systematik (systematik.ts) UND «Kantone»
 // nach Kanton — beide als gleichartige aufklappbare Untergruppen (Auftrag David
 // 20.6.2026: Kantone gleich wie Bund, aufklappbar in die Kantone). Ziel = /gesetze
@@ -146,25 +193,19 @@ const GESETZE_KINDER: NavKnoten[] = [
       }),
   },
   // International unter «Gesetze» subsumiert (Auftrag David 25.6.2026) — eigene
-  // einklappbare Gruppe wie Bund/Kantone. IA-6 Stufe 1 (FAHRPLAN-GESETZES-UX
-  // §11.4 Ziff. 3, W2·5d): der Gruppen-Kopf zielt vereinheitlicht auf die
-  // KANONISCHE Säule ?ebene=international (wie Bund/Kantone auf ihre Säulen);
-  // die Kinder springen weiter zu den Sach-Ankern der voll funktionalen
-  // Alias-Seite /international (5 Anker unverändert — kein Redirect, Stufe 2
-  // nur mit separatem David-Go).
+  // einklappbare Gruppe wie Bund/Kantone. IA-6 Stufe 2 (FAHRPLAN-GESETZES-UX
+  // §11.4 Ziff. 3, §11.8 Y-C, W2·5d): Kopf UND Kinder zeigen jetzt auf die
+  // KANONISCHE Säule — die Kinder auf `?ebene=international#<anker>`. Damit
+  // läuft keine interne Navigation mehr über den Alias (R-SCOPE-4: geteilte Nav
+  // ausserhalb Gesetze.tsx); /international selbst bleibt als Alt-Link-Erbe
+  // auflösbar, aber nur noch als Redirect (vercel.json 308 + InternationalRedirect).
   {
     art: 'gruppe',
     label: 'International',
-    ziel: '/gesetze?ebene=international',
+    ziel: INTERNATIONAL_SAEULE,
     aufklappbar: true,
     standardOffen: false,
-    kinder: [
-      link('Menschenrechte', '/international#menschenrechte'),
-      link('Int. Privat- & Zivilrecht', '/international#privat-zivil'),
-      link('Rechtshilfe (Haager)', '/international#rechtshilfe'),
-      link('Schweiz–EU', '/international#schweiz-eu'),
-      link('EU-Verordnungen (DSGVO u. a.)', '/international#eu-verordnungen'),
-    ],
+    kinder: INTERNATIONAL_RUBRIKEN.map((r) => link(r.label, saeulenZiel(r.anker))),
   },
 ];
 
