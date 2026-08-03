@@ -1,21 +1,26 @@
-// IA-6 · International-Kanonik Stufe 1 (FAHRPLAN-GESETZES-UX §11.4 Ziff. 3,
-// §11.5-IA-6, W2·5d): Kanonik = Säule /gesetze?ebene=international;
-// /international bleibt VOLL funktionale Alias-Seite. Beweise dieser Spec:
-//   – rel=canonical der Alias-Seite zeigt auf die kanonische Säulen-URL
-//     (prerendert in dist/international.html, von RouteMeta client-seitig
-//     identisch nachgeführt); og:url konsistent dazu.
-//   – Gegenprobe: /gesetze bleibt Self-Canonical (die Ausnahme überstrahlt nicht).
-//   – Deep-Link-REGRESSION: alle 5 Hash-Anker (navigation.ts) laden die Seite
-//     und scrollen die Ziel-Sektion in den Viewport — KEIN Redirect, die URL
-//     bleibt /international#<anker> (Stufe 2 nur mit separatem David-Go).
-//   – Interne Link-Vereinheitlichung: der Sidebar-Gruppen-Kopf «International»
-//     zielt auf die kanonische Säule (wie Bund/Kantone), die 5 Anker-Kinder
-//     unverändert auf /international#….
-// Läuft gegen `vite preview` (dist).
+// IA-6 · International-Kanonik STUFE 2 (FAHRPLAN-GESETZES-UX §11.4 Ziff. 3,
+// §11.8 Y-C, W2·5d — David-Go 3.8.2026): /international ist keine Alias-Seite
+// mehr, sondern ein echter Redirect auf die Säule /gesetze?ebene=international.
+// Beweise dieser Spec:
+//   – Deep-Link-REGRESSION 5/5: jede der fünf Alt-Anker-URLs landet auf der
+//     Säule UND mit der Ziel-Sektion im Viewport (Hash-Mapping, nicht nur
+//     Pfad-Umleitung).
+//   – Alte Bookmark-URL OHNE Hash landet auf der nackten Säule.
+//   – `replace`: der Alias hinterlässt keinen History-Eintrag (kein Zurück-Loop).
+//   – Interne Nav zeigt direkt auf die Säule (R-SCOPE-4) — kein Umweg über den
+//     Alias, und der Klick landet mit der Sektion im Viewport.
+//   – Gegenprobe /gesetze: Self-Canonical unverändert; /suche unangetastet (§11.7).
+//
+// GRENZE DIESER SUITE (ehrlich, §8): sie läuft gegen `vite preview` (dist) —
+// der SERVER-Redirect (vercel.json 308) ist hier NICHT wirksam, geprüft wird der
+// Client-Redirect (src/pages/InternationalRedirect.tsx). Die vercel-Ebene deckt
+// src/tests/international-redirect.test.ts ab (Konfig-Tor), prod deckt
+// scripts/betrieb/prod-smoke.ts ab (308 gegen die Live-Domain).
 import { test, expect, type Page } from '@playwright/test'
 
 const SITE_URL = 'https://lexmetrik.vercel.app'
-const KANONISCH = `${SITE_URL}/gesetze?ebene=international`
+const SAEULE_PFAD = '/gesetze'
+const SAEULE_QUERY = 'ebene=international'
 
 // Die 5 Anker — Wortlaut-identisch zu src/lib/navigation.ts (Spec §11.4 Ziff. 3).
 const ANKER = ['menschenrechte', 'privat-zivil', 'rechtshilfe', 'schweiz-eu', 'eu-verordnungen']
@@ -27,54 +32,63 @@ function fehlerSammeln(page: Page): string[] {
   return fehler
 }
 
-test.describe('IA-6 · rel=canonical (Stufe 1, kein Redirect)', () => {
-  test('/international trägt canonical + og:url auf die kanonische Säulen-URL', async ({ page }) => {
-    const fehler = fehlerSammeln(page)
-    await page.goto('/international')
-    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
-    // Kein Redirect: die Alias-Route bleibt stehen (Stufe 2 = separates Go).
-    expect(new URL(page.url()).pathname).toBe('/international')
-    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', KANONISCH)
-    await expect(page.locator('meta[property="og:url"]')).toHaveAttribute('content', KANONISCH)
-    expect(fehler).toEqual([])
-  })
+/** Prüft: URL steht auf der Säule, mit erwartetem Hash. */
+async function erwarteSaeule(page: Page, hash: string) {
+  await expect(page).toHaveURL(new RegExp(`\\${SAEULE_PFAD}\\?${SAEULE_QUERY}${hash ? `#${hash}` : '$'}`))
+  const url = new URL(page.url())
+  expect(url.pathname).toBe(SAEULE_PFAD)
+  expect(url.searchParams.get('ebene')).toBe('international')
+  expect(url.hash).toBe(hash ? `#${hash}` : '')
+}
 
-  test('Gegenprobe: /gesetze bleibt Self-Canonical', async ({ page }) => {
-    await page.goto('/gesetze')
-    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
-    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `${SITE_URL}/gesetze`)
-  })
-})
-
-test.describe('IA-6 · Deep-Link-Regression: alle 5 Anker der Alias-Seite', () => {
+test.describe('IA-6 Stufe 2 · Deep-Link-Regression: alle 5 Alt-Anker', () => {
   for (const anker of ANKER) {
-    test(`/international#${anker} lädt und scrollt die Sektion in den Viewport`, async ({ page }) => {
+    test(`/international#${anker} landet auf der Säule mit der Sektion im Viewport`, async ({ page }) => {
       const fehler = fehlerSammeln(page)
       await page.goto(`/international#${anker}`)
+      await erwarteSaeule(page, anker)
       const sektion = page.locator(`section#${anker}`)
-      // Sektion existiert, trägt eine Überschrift und ist in den Viewport gescrollt
-      // (ScrollZuHash wartet das async geladene Manifest ab).
       await expect(sektion).toBeVisible()
       await expect(sektion.getByRole('heading', { level: 2 })).toBeVisible()
       await expect(sektion).toBeInViewport()
-      // Kein Redirect, kein Hash-Verlust: URL unverändert.
-      const url = new URL(page.url())
-      expect(url.pathname).toBe('/international')
-      expect(url.hash).toBe(`#${anker}`)
       expect(fehler).toEqual([])
     })
   }
 })
 
-test.describe('IA-6 · Sidebar: interne Links vereinheitlicht', () => {
-  test('Gruppen-Kopf «International» zielt auf die Säule; die 5 Anker-Kinder bleiben auf /international', async ({ page }) => {
+test.describe('IA-6 Stufe 2 · Alt-Bookmarks ohne Hash & History', () => {
+  test('/international ohne Hash landet auf der nackten Säule (International-Inhalt)', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.goto('/international')
+    await erwarteSaeule(page, '')
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+    // Die Säule zeigt wirklich die International-Rubriken (nicht Bund/Kantone).
+    await expect(page.locator('section#menschenrechte')).toBeVisible()
+    expect(fehler).toEqual([])
+  })
+
+  test('unbekannter Alt-Anker landet auf der Säule statt auf einem toten Anker', async ({ page }) => {
+    await page.goto('/international#gibt-es-nicht')
+    await erwarteSaeule(page, '')
+  })
+
+  test('replace: «Zurück» führt zur Herkunftsseite, nicht in den Alias zurück', async ({ page }) => {
+    await page.goto('/')
+    await page.goto('/international#rechtshilfe')
+    await erwarteSaeule(page, 'rechtshilfe')
+    await page.goBack()
+    await expect(page).toHaveURL(/\/$/)
+    expect(new URL(page.url()).pathname).toBe('/')
+  })
+})
+
+test.describe('IA-6 Stufe 2 · Interne Nav zeigt direkt auf die Säule (R-SCOPE-4)', () => {
+  test('Gruppen-Kopf und alle 5 Anker-Kinder verlinken die Säule; der Klick scrollt zur Sektion', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.goto('/')
     const nav = page.getByRole('navigation', { name: 'Hauptnavigation' })
-    // Kopf-Link der Gruppe (Vereinheitlichung mit Bund/Kantone: Säulen-URL).
     const kopf = nav.getByRole('link', { name: 'International', exact: true })
     await expect(kopf).toHaveAttribute('href', '/gesetze?ebene=international')
-    // Kinder aufklappen und alle 5 Anker-Ziele unverändert nachweisen.
     await nav.getByRole('button', { name: 'International aufklappen' }).click()
     for (const [label, anker] of [
       ['Menschenrechte', 'menschenrechte'],
@@ -83,11 +97,25 @@ test.describe('IA-6 · Sidebar: interne Links vereinheitlicht', () => {
       ['Schweiz–EU', 'schweiz-eu'],
       ['EU-Verordnungen (DSGVO u. a.)', 'eu-verordnungen'],
     ] as const) {
-      await expect(nav.getByRole('link', { name: label })).toHaveAttribute('href', `/international#${anker}`)
+      await expect(nav.getByRole('link', { name: label }))
+        .toHaveAttribute('href', `/gesetze?ebene=international#${anker}`)
     }
-    // Klick auf den Kopf landet auf der kanonischen Säule (International-Inhalt).
-    await kopf.click()
-    await expect(page).toHaveURL(/\/gesetze\?ebene=international$/)
+    await nav.getByRole('link', { name: 'Schweiz–EU' }).click()
+    await erwarteSaeule(page, 'schweiz-eu')
+    await expect(page.locator('section#schweiz-eu')).toBeInViewport()
     expect(fehler).toEqual([])
+  })
+})
+
+test.describe('IA-6 Stufe 2 · Gegenproben', () => {
+  test('/gesetze bleibt Self-Canonical (die Säule ist eine Sicht dieser Seite)', async ({ page }) => {
+    await page.goto('/gesetze')
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `${SITE_URL}/gesetze`)
+  })
+
+  test('/suche ist unangetastet — kein Redirect (§11.7, S5-Errungenschaft)', async ({ page }) => {
+    await page.goto('/suche?q=OR')
+    expect(new URL(page.url()).pathname).toBe('/suche')
   })
 })

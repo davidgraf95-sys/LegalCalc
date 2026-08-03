@@ -28,7 +28,17 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
-## Session 3.8.2026 (Spätabend) — Entscheide-Paket David: BMV-SSoT #422 gelandet, L-3-Versuch #423 verworfen
+## Session 4.8.2026 — Sichtung `musk-algorithm-skill` → §17-Fünf-Schritte-Reihenfolge im Skill `lehren`
+**Eine Doku-Landung auf `main`. Kein Bau.**
+
+- **Auftrag David:** externes Skill-Repo `malkreide/musk-algorithm-skill` (5-Schritte-Algorithmus,
+  Hayal Oezkan, MIT) auf LexMetrik-Tauglichkeit sichten. Befund: als Ganzes kollidiert es mit
+  §1/§4 («Vereinfachen/Löschen» vs. Korrektheit vor Eleganz); tragfähig ist nur der Prozess-Kern.
+- **Entscheid David («bau variante 3»):** KEIN neuer Skill — die zugeschnittene
+  Fünf-Schritte-Reihenfolge (hinterfragen → löschen → vereinfachen → beschleunigen →
+  automatisieren) als §17-Anhang im Skill `lehren`, Geltungsbereich hart auf Prozess/CI/Doku
+  begrenzt, `src/lib/` ausgeschlossen; Trigger in der Skill-Description ergänzt, Zeiger in der
+  CLAUDE.md-Skill-Tabelle nachgezogen. Provenienz (Repo, Lizenz, Datum) steht im Anhang selbst. — Entscheide-Paket David: BMV-SSoT #422 gelandet, L-3-Versuch #423 verworfen
 **Fortsetzung der Aufräum-Session (Orchestrator). Zwei PRs, fünf David-Entscheide, zwei neue Schritte.**
 
 - **David-Entscheide umgesetzt:** B3→B19-Kette freigegeben (seriell, Überspring-Erlaubnis) ·

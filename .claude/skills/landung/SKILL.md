@@ -50,16 +50,22 @@ Voraussetzung einmal pro Clone/Worktree: `npm install` lief (setzt via
 
 Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
 
-1. **Kollisionen sichten.** `gh pr list --state open` — prüfen, ob ein
+1. **Landungs-Rolle ansagen.** Vor Landungs-Beginn einen PR-Kommentar setzen
+   («Landung übernommen — Session/Worktree <name>»); wer an einem PR einen
+   fremden, jüngeren Landungs-Kommentar sieht, merged ihn NICHT. *(Anlass
+   3./4.8.2026: drei Parallel-Sessions, zwei beanspruchten dieselbe Rolle,
+   mehrere PRs wurden bei Grün extern gemergt, einer davon vor Abschluss des
+   laufenden §9-Bug-Checks — gutgegangen, aber nur zufällig.)*
+2. **Kollisionen sichten.** `gh pr list --state open` — prüfen, ob ein
    anderer offener PR dieselben Dateien/dasselbe Subsystem berührt
    (Doppelarbeit/Kollision). Bei Überschneidung: erst den anderen landen,
-   dann diesen rebasen (Schritt 7). Nie zwei kollidierende PRs gleichzeitig.
+   dann diesen rebasen (Schritt 8). Nie zwei kollidierende PRs gleichzeitig.
 
-2. **origin/main einziehen.** `git fetch origin` → dann in den Feature-Branch
+3. **origin/main einziehen.** `git fetch origin` → dann in den Feature-Branch
    `git merge origin/main` (oder `git rebase origin/main`). Hier greifen die
    lokalen Merge-Treiber aus `.gitattributes`.
 
-3. **Konflikte auflösen — nie von Hand mischen.**
+4. **Konflikte auflösen — nie von Hand mischen.**
    - **Generierte Datei** (`daten-manifest.json`, `*.generated.ts`,
      `public/rechtsprechung/*index*`): der `regen`-Treiber hat schon die
      eigene Seite behalten (kein Marker). **Generator neu laufen**, damit der
@@ -76,10 +82,10 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    - **STRUKTUR.md / ROADMAP.md / FAHRPLAN-* / INDEX.md**: in-place, von Hand
      auflösen (beide Beiträge behalten). rerere merkt sich die Auflösung.
 
-4. **Gate.** `npm run gate` (grün Pflicht). Das erzwingt die Regeneration aus
+5. **Gate.** `npm run gate` (grün Pflicht). Das erzwingt die Regeneration aus
    Schritt 3: ein vergessener Generator-Neulauf fällt als rotes `check:*` auf.
 
-5. **CI-Grün verifizieren.** Push (`git push`), dann `gh pr checks <nr> --watch`
+6. **CI-Grün verifizieren.** Push (`git push`), dann `gh pr checks <nr> --watch`
    bis grün. Billing-rot bei lokal-grün = OK (§9).
    **`cancelled` und `skipped` zählen als ROT**, nicht als «nicht rot» — ein
    abgebrochener Lauf hat nichts bewiesen. (Realfall 20.7.2026: 5 stumm
@@ -95,7 +101,7 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    nur bei hängendem VERCEL-Kontext, er erzeugt KEINEN Actions-Lauf (kein
    Datei-Diff) und schiebt den Head von bereits grünen Check-Runs weg.
 
-5b. **Bei Daten-/Extraktions-PRs: Identitätsbeleg.** Bevor neue Entitäten
+6b. **Bei Daten-/Extraktions-PRs: Identitätsbeleg.** Bevor neue Entitäten
    (Personen, Erlasse, Entscheide) live gehen, eine Stichprobe **n ≥ 10** gegen
    die **amtliche Quelle** prüfen und die Trefferquote im PR dokumentieren.
    Belege sind **Identitäts-Treffer mit Wortgrenze**, nie Substring-Präsenz.
@@ -105,10 +111,10 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    wurde. Maschinelle Rückendeckung: `check:merge-schutz` blockiert den Merge
    auf Risiko-Pfaden ohne Verdikt.*
 
-6. **Manuell mergen.** `gh pr merge <nr> --squash`. **KEIN `--auto`**, solange
+7. **Manuell mergen.** `gh pr merge <nr> --squash`. **KEIN `--auto`**, solange
    die Required Checks nicht neu gesetzt sind (David-Handschritt offen).
    Danach Worktree/Branch aufräumen (`git worktree remove …`, Branch löschen).
 
-7. **Nächste PR erst danach.** Erst wenn diese PR auf main ist, die nächste
+8. **Nächste PR erst danach.** Erst wenn diese PR auf main ist, die nächste
    auf das neue main rebasen (zurück zu Schritt 1). So kollidiert nie eine
    zweite Landung mit einer schwebenden.
