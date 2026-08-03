@@ -6,11 +6,7 @@
 // entsprechen EXAKT den `rechtsgebiet`-Werten der Katalog-Config – der
 // Vollständigkeitstest sichert beide Modelle gegen verwaiste Gebiete ab.
 
-// Schalter: 'fuenf' (juristisch sauber, empfohlen) | 'vier' (Fallback,
-// ZPO/SchKG unter Privatrecht subsumiert)
-export const GRUPPEN_MODELL: 'fuenf' | 'vier' = 'fuenf';
-
-export interface RechtsbereichGruppe {
+interface RechtsbereichGruppe {
   id: string;
   label: string;
   gebiete: string[];
@@ -55,6 +51,3 @@ const GRUPPEN_VIER: RechtsbereichGruppe[] = [
 ];
 
 export const ALLE_GRUPPEN_MODELLE = { fuenf: GRUPPEN_FUENF, vier: GRUPPEN_VIER } as const;
-
-export const RECHTSBEREICH_GRUPPEN: RechtsbereichGruppe[] =
-  GRUPPEN_MODELL === 'fuenf' ? GRUPPEN_FUENF : GRUPPEN_VIER;

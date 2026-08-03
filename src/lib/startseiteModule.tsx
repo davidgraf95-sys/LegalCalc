@@ -23,7 +23,7 @@ import { ZuletztVerwendet } from '../components/start/ZuletztVerwendet';
 import { NewsHeader } from '../components/start/NewsHeader';
 import { VertrauensFuss } from '../components/start/VertrauensFuss';
 
-export type StartModulId =
+type StartModulId =
   | 'hero' | 'schnellrechner' | 'rubriken' | 'zuletzt' | 'news' | 'vertrauen';
 
 export interface StartModul {

@@ -96,9 +96,9 @@ export type BgerInput = {
   kanton?: Kanton;                       // Art. 45 Abs. 2 BGG: Recht des Wohnsitz-/Sitzkantons
 };
 
-export type BgerZulaessigkeit = 'zulaessig' | 'zulaessig_ausnahme' | 'offen' | 'schwelle_verfehlt' | 'unzulaessig';
+type BgerZulaessigkeit = 'zulaessig' | 'zulaessig_ausnahme' | 'offen' | 'schwelle_verfehlt' | 'unzulaessig';
 
-export type BgerFristende = {
+type BgerFristende = {
   endeISO: string;
   endeText: string;
   verschoben: boolean;

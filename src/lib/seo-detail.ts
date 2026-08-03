@@ -76,7 +76,7 @@ export function entscheidDetailPfad(e: Pick<BrowseEntscheid, 'key'>): string {
   return `/rechtsprechung/${encodeURIComponent(e.key)}`;
 }
 
-export function materialDetailPfad(m: Pick<BrowseMaterial, 'key'>): string {
+function materialDetailPfad(m: Pick<BrowseMaterial, 'key'>): string {
   return `/materialien/${encodeURIComponent(m.key)}`;
 }
 

@@ -17,7 +17,7 @@
 export type RichterRolle = 'vorsitz' | 'mitglied' | 'gerichtsschreiber';
 
 /** Ein Roh-Richter aus dem Parser (der Generator kanonisiert slug korpusglobal weiter). */
-export interface RichterRoh {
+interface RichterRoh {
   /** Roh-Slug (Nachname[-Vorname]); Join-/Filter-Key VOR der Korpus-Kanonisierung. */
   slug: string;
   /** Gefalteter Nachname (Kanon-Pass gruppiert danach). */
@@ -250,7 +250,7 @@ export function fold(s: string): string {
  * (Abnahme-Status «Erstrecherche»). Neue Kandidaten kommen aus dem Kollisions-
  * Report (Nah-Duplikat-Slugs), nicht aus Raten.
  */
-export const ALIAS: Readonly<Record<string, string>> = Object.freeze({
+const ALIAS: Readonly<Record<string, string>> = Object.freeze({
   // Belegt über den Nah-Duplikat-Report (Levenshtein ≤ 1 auf dem Kanon-Slug) am
   // Gesamtkorpus 20.7.2026. Aufnahmekriterium (streng, damit nie zwei Personen
   // verschmelzen): identischer Nachname+Vorname bis auf EINEN Zeichen-Dreher,
@@ -292,7 +292,7 @@ export const ALIAS: Readonly<Record<string, string>> = Object.freeze({
  * Tabelle ist bewusst eine Positivliste aus belegten Einzelfällen, keine Regel.
  * Abnahme-Status: Erstrecherche (§11).
  */
-export const SPALTUNG: Readonly<Record<string, readonly string[]>> = Object.freeze({
+const SPALTUNG: Readonly<Record<string, readonly string[]>> = Object.freeze({
   'donzallaz-beusch': ['Donzallaz', 'Beusch'],
   'donzallaz-hanni': ['Donzallaz', 'Hänni'],
 });

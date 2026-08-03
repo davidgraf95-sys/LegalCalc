@@ -7,7 +7,7 @@ import type { CalculatorCard } from './startseiteConfig';
 // (Fallback «vorlagen» wie in der bisherigen Katalog-Logik) und filtert die
 // Karten EINER Kategorie heraus. Kein eigenes Ranking, keine Rechtslogik.
 
-export const kategorieVonKarte = (k: CalculatorCard): OberkategorieId => kategorieFuer(k) ?? 'vorlagen';
+const kategorieVonKarte = (k: CalculatorCard): OberkategorieId => kategorieFuer(k) ?? 'vorlagen';
 
 /** Karten EINER Oberkategorie in Katalog-Reihenfolge. */
 export function kartenDerKategorie(karten: CalculatorCard[], katId: OberkategorieId): CalculatorCard[] {

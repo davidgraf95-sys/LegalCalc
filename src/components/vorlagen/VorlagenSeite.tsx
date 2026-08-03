@@ -28,7 +28,7 @@ import { getProfil, getVorlagenDetailgrad } from '../../lib/einstellungen';
 // Labels, berechneten Live-Hinweisen oder Sonder-Props bleiben handgeschrieben.
 
 /** Einheitliche Gate-Form aller Vorlagen-Engines. */
-export type VorlagenGates = { blocker: string[]; warnungen: string[]; hinweise: string[] };
+type VorlagenGates = { blocker: string[]; warnungen: string[]; hinweise: string[] };
 
 /** Kontext für die Eingabe-Schritt-Renderer der Seite. */
 export interface SeiteCtx<T> {

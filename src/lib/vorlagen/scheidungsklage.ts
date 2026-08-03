@@ -85,7 +85,7 @@ export const SK_DEFAULTS: SkAntworten = {
 // ── Gates/Hinweise (deterministisch) ────────────────────────────────────────
 
 /** Zwei-Jahres-Vergleich als reine ISO-String-Arithmetik (Datums-Konvention). */
-export function skZweiJahreErreicht(trennungISO: string, einreichungISO: string): boolean | null {
+function skZweiJahreErreicht(trennungISO: string, einreichungISO: string): boolean | null {
   if (!istGueltigesISO(trennungISO) || !istGueltigesISO(einreichungISO)) return null;
   const schwelle = `${Number(trennungISO.slice(0, 4)) + 2}${trennungISO.slice(4)}`;
   return einreichungISO >= schwelle;

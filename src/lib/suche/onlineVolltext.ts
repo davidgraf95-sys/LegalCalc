@@ -48,7 +48,7 @@ interface SucheApiAntwort {
 /** Untergrenze: erst ab 3 Zeichen fetchen (§15.3 — kein Netz je Tastendruck). */
 export const MIN_ZEICHEN = 3;
 /** Abbruch-Fenster in ms (§15/§8: lieber keine Gruppe als hängendes UI). */
-export const TIMEOUT_MS = 4000;
+const TIMEOUT_MS = 4000;
 /** Sperr-Fenster nach einem Ausfall in ms — dann probiert eine neue Query wieder. */
 export const SPERRE_MS = 5 * 60 * 1000;
 /** Deckel je Query — die Edge liefert by design nur Snippets, keine Volltexte. */

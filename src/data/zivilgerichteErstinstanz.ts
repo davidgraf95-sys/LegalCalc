@@ -19,7 +19,7 @@ import type { Kanton } from '../types/legal';
 // ist abgenommene Stammdate («verified true», Auftrag David) und hat Vorrang
 // (§5). Der BS-Eintrag hier dient nur der Vollständigkeit der Schicht.
 
-export interface GerichtsAdresse {
+interface GerichtsAdresse {
   name: string;
   strasse: string;
   plzOrt: string;
@@ -30,7 +30,7 @@ export interface GerichtsAdresse {
   url?: string;
 }
 
-export type GerichtsAufloesung =
+type GerichtsAufloesung =
   | { modus: 'zentral'; stelle: GerichtsAdresse }
   | { modus: 'liste'; gerichte: GerichtsAdresse[]; hinweis?: string }
   | { modus: 'verzeichnis'; beschreibung: string; url: string };

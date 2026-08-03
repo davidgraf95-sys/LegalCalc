@@ -31,9 +31,9 @@ import { type Detailgrad, DETAILGRAD_DEFAULT, AB_STANDARD, NUR_EXPERTE } from '.
 // Öffentlich-rechtlich begleitend: BBG (SR 412.10) Art. 14 — Genehmigung des
 // Lehrvertrags durch die kantonale Behörde (als Hinweis, kein OR-Anker).
 
-export type LvBildungstyp = 'efz' | 'eba' | 'andere';
+type LvBildungstyp = 'efz' | 'eba' | 'andere';
 
-export type LvLohnjahr = { jahr: number; chf: string };
+type LvLohnjahr = { jahr: number; chf: string };
 
 export type LvAntworten = {
   detailgrad: Detailgrad;

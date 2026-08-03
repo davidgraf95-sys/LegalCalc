@@ -106,7 +106,7 @@ export function vdSchlichtungsStufe(
 // Kammer JEDES Tribunal d'arrondissement → dessen Adresse) · Art. 10 Abs. 2
 // (Schlichtung ohne Beisitzer; Art. 200 Abs. 2 ZPO vorbehalten).
 
-export type VdArbeitsInstanz = 'prudhommes' | 'tribunal_arrondissement' | 'chambre_patrimoniale';
+type VdArbeitsInstanz = 'prudhommes' | 'tribunal_arrondissement' | 'chambre_patrimoniale';
 
 export interface VdArbeitsErgebnis {
   instanz: VdArbeitsInstanz;

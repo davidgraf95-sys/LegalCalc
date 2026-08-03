@@ -19,7 +19,7 @@ export { fmtCHF } from './datum';
 // ── Behörden-Stammdaten (Quelle: offizielle bs.ch-Seiten, Stand 2025/2026) ──
 // PLZ-Vorbehalt Zivilgericht (Postfach 4001 vs. Paketpost 4051): siehe
 // OFFENE_VERIFIKATIONEN – massgeblich sind die aktuellen bs.ch-Angaben.
-export const SCHLICHTUNGSBEHOERDEN_BS = {
+const SCHLICHTUNGSBEHOERDEN_BS = {
   zivilgericht: {
     name: 'Schlichtungsbehörde des Zivilgerichts Basel-Stadt',
     // VOLLSTÄNDIGE Anschrift inkl. Hausnummer (Vorgabe 5.6.2026); amtlich
@@ -84,11 +84,11 @@ export const SG_KANTONALE_ERLASSE = [
 
 // ── Eingabe-Datentypen ──────────────────────────────────────────────────────
 export type PersonNatuerlich = { typ: 'natuerlich'; vorname: string; name: string; co?: string; strasse: string; plz: string; ort: string; land?: string };
-export type PersonJuristisch = { typ: 'juristisch'; firma: string; rechtsform?: string; uid?: string; sitzStrasse: string; sitzPlz: string; sitzOrt: string; zeichnungsberechtigt?: { name: string; funktion: string } };
+type PersonJuristisch = { typ: 'juristisch'; firma: string; rechtsform?: string; uid?: string; sitzStrasse: string; sitzPlz: string; sitzOrt: string; zeichnungsberechtigt?: { name: string; funktion: string } };
 export type SgPartei = PersonNatuerlich | PersonJuristisch;
 
-export type SgVertretung = { bezeichnung: string; zusatz?: string; strasse: string; plz: string; ort: string; mwstPflichtig?: boolean; vollmachtDatum?: string };
-export type SgBetreibung = { nummer: string; betreibungsamt: string; rechtsvorschlagErhoben: boolean; rechtsvorschlagBetrag?: string };
+type SgVertretung = { bezeichnung: string; zusatz?: string; strasse: string; plz: string; ort: string; mwstPflichtig?: boolean; vollmachtDatum?: string };
+type SgBetreibung = { nummer: string; betreibungsamt: string; rechtsvorschlagErhoben: boolean; rechtsvorschlagBetrag?: string };
 
 export type SgTyp = 'geldforderung' | 'uebrige_zivilsache' | 'arbeitsrecht' | 'miete_pacht' | 'gleichstellung_glg';
 
@@ -434,7 +434,7 @@ export const SG_SCHEMA: VorlageSchema = {
   ],
 };
 
-export type SgProtokollAusschluss = { label: string; grund: string };
+type SgProtokollAusschluss = { label: string; grund: string };
 
 export function sgZusammenstellen(a: SgAnswers) {
   const sw = sgStreitwert(a);

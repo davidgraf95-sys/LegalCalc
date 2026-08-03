@@ -4,7 +4,6 @@ import { assemble } from './engine';
 import { fmtDatumLang, fmtDatum, fmtCHF, zahl } from './datum';
 import { type Detailgrad, DETAILGRAD_DEFAULT, AB_STANDARD, NUR_EXPERTE } from './detailgrad';
 import { MWST_NORMALSATZ_PROZENT } from '../../data/tarif/typen';
-export { fmtCHF } from './datum';
 
 // ─── Mietvertrag Wohn- & Geschäftsräume (Art. 253 ff. OR) – sechste Vorlage ──
 //
@@ -69,14 +68,14 @@ export const MV_NEBENKOSTEN_GESCHAEFT = [
 // ── Eingaben ────────────────────────────────────────────────────────────────
 
 export type MvObjektTyp = 'wohnung' | 'geschaeftsraum';
-export type MvMietzinsModell = 'standard' | 'index' | 'staffel';
+type MvMietzinsModell = 'standard' | 'index' | 'staffel';
 /** Untermiete-Ausbau 6.6.2026 (bibliothek/recherche/untermietvertrag.md):
  *  Art. 262 OR GELTENDE Fassung (die Revision «Untermiete» wurde in der
  *  Volksabstimmung vom 24.11.2024 ABGELEHNT – Zustimmung bleibt formfrei,
  *  Verweigerungsgründe Abs. 2 lit. a–c abschliessend). Default 'hauptmiete'
  *  lässt das bisherige Verhalten byte-identisch (§6, golden-bewiesen). */
-export type MvMietverhaeltnis = 'hauptmiete' | 'untermiete';
-export type MvZustimmungStatus = 'schriftlich' | 'muendlich' | 'angefragt' | 'nicht_angefragt';
+type MvMietverhaeltnis = 'hauptmiete' | 'untermiete';
+type MvZustimmungStatus = 'schriftlich' | 'muendlich' | 'angefragt' | 'nicht_angefragt';
 
 export type MvStaffel = { ab: string; erhoehungCHF: string };
 

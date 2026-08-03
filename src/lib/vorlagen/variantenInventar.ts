@@ -17,7 +17,7 @@
 // Lohnfortzahlung, GAV-Typ, Konkurrenzverbot, Befristung — daraus konservativ
 // gebündelt). Beim Ausbau eines Schemas hier UND im Test nachführen.
 
-export type UntertypInventar = {
+type UntertypInventar = {
   id: string;
   label: string;
   detailgrade: number;     // i. d. R. 3 (einfach/standard/experte)
@@ -68,7 +68,7 @@ export const VERTRAGS_INVENTAR: KartenInventar[] = [
   },
 ];
 
-export function dokumenteJeUntertyp(u: UntertypInventar): number {
+function dokumenteJeUntertyp(u: UntertypInventar): number {
   return u.detailgrade * u.modulprofile;
 }
 

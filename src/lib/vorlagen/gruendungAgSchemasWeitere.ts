@@ -292,7 +292,7 @@ export const UNTERSCHRIFTENBOGEN_SCHEMA: VorlageSchema = {
 // öffentliche Beurkundung (Art. 634 Abs. 2 Satz 2 OR i. V. m. Art. 657 ZGB)
 // → nur ENTWURF. Wortlaute: ZH-Vorlagen vertrag_se_einfach / _geschaeft.
 
-export const SACHEINLAGEVERTRAG_BAUSTEINE: VorlageSchema['bausteine'] = [
+const SACHEINLAGEVERTRAG_BAUSTEINE: VorlageSchema['bausteine'] = [
   {
     id: 'SV01_parteien',
     text:

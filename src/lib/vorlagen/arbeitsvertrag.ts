@@ -4,7 +4,6 @@ import { assemble } from './engine';
 import { fmtDatumLang, fmtDatum, fmtCHF } from './datum';
 import { type Detailgrad, DETAILGRAD_DEFAULT, AB_STANDARD, NUR_EXPERTE } from './detailgrad';
 import { KTG_GLEICHWERTIGKEIT } from '../lohnfortzahlung';
-export { fmtCHF } from './datum';
 
 // ─── Einzelarbeitsvertrag (Art. 319 ff. OR) – fünfte Vorlage ────────────────
 //
@@ -38,7 +37,7 @@ export const AV_MINDESTLOEHNE: { kanton: string; chfProStunde: number; stand: st
 // Kommunaler Sonderfall (kein kantonaler Mindestlohn): Stadt Luzern 22.75
 // ab 1.1.2026 (Zuständigkeit gerichtlich angefochten; Übergangsfrist bis
 // 30.6.2026). Zürich/Winterthur sind aufgehoben (VGer ZH 29.11.2024).
-export const AV_MINDESTLOHN_STADT_LUZERN = { chfProStunde: 22.75, stand: '1.1.2026' } as const;
+const AV_MINDESTLOHN_STADT_LUZERN = { chfProStunde: 22.75, stand: '1.1.2026' } as const;
 
 export const AV_OFFENE_VERIFIKATIONEN: string[] = [
   'Kantonale Mindestlöhne Stand 1.1.2026 (Gutachten 5.6.2026; amtliche Quellen) – jährlich indexiert, vor Verwendung beim Kanton verifizieren. Stadt Luzern: kommunal, Zuständigkeit gerichtlich angefochten; Zürich/Winterthur aufgehoben (VGer ZH 29.11.2024).',
@@ -50,8 +49,8 @@ export const AV_OFFENE_VERIFIKATIONEN: string[] = [
 
 // ── Eingaben ────────────────────────────────────────────────────────────────
 
-export type AvProbezeit = 'gesetzlich' | 'wegbedungen' | 'verlaengert';
-export type AvUeberstunden = 'gesetzlich' | 'kompensation' | 'inbegriffen';
+type AvProbezeit = 'gesetzlich' | 'wegbedungen' | 'verlaengert';
+type AvUeberstunden = 'gesetzlich' | 'kompensation' | 'inbegriffen';
 // Untertyp (FAHRPLAN-VERTRAGS-VARIANTEN P1b): regime-treue Variante DESSELBEN
 // Einzelarbeitsvertrags-Regimes (Art. 319 ff. OR). Kader/Manager ergänzt
 // Module (leitende Stellung, Bonus, Freistellung), ändert die zwingenden

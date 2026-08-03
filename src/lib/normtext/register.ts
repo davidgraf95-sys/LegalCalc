@@ -371,10 +371,10 @@ function bund(
 //    (Default unten); Abweichungen als Override. Erstklassifikation 17.6.2026 —
 //    von David fall-für-fall verfeinerbar (kantonale Gruppierung primär nach
 //    Kanton, Gebiet sekundär). ────────────────────────────────────────────────
-export const KANTON_GEBIET_DEFAULT: Rechtsgebiet = 'oeffentlich';
+const KANTON_GEBIET_DEFAULT: Rechtsgebiet = 'oeffentlich';
 
 /** Override key (Datei-Stamm) → Rechtsgebiet für kantonale Erlasse. */
-export const KANTON_GEBIET: Readonly<Record<string, Rechtsgebiet>> = {
+const KANTON_GEBIET: Readonly<Record<string, Rechtsgebiet>> = {
   // (wird mit der kantonalen Klassifikation gefüllt; leer = überall Default)
 };
 

@@ -277,7 +277,7 @@ export function histogrammAusShard(
  * Rein abgeleitet, alphabetisch (§2 — nie nach Häufigkeit, das wäre eine
  * Gewichtung, die die Daten nicht tragen).
  */
-export function kantoneImShard(shard: BezugsShard | null | undefined): string[] {
+function kantoneImShard(shard: BezugsShard | null | undefined): string[] {
   if (!shard) return [];
   const aus = new Set<string>();
   for (const d of Object.values(shard.dokumente)) {

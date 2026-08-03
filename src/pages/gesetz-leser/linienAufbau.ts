@@ -58,17 +58,6 @@
 
 import type { StrukturMap } from '../../lib/normtext/browse';
 
-export const LINIEN_SCHWELLEN = {
-  /** Ab dieser Gliederungstiefe gilt ein Erlass als «tiefe Kodifikation» (ZGB/OR).
-   *  NUR Diagnose-/Doku-Schwelle — seit V2·A28 ist der Auto-Guide korpusweit aus,
-   *  die Tiefe deckelt nichts mehr. */
-  TIEF_AB: 3,
-  /** Median Artikel je geführter Sektion, ab dem der Aufbau den EINEN Guide «trägt».
-   *  NUR Diagnose-/Doku-Schwelle — seit V2·A28 (Davids Live-Verdikt) steuert sie den
-   *  Auto-Default NICHT mehr (autoGuide ist korpusweit false). */
-  DICHTE_MIN: 2,
-} as const;
-
 export interface LinienProfil {
   /** Maximale Gliederungs-Verschachtelung des Erlasses (0 = flache Artikelliste). */
   strukturTiefe: number;

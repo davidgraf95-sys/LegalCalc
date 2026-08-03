@@ -15,7 +15,7 @@ import type { Skala, Kanton } from '../types/legal';
 // eine ANNAHME des Tools (verifiziert: false) und werden mit Warnhinweis versehen.
 // Fortschreibungen über das 11. Dienstjahr hinaus sind aus der Quelle nicht belegt.
 
-export const SKALA_BASEL: Skala = {
+const SKALA_BASEL: Skala = {
   name: 'Basler Skala',
   kantone: ['BS', 'BL'],
   quellenhinweis:
@@ -31,7 +31,7 @@ export const SKALA_BASEL: Skala = {
   ],
 };
 
-export const SKALA_BERN: Skala = {
+const SKALA_BERN: Skala = {
   name: 'Berner Skala',
   kantone: [
     'BE', 'AG', 'AI', 'AR', 'FR', 'GE', 'GL', 'JU', 'LU', 'NE',
@@ -51,7 +51,7 @@ export const SKALA_BERN: Skala = {
   ],
 };
 
-export const SKALA_ZUERICH: Skala = {
+const SKALA_ZUERICH: Skala = {
   name: 'Zürcher Skala',
   // ZG/GR: Zuordnung unsicher, separater Warnhinweis wird generiert
   kantone: ['ZH', 'SH', 'TG', 'ZG', 'GR'],
@@ -71,7 +71,7 @@ export const SKALA_ZUERICH: Skala = {
   ],
 };
 
-export const ALLE_SKALEN: Skala[] = [SKALA_BASEL, SKALA_ZUERICH, SKALA_BERN];
+const ALLE_SKALEN: Skala[] = [SKALA_BASEL, SKALA_ZUERICH, SKALA_BERN];
 
 export function skaleFuerKanton(kanton: Kanton): { skala: Skala; warnung?: string } {
   const skala = ALLE_SKALEN.find((s) => (s.kantone as string[]).includes(kanton));

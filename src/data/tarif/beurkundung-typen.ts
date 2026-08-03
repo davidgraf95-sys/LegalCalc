@@ -45,7 +45,7 @@ export type GeschaeftsartGruppe =
   | 'sicherung'
   | 'uebriges';
 
-export const GRUPPEN_LABEL: Record<GeschaeftsartGruppe, string> = {
+const GRUPPEN_LABEL: Record<GeschaeftsartGruppe, string> = {
   immobilien: 'Immobilien',
   familie_nachlass: 'Familie & Nachlass',
   gesellschaft: 'Gesellschaft & Stiftung',
@@ -72,7 +72,7 @@ export interface Geschaeftsart {
 }
 
 /** Registry aller Geschäftsarten in Anzeige-Reihenfolge (Gruppen geordnet). */
-export const GESCHAEFTSARTEN: Geschaeftsart[] = [
+const GESCHAEFTSARTEN: Geschaeftsart[] = [
   // ── Immobilien ──
   {
     id: 'grundstueckkauf', gruppe: 'immobilien', label: 'Grundstückkauf',

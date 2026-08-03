@@ -15,7 +15,7 @@ import type { Kanton } from '../types/legal';
 // Parameter-Verfallsregister (z. B. SG GKV sGS 941.12: Nachfolgefassung v3863
 // seit 1.7.2026 in Vollzug, Beträge wortgleich — Currency aufgelöst, QS-GP 2.7.2026).
 
-export interface KostenRahmen {
+interface KostenRahmen {
   /** Kurzrahmen in CHF, z. B. «100–1'000» oder beschreibend. */
   text: string;
   erlass: string;

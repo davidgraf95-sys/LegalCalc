@@ -16,13 +16,13 @@
 // Erlass = 1 logischer Fetch, bei Bucket-Split n Dateien).
 
 /** Fundstelle einer aggregierten Kante (Ziffer + optionaler Deep-Link-Suffix). */
-export interface ShardFundstelle {
+interface ShardFundstelle {
   z: string;
   url?: string;
 }
 
 /** Eine aggregierte (Dokument, Artikel)-Kante aus dem Shard. */
-export interface ShardKante {
+interface ShardKante {
   dok: string;
   /** Korpus-Artikel-Token ('11', '20_a'); fehlt bei Erlass-Ebene. */
   artikel?: string;
@@ -33,7 +33,7 @@ export interface ShardKante {
 }
 
 /** Dokument-Metadaten aus dem Shard-Kopf. */
-export interface ShardDokMeta {
+interface ShardDokMeta {
   urlBasis: string;
   stand: string;
 }

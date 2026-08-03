@@ -105,7 +105,7 @@ export function imBereich(datum: string, praezision: Datumspraezision, b: Zeitbe
 }
 
 /** Ein Balken des Zeitstrahls: ein Jahr und die Zahl der Kanten darin. */
-export interface JahrBalken {
+interface JahrBalken {
   jahr: number;
   anzahl: number;
 }

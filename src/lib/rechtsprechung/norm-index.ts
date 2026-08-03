@@ -106,7 +106,7 @@ let erlassPromise: Promise<NormErlassIndex | null> | null = null;
  * und muss das §15-Budget in scripts/check-perf-budget.ts entsprechend
  * nachziehen.
  */
-export async function ladeNormIndex(): Promise<NormEntscheidIndex | null> {
+async function ladeNormIndex(): Promise<NormEntscheidIndex | null> {
   if (!indexPromise) {
     indexPromise = (async () => {
       try {
@@ -134,7 +134,7 @@ export async function ladeNormIndex(): Promise<NormEntscheidIndex | null> {
  * Das gehärtete Muster stand schon 60 Zeilen tiefer in `ladeLeitfallShard`; hier ist
  * es nachgezogen (§5: EIN Muster für alle drei Lader dieser Datei).
  */
-export async function ladeNormIndexErlasse(): Promise<NormErlassIndex | null> {
+async function ladeNormIndexErlasse(): Promise<NormErlassIndex | null> {
   if (!erlassPromise) {
     erlassPromise = (async () => {
       try {

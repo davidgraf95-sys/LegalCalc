@@ -27,10 +27,10 @@
 // BGE-Zweig (siehe `bezugStatusFuerEntscheid`).
 
 /** Woher das Dokument stammt. Erweiterungspunkt für weitere Quellgattungen. */
-export type Quelltyp = 'rechtsprechung' | 'materialien';
+type Quelltyp = 'rechtsprechung' | 'materialien';
 
 /** Staatsebene des DOKUMENTS (nicht der zitierten Norm). */
-export type Ebene = 'bund' | 'kanton';
+type Ebene = 'bund' | 'kanton';
 
 /**
  * Rang-/Kategorie-Achse einer Rechtsprechungs-Kante. Vier Werte, weil es vier

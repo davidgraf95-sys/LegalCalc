@@ -849,7 +849,7 @@ export function normVerweiseImText(text: string): NormVerweisSpan[] {
 // Glied-Kopf). Die Kette bricht an allem, was kein «Konnektor + Zahl» ist.
 
 /** Ein Glied einer Plural-Aufzählung (Offsets in den übergebenen Gesamttext). */
-export interface PluralGlied {
+interface PluralGlied {
   /** rohe Artikelnummer («31», «45», «66abis»). */
   roh: string;
   start: number;

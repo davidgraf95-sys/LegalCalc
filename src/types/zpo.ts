@@ -20,7 +20,7 @@ export type ZpoZustellart = 'empfangsbestaetigung' | 'gewoehnliche_post';
 // Berechnungsmodus für Wochen-/Monats-/Jahresfristen (Ziff. 7.3) [UMSTRITTEN]
 export type ZpoModus = 'bundesgericht' | 'mindermeinung';
 
-export type ZpoErstreckung = {
+type ZpoErstreckung = {
   einheit: 'tage' | 'wochen';
   laenge: number;
 };

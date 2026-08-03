@@ -18,7 +18,7 @@ const EIN_KEY = 'lexmetrik-seitenleiste-eingeklappt';
 /** Grenzen der ziehbaren Breite (px). Standard entspricht dem früheren `w-64`. */
 export const BREITE_MIN = 208;
 export const BREITE_MAX = 460;
-export const BREITE_STD = 256;
+const BREITE_STD = 256;
 /** Schrittweite der Tastatur-Verstellung (Pfeiltasten auf dem Ziehgriff). */
 export const BREITE_SCHRITT = 16;
 

@@ -69,7 +69,7 @@ export function istGueltigesISO(v: string): boolean {
 // letzterBezahlterTag = verhinderungBeginn + Skala-Dauer − 1 Tag
 // Bsp. 3 Wochen ab 01.01.: addWeeks(01.01., 3) = 22.01.; -1 = 21.01.
 
-export function addSkalaDauer(start: Date, dauer: SkalaDauer): Date {
+function addSkalaDauer(start: Date, dauer: SkalaDauer): Date {
   switch (dauer.typ) {
     case 'wochen': return addWeeks(start, dauer.anzahl);
     case 'monate': return addMonths(start, dauer.anzahl);

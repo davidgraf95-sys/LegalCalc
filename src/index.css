@@ -578,11 +578,9 @@
   .lc-card { @apply bg-surface border border-line rounded-lg shadow-md; }
   /* Ergebnis-Kachel (Hauptwerte in Ergebnisblöcken) — eine Anatomie überall */
   .lc-tile { @apply bg-surface-raised border border-line rounded-xl p-4; }
-  /* Akzent-Oberkante (massgeblich/Warnung/Gefahr) — EINE Quelle statt 6×
+  /* Akzent-Oberkante (massgeblich) — EINE Quelle statt 6×
      inline border-t-[3px]; die Bedeutung trägt die Farbe, nicht die Stelle. */
   .lc-akzent-brass { border-top: 3px solid var(--brass-line); }
-  .lc-akzent-warn { border-top: 3px solid var(--warn-line); }
-  .lc-akzent-danger { border-top: 3px solid var(--danger-line); }
 
   /* FristenKalender (Überarbeitung 7.6.2026, Auftrag David) — zwei Rezepte:
 
@@ -654,7 +652,6 @@
   select.lc-input.lc-input-sm, .lc-select.lc-input-sm {
     padding-top: 0; padding-bottom: 0; font-size: .875rem; line-height: 1.2;
   }
-  .lc-textarea { @apply lc-input; height: auto; min-height: 88px; resize: vertical; line-height: 1.6; }
 
   .lc-btn {
     @apply inline-flex items-center justify-center rounded-md font-semibold transition-colors;
@@ -904,14 +901,6 @@
   .lc-list { list-style: none; padding-left: 0; }
   .lc-list > li { position: relative; padding-left: 1.25rem; }
   .lc-list > li::before { content: '–'; position: absolute; left: 0; color: var(--brass-600); }
-
-  .lc-seal {
-    display: grid; place-items: center; width: 1.9rem; height: 1.9rem; border-radius: 8px;
-    background: var(--ink-900); color: var(--paper);
-    font-family: var(--font-display), system-ui, sans-serif; font-weight: 600; font-size: 1.1rem; line-height: 1;
-    box-shadow: inset 0 0 0 1.5px var(--brass-500);
-  }
-  .lc-word { font-family: var(--font-display), system-ui, sans-serif; font-weight: 600; font-size: 1.35rem; color: var(--ink-900); letter-spacing: .01em; }
 
   /* Live-Berechnung: dezentes Einblenden des Ergebnisses */
   .lc-reveal { animation: lc-fade var(--dur-slow) var(--ease); }

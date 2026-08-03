@@ -20,7 +20,7 @@ export interface Einstellungen {
   vorlagenDetailgrad: Detailgrad;
 }
 
-export const EINSTELLUNGEN_DEFAULT: Einstellungen = {
+const EINSTELLUNGEN_DEFAULT: Einstellungen = {
   standardKanton: 'ZH',
   profilName: '',
   profilAdresse: '',
@@ -50,7 +50,7 @@ function leseGespeichert(): Einstellungen {
 let aktuell: Einstellungen = leseGespeichert();
 const hoerer = new Set<() => void>();
 
-export const ladeEinstellungen = (): Einstellungen => aktuell;
+const ladeEinstellungen = (): Einstellungen => aktuell;
 
 function schreibe(e: Einstellungen): void {
   aktuell = e;
