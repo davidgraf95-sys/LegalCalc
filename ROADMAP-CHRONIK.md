@@ -1670,6 +1670,8 @@ Herkunft (AP-3/AP-4) und die drei begründet im Root gebliebenen Dateien. Sie st
 
 ## Streichungen 3.8.2026 (Begründungen)
 
+- **`QS-BASIS-MQ` (G7 Merge Queue)** — gestrichen 3.8.2026 auf **David-Entscheid (Verzicht)**: GitHub bietet Merge Queues nur für Organisations-Repos an; LexMetrik liegt auf dem persönlichen Account (Feature-Gate, Ruleset-API 422 beim Aktivierungsversuch 3.8. nach TBT-Landung #421). Absicherung bleibt `strict: true` (aktiv seit 3.8.) + serielle Landung nach Skill `landung`. Falls das Repo je in eine Organisation wandert, ist die Queue in `fahrplaene/FAHRPLAN-BASIS-AUSBAU.md` §2 beschrieben; der `merge_group`-Trigger in `ci.yml` bleibt stehen (schadet ohne Queue nicht).
+
 - **`26x-slot` (Blocker-Register)** — gestrichen 3.8.2026: seit 20.7.2026 ausdrücklich AUFGELÖST und von keinem Schritt mehr referenziert; die Slot-Kette steht im `@slot-kette`-Block der ROADMAP. Wortlaut: «FREI seit 3.7.2026 (E3 fertig), aber bis 20.7.2026 nicht zurückgegeben — 17 Tage grundlose Blockade von W3·12. Slot am 20.7.2026 per @slot-kette an W3·12 übergeben (Kanton-Gesetze, Leitprinzip 4 + Davids Reihenfolge-Entscheid 2.7.: «E3 zuerst, W3·12 danach»).»
 
 - **`QS-WISSEN` (NotebookLM-Einsatz)** — aus der ROADMAP genommen 3.8.2026: die Lieferung ist erbracht («Status: bereitgestellt»), die Notebook-Befüllung ist ausdrücklich Davids Handschritt und **kein Bau-Auftrag** — der Schritt steuerte nichts mehr. `fahrplaene/FAHRPLAN-NOTEBOOKLM-EINSATZ.md` (Machbarkeits-Matrix 6.7.2026) → `archiv/`, dort unverändert nachlesbar.

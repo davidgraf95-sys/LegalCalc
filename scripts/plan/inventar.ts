@@ -68,6 +68,7 @@ export const INVENTAR: readonly string[] = [
   // §14-Intake 3.8.2026 (Aufräum-Session): Nebenfunde der CI-Diagnose (K1–K13), der Totcode-Welle
   // (#418/#420) und der Gegenprüfungen des Tages — alle klein, alle mit Anlass-Satz in der ROADMAP.
   'QS-FRIT-DRIFT', 'QS-CURRENCY-TESTS', 'QS-GP-BEREICH', 'QS-GP-PRERENDER',
-  'QS-AUTOMATIK-WT', 'QS-AUTOMATIK-BERICHT', 'QS-BASIS-TOT', 'QS-BASIS-DEPS', 'QS-BASIS-MQ',
+  // QS-BASIS-MQ gestrichen 3.8.2026 (David-Verzicht Merge Queue, nur Org-Repos; Chronik)
+  'QS-AUTOMATIK-WT', 'QS-AUTOMATIK-BERICHT', 'QS-BASIS-TOT', 'QS-BASIS-DEPS',
   'QS-TOK-DECKEL', 'QS-TOK-AUFRAEUMEN', 'QS-UI-WARNLINE',
 ];

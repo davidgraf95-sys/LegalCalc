@@ -64,9 +64,9 @@ Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 - **Nachtrag 20:55Z:** PR #421 «Runner-Robustheit» ist **gelandet** (`23f4be7fb`, TBT-Bewertung
   normiert + OR-e2e-Timeouts runner-fest). Merge Queue **G7 nicht aktivierbar**: GitHub bietet
   Merge Queues nur für **Organisations**-Repos an, LexMetrik liegt auf dem persönlichen Account
-  (Ruleset-API 422, leeres Feature-Gate) — Entscheid Org-Transfer vs. `strict:true`+serielle
-  Landung liegt bei David (`QS-BASIS-MQ`). Pflege-Routine aktiv (`trig_01WtC2EnU5y2BUN4SmpLhNP1`,
-  Mo 06:45 UTC).
+  (Ruleset-API 422, leeres Feature-Gate) — **David-Entscheid 3.8. abends: Verzicht**;
+  `QS-BASIS-MQ` gestrichen (Chronik), `strict:true` + serielle Landung bleiben die Absicherung.
+  Pflege-Routine aktiv (`trig_01WtC2EnU5y2BUN4SmpLhNP1`, Mo 06:45 UTC).
 - **Ehrliche Reste:** `QS-PERF` steht seit **1.7.2026** auf `wip` und wurde nie freigegeben — der
   Marker trifft heute wieder zu (#421 baut den TBT-Posten), deckt das Anliegen aber nicht ab; im
   Schritt vermerkt. **K4/K8/K9/K10** der CI-Diagnose tragen im Repo keinen Beleg und sind bewusst
