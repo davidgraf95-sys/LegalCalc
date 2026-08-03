@@ -57,8 +57,9 @@ seither nur noch mit Triage-Zahlen und Pointer hierher:*
 > Externe Cowork-Sichtprüfung über ~45 Seiten, Breiten 390–2560 px, hell/dunkel, Druck, Tastatur,
 > 140 % Schriftskala; geschnitten nach Bauteil K-01…K-20. **Dedup-Triage 31.7.2026** (7 Opus-Agenten
 > gegen den Bestand): **45 NEIN · 144 VERDACHT · 15 BEREITS-GEBAUT · 6 SICHER** — die 6 SICHER werden
-> **nicht** neu eingeplant (LM-202 ist eine **David-Frage**: der Bestand hat den Scroll-Hash-Sync
-> bewusst verworfen, `FAHRPLAN-UI-NAVIGATION.md` §Z Ziff. 7). **20 Batches** — 19 Bau-Batches mit
+> **nicht** neu eingeplant (LM-202 war eine **David-Frage**, entschieden 3.8.2026 — s. §1.1: der
+> Bestand hat den Scroll-Hash-Sync bewusst verworfen, `FAHRPLAN-UI-NAVIGATION.md` §Z Ziff. 7).
+> **20 Batches** — 19 Bau-Batches mit
 > 7–16 baubaren Befunden (189) + 1 Prüf-Batch (15). Wortlaut: `docs/ui-befunde-2026-07/`.
 
 210 Befunde, geprüft von 7 Opus-Agenten gegen den Bestand (Fahrpläne, Code, Abnahme-Berichte):
@@ -97,11 +98,11 @@ Je Eintrag: Referenz aus dem Bestand + der Ein-Zeilen-Grund, warum kein Neubau.
   einlaufen lassen. **Achtung Bau-Session:** das Highlight IST gebaut (A35), aber über die
   CSS Custom Highlight API — eine DOM-Messung auf `<mark>` findet es nicht.
   Referenz: `FAHRPLAN-UI-NAVIGATION.md §4 R1 («In-Gesetz-Suche: Treffer-Highlight … <mark>-Hervorhebung in den gefilterten Artikeln + Trefferzahl je Artikel + Vor/…`
-- **LM-202** (Hoch, K-20) — **David-Frage, kein Bau-Punkt.** Der kontinuierliche Scroll-Hash-Sync ist im Bestand
-  erfasst **und mit Begründung verworfen** (Kollision mit der empirisch begründeten
-  A16-Architektur, Perf-/History-Falle); Ersatzweg ist R3 (Zitat + Permalink). Neu
-  einplanen hiesse einen dokumentierten Entscheid still kippen (§14).
-  **→ David entscheidet, ob der Verwerfungs-Entscheid bestehen bleibt.**
+- **LM-202** (Hoch, K-20) — **David-Entscheid 3.8.2026: URL nur bei explizitem Klick/Teilen
+  aktualisieren.** Der kontinuierliche Scroll-Hash-Sync bleibt verworfen (Kollision mit der
+  empirisch begründeten A16-Architektur, Perf-/History-Falle bestätigt); Ersatzweg ist R3
+  (Zitat + Permalink, `W2·10-UI-NAV-R2`). Neuer, eigener Bau-Punkt für den expliziten
+  Klick/Teilen-Weg: `W2·10-UI-NAV-URL` (ROADMAP.md).
   Referenz: `FAHRPLAN-UI-NAVIGATION.md §Z Ziff. 7 (Z. 545–547): «Kontinuierlicher Scroll-Hash-Sync in der URL (#13-Teil) — kollidiert mit der empirisch begründeten…`
 
 ---
