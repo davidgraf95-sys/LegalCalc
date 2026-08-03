@@ -1,11 +1,15 @@
 # ─── Fedlex-Frische-Automatik (O-2, QS-OPT / QS-CURRENCY) ───────────────────
 # Der REPARATUR-Arm des Frische-Kreislaufs (der Normen-Monitor ist der Detektions-
-# Arm). Zwei Schritte, beide rein amtlich (Fedlex-SPARQL):
+# Arm). Drei Schritte, alle rein amtlich (Fedlex-SPARQL):
 #   1. gen:fedlex-wiedervorlage  — currency.json + AUTO-Wiedervorlage-Block frisch
 #      halten (Reader-Chips «geltend geprüft am …» bleiben ≤7 Tage alt).  [O-2.2]
 #   2. fedlex:repin-batch --write — ALLE überholten Bund-Pins (geltende
 #      Konsolidierung ≤ heute > Pin) auf die geltende Fassung heben, Snapshots +
 #      Struktur regenerieren, Normtext-Tore fahren.  [O-2.1]
+#   3. check:fedlex-versionen + fedlex:repin-kanonik --write — die ZWEITE
+#      Re-Pin-Achse: nicht das Konsolidierungsdatum, sondern die html-REVISION
+#      (isExemplifiedBy). Seit 3.8.2026, weil Erkennen ohne Reparieren hier
+#      belegbar folgenlos blieb (siehe Schritt-Kommentar unten).
 # Ergibt sich ein Diff, wird EIN Auto-Merge-PR eröffnet (David-Rahmen-Gate 16.7.2026:
 # «Ja, voll freigeben» — scheduled Daten-Reparatur-PRs dürfen bei grünen Toren
 # unbeaufsichtigt auto-mergen; main deployt auf Prod). Überholte Erlasse ohne
@@ -88,6 +92,44 @@ jobs:
           npm run fedlex:repin-batch -- --datum=${{ steps.datum.outputs.iso }} --write | tee repin.log
           # Handschritt-Fälle (überholt, aber html-N nicht auflösbar) markieren.
           if grep -q '⚠' repin.log; then echo "handschritt=1" >> "$GITHUB_OUTPUT"; fi
+
+      # ── Kanonik-Selbstheilung (3.8.2026) ────────────────────────────────────
+      # ZWEITE Re-Pin-Achse, unabhängig von der ersten: der Batch oben hebt
+      # überholte KONSOLIDIERUNGSDATEN (3. Pipe-Feld), dieser Schritt die
+      # nicht-kanonische html-REVISION (4. Feld). Fedlex registriert je Fassung
+      # genau eine Manifestation (isExemplifiedBy); zeigt der Pin auf eine
+      # andere, liefert der Filestore einen Alt-Generations-Dump — also
+      # amtlichen Text, aber nicht den geltenden.
+      #
+      # WARUM HIER UND NICHT WEITER ZUSCHAUEN: Am 3.8.2026 standen 8 Pins
+      # nicht-kanonisch (zgb 1→2, mwstg 3→4, bbg 2→3, usg 0→1, gwg 6→7,
+      # kag 6→7, fza 5→9, cmr 3→6). Der Kanonik-Arbiter in
+      # `check:fedlex-versionen` hatte sie erkannt und der Normen-Monitor war
+      # seit dem 29.6. rot — beides wochenlang folgenlos, weil der Befund nur
+      # DETEKTION war und niemand den Reparatur-Handgriff tat. Erkennen ohne
+      # Reparieren erzeugt genau die Alarm-Müdigkeit, gegen die dieser Workflow
+      # als REPARATUR-Arm gebaut wurde.
+      #
+      # Die Regenerierung übernimmt der bestehende Schritt darunter: er
+      # triggert auf `git diff scripts/fedlex-cache.sh` und sieht den Re-Pin
+      # unabhängig davon, welche der beiden Achsen ihn erzeugt hat (§10 — den
+      # vorhandenen Rahmen nutzen statt einen zweiten zu bauen).
+      - name: Kanonik-Arbiter + Selbstheilung (isExemplifiedBy-Revision)
+        run: |
+          set -uo pipefail
+          if npm run check:fedlex-versionen; then
+            echo "Kanonik-Arbiter grün — jeder Pin zeigt auf die registrierte Manifestation."
+            exit 0
+          fi
+          echo "── Kanonik-Arbiter ROT → Re-Pin auf die kanonische html-Revision ──"
+          set -e
+          npm run fedlex:repin-kanonik -- --write
+          # Erneut prüfen: der Re-Pin ist die Massnahme, nicht der Beweis.
+          # Bleibt der Arbiter rot, ist ein Fall dabei, den das Werkzeug nicht
+          # löst (UNRESOLVED-Pin ohne html-Manifestation, überholte oder
+          # aufgehobene Konsolidierung) — dann ROT statt eines PR, der eine
+          # Heilung behauptet, die nicht stattfand (§8).
+          npm run check:fedlex-versionen
 
       - name: Regenerierung (nur wenn cache.sh re-gepinnt wurde)
         run: |
