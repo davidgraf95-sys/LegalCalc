@@ -43,6 +43,9 @@ jobs:
     permissions:
       contents: read
       issues: write
+      # `actions: read` seit 3.8.2026 — die Eskalationsstufe unten zählt die
+      # vorangehenden Läufe dieses Workflows (`gh run list`).
+      actions: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -76,7 +79,22 @@ jobs:
       # A2 (2.7.2026): Ein roter Lauf verhallte bisher still in der Verlaufsliste (15.6./29.6.
       # real rot, unbemerkt). Bei Rot legen wir einen sichtbaren Aufgaben-Zettel an — ODER
       # kommentieren den bestehenden, damit keine Issue-Flut entsteht.
-      - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/aktualisieren
+      #
+      # ── TRIAGE-NACHZUG (3.8.2026, Fehlerklasse K5) ──────────────────────────
+      # Die Kommentar-Sammelstelle hat ihr Ziel verfehlt: Issue #166 (angelegt
+      # 6.7.2026) trug am 3.8. vier Kommentare — «Erneut rot am …», immer
+      # derselbe Text, nie geschlossen, nie eskaliert. Ein Alarm, der sich vier
+      # Wochen lang unverändert wiederholt, ist kein Alarm mehr, sondern
+      # Rauschen; die 8 nicht-kanonischen Pins standen genau in dieser Zeit.
+      # Zwei Ergänzungen, beide gegen dieselbe Wurzel:
+      #   (1) Bei GRÜN wird der Zettel GESCHLOSSEN. Ohne Schliessung sagt ein
+      #       offener Zettel nichts mehr über die Gegenwart aus — er ist dann
+      #       nur noch ein Beleg, dass es einmal ein Problem gab.
+      #   (2) Ab dem 3. roten Lauf IN FOLGE bekommt der Titel das Präfix
+      #       «ESKALATION:». Der Unterschied zwischen «einmal rot» (Quelle
+      #       kurz weg) und «dauerhaft rot» (echter Rechtsstands-Defekt) muss
+      #       im Titel stehen, nicht im vierten Kommentar.
+      - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/aktualisieren/eskalieren
         if: failure()
         env:
           GH_TOKEN: ${{ github.token }}
@@ -85,8 +103,54 @@ jobs:
           set -euo pipefail
           offen=$(gh issue list --state open --search 'Normen-Monitor rot in:title' --json number --jq '.[0].number // empty')
           rumpf="Der wöchentliche Normen-Monitor ist fehlgeschlagen — ein gepinnter Rechtsstand ist möglicherweise überholt, ein Anker weg, eine amtliche Quelle nicht erreichbar ODER die Live-Site/eine Runtime-API defekt. Prüfen: **§7-Verifikation** (Pins/Wortlaute/Verfallsregister) bzw. **Betriebs-Fix** (Site/API). Lauf: ${RUN_URL}"
+
+          # Rot-Serie zählen: abgeschlossene Vorläufer, solange sie NICHT
+          # 'success' sind. 'cancelled'/'timed_out' brechen die Serie NICHT —
+          # ein grauer Lauf ist kein bestandener Lauf (CLAUDE.md §6 Ziff. 7
+          # lit. c, dieselbe Regel wie in check:ci-laeufe). Der laufende Lauf
+          # ist noch nicht 'completed', darum zählt er als +1.
+          serie=1
+          for c in $(gh run list --workflow normen-monitor.yml --limit 15 \
+                       --json conclusion,status \
+                       --jq '.[] | select(.status=="completed") | .conclusion'); do
+            [ "$c" = "success" ] && break
+            serie=$((serie + 1))
+          done
+          echo "Rot-Serie in Folge (inkl. diesem Lauf): ${serie}"
+
           if [ -n "$offen" ]; then
-            gh issue comment "$offen" --body "Erneut rot am $(date +%F). ${rumpf}"
+            gh issue comment "$offen" --body "Erneut rot am $(date +%F) — ${serie}. roter Lauf in Folge. ${rumpf}"
+            nr="$offen"
           else
-            gh issue create --title "🔴 Normen-Monitor rot ($(date +%F)) — Rechtsstand/Site prüfen (§7/Betrieb)" --body "$rumpf"
+            nr=$(gh issue create --title "🔴 Normen-Monitor rot ($(date +%F)) — Rechtsstand/Site prüfen (§7/Betrieb)" --body "$rumpf" | grep -oE '[0-9]+$')
           fi
+
+          if [ "$serie" -ge 3 ]; then
+            titel=$(gh issue view "$nr" --json title --jq '.title')
+            case "$titel" in
+              ESKALATION:*) echo "Zettel #${nr} ist bereits eskaliert — Titel unverändert." ;;
+              *)
+                gh issue edit "$nr" --title "ESKALATION: ${titel}"
+                gh issue comment "$nr" --body "**Eskalationsstufe erreicht**: ${serie} rote Läufe in Folge. Das ist kein Aussetzer einer amtlichen Quelle mehr, sondern ein stehender Befund — §7-Verifikation ist fällig."
+                echo "Zettel #${nr} eskaliert (${serie} rote Läufe in Folge)."
+                ;;
+            esac
+          fi
+
+      # Gegenstück zur Triage: bei GRÜN wird der Zettel geschlossen. Ein
+      # Monitor, der nur anlegt und nie schliesst, produziert eine Liste, die
+      # nur wächst — und über die Gegenwart nichts mehr aussagt (§8).
+      - name: Bei Grün — offenen Aufgaben-Zettel schliessen
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          offen=$(gh issue list --state open --search 'Normen-Monitor rot in:title' --json number --jq '.[0].number // empty')
+          if [ -z "$offen" ]; then
+            echo "Monitor grün, kein offener Zettel — nichts zu schliessen."
+            exit 0
+          fi
+          gh issue close "$offen" --reason completed --comment "🟢 Normen-Monitor wieder grün am $(date +%F) — alle Netz-Tore, Live-Site und Runtime-APIs bestanden. Zettel geschlossen; bei erneutem Rot legt der Monitor einen neuen an. Lauf: ${RUN_URL}"
+          echo "Zettel #${offen} geschlossen (Monitor grün)."
