@@ -21,6 +21,7 @@ import { KATALOG_KARTEN, VORLAGE_SEKTIONEN, istVerfuegbar } from './startseiteCo
 import { kategorieFuer } from './oberkategorien';
 import { istVorlage } from './vorlagenKategorie';
 import { SYSTEMATIK } from './normtext/systematik';
+import { INTERNATIONAL_RUBRIK_IDS } from './normtext/international-rubriken';
 import { GEBIETE } from './normtext/register';
 import { KANTONE, KANTON_NAMEN } from '../data/tarif/typen';
 import { BEHOERDEN } from './materialien/register';
@@ -140,6 +141,10 @@ export function saeulenZiel(zielAnker: string): string {
 
 /**
  * Hash eines Alt-Links `/international#<anker>` → Hash auf der Säule.
+ * Massstab sind ALLE real gerenderten Sektions-ids der Säule
+ * (INTERNATIONAL_RUBRIK_IDS, 7 Stück), nicht nur die 5 Sidebar-Rubriken —
+ * sonst verliert der Client-Pfad funktionierende Anker, die der Server-308
+ * (Browser hängt das Fragment selbst an) erhält (Bug-Check #424, B-1).
  * Unbekannte Anker (Tippfehler, Fremdlinks) verlieren den Hash, statt einen
  * toten Anker weiterzureichen: die Säule ist dann der ehrliche Landeplatz
  * (§8 — kein stiller Sprung ins Leere). Ohne Hash bleibt es ohne Hash.
@@ -147,7 +152,7 @@ export function saeulenZiel(zielAnker: string): string {
 export function internationalAnkerAbbildung(hash: string): string {
   const roh = decodeURIComponent(hash.replace(/^#/, ''));
   if (!roh) return '';
-  return INTERNATIONAL_RUBRIKEN.find((r) => r.anker === roh)?.zielAnker ?? '';
+  return INTERNATIONAL_RUBRIK_IDS.includes(roh) ? roh : '';
 }
 
 // Gesetze: «Bund» nach der funktionalen Systematik (systematik.ts) UND «Kantone»

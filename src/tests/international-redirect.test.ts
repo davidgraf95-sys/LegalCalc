@@ -40,6 +40,14 @@ describe('IA-6 Stufe 2 · Anker-Abbildung (5/5)', () => {
     }
   });
 
+  it('lässt JEDE real gerenderte Sektions-id die Abbildung überleben (Client = Server, B-1)', () => {
+    // Bug-Check #424, B-1: die 5er-Sidebar-Liste als Massstab verlor die echten
+    // Anker asyl-migration/weitere-spezial, die der Server-308 erhält.
+    for (const id of INTERNATIONAL_RUBRIK_IDS) {
+      expect(internationalAnkerAbbildung(`#${id}`), `Anker ${id} geht im Client-Pfad verloren`).toBe(id);
+    }
+  });
+
   it('reicht auch prozentkodierte Hashes durch und lässt Unbekanntes fallen (kein toter Anker)', () => {
     expect(internationalAnkerAbbildung('#schweiz%2Deu')).toBe('schweiz-eu');
     expect(internationalAnkerAbbildung('#gibt-es-nicht')).toBe('');

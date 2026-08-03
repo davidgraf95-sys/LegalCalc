@@ -287,7 +287,6 @@ const HEADING_ROUTEN: Array<[string, string]> = [
   ['/rechtsprechung', 'rechtsprechung-uebersicht'],
   ['/rechtsprechung/bger_1B_278_2022', 'entscheid-leser'],
   ['/gesetze?ebene=international', 'international'], // IA-6 Stufe 2: Säule statt Alias
-
   ['/materialien', 'materialien'],
 ]
 for (const [url, name] of HEADING_ROUTEN) {

@@ -27,6 +27,6 @@ import { INTERNATIONAL_SAEULE, internationalAnkerAbbildung } from '../lib/naviga
 export function InternationalRedirect() {
   const { hash } = useLocation();
   const zielAnker = internationalAnkerAbbildung(hash);
-  const [pathname, search] = INTERNATIONAL_SAEULE.split('?');
-  return <Navigate replace to={{ pathname, search: `?${search}`, hash: zielAnker ? `#${zielAnker}` : '' }} />;
+  const [pathname, search = ''] = INTERNATIONAL_SAEULE.split('?');
+  return <Navigate replace to={{ pathname, search: search ? `?${search}` : '', hash: zielAnker ? `#${zielAnker}` : '' }} />;
 }
