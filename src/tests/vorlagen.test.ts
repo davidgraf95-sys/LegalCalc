@@ -589,6 +589,61 @@ describe('Vorlage Vorsorgeauftrag', () => {
     expect(zeile({ ort: 'Basel', datum: '' })).toBe('Basel, den ________');
   });
 
+  // ── W2·8 / V9.5: Nebenfunde N1–N3 der Gegenprüfungs-Runde 3 ────────────────
+
+  // N1: `datum` wurde an drei Stellen roh auf Wahrheit geprüft (Zweigwahl in
+  // `ortDatumZeile`, Datums-Formatierung, Datums-Warnung in `pruefeVaGates`),
+  // `ort` dagegen mit `.trim()`. Ein Datum aus reinem Whitespace war damit
+  // «vorhanden»: die Schlusszeile zeigte statt «Datum: ________» eine LEERE
+  // Zeile über der Unterschriftslinie (bzw. «Basel, den   »), und die
+  // Art.-361-Abs.-2-Warnung blieb aus. Über die UI ist der Wert nicht
+  // erzeugbar — die Engine ist gleichwohl die Wahrheit (§3), und ein
+  // localStorage-Altstand oder Import kann ihn tragen.
+  it('N1: Whitespace-Datum zählt wie kein Datum – Warnung und beschrifteter Strich', () => {
+    const zeile = (over: Partial<VaAntworten>) =>
+      vaZusammenstellen(va(over)).dokument.absaetze
+        .find((x) => x.bausteinId === 'V14_schluss_eigenhaendig')!.text.split('\n')[0];
+    expect(zeile({ ort: undefined, datum: '  ' })).toBe('Datum: ________');
+    expect(zeile({ ort: 'Basel', datum: '  ' })).toBe('Basel, den ________');
+    expect(zeile({ ort: undefined, datum: '\t\n ' })).toBe('Datum: ________');
+    // Die Gültigkeits-Warnung des Art. 361 Abs. 2 ZGB greift ebenso.
+    expect(pruefeVaGates(va({ datum: '  ' })).warnungen
+      .some((w) => w.includes('Ohne Datum ist der eigenhändige Vorsorgeauftrag ungültig'))).toBe(true);
+    // Gegenprobe: ein echtes Datum bleibt unberührt (auch mit Rand-Whitespace).
+    expect(zeile({ ort: undefined, datum: ' 2026-06-04 ' })).toBe('04.06.2026');
+    expect(pruefeVaGates(va({ datum: ' 2026-06-04 ' })).warnungen.some((w) => w.includes('Ohne Datum'))).toBe(false);
+  });
+
+  // N2: Die Begründung nannte «Ort/Datum und Unterschrift» als eigenhändige
+  // Bestandteile. Art. 361 Abs. 2 ZGB verlangt den Ort NICHT (Snapshot
+  // Stand 1.7.2026: «von Anfang bis Ende von Hand niederzuschreiben, zu
+  // datieren und zu unterzeichnen»). Konsistent zur Kommentierung von
+  // `ortDatumZeile`, die den Ort schon als nicht verlangt behandelt.
+  it('N2: V14-Begründung nennt den Ort nicht als Formbestandteil (Art. 361 Abs. 2 ZGB)', () => {
+    const b = VA_SCHEMA.bausteine.find((x) => x.id === 'V14_schluss_eigenhaendig')!.begruendung;
+    expect(b).not.toContain('Ort/Datum');
+    expect(b).toContain('Datum und Unterschrift');
+    expect(b).toContain('Gültigkeitserfordernis');
+    // Der Ort wird als fakultativ ausgewiesen, nicht verschwiegen.
+    expect(b).toContain('Ortsangabe');
+  });
+
+  // N3: `ort: 'Basel,'` ergab «Basel,, den 15.06.2026» – der Anschluss «, den»
+  // bringt das Komma bereits mit. Reine Interpunktions-Normalisierung; der
+  // Ortsinhalt bleibt unangetastet.
+  it('N3: abschliessende Kommas/Whitespace am Ort erzeugen kein Doppelkomma', () => {
+    const zeile = (over: Partial<VaAntworten>) =>
+      vaZusammenstellen(va(over)).dokument.absaetze
+        .find((x) => x.bausteinId === 'V14_schluss_eigenhaendig')!.text.split('\n')[0];
+    expect(zeile({ ort: 'Basel,' })).toBe('Basel, den 04.06.2026');
+    expect(zeile({ ort: 'Basel , ' })).toBe('Basel, den 04.06.2026');
+    expect(zeile({ ort: 'Basel,', datum: '' })).toBe('Basel, den ________');
+    // Binnen-Kommas bleiben: der Ort wird nicht inhaltlich beschnitten.
+    expect(zeile({ ort: 'Riehen, BS' })).toBe('Riehen, BS, den 04.06.2026');
+    // Ein Ort, der nur aus Interpunktion besteht, ist kein Ort (B7-Zweig).
+    expect(zeile({ ort: ' , ' })).toBe('04.06.2026');
+  });
+
   // ── W2·8 / B5: SSoT-Verdrahtung Beurkundung (Befund F6) ────────────────────
   //
   // Die Vorlagen-Engine führt keinen eigenen Kantons-Katalog mehr. Der Beleg

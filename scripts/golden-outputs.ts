@@ -257,6 +257,12 @@ f('vorl:va-gates-jp-personensorge', () => pruefeVaGates({
 // W2·8/B5: Golden-Lücke aus B3/B4 geschlossen — die Datums-Warnung der
 // eigenhändigen Form (Art. 361 Abs. 2 ZGB) war in keinem Golden-Fall erfasst.
 f('vorl:va-gates-ohne-datum', () => pruefeVaGates({ ...vaBasis, datum: '' }));
+// W2·8/V9.5 (Gegenprüfung Runde 3, Befund N4): Der «Datum: ________»-Zweig der
+// Schlusszeile (B8) war im Byte-Orakel nicht erfasst — nur im Unit-Test. Fehlen
+// Ort UND Datum, steht der beschriftete Ausfüll-Strich über der
+// Unterschriftslinie; das Datum ist nach Art. 361 Abs. 2 ZGB
+// Gültigkeitserfordernis der eigenhändigen Errichtung.
+f('vorl:va-ohne-ort-ohne-datum', () => vaZusammenstellen({ ...vaBasis, ort: undefined, datum: '' }));
 f('vorl:sg', () => sgZusammenstellen({
   ...SG_DEFAULTS, streitgegenstandTyp: 'geldforderung', baselForumBestaetigt: true,
   klaeger: [{ ...SG_PERSON_NATUERLICH, vorname: 'A', name: 'B', strasse: 'S 1', plz: '4051', ort: 'Basel' }],
