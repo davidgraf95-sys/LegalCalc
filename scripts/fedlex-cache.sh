@@ -45,10 +45,14 @@ BASIS="https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli"
 EINTRAEGE=(
   "or|cc/27/317_321_377|20260101|12|art_11,art_32,art_77,art_104,art_216,art_324_a,art_335_c,art_336_c,art_396,art_493|220"
   # Re-Pin 20260101→20260701 (§7-Nachverifikation 1.7.2026, AS 2026 94 gewaltfreie
-  # Erziehung art_302 + AS 2026 16 Besitzesschutz art_926 ff.). FALLE: unter 20260701
-  # liefern n=0 UND n=1 echtes HTML — n=0 ist STALE (ohne AS 2026 94), nur html-1 trägt
-  # die Änderung; SPARQL bestätigt html-1 kanonisch. Alle 6 zitierten Anker byte-identisch,
-  # Inventar 1099→1099 (art_302 Intra-Artikel, kein neuer Anker).
+  # Erziehung art_302 + AS 2026 16 Besitzesschutz art_926 ff.). Alle 6 zitierten Anker
+  # byte-identisch, Inventar 1099→1099 (art_302 Intra-Artikel, kein neuer Anker).
+  # FALLE unter dieser Konsolidierung: mehrere html-Revisionen liefern echtes HTML,
+  # und die niedrigste ist STALE (ohne AS 2026 94). Welche kanonisch ist, steht
+  # NICHT in diesem Kommentar, sondern im 4. Feld der Datenzeile — dort gepflegt von
+  # fedlex-repin-kanonik.ts (isExemplifiedBy) und bewacht von check:fedlex-versionen.
+  # (Der Kommentar nannte bis 3.8.2026 «html-1 kanonisch», während das Feld auf 2
+  # stand: eine zweite Wahrheit neben dem Pin, §5 — darum jetzt ohne Revisionsnummer.)
   "zgb|cc/24/233_245_233|20260701|2|art_19_c,art_360,art_361,art_370,art_467,art_505|210"
   # ZPO-Anker um die Rechtsmittel-Artikel erweitert (Umbau 6.6.2026).
   # Re-Pin 20250101→20260701 (§7-Nachverifikation 1.7.2026, AS 2026 16 Besitzesschutz:
@@ -421,19 +425,35 @@ for e in "${EINTRAEGE[@]}"; do
   # Schwelle 20 kB: SPA-Shell/Fehlerseiten sind ~9 kB bzw. ~77 kB OHNE Anker —
   # die Anker-Prüfung unten fängt grosse Blindgänger; kleinster echter Cache
   # ist die GebV-HReg mit ~30 kB (darum nicht mehr 40 kB).
+  # ── KEIN FALLBACK (3.8.2026) ────────────────────────────────────────────
+  # Bis hierher probierte eine Schleife bei Fehlschlag html-1..5 durch und
+  # setzte die erste Variante ein, die 200 + >20 kB lieferte. Drei Gründe,
+  # warum das gefährlicher war als ein Fehlschlag:
+  #   1. Der Ersatz ist STILL. Eine andere html-Revision ist ein anderer
+  #      Generations-Dump desselben Erlasses — amtlicher Text, aber nicht der
+  #      geltende. Trägt er die Pflicht-Anker (was er meist tut, weil es
+  #      derselbe Erlass ist), meldet das Tor «OK» und niemand erfährt, dass
+  #      eine andere Fassung geprüft wurde als die gepinnte.
+  #   2. Der Bereich 1..5 ist zu klein. 67 der 227 Pins stehen auf N≥6 (bis
+  #      N=17, vwvg/finma_gebv) — für sie hätte die Schleife die kanonische
+  #      Revision nie erreicht, sondern zwangsläufig eine falsche eingesetzt.
+  #      (Die Zahl wurde für diese Reparatur ausgezählt; die Annahme «nur ein
+  #      paar Pins liegen über 5» trifft nicht zu.)
+  #   3. Es ist die falsche Zuständigkeit. Welche Revision kanonisch ist,
+  #      beantwortet Fedlex über isExemplifiedBy — dafür gibt es
+  #      fedlex-repin-kanonik.ts und den Arbiter in check:fedlex-versionen.
+  #      Ein Rate-Fallback im Cache-Tor ist eine zweite, schlechtere Antwort
+  #      auf dieselbe Frage (§5).
+  # Darum jetzt: der gepinnte Abruf scheitert LAUT. Reparatur ist Sache des
+  # Re-Pins, nicht dieses Skripts.
   if [ "$code" != "200" ] || [ "$groesse" -lt 20000 ]; then
-    # Fallback: andere html-N-Varianten probieren
-    ok=""
-    for alt in 1 2 3 4 5; do
-      url="${BASIS}/${eli}/${kons}/de/html/fedlex-data-admin-ch-eli-${pfad}-${kons}-de-html-${alt}.html"
-      code=$(curl -s -o "$datei" -w "%{http_code}" "$url")
-      groesse=$(wc -c < "$datei" | tr -d ' ')
-      if [ "$code" = "200" ] && [ "$groesse" -gt 20000 ]; then ok="ja"; break; fi
-    done
-    if [ -z "$ok" ]; then
-      echo "FEHLER  ${name}: kein Filestore-HTML gefunden (Konsolidierung ${kons} prüfen!)"
-      fehler=$((fehler+1)); continue
-    fi
+    echo "FEHLER  ${name}: gepinnter Abruf fehlgeschlagen (HTTP ${code}, ${groesse} B)"
+    echo "        URL: ${url}"
+    echo "        KEIN Fallback auf andere html-Revisionen — das würde still eine"
+    echo "        nicht-kanonische Fassung einsetzen. Reparatur: Konsolidierung ${kons}"
+    echo "        prüfen, dann 'npm run fedlex:repin-kanonik -- --write' (Revision) bzw."
+    echo "        'npm run fedlex:repin-batch -- --write' (Konsolidierungsdatum)."
+    fehler=$((fehler+1)); continue
   fi
   # Soft-404-Sonde (P1-a/b Querschnitts-Wurzel): die Casemates-Angular-Shell
   # kommt mit HTTP 200 (~9 kB, aber Grenzfälle auch grösser). Nach Body urteilen,
