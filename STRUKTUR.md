@@ -48,6 +48,17 @@ Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 - **Offen (David):** fachliche Abnahme (Dossier unabgehakt, Herabstufung V-1/V-2
   rückholbar) · Fahrplan §V9.1–V9.5 vertagt (Beiblatt, BGE 151 III 81,
   formel_extern-Minimum, ZStGV-Drift-Pin, GP-Nebenfunde N1–N4).
+- **Nachzug-Session 3.8. (vormittags), gelandet #415 `accbf09d6` + #416 `2a0bb2133`:**
+  V9.5 gebaut (GP bestanden + Delta-Runde; Golden 256) · V9.2 BGE 151 III 81 am
+  Entscheid verifiziert (E. 3.5.5/3.6; neue Status-Stufe `quelleGeprueft`, Abnahme
+  offen) · Dossier-Drift geheilt + Wächter `check:dossiers` (CI) · V9.4 ZStGV:
+  Fakten gesichert, Pin bewusst zurück — **David-Entscheid Weg A/B**
+  (`bibliothek/normen/zstgv-drift-erkennung-2026-08-03.md`; Frist 15.10.2026) ·
+  Dependabot #13 dismissed (RSC-only, ungenutzt, belegt) · Lighthouse grün
+  (OR CLS 0.009). Befunde: e2e `leser-kopf-a9` flakt im Voll-Lauf (Nullprobe auf
+  main rot, Isolation grün) · `check:fedlex-versionen` main-rot (3 Pins
+  nicht-kanonisch, u.a. ZGB html-1→2 — eigener Risiko-Schritt) · BGE-Register
+  41 unregistrierte Zitate (vorbestehend).
 
 ## Session 2./3.8.2026 (Nacht) — fünf Landungen: Verfallsregister #410, B1 #408, Uppercase-Sweep #409, B2 #412, N1 #413
 **Kurzkarte der Nacht-Session-Kette (Details in den jeweiligen Einzelkarten/PRs).**
