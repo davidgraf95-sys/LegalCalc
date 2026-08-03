@@ -42,6 +42,12 @@ const registriert = new Map(
 );
 
 const heute = process.env.STAND ?? new Date().toISOString().slice(0, 10);
+
+// Das Datum der EMPIRISCHEN Link-Schema-Prüfung ist ein Faktum, kein «heute».
+// Bis 3.8.2026 stand hier `heute` — jede Regeneration datierte damit eine
+// Stichprobe um, die gar nicht neu gefahren wurde (§8: keine Behauptung ohne
+// Beleg). Wer das Schema neu prüft, hebt diese Konstante von Hand.
+const LINKSCHEMA_GEPRUEFT = '2026-06-10';
 const zeilen: string[] = [];
 const z = (s: string) => zeilen.push(s);
 
@@ -51,7 +57,7 @@ z(`Generiert: \`npx vite-node scripts/bge-register-generieren.ts\` · Stand ${he
 z(``);
 z(`**Quelle + Stand:** SSoT ist \`src/data/verifikation.ts\` (${Object.keys(VERIFIKATION).length} Einträge);`);
 z(`Links deterministisch aus \`src/lib/bge.ts\`. **URL-Schemata empirisch verifiziert**`);
-z(`(§7, WebFetch ${heute}): BGE → ATF-Permalink der amtlichen Sammlung (bger.ch, zeigt`);
+z(`(§7, WebFetch ${LINKSCHEMA_GEPRUEFT}): BGE → ATF-Permalink der amtlichen Sammlung (bger.ch, zeigt`);
 z(`den Entscheid direkt; Stichprobe BGE 139 III 78); BGer-Urteile → Suchlink der`);
 z(`amtlichen Urteilsdatenbank (Permalink bräuchte das Entscheiddatum; Stichproben`);
 z(`5A_691/2023 und 4C.375/2000 je 1. Treffer).`);
@@ -64,9 +70,15 @@ z(`**Geltungsbereich/Pflege:** Anzeige-Verlinkung nur im Web (ErgebnisAnzeige);`
 z(`PDF/DOCX unverändert. Neue Zitate nur über das Verifikations-Register («kein`);
 z(`Aktenzeichen im Code, das hier nicht registriert ist»).`);
 z(``);
-z(`**Abnahme-Status:** Linkschema zweifach geprüft (Stichproben + Suite). Die`);
-z(`INHALTLICHE Verifikation der einzelnen Entscheide (Spalte Status) bleibt`);
-z(`Davids fachliche Abnahme — \`verifiziert: false\` bedeutet «zu verifizieren».`);
+z(`**Abnahme-Status (drei Stufen, §8 — der echte Prüfungsstand):**`);
+z(`Linkschema zweifach geprüft (Stichproben + Suite). Die Spalte Status zeigt:`);
+z(``);
+z(`- **zu verifizieren** — niemand hat den Entscheidtext gegen die Aussage gehalten.`);
+z(`- **Quelle geprüft (…)** — eine Session hat den amtlichen Entscheidtext abgerufen`);
+z(`  und belegt, DASS er die registrierte Aussage trägt (Fundstelle in Klammern,`);
+z(`  \`quelleGeprueft\` im Register). Das ist die §7-Quellenprüfung, NICHT die Abnahme.`);
+z(`- **verifiziert** — Davids fachliche Abnahme (\`verifiziert: true\`). Sie wird nie`);
+z(`  automatisch gesetzt, auch nicht nach bestandener Quellenprüfung.`);
 z(``);
 z(`## Register (${registriert.size} Entscheide)`);
 z(``);
@@ -76,7 +88,12 @@ for (const [key, e] of [...registriert.entries()].sort((a, b) => a[0].localeComp
   const link = rechtsprechungUrl(e.aktenzeichen);
   const wo = [...(fundorte.get(key) ?? [])].sort().join(' · ') || '— (nur Register/Reserve)';
   const linkMd = link ? `[${link.direkt ? 'Entscheid' : 'Suche'}](${link.url})` : '—';
-  z(`| ${e.aktenzeichen} | ${e.aussage.replace(/\|/g, '·')} | ${linkMd} | ${wo} | ${e.verifiziert ? 'verifiziert' : 'zu verifizieren'} |`);
+  const status = e.verifiziert
+    ? 'verifiziert'
+    : e.quelleGeprueft
+      ? `Quelle geprüft (${e.quelleGeprueft.replace(/\|/g, '·')}) · fachliche Abnahme offen`
+      : 'zu verifizieren';
+  z(`| ${e.aktenzeichen} | ${e.aussage.replace(/\|/g, '·')} | ${linkMd} | ${wo} | ${status} |`);
 }
 z(``);
 

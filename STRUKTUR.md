@@ -27,6 +27,39 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 2./3.8.2026 (Nacht) — Vorsorgeauftrag-Vollausbau W2·8/V9, PR #411 gelandet
+**Grundlage → Direktbau → 3 GP-Runden → Merge `12bc72521` (3.8. 08:17Z, Squash).**
+- **Fachliche Grundlage** [bibliothek/recherche/vorsorgeauftrag-inhalte.md] (PV-Vorbild):
+  Art. 360–369 am Snapshot verifiziert, Befundregister V-1…V-10 — darunter 2× SCHWER:
+  der alte Personensorge-Blocker zitierte Art. 360 Abs. 1 ZGB **contra legem**
+  (Wortlaut erlaubt jur. Personen ausdrücklich); Registrierung amtlich belegt
+  (Art. 23a ZStV, Anhang 1 Ziff. 23 ZStGV: **CHF 75 Fixtarif**, «+30» gestrichen).
+- **Engine** `vorsorgeauftrag.ts` v1.1.0: Ersatzpersonen mit `typ`/`bereiche` ·
+  Vertretungsregel einzeln/gemeinsam (V02c/V02d) · V13 spricht Widerruf aus
+  (Art. 362 Abs. 1+3) + Ergänzungs-Klausel V13b · Datums-Warnung · Interessen-
+  kollisions-Hinweis (Art. 365) · **Gate-Herabstufung** jur. Person→Hinweis/
+  Medizin-Warnung (als Lehre gekennzeichnet) · 10 Zitat-Korrekturen.
+- **SSoT:** `beurkundungsHinweis()` gestrichen (3 belegte Abweichungen TG/BE/SG) →
+  UI aus `NOTARIATE` + `berechneBeurkundung` (Norm/Stand/Link, D1).
+- **Beweis:** Golden 254→255 (additiv + je Commit deklariert, kein Nicht-VA-Fall) ·
+  **Gegenprüfung 3 Opus-Runden** (R1: B1–B7 · R2: B8+L1–L5 · R3 bestanden),
+  Register-Zeile 2026-08-03 mit Hand-Hash (Tool working-tree-gebunden) ·
+  Gate voll + e2e 352 + perf-budget grün · CI inkl. Merge-Schutz grün.
+- **Offen (David):** fachliche Abnahme (Dossier unabgehakt, Herabstufung V-1/V-2
+  rückholbar) · Fahrplan §V9.1–V9.5 vertagt (Beiblatt, BGE 151 III 81,
+  formel_extern-Minimum, ZStGV-Drift-Pin, GP-Nebenfunde N1–N4).
+- **Nachzug-Session 3.8. (vormittags), gelandet #415 `accbf09d6` + #416 `2a0bb2133`:**
+  V9.5 gebaut (GP bestanden + Delta-Runde; Golden 256) · V9.2 BGE 151 III 81 am
+  Entscheid verifiziert (E. 3.5.5/3.6; neue Status-Stufe `quelleGeprueft`, Abnahme
+  offen) · Dossier-Drift geheilt + Wächter `check:dossiers` (CI) · V9.4 ZStGV:
+  Fakten gesichert, Pin bewusst zurück — **David-Entscheid Weg A/B**
+  (`bibliothek/normen/zstgv-drift-erkennung-2026-08-03.md`; Frist 15.10.2026) ·
+  Dependabot #13 dismissed (RSC-only, ungenutzt, belegt) · Lighthouse grün
+  (OR CLS 0.009). Befunde: e2e `leser-kopf-a9` flakt im Voll-Lauf (Nullprobe auf
+  main rot, Isolation grün) · `check:fedlex-versionen` main-rot (3 Pins
+  nicht-kanonisch, u.a. ZGB html-1→2 — eigener Risiko-Schritt) · BGE-Register
+  41 unregistrierte Zitate (vorbestehend).
+
 ## Session 2./3.8.2026 (Nacht) — fünf Landungen: Verfallsregister #410, B1 #408, Uppercase-Sweep #409, B2 #412, N1 #413
 **Kurzkarte der Nacht-Session-Kette (Details in den jeweiligen Einzelkarten/PRs).**
 - **#410 Verfallsregister** — 10 künftige Fassungen nachgeführt, Gegenprüfung bestanden, Squash `849581faa`.

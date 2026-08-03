@@ -1,6 +1,6 @@
 # Rechtsprechungs-Register — alle zitierten Bundesgerichtsentscheide
 
-Generiert: `npx vite-node scripts/bge-register-generieren.ts` · Stand 2026-06-10
+Generiert: `npx vite-node scripts/bge-register-generieren.ts` · Stand 2026-08-03
 
 **Quelle + Stand:** SSoT ist `src/data/verifikation.ts` (93 Einträge);
 Links deterministisch aus `src/lib/bge.ts`. **URL-Schemata empirisch verifiziert**
@@ -17,9 +17,15 @@ im Muster → bewusst KEIN Link (nie raten).
 PDF/DOCX unverändert. Neue Zitate nur über das Verifikations-Register («kein
 Aktenzeichen im Code, das hier nicht registriert ist»).
 
-**Abnahme-Status:** Linkschema zweifach geprüft (Stichproben + Suite). Die
-INHALTLICHE Verifikation der einzelnen Entscheide (Spalte Status) bleibt
-Davids fachliche Abnahme — `verifiziert: false` bedeutet «zu verifizieren».
+**Abnahme-Status (drei Stufen, §8 — der echte Prüfungsstand):**
+Linkschema zweifach geprüft (Stichproben + Suite). Die Spalte Status zeigt:
+
+- **zu verifizieren** — niemand hat den Entscheidtext gegen die Aussage gehalten.
+- **Quelle geprüft (…)** — eine Session hat den amtlichen Entscheidtext abgerufen
+  und belegt, DASS er die registrierte Aussage trägt (Fundstelle in Klammern,
+  `quelleGeprueft` im Register). Das ist die §7-Quellenprüfung, NICHT die Abnahme.
+- **verifiziert** — Davids fachliche Abnahme (`verifiziert: true`). Sie wird nie
+  automatisch gesetzt, auch nicht nach bestandener Quellenprüfung.
 
 ## Register (93 Entscheide)
 
@@ -44,7 +50,7 @@ Davids fachliche Abnahme — `verifiziert: false` bedeutet «zu verifizieren».
 | BGer 5A_545/2017 | Arresteinsprache (Art. 278 SchKG): Nur die Einsprache ist fristgebunden; die Begründung kann auf Fristansetzung nachgereicht werden. | [Suche](https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=5A_545%2F2017) | src/data/verifikation.ts | zu verifizieren |
 | BGer 5A_611/2023 | Die Minimalfrist beim Verwertungsbegehren für Grundstücke (Art. 116 SchKG) liegt im Schuldnerinteresse. | [Suche](https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=5A_611%2F2023) | src/data/verifikation.ts | zu verifizieren |
 | BGer 5A_624/2024 | Das Selbstbestimmungsrecht der auftraggebenden Person ist möglichst weitgehend zu respektieren; die Eignung der beauftragten Person ist nur zurückhaltend zu verneinen. | [Suche](https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=5A_624%2F2024) | src/data/verifikation.ts | zu verifizieren |
-| BGer 5A_691/2023 | Monatsfristen knüpfen am Tag des fristauslösenden Ereignisses an (nicht am Folgetag) – einheitliche Methode für materielles Recht und Prozessrecht. | [Suche](https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=5A_691%2F2023) | src/components/forms/ZpoFristenForm.tsx · src/data/verifikation.ts · src/lib/allgemeineFrist.ts · src/lib/bge.ts · src/lib/konventionen.ts · src/lib/mietrecht.ts · src/lib/pdf/zpoPdf.ts · src/lib/zpoFristen.ts | zu verifizieren |
+| BGer 5A_691/2023 | Monatsfristen knüpfen am Tag des fristauslösenden Ereignisses an (nicht am Folgetag) – einheitliche Methode für materielles Recht und Prozessrecht. | [Suche](https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=5A_691%2F2023) | src/components/forms/GerichtszitatForm.tsx · src/components/forms/ZpoFristenForm.tsx · src/data/verifikation.ts · src/lib/allgemeineFrist.ts · src/lib/bge.ts · src/lib/gerichtszitat.ts · src/lib/konventionen.ts · src/lib/mietrecht.ts · src/lib/pdf/zpoPdf.ts · src/lib/zpoFristen.ts | zu verifizieren |
 | BGer 5A_730/2023 | Entscheide der Aufsichtsbehörde sind i.d.R. keine Betreibungshandlung → keine Verlängerung nach Art. 63 SchKG. | [Suche](https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=5A_730%2F2023) | src/data/verifikation.ts | zu verifizieren |
 | BGer 5A_852/2014 | Lastenbereinigung (Art. 140 SchKG): Die Bestreitung muss nicht substantiiert werden. | [Suche](https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=5A_852%2F2014) | src/data/verifikation.ts | zu verifizieren |
 | BGE 100 II 245 | Nachehelicher Unterhalt: Ohne Indexklausel im Urteil besteht grundsätzlich kein Anpassungsanspruch (Art. 128 ZGB fakultativ). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F100-II-245%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/teuerung.ts | zu verifizieren |
@@ -80,13 +86,13 @@ Davids fachliche Abnahme — `verifiziert: false` bedeutet «zu verifizieren».
 | BGE 131 III 61 | Kenntnis vom Schaden (Art. 60 OR): Umstände zu Existenz, Natur und Elementen des Schadens, die eine Klage zu veranlassen und zu begründen vermögen; genaue Bezifferung nicht vorausgesetzt. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F131-III-61%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
 | BGE 131 III 623 | Karenzfrist/Anspruch: Bei Kündigungsfrist ≤ 3 Monaten entsteht der Anspruch erst ab dem ersten Tag des vierten Monats. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F131-III-623%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/lohnfortzahlung.ts | zu verifizieren |
 | BGE 132 III 226 | Verzicht auf die Verjährungseinrede: Höchstdauer von 10 Jahren bemisst sich ab Verjährungseintritt. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F132-III-226%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/gewaehrleistung.ts | zu verifizieren |
-| BGE 133 III 393 | Eheschutzentscheide gelten als vorsorgliche Massnahmen i. S. v. Art. 98 BGG (Beschränkung auf Verfassungsrügen). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F133-III-393%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/zustaendigkeit.ts | zu verifizieren |
+| BGE 133 III 393 | Eheschutzentscheide gelten als vorsorgliche Massnahmen i. S. v. Art. 98 BGG (Beschränkung auf Verfassungsrügen). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F133-III-393%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/bgerRechtsweg.ts · src/lib/zustaendigkeit.ts | zu verifizieren |
 | BGE 133 III 517 | Dienstjahreswechsel während laufender Sperrfrist: längere Sperrfrist ab erstem AUF-Tag, alte Tage angerechnet. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F133-III-517%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/sperrfristen.ts | zu verifizieren |
 | BGE 134 III 354 | Zugangs-/Empfangsprinzip; Rückrechnung der Kündigungsfrist vom Endtermin. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F134-III-354%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/allgemeineFrist.ts · src/lib/sperrfristen.ts | zu verifizieren |
 | BGE 134 III 446 | Untermiete ohne Zustimmung des Hauptvermieters: nach schriftlicher Abmahnung ausserordentliche Kündigung des Hauptmietvertrags möglich (Art. 257f Abs. 3 OR). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F134-III-446%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/vorlagen/mietvertrag.ts | zu verifizieren |
 | BGE 135 III 206 | Eigenhändige letztwillige Verfügung: Die Unterschrift steht am Schluss der Urkunde (Art. 505 ZGB). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F135-III-206%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/pages/VorlageTestament.tsx | zu verifizieren |
 | BGE 135 III 289 | Kenntnis des Bereicherungsanspruchs (Art. 67 OR): genügend Informationen, sodass eine gerichtliche Geltendmachung vernünftigerweise zumutbar ist. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F135-III-289%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
-| BGE 135 III 640 | Gleichwertigkeitsmassstab bei Krankentaggeldversicherung (Art. 324a Abs. 4 OR). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F135-III-640%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/vorlagen/arbeitsvertrag.ts | zu verifizieren |
+| BGE 135 III 640 | Gleichwertigkeitsmassstab bei Krankentaggeldversicherung (Art. 324a Abs. 4 OR). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F135-III-640%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/lohnfortzahlung.ts · src/lib/vorlagen/arbeitsvertrag.ts | zu verifizieren |
 | BGE 137 III 16 | Vertragliche Schadenersatzforderungen werden mit der Verletzung der Vertragspflicht fällig (nicht erst mit Schadenseintritt) – Beginn der ordentlichen Verjährung. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F137-III-16%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
 | BGE 137 III 208 | Absolute Empfangstheorie für den Zugang der Kündigung; Schutz der Familienwohnung auch bei Geschäftsräumen, die zugleich Familienwohnung sind. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F137-III-208%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
 | BGE 137 III 453 | War die Schuld vor Verzug höher als 5% verzinst, gilt der vertragliche Satz auch für die Verzugszinsen. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F137-III-453%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
@@ -96,7 +102,7 @@ Davids fachliche Abnahme — `verifiziert: false` bedeutet «zu verifizieren».
 | BGE 139 III 78 | Art. 145 Abs. 3 ZPO (Hinweis auf Nichtgeltung des Stillstands) ist Gültigkeitsvorschrift; fehlt der Hinweis, stehen die Fristen still. Die Ausnahme «summarisch» gilt auch für die Berufungsfrist gegen einen Summarentscheid. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F139-III-78%3Ade&lang=de&type=show_document) | src/components/forms/ZpoFristenForm.tsx · src/data/verifikation.ts · src/lib/bge.ts · src/lib/zpoFristen.ts · src/lib/zpoPresets.ts · src/types/zpo.ts | zu verifizieren |
 | BGE 140 III 227 | Massgeblich für die Klagefrist ist die Eröffnung/Zustellung der Klagebewilligung. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F140-III-227%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/pages/VorlageKlageOrdentlich.tsx · src/pages/VorlageKlageVereinfacht.tsx | zu verifizieren |
 | BGE 140 III 244 | Zugang nach absoluter Empfangstheorie; die zivilprozessuale 7-Tage-Zustellfiktion gilt im materiellen Recht nicht. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F140-III-244%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
-| BGE 140 III 409 | NUR Beispiel-Zitat der Zitier-Konvention (lib/konventionen.ts) – kein materieller Rechtsprechungsverweis. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F140-III-409%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/konventionen.ts | zu verifizieren |
+| BGE 140 III 409 | NUR Beispiel-Zitat der Zitier-Konvention (lib/konventionen.ts) – kein materieller Rechtsprechungsverweis. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F140-III-409%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/gerichtszitat.ts · src/lib/konventionen.ts | zu verifizieren |
 | BGE 140 III 555 | Die berufsmässige Vertretung im Zivilprozess ist Anwältinnen und Anwälten vorbehalten (Art. 68 Abs. 2 ZPO). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F140-III-555%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/vorlagen/vollmacht.ts | zu verifizieren |
 | BGE 140 III 561 | Der frühere Vorbehalt in Art. 209 Abs. 4 betrifft nur prozessuale Prosequierungsfristen, nicht materielle Verwirkungsfristen. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F140-III-561%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/schkgPresets.ts · src/lib/zpoPresets.ts | zu verifizieren |
 | BGE 141 II 429 | Zustellfiktion (7. Tag) gilt unabhängig von einer mit der Post vereinbarten längeren Abholfrist. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F141-II-429%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/allgemeineFrist.ts | zu verifizieren |
@@ -114,12 +120,55 @@ Davids fachliche Abnahme — `verifiziert: false` bedeutet «zu verifizieren».
 | BGE 149 III 179 | Die Auflage des Kollokationsplans ist keine Betreibungshandlung → für die Kollokationsklage gelten die ZPO-Gerichtsferien (Art. 145 ZPO), nicht Art. 63 SchKG. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F149-III-179%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
 | BGE 149 III 202 | Laufende Ferienlohn-Abgeltung im Stundenlohn ist bei Vollzeitbeschäftigung unzulässig – auch bei schwankenden Löhnen (Art. 329d Abs. 2 OR). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F149-III-202%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/vorlagen/arbeitsvertrag.ts · src/pages/VorlageArbeitsvertrag.tsx | zu verifizieren |
 | BGE 150 III 367 | Monatsfrist nach Art. 77 Abs. 1 Ziff. 3 OR endet am gleichbezeichneten Tag des Zielmonats. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F150-III-367%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/allgemeineFrist.ts | zu verifizieren |
-| BGE 151 III 81 | Die öffentliche Beurkundung des Vorsorgeauftrags richtet sich nach kantonalem Recht (Art. 55 SchlT ZGB); kein Beizug zweier Zeugen wie beim öffentlichen Testament erforderlich. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F151-III-81%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/vorlagen/vorsorgeauftrag.ts · src/pages/VorlageVorsorgeauftrag.tsx | zu verifizieren |
+| BGE 151 III 81 | Die öffentliche Beurkundung des Vorsorgeauftrags richtet sich nach kantonalem Recht (Art. 55 SchlT ZGB); kein Beizug zweier Zeugen wie beim öffentlichen Testament erforderlich. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F151-III-81%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/vorlagen/vorsorgeauftrag.ts · src/pages/VorlageVorsorgeauftrag.tsx | Quelle geprüft (Session 3.8.2026, E. 3.5.5 und E. 3.6, Urteil vom 17.1.2025) · fachliche Abnahme offen |
 | BGE 78 II 230 | Entgeltliches Konkurrenzverbot ohne vorbehaltenes Verzichtsrecht: Der Arbeitgeber kann sich nicht einseitig durch Verzicht von der Karenzentschädigung befreien. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F78-II-230%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/vorlagen/arbeitsvertrag.ts | zu verifizieren |
 | BGE 81 II 56 | Prüf- und Rügeobliegenheit (Art. 201 OR) gilt analog beim Grundstückkauf und für zugesicherte Eigenschaften. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F81-II-56%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
 | BGE 98 II 191 | Massstab der sofortigen Mängelrüge; wenige Kalendertage nach Kenntnis genügen stets. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F98-II-191%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
 
-## Lücken: im Code zitiert, aber NICHT im Verifikations-Register (0)
+## Lücken: im Code zitiert, aber NICHT im Verifikations-Register (41)
 
-Keine — jedes zitierte Aktenzeichen ist registriert.
+- **1A.122/2005** — src/lib/rechtsprechung/zitat-extraktion.ts
+- **1C_45/2024** — src/lib/gerichtszitat.ts
+- **2C_37/2016** — src/lib/rechtsprechung/zitat-extraktion.ts
+- **4A_123/2020** — src/lib/rechtsprechung/zitat-extraktion.ts
+- **4A_123/2025** — src/lib/gerichtszitat.ts
+- **5A_1100/2025** — src/lib/rechtsprechung/typen.ts
+- **5A_178/2024** — src/lib/suche/bgeQuery.ts
+- **7B_950/2024** — src/lib/rechtsprechung/besetzung.ts
+- **BGE 100 Ia 305** — src/lib/gerichtszitat.ts
+- **BGE 115 II 464** — src/lib/vorlagen/auftrag.ts
+- **BGE 128 III 271** — src/lib/vorlagen/arbeitsvertrag.ts
+- **BGE 131 I 24** — src/lib/rechtsprechung/rubrum.ts
+- **BGE 137 I 305** — src/lib/rechtsprechung/zitat-extraktion.ts
+- **BGE 137 III 47** — src/lib/rechtsprechung/register.ts
+- **BGE 137 IV 122** — src/lib/bgerRechtsweg.ts
+- **BGE 139 II 134** — src/components/rechtsprechung/EntscheidBody.tsx
+- **BGE 140 III 86** — src/lib/rechtsprechung/ecli.ts
+- **BGE 144 II 486** — src/lib/rechtsprechung/abschnitte.ts · src/lib/verzahnung/entscheid-kanten.ts
+- **BGE 146 II 111** — src/lib/rechtsprechung/zitat-extraktion.ts
+- **BGE 147 I 268** — src/lib/rechtsprechung/zitat-extraktion.ts
+- **BGE 147 II 287** — src/lib/rechtsprechung/besetzung.ts
+- **BGE 147 II 454** — src/lib/rechtsprechung/besetzung.ts
+- **BGE 147 III 121** — src/lib/rechtsprechung/zitat-extraktion.ts
+- **BGE 147 III 209** — src/components/verzahnung/KantenChip.tsx · src/lib/verzahnung/glossar.ts
+- **BGE 147 III 440** — src/lib/rechtsprechung/besetzung.ts
+- **BGE 148 V 114** — src/lib/rechtsprechung/besetzung.ts
+- **BGE 149 I 343** — src/lib/rechtsprechung/zitat-extraktion.ts
+- **BGE 150 II 379** — src/components/rechtsprechung/EntscheidBody.tsx
+- **BGE 150 III 137** — src/lib/rechtsprechung/browse.ts
+- **BGE 150 III 34** — src/lib/suche/bgeQuery.ts
+- **BGE 150 III 38** — src/lib/suche/bgeQuery.ts
+- **BGE 150 III 385** — src/lib/suche/bgeQuery.ts
+- **BGE 150 IV 273** — src/lib/rechtsprechung/zitat-extraktion.ts
+- **BGE 150 IV 86** — src/lib/rechtsprechung/zitat-extraktion.ts
+- **BGE 151 III 377** — src/lib/fedlex.ts
+- **BGE 151 IV 175** — src/lib/rechtsprechung/besetzung.ts
+- **BGE 151 IV 98** — src/lib/rechtsprechung/besetzung.ts
+- **BGE 152 I 105** — src/components/rechtsprechung/EntscheidBody.tsx
+- **BGE 152 I 65** — src/lib/normtext/werkzeuge.ts · src/lib/suche/bgeQuery.ts · src/pages/Abdeckung.tsx · src/pages/Suche.tsx
+- **BGE 152 III 92** — src/lib/rechtsprechung/sachverhalt.ts
+- **BGE 152 IV 14** — src/lib/rechtsprechung/register.ts
+
+→ Nachregistrieren in `src/data/verifikation.ts` (Aussage formulieren,
+`verifiziert: false`), dann dieses Register neu generieren.
 
