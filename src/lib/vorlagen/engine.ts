@@ -75,7 +75,7 @@ export interface DokumentAbsatz {
   stricheErlaubt?: boolean;
 }
 
-export interface ProtokollEintrag {
+interface ProtokollEintrag {
   bausteinId: string;
   begruendung: string;
   norm?: string;

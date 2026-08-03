@@ -31,7 +31,7 @@ import type { Kanton } from '../../types/legal';
 // vereinfachte Verfahren); der Adressat ist das erstinstanzliche
 // Zivilgericht des gewählten Kantons. Status entwurf bis Davids Abnahme.
 
-export type KoTatsache = { text: string; beweise: { bezeichnung: string }[] };
+type KoTatsache = { text: string; beweise: { bezeichnung: string }[] };
 
 export type KoAnswers = {
   vermoegensrechtlich: boolean;

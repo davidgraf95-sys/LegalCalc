@@ -6,7 +6,7 @@
 // (§15): sie kommen aus derselben register.json, die das Kontext-Panel ohnehin
 // lädt (ladeMaterialManifest, gecachte Promise) — deshalb kein zweiter Fetch.
 //
-// Finding 11 (Payload/§15): botschaftenFuerNorm iteriert die volle Liste NICHT je
+// Finding 11 (Payload/§15): botschaftenFuer iteriert die volle Liste NICHT je
 // Aufruf, sondern baut EINMAL einen erlassKey→Botschaften-Index (memoisiert auf die
 // Manifest-Referenz). §5: keine zweite Wahrheit — der Index ist eine In-Memory-
 // Projektion des Manifests, keine committete Parallel-Datei.
@@ -74,20 +74,6 @@ function baueIndex(manifest: MaterialManifest): Map<string, BotschaftBezug[]> {
     liste.sort((a, b) => (a.stand < b.stand ? 1 : a.stand > b.stand ? -1 : (a.key < b.key ? -1 : a.key > b.key ? 1 : 0)));
   }
   return index;
-}
-
-/**
- * Botschaften zu EINEM Erlass-Key (lazy). Leeres Array = keine Verknüpfung im Graphen
- * (z. B. Verordnung ohne Botschaft, Pa.Iv.-Ursprung, Pre-2000, frischer Erlass) — die
- * Ursache differenziert das UI (§8). `null` = Manifest-Ladefehler (Fetch-Fehler ≠ leer).
- */
-export async function botschaftenFuerNorm(normKey: string): Promise<BotschaftBezug[] | null> {
-  const manifest = await ladeMaterialManifest();
-  if (!manifest) return null;
-  if (!indexCache || indexCache.manifest !== manifest) {
-    indexCache = { manifest, index: baueIndex(manifest) };
-  }
-  return indexCache.index.get(normKey) ?? [];
 }
 
 /**

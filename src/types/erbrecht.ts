@@ -19,12 +19,12 @@ export type Gueterstand =
 
 // Stamm eines vorverstorbenen Kindes: dessen Nachkommen treten ein
 // (Art. 457 Abs. 3 ZGB). Nur Stämme MIT Nachkommen erben.
-export type KinderStamm = {
+type KinderStamm = {
   enkel: number; // Anzahl eintretender Nachkommen dieses Stammes (> 0)
 };
 
 // Elternteil der 2. Parentel (Art. 458 ZGB).
-export type Elternteil = {
+type Elternteil = {
   lebt: boolean;
   // Falls vorverstorben: hat dieser Stamm Nachkommen (Geschwister/Nichten/
   // Neffen des Erblassers)? Sonst Anwachsung an die andere Seite (Abs. 4).

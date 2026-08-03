@@ -29,7 +29,7 @@ export const GLIEDERUNGEN: ReadonlyArray<{ id: Gliederung; label: string }> = [
   { id: 'rechtsgebiet', label: 'Rechtsgebiet' },
 ];
 
-export const GLIEDERUNG_DEFAULT: Gliederung = 'systematisch';
+const GLIEDERUNG_DEFAULT: Gliederung = 'systematisch';
 
 const KEY = 'lm.gesetze.gliederung';
 
@@ -38,7 +38,7 @@ function istGliederung(v: unknown): v is Gliederung {
 }
 
 /** Gespeicherte Wahl (localStorage) oder Default. SSR-sicher. */
-export function ladeGliederung(): Gliederung {
+function ladeGliederung(): Gliederung {
   if (typeof window === 'undefined') return GLIEDERUNG_DEFAULT;
   try {
     const roh = localStorage.getItem(KEY);

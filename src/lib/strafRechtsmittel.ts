@@ -51,7 +51,7 @@ export interface StrafRmInput {
   bundesgerichtsbarkeit?: boolean;
 }
 
-export type StrafRechtsmittelTyp = 'berufung' | 'beschwerde' | 'einsprache' | 'revision' | 'keines';
+type StrafRechtsmittelTyp = 'berufung' | 'beschwerde' | 'einsprache' | 'revision' | 'keines';
 
 export interface StrafRmErgebnis {
   statthaft: StrafRechtsmittelTyp;

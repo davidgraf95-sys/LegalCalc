@@ -15,7 +15,7 @@
 // einseitig driften.
 
 export const EMISSIONSABGABE_FREIBETRAG_CHF = 1_000_000;
-export const EMISSIONSABGABE_SATZ = 0.01;
+const EMISSIONSABGABE_SATZ = 0.01;
 
 /** Roh-Emissionsabgabe (ungerundet): 1 % des den Freibetrag übersteigenden
  *  Teils der Leistungen; 0, soweit der Freibetrag nicht überschritten wird. */

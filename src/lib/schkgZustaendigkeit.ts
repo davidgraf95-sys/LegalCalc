@@ -57,9 +57,9 @@ export interface SchkgInput {
   rechtsoeffnungArt?: 'provisorisch' | 'definitiv';
 }
 
-export interface SchkgNorm { artikel: string; bemerkung?: string }
-export interface SchkgFrist { label: string; frist: string; norm: string; kritisch: boolean }
-export interface SchkgSchritt { titel: string; text: string }
+interface SchkgNorm { artikel: string; bemerkung?: string }
+interface SchkgFrist { label: string; frist: string; norm: string; kritisch: boolean }
+interface SchkgSchritt { titel: string; text: string }
 
 export interface SchkgErgebnis {
   betreibungsort: { text: string; normen: SchkgNorm[] };

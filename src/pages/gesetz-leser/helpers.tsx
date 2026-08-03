@@ -155,7 +155,7 @@ export function pfadZu(sektionen: Sektion[], treffer: (s: Sektion) => boolean): 
 // G15: Hervorhebungen (fett/kursiv) im Fussnotentext als Rich-Text rendern. Der
 // Extraktor (fussnoten-extrahiere.clean) behält bare <b>/<i>; hier werden sie in
 // <strong>/<em> übersetzt (rekursiv für die seltene Verschachtelung <i>…<b>…</b>…</i>).
-export function richText(s: string, keyBase: string): ReactNode {
+function richText(s: string, keyBase: string): ReactNode {
   if (!s.includes('<')) return s;
   const out: ReactNode[] = [];
   const re = /<(b|i)>([\s\S]*?)<\/\1>/gi;
@@ -177,7 +177,7 @@ export function richText(s: string, keyBase: string): ReactNode {
 
 // Fussnoten-Text mit klickbaren AS/BBl-Verweisen (die Label-Vorkommen werden
 // durch Anker ersetzt) und erhaltenen Hervorhebungen (G15). Reine Darstellung.
-export function escRe(s: string): string { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+function escRe(s: string): string { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
 // ── W2·10-UI-NAV/N0b: Fuzzy-Erlass-Vorschläge für die Fehlseite ──────────────
 // Deterministisch (§2 — kein LLM): normalisiert Anfrage + Kandidaten mit norm()

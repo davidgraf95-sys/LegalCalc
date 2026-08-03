@@ -14,7 +14,7 @@
 // Gründungs-Masken (AG, später GmbH — die Tarife gelten je Erlass auch der
 // GmbH) konsumieren das Ergebnis.
 
-export type NotariatsGebuehr =
+type NotariatsGebuehr =
   | { typ: 'betrag'; chf: number }
   | { typ: 'rahmen'; vonChf: number; bisChf: number; mittelChf?: number }
   | { typ: 'aufwand' }

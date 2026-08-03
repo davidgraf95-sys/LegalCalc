@@ -20,15 +20,10 @@
 // Reine, testbare Datenschicht: dieselben Funktionen speisen den Build-Generator
 // (scripts/normtext/historie-generieren.ts) UND die Unit-Tests.
 
-import {
-  parseDeutschesRevisionsdatum,
-  kanonArtikelToken,
-} from '../verzahnung/revisionen-extrakt';
-
-export { kanonArtikelToken };
+import { parseDeutschesRevisionsdatum } from '../verzahnung/revisionen-extrakt';
 
 /** Fundstelle (AS/BBl-Label + amtlicher ELI-Deep-Link), wie im Sidecar gespeichert. */
-export interface FnLink {
+interface FnLink {
   label: string;
   url: string;
 }

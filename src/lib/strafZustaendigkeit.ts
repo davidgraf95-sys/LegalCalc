@@ -36,7 +36,7 @@ export interface StrafInput {
 }
 
 export interface StrafNorm { artikel: string; bemerkung?: string }
-export interface StrafSchritt { titel: string; text: string }
+interface StrafSchritt { titel: string; text: string }
 export interface StrafFrist { label: string; frist: string; norm: string; kritisch: boolean }
 
 export interface StrafErgebnis {

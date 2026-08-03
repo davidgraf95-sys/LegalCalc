@@ -23,7 +23,7 @@ import type { BezugsFacetten, BezugStatus } from '../verzahnung/facetten';
 import { STATUS_RANG } from '../verzahnung/facetten';
 
 /** Dokument-Kopf — EINMAL je Shard, nicht je Artikel (§15, siehe Generator). */
-export interface BezugsDokument {
+interface BezugsDokument {
   zitierung: string;
   regesteKurz: string | null;
   datum: string;
@@ -40,7 +40,7 @@ export interface BezugsDokument {
  * Unterschied mitrendern — eine 0 an einem kantonalen Entscheid behauptete, ihn
  * zitiere niemand (§8).
  */
-export interface BezugsEintrag {
+interface BezugsEintrag {
   key: string;
   gewicht: number | null;
 }
@@ -266,10 +266,4 @@ export async function ladeBezugsBilanz(): Promise<BezugsBilanz | null> {
     })();
   }
   return bilanzPromise;
-}
-
-/** Nur für Tests: den Shard-Promise-Cache leeren (sonst leckt er über Testfälle). */
-export function _leereBezugsCache(): void {
-  shardPromises.clear();
-  bilanzPromise = null;
 }

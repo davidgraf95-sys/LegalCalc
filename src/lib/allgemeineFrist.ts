@@ -33,7 +33,7 @@ export interface AllgFristInput {
   kanton?: Kanton;               // nötig, wenn feiertageVerschieben
 }
 
-export interface RechenSchritt {
+interface RechenSchritt {
   label: string;
   datum: string;                 // dd.MM.yyyy
   wochentag: string;

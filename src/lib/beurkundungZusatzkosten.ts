@@ -35,12 +35,12 @@ export const FREIES_NOTARIAT: ReadonlySet<KantonCode> = new Set<KantonCode>(
   ['BE', 'LU', 'UR', 'OW', 'FR', 'BS', 'BL', 'GR', 'AG', 'TI', 'VD', 'VS', 'NE', 'GE', 'JU'],
 );
 
-export const MWST_QUELLE = { erlass: 'MWSTG (SR 641.20), Art. 25 Abs. 1', url: 'https://www.fedlex.admin.ch/eli/cc/2009/615/de', stand: '1.1.2024' };
+const MWST_QUELLE = { erlass: 'MWSTG (SR 641.20), Art. 25 Abs. 1', url: 'https://www.fedlex.admin.ch/eli/cc/2009/615/de', stand: '1.1.2024' };
 
 /** Handelsregistergebühr des Bundes (GebV-HReg, SR 221.411.1, Anhang zu Art. 3
  *  Abs. 1, Stand 1.1.2021) — feste Gesamtgebühr je Tatsache (davon 90 % Kanton /
  *  10 % Bund, Art. 8; der Kunde zahlt den Gesamtbetrag). */
-export const HREG_GEBUEHR: Partial<Record<GeschaeftsartId, { chf: number; ziffer: string }>> = {
+const HREG_GEBUEHR: Partial<Record<GeschaeftsartId, { chf: number; ziffer: string }>> = {
   ag_gruendung: { chf: 420, ziffer: 'Anhang Ziff. 1.3' },
   gmbh_gruendung: { chf: 420, ziffer: 'Anhang Ziff. 1.3' },
   genossenschaft_gruendung: { chf: 280, ziffer: 'Anhang Ziff. 1.4' },
@@ -51,15 +51,15 @@ export const HREG_GEBUEHR: Partial<Record<GeschaeftsartId, { chf: number; ziffer
   fusion: { chf: 420, ziffer: 'Anhang Ziff. 2.1 (übernehmende Rechtseinheit)' },
 };
 
-export const HREG_QUELLE = { erlass: 'GebV-HReg (SR 221.411.1), Anhang zu Art. 3', url: 'https://www.fedlex.admin.ch/eli/cc/2020/180/de', stand: '1.1.2021' };
+const HREG_QUELLE = { erlass: 'GebV-HReg (SR 221.411.1), Anhang zu Art. 3', url: 'https://www.fedlex.admin.ch/eli/cc/2020/180/de', stand: '1.1.2021' };
 
 /** Geschäftsarten, bei denen die Emissionsabgabe (Schaffung/Erhöhung von
  *  Beteiligungsrechten an AG/GmbH) anfällt. */
-export const EMISSIONSABGABE_ARTEN: ReadonlySet<GeschaeftsartId> = new Set<GeschaeftsartId>(
+const EMISSIONSABGABE_ARTEN: ReadonlySet<GeschaeftsartId> = new Set<GeschaeftsartId>(
   ['ag_gruendung', 'gmbh_gruendung', 'kapitalerhoehung'],
 );
 
-export const EMISSIONSABGABE_QUELLE = { erlass: 'StG (SR 641.10), Art. 8 Abs. 1 i.V.m. Art. 6 Abs. 1 lit. h', url: 'https://www.fedlex.admin.ch/eli/cc/1974/11_11_11/de', stand: '1.1.2024' };
+const EMISSIONSABGABE_QUELLE = { erlass: 'StG (SR 641.10), Art. 8 Abs. 1 i.V.m. Art. 6 Abs. 1 lit. h', url: 'https://www.fedlex.admin.ch/eli/cc/1974/11_11_11/de', stand: '1.1.2024' };
 
 /** Emissionsabgabe für die Zusatzkosten-Anzeige: auf ganze Franken gerundet,
  *  0 bei fehlender/zu kleiner Bemessung. Satz + Freibetrag (Freibetrag, nicht
@@ -79,7 +79,7 @@ export function mwstAufschlag(gebuehrChf: number): number {
  *  (zusätzlich zu Notariats-/Grundbuchgebühr; nur einzelne Kantone, z. B.
  *  FR/GE/VS/JU). Satz in % der Pfandsumme. Quelle: amtlich verifiziert
  *  (FAHRPLAN-LUECKEN-SCHLIESSEN L3). Leer = Kanton erhebt keine. */
-export const PFANDSTEUER: Partial<Record<KantonCode, { satzProzent: number; artikel: string; url: string; stand: string; freigrenzeChf?: number; basisAbrundenChf?: number; mindestChf?: number }>> = {
+const PFANDSTEUER: Partial<Record<KantonCode, { satzProzent: number; artikel: string; url: string; stand: string; freigrenzeChf?: number; basisAbrundenChf?: number; mindestChf?: number }>> = {
   FR: { satzProzent: 0.75, artikel: "Art. 23 al. 1 i.V.m. Art. 5 al. 1 lit. a Loi sur les droits de mutation et les droits sur les gages immobiliers (LDMG, RSF 635.1.1)", url: "https://bdlf.fr.ch/app/fr/texts_of_law/635.1.1", stand: "2024-03-01" },
   GE: { satzProzent: 0.65, artikel: "LDE (RSG D 3 30) Art. 84 et Art. 85", url: "https://silgeneve.ch/legis/data/rsg_d3_30.htm", stand: "2026-03-21" },
   // JU: 3,5 o/oo, gesetzlicher Mindestbetrag CHF 30 (Art. 13 al. 1: "et de 30 francs au moins").

@@ -17,15 +17,15 @@ export type Status = 'entwurf' | 'geprüft' | 'geplant';
 // Rechtsbereich: bei Rechnern Gliederungsachse (Katalog), bei Vorlagen Filterwert
 export type Rechtsbereich = 'privat' | 'oeffentlich' | 'straf' | 'uebergreifend';
 export const istAktiv = (s: Status) => s !== 'geplant';
-export type Modus = 'rechner' | 'vorlage'; // inhaltliche Hauptweiche (In-Page-Toggle)
-export type Art = 'frist' | 'betrag' | 'zuordnung' | 'werkzeug'; // Rechner-Output-Typ → Sektion
+type Modus = 'rechner' | 'vorlage'; // inhaltliche Hauptweiche (In-Page-Toggle)
+type Art = 'frist' | 'betrag' | 'zuordnung' | 'werkzeug'; // Rechner-Output-Typ → Sektion
 // S-2 STRUKTUR-UMBAU (Auftrag David 10.6.2026 abends): Vorlagen-Gruppen neu —
 // Behördeneingaben · Verträge · Einseitige Willenserklärungen (vorher
 // «korrespondenz») · Gesellschaftsrecht · Vorsorge & Nachlass (ergänzt auf
 // Davids «gerne ergänzen»: Testament/Vorsorgeauftrag wären dogmatisch auch
 // einseitige Willenserklärungen, der Praxis-Block bleibt aber eigener
 // Einstieg — fachliche Aussage, Abnahme David offen).
-export type VorlageArt = 'eingabe' | 'vertrag' | 'erklaerung' | 'gesellschaft' | 'vorsorge'; // Dokument-Typ → Sektion/Filter
+type VorlageArt = 'eingabe' | 'vertrag' | 'erklaerung' | 'gesellschaft' | 'vorsorge'; // Dokument-Typ → Sektion/Filter
 // Unterrubriken der Behördeneingaben (S-2): Klagen allgemein (Schlichtungs-
 // gesuch · vereinfachte · ordentliche Klage) · Klagen besondere Verfahren
 // (nach klageGebiet) · Gesuche & sonstige Eingaben.
@@ -37,7 +37,7 @@ export type EingabeRubrik = 'klage_allgemein' | 'klage_besonders' | 'gesuch_sons
 // bekäme einen neuen, funktionsbezogenen Zuschnitt — Stand vor dem Rückbau
 // dokumentiert die Git-Historie (Commit 2e80daf und Vorgänger).
 
-export interface NormRef {
+interface NormRef {
   label: string;      // Anzeigetext, unverändert (z. B. "Art. 335c OR")
   url: string;        // verifizierter Fedlex-Artikel-Link ODER Gesetz-Seite
   verified: boolean;  // true nur bei geprüftem Artikel-Anker
@@ -63,7 +63,7 @@ interface BaseItem {
   imKatalog?: false;
 }
 
-export interface RechnerCard extends BaseItem {
+interface RechnerCard extends BaseItem {
   modus: 'rechner';
   art: Art;               // Output-Typ → bestimmt die Sektion
   // Konsolidierte Karten: abgedeckte Szenarien; 'geplant' = noch nicht gebaute Option

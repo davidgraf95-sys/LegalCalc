@@ -26,7 +26,7 @@
 /** Nachfolge-Erlass eines aufgehobenen Erlasses. `eli` ist der ELI-Pfad im
  *  cache.sh-Format (`cc/2025/408`) — die SR-Nummer KANN identisch sein
  *  (Totalrevision behält den SR-Slot, neue ELI). */
-export interface AufhebungsNachfolger {
+interface AufhebungsNachfolger {
   /** SR-Nummer des Nachfolgers (kann == der des aufgehobenen Erlasses sein). */
   sr: string;
   /** Volltitel des Nachfolge-Erlasses (amtlich). */

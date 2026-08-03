@@ -24,7 +24,7 @@ export type { Rechtsgebiet, Sprache };
 //                   Das Angezeigte IST die amtliche Fassung (kein Extrakt). Künftig.
 // 'volltext'      = strukturierter Volltext-Snapshot (public/materialien/volltext/).
 //                   Nur mit §7-Zitat-Ausnahme (Stand/Quelle/Live-Link/Drift). Künftig.
-export type MaterialStatus = 'nur-live-link' | 'pdf-embed' | 'volltext';
+type MaterialStatus = 'nur-live-link' | 'pdf-embed' | 'volltext';
 
 // ── Behörde (Herausgeber) ────────────────────────────────────────────────────
 export type BehoerdeId =

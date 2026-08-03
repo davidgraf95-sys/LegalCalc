@@ -7,7 +7,7 @@
 // validiert — Ungültiges wird stillschweigend weggelassen (die Engines
 // validieren ohnehin erneut).
 
-export type PermalinkFeld<V> =
+type PermalinkFeld<V> =
   | { p: string; typ: 'str'; gueltig?: (v: string) => boolean }
   | { p: string; typ: 'num'; gueltig?: (v: number) => boolean }
   | { p: string; typ: 'bool' }

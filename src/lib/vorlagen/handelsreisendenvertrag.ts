@@ -30,9 +30,9 @@ import { type Detailgrad, DETAILGRAD_DEFAULT, AB_STANDARD, NUR_EXPERTE } from '.
 //   auf Ende des zweiten Folgemonats).
 // - Art. 350a (Provision bei Beendigung; Rückgabe der Unterlagen).
 
-export type HrLohnmodell = 'fix' | 'fix_provision' | 'provision';
-export type HrVollmacht = 'vermittlung' | 'abschluss';
-export type HrAuslagen = 'effektiv' | 'pauschal';
+type HrLohnmodell = 'fix' | 'fix_provision' | 'provision';
+type HrVollmacht = 'vermittlung' | 'abschluss';
+type HrAuslagen = 'effektiv' | 'pauschal';
 
 export type HrAntworten = {
   detailgrad: Detailgrad;

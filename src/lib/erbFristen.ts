@@ -40,7 +40,7 @@ export type ErbFristKey =
   | 'erbschaftsklage_boesglaeubig'
   | 'vermaechtnisklage';
 
-export type ErbFristGruppe = 'erbgang' | 'klage';
+type ErbFristGruppe = 'erbgang' | 'klage';
 
 export interface ErbFristPreset {
   key: ErbFristKey;

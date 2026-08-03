@@ -12,7 +12,7 @@ import { ALLE_KARTEN, istVerfuegbar, type CalculatorCard } from './startseiteCon
 import { kategorieFuer, OBERKATEGORIEN, type OberkategorieId } from './oberkategorien';
 import { RECHTSGEBIET_SEKTIONEN } from './startseiteConfigTypen';
 
-export interface EinstiegZelle {
+interface EinstiegZelle {
   kategorie: OberkategorieId;
   titel: string;
   karten: CalculatorCard[];

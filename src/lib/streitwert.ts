@@ -222,9 +222,9 @@ export function berechneStreitwert(input: StreitwertInput): StreitwertErgebnis {
 // sachliche Zuständigkeit, BGG-Streitwert nach Art. 51–53) als «selbst prüfen»
 // geflaggt (§8). Schwellen sind datierte Parameter → Verfallsregister-Kandidat.
 
-export const ZPO_VEREINFACHT_GRENZE_CHF = 30_000; // Art. 243 Abs. 1 ZPO
-export const BGG_STREITWERT_UEBRIGE_CHF = 30_000; // Art. 74 Abs. 1 lit. b BGG
-export const BGG_STREITWERT_MIETE_ARBEIT_CHF = 15_000; // Art. 74 Abs. 1 lit. a BGG
+const ZPO_VEREINFACHT_GRENZE_CHF = 30_000; // Art. 243 Abs. 1 ZPO
+const BGG_STREITWERT_UEBRIGE_CHF = 30_000; // Art. 74 Abs. 1 lit. b BGG
+const BGG_STREITWERT_MIETE_ARBEIT_CHF = 15_000; // Art. 74 Abs. 1 lit. a BGG
 
 /** Für die BGG-Schwelle relevante Gebiets-Gabelung (Art. 74 Abs. 1 lit. a/b). */
 export type StreitwertGebiet = 'miete_arbeit' | 'uebrige';

@@ -34,7 +34,7 @@ export function ankerFuer(marke: string): string {
   return marke.toLowerCase().replace(/[^0-9a-z]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
-export interface ErwSub {
+interface ErwSub {
   block: EntscheidBlock;
   /** Anker-Id des Unter-Blocks (leer bei markenlosen Erwägungen → kein Sprung-Ziel). */
   anker: string;

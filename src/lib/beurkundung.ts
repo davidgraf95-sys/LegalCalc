@@ -16,9 +16,7 @@ import { KANTONE } from '../data/tarif/typen';
 import { auswertenTarif, type TarifErgebnis } from './tarif/staffel';
 import { geschaeftsart, type GeschaeftsartId } from '../data/tarif/beurkundung-typen';
 import { GRUNDSTUECKKAUF_BEURKUNDUNG, GENERELLER_WERTTARIF, SONDERTARIFE } from '../data/tarif/beurkundung';
-import { type NgQuelle, type NgPosten, type Spanne, ergebnisSpanne, ngPostenText } from './notariatGrundbuch';
-
-export type { NgQuelle, NgPosten, Spanne };
+import { type NgQuelle, type NgPosten, ergebnisSpanne, ngPostenText } from './notariatGrundbuch';
 
 const quelle = (t: KantonalerTarif): NgQuelle => ({
   erlassName: t.erlassName, erlassNr: t.erlassNr, artikel: t.artikel,

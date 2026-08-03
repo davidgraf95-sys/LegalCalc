@@ -4,12 +4,12 @@
 // streuen. Nur Erlasse aufnehmen, deren SR-Nummer und ELI-Pfad gesichert
 // sind – nichts erfinden oder «anreichern».
 
-export type ErlassInfo = {
+type ErlassInfo = {
   sr: string;   // SR-Nummer (Systematische Rechtssammlung)
   eli: string;  // Fedlex-ELI-Pfad der konsolidierten Fassung
 };
 
-export const ERLASSE: Record<string, ErlassInfo> = {
+const ERLASSE: Record<string, ErlassInfo> = {
   ZPO:   { sr: '272',     eli: 'eli/cc/2010/262' },
   OR:    { sr: '220',     eli: 'eli/cc/27/317_321_377' },
   ZGB:   { sr: '210',     eli: 'eli/cc/24/233_245_233' },

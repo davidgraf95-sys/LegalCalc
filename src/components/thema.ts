@@ -14,7 +14,7 @@ export type ThemaWahl = Thema | 'auto';       // Nutzer-Wahl ('auto' folgt dem S
 const KEY = 'lexmetrik-thema';
 
 /** Ausdrückliche Wahl aus dem letzten Besuch (inkl. 'auto'); null → noch keine. */
-export function gespeicherteWahl(): ThemaWahl | null {
+function gespeicherteWahl(): ThemaWahl | null {
   try {
     const v = localStorage.getItem(KEY);
     return v === 'hell' || v === 'dunkel' || v === 'auto' ? v : null;
@@ -35,7 +35,7 @@ export function systemThema(): Thema {
 /** Zeitbasierte Vorgabe (Auftrag David 19.6.2026): abends 20:00 bis morgens
  *  08:00 automatisch dunkel, sonst hell. SSR-sicher (new Date() im Build ist
  *  unkritisch — main.tsx wendet beim Client-Mount neu an). */
-export function zeitThema(): Thema {
+function zeitThema(): Thema {
   const h = new Date().getHours();
   return h >= 20 || h < 8 ? 'dunkel' : 'hell';
 }

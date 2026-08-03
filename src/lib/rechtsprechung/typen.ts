@@ -51,7 +51,7 @@ export interface EntscheidAbschnitt {
  * Ein Teil einer mehrteiligen amtlichen Regeste («Regeste a / b / c»; Bug-Fix A29).
  * `label` = Teil-Buchstabe der amtlichen Sammlung.
  */
-export interface RegesteTeil {
+interface RegesteTeil {
   label: string | null;
   kopf: string;
   absaetze: string[];

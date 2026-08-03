@@ -62,7 +62,7 @@ export const VM_ERMAECHTIGUNGEN: { id: VmErmaechtigung; label: string }[] = [
   { id: 'schenkungen', label: 'Schenkungen zu machen' },
 ];
 
-export type VmBevollmaechtigte = { name: string; angaben: string };
+type VmBevollmaechtigte = { name: string; angaben: string };
 
 export type VollmachtAntworten = {
   typ: VollmachtTyp;

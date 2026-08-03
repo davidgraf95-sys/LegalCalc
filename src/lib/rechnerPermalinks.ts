@@ -81,7 +81,7 @@ export const SCHKG_LINK_SPEC: PermalinkSpec<SchkgLink & Record<string, unknown>>
 
 // ── Kündigungs-/Sperrfristen-Rechner ────────────────────────────────────────
 
-export const SPERR_TYPEN_GUELTIG = new Set(['krankheit_unfall', 'schwangerschaft', 'mutterschaftsurlaub_verlaengert', 'zusatzurlaub_tod_elternteil', 'urlaub_tod_mutter', 'militaer_zivil', 'hilfsaktion', 'betreuungsurlaub']);
+const SPERR_TYPEN_GUELTIG = new Set(['krankheit_unfall', 'schwangerschaft', 'mutterschaftsurlaub_verlaengert', 'zusatzurlaub_tod_elternteil', 'urlaub_tod_mutter', 'militaer_zivil', 'hilfsaktion', 'betreuungsurlaub']);
 
 export const KSP_LINK_SPEC: PermalinkSpec<SperrfristenInput & Record<string, unknown>> = {
   vertragsbeginn: { p: 'vb', typ: 'str', gueltig: istISO },
