@@ -629,8 +629,9 @@ describe('Vorlage Vorsorgeauftrag', () => {
   });
 
   // N3: `ort: 'Basel,'` ergab «Basel,, den 15.06.2026» – der Anschluss «, den»
-  // bringt das Komma bereits mit. Reine Interpunktions-Normalisierung; der
-  // Ortsinhalt bleibt unangetastet.
+  // bringt das Komma bereits mit. Normalisiert werden NUR abschliessende
+  // Kommas/Whitespace (andere Schlusszeichen wie «Basel.» bleiben stehen,
+  // GP-Nebenfund a); der Ortsinhalt bleibt unangetastet.
   it('N3: abschliessende Kommas/Whitespace am Ort erzeugen kein Doppelkomma', () => {
     const zeile = (over: Partial<VaAntworten>) =>
       vaZusammenstellen(va(over)).dokument.absaetze
@@ -640,7 +641,7 @@ describe('Vorlage Vorsorgeauftrag', () => {
     expect(zeile({ ort: 'Basel,', datum: '' })).toBe('Basel, den ________');
     // Binnen-Kommas bleiben: der Ort wird nicht inhaltlich beschnitten.
     expect(zeile({ ort: 'Riehen, BS' })).toBe('Riehen, BS, den 04.06.2026');
-    // Ein Ort, der nur aus Interpunktion besteht, ist kein Ort (B7-Zweig).
+    // Ein Ort, der nur aus Kommas/Whitespace besteht, ist kein Ort (B7-Zweig).
     expect(zeile({ ort: ' , ' })).toBe('04.06.2026');
   });
 

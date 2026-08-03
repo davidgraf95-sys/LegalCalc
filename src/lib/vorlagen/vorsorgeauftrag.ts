@@ -95,12 +95,15 @@ function vaDatumRoh(a: VaAntworten): string {
 }
 
 /** W2·8/V9.5 (Befund N3): Der Ort wird für den Anschluss «{Ort}, den {Datum}»
- *  von abschliessender Interpunktion befreit — «Basel,» ergab sonst
+ *  von abschliessenden KOMMAS und Whitespace befreit — «Basel,» ergab sonst
  *  «Basel,, den 15.06.2026», weil das Komma im Anschluss schon steckt.
  *  Rein typografische Normalisierung am RAND: Binnen-Kommas bleiben
  *  unangetastet («Riehen, BS» bleibt vollständig), der Ortsinhalt wird nicht
- *  beschnitten. Besteht der Wert nur aus Interpunktion, ist er kein Ort und
- *  fällt in den B7-Zweig (nur Datum, kein hängendes «den»). */
+ *  beschnitten. Bewusst NUR Komma+Whitespace (GP-Nebenfund a, 3.8.2026):
+ *  andere Schlusszeichen («Basel.», «Basel;») bleiben stehen — sie erzeugen
+ *  kein Doppelzeichen im Anschluss und ihre Tilgung wäre ein Inhalts-Eingriff.
+ *  Besteht der Wert nur aus Kommas/Whitespace, ist er kein Ort und fällt in
+ *  den B7-Zweig (nur Datum, kein hängendes «den»). */
 function vaOrtNormalisiert(a: VaAntworten): string {
   return (a.ort ?? '').trim().replace(/[\s,]+$/u, '');
 }
