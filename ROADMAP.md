@@ -229,6 +229,8 @@ Fedlex-Currency). Jeder trägt seine Bau-Spec im `ROADMAP-Spec`-§ des verlinkte
   <!-- @meta id: QS-FRIT-DRIFT · status: ready · of: ja · blocker: null · dep: [] · kollision: [.github/workflows/normen-monitor.yml, scripts/fedlex-versionen-pruefen.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
 - [ ] **`QS-CURRENCY-TESTS` · Testbindung `cacheBefund` + Kanonik-Ausschluss** *(Anlass: Gegenprüfung zu PR #420, Befund 1 — die neue Cache-Inhalts-Sonde und die Kanonik-Ausschlussliste hängen an keinem Test; ein Tor, das nicht scheitern kann, ist gefährlicher als keines, §6.7)* — je einen Negativfall bauen, der die Sonde und den Ausschluss **einmal rot** zeigt, dann grün. Reine Prüflogik (`Gegenpruefung: n/a`) — **die Ursachenklärung der `fza`/`cmr`-Wurzeln ist Risikopfad und liegt in `QS-CURRENCY-KANON`**; hier wird nur die Scheiterns-Fähigkeit der Sonde gebaut, kein Pin geändert. **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §18.2.
   <!-- @meta id: QS-CURRENCY-TESTS · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-cache.sh, src/tests] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
+- [ ] **`QS-KORPUS-BMV` · Geltende BMV (Totalrevision `cc/2025/408`) in den Korpus aufnehmen** *(Anlass: BMV-Nachführung 3.8.2026, PR #422 — die alte BMV ist korrekt als aufgehoben markiert, aber die seit 1.3.2026 GELTENDE Nachfolge-Verordnung gleicher SR 412.103.1 fehlt; Nutzer finden nur den historischen Text plus Fedlex-Link)* — regulärer Bundeserlass-Ingest nach Skill `korpus-werkstatt` (Pin, Snapshot, Sidecar, Register; neuer Register-Key neben dem historischen `bmv`), §7-Verifikation, Risikopfad ⇒ Gegenprüfung. Amtsbeleg: AKN `eli/cc/2025/408/20260301`, Art. 34 (Aufhebung alt) / Art. 36 (Inkrafttreten 1.3.2026). **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §17.
+  <!-- @meta id: QS-KORPUS-BMV · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-cache.sh, public/normtext/bund, src/lib/normtext/aufhebungen.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
 - [ ] **`QS-GP-BEREICH` · `gegenpruefung:ok --bereich A..B` + `check:gegenpruefung` prüft auch `origin/main..HEAD`** *(Anlass: drei Hand-Hash-Quittungen an einem Tag — 3.8.2026 —, weil das Tor nur den Working Tree sieht; committete Branch-Arbeit muss heute per Hand-Hash quittiert werden)* — Bereichs-Argument + Commit-Bereich-Diff, damit der Regelfall wieder mechanisch quittierbar ist. Tor-Code ohne Inhaltsänderung; **Scheiterns-Fähigkeit einmal rot zeigen** (§6.7). **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §3.1.
   <!-- @meta id: QS-GP-BEREICH · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/gegenpruefung-ok.ts, scripts/check-gegenpruefung.ts, scripts/gegenpruefung/kern.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
 - [ ] **`QS-GP-PRERENDER` · `check:prerender-golden` als Opt-in-Beweiswerkzeug** *(Anlass: der 8164-Seiten-Byte-Gleichheits-Beweis der Totcode-Gegenprüfung zu PR #418 war Handarbeit — der stärkste Beweis des Tages hatte kein Werkzeug)* — ein **nicht** im Pflicht-Gate verdrahteter Befehl, der zwei Prerender-Läufe byte-vergleicht und die Differenz benennt; wer ihn ruft, bekommt denselben Beweis reproduzierbar. **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §3.2.
@@ -434,6 +436,18 @@ Fedlex-Currency). Jeder trägt seine Bau-Spec im `ROADMAP-Spec`-§ des verlinkte
   [Stufe 2 · Mehrspalten-Tarif-Tabellen (ZH § 4 x-geometrisch, Klasse A NW/BS/SO/VS)](docs/superpowers/plans/2026-06-22-mehrspalten-tarif-tabellen.md) ·
   [Design-Spec (3 Defektklassen, Ansatz «Generator-Extrakt, gestuft» — von David gewählt)](docs/superpowers/specs/2026-06-22-kantonale-tarif-tabellen-design.md);
   ROADMAP-Spec: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §18.
+- [ ] **5k-LINIEN-KONZEPT · Linienführung tiefer Kodifikationen neu konzipieren** *(Anlass: Davids
+  zweifaches Live-Verdikt — 12.7.2026 (A28) und 3.8.2026 nach Preview von PR #423: «eine einzige
+  linie und unbrauchbar». Die EINE Auto-Guide-Linie auf der Gliederungsebene trägt bei ZGB/OR
+  keine nützliche Orientierung; der Schalter-Flip wurde zweimal gebaut und zweimal am selben
+  Urteil verworfen)* — **KONZEPT-Schritt, kein Bau**: 2–3 Varianten entwerfen (z.B. Linie je
+  aktiver Verschachtelungsebene, Sticky-Gliederungs-Kontext, Hover-/Fokus-Guides), als klickbare
+  Prototypen (Preview-Deploy) **zur David-Abnahme VOR jedem Vollbau**. Harte Regel aus der Lehre:
+  dieser Gegenstand wird **nie wieder über eine blosse Default-Umkehr** gelöst. A28 (Auto-Guide
+  aus, manuell einschaltbar) bleibt bis zur Abnahme der Live-Stand. Referenz-Baustand des
+  verworfenen Versuchs: geschlossener PR #423 (`fd44b37b3`, mit Beweisen). **Detail:**
+  [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §L-3/A28.
+  <!-- @meta id: W2·5k-LINIEN-KONZEPT · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/linienAufbau.ts, scripts/check-linien-kanon.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
 - [ ] **6 · Konsultieren-Klingen** *(`[OF]`, amtlich)*:
   <!-- @meta id: W2·6 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
   Vier eigenständige Unterschritte tragen den Strang: Mehrsprach-Vergleich · Norm-Resolver ·
@@ -569,6 +583,10 @@ Fedlex-Currency). Jeder trägt seine Bau-Spec im `ROADMAP-Spec`-§ des verlinkte
   <!-- @meta id: W2·15-CLS · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/Gesetze.tsx, src/components/start] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
   **Bewusst ein eigener Schritt und NICHT unter `QS-PERF` mitgeführt** — ein gemessener Produktfehler
   auf `/gesetze` (CLS 0.109 @8× CPU), reine UI, keine Logik-Berührung.
+  **Befund-Erweiterung 3.8.2026 (L-3-Nullprobe, §0.3):** Auch die **Erlass-Leser-Seiten** tragen
+  einen vorbestehenden CLS von **0.05–0.22** (3 Läufe, unverändertes A28-main; VMWG am höchsten,
+  STG schwankt ±0.12 zwischen Läufen) — unabhängig von den Linien. Wurzel-Fix hier miterledigen
+  oder als Messartefakt belegen (§17: nicht umschiffen).
   **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §2.
 - [ ] **16-INVENTAR · Funktions-Inventar (Vorstufe der Bedienungsanleitung)** *(§14-Intake 20.7.2026, David: «erst wenn es Sinn ergibt» → Zweischritt, dies ist Schritt 1)*
   <!-- @meta id: W2·16-INVENTAR · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/startseiteConfig.ts, bibliothek/INDEX.md] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
@@ -723,7 +741,9 @@ Fedlex-Currency). Jeder trägt seine Bau-Spec im `ROADMAP-Spec`-§ des verlinkte
   `bibliothek/register/parameter-verfall.md` §«Aufgehobene und zur Aufhebung angekündigte Erlasse»).
   Massnahme am Stichtag: Snapshot ersetzen/entfernen, Nachfolgeerlass prüfen (§7/§8) — ein
   ausgeliefertes Gesetz, das es nicht mehr gibt, ist der schwerere Fehler als eine Lücke.
-  **Bereits erfolgt:** `BMV` (SR 412.103.1) ist seit 1.3.2026 aufgehoben und noch nicht nachgeführt.
+  **Bereits erfolgt:** `BMV` (SR 412.103.1) aufgehoben 1.3.2026 — Aufhebung nachgeführt in #287,
+  Register-SSoT-Filter in #422; **Nachfolger `cc/2025/408` (gleiche SR, in Kraft 1.3.2026) fehlt
+  noch im Korpus** → Schritt `QS-KORPUS-BMV`.
 
 ---
 
