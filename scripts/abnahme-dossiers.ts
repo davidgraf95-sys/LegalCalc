@@ -108,7 +108,7 @@ for (const d of DOSSIERS) {
   const { markdown, bausteine: n } = abnahmeDossier(d.schemas, kopf(d.anzeige, d.quelle));
   const ziel = join(ZIEL_DIR, `ABNAHME-${d.datei}-BAUSTEINE.md`);
   if (istCheck) {
-    let alt: string | null = null;
+    let alt: string | null;
     try {
       alt = readFileSync(ziel, 'utf8');
     } catch {
