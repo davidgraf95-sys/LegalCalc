@@ -122,11 +122,20 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
               data-erw-suche
               className="lc-input h-7 w-full min-w-0 px-2 py-0 text-xs" />
           </div>
+          {/* §15.2 — RESERVIERTER SLOT statt einwachsender Zeile. Die Auskunfts-
+              zeile erscheint erst beim Tippen; wüchse sie ein, schöbe sie das
+              Verzeichnis darunter nach unten (gemessen 4.8.2026 unter 6×-Drossel:
+              CLS 0.00023 statt 0). Der Slot steht ab dem ersten Render und wird
+              GEFÜLLT, nicht eingeschoben — dasselbe Muster wie `min-h-hist-zeile`
+              am Artikelfuss. Zwei Zeilen `text-micro` passen in `min-h-8`; die
+              längste Fassung («3 von 16 Treffer in 2 Erwägungen · übrige
+              ausserhalb») bleibt bei 15 rem Railbreite darunter. */}
+          <div className="mt-1 min-h-8">
           {suche.trim() !== '' && (
             // §8: BEIDE Zahlen, sobald sie auseinanderfallen. «16 Treffer»
             // allein verschwiege, dass fünf davon im Sachverhalt liegen und in
             // dieser Liste gar nicht anspringbar sind.
-            <p aria-live="polite" data-erw-treffer className="mt-1 text-micro text-ink-500">
+            <p aria-live="polite" data-erw-treffer className="text-micro text-ink-500">
               {trefferGesamt === 0
                 ? 'Keine Treffer in dieser Fassung.'
                 : (
@@ -144,6 +153,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
                 )}
             </p>
           )}
+          </div>
         </div>
 
         {/* Erwägungs-Inhaltsverzeichnis (bzw. die Treffer-Auswahl, sobald gesucht
@@ -189,6 +199,13 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
                     springe(n.anker);
                   }}
                   title={`Zur Erwägung mit ${n.zitat}`}
+                  // Eigener zugänglicher Name, NICHT bloss «Art. 18 UVG»: derselbe
+                  // Wortlaut steht als NormChip im Lesetext und öffnet dort die
+                  // Norm-Vorschau. Zwei Links mit identischem Namen und völlig
+                  // verschiedener Wirkung sind für Screenreader (und für jeden
+                  // Rollen-Locator) nicht auseinanderzuhalten — der Name sagt hier
+                  // darum, wohin es geht: an die Erwägung, nicht ins Gesetz.
+                  aria-label={`Zur Erwägung mit ${n.zitat}`}
                   className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400">
                   {n.zitat}
                 </a>

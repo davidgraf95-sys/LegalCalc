@@ -103,7 +103,7 @@ export const KanteMitVorschau = memo(function KanteMitVorschau({
       )}
       {rect && (
         <Suspense fallback={null}>
-          <RegestePopover ankerRect={rect} zitierung={zitierung} kurztext={kurztext!}
+          <RegestePopover ankerRect={rect} hostRef={zelle} zitierung={zitierung} kurztext={kurztext!}
             ziel={ziel} statusLabel={statusLabel} autoFokus={tastatur}
             onClose={() => { schliesse(); if (tastatur) zelle.current?.querySelector('a')?.focus(); }} />
         </Suspense>

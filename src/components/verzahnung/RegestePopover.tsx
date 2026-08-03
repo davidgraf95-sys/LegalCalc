@@ -30,9 +30,18 @@ import { usePaneSteuerung } from '../layout/usePaneLayout';
 // `overflow-y:hidden` — ein inline positioniertes Popover würde dort in BEIDEN
 // Achsen beschnitten. Es hängt darum per Portal an <body> und wird `fixed` am
 // gemessenen Chip-Rechteck ausgerichtet: kein Knoten im Lesefluss, keine
-// Layout-Verschiebung, CLS 0 by construction. Scrollen/Resize SCHLIESSEN das
-// Popover, statt es nachzuführen — Nachführen hiesse Rect-Messung je Frame
-// (Layout-Thrash unter Drossel, §15).
+// Layout-Verschiebung, CLS 0 by construction.
+//
+// SCROLLEN FÜHRT NACH, SCHLIESST NICHT (Befund 4.8.2026). Die erste Fassung
+// schloss bei jedem Scroll-Ereignis — billiger, aber falsch: schon der
+// AUSKLINGENDE Scroll, mit dem der Zeiger überhaupt erst zum Chip fährt (bzw.
+// `scrollIntoViewIfNeeded` im Test), schloss den gerade geöffneten Kasten
+// wieder. Reproduziert im e2e: der Kasten erschien und verschwand im selben
+// Atemzug. Nachgeführt wird rAF-gedrosselt mit EINER `getBoundingClientRect`
+// des Auslösers je Frame — nur solange der Kasten offen ist, also für Sekunden,
+// nicht dauernd (§15: eine Rect-Lesung ohne Schreibzugriff dazwischen erzwingt
+// kein Layout-Thrashing). Resize schliesst weiterhin: dort ändert sich auch die
+// Flip-Entscheidung, und ein Resize ist nie eine flüchtige Begleitgeste.
 
 /** Sicherheitsabstand zum Viewport-Rand und zum Chip (px, Design-Konstanten). */
 const RAND = 8;
@@ -54,9 +63,13 @@ function berechneLage(rect: DOMRect, hoehe: number, vw: number, vh: number): Lag
   };
 }
 
-export function RegestePopover({ ankerRect, zitierung, kurztext, ziel, statusLabel, autoFokus = false, onClose }: {
+export function RegestePopover({ ankerRect, hostRef, zitierung, kurztext, ziel, statusLabel, autoFokus = false, onClose }: {
   /** Gemessenes Rechteck des auslösenden Chips (Viewport-Koordinaten). */
   ankerRect: DOMRect;
+  /** Die auslösende Zelle (Chip + ⧉). Fokus DARIN schliesst nicht — sonst
+   *  schlösse der Kasten sich im selben Moment, in dem der Fokus auf dem Chip
+   *  ihn geöffnet hat (belegt: `focusin` am Chip lief nach React-`onFocus`). */
+  hostRef: React.RefObject<HTMLElement | null>;
   zitierung: string;
   /** Bestandstext aus dem Shard (Regeste-Auszug bzw. amtlicher Betreff). */
   kurztext: string;
@@ -73,12 +86,30 @@ export function RegestePopover({ ankerRect, zitierung, kurztext, ziel, statusLab
   const [lage, setLage] = useState<Lage | null>(null);
   const { oeffneDaneben, kannOeffnen, istOffen } = usePaneSteuerung();
 
-  // Lage EINMAL nach dem Mount messen (echte Höhe des Kastens), danach nie mehr:
-  // das Popover lebt nur, solange Zeiger/Fokus stehen — es muss nichts verfolgen.
+  // Lage nach dem Mount messen (echte Höhe des Kastens) und danach beim Scrollen
+  // nachführen — rAF-gedrosselt, EIN `getBoundingClientRect` je Frame.
   useLayoutEffect(() => {
     const h = kasten.current?.offsetHeight ?? 0;
     setLage(berechneLage(ankerRect, h, window.innerWidth, window.innerHeight));
   }, [ankerRect]);
+  useEffect(() => {
+    let raf = 0;
+    const nachfuehren = () => {
+      if (raf) return;                                   // schon ein Frame angemeldet
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const host = hostRef.current;
+        const kn = kasten.current;
+        if (!host || !kn) return;
+        setLage(berechneLage(host.getBoundingClientRect(), kn.offsetHeight, window.innerWidth, window.innerHeight));
+      });
+    };
+    window.addEventListener('scroll', nachfuehren, true);
+    return () => {
+      if (raf) cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', nachfuehren, true);
+    };
+  }, [hostRef]);
 
   // Tastatur-Einstieg: ↓ am Chip öffnet UND setzt den Fokus in die erste Aktion.
   // Ohne das wäre der portalierte Kasten für eine Tastatur-Bedienung unerreichbar
@@ -86,30 +117,28 @@ export function RegestePopover({ ankerRect, zitierung, kurztext, ziel, statusLab
   // ist Esc (schliesst; der Fokus fällt zurück auf den Chip, den der Aufrufer hält).
   useEffect(() => { if (autoFokus) erstesZiel.current?.focus(); }, [autoFokus]);
 
-  // Scroll/Resize schliessen (siehe Kopf); Esc schliesst ebenfalls.
-  // `focusin`: wandert der Fokus AUS dem Kasten hinaus, ist der Kasten fertig.
-  // Ohne das bliebe ein per Tastatur betretenes Popover stehen, nachdem der
-  // Fokus weitergetabbt ist — es hängt am <body> und nicht in der Zelle, deren
-  // `onBlur` sonst schliesst.
+  // Resize schliesst (siehe Kopf); Esc schliesst ebenfalls.
+  // `focusin`: wandert der Fokus AUS Kasten UND Zelle hinaus, ist der Kasten
+  // fertig. Ohne das bliebe ein per Tastatur betretenes Popover stehen, nachdem
+  // der Fokus weitergetabbt ist — es hängt am <body> und nicht in der Zelle,
+  // deren `onBlur` sonst schliesst.
   useEffect(() => {
     const zu = () => onClose();
     const taste = (e: KeyboardEvent) => { if (e.key === 'Escape') { e.stopPropagation(); onClose(); } };
     const fokus = (e: FocusEvent) => {
-      const ziel = e.target as Node | null;
-      if (ziel && kasten.current?.contains(ziel)) return;
+      const t = e.target as Node | null;
+      if (t && (kasten.current?.contains(t) || hostRef.current?.contains(t))) return;
       onClose();
     };
-    window.addEventListener('scroll', zu, true);
     window.addEventListener('resize', zu);
     window.addEventListener('keydown', taste);
     document.addEventListener('focusin', fokus);
     return () => {
-      window.removeEventListener('scroll', zu, true);
       window.removeEventListener('resize', zu);
       window.removeEventListener('keydown', taste);
       document.removeEventListener('focusin', fokus);
     };
-  }, [onClose]);
+  }, [onClose, hostRef]);
 
   if (typeof document === 'undefined') return null;
   return createPortal(

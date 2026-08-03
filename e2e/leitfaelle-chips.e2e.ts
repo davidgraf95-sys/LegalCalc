@@ -144,13 +144,20 @@ test.describe('Rechtsprechungs-Auflistung im ArtikelLeser (OR)', () => {
 
     const chip = art41.locator('[data-bezug-linie="bge"] a.lc-chip').first()
     await chip.hover()
+    // Die Vorschau öffnet ABSICHTLICH erst nach ruhendem Zeiger (450 ms, damit ein
+    // Vorbeifahren über eine 5-Chip-Linie nicht fünf Kästen aufreisst). Die Wartezeit
+    // gehört darum zum Prüfsatz und wird ausgesessen, nicht wegdefiniert.
+    await page.waitForTimeout(800)
     const popover = page.locator('[data-regeste-popover]')
     await expect(popover).toBeVisible({ timeout: 10_000 })
     // §8: der Block heisst «Kurztext», NICHT «Regeste» — der Shard führt das
     // unterscheidende Flag nicht mit (amtliche Regeste ODER amtlicher Betreff).
     await expect(popover).toContainText('Kurztext')
     await expect(popover.getByRole('link', { name: /Öffnen/ })).toBeVisible()
-    await expect(popover.getByRole('button', { name: /nebeneinander öffnen/ })).toBeVisible()
+    // Der zugängliche Name der Split-Aktion IM Popover ist ihr sichtbarer Text
+    // «Daneben öffnen» (der `title` ist nur Fallback) — anders als beim wortlosen
+    // ⧉-Glyph an der Zelle, der sein `aria-label` braucht.
+    await expect(popover.getByRole('button', { name: /Daneben öffnen/ })).toBeVisible()
 
     // Tastatur (WCAG 2.1.1): Fokus auf den Chip öffnet, ↓ setzt den Fokus in die
     // erste Aktion des portalierten Kastens, Esc schliesst wieder.

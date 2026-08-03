@@ -25,7 +25,7 @@ import {
 import { setzeSuchHighlight } from './gesetz-leser/suchHighlight';
 import { usePaneKontext } from '../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
-import type { EntscheidSnapshot, EntscheidSprache, Abschnittstyp, Entscheidquelle } from '../lib/rechtsprechung/typen';
+import type { EntscheidAbschnitt, EntscheidSnapshot, EntscheidSprache, Abschnittstyp, Entscheidquelle } from '../lib/rechtsprechung/typen';
 
 // Provenienz-Fuss (§7): Daten-Label je Quelle — BS-Tranche §7.1 (vorher hart
 // «OpenCaseLaw», was für gerichte-bs falsch wäre). Deklariert, kein Raten.
