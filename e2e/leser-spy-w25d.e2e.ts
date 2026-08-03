@@ -1,0 +1,214 @@
+// W2·5d-SPY (V3/H6) — Scroll-Spy-Härtung: rootMargin ↔ Bezugslinie.
+//
+// Herkunft: `fahrplaene/FAHRPLAN-GESETZES-UX.md` §10.10, Ausführungsvermerk
+// E7/A33 — «V3 (rootMargin↔Bezugslinie-Kopplung, H6) bewusst deferiert — H6
+// unreproduziert, Eingriff am Spy-Kern ohne Beleg (offener Härtungs-Posten)».
+// Dieser Wächter IST der fehlende Beleg: er misst die Kopplung als Eigenschaft
+// statt an festen Artikelnummern.
+//
+// Prüf-Eigenschaft (eine einzige, scharfe): Der Reader zeigt als «aktuellen
+// Artikel» IMMER den Artikel an der Bezugslinie. Die Bezugslinie ist
+// `5rem + 8 px` unter der Container-Oberkante (`scrollAnker.ts:bezugslinie`,
+// deckungsgleich mit `.nt-anker`-scroll-margin); die Auswahl ist
+// «Artikel, dessen Intervall die Linie enthält, sonst kleinste Distanz»
+// (`src/lib/normtext/aktuellerArtikel.ts`). Der Test rechnet dieses Soll bei
+// jedem Halt über ALLE Artikel im DOM aus und vergleicht es mit dem Ist der
+// Kopfzeile. Er kennt darum keinen Artikel auswendig und überlebt jede
+// Korpus-Regeneration.
+//
+// Vor dem Fix rot (gemessen 3.8.2026 gegen `origin/main`, vite preview):
+//   H6-b «Auslöser sitzt am Band, nicht an der Linie» — der Observer meldete nur
+//     Band-Ein-/Austritte (`rootMargin: '0px 0px -55% 0px'`), der Wechsel kam
+//     erst beim Verlassen der Band-OBERkante, also 5rem + 8 px Scrollweg zu spät:
+//     BGFA 5/24 Proben (bis 65 px), OR 3/30, OR mit Schriftskala 140 % 2/24.
+//   H6-a «Band verfehlt die Linie» — bei 0,45 · H_root < 5rem + 8 (Viewport
+//     320×200 ≙ 400 % Browser-Zoom, WCAG 1.4.10 Reflow) lag der Artikel an der
+//     Linie ausserhalb des Bandes: 3/24 Proben, Kandidatensatz teils LEER.
+// Nach dem Fix (Band = reiner Vorfilter über den ganzen Root, Auswertung pro
+// Scroll-Frame gegen die frisch gemessene Linie) je 0/n.
+import { test, expect, type Page } from '@playwright/test'
+import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls'
+
+function fehlerSammeln(page: Page): string[] {
+  const fehler: string[] = []
+  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
+  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
+  return fehler
+}
+
+interface Probe {
+  y: number; bezug: number; soll: string | null; ist: string | null; ueber: number | null; kandidaten: number
+}
+
+// Eine Messung im Seitenkontext: Soll (aus dem DOM) gegen Ist (Kopfzeile).
+async function messen(page: Page): Promise<Probe> {
+  return page.evaluate(() => {
+    // Bezugslinie EXAKT wie `scrollAnker.ts:bezugslinie(0, remPx)` und wie der
+    // Spy sie in `inhalt-hooks.tsx` bildet.
+    const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16
+    const bezug = 5 * remPx + 8
+    const rects = [...document.querySelectorAll('[id^="art-"]')].map((el) => {
+      const r = el.getBoundingClientRect()
+      return { token: el.id.replace(/^art-/, ''), top: r.top, bottom: r.bottom }
+    })
+    // Auswahl wie `aktiverArtikel` — hier bewusst über ALLE Artikel (das Soll),
+    // während der Spy nur seine beobachtete Teilmenge sieht (das war H6-a).
+    let soll: string | null = null
+    let besteDist = Infinity
+    for (const e of rects) {
+      const dist = bezug < e.top ? e.top - bezug : bezug > e.bottom ? bezug - e.bottom : 0
+      if (dist === 0) { soll = e.token; break }
+      if (dist < besteDist) { besteDist = dist; soll = e.token }
+    }
+    // Ist: der Live-Artikel der Inhalts-Kopfzeile («· Art. 40d» bzw. «Art. 40d OR»).
+    const kopf = [...document.querySelectorAll('nav .num')].map((e) => (e.textContent ?? '').trim()).filter(Boolean)
+    const m = kopf.map((t) => t.match(/Art\.\s*([^\s·]+)/)).find(Boolean)
+    const sollR = rects.find((r) => r.token === soll)
+    return {
+      y: Math.round(window.scrollY), bezug, soll, ist: m ? m[1] : null,
+      ueber: sollR ? Math.round(bezug - sollR.top) : null, kandidaten: rects.length,
+    }
+  })
+}
+
+// Token («335_c») und Anzeige-Label («335c») vergleichbar machen.
+const norm = (s: string | null): string | null => (s == null ? null : s.replace(/[_\s]/g, '').toLowerCase())
+
+// Ein Lese-Scroll mit Halt: scrollen, einschwingen lassen, messen. Weicht das Ist
+// ab, wird EINMAL nachgemessen — eine transiente Abweichung (F3-Entprellung 200 ms,
+// content-visibility-Nachschätzung) verschwindet ohne weiteres Scrollen, eine
+// strukturelle bleibt. Gezählt wird nur die bleibende (§6.7: der Wächter soll den
+// Defekt fangen, nicht das Einschwingen).
+async function scrollProbe(page: Page, delta: number, warteMs: number): Promise<Probe> {
+  await page.evaluate((d) => window.scrollBy(0, d), delta)
+  await page.waitForTimeout(warteMs)
+  const p = await messen(page)
+  if (p.ist && norm(p.ist) !== norm(p.soll)) {
+    await page.waitForTimeout(900)
+    return messen(page)
+  }
+  return p
+}
+
+function abweichungen(proben: Probe[]): string[] {
+  return proben
+    .filter((p) => p.ist && norm(p.ist) !== norm(p.soll))
+    .map((p) => `y=${p.y}: Kopf zeigt «${p.ist}», an der Bezugslinie (${p.bezug}px) liegt «${p.soll}» (Oberkante ${p.ueber}px über der Linie)`)
+}
+
+test.describe('W2·5d-SPY — Bezugslinie entscheidet, nicht das Beobachtungs-Band', () => {
+  // ── H6-b: der Wechsel muss AN der Linie fallen, nicht am Band-Rand ──────────
+  // Flacher Erlass (BGFA, 40 Artikel): dort war der Verzug am grössten (bis 65 px),
+  // weil zwischen zwei Band-Ereignissen viel Scrollweg liegt.
+  test('H6-b — flacher Erlass: Kopf-Artikel folgt der Bezugslinie ohne Verzug', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/BGFA')
+    await expect(page.locator('article[id^="art-"]').first()).toBeVisible({ timeout: 20000 })
+    await page.waitForTimeout(800)
+    await page.evaluate(() => window.scrollTo(0, 3000))
+    await page.waitForTimeout(1200)
+
+    const proben: Probe[] = []
+    for (let i = 0; i < 30; i++) proben.push(await scrollProbe(page, 43, 450))
+    // Der Lauf muss überhaupt durch Artikelgrenzen gegangen sein, sonst prüft er nichts.
+    expect(new Set(proben.map((p) => p.soll)).size, 'Sonde hat keine Artikelgrenze überquert').toBeGreaterThan(2)
+    expect(abweichungen(proben), 'Kopf-Artikel weicht von der Bezugslinie ab').toEqual([])
+    expect(fehler).toEqual([])
+  })
+
+  // ── H6-b im tiefen Kodex (OR, 1686 Artikel, content-visibility) ─────────────
+  test('H6-b — tiefer Kodex: Kopf-Artikel folgt der Bezugslinie ohne Verzug', async ({ page }) => {
+    test.setTimeout(process.env.CI ? 180_000 : 90_000)
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/OR')
+    await expect(page.locator('article[id^="art-"]').first()).toBeVisible({ timeout: 30000 })
+    await page.waitForTimeout(1000)
+    await page.evaluate(() => window.scrollTo(0, 20000))
+    await page.waitForTimeout(1500)
+
+    const proben: Probe[] = []
+    for (let i = 0; i < 24; i++) proben.push(await scrollProbe(page, 43, 450))
+    expect(new Set(proben.map((p) => p.soll)).size, 'Sonde hat keine Artikelgrenze überquert').toBeGreaterThan(1)
+    expect(abweichungen(proben), 'Kopf-Artikel weicht von der Bezugslinie ab').toEqual([])
+    expect(fehler).toEqual([])
+  })
+
+  // ── H6-a: 400 % Browser-Zoom (WCAG 1.4.10 Reflow) ──────────────────────────
+  // 320×200 CSS-px ≙ 400 % Zoom auf 1280×800. Dort war 0,45 · Root-Höhe (90 px)
+  // ≈ die Bezugslinie (88 px): der Artikel an der Linie fiel aus dem Band, der
+  // Kandidatensatz war zeitweise LEER und der Kopf blieb auf dem Vorgänger stehen.
+  test('H6-a — 400 % Zoom (320×200): der Artikel an der Linie bleibt sichtbar', async ({ page }) => {
+    test.setTimeout(process.env.CI ? 180_000 : 90_000)
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 320, height: 200 })
+    await page.goto('/gesetze/bund/OR')
+    await expect(page.locator('article[id^="art-"]').first()).toBeVisible({ timeout: 30000 })
+    await page.waitForTimeout(1000)
+    await page.evaluate(() => window.scrollTo(0, 20000))
+    await page.waitForTimeout(1500)
+
+    const proben: Probe[] = []
+    for (let i = 0; i < 24; i++) proben.push(await scrollProbe(page, 31, 450))
+    expect(abweichungen(proben), 'Kopf-Artikel weicht von der Bezugslinie ab (Band verfehlt die Linie)').toEqual([])
+    expect(fehler).toEqual([])
+  })
+
+  // ── A9-Querschnitt: Bedienbarkeit + Flüssigkeit unter 6× CPU-Drossel ────────
+  test('A9 — 6× Drossel: Spy treu, Gliederung tastaturbedienbar, CLS im Budget', async ({ page }) => {
+    test.setTimeout(process.env.CI ? 180_000 : 120_000)
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/BGFA')
+    await expect(page.locator('article[id^="art-"]').first()).toBeVisible({ timeout: 20000 })
+    await expect(page.locator('[data-toc]')).toBeVisible({ timeout: 10000 })
+    await page.waitForTimeout(800)
+
+    const cdp = await page.context().newCDPSession(page)
+    await cdp.send('Emulation.setCPUThrottlingRate', { rate: 6 })
+    // Messfenster erst JETZT scharf schalten (nur Shifts der gedrosselten
+    // Interaktion, nicht der Warmlauf — Begründung in helpers/cls.ts).
+    await clsBeobachtenInstallieren(page, false, true)
+
+    // Lese-Scroll per Tastatur (echter Input): der Spy muss auch gedrosselt an der
+    // Linie bleiben, und die Auto-Gliederung darf dabei nicht springen.
+    await page.locator('article[id^="art-"]').first().click({ position: { x: 5, y: 5 } })
+    const proben: Probe[] = []
+    for (let i = 0; i < 10; i++) {
+      await page.keyboard.press('PageDown')
+      await page.waitForTimeout(700)
+      const p = await messen(page)
+      if (p.ist && norm(p.ist) !== norm(p.soll)) { await page.waitForTimeout(900); proben.push(await messen(page)) }
+      else proben.push(p)
+    }
+    expect(abweichungen(proben), 'Kopf-Artikel weicht unter 6× Drossel von der Bezugslinie ab').toEqual([])
+
+    // aria: der aktive Gliederungs-Eintrag ist als solcher ausgezeichnet.
+    const aktiv = page.locator('[data-toc] [aria-current="true"]')
+    expect(await aktiv.count(), 'kein aria-current im Gliederungsbaum').toBeGreaterThan(0)
+
+    // Tastatur-Bedienung: ein Gliederungs-Eintrag ist fokussierbar und springt per
+    // Enter (bewusst der ERSTE Eintrag — der aktive läge schon am Ziel und der
+    // Sprung wäre kein Beweis).
+    const ziel = page.locator('[data-toc] button[aria-current], [data-toc] button').first()
+    await ziel.focus()
+    await expect(ziel).toBeFocused()
+    const vorher = await page.evaluate(() => Math.round(window.scrollY))
+    await page.keyboard.press('Enter')
+    await page.waitForTimeout(1000)
+    const nachher = await page.evaluate(() => Math.round(window.scrollY))
+    expect(Math.abs(nachher - vorher), 'Enter auf dem Gliederungs-Eintrag bewegt die Seite nicht').toBeGreaterThan(50)
+
+    // Und nach dem Sprung fängt der Spy wieder EXAKT an der Linie an — ein
+    // Klick-Sprung darf ihn nicht dauerhaft entkoppeln (jumpLock-Übergabe).
+    const nachSprung = await scrollProbe(page, 150, 900)
+    expect(abweichungen([nachSprung]), 'nach dem Gliederungs-Sprung folgt der Kopf der Bezugslinie nicht mehr').toEqual([])
+
+    await cdp.send('Emulation.setCPUThrottlingRate', { rate: 1 })
+    // CLS-Budget wie im A9-Querschnitt der Reader-Specs (0.05, leser-gliederung-a33).
+    const cls = await clsAuslesen(page)
+    expect(cls.cls, `CLS ${cls.cls} über Budget — ${cls.bericht}`).toBeLessThan(0.05)
+    expect(fehler).toEqual([])
+  })
+})
