@@ -22,6 +22,39 @@
 #      Vereinfachung), nur nicht mehr VOR den e2e-Shards;
 #   4) `perf` misst §15-Budgets nur noch auf main/merge_group (Entscheid David
 #      26.7.2026), weiterhin ERST nach grüner Treue (`needs: [tore, e2e]`).
+#
+# ─── Pfadfilter-Loch geschlossen (3.8.2026, Fehlerklassen K3 + K12) ──────────
+# BIS HIERHER galt: `pull_request: paths-ignore: '**.md'`, und ein Zwilling
+# (ci-doku-noop.yml) triggerte INVERS auf `paths: '**.md'`, um dieselben
+# Required-Kontexte als No-op zu melden. Zwei belegte Defekte daraus:
+#
+#   K3  Ein PR, der WEDER Code NOCH .md ändert, fällt durch beide Filter: kein
+#       Lauf, kein Kontext, GitHub wartet ewig auf «expected». Genau das ist
+#       PR #417 (changed_files=0) — dauerhaft BLOCKED, ohne dass irgendetwas
+#       rot wäre. Dieselbe Klasse trifft jeden Diff, den `paths` nicht sieht.
+#   K12 Die 11 Required-Kontextnamen mussten byte-synchron über DREI Systeme
+#       gepflegt werden (ci.yml · ci-doku-noop.yml · Branch-Schutz). Zweimal
+#       ist genau das misslungen: die PRs #318/#320 hingen permanent unmergbar,
+#       weil der Zwilling nur «Tore …» meldete und die 8 Shard-Kontexte plus
+#       «Perf-Budget» nie (im Kopf von ci-doku-noop.yml Z. 13–25 dokumentiert).
+#
+# JETZT: KEIN Pfadfilter auf `pull_request` — CI läuft bei JEDEM PR-Event, und
+# jeder Required-Kontext wird von GENAU EINEM Job in GENAU EINER Datei gemeldet.
+# Statt zweier Workflows entscheidet ein erster, billiger Job (`diff`) über den
+# UMFANG:
+#   art=code  → volles Programm (Bau · Tore · 8 e2e-Shards);
+#   art=doku  → reine .md-Änderung ODER leerer Diff: `Merge-Schutz` und
+#               `check:plan` laufen ECHT (Begründung an den Schritten), der
+#               Rest quittiert kurz. Semantik aus ci-doku-noop.yml übernommen.
+# Die Fallunterscheidung sitzt damit in den SCHRITTEN, nicht in Trigger-Filtern:
+# Job-Namen und -Anzahl sind ereignisunabhängig konstant. Ein Kontext kann so
+# nicht mehr ausbleiben — die Klasse «expected für immer» ist konstruktiv weg.
+# ci.yml ist ab hier die EINZIGE Quelle der Required-Kontextnamen (§5);
+# ci-doku-noop.yml ist mit diesem Umbau gelöscht.
+#
+# `push` behält `paths-ignore: '**.md'` UNVERÄNDERT: dort gibt es keine
+# Required-Kontexte zu melden, und ohne den Filter liefe `perf` (Lighthouse)
+# auch für reine Doku-Pushes auf main.
 name: CI
 
 on:
@@ -29,9 +62,8 @@ on:
     branches: [main]
     paths-ignore:
       - '**.md'
+  # BEWUSST OHNE paths/paths-ignore — siehe K3/K12 im Kopf.
   pull_request:
-    paths-ignore:
-      - '**.md'
   # B-12-Vorbereitung: Damit die (noch NICHT aktivierte) GitHub Merge Queue die
   # Tore fahren kann, muss CI auf `merge_group` reagieren. Der Trigger schadet
   # OHNE Queue nicht (kein merge_group-Event ⇒ kein Lauf) und ist die einzige
@@ -47,32 +79,112 @@ concurrency:
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
+  # ── Klassierung des PR-Diffs (K3/K12) ────────────────────────────────────────
+  # Billigster denkbarer Job: kein Checkout, kein npm, nur ein API-Aufruf. Er
+  # entscheidet den UMFANG der schweren Jobs, nicht deren EXISTENZ — die
+  # Required-Kontexte werden in jedem Fall gemeldet.
+  #
+  # WARUM DIE API UND NICHT `git diff`: bei `pull_request` ist der Arbeitsbaum
+  # der Merge-Commit; eine `merge-base`-Rechnung müsste erst `fetch-depth: 0`
+  # holen (teuer) und bildet Force-Pushes und Basiswechsel anders ab als das,
+  # was GitHub selbst als «changed files» führt. Massgeblich soll genau die
+  # Menge sein, gegen die auch `changed_files` zählt.
+  #
+  # FEHLERSEITE (§6.7): Jede Unsicherheit fällt auf `code`, also auf das VOLLE
+  # Programm. Zu viel zu prüfen kostet Minuten, zu wenig zu prüfen lässt Code
+  # ungeprüft mergen. Darum der Abgleich gegen `changed_files`: weicht die
+  # Länge der API-Liste ab (Kappung bei 3000 Dateien, Sonderzeichen im Namen),
+  # wird NICHT als Doku klassiert.
+  diff:
+    name: Diff-Klassierung (Code vs. Doku)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      art: ${{ steps.klassieren.outputs.art }}
+    steps:
+      - name: PR-Diff klassieren
+        id: klassieren
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          GEMELDET: ${{ github.event.pull_request.changed_files }}
+        run: |
+          set -euo pipefail
+          # Nur PR-Events werden klassiert. push/merge_group/workflow_dispatch
+          # fahren unverändert das volle Programm — dort hängt kein Required-
+          # Kontext an der Klassierung, und ein Deploy-Stand (main, merge_group)
+          # wird nie nach Dateiendungen abgekürzt.
+          if [ "$EVENT" != "pull_request" ]; then
+            echo "art=code" >> "$GITHUB_OUTPUT"
+            echo "Event '${EVENT}' — keine Klassierung nötig, volles Programm."
+            exit 0
+          fi
+          gh api --paginate "repos/${REPO}/pulls/${PR}/files" --jq '.[].filename' > pr-dateien.txt
+          anzahl=$(wc -l < pr-dateien.txt | tr -d ' ')
+          echo "PR #${PR}: ${anzahl} Datei(en) über die API, changed_files=${GEMELDET:-?}."
+          if [ "${GEMELDET:-x}" != "$anzahl" ]; then
+            echo "art=code" >> "$GITHUB_OUTPUT"
+            echo "::warning::Dateiliste (${anzahl}) weicht von changed_files (${GEMELDET:-?}) ab — Liste unvollständig. Volles Programm (Fehlerseite: prüfen statt überspringen)."
+            exit 0
+          fi
+          if [ "$anzahl" -eq 0 ]; then
+            echo "art=doku" >> "$GITHUB_OUTPUT"
+            echo "LEERER DIFF (changed_files=0) — genau die Klasse, die bis 3.8.2026 gar keinen Lauf und damit einen ewig 'expected'en Required-Kontext erzeugte (PR #417). Kontexte werden jetzt gemeldet."
+            exit 0
+          fi
+          if grep -qvE '\.md$' pr-dateien.txt; then
+            echo "art=code" >> "$GITHUB_OUTPUT"
+            echo "Nicht-.md-Dateien im Diff — volles Programm:"
+            grep -vE '\.md$' pr-dateien.txt | head -20
+          else
+            echo "art=doku" >> "$GITHUB_OUTPUT"
+            echo "Reine .md-Änderung (${anzahl} Datei(en)) — Merge-Schutz und check:plan laufen ECHT, restliche Code-Tore quittieren."
+          fi
+
   bau:
     name: Bau (dist-Artefakt)
+    needs: diff
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Zurich
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      # Der Job läuft IMMER (kein Job-`if:`) — sonst zöge ein übersprungenes
+      # `bau` die 8 e2e-Shards über `needs:` mit in den Skip, und die acht
+      # Required-Kontexte hingen wieder an einer Bedingung statt an einem Job.
+      # Bei art=doku ist er ein Leerlauf von Sekunden.
+      - uses: actions/checkout@v5
+        if: needs.diff.outputs.art == 'code'
+      - uses: actions/setup-node@v5
+        if: needs.diff.outputs.art == 'code'
         with:
           node-version: 22
           cache: npm
       - run: npm ci
+        if: needs.diff.outputs.art == 'code'
       # gen:suchindex + tsc -b + vite build + prerender — tsc-Fehler reissen
       # hier die ganze Kette, bevor tore/e2e überhaupt starten.
       - name: Build
+        if: needs.diff.outputs.art == 'code'
         run: npm run build
       - name: dist-Artefakt hochladen (für tore + e2e-Shards + perf)
+        if: needs.diff.outputs.art == 'code'
         uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist
           retention-days: 1
           include-hidden-files: true
+      - name: Kurzquittung (Doku-/Leer-Diff)
+        if: needs.diff.outputs.art != 'code'
+        run: echo "Kein Code im Diff — kein Bau, kein dist-Artefakt (die e2e-Shards laden es folgerichtig auch nicht)."
 
   tore:
     name: Tore (Tests · Lint · Checks)
+    needs: diff
     runs-on: ubuntu-latest
     env:
       # Produkt-Zeitzone: Engines geben teils Date-Instants zurück (z. B.
@@ -85,10 +197,10 @@ jobs:
       # fetch-depth: 0 — check:merge-schutz bildet merge-base(origin/main, HEAD).
       # Mit dem Default (depth 1) gibt es keine gemeinsame Basis und das Tor
       # wuerde (korrekt) rot melden, dass es seine Referenz nicht bilden kann.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -98,6 +210,17 @@ jobs:
       # Zeitluecke von `gh pr merge --auto` waren damit ungedeckt. Hier ist das
       # Tor maschinenunabhaengig; als Required Check wird es zur echten Schranke
       # (Branch-Regel setzt David, DAVID-GATE).
+      #
+      # DIESE BEIDEN SCHRITTE LAUFEN IMMER — auch bei art=doku. Die Begründung
+      # stammt aus ci-doku-noop.yml (dort Z. 7–11 bzw. 71–75) und gilt
+      # unverändert weiter:
+      #   Merge-Schutz: md-only-Diffs können den Risikopfad `daten/**` treffen
+      #     (istRisikoPfad matcht das Präfix, nicht die Endung), und das
+      #     Gegenprüfungs-Register SELBST ist eine .md. Diese Klasse darf nicht
+      #     still grün gemeldet werden (§6.7 lit. b).
+      #   check:plan: reine .md-PRs sind genau die Klasse, die @meta-Waisen
+      #     erzeugt (ROADMAP.md/STRUKTUR.md ohne Code) — 3 Waisen mergten grün,
+      #     weil check:plan nirgends in CI lief.
       - name: Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)
         run: npm run check:merge-schutz
       - name: Plan-Inventar-Konsistenz (Node-only, günstig — darum vor tsc/Build)
@@ -108,22 +231,44 @@ jobs:
       # schon im alten Monojob VOR dem Build). Darum auch kein `needs: bau` —
       # tore startet sofort, parallel zu bau.
       - name: Tests (volle Ausgabe)
+        if: needs.diff.outputs.art == 'code'
         run: npm test
       - name: Lint (volle Ausgabe, nie tail!)
+        if: needs.diff.outputs.art == 'code'
         run: npm run lint
       - name: Katalog-Inventur
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:inventur
       - name: Bibliotheks-Standards (S1–S10)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:bibliothek
-      - name: Verfallsregister (Termine)
-        run: npm run check:verfall
+      # ── check:verfall STEHT HIER BEWUSST NICHT MEHR (3.8.2026, K7) ──────────
+      # Es ist das einzige Tor im PR-Pfad, dessen Ergebnis von der WANDUHR
+      # abhängt statt vom Diff: `verfall-pruefen.ts` vergleicht das Register
+      # gegen `new Date()`. Läuft ein Registertermin ab, färbt es schlagartig
+      # ALLE offenen PRs rot — ohne dass einer davon etwas damit zu tun hätte.
+      # BELEG: Lauf 30764225649 (2.8.2026, Branch claude/sleepy-mestorf-5dbea7)
+      # scheiterte im Tore-Job an «VERFALLEN 2026-08-01 Künftige Fassung BüV /
+      # ZEMIS-V» — ein Rechtsstands-Befund, kein Fehler dieses PR.
+      #
+      # R1-ABGRENZUNG (Tore streichen ist die falsche Vereinfachung): Das Tor
+      # wird VERSCHOBEN, nicht gestrichen. Es läuft weiterhin
+      #   · wöchentlich in normen-monitor.yml (dort mit Vorlauf-Warnung),
+      #   · in fedlex-frische.yml vor jedem Reparatur-PR,
+      #   · und vor jedem Deploy lokal in `check:seriell`.
+      # check:tor-paritaet bleibt grün, weil es ALLE Workflows scannt, nicht
+      # nur ci.yml — der Nachweis der Abdeckung bleibt also maschinell.
       - name: Abnahme-Dossiers synchron zu den Schemas (§5-Projektion)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:dossiers
       - name: Logik-Sweep (Invarianten)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:sweep
       - name: Golden-Outputs (byte-gleich zur committeten Basis)
+        if: needs.diff.outputs.art == 'code'
         run: npm run golden:vergleich
       - name: SSR-Smoke (alle Seiten)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:smoke
       # ── Tore, die bis 20.7.2026 auf der Paritaets-Allowlist standen ──────
       # Die Begruendung «braucht rechtsprechung.db (488 MB, nicht im CI-
@@ -133,10 +278,13 @@ jobs:
       # gruen unter CI=1. check:besetzung ist das Tor, das die 11 erfundenen
       # Amtstraeger:innen aus #309 faengt — es war ausgerechnet unsichtbar.
       - name: Spruchkörper-Projektion (Leak · Konsistenz · Determinismus)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:besetzung
       - name: Entscheid-Korpus (Bund)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:entscheide
       - name: Entscheid-Korpus (BS)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:bs-entscheide
       # Sichtbarkeits-Tor der Verzahnung (W2·6-NKEY c): zaehlt, wie viele
       # Gesetzes-Zitate des Korpus KEINEN Register-key finden. Ohne dieses Tor
@@ -145,6 +293,7 @@ jobs:
       # Liest wie die drei Tore darueber nur die committeten Projektionen unter
       # public/rechtsprechung/, keine DB, kein Netz.
       - name: normKeys-Abdeckung (Verzahnung Rechtsprechung ↔ Gesetz)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:normkeys
       # Bezugs-Schicht (W2·7-BEZUG B1-B3): prueft, dass die Bundesgerichts-Sicht
       # der Facetten-Shards die bestehende Artikel-Ebene EXAKT nachrechnet (also
@@ -152,13 +301,16 @@ jobs:
       # dass keine Deckel- oder Grundgesamtheits-Zahl luegt. Liest wie die Tore
       # darueber nur die committeten Projektionen, keine DB, kein Netz.
       - name: Bezugs-Schicht (Facetten · Projektion · Grundgesamtheit)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:bezuege
       # Selbstschutz der Tor-Landschaft: meldet neue Tore ohne CI-Lauf.
       # Lief selbst nur lokal — der Melder war damit so unsichtbar wie der
       # Defekt, den er meldet (F2b rekursiv).
       - name: Tor-Parität (CI/lokal)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:tor-paritaet
       - name: Dispatch-Pflichtklausel (§0-Generator lauffähig)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:dispatch-klausel
       # ── R1-Nachzug (20.7.2026): die bis dahin unsichtbaren Tore ─────────────
       # Das Tor-Wirksamkeits-Audit (bibliothek/, PR #318) hat die 20 Allowlist-
@@ -174,26 +326,37 @@ jobs:
       # fing — stand selbst auf dieser Liste. Diese Tore sind nicht ertragsarm,
       # sie waren unsichtbar.
       - name: Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:design-tokens && npm run check:farbwelt && npm run check:linien-kanon && npm run check:p-klassen
       - name: Import-Zyklen
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:zyklen
       - name: Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:vollstaendigkeit && npm run check:zaehler && npm run check:historie && npm run check:revisionen && npm run check:artikel-revisionen
       - name: Normtext-Struktur (Tabellen · Grundart · Invarianten)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:tabellen && npm run check:grundart && npm run check:invarianten
       # Das §6-Beweismittel selbst: golden/normtext-snapshot.json wird vom
       # Generator PAUSCHAL ueberschrieben (PR #383 Runde 2: 55'763 -> 32'639
       # Eintraege aus einem partiellen Korpus) und wurde bis 27.7.2026 von KEINEM
       # Tor gelesen. Laeuft offline in <1 s.
       - name: Golden-Vollständigkeit (Normtext-Index ⊇⊆ Snapshots)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:golden-normtext
       - name: Quellen-Projektionen (PDF · PDF-Quellen · Bilder)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:pdf && npm run check:pdf-quellen && npm run check:bilder
       - name: SEO-Index · Verfall-UI
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:seo-index && npm run check:verfall-ui
+      - name: Kurzquittung (Doku-/Leer-Diff)
+        if: needs.diff.outputs.art != 'code'
+        run: echo "Kein Code im Diff — Merge-Schutz und check:plan sind oben ECHT gelaufen; die übrigen Code-Tore sind nicht betroffen."
+
   e2e:
     name: Browser-Smoke Shard ${{ matrix.gruppe }}/8 (Playwright)
-    needs: bau
+    needs: [diff, bau]
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Zurich
@@ -202,43 +365,57 @@ jobs:
       matrix:
         gruppe: [1, 2, 3, 4, 5, 6, 7, 8]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      # Wie bei `bau`: der Job selbst läuft IMMER, damit die acht Required-
+      # Kontexte «Browser-Smoke Shard N/8 (Playwright)» ereignisunabhängig
+      # gemeldet werden. Bei art=doku bleibt davon eine Kurzquittung.
+      - uses: actions/checkout@v5
+        if: needs.diff.outputs.art == 'code'
+      - uses: actions/setup-node@v5
+        if: needs.diff.outputs.art == 'code'
         with:
           node-version: 22
           cache: npm
       - run: npm ci
+        if: needs.diff.outputs.art == 'code'
       # Union-Wächter VOR den Shards: beweist, dass die Gruppen in
       # e2e/shard-gruppen.json exakt die von Playwright gesammelte Spec-Menge
       # abdecken (kein Test doppelt, keiner verloren). Läuft in jedem Matrix-Job
       # (billig, `playwright --list` ohne Browser/Server) — reisst die Kette,
       # bevor eine unbalancierte oder lückenhafte Verteilung Tests verschluckt.
       - name: e2e-Shard-Union-Wächter (Gruppen == playwright --list)
+        if: needs.diff.outputs.art == 'code'
         run: npm run check:e2e-shards
       - name: dist-Artefakt herunterladen (aus `bau`, nicht neu bauen)
+        if: needs.diff.outputs.art == 'code'
         uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist
       - name: Playwright-Browser-Cache
+        if: needs.diff.outputs.art == 'code'
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
       - name: Playwright-Browser (Chromium)
+        if: needs.diff.outputs.art == 'code'
         run: npx playwright install --with-deps chromium
       # `npm run preview` serviert das heruntergeladene dist/ (kein Rebuild);
       # jeder Job fährt nur die Specs SEINER dauer-gepackten Gruppe seriell
       # (workers:1 bleibt, damit die Contention NICHT in EINEN Runner zurückkehrt)
       # → e2e-Wand geachtelt UND nach CI-Messwerten balanciert (~5.4–6.4 min).
       - name: Browser-Smoke (Playwright, e2e/ gegen dist — Gruppe ${{ matrix.gruppe }}/8)
+        if: needs.diff.outputs.art == 'code'
         run: npm run test:e2e:gruppe -- ${{ matrix.gruppe }}
+      - name: Kurzquittung (Doku-/Leer-Diff)
+        if: needs.diff.outputs.art != 'code'
+        run: echo "Kein Code im Diff — Browser-Smoke Shard ${{ matrix.gruppe }}/8 nicht betroffen."
       # Per-Spec-CI-Dauern sichern (auch bei rotem Shard — gerade dann sind sie
       # interessant). Damit lässt sich `e2e/shard-gruppen.json` künftig gegen
       # GEMESSENE CI-Zeiten packen statt gegen lokale, die nicht uniform skalieren
       # (a33: lokal 92 s, CI ~360 s). Begründung in playwright.config.ts.
       - name: Playwright-JSON-Report ablegen (Shard-Balancing-Datengrundlage)
-        if: always()
+        if: always() && needs.diff.outputs.art == 'code'
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report-gruppe-${{ matrix.gruppe }}
@@ -259,8 +436,8 @@ jobs:
     env:
       TZ: Europe/Zurich
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -294,10 +471,10 @@ jobs:
     name: Merge-Schutz (Required-Kontext)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm

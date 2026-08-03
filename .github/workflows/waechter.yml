@@ -22,16 +22,21 @@ on:
   workflow_dispatch:
 
 permissions:
-  actions: read
+  # `actions: write` seit 3.8.2026 — nötig für `gh workflow run` im
+  # Kontext-Nachzug unten (K2/K11). `read` würde für die Lauf-Abfrage reichen.
+  actions: write
   contents: read
+  checks: read
+  pull-requests: read
+  statuses: read
 
 jobs:
   laeufe:
     name: Geplante Workflows — cancelled/skipped zählen als ROT
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -40,3 +45,74 @@ jobs:
         run: npm run check:ci-laeufe
         env:
           GH_TOKEN: ${{ github.token }}
+
+      # ── Selbstheilung fehlender Required-Kontexte (K2/K11, 3.8.2026) ─────────
+      # ZWEITE Wach-Ebene, andere Fehlerklasse als oben: dort scheitert ein Lauf
+      # SICHTBAR (rot), hier findet gar keiner statt. Ein offener PR, an dessen
+      # Head-SHA ein Required-Kontext nie gemeldet wurde, steht auf «expected» —
+      # GitHub zeigt kein Rot, nichts scheitert, der PR ist nur für immer
+      # blockiert. Belegte Fälle: PR #417 (Pfadfilter-Loch, K3 — die Ursache ist
+      # mit dem ci.yml-Umbau weg) und die Bot-PRs aus fedlex-frische.yml, deren
+      # Läufe mit `github.token` in `action_required` hängen bleiben (K1).
+      #
+      # Der Nachzug greift also NACH der Ursachenbehebung als Netz: er löst nicht
+      # aus, wenn ein Kontext ROT ist (das ist ein Befund, kein Ausfall), sondern
+      # nur, wenn er FEHLT.
+      #
+      # `workflow_dispatch` ist die dokumentierte Ausnahme von der GITHUB_TOKEN-
+      # Rekursionssperre: von `github.token` erzeugte push/pull_request-Events
+      # lösen keine Workflows aus, ein expliziter Dispatch dagegen schon. Genau
+      # deshalb ist der Nachzug hier möglich und die Ursache dort nicht behebbar.
+      #
+      # `if: always()` — der Nachzug muss auch (und gerade) laufen, wenn der
+      # Schritt darüber rot war.
+      - name: Fehlende Required-Kontexte an offenen PRs nachziehen
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -uo pipefail
+          # Die Required-Kontexte kommen aus dem Branch-Schutz selbst — keine
+          # zweite Liste im Repo (§5). Ist er nicht lesbar, wird das gemeldet
+          # und der Schritt endet ohne Urteil (nie still).
+          if ! gh api "repos/${REPO}/branches/main/protection/required_status_checks" \
+                 --jq '.contexts[]' > erwartet.txt 2>fehler.txt; then
+            echo "::warning::Branch-Schutz nicht lesbar ($(head -1 fehler.txt)) — kein Kontext-Nachzug, kein Urteil."
+            exit 0
+          fi
+          echo "Required-Kontexte laut Branch-Schutz:"; sed 's/^/  · /' erwartet.txt
+
+          gh pr list --repo "$REPO" --state open --json number,headRefName,headRefOid \
+            --jq '.[] | [.number, .headRefName, .headRefOid] | @tsv' > prs.tsv
+          [ -s prs.tsv ] || { echo "Keine offenen PRs — nichts nachzuziehen."; exit 0; }
+
+          while IFS=$'\t' read -r nr zweig sha; do
+            [ -n "${sha:-}" ] || continue
+            # Check-Runs (Actions) UND Commit-Statuses (Vercel & Co.) — beide
+            # Mechanismen erfüllen einen Required-Kontext, also beide fragen.
+            gh api --paginate "repos/${REPO}/commits/${sha}/check-runs" \
+              --jq '.check_runs[].name' > gemeldet.txt 2>/dev/null || : > gemeldet.txt
+            gh api --paginate "repos/${REPO}/commits/${sha}/status" \
+              --jq '.statuses[].context' >> gemeldet.txt 2>/dev/null || true
+
+            fehlend=$(grep -vxF -f gemeldet.txt erwartet.txt || true)
+            if [ -z "$fehlend" ]; then
+              echo "PR #${nr} (${zweig} @ ${sha:0:7}): alle Required-Kontexte gemeldet."
+              continue
+            fi
+            echo "PR #${nr} (${zweig} @ ${sha:0:7}) — FEHLENDE Kontexte:"
+            echo "$fehlend" | sed 's/^/    · /'
+            # «Vercel» stammt aus der Vercel-App, nicht aus Actions — dafür gibt
+            # es hier kein Mittel. Nur wenn ein ACTIONS-Kontext fehlt, hilft ein
+            # Dispatch von ci.yml; alles andere wird benannt und stehen gelassen.
+            if echo "$fehlend" | grep -qvxF 'Vercel'; then
+              if gh workflow run ci.yml --repo "$REPO" --ref "$zweig"; then
+                echo "  → ci.yml auf '${zweig}' nachgezogen (workflow_dispatch)."
+              else
+                echo "::warning::PR #${nr}: ci.yml-Dispatch auf '${zweig}' fehlgeschlagen — Kontexte bleiben offen."
+              fi
+            else
+              echo "  → nur «Vercel» fehlt (App-Integration, kein Actions-Mittel) — nichts nachzuziehen."
+            fi
+          done < prs.tsv

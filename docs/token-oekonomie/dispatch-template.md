@@ -41,8 +41,8 @@ Byte-stabil halten — der Block wird maschinell eingefügt: `npm run dispatch -
   (CLAUDE.md §7). Amtliche Werte mit Norm + Link + Stand.
 3 VERTEILUNG STATT EINZELWERT. Ein gerissenes Budget ist ein VERDACHT, keine
   Ursache. Vor jeder Zuschreibung an ein Feature: (a) Nullprobe — reiner
-  Doku-PR (ci-doku-noop.yml) oder Re-Run auf unveraendertem Stand; wird sie rot,
-  liegt der Defekt auf main; (b) Streuung gegen den Abstand zur Schwelle.
+  Doku-PR (ci.yml klassiert ihn als art=doku) oder Re-Run auf unveraendertem
+  Stand; wird sie rot, liegt der Defekt auf main; (b) Streuung gegen die Schwelle.
   Featureanteil innerhalb 1 sd = die Messung ist das Ergebnis, nicht das Feature.
 4 RECOVERY. Committe lokal nach jedem abgeschlossenen Teilschritt (WIP-Commit
   genuegt, --squash fasst zusammen). Nie uncommittet ueber laengere Arbeit hinweg.

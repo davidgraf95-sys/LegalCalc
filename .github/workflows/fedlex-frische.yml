@@ -1,11 +1,15 @@
 # ─── Fedlex-Frische-Automatik (O-2, QS-OPT / QS-CURRENCY) ───────────────────
 # Der REPARATUR-Arm des Frische-Kreislaufs (der Normen-Monitor ist der Detektions-
-# Arm). Zwei Schritte, beide rein amtlich (Fedlex-SPARQL):
+# Arm). Drei Schritte, alle rein amtlich (Fedlex-SPARQL):
 #   1. gen:fedlex-wiedervorlage  — currency.json + AUTO-Wiedervorlage-Block frisch
 #      halten (Reader-Chips «geltend geprüft am …» bleiben ≤7 Tage alt).  [O-2.2]
 #   2. fedlex:repin-batch --write — ALLE überholten Bund-Pins (geltende
 #      Konsolidierung ≤ heute > Pin) auf die geltende Fassung heben, Snapshots +
 #      Struktur regenerieren, Normtext-Tore fahren.  [O-2.1]
+#   3. check:fedlex-versionen + fedlex:repin-kanonik --write — die ZWEITE
+#      Re-Pin-Achse: nicht das Konsolidierungsdatum, sondern die html-REVISION
+#      (isExemplifiedBy). Seit 3.8.2026, weil Erkennen ohne Reparieren hier
+#      belegbar folgenlos blieb (siehe Schritt-Kommentar unten).
 # Ergibt sich ein Diff, wird EIN Auto-Merge-PR eröffnet (David-Rahmen-Gate 16.7.2026:
 # «Ja, voll freigeben» — scheduled Daten-Reparatur-PRs dürfen bei grünen Toren
 # unbeaufsichtigt auto-mergen; main deployt auf Prod). Überholte Erlasse ohne
@@ -21,9 +25,19 @@ on:
   workflow_dispatch:
 
 # Auto-Merge-PRs, die von github.token erstellt werden, lösen KEINE CI aus (GH-
-# Limitierung). Ist ein PAT als Secret AUTOMERGE_TOKEN hinterlegt, wird es genutzt
-# (dann läuft die CI auf dem Reparatur-PR); sonst github.token (PR wird eröffnet,
-# CI muss ggf. manuell angestossen werden — im PR-Body vermerkt).
+# Rekursionssperre). Ist ein PAT als Secret AUTOMERGE_TOKEN hinterlegt, wird es
+# genutzt (dann läuft die CI von selbst).
+#
+# STAND 3.8.2026 (K1): AUTOMERGE_TOKEN existiert NICHT (`gh secret list` kennt
+# nur TURSO_AUTH_TOKEN), es greift also immer der github.token-Zweig. Die Folge
+# war belegbar: die Läufe 30795814361 und 30795814304 blieben in
+# `action_required` stehen, der Bot-PR trug keinen einzigen Required-Kontext.
+# Der Hinweis «CI ggf. manuell anstossen» im PR-Body war die ganze Vorsorge —
+# eine Bitte an einen Menschen, also keine.
+# Codeseitiger Fix unten: nach der PR-Eröffnung wird ci.yml explizit per
+# `gh workflow run` gestartet (workflow_dispatch ist die dokumentierte Ausnahme
+# von der Rekursionssperre). Der WURZEL-Fix bleibt ein fein granulierter PAT als
+# AUTOMERGE_TOKEN — den kann nur David anlegen.
 concurrency:
   group: fedlex-frische
   cancel-in-progress: false
@@ -52,9 +66,13 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
+      # `actions: write` seit 3.8.2026 (K1): der Reparatur-PR stösst seine CI
+      # selbst per `gh workflow run` an — von `github.token` erzeugte PR-Events
+      # lösen keine Workflows aus.
+      actions: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -74,6 +92,44 @@ jobs:
           npm run fedlex:repin-batch -- --datum=${{ steps.datum.outputs.iso }} --write | tee repin.log
           # Handschritt-Fälle (überholt, aber html-N nicht auflösbar) markieren.
           if grep -q '⚠' repin.log; then echo "handschritt=1" >> "$GITHUB_OUTPUT"; fi
+
+      # ── Kanonik-Selbstheilung (3.8.2026) ────────────────────────────────────
+      # ZWEITE Re-Pin-Achse, unabhängig von der ersten: der Batch oben hebt
+      # überholte KONSOLIDIERUNGSDATEN (3. Pipe-Feld), dieser Schritt die
+      # nicht-kanonische html-REVISION (4. Feld). Fedlex registriert je Fassung
+      # genau eine Manifestation (isExemplifiedBy); zeigt der Pin auf eine
+      # andere, liefert der Filestore einen Alt-Generations-Dump — also
+      # amtlichen Text, aber nicht den geltenden.
+      #
+      # WARUM HIER UND NICHT WEITER ZUSCHAUEN: Am 3.8.2026 standen 8 Pins
+      # nicht-kanonisch (zgb 1→2, mwstg 3→4, bbg 2→3, usg 0→1, gwg 6→7,
+      # kag 6→7, fza 5→9, cmr 3→6). Der Kanonik-Arbiter in
+      # `check:fedlex-versionen` hatte sie erkannt und der Normen-Monitor war
+      # seit dem 29.6. rot — beides wochenlang folgenlos, weil der Befund nur
+      # DETEKTION war und niemand den Reparatur-Handgriff tat. Erkennen ohne
+      # Reparieren erzeugt genau die Alarm-Müdigkeit, gegen die dieser Workflow
+      # als REPARATUR-Arm gebaut wurde.
+      #
+      # Die Regenerierung übernimmt der bestehende Schritt darunter: er
+      # triggert auf `git diff scripts/fedlex-cache.sh` und sieht den Re-Pin
+      # unabhängig davon, welche der beiden Achsen ihn erzeugt hat (§10 — den
+      # vorhandenen Rahmen nutzen statt einen zweiten zu bauen).
+      - name: Kanonik-Arbiter + Selbstheilung (isExemplifiedBy-Revision)
+        run: |
+          set -uo pipefail
+          if npm run check:fedlex-versionen; then
+            echo "Kanonik-Arbiter grün — jeder Pin zeigt auf die registrierte Manifestation."
+            exit 0
+          fi
+          echo "── Kanonik-Arbiter ROT → Re-Pin auf die kanonische html-Revision ──"
+          set -e
+          npm run fedlex:repin-kanonik -- --write
+          # Erneut prüfen: der Re-Pin ist die Massnahme, nicht der Beweis.
+          # Bleibt der Arbiter rot, ist ein Fall dabei, den das Werkzeug nicht
+          # löst (UNRESOLVED-Pin ohne html-Manifestation, überholte oder
+          # aufgehobene Konsolidierung) — dann ROT statt eines PR, der eine
+          # Heilung behauptet, die nicht stattfand (§8).
+          npm run check:fedlex-versionen
 
       - name: Regenerierung (nur wenn cache.sh re-gepinnt wurde)
         run: |
@@ -147,7 +203,26 @@ jobs:
           else
             gh pr create --base main --head "$branch" \
               --title "chore(currency): Fedlex-Frische ${DATUM} (Auto-Merge)" \
-              --body "Automatischer Frische-Lauf (O-2.1 Batch-Re-Pin + O-2.2 Wiedervorlage). David-Rahmen-Gate 16.7.2026 («Ja, voll freigeben»): scheduled Reparatur-PRs auto-mergen bei grünen Toren; main → Prod. Netz-Currency-Tor (check:fedlex-versionen) läuft im wöchentlichen Normen-Monitor. Falls dieser PR von github.token stammt, startet die CI ggf. nicht selbst — dann manuell anstossen."
+              --body "Automatischer Frische-Lauf (O-2.1 Batch-Re-Pin + O-2.2 Wiedervorlage). David-Rahmen-Gate 16.7.2026 («Ja, voll freigeben»): scheduled Reparatur-PRs auto-mergen bei grünen Toren; main → Prod. Netz-Currency-Tor (check:fedlex-versionen) läuft im wöchentlichen Normen-Monitor. Die CI wird direkt nach dieser Eröffnung per workflow_dispatch angestossen (github.token löst selbst keine Workflows aus); bleibt trotzdem ein Required-Kontext offen, zieht ihn der tägliche Wächter nach."
+          fi
+          # ── CI auf dem Bot-PR explizit anstossen (K1, 3.8.2026) ──────────────
+          # GitHub löst für Events, die `github.token` erzeugt, KEINE Workflows
+          # aus (Rekursionssperre). Der PR-Body verwies bisher nur darauf, die
+          # CI «ggf. manuell anzustossen» — ein Hinweis an einen Menschen ist
+          # keine Automatik. Belegte Folge: die Läufe 30795814361 und
+          # 30795814304 blieben in `action_required` stehen, der Bot-PR trug
+          # keinen einzigen Required-Kontext und war damit nicht mergbar; genau
+          # den Zustand, den auch `--auto` nicht auflöst, weil er auf Kontexte
+          # wartet, die nie kommen.
+          # `workflow_dispatch` ist die dokumentierte Ausnahme von der
+          # Rekursionssperre — ein expliziter Dispatch läuft.
+          # Fehlerseite: schlägt der Dispatch fehl, ist der PR bereits eröffnet
+          # und sichtbar; der Wächter (waechter.yml) zieht fehlende Kontexte in
+          # der nächsten Runde nach. Darum Warnung statt rotem Lauf.
+          if gh workflow run ci.yml --ref "$branch"; then
+            echo "CI (ci.yml) auf '${branch}' angestossen — die Required-Kontexte werden gemeldet."
+          else
+            echo "::warning::ci.yml-Dispatch auf '${branch}' fehlgeschlagen — der Wächter zieht die Kontexte nach."
           fi
           # Auto-Merge bleibt tolerant: scheitert NUR an Repo-Setting/Token-Rechten,
           # der PR existiert dann bereits sichtbar und wartet auf Abnahme.
