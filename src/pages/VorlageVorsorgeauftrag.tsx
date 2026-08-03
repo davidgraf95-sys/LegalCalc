@@ -1,9 +1,16 @@
 import { useMemo } from 'react';
 import { NormText } from '../components/NormText';
+import { KantonArtikelTrigger } from '../components/KantonQuelleLink';
 import {
-  VA_DEFAULTS, VA_BEREICHE, VA_MODULE, vaZusammenstellen, pruefeVaGates, beurkundungsHinweis,
-  type VaAntworten, type VaBereich, type VaBeauftragte, type VaFormMode,
+  VA_DEFAULTS, VA_BEREICHE, VA_MODULE, vaZusammenstellen, pruefeVaGates,
+  type VaAntworten, type VaBereich, type VaBeauftragte, type VaErsatzperson, type VaFormMode,
+  type VaVertretung,
 } from '../lib/vorlagen/vorsorgeauftrag';
+import { NOTARIATE, NOTARIAT_SYSTEM_LABEL } from '../lib/notariate';
+import { berechneBeurkundung } from '../lib/beurkundung';
+import { ngPostenText } from '../lib/notariatGrundbuch';
+import { KANTONE as KANTON_CODES } from '../lib/kantone';
+import type { KantonCode } from '../data/tarif/typen';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, GruppenTitel, inputCls } from '../components/vorlagen/ui';
@@ -40,6 +47,59 @@ const BANNER_VA_BEURKUNDUNG: PdfBanner = {
   text: 'Vorlage zur Besprechung mit der Urkundsperson. Rechtsgültig wird der Vorsorgeauftrag erst mit der öffentlichen Beurkundung nach kantonalem Recht (Art. 361 Abs. 1 ZGB; BGE 151 III 81).',
 };
 
+// ─── Beurkundungs-Hinweis aus den Stammdaten (SSoT, W2·8/B5, Befund F6) ─────
+//
+// Bis hierher speiste die Vorlagen-Engine diese Zeile aus einem eigenen
+// Kantons-Katalog (`beurkundungsHinweis()`) — eine zweite Wahrheit mit drei
+// belegten Abweichungen von den Stammdaten (TG-System, BE- und SG-Gebühren).
+// Der Katalog ist gestrichen; die Zeile kommt jetzt aus den beiden bestehenden
+// Einzelquellen: `NOTARIATE` für Notariatssystem und Anlaufstelle,
+// `berechneBeurkundung` für die Gebühr mit Norm, Stand und amtlichem Link (D1).
+// Fehlt der kantonale Tarif, zeigt die Engine ein ehrliches «offen» — hier wird
+// nie ein Richtwert erfunden (§8). Render-Muster übernommen aus PostenAnzeige
+// in components/forms/BeurkundungForm.tsx (gleiche Engine-Rückgabe, gleiche
+// Darstellung: Betrag · Rahmen-Vorbehalt · Erlass/Artikel/Stand/Quelle).
+const istKanton = (k?: string): k is KantonCode =>
+  !!k && (KANTON_CODES as readonly string[]).includes(k);
+
+const BEURKUNDUNG_GENERISCH =
+  'Das Beurkundungsverfahren richtet sich nach kantonalem Recht (Art. 55 SchlT ZGB) – zuständige Urkundsperson am Wohnsitz erfragen.';
+
+function BeurkundungsHinweis({ kanton }: { kanton?: string }) {
+  const kt = istKanton(kanton) ? kanton : undefined;
+  const kosten = useMemo(
+    () => (kt ? berechneBeurkundung({ geschaeftsart: 'vorsorgeauftrag', kanton: kt }) : null),
+    [kt],
+  );
+  if (!kt || !kosten) return <NormText text={BEURKUNDUNG_GENERISCH} />;
+
+  const n = NOTARIATE[kt];
+  const p = kosten.posten;
+  return (
+    <span className="block space-y-1">
+      <span className="block">
+        {kt}: {NOTARIAT_SYSTEM_LABEL[n.system]} – Anlaufstelle{' '}
+        <a href={n.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-800">{n.stelle} ↗</a>
+        {!n.urlBelegt ? ' (Angabe ohne Gewähr)' : ''}
+        {n.hinweis ? ` ${n.hinweis}` : ''}
+      </span>
+      {p ? (
+        <span className="block">
+          Beurkundungsgebühr <span className="num">{ngPostenText(p)}</span>
+          {!p.ergebnis.deterministisch ? ' – Rahmen bzw. aufwandabhängig, die konkrete Festsetzung erfolgt im Einzelfall' : ''}
+          {' · '}{p.quelle.erlassName} ({p.quelle.erlassNr}), <KantonArtikelTrigger quelle={p.quelle} /> · Stand {p.quelle.stand}
+          {p.quelle.verifiziert === 'recherche' ? ' · nicht abgenommen' : ''}
+          {p.quelle.quelleUrl
+            ? <> · <a href={p.quelle.quelleUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-800">amtliche Quelle ↗</a></>
+            : null}
+        </span>
+      ) : (
+        <span className="block">{kosten.hinweise.join(' ')}</span>
+      )}
+    </span>
+  );
+}
+
 export function VorlageVorsorgeauftrag() {
   const { a, set, schritt, setSchritt, bestaetigt, setBestaetigt, kopiert, kopieren, zuruecksetzen } =
     useWizardState<VaAntworten>({
@@ -48,7 +108,19 @@ export function VorlageVorsorgeauftrag() {
       normalisieren: (g) => ({
         ...g,
         beauftragte: Array.isArray(g.beauftragte) ? g.beauftragte : [],
-        ersatzpersonen: Array.isArray(g.ersatzpersonen) ? g.ersatzpersonen : [],
+        // Alt-Stände (vor W2·8) kennen weder `typ` noch `bereiche` bei den
+        // Ersatzpersonen: fehlendes typ → 'natuerlich' (nie 'juristisch',
+        // sonst entstünde ein Blocker aus einem Altstand); fehlende bereiche
+        // bleiben undefined = Ersatz für alle übertragenen Bereiche.
+        ersatzpersonen: Array.isArray(g.ersatzpersonen)
+          ? (g.ersatzpersonen as Partial<VaErsatzperson>[]).map((e): VaErsatzperson => ({
+            name: e.name ?? '',
+            typ: e.typ === 'juristisch' ? 'juristisch' : 'natuerlich',
+            angaben: e.angaben ?? '',
+            bereiche: Array.isArray(e.bereiche) ? e.bereiche : undefined,
+          }))
+          : [],
+        vertretung: g.vertretung === 'gemeinsam' ? 'gemeinsam' : 'einzeln',
         module: {
           personensorge: Array.isArray(g.module?.personensorge) ? g.module.personensorge : [],
           vermoegenssorge: Array.isArray(g.module?.vermoegenssorge) ? g.module.vermoegenssorge : [],
@@ -86,6 +158,15 @@ export function VorlageVorsorgeauftrag() {
   const toggleBereich = (i: number, ber: VaBereich) => {
     const b = a.beauftragte[i];
     setBeauftragte(i, { bereiche: b.bereiche.includes(ber) ? b.bereiche.filter((x) => x !== ber) : [...b.bereiche, ber] });
+  };
+  const setErsatz = (i: number, patch: Partial<VaErsatzperson>) =>
+    set('ersatzpersonen', a.ersatzpersonen.map((x, j) => (j === i ? { ...x, ...patch } : x)));
+  // Bereichs-Wahl der Ersatzperson: leere Auswahl bleibt `undefined`
+  // (= Ersatz für alle übertragenen Bereiche, unveränderter Klauseltext).
+  const toggleErsatzBereich = (i: number, ber: VaBereich) => {
+    const cur = a.ersatzpersonen[i].bereiche ?? [];
+    const neu = cur.includes(ber) ? cur.filter((x) => x !== ber) : [...cur, ber];
+    setErsatz(i, { bereiche: neu.length > 0 ? neu : undefined });
   };
   const toggleModul = (ber: VaBereich, id: string) =>
     set('module', { ...a.module, [ber]: a.module[ber].includes(id) ? a.module[ber].filter((x) => x !== id) : [...a.module[ber], id] });
@@ -132,7 +213,7 @@ export function VorlageVorsorgeauftrag() {
                     {KANTONE.map((k) => <option key={k} value={k}>{k === '' ? '– wählen –' : k}</option>)}
                   </select>
                 </Field>
-                <p className="text-xs text-ink-500">{beurkundungsHinweis(a.kanton)} Gebührenangaben sind Richtwerte und stellenabhängig.</p>
+                <div className="text-xs text-ink-500"><BeurkundungsHinweis kanton={a.kanton} /></div>
               </div>
             )}
           </div>
@@ -155,7 +236,18 @@ export function VorlageVorsorgeauftrag() {
         <div className="space-y-5">
           <div className="space-y-3">
             <GruppenTitel>Beauftragte Person(en)</GruppenTitel>
-            <p className="text-xs text-ink-500">Pro Aufgabenbereich kann dieselbe oder eine andere Person bestimmt werden. Medizinische Vertretung nur durch natürliche Personen.</p>
+            {/* W2·8/Gegenprüfung B1: «Medizinische Vertretung nur durch
+                natürliche Personen» war kategorisch falsch — Art. 378 Abs. 1
+                Ziff. 1 ZGB nennt schlicht «die in einer Patientenverfügung oder
+                in einem Vorsorgeauftrag bezeichnete Person» und kennt keine
+                Natürlichkeits-Schranke; diese steht wörtlich nur in Art. 370
+                Abs. 2 ZGB — und dort für die PATIENTENVERFÜGUNG. Die Zeile gibt
+                jetzt dieselbe Lehre-Position wieder wie die Engine-Warnung
+                (§5: eine Aussage), als Empfehlung statt als Verbot. */}
+            <p className="text-xs text-ink-500">
+              Pro Aufgabenbereich kann dieselbe oder eine andere Person bestimmt werden.
+              <NormText text={` Für die medizinische Vertretung nach verbreiteter Lehre eine natürliche Person bezeichnen (vgl. Art. 370 Abs. 2 ZGB zur Patientenverfügung).`} />
+            </p>
             {a.beauftragte.map((b, i) => (
               <div key={i} className="lc-card p-4 space-y-3">
                 <div className="grid grid-cols-1 sm:grid-cols-[1fr_10rem] gap-3">
@@ -189,24 +281,55 @@ export function VorlageVorsorgeauftrag() {
               className="lc-btn-outline">+ Beauftragte Person hinzufügen</button>
           </div>
 
-          <div className="space-y-2">
+          {a.beauftragte.filter((b) => b.name.trim() && b.bereiche.length > 0).length > 1 && (
+            <div className="space-y-2">
+              <GruppenTitel>Zusammenwirken mehrerer beauftragter Personen</GruppenTitel>
+              <SelectionGrid
+                className="grid grid-cols-1 sm:grid-cols-2 gap-2"
+                items={([
+                  ['einzeln', 'Einzelvertretung (empfohlen)', 'Jede Person handelt im ihr übertragenen Bereich allein'],
+                  ['gemeinsam', 'Kollektivvertretung (nur gemeinsam)', 'Im selben Bereich beauftragte Personen handeln nur zusammen'],
+                ] as [VaVertretung, string, string][]).map(([code, label, sub]) => ({ code, label, sub }))}
+                value={a.vertretung}
+                onSelect={(code) => set('vertretung', code)}
+              />
+              <p className="text-xs text-ink-500">Das Gesetz regelt das Zusammenwirken nicht ausdrücklich; die ausdrückliche Anordnung schafft Klarheit für KESB, Banken und Behörden.</p>
+            </div>
+          )}
+
+          <div className="space-y-3">
             <GruppenTitel><NormText text={`Ersatzpersonen (Art. 360 Abs. 3 ZGB)`} /></GruppenTitel>
             {a.ersatzpersonen.map((e, i) => (
-              <div key={i} className="flex flex-wrap items-end gap-2">
-                <span className="num text-body-s text-ink-500 pb-2.5">{i + 1}.</span>
-                <div className="flex-1 min-w-[10rem]">
-                  <Field label="Name"><input className={inputCls} value={e.name}
-                    onChange={(ev) => set('ersatzpersonen', a.ersatzpersonen.map((x, j) => j === i ? { ...x, name: ev.target.value } : x))} /></Field>
+              <div key={i} className="lc-card p-4 space-y-3">
+                <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr_10rem] gap-3 items-end">
+                  <span className="num text-body-s text-ink-500 pb-2.5">{i + 1}.</span>
+                  <Field label="Name (Person oder Organisation)">
+                    <input className={inputCls} value={e.name} onChange={(ev) => setErsatz(i, { name: ev.target.value })} />
+                  </Field>
+                  <Field label="Typ">
+                    <select className={inputCls} value={e.typ} onChange={(ev) => setErsatz(i, { typ: ev.target.value as VaErsatzperson['typ'] })}>
+                      <option value="natuerlich">natürliche Person</option>
+                      <option value="juristisch">juristische Person</option>
+                    </select>
+                  </Field>
                 </div>
-                <div className="flex-1 min-w-[12rem]">
-                  <Field label="Geburtsdatum / Adresse" optional><input className={inputCls} value={e.angaben}
-                    onChange={(ev) => set('ersatzpersonen', a.ersatzpersonen.map((x, j) => j === i ? { ...x, angaben: ev.target.value } : x))} /></Field>
+                <Field label={e.typ === 'juristisch' ? 'Sitz / Adresse' : 'Geburtsdatum / Adresse'} optional>
+                  <input className={inputCls} value={e.angaben} onChange={(ev) => setErsatz(i, { angaben: ev.target.value })} />
+                </Field>
+                <div className="flex flex-wrap items-center gap-3">
+                  {VA_BEREICHE.map((ber) => (
+                    <label key={ber.id} className="flex items-center gap-1.5 text-body-s cursor-pointer text-ink-700">
+                      <input type="checkbox" checked={(e.bereiche ?? []).includes(ber.id)} onChange={() => toggleErsatzBereich(i, ber.id)} />
+                      {ber.label}
+                    </label>
+                  ))}
+                  <button type="button" onClick={() => set('ersatzpersonen', a.ersatzpersonen.filter((_, j) => j !== i))}
+                    className="ml-auto text-body-s text-danger-700 hover:underline">entfernen</button>
                 </div>
-                <button type="button" onClick={() => set('ersatzpersonen', a.ersatzpersonen.filter((_, j) => j !== i))}
-                  className="text-body-s text-danger-700 hover:underline pb-2.5">entfernen</button>
+                <p className="text-xs text-ink-500">Bereiche leer lassen = Ersatz für alle übertragenen Bereiche.</p>
               </div>
             ))}
-            <button type="button" onClick={() => set('ersatzpersonen', [...a.ersatzpersonen, { name: '', angaben: '' }])}
+            <button type="button" onClick={() => set('ersatzpersonen', [...a.ersatzpersonen, { name: '', typ: 'natuerlich', angaben: '' }])}
               className="lc-btn-outline">+ Ersatzperson hinzufügen</button>
             <p className="text-xs text-ink-500">Empfehlung: Ersatzperson ausserhalb der Familie für Interessenkonfliktfälle.</p>
           </div>
@@ -229,6 +352,7 @@ export function VorlageVorsorgeauftrag() {
               </div>
               {VA_MODULE[ber.id].map((m) => (
                 <Checkbox
+                  key={m.id}
                   checked={a.module[ber.id].includes(m.id)}
                   onChange={() => toggleModul(ber.id, m.id)}
                   label={<>{m.label}</>} />
@@ -238,7 +362,7 @@ export function VorlageVorsorgeauftrag() {
           {a.module.vermoegenssorge.includes('liegenschaften') && (
             <p className="lc-notice text-body-s">
               Liegenschaften gewählt: Die ausdrückliche Grundstück-Sondervollmacht wird automatisch
-              aufgenommen (Art. 396 Abs. 3 OR – analoge Anwendung umstritten, Praxis empfiehlt sie).
+              aufgenommen (Art. 396 Abs. 3 OR i.V.m. Art. 365 Abs. 1 ZGB – Details im Prüfschritt).
             </p>
           )}
         </div>
@@ -302,7 +426,17 @@ export function VorlageVorsorgeauftrag() {
           <Checkbox
             checked={a.ersetztFruehere}
             onChange={(v) => set('ersetztFruehere', v)}
-            label={<><span>Frühere Vorsorgeaufträge ersetzen <span className="text-ink-500"><NormText text={`(Art. 362 Abs. 3 ZGB)`} /></span></span></>} />
+            label={<><span>Frühere Vorsorgeaufträge ersetzen <span className="text-ink-500"><NormText text={`(Widerruf in Errichtungsform, Art. 362 Abs. 1 ZGB)`} /></span></span></>} />
+          {!a.ersetztFruehere && (
+            <div className="space-y-2 pl-6">
+              <p className="text-xs text-ink-500">
+                <NormText text={`Nicht angekreuzt = dieser Vorsorgeauftrag ergänzt den früheren Auftrag und lässt ihn im Übrigen unberührt. Die Ergänzungs-Klausel wird aufgenommen; ohne sie träte der neue Auftrag von Gesetzes wegen an die Stelle des früheren (Art. 362 Abs. 3 ZGB).`} />
+              </p>
+              <Field label="Früherer Vorsorgeauftrag vom" optional hint="ohne Datum bleibt in der Klausel ein Ausfüll-Strich stehen">
+                <DatumsFeld value={a.fruehererVaDatum ?? ''} onChange={(v) => set('fruehererVaDatum', v || undefined)} className={inputCls} />
+              </Field>
+            </div>
+          )}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field label="Ort" optional><input className={inputCls} value={a.ort ?? ''} onChange={(e) => set('ort', e.target.value)} placeholder="z. B. Basel" /></Field>
             {eigenhaendig ? (
@@ -335,17 +469,42 @@ export function VorlageVorsorgeauftrag() {
             <p className="lc-overline text-brass-700">Form-Gate – damit Ihr Vorsorgeauftrag gültig wird</p>
             {eigenhaendig ? (
               <ul className="lc-list space-y-2 text-body-s text-ink-700">
-                <li><strong>Vollständig von Hand abschreiben:</strong><NormText text={` Der ganze Text – einschliesslich Ort, Datum und Unterschrift – muss eigenhändig geschrieben sein (Art. 361 Abs. 2 ZGB). Ein am Computer erstellter und nur unterschriebener Text ist UNGÜLTIG; auch eine bloss beglaubigte Unterschrift genügt nicht.`} /></li>
+                <li><strong>Vollständig von Hand abschreiben:</strong><NormText text={` Der ganze Text – einschliesslich Datum und Unterschrift – muss eigenhändig geschrieben sein (Art. 361 Abs. 2 ZGB). Ein am Computer erstellter und nur unterschriebener Text ist UNGÜLTIG; auch eine bloss beglaubigte Unterschrift genügt nicht.`} /></li>
                 <li><strong>Alternative:</strong><NormText text={` öffentliche Beurkundung bei der Urkundsperson (Art. 361 Abs. 1 ZGB).`} /></li>
               </ul>
             ) : (
               <ul className="lc-list space-y-2 text-body-s text-ink-700">
-                <li><strong>Beurkundung:</strong> Diesen Entwurf mit der Urkundsperson besprechen; das Verfahren richtet sich nach kantonalem Recht (BGE 151 III 81 – keine Zeugen erforderlich). {beurkundungsHinweis(a.kanton)}</li>
+                <li><strong>Beurkundung:</strong> Diesen Entwurf mit der Urkundsperson besprechen; das Verfahren richtet sich nach kantonalem Recht (BGE 151 III 81 – keine Zeugen erforderlich). <BeurkundungsHinweis kanton={a.kanton} /></li>
               </ul>
             )}
             <ul className="lc-list space-y-2 text-body-s text-ink-700">
               <li><strong>Wirksamkeit:</strong><NormText text={` Der Vorsorgeauftrag wird erst wirksam, wenn die KESB ihn bei eingetretener Urteilsunfähigkeit validiert (Art. 363 ZGB).`} /></li>
-              <li><strong>Auffindbarkeit:</strong><NormText text={` Errichtung und Hinterlegungsort beim Zivilstandsamt eintragen lassen (Art. 361 Abs. 3 ZGB; Gebühr CHF 75, Bestätigung +CHF 30 – Richtwerte). Die KESB anerkennt nur das Original; beauftragte Person informieren und Aufbewahrungsort mitteilen (nicht ins alleinige Bankschliessfach).`} /></li>
+              {/* W2·8/B5 (Befund N1, Fedlex-AKN-Verifikation 2.8.2026): Der Eintrag
+                  erfolgt auf Antrag bei einem BELIEBIGEN Zivilstandsamt (Art. 23a ZStV,
+                  SR 211.112.2) und umfasst nur Tatsache und Hinterlegungsort, nie den
+                  Inhalt. Die Gebühr von CHF 75 ist ein FIXER Bundestarif (Anhang 1
+                  Ziff. 23 ZStGV, SR 172.042.110); weitere Gebühren sind unzulässig
+                  (Art. 1 Abs. 2 ZStGV). Die frühere Zeile war doppelt falsch: «Richtwerte»
+                  (es ist ein Fixtarif) und «Bestätigung +CHF 30» (kein Tatbestand im
+                  Anhang – die Ziff.-1.1-Gebühr betrifft beurkundete Personenstandsdaten,
+                  der VA-Eintrag ist nach Art. 8a ZStV gerade nicht beurkundet). */}
+              {/* W2·8/Gegenprüfung B4 (D1): Die ZStGV-Angabe trug Norm und
+                  Stand, aber KEINEN Live-Link zur geltenden Fassung — ein
+                  gespeicherter Rechtswert ohne Weg zur Quelle. Die Zitat-Stelle
+                  ist jetzt ein externer Link auf die geltende Fassung; Muster
+                  übernommen von den «amtliche Quelle ↗»-Links der
+                  BeurkundungsHinweis-Komponente oben. Ziel-ELI live über den
+                  Fedlex-SPARQL-Endpunkt aufgelöst (3.8.2026): SR 172.042.110 →
+                  eli/cc/1999/490, aktive Konsolidierung seit 11.11.2024 ohne
+                  Endedatum und ohne dateNoLongerInForce — der angezeigte Stand
+                  ist damit der geltende. NormText verlinkt die Stelle nicht
+                  selbst: «Anhang 1 Ziff. 23» ist kein «Art. N GESETZ»-Verweis,
+                  und die ZStGV steht bewusst nicht im Norm-Register. */}
+              <li><strong>Auffindbarkeit:</strong>
+                <NormText text={` Errichtung und Hinterlegungsort auf Antrag bei einem beliebigen Zivilstandsamt eintragen lassen (Art. 361 Abs. 3 ZGB; Art. 23a ZStV). Gebühr CHF 75 (`} />
+                <a href="https://www.fedlex.admin.ch/eli/cc/1999/490/de" target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-800">Anhang 1 Ziff. 23 ZStGV ↗</a>
+                <NormText text={`, SR 172.042.110, Stand 11.11.2024); eingetragen wird nur die Tatsache der Errichtung und der Hinterlegungsort, nicht der Inhalt. Die KESB anerkennt nur das Original; beauftragte Person informieren und Aufbewahrungsort mitteilen (nicht ins alleinige Bankschliessfach).`} />
+              </li>
               <li><strong>Widerruf:</strong><NormText text={` jederzeit in einer Errichtungsform oder durch Vernichtung der Urkunde (Art. 362 ZGB).`} /></li>
             </ul>
             <label className="flex items-start gap-2.5 py-1.5 text-body-s cursor-pointer text-ink-900 font-medium pt-1">

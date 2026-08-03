@@ -14,7 +14,10 @@ export function MassgebendeGesetze({ modus }: { modus: 'rechner' | 'vorlage' }) 
         Die Erlasse, auf denen diese {modus === 'rechner' ? 'Rechner' : 'Vorlagen'} beruhen — als
         Volltext mit Stand und amtlichem Live-Link.
       </p>
-      <ul className="flex flex-wrap gap-2 list-none p-0 m-0">
+      {/* lc-chip-zeile (LM-044/N1): Erlass-Chips sind <Link> → <a>, tragen also die
+          Link-Unterstreichung als Form-Merkmal. Genau die Reihe, an der auf
+          /vorlagen und /rechner ein «ZGB» formal wie ein «Stand 01.02.2022» aussah. */}
+      <ul className="lc-chip-zeile flex flex-wrap gap-2 list-none p-0 m-0">
         {erlasse.map((e) => (
           <li key={e.key}>
             <Link

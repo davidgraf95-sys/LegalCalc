@@ -746,11 +746,37 @@
     text-decoration-color: color-mix(in oklab, currentColor 55%, transparent);
   }
   .lc-chip-zeile a.lc-chip:hover { text-decoration-color: currentColor; }
-  .lc-chip-zeile button.lc-chip {
-    background: var(--surface);
+  /* GRAMMATIK-ENTSCHEID zum `span[role="button"]` (W2·17-UI-BEFUNDE-N1, LM-044,
+     FAHRPLAN-UI-BEFUNDE §23 — der Entscheid steht hier, nicht nur im Fahrplan):
+     Die Aktions-Achse wird an der ROLLE festgemacht, nicht am Tag-Namen. Grund:
+     `src/components/rechtsprechung/NormChip.tsx` MUSS ein `span role="button"`
+     sein — der Chip liegt in einer Karte, deren Stretch-Link ein `<a>` ist;
+     `<a>`/`<button>` darin wäre ungültiges Inhaltsmodell (Kommentar dort :4–10).
+     Wäre die Grammatik am Tag festgemacht, sähen auf EINER Seite (/rechtsprechung)
+     zwei Bedienelemente mit derselben Wirkung — Facetten-Filter `button.lc-chip`
+     und Norm-Filter `span[role=button].lc-chip` — verschieden aus; genau die
+     Ununterscheidbarkeit, die LM-044 rügt, nur um eine Stufe verschoben. Für den
+     Nutzer wie für assistive Technik ist die ROLLE die Aussage; das Tag ist eine
+     Inhaltsmodell-Zwangslage. Der `<span>` OHNE role bleibt unberührt flach
+     (reine Angabe, LM-046) — die dritte Regel greift nur bei role="button".
+     Der Rahmen liegt bewusst NICHT auf border-left: dort sitzt der Tick, dessen
+     FARBE den Zustand kodiert (A25/C-1/C-2) und der auf Hover brass-400 wird —
+     Form und Zustand bleiben orthogonal. */
+  .lc-chip-zeile button.lc-chip,
+  .lc-chip-zeile [role="button"].lc-chip {
     border-top: 1px solid var(--line);
     border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
+  }
+  /* Die erhabene Fläche NUR im Ruhezustand: `.lc-chip-selected` (LM-040) trägt
+     die gefüllte brass-100-Fläche als Auswahl-Signal und hat mit (0,1,0) keine
+     Chance gegen (0,2,1)/(0,3,0) — ohne dieses :not() bügelte die Container-
+     Grammatik den Selected-Zustand der Facetten-Chips still weg (hell UND
+     dunkel: --surface/--brass-100 sind beide Theme-Token). Der Rahmen oben gilt
+     weiterhin für BEIDE Zustände — «gewählt» addiert, es nimmt nichts weg. */
+  .lc-chip-zeile button.lc-chip:not(.lc-chip-selected),
+  .lc-chip-zeile [role="button"].lc-chip:not(.lc-chip-selected) {
+    background: var(--surface);
   }
 
   /* ─── Die scrollbare Instanz-Linie (W2·7-BEZUG/B7, David 28.7.2026) ────────

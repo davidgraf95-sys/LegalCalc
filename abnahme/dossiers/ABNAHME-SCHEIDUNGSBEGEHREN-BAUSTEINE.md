@@ -76,7 +76,7 @@ Schema `scheidungsbegehren-gemeinsam` · Version 1.0.0 (Bauspez. familienrecht-k
 >
 > {{ehegatte2Rubrum}}{{vertretung2Zeile}}
 >
-> (gesuchstellende Parteien)
+> (gesuchstellende Parteien){{kinderRubrumZeile}}
 >
 > betreffend Scheidung auf gemeinsames Begehren
 

@@ -131,7 +131,7 @@ jobs:
           Offline-Tore grün (check:normtext, struktur-konsistenz, golden, verfall, paritaet).
 
           Roadmap: QS-OPT
-          Gegenpruefung: bestanden (SPARQL-Arbiter, dateApplicability-Fenster/§7) — deterministischer Batch-Re-Pin auf die geltende Fedlex-Konsolidierung, künftige Fassungen ausgeschlossen (fedlex-repin-batch); Offline-Tore grün.
+          Gegenpruefung: ausstehend — automatischer Lauf, adversariale Pruefung nachgelagert
           Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
           git push -u origin "$branch"
           # Idempotenz EXPLIZIT statt pauschalem `|| echo`: Ein bereits offener

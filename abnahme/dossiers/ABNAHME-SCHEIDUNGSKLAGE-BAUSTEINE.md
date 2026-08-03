@@ -76,7 +76,7 @@ Schema `scheidungsklage` · Version 1.0.0 (Bauspez. familienrecht-klagen-vorlage
 > gegen
 >
 > {{beklagteRubrum}}
-> (beklagte Partei)
+> (beklagte Partei){{kinderRubrumZeile}}
 >
 > betreffend Scheidung
 

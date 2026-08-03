@@ -7,10 +7,17 @@
 // (§5), deterministisch (§2). Aufruf: npx vite-node scripts/abnahme-dossiers.ts
 //
 // PFLEGE: nach jeder Schema-Änderung NEU laufen lassen, sonst driftet das
-// Dossier vom Code (sonst abnehmbar auf veraltetem Stand). TODO(check): Drift-
-// Guard in npm run check (regenerieren + git diff --exit-code).
+// Dossier vom Code (sonst abnehmbar auf veraltetem Stand).
+//
+// DRIFT-GUARD (3.8.2026, löst das frühere TODO(check) ein): `-- --check`
+// erzeugt dieselben Dossiers im Speicher und vergleicht sie mit dem
+// committeten Stand, ohne zu schreiben (`npm run check:dossiers`, Teil von
+// `npm run check`). Rot ⇒ ein Schema wurde geändert, ohne das Dossier
+// nachzuziehen — genau die Lage, in der David auf veraltetem Stand abnähme.
+// Bewusst KEIN `git diff --exit-code`: das Tor soll auch bei fremdem WIP im
+// Arbeitsbaum (§12) nur die eigene Projektion beurteilen.
 
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { VorlageSchema } from '../src/lib/vorlagen/engine';
 import { abnahmeDossier } from './abnahmeDossier';
@@ -92,13 +99,37 @@ const DOSSIERS: Eintrag[] = [
 ];
 
 const ZIEL_DIR = join(import.meta.dirname, '..', 'abnahme', 'dossiers');
-mkdirSync(ZIEL_DIR, { recursive: true });
+const istCheck = process.argv.includes('--check');
+if (!istCheck) mkdirSync(ZIEL_DIR, { recursive: true });
 
 let bausteine = 0;
+const drift: string[] = [];
 for (const d of DOSSIERS) {
   const { markdown, bausteine: n } = abnahmeDossier(d.schemas, kopf(d.anzeige, d.quelle));
-  writeFileSync(join(ZIEL_DIR, `ABNAHME-${d.datei}-BAUSTEINE.md`), markdown, 'utf8');
+  const ziel = join(ZIEL_DIR, `ABNAHME-${d.datei}-BAUSTEINE.md`);
+  if (istCheck) {
+    let alt: string | null;
+    try {
+      alt = readFileSync(ziel, 'utf8');
+    } catch {
+      alt = null;
+    }
+    if (alt === null) drift.push(`ABNAHME-${d.datei}-BAUSTEINE.md FEHLT`);
+    else if (alt !== markdown) drift.push(`ABNAHME-${d.datei}-BAUSTEINE.md VERALTET (${d.quelle})`);
+  } else {
+    writeFileSync(ziel, markdown, 'utf8');
+  }
   bausteine += n;
 }
 
-console.log(`${DOSSIERS.length} Dossiers nach abnahme/dossiers/ geschrieben — ${bausteine} Bausteine gesamt.`);
+if (istCheck) {
+  if (drift.length > 0) {
+    console.error(`check:dossiers: ${drift.length} Abnahme-Dossier(s) driften vom Schema-Stand (§5):`);
+    for (const z of drift) console.error(`  - ${z}`);
+    console.error('→ `npx vite-node scripts/abnahme-dossiers.ts` ausführen und committen.');
+    process.exit(1);
+  }
+  console.log(`check:dossiers: alle ${DOSSIERS.length} Abnahme-Dossiers synchron zu den Schemas (${bausteine} Bausteine).`);
+} else {
+  console.log(`${DOSSIERS.length} Dossiers nach abnahme/dossiers/ geschrieben — ${bausteine} Bausteine gesamt.`);
+}

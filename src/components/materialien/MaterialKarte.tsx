@@ -28,7 +28,12 @@ export function MaterialKarte({ m }: { m: BrowseMaterial }) {
         {m.sprache !== 'de' && <span className="lc-badge lc-badge-soft uppercase">{m.sprache}</span>}
       </div>
       <p className="mt-1.5 text-body-s font-medium text-ink-900 leading-snug line-clamp-3">{m.titel}</p>
-      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
+      {/* lc-chip-zeile (LM-044/N1): der Stand-Chip ist ein <span> ohne role und
+          bleibt darum ausdrücklich FLACH — reine Angabe, keine Aktion, kein Link.
+          Genau das war der Befund: «Stand 01.02.2022» war formal nicht von einem
+          Normverweis «ZGB» zu unterscheiden. Die Opt-in-Klasse macht die
+          Flachheit zur ERKLÄRTEN Aussage statt zum Zufall (§23). */}
+      <div className="lc-chip-zeile mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
         <span className="font-medium text-ink-700">{m.behoerdeKuerzel}</span>
         <StandChip stand={m.stand} />
       </div>

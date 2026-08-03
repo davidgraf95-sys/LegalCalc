@@ -65,7 +65,19 @@ fachliche Richtigkeit der Alias-Zusammenführungen ist Davids Abnahme.
 alle 93 im Code zitierten BGE/BGer-Urteile mit amtlichem Link (URL-Schema §7-verifiziert
 6.6.2026: ATF-Permalink bzw. AZA-Suche), Aussage, Code-Fundorten und Status; generiert
 aus der SSoT `src/data/verifikation.ts` via `npx vite-node scripts/bge-register-generieren.ts`
-(meldet Lücken — Stand: 0). Inhaltliche Abnahme der einzelnen Entscheide: David, offen.
+(meldet Lücken — Stand 3.8.2026: 41, alle vorbestehend). Status je Entscheid in drei
+Stufen: «zu verifizieren» → «Quelle geprüft (…)» (§7-Quellenprüfung durch eine Session)
+→ «verifiziert» (Davids fachliche Abnahme, nie automatisch).
+
+**BGE 151 III 81 — Quellenprüfung (Vorsorgeauftrag, Beurkundung):**
+[rechtsprechung/bge-151-iii-81-verifikation-2026-08-03.md](rechtsprechung/bge-151-iii-81-verifikation-2026-08-03.md) —
+Prüfung 3.8.2026 am amtlichen Entscheidtext (W2·8/V9.2): Trägt der Entscheid die von
+Engine und UI behaupteten Aussagen? Verdikt **ja, beide** — E. 3.5.5 (Beurkundung nach
+kantonalem Recht, Art. 55 SchlT ZGB) und E. 3.1/3.6 (zwei Zeugen von Bundesrechts wegen
+nicht erforderlich), mit den tragenden Erwägungen wörtlich. Präzision: das
+Zeugen-Erfordernis entfällt von BUNDESRECHTS wegen — ein kantonales Beurkundungsrecht
+könnte Zeugen vorschreiben (im Fall SG tut es das nicht). Abnahme-Status: Quellenprüfung
+bestanden, fachliche Abnahme David offen.
 
 **BGE-Leitentscheide-Import:** [rechtsprechung/bge-leitentscheide-import.md](rechtsprechung/bge-leitentscheide-import.md) —
 Stufe 1 des Rechtsprechungs-Ausbaus (Auftrag David 23.6.2026): Import der amtlichen
@@ -202,6 +214,7 @@ zugeordnet (grob bei Mantelvorlagen, §8); fachliche Abnahme David offen.
 
 | Dokument | Inhalt | Verifikation |
 |---|---|---|
+| [zstgv-drift-erkennung-2026-08-03.md](normen/zstgv-drift-erkennung-2026-08-03.md) | ZStGV (SR 172.042.110): ELI/Konsolidierung/kanonisches html-N + Anhang 1 Ziff. 23 («75») wörtlich belegt — und der **Befund, warum ein blosser cache.sh-Pin nicht trägt** (jeder Pflicht-Anker braucht einen Bund-Snapshot). Zwei Wege für §7-Merkmal (d), Entscheid David offen; bis dahin ist CHF 75 unüberwacht (Teilrevision in Vernehmlassung bis 15.10.2026) | Quelle live SPARQL + Filestore 3.8.2026 ✓ · Umsetzung offen |
 | [zpo-zustaendigkeit-regelwerk.md](normen/zpo-zustaendigkeit-regelwerk.md) | Art. 4–46 + Systematik (Bindungsgrade, HG-Revision 2025, perpetuatio fori, Art.-63-Rettung, IPRG-Weiche) mit Engine-Hinweisen | 17/17 Wortlaut-Proben am Cache ✓ |
 | [zustaendigkeit-engine-verifikation.md](normen/zustaendigkeit-engine-verifikation.md) | Deep-Research-Vollverifikation von `zustaendigkeit.ts` (37 Behauptungs-Cluster, ZPO 20250101 + BGG 20250101 + BGE 133 III 393): **0 fristen-/ergebnisverfälschende Fehler**; Befunde B-1 Art. 113 II lit. g (DSG-Schlichtung kostenlos) und B-2 Art. 6 IV lit. c (internat. HG-Weiche) am 6.6.2026 umgesetzt | Kern zweifach (25 Claims à 3-0 adversarial) · Rest einfach belegt (6.6.2026) |
 | [schkg-zustaendigkeit-regelwerk.md](normen/schkg-zustaendigkeit-regelwerk.md) | Betreibungsorte 46–55, Klage-Foren + Fristen (Aberkennung 20 T., Arrest-Kaskade), Gericht vs. Aufsicht; Synthese-Tabelle | Wortlaute verbatim Stand 1.1.2025 ✓ |

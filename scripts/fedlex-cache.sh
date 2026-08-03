@@ -49,7 +49,7 @@ EINTRAEGE=(
   # liefern n=0 UND n=1 echtes HTML — n=0 ist STALE (ohne AS 2026 94), nur html-1 trägt
   # die Änderung; SPARQL bestätigt html-1 kanonisch. Alle 6 zitierten Anker byte-identisch,
   # Inventar 1099→1099 (art_302 Intra-Artikel, kein neuer Anker).
-  "zgb|cc/24/233_245_233|20260701|1|art_19_c,art_360,art_361,art_370,art_467,art_505|210"
+  "zgb|cc/24/233_245_233|20260701|2|art_19_c,art_360,art_361,art_370,art_467,art_505|210"
   # ZPO-Anker um die Rechtsmittel-Artikel erweitert (Umbau 6.6.2026).
   # Re-Pin 20250101→20260701 (§7-Nachverifikation 1.7.2026, AS 2026 16 Besitzesschutz:
   # neu art_260_a/art_260_b, nicht zitiert). No-Suffix (n=0; n≥1 = Casemates-SPA). Alle 14
@@ -135,13 +135,13 @@ EINTRAEGE=(
   # ── Erweiterung 17.6.2026 (jedes zitierte Bundesgesetz mit Volltext-Snapshot,
   # Auftrag David). ELI + geltende Konsolidierung via Fedlex-SPARQL ermittelt,
   # SR-Nr. + Pflicht-Anker am Filestore-HTML empirisch verifiziert (§7). Alle n=0.
-  "mwstg|cc/2009/615|20250331|3|art_22,art_26|641.20"
+  "mwstg|cc/2009/615|20250331|4|art_22,art_26|641.20"
   "urg|cc/1993/1798_1798_1798|20250701|6|art_17|231.1"
   "bewg|cc/1984/1148_1148_1148|20230701|7|art_2,art_5,art_18|211.412.41"
   "eog|cc/1952/1021_1046_1050|20260601|1|art_16_c|834.1"
   "svg|cc/1959/679_705_685|20260701|0|art_65|741.01"
   "dsg|cc/2022/491|20250707|1|art_25|235.1"
-  "bbg|cc/2003/674|20250301|2|art_14|412.10"
+  "bbg|cc/2003/674|20250301|3|art_14|412.10"
   # GBV/JStPO ergänzt 17.6.2026. GBV: neuste Konsolidierung MIT Filestore-HTML
   # ist 20240101 (spätere nur SPA-Shell, Live-Link massgeblich, Muster VMWG).
   "gbv|cc/2011/667|20240101|7|art_86|211.432.1"
@@ -173,11 +173,11 @@ EINTRAEGE=(
   "uvg|cc/1982/1676_1676_1676|20260101|0|art_1|832.20"
   "avig|cc/1982/2184_2184_2184|20260101|1|art_1|837.0"
   "rpg|cc/1979/1573_1573_1573|20260701|2|art_1|700"
-  "usg|cc/1984/1122_1122_1122|20260801|0|art_1|814.01"
+  "usg|cc/1984/1122_1122_1122|20260801|1|art_1|814.01"
   "vgg|cc/2006/352|20260612|1|art_1|173.32"
   "bgfa|cc/2002/153|20250701|1|art_1|935.61"
   "kkg|cc/2002/593|20230901|4|art_1|221.214.1"
-  "gwg|cc/1998/892_892_892|20240301|6|art_1|955.0"
+  "gwg|cc/1998/892_892_892|20240301|7|art_1|955.0"
   # ── Batch 3 (23.6.2026) — Resolver-Daten; Currency via check:fedlex-versionen korrigiert. ──
   "ivg|cc/1959/827_857_845|20260101|8|art_1|831.20"
   "famzg|cc/2008/51|20260101|1|art_1|836.2"
@@ -217,7 +217,7 @@ EINTRAEGE=(
   "wag|cc/1992/2521_2521_2521|20250801|3|art_1|921.0"
   "pueg|cc/1986/895_895_895|20260508|1|art_1|942.20"
   "fidleg|cc/2019/758|20240301|4|art_1|950.1"
-  "kag|cc/2006/822|20240301|6|art_1|951.31"
+  "kag|cc/2006/822|20240301|7|art_1|951.31"
   "finig|cc/2018/801|20240301|4|art_1|954.1"
   "finfrag|cc/2015/853|20240201|5|art_1|958.1"
   "vag|cc/2005/734|20240901|5|art_1|961.01"
@@ -361,7 +361,7 @@ EINTRAEGE=(
   "hzue|cc/1994/2809_2809_2809|20230612|7|art_1|0.274.131"
   "hbewue|cc/1994/2824_2824_2824|20260101|0|art_1|0.274.132"
   "hkue|cc/1983/1694_1694_1694|20240613|2|art_1|0.211.230.02"
-  "fza|cc/2002/243|20201215|5|art_1|0.142.112.681"
+  "fza|cc/2002/243|20201215|9|art_1|0.142.112.681"
   "vrk|cc/1990/1112_1112_1112|20200508|12|art_1|0.111"
   "uno_pakt_ii|cc/1993/750_750_750|20220509|15|art_1|0.103.2"
   # ── International P2 (25.6.2026): weitere Staatsverträge SR 0.* als Volltext.
@@ -387,7 +387,7 @@ EINTRAEGE=(
   "hksue96|cc/2009/380|20260119|0|art_1|0.211.231.011"
   "huvue|cc/1976/1559_1559_1559|20160915|3|art_1|0.211.213.02"
   "eaue|cc/1967/814_854_850|20230628|5|art_1|0.353.1"
-  "cmr|cc/1970/851_851_851|20210210|3|art_1|0.741.611"
+  "cmr|cc/1970/851_851_851|20210210|6|art_1|0.741.611"
   "montreal|cc/2005/566|20260407|0|art_1|0.748.411"
   "rbue|cc/1993/2659_2659_2659|20240606|2|art_1|0.231.15"
   "uno_brk|cc/2014/245|20260501|0|art_1|0.109"

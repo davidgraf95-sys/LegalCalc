@@ -575,8 +575,8 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §10. Trailer `Roadmap: W2·6b-MAT-FINMA`.
 - [x] **7 · Verzahnungs-Klingen** *(`[OF]`, amtlich)* — GEBAUT 5.7.2026: (a) Verjährungs-/Gewährleistungs-Board · (b) Verzugs-/Inkasso-Strecke · (c) Gerichts-Baustein-Set (Zitierer + Rubrum-Vorlage). Reine Darstellung auf bestehenden Engines (§3), golden 201 (+8 additiv), Gegenprüfung bestanden. **Chronik:** `ROADMAP-CHRONIK.md` → W2·7.
   <!-- @meta id: W2·7 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
-- [~] **8 · Schriften-Baukasten** *(VORLAGEN, Worktree)* — Berufung/BGG-Beschwerde/Sistierung/
-  <!-- @meta id: W2·8 · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/lib/vorlagen] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-VORLAGEN-AUSBAU.md -->
+- [ ] **8 · Schriften-Baukasten** *(VORLAGEN, Worktree)* — Berufung/BGG-Beschwerde/Sistierung/
+  <!-- @meta id: W2·8 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/vorlagen] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-VORLAGEN-AUSBAU.md -->
   Beweisverzeichnis über `vorlagen/engine.ts`; Zulässigkeit nur Hinweis, Status «entwurf».
   - [ ] **Zitat-Export & Fussnoten-Ausgabe** *(Ideen-Intake 20.7.2026, `[OF]`, klein → inline §14.1)* —
     Ein-Klick-Zitat in korrekter amtlicher Form (`BGE 148 III 1 E. 2.3`) + Fussnoten-Ausgabe; Formvorschriften
@@ -675,8 +675,8 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   **Reihenfolge-Freigabe (`@queue`) bleibt Davids Entscheid** — darum bewusst NICHT in der Queue.
   - [x] **B1 · Chips, Badges und Normzitate (K-05 + K-10)** — 16 Befunde (Blocker 3 · Hoch 3). §2.
     <!-- @meta id: W2·17-UI-BEFUNDE-B1 · status: done · of: ja · blocker: null · dep: [] · kollision: [src/components/NormText.tsx, src/components/NormPopover.tsx, src/components/verzahnung, src/components/rechtsprechung, src/pages/gesetz-leser] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
-  - [ ] **B2 · Verlauf und Zustand in der URL (K-20)** — 11 Befunde (Blocker 2 · Hoch 5). §3.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B2 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B1] · kollision: [src/components/layout, src/pages/gesetz-leser, src/pages/EntscheidLeser.tsx, src/pages/Rechtsprechung.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
+  - [x] **B2 · Verlauf und Zustand in der URL (K-20)** — 11 Befunde (Blocker 2 · Hoch 5). §3.
+    <!-- @meta id: W2·17-UI-BEFUNDE-B2 · status: done · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B1] · kollision: [src/components/layout, src/pages/gesetz-leser, src/pages/EntscheidLeser.tsx, src/pages/Rechtsprechung.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B3 · Klebende Leisten (K-01)** — 7 Befunde (Blocker 2 · Hoch 4). §4.
     <!-- @meta id: W2·17-UI-BEFUNDE-B3 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B2] · kollision: [src/components/layout, src/index.css] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). §5.
@@ -718,8 +718,8 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
     Behauptung «ist gebaut» erst nach 19 Bau-Batches geprüft — erwiese sie sich als falsch, entstünde
     der Bau-Posten am spätesten möglichen Punkt. B20 ist damit **unabhängig und vorziehbar**; die
     Bau-Kette B1→…→B19 bleibt unverändert seriell. `plan:next` führt B20 dadurch gewollt in ready-now.
-  - [ ] **N1 · LM-044-Nachzug: Chip-Grammatik `lc-chip-zeile` ausrollen** *(David-Entscheid 2.8.2026; klein, reines UI)* — Container-Klasse `lc-chip-zeile` (`src/index.css:742–755`, in B1 gebaut) auf die Chip-Reihen der Materialien-/Vorlagen-Routen und `EntscheidFilter.tsx` ziehen. **Ehrliche Abgrenzung:** deckt **nur die Element-Art-Achse** (`a`/`button`/`span`); die **Metadatum-Achse** gehört zu [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §3(c) / `W2·10-UI-NAV` und wird hier **nicht** vorgegriffen. §23.
-    <!-- @meta id: W2·17-UI-BEFUNDE-N1 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B1] · kollision: [src/index.css, src/components/rechtsprechung/EntscheidFilter.tsx, src/components/vorlagen/NormChip.tsx, src/pages/Materialien.tsx] · seq-hart: [PR#408(lc-chip-zeile entsteht dort), PR#409(Flächen-Überschneidung Vorlagen)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
+  - [x] **N1 · LM-044-Nachzug: Chip-Grammatik `lc-chip-zeile` ausrollen** *(David-Entscheid 2.8.2026; klein, reines UI)* — Container-Klasse `lc-chip-zeile` (`src/index.css:742–755`, in B1 gebaut) auf die Chip-Reihen der Materialien-/Vorlagen-Routen und `EntscheidFilter.tsx` ziehen. **Ehrliche Abgrenzung:** deckt **nur die Element-Art-Achse** (`a`/`button`/`span`); die **Metadatum-Achse** gehört zu [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §3(c) / `W2·10-UI-NAV` und wird hier **nicht** vorgegriffen. §23.
+    <!-- @meta id: W2·17-UI-BEFUNDE-N1 · status: done · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B1] · kollision: [src/index.css, src/components/rechtsprechung/EntscheidFilter.tsx, src/components/vorlagen/NormChip.tsx, src/pages/Materialien.tsx] · seq-hart: [PR#408(lc-chip-zeile entsteht dort), PR#409(Flächen-Überschneidung Vorlagen)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
     **`N` statt `B21`:** Nachzug zu B1, **kein** Glied der Bau-Kette B1→…→B19 (B20 bleibt der
     Prüf-Batch am Ende). **Bau erst nach Landung von PR #408 + #409** — PR-Landungen sind keine
     Plan-IDs, darum `seq-hart` statt `dep`. Begründung beider Punkte: §23.

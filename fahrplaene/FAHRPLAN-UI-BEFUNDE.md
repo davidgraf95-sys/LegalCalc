@@ -124,7 +124,7 @@ Je Eintrag: Referenz aus dem Bestand + der Ein-Zeilen-Grund, warum kein Neubau.
 
 - [x] **LM-040** · Blocker · Der gewählte Chip unterscheidet sich vom ungewählten nur in der Rahmenfarbe … [Verdacht → DESIGN-REGLEMENT.md F4 «selected» + FAHRPLAN-UI-QUALITAET.md §3(c) Muster-/Zustands-Konsistenz…] — gebaut: `.lc-chip-selected` (gefüllte Fläche + ✓, hell/dunkel), Commit 0844615c4.
 - [ ] **LM-041** · Hoch · Der Chip unterscheidet nicht, in welcher Rolle die Norm im Entscheid … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §9/B1 Facetten-Datenmodell + §1.2 KantenChip-Dichteregel…] — → **geöffnet per David-Entscheid 2.8.2026 als `W2·7-VZUI-SACHGEBIET`** (nur Sachgebiet, deterministisch aus der amtlichen BGE-Bandnummer; Rolle bleibt zu). Der Bestands-Entscheid (FAHRPLAN-VERZAHNUNG-UI.md §9/B1 + §1.2: Facetten-Modell abschliessend definiert, Dichte-Regel EIN Zusatz je Chip) wird nicht still gekippt, sondern ausdrücklich um EINE Dimension erweitert — Nachtrag dort, Spec in §12 derselben Datei. Die Zitier-**Rolle** bleibt zu: nicht deterministisch ableitbar (§2).
-- [ ] **LM-044** · Mittel · Normverweis, Statusbadge («Entwurf», «Zu unterzeichnen»), Standangabe, Sprache, Instanz und Gemeinwesen sehen … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3 (Z.1429: «NormChip/Materialien (DEFER, U-VERWEIS-Kollisio…] — → **geöffnet per David-Entscheid 2.8.2026** (U-VERWEIS-Prüfung: Sperrgrund seit 10.7.2026 weg — `#170` gemergt `7f6b9a17b` —, C-3 war am 11.7.2026 gebaut `13fee95ed`; der DEFER-Vermerk in FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3 war eine **stale Kopie**, §5-geheilt) → **`W2·17-UI-BEFUNDE-N1`** (§23).
+- [x] **LM-044** · Mittel · Normverweis, Statusbadge («Entwurf», «Zu unterzeichnen»), Standangabe, Sprache, Instanz und Gemeinwesen sehen … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3 (Z.1429: «NormChip/Materialien (DEFER, U-VERWEIS-Kollisio…] — **erledigt durch N1** (Element-Art-Achse), Commit `cffda92e0`; Metadatum-Achse bleibt bei `W2·10-UI-NAV`. → **geöffnet per David-Entscheid 2.8.2026** (U-VERWEIS-Prüfung: Sperrgrund seit 10.7.2026 weg — `#170` gemergt `7f6b9a17b` —, C-3 war am 11.7.2026 gebaut `13fee95ed`; der DEFER-Vermerk in FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3 war eine **stale Kopie**, §5-geheilt) → **`W2·17-UI-BEFUNDE-N1`** (§23).
 - [x] **LM-045** · Mittel · Fünf gleich aussehende Chips sind drei verschiedene Dinge: «↗ geltende Fassung» … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 A25/C-2 (Currency-Tonung) + src/index.css:699–700 (`.lc-chip-geltend`/`.lc-chip-vorbehalt`); Code src/pages…] — gebaut zusammen mit LM-046/LM-047: Chip-Grammatik (Link/Knopf/Angabe) über Container-Klasse `lc-chip-zeile`, Commit fd68383da.
 - [x] **LM-046** · Mittel · Der Chip sieht wie die naheliegendste Aktion aus, ist aber ein … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §X «Fassungsvergleich/Zeitreise» (hart gegated: Fedlex-P1a/b + David-…] — gebaut: Form-Korrektur (kein Linkziel vorgetäuscht), §X-Fassungs-Gate unangetastet, Commit fd68383da.
 - [x] **LM-047** · Mittel · Sechs Elemente in einer Zeile, drei Formensprachen: «★ Leitentscheid» (grüne Pille), … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §1.2/§1.3 (KantenChip vs. StatusBadge = zwei bewusste Anatomien) + FA…] — gebaut: Aktion/externer Link/Angabe an der Container-Klasse `lc-chip-zeile` getrennt, Commit fd68383da.
@@ -148,17 +148,20 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 
 **11 Befunde** · Blocker 2 · Hoch 5 · Mittel 4 · Detail 0 · `W2·17-UI-BEFUNDE-B2`
 
-- [ ] **LM-199** · Blocker · Nach «Zurück» landet man am Anfang des Gesetzes statt an der … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 Z. 894 (U-POSITION = A2+A16+A17) und §10.9 A16 (Z. 1292–1307, «Zu…]
-- [ ] **LM-200** · Blocker · Vier Bedienelemente derselben Seite hinterlegen ihren Zustand auf drei verschiedene Arten: … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §2/S1 (Z. 108–116: «Rechtsprechungs-Suchbegriff in URL spiegeln (debo…]
-- [ ] **LM-201** · Hoch · Beim Wechsel auf eine kürzere Seite bleibt kurzzeitig die alte Scrollposition … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.9 A16 (Z. 1292–1307, anker-basierte Restauration, history.scrollRes…]
-- [ ] **LM-203** · Hoch · Zwei Filterarten mit unterschiedlichem Verhalten in derselben Filterzeile: Das Sachgebiet schreibt … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §2/S1 (Z. 108–116) — dieselbe Fläche src/pages/Rechtsprechung.tsx:75]
-- [ ] **LM-204** · Hoch · Vier Bereiche, vier verschiedene Regeln. Beim Lesen eines Gesetzes ändert sich … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §Z Ziff. 7 (Scroll-Hash-Sync verworfen) + §2/S1 + §1/N0d·J5 (?ansicht…]
-- [ ] **LM-205** · Hoch · Der Rechenzustand steht erst nach dem Drücken von «Link teilen» in … [neu]
-- [ ] **LM-206** · Hoch · Nach dem Neuladen ist die Richter-Auswahl wiederhergestellt und die Karten-Ansicht ebenfalls, … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §2/S1 (Z. 108–116, URL-Zustand der Rechtsprechungs-Recherche) · §8-Eh…]
-- [ ] **LM-207** · Mittel · Die Darstellung blockierte dabei so lange, dass eine Auswertung nach 45 … [Verdacht → ROADMAP.md QS-PERF (@meta Z. 191, status wip) — offene Posten «Der Artikel-Suchindex kostet ~28…]
-- [ ] **LM-208** · Mittel · Die Adresse trägt den Parameter «?norm=Art. 367 OR», die Entscheidseite zeigt … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 Z. 894 / §10.9 A17 (Split-View bzw. Entscheid öffnet direkt an de…]
-- [ ] **LM-209** · Mittel · Jeder Klick auf einen Abschnittsreiter erzeugt einen Verlaufseintrag (#abschnitt-erwaegung, #abschnitt-dispositiv). Drei … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §Z Ziff. 7 (History-/Hash-Politik, verworfener Scroll-Hash-Sync) · §1…]
-- [ ] **LM-210** · Mittel · Der Lesemodus verändert die Adresse nicht. Ein Verweis auf die Leseansicht … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §1/N0d·J5 (Z. 94–95, ?ansicht=voll|auszug in die URL zurückgeschriebe…]
+**Prod-Re-Audit 3.8.2026: 11/11 geprüft (8 voll, 2 teilweise, 1 unklar); 10 gebaut, 1
+zurückgestellt (QS-PERF).**
+
+- [x] **LM-199** · Blocker · Nach «Zurück» landet man am Anfang des Gesetzes statt an der … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 Z. 894 (U-POSITION = A2+A16+A17) und §10.9 A16 (Z. 1292–1307, «Zu…] — gebaut: verbrauchter Einstiegs-Hash kapert die Zurück-Position nicht mehr (A16-Konvergenzschleife), Commit 2c651e43c.
+- [x] **LM-200** · Blocker · Vier Bedienelemente derselben Seite hinterlegen ihren Zustand auf drei verschiedene Arten: … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §2/S1 (Z. 108–116: «Rechtsprechungs-Suchbegriff in URL spiegeln (debo…] — gebaut zusammen mit LM-203/LM-206: eine Zustands-Weiche `src/components/rechtsprechung/zustand.ts` (Inhalt→URL, Darstellung→localStorage), Commit 0668af120.
+- [x] **LM-201** · Hoch · Beim Wechsel auf eine kürzere Seite bleibt kurzzeitig die alte Scrollposition … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.9 A16 (Z. 1292–1307, anker-basierte Restauration, history.scrollRes…] — gebaut: synchroner Scroll-Reset vor dem ersten Paint beim Routenwechsel ohne Restauration, Commit 75b435823.
+- [x] **LM-203** · Hoch · Zwei Filterarten mit unterschiedlichem Verhalten in derselben Filterzeile: Das Sachgebiet schreibt … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §2/S1 (Z. 108–116) — dieselbe Fläche src/pages/Rechtsprechung.tsx:75] — gebaut zusammen mit LM-200/LM-206 (dieselbe Zustands-Weiche, §3/zustand.ts): Gleichbehandlung aller Facetten-Achsen hergestellt; LM-203s History-Push-Erwartung bewusst nicht gebaut (Prod-Messung 2.8.2026: `?rg=` erzeugt keinen Verlaufseintrag, Bestand fährt durchgehend `replace` — Beseitigung der Asymmetrie erfüllt den Befundkern, ein Push je Facetten-Klick würde den Rückweg fluten), Commit 0668af120.
+- [x] **LM-204** · Hoch · Vier Bereiche, vier verschiedene Regeln. Beim Lesen eines Gesetzes ändert sich … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §Z Ziff. 7 (Scroll-Hash-Sync verworfen) + §2/S1 + §1/N0d·J5 (?ansicht…] — **miterfüllt durch die Systematik der Lose** (Dach-Befund, kein eigener Bau): Kommentar an der Weiche in `zustand.ts` hält fest, welche Zustandsklasse wohin gehört und warum; die drei tragenden Commits, die dieselbe Inhalt→URL/Darstellung→localStorage-Regel über drei Flächen hinweg konsistent anwenden, sind 0668af120 (Rechtsprechungs-Facetten), e9c430e8a (Rechenzustand) und 2ef8ce242 (Lesemodus).
+- [x] **LM-205** · Hoch · Der Rechenzustand steht erst nach dem Drücken von «Link teilen» in … [neu] — gebaut: Rechenzustand live in der URL (debounced replaceState, ein Serializer im geteilten `LinkTeilenButton`, gilt für alle Rechner), Commit e9c430e8a.
+- [x] **LM-206** · Hoch · Nach dem Neuladen ist die Richter-Auswahl wiederhergestellt und die Karten-Ansicht ebenfalls, … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §2/S1 (Z. 108–116, URL-Zustand der Rechtsprechungs-Recherche) · §8-Eh…] — gebaut zusammen mit LM-200/LM-203 (dieselbe Zustands-Weiche, §3/zustand.ts), Commit 0668af120.
+- [ ] **LM-207** · Mittel · Die Darstellung blockierte dabei so lange, dass eine Auswertung nach 45 … [Verdacht → ROADMAP.md QS-PERF (@meta Z. 191, status wip) — offene Posten «Der Artikel-Suchindex kostet ~28…] — ⛔ zurückgestellt — QS-PERF-Fläche (@wip), Nachmessung 3.8. abgespeckt negativ; Wiedervorlage nach QS-PERF.
+- [x] **LM-208** · Mittel · Die Adresse trägt den Parameter «?norm=Art. 367 OR», die Entscheidseite zeigt … [Verdacht → FAHRPLAN-GESETZES-UX.md §10.8 Z. 894 / §10.9 A17 (Split-View bzw. Entscheid öffnet direkt an de…] — gebaut: Herkunfts-Hinweis «Aufgerufen über …» + Markierung der wörtlichen Fundstellen; «ff.» bewusst nicht aufgelöst (§1/§8), Commit 4a9690c4e.
+- [x] **LM-209** · Mittel · Jeder Klick auf einen Abschnittsreiter erzeugt einen Verlaufseintrag (#abschnitt-erwaegung, #abschnitt-dispositiv). Drei … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §Z Ziff. 7 (History-/Hash-Politik, verworfener Scroll-Hash-Sync) · §1…] — gebaut: Abschnittsreiter scrollen selbst, Hash per `replaceState` statt History-Push, Commit 960f9b3a2.
+- [x] **LM-210** · Mittel · Der Lesemodus verändert die Adresse nicht. Ein Verweis auf die Leseansicht … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §1/N0d·J5 (Z. 94–95, ?ansicht=voll|auszug in die URL zurückgeschriebe…] — gebaut: Lesemodus steht als `?lese=1` in der Adresse (teilbar, reload-fest, N0d·J5-Muster), Commit 2ef8ce242.
 
 **Code-Flächen (grob, aus den Routen):** `src/components/layout`, `src/pages/gesetz-leser`, `src/pages/EntscheidLeser.tsx`, `src/pages/Rechtsprechung.tsx`.
 **Risiko-Klasse:** reines UI/Navigation — aber History-Architektur (A16), Perf-Falle beachten.
@@ -608,3 +611,37 @@ als `dep` — `dep` kennt nur Schritt-IDs.
 **DoD.** Golden byte-gleich · CLS 0 · hell/dunkel je Fläche gesichtet · Gegenprüfung `n/a`
 (reines UI, kein Risiko-Pfad) · die Grammatik-Entscheidung zum `span[role=button]` steht danach
 als Satz in `src/index.css` beim Regelblock, nicht nur im Fahrplan.
+
+### §23 · Stand — **gebaut** (3.8.2026, Commits `cffda92e0` + `a74396601`)
+
+- [x] **Grammatik-Entscheid `span[role=button]`** — Variante 1 der beiden in §23 offen gelassenen:
+  die Aktions-Achse wird an der **Rolle** festgemacht, nicht am Tag-Namen. Die Grammatik hat die
+  dritte Regel `.lc-chip-zeile [role="button"].lc-chip` bekommen; der role-lose `<span>` bleibt
+  unberührt flach. Begründung steht als Satz **in `src/index.css`** beim Regelblock (DoD): am Tag
+  festgemacht sähen auf **einer** Seite (`/rechtsprechung`) zwei Bedienelemente gleicher Wirkung —
+  Facetten-`button.lc-chip` und Karten-`span[role=button].lc-chip` — verschieden aus; das wäre
+  derselbe Befund, nur eine Stufe verschoben.
+- [x] **Fläche a — Filterleiste** `EntscheidFilter.tsx` (Facetten-Gruppe + Aktiv-Filter-Chips).
+- [x] **Fläche b — Karten/Zeilen** `EntscheidKarte.tsx`, `EntscheidZeile.tsx` (die
+  `span[role=button]`-Norm-Chips), `MaterialKarte.tsx` (Stand-Chip bleibt erklärt **flach**),
+  `RechnerKopf.tsx`, `ErgebnisAnzeige.tsx` (2 Reihen), `MassgebendeGesetze.tsx`, `wizard.tsx`
+  und die drei Vorlagen-Köpfe mit eigener Reihe (GmbH-Gründung, Kapitalerhöhung,
+  Kündigung Vermieter). `vorlagen/NormChip.tsx` erbt als `<a>` automatisch — die
+  Tailwind-Utility `no-underline` verliert dabei gegen `.lc-chip-zeile a.lc-chip` (Spezifität
+  (0,2,1) vs. (0,1,0); Tailwind v3 legt Utilities in keine eigene Kaskaden-Ebene). Am Dev-Server
+  gemessen: `text-decoration-line: underline` trotz `no-underline`.
+- [x] **Selected-Zustand gehalten** — die Flächen-Deklaration greift nur via
+  `:not(.lc-chip-selected)`; ohne das hätte `(0,2,1)` die brass-100-Auswahlfläche von
+  `.lc-chip-selected` `(0,1,0)` still weggebügelt. Hell **und** dunkel gemessen
+  (hell `#F1E8D6` / dunkel `rgb(44,38,22)` bleiben stehen, Rahmen kommt additiv dazu).
+- [x] **CLS 0** — Chip-Höhe unverändert (`min-height: 24px`, `border-box`); der Rahmen liegt
+  bewusst **nicht** auf `border-left` (dort sitzt der Zustands-Tick, A25/C-1/C-2).
+- [x] **Tore** — `npm run gate` (voll) grün; Golden byte-gleich; `check:gegenpruefung` grün
+  (kein Risiko-Pfad, Gegenprüfung `n/a` wie vorgesehen).
+- [x] **Tests** — `src/tests/chip-grammatik-n1.test.tsx` (6). Alle drei Wächter einmal **rot**
+  gezeigt (§6.7): `:not()`-Guard entfernt → rot · `[role=button]`-Selektor entfernt → rot ·
+  Container-Klasse in `MaterialKarte` entfernt → rot.
+- **Nicht gebaut (Abgrenzung gehalten, §14.3):** die **Metadatum-Achse** (welche Angabe überhaupt
+  als Chip auftreten darf) — bleibt `FAHRPLAN-UI-QUALITAET.md` §3(c) / `W2·10-UI-NAV`. Ebenfalls
+  bewusst aussen vor: die Startseiten-Chips (`start/GesetzeChips.tsx`), die auf keiner der vier
+  LM-044-Routen liegen.

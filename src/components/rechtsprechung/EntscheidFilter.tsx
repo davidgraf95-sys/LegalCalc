@@ -3,6 +3,7 @@ import type { EntscheidFilterWerte, SortModus } from '../../lib/rechtsprechung/b
 import { normLabel, filterEntscheide, richterHaeufigkeit, INSTANZ_ORDNUNG } from '../../lib/rechtsprechung/browse';
 import type { BrowseEntscheid, RichterRegister } from '../../lib/rechtsprechung/register';
 import { RichterFilter } from './RichterFilter';
+import { SORT_LABEL } from './zustand';
 
 // Schlanke Steuerleiste der Übersicht /rechtsprechung (ersetzt den schweren
 // Filterblock): EINE Toolbar-Zeile (Suche + Sortierung + Dichte) + eine sichtbare
@@ -13,9 +14,6 @@ import { RichterFilter } from './RichterFilter';
 // Reine Darstellung (§3); Filterung macht filterEntscheide() im Eltern.
 
 const SPRACH_LABEL: Record<string, string> = { de: 'Deutsch', fr: 'Französisch', it: 'Italienisch', rm: 'Rätoromanisch' };
-const SORT_LABEL: Record<SortModus, string> = {
-  relevanz: 'Leitentscheide zuerst', neu: 'Neueste zuerst', alt: 'Älteste zuerst', gericht: 'Bund → Kantone',
-};
 
 function einzigartig<T>(werte: T[]): T[] {
   return [...new Set(werte)];
@@ -29,8 +27,13 @@ function FacettenGruppe({ label, optionen }: {
   /** `voll` = ausgeschriebene a11y-/Tooltip-Bezeichnung, falls `text` eine Abkürzung ist. */
   optionen: { id: string; text: string; voll?: string; n: number; aktiv: boolean; waehle: () => void }[];
 }) {
+  // lc-chip-zeile (LM-044/N1): Chip-Grammatik-Container — die Facetten sind
+  // <button>, tragen hier also den geschlossenen Hairline-Rahmen (drückbare Form)
+  // statt nur eine Farbnuance. Der Selected-Zustand (lc-chip-selected) bleibt
+  // unangetastet: die Grammatik setzt die Fläche ausdrücklich nur im Ruhezustand
+  // (:not(.lc-chip-selected) in index.css).
   return (
-    <div role="group" aria-label={label} className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+    <div role="group" aria-label={label} className="lc-chip-zeile flex flex-wrap items-center gap-x-2 gap-y-1.5">
       <span aria-hidden className="lc-overline shrink-0">{label}</span>
       {optionen.map((o) => (
         <button key={o.id} type="button" aria-pressed={o.aktiv} onClick={o.waehle}
@@ -53,7 +56,9 @@ function FacettenGruppe({ label, optionen }: {
   );
 }
 
-export function EntscheidFilter({ werte, onChange, bestand, richterRegister, sort, onSort, dichte, onDichte }: {
+export function EntscheidFilter({
+  werte, onChange, bestand, richterRegister, sort, onSort, dichte, onDichte, klappeOffen, onKlappe,
+}: {
   werte: EntscheidFilterWerte;
   onChange: (w: EntscheidFilterWerte) => void;
   /** Voller Bestand (vor Filter) — für die Auswahllisten/Zähler. */
@@ -64,6 +69,9 @@ export function EntscheidFilter({ werte, onChange, bestand, richterRegister, sor
   onSort: (s: SortModus) => void;
   dichte: 'liste' | 'karten';
   onDichte: (d: 'liste' | 'karten') => void;
+  /** Klappe «Erweiterte Filter» — Darstellungs-Zustand, gehalten im Eltern (zustand.ts). */
+  klappeOffen: boolean;
+  onKlappe: (offen: boolean) => void;
 }) {
   const setze = (teil: Partial<EntscheidFilterWerte>) => onChange({ ...werte, ...teil });
 
@@ -165,14 +173,15 @@ export function EntscheidFilter({ werte, onChange, bestand, richterRegister, sor
   // zusammengeführt. Semantik trägt `leitcharakter`; der `nurBge`-Prädikat bleibt in
   // browse.ts erhalten (spätere Trennung amtliche-BGE ⟂ Leitentscheid bleibt möglich).
   if (werte.nurLeitentscheide) aktiveChips.push({ key: 'leit', label: 'Nur Leitentscheide (amtliche BGE)', loesche: () => setze({ nurLeitentscheide: false }) });
-  // Richter zählt als aktiver Filter — er fehlte in dieser Liste, obwohl die
-  // «zurücksetzen»-Zeile nur bei `aktiveChips.length > 0 || suchAktiv` rendert.
-  // Folge: beim typischen geteilten `?richter=…`-Link (einziger Filter, oft 0
-  // Treffer) verwies der Leerzustand auf ein «zurücksetzen», das es gar nicht gab
-  // (Befund Gegenprüfung 20.7.2026). Kein zusätzlicher sichtbarer Chip — die
-  // Richter-Achse hat ihren eigenen Chip in der Facette; hier zählt sie nur mit,
-  // damit die Zeile erscheint (sonst zwei Darstellungen derselben Sache).
-  const richterAktiv = !!werte.richter;
+  // Achsen MIT eigener sichtbarer Darstellung (Facetten-Leiste bzw. Richter-Feld)
+  // bekommen hier bewusst keinen zweiten Chip — sie zählen nur mit, damit die
+  // «zurücksetzen»-Zeile erscheint. Seit die Facetten in der URL stehen, ist das
+  // zwingend: ein geteilter Link kann jede dieser Achsen allein tragen (z. B.
+  // `?kanton=BS`), und im Leerzustand verwiese der Text sonst auf ein
+  // «zurücksetzen», das gar nicht gerendert wird (Fehlermuster der Gegenprüfung
+  // 20.7.2026, damals nur für `?richter=` behoben).
+  const facettenAktiv = !!werte.richter || !!werte.ebene || !!werte.kanton
+    || !!werte.gerichtstyp || !!werte.sprache;
   if (werte.datumVon) aktiveChips.push({ key: 'von', label: `ab ${werte.datumVon}`, loesche: () => setze({ datumVon: null }) });
   if (werte.datumBis) aktiveChips.push({ key: 'bis', label: `bis ${werte.datumBis}`, loesche: () => setze({ datumBis: null }) });
   const suchAktiv = !!werte.q?.trim();
@@ -233,8 +242,13 @@ export function EntscheidFilter({ werte, onChange, bestand, richterRegister, sor
         />
       )}
 
-      {/* Sekundärfilter — standardmässig zu (Inhalt steht oben, nicht der Filter). */}
-      <details className="lc-card px-4 py-2.5">
+      {/* Sekundärfilter — standardmässig zu (Inhalt steht oben, nicht der Filter).
+          Ob sie offen bleibt, ist ein Darstellungs-Zustand und überlebt darum das
+          Neuladen wie Dichte und Sortierung (LM-206: keine stille Teil-Wieder-
+          herstellung mehr). Gesteuert, nicht `defaultOpen`: sonst liefe der
+          gespeicherte Wert dem DOM-Zustand hinterher. */}
+      <details className="lc-card px-4 py-2.5" open={klappeOffen}
+        onToggle={(e) => onKlappe((e.currentTarget as HTMLDetailsElement).open)}>
         <summary className="cursor-pointer select-none text-body-s font-medium text-brass-700">Erweiterte Filter</summary>
         {/* Kanton/Bund («Gemeinwesen») und Sprache stehen jetzt als Facetten-Leiste
             oben — hier nur die Langläufer (Gericht, Datum). */}
@@ -270,8 +284,11 @@ export function EntscheidFilter({ werte, onChange, bestand, richterRegister, sor
       </details>
 
       {/* Aktiv-Filter-Chips (immer sichtbar, auch bei zugeklapptem Disclosure). */}
-      {(aktiveChips.length > 0 || suchAktiv || richterAktiv) && (
-        <div className="flex flex-wrap items-center gap-1.5">
+      {/* lc-chip-zeile (LM-044/N1): Chip-Grammatik — die entfernbaren Filter sind
+          <button>, bekommen also den geschlossenen Hairline-Rahmen und sehen damit
+          gleich aus wie die Facetten-Knöpfe darüber und die Norm-Chips der Karten. */}
+      {(aktiveChips.length > 0 || suchAktiv || facettenAktiv) && (
+        <div className="lc-chip-zeile flex flex-wrap items-center gap-1.5">
           {aktiveChips.map((c) => (
             <button key={c.key} type="button" onClick={c.loesche}
               className="lc-chip inline-flex items-center gap-1 hover:border-brass-400 hover:text-brass-700"

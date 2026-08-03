@@ -319,3 +319,59 @@ nicht gegen das Modellgedächtnis) · Tore grün. Trailer `Roadmap: W2·8`.
     Abhängigkeit, kein neues Fundament. Detail in `FAHRPLAN-VORLAGEN-AUSBAU.md`. **DoD:** golden
     byte-gleich · Zitierform stichprobenweise gegen die amtliche Fundstelle geprüft · Tore grün.
     Trailer `Roadmap: W2·8`.
+
+---
+
+## V9 — Vorsorgeauftrag-Ausbau (Nachtlauf 2./3.8.2026, unter `W2·8`)
+
+**Ziel:** Fachliche Härtung der VA-Engine nach dem Befundregister der Grundlage
+[bibliothek/recherche/vorsorgeauftrag-inhalte.md](../bibliothek/recherche/vorsorgeauftrag-inhalte.md)
+(V-1…V-10, N1, F1/F2/F6).
+
+**Gebaut (Branch `feat/va-ausbau-2026-08`):**
+- B1 Golden-Ausbau additiv (+6 VA-Fälle) — Verhalten vor Umbau festgehalten (§6).
+- B2 Ersatzpersonen strukturell wie Hauptbeauftragte (`typ`, optionale
+  `bereiche`) + Vertretungsregel `einzeln|gemeinsam` (V02c/V02d, Muster
+  `VmVertretung`).
+- B3/B4 Norm-Korrekturen (V13-Widerruf Art. 362 Abs. 1 + Ergänzungs-Klausel
+  V13b · Zitat-Präzisierungen V-3…V-10) · Gate-Umbau V-1/V-2 (Herabstufung
+  juristische Person: Hinweis/Warnung statt contra-legem-Blocker) ·
+  Datums-Warnung · Interessenkollisions-Hinweis (Art. 365 Abs. 2/3).
+- B5 SSoT: `beurkundungsHinweis()` gestrichen → `NOTARIATE` +
+  `berechneBeurkundung`; Zivilstandsamt-Zeile amtlich korrigiert (ZStV Art. 23a,
+  Anhang 1 Ziff. 23 ZStGV: CHF 75 fix, «+30» gestrichen).
+
+**DoD:** Tore grün · Golden-Änderungen einzeln deklariert · Gegenprüfung
+bestanden · fachliche Abnahme David (Dossier neu generiert, unabgehakt) ·
+kein Merge vor Davids Review. Trailer `Roadmap: W2·8`.
+
+**Vertagt (bewusst NICHT in dieser Einheit):**
+- **V9.1 Merkblatt/Beiblatt für die beauftragte Person** (Empfänger-Wissen
+  Art. 363 Abs. 3, 364, 365, 367–369; nicht unterschriftsbedürftig,
+  austauschbar) — braucht Mehr-Dokument-Rahmen in `vorlagenPdf`/`vorlagenDocx`
+  (§10: erst Rahmen, dann Feature). Analog auch für die Patientenverfügung.
+  Abwägung: Grundlage Ziff. 8.
+- **V9.2 BGE 151 III 81 verifizieren** (BGE-Register-Status «zu verifizieren»)
+  vor fachlicher Abnahme der Beurkundungs-Hinweise.
+- **V9.3 `formel_extern` strukturell härten** (Gegenprüfungs-Befund B3,
+  3.8.2026): Kantonale Beurkundungs-Tarife mit gesetzlichem Minimum/Stunden-
+  rahmen (z.B. BE Art. 8a Abs. 1 GebVN: «mindestens 300 Franken») rendern heute
+  als «nach Vereinbarung/Aufwand» — das Minimum erreicht die Nutzerin nie.
+  Fix gehört in `notariatGrundbuch.ts`/`ngPostenText` + Stammdaten
+  (`beurkundung.ts`: min/rahmen strukturiert statt Freitext-`hinweis`),
+  betrifft Beurkundungs-Rechner UND VA-Seite. Eigener Risiko-Pfad-Auftrag
+  mit kantonaler Norm-Verifikation.
+- **V9.4 ZStGV in die Drift-Erkennung** (GP-Runde-2-Nebenfund L4, 3.8.2026):
+  Die VA-Seite trägt neu den amtlichen Wert CHF 75 (Anhang 1 Ziff. 23 ZStGV,
+  SR 172.042.110, Stand 11.11.2024) — ZStGV fehlt aber in
+  `scripts/fedlex-cache.sh`, also keine automatische Drift-Erkennung (§7
+  Zitat-Ausnahme, Merkmal d). Brisanz: Teilrevision der ZStGV in
+  Vernehmlassung bis 15.10.2026 (`VERN-2026-32`). Pin ergänzen
+  (Korpus-Werkstatt-Fläche).
+- **V9.5 GP-Runde-3-Nebenfunde N1–N4 — ✅ GEBAUT 3.8.2026** (Branch feat/va-nachzuege-2026-08, GP bestanden inkl. Delta-Runde; Nebenfunde b/c der GP dokumentiert offen) (3.8.2026, alle NIEDRIG/MITTEL,
+  UI-unerreichbar bzw. kosmetisch): N1 `datum` ohne `.trim()` geprüft
+  (Whitespace-Datum umgeht B8-Zweig + Warnung; via UI nicht erreichbar) ·
+  N2 V14-`begruendung` nennt noch «Ort» als Formbestandteil · N3 Doppelkomma
+  bei `ort='Basel,'` · N4 Golden-Fall für den «Datum: ________»-Zweig
+  (vorl:va-ohne-ort-ohne-datum) ergänzen. Ein kleiner Sammel-Schritt,
+  löst neuen GP-Durchgang aus.
