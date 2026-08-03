@@ -43,10 +43,11 @@ const entscheid: BrowseEntscheid = {
 };
 
 const material: BrowseMaterial = {
-  key: 'seco/wegleitung-1', behoerde: 'seco', behoerdeName: 'Staatssekretariat für Wirtschaft',
+  key: 'seco/wegleitung-1', behoerde: 'SECO', behoerdeName: 'Staatssekretariat für Wirtschaft',
   behoerdeKuerzel: 'SECO', doktyp: 'wegleitung', doktypLabel: 'Wegleitung',
   titel: 'Wegleitung zum Arbeitsgesetz', nummer: '710.100', rechtsgebiet: 'privat', sprache: 'de',
-  status: 'aktiv', quelleUrl: 'https://x', stand: '2022-02-01', rang: 0, normKeys: [], hinweis: null,
+  status: 'nur-live-link', quelleUrl: 'https://x', stand: '2022-02-01', rang: 0, normKeys: [],
+  hinweis: null, sha: 'x',
 };
 
 describe('N1 (1) — Struktur: die Chip-Reihen tragen die Opt-in-Klasse', () => {
