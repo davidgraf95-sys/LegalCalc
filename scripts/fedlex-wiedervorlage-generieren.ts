@@ -27,6 +27,8 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { sparqlBatch, type FetchImpl } from './fedlex-sparql.ts';
+import { lesePinsVoll } from './fedlex-pins.ts';
+import { loeseHtmlManifeste } from './fedlex-manifest.ts';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const REGISTER_JSON = resolve(wurzel, 'public/normtext/register.json');
@@ -51,11 +53,19 @@ export type UeberholtEintrag = { key: string; gepinnt: string; geltend: string }
 export type AufhebungEintrag = {
   key: string; sr: string; kuerzel: string; gepinnt: string; aufgehobenSeit: string; kuenftig: boolean;
 };
+// Nachzug C (Gegenprüfung #414, Befund 4): ein Pin, der auf einer NICHT-
+// KANONISCHEN html-Manifestation klebt (Alias-URL / Alt-Revision desselben
+// Konsolidierungsdatums), ist datumsmässig aktuell — der Frische-Chip hielt ihn
+// darum für «geltend geprüft», während check:fedlex-versionen ihn zeitgleich
+// ROT meldete. Zwei Wahrheiten über denselben Erlass (§5). Die Kanonik ist jetzt
+// zweite Ausschluss-Dimension neben istUeberholt.
+export type NichtKanonischEintrag = { key: string; gepinntN: number; kanonischN: number };
 export type Erhebung = {
   wiedervorlage: WiedervorlageEintrag[];
   currency: Record<string, CurrencyEintrag>;
   ueberholt: UeberholtEintrag[];
   aufhebungen: AufhebungEintrag[];
+  nichtKanonisch: NichtKanonischEintrag[];
   ohneDaten: string[];
 };
 
@@ -81,8 +91,16 @@ export function deDatum(iso: string): string {
  * Konsolidierungs-Daten und leitet Wiedervorlage + Currency + Überholt-Befund ab.
  * `datum` = Laufdatum (ISO); geltend = max(date ≤ datum), künftig = min(date > datum).
  */
+// `nichtKanonischeElis`: Abstract-ELIs, deren gepinntes html-N nicht der
+// kanonischen isExemplifiedBy-Manifestation entspricht. Wird INJIZIERT statt
+// hier aufgelöst — die Erhebung bleibt rein/deterministisch (§0b Regel 5), und
+// die Kanonik-Wahrheit stammt aus derselben Quelle wie das Tor
+// (loeseHtmlManifeste, scripts/fedlex-manifest.ts), nicht aus einer zweiten
+// Ableitung (§5). Default leer: die bestehenden 3-Argument-Aufrufer
+// (fedlex-repin-batch.ts, Unit-Tests) verhalten sich unverändert.
 export async function erhebe(
   erlasse: ErlassBasis[], datum: string, fetchImpl: FetchImpl,
+  nichtKanonischeElis: ReadonlyMap<string, { gepinntN: number; kanonischN: number }> = new Map(),
 ): Promise<Erhebung> {
   const bund = erlasse.filter((e) => e.ebene === 'bund' && e.status === 'snapshot' && e.quelleUrl && e.sr);
   const perEli = new Map<string, ErlassBasis>();
@@ -129,6 +147,7 @@ SELECT ?abstract ?date ?noLonger WHERE {
   const currency: Record<string, CurrencyEintrag> = {};
   const ueberholt: UeberholtEintrag[] = [];
   const aufhebungen: AufhebungEintrag[] = [];
+  const nichtKanonisch: NichtKanonischEintrag[] = [];
   const ohneDaten: string[] = [];
 
   for (const [eli, e] of perEli) {
@@ -153,17 +172,28 @@ SELECT ?abstract ?date ?noLonger WHERE {
     const naechste = daten.find((d) => d > datum); // sortiert asc → früheste künftige
     const istUeberholt = !!geltend && geltend > gepinnt;
 
+    // Kanonik als ZWEITE Ausschluss-Dimension (Gegenprüfung #414, Befund 4):
+    // aktuelles Datum, aber nicht-kanonische Manifestation ⇒ die gepinnte
+    // Fassung ist nicht die treue — kein Frische-Chip. Sonst behauptete der
+    // Chip «geprüft», während check:fedlex-versionen denselben Pin rot meldet.
+    const kanonikBefund = nichtKanonischeElis.get(eli);
+    if (kanonikBefund) {
+      nichtKanonisch.push({ key: e.key, ...kanonikBefund });
+    }
+
     if (istUeberholt) ueberholt.push({ key: e.key, gepinnt, geltend: geltend! });
     if (naechste) wiedervorlage.push({ key: e.key, sr: e.sr!, kuerzel: e.kuerzel, gepinnt, naechste });
-    // §8: geprüft-Chip nur für aktuelle (nicht überholte) Erlasse.
-    if (!istUeberholt) {
+    // §8: geprüft-Chip nur für aktuelle (nicht überholte) UND kanonisch
+    // gepinnte Erlasse.
+    if (!istUeberholt && !kanonikBefund) {
       currency[e.key] = { geprueftAm: datum, ...(naechste ? { naechsteFassungAb: naechste } : {}) };
     }
   }
 
   wiedervorlage.sort((a, b) => a.naechste.localeCompare(b.naechste) || a.sr.localeCompare(b.sr));
   aufhebungen.sort((a, b) => a.aufgehobenSeit.localeCompare(b.aufgehobenSeit) || a.sr.localeCompare(b.sr));
-  return { wiedervorlage, currency, ueberholt, aufhebungen, ohneDaten };
+  nichtKanonisch.sort((a, b) => a.key.localeCompare(b.key));
+  return { wiedervorlage, currency, ueberholt, aufhebungen, nichtKanonisch, ohneDaten };
 }
 
 // ─── Schreiben ───────────────────────────────────────────────────────────────
@@ -258,16 +288,50 @@ async function main() {
   }
   const erlasse = (JSON.parse(readFileSync(REGISTER_JSON, 'utf8')) as { erlasse: ErlassBasis[] }).erlasse;
 
+  // ─── Kanonik-Dimension (Gegenprüfung #414, Befund 4) ───────────────────────
+  // DIESELBE Quelle wie der Kanonik-Arbiter in check:fedlex-versionen:
+  // lesePinsVoll() (SSoT = scripts/fedlex-cache.sh) + loeseHtmlManifeste()
+  // (isExemplifiedBy). Keine dritte Ableitung (§5). Der Join läuft über den
+  // Abstract-ELI, weil die beiden Schlüsselräume verschieden schreiben
+  // (register.json «ZGB» vs. cache.sh «zgb»); über den ELI decken sich beide
+  // Mengen exakt (227/227, gemessen 3.8.2026).
+  //
+  // Scheitert die Auflösung, wird NICHT weitergemacht: ohne Kanonik-Wissen
+  // würden wieder Frische-Chips für womöglich nicht-kanonische Pins geschrieben
+  // — genau der Zustand, den dieser Nachzug beseitigt. Lieber kein Sidecar als
+  // ein zu optimistisches (§8).
+  let nichtKanonischeElis: Map<string, { gepinntN: number; kanonischN: number }>;
+  try {
+    const vollPins = lesePinsVoll();
+    const manifeste = await loeseHtmlManifeste(vollPins);
+    nichtKanonischeElis = new Map();
+    for (const p of vollPins) {
+      const b = manifeste.get(p.name);
+      // n === null ⇒ keine html-Manifestation via isExemplifiedBy auflösbar;
+      // dann trägt die Inhalts-Sonde in cache.sh die Verifikation (gleiche
+      // Auslassung wie im Tor, fedlex-versionen-pruefen.ts:259).
+      if (!b || b.n === null) continue;
+      if (b.n !== p.n) nichtKanonischeElis.set(p.eli, { gepinntN: p.n, kanonischN: b.n });
+    }
+  } catch (e) {
+    console.error(
+      `FEHLER: Kanonik-Auflösung (isExemplifiedBy) nicht möglich (${e instanceof Error ? e.message : e}).\n` +
+        'Ohne sie liesse sich nicht entscheiden, welche Erlasse einen Frische-Chip verdienen — Abbruch statt Rateschluss.',
+    );
+    process.exit(2);
+    return;
+  }
+
   let erhebung: Erhebung;
   try {
-    erhebung = await erhebe(erlasse, datum, fetch);
+    erhebung = await erhebe(erlasse, datum, fetch, nichtKanonischeElis);
   } catch (e) {
     console.error(`FEHLER: Fedlex-SPARQL nicht erreichbar (${e instanceof Error ? e.message : e}).`);
     process.exit(2);
     return;
   }
 
-  const { wiedervorlage, currency, ueberholt, aufhebungen, ohneDaten } = erhebung;
+  const { wiedervorlage, currency, ueberholt, aufhebungen, nichtKanonisch, ohneDaten } = erhebung;
 
   const md = readFileSync(VERFALL_MD, 'utf8');
   writeFileSync(VERFALL_MD, schreibeVerfallMd(md, baueAutoBlock(wiedervorlage, datum, aufhebungen)), 'utf8');
@@ -286,6 +350,12 @@ async function main() {
   if (ueberholt.length > 0) {
     console.log(`  ⚠ ${ueberholt.length} ÜBERHOLT (kein geprüft-Chip; P1-a-Rückstand, check:fedlex-versionen rot):`);
     for (const u of ueberholt) console.log(`      ${u.key}: gepinnt ${u.gepinnt} < geltend ${u.geltend}`);
+  }
+  if (nichtKanonisch.length > 0) {
+    console.log(`  ⚠ ${nichtKanonisch.length} NICHT-KANONISCH (kein geprüft-Chip; check:fedlex-versionen rot):`);
+    for (const n of nichtKanonisch) {
+      console.log(`      ${n.key}: gepinnt html-${n.gepinntN}, kanonisch html-${n.kanonischN} → fedlex:repin-kanonik`);
+    }
   }
   if (ohneDaten.length > 0) console.log(`  ⚠ ${ohneDaten.length} ohne SPARQL-Daten: ${ohneDaten.join(', ')}`);
   console.log('\nNachlauf: `npm run gen:verfall` (UI-Datenmodul), `npm run datenhaltung:manifest` (Paritäts-Dump).');

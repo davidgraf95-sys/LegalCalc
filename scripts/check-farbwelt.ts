@@ -215,10 +215,22 @@ const PFLICHT: Paar[] = [
   NICHT('focus', 'paper', '--focus Ring (index.css:91-95/187-189)'),
   NICHT('focus', 'surface', '--focus Ring auf Karte'),
   NICHT('focus', 'well', '--focus Ring auf Eingabefeld'),
-  // Nicht-Text: Akzent-Oberkanten (lc-akzent-*) auf Karte
-  NICHT('brass-line', 'surface', 'lc-akzent-brass (index.css:402)'),
-  NICHT('warn-line', 'surface', 'lc-akzent-warn (index.css:403)'),
-  NICHT('danger-line', 'surface', 'lc-akzent-danger (index.css:404/193)'),
+  // Nicht-Text: Akzent-/Hinweis-Linien auf Karte.
+  // Label-Wahrheit nachgezogen 3.8.2026: #418 entfernte .lc-akzent-warn und
+  // .lc-akzent-danger aus index.css — die Labels benannten damit zwei Klassen,
+  // die es nicht mehr gibt (und drei überholte Zeilennummern). Die GEPRÜFTEN
+  // Token-Paare bleiben unverändert; nur der Text wird ehrlich.
+  NICHT('brass-line', 'surface', 'lc-akzent-brass (index.css:583) / lc-notice-Kante (index.css:885)'),
+  NICHT('warn-line', 'surface', 'warn-line auf Karte — konservativer Boden, echter Konsument ist lc-notice-warn (index.css:886)'),
+  NICHT('danger-line', 'surface', 'border-t-danger-line auf lc-tile/lc-card (KuendigungSperrForm:228, VorlageKuendigungArbeitgeber:92, StrafZustaendigkeitTeil:479)'),
+  // OFFENER PUNKT (David): lc-notice-warn/-danger rendern ihre Kante NICHT auf
+  // «surface», sondern auf der getönten Fläche warn-bg/danger-bg — das ist der
+  // strengere Grund. Gemessen 3.8.2026: warn-line/warn-bg 3.008 (hell) · 4.283
+  // (dunkel), danger-line/danger-bg 5.538 · 6.685 — alle über der 3.0-Schwelle.
+  // Als Pflichtpaare aufgenommen wären sie bestanden, aber warn-line/warn-bg
+  // läge 0.008 über der Grenze: jede Token-Rundung kippt das Tor. Ob dieser
+  // Messer-Rand ein Dauer-Tor sein soll, ist eine Design-Entscheidung und wurde
+  // hier bewusst NICHT im Alleingang gesetzt.
   // D-1.3: sage/slate-Linien-Aliasse (dunkel auf -700 gehoben) — Nicht-Text-
   // Kanten/Balken greifen den Alias, nie -500 direkt.
   NICHT('sage-line', 'surface', 'D-1.3 border-sage-line (Patientenverfügung u. a.)'),

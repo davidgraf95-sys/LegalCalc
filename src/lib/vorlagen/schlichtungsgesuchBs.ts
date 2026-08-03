@@ -4,6 +4,11 @@ import type { Kanton } from '../../types/legal';
 import { BEHOERDEN, behoerdeFuer, behoerdeAlsBlock, behoerdeManuellVollstaendig, type BehoerdeManuell } from './behoerden';
 import { fmtDatumLang, fmtDatum, fmtCHF } from './datum';
 import { ZPO_SCHWELLEN } from '../zustaendigkeit';
+// LEBENDER Re-Export, kein Totcode: VorlageSchlichtungsgesuchBs.tsx bezieht
+// fmtCHF zusammen mit den sg*-Funktionen aus GENAU diesem Modul (ein Import-
+// Block statt zwei). Eine Totcode-Sichtung am 3.8.2026 hielt die Zeile für
+// verwaist, weil sie nur die 15 Importe von './datum' zählte — die Seite
+// importiert aber von hier. Vor dem Entfernen: `grep -rnE "\bfmtCHF\b" src/`.
 export { fmtCHF } from './datum';
 
 // ─── Schlichtungsgesuch nach Art. 202 ZPO – Kanton Basel-Stadt (Pilot) ──────

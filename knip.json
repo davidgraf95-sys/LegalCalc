@@ -1,7 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
   "entry": [
-    "src/main.tsx",
     "src/entry-server.tsx",
     "scripts/**/*.{ts,tsx,mjs}",
     "api/**/*.ts",
@@ -15,11 +14,7 @@
     "e2e/**/*.ts"
   ],
   "ignore": [
-    "scripts/archiv/**",
     "**/*.generated.ts"
-  ],
-  "ignoreDependencies": [
-    "html2canvas"
   ],
   "includeEntryExports": false
 }
