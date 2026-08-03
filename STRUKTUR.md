@@ -8,9 +8,10 @@ liegen nur AKTIVE Steuerungsdokumente — CLAUDE/README/STRUKTUR/HANDLUNGSPLAN,
 Projekt- und Strategie-Papiere (PROJEKTBESCHRIEB, STRATEGIE-PLATTFORM,
 WACHSTUM-REGLEMENT, BETRIEB, KATALOG-ROADMAP, ABNAHME-AG-BAUSTEINE). Die
 laufenden Fahrpläne liegen seit AP-8 der QS-TOK-Aufräumwelle (31.7.2026) NICHT
-mehr im Root, sondern in **`fahrplaene/`** (Stand 31.7.2026: 29 Dateien,
-Dateinamen unverändert, geführt über `ROADMAP.md` / `npm run plan:next`; das
-Link-Tor `check:plan` scannt genau diesen Ordner). Aus der früheren Aufzählung
+mehr im Root, sondern in **`fahrplaene/`** (Stand 3.8.2026: 27 Dateien —
+NOTEBOOKLM-EINSATZ und OPENCASELAW-QUELLEN sind mit der Aufräumung 3.8.2026 nach
+`archiv/` gewandert; Dateinamen unverändert, geführt über `ROADMAP.md` /
+`npm run plan:next`; das Link-Tor `check:plan` scannt genau diesen Ordner). Aus der früheren Aufzählung
 ist nur noch VORLAGEN-AUSBAU aktiv; GRUNDLAGEN, GMBH-GRUENDUNG, BGER-RECHTSWEG,
 VERTRAGS-VARIANTEN und FUNDAMENT-UMBAU sind mit der Archiv-Welle 31.7.2026
 nach `archiv/` gewandert, AG-GRUENDUNG schon am 7.6.2026. Abgeschlossene
@@ -26,6 +27,48 @@ QS-TOK/T1):** Dieses Dokument wird in jeder Session und jedem Subagenten gelesen
 Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-GENAU
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
+
+## Session 3.8.2026 (Tag) — Aufräum-Tag: CI-Härtung, Totcode, Roadmap-Verschlankung
+**Vier Landungen auf `main`, ein Doku-Finale, ein PR im Anflug. Kein Feature-Bau.**
+
+- **#414 gelandet (`9c63c647a`)** — Fedlex-Frische + Kanonik-Fix an 8 Pins (`zgb`, `mwstg`, `bbg`,
+  `usg`, `gwg`, `kag`, `fza`, `cmr`) + Stopp des Workflow-Selbstattests. **Gegenprüfung Durchgang 1
+  widerlegte den Stand** → Fix → Durchgang 2 bestanden (Register `553bdc393`).
+- **#417 GESCHLOSSEN ohne Merge** — der Inhalt des `sleepy-mestorf`-Worktrees lag bereits über
+  #412/#413 auf `main` (`changed_files=0`). Worktree und Branch entfernt. Daraus der neue Schritt
+  `QS-AUTOMATIK-WT` (Verwaiste-Worktree-Sonde): Diff-leer gegen `main` = gelandet, nicht abgeräumt.
+- **#418 gelandet (`d18429d18`)** — Totcode-Entfernung: 142 `export`-Strips, 8 Definitionen,
+  7 Re-Export-Zeilen, 5 CSS-Klassen; **knip 162 → 1** Meldung. Gegenprüfung bestanden, Beweis
+  **8164 Prerender-Seiten byte-gleich** (Register `7a1e2fa46`) — von Hand geführt, daher der neue
+  Schritt `QS-GP-PRERENDER`.
+- **#419 gelandet (`02df51a0a`)** — CI-Härtung **K1–K13**: Wächter-Selbstverriegelung gelöst (war
+  15/15 rot), `ci.yml`-Umbau mit Diff-Klassierung statt Zwilling (`ci-doku-noop.yml` gelöscht),
+  Kontext-Selbstheilung, Bot-PR-CI-Dispatch, Kanonik-Selbstheilung im Wochenlauf, `fedlex-cache.sh`
+  scheitert laut statt still (Alt-Repro: OR bekam falschen Text mit Wortdiff), Monitor-Triage,
+  `check:verfall` raus aus dem PR-Pfad, Actions v5. Gegenprüfung bestanden (Register `b377330f9`).
+- **Prozess-Doku direkt (`437e92950` + `4e9ab9eb2`)** — CLAUDE.md §17, PR-Template mit DoD,
+  Dispatch-Template-Arbeitsteilung, Lehren F2e + F3-Update, Landung-Skill-Notiz, `launch.json`.
+- **#420 gelandet (`d864a9caa`)** — Nachzug-Bündel: Rest-Totcode (dabei erwies sich der
+  `fmtCHF`-Re-Export als **LEBEND** — Prüferbefund aus #418 korrigiert), Cache-Inhalts-Sonde,
+  Wiedervorlage-Kanonik. Gegenprüfung bestanden (Register `860352850`/`212e22609`).
+- **Doku-Finale (diese Session)** — **ROADMAP 117.4 → ~97 KB**, wieder unter dem 100-KB-Ceiling:
+  24 erledigte Schritte vollständig in `ROADMAP-CHRONIK.md` überführt (wörtlich, nie
+  zusammengefasst), **6 Streichungen** je mit Begründungszeile in der Chronik, 2 Fahrpläne nach
+  `archiv/` (29 → 27). **Entparkt** (David 3.8.): `W1·4` · `W2·5g-ZEIT` · `W2·5j-TABELLEN` — die drei
+  Blocker trugen ihre Auflösung selbst im Register, die Vorbedingungen leben als Bau-Reihenfolge im
+  Schritt weiter. **12 neue Schritte** (§14-Intake 3.8.), je mit Anlass-Satz. Neu in der Bibliothek:
+  `ci-fehlerklassen-2026-08-03.md` (K1–K13, Abnahme-Status entwurf).
+- **David-Entscheide 3.8.:** `strict:true` AKTIV (per API) · Secret `AUTOMERGE_TOKEN` angelegt
+  (17:54Z) · TBT-Bewertung → **normiert** · Merge Queue **G7 JA**, Aktivierung nach TBT-Landung
+  (`QS-BASIS-MQ`) · Pflege-Routine wöchentlich JA.
+- **Im Anflug:** **PR #421 «Runner-Robustheit» ist OFFEN** (Branch `chore/runner-robustheit`,
+  Head `6a61ffaa4`, Stand 20:40Z) — TBT-Bewertung normiert + OR-e2e-Timeouts runner-fest. **Nicht
+  gemergt**; Landung ist ein eigener Auftrag.
+- **Ehrliche Reste:** `QS-PERF` steht seit **1.7.2026** auf `wip` und wurde nie freigegeben — der
+  Marker trifft heute wieder zu (#421 baut den TBT-Posten), deckt das Anliegen aber nicht ab; im
+  Schritt vermerkt. **K4/K8/K9/K10** der CI-Diagnose tragen im Repo keinen Beleg und sind bewusst
+  nicht rekonstruiert. `QS-CURRENCY-KANON` bleibt offen: die 8 Wurzeln sind nachgeführt, die
+  **Ursache** ist es nicht.
 
 ## Session 2./3.8.2026 (Nacht) — Vorsorgeauftrag-Vollausbau W2·8/V9, PR #411 gelandet
 **Grundlage → Direktbau → 3 GP-Runden → Merge `12bc72521` (3.8. 08:17Z, Squash).**
