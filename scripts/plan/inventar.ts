@@ -92,4 +92,10 @@ export const INVENTAR: readonly string[] = [
   // Die Worktree-/Branch-Inventur aus derselben Evaluation ist KEIN neuer Schritt —
   // sie erweitert QS-AUTOMATIK-BERICHT (Bündelung, Skill `auftrag` Ziff. 3).
   'QS-GP-PREPUSH', 'QS-BASIS-DOKU-CI',
+
+  // F2b-Vorfall 4.8.2026 (#425 grün trotz Manifest-Drift): die Paritäts-Sonde
+  // zählte Wächter-Workflows als Deckung. Akuter Fix (check:datenhaltung in
+  // ci.yml) ist gebaut; die Sonden-Schärfung + Evaluation der 5 übrigen
+  // wächter-gedeckten Tore ist dieser Schritt.
+  'QS-AUTOMATIK-PARITAET',
 ];
