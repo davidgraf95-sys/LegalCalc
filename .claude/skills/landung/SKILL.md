@@ -85,6 +85,16 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    abgebrochener Lauf hat nichts bewiesen. (Realfall 20.7.2026: 5 stumm
    abgebrochene `turso-sync`-Läufe, der Suchindex veraltete unbemerkt.)
 
+   **Wenn nach einem Push KEIN `pull_request`-Lauf erscheint** (Realfälle
+   3.8.2026, PRs #414/#417): erst die Ursache prüfen, dann das passende Mittel —
+   (a) leerer Diff / md-only: seit der CI-Härtung klassifiziert `ci.yml` selbst,
+   ein Lauf muss IMMER erscheinen; fehlt er, `gh api commits/<head>/check-suites`
+   ansehen; (b) Event nicht zugestellt: der Wächter zieht fehlende Required-
+   Kontexte an offenen PRs täglich per `workflow_dispatch` nach — manuell geht
+   `gh workflow run ci.yml --ref <branch>` sofort; (c) ein leerer Commit hilft
+   nur bei hängendem VERCEL-Kontext, er erzeugt KEINEN Actions-Lauf (kein
+   Datei-Diff) und schiebt den Head von bereits grünen Check-Runs weg.
+
 5b. **Bei Daten-/Extraktions-PRs: Identitätsbeleg.** Bevor neue Entitäten
    (Personen, Erlasse, Entscheide) live gehen, eine Stichprobe **n ≥ 10** gegen
    die **amtliche Quelle** prüfen und die Trefferquote im PR dokumentieren.

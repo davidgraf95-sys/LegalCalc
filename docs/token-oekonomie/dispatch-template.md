@@ -55,6 +55,19 @@ Byte-stabil halten — der Block wird maschinell eingefügt: `npm run dispatch -
   nachgelagerter Auftrag nach bestandener adversarialer Pruefung.
 ```
 
+### Arbeitsteilung Orchestrator ↔ Agent (Lehren 3.8.2026)
+
+Zwei Regeln gehören zusätzlich in jeden Landungs-nahen Auftrag, weil ihre
+Verletzung am 3.8.2026 mehrfach Leerlauf erzeugte:
+
+- **CI-Warten gehört dem Orchestrator.** Ein Agent liefert bis zur Merge-Reife
+  (Push, PR, lokale Tore) und gibt mit Artefakten zurück; er wartet NICHT auf
+  `gh pr checks --watch` — Hintergrund-Watcher verwaisen beim Agenten-Stopp
+  (4 Stalls an einem Tag). Der Orchestrator hängt den Watcher an und setzt fort.
+- **`gh pr merge` führt der Orchestrator aus.** Der Berechtigungs-Klassifikator
+  blockt Merges in Unteragenten grundsätzlich; ein Agent, der bis zum
+  Merge-Kommando plant, scheitert planbar. Im Auftrag von Anfang an so verteilen.
+
 ### Was der Block kostet — ehrliche Bilanz (Korrektur 20.7.2026)
 
 PR #315 wies eine Netto-Bilanz von **«≈ −511 Token je Dispatch»** aus (aus

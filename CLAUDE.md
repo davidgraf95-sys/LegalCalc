@@ -193,6 +193,19 @@ die ins Leere läuft, nur in umgekehrter Richtung: nicht ein toter Verweis,
 sondern ein lebender, der das Falsche trifft. Eine künftige Regel bekommt §17
 oder höher.
 
+## §17 Konstante Prozessverbesserung (Handlungsauftrag David 3.8.2026)
+
+Wer ein Merge-, CI- oder Prozessproblem **erkennt**, behebt es **an der Wurzel**
+oder legt einen konkreten Roadmap-Schritt mit Wurzel-Fix an — nie nur umschiffen.
+Ein Workaround ohne hinterlegten Wurzel-Fix ist ein offener Mangel, kein
+erledigter Vorfall. Massstab: Dieselbe Störung darf einer künftigen Session
+nicht noch einmal Arbeitszeit kosten. Belegter Anlass: Am 3.8.2026 kosteten
+sieben lange bekannte, je einzeln «umschiffte» CI-Defekte (u. a. ein seit Anlage
+nie grüner Wächter, wochenlang nicht-kanonische Pins, Bot-PRs ohne CI-Lauf)
+zusammen einen ganzen Arbeitstag. Grenzen unverändert: Risiko-Pfade nur mit
+Gegenprüfung, Budget-/Schwellen-Entscheide (§15) und fachliche Abnahme bleiben
+bei David.
+
 ---
 
 ## Wo der Rest steht
