@@ -117,6 +117,8 @@ jobs:
         run: npm run check:bibliothek
       - name: Verfallsregister (Termine)
         run: npm run check:verfall
+      - name: Abnahme-Dossiers synchron zu den Schemas (§5-Projektion)
+        run: npm run check:dossiers
       - name: Logik-Sweep (Invarianten)
         run: npm run check:sweep
       - name: Golden-Outputs (byte-gleich zur committeten Basis)
