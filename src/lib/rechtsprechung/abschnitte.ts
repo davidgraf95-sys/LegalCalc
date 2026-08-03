@@ -108,10 +108,13 @@ export interface ErwPunkt {
  * W2·10-UI-NAV). Dieselbe Anker-Wahrheit wie `ersteFundstelle`/`nennungsAnker`
  * (§5 — alles läuft über `gruppiereErwaegungen`), nur anders projiziert.
  *
- * NUR Blöcke MIT Anker UND MIT amtlicher Marke werden Sprungziele: ein
- * markenloser Block trägt keine zitierfähige Erwägungs-Nummer, und ein
- * Inhaltsverzeichnis-Eintrag ohne Nummer wäre eine erfundene Gliederungsstufe
- * (§8). Rein und deterministisch (§2).
+ * NUR Blöcke MIT Anker werden Sprungziele: ein markenloser Block trägt keine
+ * zitierfähige Erwägungs-Nummer, und ein Verzeichnis-Eintrag ohne Nummer wäre
+ * eine erfundene Gliederungsstufe (§8). Der zusätzliche `marke`-Test ist reine
+ * TYP-VERENGUNG und kann nach heutiger Gruppierung nicht greifen (eine Gruppe
+ * mit `top > 0` enthält per Konstruktion nur Blöcke mit Ziffern-Marke) — er ist
+ * bewusst als solcher bezeichnet und nicht als Regel ausgegeben (§6.7).
+ * Rein und deterministisch (§2).
  */
 export function erwaegungsGliederung(abschnitte: EntscheidAbschnitt[]): ErwPunkt[] {
   const erw = abschnitte.find((a) => a.typ === 'erwaegung');
